@@ -1108,6 +1108,162 @@
           "q": "Nadeulmok Family Park, next to Korea Expressway Corporation Jeonju Arboretum, Jeonju",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/jeonju-kids-places"
+        },
+        {
+          "local": "전주혁신도시복합문화센터",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://mom-mom.net/en/travel/places/661f22ec96e91086cbddfbd1",
+          "name": {
+            "th": "ศูนย์วัฒนธรรมเมืองนวัตกรรมช็อนจู",
+            "en": "Jeonju Innovation City Cultural Centre"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนทึลมต 1 เมืองนวัตกรรม ช็อนจู",
+            "en": "Teulmot 1-gil, Innovation City, Jeonju"
+          },
+          "what": {
+            "th": "ศูนย์วัฒนธรรมที่มีห้องเล่นเด็กเล็ก ห้องสมุดเด็ก และลานทราย",
+            "en": "A cultural centre with a toddler play room, a children's library and a sand yard"
+          },
+          "why": {
+            "th": "แทรมโพลีน บ่อบอล และสไลเดอร์สำหรับเด็กเล็ก ลานทรายสำหรับเด็กอนุบาล",
+            "en": "Trampoline, ball pool and slide for toddlers, sand play for preschoolers"
+          },
+          "tip": {
+            "th": "จองห้องเล่นทางเว็บห้องสมุดเมืองช็อนจูก่อน",
+            "en": "Book the play room on the Jeonju City Library website first"
+          },
+          "q": "전주혁신도시복합문화센터, 틀못1길 20, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "무키무키 전주완산점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://mom-mom.net/en/travel/places/67a966b8f45aa02b66d43782",
+          "name": {
+            "th": "คิดส์คาเฟ่มูกิมูกิ วันซัน",
+            "en": "MukiMuki Kids Café (Wansan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฮโยจา วันซัน ช็อนจู",
+            "en": "284 Hyoja-ro, Wansan-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ส่วนตัวไม่มีพนักงาน มีเครื่องปีนป่ายใหญ่และครัวของเล่น",
+            "en": "A private, unstaffed kids café with a big climbing frame and play kitchens"
+          },
+          "why": {
+            "th": "มีเก้าอี้เด็กเล็ก และมุมขนมที่มีอาหารเด็ก",
+            "en": "Baby chairs, and a snack corner with baby food"
+          },
+          "q": "무키무키 전주완산점, 효자로 284, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "너티차일드월드 전주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩25,000 ต่อเด็ก 2 ชั่วโมง · ผู้ใหญ่ ₩10,000",
+            "en": "≈ ₩25,000 a child for 2 hours · ₩10,000 an adult"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/664bf5e316012307a5fce365",
+          "name": {
+            "th": "นัตตี้ไชลด์เวิลด์ ช็อนจู",
+            "en": "Nutty Child World (Jeonju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเซบย็อง ด็อกจิน (อีโคซิตี้) ช็อนจู",
+            "en": "Sebyeong-ro, Deokjin-gu (Ecocity), Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ขนาดใหญ่สำหรับเด็กที่ชอบวิ่งเล่น",
+            "en": "A big kids café for children who love to run about"
+          },
+          "why": {
+            "th": "มีห้องให้นม ที่เปลี่ยนผ้าอ้อม และเก้าอี้เด็ก",
+            "en": "A nursing room, nappy changing and baby chairs"
+          },
+          "tip": {
+            "th": "ผู้ใหญ่ต้องใส่ถุงเท้าด้วย",
+            "en": "Grown-ups wear socks too"
+          },
+          "q": "너티차일드월드 전주점, 세병로 21, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "나만의키즈카페 전주인후점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩16,000 ต่อ 30 นาที วันธรรมดา",
+            "en": "≈ ₩16,000 per 30 min on weekdays"
+          },
+          "book": "req",
+          "src": "https://mom-mom.net/en/travel/places/69c4f26e6de8449cbc921e48",
+          "name": {
+            "th": "คิดส์คาเฟ่นามานึย อินฮู",
+            "en": "Namanui Kids Café (Inhu)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฮันแบมี 4 ด็อกจิน ช็อนจู",
+            "en": "Hanbaemi 4-gil, Deokjin-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ส่วนตัวไม่มีพนักงาน มีเครื่องปีนป่าย แทรมโพลีน และบ่อบอล",
+            "en": "A private, unstaffed kids café with a climbing frame, trampoline and ball pit"
+          },
+          "why": {
+            "th": "ได้ห้องสำหรับครอบครัวเราเอง เอาอาหารเข้าไปได้",
+            "en": "A room just for your family; you may bring food"
+          },
+          "q": "나만의키즈카페 전주인후점, 한배미4길 6, 전주",
+          "ok": "2026-11"
         }
       ]
     },

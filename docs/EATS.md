@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Jeonju** (docs/library-briefs batch-50): +1 (Butter Book). Proof in `docs/library-proof/kr-jeonju.json`. Google Maps shows few or no reviews for most small places in Korea, so most rows could not be confirmed open there and were left out; a pass with Naver Map would confirm more.
+
+- **24 Nov 2026, Jeonju, Kakao Map pass**: +7 (Hyundaiok (two branches), Ibadom Gamjatang; Innovation City Cultural Centre, MukiMuki, Nutty Child World, Namanui Kids Café), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-jeonju.json`.
