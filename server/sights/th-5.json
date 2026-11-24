@@ -260,24 +260,6 @@
           "q": "Wat Ban Don Nang Yai Museum, Choeng Noen, Mueang Rayong",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/wat-ban-don-shadow-play-museum/"
-        },
-        {
-          "name": { "en": "Rayong Aquarium", "th": "สถานแสดงพันธุ์สัตว์น้ำระยอง" },
-          "local": "สถานแสดงพันธุ์สัตว์น้ำระยอง",
-          "kind": "aquarium",
-          "area": { "en": "Rayong", "th": "ระยอง" },
-          "what": { "en": "Many kinds of fish and sea animals, with a walk through a fish tunnel and a look at fishing work.", "th": "ชมปลาและสัตว์ทะเลหลายชนิด เดินใต้อุโมงค์ปลา และดูงานประมง" },
-          "why": { "en": "Children learn about many fish species while they walk under the fish tunnel.", "th": "เด็กๆ ได้เรียนรู้เรื่องปลาหลายสายพันธุ์ ขณะเดินชมใต้อุโมงค์ปลา" },
-          "tip": { "en": "Closed Monday and Tuesday; Wednesday to Friday 10:00–16:00, weekends 10:00–17:00.", "th": "ปิดวันจันทร์และอังคาร พุธถึงศุกร์ 10:00–16:00 เสาร์อาทิตย์ 10:00–17:00" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 1,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "สถานแสดงพันธุ์สัตว์น้ำระยอง, Rayong",
-          "ok": "2026-11",
-          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
         }
       ]
     }

@@ -393,23 +393,6 @@
           "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
         },
         {
-          "name": { "en": "Go Airborne", "th": "โก แอร์บอร์น" },
-          "kind": "ride",
-          "area": { "en": "Lisboeta Macau", "th": "ลิสโบเอตา มาเก๊า" },
-          "what": { "en": "An indoor wind tunnel at Lisboeta Macau, where professional skydivers guide children as they fly.", "th": "อุโมงค์ลมในร่มที่ลิสโบเอตา มาเก๊า มีนักสกายไดเวอร์มืออาชีพคอยพาเด็กบิน" },
-          "why": { "en": "Children defy gravity in a wind tunnel with skydivers to guide them.", "th": "เด็ก ๆ ลอยท้าแรงโน้มถ่วงในอุโมงค์ลมโดยมีนักสกายไดเวอร์ช่วยนำทาง" },
-          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "no",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Go Airborne, Lisboeta Macau, Macau",
-          "ok": "2026-11",
-          "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
-        },
-        {
           "name": { "en": "Future Bright amusement centre", "th": "ศูนย์สนุกฟิวเจอร์ไบรต์" },
           "kind": "play",
           "area": { "en": "Praça Luís de Camões", "th": "ปราซา ลุยส์ เดอ กามอยช์" },

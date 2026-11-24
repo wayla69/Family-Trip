@@ -1100,24 +1100,6 @@
           "src": "https://goturkiye.com/pamukkale/10-vibes-for-pamukkale"
         },
         {
-          "name": { "en": "Halıcı Ahmet Urkay Museum", "th": "พิพิธภัณฑ์ฮาลิจึ อาห์เมต เออร์เคย์" },
-          "local": "Halıcı Ahmet Urkay Müzesi",
-          "kind": "museum",
-          "area": { "en": "Denizli", "th": "เดนิซลี" },
-          "what": { "en": "A museum of about 2,000 objects, from geological finds and ethnography to old coins and manuscripts", "th": "พิพิธภัณฑ์ที่มีราว 2,000 ชิ้น ตั้งแต่ตัวอย่างธรณีวิทยาและชาติพันธุ์วิทยาจนถึงเหรียญเก่าและต้นฉบับ" },
-          "why": { "en": "Indoors and quiet, a short rainy-day stop best for children who like to look at collections", "th": "อยู่ในร่มและเงียบ แวะสั้นๆ วันฝน เหมาะกับเด็กที่ชอบดูของสะสม" },
-          "tip": { "en": "Check the opening hours and ticket price at the door", "th": "เช็กเวลาเปิดและราคาตั๋วที่หน้าพิพิธภัณฑ์" },
-          "ages": [0, 1, 1, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Halıcı Ahmet Urkay Museum, Denizli",
-          "ok": "2026-11",
-          "src": "https://goturkiye.com/pamukkale/10-vibes-for-pamukkale"
-        },
-        {
           "name": { "en": "Denizli Atatürk House and Ethnographic Museum", "th": "บ้านอตาเติร์กและพิพิธภัณฑ์ชาติพันธุ์เดนิซลี" },
           "local": "Denizli Atatürk Evi ve Etnografya Müzesi",
           "kind": "museum",
