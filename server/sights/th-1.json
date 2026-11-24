@@ -1196,6 +1196,125 @@
           },
           "q": "อุทยานศิลปวัฒนธรรมแม่ฟ้าหลวง, เชียงราย",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.chiangraitimes.com/chiang-rai-guide/family-activities-chiang-rai/",
+          "name": {
+            "th": "สิงห์ปาร์ค เชียงราย",
+            "en": "Singha Park Chiang Rai"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ตำบลแม่กรณ์ อำเภอเมืองเชียงราย",
+            "en": "Mae Kon, Mueang Chiang Rai"
+          },
+          "what": {
+            "th": "สวนบรรยากาศฟาร์ม มีสนามหญ้ากว้างและไร่ชา",
+            "en": "A farm-like park with wide green lawns and tea fields"
+          },
+          "why": {
+            "th": "มีที่กว้างให้เด็กวิ่งเล่น เข้าฟรี",
+            "en": "Open space for children to run; free entry"
+          },
+          "tip": {
+            "th": "รถรางชมสวนและมุมสัตว์เสียค่าใช้จ่ายเพิ่ม",
+            "en": "The tram ride and animal corner cost extra"
+          },
+          "q": "Singha Park Chiang Rai, Mae Kon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.chiangraitimes.com/chiang-rai-guide/family-activities-chiang-rai/",
+          "name": {
+            "th": "วัดร่องเสือเต้น (วัดสีน้ำเงิน)",
+            "en": "Wat Rong Suea Ten (Blue Temple)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตำบลริมกก อำเภอเมืองเชียงราย",
+            "en": "Rim Kok, Mueang Chiang Rai"
+          },
+          "what": {
+            "th": "วัดสีน้ำเงิน ผนังสีน้ำเงินสด ลวดลายทอง และพระพุทธรูปสีขาวองค์ใหญ่",
+            "en": "The Blue Temple: bright blue walls, gold decoration and a big white Buddha"
+          },
+          "why": {
+            "th": "แวะชมได้ไม่นานแต่ประทับใจ ปกติเข้าฟรี",
+            "en": "An impressive stop that doesn't take long; entry is usually free"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ ปิดไหล่และเข่า",
+            "en": "Cover shoulders and knees"
+          },
+          "q": "Wat Rong Suea Ten, Rim Kok, Chiang Rai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.chiangraitimes.com/chiang-rai-guide/family-activities-chiang-rai/",
+          "name": {
+            "th": "ไร่ชาฉุยฟง",
+            "en": "Choui Fong Tea Plantation"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ตำบลศรีค้ำ อำเภอแม่จัน เชียงราย",
+            "en": "Si Kham, Mae Chan, Chiang Rai"
+          },
+          "what": {
+            "th": "วิวไร่ชาเป็นแนว พร้อมคาเฟ่",
+            "en": "Rows of tea to look across, with a café"
+          },
+          "why": {
+            "th": "ชมวิวได้โดยไม่ต้องเดินไกล พ่อแม่แวะคาเฟ่ได้",
+            "en": "Views without a hard walk; parents take a café break"
+          },
+          "q": "Choui Fong Tea Plantation, Mae Chan, Chiang Rai",
+          "ok": "2026-11"
         }
       ]
     }
