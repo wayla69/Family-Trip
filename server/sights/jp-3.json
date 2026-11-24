@@ -1468,6 +1468,88 @@
           },
           "q": "Yurayura Kosugi Resort, Otohime, Aso",
           "ok": "2026-11"
+        },
+        {
+          "local": "こども本の森 熊本",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "req",
+          "src": "https://www.asoview.com/note/5491/",
+          "name": {
+            "th": "ห้องสมุดเด็ก ป่าหนังสือคุมาโมโตะ",
+            "en": "Children's Book Forest Kumamoto"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อิซุมิ เขตชูโอ ใกล้สวนซุยเซนจิ คุมาโมโตะ",
+            "en": "Izumi, Chuo-ku, by Suizenji Garden, Kumamoto"
+          },
+          "what": {
+            "th": "ห้องสมุดเด็กออกแบบโดยทาดาโอะ อันโดะ มีมุมอ่านเงียบและรอบเล่านิทาน",
+            "en": "A children's library designed by Tadao Ando, with a quiet reading space and story time"
+          },
+          "why": {
+            "th": "มีกิจกรรมเล่านิทาน เวิร์กชอปตามฤดูกาล และที่เปลี่ยนผ้าอ้อม",
+            "en": "Story-time events, seasonal workshops and a nappy-changing table"
+          },
+          "tip": {
+            "th": "ปิดวันอังคารและศุกร์สุดท้ายของเดือน รอบ 9:30–17:00 ต้องจองก่อน",
+            "en": "Closed Tuesdays and the last Friday of the month; sessions 9:30–17:00, book first"
+          },
+          "q": "こども本の森 熊本, 出水2-5-1, 熊本市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ニンジャ☆パーク菊陽",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5491/",
+          "name": {
+            "th": "นินจาพาร์ก คิคุโย",
+            "en": "Ninja Park Kikuyo"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คิคุโย ติดเมืองคุมาโมโตะ",
+            "en": "Kikuyo, next to Kumamoto city"
+          },
+          "what": {
+            "th": "ด่านนินจา พาร์กัวร์ แทรมโพลีน ปีนผนัง และโซนเด็ก",
+            "en": "Ninja-style athletics: parkour, trampolines, bouldering and a kids' area"
+          },
+          "why": {
+            "th": "โซนเด็กปลอดภัย มีด่านของตัวเอง",
+            "en": "A safe kids' area with its own obstacle course"
+          },
+          "tip": {
+            "th": "ครั้งแรกมีค่าลงทะเบียน ¥500",
+            "en": "First visit: ¥500 registration fee"
+          },
+          "q": "ニンジャ☆パーク菊陽, 菊陽町",
+          "ok": "2026-11"
         }
       ]
     },

@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Kumamoto** (docs/library-briefs batch-48): +2 (Gyoza-ya Ni-no-Ni Chuo, Kikyo-ya). Proof in `docs/library-proof/jp-kumamoto.json`.
+
+- **24 Nov 2026, Kumamoto** (docs/library-briefs batch-73, round 3): +2 (Daimonji, Buffet Restaurant Ginnan). Proof in `docs/library-proof/jp-kumamoto.json`.
