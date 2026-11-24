@@ -1809,6 +1809,207 @@
           },
           "q": "Zenkoji Temple, Motoyoshicho, Nagano",
           "ok": "2026-11"
+        },
+        {
+          "local": "ながのこども館 ながノビ！",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็กก่อนวัยเรียนเข้าฟรี",
+            "en": "Free under school age"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/83575",
+          "name": {
+            "th": "บ้านเด็กนากาโนะ นากะโนบิ",
+            "en": "Nagano Kids' House \"Naganobi!\""
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุเอมัตสึ ข้างสวนโจยามะ นากาโนะ",
+            "en": "Uematsu, next to Jōyama Park, Nagano"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มในอาคารศูนย์วิทยาศาสตร์เยาวชนเดิม มีเนินสีขาวใหญ่และบ่อบอล",
+            "en": "An indoor play centre in the old youth science centre, with a big white hill and a ball pool"
+          },
+          "why": {
+            "th": "เล่นได้แม้ฝนตกหรือหน้าหนาว มีโซนเด็กเล็กและห้องให้นม",
+            "en": "Play in rain or winter, with a baby area and a nursing room"
+          },
+          "tip": {
+            "th": "9:30–17:00 จอดรถสวนโจยามะฟรี 2 ชั่วโมงเมื่อประทับตรา",
+            "en": "9:30–17:00; parking at Jōyama Park free for 2 hours with validation"
+          },
+          "q": "ながのこども館 ながノビ, 上松2-4-5, 長野市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "and LIFE",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่และเด็กต่ำกว่า 1 ขวบฟรี · เด็กประถมลงมา ¥500",
+            "en": "Adults and under-1s free · primary age and under ¥500"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6257/",
+          "name": {
+            "th": "มุมเล่นไม้ที่แอนด์ไลฟ์",
+            "en": "Wooden play space at and LIFE"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชินเมอิ นากาโนะ",
+            "en": "Shinmei, Nagano"
+          },
+          "what": {
+            "th": "มุมเล่นไม้ มีของเล่นไม้ บ่อบอล และกิจกรรมพ่อแม่ลูก",
+            "en": "A wood-play space with wooden toys, a ball pool and parent-and-child events"
+          },
+          "why": {
+            "th": "มีของเล่นไม้และบ่อบอลสำหรับเด็กตั้งแต่ 0 ขวบ",
+            "en": "Wooden toys and a ball pool from age 0"
+          },
+          "tip": {
+            "th": "ปิดวันพุธ เปิด 10:00–12:00 และ 13:00–15:00",
+            "en": "Closed Wednesdays; 10:00–12:00 and 13:00–15:00"
+          },
+          "q": "ファミリーモール and LIFE, 神明7, 長野市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ながの環境エネルギーセンター",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6257/",
+          "name": {
+            "th": "ศูนย์พลังงานสิ่งแวดล้อมนากาโนะ",
+            "en": "Nagano Environment Energy Centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มัตสึโอกะ นากาโนะ",
+            "en": "Matsuoka, Nagano"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้การจัดการขยะและรีไซเคิล มีชมโรงงาน",
+            "en": "A centre on how rubbish is handled and recycled, with a plant tour"
+          },
+          "why": {
+            "th": "เรียนแยกขยะแบบเกม ไม่ต้องจองล่วงหน้า",
+            "en": "Learn sorting rubbish as a game, no booking needed"
+          },
+          "tip": {
+            "th": "วันธรรมดา 9:00–16:30 ปิดเสาร์อาทิตย์และวันหยุด",
+            "en": "Weekdays 9:00–16:30; closed weekends and holidays"
+          },
+          "q": "ながの環境エネルギーセンター, 松岡2-27-1, 長野市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "サンマリーンながの",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ มัธยมปลายขึ้นไป ¥810 · เด็ก ¥400 (กลางวันวันธรรมดา)",
+            "en": "≈ ¥810 high school and up · ¥400 children (weekday daytime)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6257/",
+          "name": {
+            "th": "ซันมารีนนากาโนะ สระในร่ม",
+            "en": "Sun Marine Nagano (indoor pool)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มัตสึโอกะ นากาโนะ",
+            "en": "Matsuoka, Nagano"
+          },
+          "what": {
+            "th": "สระว่ายน้ำในร่ม มีสไลเดอร์น้ำ สระน้ำไหล และสระคลื่น",
+            "en": "An indoor leisure pool with water slides, a lazy river and a wave pool"
+          },
+          "why": {
+            "th": "เล่นน้ำได้ทุกสภาพอากาศ",
+            "en": "Water play whatever the weather"
+          },
+          "q": "サンマリーンながの, 松岡2-26-7, 長野市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เข้าฟรี (กิจกรรมเสียเงิน)",
+            "en": "Free entry (the workshop costs extra)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6257/",
+          "name": {
+            "th": "โอยากิฟาร์ม บาย อิโรฮาโดะ",
+            "en": "OYAKI FARM by Irohado"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชิโนโนอิ นากาโนะ",
+            "en": "Shinonoi, Nagano"
+          },
+          "what": {
+            "th": "โรงงานขนมโอยากิให้ชม และกิจกรรมทำโอยากิเอง",
+            "en": "An oyaki dumpling factory to watch, with hands-on oyaki making"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ทำโอยากิและกินตอนร้อนๆ",
+            "en": "Children make oyaki and eat them fresh"
+          },
+          "tip": {
+            "th": "9:30–18:00 ปิดบางวัน",
+            "en": "9:30–18:00, closed some days"
+          },
+          "q": "OYAKI FARM BY IROHADO, 篠ノ井杵淵7-1, 長野市",
+          "ok": "2026-11"
         }
       ]
     },

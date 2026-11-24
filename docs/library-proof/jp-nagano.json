@@ -46,6 +46,41 @@
       "src": "https://www.go-nagano.net/en/trip-idea/zenkoji-temple-travel-guide",
       "date": "2025-12",
       "map": "Google Maps 'วัดเซ็นโคจิ' (Zenkoji), 27,745 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Nagano Kids' House \"Naganobi!\"",
+      "page_name": "ながのこども館 ながノビ！",
+      "src": "https://www.nap-camp.com/mag/83575",
+      "date": "2026-04",
+      "map": "Google Maps 'Youth Science Center' (its old name, at 上松2-4-5), newest review shown 3 days ago"
+    },
+    {
+      "name": "Wooden play space at and LIFE",
+      "page_name": "and LIFE",
+      "src": "https://www.asoview.com/note/6257/",
+      "date": "2025-12",
+      "map": "Google Maps 'ファミリーモール and LIFE' (神明7), newest review shown 5 months ago"
+    },
+    {
+      "name": "Nagano Environment Energy Centre",
+      "page_name": "ながの環境エネルギーセンター",
+      "src": "https://www.asoview.com/note/6257/",
+      "date": "2025-12",
+      "map": "Google Maps 'Nagano Environment Energy Centre' (松岡2-27-1), newest review shown 3 months ago"
+    },
+    {
+      "name": "Sun Marine Nagano (indoor pool)",
+      "page_name": "サンマリーンながの",
+      "src": "https://www.asoview.com/note/6257/",
+      "date": "2025-12",
+      "map": "Google Maps 'Sun Marine Nagano' (松岡2-26-7), newest review shown a week ago"
+    },
+    {
+      "name": "OYAKI FARM by Irohado",
+      "page_name": "OYAKI FARM BY IROHADO",
+      "src": "https://www.asoview.com/note/6257/",
+      "date": "2025-12",
+      "map": "Google Maps 'OYAKI FARM BY IROHADO' (篠ノ井杵淵7-1), newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -60,7 +95,20 @@
     {
       "name": "Hikariya Higashi",
       "why": "a formal kaiseki restaurant; the page says nothing about children"
+    },
+    {
+      "name": "Five Azumino vegetable-lunch restaurants (rurubu)",
+      "why": "a vegetable-lunch list with nothing about children"
+    },
+    {
+      "name": "ザキッズ 長野松本シェーナ店",
+      "why": "seen only in a search summary"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from rurubu (Jun 2025), nap-camp (Apr 2026) and asoview (Dec 2025), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
