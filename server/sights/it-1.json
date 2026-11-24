@@ -2567,6 +2567,47 @@
           },
           "q": "Bagni Misteriosi, Milan",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "name": {
+            "th": "กัสชินาบิบลิโอเตกา สวนลัมโบร",
+            "en": "Cascina Biblioteca (Parco Lambro)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "สวนลัมโบร ชิมีอาโน มิลาน",
+            "en": "Parco Lambro, Cimiano, Milan"
+          },
+          "what": {
+            "th": "ร้านอาหารที่มีฟาร์มเล็ก ๆ ในสวนลัมโบร",
+            "en": "A trattoria with a small farm in Parco Lambro"
+          },
+          "why": {
+            "th": "มีแพะ ลา และไก่ให้ดู และมีเมนูเด็ก",
+            "en": "Goats, donkeys and hens to see, and a children's menu"
+          },
+          "tip": {
+            "th": "วันหยุดเปิดทั้งกลางวันและเย็น วันธรรมดาส่วนใหญ่เปิดแค่กลางวัน",
+            "en": "Lunch and dinner at weekends; mostly lunch on weekdays"
+          },
+          "q": "Cascina Biblioteca, Parco Lambro, Milano",
+          "ok": "2026-11"
         }
     ]
     },
