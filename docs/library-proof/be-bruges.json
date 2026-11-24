@@ -1,82 +1,48 @@
 {
   "town": "be-bruges",
-  "rounds": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows from Mamabaas (Jul 2025) and official sites (Van der Valk, LAGO, STAM, Harry Malter); 5 passed library-check.cjs, 4 went in",
+  "added": [
     {
-      "town": "be-bruges",
-      "kind": "eats",
-      "checked": "2026-11",
-      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-      "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
-      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-      "confirmed": [
-        {
-          "name": "Breydel De Coninc",
-          "src": "https://www.google.com/maps/place/Restaurant+Breydel+De+Coninc/@51.2084958,3.2261354,17z",
-          "page_name": "Restaurant Breydel De Coninc",
-          "evidence": "Google Maps: restaurant, 4.1★, Breidelstraat 24, 8000 Brugge (665G+9F), 'Closed · Opens 12 PM', bookable on TheFork, site restaurant-breydel.be; nothing says closed",
-          "ok": "2026-11"
-        }
-      ],
-      "kept_without_ok": [],
-      "removed": [
-        {
-          "name": "Chez Vincent",
-          "src": "https://www.google.com/maps/place/Chez+Vincent/@51.2060254,3.2216752,17z",
-          "reason": "Google Maps: 'Chez Vincent', Sint-Salvatorskerkhof 1, 8000 Brugge (664C+CM) — 'Permanently closed'"
-        }
-      ]
+      "name": "Restaurant Cocotte (Van der Valk Hotel Gent)",
+      "page_name": "Restaurant Cocotte",
+      "src": "https://www.restaurantcocottegent.be/en/kids/",
+      "date": "official",
+      "map": "Google Maps 'Restaurant Cocotte' (Akkerhage 10), newest review shown 2 weeks ago"
     },
     {
-      "town": "be-bruges",
-      "kind": "eats + sights",
-      "checked": "2026-11-23",
-      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-      "agents": "one Haiku agent; 7 rows offered, 7 passed library-check.cjs, 4 went in",
-      "added": [
-        {
-          "name": "Jacobin",
-          "page_name": "Jacobin",
-          "src": "https://lefooding.com/nl/fooding-kids/les-enfants-au-restaurant-3",
-          "date": "2026-05",
-          "map": "Google Maps 'JACOBIN', 127 reviews, newest '4 days ago'"
-        },
-        {
-          "name": "Volkskundemuseum (Folklore Museum)",
-          "page_name": "Volkskundemuseum",
-          "src": "https://www.museabrugge.be/en/visit/kids",
-          "date": "2025-11",
-          "map": "Google Maps 791 reviews, newest '8 hours ago'"
-        },
-        {
-          "name": "Gruuthusemuseum",
-          "page_name": "Gruuthusemuseum",
-          "src": "https://www.museabrugge.be/en/visit/kids",
-          "date": "2025-11",
-          "map": "Google Maps 1,425 reviews, newest '4 days ago'"
-        },
-        {
-          "name": "Sint-Janshospitaal",
-          "page_name": "Museum Sint-Janshospitaal",
-          "src": "https://www.museabrugge.be/en/visit/kids",
-          "date": "2025-11",
-          "map": "Google Maps 'Saint John’s Hospital', 2,557 reviews, newest '8 hours ago'"
-        }
-      ],
-      "left_out": [
-        {
-          "name": "Pasta Presto",
-          "why": "the map shows 'Pasta la Vista' at that street, newest review a year old"
-        },
-        {
-          "name": "Frituur Martin",
-          "why": "the map has no place of that name at Eiermarkt"
-        },
-        {
-          "name": "Lumina Mundi",
-          "why": "the map's match is Lumina Domestica, a different museum"
-        }
-      ],
-      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+      "name": "LAGO Bistro (Gent Rozebroeken)",
+      "page_name": "LAGO Gent",
+      "src": "https://www.lago.be/nl/gent/eten-drinken/speeltuinen",
+      "date": "official",
+      "map": "Google Maps 'LAGO Gent Rozebroeken' (Victor Braeckmanlaan 180/B), newest review shown 6 hours ago"
+    },
+    {
+      "name": "STAM children's trail",
+      "page_name": "Children’s trail through 'The story of Ghent'",
+      "src": "https://stamgent.be/en/events/kinderspoor-door-het-verhaal-van-gent",
+      "date": "official",
+      "map": "Google Maps 'STAM - Ghent City Museum' (Godshuizenlaan 2), newest review shown a day ago"
+    },
+    {
+      "name": "Harry Malter family park",
+      "page_name": "Familiepark Harry Malter",
+      "src": "https://www.harrymalter.be/",
+      "date": "official",
+      "map": "Google Maps 'Harry Malter Family Park' (Bosheidestraat 15, Destelbergen), newest review shown 2 weeks ago"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "Zelda & Zorro",
+      "why": "the page gives no district or street"
+    },
+    {
+      "name": "'t Fonteintje",
+      "why": "the page has no date"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
