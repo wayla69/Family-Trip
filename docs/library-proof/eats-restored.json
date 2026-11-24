@@ -1,0 +1,22 @@
+{
+  "kind": "eats",
+  "checked": "2026-11",
+  "how": "Put back at the owner's request (24 Nov 2026: \"Bring back all\"): the 14 European places removed in round 2 only because Google Maps showed \"Temporarily closed\" with no reason or reopening date found (they may be a winter break), and Mani Sithu Market in Bagan. Each row is restored as it was before the removal, without its \"ok\" month: Maps showed it closed on 2026-11-24, so the card says the place is not checked and to check before going.",
+  "rows": [
+    { "file": "server/eats/be-1.json", "town": "be-bruges", "name": "Da Vinci", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', no reason or date." },
+    { "file": "server/eats/ch-1.json", "town": "ch-zurich", "name": "Fischer's Fritz", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', reduced winter hours elsewhere." },
+    { "file": "server/eats/cz-1.json", "town": "cz-krumlov", "name": "Restaurace Konvice", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', no reason or date." },
+    { "file": "server/eats/de-1.json", "town": "p-neuschwanstein", "name": "Schlossrestaurant Neuschwanstein", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', no reason or date." },
+    { "file": "server/eats/de-2.json", "town": "de-hamburg", "name": "Luicella's Ice Cream", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed'; an ice-cream shop, may be a winter break." },
+    { "file": "server/eats/fr-1.json", "town": "fr-montstmichel", "name": "Le Logis Sainte-Catherine", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', no reason or date." },
+    { "file": "server/eats/fr-1.json", "town": "fr-nice", "name": "Chez René Socca", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', no reason or date." },
+    { "file": "server/eats/gr-1.json", "town": "gr-santorini", "name": "To Psaraki", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed'; an off-season closure is likely on Santorini." },
+    { "file": "server/eats/gr-1.json", "town": "gr-santorini", "name": "Lolita's Gelato", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed'; an off-season closure is likely on Santorini." },
+    { "file": "server/eats/gr-1.json", "town": "gr-santorini", "name": "Anemomilos Traditional Greek Taverna", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed'; an off-season closure is likely on Santorini." },
+    { "file": "server/eats/hr-1.json", "town": "hr-dubrovnik", "name": "Pizzeria Mea Culpa", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed'; most Old Town places close for winter." },
+    { "file": "server/eats/hr-1.json", "town": "hr-dubrovnik", "name": "Konoba Dubrava", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', no reason or date." },
+    { "file": "server/eats/hr-1.json", "town": "hr-dubrovnik", "name": "Pizzeria Tabasco", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed', no reason or date." },
+    { "file": "server/eats/hr-1.json", "town": "hr-dubrovnik", "name": "Moby Dick", "verdict": "restored", "evidence": "Removed in round 2: Maps 'Temporarily closed'; most Old Town places close for winter." },
+    { "file": "server/eats/mm-1.json", "town": "mm-bagan", "name": "Mani Sithu Market", "verdict": "restored", "evidence": "Removed in round 1: Maps showed 'Permanently closed', while web guides still list the market. Restored at the owner's request, unchecked." }
+  ]
+}
