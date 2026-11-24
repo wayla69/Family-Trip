@@ -11,6 +11,20 @@
       "src": "https://www.familycantravel.com/ayutthaya-thailand-with-kids/",
       "date": "2026-10",
       "map": "Google Maps 'วัดไชยวัฒนาราม', 22,110 ratings"
+    },
+    {
+      "name": "Grand Chaopraya",
+      "page_name": "Grand Chao Praya",
+      "src": "https://grandchaopraya.com/en/blog/2/family-friendly/",
+      "date": "official",
+      "map": "Google Maps 'Grand Chaopraya' (42/1 Ban Run), newest review shown an hour ago"
+    },
+    {
+      "name": "The Summer House",
+      "page_name": "The Summer House Ayutthaya",
+      "src": "https://discoverayutthaya.com/where-to-eat-in-ayutthaya/",
+      "date": "2025-12",
+      "map": "Google Maps 'The Summer House' (71/1, Phra Nakhon Si Ayutthaya), newest review shown 12 hours ago"
     }
   ],
   "left_out": [
@@ -21,7 +35,24 @@
     {
       "name": "two places to eat",
       "why": "their Wongnai list is dated 2022"
+    },
+    {
+      "name": "Pa Porn noodles, Rak Na",
+      "why": "nothing about children on the page"
+    },
+    {
+      "name": "River Kwai boat ride",
+      "why": "boatmen at the bridge, not a place"
+    },
+    {
+      "name": "Kanchanaburi War Cemetery, Wat Mahathat, Wat Lokayasutharam",
+      "why": "nothing about children on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 8 rows from Discover Ayutthaya (Dec 2025), Travelynn Family (May 2026) and Grand Chaopraya (official), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
