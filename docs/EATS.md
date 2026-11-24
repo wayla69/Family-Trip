@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, New York** (docs/library-briefs batch-45): +12 (Cowgirl, Brooklyn Farmacy, Super Action Burger, Chez Nick, Pig Beach, Montague Diner, Al Badawi, Noodle Pudding, River Deli, Vineapple, Grand Canyon, Dino). Proof in `docs/library-proof/us-newyork.json`.
+
+- **24 Nov 2026, New York** (docs/library-briefs batch-58, round 3): +2 (Community Food & Juice, Friend of a Farmer). Proof in `docs/library-proof/us-newyork.json`.

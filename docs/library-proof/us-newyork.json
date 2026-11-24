@@ -137,6 +137,62 @@
       "src": "https://www.timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
       "date": "2025-04",
       "map": "Google Maps 'National Museum of Mathematics', 3,411 reviews, newest shown 10 days ago"
+    },
+    {
+      "name": "Community Food & Juice",
+      "page_name": "Community Food & Juice",
+      "src": "https://www.timeout.com/new-york-kids/restaurants/best-brunch-nyc-brunch-for-kids",
+      "date": "2025-09",
+      "map": "Google Maps 'Community Food & Juice', newest review shown 2 months ago"
+    },
+    {
+      "name": "Friend of a Farmer (Gramercy)",
+      "page_name": "Friend of a Farmer",
+      "src": "https://www.timeout.com/new-york-kids/restaurants/best-brunch-nyc-brunch-for-kids",
+      "date": "2025-09",
+      "map": "Google Maps 'Friend Of A Farmer' (77 Irving Pl), newest review shown a day ago"
+    },
+    {
+      "name": "Bronx Children's Museum",
+      "page_name": "The Bronx Children’s Museum",
+      "src": "https://timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+      "date": "2025-04",
+      "map": "Google Maps 'Bronx Children's Museum', newest review shown a month ago"
+    },
+    {
+      "name": "Museum of Illusions New York",
+      "page_name": "Museum of Illusions",
+      "src": "https://timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+      "date": "2025-04",
+      "map": "Google Maps 'Museum of Illusions New York', newest review shown 3 weeks ago"
+    },
+    {
+      "name": "MoMA (Museum of Modern Art)",
+      "page_name": "MoMA",
+      "src": "https://timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+      "date": "2025-04",
+      "map": "Google Maps 'The Museum of Modern Art', newest review shown 2 days ago"
+    },
+    {
+      "name": "Complete Playground",
+      "page_name": "Complete Playground",
+      "src": "https://mommypoppins.com/new-york-city-kids/restaurants/5-brooklyn-cafes-with-dedicated-child-play-areas",
+      "date": "2025-04",
+      "map": "Google Maps 'Complete Playground', newest review shown a month ago"
+    },
+    {
+      "name": "Kid's Play World (Middle Village)",
+      "page_name": "Kid's Play World",
+      "src": "https://mommypoppins.com/new-york-city-kids/restaurants/5-brooklyn-cafes-with-dedicated-child-play-areas",
+      "date": "2025-04",
+      "map": "Google Maps 'Kid's Play World', newest review shown a week ago"
+    },
+    {
+      "name": "Space Club (Fort Greene)",
+      "page_name": "Space Club",
+      "src": "https://mommypoppins.com/new-york-city-kids/restaurants/5-brooklyn-cafes-with-dedicated-child-play-areas",
+      "date": "2025-04",
+      "map": "Google Maps 'Space Club Fort Greene', newest review shown 24 days ago"
     }
   ],
   "left_out": [
@@ -163,7 +219,28 @@
     {
       "name": "The Ability Center NYC",
       "why": "a therapy gym, not a place to visit"
+    },
+    {
+      "name": "Good Enough to Eat, PLG Coffee House and Tavern",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Sugar Hill Children's Museum of Art and Storytelling",
+      "why": "temporarily closed on the map"
+    },
+    {
+      "name": "Fairytale Island",
+      "why": "the map shows a different, temporarily closed place"
+    },
+    {
+      "name": "Sweet Chick",
+      "why": "a chain; the page names three branches"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 13 rows from Time Out New York (2025) and Mommy Poppins (2025–2026), all passed library-check.cjs, 8 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

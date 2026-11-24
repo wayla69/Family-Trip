@@ -947,6 +947,228 @@
           },
           "q": "National Museum of Mathematics, 635 6th Avenue, New York",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กบรองซ์",
+            "en": "Bronx Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเอ็กซ์ทีเรียร์ บรองซ์ นิวยอร์ก",
+            "en": "Exterior Street, Bronx, New York"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กที่มีเรือ ประตูน้ำ สะพาน และบ้านบีเวอร์ขนาดเด็ก",
+            "en": "A children's museum with boats, locks and bridges and a child-sized beaver lodge"
+          },
+          "why": {
+            "th": "ทำมาสำหรับเด็กเล็ก มีโซนเล่นนุ่ม ๆ และกล้องจุลทรรศน์",
+            "en": "Made for the youngest, with a soft play area and a microscope"
+          },
+          "q": "Bronx Children's Museum, 725 Exterior Street, Bronx, NY",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา นิวยอร์ก",
+            "en": "Museum of Illusions New York"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนสายที่ 8 เวสต์วิลเลจ นิวยอร์ก",
+            "en": "8th Avenue, West Village, New York"
+          },
+          "what": {
+            "th": "ภาพลวงตาให้ลองเล่นกว่า 70 ชิ้น เรื่องวิทยาศาสตร์และคณิตศาสตร์",
+            "en": "Over 70 hands-on illusions about science and maths"
+          },
+          "why": {
+            "th": "ภาพลวงตาที่ทำให้ทั้งเด็กและผู้ใหญ่ต้องมองซ้ำ",
+            "en": "Illusions that make children and grown-ups look twice"
+          },
+          "q": "Museum of Illusions, 77 8th Avenue, New York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "The Museum of Modern Art",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ $17–30 · ต่ำกว่า 16 ปีฟรี",
+            "en": "≈ $17–30 adults · under-16s free"
+          },
+          "book": "none",
+          "src": "https://timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่ (MoMA)",
+            "en": "MoMA (Museum of Modern Art)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเวสต์ 53 มิดทาวน์ นิวยอร์ก",
+            "en": "West 53rd Street, Midtown, New York"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่ มีสตูดิโอศิลปะสำหรับครอบครัวที่ชั้น 1",
+            "en": "The modern art museum, with a drop-in family art studio on the first floor"
+          },
+          "why": {
+            "th": "ห้องศิลปะครอบครัวมีหนังสือและของเล่น มองเห็นสวน",
+            "en": "The family art lab has books and toys and looks onto the garden"
+          },
+          "q": "The Museum of Modern Art, 11 West 53rd Street, New York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/restaurants/5-brooklyn-cafes-with-dedicated-child-play-areas",
+          "name": {
+            "th": "คอมพลีตเพลย์กราวด์",
+            "en": "Complete Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ย่านไฟแนนเชียลดิสตริกต์ นิวยอร์ก",
+            "en": "Financial District, New York"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ มีรอบเล่นอิสระ",
+            "en": "A big indoor playground with open play sessions"
+          },
+          "why": {
+            "th": "ออกแบบให้เด็กทุกความสามารถและครอบครัว",
+            "en": "Made for children of all abilities and their families"
+          },
+          "q": "Complete Playground, Financial District, New York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/restaurants/5-brooklyn-cafes-with-dedicated-child-play-areas",
+          "name": {
+            "th": "คิดส์เพลย์เวิลด์ มิดเดิลวิลเลจ",
+            "en": "Kid's Play World (Middle Village)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิดเดิลวิลเลจ ควีนส์ นิวยอร์ก",
+            "en": "Middle Village, Queens, New York"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มธีมรอบโลก แต่ละโซนเป็นส่วนต่าง ๆ ของโลก",
+            "en": "An indoor play space themed around the world, an area for each region"
+          },
+          "why": {
+            "th": "เด็กได้เที่ยวรอบโลก ผู้ปกครองนั่งกินของว่าง",
+            "en": "Children travel round the globe while parents have a snack"
+          },
+          "q": "Kid's Play World, Middle Village, Queens, NY",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/restaurants/5-brooklyn-cafes-with-dedicated-child-play-areas",
+          "name": {
+            "th": "สเปซคลับ ฟอร์ตกรีน",
+            "en": "Space Club (Fort Greene)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟอร์ตกรีน บรูคลิน นิวยอร์ก",
+            "en": "Fort Greene, Brooklyn, New York"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มกว้าง ๆ มีบ่อเล่นสัมผัสขนาดใหญ่",
+            "en": "An indoor play space with room to explore and big sensory pools"
+          },
+          "why": {
+            "th": "การเล่นด้วยประสาทสัมผัสสำหรับเด็กเล็ก",
+            "en": "Sensory play for small children"
+          },
+          "q": "Space Club Fort Greene, Brooklyn, NY",
+          "ok": "2026-11"
         }
       ]
     },
