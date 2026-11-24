@@ -2431,6 +2431,80 @@
           "q": "Higashi-Hirao Park (Otani Plaza), Higashi-ku, Fukuoka",
           "ok": "2026-11",
           "src": "https://www.jalan.net/news/article/388683/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/20881/",
+          "name": {
+            "th": "พิพิธภัณฑ์แห่งชาติคิวชู",
+            "en": "Kyushu National Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดาไซฟุ",
+            "en": "Dazaifu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แห่งชาติแห่งที่ 4 ของญี่ปุ่น เปิดปี 2005 เล่าเรื่องการติดต่อระหว่างญี่ปุ่นกับเอเชีย",
+            "en": "Japan's fourth national museum, opened in 2005, on Japan's exchange with Asia"
+          },
+          "why": {
+            "th": "แวะในร่มได้ทั้งวันเมื่อไปดาไซฟุ",
+            "en": "A big indoor stop on a day at Dazaifu"
+          },
+          "q": "Kyushu National Museum, Dazaifu, Fukuoka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/20881/",
+          "name": {
+            "th": "สวนสนุกดาไซฟุ",
+            "en": "Dazaifu Amusement Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ศาลเจ้าดาไซฟุเท็มมังงู ดาไซฟุ",
+            "en": "Dazaifu Tenmangu Shrine, Dazaifu"
+          },
+          "what": {
+            "th": "สวนสนุกในบริเวณศาลเจ้าดาไซฟุเท็มมังงู มีเครื่องเล่น 28 อย่าง",
+            "en": "An amusement park in the grounds of Dazaifu Tenmangu, with 28 rides"
+          },
+          "why": {
+            "th": "เครื่องเล่นที่เด็กเล็กเล่นได้อย่างปลอดภัย มีห้องให้นมและที่พัก",
+            "en": "Rides even young children can enjoy safely, a nursing room and rest areas"
+          },
+          "q": "Dazaifu Amusement Park, Dazaifu, Fukuoka",
+          "ok": "2026-11"
         }
       ]
     }

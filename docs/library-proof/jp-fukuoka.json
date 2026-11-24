@@ -1,0 +1,34 @@
+{
+  "town": "jp-fukuoka",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from Cities Insider (Apr 2026) and GOOD LUCK TRIP (Oct 2025), all passed library-check.cjs, 2 went in",
+  "added": [
+    {
+      "name": "Kyushu National Museum",
+      "page_name": "Kyushu National Museum",
+      "src": "https://www.gltjp.com/en/article/item/20881/",
+      "date": "2025-10",
+      "map": "Google Maps 'พิพิธภัณฑสถานแห่งชาติคิวชู' (Kyushu National Museum), 10,460 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Dazaifu Amusement Park",
+      "page_name": "Dazaifu Amusement Park",
+      "src": "https://www.gltjp.com/en/article/item/20881/",
+      "date": "2025-10",
+      "map": "Google Maps 'Dazaifu Amusement Park', 1,086 reviews, newest shown 8 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Hakata Issou",
+      "why": "a ramen chain; the page names no branch"
+    },
+    {
+      "name": "The Museum of Nature and Human History, TOTO Museum",
+      "why": "in Kitakyushu, outside the town"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
