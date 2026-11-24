@@ -2530,6 +2530,154 @@
           "q": "美濃が原森林公園, Nikko, Tochigi",
           "ok": "2026-11",
           "src": "https://report.iko-yo.net/articles/13553"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "name": {
+            "th": "วัดรินโนจิ",
+            "en": "Rinnoji Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ซันไน เดินขึ้นเนิน 10 นาทีจากสะพานชินเกียว นิกโก้",
+            "en": "Sannai, 10 min uphill from Shinkyo Bridge, Nikko"
+          },
+          "what": {
+            "th": "วัดระหว่างทางขึ้นไปศาลเจ้าโทโชกุ",
+            "en": "A temple on the way up to the Toshogu shrine"
+          },
+          "why": {
+            "th": "พระพุทธรูปทองสามองค์ที่เด็กโต (8–12 ปี) จำได้",
+            "en": "Three golden Buddhas that older children (8–12) remember"
+          },
+          "q": "Rinnoji Temple, Sannai, Nikko",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "name": {
+            "th": "ศาลเจ้าฟุตาระซัง",
+            "en": "Futarasan Shrine"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ซันไน 5 นาทีทางตะวันออกของโทโชกุ นิกโก้",
+            "en": "Sannai, 5 min east of Toshogu, Nikko"
+          },
+          "what": {
+            "th": "ศาลเจ้าที่ลานด้านนอกเงียบแม้วันหยุดคนเยอะ",
+            "en": "A shrine whose outer courtyard stays quiet even on busy weekends"
+          },
+          "why": {
+            "th": "จุดพักเงียบ ๆ ให้พักรถเข็น",
+            "en": "A quiet stop for a pushchair break"
+          },
+          "q": "Futarasan Shrine, Sannai, Nikko",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "name": {
+            "th": "สวนอนุสรณ์บ้านพักสถานทูตอิตาลี",
+            "en": "Italian Embassy Villa Memorial Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทะเลสาบชูเซนจิ โอคุนิกโก้ นิกโก้",
+            "en": "Lake Chuzenji, Okunikko, Nikko"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบ ทางเดินปูพื้น 800 เมตรต่อเที่ยว",
+            "en": "A lakeside park with a paved trail of 800 m each way"
+          },
+          "why": {
+            "th": "ทางเดินง่ายที่สุดแห่งหนึ่งสำหรับครอบครัวที่มีเด็กเล็ก",
+            "en": "One of the easiest walks for families with young children"
+          },
+          "q": "Italian Embassy Villa Memorial Park, Chugushi, Nikko",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "name": {
+            "th": "น้ำตกยูดากิ",
+            "en": "Yudaki Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ยูโมโตะ โอคุนิกโก้ นิกโก้",
+            "en": "Yumoto, Okunikko, Nikko"
+          },
+          "what": {
+            "th": "น้ำตกที่เป็นจุดเริ่มทางเดินไม้ไปเซนโจกาฮาระ",
+            "en": "A waterfall at the start of a boardwalk to Senjogahara"
+          },
+          "why": {
+            "th": "ทางเดินไม้เดินง่ายสำหรับครอบครัวที่มีเด็กเล็ก",
+            "en": "An easy boardwalk for families with young children"
+          },
+          "q": "Yudaki Falls, Yumoto, Nikko",
+          "ok": "2026-11"
         }
       ]
     },
