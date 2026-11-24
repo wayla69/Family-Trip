@@ -1,26 +1,48 @@
 {
   "town": "tw-south",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 2 rows without ok; rows already carrying ok were not re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from PopDaily (Jan and Dec 2025), all passed library-check.cjs, 4 went in",
+  "added": [
     {
-      "name": "Hai Zhi Bing",
-      "src": "https://www.google.com/maps/search/渡船頭海之冰+高雄",
-      "page_name": "Ferry-head Bing 渡船頭海之冰",
-      "evidence": "No. 76, Binhai 1st Rd, Gushan District, Kaohsiung · J79C+XC · 'Closed · Opens 11 AM Tue'",
-      "ok": "2026-11"
+      "name": "Casa e Casa (Shanhua)",
+      "page_name": "大窩與小宅（大窩店）",
+      "src": "https://www.popdaily.com.tw/mama/1490581",
+      "date": "2025-12",
+      "map": "Google Maps 'Casa e Casa' (光復路208號, Shanhua), newest review shown 5 days ago"
     },
     {
-      "name": "Wu Pao Chun Bakery",
-      "src": "https://www.google.com/maps/search/吳寶春麥方店+高雄",
-      "page_name": "Wu Pao Chun Bakery",
-      "evidence": "Siwei 3rd Rd, Kaohsiung (list result) · 'Open · Closes 8 PM'",
-      "ok": "2026-11"
+      "name": "8818 Pizza (Yongkang)",
+      "page_name": "8818比薩屋（台南永康店）",
+      "src": "https://www.popdaily.com.tw/mama/1490581",
+      "date": "2025-12",
+      "map": "Google Maps '8818 Pizza Restaurant (Yongkang)', newest review shown 9 days ago"
+    },
+    {
+      "name": "Sen Doufeng Café (North District)",
+      "page_name": "森兜風咖啡館",
+      "src": "https://www.popdaily.com.tw/mama/1490581",
+      "date": "2025-12",
+      "map": "Google Maps '森兜風Cafe & Brunch', newest review shown 23 days ago"
+    },
+    {
+      "name": "Little Tree Picture-Book Café (Lingya)",
+      "page_name": "小樹的家繪本咖啡館",
+      "src": "https://www.popdaily.com.tw/mama/1489730",
+      "date": "2025-01",
+      "map": "Google Maps '小樹的家繪本咖啡館', newest review shown 2 months ago"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "寶寶夢想城堡 (Xinying)",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Little Queen Cafe, 水庫沒關, 童樂島",
+      "why": "sources disagree on closure, or are old"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
