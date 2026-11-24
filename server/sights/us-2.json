@@ -3604,6 +3604,207 @@
           },
           "q": "Wing Luke Museum, 719 S King St, Seattle",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://bellevuewa.gov/city-government/departments/parks/community-centers/kelsey-creek-farm/visiting-the-farm",
+          "name": {
+            "th": "ฟาร์มเคลซีย์ครีก",
+            "en": "Kelsey Creek Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนน 130 ตะวันออกเฉียงใต้ เบลล์วิว",
+            "en": "130th Place SE, Bellevue"
+          },
+          "what": {
+            "th": "ฟาร์มในสวนสาธารณะ เข้าฟรี เด็กได้ดูสัตว์ในฟาร์ม",
+            "en": "A free farm in a park where children see farm animals"
+          },
+          "why": {
+            "th": "มีคอกให้ดูสัตว์ใกล้ๆ",
+            "en": "A barnyard to see the animals up close"
+          },
+          "tip": {
+            "th": "เวลาชมสัตว์อาจเปลี่ยนในวันหยุดหรือเมื่ออากาศไม่ดี",
+            "en": "Animal viewing times may change on holidays or in bad weather"
+          },
+          "q": "Kelsey Creek Farm, 410 130th Pl SE, Bellevue",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.seattleschild.com/12-toddler-friendly-parks-on-the-eastside/",
+          "name": {
+            "th": "ลานเล่นน้ำครอสโรดส์",
+            "en": "Crossroads water spray playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนน 164 ตะวันออกเฉียงเหนือ ครอสโรดส์ เบลล์วิว",
+            "en": "164th Avenue NE, Crossroads, Bellevue"
+          },
+          "what": {
+            "th": "ลานเล่นน้ำธีมวาฬเพชฌฆาต เข้าฟรี มีสนามเด็กเล่นเล็ก",
+            "en": "A free orca-themed spray park with a small toddler playground"
+          },
+          "why": {
+            "th": "น้ำพุ่งเบาๆ และพื้นนุ่มสำหรับเด็กเล็ก",
+            "en": "Gentle sprays and a soft surface for toddlers"
+          },
+          "q": "Crossroads Water Spray Playground, 999 164th Ave NE, Bellevue",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.seattleschild.com/12-toddler-friendly-parks-on-the-eastside/",
+          "name": {
+            "th": "สวนเมเดนบาวเออร์เบย์",
+            "en": "Meydenbauer Bay Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนน 98 ตะวันออกเฉียงเหนือ ริมน้ำ เบลล์วิว",
+            "en": "98th Avenue NE, waterfront, Bellevue"
+          },
+          "what": {
+            "th": "สวนริมน้ำมีชายหาดและสนามเด็กเล่นเล็ก",
+            "en": "A waterfront park with a beach and a small playground"
+          },
+          "why": {
+            "th": "มีพื้นหญ้าเทียม ทางทรงตัว และชิงช้าจานสำหรับเด็กเล็ก",
+            "en": "Turf, a balance trail and a saucer swing for toddlers"
+          },
+          "tip": {
+            "th": "ห้องน้ำอยู่ชั้นชายหาด",
+            "en": "Toilets on the beach level"
+          },
+          "q": "Meydenbauer Bay Park, 419 98th Ave NE, Bellevue",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.seattleschild.com/12-toddler-friendly-parks-on-the-eastside/",
+          "name": {
+            "th": "สนามเด็กเล่นอินสไปเรชัน",
+            "en": "Inspiration Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ดาวน์ทาวน์พาร์ก ถนน 100 ตะวันออกเฉียงเหนือ เบลล์วิว",
+            "en": "Downtown Park, 100th Avenue NE, Bellevue"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางเมืองสำหรับทุกความสามารถ มีลานเล่นน้ำ",
+            "en": "A downtown playground for all abilities, with a splash area"
+          },
+          "why": {
+            "th": "มีชิงช้า สไลเดอร์ และผนังปีน",
+            "en": "Swings, slides and a climbing wall"
+          },
+          "tip": {
+            "th": "มีห้องน้ำ",
+            "en": "Toilets on site"
+          },
+          "q": "Inspiration Playground, 100 100th Ave NE, Bellevue",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.seattleschild.com/spray-parks-and-splash-parks-in-seattle-the-eastside-and-beyond/",
+          "name": {
+            "th": "สวนนอร์ทเอเคอร์ส",
+            "en": "Northacres Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนที่ 1 ตะวันออกเฉียงเหนือ ไพน์เฮิร์สต์ ซีแอตเทิล",
+            "en": "1st Avenue NE, Pinehurst, Seattle"
+          },
+          "what": {
+            "th": "สวนใหญ่มีลานเล่นน้ำ ทางเดินในป่า และสนามเด็กเล่น",
+            "en": "A big park with a spray park, woodland paths and a playground"
+          },
+          "why": {
+            "th": "น้ำพุ่งที่เด็กกดเองได้ มีร่มเงาและสนามเด็กเล่น",
+            "en": "Spray jets children can control, shade and a playground"
+          },
+          "tip": {
+            "th": "ลานเล่นน้ำเปิด 11:00–20:00 ปลายพฤษภาคมถึงต้นกันยายน",
+            "en": "Spray park open 11:00–20:00, late May to early September"
+          },
+          "q": "Northacres Park, 12718 1st Ave NE, Seattle",
+          "ok": "2026-11"
         }
       ]
     },

@@ -1,86 +1,100 @@
 {
   "town": "us-seattle",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 12 rows from The Infatuation (2026) and Visit Seattle (2025–2026) passed library-check.cjs, 9 went in",
+  "agents": "one Haiku agent; 14 rows from Seattle's Child (May–Aug 2026) and the city of Bellevue (official), all passed library-check.cjs, 11 went in",
   "added": [
     {
-      "name": "Young's Restaurant",
-      "page_name": "Young's Restaurant",
-      "src": "https://www.theinfatuation.com/seattle/guides/kid-friendly-restaurants-seattle",
-      "date": "2026-11",
-      "map": "Google Maps 9413 16th Ave SW, 868 reviews, newest '17 hours ago'"
-    },
-    {
-      "name": "Outsider BBQ",
-      "page_name": "Outsider BBQ",
-      "src": "https://www.theinfatuation.com/seattle/guides/kid-friendly-restaurants-seattle",
-      "date": "2026-11",
-      "map": "Google Maps 'Outsider BBQ & Beer Garden', 4010 NW Leary Way, 506 reviews, newest '8 hours ago'"
-    },
-    {
-      "name": "Stoneburner",
-      "page_name": "Stoneburner",
-      "src": "https://www.theinfatuation.com/seattle/guides/kid-friendly-restaurants-seattle",
-      "date": "2026-11",
-      "map": "Google Maps 5214 Ballard Ave NW, 1,001 reviews, newest 'last week'"
-    },
-    {
-      "name": "Paseo (SoDo)",
-      "page_name": "Paseo SoDo",
-      "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+      "name": "Portage Bay Cafe (South Lake Union)",
+      "page_name": "Portage Bay Cafe",
+      "src": "https://www.seattleschild.com/baby-friendly-seattle-restaurants/",
       "date": "2026-07",
-      "map": "Google Maps 'Paseo', 1760 1st Ave S, 2,231 reviews, newest '2 days ago'"
+      "map": "Google Maps 'Portage Bay Cafe - South Lake Union' (391 Terry Ave N), newest review shown a day ago"
     },
     {
-      "name": "Seattle Pinball Museum",
-      "page_name": "Seattle Pinball Museum",
-      "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+      "name": "Kisaku Sushi",
+      "page_name": "Kisaku",
+      "src": "https://www.seattleschild.com/baby-friendly-seattle-restaurants/",
       "date": "2026-07",
-      "map": "Google Maps 508 Maynard Ave S, 1,273 reviews, newest '2 days ago'"
+      "map": "Google Maps 'Kisaku Sushi' (2101 N 55th St), newest review shown 4 days ago"
     },
     {
-      "name": "Golden Gardens Park",
-      "page_name": "Golden Gardens Park",
-      "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
-      "date": "2025-05",
-      "map": "Google Maps 9,097 reviews, newest '5 days ago'"
-    },
-    {
-      "name": "Seattle Children's Theatre",
-      "page_name": "Seattle Children’s Theatre",
-      "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+      "name": "Ivar's Salmon House",
+      "page_name": "Ivar’s Salmon House",
+      "src": "https://www.seattleschild.com/baby-friendly-seattle-restaurants/",
       "date": "2026-07",
-      "map": "Google Maps 201 Thomas St, 427 reviews, newest '3 weeks ago'"
+      "map": "Google Maps 'Ivar's Salmon House' (401 NE Northlake Way), newest review shown 6 hours ago"
     },
     {
-      "name": "Alki Beach",
-      "page_name": "Alki Beach",
-      "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
-      "date": "2025-05",
-      "map": "Google Maps 'Alki Beach Park', 9,651 reviews, newest '15 hours ago'"
+      "name": "Razzi's Pizzeria (Greenwood)",
+      "page_name": "Razzi’s",
+      "src": "https://www.seattleschild.com/baby-friendly-seattle-restaurants/",
+      "date": "2026-07",
+      "map": "Google Maps 'RAZZíS PIZZERíA GREENWOOD' (8523 Greenwood Ave N), newest review shown 5 hours ago"
     },
     {
-      "name": "Wing Luke Museum",
-      "page_name": "Wing Luke Museum",
-      "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
-      "date": "2025-05",
-      "map": "Google Maps 719 S King St, 804 reviews, newest '2 weeks ago'"
+      "name": "Agua Verde Cafe",
+      "page_name": "Agua Verde",
+      "src": "https://www.seattleschild.com/baby-friendly-seattle-restaurants/",
+      "date": "2026-07",
+      "map": "Google Maps 'Agua Verde Cafe' (1303 NE Boat St), newest review shown 3 days ago"
+    },
+    {
+      "name": "Elemental Pizza (U Village)",
+      "page_name": "Elemental Pizza",
+      "src": "https://www.seattleschild.com/seattle-area-restaurants-with-great-patios/",
+      "date": "2026-05",
+      "map": "Google Maps 'Elemental Pizza' (University Village), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Kelsey Creek Farm",
+      "page_name": "Kelsey Creek Farm",
+      "src": "https://bellevuewa.gov/city-government/departments/parks/community-centers/kelsey-creek-farm/visiting-the-farm",
+      "date": "official",
+      "map": "Google Maps 'Kelsey Creek Farm' (410 130th Pl SE), newest review shown 6 days ago"
+    },
+    {
+      "name": "Crossroads water spray playground",
+      "page_name": "Crossroads Park",
+      "src": "https://www.seattleschild.com/12-toddler-friendly-parks-on-the-eastside/",
+      "date": "2026-06",
+      "map": "Google Maps 'Crossroads Water Spray Playground' (999 164th Ave NE), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Meydenbauer Bay Park",
+      "page_name": "Meydenbauer Bay Park",
+      "src": "https://www.seattleschild.com/12-toddler-friendly-parks-on-the-eastside/",
+      "date": "2026-06",
+      "map": "Google Maps 'Meydenbauer Bay Park' (419 98th Ave NE), newest review shown a week ago"
+    },
+    {
+      "name": "Inspiration Playground",
+      "page_name": "Inspiration Playground",
+      "src": "https://www.seattleschild.com/12-toddler-friendly-parks-on-the-eastside/",
+      "date": "2026-06",
+      "map": "Google Maps 'Inspiration Playground' (100 100th Ave NE), newest review shown a week ago"
+    },
+    {
+      "name": "Northacres Park",
+      "page_name": "Northacres Park",
+      "src": "https://www.seattleschild.com/spray-parks-and-splash-parks-in-seattle-the-eastside-and-beyond/",
+      "date": "2026-06",
+      "map": "Google Maps 'Northacres Park' (12718 1st Ave NE), newest review shown a month ago"
     }
   ],
   "left_out": [
     {
-      "name": "Mox Boarding House",
-      "why": "a games bar"
+      "name": "Humble Pie, Judkins Park",
+      "why": "no review dates readable on the map"
     },
     {
-      "name": "Northwest Trolls",
-      "why": "five sculptures in different places, not one"
+      "name": "KidsQuest",
+      "why": "the source only names it in a heading"
     },
     {
-      "name": "Summit at Snoqualmie",
-      "why": "90 minutes outside Seattle"
+      "name": "Little Water Cantina, Ghostfish Brewing",
+      "why": "a tequila bar and a brewery"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
