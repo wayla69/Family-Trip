@@ -1,10 +1,87 @@
 {
   "town": "at-vienna",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 2 rows from 1000things (May 2026) and Monki Park's own site, both passed library-check.cjs, 1 went in",
+  "agents": "one Haiku agent; 12 rows offered, 11 from usable pages passed library-check.cjs, 11 went in",
   "added": [
+    {
+      "name": "Baomi",
+      "page_name": "Baomi",
+      "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-zum-essen-mit-kindern",
+      "date": "2025-07",
+      "map": "Google Maps 304 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Family & Friends",
+      "page_name": "Family and Friends",
+      "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-zum-essen-mit-kindern",
+      "date": "2025-07",
+      "map": "Google Maps 'Family & Friends', 1,038 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Kinderspiel – das Familiencafé",
+      "page_name": "Kinderspiel – das Familiencafé",
+      "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-zum-essen-mit-kindern",
+      "date": "2025-07",
+      "map": "Google Maps 241 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Sieben Zwerge",
+      "page_name": "Sieben Zwerge Café",
+      "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-mit-indoor-spielplatz",
+      "date": "2026-07",
+      "map": "Google Maps 'Sieben Zwerge', 129 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Melman’s",
+      "page_name": "Melman's",
+      "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-mit-indoor-spielplatz",
+      "date": "2026-07",
+      "map": "Google Maps 349 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Dschungel Café",
+      "page_name": "Dschungel Café",
+      "src": "https://www.dschungel-cafe.at/de",
+      "date": "official",
+      "map": "Google Maps 532 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Leos Rumpelkiste",
+      "page_name": "Leos Rumpelkiste",
+      "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-mit-indoor-spielplatz",
+      "date": "2026-07",
+      "map": "Google Maps 'Rumpelkiste' in Leopoldstadt, 108 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Augarten",
+      "page_name": "Augarten",
+      "src": "https://kidsareatrip.com/top-5-family-friendly-things-to-do-in-vienna-austria/",
+      "date": "2026-01",
+      "map": "Google Maps 10,808 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "St. Stephen’s Cathedral",
+      "page_name": "St. Stephen’s Cathedral",
+      "src": "https://kidsareatrip.com/top-5-family-friendly-things-to-do-in-vienna-austria/",
+      "date": "2026-01",
+      "map": "Google Maps 142,512 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Kunsthistorisches Museum",
+      "page_name": "Kunsthistorisches Museum",
+      "src": "https://www.nomadotravel.app/en/guides/vienna-with-kids",
+      "date": "2026-07",
+      "map": "Google Maps 36,723 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "Dschungel Wien",
+      "page_name": "Dschungel Wien",
+      "src": "https://www.dschungel-cafe.at/de",
+      "date": "official",
+      "map": "Google Maps 'DSCHUNGEL WIEN Theaterhaus für junges Publikum', 422 reviews, newest 'a month ago'"
+    },
     {
       "name": "Monki Park (Millennium City)",
       "page_name": "Monki Park",
@@ -15,6 +92,10 @@
   ],
   "left_out": [
     {
+      "name": "Gmoa Keller",
+      "why": "its only source is restaurantsforkings.com"
+    },
+    {
       "name": "Meierei",
       "why": "the page does not tie it clearly to one district (there are two Meiereis)"
     },
@@ -23,5 +104,10 @@
       "why": "pages behind a bot check"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 2 rows from 1000things (May 2026) and Monki Park's own site, both passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

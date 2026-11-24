@@ -1,10 +1,38 @@
 {
   "town": "hu-budapest",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 1 row from Time Out (Jun 2026), passed library-check.cjs, went in",
+  "agents": "one Haiku agent; 8 rows from Hungary Unlocked (2026) and the museum’s site, 5 passed library-check.cjs, 4 went in",
   "added": [
+    {
+      "name": "Riso Ristorante & Terrace",
+      "page_name": "Riso Ristorante & Terrace",
+      "src": "https://hungaryunlocked.com/best-kid-friendly-restaurants-budapest-local-guide/",
+      "date": "2026-11",
+      "map": "Google Maps Lovas út 41, 4,391 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Cafe Brunch (Bazilika)",
+      "page_name": "Bazilika",
+      "src": "https://hungaryunlocked.com/cafe-brunch-budapest/",
+      "date": "2026-09",
+      "map": "Google Maps 'Cafe Brunch Budapest - Bazilika', 2,765 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Brunch Bistro",
+      "page_name": "Brunch Bistro",
+      "src": "https://hungaryunlocked.com/cafe-brunch-budapest/",
+      "date": "2026-09",
+      "map": "Google Maps 'Brunch Bistro Budapest', 5,425 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Aquaworld Budapest",
+      "page_name": "Aquaworld Budapest",
+      "src": "https://hungaryunlocked.com/aquaworld-budapest-water-park-guide/",
+      "date": "2026-07",
+      "map": "Google Maps 'Aquaworld Resort Budapest', 21,512 reviews, newest '2 hours ago'"
+    },
     {
       "name": "Csillaghegy Lido",
       "page_name": "Csillaghegy",
@@ -14,6 +42,14 @@
     }
   ],
   "left_out": [
+    {
+      "name": "Városliget Café, IDE Pizzeria, Pastrami, Flippermúzeum (Pinball Museum)",
+      "why": "already in the library"
+    },
+    {
+      "name": "Fruska Bistro",
+      "why": "only on a banned ranking site"
+    },
     {
       "name": "Széchenyi",
       "why": "the page says under-14s are not admitted"
@@ -27,5 +63,10 @@
       "why": "no age, price or district on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 1 row from Time Out (Jun 2026), passed library-check.cjs, went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

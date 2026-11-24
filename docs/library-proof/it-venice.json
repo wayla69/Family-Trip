@@ -1,52 +1,181 @@
 {
   "town": "it-venice",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 7 rows from Marcie in Mommyland (Apr 2025) and ViaggiaPiccoli (Aug 2026), all passed library-check.cjs, 4 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Osteria al Portego",
-      "page_name": "Osteria al Portego",
-      "src": "https://www.marcieinmommyland.com/things-to-do-in-venice-with-kids/",
-      "date": "2025-04",
-      "map": "Google Maps 'Osteria Al Portego' (Calle de la Malvasia 6014), newest review shown 3 weeks ago"
+      "town": "it-venice",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Dal Moro's Fresh Pasta To Go",
+          "src": "https://www.google.com/maps/place/Dal+Moro's/@45.4361702,12.3397907,17z",
+          "page_name": "Dal Moro's",
+          "evidence": "Google Maps: fast food restaurant, 4.6★, Calle de la Casseleria, 30122 Venezia (C8PQ+FW), 'Closed · Opens 12 PM', phone listed, an owner's post; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Osteria ai Pugni",
-      "page_name": "Osteria ai Pugni",
-      "src": "https://www.marcieinmommyland.com/things-to-do-in-venice-with-kids/",
-      "date": "2025-04",
-      "map": "Google Maps 'Osteria Ai Pugni' (Fondamenta Gherardini 2836), newest review shown a month ago"
+      "town": "it-venice",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 of 16 rows from Mom in Italy (2026), Eating Around Italy (2025), Viaggiapiccoli (2026) and Nomado (2026) passed library-check.cjs, 11 went in",
+      "added": [
+        {
+          "name": "Trattoria al Gazzettino",
+          "page_name": "Trattoria al Gazzettino",
+          "src": "https://mominitaly.com/where-to-eat-in-venice-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'Trattoria Al Gazzettino', 14,943 reviews, newest '15 hours ago'"
+        },
+        {
+          "name": "Rio Novo",
+          "page_name": "Rio Novo",
+          "src": "https://mominitaly.com/where-to-eat-in-venice-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 6,515 reviews, newest '15 hours ago'"
+        },
+        {
+          "name": "Fried Land",
+          "page_name": "Fried Land",
+          "src": "https://mominitaly.com/where-to-eat-in-venice-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'Fried Land/ fresh pasta to go', 2,192 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "1000 Gourmet Venezia",
+          "page_name": "1000 Gourmet Venezia",
+          "src": "https://eatingarounditaly.com/kid-friendly-restaurants-in-venice/",
+          "date": "2025-12",
+          "map": "Google Maps 6,580 reviews, newest '13 hours ago'"
+        },
+        {
+          "name": "Al Profeta",
+          "page_name": "Al Profeta",
+          "src": "https://eatingarounditaly.com/kid-friendly-restaurants-in-venice/",
+          "date": "2025-12",
+          "map": "Google Maps 'Pizzeria Ristorante Al Profeta', 3,387 reviews, newest '14 hours ago'"
+        },
+        {
+          "name": "Osteria Alla Bifora",
+          "page_name": "Osteria Alla Bifora",
+          "src": "https://eatingarounditaly.com/kid-friendly-restaurants-in-venice/",
+          "date": "2025-12",
+          "map": "Google Maps 2,164 reviews, newest '12 hours ago'"
+        },
+        {
+          "name": "Rosticceria Gislon",
+          "page_name": "Rosticceria Gilson",
+          "src": "https://eatingarounditaly.com/kid-friendly-restaurants-in-venice/",
+          "date": "2025-12",
+          "map": "Google Maps 'Rosticceria Gislon' (the page's spelling differs), Calle de la Bissa 5424/A as the page gives, 6,644 reviews, newest '18 hours ago'"
+        },
+        {
+          "name": "Osteria Bancogiro",
+          "page_name": "Osteria Bancogiro",
+          "src": "https://eatingarounditaly.com/kid-friendly-restaurants-in-venice/",
+          "date": "2025-12",
+          "map": "Google Maps 2,152 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Squero di San Trovaso",
+          "page_name": "Squero di San Trovaso",
+          "src": "https://www.viaggiapiccoli.com/?p=91012",
+          "date": "2026-10",
+          "map": "Google Maps 477 reviews, newest 'last week'"
+        },
+        {
+          "name": "Biennale Gardens",
+          "page_name": "Biennale Gardens of Venice",
+          "src": "https://www.viaggiapiccoli.com/?p=91012",
+          "date": "2026-10",
+          "map": "Google Maps 'Giardini della Biennale', 13,292 reviews, newest '5 hours ago'"
+        },
+        {
+          "name": "Naval History Museum",
+          "page_name": "Naval History Museum",
+          "src": "https://www.nomadotravel.app/en/guides/venice-with-kids",
+          "date": "2026-07",
+          "map": "Google Maps 'Museo Storico Navale di Venezia', 2,284 reviews, newest '2 days ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Navagero Park",
+          "why": "already in the library"
+        },
+        {
+          "name": "Panificio Pavan",
+          "why": "newest Google Maps review six months old"
+        },
+        {
+          "name": "Bacarando in Corte dell’Orso",
+          "why": "a cicchetti bar"
+        },
+        {
+          "name": "gondola traghetto",
+          "why": "a ferry service at several stations, not one place"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "Querini Stampalia Foundation",
-      "page_name": "Querini Stampalia",
-      "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
-      "date": "2026-08",
-      "map": "Google Maps 'Fondazione Querini Stampalia' (Campiello Santa Maria Formosa), newest review shown 2 days ago"
-    },
-    {
-      "name": "Da Vinci Interactive Museum",
-      "page_name": "Museo di Leonardo da Vinci",
-      "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
-      "date": "2026-08",
-      "map": "Google Maps 'Da Vinci Interactive Museum' (Scoletta di San Rocco), newest review shown 5 days ago"
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from Marcie in Mommyland (Apr 2025) and ViaggiaPiccoli (Aug 2026), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Osteria al Portego",
+          "page_name": "Osteria al Portego",
+          "src": "https://www.marcieinmommyland.com/things-to-do-in-venice-with-kids/",
+          "date": "2025-04",
+          "map": "Google Maps 'Osteria Al Portego' (Calle de la Malvasia 6014), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Osteria ai Pugni",
+          "page_name": "Osteria ai Pugni",
+          "src": "https://www.marcieinmommyland.com/things-to-do-in-venice-with-kids/",
+          "date": "2025-04",
+          "map": "Google Maps 'Osteria Ai Pugni' (Fondamenta Gherardini 2836), newest review shown a month ago"
+        },
+        {
+          "name": "Querini Stampalia Foundation",
+          "page_name": "Querini Stampalia",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "date": "2026-08",
+          "map": "Google Maps 'Fondazione Querini Stampalia' (Campiello Santa Maria Formosa), newest review shown 2 days ago"
+        },
+        {
+          "name": "Da Vinci Interactive Museum",
+          "page_name": "Museo di Leonardo da Vinci",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "date": "2026-08",
+          "map": "Google Maps 'Da Vinci Interactive Museum' (Scoletta di San Rocco), newest review shown 5 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Ca' Macana",
+          "why": "overlaps the mask-decorating course already in the app"
+        },
+        {
+          "name": "VizioVirtù",
+          "why": "a chocolate shop"
+        },
+        {
+          "name": "Pinault Collection",
+          "why": "the page recommends it for older children and teenagers"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Ca' Macana",
-      "why": "overlaps the mask-decorating course already in the app"
-    },
-    {
-      "name": "VizioVirtù",
-      "why": "a chocolate shop"
-    },
-    {
-      "name": "Pinault Collection",
-      "why": "the page recommends it for older children and teenagers"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

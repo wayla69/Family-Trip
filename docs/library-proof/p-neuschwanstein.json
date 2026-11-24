@@ -1,10 +1,38 @@
 {
   "town": "p-neuschwanstein",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 10 rows from Füssen tourism and the Hopfensee campsite (official), 9 passed library-check.cjs, 5 went in",
+  "agents": "one Haiku agent; 6 rows from the town of Füssen's own family page passed library-check.cjs (2 places to eat failed it), 4 went in",
   "added": [
+    {
+      "name": "Weißensee lakeside lawn",
+      "page_name": "Weißensee beach",
+      "src": "https://fuessen.de/en/family",
+      "date": "official",
+      "map": "Google Maps 'Liegewiese Weißensee', Pfrontener Str., 327 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "Füssen high ropes course",
+      "page_name": "Füssen high ropes course",
+      "src": "https://fuessen.de/en/family",
+      "date": "official",
+      "map": "Google Maps 'Hochseilgarten Füssen im Allgäu', Schäfflerstraße 19b, 301 reviews, newest 'last month'"
+    },
+    {
+      "name": "Füssen skate and bike park",
+      "page_name": "Füssen skate and bike park",
+      "src": "https://fuessen.de/en/family",
+      "date": "official",
+      "map": "Google Maps 'Skate- und Bikepark Füssen', Schwedenweg 2, 341 reviews, newest shown '2 months ago'"
+    },
+    {
+      "name": "Hopfen castle ruins",
+      "page_name": "Hopfen castle ruins",
+      "src": "https://fuessen.de/en/family",
+      "date": "official",
+      "map": "Google Maps 'Burgruine Hopfen Am See', 814 reviews, newest 'last month'"
+    },
     {
       "name": "Tante Paula (Hopfensee campsite)",
       "page_name": "Tante Paula",
@@ -43,6 +71,18 @@
   ],
   "left_out": [
     {
+      "name": "Hopfensee beach",
+      "why": "the map's Seepark Hopfensee is marked temporarily closed"
+    },
+    {
+      "name": "Lauti's city puzzle",
+      "why": "a quiz sheet, not a place"
+    },
+    {
+      "name": "Taverne beim Olivenbauer, Tante Paula am Hopfensee",
+      "why": "their pages carry no date"
+    },
+    {
       "name": "Skate park playground, Hopfensee boat-hire playground",
       "why": "no map entry of their own"
     },
@@ -59,5 +99,10 @@
       "why": "the page has no date"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from Füssen tourism and the Hopfensee campsite (official), 9 passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

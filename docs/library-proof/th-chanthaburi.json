@@ -1,91 +1,154 @@
 {
   "town": "th-chanthaburi",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 6 rows from Grab (Sep 2026) and Daily News (May 2026), all passed library-check.cjs, all went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Thong Nathi Seafood",
-      "page_name": "ร้านอาหารท่องนที",
-      "src": "https://www.dailynews.co.th/articles/5874331/",
-      "date": "2026-05",
-      "map": "Google Maps 'ท่องนที Seafood', 54 reviews, newest shown 29 days ago"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "confirmed": [
+        {
+          "name": "The Tamajun Restaurant",
+          "src": "https://www.google.com/maps/place/Tha+Machan+food/@12.6121269,102.109356,17z",
+          "page_name": "Tha Machan food / ร้านอาหารท่ามาจัน",
+          "evidence": "Google Maps (2026-11-23): restaurant, 4.2★, J467+VG5, Wat Mai — on the waterfront by the Tamajun Hotel and Luang Rajamaitri inn; 'Open · Closes 10 PM'; nothing says closed. With the Wongnai listing (closed:false, a review in June 2025) this is a current listing. Map query now uses its Maps name",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Jae Eid Tom Yam Seafood Noodles",
+          "src": "https://www.google.com/maps/place/Je+Eed+Seafood+Noodles+Chantaburi+Old+Town/@12.6079472,102.1167528,17z",
+          "page_name": "Je Eed Seafood Noodles Chantaburi Old Town / เจ๊อี๊ด ริมน้ำ",
+          "evidence": "Google Maps (2026-11-23): noodle shop, 3.9★, 44 Sukhaphiban Rd, Wat Mai (J458+5P), the waterfront street; 'Open · Closes 4 PM', phone listed; nothing says closed. Map query now names the street and number",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Nam Phu Market",
+          "src": "https://www.google.com/maps/place/Namphu+Market/@12.6090383,102.1117632,17z",
+          "page_name": "Namphu Market / ตลาดน้ำพุ",
+          "evidence": "Google Maps (2026-11-23): market, 4.3★, Sri Roung Muaeng Rd, Wat Mai (J456+JP6); 'Open · Closes 9 PM'; food stalls listed inside with today's hours (sticky rice, fish-maw kuay jap); nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Robinson Chanthaburi food court",
+          "evidence": "the mall exists (a Robinson Chanthaburi promotion ran Mar–Apr 2025); the food court itself is not confirmed Google Maps (2026-11-23): Robinson Chanthaburi (Maharaj Rd) open to 9 PM with KFC, Oishi Ramen and Starbucks inside, but no listing of its food court."
+        },
+        {
+          "name": "Central Chanthaburi food court",
+          "evidence": "the mall opened 26 May 2022 with restaurants; the food court itself is not confirmed Google Maps (2026-11-23): Central Chanthaburi (Trirat Rd) open to 9 PM; a 'Food center central' (H4XF+8RX, open to 9 PM) has no reviews and does not say it is the mall's food court, so not confirmed."
+        },
+        {
+          "name": "Baan Luang Rajamaitri cafe",
+          "src": "https://www.wongnai.com/restaurants/289036AH-บ้านหลวงราชไมตรี",
+          "evidence": "Wongnai listing not marked closed, but its newest data is from 2019; a Bangkok Biznews article mentions coffee and fried bread at the house, but its date could not be told apart from the site's header date Google Maps (2026-11-23): the inn (252 Sukhaphiban Rd) takes bookings for 26–27 Nov, but its own site (copyright 2013) names no café, only breakfast for guests; the café itself is not confirmed."
+        }
+      ],
+      "removed": [
+        {
+          "name": "Suthee Khao Khluk Phrik Kluea",
+          "reason": "one web search (snippets only, pages not opened) found no place of this name at Kung Wiman beach; khao khluk phrik kluea is sold at Nam Phu Market, not confirmed here"
+        }
+      ],
+      "passes": [
+        {
+          "at": "2026-11",
+          "how": "web search, Wongnai pages"
+        },
+        {
+          "at": "2026-11-23",
+          "how": "Google Maps in headless Chromium (limited view, no reviews tab, so no review dates) and the inn's own site"
+        }
+      ]
     },
     {
-      "name": "Samet Ngam Shipyard (King Taksin's shipyard)",
-      "page_name": "อู่ต่อเรือเสม็ดงาม",
-      "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
-      "date": "2026-09",
-      "map": "Google Maps 'พระบรมราชานุสรณ์สมเด็จพระเจ้าตากสินมหาราช (อู่ต่อเรือสมเด็จพระเจ้าตากสิน)', 1,036 reviews, newest shown 6 days ago"
-    },
-    {
-      "name": "Red Building and Khuk Khi Kai",
-      "page_name": "ตึกแดงและคุกขี้ไก่",
-      "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
-      "date": "2026-09",
-      "map": "Google Maps 'คุกขี้ไก่ (ป้อมปืน)', 1,670 reviews, newest shown 15 days ago"
-    },
-    {
-      "name": "Wat Phai Lom",
-      "page_name": "วัดไผ่ล้อม",
-      "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
-      "date": "2026-09",
-      "map": "Google Maps 'วัดไผ่ล้อม พระอารามหลวง', 920 reviews, newest shown 8 days ago"
-    },
-    {
-      "name": "Laem Sing Beach",
-      "page_name": "หาดแหลมสิงห์",
-      "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
-      "date": "2026-09",
-      "map": "Google Maps 'หาดแหลมสิงห์', 372 reviews, newest shown 17 days ago"
-    },
-    {
-      "name": "Khaem Nu Beach",
-      "page_name": "หาดแขมหนู",
-      "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
-      "date": "2026-09",
-      "map": "Google Maps 'หาดปากน้ำแขมหนู', 1 review, shown 12 hours ago"
-    },
-    {
-      "name": "Baan Suan Ratchanat (orchard café)",
-      "page_name": "บ้านสวนรัชนาฏ",
-      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
-      "date": "2025-04",
-      "map": "Google Maps 'Baan Suan Ratchanat' (Thung Bencha, Tha Mai), newest review shown 5 months ago"
-    },
-    {
-      "name": "Arun Burapha Garden (orchard café)",
-      "page_name": "สวนอรุณบูรพา",
-      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
-      "date": "2025-04",
-      "map": "Google Maps 'Arun Burapha Garden' (Khao Baisi, Tha Mai), newest review shown 2 days ago"
-    },
-    {
-      "name": "Rinradee Orchard",
-      "page_name": "สวนรินรดี",
-      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
-      "date": "2025-04",
-      "map": "Google Maps 'Rinradee Orchard' (Khao Baisi, Tha Mai), newest review shown 5 months ago"
-    },
-    {
-      "name": "KP Garden (fruit buffet)",
-      "page_name": "สวนเคพี การ์เด้น จันทบุรี",
-      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
-      "date": "2025-04",
-      "map": "Google Maps 'สวนเคพี การ์เด้น จันทบุรี KP Garden Chanthaburi' (Tha Luang, Makham), newest review shown 4 months ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from Grab (Sep 2026) and Daily News (May 2026), all passed library-check.cjs, all went in",
+      "added": [
+        {
+          "name": "Thong Nathi Seafood",
+          "page_name": "ร้านอาหารท่องนที",
+          "src": "https://www.dailynews.co.th/articles/5874331/",
+          "date": "2026-05",
+          "map": "Google Maps 'ท่องนที Seafood', 54 reviews, newest shown 29 days ago"
+        },
+        {
+          "name": "Samet Ngam Shipyard (King Taksin's shipyard)",
+          "page_name": "อู่ต่อเรือเสม็ดงาม",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "date": "2026-09",
+          "map": "Google Maps 'พระบรมราชานุสรณ์สมเด็จพระเจ้าตากสินมหาราช (อู่ต่อเรือสมเด็จพระเจ้าตากสิน)', 1,036 reviews, newest shown 6 days ago"
+        },
+        {
+          "name": "Red Building and Khuk Khi Kai",
+          "page_name": "ตึกแดงและคุกขี้ไก่",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "date": "2026-09",
+          "map": "Google Maps 'คุกขี้ไก่ (ป้อมปืน)', 1,670 reviews, newest shown 15 days ago"
+        },
+        {
+          "name": "Wat Phai Lom",
+          "page_name": "วัดไผ่ล้อม",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "date": "2026-09",
+          "map": "Google Maps 'วัดไผ่ล้อม พระอารามหลวง', 920 reviews, newest shown 8 days ago"
+        },
+        {
+          "name": "Laem Sing Beach",
+          "page_name": "หาดแหลมสิงห์",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "date": "2026-09",
+          "map": "Google Maps 'หาดแหลมสิงห์', 372 reviews, newest shown 17 days ago"
+        },
+        {
+          "name": "Khaem Nu Beach",
+          "page_name": "หาดแขมหนู",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "date": "2026-09",
+          "map": "Google Maps 'หาดปากน้ำแขมหนู', 1 review, shown 12 hours ago"
+        },
+        {
+          "name": "Baan Suan Ratchanat (orchard café)",
+          "page_name": "บ้านสวนรัชนาฏ",
+          "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+          "date": "2025-04",
+          "map": "Google Maps 'Baan Suan Ratchanat' (Thung Bencha, Tha Mai), newest review shown 5 months ago"
+        },
+        {
+          "name": "Arun Burapha Garden (orchard café)",
+          "page_name": "สวนอรุณบูรพา",
+          "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+          "date": "2025-04",
+          "map": "Google Maps 'Arun Burapha Garden' (Khao Baisi, Tha Mai), newest review shown 2 days ago"
+        },
+        {
+          "name": "Rinradee Orchard",
+          "page_name": "สวนรินรดี",
+          "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+          "date": "2025-04",
+          "map": "Google Maps 'Rinradee Orchard' (Khao Baisi, Tha Mai), newest review shown 5 months ago"
+        },
+        {
+          "name": "KP Garden (fruit buffet)",
+          "page_name": "สวนเคพี การ์เด้น จันทบุรี",
+          "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+          "date": "2025-04",
+          "map": "Google Maps 'สวนเคพี การ์เด้น จันทบุรี KP Garden Chanthaburi' (Tha Luang, Makham), newest review shown 4 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Two orchard rows",
+          "why": "the same places as the two orchard cafés"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 6 rows from Thansettakij (Apr 2025), 4 passed library-check.cjs (2 were repeats), 4 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "left_out": [
-    {
-      "name": "Two orchard rows",
-      "why": "the same places as the two orchard cafés"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 6 rows from Thansettakij (Apr 2025), 4 passed library-check.cjs (2 were repeats), 4 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

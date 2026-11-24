@@ -1,10 +1,73 @@
 {
   "town": "eg-cairo",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 7 rows from Cairo 360 (May 2026) and Edarabia (Nov 2026), all passed library-check.cjs, 5 went in",
+  "agents": "one Haiku agent; 16 rows from ibooking.com and edarabia.com (Nov 2026); the 10 edarabia rows passed library-check.cjs, 9 went in",
   "added": [
+    {
+      "name": "KidZoo",
+      "page_name": "Kidzoo",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'KidZoo', 35 reviews, newest 'last month'"
+    },
+    {
+      "name": "KidZania Cairo",
+      "page_name": "Kidzania Cairo",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'KidZania Cairo', 10,266 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Blue Lotus Farm",
+      "page_name": "Blue Lotus Farm",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Blue Lotus Guesthouse' (the farm's guesthouse), Saqqara, 162 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Fagnoon Art School",
+      "page_name": "Fagnoon Farm",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Fagnoon Art School', Saqqara road, 758 reviews, newest 'last week'"
+    },
+    {
+      "name": "Sitara Theatre",
+      "page_name": "Sitara Theater",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Sitara Theatre', 8 reviews, newest 'last month'"
+    },
+    {
+      "name": "ClubLiko",
+      "page_name": "ClubLiko",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Clubliko', 747 reviews, newest '5 hours ago'"
+    },
+    {
+      "name": "Billy Beez (Mall of Arabia)",
+      "page_name": "Billy Beez Cairo",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Billy beez', Mall of Arabia, 513 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Magic Galaxy (City Stars)",
+      "page_name": "Magic Galaxy",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 44 reviews, newest 'last week'"
+    },
+    {
+      "name": "Swiss Club Cairo",
+      "page_name": "Swiss Club Cairo",
+      "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Swiss Club', 2,356 reviews, newest '15 hours ago'"
+    },
     {
       "name": "Kids Station (Americana Plaza)",
       "page_name": "Kids Station at Americana Plaza",
@@ -43,6 +106,14 @@
   ],
   "left_out": [
     {
+      "name": "six places to eat from ibooking.com",
+      "why": "the page reads machine-written (it names Vienna in places)"
+    },
+    {
+      "name": "Giza Zoo",
+      "why": "reported closed for redevelopment; the map does not say, so it was left out until a status check"
+    },
+    {
       "name": "Giza Zoo",
       "why": "the map shows it temporarily closed"
     },
@@ -55,5 +126,10 @@
       "why": "horse and camel riding"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Cairo 360 (May 2026) and Edarabia (Nov 2026), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

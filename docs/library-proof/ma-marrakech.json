@@ -1,30 +1,77 @@
 {
   "town": "ma-marrakech",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 3 rows from Lonely Planet (Jul 2025) and Fairmont (official), all passed library-check.cjs, 2 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Water Museum (Musée de l'Eau)",
-      "page_name": "Water Museum",
-      "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
-      "date": "2025-07",
-      "map": "Google Maps 'Water Museum' (Marrakesh), newest review shown 2 days ago"
+      "town": "ma-marrakech",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Kasbah Bab Ourika",
+          "src": "Google Maps + web search",
+          "evidence": "Maps: \"Kasbah Bab Ourika / قصبة باب أوريكا\", 5-star hotel, Ourika, but \"Contact this property for rates and availability\" — not bookable on Maps; web pages (Audley, Hotel Guru) say it serves lunch and dinner but are undated. The hotel rule is not met."
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Meydene",
-      "page_name": "Meydene",
-      "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
-      "date": "2025-07",
-      "map": "Google Maps 'Meydene' (M Avenue Marrakech), newest review shown 5 hours ago"
-    }
-  ],
-  "left_out": [
+      "town": "ma-marrakech",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 2 rows from Made in City (2025) and a Marrakech day-trip guide (2026) passed library-check.cjs, both went in",
+      "added": [
+        {
+          "name": "Beldi Fusion Kitchen Guéliz",
+          "page_name": "Beldi Fusion Kitchen Guéliz",
+          "src": "https://www.madein.city/marrakech/en/places/beldi-fusion-kitchen-31362",
+          "date": "2025-01",
+          "map": "Google Maps 12,822 reviews, newest '12 hours ago'"
+        },
+        {
+          "name": "Ouzoud Falls",
+          "page_name": "Ouzoud Falls",
+          "src": "https://www.marrakech-desert-trips.com/best-day-trips-from-marrakech-for-families-with-kids",
+          "date": "2025-05",
+          "map": "Google Maps 'Ouzoud Waterfalls', 20,485 reviews, newest '11 hours ago'"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
     {
-      "name": "Al Aïn (Fairmont Royal Palm)",
-      "why": "the kids' menu offer is for hotel guests only"
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Lonely Planet (Jul 2025) and Fairmont (official), all passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Water Museum (Musée de l'Eau)",
+          "page_name": "Water Museum",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "date": "2025-07",
+          "map": "Google Maps 'Water Museum' (Marrakesh), newest review shown 2 days ago"
+        },
+        {
+          "name": "Meydene",
+          "page_name": "Meydene",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "date": "2025-07",
+          "map": "Google Maps 'Meydene' (M Avenue Marrakech), newest review shown 5 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Al Aïn (Fairmont Royal Palm)",
+          "why": "the kids' menu offer is for hotel guests only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

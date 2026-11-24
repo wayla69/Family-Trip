@@ -1,10 +1,171 @@
 {
   "town": "us-dc",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 4 rows from Washington.org (Mar 2026), Mommy Poppins (May 2026) and the museum's own site, all passed library-check.cjs, 3 went in",
+  "agents": "one Haiku agent; 23 rows from Tasting Table (2025), Washington.org (2026), Mommy Poppins (2026) and Lonely Planet (2025) passed library-check.cjs, all went in",
   "added": [
+    {
+      "name": "Silver Diner (Navy Yard)",
+      "page_name": "Silver Diner",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 1250 Half St SE, 1,629 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "The Roost",
+      "page_name": "The Roost",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 1401 Pennsylvania Ave SE, 813 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Florida Avenue Grill",
+      "page_name": "Florida Avenue Grill",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 'The World Famous Florida Avenue Grill', 1,186 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Kura Revolving Sushi Bar (Chinatown)",
+      "page_name": "Kura Sushi",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 'Kura Revolving Sushi Bar', 614 H St NW, 2,219 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "2 Amys",
+      "page_name": "2 Amys Neapolitan Pizzeria",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps '2 Amys', 3715 Macomb St NW, 1,791 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Comet Ping Pong",
+      "page_name": "Comet Ping Pong",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 5037 Connecticut Ave NW, 1,430 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Medium Rare (Cleveland Park)",
+      "page_name": "Medium Rare",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 3500 Connecticut Ave NW, 2,071 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Open City",
+      "page_name": "Open City",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 2331 Calvert St NW, 2,593 reviews, newest '20 hours ago'"
+    },
+    {
+      "name": "Unconventional Diner",
+      "page_name": "Unconventional Diner",
+      "src": "https://tastingtable.com/1998629/best-family-friendly-restaurants-washington-dc",
+      "date": "2025-10",
+      "map": "Google Maps 1207 9th St NW, 9,911 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "bartaco (The Wharf)",
+      "page_name": "bartaco",
+      "src": "https://washington.org/dc-guide-to/dc-dining-families",
+      "date": "2026-03",
+      "map": "Google Maps 645 Wharf St, 2,155 reviews, newest '4 hours ago'"
+    },
+    {
+      "name": "Hard Rock Cafe Washington DC",
+      "page_name": "Hard Rock Cafe",
+      "src": "https://washington.org/dc-guide-to/dc-dining-families",
+      "date": "2026-03",
+      "map": "Google Maps 999 E St NW, 7,250 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Baked by Yael",
+      "page_name": "Baked by Yael",
+      "src": "https://washington.org/dc-guide-to/dc-dining-families",
+      "date": "2026-03",
+      "map": "Google Maps 3000 Connecticut Ave NW, 294 reviews, newest '20 hours ago'"
+    },
+    {
+      "name": "National Museum of the American Indian",
+      "page_name": "National Museum of the American Indian",
+      "src": "https://mommypoppins.com/washington-dc-kids/best-of-lists/things-to-do-in-dc-that-everyone-will-love-from-toddlers-to-teens",
+      "date": "2026-01",
+      "map": "Google Maps 11,402 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "The Yards Park",
+      "page_name": "The Yards Park",
+      "src": "https://www.lonelyplanet.com/articles/washington-dc-with-kids",
+      "date": "2025-10",
+      "map": "Google Maps 355 Water St SE, 3,532 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Canal Park fountains",
+      "page_name": "Canal Park Fountains",
+      "src": "https://www.lonelyplanet.com/articles/washington-dc-with-kids",
+      "date": "2025-10",
+      "map": "Google Maps 'Washington Canal Park', 200 M St SE, 648 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "National Building Museum",
+      "page_name": "National Building Museum",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 401 F St NW, 4,430 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Folger Shakespeare Library",
+      "page_name": "Folger Shakespeare Library",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 283 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Planet Word",
+      "page_name": "Planet Word",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 2,545 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "International Spy Museum",
+      "page_name": "International Spy Museum",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 700 L'Enfant Plaza SW, 18,305 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "The Phillips Collection",
+      "page_name": "The Phillips Collection",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 1600 21st St NW, 2,334 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Museum of the Bible",
+      "page_name": "Museum of the Bible",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 400 4th St SW, 14,531 reviews, newest '9 hours ago'"
+    },
+    {
+      "name": "O Museum in the Mansion",
+      "page_name": "O Museum in the Mansion",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 'O Museum in The Mansion', 2020 O St NW, 1,890 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "National Museum of Women in the Arts",
+      "page_name": "National Museum of Women in the Arts",
+      "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+      "date": "2026-10",
+      "map": "Google Maps 1,783 reviews, newest '3 days ago'"
+    },
     {
       "name": "Market Lunch (Eastern Market)",
       "page_name": "Market Lunch",
@@ -37,5 +198,10 @@
       "why": "in Virginia, outside DC"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Washington.org (Mar 2026), Mommy Poppins (May 2026) and the museum's own site, all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

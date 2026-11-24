@@ -1,10 +1,129 @@
 {
   "town": "ee-tallinn",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 8 rows from Visit Estonia (Sep 2026) and Live Riga (official), all passed library-check.cjs, 7 went in",
+  "agents": "one Haiku agent; 20 rows from visitestonia.com, easyfind.ee and two family guides passed library-check.cjs, 17 went in",
   "added": [
+    {
+      "name": "Restoran Nero",
+      "page_name": "Restaurant Nero",
+      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
+      "date": "2026-09",
+      "map": "Google Maps 'Restoran Nero', Sadama 11a, 212 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Lore Bistroo",
+      "page_name": "Lore Bistro",
+      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
+      "date": "2026-09",
+      "map": "Google Maps 'Lore Bistroo', 1,385 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "City Grill House",
+      "page_name": "City Grill House",
+      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
+      "date": "2026-09",
+      "map": "Google Maps 347 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "NOP",
+      "page_name": "NOP",
+      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
+      "date": "2026-09",
+      "map": "Google Maps 'NOP Cafe and Shop', 1,956 reviews, newest '21 hours ago'"
+    },
+    {
+      "name": "Talleke ja Pullike (Kakumäe)",
+      "page_name": "Talleke ja Pullike Kakumäe",
+      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
+      "date": "2026-03",
+      "map": "Google Maps 1,122 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Pann&Kook",
+      "page_name": "Restoran Pann&Kook",
+      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
+      "date": "2026-03",
+      "map": "Google Maps 185 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Gourmet Coffee (Kadriorg)",
+      "page_name": "Gourmet Coffee",
+      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
+      "date": "2026-03",
+      "map": "Google Maps L. Koidula 13a, 1,122 reviews, newest 'last week'"
+    },
+    {
+      "name": "Kohvik Boheem",
+      "page_name": "Kohvik Boheem",
+      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
+      "date": "2026-03",
+      "map": "Google Maps 'Boheem', 1,691 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Vapiano (Hobujaama)",
+      "page_name": "Vapiano Foorum",
+      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
+      "date": "2026-03",
+      "map": "Google Maps 'Vapiano Hobujaama', 4,885 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Pirita Beach",
+      "page_name": "Pirita Beach",
+      "src": "https://thingstodointallinn.com/family/",
+      "date": "2026-10",
+      "map": "Google Maps 1,610 reviews, newest '4 weeks ago'"
+    },
+    {
+      "name": "Tallinn City Museum",
+      "page_name": "Tallinn City Museum",
+      "src": "https://thingstodointallinn.com/family/",
+      "date": "2026-10",
+      "map": "Google Maps 899 reviews, newest '21 hours ago'"
+    },
+    {
+      "name": "Lohesaba adventure park",
+      "page_name": "Lohesaba",
+      "src": "https://lohesaba.eu/en/",
+      "date": "official",
+      "map": "Google Maps 'Lohesaba seikluslinnak', 1,092 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "St Olaf’s Church tower",
+      "page_name": "St Olaf’s Church tower",
+      "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
+      "date": "2026-09",
+      "map": "Google Maps 'St.Olaf's Church', 4,571 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "St Catherine’s Passage",
+      "page_name": "St Catherine’s Passage",
+      "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
+      "date": "2026-09",
+      "map": "Google Maps 1,359 reviews, newest '20 hours ago'"
+    },
+    {
+      "name": "Kohtuotsa viewpoint",
+      "page_name": "Kohtuotsa viewpoint",
+      "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
+      "date": "2026-09",
+      "map": "Google Maps 'Kohtuotsa viewing platform', 7,262 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Pirita Convent ruins",
+      "page_name": "Pirita Convent ruins",
+      "src": "https://thingstodointallinn.com/family/",
+      "date": "2026-10",
+      "map": "Google Maps 'Birgitta Convent Ruins', 2,713 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Telliskivi flea market",
+      "page_name": "Telliskivi Flea Market",
+      "src": "https://thingstodointallinn.com/family/",
+      "date": "2026-10",
+      "map": "Google Maps 'Telliskivi Kirbukas', 130 reviews, newest 'last month'"
+    },
     {
       "name": "Beach restaurant PAAT",
       "page_name": "Paat",
@@ -57,6 +176,22 @@
   ],
   "left_out": [
     {
+      "name": "Vanaema Juures",
+      "why": "the map's newest review is 4 years old"
+    },
+    {
+      "name": "Kristiine BabyBack",
+      "why": "the map's newest review is 7 years old"
+    },
+    {
+      "name": "Pizza Americana",
+      "why": "the map puts it on Kaarli pst, not by the Viru Gate as the page says"
+    },
+    {
+      "name": "Viimsi places",
+      "why": "outside the city"
+    },
+    {
       "name": "Mängu Saar",
       "why": "three branches, none named"
     },
@@ -65,5 +200,10 @@
       "why": "no district on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 8 rows from Visit Estonia (Sep 2026) and Live Riga (official), all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

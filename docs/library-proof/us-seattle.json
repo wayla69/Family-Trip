@@ -1,10 +1,73 @@
 {
   "town": "us-seattle",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 14 rows from Seattle's Child (May–Aug 2026) and the city of Bellevue (official), all passed library-check.cjs, 11 went in",
+  "agents": "one Haiku agent; 12 rows from The Infatuation (2026) and Visit Seattle (2025–2026) passed library-check.cjs, 9 went in",
   "added": [
+    {
+      "name": "Young's Restaurant",
+      "page_name": "Young's Restaurant",
+      "src": "https://www.theinfatuation.com/seattle/guides/kid-friendly-restaurants-seattle",
+      "date": "2026-11",
+      "map": "Google Maps 9413 16th Ave SW, 868 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Outsider BBQ",
+      "page_name": "Outsider BBQ",
+      "src": "https://www.theinfatuation.com/seattle/guides/kid-friendly-restaurants-seattle",
+      "date": "2026-11",
+      "map": "Google Maps 'Outsider BBQ & Beer Garden', 4010 NW Leary Way, 506 reviews, newest '8 hours ago'"
+    },
+    {
+      "name": "Stoneburner",
+      "page_name": "Stoneburner",
+      "src": "https://www.theinfatuation.com/seattle/guides/kid-friendly-restaurants-seattle",
+      "date": "2026-11",
+      "map": "Google Maps 5214 Ballard Ave NW, 1,001 reviews, newest 'last week'"
+    },
+    {
+      "name": "Paseo (SoDo)",
+      "page_name": "Paseo SoDo",
+      "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+      "date": "2026-07",
+      "map": "Google Maps 'Paseo', 1760 1st Ave S, 2,231 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Seattle Pinball Museum",
+      "page_name": "Seattle Pinball Museum",
+      "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+      "date": "2026-07",
+      "map": "Google Maps 508 Maynard Ave S, 1,273 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Golden Gardens Park",
+      "page_name": "Golden Gardens Park",
+      "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+      "date": "2025-05",
+      "map": "Google Maps 9,097 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Seattle Children's Theatre",
+      "page_name": "Seattle Children’s Theatre",
+      "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+      "date": "2026-07",
+      "map": "Google Maps 201 Thomas St, 427 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Alki Beach",
+      "page_name": "Alki Beach",
+      "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+      "date": "2025-05",
+      "map": "Google Maps 'Alki Beach Park', 9,651 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Wing Luke Museum",
+      "page_name": "Wing Luke Museum",
+      "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+      "date": "2025-05",
+      "map": "Google Maps 719 S King St, 804 reviews, newest '2 weeks ago'"
+    },
     {
       "name": "Portage Bay Cafe (South Lake Union)",
       "page_name": "Portage Bay Cafe",
@@ -85,6 +148,18 @@
   ],
   "left_out": [
     {
+      "name": "Mox Boarding House",
+      "why": "a games bar"
+    },
+    {
+      "name": "Northwest Trolls",
+      "why": "five sculptures in different places, not one"
+    },
+    {
+      "name": "Summit at Snoqualmie",
+      "why": "90 minutes outside Seattle"
+    },
+    {
       "name": "Humble Pie, Judkins Park",
       "why": "no review dates readable on the map"
     },
@@ -97,5 +172,10 @@
       "why": "a tequila bar and a brewery"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 14 rows from Seattle's Child (May–Aug 2026) and the city of Bellevue (official), all passed library-check.cjs, 11 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

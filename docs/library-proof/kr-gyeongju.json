@@ -1,69 +1,91 @@
 {
   "town": "kr-gyeongju",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
-  "agents": "one Haiku agent; 3 rows from mom-mom.net (2026) and a travel blog (Oct 2026), all passed library-check.cjs, 1 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Gyeongju East Palace Garden (Donggungwon)",
-      "page_name": "경주 동궁원",
-      "src": "https://travelmapjourney.com/gyeongju-indoor-museum-donggungwon-rain-choice/",
-      "date": "2026-10",
-      "map": "Google Maps 'Gyeongju East Palace Garden', 2,449 reviews, newest shown 11 days ago"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the town holds 18 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [
+        {
+          "name": "Danseokga Chalboribbang",
+          "src": "https://www.google.com/maps/place/단석가찰보리빵+경주본점",
+          "page_name": "단석가찰보리빵 경주본점",
+          "evidence": "Google Maps (2026-11-23): bakery, 4.3★, 237 Geumseong-ro, Gyeongju; 'Open · Closes 10 PM' (with its second shop at 233 Geumseong-ro and branches at Oreung, Bomun, Geoncheon, all with today's hours); nothing says closed. The row's query (Taejong-ro) did not open one shop, so it now names the main store",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Eden Garden (Gyeongju)",
-      "page_name": "Eden Garden",
-      "src": "https://mom-mom.net/en/travel/places/660cc41f5f5869cf7a03956e",
-      "date": "2026-09",
-      "map": "Kakao Map '에덴동산' (충효천길 38-6), open, 27 reviews, newest 19 Nov 2026"
-    },
-    {
-      "name": "Hwangri Hwadukga (wood-fired pizza)",
-      "page_name": "Hwangri Hwadukga",
-      "src": "https://mom-mom.net/en/travel/places/661c94286ac1bcd65eecbdeb",
-      "date": "2026-09",
-      "map": "Google Maps '황리화덕가' (Sajeong-ro 50beon-gil 12), newest review shown a day ago"
-    },
-    {
-      "name": "The Swan kids café (Hyeongok)",
-      "page_name": "The Swan Gyeongju Branch",
-      "src": "https://mom-mom.net/en/travel/places/65ee8a8efcabdf8fcd70be78",
-      "date": "2026-05",
-      "map": "Google Maps Google Maps shows its newest review a year ago, so checked on Kakao Map: '더스완' (용담로 535-9), blog posts to Sep 2026; Kakao lists it as open on weekends only"
-    },
-    {
-      "name": "Cosmic Resort (media art)",
-      "page_name": "Cosmic Resort",
-      "src": "https://mom-mom.net/en/travel/places/69f17fd18345b3a2e56b2e2b",
-      "date": "2026-05",
-      "map": "Google Maps '코스믹 리조트 (Cosmic Resort)' (Cheonbungnam-ro 176), newest review shown a day ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
+      "agents": "one Haiku agent; 3 rows from mom-mom.net (2026) and a travel blog (Oct 2026), all passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Gyeongju East Palace Garden (Donggungwon)",
+          "page_name": "경주 동궁원",
+          "src": "https://travelmapjourney.com/gyeongju-indoor-museum-donggungwon-rain-choice/",
+          "date": "2026-10",
+          "map": "Google Maps 'Gyeongju East Palace Garden', 2,449 reviews, newest shown 11 days ago"
+        },
+        {
+          "name": "Eden Garden (Gyeongju)",
+          "page_name": "Eden Garden",
+          "src": "https://mom-mom.net/en/travel/places/660cc41f5f5869cf7a03956e",
+          "date": "2026-09",
+          "map": "Kakao Map '에덴동산' (충효천길 38-6), open, 27 reviews, newest 19 Nov 2026"
+        },
+        {
+          "name": "Hwangri Hwadukga (wood-fired pizza)",
+          "page_name": "Hwangri Hwadukga",
+          "src": "https://mom-mom.net/en/travel/places/661c94286ac1bcd65eecbdeb",
+          "date": "2026-09",
+          "map": "Google Maps '황리화덕가' (Sajeong-ro 50beon-gil 12), newest review shown a day ago"
+        },
+        {
+          "name": "The Swan kids café (Hyeongok)",
+          "page_name": "The Swan Gyeongju Branch",
+          "src": "https://mom-mom.net/en/travel/places/65ee8a8efcabdf8fcd70be78",
+          "date": "2026-05",
+          "map": "Google Maps Google Maps shows its newest review a year ago, so checked on Kakao Map: '더스완' (용담로 535-9), blog posts to Sep 2026; Kakao lists it as open on weekends only"
+        },
+        {
+          "name": "Cosmic Resort (media art)",
+          "page_name": "Cosmic Resort",
+          "src": "https://mom-mom.net/en/travel/places/69f17fd18345b3a2e56b2e2b",
+          "date": "2026-05",
+          "map": "Google Maps '코스믹 리조트 (Cosmic Resort)' (Cheonbungnam-ro 176), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Eoneu Meotjinnal",
+          "why": "not found on Kakao Map either"
+        },
+        {
+          "name": "Butterbook Gyeongju",
+          "why": "newest review a year old on both maps"
+        },
+        {
+          "name": "Eoneu Meotjinnal",
+          "why": "Google Maps marks it closed for good"
+        },
+        {
+          "name": "Cafe Neung, Gureung, Anata Cafe",
+          "why": "nothing about children on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "kakao_pass": "24 Nov 2026: +1 (Eden Garden)",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 8 rows from Mom-mom (2026), all passed library-check.cjs, 3 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "left_out": [
-    {
-      "name": "Eoneu Meotjinnal",
-      "why": "not found on Kakao Map either"
-    },
-    {
-      "name": "Butterbook Gyeongju",
-      "why": "newest review a year old on both maps"
-    },
-    {
-      "name": "Eoneu Meotjinnal",
-      "why": "Google Maps marks it closed for good"
-    },
-    {
-      "name": "Cafe Neung, Gureung, Anata Cafe",
-      "why": "nothing about children on the page"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +1 (Eden Garden)",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 8 rows from Mom-mom (2026), all passed library-check.cjs, 3 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

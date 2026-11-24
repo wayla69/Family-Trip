@@ -1,95 +1,207 @@
 {
   "town": "ae-abudhabi",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 15 rows from Secret Abu Dhabi (Jan 2026), Family Travel Middle East (Jul 2025), Emirates Online (2025), Abu Dhabi Mall (official) and Khaleej Blog (Jan 2026); 13 passed library-check.cjs, 9 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Amara (The WB Hotel)",
-      "page_name": "Amara",
-      "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
-      "date": "2026-01",
-      "map": "Google Maps 'Amara Restaurant' (The WB Hotel, Yas Island), newest review shown a day ago"
+      "town": "ae-abudhabi",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 3 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Al Ain Mall Food Court",
+          "src": "Google Maps",
+          "evidence": "Mall of Al Ain (Othman Bin Affan St) is open with hours and its food-court stalls (KFC \"at Food Court\", Jollibee \"Level 2, Food Court\", Shawarmary \"Food court, second floor\") have hours, but no listing of the food court itself — the mall being open is not enough."
+        }
+      ],
+      "removed": [
+        {
+          "name": "Lebanese Flower",
+          "src": "Google Maps",
+          "reason": "Searching the local name زهرة لبنان الخالدية opens \"Zahrat Lebnan - Al Khalidya\", 58 Al Qahirah St, F9G3+H5 Abu Dhabi: \"Permanently closed\". The English query only lists other branches/businesses (Zahrat Lebnan - Defence St, Lebanon Flower Bakery)."
+        },
+        {
+          "name": "Café Arabia",
+          "src": "Google Maps",
+          "reason": "\"Cafe Arabia كافيه أربيا\", Villa No. 637, 15th Street, opposite Al Mushrif Children's Park, F94H+8M Abu Dhabi: \"Temporarily closed\"."
+        }
+      ]
     },
     {
-      "name": "Shvili",
-      "page_name": "Shvili",
-      "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
-      "date": "2026-01",
-      "map": "Google Maps 'Shvili' (The Galleria, third floor), newest review shown 4 hours ago"
+      "town": "ae-abudhabi",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 rows offered, 9 from usable pages passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Sidekicks",
+          "page_name": "Sidekicks",
+          "src": "https://www.yasisland.com/en/restaurants/sidekicks",
+          "date": "official",
+          "map": "Google Maps 1,276 reviews, newest '2 hours ago'"
+        },
+        {
+          "name": "Crust",
+          "page_name": "Crust",
+          "src": "https://visitabudhabi.ae/en/where-to-go/dining-and-restaurants/crust",
+          "date": "official",
+          "map": "Google Maps 133 reviews, newest '5 days ago'"
+        },
+        {
+          "name": "Natural History Museum Abu Dhabi",
+          "page_name": "Natural History Museum Abu Dhabi",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "date": "2026-03",
+          "map": "Google Maps 2,424 reviews, newest '5 hours ago'"
+        },
+        {
+          "name": "Zayed National Museum",
+          "page_name": "Zayed National Museum",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "date": "2026-03",
+          "map": "Google Maps 2,651 reviews, newest '9 hours ago'"
+        },
+        {
+          "name": "teamLab Phenomena Abu Dhabi",
+          "page_name": "teamLab Phenomena Abu Dhabi",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "date": "2026-03",
+          "map": "Google Maps 'teamLab Phenomena', 7,682 reviews, newest '2 hours ago'"
+        },
+        {
+          "name": "The National Aquarium",
+          "page_name": "The National Aquarium and Butterfly Gardens",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "date": "2026-03",
+          "map": "Google Maps 'The National Aquarium Abu Dhabi', 5,898 reviews, newest '4 hours ago'"
+        },
+        {
+          "name": "Orange Wheels",
+          "page_name": "Orange Wheels",
+          "src": "https://kidzapp.com/abu-dhabi-kids-week-2026-the-ultimate-family-fun-guide",
+          "date": "2026-04",
+          "map": "Google Maps 'Orange Wheels - Reem Mall', 3,068 reviews, newest '17 hours ago'"
+        },
+        {
+          "name": "Air Maniax",
+          "page_name": "Air Maniax",
+          "src": "https://kidzapp.com/abu-dhabi-kids-week-2026-the-ultimate-family-fun-guide",
+          "date": "2026-04",
+          "map": "Google Maps 'Air Maniax Yas Mall', 3,603 reviews, newest '14 hours ago'"
+        },
+        {
+          "name": "Mission: Play! by Mattel",
+          "page_name": "Mission: Play! by Mattel",
+          "src": "https://kidzapp.com/abu-dhabi-kids-week-2026-the-ultimate-family-fun-guide",
+          "date": "2026-04",
+          "map": "Google Maps 'Mission Play! by Mattel The Galleria', 90 reviews, newest '2 weeks ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Cipriani, Li Beirut, Cafe Milano, Beirut Sur Mer, Central, Sim Sim",
+          "why": "their only source is restaurantsforkings.com, a machine-written ranking site the brief refuses"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "Havana Cafe & Restaurant",
-      "page_name": "Havana Café & Restaurant",
-      "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
-      "date": "2026-01",
-      "map": "Google Maps 'Havana Cafe & Restaurant' (Marina Village, Breakwater Rd), newest review shown 3 hours ago"
-    },
-    {
-      "name": "Leo & Loona (Yas Mall)",
-      "page_name": "Leo & Loona",
-      "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
-      "date": "2026-01",
-      "map": "Google Maps 'Leo&Loona Kids Park' (Yas Island), newest review shown a week ago"
-    },
-    {
-      "name": "Fun City (Abu Dhabi Mall)",
-      "page_name": "Fun City",
-      "src": "https://www.abudhabi-mall.com/play/",
-      "date": "official",
-      "map": "Google Maps 'Fun City - Abu Dhabi Mall' (Al Zahiyah, level 3), newest review shown 3 days ago"
-    },
-    {
-      "name": "Snow Abu Dhabi",
-      "page_name": "Snow Abu Dhabi",
-      "src": "https://www.emirates-online.net/English/location/al-ain/play-areas-for-kids",
-      "date": "2025-12",
-      "map": "Google Maps 'Snow Abu dhabi' (Reem Mall, Al Reem Island), newest review shown a day ago"
-    },
-    {
-      "name": "Caboodle Pamper & Play",
-      "page_name": "Caboodle Pamper & Play",
-      "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
-      "date": "2025-07",
-      "map": "Google Maps 'Caboodle Pamper & Play' (Al Maryah Island), newest review shown 2 days ago"
-    },
-    {
-      "name": "Fun Works (Yas Mall)",
-      "page_name": "Fun Works",
-      "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
-      "date": "2025-07",
-      "map": "Google Maps 'Fun Works - Powered by play' (Yas Mall, level 1), newest review shown 20 hours ago"
-    },
-    {
-      "name": "Cheeky Monkeys (Al Forsan)",
-      "page_name": "Cheeky Monkeys",
-      "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
-      "date": "2025-07",
-      "map": "Google Maps 'Cheeky Monkeys' (Al Forsan Village, Khalifa City), newest review shown a day ago"
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 rows from Secret Abu Dhabi (Jan 2026), Family Travel Middle East (Jul 2025), Emirates Online (2025), Abu Dhabi Mall (official) and Khaleej Blog (Jan 2026); 13 passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Amara (The WB Hotel)",
+          "page_name": "Amara",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Amara Restaurant' (The WB Hotel, Yas Island), newest review shown a day ago"
+        },
+        {
+          "name": "Shvili",
+          "page_name": "Shvili",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Shvili' (The Galleria, third floor), newest review shown 4 hours ago"
+        },
+        {
+          "name": "Havana Cafe & Restaurant",
+          "page_name": "Havana Café & Restaurant",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Havana Cafe & Restaurant' (Marina Village, Breakwater Rd), newest review shown 3 hours ago"
+        },
+        {
+          "name": "Leo & Loona (Yas Mall)",
+          "page_name": "Leo & Loona",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Leo&Loona Kids Park' (Yas Island), newest review shown a week ago"
+        },
+        {
+          "name": "Fun City (Abu Dhabi Mall)",
+          "page_name": "Fun City",
+          "src": "https://www.abudhabi-mall.com/play/",
+          "date": "official",
+          "map": "Google Maps 'Fun City - Abu Dhabi Mall' (Al Zahiyah, level 3), newest review shown 3 days ago"
+        },
+        {
+          "name": "Snow Abu Dhabi",
+          "page_name": "Snow Abu Dhabi",
+          "src": "https://www.emirates-online.net/English/location/al-ain/play-areas-for-kids",
+          "date": "2025-12",
+          "map": "Google Maps 'Snow Abu dhabi' (Reem Mall, Al Reem Island), newest review shown a day ago"
+        },
+        {
+          "name": "Caboodle Pamper & Play",
+          "page_name": "Caboodle Pamper & Play",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "date": "2025-07",
+          "map": "Google Maps 'Caboodle Pamper & Play' (Al Maryah Island), newest review shown 2 days ago"
+        },
+        {
+          "name": "Fun Works (Yas Mall)",
+          "page_name": "Fun Works",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "date": "2025-07",
+          "map": "Google Maps 'Fun Works - Powered by play' (Yas Mall, level 1), newest review shown 20 hours ago"
+        },
+        {
+          "name": "Cheeky Monkeys (Al Forsan)",
+          "page_name": "Cheeky Monkeys",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "date": "2025-07",
+          "map": "Google Maps 'Cheeky Monkeys' (Al Forsan Village, Khalifa City), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "COCO Café & Playhouse",
+          "why": "the map puts it at HIID Residence, not Saadiyat as the page says"
+        },
+        {
+          "name": "Adventure Zone",
+          "why": "the map shows only the Adventure HQ shop"
+        },
+        {
+          "name": "Strooler Go",
+          "why": "not found on the map"
+        },
+        {
+          "name": "Al Sarooj Park",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "Central, Antonia Mamsha",
+          "why": "the page has no date"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "COCO Café & Playhouse",
-      "why": "the map puts it at HIID Residence, not Saadiyat as the page says"
-    },
-    {
-      "name": "Adventure Zone",
-      "why": "the map shows only the Adventure HQ shop"
-    },
-    {
-      "name": "Strooler Go",
-      "why": "not found on the map"
-    },
-    {
-      "name": "Al Sarooj Park",
-      "why": "no review dates readable on the map"
-    },
-    {
-      "name": "Central, Antonia Mamsha",
-      "why": "the page has no date"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

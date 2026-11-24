@@ -1,34 +1,153 @@
 {
   "town": "fj-islands",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 3 rows from Fiji Pocket Guide (Jun 2025) and FBC News; 2 passed library-check.cjs, 2 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Cantina Grill & Bar",
-      "page_name": "Cantina Grill & Bar",
-      "src": "https://fijipocketguide.com/cantina-restaurant-in-denarau-a-full-fiji-restaurant-review/",
-      "date": "2025-06",
-      "map": "Google Maps 'Cantina | Grill & Bar' (Denarau Marina Shopping Centre), newest review shown 5 hours ago"
+      "town": "fj-islands",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Tappoo City Food Court",
+          "src": "Google Maps",
+          "evidence": "\"TappooCity Suva\" mall, Thomson & Usher St, shows \"Closes soon · 6 PM\"; the only food-court listing found (\"Pure Green - Tappoo City Food Court Suva\") is one stall and \"Permanently closed\". No listing of the food court itself with hours."
+        }
+      ],
+      "removed": [
+        {
+          "name": "Taste Fiji Kitchen",
+          "src": "Google Maps",
+          "reason": "\"Taste Fiji\", Cawa Rd, Nadi: \"Permanently closed\"."
+        }
+      ]
     },
     {
-      "name": "Biausevu Waterfall",
-      "page_name": "Biausevu Waterfall",
-      "src": "https://fijipocketguide.com/10-things-to-do-on-the-coral-coast-with-kids/",
-      "date": "2025-06",
-      "map": "Google Maps 'Biausevu Waterfall' (Coral Coast), newest review shown 6 days ago"
-    }
-  ],
-  "left_out": [
-    {
-      "name": "Magical Fun House",
-      "why": "the page has no date"
+      "town": "fj-islands",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 rows from Fiji Pocket Guide (2026), Fiji Journal (2025), A Winter Escape (2026) and Our Family Passport (2026) passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Isa Lei",
+          "page_name": "Isa Lei",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "date": "2026-05",
+          "map": "Google Maps 'Isa Lei Fijian Restaurant', 64 reviews, newest 'last month'"
+        },
+        {
+          "name": "The Curry House",
+          "page_name": "Curry House",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "date": "2026-05",
+          "map": "Google Maps 'The Curry House', Main Street (the page says Hospital Road), 52 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Zigzag Cafe",
+          "page_name": "Zigzag Cafe",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "date": "2026-05",
+          "map": "Google Maps 138 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "The Coffee Hub (Nadi)",
+          "page_name": "The Coffee Hub",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "date": "2026-05",
+          "map": "Google Maps 'The Coffee Hub - Nadi', Nasau, 818 reviews, newest '12 hours ago'"
+        },
+        {
+          "name": "Sentai Seafood Restaurant",
+          "page_name": "Sentai Seafood Restaurant",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "date": "2026-05",
+          "map": "Google Maps Sagayam Road, 557 reviews, newest '3 weeks ago'"
+        },
+        {
+          "name": "Mamacita",
+          "page_name": "Mamacita Mexican Restaurant",
+          "src": "https://www.fijijournal.com/fiji/places/denarau/family-friendly-dining/",
+          "date": "2025-09",
+          "map": "Google Maps 'Mamacita | Mexican Restaurant & Bar', 581 reviews, newest 'last week'"
+        },
+        {
+          "name": "Sri Siva Subramaniya Temple",
+          "page_name": "Sri Siva Subramaniya Temple",
+          "src": "https://www.awinterescape.com/things-to-do-fiji/",
+          "date": "2026-05",
+          "map": "Google Maps 1,789 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Big Bula Waterpark",
+          "page_name": "Big Bula Waterpark",
+          "src": "https://fijipocketguide.com/the-guide-to-denarau-island-for-families/",
+          "date": "2026-05",
+          "map": "Google Maps 850 reviews, newest '3 days ago'"
+        },
+        {
+          "name": "Namaka market",
+          "page_name": "Namaka Food Market",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "date": "2026-05",
+          "map": "Google Maps 'Namaka Farmers Market', 494 reviews, newest '2 weeks ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Hot Bread Kitchen",
+          "why": "a bakery chain; the map's nearest is another branch"
+        },
+        {
+          "name": "Ocean Seafood",
+          "why": "the map shows a differently named place"
+        },
+        {
+          "name": "Sawa-i-Lau Caves, Monuriki, Mana Sandbar",
+          "why": "reached only on operator boat trips"
+        },
+        {
+          "name": "Fijiana Cacao",
+          "why": "a chocolate factory tour"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "The Beach Shack",
-      "why": "a bar with live entertainment"
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Fiji Pocket Guide (Jun 2025) and FBC News; 2 passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Cantina Grill & Bar",
+          "page_name": "Cantina Grill & Bar",
+          "src": "https://fijipocketguide.com/cantina-restaurant-in-denarau-a-full-fiji-restaurant-review/",
+          "date": "2025-06",
+          "map": "Google Maps 'Cantina | Grill & Bar' (Denarau Marina Shopping Centre), newest review shown 5 hours ago"
+        },
+        {
+          "name": "Biausevu Waterfall",
+          "page_name": "Biausevu Waterfall",
+          "src": "https://fijipocketguide.com/10-things-to-do-on-the-coral-coast-with-kids/",
+          "date": "2025-06",
+          "map": "Google Maps 'Biausevu Waterfall' (Coral Coast), newest review shown 6 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Magical Fun House",
+          "why": "the page has no date"
+        },
+        {
+          "name": "The Beach Shack",
+          "why": "a bar with live entertainment"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

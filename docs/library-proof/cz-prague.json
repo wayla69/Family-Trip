@@ -1,10 +1,115 @@
 {
   "town": "cz-prague",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 5 rows from Loudavým krokem (Jul 2026), Kuličkário's own site and Prague City Tourism (official), all passed library-check.cjs, 4 went in",
+  "agents": "one Haiku agent; 21 rows from prague.eu, Lonely Planet and 22places, 17 passed library-check.cjs, 15 went in",
   "added": [
+    {
+      "name": "Výtopna Railway Restaurant",
+      "page_name": "Výtopna Restaurant",
+      "src": "https://prague.eu/en/objevujte/restaurace-vytopna-praha/",
+      "date": "2025-09",
+      "map": "Google Maps 'Výtopna Railway Restaurant', 21,367 reviews, newest '8 hours ago'"
+    },
+    {
+      "name": "Food Lab",
+      "page_name": "Food Lab Restaurant",
+      "src": "https://prague.eu/en/objevujte/food-lab-restaurant/",
+      "date": "2025-08",
+      "map": "Google Maps 'Restaurant FOOD LAB', 2,629 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Bruxx",
+      "page_name": "Belgian restaurant Bruxx",
+      "src": "https://prague.eu/en/objevujte/belgicka-restaurace-bruxx/",
+      "date": "2025-11",
+      "map": "Google Maps 'Bruxx', 6,950 reviews, newest '22 hours ago'"
+    },
+    {
+      "name": "Kulaťák",
+      "page_name": "Kulaťák Restaurant",
+      "src": "https://prague.eu/en/objevujte/kulatak-restaurant/",
+      "date": "2025-09",
+      "map": "Google Maps 'Restaurace Kulaťák', 7,559 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "Občanská plovárna",
+      "page_name": "Občanská plovárna",
+      "src": "https://prague.eu/en/objevujte/obcanska-plovarna/",
+      "date": "2026-03",
+      "map": "Google Maps 1,323 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Kolkovna Olympia",
+      "page_name": "Kolkovna Olympia Restaurant",
+      "src": "https://prague.eu/en/objevujte/kolkovna-olympia-restaurant/",
+      "date": "2025-09",
+      "map": "Google Maps 'Kolkovna Olympia', 5,429 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Miminoo Garden Restaurant",
+      "page_name": "Miminoo Garden Restaurant",
+      "src": "https://prague.eu/en/objevujte/miminoo-garden-restaurant/",
+      "date": "2025-12",
+      "map": "Google Maps 'MIMINOO garden restaurant', 1,568 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Vozovna Stromovka",
+      "page_name": "Vozovna Stromovka",
+      "src": "https://www.lonelyplanet.com/articles/prague-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 189 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Café Truhlárna",
+      "page_name": "Café Truhlárna",
+      "src": "https://www.22places.com/prague-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 1,525 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Museum of Fantastic Illusions",
+      "page_name": "Museum of Fantastic Illusions",
+      "src": "https://prague.eu/en/objevujte/museum-of-fantastic-illusions-muzeum-fantastickych-iluzi/",
+      "date": "2025-10",
+      "map": "Google Maps 12,445 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Karel Zeman Museum",
+      "page_name": "Karel Zeman Museum",
+      "src": "https://prague.eu/en/objevujte/karel-zeman-museum-muzeum-karla-zemana/",
+      "date": "2025-10",
+      "map": "Google Maps 2,296 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Museum of Senses",
+      "page_name": "Museum of the Senses",
+      "src": "https://prague.eu/en/objevujte/museum-of-the-senses-muzeum-smyslu/",
+      "date": "2025-12",
+      "map": "Google Maps 'Museum of Senses', 8,247 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Public Transport Museum",
+      "page_name": "Public Transport Museum — Střešovice Depot",
+      "src": "https://prague.eu/en/objevujte/public-transport-museum-stresovice-depot-muzeum-mestske-hromadne-dopravy/",
+      "date": "2026-06",
+      "map": "Google Maps 'Museum of Public Transport', 2,529 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Toy Museum, Prague Castle",
+      "page_name": "Toy Museum",
+      "src": "https://www.22places.com/prague-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps Jiřská 4, 294 reviews, newest 'last week'"
+    },
+    {
+      "name": "Stromovka park",
+      "page_name": "Stromovka Park",
+      "src": "https://www.lonelyplanet.com/articles/prague-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Královská obora Stromovka', 18,018 reviews, newest '3 hours ago'"
+    },
     {
       "name": "The Spot Malá Strana",
       "page_name": "The Spot",
@@ -36,6 +141,18 @@
   ],
   "left_out": [
     {
+      "name": "Papilonia Butterfly House",
+      "why": "the map marks it permanently closed"
+    },
+    {
+      "name": "Majaland Prague",
+      "why": "outside the city, at the airport outlet centre"
+    },
+    {
+      "name": "Railway Kingdom, Pedal Planet Museum, Toulcův dvůr, Back In Time Prague",
+      "why": "library-check.cjs: the expats.cz page did not open"
+    },
+    {
       "name": "Rejžárna",
       "why": "the map shows its company name, not the place"
     },
@@ -44,5 +161,10 @@
       "why": "its own site shows it closed every day"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Loudavým krokem (Jul 2026), Kuličkário's own site and Prague City Tourism (official), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -1,81 +1,277 @@
 {
   "town": "ie-ireland",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 16 rows from Dublin Tourism (Aug 2026), Killarney.ie (Jan 2026) and two official sites, all passed library-check.cjs, 7 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Two Pups",
-      "page_name": "Two Pups Coffee",
-      "src": "https://www.dublintourism.org/family-restaurants/",
-      "date": "2026-08",
-      "map": "Google Maps 'Two Pups' (74 Francis St), newest review shown 12 hours ago"
+      "town": "ie-ireland",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Queen of Tarts",
+          "src": "https://www.google.com/maps/place/Queen+of+Tarts+Dame+Street/@53.3441382,-6.2677022,17z",
+          "reason": "Google Maps: 'Queen of Tarts Dame Street', 5 Cork Hill, Dame St, Dublin 2 (8PVJ+MW) — 'Permanently closed'; the Cow's Lane address the row names shows 'il Valentino Bakery & Cafe' (8PVJ+PC), also 'Permanently closed'; 'Queen of Tarts Dublin' alone: Maps can't find it"
+        }
+      ]
     },
     {
-      "name": "Deenagh Lodge Tea Rooms",
-      "page_name": "Deenagh Lodge Tea Rooms",
-      "src": "https://killarney.ie/family-friendly-getaways/",
-      "date": "2026-01",
-      "map": "Google Maps 'Deenagh Lodge' (Port Road, Knockreer), newest review shown 4 days ago"
+      "town": "ie-ireland",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 24 rows from Dublin Tourism, The Irish Times (2025) and Discover Ireland passed library-check.cjs, 22 went in",
+      "added": [
+        {
+          "name": "The Bad Ass Cafe",
+          "page_name": "The Bad Ass Cafe",
+          "src": "https://www.dublintourism.org/family-restaurants/",
+          "date": "2026-08",
+          "map": "Google Maps 'Bad Ass Cafe', 3,194 reviews, newest '9 hours ago'"
+        },
+        {
+          "name": "Carluccio's",
+          "page_name": "Carluccio’s",
+          "src": "https://www.dublintourism.org/family-restaurants/",
+          "date": "2026-08",
+          "map": "Google Maps Dawson Street, 2,594 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Wagamama Dundrum",
+          "page_name": "Wagamama",
+          "src": "https://www.dublintourism.org/family-restaurants/",
+          "date": "2026-08",
+          "map": "Google Maps 'wagamama dublin dundrum', 1,229 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Brother Hubbard (North)",
+          "page_name": "Brother Hubbard",
+          "src": "https://www.dublintourism.org/family-restaurants/",
+          "date": "2026-08",
+          "map": "Google Maps 'Brother Hubbard (North)', Capel Street, 4,219 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "The Fumbally",
+          "page_name": "The Fumbally",
+          "src": "https://www.dublintourism.org/family-restaurants/",
+          "date": "2026-08",
+          "map": "Google Maps 2,114 reviews, newest '19 hours ago'"
+        },
+        {
+          "name": "Overends Kitchen",
+          "page_name": "Overends Kitchen at Airfield Estate",
+          "src": "https://www.irishtimes.com/special-reports/2025/06/19/eight-great-places-to-eat-out-with-all-the-family-this-summer",
+          "date": "2025-06",
+          "map": "Google Maps 'Overends Kitchen', 489 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Blackrock Cottage",
+          "page_name": "Blackrock Cottage",
+          "src": "https://www.irishtimes.com/special-reports/2025/06/19/eight-great-places-to-eat-out-with-all-the-family-this-summer",
+          "date": "2025-06",
+          "map": "Google Maps 800 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Freddy's",
+          "page_name": "Freddy’s",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well",
+          "date": "2025-08",
+          "map": "Google Maps 'Freddy's', 1,385 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Aniar",
+          "page_name": "Aniar",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well",
+          "date": "2025-08",
+          "map": "Google Maps 451 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Saba",
+          "page_name": "Saba",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well",
+          "date": "2025-08",
+          "map": "Google Maps 'Saba Restaurant', 1,595 reviews, newest '17 hours ago'"
+        },
+        {
+          "name": "Moher Hill Open Farm",
+          "page_name": "Moher Hill Open Farm",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "date": "2025-04",
+          "map": "Google Maps 'Moher Hill Open Farm and Leisure Park', 984 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Doolin Cave",
+          "page_name": "Doolin Cave",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "date": "2025-04",
+          "map": "Google Maps 2,669 reviews, newest 'last week'"
+        },
+        {
+          "name": "Caherconnell Fort",
+          "page_name": "Caherconnell Fort",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "date": "2025-04",
+          "map": "Google Maps 'Caherconnell Stone Fort & Sheepdog Demonstrations', Carran, 1,396 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Dromore Wood nature reserve",
+          "page_name": "Dromore Wood Nature Reserve",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "date": "2025-04",
+          "map": "Google Maps 'Dromore Woods Trailhead', 317 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Shannon Aviation Museum",
+          "page_name": "Shannon Aviation Museum",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "date": "2025-04",
+          "map": "Google Maps 207 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Lahinch beach",
+          "page_name": "Lahinch Beach",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "date": "2025-04",
+          "map": "Google Maps 3,264 reviews, newest '4 weeks ago'"
+        },
+        {
+          "name": "National Museum of Ireland – Archaeology",
+          "page_name": "National Museum (Archaeology)",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 'National Museum of Ireland', Kildare Street, 15,730 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "National Gallery of Ireland",
+          "page_name": "National Gallery of Ireland",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 18,987 reviews, newest '7 hours ago'"
+        },
+        {
+          "name": "National Wax Museum Plus",
+          "page_name": "National Wax Museum",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 'The National Wax Museum Plus', 5,381 reviews, newest 'last week'"
+        },
+        {
+          "name": "The Little Museum of Dublin",
+          "page_name": "The Little Museum of Dublin",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 5,930 reviews, newest '15 hours ago'"
+        },
+        {
+          "name": "AquaZone",
+          "page_name": "AquaZone",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 1,502 reviews, newest '15 hours ago'"
+        },
+        {
+          "name": "EPIC The Irish Emigration Museum",
+          "page_name": "EPIC The Irish Emigration Museum",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 12,100 reviews, newest '2 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pizza Express (College Green)",
+          "why": "the map shows a different takeaway, Pizza Xpress"
+        },
+        {
+          "name": "Camile Thai",
+          "why": "a chain, the page names no branch"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "National Museum – Decorative Arts and History (Collins Barracks)",
-      "page_name": "National Museum (Decorative Arts at Collins Barracks)",
-      "src": "https://www.dublintourism.org/rainy-day-kids/",
-      "date": "2026-08",
-      "map": "Google Maps 'Collins Barracks National Museum of Ireland', newest review shown a day ago"
-    },
-    {
-      "name": "Loughwell Farm Park",
-      "page_name": "Loughwell Farm Park",
-      "src": "https://www.loughwellfarmpark.ie/",
-      "date": "official",
-      "map": "Google Maps 'Loughwell Farm Park' (Moycullen), newest review shown 2 weeks ago"
-    },
-    {
-      "name": "Leisureland (Salthill)",
-      "page_name": "Leisureland",
-      "src": "https://www.leisureland.ie/",
-      "date": "official",
-      "map": "Google Maps 'Leisureland' (Upper Salthill Rd), newest review shown 3 days ago"
-    },
-    {
-      "name": "Muckross Creamery",
-      "page_name": "Muckross Creamery",
-      "src": "https://killarney.ie/family-friendly-getaways/",
-      "date": "2026-01",
-      "map": "Google Maps 'Muckross Creamery', newest review shown 2 months ago"
-    },
-    {
-      "name": "Kennedy's Pet Farm",
-      "page_name": "Kennedy’s Pet Farm",
-      "src": "https://killarney.ie/family-friendly-getaways/",
-      "date": "2026-01",
-      "map": "Google Maps 'Kennedys Pet Farm' (Glenflesk), newest review shown 3 weeks ago"
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 16 rows from Dublin Tourism (Aug 2026), Killarney.ie (Jan 2026) and two official sites, all passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Two Pups",
+          "page_name": "Two Pups Coffee",
+          "src": "https://www.dublintourism.org/family-restaurants/",
+          "date": "2026-08",
+          "map": "Google Maps 'Two Pups' (74 Francis St), newest review shown 12 hours ago"
+        },
+        {
+          "name": "Deenagh Lodge Tea Rooms",
+          "page_name": "Deenagh Lodge Tea Rooms",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "date": "2026-01",
+          "map": "Google Maps 'Deenagh Lodge' (Port Road, Knockreer), newest review shown 4 days ago"
+        },
+        {
+          "name": "National Museum – Decorative Arts and History (Collins Barracks)",
+          "page_name": "National Museum (Decorative Arts at Collins Barracks)",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 'Collins Barracks National Museum of Ireland', newest review shown a day ago"
+        },
+        {
+          "name": "Loughwell Farm Park",
+          "page_name": "Loughwell Farm Park",
+          "src": "https://www.loughwellfarmpark.ie/",
+          "date": "official",
+          "map": "Google Maps 'Loughwell Farm Park' (Moycullen), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Leisureland (Salthill)",
+          "page_name": "Leisureland",
+          "src": "https://www.leisureland.ie/",
+          "date": "official",
+          "map": "Google Maps 'Leisureland' (Upper Salthill Rd), newest review shown 3 days ago"
+        },
+        {
+          "name": "Muckross Creamery",
+          "page_name": "Muckross Creamery",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "date": "2026-01",
+          "map": "Google Maps 'Muckross Creamery', newest review shown 2 months ago"
+        },
+        {
+          "name": "Kennedy's Pet Farm",
+          "page_name": "Kennedy’s Pet Farm",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "date": "2026-01",
+          "map": "Google Maps 'Kennedys Pet Farm' (Glenflesk), newest review shown 3 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pinocchio (Ranelagh), Scoop Gelato",
+          "why": "not found on the map at the page's address"
+        },
+        {
+          "name": "Brioche (Aungier St), Storyboard Cafe",
+          "why": "the map shows reviews two or more years old"
+        },
+        {
+          "name": "Lemon Crepe (Dawson St)",
+          "why": "the map shows it on South William St, not the page's street"
+        },
+        {
+          "name": "Captain Americas (Suffolk St)",
+          "why": "the map shows no open branch on that street"
+        },
+        {
+          "name": "Ciar’s Quest, Dunloe House fairy trail, Knockreer House",
+          "why": "no map entry of its own, or no reviews to read"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Pinocchio (Ranelagh), Scoop Gelato",
-      "why": "not found on the map at the page's address"
-    },
-    {
-      "name": "Brioche (Aungier St), Storyboard Cafe",
-      "why": "the map shows reviews two or more years old"
-    },
-    {
-      "name": "Lemon Crepe (Dawson St)",
-      "why": "the map shows it on South William St, not the page's street"
-    },
-    {
-      "name": "Captain Americas (Suffolk St)",
-      "why": "the map shows no open branch on that street"
-    },
-    {
-      "name": "Ciar’s Quest, Dunloe House fairy trail, Knockreer House",
-      "why": "no map entry of its own, or no reviews to read"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

@@ -1,37 +1,86 @@
 {
   "town": "th-rayong",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 4 rows from PPTV (Oct 2026) passed library-check.cjs, 3 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Gazebo Cafe Rayong",
-      "page_name": "Gazebo Cafe Rayong",
-      "src": "https://www.pptvhd36.com/travel/thailand/285042",
-      "date": "2026-10",
-      "map": "Google Maps 'GAZEBO CAFE RAYONG (กาซีโบ)', Nikhom Phatthana, 105 reviews, newest '8 hours ago'"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the five rows without ok; the eight rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing. Samed Villa's own site was read too",
+      "confirmed": [
+        {
+          "name": "Waree Seafood",
+          "src": "https://www.google.com/maps/place/วารีซีฟู้ด+เจ้ศรีศาลาเขียว/@12.6193135,101.4268069,17z",
+          "page_name": "วารีซีฟู้ด เจ้ศรีศาลาเขียว",
+          "evidence": "Google Maps: seafood restaurant, 3.9★, 33/4 Phe, Mueang Rayong (JC9G+PP) — Ban Phe, as the row says; 'Open · Closes 8:30 PM', a Facebook page and phone listed; nothing says closed. Map query now uses its Maps name",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Samed Villa Restaurant",
+          "src": "https://samedvilla.com/facilities-services/",
+          "page_name": "Samed Villa Resort / เสม็ดวิลล่ารีสอร์ท เกาะเสม็ด",
+          "evidence": "its own site: 'located directly at the white sandy Ao Phai Beach', a restaurant with 'Western/ European and Thai cuisine … and BBQ', 'dinner is served on the beach', footer 'Copyright © 2026', a live Book now link, nothing saying closed or under renovation. Google Maps lists the resort (4.3★, 89 Phe, HF74+8P) with rooms on sale for 2–3 Dec 2026 through Trip.com and Traveloka",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Ban Phe Market",
+          "src": "https://www.google.com/maps/search/ตลาดบ้านเพ+ระยอง",
+          "page_name": "ตลาดอาหารทะเล บ้านเพ / Ban Phe Fresh Market",
+          "evidence": "Google Maps: Ban Phe seafood market (4.3★, JCCJ+W56, by the pier), 'Open · Closes 7:30 PM'; the fresh market at the same place opens 5 AM ('busy stop for seafood & fruit snacks'); the municipal 100-pillar market's stalls sell dried seafood; nothing says closed. Map query now names the seafood market",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Swensen’s Central Rayong",
+          "src": "https://www.google.com/maps/place/Swensen's+Central+Rayong/@12.695984,101.268295,17z",
+          "page_name": "Swensen's Central Rayong",
+          "evidence": "Google Maps: dessert restaurant, 4.6★, located in Central Rayong (M7W9+98); 'Open · Closes 9 PM', the chain's site and a phone listed; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Central Rayong food court",
+          "src": "https://www.google.com/maps/place/Central+Rayong/@12.6954848,101.2684153,17z",
+          "evidence": "the mall is open (Central Rayong, 99/99/1 Chaikaphom Road, 'Open · Closes 9 PM', 73 food and drink places in its directory), but no listing of the food court itself was found. The map query named Highway 36; it now names the mall's road"
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Ran Choei",
-      "page_name": "ร้านเชย",
-      "src": "https://www.pptvhd36.com/travel/thailand/285042",
-      "date": "2026-10",
-      "map": "Google Maps 'ร้านเชย (ถนนยมจินดา)', 130 ถนนยมจินดา, 335 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Laem Mae Phim beach",
-      "page_name": "หาดแหลมแม่พิมพ์",
-      "src": "https://www.pptvhd36.com/travel/thailand/285042",
-      "date": "2026-10",
-      "map": "Google Maps 1,663 reviews, newest shown '3 months ago'"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from PPTV (Oct 2026) passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Gazebo Cafe Rayong",
+          "page_name": "Gazebo Cafe Rayong",
+          "src": "https://www.pptvhd36.com/travel/thailand/285042",
+          "date": "2026-10",
+          "map": "Google Maps 'GAZEBO CAFE RAYONG (กาซีโบ)', Nikhom Phatthana, 105 reviews, newest '8 hours ago'"
+        },
+        {
+          "name": "Ran Choei",
+          "page_name": "ร้านเชย",
+          "src": "https://www.pptvhd36.com/travel/thailand/285042",
+          "date": "2026-10",
+          "map": "Google Maps 'ร้านเชย (ถนนยมจินดา)', 130 ถนนยมจินดา, 335 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "Laem Mae Phim beach",
+          "page_name": "หาดแหลมแม่พิมพ์",
+          "src": "https://www.pptvhd36.com/travel/thailand/285042",
+          "date": "2026-10",
+          "map": "Google Maps 1,663 reviews, newest shown '3 months ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Yommachinda Road",
+          "why": "a whole street"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Yommachinda Road",
-      "why": "a whole street"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

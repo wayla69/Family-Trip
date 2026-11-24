@@ -1,192 +1,214 @@
 {
   "town": "kr-jeju",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
-  "agents": "one Haiku agent; 20 rows from Jeju tourism and family travel pages (Apr–Nov 2026) passed library-check.cjs, 14 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Myeonjumak (Jeju Main)",
-      "page_name": "Myeonjumak Jeju Main Branch",
-      "src": "https://mom-mom.net/en/travel/places/65fbf89116e6494c21e65b98",
-      "date": "2026-05",
-      "map": "Google Maps '면주막 제주본점', 566 reviews, newest shown '2 days ago'"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the town holds 24 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [
+        {
+          "name": "Deokseongwon",
+          "src": "https://www.google.com/maps/place/Deogseong-Won",
+          "page_name": "Deogseong-Won / 덕성원",
+          "evidence": "Google Maps (2026-11-23): Chinese restaurant, 3.8★, 4 Taepyeong-ro 401beon-gil, Seogwipo-si; 'Open · Closes 9 PM', phone +82 64-762-2402, table booking on redtable.global; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Samsin Halmang Bapsang",
-      "page_name": "Samsin Halmang Bapsang",
-      "src": "https://mom-mom.net/en/travel/places/69520307669da585e5e73028",
-      "date": "2026-09",
-      "map": "Google Maps '삼신할망밥상', 115 reviews, newest shown '8 days ago'"
-    },
-    {
-      "name": "Dullegil (Jungmun Main)",
-      "page_name": "Dullegil Seogwipo Jungmun Main Branch",
-      "src": "https://mom-mom.net/en/travel/places/670df7b9820b1c3517d720c3",
-      "date": "2026-09",
-      "map": "Google Maps 'Dullegil 둘레길', 159 reviews, newest shown '2 days ago'"
-    },
-    {
-      "name": "Jeju Hanmyeonga",
-      "page_name": "Jeju Hanmyeonga",
-      "src": "https://mom-mom.net/en/travel/places/65d84e2146c0add936f9573a",
-      "date": "2026-09",
-      "map": "Google Maps '제주한면가', 344 reviews, newest shown '14 days ago'"
-    },
-    {
-      "name": "Gozip Dol Wooluck (Hamdeok)",
-      "page_name": "Gozip Dolureok Jeju Hamdeok Branch",
-      "src": "https://mom-mom.net/en/travel/places/6670e3a19081a5f147ae468b",
-      "date": "2026-11",
-      "map": "Google Maps '고집돌우럭 함덕점', 3,588 reviews, newest shown '4 days ago'"
-    },
-    {
-      "name": "Jeju Dodori Meat Noodles",
-      "page_name": "Jeju Dodori Meat Noodles",
-      "src": "https://mom-mom.net/en/travel/places/694500f64109ca8f1af1c761",
-      "date": "2026-09",
-      "map": "Google Maps '제주 도도리고기국수', 375 reviews, newest shown 'last month'"
-    },
-    {
-      "name": "Gwangyuk",
-      "page_name": "Gwangyuk",
-      "src": "https://mom-mom.net/en/travel/places/6a22630eee9cbcb3925d1ce3",
-      "date": "2026-09",
-      "map": "Google Maps '광육', 25 reviews, newest shown '9 days ago'"
-    },
-    {
-      "name": "Maze Land",
-      "page_name": "Maze Land",
-      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
-      "date": "2026-04",
-      "map": "Google Maps '메이즈랜드', 3,342 reviews, newest shown '15 days ago'"
-    },
-    {
-      "name": "Figure Museum Jeju",
-      "page_name": "Figure Museum",
-      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
-      "date": "2026-04",
-      "map": "Google Maps '피규어뮤지엄 제주', 3,084 reviews, newest shown '6 days ago'"
-    },
-    {
-      "name": "Fairy and Woodcutter Theme Park",
-      "page_name": "Fairy and Woodsman Theme Park",
-      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
-      "date": "2026-04",
-      "map": "Google Maps '선녀와 나무꾼 테마공원', 3,466 reviews, newest shown '20 days ago'"
-    },
-    {
-      "name": "Yeomiji Botanical Garden",
-      "page_name": "Yeomiji Botanical Garden",
-      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
-      "date": "2026-04",
-      "map": "Google Maps '여미지식물원', 3,667 reviews, newest shown '5 days ago'"
-    },
-    {
-      "name": "Hueree Nature Life Park",
-      "page_name": "Hueree Natural Park",
-      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
-      "date": "2026-04",
-      "map": "Google Maps '휴애리 자연생활공원', 5,704 reviews, newest shown '3 days ago'"
-    },
-    {
-      "name": "Jeju Water World",
-      "page_name": "Jeju Water World",
-      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
-      "date": "2026-04",
-      "map": "Google Maps '워터월드 제주', 522 reviews, newest shown '3 days ago'"
-    },
-    {
-      "name": "Jeju Tangerine Kart",
-      "page_name": "Jeju Tangerine Kart",
-      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
-      "date": "2026-04",
-      "map": "Google Maps '감귤카트', 199 reviews, newest shown '3 days ago'"
-    },
-    {
-      "name": "Suni Table",
-      "page_name": "Suni Table",
-      "src": "https://mom-mom.net/en/travel/places/660a3ec7738cc897ddeddf23",
-      "date": "2026-09",
-      "map": "Kakao Map '수니테이블' (구좌읍 문주란로 33-1), open, 34 reviews, newest 29 Sep 2026"
-    },
-    {
-      "name": "Danso (Aewol)",
-      "page_name": "Danso",
-      "src": "https://mom-mom.net/en/travel/places/63d3718a6e2efc966cf688d3",
-      "date": "2026-09",
-      "map": "Kakao Map '단소 제주애월본점' (애월로 139-4), open, 201 blog posts, newest 20 Nov 2026"
-    },
-    {
-      "name": "Tayo Kids Café (Yongdam)",
-      "page_name": "Tayo Kids Cafe Jeju Yongdam Branch",
-      "src": "https://mom-mom.net/en/travel/places/65b6f9c1abd92fac2f7bcc1f",
-      "date": "2026-05",
-      "map": "Kakao Map '타요키즈카페 제주용담점' (남성로 75 미래컨벤션센터 6층), closed Tuesdays, 17 reviews, newest 1 Aug 2026"
-    },
-    {
-      "name": "Kongsuni Kids Café (Jeju)",
-      "page_name": "Kongsuni Kids Cafe Jeju Branch",
-      "src": "https://mom-mom.net/en/travel/places/65b86da167a2df7173b902d9",
-      "date": "2026-05",
-      "map": "Kakao Map '콩순이키즈카페 제주점' (연사2길 82), open, newest blog review 29 Aug 2026"
-    },
-    {
-      "name": "Nammaene Black Pork (Seogwipo, Olle Market)",
-      "page_name": "남매네흑돼지 서귀포점",
-      "src": "https://mom-mom.net/travel/places/6943c92e4109ca8f1af1c4aa",
-      "date": "2026-06",
-      "map": "Kakao Map '남매네흑돼지삼겹살' (중정로61번길 24-1), open, 104 reviews, newest 14 Nov 2026"
-    },
-    {
-      "name": "Nammaene Black Pork (Seogwipo New Town)",
-      "page_name": "남매네흑돼지 서귀포신시가지점",
-      "src": "https://mom-mom.net/travel/places/69a94be337051f76228f6f51",
-      "date": "2026-03",
-      "map": "Kakao Map '남매네흑돼지 신시가지점' (신서로32번길 18), open, 107 reviews, newest 18 Nov 2026"
-    },
-    {
-      "name": "Gimnyeong Maze Park",
-      "page_name": "김녕미로공원",
-      "src": "https://www.funliday.com/posts/?p=144352",
-      "date": "2026-06",
-      "map": "Kakao Map '김녕미로공원' (만장굴길 122), open 09:00–18:00 on the list, newest review 23 Nov 2026"
-    },
-    {
-      "name": "Saebyeol Friends (sheep farm)",
-      "page_name": "새별프렌즈",
-      "src": "https://www.funliday.com/posts/?p=144352",
-      "date": "2026-06",
-      "map": "Kakao Map '새별프렌즈' (평화로 1529), open 09:00–18:00 on the list, newest review 18 Nov 2026"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
+      "agents": "one Haiku agent; 20 rows from Jeju tourism and family travel pages (Apr–Nov 2026) passed library-check.cjs, 14 went in",
+      "added": [
+        {
+          "name": "Myeonjumak (Jeju Main)",
+          "page_name": "Myeonjumak Jeju Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/65fbf89116e6494c21e65b98",
+          "date": "2026-05",
+          "map": "Google Maps '면주막 제주본점', 566 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Samsin Halmang Bapsang",
+          "page_name": "Samsin Halmang Bapsang",
+          "src": "https://mom-mom.net/en/travel/places/69520307669da585e5e73028",
+          "date": "2026-09",
+          "map": "Google Maps '삼신할망밥상', 115 reviews, newest shown '8 days ago'"
+        },
+        {
+          "name": "Dullegil (Jungmun Main)",
+          "page_name": "Dullegil Seogwipo Jungmun Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/670df7b9820b1c3517d720c3",
+          "date": "2026-09",
+          "map": "Google Maps 'Dullegil 둘레길', 159 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Jeju Hanmyeonga",
+          "page_name": "Jeju Hanmyeonga",
+          "src": "https://mom-mom.net/en/travel/places/65d84e2146c0add936f9573a",
+          "date": "2026-09",
+          "map": "Google Maps '제주한면가', 344 reviews, newest shown '14 days ago'"
+        },
+        {
+          "name": "Gozip Dol Wooluck (Hamdeok)",
+          "page_name": "Gozip Dolureok Jeju Hamdeok Branch",
+          "src": "https://mom-mom.net/en/travel/places/6670e3a19081a5f147ae468b",
+          "date": "2026-11",
+          "map": "Google Maps '고집돌우럭 함덕점', 3,588 reviews, newest shown '4 days ago'"
+        },
+        {
+          "name": "Jeju Dodori Meat Noodles",
+          "page_name": "Jeju Dodori Meat Noodles",
+          "src": "https://mom-mom.net/en/travel/places/694500f64109ca8f1af1c761",
+          "date": "2026-09",
+          "map": "Google Maps '제주 도도리고기국수', 375 reviews, newest shown 'last month'"
+        },
+        {
+          "name": "Gwangyuk",
+          "page_name": "Gwangyuk",
+          "src": "https://mom-mom.net/en/travel/places/6a22630eee9cbcb3925d1ce3",
+          "date": "2026-09",
+          "map": "Google Maps '광육', 25 reviews, newest shown '9 days ago'"
+        },
+        {
+          "name": "Maze Land",
+          "page_name": "Maze Land",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "date": "2026-04",
+          "map": "Google Maps '메이즈랜드', 3,342 reviews, newest shown '15 days ago'"
+        },
+        {
+          "name": "Figure Museum Jeju",
+          "page_name": "Figure Museum",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "date": "2026-04",
+          "map": "Google Maps '피규어뮤지엄 제주', 3,084 reviews, newest shown '6 days ago'"
+        },
+        {
+          "name": "Fairy and Woodcutter Theme Park",
+          "page_name": "Fairy and Woodsman Theme Park",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "date": "2026-04",
+          "map": "Google Maps '선녀와 나무꾼 테마공원', 3,466 reviews, newest shown '20 days ago'"
+        },
+        {
+          "name": "Yeomiji Botanical Garden",
+          "page_name": "Yeomiji Botanical Garden",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "date": "2026-04",
+          "map": "Google Maps '여미지식물원', 3,667 reviews, newest shown '5 days ago'"
+        },
+        {
+          "name": "Hueree Nature Life Park",
+          "page_name": "Hueree Natural Park",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "date": "2026-04",
+          "map": "Google Maps '휴애리 자연생활공원', 5,704 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Jeju Water World",
+          "page_name": "Jeju Water World",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "date": "2026-04",
+          "map": "Google Maps '워터월드 제주', 522 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Jeju Tangerine Kart",
+          "page_name": "Jeju Tangerine Kart",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "date": "2026-04",
+          "map": "Google Maps '감귤카트', 199 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Suni Table",
+          "page_name": "Suni Table",
+          "src": "https://mom-mom.net/en/travel/places/660a3ec7738cc897ddeddf23",
+          "date": "2026-09",
+          "map": "Kakao Map '수니테이블' (구좌읍 문주란로 33-1), open, 34 reviews, newest 29 Sep 2026"
+        },
+        {
+          "name": "Danso (Aewol)",
+          "page_name": "Danso",
+          "src": "https://mom-mom.net/en/travel/places/63d3718a6e2efc966cf688d3",
+          "date": "2026-09",
+          "map": "Kakao Map '단소 제주애월본점' (애월로 139-4), open, 201 blog posts, newest 20 Nov 2026"
+        },
+        {
+          "name": "Tayo Kids Café (Yongdam)",
+          "page_name": "Tayo Kids Cafe Jeju Yongdam Branch",
+          "src": "https://mom-mom.net/en/travel/places/65b6f9c1abd92fac2f7bcc1f",
+          "date": "2026-05",
+          "map": "Kakao Map '타요키즈카페 제주용담점' (남성로 75 미래컨벤션센터 6층), closed Tuesdays, 17 reviews, newest 1 Aug 2026"
+        },
+        {
+          "name": "Kongsuni Kids Café (Jeju)",
+          "page_name": "Kongsuni Kids Cafe Jeju Branch",
+          "src": "https://mom-mom.net/en/travel/places/65b86da167a2df7173b902d9",
+          "date": "2026-05",
+          "map": "Kakao Map '콩순이키즈카페 제주점' (연사2길 82), open, newest blog review 29 Aug 2026"
+        },
+        {
+          "name": "Nammaene Black Pork (Seogwipo, Olle Market)",
+          "page_name": "남매네흑돼지 서귀포점",
+          "src": "https://mom-mom.net/travel/places/6943c92e4109ca8f1af1c4aa",
+          "date": "2026-06",
+          "map": "Kakao Map '남매네흑돼지삼겹살' (중정로61번길 24-1), open, 104 reviews, newest 14 Nov 2026"
+        },
+        {
+          "name": "Nammaene Black Pork (Seogwipo New Town)",
+          "page_name": "남매네흑돼지 서귀포신시가지점",
+          "src": "https://mom-mom.net/travel/places/69a94be337051f76228f6f51",
+          "date": "2026-03",
+          "map": "Kakao Map '남매네흑돼지 신시가지점' (신서로32번길 18), open, 107 reviews, newest 18 Nov 2026"
+        },
+        {
+          "name": "Gimnyeong Maze Park",
+          "page_name": "김녕미로공원",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "date": "2026-06",
+          "map": "Kakao Map '김녕미로공원' (만장굴길 122), open 09:00–18:00 on the list, newest review 23 Nov 2026"
+        },
+        {
+          "name": "Saebyeol Friends (sheep farm)",
+          "page_name": "새별프렌즈",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "date": "2026-06",
+          "map": "Kakao Map '새별프렌즈' (평화로 1529), open 09:00–18:00 on the list, newest review 18 Nov 2026"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Sheep Farm (Aewol)",
+          "why": "a sheepdog herding show; not found under the page's name"
+        },
+        {
+          "name": "Alive Museum (Jungmun)",
+          "why": "the map shows it renamed K-Island Jeju"
+        },
+        {
+          "name": "Tayo Kids Cafe (Yongdam), Kongsuni Kids Cafe",
+          "why": "newest reviews two years old or more"
+        },
+        {
+          "name": "Sheep Farm (Aewol)",
+          "why": "not found on Kakao Map under the page's name"
+        },
+        {
+          "name": "설문대할망전시관, 우도, 섭지코지, Arte Kids Park",
+          "why": "not found on a dated page with a district"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "kakao_pass": "24 Nov 2026: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café)",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 4 rows from mom-mom.net (2026) and Funliday (Jun 2026), all passed library-check.cjs, 4 went in",
+        "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "left_out": [
-    {
-      "name": "Sheep Farm (Aewol)",
-      "why": "a sheepdog herding show; not found under the page's name"
-    },
-    {
-      "name": "Alive Museum (Jungmun)",
-      "why": "the map shows it renamed K-Island Jeju"
-    },
-    {
-      "name": "Tayo Kids Cafe (Yongdam), Kongsuni Kids Cafe",
-      "why": "newest reviews two years old or more"
-    },
-    {
-      "name": "Sheep Farm (Aewol)",
-      "why": "not found on Kakao Map under the page's name"
-    },
-    {
-      "name": "설문대할망전시관, 우도, 섭지코지, Arte Kids Park",
-      "why": "not found on a dated page with a district"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café)",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 4 rows from mom-mom.net (2026) and Funliday (Jun 2026), all passed library-check.cjs, 4 went in",
-    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

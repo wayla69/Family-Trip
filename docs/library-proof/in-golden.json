@@ -1,10 +1,87 @@
 {
   "town": "in-golden",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 10 rows from EazyDiner (Oct 2026), EaseIndiaTrip (Jan 2025), Holidify (May 2026) and Kangaroo Kids (Mar 2025), all passed library-check.cjs, 5 went in",
+  "agents": "one Haiku agent; 12 of 15 rows from Curly Tales, Triveni Cabs, Maverick Bird, Travelynn Family and EuroKids passed library-check.cjs, 11 went in",
   "added": [
+    {
+      "name": "Anokhi Café",
+      "page_name": "Anokhi Cafe",
+      "src": "https://www.trivenicabs.in/blog/family-trip-delhi-jaipur-with-kids",
+      "date": "2026-09",
+      "map": "Google Maps 'Anokhi Café', 1,665 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "1135 AD",
+      "page_name": "1135 AD",
+      "src": "https://www.trivenicabs.in/blog/family-trip-delhi-jaipur-with-kids",
+      "date": "2026-09",
+      "map": "Google Maps 1,902 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Playhouse by Essex Farms",
+      "page_name": "Playhouse by Essex Farms",
+      "src": "https://curlytales.com/india/food/restaurants-in-india-where-kids-can-eat-play-and-have-the-best-childrens-day-ever/",
+      "date": "2026-11",
+      "map": "Google Maps 458 reviews, newest 'last week'"
+    },
+    {
+      "name": "Anokhi Museum of Hand Printing",
+      "page_name": "Anokhi Museum of Hand Printing",
+      "src": "https://maverickbird.com/india/west/rajasthan-india-3/things-to-do-in-jaipur-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 'Anokhi Museum', Amer, 485 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Nahargarh Fort",
+      "page_name": "Nahargarh Fort",
+      "src": "https://travelynnfamily.com/japiur-with-kids-top-5-things-to-do/",
+      "date": "2026-11",
+      "map": "Google Maps 79,704 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Galtaji, the Monkey Temple",
+      "page_name": "Galtaji or the Monkey Temple",
+      "src": "https://maverickbird.com/india/west/rajasthan-india-3/things-to-do-in-jaipur-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 'Shri Galta Peeth', Galta Ji, 3,165 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Jawahar Circle garden",
+      "page_name": "Jawahar Circle",
+      "src": "https://maverickbird.com/india/west/rajasthan-india-3/things-to-do-in-jaipur-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 'Rose Garden, Jawahar Circle', 540 reviews, newest 'last month'"
+    },
+    {
+      "name": "Jungle Doodle Kids Zone",
+      "page_name": "Jungle Doodle Kids Zone",
+      "src": "https://curlytales.com/india/food/restaurants-in-india-where-kids-can-eat-play-and-have-the-best-childrens-day-ever/",
+      "date": "2026-11",
+      "map": "Google Maps 229 reviews, newest 'last week'"
+    },
+    {
+      "name": "Sur Sarovar Bird Sanctuary",
+      "page_name": "Sur Sarovar Bird Sanctuary",
+      "src": "https://www.eurokidsindia.com/blog/kid-friendly-places-to-visit-in-agra.php",
+      "date": "2026-02",
+      "map": "Google Maps 'Soor Sarovar Bird Sanctuary', 999 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Dolphin Water Park",
+      "page_name": "Dolphin Water Park",
+      "src": "https://www.eurokidsindia.com/blog/kid-friendly-places-to-visit-in-agra.php",
+      "date": "2026-02",
+      "map": "Google Maps 3,404 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Wildlife SOS Elephant Conservation and Care Centre",
+      "page_name": "Wildlife S.O.S. - Elephant Conservation and Care Center",
+      "src": "https://www.eurokidsindia.com/blog/kid-friendly-places-to-visit-in-agra.php",
+      "date": "2026-02",
+      "map": "Google Maps 'Wildlife SOS - Elephant Conservation and Care Center', NH2 near Mathura, 723 reviews, newest '1 day ago'"
+    },
     {
       "name": "Sattvik (Select Citywalk)",
       "page_name": "Sattvik",
@@ -43,6 +120,14 @@
   ],
   "left_out": [
     {
+      "name": "Smoke House Deli",
+      "why": "a chain; the page speaks of its children's menu in the past"
+    },
+    {
+      "name": "National Zoological Park, Waste to Wonder Park, Children's Park near India Gate",
+      "why": "failed library-check.cjs"
+    },
+    {
       "name": "Muruku",
       "why": "the map puts it in a food court elsewhere, not Rajouri Garden"
     },
@@ -55,5 +140,10 @@
       "why": "no district on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from EazyDiner (Oct 2026), EaseIndiaTrip (Jan 2025), Holidify (May 2026) and Kangaroo Kids (Mar 2025), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

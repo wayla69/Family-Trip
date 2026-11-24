@@ -1,10 +1,87 @@
 {
   "town": "de-hamburg",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 9 rows from hamburg.de (2025–2026), all passed library-check.cjs, 7 went in",
+  "agents": "one Haiku agent; 19 rows from hamburg.de and Kindaling, 11 passed library-check.cjs, 11 went in",
   "added": [
+    {
+      "name": "Alsterdorfer Kesselhaus",
+      "page_name": "Alsterdorfer Kesselhaus",
+      "src": "https://www.hamburg.de/freizeit/essen-trinken/restaurant/kinderfreundlich",
+      "date": "official",
+      "map": "Google Maps 'Restaurant Kesselhaus', Alsterdorfer Markt 14, 293 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Urbaneo – young architecture centre",
+      "page_name": "Urbaneo",
+      "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+      "date": "2026-10",
+      "map": "Google Maps 'Urbaneo - Junges Architektur Zentrum', 70 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "SpielScheune der Geschichten",
+      "page_name": "SpielScheune der Geschichten",
+      "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+      "date": "2026-10",
+      "map": "Google Maps 1,563 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Energieberg Georgswerder",
+      "page_name": "Energieberg Georgswerder",
+      "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+      "date": "2026-10",
+      "map": "Google Maps 742 reviews, newest 'last week'"
+    },
+    {
+      "name": "Wildgehege Klövensteen",
+      "page_name": "Wildgehege Klövensteen",
+      "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+      "date": "2026-11",
+      "map": "Google Maps 'Klövensteen', 1,776 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Wasserkunst Elbinsel Kaltehofe",
+      "page_name": "Wasserkunst Elbinsel Kaltehofe",
+      "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+      "date": "2026-11",
+      "map": "Google Maps 'Water Art Elbinsel Kaltehofe', 1,403 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Gut Karlshöhe",
+      "page_name": "Gut Karlshöhe",
+      "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+      "date": "2026-11",
+      "map": "Google Maps 'Streuobstwiese Gut Karlshöhe', 23 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "KLICK Children’s Museum",
+      "page_name": "KLICK Kindermuseum",
+      "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+      "date": "2026-10",
+      "map": "Google Maps 'KLICK Kindermuseum Hamburg', 967 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Goblinstadt",
+      "page_name": "Goblinstadt",
+      "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+      "date": "2026-10",
+      "map": "Google Maps 698 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Cap San Diego",
+      "page_name": "Cap San Diego",
+      "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+      "date": "2026-10",
+      "map": "Google Maps 1,726 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Museum of Nature – Zoology",
+      "page_name": "Museum der Natur Hamburg – Zoologie",
+      "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+      "date": "2026-10",
+      "map": "Google Maps 'Museum of Nature - Zoology', 3,218 reviews, newest '11 hours ago'"
+    },
     {
       "name": "Q21 Gasthaus",
       "page_name": "Quartier 21 Gasthaus",
@@ -57,6 +134,14 @@
   ],
   "left_out": [
     {
+      "name": "eight Kindaling restaurant pages",
+      "why": "library-check.cjs: no page date, and five quotes not on the page"
+    },
+    {
+      "name": "Freilichtmuseum am Kiekeberg",
+      "why": "outside the city"
+    },
+    {
       "name": "Harburger Rathausplatz playground",
       "why": "newest Google Maps review 3 years old"
     },
@@ -65,5 +150,10 @@
       "why": "the map finds only the street name"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from hamburg.de (2025–2026), all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

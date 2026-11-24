@@ -1,10 +1,108 @@
 {
   "town": "ca-vancouver",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 5 rows from Vancouver Tourism (Aug 2026) and Destination Vancouver (Jun 2026), all passed library-check.cjs, 2 went in",
+  "agents": "one Haiku agent; 18 rows from Time Out (Aug 2026) and Vancouver Tourism (Apr 2026) passed library-check.cjs, 14 went in",
   "added": [
+    {
+      "name": "Nook (Kitsilano)",
+      "page_name": "Nook Kitsilano",
+      "src": "https://www.timeout.com/vancouver/kids/kid-friendly-restaurants-in-vancouver",
+      "date": "2026-08",
+      "map": "Google Maps 1,555 reviews, newest '5 hours ago', 1525 Yew St"
+    },
+    {
+      "name": "Sophie's Cosmic Cafe",
+      "page_name": "Sophie's Cosmic Cafe",
+      "src": "https://www.timeout.com/vancouver/kids/kid-friendly-restaurants-in-vancouver",
+      "date": "2026-08",
+      "map": "Google Maps 2,074 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Via Tevere Pizzeria (Victoria Drive)",
+      "page_name": "Via Tevere Pizzeria Victoria Drive",
+      "src": "https://www.timeout.com/vancouver/kids/kid-friendly-restaurants-in-vancouver",
+      "date": "2026-08",
+      "map": "Google Maps 2,669 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Burgoo (Main Street)",
+      "page_name": "Burgoo",
+      "src": "https://www.timeout.com/vancouver/kids/kid-friendly-restaurants-in-vancouver",
+      "date": "2026-08",
+      "map": "Google Maps 3096 Main St, 2,019 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "FlyOver Canada",
+      "page_name": "Flyover",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 'Flyover', 999 Canada Pl, 9,151 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "Maplewood Farm",
+      "page_name": "Maplewood Farm",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 1,900 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Second Beach Pool",
+      "page_name": "Second Beach Outdoor Heated Pool",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 'Second Beach Swimming Pool', 1,045 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Totem poles, Brockton Point",
+      "page_name": "Totem Poles",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 7,777 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Lost Lagoon loop",
+      "page_name": "Lost Lagoon Nature Trail",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 'Lost Lagoon, Stanley Park', 434 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Go Bananas (North Vancouver)",
+      "page_name": "Go Bananas",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 'Go Bananas (North Vancouver)', 159 reviews, newest 'last week'"
+    },
+    {
+      "name": "Vancouver Central Library",
+      "page_name": "Vancouver Public Library Central Branch",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 'Vancouver Public Library - Central Library', 3,103 reviews, newest '8 hours ago'"
+    },
+    {
+      "name": "Kitsilano Beach",
+      "page_name": "Kitsilano Beach",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 2,127 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "English Bay Beach",
+      "page_name": "English Bay",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 'English Bay Beach', 20,031 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Spanish Banks",
+      "page_name": "Spanish Banks",
+      "src": "https://www.vancouvertourism.org/?p=178",
+      "date": "2026-04",
+      "map": "Google Maps 'Spanish Banks Beach', 1,014 reviews, newest 'last week'"
+    },
     {
       "name": "Kirin Restaurant (Alberni Street)",
       "page_name": "Kirin",
@@ -22,6 +120,18 @@
   ],
   "left_out": [
     {
+      "name": "Fable Diner",
+      "why": "the map marks it permanently closed"
+    },
+    {
+      "name": "Rocky Mountain Flatbread",
+      "why": "the page names no branch, and it has several"
+    },
+    {
+      "name": "Hinge Park, David Lam Park",
+      "why": "the map's newest review (sorted by newest) is a year old"
+    },
+    {
       "name": "Earls Kitchen + Bar",
       "why": "a chain, no branch named"
     },
@@ -34,5 +144,10 @@
       "why": "the map lists an event venue"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Vancouver Tourism (Aug 2026) and Destination Vancouver (Jun 2026), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

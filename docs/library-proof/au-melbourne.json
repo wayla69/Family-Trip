@@ -1,30 +1,52 @@
 {
   "town": "au-melbourne",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 4 rows from two Time Out school-holiday guides (Sep 2026), all passed library-check.cjs, 2 went in; no dated page for places to eat",
-  "added": [
+  "rounds": [
     {
-      "name": "SuperPark Highpoint",
-      "page_name": "SuperPark",
-      "src": "https://www.timeout.com/melbourne/kids/school-holidays-in-melbourne",
-      "date": "2026-09",
-      "map": "Google Maps 'SuperPark Highpoint', 938 reviews, newest shown 1 day ago"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "The Bottle of Milk",
+          "src": "Google Maps",
+          "page_name": "The Bottle of Milk",
+          "evidence": "\"The Bottle of Milk\", 52 Mountjoy Parade, FX6G+Q2 Lorne VIC; \"Closed · Opens 7:30 AM Tue\"",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "House Down Under",
-      "page_name": "House Down Under",
-      "src": "https://www.timeout.com/melbourne/kids/school-holidays-in-melbourne",
-      "date": "2026-09",
-      "map": "Google Maps 'House Down Under Melbourne', 458 reviews, newest shown 19 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from two Time Out school-holiday guides (Sep 2026), all passed library-check.cjs, 2 went in; no dated page for places to eat",
+      "added": [
+        {
+          "name": "SuperPark Highpoint",
+          "page_name": "SuperPark",
+          "src": "https://www.timeout.com/melbourne/kids/school-holidays-in-melbourne",
+          "date": "2026-09",
+          "map": "Google Maps 'SuperPark Highpoint', 938 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "House Down Under",
+          "page_name": "House Down Under",
+          "src": "https://www.timeout.com/melbourne/kids/school-holidays-in-melbourne",
+          "date": "2026-09",
+          "map": "Google Maps 'House Down Under Melbourne', 458 reviews, newest shown 19 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Healesville Sanctuary, Gumbuya World",
+          "why": "about an hour out of Melbourne, outside the town"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Healesville Sanctuary, Gumbuya World",
-      "why": "about an hour out of Melbourne, outside the town"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

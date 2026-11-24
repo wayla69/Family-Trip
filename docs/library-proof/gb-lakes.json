@@ -1,48 +1,225 @@
 {
   "town": "gb-lakes",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 4 rows from Visit Lake District (official), all passed library-check.cjs, 4 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Broadgate Meadow",
-      "page_name": "Broadgate Meadow",
-      "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
-      "date": "official",
-      "map": "Google Maps 'Broadgate Meadow' (Grasmere), newest review shown 5 months ago"
+      "town": "gb-lakes",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "The Old Keswickian",
+          "src": "https://www.google.com/maps/place/Old+Keswickian+Fish+%26+Chips+Restaurant/@54.6004253,-3.1367556,17z",
+          "page_name": "Old Keswickian Fish & Chips Restaurant",
+          "evidence": "Google Maps: fish and chips takeaway, 4.2★ (1,627), 5-7 Market Square, Keswick CA12 5BD (JV27+57), 'Closed · Opens 11 AM', site oldkeswickian.co.uk; nothing says closed. The map query found the address, not the shop; it now names the shop as Maps does",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Rothay Park",
-      "page_name": "Rothay Park",
-      "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
-      "date": "official",
-      "map": "Google Maps 'Rothay Park' (Vicarage Rd), newest review shown a day ago"
+      "town": "gb-lakes",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 21 rows from Lake District Kids (2026) and The Easy Breeze passed library-check.cjs, 19 went in",
+      "added": [
+        {
+          "name": "Boardwalk Bar & Grill",
+          "page_name": "Boardwalk Bar & Grill",
+          "src": "https://www.theeasybreeze.com/locallowdown/best-restaurants-in-bowness-on-windermere-2026",
+          "date": "2026-05",
+          "map": "Google Maps 'Boardwalk Bar and Grill', Gilly's Landing, 1,789 reviews, newest '18 hours ago'"
+        },
+        {
+          "name": "Villa Positano",
+          "page_name": "Villa Positano",
+          "src": "https://www.theeasybreeze.com/locallowdown/best-restaurants-in-bowness-on-windermere-2026",
+          "date": "2026-05",
+          "map": "Google Maps Ash Street, 506 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "YHA Ambleside café",
+          "page_name": "YHA Ambleside",
+          "src": "https://lakedistrictkids.co.uk/bowness-on-windermere/",
+          "date": "2026-06",
+          "map": "Google Maps 'YHA Ambleside Hostel' (its café), 1,587 reviews, newest 'last week'"
+        },
+        {
+          "name": "Cuckoo Brow Inn",
+          "page_name": "The Cuckoo Brow Inn",
+          "src": "https://lakedistrictkids.co.uk/bowness-on-windermere/",
+          "date": "2026-06",
+          "map": "Google Maps 'Cuckoo Brow Inn', 1,201 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "The Kellbank",
+          "page_name": "The Kellbank",
+          "src": "https://lakedistrictkids.co.uk/best-cafes-pub-playground/",
+          "date": "2026-09",
+          "map": "Google Maps 622 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "Boot Inn",
+          "page_name": "The Boot Inn",
+          "src": "https://lakedistrictkids.co.uk/best-cafes-pub-playground/",
+          "date": "2026-09",
+          "map": "Google Maps 'Boot Inn, Eskdale Valley', 1,201 reviews, newest 'last week'"
+        },
+        {
+          "name": "Woolpack Inn",
+          "page_name": "The Woolpack Inn",
+          "src": "https://lakedistrictkids.co.uk/best-cafes-pub-playground/",
+          "date": "2026-09",
+          "map": "Google Maps 'Woolpack Inn - Hardknott Bar & Cafe', 795 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Wray Castle",
+          "page_name": "Wray Castle",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 'National Trust - Wray', 5,857 reviews, newest 'last week'"
+        },
+        {
+          "name": "Lowther Castle and Gardens",
+          "page_name": "Lowther Castle",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 'Lowther Castle & Gardens', 4,827 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Allan Bank",
+          "page_name": "Allan Bank",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 'National Trust - Allan Bank and Grasmere', 728 reviews, newest 'last week'"
+        },
+        {
+          "name": "Lake District Wildlife Park",
+          "page_name": "Lake District Wildlife Park",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "date": "2026-11",
+          "map": "Google Maps 3,102 reviews, newest '20 hours ago'"
+        },
+        {
+          "name": "Alpacaly Ever After",
+          "page_name": "Alpacaly Ever After",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 235 reviews, newest '4 months ago'"
+        },
+        {
+          "name": "Wastwater Alpaca Trekking",
+          "page_name": "Wastwater Alpaca Trekking",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 69 reviews, newest 'last month'"
+        },
+        {
+          "name": "Steam Yacht Gondola",
+          "page_name": "Steam Yacht Gondola",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 'National Trust - Steam Yacht Gondola', 465 reviews, newest '3 weeks ago'"
+        },
+        {
+          "name": "Lakeside and Haverthwaite Railway",
+          "page_name": "Lakeside and Haverthwaite Railway",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 5,966 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Puzzling Place",
+          "page_name": "The Puzzling Place",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 'Puzzling Place', 2,080 reviews, newest '16 hours ago'"
+        },
+        {
+          "name": "Derwent Pencil Museum",
+          "page_name": "Derwent Pencil Museum",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "date": "2026-11",
+          "map": "Google Maps 3,262 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Kong Adventure",
+          "page_name": "Kong Adventure",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "date": "2026-11",
+          "map": "Google Maps 549 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Millerground",
+          "page_name": "Millerground",
+          "src": "https://lakedistrictkids.co.uk/bowness-on-windermere/",
+          "date": "2026-06",
+          "map": "Google Maps 277 reviews, newest '2 months ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Station Inn",
+          "why": "near Kendal, outside the national park"
+        },
+        {
+          "name": "Into the Woods (Lowther)",
+          "why": "the map's place of that name is a holiday home"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "Fitz Park playground",
-      "page_name": "Fitz Park",
-      "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
-      "date": "official",
-      "map": "Google Maps 'Fitz Park Playground' (Station Ave), newest review shown a month ago"
-    },
-    {
-      "name": "Threlkeld Quarry & Mining Museum",
-      "page_name": "Threlkeld Quarry and Mining Museum",
-      "src": "https://www.thelakedistrict.org/kac",
-      "date": "official",
-      "map": "Google Maps 'Threlkeld Quarry & Mining Museum', newest review shown a week ago"
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from Visit Lake District (official), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Broadgate Meadow",
+          "page_name": "Broadgate Meadow",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "date": "official",
+          "map": "Google Maps 'Broadgate Meadow' (Grasmere), newest review shown 5 months ago"
+        },
+        {
+          "name": "Rothay Park",
+          "page_name": "Rothay Park",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "date": "official",
+          "map": "Google Maps 'Rothay Park' (Vicarage Rd), newest review shown a day ago"
+        },
+        {
+          "name": "Fitz Park playground",
+          "page_name": "Fitz Park",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "date": "official",
+          "map": "Google Maps 'Fitz Park Playground' (Station Ave), newest review shown a month ago"
+        },
+        {
+          "name": "Threlkeld Quarry & Mining Museum",
+          "page_name": "Threlkeld Quarry and Mining Museum",
+          "src": "https://www.thelakedistrict.org/kac",
+          "date": "official",
+          "map": "Google Maps 'Threlkeld Quarry & Mining Museum', newest review shown a week ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Lakeland Climbing Centre, Fell Foot Park",
+          "why": "outside the five towns"
+        },
+        {
+          "name": "Places to eat",
+          "why": "undated listings or pubs only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Lakeland Climbing Centre, Fell Foot Park",
-      "why": "outside the five towns"
-    },
-    {
-      "name": "Places to eat",
-      "why": "undated listings or pubs only"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

@@ -1,10 +1,130 @@
 {
   "town": "my-penang",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 5 rows from Newswav (Jul 2026) and Little Day Out (Jun 2025), all passed library-check.cjs, 2 went in",
+  "agents": "one Haiku agent; 20 rows offered, 20 passed library-check.cjs, 20 went in",
   "added": [
+    {
+      "name": "Cocoon+ Kids Cafe",
+      "src": "https://onpenang.com/best-play-areas-penang/",
+      "date": "2026-10",
+      "map": "Google Maps 1,281 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Manaf Nasi Ayam",
+      "src": "https://onpenang.com/best-restaurants-penang/",
+      "date": "2026-11",
+      "map": "Google Maps 30 reviews, newest '4 weeks ago' (sorted by newest)"
+    },
+    {
+      "name": "Fu Er Dai",
+      "src": "https://onpenang.com/best-restaurants-penang/",
+      "date": "2026-11",
+      "map": "Google Maps 7,025 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Red Garden Food Paradise",
+      "src": "https://onpenang.com/best-restaurants-penang/",
+      "date": "2026-11",
+      "map": "Google Maps 3,278 reviews, one '5 months ago' among the first shown"
+    },
+    {
+      "name": "Urai Thai Kitchen",
+      "src": "https://onpenang.com/best-restaurants-penang/",
+      "date": "2026-11",
+      "map": "Google Maps 171 reviews, newest '4 months ago'"
+    },
+    {
+      "name": "The Jetty Food Court",
+      "src": "https://onpenang.com/best-food-courts-and-hawker-centres/",
+      "date": "2026-09",
+      "map": "Google Maps 2,639 reviews, newest 'a week ago' (sorted by newest)"
+    },
+    {
+      "name": "Long Beach Food Court",
+      "src": "https://onpenang.com/best-food-courts-and-hawker-centres/",
+      "date": "2026-09",
+      "map": "Google Maps 27 reviews, newest '2 weeks ago' (sorted by newest); listed beside Long Beach Kopitiam"
+    },
+    {
+      "name": "1.618 Roastery Andaman",
+      "src": "https://onpenang.com/best-cafes-in-penang/",
+      "date": "2026-09",
+      "map": "Google Maps 109 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Esplanade Food Court",
+      "src": "https://www.malaysiatravel.com/articles/post/the-ultimate-guide-to-family-holidays-in-penang-best-things-to-do-in-2026",
+      "date": "2026-05",
+      "map": "Google Maps 'Esplanade Park Food Court', 809 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Gurney Food Hall",
+      "src": "https://www.littledayout.com/penang-with-kids-family-travel/",
+      "date": "2025-06",
+      "map": "Google Maps 1,372 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Penang State Museum",
+      "src": "https://onpenang.com/museums-galleries-penang/",
+      "date": "2026-10",
+      "map": "Google Maps 543 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Pinang Peranakan Mansion",
+      "src": "https://onpenang.com/museums-galleries-penang/",
+      "date": "2026-10",
+      "map": "Google Maps 6,662 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Penang Ferry Museum",
+      "src": "https://onpenang.com/museums-galleries-penang/",
+      "date": "2026-10",
+      "map": "Google Maps 2,947 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Tech Dome Penang",
+      "src": "https://onpenang.com/museums-galleries-penang/",
+      "date": "2026-10",
+      "map": "Google Maps 1,085 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Upside Down Museum",
+      "src": "https://www.littledayout.com/penang-with-kids-family-travel/",
+      "date": "2025-06",
+      "map": "Google Maps 5,880 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Hin Market",
+      "src": "https://www.littledayout.com/penang-with-kids-family-travel/",
+      "date": "2025-06",
+      "map": "Google Maps 'Hin Bus Depot', 2,552 reviews, newest '22 hours ago'"
+    },
+    {
+      "name": "UFOREA",
+      "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+      "date": "2026-07",
+      "map": "Google Maps 'UFOREA Indoor Children's Playground', 2,170 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Adventure Zone",
+      "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+      "date": "2026-07",
+      "map": "Google Maps 474 reviews, newest 'a month ago'"
+    },
+    {
+      "name": "Kidland",
+      "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+      "date": "2026-07",
+      "map": "Google Maps 'Kidland Penang', 239 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Jaemi Wonderland",
+      "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+      "date": "2026-07",
+      "map": "Google Maps 'Jaemi Wonderland @ 1st Avenue', 141 reviews, newest '3 weeks ago'"
+    },
     {
       "name": "Kidsville WaterFront",
       "page_name": "Kidsville WaterFront",
@@ -34,5 +154,10 @@
       "why": "horse riding"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them. Opening hours in tips are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Newswav (Jul 2026) and Little Day Out (Jun 2025), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

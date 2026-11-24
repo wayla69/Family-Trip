@@ -1,10 +1,59 @@
 {
   "town": "mt-valletta",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 9 rows from Oh My Malta (Jul 2026), Explore Valletta (Sep 2026) and Outwith Kidz (Nov 2026); 8 passed library-check.cjs, 5 went in",
+  "agents": "one Haiku agent; 7 rows from Kids Are A Trip (2025–2026) and Oh My Malta (2025) passed library-check.cjs, all went in; no dated page named a new place to eat",
   "added": [
+    {
+      "name": "National Museum of Archaeology",
+      "page_name": "National Museum of Archaeology",
+      "src": "https://kidsareatrip.com/?p=95207",
+      "date": "2025-05",
+      "map": "Google Maps 'National Museum of Archaeology | Valletta', 4,375 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Great Siege Square",
+      "page_name": "Great Siege Square",
+      "src": "https://kidsareatrip.com/?p=95207",
+      "date": "2025-05",
+      "map": "Google Maps 'Great Siege Monument 1565' in the square, 36 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Fort St Angelo",
+      "page_name": "Fort St. Angelo",
+      "src": "https://kidsareatrip.com/?p=95207",
+      "date": "2025-05",
+      "map": "Google Maps 'Fort St Angelo', Birgu, 7,062 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Fort Manoel",
+      "page_name": "Fort Manoel",
+      "src": "https://kidsareatrip.com/?p=95207",
+      "date": "2025-05",
+      "map": "Google Maps Gżira, 1,309 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Tarxien Temples",
+      "page_name": "Tarxien Temples",
+      "src": "https://kidsareatrip.com/?p=95207",
+      "date": "2025-05",
+      "map": "Google Maps 'Ħal-Tarxien Prehistoric Complex', 4,379 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Xwejni salt pans",
+      "page_name": "Xwejni Salt Pans",
+      "src": "https://ohmymalta.com.mt/2025/03/14/5-family-friendly-adventures-in-gozo",
+      "date": "2025-03",
+      "map": "Google Maps 'Salt Pans', 5,718 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "Dwejra Inland Sea",
+      "page_name": "Dwejra Bay",
+      "src": "https://ohmymalta.com.mt/2025/03/14/5-family-friendly-adventures-in-gozo",
+      "date": "2025-03",
+      "map": "Google Maps 'Dwejra Inland Sea', 127 reviews, newest '23 hours ago'"
+    },
     {
       "name": "Carob Tree Food Court",
       "page_name": "Carob Tree",
@@ -55,5 +104,10 @@
       "why": "the quote was not on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from Oh My Malta (Jul 2026), Explore Valletta (Sep 2026) and Outwith Kidz (Nov 2026); 8 passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -1,10 +1,66 @@
 {
   "town": "hr-dubrovnik",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 14 rows from Hvar.com (Jul and Nov 2026), Citytrip (Apr 2025) and Puzzle Punks (Jun 2026), all passed library-check.cjs, 8 went in",
+  "agents": "one Haiku agent; 10 rows from The Tour Guy (Mar 2026), Kids Are A Trip (Jan 2026) and My Travel Monkey (Mar 2026) passed library-check.cjs, 8 went in",
   "added": [
+    {
+      "name": "Moby Dick",
+      "page_name": "Moby Dick",
+      "src": "https://thetourguy.com/travel-blog/best-restaurants-in-dubrovnik-this-year/",
+      "date": "2026-03",
+      "map": "Google Maps 'MOBY DICK', Prijeko, 839 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Bistro Glorijet",
+      "page_name": "Glorijet",
+      "src": "https://thetourguy.com/travel-blog/best-restaurants-in-dubrovnik-this-year/",
+      "date": "2026-03",
+      "map": "Google Maps 'Bistro Glorijet', 827 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Dubrovnik Cathedral",
+      "page_name": "Dubrovnik Cathedral",
+      "src": "https://kidsareatrip.com/?p=10305",
+      "date": "2026-01",
+      "map": "Google Maps 'The Cathedral of the Assumption of the Virgin Mary', 4,135 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Clock Tower",
+      "page_name": "Dubrovnik Bell Tower",
+      "src": "https://kidsareatrip.com/?p=10305",
+      "date": "2026-01",
+      "map": "Google Maps 'Clock Tower of Dubrovnik', 363 reviews, newest 'last week'"
+    },
+    {
+      "name": "Old Port",
+      "page_name": "Old Harbour",
+      "src": "https://kidsareatrip.com/?p=10305",
+      "date": "2026-01",
+      "map": "Google Maps 'Old Port of Dubrovnik', 509 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Old Pharmacy, Franciscan Monastery",
+      "page_name": "Old Pharmacy",
+      "src": "https://kidsareatrip.com/?p=10305",
+      "date": "2026-01",
+      "map": "Google Maps 'Franciscan Church and Monastery' (the pharmacy is inside), 1,398 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Minčeta Tower",
+      "page_name": "Minčeta Tower",
+      "src": "https://kidsareatrip.com/?p=10305",
+      "date": "2026-01",
+      "map": "Google Maps 'Tvrđava Minčeta', 1,223 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Copacabana Beach",
+      "page_name": "Copacabana Beach",
+      "src": "https://www.my-travelmonkey.com/dubrovnik-with-kids/",
+      "date": "2026-03",
+      "map": "Google Maps 4,991 reviews, newest '1 day ago'"
+    },
     {
       "name": "Paradise Garden Hvar",
       "page_name": "Paradise Garden",
@@ -64,6 +120,14 @@
   ],
   "left_out": [
     {
+      "name": "Forty-Four, Konoba Jezuite",
+      "why": "romantic fine dining, nothing for families on the page"
+    },
+    {
+      "name": "Cadmos Village",
+      "why": "page first published 2020"
+    },
+    {
       "name": "Konoba Menego, Dva Ribara, Totos, La Bocca",
       "why": "nothing about children on the page"
     },
@@ -76,5 +140,10 @@
       "why": "the map shows another inflatable park at Copacabana beach, not Lapad Bay"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 14 rows from Hvar.com (Jul and Nov 2026), Citytrip (Apr 2025) and Puzzle Punks (Jun 2026), all passed library-check.cjs, 8 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

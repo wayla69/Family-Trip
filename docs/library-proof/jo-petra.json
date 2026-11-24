@@ -1,77 +1,97 @@
 {
   "town": "jo-petra",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 11 rows from Edarabia (Nov 2026), Reiskoe (Nov 2025), Bastet Travel (Mar 2026) and Buffalo Wings & Rings (official), all passed library-check.cjs, 7 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Buffalo Wings & Rings (Aqaba)",
-      "page_name": "Buffalo Wings and Rings Aqaba",
-      "src": "https://aqaba.bwr-intl.com/family-friday/",
-      "date": "official",
-      "map": "Google Maps 'Buffalo Wings & Rings - Aqaba' (Aqaba Gate Complex), newest review shown a day ago"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Rum Gate Restaurant",
+          "src": "Google Maps",
+          "evidence": "\"Rum Gate Restaurant\", Buffet restaurant, JCRM+WG, \"Located in: Wadi Rum Visitor Center\" — the listing exists but shows \"Add hours\", no website, no phone: nothing current confirms it."
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Children's Museum Jordan",
-      "page_name": "Children’s Museum Jordan",
-      "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 'The Children's Museum Jordan' (Saeed Kheir St.), newest review shown 2 hours ago"
-    },
-    {
-      "name": "Gravity trampoline park",
-      "page_name": "Gravity Trampoline Park",
-      "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 'Gravity' (Mecca St., Amman), newest review shown 3 weeks ago"
-    },
-    {
-      "name": "Tala Kids Club",
-      "page_name": "Tala Kids Club",
-      "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 'Tala Kids Club' (Al Baraka Mall), newest review shown 2 days ago"
-    },
-    {
-      "name": "Haya Cultural Center",
-      "page_name": "Haya Cultural Center",
-      "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 'Haya Cultural Center' (Shmeisani), newest review shown 7 hours ago"
-    },
-    {
-      "name": "Prince Hashem Bird Garden",
-      "page_name": "Garden of Prince Hashem",
-      "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 'Prince Hashem Bird Garden' (Ahmad Orabi St.), newest review shown 5 hours ago"
-    },
-    {
-      "name": "Aqaba Fort",
-      "page_name": "Fortress of Aqaba",
-      "src": "https://www.reiskoe.nl/en/aqaba-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps 'Aqaba Fort' (Aqaba), newest review shown 18 hours ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 11 rows from Edarabia (Nov 2026), Reiskoe (Nov 2025), Bastet Travel (Mar 2026) and Buffalo Wings & Rings (official), all passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Buffalo Wings & Rings (Aqaba)",
+          "page_name": "Buffalo Wings and Rings Aqaba",
+          "src": "https://aqaba.bwr-intl.com/family-friday/",
+          "date": "official",
+          "map": "Google Maps 'Buffalo Wings & Rings - Aqaba' (Aqaba Gate Complex), newest review shown a day ago"
+        },
+        {
+          "name": "Children's Museum Jordan",
+          "page_name": "Children’s Museum Jordan",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'The Children's Museum Jordan' (Saeed Kheir St.), newest review shown 2 hours ago"
+        },
+        {
+          "name": "Gravity trampoline park",
+          "page_name": "Gravity Trampoline Park",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'Gravity' (Mecca St., Amman), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Tala Kids Club",
+          "page_name": "Tala Kids Club",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'Tala Kids Club' (Al Baraka Mall), newest review shown 2 days ago"
+        },
+        {
+          "name": "Haya Cultural Center",
+          "page_name": "Haya Cultural Center",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'Haya Cultural Center' (Shmeisani), newest review shown 7 hours ago"
+        },
+        {
+          "name": "Prince Hashem Bird Garden",
+          "page_name": "Garden of Prince Hashem",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'Prince Hashem Bird Garden' (Ahmad Orabi St.), newest review shown 5 hours ago"
+        },
+        {
+          "name": "Aqaba Fort",
+          "page_name": "Fortress of Aqaba",
+          "src": "https://www.reiskoe.nl/en/aqaba-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps 'Aqaba Fort' (Aqaba), newest review shown 18 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Segreta By The Beach",
+          "why": "the page gives no street"
+        },
+        {
+          "name": "Gaadet Jeeran",
+          "why": "nothing about children for it on the page"
+        },
+        {
+          "name": "Glass-bottom boat trip",
+          "why": "a tour, not a place"
+        },
+        {
+          "name": "Tala Bay",
+          "why": "a resort development"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Segreta By The Beach",
-      "why": "the page gives no street"
-    },
-    {
-      "name": "Gaadet Jeeran",
-      "why": "nothing about children for it on the page"
-    },
-    {
-      "name": "Glass-bottom boat trip",
-      "why": "a tour, not a place"
-    },
-    {
-      "name": "Tala Bay",
-      "why": "a resort development"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

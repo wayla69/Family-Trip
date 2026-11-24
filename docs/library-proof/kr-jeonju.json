@@ -1,140 +1,162 @@
 {
   "town": "kr-jeonju",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
-  "agents": "one Haiku agent; 12 rows from mom-mom.net (2026), all passed library-check.cjs, 1 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Butter Book (Jeonju)",
-      "page_name": "Butter Book Jeonju Branch",
-      "src": "https://mom-mom.net/en/travel/places/6970a6b4615e636493cc46a7",
-      "date": "2026-05",
-      "map": "Google Maps '버터북 전주점', 6 reviews, newest shown 6 months ago"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the town holds 27 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [
+        {
+          "name": "Gyodong Dawon",
+          "src": "https://www.google.com/maps/place/Gyodong+Tea+Garden",
+          "page_name": "Gyodong Tea Garden / 교동다원",
+          "evidence": "Google Maps (2026-11-23): traditional tea house, 4.6★, 65-5 Eunhaeng-ro, Wansan-gu, Jeonju-si (R573+M6); 'Open · Closes 7 PM'; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Ibadom Gamjatang (Jeonju Pyeonghwa)",
-      "page_name": "Ibadom Gamjatang Jeonju Branch",
-      "src": "https://mom-mom.net/en/travel/places/683e5e8608605c4592ba9787",
-      "date": "2026-09",
-      "map": "Kakao Map '이바돔감자탕 전주평화점' (모악로 4731), open, 19 reviews, newest 29 May 2026"
-    },
-    {
-      "name": "Hyundaiok (Jeonju Innovation City)",
-      "page_name": "Hyundaiok Hyeoksin Daebang Branch",
-      "src": "https://mom-mom.net/en/travel/places/6814a3f0e234f9aaa3a8908c",
-      "date": "2026-05",
-      "map": "Kakao Map '전주현대옥 전주혁신대방점' (대방DM시티), open, 20 reviews, newest 30 Oct 2026"
-    },
-    {
-      "name": "Hyundaiok (Jeonju City Hall)",
-      "page_name": "Hyundaiok Jeonju City Hall Branch",
-      "src": "https://mom-mom.net/en/travel/places/679c3e547b2f2993b4f43f9e",
-      "date": "2026-05",
-      "map": "Kakao Map '전주현대옥 전주시청점' (문화광장로 17), open, 31 reviews, newest 4 Oct 2026"
-    },
-    {
-      "name": "Jeonju Innovation City Cultural Centre",
-      "page_name": "Jeonju Innovation City Complex Cultural Center",
-      "src": "https://mom-mom.net/en/travel/places/661f22ec96e91086cbddfbd1",
-      "date": "2026-05",
-      "map": "Kakao Map '전주혁신도시복합문화센터', open 09:00–21:00 on the list, newest review 25 Oct 2026"
-    },
-    {
-      "name": "MukiMuki Kids Café (Wansan)",
-      "page_name": "MukiMuki Jeonju Wansan Branch",
-      "src": "https://mom-mom.net/en/travel/places/67a966b8f45aa02b66d43782",
-      "date": "2026-05",
-      "map": "Kakao Map '무키무키 전주완산점' (효자로 284), open, newest review 21 Nov 2026"
-    },
-    {
-      "name": "Nutty Child World (Jeonju)",
-      "page_name": "Nutty Child World Jeonju Branch",
-      "src": "https://mom-mom.net/en/travel/places/664bf5e316012307a5fce365",
-      "date": "2026-05",
-      "map": "Kakao Map '너티차일드월드 전주점', open, 7 reviews and 234 blog posts, newest 25 Oct 2026"
-    },
-    {
-      "name": "Namanui Kids Café (Inhu)",
-      "page_name": "Namanui Kids Cafe Jeonju Inhu Branch",
-      "src": "https://mom-mom.net/en/travel/places/69c4f26e6de8449cbc921e48",
-      "date": "2026-05",
-      "map": "Kakao Map '나만의키즈카페 전주인후점' (한배미4길 6), open, newest blog review 6 Aug 2026"
-    },
-    {
-      "name": "Okubowl (Manseong)",
-      "page_name": "오쿠보울",
-      "src": "https://www.gqkorea.co.kr/?p=372181",
-      "date": "2026-04",
-      "map": "Kakao Map '오쿠보울' (만성남5길 8-21), closed Tue and Wed, newest review 23 Nov 2026"
-    },
-    {
-      "name": "Masiran-ge (Hanok Village)",
-      "page_name": "마시랑게",
-      "src": "https://www.yeogi.com/content/tripholic-dom-ko-jeonju-lahan-hotel-kids-trip",
-      "date": "2026-07",
-      "map": "Kakao Map '마시랑게' (전동성당길 100), open 10:30–21:00, 252 reviews, newest 21 Nov 2026"
-    },
-    {
-      "name": "PlayLab (Jeonju)",
-      "page_name": "아동놀이연구소 플레이랩 전주점",
-      "src": "https://mom-mom.net/travel/places/65683d012d02d3e67db812b3",
-      "date": "2026-08",
-      "map": "Kakao Map '플레이랩 전주점' (세병서로 37), closed Tuesdays, newest review 19 Nov 2026"
-    },
-    {
-      "name": "Lika Kids Room (Jeonju)",
-      "page_name": "리카키즈룸 전주점",
-      "src": "https://mom-mom.net/travel/places/690adf2fb0aaf2b82c8c4a74",
-      "date": "2026-03",
-      "map": "Kakao Map '리카키즈룸 전주점' (초포로 182), open 09:00–24:00, newest review 9 Nov 2026"
-    },
-    {
-      "name": "Urikkiri Camping Village Kids Café (Seosin)",
-      "page_name": "우리끼리 캠핑마을 전주서신점",
-      "src": "https://mom-mom.net/travel/places/69046e1b538f6ff43f352f4d",
-      "date": "2026-02",
-      "map": "Kakao Map '우리끼리키즈카페 캠핑마을 전주서신점' (서신로 51), open 09:00–24:00, newest review 3 Nov 2026"
-    },
-    {
-      "name": "Wansan Bunker The Space",
-      "page_name": "완산벙커 더 스페이스",
-      "src": "https://jjan.kr/article/20250925580328",
-      "date": "2025-09",
-      "map": "Kakao Map '완산벙커 더 스페이스' (완산5길 70), open 10:00–19:00, 326 blog posts, newest 17 Nov 2026"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
+      "agents": "one Haiku agent; 12 rows from mom-mom.net (2026), all passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Butter Book (Jeonju)",
+          "page_name": "Butter Book Jeonju Branch",
+          "src": "https://mom-mom.net/en/travel/places/6970a6b4615e636493cc46a7",
+          "date": "2026-05",
+          "map": "Google Maps '버터북 전주점', 6 reviews, newest shown 6 months ago"
+        },
+        {
+          "name": "Ibadom Gamjatang (Jeonju Pyeonghwa)",
+          "page_name": "Ibadom Gamjatang Jeonju Branch",
+          "src": "https://mom-mom.net/en/travel/places/683e5e8608605c4592ba9787",
+          "date": "2026-09",
+          "map": "Kakao Map '이바돔감자탕 전주평화점' (모악로 4731), open, 19 reviews, newest 29 May 2026"
+        },
+        {
+          "name": "Hyundaiok (Jeonju Innovation City)",
+          "page_name": "Hyundaiok Hyeoksin Daebang Branch",
+          "src": "https://mom-mom.net/en/travel/places/6814a3f0e234f9aaa3a8908c",
+          "date": "2026-05",
+          "map": "Kakao Map '전주현대옥 전주혁신대방점' (대방DM시티), open, 20 reviews, newest 30 Oct 2026"
+        },
+        {
+          "name": "Hyundaiok (Jeonju City Hall)",
+          "page_name": "Hyundaiok Jeonju City Hall Branch",
+          "src": "https://mom-mom.net/en/travel/places/679c3e547b2f2993b4f43f9e",
+          "date": "2026-05",
+          "map": "Kakao Map '전주현대옥 전주시청점' (문화광장로 17), open, 31 reviews, newest 4 Oct 2026"
+        },
+        {
+          "name": "Jeonju Innovation City Cultural Centre",
+          "page_name": "Jeonju Innovation City Complex Cultural Center",
+          "src": "https://mom-mom.net/en/travel/places/661f22ec96e91086cbddfbd1",
+          "date": "2026-05",
+          "map": "Kakao Map '전주혁신도시복합문화센터', open 09:00–21:00 on the list, newest review 25 Oct 2026"
+        },
+        {
+          "name": "MukiMuki Kids Café (Wansan)",
+          "page_name": "MukiMuki Jeonju Wansan Branch",
+          "src": "https://mom-mom.net/en/travel/places/67a966b8f45aa02b66d43782",
+          "date": "2026-05",
+          "map": "Kakao Map '무키무키 전주완산점' (효자로 284), open, newest review 21 Nov 2026"
+        },
+        {
+          "name": "Nutty Child World (Jeonju)",
+          "page_name": "Nutty Child World Jeonju Branch",
+          "src": "https://mom-mom.net/en/travel/places/664bf5e316012307a5fce365",
+          "date": "2026-05",
+          "map": "Kakao Map '너티차일드월드 전주점', open, 7 reviews and 234 blog posts, newest 25 Oct 2026"
+        },
+        {
+          "name": "Namanui Kids Café (Inhu)",
+          "page_name": "Namanui Kids Cafe Jeonju Inhu Branch",
+          "src": "https://mom-mom.net/en/travel/places/69c4f26e6de8449cbc921e48",
+          "date": "2026-05",
+          "map": "Kakao Map '나만의키즈카페 전주인후점' (한배미4길 6), open, newest blog review 6 Aug 2026"
+        },
+        {
+          "name": "Okubowl (Manseong)",
+          "page_name": "오쿠보울",
+          "src": "https://www.gqkorea.co.kr/?p=372181",
+          "date": "2026-04",
+          "map": "Kakao Map '오쿠보울' (만성남5길 8-21), closed Tue and Wed, newest review 23 Nov 2026"
+        },
+        {
+          "name": "Masiran-ge (Hanok Village)",
+          "page_name": "마시랑게",
+          "src": "https://www.yeogi.com/content/tripholic-dom-ko-jeonju-lahan-hotel-kids-trip",
+          "date": "2026-07",
+          "map": "Kakao Map '마시랑게' (전동성당길 100), open 10:30–21:00, 252 reviews, newest 21 Nov 2026"
+        },
+        {
+          "name": "PlayLab (Jeonju)",
+          "page_name": "아동놀이연구소 플레이랩 전주점",
+          "src": "https://mom-mom.net/travel/places/65683d012d02d3e67db812b3",
+          "date": "2026-08",
+          "map": "Kakao Map '플레이랩 전주점' (세병서로 37), closed Tuesdays, newest review 19 Nov 2026"
+        },
+        {
+          "name": "Lika Kids Room (Jeonju)",
+          "page_name": "리카키즈룸 전주점",
+          "src": "https://mom-mom.net/travel/places/690adf2fb0aaf2b82c8c4a74",
+          "date": "2026-03",
+          "map": "Kakao Map '리카키즈룸 전주점' (초포로 182), open 09:00–24:00, newest review 9 Nov 2026"
+        },
+        {
+          "name": "Urikkiri Camping Village Kids Café (Seosin)",
+          "page_name": "우리끼리 캠핑마을 전주서신점",
+          "src": "https://mom-mom.net/travel/places/69046e1b538f6ff43f352f4d",
+          "date": "2026-02",
+          "map": "Kakao Map '우리끼리키즈카페 캠핑마을 전주서신점' (서신로 51), open 09:00–24:00, newest review 3 Nov 2026"
+        },
+        {
+          "name": "Wansan Bunker The Space",
+          "page_name": "완산벙커 더 스페이스",
+          "src": "https://jjan.kr/article/20250925580328",
+          "date": "2025-09",
+          "map": "Kakao Map '완산벙커 더 스페이스' (완산5길 70), open 10:00–19:00, 326 blog posts, newest 17 Nov 2026"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pa (FA)",
+          "why": "Kakao Map marks it temporarily closed (휴업)"
+        },
+        {
+          "name": "Step On",
+          "why": "newest Kakao Map review May 2026, over six months"
+        },
+        {
+          "name": "Saendeu Kids",
+          "why": "not found on Kakao Map"
+        },
+        {
+          "name": "Monello",
+          "why": "Kakao Map places it in Iseo-myeon, Wanju county, outside Jeonju"
+        },
+        {
+          "name": "한옥마을 해설 투어",
+          "why": "a guided walk of the Hanok Village, already in the app"
+        },
+        {
+          "name": "Ibadom Gamjatang (Moak-ro)",
+          "why": "the branch already in the app"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "kakao_pass": "24 Nov 2026: +7 (Hyundaiok (two branches), Ibadom Gamjatang; Innovation City Cultural Centre, MukiMuki, Nutty Child World, Namanui Kids Café)",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 7 rows from mom-mom.net, Yugacrew and Jeonbuk Ilbo (2025–2026), all passed library-check.cjs, 6 went in",
+        "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "left_out": [
-    {
-      "name": "Pa (FA)",
-      "why": "Kakao Map marks it temporarily closed (휴업)"
-    },
-    {
-      "name": "Step On",
-      "why": "newest Kakao Map review May 2026, over six months"
-    },
-    {
-      "name": "Saendeu Kids",
-      "why": "not found on Kakao Map"
-    },
-    {
-      "name": "Monello",
-      "why": "Kakao Map places it in Iseo-myeon, Wanju county, outside Jeonju"
-    },
-    {
-      "name": "한옥마을 해설 투어",
-      "why": "a guided walk of the Hanok Village, already in the app"
-    },
-    {
-      "name": "Ibadom Gamjatang (Moak-ro)",
-      "why": "the branch already in the app"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +7 (Hyundaiok (two branches), Ibadom Gamjatang; Innovation City Cultural Centre, MukiMuki, Nutty Child World, Namanui Kids Café)",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 7 rows from mom-mom.net, Yugacrew and Jeonbuk Ilbo (2025–2026), all passed library-check.cjs, 6 went in",
-    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

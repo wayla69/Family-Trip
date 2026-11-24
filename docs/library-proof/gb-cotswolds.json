@@ -1,10 +1,80 @@
 {
   "town": "gb-cotswolds",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 13 rows from Visit Bath (Jul 2026 and 2026 listing), 8 passed library-check.cjs, 7 went in",
+  "agents": "one Haiku agent; 10 rows from SoGlos (Jul 2025), StayCotswold (Mar 2026) and the Old New Inn passed library-check.cjs, 10 went in",
   "added": [
+    {
+      "name": "The Dragonfly Maze",
+      "page_name": "The Dragonfly Maze",
+      "src": "https://www.theoldnewinn.co.uk/news/family-days-out-in-the-cotswolds",
+      "date": "2025-07",
+      "map": "Google Maps 675 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Cotswold Lavender",
+      "page_name": "Cotswold Lavender",
+      "src": "https://www.theoldnewinn.co.uk/news/family-days-out-in-the-cotswolds",
+      "date": "2025-07",
+      "map": "Google Maps 2,470 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Sudeley Castle and Gardens",
+      "page_name": "Sudeley Castle and Gardens",
+      "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+      "date": "2025-07",
+      "map": "Google Maps 'Sudeley Castle', 4,572 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Westonbirt, The National Arboretum",
+      "page_name": "Westonbirt Arboretum",
+      "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+      "date": "2025-07",
+      "map": "Google Maps 'Westonbirt, The National Arboretum', 10,204 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Painswick Rococo Garden",
+      "page_name": "Painswick Rococo Garden",
+      "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+      "date": "2025-07",
+      "map": "Google Maps 2,123 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Cotswold Alpacas",
+      "page_name": "Cotswold Alpacas",
+      "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+      "date": "2025-07",
+      "map": "Google Maps 106 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Hocus Pocus Play",
+      "page_name": "Hocus Pocus Play",
+      "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+      "date": "2025-09",
+      "map": "Google Maps 117 reviews, newest 'last week'"
+    },
+    {
+      "name": "Paint It Yourself Pottery",
+      "page_name": "Paint it Yourself Pottery",
+      "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+      "date": "2025-09",
+      "map": "Google Maps 'Paint It Yourself Pottery Co', 279 reviews, newest 'last week'"
+    },
+    {
+      "name": "Low ropes at Far Peak",
+      "page_name": "Low Ropes at Far Peak",
+      "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+      "date": "2025-09",
+      "map": "Google Maps 'Far Peak Camping', 451 reviews, newest 'last month'"
+    },
+    {
+      "name": "Gloucestershire Warwickshire Steam Railway",
+      "page_name": "Gloucestershire Warwickshire Steam Railway",
+      "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+      "date": "2025-07",
+      "map": "Google Maps 1,604 reviews, newest '6 days ago'"
+    },
     {
       "name": "The Roman Baths",
       "page_name": "Roman Baths",
@@ -57,6 +127,10 @@
   ],
   "left_out": [
     {
+      "name": "places to eat",
+      "why": "every children’s-menu claim sat on an undated or 2023–24 page"
+    },
+    {
       "name": "Five Bath places to eat (Visit Bath listing)",
       "why": "library-check.cjs could not confirm the rows"
     },
@@ -65,5 +139,10 @@
       "why": "no review dates readable on the map"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 13 rows from Visit Bath (Jul 2026 and 2026 listing), 8 passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

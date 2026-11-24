@@ -1,34 +1,120 @@
 {
   "town": "de-rothenburg",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 6 rows from Freizeitmonster (Nov 2026), inFranken (Jul 2026) and Nuremberg tourism (official), all passed library-check.cjs, 2 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "FUNtasia Kinderland",
-      "page_name": "FUNtasia Kinderland",
-      "src": "https://freizeitmonster.de/blog/indoor-spielplaetze-dinkelsbuehl",
-      "date": "2026-11",
-      "map": "Google Maps 'Funtasia Kinderland Dinkelsbühl' (Ellwanger Str. 21), newest review shown a day ago"
+      "town": "de-rothenburg",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Albig's Quick Restaurant",
+          "reason": "Google Maps could not find it ('Albig's Quick Restaurant, Hafengasse 3' and 'Albig's Rothenburg ob der Tauber' listed other places, no Albig's); a web search found no listing either. Removed once a replacement quick bite (Tobingo Döner) was added"
+        }
+      ],
+      "added": [
+        {
+          "name": "Tobingo Döner",
+          "kind": 1,
+          "src": "https://www.google.com/maps/place/Tobingo+D%C3%B6ner/@49.3769027,10.1707625,16z",
+          "page_name": "Tobingo Döner",
+          "evidence": "Google Maps (2026-11-23): 'Tobingo Döner', 4.8, Fast food restaurant, Hafengasse 2, 91541 Rothenburg ob der Tauber — 'Closed · Opens 10:30 AM', no closed notice, own site tobingodoener.de and ordering on lieferando.de; rating count not shown in the limited view. Menu on speisekarte.de (updated 25.11.2024): Pommes €3.00/3.50, Nuggets Menü (9, with chips and a drink) €10.50, Döner €4.90, Falafel Box €5.90, Döner Teller €12.50 — the price range is taken from it. No children's menu; the nuggets-and-chips meal is what the row names",
+          "ok": "2026-11"
+        }
+      ]
     },
     {
-      "name": "Bleiche adventure playground",
-      "page_name": "Abenteuerspielplatz Bleiche",
-      "src": "https://www.infranken.de/lk/franken/ausflug/spielplaetze-in-franken-altmuehlsee-bamberg-dinkelsbuehl-familie-ausflug-wasserspielplatz-abenteuer-art-6221976",
-      "date": "2026-07",
-      "map": "Google Maps 'Spielplatz \"Bleiche\"' (Bleichweg), newest review shown 4 weeks ago"
-    }
-  ],
-  "left_out": [
-    {
-      "name": "Megaplay Dinkelsbühl",
-      "why": "the map has no entry of its own (it finds Funtasia)"
+      "town": "de-rothenburg",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from MKE with Kids (2025) and Familienurlaub-info (2026) passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Eiscafé Pizzeria Italia",
+          "page_name": "Eiscafe Pizzeria Italia",
+          "src": "https://www.mkewithkids.com/?p=127022",
+          "date": "2025-11",
+          "map": "Google Maps 'Eiscafé-Pizzeria Italia', Herrngasse, 1,166 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "Röderturm",
+          "page_name": "Roderturm Tower",
+          "src": "https://www.mkewithkids.com/?p=127022",
+          "date": "2025-11",
+          "map": "Google Maps 'Röderturm', Rödergasse 38, 102 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Toppler Castle",
+          "page_name": "Toppler Castle",
+          "src": "https://www.mkewithkids.com/?p=127022",
+          "date": "2025-11",
+          "map": "Google Maps Taubertalweg 98, 280 reviews, newest 'last week'"
+        },
+        {
+          "name": "Hornburgweg playground",
+          "page_name": "Spielplatz Hornburgweg",
+          "src": "https://www.familienurlaub-info.com/sommer/deutschland/rothenburg-ob-der-tauber/",
+          "date": "2026-11",
+          "map": "Google Maps 258 reviews, newest '3 months ago'"
+        },
+        {
+          "name": "Double Bridge",
+          "page_name": "Doppelbrücke",
+          "src": "https://www.familienurlaub-info.com/sommer/deutschland/rothenburg-ob-der-tauber/",
+          "date": "2026-11",
+          "map": "Google Maps 'Double Bridge', 549 reviews, newest '2 weeks ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Teddys Rothenburg",
+          "why": "a shop"
+        },
+        {
+          "name": "Spitalsbastei",
+          "why": "no reviews read on Google Maps"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "Playmobil FunPark, DB Museum, Kindermuseum Nürnberg",
-      "why": "the page gives no district or street"
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from Freizeitmonster (Nov 2026), inFranken (Jul 2026) and Nuremberg tourism (official), all passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "FUNtasia Kinderland",
+          "page_name": "FUNtasia Kinderland",
+          "src": "https://freizeitmonster.de/blog/indoor-spielplaetze-dinkelsbuehl",
+          "date": "2026-11",
+          "map": "Google Maps 'Funtasia Kinderland Dinkelsbühl' (Ellwanger Str. 21), newest review shown a day ago"
+        },
+        {
+          "name": "Bleiche adventure playground",
+          "page_name": "Abenteuerspielplatz Bleiche",
+          "src": "https://www.infranken.de/lk/franken/ausflug/spielplaetze-in-franken-altmuehlsee-bamberg-dinkelsbuehl-familie-ausflug-wasserspielplatz-abenteuer-art-6221976",
+          "date": "2026-07",
+          "map": "Google Maps 'Spielplatz \"Bleiche\"' (Bleichweg), newest review shown 4 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Megaplay Dinkelsbühl",
+          "why": "the map has no entry of its own (it finds Funtasia)"
+        },
+        {
+          "name": "Playmobil FunPark, DB Museum, Kindermuseum Nürnberg",
+          "why": "the page gives no district or street"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

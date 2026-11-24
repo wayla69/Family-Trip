@@ -1,10 +1,80 @@
 {
   "town": "us-boston",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 7 rows from Mommy Poppins (Mar 2025, Feb and Oct 2026), all passed library-check.cjs, 6 went in",
+  "agents": "one Haiku agent; 11 rows from Time Out Boston (2026) passed library-check.cjs, 10 went in",
   "added": [
+    {
+      "name": "Alamo Drafthouse Cinema (Seaport)",
+      "page_name": "Alamo Drafthouse Cinema",
+      "src": "https://www.timeout.com/boston/restaurants/best-family-restaurants-in-boston",
+      "date": "2026-08",
+      "map": "Google Maps 'Alamo Drafthouse Cinema Boston Seaport', 629 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Little Cocoa Bean Co.",
+      "page_name": "Little Cocoa Bean Co.",
+      "src": "https://www.timeout.com/boston/restaurants/best-family-restaurants-in-boston",
+      "date": "2026-08",
+      "map": "Google Maps 'Little Cocoa Bean Tot Cafe', 308 Congress St, 13 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Life Alive (Central Square)",
+      "page_name": "Life Alive Vegetarian",
+      "src": "https://www.timeout.com/boston/restaurants/best-family-restaurants-in-boston",
+      "date": "2026-08",
+      "map": "Google Maps 'Life Alive Organic Cafe Central Square', 2,141 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "The Friendly Toast (Back Bay)",
+      "page_name": "The Friendly Toast",
+      "src": "https://www.timeout.com/boston/restaurants/best-family-restaurants-in-boston",
+      "date": "2026-08",
+      "map": "Google Maps 35 Stanhope St, 5,711 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "American Flatbread at Sacco's Bowl Haven",
+      "page_name": "Flatbread Company at Sacco’s Bowl Haven",
+      "src": "https://www.timeout.com/boston/restaurants/best-family-restaurants-in-boston",
+      "date": "2026-08",
+      "map": "Google Maps 'American Flatbread', 45 Day St (the bowling alley's address), 1,190 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "LEGO Discovery Center Boston",
+      "page_name": "LEGO Discovery Center",
+      "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+      "date": "2026-02",
+      "map": "Google Maps 'LEGO® Discovery Center Boston', 3,656 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Castle Island and Fort Independence",
+      "page_name": "Castle Island Park & Fort Independence",
+      "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+      "date": "2026-02",
+      "map": "Google Maps 'Fort Independence', 1,486 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Rose Kennedy Greenway",
+      "page_name": "Rose Fitzgerald Kennedy Greenway",
+      "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+      "date": "2026-02",
+      "map": "Google Maps 'Rose Kennedy Greenway', 1,125 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "The Mapparium",
+      "page_name": "The Mapparium",
+      "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+      "date": "2026-02",
+      "map": "Google Maps 'Mapparium', 144 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Stone Zoo",
+      "page_name": "Stone Zoo",
+      "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+      "date": "2026-02",
+      "map": "Google Maps 4,938 reviews, newest '19 hours ago'"
+    },
     {
       "name": "FiRE+iCE (Back Bay)",
       "page_name": "Fire+Ice",
@@ -50,9 +120,18 @@
   ],
   "left_out": [
     {
+      "name": "WNDR Museum Boston",
+      "why": "marked permanently closed on Google Maps (the Feb 2026 page still lists it)"
+    },
+    {
       "name": "Runkle Playground",
       "why": "the map finds the school, not the playground"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Mommy Poppins (Mar 2025, Feb and Oct 2026), all passed library-check.cjs, 6 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

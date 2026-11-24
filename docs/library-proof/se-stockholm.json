@@ -1,10 +1,59 @@
 {
   "town": "se-stockholm",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 5 rows from Visit Stockholm, the venues' own sites and Time Out (May 2026), all passed library-check.cjs, 3 went in",
+  "agents": "one Haiku agent; 9 rows from Stockholm Tourism (2026), Time Out (2026), Visit Stockholm and Leo's Lekland passed library-check.cjs, 7 went in",
   "added": [
+    {
+      "name": "Junibacken restaurant",
+      "page_name": "Junibacken restaurant",
+      "src": "https://www.stockholmtourism.org/kid-friendly-restaurants-stockholm/",
+      "date": "2026-09",
+      "map": "Google Maps 'Junibacken' (the restaurant is inside), 7,445 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Haga Bottega",
+      "page_name": "Haga Bottega",
+      "src": "https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps Eugeniavägen 6, Solna, 205 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Boketto (Hotel Blique by Nobis)",
+      "page_name": "Boketto (Hotel Blique by Nobis)",
+      "src": "https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Boketto', Gävlegatan 18, 54 reviews, newest 'last month'"
+    },
+    {
+      "name": "Vasaparken",
+      "page_name": "Vasaparken",
+      "src": "https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 4,161 reviews, newest 'last week'"
+    },
+    {
+      "name": "Norra Stationsparken",
+      "page_name": "Norra Stationsparken",
+      "src": "https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 23 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Police Museum",
+      "page_name": "The Police Museum",
+      "src": "https://www.visitstockholm.com/o/the-police-museum/",
+      "date": "official",
+      "map": "Google Maps 'Police Museum', Museivägen 7, 1,137 reviews, newest 'last week'"
+    },
+    {
+      "name": "Leo's Lekland Kungens Kurva",
+      "page_name": "STOCKHOLM - KUNGENS KURVA",
+      "src": "https://www.leoslekland.se/en/our-playcenters/stockholm",
+      "date": "official",
+      "map": "Google Maps 'Leo's playland', Diagonalvägen 10, 1,524 reviews, newest '11 hours ago'"
+    },
     {
       "name": "Paradox Museum Stockholm",
       "page_name": "Paradox Museum Stockholm",
@@ -29,6 +78,14 @@
   ],
   "left_out": [
     {
+      "name": "Café Strömmen",
+      "why": "the map search finds another restaurant"
+    },
+    {
+      "name": "Skansen restaurant Solliden",
+      "why": "the map shows only the Solliden stage"
+    },
+    {
       "name": "Dinos Experience",
       "why": "opens 24 Nov 2026; no reviews yet"
     },
@@ -37,5 +94,10 @@
       "why": "on Lidingö, outside Stockholm"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Visit Stockholm, the venues' own sites and Time Out (May 2026), all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

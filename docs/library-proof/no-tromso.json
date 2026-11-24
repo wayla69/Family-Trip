@@ -1,10 +1,31 @@
 {
   "town": "no-tromso",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 2 rows from the restaurants' own sites (official), both passed library-check.cjs, 2 went in",
+  "agents": "one Haiku agent; 3 of 4 rows from Pastafabrikken's own site and The Next Guide (2026) passed library-check.cjs, all 3 went in",
   "added": [
+    {
+      "name": "Pastafabrikken",
+      "page_name": "Pastafabrikken",
+      "src": "https://www.pastafabrikken.no",
+      "date": "official",
+      "map": "Google Maps Sjøgata 17, 2,137 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Tromsø City Library",
+      "page_name": "Tromsø Public Library",
+      "src": "https://www.thenextguide.com/itineraries/tromso/tromso-with-kids-2-winter-days-family-friendly-march",
+      "date": "2026-01",
+      "map": "Google Maps 'Tromsø City Library and Archive', Grønnegata 94, 419 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Arctic Cathedral",
+      "page_name": "Arctic Cathedral",
+      "src": "https://www.thenextguide.com/itineraries/tromso/tromso-with-kids-2-winter-days-family-friendly-march",
+      "date": "2026-01",
+      "map": "Google Maps 10,593 reviews, newest '2 hours ago'"
+    },
     {
       "name": "Hard Rock Cafe Tromsø",
       "page_name": "Hard Rock Cafe Tromsø",
@@ -22,6 +43,10 @@
   ],
   "left_out": [
     {
+      "name": "Hard Rock Cafe Tromsø",
+      "why": "failed library-check.cjs (no page date)"
+    },
+    {
       "name": "Leo's Lekeland",
       "why": "the page gives no street"
     },
@@ -30,5 +55,10 @@
       "why": "no date on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 2 rows from the restaurants' own sites (official), both passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -1,97 +1,147 @@
 {
   "town": "tw-hualien",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 8 rows from Bunny Ann (Sep 2026), 6 passed library-check.cjs, 4 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Yinglun Western Restaurant",
-      "page_name": "英倫西餐廳",
-      "src": "https://bunnyann.tw/hualien-family/",
-      "date": "2026-09",
-      "map": "Google Maps 'Yinglun Western Restaurant' (Shoufeng), 236 reviews, newest shown 4 months ago"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 5 rows without ok; rows already carrying ok were not re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+      "confirmed": [
+        {
+          "name": "Hai Pu Oyster Omelette",
+          "src": "https://www.google.com/maps/search/海埔蚵仔煎+花蓮",
+          "page_name": "海埔蚵仔煎",
+          "evidence": "No. 8, Minguo Rd, Hualien City · XJG2+GR · 'Closed · Opens 4:30 PM' (Minguo Rd, not Ziqiang Rd, a few hundred metres apart in the city centre; q updated)",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Jiang Tai Tai Beef Noodles",
+          "src": "https://www.google.com/maps/search/江太太牛肉麵+花蓮",
+          "page_name": "江太太牛肉麵店（蔣經國先生曾𦲷臨本店）",
+          "evidence": "No. 128, Zhongzheng Rd, Hualien City · XHCW+5V · 'Closed · Opens 11 AM Tue'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Salt Lick Smokehouse",
+          "src": "https://www.google.com/maps/search/火車頭烤肉屋+花蓮",
+          "page_name": "Salt Lick Smokehouse & Grill 火車頭烤肉屋",
+          "evidence": "No. 151, Zhongshan Rd, Hualien City · XJG6+92 · 'Open · Closes 2:30 PM · Reopens 5 PM'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Dageeli Tribe Restaurant",
+          "src": "https://www.google.com/maps/search/達基力部落屋+秀林",
+          "page_name": "Dajili Tribal House - Mama Tian Restaurant 達基力部落屋",
+          "evidence": "No. 96, Chongde, Xiulin Township · 5J5X+5X · 'Open · Closes 3 PM'; owner post 'Nov 10, 2026'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Jiaxing Ice Fruit Store",
+          "src": "https://www.google.com/maps/search/佳興冰果室+新城",
+          "page_name": "佳興冰菓店",
+          "evidence": "No. 22, Bo'ai Rd (Xincheng) · 'Open · Closes 5 PM'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Hualien Nonghao Base",
-      "page_name": "花蓮農好基地",
-      "src": "https://bunnyann.tw/hualien-family/",
-      "date": "2026-09",
-      "map": "Google Maps '花蓮農好基地', 219 reviews, newest shown 10 days ago"
-    },
-    {
-      "name": "Li Chuan Aquafarm",
-      "page_name": "立川漁場",
-      "src": "https://bunnyann.tw/hualien-family/",
-      "date": "2026-09",
-      "map": "Google Maps 'Li Chuan Aquafarm', 15,891 reviews, newest shown 1 day ago"
-    },
-    {
-      "name": "Dashibi Mountain Trail",
-      "page_name": "大石鼻山步道",
-      "src": "https://bunnyann.tw/hualien-family/",
-      "date": "2026-09",
-      "map": "Google Maps '大石鼻山步道', 5,425 reviews, newest shown 4 days ago"
-    },
-    {
-      "name": "Starbucks Hualien container shop",
-      "page_name": "花蓮貨櫃星巴克",
-      "src": "https://bunnyann.tw/hualien-indoor/",
-      "date": "2026-09",
-      "map": "Google Maps 'STARBUCKS Huilan Shop' (Nanbin Rd Sec. 1 No. 505), newest review shown 2 weeks ago"
-    },
-    {
-      "name": "Hualien Disaster Prevention Education Centre",
-      "page_name": "花蓮防災教育館",
-      "src": "https://travel.yam.com/article/140317",
-      "date": "2026-07",
-      "map": "Google Maps '花蓮防災教育館' (華西), newest review shown 3 days ago"
-    },
-    {
-      "name": "Chisingtan Katsuo Museum",
-      "page_name": "七星潭柴魚博物館",
-      "src": "https://bunnyann.tw/hualien-indoor/",
-      "date": "2026-09",
-      "map": "Google Maps 'Chisingtan Katsuo Museum' (Qixing St 148), newest review shown 4 hours ago"
-    },
-    {
-      "name": "City Lotus Garden",
-      "page_name": "蓮城蓮花園",
-      "src": "https://bunnyann.tw/hualien-farm2026/",
-      "date": "2026-10",
-      "map": "Google Maps 'City Lotus Garden' (Nanhua 5th St 66), newest review shown 2 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from Bunny Ann (Sep 2026), 6 passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Yinglun Western Restaurant",
+          "page_name": "英倫西餐廳",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "date": "2026-09",
+          "map": "Google Maps 'Yinglun Western Restaurant' (Shoufeng), 236 reviews, newest shown 4 months ago"
+        },
+        {
+          "name": "Hualien Nonghao Base",
+          "page_name": "花蓮農好基地",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "date": "2026-09",
+          "map": "Google Maps '花蓮農好基地', 219 reviews, newest shown 10 days ago"
+        },
+        {
+          "name": "Li Chuan Aquafarm",
+          "page_name": "立川漁場",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "date": "2026-09",
+          "map": "Google Maps 'Li Chuan Aquafarm', 15,891 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Dashibi Mountain Trail",
+          "page_name": "大石鼻山步道",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "date": "2026-09",
+          "map": "Google Maps '大石鼻山步道', 5,425 reviews, newest shown 4 days ago"
+        },
+        {
+          "name": "Starbucks Hualien container shop",
+          "page_name": "花蓮貨櫃星巴克",
+          "src": "https://bunnyann.tw/hualien-indoor/",
+          "date": "2026-09",
+          "map": "Google Maps 'STARBUCKS Huilan Shop' (Nanbin Rd Sec. 1 No. 505), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Hualien Disaster Prevention Education Centre",
+          "page_name": "花蓮防災教育館",
+          "src": "https://travel.yam.com/article/140317",
+          "date": "2026-07",
+          "map": "Google Maps '花蓮防災教育館' (華西), newest review shown 3 days ago"
+        },
+        {
+          "name": "Chisingtan Katsuo Museum",
+          "page_name": "七星潭柴魚博物館",
+          "src": "https://bunnyann.tw/hualien-indoor/",
+          "date": "2026-09",
+          "map": "Google Maps 'Chisingtan Katsuo Museum' (Qixing St 148), newest review shown 4 hours ago"
+        },
+        {
+          "name": "City Lotus Garden",
+          "page_name": "蓮城蓮花園",
+          "src": "https://bunnyann.tw/hualien-farm2026/",
+          "date": "2026-10",
+          "map": "Google Maps 'City Lotus Garden' (Nanhua 5th St 66), newest review shown 2 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "花蓮水豚園區",
+          "why": "the map's match is the Deep Seawater Park, under another name"
+        },
+        {
+          "name": "玩味蕃樂園, 阿鹿餅乾店",
+          "why": "shops"
+        },
+        {
+          "name": "花蓮又一村",
+          "why": "quote not found on the page (library-check.cjs)"
+        },
+        {
+          "name": "玩味蕃樂園",
+          "why": "a shop"
+        },
+        {
+          "name": "原野牧場",
+          "why": "library-check.cjs could not confirm the row"
+        },
+        {
+          "name": "月崖灣親子農場",
+          "why": "page dated 2024"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 6 rows from Bunny Ann (Sep–Oct 2026) and Yam Travel (Jul 2026), 5 passed library-check.cjs, 4 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "left_out": [
-    {
-      "name": "花蓮水豚園區",
-      "why": "the map's match is the Deep Seawater Park, under another name"
-    },
-    {
-      "name": "玩味蕃樂園, 阿鹿餅乾店",
-      "why": "shops"
-    },
-    {
-      "name": "花蓮又一村",
-      "why": "quote not found on the page (library-check.cjs)"
-    },
-    {
-      "name": "玩味蕃樂園",
-      "why": "a shop"
-    },
-    {
-      "name": "原野牧場",
-      "why": "library-check.cjs could not confirm the row"
-    },
-    {
-      "name": "月崖灣親子農場",
-      "why": "page dated 2024"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 6 rows from Bunny Ann (Sep–Oct 2026) and Yam Travel (Jul 2026), 5 passed library-check.cjs, 4 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

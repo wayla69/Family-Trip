@@ -1,10 +1,87 @@
 {
   "town": "de-heidelberg",
   "kind": "eats + sights",
-  "checked": "2026-11-24",
+  "checked": "2026-11-23",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 3 rows from Heidelberg Marketing and Visit Freiburg (official), 2 passed library-check.cjs, 1 went in",
+  "agents": "one Haiku agent; 20 rows passed library-check.cjs, 11 went in",
   "added": [
+    {
+      "name": "Die Bergstation (Schauinsland)",
+      "page_name": "Die Bergstation",
+      "src": "https://www.stadtlandtour.de/ausfluege-aktivitaeten/ausflugsziele-familien-schwarzwald",
+      "date": "2026-10",
+      "map": "Google Maps Schauinslandstraße 390, 5,060 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Heidelberger Bergbahn",
+      "page_name": "Heidelberger Bergbahn",
+      "src": "https://www.strandfamilie.de/heidelberg-mit-kindern/",
+      "date": "2026-05",
+      "map": "Google Maps 'Heidelberger Bergbahnen', 674 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Königstuhl",
+      "page_name": "Königstuhl",
+      "src": "https://www.strandfamilie.de/heidelberg-mit-kindern/",
+      "date": "2026-05",
+      "map": "Google Maps 'Viewing point Königstuhl', 1,280 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Philosophenweg",
+      "page_name": "Philosophenweg",
+      "src": "https://www.strandfamilie.de/heidelberg-mit-kindern/",
+      "date": "2026-05",
+      "map": "Google Maps 'Philosophenweg- Aussicht', 80 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Mundenhof animal park",
+      "page_name": "Mundenhof",
+      "src": "https://wyldfamilytravel.com/things-to-do-in-freiburg/",
+      "date": "2026-02",
+      "map": "Google Maps 'Mundenhof Tier-Natur-Erlebnispark', 12,141 reviews, newest '23 hours ago'"
+    },
+    {
+      "name": "Seepark Freiburg",
+      "page_name": "Seepark",
+      "src": "https://wyldfamilytravel.com/things-to-do-in-freiburg/",
+      "date": "2026-02",
+      "map": "Google Maps 'Seepark Freiburg', 6,141 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Schlossberg and its funicular",
+      "page_name": "Schlossberg",
+      "src": "https://wyldfamilytravel.com/things-to-do-in-freiburg/",
+      "date": "2026-02",
+      "map": "Google Maps 'Schlossbergbahn', 929 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Schauinslandbahn",
+      "page_name": "Schauinslandbahn",
+      "src": "https://www.stadtlandtour.de/ausfluege-aktivitaeten/ausflugsziele-familien-schwarzwald",
+      "date": "2026-10",
+      "map": "Google Maps 'Freiburg, Schauinslandbahn Talstation', 302 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Feldbergbahn",
+      "page_name": "Feldbergbahn",
+      "src": "https://www.stadtlandtour.de/ausfluege-aktivitaeten/ausflugsziele-familien-schwarzwald",
+      "date": "2026-10",
+      "map": "Google Maps 396 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Badeparadies Schwarzwald",
+      "page_name": "Badeparadies Schwarzwald",
+      "src": "https://kuchenkindundkegel.de/schwarzwald-mit-kindern",
+      "date": "2026-05",
+      "map": "Google Maps 23,023 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Tatzmania Löffingen",
+      "page_name": "Tatzmania",
+      "src": "https://kuchenkindundkegel.de/schwarzwald-mit-kindern",
+      "date": "2026-05",
+      "map": "Google Maps 'Tatzmania Löffingen - Schwarzwaldpark', 6,134 reviews, newest '1 day ago'"
+    },
     {
       "name": "Puppentheater Plappermaul",
       "page_name": "Puppentheater Plappermaul",
@@ -15,6 +92,18 @@
   ],
   "left_out": [
     {
+      "name": "seven Heidelberg restaurants from diebestenderstadt.de",
+      "why": "the page gives only an address, nothing about children or a reason to go"
+    },
+    {
+      "name": "Freiburger Puppenbühne",
+      "why": "the map's newest review is 7 months old"
+    },
+    {
+      "name": "Zauberwald (Loßburg)",
+      "why": "the map's place there is named 'Zauberland at the Kinzig'"
+    },
+    {
       "name": "Sprungbude",
       "why": "library-check.cjs could not confirm the row"
     },
@@ -23,5 +112,10 @@
       "why": "the map shows two playgrounds and none named Weingarten"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from Heidelberg Marketing and Visit Freiburg (official), 2 passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

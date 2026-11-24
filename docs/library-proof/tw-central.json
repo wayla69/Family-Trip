@@ -1,124 +1,167 @@
 {
   "town": "tw-central",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 8 rows from TVBS Supertaste (Mar 2026, Sep 2025) and Bunny Ann (Oct 2026), 7 passed library-check.cjs, 6 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Lizi Café (Tunghai Forest)",
-      "page_name": "梨子 東海森林店",
-      "src": "https://supertaste.tvbs.com.tw/kids/356491",
-      "date": "2026-03",
-      "map": "Google Maps '梨子 東海森林店', 1,695 reviews, newest shown 7 days ago"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 4 rows without ok; rows already carrying ok were not re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+      "confirmed": [
+        {
+          "name": "Full House Resort Restaurant",
+          "src": "https://www.google.com/maps/search/富豪群渡假民宿+日月潭",
+          "page_name": "Full House Resort Fruit Cuisine 日月潭富豪群渡假民宿",
+          "evidence": "3-star hotel at Ita Thao, bookable on Maps ('Available Sat, Nov 28 - Sun, Nov 29 for NT$3,495'); the listing's own name says 'Fruit Cuisine' (its restaurant)",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Fountain Chicken Rice",
+          "src": "https://www.google.com/maps/search/噴水雞肉飯+總店+中山路325號+嘉義",
+          "page_name": "嘉義噴水雞肉飯中山店",
+          "evidence": "No. 325, Zhongshan Rd, West District, Chiayi City · FCHX+WM · 'Open · Closes 9 PM' (the original shop at the fountain; Maps names it 中山店, so q now uses that name)",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Fenqihu Hotel Lunch Box",
+          "src": "https://www.google.com/maps/search/奮起湖大飯店",
+          "page_name": "Fenchihu Hotel 奮起湖大飯店-奮起湖便當創始店",
+          "evidence": "178-1 Zhonghe Village, Zhuqi Township, Chiayi County · GM4W+46 · 2-star hotel bookable on Maps (official site NT$2,100); the listing's name says it is the founding Fenqihu lunch-box shop",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Yu Jen Jai",
+          "src": "https://www.google.com/maps/search/玉珍齋+鹿港",
+          "page_name": "YuZhenZhai Lukang Main Store",
+          "evidence": "No. 168, Minzu Rd, Lukang · 'Open · Closes 9 PM'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Apple Castle Family Restaurant",
-      "page_name": "蘋果堡親子餐廳",
-      "src": "https://supertaste.tvbs.com.tw/kids/356491",
-      "date": "2026-03",
-      "map": "Google Maps '蘋果堡親子餐廳', 429 reviews, newest shown 8 days ago"
-    },
-    {
-      "name": "Fongnian Mushroom Farm",
-      "page_name": "豐年農場",
-      "src": "https://bunnyann.tw/bunnyann702025/",
-      "date": "2026-10",
-      "map": "Google Maps '豐年靈芝菇類生態農場' (Puli), 5,776 reviews, newest shown 1 day ago"
-    },
-    {
-      "name": "Shuili Snake Kiln",
-      "page_name": "水里蛇窯陶藝文化園區",
-      "src": "https://supertaste.tvbs.com.tw/travel/353662",
-      "date": "2025-09",
-      "map": "Google Maps 'Shuili Snake Kiln', 4,988 reviews, newest shown 1 day ago"
-    },
-    {
-      "name": "Xinshe Mushroom Farm (Baigu Zhuang)",
-      "page_name": "新社百菇莊",
-      "src": "https://supertaste.tvbs.com.tw/kids/343200",
-      "date": "2026-03",
-      "map": "Google Maps '新社百菇莊', 3,789 reviews, newest shown 6 days ago"
-    },
-    {
-      "name": "Futian Water Reclamation Centre Playground",
-      "page_name": "福田水資源回收中心兒童遊樂場",
-      "src": "https://supertaste.tvbs.com.tw/kids/343200",
-      "date": "2026-03",
-      "map": "Google Maps '福田水資源回收中心兒童遊樂場', 69 reviews, newest shown 5 days ago"
-    },
-    {
-      "name": "Princess Anne Garden Restaurant (Xinshe)",
-      "page_name": "安妮公主花園餐廳",
-      "src": "https://supertaste.tvbs.com.tw/kids/356491",
-      "date": "2026-03",
-      "map": "Google Maps 'Princess Anne Garden Restaurant' (Xinshe), newest review shown 5 days ago"
-    },
-    {
-      "name": "Meteor Garden park restaurant (Fengyuan)",
-      "page_name": "流星花園幸福樂活園區",
-      "src": "https://supertaste.tvbs.com.tw/kids/356491",
-      "date": "2026-03",
-      "map": "Google Maps '流星花園幸福樂活園區' (Fengyuan), newest review shown 2 days ago"
-    },
-    {
-      "name": "LoveMe Land",
-      "page_name": "LoveMe Land",
-      "src": "https://www.twosevenths.com/en/kid/amusement-taichung-children/",
-      "date": "2026-11",
-      "map": "Google Maps 'LoveMe Land', newest review shown 2 days ago"
-    },
-    {
-      "name": "Wenxin Forest Park",
-      "page_name": "Wenxin Forest Park",
-      "src": "https://taichung.travel/en/experience/family-fun",
-      "date": "official",
-      "map": "Google Maps 'Wen-Xin Forest Park', newest review shown a day ago"
-    },
-    {
-      "name": "Lixin Park",
-      "page_name": "Lixin Park",
-      "src": "https://taichung.travel/en/experience/family-fun",
-      "date": "official",
-      "map": "Google Maps 'Lixin Park' (Xitun), newest review shown 7 days ago"
-    },
-    {
-      "name": "Daya Zhongke Park",
-      "page_name": "Zhongke Park",
-      "src": "https://taichung.travel/en/experience/family-fun",
-      "date": "official",
-      "map": "Google Maps 'Dayazhongke Park', newest review shown 2 days ago"
-    },
-    {
-      "name": "Tiezhenshan Sculpture Park (Dajia)",
-      "page_name": "Dajia Tiezhenshan Sculpture Park",
-      "src": "https://taichung.travel/en/experience/family-fun",
-      "date": "official",
-      "map": "Google Maps 'Tiezhenshandiaosu Park' (Dajia), newest review shown a day ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from TVBS Supertaste (Mar 2026, Sep 2025) and Bunny Ann (Oct 2026), 7 passed library-check.cjs, 6 went in",
+      "added": [
+        {
+          "name": "Lizi Café (Tunghai Forest)",
+          "page_name": "梨子 東海森林店",
+          "src": "https://supertaste.tvbs.com.tw/kids/356491",
+          "date": "2026-03",
+          "map": "Google Maps '梨子 東海森林店', 1,695 reviews, newest shown 7 days ago"
+        },
+        {
+          "name": "Apple Castle Family Restaurant",
+          "page_name": "蘋果堡親子餐廳",
+          "src": "https://supertaste.tvbs.com.tw/kids/356491",
+          "date": "2026-03",
+          "map": "Google Maps '蘋果堡親子餐廳', 429 reviews, newest shown 8 days ago"
+        },
+        {
+          "name": "Fongnian Mushroom Farm",
+          "page_name": "豐年農場",
+          "src": "https://bunnyann.tw/bunnyann702025/",
+          "date": "2026-10",
+          "map": "Google Maps '豐年靈芝菇類生態農場' (Puli), 5,776 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Shuili Snake Kiln",
+          "page_name": "水里蛇窯陶藝文化園區",
+          "src": "https://supertaste.tvbs.com.tw/travel/353662",
+          "date": "2025-09",
+          "map": "Google Maps 'Shuili Snake Kiln', 4,988 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Xinshe Mushroom Farm (Baigu Zhuang)",
+          "page_name": "新社百菇莊",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200",
+          "date": "2026-03",
+          "map": "Google Maps '新社百菇莊', 3,789 reviews, newest shown 6 days ago"
+        },
+        {
+          "name": "Futian Water Reclamation Centre Playground",
+          "page_name": "福田水資源回收中心兒童遊樂場",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200",
+          "date": "2026-03",
+          "map": "Google Maps '福田水資源回收中心兒童遊樂場', 69 reviews, newest shown 5 days ago"
+        },
+        {
+          "name": "Princess Anne Garden Restaurant (Xinshe)",
+          "page_name": "安妮公主花園餐廳",
+          "src": "https://supertaste.tvbs.com.tw/kids/356491",
+          "date": "2026-03",
+          "map": "Google Maps 'Princess Anne Garden Restaurant' (Xinshe), newest review shown 5 days ago"
+        },
+        {
+          "name": "Meteor Garden park restaurant (Fengyuan)",
+          "page_name": "流星花園幸福樂活園區",
+          "src": "https://supertaste.tvbs.com.tw/kids/356491",
+          "date": "2026-03",
+          "map": "Google Maps '流星花園幸福樂活園區' (Fengyuan), newest review shown 2 days ago"
+        },
+        {
+          "name": "LoveMe Land",
+          "page_name": "LoveMe Land",
+          "src": "https://www.twosevenths.com/en/kid/amusement-taichung-children/",
+          "date": "2026-11",
+          "map": "Google Maps 'LoveMe Land', newest review shown 2 days ago"
+        },
+        {
+          "name": "Wenxin Forest Park",
+          "page_name": "Wenxin Forest Park",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "date": "official",
+          "map": "Google Maps 'Wen-Xin Forest Park', newest review shown a day ago"
+        },
+        {
+          "name": "Lixin Park",
+          "page_name": "Lixin Park",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "date": "official",
+          "map": "Google Maps 'Lixin Park' (Xitun), newest review shown 7 days ago"
+        },
+        {
+          "name": "Daya Zhongke Park",
+          "page_name": "Zhongke Park",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "date": "official",
+          "map": "Google Maps 'Dayazhongke Park', newest review shown 2 days ago"
+        },
+        {
+          "name": "Tiezhenshan Sculpture Park (Dajia)",
+          "page_name": "Dajia Tiezhenshan Sculpture Park",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "date": "official",
+          "map": "Google Maps 'Tiezhenshandiaosu Park' (Dajia), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "妮娜巧克力夢想城堡",
+          "why": "a shop"
+        },
+        {
+          "name": "安妮公主花園餐廳",
+          "why": "quote not found on the page (library-check.cjs)"
+        },
+        {
+          "name": "Yuleyuan Xindai, Xinfu Park",
+          "why": "not found on the map"
+        },
+        {
+          "name": "Lyu-Chuan Water Purification Park",
+          "why": "the map shows only a temporarily closed company of that name"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 10 rows from TVBS (Mar 2026), Two Sevenths (Nov 2026) and Taichung Travel (official), all passed library-check.cjs, 7 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "left_out": [
-    {
-      "name": "妮娜巧克力夢想城堡",
-      "why": "a shop"
-    },
-    {
-      "name": "安妮公主花園餐廳",
-      "why": "quote not found on the page (library-check.cjs)"
-    },
-    {
-      "name": "Yuleyuan Xindai, Xinfu Park",
-      "why": "not found on the map"
-    },
-    {
-      "name": "Lyu-Chuan Water Purification Park",
-      "why": "the map shows only a temporarily closed company of that name"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 10 rows from TVBS (Mar 2026), Two Sevenths (Nov 2026) and Taichung Travel (official), all passed library-check.cjs, 7 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

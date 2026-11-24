@@ -1,114 +1,143 @@
 {
   "town": "tw-taipei",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 20 rows from family travel guides (Jan 2025–Jun 2026) passed library-check.cjs, 9 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Mountain and Sea House",
-      "page_name": "Mountain and Sea House",
-      "src": "https://www.taipeitourism.org/family-friendly-restaurants-taipei/",
-      "date": "2026-06",
-      "map": "Google Maps '山海樓', 2,512 reviews, newest shown '5 days ago'"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; rows already carrying ok were not re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+      "confirmed": [
+        {
+          "name": "Yong Kang Beef Noodle",
+          "src": "https://www.google.com/maps/search/永康牛肉麵+台北",
+          "page_name": "Yongkang Beef Noodles 永康牛肉麵",
+          "evidence": "No. 17, Lane 31, Section 2, Jinshan S Rd, Da'an District, Taipei · 2GMH+56 · 'Open · Closes 8:30 PM'; owner post 'Oct 24, 2026'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "SunnyHills",
+          "src": "https://www.google.com/maps/search/微熱山丘+台北民生公園門市",
+          "page_name": "Sunny Hills Taipei Minsheng Park Store 微熱山丘 台北民生公園門市",
+          "evidence": "Alley 4, Lane 36, Section 5, Minsheng E Rd, Songshan District · 3H54+5V · 'Open · Closes 6 PM'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Orange Shabu Shabu (Da-an)",
-      "page_name": "Orange Shabu Shabu",
-      "src": "https://www.taipeitourism.org/family-friendly-restaurants-taipei/",
-      "date": "2026-06",
-      "map": "Google Maps '橘色涮涮屋 一館', 4,440 reviews, newest shown '4 days ago'"
-    },
-    {
-      "name": "MoneyJump",
-      "page_name": "MoneyJump",
-      "src": "https://topics.amcham.com.tw/2025/01/taipeis-child-centered-restaurant-scene/",
-      "date": "2025-01",
-      "map": "Google Maps 3,418 reviews, newest shown '3 days ago'"
-    },
-    {
-      "name": "Miramar Ferris Wheel",
-      "page_name": "Miramar Entertainment Park",
-      "src": "https://www.nickkembel.com/taipei-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps '美麗華摩天輪', 22,873 reviews, open"
-    },
-    {
-      "name": "Taipei Water Park",
-      "page_name": "Taipei Water Park",
-      "src": "https://www.nickkembel.com/taipei-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps '自來水園區', 2,950 reviews, open"
-    },
-    {
-      "name": "Bitan",
-      "page_name": "Bitan Riverside Park",
-      "src": "https://www.nickkembel.com/taipei-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps '碧潭', 39,736 reviews, open"
-    },
-    {
-      "name": "Guandu Temple",
-      "page_name": "Guandu Temple",
-      "src": "https://www.nickkembel.com/taipei-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps '關渡宮', 6,782 reviews (search card), open"
-    },
-    {
-      "name": "Longshan Temple",
-      "page_name": "Longshan Temple",
-      "src": "https://www.nickkembel.com/taipei-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps '艋舺龍山寺', 49,972 reviews, open"
-    },
-    {
-      "name": "Chiang Kai-shek Memorial Hall",
-      "page_name": "Chiang Kai-Shek Memorial Hall",
-      "src": "https://www.nickkembel.com/taipei-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps '中正紀念堂', 83,325 reviews, open"
-    },
-    {
-      "name": "Elephant Garden (Neihu)",
-      "page_name": "象園咖啡Elephant Garden",
-      "src": "https://travel.yam.com/article/139927",
-      "date": "2026-04",
-      "map": "Google Maps 'Elephant Garden Neihu', newest review shown 5 days ago"
-    },
-    {
-      "name": "MuMu Land (Wanhua)",
-      "page_name": "遊霂食光 MuMu Land",
-      "src": "https://travel.yam.com/article/139927",
-      "date": "2026-04",
-      "map": "Google Maps '遊霂食光 MuMu Land', newest review shown a month ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 20 rows from family travel guides (Jan 2025–Jun 2026) passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Mountain and Sea House",
+          "page_name": "Mountain and Sea House",
+          "src": "https://www.taipeitourism.org/family-friendly-restaurants-taipei/",
+          "date": "2026-06",
+          "map": "Google Maps '山海樓', 2,512 reviews, newest shown '5 days ago'"
+        },
+        {
+          "name": "Orange Shabu Shabu (Da-an)",
+          "page_name": "Orange Shabu Shabu",
+          "src": "https://www.taipeitourism.org/family-friendly-restaurants-taipei/",
+          "date": "2026-06",
+          "map": "Google Maps '橘色涮涮屋 一館', 4,440 reviews, newest shown '4 days ago'"
+        },
+        {
+          "name": "MoneyJump",
+          "page_name": "MoneyJump",
+          "src": "https://topics.amcham.com.tw/2025/01/taipeis-child-centered-restaurant-scene/",
+          "date": "2025-01",
+          "map": "Google Maps 3,418 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Miramar Ferris Wheel",
+          "page_name": "Miramar Entertainment Park",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps '美麗華摩天輪', 22,873 reviews, open"
+        },
+        {
+          "name": "Taipei Water Park",
+          "page_name": "Taipei Water Park",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps '自來水園區', 2,950 reviews, open"
+        },
+        {
+          "name": "Bitan",
+          "page_name": "Bitan Riverside Park",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps '碧潭', 39,736 reviews, open"
+        },
+        {
+          "name": "Guandu Temple",
+          "page_name": "Guandu Temple",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps '關渡宮', 6,782 reviews (search card), open"
+        },
+        {
+          "name": "Longshan Temple",
+          "page_name": "Longshan Temple",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps '艋舺龍山寺', 49,972 reviews, open"
+        },
+        {
+          "name": "Chiang Kai-shek Memorial Hall",
+          "page_name": "Chiang Kai-Shek Memorial Hall",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps '中正紀念堂', 83,325 reviews, open"
+        },
+        {
+          "name": "Elephant Garden (Neihu)",
+          "page_name": "象園咖啡Elephant Garden",
+          "src": "https://travel.yam.com/article/139927",
+          "date": "2026-04",
+          "map": "Google Maps 'Elephant Garden Neihu', newest review shown 5 days ago"
+        },
+        {
+          "name": "MuMu Land (Wanhua)",
+          "page_name": "遊霂食光 MuMu Land",
+          "src": "https://travel.yam.com/article/139927",
+          "date": "2026-04",
+          "map": "Google Maps '遊霂食光 MuMu Land', newest review shown a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Haidilao, Mala Yuanyang, Pizza Rock",
+          "why": "chains; the page names no branch"
+        },
+        {
+          "name": "Kao Chi, Yongkang Yi Niu, Da Wan, IKEA restaurant, Thomas Town",
+          "why": "the map shows a different branch or place"
+        },
+        {
+          "name": "Sun Yat-sen Memorial Hall",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Wooderful Life",
+          "why": "a souvenir shop"
+        },
+        {
+          "name": "Ho'me Kitchen (Neihu)",
+          "why": "newest Google Maps review a year old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 3 rows from travel.yam.com (Apr 2026), all passed library-check.cjs, 2 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "left_out": [
-    {
-      "name": "Haidilao, Mala Yuanyang, Pizza Rock",
-      "why": "chains; the page names no branch"
-    },
-    {
-      "name": "Kao Chi, Yongkang Yi Niu, Da Wan, IKEA restaurant, Thomas Town",
-      "why": "the map shows a different branch or place"
-    },
-    {
-      "name": "Sun Yat-sen Memorial Hall",
-      "why": "temporarily closed on the map"
-    },
-    {
-      "name": "Wooderful Life",
-      "why": "a souvenir shop"
-    },
-    {
-      "name": "Ho'me Kitchen (Neihu)",
-      "why": "newest Google Maps review a year old"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 3 rows from travel.yam.com (Apr 2026), all passed library-check.cjs, 2 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }
