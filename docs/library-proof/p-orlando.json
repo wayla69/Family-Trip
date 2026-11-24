@@ -67,6 +67,20 @@
       "src": "https://mommypoppins.com/anywhere-kids/city-guides/kissimmee-with-kids-22-things-to-do-in-kissimmee-florida",
       "date": "2025-07",
       "map": "Google Maps 'Kissimmee Lakefront Park', 9,608 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "Monkey Joe's (Pointe Orlando)",
+      "page_name": "Monkey Joe's - Pointe Orlando",
+      "src": "https://mommypoppins.com/orlando-kids/top-indoor-play-spaces-for-kids-in-orlando",
+      "date": "2025-07",
+      "map": "Google Maps 'Monkey Joe's' (Pointe Orlando), newest review shown 2 months ago"
+    },
+    {
+      "name": "The Play Park (Florida Mall)",
+      "page_name": "Florida Mall Play Park",
+      "src": "https://mommypoppins.com/orlando-kids/top-indoor-play-spaces-for-kids-in-orlando",
+      "date": "2025-07",
+      "map": "Google Maps 'The Play Park' (The Florida Mall), newest review shown 5 months ago"
     }
   ],
   "left_out": [
@@ -77,7 +91,20 @@
     {
       "name": "SKELETONS: Museum of Osteology, Chocolate Museum and Café",
       "why": "not found on the map in Orlando"
+    },
+    {
+      "name": "Oviedo Mall Play Area",
+      "why": "the map shows another place (District Kids)"
+    },
+    {
+      "name": "Jungle Zone",
+      "why": "in Tavares, outside Orlando"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Inside Our Suitcase and Mommy Poppins (Jul 2025), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
