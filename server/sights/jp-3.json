@@ -2859,6 +2859,289 @@
           "q": "飛騨大鍾乳洞, Nyukawa-cho, Takayama",
           "ok": "2026-11",
           "src": "https://www.kankou-gifu.jp/spot/detail_1229.html"
+        },
+        {
+          "local": "あそびパークPLUS",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥700 30 นาทีแรก จากนั้น ¥230 ต่อ 10 นาที",
+            "en": "≈ ¥700 first 30 min, then ¥230 per 10 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "อาโซบิพาร์กพลัส ลาลาพอร์ตมินาโตะ",
+            "en": "Asobi Park Plus (Lalaport Minato Aqulus)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลาลาพอร์ตมินาโตะอาคูลุส ชั้น 3 เขตมินาโตะ นาโงยะ",
+            "en": "Lalaport Minato Aqulus 3F, Minato Ward, Nagoya"
+          },
+          "what": {
+            "th": "สวนเล่นมีเครื่องปีนใหญ่ เนินแทรมโพลีน และบ่อบอล",
+            "en": "A play park with a big climbing set, a trampoline hill and a ball pool"
+          },
+          "why": {
+            "th": "มีลานเด็กเล็กที่มีรั้วกั้น",
+            "en": "A fenced baby terrace for the smallest"
+          },
+          "tip": {
+            "th": "10:00–19:00",
+            "en": "10:00–19:00"
+          },
+          "q": "あそびパークPLUS, ららぽーと名古屋みなとアクルス",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥900–2,700 ต่อวัน",
+            "en": "≈ ¥900–2,700 a day"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "ลิตเติลแพลเน็ต โมโซวันเดอร์ซิตี้",
+            "en": "Little Planet (mozo Wonder City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โมโซวันเดอร์ซิตี้ ชั้น 4 เขตนิชิ นาโงยะ",
+            "en": "mozo Wonder City 4F, Nishi Ward, Nagoya"
+          },
+          "what": {
+            "th": "เล่นแบบดิจิทัล ทราย AR แทรมโพลีนดิจิทัล และบ่อบอลแสงสี",
+            "en": "Digital play: AR sand, a digital trampoline and a light-and-sound ball pool"
+          },
+          "why": {
+            "th": "บัตรรายวันออกไปกินข้าวแล้วกลับเข้ามาได้",
+            "en": "A day pass lets you leave for lunch and come back"
+          },
+          "tip": {
+            "th": "10:00–20:00",
+            "en": "10:00–20:00"
+          },
+          "q": "リトルプラネット, mozoワンダーシティ, 名古屋",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥1,200–1,500",
+            "en": "≈ ¥1,200–1,500"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ พอร์ตวอล์กมินาโตะ",
+            "en": "Pure Heart Kids Land (Portwalk Minato)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "พอร์ตวอล์กมินาโตะ ชั้น 3 เขตมินาโตะ นาโงยะ",
+            "en": "Portwalk Minato 3F, Minato Ward, Nagoya"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่มขนาดใหญ่ บ่อบอล 100,000 ลูก เปิดพฤศจิกายน 2025",
+            "en": "A big indoor play hall with a ball pool of 100,000 balls, opened November 2025"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กถึง 24 เดือน และมุมคาเฟ่",
+            "en": "A baby park up to 24 months and a café space"
+          },
+          "tip": {
+            "th": "เฉพาะสมาชิก 10:00–19:00",
+            "en": "Members only; 10:00–19:00"
+          },
+          "q": "ピュアハートキッズランド, ポートウォークみなと",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥600 30 นาทีแรก",
+            "en": "≈ ¥600 first 30 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "อาโซบิโนะเซไก ทาคาชิมายะเกตทาวเวอร์",
+            "en": "Asobi no Sekai (Takashimaya Gate Tower Mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เกตทาวเวอร์มอลล์ ชั้น 7 สถานีนาโงยะ นาโงยะ",
+            "en": "Gate Tower Mall 7F, Nagoya Station, Nagoya"
+          },
+          "what": {
+            "th": "สวนเล่น 3 โซน บ่อบอลและแทรมโพลีน ตัวต่อและบทบาทสมมติ และสวนเด็กเล็ก",
+            "en": "A play park in three zones: ball pool and trampoline, blocks and pretend play, and a baby garden"
+          },
+          "why": {
+            "th": "สวนเด็กเล็กอายุ 6–18 เดือน และมีพี่เลี้ยงสอนเล่น",
+            "en": "A baby garden for 6 to 18 months, and play leaders"
+          },
+          "tip": {
+            "th": "10:00–19:00 เชื่อมสถานีนาโงยะ",
+            "en": "10:00–19:00; connected to Nagoya Station"
+          },
+          "q": "あそびのせかい, タカシマヤ ゲートタワーモール",
+          "ok": "2026-11"
+        },
+        {
+          "local": "JUMP LAB 名古屋 緑店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥1,500 ต่อ 60 นาที (เด็ก)",
+            "en": "≈ ¥1,500 for 60 min (children)"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "จัมป์แล็บ นารุมิ",
+            "en": "Jump Lab Narumi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นารุมิ เขตมิโดริ นาโงยะ",
+            "en": "Narumi, Midori Ward, Nagoya"
+          },
+          "what": {
+            "th": "ยิมแทรมโพลีนและเครื่องเล่นออกกำลัง มีผนังปีนและผนังนินจา",
+            "en": "A trampoline and athletics gym with a climbing wall and a ninja wall"
+          },
+          "why": {
+            "th": "สำหรับเด็กตั้งแต่ 4 ขวบ ผู้ปกครองดูฟรีจากชั้นบน",
+            "en": "For children from 4; parents watch free from upstairs"
+          },
+          "q": "JUMP LAB 鳴海, 緑区, 名古屋",
+          "ok": "2026-11"
+        },
+        {
+          "local": "こどもっちパーク 名古屋みなとパーク",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥600–800 ต่อ 60 นาที",
+            "en": "≈ ¥600–800 for 60 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "โคโดม็อตจิพาร์ก นาโงยะมินาโตะ",
+            "en": "Kodomocchi Park (Nagoya Minato)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คินโจฟุโตะ เขตมินาโตะ นาโงยะ",
+            "en": "Kinjo-futo, Minato Ward, Nagoya"
+          },
+          "what": {
+            "th": "สวนในร่มปูหญ้าเทียม มีเครื่องเล่นไม้ เขาวงกต และครัวของเล่น",
+            "en": "An indoor park with artificial grass, wooden play equipment, a maze and a play kitchen"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 1 ขวบครึ่งเข้าฟรีวันธรรมดา ผู้ปกครอง 2 คนเข้าฟรี",
+            "en": "Under 1½ free on weekdays; two guardians go in free"
+          },
+          "tip": {
+            "th": "10:00–18:00 จอดฟรี 2 ชั่วโมง",
+            "en": "10:00–18:00; 2 hours' free parking"
+          },
+          "q": "こどもっちパーク 名古屋みなとパーク, 金城ふ頭",
+          "ok": "2026-11"
+        },
+        {
+          "local": "すみっコぐらしあそびスタジオ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥600 30 นาทีแรก จากนั้น ¥200 ต่อ 10 นาที",
+            "en": "≈ ¥600 first 30 min, then ¥200 per 10 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "สตูดิโอเล่นซุมิกโกะกุราชิ อิออนมอลล์โอดากะ",
+            "en": "Sumikko Gurashi Play Studio (AEON Mall Odaka)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนมอลล์โอดากะ ชั้น 3 เขตมิโดริ นาโงยะ",
+            "en": "AEON Mall Odaka 3F, Midori Ward, Nagoya"
+          },
+          "what": {
+            "th": "สตูดิโอเล่นธีมซุมิกโกะกุราชิ มีร้านจำลองและบ่อบอลสีพาสเทล",
+            "en": "A Sumikko Gurashi play studio with pretend shops and a pastel ball pool"
+          },
+          "why": {
+            "th": "มีบ่อบอล สไลเดอร์ท่อ และร้านอาหารจำลอง",
+            "en": "A ball pool, a tube slide and a pretend food shop"
+          },
+          "tip": {
+            "th": "10:00–19:00",
+            "en": "10:00–19:00"
+          },
+          "q": "すみっコぐらしあそびスタジオ, イオンモール大高",
+          "ok": "2026-11"
         }
       ]
     },
