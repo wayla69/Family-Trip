@@ -1,65 +1,40 @@
 {
   "town": "si-bled",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 10 of 11 rows from Ljubljana.info (2026), Visit Ljubljana, Bled's and Postojna Cave Park's own sites passed library-check.cjs, 6 went in",
+  "agents": "one Haiku agent; 3 rows from Visit Ljubljana (official) and Bohinj tourism (Apr 2026), all passed library-check.cjs, 3 went in",
   "added": [
     {
-      "name": "Garden Restaurant",
-      "page_name": "Garden Restaurant",
-      "src": "https://www.bled.si/en/what-to-see-do/cuisine/catering-facilities/2024040810535439/garden-restaurant",
+      "name": "Marley & Me",
+      "page_name": "Marley & Me",
+      "src": "https://www.visitljubljana.com/en/poi/marley-and-me",
       "date": "official",
-      "map": "Google Maps Cesta Gorenjskega odreda 16, 147 reviews, newest 'last month'"
+      "map": "Google Maps 'Marley & Me' (Stari trg 9), newest review shown a week ago"
     },
     {
-      "name": "Atlantis water park",
-      "page_name": "Atlantis",
-      "src": "https://www.ljubljana.info/?p=4246",
-      "date": "2026-11",
-      "map": "Google Maps 'Vodno mesto Atlantis', 1,904 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Tivoli Park",
-      "page_name": "Tivoli Park",
-      "src": "https://www.ljubljana.info/?p=4246",
-      "date": "2026-11",
-      "map": "Google Maps 17,582 reviews, newest '15 hours ago'"
-    },
-    {
-      "name": "Postojna Vivarium",
-      "page_name": "Vivarium",
-      "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+      "name": "Tivoli Park playground",
+      "page_name": "Playground in the Tivoli Park",
+      "src": "https://www.visitljubljana.com/en/visitors/in-focus/stories/5-kids-favourite-playgrounds-in-ljubljana/",
       "date": "official",
-      "map": "Google Maps 'Vivarij- Vivarium', Jamska cesta 29, 295 reviews, newest '2 days ago'"
+      "map": "Google Maps 'Park Tivoli, Children's playground' (Cesta 27. aprila 2a), newest review shown 2 weeks ago"
     },
     {
-      "name": "Expo Cave Karst",
-      "page_name": "Expo Cave Karst",
-      "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
-      "date": "official",
-      "map": "Google Maps 'Expo Jama Kras', 78 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Black Cave and Pivka Cave",
-      "page_name": "Black Cave and Pivka Cave",
-      "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
-      "date": "official",
-      "map": "Google Maps 'Črna jama', Veliki Otok, 62 reviews, newest '2 months ago'"
+      "name": "Zlatorog Fairy Trail",
+      "page_name": "Zlatorog Fairy Trail",
+      "src": "https://www.bohinj.si/en/dozivetja/zlatorog-fairy-trail/",
+      "date": "2026-04",
+      "map": "Google Maps 'Zlatorog Fairy Trail' (Ukanc), newest review shown 2 weeks ago"
     }
   ],
   "left_out": [
     {
-      "name": "Kinodvor Cinema, City Playground – Mala ulica",
-      "why": "no reviews read on Google Maps, twice"
+      "name": "Jurman, Čolnarna Park Tivoli, Sombrero",
+      "why": "no page date the checker could read"
     },
     {
-      "name": "The House of Children and Arts",
-      "why": "newest review seven months old, and another address"
-    },
-    {
-      "name": "Ljubljanica River Boat Ride",
-      "why": "boat rides sold by operators"
+      "name": "Fun Park Zaka",
+      "why": "could not confirm a 2025–2026 date"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
