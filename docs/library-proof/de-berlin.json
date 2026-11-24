@@ -1,0 +1,154 @@
+{
+  "town": "de-berlin",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 26 rows from Berlin Tourism (Jul 2026), visitBerlin (Nov 2026) and Kids Are a Trip (Jan 2026), all passed library-check.cjs, 18 went in",
+  "added": [
+    {
+      "name": "Maximilians",
+      "page_name": "Maximilians",
+      "src": "https://www.berlintourism.org/family-restaurants-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Restaurant Maximilians Berlin', 13,911 reviews, newest shown 13 hours ago"
+    },
+    {
+      "name": "Augustiner am Gendarmenmarkt",
+      "page_name": "Augustiner am Gendarmenmarkt",
+      "src": "https://www.berlintourism.org/family-restaurants-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Augustiner am Gendarmenmarkt', 11,693 reviews, newest shown 3 days ago"
+    },
+    {
+      "name": "Banh Mi Stable",
+      "page_name": "Banh Mi Stable",
+      "src": "https://www.berlintourism.org/family-restaurants-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Banh Mi Stable' (Schendelgasse 9), 1,732 reviews, newest shown 16 days ago"
+    },
+    {
+      "name": "Café Botanico",
+      "page_name": "Café Botanico",
+      "src": "https://www.berlintourism.org/family-restaurants-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Café Botanico', 788 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Villa Rixdorf",
+      "page_name": "Villa Rixdorf",
+      "src": "https://www.berlintourism.org/family-restaurants-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Villa Rixdorf', 2,127 reviews, newest shown 16 days ago"
+    },
+    {
+      "name": "Manzini",
+      "page_name": "Manzini",
+      "src": "https://www.berlintourism.org/family-restaurants-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Cafe Restaurant Manzini', 515 reviews, newest shown 3 months ago"
+    },
+    {
+      "name": "Deutschlandmuseum",
+      "page_name": "Deutschlandmuseum",
+      "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+      "date": "2026-11",
+      "map": "Google Maps 'Deutschlandmuseum', 5,138 reviews, newest shown 12 hours ago"
+    },
+    {
+      "name": "Computer Games Museum",
+      "page_name": "Computerspielemuseum",
+      "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Computer Games Museum', 11,022 reviews, newest shown 5 days ago"
+    },
+    {
+      "name": "DDR Museum",
+      "page_name": "DDR Museum",
+      "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'DDR Museum', 28,848 reviews, newest shown 4 days ago"
+    },
+    {
+      "name": "Samurai Museum Berlin",
+      "page_name": "Samurai Museum Berlin",
+      "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+      "date": "2026-11",
+      "map": "Google Maps 'Samurai Museum Berlin', 3,695 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Magicum Berlin Magic Museum",
+      "page_name": "MAGICUM Berlin Magic Museum",
+      "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+      "date": "2026-11",
+      "map": "Google Maps 'Magicum - Berlin Magic Museum', 1,682 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "ANOHA, the children's world of the Jewish Museum",
+      "page_name": "ANOHA",
+      "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+      "date": "2026-11",
+      "map": "Google Maps 'ANOHA — The Children's World of the Jewish Museum Berlin', 1,729 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "Brandenburg Gate",
+      "page_name": "Brandenburg Gate",
+      "src": "https://kidsareatrip.com/berlin-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'ประตูบรันเดินบวร์ค' (Brandenburg Gate), 191,938 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Labyrinth Kindermuseum",
+      "page_name": "Labyrinth Kindermuseum",
+      "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Labyrinth Kindermuseum Berlin', 1,771 reviews, newest shown 25 days ago"
+    },
+    {
+      "name": "Museum for Communication",
+      "page_name": "Museum für Kommunikation",
+      "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Museum for Communication Berlin', 3,375 reviews, newest shown 4 days ago"
+    },
+    {
+      "name": "Futurium",
+      "page_name": "Futurium",
+      "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Futurium', 13,722 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Magic Mountain climbing hall",
+      "page_name": "Magic Mountain",
+      "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Magic Mountain (Climbing / Bouldering)', 1,386 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "German Spy Museum",
+      "page_name": "Deutsches Spionagemuseum",
+      "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'German Spy Museum', 20,261 reviews, newest shown 14 hours ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Datscha, Restaurant Giraffe",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Cocolo Ramen",
+      "why": "not found on the map at the page's street"
+    },
+    {
+      "name": "Imren Grill, Café Mini Me, Café Manstein, JOLOs Kinderwelt",
+      "why": "no review from the last six months shown on the map (JOLOs' map entry is also at another address)"
+    },
+    {
+      "name": "River Spree Boat Tour",
+      "why": "no operator named"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

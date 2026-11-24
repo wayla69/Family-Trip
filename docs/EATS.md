@@ -529,3 +529,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+- **24 Nov 2026, Berlin** (docs/library-briefs batch-46): +6 (Maximilians, Augustiner, Banh Mi Stable, Café Botanico, Villa Rixdorf, Manzini). Proof in `docs/library-proof/de-berlin.json`. The Berlin Tourism restaurant page (Jul 2026) still lists two places the map shows permanently closed.
