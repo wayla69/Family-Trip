@@ -410,7 +410,8 @@
             "en": "A quiet family outing by the river"
           },
           "q": "Minigolf Vianden, 42 Rue Victor Hugo, Vianden",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Outdoor and open afternoons (14:00–19:00) on set days, mostly in the warm months; check the day", "th": "สนามกลางแจ้ง เปิดช่วงบ่าย (14:00–19:00) ตามวันที่กำหนด ส่วนใหญ่ช่วงอากาศอุ่น เช็กก่อนไป" }
         },
         {
           "local": "Freibad Vianden",

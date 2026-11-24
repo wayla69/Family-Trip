@@ -294,7 +294,8 @@
             "en": "Children love climbing the wooden stairs"
           },
           "q": "Old Faithful Inn, Yellowstone",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Open about May to mid-October (2026: 1 May–12 October); closed in winter", "th": "เปิดราวพฤษภาคมถึงกลางตุลาคม (2026: 1 พ.ค.–12 ต.ค.) ปิดช่วงหน้าหนาว" }
         }
       ]
     },
@@ -731,7 +732,8 @@
             "en": "Everyone goes home with gold"
           },
           "q": "Indian Valley Mine, 27301 Seward Hwy, Indian, AK",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Open mid-May to mid-September only", "th": "เปิดกลางพฤษภาคมถึงกลางกันยายนเท่านั้น" }
         },
         {
           "local": "",

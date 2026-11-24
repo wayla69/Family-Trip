@@ -61,7 +61,7 @@
           "area": { "en": "Guiting Power, near Stow-on-the-Wold", "th": "กิทติงพาวเวอร์ ใกล้สโตว์ออนเดอะโวลด์" },
           "what": { "en": "Adam Henson's rare-breed farm with animal handling, tractor rides and a huge play area", "th": "ฟาร์มสัตว์พันธุ์หายากของแอดัม เฮนสัน มีให้จับสัตว์ รถแทรกเตอร์ และสนามเด็กเล่นใหญ่" },
           "why": { "en": "Toddlers cuddle lambs and rabbits while bigger children climb and slide", "th": "เด็กเล็กได้กอดลูกแกะและกระต่าย เด็กโตปีนป่ายและเล่นสไลเดอร์" },
-          "tip": { "en": "Open daily; booking online ahead is cheapest, and Christmas and pumpkin events run in the cold months", "th": "เปิดทุกวัน จองออนไลน์ล่วงหน้าถูกที่สุด ช่วงหนาวมีกิจกรรมคริสต์มาสและฟักทอง" },
+          "tip": { "en": "Closes for a winter break from January to mid-February; booking online ahead is cheapest, and Christmas and pumpkin events run in the cold months", "th": "ปิดพักหน้าหนาวช่วงมกราคมถึงกลางกุมภาพันธ์ จองออนไลน์ล่วงหน้าถูกที่สุด ช่วงหนาวมีกิจกรรมคริสต์มาสและฟักทอง" },
           "ages": [2, 2, 2, 1],
           "hrs": 4,
           "io": "both",
@@ -393,7 +393,8 @@
             "en": "An adventure playground with a fort and an obstacle course"
           },
           "q": "Sudeley Castle, Winchcombe",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Open mid-March to early November; closed in winter", "th": "เปิดกลางมีนาคมถึงต้นพฤศจิกายน ปิดช่วงหน้าหนาว" }
         },
         {
           "local": "",
@@ -467,7 +468,8 @@
             "en": "A wooden play area, a maze and woodland trails"
           },
           "q": "Painswick Rococo Garden, Gloucester Road, Painswick",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Open mid-January to late November (Wed–Sun after early September); closed in December", "th": "เปิดกลางมกราคมถึงปลายพฤศจิกายน (หลังต้นกันยายนเปิดพุธ–อาทิตย์) ปิดเดือนธันวาคม" }
         },
         {
           "local": "",
@@ -656,7 +658,8 @@
             "en": "Hop on and off at the stations; special Christmas trains"
           },
           "q": "Gloucestershire Warwickshire Steam Railway, Winchcombe Station",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Trains run on set days from March to early January; no trains in January and February", "th": "รถไฟวิ่งตามวันที่กำหนด มีนาคมถึงต้นมกราคม ม.ค.–ก.พ. ไม่มีรถไฟ" }
         }
       ]
     },
@@ -1677,8 +1680,8 @@
             "en": "Grounds to explore and seasonal activities"
           },
           "tip": {
-            "th": "มาทางเรือจะได้อารมณ์ผจญภัยยิ่งขึ้น",
-            "en": "Arrive by boat for extra adventure"
+            "th": "ตัวปราสาทปิดซ่อมถึงฤดูใบไม้ผลิ 2027 แต่บริเวณรอบและคาเฟ่ยังเปิด มาทางเรือจะได้อารมณ์ผจญภัยยิ่งขึ้น",
+            "en": "The castle is closed for repairs until spring 2027; the grounds and café stay open. Arrive by boat for extra adventure"
           },
           "q": "Wray Castle, Low Wray, Ambleside",
           "ok": "2026-11"
@@ -2022,7 +2025,8 @@
             "en": "A good rainy-day choice"
           },
           "q": "Derwent Pencil Museum, Southey Works, Keswick",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Closed from 1 November 2026 while it moves to Rawnsley Hall in Keswick; reopens in March 2027", "th": "ปิดตั้งแต่ 1 พ.ย. 2026 ระหว่างย้ายไปรอว์นสลีย์ฮอลล์ในเคสวิก เปิดใหม่มีนาคม 2027" }
         },
         {
           "local": "",
@@ -2317,7 +2321,7 @@
           "area": { "en": "Malton (about 30 minutes from York)", "th": "มอลตัน (ห่างจากยอร์กราว 30 นาที)" },
           "what": { "en": "A former prison camp whose huts hold walk-through scenes of 20th-century life and the war years", "th": "ค่ายเชลยเก่าที่แต่ละอาคารจัดฉากให้เดินชมชีวิตในศตวรรษที่ 20 และยุคสงคราม" },
           "why": { "en": "Lots of huts to hop between, indoors and out; some scenes are loud and dark, so it suits older children best", "th": "มีอาคารให้เดินสลับไปมาทั้งในและนอกร่ม บางฉากเสียงดังและมืด เหมาะกับเด็กโตมากกว่า" },
-          "tip": { "en": "Allow most of a day; paths are flat but the huts have steps", "th": "ควรเผื่อเวลาเกือบทั้งวัน ทางราบแต่อาคารมีขั้นบันได" },
+          "tip": { "en": "Open late March to early November; closed in winter. Allow most of a day; paths are flat but the huts have steps", "th": "เปิดปลายมีนาคมถึงต้นพฤศจิกายน ปิดช่วงหน้าหนาว ควรเผื่อเวลาเกือบทั้งวัน ทางราบแต่อาคารมีขั้นบันได" },
           "ages": [0, 1, 2, 2],
           "hrs": 4,
           "io": "both",

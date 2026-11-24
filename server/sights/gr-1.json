@@ -314,47 +314,6 @@
         {
           "local": "",
           "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 1,
-          "io": "out",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
-          "name": {
-            "th": "รถไฟชมเมืองเอเธนส์แฮปปี้เทรน",
-            "en": "Athens Happy Train"
-          },
-          "kind": "ride",
-          "area": {
-            "th": "ถนนแอร์มู ซินดักมา",
-            "en": "Ermou Street, Syntagma"
-          },
-          "what": {
-            "th": "รถไฟรูปร่างเหมือนของเล่นพาชมเมือง ราว 40 นาที",
-            "en": "A toy-like train tour of the sights, about 40 minutes"
-          },
-          "why": {
-            "th": "รถไฟสีแดงเหมือนของเล่นที่เด็กชอบ",
-            "en": "A red toy train children love to ride"
-          },
-          "tip": {
-            "th": "ตั๋วใช้ได้ 10 ชั่วโมง ขึ้นลงได้",
-            "en": "A ticket lasts 10 hours, hop on and off"
-          },
-          "q": "Athens Happy Train, Ermou Street, Athens",
-          "ok": "2026-11"
-        },
-        {
-          "local": "",
-          "ages": [
             0,
             1,
             2,
@@ -853,7 +812,7 @@
           "area": { "en": "Vlychada", "th": "วลีชาดา" },
           "what": { "en": "A museum in an old tomato factory, with the machines and the story of the island's tomatoes", "th": "พิพิธภัณฑ์ในโรงงานมะเขือเทศเก่า มีเครื่องจักรและเรื่องราวมะเขือเทศของเกาะ" },
           "why": { "en": "A guide says it is built to win over children who dislike museums", "th": "ไกด์ว่าออกแบบมาให้เด็กที่ไม่ชอบพิพิธภัณฑ์ก็สนุกได้" },
-          "tip": { "en": "Check the hours and price on the museum's own page before driving out", "th": "เช็กเวลาเปิดและราคาบนเว็บพิพิธภัณฑ์ก่อนขับรถไป" },
+          "tip": { "en": "Open about April to October, closed on Mondays; closed in winter. Check the hours and price on the museum's own page before driving out", "th": "เปิดราวเมษายนถึงตุลาคม ปิดวันจันทร์ หน้าหนาวปิด เช็กเวลาเปิดและราคาบนเว็บพิพิธภัณฑ์ก่อนขับรถไป" },
           "ages": [0, 1, 2, 1],
           "hrs": 1.5,
           "io": "in",

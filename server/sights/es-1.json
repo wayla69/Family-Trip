@@ -726,43 +726,6 @@
           "ok": "2026-11"
         },
         {
-          "local": "OXO Museo del Videojuego",
-          "ages": [
-            0,
-            1,
-            2,
-            2
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
-          "name": {
-            "th": "พิพิธภัณฑ์วิดีโอเกม OXO",
-            "en": "OXO Video Game Museum"
-          },
-          "kind": "museum",
-          "area": {
-            "th": "เซนโตร ใจกลางเมือง",
-            "en": "Centro"
-          },
-          "what": {
-            "th": "พิพิธภัณฑ์วิดีโอเกมที่ได้เล่นเครื่องเกมรุ่นดัง",
-            "en": "A video-game museum where you play classic consoles"
-          },
-          "why": {
-            "th": "ได้เล่นเครื่องเกมเก่าและเห็นว่าเกมเปลี่ยนไปอย่างไร",
-            "en": "Play the old consoles and see how games changed"
-          },
-          "q": "OXO Museo del Videojuego, Calle del Postigo de San Martín 8, Madrid",
-          "ok": "2026-11"
-        },
-        {
           "local": "",
           "ages": [
             1,

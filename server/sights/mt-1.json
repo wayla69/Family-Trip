@@ -371,43 +371,6 @@
           "ok": "2026-11"
         },
         {
-          "local": "",
-          "ages": [
-            0,
-            1,
-            2,
-            2
-          ],
-          "hrs": 1.5,
-          "io": "out",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://kidsareatrip.com/?p=95207",
-          "name": {
-            "th": "ป้อมมาโนเอล",
-            "en": "Fort Manoel"
-          },
-          "kind": "culture",
-          "area": {
-            "th": "เกาะมาโนเอล กซีรา",
-            "en": "Manoel Island, Gżira"
-          },
-          "what": {
-            "th": "ป้อมที่ไกด์ครอบครัวแนะนำคู่กับป้อมเซนต์แองเจโล",
-            "en": "A fortress the family guide recommends with Fort St Angelo"
-          },
-          "why": {
-            "th": "ไกด์ครอบครัวแนะนำสำหรับเด็ก",
-            "en": "Recommended for children by the family guide"
-          },
-          "q": "Fort Manoel, Gżira",
-          "ok": "2026-11"
-        },
-        {
           "local": "Ħal Tarxien Prehistoric Complex",
           "ages": [
             0,
