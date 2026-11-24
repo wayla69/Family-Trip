@@ -324,6 +324,43 @@
           },
           "q": "Aquaworld Resort Budapest, Íves út 16, Budapest",
           "ok": "2026-11"
+        },
+        {
+          "local": "Csillaghegyi Strandfürdő",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/budapest/things-to-do/best-pools-and-lidos-in-budapest",
+          "name": {
+            "th": "สระว่ายน้ำกลางแจ้งชิลลักเฮจ",
+            "en": "Csillaghegy Lido"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ชิลลักเฮจ เขต 3 บูดาเปสต์",
+            "en": "Csillaghegy, Budapest District III"
+          },
+          "what": {
+            "th": "สระว่ายน้ำกลางแจ้งขนาดใหญ่ มีสนามหญ้า 90,000 ตร.ม. สระ และสไลเดอร์",
+            "en": "A large lido with 90,000 m² of lawns, pools and slides"
+          },
+          "why": {
+            "th": "มีสไลเดอร์และโซนสำหรับเด็ก",
+            "en": "Slides and areas for children"
+          },
+          "q": "Csillaghegyi Strandfürdő, Budapest",
+          "ok": "2026-11"
         }
     ]
     }
