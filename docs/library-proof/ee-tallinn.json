@@ -1,146 +1,68 @@
 {
   "town": "ee-tallinn",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 20 rows from visitestonia.com, easyfind.ee and two family guides passed library-check.cjs, 17 went in",
+  "agents": "one Haiku agent; 8 rows from Visit Estonia (Sep 2026) and Live Riga (official), all passed library-check.cjs, 7 went in",
   "added": [
     {
-      "name": "Restoran Nero",
-      "page_name": "Restaurant Nero",
+      "name": "Beach restaurant PAAT",
+      "page_name": "Paat",
       "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
       "date": "2026-09",
-      "map": "Google Maps 'Restoran Nero', Sadama 11a, 212 reviews, newest '3 weeks ago'"
+      "map": "Google Maps 'Beach restaurant PAAT' (Rohuneeme tee 53), newest review shown 4 days ago"
     },
     {
-      "name": "Lore Bistroo",
-      "page_name": "Lore Bistro",
+      "name": "OKO Resto",
+      "page_name": "OKO",
       "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
       "date": "2026-09",
-      "map": "Google Maps 'Lore Bistroo', 1,385 reviews, newest '1 day ago'"
+      "map": "Google Maps 'OKO Resto' (Kesk tee 27, Viimsi), newest review shown a day ago"
     },
     {
-      "name": "City Grill House",
-      "page_name": "City Grill House",
-      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
-      "date": "2026-09",
-      "map": "Google Maps 347 reviews, newest '15 hours ago'"
-    },
-    {
-      "name": "NOP",
-      "page_name": "NOP",
-      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
-      "date": "2026-09",
-      "map": "Google Maps 'NOP Cafe and Shop', 1,956 reviews, newest '21 hours ago'"
-    },
-    {
-      "name": "Talleke ja Pullike (Kakumäe)",
-      "page_name": "Talleke ja Pullike Kakumäe",
-      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
-      "date": "2026-03",
-      "map": "Google Maps 1,122 reviews, newest '3 weeks ago'"
-    },
-    {
-      "name": "Pann&Kook",
-      "page_name": "Restoran Pann&Kook",
-      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
-      "date": "2026-03",
-      "map": "Google Maps 185 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Gourmet Coffee (Kadriorg)",
-      "page_name": "Gourmet Coffee",
-      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
-      "date": "2026-03",
-      "map": "Google Maps L. Koidula 13a, 1,122 reviews, newest 'last week'"
-    },
-    {
-      "name": "Kohvik Boheem",
-      "page_name": "Kohvik Boheem",
-      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
-      "date": "2026-03",
-      "map": "Google Maps 'Boheem', 1,691 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Vapiano (Hobujaama)",
-      "page_name": "Vapiano Foorum",
-      "src": "https://easyfind.ee/en/lastega-sooma-eestis/",
-      "date": "2026-03",
-      "map": "Google Maps 'Vapiano Hobujaama', 4,885 reviews, newest '3 days ago'"
-    },
-    {
-      "name": "Pirita Beach",
-      "page_name": "Pirita Beach",
-      "src": "https://thingstodointallinn.com/family/",
-      "date": "2026-10",
-      "map": "Google Maps 1,610 reviews, newest '4 weeks ago'"
-    },
-    {
-      "name": "Tallinn City Museum",
-      "page_name": "Tallinn City Museum",
-      "src": "https://thingstodointallinn.com/family/",
-      "date": "2026-10",
-      "map": "Google Maps 899 reviews, newest '21 hours ago'"
-    },
-    {
-      "name": "Lohesaba adventure park",
-      "page_name": "Lohesaba",
-      "src": "https://lohesaba.eu/en/",
+      "name": "Super Skypark",
+      "page_name": "Super Skypark",
+      "src": "https://visitestonia.com/en/super-skypark-trampoline-and-play-center",
       "date": "official",
-      "map": "Google Maps 'Lohesaba seikluslinnak', 1,092 reviews, newest '13 hours ago'"
+      "map": "Google Maps 'Super Skypark' (Peterburi tee 2), newest review shown a day ago"
     },
     {
-      "name": "St Olaf’s Church tower",
-      "page_name": "St Olaf’s Church tower",
-      "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
-      "date": "2026-09",
-      "map": "Google Maps 'St.Olaf's Church', 4,571 reviews, newest '19 hours ago'"
+      "name": "Viimsi Open Air Museum",
+      "page_name": "Viimsi Open Air Museum",
+      "src": "https://visitestonia.com/en/viimsi-open-air-museum",
+      "date": "official",
+      "map": "Google Maps 'Viimsi Open Air Museum' (Rohuneeme tee 53a), newest review shown 4 days ago"
     },
     {
-      "name": "St Catherine’s Passage",
-      "page_name": "St Catherine’s Passage",
-      "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
-      "date": "2026-09",
-      "map": "Google Maps 1,359 reviews, newest '20 hours ago'"
+      "name": "Riga Motor Museum",
+      "page_name": "Riga Motor Museum",
+      "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+      "date": "official",
+      "map": "Google Maps 'Riga Motor Museum' (Sergeja Eizenšteina iela 8), newest review shown an hour ago"
     },
     {
-      "name": "Kohtuotsa viewpoint",
-      "page_name": "Kohtuotsa viewpoint",
-      "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
-      "date": "2026-09",
-      "map": "Google Maps 'Kohtuotsa viewing platform', 7,262 reviews, newest '1 day ago'"
+      "name": "Latvian Museum of Natural History",
+      "page_name": "Latvian museum of Natural history",
+      "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+      "date": "official",
+      "map": "Google Maps 'Latvian Museum of Natural History' (Krišjāņa Barona iela 4), newest review shown a day ago"
     },
     {
-      "name": "Pirita Convent ruins",
-      "page_name": "Pirita Convent ruins",
-      "src": "https://thingstodointallinn.com/family/",
-      "date": "2026-10",
-      "map": "Google Maps 'Birgitta Convent Ruins', 2,713 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Telliskivi flea market",
-      "page_name": "Telliskivi Flea Market",
-      "src": "https://thingstodointallinn.com/family/",
-      "date": "2026-10",
-      "map": "Google Maps 'Telliskivi Kirbukas', 130 reviews, newest 'last month'"
+      "name": "Miniature House (Small Stuff)",
+      "page_name": "Miniature House",
+      "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+      "date": "official",
+      "map": "Google Maps 'Small Stuff Miniatūru māja' (Maija iela 18), newest review shown 2 days ago"
     }
   ],
   "left_out": [
     {
-      "name": "Vanaema Juures",
-      "why": "the map's newest review is 4 years old"
+      "name": "Mängu Saar",
+      "why": "three branches, none named"
     },
     {
-      "name": "Kristiine BabyBack",
-      "why": "the map's newest review is 7 years old"
-    },
-    {
-      "name": "Pizza Americana",
-      "why": "the map puts it on Kaarli pst, not by the Viru Gate as the page says"
-    },
-    {
-      "name": "Viimsi places",
-      "why": "outside the city"
+      "name": "Mr. Bunny Kitchen (Riga)",
+      "why": "no district on the page"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
