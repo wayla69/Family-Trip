@@ -3946,6 +3946,154 @@
           },
           "q": "Bright Angel Trailhead, Grand Canyon Village, AZ",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://discoverykidslv.org/zh/blog/best-indoor-toddler-playgrounds-las-vegas/",
+          "name": {
+            "th": "คิดส์เอ็มไพร์ เฮนเดอร์สัน",
+            "en": "Kids Empire (Henderson)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนสเตฟานีเหนือ เฮนเดอร์สัน",
+            "en": "225 N Stephanie Street, Henderson"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีสไลเดอร์และลานฟุตบอลนุ่ม",
+            "en": "An indoor play park with slides and a soft football area"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กแยกเป็นสัดส่วน ไม่ปนกับเด็กโต",
+            "en": "An enclosed toddler area keeps little ones apart from older children"
+          },
+          "q": "Kids Empire Henderson, 225 N Stephanie St, Henderson",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://discoverykidslv.org/blog/15-things-to-do-with-a-toddler-in-las-vegas-a-guide-to-kid-friendly-activities/",
+          "name": {
+            "th": "ซันเซ็ตพาร์ก",
+            "en": "Sunset Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนซันเซ็ต ฝั่งตะวันออกเฉียงใต้ ลาสเวกัส",
+            "en": "E Sunset Road, southeast, Las Vegas"
+          },
+          "what": {
+            "th": "สวนใหญ่ มีสนามเด็กเล่นร่มรื่น บ่อเป็ด ลานเล่นน้ำ และทางเดินปูพื้น",
+            "en": "A big park with a large shaded playground, a duck pond, a splash pad and paved paths"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นขนาดเด็กเล็กข้างโซนเด็กโต",
+            "en": "Play equipment sized for toddlers beside the bigger children's area"
+          },
+          "q": "Sunset Park, 2601 E Sunset Rd, Las Vegas",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://discoverykidslv.org/blog/15-things-to-do-with-a-toddler-in-las-vegas-a-guide-to-kid-friendly-activities/",
+          "name": {
+            "th": "ดาวน์ทาวน์คอนเทนเนอร์พาร์ก",
+            "en": "Downtown Container Park (Treehouse)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเฟรมอนต์ ดาวน์ทาวน์ ลาสเวกัส",
+            "en": "Fremont Street, Downtown, Las Vegas"
+          },
+          "what": {
+            "th": "ร้านค้าจากตู้คอนเทนเนอร์ รอบสนามเด็กเล่นปีนป่ายหลายชั้น",
+            "en": "Shops built from shipping containers around a multi-level Treehouse climbing playground"
+          },
+          "why": {
+            "th": "ทรีเฮาส์เล่นฟรี เด็กเล็กเล่นชั้นล่างได้",
+            "en": "The Treehouse is free to explore; toddlers play on the ground level"
+          },
+          "q": "Downtown Container Park, 707 Fremont St, Las Vegas",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://discoverykidslv.org/blog/15-things-to-do-with-a-toddler-in-las-vegas-a-guide-to-kid-friendly-activities/",
+          "name": {
+            "th": "นั่งเรือกอนโดลา เดอะเวเนเชียน",
+            "en": "Gondola ride (The Venetian)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "แกรนด์คาแนลช็อปส์ เดอะเวเนเชียน ลาสเวกัส",
+            "en": "Grand Canal Shoppes, The Venetian, Las Vegas"
+          },
+          "what": {
+            "th": "ล่องเรือกอนโดลาช้าๆ 10 นาที มีคนพายร้องเพลง ในอาคาร",
+            "en": "A slow 10-minute gondola ride with a singing gondolier, indoors"
+          },
+          "why": {
+            "th": "ช้าๆ และมีแอร์ พักหลบร้อนได้",
+            "en": "Gentle and air-conditioned, a break from the heat"
+          },
+          "q": "Gondola Rides, Grand Canal Shoppes, 3355 S Las Vegas Blvd",
+          "ok": "2026-11"
         }
       ]
     }
