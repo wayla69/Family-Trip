@@ -1,0 +1,109 @@
+{
+  "town": "gb-london",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 14 rows from Secret London (Oct 2026) and What the Redhead Said (Sep 2026), all passed library-check.cjs, all went in",
+  "added": [
+    {
+      "name": "Agora (Borough Market)",
+      "page_name": "Agora",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'AGORA souvla bar', 1,416 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Bancone (Covent Garden)",
+      "page_name": "Bancone",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Bancone Covent Garden', 4,314 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Le Pont de la Tour",
+      "page_name": "Le Pont de la Tour",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Le Pont de la Tour', 1,705 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "Apricity",
+      "page_name": "Apricity",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Apricity Restaurant', 573 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "Farang",
+      "page_name": "Farang",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Farang London', 944 reviews, newest shown 3 days ago"
+    },
+    {
+      "name": "Hawksmoor (Spitalfields)",
+      "page_name": "Hawksmoor",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Hawksmoor Spitalfields', 3,694 reviews, newest shown 14 hours ago"
+    },
+    {
+      "name": "Langan's Brasserie",
+      "page_name": "Langan’s Brasserie",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Langan's Brasserie', 1,482 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Heard (Borough)",
+      "page_name": "Heard",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Heard. Burger Borough', 1,403 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Madame Tussauds London",
+      "page_name": "Madame Tussauds",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Madame Tussauds London', 87,385 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Timewalk Immersive Experience Museum",
+      "page_name": "Timewalk Immersive Experience Museum",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Timewalk Immersive Experience Museum', 575 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "Mini Genius Lab",
+      "page_name": "Mini Genius Lab",
+      "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'Mini Genius Lab London', 35 reviews, newest shown 2 months ago"
+    },
+    {
+      "name": "Gambado Chelsea",
+      "page_name": "Gambado Chelsea",
+      "src": "https://whattheredheadsaid.com/indoor-play-centres-soft-play-london/",
+      "date": "2026-09",
+      "map": "Google Maps 'Gambado Chelsea - Indoor Softplay', 2,190 reviews, newest shown 7 days ago"
+    },
+    {
+      "name": "Flip Out Canary Wharf",
+      "page_name": "Flip Out Canary Wharf",
+      "src": "https://whattheredheadsaid.com/indoor-play-centres-soft-play-london/",
+      "date": "2026-09",
+      "map": "Google Maps 'Flip Out Canary Wharf', 1,794 reviews, newest shown 4 days ago"
+    },
+    {
+      "name": "Kidspace Croydon",
+      "page_name": "Kidspace Croydon",
+      "src": "https://whattheredheadsaid.com/indoor-play-centres-soft-play-london/",
+      "date": "2026-09",
+      "map": "Google Maps 'Kidspace Croydon', 1,797 reviews, newest shown 16 days ago"
+    }
+  ],
+  "left_out": [],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
