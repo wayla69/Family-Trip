@@ -130,6 +130,34 @@
       "src": "https://mom-mom.net/en/travel/places/65b86da167a2df7173b902d9",
       "date": "2026-05",
       "map": "Kakao Map '콩순이키즈카페 제주점' (연사2길 82), open, newest blog review 29 Aug 2026"
+    },
+    {
+      "name": "Nammaene Black Pork (Seogwipo, Olle Market)",
+      "page_name": "남매네흑돼지 서귀포점",
+      "src": "https://mom-mom.net/travel/places/6943c92e4109ca8f1af1c4aa",
+      "date": "2026-06",
+      "map": "Kakao Map '남매네흑돼지삼겹살' (중정로61번길 24-1), open, 104 reviews, newest 14 Nov 2026"
+    },
+    {
+      "name": "Nammaene Black Pork (Seogwipo New Town)",
+      "page_name": "남매네흑돼지 서귀포신시가지점",
+      "src": "https://mom-mom.net/travel/places/69a94be337051f76228f6f51",
+      "date": "2026-03",
+      "map": "Kakao Map '남매네흑돼지 신시가지점' (신서로32번길 18), open, 107 reviews, newest 18 Nov 2026"
+    },
+    {
+      "name": "Gimnyeong Maze Park",
+      "page_name": "김녕미로공원",
+      "src": "https://www.funliday.com/posts/?p=144352",
+      "date": "2026-06",
+      "map": "Kakao Map '김녕미로공원' (만장굴길 122), open 09:00–18:00 on the list, newest review 23 Nov 2026"
+    },
+    {
+      "name": "Saebyeol Friends (sheep farm)",
+      "page_name": "새별프렌즈",
+      "src": "https://www.funliday.com/posts/?p=144352",
+      "date": "2026-06",
+      "map": "Kakao Map '새별프렌즈' (평화로 1529), open 09:00–18:00 on the list, newest review 18 Nov 2026"
     }
   ],
   "left_out": [
@@ -148,8 +176,17 @@
     {
       "name": "Sheep Farm (Aewol)",
       "why": "not found on Kakao Map under the page's name"
+    },
+    {
+      "name": "설문대할망전시관, 우도, 섭지코지, Arte Kids Park",
+      "why": "not found on a dated page with a district"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café)"
+  "kakao_pass": "24 Nov 2026: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café)",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from mom-mom.net (2026) and Funliday (Jun 2026), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -758,6 +758,80 @@
           },
           "q": "콩순이키즈카페 제주점, 연사2길 82, 제주",
           "ok": "2026-11"
+        },
+        {
+          "local": "김녕미로공원",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "name": {
+            "th": "สวนเขาวงกตคิมนย็อง",
+            "en": "Gimnyeong Maze Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คิมนย็อง คูจวา เชจู",
+            "en": "Gimnyeong, Gujwa-eup, Jeju"
+          },
+          "what": {
+            "th": "สวนเขาวงกตต้นไม้ มีสนามหญ้ากว้าง",
+            "en": "A hedge maze park with a wide lawn"
+          },
+          "why": {
+            "th": "เขาวงกตให้เดินหาทางและสนามหญ้าให้วิ่ง",
+            "en": "A maze to puzzle through and open grass to run on"
+          },
+          "q": "김녕미로공원, 만장굴길 122, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "새별프렌즈",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "name": {
+            "th": "แซบย็อลเฟรนด์ส ฟาร์มแกะ",
+            "en": "Saebyeol Friends (sheep farm)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนพย็องฮวา แอวอล เชจู",
+            "en": "Pyeonghwa-ro, Aewol-eup, Jeju"
+          },
+          "what": {
+            "th": "ฟาร์มแกะบนเนินเขาเขียว ตกแต่งเหมือนหมู่บ้านในนิทาน",
+            "en": "A sheep farm on green hills, built like a storybook village"
+          },
+          "why": {
+            "th": "มีแกะและสัตว์ในฟาร์มบนเนินโล่ง",
+            "en": "Sheep and other farm animals on the open hillside"
+          },
+          "q": "새별프렌즈, 평화로 1529, 제주",
+          "ok": "2026-11"
         }
       ]
     }

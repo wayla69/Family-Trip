@@ -534,3 +534,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 batch-40 of docs/library-briefs (round 2). +7: Myeonjumak, Samsin Halmang Bapsang, Dullegil (Jungmun), Jeju Hanmyeonga, Gozip Dol Wooluck (Hamdeok), Jeju Dodori Meat Noodles, Gwangyuk. Proof in `docs/library-proof/kr-jeju.json`.
 
 - **24 Nov 2026, Jeju, Kakao Map pass**: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-jeju.json`.
+
+- **24 Nov 2026, Jeju** (docs/library-briefs batch-59, round 3): +2 (Nammaene Black Pork, two Seogwipo branches). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
