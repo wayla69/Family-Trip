@@ -1083,7 +1083,7 @@
           "pram": "no",
           "price": { "en": "≈ ฿100 foreign adults · ฿50 children 3–14 (national park fee, check)", "th": "≈ ฿100 ผู้ใหญ่ต่างชาติ · ฿50 เด็ก 3–14 ปี (ค่าเข้าอุทยาน เช็กอีกครั้ง)" },
           "book": "none",
-          "q": "Than Thip Waterfall, Khao Kho National Park, Phetchabun",
+          "q": "น้ำตกธารทิพย์ หล่มสัก เพชรบูรณ์",
           "ok": "2026-11",
           "src": "https://thainationalparks.com/khao-kho-national-park"
         },
@@ -1882,23 +1882,6 @@
           "q": "Art Culture Institute, Khon Kaen University, Khon Kaen",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/art-culture-institute-khon-kaen-university/"
-        },
-        {
-          "name": { "en": "Khon Kaen Philatelic Museum", "th": "พิพิธภัณฑ์ไปรษณียากรขอนแก่น" },
-          "kind": "museum",
-          "area": { "en": "Mueang Khon Kaen", "th": "อำเภอเมืองขอนแก่น" },
-          "what": { "en": "Thai stamps, postal history and vintage postal equipment", "th": "แสตมป์ไทย ประวัติไปรษณีย์ และอุปกรณ์ไปรษณีย์โบราณ" },
-          "why": { "en": "A small free museum under a roof for a short rainy-day stop; best for children who like collecting", "th": "พิพิธภัณฑ์เล็กๆ ฟรี อยู่ในร่ม แวะสั้นๆ วันฝนตก เหมาะกับเด็กที่ชอบสะสม" },
-          "tip": { "en": "Open weekdays 08:00–16:30 and closed on Saturdays and Sundays", "th": "เปิดวันจันทร์–ศุกร์ 08:00–16:30 ปิดเสาร์อาทิตย์" },
-          "ages": [0, 1, 1, 1],
-          "hrs": 0.75,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Khon Kaen Philatelic Museum, Mueang Khon Kaen",
-          "ok": "2026-11",
-          "src": "https://www.thaiholidayguide.com/attraction/khon-kaen-philatelic-museum/"
         },
         {
           "name": { "en": "Phra Mahathat Kaen Nakhon (Wat Nong Waeng)", "th": "พระมหาธาตุแก่นนคร (วัดหนองแวง)" },
