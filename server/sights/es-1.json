@@ -353,7 +353,192 @@
       {"name":{"en":"Barcelona Wax Museum","th":"พิพิธภัณฑ์ขี้ผึ้งบาร์เซโลนา"},"kind":"museumkid","area":{"en":"La Rambla","th":"ลาสรามบลา"},"what":{"en":"Wax museum in a beautiful old building on La Rambla, with a vault where you can act out a robbers' escape.","th":"พิพิธภัณฑ์ขี้ผึ้งในอาคารเก่าที่สวยบนลาสรามบลา มีห้องนิรภัยให้เล่นเป็นโจรหนีด้วยของที่ขโมยมา"},"why":{"en":"The vault simulates how robbers try to escape with their loot, which the page calls one of the best places for kids in Barcelona.","th":"ห้องนิรภัยจำลองการหนีของโจร หน้าเว็บเรียกว่าเป็นหนึ่งในที่ดีที่สุดสำหรับเด็กในบาร์เซโลนา"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Barcelona Wax Museum, La Rambla, Barcelona","ok":"2026-11","src":"https://www.tiqets.com/blog/?p=17070"},
       {"name":{"en":"Parc Joan Miro","th":"สวนฌ็องมีโร"},"kind":"park","area":{"en":"Las Arenas","th":"ลาสอาเรนัส"},"what":{"en":"Park with Joan Miró's centre-piece statue Dona i Ocell (Woman and Bird), rising 22 metres over two lawns and maze-like paths.","th":"สวนที่มีรูปปั้นศูนย์กลางของฌ็องมีโร โดนาอิโอเซ (หญิงกับนก) สูง 22 เมตร เหนือสนามหญ้าสองแห่งและทางเดินคล้ายเขาวงกต"},"why":{"en":"A quick sit-down after sightseeing, with bike paths, a basketball court and a bocce spot.","th":"นั่งพักเบาๆ หลังเที่ยว มีทางจักรยาน สนามบาสเกตบอล และลานโบชช์"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parc Joan Miro, behind Las Arenas, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-park-guide/"},
       {"name":{"en":"Joan Brossa Gardens","th":"สวนจัวน์บรอสซา"},"kind":"play","area":{"en":"Montjuïc","th":"มงต์จูอิก"},"what":{"en":"Gardens on Montjuïc with a play area of sand, water, slides, swings, sound pillows and a mini wooden suspension bridge.","th":"สวนบนมงต์จูอิกที่มีสนามเด็กเล่นทราย น้ำ สไลด์ ชิงช้า เสาเสียง และสะพานแขวนไม้จิ๋ว"},"why":{"en":"The page recommends it for the play area with sand, water, slides and swings.","th":"หน้าเว็บแนะนำให้มาที่สนามเด็กเล่นที่มีทราย น้ำ สไลด์ และชิงช้า"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Joan Brossa Gardens, Montjuïc, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"},
-      {"name":{"en":"Plaça de Masadas","th":"ปลาซาเดมาซาดาส"},"kind":"play","area":{"en":"La Sagrera","th":"ลาซาเกรรา"},"what":{"en":"A square in the La Sagrera district, close to the Parc de Can Dragò playground with its mega octopus.","th":"จัตุรัสในย่านลาซาเกรรา ใกล้สนามเด็กเล่นปาร์กเดกันดรางกับปลาหมึกยักษ์"},"why":{"en":"The page calls it a big area full of kids; it is not a restaurant.","th":"หน้าเว็บเรียกว่าเป็นพื้นที่กว้างที่มีเด็กเยอะ และไม่ใช่ร้านอาหาร"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaça de Masadas, La Sagrera, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"}
+      {"name":{"en":"Plaça de Masadas","th":"ปลาซาเดมาซาดาส"},"kind":"play","area":{"en":"La Sagrera","th":"ลาซาเกรรา"},"what":{"en":"A square in the La Sagrera district, close to the Parc de Can Dragò playground with its mega octopus.","th":"จัตุรัสในย่านลาซาเกรรา ใกล้สนามเด็กเล่นปาร์กเดกันดรางกับปลาหมึกยักษ์"},"why":{"en":"The page calls it a big area full of kids; it is not a restaurant.","th":"หน้าเว็บเรียกว่าเป็นพื้นที่กว้างที่มีเด็กเยอะ และไม่ใช่ร้านอาหาร"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaça de Masadas, La Sagrera, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "บังเกอร์เดลการ์เมล (ตูโรเดลาโรบีรา)",
+            "en": "Bunkers del Carmel (Turó de la Rovira)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เนินตูโรเดลาโรบีรา บาร์เซโลนา",
+            "en": "Turó de la Rovira, Horta-Guinardó, Barcelona"
+          },
+          "what": {
+            "th": "ฐานต่อสู้อากาศยานปี 1937 บนเนิน มองเห็นเมืองรอบ 360 องศา",
+            "en": "A 1937 anti-aircraft battery on a hill with a 360-degree view of the city"
+          },
+          "why": {
+            "th": "เด็กโตชอบเรื่องราวในอดีตของที่นี่",
+            "en": "Older children like the history of the place"
+          },
+          "q": "MUHBA Turó de la Rovira, Bunkers del Carmel, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปิกัสโซ",
+            "en": "Picasso Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนมอนต์กาดา เอลบอร์น บาร์เซโลนา",
+            "en": "Carrer de Montcada, El Born, Barcelona"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในคฤหาสน์ยุคกลาง 5 หลัง เล่าช่วงแรกของศิลปิน",
+            "en": "A museum in five medieval mansions, on the artist's early years"
+          },
+          "why": {
+            "th": "มีแผ่นพับนำชมสำหรับครอบครัวฟรี ภาษาอังกฤษ",
+            "en": "Free family-tour leaflets in English"
+          },
+          "q": "Picasso Museum, Carrer de Montcada 15, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "พิพิธภัณฑ์เอฟซีบาร์เซโลนาและทัวร์คัมป์นู",
+            "en": "FC Barcelona Museum and Camp Nou tour"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เลสกอร์ตส์ บาร์เซโลนา",
+            "en": "Les Corts, Barcelona"
+          },
+          "what": {
+            "th": "ห้องถ้วยรางวัล ห้องเมสซี ห้องแต่งตัว และห้องแถลงข่าว",
+            "en": "The trophy gallery, the Messi Hall, the dressing rooms and the press room"
+          },
+          "why": {
+            "th": "สำหรับเด็กที่รักฟุตบอล",
+            "en": "For football-mad children"
+          },
+          "q": "FC Barcelona Museum, Carrer d'Arístides Maillol, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 18 ยูโรก่อนบ่ายสอง 17 ยูโรหลังบ่ายสอง เด็กต่ำกว่า 16 ปีฟรี",
+            "en": "€18 adults before 2 pm, €17 from 2 pm; free under 16"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "อาคารอาร์ตนูโวซันต์เปา",
+            "en": "Sant Pau Art Nouveau Site"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนซันต์อันโตนีมาเรียกลาเรต บาร์เซโลนา",
+            "en": "Carrer de Sant Antoni Maria Claret, Barcelona"
+          },
+          "what": {
+            "th": "อาคารสไตล์โมเดิร์นนิสต์มรดกยูเนสโก ลานกว้าง โมเสก และน้ำพุรูปมังกร",
+            "en": "A UNESCO Modernista complex with wide courtyards, mosaics and dragon fountains"
+          },
+          "why": {
+            "th": "เด็กชอบความใหญ่และสีสดใส",
+            "en": "Children like the scale and the bright colours"
+          },
+          "q": "Recinte Modernista de Sant Pau, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "โบสถ์พระหฤทัย (ทิบิดาโบ)",
+            "en": "Temple of the Sacred Heart (Tibidabo)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ยอดเขาทิบิดาโบ บาร์เซโลนา",
+            "en": "Tibidabo hilltop, Barcelona"
+          },
+          "what": {
+            "th": "มหาวิหารบนยอดทิบิดาโบ มองลงมาเห็นเมือง",
+            "en": "The basilica on top of Tibidabo, above the city"
+          },
+          "why": {
+            "th": "วิวคุ้มแม้ไม่เล่นเครื่องเล่น",
+            "en": "The views are worth it even without the rides"
+          },
+          "q": "Temple of the Sacred Heart of Jesus, Tibidabo, Barcelona",
+          "ok": "2026-11"
+        }
     ]
     },
     {
