@@ -1271,6 +1271,47 @@
           },
           "q": "พระราชนิเวศน์มฤคทายวัน",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://vananavahuahin.holidayinnresorts.com/brydes-kids-club-hua-hin",
+          "name": {
+            "th": "คิดส์คลับไบรด์ส ฮอลิเดย์อินน์วานานาวา",
+            "en": "Bryde's Kids Club (Holiday Inn Vana Nava)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮอลิเดย์อินน์วานานาวา ถนนเพชรเกษม หัวหิน",
+            "en": "Holiday Inn Vana Nava, Phetkasem Road, Hua Hin"
+          },
+          "what": {
+            "th": "คิดส์คลับในร่มขนาดใหญ่ธีมเรือ ในโรงแรม",
+            "en": "A big indoor kids' club with a ship theme, at the hotel"
+          },
+          "why": {
+            "th": "คลับกว้างทันสมัย ยินดีต้อนรับเด็กทุกคน",
+            "en": "A roomy, modern club where all children are welcome"
+          },
+          "tip": {
+            "th": "สำหรับแขกของโรงแรม เด็กต่ำกว่า 4 ขวบต้องมีผู้ปกครองหรือพี่เลี้ยง ควรจองล่วงหน้า",
+            "en": "For hotel guests; under-4s with a parent or sitter; book ahead"
+          },
+          "q": "Holiday Inn Resort Vana Nava Hua Hin",
+          "ok": "2026-11"
         }
       ]
     },
