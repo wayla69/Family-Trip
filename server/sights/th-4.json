@@ -2500,6 +2500,47 @@
           },
           "q": "น้ำตกคลองนนทรี, เกาะช้าง",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://explorekohchang.com/koh-chang/things-to-do-in-koh-chang/koh-chang-waterfalls/",
+          "name": {
+            "th": "น้ำตกคีรีเพชร",
+            "en": "Khiri Phet Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สลักเพชร ฝั่งตะวันออกของเกาะช้าง",
+            "en": "Salak Phet, east coast of Koh Chang"
+          },
+          "what": {
+            "th": "น้ำตกฝั่งตะวันออกของเกาะช้าง มีแอ่งให้ลงเล่นน้ำ",
+            "en": "A waterfall on the east coast of Koh Chang with pools to dip in"
+          },
+          "why": {
+            "th": "เดินไปถึงง่ายกว่าน้ำตกคลองหนึ่งที่อยู่ใกล้ๆ",
+            "en": "Easier to reach than the nearby Klong Neung falls"
+          },
+          "tip": {
+            "th": "สวยที่สุดช่วงหน้าฝนหรือหลังหน้าฝน",
+            "en": "Best in or just after the rainy season"
+          },
+          "q": "Khiri Phet Waterfall, Salak Phet, Koh Chang",
+          "ok": "2026-11"
         }
       ]
     },

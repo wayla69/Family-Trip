@@ -39,6 +39,20 @@
       "src": "https://travel.trueid.net/detail/DY70G86E7gP",
       "date": "2025-03",
       "map": "Google Maps 408 reviews, newest shown '7 days ago'"
+    },
+    {
+      "name": "Chompu Farm's Cafe",
+      "page_name": "Chompu farm and cafe",
+      "src": "https://www.saitiew.com/%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%9F%E0%B9%88%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%94/",
+      "date": "2026-02",
+      "map": "Google Maps 'Chompu Farm's Cafe' (199 Nong Khan Song, Mueang Trat), newest review shown 5 days ago"
+    },
+    {
+      "name": "Khiri Phet Waterfall",
+      "page_name": "Kheeri Phet Waterfall",
+      "src": "https://explorekohchang.com/koh-chang/things-to-do-in-koh-chang/koh-chang-waterfalls/",
+      "date": "2026-04",
+      "map": "Google Maps 'Khiri Phet Waterfall' (Koh Chang Tai), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -53,7 +67,24 @@
     {
       "name": "Ao Bai Lan",
       "why": "the map shows only a resort"
+    },
+    {
+      "name": "Mermaid House, Black Bananas, Kanghanlom, Cowboy, Loma's Coffee",
+      "why": "nothing about children on the page"
+    },
+    {
+      "name": "Klong Chao Beach",
+      "why": "no review dates readable on the map"
+    },
+    {
+      "name": "Klong Chao Waterfall",
+      "why": "the source only names it in a list"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; rows from Explore Koh Chang (Apr–May 2026) and Saitiew (Feb 2026) that passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
