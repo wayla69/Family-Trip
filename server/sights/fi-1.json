@@ -942,6 +942,43 @@
           },
           "q": "Santa Claus Secret Forest Joulukka, Rovaniemi",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/attraction/snowglow-winterpark/",
+          "name": {
+            "th": "สโนว์โกลว์ วินเทอร์พาร์ก",
+            "en": "SnowGlow Winterpark"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สนามกีฬากลาง ใจกลางเมืองโรวาเนียมิ",
+            "en": "Central stadium, Rovaniemi city centre"
+          },
+          "what": {
+            "th": "สวนกิจกรรมฤดูหนาวใจกลางโรวาเนียมิ มีแสงไฟ",
+            "en": "A winter activity park in the centre of Rovaniemi, with lights"
+          },
+          "why": {
+            "th": "มีกิจกรรมสนุกและแสงไฟสำหรับทุกวัย",
+            "en": "Fun activities and lights for all ages"
+          },
+          "q": "SnowGlow Winterpark, Rovaniemi",
+          "ok": "2026-11"
         }
       ]
     }
