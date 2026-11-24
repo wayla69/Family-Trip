@@ -1,0 +1,219 @@
+{
+ "kind": "eats",
+ "checked": "2026-11",
+ "how": "Each flagged row re-opened on Google Maps (English UI, one lookup at a time) with its own map query and its local name; the place's address was compared with the row. 'Permanently closed' on this very place, or 'Temporarily closed' with no reopening date → removed; a seasonal closure → kept with a season note; one web search for the temporary ones. A town that fell under its minimums got a replacement confirmed open on Maps.",
+ "rows": [
+  {
+   "file": "server/eats/bt-1.json",
+   "town": "bt-paro",
+   "name": "Cloud 9",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Cloud9 Gourmet Burger and Milk Bar', Clock Tower Chang Lam SE, Thimphu (the row's place) shows 'Temporarily closed', no hours; the only other Cloud 9 is a karaoke pub. No reopening date found."
+  },
+  {
+   "file": "server/eats/hk-1.json",
+   "town": "hk-hongkong",
+   "name": "Tozzo",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'TOZZO', 2/F JC Contemporary, Tai Kwun, 10 Hollywood Rd: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/hk-1.json",
+   "town": "hk-hongkong",
+   "name": "Honolulu",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Honolulu Coffee Shop 檀島咖啡餅店', Luen Sen Mansion, 176-178 Hennessy Rd, Wan Chai: 'Permanently closed' (also for the query 'Honolulu Coffee Shop Wan Chai')."
+  },
+  {
+   "file": "server/eats/hk-1.json",
+   "town": "hk-hongkong",
+   "name": "Bathers",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Bathers Restaurant & Bar', 32 Lower Cheung Sha Beach, Lantau: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/hk-1.json",
+   "town": "hk-hongkong",
+   "name": "Tak Tou",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Tak Tou (Tsim Sha Tsui) 德島', Energy Plaza, Granville Rd: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/hk-1.json",
+   "town": "hk-hongkong",
+   "name": "Mr. Tree",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: '大樹先生的家 Mr.Tree 親子餐廳 銅鑼灣分店', Windsor House, 311 Gloucester Rd: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/hk-1.json",
+   "town": "hk-hongkong",
+   "name": "Cafe Roma",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Cafe Roma', Park Island Beach Commercial Complex, Ma Wan: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/hk-1.json",
+   "town": "hk-hongkong",
+   "name": "The Sixteenth",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'The Sixteenth', 2/F Oxford House, Taikoo Place: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/id-1.json",
+   "town": "id-bali",
+   "name": "Genius Cafe",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Genius Cafe Sanur', Jl. Kusuma Sari: 'Temporarily closed'; the owner's post on the listing: 'The Last Sunset: a special farewell party. Sunday 25 October … After 10 years together, we're closing our doors'."
+  },
+  {
+   "file": "server/eats/id-1.json",
+   "town": "id-komodo",
+   "name": "Bajo Bay Fisherman's Club",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Bajo Bay Fisherman's Club', Jl. Ikan, Labuan Bajo: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/jp-4.json",
+   "town": "jp-nagano",
+   "name": "Gosenjaku Kitchen",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24: 'Gosenjaku Kitchen 五千尺キッチン', Kamikochi: 'Temporarily closed'. Kamikochi closes for the winter from mid-November; the park's March 2026 update says it reopens on 17 April 2026, and the 2025 schedule had Gosenjaku Kitchen open from the park's reopening. Season note added to why.",
+   "src": "https://www.kamikochi.org/?p=11974"
+  },
+  {
+   "file": "server/eats/kh-1.json",
+   "town": "kh-siemreap",
+   "name": "Pou Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Pou Restaurant and Bar', Street 27, Wat Bo Rd: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/kh-1.json",
+   "town": "kh-siemreap",
+   "name": "Curry King",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Curry King indian restaurant Siem reap', Krosar Thmey near Street 08: 'Temporarily closed', no hours, no reopening date."
+  },
+  {
+   "file": "server/eats/kr-1.json",
+   "town": "kr-seoul",
+   "name": "Ssada Gimbap",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: '싸다김밥 명동역점', 26 Myeongdong 8ga-gil: 'Permanently closed' (also for '싸다김밥 명동'; no other Myeongdong branch came up)."
+  },
+  {
+   "file": "server/eats/kr-1.json",
+   "town": "kr-busan",
+   "name": "Haeundae Pojangmacha-chon",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: '해운대포장마차촌', 236 Haeundaehaebyeon-ro: 'Permanently closed' (only a single stall inside it still listed)."
+  },
+  {
+   "file": "server/eats/kr-1.json",
+   "town": "kr-gyeongju",
+   "name": "Gyodong Ssambap",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: '별채반 교동쌈밥', 328-1 Hwangnam-dong: 'Permanently closed' (same for the Korean name '교동쌈밥 경주')."
+  },
+  {
+   "file": "server/eats/kr-2.json",
+   "town": "kr-suwon",
+   "name": "Cabinet Bagel",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: '캐비넷베이글', Sinpung-ro 32, Paldal-gu: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/kz-1.json",
+   "town": "kz-almaty",
+   "name": "Zheti Kazyna",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Zhety Kazyna Жеты Казына', Abylai Khan Ave 58: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/la-1.json",
+   "town": "la-luangprabang",
+   "name": "Coconut Garden",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Coconut Garden', Sisavong Road, Luang Prabang: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/mm-1.json",
+   "town": "mm-bagan",
+   "name": "Mani Sithu Market",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Mani Sithu Market မဏိစည်သူဈေး', Nyaung-U: 'Permanently closed' (also for 'Mani Sithu market Bagan'). Web guides that still list it are undated; no 2025–2026 page confirms it trading."
+  },
+  {
+   "file": "server/eats/mn-1.json",
+   "town": "mn-ulaanbaatar",
+   "name": "Rosewood Kitchen + Enoteca",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: no listing of Rosewood Kitchen + Enoteca on Seoul Street any more; every query lands on 'DeQuattro by Rosewood', Tumen Center F2, 'Temporarily closed'. The newest dated review found was from 2022."
+  },
+  {
+   "file": "server/eats/mv-1.json",
+   "town": "mv-atolls",
+   "name": "Oishii - The House of Sushi",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Oishii - The House of Sushi', Malé: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-3.json",
+   "town": "th-nakhonsi",
+   "name": "Swansea Cafe",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Swansea Cafe', 23/57 Khanom: 'Temporarily closed', no hours, no reopening date found."
+  },
+  {
+   "file": "server/eats/th-4.json",
+   "town": "th-trang",
+   "name": "Moo Kratha Ruen Khun Yai",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'หมูกระทะเรินคุณยาย', 288 Bo Hin, Sikao: 'Temporarily closed', no hours, no reopening date found."
+  },
+  {
+   "file": "server/eats/th-4.json",
+   "town": "th-maehongson",
+   "name": "Intira Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Inthira Restaurant ร้านอาหารอินทิรา', Mae Sariang: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-5.json",
+   "town": "th-sukhothai",
+   "name": "The Coffee Cup",
+   "verdict": "replaced",
+   "evidence": "Google Maps 2026-11-24: 'THE COFFEE Cup Sukhothai Historical Park', Mueang Kao: 'Permanently closed'; no other listing. Sukhothai fell to one café, so replaced by Maipradit Coffee and Bistro, 50-52 Singhawat Rd: Maps 'Open · Closes 8 PM' (2026-11-24); Wongnai lists it daily 09:00–19:30, coffee/tea ฿50–60, cakes, a ฿109 rice set, tagged good for children, newest review June 2025. Not already in the library.",
+   "src": "https://www.wongnai.com/restaurants/128853ST-mai-pra-dit-coffee-and-bistro"
+  },
+  {
+   "file": "server/eats/th-5.json",
+   "town": "th-sukhothai",
+   "name": "Baan Chan Chai",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'บ้านจันทร์ฉายสุโขทัย I Baan Junshine Sukhothai', 169/9 Mueang Kao: 'Permanently closed' (the other result, สวนอาหารจันทร์ฉาย, is a different place outside the old town)."
+  },
+  {
+   "file": "server/eats/th-5.json",
+   "town": "th-lampang",
+   "name": "Mae Hae",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Mae Hae Restaurant แม่แห - อาหารเหนือคู่เมืองลำปาง', 1017 Upparaj Alley: 'Temporarily closed', no hours; a Thai search found no notice of a reopening date."
+  },
+  {
+   "file": "server/eats/th-5.json",
+   "town": "th-kohchang",
+   "name": "Tonsai Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Tonsai Restaurant', Ko Chang: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/tw-1.json",
+   "town": "tw-central",
+   "name": "Butter Hippo Family Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: '奶油河馬家庭餐廳', No. 239 Junfu 13th Rd, Beitun: 'Temporarily closed'; no notice of a reopening date found."
+  }
+ ]
+}
