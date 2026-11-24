@@ -1111,6 +1111,195 @@
           },
           "q": "Edwards Gardens, 777 Lawrence Ave E, Toronto",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ontariosciencecentre.ca/whats-on/kidspark/",
+          "name": {
+            "th": "คิดสปาร์ก ศูนย์วิทยาศาสตร์ออนแทรีโอ",
+            "en": "KidSpark (Ontario Science Centre)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วิทยาศาสตร์ออนแทรีโอ ถนนควีนส์คีย์ตะวันตก โทรอนโต",
+            "en": "Ontario Science Centre, Queens Quay West, Toronto"
+          },
+          "what": {
+            "th": "โซนเล่นวิทยาศาสตร์แบบลงมือทำ มี 3 โซนสำหรับเด็ก",
+            "en": "A hands-on science play area with three themed areas for children"
+          },
+          "why": {
+            "th": "เล่นอิสระ ไม่มีกติกา",
+            "en": "Open-ended play with no instructions"
+          },
+          "q": "Ontario Science Centre, 235 Queens Quay W, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.toronto.ca/news/city-of-toronto-celebrates-the-reopening-of-kidstown-water-park/",
+          "name": {
+            "th": "สวนน้ำคิดส์ทาวน์ ลามอโร",
+            "en": "L'Amoreaux Kidstown Water Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเบิร์ชเมานต์ สการ์โบโร โทรอนโต",
+            "en": "Birchmount Road, Scarborough, Toronto"
+          },
+          "what": {
+            "th": "สวนน้ำกลางแจ้งของเมือง มีลานเล่นน้ำ สระตื้น และสระว่ายน้ำ เปิดใหม่มิถุนายน 2026",
+            "en": "A city-owned outdoor water park with splash pads, a wading pool and a pool, reopened June 2026"
+          },
+          "why": {
+            "th": "ลานเล่นน้ำกว้างสำหรับเด็กเล็ก",
+            "en": "Big splash pads for small children"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าร้อน",
+            "en": "Summer only"
+          },
+          "q": "Kidstown Water Park, 3159 Birchmount Rd, Scarborough",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.niagarafallstourism.com/family-fun",
+          "name": {
+            "th": "ซาฟารีไนแอการา",
+            "en": "Safari Niagara"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สตีเวนส์วิลล์ ฟอร์ตอีรี ไนแอการา",
+            "en": "Stevensville, Fort Erie, Niagara"
+          },
+          "what": {
+            "th": "สวนซาฟารีที่มีสัตว์พื้นเมืองและสัตว์ต่างถิ่นกว่า 1,000 ตัว",
+            "en": "A safari park with more than 1,000 native and exotic animals"
+          },
+          "why": {
+            "th": "มีสัตว์ให้เด็กดูมากมาย",
+            "en": "Lots of animals for children to see"
+          },
+          "q": "Safari Niagara, 2821 Stevensville Rd, Fort Erie",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.niagarafallstourism.com/family-fun",
+          "name": {
+            "th": "สวนพฤกษศาสตร์ไนแอการาพาร์กส์",
+            "en": "Niagara Parks Botanical Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเลียบแม่น้ำไนแอการา น้ำตกไนแอการา ไนแอการา",
+            "en": "Niagara River Parkway, Niagara Falls, Niagara"
+          },
+          "what": {
+            "th": "สวนดอกไม้และพืชพรรณ มีสนามหญ้ากว้างให้ปิกนิก",
+            "en": "Gardens of flowers and plants with wide lawns for a picnic"
+          },
+          "why": {
+            "th": "พื้นที่กว้างให้เด็กวิ่งเล่น",
+            "en": "Wide open space for children to run"
+          },
+          "q": "Niagara Parks Botanical Gardens, Niagara River Pkwy, Niagara Falls",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.niagarafallstourism.com/family-fun",
+          "name": {
+            "th": "มินิกอล์ฟไดโนเสาร์",
+            "en": "Dinosaur Adventure Golf"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คลิฟตันฮิลล์ น้ำตกไนแอการา ไนแอการา",
+            "en": "Clifton Hill, Niagara Falls, Niagara"
+          },
+          "what": {
+            "th": "มินิกอล์ฟ 2 สนาม สนามละ 18 หลุม ท่ามกลางไดโนเสาร์ขนาดเท่าจริง 50 ตัว",
+            "en": "Two 18-hole mini golf courses among 50 life-sized dinosaurs"
+          },
+          "why": {
+            "th": "โลกยุคไดโนเสาร์สำหรับเด็ก",
+            "en": "A prehistoric world for children"
+          },
+          "q": "Dinosaur Adventure Golf, 4952 Clifton Hill, Niagara Falls",
+          "ok": "2026-11"
         }
       ]
     },
