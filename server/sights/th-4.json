@@ -6057,6 +6057,80 @@
           "q": "Wat Tham Heo Sin Chai, Klong Chiam, Ubon Ratchathani",
           "ok": "2026-11",
           "src": "https://www.bucketlistly.blog/posts/ubon-ratchathani-best-things-to-do"
+        },
+        {
+          "local": "วัดหนองป่าพง",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.bucketlistly.blog/posts/ubon-ratchathani-best-things-to-do",
+          "name": {
+            "th": "วัดหนองป่าพง",
+            "en": "Wat Nong Pah Pong"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โนนผึ้ง วารินชำราบ",
+            "en": "Non Phueng, Warin Chamrap"
+          },
+          "what": {
+            "th": "วัดในป่าร่มรื่น เดินเล่นได้สงบ",
+            "en": "A temple in shaded woodland, calm to walk round"
+          },
+          "why": {
+            "th": "เดินเล่นเงียบ ๆ ร่ม ๆ กับเด็กเล็ก",
+            "en": "A quiet, shady stroll with little ones"
+          },
+          "q": "Wat Nong Pah Pong, Non Phueng, Warin Chamrap, Ubon Ratchathani",
+          "ok": "2026-11"
+        },
+        {
+          "local": "วัดถ้ำคูหาสวรรค์",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.bucketlistly.blog/posts/ubon-ratchathani-best-things-to-do",
+          "name": {
+            "th": "วัดถ้ำคูหาสวรรค์",
+            "en": "Wat Tham Khuha Sawan"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โขงเจียม",
+            "en": "Khong Chiam"
+          },
+          "what": {
+            "th": "วัดถ้ำที่ผู้คนเคารพ มองเห็นแม่น้ำโขงจากที่ไกล",
+            "en": "A revered cave temple with a view of the Mekong from afar"
+          },
+          "why": {
+            "th": "ได้ทั้งถ้ำและวิวแม่น้ำโขง",
+            "en": "A cave and a big view of the Mekong"
+          },
+          "q": "Wat Tham Khuha Sawan, Khong Chiam, Ubon Ratchathani",
+          "ok": "2026-11"
         }
       ]
     },
