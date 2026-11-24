@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Hiroshima** (docs/library-briefs batch-47): +1 (Marina Mario Espresso). Proof in `docs/library-proof/jp-hiroshima.json`.
+
+- **24 Nov 2026, Hiroshima** (docs/library-briefs batch-81, round 3): +3 (aruhi morinonaka, Namaste Fuji Grand Koyo, Wa Cafe Plus Roche). Proof in `docs/library-proof/jp-hiroshima.json`.

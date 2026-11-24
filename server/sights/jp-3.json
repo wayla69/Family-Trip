@@ -730,6 +730,84 @@
           },
           "q": "Bornelund Asobi no Sekai, Mitsui Outlet Park Marine Pia Kobe, Kobe",
           "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド 神戸ハーバーランドumie",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6897/",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ โกเบฮาร์เบอร์แลนด์",
+            "en": "Pure Heart Kids Land (Kobe Harborland umie)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุมิเอะ นอร์ทมอลล์ ชั้น 4 เขตชูโอ โกเบ",
+            "en": "umie North Mall 4F, Chuo Ward, Kobe"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่",
+            "en": "A big indoor play park"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นได้ทุกสภาพอากาศ",
+            "en": "Children run about whatever the weather"
+          },
+          "tip": {
+            "th": "10:00–19:00 เข้าครั้งสุดท้าย 18:30",
+            "en": "10:00–19:00, last entry 18:30"
+          },
+          "q": "ピュアハートキッズランド 神戸ハーバーランドumie",
+          "ok": "2026-11"
+        },
+        {
+          "local": "岡山市北ふれあい児童館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kyounoko.jp/article/shitsunai-asobi-okayama",
+          "name": {
+            "th": "ศูนย์เด็กคิตะฟุเรไอ โอกายามะ",
+            "en": "Kita Fureai children's centre (Okayama)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทานิมันนาริ เขตคิตะ โอกายามะ",
+            "en": "Tanimannari, Kita Ward, Okayama"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเข้าฟรี มีห้องสำหรับเด็กตั้งแต่ 0 ขวบ",
+            "en": "A free children's centre with a baby room from age 0"
+          },
+          "why": {
+            "th": "เล่นในร่มฟรี มีห้องเด็กเล็ก",
+            "en": "Free indoor play with a baby room"
+          },
+          "q": "岡山市北ふれあい児童館, 谷万成, 岡山市北区",
+          "ok": "2026-11"
         }
       ]
     },
