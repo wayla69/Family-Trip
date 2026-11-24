@@ -4999,6 +4999,43 @@
           "q": "ถ้ำเจ้าราม, บ้านด่านลานหอย, สุโขทัย",
           "ok": "2026-11",
           "src": "https://www.pptvhd36.com/travel/thailand/264037"
+        },
+        {
+          "local": "ตลาดท่าน้ำรับเสด็จ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "name": {
+            "th": "ตลาดท่าน้ำรับเสด็จ",
+            "en": "Tha Nam Rap Sadet Market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "เมืองเก่า สุโขทัย",
+            "en": "Mueang Kao, Sukhothai"
+          },
+          "what": {
+            "th": "ตลาดริมน้ำ ของกินของใช้ท้องถิ่น เปิดศุกร์ถึงอาทิตย์เท่านั้น",
+            "en": "A riverside market of local food and goods, Friday to Sunday only"
+          },
+          "why": {
+            "th": "เดินเล่นสบาย มีของกินท้องถิ่นเยอะ",
+            "en": "A pleasant walk with lots of local things to eat"
+          },
+          "q": "Tha Nam Rap Sadet Market, Mueang Kao, Sukhothai",
+          "ok": "2026-11"
         }
       ]
     },
