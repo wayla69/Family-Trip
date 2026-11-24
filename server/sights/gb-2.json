@@ -2105,6 +2105,170 @@
           },
           "q": "Millerground, Windermere",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "name": {
+            "th": "ทุ่งบรอดเกตเมโดว์",
+            "en": "Broadgate Meadow"
+          },
+          "kind": "park",
+          "area": {
+            "th": "บรอดเกต กราสเมียร์",
+            "en": "Broadgate, Grasmere"
+          },
+          "what": {
+            "th": "ทุ่งกว้างริมแม่น้ำโรเธย์ มีสนามเด็กเล่น",
+            "en": "A big open meadow by the River Rothay with a children's play area"
+          },
+          "why": {
+            "th": "มีชิงช้า (มีแบบที่นั่งมีสายรัด) สไลเดอร์ บ้านเล่น และกระดานหก",
+            "en": "Swings (one with a harness seat), slides, play houses and see-saws"
+          },
+          "tip": {
+            "th": "แวะชิมขนมขิงกราสเมียร์ต่อได้",
+            "en": "Pair it with Grasmere gingerbread"
+          },
+          "q": "Broadgate Meadow, Grasmere",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "name": {
+            "th": "สวนโรเธย์",
+            "en": "Rothay Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนวิคาเรจ แอมเบิลไซด์",
+            "en": "Vicarage Road, Ambleside"
+          },
+          "what": {
+            "th": "สวนใกล้ใจกลางแอมเบิลไซด์ มีสนามเด็กเล่นครบครัน",
+            "en": "A park near the centre of Ambleside with a well-equipped play area"
+          },
+          "why": {
+            "th": "มีชิงช้า สไลเดอร์ และเครื่องปีน ใกล้ห้องน้ำและคาเฟ่",
+            "en": "Swings, slides and climbing frames, with toilets and cafés nearby"
+          },
+          "tip": {
+            "th": "ที่จอดใกล้สุด: ลานจอดจ่ายเงินถนนเคลสิก",
+            "en": "Nearest parking: Kelsick Road pay and display"
+          },
+          "q": "Rothay Park, Vicarage Rd, Ambleside",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "name": {
+            "th": "สนามเด็กเล่นฟิตซ์พาร์ก",
+            "en": "Fitz Park playground"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนสเตชัน เคสวิก",
+            "en": "Station Road, Keswick"
+          },
+          "what": {
+            "th": "สวนใกล้ใจกลางเคสวิก มีสนามเด็กเล่นในบ่อทรายใหญ่",
+            "en": "A park by Keswick town centre with a big play area in a sandpit"
+          },
+          "why": {
+            "th": "ขุดทรายได้เป็นชั่วโมงด้วยพลั่วที่ติดไว้ในสนาม",
+            "en": "Hours of digging with the play area's own shovels"
+          },
+          "tip": {
+            "th": "จอดรถที่ศูนย์กีฬาเคสวิกข้างๆ",
+            "en": "Park at Keswick Leisure Centre next door"
+          },
+          "q": "Fitz Park Playground, Station Ave, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thelakedistrict.org/kac",
+          "name": {
+            "th": "พิพิธภัณฑ์เหมืองหินเธรลคีลด์",
+            "en": "Threlkeld Quarry & Mining Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เธรลคีลด์ ใกล้เคสวิก",
+            "en": "Threlkeld, near Keswick"
+          },
+          "what": {
+            "th": "เหมืองหินเก่า มีรถขุดทุกขนาด รถไฟรางแคบ และทัวร์เหมืองจำลอง",
+            "en": "An old quarry with diggers of every size, a narrow-gauge railway and a mine tour"
+          },
+          "why": {
+            "th": "มีรถขุดมากมายและเส้นทางกิจกรรมสำหรับเด็ก",
+            "en": "Diggers galore and a children's activity trail"
+          },
+          "tip": {
+            "th": "ไม่มีคาเฟ่ เตรียมอาหารไปปิกนิก",
+            "en": "No café; bring a picnic"
+          },
+          "q": "Threlkeld Quarry & Mining Museum, Keswick",
+          "ok": "2026-11"
         }
       ]
     },
