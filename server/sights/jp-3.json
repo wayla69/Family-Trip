@@ -1090,6 +1090,195 @@
           },
           "q": "Kanazawa Port Ikiiki Fish Market, Muryojimachi, Kanazawa",
           "ok": "2026-11"
+        },
+        {
+          "local": "宇多須神社",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/jp/guide/area/chubu/ishikawa/kanazawa/wakuwaku-spot/",
+          "name": {
+            "th": "ศาลเจ้าอุตะสุ ฮิกาชิชะยะ",
+            "en": "Utasu Shrine (Higashi Chaya)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฮิกาชิยามะ ย่านฮิกาชิชะยะ คานาซาวะ",
+            "en": "Higashiyama, Higashi Chaya district, Kanazawa"
+          },
+          "what": {
+            "th": "ศาลเจ้าที่มีรูปปั้นนินจาในบริเวณ",
+            "en": "A shrine with ninja figures in its grounds"
+          },
+          "why": {
+            "th": "มีรูปปั้นนินจาให้ถ่ายรูปด้วย",
+            "en": "Ninja figures to pose with for a photo"
+          },
+          "q": "宇多須神社, 東山, 金沢",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ 金沢エムザ店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "เดอะคิดส์ เอ็มซะ คานาซาวะ",
+            "en": "The Kids (M'za Kanazawa)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างเอ็มซะ มุซาชิมาจิ คานาซาวะ",
+            "en": "M'za, Musashi-machi, Kanazawa"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม 2 ชั้น มีบ่อบอลและแทรมโพลีน",
+            "en": "An indoor play space on two floors with a ball pool and trampolines"
+          },
+          "why": {
+            "th": "มีโซนที่ผู้ปกครองเล่นกับเด็กได้",
+            "en": "An area where parents play along with the children"
+          },
+          "q": "ザキッズ 金沢エムザ店, 武蔵町, 金沢",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あめるんパーク",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "อาเมรุนพาร์ก",
+            "en": "Amerun Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิโซเบะมาจิ ข้างสระว่ายน้ำ คานาซาวะ",
+            "en": "Isobe-machi, next to the city pool, Kanazawa"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มทุกสภาพอากาศ มีตาข่ายใหญ่ แทรมโพลีน และผนังปีน",
+            "en": "An all-weather indoor play park with a big net, trampolines and bouldering"
+          },
+          "why": {
+            "th": "แบ่งโซนตามอายุ เด็กก่อนวัยเรียนเข้าฟรี",
+            "en": "Areas by age; children under school age go in free"
+          },
+          "tip": {
+            "th": "ปิดเดือนละ 1 วัน",
+            "en": "Closed one day a month"
+          },
+          "q": "あめるんパーク, 磯部町, 金沢",
+          "ok": "2026-11"
+        },
+        {
+          "local": "やまのおうち",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ ¥500 · เด็กตั้งแต่ 1 ขวบ ¥300",
+            "en": "≈ ¥500 adults · ¥300 children from 1"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6837/",
+          "name": {
+            "th": "ยามะโนะโออุจิ บ้านเล่นไม้",
+            "en": "Yama no Ouchi (wooden play house)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทสึทสึมิมาจิ คานาซาวะ",
+            "en": "Tsutsumi-machi, Kanazawa"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทำจากไม้ มีกิจกรรมตอกค้อนงานไม้",
+            "en": "An indoor play space of wooden play equipment, with a hammer workshop"
+          },
+          "why": {
+            "th": "มีกิจกรรมงานไม้ให้ผู้ปกครองกับเด็กทำด้วยกัน",
+            "en": "A hands-on wood workshop for parents and children"
+          },
+          "q": "やまのおうち, 堤町, 金沢",
+          "ok": "2026-11"
+        },
+        {
+          "local": "こどもっちパーク かなざわ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6837/",
+          "name": {
+            "th": "โคโดม็อตจิพาร์ก อิออนทาวน์ชิเมโนะ",
+            "en": "Kodomocchi Park (Aeon Town Shimeno)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนทาวน์คานาซาวะชิเมโนะ คานาซาวะ",
+            "en": "Aeon Town Kanazawa Shimeno, Kanazawa"
+          },
+          "what": {
+            "th": "สวนในร่มควบคุมอุณหภูมิ ปูหญ้าเทียม",
+            "en": "A climate-controlled indoor park with artificial turf"
+          },
+          "why": {
+            "th": "มีโซนสำหรับเด็กเล็กและเด็กวัยเตาะแตะ",
+            "en": "A zone for babies and toddlers"
+          },
+          "q": "こどもっちパーク かなざわ, イオンタウン金沢示野",
+          "ok": "2026-11"
         }
       ]
     },

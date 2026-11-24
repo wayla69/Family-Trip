@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Kanazawa** (docs/library-briefs batch-47): +1 (Fusion21). Proof in `docs/library-proof/jp-kanazawa.json`.
+
+- **24 Nov 2026, Kanazawa** (docs/library-briefs batch-68, round 3): +2 (Gokayama Farm Kitchen, Katsuzo). Proof in `docs/library-proof/jp-kanazawa.json`.

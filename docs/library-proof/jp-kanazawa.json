@@ -39,6 +39,55 @@
       "src": "https://visitkanazawa.jp/en/feature/detail_678.html",
       "date": "2026-02",
       "map": "Google Maps 'Kanazawa Port Ikiiki Fish Market', 3,012 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "Gokayama Farm Kitchen (Katamachi)",
+      "page_name": "五箇山農園食堂",
+      "src": "https://hoshinoresorts.com/jp/guide/area/chubu/ishikawa/kanazawa/wakuwaku-spot/",
+      "date": "2025-12",
+      "map": "Google Maps 'Gokayama Farmers Restaurant', newest review shown 7 days ago"
+    },
+    {
+      "name": "Kanazawa Katsuzo (main shop)",
+      "page_name": "金沢かつぞう本店",
+      "src": "https://hoshinoresorts.com/jp/guide/area/chubu/ishikawa/kanazawa/wakuwaku-spot/",
+      "date": "2025-12",
+      "map": "Google Maps 'Kanazawa Katsuzo Main Store', newest review shown 5 months ago"
+    },
+    {
+      "name": "Utasu Shrine (Higashi Chaya)",
+      "page_name": "宇多須神社（うたすじんじゃ）",
+      "src": "https://hoshinoresorts.com/jp/guide/area/chubu/ishikawa/kanazawa/wakuwaku-spot/",
+      "date": "2025-12",
+      "map": "Google Maps 'Utasu Shrine', newest review shown 2 days ago"
+    },
+    {
+      "name": "The Kids (M'za Kanazawa)",
+      "page_name": "ザキッズ 金沢エムザ店",
+      "src": "https://www.asoview.com/note/5423/",
+      "date": "2025-10",
+      "map": "Google Maps 'ザキッズ 金沢エムザ店', newest review shown a month ago"
+    },
+    {
+      "name": "Amerun Park",
+      "page_name": "あめるんパーク",
+      "src": "https://www.asoview.com/note/5423/",
+      "date": "2025-10",
+      "map": "Google Maps 'Amerun Park Indoor Playground', newest review shown a month ago"
+    },
+    {
+      "name": "Yama no Ouchi (wooden play house)",
+      "page_name": "やまのおうち",
+      "src": "https://www.asoview.com/note/6837/",
+      "date": "2026-01",
+      "map": "Google Maps 'やまのおうち' (堤町), newest review shown 2 months ago"
+    },
+    {
+      "name": "Kodomocchi Park (Aeon Town Shimeno)",
+      "page_name": "こどもっちパーク かなざわパーク",
+      "src": "https://www.asoview.com/note/6837/",
+      "date": "2026-01",
+      "map": "Google Maps 'こどもっちパークかなざわ', newest review shown 2 months ago"
     }
   ],
   "left_out": [
@@ -49,7 +98,28 @@
     {
       "name": "Ono Odaiba Park",
       "why": "no review from the last six months shown on the map"
+    },
+    {
+      "name": "Cascade Dining, Hiramipan, Kanazawa Purin, Kenrokutei, Tsuchiya",
+      "why": "no page date library-check.cjs could read"
+    },
+    {
+      "name": "金沢市足軽資料館",
+      "why": "the map shows no recent review"
+    },
+    {
+      "name": "四十万きずな広場",
+      "why": "newest Google Maps review 3 years old"
+    },
+    {
+      "name": "いしかわ子ども交流センター",
+      "why": "may be the Kodomo Land already in the app"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 15 rows from Mapple (2026), Asoview (2025–2026) and Hoshino Resorts (Dec 2025), 10 passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
