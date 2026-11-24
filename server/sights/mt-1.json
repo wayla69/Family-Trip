@@ -480,6 +480,166 @@
           },
           "q": "Dwejra Inland Sea, San Lawrenz, Gozo",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "พิพิธภัณฑ์ไปรษณีย์มอลตา",
+            "en": "Malta Postal Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอาร์ชบิชอป วัลเลตตา",
+            "en": "Archbishop Street, Valletta"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ไปรษณีย์ขนาดเล็ก",
+            "en": "A small postal museum"
+          },
+          "why": {
+            "th": "มีเส้นทางตอบคำถามและชุดให้ลองใส่",
+            "en": "A quiz trail and costumes to try on"
+          },
+          "tip": {
+            "th": "ใช้เวลาประมาณ 45 นาที",
+            "en": "About 45 minutes is enough"
+          },
+          "q": "Malta Postal Museum, 135 Archbishop St, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "เดอะมอลตาเอ็กซ์พีเรียนซ์",
+            "en": "The Malta Experience"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ป้อมเซนต์เอลโม ถนนเมดิเตอร์เรเนียน วัลเลตตา",
+            "en": "St Elmo Bastions, Mediterranean Street, Valletta"
+          },
+          "what": {
+            "th": "ภาพยนตร์เรื่องมอลตา 40 นาที ในห้องแอร์",
+            "en": "A 40-minute film about Malta in an air-conditioned room"
+          },
+          "why": {
+            "th": "ข้างในเย็น พักได้ในวันที่ร้อน",
+            "en": "Cool inside, a break on a hot day"
+          },
+          "tip": {
+            "th": "ฉายทุกชั่วโมง 11:00–16:00 วันธรรมดา และ 11:00–14:00 วันหยุด",
+            "en": "Hourly 11:00–16:00 on weekdays, 11:00–14:00 at weekends"
+          },
+          "q": "The Malta Experience, St Elmo Bastions, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ €17 (ทัวร์มีไกด์)",
+            "en": "About €17 (guided tour)"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "ห้องบัญชาการสงครามลาสคาริส",
+            "en": "Lascaris War Rooms"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คูเมืองลาสคาริส วัลเลตตา",
+            "en": "Lascaris Ditch, Valletta"
+          },
+          "what": {
+            "th": "บังเกอร์บัญชาการสมัยสงคราม เจาะเข้าไปในหิน",
+            "en": "A wartime command bunker cut into the rock"
+          },
+          "why": {
+            "th": "ข้างในเย็นแม้ข้างนอกร้อน มีออดิโอไกด์เดินเองได้",
+            "en": "Cool inside whatever the heat; a self-paced audio guide"
+          },
+          "tip": {
+            "th": "เตรียมเสื้อคลุม ใต้หินสี่สิบเมตรอากาศเย็น",
+            "en": "Bring a layer: it is cold under forty metres of rock"
+          },
+          "q": "The Lascaris War Rooms, Lascaris Ditch, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "ฟอนด์อาดีร์",
+            "en": "Fond Għadir"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนทาวเวอร์ สลีมา",
+            "en": "Tower Road, Sliema"
+          },
+          "what": {
+            "th": "สระที่เจาะในหินริมทะเลสลีมา นั่งเรือจากวัลเลตตาสิบนาที",
+            "en": "Rock-cut pools on the Sliema seafront, ten minutes from Valletta by ferry"
+          },
+          "why": {
+            "th": "สระหินตื้นเหมาะกับเด็กเล็ก",
+            "en": "The shallow rock pools suit small children"
+          },
+          "q": "Fond Għadir Beach, Tower Road, Sliema",
+          "ok": "2026-11"
         }
       ]
     }
