@@ -1,75 +1,22 @@
 {
   "town": "nz-queenstown",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 10 rows offered, 10 passed library-check.cjs, 8 went in",
+  "agents": "one Haiku agent; 1 row from Lone Star's own page, passed library-check.cjs, went in",
   "added": [
     {
-      "name": "Wānaka Lavender Farm",
-      "page_name": "Wānaka Lavender Farm",
-      "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
-      "date": "2026-09",
-      "map": "Google Maps 3,062 reviews, newest '3 hours ago'"
-    },
-    {
-      "name": "Puzzling World",
-      "page_name": "Puzzling World",
-      "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
-      "date": "2026-09",
-      "map": "Google Maps 6,159 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "National Transport & Toy Museum",
-      "page_name": "National Transport & Toy Museum",
-      "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
-      "date": "2026-09",
-      "map": "Google Maps 1,728 reviews, newest 'a week ago'"
-    },
-    {
-      "name": "Bike Glendhu",
-      "page_name": "Bike Glendhu",
-      "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
-      "date": "2026-09",
-      "map": "Google Maps 176 reviews, newest 'a week ago'"
-    },
-    {
-      "name": "Kind Farm Animal Sanctuary",
-      "page_name": "Kind Farm Animal Sanctuary",
-      "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
-      "date": "2026-09",
-      "map": "Google Maps 'Kind Farm South' in the Cardrona Valley, 111 reviews, newest '1 hour ago'"
-    },
-    {
-      "name": "Kawarau Zipride",
-      "page_name": "Kawarau Zipride",
-      "src": "https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/",
-      "date": "2026-04",
-      "map": "Google Maps 'Kawarau Zip Line' at the bungy centre, 23 reviews, newest 'a week ago'"
-    },
-    {
-      "name": "Glenorchy Animal Experience",
-      "page_name": "Glenorchy Animal Experience",
-      "src": "https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/",
-      "date": "2026-04",
-      "map": "Google Maps 756 reviews, newest '6 months ago'"
-    },
-    {
-      "name": "Coronet Peak",
-      "page_name": "Coronet Peak",
-      "src": "https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/",
-      "date": "2026-04",
-      "map": "Google Maps 2,609 reviews, newest '3 days ago'"
+      "name": "Lone Star (Queenstown)",
+      "page_name": "Lone Star",
+      "src": "https://www.lonestar.co.nz/restaurants/queenstown",
+      "date": "official",
+      "map": "Google Maps 'Lone Star Queenstown', newest review shown 15 days ago"
     }
   ],
   "left_out": [
     {
-      "name": "Velo Café",
-      "why": "the map's newest review is seven months old"
-    },
-    {
-      "name": "Queenstown Beach",
-      "why": "the map has no place of that name to check"
+      "name": "Gantley's Tavern, Chipmunks Queenstown, Pub on Wharf, Margo's",
+      "why": "no 2025–2026 page could be opened (queenstownnz.co.nz blocks automated reads)"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
