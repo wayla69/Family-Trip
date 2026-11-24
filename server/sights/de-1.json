@@ -3238,6 +3238,158 @@
           },
           "q": "Burgruine Hopfen am See, Füssen",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/playing-and-climbing",
+          "name": {
+            "th": "สนามเด็กเล่นท่าเรือ",
+            "en": "Boat harbour playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไวดัค ริมทะเลสาบฟอร์กเกนเซ ฟึสเซิน",
+            "en": "Weidachstraße, Forggensee shore, Füssen"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นธีมเรือ ริมทะเลสาบฟอร์กเกนเซ",
+            "en": "A ship-themed playground on the shore of the Forggensee"
+          },
+          "why": {
+            "th": "มีเรือให้ปีนเล่นและเรือในทะเลสาบให้ดู",
+            "en": "Ships to play on and boats on the lake"
+          },
+          "q": "Spielplatz Am Bootshafen, Weidachstraße 80, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "ลานว่ายน้ำทะเลสาบโอเบอร์เซ",
+            "en": "Obersee lido (Bad Faulenbach)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนอาลัทเซ บาดเฟาเลินบัค ฟึสเซิน",
+            "en": "Alatseestraße, Bad Faulenbach, Füssen"
+          },
+          "what": {
+            "th": "ลานว่ายน้ำในทะเลสาบ มีหอกระโดด",
+            "en": "A lake lido with a diving tower"
+          },
+          "why": {
+            "th": "ริมทะเลสาบลาดค่อยๆ เหมาะกับเด็กเล่นน้ำและเริ่มว่าย",
+            "en": "Gently sloping shores for splashing and first swims"
+          },
+          "tip": {
+            "th": "เฉพาะหน้าร้อน",
+            "en": "Summer only"
+          },
+          "q": "Oberseebad, Alatseestraße 25, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "เส้นทางฟังเสียงนก ทะเลสาบอาลัทเซ",
+            "en": "Bird trail around the Alatsee"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบอาลัทเซ บาดเฟาเลินบัค ฟึสเซิน",
+            "en": "Alatsee, Bad Faulenbach, Füssen"
+          },
+          "what": {
+            "th": "ทางเดินราว 2 กม. รอบทะเลสาบอาลัทเซ",
+            "en": "A walk of about 2 km around the Alatsee"
+          },
+          "why": {
+            "th": "สแกนคิวอาร์โค้ดฟังเสียงนกระหว่างทาง",
+            "en": "Bird songs to hear by scanning a QR code along the way"
+          },
+          "q": "Alatsee, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "สวนสัตว์เลื้อยคลานอัลกอยด์",
+            "en": "Reptile Zoo Allgäu"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "แม็กนุสพาร์ก ถนนมึลบัค ฟึสเซิน",
+            "en": "Magnuspark, Mühlbachgasse, Füssen"
+          },
+          "what": {
+            "th": "สวนสัตว์ในร่มขนาดเล็ก มีงูและแมงมุม ในฟึสเซิน",
+            "en": "A small indoor zoo of snakes and spiders in Füssen"
+          },
+          "why": {
+            "th": "เป็นหนึ่งในที่แนะนำสำหรับวันฝนตกกับเด็ก",
+            "en": "One of the town's tips for a rainy day with children"
+          },
+          "q": "Reptilienzoo Allgäu, Mühlbachgasse 10, Füssen",
+          "ok": "2026-11"
         }
       ]
     }
