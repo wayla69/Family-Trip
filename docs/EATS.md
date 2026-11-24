@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Bali** (docs/library-briefs batch-43): +4 (The Cashew Tree, Sundara, Jamie Oliver Kitchen, Splash Bistro). Proof in `docs/library-proof/id-bali.json`.
+
+- **24 Nov 2026, Bali** (docs/library-briefs batch-58, round 3): +1 (I Am Vegan Babe). Proof in `docs/library-proof/id-bali.json`.

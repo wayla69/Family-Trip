@@ -704,6 +704,207 @@
           },
           "q": "Berawa Art House, Jalan Tegal Sari, Canggu, Bali",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "สวนผีเสื้อบาหลี",
+            "en": "Bali Butterfly Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ตาบานัน ใกล้ชางกู",
+            "en": "Tabanan, near Canggu"
+          },
+          "what": {
+            "th": "สวนผีเสื้อที่มีผีเสื้อนับพันตัว รวมถึงพันธุ์ของบาหลีเอง",
+            "en": "A butterfly park with thousands of butterflies, including Bali's own species"
+          },
+          "why": {
+            "th": "เด็กได้ดูผีเสื้อสีสวยและวงจรชีวิตของมัน",
+            "en": "Children see colourful butterflies and how they grow"
+          },
+          "tip": {
+            "th": "ไปช่วงเช้าจะได้เห็นผีเสื้อออกจากดักแด้",
+            "en": "Go in the morning to see butterflies hatching"
+          },
+          "q": "Bali Butterfly Park, Tabanan, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Jenggala Keramik",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "เจงกาลา เครื่องปั้นดินเผา จิมบาราน",
+            "en": "Jenggala pottery (Jimbaran)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนอูลูวาตู 2 จิมบาราน",
+            "en": "Jalan Uluwatu II, Jimbaran"
+          },
+          "what": {
+            "th": "สตูดิโอเครื่องปั้นดินเผาที่เด็กได้วาดลายหม้อของตัวเองกลับบ้าน",
+            "en": "A pottery studio where children paint their own pot to take home"
+          },
+          "why": {
+            "th": "เด็กได้เล่นดินและระบายสี",
+            "en": "Clay and painting for children"
+          },
+          "tip": {
+            "th": "ชิ้นงานเผาในเตาของร้าน รอรับ 5–7 วัน",
+            "en": "Pieces are fired on site and ready in 5 to 7 days"
+          },
+          "q": "Jenggala, Jalan Uluwatu II, Jimbaran, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "มานาไรบีชเฮาส์ นูซาดัว",
+            "en": "Manarai Beach House (Nusa Dua)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "นูซาดัว",
+            "en": "Nusa Dua"
+          },
+          "what": {
+            "th": "บีชเฮาส์ที่มีสระ ที่เล่นทราย กีฬาทางน้ำ และร้านอาหารริมทะเล",
+            "en": "A beach house with a pool, sand play, water sports and seaside dining"
+          },
+          "why": {
+            "th": "มีเมนูเด็กทั้งวันและกิจกรรมมีพี่เลี้ยงดูแล เช่น วาดรูป ก่อปราสาททราย",
+            "en": "An all-day kids' menu and supervised activities: drawing, sandcastles"
+          },
+          "tip": {
+            "th": "วันเสาร์อาทิตย์มีกิจกรรมพิเศษ เช่น ปาร์ตี้ในสระ",
+            "en": "Weekends bring special activities such as pool parties"
+          },
+          "q": "Manarai Beach House, Nusa Dua, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/things-to-do-in-bali-when-it-rains/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปูรีลูกิซัน",
+            "en": "Museum Puri Lukisan"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนรายาอูบุด อูบุด",
+            "en": "Jalan Raya Ubud, Ubud"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะเก่าแก่ที่สุดของอูบุด ใกล้วังอูบุด",
+            "en": "Ubud's oldest art museum, near Ubud Palace"
+          },
+          "why": {
+            "th": "ภาพวาดและงานแกะสลักไม้ของบาหลี หลบฝนได้",
+            "en": "Balinese painting and woodcarving, and shelter on a rainy day"
+          },
+          "tip": {
+            "th": "ห้องจัดแสดงกระจายอยู่ในสวน ควรพกร่ม",
+            "en": "The galleries are spread over a garden; bring an umbrella"
+          },
+          "q": "Museum Puri Lukisan, Ubud, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/things-to-do-in-bali-when-it-rains/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปาซิฟิกา",
+            "en": "Museum Pasifika"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ย่าน ITDC นูซาดัว",
+            "en": "ITDC complex, Nusa Dua"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะที่มีผลงานกว่า 600 ชิ้นจาก 25 ประเทศ",
+            "en": "An art museum with over 600 works from 25 countries"
+          },
+          "why": {
+            "th": "มีคลาสและเวิร์กชอปศิลปะ",
+            "en": "Art classes and workshops"
+          },
+          "q": "Museum Pasifika, Nusa Dua, Bali",
+          "ok": "2026-11"
         }
       ]
     }
