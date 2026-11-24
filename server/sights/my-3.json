@@ -299,6 +299,84 @@
           "q": "Masjid Bandaraya Kota Kinabalu, Likas",
           "src": "https://travelynnfamily.com/kota-kinabalu-with-kids/",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/sandakan-with-kids/",
+          "name": {
+            "th": "บ้านแอกเนส คีธ",
+            "en": "Agnes Keith House"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนอูตารา เหนือตัวเมือง ซันดากัน",
+            "en": "Jalan Utara, above the town, Sandakan"
+          },
+          "what": {
+            "th": "บ้านเก่าของนักเขียนแอกเนส คีธ ล้อมด้วยสนามหญ้า",
+            "en": "The former home of author Agnes Keith, set in lawns"
+          },
+          "why": {
+            "th": "เล่นโครเกต์บนสนามหญ้าและจิบชาที่ระเบียง",
+            "en": "Croquet on the lawn and cream teas on the terrace"
+          },
+          "q": "Agnes Keith House, Jalan Utara, Sandakan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/sandakan-with-kids/",
+          "name": {
+            "th": "วัดผู่จี้ซื่อ",
+            "en": "Puu Jih Syh Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเซซิลี บนเนินเขา ซันดากัน",
+            "en": "Jalan Cecily, on a hill, Sandakan"
+          },
+          "what": {
+            "th": "วัดจีนที่ใหญ่ที่สุดในซันดากัน ตั้งอยู่บนเนินเขา",
+            "en": "Sandakan's largest Chinese temple, high on a hill"
+          },
+          "why": {
+            "th": "ภายในตกแต่งงดงาม",
+            "en": "Richly decorated inside"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ",
+            "en": "Dress modestly"
+          },
+          "q": "Puu Jih Syh Temple, Jalan Cecily, Sandakan",
+          "ok": "2026-11"
         }
       ]
     },
