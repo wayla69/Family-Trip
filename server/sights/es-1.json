@@ -1332,6 +1332,80 @@
           },
           "q": "Jardín Botánico de la Universidad de Granada, Calle Escuelas, Granada",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.granadadirect.com/guias/granada-con-ninos/",
+          "name": {
+            "th": "สวนการ์เมนเดลอสมาร์ตีเรส",
+            "en": "Carmen de los Mártires"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนปาเซโอเดลอสมาร์ตีเรส ใจกลางกรานาดา",
+            "en": "Paseo de los Mártires, Centro, Granada"
+          },
+          "what": {
+            "th": "สวนใหญ่และเงียบสงบ มีทางเดินใต้ต้นไม้และน้ำพุ มองเห็นอาลัมบรา",
+            "en": "A large, quiet garden with paths between trees and fountains, with views of the Alhambra"
+          },
+          "why": {
+            "th": "มีนกยูง เป็ดในบ่อ และน้ำพุหลายแห่ง",
+            "en": "Peacocks, ducks on the pond and many fountains"
+          },
+          "q": "Carmen de los Mártires, Paseo de los Mártires, Granada",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://devourtours.com/blog/kid-friendly-spanish-food-in-seville/",
+          "name": {
+            "th": "สวนเดลอสปรินซิเปส",
+            "en": "Parque de los Príncipes"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนบลาสอินฟันเต ลอสเรเมดิโอส เซบิยา",
+            "en": "Av. Blas Infante, Los Remedios, Seville"
+          },
+          "what": {
+            "th": "สวนที่เขียวที่สุดแห่งหนึ่งของเซบิยา มีบาร์คีออสก์ข้างสวน",
+            "en": "One of Seville's greenest parks, with a kiosk bar at its side"
+          },
+          "why": {
+            "th": "มีที่วิ่งเล่น และมีบ้านลมที่คีออสก์",
+            "en": "Room to run and play, and a bouncy castle at the kiosk"
+          },
+          "q": "Parque de los Príncipes, Av. Blas Infante, Sevilla",
+          "ok": "2026-11"
         }
       ]
     }
