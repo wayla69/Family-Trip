@@ -869,6 +869,47 @@
           "q": "Walk of Climb, Bahnhofstrasse, Zermatt",
           "ok": "2026-11",
           "src": "https://www.zermatt.swiss/en/p/walk-of-climb-01tVj000005DnWHIA0"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://swissfamilyfun.com/zermatt-guide/",
+          "name": {
+            "th": "หุบผากอร์เนอร์",
+            "en": "Gorner Gorge (Gornerschlucht)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บนทางเดินจากฟูรีลงมาหมู่บ้าน แซร์มัท",
+            "en": "on the trail from Furi down to the village, Zermatt"
+          },
+          "what": {
+            "th": "ทางเดินไม้ผ่านหุบผาแคบ บนทางเดินลงจากฟูรี",
+            "en": "Wooden walkways through a narrow gorge on the walk down from Furi"
+          },
+          "why": {
+            "th": "นั่งกระเช้าไปฟูรีกับเด็กเล็ก แล้วเดินลงผ่านหุบผา",
+            "en": "Take the gondola to Furi with younger children, then walk down through the gorge"
+          },
+          "tip": {
+            "th": "มีค่าเข้าเล็กน้อย",
+            "en": "A small entry fee"
+          },
+          "q": "Gornerschlucht, Zermatt",
+          "ok": "2026-11"
         }
       ]
     },
