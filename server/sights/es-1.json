@@ -983,6 +983,47 @@
           },
           "q": "Faro de Moncloa, Avenida de la Memoria 2, Madrid",
           "ok": "2026-11"
+        },
+        {
+          "local": "Estación Museo de Chamberí",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "req",
+          "src": "https://lamaletainquieta.com/madrid-con-ninos/",
+          "name": {
+            "th": "สถานีร้างชัมเบรี (อันเดน 0)",
+            "en": "Chamberí Ghost Station (Andén 0)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปลาซาเดชัมเบรี มาดริด",
+            "en": "Plaza de Chamberí, Madrid"
+          },
+          "what": {
+            "th": "สถานีรถไฟใต้ดินที่ปิดตั้งแต่ปี 1966 ปัจจุบันเป็นพิพิธภัณฑ์",
+            "en": "A metro station closed in 1966, now a museum"
+          },
+          "why": {
+            "th": "เที่ยวสั้น ๆ ที่แปลกใหม่สำหรับเด็กที่ชอบรถไฟ",
+            "en": "A short, different outing for children who love trains"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะวันศุกร์ถึงอาทิตย์ ต้องจองล่วงหน้าทางเว็บพิพิธภัณฑ์เมโทร",
+            "en": "Open Friday to Sunday only; book ahead on the Metro museums' website"
+          },
+          "q": "Estación Museo de Chamberí, Plaza de Chamberí, Madrid",
+          "ok": "2026-11"
         }
     ]
     },
