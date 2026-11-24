@@ -618,6 +618,195 @@
           },
           "q": "Futian Water Reclamation Center Playground, South District, Taichung",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.twosevenths.com/en/kid/amusement-taichung-children/",
+          "name": {
+            "th": "เลิฟมีแลนด์",
+            "en": "LoveMe Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างโชว์ไทม์ ถนนหนานจิง เขตตะวันออก ไถจง",
+            "en": "Showtime store, Nanjing Road, East District, Taichung"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่ใกล้สถานีไถจง มีบ่อบอลและสไลเดอร์มีไฟ",
+            "en": "A big indoor play park near Taichung Station with a ball pit and light-up slides"
+          },
+          "why": {
+            "th": "มีโซนนุ่มสำหรับเด็กเล็ก ห้องน้ำ และที่เปลี่ยนผ้าอ้อม",
+            "en": "Soft areas for little ones, with toilets and changing tables"
+          },
+          "q": "LoveMe Land, 南京路, 台中",
+          "ok": "2026-11"
+        },
+        {
+          "local": "文心森林公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนป่าเหวินซิน",
+            "en": "Wenxin Forest Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเหวินซิน หนานถุน ไถจง",
+            "en": "Wenxin Road, Nantun, Taichung"
+          },
+          "what": {
+            "th": "สวนป่าที่มีเครื่องเล่นฝึกประสาทสัมผัสใหม่ 12 ชิ้น",
+            "en": "A forest park with twelve new sensory play pieces"
+          },
+          "why": {
+            "th": "เครื่องเล่นฝึกประสาทสัมผัสสำหรับเด็กเล็ก",
+            "en": "Sensory play for small children"
+          },
+          "q": "文心森林公園, 台中",
+          "ok": "2026-11"
+        },
+        {
+          "local": "理心公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนลี่ซิน",
+            "en": "Lixin Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหลงฟู่ ซีถุน ไถจง",
+            "en": "Longfu Road, Xitun, Taichung"
+          },
+          "what": {
+            "th": "สวนที่มีเครื่องปีนป่าย 9 ชิ้นและลานเล่นเกม",
+            "en": "A park with nine climbing frames and a play area for games"
+          },
+          "why": {
+            "th": "มีที่ปีนเยอะสำหรับเด็กพลังเหลือ",
+            "en": "Lots to climb for energetic children"
+          },
+          "q": "Lixin Park, Xitun, Taichung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大雅中科公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนจงเคอ ต้าหย่า",
+            "en": "Daya Zhongke Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเยว่เซียง ต้าหย่า ไถจง",
+            "en": "Yuexiang Road, Daya, Taichung"
+          },
+          "what": {
+            "th": "สวนที่มีสไลเดอร์ยาว 22 เมตรและลานเล่นน้ำหน้าร้อน",
+            "en": "A park with a 22-metre slide and a summer water-play area"
+          },
+          "why": {
+            "th": "สไลเดอร์ยาว และเล่นน้ำวันหยุดหน้าร้อน",
+            "en": "A long slide, and water play at summer weekends"
+          },
+          "tip": {
+            "th": "ลานเล่นน้ำเปิดเฉพาะวันหยุดหน้าร้อน",
+            "en": "The water play runs at summer weekends only"
+          },
+          "q": "Dayazhongke Park, Daya, Taichung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鐵砧山雕塑公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนประติมากรรมเถี่ยเจินซาน ต้าเจี่ย",
+            "en": "Tiezhenshan Sculpture Park (Dajia)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเฉิงกง ต้าเจี่ย ไถจง",
+            "en": "Chenggong Road, Dajia, Taichung"
+          },
+          "what": {
+            "th": "สวนประติมากรรม มีตาข่ายปีนเหล็กและสนามเด็กเล่นบ่อทรายใหญ่",
+            "en": "A sculpture park with a steel climbing net and a big sand-pit playground"
+          },
+          "why": {
+            "th": "ตาข่ายปีนและสนามเด็กเล่นบ่อทรายที่เด็กชอบ",
+            "en": "A climbing net and a sand-pit playground children love"
+          },
+          "q": "Tiezhenshan Sculpture Park, Dajia, Taichung",
+          "ok": "2026-11"
         }
       ]
     },

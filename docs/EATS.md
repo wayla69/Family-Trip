@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Central Taiwan** (docs/library-briefs batch-50): +2 (Lizi Café Tunghai, Apple Castle). Proof in `docs/library-proof/tw-central.json`.
+
+- **24 Nov 2026, central Taiwan** (docs/library-briefs batch-67, round 3): +2 (Princess Anne Garden, Meteor Garden park). Proof in `docs/library-proof/tw-central.json`.

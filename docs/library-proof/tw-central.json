@@ -46,6 +46,55 @@
       "src": "https://supertaste.tvbs.com.tw/kids/343200",
       "date": "2026-03",
       "map": "Google Maps '福田水資源回收中心兒童遊樂場', 69 reviews, newest shown 5 days ago"
+    },
+    {
+      "name": "Princess Anne Garden Restaurant (Xinshe)",
+      "page_name": "安妮公主花園餐廳",
+      "src": "https://supertaste.tvbs.com.tw/kids/356491",
+      "date": "2026-03",
+      "map": "Google Maps 'Princess Anne Garden Restaurant' (Xinshe), newest review shown 5 days ago"
+    },
+    {
+      "name": "Meteor Garden park restaurant (Fengyuan)",
+      "page_name": "流星花園幸福樂活園區",
+      "src": "https://supertaste.tvbs.com.tw/kids/356491",
+      "date": "2026-03",
+      "map": "Google Maps '流星花園幸福樂活園區' (Fengyuan), newest review shown 2 days ago"
+    },
+    {
+      "name": "LoveMe Land",
+      "page_name": "LoveMe Land",
+      "src": "https://www.twosevenths.com/en/kid/amusement-taichung-children/",
+      "date": "2026-11",
+      "map": "Google Maps 'LoveMe Land', newest review shown 2 days ago"
+    },
+    {
+      "name": "Wenxin Forest Park",
+      "page_name": "Wenxin Forest Park",
+      "src": "https://taichung.travel/en/experience/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Wen-Xin Forest Park', newest review shown a day ago"
+    },
+    {
+      "name": "Lixin Park",
+      "page_name": "Lixin Park",
+      "src": "https://taichung.travel/en/experience/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Lixin Park' (Xitun), newest review shown 7 days ago"
+    },
+    {
+      "name": "Daya Zhongke Park",
+      "page_name": "Zhongke Park",
+      "src": "https://taichung.travel/en/experience/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Dayazhongke Park', newest review shown 2 days ago"
+    },
+    {
+      "name": "Tiezhenshan Sculpture Park (Dajia)",
+      "page_name": "Dajia Tiezhenshan Sculpture Park",
+      "src": "https://taichung.travel/en/experience/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Tiezhenshandiaosu Park' (Dajia), newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -56,7 +105,20 @@
     {
       "name": "安妮公主花園餐廳",
       "why": "quote not found on the page (library-check.cjs)"
+    },
+    {
+      "name": "Yuleyuan Xindai, Xinfu Park",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Lyu-Chuan Water Purification Park",
+      "why": "the map shows only a temporarily closed company of that name"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from TVBS (Mar 2026), Two Sevenths (Nov 2026) and Taichung Travel (official), all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
