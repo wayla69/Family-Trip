@@ -1521,6 +1521,302 @@
           "q": "淨園農場, Xiaogang, Kaohsiung",
           "ok": "2026-11",
           "src": "https://supertaste.tvbs.com.tw/amp/kids/350098"
+        },
+        {
+          "local": "十鼓文創園區",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/food/348936",
+          "name": {
+            "th": "หมู่บ้านวัฒนธรรมสิบกลอง",
+            "en": "Ten Drum Cultural Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เหรินเต๋อ ไถหนาน",
+            "en": "Rende, Tainan"
+          },
+          "what": {
+            "th": "โรงงานน้ำตาลเก่าที่กลายเป็นสวนกิจกรรม",
+            "en": "An old sugar works turned into a park with many activities"
+          },
+          "why": {
+            "th": "สไลเดอร์ปล่องไฟใสในร่มที่สูงที่สุดในเอเชีย",
+            "en": "Asia's tallest indoor see-through chimney slide"
+          },
+          "q": "Ten Drum Cultural Village, Rende, Tainan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南瀛天文館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/food/348936",
+          "name": {
+            "th": "หอดูดาวหนานอิ๋ง ไถหนาน",
+            "en": "Tainan Astronomical Education Area"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ต้าเน่ย ไถหนาน",
+            "en": "Danei, Tainan"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีท้องฟ้าจำลองดิจิทัล",
+            "en": "A science museum with a digital planetarium"
+          },
+          "why": {
+            "th": "สไลเดอร์จรวดกลางแจ้งและของจัดแสดงดาราศาสตร์ให้ลองเล่น",
+            "en": "An outdoor rocket slide and hands-on astronomy displays"
+          },
+          "q": "Tainan Astronomical Education Area, Danei, Tainan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "台灣木材故事館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/food/348936",
+          "name": {
+            "th": "พิพิธภัณฑ์เรื่องไม้ไต้หวัน",
+            "en": "Taiwan Wood Story Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไป๋เหอ ไถหนาน",
+            "en": "Baihe, Tainan"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ไม้ มีนำชมและงานไม้",
+            "en": "A wood museum with guided tours and woodworking"
+          },
+          "why": {
+            "th": "กิจกรรมฟรี เด็กทำของไม้เอง",
+            "en": "Free DIY: children make a wooden piece themselves"
+          },
+          "q": "Taiwan Wood Story Museum, Baihe, Tainan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "水流莊牧場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "ฟาร์มสุ่ยหลิวจวง",
+            "en": "Shuiliuzhuang Ranch"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เฉียวโถว เกาสง",
+            "en": "Qiaotou, Kaohsiung"
+          },
+          "what": {
+            "th": "ฟาร์มสะอาดสว่าง มีแกะ วัว และกระต่าย",
+            "en": "A clean, bright farm with sheep, cows and rabbits"
+          },
+          "why": {
+            "th": "กิจกรรม \"คนเลี้ยงแกะน้อย\" ใส่หมวกคาวบอยและให้อาหารสัตว์",
+            "en": "A \"little shepherd\" activity with a cowboy hat and feeding"
+          },
+          "q": "Shuiliuzhuang Ranch, Qiaotou, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "時代公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "สวนสือไต้",
+            "en": "Shidai Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เฉียนเจิ้น เกาสง",
+            "en": "Cianjhen, Kaohsiung"
+          },
+          "what": {
+            "th": "สวนฟรีสำหรับทุกวัย มีเครื่องเล่น",
+            "en": "A free all-ages park with play equipment"
+          },
+          "why": {
+            "th": "บ่อทราย หอสไลเดอร์ ตาข่ายปีน และลู่จักรยานขาไถ",
+            "en": "A sand pit, a slide tower, a climbing net and a balance-bike track"
+          },
+          "q": "Shidai Park, Cianjhen, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "義大遊樂世界",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "สวนสนุกอีดา",
+            "en": "E-DA Theme Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ต้าซู่ เกาสง",
+            "en": "Dashu, Kaohsiung"
+          },
+          "what": {
+            "th": "สวนสนุกธีมกรีก แบ่งสามโซน",
+            "en": "A Greek-themed theme park in three zones"
+          },
+          "why": {
+            "th": "เครื่องเล่นครอบครัว มีม้าหมุนและชิงช้าสวรรค์",
+            "en": "Family rides including a carousel and a Ferris wheel"
+          },
+          "q": "E-DA Theme Park, Dashu, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "高雄時空之城",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "เมืองกาลเวลาเกาสง",
+            "en": "Kaohsiung Time and Space City"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สวนโลจิสติกส์ไท่ซูการ์ เฉียนเจิ้น",
+            "en": "Taisugar logistics park, Cianjhen, Kaohsiung"
+          },
+          "what": {
+            "th": "โรงงานท่องเที่ยว มีทำผ้าห่มและมุมถ่ายรูปภาพสามมิติ",
+            "en": "A tourism factory with quilt-making and 3D painted photo spots"
+          },
+          "why": {
+            "th": "ถ่ายรูปกับภาพสามมิติ เช่น ฉลามและนางเงือก",
+            "en": "Photos in 3D scenes like a shark and a mermaid"
+          },
+          "q": "Kaohsiung Time and Space City, Chenggong 2nd Road, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大魯閣草衙道鈴鹿賽道樂園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เริ่มเครื่องละ 60 ดอลลาร์ไต้หวัน",
+            "en": "From NT$60 a ride"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "สวนสนุกซูซูกะ เซอร์กิต (ไท่หลู่เก๋อ)",
+            "en": "Suzuka Circuit Park (Taroko Park)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "เฉียนเจิ้น เกาสง",
+            "en": "Cianjhen, Kaohsiung"
+          },
+          "what": {
+            "th": "สวนสนุกครอบครัวในห้าง มีชิงช้าสวรรค์ ม้าหมุน และโกคาร์ต",
+            "en": "A family theme park at a shopping centre with a Ferris wheel, carousel and go-karts"
+          },
+          "why": {
+            "th": "เครื่องเล่น ถนนอาหาร และห้างให้หลบร้อน",
+            "en": "Rides plus a food street and a mall to cool off"
+          },
+          "q": "Suzuka Circuit Park, Zhongan Road, Cianjhen, Kaohsiung",
+          "ok": "2026-11"
         }
       ]
     }
