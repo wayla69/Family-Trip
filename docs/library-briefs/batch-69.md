@@ -70,38 +70,38 @@ Aim for 8–15 places to eat and 8–15 things to do per town, if honest sources
 
 ## Towns for this task
 
-### mx-yucatan — Cancún and the Yucatán (Mexico)
-Area covered: Cancún and the Yucatán (also known as / includes: cancun, yucatan, riviera maya, tulum, playa del carmen, chichen itza)
+### ie-ireland — Dublin and the west coast (Ireland)
+Area covered: Dublin and the west coast (also known as / includes: dublin, galway, cliffs of moher, ring of kerry, killarney, connemara)
 
-Now in the app: 17 places to eat, 21 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 23 places to eat, 27 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: La Habichuela; La Parrilla; El Fish Fritanga; La Cueva del Chango; Los Aguachiles; El Fogón; Burrito Amor; La Chaya Maya; El Mesón del Marqués; Mercado 28; Taquería Honorio; Ah Cacao Chocolate Café; Chez Céline; Dulcería y Sorbetería Colón; Ki'Xocolatl; Porfirio's Cancún; Porfirio's Mérida
+Already in the app — places to eat: The Woollen Mills; Gallagher's Boxty House; Elephant & Castle; McDonagh's; Ard Bia at Nimmos; The Dough Bros; Gus O'Connor's Pub; Bricín; Quinlan's Seafood Bar; Leo Burdock; Galway Market; Bewley's Grafton Street; Murphy's Ice Cream; The Bad Ass Cafe; Carluccio's; Wagamama Dundrum; Brother Hubbard (North); The Fumbally; Overends Kitchen; Blackrock Cottage; Freddy's; Aniar; Saba
 
-Already in the app — things to do: Xcaret Park; Xel-Há Park; Chichén Itzá archaeological site / Zona Arqueológica de Chichén Itzá; Cenote Ik Kil; Tulum archaeological site / Zona Arqueológica de Tulum; Cobá ruins / Zona Arqueológica de Cobá; Maya Museum of Cancún and San Miguelito / Museo Maya de Cancún; Xenses; Garrafón Park, Isla Mujeres; Crococun Zoo; Cancún Interactive Aquarium; Playa Delfines; Playa Las Perlas; Parque de las Palapas; Mercado 28; Playa Hermosa Caleta; Gran Parque La Plancha; Museo de la Luz; Palacio de la Música; Uxmal; La Peni light show / La Peni
+Already in the app — things to do: Dublin Zoo; Cliffs of Moher Visitor Experience; National Leprechaun Museum; Dublinia; Phoenix Park; Phoenix Park Visitor Centre and Ashtown Castle; National Botanic Gardens, Glasnevin; Malahide Castle and Gardens; Howth village and harbour; National Aquarium of Ireland (Galway Atlantaquaria); Galway Christmas Market; Aillwee Cave and Burren Birds of Prey Centre; Bunratty Castle and Folk Park; Connemara National Park; Connemara Pony Heritage Centre; Moher Hill Open Farm; Doolin Cave; Caherconnell Fort; Dromore Wood nature reserve; Shannon Aviation Museum; Lahinch beach; National Museum of Ireland – Archaeology; National Gallery of Ireland; National Wax Museum Plus; The Little Museum of Dublin; AquaZone; EPIC The Irish Emigration Museum
 
-### pe-cusco — Cusco, Machu Picchu and Titicaca (Peru)
-Area covered: Cusco, Machu Picchu and Titicaca (also known as / includes: cusco, cuzco, machu picchu, sacred valley, aguas calientes, rainbow mountain)
+### tr-istanbul — Istanbul (Türkiye)
+Area covered: Istanbul (also known as / includes: istanbul, sultanahmet, bosphorus, galata, taksim, kadikoy)
 
-Now in the app: 16 places to eat, 22 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 20 places to eat, 30 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Pachapapa; Morena Peruvian Kitchen; Inka Grill; Jack's Café; Chicha por Gastón Acurio; Indio Feliz; Tunupa Valle Sagrado; Mercado Central de San Pedro; Horno Colonial San Francisco; La Boulangerie de Paris; Qucharitas; ChocoMuseo; Pirwa Restaurant; Green Point; L'Atelier Café Concept; Cappuccino Cusco Cafe
+Already in the app — places to eat: Hamdi Restaurant; Tarihi Sultanahmet Köftecisi Selim Usta; Çiya Sofrası; Karaköy Lokantası; Kanaat Lokantası; Şehzade Cağ Kebap; Develi Samatya; Hünkar; Dürümzade; Namlı Gurme; Kızılkayalar; Hafız Mustafa 1864; Karaköy Güllüoğlu; Vefa Bozacısı; Zubeyir Ocakbasi; Kayseri Manti Evi; Manti Evi; Van Kahvalti Evi; Baylan Pastanesi; Happy Moon's (Vadi İstanbul)
 
-Already in the app — things to do: Machu Picchu / Llaqta de Machu Picchu; Sacsayhuamán; Moray terraces; Maras salt pans / Salineras de Maras; Pisac ruins / Parque Arqueológico de Pisaq; Pisac market; Ollantaytambo ruins; Awana Kancha alpaca centre; San Pedro Market / Mercado Central de San Pedro; Machu Picchu Museum (Casa Concha); Cusco Planetarium; ChocoMuseo Cusco; Plaza de Armas, Cusco; San Blas viewpoint; Cristo Blanco; Inka Museum; Regional Historical Museum of Cusco; Museo de Arte Precolombino (MAP); Center for Traditional Textiles of Cusco; Qorikancha; Plaza Regocijo; Plaza San Blas
+Already in the app — things to do: Miniatürk; Rahmi M. Koç Museum / Rahmi M. Koç Müzesi; Istanbul Aquarium / İstanbul Akvaryum; Basilica Cistern / Yerebatan Sarnıcı; Topkapı Palace / Topkapı Sarayı; Istanbul Archaeology Museums / İstanbul Arkeoloji Müzeleri; Gülhane Park / Gülhane Parkı; Bosphorus cruise / Boğaz Turu; Spice Bazaar (Egyptian Bazaar) / Mısır Çarşısı; Istanbul Toy Museum / İstanbul Oyuncak Müzesi; Emirgan Park / Emirgan Korusu; Galata Tower / Galata Kulesi; Princes' Islands (Büyükada) / Büyükada; Panorama 1453 History Museum / Panorama 1453 Tarih Müzesi; Istanbul Naval Museum / Deniz Müzesi; Museum of Illusions – Istanbul; Dolmabahçe Palace; Blue Mosque; Süleymaniye Mosque; Eyüp Sultan Mosque; Eyüp–Pierre Loti Cable Car; Golden Horn Ferry; Galata Bridge; Müze Gazhane Children’s Science Center; Bilim Üsküdar; Nickelodeon Play Tersane Istanbul; Natural Science Museum; Kemerburgaz Urban Forest; Isfanbul (Vialand); Nostalgic Tram (İstiklal Avenue)
 
-### fr-lyon — Lyon (France)
-Area covered: Lyon (also known as / includes: lyon, vieux lyon, fourviere, tete d'or)
+### cl-santiago — Santiago and Valparaíso (Chile)
+Area covered: Santiago and Valparaíso (also known as / includes: santiago de chile, santiago, valparaiso, vina del mar, cajon del maipo, pomaire)
 
-Now in the app: 19 places to eat, 20 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 24 places to eat, 25 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Brasserie Georges; Daniel et Denise Saint-Jean; Le Poêlon d'Or; Café Comptoir Abel; Brasserie Le Nord; Brasserie L'Est; Le Bouchon des Filles; Les Lyonnais; Les Halles de Lyon Paul Bocuse; Marché Saint-Antoine; Terre Adélice; Nardone; Bernachon; Pralus; Mama Shelter Lyon; Zucca; Yakapiocher; Bouillon Baratte; La Commune
+Already in the app — places to eat: Donde Augusto; Galindo; Divertimento Chileno; Tiramisú; Las Vacas Gordas; Confitería Torres; Café Turri; Casino Social J. Cruz; Tierra de Fuego; La Vega Central; Dominó; Patio Bellavista; Emporio La Rosa; Café del Poeta; Gino Lautaro; La Argentina (Barrio Italia); Neko-San; DeCalle; Parigó; Dipsy’s Backyard; El Portal Exbahamondes; Café Estación; Oiso; Casa Regina
 
-Already in the app — things to do: Musée des Confluences; Aquarium de Lyon; Parc de la Tête d'Or and its free zoo; Fourvière funicular / Funiculaire F2; Gadagne museums and the puppet museum / Musées Gadagne; Lumière Museum / Musée Lumière; Halles de Lyon Paul Bocuse; Lugdunum museum and Roman theatres; Miniature and Cinema Museum / Musée Cinéma et Miniature; Théâtre Le Guignol de Lyon; Planétarium de Vaulx-en-Velin; Croix-Rousse food market; Grand Parc Miribel Jonage; The traboules of Vieux Lyon; Place Bellecour; Maison des Canuts; Soierie Vivante; Museum of Illusions Lyon; GAME IN Lyon; Natespa
+Already in the app — things to do: Zoológico Nacional (Metropolitan Park) / Zoológico Nacional; Museo Interactivo Mirador (MIM); Buin Zoo; Sky Costanera viewpoint; Teleférico and funicular, San Cristóbal hill / Teleférico y Funicular Santiago; National Museum of Natural History / Museo Nacional de Historia Natural; Santiago Railway Museum / Museo Ferroviario; Artequin art museum for children / Museo Artequin; Chilean Museum of Pre-Columbian Art / Museo Chileno de Arte Precolombino; Cerro Santa Lucía; Wonder Park Maipú; Quinta Normal park pool / Piscina del Parque Quinta Normal; Mercado Central; Parque Quinta Vergara; La Sebastiana (Neruda's house) / Museo La Sebastiana; Fantasilandia; Parque Araucano; Parque Bicentenario, Vitacura; KidZania Santiago; Biblioteca de Santiago; Ascensor Concepción; Ascensor Artillería; Paseo 21 de Mayo; National Maritime Museum / Museo Marítimo Nacional; Mercado Puerto
 
-### hr-dubrovnik — Dubrovnik (Croatia)
-Area covered: Dubrovnik (also known as / includes: dubrovnik, lokrum, stradun, hvar)
+### is-reykjavik — Reykjavík and the Golden Circle (Iceland)
+Area covered: Reykjavík and the Golden Circle (also known as / includes: reykjavik, golden circle, geysir, gullfoss, blue lagoon, thingvellir)
 
-Now in the app: 18 places to eat, 21 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 24 places to eat, 25 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Lokanda Peskarija; Kopun; Taj Mahal; Pizzeria Mea Culpa; Oliva Pizzeria; Konoba Dalmatino; Restaurant Orsan; Pantarul; Konoba Dubrava; Pizzeria Tabasco; Barba; Buffet Škola; Gruž Market; Dolce Vita; Peppino's Gelato; Gradska Kavana Arsenal; Moby Dick; Bistro Glorijet
+Already in the app — places to eat: Sægreifinn; Icelandic Street Food; Messinn; Café Loki; Tommi's Burger Joint; Þrír Frakkar; Reykjavik Fish Restaurant; Friðheimar; Efstidalur II; Bæjarins Beztu Pylsur; Hlemmur Mathöll; Gullfoss Kaffi; Brauð & Co; Sandholt; Valdís; Mokka Kaffi; Kaffi Laugalækur; The Laundromat Café; Kattakaffihúsið (The Cat Café); Grandi Mathöll; Flóran (Kaffi Flóra); Iðnó; 101 Reykjavik Street Food; Arna Ís og Kaffi
 
-Already in the app — things to do: Dubrovnik city walls / Dubrovačke gradske zidine; Stradun and Onofrio's Fountain / Stradun; Dubrovnik cable car / Dubrovačka žičara; Dubrovnik Maritime Museum / Pomorski muzej Dubrovnik; Dubrovnik Aquarium / Akvarij Dubrovnik; Lokrum Island / Lokrum; Rector's Palace and Cultural History Museum / Knežev dvor; Fort Lovrijenac / Tvrđava Lovrijenac; Trsteno Arboretum / Arboretum Trsteno; Dubrovnik Natural History Museum / Prirodoslovni muzej Dubrovnik; Homeland War Museum, Fort Imperial / Muzej Domovinskog rata; Ethnographic Museum (Rupe) / Etnografski muzej Rupe; Banje Beach / Plaža Banje; Gradac Park / Park Gradac; Gruž Market / Gruška tržnica; Dubrovnik Cathedral; Clock Tower; Old Port; Old Pharmacy, Franciscan Monastery; Minčeta Tower; Copacabana Beach
+Already in the app — things to do: Perlan: Wonders of Iceland / Perlan; Reykjavík Family Park and Zoo / Fjölskyldu- og húsdýragarðurinn; Whales of Iceland / Hvalasýning; Laugardalslaug swimming pool / Laugardalslaug; Nauthólsvík geothermal beach / Ylströndin í Nauthólsvík; Árbær Open Air Museum / Árbæjarsafn; National Museum of Iceland / Þjóðminjasafn Íslands; The Settlement Exhibition (Reykjavík 871±2) / Landnámssýningin; Reykjavík Art Museum / Listasafn Reykjavíkur; FlyOver Iceland; Þingvellir National Park / Þingvellir; Geysir and Strokkur geothermal area / Geysir, Strokkur; Gullfoss waterfall / Gullfoss; Friðheimar tomato farm / Friðheimar; Blue Lagoon / Bláa Lónið; Hljóðhimnar at Harpa / Hljóðhimnar; Reykjavík Botanic Garden / Grasagarður Reykjavíkur; Viðey Island / Viðey; Volcano Express; Tjörnin pond / Tjörnin; Hljómskálagarður park / Hljómskálagarður; Öskjuhlíð hill / Öskjuhlíð; Árbæjarlaug pool / Árbæjarlaug; Secret Lagoon / Gamla Laugin; Fontana baths / Laugarvatn Fontana

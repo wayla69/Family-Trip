@@ -70,38 +70,38 @@ Aim for 8–15 places to eat and 8–15 things to do per town, if honest sources
 
 ## Towns for this task
 
-### gb-york — York and Yorkshire (United Kingdom)
-Area covered: York and Yorkshire (also known as / includes: york, yorkshire, the shambles, whitby, harrogate, durham)
+### th-chiangmai — Chiang Mai and Chiang Rai (Thailand)
+Area covered: Chiang Mai and Chiang Rai (also known as / includes: chiang mai, chiang rai, doi suthep, doi inthanon)
+
+Now in the app: 17 places to eat, 27 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+
+Already in the app — places to eat: Khao Soi Khun Yai / ข้าวซอยคุณยาย; Khao Soi Mae Sai / ข้าวซอยแม่สาย; Khao Soi Lam Duan Fa Ham / ข้าวซอยลำดวนฟ้าฮ่าม; Huen Phen / เฮือนเพ็ญ; Tong Tem Toh / ต๋องเต็มโต๊ะ; SP Chicken / เอสพี ไก่ย่าง; Huen Muan Jai / เฮือนม่วนใจ๋; Ginger Farm Kitchen; Lu Lam / หลู้ลำ; Khao Soi Pho Jai / ข้าวซอยพอใจ; Khao Kha Moo Chang Phueak / ข้าวขาหมูช้างเผือก; Warorot Market / กาดหลวง (ตลาดวโรรส); Chiang Rai Night Bazaar / เชียงรายไนท์บาซาร์; Fern Forest Cafe; Cheevit Cheeva / ชีวิต ชีวา; Chivit Thamma Da / ชีวิตธรรมดา; Ohkajhu (San Sai) / โอ้กะจู๋ สาขาสันทราย
+
+Already in the app — things to do: Chiang Mai Zoo; Chiang Mai Night Safari; Wat Phra That Doi Suthep; Royal Park Rajapruek; Bua Tong Sticky Waterfall; Sunday Walking Street; Warorot Market; Elephant Nature Park; Chiang Mai City Arts and Cultural Centre; Nong Buak Haad Public Park; Wat Chedi Luang; Huay Tung Tao Lake; Queen Sirikit Botanic Garden; Baan Kang Wat; Mon Cham; Pai Canyon (Kong Lan); Pai Walking Street; Sai Ngam hot spring; Boon Ko Ku So bamboo bridge; Lanna Folklife Museum; Chiang Mai National Museum; Art in Paradise Chiang Mai; Grand Canyon Water Park / แกรนด์แคนยอน วอเตอร์ปาร์ค; Ban Dam Museum / พิพิธภัณฑ์บ้านดำ; Wat Rong Khun (the White Temple); Elephant POOPOOPAPER Park; Mae Fah Luang Art and Cultural Park
+
+### th-pattaya — Pattaya and the Chonburi coast (Thailand)
+Area covered: Pattaya and the Chonburi coast (also known as / includes: pattaya, koh larn, jomtien, sattahip, bang saen, si racha)
 
 Now in the app: 24 places to eat, 20 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: The Star Inn the City; Drakes Fish & Chips; Il Paradiso del Cibo; Guy Fawkes Inn; Rustique; Double Dutch Pancake House; The Magpie Café; Trenchers; Wensleydale Creamery; Bizzie Lizzie's; Shambles Market Food Court; York Roast Co; Leeds Kirkgate Market; Bettys Café Tea Rooms York; Bettys Café Tea Rooms Harrogate; The Harbour Bar; Ambiente Tapas (Fossgate); SPARK:York; Brew & Brownie; Partisan; Trinacria; The Pig & Pastry; Robinsons Café; Rowntree Park Reading Café
+Already in the app — places to eat: Mum Aroi (Naklua) / มุมอร่อย นาเกลือ; Pupen Seafood / ปูเป็น ซีฟู้ด; The Glass House; Rimpa Lapin / ริมผาลาพิน; Lung Sawai Seafood / ลุงไสว ซีฟู๊ด; The Sky Gallery; Suttangrak Pattaya / สุดทางรัก พัทยา; Preecha Seafood / ปรีชา ซีฟู้ด; Lan Pho Naklua Market / ตลาดลานโพธิ์นาเกลือ; Pier 21 Food Court (Terminal 21 Pattaya) / เพียร์ 21 เทอร์มินอล 21 พัทยา; Nong Mon Market / ตลาดหนองมน; La Baguette; The Chocolate Factory Pattaya; Cabbages & Condoms; Nara Thai Cuisine; Ruenthai; Leng Kee; Glass House Silver; Thepprasit Night Market; Tess Vegan Cafe; The Coffee Club (Central Pattaya); Sizzler (Central Festival Pattaya Beach); The Pizza Company (Central Festival Pattaya Beach); Benihana (Avani Pattaya)
 
-Already in the app — things to do: National Railway Museum; JORVIK Viking Centre; York Castle Museum; Yorkshire Museum and Museum Gardens; Yorkshire Wildlife Park; York's Chocolate Story; Barley Hall; DIG: An Archaeological Adventure; Clifford's Tower; Shambles Market; Rowntree Park play area; Castle Howard; Eden Camp Modern History Museum; York City Walls; Flamingo Land; The Web Adventure Park; The Hole in Wand; Rainbows Ceramics; York Minster; Hollywood Bowl (Monks Cross)
+Already in the app — things to do: Sanctuary of Truth; Art in Paradise Pattaya; Underwater World Pattaya; Khao Kheow Open Zoo; Ramayana Water Park; Mini Siam; Phra Tamnak Viewpoint; Lan Pho Naklua Park; Thepprasit Night Market; Koh Larn; Pattaya Floating Market; Frost Magical Ice of Siam; Columbia Pictures Aquaverse; Jomtien Beach; Terminal 21 Pattaya; Pattaya Water Park; Harborland; Monster Aquarium; Ripley's Believe It or Not; Nong Nooch Tropical Garden
 
-### in-golden — Delhi, Agra and Jaipur (India)
-Area covered: Delhi, Agra and Jaipur (also known as / includes: delhi, new delhi, agra, taj mahal, jaipur, rajasthan)
+### th-udon — Udon Thani (Thailand)
+Area covered: Udon Thani (also known as / includes: udon thani, red lotus sea, kumphawapi, nong han kumphawapi, ban chiang, phu phrabat)
+
+Now in the app: 18 places to eat, 26 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+
+Already in the app — places to eat: VT Namnueng (Posri) / วีที แหนมเนือง; Madam Pahtehh 2515 / มาดามพาเท่ห์; Krua Khun Nid / ครัวคุณนิด; Rabiang Patchanee / ระเบียงพัชนี; Kao Piak Sen / ข้าวเปียกเส้น; Lab Mu Worachai / ลาบหมูวรชัย; Som Tam Je Kai / ส้มตำเจ๊ไก่; UD Town / ยูดี ทาวน์; Central Udon food court / ศูนย์อาหาร เซ็นทรัล อุดร; Preecha Night Market / ตลาดปรีชา; Beyond Cafe; Mavin Coffee Roaster; Option Coffee Bar; Maeya / แม่หยา; Bueng Mai Hom Garden Restaurant / สวนอาหารบึงไม้หอม; Dose Factory; Sa Muay & Sons / ซาหมวย แอนด์ ซันส์; King's Osha / คิงส์โอชา
+
+Already in the app — things to do: World Horticultural Expo Udon Thani / มหกรรมพืชสวนโลกอุดรธานี 2569; Red Lotus Sea (Nong Han Kumphawapi) / ทะเลบัวแดง; Phu Phrabat Historical Park / อุทยานประวัติศาสตร์ภูพระบาท; Ban Chiang National Museum / พิพิธภัณฑสถานแห่งชาติ บ้านเชียง; Nong Prajak Park / หนองประจักษ์ศิลปาคม; Central Udon / เซ็นทรัล อุดรธานี; Udon City Walking Street / ถนนคนเดินหน้าศาลหลักเมือง; Udon Thani City Museum; Udon Sunshine Orchid Garden; Phu Foi Lom Park; Than Ngam Waterfall; Nong Samrong Reservoir; Huai Luang Reservoir; Ban Chiang Tai Phuan community; Na Kha silk village; Pa Phu Kon Temple / วัดป่าภูก้อน; Kham Chanod / คำชะโนด; Santiwanaram Temple / วัดสันติวนาราม; Sa Mani Temple / วัดสระมณี; Thai-Chinese Cultural Center / ศูนย์วัฒนธรรมไทย-จีน; Natural Park / Monkey Park / สวนธรรมชาติ/ สวนลิง; Na Yung - Nam Som National Park / อุทยานแห่งชาตินายูง-น้ำโสม; Tat Noi Waterfall / น้ำตกตาดน้อย; Khiri Wong Kot Village / หมู่บ้านคีรีวงกต; Udon Water World / อุดรวอเตอร์เวิล์ด สวนน้ำ; Thung Si Mueang / ทุ่งศรีเมือง
+
+### vn-phuquoc — Phu Quoc (Vietnam)
+Area covered: Phu Quoc (also known as / includes: phu quoc, hon thom, sunset town)
 
 Now in the app: 20 places to eat, 24 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Karim's; Saravana Bhavan; Moti Mahal; United Coffee House; Haldiram's Chandni Chowk; Dilli Haat INA; Wenger's; Pinch of Spice; Shankara Vegis Restaurant; Maya Restaurant; Panchhi Petha; Laxmi Mishthan Bhandar; Niros; Chokhi Dhani; Masala Chowk; Rawat Mishthan Bhandar; Lassiwala; Tapri Central; Anokhi Café; 1135 AD
+Already in the app — places to eat: Crab House; Xin Chào; Saigonese Eatery; Ra Khơi; The Spice House at Cassia Cottage; Ganesh Indian Restaurant; Trùng Dương Marina; Bup Restaurant; Chợ đêm Phú Quốc; Bún Quậy Kiến Xây; Bún Kèn Út Lượm; Buddy Ice Cream & Info Café; Chuồn Chuồn Bistro; Phu Quoc Bee Farm; Mecato; Clubhouse Restaurant (Premier Residences); Paradiso Restaurant; Huong Bien Restaurant; Hủ Tiếu Mực Tư Hường; Mai Hương Beachfront
 
-Already in the app — things to do: Taj Mahal; Agra Fort; Mehtab Bagh; Red Fort; Lodhi Garden; Dilli Haat INA; National Science Centre; National Rail Museum; Amber Fort; Hawa Mahal; Jantar Mantar; Albert Hall Museum; Humayun's Tomb; Sunder Nursery; City Palace, Jaipur; Playhouse by Essex Farms; Anokhi Museum of Hand Printing; Nahargarh Fort; Galtaji, the Monkey Temple / Galta Ji; Jawahar Circle garden; Jungle Doodle Kids Zone; Sur Sarovar Bird Sanctuary / Soor Sarovar; Dolphin Water Park; Wildlife SOS Elephant Conservation and Care Centre
-
-### jp-takayama — Takayama, Shirakawa-go and Nagoya (Japan)
-Area covered: Takayama, Shirakawa-go and Nagoya (also known as / includes: takayama, shirakawa-go, shirakawago, hida, gero, nagoya)
-
-Now in the app: 26 places to eat, 18 things to do. Round 3 aims at 40 places to eat and 35 things to do.
-
-Already in the app — places to eat: Maruaki / 丸明 飛騨高山店; Ajikura Tengoku / 味蔵天国; Suzuya / 寿々や; Kyoya / 京や; Irori / いろり; Atsuta Horaiken Honten / あつた蓬莱軒 本店; Yabaton Yabacho Honten / 矢場とん 矢場町本店; Yamamotoya Sohonke / 山本屋総本家 本家; Miyagawa Morning Market / 宮川朝市; Hida Kotte Ushi / 飛騨こって牛; Osu Shopping Street / 大須商店街; Ochudo / 落人; Komeda's Coffee Honten / コメダ珈琲店 本店; Konparu Osu Honten / コンパル 大須本店; Hida Takayama Gyoza Sohonzan; Center4 Hamburgers; EVILTEX Hamburgers & Tex-Mex; Jakson Curry & Coffee; Hida Beef Curry House; Chacha; Ebisu Soba; Kitchen Hida; Hida Premium Beef Sushi; Jingoroh Ramen Main Restaurant; Debumaru Takayama Branch 2; Ebihachi
-
-Already in the app — things to do: Hida Folk Village / 飛騨の里; Miyagawa and Jinya-mae morning markets / 宮川朝市・陣屋前朝市; Takayama Jinya / 高山陣屋; Takayama Festival Floats Exhibition Hall / 高山祭屋台会館; Sanmachi Suji old town streets / さんまち通り; Higashiyama Walking Course and Shiroyama Park / 東山遊歩道・城山公園; Hida Takayama Teddy Bear Eco Village / 飛騨高山テディベアエコビレッジ; Ogimachi village, Shirakawa-go / 白川郷 荻町; Gassho-zukuri Minkaen open-air museum / 白川郷合掌造り民家園; LEGOLAND Japan / レゴランド・ジャパン; Port of Nagoya Public Aquarium / 名古屋港水族館; SCMAGLEV and Railway Park / リニア・鉄道館; Nagoya Castle / 名古屋城; Higashiyama Zoo and Botanical Gardens / 東山動植物園; Ghibli Park / ジブリパーク; Harayama Citizens' Park / 原山市民公園; Alps Viewpoint Sky Park / アルプス展望公園 スカイパーク; Hida Great Limestone Cave / 飛騨大鍾乳洞
-
-### ph-bohol — Bohol and Cebu (Philippines)
-Area covered: Bohol and Cebu (also known as / includes: bohol, chocolate hills, panglao, cebu, loboc, mactan)
-
-Now in the app: 22 places to eat, 22 things to do. Round 3 aims at 40 places to eat and 35 things to do.
-
-Already in the app — places to eat: Bohol Bee Farm Restaurant; Gerarda's Family Restaurant; Rio Verde Floating Restaurant; Giuseppe Pizzeria & Sicilian Roast; Payag Restaurant; Rico's Lechon; House of Lechon; Casa Verde; Cafe Laguna; Larsian sa Fuente; Sugbo Mercado; Jojie's Painitang Bol-anon; The Buzzz Cafe; Shaka Bohol; Abaca Baking Company; Bohol Bee Farm; Overgrown; Giuseppe; Sushihan; Bougainvillea; Bollywood; Tavolata by Abaca
-
-Already in the app — things to do: Chocolate Hills; Philippine Tarsier Sanctuary; Loboc River Cruise; Hinagdanan Cave; Bohol Python and Butterfly Sanctuary; Fort San Pedro; Tops Lookout; Cebu Safari and Adventure Park; Mag-Aso Falls; Dimiao Twin Falls; Bohol Bee Farm; Nova Shell Museum; Alona Beach; Island hopping to Balicasag and Virgin Island; National Museum of the Philippines, Bohol; Sagbayan Peak; Bohol Hanging Bridge; Balicasag Marine Sanctuary; Bohol Man-made Forest; Blood Compact Shrine; Bohol Beach Club; PlayMaze
+Already in the app — things to do: VinWonders Phu Quoc; Vinpearl Safari Phu Quoc; Hon Thom Cable Car / Cáp treo Hòn Thơm; Aquatopia Water Park; Grand World Phu Quoc; Teddy Bear Museum; Grand World Gondola Ride; Kiss of the Sea show / Nụ hôn của biển cả; Sunset Town; Sao Beach / Bãi Sao; Starfish Beach / Rạch Vẹm; Phu Quoc Night Market / Chợ đêm Phú Quốc; Duong Dong Market / Chợ Dương Đông; Phu Quoc pepper farms; Ho Quoc Pagoda / Thiền viện Trúc Lâm Hộ Quốc; Dinh Cau Shrine / Dinh Cậu; Ham Ninh fishing village / Làng chài Hàm Ninh; Cội Nguồn Museum / Bảo tàng Cội Nguồn; Ngọc Hiền Pearl Farm / Ngọc Hiền Pearl; Phú Quốc National Park / Vườn quốc gia Phú Quốc; Suối Tranh Waterfall / Khu du lịch Suối Tranh; Ông Lang Beach / Bãi Ông Lang; Bãi Dài Beach / Bãi Dài; Khem Beach / Bãi Khem

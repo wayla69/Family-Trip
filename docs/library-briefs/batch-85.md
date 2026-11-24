@@ -70,38 +70,38 @@ Aim for 8–15 places to eat and 8–15 things to do per town, if honest sources
 
 ## Towns for this task
 
-### gb-lakes — The Lake District (United Kingdom)
-Area covered: The Lake District (also known as / includes: lake district, windermere, ambleside, grasmere, keswick, bowness)
+### us-alaska — Alaska (United States)
+Area covered: Alaska (also known as / includes: alaska, anchorage, juneau, denali, fairbanks, seward)
 
-Now in the app: 21 places to eat, 27 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 18 places to eat, 22 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Zeffirellis; Dodds Restaurant; The Angel Inn; Hole in t' Wall; The Queen's Head; Tower Bank Arms; The Dog & Gun; The Black Bull Inn; The Old Keswickian; Wilf's Café; Tebay Services; The Grasmere Gingerbread Shop; The Apple Pie; Chesters by the River; Boardwalk Bar & Grill; Villa Positano; YHA Ambleside café; Cuckoo Brow Inn; The Kellbank; Boot Inn; Woolpack Inn
+Already in the app — places to eat: Moose's Tooth Pub & Pizzeria; Snow City Cafe; Glacier Brewhouse; Gwennie's Old Alaska Restaurant; Ray's Waterfront; Denali Park Salmon Bake; Mountain High Pizza Pie; The Hangar on the Wharf; The Cookie Jar; Pel'meni; Morino Grill; Wild Scoops; Talkeetna Roadhouse; The Bake Shop; Hot Licks Homemade Ice Cream; Simon & Seafort's Saloon & Grill; Golden Donuts; Dino's Donuts
 
-Already in the app — things to do: Lakes Aquarium; Windermere Lake Cruises; The World of Beatrix Potter; Windermere Jetty Museum; Brockhole on Windermere; Rheged Centre; Keswick Museum and Art Gallery; Whinlatter Forest; Ravenglass and Eskdale Railway; Lakeland Wildlife Oasis; Hill Top; Muncaster Castle, Gardens and Hawk and Owl Centre; Ullswater Steamers; Lakeland Motor Museum; Tarn Hows; Wray Castle; Lowther Castle and Gardens; Allan Bank; Lake District Wildlife Park; Alpacaly Ever After; Wastwater Alpaca Trekking; Steam Yacht Gondola; Lakeside and Haverthwaite Railway; Puzzling Place; Derwent Pencil Museum; Kong Adventure; Millerground
+Already in the app — things to do: Alaska SeaLife Center; Alaska Wildlife Conservation Center; Anchorage Museum; The Alaska Zoo; Alaska Native Heritage Center; Exit Glacier, Kenai Fjords National Park; Alyeska Aerial Tram; Denali sled dog demonstrations; University of Alaska Museum of the North; Mendenhall Glacier Visitor Center; Tony Knowles Coastal Trail; Pioneer Park; Santa Claus House; Reindeer Farm; Begich, Boggs Visitor Center at Portage Glacier; Anchorage Weekend Downtown Market; Alaska Aviation Museum; Alaska Museum of Science and Nature; Z.J. Loussac Library; Indian Valley Mine; Kincaid Park beach; Eklutna Lake
 
-### ge-tbilisi — Tbilisi and Kazbegi (Georgia)
-Area covered: Tbilisi and Kazbegi (also known as / includes: tbilisi, kazbegi, stepantsminda, gergeti, mtskheta, signagi)
+### us-seattle — Seattle (United States)
+Area covered: Seattle (also known as / includes: seattle, pike place, space needle, mount rainier, washington state)
 
-Now in the app: 21 places to eat, 27 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 20 places to eat, 20 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Shavi Lomi / შავი ლომი; Salobie Bia; Pasanauri; Machakhela; Zakhar Zakharich; Keto and Kote; Maspindzelo; Sofia Melnikova's Fantastic Douqan; Tsiskvili; Rooms Hotel Kazbegi; Dezerter Bazaar; Fabrika; Funicular Restaurant; Entrée; Luca Polare; Puri Guliani; Cafe Daphna; Lolita; Sakhachapure N1 (Galleria Tbilisi); Café Leila; Cafe Monastery (Dariali)
+Already in the app — places to eat: Ivar's Acres of Clams; The Crab Pot; Lowell's Restaurant; Serious Pie; Din Tai Fung; Elliott's Oyster House; Salty's on Alki Beach; Ray's Cafe; Pike Place Chowder; Beecher's Handmade Cheese; Dick's Drive-In; Seattle Center Armory; Piroshky Piroshky; Top Pot Doughnuts; Molly Moon's Homemade Ice Cream; Starbucks Reserve Roastery; Young's Restaurant; Outsider BBQ; Stoneburner; Paseo (SoDo)
 
-Already in the app — things to do: Tbilisi Zoo; Mtatsminda Park / მთაწმინდის პარკი; Rike Park–Narikala cable car; Dry Bridge Market; Open Air Museum of Ethnography; Tbilisi Sea; Georgian National Museum / საქართველოს ეროვნული მუზეუმი; National Botanical Garden of Georgia / საქართველოს ეროვნული ბოტანიკური ბაღი; Mushtaidi Garden and Children’s Railway / მუშთაიდის ბაღი; Mziuri Park / მზიური; Gabriadze Theatre clock tower / გაბრიაძის თეატრის კოშკი; Tbilisi History Museum; Tbilisi Auto Museum; Museum of Georgian Weaponry; Museum of Illusions Tbilisi; Experimentorium Science Museum; Gino Paradise Water Park; Vake Park; Turtle Lake; Gergeti Trinity Church; Leghvtakhevi waterfall; Bridge of Peace; Sioni Basilica; Giant stone heads of Sno; Zakagori Fortress; Dariali Monastery; Ioane Natlismcemeli monastery
+Already in the app — things to do: Woodland Park Zoo; Seattle Aquarium; Pacific Science Center; Seattle Children's Museum; Space Needle; MoPOP, Museum of Pop Culture; The Museum of Flight; Burke Museum of Natural History and Culture; Pike Place Market; Hiram M. Chittenden Locks (Ballard Locks); Chihuly Garden and Glass; Gas Works Park; Discovery Park; Seattle Central Library; Seattle Center Armory; Seattle Pinball Museum; Golden Gardens Park; Seattle Children's Theatre; Alki Beach; Wing Luke Museum
 
-### jp-nagano — Nagano and Matsumoto (Japan)
-Area covered: Nagano and Matsumoto (also known as / includes: nagano, matsumoto, kamikochi, togakushi, hakuba, azumino)
+### uz-samarkand — Samarkand, Bukhara and Khiva (Uzbekistan)
+Area covered: Samarkand, Bukhara and Khiva (also known as / includes: samarkand, samarqand, bukhara, khiva, itchan kala, urgench)
 
-Now in the app: 26 places to eat, 22 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 22 places to eat, 18 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Fujikian / 藤木庵; Kadono Daimaru / かどの大丸; Meijitei Nagano Station / 明治亭 長野駅ビルMIDORI店; Chikufudo Zenkoji Daimon / 竹風堂 善光寺大門店; Enza Cafe / 猿座カフェ; Kobayashi Soba / こばやし本店; Soba Takagi / そば処 たかぎ; Ogawa-no-Sho Oyaki Mura Daimon / 小川の庄 おやき村 大門店; Zenkoji Nakamise Street / 善光寺 仲見世通り; Nawate Street / 縄手通り; Heigoro Honten / 平五郎 本店; Yokomachi Cafe Yawataya Isogoro / 八幡屋礒五郎 横町カフェ; Coffee Marumo / 珈琲まるも; Masamura / マサムラ 本店; Gosenjaku Kitchen; Gyoza no Ohsho Alpico Plaza Matsumoto; CAFE SWEET Nawate Street; Korean BBQ Namsan Nagano Terminal East Entrance; Saizeriya; Sky Restaurant Hakuba; Keitei / 桂亭; Soba Asada / あさ田; Soba Club Sasaki; Kawasho; Temariya; Coffee Bigaku Abe
+Already in the app — places to eat: Platan; Samarkand Restaurant / Самарканд; Karimbek; Old City; Bibikhanum Teahouse / Bibikhanum; Lyabi Hauz Chaikhana / Lyabi Hauz; Old Bukhara; Minzifa; Chinar; Terrassa Cafe & Restaurant / Terrassa; Khorezm Art Restaurant / Khorezm Art; Siab Bazaar / Siyob bozori; Kolkhoz Bazaar (Central Market) / Markaziy dehqon bozori; Silk Road Tea House; Cafe Magistr / Magistr; Sangizar; Jasmin; The Mohon; Lalizar; Zargaron; Palmira; Zolotaya Bukhara
 
-Already in the app — things to do: Jigokudani Snow Monkey Park / 地獄谷野猿公苑; Matsumoto Castle / 松本城; Daio Wasabi Farm / 大王わさび農場; Alps Azumino National Government Park, Horigane and Hotaka area / 国営アルプスあづみの公園 堀金・穂高地区; Nagano Chausuyama Zoo / 茶臼山動物園; Togakushi Chibikko Ninja Village / 戸隠 チビッコ忍者村; Matsumoto City Alps Park / 松本市アルプス公園; Nawate-dori and Nakamachi streets / 縄手通り・中町通り; Nagano City Museum and Planetarium / 長野市立博物館; Matsumoto City Museum / 松本市立博物館; Japan Ukiyo-e Museum / 日本浮世絵博物館; Narai-juku post town / 奈良井宿; Matsumoto City Museum of Art / 松本市美術館; Ikenotaira Family Land / 白樺高原 池の平ファミリーランド; Nagano Prefectural Art Museum / 長野県立美術館; Nakamise-dori street / 仲見世通り; Forest Adventure Nagano; Shiga Fossil House; Ta Kagi; Japan Radio Museum; Ishii Miso Brewery; Zenkoji Temple / 善光寺
+Already in the app — things to do: Registan Square / Registon; Gur-e-Amir mausoleum / Gʻuri Amir; Bibi-Khanym Mosque ruins / Bibi-Xonim; Shah-i-Zinda monuments / Shohi Zinda; Ulugh Beg Observatory and museum / Ulugʻbek rasadxonasi; Afrasiyab Museum / Afrosiyob muzeyi; Siab Bazaar / Siyob bozori; Meros paper mill, Konigil / Meros qogʻoz fabrikasi; Silk Road Waterland; Bukhara Ark fortress / Ark qalʼasi; Sitorai Mokhi-Khosa palace / Sitorai Mohi Xosa; Bukhara old town and Lyab-i-Hauz / Labi Hovuz; Chor Minor; Khiva Itchan Kala old town / Ichan Qalʼa; Kunya-Ark watchtower, Khiva / Kunya Ark; Samanid Park / Samonids Recreation Park; Silk Road Samarkand musical fountain; The Eternal City / Boqiy Shahar
 
-### cl-santiago — Santiago and Valparaíso (Chile)
-Area covered: Santiago and Valparaíso (also known as / includes: santiago de chile, santiago, valparaiso, vina del mar, cajon del maipo, pomaire)
+### fr-lyon — Lyon (France)
+Area covered: Lyon (also known as / includes: lyon, vieux lyon, fourviere, tete d'or)
 
-Now in the app: 24 places to eat, 25 things to do. Round 3 aims at 40 places to eat and 35 things to do.
+Now in the app: 19 places to eat, 20 things to do. Round 3 aims at 40 places to eat and 35 things to do.
 
-Already in the app — places to eat: Donde Augusto; Galindo; Divertimento Chileno; Tiramisú; Las Vacas Gordas; Confitería Torres; Café Turri; Casino Social J. Cruz; Tierra de Fuego; La Vega Central; Dominó; Patio Bellavista; Emporio La Rosa; Café del Poeta; Gino Lautaro; La Argentina (Barrio Italia); Neko-San; DeCalle; Parigó; Dipsy’s Backyard; El Portal Exbahamondes; Café Estación; Oiso; Casa Regina
+Already in the app — places to eat: Brasserie Georges; Daniel et Denise Saint-Jean; Le Poêlon d'Or; Café Comptoir Abel; Brasserie Le Nord; Brasserie L'Est; Le Bouchon des Filles; Les Lyonnais; Les Halles de Lyon Paul Bocuse; Marché Saint-Antoine; Terre Adélice; Nardone; Bernachon; Pralus; Mama Shelter Lyon; Zucca; Yakapiocher; Bouillon Baratte; La Commune
 
-Already in the app — things to do: Zoológico Nacional (Metropolitan Park) / Zoológico Nacional; Museo Interactivo Mirador (MIM); Buin Zoo; Sky Costanera viewpoint; Teleférico and funicular, San Cristóbal hill / Teleférico y Funicular Santiago; National Museum of Natural History / Museo Nacional de Historia Natural; Santiago Railway Museum / Museo Ferroviario; Artequin art museum for children / Museo Artequin; Chilean Museum of Pre-Columbian Art / Museo Chileno de Arte Precolombino; Cerro Santa Lucía; Wonder Park Maipú; Quinta Normal park pool / Piscina del Parque Quinta Normal; Mercado Central; Parque Quinta Vergara; La Sebastiana (Neruda's house) / Museo La Sebastiana; Fantasilandia; Parque Araucano; Parque Bicentenario, Vitacura; KidZania Santiago; Biblioteca de Santiago; Ascensor Concepción; Ascensor Artillería; Paseo 21 de Mayo; National Maritime Museum / Museo Marítimo Nacional; Mercado Puerto
+Already in the app — things to do: Musée des Confluences; Aquarium de Lyon; Parc de la Tête d'Or and its free zoo; Fourvière funicular / Funiculaire F2; Gadagne museums and the puppet museum / Musées Gadagne; Lumière Museum / Musée Lumière; Halles de Lyon Paul Bocuse; Lugdunum museum and Roman theatres; Miniature and Cinema Museum / Musée Cinéma et Miniature; Théâtre Le Guignol de Lyon; Planétarium de Vaulx-en-Velin; Croix-Rousse food market; Grand Parc Miribel Jonage; The traboules of Vieux Lyon; Place Bellecour; Maison des Canuts; Soierie Vivante; Museum of Illusions Lyon; GAME IN Lyon; Natespa
