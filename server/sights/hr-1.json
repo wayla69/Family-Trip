@@ -689,6 +689,84 @@
           },
           "q": "Veliki slap, Plitvice Lakes National Park",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/best-things-to-do-in-zagreb-with-kids/",
+          "name": {
+            "th": "สวนมักซิมีร์",
+            "en": "Maksimir Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "มักซิมีร์ ซาเกร็บ",
+            "en": "Maksimirski perivoj, Maksimir, Zagreb"
+          },
+          "what": {
+            "th": "สวนใหญ่ของเมือง มีสวนสัตว์อยู่ในสวน",
+            "en": "A big city park with the zoo"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นสำหรับเด็กเล็ก และมุมสัมผัสสัตว์",
+            "en": "A playground for young children with a petting corner"
+          },
+          "q": "Park Maksimir, Maksimirski perivoj 1, Zagreb",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://slunj-rastoke.hr/en/slunj-rastoke-things-to-do/",
+          "name": {
+            "th": "โกตลัตส์ สลูญ",
+            "en": "Kotlac (Slunj)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางเดินป่าเยลวิก สลูญ",
+            "en": "Jelvik forest path, Slunj"
+          },
+          "what": {
+            "th": "แอ่งน้ำตื้นเล็กๆ ระหว่างน้ำตกเตี้ยๆ บนแม่น้ำโคราน่า",
+            "en": "Small shallow pools between little waterfalls on the Korana river"
+          },
+          "why": {
+            "th": "เป็นที่ที่เด็กส่วนใหญ่ในเมืองหัดว่ายน้ำ",
+            "en": "Where most of the town's children learn to swim"
+          },
+          "tip": {
+            "th": "หน้าร้อน",
+            "en": "Summer"
+          },
+          "q": "Kotlac, Slunj",
+          "ok": "2026-11"
         }
       ]
     }
