@@ -470,6 +470,154 @@
           "q": "廣興紙寮, Sun Moon Lake area, Nantou",
           "ok": "2026-11",
           "src": "https://www.1111.com.tw/news/jobns/165237"
+        },
+        {
+          "local": "豐年靈芝菇類生態農場",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/bunnyann702025/",
+          "name": {
+            "th": "ฟาร์มเห็ดเฟิงเหนียน",
+            "en": "Fongnian Mushroom Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "สุ่ยโถว ผู่หลี่ หนานโถว",
+            "en": "Shuitou, Puli, Nantou"
+          },
+          "what": {
+            "th": "ฟาร์มเห็ดที่ได้ดูเห็ดโตและเก็บเอง",
+            "en": "A mushroom farm where you watch mushrooms grow and pick them"
+          },
+          "why": {
+            "th": "เด็กได้เห็นว่าเห็ดหอมบนโต๊ะอาหารโตอย่างไร",
+            "en": "Children see how the shiitake on the table grows"
+          },
+          "q": "Fongnian mushroom farm, Shuitou, Puli, Nantou",
+          "ok": "2026-11"
+        },
+        {
+          "local": "水里蛇窯陶藝文化園區",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "บัตรเต็ม 150 ดอลลาร์ไต้หวัน",
+            "en": "NT$150 full ticket"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/travel/353662",
+          "name": {
+            "th": "เตาเผาซุ่ยหลี่สเนกคิลน์",
+            "en": "Shuili Snake Kiln"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ติ่งข่าน ซุ่ยหลี่ หนานโถว",
+            "en": "Dingkan, Shuili, Nantou"
+          },
+          "what": {
+            "th": "เตาเผาไม้ที่เก่าที่สุดของไต้หวัน (1927) ปัจจุบันเป็นสวนเครื่องปั้นดินเผาและพิพิธภัณฑ์",
+            "en": "Taiwan's oldest wood-fired kiln (1927), now a pottery park with a museum"
+          },
+          "why": {
+            "th": "เด็กได้ลองปั้นแป้นหมุนและทำชิ้นงานเอง",
+            "en": "Children try the potter's wheel and make their own piece"
+          },
+          "q": "Shuili Snake Kiln, Dingkan, Shuili, Nantou",
+          "ok": "2026-11"
+        },
+        {
+          "local": "新社百菇莊",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "คนละ 250 ดอลลาร์ไต้หวัน (กิจกรรม)",
+            "en": "NT$250 a person (DIY)"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200",
+          "name": {
+            "th": "ฟาร์มเห็ดซินเซอ",
+            "en": "Xinshe Mushroom Farm (Baigu Zhuang)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนเสียจง ซินเซอ ไถจง",
+            "en": "Xiezhong Street, Xinshe, Taichung"
+          },
+          "what": {
+            "th": "ฟาร์มเห็ดเดินชมฟรี มีกิจกรรมครอบครัววันหยุด",
+            "en": "A mushroom farm free to walk round, with weekend family DIY"
+          },
+          "why": {
+            "th": "เด็กเก็บเห็ดและไข่ แล้วนึ่งไข่ตุ๋นเห็ดเอง",
+            "en": "Children pick mushrooms and eggs and steam their own egg custard"
+          },
+          "q": "Xinshe Baigu Zhuang mushroom farm, Xiezhong Street, Taichung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "福田水資源回收中心兒童遊樂場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200",
+          "name": {
+            "th": "สนามเด็กเล่นศูนย์บำบัดน้ำฝูเถียน",
+            "en": "Futian Water Reclamation Centre Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เขตใต้ ไถจง",
+            "en": "South District, Taichung"
+          },
+          "what": {
+            "th": "สนามเด็กเล่น มีสไลเดอร์ เนินหญ้า และผนังปีน",
+            "en": "A playground with a slide, a grass slope and a climbing wall"
+          },
+          "why": {
+            "th": "สนามหญ้าใหญ่ให้วิ่ง และฟรี",
+            "en": "A big lawn to run on, and free"
+          },
+          "q": "Futian Water Reclamation Center Playground, South District, Taichung",
+          "ok": "2026-11"
         }
       ]
     },
