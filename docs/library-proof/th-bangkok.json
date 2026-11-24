@@ -60,6 +60,13 @@
       "src": "https://www.edarabia.com/?p=261102",
       "date": "2026-11",
       "map": "Google Maps 'Fantasia Lagoon', 275 ถ. เพชรเกษม, 962 reviews (search card, open)"
+    },
+    {
+      "name": "Ohkajhu (Siam Square One)",
+      "page_name": "โอ้กะจู๋ สาขาสยามสแควร์วัน",
+      "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/",
+      "date": "2025-07",
+      "map": "Google Maps 'Ohkajhu Siam Square One', 1,750 reviews, newest shown 3 days ago"
     }
   ],
   "left_out": [
@@ -74,7 +81,20 @@
     {
       "name": "Kalpapruek, Luk Kai Thong, On the Table",
       "why": "chains with several branches; the page names none"
+    },
+    {
+      "name": "กัลปพฤกษ์, สตีฟ คาเฟ่ แอนด์ ครุยซีน, ลูกไก่ทอง",
+      "why": "the page names no branch or district"
+    },
+    {
+      "name": "ตี๋โภชนา (ราชปรารภ)",
+      "why": "newest Google Maps review 7 months old"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from a Grab family-restaurant list (Jul 2025), all passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
