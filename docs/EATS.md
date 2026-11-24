@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Tainan & Kaohsiung** (docs/library-briefs batch-51): +1 (Tainan Lòng Story). Proof in `docs/library-proof/tw-south.json`.
+
+- **24 Nov 2026, Tainan & Kaohsiung** (docs/library-briefs batch-61, round 3): +4 (Casa e Casa, 8818 Pizza Yongkang, Sen Doufeng Café, Little Tree Picture-Book Café). Proof in `docs/library-proof/tw-south.json`.
