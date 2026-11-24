@@ -645,6 +645,154 @@
           },
           "q": "Yamnuska Wolfdog Sanctuary",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.jasper.travel/blog/family-vacation-jasper-national-park-kid-activities/",
+          "name": {
+            "th": "หุบเขาห้าทะเลสาบ",
+            "en": "Valley of the Five Lakes"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติแจสเปอร์ ห่างเมือง 10 นาที",
+            "en": "Jasper National Park, 10 minutes from Jasper"
+          },
+          "what": {
+            "th": "ทางเดินผ่านทะเลสาบเล็ก 5 แห่ง ข้ามสะพานพื้นที่ชุ่มน้ำ มีเส้นทางวงสั้นกว่า",
+            "en": "A walk past five small lakes over a wetland bridge, with a shorter loop"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นเส้นทางเดินที่ดีที่สุดเส้นหนึ่งสำหรับครอบครัว",
+            "en": "One of the best walks for families, the page says"
+          },
+          "q": "Valley of the Five Lakes Trailhead, Jasper",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.jasper.travel/blog/family-vacation-jasper-national-park-kid-activities/",
+          "name": {
+            "th": "คับซ์เพลย์คาเฟ่",
+            "en": "Cubz Play Café"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนคอนนอต แจสเปอร์",
+            "en": "Connaught Drive, Jasper"
+          },
+          "what": {
+            "th": "คาเฟ่ที่เด็กเล็กเล่นได้ขณะพ่อแม่ดื่มกาแฟ",
+            "en": "A play café where younger children play while parents have coffee"
+          },
+          "why": {
+            "th": "พื้นที่ต้อนรับเด็กเล็ก",
+            "en": "A welcoming space for younger children"
+          },
+          "q": "Cubz Play Café, 618 Connaught Dr, Jasper",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-hikes-with-kids/",
+          "name": {
+            "th": "เส้นทางเดินเฟนแลนด์",
+            "en": "Fenland Loop Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เฟนแลนด์ เมืองแบมฟ์",
+            "en": "Fenland, Town of Banff"
+          },
+          "what": {
+            "th": "ทางเดินวงรอบ 2.1 กม. ผ่านป่าและบึงในเมืองแบมฟ์",
+            "en": "A 2.1 km loop through forest and marsh in the town of Banff"
+          },
+          "why": {
+            "th": "เด็กๆ เดินนำทางเข้าป่าได้เอง",
+            "en": "Children lead the way through the forest"
+          },
+          "q": "Fenland Trailhead, Banff",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-hikes-with-kids/",
+          "name": {
+            "th": "เมืองร้างโลเวอร์แบงก์เฮด",
+            "en": "Lower Bankhead ghost town"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนชมวิวทะเลสาบมินนีวังกา แบมฟ์",
+            "en": "Lake Minnewanka Scenic Drive, Banff"
+          },
+          "what": {
+            "th": "ทางเดินง่ายผ่านซากเมืองร้างเก่า มีป้ายเล่าเรื่อง",
+            "en": "An easy loop past old ghost-town ruins with interpretive signs"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นทางเดินที่ดีที่สุดเส้นหนึ่งในแบมฟ์สำหรับเด็ก",
+            "en": "One of the best walks in Banff with children, the page says"
+          },
+          "q": "Lower Bankhead, Lake Minnewanka Scenic Dr, Banff",
+          "ok": "2026-11"
         }
       ]
     },
