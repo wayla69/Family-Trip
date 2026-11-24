@@ -1,0 +1,37 @@
+{
+  "town": "tr-istanbul",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 4 rows from Edarabia (Nov 2026) and Happy Moon's own blog (May 2026), all passed library-check.cjs, 3 went in",
+  "added": [
+    {
+      "name": "Happy Moon's (Vadi İstanbul)",
+      "page_name": "Happy Moon’s Vadi Istanbul",
+      "src": "https://www.happygroup.com.tr/en/blog/happy-moon-s-family-dining-experience-with-kid-friendly-locations",
+      "date": "2026-05",
+      "map": "Google Maps 'Happy Moon's Vadi İstanbul', 951 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Isfanbul (Vialand)",
+      "page_name": "Isfanbul",
+      "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'VIALAND Theme Park' (Isfanbul's former name, Eyüpsultan), 54,182 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Nostalgic Tram (İstiklal Avenue)",
+      "page_name": "The Nostalgic Tram",
+      "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Istiklal Caddesi Tram', 344 reviews, newest shown 2 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Legoland Discovery Centre (Forum Istanbul)",
+      "why": "permanently closed on the map, though the Nov 2026 page lists it"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
