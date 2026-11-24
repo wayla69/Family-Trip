@@ -1012,6 +1012,117 @@
           "q": "新元昌紅茶產業文化館, Yongan Road, Luye, Taitung",
           "ok": "2026-11",
           "src": "https://bunnyann.tw/taitung-family/"
+        },
+        {
+          "local": "花蓮農好基地",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "name": {
+            "th": "ฐานทัพหนงห่าว ฮัวเหลียน",
+            "en": "Hualien Nonghao Base"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหัวซี เมืองฮัวเหลียน",
+            "en": "Huaxi Road, Hualien City"
+          },
+          "what": {
+            "th": "ค่ายทหารเก่าที่กลายเป็นสวน ข้างอุโมงค์เก่า",
+            "en": "Former army barracks turned into a garden park beside old tunnels"
+          },
+          "why": {
+            "th": "เด็กได้แต่งชุดทหารในคลังกระสุนเก่า",
+            "en": "Children dress up in uniforms in the old ammunition store"
+          },
+          "q": "Hualien Nonghao Base, Huaxi Road, Hualien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "立川漁場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "name": {
+            "th": "ฟาร์มปลาลี่ชวน",
+            "en": "Li Chuan Aquafarm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ยวี่ฉือ โซ่วเฟิง",
+            "en": "Yuchi, Shoufeng"
+          },
+          "what": {
+            "th": "ฟาร์มปลาที่ลงน้ำไปขุดหอยทองได้",
+            "en": "A fish farm where you wade in to dig for golden clams"
+          },
+          "why": {
+            "th": "ขุดหอยในน้ำ แล้วเอาไปผัดกิน",
+            "en": "Dig clams in the water, then eat them stir-fried"
+          },
+          "q": "Li Chuan Aquafarm, Yuchi, Shoufeng, Hualien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大石鼻山步道",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "name": {
+            "th": "ทางเดินเขาต้าสือปี๋",
+            "en": "Dashibi Mountain Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "จีฉี เฟิงปิน",
+            "en": "Jiqi, Fengbin"
+          },
+          "what": {
+            "th": "ทางเดินบนแหลมริมทะเล ชมวิวชายฝั่ง",
+            "en": "A coastal trail on a headland with views along the coast"
+          },
+          "why": {
+            "th": "วิวทะเลรอบ 360 องศา",
+            "en": "A 360-degree view of the sea"
+          },
+          "q": "Dashibi Mountain Trail, Jiqi, Fengbin, Hualien",
+          "ok": "2026-11"
         }
       ]
     },
