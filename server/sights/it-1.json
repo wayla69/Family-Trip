@@ -983,6 +983,43 @@
           },
           "q": "Vernazza Beach, Vernazza",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-cinque-terre/",
+          "name": {
+            "th": "สนามเด็กเล่นจัตุรัสการิบัลดี",
+            "en": "Piazza Garibaldi playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จัตุรัสการิบัลดี มอนเตรอสโซ",
+            "en": "Piazza Garibaldi, Monterosso al Mare"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นใหม่ มีรั้วล้อม ริมทะเล",
+            "en": "A new, fenced playground by the sea"
+          },
+          "why": {
+            "th": "เป็นที่พักให้เด็กเล็กได้เล่น",
+            "en": "A playground break for small children"
+          },
+          "q": "Piazza Giuseppe Garibaldi, Monterosso al Mare",
+          "ok": "2026-11"
         }
       ]
     },

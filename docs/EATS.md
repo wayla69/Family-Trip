@@ -529,3 +529,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+- **24 Nov 2026, the Cinque Terre** (docs/library-briefs batch-100, round 3): +2 in Levanto (La Picea, Da Tapulin). Proof in `docs/library-proof/it-cinqueterre.json`.
