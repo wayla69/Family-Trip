@@ -873,6 +873,121 @@
           },
           "q": "Refugio Frey, Cerro Catedral, Bariloche",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/el-calafate-with-kids/",
+          "name": {
+            "th": "เขตอนุรักษ์ลากูนานีเมซ",
+            "en": "Laguna Nimez Reserve"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนริมทะเลสาบ ลาโกอาร์เจนติโน เอลกาลาฟาเต",
+            "en": "Costanera, by Lago Argentino, El Calafate"
+          },
+          "what": {
+            "th": "เขตอนุรักษ์ธรรมชาติเล็กๆ ริมทะเลสาบ เดินราวชั่วโมงกว่า มีนกฟลามิงโก",
+            "en": "A small nature reserve by the lake with a walk of just over an hour; flamingos can be seen"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นใหญ่ เด็กอายุไม่เกิน 11 ปีเข้าฟรี",
+            "en": "A large playground for children; free for children up to 11"
+          },
+          "q": "Reserva Laguna Nimez, Av. Costanera, El Calafate",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ $45,000 (ค่าเข้าฤดูหนาว รวมกระเช้า)",
+            "en": "≈ $45,000 (winter entry with chairlift)"
+          },
+          "book": "none",
+          "src": "https://www.rionegro.com.ar/voy-turismo/que-hacer-en-bariloche-con-ninos-la-nieve-mas-divertida-4657204/?amp=1",
+          "name": {
+            "th": "ปิเอดรัสบลังกัส เขาเซร์โรออตโต",
+            "en": "Piedras Blancas (Cerro Otto)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทางขึ้นเซร์โรออตโต บาริโลเช",
+            "en": "Cerro Otto access, Bariloche"
+          },
+          "what": {
+            "th": "สวนหิมะบนเนินเซร์โรออตโตในฤดูหนาว มีลานเลื่อนหิมะ",
+            "en": "A snow park on the slopes of Cerro Otto in winter, with sled runs"
+          },
+          "why": {
+            "th": "การเลื่อนหิมะคือไฮไลต์ มีลานเลื่อนสำหรับเด็ก",
+            "en": "Sleds are the big attraction, with a children's sled track"
+          },
+          "tip": {
+            "th": "เฉพาะฤดูหิมะ เปิดทุกวัน 10:00–17:30",
+            "en": "Winter snow season only; open daily 10:00–17:30"
+          },
+          "q": "Piedras Blancas, Cerro Otto, San Carlos de Bariloche",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ $20,000 ต่อคน",
+            "en": "≈ $20,000 per person"
+          },
+          "book": "none",
+          "src": "https://www.rionegro.com.ar/voy-turismo/que-hacer-en-bariloche-con-ninos-la-nieve-mas-divertida-4657204/?amp=1",
+          "name": {
+            "th": "สไลเดอร์เขาเซร์โรเบียโฮ",
+            "en": "Cerro Viejo slide (Tobogán)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเอเซเกียลบุสติโย บาริโลเช",
+            "en": "Av. Ezequiel Bustillo 800, Bariloche"
+          },
+          "what": {
+            "th": "สไลเดอร์ไถลลงเขาหลังขึ้นไปด้านบน",
+            "en": "A slide ride down the hill after going up"
+          },
+          "why": {
+            "th": "ตั๋วมักรวมการขึ้นไปและการลงหนึ่งรอบ ทางสไลเดอร์หรือกระเช้า",
+            "en": "The ticket usually includes the ride up and one go down the slide or the chairlift"
+          },
+          "q": "Cerro Viejo, Av. Ezequiel Bustillo 800, Bariloche",
+          "ok": "2026-11"
         }
       ]
     }
