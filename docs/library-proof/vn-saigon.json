@@ -11,6 +11,27 @@
       "src": "https://www.edarabia.com/things-to-do-ho-chi-minh-city-with-kids/",
       "date": "2026-11",
       "map": "Google Maps 'The Golden Dragon Water Puppet Theater', 2,318 reviews, newest shown 'last week'"
+    },
+    {
+      "name": "Kiwooza Planet (Thiso Mall Sala)",
+      "page_name": "Kiwooza Planet Thiso Mall Sala",
+      "src": "https://www.vietnamdoneright.com/best-indoor-playgrounds-ho-chi-minh-city/",
+      "date": "2026-05",
+      "map": "Google Maps 'Kiwooza Planet Thiso Mall Sala' (10 Mai Chí Thọ), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Jump Arena Cần Thơ (Sense City)",
+      "page_name": "Jump Arena",
+      "src": "https://haisanloccantho.com/top-8-khu-vui-choi-tre-em-tai-can-tho/",
+      "date": "2025-02",
+      "map": "Google Maps 'Jump Arena Cần Thơ' (Sense City), newest review shown 3 months ago"
+    },
+    {
+      "name": "tiNiWorld (Lotte Mart Cần Thơ)",
+      "page_name": "TiNiWorld",
+      "src": "https://haisanloccantho.com/top-8-khu-vui-choi-tre-em-tai-can-tho/",
+      "date": "2025-02",
+      "map": "Google Maps 'tiNiWorld Lotte Mart Cần Thơ' (84 Mậu Thân), newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -29,7 +50,20 @@
     {
       "name": "Snow Town Saigon",
       "why": "no readable page date (library-check.cjs)"
+    },
+    {
+      "name": "Puka Coffee & Tea",
+      "why": "the map gives number 1200, the page 120"
+    },
+    {
+      "name": "Playtime, Kid's Home, Funny Land",
+      "why": "not matched on the map"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Vietnam Done Right (May 2026) and Hải Sản Lộc Cần Thơ (Feb 2025), all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
