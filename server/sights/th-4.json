@@ -1648,6 +1648,158 @@
           "q": "Nong Phak Chi Observation Tower, Khao Yai National Park, Pak Chong",
           "ok": "2026-11",
           "src": "https://khaoyainationalpark.com/en/plan-your-visit/place-to-go"
+        },
+        {
+          "local": "น้ำตกเหวนรก",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+          "name": {
+            "th": "น้ำตกเหวนรก",
+            "en": "Haew Narok Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติเขาใหญ่",
+            "en": "Khao Yai National Park"
+          },
+          "what": {
+            "th": "น้ำตกที่ใหญ่และสูงที่สุดในเขาใหญ่ สูงราว 150 เมตร",
+            "en": "Khao Yai's biggest and tallest waterfall, about 150 m high"
+          },
+          "why": {
+            "th": "วิวตระการตาและเสียงน้ำดังกึกก้อง",
+            "en": "A dramatic view and a roaring fall"
+          },
+          "tip": {
+            "th": "ทางเดินชัน",
+            "en": "The path is steep"
+          },
+          "q": "Haew Narok Waterfall, Khao Yai National Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ 150 บาท",
+            "en": "About ฿150"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+          "name": {
+            "th": "เขาใหญ่ฟาร์มวิลเลจ",
+            "en": "Khao Yai Farm Village"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ขนงพระ ปากช่อง",
+            "en": "Khanong Phra, Pak Chong"
+          },
+          "what": {
+            "th": "ฟาร์มและคาเฟ่ มีให้อาหารสัตว์และเวิร์กช็อปศิลปะ",
+            "en": "A farm and café with animal feeding and art workshops"
+          },
+          "why": {
+            "th": "เหมาะกับครอบครัวที่อยากให้เด็กได้ใกล้ชิดสัตว์",
+            "en": "Made for families who want their children to meet animals"
+          },
+          "q": "Khao Yai Farm Village, Khanong Phra, Pak Chong",
+          "ok": "2026-11"
+        },
+        {
+          "local": "สตาร์ดอยฟาร์ม เขาใหญ่",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ 120 บาท",
+            "en": "About ฿120"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+          "name": {
+            "th": "สตาร์ดอยฟาร์ม เขาใหญ่",
+            "en": "Star Doi Farm (Khao Yai)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "หมูสี ปากช่อง",
+            "en": "Mu Si, Pak Chong"
+          },
+          "what": {
+            "th": "คาเฟ่ฟาร์มแกะ ได้ป้อนอาหารแกะขนฟู",
+            "en": "A sheep-farm café where you hand-feed fluffy sheep"
+          },
+          "why": {
+            "th": "ถ่ายรูปกับแกะขนฟู",
+            "en": "Photos with fluffy sheep"
+          },
+          "q": "Star Doi Farm, Mu Si, Pak Chong",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ประมาณ 150 บาท",
+            "en": "About ฿150 for adults"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+          "name": {
+            "th": "โบนันซ่า เอ็กโซติก ซู",
+            "en": "Bonanza Exotic Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ขนงพระ ปากช่อง",
+            "en": "Khanong Phra, Pak Chong"
+          },
+          "what": {
+            "th": "สวนสัตว์หายาก มียีราฟ ม้าแคระ คาปิบารา และนกฟลามิงโก",
+            "en": "A zoo of rare animals: giraffes, miniature horses, capybaras and flamingos"
+          },
+          "why": {
+            "th": "เหมาะกับครอบครัวที่มีเด็ก",
+            "en": "Made for families with children"
+          },
+          "q": "Bonanza Exotic Zoo, Khanong Phra, Pak Chong",
+          "ok": "2026-11"
         }
       ]
     },
