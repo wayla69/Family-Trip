@@ -374,6 +374,117 @@
           },
           "q": "Moldavite Museum, Panská 19, Český Krumlov",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "name": {
+            "th": "บ้านผีเสื้อไดอานา",
+            "en": "Butterfly House Diana"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เนินไดอานา คาร์โลวีวารี",
+            "en": "Diana hill, Karlovy Vary"
+          },
+          "what": {
+            "th": "บ้านผีเสื้อเขตร้อน มีผีเสื้อจากทั่วโลกหลายร้อยตัว",
+            "en": "A tropical butterfly house with hundreds of butterflies from around the world"
+          },
+          "why": {
+            "th": "มีผีเสื้อสีสวยหลายร้อยตัว บางตัวมาจากไทย",
+            "en": "Hundreds of colourful butterflies, some from Thailand"
+          },
+          "q": "Butterfly House Diana, Vrch přátelství, Karlovy Vary",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "name": {
+            "th": "สนามเด็กเล่นไดอานา",
+            "en": "Diana playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เนินไดอานา ข้างบ้านผีเสื้อ คาร์โลวีวารี",
+            "en": "Diana hill, by the Butterfly House, Karlovy Vary"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นบนเนินไดอานา ขึ้นด้วยรถรางไต่เขาหรือเดินทางป่า",
+            "en": "A playground on Diana hill, reached by funicular or forest paths"
+          },
+          "why": {
+            "th": "บ้านผีเสื้ออยู่ติดกัน",
+            "en": "The Butterfly House is right next to it"
+          },
+          "q": "Playground Diana, Vrch přátelství, Karlovy Vary",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "name": {
+            "th": "สวนเด็ก สวาโตชกี",
+            "en": "Children's Paradise (Svatošky)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "หุบเขาโอฮร์เชอ ข้างผาสวาโตชกี ใกล้ลอเก็ต",
+            "en": "Ohře valley by the Svatošské Rocks, near Loket"
+          },
+          "what": {
+            "th": "ลานครอบครัวกลางธรรมชาติในหุบเขาโอฮร์เชอ ข้างผาสวาโตชกี",
+            "en": "A natural family area in the Ohře valley beside the Svatošské Rocks"
+          },
+          "why": {
+            "th": "ออกแบบสำหรับครอบครัว กลมกลืนกับธรรมชาติ",
+            "en": "Made for families, in harmony with nature"
+          },
+          "q": "Přírodní areál Dětský ráj, Údolí 99, Loket",
+          "ok": "2026-11"
         }
       ]
     },
