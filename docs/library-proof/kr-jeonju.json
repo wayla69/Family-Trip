@@ -1,19 +1,23 @@
 {
   "town": "kr-jeonju",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 27 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 12 rows from mom-mom.net (2026), all passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "name": "Gyodong Dawon",
-      "src": "https://www.google.com/maps/place/Gyodong+Tea+Garden",
-      "page_name": "Gyodong Tea Garden / 교동다원",
-      "evidence": "Google Maps (2026-11-23): traditional tea house, 4.6★, 65-5 Eunhaeng-ro, Wansan-gu, Jeonju-si (R573+M6); 'Open · Closes 7 PM'; nothing says closed",
-      "ok": "2026-11"
+      "name": "Butter Book (Jeonju)",
+      "page_name": "Butter Book Jeonju Branch",
+      "src": "https://mom-mom.net/en/travel/places/6970a6b4615e636493cc46a7",
+      "date": "2026-05",
+      "map": "Google Maps '버터북 전주점', 6 reviews, newest shown 6 months ago"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Ibadom Gamjatang, Hyundaiok (two branches), Pa, five kids cafés and the Innovation City Cultural Center",
+      "why": "no review from the last six months on Google Maps, or not found there"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
