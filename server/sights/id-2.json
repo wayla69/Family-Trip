@@ -1068,6 +1068,207 @@
           "io": "both",
           "q": "Oddish Family Hub, Yogyakarta",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "สนามเด็กเล่นกลางแจ้งดรีมแลนด์ยอกยา",
+            "en": "Dreamland Jogja outdoor playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เกลโดกัน จาตุรตุงกัล สเลมัน",
+            "en": "Kledokan, Caturtunggal, Sleman"
+          },
+          "what": {
+            "th": "สวนเล่นกลางแจ้งเข้าฟรี มีปราสาท ชิงช้า สไลเดอร์ ผนังปีน และสนามหญ้า",
+            "en": "A free outdoor play park with a castle, swings, slides, a climbing wall and a lawn"
+          },
+          "why": {
+            "th": "มีปราสาทให้เล่นและสนามหญ้าใหญ่ให้ปิกนิก",
+            "en": "A castle to play in and a big lawn for a picnic"
+          },
+          "tip": {
+            "th": "เปิด 08:00–17:00",
+            "en": "Open 08:00–17:00"
+          },
+          "q": "Dreamland Jogja Outdoor Playground, Caturtunggal, Sleman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Taman Bermain Gajah Wong",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "สนามเด็กเล่นกาจาห์วง",
+            "en": "Gajah Wong playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซิโดบาลี มูจามูจู อุมบุลฮาร์โจ",
+            "en": "Jl. Sidobali, Muja Muju, Umbulharjo"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางเมืองเข้าฟรี มีชิงช้า สไลเดอร์ กระดานหก และลานจราจรจำลอง",
+            "en": "A free city playground with swings, slides, see-saws and a small traffic park"
+          },
+          "why": {
+            "th": "ลานจราจรจำลองสอนเรื่องป้ายจราจร",
+            "en": "A mini traffic park that teaches road signs"
+          },
+          "q": "Taman Bermain Gajah Wong, Jl. Sidobali, Umbulharjo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 30,000 รูเปียห์",
+            "en": "≈ IDR 30,000"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "เดอะลอสต์เวิลด์คาสเซิล",
+            "en": "The Lost World Castle"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเปตุงเมราปี จังกริงงัน สเลมัน",
+            "en": "Jl. Petung Merapi, Cangkringan, Sleman"
+          },
+          "what": {
+            "th": "ปราสาทพร้อมแบบจำลองแลนด์มาร์กโลก โรงหนัง 9D และเครื่องเล่น",
+            "en": "A castle with replicas of world landmarks, a 9D cinema and rides"
+          },
+          "why": {
+            "th": "ปราสาทให้สำรวจท่ามกลางแบบจำลองโคลอสเซียมและกำแพงเมืองจีน",
+            "en": "A castle to explore among copies of the Colosseum and the Great Wall"
+          },
+          "tip": {
+            "th": "เปิด 07:00–18:00",
+            "en": "Open 07:00–18:00"
+          },
+          "q": "The Lost World Castle, Jl. Petung Merapi, Cangkringan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Studio Alam Gamplong",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "สตูดิโอถ่ายหนังกัมปลง",
+            "en": "Gamplong film studio"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ซุมเบอร์ราฮายู โมยูดัน สเลมัน",
+            "en": "Sumberrahayu, Moyudan, Sleman"
+          },
+          "what": {
+            "th": "ฉากถ่ายหนังกลางแจ้งเดิมที่เปิดให้เข้าชม มีมุมสำรวจและถ่ายรูป",
+            "en": "A former outdoor film set open to visitors, with spots to explore and photograph"
+          },
+          "why": {
+            "th": "ฉากกลางแจ้งกว้างให้เดินสำรวจ",
+            "en": "A wide outdoor set to explore"
+          },
+          "tip": {
+            "th": "เปิด 09:00–17:00",
+            "en": "Open 09:00–17:00"
+          },
+          "q": "Gamplong Studio Alam, Jl. Gamplong No.1, Moyudan, Sleman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 25,000–45,000 รูเปียห์",
+            "en": "≈ IDR 25,000–45,000"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "พิพิธภัณฑ์และโรงงานช็อกโกแลตม็องโก",
+            "en": "Cokelat Monggo chocolate museum and factory"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนตูกูเกนตง บางุนจีโว บันตุล",
+            "en": "Jl. Tugu Gentong, Bangunjiwo, Bantul"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์และโรงงานช็อกโกแลต เด็กๆ ได้ดูการทำช็อกโกแลต",
+            "en": "A chocolate museum and factory where children watch chocolate being made"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ทำช็อกโกแลตของตัวเองกลับบ้าน",
+            "en": "Children make their own chocolate to take home"
+          },
+          "tip": {
+            "th": "เปิด 09:00–17:00",
+            "en": "Open 09:00–17:00"
+          },
+          "q": "Chocolate Monggo Museum, Jl. Tugu Gentong, Bangunjiwo, Bantul",
+          "ok": "2026-11"
         }
       ]
     }

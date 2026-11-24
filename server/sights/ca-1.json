@@ -645,6 +645,154 @@
           },
           "q": "Yamnuska Wolfdog Sanctuary",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.jasper.travel/blog/family-vacation-jasper-national-park-kid-activities/",
+          "name": {
+            "th": "หุบเขาห้าทะเลสาบ",
+            "en": "Valley of the Five Lakes"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติแจสเปอร์ ห่างเมือง 10 นาที",
+            "en": "Jasper National Park, 10 minutes from Jasper"
+          },
+          "what": {
+            "th": "ทางเดินผ่านทะเลสาบเล็ก 5 แห่ง ข้ามสะพานพื้นที่ชุ่มน้ำ มีเส้นทางวงสั้นกว่า",
+            "en": "A walk past five small lakes over a wetland bridge, with a shorter loop"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นเส้นทางเดินที่ดีที่สุดเส้นหนึ่งสำหรับครอบครัว",
+            "en": "One of the best walks for families, the page says"
+          },
+          "q": "Valley of the Five Lakes Trailhead, Jasper",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.jasper.travel/blog/family-vacation-jasper-national-park-kid-activities/",
+          "name": {
+            "th": "คับซ์เพลย์คาเฟ่",
+            "en": "Cubz Play Café"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนคอนนอต แจสเปอร์",
+            "en": "Connaught Drive, Jasper"
+          },
+          "what": {
+            "th": "คาเฟ่ที่เด็กเล็กเล่นได้ขณะพ่อแม่ดื่มกาแฟ",
+            "en": "A play café where younger children play while parents have coffee"
+          },
+          "why": {
+            "th": "พื้นที่ต้อนรับเด็กเล็ก",
+            "en": "A welcoming space for younger children"
+          },
+          "q": "Cubz Play Café, 618 Connaught Dr, Jasper",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-hikes-with-kids/",
+          "name": {
+            "th": "เส้นทางเดินเฟนแลนด์",
+            "en": "Fenland Loop Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เฟนแลนด์ เมืองแบมฟ์",
+            "en": "Fenland, Town of Banff"
+          },
+          "what": {
+            "th": "ทางเดินวงรอบ 2.1 กม. ผ่านป่าและบึงในเมืองแบมฟ์",
+            "en": "A 2.1 km loop through forest and marsh in the town of Banff"
+          },
+          "why": {
+            "th": "เด็กๆ เดินนำทางเข้าป่าได้เอง",
+            "en": "Children lead the way through the forest"
+          },
+          "q": "Fenland Trailhead, Banff",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-hikes-with-kids/",
+          "name": {
+            "th": "เมืองร้างโลเวอร์แบงก์เฮด",
+            "en": "Lower Bankhead ghost town"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนชมวิวทะเลสาบมินนีวังกา แบมฟ์",
+            "en": "Lake Minnewanka Scenic Drive, Banff"
+          },
+          "what": {
+            "th": "ทางเดินง่ายผ่านซากเมืองร้างเก่า มีป้ายเล่าเรื่อง",
+            "en": "An easy loop past old ghost-town ruins with interpretive signs"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นทางเดินที่ดีที่สุดเส้นหนึ่งในแบมฟ์สำหรับเด็ก",
+            "en": "One of the best walks in Banff with children, the page says"
+          },
+          "q": "Lower Bankhead, Lake Minnewanka Scenic Dr, Banff",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1110,6 +1258,195 @@
             "en": "Pram-friendly paths and bridges over the creek"
           },
           "q": "Edwards Gardens, 777 Lawrence Ave E, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ontariosciencecentre.ca/whats-on/kidspark/",
+          "name": {
+            "th": "คิดสปาร์ก ศูนย์วิทยาศาสตร์ออนแทรีโอ",
+            "en": "KidSpark (Ontario Science Centre)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วิทยาศาสตร์ออนแทรีโอ ถนนควีนส์คีย์ตะวันตก โทรอนโต",
+            "en": "Ontario Science Centre, Queens Quay West, Toronto"
+          },
+          "what": {
+            "th": "โซนเล่นวิทยาศาสตร์แบบลงมือทำ มี 3 โซนสำหรับเด็ก",
+            "en": "A hands-on science play area with three themed areas for children"
+          },
+          "why": {
+            "th": "เล่นอิสระ ไม่มีกติกา",
+            "en": "Open-ended play with no instructions"
+          },
+          "q": "Ontario Science Centre, 235 Queens Quay W, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.toronto.ca/news/city-of-toronto-celebrates-the-reopening-of-kidstown-water-park/",
+          "name": {
+            "th": "สวนน้ำคิดส์ทาวน์ ลามอโร",
+            "en": "L'Amoreaux Kidstown Water Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเบิร์ชเมานต์ สการ์โบโร โทรอนโต",
+            "en": "Birchmount Road, Scarborough, Toronto"
+          },
+          "what": {
+            "th": "สวนน้ำกลางแจ้งของเมือง มีลานเล่นน้ำ สระตื้น และสระว่ายน้ำ เปิดใหม่มิถุนายน 2026",
+            "en": "A city-owned outdoor water park with splash pads, a wading pool and a pool, reopened June 2026"
+          },
+          "why": {
+            "th": "ลานเล่นน้ำกว้างสำหรับเด็กเล็ก",
+            "en": "Big splash pads for small children"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าร้อน",
+            "en": "Summer only"
+          },
+          "q": "Kidstown Water Park, 3159 Birchmount Rd, Scarborough",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.niagarafallstourism.com/family-fun",
+          "name": {
+            "th": "ซาฟารีไนแอการา",
+            "en": "Safari Niagara"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สตีเวนส์วิลล์ ฟอร์ตอีรี ไนแอการา",
+            "en": "Stevensville, Fort Erie, Niagara"
+          },
+          "what": {
+            "th": "สวนซาฟารีที่มีสัตว์พื้นเมืองและสัตว์ต่างถิ่นกว่า 1,000 ตัว",
+            "en": "A safari park with more than 1,000 native and exotic animals"
+          },
+          "why": {
+            "th": "มีสัตว์ให้เด็กดูมากมาย",
+            "en": "Lots of animals for children to see"
+          },
+          "q": "Safari Niagara, 2821 Stevensville Rd, Fort Erie",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.niagarafallstourism.com/family-fun",
+          "name": {
+            "th": "สวนพฤกษศาสตร์ไนแอการาพาร์กส์",
+            "en": "Niagara Parks Botanical Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเลียบแม่น้ำไนแอการา น้ำตกไนแอการา ไนแอการา",
+            "en": "Niagara River Parkway, Niagara Falls, Niagara"
+          },
+          "what": {
+            "th": "สวนดอกไม้และพืชพรรณ มีสนามหญ้ากว้างให้ปิกนิก",
+            "en": "Gardens of flowers and plants with wide lawns for a picnic"
+          },
+          "why": {
+            "th": "พื้นที่กว้างให้เด็กวิ่งเล่น",
+            "en": "Wide open space for children to run"
+          },
+          "q": "Niagara Parks Botanical Gardens, Niagara River Pkwy, Niagara Falls",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.niagarafallstourism.com/family-fun",
+          "name": {
+            "th": "มินิกอล์ฟไดโนเสาร์",
+            "en": "Dinosaur Adventure Golf"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คลิฟตันฮิลล์ น้ำตกไนแอการา ไนแอการา",
+            "en": "Clifton Hill, Niagara Falls, Niagara"
+          },
+          "what": {
+            "th": "มินิกอล์ฟ 2 สนาม สนามละ 18 หลุม ท่ามกลางไดโนเสาร์ขนาดเท่าจริง 50 ตัว",
+            "en": "Two 18-hole mini golf courses among 50 life-sized dinosaurs"
+          },
+          "why": {
+            "th": "โลกยุคไดโนเสาร์สำหรับเด็ก",
+            "en": "A prehistoric world for children"
+          },
+          "q": "Dinosaur Adventure Golf, 4952 Clifton Hill, Niagara Falls",
           "ok": "2026-11"
         }
       ]
@@ -1789,6 +2126,43 @@
             "en": "Check the tide table and keep the children in sight"
           },
           "q": "Spanish Banks Beach, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.destinationvancouver.com/inspirations/family-and-kids/kidtropolis",
+          "name": {
+            "th": "เดอะเวิลด์ออฟคิดโทรโพลิส",
+            "en": "The World of Kidtropolis"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนนัมเบอร์ทู ริชมอนด์",
+            "en": "No. 2 Road, Richmond"
+          },
+          "what": {
+            "th": "เมืองจำลองสำหรับเด็กขนาด 17,000 ตร.ฟุต มีอุปกรณ์และชุดจริง",
+            "en": "A 17,000 sq ft miniature city for children with real props and costumes"
+          },
+          "why": {
+            "th": "เล่นบทบาทสมมติในเมืองเล็กที่สร้างเพื่อเด็ก",
+            "en": "Pretend play in a little city made for children"
+          },
+          "q": "The World of Kidtropolis, 5940 No 2 Rd, Richmond",
           "ok": "2026-11"
         }
       ]

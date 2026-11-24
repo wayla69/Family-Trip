@@ -644,6 +644,43 @@
           },
           "q": "Ioane Natlismcemeli, Stepantsminda",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://georgia.travel/family-attractions/gldani-park",
+          "name": {
+            "th": "สวนกลดานี",
+            "en": "Gldani Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนคีซานิชวิลี กลดานี ทบิลิซี",
+            "en": "Khizanishvili Street, Gldani, Tbilisi"
+          },
+          "what": {
+            "th": "สวนขนาด 13,000 ตร.ม. มีทางเดิน ลานสเก็ต และผนังปีน",
+            "en": "A 13,000 m² park with trails, a skate park and climbing walls"
+          },
+          "why": {
+            "th": "ออกแบบมาเพื่อเด็กและวัยรุ่นโดยเฉพาะ",
+            "en": "Made especially for children and teenagers"
+          },
+          "q": "Gldani Park, Omar Khizanishvili St, Tbilisi",
+          "ok": "2026-11"
         }
       ]
     }

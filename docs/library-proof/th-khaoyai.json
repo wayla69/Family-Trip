@@ -1,0 +1,55 @@
+{
+  "town": "th-khaoyai",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 8 rows from Grab (2026), Bangkok Biz News (Aug 2026) and KTC (Jan 2026), 7 passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "Krua Baan Rao Eng (Khao Yai)",
+      "page_name": "ครัวบ้านเราเอง เขาใหญ่",
+      "src": "https://www.bangkokbiznews.com/lifestyle/food/1247455",
+      "date": "2026-08",
+      "map": "Google Maps 'ครัวบ้านเราเอง เขาใหญ่', 767 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Haew Narok Waterfall",
+      "page_name": "น้ำตกเหวนรก",
+      "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+      "date": "2026-06",
+      "map": "Google Maps 'น้ำตกเหวนรก', 2,954 reviews, newest shown 6 days ago"
+    },
+    {
+      "name": "Khao Yai Farm Village",
+      "page_name": "Khao Yai Farm Village",
+      "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+      "date": "2026-06",
+      "map": "Google Maps 'Khao Yai Farm Village', 941 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Star Doi Farm (Khao Yai)",
+      "page_name": "สตาร์ดอยฟาร์ม เขาใหญ่",
+      "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+      "date": "2026-06",
+      "map": "Google Maps 'สตาร์ดอยฟาร์ม เขาใหญ่', 637 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Bonanza Exotic Zoo",
+      "page_name": "Bonanza Exotic Zoo",
+      "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/",
+      "date": "2026-06",
+      "map": "Google Maps 'Bonanza Exotic Park', 4,087 reviews, newest shown 2 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "ครัวน้ำปลาพริก เขาใหญ่",
+      "why": "no readable page date (library-check.cjs)"
+    },
+    {
+      "name": "Toscana Valley, My Ozone Animal Club",
+      "why": "the map's matches are other places"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

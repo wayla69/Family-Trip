@@ -1,19 +1,35 @@
 {
   "town": "th-nan",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the one row without ok; the fourteen rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23). Maps showed a limited view (status, address, hours, rating, the shops inside), without its reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from Saitiew (Feb 2026), TrueID (Dec 2025) and Lemon8; 8 passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "name": "Tang Chit Nuson Market",
-      "src": "https://www.google.com/maps/place/Tangchitnusorn+Market/@18.7756385,100.7707969,16z",
-      "page_name": "Tangchitnusorn Market / ตลาดตั้งจิตนุสรณ์",
-      "evidence": "Google Maps: fresh food market, 4.5★, 115/19 Nai Wiang, Mueang Nan (QQHG+5M), 'Opens 4 AM Tue' (a morning market, as the row says); stalls listed inside it, one with 547 ratings and today's hours; nothing says closed. A second listing, Tang Chitnusorn Market 2 (474 Sumon Thewarat Rd, open to 6 PM), is a separate market and not the row",
-      "ok": "2026-11"
+      "name": "Wang Sila Laeng",
+      "page_name": "วังศิลาแลง",
+      "src": "https://www.saitiew.com/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%99/",
+      "date": "2026-02",
+      "map": "Google Maps 'วังศิลาแลง' (Sila Laeng, Pua), newest review shown a day ago"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Wat Phu Khet, Wat Phra That Khao Noi, Wat Ming Mueang, Wat Si Phan Ton, Wat Phra That Chang Kham",
+      "why": "nothing about children on the page"
+    },
+    {
+      "name": "Khun Sathan National Park",
+      "why": "a whole national park, outside Nan town and Pua"
+    },
+    {
+      "name": "Doi Ti Du",
+      "why": "the map finds another place"
+    },
+    {
+      "name": "Muanjai Restaurant",
+      "why": "the quote was not on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

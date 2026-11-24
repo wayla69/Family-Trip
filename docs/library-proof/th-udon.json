@@ -1,26 +1,25 @@
 {
   "town": "th-udon",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 2 rows without ok; the town holds 18 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 2 rows from Visit Thailand Today (Sep 2026) and Grab (Oct 2026), both passed library-check.cjs, both went in; no dated page for a place to eat",
+  "added": [
     {
-      "name": "Central Udon food court",
-      "src": "https://www.google.com/maps/place/Food+Park/@17.4050342,102.8004495,17z",
-      "page_name": "Food Park",
-      "evidence": "Google Maps (2026-11-23): food court, 4.3★, 277/1-3 Prajak Sillapakhom Rd (CR42+24H), 'Floor 0 · Central Udon'; 'Open · Closes 9 PM', phone listed; nothing says closed",
-      "ok": "2026-11"
+      "name": "Udon Water World",
+      "page_name": "Udon Water World water park",
+      "src": "https://www.visitthailandtoday.com/activities-tours/udon-thani/udon-water-world-water-park",
+      "date": "2026-09",
+      "map": "Google Maps 'อุดรวอเตอร์เวิล์ด สวนน้ำ', 526 reviews, newest shown 5 months ago"
     },
     {
-      "name": "Preecha Night Market",
-      "src": "https://www.google.com/maps/place/Preecha+Market",
-      "page_name": "Preecha Market / ตลาดปรีชาไนท์พลาซ่า",
-      "evidence": "Google Maps (2026-11-23): market, 4.2★, 322 19 Prajak Sillapakhom Rd (CR33+Q6); 'Open · Closes 10 PM', phone listed; food places inside with today's hours; nothing says closed",
-      "ok": "2026-11"
+      "name": "Thung Si Mueang",
+      "page_name": "ทุ่งศรีเมืองอุดรธานี",
+      "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5/",
+      "date": "2026-09",
+      "map": "Google Maps 'ทุ่งศรีเมือง', 3,171 reviews, newest shown 2 days ago"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

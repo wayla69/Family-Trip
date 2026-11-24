@@ -615,6 +615,154 @@
           },
           "q": "Wildlife SOS Elephant Conservation and Care Center, NH2, Mathura",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.easeindiatrip.com/blog/best-family-things-to-do-in-jaipur-with-kids/",
+          "name": {
+            "th": "เซ็นทรัลพาร์ก ชัยปุระ",
+            "en": "Central Park (Jaipur)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนปฤถวีราช รามบาฆ ชัยปุระ",
+            "en": "Prithviraj Road, Rambagh, Jaipur"
+          },
+          "what": {
+            "th": "สวนใหญ่มีทางเดินและน้ำพุดนตรี",
+            "en": "A large park with walking trails and a musical fountain"
+          },
+          "why": {
+            "th": "มีที่กว้างให้วิ่งเล่น",
+            "en": "Open space to run and play"
+          },
+          "q": "Central Park, Prithviraj Rd, Rambagh, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.easeindiatrip.com/blog/best-family-things-to-do-in-jaipur-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้งชัยปุระ",
+            "en": "Jaipur Wax Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ป้อมนาหาร์การห์ ชัยปุระ",
+            "en": "Nahargarh Fort, Jaipur"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้งในป้อมนาหาร์การห์",
+            "en": "A wax museum at Nahargarh Fort with lifelike figures"
+          },
+          "why": {
+            "th": "มีหุ่นดารา บุคคลในประวัติศาสตร์ และซูเปอร์ฮีโร่ที่เด็กชอบ",
+            "en": "Film stars, historical figures and superheroes children enjoy"
+          },
+          "q": "Jaipur Wax Museum, Nahargarh Fort, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.holidify.com/blog/places-in-delhi-for-kids/",
+          "name": {
+            "th": "สวนเด็ก อินเดียเกต",
+            "en": "Children's Park, India Gate"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนกรรตัพยปาฐ อินเดียเกต นิวเดลี",
+            "en": "Kartavya Path, India Gate, New Delhi"
+          },
+          "what": {
+            "th": "สวนเด็กข้างอินเดียเกต",
+            "en": "A children's park beside India Gate"
+          },
+          "why": {
+            "th": "ติดรายชื่อที่เที่ยวสนุกสำหรับเด็กในเดลี",
+            "en": "On Delhi's list of fun places for children"
+          },
+          "q": "Children's Park, India Gate, New Delhi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 500 รูปี",
+            "en": "≈ ₹500"
+          },
+          "book": "none",
+          "src": "https://www.kangarookids.in/blog/indoor-and-outdoor-play-areas-in-delhi-for-kids/",
+          "name": {
+            "th": "ทีนีทาวน์ ปัญชาบีบาฆ",
+            "en": "Teeny Town (Punjabi Bagh)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนคลับ ปัญชาบีบาฆ เดลี",
+            "en": "Club Road, Punjabi Bagh, Delhi"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสำหรับเด็ก",
+            "en": "An indoor play place for children"
+          },
+          "why": {
+            "th": "เล่นในร่ม เปิด 11:00–21:00",
+            "en": "Indoor play, open 11:00 to 21:00"
+          },
+          "q": "Teeny Town, Club Road, Punjabi Bagh, New Delhi",
+          "ok": "2026-11"
         }
       ]
     }

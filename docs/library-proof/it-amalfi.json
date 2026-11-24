@@ -1,173 +1,33 @@
 {
   "town": "it-amalfi",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 24 rows from Viaggiapiccoli (2025–2026) and Nick Kembel passed library-check.cjs, 22 went in",
+  "agents": "one Haiku agent; 3 rows from Voloscontato (Jun 2026) and Napolike (Sep 2026), all passed library-check.cjs, 2 went in",
   "added": [
     {
-      "name": "Il Fornillo",
-      "page_name": "Ristorante Il Fornillo",
-      "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Il Fornillo', 1,243 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Capricci",
-      "page_name": "Ristorante Capricci",
-      "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Capricci', 3,197 reviews, newest '20 hours ago'"
-    },
-    {
-      "name": "Maria Grazia",
-      "page_name": "Ristorante Maria Grazia",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Maria Grazia', Nerano, 1,011 reviews, newest 'last month'"
-    },
-    {
-      "name": "Acquapazza",
-      "page_name": "Acquapazza",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Ristorante Acquapazza Cetara', 1,127 reviews, newest '6 days ago'"
-    },
-    {
-      "name": "Hostaria Baccofurore",
-      "page_name": "Hostaria Baccofurore",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Baccofurore Albergo Dipinto e Hostaria dal 1930', 991 reviews, newest 'last week'"
-    },
-    {
-      "name": "Al Convento",
-      "page_name": "Al Convento – Casa Torrente",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Ristorante Al Convento Cetara', 997 reviews, newest '23 hours ago'"
-    },
-    {
-      "name": "Pescheria CICA con Cucina",
-      "page_name": "Centro Ittico Cica",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Pescheria CICA con Cucina Amalfi', 943 reviews, newest '6 days ago'"
-    },
-    {
-      "name": "La Frittura del Golfo",
-      "page_name": "La Frittura del Golfo",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 693 reviews, newest 'last month'"
-    },
-    {
-      "name": "I Due Fratelli",
-      "page_name": "I Due Fratelli",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 1,184 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Pasticceria Russo",
-      "page_name": "Cafe' Pasticceria Russo",
-      "src": "https://www.nickkembel.com/amalfi-coast-with-kids",
+      "name": "Geljada (Maiori)",
+      "page_name": "Gelijada",
+      "src": "https://www.voloscontato.it/guide-per-viaggiatori/le-migliori-gelaterie-della-costiera-amalfitana-dove-vale-la-pena-fare-la-fila-per-un-cono.php",
       "date": "2026-06",
-      "map": "Google Maps 'Russo Amalfi Coast', Vietri, 841 reviews, newest 'last week'"
+      "map": "Google Maps 'Geljada Gelateria & Yogurteria' (Maiori), newest review shown a month ago"
     },
     {
-      "name": "Il Mulino",
-      "page_name": "Ristorante Il Mulino",
-      "src": "https://www.nickkembel.com/amalfi-coast-with-kids",
-      "date": "2026-06",
-      "map": "Google Maps 'Il Mulino', 498 reviews, newest '5 months ago'"
-    },
-    {
-      "name": "MAR Roman Archaeological Museum",
-      "page_name": "MAR – Roman Archaeological Museum of Positano",
-      "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Roman Archeological Museum (Positano MAR)', 365 reviews, newest '4 hours ago'"
-    },
-    {
-      "name": "Fornillo beach",
-      "page_name": "Fornillo Beach",
-      "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 571 reviews, newest '3 weeks ago'"
-    },
-    {
-      "name": "Arienzo beach",
-      "page_name": "Arienzo Beach",
-      "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 166 reviews, newest 'last month'"
-    },
-    {
-      "name": "Santa Maria Assunta church",
-      "page_name": "Santa Maria Assunta Church",
-      "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Church of Saint Mary of the Assumption', 972 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Marina Grande",
-      "page_name": "Marina Grande",
-      "src": "https://www.viaggiapiccoli.com/?p=90418",
-      "date": "2026-07",
-      "map": "Google Maps 'Marina Grande, Sorrento', 462 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Villa Fiorentino park",
-      "page_name": "Villa Fiorentino Park",
-      "src": "https://www.viaggiapiccoli.com/?p=90418",
-      "date": "2026-07",
-      "map": "Google Maps 2,611 reviews, newest 'last week'"
-    },
-    {
-      "name": "Villa Comunale",
-      "page_name": "Villa Comunale",
-      "src": "https://www.viaggiapiccoli.com/?p=90418",
-      "date": "2026-07",
-      "map": "Google Maps 'Sorrento Municipal Park', 11,018 reviews, newest '2 hours ago'"
-    },
-    {
-      "name": "Bagni della Regina Giovanna",
-      "page_name": "Bagni della Regina Giovanna",
-      "src": "https://www.viaggiapiccoli.com/?p=90418",
-      "date": "2026-07",
-      "map": "Google Maps 'Bagni Regina Giovanna', 5,847 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Ceramics Museum, Villa Guariglia",
-      "page_name": "Vietri Ceramic Museum – Raito",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Museo della Ceramica di Villa Guariglia', 77 reviews, newest 'last month'"
-    },
-    {
-      "name": "Amalfi Cathedral",
-      "page_name": "Cathedral of Saint Andrew",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 'Cathedral of St Andrew Apostle', 1,963 reviews, newest '23 hours ago'"
-    },
-    {
-      "name": "Valle delle Ferriere",
-      "page_name": "Valle delle Ferriere",
-      "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 732 reviews, newest '4 days ago'"
+      "name": "Museo Correale di Terranova",
+      "page_name": "Museo Correale di Terranova",
+      "src": "https://www.napolike.it/museo-correale-sorrento",
+      "date": "2026-09",
+      "map": "Google Maps 'Correale di Terranova Museum', newest review shown 2 weeks ago"
     }
   ],
   "left_out": [
     {
-      "name": "Quattro Passi",
-      "why": "marked permanently closed on Google Maps"
+      "name": "Buca di Bacco gelateria",
+      "why": "temporarily closed on the map"
     },
     {
-      "name": "Mount Faito Cable Car",
-      "why": "Google Maps shows no open cable car station, only the mountain"
+      "name": "Yummy Gelato & Pastry",
+      "why": "no street on the page"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."

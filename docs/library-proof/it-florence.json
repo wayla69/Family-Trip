@@ -1,154 +1,51 @@
 {
   "town": "it-florence",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 23 of 24 rows from Devour Tours (2025), Wanderlust Storytellers (2025), Eating Around Italy (2025) and Dream Your Italy (2025) passed library-check.cjs, 17 went in",
+  "agents": "one Haiku agent; 7 rows from Florence Tourism's 2026 family guide, all passed library-check.cjs, 4 went in",
   "added": [
     {
-      "name": "L'Ortone",
-      "page_name": "L’Ortone",
-      "src": "https://devourtours.com/blog/eating-florence-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps 'L'Ortone', 2,043 reviews, newest '2 weeks ago'"
+      "name": "Climbing Brunelleschi's Dome",
+      "page_name": "The dome climb",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Brunelleschi's dome', 12,281 reviews, newest shown 2 days ago"
     },
     {
-      "name": "Trattoria 13 Gobbi",
-      "page_name": "Trattoria 13 Gobbi",
-      "src": "https://devourtours.com/blog/eating-florence-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps 4,908 reviews, newest '17 hours ago'"
+      "name": "Giardino del Bobolino",
+      "page_name": "Bobolino playground",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Giardino del Bobolino', 516 reviews, newest shown a day ago"
     },
     {
-      "name": "Santarosa Bistrot",
-      "page_name": "Santarosa Bistrot",
-      "src": "https://devourtours.com/blog/eating-florence-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps 3,469 reviews, newest '6 days ago'"
+      "name": "Giardino dell'Orticoltura",
+      "page_name": "Giardino dell’Orticoltura",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Giardino dell'Orticoltura', 219 reviews, newest shown 9 days ago"
     },
     {
-      "name": "Salumeria Verdi",
-      "page_name": "Salumeria Verdi",
-      "src": "https://devourtours.com/blog/eating-florence-with-kids/",
-      "date": "2025-11",
-      "map": "Google Maps 'Pino's Sandwiches - Salumeria Verdi', 3,543 reviews, newest '7 hours ago'"
-    },
-    {
-      "name": "Gelateria La Carraia",
-      "page_name": "Gelateria la Carraia",
-      "src": "https://www.wanderluststorytellers.com/things-to-do-in-florence-with-kids/",
-      "date": "2025-03",
-      "map": "Google Maps 'Gelateria La Carraia', 10,583 reviews, newest '15 hours ago'"
-    },
-    {
-      "name": "Berberè",
-      "page_name": "Berberè",
-      "src": "https://eatingarounditaly.com/?p=11879",
-      "date": "2025-06",
-      "map": "Google Maps 'Berberè Pizzeria Santa Croce', 2,421 reviews, newest '8 hours ago'"
-    },
-    {
-      "name": "Trattoria del Carmine",
-      "page_name": "Trattoria del Carmine",
-      "src": "https://eatingarounditaly.com/?p=11879",
-      "date": "2025-06",
-      "map": "Google Maps 1,111 reviews, newest '12 hours ago'"
-    },
-    {
-      "name": "Tamerò",
-      "page_name": "Tamerò",
-      "src": "https://eatingarounditaly.com/?p=11879",
-      "date": "2025-06",
-      "map": "Google Maps 2,628 reviews, newest 'last week'"
-    },
-    {
-      "name": "Ditta Artigianale (Via dei Neri)",
-      "page_name": "Ditta Artigianale",
-      "src": "https://eatingarounditaly.com/?p=11879",
-      "date": "2025-06",
-      "map": "Google Maps Via dei Neri 32R, 3,911 reviews, newest '1 hour ago'"
-    },
-    {
-      "name": "Gelateria della Passera",
-      "page_name": "Gelateria della Passera",
-      "src": "https://eatingarounditaly.com/?p=11879",
-      "date": "2025-06",
-      "map": "Google Maps 3,427 reviews, newest '18 hours ago'"
-    },
-    {
-      "name": "Piazza della Repubblica carousel",
-      "page_name": "Piazza Della Repubblica",
-      "src": "https://www.wanderluststorytellers.com/things-to-do-in-florence-with-kids/",
-      "date": "2025-03",
-      "map": "Google Maps 'Antica Giostra Toscana' (the carousel), 6 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "San Marco Museum",
-      "page_name": "San Marco church",
-      "src": "https://www.wanderluststorytellers.com/things-to-do-in-florence-with-kids/",
-      "date": "2025-03",
-      "map": "Google Maps 'Museo di San Marco', 3,711 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Mediterranean Natural History Museum",
-      "page_name": "Museo di storia naturale del mediterraneo",
-      "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
-      "date": "2025-06",
-      "map": "Google Maps 853 reviews, newest '4 weeks ago'"
-    },
-    {
-      "name": "Grotta del Vento",
-      "page_name": "Grotta del Vento",
-      "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
-      "date": "2025-06",
-      "map": "Google Maps 4,699 reviews, newest '14 hours ago'"
-    },
-    {
-      "name": "Cavallino Matto",
-      "page_name": "Cavallino Matto",
-      "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
-      "date": "2025-06",
-      "map": "Google Maps 'CavallinoMatto', 11,604 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "San Silvestro mining park",
-      "page_name": "San Silvestro Archaeological Mining Park",
-      "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
-      "date": "2025-06",
-      "map": "Google Maps 'Parco Archeominerario di San Silvestro', 1,818 reviews, newest 'last week'"
-    },
-    {
-      "name": "Poggibonsi Archaeodrome",
-      "page_name": "Parco Poggibonsi",
-      "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
-      "date": "2025-06",
-      "map": "Google Maps 'Poggibonsi Archaeodrome - Open Air Museum', 317 reviews, newest within weeks"
+      "name": "The Porcellino Fountain",
+      "page_name": "The Porcellino fountain",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Fontana del Porcellino', 13,159 reviews, newest shown 4 days ago"
     }
   ],
   "left_out": [
     {
-      "name": "Museo Leonardo da Vinci",
-      "why": "already in the library as the Leonardo Interactive Museum"
+      "name": "Museo dei Ragazzi",
+      "why": "the map shows only Palazzo Vecchio, already in the app"
     },
     {
-      "name": "Cucina In Torre",
-      "why": "the map shows another restaurant (Ristorante CINTO) for the name"
+      "name": "Climbing Stadio",
+      "why": "not found on the map"
     },
     {
-      "name": "Basilica di Santa Maria del Fiore",
-      "why": "the reviews would not sort by newest on this pass"
-    },
-    {
-      "name": "Gucci Museo",
-      "why": "a fashion museum; its workshops are for ages 5–12 only"
-    },
-    {
-      "name": "Bartolucci",
-      "why": "a toy shop"
-    },
-    {
-      "name": "Calcio Fiorentino",
-      "why": "a once-a-year match, not a place"
+      "name": "Villa Stibbert grounds",
+      "why": "the Stibbert Museum is already in the app"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."

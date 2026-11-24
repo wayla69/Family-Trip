@@ -1,96 +1,68 @@
 {
   "town": "us-chicago",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 12 of 13 rows from Choose Chicago (2026) passed library-check.cjs, 11 went in",
+  "agents": "one Haiku agent; 9 rows from Choose Chicago (Jul 2026), Mommy Poppins (Feb and May 2026) and the Chicago Park District (official), 8 passed library-check.cjs, 7 went in",
   "added": [
     {
-      "name": "Little Goat Diner",
-      "page_name": "Little Goat Diner",
-      "src": "https://www.choosechicago.com/articles/food-drink/chicago-restaurants-perfect-for-family-dining/",
-      "date": "2026-03",
-      "map": "Google Maps 3325 N Southport, 11,300 reviews, newest '10 hours ago'"
+      "name": "Honey Butter Fried Chicken",
+      "page_name": "Honey Butter Fried Chicken",
+      "src": "https://www.choosechicago.com/restaurants/family-friendly-dining/",
+      "date": "2026-07",
+      "map": "Google Maps 'Honey Butter Fried Chicken' (3361 N Elston Ave), newest review shown a day ago"
     },
     {
-      "name": "Parson's Chicken & Fish (Logan Square)",
-      "page_name": "Parson’s Chicken and Fish",
-      "src": "https://www.choosechicago.com/articles/food-drink/chicago-restaurants-perfect-for-family-dining/",
-      "date": "2026-03",
-      "map": "Google Maps 'Parson's Chicken & Fish (Logan Square)', 2,551 reviews, newest '17 hours ago'"
+      "name": "Purple Monkey Playroom",
+      "page_name": "Purple Monkey Playroom",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'Purple Monkey Playroom LLC' (2040 N Western Ave), newest review shown 6 months ago"
     },
     {
-      "name": "Beatrix (River North)",
-      "page_name": "Beatrix",
-      "src": "https://www.choosechicago.com/articles/food-drink/chicago-restaurants-perfect-for-family-dining/",
-      "date": "2026-03",
-      "map": "Google Maps 519 N Clark St, 11,352 reviews, newest '8 hours ago'"
+      "name": "HelloBaby (Woodlawn)",
+      "page_name": "Hello Baby",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'HelloBaby NFP' (600 E 61st St), newest review shown 5 days ago"
     },
     {
-      "name": "Sterling Food Hall",
-      "page_name": "The Sterling Food Hall",
-      "src": "https://www.choosechicago.com/articles/food-drink/chicago-restaurants-perfect-for-family-dining/",
-      "date": "2026-03",
-      "map": "Google Maps 'Sterling Food Hall', 125 S Clark St, 121 reviews, newest '2 days ago'"
+      "name": "Fit City Kids",
+      "page_name": "Fit City Kids",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'Fit City Kids' (2540 W Lawrence Ave), newest review shown a day ago"
     },
     {
-      "name": "Eleven City Diner",
-      "page_name": "Eleven City Diner",
-      "src": "https://www.choosechicago.com/articles/food-drink/chicago-restaurants-perfect-for-family-dining/",
-      "date": "2026-03",
-      "map": "Google Maps 1112 S Wabash, 6,004 reviews, newest '2 hours ago'"
+      "name": "ClimbZone Chicago",
+      "page_name": "Climb Zone Chicago",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'ClimbZone Chicago' (2500 W Bradley Pl), newest review shown a week ago"
     },
     {
-      "name": "The Original Rainbow Cone (Navy Pier)",
-      "page_name": "The Original Rainbow Cone",
-      "src": "https://www.choosechicago.com/articles/food-drink/chicago-restaurants-perfect-for-family-dining/",
-      "date": "2026-03",
-      "map": "Google Maps 600 E Grand Ave (Navy Pier), 243 reviews, newest 'last month'"
+      "name": "Adams Park water playground",
+      "page_name": "Adams Park Water Playground",
+      "src": "https://mommypoppins.com/chicago-kids/pools-spray-parks/16-cool-water-playgrounds-and-splash-parks-for-chicago-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Adams (George & Adele) Park' (1919 N Seminary Ave), newest review shown 2 months ago"
     },
     {
-      "name": "Bronzeville Children's Museum",
-      "page_name": "Bronzeville Children’s Museum",
-      "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
-      "date": "2026-09",
-      "map": "Google Maps 9301 S Stony Island, 117 reviews, newest '4 weeks ago'"
-    },
-    {
-      "name": "Color Factory Chicago",
-      "page_name": "Color Factory",
-      "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
-      "date": "2026-09",
-      "map": "Google Maps 'Color Factory Chicago', 233 S Wacker Dr, 2,016 reviews, newest '11 hours ago'"
-    },
-    {
-      "name": "Skydeck Chicago",
-      "page_name": "Skydeck Chicago",
-      "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
-      "date": "2026-09",
-      "map": "Google Maps 38,160 reviews, newest '4 hours ago'"
-    },
-    {
-      "name": "American Writers Museum",
-      "page_name": "American Writers Museum",
-      "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
-      "date": "2026-09",
-      "map": "Google Maps 947 reviews, newest '3 days ago'"
-    },
-    {
-      "name": "Pier Park",
-      "page_name": "Pier Park",
-      "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
-      "date": "2026-09",
-      "map": "Google Maps 600 E Grand Ave, 1 review, from 'last month'"
+      "name": "Jonquil Park",
+      "page_name": "Jonquil Park",
+      "src": "https://www.chicagoparkdistrict.com/parks-facilities/jonquil-park",
+      "date": "official",
+      "map": "Google Maps 'Jonquil Park' (1001 W Wrightwood Ave), newest review shown 3 weeks ago"
     }
   ],
   "left_out": [
     {
-      "name": "The Escape Game Chicago",
-      "why": "escape rooms suit teenagers, not young children"
+      "name": "Edgewater Playhouse",
+      "why": "newest Google Maps review 7 months old"
     },
     {
       "name": "Crosby's Kitchen",
-      "why": "failed library-check.cjs"
+      "why": "library-check.cjs could not confirm the row"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."

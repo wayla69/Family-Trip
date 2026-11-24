@@ -255,6 +255,47 @@
           "q": "松花江冰雪嘉年华, Songhua River, Harbin",
           "ok": "2026-11",
           "src": "https://m.heb.bendibao.com/xiuxian/80720.shtm"
+        },
+        {
+          "local": "黑龙江省科学技术馆",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://offpeaktrip.com/en/guide/haerbin/Heilongjiang%20Science%20and%20Technology%20Museum",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีเฮยหลงเจียง",
+            "en": "Heilongjiang Science and Technology Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เกาะสุริยัน ซงเป่ย ฮาร์บิน",
+            "en": "Sun Island, Songbei, Harbin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ทันสมัยย่านเกาะสุริยัน",
+            "en": "A modern popular-science museum in the Sun Island area"
+          },
+          "why": {
+            "th": "เข้าชมฟรี",
+            "en": "Free to visit"
+          },
+          "tip": {
+            "th": "เปิด 09:00–16:00 เช็กเวลาล่าสุดก่อนไป",
+            "en": "Open 09:00–16:00; check the latest hours before you go"
+          },
+          "q": "黑龙江省科学技术馆, 太阳大道1458号, 哈尔滨",
+          "ok": "2026-11"
         }
       ]
     }

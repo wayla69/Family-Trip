@@ -1,25 +1,34 @@
 {
   "town": "my-borneo",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab: ok only when not marked closed and with a review from the last six months.",
-  "agents": "one Haiku agent; 20 rows offered, 20 passed library-check.cjs, 8 went in",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from Hello Sabah (Nov 2025), Travelynn Family (Oct 2026) and Sabah Tourism (official), all passed library-check.cjs, 2 went in",
   "added": [
-    { "name": "Tiny Palm Playground X Kids Cafe", "src": "https://hellosabah.com/heres-6-cafes-with-playgrounds-in-kota-kinabalu/", "date": "2025-11", "map": "Google Maps 141 reviews, newest '6 months ago'" },
-    { "name": "Little Dino Kids Cafe", "src": "https://hellosabah.com/heres-6-cafes-with-playgrounds-in-kota-kinabalu/", "date": "2025-11", "map": "Google Maps 66 reviews, newest 'a month ago'" },
-    { "name": "Bear Factory Cafe", "src": "https://hellosabah.com/heres-6-cafes-with-playgrounds-in-kota-kinabalu/", "date": "2025-11", "map": "Google Maps 28 reviews, newest '2 months ago'" },
-    { "name": "Happy Place", "src": "https://www.sabahtourism.com/article/icydk-the-variety-of-cuisine-we-have-in-kota-kinabalu/", "date": "official", "map": "Google Maps 1,188 reviews, newest '3 weeks ago'" },
-    { "name": "Alu-Alu Kitchen", "src": "https://www.sabahtourism.com/article/icydk-the-variety-of-cuisine-we-have-in-kota-kinabalu/", "date": "official", "map": "Google Maps 818 reviews, newest '2 months ago'" },
-    { "name": "Tana Borneo", "src": "https://www.sabahtourism.com/article/icydk-the-variety-of-cuisine-we-have-in-kota-kinabalu/", "date": "official", "map": "its hotel, Toojou Kota Kinabalu, 535 reviews, newest 'a month ago'; the restaurant has no listing of its own" },
-    { "name": "Todak Waterfront Hawker Centre", "src": "https://www.sabahtourism.com/article/icydk-the-variety-of-cuisine-we-have-in-kota-kinabalu/", "date": "official", "map": "Google Maps 1,576 reviews, newest 'a month ago'" },
-    { "name": "Kota Kinabalu City Mosque", "src": "https://travelynnfamily.com/kota-kinabalu-with-kids/", "date": "2026-10", "map": "Google Maps 9,077 reviews, newest '3 months ago'" }
+    {
+      "name": "Agnes Keith House",
+      "page_name": "Agnes Keith House",
+      "src": "https://travelynnfamily.com/sandakan-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 'Agnes Keith House' (296 Jalan Utara), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Puu Jih Syh Temple",
+      "page_name": "Puu Jih Syh Temple",
+      "src": "https://travelynnfamily.com/sandakan-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 'Puu Jih Syh Temple' (Jalan Cecily), newest review shown 2 weeks ago"
+    }
   ],
   "left_out": [
-    { "name": "8 things to do from sabahguide.pages.dev (Mari Mari, Monsopiad, Likas Bird Sanctuary and Boardwalk, Super Splash, Desa Dairy Farm, Kiulu rafting, Sabah State Library)", "why": "the only source reads as a machine-made *.pages.dev site, the same kind as the refused github.io blogs" },
-    { "name": "Akar Garden", "why": "the map's newest reviews are a year old or more" },
-    { "name": "Hoola Hoop Cafe", "why": "the map's newest reviews are two years old" },
-    { "name": "Pondok", "why": "too generic a name to match one place on the map" },
-    { "name": "Kilas River Cruise", "why": "a booked tour, not a place to check on the map" }
+    {
+      "name": "Akar Garden, Aachi Curry House",
+      "why": "newest Google Maps review a year old"
+    },
+    {
+      "name": "Sandakan Memorial Park",
+      "why": "the page aims it at older children"
+    }
   ],
-  "estimates": "The mosque's ages and visit hours are placeholders."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

@@ -1,139 +1,68 @@
 {
   "town": "ca-toronto",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; rows from torontotourism.org passed library-check.cjs, 16 went in",
+  "agents": "one Haiku agent; 7 rows from Destination Ontario (Nov 2026), toronto.ca (Jun 2026) and two official sites, all passed library-check.cjs, 7 went in",
   "added": [
     {
-      "name": "Cluny Bistro & Boulangerie",
-      "page_name": "Cluny Bistro & Boulangerie",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
+      "name": "Avling",
+      "page_name": "Avling",
+      "src": "https://destinationontario.com/en-ca/articles/family-friendly-ontario-restaurants-kids-and-parents-will-enjoy",
+      "date": "2026-11",
+      "map": "Google Maps 'Avling' (1042 Queen St E), newest review shown a day ago"
     },
     {
-      "name": "Café Diplomatico",
-      "page_name": "Café Diplomatico",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
+      "name": "The Udupi Palace",
+      "page_name": "Udupi Palace",
+      "src": "https://destinationontario.com/en-ca/articles/family-friendly-ontario-restaurants-kids-and-parents-will-enjoy",
+      "date": "2026-11",
+      "map": "Google Maps 'The Udupi Palace' (1423 Gerrard St E), newest review shown a day ago"
     },
     {
-      "name": "Mamma Martino's",
-      "page_name": "Mamma Martino's",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
+      "name": "KidSpark (Ontario Science Centre)",
+      "page_name": "KidSpark",
+      "src": "https://www.ontariosciencecentre.ca/whats-on/kidspark/",
+      "date": "official",
+      "map": "Google Maps 'Ontario Science Centre' — the map now shows it at 235 Queens Quay W, and its own site lists KidSpark there; newest review shown 14 hours ago"
     },
     {
-      "name": "Descendant Detroit Style Pizza",
-      "page_name": "Descendant Detroit Style Pizza",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
+      "name": "L'Amoreaux Kidstown Water Park",
+      "page_name": "L’Amoreaux Kidstown Water Park",
+      "src": "https://www.toronto.ca/news/city-of-toronto-celebrates-the-reopening-of-kidstown-water-park/",
+      "date": "2026-06",
+      "map": "Google Maps 'Kidstown Water Park' (3159 Birchmount Rd), newest review shown 17 hours ago"
     },
     {
-      "name": "Grazie Ristorante",
-      "page_name": "Grazie Ristorante",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
+      "name": "Safari Niagara",
+      "page_name": "Safari Niagara",
+      "src": "https://www.niagarafallstourism.com/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Safari Niagara' (2821 Stevensville Rd, Fort Erie), newest review shown a week ago"
     },
     {
-      "name": "The Rec Room (Roundhouse)",
-      "page_name": "The Rec Room",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps the Roundhouse branch, open, newest review within six months"
+      "name": "Niagara Parks Botanical Gardens",
+      "page_name": "Botanical Gardens",
+      "src": "https://www.niagarafallstourism.com/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Niagara Parks Botanical Gardens' (Niagara River Pkwy), newest review shown 9 hours ago"
     },
     {
-      "name": "Pinocchio Play Café",
-      "page_name": "Pinocchio Play Café",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Lady Marmalade",
-      "page_name": "Lady Marmalade",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Emma's Country Kitchen",
-      "page_name": "Emma's Country Kitchen",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Maha's",
-      "page_name": "Maha's",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Rol San",
-      "page_name": "Rol San",
-      "src": "https://www.torontotourism.org/family-restaurants-toronto/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Toronto Reference Library",
-      "page_name": "Toronto Reference Library",
-      "src": "https://www.torontotourism.org/toronto-with-toddlers/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Bata Shoe Museum",
-      "page_name": "Bata Shoe Museum",
-      "src": "https://www.torontotourism.org/toronto-with-toddlers/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Cherry Beach",
-      "page_name": "Cherry Beach",
-      "src": "https://www.torontotourism.org/toronto-with-toddlers/",
-      "date": "2026-08",
-      "map": "Google Maps newest review within six months"
-    },
-    {
-      "name": "Aga Khan Museum",
-      "page_name": "Aga Khan Museum",
-      "src": "https://www.torontotourism.org/toronto-with-toddlers/",
-      "date": "2026-08",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Edwards Gardens",
-      "page_name": "Edwards Gardens",
-      "src": "https://www.torontotourism.org/toronto-with-toddlers/",
-      "date": "2026-08",
-      "map": "Google Maps newest review within six months"
+      "name": "Dinosaur Adventure Golf",
+      "page_name": "Dinosaur Adventure Golf",
+      "src": "https://www.niagarafallstourism.com/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Dinosaur Adventure Golf' (4952 Clifton Hill), newest review shown 3 days ago"
     }
   ],
   "left_out": [
     {
-      "name": "rows from restaurantsforkings.com",
-      "why": "a machine-written ranking site the brief refuses"
+      "name": "Playful Grounds",
+      "why": "closed"
     },
     {
-      "name": "BOK Play Cafe",
-      "why": "the map's newest review is a year old"
-    },
-    {
-      "name": "KidSpark",
-      "why": "inside the Ontario Science Centre building, which is closed"
-    },
-    {
-      "name": "six city parks and playgrounds",
-      "why": "no review newer than a year on the map, even sorted by newest"
+      "name": "Willow Play Cafe",
+      "why": "no area on the page"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."

@@ -1,46 +1,39 @@
 {
   "town": "th-trang",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the five rows without ok; the sixteen rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23). Maps showed a limited view (status, address, hours, rating), without its reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 17 rows from two Wongnai lists, 5 passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "name": "Khao Tom Pui",
-      "src": "https://www.google.com/maps/place/ข้าวต้มพุ้ย/@7.5548293,99.6058049,17z",
-      "page_name": "ข้าวต้มพุ้ย / ร้านข้าวต้มพุ้ย",
-      "evidence": "Google Maps: rice-soup shop, 3.9★, 1 Sathani Road, Thap Thiang (HJ34+W8), 'Opens 2 PM' (an evening shop, as the row says), phone listed; nothing says closed. The map query named Phraram 6 Road; it now names Sathani Road, where Maps puts it",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Trang Station Night Market",
-      "src": "https://www.google.com/maps/place/Trang+Railway+Station+Walking+Street/@7.5547337,99.5959337,16z",
-      "page_name": "Trang Railway Station Walking Street / ถนนคนเดินสถานีรถไฟตรัง",
-      "evidence": "Google Maps: night market, 4.3★, 25/90 Nang Yuan, Thap Thiang (HJ33+VX, by the station), 'Opens 5 PM Fri' (the row says Friday to Sunday evenings), stalls listed at it; nothing says closed. The map query now names it as Maps does",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Ko Pi",
-      "src": "https://www.google.com/maps/place/ร้านโกปี๊สถานี/@7.5541406,99.6048075,17z",
-      "page_name": "ร้านโกปี๊สถานี",
-      "evidence": "Google Maps: coffee shop, 4.0★, HJ33+MW3, Kan Tang 4, Thap Thiang — by the railway station, as the row says; 'Open · Closes 5 PM', phone listed; nothing says closed",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Yu Chiang",
-      "src": "https://www.google.com/maps/place/ยู่เชียง+裕昌/@7.5555059,99.606725,17z",
-      "page_name": "ยู่เชียง 裕昌",
-      "evidence": "Google Maps: 5.0★, 112/1 Phraram 6 lane, Thap Thiang (HJ44+6M) — the road the row names; 'Open · Closes 6 PM'; nothing says closed",
-      "ok": "2026-11"
+      "name": "Tam Kong Yia shrine",
+      "page_name": "ศาลเจ้าท่ามก๋งเยี่ย",
+      "src": "https://www.wongnai.com/listings/attractions-trang",
+      "date": "2025-02",
+      "map": "Google Maps 'ศาลเจ้าท่ามก๋งเยี่ย (ยุวเทพ)', 280 reviews, newest shown '16 days ago'"
     }
   ],
-  "kept_without_ok": [
+  "left_out": [
     {
-      "name": "Sin Ocha",
-      "src": "https://www.google.com/maps/place/ร้าน+สินโอชาเบเกอรี่/@7.5532363,99.6004063,17z",
-      "evidence": "the place exists: Google Maps lists ร้าน สินโอชาเบเกอรี่ at 25 Sathani Alley (HJ34+R4, by the station) with a phone, but no hours; Yellow Pages lists กลุ่มขนมทำเค้กสินโอชา on Phraram 6 Road, undated. The other Maps สินโอชา (a noodle shop in Bang Rak, open today) is about 1.5 km from the station and another kind of shop, so it is not this row. Nothing current shows the station shop is open"
+      "name": "twelve places to eat",
+      "why": "their Wongnai list is dated December 2024"
+    },
+    {
+      "name": "Wang Pha Mek",
+      "why": "the map shows a holiday park, not the viewpoint"
+    },
+    {
+      "name": "Kantang hot spring park",
+      "why": "the map gives a different hot spring"
+    },
+    {
+      "name": "Khao Jom Pa",
+      "why": "the map has only a boat-tour agent"
+    },
+    {
+      "name": "Khao Chong botanic garden",
+      "why": "newest review a year old"
     }
   ],
-  "removed": []
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

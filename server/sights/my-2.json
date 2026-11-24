@@ -722,6 +722,84 @@
           "q": "Jaemi Wonderland @ 1st Avenue, George Town, Penang",
           "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "name": {
+            "th": "คิดส์วิลล์ วอเทอร์ฟรอนต์",
+            "en": "Kidsville WaterFront"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ควีนส์วอเทอร์ฟรอนต์ บายันเลปัส",
+            "en": "Queens Waterfront, Bayan Lepas"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทันสมัย มีโซนนุ่ม สไลเดอร์ และบ่อบอล",
+            "en": "A modern indoor play space with soft play, slides and a ball pool"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก เล่นเสร็จเดินเล่นริมน้ำต่อ",
+            "en": "A toddler zone, and a waterfront walk afterwards"
+          },
+          "tip": {
+            "th": "ต้องใส่ถุงเท้า ควรพกคู่สำรอง",
+            "en": "Socks needed; bring a spare pair"
+          },
+          "q": "Kidsville WaterFront, Queens Waterfront, Penang",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "name": {
+            "th": "คิดส์แอดเวนเจอร์แลนด์ ซันไชน์เซ็นทรัล",
+            "en": "Kids Adventureland (Sunshine Central)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างซันไชน์เซ็นทรัล อาเยอร์อีตัม",
+            "en": "Sunshine Central mall, Air Itam"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีเครื่องปีนป่าย สไลเดอร์ บ่อบอล และมุมบทบาทสมมติ",
+            "en": "An indoor play space with climbing, slides, a ball pool and role play"
+          },
+          "why": {
+            "th": "มีของเล่นทุกวัย พร้อมโซนเด็กเล็ก",
+            "en": "Something for each age, with a toddler zone"
+          },
+          "q": "Kids Adventureland, Sunshine Central, Penang",
+          "ok": "2026-11"
         }
       ]
     }

@@ -1,79 +1,30 @@
 {
   "town": "gr-santorini",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 10 rows from Wild Junket (Sept 2026) and the Jet2 family guide (Jul 2026) passed library-check.cjs, 8 went in",
+  "agents": "one Haiku agent; rows from IYC (May 2025) and others that passed library-check.cjs, 1 went in",
   "added": [
     {
-      "name": "Cava Alta",
-      "page_name": "Cava Alta",
-      "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
-      "date": "2026-09",
-      "map": "Google Maps 1,022 reviews, newest '3 weeks ago'"
-    },
-    {
-      "name": "Oia Gefsis",
-      "page_name": "Oia Gefsis",
-      "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
-      "date": "2026-09",
-      "map": "Google Maps 'Oia Gefsis Greek Restaurant', 1,696 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Mes Amis",
-      "page_name": "Mes Amis",
-      "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
-      "date": "2026-09",
-      "map": "Google Maps 372 reviews, newest 'last month'"
-    },
-    {
-      "name": "Anemomilos Traditional Greek Taverna",
-      "page_name": "Anemomilos",
-      "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
-      "date": "2026-09",
-      "map": "Google Maps 'Anemomilos Traditional Greek Taverna', 703 reviews, newest 'last week'"
-    },
-    {
-      "name": "Red Beach",
-      "page_name": "Red Beach",
-      "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
-      "date": "2026-09",
-      "map": "Google Maps 11,575 reviews, newest '23 hours ago'"
-    },
-    {
-      "name": "White Beach",
-      "page_name": "White Beach",
-      "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
-      "date": "2026-09",
-      "map": "Google Maps 1,238 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Kamari Open Air Cinema",
-      "page_name": "Open Air Cinema Kamari",
-      "src": "https://blog.jet2.com/family-guide-to-santorini",
-      "date": "2026-07",
-      "map": "Google Maps 'Kamari Open Air Cinema', 1,256 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Monolithos Beach",
-      "page_name": "Monolithos Beach",
-      "src": "https://blog.jet2.com/family-guide-to-santorini",
-      "date": "2026-07",
-      "map": "Google Maps 'Monolithos', 335 reviews, newest 'last week'"
+      "name": "Ornos Beach (Mykonos)",
+      "page_name": "Ornos Beach",
+      "src": "https://iyc.com/blog/mykonos-child-friendly-vacation/",
+      "date": "2025-05",
+      "map": "Google Maps 'Ornos Beach' (Ornos 846 00), newest review shown a week ago"
     }
   ],
   "left_out": [
     {
-      "name": "Alismari Tavern",
-      "why": "the map's match is 'Dolce by alismari', not the tavern"
+      "name": "four places to eat and Vlychada",
+      "why": "the source says it was written with an AI research assistant"
     },
     {
-      "name": "Santorini Water Park",
-      "why": "the map's match is a water-sports rental"
+      "name": "Pyrgos, Little Venice",
+      "why": "a whole village or neighbourhood"
     },
     {
-      "name": "discovercyclades.gr family guide",
-      "why": "written by an AI assistant"
+      "name": "Elia beach",
+      "why": "aimed at older children"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."

@@ -229,6 +229,228 @@
           "q": "Dana Biosphere Reserve, Dana, Jordan",
           "ok": "2026-11",
           "src": "https://sp.visitjordan.com/page/17/Entrance-Fees"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กจอร์แดน",
+            "en": "Children's Museum Jordan"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนอัลฮุสเซน ถนนซาอีดเคร์ อัมมาน",
+            "en": "Al Hussein Public Park, Saeed Kheir Street, Amman"
+          },
+          "what": {
+            "th": "นิทรรศการให้ลงมือกว่า 100 ชิ้น ทั้งในร่มและกลางแจ้ง",
+            "en": "Over 100 hands-on exhibits indoors and out"
+          },
+          "why": {
+            "th": "มีโซนเล่นปิดสำหรับเด็กเล็ก และลานกลางแจ้งกว้าง",
+            "en": "A closed play area for toddlers and a big outdoor area"
+          },
+          "q": "The Children's Museum Jordan, Saeed Kheir St., Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ $15",
+            "en": "About $15"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "สวนแทรมโพลีนกราวิตี้",
+            "en": "Gravity trampoline park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เมกกะมอลล์ ถนนเมกกะ อัมมาน",
+            "en": "Mecca Mall, Mecca Street, Amman"
+          },
+          "what": {
+            "th": "แทรมโพลีนกว่า 100 แผ่นให้กระโดด",
+            "en": "Over 100 trampolines to jump on"
+          },
+          "why": {
+            "th": "เด็กตั้งแต่ 3 ขวบกระโดดได้",
+            "en": "Children from age three can jump"
+          },
+          "q": "Gravity, Mecca Mall, Mecca St., Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "$10 ต่อ 2 ชั่วโมง",
+            "en": "$10 for 2 hours"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "ทาลาคิดส์คลับ",
+            "en": "Tala Kids Club"
+          },
+          "kind": "play",
+          "area": {
+            "th": "บารากามอลล์ ถนนซาอีดอัลมุฟตี อัมมาน",
+            "en": "Baraka Mall, Saeed Al-Mufti Street, Amman"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มในห้าง",
+            "en": "An indoor playground in a mall"
+          },
+          "why": {
+            "th": "พ่อแม่นั่งดูขณะลูกเล่นและได้เพื่อนใหม่",
+            "en": "Parents watch while children play and make friends"
+          },
+          "q": "Tala Kids Club, Al Baraka Mall, Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ปกติ $2–3",
+            "en": "Usually $2–3"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "ศูนย์วัฒนธรรมฮายา",
+            "en": "Haya Cultural Center"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเจ้าชายชาเกอร์ ชไมซานี อัมมาน",
+            "en": "Prince Shaker bin Zaid Street, Shmeisani, Amman"
+          },
+          "what": {
+            "th": "ศูนย์เด็กมีสนามเด็กเล่นและเครื่องเล่นเล็กๆ",
+            "en": "A children's centre with a playground and a small fairground"
+          },
+          "why": {
+            "th": "ทำมาเพื่อเด็กเล็ก เปิดทุกวัน",
+            "en": "Made for little ones, open every day"
+          },
+          "q": "Haya Cultural Center, Shmeisani, Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "สวนนกเจ้าชายฮาเชม",
+            "en": "Prince Hashem Bird Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนอาห์หมัดโอราบี ชไมซานี อัมมาน",
+            "en": "Ahmad Orabi Street, Shmeisani, Amman"
+          },
+          "what": {
+            "th": "สวนเงียบๆ มีนกหลายชนิด",
+            "en": "A quiet garden with birds"
+          },
+          "why": {
+            "th": "เด็กได้ดูไก่ นกพิราบ และนกอื่นๆ",
+            "en": "Children see chickens, pigeons and other birds"
+          },
+          "q": "Prince Hashem Bird Garden, Ahmad Orabi St., Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/aqaba-with-kids/",
+          "name": {
+            "th": "ป้อมอะกาบา",
+            "en": "Aqaba Fort"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ข้างเสาธงใหญ่ อะกาบา",
+            "en": "by the great flagpole, Aqaba"
+          },
+          "what": {
+            "th": "ป้อมเก่าริมทะเลในอะกาบา",
+            "en": "An old fort by the sea in Aqaba"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่ามากับเด็กสนุก",
+            "en": "Fun to visit with children, the page says"
+          },
+          "q": "Aqaba Fort, Aqaba",
+          "ok": "2026-11"
         }
       ]
     }

@@ -354,7 +354,451 @@
       {"name":{"en":"Grips Theatre","th":"โรงละครกริปส์"},"kind":"show","area":{"en":"Mitte","th":"มิทเทอ"},"what":{"en":"A children's theatre with realistic stories for young audiences.","th":"โรงละครเด็กที่มีเรื่องราวสมจริงสำหรับผู้ชมอายุน้อย"},"why":{"en":"Realistic stories told for children.","th":"เรื่องราวสมจริงที่เล่าให้เด็กฟัง"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Grips Theatre, Mitte, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
       {"name":{"en":"Hassenheide Park","th":"สวนฮัสเซนไฮเดอ"},"kind":"park","area":{"en":"Neukölln","th":"นอยเคิลน์"},"what":{"en":"A park in Neukölln with a very different atmosphere from the centre, a green space for everyday use.","th":"สวนในนอยเคิลน์ บรรยากาศต่างจากใจกลางมาก เป็นพื้นที่สีเขียวสำหรับใช้ในชีวิตประจำวัน"},"why":{"en":"A green space for everyday use, the page says, for families staying south of Mitte.","th":"หน้าเว็บบอกว่าเป็นพื้นที่สีเขียวสำหรับใช้ในชีวิตประจำวันของครอบครัวที่พักทางใต้ของมิทเทอ"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hassenheide Park, Neukölln, Berlin","ok":"2026-11","src":"https://germanywander.com/fun-things-to-do-in-berlin-with-kids"},
       {"name":{"en":"Kinderbad at Monbijoux Park","th":"สระว่ายน้ำเด็กที่สวนมอนบิจู"},"kind":"play","area":{"en":"Mitte","th":"มิทเทอ"},"what":{"en":"A children's pool at Monbijoux Park in Mitte, on the walk past Museum Island and the Berlin Cathedral.","th":"สระเด็กที่สวนมอนบิจูในมิทเทอ บนทางเดินผ่านเกาะพิพิธภัณฑ์และอาสนวิหารเบอร์ลิน"},"why":{"en":"A children's pool close to the main sights in Mitte.","th":"สระเด็กใกล้สถานที่สำคัญในมิทเทอ"},"tip":{"en":"Pool season is May to August.","th":"ฤดูสระน้ำคือพฤษภาคมถึงสิงหาคม"},"ages":[2,2,1,0],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kinderbad at Monbijoux Park, Mitte, Berlin","ok":"2026-11","src":"https://germanywander.com/fun-things-to-do-in-berlin-with-kids"},
-      {"name":{"en":"East Side Gallery","th":"อีสต์ไซด์แกลเลอรี"},"kind":"culture","area":{"en":"Friedrichshain","th":"ฟรีดริชชไฮน์"},"what":{"en":"A painted stretch of the Berlin Wall that runs along the Spree.","th":"ส่วนกำแพงเบอร์ลินที่ทาสีตามแนวแม่น้ำชปรี"},"why":{"en":"A walk past painted murals along the river.","th":"เดินชมภาพจิตรกรรมที่ทาไว้ริมแม่น้ำ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"East Side Gallery, Friedrichshain, Berlin","ok":"2026-11","src":"https://www.berlin-escape.com/guides/kreuzberg-food-guide/"}
+      {"name":{"en":"East Side Gallery","th":"อีสต์ไซด์แกลเลอรี"},"kind":"culture","area":{"en":"Friedrichshain","th":"ฟรีดริชชไฮน์"},"what":{"en":"A painted stretch of the Berlin Wall that runs along the Spree.","th":"ส่วนกำแพงเบอร์ลินที่ทาสีตามแนวแม่น้ำชปรี"},"why":{"en":"A walk past painted murals along the river.","th":"เดินชมภาพจิตรกรรมที่ทาไว้ริมแม่น้ำ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"East Side Gallery, Friedrichshain, Berlin","ok":"2026-11","src":"https://www.berlin-escape.com/guides/kreuzberg-food-guide/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "พิพิธภัณฑ์ดอยช์ลันด์",
+            "en": "Deutschlandmuseum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไลพ์ซิเกอร์พลัทซ์ เบอร์ลิน",
+            "en": "Leipziger Platz, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แบบลงมือ เล่าประวัติศาสตร์เยอรมัน 12 ยุค",
+            "en": "An interactive museum of twelve eras of German history"
+          },
+          "why": {
+            "th": "มีให้เด็กค้นหาเยอะ ไม่ต้องรู้ประวัติศาสตร์มาก่อน",
+            "en": "Plenty for children, even with no history to start"
+          },
+          "q": "Deutschlandmuseum, Leipziger Platz 7, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "11 / 7 ยูโร",
+            "en": "€11 / €7"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เกมคอมพิวเตอร์",
+            "en": "Computer Games Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคาร์ลมาร์กซ์ เบอร์ลิน",
+            "en": "Karl-Marx-Allee, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เกมคอมพิวเตอร์ เปิดทุกวัน 10:00–20:00",
+            "en": "A museum of computer games, open daily 10:00–20:00"
+          },
+          "why": {
+            "th": "มีเกมให้เล่น หน้าเว็บแนะนำ 6 ขวบขึ้นไป",
+            "en": "Games to play; the page suggests ages 6 and up"
+          },
+          "q": "Computerspielemuseum, Karl-Marx-Allee 93a, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "13.90 / 8.50 ยูโร",
+            "en": "€13.90 / €8.50"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ DDR",
+            "en": "DDR Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคาร์ลลีบเน็คท์ เบอร์ลิน",
+            "en": "Karl-Liebknecht-Straße, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เปิดทุกวัน 9:00–21:00 แห่งใหญ่แห่งเดียวที่เปิดวันจันทร์",
+            "en": "A museum open daily 9:00–21:00, the only big museum open on Mondays"
+          },
+          "why": {
+            "th": "หน้าเว็บแนะนำ 8 ขวบขึ้นไป",
+            "en": "The page suggests ages 8 and up"
+          },
+          "q": "DDR Museum, Karl-Liebknecht-Straße 1, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "พิพิธภัณฑ์ซามูไรเบอร์ลิน",
+            "en": "Samurai Museum Berlin"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเอากุสต์ เบอร์ลิน",
+            "en": "Auguststraße, Berlin"
+          },
+          "what": {
+            "th": "เกราะ ดาบ และหน้ากากญี่ปุ่นกว่า 1,000 ชิ้น",
+            "en": "Over 1,000 pieces of Japanese armour, swords and masks"
+          },
+          "why": {
+            "th": "มีโมเดล 3 มิติและจอ 360 องศา",
+            "en": "A 3D model and 360-degree displays"
+          },
+          "q": "Samurai Museum Berlin, Auguststraße 68, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "พิพิธภัณฑ์มายากลมาจิคุม",
+            "en": "Magicum Berlin Magic Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนโกรเซอฮัมบวร์เกอร์ เบอร์ลิน",
+            "en": "Große Hamburger Straße, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์มายากลสำหรับทุกวัย",
+            "en": "A magic museum for all ages"
+          },
+          "why": {
+            "th": "ทำให้น้ำเต้นรำ และค้นหาพลังวิเศษของตัวเอง",
+            "en": "Make water dance and find your magic powers"
+          },
+          "q": "Magicum Berlin Magic Museum, Große Hamburger Straße 17, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "อาโนฮา โลกของเด็กในพิพิธภัณฑ์ยิว",
+            "en": "ANOHA, the children's world of the Jewish Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "พิพิธภัณฑ์ยิว จัตุรัสโฟรเมตอุนด์โมเสสเมนเดลส์โซน เบอร์ลิน",
+            "en": "Jewish Museum, Fromet-und-Moses-Mendelssohn-Platz, Berlin"
+          },
+          "what": {
+            "th": "โลกของเด็กรอบเรือโนอาห์ไม้ลำใหญ่ที่เต็มไปด้วยสัตว์",
+            "en": "A children's world built around a big wooden ark full of animals"
+          },
+          "why": {
+            "th": "เด็กได้ต่อเรือลำเล็กแล้วลองลอยบนรางน้ำ",
+            "en": "Children build a little ark and try it on a water slide"
+          },
+          "q": "ANOHA Children's World, Jewish Museum Berlin, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/berlin-with-kids/",
+          "name": {
+            "th": "ประตูบรันเดนบวร์ก",
+            "en": "Brandenburg Gate"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ปารีเซอร์พลัทซ์ เบอร์ลิน",
+            "en": "Pariser Platz, Berlin"
+          },
+          "what": {
+            "th": "สัญลักษณ์ที่โด่งดังที่สุดของเบอร์ลิน อาคารไรชส์ทากอยู่ทางเหนือ",
+            "en": "Berlin's best-known landmark, with the Reichstag just to the north"
+          },
+          "why": {
+            "th": "สวยทั้งกลางวันและกลางคืน",
+            "en": "Striking by day or by night"
+          },
+          "q": "Brandenburg Gate, Pariser Platz, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "7 ยูโร (วันศุกร์ 5 ยูโร)",
+            "en": "€7 (€5 on Fridays)"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กลาบีรินท์",
+            "en": "Labyrinth Kindermuseum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนออสโลเออร์ เวดดิง เบอร์ลิน",
+            "en": "Osloer Straße, Wedding, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กลงมือเล่น ของจัดแสดงเปลี่ยนทุกปี",
+            "en": "A hands-on children's museum with play installations that change each year"
+          },
+          "why": {
+            "th": "ทุกอย่างจับและเล่นได้",
+            "en": "Everything is there to touch and play"
+          },
+          "q": "Labyrinth Kindermuseum, Osloer Straße 12, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์การสื่อสาร",
+            "en": "Museum for Communication"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนไลพ์ซิเกอร์ เบอร์ลิน",
+            "en": "Leipziger Straße, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีหุ่นยนต์เดินไปมา และจุดลองโทรเลขกับรหัสมอร์ส",
+            "en": "A museum with roaming robots and telegraph and Morse code stations"
+          },
+          "why": {
+            "th": "มีจุดให้เด็กลองเล่นเอง",
+            "en": "Hands-on stations children can try"
+          },
+          "q": "Museum für Kommunikation, Leipziger Straße 16, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "ฟิวเจอเรียม",
+            "en": "Futurium"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อเล็กซานเดอร์อูเฟอร์ เบอร์ลิน",
+            "en": "Alexanderufer, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เข้าฟรี ที่อเล็กซานเดอร์อูเฟอร์ 2",
+            "en": "A free museum at Alexanderufer 2"
+          },
+          "why": {
+            "th": "หน้าเว็บแนะนำ 6 ขวบขึ้นไป",
+            "en": "The page suggests ages 6 and up"
+          },
+          "q": "Futurium, Alexanderufer 2, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "บัตรวันละ 16 ยูโร",
+            "en": "Day pass €16"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "ห้องปีนผาเมจิกเมาน์เทน",
+            "en": "Magic Mountain climbing hall"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเบิทท์เกอร์ เกซุนด์บรุนเนิน เบอร์ลิน",
+            "en": "Böttgerstraße, Gesundbrunnen, Berlin"
+          },
+          "what": {
+            "th": "ห้องปีนผาและโบลเดอริง 2,500 ตร.ม. มีผนังเล็กสำหรับเด็ก",
+            "en": "A 2,500 m² climbing and bouldering hall with smaller walls for children"
+          },
+          "why": {
+            "th": "มีโซนปีนผาสำหรับเด็ก",
+            "en": "A kids' bouldering area"
+          },
+          "q": "Magic Mountain, Böttgerstraße 20, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์สายลับเยอรมัน",
+            "en": "German Spy Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไลพ์ซิเกอร์พลัทซ์ เบอร์ลิน",
+            "en": "Leipziger Platz, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สายลับ มีเขาวงกตเลเซอร์และเครื่องจับเท็จ",
+            "en": "A spy museum with a laser maze and a lie detector"
+          },
+          "why": {
+            "th": "หน้าเว็บแนะนำ 10 ขวบขึ้นไป",
+            "en": "The page suggests ages 10 and up"
+          },
+          "q": "Deutsches Spionagemuseum, Leipziger Platz 9, Berlin",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -1344,6 +1788,154 @@
           },
           "q": "Museum der Natur Hamburg, Bundesstraße 52, Hamburg",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €17 ต่อ 4 ชั่วโมง",
+            "en": "≈ €17 for 4 hours"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/indoorspielplatz-rabatzz-868116",
+          "name": {
+            "th": "แรบาทซ์ สนามเด็กเล่นในร่ม",
+            "en": "rabatzz! indoor playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนคีลเลอร์ ชเตลลิงเงิน ฮัมบูร์ก",
+            "en": "Kieler Straße, Stellingen, Hamburg"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม 3,500 ตร.ม. สองชั้น เปิดทุกวัน",
+            "en": "A 3,500 m² indoor play centre on two floors, open every day"
+          },
+          "why": {
+            "th": "วันพุธสำหรับเด็กต่ำกว่า 5 ขวบเท่านั้น มีบ่อบอลและบ้านลม",
+            "en": "Wednesdays for under-fives only, with a ball pit and bouncy castle"
+          },
+          "q": "rabatzz! Indoorspielplatz, Kieler Str. 575a, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "ป่านีนดอร์เฟอร์เกเฮเกอ",
+            "en": "Niendorfer Gehege (forest and playground)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บอนเดนวัลด์ นีนดอร์ฟ ฮัมบูร์ก",
+            "en": "Bondenwald, Niendorf, Hamburg"
+          },
+          "what": {
+            "th": "ป่ามีทางเดิน 15 กม. และคอกกวาง",
+            "en": "A forest with 15 km of paths and a fallow-deer enclosure"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น 2 แห่งและสนามหญ้า",
+            "en": "Two playgrounds and lawns"
+          },
+          "q": "Spielplatz Niendorfer Gehege, Bondenwald 80, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "ฟาร์มเด็กเคียร์ชดอร์ฟ",
+            "en": "Kinderbauernhof Kirchdorf"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนชตือเบนโฮเฟอร์ วิลเฮล์มสบวร์ก ฮัมบูร์ก",
+            "en": "Stübenhofer Weg, Wilhelmsburg, Hamburg"
+          },
+          "what": {
+            "th": "ฟาร์มเด็กที่มีแพะ หมู ไก่ต๊อก และสัตว์อีกมาก",
+            "en": "A children's farm with goats, pigs, guinea fowl and many more animals"
+          },
+          "why": {
+            "th": "เด็กได้ดู ลูบ และให้อาหารสัตว์ ฟรี",
+            "en": "Children look at, stroke and feed the animals, free"
+          },
+          "q": "Kinderbauernhof Kirchdorf, Stübenhofer Weg 19, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "สนามเด็กเล่นกรอสเซวัลอันลาเกิน",
+            "en": "Große Wallanlagen playground (Planten un Blomen)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกลาซีชอสเซ ข้างแพลนเทินอุนโบลเมิน ฮัมบูร์ก",
+            "en": "Glacischaussee, by Planten un Blomen, Hamburg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนบนแนวกำแพงเมืองเก่า",
+            "en": "A playground on the old city walls park"
+          },
+          "why": {
+            "th": "มีที่เล่นน้ำ บ้านปีนพร้อมหอสไลเดอร์ และลานทรายใหญ่",
+            "en": "Water play, a climbing house with a slide tower and a big sand area"
+          },
+          "q": "Spielplatz Planten Un Blomen Große Wallanlagen, Glacischaussee 1, Hamburg",
+          "ok": "2026-11"
         }
       ]
     },
@@ -2034,6 +2626,43 @@
             "en": "In winter (November to April) only the indoor hall is open and the rides are closed"
           },
           "q": "Tatzmania Löffingen, Wildpark 3, Löffingen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.heidelberg-marketing.de/en/discover/family/familienfreundliches-indoor-programm",
+          "name": {
+            "th": "โรงละครหุ่นพลัปเปอร์เมาล์",
+            "en": "Puppentheater Plappermaul"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนชไตน์ฮอฟ ไฮเดลเบิร์ก",
+            "en": "Steinhofweg, Heidelberg"
+          },
+          "what": {
+            "th": "โรงละครหุ่นที่อยู่ในรายชื่อที่เที่ยววันฝนตกสำหรับครอบครัวของเมือง",
+            "en": "A puppet theatre on the city's family rainy-day list"
+          },
+          "why": {
+            "th": "ดูละครหุ่นในร่มในวันฝนตก",
+            "en": "An indoor puppet show for a rainy day"
+          },
+          "q": "Puppentheater Plappermaul, Steinhofweg 20, Heidelberg",
           "ok": "2026-11"
         }
       ]
@@ -2815,6 +3444,80 @@
           },
           "q": "Doppelbrücke, Taubertalweg, Rothenburg ob der Tauber",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://freizeitmonster.de/blog/indoor-spielplaetze-dinkelsbuehl",
+          "name": {
+            "th": "ฟันทาเซีย คินเดอร์ลันด์",
+            "en": "FUNtasia Kinderland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเอลวังเงอร์ ดิงเคิลส์บึล",
+            "en": "Ellwanger Straße, Dinkelsbühl"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มในอาคารใหญ่",
+            "en": "An indoor play centre in a covered hall"
+          },
+          "why": {
+            "th": "มีเครื่องปีน บ้านลม และแทรมโพลีน",
+            "en": "Climbing, bouncy castles and trampolines"
+          },
+          "q": "Funtasia Kinderland, Ellwanger Str. 21, Dinkelsbühl",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.infranken.de/lk/franken/ausflug/spielplaetze-in-franken-altmuehlsee-bamberg-dinkelsbuehl-familie-ausflug-wasserspielplatz-abenteuer-art-6221976",
+          "name": {
+            "th": "สนามเด็กเล่นผจญภัยไบลเชอ",
+            "en": "Bleiche adventure playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไบลช์เวก ดิงเคิลส์บึล",
+            "en": "Bleichweg, Dinkelsbühl"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นผจญภัย มีหอปีนสูง สะพานเชือก และสลิง",
+            "en": "An adventure playground with tall climbing towers, rope bridges and a zip line"
+          },
+          "why": {
+            "th": "มีอะไรให้เด็กเล่นเยอะ",
+            "en": "Plenty of action for children"
+          },
+          "q": "Spielplatz Bleiche, Bleichweg, Dinkelsbühl",
+          "ok": "2026-11"
         }
       ]
     },
@@ -3237,6 +3940,158 @@
             "en": "The town lists it among its walks with children"
           },
           "q": "Burgruine Hopfen am See, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/playing-and-climbing",
+          "name": {
+            "th": "สนามเด็กเล่นท่าเรือ",
+            "en": "Boat harbour playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไวดัค ริมทะเลสาบฟอร์กเกนเซ ฟึสเซิน",
+            "en": "Weidachstraße, Forggensee shore, Füssen"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นธีมเรือ ริมทะเลสาบฟอร์กเกนเซ",
+            "en": "A ship-themed playground on the shore of the Forggensee"
+          },
+          "why": {
+            "th": "มีเรือให้ปีนเล่นและเรือในทะเลสาบให้ดู",
+            "en": "Ships to play on and boats on the lake"
+          },
+          "q": "Spielplatz Am Bootshafen, Weidachstraße 80, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "ลานว่ายน้ำทะเลสาบโอเบอร์เซ",
+            "en": "Obersee lido (Bad Faulenbach)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนอาลัทเซ บาดเฟาเลินบัค ฟึสเซิน",
+            "en": "Alatseestraße, Bad Faulenbach, Füssen"
+          },
+          "what": {
+            "th": "ลานว่ายน้ำในทะเลสาบ มีหอกระโดด",
+            "en": "A lake lido with a diving tower"
+          },
+          "why": {
+            "th": "ริมทะเลสาบลาดค่อยๆ เหมาะกับเด็กเล่นน้ำและเริ่มว่าย",
+            "en": "Gently sloping shores for splashing and first swims"
+          },
+          "tip": {
+            "th": "เฉพาะหน้าร้อน",
+            "en": "Summer only"
+          },
+          "q": "Oberseebad, Alatseestraße 25, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "เส้นทางฟังเสียงนก ทะเลสาบอาลัทเซ",
+            "en": "Bird trail around the Alatsee"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบอาลัทเซ บาดเฟาเลินบัค ฟึสเซิน",
+            "en": "Alatsee, Bad Faulenbach, Füssen"
+          },
+          "what": {
+            "th": "ทางเดินราว 2 กม. รอบทะเลสาบอาลัทเซ",
+            "en": "A walk of about 2 km around the Alatsee"
+          },
+          "why": {
+            "th": "สแกนคิวอาร์โค้ดฟังเสียงนกระหว่างทาง",
+            "en": "Bird songs to hear by scanning a QR code along the way"
+          },
+          "q": "Alatsee, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "สวนสัตว์เลื้อยคลานอัลกอยด์",
+            "en": "Reptile Zoo Allgäu"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "แม็กนุสพาร์ก ถนนมึลบัค ฟึสเซิน",
+            "en": "Magnuspark, Mühlbachgasse, Füssen"
+          },
+          "what": {
+            "th": "สวนสัตว์ในร่มขนาดเล็ก มีงูและแมงมุม ในฟึสเซิน",
+            "en": "A small indoor zoo of snakes and spiders in Füssen"
+          },
+          "why": {
+            "th": "เป็นหนึ่งในที่แนะนำสำหรับวันฝนตกกับเด็ก",
+            "en": "One of the town's tips for a rainy day with children"
+          },
+          "q": "Reptilienzoo Allgäu, Mühlbachgasse 10, Füssen",
           "ok": "2026-11"
         }
       ]

@@ -1,55 +1,27 @@
 {
   "town": "bt-paro",
-  "rounds": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 3 rows from Bhutan Tourism (official) and Daily Bhutan (Feb 2025), all passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "town": "bt-paro",
-      "kind": "eats",
-      "checked": "2026-11",
-      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-      "scope": "the 3 rows without ok; the rows already confirmed were not checked again",
-      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-      "confirmed": [],
-      "kept_without_ok": [
-        {
-          "name": "Chimi Lhakhang Cafeteria",
-          "src": "https://www.google.com/maps/place/Chimi+Lhakhang+Organic+Cafe/@27.5218447,89.8703439,17z",
-          "evidence": "Google Maps: 'Chimi Lhakhang Organic Cafe', buffet restaurant, 4.4★, Sopsokha (GVC9+FX4), but with no hours ('Add hours'), and its name is only similar to the row's"
-        },
-        {
-          "name": "Phuenzhi Diner",
-          "src": "https://uk.trip.com/travel-guide/foods/Punakha-21434-restaurant/Puenzhi%20Diner-19923188",
-          "evidence": "Google Maps could not find it ('Phuenzhi Diner, Khuruthang' and 'Phuenzhi Diner Punakha' listed other Punakha restaurants); a web search found a Trip.com page 'Puenzhi Diner', Khuruthang, Punakha 13001, with no date — the place exists in a listing but nothing current confirms it"
-        },
-        {
-          "name": "Karma's Coffee",
-          "src": "https://vymaps.com/BT/Karma-s-Coffee-99638/",
-          "evidence": "Google Maps could not find it (searches listed Good Karma Cafe, Karma's Dhaba on Phendey Lam and Karma's Diner); a web search found only a directory entry (vymaps, Phendey Lam) and 2011 blog posts — nothing current"
-        }
-      ],
-      "removed": []
+      "name": "Simply Bhutan (living museum)",
+      "page_name": "Simply Bhutan living museum",
+      "src": "https://bhutan.travel/journal/editorial/bhutan-is-family-friendly",
+      "date": "official",
+      "map": "Google Maps 'Simply Bhutan' (Genyen Lam, Thimphu), newest review shown 4 hours ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Burger Point",
+      "why": "no review dates readable on the map"
     },
     {
-      "town": "bt-paro",
-      "kind": "eats + sights",
-      "checked": "2026-11-23",
-      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-      "agents": "one Haiku agent; 2 rows from Things to Do in Bhutan (2026) passed library-check.cjs, 1 went in",
-      "added": [
-        {
-          "name": "Tiger's Nest hike",
-          "page_name": "Tiger's Nest Hike",
-          "src": "https://thingstodoinbhutan.com/family/",
-          "date": "2026-09",
-          "map": "Google Maps 'Paro Taktsang (Tiger's Nest Monastery)', 311 reviews, newest '6 days ago'"
-        }
-      ],
-      "left_out": [
-        {
-          "name": "Thimphu Weekend Archery Ground",
-          "why": "newest Google Maps review a year old"
-        }
-      ],
-      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+      "name": "Rafting on the Mo Chhu",
+      "why": "a guided trip, not a place"
     }
-  ]
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

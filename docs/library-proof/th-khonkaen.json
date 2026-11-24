@@ -1,25 +1,156 @@
 {
   "town": "th-khonkaen",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 2 rows without ok; the town holds 14 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 17 rows from KTC (Apr 2026) and TrueID Travel (Jan, Feb 2026) passed library-check.cjs, 13 went in",
+  "added": [
     {
-      "name": "Pomodoro",
-      "src": "https://www.google.com/maps/place/Pomodoro/@16.4289229,102.8309914,17z",
-      "page_name": "Pomodoro / โพโมโดโร ITALIAN RESTAURANT",
-      "evidence": "Google Maps (2026-11-23): Italian restaurant, 4.3★, 348 Soi 16, Nai Mueang, Mueang Khon Kaen (CRHJ+H9); 'Closed · Opens 4 PM' (today), phone listed; nothing says closed",
-      "ok": "2026-11"
+      "name": "11AM cafe and space",
+      "page_name": "11AM cafe and space",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 1,017 reviews, newest shown '1 day ago'"
     },
     {
-      "name": "Central Khon Kaen food court",
-      "page_name": "Food Park เซ็นทรัลพลาซา ขอนแก่น",
-      "evidence": "Google Maps (2026-11-23): the food court's own listing 'Food Park เซ็นทรัลพลาซา ขอนแก่น', restaurant, 4.1★, 40 Sri Chan Rd; 'Open · Closes 8:30 PM' (beside the mall, Central Khon Kaen, 99 Sri Chan Rd, open to 9 PM)",
-      "ok": "2026-11"
+      "name": "Murmur Baker",
+      "page_name": "Murmurbaker",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 'Murmur baker เมอเมอ เบเคอร์', 60 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Chujai Cafe",
+      "page_name": "ชูใจ คาเฟ่",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 'โรงคั่วกาแฟชูใจ - Chujai The Roaster', 341 reviews, newest shown '5 days ago'"
+    },
+    {
+      "name": "Huean Kham Nang",
+      "page_name": "เฮือนคำนาง",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 'เฮือนคำนาง ขอนแก่น', 41 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "HarborLand Central Khon Kaen",
+      "page_name": "HarborLand",
+      "src": "https://travel.trueid.net/detail/awmMRQYWzjVw",
+      "date": "2026-02",
+      "map": "Google Maps 'HarborLand Central Khonkaen', 22 reviews, newest shown '7 days ago'"
+    },
+    {
+      "name": "Khonkaen Exotic Pets",
+      "page_name": "Khonkaen Exotic Pets and Fountain show",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 853 reviews, newest shown '7 days ago'"
+    },
+    {
+      "name": "Columbo Craft Village",
+      "page_name": "Columbo Craft Village",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 'โคลัมโบ คราฟ วิลเลจ', 466 reviews, newest shown '9 days ago'"
+    },
+    {
+      "name": "Phu Kao–Phu Phan Kham National Park",
+      "page_name": "Phu Kao Phu Phan Kham",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 1,118 reviews, newest shown '5 days ago'"
+    },
+    {
+      "name": "Blue Lagoon, Phu Pha Man",
+      "page_name": "Blue Lagoon ภูผาม่าน",
+      "src": "https://travel.trueid.net/detail/oe7zQQkxMRRq",
+      "date": "2026-01",
+      "map": "Google Maps 1,339 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Wat Thung Setthi",
+      "page_name": "วัดทุ่งเศรษฐี",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 2,670 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Phra That Kham Kaen",
+      "page_name": "พระธาตุขามแก่น",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 2,738 reviews, newest shown '4 days ago'"
+    },
+    {
+      "name": "Ba Luang waterfall",
+      "page_name": "น้ำตกบ๋าหลวง",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+      "date": "2026-04",
+      "map": "Google Maps 'วนอุทยานน้ำตกบ๋าหลวง', 257 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "Nam Phong National Park",
+      "page_name": "อุทยานแห่งชาติน้ำพอง",
+      "src": "https://travel.trueid.net/detail/oe7zQQkxMRRq",
+      "date": "2026-01",
+      "map": "Google Maps 464 reviews, newest shown '9 days ago'"
+    },
+    {
+      "name": "SO Wonderland",
+      "page_name": "SO Wonderland",
+      "src": "https://nayoo.co/khonkaen/blogs/9-kids-cafe-khonkaen",
+      "date": "2025-12",
+      "map": "Google Maps 'SO WONDERLAND' (999/63 Mueang), newest review shown a day ago"
+    },
+    {
+      "name": "Kinder Kids Cafe",
+      "page_name": "Kinder Kids Cafe",
+      "src": "https://www.lemon8-app.com/@koypitcha/7552342615346872839?region=us",
+      "date": "2025-09",
+      "map": "Google Maps 'Kinder Kids Cafe' (Mittraphap Soi 25), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Little Giggles Kids Cafe",
+      "page_name": "Little Giggles - Kids Cafe - คาเฟ่เด็ก",
+      "src": "https://restaurantguru.com/Little-Giggles-Kids-Cafe-%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%9F%E0%B9%88%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-Khon-Kaen",
+      "date": "2026-09",
+      "map": "Google Maps 'Little Giggles - Kids Cafe' (27/19 Chalermprakiat Rd), newest review shown 2 months ago"
+    },
+    {
+      "name": "Bueng Thung Sang park",
+      "page_name": "บึงทุ่งสร้าง",
+      "src": "https://www.wongnai.com/listings/attraction-khonkaen",
+      "date": "2025",
+      "map": "Google Maps 'บึงทุ่งสร้าง' (Nai Mueang), newest review shown a week ago"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Just Follow the Goat (Kangsadan)",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Chokdee Cafe",
+      "why": "no review in the last six months shown"
+    },
+    {
+      "name": "Tat Fa waterfall, Pha Chom Tawan",
+      "why": "inside Phu Wiang National Park, already in"
+    },
+    {
+      "name": "Kiddos, Timberland Kids Cafe, Kids Ja Len, Baby's Heaven, Yes Papa",
+      "why": "no street or district on the page"
+    },
+    {
+      "name": "Khonkaen Exotic Pets",
+      "why": "an animal show"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Nayoo (Dec 2025), Lemon8 (Sep 2025), Restaurant Guru (Sep 2026) and Wongnai (2025), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

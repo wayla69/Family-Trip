@@ -1,19 +1,75 @@
 {
   "town": "kr-suwon",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 26 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
+  "agents": "one Haiku agent; 5 rows from mom-mom.net (2026), all passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "name": "Instep Coffee",
-      "src": "https://www.google.com/maps/place/INSTEP+COFFEE",
-      "page_name": "INSTEP COFFEE",
-      "evidence": "Google Maps (2026-11-23): coffee shop, 4.2★, 11-13 Jukjeon-ro 15beon-gil, Giheung-gu, Yongin-si (84C5+HQ); 'Open · Closes 10 PM', Instagram linked; nothing says closed. The English query lands on Bojeong-dong Cafe Street, so the query is now its Korean name",
-      "ok": "2026-11"
+      "name": "Four Seasons Kitchen (Gwanggyo)",
+      "page_name": "Four Seasons Kitchen Gwanggyo直营 Store",
+      "src": "https://mom-mom.net/en/travel/places/69a66cdcd011d13e58bf98eb",
+      "date": "2026-09",
+      "map": "Google Maps '포시즌키친 광교직영점', 22 reviews, newest shown 21 days ago"
+    },
+    {
+      "name": "Bbok Sikdang (Gwanggyo Café Street)",
+      "page_name": "Bbok Sikdang Gwanggyo Cafe Street Branch",
+      "src": "https://mom-mom.net/en/travel/places/69ce038a1628e93aad55eebd",
+      "date": "2026-05",
+      "map": "Kakao Map '뽁식당 광교카페거리점' (센트럴파크로127번길 47), open, 557 blog posts, newest 15 Nov 2026"
+    },
+    {
+      "name": "Bbok Sikdang (Haenggung)",
+      "page_name": "Bbok Sikdang Haenggung-dong Branch",
+      "src": "https://mom-mom.net/en/travel/places/69ce034d730b4c812c662f2e",
+      "date": "2026-09",
+      "map": "Kakao Map '뽁식당 행궁점' (신풍로 34-1), open, 125 reviews, newest 20 Nov 2026"
+    },
+    {
+      "name": "Hanchon Seolleongtang (Mangpo)",
+      "page_name": "Hanchon Seolleongtang Suwon Mangpo Branch",
+      "src": "https://mom-mom.net/en/travel/places/698d8fdda3ac5acbeed7b126",
+      "date": "2026-09",
+      "map": "Kakao Map '한촌설렁탕 수원망포점' (영통로 125), open, newest 21 Nov 2026"
+    },
+    {
+      "name": "Myeongnyun Jinsa Galbi (Yeongtong)",
+      "page_name": "Myeongnyun Jinsa Galbi Suwon Yeongtong Branch",
+      "src": "https://mom-mom.net/en/travel/places/68ac35f0ca795b20d1869bd8",
+      "date": "2026-09",
+      "map": "Kakao Map '명륜진사갈비 수원영통점' (봉영로 1617 훼미리타워 2층), open, 38 reviews, newest 18 Nov 2026"
+    },
+    {
+      "name": "Haeundae Pa (Suwon 1st branch)",
+      "page_name": "해운대패 수원1호점",
+      "src": "https://mom-mom.net/travel/places/6808ae528764030395d6b549",
+      "date": "2026-06",
+      "map": "Kakao Map '해운대패 수원1호점' (영통로214번길 9), newest review 22 Oct 2026"
+    },
+    {
+      "name": "Gyeonggi Upcycle Plaza",
+      "page_name": "경기도업사이클플라자",
+      "src": "https://www.yugacrew.com/crewletter/suwon-indoor-kids-places",
+      "date": "2026-11",
+      "map": "Kakao Map '경기도 업사이클플라자' (서둔로 166), open 10:00–18:00, newest review 6 Nov 2026"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "바운스슈퍼파크 수원영통센터",
+      "why": "no page date (library-check.cjs)"
+    },
+    {
+      "name": "쿠우쿠우 수원병점점",
+      "why": "in Hwaseong, not Suwon"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "kakao_pass": "24 Nov 2026: +4 (Bbok Sikdang (Gwanggyo, Haenggung), Hanchon Seolleongtang, Myeongnyun Jinsa Galbi)",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from mom-mom.net, KTripTips and Yugacrew (2026), 2 passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

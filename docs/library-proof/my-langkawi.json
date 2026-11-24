@@ -1,0 +1,34 @@
+{
+  "town": "my-langkawi",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 4 rows from AirAsia (Aug 2026) and redBus (Aug 2026); 3 passed library-check.cjs, 2 went in",
+  "added": [
+    {
+      "name": "Tanjung Rhu Beach",
+      "page_name": "Tanjung Rhu",
+      "src": "https://www.airasia.com/blog/malaysia/kedah/best-places-to-travel-with-kids-in-langkawi/",
+      "date": "2026-08",
+      "map": "Google Maps 'Tanjung Rhu Beach' (Kedah), newest review shown 5 hours ago"
+    },
+    {
+      "name": "Machinchang PetLand",
+      "page_name": "Machinchang Petland Langkawi",
+      "src": "https://www.redbus.my/travel-guide/family-travel-guide-to-langkawi-during-school-holidays/",
+      "date": "2026-08",
+      "map": "Google Maps 'Machinchang PetLand Langkawi By ENR' (Jalan Teluk Burau), newest review shown 2 weeks ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Pantai Tengah",
+      "why": "no review dates readable on the map"
+    },
+    {
+      "name": "Tasik Dayang Bunting",
+      "why": "the name was not on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

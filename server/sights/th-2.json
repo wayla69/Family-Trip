@@ -497,6 +497,166 @@
           "q": "Oto Play Park, Central Phuket, Phuket",
           "ok": "2026-11",
           "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "หนุมานเวิลด์",
+            "en": "Hanuman World"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "วิชิต ภูเก็ต",
+            "en": "Wichit, Phuket"
+          },
+          "what": {
+            "th": "สวนซิปไลน์บนยอดไม้ มีสะพานลอยฟ้าและทางเดิน",
+            "en": "A treetop zipline park with sky bridges and walkways"
+          },
+          "why": {
+            "th": "เด็กที่สูงถึงเกณฑ์ได้โหนตัวผ่านยอดไม้",
+            "en": "Children who meet the height rule fly through the trees"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 08:00–18:00",
+            "en": "Open daily 08:00–18:00"
+          },
+          "q": "Hanuman World, Phuket",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "แบทเทิลฟิลด์ ภูเก็ต เลเซอร์แท็ก",
+            "en": "Battlefield Phuket Laser Tag"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศรีสุนทร ถลาง ภูเก็ต",
+            "en": "Si Sunthon, Thalang, Phuket"
+          },
+          "what": {
+            "th": "สนามเลเซอร์แท็กในร่มสำหรับครอบครัว",
+            "en": "Indoor laser-tag arenas for families"
+          },
+          "why": {
+            "th": "เด็กโต วัยรุ่น และพ่อแม่เล่นด้วยกันได้",
+            "en": "Older children, teenagers and parents can all play"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 08:00–22:00 มักมีงานวันเกิด เช็กก่อนไป",
+            "en": "Open daily 08:00–22:00; a birthday-party spot, so check first"
+          },
+          "q": "Battlefield Phuket Laser Tag",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "แอดเวนเจอร์ วิลเลจ ฉลอง",
+            "en": "Adventure Village Chalong"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฉลอง ภูเก็ต",
+            "en": "Chalong, Phuket"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มขนาดใหญ่ มีเครื่องปีนป่ายและแทรมโพลีน",
+            "en": "A big indoor play centre with climbing frames and trampolines"
+          },
+          "why": {
+            "th": "แวะแป๊บเดียวกลายเป็นทั้งบ่ายสำหรับเด็กเล็ก",
+            "en": "A quick visit turns into an afternoon for little ones"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–20:00 ย้ายมาอยู่ที่ฉลองแล้ว",
+            "en": "Open daily 10:00–20:00; it moved to Chalong"
+          },
+          "q": "Adventure Village Chalong, Phuket",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ฿490 ต่อชั่วโมง · ฿900 ต่อวัน",
+            "en": "≈ ฿490 an hour · ฿900 a day"
+          },
+          "book": "none",
+          "src": "https://thethaiger.com/guides/best-of/things-to-do/are-there-family-friendly-activities-at-jungceylon-phuket",
+          "name": {
+            "th": "ฟร็อกกี้ส์ฟันพาร์ก จังซีลอน",
+            "en": "Froggy's Fun Park (Jungceylon)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จังซีลอน ป่าตอง",
+            "en": "Jungceylon, Patong"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม มีแทรมโพลีน ซิปไลน์ เกมอาร์เคด และเกมวีอาร์",
+            "en": "An indoor fun park with trampolines, a zipline, arcade games and VR"
+          },
+          "why": {
+            "th": "แทรมโพลีนและเครื่องปีนป่ายสำหรับเด็กตั้งแต่ 4 ขวบ",
+            "en": "Trampolines and climbing for children from four"
+          },
+          "q": "Froggy's Fun Park, Jungceylon, Patong, Phuket",
+          "ok": "2026-11"
         }
       ]
     },
@@ -825,6 +985,43 @@
           "q": "Ripley's Believe It or Not, Royal Garden Plaza, Beach Road, Pattaya",
           "ok": "2026-11",
           "src": "https://pickyourtrail.com/attractions/pattaya/ripleys-believe-it-or-not-museum-pattaya"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.pattayaunlimited.com/things-to-do-with-kids-in-pattaya/",
+          "name": {
+            "th": "สวนนงนุชพัทยา",
+            "en": "Nong Nooch Tropical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "พัทยา",
+            "en": "Pattaya"
+          },
+          "what": {
+            "th": "สวนใหญ่ มีหุบเขาไดโนเสาร์ที่มีหุ่นไดโนเสาร์ขนาดเท่าจริง",
+            "en": "Big gardens with a Dinosaur Valley of life-size dinosaur models"
+          },
+          "why": {
+            "th": "เด็กได้เดินดูไดโนเสาร์ตัวเท่าจริง",
+            "en": "Children walk among the life-size dinosaurs"
+          },
+          "q": "Nong Nooch Tropical Garden, Pattaya, Chonburi",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1102,6 +1299,199 @@
           "q": "Wildlife Friends Foundation Thailand, Tha Yang, Hua Hin",
           "ok": "2026-11",
           "src": "https://www.wfft.org/?p=38052"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "เขาตะเกียบ",
+            "en": "Khao Takiab (Monkey Mountain)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เขาตะเกียบ หัวหิน",
+            "en": "Khao Takiab, Hua Hin"
+          },
+          "what": {
+            "th": "เขาที่มีวัด ทางใต้ของตัวเมือง มีลิงอยู่มาก",
+            "en": "A temple hill south of town where macaques roam"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ดูลิง",
+            "en": "Children watch the monkeys"
+          },
+          "tip": {
+            "th": "เก็บขนมและกระเป๋าให้ดี ลิงชอบแย่ง",
+            "en": "Keep snacks and bags secured: the monkeys snatch"
+          },
+          "q": "Khao Takiap, หัวหิน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "วนอุทยานปราณบุรี",
+            "en": "Pranburi Forest Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ปราณบุรี ใกล้หัวหิน",
+            "en": "Pranburi, near Hua Hin"
+          },
+          "what": {
+            "th": "ทางเดินไม้ผ่านป่าชายเลน",
+            "en": "A boardwalk through the mangroves"
+          },
+          "why": {
+            "th": "เด็กเล็กได้ดูปูตัวเล็กและแอ่งน้ำ",
+            "en": "Little ones spot tiny crabs and poke at tide pools"
+          },
+          "q": "วนอุทยาน ปราณบุรี",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "วัดห้วยมงคล",
+            "en": "Wat Huay Mongkol"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทับใต้ หัวหิน",
+            "en": "Thap Tai, Hua Hin"
+          },
+          "what": {
+            "th": "วัดที่มีรูปปั้นงดงามและลานกว้าง",
+            "en": "A temple with dramatic statues and open grounds"
+          },
+          "why": {
+            "th": "ลานกว้างให้เด็กเดินเล่น",
+            "en": "Open grounds for little legs to stretch"
+          },
+          "q": "วัดห้วยมงคล, หัวหิน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "พระราชนิเวศน์มฤคทายวัน",
+            "en": "Mrigadayavan Palace"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ริมทะเลชะอำ ใกล้หัวหิน",
+            "en": "Cha-am seafront, near Hua Hin"
+          },
+          "what": {
+            "th": "พระราชวังไม้สักริมทะเล",
+            "en": "A teak palace on the seafront"
+          },
+          "why": {
+            "th": "แวะชมสั้น ๆ ลมเย็น ระหว่างทะเลกับตลาด",
+            "en": "A short, breezy visit between beach and markets"
+          },
+          "q": "พระราชนิเวศน์มฤคทายวัน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://vananavahuahin.holidayinnresorts.com/brydes-kids-club-hua-hin",
+          "name": {
+            "th": "คิดส์คลับไบรด์ส ฮอลิเดย์อินน์วานานาวา",
+            "en": "Bryde's Kids Club (Holiday Inn Vana Nava)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮอลิเดย์อินน์วานานาวา ถนนเพชรเกษม หัวหิน",
+            "en": "Holiday Inn Vana Nava, Phetkasem Road, Hua Hin"
+          },
+          "what": {
+            "th": "คิดส์คลับในร่มขนาดใหญ่ธีมเรือ ในโรงแรม",
+            "en": "A big indoor kids' club with a ship theme, at the hotel"
+          },
+          "why": {
+            "th": "คลับกว้างทันสมัย ยินดีต้อนรับเด็กทุกคน",
+            "en": "A roomy, modern club where all children are welcome"
+          },
+          "tip": {
+            "th": "สำหรับแขกของโรงแรม เด็กต่ำกว่า 4 ขวบต้องมีผู้ปกครองหรือพี่เลี้ยง ควรจองล่วงหน้า",
+            "en": "For hotel guests; under-4s with a parent or sitter; book ahead"
+          },
+          "q": "Holiday Inn Resort Vana Nava Hua Hin",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1500,6 +1890,125 @@
           "q": "Ao Thalane, north of Ao Nang, Krabi",
           "ok": "2026-11",
           "src": "https://www.nomadotravel.app/en/guides/krabi-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 3.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thrillophilia.com/places-to-visit-in-krabi-with-family",
+          "name": {
+            "th": "เขาหงอนนาค",
+            "en": "Dragon's Crest (Khao Ngon Nak)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หนองทะเล กระบี่",
+            "en": "Nong Thale, Krabi"
+          },
+          "what": {
+            "th": "เส้นทางเดินป่ามีป้ายบอก ผ่านน้ำตกเล็ก ๆ ถึงยอดเขาเห็นวิวทะเลและป่า",
+            "en": "A marked hike past mini waterfalls to a summit view over sea and forest"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กโตและวัยรุ่น",
+            "en": "For older children and teenagers"
+          },
+          "tip": {
+            "th": "ไปกลับ 3–4 ชั่วโมง",
+            "en": "A 3–4 hour round trip"
+          },
+          "q": "เขาหงอนนาค, กระบี่",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/14l3mAWlKjvQ",
+          "name": {
+            "th": "ฮาร์เบอร์แลนด์ เซ็นทรัล กระบี่",
+            "en": "HarborLand Central Krabi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซ็นทรัล กระบี่ กระบี่",
+            "en": "Central Krabi, Krabi"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม แบ่งโซนตามวัย ตั้งแต่ 5 เดือนถึง 15 ปี",
+            "en": "Indoor play zones by age, from 5 months to 15 years"
+          },
+          "why": {
+            "th": "เล่นในร่มวันฝนตก มีเมืองจำลองและสไลเดอร์",
+            "en": "Indoors for a rainy day, with a role-play town and a tower slide"
+          },
+          "q": "HarborLand Central Krabi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ป่าในเมืองกระบี่",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://krabinature.com/krabi-urban-forest-walkway-mangrove-walkway/",
+          "name": {
+            "th": "ทางเดินป่าในเมืองกระบี่",
+            "en": "Krabi Urban Forest Walkway"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ตัวเมืองกระบี่ ทางใต้ของโรงพยาบาล กระบี่",
+            "en": "Krabi town, south of the public hospital, Krabi"
+          },
+          "what": {
+            "th": "ทางเดินคอนกรีต 500 เมตรเหนือป่าชายเลน มีหอชมวิวสูง 5 ชั้น",
+            "en": "A 500 m concrete walk over the mangroves with a five-storey lookout tower"
+          },
+          "why": {
+            "th": "ดูนก ปลาตีน และปู บนทางเดินง่าย ๆ",
+            "en": "Birds, mudskippers and crabs to spot on an easy walk"
+          },
+          "tip": {
+            "th": "ระวังลิง ไม่ควรไปตอนค่ำ",
+            "en": "Watch out for monkeys; not for after dark"
+          },
+          "q": "Krabi Urban Forest, Krabi",
+          "ok": "2026-11"
         }
       ]
     }

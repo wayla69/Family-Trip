@@ -529,3 +529,294 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Korat, 23 Nov 2026
+batch-33 of docs/library-briefs (round 2). +9: Nub Pochana, Larb Somphit, Soy Jeck Pochana, Khrua Suwimon, Pa Plueang, Khanom Jeen Yai Pao, Ko Kia, Kin Dee, Khanom Oshin. Proof in `docs/library-proof/th-korat.json`.
+
+### Rayong, 23 Nov 2026
+batch-33 of docs/library-briefs (round 2). +2: Gazebo Cafe, Ran Choei. Proof in `docs/library-proof/th-rayong.json`.
+
+### Chongqing, 23 Nov 2026
+batch-33 of docs/library-briefs (round 2). +1: Uncle Biao (Hong Kong tea restaurant by Luzumiao), checked on Baidu Maps. Proof in `docs/library-proof/cn-chongqing.json`.
+
+### Guilin, 23 Nov 2026
+batch-34 of docs/library-briefs (round 2). +1: Sister Liu Beer Fish (West Street main branch), checked on Baidu Maps. Proof in `docs/library-proof/cn-guilin.json`.
+
+### Hakone, 23 Nov 2026
+batch-34 of docs/library-briefs (round 2). +1: Hakone Sushi. Proof in `docs/library-proof/jp-hakone.json`.
+- **24 Nov 2026, Hakone** (docs/library-briefs batch-90, round 3): +1 (Irori Chaya, Sengokuhara). Proof in `docs/library-proof/jp-hakone.json`.
+
+### Lampang, 23 Nov 2026
+batch-35 of docs/library-briefs (round 2). +7 from Wongnai's must-try list: Khao Soi Pa Boon, Khao Soi Super, Dab Daeng noodles, Rad Na Super, Thip Chang chicken rice, The Pappa, Sai Ua Pao Tao Luang. Proof in `docs/library-proof/th-lampang.json`.
+
+- **24 Nov 2026, Trat & Koh Chang** (docs/library-briefs batch-87, round 3): +1 (Chompu Farm's Cafe, Trat). Proof in `docs/library-proof/th-kohchang.json`.
+
+- **24 Nov 2026, Ayutthaya** (docs/library-briefs batch-92, round 3): +2 (Grand Chaopraya, The Summer House). Proof in `docs/library-proof/th-ayutthaya.json`.
+
+### Khon Kaen, 23 Nov 2026
+batch-35 of docs/library-briefs (round 2). +4: 11AM cafe and space, Murmur Baker, Chujai, Huean Kham Nang. Proof in `docs/library-proof/th-khonkaen.json`.
+- **24 Nov 2026, Khon Kaen** (docs/library-briefs batch-73, round 3): +3 kids' cafés (SO Wonderland, Kinder Kids Cafe, Little Giggles). Proof in `docs/library-proof/th-khonkaen.json`.
+
+### Chiang Mai, 23 Nov 2026
+batch-37 of docs/library-briefs (round 2). +1: Ohkajhu (San Sai). Proof in `docs/library-proof/th-chiangmai.json`.
+
+### Phuket, 23 Nov 2026
+batch-37 of docs/library-briefs (round 2). +5 from Time Out Phuket: Millionaire Burgers (Surin), OOO Burger, PAN Burger, Treasure Burger, Rosmarino Rawai. Proof in `docs/library-proof/th-phuket.json`.
+
+### Bangkok, 23 Nov 2026
+batch-37 of docs/library-briefs (round 2). +5 from Grab's family-restaurant list: Krua Dok Mai Khao, Kin Lom Chom Saphan, Krua Krung Thep, Krua Nai Baan, Rong Si Phochana (Lang Suan). Proof in `docs/library-proof/th-bangkok.json`.
+- **24 Nov 2026, Bangkok** (docs/library-briefs batch-56, round 3): +1 (Ohkajhu Siam Square One).
+
+- **24 Nov 2026, Koh Samui** (docs/library-briefs batch-79, round 3): +1 (Treehouse Silent Beach). Proof in `docs/library-proof/th-samui.json`.
+
+- **24 Nov 2026, Hua Hin** (docs/library-briefs batch-62, round 3): +3 (Krua Jeanong, S.Ken's Bistro, Baan Rim Nam Phetchaburi). Proof in `docs/library-proof/th-huahin.json`.
+
+### Tokyo, 24 Nov 2026
+batch-38 of docs/library-briefs (round 2). +2: Kawara Cafe & Kitchen (Kichijoji Parco), HUGHUG Café. Four places on 2025 pages turned out permanently closed. Proof in `docs/library-proof/jp-tokyo.json`.
+
+### Krabi, 24 Nov 2026
+batch-38 of docs/library-briefs (round 2). +10: Ton Ma Yom, Gecko Cabane, Chalita Cafe, Burger Bung, Ruanthip (Khlong Son), Baan Ma-Ying, Baan Tha Ley Cafe, Makan, Sprucy Cafe, Cha-Lom. Proof in `docs/library-proof/th-krabi.json`.
+- **24 Nov 2026, Krabi** (docs/library-briefs batch-66, round 3): +4 (Ban Ko Lek, Anchali, Nahm, Khaothong Terrace). Proof in `docs/library-proof/th-krabi.json`.
+
+### Osaka, 24 Nov 2026
+batch-39 of docs/library-briefs (round 2). +3: Hakodate Kantaro (Grand Front), Hanamomimo (Namba Parks), Lingua World Cafe. Proof in `docs/library-proof/jp-osaka.json`.
+
+### Kyoto, 24 Nov 2026
+batch-39 of docs/library-briefs (round 2). +1: Horiuchi Kajitsuen (Nara). Proof in `docs/library-proof/jp-kyoto.json`.
+
+- **24 Nov 2026, Hokkaido** (docs/library-briefs batch-62, round 3): +2 (Nahana, New Sanko — Otaru). Proof in `docs/library-proof/jp-hokkaido.json`.
+
+### Seoul, 24 Nov 2026
+batch-39 of docs/library-briefs (round 2). +3: Jeongwon Urban Garden, Cheonggiwa Town (Gildong Sageori), Casa de Tacos (Songridan-gil). Proof in `docs/library-proof/kr-seoul.json`.
+- **24 Nov 2026, Seoul, Kakao Map pass**: +2 (Flubber (Yangjaecheon), Hwangnam (Gwanghwamun)), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-seoul.json`.
+
+### Hong Kong, 24 Nov 2026
+batch-40 of docs/library-briefs (round 2). +1: Smoke & Barrel (its new address in Wyndham Mansion, Central, now confirmed on the map). Proof in `docs/library-proof/hk-hongkong.json`.
+
+### Busan, 24 Nov 2026
+batch-40 of docs/library-briefs (round 2). +6: Shabussam Jumeoni (Osiria), Daepae Market (Daeyeon), Gwangan Jeil Dwaeji Gukbap, Mad for Garlic (Lotte Busan Main), Old Mug, Miffy Café. Proof in `docs/library-proof/kr-busan.json`.
+- **24 Nov 2026, Busan, Kakao Map pass**: +4 (Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon; Zooraji (Shinsegae Centum City)), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-busan.json`.
+
+### Jeju, 24 Nov 2026
+batch-40 of docs/library-briefs (round 2). +7: Myeonjumak, Samsin Halmang Bapsang, Dullegil (Jungmun), Jeju Hanmyeonga, Gozip Dol Wooluck (Hamdeok), Jeju Dodori Meat Noodles, Gwangyuk. Proof in `docs/library-proof/kr-jeju.json`.
+- **24 Nov 2026, Jeju, Kakao Map pass**: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-jeju.json`.
+- **24 Nov 2026, Jeju** (docs/library-briefs batch-59, round 3): +2 (Nammaene Black Pork, two Seogwipo branches). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+
+### Taipei, 24 Nov 2026
+batch-40 of docs/library-briefs (round 2). +3: Mountain and Sea House, Orange Shabu Shabu (Da-an), MoneyJump. Proof in `docs/library-proof/tw-taipei.json`.
+- **24 Nov 2026, Taipei** (docs/library-briefs batch-60, round 3): +2 (Elephant Garden, MuMu Land). Proof in `docs/library-proof/tw-taipei.json`.
+
+### Macau, 24 Nov 2026
+batch-41 of docs/library-briefs (round 2). +3: Rossio and Imperial Court (MGM Macau), Anytime (MGM Cotai). Proof in `docs/library-proof/mo-macau.json`.
+- **24 Nov 2026, Macau** (docs/library-briefs batch-65, round 3): +2 (Coast at MGM Cotai, Spotlight at Studio City). Proof in `docs/library-proof/mo-macau.json`.
+
+### Kuala Lumpur, 24 Nov 2026
+batch-41 of docs/library-briefs (round 2). +1: Antipodean (Bangsar). Proof in `docs/library-proof/my-kualalumpur.json`.
+
+### Singapore, 24 Nov 2026
+batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botanic Gardens), Food Republic (313@Somerset), Wildseed Café (The Garage), Gyukatsu Kyoto Katsugyu (Parkway Parade), Papi's Tacos (Jalan Besar). Proof in `docs/library-proof/sg-singapore.json`.
+
+- **24 Nov 2026, Bali** (docs/library-briefs batch-43): +4 (The Cashew Tree, Sundara, Jamie Oliver Kitchen, Splash Bistro). Proof in `docs/library-proof/id-bali.json`.
+- **24 Nov 2026, Bali** (docs/library-briefs batch-58, round 3): +1 (I Am Vegan Babe). Proof in `docs/library-proof/id-bali.json`.
+
+- **24 Nov 2026, Okinawa** (docs/library-briefs batch-43): +5 (Mikado, Piparchi Kitchen, Gaishokuya Kujira, Asian Shokudo Shirokuma, Ishigama Pizza Sakaba Maruki). Proof in `docs/library-proof/jp-okinawa.json`.
+
+- **24 Nov 2026, Fukuoka** (docs/library-briefs batch-62, round 3): +2 (Full Full Kazenomori, Kiyokawa Salon). Proof in `docs/library-proof/jp-fukuoka.json`.
+
+- **24 Nov 2026, Pattaya** (docs/library-briefs rerun): +4 (The Coffee Club, Sizzler, The Pizza Company — all at Central Festival Pattaya Beach — and Benihana at Avani). Proof in `docs/library-proof/th-pattaya.json`.
+
+- **24 Nov 2026, Hat Yai** (docs/library-briefs rerun): +1 (Hashi Japanese Restaurant). Proof in `docs/library-proof/th-hatyai.json`.
+
+- **24 Nov 2026, London** (docs/library-briefs batch-44): +8 (Agora, Bancone, Le Pont de la Tour, Apricity, Farang, Hawksmoor Spitalfields, Langan's Brasserie, Heard Borough). Proof in `docs/library-proof/gb-london.json`.
+
+- **24 Nov 2026, Paris** (docs/library-briefs batch-44): +3 (Andia, Neni, Le Comptoir Général — family Sunday brunches). Proof in `docs/library-proof/fr-paris.json`.
+
+- **24 Nov 2026, Sydney** (docs/library-briefs batch-44): +4 (Petersham Bowling Club, Bistro on the Greens, The Newport, Hotel Pennant Hills). Proof in `docs/library-proof/au-sydney.json`.
+
+- **24 Nov 2026, New York** (docs/library-briefs batch-45): +12 (Cowgirl, Brooklyn Farmacy, Super Action Burger, Chez Nick, Pig Beach, Montague Diner, Al Badawi, Noodle Pudding, River Deli, Vineapple, Grand Canyon, Dino). Proof in `docs/library-proof/us-newyork.json`.
+- **24 Nov 2026, New York** (docs/library-briefs batch-58, round 3): +2 (Community Food & Juice, Friend of a Farmer). Proof in `docs/library-proof/us-newyork.json`.
+
+- **24 Nov 2026, California** (docs/library-briefs batch-45): +10 (Los Angeles 6, San Francisco 3, Carlsbad 1). Proof in `docs/library-proof/us-california.json`.
+
+- **24 Nov 2026, Orlando** (docs/library-briefs batch-45): +3 (Grills Lakeside Seafood Deck, The Burrow, Andretti). Proof in `docs/library-proof/p-orlando.json`.
+
+- **24 Nov 2026, Rome** (docs/library-briefs batch-46): +3 (Piccolo Arancio, Lola Flaminio, Tribeca). Proof in `docs/library-proof/it-rome.json`.
+
+- **24 Nov 2026, Barcelona** (docs/library-briefs batch-46): +3 (Pez Vela, El Quim de la Boqueria, La Mar Salada). Proof in `docs/library-proof/es-barcelona.json`.
+- **24 Nov 2026, Barcelona** (docs/library-briefs batch-61, round 3): +4 (La Pepita, Federal Café, Yatai, Time Out Market). Proof in `docs/library-proof/es-barcelona.json`.
+
+- **24 Nov 2026, Amsterdam** (docs/library-briefs batch-46): +2 (Kanarie Club, Vrijburcht). Proof in `docs/library-proof/nl-amsterdam.json`.
+
+- **24 Nov 2026, Berlin** (docs/library-briefs batch-46): +6 (Maximilians, Augustiner, Banh Mi Stable, Café Botanico, Villa Rixdorf, Manzini). Proof in `docs/library-proof/de-berlin.json`. The Berlin Tourism restaurant page (Jul 2026) still lists two places the map shows permanently closed.
+
+- **24 Nov 2026, Istanbul** (docs/library-briefs batch-47): +1 (Happy Moon's Vadi İstanbul). Proof in `docs/library-proof/tr-istanbul.json`.
+
+- **24 Nov 2026, Yokohama** (docs/library-briefs batch-47): +2 (Gather @ Eating House, Yamatoya). Proof in `docs/library-proof/jp-yokohama.json`.
+
+- **24 Nov 2026, Kanazawa** (docs/library-briefs batch-47): +1 (Fusion21). Proof in `docs/library-proof/jp-kanazawa.json`.
+- **24 Nov 2026, Kanazawa** (docs/library-briefs batch-68, round 3): +2 (Gokayama Farm Kitchen, Katsuzo). Proof in `docs/library-proof/jp-kanazawa.json`.
+
+- **24 Nov 2026, Hiroshima** (docs/library-briefs batch-47): +1 (Marina Mario Espresso). Proof in `docs/library-proof/jp-hiroshima.json`.
+- **24 Nov 2026, Hiroshima** (docs/library-briefs batch-81, round 3): +3 (aruhi morinonaka, Namaste Fuji Grand Koyo, Wa Cafe Plus Roche). Proof in `docs/library-proof/jp-hiroshima.json`.
+
+- **24 Nov 2026, Nagano & Matsumoto** (docs/library-briefs batch-48): +5 (Soba Asada, Soba Club Sasaki, Kawasho, Temariya, Coffee Bigaku Abe). Proof in `docs/library-proof/jp-nagano.json`.
+
+- **24 Nov 2026, Kumamoto** (docs/library-briefs batch-48): +2 (Gyoza-ya Ni-no-Ni Chuo, Kikyo-ya). Proof in `docs/library-proof/jp-kumamoto.json`.
+- **24 Nov 2026, Kumamoto** (docs/library-briefs batch-73, round 3): +2 (Daimonji, Buffet Restaurant Ginnan). Proof in `docs/library-proof/jp-kumamoto.json`.
+
+- **24 Nov 2026, Nikko** (docs/library-briefs batch-48): +3 (Nikko Monaka, Hatsuishi Cafe, Kumoizu). Proof in `docs/library-proof/jp-nikko.json`.
+
+- **24 Nov 2026, Gyeongju, Kakao Map pass**: +1 (Eden Garden), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-gyeongju.json`.
+- **24 Nov 2026, Gyeongju** (docs/library-briefs batch-84, round 3): +1 (Hwangri Hwadukga). Proof in `docs/library-proof/kr-gyeongju.json`.
+
+- **24 Nov 2026, Gangwon** (docs/library-briefs batch-49): +3 (Gangmun Jumak, Chodang Jang Kalguksu, Matsu). Proof in `docs/library-proof/kr-gangwon.json`.
+- **24 Nov 2026, Gangwon, Kakao Map pass**: +6 (Daeunjeong, Chuncheon Ani Dakgalbi, Hyojadong Seolleongtang (Oak Valley), Green Valley Barbecue; Design Thinking Museum, Gangwon Police Museum), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-gangwon.json`.
+- **24 Nov 2026, Gangwon** (docs/library-briefs batch-64, round 3): +1 (Gausup, Chuncheon). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+
+- **24 Nov 2026, Jeonju** (docs/library-briefs batch-50): +1 (Butter Book). Proof in `docs/library-proof/kr-jeonju.json`. Google Maps shows few or no reviews for most small places in Korea, so most rows could not be confirmed open there and were left out; a pass with Naver Map would confirm more.
+- **24 Nov 2026, Jeonju, Kakao Map pass**: +7 (Hyundaiok (two branches), Ibadom Gamjatang; Innovation City Cultural Centre, MukiMuki, Nutty Child World, Namanui Kids Café), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-jeonju.json`.
+- **24 Nov 2026, Jeonju** (docs/library-briefs batch-65, round 3): +2 (Okubowl, Masiran-ge). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+
+- **24 Nov 2026, Suwon** (docs/library-briefs batch-50): +1 (Four Seasons Kitchen Gwanggyo). Proof in `docs/library-proof/kr-suwon.json`.
+- **24 Nov 2026, Suwon, Kakao Map pass**: +4 (Bbok Sikdang (Gwanggyo, Haenggung), Hanchon Seolleongtang, Myeongnyun Jinsa Galbi), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-suwon.json`.
+- **24 Nov 2026, Suwon** (docs/library-briefs batch-65, round 3): +1 (Haeundae Pa). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+
+- **24 Nov 2026, Hualien** (docs/library-briefs batch-50): +1 (Yinglun Western Restaurant). Proof in `docs/library-proof/tw-hualien.json`.
+- **24 Nov 2026, Hualien** (docs/library-briefs batch-70, round 3): +1 (the Starbucks container shop). Proof in `docs/library-proof/tw-hualien.json`.
+
+- **24 Nov 2026, Central Taiwan** (docs/library-briefs batch-50): +2 (Lizi Café Tunghai, Apple Castle). Proof in `docs/library-proof/tw-central.json`.
+- **24 Nov 2026, central Taiwan** (docs/library-briefs batch-67, round 3): +2 (Princess Anne Garden, Meteor Garden park). Proof in `docs/library-proof/tw-central.json`.
+
+- **24 Nov 2026, Khao Yai** (docs/library-briefs batch-51): +1 (Krua Baan Rao Eng). Proof in `docs/library-proof/th-khaoyai.json`.
+
+- **24 Nov 2026, Sukhothai** (docs/library-briefs batch-51): +1 (Kuay Teow Rim Rabiang). Proof in `docs/library-proof/th-sukhothai.json`.
+- **24 Nov 2026, Sukhothai** (docs/library-briefs batch-83, round 3): +1 (Ra-Biang Coffee). Proof in `docs/library-proof/th-sukhothai.json`.
+
+- **24 Nov 2026, Chanthaburi** (docs/library-briefs batch-51): +1 (Thong Nathi). Proof in `docs/library-proof/th-chanthaburi.json`.
+- **24 Nov 2026, Chanthaburi** (docs/library-briefs batch-75, round 3): +2 orchard cafés (Baan Suan Ratchanat, Arun Burapha). Proof in `docs/library-proof/th-chanthaburi.json`.
+
+- **24 Nov 2026, Tainan & Kaohsiung** (docs/library-briefs batch-51): +1 (Tainan Lòng Story). Proof in `docs/library-proof/tw-south.json`.
+- **24 Nov 2026, Tainan & Kaohsiung** (docs/library-briefs batch-61, round 3): +4 (Casa e Casa, 8818 Pizza Yongkang, Sen Doufeng Café, Little Tree Picture-Book Café). Proof in `docs/library-proof/tw-south.json`.
+
+- **24 Nov 2026, Surat Thani** (docs/library-briefs batch-52): +4 (Tapee Seafood, Nai Aow Seafood, Ban Lung Moon, Phunisa). Proof in `docs/library-proof/th-suratthani.json`.
+
+- **24 Nov 2026, Mae Hong Son** (docs/library-briefs batch-53): +5 (Khao Soi Phi Nong, Thana Phochana, Laab Aroi Thi Sud Nai Lok, Mae Luang Phen, Hoi Kha noodles). Proof in `docs/library-proof/th-maehongson.json`.
+- **24 Nov 2026, Mae Hong Son** (docs/library-briefs batch-66, round 3): +2 (Art in Chai, Coffee in Love — Pai). Proof in `docs/library-proof/th-maehongson.json`.
+
+- **24 Nov 2026, the Maldives atolls** (docs/library-briefs batch-54, round 3): +1 (Island Kitchen, Westin Maldives Miriandhoo). Proof in `docs/library-proof/mv-atolls.json`.
+
+- **24 Nov 2026, Queenstown** (docs/library-briefs batch-57, round 3): +1 (Lone Star). Proof in `docs/library-proof/nz-queenstown.json`.
+
+- **24 Nov 2026, Lisbon** (docs/library-briefs batch-59, round 3): +4 (Este Oeste, Giro'Giro, Hamburgueria da Parada, Jamie's Italian). Proof in `docs/library-proof/pt-lisbon.json`.
+
+- **24 Nov 2026, Siem Reap** (docs/library-briefs batch-59, round 3): +1 (Le Petit Chef, Park Hyatt). Proof in `docs/library-proof/kh-siemreap.json`.
+
+- **24 Nov 2026, Madrid** (docs/library-briefs batch-59, round 3): +6 (El Perro y la Galleta, Ojalá, La Musa Latina, Ginos Gran Vía, Lamucca de Pez, La Cantina de Sputnik). Proof in `docs/library-proof/es-madrid.json`.
+
+- **24 Nov 2026, Venice** (docs/library-briefs batch-62, round 3): +2 (Osteria al Portego, Osteria ai Pugni). Proof in `docs/library-proof/it-venice.json`.
+
+- **24 Nov 2026, Milan** (docs/library-briefs batch-63, round 3): +5 (Spazio Caroli 12, La Fornasetta, Löwengrube, Piccola Ischia, Mosso). Proof in `docs/library-proof/it-milan.json`.
+
+- **24 Nov 2026, Gold Coast** (docs/library-briefs batch-63, round 3): +3 (Pancake Diner, Currumbin RSL, Cafe Catalina). Proof in `docs/library-proof/au-goldcoast.json`.
+
+- **24 Nov 2026, Lombok & the Gilis** (docs/library-briefs batch-64, round 3): +3 (Mama's Pizza, Francesco's Pizza, The Shack). Proof in `docs/library-proof/id-lombok.json`.
+
+- **24 Nov 2026, Amalfi Coast** (docs/library-briefs batch-66, round 3): +1 (Geljada, Maiori). Proof in `docs/library-proof/it-amalfi.json`.
+
+- **24 Nov 2026, Brussels** (docs/library-briefs batch-67, round 3): +1 (Beaubon). Proof in `docs/library-proof/be-brussels.json`.
+
+- **24 Nov 2026, Disneyland Paris** (docs/library-briefs batch-68, round 3): +1 (Chuck Wagon Café). Proof in `docs/library-proof/p-disney-paris.json`.
+
+- **24 Nov 2026, Washington DC** (docs/library-briefs batch-68, round 3): +2 (Market Lunch, Tonic at Quigley's). Proof in `docs/library-proof/us-dc.json`.
+
+- **24 Nov 2026, Athens** (docs/library-briefs batch-68, round 3): +4 (Ergon House, To Vrasto, O Telis, Vyrinis). Proof in `docs/library-proof/gr-athens.json`.
+
+- **24 Nov 2026, Santiago** (docs/library-briefs batch-69, round 3): +5 (Bambinolli, Cassis La Dehesa, La Fuente Reina, El Cafetín de Virgilio, Chococafé). Proof in `docs/library-proof/cl-santiago.json`.
+
+- **24 Nov 2026, Ireland** (docs/library-briefs batch-69, round 3): +2 (Two Pups, Deenagh Lodge). Proof in `docs/library-proof/ie-ireland.json`.
+
+- **24 Nov 2026, Toronto** (docs/library-briefs batch-71, round 3): +2 (Avling, The Udupi Palace). Proof in `docs/library-proof/ca-toronto.json`.
+
+- **24 Nov 2026, Tbilisi** (docs/library-briefs batch-72, round 3): +4 (Pause Family Cafe, Ninia's Garden, Manano, Bukhari). Proof in `docs/library-proof/ge-tbilisi.json`.
+
+- **24 Nov 2026, Yogyakarta** (docs/library-briefs batch-72, round 3): +3 (Krasan, Little Goo, Padiku). Proof in `docs/library-proof/id-yogyakarta.json`.
+
+- **24 Nov 2026, Vancouver** (docs/library-briefs batch-74, round 3): +1 (Kirin Restaurant). Proof in `docs/library-proof/ca-vancouver.json`.
+
+- **24 Nov 2026, Prague** (docs/library-briefs batch-74, round 3): +2 (The Spot, Skákal pes). Proof in `docs/library-proof/cz-prague.json`.
+
+- **24 Nov 2026, Geneva** (docs/library-briefs batch-75, round 3): +2 (Brasserie des Trois Rois, La Riguenette, both Lausanne). Proof in `docs/library-proof/ch-geneva.json`.
+
+- **24 Nov 2026, Tallinn** (docs/library-briefs batch-75, round 3): +2 (PAAT, OKO Resto, both Viimsi). Proof in `docs/library-proof/ee-tallinn.json`.
+
+- **24 Nov 2026, Hawaii** (docs/library-briefs batch-76, round 3): +1 (Da Kitchen, Kihei). Proof in `docs/library-proof/us-hawaii.json`.
+
+- **24 Nov 2026, Provence** (docs/library-briefs batch-76, round 3): +1 (Le Carré du Palais, Avignon). Proof in `docs/library-proof/fr-provence.json`.
+
+- **24 Nov 2026, Delhi, Agra & Jaipur** (docs/library-briefs batch-77, round 3): +1 (Sattvik). Proof in `docs/library-proof/in-golden.json`.
+
+- **24 Nov 2026, Takayama & Nagoya** (docs/library-briefs batch-77, round 3): +6 (five in Nagoya with private rooms or baby seating, Marushin Shokudo in Takayama). Proof in `docs/library-proof/jp-takayama.json`.
+
+- **24 Nov 2026, Cape Town** (docs/library-briefs batch-79, round 3): +4 (Folk Cafe, Picnic Cafe, Panarottis Kenilworth, Strolla). Proof in `docs/library-proof/za-capetown.json`.
+
+- **24 Nov 2026, Interlaken** (docs/library-briefs batch-80, round 3): +1 (Waldcafé Heimwehfluh). Proof in `docs/library-proof/ch-interlaken.json`.
+
+- **24 Nov 2026, Strasbourg & Colmar** (docs/library-briefs batch-80, round 3): +5 with a children's menu (Le Pfifferbriader; Au Cygne, Bistrot des Lavandières, Maison des Têtes brasserie, l'Auberge in Colmar). Proof in `docs/library-proof/fr-strasbourg.json`.
+
+- **24 Nov 2026, Chicago** (docs/library-briefs batch-81, round 3): +1 (Honey Butter Fried Chicken). Proof in `docs/library-proof/us-chicago.json`.
+
+- **24 Nov 2026, Tashkent** (docs/library-briefs batch-81, round 3): +1 (Broccoli Park). Proof in `docs/library-proof/uz-tashkent.json`.
+
+- **24 Nov 2026, Boston** (docs/library-briefs batch-83, round 3): +3 (FiRE+iCE, Trident Booksellers & Cafe, Joe's Waterfront). Proof in `docs/library-proof/us-boston.json`.
+
+- **24 Nov 2026, Hamburg** (docs/library-briefs batch-83, round 3): +3 (Q21 Gasthaus, Beach Hamburg family brunch, Familiencafé Krümel). Proof in `docs/library-proof/de-hamburg.json`.
+
+- **24 Nov 2026, Helsinki** (docs/library-briefs batch-84, round 3): +1 (St. George Bakery). Proof in `docs/library-proof/fi-helsinki.json`.
+
+- **24 Nov 2026, Chamonix & Annecy** (docs/library-briefs batch-84, round 3): +1 (PlanB Living Chamonix). Proof in `docs/library-proof/fr-alps.json`.
+
+- **24 Nov 2026, Seattle** (docs/library-briefs batch-85, round 3): +6 (Portage Bay Cafe, Kisaku, Ivar's Salmon House, Razzi's, Agua Verde, Elemental Pizza). Proof in `docs/library-proof/us-seattle.json`.
+
+- **24 Nov 2026, Dubrovnik** (docs/library-briefs batch-86, round 3): +4 (Paradise Garden and Kaluma in Hvar; Sunset Beach café and Prekala in Lapad). Proof in `docs/library-proof/hr-dubrovnik.json`.
+
+- **24 Nov 2026, Bled & Ljubljana** (docs/library-briefs batch-86, round 3): +1 (Marley & Me). Proof in `docs/library-proof/si-bled.json`.
+
+- **24 Nov 2026, Buenos Aires** (docs/library-briefs batch-88, round 3): +3 (La Payuca, Joe's Grill San Isidro, Mococo Kids Cafe). Proof in `docs/library-proof/ar-buenosaires.json`.
+
+- **24 Nov 2026, Abu Dhabi** (docs/library-briefs batch-88, round 3): +4 (Amara, Shvili, Havana Cafe & Restaurant, Leo & Loona). Proof in `docs/library-proof/ae-abudhabi.json`.
+
+- **24 Nov 2026, Valletta and Gozo** (docs/library-briefs batch-89, round 3): +1 (Carob Tree Food Court, St Julian's). Proof in `docs/library-proof/mt-valletta.json`.
+
+- **24 Nov 2026, Patagonia** (docs/library-briefs batch-91, round 3): +1 (La Lechuza, El Calafate). Proof in `docs/library-proof/ar-patagonia.json`.
+
+- **24 Nov 2026, Lucerne** (docs/library-briefs batch-91, round 3): +1 (Fürenalp mountain restaurant, Engelberg). Proof in `docs/library-proof/ch-lucerne.json`.
+
+- **24 Nov 2026, Mont-Saint-Michel** (docs/library-briefs batch-92, round 3): +3 in Saint-Malo (La Touline, Les Embruns, La Brigantine). Proof in `docs/library-proof/fr-montstmichel.json`.
+
+- **24 Nov 2026, Nice and the Riviera** (docs/library-briefs batch-92, round 3): +1 (Casa Nissa, Place Masséna). Proof in `docs/library-proof/fr-nice.json`.
+
+- **24 Nov 2026, Grand Canyon and Las Vegas** (docs/library-briefs batch-93, round 3): +1 (Joe's Seafood, Prime Steak & Stone Crab). Proof in `docs/library-proof/us-southwest.json`.
+
+- **24 Nov 2026, Český Krumlov** (docs/library-briefs batch-94, round 3): +1 (Travellers Restaurant). Proof in `docs/library-proof/cz-krumlov.json`.
+
+- **24 Nov 2026, Bruges and Ghent** (docs/library-briefs batch-95, round 3): +2 in Ghent (Restaurant Cocotte, LAGO Bistro Rozebroeken). Proof in `docs/library-proof/be-bruges.json`.
+
+- **24 Nov 2026, Nadi and the Fiji islands** (docs/library-briefs batch-95, round 3): +1 (Cantina Grill & Bar, Port Denarau). Proof in `docs/library-proof/fj-islands.json`.
+
+- **24 Nov 2026, Luxembourg City and Vianden** (docs/library-briefs batch-95, round 3): +1 (Mu, Sofitel Le Grand Ducal). Proof in `docs/library-proof/lu-luxembourg.json`.
+
+- **24 Nov 2026, Tromsø** (docs/library-briefs batch-96, round 3): +2 (Hard Rock Cafe, Spiseriet Konditori at Veita). Proof in `docs/library-proof/no-tromso.json`.
+
+- **24 Nov 2026, Neuschwanstein** (docs/library-briefs batch-96, round 3): +1 (Tante Paula, Hopfen am See). Proof in `docs/library-proof/p-neuschwanstein.json`.
+
+- **24 Nov 2026, Rio de Janeiro** (docs/library-briefs batch-97, round 3): +1 (Cortés Asador, Shopping Leblon). Proof in `docs/library-proof/br-rio.json`.
+
+- **24 Nov 2026, Uluru and the Red Centre** (docs/library-briefs batch-98, round 3): +2 in Alice Springs (Tali, Coolamon Cafe). Proof in `docs/library-proof/au-uluru.json`.
+
+- **24 Nov 2026, the Cinque Terre** (docs/library-briefs batch-100, round 3): +2 in Levanto (La Picea, Da Tapulin). Proof in `docs/library-proof/it-cinqueterre.json`.
+
+- **24 Nov 2026, Zermatt** (docs/library-briefs batch-100, round 3): +2 (Buffet & Bar Riffelberg, Alphitta). Proof in `docs/library-proof/ch-zermatt.json`.
+
+- **24 Nov 2026, Plitvice Lakes** (docs/library-briefs batch-101, round 3): +1 in Zagreb (Batak Centar Cvjetni). Proof in `docs/library-proof/hr-plitvice.json`.
+
+- **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +1 (Buffalo Wings & Rings, Aqaba). Proof in `docs/library-proof/jo-petra.json`.

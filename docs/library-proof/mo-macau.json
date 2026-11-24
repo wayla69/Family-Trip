@@ -1,16 +1,85 @@
 {
   "town": "mo-macau",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 21 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [],
-  "kept_without_ok": [],
-  "removed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows from MGM's family dining guide (Jan 2025) and Macao News (Apr 2026) passed library-check.cjs, all 6 went in",
+  "added": [
     {
-      "name": "Tou Tou Koi",
-      "reason": "Google Maps (2026-11-23): 'Tou Tou Koi Restaurante 陶陶居海鲜酒家', 12 Tv. do Mastro (5GVQ+W4) — 'Temporarily closed'; the other listing 'Tou Tou Koi 陶陶居海鮮酒家', Edificio I Chan Kok, R. de Pequim (5GVQ+V3) — 'Permanently closed'"
+      "name": "Rossio (MGM Macau)",
+      "page_name": "Rossio",
+      "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+      "date": "2025-01",
+      "map": "Google Maps 119 reviews, newest shown '19 days ago'"
+    },
+    {
+      "name": "Anytime (MGM Cotai)",
+      "page_name": "Anytime",
+      "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+      "date": "2025-01",
+      "map": "Google Maps 'Anytime 視博茶點', 36 reviews, newest shown '16 days ago'"
+    },
+    {
+      "name": "Imperial Court (MGM Macau)",
+      "page_name": "Imperial Court",
+      "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+      "date": "2025-01",
+      "map": "Google Maps 58 reviews, newest shown 'last month'"
+    },
+    {
+      "name": "Qube Kid's Zone (The Venetian)",
+      "page_name": "Qube – Kid’s Play Zone",
+      "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/",
+      "date": "2026-04",
+      "map": "Google Maps 'Qube Kid's zone', 16 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "Poly MGM Museum",
+      "page_name": "POLY MGM MUSEUM",
+      "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+      "date": "2025-01",
+      "map": "Google Maps 164 reviews, newest shown '3 days ago'"
+    },
+    {
+      "name": "The House of Dancing Water",
+      "page_name": "House of Dancing Water",
+      "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/",
+      "date": "2026-04",
+      "map": "Google Maps 7,197 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Coast (MGM Cotai)",
+      "page_name": "Coast",
+      "src": "https://www.mgm.mo/en/dining/mgm-cotai/coast",
+      "date": "official",
+      "map": "Google Maps 'Coast' (MGM Cotai), newest review shown 4 months ago"
+    },
+    {
+      "name": "Spotlight (Studio City)",
+      "page_name": "星滙餐廳Spotlight",
+      "src": "https://www.stheadline.com/parenting/3570890/澳門新濠影滙水上樂園5折249玩齊雙園區-星滙餐廳限量快閃自助午餐低至88澳門親子好去處",
+      "date": "2026-05",
+      "map": "Google Maps 'Spotlight 星滙餐廳', newest review shown 8 days ago"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "La Famiglia, La Gondola",
+      "why": "no dated page"
+    },
+    {
+      "name": "Nickelodeon Town",
+      "why": "inside Super Fun Zone, already in the app"
+    },
+    {
+      "name": "Garden Wonderland at Spectacle",
+      "why": "no map entry of its own"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from MGM's own pages and Sing Tao (May 2026), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

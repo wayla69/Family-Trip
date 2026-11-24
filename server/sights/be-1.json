@@ -371,6 +371,80 @@
           },
           "q": "Sint-Janshospitaal, Brugge",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรีสำหรับอายุไม่เกิน 18 ปี",
+            "en": "Free for everyone 18 and under"
+          },
+          "book": "none",
+          "src": "https://stamgent.be/en/events/kinderspoor-door-het-verhaal-van-gent",
+          "name": {
+            "th": "เส้นทางเด็ก พิพิธภัณฑ์ STAM",
+            "en": "STAM children's trail"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนกอดส์เฮาเซินลาน เกนต์",
+            "en": "Godshuizenlaan, Ghent"
+          },
+          "what": {
+            "th": "เส้นทางสำหรับเด็กในนิทรรศการเรื่องเมืองเกนต์ของพิพิธภัณฑ์เมือง",
+            "en": "A children's trail through the city museum's story of Ghent"
+          },
+          "why": {
+            "th": "เด็กได้เป็นพ่อค้าและช่างฝีมือ ทำตราประจำตระกูล ตามจังหวะของตัวเอง",
+            "en": "Children play merchants and craftspeople, make coats of arms, at their own pace"
+          },
+          "q": "STAM - Ghent City Museum, Godshuizenlaan 2, Gent",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.harrymalter.be/",
+          "name": {
+            "th": "สวนครอบครัวแฮร์รีมัลเทอร์",
+            "en": "Harry Malter family park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนบอสไฮเดอ เดสเทลแบร์เคิน ใกล้เกนต์",
+            "en": "Bosheidestraat, Destelbergen, near Ghent"
+          },
+          "what": {
+            "th": "สวนครอบครัวเล็กๆ มีสัตว์และสนามเด็กเล่น",
+            "en": "A small family park with animals and a playground"
+          },
+          "why": {
+            "th": "ไม่มีเครื่องเล่นหวาดเสียว มีสนามเด็กเล่นข้างระเบียง",
+            "en": "No fast rides, just charm; a playground beside the terrace"
+          },
+          "q": "Harry Malter Family Park, Bosheidestraat 15, Destelbergen",
+          "ok": "2026-11"
         }
       ]
     },

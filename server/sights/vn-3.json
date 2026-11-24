@@ -469,6 +469,117 @@
           "q": "Da Lat Milk Joint-stock Company, Tu Tra, Đơn Dương",
           "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 220,000–490,000 ด่ง",
+            "en": "≈ 220,000–490,000 VND"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "ทีรีสอร์ตเปรนน์",
+            "en": "Tea Resort Prenn"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เชิงช่องเขาเปรนน์ ทางหลวง 20 ดาลัด",
+            "en": "Prenn Pass foot, Highway 20, Đà Lạt"
+          },
+          "what": {
+            "th": "สวนเล่นและเกม มีโซนเด็กพร้อมบ้านลมและแทรมโพลีน",
+            "en": "A park with play and games, and a children's area with bouncy houses and a trampoline"
+          },
+          "why": {
+            "th": "มีบ้านลม เต็นท์กระโดด และสวนเลโก้",
+            "en": "Bouncy houses, a jump tent and a Lego garden"
+          },
+          "q": "Tea Resort Prenn, Đà Lạt",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Khu vui chơi Ladalat",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000 ด่งต่อคน",
+            "en": "≈ 50,000 VND a person"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "โซนเล่นในร่มลาดาลัด",
+            "en": "Ladalat indoor play zone"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไมอันห์ด่าว ดาลัด",
+            "en": "Mai Anh Đào street, Đà Lạt"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มราว 7,000 ตร.ม. ชั้นใต้ดินโรงแรมลาดาลัด",
+            "en": "An indoor play centre of about 7,000 m² in the Ladalat hotel's basement"
+          },
+          "why": {
+            "th": "โซนเล่นในร่มขนาดใหญ่ สำหรับวันฝนตก",
+            "en": "A big indoor play zone for a rainy day"
+          },
+          "q": "La DaLat khu vui chơi trẻ em, 106A Mai Anh Đào, Đà Lạt",
+          "ok": "2026-11"
+        },
+        {
+          "local": "C'KidZone Đà Lạt",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000–70,000 ด่งต่อคน",
+            "en": "≈ 50,000–70,000 VND a person"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "ซีคิดโซน จัตุรัสลามเวียน",
+            "en": "C'KidZone (Lâm Viên Square)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จัตุรัสลามเวียน ซวนเฮือง ดาลัด",
+            "en": "Lâm Viên Square, Xuân Hương, Đà Lạt"
+          },
+          "what": {
+            "th": "โซนเล่นในร่ม มีระบายสี สไลเดอร์ ตกปลา ม้าหมุน และบ่อบอล",
+            "en": "An indoor play zone with colouring, slides, fishing, a carousel and a ball pit"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก มีมุมเล่นทราย",
+            "en": "Indoor play for a rainy day, with a sand corner"
+          },
+          "q": "Khu vui chơi trẻ em C'Kidzone, Quảng trường Lâm Viên, Đà Lạt",
+          "ok": "2026-11"
         }
     ]
     },
@@ -1392,6 +1503,80 @@
           "book": "none",
           "q": "Trúc Lâm Phụng Thuỳ Sơn, Nha Trang",
           "src": "https://localvietnam.com/khanh-hoa/nha-trang/truc-lam-phung-thuy-son/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+          "name": {
+            "th": "หมู่บ้านหัตถกรรมเจื่องเซิน",
+            "en": "Truong Son Craft Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเจื่องเซิน วิญเงวียน ญาจาง",
+            "en": "8 Truong Son Street, Vinh Nguyen, Nha Trang"
+          },
+          "what": {
+            "th": "ศูนย์หัตถกรรมที่เด็กได้ดูงานฝีมือดั้งเดิม",
+            "en": "A craft centre where children see traditional handicrafts"
+          },
+          "why": {
+            "th": "ได้เรียนรู้ประวัติศาสตร์จาม งานหัตถกรรม และสัตว์ทะเล",
+            "en": "A place to learn about Cham history, handicrafts and marine life"
+          },
+          "q": "Truong Son Craft Village, 8 Truong Son, Nha Trang",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เข้าชม 150,000 ดอง (ผู้ใหญ่) / 100,000 ดอง (เด็ก)",
+            "en": "Sightseeing 150,000 VND (adult) / 100,000 VND (child)"
+          },
+          "book": "none",
+          "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+          "name": {
+            "th": "บ่อโคลนร้อยไข่ ญาจาง",
+            "en": "100 Eggs Mud Bath"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ถนนเงวียนเติ๊ตแถ่ง ฟุ้กจุง",
+            "en": "Nguyen Tat Thanh Boulevard, Phuoc Trung"
+          },
+          "what": {
+            "th": "บ่อน้ำแร่ร้อนและอ่างโคลนรูปไข่ในสวนเขียว",
+            "en": "Hot mineral pools and egg-shaped mud baths in a green garden"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเหมาะทั้งผู้สูงอายุและเด็ก",
+            "en": "The page says it suits older people and children alike"
+          },
+          "q": "100 Eggs Mud Bath, Nguyen Tat Thanh, Nha Trang",
           "ok": "2026-11"
         }
       ]

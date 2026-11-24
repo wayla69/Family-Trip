@@ -1,39 +1,31 @@
 {
   "town": "ph-boracay",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 4 rows without ok; rows already carrying ok were not re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 8 rows from Things to Do in Palawan (Sep 2026), Eatsplorations (Jul 2026) and Y Travel (Jul 2026), all passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "name": "D'Talipapa",
-      "src": "https://www.google.com/maps/search/D'Talipapa+seafood+market+Station+2+Boracay+Malay+Aklan",
-      "page_name": "Dtalipapa market",
-      "evidence": "grocery/market listing XW4J+GPW, Station 2 · 'Open · Closes 9 PM' (the area pin D' Talipapa has no hours; q updated to the market listing)",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Mang Inasal D'Mall",
-      "src": "https://www.google.com/maps/search/Mang+Inasal+D'Mall+Boracay",
-      "page_name": "Mang Inasal - D'mall Boracay",
-      "evidence": "Unit 118, D'mall de Boracay · XW6G+Q2 · 'Open · Closes 10 PM'",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Andok's",
-      "src": "https://www.google.com/maps/search/Andok's+Boracay",
-      "page_name": "Andok's",
-      "evidence": "Station 2, Road 1-A · 'Open 24 hours' (q updated to Road 1-A)",
-      "ok": "2026-11"
+      "name": "Baker's Hill",
+      "page_name": "Baker's Hill",
+      "src": "https://thingstodoinpalawan.com/family/",
+      "date": "2026-09",
+      "map": "Google Maps 'Baker's Hill' (Mitra Rd, Puerto Princesa), newest review shown 2 hours ago"
     }
   ],
-  "kept_without_ok": [
+  "left_out": [
     {
-      "name": "Halowich",
-      "src": "https://tasteatlas.com/halowich",
-      "evidence": "Maps searches ('Halowich Boracay', 'Halowich D'Mall Boracay Philippines', 'Halowich Boracay Malay Aklan') land on 'HaloMango - D'Mall' (XW7G+48H, Open · Closes 12 AM), a different name; a web search found only a TasteAtlas page (#80, 81 D-Mall) with no date — exists, not confirmed now"
+      "name": "Sands at Discovery Boracay, the Underground River",
+      "why": "no review dates readable on the map"
+    },
+    {
+      "name": "Honda Bay, Big Lagoon kayaking, Coral Garden",
+      "why": "boat tours and a snorkel site, not places for small children"
+    },
+    {
+      "name": "Ilig Iligan, Balinghai",
+      "why": "nothing about children on the page"
     }
   ],
-  "removed": []
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

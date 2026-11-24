@@ -1642,6 +1642,80 @@
           "q": "Moon Hill, Yangshuo, Guilin",
           "ok": "2026-11",
           "src": "https://www.umetravel.com/china-family-travel-guide/guilin-family-travel-guide.html"
+        },
+        {
+          "local": "月亮水岩",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.chinahighlights.com/guilin/article-family-activities.htm",
+          "name": {
+            "th": "ถ้ำน้ำพระจันทร์",
+            "en": "Moon Water Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านผิงถัง เกาเถียน หยางซั่ว",
+            "en": "Pingtang village, Gaotian, Yangshuo"
+          },
+          "what": {
+            "th": "ถ้ำหินปูนธรรมชาติมีธารน้ำใต้ดิน ห่างถนนตะวันตก 30–40 นาที",
+            "en": "A wild karst cave with an underground river, 30–40 minutes from West Street"
+          },
+          "why": {
+            "th": "ใช้ไฟฉายคาดหัวเล่นเงาในความมืด",
+            "en": "Headlamps for shadow games in the dark"
+          },
+          "q": "月亮水岩, 高田镇平塘村, 阳朔",
+          "ok": "2026-11"
+        },
+        {
+          "local": "阳朔如意峰索道景区",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/yangshuo-with-kids/",
+          "name": {
+            "th": "กระเช้าเขาหรูอี้",
+            "en": "Ruyi Peak cable car"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เกาเถียน ริมทางหลวง G321 หยางซั่ว",
+            "en": "Gaotian, by the G321, Yangshuo"
+          },
+          "what": {
+            "th": "กระเช้าขึ้นจุดชมวิวเขาหินปูน มีทางเดินกระจกและสะพานแขวน",
+            "en": "A cable car up to karst viewpoints, with glass walkways and a suspension bridge"
+          },
+          "why": {
+            "th": "เด็ก ๆ สนุกกับทางเดินกระจก",
+            "en": "Children love the glass walkways"
+          },
+          "q": "阳朔如意峰索道景区, 高田镇, 阳朔",
+          "ok": "2026-11"
         }
       ]
     },
