@@ -1,0 +1,169 @@
+{
+  "town": "us-newyork",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 28 rows from Cozymeal (Jan 2026), Brooklyn Bridge Parents (Feb 2026), Mommy Poppins (Apr 2026) and Time Out (Apr 2025), 27 passed library-check.cjs, 19 went in",
+  "added": [
+    {
+      "name": "Cowgirl",
+      "page_name": "Cowgirl",
+      "src": "https://www.cozymeal.com/magazine/family-friendly-restaurants-NYC",
+      "date": "2026-01",
+      "map": "Google Maps 'Cowgirl', 1,618 reviews, newest shown 11 days ago"
+    },
+    {
+      "name": "Brooklyn Farmacy & Soda Fountain",
+      "page_name": "Brooklyn Farmacy & Soda Fountain",
+      "src": "https://www.cozymeal.com/magazine/family-friendly-restaurants-NYC",
+      "date": "2026-01",
+      "map": "Google Maps 'Brooklyn Farmacy & Soda Fountain', 1,477 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Super Action Burger",
+      "page_name": "Action Burger",
+      "src": "https://www.cozymeal.com/magazine/family-friendly-restaurants-NYC",
+      "date": "2026-01",
+      "map": "Google Maps 'S.A.B. Super Action Burger', 682 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Chez Nick",
+      "page_name": "Chez Nick",
+      "src": "https://www.cozymeal.com/magazine/family-friendly-restaurants-NYC",
+      "date": "2026-01",
+      "map": "Google Maps 'Chez Nick', 545 reviews, newest shown 7 days ago"
+    },
+    {
+      "name": "Pig Beach (Queens)",
+      "page_name": "Pig Beach",
+      "src": "https://www.cozymeal.com/magazine/family-friendly-restaurants-NYC",
+      "date": "2026-01",
+      "map": "Google Maps 'Pig Beach BBQ Queens', 1,211 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Montague Diner",
+      "page_name": "Montague Diner",
+      "src": "https://brooklynbridgeparents.com/best-family-friendly-restaurants-in-our-neighborhoods-in-brooklyn/",
+      "date": "2026-02",
+      "map": "Google Maps 'Montague Diner', 757 reviews, newest shown 7 days ago"
+    },
+    {
+      "name": "Al Badawi",
+      "page_name": "Al Badawi",
+      "src": "https://brooklynbridgeparents.com/best-family-friendly-restaurants-in-our-neighborhoods-in-brooklyn/",
+      "date": "2026-02",
+      "map": "Google Maps 'al Badawi', 2,612 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "Noodle Pudding",
+      "page_name": "Noodle Pudding",
+      "src": "https://brooklynbridgeparents.com/best-family-friendly-restaurants-in-our-neighborhoods-in-brooklyn/",
+      "date": "2026-02",
+      "map": "Google Maps 'Noodle Pudding', 755 reviews, newest shown 23 days ago"
+    },
+    {
+      "name": "River Deli",
+      "page_name": "River Deli",
+      "src": "https://brooklynbridgeparents.com/best-family-friendly-restaurants-in-our-neighborhoods-in-brooklyn/",
+      "date": "2026-02",
+      "map": "Google Maps 'River Deli', 621 reviews, newest shown 10 days ago"
+    },
+    {
+      "name": "Vineapple",
+      "page_name": "Vineapple",
+      "src": "https://brooklynbridgeparents.com/best-family-friendly-restaurants-in-our-neighborhoods-in-brooklyn/",
+      "date": "2026-02",
+      "map": "Google Maps 'Vineapple', 962 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Grand Canyon Restaurant",
+      "page_name": "Grand Canyon Restaurant",
+      "src": "https://brooklynbridgeparents.com/best-family-friendly-restaurants-in-our-neighborhoods-in-brooklyn/",
+      "date": "2026-02",
+      "map": "Google Maps 'Grand Canyon Restaurant', 568 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "Dino",
+      "page_name": "Dino",
+      "src": "https://brooklynbridgeparents.com/best-family-friendly-restaurants-in-our-neighborhoods-in-brooklyn/",
+      "date": "2026-02",
+      "map": "Google Maps 'Dino', 664 reviews, newest shown 21 days ago"
+    },
+    {
+      "name": "Kids 'N Shape (Howard Beach)",
+      "page_name": "Kids 'N Shape",
+      "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+      "date": "2026-04",
+      "map": "Google Maps 'Kids 'N Shape - Queens', 484 reviews, newest shown 2 months ago"
+    },
+    {
+      "name": "Kids Fun House",
+      "page_name": "Kids Fun House",
+      "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+      "date": "2026-04",
+      "map": "Google Maps 'Kids Fun House', 568 reviews, newest shown a month ago"
+    },
+    {
+      "name": "Kidz Fun Palace",
+      "page_name": "Kidz Fun Palace",
+      "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+      "date": "2026-04",
+      "map": "Google Maps 'Kidz Fun Palace – Indoor Playground & Birthday Parties', 627 reviews, newest shown 15 days ago"
+    },
+    {
+      "name": "Hapik Climbing Gym (Brooklyn)",
+      "page_name": "Hapik",
+      "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+      "date": "2026-04",
+      "map": "Google Maps 'HAPIK Climbing Gym – Brooklyn', 212 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "81st Street Studio (The Met)",
+      "page_name": "81st Street Studio at The Met",
+      "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+      "date": "2026-04",
+      "map": "Google Maps '81st Street Studio', 70 reviews, newest shown 3 months ago"
+    },
+    {
+      "name": "Good Day Play Café",
+      "page_name": "Good Day Play Café",
+      "src": "https://www.timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+      "date": "2025-04",
+      "map": "Google Maps 'Good Day Play Cafe', 148 reviews, newest shown 3 months ago"
+    },
+    {
+      "name": "National Museum of Mathematics (MoMath)",
+      "page_name": "Museum of Mathematics (MoMath)",
+      "src": "https://www.timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+      "date": "2025-04",
+      "map": "Google Maps 'National Museum of Mathematics', 3,411 reviews, newest shown 10 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Good Enough to Eat, Gertie, Kanga's Indoor Playcenter",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Sugar Hill Children's Museum",
+      "why": "temporarily closed on the map"
+    },
+    {
+      "name": "Café Spaghetti",
+      "why": "name not found on the page (library-check.cjs)"
+    },
+    {
+      "name": "Aita",
+      "why": "two branches; the page names neither"
+    },
+    {
+      "name": "Chelsea Piers Toddler Gym, Field House at Chelsea Piers",
+      "why": "no map entry of its own / no review from the last six months"
+    },
+    {
+      "name": "The Ability Center NYC",
+      "why": "a therapy gym, not a place to visit"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

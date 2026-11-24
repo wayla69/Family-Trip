@@ -688,6 +688,265 @@
           "q": "NYC Ferry, New York City waterfront",
           "ok": "2026-11",
           "src": "https://www.ferry.nyc/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+          "name": {
+            "th": "คิดส์เอ็นเชป (ฮาวเวิร์ดบีช)",
+            "en": "Kids 'N Shape (Howard Beach)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนครอสเบย์ ฮาวเวิร์ดบีช ควีนส์ นิวยอร์ก",
+            "en": "Cross Bay Boulevard, Howard Beach, Queens, New York"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีเครื่องเล่นเป่าลม เส้นทางอุปสรรค และซิปไลน์",
+            "en": "Indoor play with inflatables, obstacle courses and a zip line"
+          },
+          "why": {
+            "th": "เครื่องเล่นเป่าลมสำหรับเด็กเล็ก ซิปไลน์สำหรับเด็กโต",
+            "en": "Inflatables for little ones, a zip line for bigger children"
+          },
+          "q": "Kids 'N Shape, Cross Bay Boulevard, Howard Beach, Queens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "17 ดอลลาร์ วันธรรมดา",
+            "en": "$17 on weekdays"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+          "name": {
+            "th": "คิดส์ฟันเฮาส์",
+            "en": "Kids Fun House"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเฟรชพอนด์ ริดจ์วูด ควีนส์ นิวยอร์ก",
+            "en": "Fresh Pond Road, Ridgewood, Queens, New York"
+          },
+          "what": {
+            "th": "เขาวงกตเล่นในร่มหลายชั้น มีสไลเดอร์สามเลน คาเฟ่ และเกมตู้",
+            "en": "A multi-level indoor play maze with a triple slide, a café and arcade games"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก 6 เดือนถึง 4 ขวบ ใส่ถุงเท้าเท่านั้น",
+            "en": "A socks-only toddler area for 6 months to 4 years"
+          },
+          "q": "Kids Fun House, 62-73 Fresh Pond Road, Ridgewood, Queens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+          "name": {
+            "th": "คิดซ์ฟันพาเลซ",
+            "en": "Kidz Fun Palace"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจังก์ชัน โคโรนา ควีนส์ นิวยอร์ก",
+            "en": "Junction Boulevard, Corona, Queens, New York"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มขนาดใหญ่ มีบ่อบอลใหญ่ ม้าหมุน และเส้นทางอุปสรรค",
+            "en": "A big indoor play space with a huge ball pit, a merry-go-round and an obstacle course"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก และเกมตู้สำหรับเด็กโต",
+            "en": "A toddler section, and an arcade for bigger children"
+          },
+          "q": "Kidz Fun Palace, 35-38 Junction Boulevard, Corona, Queens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "โซนเด็กเล็ก 19.90 ดอลลาร์",
+            "en": "$19.90 for the toddler area"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+          "name": {
+            "th": "ฮาปิก ยิมปีนผา (บรูคลิน)",
+            "en": "Hapik Climbing Gym (Brooklyn)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อินดัสทรีซิตี ซันเซ็ตพาร์ก บรูคลิน นิวยอร์ก",
+            "en": "Industry City, Sunset Park, Brooklyn, New York"
+          },
+          "what": {
+            "th": "ยิมปีนผาสว่างกว้าง สำหรับเด็กทุกวัย",
+            "en": "A bright, spacious climbing gym for children of all ages"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก และผนังปีนสำหรับเด็กโต",
+            "en": "A toddler area, and climbing for bigger children"
+          },
+          "q": "Hapik Climbing Gym, 926 3rd Avenue, Brooklyn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/new-york-city-kids/play-gyms-sports-centers/inexpensive-drop-in-play-spaces-for-kids-around-nyc",
+          "name": {
+            "th": "สตูดิโอถนน 81 (พิพิธภัณฑ์เดอะเม็ต)",
+            "en": "81st Street Studio (The Met)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เดอะเม็ต ถนนฟิฟท์ อัปเปอร์อีสต์ไซด์ นิวยอร์ก",
+            "en": "The Met, Fifth Avenue, Upper East Side, New York"
+          },
+          "what": {
+            "th": "ห้องเล่นฟรีในพิพิธภัณฑ์เดอะเม็ต",
+            "en": "A free play space inside The Met museum"
+          },
+          "why": {
+            "th": "มีที่ให้เด็กเล่นระหว่างเที่ยวเดอะเม็ต",
+            "en": "A place to play on a visit to The Met with children"
+          },
+          "q": "81st Street Studio, The Metropolitan Museum of Art, 1000 Fifth Avenue, New York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เล่นอิสระ 2 ชั่วโมง 27.97 ดอลลาร์",
+            "en": "$27.97 for 2 hours of open play"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+          "name": {
+            "th": "กู๊ดเดย์เพลย์คาเฟ่",
+            "en": "Good Day Play Café"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฟิฟท์ พาร์กสโลป บรูคลิน นิวยอร์ก",
+            "en": "5th Avenue, Park Slope, Brooklyn, New York"
+          },
+          "what": {
+            "th": "คาเฟ่กับสนามเด็กเล่นในที่เดียว มีบ่อบอล โต๊ะเลโก้ และผนังปีน",
+            "en": "A café and playground in one, with a ball pit, a LEGO station and a climbing wall"
+          },
+          "why": {
+            "th": "พ่อแม่นั่งกินขนมได้ระหว่างเด็กวิ่งเล่นบนพื้นนุ่ม",
+            "en": "Parents snack while children run on the mats"
+          },
+          "q": "Good Day Play Cafe, 591 5th Avenue, Brooklyn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/new-york-kids/things-to-do/indoor-activities-for-kids-in-nyc",
+          "name": {
+            "th": "พิพิธภัณฑ์คณิตศาสตร์ (โมแมท)",
+            "en": "National Museum of Mathematics (MoMath)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนซิกซ์ แมนแฮตตัน นิวยอร์ก",
+            "en": "6th Avenue, Manhattan, New York"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์คณิตศาสตร์ มีของให้ลองเล่นมากกว่า 30 ชิ้น",
+            "en": "A maths museum with more than thirty hands-on exhibits"
+          },
+          "why": {
+            "th": "เด็กได้เห็นว่าคณิตศาสตร์เอาไปสร้างสิ่งต่าง ๆ ได้",
+            "en": "Children see how maths can be used to make things"
+          },
+          "q": "National Museum of Mathematics, 635 6th Avenue, New York",
+          "ok": "2026-11"
         }
       ]
     },
