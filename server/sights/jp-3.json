@@ -2151,6 +2151,43 @@
           "q": "Omura City Children's Science Museum, Honmachi, Omura",
           "ok": "2026-11",
           "src": "https://www.nap-camp.com/mag/83195"
+        },
+        {
+          "local": "メリッタKid's SASEBO",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5478/",
+          "name": {
+            "th": "เมลิตตาคิดส์ ซาเซโบ",
+            "en": "Melitta Kid's SASEBO"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนซาเซโบชูโอ มิยาจิโจ ซาเซโบ",
+            "en": "Sasebo Chuo Park, Miyaji-cho, Sasebo"
+          },
+          "what": {
+            "th": "สวนเด็กมีหลังคา มีเครื่องเล่นรูปเรือสูง 4 ชั้น",
+            "en": "A covered kids' park with a four-storey ship-shaped play structure"
+          },
+          "why": {
+            "th": "เล่นฝึกกล้ามเนื้อและความคิดสร้างสรรค์ได้ทุกสภาพอากาศ",
+            "en": "Play for motor skills and creativity in any weather"
+          },
+          "q": "メリッタKid's SASEBO, 宮地町89-1, 佐世保市",
+          "ok": "2026-11"
         }
       ]
     },
