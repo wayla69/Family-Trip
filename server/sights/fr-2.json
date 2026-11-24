@@ -2437,6 +2437,80 @@
           },
           "q": "Palomano, 45 Boulevard Aristide Briand, Aix-en-Provence",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/parc-des-collines-de-cuques-aix-en-provence-fr-2885673/",
+          "name": {
+            "th": "สวนเนินเขากุก",
+            "en": "Parc de la Colline de Cuques"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนจิลส์โบเรล ทางใต้ของแอ็กซ์ออง-พรอว็องส์",
+            "en": "Chemin Gilles Borel, south Aix-en-Provence"
+          },
+          "what": {
+            "th": "สวนธรรมชาติบนเนินเขา มีที่เล่นและสระตื้น",
+            "en": "A hillside natural park with a play area and a paddling pool"
+          },
+          "why": {
+            "th": "มีที่เล่นและสระตื้นสำหรับเด็ก",
+            "en": "A play area and a paddling pool for children"
+          },
+          "q": "Parc de la Colline de Cuques, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/les-chevrettes-de-malo-puyvert-fr-6665465/",
+          "name": {
+            "th": "ฟาร์มเลเชอเวรตต์เดอมาโล",
+            "en": "Les Chevrettes de Malo"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนกูเลตง ปุยแวร์ ลูเบอรง",
+            "en": "Avenue du Couleton, Puyvert, Luberon"
+          },
+          "what": {
+            "th": "ฟาร์มแพะที่เปิดให้เข้าชม",
+            "en": "A working goat farm to visit"
+          },
+          "why": {
+            "th": "ครอบครัวได้รู้จักฟาร์มและงานในฟาร์ม",
+            "en": "Families discover a farm and its work"
+          },
+          "q": "Les chevrettes de malo, Av. du Couleton, Puyvert",
+          "ok": "2026-11"
         }
       ]
     },
