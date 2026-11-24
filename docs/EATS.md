@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Mae Hong Son** (docs/library-briefs batch-53): +5 (Khao Soi Phi Nong, Thana Phochana, Laab Aroi Thi Sud Nai Lok, Mae Luang Phen, Hoi Kha noodles). Proof in `docs/library-proof/th-maehongson.json`.
+
+- **24 Nov 2026, Mae Hong Son** (docs/library-briefs batch-66, round 3): +2 (Art in Chai, Coffee in Love — Pai). Proof in `docs/library-proof/th-maehongson.json`.

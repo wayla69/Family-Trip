@@ -53,13 +53,40 @@
       "src": "https://travel.trueid.net/detail/n2lpboApKWZ",
       "date": "2025-02",
       "map": "Google Maps 'สะพานประวัติศาสตร์ ท่าปาย', 2,740 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Art in Chai (Pai)",
+      "page_name": "Art in Chai",
+      "src": "https://www.byklo.rent/th/blog/best-restaurants-in-pai-guide/",
+      "date": "2026-05",
+      "map": "Google Maps 'Art in Chai' (Pai), newest review shown a week ago"
+    },
+    {
+      "name": "Coffee in Love (Pai)",
+      "page_name": "Coffee in Love",
+      "src": "https://www.byklo.rent/th/blog/best-restaurants-in-pai-guide/",
+      "date": "2026-05",
+      "map": "Google Maps 'Coffee in Love' (Pai), newest review shown 3 days ago"
     }
   ],
   "left_out": [
     {
       "name": "บ้านจ่าโบ่ (the village itself)",
       "why": "the map has the village with no reviews; its noodle shop went in"
+    },
+    {
+      "name": "Witching Well",
+      "why": "the map search came back marked permanently closed"
+    },
+    {
+      "name": "Wongnai attraction pages",
+      "why": "no page date"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from Byklo's Pai guide (2025–2026), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
