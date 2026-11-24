@@ -1084,6 +1084,228 @@
           "q": "Central Florida Zoo & Botanical Gardens, 3755 W. Seminole Blvd, Sanford",
           "ok": "2026-11",
           "src": "https://www.centralfloridazoo.org/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.peppapigthemepark.com/florida/our-company/blog/things-to-do-with-toddlers-near-orlando/",
+          "name": {
+            "th": "สวนสนุกเป๊ปป้าพิก ฟลอริดา",
+            "en": "Peppa Pig Theme Park Florida"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "วินเทอร์เฮเวน ข้างเลโกแลนด์ฟลอริดา",
+            "en": "Winter Haven, by LEGOLAND Florida"
+          },
+          "what": {
+            "th": "สวนสนุกที่ทำมาสำหรับเด็กอนุบาล มีเครื่องเล่น สนามเด็กเล่น และโชว์สด",
+            "en": "A theme park built for preschoolers, with rides, a playground and live shows"
+          },
+          "why": {
+            "th": "เครื่องเล่นและโชว์ทุกอย่างทำมาให้เด็กเล็กชอบ",
+            "en": "Every ride and show is made for what young children love"
+          },
+          "q": "Peppa Pig Theme Park Florida, One Legoland Way, Winter Haven",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://insideoursuitcase.com/?p=99309",
+          "name": {
+            "th": "ริปลีส์ บีลีฟอิตออร์น็อต ออร์แลนโด",
+            "en": "Ripley's Believe It or Not! Orlando"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อินเตอร์เนชันแนลไดรฟ์ ออร์แลนโด",
+            "en": "International Drive, Orlando"
+          },
+          "what": {
+            "th": "ห้องจัดแสดง 16 ห้อง ของแปลก ภาพลวงตา และเรื่องน่าทึ่ง",
+            "en": "16 galleries of oddities, optical illusions and curiosities"
+          },
+          "why": {
+            "th": "บ่ายวันแปลกและสนุกในร่ม",
+            "en": "A weird and wonderful afternoon indoors"
+          },
+          "q": "Ripley's Believe It or Not!, 8201 International Drive, Orlando",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://insideoursuitcase.com/?p=99309",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา ออร์แลนโด",
+            "en": "Museum of Illusions Orlando"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อินเตอร์เนชันแนลไดรฟ์ ไอคอนพาร์ก ออร์แลนโด",
+            "en": "International Drive, ICON Park, Orlando"
+          },
+          "what": {
+            "th": "ภาพลวงตาให้ถ่ายรูปด้วย",
+            "en": "Optical illusions to take photos with"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กโตและวัยรุ่น",
+            "en": "Best for older children and teens"
+          },
+          "q": "Museum of Illusions, 8441 International Drive, Orlando",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mommypoppins.com/anywhere-kids/city-guides/kissimmee-with-kids-22-things-to-do-in-kissimmee-florida",
+          "name": {
+            "th": "เอสเคโปโลยี (ซันเซ็ตวอล์ก)",
+            "en": "Escapology (Sunset Walk)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนมาร์การิตาวิลล์ คิสซิมมี",
+            "en": "Margaritaville Boulevard, Kissimmee"
+          },
+          "what": {
+            "th": "ห้องหนีออกตามธีม ทั้งครอบครัวช่วยกันไขปริศนาแข่งกับเวลา",
+            "en": "Themed escape rooms where the family solves puzzles against the clock"
+          },
+          "why": {
+            "th": "บางห้องมีโหมดเด็กสำหรับอายุ 7–14 ปี",
+            "en": "Some rooms have a Kids Mode for ages 7–14"
+          },
+          "q": "Escapology Escape Rooms, 3255 Margaritaville Boulevard, Kissimmee",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mommypoppins.com/anywhere-kids/city-guides/kissimmee-with-kids-22-things-to-do-in-kissimmee-florida",
+          "name": {
+            "th": "สวนผจญภัยออร์แลนโดทรีเทรก",
+            "en": "Orlando Tree Trek Adventure Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซินแคลร์ คิสซิมมี",
+            "en": "Sinclair Road, Kissimmee"
+          },
+          "what": {
+            "th": "สวนเชือกและซิปไลน์บนต้นไม้",
+            "en": "A ropes and zip-line park in the trees"
+          },
+          "why": {
+            "th": "มีเส้นทางทั้งสำหรับเด็กและผู้ใหญ่",
+            "en": "Courses for children and grown-ups alike"
+          },
+          "q": "Orlando Tree Trek Adventure Park, 7625 Sinclair Road, Kissimmee",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/city-guides/kissimmee-with-kids-22-things-to-do-in-kissimmee-florida",
+          "name": {
+            "th": "สวนริมทะเลสาบคิสซิมมี",
+            "en": "Kissimmee Lakefront Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเลกวิว คิสซิมมี",
+            "en": "Lakeview Drive, Kissimmee"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบ ปิกนิก ลานเล่นน้ำ ตกปลา และสนามเด็กเล่น",
+            "en": "A lakeside park with picnics, a splash pad, fishing and playgrounds"
+          },
+          "why": {
+            "th": "พักสบาย ๆ มีลานเล่นน้ำและวิวพระอาทิตย์ตก",
+            "en": "A calm break with a splash pad and sunset views"
+          },
+          "q": "Kissimmee Lakefront Park, 201 Lakeview Drive, Kissimmee",
+          "ok": "2026-11"
         }
       ]
     }
