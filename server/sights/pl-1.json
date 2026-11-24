@@ -406,6 +406,117 @@
           },
           "q": "House of Attractions, Grodzka 2, Kraków",
           "ok": "2026-11"
+        },
+        {
+          "local": "WOMAI Centrum Nauki i Zmysłów",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://triverna.pl/blog/atrakcje-dla-dzieci-krakow",
+          "name": {
+            "th": "ศูนย์วิทยาศาสตร์และประสาทสัมผัสโวไม",
+            "en": "WOMAI science and senses centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนปาเวีย ใกล้สถานีรถไฟ คราคูฟ",
+            "en": "ul. Pawia, by the railway station, Kraków"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์และประสาทสัมผัส มีนิทรรศการให้ลงมือเล่น",
+            "en": "A science and senses centre with hands-on exhibits"
+          },
+          "why": {
+            "th": "เหมาะกับวันฝนตก มีนิทรรศการที่เหมาะกับเด็กเล็ก",
+            "en": "A rainy-day place; one exhibit suits younger children"
+          },
+          "q": "WOMAI Kraków, ul. Pawia 34, Kraków",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MICET",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://triverna.pl/blog/atrakcje-dla-dzieci-krakow",
+          "name": {
+            "th": "มิเซต พิพิธภัณฑ์โรงละครแบบลงมือเล่น",
+            "en": "MICET interactive theatre museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนยากีเอลลอนสกา ใกล้จัตุรัสหลัก คราคูฟ",
+            "en": "ul. Jagiellońska, by the Main Square, Kraków"
+          },
+          "what": {
+            "th": "พื้นที่สร้างสรรค์แบบลงมือเล่น คล้ายสตูดิโอมัลติมีเดียมากกว่าพิพิธภัณฑ์",
+            "en": "An interactive creative space, more a multimedia studio than a museum"
+          },
+          "why": {
+            "th": "เด็กๆ ได้มิกซ์เสียง คุมไฟเวที และฉายภาพของตัวเอง",
+            "en": "Children mix sounds, work stage lights and project their own pictures"
+          },
+          "q": "MICET, Jagiellońska 1, Kraków",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Żywe Muzeum Obwarzanka",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.ebilet.pl/now/jakie-sa-muzea-dla-dzieci-w-krakowie/",
+          "name": {
+            "th": "พิพิธภัณฑ์ขนมปังวงแหวนคราคูฟ",
+            "en": "Live Bagel Museum (obwarzanek)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนปาเดเรฟสกี ใกล้ตลาดสตารีเกลปาร์ซ คราคูฟ",
+            "en": "ul. Paderewskiego, by Stary Kleparz market, Kraków"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์มีชีวิตของขนมปังวงแหวนคราคูฟ",
+            "en": "A living museum of Kraków's ring bread"
+          },
+          "why": {
+            "th": "เด็กๆ ได้อบขนมของตัวเองระหว่างชม",
+            "en": "Children bake their own during the visit"
+          },
+          "q": "Live Bagel Museum, Paderewskiego 4, Kraków",
+          "ok": "2026-11"
         }
       ]
     }
