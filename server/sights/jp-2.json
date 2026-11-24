@@ -526,6 +526,43 @@
           },
           "q": "Murasaki Mura, Yomitan, Okinawa",
           "ok": "2026-11"
+        },
+        {
+          "local": "のびっこジャンボ 南風原店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥900 วันธรรมดา · ¥1,200 วันหยุด (บัตรเด็กทั้งวัน สมาชิกแอป)",
+            "en": "≈ ¥900 weekdays · ¥1,200 weekends (child day pass, app members)"
+          },
+          "book": "none",
+          "src": "https://ryukyushimpo.jp/prtimes/entry-5328425.html",
+          "name": {
+            "th": "โนบิกโกะจัมโบ อิออนฮาเอบารุ",
+            "en": "Nobikko Jumbo (Aeon Haebaru)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนฮาเอบารุ ฮาเอบารุ (ใต้นาฮะ)",
+            "en": "Aeon Haebaru, Haebaru (south of Naha)"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มเล่นได้ทั้งวัน สำหรับเด็กถึง 12 ขวบ เปิดเดือนกรกฎาคม 2026",
+            "en": "An all-day indoor playground for children up to 12, opened in July 2026"
+          },
+          "why": {
+            "th": "มีบ่อบอล เรือยิงลูกบอล เครื่องเล่นเป่าลม มุมบทบาทสมมติ ชิงช้า และสไลเดอร์",
+            "en": "A ball pool, a boat that shoots balls, inflatables, role play, swings and slides"
+          },
+          "q": "のびっこジャンボ 南風原, イオン南風原店, 沖縄",
+          "ok": "2026-11"
         }
       ]
     }
