@@ -6486,6 +6486,80 @@
           "q": "Khiri Wong Kot Village, Na Khae, Na Yung, Udon Thani",
           "ok": "2026-11",
           "src": "https://www.ktc.co.th/article/travel-story/thailand/destinations-udonthani"
+        },
+        {
+          "local": "อุดรวอเตอร์เวิล์ด สวนน้ำ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitthailandtoday.com/activities-tours/udon-thani/udon-water-world-water-park",
+          "name": {
+            "th": "อุดรวอเตอร์เวิลด์",
+            "en": "Udon Water World"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เชียงยืน เมืองอุดรธานี",
+            "en": "Chiang Yuen, Mueang Udon Thani"
+          },
+          "what": {
+            "th": "สวนน้ำยอดนิยม เปิดทุกวัน",
+            "en": "A popular water park, open every day"
+          },
+          "why": {
+            "th": "คลายร้อนกับครอบครัว",
+            "en": "A family escape from the heat"
+          },
+          "q": "Udon Water World, Chiang Yuen, Udon Thani",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ทุ่งศรีเมือง",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5/",
+          "name": {
+            "th": "ทุ่งศรีเมือง อุดรธานี",
+            "en": "Thung Si Mueang"
+          },
+          "kind": "park",
+          "area": {
+            "th": "หมากแข้ง เมืองอุดรธานี",
+            "en": "Mak Khaeng, Mueang Udon Thani"
+          },
+          "what": {
+            "th": "ลานกว้างใจกลางเมือง เป็นทั้งสวนสาธารณะและที่จัดงานของจังหวัด",
+            "en": "A wide open ground in the city centre, a park and the province's event space"
+          },
+          "why": {
+            "th": "ลานกว้างให้วิ่งเล่นกลางเมือง",
+            "en": "A big open space to run in the centre of town"
+          },
+          "q": "Thung Si Mueang, Mak Khaeng, Udon Thani",
+          "ok": "2026-11"
         }
       ]
     }
