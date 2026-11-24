@@ -4297,6 +4297,43 @@
           "q": "Thung Song Water Park, Thung Song, Nakhon Si Thammarat",
           "ok": "2026-11",
           "src": "https://th.trip.com/moments/theme/destination-nakhon-si-thammarat-province-24537-family-and-kids-990886/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thansettakij.com/social-biz/665917",
+          "name": {
+            "th": "ศูนย์เรียนรู้โรงไฟฟ้าขนอม",
+            "en": "Khanom Power Plant Learning Centre"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ตำบลท้องเนียน อำเภอขนอม",
+            "en": "Thong Nian, Khanom"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้ในอำเภอขนอม ตั้งในหน่วยผลิตไฟฟ้าลอยน้ำเดิม",
+            "en": "A learning centre in Khanom set in an old floating power-plant unit"
+          },
+          "why": {
+            "th": "แลนด์มาร์กแห่งการเรียนรู้ของอำเภอขนอม",
+            "en": "A place to learn, the district's learning landmark"
+          },
+          "q": "Khanom Power Plant Learning Center, Thong Nian, Khanom",
+          "ok": "2026-11"
         }
       ]
     },
