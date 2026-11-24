@@ -1264,6 +1264,158 @@
           },
           "q": "나만의키즈카페 전주인후점, 한배미4길 6, 전주",
           "ok": "2026-11"
+        },
+        {
+          "local": "플레이랩 전주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/65683d012d02d3e67db812b3",
+          "name": {
+            "th": "เพลย์แล็บ ช็อนจู",
+            "en": "PlayLab (Jeonju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเซบย็องซอ ซงช็อนดง ด็อกจิน ช็อนจู",
+            "en": "Sebyeong-seo-ro, Songcheon-dong, Deokjin-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่มีเครื่องเล่นให้เด็กเรียนรู้ผ่านการเล่น",
+            "en": "A kids' café with play equipment for learning through play"
+          },
+          "why": {
+            "th": "การเล่นที่ออกแบบตามพัฒนาการเด็ก",
+            "en": "Play built around child development"
+          },
+          "tip": {
+            "th": "ปิดสัปดาห์ละวัน (แผนที่บอกวันอังคาร)",
+            "en": "Closed one day a week (Tuesday on the map)"
+          },
+          "q": "플레이랩 전주점, 세병서로 37, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "리카키즈룸 전주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mom-mom.net/travel/places/690adf2fb0aaf2b82c8c4a74",
+          "name": {
+            "th": "ลิกะคิดส์รูม ช็อนจู",
+            "en": "Lika Kids Room (Jeonju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโชโพ โฮซ็องดง ด็อกจิน ช็อนจู",
+            "en": "Chopo-ro, Hoseong-dong, Deokjin-gu, Jeonju"
+          },
+          "what": {
+            "th": "ห้องเล่นส่วนตัวสำหรับกลุ่มของเราเท่านั้น",
+            "en": "A private kids' room just for your own group"
+          },
+          "why": {
+            "th": "เล่นได้โดยไม่ต้องแชร์กับครอบครัวอื่น",
+            "en": "Play without sharing with other families"
+          },
+          "q": "리카키즈룸 전주점, 초포로 182, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "우리끼리키즈카페 캠핑마을 전주서신점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mom-mom.net/travel/places/69046e1b538f6ff43f352f4d",
+          "name": {
+            "th": "คิดส์คาเฟ่อูรีกีรี แคมปิงวิลเลจ ซอซิน",
+            "en": "Urikkiri Camping Village Kids Café (Seosin)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซอซิน ซอซินดง วันซัน ช็อนจู",
+            "en": "Seosin-ro, Seosin-dong, Wansan-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ส่วนตัวไม่มีพนักงาน ธีมแคมปิง",
+            "en": "A private, unstaffed kids' café with a camping theme"
+          },
+          "why": {
+            "th": "มีพื้นที่สำหรับครอบครัวเราเอง",
+            "en": "A space just for your family"
+          },
+          "q": "우리끼리키즈카페 캠핑마을 전주서신점, 서신로 51, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "완산벙커 더 스페이스",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://jjan.kr/article/20250925580328",
+          "name": {
+            "th": "วันซันบังเกอร์ เดอะสเปซ",
+            "en": "Wansan Bunker The Space"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนวันซัน 5 ทงวันซันดง วันซัน ช็อนจู",
+            "en": "Wansan 5-gil, Dongwansan-dong, Wansan-gu, Jeonju"
+          },
+          "what": {
+            "th": "บังเกอร์ทหารเก่าที่กลายเป็นพื้นที่ให้สำรวจ",
+            "en": "A former military bunker turned into a space to explore"
+          },
+          "why": {
+            "th": "สถานที่ทหารเก่าที่ทำเป็นลานเล่นทางวัฒนธรรม",
+            "en": "An old military site made into a cultural playground"
+          },
+          "q": "완산벙커 더 스페이스, 완산5길 70, 전주",
+          "ok": "2026-11"
         }
       ]
     },
