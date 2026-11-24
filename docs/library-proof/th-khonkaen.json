@@ -95,6 +95,34 @@
       "src": "https://travel.trueid.net/detail/oe7zQQkxMRRq",
       "date": "2026-01",
       "map": "Google Maps 464 reviews, newest shown '9 days ago'"
+    },
+    {
+      "name": "SO Wonderland",
+      "page_name": "SO Wonderland",
+      "src": "https://nayoo.co/khonkaen/blogs/9-kids-cafe-khonkaen",
+      "date": "2025-12",
+      "map": "Google Maps 'SO WONDERLAND' (999/63 Mueang), newest review shown a day ago"
+    },
+    {
+      "name": "Kinder Kids Cafe",
+      "page_name": "Kinder Kids Cafe",
+      "src": "https://www.lemon8-app.com/@koypitcha/7552342615346872839?region=us",
+      "date": "2025-09",
+      "map": "Google Maps 'Kinder Kids Cafe' (Mittraphap Soi 25), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Little Giggles Kids Cafe",
+      "page_name": "Little Giggles - Kids Cafe - คาเฟ่เด็ก",
+      "src": "https://restaurantguru.com/Little-Giggles-Kids-Cafe-%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%9F%E0%B9%88%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-Khon-Kaen",
+      "date": "2026-09",
+      "map": "Google Maps 'Little Giggles - Kids Cafe' (27/19 Chalermprakiat Rd), newest review shown 2 months ago"
+    },
+    {
+      "name": "Bueng Thung Sang park",
+      "page_name": "บึงทุ่งสร้าง",
+      "src": "https://www.wongnai.com/listings/attraction-khonkaen",
+      "date": "2025",
+      "map": "Google Maps 'บึงทุ่งสร้าง' (Nai Mueang), newest review shown a week ago"
     }
   ],
   "left_out": [
@@ -109,7 +137,20 @@
     {
       "name": "Tat Fa waterfall, Pha Chom Tawan",
       "why": "inside Phu Wiang National Park, already in"
+    },
+    {
+      "name": "Kiddos, Timberland Kids Cafe, Kids Ja Len, Baby's Heaven, Yes Papa",
+      "why": "no street or district on the page"
+    },
+    {
+      "name": "Khonkaen Exotic Pets",
+      "why": "an animal show"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Nayoo (Dec 2025), Lemon8 (Sep 2025), Restaurant Guru (Sep 2026) and Wongnai (2025), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

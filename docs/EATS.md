@@ -532,3 +532,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 
 ### Khon Kaen, 23 Nov 2026
 batch-35 of docs/library-briefs (round 2). +4: 11AM cafe and space, Murmur Baker, Chujai, Huean Kham Nang. Proof in `docs/library-proof/th-khonkaen.json`.
+
+- **24 Nov 2026, Khon Kaen** (docs/library-briefs batch-73, round 3): +3 kids' cafés (SO Wonderland, Kinder Kids Cafe, Little Giggles). Proof in `docs/library-proof/th-khonkaen.json`.

@@ -2372,6 +2372,43 @@
           },
           "q": "อุทยานแห่งชาติน้ำพอง",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attraction-khonkaen",
+          "name": {
+            "th": "บึงทุ่งสร้าง",
+            "en": "Bueng Thung Sang park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนจอมพล อำเภอเมืองขอนแก่น",
+            "en": "Jomphon Road, Mueang Khon Kaen"
+          },
+          "what": {
+            "th": "สวนสาธารณะริมบึง เปิดทุกวัน 07:00–18:00",
+            "en": "A lakeside public park, open daily 07:00–18:00"
+          },
+          "why": {
+            "th": "สวนกลางแจ้งเปิดตั้งแต่เช้าถึงเย็น",
+            "en": "An outdoor park open from morning to evening"
+          },
+          "q": "บึงทุ่งสร้าง, ขอนแก่น",
+          "ok": "2026-11"
         }
       ]
     },
