@@ -532,3 +532,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 
 ### Busan, 24 Nov 2026
 batch-40 of docs/library-briefs (round 2). +6: Shabussam Jumeoni (Osiria), Daepae Market (Daeyeon), Gwangan Jeil Dwaeji Gukbap, Mad for Garlic (Lotte Busan Main), Old Mug, Miffy Café. Proof in `docs/library-proof/kr-busan.json`.
+
+- **24 Nov 2026, Busan, Kakao Map pass**: +4 (Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon; Zooraji (Shinsegae Centum City)), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-busan.json`.

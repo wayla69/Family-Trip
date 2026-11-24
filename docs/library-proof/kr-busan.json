@@ -2,7 +2,7 @@
   "town": "kr-busan",
   "kind": "eats + sights",
   "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
   "agents": "one Haiku agent; 21 rows from mom-mom.net, Visit Busan and family travel blogs (Feb 2025–Oct 2026), 18 passed library-check.cjs, 10 went in",
   "added": [
     {
@@ -74,13 +74,37 @@
       "src": "https://mom-mom.net/travel/places/635f6d83e69cfb073a6cdd34",
       "date": "2025-02",
       "map": "Google Maps '원더스페이스 부산명지점', 15 reviews, newest shown '23 days ago'"
+    },
+    {
+      "name": "Monyeo Jubang",
+      "page_name": "Monyeo Jubang",
+      "src": "https://mom-mom.net/en/travel/places/69e7119c5e6b759ea00bb9d1",
+      "date": "2026-04",
+      "map": "Kakao Map '모녀주방' (해운대로76번길 16 센텀휴상가), open, newest review 15 Nov 2026"
+    },
+    {
+      "name": "Ilsamyuk Meat House (Myeongji)",
+      "page_name": "Ilsamyuk Meat House Myeongji Main Branch",
+      "src": "https://mom-mom.net/en/travel/places/6808aeb4c529cadc1d23984b",
+      "date": "2025-04",
+      "map": "Kakao Map '일삼육고깃집' (명지국제8로 293), open, 61 reviews, newest 13 Nov 2026"
+    },
+    {
+      "name": "Gwanganri Daegyo Milmyeon",
+      "page_name": "Gwanganri Daegyo Milmyeon",
+      "src": "https://mom-mom.net/en/travel/places/69c9e8a58d0737a256378369",
+      "date": "2026-03",
+      "map": "Kakao Map '광안리대교밀면' (광남로 239), open, 99 reviews, newest 8 Nov 2026"
+    },
+    {
+      "name": "Zooraji (Shinsegae Centum City)",
+      "page_name": "Shinsegae Centum City Zooraji",
+      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+      "date": "2026-06",
+      "map": "Kakao Map '주라지 신세계센텀시티점' (센텀남대로 35 9층), open 11:00–20:00 on the list, newest review 18 Nov 2026"
     }
   ],
   "left_out": [
-    {
-      "name": "Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon, Shinsegae Zooraji",
-      "why": "no review from the last six months on the map"
-    },
     {
       "name": "Hyeonpung Dak Kalguksu (Myeongji)",
       "why": "the map shows only a closed branch in Seomyeon"
@@ -104,7 +128,20 @@
     {
       "name": "Geongang Bapsang (Connect Hyundai)",
       "why": "failed library-check.cjs"
+    },
+    {
+      "name": "Hyeonpung Dak Kalguksu (Myeongji)",
+      "why": "not found on Kakao Map"
+    },
+    {
+      "name": "Busan Creative Convergence Education Center",
+      "why": "Kakao Map: closed 10 Aug 2026 – 28 Feb 2027"
+    },
+    {
+      "name": "Museum of Contemporary Art Busan",
+      "why": "Kakao Map: closed 2 Nov – 10 Dec 2026"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "kakao_pass": "24 Nov 2026: +4 (Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon; Zooraji (Shinsegae Centum City))"
 }

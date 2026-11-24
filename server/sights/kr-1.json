@@ -876,6 +876,47 @@
           },
           "q": "원더스페이스 부산명지점",
           "ok": "2026-11"
+        },
+        {
+          "local": "주라지 신세계센텀시티점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "จูราจี ห้างชินเซกเย เซ็นทุมซิตี",
+            "en": "Zooraji (Shinsegae Centum City)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ห้างชินเซกเย ชั้น 9 แฮอุนแด ปูซาน",
+            "en": "Shinsegae Centum City 9F, Haeundae, Busan"
+          },
+          "what": {
+            "th": "สวนบนดาดฟ้าธีมสวนสัตว์และไดโนเสาร์ ชั้น 9 ของห้าง",
+            "en": "A rooftop park with zoo animals and dinosaurs, on the 9th floor of the mall"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นเรือโจรสลัดและไดโนเสาร์ที่ขยับและคำราม",
+            "en": "A pirate ship playground and dinosaurs that move and roar"
+          },
+          "tip": {
+            "th": "เล่นเสร็จมีร้านอาหารในห้าง",
+            "en": "The mall has restaurants for after"
+          },
+          "q": "주라지 신세계센텀시티점, 센텀남대로 35, 부산",
+          "ok": "2026-11"
         }
     ]
     }
