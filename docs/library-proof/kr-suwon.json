@@ -1,19 +1,23 @@
 {
   "town": "kr-suwon",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 26 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from mom-mom.net (2026), all passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "name": "Instep Coffee",
-      "src": "https://www.google.com/maps/place/INSTEP+COFFEE",
-      "page_name": "INSTEP COFFEE",
-      "evidence": "Google Maps (2026-11-23): coffee shop, 4.2★, 11-13 Jukjeon-ro 15beon-gil, Giheung-gu, Yongin-si (84C5+HQ); 'Open · Closes 10 PM', Instagram linked; nothing says closed. The English query lands on Bojeong-dong Cafe Street, so the query is now its Korean name",
-      "ok": "2026-11"
+      "name": "Four Seasons Kitchen (Gwanggyo)",
+      "page_name": "Four Seasons Kitchen Gwanggyo直营 Store",
+      "src": "https://mom-mom.net/en/travel/places/69a66cdcd011d13e58bf98eb",
+      "date": "2026-09",
+      "map": "Google Maps '포시즌키친 광교직영점', 22 reviews, newest shown 21 days ago"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Bbok Sikdang (two branches), Hanchon Seolleongtang, Myeongnyun Jinsa Galbi",
+      "why": "not found on Google Maps, or no reviews there"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
