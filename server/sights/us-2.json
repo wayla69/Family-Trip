@@ -1269,6 +1269,121 @@
           },
           "q": "Stone Zoo, 149 Pond St, Stoneham",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mommypoppins.com/indoor-play-spaces-boston-massachusetts",
+          "name": {
+            "th": "ลิตเติลเลิฟเวจคลับ",
+            "en": "Little Lovage Club"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนแฮร์ริสัน เซาท์เอนด์ บอสตัน",
+            "en": "Harrison Avenue, South End, Boston"
+          },
+          "what": {
+            "th": "คลับเล่นอิสระที่สงบสำหรับเด็กเล็ก",
+            "en": "A calm open-play club for young children"
+          },
+          "why": {
+            "th": "เป็นมิตรกับประสาทสัมผัส เหมาะกับการพาเด็กเล่นในร่มครั้งแรก",
+            "en": "Sensory-friendly, good for a first indoor play outing"
+          },
+          "tip": {
+            "th": "จองล่วงหน้า แต่ละรอบรับจำกัด",
+            "en": "Book ahead; sessions are capped"
+          },
+          "q": "Little Lovage Club, 485 Harrison Ave, Boston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/indoor-play-spaces-boston-massachusetts",
+          "name": {
+            "th": "อัลโล ชาร์ลส์ทาวน์",
+            "en": "Allo (Charlestown)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนที่ 8 ชาร์ลส์ทาวน์ บอสตัน",
+            "en": "8th Street, Charlestown, Boston"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มธีมธรรมชาติ มีของเล่นชิ้นเล็กและเล่นฝึกประสาทสัมผัส",
+            "en": "A nature-inspired indoor play space with loose parts and sensory play"
+          },
+          "why": {
+            "th": "เล่นแบบสร้างสรรค์ ต่างจากซอฟต์เพลย์ทั่วไป",
+            "en": "Creative play, a change from soft play"
+          },
+          "q": "Allo Playground, 197 8th St, Charlestown",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/boston-kids/things-to-do-in-brookline-massachusetts-with-kids",
+          "name": {
+            "th": "สวนลาร์ซแอนเดอร์สัน",
+            "en": "Larz Anderson Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนก็อดดาร์ด บรุกไลน์",
+            "en": "Goddard Avenue, Brookline"
+          },
+          "what": {
+            "th": "สนามหญ้า บ่อน้ำ และทางเดินกว่า 60 เอเคอร์ ที่ตั้งพิพิธภัณฑ์รถยนต์",
+            "en": "Over 60 acres of lawns, ponds and paths, home to the Auto Museum"
+          },
+          "why": {
+            "th": "จุดปิกนิกยอดนิยม มีที่ให้วิ่งเล่น",
+            "en": "A favourite picnic spot with room to run"
+          },
+          "q": "Larz Anderson Park, Brookline",
+          "ok": "2026-11"
         }
       ]
     },
