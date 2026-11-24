@@ -1,0 +1,336 @@
+{
+ "kind": "eats",
+ "checked": "2026-11",
+ "how": "Each of the 42 flagged rows re-run on Google Maps (2026-11-24, by its map query, the address on the place page compared with the row); every one landed on the row's own place. 'Permanently closed' → removed. 'Temporarily closed' → one web search or the place's own / tourism page: a seasonal closure (mountain huts, the Amalfi coast, Cinque Terre, Dubrovnik's old town) kept with the season added to 'why' in both languages; no reason or reopening date → removed. Cinque Terre fell to 3 restaurants, so two restaurants open today on Maps were added.",
+ "rows": [
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-dubrovnik",
+   "name": "Lokanda Peskarija",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Na ponti bb, Dubrovnik); Time Out lists it as closed in January, and CroatiaWeek: with winter nearly all of the old town's 180 places close until the next season; note added",
+   "src": "https://www.timeout.com/croatia/restaurants/lokanda-peskarija"
+  },
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-dubrovnik",
+   "name": "Kopun",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Restaurant Kopun, Poljana Ruđera Boškovića 7); own site: 'may be running at half working hours from November to February'; note added",
+   "src": "https://www.restaurantkopun.com"
+  },
+  {
+   "file": "server/eats/is-1.json",
+   "town": "is-reykjavik",
+   "name": "Kattakaffihúsið (The Cat Café)",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Bergstaðastræti 10a)"
+  },
+  {
+   "file": "server/eats/is-1.json",
+   "town": "is-reykjavik",
+   "name": "Flóran (Kaffi Flóra)",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Kaffi Flóra, Grasagarðinum); the row's 'what' already says it is open May to September — a seasonal closure, no change"
+  },
+  {
+   "file": "server/eats/is-1.json",
+   "town": "is-reykjavik",
+   "name": "Arna Ís og Kaffi",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Eiðistorg 15, Seltjarnarnes)"
+  },
+  {
+   "file": "server/eats/it-1.json",
+   "town": "it-venice",
+   "name": "Paradiso Perduto",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Il Paradiso Perduto, Fondamenta Cannaregio 2540); no reason or reopening date found on a dated page (newest listing reviews 2024) → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/it-1.json",
+   "town": "it-milan",
+   "name": "Belle Epoque",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Via Giovanni Battista Varè 23)"
+  },
+  {
+   "file": "server/eats/it-1.json",
+   "town": "it-amalfi",
+   "name": "Da Vincenzo",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Da Vincenzo Positano, Viale Pasitea 172/178); positano.com reviews up to 16 Oct 2026; Simply Amalfi Coast (May 2025): Positano's season runs from shortly before Easter to the first days of November, most restaurants close after 30 October; note added",
+   "src": "https://simplyamalficoast.it/?p=6416"
+  },
+  {
+   "file": "server/eats/it-1.json",
+   "town": "it-amalfi",
+   "name": "Cuoppo d'Amalfi",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Via Supportico Gaetano Afeltra 10)"
+  },
+  {
+   "file": "server/eats/it-1.json",
+   "town": "it-amalfi",
+   "name": "Il Fornillo",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Il Fornillo, Viale Pasitea 266); italia.it lists regular hours; Simply Amalfi Coast: Positano's restaurants close after 30 October and reopen before Easter; note added",
+   "src": "https://simplyamalficoast.it/?p=6416"
+  },
+  {
+   "file": "server/eats/it-1.json",
+   "town": "it-amalfi",
+   "name": "Maria Grazia",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Maria Grazia, Marina del Cantone); positano.com's latest review 18 Oct 2026, so it ran through the season; the coast's restaurants close for winter (Simply Amalfi Coast). Unsure: a July 2026 judicial seizure of part of its tables (Scatti di Gusto) — its lawyer said it stays open; note added",
+   "src": "https://www.positano.com/en/c/maria-grazia"
+  },
+  {
+   "file": "server/eats/it-1.json",
+   "town": "it-amalfi",
+   "name": "Il Mulino",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Il Mulino, Via delle Cartiere 36); recommended in a March 2026 guide (Bluekeys); no own notice — taken as the coast's winter closure (Simply Amalfi Coast); note added. Weakest of the season verdicts",
+   "src": "https://bluekeys.it/de/blog/best-restaurants-amalfi-coast"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Mauriz Keller",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Strada Rezia 32, Ortisei); Val Gardena listing: season 16.05.2026–25.10.2026; note added",
+   "src": "https://www.valgardena.it/en/addresses/detail/base/company/ortisei-val-gardena/maurizkeller/171B100C91FA41D4825A9FCAF1644FAE/"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Gostner Schwaige",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24, first list result 'Gostner Schwaige' (Saltriastrasse 13): 'Temporarily closed'; Seiser Alm page: '26.10.2026 - 15.12.2026 - geschlossen', open in summer and winter; note added",
+   "src": "https://www.seiseralm.it/de/aktiv/sommer/wandern/huetten-almen/AEBA87C57B5D1471797E84A56025D318-malga-gostner.html"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Malga Sanon",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Localita' Piz 19, Alpe di Siusi); Val Gardena listing: opening hours 22.05.2026–02.11.2026; note added",
+   "src": "https://www.valgardena.it/en/addresses/detail-gastronomy/base/company/seiser-alm/sanon-huette/52F69AC6AFB176C18259B630303D72F8/"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Ristorante Pizzeria Al Passetto",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Via Guglielmo Marconi 8, Cortina); own site: closed for holidays from the last week of November to mid-December and for 4 weeks after Easter week; note added",
+   "src": "https://alpassettoghedina.it"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Rifugio Firenze",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Regensburgerhütte); South Tyrol portal: 01.06.2026–18.10.2026; note added",
+   "src": "https://www.valgardena.it/de/adressen-groeden/detail-gastronomie/base/company/s-cristina-val-gardena/rifugio-firenze/5D191275849E42088005A6B72F60CD90/"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Mont Sëuc",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Almgasthof Mont Seuc, Bergstation Seiser Alm); Val Gardena listing: winter 04.12.2026–04.04.2027, summer 2026 from 01.05; note added",
+   "src": "https://www.valgardena.it/de/adressen-groeden/detail/base/company/st-ulrich-groeden/mont-seeuc/8DD1FE9368970E31726AD2EF3D9FF5B8/"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Gelateria Avalon",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Eisdiele Avalon / Officina del Gelo Avalon, Corso della Libertà 44); no winter break or reopening date found on its own or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Café Demetz",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Café Konditorei Demetz, Strada Rezia 44)"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Caffè Val d'Anna",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (S.da Val d'Anna 39); valgardena.it: winter 4 Dec 2026–4 Apr 2027, daily 10:00–19:00; note added",
+   "src": "https://www.valgardena.it/de/adressen-groeden/detail-gastronomie/base/company/ortisei-val-gardena/caffe-val-danna-annatal/862DC2C2DB5443868C124EDBB75EB731/"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Ristorante Bullaccia",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Puflatschstraße, Castelrotto); Seiser Alm lists it as a summer hut and a winter ski hut (spring closure 7 Apr–21 May 2026); note added",
+   "src": "https://www.seiseralm.it/en/active/winter-holidays/skiing/mountain-huts/rid-EA4E36C4BB5F466EA46F6EB5EB6BE86D-g-rest-bergstation-puflatsch.html"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-dolomites",
+   "name": "Sarè",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Restaurant Bar Konditorei Sarè, Strada Sciarè 17); Alta Badia: season 06.06.2026–27.09.2026; note added",
+   "src": "https://www.altabadia.org/de/info/restaurant-bar-sare.html"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-sicily",
+   "name": "Sicilia in Tavola",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Ristorante Sicilia in Tavola, Via Cavour 28); no reason or reopening date found on its own or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-sicily",
+   "name": "Caffè Sicilia",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Corso V. Emanuele 125, Noto); Mapstr listing: 'chiuso nov e inizio gen-inizio marzo'; note added",
+   "src": "https://mapstr.com/place/vA1wqcGuLcg"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-cinqueterre",
+   "name": "Il Casello",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Lungomare Ferrovia casello 70, Monterosso); Rick Steves forum: 'Il Casello (known for its terrace) closes November-March'; note added",
+   "src": "https://community.ricksteves.com/travel-forum/italy/late-november-on-the-italian-riviera"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-cinqueterre",
+   "name": "Gambero Rosso",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Il Gambero Rosso Vernazza, Piazza Marconi 7, 3.8); no reason or reopening date found on its own or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-cinqueterre",
+   "name": "Il Porticciolo",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (IL PORTICCIOLO ristorante pizzeria, Via Renato Birolli 98); no reason or reopening date found → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-cinqueterre",
+   "name": "Alberto Gelateria",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (V. Fieschi 74, Corniglia); no winter break or reopening date found → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-cinqueterre",
+   "name": "Ristorante Ciak",
+   "verdict": "replaced",
+   "evidence": "Replacement restaurant (the town fell to 3 restaurants): Google Maps 2026-11-24 'Ristorante Ciak', Piazza Don Giovanni Minzoni 6, Monterosso, 'Open · Closes 3:30 PM · Reopens 7 PM', 'Octopus, scampi, seafood pasta & grilled fish'; own site: 'Fresh seafood', 'Open March-December', closed Wednesdays",
+   "src": "https://www.ristoranteciak.net"
+  },
+  {
+   "file": "server/eats/it-2.json",
+   "town": "it-cinqueterre",
+   "name": "Da Aristide",
+   "verdict": "replaced",
+   "evidence": "Replacement restaurant: Google Maps 2026-11-24 'Da Aristide', Via Antonio Discovolo 290, Manarola, seafood restaurant, 'Open · Closes 10 PM', 'all-day restaurant'; Sluurpy: pesto pasta, stuffed mussels, fried seafood, €€, 08:00–22:00, closed Thursday",
+   "src": "https://www.sluurpy.it/manarola/ristorante/144821/aristide"
+  },
+  {
+   "file": "server/eats/nl-1.json",
+   "town": "nl-amsterdam",
+   "name": "Pof",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Restaurant Pof, Meteorenweg 280)"
+  },
+  {
+   "file": "server/eats/nl-1.json",
+   "town": "nl-amsterdam",
+   "name": "IJ-Kantine",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (NDSM-Kade 5)"
+  },
+  {
+   "file": "server/eats/nl-1.json",
+   "town": "nl-amsterdam",
+   "name": "Monte Pelmo",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Tweede Anjeliersdwarsstraat 17); own site: 'Wij zijn elke dag open van: 13.00-22:00', no winter break named → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/no-1.json",
+   "town": "no-bergen",
+   "name": "Tre Brør Café",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Tre Brør Kaffi & Vin, Vangsgata 28, Voss)"
+  },
+  {
+   "file": "server/eats/no-1.json",
+   "town": "no-bergen",
+   "name": "Baker Brun",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Baker Brun Svensgården, Bryggen); Visit Bergen: both Bryggen shops' 'Season (1 May 2026 - 31 Aug 2026)'; other Baker Brun shops in the centre (Klosteret, Telegrafen, Thon Senter) listed; note added",
+   "src": "https://en.visitbergen.com/food-and-drink/baker-brun-svensgarden-p8407303"
+  },
+  {
+   "file": "server/eats/no-1.json",
+   "town": "no-bergen",
+   "name": "Smakverket",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Rasmus Meyers allé 3)"
+  },
+  {
+   "file": "server/eats/no-1.json",
+   "town": "no-bergen",
+   "name": "Solros cafe and Bakery",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Marken 31)"
+  },
+  {
+   "file": "server/eats/pt-1.json",
+   "town": "pt-lisbon",
+   "name": "APF Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (A.P. F. Cafe & Restaurant, R. das Trinas 67A)"
+  },
+  {
+   "file": "server/eats/se-1.json",
+   "town": "se-stockholm",
+   "name": "Skörden",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Skörden by Chefs Camp, Rosenlundsgatan 33)"
+  },
+  {
+   "file": "server/eats/si-1.json",
+   "town": "si-bled",
+   "name": "Pizzeria Rustika",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Riklijeva cesta 13); listings give daily hours only, no reason or reopening date → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/sk-1.json",
+   "town": "sk-bratislava",
+   "name": "Retro Station Restaurant",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Retro Station, Skalnaté pleso); vt.sk: it opens during the cable car's operating hours; the row's 'why' already says it opens with the cable car — no change",
+   "src": "https://www.vt.sk/en/resort/gastronomy-shops/restaurants/retro-station-restaurant"
+  },
+  {
+   "file": "server/eats/sk-1.json",
+   "town": "sk-bratislava",
+   "name": "Luculus",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Luculus Ice Saloon, Hviezdoslavovo námestie 16); no winter break or reopening date found → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/tr-1.json",
+   "town": "tr-pamukkale",
+   "name": "Hiera Coffee & Tea House",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Hiera Restaurant Coffee & Tea House (Reservation Only), Memet Akif Ersoy Blv. 53/a); no reason or reopening date found → removed (temporarily closed, no reopening date)"
+  }
+ ]
+}
