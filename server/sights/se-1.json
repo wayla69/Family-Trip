@@ -433,6 +433,121 @@
           },
           "q": "Leo's Lekland, Diagonalvägen 10, Kungens Kurva",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://paradoxmuseum.com/stockholm/en/",
+          "name": {
+            "th": "พิพิธภัณฑ์พาราด็อกซ์ สตอกโฮล์ม",
+            "en": "Paradox Museum Stockholm"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเซร์เกล ใกล้เฮอทอร์เยต สตอกโฮล์ม",
+            "en": "Sergelgatan, by Hötorget, Stockholm"
+          },
+          "what": {
+            "th": "ห้องภาพลวงตากว่า 70 ห้อง แต่ละห้องมีคิวอาร์โค้ดอธิบายวิทยาศาสตร์",
+            "en": "Over 70 illusion rooms, each with a QR code that explains the science"
+          },
+          "why": {
+            "th": "ห้องหลอกตาสนุก ๆ อยู่ในร่ม เหมาะวันฝนตก",
+            "en": "Rooms that fool the eye, indoors for a rainy day"
+          },
+          "tip": {
+            "th": "เด็กต่ำกว่า 5 ขวบเข้าฟรี อายุต่ำกว่า 16 ต้องมีผู้ใหญ่ บางห้องมีไฟกะพริบ",
+            "en": "Under-5s free; under-16s with an adult; some rooms have flashing lights"
+          },
+          "q": "Paradox Museum Stockholm, Sergelgatan 20, Stockholm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Aspuddsparken",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/sv/stockholm/saker-att-gora/basta-sakerna-att-gora-med-barn-i-stockholm",
+          "name": {
+            "th": "สวนอัสปุดด์",
+            "en": "Aspuddsparken"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อัสปุดเดน สตอกโฮล์ม",
+            "en": "Aspudden, Stockholm"
+          },
+          "what": {
+            "th": "หนึ่งในสวนสนามเด็กเล่นใหญ่ที่สุดของสตอกโฮล์ม มีสวนและฟาร์มเล็ก ๆ",
+            "en": "One of Stockholm's biggest playground parks, with a park and a small farm"
+          },
+          "why": {
+            "th": "มีเครื่องปีนป่าย เนินหญ้า สระเล่นน้ำ และกระต่าย แกะ แพะให้ดู",
+            "en": "Climbing frames, grassy slopes, a splash pool, and rabbits, sheep and goats to meet"
+          },
+          "q": "Aspuddsparken, Stockholm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Akalla 4H-gård",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitstockholm.com/o/akalla-4h-farm/",
+          "name": {
+            "th": "ฟาร์ม 4H อัคคาลา",
+            "en": "Akalla 4H Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "อัคคาลา คิสตา สตอกโฮล์ม",
+            "en": "Akalla, Kista, Stockholm"
+          },
+          "what": {
+            "th": "ฟาร์มเล็ก ๆ ในคิสตา เด็กได้เจอแกะ ม้าแคระ และกระต่าย",
+            "en": "A small farm in Kista where children meet sheep, ponies and rabbits"
+          },
+          "why": {
+            "th": "เด็กได้รู้จักสัตว์ในฟาร์ม มีคาเฟ่ใกล้ ๆ",
+            "en": "Children get to know farm animals; a café nearby"
+          },
+          "q": "Akalla 4H-gård, Kista, Stockholm",
+          "ok": "2026-11"
         }
     ]
     }
