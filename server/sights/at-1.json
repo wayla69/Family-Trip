@@ -580,7 +580,7 @@
       {"name":{"en":"Toy Museum","th":"พิพิธภัณฑ์ของเล่น"},"kind":"museumkid","area":{"en":"Bürgerspitalgasse 2","th":"บือร์เกอร์สปิทาลกัสเซอ 2"},"what":{"en":"Three levels of toys and play rooms, with a slide and a Carrera track that can be hired for half an hour.","th":"ของเล่นสามชั้นและห้องเล่น มีสไลด์ และลู่รถแข่งคาร์เรรา ให้เช่าครึ่งชั่วโมง"},"why":{"en":"Hands-on rooms for children aged 0–10, with a children's library and a Wunderkammer.","th":"ห้องลงมือเล่นสำหรับเด็กอายุ 0–10 ปี มีห้องสมุดเด็กและห้องของแปลกหายาก"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Toy Museum, Bürgerspitalgasse 2, Salzburg","ok":"2026-11","src":"https://www.salzburgmuseum.at/en/location/toymuseum/"},
       {"name":{"en":"JumpDome","th":"จัมพ์โดม"},"kind":"play","area":{"en":"Wilhelm-Spazier-Straße","th":"วิลเฮล์ม-สปาซีเออร์-สตราสเซอ"},"what":{"en":"An indoor trampoline park with obstacle courses, foam pits and competition lanes.","th":"สนามแทรมโพลีนในร่ม มีคอร์สอุปสรรค บ่อโฟม และลู่แข่ง"},"why":{"en":"A great option on a rainy day, for children of primary school age and older.","th":"เหมาะวันฝนตก สำหรับเด็กประถมขึ้นไป"},"ages":[0,0,2,2],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"JumpDome, Wilhelm-Spazier-Straße, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
       {"name":{"en":"Amadeus Salzach River Boat","th":"เรืออามาเดอุสบนแม่น้ำซัลซัค"},"kind":"ride","area":{"en":"Makartsteg landing stage","th":"ท่าเรือมักคาร์ตสเตก"},"what":{"en":"A 40-minute round trip along the Salzach that ends with the captain spinning the boat to Mozart's music.","th":"เที่ยวไปกลับ 40 นาทีตามแม่น้ำซัลซัค จบด้วยกัปตันหมุนเรือตามเพลงของโมสาร์ท"},"why":{"en":"The Captain's Dance, to the sound of Mozart, is a particular favourite with children.","th":"การเต้นของกัปตันตามเสียงโมสาร์ทเป็นที่โปรดของเด็กหลายคน"},"tip":{"en":"Cruises operate seasonally from spring through autumn.","th":"เปิดให้นั่งเฉพาะฤดูกาล ตั้งแต่ฤดูใบไม้ผลิถึงฤดูใบไม้ร่วง"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Amadeus Salzach River Boat, Makartsteg, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
-      {"name":{"en":"Leopoldskron Outdoor Pool","th":"สระว่ายน้ำกลางแจ้งเลโอโปลด์สครอน"},"kind":"play","area":{"en":"Beside Leopoldskron Pond, southwest of the Old Town","th":"ข้างทะเลสาบเลโอโปลด์สครอน ทางตะวันตกเฉียงใต้ของเมืองเก่า"},"what":{"en":"A large sunbathing lawn, diving platforms, a children's pool and views of Hohensalzburg Fortress.","th":"สนามหญ้าใหญ่สำหรับอาบแดด แท่นกระโดดน้ำ สระเด็ก และวิวป้อมฮอเฮนซัลส์บวร์ก"},"why":{"en":"A classic favourite with Salzburg families.","th":"ขึ้นชื่อสำหรับครอบครัวซัลซ์บวร์ก"},"tip":{"en":"Can get very busy during the height of summer.","th":"ช่วงหน้าร้อนจัดอาจคนแน่นมาก"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Leopoldskron Outdoor Pool, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
+      {"name":{"en":"Leopoldskron Outdoor Pool","th":"สระว่ายน้ำกลางแจ้งเลโอโปลด์สครอน"},"kind":"play","area":{"en":"Beside Leopoldskron Pond, southwest of the Old Town","th":"ข้างทะเลสาบเลโอโปลด์สครอน ทางตะวันตกเฉียงใต้ของเมืองเก่า"},"what":{"en":"A large sunbathing lawn, diving platforms, a children's pool and views of Hohensalzburg Fortress.","th":"สนามหญ้าใหญ่สำหรับอาบแดด แท่นกระโดดน้ำ สระเด็ก และวิวป้อมฮอเฮนซัลส์บวร์ก"},"why":{"en":"A classic favourite with Salzburg families.","th":"ขึ้นชื่อสำหรับครอบครัวซัลซ์บวร์ก"},"tip":{"en":"Summer pool: the 2026 season ran 8 May–20 September; it gets very busy at the height of summer","th":"สระหน้าร้อน ฤดูกาล 2026 เปิด 8 พ.ค.–20 ก.ย. ช่วงร้อนจัดคนแน่นมาก"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Leopoldskron Outdoor Pool, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
       {"name":{"en":"Marionette Museum","th":"พิพิธภัณฑ์หุ่นกระบอก"},"kind":"museumkid","area":{"en":"Inside Hohensalzburg Fortress","th":"ในป้อมฮอเฮนซัลส์บวร์ก"},"what":{"en":"Historic puppets from traditional theatres, with short video presentations on how marionettes work.","th":"หุ่นโบราณจากโรงละครดั้งเดิม มีวิดีโอสั้นอธิบายการเชิดหุ่น"},"why":{"en":"Children appreciate seeing the actual puppets used in performances.","th":"เด็กได้เห็นหุ่นตัวจริงที่ใช้แสดง"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Marionette Museum, Hohensalzburg Fortress, Salzburg","ok":"2026-11","src":"https://www.nomadepicureans.com/europe/austria/salzburg-with-kids-2026-family-itinerary/"},
       {"name":{"en":"Steintheater","th":"โรงละครหิน"},"kind":"culture","area":{"en":"Hellbrunn","th":"เฮลบรุนน์"},"what":{"en":"A hidden theatre carved into natural stone, reached by a trail after the animal encounters.","th":"โรงละครที่สลักเข้าไปในหินธรรมชาติ ไปถึงด้วยทางเดินหลังชมสัตว์"},"why":{"en":"A true off-the-beaten-path site to finish a Hellbrunn visit.","th":"จุดซ่อนเร้นนอกเส้นทางปกติ ไว้จบการเที่ยวเฮลบรุนน์"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Steintheater, Hellbrunn, Salzburg","ok":"2026-11","src":"https://freewalkingtoursalzburg.com/salzburg-with-kids/"},
       {"name":{"en":"Folklore Museum","th":"พิพิธภัณฑ์พื้นบ้าน"},"kind":"museum","area":{"en":"Monatsschlössl, Hellbrunn","th":"โมนาทสชลเลิสเซิล เฮลบรุนน์"},"what":{"en":"A compact, peaceful folk museum in the Monatsschlössl at Hellbrunn.","th":"พิพิธภัณฑ์พื้นบ้านขนาดกะทัดรัดและสงบในโมนาทสชลเลิสเซิลที่เฮลบรุนน์"},"why":{"en":"Especially interesting for older children.","th":"น่าสนใจโดยเฉพาะกับเด็กโต"},"ages":[0,0,1,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Folklore Museum, Monatsschlössl, Hellbrunn, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
@@ -1009,43 +1009,6 @@
       {"name":{"en":"Hundertwasser Museum","th":"พิพิธภัณฑ์ฮุนเดิร์ทวาสเซอร์"},"kind":"museum","area":{"en":"Near the Hundertwasserhaus","th":"ใกล้บ้านฮุนเดิร์ทวาสเซอร์"},"what":{"en":"Museum of Hundertwasser's work in an irregular building a few minutes' walk from the Hundertwasserhaus.","th":"พิพิธภัณฑ์ผลงานของฮุนเดิร์ทวาสเซอร์ในอาคารไม่สม่ำเสมอ เดินไม่กี่นาทีจากบ้านฮุนเดิร์ทวาสเซอร์"},"why":{"en":"His bold, nature-inspired art appeals to children, and the building itself is an attraction.","th":"ศิลปะที่กล้าและได้แรงบันดาลใจจากธรรมชาติดึงดูดเด็ก และตัวอาคารก็เป็นสถานที่ท่องเที่ยว"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"free for under-18s","th":"ฟรีสำหรับอายุต่ำกว่า 18 ปี"},"book":"none","q":"Hundertwasser Museum, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
       {"name":{"en":"MuseumsQuartier","th":"มิวเซียมส์ควอร์เทียร์"},"kind":"play","area":{"en":"MuseumsQuartier","th":"มูเซียมส์ควอร์เทียร์"},"what":{"en":"Courtyard complex with giant outdoor loungers where families picnic between museum visits.","th":"ลานรวมอาคารที่มีเก้าอี้พักผ่อนกลางแจ้งขนาดยักษ์ ครอบครัวปิกนิกระหว่างเที่ยวพิพิธภัณฑ์"},"why":{"en":"The ZOOM children's museum inside is purpose-built for under-14s.","th":"พิพิธภัณฑ์เด็กซูมอยู่ภายใน ออกแบบสำหรับเด็กอายุต่ำกว่า 14 ปี"},"ages":[1,2,2,1],"hrs":1.5,"io":"both","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"MuseumsQuartier, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
       {"name":{"en":"Palmenhaus","th":"เรือนกระจกปาล์ม (ปาล์มเฮาส์)"},"kind":"nature","area":{"en":"Schönbrunn gardens","th":"สวนเชินบรุนน์"},"what":{"en":"19th-century iron-and-glass greenhouse with towering tropical plants and a popular café.","th":"เรือนกระจกเหล็กและกระจกศตวรรษที่ 19 มีพืชเขตร้อนสูงใหญ่และคาเฟ่ยอดนิยม"},"why":{"en":"Delights kids on any weather day; a 15-minute visit that fits into a palace visit.","th":"ทำให้เด็กเพลิดเพลินในวันอากาศไม่ดี เยี่ยมชมได้ 15 นาทีระหว่างเที่ยวพระราชวัง"},"ages":[1,2,2,2],"hrs":0.5,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Palmenhaus, Schönbrunn gardens, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
-        {
-          "local": "",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-mit-indoor-spielplatz",
-          "name": {
-            "th": "เลโอส์ รุมเพิลคิสเทอ",
-            "en": "Leos Rumpelkiste"
-          },
-          "kind": "play",
-          "area": {
-            "th": "เลโอโพลด์ชตัดท์ เขต 2",
-            "en": "Leopoldstadt (2nd district)"
-          },
-          "what": {
-            "th": "ที่เล่นในร่มพร้อมบิสโทร",
-            "en": "An indoor play area with a bistro"
-          },
-          "why": {
-            "th": "เล่นในร่มได้ในวันฝนตก",
-            "en": "Indoor play for a rainy day"
-          },
-          "q": "Rumpelkiste, Blumauergasse 1a, Wien",
-          "ok": "2026-11"
-        },
         {
           "local": "",
           "ages": [

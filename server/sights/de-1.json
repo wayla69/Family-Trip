@@ -297,7 +297,7 @@
           "area": { "en": "Jungfernheide", "th": "ยุงแฟร์นไฮเดอ" },
           "what": { "en": "A forest high ropes course with courses between the treetops, suspension bridges and zip lines", "th": "สวนเชือกไต่ในป่า มีเส้นทางระหว่างยอดไม้ สะพานแขวน และซิปไลน์" },
           "why": { "en": "Children can climb with you between treetops, over suspension bridges and down zip lines", "th": "เด็กปีนไปกับคุณระหว่างยอดไม้ ข้ามสะพานแขวน และไหลลงซิปไลน์" },
-          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "tip": { "en": "Closed in winter; the 2026 season opened on 7 March. Allow about two hours", "th": "ปิดช่วงหน้าหนาว ฤดูกาล 2026 เปิด 7 มี.ค. เผื่อเวลาราว 2 ชั่วโมง" },
           "ages": [0, 1, 2, 2],
           "hrs": 2,
           "io": "out",
@@ -601,8 +601,8 @@
         {
           "name": { "en": "Cologne City Museum", "th": "พิพิธภัณฑ์เมืองโคโลญ" },
           "kind": "museum",
-          "area": { "en": "Zeughaus", "th": "ซอยก์เฮาส์" },
-          "what": { "en": "The city’s history museum in the old arsenal, from the Romans to modern Cologne", "th": "พิพิธภัณฑ์ประวัติศาสตร์เมืองในคลังอาวุธเก่า ตั้งแต่สมัยโรมันถึงโคโลญปัจจุบัน" },
+          "area": { "en": "Minoritenstraße, near the cathedral", "th": "ถนนมิโนริเทน ใกล้มหาวิหาร" },
+          "what": { "en": "The city’s history museum, from the Romans to modern Cologne, in its interim home in the former Franz Sauer fashion house while the old arsenal stays closed after water damage", "th": "พิพิธภัณฑ์ประวัติศาสตร์เมือง ตั้งแต่สมัยโรมันถึงโคโลญปัจจุบัน ย้ายมาอยู่ชั่วคราวในอดีตห้างเสื้อผ้าฟรานซ์ เซาเออร์ ระหว่างที่คลังอาวุธเก่าปิดเพราะน้ำท่วมเสียหาย" },
           "why": { "en": "A sheltered stop for a rainy afternoon, best for children of six and over; step-free inside", "th": "แวะในร่มได้ในบ่ายฝนตก เหมาะกับเด็กอายุ 6 ปีขึ้นไป ภายในไม่มีขั้นบันได" },
           "tip": { "en": "Closed on Mondays; open late on the first Thursday of the month", "th": "ปิดวันจันทร์ เปิดดึกวันพฤหัสบดีแรกของเดือน" },
           "ages": [0, 1, 2, 2],
@@ -611,7 +611,7 @@
           "pram": "yes",
           "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "none",
-          "q": "Kölnisches Stadtmuseum, Zeughausstraße 1-3, Köln",
+          "q": "Kölnisches Stadtmuseum, Minoritenstraße 13, Köln",
           "ok": "2026-11",
           "src": "https://www.cologne-tourism.com/arts-culture/sights/detail/cologne-city-museum"
         },
