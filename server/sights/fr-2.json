@@ -529,10 +529,7 @@
             "th": "มีลูจหน้าร้อน เด็ก 4–5 ขวบขึ้นไปเล่นกับผู้ใหญ่ได้",
             "en": "A summer luge from age 4 or 5 with a grown-up"
           },
-          "tip": {
-            "th": "ขับรถจากอานซีราว 20 นาที",
-            "en": "About 20 minutes by car from Annecy"
-          },
+          "tip": { "en": "About 20 minutes by car from Annecy; skiing from about mid-December to late March, summer activities in the warm months, little open in between", "th": "ขับรถจากอานซีราว 20 นาที เล่นสกีราวกลาง ธ.ค.–ปลาย มี.ค. หน้าร้อนมีกิจกรรมกลางแจ้ง ช่วงระหว่างฤดูแทบไม่มีอะไรเปิด" },
           "q": "Station du Semnoz, Viuz-la-Chiésaz",
           "ok": "2026-11"
         },
@@ -685,10 +682,7 @@
             "th": "เส้นทางต่ำสุดเริ่มเล่นได้ตั้งแต่ 3 ขวบ",
             "en": "The lowest courses start at age 3"
           },
-          "tip": {
-            "th": "จองล่วงหน้าช่วง ก.ค.–ส.ค.",
-            "en": "Book ahead in July and August"
-          },
+          "tip": { "en": "Closed in winter; book ahead in July and August", "th": "ปิดช่วงหน้าหนาว จองล่วงหน้าช่วง ก.ค.–ส.ค." },
           "q": "Acro’Aventures, Route Forestière, Talloires",
           "ok": "2026-11"
         }
@@ -2822,10 +2816,7 @@
             "th": "เด็กชอบนั่งรถไฟเล็กรอบเมือง",
             "en": "Children love going round town on the little train"
           },
-          "tip": {
-            "th": "มีสองเส้นทาง สีเขียวในเมืองเก่า สีเหลืองในเมืองใหม่",
-            "en": "Two routes: green in the old town, yellow in the newer part"
-          },
+          "tip": { "en": "Runs about April to October; two routes: green in the old town, yellow in the newer part", "th": "วิ่งราว เม.ย.–ต.ค. มีสองเส้นทาง สีเขียวในเมืองเก่า สีเหลืองในเมืองใหม่" },
           "q": "Petit Train Touristique de Colmar, 3 Rue Kléber, Colmar",
           "ok": "2026-11"
         },
@@ -2904,10 +2895,7 @@
             "th": "มีโซนน้ำตื้นให้เล่น ฉากหลังเป็นเทือกเขาโวจ",
             "en": "A shallow splash zone with the Vosges behind"
           },
-          "tip": {
-            "th": "พกครีมกันแดดและผ้าเช็ดตัว",
-            "en": "Bring sunscreen and towels"
-          },
+          "tip": { "en": "Summer only: the 2026 season ran 20 May–27 September; bring sunscreen and towels", "th": "เปิดเฉพาะหน้าร้อน ฤดูกาล 2026 เปิด 20 พ.ค.–27 ก.ย. พกครีมกันแดดและผ้าเช็ดตัว" },
           "q": "Base Nautique Colmar Houssen, 37 Rue Denis Papin, Colmar",
           "ok": "2026-11"
         },
@@ -3020,43 +3008,6 @@
             "en": "A playground under big old trees"
           },
           "q": "Parc Saint François-Xavier, Rue de Rueil, Colmar",
-          "ok": "2026-11"
-        },
-        {
-          "local": "Musée Alsacien",
-          "ages": [
-            0,
-            1,
-            1,
-            2
-          ],
-          "hrs": 1,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://kidsareatrip.com/things-to-do-in-strasbourg-with-kids/",
-          "name": {
-            "th": "พิพิธภัณฑ์อาลซัส",
-            "en": "Alsatian Museum"
-          },
-          "kind": "museum",
-          "area": {
-            "th": "ท่าแซ็งนีกอลา สตราสบูร์ก",
-            "en": "Quai Saint-Nicolas, Strasbourg"
-          },
-          "what": {
-            "th": "ศิลปะ ประเพณี และชีวิตชนบทอาลซัส ในบ้านโครงไม้สองหลัง",
-            "en": "Alsatian art, folklore and country life in two half-timbered houses"
-          },
-          "why": {
-            "th": "ตัวบ้านโครงไม้ก็เป็นส่วนหนึ่งของการเที่ยวชม",
-            "en": "The half-timbered houses are part of the visit"
-          },
-          "q": "Musée Alsacien, 23 Quai Saint-Nicolas, Strasbourg",
           "ok": "2026-11"
         }
       ]
