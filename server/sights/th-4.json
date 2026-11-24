@@ -720,6 +720,191 @@
           "q": "Hat Khung Wiman, Chanthaburi",
           "ok": "2026-11",
           "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/"
+        },
+        {
+          "local": "อู่ต่อเรือเสม็ดงาม",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "name": {
+            "th": "อู่ต่อเรือเสม็ดงาม",
+            "en": "Samet Ngam Shipyard (King Taksin's shipyard)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "หนองบัว เมืองจันทบุรี",
+            "en": "Nong Bua, Mueang Chanthaburi"
+          },
+          "what": {
+            "th": "ซากเรือโบราณจัดแสดงในอาคารริมป่าชายเลน",
+            "en": "Old shipwreck remains shown in a hall by the mangroves"
+          },
+          "why": {
+            "th": "ได้ทั้งประวัติศาสตร์และป่าชายเลนในที่เดียว",
+            "en": "History and the mangroves in one stop"
+          },
+          "q": "King Taksin Shipyard, Nong Bua, Chanthaburi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ตึกแดงและคุกขี้ไก่",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "name": {
+            "th": "ตึกแดงและคุกขี้ไก่",
+            "en": "Red Building and Khuk Khi Kai"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ปากน้ำแหลมสิงห์ แหลมสิงห์",
+            "en": "Pak Nam Laem Sing, Laem Sing"
+          },
+          "what": {
+            "th": "อาคารสองหลังที่ฝรั่งเศสสร้างไว้กว่าร้อยปี",
+            "en": "Two buildings the French built over a century ago"
+          },
+          "why": {
+            "th": "กองบัญชาการอิฐแดงและหอสูงที่เคยเลี้ยงไก่ไว้ชั้นบน",
+            "en": "A red-brick headquarters and a tower where chickens were kept upstairs"
+          },
+          "q": "Khuk Khi Kai, Pak Nam Laem Sing, Chanthaburi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "วัดไผ่ล้อม",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "name": {
+            "th": "วัดไผ่ล้อม",
+            "en": "Wat Phai Lom"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "จันทนิมิต เมืองจันทบุรี",
+            "en": "Chanthanimit, Mueang Chanthaburi"
+          },
+          "what": {
+            "th": "วัดเก่าในเมือง มีอุโบสถและเจดีย์งานช่างท้องถิ่น",
+            "en": "An old town temple with an ordination hall and a pagoda of local craft"
+          },
+          "why": {
+            "th": "ร่มรื่นและเงียบสงบใต้ต้นไม้ใหญ่",
+            "en": "Shady and quiet under big trees"
+          },
+          "q": "Wat Phai Lom, Chanthanimit, Chanthaburi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "หาดแหลมสิงห์",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "name": {
+            "th": "หาดแหลมสิงห์",
+            "en": "Laem Sing Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ปากน้ำแหลมสิงห์ แหลมสิงห์",
+            "en": "Pak Nam Laem Sing, Laem Sing"
+          },
+          "what": {
+            "th": "หาดที่ปากแม่น้ำ เรือประมงเข้าออกทั้งวัน",
+            "en": "A beach at the river mouth where fishing boats come and go"
+          },
+          "why": {
+            "th": "ช่วงเย็นที่เรือกลับเข้าฝั่ง",
+            "en": "Evenings, when the boats come home"
+          },
+          "q": "Laem Sing Beach, Pak Nam Laem Sing, Chanthaburi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "หาดแขมหนู",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
+          "name": {
+            "th": "หาดแขมหนู",
+            "en": "Khaem Nu Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ตะกาดเง้า ท่าใหม่",
+            "en": "Takat Ngao, Tha Mai"
+          },
+          "what": {
+            "th": "หาดเล็กมีโขดหิน ต่างจากหาดทรายยาวที่อื่น",
+            "en": "A small rocky beach, unlike the long sand beaches elsewhere"
+          },
+          "why": {
+            "th": "เหมาะนั่งชมวิวมากกว่าเล่นน้ำ",
+            "en": "For sitting and looking, more than swimming"
+          },
+          "q": "Khaem Nu Beach, Takat Ngao, Tha Mai, Chanthaburi",
+          "ok": "2026-11"
         }
       ]
     },
