@@ -442,6 +442,162 @@
           },
           "q": "Castelo dos Mouros, Sintra",
           "ok": "2026-11"
+        },
+        {
+          "local": "Parque Recreativo do Alvito",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nomadotravel.app/pt/guides/lisbon-with-kids",
+          "name": {
+            "th": "สวนนันทนาการอัลวีตู",
+            "en": "Alvito Recreational Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อัลวีตู มงซานตู ลิสบอน",
+            "en": "Alvito, Monsanto, Lisbon"
+          },
+          "what": {
+            "th": "สวนที่มีสนามเด็กเล่นครบครันและม้านั่งในร่ม",
+            "en": "A park with a well-equipped playground and shady benches"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่ หน้าร้อนมีสระเล่นน้ำ",
+            "en": "A big playground, with splash pools in the warm months"
+          },
+          "tip": {
+            "th": "สระเล่นน้ำเปิดช่วงพฤษภาคมถึงกันยายนเป็นหลัก",
+            "en": "The splash pools run mainly May to September"
+          },
+          "q": "Parque Recreativo do Alvito, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museu da Carris",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+          "name": {
+            "th": "พิพิธภัณฑ์คาร์ริส (รถราง รถบัส)",
+            "en": "Carris Museum (trams and buses)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อัลกันตารา ลิสบอน",
+            "en": "Alcântara, Lisbon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์รถรางและรถบัสของลิสบอนในอู่เก่า",
+            "en": "Lisbon's tram and bus museum in an old depot"
+          },
+          "why": {
+            "th": "มีเกมสำหรับครอบครัวพร้อมผู้นำชม และเวิร์กชอปสำหรับเด็ก",
+            "en": "Family games with a guide, and workshops for children"
+          },
+          "q": "Museu da Carris, Alcântara, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MAAT",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+          "name": {
+            "th": "พิพิธภัณฑ์ MAAT ศิลปะ สถาปัตยกรรม และเทคโนโลยี",
+            "en": "MAAT (Museum of Art, Architecture and Technology)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ริมแม่น้ำเบเลง ลิสบอน",
+            "en": "Belém riverside, Lisbon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ริมแม่น้ำในอาคารโค้ง",
+            "en": "A riverside museum in a curved building"
+          },
+          "why": {
+            "th": "กิจกรรมวันหยุดสำหรับเด็ก เช่น ประดิษฐ์รถพลังแสงอาทิตย์",
+            "en": "Weekend activities for children, such as building a solar car"
+          },
+          "q": "MAAT, Avenida Brasília, Belém, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museu das Comunicações",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+          "name": {
+            "th": "พิพิธภัณฑ์การสื่อสาร",
+            "en": "Communications Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไกช์ดูโซเดร ลิสบอน",
+            "en": "Cais do Sodré, Lisbon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ไปรษณีย์และโทรคมนาคม",
+            "en": "A museum of post and telecommunications"
+          },
+          "why": {
+            "th": "มีเวิร์กชอปสำหรับครอบครัวที่มีเด็กเล็กถึง 36 เดือน",
+            "en": "Workshops for families with babies up to 36 months"
+          },
+          "tip": {
+            "th": "เข้าฟรีวันพฤหัสสุดท้ายของเดือน 18:00–22:00",
+            "en": "Free on the last Thursday of the month, 18:00–22:00"
+          },
+          "q": "Museu das Comunicações, Rua do Instituto Industrial, Lisbon",
+          "ok": "2026-11"
         }
     ]
     },
