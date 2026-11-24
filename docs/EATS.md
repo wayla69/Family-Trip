@@ -532,3 +532,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 
 ### Seoul, 24 Nov 2026
 batch-39 of docs/library-briefs (round 2). +3: Jeongwon Urban Garden, Cheonggiwa Town (Gildong Sageori), Casa de Tacos (Songridan-gil). Proof in `docs/library-proof/kr-seoul.json`.
+
+- **24 Nov 2026, Seoul, Kakao Map pass**: +2 (Flubber (Yangjaecheon), Hwangnam (Gwanghwamun)), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-seoul.json`.
