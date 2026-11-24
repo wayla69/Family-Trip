@@ -1612,6 +1612,47 @@
           },
           "q": "HarborLand Central Krabi",
           "ok": "2026-11"
+        },
+        {
+          "local": "ป่าในเมืองกระบี่",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://krabinature.com/krabi-urban-forest-walkway-mangrove-walkway/",
+          "name": {
+            "th": "ทางเดินป่าในเมืองกระบี่",
+            "en": "Krabi Urban Forest Walkway"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ตัวเมืองกระบี่ ทางใต้ของโรงพยาบาล กระบี่",
+            "en": "Krabi town, south of the public hospital, Krabi"
+          },
+          "what": {
+            "th": "ทางเดินคอนกรีต 500 เมตรเหนือป่าชายเลน มีหอชมวิวสูง 5 ชั้น",
+            "en": "A 500 m concrete walk over the mangroves with a five-storey lookout tower"
+          },
+          "why": {
+            "th": "ดูนก ปลาตีน และปู บนทางเดินง่าย ๆ",
+            "en": "Birds, mudskippers and crabs to spot on an easy walk"
+          },
+          "tip": {
+            "th": "ระวังลิง ไม่ควรไปตอนค่ำ",
+            "en": "Watch out for monkeys; not for after dark"
+          },
+          "q": "Krabi Urban Forest, Krabi",
+          "ok": "2026-11"
         }
       ]
     }

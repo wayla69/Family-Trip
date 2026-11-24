@@ -532,3 +532,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 
 ### Krabi, 24 Nov 2026
 batch-38 of docs/library-briefs (round 2). +10: Ton Ma Yom, Gecko Cabane, Chalita Cafe, Burger Bung, Ruanthip (Khlong Son), Baan Ma-Ying, Baan Tha Ley Cafe, Makan, Sprucy Cafe, Cha-Lom. Proof in `docs/library-proof/th-krabi.json`.
+
+- **24 Nov 2026, Krabi** (docs/library-briefs batch-66, round 3): +4 (Ban Ko Lek, Anchali, Nahm, Khaothong Terrace). Proof in `docs/library-proof/th-krabi.json`.
