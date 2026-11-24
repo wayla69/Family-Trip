@@ -2,7 +2,7 @@
   "town": "kr-gangwon",
   "kind": "eats + sights",
   "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
   "agents": "one Haiku agent; 11 rows from mom-mom.net (2026), all passed library-check.cjs, 5 went in",
   "added": [
     {
@@ -39,21 +39,51 @@
       "src": "https://mom-mom.net/en/travel/places/682a8e94c5fbe72ca0a6a274",
       "date": "2026-05",
       "map": "Google Maps '월드킹 춘천점', 67 reviews, newest shown 2 days ago"
-    }
-  ],
-  "left_out": [
-    {
-      "name": "Daeunjeong, Chuncheon Ani Dakgalbi",
-      "why": "not found on the map"
     },
     {
-      "name": "Hyojadong Seolleongtang Oak Valley, Design Thinking Museum",
-      "why": "no reviews on the map to show they are open"
+      "name": "Daeunjeong (Wonju)",
+      "page_name": "Daeunjeong",
+      "src": "https://mom-mom.net/en/travel/places/667914b734fe7cc0a87d8920",
+      "date": "2026-05",
+      "map": "Kakao Map '대운정' (원문로 274), open, 18 reviews, newest 19 Nov 2026"
     },
     {
-      "name": "Green Valley Barbecue, Gangwon Police Museum",
-      "why": "no review from the last six months shown on the map"
+      "name": "Chuncheon Ani Dakgalbi",
+      "page_name": "Chuncheon Ani Dakgalbi",
+      "src": "https://mom-mom.net/en/travel/places/66c6d2e199266c3fea04e775",
+      "date": "2026-05",
+      "map": "Kakao Map '춘천애니닭갈비' (박사로 863), open, 40 reviews, newest 21 Nov 2026"
+    },
+    {
+      "name": "Hyojadong Seolleongtang (Oak Valley)",
+      "page_name": "Hyojadong Seolleongtang Oak Valley Branch",
+      "src": "https://mom-mom.net/en/travel/places/663048db4b1eb749ac117c2f",
+      "date": "2026-05",
+      "map": "Kakao Map '효자동설렁탕 오크밸리점' (오크밸리1길 70), open, 7 reviews, newest 15 Oct 2026"
+    },
+    {
+      "name": "Green Valley Barbecue (Chuncheon)",
+      "page_name": "Green Valley Barbecue",
+      "src": "https://mom-mom.net/en/travel/places/66e24b8c2139bd5f535de693",
+      "date": "2026-05",
+      "map": "Kakao Map '그린벨리바베큐' (명월길 521), open, newest review 19 Aug 2026"
+    },
+    {
+      "name": "Design Thinking Museum",
+      "page_name": "Design Thinking Museum",
+      "src": "https://mom-mom.net/en/travel/places/6908781449f3a3ebe64753f1",
+      "date": "2026-05",
+      "map": "Kakao Map '디자인씽킹뮤지엄' (정등로 130), open 09:00–18:00 on the list, newest review 9 Nov 2026"
+    },
+    {
+      "name": "Gangwon Police Museum",
+      "page_name": "Gangwon Police Museum",
+      "src": "https://mom-mom.net/en/travel/places/68c9463f155faa248913546e",
+      "date": "2026-05",
+      "map": "Kakao Map '강원경찰박물관' (신샘밭로 361), open 09:30–17:00 on the list, newest review 28 Oct 2026"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "left_out": [],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "kakao_pass": "24 Nov 2026: +6 (Daeunjeong, Chuncheon Ani Dakgalbi, Hyojadong Seolleongtang (Oak Valley), Green Valley Barbecue; Design Thinking Museum, Gangwon Police Museum)"
 }

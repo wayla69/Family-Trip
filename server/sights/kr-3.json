@@ -473,6 +473,84 @@
           },
           "q": "World King Chuncheon, Yetgyeongchun-ro, Chuncheon",
           "ok": "2026-11"
+        },
+        {
+          "local": "디자인씽킹뮤지엄",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ ₩18,000 · เด็ก ₩11,000 · งานฝีมือ ₩9,000–20,000",
+            "en": "≈ ₩18,000 adults · ₩11,000 children · crafts ₩9,000–20,000"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/6908781449f3a3ebe64753f1",
+          "name": {
+            "th": "พิพิธภัณฑ์ดีไซน์ธิงกิง",
+            "en": "Design Thinking Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนช็องดึง คูจ็อง คังนึง",
+            "en": "Jeongdeung-ro, Gujeong-myeon, Gangneung"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีคาเฟ่และกิจกรรมงานฝีมือ",
+            "en": "A museum with a café and craft activities"
+          },
+          "why": {
+            "th": "กิจกรรมงานฝีมือให้เด็กลงมือทำ",
+            "en": "Hands-on crafts for children"
+          },
+          "q": "디자인씽킹뮤지엄, 정등로 130, 강릉",
+          "ok": "2026-11"
+        },
+        {
+          "local": "강원경찰박물관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/68c9463f155faa248913546e",
+          "name": {
+            "th": "พิพิธภัณฑ์ตำรวจคังวอน",
+            "en": "Gangwon Police Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนซินแซมบัท ซินบุก ชุนช็อน",
+            "en": "Sinsaembat-ro, Sinbuk-eup, Chuncheon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ตำรวจ มีนิทรรศการให้ลองเล่น",
+            "en": "A police museum with hands-on displays"
+          },
+          "why": {
+            "th": "มีของให้ลองและมุมถ่ายรูป เข้าฟรี",
+            "en": "Things to try and spots for photos, free to enter"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "강원경찰박물관, 신샘밭로 361, 춘천",
+          "ok": "2026-11"
         }
       ]
     },
