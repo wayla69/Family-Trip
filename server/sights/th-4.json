@@ -3941,6 +3941,80 @@
           "q": "Santichon Village, Pai, Mae Hong Son",
           "ok": "2026-11",
           "src": "https://www.nomadasaurus.com/10-things-to-do-in-pai-thailand/"
+        },
+        {
+          "local": "จุดชมวิว ทะเลหมอก หยุนไหล",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/n2lpboApKWZ",
+          "name": {
+            "th": "จุดชมวิวทะเลหมอกหยุนไหล",
+            "en": "Yun Lai Viewpoint"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เวียงใต้ ปาย",
+            "en": "Wiang Tai, Pai"
+          },
+          "what": {
+            "th": "จุดชมทะเลหมอก เหนือหมู่บ้านสันติชล",
+            "en": "A sea-of-mist viewpoint above Santichon village"
+          },
+          "why": {
+            "th": "ทะเลหมอกเหนือหุบเขายามเช้า",
+            "en": "Mist over the valley in the early morning"
+          },
+          "q": "Yun Lai Viewpoint, Wiang Tai, Pai, Mae Hong Son",
+          "ok": "2026-11"
+        },
+        {
+          "local": "สะพานประวัติศาสตร์ ท่าปาย",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/n2lpboApKWZ",
+          "name": {
+            "th": "สะพานประวัติศาสตร์ท่าปาย",
+            "en": "Pai Historic Bridge"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ท่าปาย แม่ฮี้ ปาย",
+            "en": "Tha Pai, Mae Hi, Pai"
+          },
+          "what": {
+            "th": "สะพานเก่า มีป้ายนิทรรศการเล่าประวัติ",
+            "en": "An old bridge with display boards telling its history"
+          },
+          "why": {
+            "th": "เดินข้ามและถ่ายรูประหว่างทางเข้าปาย",
+            "en": "A walk across and a photo stop on the way to Pai"
+          },
+          "q": "Pai Historic Bridge, Tha Pai, Mae Hi, Pai",
+          "ok": "2026-11"
         }
       ]
     },
