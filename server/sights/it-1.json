@@ -2087,6 +2087,158 @@
           },
           "q": "Poggibonsi Archaeodrome, Poggibonsi",
           "ok": "2026-11"
+        },
+        {
+          "local": "Cupola del Brunelleschi",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "ปีนโดมของบรูเนลเลสกี",
+            "en": "Climbing Brunelleschi's Dome"
+          },
+          "kind": "views",
+          "area": {
+            "th": "มหาวิหารดูโอโม ฟลอเรนซ์",
+            "en": "Duomo, Florence"
+          },
+          "what": {
+            "th": "ปีนบันได 463 ขั้นขึ้นยอดโดมใหญ่ของมหาวิหาร",
+            "en": "Climb the 463 steps to the top of the cathedral's great dome"
+          },
+          "why": {
+            "th": "เด็กที่เดินไหวจะชอบการปีนและวิวด้านบน",
+            "en": "Children with the legs for it love the climb and the view"
+          },
+          "tip": {
+            "th": "เด็กต่ำกว่า 7 ขวบเข้าฟรี อายุต่ำกว่า 18 ต้องมีผู้ใหญ่ ทางแคบและไม่มีลิฟต์",
+            "en": "Under-7s go free; under-18s climb with an adult; narrow passages and no lift"
+          },
+          "q": "Brunelleschi's Dome, Piazza del Duomo, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Giardino del Bobolino",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "สวนโบโบลิโน",
+            "en": "Giardino del Bobolino"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนมาเคียเวลลี ใต้กำแพงสวนโบโบลี ฟลอเรนซ์",
+            "en": "Viale Machiavelli, south of the Boboli walls, Florence"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นเล็ก ๆ ร่มรื่น มีสไลเดอร์และชิงช้า",
+            "en": "A small, shady playground with slides and swings"
+          },
+          "why": {
+            "th": "มีสไลเดอร์และชิงช้า เข้าฟรี",
+            "en": "Slides and swings, free"
+          },
+          "q": "Giardino del Bobolino, Viale Machiavelli, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Giardino dell'Orticoltura",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "สวนออร์ติโคลตูรา",
+            "en": "Giardino dell'Orticoltura"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เดิน 10 นาทีทางเหนือของดูโอโม ฟลอเรนซ์",
+            "en": "ten minutes' walk north of the Duomo, Florence"
+          },
+          "what": {
+            "th": "สวนที่มีสนามเด็กเล่นเล็ก ๆ และเรือนกระจกปี 1880",
+            "en": "A garden with a small playground and the 1880 glasshouse"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นเล็ก ๆ ให้วิ่งเล่น",
+            "en": "A small playground to run around in"
+          },
+          "q": "Giardino dell'Orticoltura, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Fontana del Porcellino",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "น้ำพุหมูป่าปอร์เชลลิโน",
+            "en": "The Porcellino Fountain"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตลาดเมร์กาโตนูโอโว ใกล้จัตุรัสซินญอเรีย ฟลอเรนซ์",
+            "en": "Mercato Nuovo, by Piazza della Signoria, Florence"
+          },
+          "what": {
+            "th": "รูปปั้นหมูป่าสำริดที่ตลาดเมร์กาโตนูโอโว",
+            "en": "The bronze wild boar at the Mercato Nuovo"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ลูบจมูกหมูป่าขอโชคและหย่อนเหรียญลงตะแกรง",
+            "en": "Children rub the boar's snout for luck and drop a coin through the grate"
+          },
+          "q": "Fontana del Porcellino, Florence",
+          "ok": "2026-11"
         }
     ]
     },
