@@ -680,6 +680,84 @@
           },
           "q": "감귤카트 제주",
           "ok": "2026-11"
+        },
+        {
+          "local": "타요키즈카페 제주용담점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65b6f9c1abd92fac2f7bcc1f",
+          "name": {
+            "th": "คิดส์คาเฟ่ทาโยะ ยงดัม",
+            "en": "Tayo Kids Café (Yongdam)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์ประชุมมีแร ชั้น 6 ถนนนัมซ็อง เชจู",
+            "en": "Mirae Convention Center 6F, Namseong-ro, Jeju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ในร่ม มีรถบัสทาโยะกับเพื่อน ๆ",
+            "en": "An indoor kids café with Tayo the little bus and friends"
+          },
+          "why": {
+            "th": "มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "A nursing room and nappy changing"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "타요키즈카페 제주용담점, 남성로 75, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "콩순이키즈카페 제주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65b86da167a2df7173b902d9",
+          "name": {
+            "th": "คิดส์คาเฟ่คงซูนี เชจู",
+            "en": "Kongsuni Kids Café (Jeju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนย็อนซา 2 โอรา เชจู",
+            "en": "Yeonsa 2-gil, Ora 2-dong, Jeju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ตกแต่งธีมการ์ตูนคงซูนี",
+            "en": "A kids café decorated with the cartoon girl Kongsuni"
+          },
+          "why": {
+            "th": "เด็กชอบธีม มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "Children love the theme; a nursing room and nappy changing"
+          },
+          "q": "콩순이키즈카페 제주점, 연사2길 82, 제주",
+          "ok": "2026-11"
         }
       ]
     }

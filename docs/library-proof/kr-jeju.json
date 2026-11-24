@@ -2,7 +2,7 @@
   "town": "kr-jeju",
   "kind": "eats + sights",
   "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
   "agents": "one Haiku agent; 20 rows from Jeju tourism and family travel pages (Apr–Nov 2026) passed library-check.cjs, 14 went in",
   "added": [
     {
@@ -102,13 +102,37 @@
       "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
       "date": "2026-04",
       "map": "Google Maps '감귤카트', 199 reviews, newest shown '3 days ago'"
+    },
+    {
+      "name": "Suni Table",
+      "page_name": "Suni Table",
+      "src": "https://mom-mom.net/en/travel/places/660a3ec7738cc897ddeddf23",
+      "date": "2026-09",
+      "map": "Kakao Map '수니테이블' (구좌읍 문주란로 33-1), open, 34 reviews, newest 29 Sep 2026"
+    },
+    {
+      "name": "Danso (Aewol)",
+      "page_name": "Danso",
+      "src": "https://mom-mom.net/en/travel/places/63d3718a6e2efc966cf688d3",
+      "date": "2026-09",
+      "map": "Kakao Map '단소 제주애월본점' (애월로 139-4), open, 201 blog posts, newest 20 Nov 2026"
+    },
+    {
+      "name": "Tayo Kids Café (Yongdam)",
+      "page_name": "Tayo Kids Cafe Jeju Yongdam Branch",
+      "src": "https://mom-mom.net/en/travel/places/65b6f9c1abd92fac2f7bcc1f",
+      "date": "2026-05",
+      "map": "Kakao Map '타요키즈카페 제주용담점' (남성로 75 미래컨벤션센터 6층), closed Tuesdays, 17 reviews, newest 1 Aug 2026"
+    },
+    {
+      "name": "Kongsuni Kids Café (Jeju)",
+      "page_name": "Kongsuni Kids Cafe Jeju Branch",
+      "src": "https://mom-mom.net/en/travel/places/65b86da167a2df7173b902d9",
+      "date": "2026-05",
+      "map": "Kakao Map '콩순이키즈카페 제주점' (연사2길 82), open, newest blog review 29 Aug 2026"
     }
   ],
   "left_out": [
-    {
-      "name": "Suni Table, Danso",
-      "why": "no review from the last six months on the map"
-    },
     {
       "name": "Sheep Farm (Aewol)",
       "why": "a sheepdog herding show; not found under the page's name"
@@ -120,7 +144,12 @@
     {
       "name": "Tayo Kids Cafe (Yongdam), Kongsuni Kids Cafe",
       "why": "newest reviews two years old or more"
+    },
+    {
+      "name": "Sheep Farm (Aewol)",
+      "why": "not found on Kakao Map under the page's name"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "kakao_pass": "24 Nov 2026: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café)"
 }
