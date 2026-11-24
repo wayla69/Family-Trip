@@ -1,149 +1,68 @@
 {
   "town": "is-reykjavik",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 21 rows from Guide to Iceland, the Secret Lagoon's and Fontana's own sites passed library-check.cjs, 18 went in",
+  "agents": "one Haiku agent; 8 rows from Guide to Iceland (updated Nov 2026), all passed library-check.cjs, 7 went in",
   "added": [
     {
-      "name": "Kaffi Laugalækur",
-      "page_name": "Kaffi Laugalækur",
+      "name": "Sundhöll Reykjavíkur (swimming pool)",
+      "page_name": "Sundholl Reykjavikur",
       "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
       "date": "2026-11",
-      "map": "Google Maps 370 reviews, newest '1 day ago'"
+      "map": "Google Maps 'Sundhöllin' (Barónsstígur 45a), newest review shown a day ago"
     },
     {
-      "name": "The Laundromat Café",
-      "page_name": "The Laundromat Café",
+      "name": "Vesturbæjarlaug (swimming pool)",
+      "page_name": "Vesturbaejarlaug",
       "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
       "date": "2026-11",
-      "map": "Google Maps 'The Laundromat Cafe', 2,627 reviews, newest '2 days ago'"
+      "map": "Google Maps 'Vesturbæjarlaug' (Hofsvallagata), newest review shown 6 days ago"
     },
     {
-      "name": "Kattakaffihúsið (The Cat Café)",
-      "page_name": "Kattakaffihúsið (The Cat Café)",
+      "name": "Elliðaárdalur valley",
+      "page_name": "Ellidaardalur Valley",
       "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
       "date": "2026-11",
-      "map": "Google Maps 'Kattakaffihúsið', 953 reviews, newest '3 months ago'"
+      "map": "Google Maps 'Elliðaárdalur', newest review shown 4 months ago"
     },
     {
-      "name": "Grandi Mathöll",
-      "page_name": "Grandi Mathöll",
+      "name": "Klambratún park",
+      "page_name": "Klambratun",
       "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
       "date": "2026-11",
-      "map": "Google Maps 889 reviews, newest 'last week'"
+      "map": "Google Maps 'Klambratún' (Flókagata 24 — the page's own address, Austurstræti 4, is wrong, so the map's street is used), newest review shown 5 days ago"
     },
     {
-      "name": "Flóran (Kaffi Flóra)",
-      "page_name": "Flóran Garden Bistro",
+      "name": "Grótta lighthouse",
+      "page_name": "Grotta Lighthouse Area",
       "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
       "date": "2026-11",
-      "map": "Google Maps 'Kaffi Flóra', 353 reviews, newest 'last month'"
+      "map": "Google Maps 'Grótta Lighthouse', newest review shown 3 weeks ago"
     },
     {
-      "name": "Iðnó",
-      "page_name": "Iðnó Café",
+      "name": "Grófin City Library",
+      "page_name": "Grófin City Library",
       "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
       "date": "2026-11",
-      "map": "Google Maps 'Iðnó', 303 reviews, newest '5 days ago'"
+      "map": "Google Maps 'Borgarbókasafnið Grófinni' (Tryggvagata 15), newest review shown 2 weeks ago"
     },
     {
-      "name": "101 Reykjavik Street Food",
-      "page_name": "101 Reykjavik Street Food",
+      "name": "Nordic House library",
+      "page_name": "The Nordic House Library",
       "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
       "date": "2026-11",
-      "map": "Google Maps 3,614 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Arna Ís og Kaffi",
-      "page_name": "Arna Café & Coffee",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Arna Ís og Kaffi', Seltjarnarnes, 128 reviews, newest '4 months ago'"
-    },
-    {
-      "name": "Hljóðhimnar at Harpa",
-      "page_name": "Hljóðhimnar at Harpa",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Harpa Concert Hall and Conference Centre' (the play room is inside), 9,833 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Reykjavík Botanic Garden",
-      "page_name": "Reykjavik Botanic Garden",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Grasagarður Botanical Garden', 877 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Viðey Island",
-      "page_name": "Videy Island",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Viðey', 62 reviews, newest 'last week'"
-    },
-    {
-      "name": "Volcano Express",
-      "page_name": "Volcano Express",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 1,704 reviews, newest '13 hours ago'"
-    },
-    {
-      "name": "Tjörnin pond",
-      "page_name": "Tjornin Pond",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Tjörnin', 328 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Hljómskálagarður park",
-      "page_name": "Hljomskalagardur",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Hljómskálagarðurinn', 466 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Öskjuhlíð hill",
-      "page_name": "Oskjuhlid Hill",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Öskjuhlíð', 229 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Árbæjarlaug pool",
-      "page_name": "Arbaejarlaug",
-      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
-      "date": "2026-11",
-      "map": "Google Maps 'Árbæjarlaug', 596 reviews, newest '3 days ago'"
-    },
-    {
-      "name": "Secret Lagoon",
-      "page_name": "Secret Lagoon",
-      "src": "https://www.secretlagoon.is/",
-      "date": "official",
-      "map": "Google Maps 9,128 reviews, newest '18 hours ago'"
-    },
-    {
-      "name": "Fontana baths",
-      "page_name": "Fontana Baths",
-      "src": "https://fontana.is/",
-      "date": "official",
-      "map": "Google Maps 'Fontana Steam by the Lake', 2,955 reviews, newest '13 hours ago'"
+      "map": "Google Maps 'Nordic House' (Sæmundargata 11), newest review shown a week ago"
     }
   ],
   "left_out": [
     {
-      "name": "Hamborgarafabrikkan",
-      "why": "a chain, the page names no branch"
+      "name": "Puffin Express",
+      "why": "a boat tour sold by an operator"
     },
     {
-      "name": "Ísbúð Vesturbæjar",
-      "why": "several shops, the page names no branch"
-    },
-    {
-      "name": "Smáralind Mall Play Zone",
-      "why": "a play corner in a shopping mall"
+      "name": "Saga Museum, Smáralind play zone",
+      "why": "no address or district on the page"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
