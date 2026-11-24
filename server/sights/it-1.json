@@ -4052,6 +4052,80 @@
           },
           "q": "Museo Storico Navale di Venezia, Riva San Biasio 2148, Venice",
           "ok": "2026-11"
+        },
+        {
+          "local": "Fondazione Querini Stampalia",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "name": {
+            "th": "มูลนิธิเกวรีนีสตัมปาเลีย",
+            "en": "Querini Stampalia Foundation"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "กัมปิเอลโลซานตามาเรียฟอร์โมซา เวนิส",
+            "en": "Campiello Santa Maria Formosa, Venice"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในวังที่เหมาะกับการพาเด็กไปมากที่สุดแห่งหนึ่งของเวนิส",
+            "en": "A palace museum that families find one of Venice's easiest with children"
+          },
+          "why": {
+            "th": "หนึ่งในพิพิธภัณฑ์ของเวนิสที่เหมาะกับเด็กที่สุด",
+            "en": "One of the Venice museums best suited to children"
+          },
+          "q": "Fondazione Querini Stampalia, Campiello Santa Maria Formosa, Venezia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo di Leonardo da Vinci",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "name": {
+            "th": "พิพิธภัณฑ์ดาวินชีแบบโต้ตอบ",
+            "en": "Da Vinci Interactive Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สโกเลตตาดีซานรอกโก กัมโปซานรอกโก เวนิส",
+            "en": "Scoletta di San Rocco, Campo San Rocco, Venice"
+          },
+          "what": {
+            "th": "หุ่นจำลองเครื่องจักรของเลโอนาร์โดที่ลองเล่นได้ และจอแสดงแบบโต้ตอบ",
+            "en": "Working models of Leonardo's machines to try, and interactive displays"
+          },
+          "why": {
+            "th": "เป็นจุดแวะที่สนุกสำหรับครอบครัวที่สุดแห่งหนึ่ง",
+            "en": "One of the most engaging stops for families"
+          },
+          "q": "Da Vinci Interactive Museum, Campo San Rocco, Venezia",
+          "ok": "2026-11"
         }
     ]
     }
