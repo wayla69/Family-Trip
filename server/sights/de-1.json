@@ -2035,6 +2035,43 @@
           },
           "q": "Tatzmania Löffingen, Wildpark 3, Löffingen",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.heidelberg-marketing.de/en/discover/family/familienfreundliches-indoor-programm",
+          "name": {
+            "th": "โรงละครหุ่นพลัปเปอร์เมาล์",
+            "en": "Puppentheater Plappermaul"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนชไตน์ฮอฟ ไฮเดลเบิร์ก",
+            "en": "Steinhofweg, Heidelberg"
+          },
+          "what": {
+            "th": "โรงละครหุ่นที่อยู่ในรายชื่อที่เที่ยววันฝนตกสำหรับครอบครัวของเมือง",
+            "en": "A puppet theatre on the city's family rainy-day list"
+          },
+          "why": {
+            "th": "ดูละครหุ่นในร่มในวันฝนตก",
+            "en": "An indoor puppet show for a rainy day"
+          },
+          "q": "Puppentheater Plappermaul, Steinhofweg 20, Heidelberg",
+          "ok": "2026-11"
         }
       ]
     },
