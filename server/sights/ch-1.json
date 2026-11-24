@@ -417,6 +417,80 @@
           },
           "q": "Sammlung Rosengart, Pilatusstrasse 10, Luzern",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://engelberg.ch/en/summer/families/children-playgrounds/playscape-fuerenalp",
+          "name": {
+            "th": "สนามเด็กเล่นเฟือเรนอัลป์",
+            "en": "Fürenalp playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เฟือเรนอัลป์ เองเกิลแบร์ก",
+            "en": "Fürenalp, Engelberg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางธรรมชาติ ติดร้านอาหารบนเขาเฟือเรนอัลป์",
+            "en": "A playground in nature next to the Fürenalp mountain restaurant"
+          },
+          "why": {
+            "th": "มีแทรมโพลีน สไลเดอร์ และลำธารภูเขาสำหรับเด็กเล็ก",
+            "en": "A trampoline, a slide and a mountain stream for little ones"
+          },
+          "q": "Mountain Restaurant Fürenalp, Fürenalp 1, Engelberg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://engelberg.ch/en/summer/families/children-playgrounds/playscape-ristis/",
+          "name": {
+            "th": "สนามเด็กเล่นบนเขาของโกลบี ริสติส",
+            "en": "Globi's alpine playground (Ristis)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ริสติส บรุนนี เองเกิลแบร์ก",
+            "en": "Ristis, Brunni, Engelberg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นบนเขาขนาดใหญ่ มีรางเลื่อนฤดูร้อนและโซนเล่นน้ำ",
+            "en": "A large alpine playground with a summer toboggan run and a water world"
+          },
+          "why": {
+            "th": "มีแทรมโพลีน บ้านลม ม้าหมุน ชิงช้า และสไลเดอร์ยาว",
+            "en": "Trampoline, bouncy castle, carousel, swings and a long slide"
+          },
+          "q": "Globis Alpenspielplatz, Ristis, Engelberg",
+          "ok": "2026-11"
         }
       ]
     }
