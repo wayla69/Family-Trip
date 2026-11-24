@@ -1,19 +1,59 @@
 {
   "town": "kr-gangwon",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 23 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 11 rows from mom-mom.net (2026), all passed library-check.cjs, 5 went in",
+  "added": [
     {
-      "name": "Hwangtae Hoegwan",
-      "src": "https://www.google.com/maps/place/Hwangtae+Hoegwan+(Dried+Pollack+Restaurant)",
-      "page_name": "Hwangtae Hoegwan (Dried Pollack Restaurant) / 황태회관",
-      "evidence": "Google Maps (2026-11-23): restaurant, 3.6★, 19 Nunmaeul-gil, Daegwallyeong-myeon, Pyeongchang-gun (MP95+WW); 'Open · Closes 10 PM'; nothing says closed",
-      "ok": "2026-11"
+      "name": "Gangmun Jumak",
+      "page_name": "Gangmun Jumak",
+      "src": "https://mom-mom.net/en/travel/places/683d7e1c08605c4592ba976b",
+      "date": "2026-05",
+      "map": "Google Maps '세인트존스호텔 강문주막', 41 reviews, newest shown 3 days ago"
+    },
+    {
+      "name": "Chodang Jang Kalguksu",
+      "page_name": "Chodang Jang Kalguksu",
+      "src": "https://mom-mom.net/en/travel/places/673d60d68028d8318213e4b2",
+      "date": "2026-05",
+      "map": "Google Maps '초당장칼국수', 77 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Matsu",
+      "page_name": "Matsu",
+      "src": "https://mom-mom.net/en/travel/places/651cf0d0caa4390924c220e4",
+      "date": "2026-05",
+      "map": "Google Maps 'Matsu' (Sokcho), 321 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "National Gangwon Science Museum",
+      "page_name": "National Gangwon Specialized Science Museum",
+      "src": "https://mom-mom.net/en/travel/places/693019cf3647688459a10a6d",
+      "date": "2026-05",
+      "map": "Google Maps '국립강원전문과학관', 25 reviews, newest shown 3 days ago"
+    },
+    {
+      "name": "World King (Chuncheon)",
+      "page_name": "World King Chuncheon Branch",
+      "src": "https://mom-mom.net/en/travel/places/682a8e94c5fbe72ca0a6a274",
+      "date": "2026-05",
+      "map": "Google Maps '월드킹 춘천점', 67 reviews, newest shown 2 days ago"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Daeunjeong, Chuncheon Ani Dakgalbi",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Hyojadong Seolleongtang Oak Valley, Design Thinking Museum",
+      "why": "no reviews on the map to show they are open"
+    },
+    {
+      "name": "Green Valley Barbecue, Gangwon Police Museum",
+      "why": "no review from the last six months shown on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

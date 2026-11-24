@@ -399,6 +399,80 @@
           "q": "Sogeumsan suspension bridge, Jijeong-myeon, Wonju",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-gangwon"
+        },
+        {
+          "local": "국립강원전문과학관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 3,000 วอน เด็ก 6 ขวบลงมาฟรี",
+            "en": "Adults ₩3,000; 6 and under free"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/693019cf3647688459a10a6d",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แห่งชาติคังวอน",
+            "en": "National Gangwon Science Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนบุกวอน วอนจู",
+            "en": "Bugwon-ro, Wonju"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แบบลงมือ เรื่องการแพทย์และชีววิทยา",
+            "en": "A hands-on science museum about medicine and life sciences"
+          },
+          "why": {
+            "th": "ลองกล้องส่องตรวจ อัลตราซาวด์ และฝึกปั๊มหัวใจ",
+            "en": "Endoscope and ultrasound experiences and CPR practice"
+          },
+          "q": "National Gangwon Science Museum, Bugwon-ro, Wonju",
+          "ok": "2026-11"
+        },
+        {
+          "local": "월드킹 춘천점",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก 9,000 วอน (1 ชั่วโมง) 15,000 วอน (2 ชั่วโมง)",
+            "en": "Child ₩9,000 (1 hour), ₩15,000 (2 hours)"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/682a8e94c5fbe72ca0a6a274",
+          "name": {
+            "th": "เวิลด์คิง (ชุนชอน)",
+            "en": "World King (Chuncheon)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเย็ตคย็องชุน ชุนชอน",
+            "en": "Yetgyeongchun-ro, Chuncheon"
+          },
+          "what": {
+            "th": "คาเฟ่เด็กขนาดใหญ่ มีที่เล่นตั้งแต่เด็กเล็กถึงประถม",
+            "en": "A large kids' café with play areas from babies to primary school"
+          },
+          "why": {
+            "th": "มีโซนแยกสำหรับเด็ก 5 ขวบลงมา",
+            "en": "A separate space for children 5 and under"
+          },
+          "q": "World King Chuncheon, Yetgyeongchun-ro, Chuncheon",
+          "ok": "2026-11"
         }
       ]
     },
