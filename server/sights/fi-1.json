@@ -548,24 +548,6 @@
           "src": "https://ranuaresort.com/en/wildlife-park/"
         },
         {
-          "name": { "en": "Pilke Science Centre", "th": "ศูนย์วิทยาศาสตร์พิลเคอ" },
-          "local": "Tiedekeskus Pilke",
-          "kind": "museumkid",
-          "area": { "en": "Rovaniemi", "th": "โรวาเนียมี" },
-          "what": { "en": "A hands-on science centre about Finnish forests and nature, run with the national parks service", "th": "ศูนย์วิทยาศาสตร์ให้ลงมือเล่นเรื่องป่าและธรรมชาติฟินแลนด์ ดูแลร่วมกับหน่วยงานอุทยานแห่งชาติ" },
-          "why": { "en": "Small, calm and cheap, with exhibits to touch; under 7 free", "th": "ขนาดเล็ก สงบ ราคาถูก มีของให้จับ เด็กต่ำกว่า 7 ขวบเข้าฟรี" },
-          "tip": { "en": "Open Tue–Fri 9–17 and Sat–Sun 10–16; closed 20 July–2 August 2026", "th": "เปิดอังคาร–ศุกร์ 9–17 เสาร์–อาทิตย์ 10–16 ปิด 20 ก.ค.–2 ส.ค. 2026" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 1.5,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price · under 7 free", "th": "เช็กราคา · ต่ำกว่า 7 ปีฟรี" },
-          "book": "none",
-          "q": "Science Centre Pilke, Rovaniemi",
-          "ok": "2026-11",
-          "src": "https://www.visitrovaniemi.fi/attraction/science-centre-pilke/"
-        },
-        {
           "name": { "en": "Snowman World", "th": "สโนว์แมนเวิลด์" },
           "local": "Snowman World",
           "kind": "play",

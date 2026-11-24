@@ -294,7 +294,8 @@
             "en": "Animals to meet and indoor play areas for little ones"
           },
           "q": "Moher Hill Open Farm, Liscannor, County Clare",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Open on Saturdays and Sundays; winter opening is not confirmed, so check first", "th": "เปิดวันเสาร์และอาทิตย์ หน้าหนาวยังไม่ยืนยันว่าเปิด เช็กก่อนไป" }
         },
         {
           "local": "",
@@ -368,8 +369,8 @@
             "en": "Sheepdog shows with a handler and his border collies"
           },
           "tip": {
-            "th": "การแสดงสุนัขต้อนแกะมีช่วงมีนาคมถึงตุลาคม",
-            "en": "Sheepdog shows run between March and October"
+            "th": "ศูนย์ผู้เยี่ยมชมเปิดมีนาคมถึงตุลาคม ปิดช่วงหน้าหนาว การแสดงสุนัขต้อนแกะมีช่วงมีนาคมถึงตุลาคม",
+            "en": "The visitor centre opens March to October; closed in winter. Sheepdog shows run between March and October"
           },
           "q": "Caherconnell Stone Fort, Carran, County Clare",
           "ok": "2026-11"

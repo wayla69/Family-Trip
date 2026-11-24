@@ -524,7 +524,8 @@
             "en": "On the page’s list of the best things to do at Lake Louise with children"
           },
           "q": "Lake Agnes Tea House, Lake Louise",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Open about June to early October only; closed in winter", "th": "เปิดราวมิถุนายนถึงต้นตุลาคมเท่านั้น ปิดช่วงหน้าหนาว" }
         },
         {
           "local": "",
@@ -758,7 +759,7 @@
           "area": { "en": "Centre Island", "th": "เซ็นเตอร์ไอส์แลนด์" },
           "what": { "en": "A small amusement park on Centre Island with no gate fee, paid by ride ticket or pass", "th": "สวนสนุกเล็กๆ บนเซ็นเตอร์ไอส์แลนด์ ไม่มีค่าเข้าประตู จ่ายเป็นตั๋วเครื่องเล่นหรือบัตรวัน" },
           "why": { "en": "Open daily in June to Labour Day, weekends only in May and September, weather permitting", "th": "เปิดทุกวันมิ.ย.ถึงวันแรงงาน ส่วนพ.ค.และก.ย.เปิดเฉพาะเสาร์อาทิตย์ ขึ้นกับอากาศ" },
-          "tip": { "en": "The ferry fare is separate; check the ticket page for each day's hours", "th": "ค่าเรือแยกต่างหาก เช็กเวลาในแต่ละวันที่หน้าตั๋ว" },
+          "tip": { "en": "Open May to September only (weekends in May and September, daily in summer). The ferry fare is separate; check the ticket page for each day's hours", "th": "เปิดพฤษภาคมถึงกันยายนเท่านั้น (พ.ค. และ ก.ย. เปิดเฉพาะเสาร์อาทิตย์ หน้าร้อนเปิดทุกวัน) ค่าเรือแยกต่างหาก เช็กเวลาในแต่ละวันที่หน้าตั๋ว" },
           "ages": [1, 2, 2, 1],
           "hrs": 3,
           "io": "out",
@@ -809,7 +810,7 @@
           "area": { "en": "High Park", "th": "ไฮพาร์ก" },
           "what": { "en": "An animal display inside High Park, a large city park; roads in the park are closed to cars on weekends and holidays", "th": "จุดชมสัตว์ในไฮพาร์ก สวนสาธารณะขนาดใหญ่ ถนนในสวนปิดไม่ให้รถเข้าวันเสาร์อาทิตย์และวันหยุด" },
           "why": { "en": "A car-free weekend walk with animals to see", "th": "เดินเล่นวันหยุดที่ไม่มีรถ และมีสัตว์ให้ดู" },
-          "tip": { "en": "Notices listed 9:00–19:00 in summer and 9:00–17:00 in the holiday season; check the day", "th": "ประกาศระบุ 9:00–19:00 หน้าร้อน และ 9:00–17:00 ช่วงเทศกาล เช็กตามวัน" },
+          "tip": { "en": "Closed for road works from 13 October 2026 until spring 2027. Notices listed 9:00–19:00 in summer and 9:00–17:00 in the holiday season; check the day", "th": "ปิดระหว่างซ่อมถนนตั้งแต่ 13 ต.ค. 2026 ถึงฤดูใบไม้ผลิ 2027 ประกาศระบุ 9:00–19:00 หน้าร้อน และ 9:00–17:00 ช่วงเทศกาล เช็กตามวัน" },
           "ages": [2, 2, 2, 1],
           "hrs": 2,
           "io": "out",

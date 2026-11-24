@@ -1323,7 +1323,6 @@
           "ok": "2026-11",
           "src": "https://www.legolanddiscoverycentre.com/melbourne/"
         },
-      {"name":{"en":"Chipmunks Docklands","th":"ชิปมังก์ส์ ด็อกแลนด์ส"},"kind":"play","area":{"en":"The District Docklands, Docklands","th":"เดอะดิสตริกต์ ด็อกแลนด์ส"},"what":{"en":"An indoor play centre in The District Docklands with climbing structures, slides and a dedicated under-4s section.","th":"สนามเด็กเล่นในร่มที่เดอะดิสตริกต์ ด็อกแลนด์ส มีโครงปีน สไลด์ และโซนเฉพาะเด็กต่ำกว่า 4 ขวบ"},"why":{"en":"The page calls it the pick for under-5s, with a café for parents.","th":"หน้าเว็บเรียกว่าเป็นตัวเลือกสำหรับเด็กต่ำกว่า 5 ขวบ มีคาเฟ่ให้พ่อแม่นั่งด้วย"},"ages":[2,2,1,0],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Chipmunks Docklands, The District Docklands, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
       {"name":{"en":"Dreamskape Docklands","th":"ดรีมสเกป ด็อกแลนด์ส"},"kind":"play","area":{"en":"37 Star Crescent, Docklands","th":"37 สตาร์ เครสเซนต์ ด็อกแลนด์ส"},"what":{"en":"An augmented-reality children's entertainment centre with over 100 games and more than 50 immersive experiences, with no VR headsets.","th":"ศูนย์บันเทิงเด็กแบบออกเมนต์เรียลิตี้ มีเกมกว่า 100 เกมและประสบการณ์ดื่มด่ำกว่า 50 อย่าง ไม่ต้องใส่หมวกวีอาร์"},"why":{"en":"Spread across 770 square metres, with over 100 games and more than 50 fully immersive experiences, all visible without headsets.","th":"กว้าง 770 ตารางเมตร มีเกมกว่า 100 เกมและประสบการณ์ดื่มด่ำกว่า 50 อย่าง ทั้งหมดดูได้โดยไม่ต้องใส่หมวก"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Dreamskape Docklands, 37 Star Crescent, Docklands","ok":"2026-11","src":"https://tothotornot.com/dreamskape-docklands/"},
       {"name":{"en":"Little Builders","th":"ลิตเติ้ล บิลเดอร์ส"},"kind":"play","area":{"en":"The District Docklands, Docklands","th":"เดอะดิสตริกต์ ด็อกแลนด์ส"},"what":{"en":"An indoor sandbox with 50 square metres of clean safe sand, ride-on diggers, buckets, shovels and mould kits.","th":"กระบะทรายในร่มขนาด 50 ตารางเมตร ทรายสะอาดและปลอดภัย มีรถขุดให้ขี่ ถัง พลั่ว และชุดแม่พิมพ์"},"why":{"en":"The page says it is best for ages 2 to 8 and has diggers and sand to play in.","th":"หน้าเว็บบอกว่าเหมาะที่สุดกับเด็กอายุ 2–8 ปี มีรถขุดและทรายให้เล่น"},"ages":[1,2,2,0],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Little Builders, The District Docklands, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
       {"name":{"en":"ArtVo Melbourne","th":"อาร์ตโว เมลเบิร์น"},"kind":"museum","area":{"en":"The District Docklands, Docklands","th":"เดอะดิสตริกต์ ด็อกแลนด์ส"},"what":{"en":"An immersive 3D trick-art photography gallery with nine themed zones of hand-painted murals.","th":"แกลเลอรีถ่ายภาพศิลปะลวงตาแบบสามมิติ มีเก้าโซนของจิตรกรรมฝาผนังที่วาดด้วยมือ"},"why":{"en":"The page says kids race between the walls making silly poses and taking photos of each other.","th":"หน้าเว็บบอกว่าเด็กวิ่งไปมาระหว่างผนังทำท่าขำๆ และถ่ายรูปให้กันและกัน"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"ArtVo Melbourne, The District Docklands, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
@@ -1736,43 +1735,6 @@
             "en": "Slides, ball pits, climbing walls and dress-ups"
           },
           "q": "Bella's Wonderland, Southport",
-          "ok": "2026-11"
-        },
-        {
-          "local": "",
-          "ages": [
-            0,
-            1,
-            1,
-            1
-          ],
-          "hrs": 1,
-          "io": "in",
-          "pram": "no",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
-          "name": {
-            "th": "แพลเน็ตชิล",
-            "en": "Planet Chill"
-          },
-          "kind": "play",
-          "area": {
-            "th": "พาราไดซ์รีสอร์ต เซิร์ฟเฟอร์สพาราไดซ์",
-            "en": "Paradise Resort, Surfers Paradise"
-          },
-          "what": {
-            "th": "ลานสเก็ตน้ำแข็งในพาราไดซ์รีสอร์ต เปิดให้ทุกคน",
-            "en": "An ice rink at the Paradise Resort, open to everyone"
-          },
-          "why": {
-            "th": "เด็กตั้งแต่สามขวบลองเล่นสเก็ตน้ำแข็งได้ทุกวันตลอดปี",
-            "en": "Children from three can try ice skating, every day of the year"
-          },
-          "q": "Planet Chill Ice Skating Rink, Surfers Paradise",
           "ok": "2026-11"
         },
         {
