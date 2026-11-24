@@ -551,6 +551,129 @@
           },
           "q": "강원경찰박물관, 신샘밭로 361, 춘천",
           "ok": "2026-11"
+        },
+        {
+          "local": "춘천꿈자람어린이공원",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩6,000 ต่อเด็ก (สวนในร่ม)",
+            "en": "≈ ₩6,000 a child (indoor park)"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/642250b8ca4d18d6ca38f15e",
+          "name": {
+            "th": "สวนเด็กกุมจารัม ชุนช็อน",
+            "en": "Chuncheon Kkumjaram Children's Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนพย็องฮวา คึนฮวาดง ชุนช็อน",
+            "en": "Pyeonghwa-ro, Geunhwa-dong, Chuncheon (8 min from Chuncheon Station)"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ มีสวนกลางแจ้งข้าง ๆ",
+            "en": "A large indoor playground with an outdoor park beside it"
+          },
+          "why": {
+            "th": "ที่เล่นในร่มสำหรับเด็กเล็ก มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "Indoor play for little ones, a nursing room and nappy changing"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ ส่วนกลางแจ้งปิดช่วงหน้าหนาว",
+            "en": "Closed on Mondays; the outdoor part is shut in winter"
+          },
+          "q": "춘천꿈자람어린이공원, 평화로 26, 춘천",
+          "ok": "2026-11"
+        },
+        {
+          "local": "아이꿍그라운드 평창알펜시아점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/6a968bc2468444aafc91f677",
+          "name": {
+            "th": "ไอกุงกราวด์ อัลเพนเซีย",
+            "en": "Aikkung Ground (Alpensia)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รีสอร์ตอัลเพนเซีย แทกวัลลย็อง พย็องชัง",
+            "en": "Alpensia Resort, Daegwallyeong, Pyeongchang"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มในรีสอร์ตอัลเพนเซีย",
+            "en": "An indoor play ground inside the Alpensia resort"
+          },
+          "why": {
+            "th": "มีปราสาทเป่าลมและเครื่องเล่น สำหรับเด็ก 18 เดือนถึง 10 ขวบ",
+            "en": "A bounce castle and play equipment, for 18 months to 10 years"
+          },
+          "tip": {
+            "th": "ปิดบางวันธรรมดา ควรเช็กเวลาก่อนไป",
+            "en": "Closed some weekdays; check the hours before going"
+          },
+          "q": "아이꿍그라운드 평창알펜시아점, 솔봉로 325, 평창",
+          "ok": "2026-11"
+        },
+        {
+          "local": "숲속에동물농장",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩3,000",
+            "en": "≈ ₩3,000"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/6a96832b3f0e3ce8f88b2e94",
+          "name": {
+            "th": "ฟาร์มสัตว์ในป่า แทกวัลลย็อง",
+            "en": "Forest Animal Farm (Daegwallyeong)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนช็องกล แทกวัลลย็อง พย็องชัง",
+            "en": "Cheonggol-gil, Daegwallyeong, Pyeongchang"
+          },
+          "what": {
+            "th": "ฟาร์มให้สัมผัสสัตว์ มีโซนในร่มและกลางแจ้ง",
+            "en": "A petting farm with indoor and outdoor animal areas"
+          },
+          "why": {
+            "th": "เด็กได้เจอสัตว์ตัวเล็กและให้อาหารด้วยขนมที่ขายในฟาร์ม",
+            "en": "Children meet small animals and feed them with snacks sold there"
+          },
+          "tip": {
+            "th": "เข้าได้เลย ไม่ต้องจอง",
+            "en": "Walk in, no booking"
+          },
+          "q": "숲속에동물농장, 청골길 12, 평창",
+          "ok": "2026-11"
         }
       ]
     },

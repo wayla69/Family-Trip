@@ -81,9 +81,51 @@
       "src": "https://mom-mom.net/en/travel/places/68c9463f155faa248913546e",
       "date": "2026-05",
       "map": "Kakao Map '강원경찰박물관' (신샘밭로 361), open 09:30–17:00 on the list, newest review 28 Oct 2026"
+    },
+    {
+      "name": "Gausup (Chuncheon)",
+      "page_name": "가우숲",
+      "src": "https://mom-mom.net/travel/places/69af6fb6a1a36a00953b2cca",
+      "date": "2026-06",
+      "map": "Kakao Map '가우숲' (새청말길 43), 189 reviews, newest 18 Nov 2026"
+    },
+    {
+      "name": "Chuncheon Kkumjaram Children's Park",
+      "page_name": "춘천꿈자람어린이공원",
+      "src": "https://mom-mom.net/travel/places/642250b8ca4d18d6ca38f15e",
+      "date": "2025-04",
+      "map": "Kakao Map '춘천꿈자람어린이공원' (평화로 26), newest review 12 Nov 2026"
+    },
+    {
+      "name": "Aikkung Ground (Alpensia)",
+      "page_name": "아이꿍 그라운드 평창 알펜시아점",
+      "src": "https://mom-mom.net/travel/places/6a968bc2468444aafc91f677",
+      "date": "2026-11",
+      "map": "Kakao Map '아이꿍그라운드 평창알펜시아점' (솔봉로 325), open 10:00–19:00 on the list, newest review 9 Nov 2026"
+    },
+    {
+      "name": "Forest Animal Farm (Daegwallyeong)",
+      "page_name": "숲속에동물농장",
+      "src": "https://mom-mom.net/travel/places/6a96832b3f0e3ce8f88b2e94",
+      "date": "2026-11",
+      "map": "Kakao Map '숲속에동물농장' (청골길 12), open 09:30–18:00 on the list, newest review 18 Nov 2026"
     }
   ],
-  "left_out": [],
+  "left_out": [
+    {
+      "name": "삼교리동치미막국수 남항진점",
+      "why": "newest Kakao Map review shown is from 2024"
+    },
+    {
+      "name": "카페람, 해피키즈데이, 우아키즈룸",
+      "why": "no district or date confirmed on the page"
+    }
+  ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +6 (Daeunjeong, Chuncheon Ani Dakgalbi, Hyojadong Seolleongtang (Oak Valley), Green Valley Barbecue; Design Thinking Museum, Gangwon Police Museum)"
+  "kakao_pass": "24 Nov 2026: +6 (Daeunjeong, Chuncheon Ani Dakgalbi, Hyojadong Seolleongtang (Oak Valley), Green Valley Barbecue; Design Thinking Museum, Gangwon Police Museum)",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from mom-mom.net (2025–2026), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -533,3 +533,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 - **24 Nov 2026, Gangwon** (docs/library-briefs batch-49): +3 (Gangmun Jumak, Chodang Jang Kalguksu, Matsu). Proof in `docs/library-proof/kr-gangwon.json`.
 
 - **24 Nov 2026, Gangwon, Kakao Map pass**: +6 (Daeunjeong, Chuncheon Ani Dakgalbi, Hyojadong Seolleongtang (Oak Valley), Green Valley Barbecue; Design Thinking Museum, Gangwon Police Museum), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-gangwon.json`.
+
+- **24 Nov 2026, Gangwon** (docs/library-briefs batch-64, round 3): +1 (Gausup, Chuncheon). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
