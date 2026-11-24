@@ -1,38 +1,37 @@
 {
   "town": "th-khaokho",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the four rows without ok; the twenty-three rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing. One web search for the Imperial resort's restaurant",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from LinnyLand's own page and TrueID (Nov 2025), 4 passed library-check.cjs, 3 went in",
+  "added": [
     {
-      "name": "Khao Kho Talay Phu",
-      "src": "https://www.google.com/maps/search/เขาค้อทะเลภู",
-      "page_name": "เขาค้อทะเลภู",
-      "evidence": "Google Maps: listed as a restaurant, 4.2★, 75 Moo 2, Thung Samo, Khao Kho; 'Open · Closes 8 PM'; nothing says closed. Map query now names it and its address",
-      "ok": "2026-11"
+      "name": "LinnyLand Fun and Farm",
+      "page_name": "LinnyLand Fun and Farm",
+      "src": "https://linnyland-fun-and-farm.pages.dev/",
+      "date": "official",
+      "map": "Google Maps 'ลินนี่แลนด์ ฟัน แอนด์ ฟาร์ม LinnyLand Fun and Farm', 48 reviews, newest shown 2 weeks ago"
     },
     {
-      "name": "Imperial Phukaew Hill Resort restaurant",
-      "src": "https://www.google.com/maps/place/The+Imperial+Phukaew+Hill+Resort/@16.7841532,101.0101057,17z",
-      "page_name": "The Imperial Phukaew Hill Resort",
-      "evidence": "Google Maps: 3-star hotel, 4.1★, 99 Phitsanulok–Lom Sak Rd, Khaem Son, Khao Kho (Q2M6+M2), rooms on sale for 26–27 Nov 2026; booking listings (Expedia, Hotels.com) say 'There's a restaurant on site, as well as a coffee shop/cafe' and a daily buffet breakfast; nothing says closed. The restaurant has no listing of its own: the ok rests on the resort being open and listed with a restaurant",
-      "ok": "2026-11"
+      "name": "Khao Takhian Ngo Viewpoint",
+      "page_name": "เขาตะเคียนโง๊ะ",
+      "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W",
+      "date": "2025-11",
+      "map": "Google Maps 'จุดชมวิว เขาตะเคียนโง๊ะ', 1,779 reviews, newest shown 17 days ago"
     },
     {
-      "name": "Phu Thap Boek Hmong Market",
-      "src": "https://www.google.com/maps/search/ตลาดม้ง+ภูทับเบิก",
-      "page_name": "ตลาดชุมชน จุดชมวิวภูทับเบิก",
-      "evidence": "Google Maps: market, 4.1★, V4X4+644 at the Phu Thap Boek viewpoint, 'Open · Closes 8 PM'; a fruit-and-vegetable stall inside it, 'ตลาดม้งขายของฝากภูทับเบิก', open to 8 PM too; nothing says closed. Map query now uses the market's Maps name",
-      "ok": "2026-11"
+      "name": "Wat Phra That Pha Son Kaeo",
+      "page_name": "วัดพระธาตุผาซ่อนแก้ว",
+      "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W",
+      "date": "2025-11",
+      "map": "Google Maps 'วัดพระธาตุผาซ่อนแก้ว', 28,242 reviews, newest shown 2 days ago"
     }
   ],
-  "kept_without_ok": [
+  "left_out": [
     {
-      "name": "Khao Kho Wind Farm stalls",
-      "evidence": "the wind farm viewpoints are on Google Maps and open (Windfarm Field Khao Kho, MXPV+F2V; Rai GB Wind Turbine Farm, open to 6 PM; ไร่เจอชัย ทุ่งกังหันลมเขาค้อ, open to 7 PM), but none lists the food stalls the row describes"
+      "name": "แก่งบางระจัน",
+      "why": "no review from the last six months shown on the map"
     }
   ],
-  "removed": []
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

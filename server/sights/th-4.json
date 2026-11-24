@@ -1329,6 +1329,117 @@
           "book": "none",
           "q": "Nakhonban Phetchabun Cultural Hall, Phetchabun",
           "src": "https://www.thaiholidayguide.com/attraction/nakhonban-phetchabun-cultural-hall/"
+        },
+        {
+          "local": "ลินนี่แลนด์ ฟัน แอนด์ ฟาร์ม",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://linnyland-fun-and-farm.pages.dev/",
+          "name": {
+            "th": "ลินนี่แลนด์ ฟัน แอนด์ ฟาร์ม",
+            "en": "LinnyLand Fun and Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เข็กน้อย เขาค้อ",
+            "en": "Khek Noi, Khao Kho"
+          },
+          "what": {
+            "th": "ลานเล่น ฟาร์ม และคาเฟ่บนภูเขา มีสัตว์ในฟาร์ม",
+            "en": "A play area, farm and café in the mountains, with farm animals"
+          },
+          "why": {
+            "th": "ลานเล่นสีสดที่เด็กชอบ",
+            "en": "Colourful play areas children love"
+          },
+          "q": "LinnyLand Fun and Farm, Khek Noi, Khao Kho, Phetchabun",
+          "ok": "2026-11"
+        },
+        {
+          "local": "เขาตะเคียนโง๊ะ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W",
+          "name": {
+            "th": "จุดชมวิวเขาตะเคียนโง๊ะ",
+            "en": "Khao Takhian Ngo Viewpoint"
+          },
+          "kind": "views",
+          "area": {
+            "th": "หนองแม่นา เขาค้อ",
+            "en": "Nong Mae Na, Khao Kho"
+          },
+          "what": {
+            "th": "จุดชมทะเลหมอก รอดูพระอาทิตย์ขึ้น",
+            "en": "A sea-of-mist viewpoint to watch the sunrise"
+          },
+          "why": {
+            "th": "หมอกรอบตัวยามเช้า",
+            "en": "Mist all around you at dawn"
+          },
+          "q": "Khao Takhian Ngo viewpoint, Nong Mae Na, Khao Kho",
+          "ok": "2026-11"
+        },
+        {
+          "local": "วัดพระธาตุผาซ่อนแก้ว",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W",
+          "name": {
+            "th": "วัดพระธาตุผาซ่อนแก้ว",
+            "en": "Wat Phra That Pha Son Kaeo"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แคมป์สน เขาค้อ",
+            "en": "Khaem Son, Khao Kho"
+          },
+          "what": {
+            "th": "วัดบนไหล่เขา ท่ามกลางหุบเขาเงียบสงบ",
+            "en": "A hillside temple among quiet valleys"
+          },
+          "why": {
+            "th": "หุบเขาสงบ อากาศเย็นสบาย",
+            "en": "A calm valley setting with cool air"
+          },
+          "q": "Wat Phra That Pha Son Kaeo, Khaem Son, Khao Kho",
+          "ok": "2026-11"
         }
       ]
     },
