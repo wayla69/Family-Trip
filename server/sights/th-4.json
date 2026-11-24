@@ -4596,6 +4596,43 @@
           "q": "จุดชมวิว 1715 ถนนลอยฟ้า, อำเภอบ่อเกลือ, น่าน",
           "ok": "2026-11",
           "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%99/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.saitiew.com/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%99/",
+          "name": {
+            "th": "วังศิลาแลง",
+            "en": "Wang Sila Laeng"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บ้านหัวน้ำ ตำบลศิลาแลง อำเภอปัว",
+            "en": "Ban Hua Nam, Sila Laeng, Pua"
+          },
+          "what": {
+            "th": "แก่งหินสีชมพูในลำน้ำ ใกล้อำเภอปัว",
+            "en": "Pink rock pools in a stream near Pua"
+          },
+          "why": {
+            "th": "ลงเล่นน้ำได้ในฤดูแล้ง",
+            "en": "You can get in the water in the dry season"
+          },
+          "q": "วังศิลาแลง ตำบลศิลาแลง อำเภอปัว น่าน",
+          "ok": "2026-11"
         }
       ]
     },
