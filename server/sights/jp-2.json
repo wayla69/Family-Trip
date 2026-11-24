@@ -448,6 +448,84 @@
           "q": "Onna no Eki Nakayukui Market, Onna Village",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/article/item/21435/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ 1,800 เยน",
+            "en": "About ¥1,800"
+          },
+          "book": "none",
+          "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/okinawa-childkanko",
+          "name": {
+            "th": "บลูซีลไอซ์ปาร์ก",
+            "en": "Blue Seal Ice Park"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ร้านบลูซีลสาขาหลัก มากิมินาโตะ อุราโซเอะ",
+            "en": "Blue Seal main store, Makiminato, Urasoe"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เล็ก ๆ เรื่องไอศกรีมบลูซีล ได้แต่งแท่งไอศกรีมของตัวเอง",
+            "en": "A small museum of the Blue Seal ice cream story, where you decorate your own ice cream bar"
+          },
+          "why": {
+            "th": "ห้องเหมือนในนิทาน เด็กเล็กชอบมาก",
+            "en": "A fairy-tale room that delights small children"
+          },
+          "q": "Blue Seal Makiminato Honten, Makiminato, Urasoe, Okinawa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/okinawa-childkanko",
+          "name": {
+            "th": "มุราซากิมุระ หมู่บ้านลงมือทำ",
+            "en": "Murasaki Mura (Experience Kingdom)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โยมิตัน",
+            "en": "Yomitan"
+          },
+          "what": {
+            "th": "เมืองยุคอาณาจักรริวกิวจำลอง มีปั้นเครื่องปั้น แก้วริวกิว ย้อมผ้าบิงกาตะ และระบายสีชีสะ",
+            "en": "A recreated Ryukyu Kingdom town with pottery, Ryukyu glass, bingata dyeing and shisa painting"
+          },
+          "why": {
+            "th": "มีของให้ลงมือทำเยอะ เด็กแต่ละคนเลือกได้",
+            "en": "So many things to make, one for every child"
+          },
+          "tip": {
+            "th": "ที่รองแก้วบิงกาตะใช้เวลาราว 40 นาที ประมาณ 1,000 เยน และมีเทศกาลโคมริวกิวทุกฤดูหนาว",
+            "en": "A bingata coaster takes about 40 min, about ¥1,000; the Ryukyu Lantern Festival runs every winter"
+          },
+          "q": "Murasaki Mura, Yomitan, Okinawa",
+          "ok": "2026-11"
         }
       ]
     }
