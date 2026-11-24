@@ -1394,6 +1394,80 @@
           "q": "Yuberu Kids Land Kumamoto, Higashi-ku, Kumamoto city",
           "ok": "2026-11",
           "src": "https://www.nap-camp.com/mag/82158"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/kumamoto-area/aso/aso-child",
+          "name": {
+            "th": "สวนสัตว์สัมผัสแฟรีเทล มินามิอาโสะ",
+            "en": "Minamiaso Fureai Zoo Fairy Tale"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ชิกิมิ ทาคาโมริ อาโสะ",
+            "en": "Shikimi, Takamori, Aso"
+          },
+          "what": {
+            "th": "สวนสัตว์เล็กบนภูเขา สัตว์ราว 200 ตัวอยู่อย่างอิสระทั้งในร่มและกลางแจ้ง",
+            "en": "A small mountain zoo where about 200 animals live freely, indoors and out"
+          },
+          "why": {
+            "th": "เด็กได้ให้อาหารแพะ จับลูกเจี๊ยบ และอุ้มกระต่าย",
+            "en": "Children feed goats, touch chicks and hold rabbits"
+          },
+          "q": "Fairy Tale Zoo, Shikimi, Takamori, Aso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/kumamoto-area/aso/aso-child",
+          "name": {
+            "th": "ออนเซ็นยูระยูระ (โคสุงิรีสอร์ต) อาโสะ",
+            "en": "Aso Otohime Onsen Yura Yura (Kosugi Resort)"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "โอโตฮิเมะ เมืองอาโสะ",
+            "en": "Otohime, Aso City"
+          },
+          "what": {
+            "th": "บ่อน้ำพุร้อนส่วนตัว เช่าเป็นห้อง",
+            "en": "Private hot-spring baths you rent as a whole room"
+          },
+          "why": {
+            "th": "แช่ออนเซ็นกันทั้งครอบครัวโดยไม่มีคนอื่น",
+            "en": "Bathe as a family without other guests"
+          },
+          "q": "Yurayura Kosugi Resort, Otohime, Aso",
+          "ok": "2026-11"
         }
       ]
     },

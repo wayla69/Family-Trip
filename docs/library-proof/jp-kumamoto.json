@@ -1,0 +1,44 @@
+{
+  "town": "jp-kumamoto",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from Hoshino Resorts guides (Jun 2025, Nov 2026), all passed library-check.cjs, 4 went in",
+  "added": [
+    {
+      "name": "Gyoza-ya Ni-no-Ni (Chuo)",
+      "page_name": "Gyoza-ya Ni-no-Ni Chuo Branch",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/kumamoto-area/kumamoto/childlunch/",
+      "date": "2025-06",
+      "map": "Google Maps 'Gyozaya Ninoni Chuoten', 203 reviews, newest shown 19 days ago"
+    },
+    {
+      "name": "Kikyo-ya",
+      "page_name": "Kikyo-ya",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/kumamoto-area/kumamoto/childlunch/",
+      "date": "2025-06",
+      "map": "Google Maps 'ききょう家' (Anseimachi), 161 reviews, newest shown 17 hours ago"
+    },
+    {
+      "name": "Minamiaso Fureai Zoo Fairy Tale",
+      "page_name": "Minamiaso Fureai Zoo Fairy Tale",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/kumamoto-area/aso/aso-child",
+      "date": "2026-11",
+      "map": "Google Maps 'Fairy Tale Zoo', 470 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Aso Otohime Onsen Yura Yura (Kosugi Resort)",
+      "page_name": "Aso Otohime Onsen Yura Yura",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/kumamoto-area/aso/aso-child",
+      "date": "2026-11",
+      "map": "Google Maps 'Yurayura Kosugi Resort', 619 reviews, newest shown 8 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "SAKURA MACHI Kumamoto rooftop garden",
+      "why": "no review from the last six months shown on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
