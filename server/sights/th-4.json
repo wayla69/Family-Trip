@@ -5401,6 +5401,228 @@
           "q": "Orchid Trail, Khao Sok National Park, Surat Thani",
           "ok": "2026-11",
           "src": "https://www.thainationalparks.com/khao-sok-national-park"
+        },
+        {
+          "local": "ศาลหลักเมืองสุราษฎร์ธานี",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "name": {
+            "th": "ศาลหลักเมืองสุราษฎร์ธานี",
+            "en": "Surat Thani City Pillar Shrine"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตลาด ใกล้แม่น้ำตาปี สุราษฎร์ธานี",
+            "en": "Talat, near the Tapi river, Surat Thani"
+          },
+          "what": {
+            "th": "ศาลหลักเมืองศิลปะศรีวิชัย",
+            "en": "A Srivijaya-style city pillar shrine"
+          },
+          "why": {
+            "th": "ลานร่มรื่นให้เดินเล่น",
+            "en": "Shaded grounds to walk in"
+          },
+          "q": "Surat Thani City Pillar Shrine, Talat, Surat Thani",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ศาลเจ้าฮกเกี้ยน",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "name": {
+            "th": "ศาลเจ้าฮกเกี้ยน",
+            "en": "Hokkien Shrine"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนต้นโพธิ์ ตลาด สุราษฎร์ธานี",
+            "en": "Ton Pho Road, Talat, Surat Thani"
+          },
+          "what": {
+            "th": "ศาลเจ้าจีน มีเจ้าแม่กวนอิม ข้างตลาดเย็น",
+            "en": "A Chinese shrine with a Guanyin, beside the evening market"
+          },
+          "why": {
+            "th": "ลวดลายจีนสีสดให้ชม",
+            "en": "Colourful Chinese decoration to look at"
+          },
+          "q": "Hokkien Shrine, Ton Pho Road, Surat Thani",
+          "ok": "2026-11"
+        },
+        {
+          "local": "แหลมโพธิ์",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "name": {
+            "th": "หาดแหลมโพธิ์",
+            "en": "Laem Pho Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "พุมเรียง ไชยา",
+            "en": "Phum Riang, Chaiya"
+          },
+          "what": {
+            "th": "หาดเงียบ เดิน ปั่นจักรยาน ดูพระอาทิตย์ตก มีสวนและร้านอาหารทะเล",
+            "en": "A quiet beach for walks, cycling and sunsets, with a park and seafood places"
+          },
+          "why": {
+            "th": "มีประติมากรรมปูและวิถีประมงริมหาด",
+            "en": "Crab and fishing sculptures along the beach"
+          },
+          "q": "Laem Pho Beach, Phum Riang, Chaiya, Surat Thani",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ป่าต้นน้ำ บ้านน้ำราด",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "name": {
+            "th": "ป่าต้นน้ำ บ้านน้ำราด",
+            "en": "Ban Nam Rad Spring Forest"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บ้านทำเนียบ คีรีรัฐนิคม",
+            "en": "Ban Thamniap, Khiri Rat Nikhom"
+          },
+          "what": {
+            "th": "แอ่งน้ำในป่าน้ำใสสีฟ้าเขียว นั่งเรือราว 30 นาที",
+            "en": "A forest pool of clear blue-green water, with a boat ride of about 30 minutes"
+          },
+          "why": {
+            "th": "มองเห็นทรายและปลาใต้น้ำ",
+            "en": "You can see the sand and the fish"
+          },
+          "q": "Ban Nam Rad Spring Forest, Khiri Rat Nikhom, Surat Thani",
+          "ok": "2026-11"
+        },
+        {
+          "local": "สะพานแขวน ภูเขารูปหัวใจ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "name": {
+            "th": "สะพานแขวนเขาพัง",
+            "en": "Khao Phang Suspension Bridge"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เขาพัง บ้านตาขุน",
+            "en": "Khao Phang, Ban Ta Khun"
+          },
+          "what": {
+            "th": "สะพานแขวน 120 เมตร มองเห็นภูเขารูปหัวใจ",
+            "en": "A 120 m rope bridge with a view of a heart-shaped mountain"
+          },
+          "why": {
+            "th": "เดินง่ายและถ่ายรูปสวย",
+            "en": "An easy walk and a photo stop"
+          },
+          "q": "Khao Phang Suspension Bridge, Ban Ta Khun, Surat Thani",
+          "ok": "2026-11"
+        },
+        {
+          "local": "อุทยานธรรมเขานาในหลวง",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "name": {
+            "th": "อุทยานธรรมเขานาในหลวง",
+            "en": "Khao Na Nai Luang Dharma Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ต้นยวน พนม",
+            "en": "Ton Yuan, Phanom"
+          },
+          "what": {
+            "th": "สวนเงียบท่ามกลางภูเขาและนาข้าว มีทางเดินและจุดชมวิว",
+            "en": "A quiet park of mountains and rice fields with walking paths and viewpoints"
+          },
+          "why": {
+            "th": "เดินเล่นเงียบ ๆ ชมวิวกว้าง",
+            "en": "Quiet walks and a wide view"
+          },
+          "q": "Khao Na Nai Luang Dharma Park, Ton Yuan, Phanom, Surat Thani",
+          "ok": "2026-11"
         }
       ]
     },
