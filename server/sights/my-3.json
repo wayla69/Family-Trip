@@ -594,6 +594,80 @@
           "q": "Dream Forest Langkawi, Lubuk Semilang, Langkawi",
           "ok": "2026-11",
           "src": "https://www.langkawibook.my/attractions/dream-forest-langkawi"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/malaysia/kedah/best-places-to-travel-with-kids-in-langkawi/",
+          "name": {
+            "th": "หาดตันจุงรู",
+            "en": "Tanjung Rhu Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ตันจุงรู ทางตะวันออกเฉียงเหนือของลังกาวี",
+            "en": "Tanjung Rhu, north-east Langkawi"
+          },
+          "what": {
+            "th": "หาดทรายขาวเงียบสงบทางเหนือ มีเกาะหินปูนกลางทะเล",
+            "en": "A quiet northern beach of white sand with limestone islands offshore"
+          },
+          "why": {
+            "th": "ใช้เวลาช้าๆ เก็บเปลือกหอย ห่างจากความวุ่นวาย",
+            "en": "Slow days and beach combing away from the crowds"
+          },
+          "q": "Tanjung Rhu Beach, Langkawi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.redbus.my/travel-guide/family-travel-guide-to-langkawi-during-school-holidays/",
+          "name": {
+            "th": "มาชินชังเพ็ตแลนด์",
+            "en": "Machinchang PetLand"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "โอเรียนทัลวิลเลจ ถนนเตอลุกบูเรา",
+            "en": "Oriental Village, Jalan Teluk Burau"
+          },
+          "what": {
+            "th": "มุมเล่นกับสัตว์เลี้ยง มีแพะแคระ กระต่าย และสัตว์เลี้ยงตัวเล็ก",
+            "en": "A pet-and-play corner with miniature goats, rabbits and other small pets"
+          },
+          "why": {
+            "th": "เด็กได้กอดและเล่นกับสัตว์ที่เชื่อง",
+            "en": "Children can cuddle and play with the friendly animals"
+          },
+          "q": "Machinchang PetLand Langkawi, Jalan Teluk Burau, Langkawi",
+          "ok": "2026-11"
         }
       ]
     }
