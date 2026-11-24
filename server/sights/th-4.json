@@ -5036,6 +5036,240 @@
           },
           "q": "Tha Nam Rap Sadet Market, Mueang Kao, Sukhothai",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "name": {
+            "th": "โครงการเกษตรอินทรีย์ สนามบินสุโขทัย",
+            "en": "Organic Agriculture Project (Sukhothai Airport)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "คลองกระจง อำเภอสวรรคโลก",
+            "en": "Khlong Krachong, Sawankhalok"
+          },
+          "what": {
+            "th": "ฟาร์มเกษตรอินทรีย์ที่เปิดให้เรียนรู้วิถีเกษตรแบบเรียบง่าย",
+            "en": "An organic farm open to visitors to learn simple farm life"
+          },
+          "why": {
+            "th": "มีวิทยากรนำชม",
+            "en": "Guides show visitors round"
+          },
+          "q": "Agriculture Project Sukhothai Airport, Khlong Krachong, Sawankhalok",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 40 บาท",
+            "en": "≈ ฿40"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "name": {
+            "th": "อุทยานแห่งชาติรามคำแหง (เขาหลวง)",
+            "en": "Ramkhamhaeng National Park (Khao Luang)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นาเชิงคีรี อำเภอคีรีมาศ",
+            "en": "Na Choeng Khiri, Khiri Mat"
+          },
+          "what": {
+            "th": "จุดชมวิวบนยอดเขาหลวง เปิดทุกวัน 8.00–16.30 น.",
+            "en": "A viewpoint on Khao Luang, open daily 8:00–16:30"
+          },
+          "why": {
+            "th": "จุดชมวิวสวยสำหรับคนรักธรรมชาติ",
+            "en": "A lovely viewpoint for nature lovers"
+          },
+          "q": "Ramkhamhaeng National Park, Khiri Mat, Sukhothai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "name": {
+            "th": "ทุ่งทะเลหลวง",
+            "en": "Thung Thale Luang"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บ้านกล้วย อำเภอเมืองสุโขทัย",
+            "en": "Ban Kluai, Mueang Sukhothai"
+          },
+          "what": {
+            "th": "แหล่งเก็บน้ำขนาดใหญ่ล้อมด้วยทิวเขาหลวง มีเกาะกลางน้ำรูปหัวใจ",
+            "en": "A big reservoir ringed by the Khao Luang hills, with a heart-shaped island"
+          },
+          "why": {
+            "th": "แลนด์มาร์กของจังหวัด มองเห็นเกาะรูปหัวใจ",
+            "en": "A landmark of the province with the heart island in view"
+          },
+          "q": "Thung Thale Luang, Mueang Sukhothai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "name": {
+            "th": "วัดเจดีย์เจ็ดแถว",
+            "en": "Wat Chedi Chet Thaeo"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อุทยานประวัติศาสตร์ศรีสัชนาลัย",
+            "en": "Si Satchanalai Historical Park"
+          },
+          "what": {
+            "th": "วัดที่มีเจดีย์กว่า 33 องค์หลายรูปแบบ",
+            "en": "A temple with more than 33 chedis of many styles"
+          },
+          "why": {
+            "th": "เดินชมเจดีย์หลายศิลปะ เหมือนพิพิธภัณฑ์",
+            "en": "Walk among many styles of chedi, like a museum"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ",
+            "en": "Dress modestly"
+          },
+          "q": "Wat Chedi Chet Thaeo, Si Satchanalai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "name": {
+            "th": "วัดพิพัฒน์มงคล",
+            "en": "Wat Phiphat Mongkhon"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อำเภอทุ่งเสลี่ยม",
+            "en": "Thung Saliam"
+          },
+          "what": {
+            "th": "วัดบนพื้นที่กว่า 119 ไร่ สถาปัตยกรรมล้านนาผสมไทยและเมียนมา",
+            "en": "A temple on 119 rai in Lanna style mixed with Thai and Burmese"
+          },
+          "why": {
+            "th": "พื้นที่กว้างให้เดินเล่น",
+            "en": "Wide grounds to walk around"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ",
+            "en": "Dress modestly"
+          },
+          "q": "Wat Phiphat Mongkhon, Thung Saliam, Sukhothai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "name": {
+            "th": "วัดสะพานหิน",
+            "en": "Wat Saphan Hin"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ตำบลเมืองเก่า อำเภอเมืองสุโขทัย",
+            "en": "Mueang Kao, Mueang Sukhothai"
+          },
+          "what": {
+            "th": "วัดบนเนินเขาเตี้ย ขึ้นด้วยบันไดหินชนวน มีจุดชมพระอาทิตย์ขึ้น",
+            "en": "A temple on a low hill up a slate stairway, with a sunrise view"
+          },
+          "why": {
+            "th": "จุดชมพระอาทิตย์ขึ้นที่สวยงาม",
+            "en": "A beautiful sunrise spot"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ",
+            "en": "Dress modestly"
+          },
+          "q": "Wat Saphan Hin, Mueang Kao, Sukhothai",
+          "ok": "2026-11"
         }
       ]
     },
