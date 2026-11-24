@@ -46,13 +46,40 @@
       "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/",
       "date": "2026-04",
       "map": "Google Maps 7,197 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Coast (MGM Cotai)",
+      "page_name": "Coast",
+      "src": "https://www.mgm.mo/en/dining/mgm-cotai/coast",
+      "date": "official",
+      "map": "Google Maps 'Coast' (MGM Cotai), newest review shown 4 months ago"
+    },
+    {
+      "name": "Spotlight (Studio City)",
+      "page_name": "星滙餐廳Spotlight",
+      "src": "https://www.stheadline.com/parenting/3570890/澳門新濠影滙水上樂園5折249玩齊雙園區-星滙餐廳限量快閃自助午餐低至88澳門親子好去處",
+      "date": "2026-05",
+      "map": "Google Maps 'Spotlight 星滙餐廳', newest review shown 8 days ago"
     }
   ],
   "left_out": [
     {
       "name": "La Famiglia, La Gondola",
       "why": "no dated page"
+    },
+    {
+      "name": "Nickelodeon Town",
+      "why": "inside Super Fun Zone, already in the app"
+    },
+    {
+      "name": "Garden Wonderland at Spectacle",
+      "why": "no map entry of its own"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from MGM's own pages and Sing Tao (May 2026), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -532,3 +532,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 
 ### Macau, 24 Nov 2026
 batch-41 of docs/library-briefs (round 2). +3: Rossio and Imperial Court (MGM Macau), Anytime (MGM Cotai). Proof in `docs/library-proof/mo-macau.json`.
+
+- **24 Nov 2026, Macau** (docs/library-briefs batch-65, round 3): +2 (Coast at MGM Cotai, Spotlight at Studio City). Proof in `docs/library-proof/mo-macau.json`.
