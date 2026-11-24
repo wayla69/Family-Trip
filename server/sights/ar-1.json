@@ -414,6 +414,191 @@
           },
           "q": "Museo Participativo de Ciencias, Recoleta, Buenos Aires",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+          "name": {
+            "th": "ลานเด็กเล่นปลาซาลัสกาญิตัส",
+            "en": "Plaza Las Cañitas"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลัสกาญิตัส ปาแลร์โม บัวโนสไอเรส",
+            "en": "Las Cañitas, Palermo, Buenos Aires"
+          },
+          "what": {
+            "th": "ลานชุมชนที่มีสนามเด็กเล่น",
+            "en": "A neighbourhood square with a playground"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นหลายอย่างที่ทำมาสำหรับเด็กเล็ก",
+            "en": "Lots of play structures made for the youngest children"
+          },
+          "q": "Plaza Cañitas, Clay 144, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+          "name": {
+            "th": "ลานเด็กเล่นปลาซารูเซีย",
+            "en": "Plaza Rusia (Plaza Federación de Rusia)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนบาเลนตินอัลซินา เบลกราโน บัวโนสไอเรส",
+            "en": "Valentín Alsina, Belgrano, Buenos Aires"
+          },
+          "what": {
+            "th": "ลานที่มีสนามเด็กเล่น",
+            "en": "A square with a playground"
+          },
+          "why": {
+            "th": "มีหอสามยอด ชิงช้า เนินดิน และสไลเดอร์",
+            "en": "Lookout towers, swings, mounds and slides"
+          },
+          "q": "Plaza Federación de Rusia, Valentín Alsina, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+          "name": {
+            "th": "สนามเด็กเล่นปราสาท สวนโอเนกา",
+            "en": "Castle playground (Parque Onega)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนกีฬาโอเนกา เดโบโต บัวโนสไอเรส",
+            "en": "Polideportivo Parque Onega, Devoto, Buenos Aires"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นที่มีปราสาทยักษ์เป็นจุดเด่น",
+            "en": "A playground built around a giant castle"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ ชิงช้า และเครื่องปีน",
+            "en": "Slides, swings and things to climb"
+          },
+          "q": "Polideportivo Parque Onega, Gabriela Mistral 3819, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+          "name": {
+            "th": "สนามเด็กเล่นพระจันทร์ ลานการ์เซียลอร์กา",
+            "en": "Moon playground (Plazoleta García Lorca)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลานการ์เซียลอร์กา ถนนลินคอล์น เดโบโต บัวโนสไอเรส",
+            "en": "Plazoleta García Lorca, Av. Lincoln, Devoto, Buenos Aires"
+          },
+          "what": {
+            "th": "ลานเล่นที่มีพระจันทร์ใหญ่",
+            "en": "A play yard with a big moon"
+          },
+          "why": {
+            "th": "มีกลุ่มดาวระบายไว้บนท้องฟ้าของลานเล่น",
+            "en": "The constellations are painted in its sky"
+          },
+          "q": "Plazoleta Federico García Lorca, Av. Lincoln 4351, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+          "name": {
+            "th": "ลานเล่นนกโฮร์เนโรยักษ์ สวนการ์ราสโก",
+            "en": "Giant Ovenbird play yard (Parque Carrasco)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนการ์ราสโก ตรงข้ามสนามบินแอโรปาร์เก บัวโนสไอเรส",
+            "en": "Parque Carrasco, opposite Aeroparque, Buenos Aires"
+          },
+          "what": {
+            "th": "ลานเล่นในสวนการ์ราสโก ตรงข้ามสนามบินในเมือง",
+            "en": "A play yard in Parque Carrasco, opposite the city airport"
+          },
+          "why": {
+            "th": "ลานเล่นในสวน ตรงข้ามสนามบิน",
+            "en": "A park play yard opposite the airport"
+          },
+          "q": "Carrasco Park, Avenida Costanera Rafael Obligado, Buenos Aires",
+          "ok": "2026-11"
         }
       ]
     },
