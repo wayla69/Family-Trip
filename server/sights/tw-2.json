@@ -1469,24 +1469,6 @@
           "src": "https://n.yam.com/Article/20250715344616"
         },
         {
-          "name": { "en": "PaPark Dream Mall", "th": "พาพาร์ค ดรีมมอลล์" },
-          "local": "PaPark爬爬客親子樂園 夢時代店",
-          "kind": "play",
-          "area": { "en": "Qianzhen District, Kaohsiung", "th": "เฉียนเจิ้น เกาสง" },
-          "what": { "en": "An indoor play park built from woven rope nets with climbing towers, aerial rope bridges, an air ball pit and a fast slide, where children work together.", "th": "สวนเล่นในร่มสร้างจากตาข่ายเชือกถัก มีหอปีน สะพานเชือกลอยฟ้า บ่อบอลลม และสไลเดอร์เร็ว ที่เด็กๆ ร่วมกันเล่น" },
-          "why": { "en": "Climbing and co-operative games made for building muscle and balance; one ticket covers a whole day.", "th": "เกมปีนป่ายและเล่นร่วมกันที่ช่วยสร้างกล้ามเนื้อและการทรงตัว ตั๋วใบเดียวเล่นได้ทั้งวัน" },
-          "tip": { "en": "Check the price and hours before going.", "th": "เช็กราคาและเวลาก่อนไป" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "in",
-          "pram": "no",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "PaPark爬爬客親子樂園 夢時代店, Qianzhen, Kaohsiung",
-          "ok": "2026-11",
-          "src": "https://n.yam.com/Article/20250715344616"
-        },
-        {
           "name": { "en": "FLOMO Eraser Factory", "th": "โรงงานยางลบ FLOMO" },
           "local": "FLOMO富樂夢觀光工廠",
           "kind": "culture",

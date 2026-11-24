@@ -669,24 +669,6 @@
           "ok": "2026-11",
           "src": "https://www.vietnamtourism.com/en/tran-quoc-pagoda-in-hanoi-opening-hours-dress-code-and-what-to-see"
         },
-        {
-          "name": { "en": "Vietnam National Museum of History", "th": "พิพิธภัณฑ์ประวัติศาสตร์แห่งชาติเวียดนาม" },
-          "local": "Bảo tàng Lịch sử Quốc gia",
-          "kind": "museum",
-          "area": { "en": "Hoan Kiem, behind the Opera House", "th": "ฮหว่านเกี๊ยม หลังโรงอุปรากร" },
-          "what": { "en": "A grand yellow building with bronze drums, old boats, swords and treasures from Vietnam's kings", "th": "อาคารสีเหลืองสง่างาม มีกลองสำริด เรือโบราณ ดาบ และสมบัติของกษัตริย์เวียดนาม" },
-          "why": { "en": "The giant bronze drums and dragon carvings catch children's eyes, and it is cool inside", "th": "กลองสำริดยักษ์และลายมังกรดึงดูดเด็ก และข้างในเย็นสบาย" },
-          "tip": { "en": "Closed at lunchtime (12:00–13:30); under 6 free", "th": "ปิดพักเที่ยง (12:00–13:30) เด็กต่ำกว่า 6 ขวบฟรี" },
-          "ages": [1, 1, 2, 2],
-          "hrs": 1.5,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ 40,000₫ adults · under 6 free", "th": "≈ 40,000₫ ผู้ใหญ่ · เด็กต่ำกว่า 6 ขวบฟรี" },
-          "book": "none",
-          "q": "Vietnam National Museum of History, 1 Trang Tien, Hoan Kiem, Hanoi",
-          "ok": "2026-11",
-          "src": "https://baotanglichsuquocgia.vn/en/Articles/3197/ticket-price"
-        },
       {"name":{"en":"Vietnam Military History Museum","th":"พิพิธภัณฑ์ประวัติศาสตร์การทหารเวียดนาม"},"local":"Bảo tàng Lịch sử Quân sự Việt Nam","kind":"museum","area":{"en":"Thang Long Boulevard, Nam Tu Liem","th":"ถนนทังลอง เขตนามตือเลียม"},"what":{"en":"A large new museum with a four-storey hall and an outdoor yard of planes, tanks and boats","th":"พิพิธภัณฑ์ใหม่ขนาดใหญ่ อาคาร 4 ชั้น และลานกลางแจ้งที่มีเครื่องบิน รถถัง และเรือ"},"why":{"en":"Children like the real planes and tanks out in the yard","th":"เด็กๆ ชอบเครื่องบินและรถถังของจริงที่ลานด้านนอก"},"tip":{"en":"Out of the centre; go by taxi and allow about two hours","th":"อยู่นอกตัวเมือง นั่งแท็กซี่ไป เผื่อเวลาราว 2 ชั่วโมง"},"ages":[0,1,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Vietnam Military History Museum, Thang Long Boulevard, Hanoi","ok":"2026-11","src":"https://www.vietnamairlines.com/en/useful-information/travel-guide/vietnam-military-history-museum"},
       {"name":{"en":"Vietnam National Museum of Nature","th":"พิพิธภัณฑ์ธรรมชาติแห่งชาติเวียดนาม"},"local":"Bảo tàng Thiên nhiên Việt Nam","kind":"museum","area":{"en":"Nghia Do, Cau Giay","th":"เหงียโด เขตเกิ่วยาย"},"what":{"en":"A natural-history museum with dinosaur models and thousands of animal specimens","th":"พิพิธภัณฑ์ธรรมชาติ มีหุ่นไดโนเสาร์และตัวอย่างสัตว์หลายพันชิ้น"},"why":{"en":"Dinosaur robots and fossil-replica crafts for children","th":"มีหุ่นไดโนเสาร์ขยับได้ และกิจกรรมทำฟอสซิลจำลองสำหรับเด็ก"},"tip":{"en":"Indoors, good for a rainy day; allow about two hours","th":"อยู่ในร่ม เหมาะกับวันฝนตก เผื่อเวลาราว 2 ชั่วโมง"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Vietnam National Museum of Nature, Nghia Do, Cau Giay, Hanoi","ok":"2026-11","src":"https://vietnamnet.vn/en/natural-history-museums-pulling-in-huge-crowds-2499409.html"}
       ]

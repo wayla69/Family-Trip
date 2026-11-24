@@ -497,23 +497,6 @@
           "q": "Oto Play Park, Central Phuket, Phuket",
           "ok": "2026-11",
           "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
-        },
-        {
-          "name": { "en": "Rawai Park", "th": "สวนสาธารณะราไวย์" },
-          "kind": "park",
-          "area": { "en": "Rawai", "th": "ราไวย์" },
-          "what": { "en": "A park in the south of the island with a shallow water-play area for little ones.", "th": "สวนสาธารณะทางใต้ของเกาะ มีโซนเล่นน้ำตื้นสำหรับเด็กเล็ก" },
-          "why": { "en": "A shallow pool with mini slides for the youngest children.", "th": "สระน้ำตื้นพร้อมสไลเดอร์เล็กสำหรับเด็กเล็กที่สุด" },
-          "tip": { "en": "Allow about an hour and a half", "th": "เผื่อเวลาราวชั่วโมงครึ่ง" },
-          "ages": [1, 2, 1, 0],
-          "hrs": 1.5,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Rawai Park, Rawai, Phuket",
-          "ok": "2026-11",
-          "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
         }
       ]
     },
@@ -795,8 +778,8 @@
         {
           "name": { "en": "Harborland", "th": "ฮาร์เบอร์แลนด์" },
           "kind": "play",
-          "area": { "en": "Harbor Mall, Pattaya", "th": "ฮาร์เบอร์ มอลล์ พัทยา" },
-          "what": { "en": "The indoor children's playground at Harbor Mall, with a Harborland on the 4th floor of Terminal 21 too.", "th": "สนามเด็กเล่นในร่มที่ฮาร์เบอร์ มอลล์ และมีฮาร์เบอร์แลนด์อีกแห่งที่ชั้น 4 ของเทอร์มินอล 21" },
+          "area": { "en": "Terminal 21, Pattaya", "th": "เทอร์มินอล 21 พัทยา" },
+          "what": { "en": "The indoor children's playground on the 4th floor of Terminal 21 Pattaya; the one at Harbor Mall is closed for now.", "th": "สนามเด็กเล่นในร่มชั้น 4 เทอร์มินอล 21 พัทยา ส่วนที่ฮาร์เบอร์ มอลล์ปิดอยู่ตอนนี้" },
           "why": { "en": "Indoor, air-conditioned and built for children, a rainy-day place.", "th": "ในร่ม มีแอร์ สร้างมาเพื่อเด็ก เหมาะวันฝนตก" },
           "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
           "ages": [2, 2, 2, 1],
@@ -805,7 +788,7 @@
           "pram": "part",
           "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "none",
-          "q": "Harborland, Harbor Mall, Pattaya",
+          "q": "HarborLand, Terminal 21 Pattaya",
           "ok": "2026-11",
           "src": "https://www.pattayaunlimited.com/things-to-do-with-kids-in-pattaya/"
         },
@@ -1379,23 +1362,6 @@
           "q": "Ao Nang Landmark Night Market, Ao Nang, Krabi",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/ao-nang-night-market/"
-        },
-        {
-          "name": { "en": "The Fun Garden", "th": "เดอะ ฟัน การ์เดน" },
-          "kind": "play",
-          "area": { "en": "Ao Nang", "th": "อ่าวนาง" },
-          "what": { "en": "A Montessori-inspired play and activity garden with outdoor and open-air indoor play areas for toddlers to older kids, plus a café.", "th": "สวนเล่นและทำกิจกรรมแนวมอนเตสซอรี มีโซนเล่นกลางแจ้งและกึ่งในร่มสำหรับเด็กเล็กถึงเด็กโต พร้อมคาเฟ่" },
-          "why": { "en": "Play areas sorted by age, a café for the grown-ups, and a kids menu of crepes and snacks.", "th": "โซนเล่นแยกตามวัย มีคาเฟ่สำหรับผู้ใหญ่ และเมนูเด็กเป็นเครปและของว่าง" },
-          "tip": { "en": "Open 09:30–19:00 daily; hours can change on Thai public holidays.", "th": "เปิดทุกวัน 09:30–19:00 วันหยุดนักขัตฤกษ์ไทยเวลาอาจเปลี่ยน" },
-          "ages": [2, 2, 2, 1],
-          "hrs": 1.5,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "The Fun Garden, Ao Nang, Krabi",
-          "ok": "2026-11",
-          "src": "https://www.visitthailandtoday.com/activities-tours/krabi/the-fun-garden"
         },
         {
           "name": { "en": "Krabi Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำกระบี่" },

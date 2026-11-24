@@ -163,7 +163,7 @@
           "area": { "en": "Kota Kinabalu", "th": "โกตาคินาบาลู" },
           "what": { "en": "A longhouse-style museum with a giant whale skeleton, a railway carriage and a heritage village in a botanical garden, open daily 9 AM to 5 PM", "th": "พิพิธภัณฑ์ทรงบ้านยาว มีโครงกระดูกวาฬยักษ์ ตู้รถไฟ และหมู่บ้านมรดกในสวนพฤกษศาสตร์ เปิดทุกวัน 9 โมงถึง 5 โมงเย็น" },
           "why": { "en": "Indoor galleries and shaded garden paths make it a good rainy-day choice for curious school-age children", "th": "ห้องจัดแสดงในอาคารและทางเดินร่มรื่น เป็นทางเลือกวันฝนตกสำหรับเด็กโตช่างสงสัย" },
-          "tip": { "en": "The railway carriage and the whale are the favourites; leave time for the heritage village outside", "th": "ตู้รถไฟและวาฬเป็นที่ชอบ เผื่อเวลาเดินหมู่บ้านมรดกด้านนอก" },
+          "tip": { "en": "The main building is closed for upgrading; the heritage village, the railway carriage and the whale stay open", "th": "อาคารหลักปิดปรับปรุง หมู่บ้านมรดก ตู้รถไฟ และโครงกระดูกวาฬยังเปิดให้ชม" },
           "ages": [0, 1, 2, 2],
           "hrs": 2.5,
           "io": "both",
@@ -224,23 +224,6 @@
           "q": "Tanjung Aru Beach, Kota Kinabalu",
           "ok": "2026-11",
           "src": "https://sabahtourism.com/destination/tanjung-aru-beach/"
-        },
-        {
-          "name": { "en": "Kipandi Butterfly Park", "th": "สวนผีเสื้อกีปันดี" },
-          "kind": "nature",
-          "area": { "en": "Tambunan, Crocker Range", "th": "ตัมบูนัน เทือกเขาครอกเกอร์" },
-          "what": { "en": "A hill park at 700 m with over 100 butterfly species, thousands of beetles, native orchids and pitcher plants", "th": "สวนบนเขาสูง 700 ม. มีผีเสื้อกว่า 100 ชนิด ด้วงหลายพันตัว กล้วยไม้ป่า และต้นหม้อข้าวหม้อแกงลิง" },
-          "why": { "en": "Looking closely at insects and plants suits curious children; the park runs a free guided walk for school groups", "th": "การส่องดูแมลงและพืชเหมาะกับเด็กช่างสังเกต สวนมีทัวร์เดินฟรีสำหรับกลุ่มนักเรียน" },
-          "tip": { "en": "Make an appointment with the park before you visit; it is a long drive from Kota Kinabalu", "th": "นัดล่วงหน้ากับสวนก่อนไป นั่งรถจากโกตาคินาบาลูค่อนข้างไกล" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 2,
-          "io": "out",
-          "pram": "no",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "req",
-          "q": "Kipandi Butterfly Park, Tambunan, Sabah",
-          "ok": "2026-11",
-          "src": "https://sabahtourism.com/destination/kipandi-butterfly-park/"
         },
         {
           "name": { "en": "Handicraft Market, Kota Kinabalu", "th": "ตลาดหัตถกรรม โกตาคินาบาลู" },
@@ -611,24 +594,6 @@
           "q": "Dream Forest Langkawi, Lubuk Semilang, Langkawi",
           "ok": "2026-11",
           "src": "https://www.langkawibook.my/attractions/dream-forest-langkawi"
-        },
-        {
-          "name": { "en": "Perdana Marine Park", "th": "เปอร์ดานา มารีน พาร์ก" },
-          "local": "",
-          "kind": "park",
-          "area": { "en": "Langkawi", "th": "ลังกาวี" },
-          "what": { "en": "An artificial salt pool with lots of sea life.", "th": "สระน้ำเค็มเทียมที่มีสัตว์ทะเลมากมาย" },
-          "why": { "en": "The page mentions a kids' play area.", "th": "หน้าเว็บบอกว่ามีลานเล่นสำหรับเด็ก" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 2,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Perdana Marine Park, Langkawi",
-          "ok": "2026-11",
-          "src": "https://thebackpackingfamily.com/amazing-things-to-do-in-langkawi/"
         }
       ]
     }

@@ -23,24 +23,6 @@
           "src": "https://goasia.cc/en/article/ayutthaya-historical-park"
         },
         {
-          "name": { "en": "Ayutthaya Historical Study Centre", "th": "ศูนย์ศึกษาประวัติศาสตร์พระนครศรีอยุธยา" },
-          "local": "ศูนย์ศึกษาประวัติศาสตร์พระนครศรีอยุธยา",
-          "kind": "museum",
-          "area": { "en": "Ayutthaya island", "th": "เกาะเมืองอยุธยา" },
-          "what": { "en": "An air-conditioned museum with models and displays of how the old city looked and how people lived", "th": "พิพิธภัณฑ์ห้องแอร์ มีแบบจำลองและนิทรรศการเล่าว่าเมืองเก่าหน้าตาอย่างไรและผู้คนอยู่กันอย่างไร" },
-          "why": { "en": "A cool rainy-day stop that makes the ruins easier to picture for school-age children", "th": "จุดพักร้อนและหลบฝน ช่วยให้เด็กโตนึกภาพซากโบราณออกง่ายขึ้น" },
-          "tip": { "en": "Do it before the ruins so the children know what they are looking at", "th": "แวะก่อนเที่ยวโบราณสถาน เด็กจะเข้าใจสิ่งที่เห็นมากขึ้น" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 1.5,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ ฿100 adults · ฿50 children (foreigners)", "th": "≈ ฿100 ผู้ใหญ่ · ฿50 เด็ก (ชาวต่างชาติ)" },
-          "book": "none",
-          "q": "Ayutthaya Historical Study Centre, Rotchana Road, Ayutthaya",
-          "ok": "2026-11",
-          "src": "https://www.thaiholidayguide.com/attraction/ayutthaya-historical-study-centre/"
-        },
-        {
           "name": { "en": "Chao Sam Phraya National Museum", "th": "พิพิธภัณฑสถานแห่งชาติเจ้าสามพระยา" },
           "local": "พิพิธภัณฑสถานแห่งชาติ เจ้าสามพระยา",
           "kind": "museum",
@@ -2578,23 +2560,6 @@
           "q": "Huai Bong Windmill Field, Dan Khun Thot, Nakhon Ratchasima",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/huai-bong-windmill-field/"
-        },
-        {
-          "name": { "en": "Jim Thompson Farm", "th": "จิม ทอมป์สัน ฟาร์ม" },
-          "kind": "park",
-          "area": { "en": "Takob, Pak Thong Chai", "th": "ตำบลตะโก อำเภอปักธงชัย" },
-          "what": { "en": "A seasonal flower-field and nature site with art, open only for a few weeks in winter.", "th": "พื้นที่ทุ่งดอกไม้และธรรมชาติพร้อมงานศิลปะ แบบตามฤดูกาล เปิดเพียงไม่กี่สัปดาห์ในช่วงหน้าหนาว" },
-          "why": { "en": "Flower fields and nature to walk through, with art to see on the way.", "th": "มีทุ่งดอกไม้และธรรมชาติให้เดินชม พร้อมงานศิลปะระหว่างทาง" },
-          "tip": { "en": "Seasonal: the 2024–25 season ran 7 Dec 2024 to 1 Jan 2025, so check the official page for the dates", "th": "เปิดตามฤดูกาล ฤดูกาล 2024–25 เปิด 7 ธ.ค. 2024 ถึง 1 ม.ค. 2025 เช็กวันที่กับหน้าทางการก่อนไป" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ฿230 adults Mon–Fri · ≈ ฿250 Sat–Sun · ≈ ฿120 children and seniors", "th": "≈ ฿230 ผู้ใหญ่วันจันทร์–ศุกร์ · ≈ ฿250 วันเสาร์–อาทิตย์ · ≈ ฿120 เด็กและผู้สูงอายุ" },
-          "book": "none",
-          "q": "Jim Thompson Farm, Pak Thong Chai, Nakhon Ratchasima",
-          "ok": "2026-11",
-          "src": "https://nz.trip.com/moments/detail/pak-thong-chai-1447250-129482446"
         }
       ]
     },
@@ -2858,24 +2823,6 @@
           "src": "https://www.thaiholidayguide.com/attraction/wat-si-chum/"
         },
         {
-          "name": { "en": "Hug You Sheep Farm", "th": "ฟาร์มแกะฮักยู" },
-          "local": "ฟาร์มแกะฮักยู",
-          "kind": "farm",
-          "area": { "en": "Lampang", "th": "ลำปาง" },
-          "what": { "en": "A family rest stop with sheep to feed and a play area for children.", "th": "จุดแวะพักสำหรับครอบครัว มีแกะให้ป้อนอาหารและพื้นที่เล่นสำหรับเด็ก" },
-          "why": { "en": "Kids Zone play area and learning activities for children, plus 30 photo spots.", "th": "มีโซนเด็กและกิจกรรมเสริมการเรียนรู้ พร้อมจุดถ่ายรูปราว 30 จุด" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 2,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Hug You Sheep Farm, Lampang",
-          "ok": "2026-11",
-          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
-        },
-        {
           "name": { "en": "Museum Lampang", "th": "มิวเซียมลำปาง" },
           "local": "มิวเซียมลำปาง",
           "kind": "museum",
@@ -3059,24 +3006,6 @@
           "q": "Satun National Museum Kuden Mansion, Satun",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/satun-national-museum-ku-den-castle/"
-        },
-        {
-          "name": { "en": "Satun Geopark Museum", "th": "พิพิธภัณฑ์ธรณีสตูล" },
-          "local": "พิพิธภัณฑ์ธรณีวิทยาสตูล จีโอพาร์ค",
-          "kind": "museumkid",
-          "area": { "en": "Thung Wa, Satun", "th": "ทุ่งหว้า สตูล" },
-          "what": { "en": "A free museum on the fossils, rocks and ancient sea life of the Satun UNESCO Global Geopark", "th": "พิพิธภัณฑ์ฟรีว่าด้วยฟอสซิล หิน และชีวิตทะเลโบราณของสตูลอุทยานธรณีโลก" },
-          "why": { "en": "Fossils and models are good for curious children aged 4 and up, and it is out of the rain", "th": "ฟอสซิลและโมเดลถูกใจเด็กช่างสงสัยตั้งแต่ 4 ขวบ และอยู่ในร่ม" },
-          "tip": { "en": "Listed Monday to Friday only, closed weekends and holidays: phone ahead", "th": "ระบุว่าเปิดจันทร์–ศุกร์ ปิดเสาร์อาทิตย์และวันหยุด ควรโทรเช็กก่อน" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Satun Geopark Museum, Thung Wa, Satun",
-          "ok": "2026-11",
-          "src": "https://www.thaiholidayguide.com/attraction/satun-geopark-museum/"
         },
         {
           "name": { "en": "Wang Sai Thong Waterfall", "th": "น้ำตกวังสายทอง" },
@@ -3888,23 +3817,6 @@
           "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "none",
           "q": "Tha Pai Hot Springs, Pai, Mae Hong Son",
-          "ok": "2026-11",
-          "src": "https://www.nomadasaurus.com/10-things-to-do-in-pai-thailand/"
-        },
-        {
-          "name": { "en": "The Land Crack", "th": "แผ่นดินแยก" },
-          "kind": "views",
-          "area": { "en": "On the road to Pam Bok Waterfall", "th": "บนถนนไปน้ำตกปามบก" },
-          "what": { "en": "Farm where the ground split after a strange soil erosion, now a stop with food on offer.", "th": "ไร่ที่พื้นดินแยกออกจากการกัดเซาะของดินอย่างแปลก ตอนนี้เป็นจุดแวะที่มีอาหารขาย" },
-          "why": { "en": "An unusual sight on the way to the waterfall, and the farm family offers fruit and snacks.", "th": "เป็นจุดแปลกตาระหว่างทางไปน้ำตก และครอบครัวเจ้าของไร่มีผลไม้กับขนมให้" },
-          "tip": { "en": "Pay by donation.", "th": "จ่ายด้วยการบริจาค" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 1,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "The Land Crack, Pai, Mae Hong Son",
           "ok": "2026-11",
           "src": "https://www.nomadasaurus.com/10-things-to-do-in-pai-thailand/"
         },
@@ -6203,23 +6115,6 @@
           "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "none",
           "q": "Udon Thani City Museum, Phosri Road, Mueang Udon Thani",
-          "ok": "2026-11",
-          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5/"
-        },
-        {
-          "name": { "en": "Udon Sunshine Orchid Garden", "th": "สวนกล้วยไม้หอมอุดรซันไฉน" },
-          "kind": "farm",
-          "area": { "en": "Nong Hai", "th": "หนองไฮ" },
-          "what": { "en": "A fragrant-orchid farm with nursery houses to walk through and a shop of products made from orchid flowers", "th": "ฟาร์มกล้วยไม้หอม มีเรือนเพาะชำให้เดินชม และร้านผลิตภัณฑ์จากดอกกล้วยไม้" },
-          "why": { "en": "Short, flat and shaded, with plenty of colour and scent for a break from the car", "th": "เดินสั้นๆ ทางราบ มีร่มเงา สีสันและกลิ่นหอม เหมาะแวะพักจากการนั่งรถ" },
-          "tip": { "en": "Open daily 08:00–17:00; the flowers are best from late rains to early winter", "th": "เปิดทุกวัน 08:00–17:00 น. ดอกบานมากช่วงปลายฝนถึงต้นหนาว" },
-          "ages": [1, 1, 2, 2],
-          "hrs": 1,
-          "io": "both",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Udon Sunshine Orchid Garden, Nong Hai, Mueang Udon Thani",
           "ok": "2026-11",
           "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5/"
         },

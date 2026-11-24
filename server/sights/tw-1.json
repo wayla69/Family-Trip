@@ -203,24 +203,6 @@
           "src": "https://taiwanderers.com/free-things-to-do-taipei/"
         },
         {
-          "name": { "en": "Beitou Hot Spring Museum", "th": "พิพิธภัณฑ์น้ำพุร้อนเป่ยโถว" },
-          "local": "北投溫泉博物館",
-          "kind": "museum",
-          "area": { "en": "Xinbeitou", "th": "ซินเป่ยโถว" },
-          "what": { "en": "An old Japanese-era bathhouse turned museum, with a big tiled bath and tatami hall to see", "th": "โรงอาบน้ำเก่าสมัยญี่ปุ่นที่กลายเป็นพิพิธภัณฑ์ มีบ่ออาบน้ำปูกระเบื้องและห้องเสื่อทาทามิ" },
-          "why": { "en": "Free and indoors, a short stop on a hot-spring day; shoes off on the tatami is fun for little ones", "th": "เข้าฟรีและอยู่ในร่ม แวะสั้นๆ ในวันเที่ยวน้ำพุร้อน เด็กสนุกกับการถอดรองเท้าเดินบนเสื่อ" },
-          "tip": { "en": "Walk on through the park to the steaming Thermal Valley stream; never touch the water", "th": "เดินต่อผ่านสวนไปดูลำธารหุบเขาน้ำร้อนที่มีไอลอย ห้ามจับน้ำ" },
-          "ages": [1, 1, 2, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Beitou Hot Spring Museum, Beitou District, Taipei",
-          "ok": "2026-11",
-          "src": "https://taiwanderers.com/free-things-to-do-taipei/"
-        },
-        {
           "name": { "en": "Huashan 1914 Creative Park", "th": "หัวซาน 1914 ครีเอทีฟพาร์ก" },
           "local": "華山1914文化創意產業園區",
           "kind": "culture",

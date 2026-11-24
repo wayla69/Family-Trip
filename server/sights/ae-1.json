@@ -847,23 +847,6 @@
           "src": "https://gulfnews.com/lifestyle/park-season-is-here-dubais-outdoor-parks-for-kids-area-by-area-with-entry-prices-1.500699977"
         },
         {
-          "name": { "en": "Al Ittihad Park", "th": "สวนอัลอิติฮัด" },
-          "kind": "park",
-          "area": { "en": "Palm Jumeirah, under the Palm Monorail", "th": "ปาล์มจูไมราห์ ใต้โมโนเรลปาล์ม" },
-          "what": { "en": "A park running beneath the Palm Monorail with several play areas, a 3.2 km jogging track and labelled native plants.", "th": "สวนยาวใต้โมโนเรลปาล์ม มีพื้นที่เล่นหลายแห่ง ลู่วิ่ง 3.2 กม. และต้นไม้พื้นเมืองติดป้ายชื่อ" },
-          "why": { "en": "Several play areas, and cafés nearby.", "th": "มีพื้นที่เล่นหลายแห่ง และมีคาเฟ่อยู่ใกล้ๆ" },
-          "tip": { "en": "Open 24 hours; free parking.", "th": "เปิด 24 ชั่วโมง; จอดรถฟรี" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 2,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "Free · free parking", "th": "ฟรี · จอดรถฟรี" },
-          "book": "none",
-          "q": "Al Ittihad Park, Palm Jumeirah, Dubai",
-          "ok": "2026-11",
-          "src": "https://gulfnews.com/lifestyle/park-season-is-here-dubais-outdoor-parks-for-kids-area-by-area-with-entry-prices-1.500699977"
-        },
-        {
           "name": { "en": "Quranic Park", "th": "ควรานิก พาร์ก" },
           "kind": "park",
           "area": { "en": "Al Khawaneej", "th": "อัลคาวาเนจ" },
