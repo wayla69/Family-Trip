@@ -309,6 +309,339 @@
           "q": "Getty Center, 1200 Getty Center Dr, Los Angeles, CA 90049",
           "ok": "2026-11",
           "src": "https://www.getty.edu/visit/center/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://devourtours.com/blog/kid-friendly-restaurants-san-francisco",
+          "name": {
+            "th": "สนามเด็กเล่นเอาต์โพสต์ (เพรซิดิโอทันเนลท็อปส์)",
+            "en": "Outpost Playground (Presidio Tunnel Tops)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เพรซิดิโอทันเนลท็อปส์ ซานฟรานซิสโก",
+            "en": "Presidio Tunnel Tops, San Francisco"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นที่เพรซิดิโอทันเนลท็อปส์ มีร้านอาหารใกล้ ๆ",
+            "en": "A playground at Presidio Tunnel Tops, with food stalls nearby"
+          },
+          "why": {
+            "th": "เล่นเสร็จกินข้าวจากร้านรอบ ๆ",
+            "en": "Play, then lunch from the food vendors"
+          },
+          "q": "Outpost Playground, Presidio Tunnel Tops, San Francisco",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กเคย์ตัน",
+            "en": "Cayton Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ห้างซานตาโมนิกาเพลซ ซานตาโมนิกา",
+            "en": "Santa Monica Place, Santa Monica"
+          },
+          "what": {
+            "th": "ที่เล่นและเรียนรู้ มีเล่นบทบาทสมมติ ปีนป่าย วีอาร์ เล่นน้ำ และฟองสบู่",
+            "en": "Play and discovery: pretend play, climbing, VR, water and bubble play"
+          },
+          "why": {
+            "th": "มีให้จับ ปีน และเล่นน้ำในที่เดียว",
+            "en": "Lots to touch, climb and splash in one place"
+          },
+          "q": "Cayton Children's Museum, Santa Monica Place, Santa Monica",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กคิดสเปซ",
+            "en": "Kidspace Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนอาร์โรโย พาซาดีนา",
+            "en": "Arroyo Boulevard, Pasadena"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กลงมือเล่น มีเล่นน้ำ ฟาร์ม ลู่จักรยานสามล้อ และป่าฟิสิกส์",
+            "en": "A hands-on children's museum with water play, a farm, trike tracks and a physics forest"
+          },
+          "why": {
+            "th": "ทำมาให้เด็กเล็กได้ค้นหาสิ่งที่สงสัย",
+            "en": "Built for little ones to follow every curiosity"
+          },
+          "q": "Kidspace Children's Museum, 480 North Arroyo Boulevard, Pasadena",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "พิพิธภัณฑ์ออทรี",
+            "en": "Autry Museum of the American West"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "กริฟฟิทพาร์ก ลอสแอนเจลิส",
+            "en": "Griffith Park, Los Angeles"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีห้องเล่นสำหรับครอบครัว และสนามหญ้าใหญ่ข้าง ๆ",
+            "en": "A museum with a Family Play Space and a big lawn next door"
+          },
+          "why": {
+            "th": "เด็กเล็กมีที่เล่นและปิกนิก",
+            "en": "Room for young children to play and picnic"
+          },
+          "q": "Autry Museum of the American West, Griffith Park, Los Angeles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "หาดมาเธอร์ส (มารีนาเดลเรย์)",
+            "en": "Mothers Beach (Marina del Rey)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนแอดมิรัลตี มารีนาเดลเรย์",
+            "en": "Admiralty Way, Marina del Rey"
+          },
+          "what": {
+            "th": "หาดลากูนน้ำตื้น มีที่จอดรถ สนามเด็กเล่น ร้านอาหาร และห้องน้ำใกล้ ๆ",
+            "en": "A shallow lagoon beach with parking, a playground, restaurants and toilets close by"
+          },
+          "why": {
+            "th": "ปลอดภัย พาเด็กเล็กไปง่าย",
+            "en": "Safe and easy with babies"
+          },
+          "q": "Mothers Beach, 4101 Admiralty Way, Marina del Rey",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "สวนเดสคันโซ",
+            "en": "Descanso Gardens"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ลาคันยาดาฟลินทริดจ์ ย่านลอสแอนเจลิส",
+            "en": "La Cañada Flintridge, Los Angeles area"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ 150 เอเคอร์",
+            "en": "A 150-acre botanical garden"
+          },
+          "why": {
+            "th": "สวนสวยสำหรับทั้งครอบครัว",
+            "en": "A beautiful garden for the whole family"
+          },
+          "q": "Descanso Gardens, 1418 Descanso Drive, La Cañada Flintridge",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "อุทยานแห่งรัฐมาลิบูครีก",
+            "en": "Malibu Creek State Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนลาสเวอร์เจเนส คาลาบาซัส",
+            "en": "Las Virgenes Road, Calabasas"
+          },
+          "what": {
+            "th": "ทุ่งหญ้า แอ่งหิน ลำธาร และทางเดิน มีจุดปิกนิก",
+            "en": "Grasslands, a rock pool, a creek and trails, with a picnic spot"
+          },
+          "why": {
+            "th": "เดินป่าง่าย ๆ กับครอบครัว",
+            "en": "An easy family hike"
+          },
+          "q": "Malibu Creek State Park, Las Virgenes Road, Calabasas",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "เดอะฮันติงตัน",
+            "en": "The Huntington"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนออกซ์ฟอร์ด ซานมารีโน",
+            "en": "Oxford Road, San Marino"
+          },
+          "what": {
+            "th": "สวน 120 เอเคอร์ แบ่ง 12 ธีม มีหนังสือหายากและงานศิลปะ",
+            "en": "A 120-acre estate of gardens in 12 themes, with rare books and art"
+          },
+          "why": {
+            "th": "เด็กเล็กมีที่สำรวจและวิ่งเล่น",
+            "en": "Room for little ones to explore and run"
+          },
+          "q": "The Huntington Library, Art Museum and Botanical Gardens, San Marino",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://momsla.com/?p=264014",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปะลอสแอนเจลิสเคาน์ตี (LACMA)",
+            "en": "LACMA (Los Angeles County Museum of Art)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนวิลเชียร์ ลอสแอนเจลิส",
+            "en": "Wilshire Boulevard, Los Angeles"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะ มีลานกลางแจ้ง กิจกรรมทำงานศิลปะ และร้านอาหาร",
+            "en": "An art museum with outdoor spaces, art-making activities and casual dining"
+          },
+          "why": {
+            "th": "มีที่โล่งให้เล่นเยอะ",
+            "en": "Plenty of open space to play"
+          },
+          "q": "Los Angeles County Museum of Art, 5905 Wilshire Boulevard, Los Angeles",
+          "ok": "2026-11"
         }
       ]
     },
