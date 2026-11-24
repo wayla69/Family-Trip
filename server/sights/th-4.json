@@ -905,6 +905,88 @@
           },
           "q": "Khaem Nu Beach, Takat Ngao, Tha Mai, Chanthaburi",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+          "name": {
+            "th": "สวนรินรดี",
+            "en": "Rinradee Orchard"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ตำบลเขาบายศรี อำเภอท่าใหม่",
+            "en": "Khao Baisi, Tha Mai"
+          },
+          "what": {
+            "th": "สวนผลไม้ในอำเภอท่าใหม่ ผลไม้ชั่งขายตามน้ำหนัก",
+            "en": "A fruit orchard in Tha Mai; fruit sold by weight"
+          },
+          "why": {
+            "th": "เปิดให้เข้าชมช่วงฤดูผลไม้",
+            "en": "Open to visitors in fruit season"
+          },
+          "tip": {
+            "th": "เปิดช่วงฤดูผลไม้ ราวเมษายนถึงต้นกรกฎาคม",
+            "en": "Open in fruit season, about April to early July"
+          },
+          "q": "สวนรินรดี, เขาบายศรี, ท่าใหม่, จันทบุรี",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+          "name": {
+            "th": "สวนเคพี การ์เด้น",
+            "en": "KP Garden (fruit buffet)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ตำบลท่าหลวง อำเภอมะขาม",
+            "en": "Tha Luang, Makham"
+          },
+          "what": {
+            "th": "สวนผลไม้ที่มีบุฟเฟต์ผลไม้",
+            "en": "A fruit orchard with a fruit buffet"
+          },
+          "why": {
+            "th": "กินผลไม้สดจากสวน",
+            "en": "Eat fruit straight from the orchard"
+          },
+          "tip": {
+            "th": "เปิดช่วงฤดูผลไม้ เสาร์–อาทิตย์และวันหยุดยาว 10.00–17.00 น.",
+            "en": "Open in fruit season, weekends and long holidays, 10:00–17:00"
+          },
+          "q": "สวนเคพี การ์เด้น, ท่าหลวง, มะขาม, จันทบุรี",
+          "ok": "2026-11"
         }
       ]
     },

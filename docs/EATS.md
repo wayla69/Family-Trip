@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Chanthaburi** (docs/library-briefs batch-51): +1 (Thong Nathi). Proof in `docs/library-proof/th-chanthaburi.json`.
+
+- **24 Nov 2026, Chanthaburi** (docs/library-briefs batch-75, round 3): +2 orchard cafés (Baan Suan Ratchanat, Arun Burapha). Proof in `docs/library-proof/th-chanthaburi.json`.

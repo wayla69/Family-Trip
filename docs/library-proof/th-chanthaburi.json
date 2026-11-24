@@ -46,8 +46,46 @@
       "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/",
       "date": "2026-09",
       "map": "Google Maps 'หาดปากน้ำแขมหนู', 1 review, shown 12 hours ago"
+    },
+    {
+      "name": "Baan Suan Ratchanat (orchard café)",
+      "page_name": "บ้านสวนรัชนาฏ",
+      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+      "date": "2025-04",
+      "map": "Google Maps 'Baan Suan Ratchanat' (Thung Bencha, Tha Mai), newest review shown 5 months ago"
+    },
+    {
+      "name": "Arun Burapha Garden (orchard café)",
+      "page_name": "สวนอรุณบูรพา",
+      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+      "date": "2025-04",
+      "map": "Google Maps 'Arun Burapha Garden' (Khao Baisi, Tha Mai), newest review shown 2 days ago"
+    },
+    {
+      "name": "Rinradee Orchard",
+      "page_name": "สวนรินรดี",
+      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+      "date": "2025-04",
+      "map": "Google Maps 'Rinradee Orchard' (Khao Baisi, Tha Mai), newest review shown 5 months ago"
+    },
+    {
+      "name": "KP Garden (fruit buffet)",
+      "page_name": "สวนเคพี การ์เด้น จันทบุรี",
+      "src": "https://www.thansettakij.com/lifestyle/traveling/625366",
+      "date": "2025-04",
+      "map": "Google Maps 'สวนเคพี การ์เด้น จันทบุรี KP Garden Chanthaburi' (Tha Luang, Makham), newest review shown 4 months ago"
     }
   ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "left_out": [
+    {
+      "name": "Two orchard rows",
+      "why": "the same places as the two orchard cafés"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 6 rows from Thansettakij (Apr 2025), 4 passed library-check.cjs (2 were repeats), 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
