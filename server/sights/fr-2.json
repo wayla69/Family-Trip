@@ -685,6 +685,158 @@
           "tip": { "en": "Closed in winter; book ahead in July and August", "th": "ปิดช่วงหน้าหนาว จองล่วงหน้าช่วง ก.ค.–ส.ค." },
           "q": "Acro’Aventures, Route Forestière, Talloires",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+          "name": {
+            "th": "หาดมาร์กีซา",
+            "en": "Plage des Marquisats"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนเดมาร์กีซา ใกล้เมืองเก่า อานซี",
+            "en": "Rue des Marquisats, near the old town, Annecy"
+          },
+          "what": {
+            "th": "หาดริมทะเลสาบในเมือง เข้าฟรี มีเจ้าหน้าที่ช่วงไฮซีซัน",
+            "en": "A free lake beach in town, with lifeguards in high season"
+          },
+          "why": {
+            "th": "มีโซนน้ำตื้นสำหรับเด็กเล็ก",
+            "en": "A shallow area for toddlers"
+          },
+          "tip": {
+            "th": "มีเจ้าหน้าที่ช่วยชีวิตช่วงไฮซีซัน",
+            "en": "Lifeguards in high season"
+          },
+          "q": "Plage des Marquisats, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+          "name": {
+            "th": "สวนยุโรป",
+            "en": "Jardins de l'Europe"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริมคลองนโปเลียนที่ 3 ข้างสะพานแห่งความรัก อานซี",
+            "en": "Quai Napoléon III, by the Pont des Amours, Annecy"
+          },
+          "what": {
+            "th": "สนามหญ้าและต้นไม้เก่าแก่ริมคลอง เดินไม่ไกลจากเมืองเก่า",
+            "en": "Lawns and old trees by the canal, a short walk from the old town"
+          },
+          "why": {
+            "th": "มีที่ให้วิ่งหลังเดินถนนหินมานาน",
+            "en": "Room to run after the cobbled streets"
+          },
+          "q": "Jardins de l'Europe, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Fonderie Paccard",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+          "name": {
+            "th": "โรงหล่อระฆังปักการ์",
+            "en": "Paccard bell foundry"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เซฟรีเย ห่างอานซี 10 นาที",
+            "en": "Sevrier, 10 minutes from Annecy"
+          },
+          "what": {
+            "th": "ทัวร์ชมโรงหล่อระฆัง",
+            "en": "Guided tours of a bell foundry"
+          },
+          "why": {
+            "th": "ได้ตีระฆังจริงที่หนักหลายตัน",
+            "en": "Visitors ring real bells weighing several tonnes"
+          },
+          "q": "PACCARD Fonderie de Cloches, Sevrier",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parc de loisirs des Planards",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ €9.50 ต่อเครื่องเล่น",
+            "en": "≈ €9.50 a ride"
+          },
+          "book": "none",
+          "src": "https://en.chamonix.com/activites-automne/chamonix-leisure-park",
+          "name": {
+            "th": "สวนสนุกเลปลานาร์",
+            "en": "Les Planards leisure park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนปีเยดูเกรปง ชาโมนี",
+            "en": "Chemin du Pied du Grépon, Chamonix"
+          },
+          "what": {
+            "th": "สวนสนุกเชิงมงบล็อง มีเครื่องเล่นและที่เล่น",
+            "en": "An amusement park at the foot of Mont Blanc with rides and play areas"
+          },
+          "why": {
+            "th": "เครื่องเล่นเด็ก ม้าหมุน และเกมน้ำ ตั้งแต่ 1 ขวบ",
+            "en": "Kiddy rides, carousels and water games from age 1"
+          },
+          "q": "Les Planards, 351 Chemin du Pied du Grépon, Chamonix",
+          "ok": "2026-11"
         }
       ]
     },

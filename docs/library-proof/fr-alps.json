@@ -1,115 +1,54 @@
 {
   "town": "fr-alps",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 19 rows from Ryo (Sept 2026) and the tourist offices, 18 passed library-check.cjs, 12 went in",
+  "agents": "one Haiku agent; 7 rows from Haute-Savoie Mont-Blanc tourism (2026), Chamonix tourism (official) and Ryo (Sep 2026), all passed library-check.cjs, 5 went in",
   "added": [
     {
-      "name": "L’Aquarama (Angon)",
-      "page_name": "Restaurant Aquarama",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 'Restaurant L'Aquarama', Embarcadère d'Angon, 2,113 reviews, newest '3 weeks ago'"
+      "name": "PlanB Living Chamonix (restaurant)",
+      "page_name": "PlanB Restaurant",
+      "src": "https://hautesavoiemontblanc-tourisme.com/offres/planb-restaurant-chamonix-mont-blanc-fr-5831338/",
+      "date": "2026-06",
+      "map": "Google Maps 'PlanB Living Chamonix - Restaurant & Bar', newest review shown 5 months ago"
     },
     {
-      "name": "Parc de Merlet",
-      "page_name": "Le parc de Merlet",
-      "src": "https://www.tourisme-haute-savoie.com/actualites-de-haute-savoie/ouverture-2026-parc-de-merlet/",
-      "date": "2026-05",
-      "map": "Google Maps 'Parc de Merlet', 4,135 reviews, newest '13 hours ago'"
+      "name": "Plage des Marquisats",
+      "page_name": "Plage des Marquisats",
+      "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'Plage des Marquisats' (58 Rue des Marquisats), newest review shown a week ago"
     },
     {
-      "name": "Lac des Chavants leisure park",
-      "page_name": "Lac des Chavants leisure park",
-      "src": "https://en.chamonix.com/a-voir-a-faire/loisirs-et-famille",
+      "name": "Jardins de l'Europe",
+      "page_name": "Jardins de l'Europe",
+      "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'Jardins de l'Europe' (Quai Napoléon III), newest review shown 3 hours ago"
+    },
+    {
+      "name": "Paccard bell foundry",
+      "page_name": "Fonderie Paccard",
+      "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'PACCARD Fonderie de Cloches' (Sevrier), newest review shown 2 months ago"
+    },
+    {
+      "name": "Les Planards leisure park",
+      "page_name": "Chamonix Leisure Park",
+      "src": "https://en.chamonix.com/activites-automne/chamonix-leisure-park",
       "date": "official",
-      "map": "Google Maps 'Base de Loisirs des Chavants', 26 reviews, newest 'last week'"
-    },
-    {
-      "name": "Parc Charles Bosson",
-      "page_name": "parc Charles Bosson",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 88 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Plage de la Brune",
-      "page_name": "plage de la Brune",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 365 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Talloires beach",
-      "page_name": "plage municipale de Talloires",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 1,467 reviews, newest '3 weeks ago'"
-    },
-    {
-      "name": "Bout du Lac nature reserve",
-      "page_name": "réserve naturelle du Bout du lac",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 'Réserve naturelle nationale du Bout du Lac d'Annecy', 863 reviews, newest 'last week'"
-    },
-    {
-      "name": "Le Semnoz",
-      "page_name": "Plateau du Semnoz",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps the summer luge at the Semnoz station, 1,012 reviews, newest '3 weeks ago'"
-    },
-    {
-      "name": "Parc animalier de la Grande Jeanne",
-      "page_name": "parc animalier de la Grande Jeanne",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 1,345 reviews, newest 'last week'"
-    },
-    {
-      "name": "La Turbine sciences",
-      "page_name": "La Turbine",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 'La Turbine sciences', 533 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Cinéma Les Nemours",
-      "page_name": "cinéma Nemours",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 'Cinéma Les Nemours', 711 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Acro’Aventures Talloires",
-      "page_name": "Acro'Aventures",
-      "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
-      "date": "2026-08",
-      "map": "Google Maps 'ACRO' AVENTURES TALLOIRES', 1,752 reviews, newest '5 days ago'"
+      "map": "Google Maps 'Les Planards - Chamonix Mont Blanc' (351 Chem. du Pied du Grépon), newest review shown 2 days ago"
     }
   ],
   "left_out": [
     {
-      "name": "Restaurant Arcalod",
-      "why": "the map puts it in Doussard, not Talloires as the page says"
+      "name": "Chez Ingalls",
+      "why": "nothing about children on the page"
     },
     {
-      "name": "Parc d’attractions de Chamonix",
-      "why": "the map's place there is a luge with another name"
-    },
-    {
-      "name": "Paradis des Praz",
-      "why": "no listing on the map"
-    },
-    {
-      "name": "Ferme de Salagine, Seythenex zip line, Château de Montrottier",
-      "why": "12–25 km from Annecy"
-    },
-    {
-      "name": "Criq’Parc",
-      "why": "library-check.cjs: quote not on page"
+      "name": "Plage de l'Impérial",
+      "why": "the page says only that it welcomes swimmers"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
