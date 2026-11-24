@@ -842,6 +842,43 @@
           "q": "Ripley's Believe It or Not, Royal Garden Plaza, Beach Road, Pattaya",
           "ok": "2026-11",
           "src": "https://pickyourtrail.com/attractions/pattaya/ripleys-believe-it-or-not-museum-pattaya"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.pattayaunlimited.com/things-to-do-with-kids-in-pattaya/",
+          "name": {
+            "th": "สวนนงนุชพัทยา",
+            "en": "Nong Nooch Tropical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "พัทยา",
+            "en": "Pattaya"
+          },
+          "what": {
+            "th": "สวนใหญ่ มีหุบเขาไดโนเสาร์ที่มีหุ่นไดโนเสาร์ขนาดเท่าจริง",
+            "en": "Big gardens with a Dinosaur Valley of life-size dinosaur models"
+          },
+          "why": {
+            "th": "เด็กได้เดินดูไดโนเสาร์ตัวเท่าจริง",
+            "en": "Children walk among the life-size dinosaurs"
+          },
+          "q": "Nong Nooch Tropical Garden, Pattaya, Chonburi",
+          "ok": "2026-11"
         }
       ]
     },

@@ -529,3 +529,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+- **24 Nov 2026, Pattaya** (docs/library-briefs rerun): +4 (The Coffee Club, Sizzler, The Pizza Company — all at Central Festival Pattaya Beach — and Benihana at Avani). Proof in `docs/library-proof/th-pattaya.json`.
