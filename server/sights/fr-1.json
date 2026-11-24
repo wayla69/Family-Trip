@@ -355,7 +355,118 @@
       {"name":{"en":"Georges Brassens Park","th":"สวนฌ็องฌ์ บราสซ็องส์"},"kind":"park","area":{"en":"15th arrondissement","th":"เขต 15"},"what":{"en":"A park with play areas for young and old, each with its own world.","th":"สวนที่มีพื้นที่เล่นสำหรับทั้งเด็กและผู้ใหญ่ แต่ละแห่งมีโลกของตัวเอง"},"why":{"en":"Play areas for all ages with different universes.","th":"พื้นที่เล่นสำหรับทุกวัยที่มีโลกต่างกัน"},"ages":[0,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Georges Brassens Park, 15th arrondissement, Paris","ok":"2026-11","src":"https://www.sortiraparis.com/en/child-and-family/guides/298982-where-can-you-find-the-best-children-s-playgrounds-in-paris"},
       {"name":{"en":"Belleville Park","th":"สวนเบลวิลล์"},"kind":"play","area":{"en":"Belleville","th":"เบลวิลล์"},"what":{"en":"A hillside playground with slides and climbing slopes, designed around risk.","th":"สนามเด็กเล่นบนเนิน มีสไลด์และลาดปีน ออกแบบให้มีความเสี่ยงพอประมาณ"},"why":{"en":"Accessible to children aged 6 to 13, with slides and climbing slopes.","th":"หน้าเว็บบอกว่าเหมาะกับเด็กอายุ 6–13 ปี มีสไลด์และลาดปีน"},"ages":[0,0,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Belleville Park, Paris","ok":"2026-11","src":"https://www.sortiraparis.com/en/child-and-family/guides/298982-where-can-you-find-the-best-children-s-playgrounds-in-paris"},
       {"name":{"en":"Parc de Choisy","th":"สวนโชซี"},"kind":"park","area":{"en":"13th arrondissement","th":"เขต 13"},"what":{"en":"A park in the heart of Chinatown, with play areas, ping-pong tables and basketball.","th":"สวนกลางย่านไชนาทาวน์ มีพื้นที่เล่น โต๊ะปิงปอง และบาสเกตบอล"},"why":{"en":"Play areas for children.","th":"มีพื้นที่เล่นสำหรับเด็ก"},"ages":[0,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parc de Choisy, 13th arrondissement, Paris","ok":"2026-11","src":"https://www.sortiraparis.com/en/child-and-family/guides/298982-where-can-you-find-the-best-children-s-playgrounds-in-paris"},
-      {"name":{"en":"Promenade Jane et Paulette Nardal","th":"ทางเดินเจน เอ โปเลตต์ นาร์ดาล"},"kind":"park","area":{"en":"14th arrondissement","th":"เขต 14"},"what":{"en":"A tree-lined walk with playgrounds.","th":"ทางเดินร่มรื่นที่มีสนามเด็กเล่น"},"why":{"en":"Beautiful playgrounds for children.","th":"สนามเด็กเล่นที่สวยสำหรับเด็ก"},"ages":[0,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Promenade Jane et Paulette Nardal, 14th arrondissement, Paris","ok":"2026-11","src":"https://www.sortiraparis.com/en/child-and-family/guides/298982-where-can-you-find-the-best-children-s-playgrounds-in-paris"}
+      {"name":{"en":"Promenade Jane et Paulette Nardal","th":"ทางเดินเจน เอ โปเลตต์ นาร์ดาล"},"kind":"park","area":{"en":"14th arrondissement","th":"เขต 14"},"what":{"en":"A tree-lined walk with playgrounds.","th":"ทางเดินร่มรื่นที่มีสนามเด็กเล่น"},"why":{"en":"Beautiful playgrounds for children.","th":"สนามเด็กเล่นที่สวยสำหรับเด็ก"},"ages":[0,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Promenade Jane et Paulette Nardal, 14th arrondissement, Paris","ok":"2026-11","src":"https://www.sortiraparis.com/en/child-and-family/guides/298982-where-can-you-find-the-best-children-s-playgrounds-in-paris"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/314973-what-to-do-in-paris-with-children-ideas-for-family-outings-and-kid-friendly-addresses",
+          "name": {
+            "th": "เรโวโปลี",
+            "en": "Rêvopolie"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเดอนูแอ็ต เขต 15 ปารีส",
+            "en": "Rue Desnouettes, 15th, Paris"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มแบบเข้าไปอยู่ในเรื่อง มีชุดแต่งตัวและบ่อบอล",
+            "en": "An immersive indoor play park with dress-up costumes and ball pits"
+          },
+          "why": {
+            "th": "เด็กได้เข้าไปเล่นในโลกต่าง ๆ",
+            "en": "Children step into different worlds and play in them"
+          },
+          "q": "Rêvopolie, Rue Desnouettes, Paris",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/314973-what-to-do-in-paris-with-children-ideas-for-family-outings-and-kid-friendly-addresses",
+          "name": {
+            "th": "ซายองซ์เอ็กซ์เปรียองซ์",
+            "en": "Science Expériences"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "แบร์ซีวิลลาจ เขต 12 ปารีส",
+            "en": "Bercy Village, 12th, Paris"
+          },
+          "what": {
+            "th": "ครึ่งพิพิธภัณฑ์ครึ่งสวนสนุก มีการทดลอง วีอาร์ และวิดีโอแมปปิง",
+            "en": "Part museum, part amusement park: experiments, virtual reality and video mapping"
+          },
+          "why": {
+            "th": "วิทยาศาสตร์มีชีวิตสำหรับเด็ก",
+            "en": "Science comes to life for children"
+          },
+          "q": "Science Expériences, Cour Saint-Émilion, Paris",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/314973-what-to-do-in-paris-with-children-ideas-for-family-outings-and-kid-friendly-addresses",
+          "name": {
+            "th": "บ้านนิทาน (ลาเมซงเดซิสตัวร์)",
+            "en": "La Maison des Histoires"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ร้านหนังสือชองต์ลิฟร์ ถนนแซฟร์ เขต 6 ปารีส",
+            "en": "Chantelivre bookshop, Rue de Sèvres, 6th, Paris"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กแบบเข้าไปอยู่ในเรื่อง ซ่อนอยู่หลังร้านหนังสือ",
+            "en": "An immersive children's museum hidden behind a bookshop"
+          },
+          "why": {
+            "th": "ทำมาสำหรับเด็ก 0–7 ขวบ ในโลกของหนังสือภาพ",
+            "en": "Made for children of 0 to 7, inside the worlds of picture books"
+          },
+          "q": "La Maison des Histoires, Chantelivre, Rue de Sèvres, Paris",
+          "ok": "2026-11"
+        }
     ]
     }
   ]
