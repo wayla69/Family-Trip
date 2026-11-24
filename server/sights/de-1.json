@@ -1344,6 +1344,154 @@
           },
           "q": "Museum der Natur Hamburg, Bundesstraße 52, Hamburg",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €17 ต่อ 4 ชั่วโมง",
+            "en": "≈ €17 for 4 hours"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/indoorspielplatz-rabatzz-868116",
+          "name": {
+            "th": "แรบาทซ์ สนามเด็กเล่นในร่ม",
+            "en": "rabatzz! indoor playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนคีลเลอร์ ชเตลลิงเงิน ฮัมบูร์ก",
+            "en": "Kieler Straße, Stellingen, Hamburg"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม 3,500 ตร.ม. สองชั้น เปิดทุกวัน",
+            "en": "A 3,500 m² indoor play centre on two floors, open every day"
+          },
+          "why": {
+            "th": "วันพุธสำหรับเด็กต่ำกว่า 5 ขวบเท่านั้น มีบ่อบอลและบ้านลม",
+            "en": "Wednesdays for under-fives only, with a ball pit and bouncy castle"
+          },
+          "q": "rabatzz! Indoorspielplatz, Kieler Str. 575a, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "ป่านีนดอร์เฟอร์เกเฮเกอ",
+            "en": "Niendorfer Gehege (forest and playground)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บอนเดนวัลด์ นีนดอร์ฟ ฮัมบูร์ก",
+            "en": "Bondenwald, Niendorf, Hamburg"
+          },
+          "what": {
+            "th": "ป่ามีทางเดิน 15 กม. และคอกกวาง",
+            "en": "A forest with 15 km of paths and a fallow-deer enclosure"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น 2 แห่งและสนามหญ้า",
+            "en": "Two playgrounds and lawns"
+          },
+          "q": "Spielplatz Niendorfer Gehege, Bondenwald 80, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "ฟาร์มเด็กเคียร์ชดอร์ฟ",
+            "en": "Kinderbauernhof Kirchdorf"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนชตือเบนโฮเฟอร์ วิลเฮล์มสบวร์ก ฮัมบูร์ก",
+            "en": "Stübenhofer Weg, Wilhelmsburg, Hamburg"
+          },
+          "what": {
+            "th": "ฟาร์มเด็กที่มีแพะ หมู ไก่ต๊อก และสัตว์อีกมาก",
+            "en": "A children's farm with goats, pigs, guinea fowl and many more animals"
+          },
+          "why": {
+            "th": "เด็กได้ดู ลูบ และให้อาหารสัตว์ ฟรี",
+            "en": "Children look at, stroke and feed the animals, free"
+          },
+          "q": "Kinderbauernhof Kirchdorf, Stübenhofer Weg 19, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "สนามเด็กเล่นกรอสเซวัลอันลาเกิน",
+            "en": "Große Wallanlagen playground (Planten un Blomen)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกลาซีชอสเซ ข้างแพลนเทินอุนโบลเมิน ฮัมบูร์ก",
+            "en": "Glacischaussee, by Planten un Blomen, Hamburg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนบนแนวกำแพงเมืองเก่า",
+            "en": "A playground on the old city walls park"
+          },
+          "why": {
+            "th": "มีที่เล่นน้ำ บ้านปีนพร้อมหอสไลเดอร์ และลานทรายใหญ่",
+            "en": "Water play, a climbing house with a slide tower and a big sand area"
+          },
+          "q": "Spielplatz Planten Un Blomen Große Wallanlagen, Glacischaussee 1, Hamburg",
+          "ok": "2026-11"
         }
       ]
     },

@@ -529,3 +529,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+- **24 Nov 2026, Hamburg** (docs/library-briefs batch-83, round 3): +3 (Q21 Gasthaus, Beach Hamburg family brunch, Familiencafé Krümel). Proof in `docs/library-proof/de-hamburg.json`.
