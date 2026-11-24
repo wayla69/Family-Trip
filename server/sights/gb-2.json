@@ -2562,6 +2562,240 @@
           },
           "q": "Hollywood Bowl York, Kathryn Avenue, Monks Cross, York",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+          "name": {
+            "th": "ออกซิเจน ยอร์ก",
+            "en": "Oxygen York"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คลิฟตันมัวร์ ยอร์ก",
+            "en": "Clifton Moor, York"
+          },
+          "what": {
+            "th": "ซอฟต์เพลย์ มีบ่อบอล ด่านเล็ก และสไลเดอร์คู่",
+            "en": "Soft play with a ball pit, mini obstacles and twin slides"
+          },
+          "why": {
+            "th": "เด็กเล็กเล่นแยกจากเด็กโต",
+            "en": "Babies and toddlers play away from the big children"
+          },
+          "tip": {
+            "th": "โซนซอฟต์เพลย์สำหรับเด็ก 0–5 ขวบ",
+            "en": "The soft play is for ages 0 to 5"
+          },
+          "q": "Oxygen York, Clifton Moor Centre, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+          "name": {
+            "th": "ฟลิปเอาต์ ยอร์ก",
+            "en": "Flip Out York"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโรส ยอร์ก",
+            "en": "Rose Avenue, York"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีน มีโซนซอฟต์เพลย์สำหรับเด็กเล็ก",
+            "en": "A trampoline park with a soft play area for younger children"
+          },
+          "why": {
+            "th": "วิ่ง กระโดด ปีน เป็นที่นิยมของเด็กเล็ก",
+            "en": "Run, jump and climb; popular with toddlers"
+          },
+          "tip": {
+            "th": "โซนซอฟต์เพลย์สำหรับเด็กสูงไม่เกิน 160 ซม.",
+            "en": "The soft play is for children under 160 cm"
+          },
+          "q": "Flip Out York, 3-7 Rose Ave, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+          "name": {
+            "th": "เครซีไทกส์",
+            "en": "Crazy Tykes"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทอร์ปอาร์ช เวเธอร์บี ใกล้ยอร์ก",
+            "en": "Thorp Arch, Wetherby, near York"
+          },
+          "what": {
+            "th": "ศูนย์เล่นทั้งในร่มและกลางแจ้งสำหรับเด็ก 0–13 ขวบ",
+            "en": "An indoor and outdoor play centre for ages 0 to 13"
+          },
+          "why": {
+            "th": "พี่ๆ ที่โตกว่ามาเล่นด้วยได้",
+            "en": "Older brothers and sisters can come too"
+          },
+          "q": "Crazy Tykes, Thorp Arch Trading Estate, Wetherby",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.murtonpark.co.uk/play/",
+          "name": {
+            "th": "เมอร์ตันพาร์ก",
+            "en": "Murton Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนเมอร์ตัน เมอร์ตัน ยอร์ก",
+            "en": "Murton Lane, Murton, York"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางแจ้ง รถแทรกเตอร์ให้ขี่ และบ่อทราย",
+            "en": "Outdoor playgrounds, ride-on tractors and sand pits"
+          },
+          "why": {
+            "th": "ที่เล่นกลางแจ้งสำหรับเด็กเล็ก",
+            "en": "Outdoor play for little ones"
+          },
+          "tip": {
+            "th": "โรงเล่นในร่มปิดถึงปีใหม่",
+            "en": "The indoor play barn is closed until the new year"
+          },
+          "q": "Murton Park, Murton Lane, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.mummytravels.com/things-to-do-in-whitby-with-kids/",
+          "name": {
+            "th": "หาดแซนด์เซนด์",
+            "en": "Sandsend Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "แซนด์เซนด์ ใกล้วิตบี",
+            "en": "Sandsend, near Whitby"
+          },
+          "what": {
+            "th": "หาดเงียบกว่าใกล้วิตบี มีแอ่งหินตอนน้ำลง",
+            "en": "A quieter beach near Whitby with rock pools at low tide"
+          },
+          "why": {
+            "th": "คนน้อยกว่าหาดเวสต์คลิฟของวิตบี",
+            "en": "Quieter than Whitby's West Cliff beach"
+          },
+          "q": "Sandsend Beach, Whitby",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.mummytravels.com/things-to-do-in-whitby-with-kids/",
+          "name": {
+            "th": "สวนแพนเนตต์",
+            "en": "Pannett Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางเมืองวิตบี",
+            "en": "Whitby town centre"
+          },
+          "what": {
+            "th": "สวนในวิตบีที่มีที่ให้เด็กเล่น",
+            "en": "A park in Whitby with places for children to play"
+          },
+          "why": {
+            "th": "ที่เล่นในตัวเมือง",
+            "en": "Somewhere to play in town"
+          },
+          "q": "Pannett Park, Whitby",
+          "ok": "2026-11"
         }
       ]
     }
