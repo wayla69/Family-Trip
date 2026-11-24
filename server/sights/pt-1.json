@@ -793,6 +793,170 @@
           },
           "q": "World of Discoveries, Rua de Miragaia 106, Porto",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ (12 ปีขึ้นไป) 13€",
+            "en": "Adults (12 and over) 13€"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพสามมิติ ปอร์โต",
+            "en": "3D Fun Art Museum Porto"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนฟาเรียกีมาไรช์ ใกล้สถานีมาร์เกช ปอร์โต",
+            "en": "Rua de Faria Guimarães, near Marquês, Porto"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา ให้เดินเล่นและถ่ายรูป",
+            "en": "A museum of optical illusions to explore and photograph"
+          },
+          "why": {
+            "th": "พิพิธภัณฑ์สำหรับครอบครัว ที่ไม่มีอะไรเป็นอย่างที่เห็น",
+            "en": "A family museum where nothing is quite what it seems"
+          },
+          "tip": {
+            "th": "นั่งรถไฟใต้ดินไปสถานีมาร์เกช เหมาะกับเด็กอายุเกิน 5 ขวบ",
+            "en": "Take the metro to Marquês; best for children over 5"
+          },
+          "q": "3D Fun Art Museum Porto, R. de Faria Guimarães 712, Porto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "ห้องสมุดอัลเมดาการ์เร็ตต์",
+            "en": "Almeida Garrett Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สวนพระราชวังคริสตัล ปอร์โต",
+            "en": "Palácio de Cristal gardens, Porto"
+          },
+          "what": {
+            "th": "ห้องสมุดสาธารณะในสวนพระราชวังคริสตัล มีมุมเด็กขนาดใหญ่",
+            "en": "A public library in the Crystal Palace gardens with a big children's section"
+          },
+          "why": {
+            "th": "มีบ้านตุ๊กตา หนังสือภาพ และโต๊ะกับกระดาษและสีเทียนให้วาดรูป",
+            "en": "A doll's house, picture books and tables with paper and crayons to draw"
+          },
+          "tip": {
+            "th": "เข้าฟรี เดินเล่นในสวนต่อได้",
+            "en": "Free; a walk in the gardens afterwards"
+          },
+          "q": "Biblioteca Municipal Almeida Garrett, Jardins do Palácio de Cristal, Porto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เยาวชนและผู้ใหญ่ (11 ปีขึ้นไป) 10€",
+            "en": "Young people and adults (11 and over) 10€"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "การแสดงแสงสีเสียงที่โบสถ์เคลรีกุช",
+            "en": "Sound-and-light show at the Clérigos Church"
+          },
+          "kind": "show",
+          "area": {
+            "th": "โบสถ์เคลรีกุช ข้างสวนกอร์โดอาเรีย ปอร์โต",
+            "en": "Clérigos Church, by the Cordoaria garden, Porto"
+          },
+          "what": {
+            "th": "การแสดงแสงสีเสียงครึ่งชั่วโมงในโบสถ์เคลรีกุช",
+            "en": "A half-hour sound-and-light show inside the Clérigos Church"
+          },
+          "why": {
+            "th": "สั้นพอสำหรับเด็ก หน้าเว็บบอกว่าไม่เหมาะกับเด็กต่ำกว่า 4 ขวบ",
+            "en": "Short enough for children; not for under-4s, the page says"
+          },
+          "tip": {
+            "th": "ฉายหลายรอบทุกเย็น เล่นในสวนกอร์โดอาเรียก่อนได้",
+            "en": "Several showings each evening; play in the Cordoaria garden first"
+          },
+          "q": "Clérigos Church, R. de São Filipe de Nery, Porto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ตั๋วครอบครัว 7.50€",
+            "en": "Family ticket 7.50€"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "สวนชีวภาพไกอา",
+            "en": "Parque Biológico de Gaia"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาวินตึช วิลาโนวาดึไกอา",
+            "en": "Avintes, Vila Nova de Gaia"
+          },
+          "what": {
+            "th": "สวนธรรมชาติ 3 กม. มีสัตว์ในฟาร์ม นาก ไบซัน บ้านไร่เก่า และศูนย์ฟื้นฟูนก",
+            "en": "A 3 km nature park with farm animals, otters and bison, old farm buildings and a bird hospital"
+          },
+          "why": {
+            "th": "มีลา แพะ แกะ และโรงนา คอกม้าให้เด็กดู",
+            "en": "Donkeys, goats and sheep, and barns and stables to look into"
+          },
+          "tip": {
+            "th": "สวนใหญ่ หน้าเว็บบอกว่าเด็กต่ำกว่า 4 ขวบเหนื่อยเร็ว มีร้านอาหารในสวน",
+            "en": "Big: the page says under-4s tire quickly; a restaurant on site"
+          },
+          "q": "Parque Biológico de Gaia, R. Cunha, Avintes",
+          "ok": "2026-11"
         }
       ]
     }
