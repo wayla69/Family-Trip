@@ -3586,6 +3586,191 @@
           },
           "q": "Figli d'Arte Cuticchio, Via Bara all'Olivella 95, Palermo",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/catania-with-kids/",
+          "name": {
+            "th": "วิลลาเบลลินี",
+            "en": "Villa Bellini (Giardino Bellini)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเอตเนอา กาตาเนีย",
+            "en": "Via Etnea, Catania"
+          },
+          "what": {
+            "th": "สวนที่ใหญ่และเป็นที่นิยมที่สุดของกาตาเนีย มีทางเดินร่มรื่นและม้านั่งใต้ร่มไม้",
+            "en": "Catania's largest and best-loved park, with tree-lined paths and shaded benches"
+          },
+          "why": {
+            "th": "มีที่เล่นสำหรับเด็กและร่มเงาให้นั่งพัก",
+            "en": "Play areas for children and shade for a break"
+          },
+          "q": "Villa Bellini, Via Etnea, Catania",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนอูดิโตเร",
+            "en": "Parco Uditore"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ปิอัซซาอัลเบิร์ตไอน์สไตน์ ปาแลร์โม",
+            "en": "Piazza Albert Einstein, Palermo"
+          },
+          "what": {
+            "th": "สวนที่ดูแลดี มีเครื่องเล่นกลางแจ้ง",
+            "en": "A well-kept park with outdoor play equipment"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นในพื้นที่ปลอดภัยและเรียบร้อย",
+            "en": "Play equipment in a safe, tidy setting"
+          },
+          "q": "Parco Uditore, Piazza Albert Einstein, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนฟัลโกเน",
+            "en": "Parco Falcone"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใกล้ถนนกอร์โซอิตาเลีย กาตาเนีย",
+            "en": "near Corso Italia, Catania"
+          },
+          "what": {
+            "th": "หนึ่งในสวนเด็กคลาสสิกของกาตาเนีย",
+            "en": "One of Catania's classic children's parks"
+          },
+          "why": {
+            "th": "สวนสำหรับให้เด็กเล็กเล่น",
+            "en": "A park made for small children to play"
+          },
+          "q": "Parco Falcone, Viale Raffaello Sanzio, Catania",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนฟอนโดบาเดีย",
+            "en": "Parco Fondo Badia"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนบาเดีย ปาแลร์โม",
+            "en": "Via Badia, Palermo"
+          },
+          "what": {
+            "th": "โอเอซิสสีเขียวที่ซ่อนอยู่ หนึ่งในสวนลับที่สวยที่สุดของปาแลร์โม",
+            "en": "A hidden green oasis, one of Palermo's most striking hidden parks"
+          },
+          "why": {
+            "th": "พื้นที่สีเขียวเงียบสงบสำหรับเดินเล่นใต้ต้นไม้",
+            "en": "A quiet green space for a walk among the trees"
+          },
+          "q": "Parco Fondo Badia, Via Badia 48, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนคานธี",
+            "en": "Parco Gandhi"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใกล้ถนนซานตาโซเฟีย ทางเหนือของกาตาเนีย",
+            "en": "near Via Santa Sofia, north Catania"
+          },
+          "what": {
+            "th": "สวนที่เงียบกว่าทางเหนือของกาตาเนีย",
+            "en": "A quieter park in the north of Catania"
+          },
+          "why": {
+            "th": "สวนสงบ คนไม่พลุกพล่าน เหมาะแก่การพัก",
+            "en": "A calm, less busy park for a break"
+          },
+          "q": "Parco Gandhi, Catania",
+          "ok": "2026-11"
         }
       ]
     },
