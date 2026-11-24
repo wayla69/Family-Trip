@@ -372,6 +372,43 @@
           },
           "q": "Hakone Kamon, 435 Yumoto, Hakone",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.pref.kanagawa.jp/osirase/0602/feelshonan/en/sightseeing/3693/index.html",
+          "name": {
+            "th": "สวนป่าเด็กวันปากุแลนด์",
+            "en": "Children's Forest Wanpaku Land"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คูโนะ โอดาวาระ",
+            "en": "Kuno, Odawara"
+          },
+          "what": {
+            "th": "สวนบนเนิน มีเครื่องเล่นใหญ่ มุมสัมผัสสัตว์ สะพานแขวน 67 เมตร และรถไฟเล็ก",
+            "en": "A hill park with big play equipment, a petting corner, a 67 m suspension bridge and a little train"
+          },
+          "why": {
+            "th": "เด็กเล่นได้อิสระบนเครื่องเล่นใหญ่ท่ามกลางธรรมชาติ",
+            "en": "Children play freely in the woods on big playground equipment"
+          },
+          "q": "Children's Forest Wanpaku Land, 4377-1 Kuno, Odawara",
+          "ok": "2026-11"
         }
       ]
     },

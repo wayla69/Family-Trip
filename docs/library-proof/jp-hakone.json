@@ -25,6 +25,20 @@
       "src": "https://www.magical-trip.com/media/top-10-family-friendly-activities-in-hakone-a-comprehensive-guide-for-2025/",
       "date": "2025-12",
       "map": "Google Maps 'Hakone Kamon 箱根 花紋', 4-star hotel taking bookings for Dec 2026, 717 reviews"
+    },
+    {
+      "name": "Irori Chaya",
+      "page_name": "Irori Chaya",
+      "src": "https://www.magical-trip.com/media/top-10-family-friendly-restaurants-in-hakone-for-2025-a-guide-to-dining-with-kids/",
+      "date": "2025-12",
+      "map": "Google Maps 'Irori-chaya' (919-35 Sengokuhara), newest review shown a week ago"
+    },
+    {
+      "name": "Children's Forest Wanpaku Land",
+      "page_name": "Odawara Children's Forest Wanpaku Land",
+      "src": "https://www.pref.kanagawa.jp/osirase/0602/feelshonan/en/sightseeing/3693/index.html",
+      "date": "official",
+      "map": "Google Maps 'Children's Forest Wanpaku Land' (4377-1 Kuno, Odawara), newest review shown 4 hours ago"
     }
   ],
   "left_out": [
@@ -39,7 +53,20 @@
     {
       "name": "five rows from Hakone Navi",
       "why": "library-check.cjs could not read the page date"
+    },
+    {
+      "name": "Dining Hakone, KAI Sengokuhara",
+      "why": "the kids' menus are for hotel guests only"
+    },
+    {
+      "name": "Kamameshi Giyamantei",
+      "why": "nothing about children on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Magical Trip (Dec 2025) and Kanagawa Prefecture (official), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

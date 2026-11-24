@@ -532,3 +532,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 
 ### Hakone, 23 Nov 2026
 batch-34 of docs/library-briefs (round 2). +1: Hakone Sushi. Proof in `docs/library-proof/jp-hakone.json`.
+
+- **24 Nov 2026, Hakone** (docs/library-briefs batch-90, round 3): +1 (Irori Chaya, Sengokuhara). Proof in `docs/library-proof/jp-hakone.json`.
