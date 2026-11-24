@@ -992,6 +992,43 @@
           },
           "q": "Monolithos Beach, Santorini",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://iyc.com/blog/mykonos-child-friendly-vacation/",
+          "name": {
+            "th": "หาดออร์นอส (มิโคนอส)",
+            "en": "Ornos Beach (Mykonos)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ออร์นอส เกาะมิโคนอส",
+            "en": "Ornos, Mykonos"
+          },
+          "what": {
+            "th": "ชายหาดบนเกาะมิโคนอสที่เหมาะกับครอบครัว",
+            "en": "A family-minded beach on Mykonos"
+          },
+          "why": {
+            "th": "มีเก้าอี้อาบแดดให้พ่อแม่ และคลื่นเบาสำหรับเด็กเล็ก",
+            "en": "Sun loungers for parents and gentle waves for little ones"
+          },
+          "q": "Ornos Beach, Mykonos",
+          "ok": "2026-11"
         }
       ]
     }
