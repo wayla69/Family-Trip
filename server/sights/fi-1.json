@@ -469,6 +469,117 @@
           },
           "q": "Helsinki Tram Museum, Töölönkatu 51 A, Helsinki",
           "ok": "2026-11"
+        },
+        {
+          "local": "Leikkimuseo",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leikki-museum-play",
+          "name": {
+            "th": "พิพิธภัณฑ์การเล่นไลก์กี",
+            "en": "Leikki – the Museum of Play"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วีจี ตาปิโอลา เอสโป",
+            "en": "WeeGee centre, Tapiola, Espoo"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องวัยเด็ก ของเล่น และการเล่น",
+            "en": "A museum of childhood, toys and play"
+          },
+          "why": {
+            "th": "มีของเล่นและเกมจากหลายยุคให้ลอง",
+            "en": "Toys and games from different times to try"
+          },
+          "q": "Leikki - The Museum Of Play, Ahertajantie 3, Espoo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leos-espoo-laajalahti",
+          "name": {
+            "th": "ลีโอส์ เอสโป ลาจาลาห์ติ",
+            "en": "Leo's Espoo Laajalahti"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซินีแมนติเอ ลาจาลาห์ติ เอสโป",
+            "en": "Sinimäentie, Laajalahti, Espoo"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม เปิดทุกวันตลอดปี",
+            "en": "An indoor play centre, open every day all year"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นสำหรับทุกวัยและทุกระดับ",
+            "en": "Something for every age and skill level"
+          },
+          "q": "Leo's Espoo Laajalahti, Sinimäentie 20, Espoo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leos-espoo-suomenoja",
+          "name": {
+            "th": "ลีโอส์ เอสโป ซูโอเมโนยา",
+            "en": "Leo's Espoo Suomenoja"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฟินโนนลากซอนติเอ ซูโอเมโนยา เอสโป",
+            "en": "Finnoonlaaksontie, Suomenoja, Espoo"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม มีโซนเล่นทุกวัย เปิดทุกวัน",
+            "en": "An indoor play centre with play areas for all ages, open every day"
+          },
+          "why": {
+            "th": "มีอะไรให้ทุกคนเล่นได้",
+            "en": "Something for everyone, whatever their skill"
+          },
+          "q": "Leo's Espoo Suomenoja, Finnoonlaaksontie 9, Espoo",
+          "ok": "2026-11"
         }
       ]
     },

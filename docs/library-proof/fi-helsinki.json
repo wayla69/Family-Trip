@@ -1,86 +1,47 @@
 {
   "town": "fi-helsinki",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 10 rows from Strawberry (2025–26) and Time Out (Jan 2026) passed library-check.cjs, 9 went in",
+  "agents": "one Haiku agent; 4 rows from Strawberry Hotels (Dec 2025) and Visit Espoo (official), all passed library-check.cjs, 4 went in",
   "added": [
     {
-      "name": "The Social (Clarion Hotel Helsinki)",
-      "page_name": "The Social Helsinki",
+      "name": "St. George Bakery",
+      "page_name": "St. George Bakery",
       "src": "https://www.strawberryhotels.com/blog/finland/family-friendly-restaurants-helsinki/",
       "date": "2025-12",
-      "map": "Google Maps 'Restaurant The Social Bar & Bistro', Clarion Hotel Helsinki, 44 reviews, newest 'last week'"
+      "map": "Google Maps 'St. George Bakery' (Yrjönkatu 13), newest review shown 2 days ago"
     },
     {
-      "name": "The Social (Clarion Hotel Mestari)",
-      "page_name": "The Social Mestari",
-      "src": "https://www.strawberryhotels.com/blog/finland/family-friendly-restaurants-helsinki/",
-      "date": "2025-12",
-      "map": "Google Maps 'Restaurant The Social Bar & Bistro', Fredrikinkatu 51, 41 reviews, newest 'last month'"
+      "name": "Leikki – the Museum of Play",
+      "page_name": "Leikki – the Museum of Play",
+      "src": "https://www.visitespoo.fi/en/products/leikki-museum-play",
+      "date": "official",
+      "map": "Google Maps 'Leikki - The Museum Of Play' (Ahertajantie 3, Espoo), newest review shown a week ago"
     },
     {
-      "name": "Toscanini",
-      "page_name": "Toscanini",
-      "src": "https://www.strawberryhotels.com/blog/finland/family-friendly-restaurants-helsinki/",
-      "date": "2025-12",
-      "map": "Google Maps 'Restaurant Toscanini', Bulevardi 4, 855 reviews, newest '1 day ago'"
+      "name": "Leo's Espoo Laajalahti",
+      "page_name": "Leo's Espoo Laajalahti",
+      "src": "https://www.visitespoo.fi/en/products/leos-espoo-laajalahti",
+      "date": "official",
+      "map": "Google Maps 'Leo's Espoo Laajalahti' (Sinimäentie 20), newest review shown 2 days ago"
     },
     {
-      "name": "Linnankellari",
-      "page_name": "Linnankellari",
-      "src": "https://www.strawberryhotels.com/blog/finland/family-friendly-restaurants-helsinki/",
-      "date": "2025-12",
-      "map": "Google Maps 'Restaurant Linnankellari', 231 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Puppet Theatre Sampo",
-      "page_name": "Nukketeatteri Sampo",
-      "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
-      "date": "2026-01",
-      "map": "Google Maps 'Puppet Theatre Sampo', 171 reviews, newest 'last month'"
-    },
-    {
-      "name": "Helsinki Winter Garden",
-      "page_name": "Winter Garden",
-      "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
-      "date": "2026-01",
-      "map": "Google Maps 'Helsinki Winter Garden', 2,108 reviews, newest '22 hours ago'"
-    },
-    {
-      "name": "Leikkiluola",
-      "page_name": "Leikkiluola",
-      "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
-      "date": "2026-01",
-      "map": "Google Maps 342 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "SkyWheel Helsinki",
-      "page_name": "SkyWheel Helsinki",
-      "src": "https://www.strawberryhotels.com/blog/finland/family-activities-helsinki/",
-      "date": "2025-12",
-      "map": "Google Maps 5,110 reviews, newest '19 hours ago'"
-    },
-    {
-      "name": "Helsinki Tram Museum",
-      "page_name": "Tram Museum",
-      "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
-      "date": "2026-01",
-      "map": "Google Maps 'Helsinki Tram Museum', 964 reviews, newest '3 days ago'"
+      "name": "Leo's Espoo Suomenoja",
+      "page_name": "Leo's Espoo Suomenoja",
+      "src": "https://www.visitespoo.fi/en/products/leos-espoo-suomenoja",
+      "date": "official",
+      "map": "Google Maps 'Leo's Espoo Suomenoja' (Finnoonlaaksontie 9), newest review shown a day ago"
     }
   ],
   "left_out": [
     {
-      "name": "Verkkokauppa.com",
-      "why": "a shop, not a thing to do"
+      "name": "Paradox Museum, Haltia",
+      "why": "source page from 2019"
     },
     {
-      "name": "The Social Aviapolis, Sandis",
-      "why": "in Vantaa and Espoo, outside Helsinki"
-    },
-    {
-      "name": "myhelsinki.fi",
-      "why": "its pages would not open from here"
+      "name": "The Social Aviapolis",
+      "why": "at the airport in Vantaa"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
