@@ -1790,6 +1790,43 @@
           },
           "q": "Spanish Banks Beach, Vancouver",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.destinationvancouver.com/inspirations/family-and-kids/kidtropolis",
+          "name": {
+            "th": "เดอะเวิลด์ออฟคิดโทรโพลิส",
+            "en": "The World of Kidtropolis"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนนัมเบอร์ทู ริชมอนด์",
+            "en": "No. 2 Road, Richmond"
+          },
+          "what": {
+            "th": "เมืองจำลองสำหรับเด็กขนาด 17,000 ตร.ฟุต มีอุปกรณ์และชุดจริง",
+            "en": "A 17,000 sq ft miniature city for children with real props and costumes"
+          },
+          "why": {
+            "th": "เล่นบทบาทสมมติในเมืองเล็กที่สร้างเพื่อเด็ก",
+            "en": "Pretend play in a little city made for children"
+          },
+          "q": "The World of Kidtropolis, 5940 No 2 Rd, Richmond",
+          "ok": "2026-11"
         }
       ]
     }
