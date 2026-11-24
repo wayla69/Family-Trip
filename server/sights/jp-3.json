@@ -3744,6 +3744,80 @@
           "q": "TOYLO PARK, Lalaport Yokohama, Tsuzuki, Yokohama",
           "ok": "2026-11",
           "src": "https://report.iko-yo.net/articles/29810"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/20986/",
+          "name": {
+            "th": "สวนสัตว์คานาซาวะ (โยโกฮามา)",
+            "en": "Kanazawa Zoological Gardens"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เขตคานาซาวะ โยโกฮามา",
+            "en": "Kanazawa Ward, Yokohama"
+          },
+          "what": {
+            "th": "สวนสัตว์ในสวนเขียว ส่วนใหญ่เป็นสัตว์กินพืชจากทั่วโลก เช่น โคอาลาและยีราฟ",
+            "en": "A zoo in green parkland with mostly plant-eating animals from around the world, such as koalas and giraffes"
+          },
+          "why": {
+            "th": "มีมุมให้เด็กจับโพนี่ แพะ และแกะ",
+            "en": "A petting corner with ponies, goats and sheep"
+          },
+          "q": "Kanazawa Zoological Gardens, Kamariyahigashi, Kanazawa Ward, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/20986/",
+          "name": {
+            "th": "ท่าเรือโอซันบาชิ",
+            "en": "Osanbashi Pier"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ไคกันโดริ ท่าเรือโยโกฮามา โยโกฮามา",
+            "en": "Kaigandori, Yokohama Port, Yokohama"
+          },
+          "what": {
+            "th": "ท่าเรือโดยสาร มีลานบนหลังคาและจุดชมวิวท่าเรือ",
+            "en": "The passenger terminal with a rooftop plaza and observation deck over the port"
+          },
+          "why": {
+            "th": "เดินเล่นริมทะเล ดูเรือสำราญลำใหญ่",
+            "en": "A seaside walk watching big cruise ships"
+          },
+          "q": "Osanbashi Pier, Kaigandori, Naka Ward, Yokohama",
+          "ok": "2026-11"
         }
       ]
     }

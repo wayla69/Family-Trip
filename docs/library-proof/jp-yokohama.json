@@ -1,0 +1,48 @@
+{
+  "town": "jp-yokohama",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows from aumo (Jul 2025) and GOOD LUCK TRIP (Apr 2025), all passed library-check.cjs, 4 went in",
+  "added": [
+    {
+      "name": "Gather @ Eating House",
+      "page_name": "GATHER@EATINGHOUSE",
+      "src": "https://aumo.jp/articles/3778584",
+      "date": "2025-07",
+      "map": "Google Maps 'Gather @ Eating House', 828 reviews, newest shown 7 days ago"
+    },
+    {
+      "name": "Yamatoya (Yokohama)",
+      "page_name": "大和屋 横浜店",
+      "src": "https://aumo.jp/articles/3778584",
+      "date": "2025-07",
+      "map": "Google Maps 'Yamatoya Yokohama' (Sogo Yokohama 10F), 160 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "Kanazawa Zoological Gardens",
+      "page_name": "Kanazawa Zoological Gardens",
+      "src": "https://www.gltjp.com/en/article/item/20986/",
+      "date": "2025-04",
+      "map": "Google Maps 'Kanazawa Zoological Gardens', 2,438 reviews, newest shown 3 hours ago"
+    },
+    {
+      "name": "Osanbashi Pier",
+      "page_name": "Osanbashi Pier, Yokohama Port",
+      "src": "https://www.gltjp.com/en/article/item/20986/",
+      "date": "2025-04",
+      "map": "Google Maps 'Osanbashi Pier', 392 reviews, newest shown a month ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Frenchna Yokohama Bay Quarter",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Landmark Tower Sky Garden",
+      "why": "temporarily closed on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
