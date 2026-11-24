@@ -469,6 +469,117 @@
           "q": "Da Lat Milk Joint-stock Company, Tu Tra, Đơn Dương",
           "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 220,000–490,000 ด่ง",
+            "en": "≈ 220,000–490,000 VND"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "ทีรีสอร์ตเปรนน์",
+            "en": "Tea Resort Prenn"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เชิงช่องเขาเปรนน์ ทางหลวง 20 ดาลัด",
+            "en": "Prenn Pass foot, Highway 20, Đà Lạt"
+          },
+          "what": {
+            "th": "สวนเล่นและเกม มีโซนเด็กพร้อมบ้านลมและแทรมโพลีน",
+            "en": "A park with play and games, and a children's area with bouncy houses and a trampoline"
+          },
+          "why": {
+            "th": "มีบ้านลม เต็นท์กระโดด และสวนเลโก้",
+            "en": "Bouncy houses, a jump tent and a Lego garden"
+          },
+          "q": "Tea Resort Prenn, Đà Lạt",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Khu vui chơi Ladalat",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000 ด่งต่อคน",
+            "en": "≈ 50,000 VND a person"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "โซนเล่นในร่มลาดาลัด",
+            "en": "Ladalat indoor play zone"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไมอันห์ด่าว ดาลัด",
+            "en": "Mai Anh Đào street, Đà Lạt"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มราว 7,000 ตร.ม. ชั้นใต้ดินโรงแรมลาดาลัด",
+            "en": "An indoor play centre of about 7,000 m² in the Ladalat hotel's basement"
+          },
+          "why": {
+            "th": "โซนเล่นในร่มขนาดใหญ่ สำหรับวันฝนตก",
+            "en": "A big indoor play zone for a rainy day"
+          },
+          "q": "La DaLat khu vui chơi trẻ em, 106A Mai Anh Đào, Đà Lạt",
+          "ok": "2026-11"
+        },
+        {
+          "local": "C'KidZone Đà Lạt",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000–70,000 ด่งต่อคน",
+            "en": "≈ 50,000–70,000 VND a person"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "ซีคิดโซน จัตุรัสลามเวียน",
+            "en": "C'KidZone (Lâm Viên Square)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จัตุรัสลามเวียน ซวนเฮือง ดาลัด",
+            "en": "Lâm Viên Square, Xuân Hương, Đà Lạt"
+          },
+          "what": {
+            "th": "โซนเล่นในร่ม มีระบายสี สไลเดอร์ ตกปลา ม้าหมุน และบ่อบอล",
+            "en": "An indoor play zone with colouring, slides, fishing, a carousel and a ball pit"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก มีมุมเล่นทราย",
+            "en": "Indoor play for a rainy day, with a sand corner"
+          },
+          "q": "Khu vui chơi trẻ em C'Kidzone, Quảng trường Lâm Viên, Đà Lạt",
+          "ok": "2026-11"
         }
     ]
     },
