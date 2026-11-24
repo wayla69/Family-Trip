@@ -671,6 +671,47 @@
           },
           "q": "Valle delle Ferriere, Amalfi",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.napolike.it/museo-correale-sorrento",
+          "name": {
+            "th": "พิพิธภัณฑ์กอร์เรอาเลดีแตร์ราโนวา",
+            "en": "Museo Correale di Terranova"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนกอร์เรอาเล ซอร์เรนโต",
+            "en": "Via Correale, Sorrento"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในวิลล่าศตวรรษที่ 18 มีสวนส้มและระเบียงเหนือทะเล",
+            "en": "A museum in an 18th-century villa with a citrus garden and a terrace over the sea"
+          },
+          "why": {
+            "th": "เด็กถึง 10 ขวบเข้าฟรี ภาพจำลองเมืองโบราณเด็กเล็กชอบ",
+            "en": "Children up to 10 go in free; virtual rebuilds of the old town appeal to the youngest"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Museo Correale di Terranova, Via Correale 50, Sorrento",
+          "ok": "2026-11"
         }
       ]
     },
