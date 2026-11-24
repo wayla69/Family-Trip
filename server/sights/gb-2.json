@@ -660,6 +660,289 @@
           "q": "Gloucestershire Warwickshire Steam Railway, Winchcombe Station",
           "ok": "2026-11",
           "tip": { "en": "Trains run on set days from March to early January; no trains in January and February", "th": "รถไฟวิ่งตามวันที่กำหนด มีนาคมถึงต้นมกราคม ม.ค.–ก.พ. ไม่มีรถไฟ" }
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+          "name": {
+            "th": "โรงอาบน้ำโรมัน",
+            "en": "The Roman Baths"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แอบบีย์เชิร์ชยาร์ด บาธ",
+            "en": "Abbey Churchyard, Bath"
+          },
+          "what": {
+            "th": "โรงอาบน้ำโรมันที่ยังสมบูรณ์ มีนักแสดงแต่งชุดโรมัน",
+            "en": "A well-kept Roman bathing site with costumed Roman characters"
+          },
+          "why": {
+            "th": "มีเส้นทางกิจกรรมสำหรับเด็กเล็กตามนกฮูกฮูต และแอปเด็กฟรี",
+            "en": "A pre-school trail following Hoot the Owl, and a free kids' app"
+          },
+          "tip": {
+            "th": "ไปช่วงเช้าที่คนน้อยกว่า",
+            "en": "Go early in the morning, when it's quieter"
+          },
+          "q": "The Roman Baths, Abbey Churchyard, Bath",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+          "name": {
+            "th": "โรงละครดิเอ้ก",
+            "en": "The Egg theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนมอนมัท บาธ",
+            "en": "Monmouth Street, Bath"
+          },
+          "what": {
+            "th": "โรงละครเด็กที่มีการแสดงสำหรับเด็กเล็ก",
+            "en": "A children's theatre with shows for the youngest"
+          },
+          "why": {
+            "th": "มีการแสดงสำหรับเด็กเล็ก ทารกที่อุ้มมักเข้าฟรี",
+            "en": "Shows for little ones; babies in arms often free"
+          },
+          "tip": {
+            "th": "มีการแสดงทุกวันเสาร์ ช่วงปิดเทอมมีมากขึ้น ควรจองล่วงหน้า",
+            "en": "Shows every Saturday, more in the holidays; book holiday shows ahead"
+          },
+          "q": "The Egg Theatre, Monmouth St, Bath",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+          "name": {
+            "th": "พิพิธภัณฑ์และสวนอเมริกัน",
+            "en": "American Museum & Gardens"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "แคลเวอร์ตันดาวน์ บาธ",
+            "en": "Claverton Down, Bath"
+          },
+          "what": {
+            "th": "ศิลปะพื้นบ้านอเมริกันในสวนชานเมืองบาธ",
+            "en": "American folk and decorative arts in gardens outside Bath"
+          },
+          "why": {
+            "th": "มีสวนเด็กพร้อมสนามเด็กเล่นไม้",
+            "en": "A children's garden with a wooden playground"
+          },
+          "tip": {
+            "th": "เตรียมอาหารไปปิกนิกในสวน",
+            "en": "Bring a picnic for the gardens"
+          },
+          "q": "American Museum & Gardens, Claverton Manor, Bath",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+          "name": {
+            "th": "ไดรัมพาร์ก",
+            "en": "Dyrham Park (National Trust)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไดรัม ใกล้บาธ",
+            "en": "Dyrham, near Bath"
+          },
+          "what": {
+            "th": "สวนกว้างพร้อมบ้านเก่า คาเฟ่ในโรงนาเก่า และเส้นทางเดิน",
+            "en": "Parkland with a house, a café in old farm buildings and outdoor trails"
+          },
+          "why": {
+            "th": "มีลานเล่น Old Lodge และเส้นทางกิจกรรมกลางแจ้ง",
+            "en": "The Old Lodge play area and outdoor trails"
+          },
+          "tip": {
+            "th": "เด็กต่ำกว่า 5 ขวบเข้าฟรี",
+            "en": "Under-5s go in free"
+          },
+          "q": "Dyrham Park, Dyrham, Bath",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เข้าฟรี (บริจาคได้)",
+            "en": "Free (donations welcome)"
+          },
+          "book": "none",
+          "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+          "name": {
+            "th": "ฟาร์มเมืองบาธ",
+            "en": "Bath City Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ไวต์เวย์ ทเวอร์ตัน บาธ",
+            "en": "Whiteway, Twerton, Bath"
+          },
+          "what": {
+            "th": "ฟาร์มในเมือง มีไก่ หมู แพะ และวัว",
+            "en": "A city farm with chickens, pigs, goats and cows"
+          },
+          "why": {
+            "th": "มีลานเล่นรูปปราสาท บ่อทราย สไลเดอร์ และน้ำตกเล็ก",
+            "en": "A castle play area with a sandpit, slide and water cascade"
+          },
+          "tip": {
+            "th": "มาช่วงเวลาให้อาหารสัตว์",
+            "en": "Come at feeding time"
+          },
+          "q": "Bath City Farm, Kelston View, Whiteway, Bath",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+          "name": {
+            "th": "ลานเล่นป่าเรนโบว์วูด",
+            "en": "Rainbow Wood play area"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แคลเวอร์ตันดาวน์ บาธสกายไลน์ บาธ",
+            "en": "Claverton Down, Bath Skyline, Bath"
+          },
+          "what": {
+            "th": "ลานเล่นในป่าบนเส้นทางเดินบาธสกายไลน์",
+            "en": "A woodland play area on the Bath Skyline walk"
+          },
+          "why": {
+            "th": "มีเส้นทางประตูนางฟ้า ชิงช้าเชือก ท่อนไม้ให้ก้าว และกระดานหก",
+            "en": "A fairy-door trail, a rope swing, stepping logs and a see-saw"
+          },
+          "q": "Rainbow Wood, Claverton Down, Bath",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+          "name": {
+            "th": "รถไฟเอวอนแวลลีย์",
+            "en": "Avon Valley Railway"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สถานีบิตตัน ระหว่างบาธกับบริสตอล",
+            "en": "Bitton Station, between Bath and Bristol"
+          },
+          "what": {
+            "th": "นั่งรถไฟไอน้ำและดีเซลจากสถานีสมัยวิกตอเรีย มีพิพิธภัณฑ์เล็ก",
+            "en": "Steam and diesel train rides from a Victorian station, with a small museum"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 5 ขวบนั่งฟรี",
+            "en": "Under-5s ride free"
+          },
+          "tip": {
+            "th": "มาก่อนเวลาเพื่อดูหัวรถจักรเข้าสถานี",
+            "en": "Arrive early to watch the engine come in"
+          },
+          "q": "Avon Valley Railway, Bitton Station, Bath Rd",
+          "ok": "2026-11"
         }
       ]
     },
