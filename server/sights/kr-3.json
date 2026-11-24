@@ -762,6 +762,43 @@
           "q": "Jungle Media Park, Bomun-ro, Gyeongju",
           "ok": "2026-11",
           "src": "https://mom-mom.net/en/travel/places/62cd18a22718fee95297deaa"
+        },
+        {
+          "local": "경주 동궁원",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelmapjourney.com/gyeongju-indoor-museum-donggungwon-rain-choice/",
+          "name": {
+            "th": "สวนดงกุงวอน คย็องจู",
+            "en": "Gyeongju East Palace Garden (Donggungwon)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนโบมุน ย่านโบมุน คย็องจู",
+            "en": "Bomun-ro, Bomun area, Gyeongju"
+          },
+          "what": {
+            "th": "เรือนกระจกพืชกึ่งเขตร้อน",
+            "en": "A glass greenhouse of subtropical plants"
+          },
+          "why": {
+            "th": "อุ่นและไม่เปียกในวันฝนตก มีกิจกรรมสำหรับเด็ก",
+            "en": "Warm and dry on a rainy day, with a kids' activity programme"
+          },
+          "q": "Gyeongju East Palace Garden, Bomun-ro, Gyeongju",
+          "ok": "2026-11"
         }
       ]
     },
