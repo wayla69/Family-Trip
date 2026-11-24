@@ -942,6 +942,154 @@
           "q": "Ono Karakuri Museum, Kanazawa",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/article/item/21375/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.magical-trip.com/media/15-best-kanazawa-attractions-for-families-with-kids-museums-parks-restaurants-2025/",
+          "name": {
+            "th": "หอสมุดจังหวัดอิชิกาวะ",
+            "en": "Ishikawa Prefectural Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โคดัตสึโนะ คานาซาวะ",
+            "en": "Kodatsuno, Kanazawa"
+          },
+          "what": {
+            "th": "หอสมุดจังหวัดเปิดใหม่ปี 2022 จัดหนังสือเป็น 12 ธีม",
+            "en": "A prefectural library that reopened in 2022, its books sorted into 12 themes"
+          },
+          "why": {
+            "th": "มีมุมเด็กที่จัดไว้อย่างดี",
+            "en": "A well-equipped kids' space"
+          },
+          "q": "Ishikawa Prefectural Library, Kodatsuno, Kanazawa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.magical-trip.com/media/15-best-kanazawa-attractions-for-families-with-kids-museums-parks-restaurants-2025/",
+          "name": {
+            "th": "สวนสาธารณะโอกุอุตัตสึยามะ",
+            "en": "Okuutatsuyama Kenmin Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "วากามัตสึมาจิ คานาซาวะ",
+            "en": "Wakamatsu-machi, Kanazawa"
+          },
+          "what": {
+            "th": "สวนใหญ่บนสนามกอล์ฟเก่า มีสนามหญ้า ลานกีฬา และที่ปิ้งย่าง",
+            "en": "A big park on a former golf course with lawns, sports fields and barbecue areas"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นมีเครื่องเล่นปีนป่ายขนาดใหญ่",
+            "en": "A playground with big climbing frames"
+          },
+          "q": "Okuutatsuyama Kenmin Park, Wakamatsumachi, Kanazawa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitkanazawa.jp/en/feature/detail_678.html",
+          "name": {
+            "th": "ท่าเรือสำราญคานาซาวะ",
+            "en": "Kanazawa Port Cruise Terminal"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ท่าเรือคานาซาวะ คานาซาวะ",
+            "en": "Kanazawa Port, Kanazawa"
+          },
+          "what": {
+            "th": "ประตูทางทะเลของคานาซาวะ เรือสำราญมาจอด",
+            "en": "Kanazawa's sea gateway, where cruise ships call"
+          },
+          "why": {
+            "th": "มักเห็นเรือตรวจการณ์ลำใหญ่ของหน่วยยามฝั่งจอดอยู่ด้านหน้า",
+            "en": "A big Coast Guard patrol ship can often be seen in front"
+          },
+          "q": "Kanazawa Port Cruise Terminal, Muryojimachi, Kanazawa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitkanazawa.jp/en/feature/detail_678.html",
+          "name": {
+            "th": "ตลาดปลาอิคิอิคิ ท่าเรือคานาซาวะ",
+            "en": "Kanazawa Port Iki-iki Market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "ท่าเรือคานาซาวะ คานาซาวะ",
+            "en": "Kanazawa Port, Kanazawa"
+          },
+          "what": {
+            "th": "ตลาดคึกคัก ขายอาหารทะเลสดจากทะเลแถบคานาซาวะ",
+            "en": "A lively market of fresh seafood from the waters off Kanazawa"
+          },
+          "why": {
+            "th": "ตลาดคึกคัก คนท้องถิ่นชอบ",
+            "en": "A busy, cheerful market loved by locals"
+          },
+          "q": "Kanazawa Port Ikiiki Fish Market, Muryojimachi, Kanazawa",
+          "ok": "2026-11"
         }
       ]
     },

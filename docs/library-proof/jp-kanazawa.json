@@ -1,0 +1,55 @@
+{
+  "town": "jp-kanazawa",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 7 rows from Magical Trip (Feb 2026) and Visit Kanazawa (Mar 2025), all passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "Fusion21",
+      "page_name": "Fusion21",
+      "src": "https://www.magical-trip.com/media/kanazawa-with-kids-2025-8-family-friendly-restaurants-5-must-visit-attractions/",
+      "date": "2026-02",
+      "map": "Google Maps 'Cafe Restaurant Fusion 21', 250 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Ishikawa Prefectural Library",
+      "page_name": "Ishikawa Prefectural Library",
+      "src": "https://www.magical-trip.com/media/15-best-kanazawa-attractions-for-families-with-kids-museums-parks-restaurants-2025/",
+      "date": "2026-02",
+      "map": "Google Maps 'Ishikawa Prefectural Library', 1,966 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Okuutatsuyama Kenmin Park",
+      "page_name": "Okuutatsuyama Kenmin Park",
+      "src": "https://www.magical-trip.com/media/15-best-kanazawa-attractions-for-families-with-kids-museums-parks-restaurants-2025/",
+      "date": "2026-02",
+      "map": "Google Maps 'Okuutatsuyama Kenmin Park', 601 reviews, newest shown 11 days ago"
+    },
+    {
+      "name": "Kanazawa Port Cruise Terminal",
+      "page_name": "Kanazawa Port Cruise Terminal",
+      "src": "https://visitkanazawa.jp/en/feature/detail_678.html",
+      "date": "2026-02",
+      "map": "Google Maps 'Kanazawa Port Cruise Terminal', 838 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Kanazawa Port Iki-iki Market",
+      "page_name": "Kanazawa Port Iki-iki Market",
+      "src": "https://visitkanazawa.jp/en/feature/detail_678.html",
+      "date": "2026-02",
+      "map": "Google Maps 'Kanazawa Port Ikiiki Fish Market', 3,012 reviews, newest shown 3 weeks ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Dining KUUGO",
+      "why": "a restaurant floor of a building, not one place"
+    },
+    {
+      "name": "Ono Odaiba Park",
+      "why": "no review from the last six months shown on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
