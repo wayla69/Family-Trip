@@ -2815,6 +2815,80 @@
           },
           "q": "Doppelbrücke, Taubertalweg, Rothenburg ob der Tauber",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://freizeitmonster.de/blog/indoor-spielplaetze-dinkelsbuehl",
+          "name": {
+            "th": "ฟันทาเซีย คินเดอร์ลันด์",
+            "en": "FUNtasia Kinderland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเอลวังเงอร์ ดิงเคิลส์บึล",
+            "en": "Ellwanger Straße, Dinkelsbühl"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มในอาคารใหญ่",
+            "en": "An indoor play centre in a covered hall"
+          },
+          "why": {
+            "th": "มีเครื่องปีน บ้านลม และแทรมโพลีน",
+            "en": "Climbing, bouncy castles and trampolines"
+          },
+          "q": "Funtasia Kinderland, Ellwanger Str. 21, Dinkelsbühl",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.infranken.de/lk/franken/ausflug/spielplaetze-in-franken-altmuehlsee-bamberg-dinkelsbuehl-familie-ausflug-wasserspielplatz-abenteuer-art-6221976",
+          "name": {
+            "th": "สนามเด็กเล่นผจญภัยไบลเชอ",
+            "en": "Bleiche adventure playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไบลช์เวก ดิงเคิลส์บึล",
+            "en": "Bleichweg, Dinkelsbühl"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นผจญภัย มีหอปีนสูง สะพานเชือก และสลิง",
+            "en": "An adventure playground with tall climbing towers, rope bridges and a zip line"
+          },
+          "why": {
+            "th": "มีอะไรให้เด็กเล่นเยอะ",
+            "en": "Plenty of action for children"
+          },
+          "q": "Spielplatz Bleiche, Bleichweg, Dinkelsbühl",
+          "ok": "2026-11"
         }
       ]
     },
