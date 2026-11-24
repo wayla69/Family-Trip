@@ -917,6 +917,162 @@
           },
           "q": "주라지 신세계센텀시티점, 센텀남대로 35, 부산",
           "ok": "2026-11"
+        },
+        {
+          "local": "부산시청 열린도서관 들락날락",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/6a68148152020564a1a38d66",
+          "name": {
+            "th": "ทึลลักนัลลัก ศาลาว่าการปูซาน",
+            "en": "Deullak Nallak (Busan City Hall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศาลาว่าการปูซาน ย็อนเจ ปูซาน",
+            "en": "Busan City Hall, Yeonje-gu, Busan"
+          },
+          "what": {
+            "th": "ห้องสมุดและที่เล่นของเด็กในศาลาว่าการปูซาน มีห้องนิทานและจอใหญ่",
+            "en": "A children's library and play space in Busan City Hall, with a storybook room and a big media screen"
+          },
+          "why": {
+            "th": "ห้องนิทานบรรยากาศเหมือนในเทพนิยาย ถอดรองเท้าก่อนเข้า",
+            "en": "A storybook room that feels like a fairy tale; shoes off at the door"
+          },
+          "tip": {
+            "th": "ปิดวันหยุดนักขัตฤกษ์ วันเสาร์อาทิตย์ควรจองห้องนิทานล่วงหน้า",
+            "en": "Closed on public holidays; book the storybook room ahead at weekends"
+          },
+          "q": "부산시청 열린도서관 들락날락, 중앙대로 1001, 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "부산광역시교육청어린이창의교육관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mom-mom.net/travel/places/66860ce84290823eb81e1400",
+          "name": {
+            "th": "ศูนย์การเรียนรู้สร้างสรรค์สำหรับเด็กปูซาน",
+            "en": "Busan Children's Creative Education Centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โชอึบ พูซันจิน ปูซาน",
+            "en": "Choeup-dong, Busanjin-gu, Busan"
+          },
+          "what": {
+            "th": "ศูนย์การเรียนรู้ของเด็กโดยสำนักงานการศึกษาปูซาน มีโซนธรรมชาติ วิทยาศาสตร์ และจินตนาการ",
+            "en": "A children's learning centre of the Busan education office, with nature, science and imagination zones"
+          },
+          "why": {
+            "th": "มีโซนตั้งแต่เด็กเล็กถึงประถม ห้องให้นม และที่เปลี่ยนผ้าอ้อม",
+            "en": "Zones from toddlers to primary age, a nursing room and nappy changing"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ เช้าวันธรรมดาเป็นของกลุ่มโรงเรียน ควรไปช่วงบ่าย",
+            "en": "Closed on Mondays; weekday mornings are for school groups, so go in the afternoon"
+          },
+          "q": "부산광역시교육청어린이창의교육관, 성지곡로33번길 29-28, 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "플레이랩 부산점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/69c34d953cc4acad909981bc",
+          "name": {
+            "th": "เพลย์แล็บ ปูซาน แฮอุนแด",
+            "en": "PlayLab (Busan, Haeundae)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชวาดง แฮอุนแด (ใกล้สถานีจังซัน) ปูซาน",
+            "en": "Jwa-dong, Haeundae-gu (near Jangsan Station), Busan"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ที่เด็กเล่นกับพนักงาน ผู้ปกครองรออีกห้อง",
+            "en": "A kids' café where children play with staff while parents wait apart"
+          },
+          "why": {
+            "th": "มีกิจกรรมเล่นสำหรับเด็กเล็ก มีเก้าอี้เด็ก",
+            "en": "Play programmes for little ones; a high chair"
+          },
+          "q": "플레이랩 부산점, 세실로69번길 15, 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "당신처럼 애지중지 키즈카페",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://busan.breaknews.com/42356",
+          "name": {
+            "th": "คิดส์คาเฟ่สาธารณะแอจีจุงจี สวนพลเมืองปูซาน",
+            "en": "Aejijungji Public Kids Café (Busan Citizens Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนพลเมืองปูซาน พูซันจิน ปูซาน",
+            "en": "Busan Citizens Park, Busanjin-gu, Busan"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่สาธารณะสำหรับเด็กต่ำกว่า 5 ขวบ ในสวนพลเมืองปูซาน เปิดเดือนกุมภาพันธ์ 2026",
+            "en": "A public kids' café for under-fives in Busan Citizens Park, opened in February 2026"
+          },
+          "why": {
+            "th": "ที่เล่นสำหรับเด็กเล็ก มีกิจกรรมประดิษฐ์ทำร่วมกับพ่อแม่",
+            "en": "Play made for under-fives, with parent-and-child making sessions"
+          },
+          "q": "당신처럼 애지중지 키즈카페, 시민공원로 73, 부산",
+          "ok": "2026-11"
         }
     ]
     }
