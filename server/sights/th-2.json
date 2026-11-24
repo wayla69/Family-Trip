@@ -637,6 +637,43 @@
           },
           "q": "Adventure Village Chalong, Phuket",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ฿490 ต่อชั่วโมง · ฿900 ต่อวัน",
+            "en": "≈ ฿490 an hour · ฿900 a day"
+          },
+          "book": "none",
+          "src": "https://thethaiger.com/guides/best-of/things-to-do/are-there-family-friendly-activities-at-jungceylon-phuket",
+          "name": {
+            "th": "ฟร็อกกี้ส์ฟันพาร์ก จังซีลอน",
+            "en": "Froggy's Fun Park (Jungceylon)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จังซีลอน ป่าตอง",
+            "en": "Jungceylon, Patong"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม มีแทรมโพลีน ซิปไลน์ เกมอาร์เคด และเกมวีอาร์",
+            "en": "An indoor fun park with trampolines, a zipline, arcade games and VR"
+          },
+          "why": {
+            "th": "แทรมโพลีนและเครื่องปีนป่ายสำหรับเด็กตั้งแต่ 4 ขวบ",
+            "en": "Trampolines and climbing for children from four"
+          },
+          "q": "Froggy's Fun Park, Jungceylon, Patong, Phuket",
+          "ok": "2026-11"
         }
       ]
     },
