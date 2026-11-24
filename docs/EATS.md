@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Gyeongju, Kakao Map pass**: +1 (Eden Garden), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-gyeongju.json`.
+
+- **24 Nov 2026, Gyeongju** (docs/library-briefs batch-84, round 3): +1 (Hwangri Hwadukga). Proof in `docs/library-proof/kr-gyeongju.json`.

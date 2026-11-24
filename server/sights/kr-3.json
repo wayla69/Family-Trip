@@ -799,6 +799,84 @@
           },
           "q": "Gyeongju East Palace Garden, Bomun-ro, Gyeongju",
           "ok": "2026-11"
+        },
+        {
+          "local": "더스완",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩30,000 ต่อ 3 ชั่วโมง",
+            "en": "≈ ₩30,000 for 3 hours"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65ee8a8efcabdf8fcd70be78",
+          "name": {
+            "th": "เดอะสวอนคิดส์คาเฟ่ ฮย็องก๊ก",
+            "en": "The Swan kids café (Hyeongok)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนยงดัม ฮย็องก๊กมย็อน คย็องจู",
+            "en": "Yongdam-ro, Hyeongok-myeon, Gyeongju"
+          },
+          "what": {
+            "th": "คาเฟ่เด็กมีเล่นทราย ระบายสี และสระน้ำอุ่น",
+            "en": "A kids' café with sand play, painting and a warm-water pool"
+          },
+          "why": {
+            "th": "มีโซนเล่นสำหรับเด็ก",
+            "en": "A play zone for children"
+          },
+          "q": "더스완, 용담로 535-9, 현곡면, 경주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "코스믹 리조트",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/69f17fd18345b3a2e56b2e2b",
+          "name": {
+            "th": "คอสมิกรีสอร์ต มีเดียอาร์ต",
+            "en": "Cosmic Resort (media art)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนช็อนบุกนัม ย่านโบมุน คย็องจู",
+            "en": "Cheonbungnam-ro, Bomun area, Gyeongju"
+          },
+          "what": {
+            "th": "ห้องนิทรรศการมีเดียอาร์ตธีมอวกาศขนาดใหญ่",
+            "en": "A big space-themed media art hall"
+          },
+          "why": {
+            "th": "ห้องแบบลงมือเล่นสำหรับทั้งครอบครัว",
+            "en": "Interactive rooms for the whole family"
+          },
+          "tip": {
+            "th": "10:00–19:00",
+            "en": "10:00–19:00"
+          },
+          "q": "코스믹 리조트, 천북남로 176, 경주",
+          "ok": "2026-11"
         }
       ]
     },
