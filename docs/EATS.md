@@ -533,3 +533,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 - **24 Nov 2026, Suwon** (docs/library-briefs batch-50): +1 (Four Seasons Kitchen Gwanggyo). Proof in `docs/library-proof/kr-suwon.json`.
 
 - **24 Nov 2026, Suwon, Kakao Map pass**: +4 (Bbok Sikdang (Gwanggyo, Haenggung), Hanchon Seolleongtang, Myeongnyun Jinsa Galbi), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-suwon.json`.
+
+- **24 Nov 2026, Suwon** (docs/library-briefs batch-65, round 3): +1 (Haeundae Pa). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).

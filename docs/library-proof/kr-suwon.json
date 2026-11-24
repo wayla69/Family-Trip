@@ -39,9 +39,37 @@
       "src": "https://mom-mom.net/en/travel/places/68ac35f0ca795b20d1869bd8",
       "date": "2026-09",
       "map": "Kakao Map '명륜진사갈비 수원영통점' (봉영로 1617 훼미리타워 2층), open, 38 reviews, newest 18 Nov 2026"
+    },
+    {
+      "name": "Haeundae Pa (Suwon 1st branch)",
+      "page_name": "해운대패 수원1호점",
+      "src": "https://mom-mom.net/travel/places/6808ae528764030395d6b549",
+      "date": "2026-06",
+      "map": "Kakao Map '해운대패 수원1호점' (영통로214번길 9), newest review 22 Oct 2026"
+    },
+    {
+      "name": "Gyeonggi Upcycle Plaza",
+      "page_name": "경기도업사이클플라자",
+      "src": "https://www.yugacrew.com/crewletter/suwon-indoor-kids-places",
+      "date": "2026-11",
+      "map": "Kakao Map '경기도 업사이클플라자' (서둔로 166), open 10:00–18:00, newest review 6 Nov 2026"
     }
   ],
-  "left_out": [],
+  "left_out": [
+    {
+      "name": "바운스슈퍼파크 수원영통센터",
+      "why": "no page date (library-check.cjs)"
+    },
+    {
+      "name": "쿠우쿠우 수원병점점",
+      "why": "in Hwaseong, not Suwon"
+    }
+  ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +4 (Bbok Sikdang (Gwanggyo, Haenggung), Hanchon Seolleongtang, Myeongnyun Jinsa Galbi)"
+  "kakao_pass": "24 Nov 2026: +4 (Bbok Sikdang (Gwanggyo, Haenggung), Hanchon Seolleongtang, Myeongnyun Jinsa Galbi)",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from mom-mom.net, KTripTips and Yugacrew (2026), 2 passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -1527,6 +1527,47 @@
           "q": "Dalgeurak Dodone, Jeongja-dong, Suwon",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/suwon-kids-places"
+        },
+        {
+          "local": "경기도 업사이클플라자",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/suwon-indoor-kids-places",
+          "name": {
+            "th": "คย็องกีอัปไซเคิลพลาซา",
+            "en": "Gyeonggi Upcycle Plaza"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนซอดุน ควอนซ็อน (คย็องกีซังซังแคมปัส) ซูวอน",
+            "en": "Seodun-ro, Gwonseon-gu (Gyeonggi Sangsang Campus), Suwon"
+          },
+          "what": {
+            "th": "พื้นที่ที่เปลี่ยนของเก่าเป็นของใหม่ มีนิทรรศการของอัปไซเคิล",
+            "en": "A space where old things become new, with exhibits of upcycled goods"
+          },
+          "why": {
+            "th": "เข้าฟรี แวะได้ไม่นาน แม้มีเด็กเล็ก",
+            "en": "Free entry and a short stop, even with a baby"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ บางนิทรรศการเก็บค่าเข้า",
+            "en": "Closed on Mondays; some exhibitions charge"
+          },
+          "q": "경기도 업사이클플라자, 서둔로 166, 수원",
+          "ok": "2026-11"
         }
       ]
     }
