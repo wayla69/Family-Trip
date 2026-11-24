@@ -642,6 +642,413 @@
           },
           "q": "Los Angeles County Museum of Art, 5905 Wilshire Boulevard, Los Angeles",
           "ok": "2026-11"
+        },
+        {
+          "local": "Dennis the Menace Playground",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "สวนเดนนิสเดอะเมนาซ มอนเทอเรย์",
+            "en": "Dennis the Menace Park (Monterey)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทะเลสาบเอลเอสเตโร มอนเทอเรย์",
+            "en": "El Estero Lake, Monterey"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นที่มีรถจักรไอน้ำ สะพานแขวน กำแพงปีนผา และสไลเดอร์ลูกกลิ้งยาว",
+            "en": "A playground with a steam locomotive, a rope bridge, a climbing wall and a long roller slide"
+          },
+          "why": {
+            "th": "ปีน ไถล และเล่นบนรถจักรจริง ริมทะเลสาบกลางเมือง",
+            "en": "Climb, slide and clamber over a real locomotive, by a lake in town"
+          },
+          "q": "Dennis the Menace Playground, Monterey, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Monterey County Youth Museum",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "มายมิวเซียม พิพิธภัณฑ์เยาวชนมอนเทอเรย์",
+            "en": "MY Museum (Monterey County Youth Museum)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ใจกลางเมืองมอนเทอเรย์",
+            "en": "Downtown Monterey"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็ก 9 ห้องจัดแสดง มีของให้ลงมือเล่นกว่า 50 ชิ้น",
+            "en": "A children's museum with nine galleries and over 50 hands-on exhibits"
+          },
+          "why": {
+            "th": "เล่นขายผักผลไม้ เป็นนักดับเพลิง และต่อบล็อกโฟมยักษ์",
+            "en": "Run a farm stand, play firefighter and build with giant foam blocks"
+          },
+          "q": "Monterey County Youth Museum, Monterey, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "พิพิธภัณฑ์เบย์แอเรียดิสคัฟเวอรี",
+            "en": "Bay Area Discovery Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฟอร์ตเบเกอร์ ซอซาลิโต",
+            "en": "Fort Baker, Sausalito"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กที่เชิงสะพานโกลเดนเกต สำหรับเด็ก 6 เดือนถึง 10 ขวบ",
+            "en": "A children's museum at the foot of the Golden Gate Bridge, for six months to ten years"
+          },
+          "why": {
+            "th": "ที่เล่นแบบลงมือทั้งในร่มและกลางแจ้ง ข้างสะพาน",
+            "en": "Hands-on play indoors and out, by the bridge"
+          },
+          "q": "Bay Area Discovery Museum, Sausalito, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "เอ็กซ์พลอราทอเรียม",
+            "en": "Exploratorium"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าเรือ 15 เอ็มบาร์คาเดโร ซานฟรานซิสโก",
+            "en": "Pier 15, Embarcadero, San Francisco"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แบบลงมือเล่น มีนิทรรศการกว่า 650 ชิ้น",
+            "en": "A hands-on science museum with over 650 exhibits"
+          },
+          "why": {
+            "th": "มีของให้เด็กลองเล่นเองหลายร้อยชิ้น",
+            "en": "Hundreds of exhibits children can try for themselves"
+          },
+          "q": "Exploratorium, Pier 15, San Francisco, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กดิสคัฟเวอรี ซานโฮเซ",
+            "en": "Children's Discovery Museum of San Jose"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ใจกลางเมืองซานโฮเซ",
+            "en": "Downtown San Jose"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กในอาคารสีม่วงหลังใหญ่",
+            "en": "A children's museum in a big purple building"
+          },
+          "why": {
+            "th": "นิทรรศการวิทยาศาสตร์ วัฒนธรรม และศิลปะ สำหรับเด็กแรกเกิดถึง 10 ขวบ",
+            "en": "Science, culture and art exhibits for babies to ten-year-olds"
+          },
+          "q": "Children's Discovery Museum of San Jose, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "San Francisco Zoo & Gardens",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "สวนสัตว์ซานฟรานซิสโก",
+            "en": "San Francisco Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ย่านซันเซ็ต ซานฟรานซิสโก",
+            "en": "Sunset District, San Francisco"
+          },
+          "what": {
+            "th": "สวนสัตว์ริมทะเล มีสัตว์กว่า 2,000 ตัว รวมถึงเพนกวินแอฟริกา",
+            "en": "A zoo by the ocean with over 2,000 animals, including African penguins"
+          },
+          "why": {
+            "th": "มีสวนสัตว์เด็กพร้อมสัตว์ในฟาร์มและม้าหมุน",
+            "en": "A children's zoo with farm animals and a carousel"
+          },
+          "q": "San Francisco Zoo, Sloat Blvd, San Francisco, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "ซานตาครูซบีชบอร์ดวอล์ก",
+            "en": "Santa Cruz Beach Boardwalk"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนบีช ซานตาครูซ",
+            "en": "Beach Street, Santa Cruz"
+          },
+          "what": {
+            "th": "สวนสนุกริมทะเลตั้งแต่ยุควิกตอเรีย ข้างหาดทราย",
+            "en": "A seaside amusement park from Victorian times, with a sandy beach beside it"
+          },
+          "why": {
+            "th": "มีหาดทราย เครื่องเล่นแบบคลาสสิก และม้าหมุนจากปี 1911",
+            "en": "A sandy beach, classic rides and a carousel from 1911"
+          },
+          "q": "Santa Cruz Beach Boardwalk, Santa Cruz, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+          "name": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำอ่าวมอนเทอเรย์",
+            "en": "Monterey Bay Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "แคนเนอรีโรว์ มอนเทอเรย์",
+            "en": "Cannery Row, Monterey"
+          },
+          "what": {
+            "th": "หนึ่งในพิพิธภัณฑ์สัตว์น้ำชั้นนำของโลก ริมชายฝั่งมอนเทอเรย์",
+            "en": "One of the world's great aquariums, on the Monterey coast"
+          },
+          "why": {
+            "th": "ครอบครัวท้องถิ่นที่มีเด็กเล็กชอบมาก",
+            "en": "A favourite of local families with small children"
+          },
+          "q": "Monterey Bay Aquarium, Cannery Row, Monterey, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.510families.com/little-critters-animals/",
+          "name": {
+            "th": "สวนสัตว์โอ๊คแลนด์",
+            "en": "Oakland Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สวนโนว์แลนด์ โอ๊คแลนด์",
+            "en": "Knowland Park, Oakland"
+          },
+          "what": {
+            "th": "สวนสัตว์ที่มีสิงโต เสือ และหมี และกระเช้าลอยฟ้ายาว",
+            "en": "A zoo with lions, tigers and bears, and a long gondola ride"
+          },
+          "why": {
+            "th": "นั่งกระเช้า และมีสนามเด็กเล่นบนยอดโซนแคลิฟอร์เนียเทรล",
+            "en": "A gondola ride and a playground at the top of the California Trail"
+          },
+          "q": "Oakland Zoo, Oakland, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Tilden Little Farm",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.510families.com/little-critters-animals/",
+          "name": {
+            "th": "ฟาร์มเล็กทิลเดน เบิร์กลีย์",
+            "en": "Tilden Little Farm (Berkeley)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "สวนภูมิภาคทิลเดน เบิร์กลีย์",
+            "en": "Tilden Regional Park, Berkeley"
+          },
+          "what": {
+            "th": "ฟาร์มเข้าฟรี ได้เจอแพะ วัว หมู และไก่",
+            "en": "A free farm where you meet goats, cows, pigs and chickens"
+          },
+          "why": {
+            "th": "มีสัตว์ในฟาร์มให้ดู และสนามเด็กเล่นเล็ก ๆ ข้าง ๆ",
+            "en": "Farm animals to meet and a small playground beside them"
+          },
+          "q": "Tilden Little Farm, Berkeley, CA",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Hidden Villa",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ $10 ต่อคัน",
+            "en": "≈ $10 per car"
+          },
+          "book": "req",
+          "src": "https://www.510families.com/little-critters-animals/",
+          "name": {
+            "th": "ฟาร์มฮิดเดนวิลลา",
+            "en": "Hidden Villa"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ลอสอัลทอสฮิลส์",
+            "en": "Los Altos Hills"
+          },
+          "what": {
+            "th": "ฟาร์มที่เด็กได้ไปดูไก่ แกะตัวใหญ่ และสัตว์ในฟาร์มอื่น ๆ",
+            "en": "A farm where children visit chickens, big sheep and other farm animals"
+          },
+          "why": {
+            "th": "ได้ดูสัตว์ในฟาร์มใกล้ ๆ",
+            "en": "Farm animals up close"
+          },
+          "q": "Hidden Villa, Moody Road, Los Altos Hills, CA",
+          "ok": "2026-11"
         }
       ]
     },
