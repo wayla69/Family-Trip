@@ -1439,6 +1439,88 @@
           },
           "q": "Archéoscope, Grande Rue, Le Mont-Saint-Michel",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/saint-malo/visiter-saint-malo-famille/",
+          "name": {
+            "th": "เกาะกร็องเบ",
+            "en": "Grand Bé"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอกกำแพงเมือง แซ็งมาโล",
+            "en": "off the ramparts, Saint-Malo"
+          },
+          "what": {
+            "th": "เกาะหินเล็กๆ ที่เดินถึงตอนน้ำลง ห่างกำแพงเมืองไม่กี่ร้อยเมตร",
+            "en": "A small rocky tidal island a few hundred metres off the ramparts"
+          },
+          "why": {
+            "th": "เด็กเดินบนทรายไปถึงเกาะได้ตอนน้ำลง และดูแอ่งน้ำในโขดหิน",
+            "en": "Children walk out to it on the sand at low tide and look in the rock pools"
+          },
+          "tip": {
+            "th": "ไปได้เฉพาะตอนน้ำลง วันละสองครั้ง",
+            "en": "Only on foot at low tide, twice a day"
+          },
+          "q": "Grand Bé, Saint-Malo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/saint-malo/visiter-saint-malo-famille/",
+          "name": {
+            "th": "เรือฟริเกตเลตวาลดูรัว",
+            "en": "L'Étoile du Roy (frigate)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าดูเกทรูแอง ท่าเรือ แซ็งมาโล",
+            "en": "Quai Duguay-Trouin, the port, Saint-Malo"
+          },
+          "what": {
+            "th": "เรือฟริเกตแบบศตวรรษที่ 18 จอดอยู่ในท่าเรือ",
+            "en": "An 18th-century-style frigate moored in the port"
+          },
+          "why": {
+            "th": "ขึ้นไปบนเรือได้",
+            "en": "You can climb aboard the ship"
+          },
+          "tip": {
+            "th": "บางครั้งเรือออกไปที่อื่น เช็กก่อนว่าจอดอยู่",
+            "en": "It is sometimes away; check it is in port before you go"
+          },
+          "q": "L'Étoile du Roy, Quai Duguay-Trouin, Saint-Malo",
+          "ok": "2026-11"
         }
       ]
     },
