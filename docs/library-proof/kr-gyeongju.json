@@ -2,7 +2,7 @@
   "town": "kr-gyeongju",
   "kind": "eats + sights",
   "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
   "agents": "one Haiku agent; 3 rows from mom-mom.net (2026) and a travel blog (Oct 2026), all passed library-check.cjs, 1 went in",
   "added": [
     {
@@ -11,13 +11,21 @@
       "src": "https://travelmapjourney.com/gyeongju-indoor-museum-donggungwon-rain-choice/",
       "date": "2026-10",
       "map": "Google Maps 'Gyeongju East Palace Garden', 2,449 reviews, newest shown 11 days ago"
+    },
+    {
+      "name": "Eden Garden (Gyeongju)",
+      "page_name": "Eden Garden",
+      "src": "https://mom-mom.net/en/travel/places/660cc41f5f5869cf7a03956e",
+      "date": "2026-09",
+      "map": "Kakao Map '에덴동산' (충효천길 38-6), open, 27 reviews, newest 19 Nov 2026"
     }
   ],
   "left_out": [
     {
-      "name": "Eoneu Meotjinnal, Eden Garden",
-      "why": "not found on the map"
+      "name": "Eoneu Meotjinnal",
+      "why": "not found on Kakao Map either"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "kakao_pass": "24 Nov 2026: +1 (Eden Garden)"
 }
