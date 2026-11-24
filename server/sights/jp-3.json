@@ -2678,6 +2678,117 @@
           },
           "q": "Yudaki Falls, Yumoto, Nikko",
           "ok": "2026-11"
+        },
+        {
+          "local": "大笹牧場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "name": {
+            "th": "ฟาร์มโอซาสะ",
+            "en": "Ozasa Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ที่ราบสูงคิริฟุริ ทางเหนือของนิกโก",
+            "en": "Kirifuri Plateau, northern Nikko"
+          },
+          "what": {
+            "th": "ฟาร์มโคนมขึ้นชื่อเรื่องวัวบราวน์สวิสและซอฟต์ครีม",
+            "en": "A dairy farm known for Brown Swiss cows and soft-serve ice cream"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่และมุมสัตว์ให้สัมผัส มีแพะและแกะ",
+            "en": "A big playground and a petting zoo with goats and sheep"
+          },
+          "q": "大笹牧場, 日光市瀬尾",
+          "ok": "2026-11"
+        },
+        {
+          "local": "光徳牧場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "name": {
+            "th": "ฟาร์มโคโทคุ",
+            "en": "Kotoku Ranch"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ชูกูชิ อุทยานแห่งชาตินิกโก",
+            "en": "Chugushi, Nikko National Park"
+          },
+          "what": {
+            "th": "ฟาร์มที่มีทางเดินรอบทุ่งหญ้าไปถึงบ่อน้ำ",
+            "en": "A farm with a walking path around the pastures to a pond"
+          },
+          "why": {
+            "th": "เดินเล่นง่ายๆ และไอศกรีมสด",
+            "en": "An easy walk and fresh ice cream"
+          },
+          "q": "光徳牧場, 日光市中宮祠",
+          "ok": "2026-11"
+        },
+        {
+          "local": "日光自然博物館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาตินิกโก",
+            "en": "Nikko Natural Science Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ชูกูชิ ริมทะเลสาบชูเซนจิ",
+            "en": "Chugushi, by Lake Chuzenji"
+          },
+          "what": {
+            "th": "แบบจำลองพืชและสัตว์ของนิกโกขนาดเท่าจริง และจอใหญ่",
+            "en": "Full-size dioramas of Nikko's plants and animals and a big-screen show"
+          },
+          "why": {
+            "th": "นิทรรศการให้ลองเล่น เหมาะกับวันฝนตก",
+            "en": "Hands-on exhibits for a rainy day"
+          },
+          "q": "日光自然博物館, 日光市中宮祠2480-1",
+          "ok": "2026-11"
         }
       ]
     },

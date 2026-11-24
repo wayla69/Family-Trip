@@ -53,6 +53,27 @@
       "src": "https://japanactivity.com/nikko-with-kids",
       "date": "2026-05",
       "map": "Google Maps 'น้ำตกยูดากิ' (Yudaki Falls), 5,429 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Ozasa Farm",
+      "page_name": "Ozasa Farm",
+      "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+      "date": "official",
+      "map": "Google Maps 'Ōzasa Farm' (瀬尾大笹原), newest review shown 13 hours ago"
+    },
+    {
+      "name": "Kotoku Ranch",
+      "page_name": "Kotoku Farm",
+      "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+      "date": "official",
+      "map": "Google Maps 'Kotoku Ranch' (中宮祠2452), newest review shown a day ago"
+    },
+    {
+      "name": "Nikko Natural Science Museum",
+      "page_name": "Nikko Natural Science Museum",
+      "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+      "date": "official",
+      "map": "Google Maps 'Nikko Natural Science Museum' (中宮祠2480-1), newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -63,7 +84,20 @@
     {
       "name": "日光バターの杜",
       "why": "the map's only entry is at a different address from the page's"
+    },
+    {
+      "name": "Seven Nikko restaurants from Mapple",
+      "why": "no page date and nothing about children"
+    },
+    {
+      "name": "Nikko Yuba Company workshop",
+      "why": "the map finds only its factory in Utsunomiya"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 11 rows from Mapple (2026) and Visit Nikko (official), 4 passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
