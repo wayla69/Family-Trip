@@ -1027,6 +1027,232 @@
           "q": "Hat Yai Science and Astronomy Learning Centre, Khohong, Hat Yai",
           "ok": "2026-11",
           "src": "https://th.trip.com/moments/theme/destination-songkhla-province-120505-family-and-kids-990886/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+          "name": {
+            "th": "วัดแสตนเลส",
+            "en": "Stainless Steel Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หาดใหญ่",
+            "en": "Hat Yai"
+          },
+          "what": {
+            "th": "วัดที่มีเจดีย์บนเนิน ขับรถขึ้นไปไม่ไกล",
+            "en": "A temple with a pagoda on a hill, a short drive up"
+          },
+          "why": {
+            "th": "สถาปัตยกรรมแปลกตา และชมวิวจากด้านบน",
+            "en": "Striking architecture and a view from the top"
+          },
+          "q": "Stainless Steel Temple, Hat Yai, Songkhla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+          "name": {
+            "th": "วัดฉื่อฉาง",
+            "en": "Wat Chue Chang"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หาดใหญ่",
+            "en": "Hat Yai"
+          },
+          "what": {
+            "th": "วัดสูง 4 ชั้น ผสมศิลปะไทย จีน และทิเบต",
+            "en": "A four-storey temple mixing Thai, Chinese and Tibetan design"
+          },
+          "why": {
+            "th": "วัดหน้าตาไม่เหมือนที่ไหนในเมือง",
+            "en": "A temple that looks like nowhere else in town"
+          },
+          "q": "Wat Chue Chang, Hat Yai, Songkhla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+          "name": {
+            "th": "วัดมหัตตมังคลาราม (วัดหาดใหญ่ใน)",
+            "en": "Wat Hat Yai Nai (Wat Mahattamangkhalaram)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หาดใหญ่",
+            "en": "Hat Yai"
+          },
+          "what": {
+            "th": "วัดเก่าริมคลอง มีพระนอนองค์ใหญ่",
+            "en": "An old temple by a canal with a large reclining Buddha"
+          },
+          "why": {
+            "th": "ได้ชมพระนอนองค์ใหญ่มาก",
+            "en": "A very big reclining Buddha to see"
+          },
+          "q": "Wat Hat Yai Nai, Hat Yai, Songkhla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+          "name": {
+            "th": "ทุ่งนาหลาต้นโด",
+            "en": "Thung Na La Ton Do rice fields"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ท่าข้าม หาดใหญ่",
+            "en": "Tha Kham, Hat Yai"
+          },
+          "what": {
+            "th": "ทุ่งนากว้าง มีโซนสินค้าโอทอป อาหาร และของฝาก",
+            "en": "Open rice fields with a corner of local OTOP goods, food and souvenirs"
+          },
+          "why": {
+            "th": "ธรรมชาติสวยให้เดินเล่น มีอาหารท้องถิ่น",
+            "en": "Pretty countryside to walk in, with local food"
+          },
+          "q": "Thung Na La Ton Do, Tha Kham, Hat Yai, Songkhla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+          "name": {
+            "th": "มัสยิดกลางประจำจังหวัดสงขลา",
+            "en": "Songkhla Central Mosque"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สงขลา",
+            "en": "Songkhla"
+          },
+          "what": {
+            "th": "มัสยิดกลางประจำจังหวัด มีสระน้ำยาวด้านหน้า",
+            "en": "The province's central mosque, with a long pool in front"
+          },
+          "why": {
+            "th": "อาคารสวยสะท้อนในสระน้ำ",
+            "en": "A beautiful building reflected in the pool"
+          },
+          "q": "Songkhla Central Mosque, Songkhla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+          "name": {
+            "th": "ตลาดเกษตร ม.อ.",
+            "en": "PSU Kaset Market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "ข้างมหาวิทยาลัยสงขลานครินทร์ หาดใหญ่",
+            "en": "By Prince of Songkla University, Hat Yai"
+          },
+          "what": {
+            "th": "ตลาดเย็น มีผลผลิตเกษตร ผลไม้ อาหารทะเลสด และอาหารปรุงสุก",
+            "en": "An evening market with farm produce, fruit, fresh seafood and cooked food"
+          },
+          "why": {
+            "th": "มีผลไม้ อาหารทะเล และของกินให้ลอง",
+            "en": "Fruit, seafood and snacks to try"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน ช่วงเย็น",
+            "en": "Open every day, in the evening"
+          },
+          "q": "PSU Kaset Market, Hat Yai, Songkhla",
+          "ok": "2026-11"
         }
       ]
     },
