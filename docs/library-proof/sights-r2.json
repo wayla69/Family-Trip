@@ -1,0 +1,36 @@
+{
+ "kind": "sights+care",
+ "checked": "2026-11",
+ "how": "Second Google Maps pass (2026-11-24) over all 4,747 sights and 909 care rows; rows flagged Permanently/Temporarily closed that round 1 had not already decided were re-opened on Maps and checked on the web. 1,694 sights and 643 care lookups loaded no Maps result and are not covered by this pass.",
+ "rows": [
+  {
+   "file": "server/sights/tr-1.json",
+   "town": "tr-cappadocia",
+   "name": "Cappadocia Art & History Museum (dolls)",
+   "verdict": "removed",
+   "evidence": "Maps (re-run with the Turkish name 'Kapadokya Sanat ve Tarih Müzesi/Kitre Bebek Müzesi', Mustafapaşa) shows this very place 'Temporarily closed'; a web search found no reopening date and no 2026 page saying it is open. The town keeps 18 sights, 7 indoors."
+  },
+  {
+   "file": "server/sights/at-1.json",
+   "town": "at-salzburg",
+   "name": "Eisriesenwelt Ice Cave",
+   "verdict": "keep",
+   "evidence": "Maps 'Temporarily closed' in November; the row's tip already says open 1 May – end of October (the cave's own 2026 info PDF).",
+   "src": "https://www.eisriesenwelt.at/fileadmin/pdfs_en/eisriesenwelt_info_2026-EN.pdf"
+  },
+  {
+   "file": "server/sights/at-1.json",
+   "town": "at-hallstatt",
+   "name": "Altaussee Salt Mine (Salzwelten)",
+   "verdict": "keep",
+   "evidence": "Maps 'Temporarily closed' in November; the row's tip already gives the season (to 2 November) and says it may be shut in winter."
+  },
+  {
+   "file": "server/care/ca-2.json",
+   "town": "ca-toronto",
+   "name": "Centreville Amusement Park",
+   "verdict": "keep",
+   "evidence": "Maps 'Temporarily closed' again; decided in round 1 (summer season only, already in the row)."
+  }
+ ]
+}
