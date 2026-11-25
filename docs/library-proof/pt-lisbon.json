@@ -88,6 +88,62 @@
       "src": "https://www.familycantravel.com/sintra-with-kids/",
       "date": "2026-10",
       "map": "Google Maps 'The Moorish Castle', 25,688 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Este Oeste (Belém)",
+      "page_name": "Este Oeste",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Este Oeste', newest review shown 3 days ago"
+    },
+    {
+      "name": "Giro'Giro (Campo Grande)",
+      "page_name": "Giro’Giro",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Giro'Giro', newest review shown 2 months ago"
+    },
+    {
+      "name": "Hamburgueria da Parada (Campo de Ourique)",
+      "page_name": "Hamburgueria da Parada",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Hamburgueria da Parada (Campo de Ourique)', newest review shown 13 days ago"
+    },
+    {
+      "name": "Jamie's Italian (Príncipe Real)",
+      "page_name": "Jamie's Italian",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Jamie's Italian Lisboa', newest review shown 5 days ago"
+    },
+    {
+      "name": "Alvito Recreational Park",
+      "page_name": "Parque Recreativo do Alvito",
+      "src": "https://www.nomadotravel.app/pt/guides/lisbon-with-kids",
+      "date": "2026-04",
+      "map": "Google Maps 'Alvito Recreational Park', newest review shown a month ago"
+    },
+    {
+      "name": "Carris Museum (trams and buses)",
+      "page_name": "Museu da Carris",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+      "date": "2026-10",
+      "map": "Google Maps 'Museu da Carris', newest review shown 9 days ago"
+    },
+    {
+      "name": "MAAT (Museum of Art, Architecture and Technology)",
+      "page_name": "MAAT",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+      "date": "2026-10",
+      "map": "Google Maps 'MAAT - Museum of Art, Architecture and Technology', newest review shown 2 days ago"
+    },
+    {
+      "name": "Communications Museum",
+      "page_name": "Museu das Comunicações",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+      "date": "2026-10",
+      "map": "Google Maps 'Museu das Comunicações', newest review shown a week ago"
     }
   ],
   "left_out": [
@@ -98,7 +154,16 @@
     {
       "name": "Doca de Santo, KidZania Lisboa",
       "why": "failed library-check.cjs"
+    },
+    {
+      "name": "Albuquerque Foundation",
+      "why": "in Linhó (Sintra), outside Lisbon"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from Time Out Lisboa (Oct–Nov 2026) and Nomado (Apr 2026), all passed library-check.cjs, 8 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

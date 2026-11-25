@@ -123,6 +123,51 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from Triverna (Oct 2026) and eBilet (Apr 2026), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "WOMAI science and senses centre",
+          "page_name": "WOMAI (Centrum Nauki i Zmysłów)",
+          "src": "https://triverna.pl/blog/atrakcje-dla-dzieci-krakow",
+          "date": "2026-10",
+          "map": "Google Maps 'WOMAI Kraków Centrum Nauki i Zmysłów' (ul. Pawia 34), newest review shown 14 hours ago"
+        },
+        {
+          "name": "MICET interactive theatre museum",
+          "page_name": "MICET (Interaktywne Muzeum Starego Teatru)",
+          "src": "https://triverna.pl/blog/atrakcje-dla-dzieci-krakow",
+          "date": "2026-10",
+          "map": "Google Maps 'MICET - Muzeum Starego Teatru' (Jagiellońska 1), newest review shown 6 months ago"
+        },
+        {
+          "name": "Live Bagel Museum (obwarzanek)",
+          "page_name": "Żywe Muzeum Obwarzanka w Krakowie",
+          "src": "https://www.ebilet.pl/now/jakie-sa-muzea-dla-dzieci-w-krakowie/",
+          "date": "2026-04",
+          "map": "Google Maps 'Live Bagel Museum of Kraków' (Paderewskiego 4), newest review shown 2 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Plantusia",
+          "why": "not found on the map"
+        },
+        {
+          "name": "Dzikie Planty",
+          "why": "the map shows only a generic \"Children's Playground\""
+        },
+        {
+          "name": "Muzeum Żywych Motyli",
+          "why": "the map puts it on Grodzka, not the page's Floriańska"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

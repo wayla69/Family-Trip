@@ -410,7 +410,8 @@
             "en": "A quiet family outing by the river"
           },
           "q": "Minigolf Vianden, 42 Rue Victor Hugo, Vianden",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Outdoor and open afternoons (14:00–19:00) on set days, mostly in the warm months; check the day", "th": "สนามกลางแจ้ง เปิดช่วงบ่าย (14:00–19:00) ตามวันที่กำหนด ส่วนใหญ่ช่วงอากาศอุ่น เช็กก่อนไป" }
         },
         {
           "local": "Freibad Vianden",
@@ -447,6 +448,80 @@
             "en": "A 6.5-metre slide and a big lawn"
           },
           "q": "Freibad Vianden, Rue du Sanatorium, Vianden",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.luxembourg-city.com/en/things-to-do/city-adventures/luxembourg-city-with-kids",
+          "name": {
+            "th": "อุโมงค์ใต้ดินเปทรุส",
+            "en": "Pétrusse Casemates"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปลาซเดอลากงสติตูซียง เมืองบน",
+            "en": "Place de la Constitution, Ville Haute"
+          },
+          "what": {
+            "th": "อุโมงค์ใต้ดินของป้อมเก่า เข้าชมกับไกด์",
+            "en": "Underground galleries of the old fortress, by guided tour"
+          },
+          "why": {
+            "th": "คู่มือเด็กของเมืองแนะนำให้มาสำรวจอุโมงค์ใต้ดิน",
+            "en": "The city's kids' guide suggests exploring the underground galleries"
+          },
+          "q": "Pétrusse Casemates, Place de la Constitution, Luxembourg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.mullerthal.lu/discover-the-mullerthal-region/hits-for-kids/guided-tours-for-children",
+          "name": {
+            "th": "ปราสาทลาโรเช็ต",
+            "en": "Larochette Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทางขึ้นปราสาท ลาโรเช็ต มึลเลอร์ทาล",
+            "en": "Montée du Château, Larochette, Mullerthal"
+          },
+          "what": {
+            "th": "ปราสาทที่มีทัวร์สำหรับเด็ก เล่าชีวิตครอบครัวในยุคกลาง",
+            "en": "A castle with a children's tour about family life in the Middle Ages"
+          },
+          "why": {
+            "th": "ได้เรียนรู้ชีวิตครอบครัวยุคกลางแบบสนุก",
+            "en": "Learn how families lived in the Middle Ages, in a fun way"
+          },
+          "q": "Larochette Castle, Montée du Château, Larochette",
           "ok": "2026-11"
         }
       ]

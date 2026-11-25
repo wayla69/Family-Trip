@@ -130,6 +130,55 @@
       "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
       "date": "2026-01",
       "map": "Google Maps 'Moncloa's Lighthouse', 4,428 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "El Perro y la Galleta (Claudio Coello)",
+      "page_name": "El Perro y la Galleta",
+      "src": "https://lamaletainquieta.com/donde-comer-madrid-ninos/",
+      "date": "2026-07",
+      "map": "Google Maps 'El Perro y La Galleta - Restaurant', newest review shown a day ago"
+    },
+    {
+      "name": "Ojalá (Malasaña)",
+      "page_name": "Ojalá Beach Bar",
+      "src": "https://lamaletainquieta.com/donde-comer-madrid-ninos/",
+      "date": "2026-07",
+      "map": "Google Maps 'Ojalá' (Calle de San Andrés 1), newest review shown a day ago"
+    },
+    {
+      "name": "La Musa Latina",
+      "page_name": "La Musa Latina",
+      "src": "https://lamaletainquieta.com/donde-comer-madrid-ninos/",
+      "date": "2026-07",
+      "map": "Google Maps 'La Musa Latina', newest review shown a day ago"
+    },
+    {
+      "name": "Ginos (Gran Vía)",
+      "page_name": "Ginos (Gran Vía)",
+      "src": "https://lamaletainquieta.com/donde-comer-madrid-ninos/",
+      "date": "2026-07",
+      "map": "Google Maps 'Ginos' (Gran Vía 63), newest review shown 2 days ago"
+    },
+    {
+      "name": "Lamucca de Pez",
+      "page_name": "Lamucca de Pez",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 'Lamucca de Pez', newest review shown 4 days ago"
+    },
+    {
+      "name": "La Cantina de Sputnik (Legazpi)",
+      "page_name": "La Cantina de Sputnik",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 'La Cantina de Sputnik Legazpi - Restaurante Madrid', newest review shown 2 months ago"
+    },
+    {
+      "name": "Chamberí Ghost Station (Andén 0)",
+      "page_name": "Estación de Chamberí (Andén 0)",
+      "src": "https://lamaletainquieta.com/madrid-con-ninos/",
+      "date": "2026-07",
+      "map": "Google Maps 'Estación Museo de Chamberí', newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -152,7 +201,24 @@
     {
       "name": "La Morenilla",
       "why": "the map's place is in Malasaña, not the page's Calle de Caracas"
+    },
+    {
+      "name": "Costello Río",
+      "why": "the map shows another name (Costello Market)"
+    },
+    {
+      "name": "Runni",
+      "why": "the map shows a different sushi restaurant at that address"
+    },
+    {
+      "name": "El Capricho, Museo Ratón Pérez",
+      "why": "no district or no readable page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from La Maleta Inquieta (Jul–Nov 2026) and esMadrid (official), all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -95,6 +95,48 @@
       "src": "https://little-vikings.co.uk/rainy-days-york",
       "date": "2026-10",
       "map": "Google Maps 'Hollywood Bowl York', Monks Cross, 671 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Oxygen York",
+      "page_name": "Oxygen York",
+      "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+      "date": "2026-02",
+      "map": "Google Maps 'Oxygen York' (Clifton Moor Centre), newest review shown 4 days ago"
+    },
+    {
+      "name": "Flip Out York",
+      "page_name": "Flip Out York",
+      "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+      "date": "2026-02",
+      "map": "Google Maps 'Flip Out York' (3-7 Rose Ave), newest review shown 4 days ago"
+    },
+    {
+      "name": "Crazy Tykes",
+      "page_name": "Crazy Tykes",
+      "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+      "date": "2026-02",
+      "map": "Google Maps 'Crazy Tykes Indoor and Outdoor Children's Soft play centre' (Thorp Arch, Wetherby), newest review shown a day ago"
+    },
+    {
+      "name": "Murton Park",
+      "page_name": "Murton Park",
+      "src": "https://www.murtonpark.co.uk/play/",
+      "date": "2026-10",
+      "map": "Google Maps 'Murton Park' (Murton Lane), newest review shown 6 days ago"
+    },
+    {
+      "name": "Sandsend Beach",
+      "page_name": "Sandsend Beach",
+      "src": "https://www.mummytravels.com/things-to-do-in-whitby-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Sandsend Beach' (Whitby), newest review shown a week ago"
+    },
+    {
+      "name": "Pannett Park",
+      "page_name": "Pannett Park",
+      "src": "https://www.mummytravels.com/things-to-do-in-whitby-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Pannett Park' (Whitby), newest review shown a week ago"
     }
   ],
   "left_out": [
@@ -105,7 +147,20 @@
     {
       "name": "York Maze",
       "why": "seasonal; the page says it opens July–September 2027"
+    },
+    {
+      "name": "Toddlers World",
+      "why": "a session inside York Leisure Centre, no map entry of its own"
+    },
+    {
+      "name": "Krep Truck, The Grand, Balloon Tree",
+      "why": "no street on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Little Vikings (2025–2026), Murton Park's own site and Mummy Travels (Aug 2026), all passed library-check.cjs, 6 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

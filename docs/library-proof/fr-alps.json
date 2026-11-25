@@ -88,6 +88,41 @@
       "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
       "date": "2026-08",
       "map": "Google Maps 'ACRO' AVENTURES TALLOIRES', 1,752 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "PlanB Living Chamonix (restaurant)",
+      "page_name": "PlanB Restaurant",
+      "src": "https://hautesavoiemontblanc-tourisme.com/offres/planb-restaurant-chamonix-mont-blanc-fr-5831338/",
+      "date": "2026-06",
+      "map": "Google Maps 'PlanB Living Chamonix - Restaurant & Bar', newest review shown 5 months ago"
+    },
+    {
+      "name": "Plage des Marquisats",
+      "page_name": "Plage des Marquisats",
+      "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'Plage des Marquisats' (58 Rue des Marquisats), newest review shown a week ago"
+    },
+    {
+      "name": "Jardins de l'Europe",
+      "page_name": "Jardins de l'Europe",
+      "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'Jardins de l'Europe' (Quai Napoléon III), newest review shown 3 hours ago"
+    },
+    {
+      "name": "Paccard bell foundry",
+      "page_name": "Fonderie Paccard",
+      "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'PACCARD Fonderie de Cloches' (Sevrier), newest review shown 2 months ago"
+    },
+    {
+      "name": "Les Planards leisure park",
+      "page_name": "Chamonix Leisure Park",
+      "src": "https://en.chamonix.com/activites-automne/chamonix-leisure-park",
+      "date": "official",
+      "map": "Google Maps 'Les Planards - Chamonix Mont Blanc' (351 Chem. du Pied du Grépon), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -110,7 +145,20 @@
     {
       "name": "Criq’Parc",
       "why": "library-check.cjs: quote not on page"
+    },
+    {
+      "name": "Chez Ingalls",
+      "why": "nothing about children on the page"
+    },
+    {
+      "name": "Plage de l'Impérial",
+      "why": "the page says only that it welcomes swimmers"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Haute-Savoie Mont-Blanc tourism (2026), Chamonix tourism (official) and Ryo (Sep 2026), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

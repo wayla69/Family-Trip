@@ -503,6 +503,158 @@
           },
           "q": "Copacabana Beach, Dubrovnik",
           "ok": "2026-11"
+        },
+        {
+          "local": "Plaža Sveti Jakov",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://puzzlepunks.com/things-to-do-dubrovnik-with-kids/",
+          "name": {
+            "th": "หาดสเวตียาคอฟ",
+            "en": "Sveti Jakov beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนวลาฮา บูกอฟซา ทางตะวันออกของเมืองเก่า ดูบรอฟนิก",
+            "en": "Vlaha Bukovca street, east of the Old Town, Dubrovnik"
+          },
+          "what": {
+            "th": "หาดเงียบใกล้เมืองเก่า",
+            "en": "A quiet beach near the Old Town"
+          },
+          "why": {
+            "th": "คนน้อยกว่าหาดบันเยที่พลุกพล่าน",
+            "en": "Quieter than the busy Banje beach"
+          },
+          "q": "Plaža Sveti Jakov, Dubrovnik",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://puzzlepunks.com/things-to-do-dubrovnik-with-kids/",
+          "name": {
+            "th": "หาดชุนย์ เกาะโลปุด",
+            "en": "Šunj beach (Lopud)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เกาะโลปุด นั่งเรือจากท่ากรุจ",
+            "en": "Lopud island, by boat from Gruž"
+          },
+          "what": {
+            "th": "หาดบนเกาะโลปุด นั่งเรือจากท่ากรุจ",
+            "en": "A beach on Lopud island, reached by boat from Gruž"
+          },
+          "why": {
+            "th": "ทริปครอบครัวยอดนิยมจากดูบรอฟนิก",
+            "en": "The classic family day trip from Dubrovnik"
+          },
+          "tip": {
+            "th": "เช็กเวลาเรือก่อนไป",
+            "en": "Check the ferry times first"
+          },
+          "q": "Šunj beach, Lopud",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://puzzlepunks.com/things-to-do-dubrovnik-with-kids/",
+          "name": {
+            "th": "สวนผจญภัยแคดมอสวิลเลจ",
+            "en": "Cadmos Village adventure park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โคมายี โคนาฟเล ใกล้คาฟทัต",
+            "en": "Komaji, Konavle, near Cavtat"
+          },
+          "what": {
+            "th": "สวนผจญภัยแบบรักษ์โลก มีบ้านต้นไม้และร้านอาหาร",
+            "en": "An eco adventure park with a treehouse and a restaurant"
+          },
+          "why": {
+            "th": "กิจกรรมครอบครัวครึ่งวัน",
+            "en": "A half-day family outing"
+          },
+          "q": "Cadmos Village, Komaji 3, Konavle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Promenada Lapad",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://puzzlepunks.com/things-to-do-dubrovnik-with-kids/",
+          "name": {
+            "th": "ทางเดินเลียบทะเลลาปัด",
+            "en": "Lapad promenade"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ลาปัด ดูบรอฟนิก",
+            "en": "Lapad, Dubrovnik"
+          },
+          "what": {
+            "th": "ทางเดินริมทะเล มีชายหาดตลอดทาง",
+            "en": "A seaside walk with beaches along the way"
+          },
+          "why": {
+            "th": "ทางเรียบเข็นรถเข็นได้ มีของว่างและชายหาด",
+            "en": "Flat for a stroller, with snacks and beaches"
+          },
+          "q": "Promenada Lapad, Dubrovnik",
+          "ok": "2026-11"
         }
       ]
     },
@@ -688,6 +840,84 @@
             "en": "Very busy: go early or first, and carry small children in a carrier near the falls"
           },
           "q": "Veliki slap, Plitvice Lakes National Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/best-things-to-do-in-zagreb-with-kids/",
+          "name": {
+            "th": "สวนมักซิมีร์",
+            "en": "Maksimir Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "มักซิมีร์ ซาเกร็บ",
+            "en": "Maksimirski perivoj, Maksimir, Zagreb"
+          },
+          "what": {
+            "th": "สวนใหญ่ของเมือง มีสวนสัตว์อยู่ในสวน",
+            "en": "A big city park with the zoo"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นสำหรับเด็กเล็ก และมุมสัมผัสสัตว์",
+            "en": "A playground for young children with a petting corner"
+          },
+          "q": "Park Maksimir, Maksimirski perivoj 1, Zagreb",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://slunj-rastoke.hr/en/slunj-rastoke-things-to-do/",
+          "name": {
+            "th": "โกตลัตส์ สลูญ",
+            "en": "Kotlac (Slunj)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางเดินป่าเยลวิก สลูญ",
+            "en": "Jelvik forest path, Slunj"
+          },
+          "what": {
+            "th": "แอ่งน้ำตื้นเล็กๆ ระหว่างน้ำตกเตี้ยๆ บนแม่น้ำโคราน่า",
+            "en": "Small shallow pools between little waterfalls on the Korana river"
+          },
+          "why": {
+            "th": "เป็นที่ที่เด็กส่วนใหญ่ในเมืองหัดว่ายน้ำ",
+            "en": "Where most of the town's children learn to swim"
+          },
+          "tip": {
+            "th": "หน้าร้อน",
+            "en": "Summer"
+          },
+          "q": "Kotlac, Slunj",
           "ok": "2026-11"
         }
       ]

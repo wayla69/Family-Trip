@@ -74,13 +74,75 @@
       "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
       "date": "2025-07",
       "map": "Google Maps 1,604 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "The Roman Baths",
+      "page_name": "Roman Baths",
+      "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+      "date": "2026-07",
+      "map": "Google Maps 'The Roman Baths' (Abbey Churchyard), newest review shown an hour ago"
+    },
+    {
+      "name": "The Egg theatre",
+      "page_name": "The Egg",
+      "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+      "date": "2026-07",
+      "map": "Google Maps 'The Egg Theatre' (36 Monmouth St), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "American Museum & Gardens",
+      "page_name": "American Museum & Gardens",
+      "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+      "date": "2026-07",
+      "map": "Google Maps 'American Museum & Gardens' (Claverton Manor), newest review shown 4 days ago"
+    },
+    {
+      "name": "Dyrham Park (National Trust)",
+      "page_name": "Dyrham Park",
+      "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+      "date": "2026-07",
+      "map": "Google Maps 'Dyrham Park' (Dyrham), newest review shown 2 hours ago"
+    },
+    {
+      "name": "Bath City Farm",
+      "page_name": "Bath City Farm",
+      "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+      "date": "2026-07",
+      "map": "Google Maps 'Bath City Farm' (Kelston View, Whiteway), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Rainbow Wood play area",
+      "page_name": "Rainbow Woods",
+      "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+      "date": "2026-07",
+      "map": "Google Maps 'Rainbow Wood' (Bath), newest review shown 2 days ago"
+    },
+    {
+      "name": "Avon Valley Railway",
+      "page_name": "Avon Valley Railway",
+      "src": "https://www.visitbath.co.uk/blog/read/2026/07/12-things-to-do-with-toddlers-in-and-around-bath-b186",
+      "date": "2026-07",
+      "map": "Google Maps 'Avon Valley Railway (Bitton Station)', newest review shown 2 hours ago"
     }
   ],
   "left_out": [
     {
       "name": "places to eat",
       "why": "every children’s-menu claim sat on an undated or 2023–24 page"
+    },
+    {
+      "name": "Five Bath places to eat (Visit Bath listing)",
+      "why": "library-check.cjs could not confirm the rows"
+    },
+    {
+      "name": "Royal Victoria Park",
+      "why": "no review dates readable on the map"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 13 rows from Visit Bath (Jul 2026 and 2026 listing), 8 passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

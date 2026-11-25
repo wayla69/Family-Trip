@@ -569,6 +569,125 @@
           },
           "q": "Starlight Cinema, Taupo",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.rotoruanz.com/visit/things-to-do/3d-trick-art-gallery",
+          "name": {
+            "th": "แกลเลอรีภาพลวงตาสามมิติ",
+            "en": "3D Trick Art Gallery"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เฮอริเทจฟาร์ม ถนนแฟรีสปริงส์ โรโตรัว",
+            "en": "Heritage Farm, Fairy Springs Road, Rotorua"
+          },
+          "what": {
+            "th": "แกลเลอรีภาพลวงตาที่ทั้งครอบครัวเข้าไปถ่ายรูปในภาพวาดสามมิติ",
+            "en": "A trick-art gallery where the family steps into painted 3D pictures for photos"
+          },
+          "why": {
+            "th": "ไม่จำกัดอายุหรือส่วนสูง เล่นได้ทุกคน",
+            "en": "No age or height limits, so everyone joins in"
+          },
+          "tip": {
+            "th": "เข้าได้ถึง 16:00 ช่วงปิดเทอมเวลาเปลี่ยน",
+            "en": "Last entry 4 pm; hours change in the school holidays"
+          },
+          "q": "3D Trick Art Gallery, Fairy Springs Road, Rotorua",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.rotoruanz.com/visit/things-to-do/amazeme",
+          "name": {
+            "th": "อะเมซมี เขาวงกตต้นไม้",
+            "en": "aMAZEme"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนพาราไดซ์แวลลีย์ โรโตรัว",
+            "en": "Paradise Valley Road, Rotorua"
+          },
+          "what": {
+            "th": "เขาวงกตต้นไม้มีประตูทางเดียว และสวนที่มีสัตว์ตัวเล็ก",
+            "en": "A hedge maze with one-way doors, and a garden with small animals"
+          },
+          "why": {
+            "th": "เด็กชอบสวน สัตว์ตัวเล็ก และบ้านผีเสื้อ",
+            "en": "Children love the garden, the small animals and the butterfly house"
+          },
+          "tip": {
+            "th": "บ้านผีเสื้อเปิดเฉพาะบางฤดู",
+            "en": "The butterfly house opens in season only"
+          },
+          "q": "aMAZEme, 1335 Paradise Valley Road, Rotorua",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.rotoruanz.com/visit/things-to-do/boyes-beach-park",
+          "name": {
+            "th": "หาดบอยส์ ทะเลสาบโอคาเรกา",
+            "en": "Boyes Beach (Lake Ōkāreka)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนมิลลาร์ ทะเลสาบโอคาเรกา โรโตรัว",
+            "en": "Millar Road, Lake Ōkāreka, Rotorua"
+          },
+          "what": {
+            "th": "หาดริมทะเลสาบและสวน มีสนามเด็กเล่น เตาบาร์บีคิว และโต๊ะปิกนิก",
+            "en": "A lakeside beach and park with a playground, barbecues and picnic tables"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นริมทะเลสาบ หน้าร้อนลงเล่นน้ำได้",
+            "en": "A playground by the lake, with swimming in the warm months"
+          },
+          "q": "Boyes Beach, Lake Okareka, Rotorua",
+          "ok": "2026-11"
         }
     ]
     }

@@ -119,6 +119,51 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from rotoruanz.com (2026) and the venues' own pages, all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "3D Trick Art Gallery",
+          "page_name": "3D Trick Art Gallery",
+          "src": "https://www.rotoruanz.com/visit/things-to-do/3d-trick-art-gallery",
+          "date": "official",
+          "map": "Google Maps '3D Trick Art Gallery', newest review shown 13 days ago"
+        },
+        {
+          "name": "aMAZEme",
+          "page_name": "aMAZEme",
+          "src": "https://www.rotoruanz.com/visit/things-to-do/amazeme",
+          "date": "official",
+          "map": "Google Maps 'aMAZEme™', newest review shown 3 days ago"
+        },
+        {
+          "name": "Boyes Beach (Lake Ōkāreka)",
+          "page_name": "Boyes Beach & Park",
+          "src": "https://www.rotoruanz.com/visit/things-to-do/boyes-beach-park",
+          "date": "official",
+          "map": "Google Maps 'Boyes Beach', newest review shown 6 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pavilion Cafe (Distinction Rotorua)",
+          "why": "the map entry's newest review is 5 years old"
+        },
+        {
+          "name": "Te Amorangi Trust Museum",
+          "why": "newest Google Maps review 10 months old"
+        },
+        {
+          "name": "BaseCamp at Secret Spot",
+          "why": "a hot-tub venue with beer; nothing for children on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

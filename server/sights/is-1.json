@@ -655,6 +655,265 @@
           },
           "q": "Laugarvatn Fontana, Hverabraut 1, Laugarvatn",
           "ok": "2026-11"
+        },
+        {
+          "local": "Sundhöll Reykjavíkur",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สระว่ายน้ำซุนด์เฮิลล์",
+            "en": "Sundhöll Reykjavíkur (swimming pool)"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ถนนบาโรนสติกูร์ ใจกลางเมือง เรคยาวิก",
+            "en": "Barónsstígur, city centre, Reykjavík"
+          },
+          "what": {
+            "th": "สระว่ายน้ำสไตล์อาร์ตเดโคใกล้ใจกลางเมือง มีสระในร่มสำหรับครอบครัวและอ่างน้ำร้อนบนดาดฟ้า",
+            "en": "An art deco pool near downtown with an indoor family pool and rooftop hot tubs"
+          },
+          "why": {
+            "th": "สระในร่มที่เหมาะกับครอบครัวสำหรับวันอากาศหนาว",
+            "en": "A family-friendly indoor pool for a cold day"
+          },
+          "q": "Sundhöllin, Barónsstígur 45a, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Vesturbæjarlaug",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สระว่ายน้ำเวสตูร์ไบยาร์เลาก์",
+            "en": "Vesturbæjarlaug (swimming pool)"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ถนนฮอฟสวัลลากาตา เวสตูร์ไบร์ เรคยาวิก",
+            "en": "Hofsvallagata, Vesturbær, Reykjavík"
+          },
+          "what": {
+            "th": "สระว่ายน้ำของชุมชนทางตะวันตกของใจกลางเมือง มีอ่างน้ำร้อนกลางแจ้งและวิวภูเขา",
+            "en": "A neighbourhood pool west of the centre with outdoor hot tubs and mountain views"
+          },
+          "why": {
+            "th": "สระของชุมชนแบบที่ครอบครัวไอซ์แลนด์ใช้กันจริง",
+            "en": "A friendly local pool the way Icelandic families use it"
+          },
+          "q": "Vesturbæjarlaug, Hofsvallagata, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Elliðaárdalur",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "หุบเขาเอลลิดาอาร์ดาลูร์",
+            "en": "Elliðaárdalur valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เอลลิดาอาร์ดาลูร์ ตะวันออกของเรคยาวิก เรคยาวิก",
+            "en": "Elliðaárdalur, east Reykjavík, Reykjavík"
+          },
+          "what": {
+            "th": "หุบเขาเขียวมีทางเดินในป่า แม่น้ำแซลมอน และสนามเด็กเล่น",
+            "en": "A green valley with forest trails, a salmon river and playgrounds"
+          },
+          "why": {
+            "th": "เด็กๆ ได้มองหากระต่ายป่าและเล่นในสนามเด็กเล่น",
+            "en": "Children spot wild rabbits and explore the playgrounds"
+          },
+          "q": "Elliðaárdalur, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Klambratún",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สวนคลัมบราตูน",
+            "en": "Klambratún park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนโฟลกากาตา ฮลีดาร์ เรคยาวิก",
+            "en": "Flókagata, Hlíðar, Reykjavík"
+          },
+          "what": {
+            "th": "สวนกลางเมือง มีสนามหญ้ากว้างและสนามเด็กเล่นธีมปราสาท",
+            "en": "A central park with wide lawns and a castle-themed playground"
+          },
+          "why": {
+            "th": "มีโครงปีนป่ายและสนามเด็กเล่นรูปปราสาท",
+            "en": "A climbing frame and a castle playground"
+          },
+          "q": "Klambratún, Flókagata, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Grótta",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "ประภาคารกรอตตา",
+            "en": "Grótta lighthouse"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เซลต์ยาร์นาร์เนส ทางตะวันตกของเรคยาวิก",
+            "en": "Seltjarnarnes, west of Reykjavík"
+          },
+          "what": {
+            "th": "ทางเดินริมทะเลไปประภาคารกรอตตา มีนกและชายหาดเล็กๆ",
+            "en": "A coastal walk to the Grótta lighthouse with birds and a small beach"
+          },
+          "why": {
+            "th": "เด็กๆ เดินเล่นริมทะเล ดูนก และเก็บเปลือกหอย",
+            "en": "Children walk the coast paths, spot birds and collect shells"
+          },
+          "q": "Grótta Lighthouse, Seltjarnarnes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Borgarbókasafnið Grófinni",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "ห้องสมุดเมืองโกรฟิน",
+            "en": "Grófin City Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนทริกวากาตา ใกล้ท่าเรือเก่า เรคยาวิก",
+            "en": "Tryggvagata, near the Old Harbour, Reykjavík"
+          },
+          "what": {
+            "th": "สาขาหลักของห้องสมุดเมืองเรคยาวิก มีหลายชั้น",
+            "en": "The main branch of the Reykjavík City Library, over several floors"
+          },
+          "why": {
+            "th": "มีมุมเด็กพร้อมหนังสือ ของเล่น และรอบเล่านิทาน",
+            "en": "A children's area with books, toys and storytelling sessions"
+          },
+          "q": "Borgarbókasafnið Grófinni, Tryggvagata 15, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Norræna húsið",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "ห้องสมุดนอร์ดิกเฮาส์",
+            "en": "Nordic House library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนไซมุนดาร์กาตา ใกล้มหาวิทยาลัย เรคยาวิก",
+            "en": "Sæmundargata, near the university, Reykjavík"
+          },
+          "what": {
+            "th": "ห้องสมุดในนอร์ดิกเฮาส์ มีหนังสือภาษากลุ่มนอร์ดิก",
+            "en": "A library in the Nordic House with books in the Nordic languages"
+          },
+          "why": {
+            "th": "มุมเด็กมีที่เล่น",
+            "en": "The children's section has a play area"
+          },
+          "q": "Nordic House, Sæmundargata 11, Reykjavík",
+          "ok": "2026-11"
         }
       ]
     }

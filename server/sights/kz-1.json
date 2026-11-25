@@ -535,23 +535,6 @@
           "src": "https://visitastana.kz/en/about-city/what-to-see/khan-shatyr-sec/"
         },
         {
-          "name": { "en": "Happylon family amusement park", "th": "แฮปปี้ลอน สวนสนุกครอบครัว" },
-          "kind": "play",
-          "area": { "en": "Astana shopping centre", "th": "ศูนย์การค้าในอัสตานา" },
-          "what": { "en": "An indoor family centre with small roller coasters, carousels, arcade games and toddler zones", "th": "ศูนย์ครอบครัวในร่ม มีรถไฟเหาะเล็ก ม้าหมุน เกมอาร์เคด และโซนเด็กเล็ก" },
-          "why": { "en": "Soft toddler zones and gentle rides suit small children, and there are cafés for a rest", "th": "โซนเด็กเล็กนุ่มและเครื่องเล่นเบาๆ เหมาะกับเด็กเล็ก มีร้านกาแฟให้พัก" },
-          "tip": { "en": "Open daily 10:00–22:00; busy at weekends", "th": "เปิดทุกวัน 10:00–22:00 วันหยุดคนเยอะ" },
-          "ages": [2, 2, 2, 1],
-          "hrs": 2.5,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Happylon, Astana",
-          "ok": "2026-11",
-          "src": "https://visitastana.kz/en/about-city/what-to-see/happylon/"
-        },
-        {
           "name": { "en": "Independence Palace", "th": "พระราชวังอินดีเพนเดนซ์ (ทาวเอลซิซดิก)" },
           "local": "Тәуелсіздік сарайы",
           "kind": "museum",

@@ -203,24 +203,6 @@
           "src": "https://taiwanderers.com/free-things-to-do-taipei/"
         },
         {
-          "name": { "en": "Beitou Hot Spring Museum", "th": "พิพิธภัณฑ์น้ำพุร้อนเป่ยโถว" },
-          "local": "北投溫泉博物館",
-          "kind": "museum",
-          "area": { "en": "Xinbeitou", "th": "ซินเป่ยโถว" },
-          "what": { "en": "An old Japanese-era bathhouse turned museum, with a big tiled bath and tatami hall to see", "th": "โรงอาบน้ำเก่าสมัยญี่ปุ่นที่กลายเป็นพิพิธภัณฑ์ มีบ่ออาบน้ำปูกระเบื้องและห้องเสื่อทาทามิ" },
-          "why": { "en": "Free and indoors, a short stop on a hot-spring day; shoes off on the tatami is fun for little ones", "th": "เข้าฟรีและอยู่ในร่ม แวะสั้นๆ ในวันเที่ยวน้ำพุร้อน เด็กสนุกกับการถอดรองเท้าเดินบนเสื่อ" },
-          "tip": { "en": "Walk on through the park to the steaming Thermal Valley stream; never touch the water", "th": "เดินต่อผ่านสวนไปดูลำธารหุบเขาน้ำร้อนที่มีไอลอย ห้ามจับน้ำ" },
-          "ages": [1, 1, 2, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Beitou Hot Spring Museum, Beitou District, Taipei",
-          "ok": "2026-11",
-          "src": "https://taiwanderers.com/free-things-to-do-taipei/"
-        },
-        {
           "name": { "en": "Huashan 1914 Creative Park", "th": "หัวซาน 1914 ครีเอทีฟพาร์ก" },
           "local": "華山1914文化創意產業園區",
           "kind": "culture",
@@ -465,7 +447,237 @@
       {"name":{"en":"PaPark Nangang","th":"พาพาร์ก หนานกั่ง"},"local":"爬爬客親子樂園-南港中信店","kind":"play","area":{"en":"Nangang, shopping mall 2F","th":"หนานกั่ง ชั้น 2 ในห้าง"},"what":{"en":"An indoor trampoline and climbing playground inside a big shopping mall","th":"สนามเด็กเล่นแทรมโพลีนและปีนป่ายในร่ม อยู่ในห้างใหญ่"},"why":{"en":"Bouncing and climbing for small children when it rains","th":"วันฝนตกเด็กเล็กได้กระโดดและปีนป่าย"},"tip":{"en":"Allow about two hours","th":"เผื่อเวลาราว 2 ชั่วโมง"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"爬爬客親子樂園 南港中信店, Taipei","ok":"2026-11","src":"https://www.wingontravel.com/discovery/content/taipei-family-indoor.html"},
       {"name":{"en":"Youxi Ai Leyuan, A8 Xinyi","th":"โหยวซี่อ้ายเล่อหยวน ซินอี้ A8"},"local":"遊戲愛樂園","kind":"play","area":{"en":"Xinyi, Shin Kong Mitsukoshi A8, 5F","th":"ซินอี้ ห้างชินกงมิตสึโคชิ A8 ชั้น 5"},"what":{"en":"An indoor play centre from Japan inside a department store","th":"สนามเด็กเล่นในร่มจากญี่ปุ่น อยู่ในห้างสรรพสินค้า"},"why":{"en":"A play floor for children under twelve, right in the shopping district","th":"ชั้นเล่นสำหรับเด็กไม่เกิน 12 ปี กลางย่านช้อปปิ้ง"},"tip":{"en":"Pair it with a walk round Xinyi; allow about two hours","th":"ไปคู่กับเดินเล่นย่านซินอี้ได้ เผื่อเวลาราว 2 ชั่วโมง"},"ages":[2,2,2,0],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"遊戲愛樂園 新光三越 A8, Xinyi, Taipei","ok":"2026-11","src":"https://travel.yam.com/article/139374"},
       {"name":{"en":"SNOOPY Play Center Taipei","th":"สนูปี้เพลย์เซ็นเตอร์ ไทเป"},"local":"SNOOPY Play Center台北兒童新樂園館","kind":"play","area":{"en":"Taipei Children's Amusement Park 2F, Shilin","th":"ชั้น 2 สวนสนุกเด็กไทเป ซื่อหลิน"},"what":{"en":"A Snoopy indoor play centre with a ball-pit slide, dress-up and pretend-play corners","th":"สนามเด็กเล่นในร่มธีมสนูปี้ มีสไลเดอร์บ่อบอล มุมแต่งตัวและเล่นบทบาทสมมติ"},"why":{"en":"Made for children up to ten and their parents, next to the amusement park","th":"ทำมาสำหรับเด็กถึง 10 ขวบกับพ่อแม่ อยู่ติดสวนสนุก"},"tip":{"en":"Weekend visits have a time limit; go on a weekday for longer","th":"วันหยุดจำกัดเวลาเล่น ไปวันธรรมดาได้เล่นนานกว่า"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"SNOOPY Play Center, 55 Chengde Rd Sec. 5, Shilin, Taipei","ok":"2026-11","src":"https://travel.yam.com/article/139374"},
-      {"name":{"en":"Taipei Dianzang Botanical Garden","th":"สวนพฤกษศาสตร์เตี่ยนจั้ง ไทเป"},"local":"台北典藏植物園","kind":"nature","area":{"en":"Zhongshan, by Huashan Park","th":"จงซาน ข้างสวนฮว๋าซาน"},"what":{"en":"An indoor botanical garden in a glass house with about five hundred plants","th":"สวนพฤกษศาสตร์ในเรือนกระจก มีต้นไม้ราว 500 ชนิด"},"why":{"en":"A green walk out of the rain, free and easy with a pram","th":"เดินชมต้นไม้หลบฝน เข้าฟรี เข็นรถเข็นเด็กได้สะดวก"},"tip":{"en":"Closed on Mondays","th":"ปิดวันจันทร์"},"ages":[2,2,2,2],"hrs":1,"io":"in","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"台北典藏植物園, 16 Jiangbin St, Zhongshan, Taipei","ok":"2026-11","src":"https://gofunit.com/%e5%8f%b0%e5%8c%97%e5%ae%a4%e5%85%a7%e6%99%af%e9%bb%9e/"}
+      {"name":{"en":"Taipei Dianzang Botanical Garden","th":"สวนพฤกษศาสตร์เตี่ยนจั้ง ไทเป"},"local":"台北典藏植物園","kind":"nature","area":{"en":"Zhongshan, by Huashan Park","th":"จงซาน ข้างสวนฮว๋าซาน"},"what":{"en":"An indoor botanical garden in a glass house with about five hundred plants","th":"สวนพฤกษศาสตร์ในเรือนกระจก มีต้นไม้ราว 500 ชนิด"},"why":{"en":"A green walk out of the rain, free and easy with a pram","th":"เดินชมต้นไม้หลบฝน เข้าฟรี เข็นรถเข็นเด็กได้สะดวก"},"tip":{"en":"Closed on Mondays","th":"ปิดวันจันทร์"},"ages":[2,2,2,2],"hrs":1,"io":"in","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"台北典藏植物園, 16 Jiangbin St, Zhongshan, Taipei","ok":"2026-11","src":"https://gofunit.com/%e5%8f%b0%e5%8c%97%e5%ae%a4%e5%85%a7%e6%99%af%e9%bb%9e/"},
+        {
+          "local": "美麗華摩天輪",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "name": {
+            "th": "ชิงช้าสวรรค์มีรามาร์",
+            "en": "Miramar Ferris Wheel"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ห้างมีรามาร์ จงซาน ไทเป",
+            "en": "Miramar department store, Zhongshan, Taipei"
+          },
+          "what": {
+            "th": "ชิงช้าสวรรค์สูง 95 เมตรบนห้างมีรามาร์ แลนด์มาร์กของไทเป",
+            "en": "The 95-metre Ferris wheel on the Miramar department store, a Taipei landmark"
+          },
+          "why": {
+            "th": "นั่งชิงช้าสวรรค์ชมเมือง",
+            "en": "A big wheel ride above the city"
+          },
+          "q": "美麗華摩天輪",
+          "ok": "2026-11"
+        },
+        {
+          "local": "自來水園區",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "name": {
+            "th": "สวนน้ำไทเป",
+            "en": "Taipei Water Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "กงกว่าน ไทเป",
+            "en": "Gongguan, Taipei"
+          },
+          "what": {
+            "th": "ลานเล่นน้ำที่ไกด์บอกว่าดีที่สุดในเมือง",
+            "en": "A splash park the guide calls the best in the city"
+          },
+          "why": {
+            "th": "เล่นน้ำวันอากาศร้อน",
+            "en": "Water play on a hot day"
+          },
+          "q": "自來水園區, 台北",
+          "ok": "2026-11"
+        },
+        {
+          "local": "碧潭",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "name": {
+            "th": "ปี้ทัน",
+            "en": "Bitan"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ซินเตี้ยน นิวไทเป",
+            "en": "Xindian, New Taipei"
+          },
+          "what": {
+            "th": "ริมแม่น้ำบรรยากาศดี ทางใต้ของไทเป",
+            "en": "A pleasant riverside area just south of Taipei"
+          },
+          "why": {
+            "th": "เดินเล่นริมแม่น้ำ",
+            "en": "A walk by the river"
+          },
+          "q": "碧潭, 新店",
+          "ok": "2026-11"
+        },
+        {
+          "local": "關渡宮",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "name": {
+            "th": "วัดกวนตู้",
+            "en": "Guandu Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "กวนตู้ ไทเป",
+            "en": "Guandu, Taipei"
+          },
+          "what": {
+            "th": "หนึ่งในวัดเก่าแก่ที่สุดรอบไทเป",
+            "en": "One of the oldest temples around Taipei"
+          },
+          "why": {
+            "th": "วัดเก่าเดินไม่ไกลจากรถไฟฟ้า",
+            "en": "An old temple a short walk from the MRT"
+          },
+          "tip": {
+            "th": "ลงรถไฟฟ้าสถานีกวนตู้ แล้วเดิน 5–10 นาที",
+            "en": "Guandu MRT, then a 5–10 minute walk"
+          },
+          "q": "關渡宮, 台北",
+          "ok": "2026-11"
+        },
+        {
+          "local": "艋舺龍山寺",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "name": {
+            "th": "วัดหลงซาน",
+            "en": "Longshan Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ว่านหัว ไทเป",
+            "en": "Wanhua, Taipei"
+          },
+          "what": {
+            "th": "หนึ่งในวัดเก่าแก่และมีชื่อที่สุดของไต้หวัน",
+            "en": "One of the oldest and best-known temples in Taiwan"
+          },
+          "why": {
+            "th": "เด็กชอบน้ำตกใหญ่และบ่อปลาคาร์ปด้านหน้า",
+            "en": "Children like the big waterfall and the carp pool out front"
+          },
+          "tip": {
+            "th": "เปิด 06:00–21:30 มีสวดมนต์ 06:00 และ 08:00",
+            "en": "Open 06:00–21:30; chanting at 06:00 and 08:00"
+          },
+          "q": "艋舺龍山寺",
+          "ok": "2026-11"
+        },
+        {
+          "local": "中正紀念堂",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nickkembel.com/taipei-with-kids/",
+          "name": {
+            "th": "อนุสรณ์สถานเจียงไคเช็ก",
+            "en": "Chiang Kai-shek Memorial Hall"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "จงเจิ้ง ไทเป",
+            "en": "Zhongzheng, Taipei"
+          },
+          "what": {
+            "th": "อนุสรณ์สถานใหญ่ ที่ไกด์ว่าน่าประทับใจกว่าของซุนยัตเซ็น",
+            "en": "The great memorial hall, which the guide rates above Sun Yat-sen's"
+          },
+          "why": {
+            "th": "ลานกว้างใหญ่ให้เดินเล่น",
+            "en": "A huge plaza to walk across"
+          },
+          "q": "中正紀念堂",
+          "ok": "2026-11"
+        }
       ]
     }
   ]

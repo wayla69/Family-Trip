@@ -259,7 +259,6 @@
           "ok": "2026-11",
           "src": "https://nz.trip.com/moments/poi-national-museum-of-the-philippines-bohol-23029462"
         },
-      {"name":{"en":"Sagbayan Peak","th":"ยอดเขาซักบายัน"},"kind":"park","area":{"en":"Sagbayan","th":"ซักบายัน"},"what":{"en":"A family park with a life-size T-Rex, a Kids' Town with cartoon characters, and a Chocolate Hills viewing deck.","th":"สวนครอบครัวที่มีโมเดลทีเร็กซ์ขนาดเท่าจริง คิดส์ทาวน์ตัวการ์ตูน และจุดชมวิวช็อกโกแลตฮิลส์"},"why":{"en":"Kids' Town park with life-size cartoon characters, as the page says.","th":"สวนคิดส์ทาวน์ที่มีตัวการ์ตูนขนาดเท่าจริง ตามหน้าเว็บ"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"P10 park entrance fee","th":"ค่าเข้าสวน P10"},"book":"none","q":"Sagbayan Peak, 6331 Sagbayan, Bohol","ok":"2026-11","src":"https://www.traveloka.com/en-ph/explore/destination/bohol-things-to-do/63687"},
       {"name":{"en":"Bohol Hanging Bridge","th":"สะพานแขวนโบโฮล"},"kind":"nature","area":{"en":"Loboc / Sipatan River","th":"โลบอก / แม่น้ำซิปาตัน"},"what":{"en":"A bamboo and steel bridge about 25 meters above the Sipatan River; only ten people can cross at once.","th":"สะพานไม้ไผ่และเหล็กสูงราว 25 เมตรเหนือแม่น้ำซิปาตัน ข้ามได้ทีละ 10 คน"},"why":{"en":"Gives a view of the river and its vegetation from high above the water.","th":"มองเห็นแม่น้ำและพืชพรรณจากที่สูง"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"no","price":{"en":"P10 entrance fee","th":"ค่าเข้า P10"},"book":"none","q":"Bohol Hanging Bridge, Loboc / Sipatan River, Bohol","ok":"2026-11","src":"https://www.traveloka.com/en-ph/explore/destination/bohol-things-to-do/63687"},
       {"name":{"en":"Balicasag Marine Sanctuary","th":"เขตอนุรักษ์ทางทะเลบาลิคาซาก"},"kind":"nature","area":{"en":"Balicasag Island","th":"เกาะบาลิคาซาก"},"what":{"en":"A marine sanctuary with a shallow coral garden, a wall drop-off and a sea turtle sanctuary, good for snorkelling and diving.","th":"เขตอนุรักษ์ทางทะเลมีสวนปะการังตื้น จุดดิ่งลงเป็นกำแพง และแหล่งเต่าทะเล เหมาะกับการดำน้ำตื้นและสคูบา"},"why":{"en":"Green and hawksbill turtles are often spotted there, as the page says.","th":"หน้าเว็บบอกว่ามักเจอเต่าทะเลเขียวและเต่ากระ"},"ages":[0,1,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Balicasag Marine Sanctuary, Balicasag Island, Bohol","ok":"2026-11","src":"https://www.roughguides.com/philippines/things-to-do-bohol/"},
       {"name":{"en":"Bohol Man-made Forest","th":"ป่าปลูกโบโฮล"},"kind":"nature","area":{"en":"Loboc","th":"โลบอก"},"what":{"en":"A reforested hillside of mahogany trees, planted from the late 1940s, on Loay Interior Road.","th":"เนินเขาป่าปลูกต้นมะฮอกกานี ปลูกตั้งแต่ปลายทศวรรษ 1940 บนถนนลอย อินเทอร์ริเออร์"},"why":{"en":"A shady stop to stretch legs between sights, as most tours include it.","th":"จุดพักร่มรื่นให้ยืดขาระหว่างที่เที่ยว ทัวร์ส่วนใหญ่แวะ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Bohol Man-made Forest, Loay Interior Road, Loboc, Bohol","ok":"2026-11","src":"https://www.ivankhristravels.com/bohol-travel-guide/"},
@@ -445,23 +444,6 @@
           "src": "https://tripwis.com/things-to-do-in-boracay/"
         },
         {
-          "name": { "en": "Mount Luho viewing deck", "th": "จุดชมวิวภูเขาลูโฮ" },
-          "kind": "views",
-          "area": { "en": "Central Boracay", "th": "ใจกลางโบราไกย์" },
-          "what": { "en": "The highest point on the island, with a viewing deck over both coasts of Boracay", "th": "จุดที่สูงที่สุดของเกาะ มีจุดชมวิวมองเห็นทะเลทั้งสองฝั่งของโบราไกย์" },
-          "why": { "en": "The tricycle ride up is half the fun for children; the deck is open air with little shade, so go with water and hats", "th": "นั่งสามล้อขึ้นไปสนุกสำหรับเด็ก จุดชมวิวเป็นที่โล่งร่มน้อย เตรียมน้ำและหมวก" },
-          "tip": { "en": "Take a tricycle to the entrance rather than walking in the heat; ask the price of the deck there", "th": "นั่งสามล้อไปถึงทางเข้าแทนการเดินท่ามกลางแดด และถามราคาจุดชมวิวที่นั่น" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 1.5,
-          "io": "out",
-          "pram": "no",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Mount Luho View Deck, Boracay Island, Malay, Aklan",
-          "ok": "2026-11",
-          "src": "https://tripwis.com/things-to-do-in-boracay/"
-        },
-        {
           "name": { "en": "D'Mall", "th": "ดีมอลล์" },
           "kind": "shop",
           "area": { "en": "Station 2", "th": "สเตชั่น 2" },
@@ -547,8 +529,44 @@
           "src": "https://visitboracay.com/boracay/travel-guides/family-kids/boracay-with-kids-family-friendly-activities-beaches"
         },
       {"name":{"en":"Butterfly Garden","th":"สวนผีเสื้อ"},"kind":"nature","area":{"en":"Station 3","th":"สถานี 3"},"what":{"en":"A garden of butterflies with guided tours that explain the insects.","th":"สวนผีเสื้อที่มีทัวร์นำชมอธิบายแมลงเหล่านี้"},"why":{"en":"Kids can witness the life cycle of butterflies firsthand.","th":"เด็กได้เห็นวงจรชีวิตของผีเสื้อกับตา"},"ages":[1,2,2,1],"hrs":1,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Butterfly Garden, Station 3, Boracay","ok":"2026-11","src":"https://visitboracay.com/boracay/travel-guides/family-kids/family-kids-guide-to-boracay"},
-      {"name":{"en":"Happy Dreamland Theme Park","th":"แฮปปี้ดรีมแลนด์"},"kind":"themepark","area":{"en":"Station 3","th":"สถานี 3"},"what":{"en":"A theme park whose mini-golf course has whimsical holes, from pirate ships to jungle animals.","th":"สวนสนุกที่มีสนามมินิกอล์ฟหลุมแปลกตา ตั้งแต่เรือโจรสลัดถึงสัตว์ป่าในป่า"},"why":{"en":"A pleasant adventure for all ages, the page says.","th":"หน้าเว็บบอกว่าเป็นการผจญภัยที่สนุกสำหรับทุกวัย"},"tip":{"en":"Visit early in the morning or late afternoon, the page advises.","th":"หน้าเว็บแนะนำให้ไปตอนเช้าตรู่หรือบ่ายแก่"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"PHP 300 for a round of mini-golf","th":"PHP 300 ต่อรอบมินิกอล์ฟ"},"book":"none","q":"Happy Dreamland Theme Park, Station 3, Boracay","ok":"2026-11","src":"https://visitboracay.com/boracay/travel-guides/family-kids/family-kids-guide-to-boracay"},
-      {"name":{"en":"Boracay Oceanarium","th":"บอราเคย์ โอเชียนาเรียม"},"kind":"aquarium","area":{"en":"Crown Regency Resort & Convention Center","th":"Crown Regency Resort & Convention Center"},"what":{"en":"An indoor oceanarium with marine life encounters, reached by car from White Beach.","th":"อควาเรียมในร่มที่ให้สัมผัสสัตว์ทะเล นั่งรถจากไวต์บีชไปได้"},"why":{"en":"Dive into the underwater world without getting wet, the page says.","th":"หน้าเว็บบอกว่าได้ดำดิ่งสู่โลกใต้น้ำโดยไม่ต้องเปียก"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"PHP 350 per adult, PHP 250 per child","th":"PHP 350 ผู้ใหญ่ · PHP 250 เด็ก"},"book":"rec","q":"Boracay Oceanarium, Crown Regency Resort, Boracay","ok":"2026-11","src":"https://visitboracay.com/boracay/travel-guides/family-kids/rainy-day-activities-boracay-kids"}
+      {"name":{"en":"Boracay Oceanarium","th":"บอราเคย์ โอเชียนาเรียม"},"kind":"aquarium","area":{"en":"Crown Regency Resort & Convention Center","th":"Crown Regency Resort & Convention Center"},"what":{"en":"An indoor oceanarium with marine life encounters, reached by car from White Beach.","th":"อควาเรียมในร่มที่ให้สัมผัสสัตว์ทะเล นั่งรถจากไวต์บีชไปได้"},"why":{"en":"Dive into the underwater world without getting wet, the page says.","th":"หน้าเว็บบอกว่าได้ดำดิ่งสู่โลกใต้น้ำโดยไม่ต้องเปียก"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"PHP 350 per adult, PHP 250 per child","th":"PHP 350 ผู้ใหญ่ · PHP 250 เด็ก"},"book":"rec","q":"Boracay Oceanarium, Crown Regency Resort, Boracay","ok":"2026-11","src":"https://visitboracay.com/boracay/travel-guides/family-kids/rainy-day-activities-boracay-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thingstodoinpalawan.com/family/",
+          "name": {
+            "th": "เบเกอร์สฮิลล์",
+            "en": "Baker's Hill"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนมิตรา ปวยร์โตปรินเซซา ปาลาวัน",
+            "en": "Mitra Road, Puerto Princesa, Palawan"
+          },
+          "what": {
+            "th": "ร้านเบเกอรี่ สวน และลานรูปปั้นสัตว์ขนาดเท่าตัวจริง",
+            "en": "A bakery, garden park and sculpture yard with life-size animal statues"
+          },
+          "why": {
+            "th": "เด็กๆ ชอบรูปปั้นสัตว์และมุมสนามเด็กเล่น",
+            "en": "Children love the animal statues and the playground corners"
+          },
+          "q": "Baker's Hill, Mitra Rd, Puerto Princesa",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

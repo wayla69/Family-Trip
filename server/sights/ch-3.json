@@ -372,6 +372,7 @@
             "th": "มีซิปไลน์และเส้นทางบนต้นไม้สำหรับเด็กชอบปีน",
             "en": "Zip lines and tree courses for children who like to climb"
           },
+          "tip": { "en": "Closed in winter; open about March to November, closed on Mondays", "th": "ปิดช่วงหน้าหนาว เปิดราว มี.ค.–พ.ย. ปิดวันจันทร์" },
           "q": "Geneva Adventure Park, Les Evaux, Onex",
           "ok": "2026-11"
         },
@@ -607,6 +608,84 @@
             "en": "Open every day"
           },
           "q": "Lausanne Botanical Garden, Avenue de Cour 14B, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montreuxriviera.com/en/PA456/blog/all-to-the-beach",
+          "name": {
+            "th": "ชายหาดเลอปิเยริเย",
+            "en": "Le Pierrier beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "กลาร็อง มองเทรอซ์",
+            "en": "Clarens, Montreux"
+          },
+          "what": {
+            "th": "ชายหาดริมทะเลสาบ มีวอลเลย์บอล ปิงปอง และเช่าบอร์ดยืนพายกับคายัค",
+            "en": "A lake beach with volleyball, table tennis, paddleboards and kayaks to hire"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นและที่พักระหว่างว่ายน้ำ",
+            "en": "A playground and room to rest between swims"
+          },
+          "q": "Pierrier - Montreux Plage, Chemin du Pierrier, Clarens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Pataugeoire du parc des Franchises",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.geneve.ch/pataugeoire-parc-franchises",
+          "name": {
+            "th": "สระตื้นในสวนฟร็องชีซ",
+            "en": "Franchises park paddling pool"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนชาเตอแลน เจนีวา",
+            "en": "Avenue de Châtelaine, Geneva"
+          },
+          "what": {
+            "th": "สระตื้นของเมืองในสวนฟร็องชีซ",
+            "en": "A city paddling pool in the Franchises park"
+          },
+          "why": {
+            "th": "สระน้ำตื้นสำหรับเด็กเล็กหน้าร้อน",
+            "en": "A shallow pool for small children in summer"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าร้อน",
+            "en": "Summer only"
+          },
+          "q": "Pataugeoire du parc des Franchises, Av. de Châtelaine, Genève",
           "ok": "2026-11"
         }
       ]
@@ -868,6 +947,47 @@
           "q": "Walk of Climb, Bahnhofstrasse, Zermatt",
           "ok": "2026-11",
           "src": "https://www.zermatt.swiss/en/p/walk-of-climb-01tVj000005DnWHIA0"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://swissfamilyfun.com/zermatt-guide/",
+          "name": {
+            "th": "หุบผากอร์เนอร์",
+            "en": "Gorner Gorge (Gornerschlucht)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บนทางเดินจากฟูรีลงมาหมู่บ้าน แซร์มัท",
+            "en": "on the trail from Furi down to the village, Zermatt"
+          },
+          "what": {
+            "th": "ทางเดินไม้ผ่านหุบผาแคบ บนทางเดินลงจากฟูรี",
+            "en": "Wooden walkways through a narrow gorge on the walk down from Furi"
+          },
+          "why": {
+            "th": "นั่งกระเช้าไปฟูรีกับเด็กเล็ก แล้วเดินลงผ่านหุบผา",
+            "en": "Take the gondola to Furi with younger children, then walk down through the gorge"
+          },
+          "tip": {
+            "th": "มีค่าเข้าเล็กน้อย",
+            "en": "A small entry fee"
+          },
+          "q": "Gornerschlucht, Zermatt",
+          "ok": "2026-11"
         }
       ]
     },

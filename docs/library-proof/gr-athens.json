@@ -144,6 +144,62 @@
       "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
       "date": "2026-01",
       "map": "Google Maps 'Zappeion', 9,316 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "Ergon House",
+      "page_name": "Ergon House",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'ERGON House Athens', newest review shown 4 days ago"
+    },
+    {
+      "name": "To Vrasto (Chalandri)",
+      "page_name": "To Vrasto",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'To Vrasto' (Chalandri), newest review shown 16 days ago"
+    },
+    {
+      "name": "O Telis (Palaia Penteli)",
+      "page_name": "Telis",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'o Telis' (Palaia Penteli), newest review shown 14 days ago"
+    },
+    {
+      "name": "Vyrinis (Pangrati)",
+      "page_name": "Vyrinis",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Vyrinis', newest review shown a day ago"
+    },
+    {
+      "name": "The Wall (Pallini)",
+      "page_name": "The Wall",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'THE WALL' (Pallini), newest review shown a day ago"
+    },
+    {
+      "name": "Goulandris Natural History Museum",
+      "page_name": "Goulandris Natural History Museum",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'National Museum of Natural History Goulandris', newest review shown 18 days ago"
+    },
+    {
+      "name": "Playmobil FunPark Athens",
+      "page_name": "Playmobil Fun Park",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'PLAYMOBIL FunPark Athens', newest review shown 6 days ago"
+    },
+    {
+      "name": "Spathario Shadow Theatre Museum",
+      "page_name": "Spathario Museum of Shadow Theater",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'Shadow Puppet Theater Museum … Evgenios Spatharis', newest review shown 3 months ago"
     }
   ],
   "left_out": [
@@ -162,7 +218,20 @@
     {
       "name": "The Wall",
       "why": "in Pallini, outside the city"
+    },
+    {
+      "name": "Six Thresholds Playground",
+      "why": "the map finds only the neighbourhood"
+    },
+    {
+      "name": "Bafi Refuge",
+      "why": "outside Athens"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from Athens Tourism (Sep 2026) and travel.gr (Jan 2026), all passed library-check.cjs, 8 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -150,6 +150,61 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 5 rows from Madloba (Mar–Sep 2026) and Georgia Travel (official), all passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Pause Family Cafe",
+          "page_name": "Pause Family Cafe",
+          "src": "https://madloba.info/en/tbilisi/cafe/pause-family-cafe/",
+          "date": "2026-06",
+          "map": "Google Maps 'Pause family cafe' (by Mziuri Park), newest review shown 17 hours ago"
+        },
+        {
+          "name": "Ninia's Garden",
+          "page_name": "Ninia’s Garden",
+          "src": "https://madloba.info/en/reviews/where-to-eat/restorany/family-friendly-restaurants-in-tbilisi-with-child-friendly-amenities/",
+          "date": "2026-09",
+          "map": "Google Maps 'Ninia's Garden' (97 Uznadze St), newest review shown 21 hours ago"
+        },
+        {
+          "name": "Manano Family Food",
+          "page_name": "Manano",
+          "src": "https://madloba.info/en/reviews/where-to-eat/restorany/family-friendly-restaurants-in-tbilisi-with-child-friendly-amenities/",
+          "date": "2026-09",
+          "map": "Google Maps 'Manano Family Food' (39 Pekini Ave), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Bukhari",
+          "page_name": "Bukhari",
+          "src": "https://madloba.info/en/reviews/where-to-eat/restorany/family-friendly-restaurants-in-tbilisi-with-child-friendly-amenities/",
+          "date": "2026-09",
+          "map": "Google Maps 'Bukhari' (80 Uznadze St), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Gldani Park",
+          "page_name": "Gldani Park",
+          "src": "https://georgia.travel/family-attractions/gldani-park",
+          "date": "official",
+          "map": "Google Maps 'Gldani Park' (Khizanishvili St), newest review shown 3 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Playland (City Mall Gldani)",
+          "why": "undated page"
+        },
+        {
+          "name": "Chiti",
+          "why": "no district or date"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

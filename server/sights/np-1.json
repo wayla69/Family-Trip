@@ -238,6 +238,43 @@
           },
           "q": "Pottery Square, Bhaktapur",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ntb.gov.np/plan-your-trip/trip-ideas/travel-with-children",
+          "name": {
+            "th": "เจดีย์สันติภาพโลก โปขรา",
+            "en": "World Peace Pagoda (Pokhara)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ฝั่งตรงข้ามทะเลสาบเฟวาจากเลกไซด์ โปขรา",
+            "en": "Across Phewa Lake from Lakeside, Pokhara"
+          },
+          "what": {
+            "th": "นั่งเรือข้ามทะเลสาบเฟวาสั้นๆ แล้วเดินขึ้นราวหนึ่งชั่วโมงถึงเจดีย์ วิวทะเลสาบและภูเขา",
+            "en": "A short boat ride across Phewa Lake, then about an hour's walk up to a stupa with lake and mountain views"
+          },
+          "why": {
+            "th": "การท่องเที่ยวเนปาลบอกว่าเป็นวันเที่ยวที่ดีสำหรับเด็ก",
+            "en": "The Nepal Tourism Board calls the walk a great day out for children"
+          },
+          "q": "World Peace Pagoda, Pokhara",
+          "ok": "2026-11"
         }
       ]
     }

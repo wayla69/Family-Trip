@@ -358,7 +358,200 @@
       {"name":{"en":"Insa-dong Culture Street","th":"ถนนวัฒนธรรมอินซาดง"},"kind":"culture","area":{"en":"Insa-dong","th":"อินซา-ดง"},"what":{"en":"Street of crafts, tea shops and quirky street snacks.","th":"ถนนงานฝีมือ ร้านชา และของว่างแปลกๆ"},"why":{"en":"Dragon's beard candy and other quirky snacks, the page says.","th":"หน้าเว็บบอกว่ามีลูกอมหนวดมังกรและของว่างแปลกอื่นๆ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Insa-dong Culture Street, Insa-dong, Seoul","ok":"2026-11","src":"https://www.famileetravel.com/things-to-do-in-seoul-with-kids-south-korea/"},
       {"name":{"en":"Ihwa-dong Mural Village","th":"หมู่บ้านภาพวาดอีฮวา"},"local":"이화동 벽화마을","kind":"views","area":{"en":"Ihwa-dong","th":"อีฮวา-ดง"},"what":{"en":"Hillside neighbourhood covered in colourful murals and art installations.","th":"ย่านบนเนินที่มีภาพวาดกำแพงสีสันสดใสและงานศิลปะติดตั้ง"},"why":{"en":"Murals and art to photograph, the page says.","th":"หน้าเว็บบอกว่ามีภาพวาดและงานศิลปะให้ถ่ายรูป"},"tip":{"en":"Expect some steep climbs.","th":"เตรียมใจไว้ว่ามีทางชันบ้าง"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ihwa-dong Mural Village, Seoul","ok":"2026-11","src":"https://www.famileetravel.com/things-to-do-in-seoul-with-kids-south-korea/"},
       {"name":{"en":"Yongsan Family Park","th":"สวนครอบครัวยงซาน"},"local":"용산가족공원","kind":"park","area":{"en":"Yongsan","th":"ยงซาน"},"what":{"en":"Green space with ponds, picnic areas and walking trails.","th":"พื้นที่สีเขียวมีบ่อ บริเวณปิกนิก และเส้นทางเดิน"},"why":{"en":"A calm break in the middle of the city, the page says.","th":"หน้าเว็บเรียกว่าเป็นที่พักสงบกลางเมือง"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Yongsan Family Park, Yongsan, Seoul","ok":"2026-11","src":"https://www.famileetravel.com/things-to-do-in-seoul-with-kids-south-korea/"},
-      {"name":{"en":"Pororo Park Lotte Mart Max Geumcheon","th":"โพโรโระพาร์ก ล็อตเต้มาร์ตแม็กซ์ กึมช็อน"},"local":"뽀로로파크 롯데마트 맥스 금천점","kind":"play","area":{"en":"Lotte Mart Max, Dusan-ro, Geumcheon-gu","th":"ล็อตเต้มาร์ตแม็กซ์ ถนนดูซัน เขตกึมช็อน"},"what":{"en":"An indoor Pororo play park with a big trampoline and a Pororo sing-along show","th":"สวนเล่นในร่มธีมโพโรโระ มีแทรมโพลีนใหญ่ และโชว์ร้องเพลงกับโพโรโระ"},"why":{"en":"Made for children from one to four who know the little penguin","th":"ทำมาสำหรับเด็ก 1–4 ขวบที่รู้จักเพนกวินตัวน้อย"},"tip":{"en":"Inside the supermarket building, easy by car; check which days it opens","th":"อยู่ในอาคารซูเปอร์มาร์เก็ต ขับรถไปสะดวก เช็กวันเปิดก่อนไป"},"ages":[2,2,1,0],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pororo Park, Lotte Mart Max Geumcheon, 71 Dusan-ro, Geumcheon-gu, Seoul","ok":"2026-11","src":"https://mom-mom.net/en/travel/places/64085cd3c7e515221d07bf02"}
+      {"name":{"en":"Pororo Park Lotte Mart Max Geumcheon","th":"โพโรโระพาร์ก ล็อตเต้มาร์ตแม็กซ์ กึมช็อน"},"local":"뽀로로파크 롯데마트 맥스 금천점","kind":"play","area":{"en":"Lotte Mart Max, Dusan-ro, Geumcheon-gu","th":"ล็อตเต้มาร์ตแม็กซ์ ถนนดูซัน เขตกึมช็อน"},"what":{"en":"An indoor Pororo play park with a big trampoline and a Pororo sing-along show","th":"สวนเล่นในร่มธีมโพโรโระ มีแทรมโพลีนใหญ่ และโชว์ร้องเพลงกับโพโรโระ"},"why":{"en":"Made for children from one to four who know the little penguin","th":"ทำมาสำหรับเด็ก 1–4 ขวบที่รู้จักเพนกวินตัวน้อย"},"tip":{"en":"Inside the supermarket building, easy by car; check which days it opens","th":"อยู่ในอาคารซูเปอร์มาร์เก็ต ขับรถไปสะดวก เช็กวันเปิดก่อนไป"},"ages":[2,2,1,0],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pororo Park, Lotte Mart Max Geumcheon, 71 Dusan-ro, Geumcheon-gu, Seoul","ok":"2026-11","src":"https://mom-mom.net/en/travel/places/64085cd3c7e515221d07bf02"},
+        {
+          "local": "북서울꿈의숲 청운답원",
+          "ages": [
+            0,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก 4–9 ขวบ 5,000 วอน ผู้ปกครองฟรี",
+            "en": "₩5,000 a child (4–9), adults free"
+          },
+          "book": "req",
+          "src": "https://mediahub.seoul.go.kr/archives/2017910",
+          "name": {
+            "th": "คิดส์คาเฟ่ของโซล ในดรีมฟอเรสต์",
+            "en": "Seoul kids' café, Dream Forest (Cheongun Dapwon)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ดรีมฟอเรสต์ คังบุก โซล",
+            "en": "Bukseoul Dream Forest, Gangbuk-gu, Seoul"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่กลางแจ้งของเมืองบนสนามหญ้าดรีมฟอเรสต์ เล่นได้ 2 ชั่วโมง",
+            "en": "An outdoor public kids' café on the lawn of Dream Forest; two hours' play"
+          },
+          "why": {
+            "th": "เล่นเสร็จเดินเล่นในป่าต่อได้",
+            "en": "Then a walk in the forest"
+          },
+          "tip": {
+            "th": "ต้องจองล่วงหน้า แสดงการจองเมื่อมาถึง",
+            "en": "Book ahead; the booking is checked on arrival"
+          },
+          "q": "북서울꿈의숲",
+          "ok": "2026-11"
+        },
+        {
+          "local": "서울상상나라",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2016748",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กโซลซังซังนารา",
+            "en": "Seoul Children's Museum (Seoul Sangsang Nara)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ในสวนเด็กโซล ควังจิน โซล",
+            "en": "Children's Grand Park, Gwangjin-gu, Seoul"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กในสวนเด็กโซล มีชั้นเล่นวิทยาศาสตร์เรื่องน้ำ",
+            "en": "A children's museum inside Seoul Children's Grand Park, with a water-science play floor"
+          },
+          "why": {
+            "th": "เด็กได้วาดรูปด้วยปืนฉีดน้ำและดูเรือลอยตามกระแสน้ำ",
+            "en": "Children draw with water guns and watch boats float with the current"
+          },
+          "tip": {
+            "th": "เอาเสื้อผ้าสำรองและผ้าเช็ดตัวไปสำหรับโซนเล่นน้ำ",
+            "en": "Bring spare clothes and a towel for the water play"
+          },
+          "q": "서울상상나라, 능동로 216, 서울",
+          "ok": "2026-11"
+        },
+        {
+          "local": "서울형키즈카페 구로구천왕근린공원점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2020010",
+          "name": {
+            "th": "คิดส์คาเฟ่ของเมืองโซล สวนช็อนวัง",
+            "en": "Seoul Kids Café (Cheonwang Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนช็อนวัง คูโร โซล",
+            "en": "Cheonwang Neighbourhood Park, Guro-gu, Seoul"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มของเมือง อยู่ในสวน เปิดเดือนพฤศจิกายน 2026",
+            "en": "A city-run indoor playground in a park, opened in November 2026"
+          },
+          "why": {
+            "th": "มีอุโมงค์ตาข่าย ท่อปีนป่าย และห้องให้นม หน้าต่างมองเห็นสวน",
+            "en": "A net tunnel, climbing tubes and a nursing room, with windows onto the park"
+          },
+          "q": "서울형키즈카페 구로구천왕근린공원점, 금오로 878, 서울",
+          "ok": "2026-11"
+        },
+        {
+          "local": "한강플플",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2017985",
+          "name": {
+            "th": "ฮันกังพึลพึล ตึกซ็อม",
+            "en": "Hangang PlePle (Ttukseom)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนแม่น้ำฮันตึกซ็อม ควังจิน โซล",
+            "en": "Ttukseom Hangang Park, Gwangjin-gu, Seoul"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ของเมืองริมแม่น้ำฮัน ในสวนตึกซ็อม",
+            "en": "A city kids' café by the Han River in Ttukseom Hangang Park"
+          },
+          "why": {
+            "th": "วิวแม่น้ำกว้าง ใกล้ทางเดินและสนามหญ้าปิกนิกของสวน",
+            "en": "Wide river views, close to the park's walks and picnic lawns"
+          },
+          "q": "한강플플, 강변북로 2202, 서울",
+          "ok": "2026-11"
+        },
+        {
+          "local": "서울역사박물관 어린이박물관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2018657",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็ก พิพิธภัณฑ์ประวัติศาสตร์โซล",
+            "en": "Seoul Museum of History Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนแซมุนอัน ชงโน โซล",
+            "en": "Saemunan-ro, Jongno-gu, Seoul"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กที่เปิดเดือนมีนาคม 2026 มีเกมภารกิจประวัติศาสตร์เมืองฮันยังเก่า",
+            "en": "A children's museum opened in March 2026, with a history mission game around old Hanyang"
+          },
+          "why": {
+            "th": "เด็กเดินตามตัวการ์ตูนและแตะป้ายเพื่อฟังเรื่องเล่า",
+            "en": "Children follow a character and tag panels for audio stories"
+          },
+          "q": "서울역사박물관, 새문안로 55, 서울",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -724,7 +917,356 @@
       {"name":{"en":"Cheongsapo Daritdol Observatory","th":"ชองซาโพ ดาริทโดล ออบเซอร์วาทอรี"},"kind":"views","area":{"en":"Haeundae Beach, reached by the Beach Train from Haeundae Blue Line Park","th":"หาดแฮอุนแด ขึ้นรถไฟชายหาดจากแฮอุนแดบลูไลน์พาร์ค"},"what":{"en":"A glass walkway that curves over the ocean, 20 metres up from the sea.","th":"ทางเดินกระจกโค้งเหนือทะเล สูง 20 เมตรจากผิวน้ำ"},"why":{"en":"The page says it is a unique walk over the water, easy to reach from Haeundae Beach.","th":"หน้าเว็บบอกว่าเป็นทางเดินเหนือน้ำที่แปลกและเข้าถึงง่ายจากหาดแฮอุนแด"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Cheongsapo Daritdol Observatory, Haeundae, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
       {"name":{"en":"Songdo Yonggung Suspension Bridge","th":"สะพานแขวนยงกุงซงโด"},"kind":"views","area":{"en":"Songdo, close to the Songdo Cable Car arrival point","th":"ซงโด ใกล้จุดลงกระเช้าซงโด"},"what":{"en":"A 120 metre metal suspension bridge over the sea that leads to the deserted Dongseok Island.","th":"สะพานโลหะแขวนยาว 120 เมตรเหนือทะเล นำไปสู่เกาะดงซอกที่เงียบ"},"why":{"en":"The page says families can wander around the island, and the bridge does not sway.","th":"หน้าเว็บบอกว่าครอบครัวเดินเล่นบนเกาะได้ และสะพานไม่แกว่ง"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Songdo Yonggung Suspension Bridge, Songdo, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
       {"name":{"en":"Dadaepo Sunset Fountain of Dreams","th":"น้ำพุแห่งความฝันแดแดโพตอนพระอาทิตย์ตก"},"kind":"show","area":{"en":"Dadaepo Beach","th":"หาดแดแดโพ"},"what":{"en":"A musical fountain with LED lights, close to Dadaepo Beach.","th":"น้ำพุดนตรีมีไฟ LED อยู่ใกล้หาดแดแดโพ"},"why":{"en":"The page says kids love splashing in the fountains, and the beach is a 60 second walk away.","th":"หน้าเว็บบอกว่าเด็กชอบวิ่งเล่นน้ำพุ และหาดอยู่ห่างแค่ 60 วินาทีเดิน"},"tip":{"en":"usually runs from April to October","th":"มักเปิดตั้งแต่เมษายนถึงตุลาคม"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Dadaepo Sunset Fountain of Dreams, Dadaepo Beach, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
-      {"name":{"en":"Danubi Train at Busan Taejongdae Park","th":"รถไฟดานูบีที่สวนแทจงแด"},"kind":"ride","area":{"en":"Taejongdae, at the south end of Yeongdo Island","th":"แทจงแด ปลายใต้ของเกาะยองโด"},"what":{"en":"A brightly coloured hop-on hop-off train that goes around Taejongdae Park.","th":"รถไฟสีสดใสขึ้นลงได้ วิ่งรอบสวนแทจงแด"},"why":{"en":"The page calls it the best and most fun way to get around Taejongdae with kids.","th":"หน้าเว็บเรียกว่าเป็นวิธีเที่ยวแทจงแดที่สนุกและดีที่สุดกับเด็ก"},"tip":{"en":"departs every 20 minutes or so","th":"ออกทุกราว 20 นาที"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Taejongdae Park, Yeongdo, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"}
+      {"name":{"en":"Danubi Train at Busan Taejongdae Park","th":"รถไฟดานูบีที่สวนแทจงแด"},"kind":"ride","area":{"en":"Taejongdae, at the south end of Yeongdo Island","th":"แทจงแด ปลายใต้ของเกาะยองโด"},"what":{"en":"A brightly coloured hop-on hop-off train that goes around Taejongdae Park.","th":"รถไฟสีสดใสขึ้นลงได้ วิ่งรอบสวนแทจงแด"},"why":{"en":"The page calls it the best and most fun way to get around Taejongdae with kids.","th":"หน้าเว็บเรียกว่าเป็นวิธีเที่ยวแทจงแดที่สนุกและดีที่สุดกับเด็ก"},"tip":{"en":"departs every 20 minutes or so","th":"ออกทุกราว 20 นาที"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Taejongdae Park, Yeongdo, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
+        {
+          "local": "브릭캠퍼스",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ปกติผู้ใหญ่ 15,000 วอน เด็กคิดเพิ่ม",
+            "en": "Usually ₩15,000 an adult, children extra"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "บริกแคมปัส",
+            "en": "Brick Campus"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "คีจัง ฝั่งตะวันออกของปูซาน ปูซาน",
+            "en": "Gijang, east Busan, Busan"
+          },
+          "what": {
+            "th": "สวนตัวต่อ มีงานศิลปะและภาพลวงตาที่ต่อจากตัวต่อ",
+            "en": "A brick-toy park of art and illusions built from bricks"
+          },
+          "why": {
+            "th": "งานศิลปะตัวต่อและภาพลวงตาให้เด็กดู",
+            "en": "Brick art and illusions for children to look at"
+          },
+          "q": "브릭캠퍼스 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "암남공원",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "สวนอัมนัม",
+            "en": "Amnam Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อัมนัม ซอกู ปูซาน",
+            "en": "Amnam, Seo-gu, Busan"
+          },
+          "what": {
+            "th": "สวนที่มีหุ่นไดโนเสาร์ตัวใหญ่ส่งเสียงคำราม",
+            "en": "A park with big dinosaur models that roar"
+          },
+          "why": {
+            "th": "ไดโนเสาร์คำราม อยู่ใกล้ปลายทางกระเช้าซงโด",
+            "en": "Roaring dinosaurs, near the Songdo cable car's far end"
+          },
+          "q": "암남공원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "사직야구장",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "สนามเบสบอลซาจิก",
+            "en": "Sajik Baseball Stadium"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ซาจิก ทงแนกู ปูซาน",
+            "en": "Sajik, Dongnae-gu, Busan"
+          },
+          "what": {
+            "th": "สนามเหย้าของทีมเบสบอลล็อตเต้ไจแอนต์ส",
+            "en": "Home ground of the Lotte Giants baseball team"
+          },
+          "why": {
+            "th": "ดูเบสบอล มีเสื้อเด็กและไม้เบสบอลจิ๋วขาย",
+            "en": "A baseball game, with kids' T-shirts and mini bats on sale"
+          },
+          "tip": {
+            "th": "ปกติแข่งช่วงเมษายนถึงกันยายน",
+            "en": "Games usually run April to September"
+          },
+          "q": "사직야구장",
+          "ok": "2026-11"
+        },
+        {
+          "local": "원더스페이스 부산명지점",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/635f6d83e69cfb073a6cdd34",
+          "name": {
+            "th": "วันเดอร์สเปซ สาขามยองจี",
+            "en": "Wonder Space (Myeongji)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มยองจี คังซอกู ปูซาน",
+            "en": "Myeongji, Gangseo-gu, Busan"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ในร่มขนาดใหญ่ ชั้น 3 ถึง 6 ของอาคารจอดรถ",
+            "en": "A large indoor kids' café on the 3rd to 6th floors of a parking tower"
+          },
+          "why": {
+            "th": "มีของเล่นเยอะ และเกมหยอดเหรียญ",
+            "en": "Lots to play with, and coin games"
+          },
+          "q": "원더스페이스 부산명지점",
+          "ok": "2026-11"
+        },
+        {
+          "local": "주라지 신세계센텀시티점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "จูราจี ห้างชินเซกเย เซ็นทุมซิตี",
+            "en": "Zooraji (Shinsegae Centum City)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ห้างชินเซกเย ชั้น 9 แฮอุนแด ปูซาน",
+            "en": "Shinsegae Centum City 9F, Haeundae, Busan"
+          },
+          "what": {
+            "th": "สวนบนดาดฟ้าธีมสวนสัตว์และไดโนเสาร์ ชั้น 9 ของห้าง",
+            "en": "A rooftop park with zoo animals and dinosaurs, on the 9th floor of the mall"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นเรือโจรสลัดและไดโนเสาร์ที่ขยับและคำราม",
+            "en": "A pirate ship playground and dinosaurs that move and roar"
+          },
+          "tip": {
+            "th": "เล่นเสร็จมีร้านอาหารในห้าง",
+            "en": "The mall has restaurants for after"
+          },
+          "q": "주라지 신세계센텀시티점, 센텀남대로 35, 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "부산시청 열린도서관 들락날락",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/6a68148152020564a1a38d66",
+          "name": {
+            "th": "ทึลลักนัลลัก ศาลาว่าการปูซาน",
+            "en": "Deullak Nallak (Busan City Hall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศาลาว่าการปูซาน ย็อนเจ ปูซาน",
+            "en": "Busan City Hall, Yeonje-gu, Busan"
+          },
+          "what": {
+            "th": "ห้องสมุดและที่เล่นของเด็กในศาลาว่าการปูซาน มีห้องนิทานและจอใหญ่",
+            "en": "A children's library and play space in Busan City Hall, with a storybook room and a big media screen"
+          },
+          "why": {
+            "th": "ห้องนิทานบรรยากาศเหมือนในเทพนิยาย ถอดรองเท้าก่อนเข้า",
+            "en": "A storybook room that feels like a fairy tale; shoes off at the door"
+          },
+          "tip": {
+            "th": "ปิดวันหยุดนักขัตฤกษ์ วันเสาร์อาทิตย์ควรจองห้องนิทานล่วงหน้า",
+            "en": "Closed on public holidays; book the storybook room ahead at weekends"
+          },
+          "q": "부산시청 열린도서관 들락날락, 중앙대로 1001, 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "부산광역시교육청어린이창의교육관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mom-mom.net/travel/places/66860ce84290823eb81e1400",
+          "name": {
+            "th": "ศูนย์การเรียนรู้สร้างสรรค์สำหรับเด็กปูซาน",
+            "en": "Busan Children's Creative Education Centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โชอึบ พูซันจิน ปูซาน",
+            "en": "Choeup-dong, Busanjin-gu, Busan"
+          },
+          "what": {
+            "th": "ศูนย์การเรียนรู้ของเด็กโดยสำนักงานการศึกษาปูซาน มีโซนธรรมชาติ วิทยาศาสตร์ และจินตนาการ",
+            "en": "A children's learning centre of the Busan education office, with nature, science and imagination zones"
+          },
+          "why": {
+            "th": "มีโซนตั้งแต่เด็กเล็กถึงประถม ห้องให้นม และที่เปลี่ยนผ้าอ้อม",
+            "en": "Zones from toddlers to primary age, a nursing room and nappy changing"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ เช้าวันธรรมดาเป็นของกลุ่มโรงเรียน ควรไปช่วงบ่าย",
+            "en": "Closed on Mondays; weekday mornings are for school groups, so go in the afternoon"
+          },
+          "q": "부산광역시교육청어린이창의교육관, 성지곡로33번길 29-28, 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "플레이랩 부산점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/69c34d953cc4acad909981bc",
+          "name": {
+            "th": "เพลย์แล็บ ปูซาน แฮอุนแด",
+            "en": "PlayLab (Busan, Haeundae)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชวาดง แฮอุนแด (ใกล้สถานีจังซัน) ปูซาน",
+            "en": "Jwa-dong, Haeundae-gu (near Jangsan Station), Busan"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ที่เด็กเล่นกับพนักงาน ผู้ปกครองรออีกห้อง",
+            "en": "A kids' café where children play with staff while parents wait apart"
+          },
+          "why": {
+            "th": "มีกิจกรรมเล่นสำหรับเด็กเล็ก มีเก้าอี้เด็ก",
+            "en": "Play programmes for little ones; a high chair"
+          },
+          "q": "플레이랩 부산점, 세실로69번길 15, 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "당신처럼 애지중지 키즈카페",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://busan.breaknews.com/42356",
+          "name": {
+            "th": "คิดส์คาเฟ่สาธารณะแอจีจุงจี สวนพลเมืองปูซาน",
+            "en": "Aejijungji Public Kids Café (Busan Citizens Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนพลเมืองปูซาน พูซันจิน ปูซาน",
+            "en": "Busan Citizens Park, Busanjin-gu, Busan"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่สาธารณะสำหรับเด็กต่ำกว่า 5 ขวบ ในสวนพลเมืองปูซาน เปิดเดือนกุมภาพันธ์ 2026",
+            "en": "A public kids' café for under-fives in Busan Citizens Park, opened in February 2026"
+          },
+          "why": {
+            "th": "ที่เล่นสำหรับเด็กเล็ก มีกิจกรรมประดิษฐ์ทำร่วมกับพ่อแม่",
+            "en": "Play made for under-fives, with parent-and-child making sessions"
+          },
+          "q": "당신처럼 애지중지 키즈카페, 시민공원로 73, 부산",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

@@ -60,13 +60,61 @@
       "src": "https://www.timeout.com/cape-town/things-to-do/the-best-summer-activities-for-kids-in-cape-town",
       "date": "2026-09",
       "map": "Google Maps 'The Bike Park at Constantia Uitsig', 265 reviews, newest 'last week'"
+    },
+    {
+      "name": "Folk Cafe St James",
+      "page_name": "Folk Café",
+      "src": "https://www.capetownetc.com/lifestyle/kid-friendly-restaurants/",
+      "date": "2026-10",
+      "map": "Google Maps 'Folk Cafe St. James' (54 Main Rd), newest review shown 19 hours ago"
+    },
+    {
+      "name": "Picnic Cafe and Deli",
+      "page_name": "Picnic Café and Deli",
+      "src": "https://www.capetownetc.com/lifestyle/kid-friendly-restaurants/",
+      "date": "2026-10",
+      "map": "Google Maps 'Picnic Cafe and Deli' (Montebello, Newlands), newest review shown a day ago"
+    },
+    {
+      "name": "Panarottis Kenilworth Centre",
+      "page_name": "Panarottis",
+      "src": "https://www.capetownetc.com/lifestyle/kid-friendly-restaurants/",
+      "date": "2026-10",
+      "map": "Google Maps 'Panarottis Kenilworth Centre Halaal' (Doncaster Rd), newest review shown a day ago"
+    },
+    {
+      "name": "Strolla (Sea Point)",
+      "page_name": "Strolla",
+      "src": "https://www.capetownwithkids.com/rainy-days/",
+      "date": "2025-05",
+      "map": "Google Maps 'Strolla Restaurant & Bar' (313 Beach Rd), newest review shown a week ago"
+    },
+    {
+      "name": "Rush Extreme (Claremont)",
+      "page_name": "Rush Extreme Trampoline Park",
+      "src": "https://www.capetownwithkids.com/rainy-days/",
+      "date": "2025-05",
+      "map": "Google Maps 'Rush Extreme Claremont' (25 Stegman Rd), newest review shown a day ago"
     }
   ],
   "left_out": [
     {
       "name": "Little Lion's Head",
       "why": "newest Google Maps review a year old"
+    },
+    {
+      "name": "Clay Cafe",
+      "why": "several branches; the pages disagree which"
+    },
+    {
+      "name": "artjamming",
+      "why": "the map puts it at Wembley Square, not the V&A Waterfront as the page says"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Cape Town Etc (Oct 2026), Cape Town with Kids (May 2025) and Time Out (Jun 2025), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

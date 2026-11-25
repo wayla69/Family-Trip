@@ -50,6 +50,33 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Bhutan Tourism (official) and Daily Bhutan (Feb 2025), all passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Simply Bhutan (living museum)",
+          "page_name": "Simply Bhutan living museum",
+          "src": "https://bhutan.travel/journal/editorial/bhutan-is-family-friendly",
+          "date": "official",
+          "map": "Google Maps 'Simply Bhutan' (Genyen Lam, Thimphu), newest review shown 4 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Burger Point",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "Rafting on the Mo Chhu",
+          "why": "a guided trip, not a place"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

@@ -124,6 +124,58 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from Marcie in Mommyland (Apr 2025) and ViaggiaPiccoli (Aug 2026), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Osteria al Portego",
+          "page_name": "Osteria al Portego",
+          "src": "https://www.marcieinmommyland.com/things-to-do-in-venice-with-kids/",
+          "date": "2025-04",
+          "map": "Google Maps 'Osteria Al Portego' (Calle de la Malvasia 6014), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Osteria ai Pugni",
+          "page_name": "Osteria ai Pugni",
+          "src": "https://www.marcieinmommyland.com/things-to-do-in-venice-with-kids/",
+          "date": "2025-04",
+          "map": "Google Maps 'Osteria Ai Pugni' (Fondamenta Gherardini 2836), newest review shown a month ago"
+        },
+        {
+          "name": "Querini Stampalia Foundation",
+          "page_name": "Querini Stampalia",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "date": "2026-08",
+          "map": "Google Maps 'Fondazione Querini Stampalia' (Campiello Santa Maria Formosa), newest review shown 2 days ago"
+        },
+        {
+          "name": "Da Vinci Interactive Museum",
+          "page_name": "Museo di Leonardo da Vinci",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "date": "2026-08",
+          "map": "Google Maps 'Da Vinci Interactive Museum' (Scoletta di San Rocco), newest review shown 5 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Ca' Macana",
+          "why": "overlaps the mask-decorating course already in the app"
+        },
+        {
+          "name": "VizioVirtù",
+          "why": "a chocolate shop"
+        },
+        {
+          "name": "Pinault Collection",
+          "why": "the page recommends it for older children and teenagers"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

@@ -214,43 +214,6 @@
           "ok": "2026-11"
         },
         {
-          "local": "Mirador de Kari",
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
-          "hrs": 1,
-          "io": "out",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://sanpedroatacama.com/en/destination/what-to-visit/valleys-and-viewpoints/",
-          "name": {
-            "th": "จุดชมวิวคารี",
-            "en": "Kari viewpoint (Piedra del Coyote)"
-          },
-          "kind": "views",
-          "area": {
-            "th": "ซันเปโดรเดอาตากามา",
-            "en": "San Pedro de Atacama"
-          },
-          "what": {
-            "th": "จุดชมวิวสูง 2,550 เมตร รู้จักกันในชื่อหินโคโยตี",
-            "en": "A viewpoint at 2,550 metres, known as the Coyote Stone"
-          },
-          "why": {
-            "th": "หนึ่งในภาพโปสการ์ดที่ขึ้นชื่อที่สุดของซันเปโดร",
-            "en": "One of San Pedro's best-known postcards"
-          },
-          "q": "Mirador de Kari, Piedra del Coyote, San Pedro de Atacama",
-          "ok": "2026-11"
-        },
-        {
           "local": "Valle del Arcoíris",
           "ages": [
             1,
@@ -597,43 +560,6 @@
           "ages": [
             1,
             1,
-            2,
-            2
-          ],
-          "hrs": 5,
-          "io": "out",
-          "pram": "part",
-          "price": {
-            "th": "≈ CLP 25,990 บัตรเข้าทั่วไป เริ่มต้น",
-            "en": "≈ CLP 25,990 general entry, from"
-          },
-          "book": "none",
-          "src": "https://chile.travel/blog/5-actividades-familiares-para-tu-visita-a-santiago-museos-y-parques/",
-          "name": {
-            "th": "ฟันตาซิลันเดีย",
-            "en": "Fantasilandia"
-          },
-          "kind": "themepark",
-          "area": {
-            "th": "สวนโอฮิกกินส์",
-            "en": "Parque O’Higgins"
-          },
-          "what": {
-            "th": "สวนสนุกคลาสสิก มีเครื่องเล่นเร็วสำหรับคนกล้า",
-            "en": "A classic amusement park with fast rides for braver ones"
-          },
-          "why": {
-            "th": "มีโซนปลอดภัยสำหรับเด็กเล็ก และเครื่องเล่นใหญ่สำหรับเด็กโต",
-            "en": "Safe zones for little ones and big rides for older children"
-          },
-          "q": "Fantasilandia, Parque O'Higgins, Santiago",
-          "ok": "2026-11"
-        },
-        {
-          "local": "",
-          "ages": [
-            1,
-            1,
             1,
             1
           ],
@@ -968,6 +894,191 @@
             "en": "A traditional lunch by the port after the lift ride down"
           },
           "q": "Mercado Puerto, Cochrane 117, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 5,000 เปโซชิลี ค่าเข้ารวมเวิร์กชอป",
+            "en": "≈ CLP 5,000 general entry with a workshop"
+          },
+          "book": "none",
+          "src": "https://umatu.cl/30-lugares-para-ir-con-ninos-en-santiago-cuando-llueve/",
+          "name": {
+            "th": "พิพิธภัณฑ์มูเซโอตาเยร์",
+            "en": "Museo Taller"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ย่านยุงไก ซานติอาโก",
+            "en": "Barrio Yungay, Santiago"
+          },
+          "what": {
+            "th": "โรงงานช่างไม้เก่าที่กลายเป็นพิพิธภัณฑ์ มีเครื่องมือกว่า 800 ชิ้น",
+            "en": "A former carpentry workshop turned living museum, with over 800 tools"
+          },
+          "why": {
+            "th": "มีเวิร์กชอปงานฝีมือให้ลองทำ",
+            "en": "Hands-on craft workshops to try"
+          },
+          "q": "Museo Taller, Compañía de Jesús 2784, Santiago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo de Ciencia y Tecnología",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ เด็ก 1,000 เปโซชิลี",
+            "en": "≈ CLP 1,000 children"
+          },
+          "book": "none",
+          "src": "https://umatu.cl/30-lugares-para-ir-con-ninos-en-santiago-cuando-llueve/",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยี ควินตานอร์มัล",
+            "en": "Science and Technology Museum (Quinta Normal)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนควินตานอร์มัล ซานติอาโก",
+            "en": "Parque Quinta Normal, Santiago"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แบบลงมือเล่นแห่งแรกของชิลี มีห้องธรณีวิทยา ดาราศาสตร์ และแม่เหล็กไฟฟ้า",
+            "en": "Chile's first interactive museum, with halls on geology, astronomy and electromagnetism"
+          },
+          "why": {
+            "th": "ห้องจัดแสดงให้ลองเล่นเอง",
+            "en": "Interactive halls to explore"
+          },
+          "q": "Museo de Ciencia y Tecnología, Av. Matucana 536, Santiago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Jardín Botánico Nacional",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ (13–59 ปี) 3,000 เปโซชิลี · เด็ก 5–12 ปี 1,500 เปโซชิลี",
+            "en": "Adults (13–59) CLP 3,000 · children 5–12 CLP 1,500"
+          },
+          "book": "none",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์แห่งชาติ บีญาเดลมาร์",
+            "en": "National Botanical Garden (Viña del Mar)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนเอลโอลิบาร์ บีญาเดลมาร์",
+            "en": "Camino El Olivar, Viña del Mar"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์แห่งชาติที่เอลโอลิบาร์",
+            "en": "The national botanical garden in El Olivar"
+          },
+          "why": {
+            "th": "มีเขาวงกตธรรมชาติให้เดินสำรวจ",
+            "en": "Natural mazes to explore"
+          },
+          "q": "Jardín Botánico Nacional, Camino El Olivar 305, Viña del Mar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Baburizza",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "name": {
+            "th": "พิพิธภัณฑ์พระราชวังบาบูริซซา",
+            "en": "Baburizza Palace museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปาเซโอยูโกสลาโบ บัลปาราอีโซ",
+            "en": "Paseo Yugoslavo, Valparaíso"
+          },
+          "what": {
+            "th": "หนึ่งในพื้นที่ศิลปวัฒนธรรมหลักของบัลปาราอีโซ",
+            "en": "One of Valparaíso's main cultural spaces"
+          },
+          "why": {
+            "th": "มีการเล่านิทานให้เด็กในวันพิเศษ",
+            "en": "Holds storytelling for children on special days"
+          },
+          "q": "Museo Baburizza, Paseo Yugoslavo 176, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parque Cultural de Valparaíso",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "name": {
+            "th": "สวนวัฒนธรรมบัลปาราอีโซ",
+            "en": "Valparaíso Cultural Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เนินการ์เซล บัลปาราอีโซ",
+            "en": "Cerro Cárcel, Valparaíso"
+          },
+          "what": {
+            "th": "สวนวัฒนธรรมในเรือนจำเก่าที่จัดวันครอบครัว",
+            "en": "A cultural park in a former prison that holds family days"
+          },
+          "why": {
+            "th": "มีเกมตัวตลก เพ้นต์หน้า และการแสดงหุ่นในวันครอบครัว",
+            "en": "Clown games, face painting and puppet shows on family days"
+          },
+          "q": "Parque Cultural de Valparaíso, Cárcel 471, Valparaíso",
           "ok": "2026-11"
         }
       ]

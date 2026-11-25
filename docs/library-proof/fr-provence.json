@@ -123,6 +123,27 @@
       "src": "https://www.marseille-tourisme.com/en/offers/palomano-aix-en-provence-en-6251493/",
       "date": "2026-11",
       "map": "Google Maps 'Palomano Aix en Provence', 737 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Le Carré du Palais",
+      "page_name": "Le Carré du Palais",
+      "src": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/le-carre-du-palais-avignon-fr-2851123/",
+      "date": "2026-11",
+      "map": "Google Maps 'Le Carré du Palais' (1 Place du Palais), newest review shown a day ago"
+    },
+    {
+      "name": "Parc de la Colline de Cuques",
+      "page_name": "Parc des Collines de Cuques",
+      "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/parc-des-collines-de-cuques-aix-en-provence-fr-2885673/",
+      "date": "2026-11",
+      "map": "Google Maps 'Parc de la Colline de Cuques' (Chemin Gilles Borel), newest review shown 2 months ago"
+    },
+    {
+      "name": "Les Chevrettes de Malo",
+      "page_name": "Les Chevrettes de Malo",
+      "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/les-chevrettes-de-malo-puyvert-fr-6665465/",
+      "date": "2026-07",
+      "map": "Google Maps 'Les chevrettes de malo' (Av. du Couleton, Puyvert), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -137,7 +158,28 @@
     {
       "name": "itimaker, Wanderlog",
       "why": "excluded sources"
+    },
+    {
+      "name": "L'Espigaou",
+      "why": "its page offers pony and donkey rides"
+    },
+    {
+      "name": "Le musée à petits pas",
+      "why": "a one-off dated event"
+    },
+    {
+      "name": "Parc Rambot",
+      "why": "no review dates readable on the map"
+    },
+    {
+      "name": "O' Papilles",
+      "why": "library-check.cjs could not confirm the row"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Provence-Alpes-Côte d'Azur tourism (2026), Avignon Tourisme and Onivapp (Aug 2026), 6 passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

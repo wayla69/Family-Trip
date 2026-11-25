@@ -529,10 +529,7 @@
             "th": "มีลูจหน้าร้อน เด็ก 4–5 ขวบขึ้นไปเล่นกับผู้ใหญ่ได้",
             "en": "A summer luge from age 4 or 5 with a grown-up"
           },
-          "tip": {
-            "th": "ขับรถจากอานซีราว 20 นาที",
-            "en": "About 20 minutes by car from Annecy"
-          },
+          "tip": { "en": "About 20 minutes by car from Annecy; skiing from about mid-December to late March, summer activities in the warm months, little open in between", "th": "ขับรถจากอานซีราว 20 นาที เล่นสกีราวกลาง ธ.ค.–ปลาย มี.ค. หน้าร้อนมีกิจกรรมกลางแจ้ง ช่วงระหว่างฤดูแทบไม่มีอะไรเปิด" },
           "q": "Station du Semnoz, Viuz-la-Chiésaz",
           "ok": "2026-11"
         },
@@ -685,11 +682,160 @@
             "th": "เส้นทางต่ำสุดเริ่มเล่นได้ตั้งแต่ 3 ขวบ",
             "en": "The lowest courses start at age 3"
           },
-          "tip": {
-            "th": "จองล่วงหน้าช่วง ก.ค.–ส.ค.",
-            "en": "Book ahead in July and August"
-          },
+          "tip": { "en": "Closed in winter; book ahead in July and August", "th": "ปิดช่วงหน้าหนาว จองล่วงหน้าช่วง ก.ค.–ส.ค." },
           "q": "Acro’Aventures, Route Forestière, Talloires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+          "name": {
+            "th": "หาดมาร์กีซา",
+            "en": "Plage des Marquisats"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนเดมาร์กีซา ใกล้เมืองเก่า อานซี",
+            "en": "Rue des Marquisats, near the old town, Annecy"
+          },
+          "what": {
+            "th": "หาดริมทะเลสาบในเมือง เข้าฟรี มีเจ้าหน้าที่ช่วงไฮซีซัน",
+            "en": "A free lake beach in town, with lifeguards in high season"
+          },
+          "why": {
+            "th": "มีโซนน้ำตื้นสำหรับเด็กเล็ก",
+            "en": "A shallow area for toddlers"
+          },
+          "tip": {
+            "th": "มีเจ้าหน้าที่ช่วยชีวิตช่วงไฮซีซัน",
+            "en": "Lifeguards in high season"
+          },
+          "q": "Plage des Marquisats, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+          "name": {
+            "th": "สวนยุโรป",
+            "en": "Jardins de l'Europe"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริมคลองนโปเลียนที่ 3 ข้างสะพานแห่งความรัก อานซี",
+            "en": "Quai Napoléon III, by the Pont des Amours, Annecy"
+          },
+          "what": {
+            "th": "สนามหญ้าและต้นไม้เก่าแก่ริมคลอง เดินไม่ไกลจากเมืองเก่า",
+            "en": "Lawns and old trees by the canal, a short walk from the old town"
+          },
+          "why": {
+            "th": "มีที่ให้วิ่งหลังเดินถนนหินมานาน",
+            "en": "Room to run after the cobbled streets"
+          },
+          "q": "Jardins de l'Europe, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Fonderie Paccard",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/france/annecy/visit-annecy-family/",
+          "name": {
+            "th": "โรงหล่อระฆังปักการ์",
+            "en": "Paccard bell foundry"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เซฟรีเย ห่างอานซี 10 นาที",
+            "en": "Sevrier, 10 minutes from Annecy"
+          },
+          "what": {
+            "th": "ทัวร์ชมโรงหล่อระฆัง",
+            "en": "Guided tours of a bell foundry"
+          },
+          "why": {
+            "th": "ได้ตีระฆังจริงที่หนักหลายตัน",
+            "en": "Visitors ring real bells weighing several tonnes"
+          },
+          "q": "PACCARD Fonderie de Cloches, Sevrier",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parc de loisirs des Planards",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ €9.50 ต่อเครื่องเล่น",
+            "en": "≈ €9.50 a ride"
+          },
+          "book": "none",
+          "src": "https://en.chamonix.com/activites-automne/chamonix-leisure-park",
+          "name": {
+            "th": "สวนสนุกเลปลานาร์",
+            "en": "Les Planards leisure park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนปีเยดูเกรปง ชาโมนี",
+            "en": "Chemin du Pied du Grépon, Chamonix"
+          },
+          "what": {
+            "th": "สวนสนุกเชิงมงบล็อง มีเครื่องเล่นและที่เล่น",
+            "en": "An amusement park at the foot of Mont Blanc with rides and play areas"
+          },
+          "why": {
+            "th": "เครื่องเล่นเด็ก ม้าหมุน และเกมน้ำ ตั้งแต่ 1 ขวบ",
+            "en": "Kiddy rides, carousels and water games from age 1"
+          },
+          "q": "Les Planards, 351 Chemin du Pied du Grépon, Chamonix",
           "ok": "2026-11"
         }
       ]
@@ -1444,6 +1590,88 @@
             "en": "Opening dates and hours are on the tourist office page"
           },
           "q": "Archéoscope, Grande Rue, Le Mont-Saint-Michel",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/saint-malo/visiter-saint-malo-famille/",
+          "name": {
+            "th": "เกาะกร็องเบ",
+            "en": "Grand Bé"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอกกำแพงเมือง แซ็งมาโล",
+            "en": "off the ramparts, Saint-Malo"
+          },
+          "what": {
+            "th": "เกาะหินเล็กๆ ที่เดินถึงตอนน้ำลง ห่างกำแพงเมืองไม่กี่ร้อยเมตร",
+            "en": "A small rocky tidal island a few hundred metres off the ramparts"
+          },
+          "why": {
+            "th": "เด็กเดินบนทรายไปถึงเกาะได้ตอนน้ำลง และดูแอ่งน้ำในโขดหิน",
+            "en": "Children walk out to it on the sand at low tide and look in the rock pools"
+          },
+          "tip": {
+            "th": "ไปได้เฉพาะตอนน้ำลง วันละสองครั้ง",
+            "en": "Only on foot at low tide, twice a day"
+          },
+          "q": "Grand Bé, Saint-Malo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/saint-malo/visiter-saint-malo-famille/",
+          "name": {
+            "th": "เรือฟริเกตเลตวาลดูรัว",
+            "en": "L'Étoile du Roy (frigate)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าดูเกทรูแอง ท่าเรือ แซ็งมาโล",
+            "en": "Quai Duguay-Trouin, the port, Saint-Malo"
+          },
+          "what": {
+            "th": "เรือฟริเกตแบบศตวรรษที่ 18 จอดอยู่ในท่าเรือ",
+            "en": "An 18th-century-style frigate moored in the port"
+          },
+          "why": {
+            "th": "ขึ้นไปบนเรือได้",
+            "en": "You can climb aboard the ship"
+          },
+          "tip": {
+            "th": "บางครั้งเรือออกไปที่อื่น เช็กก่อนว่าจอดอยู่",
+            "en": "It is sometimes away; check it is in port before you go"
+          },
+          "q": "L'Étoile du Roy, Quai Duguay-Trouin, Saint-Malo",
           "ok": "2026-11"
         }
       ]
@@ -2312,7 +2540,8 @@
             "en": "Check the price"
           },
           "book": "none",
-          "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+          "src": "https://www.cezanne-en-provence.com/L-Atelier-des-Lauves?lang=en",
+          "tip": { "en": "Open in summer only (2026: 4 July–31 October); closed in winter, reopening spring 2027; book ahead on the official site", "th": "เปิดเฉพาะช่วงหน้าร้อน (ปี 2026: 4 ก.ค.–31 ต.ค.) ปิดช่วงหน้าหนาว เปิดอีกครั้งฤดูใบไม้ผลิ 2027 จองล่วงหน้าที่เว็บไซต์ทางการ" },
           "name": {
             "th": "สตูดิโอเซซาน",
             "en": "Cézanne’s studio"
@@ -2442,6 +2671,80 @@
             "en": "Free play for children of 0 to 10 with their parents"
           },
           "q": "Palomano, 45 Boulevard Aristide Briand, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/parc-des-collines-de-cuques-aix-en-provence-fr-2885673/",
+          "name": {
+            "th": "สวนเนินเขากุก",
+            "en": "Parc de la Colline de Cuques"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนจิลส์โบเรล ทางใต้ของแอ็กซ์ออง-พรอว็องส์",
+            "en": "Chemin Gilles Borel, south Aix-en-Provence"
+          },
+          "what": {
+            "th": "สวนธรรมชาติบนเนินเขา มีที่เล่นและสระตื้น",
+            "en": "A hillside natural park with a play area and a paddling pool"
+          },
+          "why": {
+            "th": "มีที่เล่นและสระตื้นสำหรับเด็ก",
+            "en": "A play area and a paddling pool for children"
+          },
+          "q": "Parc de la Colline de Cuques, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/les-chevrettes-de-malo-puyvert-fr-6665465/",
+          "name": {
+            "th": "ฟาร์มเลเชอเวรตต์เดอมาโล",
+            "en": "Les Chevrettes de Malo"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนกูเลตง ปุยแวร์ ลูเบอรง",
+            "en": "Avenue du Couleton, Puyvert, Luberon"
+          },
+          "what": {
+            "th": "ฟาร์มแพะที่เปิดให้เข้าชม",
+            "en": "A working goat farm to visit"
+          },
+          "why": {
+            "th": "ครอบครัวได้รู้จักฟาร์มและงานในฟาร์ม",
+            "en": "Families discover a farm and its work"
+          },
+          "q": "Les chevrettes de malo, Av. du Couleton, Puyvert",
           "ok": "2026-11"
         }
       ]
@@ -2822,10 +3125,7 @@
             "th": "เด็กชอบนั่งรถไฟเล็กรอบเมือง",
             "en": "Children love going round town on the little train"
           },
-          "tip": {
-            "th": "มีสองเส้นทาง สีเขียวในเมืองเก่า สีเหลืองในเมืองใหม่",
-            "en": "Two routes: green in the old town, yellow in the newer part"
-          },
+          "tip": { "en": "Runs about April to October; two routes: green in the old town, yellow in the newer part", "th": "วิ่งราว เม.ย.–ต.ค. มีสองเส้นทาง สีเขียวในเมืองเก่า สีเหลืองในเมืองใหม่" },
           "q": "Petit Train Touristique de Colmar, 3 Rue Kléber, Colmar",
           "ok": "2026-11"
         },
@@ -2904,10 +3204,7 @@
             "th": "มีโซนน้ำตื้นให้เล่น ฉากหลังเป็นเทือกเขาโวจ",
             "en": "A shallow splash zone with the Vosges behind"
           },
-          "tip": {
-            "th": "พกครีมกันแดดและผ้าเช็ดตัว",
-            "en": "Bring sunscreen and towels"
-          },
+          "tip": { "en": "Summer only: the 2026 season ran 20 May–27 September; bring sunscreen and towels", "th": "เปิดเฉพาะหน้าร้อน ฤดูกาล 2026 เปิด 20 พ.ค.–27 ก.ย. พกครีมกันแดดและผ้าเช็ดตัว" },
           "q": "Base Nautique Colmar Houssen, 37 Rue Denis Papin, Colmar",
           "ok": "2026-11"
         },
@@ -3023,40 +3320,40 @@
           "ok": "2026-11"
         },
         {
-          "local": "Musée Alsacien",
+          "local": "",
           "ages": [
-            0,
             1,
             1,
-            2
+            1,
+            1
           ],
-          "hrs": 1,
-          "io": "in",
+          "hrs": 2,
+          "io": "out",
           "pram": "part",
           "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
+            "th": "ฟรี",
+            "en": "Free"
           },
           "book": "none",
-          "src": "https://kidsareatrip.com/things-to-do-in-strasbourg-with-kids/",
+          "src": "https://onivapp.com/blog/sortie-avec-bebe-a-strasbourg",
           "name": {
-            "th": "พิพิธภัณฑ์อาลซัส",
-            "en": "Alsatian Museum"
+            "th": "สวนซิตาแดล",
+            "en": "Parc de la Citadelle"
           },
-          "kind": "museum",
+          "kind": "park",
           "area": {
-            "th": "ท่าแซ็งนีกอลา สตราสบูร์ก",
-            "en": "Quai Saint-Nicolas, Strasbourg"
+            "th": "ซิตาแดล สตราสบูร์ก",
+            "en": "Citadelle, Strasbourg"
           },
           "what": {
-            "th": "ศิลปะ ประเพณี และชีวิตชนบทอาลซัส ในบ้านโครงไม้สองหลัง",
-            "en": "Alsatian art, folklore and country life in two half-timbered houses"
+            "th": "สวนในป้อมโวบองเก่า ทางเดินเรียบยาวและม้านั่งใต้ร่มไม้",
+            "en": "A park in the old Vauban fortifications, with long flat paths and shaded benches"
           },
           "why": {
-            "th": "ตัวบ้านโครงไม้ก็เป็นส่วนหนึ่งของการเที่ยวชม",
-            "en": "The half-timbered houses are part of the visit"
+            "th": "ทางเรียบ เข็นรถเข็นเด็กเดินเล่นได้",
+            "en": "Flat paths for a pram walk"
           },
-          "q": "Musée Alsacien, 23 Quai Saint-Nicolas, Strasbourg",
+          "q": "Parc de la Citadelle, Strasbourg",
           "ok": "2026-11"
         }
       ]
@@ -3455,6 +3752,154 @@
             "en": "Check the weather and the queue first"
           },
           "q": "PanoraMagique, Disney Village, Chessy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+          "name": {
+            "th": "ดัมโบ้ช้างบินได้",
+            "en": "Dumbo the Flying Elephant"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "แฟนตาซีแลนด์ ดิสนีย์แลนด์พาร์ก",
+            "en": "Fantasyland, Disneyland Park"
+          },
+          "what": {
+            "th": "เครื่องเล่นช้างบิน",
+            "en": "A flying-elephant ride"
+          },
+          "why": {
+            "th": "เครื่องเล่นนุ่มนวลที่เด็กเล็กชอบ",
+            "en": "A gentle ride little ones enjoy"
+          },
+          "q": "Dumbo the Flying Elephant, Disneyland Paris",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+          "name": {
+            "th": "เคซีย์จูเนียร์ รถไฟละครสัตว์",
+            "en": "Casey Jr. – the little circus train"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "แฟนตาซีแลนด์ ดิสนีย์แลนด์พาร์ก",
+            "en": "Fantasyland, Disneyland Park"
+          },
+          "what": {
+            "th": "รถไฟเล็กวิ่งผ่านฉากจำลอง",
+            "en": "A small train ride past miniature scenes"
+          },
+          "why": {
+            "th": "รถไฟนุ่มนวลสำหรับเด็กเล็ก",
+            "en": "A gentle train for younger children"
+          },
+          "q": "Casey Jr. - The Little Circus Train, Disneyland Paris",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+          "name": {
+            "th": "ถ้วยชาของแมดแฮตเตอร์",
+            "en": "Mad Hatter's Tea Cups"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "แฟนตาซีแลนด์ ดิสนีย์แลนด์พาร์ก",
+            "en": "Fantasyland, Disneyland Park"
+          },
+          "what": {
+            "th": "ถ้วยชาหมุนได้",
+            "en": "Spinning tea cups"
+          },
+          "why": {
+            "th": "เลือกได้ว่าจะหมุนเร็วแค่ไหน",
+            "en": "You choose how fast your cup spins"
+          },
+          "q": "Mad Hatter's Tea Cups, Disneyland Paris",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+          "name": {
+            "th": "บัซไลต์เยียร์เลเซอร์บลาสต์",
+            "en": "Buzz Lightyear Laser Blast"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ดิสคัฟเวอรีแลนด์ ดิสนีย์แลนด์พาร์ก",
+            "en": "Discoveryland, Disneyland Park"
+          },
+          "what": {
+            "th": "เครื่องเล่นยิงเลเซอร์ใส่เป้าเก็บคะแนน",
+            "en": "A ride where you aim lasers at targets for points"
+          },
+          "why": {
+            "th": "ทั้งครอบครัวแข่งคะแนนกัน",
+            "en": "The family compares scores"
+          },
+          "q": "Buzz Lightyear Laser Blast, Disneyland Paris",
           "ok": "2026-11"
         }
       ]

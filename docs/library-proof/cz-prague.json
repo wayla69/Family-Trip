@@ -109,6 +109,34 @@
       "src": "https://www.lonelyplanet.com/articles/prague-with-kids",
       "date": "2026-05",
       "map": "Google Maps 'Královská obora Stromovka', 18,018 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "The Spot Malá Strana",
+      "page_name": "The Spot",
+      "src": "https://loudavymkrokem.cz/co-delat-s-batoletem-v-praze/",
+      "date": "2025-03",
+      "map": "Google Maps 'The Spot Malá Strana' (nám. Kinských 7), newest review shown 21 hours ago"
+    },
+    {
+      "name": "Skákal pes",
+      "page_name": "Skákal pes",
+      "src": "https://loudavymkrokem.cz/co-delat-s-batoletem-v-praze/",
+      "date": "2025-03",
+      "map": "Google Maps 'SKÁKALPES' (Francouzská 15), newest review shown 6 days ago"
+    },
+    {
+      "name": "Kuličkário",
+      "page_name": "Kuličkário",
+      "src": "https://kulickario.cz/",
+      "date": "2026-08",
+      "map": "Google Maps 'Kuličkário' (Kroftova 329/1), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Children's Island (Dětský ostrov)",
+      "page_name": "Dětský ostrov",
+      "src": "https://prague.eu/cs/objevujte/detsky-ostrov/",
+      "date": "official",
+      "map": "Google Maps 'Dětský Island' (Smíchov), newest review shown 2 weeks ago"
     }
   ],
   "left_out": [
@@ -123,7 +151,20 @@
     {
       "name": "Railway Kingdom, Pedal Planet Museum, Toulcův dvůr, Back In Time Prague",
       "why": "library-check.cjs: the expats.cz page did not open"
+    },
+    {
+      "name": "Rejžárna",
+      "why": "the map shows its company name, not the place"
+    },
+    {
+      "name": "Svět medúz",
+      "why": "its own site shows it closed every day"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Loudavým krokem (Jul 2026), Kuličkário's own site and Prague City Tourism (official), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

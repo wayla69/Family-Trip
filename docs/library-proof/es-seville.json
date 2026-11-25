@@ -39,6 +39,20 @@
       "src": "https://www.ciceronegranada.com/en/blog/family-holiday-granada/",
       "date": "2025-11",
       "map": "Google Maps 'Botanical Garden of the University of Granada', 1,189 reviews, newest 'last week'"
+    },
+    {
+      "name": "Carmen de los Mártires",
+      "page_name": "Carmen de los Mártires",
+      "src": "https://www.granadadirect.com/guias/granada-con-ninos/",
+      "date": "2026-11",
+      "map": "Google Maps 'Carmen de los Mártires' (P.º de los Mártires, Centro, Granada), newest review shown a day ago"
+    },
+    {
+      "name": "Parque de los Príncipes",
+      "page_name": "Parque de los Principes",
+      "src": "https://devourtours.com/blog/kid-friendly-spanish-food-in-seville/",
+      "date": "2025-12",
+      "map": "Google Maps 'Príncipes Park' (Av. Blas Infante, 2), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -57,7 +71,32 @@
     {
       "name": "Kiosko Bar Príncipe, Vinería San Telmo, Mercado de la Encarnación",
       "why": "library-check.cjs: name and quote not on the page"
+    },
+    {
+      "name": "Mamafante y Papaposa",
+      "why": "the newest review on the map is 7 years old"
+    },
+    {
+      "name": "La Huerta de la Buhaira",
+      "why": "the newest review on the map is a year old"
+    },
+    {
+      "name": "Parque García Lorca",
+      "why": "no review dates readable on the map"
+    },
+    {
+      "name": "Patio San Eloy",
+      "why": "nothing about children on the page"
+    },
+    {
+      "name": "Kiosko Bar Príncipe, Viñería San Telmo, Mesón JR",
+      "why": "the name was not on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from Devour Tours (Dec 2025) and Granada Direct (Nov 2026); 6 passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

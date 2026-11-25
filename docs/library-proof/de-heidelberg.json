@@ -81,6 +81,13 @@
       "src": "https://kuchenkindundkegel.de/schwarzwald-mit-kindern",
       "date": "2026-05",
       "map": "Google Maps 'Tatzmania Löffingen - Schwarzwaldpark', 6,134 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Puppentheater Plappermaul",
+      "page_name": "Puppentheater Plappermaul",
+      "src": "https://www.heidelberg-marketing.de/en/discover/family/familienfreundliches-indoor-programm",
+      "date": "official",
+      "map": "Google Maps 'Puppentheater Plappermaul' (Steinhofweg 20), newest review shown a week ago"
     }
   ],
   "left_out": [
@@ -95,7 +102,20 @@
     {
       "name": "Zauberwald (Loßburg)",
       "why": "the map's place there is named 'Zauberland at the Kinzig'"
+    },
+    {
+      "name": "Sprungbude",
+      "why": "library-check.cjs could not confirm the row"
+    },
+    {
+      "name": "Weingarten adventure playground",
+      "why": "the map shows two playgrounds and none named Weingarten"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from Heidelberg Marketing and Visit Freiburg (official), 2 passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

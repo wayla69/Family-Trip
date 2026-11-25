@@ -165,8 +165,43 @@
       "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
       "date": "2026-10",
       "map": "Google Maps 1,783 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Market Lunch (Eastern Market)",
+      "page_name": "Market Lunch",
+      "src": "https://washington.org/dc-guide-to/dc-dining-families",
+      "date": "2026-03",
+      "map": "Google Maps 'The Market Lunch', newest review shown 2 days ago"
+    },
+    {
+      "name": "Tonic at Quigley's",
+      "page_name": "Tonic at Quigley’s Pharmacy",
+      "src": "https://washington.org/dc-guide-to/dc-dining-families",
+      "date": "2026-03",
+      "map": "Google Maps 'Tonic At Quigley's', newest review shown 21 days ago"
+    },
+    {
+      "name": "National Children's Museum",
+      "page_name": "National Children's Museum",
+      "src": "https://nationalchildrensmuseum.org/visit",
+      "date": "official",
+      "map": "Google Maps 'National Children's Museum', newest review shown a month ago"
     }
   ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "left_out": [
+    {
+      "name": "Petworth Spray Park",
+      "why": "no map entry of its own"
+    },
+    {
+      "name": "Scramble, Hyper Kidz",
+      "why": "in Virginia, outside DC"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Washington.org (Mar 2026), Mommy Poppins (May 2026) and the museum's own site, all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

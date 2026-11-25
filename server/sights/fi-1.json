@@ -469,6 +469,117 @@
           },
           "q": "Helsinki Tram Museum, Töölönkatu 51 A, Helsinki",
           "ok": "2026-11"
+        },
+        {
+          "local": "Leikkimuseo",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leikki-museum-play",
+          "name": {
+            "th": "พิพิธภัณฑ์การเล่นไลก์กี",
+            "en": "Leikki – the Museum of Play"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วีจี ตาปิโอลา เอสโป",
+            "en": "WeeGee centre, Tapiola, Espoo"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องวัยเด็ก ของเล่น และการเล่น",
+            "en": "A museum of childhood, toys and play"
+          },
+          "why": {
+            "th": "มีของเล่นและเกมจากหลายยุคให้ลอง",
+            "en": "Toys and games from different times to try"
+          },
+          "q": "Leikki - The Museum Of Play, Ahertajantie 3, Espoo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leos-espoo-laajalahti",
+          "name": {
+            "th": "ลีโอส์ เอสโป ลาจาลาห์ติ",
+            "en": "Leo's Espoo Laajalahti"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซินีแมนติเอ ลาจาลาห์ติ เอสโป",
+            "en": "Sinimäentie, Laajalahti, Espoo"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม เปิดทุกวันตลอดปี",
+            "en": "An indoor play centre, open every day all year"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นสำหรับทุกวัยและทุกระดับ",
+            "en": "Something for every age and skill level"
+          },
+          "q": "Leo's Espoo Laajalahti, Sinimäentie 20, Espoo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leos-espoo-suomenoja",
+          "name": {
+            "th": "ลีโอส์ เอสโป ซูโอเมโนยา",
+            "en": "Leo's Espoo Suomenoja"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฟินโนนลากซอนติเอ ซูโอเมโนยา เอสโป",
+            "en": "Finnoonlaaksontie, Suomenoja, Espoo"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม มีโซนเล่นทุกวัย เปิดทุกวัน",
+            "en": "An indoor play centre with play areas for all ages, open every day"
+          },
+          "why": {
+            "th": "มีอะไรให้ทุกคนเล่นได้",
+            "en": "Something for everyone, whatever their skill"
+          },
+          "q": "Leo's Espoo Suomenoja, Finnoonlaaksontie 9, Espoo",
+          "ok": "2026-11"
         }
       ]
     },
@@ -546,24 +657,6 @@
           "q": "Ranua Wildlife Park, Ranua",
           "ok": "2026-11",
           "src": "https://ranuaresort.com/en/wildlife-park/"
-        },
-        {
-          "name": { "en": "Pilke Science Centre", "th": "ศูนย์วิทยาศาสตร์พิลเคอ" },
-          "local": "Tiedekeskus Pilke",
-          "kind": "museumkid",
-          "area": { "en": "Rovaniemi", "th": "โรวาเนียมี" },
-          "what": { "en": "A hands-on science centre about Finnish forests and nature, run with the national parks service", "th": "ศูนย์วิทยาศาสตร์ให้ลงมือเล่นเรื่องป่าและธรรมชาติฟินแลนด์ ดูแลร่วมกับหน่วยงานอุทยานแห่งชาติ" },
-          "why": { "en": "Small, calm and cheap, with exhibits to touch; under 7 free", "th": "ขนาดเล็ก สงบ ราคาถูก มีของให้จับ เด็กต่ำกว่า 7 ขวบเข้าฟรี" },
-          "tip": { "en": "Open Tue–Fri 9–17 and Sat–Sun 10–16; closed 20 July–2 August 2026", "th": "เปิดอังคาร–ศุกร์ 9–17 เสาร์–อาทิตย์ 10–16 ปิด 20 ก.ค.–2 ส.ค. 2026" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 1.5,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price · under 7 free", "th": "เช็กราคา · ต่ำกว่า 7 ปีฟรี" },
-          "book": "none",
-          "q": "Science Centre Pilke, Rovaniemi",
-          "ok": "2026-11",
-          "src": "https://www.visitrovaniemi.fi/attraction/science-centre-pilke/"
         },
         {
           "name": { "en": "Snowman World", "th": "สโนว์แมนเวิลด์" },
@@ -959,6 +1052,43 @@
             "en": "Christmas magic without the crowds"
           },
           "q": "Santa Claus Secret Forest Joulukka, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/attraction/snowglow-winterpark/",
+          "name": {
+            "th": "สโนว์โกลว์ วินเทอร์พาร์ก",
+            "en": "SnowGlow Winterpark"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สนามกีฬากลาง ใจกลางเมืองโรวาเนียมิ",
+            "en": "Central stadium, Rovaniemi city centre"
+          },
+          "what": {
+            "th": "สวนกิจกรรมฤดูหนาวใจกลางโรวาเนียมิ มีแสงไฟ",
+            "en": "A winter activity park in the centre of Rovaniemi, with lights"
+          },
+          "why": {
+            "th": "มีกิจกรรมสนุกและแสงไฟสำหรับทุกวัย",
+            "en": "Fun activities and lights for all ages"
+          },
+          "q": "SnowGlow Winterpark, Rovaniemi",
           "ok": "2026-11"
         }
       ]

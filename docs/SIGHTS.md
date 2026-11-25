@@ -110,6 +110,197 @@ nightlife, and religious sites that ask visitors to keep away.
 - **22 Nov 2026, our own agents, round 2** (owner: "ต่อข้อ 4"; children and rainy days in four big towns): 13 rows offered, 12 passed `library-check.cjs`, 10 went in after a status search for each big name — Hong Kong +3 (EpicLand at Kai Tak, Ryze at Kodak House, Kiztopia at Hopewell Centre — the agent's page put it in another building), Seoul +1 (Pororo Park Geumcheon; its page's price was another branch's, so "Check the price"), Taipei +4 (PaPark Nangang, 遊戲愛樂園 at A8, SNOOPY Play Center, the Dianzang botanical glasshouse), Hanoi +2 (the new Military History Museum, the Museum of Nature). Left out: two Seoul art museums (not for small children), a Taipei role-play park no search could find. Most family guides blocked the script, which kept every agent short of its aim.
 - **22 Nov 2026, round 3 (Hong Kong and Macau)** + **our books' stops**: +4 Hong Kong (High Island Geo Trail, Playfield 5 at Kai Tak, Art Park, Dragon's Back) and +3 Macau (the Museum of Art, Kids' City at City of Dreams, the Cotai Ecological Reserve — open on guided days only). The books' own planned stops now join the library by themselves (`SIGHTLIB.syncBooks`, src `book`): 68 from the two bundled books, fewer where a built-in row already holds the place; they carry no ages or times (a book gives none).
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
+- **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
+- **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
+- **24 Nov 2026, Plitvice Lakes** (docs/library-briefs batch-101, round 3): +2 (Maksimir Park, Zagreb; Kotlac, Slunj). Proof in `docs/library-proof/hr-plitvice.json`.
+- **24 Nov 2026, Zermatt** (docs/library-briefs batch-100, round 3): +1 (Gorner Gorge). Proof in `docs/library-proof/ch-zermatt.json`.
+- **24 Nov 2026, the Cinque Terre** (docs/library-briefs batch-100, round 3): +1 (Piazza Garibaldi playground, Monterosso). Proof in `docs/library-proof/it-cinqueterre.json`.
+- **24 Nov 2026, Pamukkale** (docs/library-briefs batch-100, round 3): +1 (İzmir Wildlife Park, Sasalı). Proof in `docs/library-proof/tr-pamukkale.json`.
+- **24 Nov 2026, Kathmandu and the Himalaya** (docs/library-briefs batch-99, round 3): +1 (World Peace Pagoda, Pokhara). Proof in `docs/library-proof/np-kathmandu.json`.
+- **24 Nov 2026, Langkawi** (docs/library-briefs batch-98, round 3): +2 (Tanjung Rhu Beach, Machinchang PetLand). Proof in `docs/library-proof/my-langkawi.json`.
+- **24 Nov 2026, Uluru and the Red Centre** (docs/library-briefs batch-98, round 3): +1 (Alice Springs Reptile Centre). Proof in `docs/library-proof/au-uluru.json`.
+- **24 Nov 2026, Rio de Janeiro** (docs/library-briefs batch-97, round 3): +1 (Museu do Pontal, Barra da Tijuca). Proof in `docs/library-proof/br-rio.json`.
+- **24 Nov 2026, Nan, Pua and Bo Kluea** (docs/library-briefs batch-96, round 3): +1 (Wang Sila Laeng, Pua). Proof in `docs/library-proof/th-nan.json`.
+- **24 Nov 2026, Neuschwanstein** (docs/library-briefs batch-96, round 3): +4 in Füssen (boat harbour playground, Obersee lido, Alatsee bird trail, Reptile Zoo). Proof in `docs/library-proof/p-neuschwanstein.json`.
+- **24 Nov 2026, Luxembourg City and Vianden** (docs/library-briefs batch-95, round 3): +2 (Pétrusse Casemates, Larochette Castle). Proof in `docs/library-proof/lu-luxembourg.json`.
+- **24 Nov 2026, Nadi and the Fiji islands** (docs/library-briefs batch-95, round 3): +1 (Biausevu Waterfall, Coral Coast). Proof in `docs/library-proof/fj-islands.json`.
+- **24 Nov 2026, Bruges and Ghent** (docs/library-briefs batch-95, round 3): +2 (STAM children's trail, Harry Malter family park). Proof in `docs/library-proof/be-bruges.json`.
+- **24 Nov 2026, Porto** (docs/library-briefs batch-95, round 3): +4 (3D Fun Art Museum, Almeida Garrett Library, the Clérigos sound-and-light show, Parque Biológico de Gaia). Proof in `docs/library-proof/pt-porto.json`.
+- **24 Nov 2026, Český Krumlov** (docs/library-briefs batch-94, round 3): +3 in Karlovy Vary (Butterfly House Diana, Diana playground, Children's Paradise at Svatošky). Proof in `docs/library-proof/cz-krumlov.json`.
+- **24 Nov 2026, Marrakech** (docs/library-briefs batch-94, round 3): +2 (Water Museum, Meydene). Proof in `docs/library-proof/ma-marrakech.json`.
+- **24 Nov 2026, Boracay and Palawan** (docs/library-briefs batch-94, round 3): +1 (Baker's Hill, Puerto Princesa). Proof in `docs/library-proof/ph-boracay.json`.
+- **24 Nov 2026, Rothenburg** (docs/library-briefs batch-93, round 3): +2 in Dinkelsbühl (FUNtasia Kinderland, Bleiche adventure playground). Proof in `docs/library-proof/de-rothenburg.json`.
+- **24 Nov 2026, Grand Canyon and Las Vegas** (docs/library-briefs batch-93, round 3): +4 (Kids Empire Henderson, Sunset Park, Downtown Container Park, the Venetian gondolas). Proof in `docs/library-proof/us-southwest.json`.
+- **24 Nov 2026, Mont-Saint-Michel** (docs/library-briefs batch-92, round 3): +2 in Saint-Malo (Grand Bé, L'Étoile du Roy). Proof in `docs/library-proof/fr-montstmichel.json`.
+- **24 Nov 2026, Nha Trang** (docs/library-briefs batch-91, round 3): +2 (Truong Son Craft Village, 100 Eggs Mud Bath). Proof in `docs/library-proof/vn-nhatrang.json`.
+- **24 Nov 2026, Lucerne** (docs/library-briefs batch-91, round 3): +2 (Fürenalp playground, Globi's alpine playground at Ristis — Engelberg). Proof in `docs/library-proof/ch-lucerne.json`.
+- **24 Nov 2026, Patagonia** (docs/library-briefs batch-91, round 3): +3 (Laguna Nimez, El Calafate; Piedras Blancas and Cerro Viejo slide, Bariloche). Proof in `docs/library-proof/ar-patagonia.json`.
+- **24 Nov 2026, Nakhon Si Thammarat and Khanom** (docs/library-briefs batch-90, round 3): +1 (Khanom Power Plant Learning Centre). Proof in `docs/library-proof/th-nakhonsi.json`.
+- **24 Nov 2026, Seville and Granada** (docs/library-briefs batch-90, round 3): +2 (Carmen de los Mártires, Granada; Parque de los Príncipes, Seville). Proof in `docs/library-proof/es-seville.json`.
+- **24 Nov 2026, Lapland** (docs/library-briefs batch-89, round 3): +1 (SnowGlow Winterpark, Rovaniemi). Proof in `docs/library-proof/p-lapland.json`.
+- **24 Nov 2026, Valletta and Gozo** (docs/library-briefs batch-89, round 3): +4 (Malta Postal Museum, The Malta Experience, Lascaris War Rooms, Fond Għadir). Proof in `docs/library-proof/mt-valletta.json`.
+- **24 Nov 2026, Abu Dhabi** (docs/library-briefs batch-88, round 3): +5 indoor play places (Fun City, Snow Abu Dhabi, Caboodle, Fun Works, Cheeky Monkeys). Proof in `docs/library-proof/ae-abudhabi.json`.
+- **24 Nov 2026, Buenos Aires** (docs/library-briefs batch-88, round 3): +5 playgrounds (Plaza Las Cañitas, Plaza Rusia, Parque Onega castle, Plazoleta García Lorca moon, Parque Carrasco ovenbird). Proof in `docs/library-proof/ar-buenosaires.json`.
+- **24 Nov 2026, Cancún & the Yucatán** (docs/library-briefs batch-88, round 3): +4 (Railway Museum and Extreme Sports Park in Mérida; Playa Langosta and Playa Caracol in Cancún). Proof in `docs/library-proof/mx-yucatan.json`.
+- **24 Nov 2026, Santorini & Mykonos** (docs/library-briefs batch-87, round 3): +1 (Ornos Beach, Mykonos). Proof in `docs/library-proof/gr-santorini.json`.
+- **24 Nov 2026, Bled & Ljubljana** (docs/library-briefs batch-86, round 3): +2 (Tivoli Park playground, Zlatorog Fairy Trail). Proof in `docs/library-proof/si-bled.json`.
+- **24 Nov 2026, Sabah** (docs/library-briefs batch-86, round 3): +2 in Sandakan (Agnes Keith House, Puu Jih Syh Temple). Proof in `docs/library-proof/my-borneo.json`.
+- **24 Nov 2026, Nagasaki** (docs/library-briefs batch-86, round 3): +1 (Melitta Kid's SASEBO). Proof in `docs/library-proof/jp-nagasaki.json`.
+- **24 Nov 2026, Dubrovnik** (docs/library-briefs batch-86, round 3): +4 (Sveti Jakov beach, Šunj beach on Lopud, Cadmos Village, Lapad promenade). Proof in `docs/library-proof/hr-dubrovnik.json`.
+- **24 Nov 2026, Seattle** (docs/library-briefs batch-85, round 3): +5 (Kelsey Creek Farm, Crossroads spray playground, Meydenbauer Bay Park, Inspiration Playground, Northacres Park). Proof in `docs/library-proof/us-seattle.json`.
+- **24 Nov 2026, Chamonix & Annecy** (docs/library-briefs batch-84, round 3): +4 (Plage des Marquisats, Jardins de l'Europe, Paccard bell foundry, Les Planards). Proof in `docs/library-proof/fr-alps.json`.
+- **24 Nov 2026, Helsinki** (docs/library-briefs batch-84, round 3): +3 in Espoo (Leikki museum of play, Leo's Laajalahti, Leo's Suomenoja). Proof in `docs/library-proof/fi-helsinki.json`.
+- **24 Nov 2026, Hamburg** (docs/library-briefs batch-83, round 3): +4 (rabatzz!, Niendorfer Gehege, Kinderbauernhof Kirchdorf, Große Wallanlagen playground). Proof in `docs/library-proof/de-hamburg.json`.
+- **24 Nov 2026, Boston** (docs/library-briefs batch-83, round 3): +3 (Little Lovage Club, Allo, Larz Anderson Park). Proof in `docs/library-proof/us-boston.json`.
+- **24 Nov 2026, Luang Prabang** (docs/library-briefs batch-82, round 3): +1 (Buddha Park, Vientiane). Proof in `docs/library-proof/la-luangprabang.json`.
+- **24 Nov 2026, Cairo** (docs/library-briefs batch-82, round 3): +5 indoor play places in Sheikh Zayed (Kids Station, Monkey Maze, PlayPoint, Funtopia, Cosmocity). Proof in `docs/library-proof/eg-cairo.json`.
+- **24 Nov 2026, Tashkent** (docs/library-briefs batch-81, round 3): +1 (AYA Project). Proof in `docs/library-proof/uz-tashkent.json`.
+- **24 Nov 2026, Chicago** (docs/library-briefs batch-81, round 3): +6 (Purple Monkey Playroom, HelloBaby, Fit City Kids, ClimbZone, Adams Park water playground, Jonquil Park). Proof in `docs/library-proof/us-chicago.json`.
+- **24 Nov 2026, the Cotswolds & Bath** (docs/library-briefs batch-80, round 3): +7 (Roman Baths, The Egg, American Museum, Dyrham Park, Bath City Farm, Rainbow Wood, Avon Valley Railway). Proof in `docs/library-proof/gb-cotswolds.json`.
+- **24 Nov 2026, Strasbourg & Colmar** (docs/library-briefs batch-80, round 3): +1 (Parc de la Citadelle). Proof in `docs/library-proof/fr-strasbourg.json`.
+- **24 Nov 2026, Heidelberg** (docs/library-briefs batch-80, round 3): +1 (Puppentheater Plappermaul). Proof in `docs/library-proof/de-heidelberg.json`.
+- **24 Nov 2026, Cape Town** (docs/library-briefs batch-79, round 3): +1 (Rush Extreme Claremont). Proof in `docs/library-proof/za-capetown.json`.
+- **24 Nov 2026, Takayama & Nagoya** (docs/library-briefs batch-77, round 3): +7 indoor play parks in Nagoya. Proof in `docs/library-proof/jp-takayama.json`.
+- **24 Nov 2026, Kraków** (docs/library-briefs batch-77, round 3): +3 (WOMAI, MICET, Live Bagel Museum). Proof in `docs/library-proof/pl-krakow.json`.
+- **24 Nov 2026, Delhi, Agra & Jaipur** (docs/library-briefs batch-77, round 3): +4 (Central Park and the Wax Museum in Jaipur, Children's Park at India Gate, Teeny Town). Proof in `docs/library-proof/in-golden.json`.
+- **24 Nov 2026, York** (docs/library-briefs batch-76, round 3): +6 (Oxygen, Flip Out, Crazy Tykes, Murton Park, Sandsend Beach, Pannett Park). Proof in `docs/library-proof/gb-york.json`.
+- **24 Nov 2026, Provence** (docs/library-briefs batch-76, round 3): +2 (Colline de Cuques park, Les Chevrettes de Malo). Proof in `docs/library-proof/fr-provence.json`.
+- **24 Nov 2026, Hawaii** (docs/library-briefs batch-76, round 3): +1 (Surfing Goat Dairy). Proof in `docs/library-proof/us-hawaii.json`.
+- **24 Nov 2026, Tallinn** (docs/library-briefs batch-75, round 3): +5 (Super Skypark, Viimsi Open Air Museum, Riga Motor Museum, Latvian Museum of Natural History, Small Stuff Miniature House). Proof in `docs/library-proof/ee-tallinn.json`.
+- **24 Nov 2026, Geneva** (docs/library-briefs batch-75, round 3): +2 (Le Pierrier beach, Franchises paddling pool). Proof in `docs/library-proof/ch-geneva.json`.
+- **24 Nov 2026, Prague** (docs/library-briefs batch-74, round 3): +2 (Kuličkário, Dětský ostrov). Proof in `docs/library-proof/cz-prague.json`.
+- **24 Nov 2026, Vancouver** (docs/library-briefs batch-74, round 3): +1 (The World of Kidtropolis). Proof in `docs/library-proof/ca-vancouver.json`.
+- **24 Nov 2026, Yogyakarta** (docs/library-briefs batch-72, round 3): +5 (Dreamland outdoor playground, Gajah Wong playground, Lost World Castle, Gamplong studio, Cokelat Monggo). Proof in `docs/library-proof/id-yogyakarta.json`.
+- **24 Nov 2026, Tbilisi** (docs/library-briefs batch-72, round 3): +1 (Gldani Park). Proof in `docs/library-proof/ge-tbilisi.json`.
+- **24 Nov 2026, the Lake District** (docs/library-briefs batch-72, round 3): +4 (Broadgate Meadow, Rothay Park, Fitz Park, Threlkeld Quarry). Proof in `docs/library-proof/gb-lakes.json`.
+- **24 Nov 2026, Banff** (docs/library-briefs batch-71, round 3): +4 (Valley of the Five Lakes, Cubz Play Café, Fenland Loop, Lower Bankhead). Proof in `docs/library-proof/ca-banff.json`.
+- **24 Nov 2026, Toronto** (docs/library-briefs batch-71, round 3): +5 (KidSpark, Kidstown Water Park, Safari Niagara, Niagara Parks Botanical Gardens, Dinosaur Adventure Golf). Proof in `docs/library-proof/ca-toronto.json`.
+- **24 Nov 2026, Đà Lạt** (docs/library-briefs batch-70, round 3): +3 (Tea Resort Prenn, Ladalat play zone, C'KidZone). Proof in `docs/library-proof/vn-dalat.json`.
+- **24 Nov 2026, Sicily** (docs/library-briefs batch-70, round 3): +5 parks (Villa Bellini, Parco Uditore, Parco Falcone, Parco Fondo Badia, Parco Gandhi). Proof in `docs/library-proof/it-sicily.json`.
+- **24 Nov 2026, Ireland** (docs/library-briefs batch-69, round 3): +5 (Collins Barracks museum, Loughwell Farm Park, Leisureland, Muckross Creamery, Kennedy's Pet Farm). Proof in `docs/library-proof/ie-ireland.json`.
+- **24 Nov 2026, Santiago** (docs/library-briefs batch-69, round 3): +5 (Museo Taller, the science museum, Viña's botanical garden, Baburizza, Valparaíso Cultural Park). Proof in `docs/library-proof/cl-santiago.json`.
+- **24 Nov 2026, Reykjavík** (docs/library-briefs batch-69, round 3): +7 (Sundhöll, Vesturbæjarlaug, Elliðaárdalur, Klambratún, Grótta, Grófin library, Nordic House). Proof in `docs/library-proof/is-reykjavik.json`.
+- **24 Nov 2026, Athens** (docs/library-briefs batch-68, round 3): +4 (The Wall, Goulandris museum, Playmobil FunPark, Spathario museum). Proof in `docs/library-proof/gr-athens.json`.
+- **24 Nov 2026, Washington DC** (docs/library-briefs batch-68, round 3): +1 (National Children's Museum). Proof in `docs/library-proof/us-dc.json`.
+- **24 Nov 2026, Disneyland Paris** (docs/library-briefs batch-68, round 3): +4 (Dumbo, Casey Jr., Mad Hatter's Tea Cups, Buzz Lightyear). Proof in `docs/library-proof/p-disney-paris.json`.
+- **24 Nov 2026, Amalfi Coast** (docs/library-briefs batch-66, round 3): +1 (Museo Correale, Sorrento). Proof in `docs/library-proof/it-amalfi.json`.
+- **24 Nov 2026, Penang** (docs/library-briefs batch-66, round 3): +2 (Kidsville WaterFront, Kids Adventureland). Proof in `docs/library-proof/my-penang.json`.
+- **24 Nov 2026, Milan** (docs/library-briefs batch-63, round 3): +1 (Cascina Biblioteca). Proof in `docs/library-proof/it-milan.json`.
+- **24 Nov 2026, Venice** (docs/library-briefs batch-62, round 3): +2 (Querini Stampalia, Da Vinci Interactive Museum). Proof in `docs/library-proof/it-venice.json`.
+- **24 Nov 2026, Vienna** (docs/library-briefs batch-61, round 3): +1 (Monki Park). Proof in `docs/library-proof/at-vienna.json`.
+- **24 Nov 2026, Madrid** (docs/library-briefs batch-59, round 3): +1 (Chamberí ghost station). Proof in `docs/library-proof/es-madrid.json`.
+- **24 Nov 2026, Lisbon** (docs/library-briefs batch-59, round 3): +4 (Alvito park, Carris Museum, MAAT, Communications Museum). Proof in `docs/library-proof/pt-lisbon.json`.
+- **24 Nov 2026, Rotorua** (docs/library-briefs batch-58, round 3): +3 (3D Trick Art Gallery, aMAZEme, Boyes Beach). Proof in `docs/library-proof/nz-rotorua.json`.
+- **24 Nov 2026, Budapest** (docs/library-briefs batch-57, round 3): +1 (Csillaghegy lido). Proof in `docs/library-proof/hu-budapest.json`.
+- **24 Nov 2026, Stockholm** (docs/library-briefs batch-56, round 3): +3 (Paradox Museum, Aspuddsparken, Akalla 4H farm). Proof in `docs/library-proof/se-stockholm.json`.
+- **24 Nov 2026, Salzburg** (docs/library-briefs batch-56, round 3): +3 (Bible World, the Liefering swimming lake, the Franz-Josef-Kai playground). Proof in `docs/library-proof/at-salzburg.json`.
+- **24 Nov 2026, Florence** (docs/library-briefs batch-56, round 3): +4 (the dome climb, Giardino del Bobolino, Giardino dell'Orticoltura, the Porcellino fountain). Proof in `docs/library-proof/it-florence.json`.
+- **24 Nov 2026, the Maldives atolls** (docs/library-briefs batch-54, round 3): +2 (Westin Maldives Miriandhoo Kids Club, Four Seasons Junior Marine Savers). Proof in `docs/library-proof/mv-atolls.json`.
+- **24 Nov 2026, Mae Hong Son** (docs/library-briefs batch-53): +2 (Yun Lai viewpoint, Pai Historic Bridge). Proof in `docs/library-proof/th-maehongson.json`.
+- **24 Nov 2026, Khao Kho** (docs/library-briefs batch-52): +3 (LinnyLand, Khao Takhian Ngo, Wat Phra That Pha Son Kaeo). Proof in `docs/library-proof/th-khaokho.json`.
+- **24 Nov 2026, Khao Kho** (docs/library-briefs batch-73, round 3): +3 (Khao Kho Post Office viewpoint, Sri Dit Waterfall, Wat Pa Phu Thap Boek). Proof in `docs/library-proof/th-khaokho.json`.
+- **24 Nov 2026, Surat Thani** (docs/library-briefs batch-52): +6 (City Pillar Shrine, Hokkien Shrine, Laem Pho, Ban Nam Rad, Khao Phang bridge, Khao Na Nai Luang). Proof in `docs/library-proof/th-suratthani.json`.
+- **24 Nov 2026, Udon Thani** (docs/library-briefs batch-52): +2 (Udon Water World, Thung Si Mueang). Proof in `docs/library-proof/th-udon.json`.
+- **24 Nov 2026, Ubon Ratchathani** (docs/library-briefs batch-52): +2 (Wat Nong Pah Pong, Wat Tham Khuha Sawan). Proof in `docs/library-proof/th-ubon.json`.
+- **24 Nov 2026, Tainan & Kaohsiung** (docs/library-briefs batch-51): +8 (Ten Drum, Tainan Astronomical Education Area, Wood Story Museum, Shuiliuzhuang Ranch, Shidai Park, E-DA Theme Park, Time and Space City, Suzuka Circuit Park). Proof in `docs/library-proof/tw-south.json`.
+- **24 Nov 2026, Chanthaburi** (docs/library-briefs batch-51): +5 (Samet Ngam shipyard, the Red Building and Khuk Khi Kai, Wat Phai Lom, Laem Sing and Khaem Nu beaches). Proof in `docs/library-proof/th-chanthaburi.json`.
+- **24 Nov 2026, Chanthaburi** (docs/library-briefs batch-75, round 3): +2 orchards (Rinradee, KP Garden). Proof in `docs/library-proof/th-chanthaburi.json`.
+- **24 Nov 2026, Sukhothai** (docs/library-briefs batch-51): +1 (Tha Nam Rap Sadet Market). Proof in `docs/library-proof/th-sukhothai.json`.
+- **24 Nov 2026, Sukhothai** (docs/library-briefs batch-83, round 3): +6 (organic farm, Ramkhamhaeng park, Thung Thale Luang, Wat Chedi Chet Thaeo, Wat Phiphat Mongkhon, Wat Saphan Hin). Proof in `docs/library-proof/th-sukhothai.json`.
+- **24 Nov 2026, Khao Yai** (docs/library-briefs batch-51): +4 (Haew Narok, Khao Yai Farm Village, Star Doi Farm, Bonanza Exotic Zoo). Proof in `docs/library-proof/th-khaoyai.json`.
+- **24 Nov 2026, Central Taiwan** (docs/library-briefs batch-50): +4 (Fongnian mushroom farm, Shuili Snake Kiln, Xinshe mushroom farm, Futian playground). Proof in `docs/library-proof/tw-central.json`.
+- **24 Nov 2026, central Taiwan** (docs/library-briefs batch-67, round 3): +5 (LoveMe Land, Wenxin Forest, Lixin, Zhongke and Tiezhenshan parks). Proof in `docs/library-proof/tw-central.json`.
+- **24 Nov 2026, Hualien** (docs/library-briefs batch-50): +3 (Nonghao Base, Li Chuan Aquafarm, Dashibi Mountain Trail). Proof in `docs/library-proof/tw-hualien.json`.
+- **24 Nov 2026, Hualien** (docs/library-briefs batch-70, round 3): +3 (Disaster Prevention Education Centre, Katsuo Museum, City Lotus Garden). Proof in `docs/library-proof/tw-hualien.json`.
+- **24 Nov 2026, Suwon** (docs/library-briefs batch-65, round 3): +1 (Gyeonggi Upcycle Plaza). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+- **24 Nov 2026, Jeonju, Kakao Map pass**: +7 (Hyundaiok (two branches), Ibadom Gamjatang; Innovation City Cultural Centre, MukiMuki, Nutty Child World, Namanui Kids Café), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-jeonju.json`.
+- **24 Nov 2026, Jeonju** (docs/library-briefs batch-65, round 3): +4 (PlayLab Jeonju, Lika Kids Room, Urikkiri Camping Village, Wansan Bunker). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+- **24 Nov 2026, Gangwon** (docs/library-briefs batch-49): +2 (National Gangwon Science Museum, World King Chuncheon). Proof in `docs/library-proof/kr-gangwon.json`.
+- **24 Nov 2026, Gangwon, Kakao Map pass**: +6 (Daeunjeong, Chuncheon Ani Dakgalbi, Hyojadong Seolleongtang (Oak Valley), Green Valley Barbecue; Design Thinking Museum, Gangwon Police Museum), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-gangwon.json`.
+- **24 Nov 2026, Gangwon** (docs/library-briefs batch-64, round 3): +3 (Kkumjaram Children's Park, Aikkung Ground Alpensia, Forest Animal Farm). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+- **24 Nov 2026, Gyeongju** (docs/library-briefs batch-49): +1 (Donggungwon greenhouse). Proof in `docs/library-proof/kr-gyeongju.json`. A 2026 blog says the Gyeongju National Museum Children's Museum was temporarily closed (notice of 21 Sep 2026) — already in the library, worth checking.
+- **24 Nov 2026, Gyeongju** (docs/library-briefs batch-84, round 3): +2 (The Swan kids café, Cosmic Resort). Proof in `docs/library-proof/kr-gyeongju.json`.
+- **24 Nov 2026, Tohoku** (docs/library-briefs batch-49): +6 (Hachinohe Park Children's World, Kodomo Hatch, CLAAPIN SAGAE, COPAL, Morikko Park, Kurunto — Aomori and Yamagata). Proof in `docs/library-proof/jp-tohoku.json`. Takayama in the same batch added nothing.
+- **24 Nov 2026, Nikko** (docs/library-briefs batch-48): +4 (Rinnoji, Futarasan Shrine, Italian Embassy Villa Memorial Park, Yudaki Falls). Proof in `docs/library-proof/jp-nikko.json`.
+- **24 Nov 2026, Nikko** (docs/library-briefs batch-74, round 3): +3 (Ozasa Farm, Kotoku Ranch, Nikko Natural Science Museum). Proof in `docs/library-proof/jp-nikko.json`.
+- **24 Nov 2026, Kumamoto & Aso** (docs/library-briefs batch-48): +2 (Fairy Tale petting zoo, Yura Yura private onsen). Proof in `docs/library-proof/jp-kumamoto.json`.
+- **24 Nov 2026, Kumamoto** (docs/library-briefs batch-73, round 3): +2 (Children's Book Forest, Ninja Park Kikuyo). Proof in `docs/library-proof/jp-kumamoto.json`.
+- **24 Nov 2026, Nagano** (docs/library-briefs batch-48): +1 (Zenkoji Temple). Proof in `docs/library-proof/jp-nagano.json`. Nagasaki in the same batch added nothing (no readable page dates).
+- **24 Nov 2026, Nagano** (docs/library-briefs batch-72, round 3): +5 (Naganobi!, and LIFE wood play, the environment energy centre, Sun Marine Nagano, OYAKI FARM). Proof in `docs/library-proof/jp-nagano.json`.
+- **24 Nov 2026, Hiroshima & Kobe** (docs/library-briefs batch-47): +4 (5-Days Children's Science Museum; in Kobe Kodomocchi Park and two Bornelund play spaces). Proof in `docs/library-proof/jp-hiroshima.json`.
+- **24 Nov 2026, Hiroshima & Kobe** (docs/library-briefs batch-81, round 3): +2 (Pure Heart Kids Land Kobe, Kita Fureai children's centre Okayama). Proof in `docs/library-proof/jp-hiroshima.json`.
+- **24 Nov 2026, Kanazawa** (docs/library-briefs batch-47): +4 (Ishikawa Prefectural Library, Okuutatsuyama Kenmin Park, the port cruise terminal, Iki-iki market). Proof in `docs/library-proof/jp-kanazawa.json`.
+- **24 Nov 2026, Kanazawa** (docs/library-briefs batch-68, round 3): +5 (Utasu Shrine, The Kids M'za, Amerun Park, Yama no Ouchi, Kodomocchi Park). Proof in `docs/library-proof/jp-kanazawa.json`.
+- **24 Nov 2026, Yokohama** (docs/library-briefs batch-47): +2 (Kanazawa Zoological Gardens, Osanbashi Pier). Proof in `docs/library-proof/jp-yokohama.json`.
+- **24 Nov 2026, Yokohama** (docs/library-briefs batch-76, round 3): +3 (Muchu Planet, Wonderia, Kamakura Seaside Park). Proof in `docs/library-proof/jp-yokohama.json`.
+- **24 Nov 2026, Istanbul** (docs/library-briefs batch-47): +2 (Isfanbul, the İstiklal nostalgic tram). Proof in `docs/library-proof/tr-istanbul.json`. The Edarabia page (Nov 2026) still lists Legoland Discovery Centre Istanbul, permanently closed on the map — its prices were not used.
+- **24 Nov 2026, Berlin** (docs/library-briefs batch-46): +12 (Deutschlandmuseum, Computer Games Museum, DDR Museum, Samurai Museum, Magicum, ANOHA, Brandenburg Gate, Labyrinth, Museum for Communication, Futurium, Magic Mountain, German Spy Museum). Proof in `docs/library-proof/de-berlin.json`.
+- **24 Nov 2026, Amsterdam** (docs/library-briefs batch-46): +2 (Moco Museum, You Jump Amsterdam-Noord). Proof in `docs/library-proof/nl-amsterdam.json`.
+- **24 Nov 2026, Barcelona** (docs/library-briefs batch-46): +5 (Bunkers del Carmel, Picasso Museum, FC Barcelona Museum, Sant Pau, the Tibidabo basilica). Proof in `docs/library-proof/es-barcelona.json`.
+- **24 Nov 2026, Barcelona** (docs/library-briefs batch-61, round 3): +2 (Maritime Museum, Fantàstix del Super3). Proof in `docs/library-proof/es-barcelona.json`.
+- **24 Nov 2026, Rome** (docs/library-briefs batch-46): +2 (Planetario di Roma, Luneur Park). Proof in `docs/library-proof/it-rome.json`.
+- **24 Nov 2026, Orlando** (docs/library-briefs batch-45): +6 (Peppa Pig Theme Park, Ripley's, Museum of Illusions, Escapology, Orlando Tree Trek, Kissimmee Lakefront Park). Proof in `docs/library-proof/p-orlando.json`.
+- **24 Nov 2026, Orlando** (docs/library-briefs batch-64, round 3): +2 (Monkey Joe's Pointe Orlando, the Florida Mall Play Park). Proof in `docs/library-proof/p-orlando.json`.
+- **24 Nov 2026, California** (docs/library-briefs batch-45): +9 (Presidio Tunnel Tops playground, Cayton, Kidspace, the Autry, Mothers Beach, Descanso Gardens, Malibu Creek, the Huntington, LACMA). Proof in `docs/library-proof/us-california.json`.
+- **24 Nov 2026, California** (docs/library-briefs batch-57, round 3): +11 (the Bay Area and Monterey: Exploratorium, Bay Area Discovery Museum, SF and Oakland zoos, Monterey Bay Aquarium, Santa Cruz Boardwalk, children's museums in Monterey and San Jose, two farms, a playground). Proof in `docs/library-proof/us-california.json`.
+- **24 Nov 2026, New York** (docs/library-briefs batch-45): +7 (Kids 'N Shape, Kids Fun House, Kidz Fun Palace, Hapik, 81st Street Studio, Good Day Play Café, MoMath). Proof in `docs/library-proof/us-newyork.json`.
+- **24 Nov 2026, New York** (docs/library-briefs batch-58, round 3): +6 (Bronx Children's Museum, Museum of Illusions, MoMA, Complete Playground, Kid's Play World, Space Club). Proof in `docs/library-proof/us-newyork.json`.
+- **24 Nov 2026, Melbourne** (docs/library-briefs batch-44): +2 (SuperPark Highpoint, House Down Under). Proof in `docs/library-proof/au-melbourne.json`.
+- **24 Nov 2026, Sydney** (docs/library-briefs batch-44): +6 (Tribal Zone, Vitaland, Twinkle, Miniversal, Echo Point, Govetts Leap). Proof in `docs/library-proof/au-sydney.json`.
+- **24 Nov 2026, Paris** (docs/library-briefs batch-44): +3 (Rêvopolie, Science Expériences, La Maison des Histoires). Proof in `docs/library-proof/fr-paris.json`.
+- **24 Nov 2026, London** (docs/library-briefs batch-44): +6 (Madame Tussauds, Timewalk, Mini Genius Lab, Gambado Chelsea, Flip Out Canary Wharf, Kidspace Croydon). Proof in `docs/library-proof/gb-london.json`.
+- **24 Nov 2026, Hat Yai** (docs/library-briefs rerun): +6 (Stainless Steel Temple, Wat Chue Chang, Wat Hat Yai Nai, Thung Na La Ton Do, Songkhla Central Mosque, PSU Kaset Market). Proof in `docs/library-proof/th-hatyai.json`.
+- **24 Nov 2026, Pattaya** (docs/library-briefs rerun): +1 (Nong Nooch Tropical Garden). Proof in `docs/library-proof/th-pattaya.json`.
+- **24 Nov 2026, Fukuoka** (docs/library-briefs batch-43): +2 (Kyushu National Museum, Dazaifu Amusement Park). Proof in `docs/library-proof/jp-fukuoka.json`.
+- **24 Nov 2026, Okinawa** (docs/library-briefs batch-43): +2 (Blue Seal Ice Park, Murasaki Mura). Proof in `docs/library-proof/jp-okinawa.json`.
+- **24 Nov 2026, Okinawa** (docs/library-briefs batch-58, round 3): +1 (Nobikko Jumbo, Aeon Haebaru). Proof in `docs/library-proof/jp-okinawa.json`.
+- **24 Nov 2026, Bali** (docs/library-briefs batch-43): +6 (Bali Zoo, Bali Safari Park, Alas Harum, Mason Adventures rafting, Bali International Archery, Berawa Art House). Proof in `docs/library-proof/id-bali.json`. Chengdu in the same batch added nothing (the water park is shown as temporarily closed on Baidu Maps, the hot-pot restaurant could not be found there).
+- **24 Nov 2026, Bali** (docs/library-briefs batch-58, round 3): +5 (Bali Butterfly Park, Jenggala, Manarai Beach House, Museum Puri Lukisan, Museum Pasifika). Proof in `docs/library-proof/id-bali.json`.
+- **24 Nov 2026, Ho Chi Minh City** (docs/library-briefs batch-42): +1 (Golden Dragon Water Puppet Theatre). Proof in `docs/library-proof/vn-saigon.json`. Da Nang, Shanghai and Beijing in the same batch added nothing: their pages carried no readable date, a chain named no branch, or the place could not be found on the map.
+- **24 Nov 2026, Ho Chi Minh City & Cần Thơ** (docs/library-briefs batch-83, round 3): +3 (Kiwooza Planet, Jump Arena Cần Thơ, tiNiWorld Lotte Mart Cần Thơ). Proof in `docs/library-proof/vn-saigon.json`.
+- **24 Nov 2026, Singapore** (docs/library-briefs batch-41): +4 (WonderGround at The Artground, Splash@Kidz Amaze, T-Play Khatib, The Joy of Toys). Proof in `docs/library-proof/sg-singapore.json`.
+- **24 Nov 2026, Hanoi** (docs/library-briefs batch-41): +1 (Hanoi Children's Palace). Proof in `docs/library-proof/vn-hanoi.json`.
+- **24 Nov 2026, Kuala Lumpur** (docs/library-briefs batch-41): +1 (KidZania Kuala Lumpur, in Petaling Jaya). Proof in `docs/library-proof/my-kualalumpur.json`.
+- **24 Nov 2026, Macau** (docs/library-briefs batch-41): +3 (Qube Kid's Zone at The Venetian, Poly MGM Museum, The House of Dancing Water). Proof in `docs/library-proof/mo-macau.json`.
+- **24 Nov 2026, Taipei** (docs/library-briefs batch-40): +6 (Miramar Ferris Wheel, Taipei Water Park, Bitan, Guandu Temple, Longshan Temple, Chiang Kai-shek Memorial Hall). Proof in `docs/library-proof/tw-taipei.json`.
+- **24 Nov 2026, Jeju** (docs/library-briefs batch-40): +7 (Maze Land, Figure Museum, Fairy and Woodcutter Theme Park, Yeomiji Botanical Garden, Hueree, Jeju Water World, Tangerine Kart). Proof in `docs/library-proof/kr-jeju.json`.
+- **24 Nov 2026, Jeju, Kakao Map pass**: +4 (Suni Table, Danso; Tayo Kids Café, Kongsuni Kids Café), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-jeju.json`.
+- **24 Nov 2026, Jeju** (docs/library-briefs batch-59, round 3): +2 (Gimnyeong Maze Park, Saebyeol Friends). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+- **24 Nov 2026, Busan** (docs/library-briefs batch-40): +4 (Brick Campus, Amnam Park, Sajik Baseball Stadium, Wonder Space Myeongji). Proof in `docs/library-proof/kr-busan.json`.
+- **24 Nov 2026, Busan, Kakao Map pass**: +4 (Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon; Zooraji (Shinsegae Centum City)), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-busan.json`.
+- **24 Nov 2026, Busan** (docs/library-briefs batch-55, round 3): +4 (Deullak Nallak at City Hall, the Children's Creative Education Centre, PlayLab Haeundae, Aejijungji kids' café). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+- **24 Nov 2026, Seoul** (docs/library-briefs batch-39): +1 (the public kids' café in Dream Forest). Proof in `docs/library-proof/kr-seoul.json`.
+- **24 Nov 2026, Seoul** (docs/library-briefs batch-55, round 3): +4 (Seoul Sangsang Nara, Seoul Kids Café Cheonwang Park, Hangang PlePle, the Seoul Museum of History Children's Museum). Checked on Kakao Map (Naver Map is blocked in the browser here; Google Maps shows few reviews in Korea).
+- **24 Nov 2026, Hokkaido** (docs/library-briefs batch-39): +9 from Visit Hokkaido's family page (Funkawan Bay Panorama Park, Kamuinomori Park, Okhotsk Drift Ice Park, Yumenomori visitor centre, Hakodate Kids Plaza, Hakodate Miraikan, Kenbuchi Picture Book Museum, Ashoro Museum of Paleontology, Miyama Toge Art Park). Proof in `docs/library-proof/jp-hokkaido.json`.
+- **24 Nov 2026, Hokkaido** (docs/library-briefs batch-62, round 3): +4 (Fantasy Kids Resort Shin-Sapporo, Morimori Park, Little Planet Naebo, Hareppa). Proof in `docs/library-proof/jp-hokkaido.json`.
+- **24 Nov 2026, Kyoto** (docs/library-briefs batch-39): +5 (AriHana Kyoto, Nara Park, Nanen-do, Mount Wakakusa, the Kameya Yoshinaga workshop). Proof in `docs/library-proof/jp-kyoto.json`.
+- **24 Nov 2026, Osaka** (docs/library-briefs batch-39): +4 (Ogimachi Park, Hattori Ryokuchi, Tsurumi Ryokuchi, Oizumi Ryokuchi Adventure Land). Proof in `docs/library-proof/jp-osaka.json`.
+- **24 Nov 2026, Krabi** (docs/library-briefs batch-38): +2 (Dragon's Crest, HarborLand Central Krabi). Proof in `docs/library-proof/th-krabi.json`.
+- **24 Nov 2026, Krabi** (docs/library-briefs batch-66, round 3): +1 (Krabi Urban Forest Walkway). Proof in `docs/library-proof/th-krabi.json`.
+- **24 Nov 2026, Tokyo** (docs/library-briefs batch-38): +7 (Sanrio Puroland, Ninja Trick House, Hama-rikyu, Arisugawa Park, Ueno Park, the Metropolitan Government observation decks, Keio Asobi no Mori HUGHUG). Proof in `docs/library-proof/jp-tokyo.json`.
+- **24 Nov 2026, Hua Hin** (docs/library-briefs batch-38): +4 (Khao Takiab, Pranburi Forest Park, Wat Huay Mongkol, Mrigadayavan Palace). Proof in `docs/library-proof/th-huahin.json`.
+- **24 Nov 2026, Hua Hin** (docs/library-briefs batch-62, round 3): +1 (Bryde's Kids Club). Proof in `docs/library-proof/th-huahin.json`.
+- **24 Nov 2026, Koh Samui** (docs/library-briefs batch-38): +3 (Koh Tan, Lamai Viewpoint, Samui Football Golf). Proof in `docs/library-proof/th-samui.json`.
+- **23 Nov 2026, Bangkok** (docs/library-briefs batch-37): +3 (Tooney Museum, Madame Tussauds, Fantasia Lagoon). Proof in `docs/library-proof/th-bangkok.json`.
+- **23 Nov 2026, Phuket** (docs/library-briefs batch-37): +3 (Hanuman World, Battlefield Phuket Laser Tag, Adventure Village Chalong). Proof in `docs/library-proof/th-phuket.json`.
+- **24 Nov 2026, Phuket** (docs/library-briefs batch-57, round 3): +1 (Froggy's Fun Park, Jungceylon). Proof in `docs/library-proof/th-phuket.json`.
+- **23 Nov 2026, Chiang Mai** (docs/library-briefs batch-37): +3 (Wat Rong Khun, Elephant POOPOOPAPER Park, Mae Fah Luang Art and Cultural Park). Proof in `docs/library-proof/th-chiangmai.json`.
+- **24 Nov 2026, Chiang Mai & Chiang Rai** (docs/library-briefs batch-78, round 3): +3 (Singha Park, Wat Rong Suea Ten, Choui Fong tea plantation). Proof in `docs/library-proof/th-chiangmai.json`.
+- **23 Nov 2026, Trang** (docs/library-briefs batch-36): +1 (the Tam Kong Yia shrine). Proof in `docs/library-proof/th-trang.json`.
+- **23 Nov 2026, Khon Kaen** (docs/library-briefs batch-35): +9 (HarborLand, Khonkaen Exotic Pets, Columbo Craft Village, Phu Kao–Phu Phan Kham, Blue Lagoon Phu Pha Man, Wat Thung Setthi, Phra That Kham Kaen, Ba Luang waterfall, Nam Phong National Park). Proof in `docs/library-proof/th-khonkaen.json`.
+- **24 Nov 2026, Khon Kaen** (docs/library-briefs batch-73, round 3): +1 (Bueng Thung Sang park). Proof in `docs/library-proof/th-khonkaen.json`.
+- **23 Nov 2026, Ayutthaya** (docs/library-briefs batch-35): +1 (Wat Chai Wattanaram). Proof in `docs/library-proof/th-ayutthaya.json`.
+- **23 Nov 2026, Koh Chang** (docs/library-briefs batch-35): +5 (the Chao Pho shrine, Wat Salak Phet, Lonely Beach, Hat San Chao on Koh Rang Yai, Khlong Nonsi waterfall). Proof in `docs/library-proof/th-kohchang.json`.
+- **24 Nov 2026, Trat & Koh Chang** (docs/library-briefs batch-87, round 3): +1 (Khiri Phet Waterfall). Proof in `docs/library-proof/th-kohchang.json`.
+- **23 Nov 2026, Lampang** (docs/library-briefs batch-35): +9 (Wat Phra Chedi Sao Lang, the railway station, Ratsadaphisek Bridge, Rai Hom Fa, Doi Khun Tan, Wat Akkho Chai Khiri, Wat Mon Phraya Chae, Kad Thung Kwian, the floating pagodas of Wat Phutthabat Sutthawat). Proof in `docs/library-proof/th-lampang.json`.
+- **24 Nov 2026, Lampang** (docs/library-briefs batch-70, round 3): +1 (Nong Kra Ting Park). Proof in `docs/library-proof/th-lampang.json`.
+- **23 Nov 2026, Hakone** (docs/library-briefs batch-34): +2 (Hakone Shrine, the Hakone Kamon day plan). Proof in `docs/library-proof/jp-hakone.json`.
+- **24 Nov 2026, Hakone** (docs/library-briefs batch-90, round 3): +1 (Wanpaku Land, Odawara). Proof in `docs/library-proof/jp-hakone.json`.
+- **23 Nov 2026, Guilin** (docs/library-briefs batch-34): +2 (Moon Water Cave, Ruyi Peak cable car), checked on Baidu Maps. Proof in `docs/library-proof/cn-guilin.json`.
+- **23 Nov 2026, Harbin** (docs/library-briefs batch-34): +1 (Heilongjiang Science and Technology Museum, checked on Baidu Maps). Proof in `docs/library-proof/cn-harbin.json`.
+- **23 Nov 2026, Loei** (docs/library-briefs batch-33): +3 (the Tai Dam culture village, Wat Phra Phutthabat Phu Khwai Ngoen, the Phu Khok Ngio big Buddha). Proof in `docs/library-proof/th-loei.json`.
+- **23 Nov 2026, Rayong** (docs/library-briefs batch-33): +1 (Laem Mae Phim beach). Proof in `docs/library-proof/th-rayong.json`.
+- **23 Nov 2026, Korat** (docs/library-briefs batch-33): +3 (the 100-year wooden bridge, Wat Phra Narai, Man Fa waterfall). Proof in `docs/library-proof/th-korat.json`.
 - **23 Nov 2026, Yangon** (docs/library-briefs batch-29): +1 (Shwedagon Pagoda). Proof in `docs/library-proof/mm-yangon.json`.
 - **23 Nov 2026, Bagan & Inle** (docs/library-briefs batch-29): +3 (Nga Phe Kyaung, Phaung Daw Oo, Shwesandaw). Proof in `docs/library-proof/mm-bagan.json`.
 - **23 Nov 2026, Astana** (docs/library-briefs batch-19): +3 (Kidburg, Baby BOOM, Bee Karting). Proof in `docs/library-proof/kz-astana.json`.

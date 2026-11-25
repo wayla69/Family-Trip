@@ -581,6 +581,195 @@
           },
           "q": "Telliskivi Kirbukas, Telliskivi 57, Tallinn",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitestonia.com/en/super-skypark-trampoline-and-play-center",
+          "name": {
+            "th": "ซูเปอร์สกายพาร์ก",
+            "en": "Super Skypark"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้าง T1 ลัสนาแม ทาลลินน์",
+            "en": "T1 Mall, Lasnamäe, Tallinn"
+          },
+          "what": {
+            "th": "ศูนย์ครอบครัวในร่มขนาดใหญ่ มีแทรมโพลีน ลานผาดโผน และรถบั๊ม",
+            "en": "A big indoor family centre with trampolines, a stunt track and bumper cars"
+          },
+          "why": {
+            "th": "มีแทรมโพลีนและเมืองจราจรจำลองสำหรับเด็ก",
+            "en": "Trampolines and a traffic town for children"
+          },
+          "q": "Super Skypark, Peterburi tee 2, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitestonia.com/en/viimsi-open-air-museum",
+          "name": {
+            "th": "พิพิธภัณฑ์กลางแจ้งวิมซี",
+            "en": "Viimsi Open Air Museum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปริงกี วิมซี ใกล้ทาลลินน์",
+            "en": "Pringi, Viimsi, near Tallinn"
+          },
+          "what": {
+            "th": "บ้านริมทะเลเก่าแก่ พร้อมพิพิธภัณฑ์ชีวิตหมู่บ้าน",
+            "en": "Old coastal houses with a museum of village life"
+          },
+          "why": {
+            "th": "มีชิงช้าให้เด็กพร้อมวิวทะเล",
+            "en": "Swings for children with the sea in view"
+          },
+          "tip": {
+            "th": "มีตลาดเกษตรทุกวันเสาร์",
+            "en": "A farm market every Saturday"
+          },
+          "q": "Viimsi Open Air Museum, Rohuneeme tee 53a, Viimsi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+          "name": {
+            "th": "พิพิธภัณฑ์รถยนต์ริกา",
+            "en": "Riga Motor Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเซอร์เกยาไอเซนชไตนา ริกา",
+            "en": "Sergeja Eizenšteina iela, Riga"
+          },
+          "what": {
+            "th": "ยานพาหนะหายากกว่า 100 คันในนิทรรศการทันสมัย",
+            "en": "More than 100 unique vehicles in a modern exhibition"
+          },
+          "why": {
+            "th": "มีเกมแบบลงมือเล่นและกิจกรรมสำหรับเด็ก",
+            "en": "An interactive game and children's activities"
+          },
+          "q": "Riga Motor Museum, Sergeja Eizenšteina iela 8, Riga",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติลัตเวีย",
+            "en": "Latvian Museum of Natural History"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนคริชยานยาบาโรนา ใจกลางริกา",
+            "en": "Krišjāņa Barona iela, Riga centre"
+          },
+          "what": {
+            "th": "นก สัตว์ทั่วโลก และแมลง",
+            "en": "Birds, animals of the world and insects"
+          },
+          "why": {
+            "th": "มีทัวร์สำหรับครอบครัวและงานฝีมือหลังชม",
+            "en": "Family tours and a craft lesson after the exhibits"
+          },
+          "q": "Latvian Museum of Natural History, Krišjāņa Barona iela 4, Riga",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+          "name": {
+            "th": "บ้านจิ๋ว สมอลสตัฟฟ์",
+            "en": "Miniature House (Small Stuff)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนไมยา เตอิกา ริกา",
+            "en": "Maija iela, Teika, Riga"
+          },
+          "what": {
+            "th": "ห้องจิ๋วตามธีม ขนาด 1:12",
+            "en": "Themed miniature rooms at 1:12 scale"
+          },
+          "why": {
+            "th": "ฉากเทพนิยายในห้องจิ๋ว",
+            "en": "Fairy-tale scenes in tiny rooms"
+          },
+          "q": "Small Stuff Miniatūru māja, Maija iela 18, Riga",
+          "ok": "2026-11"
         }
       ]
     }

@@ -64,6 +64,36 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 2 rows from Diário do Rio (Oct 2026), both passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Cortés Asador (Shopping Leblon)",
+          "page_name": "Cortés Asador",
+          "src": "https://diariodorio.com/gastronomia/2026/10/07/cortes-asador-cria-experiencia-infantil-com-jogos-e-livros-no-leblon.html",
+          "date": "2026-10",
+          "map": "Google Maps 'Restaurante Cortés - Leblon' (Shopping Leblon, Av. Afrânio de Melo Franco), newest review shown 5 days ago"
+        },
+        {
+          "name": "Museu do Pontal",
+          "page_name": "Museu do Pontal",
+          "src": "https://diariodorio.com/cultura/2026/10/08/museu-do-pontal-tera-circo-oficinas-e-brincadeiras-gratuitas-neste-fim-de-semana.html",
+          "date": "2026-10",
+          "map": "Google Maps 'Museu do Pontal' (Av. Célia Ribeiro da Silva Mendes 3300), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Parque do Bebê (Tijuca)",
+          "why": "already in the app as the Baby park at Praça Afonso Pena"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

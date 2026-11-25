@@ -191,6 +191,87 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 16 rows from Dublin Tourism (Aug 2026), Killarney.ie (Jan 2026) and two official sites, all passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Two Pups",
+          "page_name": "Two Pups Coffee",
+          "src": "https://www.dublintourism.org/family-restaurants/",
+          "date": "2026-08",
+          "map": "Google Maps 'Two Pups' (74 Francis St), newest review shown 12 hours ago"
+        },
+        {
+          "name": "Deenagh Lodge Tea Rooms",
+          "page_name": "Deenagh Lodge Tea Rooms",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "date": "2026-01",
+          "map": "Google Maps 'Deenagh Lodge' (Port Road, Knockreer), newest review shown 4 days ago"
+        },
+        {
+          "name": "National Museum – Decorative Arts and History (Collins Barracks)",
+          "page_name": "National Museum (Decorative Arts at Collins Barracks)",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "date": "2026-08",
+          "map": "Google Maps 'Collins Barracks National Museum of Ireland', newest review shown a day ago"
+        },
+        {
+          "name": "Loughwell Farm Park",
+          "page_name": "Loughwell Farm Park",
+          "src": "https://www.loughwellfarmpark.ie/",
+          "date": "official",
+          "map": "Google Maps 'Loughwell Farm Park' (Moycullen), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Leisureland (Salthill)",
+          "page_name": "Leisureland",
+          "src": "https://www.leisureland.ie/",
+          "date": "official",
+          "map": "Google Maps 'Leisureland' (Upper Salthill Rd), newest review shown 3 days ago"
+        },
+        {
+          "name": "Muckross Creamery",
+          "page_name": "Muckross Creamery",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "date": "2026-01",
+          "map": "Google Maps 'Muckross Creamery', newest review shown 2 months ago"
+        },
+        {
+          "name": "Kennedy's Pet Farm",
+          "page_name": "Kennedy’s Pet Farm",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "date": "2026-01",
+          "map": "Google Maps 'Kennedys Pet Farm' (Glenflesk), newest review shown 3 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pinocchio (Ranelagh), Scoop Gelato",
+          "why": "not found on the map at the page's address"
+        },
+        {
+          "name": "Brioche (Aungier St), Storyboard Cafe",
+          "why": "the map shows reviews two or more years old"
+        },
+        {
+          "name": "Lemon Crepe (Dawson St)",
+          "why": "the map shows it on South William St, not the page's street"
+        },
+        {
+          "name": "Captain Americas (Suffolk St)",
+          "why": "the map shows no open branch on that street"
+        },
+        {
+          "name": "Ciar’s Quest, Dunloe House fairy trail, Knockreer House",
+          "why": "no map entry of its own, or no reviews to read"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

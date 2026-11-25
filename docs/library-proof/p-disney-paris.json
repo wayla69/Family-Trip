@@ -95,8 +95,61 @@
       "src": "https://www.visitparisregion.com/en/inspiration/itineraries/disneyland-paris-and-surrounding-area",
       "date": "official",
       "map": "Google Maps 'PanoraMagique', 198 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Chuck Wagon Café (Hotel Cheyenne)",
+      "page_name": "Chuck Wagon Café",
+      "src": "https://dlptips.com/best-places-to-eat-with-kids-at-disneyland-paris/",
+      "date": "2026-05",
+      "map": "Google Maps 'Chuck Wagon Cafe', newest review shown 3 months ago"
+    },
+    {
+      "name": "Dumbo the Flying Elephant",
+      "page_name": "Dumbo the Flying Elephant",
+      "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+      "date": "2026-09",
+      "map": "Google Maps 'Dumbo the Flying Elephant 1992', newest review shown a month ago"
+    },
+    {
+      "name": "Casey Jr. – the little circus train",
+      "page_name": "Casey Jr. – Le Petit Train du Cirque",
+      "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+      "date": "2026-09",
+      "map": "Google Maps 'Casey Jr. - The Little Circus Train', newest review shown 6 months ago"
+    },
+    {
+      "name": "Mad Hatter's Tea Cups",
+      "page_name": "Mad Hatter's Tea Cups",
+      "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+      "date": "2026-09",
+      "map": "Google Maps 'Mad Hatter's Tea Cups', newest review shown 17 days ago"
+    },
+    {
+      "name": "Buzz Lightyear Laser Blast",
+      "page_name": "Buzz Lightyear Laser Blast",
+      "src": "https://www.sortiraparis.com/en/child-and-family/articles/352720-disneyland-paris-with-kids-the-best-attractions-by-age-and-height",
+      "date": "2026-09",
+      "map": "Google Maps 'Buzz Lightyear Laser Blast', newest review shown 4 months ago"
     }
   ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "left_out": [
+    {
+      "name": "Rainforest Café (Disney Village)",
+      "why": "closed for good, Nov 2026"
+    },
+    {
+      "name": "Palomano (Val d'Europe)",
+      "why": "opened June 2026; no hours or price on the page"
+    },
+    {
+      "name": "Le Carrousel de Lancelot",
+      "why": "carousel horses (riding animals rule)"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from DLP Tips (May 2026) and Sortir à Paris (Sep 2026), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

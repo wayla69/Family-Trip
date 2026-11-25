@@ -632,6 +632,43 @@
           "q": "Bush Food Experience, Ayers Rock Resort, Uluru",
           "ok": "2026-11",
           "src": "https://ayersrockresort.com.au/plan/for-families"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก (4–16 ปี) $12 ต่ำกว่า 4 ขวบฟรี",
+            "en": "Children (4–16) $12; under 4 free"
+          },
+          "book": "none",
+          "src": "https://northernterritory.com/alice-springs-and-surrounds/things-to-do/alice-springs-reptile-centre",
+          "name": {
+            "th": "ศูนย์สัตว์เลื้อยคลานอลิซสปริงส์",
+            "en": "Alice Springs Reptile Centre"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนสจวร์ตเทอร์เรซ เดอะแก็ป อลิซสปริงส์",
+            "en": "Stuart Terrace, The Gap, Alice Springs"
+          },
+          "what": {
+            "th": "สัตว์เลื้อยคลานกว่า 100 ตัว ในสภาพเหมือนบ้านตามธรรมชาติ",
+            "en": "Over 100 reptiles in settings like their natural homes"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 4 ขวบเข้าฟรี",
+            "en": "Free for children under 4"
+          },
+          "q": "Alice Springs Reptile Centre, 9 Stuart Terrace, Alice Springs",
+          "ok": "2026-11"
         }
       ]
     }

@@ -175,23 +175,6 @@
           "src": "https://artisansangkor.com/visit-us/angkor-silk-farm/"
         },
         {
-          "name": { "en": "Nature Discovery Center of Cambodia", "th": "ศูนย์ค้นพบธรรมชาติกัมพูชา" },
-          "kind": "museumkid",
-          "area": { "en": "Wat Bo, Siem Reap", "th": "วัดโบ เสียมเรียบ" },
-          "what": { "en": "A hands-on centre with a wildlife cinema, microscopes, a butterfly garden, orchids and a model organic farm", "th": "ศูนย์เรียนรู้ที่ให้ลงมือเอง มีโรงหนังสัตว์ป่า กล้องจุลทรรศน์ สวนผีเสื้อ กล้วยไม้ และฟาร์มอินทรีย์จำลอง" },
-          "why": { "en": "Looking through microscopes and walking the butterfly garden hold the interest of school-age children", "th": "ส่องกล้องจุลทรรศน์และเดินสวนผีเสื้อ ดึงดูดเด็กวัยเรียน" },
-          "tip": { "en": "Open 9 AM to 5 PM Monday to Friday only; booking is advised", "th": "เปิดจันทร์–ศุกร์ 9:00–17:00 เท่านั้น แนะนำให้จอง" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 2,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "≈ $10 adults · $6 children 5–15 · under 4 free", "th": "≈ $10 ผู้ใหญ่ · $6 เด็ก 5–15 ปี · ต่ำกว่า 4 ปีฟรี" },
-          "book": "rec",
-          "q": "Nature Discovery Center of Cambodia, Wat Bo, Siem Reap",
-          "ok": "2026-11",
-          "src": "https://helloangkor.com/attractions/the-nature-discovery-center-of-cambodia"
-        },
-        {
           "name": { "en": "Angkor Wildlife and Aquarium", "th": "สวนสัตว์และพิพิธภัณฑ์สัตว์น้ำอังกอร์" },
           "kind": "zoo",
           "area": { "en": "National Road 6, Damdek", "th": "ทางหลวงหมายเลข 6 ดัมเดก" },

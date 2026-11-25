@@ -18,13 +18,50 @@
       "src": "https://familytraveller.com/holiday-destinations/europe/portugal/8-things-to-do-in-porto-with-family/",
       "date": "2025-08",
       "map": "Google Maps Rua de Miragaia 106, 7,477 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "3D Fun Art Museum Porto",
+      "page_name": "3D Fun Art Museum Porto",
+      "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+      "date": "2026-04",
+      "map": "Google Maps '3D Fun Art Museum Porto' (R. de Faria Guimarães 712), newest review shown 2 hours ago"
+    },
+    {
+      "name": "Almeida Garrett Library",
+      "page_name": "biblioteca pública Almeida Garrett",
+      "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+      "date": "2026-04",
+      "map": "Google Maps 'Biblioteca Municipal Almeida Garrett' (Jardins do Palácio de Cristal), newest review shown 15 hours ago"
+    },
+    {
+      "name": "Sound-and-light show at the Clérigos Church",
+      "page_name": "espetáculo multimédia na Igreja dos Clérigos",
+      "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+      "date": "2026-04",
+      "map": "Google Maps 'Clérigos Church' (R. de São Filipe de Nery), newest review shown an hour ago"
+    },
+    {
+      "name": "Parque Biológico de Gaia",
+      "page_name": "Parque Biológico de Gaia",
+      "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+      "date": "2026-04",
+      "map": "Google Maps 'Parque Biológico de Gaia' (R. Cunha, Avintes), newest review shown 3 days ago"
     }
   ],
   "left_out": [
     {
       "name": "Mundo de Sabores",
       "why": "the map shows another restaurant (Palco de sabores) for the name"
+    },
+    {
+      "name": "FC Porto museum and stadium",
+      "why": "for football fans; not for under-4s"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Portoalities (Apr 2026), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

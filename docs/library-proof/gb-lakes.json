@@ -172,6 +172,54 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from Visit Lake District (official), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Broadgate Meadow",
+          "page_name": "Broadgate Meadow",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "date": "official",
+          "map": "Google Maps 'Broadgate Meadow' (Grasmere), newest review shown 5 months ago"
+        },
+        {
+          "name": "Rothay Park",
+          "page_name": "Rothay Park",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "date": "official",
+          "map": "Google Maps 'Rothay Park' (Vicarage Rd), newest review shown a day ago"
+        },
+        {
+          "name": "Fitz Park playground",
+          "page_name": "Fitz Park",
+          "src": "https://www.thelakedistrict.org/things-to-do/kid-friendly/public-playgrounds/",
+          "date": "official",
+          "map": "Google Maps 'Fitz Park Playground' (Station Ave), newest review shown a month ago"
+        },
+        {
+          "name": "Threlkeld Quarry & Mining Museum",
+          "page_name": "Threlkeld Quarry and Mining Museum",
+          "src": "https://www.thelakedistrict.org/kac",
+          "date": "official",
+          "map": "Google Maps 'Threlkeld Quarry & Mining Museum', newest review shown a week ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Lakeland Climbing Centre, Fell Foot Park",
+          "why": "outside the five towns"
+        },
+        {
+          "name": "Places to eat",
+          "why": "undated listings or pubs only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

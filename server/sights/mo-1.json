@@ -393,23 +393,6 @@
           "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
         },
         {
-          "name": { "en": "Go Airborne", "th": "โก แอร์บอร์น" },
-          "kind": "ride",
-          "area": { "en": "Lisboeta Macau", "th": "ลิสโบเอตา มาเก๊า" },
-          "what": { "en": "An indoor wind tunnel at Lisboeta Macau, where professional skydivers guide children as they fly.", "th": "อุโมงค์ลมในร่มที่ลิสโบเอตา มาเก๊า มีนักสกายไดเวอร์มืออาชีพคอยพาเด็กบิน" },
-          "why": { "en": "Children defy gravity in a wind tunnel with skydivers to guide them.", "th": "เด็ก ๆ ลอยท้าแรงโน้มถ่วงในอุโมงค์ลมโดยมีนักสกายไดเวอร์ช่วยนำทาง" },
-          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "no",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Go Airborne, Lisboeta Macau, Macau",
-          "ok": "2026-11",
-          "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
-        },
-        {
           "name": { "en": "Future Bright amusement centre", "th": "ศูนย์สนุกฟิวเจอร์ไบรต์" },
           "kind": "play",
           "area": { "en": "Praça Luís de Camões", "th": "ปราซา ลุยส์ เดอ กามอยช์" },
@@ -428,7 +411,126 @@
         },
         {"name":{"en":"Macao Museum of Art","th":"พิพิธภัณฑ์ศิลปะมาเก๊า"},"local":"澳門藝術博物館","kind":"museum","area":{"en":"Avenida Xian Xing Hai, Macau Peninsula","th":"ถนนเซียนซิงไห่ คาบสมุทรมาเก๊า"},"what":{"en":"The city's art museum, with art workshops for children aged 4 to 16","th":"พิพิธภัณฑ์ศิลปะของเมือง มีเวิร์กช็อปศิลปะสำหรับเด็ก 4–16 ปี"},"why":{"en":"Children make their own art in the workshops","th":"เด็กๆ ได้ทำงานศิลปะเองในเวิร์กช็อป"},"tip":{"en":"Closed on Mondays; workshops are booked ahead","th":"ปิดวันจันทร์ เวิร์กช็อปต้องจองล่วงหน้า"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Macao Museum of Art, Avenida Xian Xing Hai, Macau","ok":"2026-11","src":"https://www.gcs.gov.mo/news/detail/en/N26CB3CDQ3"},
         {"name":{"en":"Kids’ City, City of Dreams","th":"คิดส์ซิตี้ ซิตี้ออฟดรีมส์"},"kind":"play","area":{"en":"City of Dreams, Cotai","th":"ซิตี้ออฟดรีมส์ โคไท"},"what":{"en":"A large, naturally lit indoor play centre with four zones","th":"ศูนย์เล่นในร่มขนาดใหญ่ แสงธรรมชาติ แบ่งเป็น 4 โซน"},"why":{"en":"Messy play for the little ones and room to run in the other zones","th":"เด็กเล็กเล่นเลอะได้ และโซนอื่นมีที่ให้วิ่ง"},"tip":{"en":"Usually closed midweek outside school holidays; check the days before you go","th":"ปกติปิดกลางสัปดาห์นอกช่วงปิดเทอม เช็กวันเปิดก่อนไป"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Kids' City, City of Dreams, Cotai, Macau","ok":"2026-11","src":"https://www.cityofdreamsmacau.com/en/attractions/kids-city"},
-        {"name":{"en":"Cotai Ecological Reserve","th":"เขตอนุรักษ์ระบบนิเวศโคไท"},"kind":"nature","area":{"en":"Cotai, near the Lotus Bridge","th":"โคไท ใกล้สะพานโลตัส"},"what":{"en":"About 55 hectares of wetland where migrating birds spend the winter","th":"พื้นที่ชุ่มน้ำราว 55 เฮกตาร์ ที่นกอพยพมาพักช่วงหน้าหนาว"},"why":{"en":"Birds up close on a guided walk in the open air","th":"ดูนกใกล้ๆ กับไกด์นำเดินกลางแจ้ง"},"tip":{"en":"Open to visitors only on its guided days: check the month's list first","th":"เปิดให้เข้าชมเฉพาะวันที่มีไกด์นำ เช็กตารางของเดือนก่อน"},"ages":[1,2,2,1],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Cotai Ecological Reserve, Cotai, Macau","ok":"2026-11","src":"https://www.gcs.gov.mo/news/detail/en/G26APVVJen"}
+        {"name":{"en":"Cotai Ecological Reserve","th":"เขตอนุรักษ์ระบบนิเวศโคไท"},"kind":"nature","area":{"en":"Cotai, near the Lotus Bridge","th":"โคไท ใกล้สะพานโลตัส"},"what":{"en":"About 55 hectares of wetland where migrating birds spend the winter","th":"พื้นที่ชุ่มน้ำราว 55 เฮกตาร์ ที่นกอพยพมาพักช่วงหน้าหนาว"},"why":{"en":"Birds up close on a guided walk in the open air","th":"ดูนกใกล้ๆ กับไกด์นำเดินกลางแจ้ง"},"tip":{"en":"Open to visitors only on its guided days: check the month's list first","th":"เปิดให้เข้าชมเฉพาะวันที่มีไกด์นำ เช็กตารางของเดือนก่อน"},"ages":[1,2,2,1],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Cotai Ecological Reserve, Cotai, Macau","ok":"2026-11","src":"https://www.gcs.gov.mo/news/detail/en/G26APVVJen"},
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/",
+          "name": {
+            "th": "คิวบ์คิดส์โซน (เดอะเวเนเชียน)",
+            "en": "Qube Kid's Zone (The Venetian)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เดอะเวเนเชียน โคไท มาเก๊า",
+            "en": "The Venetian, Cotai, Macau"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดย่อม มีที่ปีน สไลเดอร์ ตาข่าย และเกมคอมพิวเตอร์",
+            "en": "A compact indoor playground for active play: climbing frames, slides, nets and computer games"
+          },
+          "why": {
+            "th": "ปีน ไถล และเล่นตาข่าย ให้เด็กได้ใช้พลัง",
+            "en": "Climbing, sliding and nets for children with energy to burn"
+          },
+          "tip": {
+            "th": "เหมาะแวะสั้น ๆ กับเด็กเล็ก",
+            "en": "Best for a short visit with younger children"
+          },
+          "q": "Qube Kid's zone, The Venetian Macao",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+          "name": {
+            "th": "พิพิธภัณฑ์โพลีเอ็มจีเอ็ม",
+            "en": "Poly MGM Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เอ็มจีเอ็มมาเก๊า มาเก๊า",
+            "en": "MGM Macau, Macau"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในเอ็มจีเอ็มมาเก๊า มีนิทรรศการหมุนเวียน",
+            "en": "A museum at MGM Macau with changing exhibitions"
+          },
+          "why": {
+            "th": "มีสมุดคู่มือสำหรับครอบครัว และเข้าฟรี",
+            "en": "Family guide booklets, and free entry"
+          },
+          "q": "POLY MGM MUSEUM, MGM Macau",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/",
+          "name": {
+            "th": "เดอะเฮาส์ออฟแดนซิ่งวอเตอร์",
+            "en": "The House of Dancing Water"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ซิตี้ออฟดรีมส์ โคไท มาเก๊า",
+            "en": "City of Dreams, Cotai, Macau"
+          },
+          "what": {
+            "th": "การแสดงกายกรรมและการเต้นรอบสระน้ำใหญ่ ในโรงละครของตัวเอง",
+            "en": "A show of acrobatics and dance around a big pool in its own theatre"
+          },
+          "why": {
+            "th": "เล่าเรื่องด้วยท่าทาง ไม่ต้องฟังภาษา",
+            "en": "A story told by movement rather than words"
+          },
+          "tip": {
+            "th": "แสดงช่วงเย็น เวลาเปลี่ยนตามฤดู",
+            "en": "Evening shows; times change with the season"
+          },
+          "q": "House of Dancing Water, City of Dreams, Macau",
+          "ok": "2026-11"
+        }
       ]
     }
   ]

@@ -294,7 +294,8 @@
             "en": "Animals to meet and indoor play areas for little ones"
           },
           "q": "Moher Hill Open Farm, Liscannor, County Clare",
-          "ok": "2026-11"
+          "ok": "2026-11",
+          "tip": { "en": "Open on Saturdays and Sundays; winter opening is not confirmed, so check first", "th": "เปิดวันเสาร์และอาทิตย์ หน้าหนาวยังไม่ยืนยันว่าเปิด เช็กก่อนไป" }
         },
         {
           "local": "",
@@ -368,8 +369,8 @@
             "en": "Sheepdog shows with a handler and his border collies"
           },
           "tip": {
-            "th": "การแสดงสุนัขต้อนแกะมีช่วงมีนาคมถึงตุลาคม",
-            "en": "Sheepdog shows run between March and October"
+            "th": "ศูนย์ผู้เยี่ยมชมเปิดมีนาคมถึงตุลาคม ปิดช่วงหน้าหนาว การแสดงสุนัขต้อนแกะมีช่วงมีนาคมถึงตุลาคม",
+            "en": "The visitor centre opens March to October; closed in winter. Sheepdog shows run between March and October"
           },
           "q": "Caherconnell Stone Fort, Carran, County Clare",
           "ok": "2026-11"
@@ -721,6 +722,191 @@
             "en": "Allow at least 90 minutes"
           },
           "q": "EPIC The Irish Emigration Museum, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์แห่งชาติ ศิลปะตกแต่งและประวัติศาสตร์ คอลลินส์แบร์แร็กส์",
+            "en": "National Museum – Decorative Arts and History (Collins Barracks)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คอลลินส์แบร์แร็กส์ สโตนีย์แบตเตอร์ ดับลิน",
+            "en": "Collins Barracks, Stoneybatter, Dublin 7"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในร่มเข้าฟรี ติดรายชื่อที่เที่ยววันฝนตกของดับลิน",
+            "en": "A free indoor museum on Dublin's rainy-day lists"
+          },
+          "why": {
+            "th": "เข้าฟรีและอยู่ในร่ม เหมาะกับวันฝนตก",
+            "en": "Free and indoors, for a wet day"
+          },
+          "q": "Collins Barracks National Museum of Ireland, Benburb St, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.loughwellfarmpark.ie/",
+          "name": {
+            "th": "ฟาร์มพาร์กลอฟเวลล์",
+            "en": "Loughwell Farm Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "มอยคัลเลน ใกล้กอลเวย์",
+            "en": "Moycullen, near Galway"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มและกลางแจ้ง และกิจกรรมกับสัตว์ตลอดปี",
+            "en": "Indoor and outdoor play and animal experiences all year round"
+          },
+          "why": {
+            "th": "ที่เล่นในร่มกว่า 12,000 ตารางฟุต และโซนเป่าลมสำหรับเด็กต่ำกว่า 3 ขวบ",
+            "en": "Over 12,000 square feet of indoor play and an under-3s inflatable area"
+          },
+          "q": "Loughwell Farm Park, Moycullen, Galway",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.leisureland.ie/",
+          "name": {
+            "th": "เลเชอร์แลนด์ ซอลต์ฮิลล์",
+            "en": "Leisureland (Salthill)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนอัปเปอร์ซอลต์ฮิลล์ กอลเวย์",
+            "en": "Upper Salthill Road, Galway"
+          },
+          "what": {
+            "th": "ศูนย์สระว่ายน้ำริมทางเดินเลียบทะเลซอลต์ฮิลล์",
+            "en": "A pool centre on the Salthill promenade"
+          },
+          "why": {
+            "th": "มีสระหัดว่ายและสไลเดอร์น้ำยาว 65 เมตร",
+            "en": "A learner pool and a 65 m water slide"
+          },
+          "q": "Leisureland, Upper Salthill Rd, Galway",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "name": {
+            "th": "มักครอสครีมเมอรี",
+            "en": "Muckross Creamery"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "มักครอส คิลลาร์นีย์",
+            "en": "Muckross, Killarney"
+          },
+          "what": {
+            "th": "ฟาร์มโคนมของครอบครัว ได้พบวัวที่ให้นมทำไอศกรีม",
+            "en": "A family dairy farm where you meet the cows behind its ice cream"
+          },
+          "why": {
+            "th": "ดูวัวแล้วกินไอศกรีมจากร้านในฟาร์ม",
+            "en": "Meet the cows, then have a scoop from the ice cream parlour"
+          },
+          "q": "Muckross Creamery, Killarney",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "name": {
+            "th": "ฟาร์มสัตว์เลี้ยงเคนเนดีส์",
+            "en": "Kennedy's Pet Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เกลนเฟลสก์ คิลลาร์นีย์",
+            "en": "Glenflesk, Killarney"
+          },
+          "what": {
+            "th": "ฟาร์มสัตว์เลี้ยงของครอบครัว ให้อาหารและกอดสัตว์ได้",
+            "en": "A family-run pet farm with animals to feed and cuddle"
+          },
+          "why": {
+            "th": "มีที่เล่นทั้งในร่มและกลางแจ้ง ใช้ได้ทุกสภาพอากาศ",
+            "en": "Indoor and outdoor play areas for any weather"
+          },
+          "q": "Kennedys Pet Farm, Glenflesk, Killarney",
           "ok": "2026-11"
         }
       ]

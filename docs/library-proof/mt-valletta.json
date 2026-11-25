@@ -53,8 +53,61 @@
       "src": "https://ohmymalta.com.mt/2025/03/14/5-family-friendly-adventures-in-gozo",
       "date": "2025-03",
       "map": "Google Maps 'Dwejra Inland Sea', 127 reviews, newest '23 hours ago'"
+    },
+    {
+      "name": "Carob Tree Food Court",
+      "page_name": "Carob Tree",
+      "src": "https://ohmymalta.com.mt/2026/07/20/top-restaurants-with-play-areas-for-kids-in-malta/",
+      "date": "2026-07",
+      "map": "Google Maps 'Carob Tree Food Court' (Spinola Terraces, St Julian's), newest review shown 3 days ago"
+    },
+    {
+      "name": "Malta Postal Museum",
+      "page_name": "Malta Postal Museum",
+      "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+      "date": "2026-09",
+      "map": "Google Maps 'Malta Postal Museum & Arts Hub' (135 Archbishop St), newest review shown a week ago"
+    },
+    {
+      "name": "The Malta Experience",
+      "page_name": "The Malta Experience",
+      "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+      "date": "2026-09",
+      "map": "Google Maps 'The Malta Experience' (St Elmo Bastions), newest review shown 2 days ago"
+    },
+    {
+      "name": "Lascaris War Rooms",
+      "page_name": "Lascaris War Rooms",
+      "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+      "date": "2026-09",
+      "map": "Google Maps 'The Lascaris War Rooms' (Lascaris Ditch), newest review shown a day ago"
+    },
+    {
+      "name": "Fond Għadir",
+      "page_name": "Fond Għadir",
+      "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+      "date": "2026-09",
+      "map": "Google Maps 'Fond Għadir Beach' (71 Tower Road, Sliema), newest review shown 2 days ago"
     }
   ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "left_out": [
+    {
+      "name": "Vecchia Napoli (St Julian's)",
+      "why": "the map shows it temporarily closed"
+    },
+    {
+      "name": "Gravity Shoreline, The Eden",
+      "why": "trampolines, high ropes, bowling and karaoke — aimed at older children"
+    },
+    {
+      "name": "LittlePeeps at Flora's",
+      "why": "the quote was not on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from Oh My Malta (Jul 2026), Explore Valletta (Sep 2026) and Outwith Kidz (Nov 2026); 8 passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

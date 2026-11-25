@@ -652,6 +652,191 @@
           },
           "q": "Swiss Club, Villa Pax, Imbaba, Giza",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "คิดส์สเตชัน อเมริกานาพลาซา",
+            "en": "Kids Station (Americana Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อเมริกานาพลาซา ชีคซายิด",
+            "en": "Americana Plaza, Sheikh Zayed"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม มีซอฟต์เพลย์ สไลเดอร์ และเครื่องปีน",
+            "en": "An indoor playground with soft play, slides and climbing"
+          },
+          "why": {
+            "th": "ออกแบบสำหรับเด็กเล็ก มีคาเฟ่อยู่ใกล้ๆ",
+            "en": "Made for younger children, with cafés nearby"
+          },
+          "q": "Kids Station, Americana Plaza, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "มังกี้เมซ อาร์คานพลาซา",
+            "en": "Monkey Maze (Arkan Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาร์คานพลาซา ชีคซายิด",
+            "en": "Arkan Plaza, Sheikh Zayed"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มแบบเคลื่อนไหว มีเครื่องปีน อุโมงค์ และด่าน",
+            "en": "Indoor movement play with climbing frames, tunnels and obstacles"
+          },
+          "why": {
+            "th": "มากกว่าสไลเดอร์กับบ่อบอล สำหรับเด็กโตขึ้นมาหน่อย",
+            "en": "More than a slide and a ball pit, for slightly older children"
+          },
+          "q": "Monkey Maze Arkan, Arkan Plaza, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "เพลย์พอยต์ อียิปต์",
+            "en": "PlayPoint Egypt"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนน 26 กรกฎาคม ชีคซายิด",
+            "en": "26th of July Corridor, Sheikh Zayed"
+          },
+          "what": {
+            "th": "โซนกิจกรรม มีซอฟต์เพลย์ แทรมโพลีน และเกมกลุ่ม",
+            "en": "An activity zone with soft play, trampolines and group games"
+          },
+          "why": {
+            "th": "เด็กเปลี่ยนไปเล่นหลายแบบได้",
+            "en": "Children move between different kinds of play"
+          },
+          "q": "PlayPoint Egypt, 26th of July Corridor, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "ฟันโทเปีย มาซาร์มอลล์",
+            "en": "Funtopia (Mazar Mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มาซาร์มอลล์ ชีคซายิด",
+            "en": "Mazar Mall, Sheikh Zayed"
+          },
+          "what": {
+            "th": "ผนังปีนและด่านอุปสรรคในร่ม",
+            "en": "Indoor climbing walls and obstacle courses"
+          },
+          "why": {
+            "th": "สำหรับเด็กโตที่อยากได้ความท้าทาย",
+            "en": "For older children who want a challenge"
+          },
+          "q": "Funtopia, Mazar Mall, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "คอสโมซิตี้ อาร์คานพลาซา",
+            "en": "Cosmocity (Arkan Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาร์คานพลาซา ชีคซายิด",
+            "en": "Arkan Plaza, Sheikh Zayed"
+          },
+          "what": {
+            "th": "เกมอาร์เคด โบว์ลิง และเครื่องเล่น",
+            "en": "Arcade games, bowling and attractions"
+          },
+          "why": {
+            "th": "มีอะไรให้พี่น้องหลายวัยเล่นได้",
+            "en": "Something for brothers and sisters of different ages"
+          },
+          "q": "Cosmocity Arkan, Arkan Plaza, Sheikh Zayed",
+          "ok": "2026-11"
         }
       ]
     },

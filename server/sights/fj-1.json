@@ -310,6 +310,43 @@
           },
           "q": "Namaka Farmers Market, Nadi",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fijipocketguide.com/10-things-to-do-on-the-coral-coast-with-kids/",
+          "name": {
+            "th": "น้ำตกเบียอูเซวู",
+            "en": "Biausevu Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านเบียอูเซวู ถนนควีนส์ โคโรเลวู",
+            "en": "Biausevu Village, Queens Road at Korolevu"
+          },
+          "what": {
+            "th": "ไกด์จากหมู่บ้านพาเดินไปน้ำตกและแอ่งเล่นน้ำ",
+            "en": "A village guide walks you to a waterfall and swimming hole"
+          },
+          "why": {
+            "th": "เดินไม่ถึงชั่วโมง เด็กส่วนใหญ่เดินไหว",
+            "en": "Under an hour's walk, which most children manage"
+          },
+          "q": "Biausevu Waterfall, Korolevu, Coral Coast",
+          "ok": "2026-11"
         }
       ]
     }

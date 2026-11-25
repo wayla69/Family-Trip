@@ -96,6 +96,47 @@
         }
       ],
       "estimates": "Ages ([1,1,1,1]) and visit hours are not printed on these pages; the format requires them, so they are placeholders for the owner to review."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 5 rows from Mia.vn (Aug 2025), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Tea Resort Prenn",
+          "page_name": "Tea Resort Prenn",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "date": "2025-08",
+          "map": "Google Maps 'Tea Resort Prenn' (Prenn Pass), newest review shown a day ago"
+        },
+        {
+          "name": "Ladalat indoor play zone",
+          "page_name": "Khu vui chơi Ladalat",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "date": "2025-08",
+          "map": "Google Maps 'La DaLat khu vui chơi trẻ em' (106A Mai Anh Đào), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "C'KidZone (Lâm Viên Square)",
+          "page_name": "C’KidZone Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "date": "2025-08",
+          "map": "Google Maps 'Khu vui chơi trẻ em C'Kidzone Đà Lạt' (Lâm Viên Square), newest review shown a week ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Titan Kids (11 Hùng Vương)",
+          "why": "the map puts it in Đức Trọng, outside Đà Lạt"
+        },
+        {
+          "name": "F49 (95 Hà Giang)",
+          "why": "not found on the map"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

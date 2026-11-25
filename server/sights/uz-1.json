@@ -821,6 +821,43 @@
           },
           "q": "Hazrati Imam complex, Qorasaroy street, Tashkent",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.afisha.uz/ru/gorod/2025/08/31/aya-project-magic-city",
+          "name": {
+            "th": "อายาโปรเจกต์ เมจิกซิตี้",
+            "en": "AYA Project (Magic City)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เมจิกซิตี้ ถนนบาบูร์ ทาชเคนต์",
+            "en": "Magic City, Babur Street, Tashkent"
+          },
+          "what": {
+            "th": "นิทรรศการศิลปะแสงและภาพฉาย 7 ห้อง",
+            "en": "A light and projection art space of seven halls"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรี",
+            "en": "Under-threes go in free"
+          },
+          "q": "AYA Project, Babur Street, Tashkent",
+          "ok": "2026-11"
         }
       ]
     }

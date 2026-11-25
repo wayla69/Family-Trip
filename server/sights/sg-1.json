@@ -531,6 +531,162 @@
           "q": "Westgate, Singapore",
           "ok": "2026-11",
           "src": "https://www.bykido.com/blogs/playgrounds-and-more/top-10-indoor-playgrounds-in-singapore-for-kids-and-families-to-have-fun"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            1,
+            0,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก 12 ดอลลาร์สิงคโปร์ ผู้ใหญ่ 10 ดอลลาร์สิงคโปร์ (เสาร์–อาทิตย์ วันหยุดนักขัตฤกษ์ และปิดเทอม)",
+            "en": "S$12 a child, S$10 an adult (weekends, public and school holidays)"
+          },
+          "book": "none",
+          "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+          "name": {
+            "th": "วันเดอร์กราวด์ ที่ดิอาร์ตกราวด์",
+            "en": "WonderGround at The Artground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วันฮอลแลนด์วิลเลจ สิงคโปร์",
+            "en": "One Holland Village, Singapore"
+          },
+          "what": {
+            "th": "ลานเล่นศิลปะเข้าได้เลย ธีมเปลี่ยนไปเรื่อย ๆ มีอุโมงค์และรากไม้ให้คลานลอด",
+            "en": "A drop-in arts play space with a changing theme: tunnels and roots to crawl through"
+          },
+          "why": {
+            "th": "ของให้จับ ดึง และแอบมอง ทำมาสำหรับเด็ก 3 ขวบลงมา",
+            "en": "Things to touch, pull and peek through, made for children of three and under"
+          },
+          "tip": {
+            "th": "เปิดถึง 31 มี.ค. 2027 เวลา 09:15–18:15",
+            "en": "Open until 31 Mar 2027, 09:15–18:15"
+          },
+          "q": "The Artground, One Holland Village, Singapore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+          "name": {
+            "th": "สแปลชแอตคิดส์อะเมซ (ซาฟราปังโกล)",
+            "en": "Splash@Kidz Amaze (SAFRA Punggol)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ซาฟราปังโกล 9 เซนตุลครีเซนต์ สิงคโปร์",
+            "en": "SAFRA Punggol, 9 Sentul Crescent, Singapore"
+          },
+          "what": {
+            "th": "ลานเล่นน้ำในร่ม",
+            "en": "An indoor water playground"
+          },
+          "why": {
+            "th": "เด็กเล็กเล่นน้ำได้ไม่ว่าฝนจะตกหรือแดดจะออก",
+            "en": "Water play for toddlers whatever the weather"
+          },
+          "tip": {
+            "th": "เหมาะกับเด็กอายุไม่ถึง 10 ขวบ",
+            "en": "Best before the children turn 10"
+          },
+          "q": "SAFRA Splash @ Kidz Amaze, SAFRA Punggol, 9 Sentul Crescent, Singapore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+          "name": {
+            "th": "ทีเพลย์ คาทิบ",
+            "en": "T-Play Khatib"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โฮมทีมเอ็นเอส คาทิบ 2 ยีชุนวอล์ก สิงคโปร์",
+            "en": "HomeTeamNS Khatib, 2 Yishun Walk, Singapore"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มธีมเปอรานากัน มีสไลเดอร์และที่ปีนป่ายสีสด",
+            "en": "A Peranakan-themed indoor playground with slides and climbing frames in bright colours"
+          },
+          "why": {
+            "th": "หน้าต่างกระจกบานใหญ่และเพดานสูง ทำให้สว่าง",
+            "en": "Big glass windows and a high ceiling make it bright"
+          },
+          "q": "T-Play Khatib, 2 Yishun Walk, Singapore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            1,
+            0,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+          "name": {
+            "th": "เดอะจอยออฟทอยส์",
+            "en": "The Joy of Toys"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คลาร์กคีย์เซ็นทรัล สิงคโปร์",
+            "en": "Clarke Quay Central, Singapore"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่ม เน้นของเล่นมากกว่าเครื่องเล่นใหญ่",
+            "en": "An indoor play space with toys rather than big play frames"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กเล็ก แวะเล่นระหว่างเที่ยวคลาร์กคีย์",
+            "en": "Good for younger children, a stop while out at Clarke Quay"
+          },
+          "q": "The Joy of Toys, Clarke Quay Central, 6 Eu Tong Sen Street, Singapore",
+          "ok": "2026-11"
         }
       ]
     }

@@ -1,0 +1,90 @@
+{
+  "town": "au-sydney",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 12 rows from Time Out (Jan 2026), Ella's List (Sep 2026), Destination NSW (Apr 2026) and newywithkids (May 2026), all passed library-check.cjs, 10 went in",
+  "added": [
+    {
+      "name": "Petersham Bowling Club",
+      "page_name": "Petersham Bowling Club",
+      "src": "https://www.timeout.com/sydney/kids/the-best-kid-friendly-restaurants-in-sydney",
+      "date": "2026-01",
+      "map": "Google Maps 'Petersham Bowling Club', 498 reviews, newest shown a month ago"
+    },
+    {
+      "name": "Bistro on the Greens (South Coogee Bowling Club)",
+      "page_name": "Bistro on the Greens",
+      "src": "https://www.timeout.com/sydney/kids/the-best-kid-friendly-restaurants-in-sydney",
+      "date": "2026-01",
+      "map": "Google Maps 'Bistro On The Greens', 181 reviews, newest shown 13 days ago"
+    },
+    {
+      "name": "The Newport",
+      "page_name": "The Newport",
+      "src": "https://www.timeout.com/sydney/kids/the-best-kid-friendly-restaurants-in-sydney",
+      "date": "2026-01",
+      "map": "Google Maps 'The Newport', 4,581 reviews, newest shown a month ago"
+    },
+    {
+      "name": "Hotel Pennant Hills",
+      "page_name": "Hotel Pennant Hills",
+      "src": "https://www.timeout.com/sydney/kids/the-best-kid-friendly-restaurants-in-sydney",
+      "date": "2026-01",
+      "map": "Google Maps 'Hotel Pennant Hills', 1,554 reviews, newest shown 11 days ago"
+    },
+    {
+      "name": "Tribal Zone (North Ryde RSL)",
+      "page_name": "Tribal Zone",
+      "src": "https://www.timeout.com/sydney/kids/the-best-kid-friendly-restaurants-in-sydney",
+      "date": "2026-01",
+      "map": "Google Maps 'North Ryde RSL' (the club Tribal Zone is in), 1,893 reviews, newest shown 4 months ago"
+    },
+    {
+      "name": "Vitaland Kids Cafe (Warriewood)",
+      "page_name": "Vitaland Kids Cafe, Warriewood",
+      "src": "https://www.ellaslist.com.au/sydneys-best-indoor-play-centres-for-a-rainy-day/",
+      "date": "2026-09",
+      "map": "Google Maps 'Vitaland Kids Cafe Warriewood', 92 reviews, newest shown a week ago"
+    },
+    {
+      "name": "Twinkle Kids Cafe (Burwood)",
+      "page_name": "Twinkle Kids Cafe, Burwood",
+      "src": "https://www.ellaslist.com.au/sydneys-best-indoor-play-centres-for-a-rainy-day/",
+      "date": "2026-09",
+      "map": "Google Maps 'Twinkle Kids Cafe', 304 reviews, newest shown 18 days ago"
+    },
+    {
+      "name": "Miniversal Kids Cafe (Marrickville)",
+      "page_name": "Miniversal, Marrickville",
+      "src": "https://www.ellaslist.com.au/sydneys-best-indoor-play-centres-for-a-rainy-day/",
+      "date": "2026-09",
+      "map": "Google Maps 'Miniversal Kids Cafe', 269 reviews, newest shown 6 days ago"
+    },
+    {
+      "name": "Echo Point Lookout (Three Sisters)",
+      "page_name": "Echo Point",
+      "src": "https://newywithkids.com.au/best-day-trips-from-sydney-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Echo Point Lookout (Three Sisters)', 12,453 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Govetts Leap Lookout",
+      "page_name": "Govetts Leap Lookout",
+      "src": "https://www.visitnsw.com/articles/six-blue-mountains-family-friendly-activities",
+      "date": "2026-04",
+      "map": "Google Maps 'Govetts Leap lookout', 2,499 reviews, newest shown 1 day ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Bondi Golf and Diggers Club",
+      "why": "no review from the last six months shown on the map"
+    },
+    {
+      "name": "Jenolan Caves",
+      "why": "temporarily closed on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

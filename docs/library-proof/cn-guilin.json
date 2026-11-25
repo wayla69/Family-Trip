@@ -1,58 +1,93 @@
 {
   "town": "cn-guilin",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 7 rows without ok; nothing else in the town was re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Jinlong Zhai",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "page_name": "Jinlongzhai",
-      "evidence": "list for '金龙寨 中山中路 桂林': 24 Zhongshan Middle Rd, 'Open now'",
-      "ok": "2026-11"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 7 rows without ok; nothing else in the town was re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+      "confirmed": [
+        {
+          "name": "Jinlong Zhai",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Jinlongzhai",
+          "evidence": "list for '金龙寨 中山中路 桂林': 24 Zhongshan Middle Rd, 'Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Xiao Nan Guo",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Xiaonanguo",
+          "evidence": "list for '小南国 文明路 桂林': 3 Wenming Rd, 'Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Chongshan Rice Noodles",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Chongshan Rice Noodles",
+          "evidence": "list for '崇善米粉 依仁路 桂林': 77GX+39G, Yirenlu St, 'Open · Closes 2:30 PM · Reopens 5 PM'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "West Street Snack Stalls",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Yangshuo West Street Scenic Spot",
+          "evidence": "list for 'West Street Yangshuo Guilin': QFFV+HH5, Xijie St, 'Open now' (the street's own listing with hours)",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Rosemary Cafe",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Midiexiang (迷迭香)",
+          "evidence": "list for 'Rosemary Cafe Yiren Road Guilin': Western restaurant, 1-3 Yiren Rd, 'Open now'; q changed to 'Midiexiang 迷迭香, 1-3 Yiren Rd, Xiufeng, Guilin, China'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "McFound",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "no branch on Zhengyang pedestrian street; McFound listings elsewhere (7 Xinyi Rd food court, no hours; 15 Qixing Rd 'Open now') are other branches"
+        },
+        {
+          "name": "Mingyuan Cafe",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "place page 'Mingyuan Coffee 明园咖啡', 西街50号, QFGW+MJ Yangshuo — no hours shown"
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Xiao Nan Guo",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "page_name": "Xiaonanguo",
-      "evidence": "list for '小南国 文明路 桂林': 3 Wenming Rd, 'Open now'",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Chongshan Rice Noodles",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "page_name": "Chongshan Rice Noodles",
-      "evidence": "list for '崇善米粉 依仁路 桂林': 77GX+39G, Yirenlu St, 'Open · Closes 2:30 PM · Reopens 5 PM'",
-      "ok": "2026-11"
-    },
-    {
-      "name": "West Street Snack Stalls",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "page_name": "Yangshuo West Street Scenic Spot",
-      "evidence": "list for 'West Street Yangshuo Guilin': QFFV+HH5, Xijie St, 'Open now' (the street's own listing with hours)",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Rosemary Cafe",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "page_name": "Midiexiang (迷迭香)",
-      "evidence": "list for 'Rosemary Cafe Yiren Road Guilin': Western restaurant, 1-3 Yiren Rd, 'Open now'; q changed to 'Midiexiang 迷迭香, 1-3 Yiren Rd, Xiufeng, Guilin, China'",
-      "ok": "2026-11"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from umetravel (Sept 2026), China Highlights (Nov 2026) and Reiskoe (Nov 2025) passed library-check.cjs, all 3 went in",
+      "added": [
+        {
+          "name": "Sister Liu Beer Fish (West Street)",
+          "page_name": "Sister Liu Beer Fish",
+          "src": "https://www.umetravel.com/china-family-travel-guide/guilin-family-travel-guide.html",
+          "date": "2026-09",
+          "map": "Google Maps Baidu Maps '刘姐啤酒鱼民族演艺餐厅(西街总店)', 250 reviews, newest 2026-11-02 (one of its other branches is marked closed; this one is open)"
+        },
+        {
+          "name": "Moon Water Cave",
+          "page_name": "Moon Water Cave",
+          "src": "https://www.chinahighlights.com/guilin/article-family-activities.htm",
+          "date": "2026-11",
+          "map": "Google Maps Baidu Maps '月亮水岩', 平塘村, 250 reviews, newest 2026-10-20"
+        },
+        {
+          "name": "Ruyi Peak cable car",
+          "page_name": "Ruyi Peak",
+          "src": "https://www.reiskoe.nl/en/yangshuo-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps Baidu Maps '阳朔如意峰索道景区', 250 reviews, newest 2026-10-31"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "kept_without_ok": [
-    {
-      "name": "McFound",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "evidence": "no branch on Zhengyang pedestrian street; McFound listings elsewhere (7 Xinyi Rd food court, no hours; 15 Qixing Rd 'Open now') are other branches"
-    },
-    {
-      "name": "Mingyuan Cafe",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "evidence": "place page 'Mingyuan Coffee 明园咖啡', 西街50号, QFGW+MJ Yangshuo — no hours shown"
-    }
-  ],
-  "removed": []
+  ]
 }

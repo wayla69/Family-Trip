@@ -182,6 +182,54 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from Banff Bound (Oct 2025), Tourism Jasper (May 2026), Travel Banff Canada (Oct 2026) and Spark's own site, all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Valley of the Five Lakes",
+          "page_name": "Valley of the Five Lakes",
+          "src": "https://www.jasper.travel/blog/family-vacation-jasper-national-park-kid-activities/",
+          "date": "2026-05",
+          "map": "Google Maps 'Valley of the Five Lakes Trailhead', newest review shown a month ago"
+        },
+        {
+          "name": "Cubz Play Café",
+          "page_name": "Cubz Play Cafe",
+          "src": "https://www.jasper.travel/blog/family-vacation-jasper-national-park-kid-activities/",
+          "date": "2026-05",
+          "map": "Google Maps 'Cubz Play Café' (618 Connaught Dr), newest review shown 2 months ago"
+        },
+        {
+          "name": "Fenland Loop Trail",
+          "page_name": "Fenland Loop Trail",
+          "src": "https://www.travelbanffcanada.com/banff-hikes-with-kids/",
+          "date": "2026-10",
+          "map": "Google Maps 'Fenland Trailhead', newest review shown 3 days ago"
+        },
+        {
+          "name": "Lower Bankhead ghost town",
+          "page_name": "Lower Bankhead Ghost Town",
+          "src": "https://www.travelbanffcanada.com/banff-hikes-with-kids/",
+          "date": "2026-10",
+          "map": "Google Maps 'Lower Bankhead', newest review shown a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Elk & Oarsman",
+          "why": "a pub"
+        },
+        {
+          "name": "Creative Kids Museum (TELUS Spark)",
+          "why": "newest Google Maps review 2 years old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

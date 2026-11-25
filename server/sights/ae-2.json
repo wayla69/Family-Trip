@@ -534,6 +534,191 @@
           },
           "q": "Mission Play! by Mattel, The Galleria, Al Maryah Island",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.abudhabi-mall.com/play/",
+          "name": {
+            "th": "ฟันซิตี้ อาบูดาบีมอลล์",
+            "en": "Fun City (Abu Dhabi Mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาบูดาบีมอลล์ อัลซาฮิยาห์ อาบูดาบี",
+            "en": "Abu Dhabi Mall, Al Zahiyah, Abu Dhabi"
+          },
+          "what": {
+            "th": "ศูนย์ความบันเทิงในร่มสำหรับเด็กอายุ 1–12 ปี",
+            "en": "Indoor family entertainment for children aged 1–12"
+          },
+          "why": {
+            "th": "มีที่เล่นสำหรับเด็กเล็ก และเครื่องเล่นสำหรับเด็กโต",
+            "en": "Play made for little ones, with rides for older children"
+          },
+          "q": "Fun City, Abu Dhabi Mall, Al Zahiyah, Abu Dhabi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.emirates-online.net/English/location/al-ain/play-areas-for-kids",
+          "name": {
+            "th": "สโนว์อาบูดาบี",
+            "en": "Snow Abu Dhabi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รีมมอลล์ เกาะอัลรีม อาบูดาบี",
+            "en": "Reem Mall, Al Reem Island, Abu Dhabi"
+          },
+          "what": {
+            "th": "สวนหิมะในร่มในห้าง",
+            "en": "An indoor snow park in a mall"
+          },
+          "why": {
+            "th": "เล่นหิมะได้ในวันร้อน พ่อแม่เล่นด้วยได้",
+            "en": "Snow to play in on a hot day; parents can join in"
+          },
+          "q": "Snow Abu Dhabi, Reem Mall, Al Reem Island",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "name": {
+            "th": "คาบูเดิล แพมเพอร์แอนด์เพลย์",
+            "en": "Caboodle Pamper & Play"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เดอะแกลเลอเรีย เกาะอัลมารียาห์ อาบูดาบี",
+            "en": "The Galleria, Al Maryah Island, Abu Dhabi"
+          },
+          "what": {
+            "th": "ศูนย์เล่นขนาดเล็กในห้างแกลเลอเรีย",
+            "en": "A small play centre in the Galleria"
+          },
+          "why": {
+            "th": "พ่อแม่อยู่เล่นด้วยได้ และมีบริการพี่เลี้ยง",
+            "en": "Parents can stay and play; babysitting is offered"
+          },
+          "q": "Caboodle Pamper & Play, The Galleria, Al Maryah Island",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "name": {
+            "th": "ฟันเวิร์กส์ ยาสมอลล์",
+            "en": "Fun Works (Yas Mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยาสมอลล์ เกาะยาส อาบูดาบี",
+            "en": "Yas Mall, Yas Island, Abu Dhabi"
+          },
+          "what": {
+            "th": "ศูนย์เล่นขนาดใหญ่ มีซอฟต์เพลย์และเครื่องเล่นแบบงานวัด",
+            "en": "A big play centre with soft play and fairground rides"
+          },
+          "why": {
+            "th": "มีซอฟต์เพลย์สำหรับเด็กเล็กและเด็กโต",
+            "en": "Soft play for toddlers as well as older children"
+          },
+          "q": "Fun Works, Yas Mall, Abu Dhabi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "name": {
+            "th": "ชีคกี้มังกี้ส์ อัลฟอร์ซาน",
+            "en": "Cheeky Monkeys (Al Forsan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อัลฟอร์ซานวิลเลจ คาลิฟาซิตี อาบูดาบี",
+            "en": "Al Forsan Village, Khalifa City, Abu Dhabi"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม มีโครงปีนขนาดใหญ่และบ้านคลับเฮาส์",
+            "en": "An indoor play centre with a big climbing frame and clubhouse"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กและกิจกรรมงานประดิษฐ์",
+            "en": "A section for toddlers and crafts to do"
+          },
+          "q": "Cheeky Monkeys, Al Forsan Village, Khalifa City, Abu Dhabi",
+          "ok": "2026-11"
         }
       ]
     }

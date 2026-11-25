@@ -71,6 +71,54 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from the Český Krumlov, České Budějovice and Karlovy Vary tourist offices (official), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Travellers Restaurant",
+          "page_name": "Travellers Restaurant",
+          "src": "https://www.ckrumlov.info/en/gastronomy-436-travellers-restaurant/",
+          "date": "official",
+          "map": "Google Maps 'Travellers restaurant' (Soukenická 43), newest review shown a week ago"
+        },
+        {
+          "name": "Butterfly House Diana",
+          "page_name": "Karlovy Vary Butterfly House",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "date": "official",
+          "map": "Google Maps 'Butterfly House Diana Karlovy Vary' (Vrch přátelství 5/1), newest review shown a week ago"
+        },
+        {
+          "name": "Diana playground",
+          "page_name": "Children’s Playground in Front of the Butterfly House",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "date": "official",
+          "map": "Google Maps 'Playground Diana' (Vrch přátelství 5), newest review shown 2 months ago"
+        },
+        {
+          "name": "Children's Paradise (Svatošky)",
+          "page_name": "Svatošky Children’s Paradise",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "date": "official",
+          "map": "Google Maps 'Přírodní areál Dětský ráj' (Údolí 99, Loket), newest review shown 3 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Kozlovna u Zelené Ratolesti",
+          "why": "in České Budějovice, outside this town's area"
+        },
+        {
+          "name": "Rolava Recreation Area",
+          "why": "the map names it differently (After School Campus Rolava)"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

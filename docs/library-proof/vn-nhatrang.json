@@ -5,16 +5,71 @@
   "rule": "library-check.cjs, then the Google Maps Reviews tab: ok only when not marked closed and with a review from the last six months, and the map's name matches the page's.",
   "agents": "two Haiku agents; 19 rows offered, 9 passed library-check.cjs, 4 went in",
   "added": [
-    { "name": "Trí Nguyên Aquarium", "src": "https://mia.vn/cam-nang-du-lich/lac-vao-thuy-cung-tri-nguyen-nha-trang-thu-nho-giua-thanh-pho-bien-599", "date": "2026-07", "map": "Google Maps 'Hồ cá Trí Nguyên', 208 reviews, newest '4 weeks ago'" },
-    { "name": "Hòn Mun Island", "src": "https://localvietnam.com/khanh-hoa/nha-trang/hon-mun-island/", "date": "2026-05", "map": "Google Maps 'Hon Mun', 232 reviews, newest '2 weeks ago'" },
-    { "name": "Long Sơn Pagoda", "src": "https://localvietnam.com/khanh-hoa/nha-trang/long-son-pagoda/", "date": "2026-05", "map": "Google Maps 15,834 reviews, newest 'a week ago'" },
-    { "name": "Trúc Lâm Phụng Thủy Sơn", "src": "https://localvietnam.com/khanh-hoa/nha-trang/truc-lam-phung-thuy-son/", "date": "2026-05", "map": "Google Maps 386 reviews, newest '2 weeks ago'" }
+    {
+      "name": "Trí Nguyên Aquarium",
+      "src": "https://mia.vn/cam-nang-du-lich/lac-vao-thuy-cung-tri-nguyen-nha-trang-thu-nho-giua-thanh-pho-bien-599",
+      "date": "2026-07",
+      "map": "Google Maps 'Hồ cá Trí Nguyên', 208 reviews, newest '4 weeks ago'"
+    },
+    {
+      "name": "Hòn Mun Island",
+      "src": "https://localvietnam.com/khanh-hoa/nha-trang/hon-mun-island/",
+      "date": "2026-05",
+      "map": "Google Maps 'Hon Mun', 232 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Long Sơn Pagoda",
+      "src": "https://localvietnam.com/khanh-hoa/nha-trang/long-son-pagoda/",
+      "date": "2026-05",
+      "map": "Google Maps 15,834 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Trúc Lâm Phụng Thủy Sơn",
+      "src": "https://localvietnam.com/khanh-hoa/nha-trang/truc-lam-phung-thuy-son/",
+      "date": "2026-05",
+      "map": "Google Maps 386 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Truong Son Craft Village",
+      "page_name": "Truong Son Craft Village",
+      "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+      "date": "2026-05",
+      "map": "Google Maps 'Làng nghề Trường Sơn - Trường Sơn Craft Village' (08 Trường Sơn), newest review shown 5 hours ago"
+    },
+    {
+      "name": "100 Eggs Mud Bath",
+      "page_name": "100 Eggs Mud Bath Nha Trang",
+      "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+      "date": "2026-05",
+      "map": "Google Maps '100 Eggs Mud Bath' (Nguyễn Tất Thành, Phước Trung), newest review shown 5 months ago"
+    }
   ],
   "left_out": [
-    { "name": "10 restaurants (VinWonders list)", "why": "the page carries no date the checker can read" },
-    { "name": "Bánh căn Cô Trang", "why": "not found on Google Maps" },
-    { "name": "Bánh căn Mực", "why": "the map's nearest match is another stall (Bánh căn mực Cô Loan)" },
-    { "name": "Bánh căn Cô Tư Tháp Bà, Út Năm, Bình Dân", "why": "small stalls not checked on the map this round" }
+    {
+      "name": "10 restaurants (VinWonders list)",
+      "why": "the page carries no date the checker can read"
+    },
+    {
+      "name": "Bánh căn Cô Trang",
+      "why": "not found on Google Maps"
+    },
+    {
+      "name": "Bánh căn Mực",
+      "why": "the map's nearest match is another stall (Bánh căn mực Cô Loan)"
+    },
+    {
+      "name": "Bánh căn Cô Tư Tháp Bà, Út Năm, Bình Dân",
+      "why": "small stalls not checked on the map this round"
+    },
+    {
+      "name": "Bin Bin Cafe, Fun House, SB Cafe, Phù Đổng water park, Kidzone, TiniWorld, Sheraton Adventure Club, Jump Park, Playtime Kids Club",
+      "why": "the VinWonders list pages carry no date the checker could read"
+    }
   ],
-  "estimates": "Ages ([1,1,1,1]) are placeholders; the pages give no age bands."
+  "estimates": "Ages ([1,1,1,1]) are placeholders; the pages give no age bands.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 11 rows from Sea You Travel (May 2026) and VinWonders (undated to the checker); 2 passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

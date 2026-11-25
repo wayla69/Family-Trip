@@ -32,6 +32,13 @@
       "src": "https://hungaryunlocked.com/aquaworld-budapest-water-park-guide/",
       "date": "2026-07",
       "map": "Google Maps 'Aquaworld Resort Budapest', 21,512 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Csillaghegy Lido",
+      "page_name": "Csillaghegy",
+      "src": "https://www.timeout.com/budapest/things-to-do/best-pools-and-lidos-in-budapest",
+      "date": "2026-06",
+      "map": "Google Maps 'Csillaghegyi Strandfürdő', newest review shown 12 days ago"
     }
   ],
   "left_out": [
@@ -42,7 +49,24 @@
     {
       "name": "Fruska Bistro",
       "why": "only on a banned ranking site"
+    },
+    {
+      "name": "Széchenyi",
+      "why": "the page says under-14s are not admitted"
+    },
+    {
+      "name": "Gellért",
+      "why": "closed for renovation until 2028"
+    },
+    {
+      "name": "Müpa family shows, Budapest Puppet Theatre",
+      "why": "no age, price or district on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 1 row from Time Out (Jun 2026), passed library-check.cjs, went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

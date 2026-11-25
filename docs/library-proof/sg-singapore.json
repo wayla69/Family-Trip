@@ -1,0 +1,86 @@
+{
+  "town": "sg-singapore",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 10 rows from Little Day Out (Jan 2025, Jul 2026) and Bykido (Sep 2026) passed library-check.cjs, all 10 went in",
+  "added": [
+    {
+      "name": "Small Batch (Botanic Gardens)",
+      "page_name": "Small Batch",
+      "src": "https://www.littledayout.com/amazing-list-kid-friendly-cafes-restaurants-with-playgrounds-play-spaces/",
+      "date": "2026-07",
+      "map": "Google Maps 'Small Batch @ Botanic Gardens', 821 reviews, newest shown '15 days ago'"
+    },
+    {
+      "name": "Park Side (Botanic Gardens)",
+      "page_name": "Park Side",
+      "src": "https://www.littledayout.com/amazing-list-kid-friendly-cafes-restaurants-with-playgrounds-play-spaces/",
+      "date": "2026-07",
+      "map": "Google Maps 484 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Food Republic (313@Somerset)",
+      "page_name": "Food Republic at 313 @ Somerset",
+      "src": "https://www.littledayout.com/amazing-list-kid-friendly-cafes-restaurants-with-playgrounds-play-spaces/",
+      "date": "2026-07",
+      "map": "Google Maps 'Food Republic 313@somerset', 2,495 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Wildseed Café (The Garage, Botanic Gardens)",
+      "page_name": "Wildseed Cafe",
+      "src": "https://www.littledayout.com/amazing-list-kid-friendly-cafes-restaurants-with-playgrounds-play-spaces/",
+      "date": "2026-07",
+      "map": "Google Maps 'Wildseed Cafe At The Garage', 1,995 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Gyukatsu Kyoto Katsugyu (Parkway Parade)",
+      "page_name": "Gyukatsu Kyoto Katsugyu, Parkway Parade",
+      "src": "https://www.littledayout.com/kids-eat-free-promotions-deals-singapore/",
+      "date": "2025-01",
+      "map": "Google Maps 59 reviews, newest shown '11 hours ago'"
+    },
+    {
+      "name": "Papi's Tacos (Jalan Besar)",
+      "page_name": "Papi’s Jalan Besar",
+      "src": "https://www.littledayout.com/kids-eat-free-promotions-deals-singapore/",
+      "date": "2025-01",
+      "map": "Google Maps 'Papi's Tacos Jalan Besar', 173 reviews, newest shown '10 hours ago'"
+    },
+    {
+      "name": "WonderGround at The Artground",
+      "page_name": "WonderGround @ The Artground One Holland Village",
+      "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+      "date": "2026-09",
+      "map": "Google Maps 'The Artground @ OHV', 127 reviews, newest shown '8 days ago'"
+    },
+    {
+      "name": "Splash@Kidz Amaze (SAFRA Punggol)",
+      "page_name": "Splash@Kidz Amaze",
+      "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+      "date": "2026-09",
+      "map": "Google Maps 'SAFRA Splash @ Kidz Amaze Water Playground (SAFRA Punggol)', 688 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "T-Play Khatib",
+      "page_name": "T-Play at HomeTeamNS Khatib",
+      "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+      "date": "2026-09",
+      "map": "Google Maps 'T-Play Khatib', 1,584 reviews, newest shown '20 days ago'"
+    },
+    {
+      "name": "The Joy of Toys",
+      "page_name": "The Joy of Toys",
+      "src": "https://www.bykido.com/blogs/playgrounds-and-more/list-of-indoor-playgrounds-in-singapore-to-bring-your-kid-out-wip",
+      "date": "2026-09",
+      "map": "Google Maps 275 reviews, newest shown 'last month'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Little Steps Asia pages",
+      "why": "blocked, not read"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

@@ -478,7 +478,229 @@
       {"name":{"en":"Hyde Park and Kensington Gardens","th":"ไฮด์พาร์คและเคนซิงตันการ์เดนส์"},"kind":"park","area":{"en":"Central London, W2/W8","th":"ใจกลางลอนดอน W2/W8"},"what":{"en":"Two royal parks that flow into each other, with the Serpentine lake.","th":"สวนหลวงสองแห่งที่ต่อเนื่องกัน มีทะเลสาบเซอร์เพนไทน์"},"why":{"en":"Room to run, the Diana Memorial Playground and the lake.","th":"มีที่ให้วิ่ง สนามเด็กเล่นอนุสรณ์ไดอานา และทะเลสาบ"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Hyde Park and Kensington Gardens, Central London, London","ok":"2026-11","src":"https://guides.thelondonscoop.com/guides/free-things-to-do-london-kids"},
       {"name":{"en":"Victoria Park (East London)","th":"วิกตอเรียพาร์ค"},"kind":"park","area":{"en":"Tower Hamlets, E9","th":"ทาวเออร์แฮมเลตส์ E9"},"what":{"en":"East London park with a modern playground, a boating lake and a café by the lake.","th":"สวนลอนดอนตะวันออกมีสนามเด็กเล่นทันสมัย ทะเลสาบพายเรือ และคาเฟ่ริมทะเลสาบ"},"why":{"en":"A modern playground and a seasonal paddling pool.","th":"สนามเด็กเล่นทันสมัยและสระเด็กเล่นน้ำตามฤดูกาล"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Victoria Park, Tower Hamlets, London","ok":"2026-11","src":"https://guides.thelondonscoop.com/guides/free-things-to-do-london-kids"},
       {"name":{"en":"Columbia Road Flower Market","th":"ตลาดดอกไม้โคลัมเบียโรด"},"kind":"market","area":{"en":"Bethnal Green, E2","th":"เบธนัลกรีน E2"},"what":{"en":"Flower market in Bethnal Green.","th":"ตลาดดอกไม้ในเบธนัลกรีน"},"why":{"en":"All ages, free to walk around.","th":"ทุกวัย เดินชมได้ฟรี"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Columbia Road Flower Market, Bethnal Green, London","ok":"2026-11","src":"https://guides.thelondonscoop.com/guides/free-things-to-do-london-kids"},
-      {"name":{"en":"Southbank Centre free events","th":"กิจกรรมฟรีที่เซาท์แบงก์เซ็นเตอร์"},"kind":"culture","area":{"en":"South Bank, SE1","th":"เซาท์แบงก์ SE1"},"what":{"en":"Free events and performances at the Southbank Centre on the river.","th":"กิจกรรมและการแสดงฟรีที่เซาท์แบงก์เซ็นเตอร์ริมแม่น้ำ"},"why":{"en":"Free for all ages.","th":"ฟรีสำหรับทุกวัย"},"ages":[1,2,2,2],"hrs":2,"io":"both","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Southbank Centre, South Bank, SE1, London","ok":"2026-11","src":"https://guides.thelondonscoop.com/guides/free-things-to-do-london-kids"}
+      {"name":{"en":"Southbank Centre free events","th":"กิจกรรมฟรีที่เซาท์แบงก์เซ็นเตอร์"},"kind":"culture","area":{"en":"South Bank, SE1","th":"เซาท์แบงก์ SE1"},"what":{"en":"Free events and performances at the Southbank Centre on the river.","th":"กิจกรรมและการแสดงฟรีที่เซาท์แบงก์เซ็นเตอร์ริมแม่น้ำ"},"why":{"en":"Free for all ages.","th":"ฟรีสำหรับทุกวัย"},"ages":[1,2,2,2],"hrs":2,"io":"both","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Southbank Centre, South Bank, SE1, London","ok":"2026-11","src":"https://guides.thelondonscoop.com/guides/free-things-to-do-london-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+          "name": {
+            "th": "มาดามทุสโซลอนดอน",
+            "en": "Madame Tussauds London"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนแมรีเลอบอน ลอนดอน",
+            "en": "Marylebone Road, London"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งคนดัง ตั้งแต่ดัว ลิปา ถึงแพดดิงตัน",
+            "en": "Waxworks of stars, from Dua Lipa to Paddington"
+          },
+          "why": {
+            "th": "ถ่ายเซลฟีกับดาราคนโปรดบนพรมแดง",
+            "en": "Selfies with favourite stars on the waxwork red carpet"
+          },
+          "q": "Madame Tussauds, Marylebone Road, London",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์ไทม์วอล์ก",
+            "en": "Timewalk Immersive Experience Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนวิกตอเรียด็อก รอยัลด็อกส์ ลอนดอน",
+            "en": "Victoria Dock Road, Royal Docks, London"
+          },
+          "what": {
+            "th": "ห้องจอรอบตัว 5 ห้อง พาย้อนไปเกอเบคลีเทเป บาบิโลน อียิปต์โบราณ มายา และราปานูอี",
+            "en": "Five immersive rooms through Göbeklitepe, Babylon, Ancient Egypt, the Maya and Rapa Nui"
+          },
+          "why": {
+            "th": "ภาพรอบตัว 360 องศาและเสียงทำให้โลกโบราณมีชีวิต",
+            "en": "360-degree pictures and sound bring old worlds to life"
+          },
+          "q": "Timewalk Immersive Experience Museum, Victoria Dock Road, London",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://secretldn.com/things-to-do-with-kids-in-london-2026/",
+          "name": {
+            "th": "มินิจีเนียสแล็บ",
+            "en": "Mini Genius Lab"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนท็อตแนมคอร์ต ลอนดอน",
+            "en": "Tottenham Court Road, London"
+          },
+          "what": {
+            "th": "เวิร์กช็อปวิทยาศาสตร์ลงมือทำ 60 นาที กับนักวิทยาศาสตร์สุดเพี้ยน",
+            "en": "A 60-minute hands-on science workshop with a mad scientist"
+          },
+          "why": {
+            "th": "เด็กทำสไลม์ เล่นฟองสบู่ และดูน้ำแข็งแห้งเดือดฟู่",
+            "en": "Children make slime, play with bubbles and watch dry ice fizz"
+          },
+          "q": "Mini Genius Lab, 213 Tottenham Court Road, London",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whattheredheadsaid.com/indoor-play-centres-soft-play-london/",
+          "name": {
+            "th": "แกมบาโด เชลซี",
+            "en": "Gambado Chelsea"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนทาวน์มีด เชลซี ลอนดอน",
+            "en": "Townmead Road, Chelsea, London"
+          },
+          "what": {
+            "th": "ลานเล่นนุ่มในร่ม มีบ่อบอล สไลเดอร์ โซนเด็กเล็ก และโซนประสาทสัมผัส",
+            "en": "Indoor soft play with ball pools, slides, toddler areas and sensory zones"
+          },
+          "why": {
+            "th": "มีห้องประสาทสัมผัสสำหรับเด็กเล็ก",
+            "en": "Sensory rooms made for toddlers"
+          },
+          "q": "Gambado Chelsea, Station Court, Townmead Road, London",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whattheredheadsaid.com/indoor-play-centres-soft-play-london/",
+          "name": {
+            "th": "ฟลิปเอาต์ แคนารีวอร์ฟ",
+            "en": "Flip Out Canary Wharf"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างแคนารีวอร์ฟ ลอนดอน",
+            "en": "Canary Wharf Shopping Centre, London"
+          },
+          "what": {
+            "th": "สวนผจญภัยในร่ม มีลานเล่นนุ่ม เลเซอร์เควสต์ รถคาร์ตแปลก ๆ และรถบั๊ม",
+            "en": "An indoor adventure park with soft play, Laser Quest, crazy karts and bumper cars"
+          },
+          "why": {
+            "th": "ลานเล่นนุ่มทุกวัย และเกมสำหรับเด็กโต",
+            "en": "Soft play for every age, games for bigger children"
+          },
+          "q": "Flip Out Canary Wharf, Cabot Square, London",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whattheredheadsaid.com/indoor-play-centres-soft-play-london/",
+          "name": {
+            "th": "คิดสเปซ ครอยดอน",
+            "en": "Kidspace Croydon"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เดอะโคโลเนดส์ ถนนเพอร์ลีย์ ครอยดอน ลอนดอน",
+            "en": "The Colonnades, Purley Way, Croydon, London"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มขนาดใหญ่ มีโกคาร์ตและสนามยิงบอลนุ่ม",
+            "en": "A big indoor soft play and adventure centre with go-karts and a soft-ball arena"
+          },
+          "why": {
+            "th": "มี Draw Alive ทำให้รูปที่เด็กวาดขยับได้ และสไลเดอร์หลุมดำ",
+            "en": "Draw Alive brings children's drawings to life, and black-hole slides"
+          },
+          "q": "Kidspace Croydon, The Colonnades, 619 Purley Way, Croydon",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

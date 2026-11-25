@@ -349,43 +349,6 @@
         {
           "local": "",
           "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
-          "hrs": 1,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://cappadocia4u.com/cappadocia-for-families-kids",
-          "name": {
-            "th": "พิพิธภัณฑ์ศิลปะและประวัติศาสตร์คัปปาโดเกีย (ตุ๊กตา)",
-            "en": "Cappadocia Art & History Museum (dolls)"
-          },
-          "kind": "museumkid",
-          "area": {
-            "th": "มุสตาฟาปาชา เออร์กึป",
-            "en": "Mustafapaşa, Ürgüp"
-          },
-          "what": {
-            "th": "พิพิธภัณฑ์ในคฤหาสน์ มีตุ๊กตาทำมือกว่า 2,000 ตัวจากตุรกีและทั่วโลก",
-            "en": "A mansion museum with more than 2,000 hand-made dolls from Türkiye and the world"
-          },
-          "why": {
-            "th": "ตุ๊กตาในชุดประจำถิ่น และคฤหาสน์ให้เดินชม",
-            "en": "Dolls in their own costumes, and a mansion to look around"
-          },
-          "q": "Cappadocia Art & History Museum, Mustafapaşa",
-          "ok": "2026-11"
-        },
-        {
-          "local": "",
-          "ages": [
             2,
             2,
             2,
@@ -914,6 +877,80 @@
           "q": "Kemerburgaz Urban Forest, Kemerburgaz, Istanbul",
           "ok": "2026-11",
           "src": "https://artandthensome.com/things-to-do-with-kids-in-istanbul/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+          "name": {
+            "th": "อิสฟานบูล (วิอาแลนด์)",
+            "en": "Isfanbul (Vialand)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "เอยุปสุลต่าน อิสตันบูล",
+            "en": "Eyüpsultan, Istanbul"
+          },
+          "what": {
+            "th": "สวนสนุกขนาดใหญ่ ชื่อเดิมวิอาแลนด์ มีเครื่องเล่น ร้านค้า และที่เล่น",
+            "en": "A big theme park, formerly Vialand, with rides, shops and play areas"
+          },
+          "why": {
+            "th": "เครื่องเล่นและที่เล่นสำหรับเด็กในพื้นที่กว้าง",
+            "en": "Rides and play areas for children over a big site"
+          },
+          "q": "Isfanbul, Eyüpsultan, Istanbul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ไม่ถึง 1 ดอลลาร์ต่อเที่ยว",
+            "en": "Under $1 a ride"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+          "name": {
+            "th": "รถรางย้อนยุค (ถนนอิสติกลาล)",
+            "en": "Nostalgic Tram (İstiklal Avenue)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ถนนอิสติกลาล เบยอลู อิสตันบูล",
+            "en": "İstiklal Avenue, Beyoğlu, Istanbul"
+          },
+          "what": {
+            "th": "รถรางแบบเก่าวิ่งไปตามถนนอิสติกลาล",
+            "en": "An old-style tram along İstiklal Avenue"
+          },
+          "why": {
+            "th": "เด็กชอบรถรางสีสดที่วิ่งช้า ๆ และเสียงกระดิ่ง",
+            "en": "Children love the slow, colourful tram and its bell"
+          },
+          "q": "Nostalgic Tram, İstiklal Avenue, Beyoğlu, Istanbul",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1100,24 +1137,6 @@
           "src": "https://goturkiye.com/pamukkale/10-vibes-for-pamukkale"
         },
         {
-          "name": { "en": "Halıcı Ahmet Urkay Museum", "th": "พิพิธภัณฑ์ฮาลิจึ อาห์เมต เออร์เคย์" },
-          "local": "Halıcı Ahmet Urkay Müzesi",
-          "kind": "museum",
-          "area": { "en": "Denizli", "th": "เดนิซลี" },
-          "what": { "en": "A museum of about 2,000 objects, from geological finds and ethnography to old coins and manuscripts", "th": "พิพิธภัณฑ์ที่มีราว 2,000 ชิ้น ตั้งแต่ตัวอย่างธรณีวิทยาและชาติพันธุ์วิทยาจนถึงเหรียญเก่าและต้นฉบับ" },
-          "why": { "en": "Indoors and quiet, a short rainy-day stop best for children who like to look at collections", "th": "อยู่ในร่มและเงียบ แวะสั้นๆ วันฝน เหมาะกับเด็กที่ชอบดูของสะสม" },
-          "tip": { "en": "Check the opening hours and ticket price at the door", "th": "เช็กเวลาเปิดและราคาตั๋วที่หน้าพิพิธภัณฑ์" },
-          "ages": [0, 1, 1, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Halıcı Ahmet Urkay Museum, Denizli",
-          "ok": "2026-11",
-          "src": "https://goturkiye.com/pamukkale/10-vibes-for-pamukkale"
-        },
-        {
           "name": { "en": "Denizli Atatürk House and Ethnographic Museum", "th": "บ้านอตาเติร์กและพิพิธภัณฑ์ชาติพันธุ์เดนิซลี" },
           "local": "Denizli Atatürk Evi ve Etnografya Müzesi",
           "kind": "museum",
@@ -1260,6 +1279,43 @@
             "en": "A zoo, ponds and picnics for a day outdoors"
           },
           "q": "Çamlık Park, Denizli",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://yolcu360.com/blog/izmir-gezilecek-yerler/",
+          "name": {
+            "th": "สวนสัตว์ธรรมชาติอิซมีร์",
+            "en": "İzmir Wildlife Park (Doğal Yaşam Parkı)"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ซาซาลึ ชิกลิ อิซมีร์",
+            "en": "Sasalı, Çiğli, İzmir"
+          },
+          "what": {
+            "th": "สวนใหญ่ที่สัตว์อยู่ในพื้นที่กว้างแบบธรรมชาติ มีหอดูนก",
+            "en": "A large park where animals live in wide natural enclosures, with bird-watching towers"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นที่แรกที่ครอบครัวที่มีลูกเลือก",
+            "en": "The page calls it a first choice for families with children"
+          },
+          "q": "Izmir Wildlife Park, Sasalı, Çiğli, İzmir",
           "ok": "2026-11"
         }
       ]

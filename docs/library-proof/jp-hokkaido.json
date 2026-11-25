@@ -1,0 +1,146 @@
+{
+  "town": "jp-hokkaido",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 19 rows from the official Visit Hokkaido page and studio-palette.com, 10 passed library-check.cjs, 9 went in",
+  "added": [
+    {
+      "name": "Funkawan Bay Panorama Park",
+      "page_name": "Funkawan Bay Panorama Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 2,639 reviews, newest shown '6 days ago'"
+    },
+    {
+      "name": "Kamuinomori Park",
+      "page_name": "Kamuinomori Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 'Kamui no Mori Park', 946 reviews, newest shown '3 days ago'"
+    },
+    {
+      "name": "Okhotsk Drift Ice Park",
+      "page_name": "Okhotsk Sea Ice Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 529 reviews, newest shown '19 days ago'"
+    },
+    {
+      "name": "Yumenomori Park Visitor Center",
+      "page_name": "Yumenomori Park Visitor Center",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 54 reviews, newest shown '20 days ago'"
+    },
+    {
+      "name": "Hakodate Kids Plaza",
+      "page_name": "Hakodate Kids Plaza",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 177 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "Hakodate Miraikan",
+      "page_name": "Hakodate Miraikan",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 552 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "Kenbuchi Picture Book Museum",
+      "page_name": "Kenbuchi Town Picture Book Museum",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 134 reviews, newest shown '10 days ago'"
+    },
+    {
+      "name": "Ashoro Museum of Paleontology",
+      "page_name": "Ashoro Museum of Paleontology",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 614 reviews, newest shown '16 days ago'"
+    },
+    {
+      "name": "Miyama Toge Art Park",
+      "page_name": "Miyama Toge Art Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 114 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "Nahana (Otaru)",
+      "page_name": "菜はな",
+      "src": "https://hoshinoresorts.com/jp/guide/area/hokkaidotohoku/hokkaido/otaru/otaru-familylunch/",
+      "date": "2026-08",
+      "map": "Google Maps 'Nahana', newest review shown 4 months ago"
+    },
+    {
+      "name": "New Sanko (Otaru main restaurant)",
+      "page_name": "ニュー三幸　小樽本店",
+      "src": "https://hoshinoresorts.com/jp/guide/area/hokkaidotohoku/hokkaido/otaru/otaru-familylunch/",
+      "date": "2026-08",
+      "map": "Google Maps 'New Sanko Restaurant', newest review shown 4 days ago"
+    },
+    {
+      "name": "Fantasy Kids Resort (Shin-Sapporo)",
+      "page_name": "ファンタジーキッズリゾート 新さっぽろ",
+      "src": "https://www.asoview.com/note/5458/",
+      "date": "2026-05",
+      "map": "Google Maps 'Fantasy Kids Resort Shin Sapporo', newest review shown 4 days ago"
+    },
+    {
+      "name": "Morimori Park (Asahikawa)",
+      "page_name": "もりもりパーク",
+      "src": "https://www.asoview.com/note/5458/",
+      "date": "2026-05",
+      "map": "Google Maps 'Morimori Park', newest review shown 4 weeks ago"
+    },
+    {
+      "name": "Little Planet (Aeon Mall Sapporo Naebo)",
+      "page_name": "リトルプラネット イオンモール札幌苗穂",
+      "src": "https://www.asoview.com/note/5458/",
+      "date": "2026-05",
+      "map": "Google Maps 'リトルプラネット イオンモール札幌苗穂', newest review shown a week ago"
+    },
+    {
+      "name": "Hareppa indoor play hall (Nanporo)",
+      "page_name": "子ども室内遊戯施設 はれっぱ",
+      "src": "https://www.asoview.com/note/5458/",
+      "date": "2026-05",
+      "map": "Google Maps '南幌町子ども室内遊戯施設はれっぱ', newest review shown 27 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Sahoro Resort Bear Mountain",
+      "why": "temporarily closed on the map"
+    },
+    {
+      "name": "nine rows from studio-palette.com",
+      "why": "no page date library-check.cjs can read"
+    },
+    {
+      "name": "餃子茶屋 あおぞら銭函3丁め",
+      "why": "newest Google Maps review 7 months old"
+    },
+    {
+      "name": "キッズパーク (F Village)",
+      "why": "no map entry of its own"
+    },
+    {
+      "name": "キッズランドUS 札幌厚別店",
+      "why": "the map shows another name at that place"
+    },
+    {
+      "name": "へそキッズランド (Furano)",
+      "why": "not found on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from Hoshino Resorts (Aug 2026) and Asoview (2025–2026), all passed library-check.cjs, 6 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

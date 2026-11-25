@@ -167,24 +167,6 @@
           "src": "https://seniworld.com/tat-sae-waterfalls/"
         },
         {
-          "name": { "en": "Pha Tad Ke Botanical Garden", "th": "สวนพฤกษศาสตร์ผาตาดเก๋" },
-          "local": "",
-          "kind": "park",
-          "area": { "en": "Across the Mekong from Ban Wat That", "th": "ฝั่งตรงข้ามแม่น้ำโขงจากบ้านวัดทาด" },
-          "what": { "en": "A hillside garden of Lao plants reached by a free boat from the town dock", "th": "สวนบนเนินเรื่องพืชของลาว ไปถึงโดยเรือจากท่าในเมือง" },
-          "why": { "en": "The boat ride is half the fun; paths are shaded and a café has space to rest", "th": "นั่งเรือก็สนุกแล้ว ทางร่มรื่น มีร้านกาแฟให้พัก" },
-          "tip": { "en": "Pages say closed Wednesday and give differing hours; boats run about 09:00–16:00", "th": "เว็บว่าปิดวันพุธและบอกเวลาไม่ตรงกัน เรือออกราว 09:00–16:00" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ US$25 adults · US$10 children on one page (another says under 12 free) · check the price", "th": "≈ 25 ดอลลาร์สหรัฐ ผู้ใหญ่ · 10 ดอลลาร์ เด็ก ตามเว็บหนึ่ง (อีกเว็บว่าต่ำกว่า 12 ปีฟรี) · เช็กราคา" },
-          "book": "rec",
-          "q": "Pha Tad Ke Botanical Garden, Luang Prabang",
-          "ok": "2026-11",
-          "src": "https://www.luangprabang-laos.com/Visit-the-Botanical-Garden"
-        },
-        {
           "name": { "en": "Luang Prabang Butterfly Park", "th": "สวนผีเสื้อหลวงพระบาง" },
           "local": "",
           "kind": "nature",
@@ -218,23 +200,6 @@
           "q": "UXO Visitors Centre, Sisavangvong Road, Luang Prabang",
           "ok": "2026-11",
           "src": "https://tourismluangprabang.org/things-to-do/culture-history/uxo-visitors-center/"
-        },
-        {
-          "name": { "en": "Nam Dong Park", "th": "สวนน้ำดง" },
-          "kind": "nature",
-          "area": { "en": "10 km from town", "th": "ห่างเมือง 10 กม." },
-          "what": { "en": "A family nature park with a waterfall, safe swimming spots, a roses field, fish feeding and shady places to picnic, open 10 AM to 5 PM", "th": "สวนธรรมชาติสำหรับครอบครัว มีน้ำตก จุดว่ายน้ำปลอดภัย ทุ่งกุหลาบ ให้อาหารปลา และที่ปิกนิกร่มรื่น เปิด 10:00–17:00" },
-          "why": { "en": "Children under 8 go in free, and the wooden balcony over the falls has a restaurant for lunch", "th": "เด็กต่ำกว่า 8 ปีเข้าฟรี และมีระเบียงไม้เหนือน้ำตกพร้อมร้านอาหารกลางวัน" },
-          "tip": { "en": "Bring swim clothes; the park also has zip lining and a bee farm that sells honey", "th": "พกชุดว่ายน้ำ มีซิปไลน์และฟาร์มผึ้งขายน้ำผึ้ง" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "out",
-          "pram": "no",
-          "price": { "en": "≈ 20,000 kip a person · under 8 free", "th": "≈ 20,000 กีบ ต่อคน · ต่ำกว่า 8 ปีฟรี" },
-          "book": "none",
-          "q": "Nam Dong Park, Luang Prabang",
-          "ok": "2026-11",
-          "src": "https://tourismluangprabang.org/things-to-do/nature/nam-dong-park/"
         },
         {
           "name": { "en": "Pak Ou Caves (Tham Ting)", "th": "ถ้ำปากอู (ถ้ำติ่ง)" },
@@ -292,7 +257,48 @@
       {"name":{"en":"Big Brother Mouse","th":"บิ๊กบราเดอร์เมาส์"},"kind":"culture","area":{"en":"Luang Prabang","th":"หลวงพระบาง"},"what":{"en":"A non-profit literacy school where visitors can sign up for an hour of English conversation with the students.","th":"โรงเรียนการอ่านไม่แสวงหากำไร ให้ผู้มาเยือนจองชั่วโมงสนทนาภาษาอังกฤษกับนักเรียน"},"why":{"en":"The page says a three-year-old joined in without problems, and there are books and games for children who do not want to chat.","th":"หน้าเว็บบอกว่าเด็กสามขวบเข้าร่วมได้โดยไม่มีปัญหา และมีหนังสือกับเกมสำหรับเด็กที่ไม่อยากคุย"},"tip":{"en":"Go after school hours, around 4 or 5 p.m., when more students are around.","th":"ไปหลังเลิกเรียนราว 16–17 น. เมื่อนักเรียนอยู่มาก"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Big Brother Mouse, Luang Prabang","ok":"2026-11","src":"https://adventuresoface.com/luang-prabang-with-kids/"},
       {"name":{"en":"Lao Pottery House","th":"บ้านเครื่องปั้นดินเผาลาว"},"kind":"culture","area":{"en":"Ban Chan Nua, across the Mekong","th":"บ้านจันนัว ฝั่งตรงข้ามแม่น้ำโขง"},"what":{"en":"A pottery workshop in the village of Ban Chan Nua, across the river from central Luang Prabang, with half-day tours from clay to finished piece.","th":"เวิร์กช็อปปั้นดินเผาในหมู่บ้านบ้านจันนัว ฝั่งตรงข้ามแม่น้ำจากตัวเมือง ทัวร์ครึ่งวันตั้งแต่ดินจนถึงชิ้นงาน"},"why":{"en":"The page says the half-day includes hotel pickup, a boat, a hands-on workshop and a homemade lunch.","th":"หน้าเว็บบอกว่าครึ่งวันรวมรถรับที่โรงแรม เรือ เวิร์กช็อปลงมือทำ และมื้อกลางวันทำเอง"},"tip":{"en":"Make a reservation in advance.","th":"จองล่วงหน้า"},"ages":[1,2,2,2],"hrs":4,"io":"out","pram":"part","price":{"en":"$15 to $45 per person","th":"$15–45 ต่อคน"},"book":"rec","q":"Lao Pottery House, Ban Chan Nua, Luang Prabang","ok":"2026-11","src":"https://adventuresoface.com/luang-prabang-with-kids/"},
       {"name":{"en":"Laos Buffalo Dairy Farm","th":"ฟาร์มโคนมควายลาว"},"kind":"farm","area":{"en":"Luang Prabang","th":"หลวงพระบาง"},"what":{"en":"A dairy farm that works with local villages to make buffalo cheese, where visitors meet rabbits, buffalo, goats and sheep.","th":"ฟาร์มโคนมที่ทำงานกับหมู่บ้านท้องถิ่นทำชีสนมควาย ได้พบกระต่าย ควาย แพะ และแกะ"},"why":{"en":"The page calls it a fun, educational and hands-on experience for the whole family.","th":"หน้าเว็บเรียกว่าเป็นประสบการณ์สนุก ได้เรียนรู้ และลงมือทำสำหรับทั้งครอบครัว"},"ages":[1,2,2,1],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Laos Buffalo Dairy Farm, Luang Prabang","ok":"2026-11","src":"https://adventuresoface.com/luang-prabang-with-kids/"},
-      {"name":{"en":"Sunset Boat Ride on the Mekong River","th":"ล่องเรือชมพระอาทิตย์ตกบนแม่น้ำโขง"},"kind":"ride","area":{"en":"Mekong River","th":"แม่น้ำโขง"},"what":{"en":"A sunset cruise on the Mekong River from Luang Prabang, on a simple longboat.","th":"ล่องเรือชมพระอาทิตย์ตกบนแม่น้ำโขงจากหลวงพระบาง บนเรือยาวธรรมดา"},"why":{"en":"The page says a sunset cruise gives nice photos, and children love being on a boat.","th":"หน้าเว็บบอกว่าได้รูปสวย และเด็กๆ ชอบนั่งเรือ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Mekong River, Luang Prabang","ok":"2026-11","src":"https://adventuresoface.com/luang-prabang-with-kids/"}
+      {"name":{"en":"Sunset Boat Ride on the Mekong River","th":"ล่องเรือชมพระอาทิตย์ตกบนแม่น้ำโขง"},"kind":"ride","area":{"en":"Mekong River","th":"แม่น้ำโขง"},"what":{"en":"A sunset cruise on the Mekong River from Luang Prabang, on a simple longboat.","th":"ล่องเรือชมพระอาทิตย์ตกบนแม่น้ำโขงจากหลวงพระบาง บนเรือยาวธรรมดา"},"why":{"en":"The page says a sunset cruise gives nice photos, and children love being on a boat.","th":"หน้าเว็บบอกว่าได้รูปสวย และเด็กๆ ชอบนั่งเรือ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Mekong River, Luang Prabang","ok":"2026-11","src":"https://adventuresoface.com/luang-prabang-with-kids/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.selectiveasia.com/blog/laos/best-places-to-visit-in-laos-with-kids",
+          "name": {
+            "th": "สวนพระ (วัดเซียงควน)",
+            "en": "Buddha Park (Wat Xieng Khuan)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนท่าเดื่อ ห่างเวียงจันทน์ 25 กม.",
+            "en": "Thanon Tha Deua, 25 km south of Vientiane"
+          },
+          "what": {
+            "th": "สวนประติมากรรมพระพุทธและฮินดูจากคอนกรีต สร้างตั้งแต่ทศวรรษ 1950",
+            "en": "A park of concrete Hindu and Buddhist statues begun in the 1950s"
+          },
+          "why": {
+            "th": "เด็กๆ วิ่งเล่นระหว่างรูปปั้นได้",
+            "en": "Children run about between the statues"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ",
+            "en": "Dress modestly"
+          },
+          "q": "Buddha Park, Thanon Tha Deua, Vientiane",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

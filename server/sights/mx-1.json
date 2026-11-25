@@ -508,6 +508,154 @@
           },
           "q": "Parque de la Paz, Mérida",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.yucatan.com.mx/merida/2026/07/13/que-hacer-en-merida-en-vacaciones.html",
+          "name": {
+            "th": "พิพิธภัณฑ์รถไฟ เมรีดา",
+            "en": "Railway Museum (Museo de los Ferrocarriles)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "สวนลาปลันชา ย่านเซนโทร เมรีดา",
+            "en": "Parque La Plancha, Centro, Mérida"
+          },
+          "what": {
+            "th": "ประวัติรถไฟของเม็กซิโก ในสวนลาปลันชา",
+            "en": "The history of Mexico's railways, in La Plancha park"
+          },
+          "why": {
+            "th": "มีเครื่องจำลองการขับรถไฟให้ลองด้วย",
+            "en": "There is even a train simulator to try"
+          },
+          "q": "Museo de los Ferrocarriles, Calle 43, Centro, Mérida",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.yucatan.com.mx/merida/2026/07/13/que-hacer-en-merida-en-vacaciones.html",
+          "name": {
+            "th": "สวนกีฬาผาดโผน เมรีดา",
+            "en": "Extreme Sports Park (Parque de Deportes Extremos)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "บอสเกสเดลโปนิเอนเต เมรีดา",
+            "en": "Bosques del Poniente, Mérida"
+          },
+          "what": {
+            "th": "สวนของเมือง มีโหนสลิง ด่านอุปสรรค และโกคาร์ต",
+            "en": "A city park with a zip line, obstacle courses and go-karts"
+          },
+          "why": {
+            "th": "มีกิจกรรมทั้งสำหรับเด็กและผู้ใหญ่ ค่าเข้าเล็กน้อย",
+            "en": "Activities for children as well as adults, for a small fee"
+          },
+          "q": "Parque de deportes extremos, Calle 132, Bosques del Poniente, Mérida",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.poresto.com/quintana-roo/cancun/2026/3/16/mejores-playas-de-cancun-ideales-para-ir-con-los-ninos-en-vacaciones-de-semana-santa.html",
+          "name": {
+            "th": "หาดลังโกสตา แคนคูน",
+            "en": "Playa Langosta"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนคูกุลกัน โซนโรงแรม แคนคูน",
+            "en": "Kukulcán Boulevard, Hotel Zone, Cancún"
+          },
+          "what": {
+            "th": "ชายหาดในโซนโรงแรม มีศาลามุงจากและที่นั่งพัก",
+            "en": "A beach on the hotel zone with palapas and places to rest"
+          },
+          "why": {
+            "th": "น้ำใสและตื้น เด็กลงเล่นได้ปลอดภัยขึ้นเมื่อมีผู้ใหญ่ดูแล",
+            "en": "Clear, shallow water where children can go in more safely, with an adult"
+          },
+          "q": "Playa Langosta, Kukulcan Boulevard, Cancún",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.poresto.com/quintana-roo/cancun/2026/3/16/mejores-playas-de-cancun-ideales-para-ir-con-los-ninos-en-vacaciones-de-semana-santa.html",
+          "name": {
+            "th": "หาดการากอล แคนคูน",
+            "en": "Playa Caracol"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ปุนตาแคนคูน โซนโรงแรม",
+            "en": "Punta Cancún, Hotel Zone"
+          },
+          "what": {
+            "th": "ชายหาดเล็กๆ ใกล้ปุนตาแคนคูน",
+            "en": "A small beach near Punta Cancún"
+          },
+          "why": {
+            "th": "คลื่นเบาและน้ำสงบ เด็กเล่นน้ำได้ง่าย",
+            "en": "Gentle waves and calm water, easy for children to swim in"
+          },
+          "q": "Playa Caracol, Punta Cancún",
+          "ok": "2026-11"
         }
       ]
     }

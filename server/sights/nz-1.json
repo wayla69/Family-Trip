@@ -929,7 +929,6 @@
       {"name":{"en":"Jack Reid Park","th":"แจ็ก รีด พาร์ก"},"kind":"play","area":{"en":"Centennial Avenue, Arrowtown","th":"เซนเทนเนียล อเวนิว แอร์โรว์ทาวน์"},"what":{"en":"A park in Arrowtown listed among the town's playgrounds, with entrances off Centennial Avenue and Inverness Crescent","th":"สวนในแอร์โรว์ทาวน์ อยู่ในรายชื่อสนามเด็กเล่นของเมือง มีทางเข้าจากเซนเทนเนียล อเวนิวและอินเวอร์เนส เครสเซนต์"},"why":{"en":"a playground in the village itself, a short walk from the old town","th":"สนามเด็กเล่นในหมู่บ้านเอง เดินจากเมืองเก่าไม่กี่นาที"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jack Reid Park, Centennial Avenue, Arrowtown","ok":"2026-11","src":"https://www.qldc.govt.nz/recreation/playgrounds"},
       {"name":{"en":"SITE Trampoline","th":"ไซต์ แทรมโพลีน"},"kind":"play","area":{"en":"1/15 Red Oaks Drive, Frankton","th":"1/15 เรดโอ๊กส์ ไดรฟ์ แฟรงก์ตัน"},"what":{"en":"An indoor trampoline park with airbags, foam pits, an air track and a mini ramp","th":"สวนแทรมโพลีนในร่ม มีถุงลม บ่อโฟม รางอากาศ และแรมป์เล็ก"},"why":{"en":"bouncy fun whatever the weather, the page says","th":"หน้าเว็บบอกว่าสนุกไม่ว่าอากาศจะเป็นอย่างไร"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"SITE Trampoline, 1/15 Red Oaks Drive, Frankton, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
       {"name":{"en":"Thrillzone","th":"ธริลโซน"},"kind":"play","area":{"en":"53 Shotover Street","th":"53 ถนนโชโตเวอร์ สตรีต"},"what":{"en":"An indoor theme park with a 12D motion theatre, 360-degree VR missions, indoor mini golf and drifting go-karts","th":"สวนสนุกในร่ม มีโรงภาพยนตร์เคลื่อนไหว 12 มิติ ภารกิจเสมือนจริง 360 องศา มินิกอล์ฟในร่ม และโกคาร์ทไถลตัว"},"why":{"en":"a rainy-day indoor option with virtual reality and games for the family","th":"ตัวเลือกในร่มวันฝนตกที่มีเกมและเสมือนจริงสำหรับครอบครัว"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Thrillzone, 53 Shotover Street, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
-      {"name":{"en":"Odyssey Sensory Maze","th":"โอดิสซีย์ เซนซอรี เมซ"},"kind":"play","area":{"en":"57 Shotover Street","th":"57 ถนนโชโตเวอร์ สตรีต"},"what":{"en":"A labyrinth of rooms with whacky illusions, lights, sound effects and obstacles","th":"เขาวงกตห้องต่อห้อง มีภาพลวงตาแปลกๆ แสง เสียง และสิ่งกีดขวาง"},"why":{"en":"an indoor attraction for rainy days, with strange sensations to walk through","th":"สิ่งดึงดูดในร่มสำหรับวันฝนตก มีความรู้สึกแปลกๆ ให้เดินผ่าน"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Odyssey Sensory Maze, 57 Shotover Street, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
       {"name":{"en":"Hydro Attack","th":"ไฮโดร แอตแทค"},"kind":"ride","area":{"en":"Beach Street, Queenstown","th":"ถนนบีช ควีนส์ทาวน์"},"what":{"en":"A semisubmersible boat that dives 1.5 m into Lake Wakatipu and then shoots into the air","th":"เรือกึ่งจมน้ำที่ดำลง 1.5 เมตรในทะเลสาบวาคาติปู แล้วพุ่งขึ้นฟ้า"},"why":{"en":"a lake ride the page says is fully covered, so the rain is no bother","th":"หน้าเว็บบอกว่าเรือปิดมิดชิด ฝนจึงไม่เป็นปัญหา"},"ages":[0,0,1,2],"hrs":1,"io":"both","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hydro Attack, Beach Street, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
       {"name":{"en":"Ben Lomond Saddle","th":"เส้นทางเบน ลอมอนด์ เซดเดิล"},"kind":"nature","area":{"en":"Skyline Gondola top complex, Brecon Street","th":"ฐานกระเช้าสกายไลน์ ถนนเบรคอน"},"what":{"en":"A shorter tramp from the top of the Skyline Gondola up to the Ben Lomond Saddle and back","th":"เส้นทางเดินสั้นจากยอดกระเช้าสกายไลน์ขึ้นถึงอานเบน ลอมอนด์ แล้วเดินกลับ"},"why":{"en":"the page calls it a good option for trampers who want the views while building up their fitness","th":"หน้าเว็บเรียกว่าเป็นทางเลือกดีสำหรับนักเดินที่อยากชมวิวไปพลางสร้างความฟิต"},"ages":[0,0,1,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ben Lomond Saddle, Skyline Gondola top complex, Queenstown","ok":"2026-11","src":"https://www.doc.govt.nz/ben-lomond-track"},
       {"name":{"en":"Ben Lomond Track","th":"เส้นทางเบน ลอมอนด์"},"kind":"nature","area":{"en":"Skyline Gondola base, Brecon Street","th":"ฐานกระเช้าสกายไลน์ ถนนเบรคอน"},"what":{"en":"The full summit track of Ben Lomond, starting from the Skyline Gondola base on Brecon Street","th":"เส้นทางเดินเต็มสู่ยอดเบน ลอมอนด์ เริ่มจากฐานกระเช้าสกายไลน์บนถนนเบรคอน"},"why":{"en":"for older children and teenagers who are fit, with spectacular views from the summit on a clear day","th":"สำหรับเด็กโตและวัยรุ่นที่แข็งแรง มีวิวจากยอดที่งดงามในวันท้องฟ้าใส"},"ages":[0,0,0,2],"hrs":8,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ben Lomond Track, Skyline Gondola base, Brecon Street, Queenstown","ok":"2026-11","src":"https://www.doc.govt.nz/ben-lomond-track"},
@@ -1165,43 +1164,6 @@
             "en": "Something for the young ones while grown-ups bungy"
           },
           "q": "Kawarau Zip Line, Gibbston",
-          "ok": "2026-11"
-        },
-        {
-          "local": "",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "out",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/",
-          "name": {
-            "th": "ฟาร์มสัตว์เกลนอร์คี",
-            "en": "Glenorchy Animal Experience"
-          },
-          "kind": "farm",
-          "area": {
-            "th": "เกลนอร์คี",
-            "en": "Glenorchy"
-          },
-          "what": {
-            "th": "ฟาร์มให้ลูบสัตว์ที่เกลนอร์คี ไปเที่ยวหนึ่งวันเลียบทะเลสาบวาคาทิปู",
-            "en": "A petting farm at Glenorchy, a day trip along Lake Wakatipu"
-          },
-          "why": {
-            "th": "ป้อนอาหารสัตว์ในฟาร์ม ระหว่างทางไปเดินรอบลากูน",
-            "en": "Feed the farm animals on the way to the lagoon walk"
-          },
-          "q": "Glenorchy Animal Experience",
           "ok": "2026-11"
         },
         {

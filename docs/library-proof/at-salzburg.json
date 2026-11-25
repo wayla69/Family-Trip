@@ -198,6 +198,47 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from salzburg.info (official), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Bible World (Bibelwelt)",
+          "page_name": "Bible World",
+          "src": "https://salzburg.info/en/sights/museums/bibelwelt",
+          "date": "official",
+          "map": "Google Maps 'BIBELWELT Erlebnishaus', 253 reviews, newest shown 2 months ago"
+        },
+        {
+          "name": "Salzachsee Swimming Lake (Liefering)",
+          "page_name": "Salzachsee lake - swimming lake Liefering",
+          "src": "https://www.salzburg.info/en/travel-info/infos/salzachsee-badesee-liefering_az_5366",
+          "date": "official",
+          "map": "Google Maps 'Badesee Liefering - Salzachseen', 1,100 reviews, newest shown 3 days ago"
+        },
+        {
+          "name": "Franz-Josef-Kai Playground",
+          "page_name": "Spielplatz am Franz Josef Kai in Salzburg",
+          "src": "https://www.salzburg.info/en/playgrounds_az_13858",
+          "date": "official",
+          "map": "Google Maps 'Spielplatz Franz-Josef-Kai', 136 reviews, newest shown 2 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Playground Müllner Schanze",
+          "why": "newest Google Maps review 2 years old"
+        },
+        {
+          "name": "Kinderland, Kids Club Europark, Hoppolino, Unterhöfner farm",
+          "why": "no 2025–2026 page could be opened"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

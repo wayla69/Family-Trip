@@ -60,13 +60,54 @@
       "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
       "date": "2026-04",
       "map": "Google Maps 'Parque de la Paz' (where the show is projected), 7,457 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Railway Museum (Museo de los Ferrocarriles)",
+      "page_name": "Museo de los Ferrocarriles",
+      "src": "https://www.yucatan.com.mx/merida/2026/07/13/que-hacer-en-merida-en-vacaciones.html",
+      "date": "2026-07",
+      "map": "Google Maps 'Railroad Museum' (Calle 43, Centro, Mérida), newest review shown a day ago"
+    },
+    {
+      "name": "Extreme Sports Park (Parque de Deportes Extremos)",
+      "page_name": "Parque Municipal de Deportes Extremos",
+      "src": "https://www.yucatan.com.mx/merida/2026/07/13/que-hacer-en-merida-en-vacaciones.html",
+      "date": "2026-07",
+      "map": "Google Maps 'Parque de deportes extremos' (C. 132, Bosques del Poniente), newest review shown 4 days ago"
+    },
+    {
+      "name": "Playa Langosta",
+      "page_name": "Playa Langosta",
+      "src": "https://www.poresto.com/quintana-roo/cancun/2026/3/16/mejores-playas-de-cancun-ideales-para-ir-con-los-ninos-en-vacaciones-de-semana-santa.html",
+      "date": "2026-03",
+      "map": "Google Maps 'Playa Langosta' (Kukulcan Boulevard, Hotel Zone), newest review shown a day ago"
+    },
+    {
+      "name": "Playa Caracol",
+      "page_name": "Playa Caracol",
+      "src": "https://www.poresto.com/quintana-roo/cancun/2026/3/16/mejores-playas-de-cancun-ideales-para-ir-con-los-ninos-en-vacaciones-de-semana-santa.html",
+      "date": "2026-03",
+      "map": "Google Maps 'Caracol Beach' (Punta Cancún), newest review shown 9 hours ago"
     }
   ],
   "left_out": [
     {
       "name": "La Plancha playground",
       "why": "the same park as Gran Parque La Plancha"
+    },
+    {
+      "name": "Acuaparque",
+      "why": "the map puts it in San Antonio Kaua, not the Poniente the row said"
+    },
+    {
+      "name": "Parque Arqueoecológico del Poniente",
+      "why": "no review dates readable on the map"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 6 rows from Yucatán Hoy (Jul 2026) and Por Esto (Mar 2026), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

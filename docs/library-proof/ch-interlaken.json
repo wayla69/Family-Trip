@@ -81,6 +81,13 @@
       "src": "https://www.travel-interlaken.ch/en/attractions/",
       "date": "official",
       "map": "Google Maps 'Niesen Kulm', 688 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Waldcafé Heimwehfluh",
+      "page_name": "Waldcafé Heimwehfluh",
+      "src": "https://www.interlaken.swiss/en/gastro/panoramarestaurant-heimwehfluh",
+      "date": "2026-10",
+      "map": "Google Maps 'Waldcafé Heimwehfluh' (Heimwehfluh 60, Matten), newest review shown 2 weeks ago"
     }
   ],
   "left_out": [
@@ -95,7 +102,20 @@
     {
       "name": "Unterseen old town",
       "why": "the map has only a bus stop of that name"
+    },
+    {
+      "name": "Strandbad Bönigen",
+      "why": "the map shows another name (The Beach) at that spot"
+    },
+    {
+      "name": "Bort playground, Bachalpsee walk",
+      "why": "the family blog blocks automated reads"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 2 rows from Interlaken Tourism (official, Jun and Oct 2026), both passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
