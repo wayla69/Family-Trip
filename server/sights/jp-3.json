@@ -4514,6 +4514,80 @@
           },
           "q": "すみっコぐらしあそびスタジオ, イオンモール大高",
           "ok": "2026-11"
+        },
+        {
+          "local": "Squirrel Forest Hidayama Wild Grass Nature Garden",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ 400–600 เยน เด็กถูกกว่า",
+            "en": "≈ ¥400–600 for adults; children less"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/takayama-with-kids-family-guide",
+          "name": {
+            "th": "ป่ากระรอกฮิดะทากายามะ",
+            "en": "Hida-Takayama squirrel forest"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "มัตสึคุระมาจิ ทากายามะ",
+            "en": "Matsukura-machi, Takayama"
+          },
+          "what": {
+            "th": "สวมถุงมือพิเศษ เข้าไปในกรงแล้วป้อนอาหารกระรอกด้วยมือ",
+            "en": "Put on special gloves, step into the enclosure and hand-feed the squirrels"
+          },
+          "why": {
+            "th": "ครอบครัวที่มีลูกต่ำกว่า 8 ขวบชอบมาก",
+            "en": "A favourite with families of children under 8"
+          },
+          "q": "Squirrel Forest Hidayama, Matsukuramachi, Takayama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "昭和児童公園",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/takayama-with-kids-family-guide",
+          "name": {
+            "th": "สวนเด็กโชวะ (ป๊อปโปะพาร์ก)",
+            "en": "Showa Jidō Park (\"Poppo Park\")"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โชวะมาจิ เดิน 7 นาทีจากสถานีทากายามะ",
+            "en": "Shōwa-machi, 7 min walk from Takayama station"
+          },
+          "what": {
+            "th": "สวนเล็กๆ มีเครื่องเล่นและห้องน้ำสาธารณะ",
+            "en": "A small park with a play structure and a public toilet"
+          },
+          "why": {
+            "th": "ให้เด็กเล็กวิ่งเล่นพักใกล้สถานี",
+            "en": "A run-around break for younger children near the station"
+          },
+          "q": "昭和児童公園, 昭和町, 高山市",
+          "ok": "2026-11"
         }
       ]
     },
