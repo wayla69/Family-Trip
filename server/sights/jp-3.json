@@ -2848,6 +2848,84 @@
           },
           "q": "OYAKI FARM BY IROHADO, 篠ノ井杵淵7-1, 長野市",
           "ok": "2026-11"
+        },
+        {
+          "local": "長野市城山動物園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6257/",
+          "name": {
+            "th": "สวนสัตว์โจยามะ นากาโนะ",
+            "en": "Jōyama Zoo (Nagano)"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สวนชิโรยามะ อุเอมัตสึ นากาโนะ",
+            "en": "Shiroyama Park, Uematsu, Nagano city"
+          },
+          "what": {
+            "th": "สวนสัตว์เล็กๆ เป็นกันเอง ในสวนซากุระ มีสิงโตทะเล เพนกวิน และกระรอกแดง",
+            "en": "A small, friendly zoo in the cherry-blossom park: sea lions, penguins and red squirrels"
+          },
+          "why": {
+            "th": "มีลานสัมผัสสัตว์ กระต่าย หนูตะเภา และม้าแคระ",
+            "en": "A petting square with rabbits, guinea pigs and miniature horses"
+          },
+          "tip": {
+            "th": "ธันวาคม–กุมภาพันธ์ ปิดวันจันทร์",
+            "en": "Closed on Mondays from December to February"
+          },
+          "q": "Joyama Zoo, Uematsu, Nagano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ハクバウンス",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ชั่วโมงละ 1,800 เยน",
+            "en": "¥1,800 an hour"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/83269",
+          "name": {
+            "th": "ฮาคุบาวน์ซ์ ฮากูบะ",
+            "en": "HakuBounce (Hakuba)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คามิชิโระ หมู่บ้านฮากูบะ",
+            "en": "Kamishiro, Hakuba village"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนในร่มที่ใหญ่ที่สุดของนากาโนะ แทรมโพลีนกว่า 20 อัน และบ่อโฟม",
+            "en": "Nagano's biggest indoor trampoline park: over 20 trampolines and a foam pit"
+          },
+          "why": {
+            "th": "มีมุมเด็กฟรีสำหรับ 3 ขวบลงมา เล่นในร่มได้เมื่ออากาศบนเขาไม่ดี",
+            "en": "A free kids' space for ages 3 and under; indoors when the mountain weather is bad"
+          },
+          "q": "HakuBounce, Kamishiro, Hakuba",
+          "ok": "2026-11"
         }
       ]
     },
