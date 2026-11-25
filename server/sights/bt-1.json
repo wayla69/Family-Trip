@@ -187,6 +187,43 @@
           },
           "q": "Paro Taktsang, Paro",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bhutan.travel/journal/editorial/bhutan-is-family-friendly",
+          "name": {
+            "th": "พิพิธภัณฑ์ซิมพลีภูฏาน",
+            "en": "Simply Bhutan (living museum)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเกเนียนลัม ทิมพู",
+            "en": "Genyen Lam, Thimphu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์มีชีวิตเรื่องวิถีหมู่บ้านภูฏาน",
+            "en": "A living museum of Bhutanese village life"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลองยิงธนู กีฬาประจำชาติของภูฏาน",
+            "en": "Children can try archery, Bhutan's national sport"
+          },
+          "q": "Simply Bhutan, Genyen Lam, Thimphu",
+          "ok": "2026-11"
         }
       ]
     }

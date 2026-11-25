@@ -399,6 +399,281 @@
           "q": "Sogeumsan suspension bridge, Jijeong-myeon, Wonju",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-gangwon"
+        },
+        {
+          "local": "국립강원전문과학관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 3,000 วอน เด็ก 6 ขวบลงมาฟรี",
+            "en": "Adults ₩3,000; 6 and under free"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/693019cf3647688459a10a6d",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แห่งชาติคังวอน",
+            "en": "National Gangwon Science Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนบุกวอน วอนจู",
+            "en": "Bugwon-ro, Wonju"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แบบลงมือ เรื่องการแพทย์และชีววิทยา",
+            "en": "A hands-on science museum about medicine and life sciences"
+          },
+          "why": {
+            "th": "ลองกล้องส่องตรวจ อัลตราซาวด์ และฝึกปั๊มหัวใจ",
+            "en": "Endoscope and ultrasound experiences and CPR practice"
+          },
+          "q": "National Gangwon Science Museum, Bugwon-ro, Wonju",
+          "ok": "2026-11"
+        },
+        {
+          "local": "월드킹 춘천점",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก 9,000 วอน (1 ชั่วโมง) 15,000 วอน (2 ชั่วโมง)",
+            "en": "Child ₩9,000 (1 hour), ₩15,000 (2 hours)"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/682a8e94c5fbe72ca0a6a274",
+          "name": {
+            "th": "เวิลด์คิง (ชุนชอน)",
+            "en": "World King (Chuncheon)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเย็ตคย็องชุน ชุนชอน",
+            "en": "Yetgyeongchun-ro, Chuncheon"
+          },
+          "what": {
+            "th": "คาเฟ่เด็กขนาดใหญ่ มีที่เล่นตั้งแต่เด็กเล็กถึงประถม",
+            "en": "A large kids' café with play areas from babies to primary school"
+          },
+          "why": {
+            "th": "มีโซนแยกสำหรับเด็ก 5 ขวบลงมา",
+            "en": "A separate space for children 5 and under"
+          },
+          "q": "World King Chuncheon, Yetgyeongchun-ro, Chuncheon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "디자인씽킹뮤지엄",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ ₩18,000 · เด็ก ₩11,000 · งานฝีมือ ₩9,000–20,000",
+            "en": "≈ ₩18,000 adults · ₩11,000 children · crafts ₩9,000–20,000"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/6908781449f3a3ebe64753f1",
+          "name": {
+            "th": "พิพิธภัณฑ์ดีไซน์ธิงกิง",
+            "en": "Design Thinking Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนช็องดึง คูจ็อง คังนึง",
+            "en": "Jeongdeung-ro, Gujeong-myeon, Gangneung"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีคาเฟ่และกิจกรรมงานฝีมือ",
+            "en": "A museum with a café and craft activities"
+          },
+          "why": {
+            "th": "กิจกรรมงานฝีมือให้เด็กลงมือทำ",
+            "en": "Hands-on crafts for children"
+          },
+          "q": "디자인씽킹뮤지엄, 정등로 130, 강릉",
+          "ok": "2026-11"
+        },
+        {
+          "local": "강원경찰박물관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/68c9463f155faa248913546e",
+          "name": {
+            "th": "พิพิธภัณฑ์ตำรวจคังวอน",
+            "en": "Gangwon Police Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนซินแซมบัท ซินบุก ชุนช็อน",
+            "en": "Sinsaembat-ro, Sinbuk-eup, Chuncheon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ตำรวจ มีนิทรรศการให้ลองเล่น",
+            "en": "A police museum with hands-on displays"
+          },
+          "why": {
+            "th": "มีของให้ลองและมุมถ่ายรูป เข้าฟรี",
+            "en": "Things to try and spots for photos, free to enter"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "강원경찰박물관, 신샘밭로 361, 춘천",
+          "ok": "2026-11"
+        },
+        {
+          "local": "춘천꿈자람어린이공원",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩6,000 ต่อเด็ก (สวนในร่ม)",
+            "en": "≈ ₩6,000 a child (indoor park)"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/642250b8ca4d18d6ca38f15e",
+          "name": {
+            "th": "สวนเด็กกุมจารัม ชุนช็อน",
+            "en": "Chuncheon Kkumjaram Children's Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนพย็องฮวา คึนฮวาดง ชุนช็อน",
+            "en": "Pyeonghwa-ro, Geunhwa-dong, Chuncheon (8 min from Chuncheon Station)"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ มีสวนกลางแจ้งข้าง ๆ",
+            "en": "A large indoor playground with an outdoor park beside it"
+          },
+          "why": {
+            "th": "ที่เล่นในร่มสำหรับเด็กเล็ก มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "Indoor play for little ones, a nursing room and nappy changing"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ ส่วนกลางแจ้งปิดช่วงหน้าหนาว",
+            "en": "Closed on Mondays; the outdoor part is shut in winter"
+          },
+          "q": "춘천꿈자람어린이공원, 평화로 26, 춘천",
+          "ok": "2026-11"
+        },
+        {
+          "local": "아이꿍그라운드 평창알펜시아점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/6a968bc2468444aafc91f677",
+          "name": {
+            "th": "ไอกุงกราวด์ อัลเพนเซีย",
+            "en": "Aikkung Ground (Alpensia)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รีสอร์ตอัลเพนเซีย แทกวัลลย็อง พย็องชัง",
+            "en": "Alpensia Resort, Daegwallyeong, Pyeongchang"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มในรีสอร์ตอัลเพนเซีย",
+            "en": "An indoor play ground inside the Alpensia resort"
+          },
+          "why": {
+            "th": "มีปราสาทเป่าลมและเครื่องเล่น สำหรับเด็ก 18 เดือนถึง 10 ขวบ",
+            "en": "A bounce castle and play equipment, for 18 months to 10 years"
+          },
+          "tip": {
+            "th": "ปิดบางวันธรรมดา ควรเช็กเวลาก่อนไป",
+            "en": "Closed some weekdays; check the hours before going"
+          },
+          "q": "아이꿍그라운드 평창알펜시아점, 솔봉로 325, 평창",
+          "ok": "2026-11"
+        },
+        {
+          "local": "숲속에동물농장",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩3,000",
+            "en": "≈ ₩3,000"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/6a96832b3f0e3ce8f88b2e94",
+          "name": {
+            "th": "ฟาร์มสัตว์ในป่า แทกวัลลย็อง",
+            "en": "Forest Animal Farm (Daegwallyeong)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนช็องกล แทกวัลลย็อง พย็องชัง",
+            "en": "Cheonggol-gil, Daegwallyeong, Pyeongchang"
+          },
+          "what": {
+            "th": "ฟาร์มให้สัมผัสสัตว์ มีโซนในร่มและกลางแจ้ง",
+            "en": "A petting farm with indoor and outdoor animal areas"
+          },
+          "why": {
+            "th": "เด็กได้เจอสัตว์ตัวเล็กและให้อาหารด้วยขนมที่ขายในฟาร์ม",
+            "en": "Children meet small animals and feed them with snacks sold there"
+          },
+          "tip": {
+            "th": "เข้าได้เลย ไม่ต้องจอง",
+            "en": "Walk in, no booking"
+          },
+          "q": "숲속에동물농장, 청골길 12, 평창",
+          "ok": "2026-11"
         }
       ]
     },
@@ -762,6 +1037,121 @@
           "q": "Jungle Media Park, Bomun-ro, Gyeongju",
           "ok": "2026-11",
           "src": "https://mom-mom.net/en/travel/places/62cd18a22718fee95297deaa"
+        },
+        {
+          "local": "경주 동궁원",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelmapjourney.com/gyeongju-indoor-museum-donggungwon-rain-choice/",
+          "name": {
+            "th": "สวนดงกุงวอน คย็องจู",
+            "en": "Gyeongju East Palace Garden (Donggungwon)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนโบมุน ย่านโบมุน คย็องจู",
+            "en": "Bomun-ro, Bomun area, Gyeongju"
+          },
+          "what": {
+            "th": "เรือนกระจกพืชกึ่งเขตร้อน",
+            "en": "A glass greenhouse of subtropical plants"
+          },
+          "why": {
+            "th": "อุ่นและไม่เปียกในวันฝนตก มีกิจกรรมสำหรับเด็ก",
+            "en": "Warm and dry on a rainy day, with a kids' activity programme"
+          },
+          "q": "Gyeongju East Palace Garden, Bomun-ro, Gyeongju",
+          "ok": "2026-11"
+        },
+        {
+          "local": "더스완",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩30,000 ต่อ 3 ชั่วโมง",
+            "en": "≈ ₩30,000 for 3 hours"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65ee8a8efcabdf8fcd70be78",
+          "name": {
+            "th": "เดอะสวอนคิดส์คาเฟ่ ฮย็องก๊ก",
+            "en": "The Swan kids café (Hyeongok)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนยงดัม ฮย็องก๊กมย็อน คย็องจู",
+            "en": "Yongdam-ro, Hyeongok-myeon, Gyeongju"
+          },
+          "what": {
+            "th": "คาเฟ่เด็กมีเล่นทราย ระบายสี และสระน้ำอุ่น",
+            "en": "A kids' café with sand play, painting and a warm-water pool"
+          },
+          "why": {
+            "th": "มีโซนเล่นสำหรับเด็ก",
+            "en": "A play zone for children"
+          },
+          "q": "더스완, 용담로 535-9, 현곡면, 경주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "코스믹 리조트",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/69f17fd18345b3a2e56b2e2b",
+          "name": {
+            "th": "คอสมิกรีสอร์ต มีเดียอาร์ต",
+            "en": "Cosmic Resort (media art)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนช็อนบุกนัม ย่านโบมุน คย็องจู",
+            "en": "Cheonbungnam-ro, Bomun area, Gyeongju"
+          },
+          "what": {
+            "th": "ห้องนิทรรศการมีเดียอาร์ตธีมอวกาศขนาดใหญ่",
+            "en": "A big space-themed media art hall"
+          },
+          "why": {
+            "th": "ห้องแบบลงมือเล่นสำหรับทั้งครอบครัว",
+            "en": "Interactive rooms for the whole family"
+          },
+          "tip": {
+            "th": "10:00–19:00",
+            "en": "10:00–19:00"
+          },
+          "q": "코스믹 리조트, 천북남로 176, 경주",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1108,6 +1498,314 @@
           "q": "Nadeulmok Family Park, next to Korea Expressway Corporation Jeonju Arboretum, Jeonju",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/jeonju-kids-places"
+        },
+        {
+          "local": "전주혁신도시복합문화센터",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://mom-mom.net/en/travel/places/661f22ec96e91086cbddfbd1",
+          "name": {
+            "th": "ศูนย์วัฒนธรรมเมืองนวัตกรรมช็อนจู",
+            "en": "Jeonju Innovation City Cultural Centre"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนทึลมต 1 เมืองนวัตกรรม ช็อนจู",
+            "en": "Teulmot 1-gil, Innovation City, Jeonju"
+          },
+          "what": {
+            "th": "ศูนย์วัฒนธรรมที่มีห้องเล่นเด็กเล็ก ห้องสมุดเด็ก และลานทราย",
+            "en": "A cultural centre with a toddler play room, a children's library and a sand yard"
+          },
+          "why": {
+            "th": "แทรมโพลีน บ่อบอล และสไลเดอร์สำหรับเด็กเล็ก ลานทรายสำหรับเด็กอนุบาล",
+            "en": "Trampoline, ball pool and slide for toddlers, sand play for preschoolers"
+          },
+          "tip": {
+            "th": "จองห้องเล่นทางเว็บห้องสมุดเมืองช็อนจูก่อน",
+            "en": "Book the play room on the Jeonju City Library website first"
+          },
+          "q": "전주혁신도시복합문화센터, 틀못1길 20, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "무키무키 전주완산점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://mom-mom.net/en/travel/places/67a966b8f45aa02b66d43782",
+          "name": {
+            "th": "คิดส์คาเฟ่มูกิมูกิ วันซัน",
+            "en": "MukiMuki Kids Café (Wansan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฮโยจา วันซัน ช็อนจู",
+            "en": "284 Hyoja-ro, Wansan-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ส่วนตัวไม่มีพนักงาน มีเครื่องปีนป่ายใหญ่และครัวของเล่น",
+            "en": "A private, unstaffed kids café with a big climbing frame and play kitchens"
+          },
+          "why": {
+            "th": "มีเก้าอี้เด็กเล็ก และมุมขนมที่มีอาหารเด็ก",
+            "en": "Baby chairs, and a snack corner with baby food"
+          },
+          "q": "무키무키 전주완산점, 효자로 284, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "너티차일드월드 전주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩25,000 ต่อเด็ก 2 ชั่วโมง · ผู้ใหญ่ ₩10,000",
+            "en": "≈ ₩25,000 a child for 2 hours · ₩10,000 an adult"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/664bf5e316012307a5fce365",
+          "name": {
+            "th": "นัตตี้ไชลด์เวิลด์ ช็อนจู",
+            "en": "Nutty Child World (Jeonju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเซบย็อง ด็อกจิน (อีโคซิตี้) ช็อนจู",
+            "en": "Sebyeong-ro, Deokjin-gu (Ecocity), Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ขนาดใหญ่สำหรับเด็กที่ชอบวิ่งเล่น",
+            "en": "A big kids café for children who love to run about"
+          },
+          "why": {
+            "th": "มีห้องให้นม ที่เปลี่ยนผ้าอ้อม และเก้าอี้เด็ก",
+            "en": "A nursing room, nappy changing and baby chairs"
+          },
+          "tip": {
+            "th": "ผู้ใหญ่ต้องใส่ถุงเท้าด้วย",
+            "en": "Grown-ups wear socks too"
+          },
+          "q": "너티차일드월드 전주점, 세병로 21, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "나만의키즈카페 전주인후점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ₩16,000 ต่อ 30 นาที วันธรรมดา",
+            "en": "≈ ₩16,000 per 30 min on weekdays"
+          },
+          "book": "req",
+          "src": "https://mom-mom.net/en/travel/places/69c4f26e6de8449cbc921e48",
+          "name": {
+            "th": "คิดส์คาเฟ่นามานึย อินฮู",
+            "en": "Namanui Kids Café (Inhu)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฮันแบมี 4 ด็อกจิน ช็อนจู",
+            "en": "Hanbaemi 4-gil, Deokjin-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ส่วนตัวไม่มีพนักงาน มีเครื่องปีนป่าย แทรมโพลีน และบ่อบอล",
+            "en": "A private, unstaffed kids café with a climbing frame, trampoline and ball pit"
+          },
+          "why": {
+            "th": "ได้ห้องสำหรับครอบครัวเราเอง เอาอาหารเข้าไปได้",
+            "en": "A room just for your family; you may bring food"
+          },
+          "q": "나만의키즈카페 전주인후점, 한배미4길 6, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "플레이랩 전주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/65683d012d02d3e67db812b3",
+          "name": {
+            "th": "เพลย์แล็บ ช็อนจู",
+            "en": "PlayLab (Jeonju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเซบย็องซอ ซงช็อนดง ด็อกจิน ช็อนจู",
+            "en": "Sebyeong-seo-ro, Songcheon-dong, Deokjin-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่มีเครื่องเล่นให้เด็กเรียนรู้ผ่านการเล่น",
+            "en": "A kids' café with play equipment for learning through play"
+          },
+          "why": {
+            "th": "การเล่นที่ออกแบบตามพัฒนาการเด็ก",
+            "en": "Play built around child development"
+          },
+          "tip": {
+            "th": "ปิดสัปดาห์ละวัน (แผนที่บอกวันอังคาร)",
+            "en": "Closed one day a week (Tuesday on the map)"
+          },
+          "q": "플레이랩 전주점, 세병서로 37, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "리카키즈룸 전주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mom-mom.net/travel/places/690adf2fb0aaf2b82c8c4a74",
+          "name": {
+            "th": "ลิกะคิดส์รูม ช็อนจู",
+            "en": "Lika Kids Room (Jeonju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโชโพ โฮซ็องดง ด็อกจิน ช็อนจู",
+            "en": "Chopo-ro, Hoseong-dong, Deokjin-gu, Jeonju"
+          },
+          "what": {
+            "th": "ห้องเล่นส่วนตัวสำหรับกลุ่มของเราเท่านั้น",
+            "en": "A private kids' room just for your own group"
+          },
+          "why": {
+            "th": "เล่นได้โดยไม่ต้องแชร์กับครอบครัวอื่น",
+            "en": "Play without sharing with other families"
+          },
+          "q": "리카키즈룸 전주점, 초포로 182, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "우리끼리키즈카페 캠핑마을 전주서신점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mom-mom.net/travel/places/69046e1b538f6ff43f352f4d",
+          "name": {
+            "th": "คิดส์คาเฟ่อูรีกีรี แคมปิงวิลเลจ ซอซิน",
+            "en": "Urikkiri Camping Village Kids Café (Seosin)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซอซิน ซอซินดง วันซัน ช็อนจู",
+            "en": "Seosin-ro, Seosin-dong, Wansan-gu, Jeonju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ส่วนตัวไม่มีพนักงาน ธีมแคมปิง",
+            "en": "A private, unstaffed kids' café with a camping theme"
+          },
+          "why": {
+            "th": "มีพื้นที่สำหรับครอบครัวเราเอง",
+            "en": "A space just for your family"
+          },
+          "q": "우리끼리키즈카페 캠핑마을 전주서신점, 서신로 51, 전주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "완산벙커 더 스페이스",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://jjan.kr/article/20250925580328",
+          "name": {
+            "th": "วันซันบังเกอร์ เดอะสเปซ",
+            "en": "Wansan Bunker The Space"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนวันซัน 5 ทงวันซันดง วันซัน ช็อนจู",
+            "en": "Wansan 5-gil, Dongwansan-dong, Wansan-gu, Jeonju"
+          },
+          "what": {
+            "th": "บังเกอร์ทหารเก่าที่กลายเป็นพื้นที่ให้สำรวจ",
+            "en": "A former military bunker turned into a space to explore"
+          },
+          "why": {
+            "th": "สถานที่ทหารเก่าที่ทำเป็นลานเล่นทางวัฒนธรรม",
+            "en": "An old military site made into a cultural playground"
+          },
+          "q": "완산벙커 더 스페이스, 완산5길 70, 전주",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1527,6 +2225,47 @@
           "q": "Dalgeurak Dodone, Jeongja-dong, Suwon",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/suwon-kids-places"
+        },
+        {
+          "local": "경기도 업사이클플라자",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/suwon-indoor-kids-places",
+          "name": {
+            "th": "คย็องกีอัปไซเคิลพลาซา",
+            "en": "Gyeonggi Upcycle Plaza"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนซอดุน ควอนซ็อน (คย็องกีซังซังแคมปัส) ซูวอน",
+            "en": "Seodun-ro, Gwonseon-gu (Gyeonggi Sangsang Campus), Suwon"
+          },
+          "what": {
+            "th": "พื้นที่ที่เปลี่ยนของเก่าเป็นของใหม่ มีนิทรรศการของอัปไซเคิล",
+            "en": "A space where old things become new, with exhibits of upcycled goods"
+          },
+          "why": {
+            "th": "เข้าฟรี แวะได้ไม่นาน แม้มีเด็กเล็ก",
+            "en": "Free entry and a short stop, even with a baby"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ บางนิทรรศการเก็บค่าเข้า",
+            "en": "Closed on Mondays; some exhibitions charge"
+          },
+          "q": "경기도 업사이클플라자, 서둔로 166, 수원",
+          "ok": "2026-11"
         }
       ]
     }

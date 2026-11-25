@@ -60,6 +60,13 @@
       "src": "https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/",
       "date": "2026-04",
       "map": "Google Maps 2,609 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Lone Star (Queenstown)",
+      "page_name": "Lone Star",
+      "src": "https://www.lonestar.co.nz/restaurants/queenstown",
+      "date": "official",
+      "map": "Google Maps 'Lone Star Queenstown', newest review shown 15 days ago"
     }
   ],
   "left_out": [
@@ -70,7 +77,16 @@
     {
       "name": "Queenstown Beach",
       "why": "the map has no place of that name to check"
+    },
+    {
+      "name": "Gantley's Tavern, Chipmunks Queenstown, Pub on Wharf, Margo's",
+      "why": "no 2025–2026 page could be opened (queenstownnz.co.nz blocks automated reads)"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 1 row from Lone Star's own page, passed library-check.cjs, went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

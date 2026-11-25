@@ -12,6 +12,13 @@
       "price": "not printed on the page, so Check the price",
       "checker": "name, quote and address are on the page; the checker does not read discoveryCreationDate, so it reports 'page date none'. The date was checked by hand. The page is a guide from 2025-10, which does not show the place is open now.",
       "ok": "not set: no current listing, own site or recent review was found (searched in English and Chinese, 2026-11), so the row stays unconfirmed like the others"
+    },
+    {
+      "name": "Uncle Biao Tea Restaurant",
+      "page_name": "Uncle Biao Tea Restaurant",
+      "src": "https://ph.trip.com/moments/poi-lu-zu-temple-56805091",
+      "date": "2026-09",
+      "map": "Google Maps Baidu Maps '表叔Uncle·港式茶餐厅(解放碑店)', 重庆市渝中区大同路93号, 155 reviews, newest 2026-10-08"
     }
   ],
   "removed": [
@@ -99,5 +106,24 @@
       "removed": [],
       "label": "Google Maps pass, 2026-11-23"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "Dengdeng noodles",
+      "why": "a chain with two branches (十八梯邓凳面); the page names none"
+    },
+    {
+      "name": "Luzumiao Old Street",
+      "why": "a whole street"
+    },
+    {
+      "name": "Xiangzhao Buffet",
+      "why": "a hotel buffet the page only mentions in passing"
+    }
+  ],
+  "round3": {
+    "checked": "2026-11-23",
+    "agents": "one Haiku agent; 4 rows from one Trip.com traveller's guide (Sept 2026) passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -81,6 +81,40 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from Freizeitmonster (Nov 2026), inFranken (Jul 2026) and Nuremberg tourism (official), all passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "FUNtasia Kinderland",
+          "page_name": "FUNtasia Kinderland",
+          "src": "https://freizeitmonster.de/blog/indoor-spielplaetze-dinkelsbuehl",
+          "date": "2026-11",
+          "map": "Google Maps 'Funtasia Kinderland Dinkelsbühl' (Ellwanger Str. 21), newest review shown a day ago"
+        },
+        {
+          "name": "Bleiche adventure playground",
+          "page_name": "Abenteuerspielplatz Bleiche",
+          "src": "https://www.infranken.de/lk/franken/ausflug/spielplaetze-in-franken-altmuehlsee-bamberg-dinkelsbuehl-familie-ausflug-wasserspielplatz-abenteuer-art-6221976",
+          "date": "2026-07",
+          "map": "Google Maps 'Spielplatz \"Bleiche\"' (Bleichweg), newest review shown 4 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Megaplay Dinkelsbühl",
+          "why": "the map has no entry of its own (it finds Funtasia)"
+        },
+        {
+          "name": "Playmobil FunPark, DB Museum, Kindermuseum Nürnberg",
+          "why": "the page gives no district or street"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

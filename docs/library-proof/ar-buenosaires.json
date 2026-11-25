@@ -46,6 +46,62 @@
       "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
       "date": "official",
       "map": "Google Maps 'Participatory Science Museum', 5,998 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "La Payuca",
+      "page_name": "La Payuca",
+      "src": "https://www.timeout.com/buenos-aires/best-restaurants-kids-children",
+      "date": "2025-07",
+      "map": "Google Maps 'La Payuca' (Arenales 3443), newest review shown 10 hours ago"
+    },
+    {
+      "name": "Joe's Grill (San Isidro)",
+      "page_name": "Joe's Grill",
+      "src": "https://www.timeout.com/buenos-aires/best-restaurants-kids-children",
+      "date": "2025-07",
+      "map": "Google Maps 'Joe´s Grill San Isidro' (Av. Fondo de la Legua 340), newest review shown 16 hours ago"
+    },
+    {
+      "name": "Mococo Kids Cafe",
+      "page_name": "Mococo Kids Cafe",
+      "src": "https://www.timeout.com/buenos-aires/things-to-do-winter-family-kids-rainy-day-indoor-activities-games",
+      "date": "2026-07",
+      "map": "Google Maps 'Mococo Kids Cafe (Chacarita)' (Av. Corrientes 6425), newest review shown 12 hours ago"
+    },
+    {
+      "name": "Plaza Las Cañitas",
+      "page_name": "Plaza Las Cañitas en Palermo",
+      "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+      "date": "2025-06",
+      "map": "Google Maps 'Plaza Cañitas' (Clay 144), newest review shown 9 hours ago"
+    },
+    {
+      "name": "Plaza Rusia (Plaza Federación de Rusia)",
+      "page_name": "Plaza Rusia en Belgrano",
+      "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+      "date": "2025-06",
+      "map": "Google Maps 'Plaza Federación de Rusia' (Valentín Alsina), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Castle playground (Parque Onega)",
+      "page_name": "Plaza del castillo en Devoto",
+      "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+      "date": "2025-06",
+      "map": "Google Maps 'Polideportivo Parque Onega' (Gabriela Mistral 3819), newest review shown 3 days ago"
+    },
+    {
+      "name": "Moon playground (Plazoleta García Lorca)",
+      "page_name": "Plaza Lunar en Devoto",
+      "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+      "date": "2025-06",
+      "map": "Google Maps 'Plazoleta Federico García Lorca' (Av. Lincoln 4351), newest review shown 2 days ago"
+    },
+    {
+      "name": "Giant Ovenbird play yard (Parque Carrasco)",
+      "page_name": "Patio del Hornero Gigante en Parque Carrasco",
+      "src": "https://www.timeout.com/es/buenos-aires/mejores-plazas-juegos-infantiles",
+      "date": "2025-06",
+      "map": "Google Maps 'Carrasco Park' (Avenida Costanera Rafael Obligado), newest review shown 2 weeks ago"
     }
   ],
   "left_out": [
@@ -64,7 +120,20 @@
     {
       "name": "El Torreón, Centro Cultural Coreano, Centro Cultural 25 de Mayo, Fragata Sarmiento, Museo Quinquela Martín, MAMBA, Lago Lugano",
       "why": "library-check.cjs: quote not on page"
+    },
+    {
+      "name": "Lo de Carlitos",
+      "why": "a chain; the page names no one branch"
+    },
+    {
+      "name": "La Pebeta",
+      "why": "the map has only the street address, no entry of its own"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from Time Out Buenos Aires (Jun 2025 – Jul 2026), all passed library-check.cjs, 8 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

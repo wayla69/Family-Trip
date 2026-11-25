@@ -124,8 +124,40 @@
       "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
       "date": "2026-07",
       "map": "Google Maps 'Jaemi Wonderland @ 1st Avenue', 141 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Kidsville WaterFront",
+      "page_name": "Kidsville WaterFront",
+      "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+      "date": "2026-07",
+      "map": "Google Maps 'Kidsville WaterFront', newest review shown 18 days ago"
+    },
+    {
+      "name": "Kids Adventureland (Sunshine Central)",
+      "page_name": "Kids Adventureland Penang",
+      "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+      "date": "2026-07",
+      "map": "Google Maps 'Kids Adventureland Penang', newest review shown 5 months ago"
     }
   ],
-  "left_out": [],
-  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them. Opening hours in tips are the pages' own."
+  "left_out": [
+    {
+      "name": "Kidzooona AEON Bukit Mertajam, HappyKidz Alma",
+      "why": "on the mainland (Bukit Mertajam), outside the town"
+    },
+    {
+      "name": "Penang ATV Eco Tour",
+      "why": "not for children of 1–8"
+    },
+    {
+      "name": "Countryside Stables",
+      "why": "horse riding"
+    }
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them. Opening hours in tips are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Newswav (Jul 2026) and Little Day Out (Jun 2025), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

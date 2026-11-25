@@ -260,6 +260,43 @@
           "q": "Wat Ban Don Nang Yai Museum, Choeng Noen, Mueang Rayong",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/wat-ban-don-shadow-play-museum/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.pptvhd36.com/travel/thailand/285042",
+          "name": {
+            "th": "หาดแหลมแม่พิมพ์",
+            "en": "Laem Mae Phim beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อำเภอแกลง ระยอง",
+            "en": "Klaeng, Rayong"
+          },
+          "what": {
+            "th": "ชายหาดในอำเภอแกลง เหมาะกับการพักผ่อนริมทะเล",
+            "en": "A beach in Klaeng district for resting by the sea"
+          },
+          "why": {
+            "th": "มีร้านอาหารใกล้ ๆ ไม่ต้องข้ามเรือไปเกาะ",
+            "en": "Restaurants nearby, and no boat to an island needed"
+          },
+          "q": "หาดแหลมแม่พิมพ์, แกลง, ระยอง",
+          "ok": "2026-11"
         }
       ]
     }

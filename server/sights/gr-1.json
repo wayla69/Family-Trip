@@ -569,6 +569,154 @@
           },
           "q": "Zappeion, Athens",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "เดอะวอลล์ ปัลลีนี",
+            "en": "The Wall (Pallini)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ปัลลีนี เอเธนส์",
+            "en": "Pallini, Athens"
+          },
+          "what": {
+            "th": "ศูนย์ปีนผาใหญ่ที่สุดในกรีซ มีแทรมโพลีนและเส้นทางเชือก",
+            "en": "Greece's largest climbing centre, with trampolines and a ropes course"
+          },
+          "why": {
+            "th": "มีแทรมโพลีน รถโกคาร์ตแบบปั่น และสวน",
+            "en": "Trampolines, pedal go-karts and a garden"
+          },
+          "q": "THE WALL, Pallini, Athens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติกูลันดรีส",
+            "en": "Goulandris Natural History Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "คีฟิสเซีย เอเธนส์",
+            "en": "Kifissia, Athens"
+          },
+          "what": {
+            "th": "สัตว์ พืช สัตว์ทะเล และฟอสซิล มีหุ่นไทรเซราทอปส์ตัวใหญ่",
+            "en": "Animals, plants, sea life and fossils, with a big triceratops model"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กเล็กเป็นพิเศษ",
+            "en": "Made for younger children especially"
+          },
+          "q": "Goulandris Natural History Museum, Kifissia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "เพลย์โมบิลฟันพาร์ก เอเธนส์",
+            "en": "Playmobil FunPark Athens"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คีฟิสเซีย เอเธนส์",
+            "en": "Kifissia, Athens"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ธีมของเล่นเพลย์โมบิล",
+            "en": "A big indoor playground built around Playmobil toys"
+          },
+          "why": {
+            "th": "ออกแบบมาสำหรับเด็กเล็กโดยเฉพาะ",
+            "en": "Made especially for younger children"
+          },
+          "q": "PLAYMOBIL FunPark Athens, Kifissia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์ละครหุ่นเงาสปาทาริโอ",
+            "en": "Spathario Shadow Theatre Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มารูซี เอเธนส์",
+            "en": "Marousi, Athens"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ละครหุ่นเงาของกรีซ",
+            "en": "A museum of Greek shadow puppet theatre"
+          },
+          "why": {
+            "th": "ตัวการ์ตูนหุ่นเงาคลาสสิกของกรีซมาเล่นให้ดู",
+            "en": "Greece's classic puppet hero comes alive in silhouette"
+          },
+          "q": "Spathario Shadow Puppet Theater Museum, Marousi",
+          "ok": "2026-11"
         }
       ]
     },
@@ -991,6 +1139,43 @@
             "en": "Shallow water and a play area for small children"
           },
           "q": "Monolithos Beach, Santorini",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://iyc.com/blog/mykonos-child-friendly-vacation/",
+          "name": {
+            "th": "หาดออร์นอส (มิโคนอส)",
+            "en": "Ornos Beach (Mykonos)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ออร์นอส เกาะมิโคนอส",
+            "en": "Ornos, Mykonos"
+          },
+          "what": {
+            "th": "ชายหาดบนเกาะมิโคนอสที่เหมาะกับครอบครัว",
+            "en": "A family-minded beach on Mykonos"
+          },
+          "why": {
+            "th": "มีเก้าอี้อาบแดดให้พ่อแม่ และคลื่นเบาสำหรับเด็กเล็ก",
+            "en": "Sun loungers for parents and gentle waves for little ones"
+          },
+          "q": "Ornos Beach, Mykonos",
           "ok": "2026-11"
         }
       ]

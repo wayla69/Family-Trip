@@ -102,6 +102,20 @@
       "src": "https://www.vancouvertourism.org/?p=178",
       "date": "2026-04",
       "map": "Google Maps 'Spanish Banks Beach', 1,014 reviews, newest 'last week'"
+    },
+    {
+      "name": "Kirin Restaurant (Alberni Street)",
+      "page_name": "Kirin",
+      "src": "https://www.vancouvertourism.org/?p=1759",
+      "date": "2026-08",
+      "map": "Google Maps 'Kirin Restaurant' (1172 Alberni St), newest review shown a day ago"
+    },
+    {
+      "name": "The World of Kidtropolis",
+      "page_name": "Kidtropolis",
+      "src": "https://www.destinationvancouver.com/inspirations/family-and-kids/kidtropolis",
+      "date": "2026-06",
+      "map": "Google Maps 'The World of Kidtropolis' (5940 No 2 Rd, Richmond), newest review shown 13 hours ago"
     }
   ],
   "left_out": [
@@ -116,7 +130,24 @@
     {
       "name": "Hinge Park, David Lam Park",
       "why": "the map's newest review (sorted by newest) is a year old"
+    },
+    {
+      "name": "Earls Kitchen + Bar",
+      "why": "a chain, no branch named"
+    },
+    {
+      "name": "Dynasty",
+      "why": "the map puts it on West Broadway, not downtown as the page says"
+    },
+    {
+      "name": "Stanley Park Pavilion",
+      "why": "the map lists an event venue"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Vancouver Tourism (Aug 2026) and Destination Vancouver (Jun 2026), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

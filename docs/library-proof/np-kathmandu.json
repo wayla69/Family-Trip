@@ -77,6 +77,37 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Full Time Explorer (Dec 2025) and the Nepal Tourism Board (official); 2 passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "World Peace Pagoda (Pokhara)",
+          "page_name": "World Peace Stupa",
+          "src": "https://ntb.gov.np/plan-your-trip/trip-ideas/travel-with-children",
+          "date": "official",
+          "map": "Google Maps 'World Peace Pagoda, Pokhara' (World Peace Stupa Access Rd), newest review shown 3 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Rumi's Bistro",
+          "why": "the newest review on the map is 8 months old"
+        },
+        {
+          "name": "Lake Phewa boating",
+          "why": "the name was not on the page"
+        },
+        {
+          "name": "Kyampa The Social Hub",
+          "why": "a beer garden"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

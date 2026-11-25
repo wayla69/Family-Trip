@@ -81,6 +81,48 @@
       "src": "https://kidsareatrip.com/things-to-do-in-strasbourg-with-kids/",
       "date": "2026-01",
       "map": "Google Maps 2,940 reviews, newest 'last month'"
+    },
+    {
+      "name": "Le Pfifferbriader",
+      "page_name": "Pfifferbriader",
+      "src": "https://fr.gaultmillau.com/en/restaurant/pfifferbriader",
+      "date": "2026-09",
+      "map": "Google Maps 'Le Pfifferbriader' (14 Pl. du Marché-aux-Cochons-de-Lait), newest review shown 18 hours ago"
+    },
+    {
+      "name": "Winstub au Cygne",
+      "page_name": "Au Cygne",
+      "src": "https://fr.gaultmillau.com/en/restaurant/au-cygne",
+      "date": "2026-09",
+      "map": "Google Maps 'Winstub au Cygne' (15 Rue Edouard Richard), newest review shown a week ago"
+    },
+    {
+      "name": "Bistrot des Lavandières",
+      "page_name": "Bistrot des Lavandières",
+      "src": "https://fr.gaultmillau.com/en/restaurant/bistrot-des-lavandieres-restaurant",
+      "date": "2026-09",
+      "map": "Google Maps 'Bistrot des Lavandières' (12 Rue Saint-Jean), newest review shown 3 days ago"
+    },
+    {
+      "name": "Brasserie Historique – Maison des Têtes",
+      "page_name": "Brasserie Historique - La Maison des Têtes",
+      "src": "https://fr.gaultmillau.com/en/restaurant/brasserie-historique-la-maison-des-tetes",
+      "date": "2026-09",
+      "map": "Google Maps 'Brasserie Historique - Maison des Têtes' (19 Rue des Têtes), newest review shown 2 days ago"
+    },
+    {
+      "name": "Brasserie l'Auberge",
+      "page_name": "L'Auberge",
+      "src": "https://fr.gaultmillau.com/en/restaurants/l-auberge-brasserie",
+      "date": "2026-09",
+      "map": "Google Maps 'Restaurant Brasserie l'Auberge' (7 Pl. de la Gare), newest review shown 7 hours ago"
+    },
+    {
+      "name": "Parc de la Citadelle",
+      "page_name": "Parc de la Citadelle",
+      "src": "https://onivapp.com/blog/sortie-avec-bebe-a-strasbourg",
+      "date": "2026-10",
+      "map": "Google Maps 'Parc de la Citadelle' (Strasbourg), newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -95,7 +137,20 @@
     {
       "name": "Run to the Light (escape room), European Parliament",
       "why": "for teenagers, not small children"
+    },
+    {
+      "name": "Fun Park Colmar",
+      "why": "no street on the page"
+    },
+    {
+      "name": "Cigoland, Naturoparc, Écomusée",
+      "why": "outside Strasbourg and Colmar"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 6 rows from Gault&Millau (Sep 2026) and Onivapp (Oct 2026), all passed library-check.cjs, 6 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -46,6 +46,27 @@
       "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
       "date": "official",
       "map": "Google Maps 'Črna jama', Veliki Otok, 62 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Marley & Me",
+      "page_name": "Marley & Me",
+      "src": "https://www.visitljubljana.com/en/poi/marley-and-me",
+      "date": "official",
+      "map": "Google Maps 'Marley & Me' (Stari trg 9), newest review shown a week ago"
+    },
+    {
+      "name": "Tivoli Park playground",
+      "page_name": "Playground in the Tivoli Park",
+      "src": "https://www.visitljubljana.com/en/visitors/in-focus/stories/5-kids-favourite-playgrounds-in-ljubljana/",
+      "date": "official",
+      "map": "Google Maps 'Park Tivoli, Children's playground' (Cesta 27. aprila 2a), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Zlatorog Fairy Trail",
+      "page_name": "Zlatorog Fairy Trail",
+      "src": "https://www.bohinj.si/en/dozivetja/zlatorog-fairy-trail/",
+      "date": "2026-04",
+      "map": "Google Maps 'Zlatorog Fairy Trail' (Ukanc), newest review shown 2 weeks ago"
     }
   ],
   "left_out": [
@@ -60,7 +81,20 @@
     {
       "name": "Ljubljanica River Boat Ride",
       "why": "boat rides sold by operators"
+    },
+    {
+      "name": "Jurman, Čolnarna Park Tivoli, Sombrero",
+      "why": "no page date the checker could read"
+    },
+    {
+      "name": "Fun Park Zaka",
+      "why": "could not confirm a 2025–2026 date"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from Visit Ljubljana (official) and Bohinj tourism (Apr 2026), all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

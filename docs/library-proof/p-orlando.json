@@ -1,0 +1,110 @@
+{
+  "town": "p-orlando",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 12 rows from Orlando Date Night Guide (May 2026), the Peppa Pig park's own page (Jul 2026), Inside Our Suitcase (Aug 2026) and Mommy Poppins (Jul 2025), all passed library-check.cjs, 9 went in",
+  "added": [
+    {
+      "name": "Grills Lakeside Seafood Deck",
+      "page_name": "Grills",
+      "src": "https://www.orlandodatenightguide.com/kid-friendly-orlando-restaurants-22553/",
+      "date": "2026-05",
+      "map": "Google Maps 'Grills Lakeside Seafood Deck & Tiki Bar', 8,207 reviews, newest shown 4 days ago"
+    },
+    {
+      "name": "The Burrow Cafe and Play",
+      "page_name": "The Burrow",
+      "src": "https://www.orlandodatenightguide.com/kid-friendly-orlando-restaurants-22553/",
+      "date": "2026-05",
+      "map": "Google Maps 'The Burrow Cafe and Play', 375 reviews, newest shown a month ago"
+    },
+    {
+      "name": "Andretti Indoor Karting & Games",
+      "page_name": "Andretti",
+      "src": "https://www.orlandodatenightguide.com/kid-friendly-orlando-restaurants-22553/",
+      "date": "2026-05",
+      "map": "Google Maps 'Andretti Indoor Karting & Games Orlando', 12,824 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Peppa Pig Theme Park Florida",
+      "page_name": "PEPPA PIG Theme Park Florida",
+      "src": "https://www.peppapigthemepark.com/florida/our-company/blog/things-to-do-with-toddlers-near-orlando/",
+      "date": "2026-07",
+      "map": "Google Maps 'PEPPA PIG Theme Park Florida', 2,161 reviews, newest shown 5 days ago"
+    },
+    {
+      "name": "Ripley's Believe It or Not! Orlando",
+      "page_name": "Ripley’s Believe It or Not!",
+      "src": "https://insideoursuitcase.com/?p=99309",
+      "date": "2026-08",
+      "map": "Google Maps 'Ripley's Believe It or Not!', 10,442 reviews, newest shown 5 days ago"
+    },
+    {
+      "name": "Museum of Illusions Orlando",
+      "page_name": "Museum of Illusions",
+      "src": "https://insideoursuitcase.com/?p=99309",
+      "date": "2026-08",
+      "map": "Google Maps 'Museum of Illusions Orlando', 3,609 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Escapology (Sunset Walk)",
+      "page_name": "Escapology at Sunset Walk",
+      "src": "https://mommypoppins.com/anywhere-kids/city-guides/kissimmee-with-kids-22-things-to-do-in-kissimmee-florida",
+      "date": "2025-07",
+      "map": "Google Maps 'Escapology Escape Rooms Kissimmee', 2,333 reviews, newest shown 5 months ago"
+    },
+    {
+      "name": "Orlando Tree Trek Adventure Park",
+      "page_name": "Orlando Tree Trek Adventure Park",
+      "src": "https://mommypoppins.com/anywhere-kids/city-guides/kissimmee-with-kids-22-things-to-do-in-kissimmee-florida",
+      "date": "2025-07",
+      "map": "Google Maps 'Orlando Tree Trek Adventure Park Zip Line', 1,361 reviews, newest shown 12 days ago"
+    },
+    {
+      "name": "Kissimmee Lakefront Park",
+      "page_name": "Kissimmee Lakefront Park",
+      "src": "https://mommypoppins.com/anywhere-kids/city-guides/kissimmee-with-kids-22-things-to-do-in-kissimmee-florida",
+      "date": "2025-07",
+      "map": "Google Maps 'Kissimmee Lakefront Park', 9,608 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "Monkey Joe's (Pointe Orlando)",
+      "page_name": "Monkey Joe's - Pointe Orlando",
+      "src": "https://mommypoppins.com/orlando-kids/top-indoor-play-spaces-for-kids-in-orlando",
+      "date": "2025-07",
+      "map": "Google Maps 'Monkey Joe's' (Pointe Orlando), newest review shown 2 months ago"
+    },
+    {
+      "name": "The Play Park (Florida Mall)",
+      "page_name": "Florida Mall Play Park",
+      "src": "https://mommypoppins.com/orlando-kids/top-indoor-play-spaces-for-kids-in-orlando",
+      "date": "2025-07",
+      "map": "Google Maps 'The Play Park' (The Florida Mall), newest review shown 5 months ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Island H2O Water Park",
+      "why": "temporarily closed on the map"
+    },
+    {
+      "name": "SKELETONS: Museum of Osteology, Chocolate Museum and Café",
+      "why": "not found on the map in Orlando"
+    },
+    {
+      "name": "Oviedo Mall Play Area",
+      "why": "the map shows another place (District Kids)"
+    },
+    {
+      "name": "Jungle Zone",
+      "why": "in Tavares, outside Orlando"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Inside Our Suitcase and Mommy Poppins (Jul 2025), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

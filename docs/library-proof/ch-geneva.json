@@ -116,6 +116,34 @@
       "src": "https://www.lausanne-tourisme.ch/en/explore/lausanne-botanical-museum-and-garden/",
       "date": "official",
       "map": "Google Maps 'Lausanne Botanical Garden', 1,003 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Brasserie des Trois Rois",
+      "page_name": "Brasserie Les Trois Rois",
+      "src": "https://www.lausanne-tourisme.ch/fr/decouvrir/les-trois-rois/",
+      "date": "official",
+      "map": "Google Maps 'Brasserie des Trois Rois' (Rue du Simplon 7), newest review shown 22 hours ago"
+    },
+    {
+      "name": "La Riguenette",
+      "page_name": "La Riguenette",
+      "src": "https://www.lausanne-tourisme.ch/fr/decouvrir/la-riguenette/",
+      "date": "official",
+      "map": "Google Maps 'La Riguenette' (Prom. du Bois-de-Beaulieu 4), newest review shown 2 months ago"
+    },
+    {
+      "name": "Le Pierrier beach",
+      "page_name": "Le Pierrier",
+      "src": "https://www.montreuxriviera.com/en/PA456/blog/all-to-the-beach",
+      "date": "official",
+      "map": "Google Maps 'Pierrier - Montreux Plage' (Chemin du Pierrier), newest review shown 14 hours ago"
+    },
+    {
+      "name": "Franchises park paddling pool",
+      "page_name": "Pataugeoire du parc des Franchises",
+      "src": "https://www.geneve.ch/pataugeoire-parc-franchises",
+      "date": "official",
+      "map": "Google Maps 'Pataugeoire du parc des Franchises' (Av. de Châtelaine), newest review shown 2 months ago"
     }
   ],
   "left_out": [
@@ -134,7 +162,28 @@
     {
       "name": "Les Ateliers Découvertes",
       "why": "the map has no place of that name"
+    },
+    {
+      "name": "Home (near the airport)",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Place Chateaubriand playground",
+      "why": "newest Google Maps review 3 years old"
+    },
+    {
+      "name": "Mon Repos playground",
+      "why": "no recent review could be read"
+    },
+    {
+      "name": "Espace des inventions",
+      "why": "library-check.cjs could not confirm the row"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 8 rows from Geneva Tourism, the city of Geneva (Sep 2026), Lausanne Tourisme and Montreux Riviera, 7 passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

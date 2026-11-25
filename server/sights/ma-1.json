@@ -702,6 +702,80 @@
           },
           "q": "Ouzoud Waterfalls, Ouzoud",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "name": {
+            "th": "พิพิธภัณฑ์น้ำ มาร์ราเกช",
+            "en": "Water Museum (Musée de l'Eau)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปาลแมเรย์ มาร์ราเกช",
+            "en": "Palmeraie, Marrakech"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องน้ำในโมร็อกโกและการจัดการน้ำ",
+            "en": "A museum about water in Morocco and how it is managed"
+          },
+          "why": {
+            "th": "มีแผนที่และวิดีโอแบบโต้ตอบสำหรับทุกวัย",
+            "en": "Interactive maps and videos for all ages"
+          },
+          "q": "Water Museum, Palmeraie, Marrakech",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "name": {
+            "th": "เมย์เดน",
+            "en": "Meydene"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เอ็มอเวนิว ด้านตะวันตกของเมดินา มาร์ราเกช",
+            "en": "M Avenue, west of the medina, Marrakech"
+          },
+          "what": {
+            "th": "ศูนย์วัฒนธรรมที่พาเที่ยวมาร์ราเกชผ่านแว่นเสมือนจริง มีโรงละครและคาเฟ่ดาดฟ้า",
+            "en": "A cultural centre with virtual-reality journeys through Marrakech, a theatre and a rooftop café"
+          },
+          "why": {
+            "th": "เด็กๆ ชอบ ได้เดินชมถนนในเมืองแบบเสมือนจริง",
+            "en": "Popular with children, who explore the city's streets virtually"
+          },
+          "q": "Meydene, M Avenue, Marrakech",
+          "ok": "2026-11"
         }
       ]
     }

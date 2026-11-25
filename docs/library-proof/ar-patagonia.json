@@ -94,6 +94,58 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from Reiskoe (Nov 2025) and Río Negro (Jul 2026), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "La Lechuza Pizza y Pastas (El Calafate)",
+          "page_name": "La Lechuza Pizza",
+          "src": "https://www.reiskoe.nl/en/el-calafate-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps 'La Lechuza Pizza y Pastas' (Av. del Libertador 1301), newest review shown 9 hours ago"
+        },
+        {
+          "name": "Laguna Nimez Reserve",
+          "page_name": "Laguna Nimez Reserve",
+          "src": "https://www.reiskoe.nl/en/el-calafate-with-kids/",
+          "date": "2025-11",
+          "map": "Google Maps 'Reserva Laguna Nimez' (Av. Costanera), newest review shown 16 hours ago"
+        },
+        {
+          "name": "Piedras Blancas (Cerro Otto)",
+          "page_name": "Piedras Blancas",
+          "src": "https://www.rionegro.com.ar/voy-turismo/que-hacer-en-bariloche-con-ninos-la-nieve-mas-divertida-4657204/?amp=1",
+          "date": "2026-07",
+          "map": "Google Maps 'Piedras Blancas' (Acceso Cerro Otto), newest review shown a week ago"
+        },
+        {
+          "name": "Cerro Viejo slide (Tobogán)",
+          "page_name": "Tobogán Cerro Viejo",
+          "src": "https://www.rionegro.com.ar/voy-turismo/que-hacer-en-bariloche-con-ninos-la-nieve-mas-divertida-4657204/?amp=1",
+          "date": "2026-07",
+          "map": "Google Maps 'Cerro Viejo' (Av. Ezequiel Bustillo 800), newest review shown 12 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Calafate Brownies",
+          "why": "nothing about children on the page"
+        },
+        {
+          "name": "El Gaita Pizza Bar",
+          "why": "the page gives no street or district"
+        },
+        {
+          "name": "El Calafate Balconies Experience",
+          "why": "a 4x4 tour, not a place"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

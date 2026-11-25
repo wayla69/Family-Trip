@@ -22,13 +22,29 @@
       "src": "https://wanderlog.com/list/geoCategory/33038/best-family-restaurants-in-luang-prabang",
       "date": "2025-08",
       "map": "Google Maps 51 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Buddha Park (Wat Xieng Khuan)",
+      "page_name": "Buddha Park",
+      "src": "https://www.selectiveasia.com/blog/laos/best-places-to-visit-in-laos-with-kids",
+      "date": "2026-08",
+      "map": "Google Maps 'Buddha Park (Wat Xieng Khouane Luang)' (Thanon Tha Deua), newest review shown 8 hours ago"
     }
   ],
   "left_out": [
     {
       "name": "Wat Xieng Thong",
       "why": "library-check: page date none, price not on page"
+    },
+    {
+      "name": "Ban Lan Khammune",
+      "why": "a whole village, and the kayak trip is for older children"
     }
   ],
-  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them."
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 2 rows from Selective Asia (Aug 2026), both passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

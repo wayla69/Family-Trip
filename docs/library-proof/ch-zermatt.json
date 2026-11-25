@@ -1,0 +1,45 @@
+{
+  "town": "ch-zermatt",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows from Gornergrat Bahn and Riffelalp (official) and Swiss Family Fun (May 2025), all passed library-check.cjs, 3 went in",
+  "added": [
+    {
+      "name": "Buffet & Bar Riffelberg",
+      "page_name": "Buffet &amp; Bar Riffelberg",
+      "src": "https://www.gornergrat.ch/en/service-providers/buffet-bar-riffelberg",
+      "date": "official",
+      "map": "Google Maps 'Buffet & Bar Riffelberg' (Riffelberg 2500 m), newest review shown a month ago"
+    },
+    {
+      "name": "Alphitta",
+      "page_name": "Alphitta",
+      "src": "https://www.gornergrat.ch/en/service-providers/alphitta",
+      "date": "official",
+      "map": "Google Maps 'Alphitta' (Zermatt), newest review shown 2 days ago"
+    },
+    {
+      "name": "Gorner Gorge (Gornerschlucht)",
+      "page_name": "Gorner Gorge",
+      "src": "https://swissfamilyfun.com/zermatt-guide/",
+      "date": "2025-05",
+      "map": "Google Maps 'Gornerschlucht' (Zermatt), newest review shown 2 months ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Kick scooters from Sunnegga",
+      "why": "ages 9 and up"
+    },
+    {
+      "name": "Riffelalp Resort playground",
+      "why": "a hotel playground"
+    },
+    {
+      "name": "Blumenweg",
+      "why": "the trail has no map entry of its own"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

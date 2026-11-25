@@ -123,6 +123,34 @@
       "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
       "date": "2025-06",
       "map": "Google Maps 'Poggibonsi Archaeodrome - Open Air Museum', 317 reviews, newest within weeks"
+    },
+    {
+      "name": "Climbing Brunelleschi's Dome",
+      "page_name": "The dome climb",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Brunelleschi's dome', 12,281 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Giardino del Bobolino",
+      "page_name": "Bobolino playground",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Giardino del Bobolino', 516 reviews, newest shown a day ago"
+    },
+    {
+      "name": "Giardino dell'Orticoltura",
+      "page_name": "Giardino dell’Orticoltura",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Giardino dell'Orticoltura', 219 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "The Porcellino Fountain",
+      "page_name": "The Porcellino fountain",
+      "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Fontana del Porcellino', 13,159 reviews, newest shown 4 days ago"
     }
   ],
   "left_out": [
@@ -149,7 +177,24 @@
     {
       "name": "Calcio Fiorentino",
       "why": "a once-a-year match, not a place"
+    },
+    {
+      "name": "Museo dei Ragazzi",
+      "why": "the map shows only Palazzo Vecchio, already in the app"
+    },
+    {
+      "name": "Climbing Stadio",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Villa Stibbert grounds",
+      "why": "the Stibbert Museum is already in the app"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Florence Tourism's 2026 family guide, all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -1,25 +1,120 @@
 {
   "town": "th-maehongson",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the two rows without ok; the twenty-three rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Riverhouse Restaurant",
-      "src": "https://www.google.com/maps/place/The+Teak+House+(Riverhouse+Hotel)/@18.1616604,97.9247394,17z",
-      "page_name": "The Teak House (Riverhouse Hotel) / ริเวอร์เฮ้าส์โฮเท็ล (บ้านไม้)",
-      "evidence": "Google Maps: 3-star hotel, 4.1★, 77 Langpanich Rd, Ban Kat, Mae Sariang (5W6H+MM) — the road and town the row names; described 'Informal hotel with dining & a pool', with rooms on sale for 26–27 Nov 2026 through Agoda and Booking.com; nothing says closed. The ok rests on the hotel being open and listed with dining; the restaurant has no listing of its own. Map query now names the hotel and its number",
-      "ok": "2026-11"
-    }
-  ],
-  "kept_without_ok": [],
-  "removed": [
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the two rows without ok; the twenty-three rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read",
+      "confirmed": [
+        {
+          "name": "Riverhouse Restaurant",
+          "src": "https://www.google.com/maps/place/The+Teak+House+(Riverhouse+Hotel)/@18.1616604,97.9247394,17z",
+          "page_name": "The Teak House (Riverhouse Hotel) / ริเวอร์เฮ้าส์โฮเท็ล (บ้านไม้)",
+          "evidence": "Google Maps: 3-star hotel, 4.1★, 77 Langpanich Rd, Ban Kat, Mae Sariang (5W6H+MM) — the road and town the row names; described 'Informal hotel with dining & a pool', with rooms on sale for 26–27 Nov 2026 through Agoda and Booking.com; nothing says closed. The ok rests on the hotel being open and listed with dining; the restaurant has no listing of its own. Map query now names the hotel and its number",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Pa Sri Bua",
+          "src": "https://www.google.com/maps/place/Pa+Si+Bua/@19.3014478,97.9676184,17z",
+          "reason": "Google Maps lists Pa Si Bua / ร้านป้าศรีบัว on Singha-nat Barm Rung Rd, Pang Mu (8X29+H2H) — the road the row names — as 'Permanently closed'"
+        }
+      ]
+    },
     {
-      "name": "Pa Sri Bua",
-      "src": "https://www.google.com/maps/place/Pa+Si+Bua/@19.3014478,97.9676184,17z",
-      "reason": "Google Maps lists Pa Si Bua / ร้านป้าศรีบัว on Singha-nat Barm Rung Rd, Pang Mu (8X29+H2H) — the road the row names — as 'Permanently closed'"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from Wongnai (Jun 2025) and TrueID (Feb and Dec 2025), all passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Khao Soi Phi Nong (Pai)",
+          "page_name": "ข้าวซอยพี่น้อง",
+          "src": "https://www.wongnai.com/listings/restaurants-maehongson",
+          "date": "2025-06",
+          "map": "Google Maps 'ข้าวซอยพี่น้อง' (Pai), 346 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Thana Phochana (Khun Yuam)",
+          "page_name": "ธนโภชนา ขุนยวม",
+          "src": "https://www.wongnai.com/listings/restaurants-maehongson",
+          "date": "2025-06",
+          "map": "Google Maps 'ธน โภชนาขุนยวม', 206 reviews, newest shown 7 days ago"
+        },
+        {
+          "name": "Laab Aroi Thi Sud Nai Lok",
+          "page_name": "ลาบอร่อยที่สุดในโลก",
+          "src": "https://www.wongnai.com/listings/restaurants-maehongson",
+          "date": "2025-06",
+          "map": "Google Maps 'ร้านลาบอร่อยที่สุดในโลก (หมวดเดช)' (Pai), 281 reviews, newest shown 19 days ago"
+        },
+        {
+          "name": "Mae Luang Phen (Mae Sariang)",
+          "page_name": "ไส้อั่ว เนื้อทุบ แม่หลวงเพ็ญ",
+          "src": "https://www.wongnai.com/listings/restaurants-maehongson",
+          "date": "2025-06",
+          "map": "Google Maps 'จิ้นตุ๊บ ไส้อั่ว แม่หลวงเพ็ญ', 332 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Hoi Kha Noodles (Ban Ja Bo)",
+          "page_name": "ร้านก๋วยเตี๋ยวห้อยขา บ้านจ่าโบ่",
+          "src": "https://travel.trueid.net/detail/dovvRJ5e5Dmo",
+          "date": "2025-12",
+          "map": "Google Maps 'ก๋วยเตี๋ยวห้อยขาบ้านจ่าโบ่', 2,561 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Yun Lai Viewpoint",
+          "page_name": "ทะเลหมอกหยุนไหล",
+          "src": "https://travel.trueid.net/detail/n2lpboApKWZ",
+          "date": "2025-02",
+          "map": "Google Maps 'จุดชมวิว ทะเลหมอก หยุนไหล', 5,155 reviews, newest shown 2 days ago"
+        },
+        {
+          "name": "Pai Historic Bridge",
+          "page_name": "สะพานประวัติศาสตร์ปาย",
+          "src": "https://travel.trueid.net/detail/n2lpboApKWZ",
+          "date": "2025-02",
+          "map": "Google Maps 'สะพานประวัติศาสตร์ ท่าปาย', 2,740 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Art in Chai (Pai)",
+          "page_name": "Art in Chai",
+          "src": "https://www.byklo.rent/th/blog/best-restaurants-in-pai-guide/",
+          "date": "2026-05",
+          "map": "Google Maps 'Art in Chai' (Pai), newest review shown a week ago"
+        },
+        {
+          "name": "Coffee in Love (Pai)",
+          "page_name": "Coffee in Love",
+          "src": "https://www.byklo.rent/th/blog/best-restaurants-in-pai-guide/",
+          "date": "2026-05",
+          "map": "Google Maps 'Coffee in Love' (Pai), newest review shown 3 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "บ้านจ่าโบ่ (the village itself)",
+          "why": "the map has the village with no reviews; its noodle shop went in"
+        },
+        {
+          "name": "Witching Well",
+          "why": "the map search came back marked permanently closed"
+        },
+        {
+          "name": "Wongnai attraction pages",
+          "why": "no page date"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 3 rows from Byklo's Pai guide (2025–2026), all passed library-check.cjs, 2 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
   ]
 }

@@ -1,0 +1,61 @@
+{
+  "town": "jp-fukuoka",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from Cities Insider (Apr 2026) and GOOD LUCK TRIP (Oct 2025), all passed library-check.cjs, 2 went in",
+  "added": [
+    {
+      "name": "Kyushu National Museum",
+      "page_name": "Kyushu National Museum",
+      "src": "https://www.gltjp.com/en/article/item/20881/",
+      "date": "2025-10",
+      "map": "Google Maps 'พิพิธภัณฑสถานแห่งชาติคิวชู' (Kyushu National Museum), 10,460 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Dazaifu Amusement Park",
+      "page_name": "Dazaifu Amusement Park",
+      "src": "https://www.gltjp.com/en/article/item/20881/",
+      "date": "2025-10",
+      "map": "Google Maps 'Dazaifu Amusement Park', 1,086 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "Full Full Kazenomori",
+      "page_name": "フルフル風の森",
+      "src": "https://macaro-ni.jp/175680",
+      "date": "2026-04",
+      "map": "Google Maps 'Full Full Kazenomori', newest review shown 2 days ago"
+    },
+    {
+      "name": "Kiyokawa Salon",
+      "page_name": "清川サロン",
+      "src": "https://macaro-ni.jp/175680",
+      "date": "2026-04",
+      "map": "Google Maps '清川SALON', newest review shown a month ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Hakata Issou",
+      "why": "a ramen chain; the page names no branch"
+    },
+    {
+      "name": "The Museum of Nature and Human History, TOTO Museum",
+      "why": "in Kitakyushu, outside the town"
+    },
+    {
+      "name": "あそびパークPLUS マークイズ福岡ももち店",
+      "why": "newest Google Maps review 8 months old"
+    },
+    {
+      "name": "Ninja Park Momochi, Pietro Jirohmaru",
+      "why": "no 2025–2026 page with the place or its child feature"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from macaroni (Apr 2026) and NAP Camp (Apr 2026), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

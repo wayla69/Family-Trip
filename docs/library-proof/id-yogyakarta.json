@@ -5,28 +5,191 @@
   "rule": "library-check.cjs, then the Google Maps Reviews tab: ok only when not marked closed, with a review from the last six months, and the map's name and address matching the page's.",
   "agents": "one Haiku agent; 21 rows offered, 21 passed library-check.cjs, 15 went in",
   "added": [
-    { "name": "De Tropen Jogja Kitchen", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 849 reviews, newest '2 months ago'" },
-    { "name": "Ciblon Dining and Coffee", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 483 reviews, newest 'a week ago'" },
-    { "name": "Champa Jogja", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 847 reviews, newest 'a week ago'" },
-    { "name": "Isvara Riverside", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 3,698 reviews, newest '3 weeks ago'" },
-    { "name": "Gubug Makan Mang Engking (Soragan)", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 8,597 reviews, newest 'a week ago'" },
-    { "name": "Nanamia Pizzeria (South)", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 9,143 reviews, newest 'a week ago'" },
-    { "name": "Otadan Resto", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 2,036 reviews, newest 'a week ago'" },
-    { "name": "Warung Watoe Gadjah", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 2,749 reviews, newest '3 months ago'" },
-    { "name": "The Westlake Resto", "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds", "date": "2026-06", "map": "Google Maps 9,972 reviews, newest '2 weeks ago'" },
-    { "name": "Azmya Playground", "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun", "date": "2026-06", "map": "Google Maps 'Azmya Playground Prambanan', 381 reviews, newest '3 months ago'" },
-    { "name": "Dubidu Playground", "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun", "date": "2026-06", "map": "Google Maps 'Dubidu Playground Jogja', 385 reviews, newest '3 months ago'" },
-    { "name": "Happytopia", "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun", "date": "2026-06", "map": "Google Maps 'HAPPYTOPIA Jogja City Mall', 30 reviews, newest '3 months ago'" },
-    { "name": "Kids Fun Park", "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun", "date": "2026-06", "map": "Google Maps 'Kids Fun Park (Pusat)', 8,256 reviews, newest 'a week ago'" },
-    { "name": "Ibarbo Park", "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun", "date": "2026-06", "map": "Google Maps 12,439 reviews, newest 'a week ago'" },
-    { "name": "Oddish Family Hub", "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun", "date": "2026-06", "map": "Google Maps 647 reviews, newest 'a month ago'" }
+    {
+      "name": "De Tropen Jogja Kitchen",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 849 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Ciblon Dining and Coffee",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 483 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Champa Jogja",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 847 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Isvara Riverside",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 3,698 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Gubug Makan Mang Engking (Soragan)",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 8,597 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Nanamia Pizzeria (South)",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 9,143 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Otadan Resto",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 2,036 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Warung Watoe Gadjah",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 2,749 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "The Westlake Resto",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 9,972 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Azmya Playground",
+      "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+      "date": "2026-06",
+      "map": "Google Maps 'Azmya Playground Prambanan', 381 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Dubidu Playground",
+      "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+      "date": "2026-06",
+      "map": "Google Maps 'Dubidu Playground Jogja', 385 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Happytopia",
+      "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+      "date": "2026-06",
+      "map": "Google Maps 'HAPPYTOPIA Jogja City Mall', 30 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Kids Fun Park",
+      "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+      "date": "2026-06",
+      "map": "Google Maps 'Kids Fun Park (Pusat)', 8,256 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Ibarbo Park",
+      "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+      "date": "2026-06",
+      "map": "Google Maps 12,439 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Oddish Family Hub",
+      "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+      "date": "2026-06",
+      "map": "Google Maps 647 reviews, newest 'a month ago'"
+    },
+    {
+      "name": "Krasan Cafe n Resto",
+      "page_name": "Krasan Cafe N Resto",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 'Krasan Cafe n Resto' (Nyamplung, Kredenan), newest review shown 8 hours ago"
+    },
+    {
+      "name": "Little Goo Eatery & Playzone",
+      "page_name": "Little Goo Eatery & Playground",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 'Little Goo Eatery & Playzone' (Jl. Palagan Tentara Pelajar No.8), newest review shown 3 days ago"
+    },
+    {
+      "name": "Padiku Eatery & Coffee",
+      "page_name": "Padiku Eatery & Coffee",
+      "src": "https://whatsnewindonesia.com/yogyakarta/kid-friendly-restaurants-yogyakarta-playgrounds",
+      "date": "2026-06",
+      "map": "Google Maps 'PADIKU Eatery & Coffee' (Jl. Werkudoro), newest review shown 2 days ago"
+    },
+    {
+      "name": "Dreamland Jogja outdoor playground",
+      "page_name": "Dreamland Jogja Outdoor",
+      "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+      "date": "2025-06",
+      "map": "Google Maps 'Dreamland Jogja Outdoor Playground' (Kledokan, Caturtunggal), newest review shown 5 months ago"
+    },
+    {
+      "name": "Gajah Wong playground",
+      "page_name": "Taman Bermain Gajah Wong",
+      "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+      "date": "2025-06",
+      "map": "Google Maps 'Taman Bermain Gajah Wong' (Jl. Sidobali), newest review shown 2 months ago"
+    },
+    {
+      "name": "The Lost World Castle",
+      "page_name": "The Lost World Castle",
+      "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+      "date": "2025-06",
+      "map": "Google Maps 'The Lost World Castle' (Jl. Petung Merapi), newest review shown a day ago"
+    },
+    {
+      "name": "Gamplong film studio",
+      "page_name": "Studio Alam Gamplong",
+      "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+      "date": "2025-06",
+      "map": "Google Maps 'Gamplong Studio Alam' (Jl. Gamplong No.1), newest review shown 5 days ago"
+    },
+    {
+      "name": "Cokelat Monggo chocolate museum and factory",
+      "page_name": "Museum & Factory by Cokelat Monggo",
+      "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+      "date": "2025-06",
+      "map": "Google Maps 'Chocolate Monggo Museum New Factory Store' (Jl. Tugu Gentong), newest review shown 7 hours ago"
+    }
   ],
   "left_out": [
-    { "name": "Joglo Resodinomo", "why": "the map's place is in Sedayu, not at the page's Jl. Kaliurang KM.15" },
-    { "name": "Doremi Playground", "why": "several branches; the page does not say which one" },
-    { "name": "Playtopia", "why": "two branches in two malls; the page does not say which one" },
-    { "name": "Dreamland Jogja", "why": "the map's newest review is a year old" },
-    { "name": "Cocoland Lippo Plaza Jogja", "why": "the map shows only 'Playground Lippo Plaza' with 9 reviews, the newest 7 months old" }
+    {
+      "name": "Joglo Resodinomo",
+      "why": "the map's place is in Sedayu, not at the page's Jl. Kaliurang KM.15"
+    },
+    {
+      "name": "Doremi Playground",
+      "why": "several branches; the page does not say which one"
+    },
+    {
+      "name": "Playtopia",
+      "why": "two branches in two malls; the page does not say which one"
+    },
+    {
+      "name": "Dreamland Jogja",
+      "why": "the map's newest review is a year old"
+    },
+    {
+      "name": "Cocoland Lippo Plaza Jogja",
+      "why": "the map shows only 'Playground Lippo Plaza' with 9 reviews, the newest 7 months old"
+    },
+    {
+      "name": "Joglo Resodinomo, Kampung Kecil, Kedai Tanya, Lovin Milk, House of Bakpiaku",
+      "why": "the map puts each on another street than the page"
+    },
+    {
+      "name": "Cocoland Jogja City Mall",
+      "why": "newest Google Maps review 10 months old"
+    },
+    {
+      "name": "Bhumi Merapi, Merapi Park",
+      "why": "horse riding"
+    }
   ],
-  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them. Prices: none printed on the source page, so 'Check the price'."
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them. Prices: none printed on the source page, so 'Check the price'.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 14 rows from What's New Indonesia (Jun 2026) and HaiBunda (Jun 2025), all passed library-check.cjs, 8 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

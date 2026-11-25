@@ -42,6 +42,36 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Lonely Planet (Jul 2025) and Fairmont (official), all passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Water Museum (Musée de l'Eau)",
+          "page_name": "Water Museum",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "date": "2025-07",
+          "map": "Google Maps 'Water Museum' (Marrakesh), newest review shown 2 days ago"
+        },
+        {
+          "name": "Meydene",
+          "page_name": "Meydene",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "date": "2025-07",
+          "map": "Google Maps 'Meydene' (M Avenue Marrakech), newest review shown 5 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Al Aïn (Fairmont Royal Palm)",
+          "why": "the kids' menu offer is for hotel guests only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

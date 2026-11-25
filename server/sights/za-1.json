@@ -454,6 +454,43 @@
           },
           "q": "The Bike Park at Constantia Uitsig, Constantia",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.capetownwithkids.com/rainy-days/",
+          "name": {
+            "th": "รัชเอ็กซ์ตรีม แคลร์มอนต์",
+            "en": "Rush Extreme (Claremont)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนสเตกแมน แคลร์มอนต์ เคปทาวน์",
+            "en": "Stegman Road, Claremont, Cape Town"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนและผจญภัยในร่ม",
+            "en": "An indoor trampoline and adventure park"
+          },
+          "why": {
+            "th": "กระโดดในร่ม เหมาะกับวันฝนตก",
+            "en": "Indoor jumping for a rainy day"
+          },
+          "q": "Rush Extreme Claremont, 25 Stegman Rd",
+          "ok": "2026-11"
         }
       ]
     },

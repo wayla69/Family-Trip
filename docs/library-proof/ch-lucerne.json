@@ -32,6 +32,27 @@
       "src": "https://holidaystoswitzerland.com/11-rainy-day-activities-in-lucerne/",
       "date": "2026-11",
       "map": "Google Maps 'Sammlung Rosengart', 1,070 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Mountain Restaurant Fürenalp",
+      "page_name": "Restaurant Fürenalp",
+      "src": "https://engelberg.ch/en/summer/families/children-playgrounds/playscape-fuerenalp",
+      "date": "official",
+      "map": "Google Maps 'Mountain Restaurant Fürenalp' (Fürenalp 1), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Fürenalp playground",
+      "page_name": "Playground Fürenalp",
+      "src": "https://engelberg.ch/en/summer/families/children-playgrounds/playscape-fuerenalp",
+      "date": "official",
+      "map": "Google Maps the playground has no map entry of its own; it is beside 'Mountain Restaurant Fürenalp' (Fürenalp 1), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Globi's alpine playground (Ristis)",
+      "page_name": "Globi's alpine playground",
+      "src": "https://engelberg.ch/en/summer/families/children-playgrounds/playscape-ristis/",
+      "date": "official",
+      "map": "Google Maps 'Globis Alpenspielplatz' (Ob. Flühmatt 2), newest review shown 3 weeks ago"
     }
   ],
   "left_out": [
@@ -42,7 +63,20 @@
     {
       "name": "familienleben.ch restaurant list",
       "why": "dated 2024"
+    },
+    {
+      "name": "OX Family Restaurant",
+      "why": "the newest review on the map is 9 months old"
+    },
+    {
+      "name": "Eienwäldli rock pool",
+      "why": "the map shows only the resort, no review dates"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Engelberg tourism (official), all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

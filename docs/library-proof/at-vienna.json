@@ -81,13 +81,33 @@
       "src": "https://www.dschungel-cafe.at/de",
       "date": "official",
       "map": "Google Maps 'DSCHUNGEL WIEN Theaterhaus für junges Publikum', 422 reviews, newest 'a month ago'"
+    },
+    {
+      "name": "Monki Park (Millennium City)",
+      "page_name": "Monki Park",
+      "src": "https://monkipark.at",
+      "date": "official",
+      "map": "Google Maps 'Monki Park', newest review shown 8 days ago"
     }
   ],
   "left_out": [
     {
       "name": "Gmoa Keller",
       "why": "its only source is restaurantsforkings.com"
+    },
+    {
+      "name": "Meierei",
+      "why": "the page does not tie it clearly to one district (there are two Meiereis)"
+    },
+    {
+      "name": "Family Fun, Jump Around, Seversaal",
+      "why": "pages behind a bot check"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 2 rows from 1000things (May 2026) and Monki Park's own site, both passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

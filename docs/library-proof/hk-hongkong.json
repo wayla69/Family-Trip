@@ -1,0 +1,27 @@
+{
+  "town": "hk-hongkong",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 3 rows from Cathay Pacific and family pages (2026) passed library-check.cjs, 1 went in; no thing to do passed",
+  "added": [
+    {
+      "name": "Smoke & Barrel",
+      "page_name": "Smoke & Barrel",
+      "src": "https://www.cathaypacific.com/cx/en_GB/inspiration/dining/best-child-friendly-restaurants-hong-kong.html",
+      "date": "2026-06",
+      "map": "Google Maps 443 reviews, newest shown '1 day ago'; the map's address (2/F, Wyndham Mansion, 32 Wyndham St) matches the page — the move noted in docs/EATS.md is now confirmed"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Transformers: The Ark",
+      "why": "closed in Hong Kong, Feb 2025 (docs/EATS.md)"
+    },
+    {
+      "name": "Baumhaus",
+      "why": "the map marks it permanently closed"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

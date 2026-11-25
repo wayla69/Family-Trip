@@ -70,6 +70,29 @@
         }
       ],
       "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 1 row from Le Petit Chef's own page, passed library-check.cjs, went in",
+      "added": [
+        {
+          "name": "Le Petit Chef (Park Hyatt Siem Reap)",
+          "page_name": "Le Petit Chef",
+          "src": "https://www.lepetitchef.com/siem-reap",
+          "date": "official",
+          "map": "Google Maps 'Le Petit Chef - Siem Reap', newest review shown 5 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Siem Reap Play Zone, Heritage Mall kids park, Kandal Village",
+          "why": "no dated page, or no district on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

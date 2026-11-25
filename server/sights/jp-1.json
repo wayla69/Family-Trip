@@ -460,7 +460,270 @@
       {"name":{"en":"Ameyoko","th":"อาเมโยโกะ"},"kind":"market","area":{"en":"Ueno","th":"อูเอโนะ"},"what":{"en":"Bazaar-like market street near Ueno Station with seafood skewers, candy and snacks.","th":"ถนนตลาดคล้ายตลาดนัดใกล้สถานีอูเอโนะ มีไม้เสียบอาหารทะเล ลูกอม และของว่าง"},"why":{"en":"The page lists it with the zoo and museums as the most concentrated family area in central Tokyo.","th":"หน้าเว็บจัดไว้กับสวนสัตว์และพิพิธภัณฑ์ เป็นพื้นที่ครอบครัวที่หนาแน่นที่สุดในใจกลางโตเกียว"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ameyoko, Ueno, Tokyo","ok":"2026-11","src":"https://www.japan-atlas.com/guides/tokyo-family-guide/"},
       {"name":{"en":"Shinobazu Pond","th":"สระชิโนบาสุ"},"kind":"park","area":{"en":"Ueno","th":"อูเอโนะ"},"what":{"en":"Pond in Ueno Park with pedal boats, a calm break near the zoo and museums.","th":"สระในสวนอูเอโนะ มีเรือถีบ เป็นที่พักสงบใกล้สวนสัตว์และพิพิธภัณฑ์"},"why":{"en":"The page calls it a calming break with pedal boats.","th":"หน้าเว็บเรียกว่าเป็นที่พักที่ผ่อนคลายด้วยเรือถีบ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shinobazu Pond, Ueno Park, Tokyo","ok":"2026-11","src":"https://www.japan-atlas.com/guides/tokyo-family-guide/"},
       {"name":{"en":"Yuyake Dandan","th":"ยูยาเกะ ดันดัน"},"kind":"views","area":{"en":"Yanaka Ginza, Nippori side","th":"ยาไนกินซ่า ฝั่งนิปโปริ"},"what":{"en":"Sunset staircase at the eastern end of Yanaka Ginza, the viewpoint over the shopping street.","th":"บันไดชมพระอาทิตย์ตกที่ปลายตะวันออกของยาไนกินซ่า เป็นจุดชมวิวถนนช็อปปิ้ง"},"why":{"en":"The page calls it the neighbourhood's viewpoint and meeting spot.","th":"หน้าเว็บเรียกว่าเป็นจุดชมวิวและจุดนัดพบของย่านนี้"},"tip":{"en":"Golden hour is the best time to go, per the page.","th":"ชั่วโมงทองเป็นเวลาไปที่ดีที่สุด ตามหน้าเว็บ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Yuyake Dandan, Yanaka, Tokyo","ok":"2026-11","src":"https://cheku.co/blogs/japan-travel-tips/things-to-do-in-yanaka-ginza"},
-      {"name":{"en":"Kawaii Monsterland","th":"คาวาอี มอนสเตอร์แลนด์"},"kind":"show","area":{"en":"Takeshita Street, Harajuku","th":"ถนนทาเคชิตะ ฮาราจูกุ"},"what":{"en":"Bright, kitschy one-hour parade and show on Takeshita Street with a ride at extra cost.","th":"ขบวนพาเหรดและโชว์สีสดใสราวหนึ่งชั่วโมงบนถนนทาเคชิตะ มีเครื่องเล่นเสียเงินเพิ่ม"},"why":{"en":"The page says it is a bit of fun for kids who love bright colours and over-the-top things.","th":"หน้าเว็บบอกว่าเป็นความสนุกสำหรับเด็กที่ชอบสีสดและอะไรเกินจริง"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kawaii Monsterland, Takeshita Street, Harajuku, Tokyo","ok":"2026-11","src":"https://backyardtravelfamily.com/things-to-do-with-kids-in-tokyo/"}
+      {"name":{"en":"Kawaii Monsterland","th":"คาวาอี มอนสเตอร์แลนด์"},"kind":"show","area":{"en":"Takeshita Street, Harajuku","th":"ถนนทาเคชิตะ ฮาราจูกุ"},"what":{"en":"Bright, kitschy one-hour parade and show on Takeshita Street with a ride at extra cost.","th":"ขบวนพาเหรดและโชว์สีสดใสราวหนึ่งชั่วโมงบนถนนทาเคชิตะ มีเครื่องเล่นเสียเงินเพิ่ม"},"why":{"en":"The page says it is a bit of fun for kids who love bright colours and over-the-top things.","th":"หน้าเว็บบอกว่าเป็นความสนุกสำหรับเด็กที่ชอบสีสดและอะไรเกินจริง"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kawaii Monsterland, Takeshita Street, Harajuku, Tokyo","ok":"2026-11","src":"https://backyardtravelfamily.com/things-to-do-with-kids-in-tokyo/"},
+        {
+          "local": "サンリオピューロランド",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.magical-trip.com/media/places-for-children-in-tokyo-10-best-things-to-do-with-kids/",
+          "name": {
+            "th": "ซานริโอ พูโรแลนด์",
+            "en": "Sanrio Puroland"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ทามะ โตเกียว",
+            "en": "Tama City, Tokyo"
+          },
+          "what": {
+            "th": "พบเฮลโลคิตตี้และมายเมโลดี้ มีเครื่องเล่นและโชว์บนเวที",
+            "en": "Meet Hello Kitty and My Melody, with rides and stage shows"
+          },
+          "why": {
+            "th": "ตัวการ์ตูน เครื่องเล่น และโชว์",
+            "en": "Characters, themed rides and shows"
+          },
+          "tip": {
+            "th": "เวลาเปิดไม่แน่นอน เช็กปฏิทินทางการก่อน",
+            "en": "Hours vary; check the official calendar"
+          },
+          "q": "サンリオピューロランド",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "นินจา ทริก เฮาส์",
+            "en": "Ninja Trick House"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชินจูกุ โตเกียว",
+            "en": "Shinjuku, Tokyo"
+          },
+          "what": {
+            "th": "เรียนรู้วิชาลับของนินจา",
+            "en": "Learn the ninja's secret techniques"
+          },
+          "why": {
+            "th": "ให้เด็กได้ลองเป็นนินจาจริง ๆ",
+            "en": "A hands-on ninja experience for children"
+          },
+          "q": "Ninja Trick House In Tokyo, Shinjuku",
+          "ok": "2026-11"
+        },
+        {
+          "local": "浜離宮恩賜庭園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "สวนฮามาริคิว",
+            "en": "Hama-rikyu Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ชูโอ โตเกียว",
+            "en": "Chuo, Tokyo"
+          },
+          "what": {
+            "th": "สวนญี่ปุ่นแบบดั้งเดิมกลางโตเกียว",
+            "en": "A traditional garden in central Tokyo"
+          },
+          "why": {
+            "th": "มีที่ให้เด็กเดินเล่นกว้าง",
+            "en": "Room for children to wander"
+          },
+          "q": "浜離宮恩賜庭園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "有栖川宮記念公園",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "สวนอาริซูกาวะ",
+            "en": "Arisugawa Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฮิโรโอะ โตเกียว",
+            "en": "Hiroo, Tokyo"
+          },
+          "what": {
+            "th": "สวนสาธารณะแบบญี่ปุ่น",
+            "en": "A park with traditional gardens"
+          },
+          "why": {
+            "th": "มีพื้นที่ให้เด็กสำรวจ",
+            "en": "Room for children to explore"
+          },
+          "q": "有栖川宮記念公園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上野恩賜公園",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "สวนอุเอโนะ",
+            "en": "Ueno Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อุเอโนะ โตเกียว",
+            "en": "Ueno, Tokyo"
+          },
+          "what": {
+            "th": "สวนใหญ่มีทะเลสาบ ศาลเจ้า และสวนสัตว์",
+            "en": "A large park with a lake, shrines and the zoo"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น อยู่ได้ทั้งวัน",
+            "en": "Playgrounds, and room for a whole day"
+          },
+          "q": "上野恩賜公園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "จุดชมวิวอาคารศาลาว่าการกรุงโตเกียว",
+            "en": "Tokyo Metropolitan Government observation decks"
+          },
+          "kind": "views",
+          "area": {
+            "th": "นิชิชินจูกุ โตเกียว",
+            "en": "Nishi-Shinjuku, Tokyo"
+          },
+          "what": {
+            "th": "จุดชมวิวฟรี อาจเห็นภูเขาไฟฟูจิ",
+            "en": "Free observation decks with a glimpse of Mt Fuji"
+          },
+          "why": {
+            "th": "ชมวิวเมืองจากที่สูง",
+            "en": "A high view over the city"
+          },
+          "q": "東京都庁 展望室",
+          "ok": "2026-11"
+        },
+        {
+          "local": "京王あそびの森HUGHUG",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://global.tama.metro.tokyo.lg.jp/articles/5-family-friendly-places-to-explore-in-minami-tama-west-tokyo/",
+          "name": {
+            "th": "เคโอ อาโซบิโนะโมริ ฮักฮัก",
+            "en": "Keio Asobi no Mori HUGHUG"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทามะโดบุตสึโคเอ็น โตเกียว",
+            "en": "Tama-dobutsukoen, Hino, Tokyo"
+          },
+          "what": {
+            "th": "โซนเล่นในร่ม มีตาข่ายปีนสูง 12 เมตร",
+            "en": "An indoor play area with a 12-metre climbing net"
+          },
+          "why": {
+            "th": "สนามเด็กเล่น ติดคาเฟ่และรถไฟ HUGHUG",
+            "en": "Playgrounds, next to the HUGHUG café and train"
+          },
+          "q": "京王あそびの森HUGHUG",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -973,7 +1236,167 @@
       {"name":{"en":"Osaka Korea Town","th":"โอซาก้า โคเรียทาวน์"},"kind":"market","area":{"en":"Tsuruhashi","th":"ซึรุฮาชิ"},"what":{"en":"A shopping area of butchers, fishmongers, produce stalls and kimchi shops around Tsuruhashi Station.","th":"ย่านช้อปปิ้งของคนขายเนื้อ พ่อค้าปลา ผักผลไม้ และร้านกิมจิรอบสถานีซึรุฮาชิ"},"why":{"en":"Korean street food and an everyday shopping feel, per the page.","th":"หน้าเว็บบอกว่ามีของกินข้างทางแบบเกาหลีและบรรยากาศช้อปปิ้งประจำวัน"},"tip":{"en":"Best in the morning, when the streets are busiest with shoppers.","th":"ดีที่สุดตอนเช้า เมื่อถนนคนช้อปแน่นที่สุด"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Osaka Korea Town, Tsuruhashi, Osaka","ok":"2026-11","src":"https://www.cityunscripted.com/travel-magazine/hidden-gems-in-osaka"},
       {"name":{"en":"Namba Yasaka Shrine","th":"ศาลเจ้านัมบะยาซากะ"},"kind":"culture","area":{"en":"Namba","th":"นัมบะ"},"what":{"en":"A shrine with a lion-head stage, a building-sized lion's head used for festival performances.","th":"ศาลเจ้าที่มีเวทีหัวสิงโต หัวสิงโตขนาดตึกใช้ในการแสดงเทศกาล"},"why":{"en":"At night the floodlights light up the lion's open jaws, per the page.","th":"หน้าเว็บบอกว่ากลางคืนไฟส่องปากสิงโตที่อ้าอยู่"},"tip":{"en":"Best from 19:00 to 22:00, when the stage is floodlit.","th":"ดีที่สุดระหว่าง 19:00–22:00 เมื่อเวทีมีไฟส่อง"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Namba Yasaka Shrine, Namba, Osaka","ok":"2026-11","src":"https://www.japanspecialtraveler.com/guides/osaka-hidden-gems/"},
       {"name":{"en":"Nakazakicho","th":"นากาซากิโจ"},"local":"中崎町","kind":"oldtown","area":{"en":"Nakazakinishi Station, Tanimachi Line","th":"สถานีนากาซากินิชิ สายทานิมาจิ"},"what":{"en":"Preserved 1920s–1950s wooden row houses that now hold independent cafés, galleries and vintage shops.","th":"บ้านแถวไม้ที่อนุรักษ์จากยุคโชวะตอนต้นถึงกลาง ตอนนี้มีคาเฟ่อิสระ แกลเลอรี และร้านของเก่า"},"why":{"en":"Quiet streets for an unhurried afternoon, away from the big department stores.","th":"ถนนเงียบๆ สำหรับบ่ายที่ไม่รีบ ห่างจากห้างใหญ่"},"ages":[1,1,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nakazakicho, Osaka","ok":"2026-11","src":"https://www.japanspecialtraveler.com/guides/osaka-hidden-gems/"},
-      {"name":{"en":"Karahori","th":"คารามาจิ"},"kind":"oldtown","area":{"en":"Just south of Osaka Castle","th":"ทางใต้ของปราสาทโอซาก้า"},"what":{"en":"Old townhouses beside family-run shops, small galleries and cafés, along Karahori Shopping Street.","th":"บ้านแถวเก่าข้างร้านของครอบครัว แกลเลอรีเล็กๆ และคาเฟ่ ตามถนนช้อปปิ้งคารามาจิ"},"why":{"en":"Smaller alleys to wander, rather than a checklist.","th":"หน้าเว็บบอกว่ามีตรอกเล็กให้เดินเล่น มากกว่าเช็กลิสต์"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Karahori, Osaka","ok":"2026-11","src":"https://www.cityunscripted.com/travel-magazine/hidden-gems-in-osaka"}
+      {"name":{"en":"Karahori","th":"คารามาจิ"},"kind":"oldtown","area":{"en":"Just south of Osaka Castle","th":"ทางใต้ของปราสาทโอซาก้า"},"what":{"en":"Old townhouses beside family-run shops, small galleries and cafés, along Karahori Shopping Street.","th":"บ้านแถวเก่าข้างร้านของครอบครัว แกลเลอรีเล็กๆ และคาเฟ่ ตามถนนช้อปปิ้งคารามาจิ"},"why":{"en":"Smaller alleys to wander, rather than a checklist.","th":"หน้าเว็บบอกว่ามีตรอกเล็กให้เดินเล่น มากกว่าเช็กลิสต์"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Karahori, Osaka","ok":"2026-11","src":"https://www.cityunscripted.com/travel-magazine/hidden-gems-in-osaka"},
+        {
+          "local": "扇町公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "สวนโองิมาจิ",
+            "en": "Ogimachi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คิตะ ด้านหลังคิดส์พลาซ่า โอซาก้า",
+            "en": "Kita, behind Kids Plaza, Osaka"
+          },
+          "what": {
+            "th": "สวนกลางเมือง มีผนังปีนป่าย บ่อทราย และสไลเดอร์",
+            "en": "A central park with a climbing wall, sandpit and slides"
+          },
+          "why": {
+            "th": "บ่อทรายและสไลเดอร์เล็กสำหรับเด็กเล็ก ผนังปีนสำหรับเด็กโต",
+            "en": "Sand and small slides for little ones, a climbing wall for older ones"
+          },
+          "tip": {
+            "th": "ไปพร้อมคิดส์พลาซ่าโอซาก้าได้ทั้งวัน",
+            "en": "Combine it with Kids Plaza Osaka for a full day"
+          },
+          "q": "扇町公園, 大阪",
+          "ok": "2026-11"
+        },
+        {
+          "local": "服部緑地",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "สวนฮัตโตริ เรียวคุจิ",
+            "en": "Hattori Ryokuchi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โทโยนากะ โอซาก้า",
+            "en": "Toyonaka, Osaka"
+          },
+          "what": {
+            "th": "สวนใหญ่มีเครื่องเล่นขนาดใหญ่",
+            "en": "A big park with large playscapes"
+          },
+          "why": {
+            "th": "สนามหญ้าเรียบและสไลเดอร์ไม่ชันสำหรับเด็กเล็ก",
+            "en": "Flat lawns and gentle slides for little ones"
+          },
+          "q": "服部緑地",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鶴見緑地",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "สวนสึรุมิ เรียวคุจิ",
+            "en": "Tsurumi Ryokuchi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "สึรุมิ โอซาก้า",
+            "en": "Tsurumi, Osaka"
+          },
+          "what": {
+            "th": "สวนใหญ่เข้าฟรี มีกังหันลมและทุ่งดอกไม้",
+            "en": "A big free park with a windmill and flower fields"
+          },
+          "why": {
+            "th": "วิ่งเล่นท่ามกลางดอกไม้",
+            "en": "Room to run among the flowers"
+          },
+          "tip": {
+            "th": "สวยที่สุดหน้าใบไม้ผลิ (ซากุระ) และใบไม้ร่วง (คอสมอส)",
+            "en": "Best in spring (cherry blossom) and autumn (cosmos)"
+          },
+          "q": "花博記念公園鶴見緑地",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大泉緑地 冒険ランド",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "โออิซุมิ เรียวคุจิ แอดเวนเจอร์แลนด์",
+            "en": "Oizumi Ryokuchi Adventure Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ซาไก โอซาก้า",
+            "en": "Sakai, Osaka"
+          },
+          "what": {
+            "th": "ลานเล่นมีสไลเดอร์ลูกกลิ้งยาว",
+            "en": "A play area with long roller slides"
+          },
+          "why": {
+            "th": "สไลเดอร์ลูกกลิ้งยาวสำหรับเด็กวัยเรียน",
+            "en": "A long roller slide for school-age children"
+          },
+          "tip": {
+            "th": "สไลเดอร์ลูกกลิ้งมีโซนแยก",
+            "en": "The roller slide has its own zones"
+          },
+          "q": "大泉緑地 冒険ランド",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -1425,7 +1848,204 @@
       {"name":{"en":"Kyoto Museum of Crafts and Design","th":"พิพิธภัณฑ์งานฝีมือและการออกแบบเกียวโต"},"kind":"museumkid","area":{"en":"Okazaki","th":"โอคาซากิ"},"what":{"en":"All 74 official traditional crafts of Kyoto in one basement hall, with the raw materials behind incense and dyeing to handle.","th":"งานหัตถกรรมดั้งเดิม 74 ชนิดที่ได้รับการรับรองของเกียวโต รวมอยู่ในห้องใต้ดินเดียว มีวัตถุดิบของธูปและการย้อมให้จับได้"},"why":{"en":"Visitors can smell the woods and ring the metal orin bells, the page says.","th":"หน้าเว็บบอกว่าผู้เยี่ยมชมดมกลิ่นไม้และตีระฆังโลหะออริน (orin) ได้"},"tip":{"en":"A drop-in craft session every afternoon, 14:00 to 15:00.","th":"มีกิจกรรมงานฝีมือแบบไม่ต้องจองทุกบ่าย 14:00–15:00 น."},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"¥500","th":"¥500"},"book":"none","q":"Kyoto Museum of Crafts and Design, Okazaki, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-museum-of-crafts-and-design/"},
       {"name":{"en":"VS Park AEON Mall Kyoto","th":"วีเอสพาร์ค อีออนมอลล์เกียวโต"},"kind":"play","area":{"en":"Hachijo side of Kyoto Station","th":"ฝั่งฮาจิโจของสถานีเกียวโต"},"what":{"en":"An indoor variety-show sports park with more than two dozen physical activities.","th":"สวนกีฬาในร่มแบบวาไรตี้โชว์ มีกิจกรรมกายภาพกว่าสองโหล"},"why":{"en":"An easy, energetic rainy-day plan right by the station, the page says.","th":"หน้าเว็บบอกว่าเป็นแผนวันฝนตกที่ง่ายและสนุก อยู่ติดสถานี"},"tip":{"en":"Open 10:00 to 21:00, last entry 20:00.","th":"เปิด 10:00–21:00 น. เข้าได้ล่าสุด 20:00 น."},"ages":[0,0,1,2],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"VS Park AEON Mall Kyoto, Kyoto Station, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/vs-park-aeon-mall-kyoto/"},
       {"name":{"en":"GEAR","th":"เกียร์"},"kind":"show","area":{"en":"Kawaramachi-Sanjo","th":"คาวารามาจิ-ซันโจ"},"what":{"en":"A wordless, 90-minute stage show in a 72-seat room on the third floor of the 1928 Building.","th":"การแสดงบนเวทีไม่มีคำพูด ยาว 90 นาที ในห้องที่นั่ง 72 ที่นั่ง ชั้นสามของอาคาร 1928"},"why":{"en":"A wordless story, so no language is needed, the page says.","th":"เป็นเรื่องราวที่ไม่มีคำพูด จึงไม่ต้องใช้ภาษา ตามหน้าเว็บ"},"tip":{"en":"Be in your seat five minutes before the start; latecomers can be held up to 15 minutes.","th":"อยู่ที่นั่งก่อนเริ่มห้านาที ผู้มาสายอาจถูกกันไว้ได้ถึง 15 นาที"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"¥1,800 for children (Premium)","th":"¥1,800 เด็ก (พรีเมียม)"},"book":"rec","q":"GEAR, Kawaramachi-Sanjo, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/gear-non-verbal-theatre/"},
-      {"name":{"en":"Round1 Kyoto Kawaramachi","th":"ราวด์วัน เกียวโต คาวารามาจิ"},"kind":"play","area":{"en":"Kawaramachi","th":"คาวารามาจิ"},"what":{"en":"A large indoor amusement complex with bowling, a big arcade and karaoke.","th":"ศูนย์บันเทิงในร่มขนาดใหญ่ มีโบว์ลิ่ง อาร์เคดใหญ่ และคาราโอเกะ"},"why":{"en":"Stroller, nursing room and diaper change on site, and walk-in is fine, the page says.","th":"หน้าเว็บบอกว่ามีรถเข็นเด็ก ห้องให้นม และที่เปลี่ยนผ้าอ้อมในพื้นที่ และเดินเข้าได้โดยไม่ต้องจอง"},"ages":[0,1,2,2],"hrs":3,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Round1 Kyoto Kawaramachi, Kawaramachi, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/round1-kyoto-kawaramachi/"}
+      {"name":{"en":"Round1 Kyoto Kawaramachi","th":"ราวด์วัน เกียวโต คาวารามาจิ"},"kind":"play","area":{"en":"Kawaramachi","th":"คาวารามาจิ"},"what":{"en":"A large indoor amusement complex with bowling, a big arcade and karaoke.","th":"ศูนย์บันเทิงในร่มขนาดใหญ่ มีโบว์ลิ่ง อาร์เคดใหญ่ และคาราโอเกะ"},"why":{"en":"Stroller, nursing room and diaper change on site, and walk-in is fine, the page says.","th":"หน้าเว็บบอกว่ามีรถเข็นเด็ก ห้องให้นม และที่เปลี่ยนผ้าอ้อมในพื้นที่ และเดินเข้าได้โดยไม่ต้องจอง"},"ages":[0,1,2,2],"hrs":3,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Round1 Kyoto Kawaramachi, Kawaramachi, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/round1-kyoto-kawaramachi/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://kyoto.travel/en/travel-inspiration/attractions-for-kids/",
+          "name": {
+            "th": "อาริฮานะ เกียวโต",
+            "en": "AriHana Kyoto"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฮิงาชิยามะ ใกล้วัดคิโยมิซุ",
+            "en": "Higashiyama, near Kiyomizu-dera"
+          },
+          "what": {
+            "th": "บ้านอายุ 90 ปี ให้เล่นเกมญี่ปุ่นโบราณ",
+            "en": "A 90-year-old house where you play traditional Japanese games"
+          },
+          "why": {
+            "th": "เคนดามะ พับกระดาษ ลูกข่าง และลองสวมกิโมโน",
+            "en": "Kendama, origami and spinning tops, and simple kimono to try on"
+          },
+          "q": "AriHana Kyoto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈良公園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "สวนนารา",
+            "en": "Nara Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "สวนใหญ่มีกวางเดินอิสระ ซื้อขนมให้กวางกินได้",
+            "en": "A big park where sika deer roam and you can buy crackers to feed them"
+          },
+          "why": {
+            "th": "กวางโค้งตอบเพื่อขอขนม",
+            "en": "The deer bow back for a cracker"
+          },
+          "tip": {
+            "th": "วันธรรมดาคนน้อยกว่าเสาร์อาทิตย์มาก",
+            "en": "Weekdays are far quieter than weekends"
+          },
+          "q": "奈良公園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南円堂",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "นันเอ็นโด (วัดโคฟุคุจิ)",
+            "en": "Nanen-do (Kofuku-ji)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "หอวัดที่ผู้มาเยือนถวายเหรียญและอธิษฐาน",
+            "en": "A temple hall where visitors offer coins and pray"
+          },
+          "why": {
+            "th": "เด็ก ๆ สนุกกับการถวายเหรียญ",
+            "en": "Children enjoy making an offering"
+          },
+          "tip": {
+            "th": "ถ้ามีรถเข็น เข้าทางถนนซันโจ ไม่ใช่บันไดจากสระซารุซาวะ",
+            "en": "With a pram, come in from Sanjo-dori, not the stairs from Sarusawa Pond"
+          },
+          "q": "南円堂 興福寺",
+          "ok": "2026-11"
+        },
+        {
+          "local": "若草山",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "ภูเขาวากากุสะ",
+            "en": "Mount Wakakusa"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "เนินหญ้ามีกวาง เดินขึ้นยอดแรกได้",
+            "en": "A grassy hill with deer and a walk to the first peak"
+          },
+          "why": {
+            "th": "มีกวางบนเนินเขา",
+            "en": "Deer on the hillside"
+          },
+          "tip": {
+            "th": "ขึ้นทางประตูใต้ ลงทางประตูเหนือ",
+            "en": "Up through the South Gate, down through the North Gate"
+          },
+          "q": "若草山, 奈良",
+          "ok": "2026-11"
+        },
+        {
+          "local": "亀屋良長",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "3,300 เยน (รวมภาษี)",
+            "en": "¥3,300 (tax included)"
+          },
+          "book": "req",
+          "src": "https://haveagood-holiday.com/en/articles/kameya-yoshinaga-kyoto-wagashi-workshop-golden-week",
+          "name": {
+            "th": "เวิร์กช็อปขนมญี่ปุ่นคาเมยะ โยชินากะ",
+            "en": "Kameya Yoshinaga wagashi workshop"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชิโจ-โฮริกาวะ เกียวโต",
+            "en": "Shijo-Horikawa, Kyoto"
+          },
+          "what": {
+            "th": "ร้านขนมอายุ 220 ปี เปิดคลาสให้ทำขนมเกียวโตสด",
+            "en": "A 220-year-old confectioner's class where you make fresh Kyoto sweets"
+          },
+          "why": {
+            "th": "ต้อนรับเด็ก สอนทีละขั้น มีชาเขียวให้",
+            "en": "Children are welcome, with step-by-step help; matcha included"
+          },
+          "q": "亀屋良長 本店, 京都",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -1853,6 +2473,487 @@
           "q": "Otaru Music Box Museum, Otaru, Hokkaido",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/article/item/20985/"
+        },
+        {
+          "local": "噴火湾パノラマパーク",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนพาโนรามาอ่าวฟุงกะ",
+            "en": "Funkawan Bay Panorama Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ยาคุโมะ ฮอกไกโด",
+            "en": "Yakumo, Hokkaido"
+          },
+          "what": {
+            "th": "สวนบนเนินมองอ่าวฟุงกะ มีสนามหญ้ากว้างและเครื่องเล่น",
+            "en": "A hillside park over Funka Bay with a big lawn and play equipment"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นในร่มขนาดใหญ่สำหรับวันฝนตก",
+            "en": "A large indoor playground for rainy days"
+          },
+          "q": "噴火湾パノラマパーク, 八雲",
+          "ok": "2026-11"
+        },
+        {
+          "local": "カムイの杜公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนคามุยโนะโมริ",
+            "en": "Kamuinomori Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาซาฮิกาวะ ฮอกไกโด",
+            "en": "Asahikawa, Hokkaido"
+          },
+          "what": {
+            "th": "สวนมีสนามเด็กเล่น ห้องเล่นไม้ในร่ม ลานเล่นน้ำ และที่ตั้งแคมป์",
+            "en": "A park with playgrounds, wooden indoor play, a water playground and a campground"
+          },
+          "why": {
+            "th": "เครื่องเล่นทุกวัย มีงานฝีมือและกิจกรรม",
+            "en": "Play equipment for all ages, plus crafts and events"
+          },
+          "q": "カムイの杜公園, 旭川",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北海道立オホーツク流氷公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนน้ำแข็งลอยโอค็อตสค์",
+            "en": "Okhotsk Drift Ice Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "มมเบ็ตสึ ฮอกไกโด",
+            "en": "Mombetsu, Hokkaido"
+          },
+          "what": {
+            "th": "สวนกว้างใหญ่ มีห้องเล่นในร่ม",
+            "en": "A vast park with an indoor playroom"
+          },
+          "why": {
+            "th": "สไลเดอร์คลื่น เครื่องปีนยักษ์ และเนินกระโดด",
+            "en": "A wave slide, a giant jungle gym and a jumping mound"
+          },
+          "q": "北海道立オホーツク流氷公園, 紋別",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ゆめの森公園 ビジターセンター",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "ศูนย์บริการสวนยูเมโนะโมริ",
+            "en": "Yumenomori Park Visitor Center"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นากาชิเบ็ตสึ ฮอกไกโด",
+            "en": "Nakashibetsu, Hokkaido"
+          },
+          "what": {
+            "th": "อาคารรูปไข่เต็มไปด้วยเครื่องเล่น",
+            "en": "An egg-shaped visitor centre full of play equipment"
+          },
+          "why": {
+            "th": "สไลเดอร์ แทรมโพลีน ผนังปีน และสามล้อ",
+            "en": "Slides, trampolines, bouldering and tricycles"
+          },
+          "q": "ゆめの森公園 ビジターセンター, 中標津",
+          "ok": "2026-11"
+        },
+        {
+          "local": "はこだてキッズプラザ",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "ฮาโกดาเตะ คิดส์พลาซ่า",
+            "en": "Hakodate Kids Plaza"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คิราริส ฮาโกดาเตะ หน้าสถานี ฮอกไกโด",
+            "en": "Kiraris Hakodate, by Hakodate Station, Hokkaido"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทุกฤดู มีตัวต่อและหนังสือภาพ",
+            "en": "An all-weather indoor play space with blocks and picture books"
+          },
+          "why": {
+            "th": "เหมาะกับวันฝนตกหรืออากาศหนาว",
+            "en": "Good on a rainy or cold day"
+          },
+          "q": "はこだてキッズプラザ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "はこだてみらい館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "ฮาโกดาเตะ มิไรคัง",
+            "en": "Hakodate Miraikan"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฮาโกดาเตะ ฮอกไกโด",
+            "en": "Hakodate, Hokkaido"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์มีจอ LED ยักษ์และเกมขยับตัว",
+            "en": "A science centre with a huge LED wall and body-moving games"
+          },
+          "why": {
+            "th": "พ่อแม่ลูกได้ลองวิทยาศาสตร์ด้วยกัน",
+            "en": "Parents and children try science together"
+          },
+          "q": "はこだてみらい館",
+          "ok": "2026-11"
+        },
+        {
+          "local": "剣淵町 絵本の館",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "พิพิธภัณฑ์หนังสือภาพเค็นบุจิ",
+            "en": "Kenbuchi Picture Book Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เค็นบุจิ ฮอกไกโด",
+            "en": "Kenbuchi, Hokkaido"
+          },
+          "what": {
+            "th": "ห้องสมุดหนังสือภาพและหอศิลป์ ถอดรองเท้าเข้า",
+            "en": "A picture-book library and art museum, shoes off"
+          },
+          "why": {
+            "th": "หนังสือภาพ บ้านจำลอง และที่นั่งหรือนอนอ่าน",
+            "en": "Picture books, a play house and places to sit or lie down"
+          },
+          "q": "剣淵町 絵本の館",
+          "ok": "2026-11"
+        },
+        {
+          "local": "足寄動物化石博物館",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "พิพิธภัณฑ์ฟอสซิลอาโชโระ",
+            "en": "Ashoro Museum of Paleontology"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อาโชโระ ฮอกไกโด",
+            "en": "Ashoro, Hokkaido"
+          },
+          "what": {
+            "th": "ฟอสซิลสัตว์เลี้ยงลูกด้วยนมในทะเลอายุ 25 ล้านปี",
+            "en": "Fossils of 25-million-year-old marine mammals"
+          },
+          "why": {
+            "th": "ให้เด็กขุดหาฟอสซิลจริง",
+            "en": "A mini dig where children find real fossils"
+          },
+          "q": "足寄動物化石博物館",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深山峠アートパーク",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนศิลปะมิยามะโทเงะ",
+            "en": "Miyama Toge Art Park"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คามิฟูราโนะ ฮอกไกโด",
+            "en": "Kamifurano, Hokkaido"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตาที่ภาพแบนดูเป็นสามมิติ",
+            "en": "A trick-art museum where flat pictures look 3D"
+          },
+          "why": {
+            "th": "ถ่ายรูปภาพลวงตาสนุกทั้งผู้ใหญ่และเด็ก",
+            "en": "Trick photos adults and children both enjoy"
+          },
+          "q": "深山峠アートパーク, 上富良野",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ファンタジーキッズリゾート 新さっぽろ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "แฟนตาซีคิดส์รีสอร์ต ชินซัปโปโร",
+            "en": "Fantasy Kids Resort (Shin-Sapporo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ซันเปียซซา เขตอัตสึเบ็ตสึ ซัปโปโร",
+            "en": "Sunpiazza, Atsubetsu-ku, Sapporo"
+          },
+          "what": {
+            "th": "สวนเด็กเล่นในร่มขนาดใหญ่ มีโซนนุ่มและบ่อทราย ใกล้สถานีชินซัปโปโร",
+            "en": "A big indoor play park with soft play and a sand pit, by Shin-Sapporo Station"
+          },
+          "why": {
+            "th": "มีโซนแยกสำหรับเด็กต่ำกว่า 3 ขวบ และนำอาหารเข้าได้",
+            "en": "A separate area for under-threes, and you may bring food"
+          },
+          "q": "ファンタジーキッズリゾート 新さっぽろ, サンピアザ, 札幌",
+          "ok": "2026-11"
+        },
+        {
+          "local": "もりもりパーク",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "โมริโมริพาร์ก อาซาฮิกาวะ",
+            "en": "Morimori Park (Asahikawa)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟีลอาซาฮิกาวะ ชั้น 6 ใกล้สถานีอาซาฮิกาวะ",
+            "en": "Feel Asahikawa 6F, by Asahikawa Station"
+          },
+          "what": {
+            "th": "สวนเด็กเล่นในร่มทำจากไม้ มีเครื่องปีนป่ายใหญ่และบ่อบอลไม้",
+            "en": "A wooden indoor play park with a big climbing frame and a wooden ball pool"
+          },
+          "why": {
+            "th": "มีมุมสำหรับเด็กเล็ก และเข้าฟรี",
+            "en": "A baby corner, and free to use"
+          },
+          "q": "もりもりパーク, フィール旭川 6F, 旭川",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット イオンモール札幌苗穂",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "ลิตเติลแพลเน็ต อิออนมอลล์ซัปโปโรนาเอโบะ",
+            "en": "Little Planet (Aeon Mall Sapporo Naebo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนมอลล์ซัปโปโรนาเอโบะ ซัปโปโร",
+            "en": "Aeon Mall Sapporo Naebo, Sapporo"
+          },
+          "what": {
+            "th": "สวนเล่นดิจิทัล มีเกมโต้ตอบ เช่น เล่นทรายเออาร์",
+            "en": "A digital play park with interactive games like AR sand play"
+          },
+          "why": {
+            "th": "เล่นดิจิทัลแบบลงมือในร่ม ทุกสภาพอากาศ",
+            "en": "Hands-on digital play indoors, whatever the weather"
+          },
+          "q": "リトルプラネット イオンモール札幌苗穂",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南幌町子ども室内遊戯施設はれっぱ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥300 ต่อคน สำหรับคนนอกเมือง",
+            "en": "≈ ¥300 a person for visitors from outside the town"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "ฮาเร็ปปะ ห้องเล่นในร่ม นัมโปโร",
+            "en": "Hareppa indoor play hall (Nanporo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เมืองนัมโปโร ใกล้ซัปโปโร",
+            "en": "Nanporo town, near Sapporo"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่มสร้างจากไม้ฮอกไกโด มีโซนเคลื่อนไหวและของเล่นไม้",
+            "en": "An indoor play hall built of Hokkaido wood, with an active area and wooden toys"
+          },
+          "why": {
+            "th": "แยกโซนวิ่งเล่นกับโซนของเล่นไม้เงียบ ๆ มีคาเฟ่ข้าง ๆ",
+            "en": "Separate areas for running about and for quiet wooden toys; a café next door"
+          },
+          "q": "南幌町子ども室内遊戯施設はれっぱ",
+          "ok": "2026-11"
         }
       ]
     },
@@ -2430,6 +3531,80 @@
           "q": "Higashi-Hirao Park (Otani Plaza), Higashi-ku, Fukuoka",
           "ok": "2026-11",
           "src": "https://www.jalan.net/news/article/388683/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/20881/",
+          "name": {
+            "th": "พิพิธภัณฑ์แห่งชาติคิวชู",
+            "en": "Kyushu National Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดาไซฟุ",
+            "en": "Dazaifu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แห่งชาติแห่งที่ 4 ของญี่ปุ่น เปิดปี 2005 เล่าเรื่องการติดต่อระหว่างญี่ปุ่นกับเอเชีย",
+            "en": "Japan's fourth national museum, opened in 2005, on Japan's exchange with Asia"
+          },
+          "why": {
+            "th": "แวะในร่มได้ทั้งวันเมื่อไปดาไซฟุ",
+            "en": "A big indoor stop on a day at Dazaifu"
+          },
+          "q": "Kyushu National Museum, Dazaifu, Fukuoka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/20881/",
+          "name": {
+            "th": "สวนสนุกดาไซฟุ",
+            "en": "Dazaifu Amusement Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ศาลเจ้าดาไซฟุเท็มมังงู ดาไซฟุ",
+            "en": "Dazaifu Tenmangu Shrine, Dazaifu"
+          },
+          "what": {
+            "th": "สวนสนุกในบริเวณศาลเจ้าดาไซฟุเท็มมังงู มีเครื่องเล่น 28 อย่าง",
+            "en": "An amusement park in the grounds of Dazaifu Tenmangu, with 28 rides"
+          },
+          "why": {
+            "th": "เครื่องเล่นที่เด็กเล็กเล่นได้อย่างปลอดภัย มีห้องให้นมและที่พัก",
+            "en": "Rides even young children can enjoy safely, a nursing room and rest areas"
+          },
+          "q": "Dazaifu Amusement Park, Dazaifu, Fukuoka",
+          "ok": "2026-11"
         }
       ]
     }

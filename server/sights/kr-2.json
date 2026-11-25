@@ -397,6 +397,441 @@
           "q": "본태박물관, 서귀포시 안덕면 산록남로762번길 69",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/jeju-indoor-places"
+        },
+        {
+          "local": "메이즈랜드",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "เมซแลนด์",
+            "en": "Maze Land"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คุจวาอึบ เชจู",
+            "en": "Gujwa-eup, Jeju"
+          },
+          "what": {
+            "th": "สวนเขาวงกตตามสัญลักษณ์สามอย่างของเชจู หิน ลม และผู้หญิง",
+            "en": "A maze park built around Jeju's three symbols: stones, wind and women"
+          },
+          "why": {
+            "th": "พื้นที่กว้างให้ทั้งครอบครัวเล่น",
+            "en": "Acres of family fun"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:00 เข้าได้ถึง 17:00",
+            "en": "Daily 09:00–18:00, last entry 17:00"
+          },
+          "q": "메이즈랜드",
+          "ok": "2026-11"
+        },
+        {
+          "local": "피규어뮤지엄 제주",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "พิพิธภัณฑ์ฟิกเกอร์เชจู",
+            "en": "Figure Museum Jeju"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อันด็อก ซอกวิโพ เชจู",
+            "en": "Andeok-myeon, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "ฟิกเกอร์ตัวละครและซูเปอร์ฮีโร่ที่ชอบ ละเอียดมาก",
+            "en": "Detailed figures of favourite characters and superheroes"
+          },
+          "why": {
+            "th": "เด็กและผู้ใหญ่ได้เจอตัวละครที่ชอบ",
+            "en": "Children and grown-ups meet their favourite characters"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:30–18:00 เข้าได้ถึง 17:30",
+            "en": "Daily 09:30–18:00, last entry 17:30"
+          },
+          "q": "피규어뮤지엄 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "선녀와 나무꾼 테마공원",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "สวนสนุกนางฟ้ากับคนตัดไม้",
+            "en": "Fairy and Woodcutter Theme Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "โจชอนอึบ เชจู",
+            "en": "Jocheon-eup, Jeju"
+          },
+          "what": {
+            "th": "นิทรรศการ 15 ส่วน จำลองถนนและโรงเรียนเกาหลียุค 1960–70",
+            "en": "Fifteen exhibitions of Korean streets and schools of the 1960s and 70s"
+          },
+          "why": {
+            "th": "ย้อนเวลาไปดูชีวิตในเกาหลีเมื่อหลายสิบปีก่อน",
+            "en": "Step back in time to life in Korea 50 years ago"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:30 เข้าได้ถึง 18:00",
+            "en": "Daily 09:00–18:30, last entry 18:00"
+          },
+          "q": "선녀와 나무꾼 테마공원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "여미지식물원",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์ยอมีจี",
+            "en": "Yeomiji Botanical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ชุงมุน ซอกวิโพ เชจู",
+            "en": "Jungmun, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "เรือนกระจกที่มีพืชเขตร้อนและกึ่งร้อนราว 2,000 ชนิด",
+            "en": "A greenhouse garden of about 2,000 tropical and subtropical plants"
+          },
+          "why": {
+            "th": "เรือนกระจกที่ควรมาสักครั้งในเชจู",
+            "en": "A must-see greenhouse on Jeju"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:00",
+            "en": "Daily 09:00–18:00"
+          },
+          "q": "여미지식물원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "휴애리 자연생활공원",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "สวนธรรมชาติฮยูเอรี",
+            "en": "Hueree Nature Life Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นัมวอน ซอกวิโพ เชจู",
+            "en": "Namwon-eup, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "สวนดอกคาโนลาและหญ้ามูลีสีชมพู",
+            "en": "A park of canola flowers and pink muhly grass"
+          },
+          "why": {
+            "th": "หนึ่งในสวนที่สวยที่สุดของเชจู",
+            "en": "One of the prettiest local parks on Jeju"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:00 เข้าได้ถึง 17:30 (มี.ค.–ก.ย.) หรือ 16:30 (ต.ค.–ก.พ.)",
+            "en": "Daily 09:00–18:00; last entry 17:30 (Mar–Sep), 16:30 (Oct–Feb)"
+          },
+          "q": "휴애리 자연생활공원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "워터월드 제주",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "เชจูวอเตอร์เวิลด์",
+            "en": "Jeju Water World"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สนามเชจูเวิลด์คัพ ซอกวิโพ เชจู",
+            "en": "Jeju World Cup Stadium, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "งานศิลปะกับน้ำใน 12 โซน มีทางเดินน้ำตื้นและจอภาพสีสดใส",
+            "en": "Art and water in 12 themed zones, with shallow water paths and colourful screens"
+          },
+          "why": {
+            "th": "เด็กเดินลุยทางน้ำตื้นได้",
+            "en": "Children walk through the shallow water paths"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–20:00 เข้าได้ถึง 19:00",
+            "en": "Daily 10:00–20:00, last entry 19:00"
+          },
+          "q": "워터월드 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "감귤카트",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "เชจูแทนเจอรีนคาร์ต",
+            "en": "Jeju Tangerine Kart"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เชจู",
+            "en": "Jeju"
+          },
+          "what": {
+            "th": "สนามโกคาร์ตที่มีรถธีมต่างๆ",
+            "en": "A go-kart track with themed karts"
+          },
+          "why": {
+            "th": "ขับโกคาร์ตด้วยกันทั้งครอบครัว",
+            "en": "Drive the karts together as a family"
+          },
+          "q": "감귤카트 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "타요키즈카페 제주용담점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65b6f9c1abd92fac2f7bcc1f",
+          "name": {
+            "th": "คิดส์คาเฟ่ทาโยะ ยงดัม",
+            "en": "Tayo Kids Café (Yongdam)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์ประชุมมีแร ชั้น 6 ถนนนัมซ็อง เชจู",
+            "en": "Mirae Convention Center 6F, Namseong-ro, Jeju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ในร่ม มีรถบัสทาโยะกับเพื่อน ๆ",
+            "en": "An indoor kids café with Tayo the little bus and friends"
+          },
+          "why": {
+            "th": "มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "A nursing room and nappy changing"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "타요키즈카페 제주용담점, 남성로 75, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "콩순이키즈카페 제주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65b86da167a2df7173b902d9",
+          "name": {
+            "th": "คิดส์คาเฟ่คงซูนี เชจู",
+            "en": "Kongsuni Kids Café (Jeju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนย็อนซา 2 โอรา เชจู",
+            "en": "Yeonsa 2-gil, Ora 2-dong, Jeju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ตกแต่งธีมการ์ตูนคงซูนี",
+            "en": "A kids café decorated with the cartoon girl Kongsuni"
+          },
+          "why": {
+            "th": "เด็กชอบธีม มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "Children love the theme; a nursing room and nappy changing"
+          },
+          "q": "콩순이키즈카페 제주점, 연사2길 82, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "김녕미로공원",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "name": {
+            "th": "สวนเขาวงกตคิมนย็อง",
+            "en": "Gimnyeong Maze Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คิมนย็อง คูจวา เชจู",
+            "en": "Gimnyeong, Gujwa-eup, Jeju"
+          },
+          "what": {
+            "th": "สวนเขาวงกตต้นไม้ มีสนามหญ้ากว้าง",
+            "en": "A hedge maze park with a wide lawn"
+          },
+          "why": {
+            "th": "เขาวงกตให้เดินหาทางและสนามหญ้าให้วิ่ง",
+            "en": "A maze to puzzle through and open grass to run on"
+          },
+          "q": "김녕미로공원, 만장굴길 122, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "새별프렌즈",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "name": {
+            "th": "แซบย็อลเฟรนด์ส ฟาร์มแกะ",
+            "en": "Saebyeol Friends (sheep farm)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนพย็องฮวา แอวอล เชจู",
+            "en": "Pyeonghwa-ro, Aewol-eup, Jeju"
+          },
+          "what": {
+            "th": "ฟาร์มแกะบนเนินเขาเขียว ตกแต่งเหมือนหมู่บ้านในนิทาน",
+            "en": "A sheep farm on green hills, built like a storybook village"
+          },
+          "why": {
+            "th": "มีแกะและสัตว์ในฟาร์มบนเนินโล่ง",
+            "en": "Sheep and other farm animals on the open hillside"
+          },
+          "q": "새별프렌즈, 평화로 1529, 제주",
+          "ok": "2026-11"
         }
       ]
     }

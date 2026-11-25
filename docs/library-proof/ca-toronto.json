@@ -116,6 +116,55 @@
       "src": "https://www.torontotourism.org/toronto-with-toddlers/",
       "date": "2026-08",
       "map": "Google Maps newest review within six months"
+    },
+    {
+      "name": "Avling",
+      "page_name": "Avling",
+      "src": "https://destinationontario.com/en-ca/articles/family-friendly-ontario-restaurants-kids-and-parents-will-enjoy",
+      "date": "2026-11",
+      "map": "Google Maps 'Avling' (1042 Queen St E), newest review shown a day ago"
+    },
+    {
+      "name": "The Udupi Palace",
+      "page_name": "Udupi Palace",
+      "src": "https://destinationontario.com/en-ca/articles/family-friendly-ontario-restaurants-kids-and-parents-will-enjoy",
+      "date": "2026-11",
+      "map": "Google Maps 'The Udupi Palace' (1423 Gerrard St E), newest review shown a day ago"
+    },
+    {
+      "name": "KidSpark (Ontario Science Centre)",
+      "page_name": "KidSpark",
+      "src": "https://www.ontariosciencecentre.ca/whats-on/kidspark/",
+      "date": "official",
+      "map": "Google Maps 'Ontario Science Centre' — the map now shows it at 235 Queens Quay W, and its own site lists KidSpark there; newest review shown 14 hours ago"
+    },
+    {
+      "name": "L'Amoreaux Kidstown Water Park",
+      "page_name": "L’Amoreaux Kidstown Water Park",
+      "src": "https://www.toronto.ca/news/city-of-toronto-celebrates-the-reopening-of-kidstown-water-park/",
+      "date": "2026-06",
+      "map": "Google Maps 'Kidstown Water Park' (3159 Birchmount Rd), newest review shown 17 hours ago"
+    },
+    {
+      "name": "Safari Niagara",
+      "page_name": "Safari Niagara",
+      "src": "https://www.niagarafallstourism.com/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Safari Niagara' (2821 Stevensville Rd, Fort Erie), newest review shown a week ago"
+    },
+    {
+      "name": "Niagara Parks Botanical Gardens",
+      "page_name": "Botanical Gardens",
+      "src": "https://www.niagarafallstourism.com/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Niagara Parks Botanical Gardens' (Niagara River Pkwy), newest review shown 9 hours ago"
+    },
+    {
+      "name": "Dinosaur Adventure Golf",
+      "page_name": "Dinosaur Adventure Golf",
+      "src": "https://www.niagarafallstourism.com/family-fun",
+      "date": "official",
+      "map": "Google Maps 'Dinosaur Adventure Golf' (4952 Clifton Hill), newest review shown 3 days ago"
     }
   ],
   "left_out": [
@@ -134,7 +183,20 @@
     {
       "name": "six city parks and playgrounds",
       "why": "no review newer than a year on the map, even sorted by newest"
+    },
+    {
+      "name": "Playful Grounds",
+      "why": "closed"
+    },
+    {
+      "name": "Willow Play Cafe",
+      "why": "no area on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Destination Ontario (Nov 2026), toronto.ca (Jun 2026) and two official sites, all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

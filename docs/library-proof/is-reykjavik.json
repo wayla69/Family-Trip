@@ -130,6 +130,55 @@
       "src": "https://fontana.is/",
       "date": "official",
       "map": "Google Maps 'Fontana Steam by the Lake', 2,955 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Sundhöll Reykjavíkur (swimming pool)",
+      "page_name": "Sundholl Reykjavikur",
+      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Sundhöllin' (Barónsstígur 45a), newest review shown a day ago"
+    },
+    {
+      "name": "Vesturbæjarlaug (swimming pool)",
+      "page_name": "Vesturbaejarlaug",
+      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Vesturbæjarlaug' (Hofsvallagata), newest review shown 6 days ago"
+    },
+    {
+      "name": "Elliðaárdalur valley",
+      "page_name": "Ellidaardalur Valley",
+      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Elliðaárdalur', newest review shown 4 months ago"
+    },
+    {
+      "name": "Klambratún park",
+      "page_name": "Klambratun",
+      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Klambratún' (Flókagata 24 — the page's own address, Austurstræti 4, is wrong, so the map's street is used), newest review shown 5 days ago"
+    },
+    {
+      "name": "Grótta lighthouse",
+      "page_name": "Grotta Lighthouse Area",
+      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Grótta Lighthouse', newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Grófin City Library",
+      "page_name": "Grófin City Library",
+      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Borgarbókasafnið Grófinni' (Tryggvagata 15), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Nordic House library",
+      "page_name": "The Nordic House Library",
+      "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Nordic House' (Sæmundargata 11), newest review shown a week ago"
     }
   ],
   "left_out": [
@@ -144,7 +193,20 @@
     {
       "name": "Smáralind Mall Play Zone",
       "why": "a play corner in a shopping mall"
+    },
+    {
+      "name": "Puffin Express",
+      "why": "a boat tour sold by an operator"
+    },
+    {
+      "name": "Saga Museum, Smáralind play zone",
+      "why": "no address or district on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 8 rows from Guide to Iceland (updated Nov 2026), all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

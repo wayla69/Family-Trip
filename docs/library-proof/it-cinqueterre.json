@@ -49,6 +49,43 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from Sluurpy (Dec 2025) and Viaggiapiccoli (Jan 2026), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "La Picea (pizzeria)",
+          "page_name": "La Picea",
+          "src": "https://www.sluurpy.it/ristorante/levanto/143560/la-picea",
+          "date": "2025-12",
+          "map": "Google Maps '\"LA PICEA\" PIZZERIA' (Via della Concia 18), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Da Tapulin",
+          "page_name": "Da Tapulin",
+          "src": "https://www.sluurpy.it/levanto/ristorante/145242/da-tapulin",
+          "date": "2025-12",
+          "map": "Google Maps 'Da Tapulin' (Corso Italia 10), newest review shown 6 days ago"
+        },
+        {
+          "name": "Piazza Garibaldi playground",
+          "page_name": "Piazza Giuseppe Garibaldi",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-cinque-terre/",
+          "date": "2026-01",
+          "map": "Google Maps 'Giardino pubblico' (Piazza Giuseppe Garibaldi, Monterosso), newest review shown 2 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Piazza Staglieno playground (Levanto)",
+          "why": "the newest review on the map is 7 months old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

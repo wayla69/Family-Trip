@@ -130,6 +130,43 @@
         }
       ],
       "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders, except YIN Jewellery's ages (the page says about ten and up) and Gili Nanggu's day trip."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Maptrotting (May 2026) and The Honeycombers (Jan 2026), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Mama's Pizza (Gili Air)",
+          "page_name": "Mama's Pizza",
+          "src": "https://www.maptrotting.com/gili-air-with-kids-pizza-diving-turtles/",
+          "date": "2026-05",
+          "map": "Google Maps 'Mama Pizza Gili Air', newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Francesco's Pizza (Gili Trawangan)",
+          "page_name": "Francesco’s Pizza",
+          "src": "https://thehoneycombers.com/bali/best-restaurants-in-gili-trawangan-lombok/",
+          "date": "2026-01",
+          "map": "Google Maps 'Francesco's Pizza' (Gili Trawangan), newest review shown 2 days ago"
+        },
+        {
+          "name": "The Shack (Gili Trawangan)",
+          "page_name": "The Shack Restaurant & Bar",
+          "src": "https://thehoneycombers.com/bali/best-restaurants-in-gili-trawangan-lombok/",
+          "date": "2026-01",
+          "map": "Google Maps 'The Shack Restaurant and Bar - Gili Trawangan', newest review shown a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Tiu Pupus Waterfall",
+          "why": "the page gives nothing about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

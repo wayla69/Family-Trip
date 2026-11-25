@@ -18,8 +18,55 @@
       "src": "https://www.familycantravel.com/plitvice-lakes-croatia-with-kids/",
       "date": "2026-09",
       "map": "Google Maps 'Great Waterfall', 2,103 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Batak Centar Cvjetni",
+      "page_name": "Batak Grill Cvjetni",
+      "src": "https://kidsareatrip.com/best-things-to-do-in-zagreb-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Batak Centar Cvjetni' (Trg Petra Preradovića 6), newest review shown 7 hours ago"
+    },
+    {
+      "name": "Maksimir Park",
+      "page_name": "Maksimir Park",
+      "src": "https://kidsareatrip.com/best-things-to-do-in-zagreb-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Park Maksimir' (Maksimirski perivoj 1), newest review shown 16 hours ago"
+    },
+    {
+      "name": "Kotlac (Slunj)",
+      "page_name": "Kotlac",
+      "src": "https://slunj-rastoke.hr/en/slunj-rastoke-things-to-do/",
+      "date": "2026-01",
+      "map": "Google Maps 'Kotlac' (Mali Vuković, Slunj), newest review shown a month ago"
     }
   ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "left_out": [
+    {
+      "name": "Pri Zvoncu",
+      "why": "the map address differs from the page's"
+    },
+    {
+      "name": "Zagreb Funicular, Jarun, Strossmayerovac",
+      "why": "no review dates readable / no clear map entry"
+    },
+    {
+      "name": "Stara Škrila",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Vagabund",
+      "why": "only a child's price on the page"
+    },
+    {
+      "name": "Museum Mimara",
+      "why": "for older children"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from Kids Are A Trip (Jan 2026) and the Slunj tourist board (Jan 2026), all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

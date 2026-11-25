@@ -32,6 +32,41 @@
       "src": "https://fuessen.de/en/family",
       "date": "official",
       "map": "Google Maps 'Burgruine Hopfen Am See', 814 reviews, newest 'last month'"
+    },
+    {
+      "name": "Tante Paula (Hopfensee campsite)",
+      "page_name": "Tante Paula",
+      "src": "https://www.camping-hopfensee.de/en/campingplatz/ausstattung/restaurant-hoigarte",
+      "date": "official",
+      "map": "Google Maps 'Tante Paula am Campingplatz Hopfen am See' (Fischerbichl 17), newest review shown a week ago"
+    },
+    {
+      "name": "Boat harbour playground",
+      "page_name": "Playground at the Füssen boat harbor",
+      "src": "https://fuessen.de/en/playing-and-climbing",
+      "date": "official",
+      "map": "Google Maps 'Spielplatz Am Bootshafen' (Weidachstraße 80), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Obersee lido (Bad Faulenbach)",
+      "page_name": "Obersee lido in Bad Faulenbach",
+      "src": "https://fuessen.de/en/family",
+      "date": "official",
+      "map": "Google Maps 'Oberseebad' (Alatseestraße 25), newest review shown 2 months ago"
+    },
+    {
+      "name": "Bird trail around the Alatsee",
+      "page_name": "Bird adventure trail",
+      "src": "https://fuessen.de/en/family",
+      "date": "official",
+      "map": "Google Maps the trail has no map entry of its own; the lake 'Alatsee' (Füssen), newest review shown 21 hours ago"
+    },
+    {
+      "name": "Reptile Zoo Allgäu",
+      "page_name": "Reptile Zoo Allgäu",
+      "src": "https://fuessen.de/en/family",
+      "date": "official",
+      "map": "Google Maps 'Reptilienzoo Allgäu' (Mühlbachgasse 10), newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -46,7 +81,28 @@
     {
       "name": "Taverne beim Olivenbauer, Tante Paula am Hopfensee",
       "why": "their pages carry no date"
+    },
+    {
+      "name": "Skate park playground, Hopfensee boat-hire playground",
+      "why": "no map entry of their own"
+    },
+    {
+      "name": "Gamssteig on the Buchenberg",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Pfronten themed playgrounds",
+      "why": "twelve playgrounds, not one place"
+    },
+    {
+      "name": "Taverne beim Olivenbauer",
+      "why": "the page has no date"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 10 rows from Füssen tourism and the Hopfensee campsite (official), 9 passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

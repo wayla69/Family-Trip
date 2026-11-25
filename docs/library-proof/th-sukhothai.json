@@ -1,24 +1,131 @@
 {
   "town": "th-sukhothai",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the two rows without ok; the twenty rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Ko Heng",
-      "src": "https://www.google.com/maps/place/Ko+Heng+Restaurant/@17.3153393,99.831103,17z",
-      "page_name": "Ko Heng Restaurant / โกเฮง ร้านอาหาร",
-      "evidence": "Google Maps: restaurant, 4.0★, 144/1 Na Mueang Alley, Mueang Sawankhalok (8R8J+4C), the town the row names; 'Open · Closes 9 PM', phone listed; nothing says closed",
-      "ok": "2026-11"
-    }
-  ],
-  "kept_without_ok": [],
-  "removed": [
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the two rows without ok; the twenty rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Ko Heng",
+          "src": "https://www.google.com/maps/place/Ko+Heng+Restaurant/@17.3153393,99.831103,17z",
+          "page_name": "Ko Heng Restaurant / โกเฮง ร้านอาหาร",
+          "evidence": "Google Maps: restaurant, 4.0★, 144/1 Na Mueang Alley, Mueang Sawankhalok (8R8J+4C), the town the row names; 'Open · Closes 9 PM', phone listed; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Kang Sak Restaurant",
+          "reason": "Google Maps searches for ร้านอาหารแก่งสัก ศรีสัชนาลัย, แก่งสัก สุโขทัย and Kaeng Sak restaurant Si Satchanalai found no restaurant of that name (only the historical park, the national park, waterfalls and other restaurants), and one web search found none either"
+        }
+      ]
+    },
     {
-      "name": "Kang Sak Restaurant",
-      "reason": "Google Maps searches for ร้านอาหารแก่งสัก ศรีสัชนาลัย, แก่งสัก สุโขทัย and Kaeng Sak restaurant Si Satchanalai found no restaurant of that name (only the historical park, the national park, waterfalls and other restaurants), and one web search found none either"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 5 rows from Wongnai (Jun 2025) and KTC (Aug 2026), all passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Kuay Teow Rim Rabiang",
+          "page_name": "ก๋วยเตี๋ยวริมระเบียง",
+          "src": "https://www.wongnai.com/listings/noodles-sukhothai+",
+          "date": "2025-06",
+          "map": "Google Maps 'ก๋วยเตี๋ยวริมระเบียง', 84 reviews, newest shown 20 days ago"
+        },
+        {
+          "name": "Tha Nam Rap Sadet Market",
+          "page_name": "ตลาดท่าน้ำรับเสด็จ",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'ตลาดท่าน้ำรับเสด็จ', 100 reviews, newest shown a month ago"
+        },
+        {
+          "name": "Ra-Biang Coffee (Sawankhalok)",
+          "page_name": "Rabiang Coffee Sawankhalok",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'Ra-Biang Coffee Sukhothai' (Wang Mai Khon), newest review shown 4 days ago"
+        },
+        {
+          "name": "Organic Agriculture Project (Sukhothai Airport)",
+          "page_name": "Organic Agriculture Project",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'Agriculture Project Sukhothai Airport' (Khlong Krachong), newest review shown a month ago"
+        },
+        {
+          "name": "Ramkhamhaeng National Park (Khao Luang)",
+          "page_name": "Khao Luang Ramkhamhaeng National Park",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'Ramkhamhaeng National Park' (Na Choeng Khiri), newest review shown 2 hours ago"
+        },
+        {
+          "name": "Thung Thale Luang",
+          "page_name": "Thung Talay Luang",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'The Holy Heartland - Thung Thale Luang', newest review shown 3 months ago"
+        },
+        {
+          "name": "Wat Chedi Chet Thaeo",
+          "page_name": "Wat Chedi Chet Thaeo",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'Wat Chedi Chet Thaeo', newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Wat Phiphat Mongkhon",
+          "page_name": "Wat Phiphat Mongkhon",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'Wat Phiphat Mongkhon', newest review shown 2 months ago"
+        },
+        {
+          "name": "Wat Saphan Hin",
+          "page_name": "Wat Saphan Hin",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/sukhothai-heritage",
+          "date": "2026-08",
+          "map": "Google Maps 'Wat Saphan Hin', newest review shown 3 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "ก๋วยเตี๋ยวยายชด แชมป์คลองกระจง",
+          "why": "the map's match is another shop, temporarily closed"
+        },
+        {
+          "name": "หอพระพุทธสิริมารวิชัย",
+          "why": "no review from the last six months shown on the map"
+        },
+        {
+          "name": "พระบรมราชานุสาวรีย์พ่อขุนรามคำแหงมหาราช",
+          "why": "several places of that name on the map; none confirmed"
+        },
+        {
+          "name": "Rim Yom Market",
+          "why": "newest Google Maps review 3 years old"
+        },
+        {
+          "name": "Baan Na Ton Chan mud cloth, Doi Khao Mung",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "Pang Chang Mae Sin",
+          "why": "an elephant camp"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 10 rows from KTC (Aug 2026), all passed library-check.cjs, 7 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
   ]
 }

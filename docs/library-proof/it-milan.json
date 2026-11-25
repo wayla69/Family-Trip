@@ -138,6 +138,72 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 10 rows from ViaggiaPiccoli (2025–2026), all passed library-check.cjs, 6 went in",
+      "added": [
+        {
+          "name": "Spazio Caroli 12",
+          "page_name": "Spazio Caroli 12",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'Ristorante Spazio Caroli 12', newest review shown 4 months ago"
+        },
+        {
+          "name": "La Fornasetta",
+          "page_name": "La Fornasetta",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'Ristorante La Fornasetta', newest review shown 5 days ago"
+        },
+        {
+          "name": "Löwengrube Milano",
+          "page_name": "Löwengrube Milano",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'Lowengrube' (Viale Monte Nero), newest review shown 3 days ago"
+        },
+        {
+          "name": "Piccola Ischia (Via Cenisio)",
+          "page_name": "Pizzeria Piccola Ischia",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'Piccola Ischia Pizzeria (Via Cenisio)', newest review shown a week ago"
+        },
+        {
+          "name": "Mosso (Parco Trotter)",
+          "page_name": "Mosso Milano",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'mosso' (Via Angelo Mosso 3), newest review shown a month ago"
+        },
+        {
+          "name": "Cascina Biblioteca (Parco Lambro)",
+          "page_name": "Cascina Biblioteca",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'Cooperativa Cascina Biblioteca', newest review shown 29 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Heroes Steakhouse, Museo delle Illusioni",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Tana Liberi Tutti",
+          "why": "the map shows another name (Tana Space)"
+        },
+        {
+          "name": "Casa del Gelato",
+          "why": "in Peschiera Borromeo, outside Milan"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

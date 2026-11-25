@@ -1,0 +1,51 @@
+{
+  "town": "it-rome",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows from Mama Loves Rome (May 2026) and Turismo Roma (2026 pages), all passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "Piccolo Arancio",
+      "page_name": "Piccolo Arancio",
+      "src": "https://mamalovesrome.com/family-restaurants-rome-centre/",
+      "date": "2026-05",
+      "map": "Google Maps 'Piccolo Arancio', 3,048 reviews, newest shown 3 days ago"
+    },
+    {
+      "name": "Lola (Flaminio)",
+      "page_name": "Lola Roma – Flaminio",
+      "src": "https://mamalovesrome.com/family-restaurants-rome-centre/",
+      "date": "2026-05",
+      "map": "Google Maps 'Lola al Villa Flaminia', 1,243 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "Tribeca (Porta Pia)",
+      "page_name": "Tribeca – Porta Pia",
+      "src": "https://mamalovesrome.com/family-restaurants-rome-centre/",
+      "date": "2026-05",
+      "map": "Google Maps 'Tribeca', 1,051 reviews, newest shown 26 days ago"
+    },
+    {
+      "name": "Planetario di Roma",
+      "page_name": "PLANETARIO DI ROMA",
+      "src": "https://turismoroma.it/it/page/attivit%C3%A0-bambini",
+      "date": "2026-11",
+      "map": "Google Maps 'Planetario Roma', 489 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Luneur Park",
+      "page_name": "LUNEUR PARK",
+      "src": "https://www.turismoroma.it/en/page/things-do-kids-rome",
+      "date": "official",
+      "map": "Google Maps 'Luneur Park', 7,924 reviews, newest shown 29 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Butterfly Eden",
+      "why": "temporarily closed on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

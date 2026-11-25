@@ -109,8 +109,36 @@
       "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
       "date": "2026-09",
       "map": "Google Maps 6,127 reviews, newest '9 hours ago'"
+    },
+    {
+      "name": "Da Kitchen (Kihei)",
+      "page_name": "Da Kitchen",
+      "src": "https://hawaiitravelwithkids.com/where-to-eat-on-maui-with-kids/",
+      "date": "2025-12",
+      "map": "Google Maps 'Da Kitchen' (1215 S Kihei Rd), newest review shown 4 hours ago"
+    },
+    {
+      "name": "Surfing Goat Dairy",
+      "page_name": "Surfing Goat Dairy",
+      "src": "https://www.surfinggoatdairy.com/",
+      "date": "official",
+      "map": "Google Maps 'Surfing Goat Dairy Farm Shop & Café' (3651 Omaopio Rd, Kula), newest review shown 13 hours ago"
     }
   ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "left_out": [
+    {
+      "name": "Coconut's Fish Cafe",
+      "why": "two Kihei branches, none named"
+    },
+    {
+      "name": "Waikiki Beach",
+      "why": "the map finds the neighbourhood, not a beach entry"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Hawaii Travel with Kids (Dec 2025 and Feb 2026) and the dairy's own site, all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -1,0 +1,70 @@
+{
+  "town": "jp-tohoku",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 13 rows from asoview (Dec 2025) and Nap Camp (Apr 2026), all passed library-check.cjs, 6 went in; no dated page for a new place to eat",
+  "added": [
+    {
+      "name": "Hachinohe Park Children's World",
+      "page_name": "八戸公園 こどもの国・八戸植物公園",
+      "src": "https://www.asoview.com/note/6203/",
+      "date": "2025-12",
+      "map": "Google Maps 'Hachinohe Park Children's World', 1,591 reviews, newest shown 6 days ago"
+    },
+    {
+      "name": "Kodomo Hatch",
+      "page_name": "こどもはっち",
+      "src": "https://www.asoview.com/note/6203/",
+      "date": "2025-12",
+      "map": "Google Maps 'こどもはっち', 18 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "CLAAPIN SAGAE",
+      "page_name": "CLAAPIN SAGAE",
+      "src": "https://www.nap-camp.com/mag/83090",
+      "date": "2026-04",
+      "map": "Google Maps 'さくらんぼこどもキャンパス CLAAPIN SAGAE', 93 reviews, newest shown 3 months ago"
+    },
+    {
+      "name": "Shelter Inclusive Place COPAL",
+      "page_name": "シェルターインクルーシブプレイス コパル",
+      "src": "https://www.nap-camp.com/mag/83090",
+      "date": "2026-04",
+      "map": "Google Maps 'Shelter Inclusive Place Copal', 223 reviews, newest shown a week ago"
+    },
+    {
+      "name": "Morikko Park (Yamagata Tendo)",
+      "page_name": "もりっこぱ～く山形天童店",
+      "src": "https://www.nap-camp.com/mag/83090",
+      "date": "2026-04",
+      "map": "Google Maps 'もりっこぱ～く山形天童店（アンダの森山形天童店）', 8 reviews, newest shown 6 months ago"
+    },
+    {
+      "name": "Kurunto",
+      "page_name": "くるんと",
+      "src": "https://www.nap-camp.com/mag/83090",
+      "date": "2026-04",
+      "map": "Google Maps '長井市 遊びと学びの交流施設 くるんと', 131 reviews, newest shown 9 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "SORAIE Misawa, もっくる, めんごりあ, べにっこひろば",
+      "why": "no review from the last six months shown on the map"
+    },
+    {
+      "name": "しあわせプラザ 児童遊戯室",
+      "why": "the map has the building only, with no reviews"
+    },
+    {
+      "name": "KIDS DOME SORAI",
+      "why": "the map's match is named differently and has no recent review"
+    },
+    {
+      "name": "Link MURAYAMA",
+      "why": "not found on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

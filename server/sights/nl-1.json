@@ -492,7 +492,81 @@
       {"name":{"en":"Nieuwmarkt","th":"ตลาดนิวเวมาร์กต์"},"kind":"market","area":{"en":"centre of Amsterdam","th":"ใจกลางอัมสเตอร์ดัม"},"what":{"en":"A small number of market stalls on the square, selling food and flowers; a flea market is held on Sundays in summer.","th":"แผงตลาดเล็กๆ บนจัตุรัส ขายอาหารและดอกไม้ ตลาดนัดวันอาทิตย์ในฤดูร้อน"},"why":{"en":"A small, easy market near the centre.","th":"ตลาดเล็กและง่ายใกล้ใจกลาง"},"tip":{"en":"Food and flowers Monday to Friday 09:00-18:00; summer flea market on Sundays.","th":"อาหารและดอกไม้จันทร์ถึงศุกร์ 09:00–18:00 ตลาดนัดฤดูร้อนวันอาทิตย์"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nieuwmarkt, Amsterdam","ok":"2026-11","src":"https://www.amsterdamtips.com/amsterdam-markets"},
       {"name":{"en":"Kinderboerderij De Werf","th":"ฟาร์มเด็กเดอแวร์ฟ"},"kind":"farm","area":{"en":"Science Park","th":"ไซนซ์พาร์ก"},"what":{"en":"Urban farm with over 50 animals including goats, sheep, donkeys, chickens, peacocks and pigs.","th":"ฟาร์มในเมืองที่มีสัตว์กว่า 50 ตัว รวมแพะ แกะ ลา ไก่ นกยูง และหมู"},"why":{"en":"Meet the donkeys and pigs up close.","th":"ได้เจอลาและหมูใกล้ๆ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kinderboerderij De Werf, Science Park, Amsterdam","ok":"2026-11","src":"https://iamsterdam.com/en/explore/neighbourhoods/oost/family-and-kids"},
       {"name":{"en":"Sloterpark","th":"สโลเตอร์พาร์ก"},"kind":"park","area":{"en":"Sloterpark","th":"สโลเตอร์พาร์ก"},"what":{"en":"One of the largest parks in Amsterdam, with a petting zoo, sunbathing areas, frisbee courses and green space.","th":"หนึ่งในสวนที่ใหญ่ที่สุดของอัมสเตอร์ดัม มีสวนสัตว์ให้สัมผัส พื้นที่อาบแดด สนามแฟรสบี และพื้นที่สีเขียว"},"why":{"en":"A petting zoo and plenty of room to run.","th":"สวนสัตว์ให้สัมผัสและพื้นที่ให้วิ่งเล่นมาก"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sloterpark, Amsterdam","ok":"2026-11","src":"https://www.iamsterdam.com/en/see-and-do/nature-and-active/best-parks-in-amsterdam"},
-      {"name":{"en":"Westerpark","th":"เวสเตอร์พาร์ก"},"kind":"park","area":{"en":"Westerpark","th":"เวสเตอร์พาร์ก"},"what":{"en":"Former gas works turned into a green urban area with restaurants, cafés and a cinema, and markets and festivals through the year.","th":"อดีตโรงแก๊สที่กลายเป็นพื้นที่เมืองสีเขียว มีร้านอาหาร คาเฟ่ และโรงภาพยนตร์ มีตลาดและเทศกาลตลอดปี"},"why":{"en":"Ample green space, with events, markets and festivals through the year.","th":"มีพื้นที่สีเขียวมาก และมีกิจกรรม ตลาดและเทศกาลตลอดปี"},"ages":[1,2,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Westerpark, Amsterdam","ok":"2026-11","src":"https://www.iamsterdam.com/en/see-and-do/nature-and-active/best-parks-in-amsterdam"}
+      {"name":{"en":"Westerpark","th":"เวสเตอร์พาร์ก"},"kind":"park","area":{"en":"Westerpark","th":"เวสเตอร์พาร์ก"},"what":{"en":"Former gas works turned into a green urban area with restaurants, cafés and a cinema, and markets and festivals through the year.","th":"อดีตโรงแก๊สที่กลายเป็นพื้นที่เมืองสีเขียว มีร้านอาหาร คาเฟ่ และโรงภาพยนตร์ มีตลาดและเทศกาลตลอดปี"},"why":{"en":"Ample green space, with events, markets and festivals through the year.","th":"มีพื้นที่สีเขียวมาก และมีกิจกรรม ตลาดและเทศกาลตลอดปี"},"ages":[1,2,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Westerpark, Amsterdam","ok":"2026-11","src":"https://www.iamsterdam.com/en/see-and-do/nature-and-active/best-parks-in-amsterdam"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.iamsterdam.com/en/see-and-do/family-and-kids/best-things-to-do-with-kids-in-amsterdam",
+          "name": {
+            "th": "พิพิธภัณฑ์โมโค",
+            "en": "Moco Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนฮอนท์ฮอร์สต์ ย่านมิวเซียมเพลน อัมสเตอร์ดัม",
+            "en": "Honthorststraat, Museumplein, Amsterdam"
+          },
+          "what": {
+            "th": "สตรีตอาร์ตและศิลปะสมัยใหม่ของแบงก์ซีและวอร์ฮอล",
+            "en": "Street art and modern art by artists like Banksy and Warhol"
+          },
+          "why": {
+            "th": "งานสีสด ตื่นตา ลองเล่นได้ เด็กโตชอบ",
+            "en": "Bold, colourful, interactive works that keep older children interested"
+          },
+          "q": "Moco Museum, Honthorststraat 20, Amsterdam",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/you-jump-trampolinepark-amsterdam-noord",
+          "name": {
+            "th": "ยูจัมป์ อัมสเตอร์ดัมนอร์ด",
+            "en": "You Jump Amsterdam-Noord"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สปอร์ตปาร์กคาดูเลิน นอร์ด อัมสเตอร์ดัม",
+            "en": "Sportpark Kadoelen, Noord, Amsterdam"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีน มีเกมกระโดดวีอาร์ เส้นทางนินจา และแอร์แทร็ก",
+            "en": "A trampoline park with a VR jump game, a ninja course and an airtrack"
+          },
+          "why": {
+            "th": "เกมแทรมโพลีนให้เด็กปล่อยพลัง",
+            "en": "Trampoline games where children can let off steam"
+          },
+          "q": "You Jump Amsterdam-Noord, Sportpark Kadoelen 4, Amsterdam",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

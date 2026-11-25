@@ -376,6 +376,43 @@
           },
           "q": "Baixo Bebê, Leblon, Rio de Janeiro",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://diariodorio.com/cultura/2026/10/08/museu-do-pontal-tera-circo-oficinas-e-brincadeiras-gratuitas-neste-fim-de-semana.html",
+          "name": {
+            "th": "พิพิธภัณฑ์ดูปงตาล",
+            "en": "Museu do Pontal"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเซเลียริเบโร บาร์ราดาชิจูกา รีโอเดจาเนโร",
+            "en": "Av. Célia Ribeiro da Silva Mendes, Barra da Tijuca, Rio de Janeiro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะพื้นบ้าน มีลานกว้างรอบๆ",
+            "en": "A folk-art museum with a square around it"
+          },
+          "why": {
+            "th": "มีกิจกรรมเด็กฟรี เวิร์กช็อปฟองสบู่ ละครสัตว์ข้างถนน และรอบเด็กเล็กวันอาทิตย์",
+            "en": "Free children's programmes: bubble workshops, street circus, a Sunday baby session"
+          },
+          "q": "Museu do Pontal, Av. Célia Ribeiro da Silva Mendes 3300, Barra da Tijuca",
+          "ok": "2026-11"
         }
       ]
     }

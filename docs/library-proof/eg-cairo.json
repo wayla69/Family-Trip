@@ -67,6 +67,41 @@
       "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
       "date": "2026-11",
       "map": "Google Maps 'Swiss Club', 2,356 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Kids Station (Americana Plaza)",
+      "page_name": "Kids Station at Americana Plaza",
+      "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+      "date": "2026-05",
+      "map": "Google Maps 'Kids Station - كيدز ستيشن' (Sheikh Zayed), newest review shown 3 days ago"
+    },
+    {
+      "name": "Monkey Maze (Arkan Plaza)",
+      "page_name": "Monkey Maza at Arkan",
+      "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+      "date": "2026-05",
+      "map": "Google Maps 'Monkey Maze Arkan' (Arkan Plaza; the page spells it Maza), newest review shown 4 days ago"
+    },
+    {
+      "name": "PlayPoint Egypt",
+      "page_name": "Playpoint Egypt",
+      "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+      "date": "2026-05",
+      "map": "Google Maps 'PlayPoint Egypt' (26th of July Corridor, Sheikh Zayed), newest review shown a week ago"
+    },
+    {
+      "name": "Funtopia (Mazar Mall)",
+      "page_name": "Funtopia at Mazar Mall",
+      "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+      "date": "2026-05",
+      "map": "Google Maps 'Funtopia - Mazar Mall' (Sheikh Zayed), newest review shown a month ago"
+    },
+    {
+      "name": "Cosmocity (Arkan Plaza)",
+      "page_name": "Cosmocity at Arkan",
+      "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+      "date": "2026-05",
+      "map": "Google Maps 'Cosmocity Arkan' (Arkan Plaza), newest review shown a day ago"
     }
   ],
   "left_out": [
@@ -77,7 +112,24 @@
     {
       "name": "Giza Zoo",
       "why": "reported closed for redevelopment; the map does not say, so it was left out until a status check"
+    },
+    {
+      "name": "Giza Zoo",
+      "why": "the map shows it temporarily closed"
+    },
+    {
+      "name": "Heliopolis Child Museum",
+      "why": "the same as the Child Museum (Al Salam) already in the app"
+    },
+    {
+      "name": "Fagnoon, Al Sorat farms",
+      "why": "horse and camel riding"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Cairo 360 (May 2026) and Edarabia (Nov 2026), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

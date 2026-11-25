@@ -130,6 +130,27 @@
       "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
       "date": "2026-06",
       "map": "Google Maps 847 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Pancake Diner (Burleigh)",
+      "page_name": "Pancake Diner",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Pancake Diner Burleigh', newest review shown 8 days ago"
+    },
+    {
+      "name": "Currumbin RSL",
+      "page_name": "Currumbin RSL",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Currumbin RSL', newest review shown 4 days ago"
+    },
+    {
+      "name": "Cafe Catalina (Southport)",
+      "page_name": "Cafe Catalina",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Cafe Catalina' (Southport), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -148,7 +169,24 @@
     {
       "name": "The Wobbygongs Kids Fun Zone",
       "why": "the map's 'Wobbygongs Kids Club' has no reviews"
+    },
+    {
+      "name": "Cadence Cafe, BSKT, Coomera Lodge Hotel",
+      "why": "only honourable mentions; nothing for families on the page"
+    },
+    {
+      "name": "Pratten Park, Pirate Park, Kirra Beach and 4 more",
+      "why": "no page date library-check.cjs could read"
+    },
+    {
+      "name": "Wobbygongs Kids Club",
+      "why": "no reviews on the map"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders except where the page gives an age range (Planet Chill 3+, Rainbow City 0–8)."
+  "estimates": "Ages and visit hours are placeholders except where the page gives an age range (Planet Chill 3+, Rainbow City 0–8).",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 14 rows from InDaily (Apr 2025) and Experience Gold Coast (Mar 2026), 7 passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

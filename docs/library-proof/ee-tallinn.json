@@ -123,6 +123,55 @@
       "src": "https://thingstodointallinn.com/family/",
       "date": "2026-10",
       "map": "Google Maps 'Telliskivi Kirbukas', 130 reviews, newest 'last month'"
+    },
+    {
+      "name": "Beach restaurant PAAT",
+      "page_name": "Paat",
+      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
+      "date": "2026-09",
+      "map": "Google Maps 'Beach restaurant PAAT' (Rohuneeme tee 53), newest review shown 4 days ago"
+    },
+    {
+      "name": "OKO Resto",
+      "page_name": "OKO",
+      "src": "https://visitestonia.com/en/what-to-do/best-places-to-eat-with-children-in-estonia",
+      "date": "2026-09",
+      "map": "Google Maps 'OKO Resto' (Kesk tee 27, Viimsi), newest review shown a day ago"
+    },
+    {
+      "name": "Super Skypark",
+      "page_name": "Super Skypark",
+      "src": "https://visitestonia.com/en/super-skypark-trampoline-and-play-center",
+      "date": "official",
+      "map": "Google Maps 'Super Skypark' (Peterburi tee 2), newest review shown a day ago"
+    },
+    {
+      "name": "Viimsi Open Air Museum",
+      "page_name": "Viimsi Open Air Museum",
+      "src": "https://visitestonia.com/en/viimsi-open-air-museum",
+      "date": "official",
+      "map": "Google Maps 'Viimsi Open Air Museum' (Rohuneeme tee 53a), newest review shown 4 days ago"
+    },
+    {
+      "name": "Riga Motor Museum",
+      "page_name": "Riga Motor Museum",
+      "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+      "date": "official",
+      "map": "Google Maps 'Riga Motor Museum' (Sergeja Eizenšteina iela 8), newest review shown an hour ago"
+    },
+    {
+      "name": "Latvian Museum of Natural History",
+      "page_name": "Latvian museum of Natural history",
+      "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+      "date": "official",
+      "map": "Google Maps 'Latvian Museum of Natural History' (Krišjāņa Barona iela 4), newest review shown a day ago"
+    },
+    {
+      "name": "Miniature House (Small Stuff)",
+      "page_name": "Miniature House",
+      "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+      "date": "official",
+      "map": "Google Maps 'Small Stuff Miniatūru māja' (Maija iela 18), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -141,7 +190,20 @@
     {
       "name": "Viimsi places",
       "why": "outside the city"
+    },
+    {
+      "name": "Mängu Saar",
+      "why": "three branches, none named"
+    },
+    {
+      "name": "Mr. Bunny Kitchen (Riga)",
+      "why": "no district on the page"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 8 rows from Visit Estonia (Sep 2026) and Live Riga (official), all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

@@ -427,6 +427,158 @@
           "q": "Vietopia, Tan Hung Ward, District 7, Ho Chi Minh City",
           "ok": "2026-11",
           "src": "https://offpeaktrip.com/en/guide/hochiminh/vietopia"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ 12 ดอลลาร์สหรัฐต่อคน",
+            "en": "About US$12 a person"
+          },
+          "book": "rec",
+          "src": "https://www.edarabia.com/things-to-do-ho-chi-minh-city-with-kids/",
+          "name": {
+            "th": "โรงละครหุ่นกระบอกน้ำมังกรทอง",
+            "en": "Golden Dragon Water Puppet Theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เขต 1 โฮจิมินห์",
+            "en": "District 1, Ho Chi Minh City"
+          },
+          "what": {
+            "th": "การแสดงหุ่นกระบอกบนเวทีน้ำ 1 ชั่วโมง มีดนตรีพื้นเมืองเล่นสด",
+            "en": "A one-hour show of puppets on a water stage, with live traditional music"
+          },
+          "why": {
+            "th": "หุ่นเหมือนมีชีวิต เล่านิทานให้เด็กดู",
+            "en": "The puppets seem to come alive and tell a story"
+          },
+          "q": "Golden Dragon Water Puppet Theater, District 1, Ho Chi Minh City",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vietnamdoneright.com/best-indoor-playgrounds-ho-chi-minh-city/",
+          "name": {
+            "th": "คิวูซาแพลเน็ต ทีโซมอลล์ซาลา",
+            "en": "Kiwooza Planet (Thiso Mall Sala)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไมชีเทอ ทูดึ๊ก โฮจิมินห์",
+            "en": "Mai Chí Thọ, Thủ Đức (Sala), Ho Chi Minh City"
+          },
+          "what": {
+            "th": "พื้นที่ในร่ม 1,300 ตร.ม. เล่นเคลื่อนไหว STEM และแสงสี",
+            "en": "A 1,300 m² indoor space of physical, STEM and light play"
+          },
+          "why": {
+            "th": "มีเวิร์กชอปทำอาหาร งานฝีมือ และการแสดงแสง",
+            "en": "Cooking and craft workshops and light shows"
+          },
+          "tip": {
+            "th": "ต้องซื้อถุงเท้ากันลื่น",
+            "en": "Non-slip socks must be bought"
+          },
+          "q": "Kiwooza Planet, Thiso Mall Sala, 10 Mai Chí Thọ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://haisanloccantho.com/top-8-khu-vui-choi-tre-em-tai-can-tho/",
+          "name": {
+            "th": "จัมป์อารีนา เกิ่นเทอ",
+            "en": "Jump Arena Cần Thơ (Sense City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซนส์ซิตี้ ชั้น 3 นิงเกี่ยว เกิ่นเทอ",
+            "en": "Sense City 3F, Ninh Kiều, Cần Thơ"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มขนาดใหญ่สำหรับเด็กที่ชอบวิ่งและกระโดด",
+            "en": "A big indoor play space for children who love running and jumping"
+          },
+          "why": {
+            "th": "ออกแบบสำหรับเด็กที่ชอบเคลื่อนไหว",
+            "en": "Made for active children"
+          },
+          "q": "Jump Arena Cần Thơ, Sense City, Ninh Kiều",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://haisanloccantho.com/top-8-khu-vui-choi-tre-em-tai-can-tho/",
+          "name": {
+            "th": "ทินิเวิลด์ ล็อตเต้มาร์ต เกิ่นเทอ",
+            "en": "tiNiWorld (Lotte Mart Cần Thơ)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ล็อตเต้มาร์ต ถนนเหมิวทัน นิงเกี่ยว เกิ่นเทอ",
+            "en": "Lotte Mart, Mậu Thân, Ninh Kiều, Cần Thơ"
+          },
+          "what": {
+            "th": "ศูนย์เล่นขนาดใหญ่ มีบ่อทราย บ่อบอล และเครื่องเล่น",
+            "en": "A big play centre with a sand pit, a ball pool and play structures"
+          },
+          "why": {
+            "th": "มีโซน Baby Box สำหรับเด็กต่ำกว่า 2 ขวบ",
+            "en": "A Baby Box area for under-twos"
+          },
+          "q": "tiNiWorld Lotte Mart Cần Thơ, 84 Mậu Thân",
+          "ok": "2026-11"
         }
       ]
     },

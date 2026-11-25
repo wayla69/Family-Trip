@@ -107,6 +107,101 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 rows from Secret Abu Dhabi (Jan 2026), Family Travel Middle East (Jul 2025), Emirates Online (2025), Abu Dhabi Mall (official) and Khaleej Blog (Jan 2026); 13 passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Amara (The WB Hotel)",
+          "page_name": "Amara",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Amara Restaurant' (The WB Hotel, Yas Island), newest review shown a day ago"
+        },
+        {
+          "name": "Shvili",
+          "page_name": "Shvili",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Shvili' (The Galleria, third floor), newest review shown 4 hours ago"
+        },
+        {
+          "name": "Havana Cafe & Restaurant",
+          "page_name": "Havana Café & Restaurant",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Havana Cafe & Restaurant' (Marina Village, Breakwater Rd), newest review shown 3 hours ago"
+        },
+        {
+          "name": "Leo & Loona (Yas Mall)",
+          "page_name": "Leo & Loona",
+          "src": "https://secretabudhabi.ae/restaurants-with-indoor-play-area-abu-dhabi-2/",
+          "date": "2026-01",
+          "map": "Google Maps 'Leo&Loona Kids Park' (Yas Island), newest review shown a week ago"
+        },
+        {
+          "name": "Fun City (Abu Dhabi Mall)",
+          "page_name": "Fun City",
+          "src": "https://www.abudhabi-mall.com/play/",
+          "date": "official",
+          "map": "Google Maps 'Fun City - Abu Dhabi Mall' (Al Zahiyah, level 3), newest review shown 3 days ago"
+        },
+        {
+          "name": "Snow Abu Dhabi",
+          "page_name": "Snow Abu Dhabi",
+          "src": "https://www.emirates-online.net/English/location/al-ain/play-areas-for-kids",
+          "date": "2025-12",
+          "map": "Google Maps 'Snow Abu dhabi' (Reem Mall, Al Reem Island), newest review shown a day ago"
+        },
+        {
+          "name": "Caboodle Pamper & Play",
+          "page_name": "Caboodle Pamper & Play",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "date": "2025-07",
+          "map": "Google Maps 'Caboodle Pamper & Play' (Al Maryah Island), newest review shown 2 days ago"
+        },
+        {
+          "name": "Fun Works (Yas Mall)",
+          "page_name": "Fun Works",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "date": "2025-07",
+          "map": "Google Maps 'Fun Works - Powered by play' (Yas Mall, level 1), newest review shown 20 hours ago"
+        },
+        {
+          "name": "Cheeky Monkeys (Al Forsan)",
+          "page_name": "Cheeky Monkeys",
+          "src": "https://www.familytravel-middleeast.com/abu-dhabi-kids-activities-indoors/",
+          "date": "2025-07",
+          "map": "Google Maps 'Cheeky Monkeys' (Al Forsan Village, Khalifa City), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "COCO Café & Playhouse",
+          "why": "the map puts it at HIID Residence, not Saadiyat as the page says"
+        },
+        {
+          "name": "Adventure Zone",
+          "why": "the map shows only the Adventure HQ shop"
+        },
+        {
+          "name": "Strooler Go",
+          "why": "not found on the map"
+        },
+        {
+          "name": "Al Sarooj Park",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "Central, Antonia Mamsha",
+          "why": "the page has no date"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

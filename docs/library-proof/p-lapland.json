@@ -60,6 +60,13 @@
       "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
       "date": "2025-09",
       "map": "Google Maps 128 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "SnowGlow Winterpark",
+      "page_name": "SnowGlow Winter Activity Park",
+      "src": "https://www.visitrovaniemi.fi/attraction/snowglow-winterpark/",
+      "date": "2026-10",
+      "map": "Google Maps 'SnowGlow Winterpark' (Rovaniemi centre, football stadium), newest review shown 18 hours ago"
     }
   ],
   "left_out": [
@@ -86,7 +93,20 @@
     {
       "name": "Tankavaara Gold Village",
       "why": "its only source was a tour listing"
+    },
+    {
+      "name": "Levi Activity Park traffic park",
+      "why": "the map shows it temporarily closed"
+    },
+    {
+      "name": "Saariselkä Ski & Sport Resort",
+      "why": "its kids' packages are for ages 6–10"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from Visit Rovaniemi (Oct 2026), Levi (official) and Lapland North (Dec 2025), all passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

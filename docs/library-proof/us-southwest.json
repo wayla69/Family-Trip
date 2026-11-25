@@ -77,6 +77,61 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from Lettuce Entertain You (Aug 2026) and Discovery Kids LV (Mar–Apr 2026), all passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Joe's Seafood, Prime Steak & Stone Crab",
+          "page_name": "Joe’s Seafood, Prime Steak & Seafood",
+          "src": "https://www.lettuce.com/blog/kid-friendly-restaurants-in-las-vegas/",
+          "date": "2026-08",
+          "map": "Google Maps 'Joe's Seafood, Prime Steak & Stone Crab' (3500 Las Vegas Blvd S, Forum Shops), newest review shown 7 hours ago"
+        },
+        {
+          "name": "Kids Empire (Henderson)",
+          "page_name": "Kids Empire (Henderson)",
+          "src": "https://discoverykidslv.org/zh/blog/best-indoor-toddler-playgrounds-las-vegas/",
+          "date": "2026-04",
+          "map": "Google Maps 'Kids Empire Henderson' (225 N Stephanie St), newest review shown 11 hours ago"
+        },
+        {
+          "name": "Sunset Park",
+          "page_name": "Sunset Park",
+          "src": "https://discoverykidslv.org/blog/15-things-to-do-with-a-toddler-in-las-vegas-a-guide-to-kid-friendly-activities/",
+          "date": "2026-03",
+          "map": "Google Maps 'Sunset Park' (2601 E Sunset Rd), newest review shown a day ago"
+        },
+        {
+          "name": "Downtown Container Park (Treehouse)",
+          "page_name": "Downtown Container Park",
+          "src": "https://discoverykidslv.org/blog/15-things-to-do-with-a-toddler-in-las-vegas-a-guide-to-kid-friendly-activities/",
+          "date": "2026-03",
+          "map": "Google Maps 'Downtown Container Park' (707 Fremont St), newest review shown 15 hours ago"
+        },
+        {
+          "name": "Gondola ride (The Venetian)",
+          "page_name": "Venetian Gondola Ride",
+          "src": "https://discoverykidslv.org/blog/15-things-to-do-with-a-toddler-in-las-vegas-a-guide-to-kid-friendly-activities/",
+          "date": "2026-03",
+          "map": "Google Maps 'Gondola Rides' (3355 S Las Vegas Blvd), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Kids Town",
+          "why": "the map shows another business at that address"
+        },
+        {
+          "name": "Fidgets Indoor Playground",
+          "why": "the map address differs from the page's"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

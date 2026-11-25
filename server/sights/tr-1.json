@@ -877,6 +877,80 @@
           "q": "Kemerburgaz Urban Forest, Kemerburgaz, Istanbul",
           "ok": "2026-11",
           "src": "https://artandthensome.com/things-to-do-with-kids-in-istanbul/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+          "name": {
+            "th": "อิสฟานบูล (วิอาแลนด์)",
+            "en": "Isfanbul (Vialand)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "เอยุปสุลต่าน อิสตันบูล",
+            "en": "Eyüpsultan, Istanbul"
+          },
+          "what": {
+            "th": "สวนสนุกขนาดใหญ่ ชื่อเดิมวิอาแลนด์ มีเครื่องเล่น ร้านค้า และที่เล่น",
+            "en": "A big theme park, formerly Vialand, with rides, shops and play areas"
+          },
+          "why": {
+            "th": "เครื่องเล่นและที่เล่นสำหรับเด็กในพื้นที่กว้าง",
+            "en": "Rides and play areas for children over a big site"
+          },
+          "q": "Isfanbul, Eyüpsultan, Istanbul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ไม่ถึง 1 ดอลลาร์ต่อเที่ยว",
+            "en": "Under $1 a ride"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+          "name": {
+            "th": "รถรางย้อนยุค (ถนนอิสติกลาล)",
+            "en": "Nostalgic Tram (İstiklal Avenue)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ถนนอิสติกลาล เบยอลู อิสตันบูล",
+            "en": "İstiklal Avenue, Beyoğlu, Istanbul"
+          },
+          "what": {
+            "th": "รถรางแบบเก่าวิ่งไปตามถนนอิสติกลาล",
+            "en": "An old-style tram along İstiklal Avenue"
+          },
+          "why": {
+            "th": "เด็กชอบรถรางสีสดที่วิ่งช้า ๆ และเสียงกระดิ่ง",
+            "en": "Children love the slow, colourful tram and its bell"
+          },
+          "q": "Nostalgic Tram, İstiklal Avenue, Beyoğlu, Istanbul",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1205,6 +1279,43 @@
             "en": "A zoo, ponds and picnics for a day outdoors"
           },
           "q": "Çamlık Park, Denizli",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://yolcu360.com/blog/izmir-gezilecek-yerler/",
+          "name": {
+            "th": "สวนสัตว์ธรรมชาติอิซมีร์",
+            "en": "İzmir Wildlife Park (Doğal Yaşam Parkı)"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ซาซาลึ ชิกลิ อิซมีร์",
+            "en": "Sasalı, Çiğli, İzmir"
+          },
+          "what": {
+            "th": "สวนใหญ่ที่สัตว์อยู่ในพื้นที่กว้างแบบธรรมชาติ มีหอดูนก",
+            "en": "A large park where animals live in wide natural enclosures, with bird-watching towers"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นที่แรกที่ครอบครัวที่มีลูกเลือก",
+            "en": "The page calls it a first choice for families with children"
+          },
+          "q": "Izmir Wildlife Park, Sasalı, Çiğli, İzmir",
           "ok": "2026-11"
         }
       ]

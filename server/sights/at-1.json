@@ -739,6 +739,125 @@
           },
           "q": "Spielplatz, Hellbrunn, Salzburg",
           "ok": "2026-11"
+        },
+        {
+          "local": "Bibelwelt Erlebnishaus",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €7 เด็กอายุ 4–15 ปี",
+            "en": "≈ €7 children (4–15)"
+          },
+          "book": "none",
+          "src": "https://salzburg.info/en/sights/museums/bibelwelt",
+          "name": {
+            "th": "ไบเบิลเวิลด์ (บีเบิลเวลท์)",
+            "en": "Bible World (Bibelwelt)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โบสถ์เอลิซาเบท ถนนพลายน์ ซาลซ์บวร์ก",
+            "en": "Elisabethkirche, Plainstraße, Salzburg"
+          },
+          "what": {
+            "th": "นิทรรศการเรื่องเล่าในพระคัมภีร์แบบลงมือสัมผัส พื้นที่ราว 1,000 ตร.ม. ในโบสถ์",
+            "en": "A hands-on exhibition of Bible stories over about 1,000 m² in a church"
+          },
+          "why": {
+            "th": "เรื่องเล่าให้ดู ฟัง และจับได้ ทุกวัย",
+            "en": "Stories to see, hear and touch, for all ages"
+          },
+          "tip": {
+            "th": "ปิดวันพุธ เข้าได้ถึง 1 ชั่วโมงก่อนปิด",
+            "en": "Closed on Wednesdays; last entry an hour before closing"
+          },
+          "q": "Bibelwelt Erlebnishaus, Plainstraße 42a, Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Badesee Liefering",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.salzburg.info/en/travel-info/infos/salzachsee-badesee-liefering_az_5366",
+          "name": {
+            "th": "ทะเลสาบว่ายน้ำซัลซัคเซ ลีเฟอริง",
+            "en": "Salzachsee Swimming Lake (Liefering)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ลีเฟอริง ทางเหนือของเมือง ซาลซ์บวร์ก",
+            "en": "Liefering, north of the city, Salzburg"
+          },
+          "what": {
+            "th": "ทะเลสาบว่ายน้ำเล็ก ๆ จากน้ำใต้ดิน มีสนามหญ้าให้นอนอาบแดด",
+            "en": "A small swimming lake fed by groundwater, with lawns for sunbathing"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นพร้อมตาข่ายปีนและชิงช้าริมน้ำ",
+            "en": "A playground with climbing nets and swings by the water"
+          },
+          "tip": {
+            "th": "เปิดพฤษภาคมถึงปลายกันยายน มีห้องเปลี่ยนเสื้อผ้าและฝักบัวน้ำเย็น",
+            "en": "Open May to the end of September; changing rooms and cold showers"
+          },
+          "q": "Badesee Liefering - Salzachseen, Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spielplatz Franz-Josef-Kai",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.salzburg.info/en/playgrounds_az_13858",
+          "name": {
+            "th": "สนามเด็กเล่นฟรันซ์โยเซฟไค",
+            "en": "Franz-Josef-Kai Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟรันซ์โยเซฟไค ริมแม่น้ำซัลซัค ซาลซ์บวร์ก",
+            "en": "Franz-Josef-Kai, by the Salzach, Salzburg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นสาธารณะริมแม่น้ำ ตรวจและทำความสะอาดหลายครั้งต่อสัปดาห์",
+            "en": "A public playground by the river, checked and cleaned several times a week"
+          },
+          "why": {
+            "th": "ที่ให้เด็กเล่นและวิ่งในที่โล่ง",
+            "en": "A place to play and run in the fresh air"
+          },
+          "q": "Spielplatz Franz-Josef-Kai, Salzburg",
+          "ok": "2026-11"
         }
     ]
     },
@@ -1155,6 +1274,43 @@
             "en": "Theatre made for children, with a café in the foyer"
           },
           "q": "Dschungel Wien Theaterhaus, MuseumsQuartier",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://monkipark.at",
+          "name": {
+            "th": "มังกี้พาร์ก มิลเลนเนียมซิตี",
+            "en": "Monki Park (Millennium City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิลเลนเนียมซิตี บริกิทเทเนา (เขต 20)",
+            "en": "Millennium City, Brigittenau (20th district)"
+          },
+          "what": {
+            "th": "สวนเด็กเล่นในร่ม มีเส้นทางเชือกสูงและโซนเล่น",
+            "en": "An indoor family play park with a high-ropes course and play areas"
+          },
+          "why": {
+            "th": "ปีนป่ายและเล่นได้ เด็กตั้งแต่ 8 ขวบอยู่ได้โดยไม่ต้องมีผู้ปกครอง",
+            "en": "Climbing and play; from eight, children may stay without parents"
+          },
+          "q": "Monki Park, Millennium City, Wien",
           "ok": "2026-11"
         }
     ]

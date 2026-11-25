@@ -67,6 +67,51 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from The National (Oct 2026), TTG Asia (Jan 2026) and Maldives Magazine (May 2026), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Island Kitchen (The Westin Maldives Miriandhoo)",
+          "page_name": "Island Kitchen",
+          "src": "https://www.thenationalnews.com/travel/2026/10/14/calm-bolthole-in-the-baa-atoll-a-family-review-of-the-westin-maldives-miriandhoo/",
+          "date": "2026-10",
+          "map": "Google Maps 'Island Kitchen' (Westin Maldives Miriandhoo), 24 reviews, newest shown 2 months ago"
+        },
+        {
+          "name": "Kids Club (The Westin Maldives Miriandhoo)",
+          "page_name": "Kids Club",
+          "src": "https://www.thenationalnews.com/travel/2026/10/14/calm-bolthole-in-the-baa-atoll-a-family-review-of-the-westin-maldives-miriandhoo/",
+          "date": "2026-10",
+          "map": "Google Maps 'The Westin Maldives Miriandhoo Resort' (the club is the resort's own; no map entry of its own), 338 reviews, newest shown 2 weeks ago"
+        },
+        {
+          "name": "Junior Marine Savers (Four Seasons Kuda Huraa)",
+          "page_name": "Junior Marine Savers",
+          "src": "https://www.ttgasia.com/2026/01/08/four-seasons-maldives-highlights-family-bonding-and-marine-education-across-two-resorts/",
+          "date": "2026-01",
+          "map": "Google Maps 'Four Seasons Resort Maldives at Kuda Huraa' (the programme is the resort's own; no map entry of its own), 630 reviews, newest shown 5 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Pearl, Hawker (Westin Maldives Miriandhoo)",
+          "why": "the page says nothing about children"
+        },
+        {
+          "name": "Grouper Grill, Roma (Sun Siyam Iru Veli)",
+          "why": "one shared review headline, no reason for families"
+        },
+        {
+          "name": "Hanifaru Bay",
+          "why": "newest Google Maps review a year old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

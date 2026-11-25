@@ -1,17 +1,173 @@
 {
   "town": "id-bali",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 rows without ok; rows already carrying ok were not re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
-  "confirmed": [],
-  "kept_without_ok": [
+  "rounds": [
     {
-      "name": "Eat & Eat Beachwalk",
-      "src": "https://vymaps.com/ID/Eat-Eat-1747403/",
-      "evidence": "Maps did not find it ('Eat & Eat Beachwalk Kuta Bali', 'Eat & Eat Beachwalk', 'Eat Eat Food Market Beachwalk Kuta' list only other Beachwalk places; the food court Maps shows there is 'Pasarame', Food court, 'Open · Closes 11 PM' — possibly a rename, not proven); a web search found only an undated directory page (vymaps, 3rd floor B14, eatneatfoodmarket.com)"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 rows without ok; rows already carrying ok were not re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Eat & Eat Beachwalk",
+          "src": "https://vymaps.com/ID/Eat-Eat-1747403/",
+          "evidence": "Maps did not find it ('Eat & Eat Beachwalk Kuta Bali', 'Eat & Eat Beachwalk', 'Eat Eat Food Market Beachwalk Kuta' list only other Beachwalk places; the food court Maps shows there is 'Pasarame', Food court, 'Open · Closes 11 PM' — possibly a rename, not proven); a web search found only an undated directory page (vymaps, 3rd floor B14, eatneatfoodmarket.com)"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 12 rows from two Honeycombers Bali pages (Feb and Apr 2026), all passed library-check.cjs, 10 went in",
+      "added": [
+        {
+          "name": "The Cashew Tree",
+          "page_name": "The Cashew Tree",
+          "src": "https://thehoneycombers.com/bali/best-family-friendly-restaurants-in-bali-kids-menus/",
+          "date": "2026-04",
+          "map": "Google Maps 'The Cashew Tree', 3,064 reviews, newest shown 5 days ago"
+        },
+        {
+          "name": "Sundara (Four Seasons Jimbaran Bay)",
+          "page_name": "Sundara Beach Club",
+          "src": "https://thehoneycombers.com/bali/best-family-friendly-restaurants-in-bali-kids-menus/",
+          "date": "2026-04",
+          "map": "Google Maps 'Sundara', 1,584 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Jamie Oliver Kitchen (Kuta Beach)",
+          "page_name": "Jamie Oliver Kitchen Bali",
+          "src": "https://thehoneycombers.com/bali/best-family-friendly-restaurants-in-bali-kids-menus/",
+          "date": "2026-04",
+          "map": "Google Maps 'Jamie Oliver Kitchen | Kuta Beach', 7,194 reviews, newest shown 4 days ago"
+        },
+        {
+          "name": "Splash Bistro (Hard Rock Hotel)",
+          "page_name": "Splash Bistro",
+          "src": "https://thehoneycombers.com/bali/best-family-friendly-restaurants-in-bali-kids-menus/",
+          "date": "2026-04",
+          "map": "Google Maps 'Splash Bistro', 21 reviews, newest shown a month ago"
+        },
+        {
+          "name": "Bali Zoo",
+          "page_name": "Bali Zoo",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Bali Zoo', 29,445 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Bali Safari Park (Taman Safari Bali)",
+          "page_name": "Bali Safari & Marine Park",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Taman Safari' (the park's current name), 24,859 reviews, newest shown 4 days ago"
+        },
+        {
+          "name": "Alas Harum",
+          "page_name": "Alas Harum",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Alas Harum Bali', 25,169 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Mason Adventures rafting (Ayung River)",
+          "page_name": "Mason Adventures",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Mason Adventure Rafting', 366 reviews, newest shown 2 months ago"
+        },
+        {
+          "name": "Bali International Archery",
+          "page_name": "Bali International Archery",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Bali International Archery', 39 reviews, newest shown 25 days ago"
+        },
+        {
+          "name": "Berawa Art House",
+          "page_name": "Berawa Art House",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Berawa Art House', 16 reviews, newest shown 3 months ago"
+        },
+        {
+          "name": "I Am Vegan Babe (Canggu)",
+          "page_name": "I Am Vegan Babe",
+          "src": "https://thehoneycombers.com/bali/best-family-friendly-restaurants-in-canggu-bali/",
+          "date": "2026-04",
+          "map": "Google Maps 'I am Vegan Babe', newest review shown 5 days ago"
+        },
+        {
+          "name": "Bali Butterfly Park",
+          "page_name": "Bali Butterfly Park",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Bali Butterfly Park Tabanan', newest review shown 2 days ago"
+        },
+        {
+          "name": "Jenggala pottery (Jimbaran)",
+          "page_name": "Jenggala",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Jenggala Flagship Store' (Jimbaran), newest review shown a week ago"
+        },
+        {
+          "name": "Manarai Beach House (Nusa Dua)",
+          "page_name": "Manarai Beach House",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "date": "2026-02",
+          "map": "Google Maps 'Manarai Beach House', newest review shown 10 days ago"
+        },
+        {
+          "name": "Museum Puri Lukisan",
+          "page_name": "Museum Puri Lukisan",
+          "src": "https://thehoneycombers.com/bali/things-to-do-in-bali-when-it-rains/",
+          "date": "2026-11",
+          "map": "Google Maps 'Museum Puri Lukisan', newest review shown 2 days ago"
+        },
+        {
+          "name": "Museum Pasifika",
+          "page_name": "Museum Pasifika",
+          "src": "https://thehoneycombers.com/bali/things-to-do-in-bali-when-it-rains/",
+          "date": "2026-11",
+          "map": "Google Maps 'Museum Pasifika Bali', newest review shown 6 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "KU DE TA",
+          "why": "a beach club with sunset cocktails (bars do not count)"
+        },
+        {
+          "name": "Cosmic Diner",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Bistro C (FINNS)",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Cosmic Diner",
+          "why": "permanently closed on the map"
+        },
+        {
+          "name": "KU DE TA",
+          "why": "a beach club and bar"
+        },
+        {
+          "name": "Sea Turtle Village",
+          "why": "turtle releases hosted by various hotels, not one place"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 10 rows from The Honeycombers (Feb–Nov 2026), all passed library-check.cjs, 6 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     }
-  ],
-  "removed": []
+  ]
 }

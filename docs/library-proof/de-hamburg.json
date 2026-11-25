@@ -81,6 +81,55 @@
       "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
       "date": "2026-10",
       "map": "Google Maps 'Museum of Nature - Zoology', 3,218 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "Q21 Gasthaus",
+      "page_name": "Quartier 21 Gasthaus",
+      "src": "https://www.hamburg.de/freizeit/essen-trinken/restaurant/kinderfreundlich",
+      "date": "official",
+      "map": "Google Maps 'Q21 Gasthaus' (Fuhlsbüttler Str. 405), newest review shown 3 hours ago"
+    },
+    {
+      "name": "Beach Hamburg (family brunch)",
+      "page_name": "Beach Center Hamburg",
+      "src": "https://www.hamburg.de/freizeit/essen-trinken/restaurant/kinderfreundlich",
+      "date": "official",
+      "map": "Google Maps 'Beach Hamburg' (Alter Teichweg 220), newest review shown 2 days ago"
+    },
+    {
+      "name": "Familiencafé Krümel",
+      "page_name": "Familiencafé Krümel",
+      "src": "https://www.hamburg.de/freizeit/essen-trinken/restaurant/kinderfreundlich",
+      "date": "official",
+      "map": "Google Maps 'Familiencafé Krümel (SOS-Kinderdorf Hamburg)' (Straßburger Str. 19), newest review shown a day ago"
+    },
+    {
+      "name": "rabatzz! indoor playground",
+      "page_name": "rabatzz!",
+      "src": "https://www.hamburg.de/freizeit/indoorspielplatz-rabatzz-868116",
+      "date": "official",
+      "map": "Google Maps 'rabatzz! Indoorspielplatz' (Kieler Str. 575a — the page says Wördemanns Weg, the street beside it), newest review shown 13 hours ago"
+    },
+    {
+      "name": "Niendorfer Gehege (forest and playground)",
+      "page_name": "Niendorfer Gehege",
+      "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+      "date": "official",
+      "map": "Google Maps 'Spielplatz Niendorfer Gehege' (Bondenwald 80), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Kinderbauernhof Kirchdorf",
+      "page_name": "Kinderbauernhof Kirchdorf",
+      "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+      "date": "official",
+      "map": "Google Maps 'Kinderbauernhof Kirchdorf e.V.' (Stübenhofer Weg 19), newest review shown a day ago"
+    },
+    {
+      "name": "Große Wallanlagen playground (Planten un Blomen)",
+      "page_name": "Wallanlagen bei Planten un Blomen",
+      "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+      "date": "official",
+      "map": "Google Maps 'Spielplatz Planten Un Blomen Große Wallanlagen' (Glacischaussee 1), newest review shown a month ago"
     }
   ],
   "left_out": [
@@ -91,7 +140,20 @@
     {
       "name": "Freilichtmuseum am Kiekeberg",
       "why": "outside the city"
+    },
+    {
+      "name": "Harburger Rathausplatz playground",
+      "why": "newest Google Maps review 3 years old"
+    },
+    {
+      "name": "Lohsepark",
+      "why": "the map finds only the street name"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from hamburg.de (2025–2026), all passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

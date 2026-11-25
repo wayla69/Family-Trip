@@ -47,6 +47,33 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 2 rows from Yolcu360 (Apr 2026) and Yeni Asır (Nov 2026), both passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "İzmir Wildlife Park (Doğal Yaşam Parkı)",
+          "page_name": "İzmir Doğal Yaşam Parkı",
+          "src": "https://yolcu360.com/blog/izmir-gezilecek-yerler/",
+          "date": "2026-04",
+          "map": "Google Maps 'Izmir Wildlife Park' (Sasalı, Ahmet Piriştina Cd., Çiğli), newest review shown 20 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Ümran Baradan toy museum",
+          "why": "the newest review on the map is 9 months old"
+        },
+        {
+          "name": "Aqua Fantasy",
+          "why": "a press piece with nothing about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

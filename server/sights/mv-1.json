@@ -131,6 +131,88 @@
           },
           "q": "Fish Market, Ibrahim Hassan Didi Magu, Malé",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thenationalnews.com/travel/2026/10/14/calm-bolthole-in-the-baa-atoll-a-family-review-of-the-westin-maldives-miriandhoo/",
+          "name": {
+            "th": "คิดส์คลับ รีสอร์ตเดอะเวสทินมัลดีฟส์ มิเรียนดู",
+            "en": "Kids Club (The Westin Maldives Miriandhoo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รีสอร์ตเดอะเวสทินมัลดีฟส์ มิเรียนดู อะทอลล์บา",
+            "en": "The Westin Maldives Miriandhoo, Baa Atoll"
+          },
+          "what": {
+            "th": "คิดส์คลับของรีสอร์ต มีสระกลางแจ้ง สนามเด็กเล่นเรือโจรสลัดไม้ และห้องเล่นในร่ม",
+            "en": "A resort kids' club with an outdoor pool, a wooden pirate-ship playground and an indoor play room"
+          },
+          "why": {
+            "th": "มีเรือโจรสลัดให้ปีน สระน้ำ และกิจกรรมงานฝีมือในร่ม",
+            "en": "A pirate ship to climb, a pool, and workshops and crafts indoors"
+          },
+          "tip": {
+            "th": "รับเด็กตั้งแต่ 4 ขวบ เด็กเล็กกว่านั้นต้องมีผู้ปกครองและขึ้นกับจำนวนที่ว่างแต่ละวัน",
+            "en": "From four years old; younger children with a parent, when there is room that day"
+          },
+          "q": "The Westin Maldives Miriandhoo Resort, Baa Atoll",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ttgasia.com/2026/01/08/four-seasons-maldives-highlights-family-bonding-and-marine-education-across-two-resorts/",
+          "name": {
+            "th": "จูเนียร์มารีนเซฟเวอร์ส โฟร์ซีซันส์ คูดาฮูรา",
+            "en": "Junior Marine Savers (Four Seasons Kuda Huraa)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "รีสอร์ตโฟร์ซีซันส์มัลดีฟส์ คูดาฮูรา",
+            "en": "Four Seasons Resort Maldives at Kuda Huraa"
+          },
+          "what": {
+            "th": "โปรแกรมวิทยาศาสตร์ทะเลสำหรับเด็ก 8–12 ขวบ ทำโครงปะการัง สำรวจแนวปะการัง ดูโลมา",
+            "en": "A marine science programme for children aged 8–12: coral frames, reef checks, dolphin spotting"
+          },
+          "why": {
+            "th": "เด็กได้ช่วยทำโครงปะการัง ดูโลมาและเต่าทะเล",
+            "en": "Children help build coral frames and look out for dolphins and turtles"
+          },
+          "tip": {
+            "th": "สำหรับเด็กอายุ 8–12 ขวบ",
+            "en": "For ages 8 to 12"
+          },
+          "q": "Four Seasons Resort Maldives at Kuda Huraa",
+          "ok": "2026-11"
         }
       ]
     }

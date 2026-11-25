@@ -200,6 +200,100 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 12 rows from Umatu (Mar and Jul 2026), La Nación (Feb 2026) and Chile es Tuyo (Aug 2026), all passed library-check.cjs, 10 went in",
+      "added": [
+        {
+          "name": "Bambinolli (Lo Barnechea)",
+          "page_name": "Bambinolli",
+          "src": "https://umatu.cl/10-restaurantes-para-ir-con-ninos-en-santiago/",
+          "date": "2026-03",
+          "map": "Google Maps 'Bambinolli Restaurante' (El Rodeo 13350), newest review shown a day ago"
+        },
+        {
+          "name": "Cassis La Dehesa",
+          "page_name": "Cassis",
+          "src": "https://umatu.cl/10-restaurantes-para-ir-con-ninos-en-santiago/",
+          "date": "2026-03",
+          "map": "Google Maps 'Cassis La Dehesa' (José Alcalde Délano 10495), newest review shown 3 days ago"
+        },
+        {
+          "name": "La Fuente Reina",
+          "page_name": "La Fuente Reina",
+          "src": "https://umatu.cl/10-restaurantes-para-ir-con-ninos-en-santiago/",
+          "date": "2026-03",
+          "map": "Google Maps 'La Fuente Reina' (Echeñique 8540), newest review shown 4 days ago"
+        },
+        {
+          "name": "El Cafetín de Virgilio",
+          "page_name": "El Cafetín de Virgilio",
+          "src": "https://www.lanacion.cl/que-hacer-en-santiago-las-mejores-cafeterias-para-ir-con-ninos/",
+          "date": "2026-02",
+          "map": "Google Maps 'El Cafetín de Virgilio' (Virgilio Figueroa 6641), newest review shown a day ago"
+        },
+        {
+          "name": "Chococafé (Providencia)",
+          "page_name": "Chococafé",
+          "src": "https://www.lanacion.cl/que-hacer-en-santiago-las-mejores-cafeterias-para-ir-con-ninos/",
+          "date": "2026-02",
+          "map": "Google Maps 'ChocoCafé providencia' (Alférez Real 1351), newest review shown a week ago"
+        },
+        {
+          "name": "Museo Taller",
+          "page_name": "Museo Taller",
+          "src": "https://umatu.cl/30-lugares-para-ir-con-ninos-en-santiago-cuando-llueve/",
+          "date": "2026-07",
+          "map": "Google Maps 'Museo Taller' (Compañía de Jesús 2784), newest review shown 3 days ago"
+        },
+        {
+          "name": "Science and Technology Museum (Quinta Normal)",
+          "page_name": "Museo de Ciencia y Tecnología",
+          "src": "https://umatu.cl/30-lugares-para-ir-con-ninos-en-santiago-cuando-llueve/",
+          "date": "2026-07",
+          "map": "Google Maps 'Museo de Ciencia y Tecnología de Santiago', newest review shown 3 days ago"
+        },
+        {
+          "name": "National Botanical Garden (Viña del Mar)",
+          "page_name": "Jardín Botánico Nacional",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "date": "2026-08",
+          "map": "Google Maps 'Viña del Mar National Botanical Garden', newest review shown 9 hours ago"
+        },
+        {
+          "name": "Baburizza Palace museum",
+          "page_name": "Museo Baburizza",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "date": "2026-08",
+          "map": "Google Maps 'Baburizza Palace' (Paseo Yugoslavo 176), newest review shown a day ago"
+        },
+        {
+          "name": "Valparaíso Cultural Park",
+          "page_name": "Parque Cultural de Valparaíso",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "date": "2026-08",
+          "map": "Google Maps 'Valparaiso Cultural Park' (Cárcel 471), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "D´Gang (San Sebastián 2800)",
+          "why": "the map shows another restaurant, Vitalicio, at that address"
+        },
+        {
+          "name": "Parkour – Parque Infantil",
+          "why": "two branches named, no single one"
+        },
+        {
+          "name": "Museo Histórico Nacional",
+          "why": "no district on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

@@ -81,6 +81,55 @@
       "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
       "date": "2026-09",
       "map": "Google Maps 600 E Grand Ave, 1 review, from 'last month'"
+    },
+    {
+      "name": "Honey Butter Fried Chicken",
+      "page_name": "Honey Butter Fried Chicken",
+      "src": "https://www.choosechicago.com/restaurants/family-friendly-dining/",
+      "date": "2026-07",
+      "map": "Google Maps 'Honey Butter Fried Chicken' (3361 N Elston Ave), newest review shown a day ago"
+    },
+    {
+      "name": "Purple Monkey Playroom",
+      "page_name": "Purple Monkey Playroom",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'Purple Monkey Playroom LLC' (2040 N Western Ave), newest review shown 6 months ago"
+    },
+    {
+      "name": "HelloBaby (Woodlawn)",
+      "page_name": "Hello Baby",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'HelloBaby NFP' (600 E 61st St), newest review shown 5 days ago"
+    },
+    {
+      "name": "Fit City Kids",
+      "page_name": "Fit City Kids",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'Fit City Kids' (2540 W Lawrence Ave), newest review shown a day ago"
+    },
+    {
+      "name": "ClimbZone Chicago",
+      "page_name": "Climb Zone Chicago",
+      "src": "https://mommypoppins.com/chicago-kids/indoor-activities/chicagos-best-indoor-play-spaces",
+      "date": "2026-02",
+      "map": "Google Maps 'ClimbZone Chicago' (2500 W Bradley Pl), newest review shown a week ago"
+    },
+    {
+      "name": "Adams Park water playground",
+      "page_name": "Adams Park Water Playground",
+      "src": "https://mommypoppins.com/chicago-kids/pools-spray-parks/16-cool-water-playgrounds-and-splash-parks-for-chicago-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Adams (George & Adele) Park' (1919 N Seminary Ave), newest review shown 2 months ago"
+    },
+    {
+      "name": "Jonquil Park",
+      "page_name": "Jonquil Park",
+      "src": "https://www.chicagoparkdistrict.com/parks-facilities/jonquil-park",
+      "date": "official",
+      "map": "Google Maps 'Jonquil Park' (1001 W Wrightwood Ave), newest review shown 3 weeks ago"
     }
   ],
   "left_out": [
@@ -91,7 +140,20 @@
     {
       "name": "Crosby's Kitchen",
       "why": "failed library-check.cjs"
+    },
+    {
+      "name": "Edgewater Playhouse",
+      "why": "newest Google Maps review 7 months old"
+    },
+    {
+      "name": "Crosby's Kitchen",
+      "why": "library-check.cjs could not confirm the row"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from Choose Chicago (Jul 2026), Mommy Poppins (Feb and May 2026) and the Chicago Park District (official), 8 passed library-check.cjs, 7 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
