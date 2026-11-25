@@ -59,7 +59,7 @@ const items = [
     // the big wooden hall jutting out over the slope on a grid of tall pillars, an orange pagoda peeking behind
     svg: free(P('M150 30l10-20 10 20z', '#E64A19') + R(152, 30, 16, 30, '#FF7043') + P('M24 90q96-40 192 0l-12 10H36z', '#5D4037') + R(40, 96, 160, 34, '#D7A86E')
       + [52, 82, 112, 142, 172].map((x) => R(x, 130, 10, 90, '#A1673F', 0, 4)).join('') + Lc('M44 160h150M44 190h150', '#8D6E63', 5) + P('M190 220c10-40 30-60 50-70v70z', '#81C784') + face(120, 112, 0.5)) },
-  { id: 'jp-kyoto.landmark.todaiji', cat: 'landmark', file: 'jp/kyoto/landmark-todaiji.v1.svg', name: nm('วัดโทไดจิ นารา', 'Todai-ji, Nara'), kw: ['todaiji', 'todai-ji', 'โทไดจิ', 'nara', 'นารา', 'great buddha hall', 'daibutsuden'], colour: true, spot: nm('หาวิหารไม้หลังใหญ่ที่สุด', 'Find the biggest wooden hall'),
+  { id: 'jp-nara.landmark.todaiji', cat: 'landmark', file: 'jp/nara/landmark-todaiji.v1.svg', name: nm('วัดโทไดจิ นารา', 'Todai-ji, Nara'), kw: ['todaiji', 'todai-ji', 'โทไดจิ', 'nara', 'นารา', 'great buddha hall', 'daibutsuden'], colour: true, spot: nm('หาวิหารไม้หลังใหญ่ที่สุด', 'Find the biggest wooden hall'),
     // the enormous wooden hall from outside: a wide swept roof with golden horns on the ridge, a deer at the gate
     svg: free(R(40, 120, 160, 80, '#FFF8E1') + [56, 88, 120, 152, 184].map((x) => R(x - 5, 120, 10, 80, '#A1673F', 0, 3.5)).join('') + P('M10 124q110-40 220 0l-12 12H22z', '#455A64') + R(70, 84, 100, 30, '#FFF8E1') + P('M40 88q80-34 160 0l-10 10H50z', '#455A64')
       + P('M50 66c-6-14 6-22 14-12zM190 66c6-14-6-22-14-12z', '#FFD54A', 3.5) + Lc('M50 66q70-20 140 0', '#455A64', 5) + P('M20 220h200', 'none') + C(204, 192, 9, '#C69C6D', 3.5) + Lc('M200 184l-4-10M208 184l4-10', '#8D6E63', 3) + face(120, 160, 0.5)) },
