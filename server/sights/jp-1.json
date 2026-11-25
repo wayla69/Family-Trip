@@ -3605,6 +3605,84 @@
           },
           "q": "Dazaifu Amusement Park, Dazaifu, Fukuoka",
           "ok": "2026-11"
+        },
+        {
+          "local": "スキッズガーデン キャナルシティ博多",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kids.rurubu.jp/article/161123/",
+          "name": {
+            "th": "สคิดส์การ์เดน แคนาลซิตีฮากาตะ",
+            "en": "Skids Garden, Canal City Hakata"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แคนาลซิตีฮากาตะ สุมิโยชิ ฮากาตะคุ",
+            "en": "Canal City Hakata, Sumiyoshi, Hakata-ku"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม 0–7 ขวบ มีพี่เลี้ยงนำเล่น",
+            "en": "An indoor playground for ages 0 to 7, with play leaders"
+          },
+          "why": {
+            "th": "เด็ก 3 ขวบขึ้นไปเข้าเองได้ พ่อแม่ไปช้อปปิ้งได้",
+            "en": "Children 3 and up can go in alone while parents shop"
+          },
+          "q": "スキッズガーデンキャナルシティ博多, 博多区",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ニンジャ☆パーク福岡ももち",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kids.rurubu.jp/article/185983/",
+          "name": {
+            "th": "นินจาพาร์ก ฟุกุโอกะโมโมจิ",
+            "en": "Ninja Park Fukuoka Momochi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จิเงียวฮามะ โมโมจิ จูโอคุ",
+            "en": "Jigyōhama, Momochi, Chūō-ku"
+          },
+          "what": {
+            "th": "สวนอะธเลติกในร่ม มีแทรมโพลีน ปีนผา และด่านลมยาว 20 เมตร",
+            "en": "An indoor athletic park: trampolines, bouldering and a 20 m inflatable course"
+          },
+          "why": {
+            "th": "มีโซนเด็กพร้อมบ่อบอลสำหรับเด็กเล็ก",
+            "en": "A kids' area with a ball pool for small children"
+          },
+          "tip": {
+            "th": "ด่านนินจาธลอนสำหรับ 10 ขวบขึ้นไป",
+            "en": "The Ninjathlon course is for age 10 and up"
+          },
+          "q": "ニンジャ☆パーク福岡ももち, 地行浜, 福岡市",
+          "ok": "2026-11"
         }
       ]
     }
