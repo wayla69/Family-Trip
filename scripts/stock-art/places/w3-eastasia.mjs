@@ -213,7 +213,7 @@ const items = [
 ];
 export default {
   places: {
-    'jp-hiroshima': { country: 'jp', wave: 3, name: nm('ฮิโรชิม่า มิยาจิมะ และโกเบ', 'Hiroshima, Miyajima and Kobe'), tz: 'Asia/Tokyo', ll: [34.39, 132.46], alias: ['hiroshima', 'ฮิโรชิม่า', 'miyajima', 'มิยาจิมะ', 'itsukushima', 'kobe', 'โกเบ', 'okayama', 'โอคายามะ', 'himeji', 'ฮิเมจิ', 'HIJ', 'UKB'], colors: HI },
+    'jp-hiroshima': { country: 'jp', wave: 3, name: nm('ฮิโรชิม่าและมิยาจิมะ', 'Hiroshima and Miyajima'), tz: 'Asia/Tokyo', ll: [34.39, 132.46], alias: ['hiroshima', 'ฮิโรชิม่า', 'miyajima', 'มิยาจิมะ', 'itsukushima', 'okayama', 'โอคายามะ', 'HIJ'], colors: HI },
     'jp-kanazawa': { country: 'jp', wave: 3, name: nm('คานาซาวะ', 'Kanazawa'), tz: 'Asia/Tokyo', ll: [36.56, 136.66], alias: ['kanazawa', 'คานาซาวะ', 'kenrokuen', 'เคนโรคุเอ็น', 'higashi chaya', 'omicho', 'ishikawa', 'KMQ'], colors: KZ },
     'jp-hakone': { country: 'jp', wave: 3, name: nm('ฮาโกเน่', 'Hakone'), tz: 'Asia/Tokyo', ll: [35.23, 139.11], alias: ['hakone', 'ฮาโกเน่', 'lake ashi', 'ทะเลสาบอาชิ', 'owakudani', 'โอวาคุดานิ', 'gora', 'karuizawa', 'คารุอิซาวะ', 'kawaguchiko'], colors: HK },
     'jp-tohoku': { country: 'jp', wave: 3, name: nm('โทโฮคุ', 'Tohoku'), tz: 'Asia/Tokyo', ll: [38.27, 140.87], alias: ['tohoku', 'โทโฮคุ', 'sendai', 'เซนได', 'zao', 'ซาโอ', 'ginzan', 'กินซัน', 'yamagata', 'ยามากาตะ', 'aomori', 'อาโอโมริ', 'matsushima', 'มัตสึชิมะ', 'hirosaki', 'SDJ'], colors: TH },
