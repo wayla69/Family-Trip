@@ -2266,6 +2266,47 @@
           },
           "q": "경기도 업사이클플라자, 서둔로 166, 수원",
           "ok": "2026-11"
+        },
+        {
+          "local": "광교박물관",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "2,000 วอน เด็กฟรี",
+            "en": "₩2,000; children free"
+          },
+          "book": "none",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots",
+          "name": {
+            "th": "พิพิธภัณฑ์ควังกโย ซูวอน",
+            "en": "Suwon Gwanggyo Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนควังกโย ข้างสวนทะเลสาบควังกโย ยองทงกู",
+            "en": "Gwanggyo-ro, by Gwanggyo Lake Park, Yeongtong-gu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ท้องถิ่นบนทางเดินรอบสวนทะเลสาบควังกโย",
+            "en": "A local museum on the walk round Gwanggyo Lake Park"
+          },
+          "why": {
+            "th": "เด็ก 12 ปีลงมาเข้าฟรี",
+            "en": "Free for children aged 12 and under"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Suwon Gwanggyo Museum, 182 Gwanggyo-ro, Suwon",
+          "ok": "2026-11"
         }
       ]
     }
