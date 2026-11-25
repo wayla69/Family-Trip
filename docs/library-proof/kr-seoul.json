@@ -1,96 +1,212 @@
 {
   "town": "kr-seoul",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
-  "agents": "one Haiku agent; 7 rows from mom-mom.net (Aug 2025–Jul 2026) and Seoul Media Hub (Apr 2026) passed library-check.cjs, 4 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Jeongwon Urban Garden",
-      "page_name": "Jeongwon Restaurant Urban Garden",
-      "src": "https://mom-mom.net/en/travel/places/6893244dff7c47aaaa555a96",
-      "date": "2025-08",
-      "map": "Google Maps 'Urban Garden 정원레스토랑 어반가든', 2,591 reviews, newest shown '2 days ago'"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
+      "agents": "one Haiku agent; 7 rows from mom-mom.net (Aug 2025–Jul 2026) and Seoul Media Hub (Apr 2026) passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Jeongwon Urban Garden",
+          "page_name": "Jeongwon Restaurant Urban Garden",
+          "src": "https://mom-mom.net/en/travel/places/6893244dff7c47aaaa555a96",
+          "date": "2025-08",
+          "map": "Google Maps 'Urban Garden 정원레스토랑 어반가든', 2,591 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Cheonggiwa Town (Gildong Sageori)",
+          "page_name": "Cheonggiwa Town Gildong Sageori Branch",
+          "src": "https://mom-mom.net/en/travel/places/69bbae1eb9d379c13d90a837",
+          "date": "2026-03",
+          "map": "Google Maps '청기와타운 길동사거리점', 28 reviews, newest shown '5 months ago'"
+        },
+        {
+          "name": "Casa de Tacos (Songridan-gil)",
+          "page_name": "Casa de Taco Songridan-gil Branch",
+          "src": "https://mom-mom.net/en/travel/places/69ce04411628e93aad55eec3",
+          "date": "2026-04",
+          "map": "Google Maps 'Casa De Tacos 카사데타코 송리단길점', 11 reviews, newest shown '3 weeks ago'"
+        },
+        {
+          "name": "Seoul kids' café, Dream Forest (Cheongun Dapwon)",
+          "page_name": "북서울꿈의숲 청운답원",
+          "src": "https://mediahub.seoul.go.kr/archives/2017910",
+          "date": "2026-04",
+          "map": "Google Maps the park 'Dream Forest 북서울 꿈의숲', 4,795 reviews, newest shown '14 days ago' (the kids' café has no entry of its own; Seoul city's page of Apr 2026 lists it)"
+        },
+        {
+          "name": "Flubber (Yangjaecheon)",
+          "page_name": "Flubber Yangjaecheon Branch",
+          "src": "https://mom-mom.net/en/travel/places/694ba915147afb37efebb9df",
+          "date": "2025-12",
+          "map": "Kakao Map '플러버양재천점' (양재천로29길 15), open, 8 reviews, newest 10 Nov 2026"
+        },
+        {
+          "name": "Hwangnam (Gwanghwamun)",
+          "page_name": "Hwangnam",
+          "src": "https://mom-mom.net/en/travel/places/6a4621dbd8049704ecf8b9e0",
+          "date": "2026-07",
+          "map": "Kakao Map '황남' (새문안로3길 36 용비어천가 지하1층), open, newest review 23 Nov 2026"
+        },
+        {
+          "name": "Seoul Children's Museum (Seoul Sangsang Nara)",
+          "page_name": "서울상상나라",
+          "src": "https://mediahub.seoul.go.kr/archives/2016748",
+          "date": "2026-01",
+          "map": "Kakao Map '서울상상나라' (능동로 216), open 10:00–18:00 on the list, 43 reviews, newest 19 Nov 2026"
+        },
+        {
+          "name": "Seoul Kids Café (Cheonwang Park)",
+          "page_name": "서울형 키즈카페 천왕근린공원점",
+          "src": "https://mediahub.seoul.go.kr/archives/2020010",
+          "date": "2026-11",
+          "map": "Kakao Map '서울형키즈카페 구로구천왕근린공원점' (금오로 878), open, newest blog review 18 Nov 2026"
+        },
+        {
+          "name": "Hangang PlePle (Ttukseom)",
+          "page_name": "한강플플",
+          "src": "https://mediahub.seoul.go.kr/archives/2017985",
+          "date": "2026-05",
+          "map": "Kakao Map '한강플플' (강변북로 2202 뚝섬 자벌레), open 10:00–19:00 on the list, 30 reviews, newest 22 Nov 2026"
+        },
+        {
+          "name": "Seoul Museum of History Children's Museum",
+          "page_name": "서울역사박물관 어린이박물관",
+          "src": "https://mediahub.seoul.go.kr/archives/2018657",
+          "date": "2026-07",
+          "map": "Kakao Map '서울역사박물관' (새문안로 55; the children's museum has no entry of its own), open, 109 reviews, newest 22 Nov 2026"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Ondrin (The Hyundai Seoul)",
+          "why": "no reviews on the map"
+        },
+        {
+          "name": "Ondrin (The Hyundai Seoul)",
+          "why": "newest Kakao Map review March 2025"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "kakao_pass": "24 Nov 2026: +2 (Flubber (Yangjaecheon), Hwangnam (Gwanghwamun))",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 4 rows from the Seoul city media hub (2026), all passed library-check.cjs, 4 went in",
+        "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     },
     {
-      "name": "Cheonggiwa Town (Gildong Sageori)",
-      "page_name": "Cheonggiwa Town Gildong Sageori Branch",
-      "src": "https://mom-mom.net/en/travel/places/69bbae1eb9d379c13d90a837",
-      "date": "2026-03",
-      "map": "Google Maps '청기와타운 길동사거리점', 28 reviews, newest shown '5 months ago'"
-    },
-    {
-      "name": "Casa de Tacos (Songridan-gil)",
-      "page_name": "Casa de Taco Songridan-gil Branch",
-      "src": "https://mom-mom.net/en/travel/places/69ce04411628e93aad55eec3",
-      "date": "2026-04",
-      "map": "Google Maps 'Casa De Tacos 카사데타코 송리단길점', 11 reviews, newest shown '3 weeks ago'"
-    },
-    {
-      "name": "Seoul kids' café, Dream Forest (Cheongun Dapwon)",
-      "page_name": "북서울꿈의숲 청운답원",
-      "src": "https://mediahub.seoul.go.kr/archives/2017910",
-      "date": "2026-04",
-      "map": "Google Maps the park 'Dream Forest 북서울 꿈의숲', 4,795 reviews, newest shown '14 days ago' (the kids' café has no entry of its own; Seoul city's page of Apr 2026 lists it)"
-    },
-    {
-      "name": "Flubber (Yangjaecheon)",
-      "page_name": "Flubber Yangjaecheon Branch",
-      "src": "https://mom-mom.net/en/travel/places/694ba915147afb37efebb9df",
-      "date": "2025-12",
-      "map": "Kakao Map '플러버양재천점' (양재천로29길 15), open, 8 reviews, newest 10 Nov 2026"
-    },
-    {
-      "name": "Hwangnam (Gwanghwamun)",
-      "page_name": "Hwangnam",
-      "src": "https://mom-mom.net/en/travel/places/6a4621dbd8049704ecf8b9e0",
-      "date": "2026-07",
-      "map": "Kakao Map '황남' (새문안로3길 36 용비어천가 지하1층), open, newest review 23 Nov 2026"
-    },
-    {
-      "name": "Seoul Children's Museum (Seoul Sangsang Nara)",
-      "page_name": "서울상상나라",
-      "src": "https://mediahub.seoul.go.kr/archives/2016748",
-      "date": "2026-01",
-      "map": "Kakao Map '서울상상나라' (능동로 216), open 10:00–18:00 on the list, 43 reviews, newest 19 Nov 2026"
-    },
-    {
-      "name": "Seoul Kids Café (Cheonwang Park)",
-      "page_name": "서울형 키즈카페 천왕근린공원점",
-      "src": "https://mediahub.seoul.go.kr/archives/2020010",
-      "date": "2026-11",
-      "map": "Kakao Map '서울형키즈카페 구로구천왕근린공원점' (금오로 878), open, newest blog review 18 Nov 2026"
-    },
-    {
-      "name": "Hangang PlePle (Ttukseom)",
-      "page_name": "한강플플",
-      "src": "https://mediahub.seoul.go.kr/archives/2017985",
-      "date": "2026-05",
-      "map": "Kakao Map '한강플플' (강변북로 2202 뚝섬 자벌레), open 10:00–19:00 on the list, 30 reviews, newest 22 Nov 2026"
-    },
-    {
-      "name": "Seoul Museum of History Children's Museum",
-      "page_name": "서울역사박물관 어린이박물관",
-      "src": "https://mediahub.seoul.go.kr/archives/2018657",
-      "date": "2026-07",
-      "map": "Kakao Map '서울역사박물관' (새문안로 55; the children's museum has no entry of its own), open, 109 reviews, newest 22 Nov 2026"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 17 rows from mediahub.seoul.go.kr (May–Jul 2026) and yugacrew.com (Apr–Jun 2026), all passed library-check.cjs, 11 went in",
+      "added": [
+        {
+          "name": "Saint Augustin SFC",
+          "page_name": "생어거스틴 SFC점",
+          "src": "https://www.yugacrew.com/crewletter/kid-friendly-restaurants-seoul-best",
+          "date": "2026-04",
+          "map": "Google Maps 'Saint AUGUSTIN Asian Food GFC' (136 Sejong-daero — the Seoul Finance Center), newest review shown 2 months ago"
+        },
+        {
+          "name": "Highway Seoul, Times Square",
+          "page_name": "하이웨이서울 기사식당 타임스퀘어점",
+          "src": "https://www.yugacrew.com/crewletter/kid-friendly-restaurants-seoul-best",
+          "date": "2026-04",
+          "map": "Google Maps 'HIGHWAY SEOUL Yeongdeungpo Times Square', newest review shown 2 days ago"
+        },
+        {
+          "name": "Maranbang, Cheongnyangni Station",
+          "page_name": "동대문 매란방 청량리역점",
+          "src": "https://www.yugacrew.com/crewletter/baby-restaurant",
+          "date": "2026-06",
+          "map": "Google Maps '매란방 청량리역점' (Wangsan-ro, Dongdaemun), newest review shown 4 months ago"
+        },
+        {
+          "name": "Kyochon Chicken, Yaksu",
+          "page_name": "교촌치킨 약수점",
+          "src": "https://www.yugacrew.com/crewletter/best-family-dining-courses-with-kids",
+          "date": "2026-04",
+          "map": "Google Maps '교촌치킨 약수점' (137-1 Dasan-ro), newest review shown a month ago"
+        },
+        {
+          "name": "Qoo Qoo Gold, Sangbong",
+          "page_name": "쿠우쿠우 골드 상봉점",
+          "src": "https://www.yugacrew.com/crewletter/best-family-dining-courses-with-kids",
+          "date": "2026-04",
+          "map": "Google Maps 'Qoo Qoo' (316 Mangu-ro, Jungnang-gu), newest review shown 4 days ago"
+        },
+        {
+          "name": "Seoul Baekje Children's Museum",
+          "page_name": "서울백제어린이박물관",
+          "src": "https://mediahub.seoul.go.kr/archives/2018712",
+          "date": "2026-07",
+          "map": "Google Maps 'Seoul Baekje Children\\'s Museum' (424 Olympic-ro), newest review shown a week ago"
+        },
+        {
+          "name": "Arisu Nara (tap-water hall for children)",
+          "page_name": "아리수나라",
+          "src": "https://mediahub.seoul.go.kr/archives/2018830",
+          "date": "2026-07",
+          "map": "Google Maps 'Arisu Nara' (238 Neungdong-ro), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Boramae Park",
+          "page_name": "보라매공원",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-dongjak",
+          "date": "2026-04",
+          "map": "Google Maps 'Boramae Park' (Yeouidaebang-ro 20-gil), newest review shown 5 days ago"
+        },
+        {
+          "name": "Gwangnaru Han River Park \"Everyone's Playground\"",
+          "page_name": "광나루한강공원 모두의 놀이터",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "date": "2026-04",
+          "map": "Google Maps '광나루 모두의놀이터' (Cheonho-dong), newest review shown 3 months ago"
+        },
+        {
+          "name": "Amsa-dong Prehistoric Settlement Site",
+          "page_name": "암사동 유적",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "date": "2026-04",
+          "map": "Google Maps 'Amsa-dong Prehistoric Museum Site', newest review shown 3 months ago"
+        },
+        {
+          "name": "Amsa Ecological Park",
+          "page_name": "암사생태공원",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "date": "2026-04",
+          "map": "Google Maps 'Amsa Ecological Park', newest review shown 5 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "계림원 상도점",
+          "why": "the newest review on the map is 11 months old"
+        },
+        {
+          "name": "아비꼬 롯데몰 은평점",
+          "why": "the newest review on the map is 3 years old"
+        },
+        {
+          "name": "우메인 논현점",
+          "why": "the map found only another branch (Hapjeong)"
+        },
+        {
+          "name": "어린이대공원 팔각정 (Seoul-type kids' café)",
+          "why": "no map entry of its own"
+        },
+        {
+          "name": "수도박물관",
+          "why": "the page gives no district"
+        },
+        {
+          "name": "보라매공원 습지체험장",
+          "why": "part of Boramae Park; folded into its row"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Ondrin (The Hyundai Seoul)",
-      "why": "no reviews on the map"
-    },
-    {
-      "name": "Ondrin (The Hyundai Seoul)",
-      "why": "newest Kakao Map review March 2025"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +2 (Flubber (Yangjaecheon), Hwangnam (Gwanghwamun))",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 4 rows from the Seoul city media hub (2026), all passed library-check.cjs, 4 went in",
-    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

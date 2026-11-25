@@ -551,6 +551,232 @@
           },
           "q": "서울역사박물관, 새문안로 55, 서울",
           "ok": "2026-11"
+        },
+        {
+          "local": "서울백제어린이박물관",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mediahub.seoul.go.kr/archives/2018712",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กแพ็กเจโซล",
+            "en": "Seoul Baekje Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนโอลิมปิก ถนนโอลิมปิก ซงพากู",
+            "en": "Olympic Park, Olympic-ro 424, Songpa-gu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็ก เรียนรู้ประวัติและชีวิตอาณาจักรแพ็กเจด้วยการลงมือทำ",
+            "en": "A children's museum to learn the history and life of the Baekje kingdom by doing"
+          },
+          "why": {
+            "th": "เด็กได้ก่อกำแพงเมืองแพ็กเจบนจอดิจิทัล",
+            "en": "Children build a Baekje city wall on a digital screen"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ วันหยุดต้องจองก่อน",
+            "en": "Closed on Mondays; weekends and holidays need a booking"
+          },
+          "q": "Seoul Baekje Children's Museum, 424 Olympic-ro, Songpa-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "아리수나라",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2018830",
+          "name": {
+            "th": "อาริซูนารา ศูนย์เรียนรู้น้ำประปาสำหรับเด็ก",
+            "en": "Arisu Nara (tap-water hall for children)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนเด็กแกรนด์พาร์ก ถนนนึงดง ควังจินกู",
+            "en": "Children's Grand Park, Neungdong-ro, Gwangjin-gu"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้เรื่องน้ำประปาของโซลสำหรับเด็ก ในสวนเด็กแกรนด์พาร์ก",
+            "en": "A children's hall about Seoul's tap water inside Children's Grand Park"
+          },
+          "why": {
+            "th": "เด็กได้ลองเรื่องน้ำประปาด้วยมือตัวเอง",
+            "en": "Children try out how tap water works with their hands"
+          },
+          "q": "Arisu Nara, 238 Neungdong-ro, Gwangjin-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "보라매공원",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-dongjak",
+          "name": {
+            "th": "สวนโบราแม",
+            "en": "Boramae Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนยออีแดบัง ทงจักกู",
+            "en": "Yeouidaebang-ro, Dongjak-gu"
+          },
+          "what": {
+            "th": "สวนสาธารณะใหญ่ในทงจัก มีพื้นที่ชุ่มน้ำให้เด็กดูแมลงและพืชฟรี",
+            "en": "A big city park in Dongjak, with a free wetland where children look at insects and plants"
+          },
+          "why": {
+            "th": "คนในย่านแนะนำ พื้นที่ชุ่มน้ำให้เด็กเห็นธรรมชาติใกล้ๆ",
+            "en": "Locals recommend it; the wetland lets children see nature up close"
+          },
+          "q": "Boramae Park, Dongjak-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "광나루 모두의놀이터",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "name": {
+            "th": "สนามเด็กเล่นของทุกคน สวนริมแม่น้ำฮันกวังนารู",
+            "en": "Gwangnaru Han River Park \"Everyone's Playground\""
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนริมแม่น้ำฮันกวังนารู ชอนโฮดง คังดงกู",
+            "en": "Gwangnaru Han River Park, Cheonho-dong, Gangdong-gu"
+          },
+          "what": {
+            "th": "สนามเด็กเล่น 6,000 ตร.ม. มีลานหัดปั่นจักรยานสำหรับเด็กเล็ก",
+            "en": "A 6,000 m² playground with a bike-learning track for small children"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่ และมีที่ให้เด็กเล็กหัดปั่นจักรยาน",
+            "en": "A huge playground plus a place for toddlers to learn to ride"
+          },
+          "q": "광나루 모두의놀이터, Cheonho-dong, Gangdong-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "암사동 유적",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป เด็ก 6 ขวบลงมาฟรี",
+            "en": "Check the price; ages 6 and under free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "name": {
+            "th": "แหล่งโบราณคดีอัมซาดง",
+            "en": "Amsa-dong Prehistoric Settlement Site"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อัมซาดง คังดงกู",
+            "en": "Amsa-dong, Gangdong-gu"
+          },
+          "what": {
+            "th": "แหล่งหมู่บ้านยุคหินใหม่ มีกระท่อมจำลองและพิพิธภัณฑ์",
+            "en": "A Neolithic village site with rebuilt huts and a museum"
+          },
+          "why": {
+            "th": "เด็ก 6 ขวบลงมาเข้าฟรี",
+            "en": "Children aged 6 and under go in free"
+          },
+          "q": "Amsa-dong Prehistoric Site, Gangdong-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "암사생태공원",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "name": {
+            "th": "สวนนิเวศอัมซา",
+            "en": "Amsa Ecological Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริมแม่น้ำฮัน อัมซาดง คังดงกู",
+            "en": "Han River bank, Amsa-dong, Gangdong-gu"
+          },
+          "what": {
+            "th": "สวนธรรมชาติริมแม่น้ำ มีดาดฟ้าชมวิวแม่น้ำฮัน",
+            "en": "A riverside nature park with a viewing deck over the Han"
+          },
+          "why": {
+            "th": "เดินชมธรรมชาติริมน้ำฟรี มีกิจกรรมธรรมชาติสำหรับเด็ก",
+            "en": "A free nature walk by the river, with children's nature programmes"
+          },
+          "q": "Amsa Ecological Park, Gangdong-gu, Seoul",
+          "ok": "2026-11"
         }
     ]
     },
