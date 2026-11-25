@@ -1087,6 +1087,43 @@
           },
           "q": "Coronet Peak, Queenstown",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidspot.co.nz/?p=1121149",
+          "name": {
+            "th": "สนามเด็กเล่นไดโนเสาร์ วานาคา",
+            "en": "Wānaka Dinosaur Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเลกไซด์ ใจกลางวานาคา",
+            "en": "Lakeside Road, Wānaka town centre"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นปรับปรุงใหม่ ริมทะเลสาบกลางเมืองวานาคา",
+            "en": "A refurbished playground on the lake edge in the middle of Wānaka"
+          },
+          "why": {
+            "th": "นั่งพักได้ขณะเด็กเล่น และว่ายน้ำได้เมื่ออากาศอุ่น",
+            "en": "A spot to relax while the children play, and a swim when it is warm"
+          },
+          "q": "Wānaka Dinosaur Playground, Lakeside Road, Wānaka",
+          "ok": "2026-11"
         }
     ]
     }
