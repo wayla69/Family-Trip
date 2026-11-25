@@ -821,4 +821,4 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +1 (Buffalo Wings & Rings, Aqaba). Proof in `docs/library-proof/jo-petra.json`.
 
-- **25 Nov 2026, Sendai (new place)**: the 12 Sendai and Matsushima rows of  moved to  unchanged; Tohoku keeps 9.
+- **25 Nov 2026, Sendai (new place)**: the 12 Sendai and Matsushima rows of `jp-tohoku` moved to `jp-sendai` unchanged; Tohoku keeps 9.
