@@ -1,0 +1,144 @@
+{
+  "town": "cn-hangzhou",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "Things to do: library-check.cjs. Places to eat: the Dianping shop page read in Chrome (owner's China rule ข; the checker cannot fetch Dianping). Every place: Amap (Google Maps does not cover China), ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents and a read here in Chrome; restaurants from Dianping shop pages (the owner's China rule ข: Dianping as the source, Amap for the status), things to do from Sina (Aug 2026) and SMZDM (Apr 2026) pages that pass library-check.cjs, each checked on Amap",
+  "added": [
+    {
+      "name": "Maggie & Rose (Aoti Impression City)",
+      "page_name": "Maggie&Rose麦琪萝丝亲子餐厅(奥体印象城店)",
+      "src": "https://www.dianping.com/shop/l5BnVkJDZvZqm2Lx",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 7月16日,7月19日,10月31日",
+      "map": "Amap: open, not marked closed; Dianping 416 reviews, newest reviews within six months"
+    },
+    {
+      "name": "Mihai Train Restaurant (Baita Park)",
+      "page_name": "觅海轨道火车主题餐厅(白塔公园店)",
+      "src": "https://www.dianping.com/shop/G2JuLGBbR6ClehF5",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 7月4日,11月4日,11月2日",
+      "map": "Amap: open, not marked closed; Dianping 1,038 reviews, newest reviews within six months"
+    },
+    {
+      "name": "Mumu Lakeside Café (Donglian)",
+      "page_name": "木木餐酒馆·湖景聚会·亲子(东莲店)",
+      "src": "https://www.dianping.com/shop/l7zPwOtcsBfcUXXV",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 11月2日,11月17日",
+      "map": "Amap: open, not marked closed; Dianping 78 reviews; Amap lists it as a café, newest reviews within six months"
+    },
+    {
+      "name": "Huoba Restaurant (Longwu)",
+      "page_name": "火把餐厅·胡闹厨房(龙坞店)",
+      "src": "https://www.dianping.com/shop/k9Hh94GdAIlmWDT4",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 10月28日,8月2日,6月6日",
+      "map": "Amap: open, not marked closed; Dianping 612 reviews, newest reviews within six months"
+    },
+    {
+      "name": "Tianmu All-Day Dining (Crowne Plaza AUX Centre)",
+      "page_name": "天幕·全日制餐厅(杭州奥克斯中心皇冠假日酒店)",
+      "src": "https://www.dianping.com/shop/G3vkOllGXUoS98qa",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 10月29日,7月4日,7月18日",
+      "map": "Amap: open, not marked closed; Dianping 2,236 reviews, newest reviews within six months"
+    },
+    {
+      "name": "Jiangjianghao Family Kitchen",
+      "page_name": "姜姜好家庭厨房·庭院餐厅",
+      "src": "https://www.dianping.com/shop/l1UrXMazDP4MfYAe",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 11月4日,11月4日,11月18日",
+      "map": "Amap: open, not marked closed; Dianping 1,401 reviews, newest reviews within six months"
+    },
+    {
+      "name": "Aqua Oasis (AEON Qiantang)",
+      "page_name": "Aqua Oasis 水天堂(杭州钱塘永旺店)",
+      "src": "https://www.dianping.com/shop/k6cM6NqG7jIJRqlm",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 11月11日,11月13日,9月2日",
+      "map": "Amap: open, not marked closed; Dianping 3,019 reviews, newest reviews within six months"
+    },
+    {
+      "name": "Rebo Forest (Fuyang Powerlong Plaza)",
+      "page_name": "热播森林(富阳宝龙广场店)",
+      "src": "https://www.dianping.com/shop/k5iDTma1GeW2f7ue",
+      "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 6月30日,10月27日",
+      "map": "Amap: open, not marked closed; Dianping 116 reviews, newest reviews within six months"
+    },
+    {
+      "name": "Meland (Chengxi Intime)",
+      "page_name": "meland",
+      "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+      "date": "2026-08",
+      "map": "Amap: 'MELAND CLUB(杭州城西银泰店)', newest review 2026-11-08"
+    },
+    {
+      "name": "Neobio Family Park (Xingguang)",
+      "page_name": "奈尔宝家庭中心",
+      "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+      "date": "2026-08",
+      "map": "Amap: '超级奈尔宝 星光店', open"
+    },
+    {
+      "name": "Rotten Apple Park",
+      "page_name": "烂苹果乐园",
+      "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+      "date": "2026-08",
+      "map": "Amap: open"
+    },
+    {
+      "name": "Chongxiaolü Park",
+      "page_name": "虫小绿乐园",
+      "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+      "date": "2026-08",
+      "map": "Amap: open"
+    },
+    {
+      "name": "Hangzhou Paradise",
+      "page_name": "杭州乐园",
+      "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+      "date": "2026-08",
+      "map": "Amap: open"
+    },
+    {
+      "name": "Kaiyuan Senbo Resort Park",
+      "page_name": "杭州开元森泊度假乐园",
+      "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+      "date": "2026-08",
+      "map": "Amap: open"
+    },
+    {
+      "name": "Songcheng",
+      "page_name": "杭州宋城",
+      "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+      "date": "2026-08",
+      "map": "Amap: open"
+    },
+    {
+      "name": "Taiziwan Park",
+      "page_name": "太子湾公园",
+      "src": "https://post.smzdm.com/p/aggmlx97/",
+      "date": "2026-04",
+      "map": "Amap: open"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "幻贝家亲子乐园",
+      "why": "not found on Amap"
+    },
+    {
+      "name": "meland club亲子餐厅",
+      "why": "the restaurant inside the Meland play park, which is in as a thing to do"
+    },
+    {
+      "name": "小猪佩奇欢乐餐厅 (Binjiang Intime)",
+      "why": "the newest review on Amap is from March 2026, older than six months"
+    },
+    {
+      "name": "奥特曼主题餐厅 (Binjiang Longfor)",
+      "why": "not found on Amap in Hangzhou"
+    },
+    {
+      "name": "奈尔宝 restaurants",
+      "why": "the page names two branches, not one"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
