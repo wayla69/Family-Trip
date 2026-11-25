@@ -30,7 +30,7 @@ const items = [
       + Lc('M64 110l-10-10M120 88v-14M176 110l10-10', '#FF8A65', 3) + face(120, 150, 0.46)
       + g(70, 210, 1, Lc('M0 0l40-10', '#8D5524', 5) + Lc('M60 0l40-10', '#8D5524', 5) + C(-4, 2, 4, '#E53935', 1.5) + C(56, 2, 4, '#E53935', 1.5))
       + [[40, 60], [200, 54]].map(([x, y]) => C(x, y, 6, '#5C6BC0', 2) + Lc(`M${x + 5} ${y}v-20l10 5`, '#5C6BC0', 3)).join('')),
-  L('jp/takayama/landmark-misonikomi.v1.svg', 'มิโซะนิโคมิอุด้งในหม้อดินแบบนาโกย่า', 'Miso nikomi udon in a clay pot, Nagoya style', ['miso nikomi udon', 'มิโซะนิโคมิอุด้ง', 'misonikomi', 'มิโซะนิโคมิ', 'hatcho miso', 'มิโซะฮัตโจ', 'clay pot', 'หม้อดิน', 'nagoya meshi', 'อาหารนาโกย่า', 'red miso broth'], 'หาไข่ดิบสีเหลืองที่อยู่กลางหม้อ', 'Find the yellow egg yolk in the middle of the pot',
+  L('jp/nagoya/landmark-misonikomi.v1.svg', 'มิโซะนิโคมิอุด้งในหม้อดินแบบนาโกย่า', 'Miso nikomi udon in a clay pot, Nagoya style', ['miso nikomi udon', 'มิโซะนิโคมิอุด้ง', 'misonikomi', 'มิโซะนิโคมิ', 'hatcho miso', 'มิโซะฮัตโจ', 'clay pot', 'หม้อดิน', 'nagoya meshi', 'อาหารนาโกย่า', 'red miso broth'], 'หาไข่ดิบสีเหลืองที่อยู่กลางหม้อ', 'Find the yellow egg yolk in the middle of the pot',
     // a brown clay pot with two little handles bubbling with dark red miso broth, thick noodles, a raw egg yolk in the middle, green onion and a piece of fried chicken, the lid tilted beside it as a plate
     E(170, 70, 56, 18, '#A1673F') + C(170, 56, 8, '#8D5524', 2.5) + E(170, 76, 48, 10, '#8D5524', 0)
       + P('M24 120h170c0 56-30 90-85 90s-85-34-85-90z', '#A1673F') + Lc('M24 120h-12M194 120h12', '#8D5524', 8) + E(109, 120, 85, 22, '#6D2E2E') + E(109, 120, 76, 17, '#8E3A2A', 0)
