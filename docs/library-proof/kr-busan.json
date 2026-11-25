@@ -1,188 +1,254 @@
 {
   "town": "kr-busan",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
-  "agents": "one Haiku agent; 21 rows from mom-mom.net, Visit Busan and family travel blogs (Feb 2025–Oct 2026), 18 passed library-check.cjs, 10 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Shabussam Jumeoni (Osiria)",
-      "page_name": "Shabussam Jumeoni Busan Osiria Branch",
-      "src": "https://mom-mom.net/en/travel/places/65dbef8b2fd27d17773464e4",
-      "date": "2026-05",
-      "map": "Google Maps 141 reviews, newest shown 'last month'"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's. Rows Google Maps could not confirm (few reviews in Korea) were then checked on Kakao Map (Naver Map is blocked in this browser), 24 Nov 2026: open or with listed hours, not marked 휴업/폐업, a review or blog review from the last six months, name and address matching the page.",
+      "agents": "one Haiku agent; 21 rows from mom-mom.net, Visit Busan and family travel blogs (Feb 2025–Oct 2026), 18 passed library-check.cjs, 10 went in",
+      "added": [
+        {
+          "name": "Shabussam Jumeoni (Osiria)",
+          "page_name": "Shabussam Jumeoni Busan Osiria Branch",
+          "src": "https://mom-mom.net/en/travel/places/65dbef8b2fd27d17773464e4",
+          "date": "2026-05",
+          "map": "Google Maps 141 reviews, newest shown 'last month'"
+        },
+        {
+          "name": "Daepae Market (Daeyeon)",
+          "page_name": "Daepae Market Busan Daeyeon Branch",
+          "src": "https://mom-mom.net/en/travel/places/6a2bd39a8bdc6701d24a4bcc",
+          "date": "2026-06",
+          "map": "Google Maps 75 reviews, newest shown '20 days ago'"
+        },
+        {
+          "name": "Gwangan Jeil Dwaeji Gukbap",
+          "page_name": "Gwangan Jeil Dwaeji Gukbap Gwangan Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/69c9e84764b191f1fded764f",
+          "date": "2026-03",
+          "map": "Google Maps 332 reviews, newest shown '4 days ago'"
+        },
+        {
+          "name": "Mad for Garlic (Lotte Busan Main)",
+          "page_name": "Mad for Garlic Lotte Busan Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/69d865bd2381dc67487cd161",
+          "date": "2026-04",
+          "map": "Google Maps 529 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Old Mug",
+          "page_name": "Old Mug",
+          "src": "https://mom-mom.net/en/travel/places/67a964f430defef2e9178537",
+          "date": "2025-02",
+          "map": "Google Maps 567 reviews, newest shown '10 days ago'"
+        },
+        {
+          "name": "Miffy Café Busan",
+          "page_name": "The Miffy Café",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 1,454 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Brick Campus",
+          "page_name": "Brick Campus",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 172 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Amnam Park",
+          "page_name": "Amnam Park",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 617 reviews, newest shown '8 days ago'"
+        },
+        {
+          "name": "Sajik Baseball Stadium",
+          "page_name": "Sajik Stadium",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "date": "2026-06",
+          "map": "Google Maps 4,459 reviews, newest shown '15 days ago'"
+        },
+        {
+          "name": "Wonder Space (Myeongji)",
+          "page_name": "원더스페이스 부산명지점",
+          "src": "https://mom-mom.net/travel/places/635f6d83e69cfb073a6cdd34",
+          "date": "2025-02",
+          "map": "Google Maps '원더스페이스 부산명지점', 15 reviews, newest shown '23 days ago'"
+        },
+        {
+          "name": "Monyeo Jubang",
+          "page_name": "Monyeo Jubang",
+          "src": "https://mom-mom.net/en/travel/places/69e7119c5e6b759ea00bb9d1",
+          "date": "2026-04",
+          "map": "Kakao Map '모녀주방' (해운대로76번길 16 센텀휴상가), open, newest review 15 Nov 2026"
+        },
+        {
+          "name": "Ilsamyuk Meat House (Myeongji)",
+          "page_name": "Ilsamyuk Meat House Myeongji Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/6808aeb4c529cadc1d23984b",
+          "date": "2025-04",
+          "map": "Kakao Map '일삼육고깃집' (명지국제8로 293), open, 61 reviews, newest 13 Nov 2026"
+        },
+        {
+          "name": "Gwanganri Daegyo Milmyeon",
+          "page_name": "Gwanganri Daegyo Milmyeon",
+          "src": "https://mom-mom.net/en/travel/places/69c9e8a58d0737a256378369",
+          "date": "2026-03",
+          "map": "Kakao Map '광안리대교밀면' (광남로 239), open, 99 reviews, newest 8 Nov 2026"
+        },
+        {
+          "name": "Zooraji (Shinsegae Centum City)",
+          "page_name": "Shinsegae Centum City Zooraji",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "date": "2026-06",
+          "map": "Kakao Map '주라지 신세계센텀시티점' (센텀남대로 35 9층), open 11:00–20:00 on the list, newest review 18 Nov 2026"
+        },
+        {
+          "name": "Deullak Nallak (Busan City Hall)",
+          "page_name": "부산시청 들락날락",
+          "src": "https://mom-mom.net/travel/places/6a68148152020564a1a38d66",
+          "date": "2025-12",
+          "map": "Kakao Map '부산시청 열린도서관 들락날락' (중앙대로 1001, 1·3층), open 09:00–19:00 on the list, newest review 23 Jul 2026"
+        },
+        {
+          "name": "Busan Children's Creative Education Centre",
+          "page_name": "부산광역시교육청어린이창의교육관",
+          "src": "https://mom-mom.net/travel/places/66860ce84290823eb81e1400",
+          "date": "2026-11",
+          "map": "Kakao Map '부산광역시교육청어린이창의교육관' (성지곡로33번길 29-28), open, newest review 21 Nov 2026"
+        },
+        {
+          "name": "PlayLab (Busan, Haeundae)",
+          "page_name": "아동놀이연구소 플레이랩 부산점",
+          "src": "https://mom-mom.net/travel/places/69c34d953cc4acad909981bc",
+          "date": "2026-11",
+          "map": "Kakao Map '플레이랩 부산점' (세실로69번길 15), 53 blog reviews, newest 13 Oct 2026"
+        },
+        {
+          "name": "Aejijungji Public Kids Café (Busan Citizens Park)",
+          "page_name": "당신처럼 애지중지 공공형 키즈카페",
+          "src": "https://busan.breaknews.com/42356",
+          "date": "2026-02",
+          "map": "Kakao Map '당신처럼 애지중지 키즈카페' (시민공원로 73), open, newest review 21 Nov 2026"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Hyeonpung Dak Kalguksu (Myeongji)",
+          "why": "the map shows only a closed branch in Seomyeon"
+        },
+        {
+          "name": "Trick Eye Museum Busan",
+          "why": "permanently closed on the map"
+        },
+        {
+          "name": "부산시청 들락날락",
+          "why": "the map shows a staff cafeteria"
+        },
+        {
+          "name": "Busan Creative Convergence Education Center, Museum of Contemporary Art Busan",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "HBAF",
+          "why": "a shop"
+        },
+        {
+          "name": "Geongang Bapsang (Connect Hyundai)",
+          "why": "failed library-check.cjs"
+        },
+        {
+          "name": "Hyeonpung Dak Kalguksu (Myeongji)",
+          "why": "not found on Kakao Map"
+        },
+        {
+          "name": "Busan Creative Convergence Education Center",
+          "why": "Kakao Map: closed 10 Aug 2026 – 28 Feb 2027"
+        },
+        {
+          "name": "Museum of Contemporary Art Busan",
+          "why": "Kakao Map: closed 2 Nov – 10 Dec 2026"
+        },
+        {
+          "name": "부산광역시교육청창의융합교육원",
+          "why": "Kakao Map: closed 10 Aug 2026 – 28 Feb 2027"
+        },
+        {
+          "name": "장안딸기농장",
+          "why": "not found on Kakao Map"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "kakao_pass": "24 Nov 2026: +4 (Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon; Zooraji (Shinsegae Centum City))",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 6 rows from mom-mom.net (2025–2026) and Breaknews Busan (Feb 2026), all passed library-check.cjs, 4 went in",
+        "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     },
     {
-      "name": "Daepae Market (Daeyeon)",
-      "page_name": "Daepae Market Busan Daeyeon Branch",
-      "src": "https://mom-mom.net/en/travel/places/6a2bd39a8bdc6701d24a4bcc",
-      "date": "2026-06",
-      "map": "Google Maps 75 reviews, newest shown '20 days ago'"
-    },
-    {
-      "name": "Gwangan Jeil Dwaeji Gukbap",
-      "page_name": "Gwangan Jeil Dwaeji Gukbap Gwangan Main Branch",
-      "src": "https://mom-mom.net/en/travel/places/69c9e84764b191f1fded764f",
-      "date": "2026-03",
-      "map": "Google Maps 332 reviews, newest shown '4 days ago'"
-    },
-    {
-      "name": "Mad for Garlic (Lotte Busan Main)",
-      "page_name": "Mad for Garlic Lotte Busan Main Branch",
-      "src": "https://mom-mom.net/en/travel/places/69d865bd2381dc67487cd161",
-      "date": "2026-04",
-      "map": "Google Maps 529 reviews, newest shown '2 days ago'"
-    },
-    {
-      "name": "Old Mug",
-      "page_name": "Old Mug",
-      "src": "https://mom-mom.net/en/travel/places/67a964f430defef2e9178537",
-      "date": "2025-02",
-      "map": "Google Maps 567 reviews, newest shown '10 days ago'"
-    },
-    {
-      "name": "Miffy Café Busan",
-      "page_name": "The Miffy Café",
-      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
-      "date": "2026-06",
-      "map": "Google Maps 1,454 reviews, newest shown '1 day ago'"
-    },
-    {
-      "name": "Brick Campus",
-      "page_name": "Brick Campus",
-      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
-      "date": "2026-06",
-      "map": "Google Maps 172 reviews, newest shown '1 day ago'"
-    },
-    {
-      "name": "Amnam Park",
-      "page_name": "Amnam Park",
-      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
-      "date": "2026-06",
-      "map": "Google Maps 617 reviews, newest shown '8 days ago'"
-    },
-    {
-      "name": "Sajik Baseball Stadium",
-      "page_name": "Sajik Stadium",
-      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
-      "date": "2026-06",
-      "map": "Google Maps 4,459 reviews, newest shown '15 days ago'"
-    },
-    {
-      "name": "Wonder Space (Myeongji)",
-      "page_name": "원더스페이스 부산명지점",
-      "src": "https://mom-mom.net/travel/places/635f6d83e69cfb073a6cdd34",
-      "date": "2025-02",
-      "map": "Google Maps '원더스페이스 부산명지점', 15 reviews, newest shown '23 days ago'"
-    },
-    {
-      "name": "Monyeo Jubang",
-      "page_name": "Monyeo Jubang",
-      "src": "https://mom-mom.net/en/travel/places/69e7119c5e6b759ea00bb9d1",
-      "date": "2026-04",
-      "map": "Kakao Map '모녀주방' (해운대로76번길 16 센텀휴상가), open, newest review 15 Nov 2026"
-    },
-    {
-      "name": "Ilsamyuk Meat House (Myeongji)",
-      "page_name": "Ilsamyuk Meat House Myeongji Main Branch",
-      "src": "https://mom-mom.net/en/travel/places/6808aeb4c529cadc1d23984b",
-      "date": "2025-04",
-      "map": "Kakao Map '일삼육고깃집' (명지국제8로 293), open, 61 reviews, newest 13 Nov 2026"
-    },
-    {
-      "name": "Gwanganri Daegyo Milmyeon",
-      "page_name": "Gwanganri Daegyo Milmyeon",
-      "src": "https://mom-mom.net/en/travel/places/69c9e8a58d0737a256378369",
-      "date": "2026-03",
-      "map": "Kakao Map '광안리대교밀면' (광남로 239), open, 99 reviews, newest 8 Nov 2026"
-    },
-    {
-      "name": "Zooraji (Shinsegae Centum City)",
-      "page_name": "Shinsegae Centum City Zooraji",
-      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
-      "date": "2026-06",
-      "map": "Kakao Map '주라지 신세계센텀시티점' (센텀남대로 35 9층), open 11:00–20:00 on the list, newest review 18 Nov 2026"
-    },
-    {
-      "name": "Deullak Nallak (Busan City Hall)",
-      "page_name": "부산시청 들락날락",
-      "src": "https://mom-mom.net/travel/places/6a68148152020564a1a38d66",
-      "date": "2025-12",
-      "map": "Kakao Map '부산시청 열린도서관 들락날락' (중앙대로 1001, 1·3층), open 09:00–19:00 on the list, newest review 23 Jul 2026"
-    },
-    {
-      "name": "Busan Children's Creative Education Centre",
-      "page_name": "부산광역시교육청어린이창의교육관",
-      "src": "https://mom-mom.net/travel/places/66860ce84290823eb81e1400",
-      "date": "2026-11",
-      "map": "Kakao Map '부산광역시교육청어린이창의교육관' (성지곡로33번길 29-28), open, newest review 21 Nov 2026"
-    },
-    {
-      "name": "PlayLab (Busan, Haeundae)",
-      "page_name": "아동놀이연구소 플레이랩 부산점",
-      "src": "https://mom-mom.net/travel/places/69c34d953cc4acad909981bc",
-      "date": "2026-11",
-      "map": "Kakao Map '플레이랩 부산점' (세실로69번길 15), 53 blog reviews, newest 13 Oct 2026"
-    },
-    {
-      "name": "Aejijungji Public Kids Café (Busan Citizens Park)",
-      "page_name": "당신처럼 애지중지 공공형 키즈카페",
-      "src": "https://busan.breaknews.com/42356",
-      "date": "2026-02",
-      "map": "Kakao Map '당신처럼 애지중지 키즈카페' (시민공원로 73), open, newest review 21 Nov 2026"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 10 rows from mom-mom.net and yugacrew.com (Apr–Oct 2026), all passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Matna Gamjatang, Yongho",
+          "page_name": "Matna Gamjatang Yongho Branch",
+          "src": "https://mom-mom.net/en/travel/places/6a3a445782efc124ca390abf",
+          "date": "2026-09",
+          "map": "Google Maps '맛나감자탕 부산 용호점' (91 Yongho-ro, Nam-gu), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Woominam Seomyeon",
+          "page_name": "Woominam Seomyeon Branch",
+          "src": "https://mom-mom.net/en/travel/places/68aed79eca795b20d186a2a3",
+          "date": "2026-09",
+          "map": "Google Maps '우미남 서면점 WOOMINAM KOREAN BBQ' (34 Bujeon-ro), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Taejongdae Ocean Flying Theme Park",
+          "page_name": "태종대 오션플라잉 테마파크",
+          "src": "https://www.yugacrew.com/crewletter/busan-theme-parks",
+          "date": "2026-10",
+          "map": "Google Maps 'Taejongdae Ocean Flying Theme Park' (Taejong-ro, Yeongdo-gu), newest review shown a week ago"
+        },
+        {
+          "name": "Hero Play Park, Jeonggwan",
+          "page_name": "히어로테마파크 정관점",
+          "src": "https://www.yugacrew.com/crewletter/busan-theme-parks",
+          "date": "2026-10",
+          "map": "Google Maps '히어로 플레이파크 부산정관점' (Jeonggwan, Gijang-gun), newest review shown 4 weeks ago"
+        },
+        {
+          "name": "Busan Library children's room (Kkumtteurak)",
+          "page_name": "부산도서관 꿈뜨락 어린이실",
+          "src": "https://www.yugacrew.com/crewletter/busan-baby-friendly-places",
+          "date": "2026-10",
+          "map": "Google Maps 'Busan Library' (33 Sasang-ro 310beon-gil), newest review shown 6 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "광안리비비드13",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "구포 어린이교통공원",
+          "why": "the newest review on the map is 2 years old"
+        },
+        {
+          "name": "리리캐슬 키즈카페, 우리끼리 키즈룸 해운대센텀점",
+          "why": "no map entry of their own"
+        },
+        {
+          "name": "꼬마다락방",
+          "why": "the page says it is for Busan residents only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Hyeonpung Dak Kalguksu (Myeongji)",
-      "why": "the map shows only a closed branch in Seomyeon"
-    },
-    {
-      "name": "Trick Eye Museum Busan",
-      "why": "permanently closed on the map"
-    },
-    {
-      "name": "부산시청 들락날락",
-      "why": "the map shows a staff cafeteria"
-    },
-    {
-      "name": "Busan Creative Convergence Education Center, Museum of Contemporary Art Busan",
-      "why": "temporarily closed on the map"
-    },
-    {
-      "name": "HBAF",
-      "why": "a shop"
-    },
-    {
-      "name": "Geongang Bapsang (Connect Hyundai)",
-      "why": "failed library-check.cjs"
-    },
-    {
-      "name": "Hyeonpung Dak Kalguksu (Myeongji)",
-      "why": "not found on Kakao Map"
-    },
-    {
-      "name": "Busan Creative Convergence Education Center",
-      "why": "Kakao Map: closed 10 Aug 2026 – 28 Feb 2027"
-    },
-    {
-      "name": "Museum of Contemporary Art Busan",
-      "why": "Kakao Map: closed 2 Nov – 10 Dec 2026"
-    },
-    {
-      "name": "부산광역시교육청창의융합교육원",
-      "why": "Kakao Map: closed 10 Aug 2026 – 28 Feb 2027"
-    },
-    {
-      "name": "장안딸기농장",
-      "why": "not found on Kakao Map"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "kakao_pass": "24 Nov 2026: +4 (Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon; Zooraji (Shinsegae Centum City))",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 6 rows from mom-mom.net (2025–2026) and Breaknews Busan (Feb 2026), all passed library-check.cjs, 4 went in",
-    "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

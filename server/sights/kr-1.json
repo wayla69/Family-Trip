@@ -1266,6 +1266,125 @@
           },
           "q": "당신처럼 애지중지 키즈카페, 시민공원로 73, 부산",
           "ok": "2026-11"
+        },
+        {
+          "local": "태종대 오션플라잉 테마파크",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ห้องมีเดียอาร์ต เด็ก 5,000 วอน ต่ำกว่า 4 ขวบฟรี",
+            "en": "Media-art hall: children ₩5,000; under 4 free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/busan-theme-parks",
+          "name": {
+            "th": "สวนสนุกโอเชียนฟลายอิง แทจงแด",
+            "en": "Taejongdae Ocean Flying Theme Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนแทจง ยองโดกู",
+            "en": "Taejong-ro, Yeongdo-gu"
+          },
+          "what": {
+            "th": "สวนที่แทจงแด มีซิปไลน์ยาว 653 เมตร ห้องมีเดียอาร์ต และคาเฟ่วิวทะเล",
+            "en": "A park at Taejongdae with a 653 m zipline, an immersive media-art hall and a sea-view café"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 4 ขวบเข้าห้องมีเดียอาร์ตฟรี เด็กโตเล่นซิปไลน์ได้",
+            "en": "Under-4s see the media-art hall free; older children can ride the zipline"
+          },
+          "tip": {
+            "th": "ซิปไลน์ขึ้นกับสภาพอากาศ",
+            "en": "The zipline depends on the weather"
+          },
+          "q": "Taejongdae Ocean Flying Theme Park, Taejong-ro, Yeongdo-gu, Busan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "히어로 플레이파크 부산정관점",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก ตั๋วทั้งวัน 25,000 วอน",
+            "en": "Children, all day ₩25,000"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/busan-theme-parks",
+          "name": {
+            "th": "ฮีโร่เพลย์พาร์ก ชองกวาน",
+            "en": "Hero Play Park, Jeonggwan"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชองกวานอึบ คีจังกุน",
+            "en": "Jeonggwan-eup, Gijang-gun"
+          },
+          "what": {
+            "th": "สวนในร่มขนาดใหญ่ มีโซนกีฬา สวนเล่น และบ้านลม",
+            "en": "A big indoor park with a sports area, a play park and an air bounce"
+          },
+          "why": {
+            "th": "มีโซนเด็ก โซนฟุตบอล บ่อบอล ตัวต่อ และโซนเด็กเล็ก",
+            "en": "A kids' zone, a football zone, a ball pool, blocks and a baby zone"
+          },
+          "q": "히어로 플레이파크 부산정관점, Gijang-gun, Busan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "부산도서관 꿈뜨락 어린이실",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/busan-baby-friendly-places",
+          "name": {
+            "th": "ห้องเด็กห้องสมุดปูซาน",
+            "en": "Busan Library children's room (Kkumtteurak)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชั้น 1 ห้องสมุดปูซาน ซาซังกู",
+            "en": "Busan Library 1st floor, Sasang-gu"
+          },
+          "what": {
+            "th": "ห้องหนังสือภาพฟรีในห้องเด็กของห้องสมุด",
+            "en": "A free picture-book room inside the library's children's room"
+          },
+          "why": {
+            "th": "เงียบ มีห้องให้นม เหมาะวันฝนตกพร้อมลูกเล็ก",
+            "en": "Quiet, with a nursing room: handy on a rainy day with a baby"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์และวันหยุดราชการ ไม่ต้องจอง",
+            "en": "Closed Mondays and public holidays; no booking needed"
+          },
+          "q": "Busan Library, 33 Sasang-ro 310beon-gil, Sasang-gu, Busan",
+          "ok": "2026-11"
         }
     ]
     }
