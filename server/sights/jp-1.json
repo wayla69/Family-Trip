@@ -1396,6 +1396,80 @@
           },
           "q": "大泉緑地 冒険ランド",
           "ok": "2026-11"
+        },
+        {
+          "local": "ボーネルンド プレイヴィル",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 900 เยน เด็ก 1–12 ปี 30 นาทีแรก วันธรรมดา",
+            "en": "≈ ¥900 for children 1–12, first 30 min on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "บอร์เนอลุนด์เพลย์วิลล์ ทากัตสึกิ",
+            "en": "BørneLund PlayVille, Takatsuki"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนอามาอิเซกิ ทากัตสึกิ",
+            "en": "Amaiseki Park, Hatchōnawate, Takatsuki"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม ของเล่นบอร์เนอลุนด์ โซนนุ่ม และโต๊ะเล่นทรายเล่นน้ำ",
+            "en": "An indoor playground of BørneLund toys, soft play, and sand and water tables"
+          },
+          "why": {
+            "th": "ทำมาเพื่อเด็กเล็ก เหมาะกับ 1–5 ขวบ",
+            "en": "Made for little ones, best for ages 1 to 5"
+          },
+          "q": "BørneLund PlayVille Amaiseki Park, Takatsuki, Osaka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大枝公園",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/88271",
+          "name": {
+            "th": "สวนโอเอดะ โมริงุจิ",
+            "en": "Ōeda Park (Moriguchi)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "มัตสึชิตะโจ โมริงุจิ",
+            "en": "Matsushita-chō, Moriguchi"
+          },
+          "what": {
+            "th": "สวนใหญ่สำหรับกีฬาและเล่นในโมริงุจิ",
+            "en": "A big park for sport and play in Moriguchi"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ลูกกลิ้งยาว เครื่องเล่น \"บอลทาวเวอร์\" หอจรวด และเชือกทาร์ซาน",
+            "en": "A long roller slide, a \"ball tower\" climbing frame, a rocket tower and a Tarzan rope"
+          },
+          "q": "大枝公園, 守口市, Osaka",
+          "ok": "2026-11"
         }
     ]
     },
