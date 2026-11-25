@@ -690,6 +690,279 @@
           "ok": "2026-11"
         }
     ]
+    },
+    {
+      "place": "nz-christchurch",
+      "thin": true,
+      "sights": [
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "NZ$45 ผู้ใหญ่ · NZ$22 เด็ก 5–15 ปี · ต่ำกว่า 5 ปีฟรี · ครอบครัว NZ$123",
+            "en": "NZ$45 adults · NZ$22 children 5–15 · under 5 free · family NZ$123"
+          },
+          "book": "rec",
+          "src": "https://www.christchurchattractions.nz/christchurch-gondola/",
+          "name": {
+            "th": "กระเช้าไครสต์เชิร์ช",
+            "en": "Christchurch Gondola"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนไบรเดิลพาท หุบเขาฮีธโค้ต",
+            "en": "10 Bridle Path Road, Heathcote Valley"
+          },
+          "what": {
+            "th": "กระเช้าขึ้นเขาพอร์ตฮิลส์ ชมวิวรอบทิศ มีทางเดินบนยอดเขาและคาเฟ่ด้านบน",
+            "en": "A gondola up the Port Hills for 360° views, summit walks and a café at the top"
+          },
+          "why": {
+            "th": "เด็ก 5–15 ปีจ่ายราคาเด็ก ต่ำกว่า 5 ปีฟรี และคาเฟ่บนเขามีเมนูที่เด็กชอบ",
+            "en": "Children 5–15 ride at a child fare, under 5s free, and the café has child-friendly favourites"
+          },
+          "q": "Christchurch Gondola, 10 Bridle Path Road, Heathcote Valley, Christchurch",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "NZ$45 ผู้ใหญ่ · NZ$30 เด็ก 5–15 ปี · ต่ำกว่า 5 ปีฟรี · ครอบครัว NZ$135",
+            "en": "NZ$45 adults · NZ$30 children 5–15 · under 5 free · family NZ$135"
+          },
+          "book": "rec",
+          "src": "https://www.christchurchattractions.nz/punting/",
+          "name": {
+            "th": "ล่องเรือพันต์แม่น้ำเอวอน",
+            "en": "Punting on the Avon"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "โรงเรือแอนทีกัว ถนนเคมบริดจ์เทอร์เรซ",
+            "en": "Antigua Boat Sheds, 2 Cambridge Terrace"
+          },
+          "what": {
+            "th": "นั่งเรือพันต์มีคนถ่อ ล่องแม่น้ำเอวอน 30 นาที",
+            "en": "A 30-minute guided punt ride along the Avon River"
+          },
+          "why": {
+            "th": "ไม่จำกัดอายุขั้นต่ำ เด็กเล็กขึ้นได้ถ้ามีผู้ใหญ่ไปด้วย",
+            "en": "No minimum age: children only need to be with an adult"
+          },
+          "q": "Punting On The Avon, Antigua Boat Sheds, 2 Cambridge Terrace, Christchurch",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "NZ$42 ผู้ใหญ่ · NZ$10 เด็ก 5–15 ปี · ต่ำกว่า 5 ปีฟรี · ครอบครัว NZ$99",
+            "en": "NZ$42 adults · NZ$10 children 5–15 · under 5 free · family NZ$99"
+          },
+          "book": "none",
+          "src": "https://www.christchurchattractions.nz/christchurch-tram/",
+          "name": {
+            "th": "รถรางไครสต์เชิร์ช",
+            "en": "Christchurch Tram"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ถนนวูสเตอร์ กลางเมือง",
+            "en": "109 Worcester Street, Central City"
+          },
+          "what": {
+            "th": "รถรางโบราณพร้อมคนบรรยาย ขึ้นลงได้ทั้งวันรอบกลางเมือง",
+            "en": "Heritage trams with live commentary, hop on and off all day around the central city"
+          },
+          "why": {
+            "th": "ตั๋วครอบครัวใช้ได้กับผู้ใหญ่ 2 คนและเด็กไม่เกิน 3 คน เด็กต่ำกว่า 5 ปีนั่งฟรี",
+            "en": "Family tickets cover two adults and up to three children; under 5s ride free"
+          },
+          "tip": {
+            "th": "จับมือเด็กไว้ รถรางวิ่งบนถนนร่วมกับรถทั่วไป",
+            "en": "Keep children close: the tram runs in the street with the traffic"
+          },
+          "q": "Christchurch Tram, 109 Worcester Street, Christchurch Central City",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.willowbank.co.nz/",
+          "name": {
+            "th": "เขตอนุรักษ์สัตว์ป่าวิลโลว์แบงก์",
+            "en": "Willowbank Wildlife Reserve"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนฮัสซีย์ นอร์ทวูด",
+            "en": "60 Hussey Road, Northwood"
+          },
+          "what": {
+            "th": "เขตอนุรักษ์สัตว์ป่า ได้ดูนกกีวีและสัตว์ท้องถิ่น และเข้าใกล้สัตว์ในเวลาให้อาหาร",
+            "en": "A wildlife reserve where you can see kiwi and native animals and get close at feeding times"
+          },
+          "why": {
+            "th": "ผู้มาเยือนเขียนว่าเหมาะกับครอบครัวมาก และเด็กเล็กชอบ",
+            "en": "Visitors write that it is a great place for families, and a hit with toddlers"
+          },
+          "q": "Willowbank Wildlife Reserve, 60 Hussey Road, Northwood, Christchurch",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.oranawildlifepark.co.nz/",
+          "name": {
+            "th": "สวนสัตว์โอรานา",
+            "en": "Orana Wildlife Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนแมคคลีนส์ไอส์แลนด์ แฮร์วูด",
+            "en": "793 McLeans Island Road, Harewood"
+          },
+          "what": {
+            "th": "สวนสัตว์เปิดแห่งเดียวของนิวซีแลนด์ มียีราฟ สิงโต แรด กอริลลา นกกีวี และสัตว์กว่า 70 ชนิด",
+            "en": "New Zealand’s only open-range zoo, with giraffes, lions, rhinos, gorillas, kiwi and over 70 species"
+          },
+          "why": {
+            "th": "เที่ยวได้ทั้งวันกับสัตว์ที่เด็กรู้จัก ตั้งแต่ยีราฟถึงนกกีวี",
+            "en": "A big day out with animals children know, from giraffes to kiwi"
+          },
+          "q": "Orana Wildlife Park, 793 McLeans Island Road, Harewood, Christchurch",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ferrymead.org.nz/",
+          "name": {
+            "th": "สวนมรดกเฟอร์รีมีด",
+            "en": "Ferrymead Heritage Park"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเฟอร์รีมีดพาร์กไดรฟ์ เฟอร์รีมีด",
+            "en": "50 Ferrymead Park Drive, Ferrymead"
+          },
+          "what": {
+            "th": "สวนประวัติศาสตร์มีชีวิต มีเมืองจำลองยุคเอ็ดเวิร์ดและนิทรรศการเก่าแก่",
+            "en": "A living-history park with an Edwardian township and heritage exhibitions"
+          },
+          "why": {
+            "th": "มีรถรางโบราณและรถไฟไอน้ำให้นั่ง",
+            "en": "A heritage tram and a steam railway ride"
+          },
+          "tip": {
+            "th": "เช็กก่อนไปว่าวันไหนรถรางและรถไฟวิ่ง",
+            "en": "Check which days the rides run before you go"
+          },
+          "q": "Ferrymead Heritage Park, 50 Ferrymead Park Drive, Christchurch",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Tākaro ā Poi",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://thespinoff.co.nz/society/30-04-2025/how-this-playground-became-the-jewel-in-the-crown-of-otautahi",
+          "name": {
+            "th": "สนามเด็กเล่นมาร์กาเร็ต มาฮี",
+            "en": "Margaret Mahy Family Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนอาร์มาห์ กลางเมือง",
+            "en": "Armagh Street, Central City"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นใหญ่กลางเมืองที่สร้างหลังแผ่นดินไหว ริมแม่น้ำเอวอน",
+            "en": "The big central-city playground built after the earthquakes, beside the Avon River"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นสำหรับทุกวัย เป็นจุดเด่นของเมืองที่สร้างใหม่",
+            "en": "A playground made for all ages, the jewel of the rebuilt city"
+          },
+          "q": "Margaret Mahy Family Playground, Armagh Street, Christchurch",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }
