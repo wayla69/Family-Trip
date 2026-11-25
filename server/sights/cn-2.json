@@ -1716,6 +1716,117 @@
           },
           "q": "阳朔如意峰索道景区, 高田镇, 阳朔",
           "ok": "2026-11"
+        },
+        {
+          "local": "桂林油罐主题文化乐园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E6%B2%B9%E7%BD%90%E4%B8%BB%E9%A2%98%E6%96%87%E5%8C%96%E4%B9%90%E5%9B%AD&city=450300",
+          "name": {
+            "th": "สวนสนุกธีมถังน้ำมันกุ้ยหลิน",
+            "en": "Guilin Oil Tank Theme Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนจิ่วหัว เตี๋ยไฉ่",
+            "en": "9 Jiuhua Road, Diecai"
+          },
+          "what": {
+            "th": "ถังน้ำมันเก่าที่กลายเป็นสวนสนุก มีรถไฟเหาะครอบครัว รถไฟเหาะ 5D และปราสาทเป่าลม",
+            "en": "Old oil tanks turned into a play park, with a family coaster, a 5D coaster and bouncy castles"
+          },
+          "why": {
+            "th": "มีรถไฟเหาะสำหรับครอบครัวและโซนเล่นในร่มสำหรับเด็กเล็ก",
+            "en": "A family roller coaster and indoor play for younger children"
+          },
+          "q": "桂林油罐主题文化乐园, 九华路9号, 叠彩区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "童世界亲子乐园 桂林叠彩万达广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%AB%A5%E4%B8%96%E7%95%8C%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E6%A1%82%E6%9E%97%E5%8F%A0%E5%BD%A9%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=450300",
+          "name": {
+            "th": "สวนเล่นถงซื่อเจี้ย เตี๋ยไฉ่วั่นต๋า",
+            "en": "Tong Shijie Play Park (Diecai Wanda)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วั่นต๋าพลาซ่า เตี๋ยไฉ่",
+            "en": "Wanda Plaza, Diecai"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีปราสาท ปราสาทเป่าลม สไลเดอร์ และแทรมโพลีน",
+            "en": "An indoor play park with a castle, bouncy castles, slides and trampolines"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก",
+            "en": "Indoor play for a rainy day"
+          },
+          "q": "童世界亲子乐园 叠彩万达广场店, 叠彩区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "七星欢乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%83%E6%98%9F%E6%AC%A2%E4%B9%90%E5%9B%AD&city=450300",
+          "name": {
+            "th": "สวนสนุกชีซิง",
+            "en": "Qixing Fun Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนชีซิง ชีซิง",
+            "en": "1 Qixing Road, Qixing"
+          },
+          "what": {
+            "th": "สวนสนุกเล็กสำหรับเด็ก มีเครื่องเล่นและมุมสัตว์",
+            "en": "A small children’s fun park with rides and an animal corner"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นและสัตว์สำหรับเด็กเล็ก",
+            "en": "Rides and animals for small children"
+          },
+          "q": "七星欢乐园, 七星路一号, 七星区, 桂林",
+          "ok": "2026-11"
         }
       ]
     },
