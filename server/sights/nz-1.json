@@ -524,6 +524,125 @@
           },
           "q": "Magic Loft Playground & Cafe, Browns Bay",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chipmunksplayland.co.nz/",
+          "name": {
+            "th": "ชิปมังก์สเพลย์แลนด์ นิวลินน์",
+            "en": "Chipmunks Playland & Café (New Lynn)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นิวลินน์ โอ๊คแลนด์",
+            "en": "New Lynn, Auckland"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มสำหรับเด็ก 0–11 ขวบ มีคาเฟ่",
+            "en": "An indoor playground for children aged 0 to 11, with a café"
+          },
+          "why": {
+            "th": "ที่เล่นในร่มสำหรับเด็กเล็ก มีคาเฟ่ให้ผู้ปกครอง",
+            "en": "Indoor play for little ones, and coffee for the parents"
+          },
+          "q": "Chipmunks Playland & Cafe New Lynn, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/day-out/muriwai-beach-family-guide/",
+          "name": {
+            "th": "อาณานิคมนกแกนเน็ตมูริไว",
+            "en": "Muriwai Gannet Colony"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หาดมูริไว ชายฝั่งตะวันตก",
+            "en": "Muriwai Beach, west coast"
+          },
+          "what": {
+            "th": "อาณานิคมนกแกนเน็ตบนหน้าผา เดินจากที่จอดรถไปจุดชมไม่ไกล",
+            "en": "A clifftop gannet colony with a short viewing walk from the car park"
+          },
+          "why": {
+            "th": "ทางเดินสั้น เข็นรถเข็นได้ ไปดูนกทะเลทำรังและร่อน",
+            "en": "A short, pushchair-friendly walk to watch seabirds nesting and gliding"
+          },
+          "tip": {
+            "th": "นกอยู่ในอาณานิคมช่วงสิงหาคมถึงมีนาคม",
+            "en": "The colony is busy from August to March"
+          },
+          "q": "Muriwai Gannet Colony, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/tiritiri-matangi-island/",
+          "name": {
+            "th": "เกาะติริติริมาตังงี",
+            "en": "Tiritiri Matangi Island"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอกคาบสมุทรฟังกาปาราโอ อ่าวเฮาราคี",
+            "en": "Off the Whangaparāoa Peninsula, Hauraki Gulf"
+          },
+          "what": {
+            "th": "เกาะเขตรักษาพันธุ์สัตว์ป่า มีนกพื้นเมืองหายากในป่าที่ฟื้นฟูแล้ว",
+            "en": "An open wildlife sanctuary island of rare native birds in restored forest"
+          },
+          "why": {
+            "th": "เด็กได้เห็นนกใกล้สูญพันธุ์ในธรรมชาติ หลังนั่งเรือข้ามไป",
+            "en": "Children see endangered birds in the wild, after a ferry ride"
+          },
+          "tip": {
+            "th": "เรือออกวันพุธถึงอาทิตย์ ช่วงพฤศจิกายนถึงเมษายนเต็มเร็ว บนเกาะไม่มีอาหารขาย ต้องเตรียมไปเอง",
+            "en": "The ferry runs Wednesday to Sunday and books up from November to April; no food on the island, so bring your own"
+          },
+          "q": "Tiritiri Matangi Island, Hauraki Gulf",
+          "ok": "2026-11"
         }
     ]
     },
