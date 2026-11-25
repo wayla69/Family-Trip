@@ -820,3 +820,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **24 Nov 2026, Plitvice Lakes** (docs/library-briefs batch-101, round 3): +1 in Zagreb (Batak Centar Cvjetni). Proof in `docs/library-proof/hr-plitvice.json`.
 
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +1 (Buffalo Wings & Rings, Aqaba). Proof in `docs/library-proof/jo-petra.json`.
+
+- **25 Nov 2026, Nara (new place)**: Horiuchi Kajitsuen moved from `jp-kyoto` to `jp-nara`, and seven added from Mapple’s undated family page (Kamameshi Shizuka, Ashibi no Sato, Tofu-an Kondo, RAhOTSU, Wazen Tamayura, TEN.TEN.CAFE, Kuki Cake.), each checked on Google Maps.
