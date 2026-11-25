@@ -1,85 +1,172 @@
 {
   "town": "jp-okinawa",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 9 rows from three Hoshino Resorts guide pages (Jun 2025, Oct 2026), all passed library-check.cjs, 7 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Mikado",
-      "page_name": "Mikado",
-      "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/naha-childrestaurant",
-      "date": "2026-10",
-      "map": "Google Maps 'Mikado', 2,496 reviews, newest shown 5 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 9 rows from three Hoshino Resorts guide pages (Jun 2025, Oct 2026), all passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Mikado",
+          "page_name": "Mikado",
+          "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/naha-childrestaurant",
+          "date": "2026-10",
+          "map": "Google Maps 'Mikado', 2,496 reviews, newest shown 5 days ago"
+        },
+        {
+          "name": "Piparchi Kitchen",
+          "page_name": "Piparchi Kitchen",
+          "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/naha-childrestaurant",
+          "date": "2026-10",
+          "map": "Google Maps 'Piparchi Kitchen', 1,111 reviews, newest shown 2 days ago"
+        },
+        {
+          "name": "Gaishokuya Kujira",
+          "page_name": "Gaishokuya Kujira",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/okinawa/okinawa-island/okinawa-child",
+          "date": "2025-06",
+          "map": "Google Maps 'Kujira', 936 reviews, newest shown 10 days ago"
+        },
+        {
+          "name": "Asian Shokudo Shirokuma",
+          "page_name": "Asian Shokudo Shirokuma",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/okinawa/okinawa-island/okinawa-child",
+          "date": "2025-06",
+          "map": "Google Maps 'Shiro Kuma', 405 reviews, newest shown 4 months ago"
+        },
+        {
+          "name": "Ishigama Pizza Sakaba Maruki",
+          "page_name": "Ishigama Pizza Sakaba Maruki",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/okinawa/okinawa-island/okinawa-child",
+          "date": "2025-06",
+          "map": "Google Maps 'Maruki', 460 reviews, newest shown 11 days ago"
+        },
+        {
+          "name": "Blue Seal Ice Park",
+          "page_name": "Blue Seal Ice Park",
+          "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/okinawa-childkanko",
+          "date": "2026-10",
+          "map": "Google Maps 'Blue Seal Makiminato Honten' (the Ice Park is part of the main store), 3,264 reviews, newest shown 6 days ago"
+        },
+        {
+          "name": "Murasaki Mura (Experience Kingdom)",
+          "page_name": "Experience Kingdom Murasakimura",
+          "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/okinawa-childkanko",
+          "date": "2026-10",
+          "map": "Google Maps 'Murasaki Mura', 2,421 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Nobikko Jumbo (Aeon Haebaru)",
+          "page_name": "のびっこジャンボ 南風原店",
+          "src": "https://ryukyushimpo.jp/prtimes/entry-5328425.html",
+          "date": "2026-06",
+          "map": "Google Maps 'のびっこジャンボ南風原', newest review shown 3 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "cafe Tsuchinaru",
+          "why": "no review from the last six months shown on the map"
+        },
+        {
+          "name": "Tomarin",
+          "why": "a ferry terminal building, not a place to visit"
+        },
+        {
+          "name": "Joy Planet, Little Universe, Chikyu no Niwa, Naminoue Wakuwaku Kids Land",
+          "why": "no dated page could be opened"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 1 row from Ryukyu Shimpo (Jun 2026), passed library-check.cjs, went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     },
     {
-      "name": "Piparchi Kitchen",
-      "page_name": "Piparchi Kitchen",
-      "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/naha-childrestaurant",
-      "date": "2026-10",
-      "map": "Google Maps 'Piparchi Kitchen', 1,111 reviews, newest shown 2 days ago"
-    },
-    {
-      "name": "Gaishokuya Kujira",
-      "page_name": "Gaishokuya Kujira",
-      "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/okinawa/okinawa-island/okinawa-child",
-      "date": "2025-06",
-      "map": "Google Maps 'Kujira', 936 reviews, newest shown 10 days ago"
-    },
-    {
-      "name": "Asian Shokudo Shirokuma",
-      "page_name": "Asian Shokudo Shirokuma",
-      "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/okinawa/okinawa-island/okinawa-child",
-      "date": "2025-06",
-      "map": "Google Maps 'Shiro Kuma', 405 reviews, newest shown 4 months ago"
-    },
-    {
-      "name": "Ishigama Pizza Sakaba Maruki",
-      "page_name": "Ishigama Pizza Sakaba Maruki",
-      "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/okinawa/okinawa-island/okinawa-child",
-      "date": "2025-06",
-      "map": "Google Maps 'Maruki', 460 reviews, newest shown 11 days ago"
-    },
-    {
-      "name": "Blue Seal Ice Park",
-      "page_name": "Blue Seal Ice Park",
-      "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/okinawa-childkanko",
-      "date": "2026-10",
-      "map": "Google Maps 'Blue Seal Makiminato Honten' (the Ice Park is part of the main store), 3,264 reviews, newest shown 6 days ago"
-    },
-    {
-      "name": "Murasaki Mura (Experience Kingdom)",
-      "page_name": "Experience Kingdom Murasakimura",
-      "src": "https://en.hoshinoresorts.com/guide/area/okinawa-area/okinawa/okinawa-childkanko",
-      "date": "2026-10",
-      "map": "Google Maps 'Murasaki Mura', 2,421 reviews, newest shown 1 day ago"
-    },
-    {
-      "name": "Nobikko Jumbo (Aeon Haebaru)",
-      "page_name": "のびっこジャンボ 南風原店",
-      "src": "https://ryukyushimpo.jp/prtimes/entry-5328425.html",
-      "date": "2026-06",
-      "map": "Google Maps 'のびっこジャンボ南風原', newest review shown 3 weeks ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 12 rows from nap-camp (Apr 2026), asoview (Apr 2026) and aumo (Jul 2026), all passed library-check.cjs, 8 went in",
+      "added": [
+        {
+          "name": "Naminoue Wakuwaku Kids Land",
+          "page_name": "波の上わくわくキッズランド",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "date": "2026-04",
+          "map": "Google Maps 'Naminoue Wakuwaku Kids Land' (3-2-1 Tsuji, Naha), newest review shown a week ago"
+        },
+        {
+          "name": "The Kids, Palette Kumoji",
+          "page_name": "ザキッズ 沖縄パレットくもじ店",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "date": "2026-04",
+          "map": "Google Maps 'ザキッズくもじ店' (Kumoji, Naha), newest review shown 2 months ago"
+        },
+        {
+          "name": "Joy Planet, San-A Ginowan Convention City",
+          "page_name": "ジョイプラネット サンエー宜野湾コンベンションシティ店",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "date": "2026-04",
+          "map": "Google Maps 'ジョイプラネット' (Uchidomari, Ginowan), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Joy Planet, San-A Ishikawa City (Uruma)",
+          "page_name": "ジョイプラネット サンエー石川シティ店",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "date": "2026-04",
+          "map": "Google Maps 'ジョイプラネット 石川シティ店' (Ishikawa, Uruma), newest review shown 3 months ago"
+        },
+        {
+          "name": "Asobi Park PLUS, PARCO CITY Urasoe",
+          "page_name": "あそびパークPLUS サンエー浦添西海岸パルコシティ店",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "date": "2026-04",
+          "map": "Google Maps 'あそびパークPLUS サンエー浦添西海岸パルコシティ店' (Irijima, Urasoe), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Chikyu no Niwa, AEON Mall Okinawa Rycom",
+          "page_name": "ちきゅうのにわ イオンモール沖縄ライカム店",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "date": "2026-04",
+          "map": "Google Maps 'ちきゅうのにわイオンモール沖縄ライカム' (Kitanakagusuku), newest review shown 6 days ago"
+        },
+        {
+          "name": "Yanbaru Forest Toy Museum",
+          "page_name": "やんばる森のおもちゃ美術館",
+          "src": "https://www.asoview.com/note/5490/",
+          "date": "2025-10",
+          "map": "Google Maps 'The Yanbaru Forest Toy Museum' (1094-1 Hentona), newest review shown 2 days ago"
+        },
+        {
+          "name": "Skids Garden, Rycom",
+          "page_name": "スキッズガーデン ライカム店",
+          "src": "https://www.asoview.com/note/5490/",
+          "date": "2025-10",
+          "map": "Google Maps 'スキッズガーデン ライカム店' (Rycom), newest review shown 4 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "MARISOL",
+          "why": "no map entry of its own"
+        },
+        {
+          "name": "The BROS",
+          "why": "the page gives nothing about children"
+        },
+        {
+          "name": "スキッズガーデン 南風原店",
+          "why": "the newest review on the map is 10 months old"
+        },
+        {
+          "name": "ラウンドワンスタジアム沖縄・宜野湾店",
+          "why": "a bowling and amusement centre for older children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "cafe Tsuchinaru",
-      "why": "no review from the last six months shown on the map"
-    },
-    {
-      "name": "Tomarin",
-      "why": "a ferry terminal building, not a place to visit"
-    },
-    {
-      "name": "Joy Planet, Little Universe, Chikyu no Niwa, Naminoue Wakuwaku Kids Land",
-      "why": "no dated page could be opened"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 1 row from Ryukyu Shimpo (Jun 2026), passed library-check.cjs, went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }
