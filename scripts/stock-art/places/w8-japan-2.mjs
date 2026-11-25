@@ -118,14 +118,14 @@ const items = [
       + P('M84 196q36-20 72 0', 'none') + Lc('M84 196q36-20 72 0', '#E53935', 7) + ring(3, (k) => Lc(`M${98 + k * 22} 190v14`, '#C62828', 3)) + face(120, 116, 0.32)),
 
   // ---------- Tohoku
-  L('jp/tohoku/landmark-gyutan.v1.svg', 'กิวตัน ลิ้นวัวย่างของเซนได', 'Gyūtan, Sendai\'s grilled beef tongue', ['gyutan', 'gyūtan', 'กิวตัน', 'beef tongue', 'ลิ้นวัวย่าง', 'sendai food', 'อาหารเซนได', 'barley rice', 'ข้าวบาร์เลย์', 'oxtail soup'], 'หารอยตะแกรงย่างบนชิ้นเนื้อ', 'Find the grill marks on the slices of meat',
+  L('jp/sendai/landmark-gyutan.v1.svg', 'กิวตัน ลิ้นวัวย่างของเซนได', 'Gyūtan, Sendai\'s grilled beef tongue', ['gyutan', 'gyūtan', 'กิวตัน', 'beef tongue', 'ลิ้นวัวย่าง', 'sendai food', 'อาหารเซนได', 'barley rice', 'ข้าวบาร์เลย์', 'oxtail soup'], 'หารอยตะแกรงย่างบนชิ้นเนื้อ', 'Find the grill marks on the slices of meat',
     // a square tray with slices of grilled beef tongue fanned out with dark grill lines, a bowl of barley rice, a little bowl of clear soup with green onion, pickled cabbage and a green chilli
     R(14, 100, 212, 120, '#3E2723', 12) + R(22, 108, 196, 104, '#5D4037', 8, 2.5)
       + E(84, 156, 54, 32, '#FFFFFF') + ring(4, (k) => g(56 + k * 18, 152 + (k % 2) * 6, 1, E(0, 0, 18, 26, '#C08D79', 3) + Lc('M-12-12l20 10M-14 2l22 10', '#6D4C41', 3), -20)) + P('M108 130c10-6 20 0 22 10l-8 12z', '#81C784', 2.5)
       + C(172, 136, 26, '#FFFFFF') + ring(10, (k) => E(156 + (k % 4) * 10, 128 + Math.floor(k / 4) * 9, 4, 2.5, '#F5DEB3', 1.5))
       + C(178, 186, 20, '#B71C1C') + C(178, 186, 15, '#FFE0B2', 0) + ring(4, (k) => C(170 + k * 5, 184 - (k % 2) * 4, 2.4, '#7CB342', 0))
       + Lc('M40 70q10-12 0-24M64 72q10-12 0-24', '#B0BEC5', 4) + face(84, 186, 0.34)),
-  L('jp/tohoku/landmark-zunda.v1.svg', 'ซุนดะโมจิ โมจิราดถั่วแระบดสีเขียว', 'Zunda mochi with sweet green edamame paste', ['zunda mochi', 'ซุนดะโมจิ', 'zunda', 'ซุนดะ', 'edamame paste', 'ถั่วแระบด', 'green bean paste', 'ถั่วเขียวบด', 'sendai sweets', 'ขนมเซนได'], 'หาฝักถั่วแระสีเขียวที่วางข้างจาน', 'Find the green edamame pods beside the plate',
+  L('jp/sendai/landmark-zunda.v1.svg', 'ซุนดะโมจิ โมจิราดถั่วแระบดสีเขียว', 'Zunda mochi with sweet green edamame paste', ['zunda mochi', 'ซุนดะโมจิ', 'zunda', 'ซุนดะ', 'edamame paste', 'ถั่วแระบด', 'green bean paste', 'ถั่วเขียวบด', 'sendai sweets', 'ขนมเซนได'], 'หาฝักถั่วแระสีเขียวที่วางข้างจาน', 'Find the green edamame pods beside the plate',
     // a small round plate with soft white rice cakes smothered in bright green mashed edamame paste with whole beans showing, edamame pods and a wooden pick beside it
     E(110, 160, 96, 34, '#FFF8E1') + E(110, 154, 80, 26, '#FFFFFF', 3)
       + [[80, 140], [130, 136], [104, 122]].map(([x, y]) => E(x, y, 30, 18, '#FFFFFF') + P(`M${x - 30} ${y}c4-22 56-22 60 0-6 10-54 10-60 0z`, '#9CCC65') + ring(3, (k) => E(x - 12 + k * 12, y - 6 + (k % 2) * 4, 4, 3, '#7CB342', 1.5))).join('')
