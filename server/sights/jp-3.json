@@ -5810,6 +5810,265 @@
           },
           "q": "鎌倉海浜公園, 由比ガ浜4-5-1, 鎌倉市",
           "ok": "2026-11"
+        },
+        {
+          "local": "ファンタジーキッズリゾート港北",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "แฟนตาซีคิดส์รีสอร์ต โคโฮกุ",
+            "en": "Fantasy Kids Resort Kohoku"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ห้างโคนัน ใกล้สถานีเซ็นเตอร์มินามิ",
+            "en": "Kōnan home centre 3F, near Center-Minami station, Tsuzuki-ku"
+          },
+          "what": {
+            "th": "สวนเด็กในร่มขนาดใหญ่ ราว 5,000 ตร.ม.",
+            "en": "A big indoor kids' park, about 5,000 m²"
+          },
+          "why": {
+            "th": "มีโซนนุ่มใหญ่และจักรยานรูปสัตว์ สำหรับ 0–12 ขวบ",
+            "en": "Big soft play and animal bikes, for ages 0 to 12"
+          },
+          "q": "Fantasy Kids Resort Kohoku, Tsuzuki-ku, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キンダープラッツ トレッサ横浜店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "คินเดอร์พลัทซ์ เทรสซาโยโกฮามา",
+            "en": "Kinder Platz, Tressa Yokohama"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 ตึกใต้เทรสซาโยโกฮามา โคโฮกุคุ",
+            "en": "Tressa Yokohama south building 1F, Kōhoku-ku"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม ปรับปรุงใหม่เมษายน 2025",
+            "en": "An indoor play area renewed in April 2025"
+          },
+          "why": {
+            "th": "มีบ่อบอล เครื่องเล่นลม มุมบ้านตุ๊กตา และหนังสือภาพ",
+            "en": "A ball pool, air play equipment, a play-house corner and picture books"
+          },
+          "q": "Kinder Platz TRESSA Yokohama, Kohoku-ku, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ちきゅうのにわ 港北店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "จิคิวโนะนิวะ โคโฮกุ",
+            "en": "Chikyu no Niwa Kohoku"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 5 โมเสกมอลล์โคโฮกุ ข้างสถานีเซ็นเตอร์คิตะ",
+            "en": "Mosaic Mall Kohoku 5F, by Center-Kita station"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม ธีมโลกและธรรมชาติ",
+            "en": "An indoor playground themed on the earth and nature"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ภูเขาน้ำแข็งและภูเขาไฟลูกบอล",
+            "en": "An iceberg slide and a volcano full of balls"
+          },
+          "q": "ちきゅうのにわ 港北, モザイクモール港北, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ 横浜ノースポートモール店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "เดอะคิดส์ นอร์ทพอร์ตมอลล์",
+            "en": "The Kids, Northport Mall"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 5 นอร์ทพอร์ตมอลล์ ใกล้สถานีเซ็นเตอร์คิตะ",
+            "en": "Northport Mall 5F, near Center-Kita station"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีเครื่องปีนสองชั้น",
+            "en": "An indoor play park with a two-storey climbing frame"
+          },
+          "why": {
+            "th": "มีบ่อบอล สไลเดอร์ และม้าหมุน เด็กเล็กเล่นได้ด้วย",
+            "en": "A ball pool, slides and a merry-go-round; babies can play too"
+          },
+          "q": "ザキッズ 横浜ノースポートモール店, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ボーネルンド あそびのせかい",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "บอร์เนอลุนด์ อาโซบิโนะเซไก มาร์กอิส",
+            "en": "BørneLund Asobi no Sekai, MARK IS"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 มาร์กอิส มินาโตะมิไร",
+            "en": "MARK IS 3F, Minato Mirai"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสำหรับพ่อแม่ลูก เครื่องเล่นจากทั่วโลก",
+            "en": "A parent-and-child indoor play area with equipment from around the world"
+          },
+          "why": {
+            "th": "มีโซนเคลื่อนไหว เล่นได้หลายวัย",
+            "en": "An active zone and play for many ages"
+          },
+          "q": "Bornelund Asobi no Sekai MARK IS Minatomirai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 横浜希望が丘店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "คิดส์แลนด์ US โยโกฮามาคิโบงาโอกะ",
+            "en": "Kids Land US, Yokohama Kibogaoka"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ห้างเค-วัน คิโบงาโอกะ อาซาฮีคุ",
+            "en": "K-1 shopping centre 3F, Kibōgaoka, Asahi-ku"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม เล่นได้ทุกสภาพอากาศ",
+            "en": "An all-weather indoor amusement park"
+          },
+          "why": {
+            "th": "มีจังเกิลยิมยักษ์ บ่อบอล ม้าหมุน แทรมโพลีน และเขาวงกต ตั้งแต่ 0 ขวบถึงประถม",
+            "en": "A giant climbing frame, ball pool, merry-go-round, trampoline and maze, for ages 0 to primary school"
+          },
+          "q": "Kids Land US, Kibogaoka, Asahi-ku, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "べるべるパーク横浜関内店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "เบรุเบรุพาร์ก โยโกฮามาคันไน",
+            "en": "Beruberu Park Yokohama Kannai"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ใกล้สถานีคันไน นากะคุ",
+            "en": "2F, near Kannai station, Naka-ku"
+          },
+          "what": {
+            "th": "สวนเด็กกับร้านอาหารในที่เดียว",
+            "en": "A kids' park and restaurant in one"
+          },
+          "why": {
+            "th": "มีบ่อบอลใหญ่ มุมบ้านตุ๊กตา และตัวต่อ ตั้งแต่ 0 ขวบ",
+            "en": "A big ball-pool set, a play-house corner and blocks, from age 0"
+          },
+          "q": "Beruberu Park Yokohama Kannai, Naka-ku, Yokohama",
+          "ok": "2026-11"
         }
       ]
     }

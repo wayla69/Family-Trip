@@ -1,78 +1,195 @@
 {
   "town": "jp-yokohama",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 6 rows from aumo (Jul 2025) and GOOD LUCK TRIP (Apr 2025), all passed library-check.cjs, 4 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Gather @ Eating House",
-      "page_name": "GATHER@EATINGHOUSE",
-      "src": "https://aumo.jp/articles/3778584",
-      "date": "2025-07",
-      "map": "Google Maps 'Gather @ Eating House', 828 reviews, newest shown 7 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from aumo (Jul 2025) and GOOD LUCK TRIP (Apr 2025), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Gather @ Eating House",
+          "page_name": "GATHER@EATINGHOUSE",
+          "src": "https://aumo.jp/articles/3778584",
+          "date": "2025-07",
+          "map": "Google Maps 'Gather @ Eating House', 828 reviews, newest shown 7 days ago"
+        },
+        {
+          "name": "Yamatoya (Yokohama)",
+          "page_name": "大和屋 横浜店",
+          "src": "https://aumo.jp/articles/3778584",
+          "date": "2025-07",
+          "map": "Google Maps 'Yamatoya Yokohama' (Sogo Yokohama 10F), 160 reviews, newest shown 3 weeks ago"
+        },
+        {
+          "name": "Kanazawa Zoological Gardens",
+          "page_name": "Kanazawa Zoological Gardens",
+          "src": "https://www.gltjp.com/en/article/item/20986/",
+          "date": "2025-04",
+          "map": "Google Maps 'Kanazawa Zoological Gardens', 2,438 reviews, newest shown 3 hours ago"
+        },
+        {
+          "name": "Osanbashi Pier",
+          "page_name": "Osanbashi Pier, Yokohama Port",
+          "src": "https://www.gltjp.com/en/article/item/20986/",
+          "date": "2025-04",
+          "map": "Google Maps 'Osanbashi Pier', 392 reviews, newest shown a month ago"
+        },
+        {
+          "name": "Muchu Planet (UNIQLO PARK Yokohama Bayside)",
+          "page_name": "Muchu Planet UNIQLO PARK Yokohama Bayside",
+          "src": "https://haveagood-holiday.com/en/articles/muchu-planet-uniqlo-park-yokohama-bayside-opening-2026",
+          "date": "2026-10",
+          "map": "Google Maps 'Muchu Planet ユニクロパーク 横浜ベイサイド', newest review shown 3 hours ago"
+        },
+        {
+          "name": "Wonderia Yokohama",
+          "page_name": "Wonderia Yokohama",
+          "src": "https://www.timeout.com/tokyo/news/new-immersive-playground-wonderia-yokohama-is-now-open-032526",
+          "date": "2026-03",
+          "map": "Google Maps 'ワンダリア横浜 Supported by Umios' (Naka Ward), newest review shown 3 hours ago"
+        },
+        {
+          "name": "Kamakura Seaside Park (Yuigahama)",
+          "page_name": "Kamakura Seaside Park Yuigahama Area",
+          "src": "https://trip.pref.kanagawa.jp/destination/kamakura-seaside-park-yuigahama-area/1425",
+          "date": "official",
+          "map": "Google Maps 'Kamakura Seaside Park' (由比ガ浜4-5-1), newest review shown 2 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Frenchna Yokohama Bay Quarter",
+          "why": "permanently closed on the map"
+        },
+        {
+          "name": "Landmark Tower Sky Garden",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Places to eat",
+          "why": "the city's kids' eat page could not be read; nothing else dated"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 3 rows from Have a Good Holiday (Oct 2026), Time Out (Mar 2026) and Kanagawa tourism (official), all passed library-check.cjs, 3 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     },
     {
-      "name": "Yamatoya (Yokohama)",
-      "page_name": "大和屋 横浜店",
-      "src": "https://aumo.jp/articles/3778584",
-      "date": "2025-07",
-      "map": "Google Maps 'Yamatoya Yokohama' (Sogo Yokohama 10F), 160 reviews, newest shown 3 weeks ago"
-    },
-    {
-      "name": "Kanazawa Zoological Gardens",
-      "page_name": "Kanazawa Zoological Gardens",
-      "src": "https://www.gltjp.com/en/article/item/20986/",
-      "date": "2025-04",
-      "map": "Google Maps 'Kanazawa Zoological Gardens', 2,438 reviews, newest shown 3 hours ago"
-    },
-    {
-      "name": "Osanbashi Pier",
-      "page_name": "Osanbashi Pier, Yokohama Port",
-      "src": "https://www.gltjp.com/en/article/item/20986/",
-      "date": "2025-04",
-      "map": "Google Maps 'Osanbashi Pier', 392 reviews, newest shown a month ago"
-    },
-    {
-      "name": "Muchu Planet (UNIQLO PARK Yokohama Bayside)",
-      "page_name": "Muchu Planet UNIQLO PARK Yokohama Bayside",
-      "src": "https://haveagood-holiday.com/en/articles/muchu-planet-uniqlo-park-yokohama-bayside-opening-2026",
-      "date": "2026-10",
-      "map": "Google Maps 'Muchu Planet ユニクロパーク 横浜ベイサイド', newest review shown 3 hours ago"
-    },
-    {
-      "name": "Wonderia Yokohama",
-      "page_name": "Wonderia Yokohama",
-      "src": "https://www.timeout.com/tokyo/news/new-immersive-playground-wonderia-yokohama-is-now-open-032526",
-      "date": "2026-03",
-      "map": "Google Maps 'ワンダリア横浜 Supported by Umios' (Naka Ward), newest review shown 3 hours ago"
-    },
-    {
-      "name": "Kamakura Seaside Park (Yuigahama)",
-      "page_name": "Kamakura Seaside Park Yuigahama Area",
-      "src": "https://trip.pref.kanagawa.jp/destination/kamakura-seaside-park-yuigahama-area/1425",
-      "date": "official",
-      "map": "Google Maps 'Kamakura Seaside Park' (由比ガ浜4-5-1), newest review shown 2 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 rows from babycatalog.tokyo (Oct 2026) and nap-camp (Apr 2026), all passed library-check.cjs, 14 went in",
+      "added": [
+        {
+          "name": "Hard Rock Cafe Yokohama",
+          "page_name": "ハードロックカフェ 横浜",
+          "src": "https://babycatalog.tokyo/yokohamaminatomirai_lunch/",
+          "date": "2026-10",
+          "map": "Google Maps 'Hard Rock Cafe Yokohama' (Queen's Tower A 1F), newest review shown 2 days ago"
+        },
+        {
+          "name": "Soup Stock Tokyo, Landmark Plaza",
+          "page_name": "スープストックトーキョー 横浜ランドマークプラザ店",
+          "src": "https://babycatalog.tokyo/yokohamaminatomirai_lunch/",
+          "date": "2026-10",
+          "map": "Google Maps 'Soup Stock Tokyo' (Nishi-ku, Landmark Plaza), newest review shown a month ago"
+        },
+        {
+          "name": "American House, Queen's Square",
+          "page_name": "American House クイーンズスクエア店",
+          "src": "https://babycatalog.tokyo/yokohamaminatomirai_lunch/",
+          "date": "2026-10",
+          "map": "Google Maps 'AMERICAN HOUSE QUEEN'S SQUARE', newest review shown 2 weeks ago"
+        },
+        {
+          "name": "J.S. Pancake Cafe, MARK IS",
+          "page_name": "J.S. PANCAKE CAFE MARK IS マークイズみなとみらい店",
+          "src": "https://babycatalog.tokyo/yokohamaminatomirai_lunch/",
+          "date": "2026-10",
+          "map": "Google Maps 'J.S. Pancake Cafe' (MARK IS), newest review shown a week ago"
+        },
+        {
+          "name": "RHC CAFE Minatomirai",
+          "page_name": "RHC CAFE MARK IS",
+          "src": "https://babycatalog.tokyo/yokohamaminatomirai_lunch/",
+          "date": "2026-10",
+          "map": "Google Maps 'RHC CAFE Minatomirai', newest review shown 2 days ago"
+        },
+        {
+          "name": "Blue Bottle Coffee Minatomirai",
+          "page_name": "ブルーボトルコーヒー みなとみらいカフェ",
+          "src": "https://babycatalog.tokyo/yokohamaminatomirai_lunch/",
+          "date": "2026-10",
+          "map": "Google Maps 'Blue Bottle Coffee - Minatomirai Cafe', newest review shown 20 hours ago"
+        },
+        {
+          "name": "Megumi Suisan, MARK IS",
+          "page_name": "まぐろ問屋 めぐみ水産 MARK IS",
+          "src": "https://babycatalog.tokyo/yokohamaminatomirai_lunch/",
+          "date": "2026-10",
+          "map": "Google Maps 'Maguro Tonya MEGUMI SUISAN MARK IS Minatomirai', newest review shown 6 hours ago"
+        },
+        {
+          "name": "Fantasy Kids Resort Kohoku",
+          "page_name": "ファンタジーキッズリゾート港北",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "date": "2026-04",
+          "map": "Google Maps 'Fantasy Kids Resort Kohoku' (Tsuzuki-ku), newest review shown a day ago"
+        },
+        {
+          "name": "Kinder Platz, Tressa Yokohama",
+          "page_name": "キンダープラッツ トレッサ横浜店",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "date": "2026-04",
+          "map": "Google Maps 'Fureberukan Kinder Platz TRESSA Yokohamaten' (Kōhoku-ku), newest review shown a month ago"
+        },
+        {
+          "name": "Chikyu no Niwa Kohoku",
+          "page_name": "ちきゅうのにわ 港北店",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "date": "2026-04",
+          "map": "Google Maps 'Chikyū no Niwa Kōhoku' (Tsuzuki-ku), newest review shown 5 hours ago"
+        },
+        {
+          "name": "The Kids, Northport Mall",
+          "page_name": "The Kids 横浜ノースポートモール店",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "date": "2026-04",
+          "map": "Google Maps 'ザキッズ 横浜ノースポートモール店', newest review shown 3 weeks ago"
+        },
+        {
+          "name": "BørneLund Asobi no Sekai, MARK IS",
+          "page_name": "ボーネルンド あそびのせかい マークイズみなとみらい店",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "date": "2026-04",
+          "map": "Google Maps 'Bornelund Asobi no Sekai MARK IS Minatomirai', newest review shown 2 months ago"
+        },
+        {
+          "name": "Kids Land US, Yokohama Kibogaoka",
+          "page_name": "キッズランドUS 横浜希望が丘店",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "date": "2026-04",
+          "map": "Google Maps 'Kids Land US' (Asahi-ku), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Beruberu Park Yokohama Kannai",
+          "page_name": "べるべるパーク横浜関内店",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "date": "2026-04",
+          "map": "Google Maps 'Beruberu Park Yokohama Kannai' (Naka-ku), newest review shown 4 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "あそびパークPLUS みなとみらい東急スクエア店",
+          "why": "the newest review on the map is 8 months old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Frenchna Yokohama Bay Quarter",
-      "why": "permanently closed on the map"
-    },
-    {
-      "name": "Landmark Tower Sky Garden",
-      "why": "temporarily closed on the map"
-    },
-    {
-      "name": "Places to eat",
-      "why": "the city's kids' eat page could not be read; nothing else dated"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 3 rows from Have a Good Holiday (Oct 2026), Time Out (Mar 2026) and Kanagawa tourism (official), all passed library-check.cjs, 3 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }
