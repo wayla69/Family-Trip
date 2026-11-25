@@ -1806,6 +1806,43 @@
           },
           "q": "완산벙커 더 스페이스, 완산5길 70, 전주",
           "ok": "2026-11"
+        },
+        {
+          "local": "전주향교",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/jeonju-kids-places",
+          "name": {
+            "th": "โรงเรียนขงจื๊อชอนจูฮยังกโย",
+            "en": "Jeonju Hyanggyo (Confucian school)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนฮยังกโย หมู่บ้านฮันอก วันซันกู",
+            "en": "Hyanggyo-gil, Hanok Village, Wansan-gu"
+          },
+          "what": {
+            "th": "โรงเรียนขงจื๊อเก่า อยู่ในเส้นทางเดินชมฟรีของหมู่บ้านฮันอก",
+            "en": "An old Confucian school with huge ginkgo trees, on the Hanok Village's free guided walk"
+          },
+          "why": {
+            "th": "เป็นจุดหนึ่งในทัวร์เดินชมฟรีที่หน้าเว็บแนะนำให้ครอบครัว",
+            "en": "Part of the free guided walk the page suggests for families"
+          },
+          "q": "Jeonju Hyanggyo, 139 Hyanggyo-gil, Jeonju",
+          "ok": "2026-11"
         }
       ]
     },

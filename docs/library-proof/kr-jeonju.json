@@ -157,6 +157,32 @@
         "agents": "one Haiku agent; 7 rows from mom-mom.net, Yugacrew and Jeonbuk Ilbo (2025–2026), all passed library-check.cjs, 6 went in",
         "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from yugacrew.com (May 2026) and mom-mom.net (Apr–Jun 2026), all passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Jeonju Hyanggyo (Confucian school)",
+          "page_name": "전주향교",
+          "src": "https://www.yugacrew.com/crewletter/jeonju-kids-places",
+          "date": "2026-05",
+          "map": "Google Maps 'Jeonju Hyanggyo' (139 Hyanggyo-gil), newest review shown 15 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "카페, 틀못",
+          "why": "no map entry of its own"
+        },
+        {
+          "name": "라한호텔 전주 하녹당",
+          "why": "the newest review on the map is 7 months old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
