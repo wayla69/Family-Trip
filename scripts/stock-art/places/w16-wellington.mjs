@@ -163,7 +163,7 @@ export default {
   places: {
     // 'wellington' is kept out of the first two names on purpose: "beef Wellington", "Wellington Arch" and "wellingtons" (boots) are
     // not this city, so plain "wellington" counts only in a book that names New Zealand or this place itself
-    'nz-wellington': { country: 'nz', wave: 3, name: nm('เวลลิงตัน', 'Wellington'), tz: 'Pacific/Auckland', ll: [-41.29, 174.78], alias: ['te whanganui-a-tara', 'WLG', 'wellington', 'เวลลิงตัน', '惠灵顿', 'te papa', 'เตปาปา', 'zealandia', 'ซีแลนเดีย', 'cuba street', 'ถนนคิวบา', 'lambton quay', 'แลมบ์ตันคีย์', 'oriental bay', 'ออเรียนทัลเบย์', 'lyall bay', 'ไลออลเบย์', 'petone', 'พีโทนี', 'kelburn', 'เคลเบิร์น'], colors: WG },
+    'nz-wellington': { country: 'nz', wave: 3, name: nm('เวลลิงตัน', 'Wellington'), tz: 'Pacific/Auckland', ll: [-41.29, 174.78], alias: ['te whanganui-a-tara', 'WLG', 'wellington', 'เวลลิงตัน', '惠灵顿', 'te papa', 'เตปาปา', 'zealandia', 'ซีแลนเดีย', 'lambton quay', 'แลมบ์ตันคีย์', 'oriental bay', 'ออเรียนทัลเบย์', 'lyall bay', 'ไลออลเบย์', 'petone', 'พีโทนี', 'kelburn', 'เคลเบิร์น'], colors: WG },
   },
   items,
 };
