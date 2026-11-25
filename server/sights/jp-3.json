@@ -5812,6 +5812,570 @@
           "ok": "2026-11"
         }
       ]
+    },
+    {
+      "place": "jp-kagoshima",
+      "thin": true,
+      "sights": [
+        {
+          "local": "平川動物公園",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 1,000 เยน (ชาวเมือง 750 เยน)",
+            "en": "Adults ¥1,000 (¥750 for city residents)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "สวนสัตว์ฮิราคาวะ",
+            "en": "Hirakawa Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ฮิราคาวะโจ คาโกชิมะ",
+            "en": "Hirakawa-cho, Kagoshima"
+          },
+          "what": {
+            "th": "สวนสัตว์ราว 900 ตัว มองเห็นซากุระจิมะและอ่าว",
+            "en": "A zoo of about 900 animals with a view of Sakurajima and the bay"
+          },
+          "why": {
+            "th": "มีโคอาลา และสวนสนุกเล็กๆ ข้างสวนสัตว์",
+            "en": "Koalas, and a small amusement park beside the zoo"
+          },
+          "tip": {
+            "th": "เปิด 9:00–17:00 เข้าได้ถึง 16:30",
+            "en": "Open 9:00–17:00, last entry 16:30"
+          },
+          "q": "Hirakawa Zoo, 5669-1 Hirakawacho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "いおワールドかごしま水族館",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 2,000 เยน เด็กนักเรียน 1,000 เยน",
+            "en": "Adults ¥2,000, school children ¥1,000"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำอิโอเวิลด์คาโกชิมะ",
+            "en": "Io World Kagoshima Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ฮงโกชินมาจิ ใกล้ท่าเรือเฟอร์รี",
+            "en": "Honko-shinmachi, by the ferry port"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำของอ่าวคาโกชิมะและกระแสน้ำคุโรชิโอะ ราว 800 ชนิด",
+            "en": "An aquarium of Kagoshima Bay and the Kuroshio current, about 800 kinds"
+          },
+          "why": {
+            "th": "มีคลองโลมาให้ดูโลมาใกล้ๆ และการให้อาหารฉลาม",
+            "en": "A dolphin channel to watch dolphins up close, and shark feeding"
+          },
+          "tip": {
+            "th": "เปิด 9:30–18:00 เข้าได้ถึง 17:00",
+            "en": "Open 9:30–18:00, last entry 17:00"
+          },
+          "q": "Kagoshima City Aquarium, 3-1 Honkoshinmachi, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "桜島自然恐竜公園",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "สวนไดโนเสาร์ซากุระจิมะ",
+            "en": "Sakurajima Dinosaur Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โยโกยามะโจ ซากุระจิมะ",
+            "en": "Yokoyama-cho, Sakurajima"
+          },
+          "what": {
+            "th": "สวนฟรีบนซากุระจิมะ มีไดโนเสาร์ขนาดเท่าจริงและเครื่องเล่น",
+            "en": "A free park on Sakurajima with life-size dinosaurs and play equipment"
+          },
+          "why": {
+            "th": "มีสไลเดอร์สูงกว่า 10 เมตรและเครื่องปีนป่าย",
+            "en": "A slide over 10 m high and climbing frames"
+          },
+          "tip": {
+            "th": "เดินราว 15 นาทีจากท่าเรือเฟอร์รีซากุระจิมะ",
+            "en": "About 15 minutes’ walk from the Sakurajima ferry"
+          },
+          "q": "Sakurajima Natural Dinosaur Park, Sakurajimayokoyamacho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "県立吉野公園",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "สวนโยชิโนะ",
+            "en": "Yoshino Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โยชิโนโจ คาโกชิมะ",
+            "en": "Yoshino-cho, Kagoshima"
+          },
+          "what": {
+            "th": "สวน 30 เฮกตาร์บนที่ราบสูง มีสนามหญ้า ลานน้ำพุ และต้นไม้มากมาย",
+            "en": "A 30-hectare park on a plateau with lawns, a fountain square and many trees"
+          },
+          "why": {
+            "th": "มีที่ปิกนิกและวิ่งเล่น",
+            "en": "Room to picnic and run about"
+          },
+          "q": "Kagoshima Prefectural Yoshino Park, Yoshinocho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鹿児島市立科学館",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "หอวิทยาศาสตร์เมืองคาโกชิมะ",
+            "en": "Kagoshima City Science Hall"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "คาโมอิเกะ คาโกชิมะ",
+            "en": "Kamoike, Kagoshima"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีนิทรรศการลงมือทำ โชว์การทดลอง และท้องฟ้าจำลอง",
+            "en": "A science museum with hands-on exhibits, experiment shows and a planetarium"
+          },
+          "why": {
+            "th": "มีการทดลองที่เด็กได้ลองทำเอง",
+            "en": "Experiments children try with their own hands"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "Kagoshima Municipal Science Hall, 2-31-18 Kamoike, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上野原縄文の森",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "ป่าโจมงอุเอโนฮาระ",
+            "en": "Uenohara Jomon Forest"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โคคุบุอุเอโนฮาระ คิริชิมะ (ราว 45 นาที)",
+            "en": "Kokubu-Uenohara, Kirishima (about 45 minutes)"
+          },
+          "what": {
+            "th": "แหล่งหมู่บ้านยุคหินที่มีบ้านหลุมและหอนิทรรศการ",
+            "en": "A Stone Age village site with pit houses and an exhibition hall"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลองจุดไฟและปั้นดินเผา",
+            "en": "Children try making fire and pottery"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Uenohara Jomon Forest, Kokubuuenohara, Kirishima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "霧島アートの森",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 320 เยน เด็กนักเรียน 160 เยน เด็กก่อนวัยเรียนฟรี",
+            "en": "Adults ¥320, school children ¥160, preschoolers free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปะกลางแจ้งคิริชิมะ",
+            "en": "Kirishima Open-Air Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "โคบะ ยูซุย (เทือกเขาคิริชิมะ)",
+            "en": "Koba, Yusui (Kirishima mountains)"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะบนภูเขาสูง 700 เมตร มีประติมากรรมกลางแจ้ง",
+            "en": "An art museum 700 m up in the mountains with sculptures outdoors"
+          },
+          "why": {
+            "th": "หลายชิ้นจับหรือนั่งได้",
+            "en": "Many works can be touched or sat on"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Kirishima Open Air Museum, 6340-220 Koba, Yusui",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "วันธรรมดา 30 นาที อายุ 2–3 ขวบ 500 เยน 4–12 ปี 700 เยน",
+            "en": "Weekday 30 minutes: ages 2–3 ¥500, 4–12 ¥700"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "ลิตเติลแพลนเน็ต อิออนมอลล์คาโกชิมะ",
+            "en": "Little Planet, AEON Mall Kagoshima"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนมอลล์ โทไกโจ",
+            "en": "AEON Mall, Tokai-cho"
+          },
+          "what": {
+            "th": "สวนเล่นดิจิทัล เล่นทรายฉายภาพ บ่อบอลดิจิทัล และภาพวาดที่ขยับได้",
+            "en": "A digital play park: projected sand play, a digital ball pool, drawings that move"
+          },
+          "why": {
+            "th": "ภาพที่เด็กวาดเองขยับบนจอ",
+            "en": "Children’s own drawings come alive on the screen"
+          },
+          "q": "リトルプラネット イオンモール鹿児島",
+          "ok": "2026-11"
+        },
+        {
+          "local": "知育玩具広場そだて",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "1 ชั่วโมง 800 เยน",
+            "en": "1 hour ¥800"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "ห้องของเล่นโซดาเตะ",
+            "en": "Sodate toy room"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไดริวโจ คาโกชิมะ",
+            "en": "Dairyu-cho, Kagoshima"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่ม มีของเล่นเสริมพัฒนาการ รถไฟ และของเล่นบทบาทสมมุติ",
+            "en": "An indoor room of educational toys, trains and pretend play"
+          },
+          "why": {
+            "th": "มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "A nursing room and nappy-changing table for little ones"
+          },
+          "q": "知育玩具広場そだて, Dairyucho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "そだて宇宿店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "60 นาที 800 เยน เด็กอ่อน 30 นาที 300 เยน",
+            "en": "60 minutes ¥800; babies 30 minutes ¥300"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "ห้องของเล่นโซดาเตะ (อุซุกิ)",
+            "en": "Sodate toy room (Usuki)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุซุกิ คาโกชิมะ",
+            "en": "Usuki, Kagoshima"
+          },
+          "what": {
+            "th": "ห้องของเล่นที่มีของเล่นกว่า 100 ชนิด",
+            "en": "A toy room with over 100 kinds of toys"
+          },
+          "why": {
+            "th": "มีของเล่นเด็กอ่อน ห้องให้นม และที่เปลี่ยนผ้าอ้อม",
+            "en": "Baby toys too, a nursing room and nappy-changing table"
+          },
+          "q": "知育玩具広場そだて宇宿店, 1-10-2 Usuki, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "かごしま環境未来館",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "พิพิธภัณฑ์สิ่งแวดล้อมคาโกชิมะ",
+            "en": "Kagoshima Museum of the Environment"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โจเซ คาโกชิมะ",
+            "en": "Josei, Kagoshima"
+          },
+          "what": {
+            "th": "ศูนย์ฟรีเรื่องธรรมชาติและภูมิอากาศ มีนิทรรศการลงมือทำ",
+            "en": "A free centre on nature and the climate, with hands-on displays"
+          },
+          "why": {
+            "th": "มีเกมตอบคำถามและมุมเด็กที่ของเล่นทำจากวัสดุธรรมชาติ",
+            "en": "Quiz games and a kids’ corner of toys made from natural things"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Kagoshima Museum of the Environment, 2-1-5 Josei, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "かごしまメルヘン館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 600 เยน เด็กนักเรียน 300 เยน เด็กก่อนวัยเรียนฟรี",
+            "en": "Adults ¥600, school children ¥300, preschoolers free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "บ้านนิทานคาโกชิมะ",
+            "en": "Kagoshima Märchen-kan"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ชิโรยามะโจ (อาคารเดียวกับพิพิธภัณฑ์วรรณกรรม)",
+            "en": "Shiroyama-cho (with the Modern Literature Museum)"
+          },
+          "what": {
+            "th": "บ้านนิทานและหนังสือภาพ มีเครื่องปีนป่ายรูปปราสาท",
+            "en": "A fairy-tale and picture-book house with a castle climbing frame"
+          },
+          "why": {
+            "th": "มีการอ่านนิทาน เล่นนิ้ว และนิทรรศการที่เด็กเดินเข้าไปได้",
+            "en": "Story readings, finger plays and displays children walk into"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "かごしま近代文学館・メルヘン館, 5-1 Shiroyamacho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "かごしま文化工芸村",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "ผู้ใหญ่ 400 เยน เด็ก 200 เยน",
+            "en": "Adults ¥400, children ¥200"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "หมู่บ้านหัตถกรรมคาโกชิมะ",
+            "en": "Kagoshima Craft Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "นิชิเบปปุโจ คาโกชิมะ",
+            "en": "Nishibeppu-cho, Kagoshima"
+          },
+          "what": {
+            "th": "เวิร์กช็อปในร่ม ทั้งเครื่องปั้นดินเผา งานไม้ และการย้อมผ้า",
+            "en": "Indoor workshops in pottery, woodwork and dyeing"
+          },
+          "why": {
+            "th": "ปั้นดินบนแป้นหมุนไฟฟ้า ตั้งแต่วัยประถม",
+            "en": "Pottery on an electric wheel, from primary-school age"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "Kagoshima Cultural and Craft Village, 2758 Nishibeppucho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "姶良市子ども館「ちるどん」",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.nap-camp.com/mag/83112",
+          "name": {
+            "th": "หอเด็กอาอิระ ชิรุดง",
+            "en": "Aira Children’s Hall Childon"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คาจิกิ อาอิระ (ราว 30 นาที)",
+            "en": "Kajiki, Aira (about 30 minutes)"
+          },
+          "what": {
+            "th": "ศูนย์เด็กที่มีห้องเล่นไม้ สำหรับเด็กถึง 9 ขวบที่มากับผู้ปกครอง",
+            "en": "A children’s centre with a wooden play hall, for children up to 9 with a parent"
+          },
+          "why": {
+            "th": "ห้องไม้บรรยากาศอบอุ่น สงบสำหรับครอบครัว",
+            "en": "Warm wooden rooms, calm for families"
+          },
+          "tip": {
+            "th": "ต้องจองล่วงหน้า",
+            "en": "Booking needed"
+          },
+          "q": "姶良市子ども館「ちるどん」, 400 Kajikicho Motomachi, Aira",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }
