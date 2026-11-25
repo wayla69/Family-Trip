@@ -1,4 +1,4 @@
-// Japan beyond Tokyo: Osaka, Kyoto (with Nara), Hokkaido — each picture its own (the country's stickers are in public/stock/jp)
+// Japan beyond Tokyo: Osaka, Kyoto, Hokkaido (Nara has its own place since wave 16, w16-nara.mjs; Kyoto keeps its Todai-ji picture) — each picture its own (the country's stickers are in public/stock/jp)
 import { P, R, C, E, Lc, g, face, free, scene, cityStamp, INK } from '../lib.mjs';
 
 const nm = (th, en) => ({ th, en });
@@ -38,7 +38,7 @@ const items = [
     // two glass towers joined at the top by the round "floating garden" observatory, a little bridge lower down
     svg: free(R(46, 50, 56, 170, '#B3E5FC') + R(138, 50, 56, 170, '#B3E5FC') + R(102, 120, 36, 10, '#90A4AE', 2) + R(30, 26, 180, 30, '#CFD8DC', 6) + C(120, 40, 26, 'none')
       + C(120, 40, 18, '#E1F5FE') + [60, 80, 100, 120, 140, 160, 180, 200].map((y) => Lc(`M54 ${y}h40M146 ${y}h40`, '#81D4FA', 3)).join('') + face(120, 40, 0.4)) },
-  // ---------- Kyoto (and Nara)
+  // ---------- Kyoto
   { id: 'jp-kyoto.stamp', cat: 'stamp', file: 'jp/kyoto/stamp.v1.svg', name: nm('ตราประทับเกียวโต', 'Kyoto stamp'), kw: ['kyoto', 'เกียวโต'],
     // a fox (Inari's messenger) holding a key, sitting before a tiny torii
     svg: cityStamp('jky-st', { name: 'KYOTO', sub: 'JAPAN', ...KY, emblem: P('M70 76q30-8 60 0l-2 6H72z', '#C62828') + R(76, 84, 6, 56, '#C62828') + R(118, 84, 6, 56, '#C62828')
@@ -100,7 +100,7 @@ const items = [
 export default {
   places: {
     'jp-osaka': { country: 'jp', wave: 1, name: nm('โอซาก้า', 'Osaka'), tz: 'Asia/Tokyo', ll: [34.69, 135.5], alias: ['osaka', 'โอซาก้า', '大阪', 'namba', 'นัมบะ', 'dotonbori', 'โดทงโบริ', 'umeda', 'อุเมดะ', 'shinsekai', 'kaiyukan', 'universal city', 'tennoji'], colors: OS },
-    'jp-kyoto': { country: 'jp', wave: 1, name: nm('เกียวโต', 'Kyoto'), tz: 'Asia/Tokyo', ll: [35.01, 135.77], alias: ['kyoto', 'เกียวโต', '京都', 'gion', 'กิอง', 'arashiyama', 'อาราชิยามะ', 'fushimi', 'ฟูชิมิ', 'higashiyama', 'nara', 'นารา', 'uji', 'อุจิ'], colors: KY },
+    'jp-kyoto': { country: 'jp', wave: 1, name: nm('เกียวโต', 'Kyoto'), tz: 'Asia/Tokyo', ll: [35.01, 135.77], alias: ['kyoto', 'เกียวโต', '京都', 'gion', 'กิอง', 'arashiyama', 'อาราชิยามะ', 'fushimi', 'ฟูชิมิ', 'higashiyama', 'uji', 'อุจิ'], colors: KY },
     'jp-hokkaido': { country: 'jp', wave: 1, name: nm('ฮอกไกโด', 'Hokkaido'), tz: 'Asia/Tokyo', ll: [43.06, 141.35], alias: ['hokkaido', 'ฮอกไกโด', '北海道', 'sapporo', 'ซัปโปโร', 'otaru', 'โอตารุ', 'furano', 'ฟุราโนะ', 'biei', 'บิเอะ', 'asahikawa', 'อาซาฮิกาวะ', 'niseko', 'นิเซโกะ', 'hakodate', 'ฮาโกดาเตะ', 'noboribetsu'], colors: HK },
   },
   items,
