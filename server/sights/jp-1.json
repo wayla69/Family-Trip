@@ -3607,6 +3607,521 @@
           "ok": "2026-11"
         }
       ]
+    },
+    {
+      "place": "jp-beppu",
+      "thin": true,
+      "sights": [
+        {
+          "local": "鬼山地獄",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ตั๋วรวมเจ็ดนรก ผู้ใหญ่ 2,400 เยน เด็ก 1,200 เยน",
+            "en": "Seven-hells ticket: adults ¥2,400, children ¥1,200"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+          "name": {
+            "th": "โอนิยามะจิโงกุ",
+            "en": "Oniyama Jigoku"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "คันนาวะ เบปปุ",
+            "en": "Kannawa, Beppu"
+          },
+          "what": {
+            "th": "บ่อน้ำพุร้อน “นรก” ที่มีจระเข้ราว 80 ตัว เลี้ยงด้วยความร้อนน้ำพุตั้งแต่ปี 1923",
+            "en": "A hot-spring “hell” where about 80 crocodiles live, raised with hot-spring heat since 1923"
+          },
+          "why": {
+            "th": "จระเข้นอนนิ่งๆ แล้วจู่ๆ ก็สาดน้ำและทะเลาะกัน",
+            "en": "The crocodiles lie still, then suddenly splash and squabble"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 8:00–17:00",
+            "en": "Open daily 8:00–17:00"
+          },
+          "q": "Oniyama Jigoku, 625 Kannawa, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "海地獄",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/beppu-with-kids",
+          "name": {
+            "th": "อุมิจิโงกุ",
+            "en": "Umi Jigoku"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "คันนาวะ เบปปุ",
+            "en": "Kannawa, Beppu"
+          },
+          "what": {
+            "th": "บ่อน้ำพุร้อนเดือดสีฟ้าโคบอลต์",
+            "en": "A boiling hot-spring pool of cobalt blue water"
+          },
+          "why": {
+            "th": "บ่อน้ำสีฟ้าสดที่เดือดปุดๆ ทำให้เด็กตื่นเต้น",
+            "en": "The bright blue boiling pond amazes children"
+          },
+          "q": "Umi Jigoku, 559-1 Kannawa, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "血の池地獄",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/beppu-with-kids",
+          "name": {
+            "th": "ชิโนอิเกะจิโงกุ",
+            "en": "Chinoike Jigoku"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "โนดะ เบปปุ",
+            "en": "Noda, Beppu"
+          },
+          "what": {
+            "th": "บ่อน้ำร้อนที่มีไอขึ้น เป็นสีแดงเข้มจากดินเหนียว",
+            "en": "A steaming pond made deep red by its clay"
+          },
+          "why": {
+            "th": "บ่อน้ำสีแดงมีไอขึ้นเป็นภาพที่เด็กจำได้",
+            "en": "The red steaming pond is a sight children remember"
+          },
+          "q": "Chinoike Jigoku, 778 Noda, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "地獄蒸し工房 鉄輪",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/beppu-with-kids",
+          "name": {
+            "th": "จิโงกุมุชิโคโบ คันนาวะ",
+            "en": "Jigoku-mushi Kobo Kannawa"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "คันนาวะ เบปปุ",
+            "en": "Kannawa, Beppu"
+          },
+          "what": {
+            "th": "นึ่งอาหารกลางวันเองในเตาไอน้ำจากภูเขาไฟ",
+            "en": "Cook your own lunch in volcanic steam ovens"
+          },
+          "why": {
+            "th": "เด็กๆ ช่วยใส่ตะกร้าผักและไข่ลงในเตาไอน้ำ",
+            "en": "Children help put the baskets of vegetables and eggs into the steam"
+          },
+          "tip": {
+            "th": "ตั้งเวลาไว้ จะได้รู้ว่าต้องยกตะกร้าออกเมื่อไร",
+            "en": "Set a timer so you know when to take the baskets out"
+          },
+          "q": "Jigokumushikobo Kannawa, Furomoto, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "九州自然動物公園アフリカンサファリ",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 2,600 เยน อายุ 4–15 ปี 1,500 เยน รถบัสจังเกิลจ่ายเพิ่ม",
+            "en": "Adults ¥2,600, ages 4 to 15 ¥1,500; jungle bus extra"
+          },
+          "book": "rec",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+          "name": {
+            "th": "แอฟริกันซาฟารี คิวชู",
+            "en": "Kyushu Natural Animal Park African Safari"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "อาจิมุ อุสะ (ราว 30 นาทีจากเบปปุ)",
+            "en": "Ajimu, Usa (about 30 minutes from Beppu)"
+          },
+          "what": {
+            "th": "หนึ่งในซาฟารีปาร์กที่ใหญ่ที่สุดของญี่ปุ่น มีรถบัสจังเกิลพาผ่านฝูงสัตว์",
+            "en": "One of Japan’s largest safari parks, with a jungle bus through the animals"
+          },
+          "why": {
+            "th": "มีโซนสัมผัสสัตว์ให้เด็กเล็กได้เจอจิงโจ้ ม้าแคระ และกระต่าย",
+            "en": "A petting zone where small children meet kangaroos, ponies and rabbits"
+          },
+          "tip": {
+            "th": "รถบัสจังเกิลวิ่งแม้ฝนตก",
+            "en": "The jungle bus runs in the rain too"
+          },
+          "q": "Kyushu Wildlife Park African Safari, Ajimu, Usa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "高崎山自然動物園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 520 เยน เด็กนักเรียน 260 เยน เด็กก่อนวัยเรียนฟรี",
+            "en": "Adults ¥520, school children ¥260, preschoolers free"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+          "name": {
+            "th": "สวนลิงทาคาซากิยามะ",
+            "en": "Takasakiyama Monkey Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "คันซากิ โออิตะ (นั่งรถบัสจากสถานีเบปปุ)",
+            "en": "Kanzaki, Oita (by bus from Beppu Station)"
+          },
+          "what": {
+            "th": "ภูเขาที่ลิงญี่ปุ่นป่าราว 1,000 ตัวมารวมกัน",
+            "en": "A hill where about 1,000 wild Japanese macaques gather"
+          },
+          "why": {
+            "th": "ลูกลิงเล่นกัน ส่วนลิงโตแสดงว่าใครเป็นหัวหน้า",
+            "en": "Baby monkeys play while the adults show who is boss"
+          },
+          "q": "Takasakiyama Natural Zoological Garden, 3098-1 Kanzaki, Oita",
+          "ok": "2026-11"
+        },
+        {
+          "local": "うみたまご",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 2,600 เยน เด็กนักเรียน 1,300 เยน อายุ 4 ขวบขึ้นไป 850 เยน",
+            "en": "Adults ¥2,600, school children ¥1,300, from age 4 ¥850"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+          "name": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำอุมิทามาโงะ",
+            "en": "Umitamago aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "คันซากิ โออิตะ (ติดทาคาซากิยามะ)",
+            "en": "Kanzaki, Oita (next to Takasakiyama)"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำ มีโชว์โลมาและวอลรัส และตู้ปลาทรงกลมขนาดใหญ่",
+            "en": "An aquarium with dolphin and walrus shows and a big round tank"
+          },
+          "why": {
+            "th": "มีมุมเด็กสำหรับเด็กที่อยากขยับตัว",
+            "en": "A kids’ corner for children who need to move"
+          },
+          "q": "Oita Marine Palace Aquarium Umitamago, Kanzaki, Oita",
+          "ok": "2026-11"
+        },
+        {
+          "local": "別府ラクテンチ",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "รวมเคเบิลคาร์ ผู้ใหญ่ 1,300 เยน อายุ 3–12 ปี 600 เยน ต่ำกว่า 3 ขวบฟรี",
+            "en": "With the cable car: adults ¥1,300, ages 3 to 12 ¥600, under 3 free"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+          "name": {
+            "th": "เบปปุราคุเท็นจิ",
+            "en": "Beppu Rakutenchi"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนนางาเรกาวะ เบปปุ",
+            "en": "Nagarekawa-dori, Beppu"
+          },
+          "what": {
+            "th": "สวนสนุกที่เก่าแก่ที่สุดในคิวชู (1929) ขึ้นด้วยเคเบิลคาร์ มีสัตว์และชิงช้าสวรรค์",
+            "en": "Kyushu’s oldest amusement park (1929), reached by cable car, with animals and a Ferris wheel"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นหกอย่างสำหรับเด็ก 0–2 ขวบ",
+            "en": "Six rides for children aged 0 to 2"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร (เดือนมิถุนายนและธันวาคม–กุมภาพันธ์ ปิดวันพุธด้วย)",
+            "en": "Closed on Tuesdays (also Wednesdays in June and December–February)"
+          },
+          "q": "Beppu Cable Rakutenchi, Nagarekawa-dori, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "城島高原パーク",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+          "name": {
+            "th": "สวนสนุกคิจิมะโคเง็น",
+            "en": "Kijima Kogen Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "คิจิมะโคเง็น เบปปุ",
+            "en": "Kijima Kogen, Beppu"
+          },
+          "what": {
+            "th": "สวนสนุกราว 40 เครื่องเล่น รวมรถไฟเหาะไม้คันแรกของญี่ปุ่น",
+            "en": "An amusement park with about 40 rides, including Japan’s first wooden roller coaster"
+          },
+          "why": {
+            "th": "มีโรงเรียนขับรถเด็กตั้งแต่ 3 ขวบ ให้เช่ารถเข็นเด็ก และห้องให้นม",
+            "en": "A kids’ driving school from age 3, pram hire and baby rooms"
+          },
+          "q": "Kijima Kogen Park, 123 Kijima Kogen, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "フォレストアドベンチャー別府",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เส้นทางแอดเวนเจอร์ 3,800 เยน เส้นทางแคโนปี 2,800 เยน",
+            "en": "Adventure course ¥3,800, canopy course ¥2,800"
+          },
+          "book": "rec",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+          "name": {
+            "th": "ฟอเรสต์แอดเวนเจอร์ เบปปุ",
+            "en": "Forest Adventure Beppu"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ชิดากะ เบปปุ",
+            "en": "Shidaka, Beppu"
+          },
+          "what": {
+            "th": "เส้นทางผจญภัยบนต้นไม้ ใส่สายรัด เดินระหว่างต้นไม้ และโหนสลิง",
+            "en": "A tree-top course with harnesses, walks between trees and zip lines"
+          },
+          "why": {
+            "th": "มีเส้นทางบนพื้นสำหรับเด็กตั้งแต่ 3 ขวบ",
+            "en": "Ground courses for children from age 3"
+          },
+          "tip": {
+            "th": "ฝนตกเล็กน้อยก็เปิด ปิดเมื่อมีพายุ",
+            "en": "Open in light rain; closed in storms"
+          },
+          "q": "Forest Adventure - Beppu, 4380-1 Shidaka, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大分香りの博物館",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ผสมน้ำหอม 2,500 เยน",
+            "en": "Perfume blending ¥2,500"
+          },
+          "book": "none",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko",
+          "name": {
+            "th": "พิพิธภัณฑ์น้ำหอมโออิตะ",
+            "en": "Oita Fragrance Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คิตะอิชิงากิ เบปปุ",
+            "en": "Kita-Ishigaki, Beppu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์กลิ่น ที่ผู้มาเยือนผสมน้ำหอมของตัวเองได้",
+            "en": "A museum of scent where visitors blend their own perfume"
+          },
+          "why": {
+            "th": "ใช้หลอดหยดและบีกเกอร์ เหมือนได้ทำการทดลอง",
+            "en": "Droppers and beakers make it feel like a science experiment"
+          },
+          "q": "Oita Fragrance Museum, 48-1 Kitaishigaki, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "別府市竹細工伝統産業会館",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "อายุ 15 ปีขึ้นไป 390 เยน เด็กนักเรียน 130 เยน",
+            "en": "Over-15s ¥390, school children ¥130"
+          },
+          "book": "req",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko",
+          "name": {
+            "th": "ศูนย์หัตถกรรมไม้ไผ่เบปปุ",
+            "en": "Beppu Bamboo Crafts Centre"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฮิงาชิโซเอ็น เบปปุ",
+            "en": "Higashi-soen, Beppu"
+          },
+          "what": {
+            "th": "ศูนย์หัตถกรรมไม้ไผ่ มีผลงานราว 180 ชิ้นและเวิร์กช็อปให้ลองทำเอง",
+            "en": "A bamboo craft centre with about 180 works and a make-your-own workshop"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลองทำงานไม้ไผ่ชิ้นเล็กเอง",
+            "en": "Children make a small bamboo craft themselves"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ เวิร์กช็อปต้องจองล่วงหน้า",
+            "en": "Closed on Mondays; workshops must be booked"
+          },
+          "q": "Beppu City Traditional Bamboo Crafts Center, Higashisoen, Beppu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "別府公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/beppu-with-kids",
+          "name": {
+            "th": "สวนเบปปุ",
+            "en": "Beppu Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เดินสิบนาทีจากทางออกฝั่งตะวันตกสถานีเบปปุ",
+            "en": "Ten minutes’ walk from Beppu Station west exit"
+          },
+          "what": {
+            "th": "สวนขนาดใหญ่ มีสนามหญ้ากว้างและสนามเด็กเล่น",
+            "en": "A large park with wide lawns and a playground"
+          },
+          "why": {
+            "th": "เด็กในท้องถิ่นมาเล่นที่สนามหญ้าและสนามเด็กเล่น",
+            "en": "Local children gather to play on the lawns and the playground"
+          },
+          "tip": {
+            "th": "สวยที่สุดช่วงซากุระบาน",
+            "en": "Best in cherry blossom season"
+          },
+          "q": "Beppu Park, Beppu, Oita",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }
