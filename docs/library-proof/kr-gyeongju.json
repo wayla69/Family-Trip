@@ -86,6 +86,36 @@
         "agents": "one Haiku agent; 8 rows from Mom-mom (2026), all passed library-check.cjs, 3 went in",
         "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 11 rows from yugacrew.com, mom-mom.net and kbmaeil.com (Jul–Oct 2026); 4 passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Kidult Museum (Bomun)",
+          "page_name": "키덜트뮤지엄",
+          "src": "https://www.yugacrew.com/crewletter/gyeongju-museums",
+          "date": "2026-10",
+          "map": "Google Maps '키덜트뮤지엄' (132-16 Bomun-ro), newest review shown 3 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "플래시백 계림",
+          "why": "the page puts it in Bomun; the map's Flash Back Gyerim is downtown (Cheonbungnam-ro)"
+        },
+        {
+          "name": "또봇정크아트뮤지엄, 경주쪽샘유적발굴관",
+          "why": "the page gives no district"
+        },
+        {
+          "name": "구릉, 버터북, 대화숯불가든 and four play places",
+          "why": "the checker found no date or no matching quote on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
