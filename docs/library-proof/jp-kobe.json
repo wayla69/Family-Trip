@@ -1,0 +1,36 @@
+{
+  "town": "jp-kobe",
+  "kind": "moved + 3 added",
+  "checked": "2026-11-25",
+  "note": "Kobe (with Himeji) is now its own place (owner, 25 Nov 2026). 6 places to eat and 10 things to do moved unchanged from jp-hiroshima; their proof is in docs/library-proof/jp-hiroshima.json. Three places to eat added from Mapple’s undated 2026 Sannomiya family-dining page (the owner allowed undated food guides when Google Maps confirms the shop).",
+  "from": "jp-hiroshima",
+  "added": [
+    {
+      "name": "Hong Kong Charo (香港茶楼)",
+      "src": "https://www.mapple.net/region/a0504010101_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "quote": "神戸の飲茶料理店の草分け",
+      "map": "Google Maps 'Hong Kong Charo' (Kitanagasa-dori), newest review shown 5 days ago"
+    },
+    {
+      "name": "Kohoseki (紅宝石)",
+      "src": "https://www.mapple.net/region/a0504010101_g03000000_s-situation=family/spot/?page=2",
+      "date": "undated",
+      "quote": "家族的な温かさと本格料理が魅力",
+      "map": "Google Maps 'Kōhōseki' (3-5-9 Shimoyamatedori), newest review shown a week ago"
+    },
+    {
+      "name": "Morozoff Kobe main store (モロゾフ神戸本店)",
+      "src": "https://www.mapple.net/region/a0504010101_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "quote": "日本にはじめてバレンタインデーを紹介した洋菓子メーカー",
+      "map": "Google Maps 'Morozoff Kobe main store' (1-8-1 Sannomiyacho), newest review shown a week ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Takoyaki Tachibana, Isuzu Bakery, Bigot",
+      "why": "the map showed a list, or the shop is not on the Mapple family page"
+    }
+  ]
+}

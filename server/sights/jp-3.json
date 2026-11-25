@@ -414,6 +414,7 @@
     },
     {
       "place": "jp-hiroshima",
+      "thin": true,
       "sights": [
         {
           "name": { "en": "Peace Memorial Park", "th": "สวนอนุสรณ์สันติภาพ" },
@@ -560,78 +561,6 @@
           "src": "https://japanactivity.com/attractions/hiroshima/okonomimura"
         },
         {
-          "name": { "en": "Kobe Anpanman Children's Museum and Mall", "th": "พิพิธภัณฑ์เด็กแอนปังแมนโกเบและมอลล์" },
-          "local": "神戸アンパンマンこどもミュージアム&モール",
-          "kind": "museumkid",
-          "area": { "en": "Harborland, Kobe", "th": "ฮาร์เบอร์แลนด์ โกเบ" },
-          "what": { "en": "A play museum of the Anpanman characters with stage shows, play zones and a shop mall below", "th": "พิพิธภัณฑ์เล่นของตัวละครแอนปังแมน มีโชว์บนเวที โซนเล่น และมอลล์ร้านค้าชั้นล่าง" },
-          "why": { "en": "Made for the very young; indoors, with places to crawl and climb", "th": "ทำมาสำหรับเด็กเล็กมาก อยู่ในร่ม มีที่คลานและปีน" },
-          "tip": { "en": "Museum about 10:00–18:00, last entry 17:00; the ground-floor mall is free to enter", "th": "พิพิธภัณฑ์ราว 10:00–18:00 เข้าได้ถึง 17:00 มอลล์ชั้นล่างเข้าฟรี" },
-          "ages": [2, 2, 1, 0],
-          "hrs": 3,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคา" },
-          "book": "none",
-          "q": "Kobe Anpanman Children's Museum and Mall, Kobe",
-          "ok": "2026-11",
-          "src": "https://www.gltjp.com/en/directory/item/11687/"
-        },
-        {
-          "name": { "en": "Himeji Castle", "th": "ปราสาทฮิเมจิ" },
-          "local": "姫路城",
-          "kind": "culture",
-          "area": { "en": "Himeji (day trip)", "th": "ฮิเมจิ (ไปเช้าเย็นกลับ)" },
-          "what": { "en": "Japan's best-kept white castle, a World Heritage site you can climb through, with a garden next door", "th": "ปราสาทขาวที่คงสภาพดีที่สุดของญี่ปุ่น มรดกโลก ขึ้นไปชมข้างในได้ มีสวนอยู่ติดกัน" },
-          "why": { "en": "Children under 18 are free, but the keep has steep stairs and no pram access; the grounds are good for running", "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี แต่ตัวหอมีบันไดชันและเข็นรถไม่ได้ ส่วนบริเวณรอบๆ วิ่งเล่นได้" },
-          "tip": { "en": "09:00–17:00, last entry 16:00 (later in summer); the adult fare rose to ≈ ¥2,500 on 1 Mar 2026 for non-residents", "th": "09:00–17:00 เข้าได้ถึง 16:00 (ฤดูร้อนปิดช้ากว่า) ผู้ใหญ่ที่ไม่ใช่ผู้อยู่ในเมืองขึ้นเป็น ≈ ¥2,500 ตั้งแต่ 1 มี.ค. 2026" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 3,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,500 adults (non-residents) · under 18 free", "th": "≈ ¥2,500 ผู้ใหญ่ (ไม่ใช่ผู้อยู่ในเมือง) · ต่ำกว่า 18 ปีฟรี" },
-          "book": "none",
-          "q": "Himeji Castle, Himeji, Hyogo",
-          "ok": "2026-11",
-          "src": "https://www.himejicastle.jp/en"
-        },
-        {
-          "name": { "en": "Kobe Suma Sea World", "th": "โกเบ สุมะ ซีเวิลด์" },
-          "local": "神戸須磨シーワールド",
-          "kind": "aquarium",
-          "area": { "en": "Suma, Kobe", "th": "สุมะ โกเบ" },
-          "what": { "en": "A seaside aquarium that opened in 2024, with orcas, dolphins and many sea creatures", "th": "พิพิธภัณฑ์สัตว์น้ำริมทะเลที่เปิดปี 2024 มีออร์ก้า โลมา และสัตว์ทะเลมากมาย" },
-          "why": { "en": "Much of it is under cover, with shows to sit through; step-free", "th": "ส่วนใหญ่อยู่ในร่ม มีโชว์ให้นั่งดู เดินสะดวก" },
-          "tip": { "en": "Open about 10:00–18:00, last entry an hour before; prices change by season", "th": "เปิดราว 10:00–18:00 เข้าได้ถึงหนึ่งชั่วโมงก่อนปิด ราคาเปลี่ยนตามฤดู" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 4,
-          "io": "both",
-          "pram": "yes",
-          "price": { "en": "≈ ¥2,900–3,700 adults by season · children less (check)", "th": "≈ ¥2,900–3,700 ผู้ใหญ่ตามฤดู · เด็กถูกกว่า (ควรเช็ก)" },
-          "book": "rec",
-          "q": "Kobe Suma Sea World, Suma, Kobe",
-          "ok": "2026-11",
-          "src": "https://www.kobesuma-seaworld.jp/en/guide/price_ticket/group/"
-        },
-        {
-          "name": { "en": "Kobe Nunobiki Herb Garden and Ropeway", "th": "สวนสมุนไพรนูโนบิกิและกระเช้าโกเบ" },
-          "local": "神戸布引ハーブ園/ロープウェイ",
-          "kind": "park",
-          "area": { "en": "Shin-Kobe", "th": "ชินโกเบ" },
-          "what": { "en": "A ropeway up a hillside to herb and flower gardens with views over Kobe and the bay", "th": "กระเช้าขึ้นเนินสู่สวนสมุนไพรและดอกไม้ เห็นเมืองโกเบและอ่าว" },
-          "why": { "en": "The cable car is the treat; the gardens are on slopes, so a carrier suits babies better than a pram", "th": "นั่งกระเช้าคือจุดเด่น สวนอยู่บนเนิน เด็กเล็กใช้เป้อุ้มสะดวกกว่ารถเข็น" },
-          "tip": { "en": "Hours vary by season (about 10:00–17:00); the standard fare includes garden entry", "th": "เวลาเปิดเปลี่ยนตามฤดู (ราว 10:00–17:00) ค่ากระเช้ามาตรฐานรวมค่าเข้าสวน" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,500 adults return · children less (check)", "th": "≈ ¥2,500 ผู้ใหญ่ไปกลับ · เด็กถูกกว่า (ควรเช็ก)" },
-          "book": "none",
-          "q": "Kobe Nunobiki Herb Gardens, Kobe",
-          "ok": "2026-11",
-          "src": "https://hyogojapan.com/discover/nunobiki-herb-gardens-ropeway/"
-        },
-        {
           "name": { "en": "Okayama Korakuen Garden", "th": "สวนโคราคุเอ็นโอคายามะ" },
           "local": "岡山後楽園",
           "kind": "park",
@@ -648,42 +577,6 @@
           "q": "Okayama Korakuen, Okayama",
           "ok": "2026-11",
           "src": "https://okayama-korakuen.jp/section/english/info/index.html"
-        },
-        {
-          "name": { "en": "Meriken Park, Kobe", "th": "สวนเมอริเคน โกเบ" },
-          "local": "メリケンパーク",
-          "kind": "park",
-          "area": { "en": "Kobe waterfront", "th": "ริมอ่าวโกเบ" },
-          "what": { "en": "A waterfront park with the red Port Tower and open lawns by the harbour", "th": "สวนริมอ่าว มีหอคอยสีแดงพอร์ตทาวเวอร์และสนามหญ้ากว้างริมท่าเรือ" },
-          "why": { "en": "Free, flat and breezy, with space to run and a tower to look up at", "th": "ฟรี ทางเรียบ ลมเย็น มีที่ให้วิ่งเล่นและหอคอยให้แหงนดู" },
-          "tip": { "en": "The park is open 24 hours; go in daylight with children", "th": "สวนเปิด 24 ชั่วโมง พาเด็กไปตอนกลางวัน" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 1,
-          "io": "out",
-          "pram": "yes",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Meriken Park, Kobe",
-          "ok": "2026-11",
-          "src": "https://japanactivity.com/attractions/kobe/meriken-park"
-        },
-        {
-          "name": { "en": "Kobe Port Tower", "th": "โกเบพอร์ตทาวเวอร์" },
-          "local": "神戸ポートタワー",
-          "kind": "views",
-          "area": { "en": "Meriken Park, Kobe", "th": "สวนเมอริเคน โกเบ" },
-          "what": { "en": "A red lattice tower on the waterfront with indoor viewing floors and an open rooftop deck", "th": "หอคอยโครงตาข่ายสีแดงริมอ่าว มีชั้นชมวิวในร่มและดาดฟ้าโล่ง" },
-          "why": { "en": "Short lift ride and indoor floors with benches; entry is by timed ticket", "th": "นั่งลิฟต์สั้นๆ ชั้นชมวิวอยู่ในร่มมีที่นั่ง เข้าตามรอบเวลา" },
-          "tip": { "en": "Open 09:00–23:00, last entry 22:30; go by day for the view with children", "th": "เปิด 09:00–23:00 เข้าได้ถึง 22:30 พาเด็กไปตอนกลางวันเห็นวิวชัด" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ ¥1,000 adults indoor floors · ¥1,200 with rooftop (children less, check)", "th": "≈ ¥1,000 ผู้ใหญ่ชั้นในร่ม · ¥1,200 รวมดาดฟ้า (เด็กถูกกว่า ควรเช็ก)" },
-          "book": "rec",
-          "q": "Kobe Port Tower, Kobe",
-          "ok": "2026-11",
-          "src": "https://japanactivity.com/attractions/kobe/kobe-port-tower"
         },
         {
           "name": { "en": "Miyajima Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำมิยาจิมะ" },
@@ -737,158 +630,6 @@
             "en": "Hands-on science for children"
           },
           "q": "5-Days Children's Cultural Science Museum, Motomachi, Naka Ward, Hiroshima",
-          "ok": "2026-11"
-        },
-        {
-          "local": "こどもっちパーク こうべパーク",
-          "ages": [
-            2,
-            2,
-            2,
-            0
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/82216",
-          "name": {
-            "th": "สวนเล่นในร่มโคโดม็อตจิ โกเบ",
-            "en": "Kodomocchi Park Kobe Park"
-          },
-          "kind": "play",
-          "area": {
-            "th": "อาคาร HDC โกเบ ชั้น 10 โกเบ",
-            "en": "HDC Kobe 10F, Higashikawasakicho, Kobe"
-          },
-          "what": {
-            "th": "ที่เล่นในร่ม มีสไลเดอร์ใหญ่ บ่อบอล และที่ปีนป่าย",
-            "en": "An indoor play space with a big slide, a ball pool and a climbing frame"
-          },
-          "why": {
-            "th": "สำหรับเด็กแรกเกิดถึงประถม",
-            "en": "For ages 0 to primary school"
-          },
-          "q": "Kodomocchi Park Kobe Park, HDC Kobe 10F, Chuo Ward, Kobe",
-          "ok": "2026-11"
-        },
-        {
-          "local": "あそびのせかい 学園南店",
-          "ages": [
-            2,
-            2,
-            2,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/82216",
-          "name": {
-            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (กาคุเอ็นมินามิ)",
-            "en": "Bornelund Asobi no Sekai (Gakuen-minami)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "ไมตะมนนิชิ เขตทารุมิ โกเบ",
-            "en": "Maitamonnishi, Tarumi Ward, Kobe"
-          },
-          "what": {
-            "th": "ที่เล่นในร่มของบอร์เนลุนด์ พร้อมร้านของเล่น",
-            "en": "Bornelund's indoor play space with a toy shop"
-          },
-          "why": {
-            "th": "เครื่องเล่นจากทั่วโลก สำหรับ 6 เดือนถึง 12 ปี",
-            "en": "Play equipment from around the world for 6 months to 12 years"
-          },
-          "q": "Bornelund Kobe Gakuen Minami, Tarumi Ward, Kobe",
-          "ok": "2026-11"
-        },
-        {
-          "local": "あそびのせかい マリンピア神戸店",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 1.5,
-          "io": "both",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/82216",
-          "name": {
-            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (มารีนเปียโกเบ)",
-            "en": "Bornelund Asobi no Sekai (Marine Pia Kobe)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "มิตซุยเอาต์เล็ตพาร์กมารีนเปีย เขตทารุมิ โกเบ",
-            "en": "Mitsui Outlet Park Marine Pia, Tarumi Ward, Kobe"
-          },
-          "what": {
-            "th": "ที่เล่นในร่มและกลางแจ้ง มีแทรมโพลีนและเครื่องเล่นหมุน",
-            "en": "Indoor and outdoor play with a trampoline and spinning rides"
-          },
-          "why": {
-            "th": "มองเห็นสะพานอาคาชิไคเกียว",
-            "en": "The Akashi Kaikyo Bridge in view"
-          },
-          "q": "Bornelund Asobi no Sekai, Mitsui Outlet Park Marine Pia Kobe, Kobe",
-          "ok": "2026-11"
-        },
-        {
-          "local": "ピュアハートキッズランド 神戸ハーバーランドumie",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.asoview.com/note/6897/",
-          "name": {
-            "th": "เพียวฮาร์ตคิดส์แลนด์ โกเบฮาร์เบอร์แลนด์",
-            "en": "Pure Heart Kids Land (Kobe Harborland umie)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "อุมิเอะ นอร์ทมอลล์ ชั้น 4 เขตชูโอ โกเบ",
-            "en": "umie North Mall 4F, Chuo Ward, Kobe"
-          },
-          "what": {
-            "th": "สวนเล่นในร่มขนาดใหญ่",
-            "en": "A big indoor play park"
-          },
-          "why": {
-            "th": "เด็กวิ่งเล่นได้ทุกสภาพอากาศ",
-            "en": "Children run about whatever the weather"
-          },
-          "tip": {
-            "th": "10:00–19:00 เข้าครั้งสุดท้าย 18:30",
-            "en": "10:00–19:00, last entry 18:30"
-          },
-          "q": "ピュアハートキッズランド 神戸ハーバーランドumie",
           "ok": "2026-11"
         },
         {
@@ -5809,6 +5550,410 @@
             "en": "Grass and playground equipment by the sea"
           },
           "q": "鎌倉海浜公園, 由比ガ浜4-5-1, 鎌倉市",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "jp-kobe",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Kobe Anpanman Children's Museum and Mall",
+            "th": "พิพิธภัณฑ์เด็กแอนปังแมนโกเบและมอลล์"
+          },
+          "local": "神戸アンパンマンこどもミュージアム&モール",
+          "kind": "museumkid",
+          "area": {
+            "en": "Harborland, Kobe",
+            "th": "ฮาร์เบอร์แลนด์ โกเบ"
+          },
+          "what": {
+            "en": "A play museum of the Anpanman characters with stage shows, play zones and a shop mall below",
+            "th": "พิพิธภัณฑ์เล่นของตัวละครแอนปังแมน มีโชว์บนเวที โซนเล่น และมอลล์ร้านค้าชั้นล่าง"
+          },
+          "why": {
+            "en": "Made for the very young; indoors, with places to crawl and climb",
+            "th": "ทำมาสำหรับเด็กเล็กมาก อยู่ในร่ม มีที่คลานและปีน"
+          },
+          "tip": {
+            "en": "Museum about 10:00–18:00, last entry 17:00; the ground-floor mall is free to enter",
+            "th": "พิพิธภัณฑ์ราว 10:00–18:00 เข้าได้ถึง 17:00 มอลล์ชั้นล่างเข้าฟรี"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคา"
+          },
+          "book": "none",
+          "q": "Kobe Anpanman Children's Museum and Mall, Kobe",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/11687/"
+        },
+        {
+          "name": {
+            "en": "Himeji Castle",
+            "th": "ปราสาทฮิเมจิ"
+          },
+          "local": "姫路城",
+          "kind": "culture",
+          "area": {
+            "en": "Himeji (day trip)",
+            "th": "ฮิเมจิ (ไปเช้าเย็นกลับ)"
+          },
+          "what": {
+            "en": "Japan's best-kept white castle, a World Heritage site you can climb through, with a garden next door",
+            "th": "ปราสาทขาวที่คงสภาพดีที่สุดของญี่ปุ่น มรดกโลก ขึ้นไปชมข้างในได้ มีสวนอยู่ติดกัน"
+          },
+          "why": {
+            "en": "Children under 18 are free, but the keep has steep stairs and no pram access; the grounds are good for running",
+            "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี แต่ตัวหอมีบันไดชันและเข็นรถไม่ได้ ส่วนบริเวณรอบๆ วิ่งเล่นได้"
+          },
+          "tip": {
+            "en": "09:00–17:00, last entry 16:00 (later in summer); the adult fare rose to ≈ ¥2,500 on 1 Mar 2026 for non-residents",
+            "th": "09:00–17:00 เข้าได้ถึง 16:00 (ฤดูร้อนปิดช้ากว่า) ผู้ใหญ่ที่ไม่ใช่ผู้อยู่ในเมืองขึ้นเป็น ≈ ¥2,500 ตั้งแต่ 1 มี.ค. 2026"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,500 adults (non-residents) · under 18 free",
+            "th": "≈ ¥2,500 ผู้ใหญ่ (ไม่ใช่ผู้อยู่ในเมือง) · ต่ำกว่า 18 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Himeji Castle, Himeji, Hyogo",
+          "ok": "2026-11",
+          "src": "https://www.himejicastle.jp/en"
+        },
+        {
+          "name": {
+            "en": "Kobe Suma Sea World",
+            "th": "โกเบ สุมะ ซีเวิลด์"
+          },
+          "local": "神戸須磨シーワールド",
+          "kind": "aquarium",
+          "area": {
+            "en": "Suma, Kobe",
+            "th": "สุมะ โกเบ"
+          },
+          "what": {
+            "en": "A seaside aquarium that opened in 2024, with orcas, dolphins and many sea creatures",
+            "th": "พิพิธภัณฑ์สัตว์น้ำริมทะเลที่เปิดปี 2024 มีออร์ก้า โลมา และสัตว์ทะเลมากมาย"
+          },
+          "why": {
+            "en": "Much of it is under cover, with shows to sit through; step-free",
+            "th": "ส่วนใหญ่อยู่ในร่ม มีโชว์ให้นั่งดู เดินสะดวก"
+          },
+          "tip": {
+            "en": "Open about 10:00–18:00, last entry an hour before; prices change by season",
+            "th": "เปิดราว 10:00–18:00 เข้าได้ถึงหนึ่งชั่วโมงก่อนปิด ราคาเปลี่ยนตามฤดู"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥2,900–3,700 adults by season · children less (check)",
+            "th": "≈ ¥2,900–3,700 ผู้ใหญ่ตามฤดู · เด็กถูกกว่า (ควรเช็ก)"
+          },
+          "book": "rec",
+          "q": "Kobe Suma Sea World, Suma, Kobe",
+          "ok": "2026-11",
+          "src": "https://www.kobesuma-seaworld.jp/en/guide/price_ticket/group/"
+        },
+        {
+          "name": {
+            "en": "Kobe Nunobiki Herb Garden and Ropeway",
+            "th": "สวนสมุนไพรนูโนบิกิและกระเช้าโกเบ"
+          },
+          "local": "神戸布引ハーブ園/ロープウェイ",
+          "kind": "park",
+          "area": {
+            "en": "Shin-Kobe",
+            "th": "ชินโกเบ"
+          },
+          "what": {
+            "en": "A ropeway up a hillside to herb and flower gardens with views over Kobe and the bay",
+            "th": "กระเช้าขึ้นเนินสู่สวนสมุนไพรและดอกไม้ เห็นเมืองโกเบและอ่าว"
+          },
+          "why": {
+            "en": "The cable car is the treat; the gardens are on slopes, so a carrier suits babies better than a pram",
+            "th": "นั่งกระเช้าคือจุดเด่น สวนอยู่บนเนิน เด็กเล็กใช้เป้อุ้มสะดวกกว่ารถเข็น"
+          },
+          "tip": {
+            "en": "Hours vary by season (about 10:00–17:00); the standard fare includes garden entry",
+            "th": "เวลาเปิดเปลี่ยนตามฤดู (ราว 10:00–17:00) ค่ากระเช้ามาตรฐานรวมค่าเข้าสวน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,500 adults return · children less (check)",
+            "th": "≈ ¥2,500 ผู้ใหญ่ไปกลับ · เด็กถูกกว่า (ควรเช็ก)"
+          },
+          "book": "none",
+          "q": "Kobe Nunobiki Herb Gardens, Kobe",
+          "ok": "2026-11",
+          "src": "https://hyogojapan.com/discover/nunobiki-herb-gardens-ropeway/"
+        },
+        {
+          "name": {
+            "en": "Meriken Park, Kobe",
+            "th": "สวนเมอริเคน โกเบ"
+          },
+          "local": "メリケンパーク",
+          "kind": "park",
+          "area": {
+            "en": "Kobe waterfront",
+            "th": "ริมอ่าวโกเบ"
+          },
+          "what": {
+            "en": "A waterfront park with the red Port Tower and open lawns by the harbour",
+            "th": "สวนริมอ่าว มีหอคอยสีแดงพอร์ตทาวเวอร์และสนามหญ้ากว้างริมท่าเรือ"
+          },
+          "why": {
+            "en": "Free, flat and breezy, with space to run and a tower to look up at",
+            "th": "ฟรี ทางเรียบ ลมเย็น มีที่ให้วิ่งเล่นและหอคอยให้แหงนดู"
+          },
+          "tip": {
+            "en": "The park is open 24 hours; go in daylight with children",
+            "th": "สวนเปิด 24 ชั่วโมง พาเด็กไปตอนกลางวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Meriken Park, Kobe",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/attractions/kobe/meriken-park"
+        },
+        {
+          "name": {
+            "en": "Kobe Port Tower",
+            "th": "โกเบพอร์ตทาวเวอร์"
+          },
+          "local": "神戸ポートタワー",
+          "kind": "views",
+          "area": {
+            "en": "Meriken Park, Kobe",
+            "th": "สวนเมอริเคน โกเบ"
+          },
+          "what": {
+            "en": "A red lattice tower on the waterfront with indoor viewing floors and an open rooftop deck",
+            "th": "หอคอยโครงตาข่ายสีแดงริมอ่าว มีชั้นชมวิวในร่มและดาดฟ้าโล่ง"
+          },
+          "why": {
+            "en": "Short lift ride and indoor floors with benches; entry is by timed ticket",
+            "th": "นั่งลิฟต์สั้นๆ ชั้นชมวิวอยู่ในร่มมีที่นั่ง เข้าตามรอบเวลา"
+          },
+          "tip": {
+            "en": "Open 09:00–23:00, last entry 22:30; go by day for the view with children",
+            "th": "เปิด 09:00–23:00 เข้าได้ถึง 22:30 พาเด็กไปตอนกลางวันเห็นวิวชัด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥1,000 adults indoor floors · ¥1,200 with rooftop (children less, check)",
+            "th": "≈ ¥1,000 ผู้ใหญ่ชั้นในร่ม · ¥1,200 รวมดาดฟ้า (เด็กถูกกว่า ควรเช็ก)"
+          },
+          "book": "rec",
+          "q": "Kobe Port Tower, Kobe",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/attractions/kobe/kobe-port-tower"
+        },
+        {
+          "local": "こどもっちパーク こうべパーク",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "สวนเล่นในร่มโคโดม็อตจิ โกเบ",
+            "en": "Kodomocchi Park Kobe Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาคาร HDC โกเบ ชั้น 10 โกเบ",
+            "en": "HDC Kobe 10F, Higashikawasakicho, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีสไลเดอร์ใหญ่ บ่อบอล และที่ปีนป่าย",
+            "en": "An indoor play space with a big slide, a ball pool and a climbing frame"
+          },
+          "why": {
+            "th": "สำหรับเด็กแรกเกิดถึงประถม",
+            "en": "For ages 0 to primary school"
+          },
+          "q": "Kodomocchi Park Kobe Park, HDC Kobe 10F, Chuo Ward, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい 学園南店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (กาคุเอ็นมินามิ)",
+            "en": "Bornelund Asobi no Sekai (Gakuen-minami)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไมตะมนนิชิ เขตทารุมิ โกเบ",
+            "en": "Maitamonnishi, Tarumi Ward, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มของบอร์เนลุนด์ พร้อมร้านของเล่น",
+            "en": "Bornelund's indoor play space with a toy shop"
+          },
+          "why": {
+            "th": "เครื่องเล่นจากทั่วโลก สำหรับ 6 เดือนถึง 12 ปี",
+            "en": "Play equipment from around the world for 6 months to 12 years"
+          },
+          "q": "Bornelund Kobe Gakuen Minami, Tarumi Ward, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい マリンピア神戸店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (มารีนเปียโกเบ)",
+            "en": "Bornelund Asobi no Sekai (Marine Pia Kobe)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิตซุยเอาต์เล็ตพาร์กมารีนเปีย เขตทารุมิ โกเบ",
+            "en": "Mitsui Outlet Park Marine Pia, Tarumi Ward, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มและกลางแจ้ง มีแทรมโพลีนและเครื่องเล่นหมุน",
+            "en": "Indoor and outdoor play with a trampoline and spinning rides"
+          },
+          "why": {
+            "th": "มองเห็นสะพานอาคาชิไคเกียว",
+            "en": "The Akashi Kaikyo Bridge in view"
+          },
+          "q": "Bornelund Asobi no Sekai, Mitsui Outlet Park Marine Pia Kobe, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド 神戸ハーバーランドumie",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6897/",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ โกเบฮาร์เบอร์แลนด์",
+            "en": "Pure Heart Kids Land (Kobe Harborland umie)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุมิเอะ นอร์ทมอลล์ ชั้น 4 เขตชูโอ โกเบ",
+            "en": "umie North Mall 4F, Chuo Ward, Kobe"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่",
+            "en": "A big indoor play park"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นได้ทุกสภาพอากาศ",
+            "en": "Children run about whatever the weather"
+          },
+          "tip": {
+            "th": "10:00–19:00 เข้าครั้งสุดท้าย 18:30",
+            "en": "10:00–19:00, last entry 18:30"
+          },
+          "q": "ピュアハートキッズランド 神戸ハーバーランドumie",
           "ok": "2026-11"
         }
       ]
