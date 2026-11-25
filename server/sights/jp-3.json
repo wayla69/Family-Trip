@@ -927,6 +927,228 @@
           },
           "q": "岡山市北ふれあい児童館, 谷万成, 岡山市北区",
           "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド アルパーク広島",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 1,200 เยน ทั้งวัน วันธรรมดา (เด็กคนแรก) 0–1 ขวบฟรี",
+            "en": "≈ ¥1,200 a day on weekdays (first child); ages 0–1 free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ อัลพาร์กฮิโรชิมะ",
+            "en": "Pure Heart Kids Land, Alpark Hiroshima"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 4 อัลพาร์กอีสต์ คุซัตสึชินมาจิ นิชิคุ",
+            "en": "Alpark East 4F, Kusatsu-shinmachi, Nishi-ku"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม เครื่องเล่นใหญ่ บ่อบอล บ่อทราย และมุมเล่นบทบาทสมมติ",
+            "en": "An indoor play park with big play equipment, a ball pool, a sandpit and pretend play"
+          },
+          "why": {
+            "th": "ที่ให้ทั้งบ้านเล่นด้วยกันในร่ม เด็ก 0–1 ขวบเข้าฟรี",
+            "en": "A place for the family to play together indoors; babies aged 0 and 1 go free"
+          },
+          "q": "ピュアハートキッズランド アルパーク広島, Kusatsu-shinmachi, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット LECT広島",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 500–700 เยน 30 นาที (เด็ก วันธรรมดา)",
+            "en": "≈ ¥500–700 for 30 min (children, weekdays)"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "ลิตเติลแพลนเน็ต เล็กต์ฮิโรชิมะ",
+            "en": "Little Planet, LECT Hiroshima"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ห้างเล็กต์ โองิ นิชิคุ",
+            "en": "LECT 2F, Ōgi, Nishi-ku"
+          },
+          "what": {
+            "th": "ที่เล่นแบบดิจิทัล บ่อบอลดิจิทัล เล่นทราย AR และรูปวาดที่ขยับได้",
+            "en": "A digital play space: a digital ball pool, AR sand play and drawings that move"
+          },
+          "why": {
+            "th": "เล่นและค้นพบ มีที่ช้อปปิ้งและร้านอาหารในตึกเดียวกัน",
+            "en": "Play and discover, with shopping and meals in the same building"
+          },
+          "q": "リトルプラネット LECT広島, Ogi, Nishi-ku, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "kiondひろしま",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 600 เยน เด็ก 30 นาทีแรก",
+            "en": "≈ ¥600 for children, first 30 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "คิอนด์ฮิโรชิมะ ที่เล่นไม้",
+            "en": "kiond Hiroshima wooden playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 ฮิโรปะ สวนสเตเดียมฮิโรชิมะ นากะคุ",
+            "en": "HiroPa 1F, Hiroshima Stadium Park, Motomachi, Naka-ku"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทำจากไม้ มีเครื่องปีนไม้",
+            "en": "A wooden indoor play space with wooden climbing frames"
+          },
+          "why": {
+            "th": "เครื่องเล่นไม้อบอุ่นในร่ม ใกล้สวนและร้านอาหาร",
+            "en": "Warm wooden play equipment indoors, with parks and food close by"
+          },
+          "q": "kiondひろしま, Motomachi, Naka-ku, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ちきゅうのにわ イオンモール広島府中",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 1,000 เยน เด็ก ชั่วโมงแรก วันธรรมดา",
+            "en": "≈ ¥1,000 for children, first hour on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "จิคิวโนะนิวะ อิออนมอลล์ฮิโรชิมะฟุจู",
+            "en": "Chikyu no Niwa, AEON Mall Hiroshima Fuchu"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 อิออนมอลล์ ฟุจูโจ อากิกุน",
+            "en": "AEON Mall 3F, Fuchū-chō, Aki-gun"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีเครื่องเล่นใหญ่ บ่อทราย และโซนเด็ก 0–2 ขวบ",
+            "en": "An indoor play space with big equipment, a sandpit and a baby area for ages 0–2"
+          },
+          "why": {
+            "th": "เล่นในร่มระหว่างช้อปปิ้ง ใกล้ลานจอดรถ",
+            "en": "Play indoors between shopping, close to the car park"
+          },
+          "q": "ちきゅうのにわ イオンモール広島府中, Fuchu, Aki-gun, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "海上自衛隊呉史料館（てつのくじら館）",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newt.net/jpn/hiroshima/mag-438797335027",
+          "name": {
+            "th": "พิพิธภัณฑ์กองกำลังป้องกันตนเองทางทะเล คุเระ",
+            "en": "JMSDF Kure Museum (\"Iron Whale\", Kure)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ทาการะมาจิ คุเระ",
+            "en": "Takaramachi, Kure"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีเรือดำน้ำจริงตั้งอยู่ เข้าไปข้างในได้",
+            "en": "A museum where a real submarine stands outside and you can go inside it"
+          },
+          "why": {
+            "th": "ที่เดียวในญี่ปุ่นที่ได้ดูเรือดำน้ำจริงใกล้ๆ",
+            "en": "The only place in Japan to see a real submarine up close"
+          },
+          "q": "JMSDF Kure Museum, Takaramachi, Kure",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大和ミュージアム",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newt.net/jpn/hiroshima/mag-438797335027",
+          "name": {
+            "th": "พิพิธภัณฑ์ยามาโตะ คุเระ",
+            "en": "Yamato Museum (Kure Maritime Museum)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ทาการะมาจิ คุเระ",
+            "en": "Takaramachi 5-20, Kure"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์และวิทยาศาสตร์ทางทะเลของคุเระ มีเรือรบยามาโตะจำลองขนาด 1 ใน 10",
+            "en": "Kure's museum of maritime history and science, with a one-tenth model of the battleship Yamato"
+          },
+          "why": {
+            "th": "เด็กได้ดูเรือยามาโตะจำลองลำใหญ่",
+            "en": "Children see the giant one-tenth model of the Yamato"
+          },
+          "q": "Yamato Museum, 5-20 Takaramachi, Kure",
+          "ok": "2026-11"
         }
       ]
     },
