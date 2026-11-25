@@ -3902,6 +3902,166 @@
           },
           "q": "日光自然博物館, 日光市中宮祠2480-1",
           "ok": "2026-11"
+        },
+        {
+          "local": "日光花いちもんめ",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "name": {
+            "th": "นิกโกฮานะอิจิมนเมะ เก็บสตรอว์เบอร์รี",
+            "en": "Nikko Hanaichimonme (strawberries and pets)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "โคซาโงเอะ นิกโก",
+            "en": "Kosagoe, Nikko"
+          },
+          "what": {
+            "th": "เก็บสตรอว์เบอร์รีในโรงเรือนกินได้ไม่อั้น มีมุมสัตว์เลี้ยงและสวนบีโกเนีย",
+            "en": "All-you-can-eat strawberry picking in greenhouses, a petting zoo and a begonia garden"
+          },
+          "why": {
+            "th": "เด็กได้ให้อาหารกระต่าย หนูแฮมสเตอร์ และหนูตะเภา",
+            "en": "Children feed rabbits, hamsters and guinea pigs"
+          },
+          "tip": {
+            "th": "เก็บสตรอว์เบอร์รีได้แม้วันฝนหรือหิมะตก",
+            "en": "Strawberry picking works on a rainy or snowy day"
+          },
+          "q": "Nikko hanaichimonme, Kosagoe, Nikko",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ゆうあいひろば",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "name": {
+            "th": "ยูไอฮิโรบะ ที่เล่นเด็ก อุตสึโนมิยะ",
+            "en": "Yuai Hiroba children's play area (Utsunomiya)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 6 โอโมเตะซันโดสแควร์ บาบะโดริ อุตสึโนมิยะ",
+            "en": "Omotesando Square 6F, Babadōri, Utsunomiya"
+          },
+          "what": {
+            "th": "ชั้นเล่นในร่ม มีทางอะธเลติก 25 เมตร ผนังปีน และแทรมโพลีนลม",
+            "en": "An indoor play floor with a 25 m athletic course, a climbing wall and air trampolines"
+          },
+          "why": {
+            "th": "วิ่งเล่นได้เต็มที่วันฝนตกหรือร้อน",
+            "en": "Room to run on a rainy or hot day"
+          },
+          "tip": {
+            "th": "ที่จอดรถเสียเงินด้านเหนือของตึก",
+            "en": "Paid parking on the building's north side"
+          },
+          "q": "Yuai Hiroba, Babadori, Utsunomiya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "遊LABO（あそらぼ）",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "name": {
+            "th": "อาโซลาโบะ อุตสึโนมิยะ",
+            "en": "Asolabo (Utsunomiya)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮิงาชิยานาเซะ อุตสึโนมิยะ",
+            "en": "Higashiyanase, Utsunomiya"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีบ่อบอล สไลเดอร์ใหญ่ และมุมเล่นบทบาทสมมติ",
+            "en": "An indoor play space with a ball pool, a big slide and pretend play"
+          },
+          "why": {
+            "th": "มีโซนเด็กอ่อนแยกสำหรับเด็กเล็กมาก",
+            "en": "A separate baby zone for the littlest"
+          },
+          "tip": {
+            "th": "ไม่จำกัดเวลา ออกไปแล้วกลับเข้ามาได้",
+            "en": "No time limit, and you may go out and back in"
+          },
+          "q": "遊LABO, 1-6-1 Higashiyanaze, Utsunomiya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "らくがキッズ 宇都宮ベルモール店",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "name": {
+            "th": "ราคุงะคิดส์ เบลมอลล์ อุตสึโนมิยะ",
+            "en": "Rakuga Kids, Belmall Utsunomiya"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 เบลมอลล์ โยโตะ อุตสึโนมิยะ",
+            "en": "Belmall 2F, Yōtō, Utsunomiya"
+          },
+          "what": {
+            "th": "ที่เล่นที่เด็กวาดตัวละครแล้วเลี้ยงให้โตด้วยการเล่น",
+            "en": "A play space where children draw a character and grow it by playing"
+          },
+          "why": {
+            "th": "มีมุมของเล่นเด็กเล็กและห้องเด็กอ่อน พี่น้องต่างวัยเล่นด้วยกันได้",
+            "en": "A toy corner for little ones and a baby room, so siblings of different ages play together"
+          },
+          "q": "らくがキッズ 宇都宮ベルモール店, Yoto, Utsunomiya",
+          "ok": "2026-11"
         }
       ]
     },
