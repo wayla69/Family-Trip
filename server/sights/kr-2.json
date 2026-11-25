@@ -832,6 +832,80 @@
           },
           "q": "새별프렌즈, 평화로 1529, 제주",
           "ok": "2026-11"
+        },
+        {
+          "local": "아르떼 키즈파크 제주",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 25,000 วอน (เด็ก 2 ชั่วโมง 1–13 ปี)",
+            "en": "≈ ₩25,000 (children, 2 hours, 12 months–13)"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/661cbfbb1b8c7b61b8714bf1",
+          "name": {
+            "th": "อาร์เตคิดส์พาร์ก เชจู อาวอล",
+            "en": "Arte Kids Park Jeju (Aewol)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนวอลกัก อาวอลอึบ เมืองเชจู",
+            "en": "Wolgak-ro, Aewol-eup, Jeju City"
+          },
+          "what": {
+            "th": "สวนเล่นมีเดียอาร์ตขนาดใหญ่ มีโซนเล่นโต้ตอบ",
+            "en": "A big media-art play park with interactive play areas"
+          },
+          "why": {
+            "th": "เล่นมีเดียอาร์ตแบบลงมือ มีเก้าอี้เด็ก",
+            "en": "Hands-on media-art play, with baby chairs"
+          },
+          "q": "Arte Kids Park, 929 Wolgak-ro, Aewol, Jeju",
+          "ok": "2026-11"
+        },
+        {
+          "local": "바운스 슈퍼파크 제주센터",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 23,000 วอน (เด็ก 2 ชั่วโมง วันธรรมดา)",
+            "en": "≈ ₩23,000 (children, 2 hours, weekdays)"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/69b246dfd773f3de9c2c938b",
+          "name": {
+            "th": "วอนซ์ซูเปอร์พาร์ก เชจู",
+            "en": "Vaunce Super Park Jeju"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โอรา 2 ดง เมืองเชจู",
+            "en": "Ora 2-dong, Jeju City"
+          },
+          "what": {
+            "th": "คาเฟ่เด็กขนาดใหญ่ มีแทรมโพลีนและเครื่องเล่นขยับเยอะ",
+            "en": "A big kids' café with trampolines and lots of active play"
+          },
+          "why": {
+            "th": "มีของให้ขยับเล่นเยอะ ตั๋วผู้ปกครองขายแยก",
+            "en": "Full of active things to do; a parent ticket is sold separately"
+          },
+          "q": "Vaunce Super Park Jeju Center, Ora 2-dong, Jeju",
+          "ok": "2026-11"
         }
       ]
     }

@@ -209,6 +209,72 @@
         "agents": "one Haiku agent; 4 rows from mom-mom.net (2026) and Funliday (Jun 2026), all passed library-check.cjs, 4 went in",
         "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 10 rows from mom-mom.net (Jun–Sep 2026), ieconomyu (Mar 2026) and others, all passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Jeju Haemulbap",
+          "page_name": "제주해물밥",
+          "src": "https://mom-mom.net/travel/places/660223016af0c1300504b757",
+          "date": "2026-06",
+          "map": "Google Maps 'Jeju Haemulbap' (14-6 Woldae 3-gil), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Geobu Galbi",
+          "page_name": "거부갈비",
+          "src": "https://mom-mom.net/travel/places/658b96c99f103f5d26762f7d",
+          "date": "2026-06",
+          "map": "Google Maps '거부갈비' (3 Jewon 4-gil), newest review shown 3 days ago"
+        },
+        {
+          "name": "Cocomama Seongsan",
+          "page_name": "코코마마 성산점",
+          "src": "https://mom-mom.net/travel/places/6670f6616e307aad9d173d9c",
+          "date": "2026-06",
+          "map": "Google Maps '코코마마성산점' (Ilchul-ro, Seongsan), newest review shown 2 months ago"
+        },
+        {
+          "name": "Arte Kids Park Jeju (Aewol)",
+          "page_name": "아르떼 키즈파크 제주",
+          "src": "https://mom-mom.net/travel/places/661cbfbb1b8c7b61b8714bf1",
+          "date": "2025-11",
+          "map": "Google Maps 'Arte Kids Park' (929 Wolgak-ro, Aewol), newest review shown 22 hours ago"
+        },
+        {
+          "name": "Vaunce Super Park Jeju",
+          "page_name": "바운스 슈퍼파크 제주센터",
+          "src": "https://mom-mom.net/travel/places/69b246dfd773f3de9c2c938b",
+          "date": "2026-09",
+          "map": "Google Maps 'Vaunce Super Park Jeju Center' (Ora 2-dong), newest review shown a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "중문고등어쌈밥",
+          "why": "already in the app (Jungmun Godeungeo Ssambap)"
+        },
+        {
+          "name": "꽃귤농장",
+          "why": "the map's farm is at another address and its newest review is 2 years old"
+        },
+        {
+          "name": "챔피언R 롯데호텔 제주중문점",
+          "why": "no map entry of its own (only the hotel)"
+        },
+        {
+          "name": "노리팡",
+          "why": "the map found only another play place"
+        },
+        {
+          "name": "제주 조천 항일기념관",
+          "why": "a history memorial for older children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
