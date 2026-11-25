@@ -1624,6 +1624,281 @@
           },
           "q": "こどもっちパーク かなざわ, イオンタウン金沢示野",
           "ok": "2026-11"
+        },
+        {
+          "local": "いしかわ子ども交流センター",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เข้าฟรี (ท้องฟ้าจำลองเสียเงินเพิ่ม)",
+            "en": "Free (the planetarium is extra)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "ศูนย์กิจกรรมเด็กอิชิกาวะ",
+            "en": "Ishikawa Children's Activity Center"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โฮชิมะมาจิ คานาซาวะ",
+            "en": "Hōshima-machi, Kanazawa"
+          },
+          "what": {
+            "th": "ศูนย์ลงมือทำ มีท้องฟ้าจำลอง รถไฟจำลอง และตัวอย่างแมลง",
+            "en": "A hands-on centre with a planetarium, a model-railway diorama and insect specimens"
+          },
+          "why": {
+            "th": "เข้าฟรี มีห้องเด็กและพื้นที่ให้ขยับได้ปลอดภัย",
+            "en": "Free entry, a kids' room and space to move about safely"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์และช่วงปีใหม่",
+            "en": "Closed on Mondays and over New Year"
+          },
+          "q": "Ishikawa Children Activity Center, Hoshimamachi, Kanazawa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "もりのひみつきち",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 400 เยน (ต่ำกว่า 1 ขวบฟรี) อายุ 13 ขึ้นไป 300 เยน",
+            "en": "Children ¥400 (under 1 free); age 13 and up ¥300"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "โมริโนะฮิมิตสึคิจิ ที่เล่นไม้ สึบาตะ",
+            "en": "Mori no Himitsukichi wooden play hall (Tsubata)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โทริโกเอะ สึบาตะ",
+            "en": "Torigoe, Tsubata"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทำจากไม้อิชิกาวะ มีสไลเดอร์ อุโมงค์ และผนังปีน",
+            "en": "An indoor play hall built from Ishikawa timber: slides, tunnels and a climbing wall"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นได้แม้ฝนหรือหิมะตก มีโซนสำหรับหลายวัย",
+            "en": "Children run about in rain or snow; an area for mixed ages"
+          },
+          "tip": {
+            "th": "ปิดวันอังคารที่สามของเดือน",
+            "en": "Closed on the third Tuesday of the month"
+          },
+          "q": "もりのひみつきち, 鳥越, 津幡町",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびの森 かほっくる",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 400 เยน (ต่ำกว่า 1 ขวบฟรี) อายุ 13 ขึ้นไป 300 เยน",
+            "en": "Children ¥400 (under 1 free); age 13 and up ¥300"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "อาโซบิโนะโมริ คาโฮคคุรุ คาโฮกุ",
+            "en": "Asobi no Mori Kahokkuru (Kahoku)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทานิ คาโฮกุ",
+            "en": "Tani, Kahoku"
+          },
+          "what": {
+            "th": "ที่เล่นกีฬาในร่ม มีเครื่องปีน \"ต้นไม้โลก\" สูง 10 เมตร และบ่อบอล",
+            "en": "An indoor sports-play hall with a 10 m \"World Tree\" climbing frame and a ball pool"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ มีคาเฟ่ข้างๆ ให้ผู้ใหญ่นั่ง",
+            "en": "Rain or shine, with a café next door for grown-ups"
+          },
+          "tip": {
+            "th": "ปิดช่วงปีใหม่และวันซ่อมบำรุงรายเดือน",
+            "en": "Closed over New Year and on monthly maintenance days"
+          },
+          "q": "あそびの森 かほっくる, かほく市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ちきゅうのにわ 白山",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ชั่วโมงแรก วันธรรมดา ผู้ใหญ่ 600 เด็ก 1,200 เยน วันหยุด 700 / 1,400 เยน",
+            "en": "First hour: weekdays adults ¥600, children ¥1,200; weekends ¥700 / ¥1,400"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "จิคิวโนะนิวะ อิออนมอลล์ฮาคุซัง",
+            "en": "Chikyu no Niwa, AEON Mall Hakusan"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 อิออนมอลล์ โยโคเอะมาจิ ฮาคุซัง",
+            "en": "AEON Mall 1F, Yokoe-machi, Hakusan"
+          },
+          "what": {
+            "th": "ว่ากันว่าเป็นที่เล่นเด็กในร่มใหญ่ที่สุดในโฮกุริกุ มี 8 โซนธรรมชาติ",
+            "en": "Said to be Hokuriku's largest indoor kids' play area, with eight nature zones"
+          },
+          "why": {
+            "th": "มีโซนภูเขาน้ำแข็งพร้อมปืนใหญ่ลูกบอลและโซนทราย ตั้งแต่เด็กอ่อนถึงประถม",
+            "en": "An iceberg zone with a ball cannon and a sand area, from babies to primary school"
+          },
+          "q": "ちきゅうのにわ白山, イオンモール白山",
+          "ok": "2026-11"
+        },
+        {
+          "local": "子どもミュージアム のみっけ",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กโนมิกเกะ โนมิ",
+            "en": "Nomikke children's museum (Nomi)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ในพิพิธภัณฑ์โนมิฟุรุซาโตะ เทไรมาจิ โนมิ",
+            "en": "Nomi Furusato Museum, Terai-machi, Nomi"
+          },
+          "what": {
+            "th": "โซนเด็ก มีเครื่องเล่น วิดีโอ และแบบจำลองธรรมชาติในท้องถิ่น",
+            "en": "A children's area with play equipment, films and a diorama of local nature"
+          },
+          "why": {
+            "th": "สำหรับ 0–12 ขวบ มีมุมสำหรับพ่อแม่ลูก",
+            "en": "For ages 0 to 12, with a parent-and-child space"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์และวันอังคารที่สาม",
+            "en": "Closed on Mondays and the third Tuesday"
+          },
+          "q": "能美ふるさとミュージアム, 寺井町, 能美市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ 石川イオン野々市南店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "แพ็กครอบครัวทั้งวัน 1,500 เยน วันธรรมดา",
+            "en": "Family day pack ¥1,500 on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "เดอะคิดส์ อิออนโนโนอิจิมินามิ",
+            "en": "The Kids, AEON Nonoichi-minami"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 อิออน คันบายาชิ โนโนอิจิ",
+            "en": "AEON 1F, Kanbayashi, Nonoichi"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีเครื่องปีนใหญ่ บ่อบอล แทรมโพลีน และมุมบทบาทสมมติ",
+            "en": "An indoor play park with a big climbing frame, a ball pool, trampolines and pretend play"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ มีมุมเด็กอ่อน",
+            "en": "Rain or shine, with a baby corner"
+          },
+          "q": "ザキッズ 石川イオン野々市南店, 野々市市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズパーク 津幡店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "คิดส์พาร์ก สึบาตะ",
+            "en": "Kids Park Tsubata"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 อัลพลาซาสึบาตะ (ในอามิวเซียม) สึบาตะ",
+            "en": "Al Plaza Tsubata 2F (inside Amusium), Tsubata"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อบอล เครื่องปีนเด้ง ไซเบอร์วีล และบล็อกใหญ่",
+            "en": "An indoor play park: a ball pool, a bouncy climbing frame, a cyber wheel and big blocks"
+          },
+          "why": {
+            "th": "มีที่ให้นมและเปลี่ยนผ้าอ้อม ยืมรถเข็นได้",
+            "en": "Feeding and changing spaces and a pushchair to borrow"
+          },
+          "q": "アミュージアム津幡店, アル・プラザ津幡, 津幡町",
+          "ok": "2026-11"
         }
       ]
     },
