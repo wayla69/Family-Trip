@@ -820,3 +820,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **24 Nov 2026, Plitvice Lakes** (docs/library-briefs batch-101, round 3): +1 in Zagreb (Batak Centar Cvjetni). Proof in `docs/library-proof/hr-plitvice.json`.
 
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +1 (Buffalo Wings & Rings, Aqaba). Proof in `docs/library-proof/jo-petra.json`.
+
+- **25 Nov 2026, Auckland** (round 4: Japan, Korea, New Zealand): +11 (Filly Café, Try It Out, Hello Mister, Saigonz, Hansan, Mi & Chi, Grand Harbour, Harbour Eats, The Terrace at Sylvia Park, The Eatery at Eastridge, Crave). Proof in `docs/library-proof/nz-auckland.json`.
