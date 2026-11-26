@@ -6918,6 +6918,84 @@
           },
           "q": "天子山风景区, 武陵源风景名胜区, 武陵源区, 张家界",
           "ok": "2026-11"
+        },
+        {
+          "local": "茅岩河漂流",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E8%8C%85%E5%B2%A9%E6%B2%B3%E6%BC%82%E6%B5%81&city=430800",
+          "name": {
+            "th": "ล่องแก่งแม่น้ำเหมาเหยียน",
+            "en": "Maoyan River Rafting"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เมืองเหมาเหยียนเหอ หย่งติ้ง",
+            "en": "Maoyanhe Town, Yongding"
+          },
+          "what": {
+            "th": "ล่องแก่งผ่านหุบเขาสวยในหน้าร้อน",
+            "en": "River rafting through a scenic gorge in summer"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวพาลูกมาล่องแก่งช่วงปิดเทอมหน้าร้อน",
+            "en": "Tagged family-friendly; reviewers rafted with their children in the summer holidays"
+          },
+          "tip": {
+            "th": "ผู้รีวิวบอกว่าเด็กต้องล่องแก่งพร้อมผู้ใหญ่",
+            "en": "Reviewers say children must raft with an adult"
+          },
+          "q": "茅岩河漂流售票处, 茅岩河镇, 永定区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "张家界世界地质公园博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E4%B8%96%E7%95%8C%E5%9C%B0%E8%B4%A8%E5%85%AC%E5%9B%AD%E5%8D%9A%E7%89%A9%E9%A6%86&city=430800",
+          "name": {
+            "th": "พิพิธภัณฑ์อุทยานธรณีจางเจียเจี้ย",
+            "en": "Zhangjiajie Geopark Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ข้างอุทยานแห่งชาติ อู่หลิงหยวน",
+            "en": "By the national park, Wulingyuan"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่อธิบายว่าเสาหินทรายเกิดขึ้นได้อย่างไร",
+            "en": "A museum explaining how the sandstone pillars were formed"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะพาเด็กมาเรียนรู้ก่อนเข้าอุทยาน",
+            "en": "A reviewer says it is good for children to learn before the park"
+          },
+          "q": "张家界世界地质公园博物馆, 武陵源区, 张家界",
+          "ok": "2026-11"
         }
     ]
     },

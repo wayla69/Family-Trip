@@ -221,6 +221,97 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family meals, sights, rafting and museums in Zhangjiajie; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yuanye Renjia Farmhouse (Guanliping)",
+          "page_name": "原野人家旗舰店",
+          "src": "https://www.amap.com/search?query=%E5%8E%9F%E9%87%8E%E4%BA%BA%E5%AE%B6%E6%97%97%E8%88%B0%E5%BA%97&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        },
+        {
+          "name": "Lao Zhang Jia Three-in-a-pot (Tianmenju)",
+          "page_name": "老张家三下锅(天门居旗舰店)",
+          "src": "https://www.amap.com/search?query=%E8%80%81%E5%BC%A0%E5%AE%B6%E4%B8%89%E4%B8%8B%E9%94%85(%E5%A4%A9%E9%97%A8%E5%B1%85%E6%97%97%E8%88%B0%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-01",
+          "map": "Amap: open, not marked closed, newest review 2026-08-01",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Yinxiang Laozaotai (Tianmen cable car)",
+          "page_name": "印象老灶台(天门山索道店)",
+          "src": "https://www.amap.com/search?query=%E5%8D%B0%E8%B1%A1%E8%80%81%E7%81%B6%E5%8F%B0(%E5%A4%A9%E9%97%A8%E5%B1%B1%E7%B4%A2%E9%81%93%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "家庭聚餐 · 大人小朋友都可以吃"
+        },
+        {
+          "name": "Laozhuang Zhangjiajie Kitchen (Tianmen Mountain)",
+          "page_name": "老庄张家界土菜(天门山店)",
+          "src": "https://www.amap.com/search?query=%E8%80%81%E5%BA%84%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9C%9F%E8%8F%9C(%E5%A4%A9%E9%97%A8%E5%B1%B1%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-07",
+          "map": "Amap: open, not marked closed, newest review 2026-08-07",
+          "quote": "有宝宝椅 · 亲子友好 · 带着孩子"
+        },
+        {
+          "name": "Qin Dama Family Kitchen (Tianmen cable car)",
+          "page_name": "秦大妈传家菜·始于1999(天门山索道一店)",
+          "src": "https://www.amap.com/search?query=%E7%A7%A6%E5%A4%A7%E5%A6%88%E4%BC%A0%E5%AE%B6%E8%8F%9C%C2%B7%E5%A7%8B%E4%BA%8E1999(%E5%A4%A9%E9%97%A8%E5%B1%B1%E7%B4%A2%E9%81%93%E4%B8%80%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-05",
+          "map": "Amap: open, not marked closed, newest review 2026-10-05",
+          "quote": "家庭聚餐 · 带娃服务"
+        },
+        {
+          "name": "Shanxiang Renjia (Dayong Road)",
+          "page_name": "山乡人家总店",
+          "src": "https://www.amap.com/search?query=%E5%B1%B1%E4%B9%A1%E4%BA%BA%E5%AE%B6%E6%80%BB%E5%BA%97&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
+          "map": "Amap: open, not marked closed, newest review 2026-10-25",
+          "quote": "适合家庭聚餐 · 可以炒不辣的菜 · 带娃去都是光盘"
+        },
+        {
+          "name": "Maoyan River Rafting",
+          "page_name": "茅岩河漂流",
+          "src": "https://www.amap.com/search?query=%E8%8C%85%E5%B2%A9%E6%B2%B3%E6%BC%82%E6%B5%81&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-30",
+          "map": "Amap: open, not marked closed, newest review 2026-08-30",
+          "quote": "家庭友好 · 小朋友要在大人的陪同下漂流 · 暑假带孩子们去玩"
+        },
+        {
+          "name": "Zhangjiajie Geopark Museum",
+          "page_name": "张家界世界地质公园博物馆",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E4%B8%96%E7%95%8C%E5%9C%B0%E8%B4%A8%E5%85%AC%E5%9B%AD%E5%8D%9A%E7%89%A9%E9%A6%86&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-05",
+          "map": "Amap: open, not marked closed, newest review 2026-09-05",
+          "quote": "很适合带孩子来研学"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "金鞭溪, 十里画廊",
+          "why": "already in the list"
+        },
+        {
+          "name": "中国张家界世界地质公园",
+          "why": "a recent review says it is too tiring to bring children"
+        },
+        {
+          "name": "彭师傅三下锅, 银满楼",
+          "why": "no children's tag or review about children"
+        },
+        {
+          "name": "中国大鲵生物科技馆, 澧水漂流, 未来博物馆, 之窗地质博物馆",
+          "why": "nine reviews or fewer"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
