@@ -1,0 +1,514 @@
+{
+  "town": "jp (the gaps left after the Japan round)",
+  "kind": "added",
+  "checked": "2026-11-26",
+  "rule": "Haiku/Sonnet research agents (five web searches each, a sentence copied from each page) → scripts/library-check.cjs (name, quote, 2025–2026 date; an undated Mapple family food list allowed for places to eat; for things to do an official page or a Mapple 2026 family list) → every row opened on Google Maps on 26 Nov 2026 by checker agents, kept only when open, the same name and in the town → Thai and English by writer agents to docs/STYLE.md. Pharmacies: the pharmacy's or its chain's own store page only (no directories), every quote re-checked here.",
+  "towns": {
+    "jp-hakone": {
+      "eat": [
+        {
+          "name": "Shinsho Soba",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kinubiki no Sato",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Takeyabu Hakone",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Hoshino-an",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Haikara Chinese Nisshintei",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Nanakamado",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Gora Hana Kotoba",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Odawara Uoichiba Shokudo",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Elenna Gosso",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Daruma Restaurant",
+          "src": "https://www.mapple.net/region/a0304010000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "La Luce",
+          "src": "https://www.mapple.net/region/a0306030100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Trattoria Primo",
+          "src": "https://www.mapple.net/region/a0306030100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Restaurant Benson",
+          "src": "https://www.mapple.net/region/a0306030100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Minerva Saboh",
+          "src": "https://www.mapple.net/region/a0306030100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Teppan Yoshoku Nishihata",
+          "src": "https://www.mapple.net/region/a0306030100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Karuizawa Hotel Longing House Vegetable Restaurant",
+          "src": "https://www.mapple.net/region/a0306030100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Karuizawa Roast Chicken Kastanie",
+          "src": "https://www.mapple.net/region/a0306030100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Mikado Coffee Kyu-Karuizawa",
+          "src": "https://www.mapple.net/region/a0306030101_s-situation=family/spot/"
+        },
+        {
+          "name": "Ufufu Donuts Kyu-Karuizawa",
+          "src": "https://www.mapple.net/region/a0306030101_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-kanazawa": {
+      "eat": [
+        {
+          "name": "Kenrokutei",
+          "src": "https://www.mapple.net/region/a0401030100_g03040100_s-situation=family/spot/"
+        },
+        {
+          "name": "Boulangerie et Bistro Hirami Pan",
+          "src": "https://www.mapple.net/region/a0401030100_g03040100_s-situation=family/spot/"
+        },
+        {
+          "name": "Kanazawa Purin Honpo",
+          "src": "https://www.mapple.net/region/a0401030100_g03040100_s-situation=family/spot/"
+        },
+        {
+          "name": "Shokuji to Kissa Niwatoko",
+          "src": "https://www.mapple.net/region/a0401030100_g03040100_s-situation=family/spot/"
+        },
+        {
+          "name": "Shunsai Washoku Kofuku",
+          "src": "https://www.mapple.net/region/a0401030100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Omicho Inoya",
+          "src": "https://www.mapple.net/region/a0401030100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Cascade Dining",
+          "src": "https://www.mapple.net/region/a0401030100_g03040100_s-situation=family/spot/"
+        },
+        {
+          "name": "Grill Nakamuraya",
+          "src": "https://www.mapple.net/region/a0401030100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Dainana Gyoza no Mise",
+          "src": "https://www.mapple.net/region/a0401030100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kaiten Sushi Ohkura",
+          "src": "https://www.mapple.net/region/a0401030100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Hyakumangoku Udon Omicho",
+          "src": "https://www.mapple.net/region/a0401030100_g03000000_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-kyoto": {
+      "eat": [
+        {
+          "name": "Hinano",
+          "src": "https://aumo.jp/articles/51412"
+        },
+        {
+          "name": "Okazaki Saryo Mametanuki",
+          "src": "https://aumo.jp/articles/51412"
+        },
+        {
+          "name": "Kyoto Modern Terrace",
+          "src": "https://aumo.jp/articles/51412"
+        },
+        {
+          "name": "Kyoto Tower Sando Food Hall",
+          "src": "https://tinytotintokyo.com/kyoto-station-with-kids"
+        },
+        {
+          "name": "Scalae",
+          "src": "https://tinytotintokyo.com/kyoto-station-with-kids"
+        },
+        {
+          "name": "Shoku to Mori",
+          "src": "https://macaro-ni.jp/174709"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-takamatsu": {
+      "eat": [
+        {
+          "name": "DEAR Yashima",
+          "src": "https://tabiiro.jp/gourmet/article/takamatsu-lunch/"
+        },
+        {
+          "name": "Menya Update",
+          "src": "https://tabiiro.jp/gourmet/article/takamatsu-lunch/"
+        },
+        {
+          "name": "Komame Shokudo",
+          "src": "https://www.nap-camp.com/mag/51467"
+        },
+        {
+          "name": "Tenobe Somen Nakabu-an",
+          "src": "https://www.nap-camp.com/mag/51467"
+        },
+        {
+          "name": "Olivaz",
+          "src": "https://www.nap-camp.com/mag/51467"
+        },
+        {
+          "name": "Chichu Cafe",
+          "src": "https://www.nap-camp.com/mag/54855"
+        },
+        {
+          "name": "Apron Cafe",
+          "src": "https://www.nap-camp.com/mag/54855"
+        },
+        {
+          "name": "Naoshima Cafe Konnichiwa",
+          "src": "https://www.nap-camp.com/mag/54855"
+        },
+        {
+          "name": "Naoshima Coffee",
+          "src": "https://www.nap-camp.com/mag/54855"
+        },
+        {
+          "name": "Kihara Shokudo",
+          "src": "https://www.nap-camp.com/mag/51467"
+        },
+        {
+          "name": "Onajimi",
+          "src": "https://www.mapple.net/region/a0603010101_g03000000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Za Kids Kagawa Aeon Takamatsu-Higashi",
+          "src": "https://www.nap-camp.com/mag/83350"
+        },
+        {
+          "name": "Angel Road",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": "Kankakei Ropeway",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": "Twenty-Four Eyes Movie Village",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": "Yokai Art Museum",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": "Shodoshima Furusato Mura Roadside Station",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": "Yamaroku Shoyu (soy sauce brewery visit)",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": "Tenobe Somen Kan (hand-stretched somen hall)",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": "Yellow Pumpkin (Yayoi Kusama)",
+          "src": "https://www.mapple.net/region/a0603030200_s-situation=family/spot/"
+        },
+        {
+          "name": "Kotohiragu Shrine",
+          "src": "https://www.mapple.net/region/a0603020400_s-situation=family/spot/"
+        },
+        {
+          "name": "Nakano Udon School Kotohira",
+          "src": "https://www.mapple.net/region/a0603020400_s-situation=family/spot/"
+        }
+      ],
+      "care": [
+        {
+          "name": "Nihon Chozai Takamatsu Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/takamatu/"
+        }
+      ]
+    },
+    "jp-ise": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Meoto Iwa (Wedded Rocks)",
+          "src": "https://www.mapple.net/article/32260/"
+        },
+        {
+          "name": "Shima Mediterranean Village",
+          "src": "https://tabiiro.jp/likes/articles/view/2402/"
+        },
+        {
+          "name": "Saiku Historical Museum",
+          "src": "https://www.kankomie.or.jp/spot/3205.html"
+        }
+      ],
+      "care": [
+        {
+          "name": "Ise Honmachi Pharmacy",
+          "src": "https://www.humanmedical.co.jp/ise-honmachi"
+        },
+        {
+          "name": "Nihon Chozai Mitas Ise Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/mtsise/"
+        }
+      ]
+    },
+    "jp-izu": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Ikeda Museum of 20th Century Art",
+          "src": "https://ikeda20.or.jp/"
+        },
+        {
+          "name": "Izu Teddy Bear Museum",
+          "src": "https://www.gltjp.com/en/directory/item/14885/"
+        }
+      ],
+      "care": []
+    },
+    "jp-miyazaki": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Takachiho Gorge",
+          "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1001"
+        },
+        {
+          "name": "Miyakoh Botanic Garden Aoshima",
+          "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1220"
+        },
+        {
+          "name": "Takachiho Amaterasu Railway",
+          "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1083"
+        },
+        {
+          "name": "Heiwadai Park",
+          "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1219"
+        },
+        {
+          "name": "Miyazaki Jingu",
+          "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1209"
+        }
+      ],
+      "care": [
+        {
+          "name": "Nihon Chozai Ikeuchi Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/ikeuti/"
+        },
+        {
+          "name": "Nihon Chozai Miyadaimae Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/miyadaimae/"
+        }
+      ]
+    },
+    "jp-niigata": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Hakusan Park",
+          "src": "https://niigata-kankou.or.jp/spot/detail_16002.html"
+        },
+        {
+          "name": "Yuzawa Kogen Panorama Park",
+          "src": "https://niigata-kankou.or.jp/spot/detail_6943.html"
+        },
+        {
+          "name": "Higashiyama Fureai Farm Park",
+          "src": "https://www.pref.niigata.lg.jp/sec/nagaoka_kikaku/1204737352577.html"
+        },
+        {
+          "name": "Forest Adventure Yuzawa Nakazato",
+          "src": "https://hugkum.sho.jp/732502"
+        },
+        {
+          "name": "Nishikawa Fureai Park",
+          "src": "https://www.asoview.com/note/6262/"
+        },
+        {
+          "name": "Toyanogata Park, Kanegi Area",
+          "src": "https://www.asoview.com/note/6262/"
+        },
+        {
+          "name": "Minatopia: Niigata City History Museum",
+          "src": "https://www.asoview.com/note/6262/"
+        }
+      ],
+      "care": [
+        {
+          "name": "Hazuki Pharmacy Bandai",
+          "src": "https://www.keiondo-pharmacy.com/hazuki"
+        }
+      ]
+    },
+    "jp-toyama": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Toyama Kodomo Plaza",
+          "src": "https://www.asoview.com/note/5440/"
+        },
+        {
+          "name": "Toyama Asobi Mare",
+          "src": "https://www.asoview.com/note/5440/"
+        },
+        {
+          "name": "Toyama Prefectural Kodomo Mirai-kan",
+          "src": "https://www.asoview.com/note/5440/"
+        },
+        {
+          "name": "Toyama Family Park Zoo",
+          "src": "https://www.nap-camp.com/mag/89946"
+        },
+        {
+          "name": "Kureha Hills Multipurpose Plaza",
+          "src": "https://www.nap-camp.com/mag/89946"
+        }
+      ],
+      "care": [
+        {
+          "name": "Tulip Toyama Ekimae Pharmacy",
+          "src": "https://www.tulip-tz.co.jp/storeinfo/store_toyamaekimae.html"
+        },
+        {
+          "name": "Sakuramachi Pharmacy",
+          "src": "https://sakuramachi-pharmacy.com/"
+        }
+      ]
+    },
+    "jp-beppu": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Nihon Chozai Akibacho Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/akibacho/"
+        }
+      ]
+    },
+    "jp-fuji": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Nihon Chozai Fuji-Yoshida Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/fuziyosida/"
+        },
+        {
+          "name": "Nihon Chozai Kawaguchiko Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/kawagutiko/"
+        }
+      ]
+    },
+    "jp-kagoshima": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Nihon Chozai Kadai Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/kadai/"
+        }
+      ]
+    },
+    "jp-kobe": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Nihon Chozai Shin-Kobe Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/sinkobe"
+        }
+      ]
+    },
+    "jp-nara": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Naramachi Pharmacy",
+          "src": "https://www.karugamo.net/shop/naramachi/"
+        }
+      ]
+    },
+    "jp-tohoku": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Nihon Chozai Yamagata Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/yamagata"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (26 Nov 2026)": [
+      "dot.S Okazaki",
+      "Hokkyokusei Kyoto Porta",
+      "whole cacao Plus Chocolat Nishijin",
+      "BASILICO CAFE Shodoshima",
+      "Taiheitei Hakone (temporarily)",
+      "FUN VILLAGE in TAKAMATSU",
+      "Olive Onsen Manten no Yu (temporarily)"
+    ],
+    "name or place did not match on Google Maps": [
+      "Ogurayama cafe (Arashiyama, not Umekoji)",
+      "Restaurant Trout Hakone",
+      "Asobiba Amy Toyama",
+      "Jungle Kids AEON Mall Takamatsu",
+      "Mikasa Coffee Karuizawa"
+    ],
+    "other": [
+      "I♡湯 Naoshima (quote not on the page)",
+      "Hotel New Akao kids park (a hotel facility)",
+      "Ise Ninja Kingdom (closed for renovation from July 2026)",
+      "万代調剤薬局 Niigata (only a portal page)"
+    ],
+    "no pharmacy page found (directories only)": [
+      "jp-izu",
+      "jp-nagoya",
+      "jp-matsuyama",
+      "jp-shirahama"
+    ]
+  }
+}

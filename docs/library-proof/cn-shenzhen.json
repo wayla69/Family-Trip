@@ -714,6 +714,61 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for high-chair restaurants in Nanshan, Shenzhen; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Da Rong Shu Xia Shunde Kitchen (Prince Bay K11)",
+          "page_name": "大榕树下·臻品顺德菜(太子湾 K11 店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%A6%95%E6%A0%91%E4%B8%8B%C2%B7%E8%87%BB%E5%93%81%E9%A1%BA%E5%BE%B7%E8%8F%9C(%E5%A4%AA%E5%AD%90%E6%B9%BE%20K11%20%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Wanchu Anhui Kitchen (Sea World)",
+          "page_name": "皖厨(海上世界店)",
+          "src": "https://www.amap.com/search?query=%E7%9A%96%E5%8E%A8(%E6%B5%B7%E4%B8%8A%E4%B8%96%E7%95%8C%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "家庭聚餐 · 有宝宝椅 · 亲子友好 · 小朋友超爱吃"
+        },
+        {
+          "name": "Ruyi Siji Pigeon Kitchen (Sea World)",
+          "page_name": "如意四季 小鸽宴(海上世界店)",
+          "src": "https://www.amap.com/search?query=%E5%A6%82%E6%84%8F%E5%9B%9B%E5%AD%A3%20%E5%B0%8F%E9%B8%BD%E5%AE%B4(%E6%B5%B7%E4%B8%8A%E4%B8%96%E7%95%8C%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Shundelao (Shekou Netvalley)",
+          "page_name": "顺德佬(网谷店)",
+          "src": "https://www.amap.com/search?query=%E9%A1%BA%E5%BE%B7%E4%BD%AC(%E7%BD%91%E8%B0%B7%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-13",
+          "map": "Amap: open, not marked closed, newest review 2026-11-13",
+          "quote": "有宝宝椅 · 亲子友好"
+        },
+        {
+          "name": "Qiuse Hakka Kitchen (Shekou Netvalley)",
+          "page_name": "秋色客家菜(蛇口网谷店)",
+          "src": "https://www.amap.com/search?query=%E7%A7%8B%E8%89%B2%E5%AE%A2%E5%AE%B6%E8%8F%9C(%E8%9B%87%E5%8F%A3%E7%BD%91%E8%B0%B7%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-23",
+          "map": "Amap: open, not marked closed, newest review 2026-10-23",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "湘食百年, 醉辉皇, 仄园",
+          "why": "twenty-seven reviews or fewer"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

@@ -10578,6 +10578,80 @@
           },
           "q": "沙湾古镇, 福北路2号, 番禺区, 广州",
           "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 乐峰广场",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=meland%20club(%E4%B9%90%E5%B3%B0%E5%B9%BF%E5%9C%BA)&city=440100",
+          "name": {
+            "th": "มีแลนด์คลับ เล่อเฟิงพลาซ่า ไห่จู",
+            "en": "Meland Club (Lefeng Plaza, Haizhu)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เล่อเฟิงพลาซ่า ชั้น 1 ถนนกงเย่เหนือ ไห่จู",
+            "en": "Lefeng Plaza L1, Gongye Avenue North, Haizhu"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีมุมเล่นบทบาทสมมติและพื้นบุนุ่ม",
+            "en": "An indoor play club with role play and soft-padded floors"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าพื้นบุนุ่มทำให้เด็กวิ่งเล่นได้ปลอดภัย",
+            "en": "Reviewers say the padded floors make running about safe for children"
+          },
+          "q": "MELAND CLUB 乐峰广场, 工业大道北106号, 海珠区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "四季梦幻亲子乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%9B%9B%E5%AD%A3%E6%A2%A6%E5%B9%BB%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนเล่นซื่อจี้เมิ่งฮว่าน ชื่อกั่ง",
+            "en": "Siji Menghuan Play Park (Chigang)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนชื่อกั่งเหนือ ไห่จู",
+            "en": "Chigang North Road, Haizhu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีแทรมโพลีน ห้องแม่และเด็ก และล็อกเกอร์",
+            "en": "An indoor play park with trampolines, a baby room and lockers"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นสวนเล่นครอบครัวในร่มกลางเมือง",
+            "en": "Tagged as an indoor family park in the city centre"
+          },
+          "q": "四季梦幻亲子乐园, 赤岗北路128号, 海珠区, 广州",
+          "ok": "2026-11"
         }
       ]
     }
