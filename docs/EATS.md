@@ -932,3 +932,7 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Tohoku** (round 4: Japan, Korea, New Zealand): +1 (Trenta, Yamagata). Proof in `docs/library-proof/jp-tohoku.json`.
 - **25 Nov 2026, Hokkaido** (round 4: Japan, Korea, New Zealand): +3 in Sapporo (Ohno Buono, Taguto, Sankatei). Proof in `docs/library-proof/jp-hokkaido.json`.
 - **25 Nov 2026, Fukuoka** (round 4: Japan, Korea, New Zealand): +2 in Tenjin (chano-ma, Anion). Proof in `docs/library-proof/jp-fukuoka.json`.
+
+- **26 Nov 2026, Guangzhou, round 9**: +5 from Amap place pages (high chairs). Proof in `docs/library-proof/cn-guangzhou.json`.
+
+- **26 Nov 2026, Shenzhen, round 9**: +3 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-shenzhen.json`.
