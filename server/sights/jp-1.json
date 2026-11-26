@@ -2395,6 +2395,88 @@
           "q": "Osaka Bay Cruise Santa Maria, Kaiyukan West Pier, Osaka, Japan",
           "ok": "2026-11",
           "src": "https://osaka-info.jp/en/spot/osaka-bay-cruise-santa-maria2022/"
+        },
+        {
+          "name": {
+            "en": "MIRACLE WORLD Osaka",
+            "th": "มิราเคิลเวิลด์ โอซากา"
+          },
+          "local": "ミラクルワールド",
+          "kind": "museum",
+          "area": {
+            "en": "Namba, Osaka",
+            "th": "นัมบะ โอซากา"
+          },
+          "what": {
+            "en": "An immersive digital art experience that engages all five senses.",
+            "th": "ศิลปะดิจิทัลแบบโอบล้อมที่กระตุ้นประสาทสัมผัสทั้งห้า"
+          },
+          "why": {
+            "en": "Children aged 4 to 12 pay a lower price, and the page lists it under For Families.",
+            "th": "เด็กอายุ 4–12 ปีจ่ายราคาถูกกว่า และเว็บไซต์จัดไว้ในหมวดสำหรับครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,800–3,400 adults · ¥1,000 children aged 4–12",
+            "th": "≈ ¥2,800–3,400 ผู้ใหญ่ · ¥1,000 เด็กอายุ 4–12 ปี"
+          },
+          "book": "none",
+          "q": "Miracle World Osaka, Namba, Osaka, Japan",
+          "ok": "2026-11",
+          "src": "https://osaka-info.jp/en/spot/miracle_world/"
+        },
+        {
+          "name": {
+            "en": "Kaiyodo Figure Museum Miraiza Osaka Castle",
+            "th": "พิพิธภัณฑ์ฟิกเกอร์ไคโยโด มิไรซะ ปราสาทโอซากา"
+          },
+          "local": "海洋堂フィギュアミュージアムミライザ大阪城",
+          "kind": "museum",
+          "area": {
+            "en": "In front of Osaka Castle Museum, Osaka Castle",
+            "th": "หน้าพิพิธภัณฑ์ปราสาทโอซากา ปราสาทโอซากา"
+          },
+          "what": {
+            "en": "Over 3,000 of Kaiyodo's figures, made over 40 years, shown in 10 areas by theme.",
+            "th": "ฟิกเกอร์ไคโยโดกว่า 3,000 ชิ้นที่ทำมา 40 ปี จัดแสดงเป็น 10 โซนตามธีม"
+          },
+          "why": {
+            "en": "A commemorative entrance coin plays the gachapon machines for a free gift.",
+            "th": "เหรียญที่ระลึกตอนเข้าชมใช้หมุนตู้กาชาปองรับของฟรี"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,000 adults · ¥500 ages 7–15",
+            "th": "≈ ¥1,000 ผู้ใหญ่ · ¥500 อายุ 7–15 ปี"
+          },
+          "book": "none",
+          "q": "Kaiyodo Figure Museum Miraiza Osaka-Jo, Chuo, Osaka, Japan",
+          "ok": "2026-11",
+          "src": "https://osaka-info.jp/en/spot/kaiyodo-miraiza/"
         }
     ]
     },
@@ -9605,6 +9687,416 @@
                       "q": "Toshodai-ji, Gojocho, Nara, Japan",
                       "ok": "2026-11",
                       "src": "https://toshodaiji.jp/haikan.html"
+                    },
+                    {
+                      "name": {
+                        "en": "Gango-ji Temple",
+                        "th": "กังโงจิ"
+                      },
+                      "local": "元興寺",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Naramachi",
+                        "th": "นาระมาจิ"
+                      },
+                      "what": {
+                        "en": "A World Heritage temple in the old town whose Gokurakudo hall and Zendo are National Treasures",
+                        "th": "วัดมรดกโลกในย่านเมืองเก่า ที่มีหอโกกุราคุโดและเซ็นโดเป็นสมบัติแห่งชาติ"
+                      },
+                      "why": {
+                        "en": "Elementary-school children pay a reduced fee and an old-town temple is a quiet stop between Naramachi shops",
+                        "th": "เด็กประถมจ่ายค่าเข้าลดราคา และเป็นจุดแวะเงียบ ๆ ระหว่างร้านค้าในนาระมาจิ"
+                      },
+                      "tip": {
+                        "en": "Open 9:00-17:00, last entry 16:30; eating and drinking are not allowed in the grounds",
+                        "th": "เปิด 9:00–17:00 ผู้เข้าคนสุดท้าย 16:30 ห้ามกินดื่มในบริเวณวัด"
+                      },
+                      "ages": [
+                        0,
+                        1,
+                        1,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "Adult ≈ ¥700, elementary school ≈ ¥300",
+                        "th": "ผู้ใหญ่ ≈ ¥700 เด็กประถม ≈ ¥300"
+                      },
+                      "book": "none",
+                      "q": "Gango-ji, Naramachi, Nara",
+                      "ok": "2026-11",
+                      "src": "https://gangoji-tera.or.jp/about/"
+                    },
+                    {
+                      "name": {
+                        "en": "Kofuku-ji National Treasure Hall",
+                        "th": "หอสมบัติแห่งชาติโคฟุกุจิ"
+                      },
+                      "local": "国宝館",
+                      "kind": "museum",
+                      "area": {
+                        "en": "Nara Park",
+                        "th": "สวนนารา"
+                      },
+                      "what": {
+                        "en": "The museum hall of Kofuku-ji holding National Treasure statues and temple treasures",
+                        "th": "หอพิพิธภัณฑ์ของวัดโคฟุกุจิ เก็บพระพุทธรูปสมบัติแห่งชาติและสมบัติของวัด"
+                      },
+                      "why": {
+                        "en": "An indoor stop beside Nara Park; the page says a wheelchair slope and a loan wheelchair are available",
+                        "th": "จุดแวะในร่มติดสวนนารา หน้าเว็บบอกว่ามีทางลาดสำหรับรถเข็นและให้ยืมรถเข็นได้"
+                      },
+                      "tip": {
+                        "en": "Open 9:00-17:00 (last entry 16:45) every day; photography inside is not allowed; cash only",
+                        "th": "เปิด 9:00–17:00 (รับคนสุดท้าย 16:45) ทุกวัน ห้ามถ่ายภาพภายใน รับเฉพาะเงินสด"
+                      },
+                      "ages": [
+                        0,
+                        0,
+                        1,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "in",
+                      "pram": "yes",
+                      "price": {
+                        "en": "Adult ≈ ¥900, elementary school ≈ ¥500",
+                        "th": "ผู้ใหญ่ ≈ ¥900 เด็กประถม ≈ ¥500"
+                      },
+                      "book": "none",
+                      "q": "Kofuku-ji Kokuhokan, Noborioji-cho, Nara",
+                      "ok": "2026-11",
+                      "src": "https://www.kohfukuji.com/info/info-guide/"
+                    },
+                    {
+                      "name": {
+                        "en": "Kofuku-ji Chukon-do",
+                        "th": "ชูกงโด วัดโคฟุกุจิ"
+                      },
+                      "local": "中金堂",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Nara Park",
+                        "th": "สวนนารา"
+                      },
+                      "what": {
+                        "en": "The rebuilt main hall of Kofuku-ji, open to enter",
+                        "th": "หอหลักของวัดโคฟุกุจิที่สร้างขึ้นใหม่ เข้าชมด้านในได้"
+                      },
+                      "why": {
+                        "en": "Elementary-school entry is ≈ ¥200 and the hall is open every day of the year",
+                        "th": "เด็กประถมค่าเข้าราว ¥200 และเปิดทุกวันตลอดปี"
+                      },
+                      "tip": {
+                        "en": "Open 9:00-17:00 (last entry 16:45) every day; cash only",
+                        "th": "เปิด 9:00–17:00 (รับคนสุดท้าย 16:45) ทุกวัน รับเฉพาะเงินสด"
+                      },
+                      "ages": [
+                        0,
+                        1,
+                        1,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "both",
+                      "pram": "part",
+                      "price": {
+                        "en": "Adult ≈ ¥500, elementary school ≈ ¥200",
+                        "th": "ผู้ใหญ่ ≈ ¥500 เด็กประถม ≈ ¥200"
+                      },
+                      "book": "none",
+                      "q": "Kofuku-ji Chukon-do, Noborioji-cho, Nara",
+                      "ok": "2026-11",
+                      "src": "https://www.kohfukuji.com/info/info-guide/"
+                    },
+                    {
+                      "name": {
+                        "en": "Heijo Palace Izanaikan",
+                        "th": "อิซานาอิคัง เฮโจ"
+                      },
+                      "local": "平城宮いざない館",
+                      "kind": "museumkid",
+                      "area": {
+                        "en": "Suzaku-mon Plaza",
+                        "th": "ลานสุซากุมง"
+                      },
+                      "what": {
+                        "en": "A free guidance hall at the Heijo Palace park with a 1/200 model of the whole palace, large video and a chance to try ancient costumes",
+                        "th": "ศูนย์แนะนำเข้าฟรีในสวนซากพระราชวังเฮโจ มีแบบจำลองวังทั้งหมดสเกล 1/200 วิดีโอจอใหญ่ และลองสวมชุดโบราณ"
+                      },
+                      "why": {
+                        "en": "Free entry; the page lists a 1/5 structure model to see up close and hands-on activities such as tile roofing and ancient costumes",
+                        "th": "เข้าฟรี มีแบบจำลองโครงสร้างสเกล 1/5 ให้ดูใกล้ ๆ และกิจกรรมลงมือทำ เช่น มุงกระเบื้องหลังคาและชุดโบราณ"
+                      },
+                      "tip": {
+                        "en": "Closed on the 2nd Monday of Feb, Apr, Jul and Nov and 29 Dec-1 Jan; open 9:00-17:00; wheelchairs are lent free at reception",
+                        "th": "ปิดวันจันทร์ที่สองของ ก.พ. เม.ย. ก.ค. และ พ.ย. และ 29 ธ.ค.–1 ม.ค. เปิด 9:00–17:00 ยืมรถเข็นฟรีที่เคาน์เตอร์"
+                      },
+                      "ages": [
+                        0,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 1.5,
+                      "io": "in",
+                      "pram": "yes",
+                      "price": {
+                        "en": "Free",
+                        "th": "ฟรี"
+                      },
+                      "book": "none",
+                      "q": "Heijo Palace Izanaikan, Nijo Odori Minami, Nara",
+                      "ok": "2026-11",
+                      "src": "https://www.heijo-park.jp/guide/suzakumon/izanaikan/"
+                    },
+                    {
+                      "name": {
+                        "en": "Suzakumon Gate",
+                        "th": "ประตูสุซากุมง"
+                      },
+                      "local": "朱雀門",
+                      "kind": "views",
+                      "area": {
+                        "en": "Suzaku-mon Plaza",
+                        "th": "ลานสุซากุมง"
+                      },
+                      "what": {
+                        "en": "The restored main south gate of Heijo Palace standing on a wide open plaza",
+                        "th": "ประตูใหญ่ทิศใต้ของวังเฮโจที่สร้างขึ้นใหม่ ตั้งอยู่บนลานกว้างโล่ง"
+                      },
+                      "why": {
+                        "en": "Big open space for children to run on the plaza in front of the gate, which the page calls a place of festivals in the Nara period",
+                        "th": "ลานหน้าประตูกว้างให้เด็กวิ่งเล่น หน้าเว็บบอกว่าเป็นที่จัดเทศกาลสมัยนารา"
+                      },
+                      "tip": {
+                        "en": "Open 9:00-16:30 (entry to 16:00); closed Mondays (next weekday if a holiday) and 29 Dec-3 Jan; wide open plaza, pram fine on the paths",
+                        "th": "เปิด 9:00–16:30 (เข้าได้ถึง 16:00) ปิดวันจันทร์ (เลื่อนเป็นวันธรรมดาถัดไปถ้าตรงวันหยุด) และ 29 ธ.ค.–3 ม.ค. ลานกว้าง รถเข็นเด็กไปตามทางได้"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 1,
+                      "io": "out",
+                      "pram": "yes",
+                      "price": {
+                        "en": "Check the price",
+                        "th": "เช็กราคาก่อนไป"
+                      },
+                      "book": "none",
+                      "q": "Suzakumon, Nijo Odori Minami, Nara",
+                      "ok": "2026-11",
+                      "src": "https://www.heijo-park.jp/guide/suzakumon/"
+                    },
+                    {
+                      "name": {
+                        "en": "First Imperial Audience Hall (Daigokuden)",
+                        "th": "ไดโกกุเด็นหลังแรก"
+                      },
+                      "local": "第一次大極殿",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Heijo Palace Site",
+                        "th": "ซากพระราชวังเฮโจ"
+                      },
+                      "what": {
+                        "en": "The restored Daigokuden, the central hall of Heijo Palace where the ceremonies of state were held",
+                        "th": "ไดโกกุเด็นที่สร้างขึ้นใหม่ หอกลางของวังเฮโจที่ใช้จัดพิธีของรัฐ"
+                      },
+                      "why": {
+                        "en": "A huge wooden hall on open palace-site grounds, with a restoration information hall nearby",
+                        "th": "หอไม้ขนาดใหญ่บนพื้นที่ซากวังที่โล่งกว้าง มีหอข้อมูลการบูรณะอยู่ใกล้ ๆ"
+                      },
+                      "tip": {
+                        "en": "Hall open 9:00-16:30 (entry to 16:00); closed Mondays and 29 Dec-3 Jan; the site is a big open park, allow time to walk",
+                        "th": "เปิด 9:00–16:30 (เข้าได้ถึง 16:00) ปิดวันจันทร์ และ 29 ธ.ค.–3 ม.ค. ซากวังอยู่ในสวนกว้าง เผื่อเวลาเดิน"
+                      },
+                      "ages": [
+                        0,
+                        1,
+                        2,
+                        2
+                      ],
+                      "hrs": 1.5,
+                      "io": "both",
+                      "pram": "part",
+                      "price": {
+                        "en": "Check the price",
+                        "th": "เช็กราคาก่อนไป"
+                      },
+                      "book": "none",
+                      "q": "Daigokuden, Heijo Palace Site, Nara",
+                      "ok": "2026-11",
+                      "src": "https://www.heijo-park.jp/guide/daigokuden/"
+                    },
+                    {
+                      "name": {
+                        "en": "Nara Prison Museum by Hoshino Resorts",
+                        "th": "พิพิธภัณฑ์เรือนจำนาระ โดยโฮชิโนะรีสอร์ท"
+                      },
+                      "local": "奈良監獄ミュージアム by 星野リゾート",
+                      "kind": "museum",
+                      "area": {
+                        "en": "Kitamachi",
+                        "th": "คิตะมาจิ"
+                      },
+                      "what": {
+                        "en": "A museum in the red-brick former Nara Prison, with three exhibition buildings, a cafe and a shop",
+                        "th": "พิพิธภัณฑ์ในอดีตเรือนจำนาระอิฐแดง มีอาคารนิทรรศการสามหลัง คาเฟ่ และร้านค้า"
+                      },
+                      "why": {
+                        "en": "A big brick building to explore; the page names a cafe with curry bread, cheese cake and local sodas",
+                        "th": "อาคารอิฐหลังใหญ่ให้เดินสำรวจ หน้าเว็บบอกว่าคาเฟ่มีคาเร่ปัง ชีสเค้ก และโซดาท้องถิ่น"
+                      },
+                      "tip": {
+                        "en": "Open 9:00-17:00 (last entry 16:00), no closing day; reservation recommended; no parking; direct bus from JR and Kintetsu Nara stations",
+                        "th": "เปิด 9:00–17:00 (รับคนสุดท้าย 16:00) ไม่มีวันหยุด แนะนำให้จอง ไม่มีที่จอดรถ มีรถบัสตรงจากสถานี JR และคินเทตสึนารา"
+                      },
+                      "ages": [
+                        0,
+                        0,
+                        1,
+                        2
+                      ],
+                      "hrs": 2,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "Elementary and junior-high ≈ ¥700, under school age free",
+                        "th": "เด็กประถมและมัธยมต้น ≈ ¥700 ก่อนวัยเรียนเข้าฟรี"
+                      },
+                      "book": "rec",
+                      "q": "Nara Prison Museum, Hannyaji-cho, Nara",
+                      "ok": "2026-11",
+                      "src": "https://narashikanko.or.jp/spot/detail_10470.html"
+                    },
+                    {
+                      "name": {
+                        "en": "Ukimido",
+                        "th": "อุกิมิโด"
+                      },
+                      "local": "浮見堂",
+                      "kind": "nature",
+                      "area": {
+                        "en": "Nara Park",
+                        "th": "สวนนารา"
+                      },
+                      "what": {
+                        "en": "A hexagonal wooden hall floating on Sagi-ike pond in Nara Park, reached by walking through the woods from Kasuga Taisha",
+                        "th": "ศาลาไม้หกเหลี่ยมลอยอยู่บนสระซางิอิเกะในสวนนารา เดินผ่านป่าจากศาลเจ้าคาซูงะไทฉะไปถึง"
+                      },
+                      "why": {
+                        "en": "A pond-side rest spot where the hall is reflected on the water",
+                        "th": "จุดพักริมสระที่เห็นศาลาสะท้อนบนผิวน้ำ"
+                      },
+                      "tip": {
+                        "en": "Reached by a 5-minute walk from the \"Daibutsuden Kasuga Taisha-mae\" bus stop",
+                        "th": "เดิน 5 นาทีจากป้ายรถบัส Daibutsuden Kasuga Taisha-mae"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 0.75,
+                      "io": "out",
+                      "pram": "yes",
+                      "price": {
+                        "en": "Check the price",
+                        "th": "เช็กราคาก่อนไป"
+                      },
+                      "book": "none",
+                      "q": "Ukimido, Nara Park, Nara",
+                      "ok": "2026-11",
+                      "src": "https://narashikanko.or.jp/spot/detail_10105.html"
+                    },
+                    {
+                      "name": {
+                        "en": "Sarusawa Pond",
+                        "th": "สระซารุซาวะ"
+                      },
+                      "local": "猿沢池",
+                      "kind": "nature",
+                      "area": {
+                        "en": "Naramachi",
+                        "th": "นาระมาจิ"
+                      },
+                      "what": {
+                        "en": "A 360 m pond in Nara Park that mirrors the Kofuku-ji five-storey pagoda",
+                        "th": "สระรอบยาว 360 เมตรในสวนนารา สะท้อนเจดีย์ห้าชั้นของวัดโคฟุกุจิ"
+                      },
+                      "why": {
+                        "en": "A flat lakeside stroll next to the old town, with the pond's seven mysteries as a story to tell",
+                        "th": "เดินเล่นริมสระบนทางราบข้างเมืองเก่า และมีเรื่องเล่าเจ็ดปริศนาของสระ"
+                      },
+                      "tip": {
+                        "en": "The five-storey pagoda is under restoration work and covered at present, so its outline cannot be seen",
+                        "th": "ตอนนี้เจดีย์ห้าชั้นอยู่ระหว่างบูรณะและถูกคลุมไว้ จึงมองไม่เห็นรูปทรง"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 0.5,
+                      "io": "out",
+                      "pram": "yes",
+                      "price": {
+                        "en": "Check the price",
+                        "th": "เช็กราคาก่อนไป"
+                      },
+                      "book": "none",
+                      "q": "Sarusawa-ike, Nara",
+                      "ok": "2026-11",
+                      "src": "https://narashikanko.or.jp/spot/detail_10110.html"
+                    },
+                    {
+                      "name": {
+                        "en": "Akishino-dera Temple",
+                        "th": "วัดอากิชิโนะ"
+                      },
+                      "local": "秋篠寺",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Akishino",
+                        "th": "อากิชิโนะ"
+                      },
+                      "what": {
+                        "en": "A quiet temple in the west of Nara city with 25 Buddhist statues in its main hall",
+                        "th": "วัดเงียบสงบทางตะวันตกของเมืองนารา มีพระพุทธรูป 25 องค์ในอาคารหลัก"
+                      },
+                      "why": {
+                        "en": "Children aged elementary school pay ≈ ¥100 and must be with an adult family member",
+                        "th": "เด็กประถมค่าเข้าราว ¥100 และต้องมากับสมาชิกครอบครัวที่เป็นผู้ใหญ่"
+                      },
+                      "tip": {
+                        "en": "Open 9:30-16:30; 6 minutes by bus from Yamato-Saidaiji Station north exit; free parking",
+                        "th": "เปิด 9:30–16:30 นั่งรถบัส 6 นาทีจากทางออกเหนือสถานี Yamato-Saidaiji มีที่จอดรถฟรี"
+                      },
+                      "ages": [
+                        0,
+                        0,
+                        1,
+                        1
+                      ],
+                      "hrs": 1,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "Adult ≈ ¥500, elementary school ≈ ¥100",
+                        "th": "ผู้ใหญ่ ≈ ¥500 เด็กประถม ≈ ¥100"
+                      },
+                      "book": "none",
+                      "q": "Akishino-dera, Akishino-cho, Nara",
+                      "ok": "2026-11",
+                      "src": "https://narashikanko.or.jp/spot/detail_10018.html"
                     }
       ]
     }
