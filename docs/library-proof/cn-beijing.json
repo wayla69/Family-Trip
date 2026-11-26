@@ -686,6 +686,40 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for family museums in Beijing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "China Railway Museum (East Suburb Hall)",
+          "page_name": "中国铁道博物馆(东郊展馆)",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E9%93%81%E9%81%93%E5%8D%9A%E7%89%A9%E9%A6%86(%E4%B8%9C%E9%83%8A%E5%B1%95%E9%A6%86)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "适合亲子 · 带娃来也很合适 · 不管是带娃科普还是自己打卡都很合适"
+        },
+        {
+          "name": "China Space Museum",
+          "page_name": "中国航天博物馆",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E8%88%AA%E5%A4%A9%E5%8D%9A%E7%89%A9%E9%A6%86&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-03",
+          "map": "Amap: open, not marked closed, newest review 2026-09-03",
+          "quote": "适合亲子 · 互动模拟区（火箭发射模拟、太空舱体验），娃能玩疯"
+        },
+        {
+          "name": "Paleozoological Museum of China",
+          "page_name": "中国古动物馆",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E5%8F%A4%E5%8A%A8%E7%89%A9%E9%A6%86&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-21",
+          "map": "Amap: open, not marked closed, newest review 2026-10-21",
+          "quote": "适合亲子 · 3D电影…带小朋友穿越时空 · 遛娃必去"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
