@@ -705,6 +705,53 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Xiaoshan, Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Da'an Anhui Pot Chicken (Qianjiang Century City)",
+          "page_name": "大俺徽地锅鸡(御金台)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E4%BF%BA%E5%BE%BD%E5%9C%B0%E9%94%85%E9%B8%A1(%E5%BE%A1%E9%87%91%E5%8F%B0)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-18",
+          "map": "Amap: open, not marked closed, newest review 2026-08-18",
+          "quote": "有宝宝椅 · 适合带娃"
+        },
+        {
+          "name": "Huanxi Xiaoxiangcun Hunan Kitchen (Xiaoshan MixC)",
+          "page_name": "欢喜小湘村·湘菜馆(萧山万象汇店)",
+          "src": "https://www.amap.com/search?query=%E6%AC%A2%E5%96%9C%E5%B0%8F%E6%B9%98%E6%9D%91%C2%B7%E6%B9%98%E8%8F%9C%E9%A6%86(%E8%90%A7%E5%B1%B1%E4%B8%87%E8%B1%A1%E6%B1%87%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
+          "map": "Amap: open, not marked closed, newest review 2026-11-04",
+          "quote": "儿童餐"
+        },
+        {
+          "name": "Huatai Thai Restaurant (Dongchao)",
+          "page_name": "花泰餐厅(东巢店)",
+          "src": "https://www.amap.com/search?query=%E8%8A%B1%E6%B3%B0%E9%A4%90%E5%8E%85(%E4%B8%9C%E5%B7%A2%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "儿童餐具可提供 · 下了班马不停提的就带着娃赶来了"
+        },
+        {
+          "name": "Rainforest Restaurant (Kaiyuan Senbo resort)",
+          "page_name": "杭州开元森泊度假酒店·雨林餐厅",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E5%BC%80%E5%85%83%E6%A3%AE%E6%B3%8A%E5%BA%A6%E5%81%87%E9%85%92%E5%BA%97%C2%B7%E9%9B%A8%E6%9E%97%E9%A4%90%E5%8E%85&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "适合亲子 · 儿童区域 · 宝宝专属餐"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "开元森泊雁来轩中餐厅",
+          "why": "twenty-eight reviews only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
