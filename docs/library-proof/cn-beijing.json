@@ -569,6 +569,57 @@
       "kind": "eats + sights",
       "checked": "2026-11-25",
       "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Chaoyang and Fengtai, Beijing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Tian Laoshi Braised Pork (Xinfadi)",
+          "page_name": "田老师红烧肉",
+          "src": "https://www.amap.com/search?query=%E7%94%B0%E8%80%81%E5%B8%88%E7%BA%A2%E7%83%A7%E8%82%89&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "种类也不少，大朋友小朋友都有的选择"
+        },
+        {
+          "name": "Yiwei Yicheng Grilled Fish (Hesheng Plaza)",
+          "page_name": "一味一诚·鲜嫩烤鱼(合生广场店)",
+          "src": "https://www.amap.com/search?query=%E4%B8%80%E5%91%B3%E4%B8%80%E8%AF%9A%C2%B7%E9%B2%9C%E5%AB%A9%E7%83%A4%E9%B1%BC(%E5%90%88%E7%94%9F%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "家庭聚餐 · 儿童餐 · 亲子友好 · 带孩子的来这家特别合适"
+        },
+        {
+          "name": "West 12th Street Steak Buffet (Lize Tiandi)",
+          "page_name": "西十二街牛排自助餐厅(丽泽天地店)",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E5%8D%81%E4%BA%8C%E8%A1%97%E7%89%9B%E6%8E%92%E8%87%AA%E5%8A%A9%E9%A4%90%E5%8E%85(%E4%B8%BD%E6%B3%BD%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-16",
+          "map": "Amap: open, not marked closed, newest review 2026-10-16",
+          "quote": "适合家庭聚餐 · 每次来这里吃都带孩子 · 孩子很喜欢吃这里家的牛排"
+        },
+        {
+          "name": "Huixianfu Shandong Kitchen (Fengtai)",
+          "page_name": "汇贤府·李氏新鲁菜(丰台店)",
+          "src": "https://www.amap.com/search?query=%E6%B1%87%E8%B4%A4%E5%BA%9C%C2%B7%E6%9D%8E%E6%B0%8F%E6%96%B0%E9%B2%81%E8%8F%9C(%E4%B8%B0%E5%8F%B0%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "儿童餐 · 家庭聚餐 · 儿童友好"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "鹤一烤肉自助 (亚运村)",
+          "why": "no children's tag or review about children"
+        },
+        {
+          "name": "Neo小巴刹, FOODBOWL超级碗",
+          "why": "twenty-eight reviews or fewer"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
       "agents": "A read here in Chrome: an Amap search for family sights in Beijing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
       "added": [
         {
