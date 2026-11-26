@@ -5340,6 +5340,121 @@
           },
           "q": "云上草原无动力亲子乐园, 苍海云上草原, 大理市, 大理",
           "ok": "2026-11"
+        },
+        {
+          "local": "七彩云南·欢乐世界",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E4%B8%83%E5%BD%A9%E4%BA%91%E5%8D%97%C2%B7%E6%AC%A2%E4%B9%90%E4%B8%96%E7%95%8C&city=530100",
+          "name": {
+            "th": "สวนสนุกชีไฉ่อวิ๋นหนาน แฮปปี้เวิลด์",
+            "en": "Colourful Yunnan Happy World"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนหวนหูใต้ จิ้นหนิง คุนหมิง",
+            "en": "Huanhu South Road, Jinning, Kunming"
+          },
+          "what": {
+            "th": "สวนสนุกใหญ่ มีชิงช้าสวรรค์ รถไฟเหาะ และเครื่องเล่นเบา ๆ สำหรับเด็กเล็ก",
+            "en": "A big theme park with a Ferris wheel, roller coasters and gentle rides for small children"
+          },
+          "why": {
+            "th": "ตั๋วใบเดียวเล่นได้ทุกอย่าง ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "One ticket covers the rides; children under 1.2 m go free, reviewers say"
+          },
+          "q": "七彩云南欢乐世界, 环湖南路, 晋宁区, 昆明",
+          "ok": "2026-11"
+        },
+        {
+          "local": "云南野生动物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E5%8D%97%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E5%9B%AD&city=530100",
+          "name": {
+            "th": "สวนสัตว์ป่ายูนนาน",
+            "en": "Yunnan Wildlife Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนเฟิงหยวน ผานหลง คุนหมิง",
+            "en": "Fengyuan Road, Panlong, Kunming"
+          },
+          "what": {
+            "th": "สวนสัตว์ป่าขนาดใหญ่ มีสัตว์หลายชนิดและกิจกรรมใกล้ชิดสัตว์",
+            "en": "A large wildlife park with many kinds of animals and animal encounters"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะกับเด็ก 1–8 ขวบ และเข็นรถเข็นเด็กได้ทั่ว",
+            "en": "A reviewer says it suits ages 1–8 and a pushchair goes everywhere"
+          },
+          "q": "云南野生动物园, 沣源路, 盘龙区, 昆明",
+          "ok": "2026-11"
+        },
+        {
+          "local": "昆明植物园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%98%86%E6%98%8E%E6%A4%8D%E7%89%A9%E5%9B%AD&city=530100",
+          "name": {
+            "th": "สวนพฤกษศาสตร์คุนหมิง",
+            "en": "Kunming Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนหลานเฮย ฉือป้า ผานหลง คุนหมิง",
+            "en": "Lanhei Road, Ciba, Panlong, Kunming"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ที่มีเรือนกระจกใหญ่และสวนดอกไม้",
+            "en": "A botanical garden with big glasshouses and flower gardens"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะกับการเดินเล่นและพาเด็กดูต้นไม้",
+            "en": "Reviewers say it is good for a walk and for showing children plants"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำว่าอย่าให้เด็กเล็กอยู่ในเรือนกระจกที่อบอุ่นนานเกินไป",
+            "en": "Reviewers say not to keep small children long in the warm glasshouses"
+          },
+          "q": "昆明植物园, 蓝黑路132号, 盘龙区, 昆明",
+          "ok": "2026-11"
         }
     ]
     },
