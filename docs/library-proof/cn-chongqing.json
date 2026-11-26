@@ -473,6 +473,97 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals and high chairs in Yuzhong and Nan'an, Chongqing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yunshi Sichuan-Cantonese (Chongqing Tiandi)",
+          "page_name": "云实川粤融合餐厅(重庆天地店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E5%AE%9E%E5%B7%9D%E7%B2%A4%E8%9E%8D%E5%90%88%E9%A4%90%E5%8E%85(%E9%87%8D%E5%BA%86%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Bainian Jianghu Family Kitchen (Huilongwan)",
+          "page_name": "百年江湖·家宴(回龙湾店)",
+          "src": "https://www.amap.com/search?query=%E7%99%BE%E5%B9%B4%E6%B1%9F%E6%B9%96%C2%B7%E5%AE%B6%E5%AE%B4(%E5%9B%9E%E9%BE%99%E6%B9%BE%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "有宝宝椅 · 这个菜很适合孩子吃不辣"
+        },
+        {
+          "name": "Shancheng Firewood Chicken (Huilongwan)",
+          "page_name": "山城柴火鸡(回龙湾店)",
+          "src": "https://www.amap.com/search?query=%E5%B1%B1%E5%9F%8E%E6%9F%B4%E7%81%AB%E9%B8%A1(%E5%9B%9E%E9%BE%99%E6%B9%BE%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "有宝宝椅 · 店内有包间、宝宝椅，适合家庭聚餐"
+        },
+        {
+          "name": "Dongbei Wangshi Iron-pot Stew (Nanping)",
+          "page_name": "东北往事·东北菜铁锅炖(南坪直营店)",
+          "src": "https://www.amap.com/search?query=%E4%B8%9C%E5%8C%97%E5%BE%80%E4%BA%8B%C2%B7%E4%B8%9C%E5%8C%97%E8%8F%9C%E9%93%81%E9%94%85%E7%82%96(%E5%8D%97%E5%9D%AA%E7%9B%B4%E8%90%A5%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Dexiangyuan Peking Duck (Paradise Walk)",
+          "page_name": "德香苑北京烤鸭(时代天街店)",
+          "src": "https://www.amap.com/search?query=%E5%BE%B7%E9%A6%99%E8%8B%91%E5%8C%97%E4%BA%AC%E7%83%A4%E9%B8%AD(%E6%97%B6%E4%BB%A3%E5%A4%A9%E8%A1%97%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "家庭聚餐 · 有宝宝椅 · 适合带娃吃饭"
+        },
+        {
+          "name": "Xu Dingsheng Folk Kitchen (Chongqing Tiandi)",
+          "page_name": "徐鼎盛民间菜(重庆天地店)",
+          "src": "https://www.amap.com/search?query=%E5%BE%90%E9%BC%8E%E7%9B%9B%E6%B0%91%E9%97%B4%E8%8F%9C(%E9%87%8D%E5%BA%86%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-29",
+          "map": "Amap: open, not marked closed, newest review 2026-10-29",
+          "quote": "有宝宝椅 · 家庭聚餐首选"
+        },
+        {
+          "name": "Pinyunxuan Private Kitchen (Daping)",
+          "page_name": "品云轩私家菜(大坪协信星光天地店)",
+          "src": "https://www.amap.com/search?query=%E5%93%81%E4%BA%91%E8%BD%A9%E7%A7%81%E5%AE%B6%E8%8F%9C(%E5%A4%A7%E5%9D%AA%E5%8D%8F%E4%BF%A1%E6%98%9F%E5%85%89%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-05",
+          "map": "Amap: open, not marked closed, newest review 2026-10-05",
+          "quote": "有宝宝椅 · 家庭聚餐 · 小朋友特别喜欢这个番茄汤"
+        },
+        {
+          "name": "Laoyuan Home Cooking (Daping)",
+          "page_name": "老院下饭菜(大坪店)",
+          "src": "https://www.amap.com/search?query=%E8%80%81%E9%99%A2%E4%B8%8B%E9%A5%AD%E8%8F%9C(%E5%A4%A7%E5%9D%AA%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-29",
+          "map": "Amap: open, not marked closed, newest review 2026-09-29",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Taxiya Steakhouse (Paradise Walk)",
+          "page_name": "塔西亚西餐厅(大坪龙湖时代天街店)",
+          "src": "https://www.amap.com/search?query=%E5%A1%94%E8%A5%BF%E4%BA%9A%E8%A5%BF%E9%A4%90%E5%8E%85(%E5%A4%A7%E5%9D%AA%E9%BE%99%E6%B9%96%E6%97%B6%E4%BB%A3%E5%A4%A9%E8%A1%97%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "小朋友想吃牛排去的 · 家长带着孩子来吃牛排的要很多"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "托比亚斯汉堡, 易乐餐厅, 一宝儿童辅食, 宝饱谷仓, 禾米儿童辅食, 向大妈饭庄, 稻掌柜, 费明中罗非鱼",
+          "why": "twenty-six reviews or fewer"
+        },
+        {
+          "name": "鹭宝宝海鲜酒家",
+          "why": "no children's tag or review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
