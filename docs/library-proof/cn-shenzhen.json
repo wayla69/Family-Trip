@@ -469,6 +469,93 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for indoor play parks and children's meals in Shenzhen; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Ye Hunan (Qiaochengfang)",
+          "page_name": "野·湖南(侨城坊店)",
+          "src": "https://www.amap.com/search?query=%E9%87%8E%C2%B7%E6%B9%96%E5%8D%97(%E4%BE%A8%E5%9F%8E%E5%9D%8A%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "家庭聚餐 · 儿童餐 · 儿童套餐"
+        },
+        {
+          "name": "Hakka Wei Hakka Kitchen (Xili)",
+          "page_name": "客家围·客家菜(西丽宝能城店)",
+          "src": "https://www.amap.com/search?query=%E5%AE%A2%E5%AE%B6%E5%9B%B4%C2%B7%E5%AE%A2%E5%AE%B6%E8%8F%9C(%E8%A5%BF%E4%B8%BD%E5%AE%9D%E8%83%BD%E5%9F%8E%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-28",
+          "map": "Amap: open, not marked closed, newest review 2026-10-28",
+          "quote": "宝宝餐 · 儿童餐 · 家庭聚餐友好"
+        },
+        {
+          "name": "Laicai Hubei Lotus-Root Soup (Raffles City)",
+          "page_name": "来菜·湖北头牌藕汤(深圳来福士店)",
+          "src": "https://www.amap.com/search?query=%E6%9D%A5%E8%8F%9C%C2%B7%E6%B9%96%E5%8C%97%E5%A4%B4%E7%89%8C%E8%97%95%E6%B1%A4(%E6%B7%B1%E5%9C%B3%E6%9D%A5%E7%A6%8F%E5%A3%AB%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "儿童餐 · 湖北小吃，样式非常丰富，甚至还有儿童餐"
+        },
+        {
+          "name": "Hengyuan Ocean Cube Aquarium (Longhua)",
+          "page_name": "恒远海立方·深圳海洋馆",
+          "src": "https://www.amap.com/search?query=%E6%81%92%E8%BF%9C%E6%B5%B7%E7%AB%8B%E6%96%B9%C2%B7%E6%B7%B1%E5%9C%B3%E6%B5%B7%E6%B4%8B%E9%A6%86&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "儿童乐园 · 亲子DIY · 很多海洋生物小朋友好喜欢；还能捞小鱼，玩小游戏"
+        },
+        {
+          "name": "KP-Fun Super Party (K11 Ecoast)",
+          "page_name": "KP-FUN超级派对",
+          "src": "https://www.amap.com/search?query=KP-FUN%E8%B6%85%E7%BA%A7%E6%B4%BE%E5%AF%B9&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "儿童乐园 · 儿童VR娱乐 · 萌宠互动"
+        },
+        {
+          "name": "Baby King Play Park (COCO Park, Futian)",
+          "page_name": "宝贝王乐园(福田COCO Park店)",
+          "src": "https://www.amap.com/search?query=%E5%AE%9D%E8%B4%9D%E7%8E%8B%E4%B9%90%E5%9B%AD(%E7%A6%8F%E7%94%B0COCO%20Park%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-23",
+          "map": "Amap: open, not marked closed, newest review 2026-10-23",
+          "quote": "儿童乐园 · 室内亲子园 · 小朋友能玩得开心"
+        },
+        {
+          "name": "Gjump Sports Park (Futian)",
+          "page_name": "Gjump运动乐园深圳店",
+          "src": "https://www.amap.com/search?query=Gjump%E8%BF%90%E5%8A%A8%E4%B9%90%E5%9B%AD%E6%B7%B1%E5%9C%B3%E5%BA%97&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-23",
+          "map": "Amap: open, not marked closed, newest review 2026-08-23",
+          "quote": "亲子DIY · 儿童运动场所 · 宝藏室内运动乐园，儿童专区项目齐全"
+        },
+        {
+          "name": "Upside-Down Museum (Longhua Book City)",
+          "page_name": "颠倒博物馆(深圳店)",
+          "src": "https://www.amap.com/search?query=%E9%A2%A0%E5%80%92%E5%8D%9A%E7%89%A9%E9%A6%86(%E6%B7%B1%E5%9C%B3%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-30",
+          "map": "Amap: open, not marked closed, newest review 2026-10-30",
+          "quote": "亲子玩乐 · 室内亲子园 · 书城环境很好，小孩子很多"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "大运·沐森爆笑乐园",
+          "why": "its page reads as closed"
+        },
+        {
+          "name": "KL Sport",
+          "why": "a games hall for groups; nothing about children beyond one line"
+        },
+        {
+          "name": "醒目茶餐厅",
+          "why": "one review only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
