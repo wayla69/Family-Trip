@@ -671,6 +671,49 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Bao'an and Longgang, Shenzhen; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Xinbao Cafe (Liutang)",
+          "page_name": "新宝餐厅(流塘店)",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E5%AE%9D%E9%A4%90%E5%8E%85(%E6%B5%81%E5%A1%98%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "适合家庭小聚 · 主动提供儿童椅"
+        },
+        {
+          "name": "Kejiaxiu Hakka Kitchen (Tian'an Cloud Park)",
+          "page_name": "客家秀·客家菜(天安云谷店)",
+          "src": "https://www.amap.com/search?query=%E5%AE%A2%E5%AE%B6%E7%A7%80%C2%B7%E5%AE%A2%E5%AE%B6%E8%8F%9C(%E5%A4%A9%E5%AE%89%E4%BA%91%E8%B0%B7%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "儿童餐 · 连儿童餐的搭配都超精致"
+        },
+        {
+          "name": "Ji Furen Chicken Pot (Longgang COCO Park)",
+          "page_name": "姬夫人·鲜切脆皮鸡煲(龙岗COCO Park店)",
+          "src": "https://www.amap.com/search?query=%E5%A7%AC%E5%A4%AB%E4%BA%BA%C2%B7%E9%B2%9C%E5%88%87%E8%84%86%E7%9A%AE%E9%B8%A1%E7%85%B2(%E9%BE%99%E5%B2%97COCO%20Park%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "带娃过来还有免费儿童餐 · 带娃过来也比较友好"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "维园港式茶餐厅 (盛平)",
+          "why": "no review from the last six months"
+        },
+        {
+          "name": "山河拾味, 探鱼 (满京华), 遇见烤鱼, 曾记化州牛腩, 汤巢, 山海雅居, 鸿沄窑鸡",
+          "why": "twenty-seven reviews or fewer, or no review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

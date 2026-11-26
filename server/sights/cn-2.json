@@ -7605,6 +7605,43 @@
           },
           "q": "西溪国家湿地公园, 文二西路, 西湖区, 杭州",
           "ok": "2026-11"
+        },
+        {
+          "local": "大运河杭钢公园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E8%BF%90%E6%B2%B3%E6%9D%AD%E9%92%A2%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนโรงเหล็กริมคลองต้ายวิ่นเหอ",
+            "en": "Grand Canal Hangzhou Steel Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเฉิงเลี่ยน ป้านซาน กงซู่",
+            "en": "Chenglian Street, Banshan, Gongshu"
+          },
+          "what": {
+            "th": "โรงเหล็กเก่าที่กลายเป็นสวนริมคลองต้ายวิ่นเหอ มีลานเด็กเล่น ห้องสมุดสาขา และสนามหญ้า",
+            "en": "An old steelworks turned park by the Grand Canal, with a children's play area, a library branch and lawns"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวพาเด็กมาเล่นและปิกนิก",
+            "en": "Tagged for families; reviewers bring children for the play area and picnics"
+          },
+          "q": "大运河杭钢公园, 城炼街, 拱墅区, 杭州",
+          "ok": "2026-11"
         }
       ]
     },
