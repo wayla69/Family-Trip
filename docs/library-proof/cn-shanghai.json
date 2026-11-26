@@ -581,6 +581,53 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for high-chair restaurants in Xuhui, Shanghai; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Taihuangji Shanghai Poached Chicken (Shangzhong)",
+          "page_name": "泰煌鸡·上海白斩鸡·沪菜(上中店)",
+          "src": "https://www.amap.com/search?query=%E6%B3%B0%E7%85%8C%E9%B8%A1%C2%B7%E4%B8%8A%E6%B5%B7%E7%99%BD%E6%96%A9%E9%B8%A1%C2%B7%E6%B2%AA%E8%8F%9C(%E4%B8%8A%E4%B8%AD%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-07",
+          "map": "Amap: open, not marked closed, newest review 2026-09-07",
+          "quote": "家庭聚餐 · 有宝宝椅 · 还不错，适合小孩子"
+        },
+        {
+          "name": "Heji Xiaocai (Luoxiu Road)",
+          "page_name": "和记小菜(罗秀店)",
+          "src": "https://www.amap.com/search?query=%E5%92%8C%E8%AE%B0%E5%B0%8F%E8%8F%9C(%E7%BD%97%E7%A7%80%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Yanfuli Shanghai Kitchen (Caobao Road)",
+          "page_name": "宴福里·本帮悦味",
+          "src": "https://www.amap.com/search?query=%E5%AE%B4%E7%A6%8F%E9%87%8C%C2%B7%E6%9C%AC%E5%B8%AE%E6%82%A6%E5%91%B3&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-19",
+          "map": "Amap: open, not marked closed, newest review 2026-10-19",
+          "quote": "家庭聚餐 · 有宝宝椅"
+        },
+        {
+          "name": "Shutanji Sichuan Kitchen (Tianshangfang)",
+          "page_name": "蜀谭记·盐帮川菜(田尚坊店)",
+          "src": "https://www.amap.com/search?query=%E8%9C%80%E8%B0%AD%E8%AE%B0%C2%B7%E7%9B%90%E5%B8%AE%E5%B7%9D%E8%8F%9C(%E7%94%B0%E5%B0%9A%E5%9D%8A%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-07-01",
+          "map": "Amap: open, not marked closed, newest review 2026-07-01",
+          "quote": "家庭聚餐 · 有宝宝椅 · 适合带娃吃饭"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "万丽轩, 剪花娘子",
+          "why": "twenty-four reviews, or none from the last six months"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
