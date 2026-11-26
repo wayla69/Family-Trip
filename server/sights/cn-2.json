@@ -3371,6 +3371,191 @@
           "q": "西安浐灞国家湿地公园, 启源三路1号, 西安",
           "src": "https://m.sohu.com/a/1021069170_122673000",
           "ok": "2026-11"
+        },
+        {
+          "local": "环城西苑儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%8E%AF%E5%9F%8E%E8%A5%BF%E8%8B%91%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=610100",
+          "name": {
+            "th": "สนามเด็กเล่นสวนตะวันตกใต้กำแพงเมือง",
+            "en": "City Wall West Garden Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหวนเฉิงตะวันตกเหนือ ใต้กำแพงเมือง เหลียนหู",
+            "en": "Huancheng West Road North, below the city wall, Lianhu"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นฟรีใต้กำแพงเมือง มีลานทรายและเครื่องเล่นผจญภัย",
+            "en": "A free playground under the city wall with a sand area and adventure play"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่เล่นฟรีที่ดีมากสำหรับเด็ก ใต้กำแพงเมือง",
+            "en": "Reviewers call it a great free place for children below the wall"
+          },
+          "q": "环城西苑儿童乐园, 环城西路北段, 莲湖区, 西安",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 西安银泰店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E8%A5%BF%E5%AE%89%E9%93%B6%E6%B3%B0%E5%BA%97)&city=610100",
+          "name": {
+            "th": "นีโอไบโอ อินไทม์",
+            "en": "Neobio Play Park (Intime)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อินไทม์ซิตี้ อาคาร B ชั้น 1 ถนนเยี่ยนหนานสาย 2 เยี่ยนถ่า",
+            "en": "Intime City B 1F, Yannan 2nd Road, Yanta"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีหนังสือภาพ งานประดิษฐ์ และร้านอาหารครอบครัว",
+            "en": "An indoor play park with picture books, crafts and a family restaurant"
+          },
+          "why": {
+            "th": "โซนเล่นในร่มบุนุ่มทั้งหมด",
+            "en": "Fully padded indoor play"
+          },
+          "q": "奈尔宝 西安银泰城, 雁南二路410号, 雁塔区, 西安",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鲁班奇幻乐园 西市店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%B2%81%E7%8F%AD%E5%A5%87%E5%B9%BB%E4%B9%90%E5%9B%AD%E8%A5%BF%E5%B8%82%E5%BA%97&city=610100",
+          "name": {
+            "th": "สวนแฟนตาซีหลู่ปาน ต้าถังซีซื่อ",
+            "en": "Luban Fantasy Park (Tang West Market)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ต้าถังซีซื่อ ชั้น 2 ถนนเหลาต้งใต้ เหลียนหู",
+            "en": "Tang West Market 2F, Laodong South Road, Lianhu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม เป็นด่านท้าทายธีมช่างไม้หลู่ปาน",
+            "en": "An indoor play park of challenge courses built around the master carpenter Lu Ban"
+          },
+          "why": {
+            "th": "มีปีนป่ายและด่านท้าทายสำหรับเด็กวัยเรียน",
+            "en": "Climbing and challenges for school-age children"
+          },
+          "q": "鲁班奇幻乐园 大唐西市, 劳动南路, 莲湖区, 西安",
+          "ok": "2026-11"
+        },
+        {
+          "local": "海底小纵队探险乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B5%B7%E5%BA%95%E5%B0%8F%E7%BA%B5%E9%98%9F%E6%8E%A2%E9%99%A9%E4%B9%90%E5%9B%AD&city=610100",
+          "name": {
+            "th": "สวนผจญภัยออคโตนอตส์",
+            "en": "Octonauts Adventure Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์ประชุมต้าฉิน ซานเฉียว เว่ยหยาง",
+            "en": "Daqin Conference Centre, Sanqiao, Weiyang"
+          },
+          "what": {
+            "th": "สวนเล่นธีมออคโตนอตส์ มีสไลเดอร์และแทรมโพลีน",
+            "en": "An Octonauts-themed play park with slides and trampolines"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กไม่อยากกลับ",
+            "en": "Reviewers say children did not want to leave"
+          },
+          "q": "海底小纵队探险乐园, 大秦会议中心, 未央区, 西安",
+          "ok": "2026-11"
+        },
+        {
+          "local": "探洞工场 西安旗舰店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%8E%A2%E6%B4%9E%E5%B7%A5%E5%9C%BA(%E8%A5%BF%E5%AE%89%E6%97%97%E8%88%B0%E5%BA%97)&city=610100",
+          "name": {
+            "th": "สวนเล่นถ้ำทั่นต้ง หมินเล่อหยวน",
+            "en": "Tandong Gongchang Cave Play Park (Minle Yuan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "หมินเล่อหยวนวั่นต๋า ชั้น 2 ถนนเจี่ยฟ่าง ซินเฉิง",
+            "en": "Minle Yuan Wanda 2F, Jiefang Road, Xincheng"
+          },
+          "what": {
+            "th": "สวนเล่นผจญภัยในถ้ำแบบในร่ม มีงานประดิษฐ์",
+            "en": "An indoor cave-adventure play park with crafts"
+          },
+          "why": {
+            "th": "เล่นผจญภัยใกล้เมืองเก่า มีล็อกเกอร์",
+            "en": "Adventure play near the old city, with lockers"
+          },
+          "q": "探洞工场 民乐园万达, 解放路111号, 新城区, 西安",
+          "ok": "2026-11"
         }
     ]
     },
