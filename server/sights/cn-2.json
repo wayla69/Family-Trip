@@ -8071,6 +8071,191 @@
           },
           "q": "广州博物馆 镇海楼, 镇海路9号, 越秀区, 广州",
           "ok": "2026-11"
+        },
+        {
+          "local": "疯狂的麦咭官方体验馆 广州店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E7%96%AF%E7%8B%82%E7%9A%84%E9%BA%A6%E5%92%AD%E5%AE%98%E6%96%B9%E4%BD%93%E9%AA%8C%E9%A6%86(%E5%B9%BF%E5%B7%9E%E5%BA%97)&city=440100",
+          "name": {
+            "th": "ศูนย์ประสบการณ์รายการ Crazy Magic พานอวี้",
+            "en": "Crazy Magic Show Experience (Panyu)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหงจวิ้น จงชุน พานอวี้",
+            "en": "Hongjun Street, Zhongcun, Panyu"
+          },
+          "what": {
+            "th": "ห้องปริศนาธีมกว่าสิบห้อง จำลองจากเกมโชว์ทีวีสำหรับเด็ก",
+            "en": "A dozen themed puzzle rooms copied from a children's TV game show"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กหกขวบสนุกมากทั้งวัน เหมาะกับเด็กวัยเรียน",
+            "en": "Reviewers say a six-year-old had a wonderful day; for school-age children"
+          },
+          "q": "疯狂的麦咭官方体验馆, 宏峻街6号, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "咏声动画科技馆",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%92%8F%E5%A3%B0%E5%8A%A8%E7%94%BB%E7%A7%91%E6%8A%80%E9%A6%86&city=440100",
+          "name": {
+            "th": "หอวิทยาศาสตร์แอนิเมชันหย่งเซิง",
+            "en": "Wingsound Animation Science Hall"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เฉ่าฟางเหวย ถนนหนานหัวตะวันออก ไห่จู",
+            "en": "Caofangwei, Nanhua East Road, Haizhu"
+          },
+          "what": {
+            "th": "หอวิทยาศาสตร์ของสตูดิโอแอนิเมชัน มี VR รถเด็ก และงานประดิษฐ์",
+            "en": "An animation studio's science hall with VR, children's cars and crafts"
+          },
+          "why": {
+            "th": "ระบุว่ามี VR และเครื่องเล่นสำหรับเด็ก",
+            "en": "Tagged for children's VR and rides"
+          },
+          "q": "咏声动画科技馆, 南华东路草芳围2号, 海珠区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "反弹蹦床公园 优托邦奥体店",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8F%8D%E5%BC%B9%E8%B9%A6%E5%BA%8A%E5%85%AC%E5%9B%AD(%E4%BC%98%E6%89%98%E9%82%A6%C2%B7%E5%A5%A5%E4%BD%93%E8%B6%85%E7%BA%A7mall%E5%BA%97)&city=440100",
+          "name": {
+            "th": "สวนแทรมโพลีนรีบาวด์ โอลิมปิกสปอร์ตมอลล์",
+            "en": "Rebound Trampoline Park (Olympic Sports mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างโอลิมปิกสปอร์ต ชั้น 1 เทียนเหอ",
+            "en": "Olympic Sports Shopping Centre F1, Tianhe"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนขนาดใหญ่ มีปราสาทปีนป่าย เขาวงกตรังผึ้ง และบ่อบอล",
+            "en": "A large trampoline park with a climbing castle, a honeycomb maze and ball pits"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ากว้าง บุนุ่ม และเด็กชอบมาก",
+            "en": "Reviewers say it is big, padded and children love it"
+          },
+          "q": "反弹蹦床公园 优托邦, 奥体南路12号, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大夫山WAWA赶海亲子乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%A4%AB%E5%B1%B1WAWA%E8%B5%B6%E6%B5%B7%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนเล่นชายหาดจำลอง WAWA ต้าฟูซาน",
+            "en": "Dafushan WAWA Beach Play Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ดาฟูซานครีเอทีฟพาร์ก พานอวี้",
+            "en": "Dafushan Creative Park, Panyu"
+          },
+          "what": {
+            "th": "ชายหาดจำลองให้เด็กเล็กขุดหาหอย มีทรายและสัตว์เล็ก",
+            "en": "A pretend beach for small children to dig for shellfish, with sand and small animals"
+          },
+          "why": {
+            "th": "ทำมาสำหรับเด็ก 0–12 ขวบ ผู้รีวิวบอกให้เตรียมเสื้อผ้าเปลี่ยน",
+            "en": "Made for ages 0–12; reviewers say bring a change of clothes"
+          },
+          "q": "大夫山WAWA赶海亲子乐园, 大夫山文体创意产业园, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "欢乐舟主题乐园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%AC%A2%E4%B9%90%E8%88%9F%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนสนุกฮวนเล่อโจว ไป๋หยวิ๋น",
+            "en": "Huanlezhou Play Park (Baiyun)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อันหัวฮุ่ย ชั้น 1 ถนนไป๋หยวิ๋นเหนือ ไป๋หยวิ๋น",
+            "en": "Anhuahui 1F, Baiyun Avenue North, Baiyun"
+          },
+          "what": {
+            "th": "สวนสนุกเด็กทั้งในร่มและกลางแจ้ง มีโซนเล่นน้ำและรถไฟเล็ก",
+            "en": "A children's park indoors and out, with water play and a little train"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ามีให้ทั้งเด็กเล็กและเด็กโต มีห้องแม่และเด็ก",
+            "en": "Reviewers say there is something for toddlers and older children; a baby room"
+          },
+          "q": "欢乐舟主题乐园, 白云大道北888号安华汇, 白云区, 广州",
+          "ok": "2026-11"
         }
       ]
     }
