@@ -2964,6 +2964,170 @@
           "q": "Ishiteji Temple, Matsuyama",
           "ok": "2026-11",
           "src": "https://shikoku-tourism.com/en/see-and-do/10014"
+        },
+        {
+          "name": {
+            "en": "Sakanoue no Kumo Museum",
+            "th": "พิพิธภัณฑ์ซากาโนอุเอะโนะคุโม"
+          },
+          "local": "坂の上の雲ミュージアム",
+          "kind": "museum",
+          "area": {
+            "en": "Matsuyama city centre",
+            "th": "ใจกลางเมืองมัตสึยามะ"
+          },
+          "what": {
+            "en": "A museum on the novel 'Clouds over the Hill', in a building by Tadao Ando, with Meiji-era items and a new theme exhibition each year",
+            "th": "พิพิธภัณฑ์เกี่ยวกับนิยาย 'เมฆเหนือเนินเขา' ในอาคารออกแบบโดยทาดาโอะ อันโดะ มีข้าวของสมัยเมจิและนิทรรศการธีมใหม่ทุกปี"
+          },
+          "why": {
+            "en": "A free second-floor library, Kodomo Hon no Mori Matsuyama, opened in July 2025",
+            "th": "ชั้นสองมีห้องสมุดเด็กฟรี 'โคโดโมะ ฮง โนะ โมริ มัตสึยามะ' เปิดเดือนกรกฎาคม 2025"
+          },
+          "tip": {
+            "en": "Open 09:00–18:30; closed Mondays in principle",
+            "th": "เปิด 09:00–18:30 โดยหลักการปิดวันจันทร์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sakanoue no Kumo Museum, Matsuyama, Ehime, Japan",
+          "ok": "2026-11",
+          "src": "https://www.walkerplus.com/spot/ar0938s64214/"
+        },
+        {
+          "name": {
+            "en": "Dogo Park",
+            "th": "สวนโดโกะ"
+          },
+          "local": "道後公園",
+          "kind": "park",
+          "area": {
+            "en": "Dogo",
+            "th": "โดโกะ"
+          },
+          "what": {
+            "en": "A park on the Yuzuki Castle ruins, with moats, earthen ramparts, a look-out over the plain and a restored samurai house",
+            "th": "สวนบนซากปราสาทยูซึกิ มีคูน้ำ เชิงเทินดิน จุดชมวิวเหนือที่ราบ และบ้านซามูไรที่บูรณะแล้ว"
+          },
+          "why": {
+            "en": "Open ground to walk and run on, a look-out, and cherry blossom in spring",
+            "th": "พื้นที่โล่งให้เดินและวิ่ง มีจุดชมวิว และซากุระบานในฤดูใบไม้ผลิ"
+          },
+          "tip": {
+            "en": "The park is open 24 hours; the museum in it is closed on Mondays (next day if a holiday) and at New Year",
+            "th": "สวนเปิดตลอด 24 ชั่วโมง พิพิธภัณฑ์ในสวนปิดวันจันทร์ (วันถัดไปหากตรงวันหยุด) และช่วงปีใหม่"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Dogo Park, Yuzuki Castle ruins, Dogo, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.walkerplus.com/spot/ar0938s44880/"
+        },
+        {
+          "name": {
+            "en": "Yuzuki Castle Museum",
+            "th": "พิพิธภัณฑ์ปราสาทยูซึกิ"
+          },
+          "local": "湯築城資料館",
+          "kind": "museum",
+          "area": {
+            "en": "Dogo Park",
+            "th": "สวนโดโกะ"
+          },
+          "what": {
+            "en": "A small museum in Dogo Park on the history of Yuzuki Castle and its lords",
+            "th": "พิพิธภัณฑ์เล็กๆ ในสวนโดโกะ เล่าประวัติปราสาทยูซึกิและเจ้าผู้ครอง"
+          },
+          "why": {
+            "en": "Indoors, free, and a short visit between walks in the park",
+            "th": "อยู่ในร่ม ฟรี แวะสั้นๆ ระหว่างเดินเล่นในสวน"
+          },
+          "tip": {
+            "en": "Closed Mondays (next day if a holiday) and 29 Dec–3 Jan",
+            "th": "ปิดวันจันทร์ (วันถัดไปหากตรงวันหยุด) และ 29 ธ.ค.–3 ม.ค."
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Yuzuki Castle Museum, Dogo Park, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.walkerplus.com/spot/ar0938s44880/"
+        },
+        {
+          "name": {
+            "en": "Shiki Memorial Museum",
+            "th": "พิพิธภัณฑ์อนุสรณ์ชิกิ"
+          },
+          "local": "松山市立子規記念博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Dogo Park",
+            "th": "สวนโดโกะ"
+          },
+          "what": {
+            "en": "A museum on the haiku poet Masaoka Shiki, with his haiku, tanka, novels and watercolours",
+            "th": "พิพิธภัณฑ์เกี่ยวกับกวีไฮกุ มาซาโอกะ ชิกิ มีไฮกุ ทังกะ นิยาย และภาพสีน้ำของเขา"
+          },
+          "why": {
+            "en": "Indoors, in a corner of Dogo Park, so it pairs with a walk round the grounds",
+            "th": "อยู่ในร่ม ในมุมหนึ่งของสวนโดโกะ ไปคู่กับการเดินเล่นรอบสวนได้"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shiki Memorial Museum, Dogo Park, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.walkerplus.com/spot/ar0938s44880/"
         }
       ]
     },
@@ -3576,6 +3740,292 @@
           "q": "Saiku Historical Museum, Meiwa, Mie, Japan",
           "ok": "2026-11",
           "src": "https://www.kankomie.or.jp/spot/3205.html"
+        },
+        {
+          "name": {
+            "en": "Sengukan Museum",
+            "th": "พิพิธภัณฑ์เซ็งกูกัง"
+          },
+          "local": "せんぐう館",
+          "kind": "museum",
+          "area": {
+            "en": "Toyokawa-cho, Ise (5 min walk from Ise-shi Station)",
+            "th": "โทโยกาวะโจ อิเสะ (เดิน 5 นาทีจากสถานีอิเสะชิ)"
+          },
+          "what": {
+            "en": "A museum showing some of the tools, ritual robes and sacred treasures used in the 20-year rebuilding of Ise Shrine",
+            "th": "พิพิธภัณฑ์จัดแสดงเครื่องมือ ชุดพิธี และสมบัติศักดิ์สิทธิ์บางส่วนที่ใช้ในการสร้างศาลเจ้าอิเสะใหม่ทุก 20 ปี"
+          },
+          "why": {
+            "en": "Indoors, and an easy walk from Ise-shi Station; the models and displays give little ones something to look at",
+            "th": "อยู่ในร่ม เดินจากสถานีอิเสะชิไม่ไกล มีโมเดลและนิทรรศการให้เด็กเล็กดู"
+          },
+          "tip": {
+            "en": "Open 09:00–16:30 (last entry 16:00); closed the 2nd and 4th Tuesday",
+            "th": "เปิด 09:00–16:30 (เข้าได้ถึง 16:00) ปิดวันอังคารที่ 2 และ 4"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥300 adults · ¥100 junior and middle school",
+            "th": "≈ ¥300 ผู้ใหญ่ · ¥100 เด็กประถมและมัธยมต้น"
+          },
+          "book": "none",
+          "q": "Sengukan, Toyokawa-cho, Ise, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/spot/21814"
+        },
+        {
+          "name": {
+            "en": "Toba Sea-Folk Museum",
+            "th": "พิพิธภัณฑ์วิถีชีวิตชาวทะเลโทบะ"
+          },
+          "local": "鳥羽市立海の博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Urami-cho, Toba (bus 35 min from Toba)",
+            "th": "อุรามิโจ โทบะ (นั่งรถบัส 35 นาทีจากโทบะ)"
+          },
+          "what": {
+            "en": "A museum about life by the sea in Toba, with a large collection of fishing and diving tools, dioramas and wooden boats",
+            "th": "พิพิธภัณฑ์เกี่ยวกับชีวิตริมทะเลของโทบะ มีเครื่องมือประมง เครื่องมือดำน้ำ ฉากจำลอง และเรือไม้จำนวนมาก"
+          },
+          "why": {
+            "en": "Indoors, with 90 wooden boats to look at and a small fishing village model; a good rainy-day stop near Toba",
+            "th": "อยู่ในร่ม มีเรือไม้ 90 ลำและโมเดลหมู่บ้านชาวประมงเล็กๆ เหมาะวันฝนตกแถวโทบะ"
+          },
+          "tip": {
+            "en": "Open 09:00–17:00 (Mar–Nov), 09:00–16:30 (Dec–Feb); the boat stores close at 16:00",
+            "th": "เปิด 09:00–17:00 (มี.ค.–พ.ย.), 09:00–16:30 (ธ.ค.–ก.พ.) โรงเก็บเรือปิด 16:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥800 adults (18+) · ¥400 university students and under",
+            "th": "≈ ¥800 ผู้ใหญ่ (18 ปีขึ้นไป) · ¥400 นักศึกษาและเด็กเล็กกว่า"
+          },
+          "book": "none",
+          "q": "Toba Sea-Folk Museum, Urami-cho, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/spot/3179"
+        },
+        {
+          "name": {
+            "en": "Stone Hunter Ise-Shima",
+            "th": "สโตนฮันเตอร์ อิเสะ-ชิมะ"
+          },
+          "local": "ストーンハンター伊勢志摩",
+          "kind": "play",
+          "area": {
+            "en": "Toba, near Toba Station",
+            "th": "โทบะ ใกล้สถานีโทบะ"
+          },
+          "what": {
+            "en": "A gem-hunting adventure facility with mining and river panning experiences, a dinosaur mini museum and stone workshop",
+            "th": "สถานที่ล่าอัญมณีผจญภัย มีกิจกรรมขุดแร่ ร่อนหิน มิวเซียมไดโนเสาร์เล็กๆ และเวิร์กชอปหิน"
+          },
+          "why": {
+            "en": "Indoor experiences a child can take part in; you keep what you find, such as the cut stones and ammonite fossil cleaning",
+            "th": "กิจกรรมในร่มที่เด็กเข้าร่วมได้ เก็บของที่หาได้กลับบ้าน เช่น หินเจียระไนและการขัดฟอสซิลแอมโมไนต์"
+          },
+          "tip": {
+            "en": "Open 10:00–16:30 on weekdays, 09:30–16:30 at weekends and holidays; closed Wednesdays and Thursdays except in busy seasons; mine bookings online only, the day before at the latest",
+            "th": "เปิด 10:00–16:30 วันธรรมดา 09:30–16:30 เสาร์อาทิตย์และวันหยุด ปิดวันพุธและพฤหัสบดี เว้นช่วงคนมาก จองเหมืองออนไลน์เท่านั้น ล่วงหน้าอย่างน้อยหนึ่งวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Panning ≈ ¥800 per person (20 min) · mine ≈ ¥2,400 per area for up to 3",
+            "th": "ร่อนหิน ≈ ¥800 ต่อคน (20 นาที) · เหมือง ≈ ¥2,400 ต่อพื้นที่ สูงสุด 3 คน"
+          },
+          "book": "rec",
+          "q": "Stone Hunter Ise-Shima, 1-308-1 Toba, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/spot/24483"
+        },
+        {
+          "name": {
+            "en": "Shima Nature School",
+            "th": "โรงเรียนธรรมชาติชิมะ"
+          },
+          "local": "志摩自然学校",
+          "kind": "nature",
+          "area": {
+            "en": "Ago Bay, Shima City",
+            "th": "อ่าวอาโกะ เมืองชิมะ"
+          },
+          "what": {
+            "en": "A nature school on Ago Bay running sea kayaks, water balls and craft using shells and pearls from the bay",
+            "th": "โรงเรียนธรรมชาติริมอ่าวอาโกะ มีกิจกรรมเรือคายัคทะเล น้ำลูกบอล และงานฝีมือจากเปลือกหอยและไข่มุกในอ่าว"
+          },
+          "why": {
+            "en": "The bay is calm and the programmes suit small children as well as older ones",
+            "th": "อ่าวสงบ โปรแกรมเหมาะกับเด็กเล็กและเด็กโต"
+          },
+          "tip": {
+            "en": "Some programmes are limited at present; check the official site before you go",
+            "th": "บางโปรแกรมจำกัดอยู่ในตอนนี้ เช็กเว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shima Nature School, Ago Bay, Shima, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/spot/14774"
+        },
+        {
+          "name": {
+            "en": "Shima Green Adventure",
+            "th": "ชิมะกรีนแอดเวนเจอร์"
+          },
+          "local": "志摩グリーンアドベンチャー",
+          "kind": "play",
+          "area": {
+            "en": "Shima City",
+            "th": "เมืองชิมะ"
+          },
+          "what": {
+            "en": "An activity resort in Shima City opened in July 2024, with zip-line dives, an outdoor survival game and an area to fly your own drone",
+            "th": "รีสอร์ตกิจกรรมในเมืองชิมะ เปิดเดือนกรกฎาคม 2024 มีซิปไลน์ เกมเอาตัวรอดกลางแจ้ง และพื้นที่บินโดรนเอง"
+          },
+          "why": {
+            "en": "Rides and games in the open air; the page lists a kids' price for ages 6 to 11",
+            "th": "เครื่องเล่นและเกมกลางแจ้ง หน้าเว็บมีราคาเด็กสำหรับอายุ 6–11 ปี"
+          },
+          "tip": {
+            "en": "Some rides have an age limit (from 10); opening days and hours change, so check first",
+            "th": "บางเครื่องเล่นมีกำหนดอายุ (10 ปีขึ้นไป) วันและเวลาเปิดเปลี่ยนได้ เช็กก่อนไป"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Shima Green Adventure, Shima City, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/report/1846"
+        },
+        {
+          "name": {
+            "en": "Tomoyama Park",
+            "th": "สวนโทโมยามะ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Shima City",
+            "th": "เมืองชิมะ"
+          },
+          "what": {
+            "en": "A park on Shima's rias coast with views over the coastline and the uninhabited islands",
+            "th": "สวนบนชายฝั่งริอัสของชิมะ มองเห็นแนวชายฝั่งและเกาะร้าง"
+          },
+          "why": {
+            "en": "Open views of the coast and islands for a walk and a rest",
+            "th": "วิวชายฝั่งและเกาะโล่งๆ สำหรับเดินเล่นและพัก"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tomoyama Park, Shima City, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.iseshima-kanko.jp/en/theme/theme_2"
+        },
+        {
+          "name": {
+            "en": "Sato-umi-an Ama Hut",
+            "th": "ซาโตะอุมิอัน กระท่อมสาวประดาน้ำ"
+          },
+          "local": "海女小屋体験施設 さとうみ庵",
+          "kind": "culture",
+          "area": {
+            "en": "Aizusa, Toba",
+            "th": "ไอซุซะ โทบะ"
+          },
+          "what": {
+            "en": "An ama diver's hut where the divers grill fresh seafood on a hearth in front of you and talk about their work",
+            "th": "กระท่อมของสาวประดาน้ำอามะ ที่ย่างอาหารทะเลสดบนเตาตรงหน้าและเล่าเรื่องงานของพวกเธอ"
+          },
+          "why": {
+            "en": "The fish is grilled in front of the table and the divers tell stories you do not often hear",
+            "th": "ย่างปลาตรงหน้าโต๊ะ และสาวประดาน้ำเล่าเรื่องที่ไม่ค่อยได้ฟัง"
+          },
+          "tip": {
+            "en": "Groups of three or more book at least two days ahead; hours are irregular (closed on irregular days, and 31 Dec–3 Jan)",
+            "th": "กลุ่ม 3 คนขึ้นไปจองล่วงหน้าอย่างน้อย 2 วัน เวลาเปิดไม่แน่นอน (ปิดไม่เป็นวัน และ 31 ธ.ค.–3 ม.ค.)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥3,850 basic course (3 or more people) · ≈ ¥5,500 with Ise lobster or abalone option",
+            "th": "≈ ¥3,850 คอร์สพื้นฐาน (3 คนขึ้นไป) · ≈ ¥5,500 แบบเพิ่มกุ้งมังกรอิเสะหรือเป๋าฮื้อ"
+          },
+          "book": "req",
+          "q": "Sato-umi-an, Aizusa, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/article/32061/"
         }
       ]
     },

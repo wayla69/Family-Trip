@@ -2235,6 +2235,46 @@
           "q": "Spa World, Naniwa-ku, Osaka",
           "ok": "2026-11",
           "src": "https://rurubu.jp/andmore/article/3428"
+        },
+        {
+          "name": {
+            "en": "Okashi Museum Tempozan",
+            "th": "พิพิธภัณฑ์ขนมเท็มโปซัน"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Tempozan, Minato Ward (5F, Osaka Bunka-kan Tempozan)",
+            "th": "เท็มโปซัน เขตมินาโตะ (ชั้น 5 โอซากะบุงกะกัง เท็มโปซัน)"
+          },
+          "what": {
+            "en": "A hands-on sweets museum: the HAPPY zone shows sweets art from Expo 2025 Osaka, the LUCKY zone is a play area with ring toss, shooting galleries and an omikuji fortune",
+            "th": "พิพิธภัณฑ์ขนมแบบลงมือทำ โซน HAPPY แสดงงานศิลป์ขนมจากงานเอ็กซ์โป 2025 โอซากะ โซน LUCKY เป็นพื้นที่เล่นมีโยนห่วง ยิงเป้า และเซียมซี"
+          },
+          "why": {
+            "en": "The LUCKY zone is a play-focused area with ring toss and shooting galleries, and sweets from all over Japan",
+            "th": "โซน LUCKY เน้นการเล่น มีโยนห่วงและยิงเป้า และขนมจากทั่วญี่ปุ่น"
+          },
+          "tip": {
+            "en": "Open 09:30–20:00 (last admission 19:00), year-round except 1–2 January",
+            "th": "เปิด 09:30–20:00 (เข้าได้ถึง 19:00) ตลอดปี ยกเว้น 1–2 มกราคม"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "≈ ¥1,000 adults · ≈ ¥200 children (junior high and older pay the adult rate)",
+            "th": "≈ ¥1,000 ผู้ใหญ่ · ≈ ¥200 เด็ก (มัธยมต้นขึ้นไปจ่ายราคาผู้ใหญ่)"
+          },
+          "book": "none",
+          "q": "Okashi Museum Tempozan, Kaigandori, Minato Ward, Osaka, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/18646/"
         }
     ]
     },
