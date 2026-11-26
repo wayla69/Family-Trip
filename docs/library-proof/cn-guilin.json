@@ -342,6 +342,73 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals, high chairs and family restaurants in Guilin and Yangshuo, and for family sights; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Unicorn Western Restaurant (Guilin International Hotel)",
+          "page_name": "独角兽西餐厅",
+          "src": "https://www.amap.com/search?query=%E7%8B%AC%E8%A7%92%E5%85%BD%E8%A5%BF%E9%A4%90%E5%8E%85&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
+          "map": "Amap: open, not marked closed, newest review 2026-11-04",
+          "quote": "亲子友好 · 店里还养了蜥蜴…看小朋友和这些神奇小动物互动"
+        },
+        {
+          "name": "Fisherman Music Restaurant (Yangshuo)",
+          "page_name": "渔夫音乐餐厅",
+          "src": "https://www.amap.com/search?query=%E6%B8%94%E5%A4%AB%E9%9F%B3%E4%B9%90%E9%A4%90%E5%8E%85&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "有宝宝椅 · 儿童友好"
+        },
+        {
+          "name": "Julong Pool Cave",
+          "page_name": "聚龙潭",
+          "src": "https://www.amap.com/search?query=%E8%81%9A%E9%BE%99%E6%BD%AD&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "亲子户外 · 1.2米以下儿童免票 · 挺值得带老人孩子过来看的"
+        },
+        {
+          "name": "Hongxi Grand Canyon",
+          "page_name": "桂林红溪大峡谷",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E7%BA%A2%E6%BA%AA%E5%A4%A7%E5%B3%A1%E8%B0%B7&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "亲子户外 · 和小朋友玩雪不要太开心"
+        },
+        {
+          "name": "Yao Mountain",
+          "page_name": "桂林尧山景区",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E5%B0%A7%E5%B1%B1%E6%99%AF%E5%8C%BA&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-12",
+          "map": "Amap: open, not marked closed, newest review 2026-11-12",
+          "quote": "亲子户外 · 老人孩子可以索道 · 1.2米宝宝都能轻松登顶"
+        },
+        {
+          "name": "Bajiaozhai Danxia Park (Ziyuan)",
+          "page_name": "中国铁建桂林丹霞·八角寨景区",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E9%93%81%E5%BB%BA%E6%A1%82%E6%9E%97%E4%B8%B9%E9%9C%9E%C2%B7%E5%85%AB%E8%A7%92%E5%AF%A8%E6%99%AF%E5%8C%BA&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "亲子户外 · 国庆带娃 · 全木栈道好走，带娃没压力"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "桂林粥城 (杉湖)",
+          "why": "its review about children says the children did not eat the set meal"
+        },
+        {
+          "name": "清欢餐厅, 渔坊农家菜, 轩润土菜馆, 缘元园私房菜, 萧记煮粉",
+          "why": "five reviews or fewer, or none from the last six months"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
