@@ -1,13 +1,15 @@
-// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default /tmp/mb-shots).
+// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default: a fresh folder of our own under the OS temp dir, printed at the start).
 import { chromium } from 'playwright';
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { todayLost } from './today-lost.mjs';
 
 const BASE = process.env.BASE, CODE = process.env.CODE;
-const OUT = process.env.SHOTS || '/tmp/mb-shots';
-fs.mkdirSync(OUT, { recursive: true });
+const OUT = process.env.SHOTS || fs.mkdtempSync(path.join(os.tmpdir(), 'mb-shots-'));   // a folder of our own when none is given (CodeQL: no fixed path in /tmp)
+if (process.env.SHOTS) fs.mkdirSync(OUT, { recursive: true });
+console.log('screenshots →', OUT);
 const exe = process.env.CHROME || (fs.existsSync(chromium.executablePath()) ? undefined : '/opt/pw-browsers/chromium-1194/chrome-linux/chrome');
 let failures = 0;
 const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else console.log('  ok  ', m); };
