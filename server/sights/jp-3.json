@@ -409,6 +409,121 @@
           },
           "q": "Children's Forest Wanpaku Land, 4377-1 Kuno, Odawara",
           "ok": "2026-11"
+        },
+        {
+          "local": "箱根からくり美術館",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ 800 เยน เด็ก 500 เยน",
+            "en": "≈ adults ¥800, children ¥500"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "name": {
+            "th": "พิพิธภัณฑ์กล่องกลไกฮาโกเนะ",
+            "en": "Hakone Karakuri Museum (puzzle boxes)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ฮาโกเนะมาจิ ข้างด่านฮาโกเนะ",
+            "en": "Hakone-machi, beside the Hakone checkpoint"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์คาราคุริ กล่องกลไกแบบญี่ปุ่นดั้งเดิม",
+            "en": "A museum of karakuri, Japan's traditional trick puzzle boxes"
+          },
+          "why": {
+            "th": "เด็กชอบมุมไขกลไกเปิดกล่อง",
+            "en": "Children love the corner where you solve the tricks to open a puzzle box"
+          },
+          "q": "Hakone Karakuri Museum, Hakone 17, Hakone",
+          "ok": "2026-11"
+        },
+        {
+          "local": "箱根クラフトハウス",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 1,100–4,400 เยน ตามกิจกรรม",
+            "en": "≈ ¥1,100–4,400 by craft"
+          },
+          "book": "rec",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "name": {
+            "th": "ฮาโกเนะคราฟต์เฮาส์",
+            "en": "Hakone Craft House"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ในสวนโกระ โกระ",
+            "en": "Inside Gōra Park, Gōra"
+          },
+          "what": {
+            "th": "โรงทำงานฝีมือ ลองทำได้กว่า 20 อย่าง เป่าแก้ว ปั้นดินเผา ลูกปัดแก้ว พ่นทราย",
+            "en": "A workshop with over 20 hands-on crafts: glass blowing, pottery, glass beads, sandblasting"
+          },
+          "why": {
+            "th": "เด็กได้ทำของชิ้นเองกลับบ้าน",
+            "en": "Children make something of their own to take home"
+          },
+          "tip": {
+            "th": "ต้องเสียค่าเข้าสวนโกระ",
+            "en": "Gōra Park admission applies"
+          },
+          "q": "Hakone Craft House, Gora Park, Hakone",
+          "ok": "2026-11"
+        },
+        {
+          "local": "箱根ビジターセンター",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "name": {
+            "th": "ศูนย์บริการนักท่องเที่ยวฮาโกเนะ",
+            "en": "Hakone Visitor Center"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "โมโตฮาโกเนะ ริมทะเลสาบอาชิ",
+            "en": "Motohakone 164, by Lake Ashi"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้ธรรมชาติของฮาโกเนะ เข้าฟรี",
+            "en": "A free nature centre about Hakone's land and wildlife"
+          },
+          "why": {
+            "th": "มีแบบจำลองภูมิประเทศฮาโกเนะทั้งหมดที่เด็กชอบ",
+            "en": "A big relief model of the whole of Hakone that children enjoy"
+          },
+          "q": "Hakone Visitor Center, Motohakone 164, Hakone",
+          "ok": "2026-11"
         }
       ]
     },
