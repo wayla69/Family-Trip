@@ -284,6 +284,49 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Shenzhen; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Gangli Hong Kong Restaurant (Raffles City, Nanshan)",
+          "page_name": "港丽餐厅(来福士店)",
+          "src": "https://www.amap.com/search?query=%E6%B8%AF%E4%B8%BD%E9%A4%90%E5%8E%85(%E6%9D%A5%E7%A6%8F%E5%A3%AB%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-07",
+          "map": "Amap: open, not marked closed, newest review 2026-10-07",
+          "quote": "家庭聚餐 · 儿童友好"
+        },
+        {
+          "name": "Fat Kee Hong Kong Cafe (Houlang, Longhua)",
+          "page_name": "香港发记明星茶餐厅(后浪新天地店)",
+          "src": "https://www.amap.com/search?query=%E9%A6%99%E6%B8%AF%E5%8F%91%E8%AE%B0%E6%98%8E%E6%98%9F%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%90%8E%E6%B5%AA%E6%96%B0%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "儿童餐 · 周末带孩子过来打卡，店里氛围舒服，店员态度温和"
+        },
+        {
+          "name": "Xingdian Cafe (Fenghuang City)",
+          "page_name": "星店餐厅(凤凰城店)",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E5%BA%97%E9%A4%90%E5%8E%85(%E5%87%A4%E5%87%B0%E5%9F%8E%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "宝宝座椅 · 儿童友好"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "京味张 (皇庭广场)",
+          "why": "only a toy given away; nothing about children eating there"
+        },
+        {
+          "name": "永利来, 维园 (盛平)",
+          "why": "one review only / newest review March 2026"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
