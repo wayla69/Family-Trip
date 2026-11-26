@@ -822,3 +822,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +1 (Buffalo Wings & Rings, Aqaba). Proof in `docs/library-proof/jo-petra.json`.
 
 - **25 Nov 2026, Hangzhou (new town)**: 8, from Dianping shop pages (owner's China rule ข), each checked on Amap. Proof in `docs/library-proof/cn-hangzhou.json`.
+
+- **26 Nov 2026, Hangzhou**: +4 from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-hangzhou.json`.
