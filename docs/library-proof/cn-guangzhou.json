@@ -661,6 +661,57 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Yuexiu and Panyu, Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Xiangyu Junhe Hunan Kitchen (Wanbo, Panyu)",
+          "page_name": "湘语君和·湘菜(番禺万博店)",
+          "src": "https://www.amap.com/search?query=%E6%B9%98%E8%AF%AD%E5%90%9B%E5%92%8C%C2%B7%E6%B9%98%E8%8F%9C(%E7%95%AA%E7%A6%BA%E4%B8%87%E5%8D%9A%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-14",
+          "map": "Amap: open, not marked closed, newest review 2026-09-14",
+          "quote": "儿童餐 · 家庭聚餐"
+        },
+        {
+          "name": "Xinxi Restaurant (Qiaonan, Panyu)",
+          "page_name": "新禧餐厅",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E7%A6%A7%E9%A4%90%E5%8E%85&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "家庭聚餐 · 有宝宝椅 · 儿童套餐 · 适合家庭"
+        },
+        {
+          "name": "Yijiaren Lingnan Courtyard (Panyu)",
+          "page_name": "邑家人·岭南四合院",
+          "src": "https://www.amap.com/search?query=%E9%82%91%E5%AE%B6%E4%BA%BA%C2%B7%E5%B2%AD%E5%8D%97%E5%9B%9B%E5%90%88%E9%99%A2&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "家庭聚会友好 · 儿童友好 · 网红菠萝包…小朋友超爱"
+        },
+        {
+          "name": "Dongweiyuan Hong Kong Cafe (Fanhua, Panyu)",
+          "page_name": "洞味圆茶餐厅(繁华店)",
+          "src": "https://www.amap.com/search?query=%E6%B4%9E%E5%91%B3%E5%9C%86%E8%8C%B6%E9%A4%90%E5%8E%85(%E7%B9%81%E5%8D%8E%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "儿童套餐 · 带娃来洞味园点了叻沙"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "融合四喜茶餐厅",
+          "why": "eleven reviews only"
+        },
+        {
+          "name": "有涩酒庄",
+          "why": "only a hashtag about children, no review"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
