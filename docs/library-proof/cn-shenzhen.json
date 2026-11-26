@@ -430,6 +430,45 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Futian, Shenzhen; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Putien (Ping An Finance Centre)",
+          "page_name": "莆田餐厅PUTIEN(平安金融中心店)",
+          "src": "https://www.amap.com/search?query=%E8%8E%86%E7%94%B0%E9%A4%90%E5%8E%85PUTIEN(%E5%B9%B3%E5%AE%89%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "儿童餐免费 · 店里还给小孩准备了免费儿童餐，这点很贴心"
+        },
+        {
+          "name": "Yunhaiyao Yunnan (Huaqiangbei)",
+          "page_name": "云海肴云南菜(华强北茂业天地店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%B5%B7%E8%82%B4%E4%BA%91%E5%8D%97%E8%8F%9C(%E5%8D%8E%E5%BC%BA%E5%8C%97%E8%8C%82%E4%B8%9A%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "儿童餐 · 儿童套餐、餐具、 一次性围兜、宝宝餐椅，对带娃家庭很友好"
+        },
+        {
+          "name": "Zheteng Cantonese Claypots (Excellence Intown)",
+          "page_name": "啫腾·粤菜啫啫煲(福田卓越INTOWN店)",
+          "src": "https://www.amap.com/search?query=%E5%95%AB%E8%85%BE%C2%B7%E7%B2%A4%E8%8F%9C%E5%95%AB%E5%95%AB%E7%85%B2(%E7%A6%8F%E7%94%B0%E5%8D%93%E8%B6%8AINTOWN%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
+          "map": "Amap: open, not marked closed, newest review 2026-10-25",
+          "quote": "儿童餐 · 宝宝爱吃鸡柳"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "宝珠有请新中式饭厅",
+          "why": "its review about children is a complaint about the food"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
