@@ -5118,6 +5118,117 @@
           },
           "q": "Hione潮玩运动馆, 维港十字街, 永定区, 张家界",
           "ok": "2026-11"
+        },
+        {
+          "local": "张家界千古情景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%8D%83%E5%8F%A4%E6%83%85%E6%99%AF%E5%8C%BA&city=430800",
+          "name": {
+            "th": "สวนและโชว์เชียนกู่ฉิง จางเจียเจี้ย",
+            "en": "Zhangjiajie Romance Park and Show"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนเฉาหยาง อู่หลิงหยวน",
+            "en": "Chaoyang Road, Wulingyuan"
+          },
+          "what": {
+            "th": "สวนถนนโบราณและโชว์พื้นบ้าน มีการแสดงใหญ่ตอนค่ำ",
+            "en": "A park of old streets and folk shows with a big evening performance"
+          },
+          "why": {
+            "th": "เดินบนพื้นราบทั้งหมด ไม่ต้องปีน เด็กสูงไม่ถึง 1.2 ม. ดูโชว์ฟรี",
+            "en": "All flat walking, no climbing; children under 1.2 m see the show free"
+          },
+          "q": "张家界千古情景区, 朝阳路与文丰路交叉口, 武陵源区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大庸府城",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%BA%B8%E5%BA%9C%E5%9F%8E&city=430800",
+          "name": {
+            "th": "เมืองเก่าต้าหยง",
+            "en": "Dayong Old Town"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนเจี่ยฟ่าง หย่งติ้ง (ใจกลางเมือง)",
+            "en": "Jiefang Road, Yongding (city centre)"
+          },
+          "what": {
+            "th": "เมืองเก่าที่สร้างใหม่ ถนนสไตล์ถู่เจีย เปิดไฟยามค่ำ",
+            "en": "A rebuilt old town of Tujia-style streets, lit up at night"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว เดินเล่นตอนค่ำในเมืองหลังเที่ยวภูเขา",
+            "en": "Tagged for families; an evening walk in town after the mountains"
+          },
+          "q": "大庸府城, 解放路, 永定区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "物外田园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%89%A9%E5%A4%96%E7%94%B0%E5%9B%AD&city=430800",
+          "name": {
+            "th": "แคมป์อู้ไว่เถียนหยวน อู่หลิงหยวน",
+            "en": "Wuwai Tianyuan Camp (Wulingyuan)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ใกล้ประตูกลางเขตทิวทัศน์อู่หลิงหยวน",
+            "en": "Near the middle gate of the Wulingyuan scenic area"
+          },
+          "what": {
+            "th": "แคมป์ชนบท มีบาร์บีคิวและที่ให้เล่น",
+            "en": "A countryside camp with a barbecue and space to play"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่พักผ่อนสบายๆ กับเด็กในวันหยุด",
+            "en": "Reviewers call it a relaxed weekend place with children"
+          },
+          "q": "物外田园, 武陵源风景名胜区中门梓木岗, 武陵源区, 张家界",
+          "ok": "2026-11"
         }
     ]
     },
