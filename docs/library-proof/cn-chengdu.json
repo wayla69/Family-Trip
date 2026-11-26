@@ -432,6 +432,64 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights and restaurants with high chairs in Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Tongren Sijin Coconut Chicken (IFS)",
+          "page_name": "同仁四季椰子鸡(成都IFS店)",
+          "src": "https://www.amap.com/search?query=%E5%90%8C%E4%BB%81%E5%9B%9B%E5%AD%A3%E6%A4%B0%E5%AD%90%E9%B8%A1(%E6%88%90%E9%83%BDIFS%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Chaoniu Chaoshan Beef Hotpot (Jinhua Wanda)",
+          "page_name": "潮牛行动潮汕牛肉(锦华万达广场店)",
+          "src": "https://www.amap.com/search?query=%E6%BD%AE%E7%89%9B%E8%A1%8C%E5%8A%A8%E6%BD%AE%E6%B1%95%E7%89%9B%E8%82%89(%E9%94%A6%E5%8D%8E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "有宝宝椅 · 适合家庭 · 手打熟牛丸Q弹爆汁，小朋友最爱"
+        },
+        {
+          "name": "Dujiangyan Panda Valley",
+          "page_name": "都江堰熊猫谷",
+          "src": "https://www.amap.com/search?query=%E9%83%BD%E6%B1%9F%E5%A0%B0%E7%86%8A%E7%8C%AB%E8%B0%B7&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "带孩子可以讨论它为何停在某处 · 带孩子不妨提前选三种想看的动物，到了以后让他们找一找、说一说"
+        },
+        {
+          "name": "Chengdu Botanical Garden",
+          "page_name": "成都植物园",
+          "src": "https://www.amap.com/search?query=%E6%88%90%E9%83%BD%E6%A4%8D%E7%89%A9%E5%9B%AD&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "亲子户外 · 标牌写得清，带孩子认植物够用 · 长椅多，走累了有地方坐"
+        },
+        {
+          "name": "Xiling Snow Mountain",
+          "page_name": "西岭雪山风景名胜区",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E5%B2%AD%E9%9B%AA%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "亲子户外 · 水流潺潺，踩水超凉快，小朋友特别喜欢"
+        },
+        {
+          "name": "Huawu Renjian Flower Park (Xinjin)",
+          "page_name": "花舞人间都市农业主题公园",
+          "src": "https://www.amap.com/search?query=%E8%8A%B1%E8%88%9E%E4%BA%BA%E9%97%B4%E9%83%BD%E5%B8%82%E5%86%9C%E4%B8%9A%E4%B8%BB%E9%A2%98%E5%85%AC%E5%9B%AD&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "很适合拍照遛娃赏花 · 西大门亲子路线：西大门→儿童游乐区"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
