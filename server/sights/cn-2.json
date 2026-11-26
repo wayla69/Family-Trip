@@ -2046,6 +2046,154 @@
           },
           "q": "奈尔宝 成都大悦城, 大悦路518号, 武侯区, 成都",
           "ok": "2026-11"
+        },
+        {
+          "local": "都江堰熊猫谷",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E9%83%BD%E6%B1%9F%E5%A0%B0%E7%86%8A%E7%8C%AB%E8%B0%B7&city=510100",
+          "name": {
+            "th": "หุบเขาแพนด้าตูเจียงเยี่ยน",
+            "en": "Dujiangyan Panda Valley"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนซินอวี้ ตูเจียงเยี่ยน (1 ชม. จากเฉิงตู)",
+            "en": "Xinyu Avenue, Dujiangyan (1 h from Chengdu)"
+          },
+          "what": {
+            "th": "แพนด้ายักษ์และแพนด้าแดงในศูนย์วิจัยบนเนินเขา",
+            "en": "Giant and red pandas in a hillside research park"
+          },
+          "why": {
+            "th": "คนน้อยกว่าศูนย์ในเมือง ผู้รีวิวแนะนำให้เด็กเลือกสัตว์ที่อยากตามหา",
+            "en": "Quieter than the city base; reviewers suggest children pick animals to find"
+          },
+          "q": "都江堰熊猫谷, 鑫玉大道426号, 都江堰市, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "成都植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%88%90%E9%83%BD%E6%A4%8D%E7%89%A9%E5%9B%AD&city=510100",
+          "name": {
+            "th": "สวนพฤกษศาสตร์เฉิงตู",
+            "en": "Chengdu Botanical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหรงตู จินหนิว",
+            "en": "Rongdu Avenue, Jinniu"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ขนาดใหญ่ มีดอกไม้ทุกฤดู",
+            "en": "A large botanical garden with flowers in every season"
+          },
+          "why": {
+            "th": "ป้ายต้นไม้ชัดเจน มีม้านั่งเยอะ เหมาะพาเด็กเก็บใบไม้",
+            "en": "Clear plant labels and many benches; good for collecting leaves with children"
+          },
+          "q": "成都植物园, 天回路1116号, 金牛区, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西岭雪山",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E5%B2%AD%E9%9B%AA%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA&city=510100",
+          "name": {
+            "th": "ภูเขาหิมะซีหลิ่ง",
+            "en": "Xiling Snow Mountain"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อำเภอต้าอี้ (ราว 2.5 ชม. จากเฉิงตู)",
+            "en": "Dayi County (about 2.5 h from Chengdu)"
+          },
+          "what": {
+            "th": "อุทยานภูเขา มีกระเช้า เล่นหิมะในฤดูหนาว และลำธารใสในฤดูร้อน",
+            "en": "A mountain park with cable cars, snow play in winter and clear streams in summer"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบลงเล่นในลำธาร",
+            "en": "Reviewers say children love paddling in the streams"
+          },
+          "q": "西岭雪山风景区, 大邑县, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "花舞人间",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%8A%B1%E8%88%9E%E4%BA%BA%E9%97%B4%E9%83%BD%E5%B8%82%E5%86%9C%E4%B8%9A%E4%B8%BB%E9%A2%98%E5%85%AC%E5%9B%AD&city=510100",
+          "name": {
+            "th": "สวนดอกไม้ฮวาอู่เหรินเจียน ซินจิน",
+            "en": "Huawu Renjian Flower Park (Xinjin)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนซินผู่ ซินจิน",
+            "en": "Xinpu Road, Xinjin"
+          },
+          "what": {
+            "th": "ทุ่งดอกไม้ เขาวงกตดอกไม้ และโซนเด็กเล่น",
+            "en": "Flower fields, a flower maze and a children's play area"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำเส้นทางครอบครัวผ่านโซนเด็กและเขาวงกต",
+            "en": "Reviewers suggest a family route through the children's area and the maze"
+          },
+          "q": "花舞人间, 新蒲路梨花溪1号, 新津区, 成都",
+          "ok": "2026-11"
         }
       ]
     },
