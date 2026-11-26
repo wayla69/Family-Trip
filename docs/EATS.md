@@ -923,3 +923,4 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 
 - **26 Nov 2026, Chongqing, round 8**: +3 from Amap place pages (high chairs). Proof in `docs/library-proof/cn-chongqing.json`.
 - **25 Nov 2026, Kyoto** (round 4: Japan, Korea, New Zealand): +3 (IN THE GREEN, Merry Go Round kids' café, The Kitchen Salvatore Cuomo). Proof in `docs/library-proof/jp-kyoto.json`.
+- **25 Nov 2026, Tokyo** (round 4: Japan, Korea, New Zealand): +2 (Shumi no Mori, Shinjuku Kabuki Hall). Proof in `docs/library-proof/jp-tokyo.json`.

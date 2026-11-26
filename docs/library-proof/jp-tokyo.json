@@ -1,95 +1,150 @@
 {
   "town": "jp-tokyo",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 19 rows from Magical Trip, Tsunagu Japan, GO TOKYO, Tama tourism and others (2025–2026), 18 passed library-check.cjs, 9 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Kawara Cafe & Kitchen (Kichijoji Parco)",
-      "page_name": "Kawara Cafe&Kitchen",
-      "src": "https://www.tsunagujapan.com/top-7-tokyo-cafes-to-relax-in-with-children/",
-      "date": "2025-07",
-      "map": "Google Maps 'kawara CAFE＆KITCHEN 吉祥寺PARCO店', 391 reviews, newest shown '15 days ago'"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 19 rows from Magical Trip, Tsunagu Japan, GO TOKYO, Tama tourism and others (2025–2026), 18 passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Kawara Cafe & Kitchen (Kichijoji Parco)",
+          "page_name": "Kawara Cafe&Kitchen",
+          "src": "https://www.tsunagujapan.com/top-7-tokyo-cafes-to-relax-in-with-children/",
+          "date": "2025-07",
+          "map": "Google Maps 'kawara CAFE＆KITCHEN 吉祥寺PARCO店', 391 reviews, newest shown '15 days ago'"
+        },
+        {
+          "name": "HUGHUG Café",
+          "page_name": "HUGHUG Café",
+          "src": "https://global.tama.metro.tokyo.lg.jp/articles/5-family-friendly-places-to-explore-in-minami-tama-west-tokyo/",
+          "date": "2026-02",
+          "map": "Google Maps 77 reviews, newest shown '4 days ago'"
+        },
+        {
+          "name": "Sanrio Puroland",
+          "page_name": "Sanrio Puroland",
+          "src": "https://www.magical-trip.com/media/places-for-children-in-tokyo-10-best-things-to-do-with-kids/",
+          "date": "2026-02",
+          "map": "Google Maps 13,997 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Ninja Trick House",
+          "page_name": "Ninja Trick House",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "date": "2026-01",
+          "map": "Google Maps 'Ninja Trick House In Tokyo', 450 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Hama-rikyu Gardens",
+          "page_name": "Hama-rikyu Gardens",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "date": "2026-01",
+          "map": "Google Maps 13,018 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Arisugawa Park",
+          "page_name": "Arisugawa Park",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "date": "2026-01",
+          "map": "Google Maps 3,104 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Ueno Park",
+          "page_name": "Ueno Park",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "date": "2026-01",
+          "map": "Google Maps 35,287 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Tokyo Metropolitan Government observation decks",
+          "page_name": "Tokyo Metropolitan Government Building",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "date": "2026-01",
+          "map": "Google Maps 'ชั้นชมวิวอาคารศาลาว่าการกรุงโตเกียว', 9,718 reviews (search card, open)"
+        },
+        {
+          "name": "Keio Asobi no Mori HUGHUG",
+          "page_name": "Keio Asobi no Mori HUGHUG",
+          "src": "https://global.tama.metro.tokyo.lg.jp/articles/5-family-friendly-places-to-explore-in-minami-tama-west-tokyo/",
+          "date": "2026-02",
+          "map": "Google Maps 859 reviews; the newest shown were old, but the HUGHUG Café inside it has reviews from 4 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Tsunahachi (Shinjuku main store), Nouka no Daidokoro, Moomin Café LaQua, Shirokuma Cafe Takadanobaba",
+          "why": "permanently closed on the map, though 2025 pages list them"
+        },
+        {
+          "name": "Miraikan",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Tsumugu Cafe",
+          "why": "no recent review shown"
+        },
+        {
+          "name": "Kaminari Monjya, Asakusa Sushi, Yurayura",
+          "why": "stalls inside Asakusa Yokocho, an izakaya hall, with no map entries of their own"
+        },
+        {
+          "name": "PokéPark KANTO",
+          "why": "no page date"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "HUGHUG Café",
-      "page_name": "HUGHUG Café",
-      "src": "https://global.tama.metro.tokyo.lg.jp/articles/5-family-friendly-places-to-explore-in-minami-tama-west-tokyo/",
-      "date": "2026-02",
-      "map": "Google Maps 77 reviews, newest shown '4 days ago'"
-    },
-    {
-      "name": "Sanrio Puroland",
-      "page_name": "Sanrio Puroland",
-      "src": "https://www.magical-trip.com/media/places-for-children-in-tokyo-10-best-things-to-do-with-kids/",
-      "date": "2026-02",
-      "map": "Google Maps 13,997 reviews, newest shown '3 days ago'"
-    },
-    {
-      "name": "Ninja Trick House",
-      "page_name": "Ninja Trick House",
-      "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
-      "date": "2026-01",
-      "map": "Google Maps 'Ninja Trick House In Tokyo', 450 reviews, newest shown '3 days ago'"
-    },
-    {
-      "name": "Hama-rikyu Gardens",
-      "page_name": "Hama-rikyu Gardens",
-      "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
-      "date": "2026-01",
-      "map": "Google Maps 13,018 reviews, newest shown '1 day ago'"
-    },
-    {
-      "name": "Arisugawa Park",
-      "page_name": "Arisugawa Park",
-      "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
-      "date": "2026-01",
-      "map": "Google Maps 3,104 reviews, newest shown '1 day ago'"
-    },
-    {
-      "name": "Ueno Park",
-      "page_name": "Ueno Park",
-      "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
-      "date": "2026-01",
-      "map": "Google Maps 35,287 reviews, newest shown '3 days ago'"
-    },
-    {
-      "name": "Tokyo Metropolitan Government observation decks",
-      "page_name": "Tokyo Metropolitan Government Building",
-      "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
-      "date": "2026-01",
-      "map": "Google Maps 'ชั้นชมวิวอาคารศาลาว่าการกรุงโตเกียว', 9,718 reviews (search card, open)"
-    },
-    {
-      "name": "Keio Asobi no Mori HUGHUG",
-      "page_name": "Keio Asobi no Mori HUGHUG",
-      "src": "https://global.tama.metro.tokyo.lg.jp/articles/5-family-friendly-places-to-explore-in-minami-tama-west-tokyo/",
-      "date": "2026-02",
-      "map": "Google Maps 859 reviews; the newest shown were old, but the HUGHUG Café inside it has reviews from 4 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from Time Out (Aug 2025), magical-trip (Dec 2025), tabiiro (Feb 2025) and tokyo-odaiba.net (Nov 2025); 6 passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Shumi no Mori",
+          "page_name": "Shumi no Mori",
+          "src": "https://www.magical-trip.com/media/10-unmissable-things-to-do-with-kids-in-shinjuku-playgrounds-iconic-spots-and-hidden-gems/",
+          "date": "2025-12",
+          "map": "Google Maps 'Shumi no Mori' (1-8-8 Ōkubo, Shinjuku), newest review shown a week ago"
+        },
+        {
+          "name": "Shinjuku Kabuki Hall",
+          "page_name": "Shinjuku Kabuki Hall",
+          "src": "https://www.magical-trip.com/media/10-unmissable-things-to-do-with-kids-in-shinjuku-playgrounds-iconic-spots-and-hidden-gems/",
+          "date": "2025-12",
+          "map": "Google Maps 'Shinjuku Kabuki Hall / Kabuki Yokocho' (1-29-1 Kabukichō), newest review shown 17 hours ago"
+        },
+        {
+          "name": "ANO-NE Kids Club",
+          "page_name": "Ano-Ne Kids Club",
+          "src": "https://www.timeout.com/tokyo/things-to-do/ano-ne-kids-club-in-tokyo",
+          "date": "2025-08",
+          "map": "Google Maps 'ANO-NE Kids Club' (Yūrakuchō, Chiyoda), newest review shown 6 days ago"
+        },
+        {
+          "name": "Little Planet, DiverCity Tokyo Plaza",
+          "page_name": "Little Planet Diver City Tokyo Plaza",
+          "src": "https://www.tokyo-odaiba.net/en/genre/litpla/",
+          "date": "2025-11",
+          "map": "Google Maps 'Little Planet Diver City Tokyo Plaza' (5F, Aomi), newest review shown 19 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "GOOD MORNING CAFE 品川シーズンテラス",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "Karaoke PASELA Shibuya",
+          "why": "a karaoke bar"
+        },
+        {
+          "name": "Shumi no Mori (as a thing to do)",
+          "why": "the same place as its place-to-eat row"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Tsunahachi (Shinjuku main store), Nouka no Daidokoro, Moomin Café LaQua, Shirokuma Cafe Takadanobaba",
-      "why": "permanently closed on the map, though 2025 pages list them"
-    },
-    {
-      "name": "Miraikan",
-      "why": "temporarily closed on the map"
-    },
-    {
-      "name": "Tsumugu Cafe",
-      "why": "no recent review shown"
-    },
-    {
-      "name": "Kaminari Monjya, Asakusa Sushi, Yurayura",
-      "why": "stalls inside Asakusa Yokocho, an izakaya hall, with no map entries of their own"
-    },
-    {
-      "name": "PokéPark KANTO",
-      "why": "no page date"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

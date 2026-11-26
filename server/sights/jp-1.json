@@ -723,6 +723,80 @@
           },
           "q": "京王あそびの森HUGHUG",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/tokyo/things-to-do/ano-ne-kids-club-in-tokyo",
+          "name": {
+            "th": "อาโนเนะคิดส์คลับ",
+            "en": "ANO-NE Kids Club"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยูราคุโจ จิโยดะ",
+            "en": "Yūrakuchō, Chiyoda"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม ของเล่นและเครื่องเล่นเต็ม มีมุมเงียบให้นอนกลางวัน",
+            "en": "An indoor play space full of toys and play equipment, with quiet corners for a nap"
+          },
+          "why": {
+            "th": "มีของเล่นและเครื่องเล่น และมุมเงียบให้เด็กเล็กงีบ",
+            "en": "Toys and play equipment, and quiet corners where little ones can nap"
+          },
+          "q": "ANO-NE Kids Club, Yurakucho, Chiyoda, Tokyo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.tokyo-odaiba.net/en/genre/litpla/",
+          "name": {
+            "th": "ลิตเติลแพลนเน็ต ไดเวอร์ซิตีโตเกียวพลาซา",
+            "en": "Little Planet, DiverCity Tokyo Plaza"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 5 ไดเวอร์ซิตีโตเกียวพลาซา โอไดบะ",
+            "en": "DiverCity Tokyo Plaza 5F, Aomi, Odaiba"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มแบบดิจิทัล รูปที่เด็กวาดขยับได้ มีไดโนจัมปิง",
+            "en": "A digital indoor playground where children's drawings start to move, with DINO JUMPING"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ เด็กเล่นได้อิสระ",
+            "en": "An all-weather place for children to play freely"
+          },
+          "q": "Little Planet Diver City Tokyo Plaza, Aomi, Koto, Tokyo",
+          "ok": "2026-11"
         }
     ]
     },
