@@ -752,6 +752,48 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for family museums in Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Liangzhu Museum",
+          "page_name": "良渚博物院",
+          "src": "https://www.amap.com/search?query=%E8%89%AF%E6%B8%9A%E5%8D%9A%E7%89%A9%E9%99%A2&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "适合亲子 · 如果孩子已经疲倦，到庭院休息即可"
+        },
+        {
+          "name": "China National Silk Museum",
+          "page_name": "中国丝绸博物馆",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E4%B8%9D%E7%BB%B8%E5%8D%9A%E7%89%A9%E9%A6%86&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "适合亲子 · 带娃来追寻中国传统文化 · 看护好小朋友"
+        },
+        {
+          "name": "Zhejiang Provincial Museum (Gushan)",
+          "page_name": "浙江省博物馆(孤山馆区)",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86(%E5%AD%A4%E5%B1%B1%E9%A6%86%E5%8C%BA)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "有时候会有小朋友的志愿者讲解 · 尤其是还带着老人和孩子"
+        },
+        {
+          "name": "Hangzhou Museum",
+          "page_name": "杭州博物馆",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E5%8D%9A%E7%89%A9%E9%A6%86&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "适合带娃 · 带小朋友逛不会觉得枯燥 · 免费盖章"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
