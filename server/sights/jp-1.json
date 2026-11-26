@@ -4527,6 +4527,286 @@
           },
           "q": "Beppu Park, Beppu, Oita",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Hyotan Onsen",
+            "th": "เฮียวตันออนเซ็น"
+          },
+          "kind": "onsen",
+          "area": {
+            "en": "Kannawa, Beppu",
+            "th": "คันนาวะ เบปปุ"
+          },
+          "what": {
+            "en": "An indoor hot spring complex with seven bath types under one roof: waterfall baths, sand baths, steam rooms, cold pools and a jet-water bath.",
+            "th": "ออนเซ็นในร่มที่มีบ่อ 7 แบบใต้หลังคาเดียว ทั้งบ่อน้ำตก บ่อทราย ห้องอบไอน้ำ สระน้ำเย็น และบ่อแรงดันน้ำ"
+          },
+          "why": {
+            "en": "All the indoor baths are under one roof, so a rainy day needs no walk outside between them.",
+            "th": "บ่อในร่มทั้งหมดอยู่ใต้หลังคาเดียว วันฝนตกจึงไม่ต้องเดินข้างนอกระหว่างบ่อ"
+          },
+          "tip": {
+            "en": "Sand bath is a separate ticket. Bring a small towel or rent one at the counter.",
+            "th": "บ่อทรายซื้อตั๋วแยก เตรียมผ้าเช็ดตัวผืนเล็กมาหรือเช่าที่เคาน์เตอร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,000 per adult",
+            "th": "≈ ¥1,000 ต่อผู้ใหญ่"
+          },
+          "book": "none",
+          "q": "Hyotan Onsen, Kannawa, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/rainy-day-in-beppu"
+        },
+        {
+          "name": {
+            "en": "Beppu Hoyoland",
+            "th": "เบปปุโฮโยแลนด์"
+          },
+          "kind": "onsen",
+          "area": {
+            "en": "Myoban, Beppu",
+            "th": "เมียวบัน เบปปุ"
+          },
+          "what": {
+            "en": "Indoor volcanic mud baths at about 42°C, separate for men and women, with hot spring showers next door.",
+            "th": "บ่อโคลนภูเขาไฟในร่มราว 42°C แยกชายหญิง มีฝักบัวน้ำร้อนออนเซ็นอยู่ข้างๆ"
+          },
+          "why": {
+            "en": "The mud baths are entirely indoors, so the rain does not matter.",
+            "th": "บ่อโคลนอยู่ในร่มทั้งหมด ฝนตกก็ไม่มีผล"
+          },
+          "tip": {
+            "en": "Open 10:00 to 18:00; arrive before 16:00 to allow time for bathing and rinsing. Not for small children",
+            "th": "เปิด 10:00–18:00 มาถึงก่อน 16:00 เพื่อให้มีเวลาแช่และล้างตัว ไม่เหมาะกับเด็กเล็ก"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥900–1,100 per person",
+            "th": "≈ ¥900–1,100 ต่อคน"
+          },
+          "book": "none",
+          "q": "Beppu Hoyoland, Myoban, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/rainy-day-in-beppu"
+        },
+        {
+          "name": {
+            "en": "Beppu Kaihin Sunamushi Onsen (sand bath)",
+            "th": "บ่อทรายร้อนริมหาดเบปปุ (ซูนามูชิ)"
+          },
+          "kind": "onsen",
+          "area": {
+            "en": "Shoninga-hama Beach, Beppu",
+            "th": "หาดโชนิงกาฮามะ เบปปุ"
+          },
+          "what": {
+            "en": "A beach sand bath on Shoningahama Beach: you lie in a yukata while warm volcanic sand is shovelled over you up to the neck.",
+            "th": "บ่อทรายร้อนริมหาดโชนิงกาฮามะ นอนในยูกาตะขณะที่ทรายภูเขาไฟอุ่นๆ ถูกตักกลบถึงคอ"
+          },
+          "why": {
+            "en": "The sand bath area has a retractable roof, so it can be used in rain.",
+            "th": "โซนบ่อทรายมีหลังคาเลื่อนปิดได้ จึงใช้ได้ตอนฝนตก"
+          },
+          "tip": {
+            "en": "Not for small children: you lie buried under heavy warm sand. Shower and changing rooms are next to the sand area",
+            "th": "ไม่เหมาะกับเด็กเล็ก เพราะต้องนอนถูกกลบด้วยทรายอุ่นที่หนัก ห้องอาบน้ำและห้องเปลี่ยนเสื้อผ้าอยู่ติดโซนทราย"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,500 per adult",
+            "th": "≈ ¥1,500 ต่อผู้ใหญ่"
+          },
+          "book": "none",
+          "q": "Beppu Kaihin Sunamushi Onsen, Shoningahama, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/rainy-day-in-beppu"
+        },
+        {
+          "name": {
+            "en": "Beppu Station Market",
+            "th": "ตลาดสถานีเบปปุ"
+          },
+          "kind": "market",
+          "area": {
+            "en": "Beppu Station",
+            "th": "สถานีเบปปุ"
+          },
+          "what": {
+            "en": "A shopping street of old-fashioned shops and fresh fish and sushi stalls, two minutes' walk from Beppu Station.",
+            "th": "ถนนช้อปปิ้งร้านเก่าแก่และแผงปลาสดกับซูชิ เดินจากสถานีเบปปุ 2 นาที"
+          },
+          "why": {
+            "en": "A covered place to eat and shop on a wet afternoon, close to the station.",
+            "th": "ที่กินและช็อปที่มีหลังคา ช่วงบ่ายฝนตก ใกล้สถานี"
+          },
+          "tip": {
+            "en": "Head all the way to the back: the street is 100 metres long.",
+            "th": "เดินไปให้สุดด้านใน ถนนยาว 100 เมตร"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Beppu Station Market, 6-22 Chuo-cho, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        },
+        {
+          "name": {
+            "en": "Jigoku Onsen Museum",
+            "th": "พิพิธภัณฑ์จิโกกุออนเซ็น"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Kannawa, Beppu",
+            "th": "คันนาวะ เบปปุ"
+          },
+          "what": {
+            "en": "A museum that tells how rainwater becomes hot spring water, in four scenes with a stamp-collecting walk, a theatre and a courtyard of steam.",
+            "th": "พิพิธภัณฑ์ที่เล่าว่าน้ำฝนกลายเป็นน้ำออนเซ็นได้อย่างไร ใน 4 ฉาก มีทางเดินสะสมแสตมป์ โรงภาพยนตร์ และลานไอน้ำ"
+          },
+          "why": {
+            "en": "Children collect stamps on a walk through a shimmering maze, and the courtyard steam is close enough to feel.",
+            "th": "เด็กๆ สะสมแสตมป์ระหว่างเดินผ่านเขาวงกตระยิบระยับ และไอน้ำในลานอยู่ใกล้จนสัมผัสได้"
+          },
+          "tip": {
+            "en": "Open 9:00 to 18:00, last admission 17:30; irregular holidays about four days a year.",
+            "th": "เปิด 9:00–18:00 เข้าได้ถึง 17:30 วันหยุดไม่แน่นอนราวปีละ 4 วัน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,500 adults · ≈ ¥1,000 elementary and junior high school",
+            "th": "≈ ¥1,500 ผู้ใหญ่ · ≈ ¥1,000 ประถมและมัธยมต้น"
+          },
+          "book": "none",
+          "q": "Jigoku Onsen Museum, 321-1 Kannawa, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        },
+        {
+          "name": {
+            "en": "Beppu Tower",
+            "th": "หอคอยเบปปุ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Kitahama, Beppu",
+            "th": "คิตาฮามะ เบปปุ"
+          },
+          "what": {
+            "en": "A 100-metre tower from 1957 with a 360-degree view from its 16th and 17th floors over Beppu Bay and the hot spring town.",
+            "th": "หอคอยสูง 100 เมตรจากปี 1957 วิว 360 องศาจากชั้น 16 และ 17 เหนืออ่าวเบปปุและเมืองออนเซ็น"
+          },
+          "why": {
+            "en": "The city view is still good on a cloudy day, and the 16th-floor deck has tables with power outlets.",
+            "th": "วิวเมืองยังสวยแม้วันเมฆมาก และชั้น 16 มีโต๊ะพร้อมปลั๊กไฟ"
+          },
+          "tip": {
+            "en": "Open 9:30 to 21:30, last admission 21:00. Use the bus stop Beppu Tower-mae.",
+            "th": "เปิด 9:30–21:30 เข้าได้ถึง 21:00 ลงที่ป้ายรถเมล์เบปปุทาวเวอร์มาเอะ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥800 adults · ≈ ¥400 ages 4 to elementary school",
+            "th": "≈ ¥800 ผู้ใหญ่ · ≈ ¥400 อายุ 4 ขวบถึงประถม"
+          },
+          "book": "none",
+          "q": "Beppu Tower, 3-10-2 Kitahama, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        },
+        {
+          "name": {
+            "en": "Beppu Art Museum",
+            "th": "พิพิธภัณฑ์ศิลปะเบปปุ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Kitahama, Beppu (2nd floor of Beppu Tower)",
+            "th": "คิตาฮามะ เบปปุ (ชั้น 2 ของหอคอยเบปปุ)"
+          },
+          "what": {
+            "en": "An art museum on the second floor of Beppu Tower, with works by well-known artists and a 1/53 scale model of the tower.",
+            "th": "พิพิธภัณฑ์ศิลปะชั้น 2 ของหอคอยเบปปุ มีผลงานศิลปินชื่อดังและโมเดลหอคอยสเกล 1/53"
+          },
+          "why": {
+            "en": "A good indoor stop on a rainy day, with a miniature of the tower that was used in monster films.",
+            "th": "จุดแวะในร่มที่ดีในวันฝนตก มีโมเดลจิ๋วของหอคอยที่เคยใช้ในหนังสัตว์ประหลาด"
+          },
+          "tip": {
+            "en": "Last admission 16:30.",
+            "th": "เข้าได้ถึง 16:30"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700 adults · ≈ ¥300 ages 4 to elementary school",
+            "th": "≈ ¥700 ผู้ใหญ่ · ≈ ¥300 อายุ 4 ขวบถึงประถม"
+          },
+          "book": "none",
+          "q": "Beppu Art Museum, Beppu Tower, Kitahama, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
         }
       ]
     },
@@ -4755,6 +5035,330 @@
           },
           "q": "Ritsurin Garden, 1-20-16 Ritsurincho, Takamatsu",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Chichu Art Museum",
+            "th": "พิพิธภัณฑ์ศิลปะจิจู"
+          },
+          "local": "地中美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Naoshima",
+            "th": "นาโอชิมะ"
+          },
+          "what": {
+            "en": "Works by Monet, Turrell and De Maria in a museum built mostly underground by Tadao Ando.",
+            "th": "ผลงานของโมเนต์ ทูร์เรลล์ และเดอ มาเรีย ในพิพิธภัณฑ์ที่ทาดาโอะ อันโด ออกแบบโดยฝังไว้ใต้ดินเป็นส่วนใหญ่"
+          },
+          "why": {
+            "en": "A section for visitors with babies or small children: slings lent at reception and a restroom with a changing table.",
+            "th": "มีส่วนสำหรับผู้มาพร้อมเด็กเล็ก ยืมสลิงอุ้มเด็กได้ที่ประชาสัมพันธ์ และมีห้องน้ำพร้อมที่เปลี่ยนผ้าอ้อม"
+          },
+          "tip": {
+            "en": "Ferry from Takamatsu port; open 10:00–17:00, closed Mondays; no carriages inside; under-6s are asked not to join the Night Program.",
+            "th": "นั่งเรือจากท่าเรือทาคามัตสึ เปิด 10:00–17:00 ปิดวันจันทร์ ห้ามนำรถเข็นเข้าไป เด็กต่ำกว่า 6 ปีขอให้ไม่เข้าร่วมโปรแกรมกลางคืน"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "≈ ¥2,500 online · ¥2,800 on the day (weekdays)",
+            "th": "≈ ¥2,500 ออนไลน์ · ¥2,800 หน้างาน (วันธรรมดา)"
+          },
+          "book": "req",
+          "q": "Chichu Art Museum, Naoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://benesse-artsite.jp/en/art/chichu.html"
+        },
+        {
+          "name": {
+            "en": "Lee Ufan Museum",
+            "th": "พิพิธภัณฑ์ลี อูฟาน"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Naoshima",
+            "th": "นาโอชิมะ"
+          },
+          "what": {
+            "en": "Paintings and sculptures by Lee Ufan in a semi-underground building by Tadao Ando, with works indoors and outdoors.",
+            "th": "จิตรกรรมและประติมากรรมของลี อูฟาน ในอาคารกึ่งใต้ดินที่ทาดาโอะ อันโด ออกแบบ มีผลงานทั้งในและนอกอาคาร"
+          },
+          "why": {
+            "en": "Works both inside and outside in a quiet valley by the sea.",
+            "th": "มีผลงานทั้งในและนอกอาคาร ในหุบเขาเงียบสงบริมทะเล"
+          },
+          "tip": {
+            "en": "Ferry from Takamatsu port; open 10:00–17:00, last entry 16:30; closed Mondays.",
+            "th": "นั่งเรือจากท่าเรือทาคามัตสึ เปิด 10:00–17:00 เข้าได้ถึง 16:30 ปิดวันจันทร์"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,200 online · ¥1,400 on the day",
+            "th": "≈ ¥1,200 ออนไลน์ · ¥1,400 หน้างาน"
+          },
+          "book": "rec",
+          "q": "Lee Ufan Museum, Naoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://benesse-artsite.jp/en/art/lee-ufan.html"
+        },
+        {
+          "name": {
+            "en": "Naoshima New Museum of Art",
+            "th": "พิพิธภัณฑ์ศิลปะใหม่นาโอชิมะ"
+          },
+          "local": "直島新美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Honmura, Naoshima",
+            "th": "ฮนมูระ นาโอชิมะ"
+          },
+          "what": {
+            "en": "An Ando-designed museum with galleries on two underground floors, a café and an outdoor installation.",
+            "th": "พิพิธภัณฑ์ที่อันโดออกแบบ มีห้องแสดงงานใต้ดินสองชั้น คาเฟ่ และงานติดตั้งกลางแจ้ง"
+          },
+          "why": {
+            "en": "A café with a view of Teshima and the fishing boats.",
+            "th": "มีคาเฟ่วิวเกาะเทชิมะและเรือประมง"
+          },
+          "tip": {
+            "en": "Ferry from Takamatsu port; open 10:00–16:30, last entry 16:00; closed Mondays; outdoor exhibits may close in bad weather.",
+            "th": "นั่งเรือจากท่าเรือทาคามัตสึ เปิด 10:00–16:30 เข้าได้ถึง 16:00 ปิดวันจันทร์ งานกลางแจ้งอาจปิดเมื่อสภาพอากาศไม่ดี"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,500 online · ¥1,700 on the day",
+            "th": "≈ ¥1,500 ออนไลน์ · ¥1,700 หน้างาน"
+          },
+          "book": "rec",
+          "q": "Naoshima New Museum of Art, Honmura, Naoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://benesse-artsite.jp/en/art/nnmoa.html"
+        },
+        {
+          "name": {
+            "en": "Benesse House Museum",
+            "th": "พิพิธภัณฑ์เบเนสเซ่ เฮาส์"
+          },
+          "local": "ベネッセハウス ミュージアム",
+          "kind": "museum",
+          "area": {
+            "en": "Naoshima",
+            "th": "นาโอชิมะ"
+          },
+          "what": {
+            "en": "A museum at the Benesse House on Naoshima, open all year.",
+            "th": "พิพิธภัณฑ์ที่เบเนสเซ่ เฮาส์ บนเกาะนาโอชิมะ เปิดตลอดปี"
+          },
+          "why": {
+            "en": "Free admission for children of 15 and under.",
+            "th": "เด็กอายุ 15 ปีลงไปเข้าฟรี"
+          },
+          "tip": {
+            "en": "Ferry from Takamatsu port; museum hours 9:30–16:00, last entry 15:30.",
+            "th": "นั่งเรือจากท่าเรือทาคามัตสึ เปิด 9:30–16:00 เข้าได้ถึง 15:30"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,300 online · ¥1,500 on the day · 15 and under free",
+            "th": "≈ ¥1,300 ออนไลน์ · ¥1,500 หน้างาน · อายุ 15 ปีลงไปฟรี"
+          },
+          "book": "rec",
+          "q": "Benesse House Museum, Naoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://benesse-artsite.jp/en/art/benessehouse-museum.html"
+        },
+        {
+          "name": {
+            "en": "Hiroshi Sugimoto Gallery: Time Corridors",
+            "th": "หอศิลป์ฮิโรชิ ซูกิโมโตะ: ไทม์ คอร์ริดอร์ส"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Naoshima",
+            "th": "นาโอชิมะ"
+          },
+          "what": {
+            "en": "A gallery of Hiroshi Sugimoto's work on Naoshima; the admission ticket includes tea and sweets.",
+            "th": "หอศิลป์ผลงานของฮิโรชิ ซูกิโมโตะ บนเกาะนาโอชิมะ ตั๋วเข้าชมรวมชาและขนมหวาน"
+          },
+          "why": {
+            "en": "Free admission for those under 15 years old.",
+            "th": "เด็กต่ำกว่า 15 ปีเข้าฟรี"
+          },
+          "tip": {
+            "en": "Ferry from Takamatsu port; open 11:00–15:00 for tea (last order 14:30).",
+            "th": "นั่งเรือจากท่าเรือทาคามัตสึ เปิด 11:00–15:00 สำหรับชา (สั่งได้ถึง 14:30)"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,600 online · ¥1,700 on the day · under 15 free",
+            "th": "≈ ¥1,600 ออนไลน์ · ¥1,700 หน้างาน · ต่ำกว่า 15 ปีฟรี"
+          },
+          "book": "rec",
+          "q": "Hiroshi Sugimoto Gallery Time Corridors, Naoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://benesse-artsite.jp/en/art/sugimoto-gallery.html"
+        },
+        {
+          "name": {
+            "en": "Takamatsu Art Museum",
+            "th": "พิพิธภัณฑ์ศิลปะทาคามัตสึ"
+          },
+          "local": "高松市美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Konyamachi, Takamatsu",
+            "th": "โคนยามาจิ ทาคามัตสึ"
+          },
+          "what": {
+            "en": "A city art museum with a Children's Art Space, a library, a café and a shop.",
+            "th": "พิพิธภัณฑ์ศิลปะของเมือง มีมุมศิลปะสำหรับเด็ก ห้องสมุด คาเฟ่ และร้านค้า"
+          },
+          "why": {
+            "en": "Children may read art books and picture books suited to their ages.",
+            "th": "เด็กอ่านหนังสือศิลปะและหนังสือภาพที่เหมาะกับวัยได้"
+          },
+          "tip": {
+            "en": "Open until 19:00 during special exhibitions; closed at the year-end and New Year holidays.",
+            "th": "เปิดถึง 19:00 ช่วงนิทรรศการพิเศษ ปิดช่วงสิ้นปีและปีใหม่"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Takamatsu Art Museum, Konyamachi, Takamatsu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.city.takamatsu.kagawa.jp/museum/takamatsu/english"
+        },
+        {
+          "name": {
+            "en": "Ferry from Takamatsu to Naoshima",
+            "th": "เรือเฟอร์รี่จากทาคามัตสึไปนาโอชิมะ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Takamatsu port to Miyanoura, Naoshima",
+            "th": "ท่าเรือทาคามัตสึไปมิยาโนะอุระ นาโอชิมะ"
+          },
+          "what": {
+            "en": "The ferry from Takamatsu to Naoshima, about 50 minutes.",
+            "th": "เรือเฟอร์รี่จากทาคามัตสึไปนาโอชิมะ ใช้เวลาราว 50 นาที"
+          },
+          "why": {
+            "en": "A boat ride across the Seto Inland Sea to the art island.",
+            "th": "นั่งเรือข้ามทะเลเซโตะไปยังเกาะศิลปะ"
+          },
+          "tip": {
+            "en": "Runs on set days only: 1 March to 30 November on Mondays, Wednesdays to Sundays and holidays; check the timetable.",
+            "th": "วิ่งเฉพาะบางวัน: 1 มีนาคมถึง 30 พฤศจิกายน วันจันทร์ พุธถึงอาทิตย์ และวันหยุด เช็กตารางเดินเรือก่อนไป"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Naoshima Miyanoura Port, Naoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://naoshima.net/en/access/access_area/"
+        },
+        {
+          "name": {
+            "en": "Shodoshima Olive Park",
+            "th": "สวนมะกอกโชโดชิมะ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Shodoshima, by ferry from Takamatsu",
+            "th": "โชโดชิมะ นั่งเรือจากทาคามัตสึ"
+          },
+          "what": {
+            "en": "A park on the site of Japan's first olive plantation, with a small olive history museum, a restaurant, a café and shops.",
+            "th": "สวนบนที่ตั้งไร่มะกอกแห่งแรกของญี่ปุ่น มีพิพิธภัณฑ์ประวัติมะกอกขนาดเล็ก ร้านอาหาร คาเฟ่ และร้านค้า"
+          },
+          "why": {
+            "en": "A café and shops where you can sample olive products.",
+            "th": "มีคาเฟ่และร้านค้าให้ลองผลิตภัณฑ์จากมะกอก"
+          },
+          "tip": {
+            "en": "Allow about two hours; reached by ferry from Takamatsu.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง ต้องนั่งเรือจากทาคามัตสึ"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shodoshima Olive Park, Shodoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.japan-guide.com/e/e5432.html"
         }
       ]
     },
@@ -5110,6 +5714,372 @@
                       },
                       "q": "キッズランドUS 奈良学園前店, 学園中4丁目, 奈良市",
                       "ok": "2026-11"
+                    },
+                    {
+                      "name": {
+                        "en": "Todai-ji Temple Great Buddha",
+                        "th": "วัดโทไดจิ พระใหญ่"
+                      },
+                      "local": "東大寺",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Nara Park",
+                        "th": "สวนนาระ"
+                      },
+                      "what": {
+                        "en": "A 15-metre bronze Buddha inside the Great Buddha Hall.",
+                        "th": "พระพุทธรูปสัมฤทธิ์สูง 15 เมตรในวิหารไดบุตสึ"
+                      },
+                      "why": {
+                        "en": "Children can crawl through the pillar hole behind the Buddha for good luck.",
+                        "th": "เด็ก ๆ มุดรูเสาหลังพระใหญ่เพื่อความโชคดีได้"
+                      },
+                      "tip": {
+                        "en": "Great Buddha Hall open 07:30–17:30 (April–October), 08:00–17:00 (November–March); cash only.",
+                        "th": "วิหารไดบุตสึเปิด 07:30–17:30 (เม.ย.–ต.ค.) และ 08:00–17:00 (พ.ย.–มี.ค.) รับเฉพาะเงินสด"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 1.5,
+                      "io": "both",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥800 adults and junior-high or high-school students · ≈ ¥400 primary school",
+                        "th": "≈ ¥800 ผู้ใหญ่และนักเรียนมัธยม · ≈ ¥400 นักเรียนประถม"
+                      },
+                      "book": "none",
+                      "q": "Todai-ji Temple, Nara Park, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://japanactivity.com/nara-with-kids"
+                    },
+                    {
+                      "name": {
+                        "en": "Nara National Museum",
+                        "th": "พิพิธภัณฑ์แห่งชาตินาระ"
+                      },
+                      "local": "奈良国立博物館",
+                      "kind": "museum",
+                      "area": {
+                        "en": "Nara Park",
+                        "th": "สวนนาระ"
+                      },
+                      "what": {
+                        "en": "The national museum of Nara, with Buddhist art and sculpture exhibitions.",
+                        "th": "พิพิธภัณฑ์แห่งชาติของนาระ จัดแสดงศิลปะและประติมากรรมทางพุทธศาสนา"
+                      },
+                      "why": {
+                        "en": "A cool, air-conditioned refuge on hot days, though it suits older children best.",
+                        "th": "ที่หลบร้อนติดแอร์เย็นสบาย แต่เหมาะกับเด็กโตมากกว่า"
+                      },
+                      "tip": {
+                        "en": "Open 09:30–17:00, closed Mondays; the Buddhist Sculpture Hall is closed for construction until about spring 2028.",
+                        "th": "เปิด 09:30–17:00 ปิดวันจันทร์ ส่วนจัดแสดงประติมากรรมพุทธปิดปรับปรุงถึงราวฤดูใบไม้ผลิ 2028"
+                      },
+                      "ages": [
+                        0,
+                        1,
+                        1,
+                        2
+                      ],
+                      "hrs": 1.5,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥700 adults · under 18 free",
+                        "th": "≈ ¥700 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี"
+                      },
+                      "book": "none",
+                      "q": "Nara National Museum, Nara Park, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://japanactivity.com/nara-with-kids"
+                    },
+                    {
+                      "name": {
+                        "en": "National Treasure Museum, Kasuga Taisha",
+                        "th": "พิพิธภัณฑ์สมบัติแห่งชาติ คาสุกะไทชะ"
+                      },
+                      "kind": "museum",
+                      "area": {
+                        "en": "Kasuga Taisha",
+                        "th": "คาสุกะไทชะ"
+                      },
+                      "what": {
+                        "en": "The treasure museum of Kasuga Taisha inside the shrine grounds.",
+                        "th": "พิพิธภัณฑ์สมบัติของศาลเจ้าคาสุกะไทชะ อยู่ในบริเวณศาลเจ้า"
+                      },
+                      "why": {
+                        "en": "A good rainy-hour stop near the lantern paths.",
+                        "th": "แวะหลบฝนได้ดี อยู่ใกล้ทางเดินโคมไฟ"
+                      },
+                      "tip": {
+                        "en": "Junior-high and elementary-school students pay a lower price.",
+                        "th": "นักเรียนมัธยมต้นและประถมจ่ายราคาถูกกว่า"
+                      },
+                      "ages": [
+                        0,
+                        1,
+                        1,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥700 adults · ≈ ¥300 junior-high and primary school",
+                        "th": "≈ ¥700 ผู้ใหญ่ · ≈ ¥300 นักเรียนมัธยมต้นและประถม"
+                      },
+                      "book": "none",
+                      "q": "National Treasure Museum, Kasuga Taisha, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://japanactivity.com/nara-with-kids"
+                    },
+                    {
+                      "name": {
+                        "en": "Kasuga Taisha Shrine",
+                        "th": "ศาลเจ้าคาสุกะไทชะ"
+                      },
+                      "local": "春日大社",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Kasugayama",
+                        "th": "คาสุกายามะ"
+                      },
+                      "what": {
+                        "en": "Thousands of stone and bronze lanterns line the forest paths to the shrine.",
+                        "th": "โคมหินและโคมสัมฤทธิ์นับพันเรียงรายตามทางป่าไปสู่ศาลเจ้า"
+                      },
+                      "why": {
+                        "en": "The stone lantern corridors feel magical even for young children.",
+                        "th": "ทางเดินโคมหินดูเหมือนเวทมนตร์ แม้เด็กเล็กก็ชอบ"
+                      },
+                      "tip": {
+                        "en": "Open 06:30–17:30 (March–October), 07:00–17:00 (November–February).",
+                        "th": "เปิด 06:30–17:30 (มี.ค.–ต.ค.) และ 07:00–17:00 (พ.ย.–ก.พ.)"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 1.5,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "Free",
+                        "th": "ฟรี"
+                      },
+                      "book": "none",
+                      "q": "Kasuga Taisha, Kasugayama, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://japanactivity.com/nara-with-kids"
+                    },
+                    {
+                      "name": {
+                        "en": "Isuien Garden",
+                        "th": "สวนอิสุเอ็น"
+                      },
+                      "local": "依水園",
+                      "kind": "park",
+                      "area": {
+                        "en": "Nara",
+                        "th": "นาระ"
+                      },
+                      "what": {
+                        "en": "Two ponds and borrowed mountain scenery in a garden made of two joined gardens.",
+                        "th": "สวนที่เกิดจากสวนสองแห่งเชื่อมกัน มีบ่อน้ำสองบ่อและฉากภูเขาเป็นวิวยืม"
+                      },
+                      "why": {
+                        "en": "Mostly flat, one of the more stroller-accessible garden options in Nara.",
+                        "th": "ส่วนใหญ่เป็นทางราบ เป็นสวนที่เข็นรถเข็นเด็กได้สะดวกกว่าที่อื่นในนาระ"
+                      },
+                      "tip": {
+                        "en": "Open 09:30–16:30, last entry 16:00 (until 17:00 in April and May); closed Tuesdays.",
+                        "th": "เปิด 09:30–16:30 เข้าได้ถึง 16:00 (ถึง 17:00 ในเดือนเม.ย.และพ.ค.) ปิดวันอังคาร"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥1,200 adults · ≈ ¥300 junior-high and primary school",
+                        "th": "≈ ¥1,200 ผู้ใหญ่ · ≈ ¥300 นักเรียนมัธยมต้นและประถม"
+                      },
+                      "book": "none",
+                      "q": "Isuien Garden, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://japanactivity.com/nara-with-kids"
+                    },
+                    {
+                      "name": {
+                        "en": "Yoshikien Garden",
+                        "th": "สวนโยชิกิเอ็น"
+                      },
+                      "kind": "park",
+                      "area": {
+                        "en": "Nara",
+                        "th": "นาระ"
+                      },
+                      "what": {
+                        "en": "A pond garden, a moss garden and a tea ceremony garden around a small tea house.",
+                        "th": "สวนบ่อน้ำ สวนมอส และสวนพิธีชงชารอบบ้านชาหลังเล็ก"
+                      },
+                      "why": {
+                        "en": "The moss garden glows green after rain and the garden is quiet.",
+                        "th": "สวนมอสเขียวสดหลังฝนตก และสวนเงียบสงบ"
+                      },
+                      "tip": {
+                        "en": "Open 09:00–17:00, last entry 16:30.",
+                        "th": "เปิด 09:00–17:00 เข้าได้ถึง 16:30"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "Free",
+                        "th": "ฟรี"
+                      },
+                      "book": "none",
+                      "q": "Yoshikien Garden, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://selfguidejapan.com/blog/things-to-do-in-nara"
+                    },
+                    {
+                      "name": {
+                        "en": "Naramachi Old Town",
+                        "th": "ย่านเก่านาระมาจิ"
+                      },
+                      "local": "奈良町",
+                      "kind": "oldtown",
+                      "area": {
+                        "en": "South of Sanjo-dori",
+                        "th": "ทางใต้ของถนนซันโจ"
+                      },
+                      "what": {
+                        "en": "The former merchant district of narrow Edo-period machiya houses and small craft shops.",
+                        "th": "ย่านพ่อค้าเก่า มีบ้านมาชิยะสมัยเอโดะซอยแคบและร้านงานฝีมือเล็ก ๆ"
+                      },
+                      "why": {
+                        "en": "Free to explore, and quieter than the park.",
+                        "th": "เดินเที่ยวฟรี และเงียบกว่าสวนนาระ"
+                      },
+                      "tip": {
+                        "en": "Allow about an hour and a half.",
+                        "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+                      },
+                      "ages": [
+                        2,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 1.5,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "Free",
+                        "th": "ฟรี"
+                      },
+                      "book": "none",
+                      "q": "Naramachi, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://japanactivity.com/nara-with-kids"
+                    },
+                    {
+                      "name": {
+                        "en": "Naramachi Koshi-no-Ie",
+                        "th": "นาระมาจิ โคชิโนะอิเอะ"
+                      },
+                      "kind": "culture",
+                      "area": {
+                        "en": "Naramachi",
+                        "th": "นาระมาจิ"
+                      },
+                      "what": {
+                        "en": "A restored townhouse you can walk through.",
+                        "th": "บ้านแถวเก่าที่บูรณะแล้ว เดินชมภายในได้"
+                      },
+                      "why": {
+                        "en": "Free to walk through, and a look inside an old merchant house.",
+                        "th": "เดินชมฟรี และได้ดูภายในบ้านพ่อค้าเก่า"
+                      },
+                      "tip": {
+                        "en": "Closed Mondays.",
+                        "th": "ปิดวันจันทร์"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 0.5,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "Free",
+                        "th": "ฟรี"
+                      },
+                      "book": "none",
+                      "q": "Naramachi Koshi-no-Ie, Naramachi, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://selfguidejapan.com/blog/things-to-do-in-nara"
+                    },
+                    {
+                      "name": {
+                        "en": "Yakushi-ji",
+                        "th": "วัดยากูชิจิ"
+                      },
+                      "local": "薬師寺",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Nishinokyo",
+                        "th": "นิชิโนเคียว"
+                      },
+                      "what": {
+                        "en": "A UNESCO World Heritage temple with old wooden halls.",
+                        "th": "วัดมรดกโลกยูเนสโก มีอาคารไม้เก่าแก่"
+                      },
+                      "why": {
+                        "en": "Far calmer than Todai-ji, with natural beauty and old wooden halls.",
+                        "th": "สงบกว่าวัดโทไดจิมาก มีธรรมชาติสวยและอาคารไม้เก่าแก่"
+                      },
+                      "tip": {
+                        "en": "A short train ride away on Kintetsu via Yamato-Saidaiji.",
+                        "th": "นั่งรถไฟคินเทตสึผ่านสถานียามาโตะไซไดจิไม่นาน"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥1,000",
+                        "th": "≈ ¥1,000"
+                      },
+                      "book": "none",
+                      "q": "Yakushi-ji, Nishinokyo, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://selfguidejapan.com/blog/things-to-do-in-nara"
                     }
       ]
     }
