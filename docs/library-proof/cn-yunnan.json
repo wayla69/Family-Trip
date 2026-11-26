@@ -320,6 +320,73 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals, high chairs and family sights in Kunming; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yunhaiyao Steam-pot Chicken (Nanqiang Street)",
+          "page_name": "云海肴汽锅鸡(昆明南强街店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%B5%B7%E8%82%B4%E6%B1%BD%E9%94%85%E9%B8%A1(%E6%98%86%E6%98%8E%E5%8D%97%E5%BC%BA%E8%A1%97%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "儿童餐 · 汽锅鸡特别好吃，鸡汤好鲜美，宝宝喝了 2 碗"
+        },
+        {
+          "name": "Tuzaoxiang Firewood Chicken (Chenggong)",
+          "page_name": "土灶香柴火鸡(呈贡店)",
+          "src": "https://www.amap.com/search?query=%E5%9C%9F%E7%81%B6%E9%A6%99%E6%9F%B4%E7%81%AB%E9%B8%A1(%E5%91%88%E8%B4%A1%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "家庭聚餐 · 儿童餐"
+        },
+        {
+          "name": "Yimuyuan Halal Stir-fry (Zhongtie)",
+          "page_name": "伊穆园·清穆鲜炒(中铁店)",
+          "src": "https://www.amap.com/search?query=%E4%BC%8A%E7%A9%86%E5%9B%AD%C2%B7%E6%B8%85%E7%A9%86%E9%B2%9C%E7%82%92(%E4%B8%AD%E9%93%81%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-03",
+          "map": "Amap: open, not marked closed, newest review 2026-10-03",
+          "quote": "逛完动物园顺路来吃，现点现炒的小炒黄牛肉真香，娃都抢着吃 · 还有宝宝椅"
+        },
+        {
+          "name": "Colourful Yunnan Happy World",
+          "page_name": "七彩云南·欢乐世界",
+          "src": "https://www.amap.com/search?query=%E4%B8%83%E5%BD%A9%E4%BA%91%E5%8D%97%C2%B7%E6%AC%A2%E4%B9%90%E4%B8%96%E7%95%8C&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "1.2米以下儿童免费 · 也有适合小朋友的温和项目"
+        },
+        {
+          "name": "Yunnan Wildlife Park",
+          "page_name": "云南野生动物园",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E5%8D%97%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E5%9B%AD&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "昆明宝妈周末遛娃 · 适合1–8岁小童 · 婴儿车全程畅通"
+        },
+        {
+          "name": "Kunming Botanical Garden",
+          "page_name": "昆明植物园",
+          "src": "https://www.amap.com/search?query=%E6%98%86%E6%98%8E%E6%A4%8D%E7%89%A9%E5%9B%AD&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "亲子户外 · 很适合拍照、散步、带小朋友认识植物"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "上味鱼小鲜, 马帮铜瓢牛肉 (荟聚), 萌宝饭仓儿童餐厅, 绿茶 (昆明PARK)",
+          "why": "seven to sixteen reviews, or none"
+        },
+        {
+          "name": "草多多森林牧场",
+          "why": "a review says the place feels run down"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
