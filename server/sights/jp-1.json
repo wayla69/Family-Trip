@@ -2275,6 +2275,126 @@
           "q": "Okashi Museum Tempozan, Kaigandori, Minato Ward, Osaka, Japan",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/directory/item/18646/"
+        },
+        {
+          "name": {
+            "en": "Dotonbori River Cruise",
+            "th": "ล่องเรือแม่น้ำโดตงโบริ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Dotonbori",
+            "th": "โดตงโบริ"
+          },
+          "what": {
+            "en": "A short cruise along the canal to see the neon lights and giant billboards of Dotonbori, away from the crowds.",
+            "th": "ล่องเรือสั้นๆ ตามคลองดูไฟนีออนและป้ายยักษ์ของโดตงโบริ ห่างจากฝูงชน"
+          },
+          "why": {
+            "en": "Most kids love being on water.",
+            "th": "เด็กส่วนใหญ่ชอบนั่งเรือ"
+          },
+          "tip": {
+            "en": "The best time is just before sunset.",
+            "th": "เวลาที่ดีที่สุดคือก่อนพระอาทิตย์ตกเล็กน้อย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Tombori River Cruise, Dotonbori, Osaka, Japan",
+          "ok": "2026-11",
+          "src": "https://thatmumtravellife.com/2026/05/12/osaka-with-kids-25-best-things-to-do-for-families-2026-guide/"
+        },
+        {
+          "name": {
+            "en": "HEP FIVE Ferris Wheel",
+            "th": "ชิงช้าสวรรค์เฮ็ปไฟว์"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Umeda",
+            "th": "อุเมดะ"
+          },
+          "what": {
+            "en": "A red ferris wheel on top of the HEP FIVE building, 106 metres above ground, with a private carriage for each family.",
+            "th": "ชิงช้าสวรรค์สีแดงบนอาคารเฮ็ปไฟว์ สูง 106 เมตร แต่ละครอบครัวได้กระเช้าส่วนตัว"
+          },
+          "why": {
+            "en": "This eye-catching red wheel is exciting for kids and adults alike.",
+            "th": "ชิงช้าสีแดงสะดุดตานี้สนุกทั้งเด็กและผู้ใหญ่"
+          },
+          "tip": {
+            "en": "It is a short ride, about half an hour in all.",
+            "th": "เป็นการนั่งสั้นๆ ใช้เวลารวมราวครึ่งชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "HEP FIVE Ferris Wheel, Kakudacho, Kita Ward, Osaka, Japan",
+          "ok": "2026-11",
+          "src": "https://thatmumtravellife.com/2026/05/12/osaka-with-kids-25-best-things-to-do-for-families-2026-guide/"
+        },
+        {
+          "name": {
+            "en": "Osaka Bay Cruise Santa Maria",
+            "th": "ล่องเรือซานตามาเรียอ่าวโอซาก้า"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Kaiyukan West Pier, next to Osaka Aquarium Kaiyukan",
+            "th": "ท่าเรือไคยูคังฝั่งตะวันตก ข้างพิพิธภัณฑ์สัตว์น้ำไคยูคัง"
+          },
+          "what": {
+            "en": "A sailing-ship sightseeing boat on Osaka Bay, about twice the size of Columbus' flagship.",
+            "th": "เรือชมวิวทรงเรือใบในอ่าวโอซาก้า ใหญ่ราวสองเท่าของเรือธงของโคลัมบัส"
+          },
+          "why": {
+            "en": "A relaxing 45-minute ride past the Tempozan Bridge and the bay.",
+            "th": "นั่งสบายๆ 45 นาที ผ่านสะพานเท็มโปซันและอ่าว"
+          },
+          "tip": {
+            "en": "Contact them in advance about departure times.",
+            "th": "สอบถามเวลาออกเรือล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.75,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,000 adults (from 1 October 2026)",
+            "th": "≈ ¥2,000 ผู้ใหญ่ (ตั้งแต่ 1 ตุลาคม 2026)"
+          },
+          "book": "rec",
+          "q": "Osaka Bay Cruise Santa Maria, Kaiyukan West Pier, Osaka, Japan",
+          "ok": "2026-11",
+          "src": "https://osaka-info.jp/en/spot/osaka-bay-cruise-santa-maria2022/"
         }
     ]
     },
@@ -3675,6 +3795,170 @@
           "q": "Tale of Genji Museum, Uji, Kyoto",
           "ok": "2026-11",
           "src": "https://selfguidejapan.com/blog/things-to-do-in-uji"
+        },
+        {
+          "name": {
+            "en": "Sanjusangen-do",
+            "th": "ซันจูซังเง็นโด"
+          },
+          "local": "三十三間堂",
+          "kind": "culture",
+          "area": {
+            "en": "Higashiyama, Kyoto",
+            "th": "ฮิงาชิยามะ เกียวโต"
+          },
+          "what": {
+            "en": "A long temple hall with 1,001 Kannon statues, which the official site calls a forest of Buddha statues",
+            "th": "วิหารยาวที่มีรูปปั้นกวนอิม 1,001 องค์ ซึ่งเว็บไซต์ทางการเรียกว่าป่าพระพุทธรูป"
+          },
+          "why": {
+            "en": "Walking in among the rows of statues is a quiet indoor sight",
+            "th": "การเดินผ่านแถวรูปปั้นเป็นที่ชมในร่มที่เงียบสงบ"
+          },
+          "tip": {
+            "en": "Entry closes 30 minutes before the hall: 08:30–17:00 from 4 Apr to 15 Nov, 09:00–16:00 from 16 Nov to 31 Mar",
+            "th": "ปิดรับเข้า 30 นาทีก่อนวิหารปิด: 08:30–17:00 วันที่ 4 เม.ย.–15 พ.ย. และ 09:00–16:00 วันที่ 16 พ.ย.–31 มี.ค."
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sanjusangen-do, Higashiyama, Kyoto, Japan",
+          "ok": "2026-11",
+          "src": "https://www.sanjusangendo.jp/"
+        },
+        {
+          "name": {
+            "en": "Kyoto National Museum",
+            "th": "พิพิธภัณฑ์แห่งชาติเกียวโต"
+          },
+          "local": "京都国立博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Higashiyama, Kyoto",
+            "th": "ฮิงาชิยามะ เกียวโต"
+          },
+          "what": {
+            "en": "The national museum in Kyoto, with exhibitions on view and a collection listed on its own site",
+            "th": "พิพิธภัณฑ์แห่งชาติในเกียวโต มีนิทรรศการและคอลเลกชันที่แสดงไว้ในเว็บไซต์ของตัวเอง"
+          },
+          "why": {
+            "en": "The museum has its own mascot, Torarin, and a free Garden Guide app for visitors' phones",
+            "th": "พิพิธภัณฑ์มีมาสคอตของตัวเองชื่อโทรารินและแอปไกด์สวนฟรีสำหรับโทรศัพท์ผู้เยี่ยมชม"
+          },
+          "tip": {
+            "en": "Open 09:00–17:30; closed Mondays (open when Monday is a national holiday, closed the day after)",
+            "th": "เปิด 09:00–17:30 ปิดวันจันทร์ (ถ้าวันจันทร์เป็นวันหยุดนักขัตฤกษ์จะเปิดและปิดวันถัดไป)"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kyoto National Museum, Higashiyama, Kyoto, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kyohaku.go.jp/eng/"
+        },
+        {
+          "name": {
+            "en": "Gion Corner",
+            "th": "กิอง คอร์เนอร์"
+          },
+          "local": "祇園コーナー",
+          "kind": "show",
+          "area": {
+            "en": "Gion, Higashiyama",
+            "th": "กิอง ฮิงาชิยามะ"
+          },
+          "what": {
+            "en": "A 50-minute sampler of seven classical arts, with a maiko dancing kyomai",
+            "th": "การแสดงศิลปะดั้งเดิม 7 แขนง ยาว 50 นาที มีไมโกะร่ายรำเคียวไมในโปรแกรม"
+          },
+          "why": {
+            "en": "The show ends with a photo with a maiko",
+            "th": "การแสดงจบด้วยการถ่ายรูปกับไมโกะ"
+          },
+          "tip": {
+            "en": "Shows at 18:00 and 19:00; in winter (1 Dec–11 Mar) Tuesday to Friday only, holidays excepted",
+            "th": "รอบ 18:00 และ 19:00 ช่วงฤดูหนาว (1 ธ.ค.–11 มี.ค.) แสดงวันอังคารถึงศุกร์เท่านั้น ยกเว้นวันหยุด"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥5,500 adults at the door",
+            "th": "≈ ¥5,500 ผู้ใหญ่ที่หน้างาน"
+          },
+          "book": "none",
+          "q": "Gion Corner, Gion, Kyoto, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gioncorner.com/"
+        },
+        {
+          "name": {
+            "en": "Nijo Castle",
+            "th": "ปราสาทนิโจ"
+          },
+          "local": "二条城",
+          "kind": "culture",
+          "area": {
+            "en": "Ninomaru Palace and gardens, Kyoto",
+            "th": "พระราชวังนิโนมารุและสวน เกียวโต"
+          },
+          "what": {
+            "en": "A palace whose corridor boards squeak like birdsong when walked on, with gardens outside",
+            "th": "พระราชวังที่พื้นระเบียงส่งเสียงเอี๊ยดเหมือนเสียงนกเมื่อเดินผ่าน และมีสวนด้านนอก"
+          },
+          "why": {
+            "en": "The squeaking corridor floors are the palace's best-known feature, which children tend to enjoy",
+            "th": "พื้นระเบียงที่ร้องเอี๊ยดเป็นจุดเด่นที่สุดของพระราชวัง เด็กๆ มักสนุกกับมัน"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half to two hours for the palace and gardens",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่งถึง 2 ชั่วโมงสำหรับพระราชวังและสวน"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nijo Castle, Kyoto, Japan",
+          "ok": "2026-11",
+          "src": "https://www.explera.jp/blog/2026-11-20-nijo-castle-visitor-guide/"
         }
     ]
     },
@@ -6704,6 +6988,211 @@
           "q": "Tatsumaki Jigoku, Shibaseki, Beppu",
           "ok": "2026-11",
           "src": "https://japanforkids.jp/places/beppu-hells-tour-jigoku-meguri/"
+        },
+        {
+          "name": {
+            "en": "Kamado Jigoku (Cooking-Pot Hell)",
+            "th": "คามาโดะจิโกกุ"
+          },
+          "local": "竈地獄",
+          "kind": "nature",
+          "area": {
+            "en": "Kannawa, Beppu",
+            "th": "คันนาวะ เบปปุ"
+          },
+          "what": {
+            "en": "Six numbered areas of hells in one place, with steam experiments and foot baths.",
+            "th": "จิโกกุ 6 จุดที่มีหมายเลขในที่เดียว มีการทดลองไอน้ำและบ่อแช่เท้า"
+          },
+          "why": {
+            "en": "Children can try steam experiments and hot-water experiences, and there are foot baths.",
+            "th": "เด็กๆ ลองทดลองไอน้ำและกิจกรรมน้ำร้อนได้ และมีบ่อแช่เท้า"
+          },
+          "tip": {
+            "en": "Open 8:00–17:00, every day of the year.",
+            "th": "เปิด 8:00–17:00 ทุกวันตลอดปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥500 adults (high school and up) · ≈ ¥250 children (elementary and junior high)",
+            "th": "≈ ¥500 ผู้ใหญ่ (มัธยมปลายขึ้นไป) · ≈ ¥250 เด็ก (ประถมและมัธยมต้น)"
+          },
+          "book": "none",
+          "q": "Kamado Jigoku, Kannawa, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://kamadojigoku.com/"
+        },
+        {
+          "name": {
+            "en": "Yufuin Flora House",
+            "th": "ยูฟุอินฟลอร่าเฮาส์"
+          },
+          "local": "ゆふいん フローラハウス",
+          "kind": "culture",
+          "area": {
+            "en": "Kawaminami, Yufuin",
+            "th": "คาวามินามิ ยูฟุอิน"
+          },
+          "what": {
+            "en": "A hot-spring greenhouse with orchids and herbs, plus pressed-flower and weaving workshops.",
+            "th": "เรือนกระจกน้ำพุร้อนที่มีกล้วยไม้และสมุนไพร พร้อมเวิร์กช็อปดอกไม้อัดและทอผ้า"
+          },
+          "why": {
+            "en": "The pressed-flower and weaving workshops are easy for anyone from children to adults to try.",
+            "th": "เวิร์กช็อปดอกไม้อัดและทอผ้าลองเล่นได้ง่าย ตั้งแต่เด็กถึงผู้ใหญ่"
+          },
+          "tip": {
+            "en": "Open 10:00–16:30.",
+            "th": "เปิด 10:00–16:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Pressed-flower workshop ≈ ¥1,100 (postcard and bookmark set)",
+            "th": "เวิร์กช็อปดอกไม้อัด ≈ ¥1,100 (ชุดโปสการ์ดและที่คั่นหนังสือ)"
+          },
+          "book": "none",
+          "q": "Yufuin Flora House, Kawaminami, Yufuin, Oita, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0703010000_g04030000_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Sagiridai Viewpoint",
+            "th": "จุดชมวิวซากิริได"
+          },
+          "local": "狭霧台",
+          "kind": "views",
+          "area": {
+            "en": "Kawakami, Yufuin",
+            "th": "คาวากามิ ยูฟุอิน"
+          },
+          "what": {
+            "en": "A viewpoint over Yufuin town, where most visitors stop.",
+            "th": "จุดชมวิวเหนือเมืองยูฟุอิน นักท่องเที่ยวส่วนใหญ่แวะ"
+          },
+          "why": {
+            "en": "It has a rest house and toilets, so it works as a break on a drive.",
+            "th": "มีที่พักและห้องน้ำ แวะพักระหว่างขับรถได้"
+          },
+          "tip": {
+            "en": "Free to visit; the morning mist in autumn and winter is lovely.",
+            "th": "เข้าชมได้ฟรี หมอกเช้าในฤดูใบไม้ร่วงและฤดูหนาวสวยมาก"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sagiridai Overlook, Kawakami, Yufuin, Oita, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0703010100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Kagurame Lake Iris Garden",
+            "th": "สวนดอกอิริสทะเลสาบคากูราเมะ"
+          },
+          "local": "神楽女湖花菖蒲園",
+          "kind": "nature",
+          "area": {
+            "en": "Kagurame Lake, Beppu",
+            "th": "ทะเลสาบคากูราเมะ เบปปุ"
+          },
+          "what": {
+            "en": "An iris garden by the lake with about 70 kinds and 15,000 plants.",
+            "th": "สวนดอกอิริสริมทะเลสาบ มีราว 70 สายพันธุ์ 15,000 ต้น"
+          },
+          "why": {
+            "en": "In early summer the irises by the lake are open for everyone to look at.",
+            "th": "ต้นฤดูร้อนมีดอกอิริสริมทะเลสาบให้ชม"
+          },
+          "tip": {
+            "en": "Open only from mid-June to early July.",
+            "th": "เปิดเฉพาะกลางเดือนมิถุนายนถึงต้นเดือนกรกฎาคม"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kagurame Lake Iris Garden, Beppu, Oita, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0703010000_g04030000_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Bozu Jigoku (Monk's Head Hell)",
+            "th": "โบสึจิโกกุ"
+          },
+          "local": "坊主地獄",
+          "kind": "nature",
+          "area": {
+            "en": "Ogura, Beppu",
+            "th": "โอกุระ เบปปุ"
+          },
+          "what": {
+            "en": "A hell whose boiling clay bubbles look like shaved heads, in a Japanese garden with a dozen hells.",
+            "th": "จิโกกุที่โคลนเดือดเป็นฟองดูเหมือนหัวโล้น อยู่ในสวนญี่ปุ่นที่มีจิโกกุอีกหลายแห่ง"
+          },
+          "why": {
+            "en": "A legend says an earthquake once blew a temple and its priest away; the hell is a natural monument.",
+            "th": "มีตำนานว่าแผ่นดินไหวเคยพัดวัดและเจ้าอาวาสหายไป จิโกกุแห่งนี้เป็นอนุสรณ์สถานธรรมชาติ"
+          },
+          "tip": {
+            "en": "Open 8:30–17:00.",
+            "th": "เปิด 8:30–17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400 junior high and up · ≈ ¥200 elementary",
+            "th": "≈ ¥400 มัธยมต้นขึ้นไป · ≈ ¥200 ประถม"
+          },
+          "book": "none",
+          "q": "Bozu Jigoku, Ogura, Beppu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0703010000_g04030000_s-situation=family/spot/"
         }
       ]
     },
@@ -7946,6 +8435,169 @@
           "q": "Nakano Udon School Kotohira, Kotohira, Kagawa, Japan",
           "ok": "2026-11",
           "src": "https://www.mapple.net/region/a0603020400_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Kagawa Prefectural Museum",
+            "th": "พิพิธภัณฑ์จังหวัดคางาวะ"
+          },
+          "local": "香川県立ミュージアム",
+          "kind": "museumkid",
+          "area": {
+            "en": "Tamamo-cho, Takamatsu (about 10 min walk from JR Takamatsu Station)",
+            "th": "ทามาโมโช ทาคามัตสึ (เดินจาก JR ทาคามัตสึ ราว 10 นาที)"
+          },
+          "what": {
+            "en": "Kagawa's history and art under one roof, with old-fashioned toys to play with and dress-up corners.",
+            "th": "ประวัติศาสตร์และศิลปะของคางาวะในที่เดียว มีของเล่นโบราณให้เล่นและมุมลองแต่งตัว"
+          },
+          "why": {
+            "en": "Kids can play with kendama and spinning tops, and try on a kimono or armour (paid).",
+            "th": "เด็กๆ เล่นเคนดามะและลูกข่างได้ และลองสวมกิโมโนหรือชุดเกราะ (เสียเงินเพิ่ม)"
+          },
+          "tip": {
+            "en": "Closed Mondays (the next weekday when Monday is a holiday). Open 9:00–17:00, last entry 16:30.",
+            "th": "ปิดวันจันทร์ (ถ้าวันจันทร์เป็นวันหยุด ปิดวันธรรมดาถัดไป) เปิด 9:00–17:00 รับคนเข้าถึง 16:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥500 adults · high school students and under free",
+            "th": "≈ ¥500 ผู้ใหญ่ · นักเรียนมัธยมปลายลงมาฟรี"
+          },
+          "book": "none",
+          "q": "Kagawa Prefectural Museum, Tamamocho, Takamatsu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5471/"
+        },
+        {
+          "name": {
+            "en": "Shikoku Aquarium",
+            "th": "สวนสัตว์น้ำชิโกกุ"
+          },
+          "local": "四国水族館",
+          "kind": "aquarium",
+          "area": {
+            "en": "Utazu Rinkai Park, Utazu (about 12 min walk from JR Utazu Station)",
+            "th": "สวนริมทะเลอุตาซุ อุตาซุ (เดินจาก JR อุตาซุ ราว 12 นาที)"
+          },
+          "what": {
+            "en": "A new-style aquarium built around the waters of Shikoku, with a whirlpool tank and a dolphin show.",
+            "th": "สวนสัตว์น้ำสไตล์ใหม่ที่จำลองโลกใต้น้ำรอบเกาะชิโกกุ มีตู้น้ำวนและโชว์โลมา"
+          },
+          "why": {
+            "en": "Dolphin play time and feeding time; under-3s go in free.",
+            "th": "มีช่วงโลมาเล่นน้ำและให้อาหาร เด็กอายุต่ำกว่า 3 ปีเข้าฟรี"
+          },
+          "tip": {
+            "en": "Open 9:00–18:00, last entry 17:30; hours change by season and it closes for maintenance on some days.",
+            "th": "เปิด 9:00–18:00 รับคนเข้าถึง 17:30 เวลาเปลี่ยนตามฤดูกาล และปิดซ่อมบำรุงบางวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,600 adults · ≈ ¥1,400 primary and junior high · ≈ ¥700 age 3+ · under 3 free",
+            "th": "≈ ¥2,600 ผู้ใหญ่ · ≈ ¥1,400 ประถมและมัธยมต้น · ≈ ¥700 อายุ 3 ปีขึ้นไป · ต่ำกว่า 3 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Shikoku Aquarium, Utazu, Kagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5471/"
+        },
+        {
+          "name": {
+            "en": "Gold Tower and Play Park",
+            "th": "โกลด์ทาวเวอร์และสวนเด็กเล่น"
+          },
+          "local": "ゴールドタワー",
+          "kind": "play",
+          "area": {
+            "en": "Hamaichiban-cho, Utazu (about 12 min walk from JR Utazu Station)",
+            "th": "ฮามาอิจิบันโช อุตาซุ (เดินจาก JR อุตาซุ ราว 12 นาที)"
+          },
+          "what": {
+            "en": "Utazu's landmark tower with a sea view and a play park with a ball pool, trampolines and giant air toys.",
+            "th": "หอคอยแลนด์มาร์กของอุตาซุที่เห็นทะเล พร้อมสวนเด็กเล่นที่มีบ่อบอล แทรมโพลีน และของเล่นเป่าลมยักษ์"
+          },
+          "why": {
+            "en": "Trampolines, mats and giant inflatable toys to run about on, and a ball pool.",
+            "th": "มีแทรมโพลีน เสื่อ และของเล่นเป่าลมยักษ์ให้วิ่งเล่น และมีบ่อบอล"
+          },
+          "tip": {
+            "en": "Play park open 10:00–18:00 (last entry 17:30); the tower stays open until 22:00 on weekends and holidays.",
+            "th": "สวนเด็กเล่นเปิด 10:00–18:00 (รับเข้าถึง 17:30) หอคอยเปิดถึง 22:00 ในวันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Play park ≈ ¥1,000 adults (junior high and up) · ≈ ¥1,500 children (age 1 to primary school)",
+            "th": "สวนเด็กเล่น ≈ ¥1,000 ผู้ใหญ่ (มัธยมต้นขึ้นไป) · ≈ ¥1,500 เด็ก (อายุ 1 ปีถึงประถม)"
+          },
+          "book": "none",
+          "q": "Gold Tower, Hamaichiban-cho, Utazu, Kagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5471/"
+        },
+        {
+          "name": {
+            "en": "Red Pumpkin (Yayoi Kusama)",
+            "th": "ฟักทองแดง (ยาโยอิ คุซามะ)"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Miyanoura, Naoshima",
+            "th": "มิยาโนอุระ นาโอชิมะ"
+          },
+          "what": {
+            "en": "A red polka-dot pumpkin sculpture by Yayoi Kusama, standing on the sea at Naoshima.",
+            "th": "ประติมากรรมฟักทองสีแดงลายจุดของยาโยอิ คุซามะ ตั้งอยู่บนทะเลที่นาโอชิมะ"
+          },
+          "why": {
+            "en": "A bright, giant sculpture beside the sea that children can walk up to and look at.",
+            "th": "ประติมากรรมยักษ์สีสดริมทะเล เด็กๆ เดินเข้าไปดูได้"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Red Pumpkin, Miyanoura, Naoshima, Kagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://naoshima.net/en/art/art_miyanoura/"
         }
       ]
     },
@@ -8912,6 +9564,47 @@
                       "q": "Rokuen Deer Sanctuary, Kasuganocho, Nara, Japan",
                       "ok": "2026-11",
                       "src": "https://www.nap-camp.com/mag/88534"
+                    },
+                    {
+                      "name": {
+                        "en": "Toshodai-ji Temple",
+                        "th": "วัดโทโชไดจิ"
+                      },
+                      "local": "唐招提寺",
+                      "kind": "culture",
+                      "area": {
+                        "en": "Gojo-cho, Nishinokyo, Nara",
+                        "th": "โกโจโช นิชิโนเคียว นารา"
+                      },
+                      "what": {
+                        "en": "A temple of the Ritsu sect founded by the monk Ganjin, with its hall and treasures from the Tenpyo era.",
+                        "th": "วัดนิกายริตสึที่พระกันจินสร้าง มีวิหารและสมบัติสมัยเท็มเปียว"
+                      },
+                      "why": {
+                        "en": "A quiet walk through old wooden halls and a garden for the older children; the grounds are open and the stop is short.",
+                        "th": "เดินเงียบๆ ผ่านวิหารไม้เก่าและสวนสำหรับเด็กโต พื้นที่โล่ง แวะสั้นๆ ได้"
+                      },
+                      "tip": {
+                        "en": "Open 8:30–17:00, last entry 16:30.",
+                        "th": "เปิด 8:30–17:00 รับคนเข้าชมถึง 16:30"
+                      },
+                      "ages": [
+                        1,
+                        1,
+                        2,
+                        2
+                      ],
+                      "hrs": 1.5,
+                      "io": "both",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥1,000",
+                        "th": "≈ ¥1,000"
+                      },
+                      "book": "none",
+                      "q": "Toshodai-ji, Gojocho, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://toshodaiji.jp/haikan.html"
                     }
       ]
     }

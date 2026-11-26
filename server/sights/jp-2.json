@@ -2034,6 +2034,290 @@
           "q": "Kawaguchiko Field Center, Funatsu, Fujikawaguchiko, Japan",
           "ok": "2026-11",
           "src": "https://www.yamanashi-kankou.jp/kankou/spot/p6_2741.html"
+        },
+        {
+          "name": {
+            "en": "Yamanakako no KABA",
+            "th": "ยามานากาโกะ โนะ คาบะ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Asahigaoka, Lake Yamanaka",
+            "th": "อาซาฮิกาโอกะ ทะเลสาบยามานากะ"
+          },
+          "what": {
+            "en": "An amphibious bus that drives on land and then dives into Lake Yamanakako",
+            "th": "รถบัสสะเทินน้ำสะเทินบกที่วิ่งบนถนนแล้วลงไปแล่นในทะเลสาบยามานากะ"
+          },
+          "why": {
+            "en": "Children get a splash and a ride with the little hippo mascot, CHIBI KABA, for the whole trip",
+            "th": "เด็กๆ ได้สนุกกับการลงน้ำและมีตัวมาสคอตฮิปโปน้อย CHIBI KABA ไปด้วยตลอดทริป"
+          },
+          "tip": {
+            "en": "Check in at the KABA BUS stop at Mori-no-Eki at least 15 minutes before departure",
+            "th": "เช็กอินที่ป้าย KABA BUS ที่โมริโนะเอกิก่อนรถออกอย่างน้อย 15 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Yamanakako no KABA, Asahigaoka Bus Terminal, Yamanakako, Japan",
+          "ok": "2026-11",
+          "src": "https://lake-yamanakako.com/en/see-and-do/10413"
+        },
+        {
+          "name": {
+            "en": "Kitaguchi Hongu Fuji Sengen Shrine",
+            "th": "ศาลเจ้าคิตะกูจิ ฮงงู ฟูจิ เซนเก็น"
+          },
+          "local": "北口本宮冨士浅間神社",
+          "kind": "culture",
+          "area": {
+            "en": "Kitaguchi, Fujiyoshida",
+            "th": "คิตะกูจิ ฟูจิโยชิดะ"
+          },
+          "what": {
+            "en": "A shrine in old-growth forest, with a long approach lined with mossy stone lanterns and tall cedars",
+            "th": "ศาลเจ้าในป่าเก่าแก่ ทางเดินยาวสองข้างมีโคมหินปกคลุมด้วยตะไคร่และต้นซีดาร์สูง"
+          },
+          "why": {
+            "en": "A walk past the stone lanterns through the forest suits children who like to explore",
+            "th": "เดินชมโคมหินในป่าเหมาะกับเด็กที่ชอบสำรวจ"
+          },
+          "tip": {
+            "en": "It sits in dense forest, so bring a light jacket in cooler months",
+            "th": "ศาลเจ้าอยู่ในป่าทึบ ช่วงอากาศเย็นควรเตรียมเสื้อแจ็กเก็ตบางๆ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kitaguchi Hongu Fuji Sengen Shrine, Kitaguchi, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://www.yamanashi-kankou.jp/english/explore-by-area/fujisan-fujigoko/oshi-former-togawa-family-house.html"
+        },
+        {
+          "name": {
+            "en": "Oshi (Former Togawa Family House)",
+            "th": "โอชิ (บ้านเก่าตระกูลโทงาวะ)"
+          },
+          "local": "御師 旧外川家住宅",
+          "kind": "culture",
+          "area": {
+            "en": "Fujiyoshida",
+            "th": "ฟูจิโยชิดะ"
+          },
+          "what": {
+            "en": "The house of the Togawa family, who served as mentors of Mount Fuji religion across generations",
+            "th": "บ้านของตระกูลโทงาวะ ผู้ทำหน้าที่ดูแลผู้ศรัทธาภูเขาไฟฟูจิมาหลายรุ่น"
+          },
+          "why": {
+            "en": "A preserved old house, a quiet indoor stop on a rainy day",
+            "th": "บ้านเก่าที่อนุรักษ์ไว้ เป็นที่แวะในร่มเงียบๆ ในวันฝนตก"
+          },
+          "tip": {
+            "en": "Allow about half an hour",
+            "th": "เผื่อเวลาราวครึ่งชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Oshi Former Togawa Family House, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://www.yamanashi-kankou.jp/english/explore-by-area/fujisan-fujigoko/oshi-former-togawa-family-house.html"
+        },
+        {
+          "name": {
+            "en": "Fuji Michi (Honcho Street)",
+            "th": "ฟูจิมิจิ (ถนนฮอนโจ)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "en": "Honcho, Fujiyoshida",
+            "th": "ฮอนโจ ฟูจิโยชิดะ"
+          },
+          "what": {
+            "en": "A shopping street with Showa-era retro signs and street lamps, with Mount Fuji in view",
+            "th": "ถนนร้านค้าที่มีป้ายและโคมไฟสไตล์โชวะ มองเห็นภูเขาไฟฟูจิอยู่ตรงหน้า"
+          },
+          "why": {
+            "en": "Retro shops and classic street lamps make a nostalgic walk with Mount Fuji ahead",
+            "th": "ร้านย้อนยุคและโคมไฟแบบคลาสสิกทำให้การเดินเล่นน่าประทับใจ โดยมีภูเขาไฟฟูจิอยู่เบื้องหน้า"
+          },
+          "tip": {
+            "en": "Stroll and enjoy the scenery; keep off the roadway",
+            "th": "เดินเล่นชมวิว และอย่าก้าวลงไปบนถนน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Fuji Michi Honcho Street, Honcho, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21023/"
+        },
+        {
+          "name": {
+            "en": "Kawaguchiko Konohana Museum",
+            "th": "พิพิธภัณฑ์โคโนฮานะ คาวากูจิโกะ"
+          },
+          "local": "河口湖木ノ花美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Shindo Pass road, Fujikawaguchiko",
+            "th": "ถนนช่องเขาชินโด ฟูจิคาวากูจิโกะ"
+          },
+          "what": {
+            "en": "An art museum themed on Wachifield, a land created by Ikeda Akiko and inhabited by Dayan the cat",
+            "th": "พิพิธภัณฑ์ศิลปะธีมวาจิฟิลด์ ดินแดนที่อิเคดะ อากิโกะ สร้างขึ้น มีแมวดายันเป็นตัวเอก"
+          },
+          "why": {
+            "en": "Original pictures of Dayan the cat and friends are on show, and the cafe serves dishes made with homegrown strawberries",
+            "th": "จัดแสดงภาพต้นฉบับของแมวดายันและเพื่อนๆ และคาเฟ่มีเมนูจากสตรอว์เบอร์รีที่ปลูกเอง"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kawaguchiko Konohana Museum, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.yamanashi-kankou.jp/english/explore-by-area/fujisan-fujigoko/kawaguchiko-konohana-museum.html"
+        },
+        {
+          "name": {
+            "en": "Lake Yamanakako Swan Lake Pleasure Boat",
+            "th": "เรือหงส์ชมทะเลสาบยามานากะ (Swan Lake)"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Hirano pier, Lake Yamanaka",
+            "th": "ท่าเรือฮิราโนะ ทะเลสาบยามานากะ"
+          },
+          "what": {
+            "en": "A sightseeing boat shaped like a swan, cruising the largest of the Fuji Five Lakes",
+            "th": "เรือชมวิวรูปหงส์ แล่นในทะเลสาบที่ใหญ่ที่สุดในห้าทะเลสาบฟูจิ"
+          },
+          "why": {
+            "en": "Special kids' seating and seats with steering wheels and binoculars for young passengers",
+            "th": "มีที่นั่งพิเศษสำหรับเด็ก พร้อมที่นั่งที่มีพวงมาลัยและกล้องส่องทางไกลให้ผู้โดยสารตัวเล็ก"
+          },
+          "tip": {
+            "en": "The full route takes 20 minutes",
+            "th": "เส้นทางเต็มใช้เวลา 20 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,200 adults · ¥600 elementary age",
+            "th": "≈ ¥1,200 ผู้ใหญ่ · ¥600 เด็กประถม"
+          },
+          "book": "none",
+          "q": "Yamanakako Swan Boat pier, Hirano, Yamanakako, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/12108"
+        },
+        {
+          "name": {
+            "en": "Kubota Itchiku Art Museum",
+            "th": "พิพิธภัณฑ์ศิลปะคูโบตะ อิตจิกุ"
+          },
+          "local": "久保田一竹美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Kohoku View Line, Fujikawaguchiko",
+            "th": "ถนนโคโฮกุวิวไลน์ ฟูจิคาวากูจิโกะ"
+          },
+          "what": {
+            "en": "A museum of textile artist Itchiku Kubota's kimono works, in an eclectic building with gardens",
+            "th": "พิพิธภัณฑ์ผลงานกิโมโนของศิลปินสิ่งทอ อิตจิกุ คูโบตะ ในอาคารสไตล์ผสมผสานพร้อมสวน"
+          },
+          "why": {
+            "en": "The striking main gate, made from doors of ancient Indian castles, and gardens with waterfalls and caves give children something to look at besides the textiles",
+            "th": "ประตูใหญ่ที่ทำจากบานประตูปราสาทอินเดียโบราณ และสวนที่มีน้ำตกกับถ้ำ ให้เด็กๆ ดูได้นอกเหนือจากงานผ้า"
+          },
+          "tip": {
+            "en": "Admission until 16:30; hours 10:00–17:00 vary by season",
+            "th": "เข้าได้ถึง 16:30 เวลาเปิด 10:00–17:00 ปรับตามฤดูกาล"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,500 adults · ¥900 high school and university · ¥400 elementary and junior high · preschool free",
+            "th": "≈ ¥1,500 ผู้ใหญ่ · ¥900 มัธยมปลายและมหาวิทยาลัย · ¥400 ประถมและมัธยมต้น · เด็กก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "Kubota Itchiku Art Museum, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://gltjp.com/en/directory/item/15999"
         }
       ]
     },
@@ -3128,6 +3412,211 @@
           "q": "Shiki Memorial Museum, Dogo Park, Matsuyama, Japan",
           "ok": "2026-11",
           "src": "https://www.walkerplus.com/spot/ar0938s44880/"
+        },
+        {
+          "name": {
+            "en": "Museum of Art, Ehime",
+            "th": "พิพิธภัณฑ์ศิลปะเอฮิเมะ"
+          },
+          "local": "愛媛県美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Matsuyama Castle historic site, Matsuyama",
+            "th": "เขตประวัติศาสตร์ปราสาทมัตสึยามะ มัตสึยามะ"
+          },
+          "what": {
+            "en": "A participatory art museum where visitors make their own art in the ateliers as well as see the collection",
+            "th": "พิพิธภัณฑ์ศิลปะแบบมีส่วนร่วม ผู้เข้าชมทำงานศิลปะเองในห้องปฏิบัติการได้ นอกเหนือจากชมคอลเลกชัน"
+          },
+          "why": {
+            "en": "Two ateliers let children try printmaking, woodworking, dyeing, photography or clay art at their own pace",
+            "th": "ห้องปฏิบัติการสองห้องให้เด็กลองทำภาพพิมพ์ งานไม้ ย้อมผ้า ถ่ายภาพ หรือปั้นดินเหนียวตามจังหวะของตัวเอง"
+          },
+          "tip": {
+            "en": "Open 09:40–18:00, last entry 17:30",
+            "th": "เปิด 09:40–18:00 เข้าได้ถึง 17:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ehime Museum of Art, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.ehime-art.jp/en/about"
+        },
+        {
+          "name": {
+            "en": "Ehime University Museum",
+            "th": "พิพิธภัณฑ์มหาวิทยาลัยเอฮิเมะ"
+          },
+          "local": "愛媛大学ミュージアム",
+          "kind": "museum",
+          "area": {
+            "en": "Bunkyo-cho, Matsuyama (Ehime University campus)",
+            "th": "บุนเคียวโจ มัตสึยามะ (ในมหาวิทยาลัยเอฮิเมะ)"
+          },
+          "what": {
+            "en": "A hands-on research museum with a rare diamond, a large beetle collection and Yayoi pottery to touch",
+            "th": "พิพิธภัณฑ์วิจัยที่ให้สัมผัสของจริง มีเพชรหายาก ชุดสะสมด้วงขนาดใหญ่ และเครื่องปั้นดินเผายุคยาโยอิ"
+          },
+          "why": {
+            "en": "Exhibits to touch and feel, student guided tours, and a baby-changing table in the accessible toilet",
+            "th": "มีนิทรรศการให้จับต้อง ทัวร์นำชมโดยนักศึกษา และโต๊ะเปลี่ยนผ้าอ้อมในห้องน้ำสำหรับผู้พิการ"
+          },
+          "tip": {
+            "en": "Open 10:00–16:30, last entry 16:00; closed Sundays and holidays",
+            "th": "เปิด 10:00–16:30 เข้าได้ถึง 16:00 ปิดวันอาทิตย์และวันหยุด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Ehime University Museum, Bunkyo-cho, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/16235/"
+        },
+        {
+          "name": {
+            "en": "Jonofuchi Park",
+            "th": "สวนโจโนะฟุจิ"
+          },
+          "local": "杖ノ淵公園",
+          "kind": "park",
+          "area": {
+            "en": "Minami-Takai, Matsuyama",
+            "th": "มินามิทาไก มัตสึยามะ"
+          },
+          "what": {
+            "en": "A natural park by a clear spring, known as one of Japan's 100 famous waters, with a water area and a play area",
+            "th": "สวนธรรมชาติริมน้ำพุใส หนึ่งใน 100 แหล่งน้ำชื่อดังของญี่ปุ่น มีลานน้ำและลานเล่น"
+          },
+          "why": {
+            "en": "In summer there is a shallow water play area, only ankle-deep, where small children can play",
+            "th": "ช่วงฤดูร้อนมีลานเล่นน้ำตื้นลึกแค่ข้อเท้า เด็กเล็กเล่นได้"
+          },
+          "tip": {
+            "en": "Open 08:00–18:00 with no closing day; parking available",
+            "th": "เปิด 08:00–18:00 ไม่มีวันหยุด มีที่จอดรถ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Jonofuchi Park, Minami-Takai, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/89367"
+        },
+        {
+          "name": {
+            "en": "Shin-Ishite Park",
+            "th": "สวนชินอิชิเตะ"
+          },
+          "local": "新石手公園",
+          "kind": "park",
+          "area": {
+            "en": "Shin-Ishite, Matsuyama",
+            "th": "ชินอิชิเตะ มัตสึยามะ"
+          },
+          "what": {
+            "en": "A small neighbourhood park with children's play equipment next to a river",
+            "th": "สวนชุมชนเล็กๆ ที่มีเครื่องเล่นเด็กอยู่ข้างแม่น้ำ"
+          },
+          "why": {
+            "en": "Many pieces of play equipment are placed so small children can play safely, with the river close by",
+            "th": "มีเครื่องเล่นหลายชิ้นที่วางให้เด็กเล็กเล่นได้อย่างปลอดภัย และแม่น้ำอยู่ใกล้ๆ"
+          },
+          "tip": {
+            "en": "Open all day; no parking, the Higashino 1-chome bus stop is close",
+            "th": "เปิดตลอดวัน ไม่มีที่จอดรถ ป้ายรถบัสฮิงาชิโนะ 1-โจเมะอยู่ใกล้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Shin-Ishite Park, Shin-Ishite, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/89367"
+        },
+        {
+          "name": {
+            "en": "Miharashi Park",
+            "th": "สวนมิฮาราชิ"
+          },
+          "local": "みはらし公園",
+          "kind": "views",
+          "area": {
+            "en": "Yadono-cho, Matsuyama",
+            "th": "ยาโดโนะโจ มัตสึยามะ"
+          },
+          "what": {
+            "en": "A hilltop park with a view over the Ishiteguchi dam lake and the mountains around it",
+            "th": "สวนบนเนินที่มองเห็นทะเลสาบเขื่อนอิชิเตะกูจิและภูเขารอบๆ"
+          },
+          "why": {
+            "en": "A quiet viewpoint with few crowds, good for a slow walk outside",
+            "th": "จุดชมวิวเงียบสงบ คนไม่พลุกพล่าน เหมาะกับการเดินเล่นช้าๆ กลางแจ้ง"
+          },
+          "tip": {
+            "en": "No parking; about 15 minutes by car from Dogo Onsen; cherry blossom in spring",
+            "th": "ไม่มีที่จอดรถ ขับจากโดโงะออนเซ็นราว 15 นาที มีซากุระบานในฤดูใบไม้ผลิ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Miharashi Park, Yadono-cho, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/89367"
         }
       ]
     },
@@ -4876,6 +5365,127 @@
           "q": "Izu Kogen Stained Glass Museum, 1439-1 Kawana, Ito, Japan",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/directory/item/14886/"
+        },
+        {
+          "name": {
+            "en": "Izu Granpal Park",
+            "th": "อิซุ แกรนพาล พาร์ค"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Futo, Ito",
+            "th": "ฟุโตะ อิโต"
+          },
+          "what": {
+            "en": "A leisure park on the national highway with a 400 m zip line, life-size dinosaurs and a 3D ship-shaped maze",
+            "th": "สวนสนุกริมทางหลวงแห่งชาติ มีซิปไลน์ 400 เมตร ไดโนเสาร์ขนาดเท่าจริง และเขาวงกต 3 มิติรูปเรือ"
+          },
+          "why": {
+            "en": "Over 20 pieces of play equipment, some that even small children can use; roller slides and a free outdoor play area",
+            "th": "มีเครื่องเล่นกว่า 20 ชิ้น บางชิ้นเด็กเล็กเล่นได้ มีสไลเดอร์ลูกกลิ้งและลานเล่นกลางแจ้งที่เข้าฟรี"
+          },
+          "tip": {
+            "en": "The outdoor play area is free; the ride and water activities are paid",
+            "th": "ลานเล่นกลางแจ้งเข้าฟรี เครื่องเล่นและกิจกรรมทางน้ำมีค่าใช้จ่าย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Izu Granpal Park, 1090 Futo, Ito, Japan",
+          "ok": "2026-11",
+          "src": "https://matcha-jp.com/en/25317"
+        },
+        {
+          "name": {
+            "en": "PICA Hatsushima",
+            "th": "พิกะ ฮัตสึชิมะ"
+          },
+          "local": "PICA初島",
+          "kind": "play",
+          "area": {
+            "en": "Hatsushima island, off Atami",
+            "th": "เกาะฮัตสึชิมะ นอกชายฝั่งอาตามิ"
+          },
+          "what": {
+            "en": "An island resort 30 minutes by ferry from Atami port, with an adventure island, an Asian garden and a day-visit bath",
+            "th": "รีสอร์ตบนเกาะ นั่งเฟอร์รีจากท่าเรืออาตามิ 30 นาที มีเกาะผจญภัย สวนเอเชีย และอ่างอาบน้ำแบบแวะวัน"
+          },
+          "why": {
+            "en": "Ten athletic courses (Adventure Island VOTAN) and a harnessed tree-top course for children",
+            "th": "มีคอร์สกีฬา 10 คอร์ส (Adventure Island VOTAN) และคอร์สบนยอดไม้แบบสวมสายรัดสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "The ferry from Atami port takes about 30 minutes",
+            "th": "เฟอร์รีจากท่าเรืออาตามิใช้เวลาราว 30 นาที"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "PICA Hatsushima, Hatsushima, Atami, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/19437/"
+        },
+        {
+          "name": {
+            "en": "ACAO FOREST",
+            "th": "อาคาโอ ฟอเรสต์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Kamitaga, Atami",
+            "th": "คามิตางะ อาตามิ"
+          },
+          "what": {
+            "en": "A hillside garden park with thirteen themed gardens above the Atami sea, including an Italian herb garden",
+            "th": "สวนสวนบนเนินเขาที่มี 13 สวนธีมเหนือทะเลอาตามิ รวมถึงสวนสมุนไพรอิตาลี"
+          },
+          "why": {
+            "en": "Garden walks, a shuttle bus inside the park and an ocean-view garden for photos",
+            "th": "เดินชมสวน มีรถชัตเทิลบัสในสวน และสวนวิวทะเลสำหรับถ่ายรูป"
+          },
+          "tip": {
+            "en": "Many slopes, so bring a baby carrier; roses bloom mid-May to early June",
+            "th": "มีทางลาดเยอะ ควรเตรียมเป้อุ้มเด็ก กุหลาบบานช่วงกลางพฤษภาคมถึงต้นมิถุนายน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "from ≈ ¥2,500 adults (varies by season)",
+            "th": "เริ่มที่ ≈ ¥2,500 ผู้ใหญ่ (ปรับตามฤดูกาล)"
+          },
+          "book": "none",
+          "q": "ACAO FOREST, Kamitaga, Atami, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/19437/"
         }
       ]
     },
@@ -5649,6 +6259,88 @@
           "q": "Miyazaki Jingu, Miyazaki, Japan",
           "ok": "2026-11",
           "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1209"
+        },
+        {
+          "name": {
+            "en": "Miyazaki Art Center",
+            "th": "มิยาซากิ อาร์ตเซ็นเตอร์"
+          },
+          "local": "みやざきアートセンター",
+          "kind": "museumkid",
+          "area": {
+            "en": "Tachibana-dori Nishi, central Miyazaki",
+            "th": "ทาจิบานะโดริ นิชิ ใจกลางมิยาซากิ"
+          },
+          "what": {
+            "en": "A cultural complex in central Miyazaki with a free kids' room on the third floor, wooden play equipment, toys and picture books",
+            "th": "อาคารวัฒนธรรมกลางเมืองมิยาซากิ มีห้องเด็กเข้าฟรีชั้น 3 พร้อมของเล่นไม้ ของเล่น และหนังสือภาพ"
+          },
+          "why": {
+            "en": "Free, open play with wooden toys and picture books in the kids' room",
+            "th": "เล่นอิสระได้ฟรีกับของเล่นไม้และหนังสือภาพในห้องเด็ก"
+          },
+          "tip": {
+            "en": "On Tuesdays only the third floor is open, 10:00–18:00",
+            "th": "วันอังคารเปิดเฉพาะชั้น 3 เวลา 10:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Miyazaki Art Center, Tachibana-dori Nishi 3-3-27, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": {
+            "en": "Kids Bounce",
+            "th": "คิดส์ เบานซ์"
+          },
+          "local": "キッズバウンス",
+          "kind": "play",
+          "area": {
+            "en": "Otsuka-cho, Miyazaki, near Miyazaki-Nishi IC",
+            "th": "โอสึกะโจ มิยาซากิ ใกล้ทางขึ้นลงมิยาซากิ-นิชิ"
+          },
+          "what": {
+            "en": "A small, homely indoor play room for children aged 0 to 6, with wooden toys and musical instruments",
+            "th": "ห้องเล่นในร่มเล็กๆ บรรยากาศอบอุ่นสำหรับเด็ก 0–6 ปี มีของเล่นไม้และเครื่องดนตรี"
+          },
+          "why": {
+            "en": "Made for children aged 0 to 6, and food and drink may be brought in",
+            "th": "ออกแบบสำหรับเด็ก 0–6 ปี และนำอาหารกับเครื่องดื่มเข้าไปได้"
+          },
+          "tip": {
+            "en": "Mainly open at weekends; 2-hour and 4-hour passes on weekends and holidays",
+            "th": "เปิดเป็นหลักช่วงสุดสัปดาห์ วันเสาร์อาทิตย์และวันหยุดมีบัตร 2 ชั่วโมงและ 4 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥900 a child · ¥500 an adult (2 hours, weekends and holidays)",
+            "th": "≈ ¥900 ต่อเด็ก · ¥500 ต่อผู้ใหญ่ (2 ชั่วโมง วันเสาร์อาทิตย์และวันหยุด)"
+          },
+          "book": "none",
+          "q": "Kids Bounce, Otsuka-cho Takeshita 532-10, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
         }
       ]
     },
@@ -6392,6 +7084,47 @@
           "q": "Minatopia, Chuo Ward, Niigata, Japan",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/6262/"
+        },
+        {
+          "name": {
+            "en": "Nagaoka Fireworks Museum",
+            "th": "พิพิธภัณฑ์ดอกไม้ไฟนางาโอกะ"
+          },
+          "local": "長岡花火館",
+          "kind": "museum",
+          "area": {
+            "en": "Nagaoka (roadside station, about 20 min by bus from JR Nagaoka Station)",
+            "th": "นางาโอกะ (สถานีริมทาง ห่างจาก JR นางาโอกะ นั่งรถบัสราว 20 นาที)"
+          },
+          "what": {
+            "en": "A roadside station with a free fireworks exhibition room and a dome theatre showing the Nagaoka Fireworks.",
+            "th": "สถานีริมทางที่มีห้องนิทรรศการดอกไม้ไฟให้เข้าฟรี และโรงภาพยนตร์โดมฉายดอกไม้ไฟนางาโอกะ"
+          },
+          "why": {
+            "en": "A big-screen fireworks game, life-size shells and casings to look at, and a dome show; a sheltered place to play on a rainy day.",
+            "th": "มีเกมดอกไม้ไฟบนจอใหญ่ ลูกดอกไม้ไฟขนาดจริงให้ดู และโชว์โดม เป็นที่เล่นในร่มวันฝนตก"
+          },
+          "tip": {
+            "en": "Closed Wednesdays (the next day if a public holiday falls on a Wednesday). Open 10:00–17:30.",
+            "th": "ปิดวันพุธ (ถ้าวันพุธตรงวันหยุดนักขัตฤกษ์ ปิดวันถัดไป) เปิด 10:00–17:30"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Exhibition room free · theatre ≈ ¥600 (high school and older) · ≈ ¥300 (elementary and junior high)",
+            "th": "ห้องนิทรรศการฟรี · โรงภาพยนตร์ ≈ ¥600 (มัธยมปลายขึ้นไป) · ≈ ¥300 (ประถมและมัธยมต้น)"
+          },
+          "book": "none",
+          "q": "Nagaoka Fireworks Museum, Nagaoka, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://nagaoka-hanabikan.niigata.jp/en/"
         }
       ]
     },
