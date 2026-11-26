@@ -314,6 +314,48 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for restaurants with high chairs in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Jiuzhuan Xiaomo (West City Red Square)",
+          "page_name": "九转小磨 (西城红场店)",
+          "src": "https://www.amap.com/search?query=%E4%B9%9D%E8%BD%AC%E5%B0%8F%E7%A3%A8%20(%E8%A5%BF%E5%9F%8E%E7%BA%A2%E5%9C%BA%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Zhenzhoudao Congee (Intime City)",
+          "page_name": "珍粥道(银泰城店)",
+          "src": "https://www.amap.com/search?query=%E7%8F%8D%E7%B2%A5%E9%81%93(%E9%93%B6%E6%B3%B0%E5%9F%8E%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "有宝宝椅 · 两种粥好消化，还有点心味道也不错，孩子吃的特别开心"
+        },
+        {
+          "name": "Tonghe Ju Northeastern Kitchen (Wangfujing Mall)",
+          "page_name": "同合居民间菜馆(王府井店)",
+          "src": "https://www.amap.com/search?query=%E5%90%8C%E5%90%88%E5%B1%85%E6%B0%91%E9%97%B4%E8%8F%9C%E9%A6%86(%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-10",
+          "map": "Amap: open, not marked closed, newest review 2026-09-10",
+          "quote": "家庭聚餐 · 有宝宝椅 · 适合带娃"
+        },
+        {
+          "name": "Yuwopeng Iron-Pot Stew (Chengxiang Road)",
+          "page_name": "鱼窝棚·铁锅炖(城乡路店)",
+          "src": "https://www.amap.com/search?query=%E9%B1%BC%E7%AA%9D%E6%A3%9A%C2%B7%E9%93%81%E9%94%85%E7%82%96(%E5%9F%8E%E4%B9%A1%E8%B7%AF%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-21",
+          "map": "Amap: open, not marked closed, newest review 2026-09-21",
+          "quote": "家庭聚餐 · 有宝宝椅 · 给老人孩子吃都放心"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
