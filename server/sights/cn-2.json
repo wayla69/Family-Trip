@@ -3291,6 +3291,154 @@
           },
           "q": "VeRyland奇境乐园, 机场路1399号百信广场, 白云区, 广州",
           "ok": "2026-11"
+        },
+        {
+          "local": "天河公园儿童活动区",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A9%E6%B2%B3%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E6%B4%BB%E5%8A%A8%E5%8C%BA&city=440100",
+          "name": {
+            "th": "สนามเด็กเล่นสวนเทียนเหอ",
+            "en": "Tianhe Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนเทียนเหอ ใกล้สถานีฮวาจิ่งลู่ เทียนเหอ",
+            "en": "Tianhe Park, near Huajing Road metro, Tianhe"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวน มีบ่อทรายและเส้นทางปีนป่ายแบบป่า",
+            "en": "A park playground with a sand pit and a jungle climbing course"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "天河公园儿童活动区, 天河公园, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 广州天河领展广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E5%B9%BF%E5%B7%9E%E5%A4%A9%E6%B2%B3%E9%A2%86%E5%B1%95%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "name": {
+            "th": "มีแลนด์คลับ ลิงก์พลาซ่า เทียนเหอ",
+            "en": "Meland Club (Link Plaza, Tianhe)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลิงก์พลาซ่า ชั้น 3 ถนนหม่าฉ่าง เทียนเหอ",
+            "en": "Link Plaza 3F, Machang Road, Tianhe"
+          },
+          "what": {
+            "th": "คลับเล่นในร่มแบบมีธีม",
+            "en": "An indoor themed play club"
+          },
+          "why": {
+            "th": "บุนุ่มทั้งหมดและรักษาความสะอาด",
+            "en": "Fully padded and kept clean"
+          },
+          "q": "MELAND CLUB 天河领展广场, 马场路36号, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "探洞工场 六元素旗舰店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%8E%A2%E6%B4%9E%E5%B7%A5%E5%9C%BA(%E5%85%AD%E5%85%83%E7%B4%A0%E6%97%97%E8%88%B0%E5%BA%97)&city=440100",
+          "name": {
+            "th": "สวนเล่นถ้ำทั่นต้ง ผาโจว",
+            "en": "Tandong Gongchang Cave Play Park (Pazhou)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลิ่วหยวนซู่ ชั้น 2 ผาโจว ไห่จู",
+            "en": "Liu Yuansu 2F, Pazhou, Haizhu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีเขาวงกตให้เดิน ผนังปีนป่าย และบ่อบอล",
+            "en": "An indoor play park with a walk-through maze, climbing and a ball pit"
+          },
+          "why": {
+            "th": "มีปีนป่ายและเขาวงกตสำหรับเด็กที่ชอบความท้าทาย",
+            "en": "Climbing and a maze for children who like a challenge"
+          },
+          "q": "探洞工场 六元素体验天地, 琶洲街道, 海珠区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奇乐儿巴迪总动员儿童乐园 保利时光里店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%87%E4%B9%90%E5%84%BF%E5%B7%B4%E8%BF%AA%E6%80%BB%E5%8A%A8%E5%91%98%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E4%BF%9D%E5%88%A9%E6%97%B6%E5%85%89%E9%87%8C%E5%BA%97)&city=440100",
+          "name": {
+            "th": "สวนเล่นฉีเล่อเอ๋อร์ โพลีไทม์ส",
+            "en": "Qile’er Play Park (Poly Times)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โพลีพลาซ่า อาคารเหนือ ชั้น 3 ถนนเจี้ยนเซ่อต้าหม่า เยว่ซิ่ว",
+            "en": "Poly Plaza North Tower 3F, Jianshe Damalu, Yuexiu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อทรายและเครื่องเล่นเป่าลม",
+            "en": "An indoor play park with a sand pit and inflatables"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "奇乐儿巴迪总动员 保利中环购物广场, 建设大马路20号, 越秀区, 广州",
+          "ok": "2026-11"
         }
       ]
     }
