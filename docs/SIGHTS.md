@@ -146,6 +146,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **26 Nov 2026, Chengdu**: +6 play parks from Amap place pages. Proof in `docs/library-proof/cn-chengdu.json`.
 - **26 Nov 2026, Xi'an**: +5 play parks and a free playground under the city wall, from Amap place pages. Proof in `docs/library-proof/cn-xian.json`.
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
+- **25 Nov 2026, Kyoto** (round 4: Japan, Korea, New Zealand): +4 indoor play parks (KIRI no KO, Kameoka; Kids Land US, Yawata; Pure Heart Kids Land, Fushimi; HIYOSHI PLAY ARENA, Nantan). Proof in `docs/library-proof/jp-kyoto.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
 - **24 Nov 2026, Plitvice Lakes** (docs/library-briefs batch-101, round 3): +2 (Maksimir Park, Zagreb; Kotlac, Slunj). Proof in `docs/library-proof/hr-plitvice.json`.

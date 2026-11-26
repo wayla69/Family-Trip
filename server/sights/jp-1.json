@@ -1922,6 +1922,154 @@
           },
           "q": "亀屋良長 本店, 京都",
           "ok": "2026-11"
+        },
+        {
+          "local": "KIRI no KO",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "วันธรรมดา 600 เยน วันหยุด 850 เยน ต่ำกว่า 3 ขวบฟรี",
+            "en": "¥600 weekdays, ¥850 weekends and holidays; under 3 free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "สวนเด็กในร่ม KIRI no KO คาเมโอกะ",
+            "en": "KIRI no KO indoor kids' park (Kameoka)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ในสนามซังกะสเตเดียม ทางเหนือของสถานีคาเมโอกะ",
+            "en": "Inside Sanga Stadium by KYOCERA, north of Kameoka station"
+          },
+          "what": {
+            "th": "สวนเด็กในร่ม เครื่องเล่นไม้ธีมภูเขา หมอก และแม่น้ำของคาเมโอกะ",
+            "en": "An indoor kids' park with wooden play equipment on the theme of Kameoka's mountains, mist and river"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรี มีห้องให้นมและน้ำร้อนชงนม",
+            "en": "Under-threes go in free; a nursing room and hot water for formula"
+          },
+          "q": "KIRI no KO, Sanga Stadium by KYOCERA, Kameoka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 京都八幡店",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็กชั่วโมงละ 700 เยน วันธรรมดาทั้งวัน 900 เยน วันหยุด 3 ชั่วโมง 1,200 เยน ผู้ใหญ่วันละ 600 เยน",
+            "en": "Children ¥700 an hour; a day ¥900 weekdays, 3 hours ¥1,200 weekends; adults ¥600 a day"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "คิดส์แลนด์ US เกียวโตยาวาตะ",
+            "en": "Kids Land US Kyoto Yawata"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ห้างฟามิเระยาวาตะ ยาวาตะ",
+            "en": "Famile Yawata 3rd floor, Yawata"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม เล่นได้ทุกสภาพอากาศ เต็มทั้งชั้นของห้าง",
+            "en": "An all-weather indoor play park filling a whole floor of a shopping mall"
+          },
+          "why": {
+            "th": "มีจังเกิลยิมใหญ่ บ่อบอล แทรมโพลีน และโซนนุ่มๆ ตั้งแต่เด็กเล็ก",
+            "en": "A giant climbing frame, a ball pool, trampolines and soft play for toddlers and up"
+          },
+          "q": "キッズランドUS 京都八幡店, ファミレやわた 3F, 八幡市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド伏見桃山",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "0–1 ขวบฟรี ทั้งวัน 1,300 เยน (ธรรมดา) 1,600 เยน (วันหยุด) หรือทุก 30 นาที 450 / 550 เยน",
+            "en": "Ages 0–1 free; a day ¥1,300 weekdays, ¥1,600 weekends; or ¥450 / ¥550 each 30 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ ฟุชิมิโมโมยามะ",
+            "en": "Pure Heart Kids Land Fushimi Momoyama"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 อาคารเสริมโมโมเทอร์เรซ โมโมยามะ ฟุชิมิ",
+            "en": "MOMO Terrace annex, 1st floor, Momoyama, Fushimi"
+          },
+          "what": {
+            "th": "สวนในร่ม มีบ่อบอลใหญ่ สไลเดอร์นุ่ม และบ่อทรายสะอาด",
+            "en": "An indoor park with a big ball pool, soft slides and a clean sandpit"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กและมุมหนังสือภาพ เด็ก 0–1 ขวบเข้าฟรี",
+            "en": "A baby area and a picture-book corner; babies aged 0 and 1 go in free"
+          },
+          "q": "Pure Heart Kids Land Fushimi Momoyama, MOMO Terrace, Kyoto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ひよしプレイアリーナ",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "สมาชิกแอป 30 นาทีแรก 800 / 900 เยน ชั่วโมงแรก 1,300 / 1,400 เยน ผู้ปกครองฟรี",
+            "en": "App members: first 30 min ¥800 weekdays / ¥900 weekends, first hour ¥1,300 / ¥1,400; parents free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "ฮิโยชิเพลย์อารีนา นันตัน",
+            "en": "HIYOSHI PLAY ARENA (Nantan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิจิโนะเอกิสปริงส์ฮิโยชิ ฮิโยชิโจ นันตัน",
+            "en": "Michi-no-Eki Springs Hiyoshi, Hiyoshi-chō, Nantan"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นลมในร่ม เครื่องเล่นราว 30 อย่าง ทางเดินคดเคี้ยวยาว และสไลเดอร์สูง 4 เมตร",
+            "en": "An indoor air playground with about 30 play features, a long winding course and a 4 m slide"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก เด็กเล็กเล่นได้ด้วย",
+            "en": "An area for babies and toddlers, so small children can join in"
+          },
+          "q": "HIYOSHI PLAY ARENA, Hiyoshi, Nantan, Kyoto",
+          "ok": "2026-11"
         }
     ]
     },
