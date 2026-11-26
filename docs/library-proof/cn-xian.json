@@ -322,6 +322,49 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Xi'an; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Tangmao Courtyard Shaanxi Kitchen (Datang Everbright City)",
+          "page_name": "唐猫庭院·千年陕菜(大唐不夜城店)",
+          "src": "https://www.amap.com/search?query=%E5%94%90%E7%8C%AB%E5%BA%AD%E9%99%A2%C2%B7%E5%8D%83%E5%B9%B4%E9%99%95%E8%8F%9C(%E5%A4%A7%E5%94%90%E4%B8%8D%E5%A4%9C%E5%9F%8E%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-01",
+          "map": "Amap: open, not marked closed, newest review 2026-10-01",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        },
+        {
+          "name": "Jingxiaoshuan Beijing Hotpot (Hi-tech Zone)",
+          "page_name": "京小涮涮羊肉(高新店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%AC%E5%B0%8F%E6%B6%AE%E6%B6%AE%E7%BE%8A%E8%82%89(%E9%AB%98%E6%96%B0%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "儿童餐 · 家庭聚餐 · 还有宝宝餐"
+        },
+        {
+          "name": "Bigger Pizza Buffet (Nanfeihong)",
+          "page_name": "比格比萨自助(西安南飞鸿店)",
+          "src": "https://www.amap.com/search?query=%E6%AF%94%E6%A0%BC%E6%AF%94%E8%90%A8%E8%87%AA%E5%8A%A9(%E8%A5%BF%E5%AE%89%E5%8D%97%E9%A3%9E%E9%B8%BF%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-26",
+          "map": "Amap: open, not marked closed, newest review 2026-09-26",
+          "quote": "还有小蛋糕和冰激凌 小孩子也特别喜欢 非常值得去"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "澜鲸水上森林餐厅",
+          "why": "its review about children complains the pond and boats are dirty"
+        },
+        {
+          "name": "雅泰来, Toyo·童肴",
+          "why": "nothing about children on the page / one review only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
