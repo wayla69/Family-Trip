@@ -337,6 +337,53 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Chongqing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "TurKebab Turkish (Starlight Place, Central Park)",
+          "page_name": "TurKebab土耳卡巴土耳其菜·世界树景观餐厅(中央公园光环花园城店)",
+          "src": "https://www.amap.com/search?query=TurKebab%E5%9C%9F%E8%80%B3%E5%8D%A1%E5%B7%B4%E5%9C%9F%E8%80%B3%E5%85%B6%E8%8F%9C%C2%B7%E4%B8%96%E7%95%8C%E6%A0%91%E6%99%AF%E8%A7%82%E9%A4%90%E5%8E%85(%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9B%AD%E5%85%89%E7%8E%AF%E8%8A%B1%E5%9B%AD%E5%9F%8E%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "亲子友好 · 餐品也不错，小朋友喜欢吃"
+        },
+        {
+          "name": "Nanmi Dai and Yunnan Kitchen (Starlight Place)",
+          "page_name": "喃咪傣味·现炒云南菜·世界树景观餐厅(中央公园光环花园城店)",
+          "src": "https://www.amap.com/search?query=%E5%96%83%E5%92%AA%E5%82%A3%E5%91%B3%C2%B7%E7%8E%B0%E7%82%92%E4%BA%91%E5%8D%97%E8%8F%9C%C2%B7%E4%B8%96%E7%95%8C%E6%A0%91%E6%99%AF%E8%A7%82%E9%A4%90%E5%8E%85(%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9B%AD%E5%85%89%E7%8E%AF%E8%8A%B1%E5%9B%AD%E5%9F%8E%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-04",
+          "map": "Amap: open, not marked closed, newest review 2026-09-04",
+          "quote": "光环花园城｜带娃好去处：世界树旁吃云南菜 · 陪娃排队看20米高机械树"
+        },
+        {
+          "name": "Yami Yummy Children's Kitchen (Jinsha Paradise Walk)",
+          "page_name": "芽米yummy儿童辅食餐厅",
+          "src": "https://www.amap.com/search?query=%E8%8A%BD%E7%B1%B3yummy%E5%84%BF%E7%AB%A5%E8%BE%85%E9%A3%9F%E9%A4%90%E5%8E%85&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "带娃出来最难解决的就是吃饭了 有了辅食餐厅就不用愁啦"
+        },
+        {
+          "name": "Tummy Children's Restaurant (SKLP)",
+          "page_name": "Tummy獭米儿童餐厅",
+          "src": "https://www.amap.com/search?query=Tummy%E7%8D%AD%E7%B1%B3%E5%84%BF%E7%AB%A5%E9%A4%90%E5%8E%85&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "有儿童乐园 · 有儿童椅"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "宝饱谷仓, 禾米儿童辅食餐厅",
+          "why": "three reviews / newest review October 2025"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
