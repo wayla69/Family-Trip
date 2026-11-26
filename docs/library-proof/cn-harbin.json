@@ -548,6 +548,41 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Ainiya Play Park (Hongqi Street)",
+          "page_name": "爱尼吖梦幻潮玩",
+          "src": "https://www.amap.com/search?query=%E7%88%B1%E5%B0%BC%E5%90%96%E6%A2%A6%E5%B9%BB%E6%BD%AE%E7%8E%A9&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "儿童乐园 · 儿童沙池 · 小宝宝游玩"
+        },
+        {
+          "name": "Kuaile Zhuan+ (Wanda Hadong)",
+          "page_name": "快乐专+(哈尔滨店)",
+          "src": "https://www.amap.com/search?query=%E5%BF%AB%E4%B9%90%E4%B8%93%2B(%E5%93%88%E5%B0%94%E6%BB%A8%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-31",
+          "map": "Amap: open, not marked closed, newest review 2026-10-31",
+          "quote": "儿童乐园 · 亲子DIY · 小宝宝游玩"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "捞多鱼, 迷你星球, 爱尔沃德",
+          "why": "twenty-four reviews or fewer"
+        },
+        {
+          "name": "乙太东方儿童成长中心",
+          "why": "an English class, not a place to play"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
