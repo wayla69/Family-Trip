@@ -88,6 +88,101 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Guilin and Yangshuo; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Daozi Shule Rice-Field Restaurant (Yangshuo)",
+          "page_name": "稻子熟了·稻田文化主题餐厅",
+          "src": "https://www.amap.com/search?query=%E7%A8%BB%E5%AD%90%E7%86%9F%E4%BA%86%C2%B7%E7%A8%BB%E7%94%B0%E6%96%87%E5%8C%96%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "适合家庭聚餐 · 亲子互动 · 孩子们在稻田梗上，嬉笑打闹，相互追着"
+        },
+        {
+          "name": "Yixiaoman Steak Buffet (Wuyue Plaza)",
+          "page_name": "壹晓满牛排自助餐厅(吾悦广场店)",
+          "src": "https://www.amap.com/search?query=%E5%A3%B9%E6%99%93%E6%BB%A1%E7%89%9B%E6%8E%92%E8%87%AA%E5%8A%A9%E9%A4%90%E5%8E%85(%E5%90%BE%E6%82%A6%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "亲子友好 · 水果特别丰富，小孩子也有很多可以吃，吃得非常开心"
+        },
+        {
+          "name": "Zhuangyuan Xiaoman Fusion Restaurant",
+          "page_name": "状元小满新派融合菜餐厅",
+          "src": "https://www.amap.com/search?query=%E7%8A%B6%E5%85%83%E5%B0%8F%E6%BB%A1%E6%96%B0%E6%B4%BE%E8%9E%8D%E5%90%88%E8%8F%9C%E9%A4%90%E5%8E%85&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-07",
+          "map": "Amap: open, not marked closed, newest review 2026-09-07",
+          "quote": "亲子互动区 · 儿童区 · 儿童设施"
+        },
+        {
+          "name": "Huayang Saigon French-Vietnamese (MixC)",
+          "page_name": "花样西贡·法式越南菜餐厅(桂林万象城店)",
+          "src": "https://www.amap.com/search?query=%E8%8A%B1%E6%A0%B7%E8%A5%BF%E8%B4%A1%C2%B7%E6%B3%95%E5%BC%8F%E8%B6%8A%E5%8D%97%E8%8F%9C%E9%A4%90%E5%8E%85(%E6%A1%82%E6%9E%97%E4%B8%87%E8%B1%A1%E5%9F%8E%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "亲子友好 · 宝宝椅 · 带娃也不错"
+        },
+        {
+          "name": "Green Tea Restaurant (MixC Guilin)",
+          "page_name": "绿茶餐厅(桂林万象城店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E6%A1%82%E6%9E%97%E4%B8%87%E8%B1%A1%E5%9F%8E%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-07",
+          "map": "Amap: open, not marked closed, newest review 2026-10-07",
+          "quote": "有宝宝椅 · 适合不能吃辣的宝宝"
+        },
+        {
+          "name": "Guanshan Pavilion Restaurant (Guihai Qinglan)",
+          "page_name": "桂海晴岚观山阁餐厅",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%B5%B7%E6%99%B4%E5%B2%9A%E8%A7%82%E5%B1%B1%E9%98%81%E9%A4%90%E5%8E%85&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-23",
+          "map": "Amap: open, not marked closed, newest review 2026-10-23",
+          "quote": "酸奶豆腐孩子非常喜欢，像芝士蛋糕"
+        },
+        {
+          "name": "Guilin Oil Tank Theme Park",
+          "page_name": "桂林油罐主题文化乐园",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E6%B2%B9%E7%BD%90%E4%B8%BB%E9%A2%98%E6%96%87%E5%8C%96%E4%B9%90%E5%9B%AD&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-11",
+          "map": "Amap: open, not marked closed, newest review 2026-11-11",
+          "quote": "儿童乐园 · 5D过山车 · 充气城堡 · 家庭过山车 · 室内亲子园"
+        },
+        {
+          "name": "Tong Shijie Play Park (Diecai Wanda)",
+          "page_name": "童世界亲子乐园(桂林叠彩万达广场店)",
+          "src": "https://www.amap.com/search?query=%E7%AB%A5%E4%B8%96%E7%95%8C%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E6%A1%82%E6%9E%97%E5%8F%A0%E5%BD%A9%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-07-23",
+          "map": "Amap: open, not marked closed, newest review 2026-07-23",
+          "quote": "儿童乐园 · 古堡乐园 · 充气城堡 · 滑梯蹦床 · 室内亲子园"
+        },
+        {
+          "name": "Qixing Fun Park",
+          "page_name": "七星欢乐园",
+          "src": "https://www.amap.com/search?query=%E4%B8%83%E6%98%9F%E6%AC%A2%E4%B9%90%E5%9B%AD&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-25",
+          "map": "Amap: open, not marked closed, newest review 2026-08-25",
+          "quote": "儿童乐园 · 萌宠互动"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "清欢餐厅",
+          "why": "newest review October 2024"
+        },
+        {
+          "name": "璟象酒店 爱丽坊景观餐厅",
+          "why": "nothing about children on its page"
+        },
+        {
+          "name": "MELAND (桂林万象城), 阳朔凤凰探索营地乐园, 梦幻童年, 希宇欢乐城",
+          "why": "not read: Amap showed a slider check before their pages loaded"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
