@@ -832,3 +832,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Kagoshima (new town)**: 9, each checked on Google Maps; seven from undated Tabelog and Mapple guides, which the owner allowed. Proof in `docs/library-proof/jp-kagoshima.json`.
 
 - **25 Nov 2026, Takamatsu (new town)**: 8, each checked on Google Maps; five from Mapple’s undated 2026 family-dining page, which the owner allowed. Proof in `docs/library-proof/jp-takamatsu.json`.
+
+- **25 Nov 2026, Matsuyama (new town)**: 8, each checked on Google Maps; all from undated HotPepper and Mapple pages, which the owner allowed. Proof in `docs/library-proof/jp-matsuyama.json`.
