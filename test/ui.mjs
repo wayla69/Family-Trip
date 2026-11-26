@@ -2834,7 +2834,7 @@ const T = 'hk-macau-2026';
   const plainBg = await page.evaluate(() => getComputedStyle(document.querySelector('.hubgrid.tl-plain .tile.t-plan')).backgroundImage);
   // the tiles redraw at once and the save follows: wait for the server to hold it (CI read 'plain' once, 26 Nov 2026)
   const tilesPlain = (await apiStateWhen(page, (st) => st.family.tiles === 'plain')).family.tiles;
-  ok(plainBg === 'none' && tilesPlain === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile', tilesPlain);
+  ok(plainBg === 'none' && tilesPlain === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile (' + tilesPlain + ')');
   await page.click('.tilepick button[data-v="accent"]'); await page.waitForSelector('.hubgrid.tl-accent');
   const tilesAccent = (await apiStateWhen(page, (st) => st.family.tiles === 'accent')).family.tiles;
   ok(tilesAccent === 'accent', 'the book\'s colour: saved too', tilesAccent);
