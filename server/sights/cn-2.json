@@ -769,6 +769,269 @@
           },
           "q": "和平菓局, 王府井大街253号北京市百货大楼B2, 东城区, 北京",
           "ok": "2026-11"
+        },
+        {
+          "local": "北京环球度假区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 8,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E7%8E%AF%E7%90%83%E5%BA%A6%E5%81%87%E5%8C%BA&city=110000",
+          "name": {
+            "th": "ยูนิเวอร์แซล ปักกิ่ง รีสอร์ต",
+            "en": "Universal Beijing Resort"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนยูนิเวอร์แซล หลีหยวน ทงโจว",
+            "en": "Universal Boulevard, Liyuan, Tongzhou"
+          },
+          "what": {
+            "th": "ยูนิเวอร์แซลสตูดิโอ มีมินเนียนแลนด์ กังฟูแพนด้า และโชว์ยามค่ำ",
+            "en": "Universal Studios with Minion Land, Kung Fu Panda and night shows"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กไม่อยากออกจากมินเนียนแลนด์",
+            "en": "Reviewers say small children did not want to leave Minion Land"
+          },
+          "q": "北京环球度假区, 环球大道, 通州区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "古北水镇",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%8F%A4%E5%8C%97%E6%B0%B4%E9%95%87&city=110000",
+          "name": {
+            "th": "เมืองน้ำกู่เป่ย กำแพงเมืองจีนซือหม่าไถ",
+            "en": "Gubei Water Town (Simatai Great Wall)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เชิงกำแพงเมืองจีนซือหม่าไถ มี่อวิ๋น (2 ชม. จากในเมือง)",
+            "en": "Below the Simatai Great Wall, Miyun (2 h from the city)"
+          },
+          "what": {
+            "th": "เมืองน้ำที่สร้างใหม่ใต้กำแพงเมืองจีน มีโชว์ ไฟ และโซนเล่นเด็ก",
+            "en": "A rebuilt water town under the Great Wall with shows, lights and a children's play area"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ามีโชว์ทั้งวันและพาเด็กเที่ยวง่าย",
+            "en": "Reviewers say there are shows all day and it is easy with children"
+          },
+          "q": "古北水镇, 司马台长城, 密云区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "呀路古热带植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%91%80%E8%B7%AF%E5%8F%A4%E7%83%AD%E5%B8%A6%E6%A4%8D%E7%89%A9%E5%9B%AD&city=110000",
+          "name": {
+            "th": "สวนพฤกษศาสตร์เขตร้อนหย่าลู่กู่",
+            "en": "Yalugu Tropical Botanical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฉางอิ๋ง เฉาหยาง",
+            "en": "Changying, Chaoyang"
+          },
+          "what": {
+            "th": "เรือนกระจกใหญ่ของพืชเขตร้อน อุ่นราว 25 °C ในฤดูหนาว",
+            "en": "A big warm glasshouse of tropical plants, about 25 °C in winter"
+          },
+          "why": {
+            "th": "ที่เที่ยวในร่มที่อบอุ่นสำหรับพาเด็กในฤดูหนาวของปักกิ่ง",
+            "en": "A warm indoor outing with children in Beijing's winter"
+          },
+          "q": "呀路古热带植物园, 长营镇, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北京古观象台",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E5%8F%A4%E8%A7%82%E8%B1%A1%E5%8F%B0&city=110000",
+          "name": {
+            "th": "หอดูดาวโบราณปักกิ่ง",
+            "en": "Beijing Ancient Observatory"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เจี้ยนกั๋วเหมิน ตงเฉิง",
+            "en": "Jianguomen, Dongcheng"
+          },
+          "what": {
+            "th": "หอดูดาวสมัยหมิงบนกำแพงเมืองเก่า มีเครื่องมือดูดาวสัมฤทธิ์",
+            "en": "A Ming-era observatory on the old city wall with bronze star instruments"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่เงียบๆ สำหรับเริ่มสอนเด็กเรื่องดวงดาว",
+            "en": "Reviewers call it a quiet place to start children on the stars"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "北京古观象台, 建国门大街裱褙胡同2号, 东城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北京大运河博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E5%A4%A7%E8%BF%90%E6%B2%B3%E5%8D%9A%E7%89%A9%E9%A6%86(%E9%A6%96%E9%83%BD%E5%8D%9A%E7%89%A9%E9%A6%86%E4%B8%9C%E9%A6%86)&city=110000",
+          "name": {
+            "th": "พิพิธภัณฑ์คลองใหญ่ปักกิ่ง",
+            "en": "Grand Canal Museum of Beijing"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "สวนป่าใจกลางเมือง ทงโจว",
+            "en": "City Green Heart Forest Park, Tongzhou"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ใหม่ขนาดใหญ่เรื่องคลองใหญ่ มีห้องจัดแสดงแบบสมจริง",
+            "en": "A large new museum of the Grand Canal with immersive galleries"
+          },
+          "why": {
+            "th": "ผู้รีวิวเขียนคำแนะนำสำหรับพาเด็กมาเที่ยว",
+            "en": "Reviewers write guides for visiting it with children"
+          },
+          "q": "北京大运河博物馆, 城市绿心森林公园, 通州区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北京自来水博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E8%87%AA%E6%9D%A5%E6%B0%B4%E5%8D%9A%E7%89%A9%E9%A6%86&city=110000",
+          "name": {
+            "th": "พิพิธภัณฑ์ประปาปักกิ่ง",
+            "en": "Beijing Water Supply Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเซียงเหอหยวน ตงจื๋อเหมิน",
+            "en": "Xianghe Yuan Street, Dongzhimen"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เล็กในโรงประปาอายุร้อยปี เรื่องน้ำประปามาจากไหน",
+            "en": "A small museum in a century-old waterworks about where tap water comes from"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กกลับไปพร้อมคำถามมากมาย",
+            "en": "Reviewers say children come away with questions"
+          },
+          "q": "北京自来水博物馆, 香河园街3号, 东城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "史家胡同博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8F%B2%E5%AE%B6%E8%83%A1%E5%90%8C%E5%8D%9A%E7%89%A9%E9%A6%86&city=110000",
+          "name": {
+            "th": "พิพิธภัณฑ์หูท่งสื่อเจีย",
+            "en": "Shijia Hutong Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "หูท่งสื่อเจีย ตงซื่อ ตงเฉิง",
+            "en": "Shijia Hutong, Dongsi, Dongcheng"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในบ้านสี่ประสาน เรื่องชีวิตในหูท่ง มีโมเดลย่อส่วน",
+            "en": "A courtyard-house museum of hutong life with miniature models"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว โมเดลย่อส่วนดึงความสนใจเด็ก",
+            "en": "Tagged for families; the miniatures hold children's attention"
+          },
+          "q": "史家胡同博物馆, 史家胡同24号, 东城区, 北京",
+          "ok": "2026-11"
         }
     ]
     },
