@@ -6775,6 +6775,306 @@
           },
           "q": "贝比乐儿童乐园 美瑭广场, 余杭塘路2499号, 余杭区, 杭州",
           "ok": "2026-11"
+        },
+        {
+          "local": "杭州长乔亲子乐园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%95%BF%E4%B9%94%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนสนุกครอบครัวฉางเฉียว เซียงหู",
+            "en": "Changqiao Family Park (Xianghu)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเซียงหู เซียวซาน ข้างสวนมหาสมุทรขั้วโลก",
+            "en": "Xianghu Road, Xiaoshan, beside the polar ocean park"
+          },
+          "what": {
+            "th": "สวนสนุกครอบครัว มีเครื่องเล่นในร่มและกลางแจ้ง สัตว์ทะเล และกิจกรรมใกล้ชิดสัตว์",
+            "en": "A family park with indoor and outdoor rides, sea creatures and animal encounters"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กก็มีเครื่องเล่น ไม่ว่าแดดออกหรือฝนตก",
+            "en": "Reviewers say even small children find rides, rain or shine"
+          },
+          "q": "杭州长乔亲子乐园, 湘湖路777号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 杭州萧山银泰店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E6%9D%AD%E5%B7%9E%E8%90%A7%E5%B1%B1%E9%93%B6%E6%B3%B0%E5%BA%97)&city=330100",
+          "name": {
+            "th": "มีแลนด์คลับ เซียวซานอิ๋นไท่",
+            "en": "Meland Club (Xiaoshan Intime)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิ๋นไท่เซียวซาน ชั้น 3 ถนนทงฮุ่ยใต้ เซียวซาน",
+            "en": "Intime Xiaoshan F3, Tonghui South Road, Xiaoshan"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีม้าหมุน มุมเล่นบทบาทสมมติ และสระว่ายน้ำอุ่นสำหรับเด็ก",
+            "en": "An indoor play club with a carousel, pretend play and a warm children's pool"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็กและเป็นสวนเล่นครอบครัวในร่ม",
+            "en": "Tagged for babies and as an indoor family park"
+          },
+          "q": "MELAND CLUB 萧山银泰, 通惠南路667号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 杭州奥体印象城",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELANDCLUB(%E5%8D%B0%E5%8A%9B%E6%B1%87%E5%BE%B7%E9%9A%86%E6%9D%AD%E5%B7%9E%E5%A5%A5%E4%BD%93%E5%8D%B0%E8%B1%A1%E5%9F%8E)&city=330100",
+          "name": {
+            "th": "มีแลนด์คลับ อ้าวถี่อิ้นเซี่ยงเฉิง",
+            "en": "Meland Club (Olympic Impression City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อ้าวถี่อิ้นเซี่ยงเฉิง ชั้น 3 ถนนเฟยหง เซียวซาน",
+            "en": "Olympic Impression City L3, Feihong Road, Xiaoshan"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีโครงปีนป่ายสูงสามชั้น บ่อบอล และหนังสือภาพ",
+            "en": "An indoor play club with a three-storey climbing frame, ball pit and picture books"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็ก ๆ สนุกกับโครงปีนป่ายใหญ่มาก",
+            "en": "Reviewers say children love the big climbing frame"
+          },
+          "q": "MELAND CLUB 奥体印象城, 飞虹路1408号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "魔力空间运动中心 杭州未来科技城万达广场店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%AD%94%E5%8A%9B%E7%A9%BA%E9%97%B4%E8%BF%90%E5%8A%A8%E4%B8%AD%E5%BF%83(%E6%9D%AD%E5%B7%9E%E6%9C%AA%E6%9D%A5%E7%A7%91%E6%8A%80%E5%9F%8E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=330100",
+          "name": {
+            "th": "ศูนย์กีฬาโม่ลี่สเปซ วั่นต๋าเมืองวิทยาศาสตร์อนาคต",
+            "en": "Moli Space Sports Centre (Future Sci-Tech City Wanda)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วั่นต๋าเมืองวิทยาศาสตร์อนาคต ชั้น 4 ชางเฉียน อวี๋หัง",
+            "en": "Future Sci-Tech City Wanda 4F, Cangqian, Yuhang"
+          },
+          "what": {
+            "th": "ศูนย์เล่นกีฬาในร่มสำหรับครอบครัว มีล็อกเกอร์",
+            "en": "An indoor sports play centre for families, with lockers"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าลูกเล่นจนไม่อยากกลับบ้าน",
+            "en": "A reviewer says their child did not want to go home"
+          },
+          "q": "魔力空间运动中心 未来科技城万达广场, 仓前街道, 余杭区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "AP FUNLL潮玩运动主题公园 龙湖杭州吾角天街店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=AP%20FUNLL%E6%BD%AE%E7%8E%A9%E8%BF%90%E5%8A%A8%E4%B8%BB%E9%A2%98%E5%85%AC%E5%9B%AD(%E9%BE%99%E6%B9%96%E6%9D%AD%E5%B7%9E%E5%90%BE%E8%A7%92%E5%A4%A9%E8%A1%97%E5%BA%97)&city=330100",
+          "name": {
+            "th": "เอพีฟันน์ สวนเล่น อู๋เจี่ยวเทียนเจีย",
+            "en": "AP Funll Play Park (Wujiao Paradise Walk)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อู๋เจี่ยวเทียนเจีย ชั้น 5 เซี่ยซา เฉียนถัง",
+            "en": "Wujiao Paradise Walk 5F, Xiasha, Qiantang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีสไลเดอร์ แทรมโพลีน ปีนป่าย และวีอาร์",
+            "en": "An indoor play park with slides, trampolines, climbing and VR"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นสวนเล่นเด็กและสวนเล่นครอบครัวในร่ม",
+            "en": "Tagged as a children's play park and indoor family park"
+          },
+          "q": "AP FUNLL 龙湖吾角天街, 下沙, 钱塘区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "虎跑公园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%99%8E%E8%B7%91%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนหู่เผา",
+            "en": "Hupao Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหู่เผา ทางใต้ของซีหู ซีหู",
+            "en": "Hupao Road, south of West Lake, Xihu"
+          },
+          "what": {
+            "th": "สวนในป่า มีน้ำพุเก่าแก่ ลำธาร และทางเดินในป่า",
+            "en": "A wooded park with an old spring, streams and forest paths"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าทางเดินลาดชันน้อย บันไดไม่มาก เด็กเล็กเดินได้สบาย",
+            "en": "Reviewers say the paths are gentle with few steps, easy for small children"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้เตรียมยากันยุงให้เด็ก",
+            "en": "Reviewers say bring insect repellent for the children"
+          },
+          "q": "虎跑公园, 虎跑路39号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "云栖竹径",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%A0%96%E7%AB%B9%E5%BE%84&city=330100",
+          "name": {
+            "th": "ทางเดินป่าไผ่อวิ๋นชี",
+            "en": "Yunqi Bamboo Path"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนเหมยหลิงใต้ ซีหู",
+            "en": "Meiling South Road, Xihu"
+          },
+          "what": {
+            "th": "ทางเดินร่มรื่นผ่านป่าไผ่ มีต้นไม้เก่าแก่และลำธาร",
+            "en": "A shady path through a bamboo forest with old trees and streams"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี ฤดูใบไม้ผลิมีหน่อไม้",
+            "en": "Reviewers say children under 1.2 m go in free; bamboo shoots in spring"
+          },
+          "q": "云栖竹径, 梅灵南路8号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西溪国家湿地公园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%BA%AA%E5%9B%BD%E5%AE%B6%E6%B9%BF%E5%9C%B0%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "อุทยานพื้นที่ชุ่มน้ำแห่งชาติซีซี",
+            "en": "Xixi National Wetland Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางเข้าถนนเหวินเอ้อร์ตะวันตก ซีหู",
+            "en": "Wen'er West Road entrance, Xihu"
+          },
+          "what": {
+            "th": "พื้นที่ชุ่มน้ำใหญ่ มีลำคลองและทางเดิน พร้อมพิพิธภัณฑ์พื้นที่ชุ่มน้ำ",
+            "en": "A large wetland of waterways and walking trails, with a wetland museum"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับการเที่ยวครอบครัว ผู้รีวิวบอกว่าโซนฟรีเหมาะพาเด็กเดินเล่น",
+            "en": "Tagged for family trips; reviewers say the free area is good for a walk with children"
+          },
+          "q": "西溪国家湿地公园, 文二西路, 西湖区, 杭州",
+          "ok": "2026-11"
         }
       ]
     },
