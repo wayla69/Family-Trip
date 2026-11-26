@@ -6018,6 +6018,80 @@
           },
           "q": "昆明植物园, 蓝黑路132号, 盘龙区, 昆明",
           "ok": "2026-11"
+        },
+        {
+          "local": "金魔方儿童职业体验亲子乐园",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%87%91%E9%AD%94%E6%96%B9%E5%84%BF%E7%AB%A5%E8%81%8C%E4%B8%9A%E4%BD%93%E9%AA%8C%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=530100",
+          "name": {
+            "th": "สวนเล่นอาชีพจินโม่ฟาง คุนหมิง",
+            "en": "Jinmofang Kids' Job Play Park (Kunming)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห่าวเยว่เทียนตี้ โซน D ชั้น 2 ถนนหวนเฉิงใต้ ซีซาน คุนหมิง",
+            "en": "Haoyue Tiandi D 2F, Huancheng South Road, Xishan, Kunming"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มให้เด็กลองเป็นอาชีพต่าง ๆ มีรถดับเพลิงและฉากเล่นบทบาทสมมติ",
+            "en": "An indoor park where children try grown-up jobs, with a fire engine and role-play sets"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าทำมาเพื่อเด็กโดยเฉพาะ มีฉากหลายแบบ",
+            "en": "Reviewers say it is made for children, with many kinds of scenes"
+          },
+          "q": "金魔方儿童职业体验 好悦天地D区, 环城南路618号, 西山区, 昆明",
+          "ok": "2026-11"
+        },
+        {
+          "local": "巨蛋嘉年华乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B7%A8%E8%9B%8B%E5%98%89%E5%B9%B4%E5%8D%8E%E4%B9%90%E5%9B%AD&city=530100",
+          "name": {
+            "th": "สวนเล่นจวี้ต้านคาร์นิวัล คุนหมิง",
+            "en": "Judan Carnival Play Park (Kunming)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหงซานตะวันออก อู่ฮว๋า คุนหมิง",
+            "en": "Hongshan East Road, Wuhua, Kunming"
+          },
+          "what": {
+            "th": "สวนเล่นที่มีปราสาทเป่าลม บ่อทราย และสไลเดอร์ บางส่วนกลางแจ้ง",
+            "en": "A play park with bouncy castles, a sand pit and slides, partly in the sun"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะกับเด็กเล็ก มีเครื่องเล่นฝึกสมอง และจอดรถสะดวก",
+            "en": "Reviewers say it suits small children, with puzzle-type play and easy parking"
+          },
+          "q": "巨蛋嘉年华乐园, 虹山东路, 五华区, 昆明",
+          "ok": "2026-11"
         }
     ]
     },

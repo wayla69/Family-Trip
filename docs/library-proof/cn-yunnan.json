@@ -410,6 +410,37 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Kunming; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Jinmofang Kids' Job Play Park (Kunming)",
+          "page_name": "金魔方儿童职业体验亲子乐园",
+          "src": "https://www.amap.com/search?query=%E9%87%91%E9%AD%94%E6%96%B9%E5%84%BF%E7%AB%A5%E8%81%8C%E4%B8%9A%E4%BD%93%E9%AA%8C%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "室内亲子园 · 专门为孩子打造的职业体验乐园，场景种类非常丰富"
+        },
+        {
+          "name": "Judan Carnival Play Park (Kunming)",
+          "page_name": "巨蛋嘉年华乐园",
+          "src": "https://www.amap.com/search?query=%E5%B7%A8%E8%9B%8B%E5%98%89%E5%B9%B4%E5%8D%8E%E4%B9%90%E5%9B%AD&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-13",
+          "map": "Amap: open, not marked closed, newest review 2026-11-13",
+          "quote": "儿童乐园 · 适合遛娃，有很多适合小孩子开展智力的项目"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "FUN星球, 鲜花童话城堡, Meland (万象城), 引力方城",
+          "why": "twenty reviews or fewer"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
