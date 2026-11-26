@@ -860,3 +860,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Guilin**: +6, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-guilin.json`.
 
 - **26 Nov 2026, Beijing**: +11, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-beijing.json`.
+
+- **26 Nov 2026, Shanghai**: +11, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-shanghai.json`.
