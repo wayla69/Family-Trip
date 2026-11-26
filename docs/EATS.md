@@ -848,3 +848,7 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Hangzhou (new town)**: 8, from Dianping shop pages (owner's China rule ข), each checked on Amap. Proof in `docs/library-proof/cn-hangzhou.json`.
 
 - **26 Nov 2026, Hangzhou**: +4 from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-hangzhou.json`.
+
+- **25 Nov 2026, Shenzhen (new town)**: 11, from Amap place pages (owner: Amap as the source and the status check), each with a children's tag or review. Proof in `docs/library-proof/cn-shenzhen.json`.
+
+- **26 Nov 2026, Shenzhen**: +5 from Amap place pages (three Hong Kong cafes, Green Tea, Dian Dou De). Proof in `docs/library-proof/cn-shenzhen.json`.

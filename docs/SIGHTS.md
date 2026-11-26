@@ -123,6 +123,8 @@ nightlife, and religious sites that ask visitors to keep away.
 - **25 Nov 2026, Christchurch (new town)**: 7, thin (the gondola, punting, the tram, Willowbank, Orana, Ferrymead and the Margaret Mahy playground). Proof in `docs/library-proof/nz-christchurch.json`.
 - **26 Nov 2026, Hangzhou**: +6 play parks and an indoor animal park from Amap place pages. Proof in `docs/library-proof/cn-hangzhou.json`.
 - **25 Nov 2026, Hangzhou (new town)**: 8, thin (Meland, Neobio, Rotten Apple Park, Chongxiaolü, Hangzhou Paradise, Kaiyuan Senbo, Songcheng, Taiziwan Park). Proof in `docs/library-proof/cn-hangzhou.json`.
+- **26 Nov 2026, Shenzhen**: +5 play parks and playgrounds from Amap place pages; 15 now, no longer thin. Proof in `docs/library-proof/cn-shenzhen.json`.
+- **25 Nov 2026, Shenzhen (new town)**: 10, thin (Meland, Midou, K33 farm, Qingshuihe railway park, the safari park, Xiaomeisha Sea World, Yunhai Angel Bay, Melania Town, the children's discovery museum, Longgang Children's Park). Proof in `docs/library-proof/cn-shenzhen.json`.
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.

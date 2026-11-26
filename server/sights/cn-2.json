@@ -3642,6 +3642,586 @@
           "ok": "2026-11"
         }
       ]
+    },
+    {
+      "place": "cn-shenzhen",
+      "sights": [
+        {
+          "local": "Meland 光明星河COCO City",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "มีแลนด์ กวงหมิงโคโค่ซิตี้",
+            "en": "Meland (Guangming COCO City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างโคโค่ซิตี้ กวงหมิง",
+            "en": "COCO City, Guangming"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่ในห้างโคโค่ซิตี้",
+            "en": "A large indoor play park inside the COCO City mall"
+          },
+          "why": {
+            "th": "เล่นในร่มในห้างที่เชื่อมกับรถไฟใต้ดินโดยตรง",
+            "en": "Indoor play in a mall linked straight to the metro"
+          },
+          "q": "Meland 光明星河COCO City, 光明区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "米兜欢乐王国",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "มี่โต่วฟันคิงดอม",
+            "en": "Midou Fun Kingdom"
+          },
+          "kind": "play",
+          "area": {
+            "th": "หลัวหู",
+            "en": "Luohu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มใหญ่ มีบ่อบอล สไลเดอร์ยักษ์ แทรมโพลีน โรงหนัง 5D และเครื่องเล่น VR",
+            "en": "A big indoor play park with a ball pool, a giant slide, trampolines, a 5D cinema and VR rides"
+          },
+          "why": {
+            "th": "มีซูเปอร์มาร์เก็ตจำลองและห้องแต่งตัว นอกจากเครื่องเล่นปีนป่าย",
+            "en": "A role-play supermarket and a dress-up room as well as things to climb"
+          },
+          "q": "米兜欢乐王国 罗湖益田假日广场店, 罗湖区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "K33探索农场",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ตั๋วครอบครัว ¥69.9",
+            "en": "Family ticket ¥69.9"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "ฟาร์ม K33",
+            "en": "K33 Discovery Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนโหลวชุน ซินหู กวงหมิง",
+            "en": "Loucun Road 1, Xinhu, Guangming"
+          },
+          "what": {
+            "th": "ฟาร์มใหม่ มีหุบเขาไดโนเสาร์ ยีราฟขนาดจริง อัลปากา และกวาง",
+            "en": "A new farm park with a dinosaur valley, life-size giraffes, alpacas and deer"
+          },
+          "why": {
+            "th": "มีไดโนเสาร์จำลองที่ส่งเสียงคำราม โซนสัมผัสสัตว์ และเครื่องเล่น",
+            "en": "Roaring dinosaur models, a petting area and play equipment"
+          },
+          "tip": {
+            "th": "เปิด 10:00–18:30",
+            "en": "Open 10:00–18:30"
+          },
+          "q": "K33探索农场, 新湖街道楼村, 光明区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "清水河铁路公园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "สวนเข้าฟรี · รถราง ¥30 ต่อคน",
+            "en": "Park free · tram ¥30 a person"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "สวนรถไฟชิงสุ่ยเหอ",
+            "en": "Qingshuihe Railway Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนกวางชิง ชิงสุ่ยเหอ หลัวหู",
+            "en": "Guangqing Road, Qingshuihe, Luohu"
+          },
+          "what": {
+            "th": "สถานีรถไฟเก่าที่กลายเป็นสวน มีตู้รถไฟสีเขียวและหัวรถจักรตงเฟิง",
+            "en": "An old railway station turned park, with green train carriages and a Dongfeng locomotive"
+          },
+          "why": {
+            "th": "เข้าฟรี และมีรถรางนั่งรอบสวน",
+            "en": "Free to enter, with a tram ride around the park"
+          },
+          "tip": {
+            "th": "วันธรรมดา 10:00–19:00 วันหยุด 10:00–21:00",
+            "en": "Weekdays 10:00–19:00, holidays 10:00–21:00"
+          },
+          "q": "清水河铁路公园, 广清路, 罗湖区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳野生动物园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "สวนสัตว์ป่าเซินเจิ้น",
+            "en": "Shenzhen Safari Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนซีลี่หู หนานซาน",
+            "en": "4086 Xilihu Road, Nanshan"
+          },
+          "what": {
+            "th": "สวนสัตว์เปิด มีสัตว์กว่า 300 ชนิด รวมทั้งแพนด้ายักษ์",
+            "en": "An open-range zoo with over 300 species, giant pandas among them"
+          },
+          "why": {
+            "th": "มีขบวนสัตว์และโชว์ทุกวัน",
+            "en": "Daily animal parades and shows"
+          },
+          "q": "深圳野生动物园, 西丽湖路4086号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "小梅沙海洋世界",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "ซีเวิลด์เสี่ยวเหมยซา",
+            "en": "Xiaomeisha Sea World"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "เสี่ยวเหมยซา เหยียนเถียน",
+            "en": "Xiaomeisha, Yantian"
+          },
+          "what": {
+            "th": "โลกใต้ทะเล 5 โซน มีหมีขั้วโลก วาฬเบลูกา และตู้ปลาทรงกระบอกขนาดใหญ่",
+            "en": "An ocean world in five zones, with polar bears, belugas and a huge round tank"
+          },
+          "why": {
+            "th": "มีโชว์ฝูงปลาซาร์ดีนในตู้ทรงกระบอกตามรอบ",
+            "en": "A sardine-storm show in the round tank at set times"
+          },
+          "tip": {
+            "th": "วันธรรมดา 10:00–17:30 วันหยุด 9:30–18:00",
+            "en": "Weekdays 10:00–17:30, holidays 9:30–18:00"
+          },
+          "q": "小梅沙海洋世界, 盐田区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "云海天使湾",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "รถไฟ ¥10 เที่ยวเดียว · ¥25 ไปกลับ",
+            "en": "Train ¥10 one way · ¥25 return"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "อ่าวเทวดาหยุนไห่",
+            "en": "Yunhai Angel Bay"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนจินซา ต้าเผิง",
+            "en": "Jinsha Road, Dapeng"
+          },
+          "what": {
+            "th": "รถไฟแคปซูลเล็กวิ่งเลียบหน้าผาริมทะเล เหนือหาดทราย",
+            "en": "A little sky-capsule train along a sea cliff above a sandy beach"
+          },
+          "why": {
+            "th": "มีชิงช้าและเรือจำลองบนหาด และเรือคายักสำหรับเด็กโต",
+            "en": "Swings and boat props on the beach, and kayaks for older children"
+          },
+          "q": "云海天使湾, 大鹏新区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "梅拉尼亚小镇",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/travel/3557424/深圳亲子好去处2026亲子游30大食买玩推介新开幕恐龙农场铁道迷打卡点商场室内放电游乐场-附家庭酒店住宿",
+          "name": {
+            "th": "เมลาเนียทาวน์ วินโดว์ออฟเดอะเวิลด์",
+            "en": "Melania Town (Window of the World)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนเซินหนาน หนานซาน",
+            "en": "9037 Shennan Avenue, Nanshan"
+          },
+          "what": {
+            "th": "หมู่บ้านเทพนิยายยุโรปที่วินโดว์ออฟเดอะเวิลด์ เข้าฟรี",
+            "en": "A free European fairy-tale village at Window of the World"
+          },
+          "why": {
+            "th": "เดินเล่นฟรี บางวันมีพลุและโชว์โดรน",
+            "en": "Free to walk round, with fireworks and drone shows now and then"
+          },
+          "tip": {
+            "th": "กลางคืนเปิดไฟสวย",
+            "en": "Lit up after dark"
+          },
+          "q": "梅拉尼亚小镇, 世界之窗, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳儿童探索馆",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/ohpama/3609119/深圳亲子一日游-10个好去处推介超大游乐场室内滑雪场萌宠互动",
+          "name": {
+            "th": "พิพิธภัณฑ์ค้นพบสำหรับเด็กเซินเจิ้น",
+            "en": "Shenzhen Children’s Discovery Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อาคารสตรีและเด็ก ถนนจิ่งเทียน ฝูเถียน",
+            "en": "Women and Children’s Building, 78 Jingtian Road, Futian"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ค้นพบสำหรับเด็ก 6 โซน",
+            "en": "A children’s discovery museum in six themed zones"
+          },
+          "why": {
+            "th": "มีโซนเบาะนุ่มสำหรับเด็ก 0–3 ปี และห้องให้นม",
+            "en": "A soft-mat area for 0–3 year olds and a nursing room"
+          },
+          "q": "深圳儿童探索馆, 景田路78号妇儿大厦, 福田区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "龙岗儿童公园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.stheadline.com/zh-hans/parenting/3546447/深圳亲子好去处2026深圳龙岗区亲子游4大推介-高球园林staycation无限放电乐园免费公园",
+          "name": {
+            "th": "สวนเด็กหลงกัง",
+            "en": "Longgang Children’s Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "หลงกัง",
+            "en": "Longgang"
+          },
+          "what": {
+            "th": "สวนเด็กฟรี 320,000 ตร.ม. มีเครื่องปีนป่าย ตาข่ายเชือก สไลเดอร์ และบ่อทราย",
+            "en": "A free 320,000 m² children’s park with climbing frames, rope nets, slides and sandpits"
+          },
+          "why": {
+            "th": "เล่นได้ยาวๆ ไม่เสียเงิน",
+            "en": "Hours of free play"
+          },
+          "tip": {
+            "th": "เครื่องเล่นส่วนใหญ่ในโซนหมู่บ้านเวทมนตร์ต้องสูง 1 เมตรขึ้นไป",
+            "en": "Most rides in the magic village area need children 1 m or taller"
+          },
+          "q": "龙岗儿童公园, 龙岗区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳人才公园儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E4%BA%BA%E6%89%8D%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สนามเด็กเล่นสวนทาเลนต์",
+            "en": "Talent Park Children's Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนทาเลนต์ ถนนตงปิน หนานซาน",
+            "en": "Talent Park, Dongbin Road, Nanshan"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นริมอ่าวเซินเจิ้น มีบ่อทราย สไลเดอร์ และแทรมโพลีน",
+            "en": "A playground by Shenzhen Bay with a sand pit, slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก ทางเดินริมอ่าวอยู่ข้างๆ",
+            "en": "Marked for small children; the bay walk is right beside it"
+          },
+          "q": "深圳人才公园儿童乐园, 东滨路1号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 深圳壹方天地店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E6%B7%B1%E5%9C%B3%E5%A3%B9%E6%96%B9%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=440300",
+          "name": {
+            "th": "มีแลนด์คลับ อีฟางเทียนตี้ หลงหัว",
+            "en": "Meland Club (Uniwalk, Longhua)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกงเย่ หลงหัว",
+            "en": "Industrial Road, Longhua"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีเขาวงกต งานประดิษฐ์ และบทบาทสมมติ",
+            "en": "An indoor play club with a maze, crafts and role play"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก",
+            "en": "Indoor play for a rainy day"
+          },
+          "q": "MELAND CLUB 壹方天地, 工业路98号, 龙华区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 深圳卓悦店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E6%B7%B1%E5%9C%B3%E5%8D%93%E6%82%A6%E5%BA%97)&city=440300",
+          "name": {
+            "th": "นีโอไบโอ วันอเวนิว",
+            "en": "Neobio Play Park (One Avenue)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วันอเวนิว ชั้น 1 ถนนฝูหัวสาย 1 ฝูเถียน",
+            "en": "One Avenue F1, Fuhua 1st Road, Futian"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีหนังสือภาพ งานประดิษฐ์ สระน้ำอุ่นสำหรับเด็ก และร้านอาหารครอบครัว",
+            "en": "An indoor play park with picture books, crafts, a warm children's pool and a family restaurant"
+          },
+          "why": {
+            "th": "มีโซนเล่นบุนุ่มและสระน้ำอุ่นสำหรับเด็กเล็ก",
+            "en": "Padded play and a heated pool for small children"
+          },
+          "q": "奈尔宝 深圳卓悦店, 福华一路348号, 福田区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳天宫阙航天乐园",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%A4%A9%E5%AE%AB%E9%98%99%E8%88%AA%E5%A4%A9%E4%B9%90%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนเล่นอวกาศเทียนกงเชวี่ย",
+            "en": "Tiangongque Space Play Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซินเย่ไท่ฝูพลาซ่า ชั้น B1 ซุ่นกั่ง หลัวหู",
+            "en": "Shenye Tairan Plaza B1, Sungang, Luohu"
+          },
+          "what": {
+            "th": "สวนธีมอวกาศในร่ม มีโซนลองทำ 21 โซน",
+            "en": "An indoor space-themed park with 21 hands-on zones"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะพาเด็กมาเที่ยว",
+            "en": "Reviewers say it is good for a day out with children"
+          },
+          "q": "深圳天宫阙航天乐园, 深业泰富广场负1层, 罗湖区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "宝安公园儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%AE%9D%E5%AE%89%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สนามเด็กเล่นสวนเป่าอัน",
+            "en": "Bao'an Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนเป่าอัน ฝั่งตะวันตก ถนนกงหยวน เป่าอัน",
+            "en": "Bao'an Park, west side, Gongyuan Road, Bao'an"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวน มีเส้นทางป่าและบ่อทราย",
+            "en": "A park playground with a jungle course and a sand pit"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "宝安公园儿童乐园, 公园路, 宝安区, 深圳",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }
