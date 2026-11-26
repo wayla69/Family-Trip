@@ -4521,24 +4521,6 @@
       "place": "jp-tohoku",
       "sights": [
         {
-          "name": { "en": "Sendai Umino-Mori Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำเซนไดอุมิโนะโมริ" },
-          "local": "仙台うみの杜水族館",
-          "kind": "aquarium",
-          "area": { "en": "Sendai, Miyagi", "th": "เซนได มิยางิ" },
-          "what": { "en": "A big aquarium on the Sendai coast with a Pacific tank, dolphin and sea lion shows and a jellyfish hall", "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ริมทะเลเซนได มีตู้มหาสมุทรแปซิฟิก โชว์โลมาและสิงโตทะเล และห้องแมงกะพรุน" },
-          "why": { "en": "Shows and tanks are under one roof, so it works in any weather and children can wander at their own pace", "th": "โชว์และตู้ปลาอยู่ในอาคารเดียวกัน เที่ยวได้ทุกสภาพอากาศ เด็กเดินดูตามใจได้" },
-          "tip": { "en": "Hours change by season (winter is shorter), so check the site before you go", "th": "เวลาเปิดเปลี่ยนตามฤดู ช่วงหนาวสั้นกว่า เช็กเว็บก่อนไป" },
-          "ages": [2, 2, 2, 1],
-          "hrs": 3,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ ¥2,400 adults · lower for children · under 4 free (check)", "th": "≈ ¥2,400 ผู้ใหญ่ · เด็กถูกกว่า · ต่ำกว่า 4 ขวบฟรี (เช็กอีกครั้ง)" },
-          "book": "none",
-          "q": "Sendai Umino-Mori Aquarium, Sendai, Miyagi",
-          "ok": "2026-11",
-          "src": "https://www.uminomori.jp/umino/en/"
-        },
-        {
           "name": { "en": "Miyagi Zao Fox Village", "th": "หมู่บ้านจิ้งจอกซาโอ" },
           "local": "宮城蔵王キツネ村",
           "kind": "zoo",
@@ -4555,60 +4537,6 @@
           "q": "Miyagi Zao Fox Village, Shiroishi, Miyagi",
           "ok": "2026-11",
           "src": "https://www.ana.co.jp/en/be/japan-travel-planner/miyagi/0000006.html"
-        },
-        {
-          "name": { "en": "Matsushima Bay pleasure cruise", "th": "ล่องเรือชมอ่าวมัตสึชิมะ" },
-          "local": "松島島巡り観光船",
-          "kind": "views",
-          "area": { "en": "Matsushima, Miyagi", "th": "มัตสึชิมะ มิยางิ" },
-          "what": { "en": "A 50-minute boat ride among the pine-covered islets of one of Japan's three famous views, with gulls following the boat", "th": "ล่องเรือราว 50 นาทีผ่านเกาะสนเล็กๆ ของหนึ่งในสามทิวทัศน์งามของญี่ปุ่น มีนกนางนวลบินตามเรือ" },
-          "why": { "en": "Short and calm, with a covered cabin; under-school-age children ride free", "th": "ล่องสั้น คลื่นสงบ มีห้องโดยสารมีหลังคา เด็กก่อนวัยเรียนขึ้นฟรี" },
-          "tip": { "en": "Buy bird food on board for the gulls; the upper-deck seat costs extra", "th": "ซื้ออาหารนกบนเรือให้นกนางนวล ที่นั่งชั้นบนจ่ายเพิ่ม" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 1.5,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "≈ ¥1,500 adults · ¥750 primary school · preschool free", "th": "≈ ¥1,500 ผู้ใหญ่ · ¥750 เด็กประถม · ก่อนวัยเรียนฟรี" },
-          "book": "none",
-          "q": "Matsushima Kaigan Pier, Matsushima, Miyagi",
-          "ok": "2026-11",
-          "src": "https://www.matsushima.or.jp/en/timesheet/"
-        },
-        {
-          "name": { "en": "Sendai Mediatheque", "th": "เซนได มีเดียเธค" },
-          "local": "せんだいメディアテーク",
-          "kind": "culture",
-          "area": { "en": "Sendai, Miyagi", "th": "เซนได มิยางิ" },
-          "what": { "en": "A glass library and gallery building by Toyo Ito with a children's library and open halls", "th": "อาคารกระจกของโทโย อิโตะ มีห้องสมุด แกลเลอรี และห้องสมุดเด็ก" },
-          "why": { "en": "Free, warm, with a children's section and room to sit; a good rainy-hour stop", "th": "เข้าฟรี อบอุ่น มีมุมหนังสือเด็กและที่นั่ง เหมาะแวะเวลาฝนตก" },
-          "tip": { "en": "Closed most Mondays and at New Year; check the calendar", "th": "ปิดวันจันทร์เป็นส่วนใหญ่และช่วงปีใหม่ เช็กปฏิทินก่อนไป" },
-          "ages": [1, 1, 1, 1],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Sendai Mediatheque, Jozenji-dori, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.gltjp.com/en/directory/item/14024/"
-        },
-        {
-          "name": { "en": "Yagiyama Zoological Park", "th": "สวนสัตว์ยากิยามะ" },
-          "local": "仙台市八木山動物公園 フジサキの杜",
-          "kind": "zoo",
-          "area": { "en": "Sendai, Miyagi", "th": "เซนได มิยางิ" },
-          "what": { "en": "A hillside city zoo with elephants, red pandas, a children's farm corner and a small amusement park", "th": "สวนสัตว์บนเนินเขากลางเมือง มีช้าง แพนด้าแดง มุมฟาร์มเด็ก และสวนสนุกเล็กๆ" },
-          "why": { "en": "Cheap and compact, with animals and rides close together; the slope is steep for prams", "th": "ราคาถูกและไม่ใหญ่มาก มีสัตว์และเครื่องเล่นอยู่ใกล้กัน แต่ทางลาดชันสำหรับรถเข็น" },
-          "tip": { "en": "Closed on Wednesdays; earlier closing in winter", "th": "ปิดวันพุธ หน้าหนาวปิดเร็วขึ้น" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ¥480 adults · ¥120 primary and junior high · preschool free", "th": "≈ ¥480 ผู้ใหญ่ · ¥120 ประถมและมัธยมต้น · ก่อนวัยเรียนฟรี" },
-          "book": "none",
-          "q": "Yagiyama Zoological Park, Sendai, Miyagi",
-          "ok": "2026-11",
-          "src": "https://www.city.sendai.jp/zoo/map/documents/202502_english_map.pdf"
         },
         {
           "name": { "en": "Spa Resort Hawaiians", "th": "สปารีสอร์ตฮาวายเอี้ยนส์" },
@@ -4789,150 +4717,6 @@
           "q": "Kakunodate Samurai District, Senboku, Akita",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/directory/item/11573"
-        },
-        {
-          "name": { "en": "Kidsland US Sendai Nishikigaoka", "th": "คิดส์แลนด์ ยูเอส เซ็นได นิชิกิงาโอกะ" },
-          "local": "キッズランドUS仙台錦ケ丘店",
-          "kind": "play",
-          "area": { "en": "Nishikigaoka Hillside Mall 3F, Aoba-ku, Sendai", "th": "ชั้น 3 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได" },
-          "what": { "en": "A fully indoor kids' park with a super jungle gym, ball pool, trampolines and a pretend-play and picture-book corner", "th": "สวนเด็กในร่มเต็มรูปแบบ มีเครื่องปีนใหญ่ บ่อบอล แทรมโพลีน และมุมเล่นสมมติกับมุมหนังสือภาพ" },
-          "why": { "en": "Rain or shine, children can run around all day; there is a baby corner and a nursing room", "th": "ฝนหรือแดดเด็กวิ่งเล่นได้ทั้งวัน มีมุมทารกและห้องให้นม" },
-          "tip": { "en": "Food from outside may be eaten inside, so lunch can stay on site", "th": "เอาอาหารจากข้างนอกเข้าไปกินข้างในได้ มื้อกลางวันจึงอยู่ที่เดิมได้" },
-          "ages": [1, 2, 2, 0],
-          "hrs": 3,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥700 per child, 1 hour (weekday)", "th": "≈ ¥700 ต่อเด็ก 1 ชั่วโมง (วันธรรมดา)" },
-          "book": "none",
-          "q": "Kidsland US Sendai Nishikigaoka, Aoba-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Sendai Anpanman Children's Museum & Mall", "th": "พิพิธภัณฑ์เด็กอันปังแมนเซ็นได และมอลล์" },
-          "local": "仙台アンパンマンこどもミュージアム＆モール",
-          "kind": "themepark",
-          "area": { "en": "Miyagino-ku, Sendai (9 min walk from JR Sendai Station east exit)", "th": "มิยากิโนะ เซ็นได (เดิน 9 นาทีจากทางออกตะวันออกสถานี JR เซ็นได)" },
-          "what": { "en": "An Anpanman theme park with a museum for playing, a soft-floored baby terrace, and a free shopping mall on the ground floor", "th": "ธีมพาร์คอันปังแมนที่มีพิพิธภัณฑ์ให้เล่น เทอร์เรซทารกพื้นนุ่ม และมอลล์ช้อปปิงฟรีที่ชั้นล่าง" },
-          "why": { "en": "A soft floor where crawling babies can roam, and Anpanman characters who greet children", "th": "พื้นนุ่มให้ทารกคลานเล่น และตัวละครอันปังแมนที่ออกมาทักทายเด็ก" },
-          "tip": { "en": "Character greetings and stage shows run every day", "th": "มีตัวละครทักทายและโชว์บนเวทีทุกวัน" },
-          "ages": [2, 2, 2, 1],
-          "hrs": 3,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,000–2,200 per child, 1 year and up", "th": "≈ ¥2,000–2,200 ต่อเด็ก อายุ 1 ขวบขึ้นไป" },
-          "book": "none",
-          "q": "Sendai Anpanman Children's Museum & Mall, Miyagino-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Yagiyama Benyland", "th": "ยางิยามะ เบนนี่แลนด์" },
-          "local": "八木山ベニーランド",
-          "kind": "themepark",
-          "area": { "en": "Yagiyama, Taihaku-ku, Sendai", "th": "ยางิยามะ ไทฮาคุ เซ็นได" },
-          "what": { "en": "A long-running amusement park opened in 1968 with about 30 rides, a Ferris wheel with views over the city and the Pacific", "th": "สวนสนุกเก่าแก่เปิดตั้งแต่ปี 1968 มีเครื่องเล่นราว 30 ชนิด และชิงช้าสวรรค์มองเห็นเมืองและมหาสมุทรแปซิฟิก" },
-          "why": { "en": "Over 20 rides are open from age 3 with a parent, so small children can ride too", "th": "เครื่องเล่นกว่า 20 ชนิดเริ่มได้ตั้งแต่ 3 ขวบพร้อมผู้ปกครอง เด็กเล็กจึงเล่นได้ด้วย" },
-          "tip": { "en": "Character shows are sometimes held on holidays", "th": "บางครั้งมีโชว์ตัวละครในวันหยุด" },
-          "ages": [0, 2, 2, 2],
-          "hrs": 4,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ¥1,200 adult · ¥600 child (entry)", "th": "≈ ¥1,200 ผู้ใหญ่ · ¥600 เด็ก (ค่าเข้า)" },
-          "book": "none",
-          "q": "Yagiyama Benyland, Taihaku-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "HOKUSHU Sendai City Science Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์เมืองเซ็นได HOKUSHU" },
-          "local": "仙台市科学館",
-          "kind": "museumkid",
-          "area": { "en": "Dainohara Forest Park, Aoba-ku, Sendai", "th": "สวนป่าไดโนฮาระ อาโอบะ เซ็นได" },
-          "what": { "en": "A hands-on science museum in three zones: an elephant skeleton and river diorama, physics experiments, and a giant soap-bubble booth", "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือเล่น 3 โซน ได้แก่โครงกระดูกช้างกับฉากจำลองแม่น้ำ ทดลองฟิสิกส์ และบูทฟองสบู่ยักษ์" },
-          "why": { "en": "Play-style exhibits, a maze and a giant bubble you can walk into, for toddlers up to primary-school age", "th": "นิทรรศการแบบเล่นได้ มีเขาวงกตและฟองสบู่ยักษ์ให้เดินเข้าไป ตั้งแต่เด็กเล็กถึงวัยประถม" },
-          "tip": { "en": "Daily Challenge Lab: a craft or experiment that kids join in on the spot", "th": "ห้องแล็บชาเลนจ์ประจำวัน เด็กร่วมทำงานประดิษฐ์หรือการทดลองได้ทันที" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 3,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥550 adult · ¥210 child (entry)", "th": "≈ ¥550 ผู้ใหญ่ · ¥210 เด็ก (ค่าเข้า)" },
-          "book": "none",
-          "q": "HOKUSHU Sendai City Science Museum, Aoba-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Kansei-no-Mori", "th": "คันเซโนะโมริ" },
-          "local": "感性の森",
-          "kind": "play",
-          "area": { "en": "Nishikigaoka Hillside Mall 2F, Aoba-ku, Sendai", "th": "ชั้น 2 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได" },
-          "what": { "en": "A wooden indoor play space: floor, walls and equipment are all wood, with a big wooden slide, bouldering and a wooden ball pool", "th": "พื้นที่เล่นในร่มทำจากไม้ ทั้งพื้น ผนัง และอุปกรณ์ มีสไลเดอร์ไม้ใหญ่ ผนังปีน และบ่อบอลไม้" },
-          "why": { "en": "No electric toys or digital games; natural materials for free play, and a separate baby zone for ages 0–2", "th": "ไม่มีของเล่นไฟฟ้าหรือเกมดิจิทัล ใช้วัสดุธรรมชาติให้เล่นอิสระ และมีโซนทารกแยกสำหรับ 0–2 ขวบ" },
-          "tip": { "en": "A dedicated baby zone for 0–2 year olds, and picture-book corners", "th": "มีโซนทารกเฉพาะสำหรับ 0–2 ขวบ และมุมหนังสือภาพ" },
-          "ages": [2, 2, 1, 0],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥400 per 30 min, 1 year and up · under 10 months free", "th": "≈ ¥400 ต่อ 30 นาที อายุ 1 ขวบขึ้นไป · ต่ำกว่า 10 เดือนฟรี" },
-          "book": "none",
-          "q": "Kanseinomori, Nishikigaoka Hillside Mall 2F, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "JOYPOLIS SPORTS AEON Sendai Nakayama", "th": "จอยโพลิส สปอร์ตส์ อิออนเซ็นได นากายามะ" },
-          "local": "JOYPOLIS SPORTS イオン仙台中山店",
-          "kind": "play",
-          "area": { "en": "AEON Sendai Nakayama annex 1F, Izumi-ku, Sendai", "th": "ชั้น 1 อาคารเสริมอิออนเซ็นได นากายามะ อิซุมิ เซ็นได" },
-          "what": { "en": "An indoor sports and games hall with trampolines, bubble football and over 30 activities, plus a kids' zone with an air play area", "th": "ห้องกีฬาและเกมในร่ม มีแทรมโพลีน บับเบิลฟุตบอล และกิจกรรมกว่า 30 อย่าง พร้อมโซนเด็กที่มีพื้นที่เล่นลม" },
-          "why": { "en": "Under school age is free, and a play kitchen and big blocks suit small children", "th": "เด็กก่อนวัยเรียนเข้าฟรี และมีครัวของเล่นกับบล็อกใหญ่เหมาะกับเด็กเล็ก" },
-          "tip": { "en": "Inside AEON, so shopping and a meal fit in on the same day", "th": "อยู่ในอิออน จึงช้อปปิงและกินข้าวได้ในวันเดียวกัน" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,200 adult · ¥1,100 primary school · under school age free", "th": "≈ ¥2,200 ผู้ใหญ่ · ¥1,100 ประถม · ก่อนวัยเรียนฟรี" },
-          "book": "none",
-          "q": "JOYPOLIS SPORTS AEON Sendai Nakayama, Izumi-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Sendai Astronomical Observatory", "th": "หอดูดาวเซ็นได" },
-          "local": "仙台市天文台",
-          "kind": "museum",
-          "area": { "en": "Nishikigaoka, Aoba-ku, Sendai", "th": "นิชิกิงาโอกะ อาโอบะ เซ็นได" },
-          "what": { "en": "An astronomy museum with a planetarium, exhibits on the solar system and constellations, and a large telescope", "th": "พิพิธภัณฑ์ดาราศาสตร์ มีท้องฟ้าจำลอง นิทรรศการระบบสุริยะและกลุ่มดาว และกล้องโทรทรรศน์ขนาดใหญ่" },
-          "why": { "en": "Children's planetarium programmes, with quizzes and a live guide; a first look at the stars for small children", "th": "มีรอบท้องฟ้าจำลองสำหรับเด็ก พร้อมควิซและไกด์สด เป็นการดูดาวครั้งแรกของเด็กเล็ก" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥250 child · ¥610 adult (exhibits or planetarium)", "th": "≈ ¥250 เด็ก · ¥610 ผู้ใหญ่ (นิทรรศการหรือท้องฟ้าจำลอง)" },
-          "book": "none",
-          "q": "Sendai Astronomical Observatory, Aoba-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Skids Garden Yodobashi Sendai", "th": "สกิดส์ การ์เดน โยโดบาชิ เซ็นได" },
-          "local": "スキッズガーデン ヨドバシ仙台店",
-          "kind": "play",
-          "area": { "en": "Yodobashi Sendai Building 1, 5F, next to Sendai Station east exit", "th": "ชั้น 5 อาคารโยโดบาชิ เซ็นได 1 ติดทางออกตะวันออกสถานีเซ็นได" },
-          "what": { "en": "An indoor playground for ages 0 to second grade, with a ball pool, slides and a pretend-play corner", "th": "สนามเด็กเล่นในร่มสำหรับ 0 ขวบถึงชั้นประถม 2 มีบ่อบอล สไลเดอร์ และมุมเล่นสมมติ" },
-          "why": { "en": "Play leaders are on hand; children aged 3 and up can go in on their own while parents shop", "th": "มีพี่เลี้ยงเล่นประจำ เด็ก 3 ขวบขึ้นไปเข้าเล่นเองได้ระหว่างที่พ่อแม่ช้อปปิง" },
-          "tip": { "en": "Children aged 3 and up may enter alone", "th": "เด็ก 3 ขวบขึ้นไปเข้าเองได้" },
-          "ages": [2, 2, 1, 0],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Skids Garden Yodobashi Sendai, Miyagino-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
         },
         {
           "name": { "en": "Aomori Prefectural Asamushi Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำอาซามูชิ จังหวัดอาโอโมริ" },
@@ -6374,6 +6158,504 @@
           },
           "q": "姶良市子ども館「ちるどん」, 400 Kajikicho Motomachi, Aira",
           "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "jp-sendai",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Sendai Umino-Mori Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำเซนไดอุมิโนะโมริ"
+          },
+          "local": "仙台うみの杜水族館",
+          "kind": "aquarium",
+          "area": {
+            "en": "Sendai, Miyagi",
+            "th": "เซนได มิยางิ"
+          },
+          "what": {
+            "en": "A big aquarium on the Sendai coast with a Pacific tank, dolphin and sea lion shows and a jellyfish hall",
+            "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ริมทะเลเซนได มีตู้มหาสมุทรแปซิฟิก โชว์โลมาและสิงโตทะเล และห้องแมงกะพรุน"
+          },
+          "why": {
+            "en": "Shows and tanks are under one roof, so it works in any weather and children can wander at their own pace",
+            "th": "โชว์และตู้ปลาอยู่ในอาคารเดียวกัน เที่ยวได้ทุกสภาพอากาศ เด็กเดินดูตามใจได้"
+          },
+          "tip": {
+            "en": "Hours change by season (winter is shorter), so check the site before you go",
+            "th": "เวลาเปิดเปลี่ยนตามฤดู ช่วงหนาวสั้นกว่า เช็กเว็บก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥2,400 adults · lower for children · under 4 free (check)",
+            "th": "≈ ¥2,400 ผู้ใหญ่ · เด็กถูกกว่า · ต่ำกว่า 4 ขวบฟรี (เช็กอีกครั้ง)"
+          },
+          "book": "none",
+          "q": "Sendai Umino-Mori Aquarium, Sendai, Miyagi",
+          "ok": "2026-11",
+          "src": "https://www.uminomori.jp/umino/en/"
+        },
+        {
+          "name": {
+            "en": "Matsushima Bay pleasure cruise",
+            "th": "ล่องเรือชมอ่าวมัตสึชิมะ"
+          },
+          "local": "松島島巡り観光船",
+          "kind": "views",
+          "area": {
+            "en": "Matsushima, Miyagi",
+            "th": "มัตสึชิมะ มิยางิ"
+          },
+          "what": {
+            "en": "A 50-minute boat ride among the pine-covered islets of one of Japan's three famous views, with gulls following the boat",
+            "th": "ล่องเรือราว 50 นาทีผ่านเกาะสนเล็กๆ ของหนึ่งในสามทิวทัศน์งามของญี่ปุ่น มีนกนางนวลบินตามเรือ"
+          },
+          "why": {
+            "en": "Short and calm, with a covered cabin; under-school-age children ride free",
+            "th": "ล่องสั้น คลื่นสงบ มีห้องโดยสารมีหลังคา เด็กก่อนวัยเรียนขึ้นฟรี"
+          },
+          "tip": {
+            "en": "Buy bird food on board for the gulls; the upper-deck seat costs extra",
+            "th": "ซื้ออาหารนกบนเรือให้นกนางนวล ที่นั่งชั้นบนจ่ายเพิ่ม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,500 adults · ¥750 primary school · preschool free",
+            "th": "≈ ¥1,500 ผู้ใหญ่ · ¥750 เด็กประถม · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "Matsushima Kaigan Pier, Matsushima, Miyagi",
+          "ok": "2026-11",
+          "src": "https://www.matsushima.or.jp/en/timesheet/"
+        },
+        {
+          "name": {
+            "en": "Sendai Mediatheque",
+            "th": "เซนได มีเดียเธค"
+          },
+          "local": "せんだいメディアテーク",
+          "kind": "culture",
+          "area": {
+            "en": "Sendai, Miyagi",
+            "th": "เซนได มิยางิ"
+          },
+          "what": {
+            "en": "A glass library and gallery building by Toyo Ito with a children's library and open halls",
+            "th": "อาคารกระจกของโทโย อิโตะ มีห้องสมุด แกลเลอรี และห้องสมุดเด็ก"
+          },
+          "why": {
+            "en": "Free, warm, with a children's section and room to sit; a good rainy-hour stop",
+            "th": "เข้าฟรี อบอุ่น มีมุมหนังสือเด็กและที่นั่ง เหมาะแวะเวลาฝนตก"
+          },
+          "tip": {
+            "en": "Closed most Mondays and at New Year; check the calendar",
+            "th": "ปิดวันจันทร์เป็นส่วนใหญ่และช่วงปีใหม่ เช็กปฏิทินก่อนไป"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sendai Mediatheque, Jozenji-dori, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/14024/"
+        },
+        {
+          "name": {
+            "en": "Yagiyama Zoological Park",
+            "th": "สวนสัตว์ยากิยามะ"
+          },
+          "local": "仙台市八木山動物公園 フジサキの杜",
+          "kind": "zoo",
+          "area": {
+            "en": "Sendai, Miyagi",
+            "th": "เซนได มิยางิ"
+          },
+          "what": {
+            "en": "A hillside city zoo with elephants, red pandas, a children's farm corner and a small amusement park",
+            "th": "สวนสัตว์บนเนินเขากลางเมือง มีช้าง แพนด้าแดง มุมฟาร์มเด็ก และสวนสนุกเล็กๆ"
+          },
+          "why": {
+            "en": "Cheap and compact, with animals and rides close together; the slope is steep for prams",
+            "th": "ราคาถูกและไม่ใหญ่มาก มีสัตว์และเครื่องเล่นอยู่ใกล้กัน แต่ทางลาดชันสำหรับรถเข็น"
+          },
+          "tip": {
+            "en": "Closed on Wednesdays; earlier closing in winter",
+            "th": "ปิดวันพุธ หน้าหนาวปิดเร็วขึ้น"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥480 adults · ¥120 primary and junior high · preschool free",
+            "th": "≈ ¥480 ผู้ใหญ่ · ¥120 ประถมและมัธยมต้น · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "Yagiyama Zoological Park, Sendai, Miyagi",
+          "ok": "2026-11",
+          "src": "https://www.city.sendai.jp/zoo/map/documents/202502_english_map.pdf"
+        },
+        {
+          "name": {
+            "en": "Kidsland US Sendai Nishikigaoka",
+            "th": "คิดส์แลนด์ ยูเอส เซ็นได นิชิกิงาโอกะ"
+          },
+          "local": "キッズランドUS仙台錦ケ丘店",
+          "kind": "play",
+          "area": {
+            "en": "Nishikigaoka Hillside Mall 3F, Aoba-ku, Sendai",
+            "th": "ชั้น 3 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "A fully indoor kids' park with a super jungle gym, ball pool, trampolines and a pretend-play and picture-book corner",
+            "th": "สวนเด็กในร่มเต็มรูปแบบ มีเครื่องปีนใหญ่ บ่อบอล แทรมโพลีน และมุมเล่นสมมติกับมุมหนังสือภาพ"
+          },
+          "why": {
+            "en": "Rain or shine, children can run around all day; there is a baby corner and a nursing room",
+            "th": "ฝนหรือแดดเด็กวิ่งเล่นได้ทั้งวัน มีมุมทารกและห้องให้นม"
+          },
+          "tip": {
+            "en": "Food from outside may be eaten inside, so lunch can stay on site",
+            "th": "เอาอาหารจากข้างนอกเข้าไปกินข้างในได้ มื้อกลางวันจึงอยู่ที่เดิมได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700 per child, 1 hour (weekday)",
+            "th": "≈ ¥700 ต่อเด็ก 1 ชั่วโมง (วันธรรมดา)"
+          },
+          "book": "none",
+          "q": "Kidsland US Sendai Nishikigaoka, Aoba-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Sendai Anpanman Children's Museum & Mall",
+            "th": "พิพิธภัณฑ์เด็กอันปังแมนเซ็นได และมอลล์"
+          },
+          "local": "仙台アンパンマンこどもミュージアム＆モール",
+          "kind": "themepark",
+          "area": {
+            "en": "Miyagino-ku, Sendai (9 min walk from JR Sendai Station east exit)",
+            "th": "มิยากิโนะ เซ็นได (เดิน 9 นาทีจากทางออกตะวันออกสถานี JR เซ็นได)"
+          },
+          "what": {
+            "en": "An Anpanman theme park with a museum for playing, a soft-floored baby terrace, and a free shopping mall on the ground floor",
+            "th": "ธีมพาร์คอันปังแมนที่มีพิพิธภัณฑ์ให้เล่น เทอร์เรซทารกพื้นนุ่ม และมอลล์ช้อปปิงฟรีที่ชั้นล่าง"
+          },
+          "why": {
+            "en": "A soft floor where crawling babies can roam, and Anpanman characters who greet children",
+            "th": "พื้นนุ่มให้ทารกคลานเล่น และตัวละครอันปังแมนที่ออกมาทักทายเด็ก"
+          },
+          "tip": {
+            "en": "Character greetings and stage shows run every day",
+            "th": "มีตัวละครทักทายและโชว์บนเวทีทุกวัน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,000–2,200 per child, 1 year and up",
+            "th": "≈ ¥2,000–2,200 ต่อเด็ก อายุ 1 ขวบขึ้นไป"
+          },
+          "book": "none",
+          "q": "Sendai Anpanman Children's Museum & Mall, Miyagino-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Yagiyama Benyland",
+            "th": "ยางิยามะ เบนนี่แลนด์"
+          },
+          "local": "八木山ベニーランド",
+          "kind": "themepark",
+          "area": {
+            "en": "Yagiyama, Taihaku-ku, Sendai",
+            "th": "ยางิยามะ ไทฮาคุ เซ็นได"
+          },
+          "what": {
+            "en": "A long-running amusement park opened in 1968 with about 30 rides, a Ferris wheel with views over the city and the Pacific",
+            "th": "สวนสนุกเก่าแก่เปิดตั้งแต่ปี 1968 มีเครื่องเล่นราว 30 ชนิด และชิงช้าสวรรค์มองเห็นเมืองและมหาสมุทรแปซิฟิก"
+          },
+          "why": {
+            "en": "Over 20 rides are open from age 3 with a parent, so small children can ride too",
+            "th": "เครื่องเล่นกว่า 20 ชนิดเริ่มได้ตั้งแต่ 3 ขวบพร้อมผู้ปกครอง เด็กเล็กจึงเล่นได้ด้วย"
+          },
+          "tip": {
+            "en": "Character shows are sometimes held on holidays",
+            "th": "บางครั้งมีโชว์ตัวละครในวันหยุด"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,200 adult · ¥600 child (entry)",
+            "th": "≈ ¥1,200 ผู้ใหญ่ · ¥600 เด็ก (ค่าเข้า)"
+          },
+          "book": "none",
+          "q": "Yagiyama Benyland, Taihaku-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "HOKUSHU Sendai City Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เมืองเซ็นได HOKUSHU"
+          },
+          "local": "仙台市科学館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Dainohara Forest Park, Aoba-ku, Sendai",
+            "th": "สวนป่าไดโนฮาระ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "A hands-on science museum in three zones: an elephant skeleton and river diorama, physics experiments, and a giant soap-bubble booth",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือเล่น 3 โซน ได้แก่โครงกระดูกช้างกับฉากจำลองแม่น้ำ ทดลองฟิสิกส์ และบูทฟองสบู่ยักษ์"
+          },
+          "why": {
+            "en": "Play-style exhibits, a maze and a giant bubble you can walk into, for toddlers up to primary-school age",
+            "th": "นิทรรศการแบบเล่นได้ มีเขาวงกตและฟองสบู่ยักษ์ให้เดินเข้าไป ตั้งแต่เด็กเล็กถึงวัยประถม"
+          },
+          "tip": {
+            "en": "Daily Challenge Lab: a craft or experiment that kids join in on the spot",
+            "th": "ห้องแล็บชาเลนจ์ประจำวัน เด็กร่วมทำงานประดิษฐ์หรือการทดลองได้ทันที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥550 adult · ¥210 child (entry)",
+            "th": "≈ ¥550 ผู้ใหญ่ · ¥210 เด็ก (ค่าเข้า)"
+          },
+          "book": "none",
+          "q": "HOKUSHU Sendai City Science Museum, Aoba-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Kansei-no-Mori",
+            "th": "คันเซโนะโมริ"
+          },
+          "local": "感性の森",
+          "kind": "play",
+          "area": {
+            "en": "Nishikigaoka Hillside Mall 2F, Aoba-ku, Sendai",
+            "th": "ชั้น 2 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "A wooden indoor play space: floor, walls and equipment are all wood, with a big wooden slide, bouldering and a wooden ball pool",
+            "th": "พื้นที่เล่นในร่มทำจากไม้ ทั้งพื้น ผนัง และอุปกรณ์ มีสไลเดอร์ไม้ใหญ่ ผนังปีน และบ่อบอลไม้"
+          },
+          "why": {
+            "en": "No electric toys or digital games; natural materials for free play, and a separate baby zone for ages 0–2",
+            "th": "ไม่มีของเล่นไฟฟ้าหรือเกมดิจิทัล ใช้วัสดุธรรมชาติให้เล่นอิสระ และมีโซนทารกแยกสำหรับ 0–2 ขวบ"
+          },
+          "tip": {
+            "en": "A dedicated baby zone for 0–2 year olds, and picture-book corners",
+            "th": "มีโซนทารกเฉพาะสำหรับ 0–2 ขวบ และมุมหนังสือภาพ"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400 per 30 min, 1 year and up · under 10 months free",
+            "th": "≈ ¥400 ต่อ 30 นาที อายุ 1 ขวบขึ้นไป · ต่ำกว่า 10 เดือนฟรี"
+          },
+          "book": "none",
+          "q": "Kanseinomori, Nishikigaoka Hillside Mall 2F, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "JOYPOLIS SPORTS AEON Sendai Nakayama",
+            "th": "จอยโพลิส สปอร์ตส์ อิออนเซ็นได นากายามะ"
+          },
+          "local": "JOYPOLIS SPORTS イオン仙台中山店",
+          "kind": "play",
+          "area": {
+            "en": "AEON Sendai Nakayama annex 1F, Izumi-ku, Sendai",
+            "th": "ชั้น 1 อาคารเสริมอิออนเซ็นได นากายามะ อิซุมิ เซ็นได"
+          },
+          "what": {
+            "en": "An indoor sports and games hall with trampolines, bubble football and over 30 activities, plus a kids' zone with an air play area",
+            "th": "ห้องกีฬาและเกมในร่ม มีแทรมโพลีน บับเบิลฟุตบอล และกิจกรรมกว่า 30 อย่าง พร้อมโซนเด็กที่มีพื้นที่เล่นลม"
+          },
+          "why": {
+            "en": "Under school age is free, and a play kitchen and big blocks suit small children",
+            "th": "เด็กก่อนวัยเรียนเข้าฟรี และมีครัวของเล่นกับบล็อกใหญ่เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Inside AEON, so shopping and a meal fit in on the same day",
+            "th": "อยู่ในอิออน จึงช้อปปิงและกินข้าวได้ในวันเดียวกัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,200 adult · ¥1,100 primary school · under school age free",
+            "th": "≈ ¥2,200 ผู้ใหญ่ · ¥1,100 ประถม · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "JOYPOLIS SPORTS AEON Sendai Nakayama, Izumi-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Sendai Astronomical Observatory",
+            "th": "หอดูดาวเซ็นได"
+          },
+          "local": "仙台市天文台",
+          "kind": "museum",
+          "area": {
+            "en": "Nishikigaoka, Aoba-ku, Sendai",
+            "th": "นิชิกิงาโอกะ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "An astronomy museum with a planetarium, exhibits on the solar system and constellations, and a large telescope",
+            "th": "พิพิธภัณฑ์ดาราศาสตร์ มีท้องฟ้าจำลอง นิทรรศการระบบสุริยะและกลุ่มดาว และกล้องโทรทรรศน์ขนาดใหญ่"
+          },
+          "why": {
+            "en": "Children's planetarium programmes, with quizzes and a live guide; a first look at the stars for small children",
+            "th": "มีรอบท้องฟ้าจำลองสำหรับเด็ก พร้อมควิซและไกด์สด เป็นการดูดาวครั้งแรกของเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥250 child · ¥610 adult (exhibits or planetarium)",
+            "th": "≈ ¥250 เด็ก · ¥610 ผู้ใหญ่ (นิทรรศการหรือท้องฟ้าจำลอง)"
+          },
+          "book": "none",
+          "q": "Sendai Astronomical Observatory, Aoba-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Skids Garden Yodobashi Sendai",
+            "th": "สกิดส์ การ์เดน โยโดบาชิ เซ็นได"
+          },
+          "local": "スキッズガーデン ヨドバシ仙台店",
+          "kind": "play",
+          "area": {
+            "en": "Yodobashi Sendai Building 1, 5F, next to Sendai Station east exit",
+            "th": "ชั้น 5 อาคารโยโดบาชิ เซ็นได 1 ติดทางออกตะวันออกสถานีเซ็นได"
+          },
+          "what": {
+            "en": "An indoor playground for ages 0 to second grade, with a ball pool, slides and a pretend-play corner",
+            "th": "สนามเด็กเล่นในร่มสำหรับ 0 ขวบถึงชั้นประถม 2 มีบ่อบอล สไลเดอร์ และมุมเล่นสมมติ"
+          },
+          "why": {
+            "en": "Play leaders are on hand; children aged 3 and up can go in on their own while parents shop",
+            "th": "มีพี่เลี้ยงเล่นประจำ เด็ก 3 ขวบขึ้นไปเข้าเล่นเองได้ระหว่างที่พ่อแม่ช้อปปิง"
+          },
+          "tip": {
+            "en": "Children aged 3 and up may enter alone",
+            "th": "เด็ก 3 ขวบขึ้นไปเข้าเองได้"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Skids Garden Yodobashi Sendai, Miyagino-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
         }
       ]
     }

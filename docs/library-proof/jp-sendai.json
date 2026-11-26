@@ -1,0 +1,7 @@
+{
+  "town": "jp-sendai",
+  "kind": "moved",
+  "checked": "2026-11-25",
+  "note": "Sendai and Matsushima are now their own place (owner, 25 Nov 2026). These rows were checked when they went into jp-tohoku; their proof is in docs/library-proof/jp-tohoku.json. Moved unchanged: 12 places to eat, 12 things to do, 5 help-and-play places.",
+  "from": "jp-tohoku"
+}
