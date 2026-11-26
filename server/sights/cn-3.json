@@ -821,6 +821,166 @@
           },
           "q": "星河湾亲子游乐园 枫叶小镇奥莱, 智谷三街5555-1号, 松北区, 哈尔滨",
           "ok": "2026-11"
+        },
+        {
+          "local": "太阳岛风景区俄罗斯风情小镇",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%AA%E9%98%B3%E5%B2%9B%E9%A3%8E%E6%99%AF%E5%8C%BA%E4%BF%84%E7%BD%97%E6%96%AF%E9%A3%8E%E6%83%85%E5%B0%8F%E9%95%87&city=230100",
+          "name": {
+            "th": "หมู่บ้านรัสเซีย เกาะไท่หยาง",
+            "en": "Russian Town (Sun Island)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนผิงหยวน เกาะไท่หยาง ซงเป่ย",
+            "en": "Pingyuan Street, Sun Island, Songbei"
+          },
+          "what": {
+            "th": "บ้านไม้แบบรัสเซียในป่า มีตุ๊กตาแม่ลูกดกยักษ์และรูปปั้นคนแคระ",
+            "en": "Russian-style wooden houses in the woods, with giant nesting dolls and dwarf statues"
+          },
+          "why": {
+            "th": "ผู้รีวิวพาเด็กมาและบอกว่าเหมือนหลุดเข้าไปในบ้านนิทาน",
+            "en": "A reviewer brought children and calls it a little fairy-tale estate"
+          },
+          "q": "太阳岛俄罗斯风情小镇, 平原街20号, 松北区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "外滩雪人码头",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%96%E6%BB%A9%E9%9B%AA%E4%BA%BA%E7%A0%81%E5%A4%B4&city=230100",
+          "name": {
+            "th": "ท่าเรือสโนว์แมน (หน้าหนาว)",
+            "en": "Bund Snowman Pier (winter)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโหย่วอี้ตะวันตก ริมแม่น้ำซงฮวา เต้าหลี่",
+            "en": "Youyi West Road, by the Songhua River, Daoli"
+          },
+          "what": {
+            "th": "ลานหิมะหน้าหนาว มีสไลเดอร์น้ำแข็งยาว รถหิมะ และเครื่องเล่นเด็ก",
+            "en": "A winter snow park with a long ice slide, snow bikes and children's rides"
+          },
+          "why": {
+            "th": "ตั๋วใบเดียวเล่นได้ทุกอย่าง ผู้รีวิวบอกว่าลูกสามขวบชอบขับรถถังเล็กมาก",
+            "en": "One ticket for all; a reviewer's three-year-old loved driving a little tank"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าหนาว ผู้รีวิวแนะนำให้เตรียมแผ่นรองเท้าให้ความร้อน",
+            "en": "Winter only; reviewers say bring heated insoles"
+          },
+          "q": "外滩雪人码头, 友谊西路1966号, 道里区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "玉泉威虎山森林公园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%8E%89%E6%B3%89%E5%A8%81%E8%99%8E%E5%B1%B1%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&city=230100",
+          "name": {
+            "th": "อุทยานป่าเวยหู่ซาน อวี้เฉวียน",
+            "en": "Yuquan Weihushan Forest Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริมทางหลวง 301 อวี้เฉวียน อาเฉิง",
+            "en": "By route 301, Yuquan, Acheng"
+          },
+          "what": {
+            "th": "อุทยานป่า มีกระเช้า สระว่ายน้ำใหญ่ และทางเดินในป่า",
+            "en": "A forest park with a cable car, a big swimming pool and woodland walks"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี ผู้รีวิวบอกว่าเด็ก ๆ สนุกมาก",
+            "en": "Children under 1.2 m go free; a reviewer says the children had a great time"
+          },
+          "tip": {
+            "th": "ห่างจากตัวเมืองประมาณหนึ่งชั่วโมงโดยรถยนต์",
+            "en": "About an hour out of town by car"
+          },
+          "q": "玉泉威虎山森林公园, 玉泉镇, 阿城区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "亚布力熊猫馆",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%9A%E5%B8%83%E5%8A%9B%E7%86%8A%E7%8C%AB%E9%A6%86&city=230100",
+          "name": {
+            "th": "บ้านแพนด้ายาบูลี่",
+            "en": "Yabuli Panda House"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนจินไผ่ ยาบูลี่ ซ่างจื้อ",
+            "en": "Jinpai Avenue, Yabuli, Shangzhi"
+          },
+          "what": {
+            "th": "บ้านแพนด้ายักษ์ในพื้นที่สกียาบูลี่",
+            "en": "A giant panda house at the Yabuli ski area"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว เด็กอายุต่ำกว่า 6 ขวบหรือสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families; children under six or under 1.2 m go free"
+          },
+          "tip": {
+            "th": "ห่างจากฮาร์บินประมาณสามชั่วโมง ไปพร้อมวันเล่นสกีที่ยาบูลี่",
+            "en": "About three hours from Harbin; pair it with a Yabuli ski day"
+          },
+          "q": "亚布力熊猫馆, 金牌大道84号, 尚志市, 哈尔滨",
+          "ok": "2026-11"
         }
       ]
     }

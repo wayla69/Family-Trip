@@ -956,6 +956,8 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Zhangjiajie, round 17**: +6 from Amap place pages (Wulingyuan, Yongding). Proof in `docs/library-proof/cn-zhangjiajie.json`.
 - **26 Nov 2026, Guilin, round 16**: +2 from Amap place pages; restaurants with children's tags are few on Amap in Guilin. Proof in `docs/library-proof/cn-guilin.json`.
 
+- **26 Nov 2026, Hangzhou, round 20**: +7 from Amap place pages (Gongshu, Binjiang). Proof in `docs/library-proof/cn-hangzhou.json`.
+- **26 Nov 2026, Harbin, round 19**: +5 from Amap place pages. Proof in `docs/library-proof/cn-harbin.json`.
 - **26 Nov 2026, Chongqing, round 18**: +9 from Amap place pages (Yuzhong, Nan'an). Proof in `docs/library-proof/cn-chongqing.json`.
 
 - **26 Nov 2026, Shenzhen, round 21**: +3 from Amap place pages (Bao'an, Longgang). Proof in `docs/library-proof/cn-shenzhen.json`.
