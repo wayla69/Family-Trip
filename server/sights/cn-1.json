@@ -795,6 +795,302 @@
           },
           "q": "小黄鸭主题乐园 浦江店, 沈杜公路4314号, 闵行区, 上海",
           "ok": "2026-11"
+        },
+        {
+          "local": "上海欢乐谷",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%AC%A2%E4%B9%90%E8%B0%B7&city=310000",
+          "name": {
+            "th": "แฮปปี้วัลเลย์ เซี่ยงไฮ้",
+            "en": "Happy Valley Shanghai"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนหลินหู เซอซาน ซงเจียง",
+            "en": "Linhu Road, Sheshan, Songjiang"
+          },
+          "what": {
+            "th": "สวนสนุกขนาดใหญ่ มีเครื่องเล่นหวาดเสียวและโซนเด็ก แฮปปี้โอเชียน",
+            "en": "A big theme park with thrill rides and a children's area, Happy Ocean"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กควรไปโซนแฮปปี้โอเชียน",
+            "en": "Reviewers say small children should head for the Happy Ocean rides"
+          },
+          "q": "上海欢乐谷, 林湖路888号, 松江区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "东方绿舟",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%9C%E6%96%B9%E7%BB%BF%E8%88%9F&city=310000",
+          "name": {
+            "th": "โอเรียนทัลแลนด์ ตงฟางลวี่โจว",
+            "en": "Oriental Land (Dongfang Lüzhou)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบเตี้ยนซาน ชิงผู่",
+            "en": "Dianshan Lake, Qingpu"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบขนาดใหญ่ มีด่านผจญภัยกลางแจ้ง พื้นที่ชุ่มน้ำ และนิทรรศการวิทยาศาสตร์",
+            "en": "A huge lakeside park with outdoor challenge courses, wetlands and science exhibits"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.3 ม. เข้าฟรี ผู้รีวิวบอกว่าด่านต่างๆ ช่วยฝึกความกล้า",
+            "en": "Children under 1.3 m go free; reviewers say the courses build courage"
+          },
+          "q": "东方绿舟, 沪青平公路, 青浦区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海影视乐园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%BD%B1%E8%A7%86%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนภาพยนตร์เซี่ยงไฮ้",
+            "en": "Shanghai Film Park"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนเชอถิง ซงเจียง",
+            "en": "Cheting Road, Songjiang"
+          },
+          "what": {
+            "th": "ฉากถ่ายภาพยนตร์ถนนเซี่ยงไฮ้เก่า รถราง และอาคาร ให้เดินชม",
+            "en": "Film sets of old Shanghai streets, trams and buildings to walk through"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ระบุว่าเหมาะกับครอบครัวกลางแจ้ง",
+            "en": "Children under 1.2 m go free; tagged for families outdoors"
+          },
+          "q": "上海影视乐园, 车亭公路211号, 松江区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海花开海上生态园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E8%8A%B1%E5%BC%80%E6%B5%B7%E4%B8%8A%E7%94%9F%E6%80%81%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนดอกไม้ฮวาไคไห่ซ่าง",
+            "en": "Huakai Haishang Flower Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "จูจิง จินซาน",
+            "en": "Zhujing, Jinshan"
+          },
+          "what": {
+            "th": "สวนดอกไม้ มีทางเดินดอกบ๊วยและซากุระ และสนามหญ้ากว้าง",
+            "en": "A flower park with plum and cherry blossom walks and open lawns"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง เด็กเข้าราคาลดหรือฟรี",
+            "en": "Tagged for families outdoors; children go in at reduced or no charge"
+          },
+          "q": "上海花开海上生态园, 朱泾镇待泾村, 金山区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西沙明珠湖景区",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%B2%99%E6%98%8E%E7%8F%A0%E6%B9%96%E6%99%AF%E5%8C%BA&city=310000",
+          "name": {
+            "th": "ทะเลสาบหมิงจู ซีซา ฉงหมิง",
+            "en": "Xisha Mingzhu Lake (Chongming)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนซานหัว เกาะฉงหมิง",
+            "en": "Sanhua Road, Chongming Island"
+          },
+          "what": {
+            "th": "สวนทะเลสาบและพื้นที่ชุ่มน้ำบนเกาะฉงหมิง มีเรือและทางเดินไม้",
+            "en": "A lake and wetland park on Chongming Island with boats and boardwalks"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบหาปูตัวเล็กริมน้ำ",
+            "en": "Reviewers say children love spotting the little crabs by the water"
+          },
+          "q": "西沙明珠湖景区, 三华公路333号, 崇明区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海汽车博物馆",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%B1%BD%E8%BD%A6%E5%8D%9A%E7%89%A9%E9%A6%86&city=310000",
+          "name": {
+            "th": "พิพิธภัณฑ์รถยนต์เซี่ยงไฮ้",
+            "en": "Shanghai Auto Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนปั๋วหยวน อันถิง เจียติ้ง",
+            "en": "Boyuan Road, Anting, Jiading"
+          },
+          "what": {
+            "th": "รถยนต์ตามยุคสมัย โมเดล และชั้นเด็กเล่นที่มีเกมแข่งรถ",
+            "en": "Cars through history, models and a children's play floor with racing games"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่โปรดของเด็กที่ชอบรถ ชั้นเด็กเล่นเสียเงินเพิ่ม",
+            "en": "Reviewers call it a favourite for small car fans; the play floor costs extra"
+          },
+          "q": "上海汽车博物馆, 博园路7565号, 嘉定区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海博物馆 东馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%8D%9A%E7%89%A9%E9%A6%86(%E4%B8%9C%E9%A6%86)&city=310000",
+          "name": {
+            "th": "พิพิธภัณฑ์เซี่ยงไฮ้ อาคารตะวันออก",
+            "en": "Shanghai Museum East"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนซื่อจี้ ผู่ตง",
+            "en": "Century Avenue, Pudong"
+          },
+          "what": {
+            "th": "อาคารใหม่ฝั่งตะวันออกของพิพิธภัณฑ์เซี่ยงไฮ้ เรื่องศิลปะและประวัติศาสตร์จีน",
+            "en": "The Shanghai Museum's big new east building of Chinese art and history"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำให้ใช้เครื่องบรรยายเสียงสำหรับเด็กและมาแต่เช้า",
+            "en": "Reviewers suggest an audio guide for children and coming early"
+          },
+          "q": "上海博物馆东馆, 世纪大道, 浦东新区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海动漫博物馆",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%8A%A8%E6%BC%AB%E5%8D%9A%E7%89%A9%E9%A6%86&city=310000",
+          "name": {
+            "th": "พิพิธภัณฑ์แอนิเมชันเซี่ยงไฮ้",
+            "en": "Shanghai Animation Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนจางเจียง ผู่ตง",
+            "en": "Zhangjiang Road, Pudong"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แอนิเมชันจีน มีรูปปั้นตัวการ์ตูนและห้องลองทำ",
+            "en": "A museum of Chinese animation with character statues and hands-on rooms"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบตัวการ์ตูน",
+            "en": "Reviewers say children love the cartoon characters"
+          },
+          "q": "上海动漫博物馆, 张江路69号, 浦东新区, 上海",
+          "ok": "2026-11"
         }
     ]
     }

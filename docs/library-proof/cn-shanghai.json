@@ -220,6 +220,105 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights, museums and restaurants in Shanghai; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "IKEA Restaurant (Caoxi Road)",
+          "page_name": "宜家餐厅(漕溪路店)",
+          "src": "https://www.amap.com/search?query=%E5%AE%9C%E5%AE%B6%E9%A4%90%E5%8E%85(%E6%BC%95%E6%BA%AA%E8%B7%AF%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-19",
+          "map": "Amap: open, not marked closed, newest review 2026-10-19",
+          "quote": "儿童友好 · 亲子友好 · 儿童秋千安全 · 儿童套餐 · 遛娃友好"
+        },
+        {
+          "name": "Spacelab Zero-Gravity Restaurant (Zhenru)",
+          "page_name": "SPACELAB失重餐厅(上海真如环宇城MAX店)",
+          "src": "https://www.amap.com/search?query=SPACELAB%E5%A4%B1%E9%87%8D%E9%A4%90%E5%8E%85(%E4%B8%8A%E6%B5%B7%E7%9C%9F%E5%A6%82%E7%8E%AF%E5%AE%87%E5%9F%8EMAX%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-16",
+          "map": "Amap: open, not marked closed, newest review 2026-10-16",
+          "quote": "亲子友好 · 真如环宇城的特色餐厅 —— Spacelab 失重餐厅，小朋友的最爱"
+        },
+        {
+          "name": "Happy Valley Shanghai",
+          "page_name": "上海欢乐谷",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%AC%A2%E4%B9%90%E8%B0%B7&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "亲子玩乐 · 带小朋友则更应该看欢乐海洋的适龄项目"
+        },
+        {
+          "name": "Oriental Land (Dongfang Lüzhou)",
+          "page_name": "东方绿舟",
+          "src": "https://www.amap.com/search?query=%E4%B8%9C%E6%96%B9%E7%BB%BF%E8%88%9F&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "亲子户外 · 各种拓展训练设施，很适合亲子游玩 · 1.3米以下儿童免票"
+        },
+        {
+          "name": "Shanghai Film Park",
+          "page_name": "上海影视乐园",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%BD%B1%E8%A7%86%E4%B9%90%E5%9B%AD&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "亲子户外 · 1.2米以下儿童免票"
+        },
+        {
+          "name": "Huakai Haishang Flower Park",
+          "page_name": "上海花开海上生态园",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E8%8A%B1%E5%BC%80%E6%B5%B7%E4%B8%8A%E7%94%9F%E6%80%81%E5%9B%AD&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "亲子户外 · 儿童按规定免票"
+        },
+        {
+          "name": "Xisha Mingzhu Lake (Chongming)",
+          "page_name": "西沙明珠湖景区",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%B2%99%E6%98%8E%E7%8F%A0%E6%B9%96%E6%99%AF%E5%8C%BA&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "只要有水的地方，都有小螃蟹的身影， 带孩子来有趣"
+        },
+        {
+          "name": "Shanghai Auto Museum",
+          "page_name": "上海汽车博物馆",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%B1%BD%E8%BD%A6%E5%8D%9A%E7%89%A9%E9%A6%86&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "专为小车迷男孩打造的遛娃宝地 · 4楼Magic Motown儿童乐园（另收费）"
+        },
+        {
+          "name": "Shanghai Museum East",
+          "page_name": "上海博物馆(东馆)",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%8D%9A%E7%89%A9%E9%A6%86(%E4%B8%9C%E9%A6%86)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "亲子旅行 · 带小朋友去的一定要个耳机讲解器，一天看不完"
+        },
+        {
+          "name": "Shanghai Animation Museum",
+          "page_name": "上海动漫博物馆",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%8A%A8%E6%BC%AB%E5%8D%9A%E7%89%A9%E9%A6%86&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-17",
+          "map": "Amap: open, not marked closed, newest review 2026-08-17",
+          "quote": "遛娃胜地 · 博物馆中有不少动漫形象的雕塑，不论是大人还是小朋友都非常喜欢"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "浦鸿会尚莊亲子餐厅",
+          "why": "one review, from April"
+        },
+        {
+          "name": "上海滩餐厅 (虹桥天地)",
+          "why": "a banquet restaurant (about ¥320 a head); left for a cheaper family list"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
