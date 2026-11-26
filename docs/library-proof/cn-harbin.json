@@ -233,6 +233,53 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights and restaurants in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Petersburg Russian Restaurant (Central Street)",
+          "page_name": "彼得蒂堡俄式西餐厅(中央大街店)",
+          "src": "https://www.amap.com/search?query=%E5%BD%BC%E5%BE%97%E8%92%82%E5%A0%A1%E4%BF%84%E5%BC%8F%E8%A5%BF%E9%A4%90%E5%8E%85(%E4%B8%AD%E5%A4%AE%E5%A4%A7%E8%A1%97%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "亲子友好 · 总体来说对家人和小朋友都很友好，可口，划算的一餐"
+        },
+        {
+          "name": "Poseidon Ocean World (Hulan)",
+          "page_name": "波塞冬海底世界",
+          "src": "https://www.amap.com/search?query=%E6%B3%A2%E5%A1%9E%E5%86%AC%E6%B5%B7%E5%BA%95%E4%B8%96%E7%95%8C&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "亲子游玩首选 · 海豚秀精彩有趣，海象海狮的马戏表演笑点满满，小朋友看得特别投入"
+        },
+        {
+          "name": "World Joy City (Hulan)",
+          "page_name": "世界欢乐城",
+          "src": "https://www.amap.com/search?query=%E4%B8%96%E7%95%8C%E6%AC%A2%E4%B9%90%E5%9F%8E&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "亲子户外 · 亲子游 · 博瑞斯是孩子最喜欢的，玩的最久的，大概能玩三小时"
+        },
+        {
+          "name": "Harbin Culture Park",
+          "page_name": "哈尔滨文化公园",
+          "src": "https://www.amap.com/search?query=%E5%93%88%E5%B0%94%E6%BB%A8%E6%96%87%E5%8C%96%E5%85%AC%E5%9B%AD&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "亲子户外 · 俄式老建筑搭配摩天轮，本地人日常遛弯、带娃游玩都合适"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "小资太太茶餐厅, 卢小罐俄餐小馆",
+          "why": "nothing about children on the page (a family-style tag only)"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
