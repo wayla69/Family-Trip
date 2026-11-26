@@ -357,6 +357,57 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Manji Cafe (Shilou, Panyu)",
+          "page_name": "满记茶餐厅",
+          "src": "https://www.amap.com/search?query=%E6%BB%A1%E8%AE%B0%E8%8C%B6%E9%A4%90%E5%8E%85&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童餐 · 还有儿童读书角练字角，小朋友食得开心玩得开心"
+        },
+        {
+          "name": "Gongzaitang Hong Kong Cafe (Shi'ergong)",
+          "page_name": "公仔堂港式茶餐厅(市二宫店)",
+          "src": "https://www.amap.com/search?query=%E5%85%AC%E4%BB%94%E5%A0%82%E6%B8%AF%E5%BC%8F%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%B8%82%E4%BA%8C%E5%AE%AB%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "儿童餐具 · 看见带了小孩子来，还特意帮我拿了儿童餐具"
+        },
+        {
+          "name": "Xinmatai Southeast Asian (Xintang Wanda)",
+          "page_name": "新马泰东南亚餐厅",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E9%A9%AC%E6%B3%B0%E4%B8%9C%E5%8D%97%E4%BA%9A%E9%A4%90%E5%8E%85&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "这家很适合带娃，专门有儿童套餐，肉酱意面、鸡翅、洋葱圈，小朋友接受度高"
+        },
+        {
+          "name": "Yoting American Barbecue (Panyu)",
+          "page_name": "Yoting美式烤肉&精酿餐厅",
+          "src": "https://www.amap.com/search?query=Yoting%E7%BE%8E%E5%BC%8F%E7%83%A4%E8%82%89%26%E7%B2%BE%E9%85%BF%E9%A4%90%E5%8E%85&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
+          "map": "Amap: open, not marked closed, newest review 2026-11-09",
+          "quote": "儿童餐 · 带孩子来还可以选儿童餐，意面和照烧鸡，饮料，蔬菜水果都有"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "有米冰室 (万胜广场)",
+          "why": "its review about children is a complaint"
+        },
+        {
+          "name": "蔓味轻食",
+          "why": "one review only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

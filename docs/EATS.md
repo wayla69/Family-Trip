@@ -886,3 +886,23 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Chongqing, round 5**: +3 from Amap place pages. Proof in `docs/library-proof/cn-chongqing.json`.
 
 - **26 Nov 2026, Harbin, round 5**: +1 from Amap place pages. Proof in `docs/library-proof/cn-harbin.json`.
+
+- **26 Nov 2026, Guangzhou, round 6**: +4 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-guangzhou.json`.
+
+- **26 Nov 2026, Shenzhen, round 6**: +3 from Amap place pages (children's meals, high chairs). Proof in `docs/library-proof/cn-shenzhen.json`.
+
+- **26 Nov 2026, Chongqing, round 6**: +4 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-chongqing.json`.
+
+- **26 Nov 2026, Harbin, round 6**: +3 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-harbin.json`.
+
+- **26 Nov 2026, Chengdu, round 6**: +5 from Amap place pages (children's meals, high chairs). Proof in `docs/library-proof/cn-chengdu.json`.
+
+- **26 Nov 2026, Xi'an, round 6**: +3 from Amap place pages (children's meals, high chairs). Proof in `docs/library-proof/cn-xian.json`.
+
+- **26 Nov 2026, Yunnan, round 6**: +2 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-yunnan.json`.
+
+- **26 Nov 2026, Guilin, round 6**: +2 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-guilin.json`.
+
+- **26 Nov 2026, Shanghai, round 6**: +5 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-shanghai.json`.
+
+- **26 Nov 2026, Beijing, round 6**: +4 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-beijing.json`.

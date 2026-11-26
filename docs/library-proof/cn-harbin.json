@@ -280,6 +280,40 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "General Steak Korean (Wangfujing Mall)",
+          "page_name": "将军牛排韩国餐厅(关东古巷王府井店)",
+          "src": "https://www.amap.com/search?query=%E5%B0%86%E5%86%9B%E7%89%9B%E6%8E%92%E9%9F%A9%E5%9B%BD%E9%A4%90%E5%8E%85(%E5%85%B3%E4%B8%9C%E5%8F%A4%E5%B7%B7%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "儿童餐 · 因为孩子喜欢芝士我们点的芝士牛排"
+        },
+        {
+          "name": "Bigger Pizza Buffet (Wangfujing Mall)",
+          "page_name": "比格比萨自助(哈尔滨王府井店)",
+          "src": "https://www.amap.com/search?query=%E6%AF%94%E6%A0%BC%E6%AF%94%E8%90%A8%E8%87%AA%E5%8A%A9(%E5%93%88%E5%B0%94%E6%BB%A8%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "儿童区 · 家庭聚餐 · 带孩子过来聚餐出行很省心"
+        },
+        {
+          "name": "Wushan Banzha Bistro (MixC, Songbei)",
+          "page_name": "雾山板扎·云贵川Bistro(万象汇店)",
+          "src": "https://www.amap.com/search?query=%E9%9B%BE%E5%B1%B1%E6%9D%BF%E6%89%8E%C2%B7%E4%BA%91%E8%B4%B5%E5%B7%9DBistro(%E4%B8%87%E8%B1%A1%E6%B1%87%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "儿童餐 · 宝宝餐"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
