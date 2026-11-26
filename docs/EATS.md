@@ -981,3 +981,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 
 - **26 Nov 2026, Yunnan, round 38**: +4 from Amap place pages (Kunming, Xishan). Proof in `docs/library-proof/cn-yunnan.json`.
 - **26 Nov 2026, Shanghai, round 37**: +4 from Amap place pages (Xuhui). Proof in `docs/library-proof/cn-shanghai.json`.
+
+- **26 Nov 2026, Guilin, round 39**: +11 from Amap place pages (city, Yangshuo, rice noodles); this round also takes places with 15–30 reviews that meet the owner's rule. Proof in `docs/library-proof/cn-guilin.json`.
