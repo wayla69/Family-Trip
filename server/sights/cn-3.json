@@ -981,6 +981,80 @@
           },
           "q": "亚布力熊猫馆, 金牌大道84号, 尚志市, 哈尔滨",
           "ok": "2026-11"
+        },
+        {
+          "local": "爱尼吖梦幻潮玩",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%88%B1%E5%B0%BC%E5%90%96%E6%A2%A6%E5%B9%BB%E6%BD%AE%E7%8E%A9&city=230100",
+          "name": {
+            "th": "สวนเล่นอ้ายหนีหยา ถนนหงฉี",
+            "en": "Ainiya Play Park (Hongqi Street)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหงฉี หนานกั่ง",
+            "en": "Hongqi Street, Nangang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อทราย หนังสือภาพ และเครื่องเล่นบุนุ่ม",
+            "en": "An indoor play park with a sand pit, picture books and soft-padded play"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก อยู่ในร่มหลบหนาวฮาร์บิน",
+            "en": "Tagged for babies and small children; indoors in the Harbin cold"
+          },
+          "q": "爱尼吖梦幻潮玩, 红旗大街240号, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "快乐专+ 哈尔滨店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%BF%AB%E4%B9%90%E4%B8%93%2B(%E5%93%88%E5%B0%94%E6%BB%A8%E5%BA%97)&city=230100",
+          "name": {
+            "th": "ไคว่เล่อจวน+ วั่นต๋าฮาตง",
+            "en": "Kuaile Zhuan+ (Wanda Hadong)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วั่นต๋าพลาซ่าฮาตง ชั้น 4 ถนนเซียงฝู เซียงฟาง",
+            "en": "Wanda Plaza Hadong 4F, Xiangfu Road, Xiangfang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีม้าหมุน ห้องจัดปาร์ตี้ และงานประดิษฐ์",
+            "en": "An indoor play park with a carousel, party rooms and crafts"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Tagged for babies and small children"
+          },
+          "q": "快乐专+ 万达广场哈尔滨哈东店, 香福路52号, 香坊区, 哈尔滨",
+          "ok": "2026-11"
         }
       ]
     }
