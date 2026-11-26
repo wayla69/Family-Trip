@@ -712,6 +712,61 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for high-chair restaurants in Liwan, Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Dazui Cantonese Kitchen (Xilang)",
+          "page_name": "大嘴食馆(西塱总店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%98%B4%E9%A3%9F%E9%A6%86(%E8%A5%BF%E5%A1%B1%E6%80%BB%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
+          "map": "Amap: open, not marked closed, newest review 2026-11-04",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Donghaiwan Restaurant (Fangcun)",
+          "page_name": "东海湾酒家",
+          "src": "https://www.amap.com/search?query=%E4%B8%9C%E6%B5%B7%E6%B9%BE%E9%85%92%E5%AE%B6&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "家庭聚餐 · 有宝宝椅"
+        },
+        {
+          "name": "Maji Tea Stall (Link Plaza Liwan)",
+          "page_name": "孖记茶档·热腾茶餐(荔湾领展广场店)",
+          "src": "https://www.amap.com/search?query=%E5%AD%96%E8%AE%B0%E8%8C%B6%E6%A1%A3%C2%B7%E7%83%AD%E8%85%BE%E8%8C%B6%E9%A4%90(%E8%8D%94%E6%B9%BE%E9%A2%86%E5%B1%95%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-12",
+          "map": "Amap: open, not marked closed, newest review 2026-11-12",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Lan Kwai Fong Restaurant (Shamian)",
+          "page_name": "兰桂坊(沙面总店)",
+          "src": "https://www.amap.com/search?query=%E5%85%B0%E6%A1%82%E5%9D%8A(%E6%B2%99%E9%9D%A2%E6%80%BB%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "宝宝也有椅子和餐具，好贴心 · 带着两个孩子"
+        },
+        {
+          "name": "No. 101 Private Kitchen (old villa)",
+          "page_name": "101號私厨·百年洋楼",
+          "src": "https://www.amap.com/search?query=101%E8%99%9F%E7%A7%81%E5%8E%A8%C2%B7%E7%99%BE%E5%B9%B4%E6%B4%8B%E6%A5%BC&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-31",
+          "map": "Amap: open, not marked closed, newest review 2026-10-31",
+          "quote": "有宝宝椅"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "点都德 (荔红楼)",
+          "why": "another branch of a chain the list already has"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
