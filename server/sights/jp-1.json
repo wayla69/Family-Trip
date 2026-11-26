@@ -797,6 +797,615 @@
           },
           "q": "Little Planet Diver City Tokyo Plaza, Aomi, Koto, Tokyo",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Fire Museum",
+            "th": "พิพิธภัณฑ์ดับเพลิง (โยตสึยะ)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Yotsuya",
+            "th": "โยตสึยะ"
+          },
+          "what": {
+            "en": "Real fire engines and an antique horse-drawn pump, a rescue helicopter on the roof terrace, and Edo-era firefighting dioramas.",
+            "th": "รถดับเพลิงจริง รถสูบน้ำโบราณที่ใช้ม้าลาก เฮลิคอปเตอร์กู้ภัยบนดาดฟ้า และโมเดลการดับเพลิงสมัยเอโดะ"
+          },
+          "why": {
+            "en": "Kids can clamber around the fire engines and the firefighter displays; free entry.",
+            "th": "เด็กปีนป่ายดูรถดับเพลิงและนิทรรศการนักดับเพลิงได้ เข้าชมฟรี"
+          },
+          "tip": {
+            "en": "Closed Mondays and New Year; open 9:30–17:00, entry until 16:30. Five minutes from the Tokyo Toy Museum.",
+            "th": "ปิดวันจันทร์และช่วงปีใหม่ เปิด 9:30–17:00 เข้าได้ถึง 16:30 อยู่ห่างจากพิพิธภัณฑ์ของเล่นโตเกียวห้านาที"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Fire Museum, Yotsuya, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.tokyotourism.org/tokyo-kids-museums/"
+        },
+        {
+          "name": {
+            "en": "Currency Museum",
+            "th": "พิพิธภัณฑ์เงินตรา (นิฮงบาชิ)"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Nihonbashi",
+            "th": "นิฮงบาชิ"
+          },
+          "what": {
+            "en": "Run by the Bank of Japan, it traces money in Japan from ancient coins to modern banknotes, with a bundle of mock banknotes to lift.",
+            "th": "ดำเนินการโดยธนาคารแห่งประเทศญี่ปุ่น เล่าเรื่องเงินญี่ปุ่นจากเหรียญโบราณถึงธนบัตรปัจจุบัน และมีธนบัตรจำลองให้ลองยก"
+          },
+          "why": {
+            "en": "The hands-on bundle of one hundred million yen in mock notes; air-conditioned and free.",
+            "th": "มีปึกธนบัตรจำลองร้อยล้านเยนให้จับ มีเครื่องปรับอากาศ และเข้าชมฟรี"
+          },
+          "tip": {
+            "en": "Closed Mondays and New Year; open 9:30–16:30, no entry after 16:00. Best for children aged 8 and up.",
+            "th": "ปิดวันจันทร์และช่วงปีใหม่ เปิด 9:30–16:30 ไม่รับเข้าหลัง 16:00 เหมาะกับเด็กอายุ 8 ปีขึ้นไป"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Currency Museum, Nihonbashi, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.tokyotourism.org/tokyo-kids-museums/"
+        },
+        {
+          "name": {
+            "en": "Round1 Spo-cha Itabashi",
+            "th": "ราวด์วัน สโปฉะ อิตาบาชิ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Itabashi",
+            "th": "อิตาบาชิ"
+          },
+          "what": {
+            "en": "An all-in-one amusement spot with tennis balls, darts, home runs, basketball hoops, bubble soccer and mini-motorbikes.",
+            "th": "สถานที่เล่นรวมหลายอย่าง มีเทนนิส ปาลูกดอก ตีโฮมรัน บาสเกตบอล บับเบิลซอกเกอร์ และมอเตอร์ไซค์จิ๋ว"
+          },
+          "why": {
+            "en": "All-you-can-play with a 90-minute, 3-hour or all-day pass; a food court for lunch and snacks.",
+            "th": "เล่นได้ไม่อั้นตามเวลาที่เลือก มีศูนย์อาหารสำหรับมื้อกลางวันและของว่าง"
+          },
+          "tip": {
+            "en": "Passes come as a 90-minute, 3-hour or all-day window.",
+            "th": "บัตรมีให้เลือก 90 นาที 3 ชั่วโมง หรือทั้งวัน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Round1 Stadium Itabashi, Itabashi, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.timeout.com/tokyo/kids/best-things-to-do-with-kids-in-tokyo"
+        },
+        {
+          "name": {
+            "en": "AniTouch Tokyo Dome City",
+            "th": "แอนิทัช โตเกียวโดมซิตี้"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Tokyo Dome City, Bunkyo",
+            "th": "โตเกียวโดมซิตี้ บุงเกียว"
+          },
+          "what": {
+            "en": "One of Tokyo's largest indoor petting zoos, with over 300 animals of 50 species, plus a co-working space and a take-out cafe.",
+            "th": "สวนสัตว์สัมผัสในร่มที่ใหญ่ที่สุดแห่งหนึ่งของโตเกียว มีสัตว์กว่า 300 ตัว 50 สายพันธุ์ มีพื้นที่ทำงานร่วมและคาเฟ่ซื้อกลับ"
+          },
+          "why": {
+            "en": "Children can meet animals up close indoors in a play-friendly petting zoo with no riding.",
+            "th": "เด็กเข้าใกล้สัตว์ได้ในร่ม เป็นสวนสัตว์สัมผัสที่เหมาะกับการเล่น และไม่มีการขี่สัตว์"
+          },
+          "tip": {
+            "en": "Inside Tokyo Dome City; the page lists ASOBono! and the Kids area in the same complex.",
+            "th": "อยู่ในโตเกียวโดมซิตี้ ในคอมเพล็กซ์เดียวกันมีอาโซโบโนะและโซนเด็ก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "AniTouch, Tokyo Dome City, Bunkyo, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.tokyo-dome.co.jp/en/kids/"
+        },
+        {
+          "name": {
+            "en": "AniTouch Kichijoji",
+            "th": "แอนิทัช คิจิโจจิ"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Kichijoji Honcho, Musashino",
+            "th": "คิจิโจจิ ฮนโจ มุซาชิโนะ"
+          },
+          "what": {
+            "en": "A new indoor petting zoo with a capybara bath, a bird area where birds land on your shoulder, lemurs, hedgehogs and guinea pigs.",
+            "th": "สวนสัตว์สัมผัสในร่มแห่งใหม่ มีอ่างน้ำคาปิบาร่า โซนนกที่เกาะบนไหล่ ลีเมอร์ เม่นแคระ และหนูตะเภา"
+          },
+          "why": {
+            "en": "Meet animals up close indoors; children under 3 are free and a stroller parking area is on site.",
+            "th": "เข้าใกล้สัตว์ได้ในร่ม เด็กอายุต่ำกว่า 3 ปีเข้าฟรี และมีที่จอดรถเข็นเด็ก"
+          },
+          "tip": {
+            "en": "Open 11:00–19:00 on weekdays and 11:00–20:00 at weekends and holidays; children in primary school or younger need a guardian.",
+            "th": "เปิด 11:00–19:00 วันธรรมดา และ 11:00–20:00 วันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์ เด็กประถมลงมาต้องมีผู้ปกครองไปด้วย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥800–1,800 · age 3 and under free",
+            "th": "≈ ¥800–1,800 · อายุ 3 ปีลงมาฟรี"
+          },
+          "book": "none",
+          "q": "AniTouch Kichijoji, 1-8-23 Kichijoji Honcho, Musashino, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.haveagood-holiday.com/en/articles/anitouch-kichijoji-opening-2026"
+        },
+        {
+          "name": {
+            "en": "Inokashira Park Zoo",
+            "th": "สวนสัตว์อิโนคาชิระ"
+          },
+          "local": "東京都井の頭自然文化園",
+          "kind": "zoo",
+          "area": {
+            "en": "Kichijoji, Musashino",
+            "th": "คิจิโจจิ มุซาชิโนะ"
+          },
+          "what": {
+            "en": "A zoo across about a third of Inokashira Park, with a squirrel trail, an aquatic life house, a sculpture museum and a mini-amusement area.",
+            "th": "สวนสัตว์ที่กินพื้นที่ราวหนึ่งในสามของสวนอิโนคาชิระ มีเส้นทางชมกระรอก บ้านสัตว์น้ำ พิพิธภัณฑ์ประติมากรรม และสวนสนุกขนาดเล็ก"
+          },
+          "why": {
+            "en": "Squirrels up close, freshwater animals indoors, guinea pig and hamster petting on a schedule, and a playground.",
+            "th": "ดูกระรอกใกล้ๆ สัตว์น้ำจืดในอาคาร ลูบหนูตะเภาและแฮมสเตอร์ตามรอบเวลา และมีสนามเด็กเล่น"
+          },
+          "tip": {
+            "en": "Closed Mondays; if Monday is a public holiday it stays open and closes the next day. Last entry 60 minutes before closing.",
+            "th": "ปิดวันจันทร์ ถ้าวันจันทร์เป็นวันหยุดนักขัตฤกษ์จะเปิดและไปปิดวันถัดไป เข้าได้ถึง 60 นาทีก่อนปิด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400",
+            "th": "≈ ¥400"
+          },
+          "book": "none",
+          "q": "Inokashira Park Zoo, Kichijoji, Musashino, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.gotokyo.org/en/spot/351/index.html"
+        },
+        {
+          "name": {
+            "en": "Adachi Park of Living Things",
+            "th": "สวนสิ่งมีชีวิตอาดาจิ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Takenotsuka, Adachi",
+            "th": "ทาเกโนะซึกะ อาดาจิ"
+          },
+          "what": {
+            "en": "Part park and part petting zoo with over 500 kinds of creatures, a guinea pig petting area, a greenhouse of butterflies and a fish tank of 35 kinds.",
+            "th": "ครึ่งสวนครึ่งสวนสัตว์สัมผัส มีสิ่งมีชีวิตกว่า 500 ชนิด โซนลูบหนูตะเภา เรือนกระจกผีเสื้อ และตู้ปลา 35 ชนิด"
+          },
+          "why": {
+            "en": "A guinea pig petting zoo area and a large greenhouse full of butterflies, made for families.",
+            "th": "มีโซนลูบหนูตะเภาและเรือนกระจกผีเสื้อขนาดใหญ่ เหมาะกับครอบครัว"
+          },
+          "tip": {
+            "en": "Closed Mondays and New Year; open 9:30–17:00 (16:30 in winter). Stroller loan on site.",
+            "th": "ปิดวันจันทร์และช่วงปีใหม่ เปิด 9:30–17:00 (ฤดูหนาว 16:30) มีรถเข็นเด็กให้ยืม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥300",
+            "th": "≈ ¥300"
+          },
+          "book": "none",
+          "q": "Adachi Park of Living Things, Adachi, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.gotokyo.org/en/spot/380/index.html"
+        },
+        {
+          "name": {
+            "en": "Science Museum (Kagaku Gijutsukan)",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์คางาคุ กิจุตสึคัง"
+          },
+          "local": "科学技術館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Kitanomaru Park, Chiyoda",
+            "th": "สวนคิตะโนมารุ ชิโยดะ"
+          },
+          "what": {
+            "en": "A hands-on science museum where kids move and touch exhibits on energy, transport, the environment and making things, with a science show and craft workshops.",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ที่เด็กได้ขยับและสัมผัสนิทรรศการเรื่องพลังงาน การขนส่ง สิ่งแวดล้อม และการประดิษฐ์ มีโชว์วิทยาศาสตร์และเวิร์กช็อปงานประดิษฐ์"
+          },
+          "why": {
+            "en": "Hands-on displays and a workshop programme for children aged 4 and up.",
+            "th": "มีนิทรรศการให้ลงมือเล่นและเวิร์กช็อปสำหรับเด็กอายุ 4 ปีขึ้นไป"
+          },
+          "tip": {
+            "en": "Closed Wednesdays (open on public holidays) and New Year; open 9:30–16:50.",
+            "th": "ปิดวันพุธ (เปิดในวันหยุดนักขัตฤกษ์) และช่วงปีใหม่ เปิด 9:30–16:50"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥950 adults · ≈ ¥500 children aged 4 and up",
+            "th": "≈ ¥950 ผู้ใหญ่ · ≈ ¥500 เด็กอายุ 4 ปีขึ้นไป"
+          },
+          "book": "none",
+          "q": "Science Museum (Kagaku Gijutsukan), Kitanomaru Park, Chiyoda, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
+        },
+        {
+          "name": {
+            "en": "Subway Museum (Chikahaku)",
+            "th": "พิพิธภัณฑ์รถไฟใต้ดิน (ชิกาฮากุ)"
+          },
+          "local": "地下鉄博物館（ちかはく）",
+          "kind": "museumkid",
+          "area": {
+            "en": "Higashi-Kasai, Edogawa",
+            "th": "ฮิงาชิคาซัย เอโดงาวะ"
+          },
+          "what": {
+            "en": "A hands-on museum of Tokyo's subway history and systems, with old carriages, a driving simulator and a model railway diorama.",
+            "th": "พิพิธภัณฑ์ที่ลงมือเล่นได้เกี่ยวกับประวัติและระบบรถไฟใต้ดินโตเกียว มีตู้รถรุ่นเก่า เครื่องจำลองการขับ และโมเดลรถไฟจำลอง"
+          },
+          "why": {
+            "en": "The driving simulator is the favourite; children aged 4 to junior high pay a child fare and a stroller can be rented.",
+            "th": "เครื่องจำลองการขับเป็นของโปรด เด็กอายุ 4 ปีถึงมัธยมต้นจ่ายราคาเด็ก และเช่ารถเข็นเด็กได้"
+          },
+          "tip": {
+            "en": "Closed Mondays (open on public holidays, closed the next day) and New Year; open 10:00–17:00.",
+            "th": "ปิดวันจันทร์ (เปิดในวันหยุดนักขัตฤกษ์แล้วปิดวันถัดไป) และช่วงปีใหม่ เปิด 10:00–17:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥220 adults · ≈ ¥100 children aged 4 to junior high",
+            "th": "≈ ¥220 ผู้ใหญ่ · ≈ ¥100 เด็กอายุ 4 ปีถึงมัธยมต้น"
+          },
+          "book": "none",
+          "q": "Subway Museum, Higashi-Kasai, Edogawa, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
+        },
+        {
+          "name": {
+            "en": "Minato Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์มินาโตะ"
+          },
+          "local": "港区立みなと科学館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Toranomon, Minato",
+            "th": "โทราโนมง มินาโตะ"
+          },
+          "what": {
+            "en": "A hands-on science museum on everyday science and the environment, with interactive exhibits and a planetarium.",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แบบลงมือเล่นเรื่องวิทยาศาสตร์ในชีวิตประจำวันและสิ่งแวดล้อม มีนิทรรศการโต้ตอบและท้องฟ้าจำลอง"
+          },
+          "why": {
+            "en": "Touch-and-move exhibits that small children can understand; a planetarium for older children; a nursing room and stroller hire.",
+            "th": "นิทรรศการที่จับและขยับได้ เด็กเล็กเข้าใจ มีท้องฟ้าจำลองสำหรับเด็กโต ห้องให้นม และเช่ารถเข็นเด็ก"
+          },
+          "tip": {
+            "en": "Closed the second Monday of the month (open on public holidays, closed the next weekday); exhibits are free.",
+            "th": "ปิดวันจันทร์ที่สองของเดือน (เปิดในวันหยุดนักขัตฤกษ์แล้วปิดวันทำการถัดไป) ส่วนนิทรรศการเข้าฟรี"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Exhibits free · planetarium ≈ ¥600 adults, ≈ ¥100 primary to high school",
+            "th": "นิทรรศการฟรี · ท้องฟ้าจำลอง ≈ ¥600 ผู้ใหญ่ ≈ ¥100 ประถมถึงมัธยมปลาย"
+          },
+          "book": "none",
+          "q": "Minato Science Museum, Toranomon, Minato, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
+        },
+        {
+          "name": {
+            "en": "Galaxcity",
+            "th": "กาแล็กซิตี้"
+          },
+          "local": "ギャラクシティ（こども未来創造館）",
+          "kind": "play",
+          "area": {
+            "en": "Kuribara, Adachi",
+            "th": "คุริฮาระ อาดาจิ"
+          },
+          "what": {
+            "en": "A large indoor learning-and-play centre with a giant net play structure, a climbing wall, a planetarium and craft workshops.",
+            "th": "ศูนย์เรียนรู้และเล่นในร่มขนาดใหญ่ มีโครงตาข่ายยักษ์ ผนังปีนเขา ท้องฟ้าจำลอง และเวิร์กช็อปงานประดิษฐ์"
+          },
+          "why": {
+            "en": "Admission is free; the giant net structure and climbing wall let children move their bodies, with a child play area.",
+            "th": "เข้าฟรี โครงตาข่ายยักษ์และผนังปีนเขาให้เด็กได้ออกแรง และมีโซนเด็กเล่น"
+          },
+          "tip": {
+            "en": "Open 9:00–21:30; the child play area closes at 18:00. Closed the second Monday (next day if a holiday).",
+            "th": "เปิด 9:00–21:30 โซนเด็กเล่นปิด 18:00 ปิดวันจันทร์ที่สอง (ถ้าตรงวันหยุดปิดวันถัดไป)"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free entry · planetarium ≈ ¥500 adults, ≈ ¥100 under 18",
+            "th": "เข้าฟรี · ท้องฟ้าจำลอง ≈ ¥500 ผู้ใหญ่ ≈ ¥100 ต่ำกว่า 18 ปี"
+          },
+          "book": "none",
+          "q": "Galaxcity, Kuribara, Adachi, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
+        },
+        {
+          "name": {
+            "en": "Green Dome Tropical Greenhouse",
+            "th": "กรีนโดม เรือนกระจกเขตร้อน"
+          },
+          "local": "熱帯環境植物館（グリーンドームねったいかん）",
+          "kind": "nature",
+          "area": {
+            "en": "Takashimadaira, Itabashi",
+            "th": "ทากาชิมาไดระ อิตาบาชิ"
+          },
+          "what": {
+            "en": "A greenhouse that recreates a Southeast Asian tropical environment, with a jungle of plants, waterfalls and a tropical fish tank.",
+            "th": "เรือนกระจกที่จำลองสภาพแวดล้อมเขตร้อนของเอเชียตะวันออกเฉียงใต้ มีป่าพืชพรรณ น้ำตก และตู้ปลาเขตร้อน"
+          },
+          "why": {
+            "en": "A jungle to explore on a rainy day and a small aquarium; compact enough for little children, with a nursing room.",
+            "th": "เป็นป่าให้สำรวจในวันฝนตกและมีตู้ปลาเล็ก ขนาดกะทัดรัดเหมาะกับเด็กเล็ก มีห้องให้นม"
+          },
+          "tip": {
+            "en": "Closed Mondays (open on public holidays, closed the next weekday) and New Year; open 10:00–18:00.",
+            "th": "ปิดวันจันทร์ (เปิดในวันหยุดนักขัตฤกษ์แล้วปิดวันทำการถัดไป) และช่วงปีใหม่ เปิด 10:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥360 adults · ≈ ¥130 primary and junior high · under school age free",
+            "th": "≈ ¥360 ผู้ใหญ่ · ≈ ¥130 ประถมและมัธยมต้น · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "Green Dome Tropical Greenhouse, Takashimadaira, Itabashi, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
+        },
+        {
+          "name": {
+            "en": "Tondemi Heiwajima",
+            "th": "ทนเดมิ เฮวาจิมะ"
+          },
+          "local": "トンデミ平和島",
+          "kind": "play",
+          "area": {
+            "en": "Heiwajima, Ota",
+            "th": "เฮวาจิมะ โอตะ"
+          },
+          "what": {
+            "en": "An indoor athletics play centre with trampolines, climbing walls and a kids' area.",
+            "th": "ศูนย์เล่นกีฬาในร่ม มีแทรมโพลีน ผนังปีนเขา และโซนเด็ก"
+          },
+          "why": {
+            "en": "Trampolines and a climbing wall for active children; a kids' area with a 120-minute session.",
+            "th": "มีแทรมโพลีนและผนังปีนเขาสำหรับเด็กที่ชอบเคลื่อนไหว โซนเด็กใช้ได้รอบละ 120 นาที"
+          },
+          "tip": {
+            "en": "Open 10:00–21:00 on irregular closing days; free rental shoes and lockers on site.",
+            "th": "เปิด 10:00–21:00 วันปิดไม่แน่นอน มีรองเท้าให้ยืมและตู้ล็อกเกอร์ฟรี"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Kids' area ≈ ¥900 for 120 minutes · accompanying adult ≈ ¥600",
+            "th": "โซนเด็ก ≈ ¥900 ต่อ 120 นาที · ผู้ปกครองที่เข้าด้วย ≈ ¥600"
+          },
+          "book": "none",
+          "q": "Tondemi Heiwajima, Heiwajima, Ota, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
+        },
+        {
+          "name": {
+            "en": "Namco Namja Town",
+            "th": "นัมโก นันจาทาวน์"
+          },
+          "local": "ナムコ・ナンジャタウン",
+          "kind": "themepark",
+          "area": {
+            "en": "Sunshine City, Higashi-Ikebukuro",
+            "th": "ซันไชน์ซิตี้ ฮิงาชิอิเคบุคุโระ"
+          },
+          "what": {
+            "en": "An indoor theme park with a Showa-retro shopping street, a gyoza stadium of national favourites, a dessert area and story-style attractions.",
+            "th": "สวนสนุกในร่ม มีถนนช้อปปิ้งย้อนยุคโชวะ สนามเกี๊ยวซ่าเมนูยอดนิยมจากทั่วประเทศ โซนขนมหวาน และเครื่องเล่นแบบเล่าเรื่อง"
+          },
+          "why": {
+            "en": "Story-style attractions and mini games for children as well as adults; food and dessert on the same floor.",
+            "th": "มีเครื่องเล่นแบบเล่าเรื่องและเกมเล็กๆ ทั้งเด็กและผู้ใหญ่ มีอาหารและขนมหวานบนชั้นเดียวกัน"
+          },
+          "tip": {
+            "en": "Open 10:00–21:00 with no closing day; attractions are charged separately from admission.",
+            "th": "เปิด 10:00–21:00 ไม่มีวันหยุด เครื่องเล่นคิดเงินแยกจากค่าเข้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,200 adults · ≈ ¥800 children (admission)",
+            "th": "≈ ¥1,200 ผู้ใหญ่ · ≈ ¥800 เด็ก (ค่าเข้า)"
+          },
+          "book": "none",
+          "q": "Namco Namja Town, Sunshine City, Higashi-Ikebukuro, Toshima, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
+        },
+        {
+          "name": {
+            "en": "Small Worlds Tokyo",
+            "th": "สมอลเวิลด์ส โตเกียว"
+          },
+          "local": "スモールワールズTOKYO",
+          "kind": "museum",
+          "area": {
+            "en": "Ariake, Koto",
+            "th": "อาริอาเกะ โคโต"
+          },
+          "what": {
+            "en": "A miniature theme park with detailed models of a space station and anime worlds, to walk through.",
+            "th": "สวนสนุกจำลองขนาดเล็ก มีโมเดลละเอียดของสถานีอวกาศและโลกอนิเมะให้เดินชม"
+          },
+          "why": {
+            "en": "Detailed miniature worlds for children aged 4 to 11, with a nursing room and wheelchair hire.",
+            "th": "โลกจำลองแสนละเอียดสำหรับเด็กอายุ 4–11 ปี มีห้องให้นมและเช่ารถเข็นวีลแชร์"
+          },
+          "tip": {
+            "en": "Open 10:00–19:00 (last entry 18:00, varies by season); closing days are irregular.",
+            "th": "เปิด 10:00–19:00 (เข้าได้ถึง 18:00 เปลี่ยนตามฤดูกาล) วันปิดไม่แน่นอน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥1,700 ages 4–11 · ≈ ¥2,100 ages 12–17 · ≈ ¥3,200 adults",
+            "th": "≈ ¥1,700 อายุ 4–11 ปี · ≈ ¥2,100 อายุ 12–17 ปี · ≈ ¥3,200 ผู้ใหญ่"
+          },
+          "book": "none",
+          "q": "Small Worlds Tokyo, Ariake 1-3-33, Koto, Tokyo",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5411"
         }
     ]
     },
@@ -1544,6 +2153,88 @@
           },
           "q": "大枝公園, 守口市, Osaka",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Tsurumi Ryokuchi Pool",
+            "th": "สระว่ายน้ำสึรุมิเรียวคุจิ"
+          },
+          "local": "鶴見緑地プール",
+          "kind": "play",
+          "area": {
+            "en": "Tsurumi Ward",
+            "th": "เขตสึรุมิ"
+          },
+          "what": {
+            "en": "An indoor heated pool with eight kinds of pool, including a wave pool, each built with rocks in a natural look.",
+            "th": "สระว่ายน้ำอุ่นในร่มที่มีสระแปดแบบ รวมถึงสระคลื่น แต่ละสระสร้างด้วยหินให้ดูเป็นธรรมชาติ"
+          },
+          "why": {
+            "en": "Small children can use it, and families can use it together.",
+            "th": "เด็กเล็กใช้ได้ และครอบครัวเล่นด้วยกันได้"
+          },
+          "tip": {
+            "en": "Indoor pools open all year; from October to March it closes at 19:00 (last entry 18:00).",
+            "th": "สระในร่มเปิดตลอดปี ตุลาคมถึงมีนาคมปิด 19:00 (เข้าได้ถึง 18:00)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,200 adults (high school and up) · ≈ ¥600 junior high, primary and seniors 65+ · under school age free (2025 figures)",
+            "th": "≈ ¥1,200 ผู้ใหญ่ (มัธยมปลายขึ้นไป) · ≈ ¥600 มัธยมต้น ประถม และผู้สูงอายุ 65 ปีขึ้นไป · ก่อนวัยเรียนฟรี (ราคาปี 2025)"
+          },
+          "book": "none",
+          "q": "Tsurumi Ryokuchi Pool, Tsurumi-ku, Osaka",
+          "ok": "2026-11",
+          "src": "https://rurubu.jp/andmore/article/3428"
+        },
+        {
+          "name": {
+            "en": "Spa World",
+            "th": "สปาเวิลด์"
+          },
+          "local": "スパワールド",
+          "kind": "onsen",
+          "area": {
+            "en": "Shinsekai, Naniwa Ward",
+            "th": "ชินเซไก เขตนานิวะ"
+          },
+          "what": {
+            "en": "A large city spa with bath zones from Asia and Europe and an indoor pool zone, with an infinity pool that looks over Tsutenkaku.",
+            "th": "สปากลางเมืองขนาดใหญ่ มีโซนอาบน้ำแบบเอเชียและยุโรป และโซนสระในร่ม พร้อมสระอินฟินิตี้มองเห็นหอสึเท็นกากุ"
+          },
+          "why": {
+            "en": "A kids pool up to sixth grade and a kids slide; a child under 12 must come in with an adult.",
+            "th": "มีสระเด็กถึงชั้นประถมหก และสไลเดอร์เด็ก เด็กอายุต่ำกว่า 12 ปีต้องเข้าพร้อมผู้ใหญ่"
+          },
+          "tip": {
+            "en": "Pool open 10:00–19:00, to 22:00 at weekends and public holidays; children under 12 cannot enter alone.",
+            "th": "สระเปิด 10:00–19:00 ถึง 22:00 วันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์ เด็กต่ำกว่า 12 ปีเข้าคนเดียวไม่ได้"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "From ≈ ¥1,500 adults · ≈ ¥1,000 children (primary school and under) · varies by season",
+            "th": "เริ่มต้น ≈ ¥1,500 ผู้ใหญ่ · ≈ ¥1,000 เด็ก (ประถมลงมา) · เปลี่ยนตามฤดูกาล"
+          },
+          "book": "none",
+          "q": "Spa World, Naniwa-ku, Osaka",
+          "ok": "2026-11",
+          "src": "https://rurubu.jp/andmore/article/3428"
         }
     ]
     },
@@ -2218,6 +2909,732 @@
           },
           "q": "HIYOSHI PLAY ARENA, Hiyoshi, Nantan, Kyoto",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Zakids Kyoto Izumiya Takano",
+            "th": "ซาคิดส์ เกียวโต อิซุมิยะ ทากาโนะ"
+          },
+          "local": "ザキッズ 京都イズミヤ高野店",
+          "kind": "play",
+          "area": {
+            "en": "Takano, Sakyo-ku",
+            "th": "ทากาโนะ เขตซาเคียว"
+          },
+          "what": {
+            "en": "An indoor play park for preschool to primary-age children, with a giant jungle gym, ball pool and trampolines",
+            "th": "สวนสนุกในร่มสำหรับเด็กเล็กถึงประถม มีเครื่องปีนยักษ์ บ่อบอล และแทรมโพลีน"
+          },
+          "why": {
+            "en": "Jungle gym, ball pool, trampolines and air trampolines all indoors",
+            "th": "เครื่องปีนยักษ์ บ่อบอล และแทรมโพลีนอยู่ในร่มทั้งหมด"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Zakids Kyoto Izumiya Takano, Sakyo-ku, Kyoto",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/82142"
+        },
+        {
+          "name": {
+            "en": "Kodomo Miraikan",
+            "th": "โคโดโมะ มิไรคัง"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Nakagyo, near the Imperial Palace",
+            "th": "นากาเกียว ใกล้พระราชวังหลวงเก่า"
+          },
+          "what": {
+            "en": "A free indoor play place for children six and under",
+            "th": "ที่เล่นในร่มฟรีสำหรับเด็กอายุ 6 ปีลงมา"
+          },
+          "why": {
+            "en": "Free, indoors, for kids six and under",
+            "th": "ฟรี อยู่ในร่ม สำหรับเด็กอายุ 6 ปีลงมา"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kodomo Miraikan, Nakagyo, Kyoto",
+          "ok": "2026-11",
+          "src": "https://www.familycantravel.com/kyoto-playgrounds/"
+        },
+        {
+          "name": {
+            "en": "Diorama Kyoto Japan",
+            "th": "ไดโอราม่า เกียวโต เจแปน"
+          },
+          "local": "ジオラマ京都JAPAN",
+          "kind": "museumkid",
+          "area": {
+            "en": "Saga-Arashiyama, next to Torokko Saga station",
+            "th": "ซางะ-อาราชิยามะ ข้างสถานีโทรกโกะซางะ"
+          },
+          "what": {
+            "en": "A large model-railway diorama of Kyoto's landmarks with trains running through the scenery",
+            "th": "ฉากจำลองรถไฟขนาดใหญ่ของสถานที่สำคัญในเกียวโต มีรถไฟวิ่งผ่านฉาก"
+          },
+          "why": {
+            "en": "Trains for train-loving children, and a ticket gate to walk through",
+            "th": "เด็กที่รักรถไฟจะชอบ และมีประตูตรวจตั๋วให้เดินผ่าน"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Diorama Kyoto Japan, Sagatenryuji, Ukyo, Kyoto",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6198"
+        },
+        {
+          "name": {
+            "en": "Kyoto Kanji Museum",
+            "th": "พิพิธภัณฑ์คันจิเกียวโต"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Gion, Higashiyama",
+            "th": "กิอง ฮิงาชิยามะ"
+          },
+          "what": {
+            "en": "Japan's first museum where you can have fun while learning about kanji",
+            "th": "พิพิธภัณฑ์แห่งแรกของญี่ปุ่นที่เรียนรู้คันจิอย่างสนุก"
+          },
+          "why": {
+            "en": "More than 20 hands-on exhibits for learning kanji through play, and a giant teacup to step into for photos",
+            "th": "มีนิทรรศการให้ลองเล่นกว่า 20 อย่าง และถ้วยชายักษ์ให้เข้าไปถ่ายรูป"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kyoto Kanji Museum, Gion, Higashiyama, Kyoto",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21084/"
+        },
+        {
+          "name": {
+            "en": "Historical Park of Tea and Uji Town",
+            "th": "อุทยานประวัติศาสตร์ชาและเมืองอุจิ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Uji",
+            "th": "อุจิ"
+          },
+          "what": {
+            "en": "A tea-and-history facility in Uji with the Chazuna museum, restaurant and shop",
+            "th": "สถานที่เรียนรู้เรื่องชาและประวัติศาสตร์ในอุจิ มีพิพิธภัณฑ์ชาซูนะ ร้านอาหาร และร้านค้า"
+          },
+          "why": {
+            "en": "Matcha grinding with a tea mill, a hands-on tea experience children can join",
+            "th": "ลองบดมัทฉะด้วยโม่ชา กิจกรรมเกี่ยวกับชาที่เด็กร่วมได้"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Historical Park of Tea and Uji Town, Uji, Kyoto",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21084/"
+        },
+        {
+          "name": {
+            "en": "Yamashiro Sports Park Taiyogaoka",
+            "th": "สวนกีฬายามาชิโระ ไทโยงาโอกะ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Hills of Uji, Hiroono",
+            "th": "เนินเขาอุจิ ฮิโรโนะ"
+          },
+          "what": {
+            "en": "A large leisure park in the hills of Uji, with nature and sports, about 108 hectares",
+            "th": "สวนพักผ่อนขนาดใหญ่บนเนินเขาอุจิ ผสมธรรมชาติกับกีฬา ราว 108 เฮกตาร์"
+          },
+          "why": {
+            "en": "Adventure Forest and Play Forest with giant athletic equipment; a family pool with slides in summer",
+            "th": "มีป่าผจญภัยและป่าเล่นพร้อมอุปกรณ์ยักษ์ และสระครอบครัวมีสไลเดอร์ในฤดูร้อน"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kyoto Prefectural Yamashiro Sports Park Taiyogaoka, Uji, Kyoto",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21084/"
+        },
+        {
+          "name": {
+            "en": "Uji City Botanical Park",
+            "th": "สวนพฤกษศาสตร์เมืองอุจิ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Southwest Uji City",
+            "th": "ตะวันตกเฉียงใต้ของเมืองอุจิ"
+          },
+          "what": {
+            "en": "A botanical park of about 10 hectares on the hills of southwestern Uji City",
+            "th": "สวนพฤกษศาสตร์ราว 10 เฮกตาร์บนเนินเขาทางตะวันตกเฉียงใต้ของอุจิ"
+          },
+          "why": {
+            "en": "The Flower and Water Tapestry at the entrance, Japan's largest three-dimensional flower bed",
+            "th": "ที่ทางเข้ามีแปลงดอกไม้สามมิติที่ใหญ่ที่สุดในญี่ปุ่น"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Uji City Botanical Park, Uji, Kyoto",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21084/"
+        },
+        {
+          "name": {
+            "en": "Hozugawa River Boat Ride",
+            "th": "ล่องเรือแม่น้ำโฮซุกาวะ"
+          },
+          "local": "保津川",
+          "kind": "ride",
+          "area": {
+            "en": "Kameoka to Arashiyama",
+            "th": "คาเมโอกะถึงอาราชิยามะ"
+          },
+          "what": {
+            "en": "A two-hour rapids descent down a gorge from Kameoka to Arashiyama in an open wooden boat",
+            "th": "ล่องแก่งสองชั่วโมงผ่านหุบเขาจากคาเมโอกะถึงอาราชิยามะ ด้วยเรือไม้เปิดโล่ง"
+          },
+          "why": {
+            "en": "Real splashes but mild, and the gorge scenery is the reward",
+            "th": "น้ำกระเซ็นจริงแต่ไม่แรง และวิวหุบเขาคือรางวัล"
+          },
+          "tip": {
+            "en": "Kids must be 80 cm tall; for toddlers the enclosed winter boat is calmer",
+            "th": "เด็กต้องสูง 80 ซม. ขึ้นไป สำหรับเด็กเล็ก เรือปิดฤดูหนาวสงบกว่า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "≈ ¥6,000 adults · ≈ ¥4,500 children (age 4 to primary school)",
+            "th": "≈ ¥6,000 ผู้ใหญ่ · ≈ ¥4,500 เด็ก (อายุ 4 ปีถึงประถม)"
+          },
+          "book": "rec",
+          "q": "Hozugawa River Boat, Kameoka, Kyoto",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/kyoto-kansai-river-boats-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Fushimi Jikkokubune Boat Ride",
+            "th": "ล่องเรือจิกโคกุบุเนะฟูชิมิ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Fushimi, south Kyoto",
+            "th": "ฟูชิมิ ทางใต้ของเกียวโต"
+          },
+          "what": {
+            "en": "A flat, covered canal boat drifting along the willow-lined sake breweries of Fushimi",
+            "th": "เรือคลองหลังคาคลุมแล่นช้า ๆ ผ่านโรงเหล้าสาเกริมคลองที่มีต้นหลิว"
+          },
+          "why": {
+            "en": "Calm and short, and stroller-nap friendly",
+            "th": "เงียบสงบ ใช้เวลาสั้น เด็กเล็กหลับในรถเข็นได้"
+          },
+          "tip": {
+            "en": "Runs spring to autumn only; the dock is a short walk from Chushojima Station",
+            "th": "วิ่งเฉพาะฤดูใบไม้ผลิถึงใบไม้ร่วง ท่าเรืออยู่ใกล้สถานีจูโชจิมะ"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Fushimi Jikkokubune dock, Fushimi, Kyoto",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/family-boat-cruises-japan/"
+        },
+        {
+          "name": {
+            "en": "Kifune Shrine",
+            "th": "ศาลเจ้าคิฟุเนะ"
+          },
+          "local": "貴船神社",
+          "kind": "culture",
+          "area": {
+            "en": "Kibune, Sakyo-ku",
+            "th": "คิบุเนะ เขตซาเคียว"
+          },
+          "what": {
+            "en": "A shrine up a valley village, its stone stairway lined with lanterns beside a rushing stream",
+            "th": "ศาลเจ้าในหมู่บ้านหุบเขา บันไดหินเรียงด้วยโคมไฟข้างลำธารน้ำไหลเชี่ยว"
+          },
+          "why": {
+            "en": "The water omikuji: a fortune that shows itself only when floated on the sacred water",
+            "th": "โอมิคุจิน้ำ คำทำนายที่ปรากฏเมื่อวางบนน้ำศักดิ์สิทธิ์"
+          },
+          "tip": {
+            "en": "Summer dining platforms over the river run roughly May to September",
+            "th": "ชานกินข้าวเหนือแม่น้ำเปิดราวเดือนพฤษภาคมถึงกันยายน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kifune Shrine, Kibune, Sakyo-ku, Kyoto",
+          "ok": "2026-11",
+          "src": "https://japanspecialtraveler.com/guides/kyoto-kurama-kibune-guide/"
+        },
+        {
+          "name": {
+            "en": "Kurama-dera",
+            "th": "วัดคุรามะเดระ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Kurama, Sakyo-ku",
+            "th": "คุรามะ เขตซาเคียว"
+          },
+          "what": {
+            "en": "A temple on the forested slopes of Mount Kurama, said to be where Yoshitsune trained with the tengu",
+            "th": "วัดบนเนินป่าภูเขาคุรามะ เล่ากันว่าโยชิสึเนะฝึกวิชากับเทงงุที่นี่"
+          },
+          "why": {
+            "en": "A short cable car takes the steep first part, or the cedar path walks it",
+            "th": "มีกระเช้าสั้น ๆ ขึ้นช่วงชัน หรือเดินตามทางต้นซีดาร์ก็ได้"
+          },
+          "tip": {
+            "en": "Take the Eizan Railway to Kurama, the end of the line",
+            "th": "นั่งรถไฟสายเออิซันไปสุดสายที่คุรามะ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kurama-dera, Kurama, Sakyo-ku, Kyoto",
+          "ok": "2026-11",
+          "src": "https://japanspecialtraveler.com/guides/kyoto-kurama-kibune-guide/"
+        },
+        {
+          "name": {
+            "en": "Eizan Railway to Kurama",
+            "th": "รถไฟสายเออิซันไปคุรามะ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Demachiyanagi to Kurama",
+            "th": "เดมาจิยานางิถึงคุรามะ"
+          },
+          "what": {
+            "en": "The mountain line from Demachiyanagi, about 30 minutes north to the Kurama and Kibune villages",
+            "th": "รถไฟสายภูเขาจากเดมาจิยานางิ ราว 30 นาทีไปหมู่บ้านคุรามะและคิบุเนะ"
+          },
+          "why": {
+            "en": "In autumn the line runs through an illuminated maple tunnel",
+            "th": "ฤดูใบไม้ร่วงรถไฟแล่นผ่านอุโมงค์ใบเมเปิลที่ประดับไฟ"
+          },
+          "tip": {
+            "en": "Get off at Kibune-guchi for Kibune, or go on to Kurama for the temple",
+            "th": "ลงที่คิบุเนะกุจิเพื่อไปคิบุเนะ หรือไปต่อที่คุรามะเพื่อเที่ยววัด"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Demachiyanagi Station, Sakyo-ku, Kyoto",
+          "ok": "2026-11",
+          "src": "https://japanspecialtraveler.com/guides/kyoto-kurama-kibune-guide/"
+        },
+        {
+          "name": {
+            "en": "Kurama Onsen",
+            "th": "คุรามะออนเซ็น"
+          },
+          "kind": "onsen",
+          "area": {
+            "en": "Kurama village",
+            "th": "หมู่บ้านคุรามะ"
+          },
+          "what": {
+            "en": "An outdoor hot-spring bath with mountain views near Kurama village",
+            "th": "บ่อน้ำพุร้อนกลางแจ้งวิวภูเขาใกล้หมู่บ้านคุรามะ"
+          },
+          "why": {
+            "en": "A warm soak for tired legs after the hike",
+            "th": "แช่น้ำอุ่นคลายเมื่อยหลังเดินป่า"
+          },
+          "tip": {
+            "en": "Plan the timing of the last trains and buses back to Kyoto",
+            "th": "วางเวลารถไฟและรถบัสเที่ยวสุดท้ายกลับเกียวโตไว้ก่อน"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kurama Onsen, Kurama, Sakyo-ku, Kyoto",
+          "ok": "2026-11",
+          "src": "https://japanspecialtraveler.com/guides/kyoto-kurama-kibune-guide/"
+        },
+        {
+          "name": {
+            "en": "Kurama to Kibune forest trail",
+            "th": "เส้นทางป่าคุรามะไปคิบุเนะ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Kurama to Kibune",
+            "th": "คุรามะถึงคิบุเนะ"
+          },
+          "what": {
+            "en": "A forest trail over the mountain between Kurama-dera and Kibune, past cedars, shrines and viewpoints",
+            "th": "ทางเดินป่าข้ามเขาระหว่างวัดคุรามะเดระกับคิบุเนะ ผ่านต้นซีดาร์ ศาลเจ้า และจุดชมวิว"
+          },
+          "why": {
+            "en": "A walk through old cedar forest with shrines along the way",
+            "th": "เดินผ่านป่าซีดาร์เก่าแก่ มีศาลเจ้าตลอดทาง"
+          },
+          "tip": {
+            "en": "From Kibune-guchi, a short bus or a 30-minute walk reaches Kibune if little ones tire",
+            "th": "จากคิบุเนะกุจิ นั่งรถบัสสั้น ๆ หรือเดิน 30 นาทีถึงคิบุเนะ หากเด็กเล็กเหนื่อย"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kurama Kibune forest trail, Sakyo-ku, Kyoto",
+          "ok": "2026-11",
+          "src": "https://japanspecialtraveler.com/guides/kyoto-kurama-kibune-guide/"
+        },
+        {
+          "name": {
+            "en": "Byodoin Temple",
+            "th": "วัดเบียวโดอิน"
+          },
+          "local": "平等院",
+          "kind": "culture",
+          "area": {
+            "en": "Uji",
+            "th": "อุจิ"
+          },
+          "what": {
+            "en": "The temple whose Phoenix Hall is on the 10-yen coin, with a garden and the Hoshokan museum",
+            "th": "วัดที่มีหอฟีนิกซ์ซึ่งอยู่บนเหรียญ 10 เยน มีสวนและพิพิธภัณฑ์โฮโชกัง"
+          },
+          "why": {
+            "en": "The garden and museum are easy to walk, and the Phoenix Hall is a gentle half-day",
+            "th": "สวนและพิพิธภัณฑ์เดินง่าย หอฟีนิกซ์เที่ยวสบาย ๆ ครึ่งวัน"
+          },
+          "tip": {
+            "en": "Going inside the Phoenix Hall costs an extra ¥300",
+            "th": "เข้าชมภายในหอฟีนิกซ์จ่ายเพิ่ม ¥300"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥700 adults · Phoenix Hall interior ≈ ¥300 extra",
+            "th": "≈ ¥700 ผู้ใหญ่ · เข้าหอฟีนิกซ์เพิ่ม ≈ ¥300"
+          },
+          "book": "rec",
+          "q": "Byodoin, Uji, Kyoto",
+          "ok": "2026-11",
+          "src": "https://selfguidejapan.com/blog/things-to-do-in-uji"
+        },
+        {
+          "name": {
+            "en": "Ujigami Shrine",
+            "th": "ศาลเจ้าอุจิงามิ"
+          },
+          "local": "宇治上神社",
+          "kind": "culture",
+          "area": {
+            "en": "Uji, east bank",
+            "th": "อุจิ ฝั่งตะวันออก"
+          },
+          "what": {
+            "en": "One of Uji's two UNESCO World Heritage sites, across the river from Byodoin",
+            "th": "หนึ่งในสองแหล่งมรดกโลกของอุจิ อยู่ฝั่งตรงข้ามแม่น้ำจากวัดเบียวโดอิน"
+          },
+          "why": {
+            "en": "A short walk across the river from Byodoin",
+            "th": "เดินข้ามแม่น้ำจากวัดเบียวโดอินไม่ไกล"
+          },
+          "tip": {
+            "en": "Reach it before the late-afternoon closing; entry stops at 16:10",
+            "th": "ไปให้ถึงก่อนปิดช่วงเย็น ปิดรับเข้า 16:10"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ujigami Shrine, Uji, Kyoto",
+          "ok": "2026-11",
+          "src": "https://selfguidejapan.com/blog/things-to-do-in-uji"
+        },
+        {
+          "name": {
+            "en": "Uji River walk",
+            "th": "เดินเล่นริมแม่น้ำอุจิ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Uji",
+            "th": "อุจิ"
+          },
+          "what": {
+            "en": "Walk the west bank to To-no-shima and Tachibana islands, then cross the Asagiri Bridge",
+            "th": "เดินริมฝั่งตะวันตกไปเกาะโทโนะชิมะและเกาะทาจิบานะ แล้วข้ามสะพานอาซากิริ"
+          },
+          "why": {
+            "en": "The river islands offer a walking break between temple visits and tea stops",
+            "th": "เกาะริมแม่น้ำเป็นที่เดินพักระหว่างเที่ยววัดและแวะดื่มชา"
+          },
+          "tip": {
+            "en": "On a rainy day, go indoors to the Hoshokan or the Genji Museum instead",
+            "th": "วันฝนตกให้ไปพิพิธภัณฑ์โฮโชกันหรือพิพิธภัณฑ์เก็นจิแทน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Uji River, Uji, Kyoto",
+          "ok": "2026-11",
+          "src": "https://selfguidejapan.com/blog/things-to-do-in-uji"
+        },
+        {
+          "name": {
+            "en": "Tale of Genji Museum",
+            "th": "พิพิธภัณฑ์เก็นจิโมโนงาตาริ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Uji, east bank",
+            "th": "อุจิ ฝั่งตะวันออก"
+          },
+          "what": {
+            "en": "A museum about the Tale of Genji near Ujigami Shrine, with a movie room",
+            "th": "พิพิธภัณฑ์เรื่องเก็นจิโมโนงาตาริใกล้ศาลเจ้าอุจิงามิ มีห้องฉายภาพยนตร์"
+          },
+          "why": {
+            "en": "Indoors, with a movie room, so it works on a rainy day",
+            "th": "อยู่ในร่ม มีห้องฉายภาพยนตร์ เหมาะวันฝนตก"
+          },
+          "tip": {
+            "en": "Reach it before its 16:30 last entry",
+            "th": "ไปให้ถึงก่อนรอบเข้าชมสุดท้าย 16:30"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tale of Genji Museum, Uji, Kyoto",
+          "ok": "2026-11",
+          "src": "https://selfguidejapan.com/blog/things-to-do-in-uji"
         }
     ]
     },
@@ -4807,6 +6224,447 @@
           "q": "Beppu Art Museum, Beppu Tower, Kitahama, Beppu, Japan",
           "ok": "2026-11",
           "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        },
+        {
+          "name": {
+            "en": "Lake Kinrin",
+            "th": "ทะเลสาบคินริน"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Yufuin, at the end of Yunotsubo Street",
+            "th": "ยูฟูอิน ปลายถนนยูโนะสึโบะ"
+          },
+          "what": {
+            "en": "A lake with clear water and a flat walking loop, with carp in view from the banks",
+            "th": "ทะเลสาบน้ำใสมีทางเดินรอบเรียบ เห็นปลาคาร์ปจากริมฝั่ง"
+          },
+          "why": {
+            "en": "The lake is free to enter, and children can watch the carp from the banks",
+            "th": "เข้าทะเลสาบฟรี เด็กดูปลาคาร์ปจากริมฝั่งได้"
+          },
+          "tip": {
+            "en": "Morning visits are best for the mist rising off the surface",
+            "th": "ไปตอนเช้าจะเห็นไอหมอกลอยเหนือผิวน้ำสวยที่สุด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kinrin Lake, Yufuin, Oita",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/yufuin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Yufuin Floral Village",
+            "th": "ยูฟูอิน ฟลอรัล วิลเลจ"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Yufuin, a 15-minute walk from the station",
+            "th": "ยูฟูอิน เดินจากสถานี 15 นาที"
+          },
+          "what": {
+            "en": "A storybook village of small stone cottages, with a small petting area of goats and rabbits",
+            "th": "หมู่บ้านสไตล์นิทานของกระท่อมหินเล็ก ๆ มีโซนจับสัมผัสแพะและกระต่าย"
+          },
+          "why": {
+            "en": "A petting area with goats and rabbits, and a Miffy-shaped bakery",
+            "th": "มีโซนสัมผัสแพะและกระต่าย และร้านเบเกอรี่รูปมิฟฟี่"
+          },
+          "tip": {
+            "en": "The village is free to enter; the owl and cat cafés inside cost extra",
+            "th": "เข้าหมู่บ้านฟรี คาเฟ่นกฮูกและแมวข้างในจ่ายเพิ่ม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Yufuin Floral Village, Yufuin, Oita",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/yufuin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Yufuin Showa Museum",
+            "th": "พิพิธภัณฑ์โชวะยูฟูอิน"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Yufuin",
+            "th": "ยูฟูอิน"
+          },
+          "what": {
+            "en": "A museum of everyday life in Japan's Showa era (1926 to 1989), with retro toys, appliances and street-scene dioramas",
+            "th": "พิพิธภัณฑ์ชีวิตประจำวันยุคโชวะ (1926–1989) มีของเล่นเก่า เครื่องใช้ไฟฟ้า และฉากถนนจำลอง"
+          },
+          "why": {
+            "en": "Children can see old toys and household things they have never seen, such as a rotary phone",
+            "th": "เด็กได้เห็นของเล่นเก่าและของใช้ที่ไม่เคยเห็น เช่น โทรศัพท์หมุน"
+          },
+          "tip": {
+            "en": "Takes about 45 minutes; less crowded than the Floral Village",
+            "th": "ใช้เวลาราว 45 นาที คนน้อยกว่าฟลอรัลวิลเลจ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,400 adults · ≈ ¥500 children",
+            "th": "≈ ¥1,400 ผู้ใหญ่ · ≈ ¥500 เด็ก"
+          },
+          "book": "none",
+          "q": "Yufuin Showa Museum, Yufuin, Oita",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/yufuin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Yufuin no Mori",
+            "th": "ยูฟูอินโนะโมริ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Hakata to Yufuin, about 2 hours 10 minutes",
+            "th": "ฮากาตะถึงยูฟูอิน ราว 2 ชั่วโมง 10 นาที"
+          },
+          "what": {
+            "en": "A reserved-seat scenic limited express from Hakata or Beppu with wooden interiors and large windows",
+            "th": "รถด่วนพิเศษชมวิวที่นั่งสำรองจากฮากาตะหรือเบปปุ ตกแต่งไม้และหน้าต่างบานใหญ่"
+          },
+          "why": {
+            "en": "A children's stamp-collecting activity on board",
+            "th": "มีกิจกรรมสะสมแสตมป์สำหรับเด็กบนรถไฟ"
+          },
+          "tip": {
+            "en": "Reservations are mandatory; book three to four weeks ahead in school holidays",
+            "th": "ต้องจองที่นั่ง ช่วงปิดเทอมควรจองล่วงหน้า 3–4 สัปดาห์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥4,400 adults one way",
+            "th": "≈ ¥4,400 ผู้ใหญ่เที่ยวเดียว"
+          },
+          "book": "req",
+          "q": "Yufuin no Mori, Hakata Station, Fukuoka",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/yufuin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Lake Shidaka",
+            "th": "ทะเลสาบชิดากะ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Between Yufuin and Beppu, about 600 metres up",
+            "th": "ระหว่างยูฟูอินกับเบปปุ สูงราว 600 เมตร"
+          },
+          "what": {
+            "en": "A mountain lake with a lawn and swan and whale pedalo boats",
+            "th": "ทะเลสาบบนเขามีสนามหญ้า และเรือปั่นรูปหงส์และวาฬ"
+          },
+          "why": {
+            "en": "Pedalo boats take children under 100 cm, and the lakeside entry is free",
+            "th": "เรือปั่นรับเด็กสูงไม่ถึง 100 ซม. และเข้าริมทะเลสาบฟรี"
+          },
+          "tip": {
+            "en": "Around 15,000 iris plants bloom in mid-June",
+            "th": "ไอริสราว 15,000 ต้นบานกลางเดือนมิถุนายน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shidaka Lake, Beppu, Oita",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/yufuin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Yunotsubo Kaido",
+            "th": "ถนนยูโนะสึโบะ ไคโด"
+          },
+          "kind": "market",
+          "area": {
+            "en": "Yufuin, from the station to Lake Kinrin",
+            "th": "ยูฟูอิน จากสถานีถึงทะเลสาบคินริน"
+          },
+          "what": {
+            "en": "A street of food stalls and shops linking the station to the Floral Village",
+            "th": "ถนนแผงอาหารและร้านค้าเชื่อมสถานีกับฟลอรัลวิลเลจ"
+          },
+          "why": {
+            "en": "Honey ice cream, giant croquettes and toriten from the street stalls",
+            "th": "ไอศกรีมน้ำผึ้ง โครเกะยักษ์ และโทริเท็นจากแผงริมทาง"
+          },
+          "tip": {
+            "en": "Avoid the 12:00 rush, when queues for popular items can reach 30 minutes",
+            "th": "เลี่ยงช่วงเที่ยง คิวของยอดนิยมอาจยาวถึง 30 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yunotsubo Kaido, Yufuin, Oita",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/yufuin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Trick 3D Art Yufuin",
+            "th": "ทริก 3D อาร์ต ยูฟูอิน"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Yufuin, near the end of Yunotsubo Street",
+            "th": "ยูฟูอิน ใกล้ปลายถนนยูโนะสึโบะ"
+          },
+          "what": {
+            "en": "A museum of 3D optical-illusion paintings where visitors pose inside the pictures",
+            "th": "พิพิธภัณฑ์ภาพวาดลวงตา 3 มิติ ให้โพสท่าเข้าไปอยู่ในภาพ"
+          },
+          "why": {
+            "en": "Younger children enjoy posing for photos inside the 3D paintings",
+            "th": "เด็กเล็กสนุกกับการโพสท่าถ่ายรูปในภาพ 3 มิติ"
+          },
+          "tip": {
+            "en": "A short visit; the photo rooms suit children best",
+            "th": "แวะสั้น ๆ ห้องถ่ายรูปเหมาะกับเด็กที่สุด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Trick 3D Art Yufuin, Yufuin, Oita",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/yufuin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Comico Art Museum Yufuin",
+            "th": "โคมิโกะ อาร์ต มิวเซียม ยูฟูอิน"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Central Yufuin, overlooking Mount Yufu",
+            "th": "ใจกลางยูฟูอิน มองเห็นภูเขายูฟุ"
+          },
+          "what": {
+            "en": "A contemporary art museum in a building designed by Kengo Kuma, with a rooftop garden",
+            "th": "พิพิธภัณฑ์ศิลปะร่วมสมัยในอาคารที่เคนโง คุมะออกแบบ มีสวนบนดาดฟ้า"
+          },
+          "why": {
+            "en": "Children with time to look can enjoy the wooden lattice architecture and the rooftop view of Mount Yufu",
+            "th": "เด็กที่มีเวลาชมจะสนุกกับโครงไม้ระแนงของอาคารและวิวภูเขายูฟุจากดาดฟ้า"
+          },
+          "tip": {
+            "en": "Admission is by reservation only, so book a time slot in advance",
+            "th": "เข้าชมได้เฉพาะที่จองไว้ ควรจองรอบล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,700 adults · ≈ ¥700 primary school students",
+            "th": "≈ ¥1,700 ผู้ใหญ่ · ≈ ¥700 นักเรียนประถม"
+          },
+          "book": "req",
+          "q": "Comico Art Museum Yufuin, Yufuin, Oita",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/yufuin/yufuin_amenihi/"
+        },
+        {
+          "name": {
+            "en": "Yufuin Stained Glass Museum",
+            "th": "พิพิธภัณฑ์กระจกสียูฟูอิน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Yufuin",
+            "th": "ยูฟูอิน"
+          },
+          "what": {
+            "en": "Japan's first full-scale stained glass museum, with antique European glass in a British-style house and a wooden church",
+            "th": "พิพิธภัณฑ์กระจกสีเต็มรูปแบบแห่งแรกของญี่ปุ่น มีกระจกยุโรปโบราณในบ้านสไตล์อังกฤษและโบสถ์ไม้"
+          },
+          "why": {
+            "en": "On sunny days sunlight streams through the stained glass, a rainy-day indoor stop",
+            "th": "วันแดดจัดแสงส่องผ่านกระจกสี และเป็นที่แวะในร่มวันฝนตก"
+          },
+          "tip": {
+            "en": "Sit in a chair and enjoy the view slowly",
+            "th": "นั่งเก้าอี้ชมวิวช้า ๆ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yufuin Stained Glass Museum, Yufuin, Oita",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/yufuin/yufuin_amenihi/"
+        },
+        {
+          "name": {
+            "en": "Kintetsu Beppu Ropeway",
+            "th": "กระเช้าคินเท็ตสึเบปปุ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Mount Tsurumi, above Beppu",
+            "th": "ภูเขาสึรุมิ เหนือเบปปุ"
+          },
+          "what": {
+            "en": "A cable car up Mount Tsurumi with a panoramic summit over Beppu Bay",
+            "th": "กระเช้าขึ้นภูเขาสึรุมิ ยอดเขามีวิวพาโนรามาอ่าวเบปปุ"
+          },
+          "why": {
+            "en": "The ropeway ride itself, with a wide view over Beppu Bay from the top",
+            "th": "ตัวกระเช้าก็สนุก และได้วิวกว้างอ่าวเบปปุจากยอดเขา"
+          },
+          "tip": {
+            "en": "Check the ropeway's website for wind-related closures before leaving",
+            "th": "เช็กเว็บไซต์กระเช้าเรื่องปิดเพราะลมก่อนออกเดินทาง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,600 round trip",
+            "th": "≈ ¥1,600 ไป-กลับ"
+          },
+          "book": "none",
+          "q": "Kintetsu Beppu Ropeway base station, Beppu",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/how-to-reach-mount-tsurumi-summit"
+        },
+        {
+          "name": {
+            "en": "Tatsumaki Jigoku",
+            "th": "ทัตสึมากิ จิโกกุ"
+          },
+          "local": "龍巻地獄",
+          "kind": "onsen",
+          "area": {
+            "en": "Shibaseki, Beppu, about 3 km from Kannawa",
+            "th": "ชิบะเซกิ เบปปุ ห่างคันนาวะราว 3 กม."
+          },
+          "what": {
+            "en": "The Spout Hell: a geyser in Shibaseki",
+            "th": "นรกพ่นน้ำ ไกเซอร์ที่ชิบะเซกิ"
+          },
+          "why": {
+            "en": "Children can watch for the eruption, and try gelato made from Tatsumaki Farm fruit while they wait",
+            "th": "เด็กคอยดูการพุ่งของน้ำ และลองเจลาโต้จากผลไม้ฟาร์มทัตสึมากิระหว่างรอ"
+          },
+          "tip": {
+            "en": "Time your arrival to an eruption; bus 16 runs there from Kannawa",
+            "th": "ไปให้ทันรอบพุ่งของน้ำ รถบัสสาย 16 ไปจากคันนาวะ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tatsumaki Jigoku, Shibaseki, Beppu",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/beppu-hells-tour-jigoku-meguri/"
         }
       ]
     },
@@ -5359,6 +7217,246 @@
           "q": "Shodoshima Olive Park, Shodoshima, Japan",
           "ok": "2026-11",
           "src": "https://www.japan-guide.com/e/e5432.html"
+        },
+        {
+          "name": {
+            "en": "Shikoku Mura",
+            "th": "ชิโกกุมุระ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Yashima, Takamatsu",
+            "th": "ยาชิมะ ทาคามัตสึ"
+          },
+          "what": {
+            "en": "An outdoor folk museum of old houses and workshops from across Shikoku, with a hands-on area and a udon restaurant",
+            "th": "พิพิธภัณฑ์กลางแจ้งรวมบ้านเก่าและโรงงานจากทั่วชิโกกุ มีโซนให้ลองทำและร้านอุด้ง"
+          },
+          "why": {
+            "en": "A walk through old village houses with a hands-on area for learning how things were made",
+            "th": "เดินชมบ้านหมู่บ้านเก่า มีโซนให้เด็กลองทำเพื่อเรียนรู้วิธีทำของ"
+          },
+          "tip": {
+            "en": "About a 2-hour walk from entrance to exit, so bring sneakers",
+            "th": "เดินจากทางเข้าถึงทางออกราว 2 ชั่วโมง ควรใส่รองเท้าผ้าใบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shikoku Mura, Yashima, Takamatsu",
+          "ok": "2026-11",
+          "src": "https://www.tsunagujapan.com/19-recommendations-for-sightseeing-and-udon-in-takamatsu-kagawa/"
+        },
+        {
+          "name": {
+            "en": "Mount Yashima",
+            "th": "ภูเขายาชิมะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Yashima, Takamatsu",
+            "th": "ยาชิมะ ทาคามัตสึ"
+          },
+          "what": {
+            "en": "A flat-topped island that is a designated natural monument, with an observatory and a toll road to the peak",
+            "th": "เกาะยอดราบที่เป็นอนุสรณ์สถานธรรมชาติ มีจุดชมวิวและถนนเก็บค่าผ่านทางขึ้นยอด"
+          },
+          "why": {
+            "en": "The view from the observatory over the Seto Inland Sea",
+            "th": "วิวทะเลเซโตะจากจุดชมวิว"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mt. Yashima, Yashima, Takamatsu",
+          "ok": "2026-11",
+          "src": "https://www.tsunagujapan.com/19-recommendations-for-sightseeing-and-udon-in-takamatsu-kagawa/"
+        },
+        {
+          "name": {
+            "en": "Mount Ryuo",
+            "th": "ภูเขาริวโอ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Ryuozan, Takamatsu",
+            "th": "ริวโอซัง ทาคามัตสึ"
+          },
+          "what": {
+            "en": "A park on a 239 m mountain with an observatory over the Seto Inland Sea and the islands",
+            "th": "สวนบนภูเขาสูง 239 ม. มีจุดชมวิวทะเลเซโตะและหมู่เกาะ"
+          },
+          "why": {
+            "en": "Daytime and nighttime views from the top of the mountain",
+            "th": "ชมวิวได้ทั้งกลางวันและกลางคืนจากยอดเขา"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mt. Ryuo, Ajicho, Takamatsu",
+          "ok": "2026-11",
+          "src": "https://www.tsunagujapan.com/19-recommendations-for-sightseeing-and-udon-in-takamatsu-kagawa/"
+        },
+        {
+          "name": {
+            "en": "Takamatsu-Kotohira Electric Railroad (Kotoden)",
+            "th": "รถไฟฟ้าทาคามัตสึ-โคโตฮิระ (โคโตเด็ง)"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Takamatsu",
+            "th": "ทาคามัตสึ"
+          },
+          "what": {
+            "en": "The retro four-car Kotoden train runs around Takamatsu and the Kotohira line, with one-day passes",
+            "th": "รถไฟสี่ตู้สไตล์เรโทรวิ่งรอบทาคามัตสึและสายโคโตฮิระ มีบัตรเที่ยวไม่จำกัดหนึ่งวัน"
+          },
+          "why": {
+            "en": "The mascots Koto-chan and Kotomi-chan sometimes appear at stations, and the train designs change with the seasons",
+            "th": "มาสคอตโคโตะจังและโคโตมิจังบางครั้งมาที่สถานี และลายรถไฟเปลี่ยนตามฤดู"
+          },
+          "tip": {
+            "en": "Some trains are crowded at certain times of day, so the one-day pass is handy",
+            "th": "บางช่วงเวลารถไฟแน่น บัตรหนึ่งวันจึงสะดวก"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Takamatsu-Kotohira Electric Railroad, Takamatsu",
+          "ok": "2026-11",
+          "src": "https://www.tsunagujapan.com/19-recommendations-for-sightseeing-and-udon-in-takamatsu-kagawa/"
+        },
+        {
+          "name": {
+            "en": "Nakano Udon School Takamatsu Campus",
+            "th": "โรงเรียนอุด้งนากาโนะ วิทยาเขตทาคามัตสึ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Takamatsu",
+            "th": "ทาคามัตสึ"
+          },
+          "what": {
+            "en": "A udon-making class: kneading the flour, stretching it with a rolling pin, then boiling it",
+            "th": "คลาสทำอุด้ง ตั้งแต่นวดแป้ง รีดด้วยไม้นวด ไปจนถึงต้ม"
+          },
+          "why": {
+            "en": "You receive a hanging scroll to commemorate your graduation",
+            "th": "ได้ม้วนภาพแขวนเป็นที่ระลึกเมื่อจบคลาส"
+          },
+          "tip": {
+            "en": "Each class takes 40 to 60 minutes",
+            "th": "แต่ละคลาสใช้เวลา 40 ถึง 60 นาที"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nakano Udon School Takamatsu Campus, Takamatsu",
+          "ok": "2026-11",
+          "src": "https://shikoku-tourism.com/en/see-and-do/11329"
+        },
+        {
+          "name": {
+            "en": "Sanuki Mengyo",
+            "th": "ซานูกิ เมงเกียว"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Takamatsu",
+            "th": "ทาคามัตสึ"
+          },
+          "what": {
+            "en": "A handmade udon experience taught by an udon master, with a factory tour also available",
+            "th": "ประสบการณ์ทำอุด้งด้วยมือโดยอาจารย์อุด้ง และมีทัวร์โรงงานด้วย"
+          },
+          "why": {
+            "en": "A udon-making dojo for children and adults; the udon you make can be eaten on the spot",
+            "th": "ห้องเรียนทำอุด้งสำหรับเด็กและผู้ใหญ่ อุด้งที่ทำกินได้ทันที"
+          },
+          "tip": {
+            "en": "After the class you receive a certificate of completion and a special noodle stick",
+            "th": "จบคลาสแล้วได้ใบประกาศและไม้เส้นบะหมี่พิเศษ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sanuki Mengyo, Takamatsu",
+          "ok": "2026-11",
+          "src": "https://shikoku-tourism.com/en/see-and-do/11314"
         }
       ]
     },
@@ -6080,6 +8178,129 @@
                       "q": "Yakushi-ji, Nishinokyo, Nara, Japan",
                       "ok": "2026-11",
                       "src": "https://selfguidejapan.com/blog/things-to-do-in-nara"
+                    },
+                    {
+                      "name": {
+                        "en": "Heijo Palace Site Museum",
+                        "th": "พิพิธภัณฑ์ซากพระราชวังเฮโจ"
+                      },
+                      "local": "平城宮跡資料館",
+                      "kind": "museum",
+                      "area": {
+                        "en": "Heijo Palace Site, Saki-cho",
+                        "th": "ซากพระราชวังเฮโจ ซากิโชะ"
+                      },
+                      "what": {
+                        "en": "A free museum on the Heijo Palace site showing the results of the excavations and models of the rebuilt buildings",
+                        "th": "พิพิธภัณฑ์เข้าฟรีที่ซากพระราชวังเฮโจ แสดงผลการขุดค้นและแบบจำลองอาคารที่สร้างใหม่"
+                      },
+                      "why": {
+                        "en": "Models of the rebuilt buildings are interesting to see, and the museum is popular with families with children",
+                        "th": "แบบจำลองอาคารที่สร้างใหม่น่าดู และเป็นที่นิยมของครอบครัวที่มีเด็ก"
+                      },
+                      "tip": {
+                        "en": "All exhibits are indoors, so it works on a rainy day; there is a feeding room and coin lockers",
+                        "th": "นิทรรศการอยู่ในร่มทั้งหมด เหมาะวันฝนตก มีห้องให้นมและตู้ล็อกเกอร์"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 1,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "Free",
+                        "th": "ฟรี"
+                      },
+                      "book": "none",
+                      "q": "Heijo Palace Site Museum, Saki-cho, Nara",
+                      "ok": "2026-11",
+                      "src": "https://kids.rurubu.jp/article/15341"
+                    },
+                    {
+                      "name": {
+                        "en": "Round1 Stadium Nara Mi-Nara",
+                        "th": "ราวด์วัน สเตเดียม นารา มินารา"
+                      },
+                      "local": "ラウンドワンスタジアム 奈良 ミ・ナーラ店",
+                      "kind": "play",
+                      "area": {
+                        "en": "Mi-Nara, 5F, Nijo-oji-minami",
+                        "th": "มินารา ชั้น 5 นิโจโอจิมินามิ"
+                      },
+                      "what": {
+                        "en": "A big indoor sports and play centre with more than 50 kinds of sport and amusement, a trampoline area and a bubble football pitch",
+                        "th": "ศูนย์กีฬาและเล่นในร่มขนาดใหญ่ มีกีฬาและเกมกว่า 50 อย่าง โซนแทรมโพลีน และสนามบับเบิลฟุตบอล"
+                      },
+                      "why": {
+                        "en": "A kids' corner for children up to Grade 3, with air swings, slides and a ball pool",
+                        "th": "มีมุมเด็กสำหรับเด็กถึงชั้นประถม 3 มีชิงช้าลม สไลเดอร์ และบ่อบอล"
+                      },
+                      "tip": {
+                        "en": "Open 10:00 to midnight; Friday, Saturday and the eve of public holidays open 24 hours",
+                        "th": "เปิด 10:00 ถึงเที่ยงคืน วันศุกร์ เสาร์ และคืนก่อนวันหยุดเปิด 24 ชั่วโมง"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        2
+                      ],
+                      "hrs": 2,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥3,090 adults (free time) · ≈ ¥1,050 ages 2 to pre-school",
+                        "th": "≈ ¥3,090 ผู้ใหญ่ (เล่นไม่จำกัดเวลา) · ≈ ¥1,050 อายุ 2 ปีถึงก่อนวัยเรียน"
+                      },
+                      "book": "rec",
+                      "q": "Round1 Stadium Nara Mi-Nara, Nijo-oji-minami, Nara",
+                      "ok": "2026-11",
+                      "src": "https://kids.rurubu.jp/article/152596"
+                    },
+                    {
+                      "name": {
+                        "en": "Climbing Gym Noboriko",
+                        "th": "คลิมบิงยิม โนโบริโกะ"
+                      },
+                      "local": "クライミングジム ノボリコ",
+                      "kind": "play",
+                      "area": {
+                        "en": "Sanjo-soemagawa-cho, near JR Nara Station",
+                        "th": "ซันโจโซเอมางาวะโจ ใกล้สถานีเจอาร์นารา"
+                      },
+                      "what": {
+                        "en": "An indoor climbing gym with coloured holds of many sizes, for beginners and experienced climbers",
+                        "th": "ยิมปีนผาในร่ม มีจุดเกาะหลายสีหลายขนาด สำหรับมือใหม่และผู้ชำนาญ"
+                      },
+                      "why": {
+                        "en": "Beginners can try climbing safely, with a first lesson and equipment hire included",
+                        "th": "มือใหม่ลองปีนได้อย่างปลอดภัย มีสอนครั้งแรกและเช่าอุปกรณ์รวมอยู่แล้ว"
+                      },
+                      "tip": {
+                        "en": "Open 14:00–23:00 (weekends and holidays from 12:00); junior-high pupils and younger leave by 20:00",
+                        "th": "เปิด 14:00–23:00 (เสาร์อาทิตย์และวันหยุดเริ่ม 12:00) นักเรียนมัธยมต้นลงมาออกภายใน 20:00"
+                      },
+                      "ages": [
+                        0,
+                        1,
+                        2,
+                        2
+                      ],
+                      "hrs": 1.5,
+                      "io": "in",
+                      "pram": "no",
+                      "price": {
+                        "en": "≈ ¥790 primary school and under · ≈ ¥1,490 adults",
+                        "th": "≈ ¥790 ประถมลงมา · ≈ ¥1,490 ผู้ใหญ่"
+                      },
+                      "book": "none",
+                      "q": "Climbing Gym Noboriko, Sanjo-soemagawa-cho, Nara",
+                      "ok": "2026-11",
+                      "src": "https://kids.rurubu.jp/article/152596"
                     }
       ]
     }
