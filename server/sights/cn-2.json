@@ -8440,6 +8440,232 @@
           },
           "q": "颠倒博物馆 深圳书城龙华城, 龙华大道4189号, 龙华区, 深圳",
           "ok": "2026-11"
+        },
+        {
+          "local": "玫瑰海岸文化旅游度假区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%8E%AB%E7%91%B0%E6%B5%B7%E5%B2%B8%E6%96%87%E5%8C%96%E6%97%85%E6%B8%B8%E5%BA%A6%E5%81%87%E5%8C%BA&city=440300",
+          "name": {
+            "th": "ชายฝั่งกุหลาบ",
+            "en": "Rose Coast"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ขุยหยง เขตใหม่ต้าเผิง",
+            "en": "Kuiyong, Dapeng New District"
+          },
+          "what": {
+            "th": "สวนริมทะเล มีบันไดสีรุ้ง แอ่งหินตอนน้ำลง และเล่นว่าว",
+            "en": "A seaside park with rainbow steps, rock pools at low tide and kite flying"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี ผู้รีวิวบอกว่าบันไดสีรุ้งเด็ก ๆ ชอบ",
+            "en": "Children under 1.2 m go in free; reviewers say the rainbow steps are fun for children"
+          },
+          "q": "玫瑰海岸, 深葵路551号, 大鹏新区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "海上田园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B5%B7%E4%B8%8A%E7%94%B0%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนไร่ริมทะเลไห่ซ่างเถียนหยวน",
+            "en": "Haishang Tianyuan Farm Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนหมินจู่ ซาจิ่ง เป่าอาน",
+            "en": "Minzhu Avenue, Shajing, Bao'an"
+          },
+          "what": {
+            "th": "สวนไร่ริมน้ำ มีเก็บผลไม้ ตกปลา ลานเล่นน้ำเด็ก และนกนางนวล",
+            "en": "A waterside farm park with picking, fishing, a children's water play area and seagulls"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families; children under 1.2 m go free, reviewers say"
+          },
+          "q": "海上田园, 民主大道, 沙井街道, 宝安区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "华侨城欢乐海岸",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8D%8E%E4%BE%A8%E5%9F%8E%E6%AC%A2%E4%B9%90%E6%B5%B7%E5%B2%B8&city=440300",
+          "name": {
+            "th": "โอซีทีแฮปปี้โคสต์",
+            "en": "OCT Happy Coast"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนปินไห่ หนานซาน",
+            "en": "Binhai Avenue, Nanshan"
+          },
+          "what": {
+            "th": "สวนริมน้ำเข้าฟรี ติดพื้นที่ชุ่มน้ำ มีน้ำพุดนตรีและเรือ",
+            "en": "A free waterfront park by a wetland, with a music fountain and boats"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง เข้าฟรี ผู้รีวิวพาเด็กมาเดินเล่น",
+            "en": "Tagged for families outdoors; free to enter; reviewers come for a walk with children"
+          },
+          "q": "华侨城欢乐海岸, 滨海大道2008号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "光明农场大观园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%85%89%E6%98%8E%E5%86%9C%E5%9C%BA%E5%A4%A7%E8%A7%82%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนไร่กวงหมิง",
+            "en": "Guangming Farm Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนกวงชั่น กวงหมิง",
+            "en": "Guangcan Road, Guangming"
+          },
+          "what": {
+            "th": "สวนไร่ที่เด็กได้ลองรีดนมวัว เล่นสไลเดอร์หญ้า และเล่นว่าว",
+            "en": "A farm park where children can milk a cow, slide on the grass and fly kites"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families; children under 1.2 m go in free, reviewers say"
+          },
+          "q": "光明农场大观园, 光灿路500号, 光明区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "甘坑古镇",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%94%98%E5%9D%91%E5%8F%A4%E9%95%87&city=440300",
+          "name": {
+            "th": "เมืองเก่าแคะกานเคิง",
+            "en": "Gankeng Hakka Town"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนกานหลี่ จี๋ฮว๋า หลงกั่ง",
+            "en": "Ganli Road, Jihua, Longgang"
+          },
+          "what": {
+            "th": "หมู่บ้านแคะเก่า ทางเดินหิน และโคมการ์ตูนเปิดไฟตอนกลางคืน",
+            "en": "An old Hakka village with stone lanes and cartoon lanterns lit at night"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็ก ๆ ชอบโคมการ์ตูนมาก",
+            "en": "Reviewers say children love the cartoon lanterns"
+          },
+          "q": "甘坑古镇, 甘李路18号, 龙岗区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳仙湖植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E4%BB%99%E6%B9%96%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนพฤกษศาสตร์ทะเลสาบเซียนหู",
+            "en": "Fairy Lake Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนเซียนหู เหลียนถัง หลัวหู",
+            "en": "Xianhu Road, Liantang, Luohu"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ใหญ่ มีทะเลสาบ หุบผีเสื้อ และสนามหญ้ากว้าง",
+            "en": "A big botanical garden with a lake, a butterfly valley and wide lawns"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง ผู้รีวิวพาเด็กไปเล่นที่สนามหญ้าใหญ่",
+            "en": "Tagged for families outdoors; reviewers take children to the big lawn"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้นั่งรถชมสวนจากประตูทิศใต้เมื่อพาเด็กไป",
+            "en": "Reviewers say take the sightseeing cart from the south gate with children"
+          },
+          "q": "深圳仙湖植物园, 仙湖路160号, 罗湖区, 深圳",
+          "ok": "2026-11"
         }
       ]
     },
