@@ -409,6 +409,149 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for high chairs, family meals and rice noodles in Guilin and Yangshuo, and for family sights; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Weidao Zhizao Guilin Kitchen (Qixing)",
+          "page_name": "味道制造·桂林菜(七星店)",
+          "src": "https://www.amap.com/search?query=%E5%91%B3%E9%81%93%E5%88%B6%E9%80%A0%C2%B7%E6%A1%82%E6%9E%97%E8%8F%9C(%E4%B8%83%E6%98%9F%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "有宝宝椅 · 亲子友好 · 秋假带娃来桂林玩"
+        },
+        {
+          "name": "Da Guilin Kitchen (Convention Centre)",
+          "page_name": "大桂林·山水里的桂林菜(会展中心店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%A1%82%E6%9E%97%C2%B7%E5%B1%B1%E6%B0%B4%E9%87%8C%E7%9A%84%E6%A1%82%E6%9E%97%E8%8F%9C(%E4%BC%9A%E5%B1%95%E4%B8%AD%E5%BF%83%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "虾扯蛋也很有创意，小朋友都爱吃"
+        },
+        {
+          "name": "Guipinyu Beer Fish (Zhengyang Street)",
+          "page_name": "桂品渔.啤酒鱼.桂林菜",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E5%93%81%E6%B8%94.%E5%95%A4%E9%85%92%E9%B1%BC.%E6%A1%82%E6%9E%97%E8%8F%9C&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "桂花糕和冰粉味道孩子们也很喜欢"
+        },
+        {
+          "name": "Youwei Guilin Kitchen",
+          "page_name": "宥味桂林本地菜",
+          "src": "https://www.amap.com/search?query=%E5%AE%A5%E5%91%B3%E6%A1%82%E6%9E%97%E6%9C%AC%E5%9C%B0%E8%8F%9C&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "有儿童椅"
+        },
+        {
+          "name": "Xiangmanlou Farmhouse (Moon Hill)",
+          "page_name": "香满楼农家饭(053乡道店)",
+          "src": "https://www.amap.com/search?query=%E9%A6%99%E6%BB%A1%E6%A5%BC%E5%86%9C%E5%AE%B6%E9%A5%AD(053%E4%B9%A1%E9%81%93%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-03",
+          "map": "Amap: open, not marked closed, newest review 2026-10-03",
+          "quote": "家庭聚餐 · 有宝宝椅"
+        },
+        {
+          "name": "Gurong Courtyard Kitchen (Baisha)",
+          "page_name": "古榕食院",
+          "src": "https://www.amap.com/search?query=%E5%8F%A4%E6%A6%95%E9%A3%9F%E9%99%A2&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-06-06",
+          "map": "Amap: open, not marked closed, newest review 2026-06-06",
+          "quote": "小朋友不吃辣还很贴心考虑口味问题"
+        },
+        {
+          "name": "Guai Ge Pot Rice (Yangshuo)",
+          "page_name": "拐哥鼎锅饭",
+          "src": "https://www.amap.com/search?query=%E6%8B%90%E5%93%A5%E9%BC%8E%E9%94%85%E9%A5%AD&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "竹筒鸡汤对孩子也很友好"
+        },
+        {
+          "name": "Laogen Farmhouse (Jiuxian)",
+          "page_name": "老根农家饭店",
+          "src": "https://www.amap.com/search?query=%E8%80%81%E6%A0%B9%E5%86%9C%E5%AE%B6%E9%A5%AD%E5%BA%97&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-18",
+          "map": "Amap: open, not marked closed, newest review 2026-10-18",
+          "quote": "有宝宝椅 · 家庭聚餐"
+        },
+        {
+          "name": "Shanwei Farmhouse Kitchen (Kangzhan Road)",
+          "page_name": "山味.本地农家菜",
+          "src": "https://www.amap.com/search?query=%E5%B1%B1%E5%91%B3.%E6%9C%AC%E5%9C%B0%E5%86%9C%E5%AE%B6%E8%8F%9C&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "亲子友好 · 宝宝椅 · 小朋友特别喜欢吃"
+        },
+        {
+          "name": "Tianyuan Rice Noodles (Sanduo Road)",
+          "page_name": "田源米粉(三多店)",
+          "src": "https://www.amap.com/search?query=%E7%94%B0%E6%BA%90%E7%B1%B3%E7%B2%89(%E4%B8%89%E5%A4%9A%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "适合带娃 · 小朋友吃了很多"
+        },
+        {
+          "name": "Bailianji Rice Noodles (Zhengyang Street)",
+          "page_name": "白连记老东口米粉",
+          "src": "https://www.amap.com/search?query=%E7%99%BD%E8%BF%9E%E8%AE%B0%E8%80%81%E4%B8%9C%E5%8F%A3%E7%B1%B3%E7%B2%89&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "适合带娃 · 有不辣的粉，小孩子很喜欢"
+        },
+        {
+          "name": "Gongji Rice Noodles (Hongling Road)",
+          "page_name": "龚记桂林米粉(红岭路)",
+          "src": "https://www.amap.com/search?query=%E9%BE%9A%E8%AE%B0%E6%A1%82%E6%9E%97%E7%B1%B3%E7%B2%89(%E7%BA%A2%E5%B2%AD%E8%B7%AF)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "小朋友吃了二两加三两"
+        },
+        {
+          "name": "Liu Sanjie Folk Park",
+          "page_name": "刘三姐大观园",
+          "src": "https://www.amap.com/search?query=%E5%88%98%E4%B8%89%E5%A7%90%E5%A4%A7%E8%A7%82%E5%9B%AD&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "亲子户外 · 适合带小朋友感受少数民族民俗文化"
+        },
+        {
+          "name": "Lijiangwan Scenic Area (Lipu)",
+          "page_name": "桂林市荔浦荔江湾景区",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E5%B8%82%E8%8D%94%E6%B5%A6%E8%8D%94%E6%B1%9F%E6%B9%BE%E6%99%AF%E5%8C%BA&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-18",
+          "map": "Amap: open, not marked closed, newest review 2026-10-18",
+          "quote": "亲子户外 · 这里有很多适合小朋友的游乐项目，如划龙舟"
+        },
+        {
+          "name": "Lijiang Source Grand Canyon (Xing'an)",
+          "page_name": "漓江源大峡谷",
+          "src": "https://www.amap.com/search?query=%E6%BC%93%E6%B1%9F%E6%BA%90%E5%A4%A7%E5%B3%A1%E8%B0%B7&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-30",
+          "map": "Amap: open, not marked closed, newest review 2026-09-30",
+          "quote": "亲子户外 · 1.2米以下…免票"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "农情诚香鼎锅饭",
+          "why": "its review about children is about the owner's children helping, not young guests"
+        },
+        {
+          "name": "渔之缘, 家里坐, 小杨米粉, 胖桂桂, 人民公社大食堂",
+          "why": "twenty-one reviews or fewer and no tag or review about children"
+        },
+        {
+          "name": "七星渔村, 小食候湘, 江小厨, 桂小渔",
+          "why": "no children's tag or review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
