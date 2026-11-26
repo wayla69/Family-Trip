@@ -5434,7 +5434,6 @@
     },
     {
       "place": "jp-beppu",
-      "thin": true,
       "sights": [
         {
           "local": "鬼山地獄",
@@ -7912,7 +7911,6 @@
     },
     {
       "place": "jp-nara",
-      "thin": true,
       "sights": [
         {
           "local": "奈良公園",
@@ -8751,6 +8749,129 @@
                       "q": "Climbing Gym Noboriko, Sanjo-soemagawa-cho, Nara",
                       "ok": "2026-11",
                       "src": "https://kids.rurubu.jp/article/152596"
+                    },
+                    {
+                      "name": {
+                        "en": "Nara Wanpaku Land Hashakids",
+                        "th": "นาระ วันปากุแลนด์ ฮาชากิดส์"
+                      },
+                      "local": "奈良わんぱくランド はしゃきっズ",
+                      "kind": "play",
+                      "area": {
+                        "en": "Inside Nara Health Land, Tenri",
+                        "th": "ในนาระเฮลธ์แลนด์ เมืองเท็นริ"
+                      },
+                      "what": {
+                        "en": "Large indoor air-slide play park of about 1,000 m² with a giant slide and ball pool.",
+                        "th": "สวนเครื่องเล่นลมในร่มกว้างราว 1,000 ตร.ม. มีสไลเดอร์ยักษ์และบ่อบอล"
+                      },
+                      "why": {
+                        "en": "Covers all-weather play indoors; the page says it is a family theme park with huge air toys.",
+                        "th": "เล่นในร่มได้ทุกสภาพอากาศ เป็นสวนสนุกครอบครัวที่มีเครื่องเล่นลมขนาดใหญ่"
+                      },
+                      "tip": {
+                        "en": "Allow about two hours; the price is for Hashakids only.",
+                        "th": "เผื่อเวลาราว 2 ชั่วโมง ราคานี้เฉพาะฮาชากิดส์"
+                      },
+                      "ages": [
+                        2,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 2,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "≈ ¥1,300 for 2 hours (Hashakids only)",
+                        "th": "≈ ¥1,300 สำหรับ 2 ชั่วโมง (เฉพาะฮาชากิดส์)"
+                      },
+                      "book": "none",
+                      "q": "Nara Wanpaku Land Hashakids, Nara Health Land, Kabatacho, Tenri, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://www.nap-camp.com/mag/81982"
+                    },
+                    {
+                      "name": {
+                        "en": "Nara Toy Museum",
+                        "th": "พิพิธภัณฑ์ของเล่นนาระ"
+                      },
+                      "local": "奈良おもちゃ美術館",
+                      "kind": "museumkid",
+                      "area": {
+                        "en": "FSS35 Campus, Sango town",
+                        "th": "FSS35 แคมปัส เมืองซังโง"
+                      },
+                      "what": {
+                        "en": "Wooden-toy experience museum with about 300 wooden toys, a wooden ball pool and pretend play with local Nara products.",
+                        "th": "พิพิธภัณฑ์ของเล่นไม้ให้ลงมือเล่น มีของเล่นไม้ราว 300 ชิ้น บ่อบอลไม้ และเล่นสมมุติกับสินค้าท้องถิ่นของนาระ"
+                      },
+                      "why": {
+                        "en": "Toy-play exhibits and toy curators help kids play indoors; it teaches local culture through play.",
+                        "th": "มีนิทรรศการให้เล่นและภัณฑารักษ์ของเล่นช่วยเด็กๆ เล่นในร่ม ได้เรียนรู้วัฒนธรรมท้องถิ่นผ่านการเล่น"
+                      },
+                      "tip": {
+                        "en": "Allow about two hours.",
+                        "th": "เผื่อเวลาราว 2 ชั่วโมง"
+                      },
+                      "ages": [
+                        2,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 2,
+                      "io": "in",
+                      "pram": "part",
+                      "price": {
+                        "en": "Check the price",
+                        "th": "เช็กราคาก่อนไป"
+                      },
+                      "book": "none",
+                      "q": "Nara Toy Museum, FSS35 Campus, Tatsunokita, Sango, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://www.asoview.com/note/5493/"
+                    },
+                    {
+                      "name": {
+                        "en": "Rokuen Deer Sanctuary",
+                        "th": "โรคุเอ็น ศูนย์อนุรักษ์กวางนาระ"
+                      },
+                      "local": "鹿苑",
+                      "kind": "nature",
+                      "area": {
+                        "en": "Nara Park, by the Kasuga Taisha approach",
+                        "th": "สวนนาระ ใกล้ทางเข้าศาลเจ้าคาสุงะไทชะ"
+                      },
+                      "what": {
+                        "en": "Protection and breeding facility for Nara's deer, a Natural Monument; calves can be seen up close in season.",
+                        "th": "ศูนย์ดูแลและเพาะพันธุ์กวางนาระซึ่งเป็นอนุสรณ์สถานธรรมชาติ ช่วงฤดูกาลดูลูกกวางใกล้ๆ ได้"
+                      },
+                      "why": {
+                        "en": "Close view of the deer and their young; a panel display explains deer ecology.",
+                        "th": "ดูกวางและลูกกวางใกล้ชิด มีแผ่นป้ายอธิบายนิเวศของกวาง"
+                      },
+                      "tip": {
+                        "en": "Allow about an hour.",
+                        "th": "เผื่อเวลาราว 1 ชั่วโมง"
+                      },
+                      "ages": [
+                        1,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 1,
+                      "io": "out",
+                      "pram": "part",
+                      "price": {
+                        "en": "Free (≈ ¥100 voluntary donation)",
+                        "th": "ฟรี (บริจาคตามสมัครใจ ≈ ¥100)"
+                      },
+                      "book": "none",
+                      "q": "Rokuen Deer Sanctuary, Kasuganocho, Nara, Japan",
+                      "ok": "2026-11",
+                      "src": "https://www.nap-camp.com/mag/88534"
                     }
       ]
     }
