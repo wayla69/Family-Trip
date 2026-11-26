@@ -490,6 +490,64 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for high-chair restaurants in Nangang, Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Qiuxiang Hunan Kitchen (Haxi)",
+          "page_name": "秋湘辣椒炒肉哈西店",
+          "src": "https://www.amap.com/search?query=%E7%A7%8B%E6%B9%98%E8%BE%A3%E6%A4%92%E7%82%92%E8%82%89%E5%93%88%E8%A5%BF%E5%BA%97&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Zitong BBQ Buffet (Jinjue Wanxiang)",
+          "page_name": "紫彤品质自助烤肉",
+          "src": "https://www.amap.com/search?query=%E7%B4%AB%E5%BD%A4%E5%93%81%E8%B4%A8%E8%87%AA%E5%8A%A9%E7%83%A4%E8%82%89&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "有宝宝椅 · 1米1以下儿童免费"
+        },
+        {
+          "name": "Ping Jie Hotpot (Xining South Road)",
+          "page_name": "萍姐火锅(哈尔滨总店)",
+          "src": "https://www.amap.com/search?query=%E8%90%8D%E5%A7%90%E7%81%AB%E9%94%85(%E5%93%88%E5%B0%94%E6%BB%A8%E6%80%BB%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        },
+        {
+          "name": "Zhengyanglou Northeast Kitchen (Xuefu)",
+          "page_name": "正阳楼学府店特色东北菜 (地标美食名店)",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E9%98%B3%E6%A5%BC%E5%AD%A6%E5%BA%9C%E5%BA%97%E7%89%B9%E8%89%B2%E4%B8%9C%E5%8C%97%E8%8F%9C%20(%E5%9C%B0%E6%A0%87%E7%BE%8E%E9%A3%9F%E5%90%8D%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅 · 家庭聚餐"
+        },
+        {
+          "name": "Chaozhenghe Chaoshan Beef Hotpot (CapitaMall Xuefu)",
+          "page_name": "潮正和(凯德广场·学府店)",
+          "src": "https://www.amap.com/search?query=%E6%BD%AE%E6%AD%A3%E5%92%8C(%E5%87%AF%E5%BE%B7%E5%B9%BF%E5%9C%BA%C2%B7%E5%AD%A6%E5%BA%9C%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "有宝宝椅 · 亲子友好 · 基本上小宝宝都能喝"
+        },
+        {
+          "name": "Mijia Family BBQ (Linxing Road)",
+          "page_name": "米佳家庭烤肉",
+          "src": "https://www.amap.com/search?query=%E7%B1%B3%E4%BD%B3%E5%AE%B6%E5%BA%AD%E7%83%A4%E8%82%89&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-11",
+          "map": "Amap: open, not marked closed, newest review 2026-08-11",
+          "quote": "有宝宝椅 · 家庭聚会聚餐"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
