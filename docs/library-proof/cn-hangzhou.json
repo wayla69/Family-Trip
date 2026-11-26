@@ -1,0 +1,247 @@
+{
+  "town": "cn-hangzhou",
+  "rounds": [
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Things to do: library-check.cjs. Places to eat: the Dianping shop page read in Chrome (owner's China rule ข; the checker cannot fetch Dianping). Every place: Amap (Google Maps does not cover China), ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "Haiku agents and a read here in Chrome; restaurants from Dianping shop pages (the owner's China rule ข: Dianping as the source, Amap for the status), things to do from Sina (Aug 2026) and SMZDM (Apr 2026) pages that pass library-check.cjs, each checked on Amap",
+      "added": [
+        {
+          "name": "Maggie & Rose (Aoti Impression City)",
+          "page_name": "Maggie&Rose麦琪萝丝亲子餐厅(奥体印象城店)",
+          "src": "https://www.dianping.com/shop/l5BnVkJDZvZqm2Lx",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 7月16日,7月19日,10月31日",
+          "map": "Amap: open, not marked closed; Dianping 416 reviews, newest reviews within six months"
+        },
+        {
+          "name": "Mihai Train Restaurant (Baita Park)",
+          "page_name": "觅海轨道火车主题餐厅(白塔公园店)",
+          "src": "https://www.dianping.com/shop/G2JuLGBbR6ClehF5",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 7月4日,11月4日,11月2日",
+          "map": "Amap: open, not marked closed; Dianping 1,038 reviews, newest reviews within six months"
+        },
+        {
+          "name": "Mumu Lakeside Café (Donglian)",
+          "page_name": "木木餐酒馆·湖景聚会·亲子(东莲店)",
+          "src": "https://www.dianping.com/shop/l7zPwOtcsBfcUXXV",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 11月2日,11月17日",
+          "map": "Amap: open, not marked closed; Dianping 78 reviews; Amap lists it as a café, newest reviews within six months"
+        },
+        {
+          "name": "Huoba Restaurant (Longwu)",
+          "page_name": "火把餐厅·胡闹厨房(龙坞店)",
+          "src": "https://www.dianping.com/shop/k9Hh94GdAIlmWDT4",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 10月28日,8月2日,6月6日",
+          "map": "Amap: open, not marked closed; Dianping 612 reviews, newest reviews within six months"
+        },
+        {
+          "name": "Tianmu All-Day Dining (Crowne Plaza AUX Centre)",
+          "page_name": "天幕·全日制餐厅(杭州奥克斯中心皇冠假日酒店)",
+          "src": "https://www.dianping.com/shop/G3vkOllGXUoS98qa",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 10月29日,7月4日,7月18日",
+          "map": "Amap: open, not marked closed; Dianping 2,236 reviews, newest reviews within six months"
+        },
+        {
+          "name": "Jiangjianghao Family Kitchen",
+          "page_name": "姜姜好家庭厨房·庭院餐厅",
+          "src": "https://www.dianping.com/shop/l1UrXMazDP4MfYAe",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 11月4日,11月4日,11月18日",
+          "map": "Amap: open, not marked closed; Dianping 1,401 reviews, newest reviews within six months"
+        },
+        {
+          "name": "Aqua Oasis (AEON Qiantang)",
+          "page_name": "Aqua Oasis 水天堂(杭州钱塘永旺店)",
+          "src": "https://www.dianping.com/shop/k6cM6NqG7jIJRqlm",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 11月11日,11月13日,9月2日",
+          "map": "Amap: open, not marked closed; Dianping 3,019 reviews, newest reviews within six months"
+        },
+        {
+          "name": "Rebo Forest (Fuyang Powerlong Plaza)",
+          "page_name": "热播森林(富阳宝龙广场店)",
+          "src": "https://www.dianping.com/shop/k5iDTma1GeW2f7ue",
+          "date": "Dianping shop page (owner's rule ข: Dianping as the source, Amap for the status); newest reviews 6月30日,10月27日",
+          "map": "Amap: open, not marked closed; Dianping 116 reviews, newest reviews within six months"
+        },
+        {
+          "name": "Meland (Chengxi Intime)",
+          "page_name": "meland",
+          "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+          "date": "2026-08",
+          "map": "Amap: 'MELAND CLUB(杭州城西银泰店)', newest review 2026-11-08"
+        },
+        {
+          "name": "Neobio Family Park (Xingguang)",
+          "page_name": "奈尔宝家庭中心",
+          "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+          "date": "2026-08",
+          "map": "Amap: '超级奈尔宝 星光店', open"
+        },
+        {
+          "name": "Rotten Apple Park",
+          "page_name": "烂苹果乐园",
+          "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+          "date": "2026-08",
+          "map": "Amap: open"
+        },
+        {
+          "name": "Chongxiaolü Park",
+          "page_name": "虫小绿乐园",
+          "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+          "date": "2026-08",
+          "map": "Amap: open"
+        },
+        {
+          "name": "Hangzhou Paradise",
+          "page_name": "杭州乐园",
+          "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+          "date": "2026-08",
+          "map": "Amap: open"
+        },
+        {
+          "name": "Kaiyuan Senbo Resort Park",
+          "page_name": "杭州开元森泊度假乐园",
+          "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+          "date": "2026-08",
+          "map": "Amap: open"
+        },
+        {
+          "name": "Songcheng",
+          "page_name": "杭州宋城",
+          "src": "https://news.sina.cn/sx/2026-08-17/detail-ininrkkr7751415.d.html",
+          "date": "2026-08",
+          "map": "Amap: open"
+        },
+        {
+          "name": "Taiziwan Park",
+          "page_name": "太子湾公园",
+          "src": "https://post.smzdm.com/p/aggmlx97/",
+          "date": "2026-04",
+          "map": "Amap: open"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "幻贝家亲子乐园",
+          "why": "not found on Amap"
+        },
+        {
+          "name": "meland club亲子餐厅",
+          "why": "the restaurant inside the Meland play park, which is in as a thing to do"
+        },
+        {
+          "name": "小猪佩奇欢乐餐厅 (Binjiang Intime)",
+          "why": "the newest review on Amap is from March 2026, older than six months"
+        },
+        {
+          "name": "奥特曼主题餐厅 (Binjiang Longfor)",
+          "why": "not found on Amap in Hangzhou"
+        },
+        {
+          "name": "奈尔宝 restaurants",
+          "why": "the page names two branches, not one"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Xin Bailu (West Lake Cultural Square)",
+          "page_name": "新白鹿餐厅(西湖文化广场银泰百货店)",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E7%99%BD%E9%B9%BF%E9%A4%90%E5%8E%85(%E8%A5%BF%E6%B9%96%E6%96%87%E5%8C%96%E5%B9%BF%E5%9C%BA%E9%93%B6%E6%B3%B0%E7%99%BE%E8%B4%A7%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-12",
+          "map": "Amap: open, not marked closed, newest review 2026-11-12",
+          "quote": "有宝宝椅 · 家庭聚餐 · 宝宝餐具齐全"
+        },
+        {
+          "name": "Sun Wong Kee (Kerry Centre)",
+          "page_name": "新旺茶餐厅(嘉里中心店)",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E6%97%BA%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%98%89%E9%87%8C%E4%B8%AD%E5%BF%83%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "儿童友好 · 适合带娃"
+        },
+        {
+          "name": "Minglian Waterside Restaurant (Baguatian)",
+          "page_name": "铭莲·八卦田景区水上餐厅",
+          "src": "https://www.amap.com/search?query=%E9%93%AD%E8%8E%B2%C2%B7%E5%85%AB%E5%8D%A6%E7%94%B0%E6%99%AF%E5%8C%BA%E6%B0%B4%E4%B8%8A%E9%A4%90%E5%8E%85&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "亲子友好 · 酒糟翘嘴肉质紧实少刺，小朋友爱吃"
+        },
+        {
+          "name": "Green Tea Restaurant (Hubin in77)",
+          "page_name": "绿茶餐厅(杭州湖滨in77店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E6%9D%AD%E5%B7%9E%E6%B9%96%E6%BB%A8in77%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Hangzhou Youth Centre Children's Park",
+          "page_name": "杭州青少年活动中心儿童乐园(昭庆寺里街店)",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%9D%92%E5%B0%91%E5%B9%B4%E6%B4%BB%E5%8A%A8%E4%B8%AD%E5%BF%83%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E6%98%AD%E5%BA%86%E5%AF%BA%E9%87%8C%E8%A1%97%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-11",
+          "map": "Amap: open, not marked closed, newest review 2026-11-11",
+          "quote": "儿童乐园 · 家庭过山车 · 小宝宝游玩 · 旋转木马"
+        },
+        {
+          "name": "Popome Play Park (West Lake Cultural Square)",
+          "page_name": "POPOME泡泡米益智乐园·餐厅·派对(西湖文化广场店)",
+          "src": "https://www.amap.com/search?query=POPOME%E6%B3%A1%E6%B3%A1%E7%B1%B3%E7%9B%8A%E6%99%BA%E4%B9%90%E5%9B%AD%C2%B7%E9%A4%90%E5%8E%85%C2%B7%E6%B4%BE%E5%AF%B9(%E8%A5%BF%E6%B9%96%E6%96%87%E5%8C%96%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "儿童乐园 · 儿童沙池 · 亲子DIY · 小宝宝游玩 · 亲子餐厅"
+        },
+        {
+          "name": "Cartoony Play Park (Gonglian CC)",
+          "page_name": "卡通尼乐园(工联CC店)",
+          "src": "https://www.amap.com/search?query=%E5%8D%A1%E9%80%9A%E5%B0%BC%E4%B9%90%E5%9B%AD(%E5%B7%A5%E8%81%94CC%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "儿童沙池 · 亲子游玩 · 小宝宝游玩 · 滑梯蹦床"
+        },
+        {
+          "name": "Kuda Animal Park (Xixi Lotte City)",
+          "page_name": "酷嗒动物文化乐园(西溪乐天城)",
+          "src": "https://www.amap.com/search?query=%E9%85%B7%E5%97%92%E5%8A%A8%E7%89%A9%E6%96%87%E5%8C%96%E4%B9%90%E5%9B%AD(%E8%A5%BF%E6%BA%AA%E4%B9%90%E5%A4%A9%E5%9F%8E)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "室内动物乐园，很适合就近遛娃 · 拿着饲料投喂小动物，小朋友会玩得很开心"
+        },
+        {
+          "name": "Neobio Play Park (Sky City)",
+          "page_name": "奈尔宝·儿童乐园·亲子餐厅(杭州天空之城店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E6%9D%AD%E5%B7%9E%E5%A4%A9%E7%A9%BA%E4%B9%8B%E5%9F%8E%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "儿童乐园 · 亲子DIY · 全软包防护 · 角色扮演"
+        },
+        {
+          "name": "Water Sprite Play Park (Xiaoshan)",
+          "page_name": "杭州水精灵乐园",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E6%B0%B4%E7%B2%BE%E7%81%B5%E4%B9%90%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-03",
+          "map": "Amap: open, not marked closed, newest review 2026-10-03",
+          "quote": "儿童乐园 · 亲子活动 · 生日小朋友可免费入园"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "叶马餐厅 (嘉里中心)",
+          "why": "its review about children is a complaint about a noisy child"
+        },
+        {
+          "name": "绿茶餐厅 (远洋), 第101座花园餐厅",
+          "why": "kept the list to 12: a second Green Tea, and a page with only a tag"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

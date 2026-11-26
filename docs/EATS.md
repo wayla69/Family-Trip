@@ -844,3 +844,7 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Nara (new place)**: Horiuchi Kajitsuen moved from `jp-kyoto` to `jp-nara`, and seven added from Mapple’s undated family page (Kamameshi Shizuka, Ashibi no Sato, Tofu-an Kondo, RAhOTSU, Wazen Tamayura, TEN.TEN.CAFE, Kuki Cake.), each checked on Google Maps.
 
 - **25 Nov 2026, Christchurch (new town)**: 8, from ChristchurchNZ's family dining guide (undated; owner's rule for undated food guides), each checked on Google Maps. Proof in `docs/library-proof/nz-christchurch.json`.
+
+- **25 Nov 2026, Hangzhou (new town)**: 8, from Dianping shop pages (owner's China rule ข), each checked on Amap. Proof in `docs/library-proof/cn-hangzhou.json`.
+
+- **26 Nov 2026, Hangzhou**: +4 from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-hangzhou.json`.

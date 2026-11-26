@@ -121,6 +121,8 @@ nightlife, and religious sites that ask visitors to keep away.
 - **25 Nov 2026, Kobe (new place)**: the 10 Kobe and Himeji rows of `jp-hiroshima` moved to `jp-kobe` unchanged (`thin`); Hiroshima keeps 12 and is now `thin` too.
 - **25 Nov 2026, Nara (new place)**: Nara Park, Mount Wakakusa and Nanen-do moved from `jp-kyoto` to `jp-nara`, and six added from asoview’s dated pages (Ikimono and Kingyo museums, Ninja Park, the karakuri toy house, the dung beetle museum, Kids Land US), each checked on Google Maps (`thin`).
 - **25 Nov 2026, Christchurch (new town)**: 7, thin (the gondola, punting, the tram, Willowbank, Orana, Ferrymead and the Margaret Mahy playground). Proof in `docs/library-proof/nz-christchurch.json`.
+- **26 Nov 2026, Hangzhou**: +6 play parks and an indoor animal park from Amap place pages. Proof in `docs/library-proof/cn-hangzhou.json`.
+- **25 Nov 2026, Hangzhou (new town)**: 8, thin (Meland, Neobio, Rotten Apple Park, Chongxiaolü, Hangzhou Paradise, Kaiyuan Senbo, Songcheng, Taiziwan Park). Proof in `docs/library-proof/cn-hangzhou.json`.
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
