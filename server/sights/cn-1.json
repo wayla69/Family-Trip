@@ -1091,6 +1091,47 @@
           },
           "q": "上海动漫博物馆, 张江路69号, 浦东新区, 上海",
           "ok": "2026-11"
+        },
+        {
+          "local": "上海植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%A4%8D%E7%89%A9%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนพฤกษศาสตร์เซี่ยงไฮ้",
+            "en": "Shanghai Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนหลงอู๋ สวีฮุ่ย",
+            "en": "Longwu Road, Xuhui"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ใหญ่ มีเรือนกระจกป่าฝน บอนไซ ทางเดินริมน้ำ และสนามหญ้า",
+            "en": "A big botanical garden with a glasshouse rainforest, bonsai, water walkways and lawns"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำสำหรับครอบครัวที่อยากพาเด็กเรียนรู้เรื่องต้นไม้ เดือนตุลาคมมีเทศกาลฟักทอง",
+            "en": "Reviewers recommend it for families learning about plants; a pumpkin festival in October"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้เข้าทางประตู 4 แล้วเริ่มเที่ยวฝั่งเหนือ",
+            "en": "Reviewers suggest entering by gate 4 and starting in the north part"
+          },
+          "q": "上海植物园, 龙吴路1111号, 徐汇区, 上海",
+          "ok": "2026-11"
         }
     ]
     }
