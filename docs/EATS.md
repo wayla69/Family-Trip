@@ -836,3 +836,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Matsuyama (new town)**: 8, each checked on Google Maps; all from undated HotPepper and Mapple pages, which the owner allowed. Proof in `docs/library-proof/jp-matsuyama.json`.
 
 - **25 Nov 2026, Sendai (new place)**: the 12 Sendai and Matsushima rows of `jp-tohoku` moved to `jp-sendai` unchanged; Tohoku keeps 9.
+
+- **25 Nov 2026, Nagoya (new place)**: the 11 Nagoya rows of `jp-takayama` moved to `jp-nagoya` unchanged; Takayama keeps 21 and gains Cha-no-me (sweets, from Mapple’s undated family page, checked on Google Maps) so it still has two cafés or sweets shops.
