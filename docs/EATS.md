@@ -840,3 +840,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Nagoya (new place)**: the 11 Nagoya rows of `jp-takayama` moved to `jp-nagoya` unchanged; Takayama keeps 21 and gains Cha-no-me (sweets, from Mapple’s undated family page, checked on Google Maps) so it still has two cafés or sweets shops.
 
 - **25 Nov 2026, Kobe (new place)**: the 6 Kobe rows of `jp-hiroshima` moved to `jp-kobe` unchanged, and three added from Mapple’s undated family page (Hong Kong Charo, Kohoseki, Morozoff), each checked on Google Maps; Hiroshima keeps 18.
+
+- **25 Nov 2026, Nara (new place)**: Horiuchi Kajitsuen moved from `jp-kyoto` to `jp-nara`, and seven added from Mapple’s undated family page (Kamameshi Shizuka, Ashibi no Sato, Tofu-an Kondo, RAhOTSU, Wazen Tamayura, TEN.TEN.CAFE, Kuki Cake.), each checked on Google Maps.

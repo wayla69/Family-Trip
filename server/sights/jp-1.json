@@ -1842,13 +1842,13 @@
           "ok": "2026-11",
           "src": "https://www.lonelyplanet.com/articles/best-temples-in-kyoto"
         },
-      {"name":{"en":"Kyoto Municipal Science Center for Youth","th":"ศูนย์วิทยาศาสตร์เยาวชนเกียวโต"},"kind":"museumkid","area":{"en":"Fushimi Ward","th":"เขตฟุชิมิ"},"what":{"en":"A hands-on science centre over three floors, with seven interactive stations and a planetarium.","th":"ศูนย์วิทยาศาสตร์แบบลงมือทำ สามชั้น มีสถานีโต้ตอบเจ็ดจุดและห้องดาวเคราะห์"},"why":{"en":"Seven interactive stations, including a Bubble Tower and a Light Pool, the page says.","th":"หน้าเว็บบอกว่ามีสถานีโต้ตอบเจ็ดจุด รวมหอฟองและสระแสง"},"tip":{"en":"Planetarium tickets sell out at the 9:00 opening; no advance reservations.","th":"ตั๋วห้องดาวเคราะห์หมดตั้งแต่เปิด 9:00 น. ไม่มีการจองล่วงหน้า"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"¥520 for adults","th":"¥520 ผู้ใหญ่"},"book":"none","q":"Kyoto Municipal Science Center for Youth, Fushimi Ward, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-municipal-science-center-for-youth/"},
-      {"name":{"en":"Samurai Ninja Museum","th":"พิพิธภัณฑ์ซามูไรและนินจา"},"kind":"museumkid","area":{"en":"near Nishiki Market","th":"ใกล้ตลาดนิชิกิ"},"what":{"en":"A hands-on museum that puts real samurai armour and Edo-period swords behind glass, then lets kids try foam versions.","th":"พิพิธภัณฑ์ลงมือทำ มีชุดเกราะซามูไรจริงและดาบยุคเอโดะหลังกระจก แล้วให้เด็กลองชุดโฟมเลียนแบบ"},"why":{"en":"Kids dress up and try the gear themselves in the activity rooms.","th":"หน้าเว็บบอกว่าเด็กแต่งตัวและลองชุดเองในห้องกิจกรรม"},"tip":{"en":"Book online in advance; each visit is a guided tour of about 60 minutes.","th":"จองออนไลน์ล่วงหน้า แต่ละรอบเป็นการนำชมราว 60 นาที"},"ages":[0,2,2,1],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Samurai Ninja Museum, near Nishiki Market, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-samurai-ninja-museum/"},
-      {"name":{"en":"Kyoto City Disaster Prevention Center","th":"ศูนย์ป้องกันภัยพิบัติเมืองเกียวโต"},"kind":"museumkid","area":{"en":"Minami-ku","th":"เขตมินามิ"},"what":{"en":"A hands-on disaster-preparedness centre where kids climb into a retired fire helicopter and brace through a magnitude-7 earthquake.","th":"ศูนย์เตรียมรับภัยพิบัติแบบลงมือทำ เด็กปีนเข้าเฮลิคอปเตอร์ดับเพลิงที่ปลดประจำการ และหมอบรับแผ่นดินไหวขนาด 7"},"why":{"en":"Its headline draws are physical rather than spoken, the page says.","th":"หน้าเว็บบอกว่ากิจกรรมเด่นเป็นการเคลื่อนไหวร่างกายมากกว่าการพูด"},"tip":{"en":"Closed Mondays, the second Tuesday of each month and 28 Dec to 4 Jan.","th":"ปิดวันจันทร์ วันอังคารที่สองของเดือน และ 28 ธันวาคมถึง 4 มกราคม"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Kyoto City Disaster Prevention Center, Minami-ku, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-disaster-prevention-center/"},
-      {"name":{"en":"Kyoto Museum of Crafts and Design","th":"พิพิธภัณฑ์งานฝีมือและการออกแบบเกียวโต"},"kind":"museumkid","area":{"en":"Okazaki","th":"โอคาซากิ"},"what":{"en":"All 74 official traditional crafts of Kyoto in one basement hall, with the raw materials behind incense and dyeing to handle.","th":"งานหัตถกรรมดั้งเดิม 74 ชนิดที่ได้รับการรับรองของเกียวโต รวมอยู่ในห้องใต้ดินเดียว มีวัตถุดิบของธูปและการย้อมให้จับได้"},"why":{"en":"Visitors can smell the woods and ring the metal orin bells, the page says.","th":"หน้าเว็บบอกว่าผู้เยี่ยมชมดมกลิ่นไม้และตีระฆังโลหะออริน (orin) ได้"},"tip":{"en":"A drop-in craft session every afternoon, 14:00 to 15:00.","th":"มีกิจกรรมงานฝีมือแบบไม่ต้องจองทุกบ่าย 14:00–15:00 น."},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"¥500","th":"¥500"},"book":"none","q":"Kyoto Museum of Crafts and Design, Okazaki, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-museum-of-crafts-and-design/"},
-      {"name":{"en":"VS Park AEON Mall Kyoto","th":"วีเอสพาร์ค อีออนมอลล์เกียวโต"},"kind":"play","area":{"en":"Hachijo side of Kyoto Station","th":"ฝั่งฮาจิโจของสถานีเกียวโต"},"what":{"en":"An indoor variety-show sports park with more than two dozen physical activities.","th":"สวนกีฬาในร่มแบบวาไรตี้โชว์ มีกิจกรรมกายภาพกว่าสองโหล"},"why":{"en":"An easy, energetic rainy-day plan right by the station, the page says.","th":"หน้าเว็บบอกว่าเป็นแผนวันฝนตกที่ง่ายและสนุก อยู่ติดสถานี"},"tip":{"en":"Open 10:00 to 21:00, last entry 20:00.","th":"เปิด 10:00–21:00 น. เข้าได้ล่าสุด 20:00 น."},"ages":[0,0,1,2],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"VS Park AEON Mall Kyoto, Kyoto Station, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/vs-park-aeon-mall-kyoto/"},
-      {"name":{"en":"GEAR","th":"เกียร์"},"kind":"show","area":{"en":"Kawaramachi-Sanjo","th":"คาวารามาจิ-ซันโจ"},"what":{"en":"A wordless, 90-minute stage show in a 72-seat room on the third floor of the 1928 Building.","th":"การแสดงบนเวทีไม่มีคำพูด ยาว 90 นาที ในห้องที่นั่ง 72 ที่นั่ง ชั้นสามของอาคาร 1928"},"why":{"en":"A wordless story, so no language is needed, the page says.","th":"เป็นเรื่องราวที่ไม่มีคำพูด จึงไม่ต้องใช้ภาษา ตามหน้าเว็บ"},"tip":{"en":"Be in your seat five minutes before the start; latecomers can be held up to 15 minutes.","th":"อยู่ที่นั่งก่อนเริ่มห้านาที ผู้มาสายอาจถูกกันไว้ได้ถึง 15 นาที"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"¥1,800 for children (Premium)","th":"¥1,800 เด็ก (พรีเมียม)"},"book":"rec","q":"GEAR, Kawaramachi-Sanjo, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/gear-non-verbal-theatre/"},
-      {"name":{"en":"Round1 Kyoto Kawaramachi","th":"ราวด์วัน เกียวโต คาวารามาจิ"},"kind":"play","area":{"en":"Kawaramachi","th":"คาวารามาจิ"},"what":{"en":"A large indoor amusement complex with bowling, a big arcade and karaoke.","th":"ศูนย์บันเทิงในร่มขนาดใหญ่ มีโบว์ลิ่ง อาร์เคดใหญ่ และคาราโอเกะ"},"why":{"en":"Stroller, nursing room and diaper change on site, and walk-in is fine, the page says.","th":"หน้าเว็บบอกว่ามีรถเข็นเด็ก ห้องให้นม และที่เปลี่ยนผ้าอ้อมในพื้นที่ และเดินเข้าได้โดยไม่ต้องจอง"},"ages":[0,1,2,2],"hrs":3,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Round1 Kyoto Kawaramachi, Kawaramachi, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/round1-kyoto-kawaramachi/"},
+        {"name":{"en":"Kyoto Municipal Science Center for Youth","th":"ศูนย์วิทยาศาสตร์เยาวชนเกียวโต"},"kind":"museumkid","area":{"en":"Fushimi Ward","th":"เขตฟุชิมิ"},"what":{"en":"A hands-on science centre over three floors, with seven interactive stations and a planetarium.","th":"ศูนย์วิทยาศาสตร์แบบลงมือทำ สามชั้น มีสถานีโต้ตอบเจ็ดจุดและห้องดาวเคราะห์"},"why":{"en":"Seven interactive stations, including a Bubble Tower and a Light Pool, the page says.","th":"หน้าเว็บบอกว่ามีสถานีโต้ตอบเจ็ดจุด รวมหอฟองและสระแสง"},"tip":{"en":"Planetarium tickets sell out at the 9:00 opening; no advance reservations.","th":"ตั๋วห้องดาวเคราะห์หมดตั้งแต่เปิด 9:00 น. ไม่มีการจองล่วงหน้า"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"¥520 for adults","th":"¥520 ผู้ใหญ่"},"book":"none","q":"Kyoto Municipal Science Center for Youth, Fushimi Ward, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-municipal-science-center-for-youth/"},
+        {"name":{"en":"Samurai Ninja Museum","th":"พิพิธภัณฑ์ซามูไรและนินจา"},"kind":"museumkid","area":{"en":"near Nishiki Market","th":"ใกล้ตลาดนิชิกิ"},"what":{"en":"A hands-on museum that puts real samurai armour and Edo-period swords behind glass, then lets kids try foam versions.","th":"พิพิธภัณฑ์ลงมือทำ มีชุดเกราะซามูไรจริงและดาบยุคเอโดะหลังกระจก แล้วให้เด็กลองชุดโฟมเลียนแบบ"},"why":{"en":"Kids dress up and try the gear themselves in the activity rooms.","th":"หน้าเว็บบอกว่าเด็กแต่งตัวและลองชุดเองในห้องกิจกรรม"},"tip":{"en":"Book online in advance; each visit is a guided tour of about 60 minutes.","th":"จองออนไลน์ล่วงหน้า แต่ละรอบเป็นการนำชมราว 60 นาที"},"ages":[0,2,2,1],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Samurai Ninja Museum, near Nishiki Market, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-samurai-ninja-museum/"},
+        {"name":{"en":"Kyoto City Disaster Prevention Center","th":"ศูนย์ป้องกันภัยพิบัติเมืองเกียวโต"},"kind":"museumkid","area":{"en":"Minami-ku","th":"เขตมินามิ"},"what":{"en":"A hands-on disaster-preparedness centre where kids climb into a retired fire helicopter and brace through a magnitude-7 earthquake.","th":"ศูนย์เตรียมรับภัยพิบัติแบบลงมือทำ เด็กปีนเข้าเฮลิคอปเตอร์ดับเพลิงที่ปลดประจำการ และหมอบรับแผ่นดินไหวขนาด 7"},"why":{"en":"Its headline draws are physical rather than spoken, the page says.","th":"หน้าเว็บบอกว่ากิจกรรมเด่นเป็นการเคลื่อนไหวร่างกายมากกว่าการพูด"},"tip":{"en":"Closed Mondays, the second Tuesday of each month and 28 Dec to 4 Jan.","th":"ปิดวันจันทร์ วันอังคารที่สองของเดือน และ 28 ธันวาคมถึง 4 มกราคม"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Kyoto City Disaster Prevention Center, Minami-ku, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-disaster-prevention-center/"},
+        {"name":{"en":"Kyoto Museum of Crafts and Design","th":"พิพิธภัณฑ์งานฝีมือและการออกแบบเกียวโต"},"kind":"museumkid","area":{"en":"Okazaki","th":"โอคาซากิ"},"what":{"en":"All 74 official traditional crafts of Kyoto in one basement hall, with the raw materials behind incense and dyeing to handle.","th":"งานหัตถกรรมดั้งเดิม 74 ชนิดที่ได้รับการรับรองของเกียวโต รวมอยู่ในห้องใต้ดินเดียว มีวัตถุดิบของธูปและการย้อมให้จับได้"},"why":{"en":"Visitors can smell the woods and ring the metal orin bells, the page says.","th":"หน้าเว็บบอกว่าผู้เยี่ยมชมดมกลิ่นไม้และตีระฆังโลหะออริน (orin) ได้"},"tip":{"en":"A drop-in craft session every afternoon, 14:00 to 15:00.","th":"มีกิจกรรมงานฝีมือแบบไม่ต้องจองทุกบ่าย 14:00–15:00 น."},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"¥500","th":"¥500"},"book":"none","q":"Kyoto Museum of Crafts and Design, Okazaki, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-museum-of-crafts-and-design/"},
+        {"name":{"en":"VS Park AEON Mall Kyoto","th":"วีเอสพาร์ค อีออนมอลล์เกียวโต"},"kind":"play","area":{"en":"Hachijo side of Kyoto Station","th":"ฝั่งฮาจิโจของสถานีเกียวโต"},"what":{"en":"An indoor variety-show sports park with more than two dozen physical activities.","th":"สวนกีฬาในร่มแบบวาไรตี้โชว์ มีกิจกรรมกายภาพกว่าสองโหล"},"why":{"en":"An easy, energetic rainy-day plan right by the station, the page says.","th":"หน้าเว็บบอกว่าเป็นแผนวันฝนตกที่ง่ายและสนุก อยู่ติดสถานี"},"tip":{"en":"Open 10:00 to 21:00, last entry 20:00.","th":"เปิด 10:00–21:00 น. เข้าได้ล่าสุด 20:00 น."},"ages":[0,0,1,2],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"VS Park AEON Mall Kyoto, Kyoto Station, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/vs-park-aeon-mall-kyoto/"},
+        {"name":{"en":"GEAR","th":"เกียร์"},"kind":"show","area":{"en":"Kawaramachi-Sanjo","th":"คาวารามาจิ-ซันโจ"},"what":{"en":"A wordless, 90-minute stage show in a 72-seat room on the third floor of the 1928 Building.","th":"การแสดงบนเวทีไม่มีคำพูด ยาว 90 นาที ในห้องที่นั่ง 72 ที่นั่ง ชั้นสามของอาคาร 1928"},"why":{"en":"A wordless story, so no language is needed, the page says.","th":"เป็นเรื่องราวที่ไม่มีคำพูด จึงไม่ต้องใช้ภาษา ตามหน้าเว็บ"},"tip":{"en":"Be in your seat five minutes before the start; latecomers can be held up to 15 minutes.","th":"อยู่ที่นั่งก่อนเริ่มห้านาที ผู้มาสายอาจถูกกันไว้ได้ถึง 15 นาที"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"¥1,800 for children (Premium)","th":"¥1,800 เด็ก (พรีเมียม)"},"book":"rec","q":"GEAR, Kawaramachi-Sanjo, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/gear-non-verbal-theatre/"},
+        {"name":{"en":"Round1 Kyoto Kawaramachi","th":"ราวด์วัน เกียวโต คาวารามาจิ"},"kind":"play","area":{"en":"Kawaramachi","th":"คาวารามาจิ"},"what":{"en":"A large indoor amusement complex with bowling, a big arcade and karaoke.","th":"ศูนย์บันเทิงในร่มขนาดใหญ่ มีโบว์ลิ่ง อาร์เคดใหญ่ และคาราโอเกะ"},"why":{"en":"Stroller, nursing room and diaper change on site, and walk-in is fine, the page says.","th":"หน้าเว็บบอกว่ามีรถเข็นเด็ก ห้องให้นม และที่เปลี่ยนผ้าอ้อมในพื้นที่ และเดินเข้าได้โดยไม่ต้องจอง"},"ages":[0,1,2,2],"hrs":3,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Round1 Kyoto Kawaramachi, Kawaramachi, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/round1-kyoto-kawaramachi/"},
         {
           "local": "",
           "ages": [
@@ -1884,129 +1884,6 @@
             "en": "Kendama, origami and spinning tops, and simple kimono to try on"
           },
           "q": "AriHana Kyoto",
-          "ok": "2026-11"
-        },
-        {
-          "local": "奈良公園",
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": {
-            "th": "ฟรี",
-            "en": "Free"
-          },
-          "book": "none",
-          "src": "https://tinytotintokyo.com/nara-with-kids",
-          "name": {
-            "th": "สวนนารา",
-            "en": "Nara Park"
-          },
-          "kind": "park",
-          "area": {
-            "th": "นารา",
-            "en": "Nara"
-          },
-          "what": {
-            "th": "สวนใหญ่มีกวางเดินอิสระ ซื้อขนมให้กวางกินได้",
-            "en": "A big park where sika deer roam and you can buy crackers to feed them"
-          },
-          "why": {
-            "th": "กวางโค้งตอบเพื่อขอขนม",
-            "en": "The deer bow back for a cracker"
-          },
-          "tip": {
-            "th": "วันธรรมดาคนน้อยกว่าเสาร์อาทิตย์มาก",
-            "en": "Weekdays are far quieter than weekends"
-          },
-          "q": "奈良公園",
-          "ok": "2026-11"
-        },
-        {
-          "local": "南円堂",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 0.5,
-          "io": "out",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://tinytotintokyo.com/nara-with-kids",
-          "name": {
-            "th": "นันเอ็นโด (วัดโคฟุคุจิ)",
-            "en": "Nanen-do (Kofuku-ji)"
-          },
-          "kind": "culture",
-          "area": {
-            "th": "นารา",
-            "en": "Nara"
-          },
-          "what": {
-            "th": "หอวัดที่ผู้มาเยือนถวายเหรียญและอธิษฐาน",
-            "en": "A temple hall where visitors offer coins and pray"
-          },
-          "why": {
-            "th": "เด็ก ๆ สนุกกับการถวายเหรียญ",
-            "en": "Children enjoy making an offering"
-          },
-          "tip": {
-            "th": "ถ้ามีรถเข็น เข้าทางถนนซันโจ ไม่ใช่บันไดจากสระซารุซาวะ",
-            "en": "With a pram, come in from Sanjo-dori, not the stairs from Sarusawa Pond"
-          },
-          "q": "南円堂 興福寺",
-          "ok": "2026-11"
-        },
-        {
-          "local": "若草山",
-          "ages": [
-            0,
-            1,
-            2,
-            2
-          ],
-          "hrs": 2,
-          "io": "out",
-          "pram": "no",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://tinytotintokyo.com/nara-with-kids",
-          "name": {
-            "th": "ภูเขาวากากุสะ",
-            "en": "Mount Wakakusa"
-          },
-          "kind": "nature",
-          "area": {
-            "th": "นารา",
-            "en": "Nara"
-          },
-          "what": {
-            "th": "เนินหญ้ามีกวาง เดินขึ้นยอดแรกได้",
-            "en": "A grassy hill with deer and a walk to the first peak"
-          },
-          "why": {
-            "th": "มีกวางบนเนินเขา",
-            "en": "Deer on the hillside"
-          },
-          "tip": {
-            "th": "ขึ้นทางประตูใต้ ลงทางประตูเหนือ",
-            "en": "Up through the South Gate, down through the North Gate"
-          },
-          "q": "若草山, 奈良",
           "ok": "2026-11"
         },
         {
@@ -4349,6 +4226,361 @@
           "q": "Ritsurin Garden, 1-20-16 Ritsurincho, Takamatsu",
           "ok": "2026-11"
         }
+      ]
+    },
+    {
+      "place": "jp-nara",
+      "thin": true,
+      "sights": [
+        {
+          "local": "奈良公園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "สวนนารา",
+            "en": "Nara Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "สวนใหญ่มีกวางเดินอิสระ ซื้อขนมให้กวางกินได้",
+            "en": "A big park where sika deer roam and you can buy crackers to feed them"
+          },
+          "why": {
+            "th": "กวางโค้งตอบเพื่อขอขนม",
+            "en": "The deer bow back for a cracker"
+          },
+          "tip": {
+            "th": "วันธรรมดาคนน้อยกว่าเสาร์อาทิตย์มาก",
+            "en": "Weekdays are far quieter than weekends"
+          },
+          "q": "奈良公園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南円堂",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "นันเอ็นโด (วัดโคฟุคุจิ)",
+            "en": "Nanen-do (Kofuku-ji)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "หอวัดที่ผู้มาเยือนถวายเหรียญและอธิษฐาน",
+            "en": "A temple hall where visitors offer coins and pray"
+          },
+          "why": {
+            "th": "เด็ก ๆ สนุกกับการถวายเหรียญ",
+            "en": "Children enjoy making an offering"
+          },
+          "tip": {
+            "th": "ถ้ามีรถเข็น เข้าทางถนนซันโจ ไม่ใช่บันไดจากสระซารุซาวะ",
+            "en": "With a pram, come in from Sanjo-dori, not the stairs from Sarusawa Pond"
+          },
+          "q": "南円堂 興福寺",
+          "ok": "2026-11"
+        },
+        {
+          "local": "若草山",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "ภูเขาวากากุสะ",
+            "en": "Mount Wakakusa"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "เนินหญ้ามีกวาง เดินขึ้นยอดแรกได้",
+            "en": "A grassy hill with deer and a walk to the first peak"
+          },
+          "why": {
+            "th": "มีกวางบนเนินเขา",
+            "en": "Deer on the hillside"
+          },
+          "tip": {
+            "th": "ขึ้นทางประตูใต้ ลงทางประตูเหนือ",
+            "en": "Up through the South Gate, down through the North Gate"
+          },
+          "q": "若草山, 奈良",
+          "ok": "2026-11"
+        },
+          {
+            "local": "NARA IKIMONO MUSEUM",
+            "ages": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "hrs": 1.5,
+            "io": "in",
+            "pram": "yes",
+            "price": {
+              "th": "เช็กราคาก่อนไป",
+              "en": "Check the price"
+            },
+            "book": "none",
+            "src": "https://www.asoview.com/note/6199",
+            "name": {
+              "th": "พิพิธภัณฑ์สิ่งมีชีวิตนารา",
+              "en": "Nara Ikimono Museum"
+            },
+            "kind": "museumkid",
+            "area": {
+              "th": "มินารา ชั้น 4 นิโจโอจิมินามิ",
+              "en": "Mi Nara 4F, Nijo-oji-minami"
+            },
+            "what": {
+              "th": "พิพิธภัณฑ์สัตว์เลื้อยคลาน ปลา และสัตว์สะเทินน้ำสะเทินบก จัดแสดงร่วมกับงานศิลป์",
+              "en": "A museum of reptiles, fish and amphibians shown with art"
+            },
+            "why": {
+              "th": "เด็กๆ ได้มองตากิ้งก่าคาเมเลียน และลองสัมผัสกิ้งก่าเบาๆ",
+              "en": "Children look a chameleon in the eye and gently touch a lizard"
+            },
+            "tip": {
+              "th": "อยู่ในร่ม เหมาะกับวันฝนตก",
+              "en": "Indoors, good on a rainy day"
+            },
+            "q": "Nara Ikimono Museum, ミ・ナーラ, 奈良市",
+            "ok": "2026-11"
+          },
+            {
+              "local": "NARA KINGYO MUSEUM",
+              "ages": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "hrs": 1,
+              "io": "in",
+              "pram": "yes",
+              "price": {
+                "th": "เช็กราคาก่อนไป",
+                "en": "Check the price"
+              },
+              "book": "none",
+              "src": "https://www.asoview.com/note/5493/",
+              "name": {
+                "th": "พิพิธภัณฑ์ปลาทองนารา",
+                "en": "Nara Kingyo Museum"
+              },
+              "kind": "museum",
+              "area": {
+                "th": "มินารา ชั้น 4 นิโจโอจิมินามิ",
+                "en": "Mi Nara 4F, Nijo-oji-minami"
+              },
+              "what": {
+                "th": "พิพิธภัณฑ์ปลาทองที่มีภาพฉายและตู้ปลาเรืองแสง",
+                "en": "A goldfish museum with projection art and glowing tanks"
+              },
+              "why": {
+                "th": "ตู้ปลาทองหลากชนิดสีสดใส เด็กๆ ดูได้นาน",
+                "en": "Bright tanks of many kinds of goldfish that children watch for ages"
+              },
+              "q": "NARA KINGYO MUSEUM, ミ・ナーラ, 奈良市",
+              "ok": "2026-11"
+            },
+              {
+                "local": "ニンジャ☆パーク奈良店",
+                "ages": [
+                  0,
+                  1,
+                  2,
+                  2
+                ],
+                "hrs": 1.5,
+                "io": "in",
+                "pram": "no",
+                "price": {
+                  "th": "เช็กราคาก่อนไป",
+                  "en": "Check the price"
+                },
+                "book": "none",
+                "src": "https://www.asoview.com/note/5493/",
+                "name": {
+                  "th": "นินจาพาร์ก นารา",
+                  "en": "Ninja Park Nara"
+                },
+                "kind": "play",
+                "area": {
+                  "th": "มินารา ชั้น 2 นิโจโอจิมินามิ",
+                  "en": "Mi Nara 2F, Nijo-oji-minami"
+                },
+                "what": {
+                  "th": "สนามผจญภัยในร่มธีมนินจา มีแทรมโพลีนและผนังปีนป่าย",
+                  "en": "An indoor ninja-themed athletic course with trampolines and bouldering"
+                },
+                "why": {
+                  "th": "เด็กที่พลังเหลือได้เป็นนินจา แม้วันฝนตก",
+                  "en": "Children who need to run off energy can be ninjas, even on a wet day"
+                },
+                "q": "ニンジャ☆パーク奈良店, ミ・ナーラ, 奈良市",
+                "ok": "2026-11"
+              },
+                {
+                  "local": "奈良町からくりおもちゃ館",
+                  "ages": [
+                    1,
+                    2,
+                    2,
+                    1
+                  ],
+                  "hrs": 1,
+                  "io": "in",
+                  "pram": "part",
+                  "price": {
+                    "th": "ฟรี",
+                    "en": "Free"
+                  },
+                  "book": "none",
+                  "src": "https://www.asoview.com/note/5493/",
+                  "name": {
+                    "th": "พิพิธภัณฑ์ของเล่นกลไกนารามาจิ",
+                    "en": "Naramachi Karakuri Toy Museum"
+                  },
+                  "kind": "museumkid",
+                  "area": {
+                    "th": "อินโยโจ นารามาจิ",
+                    "en": "Inyo-cho, Naramachi"
+                  },
+                  "what": {
+                    "th": "บ้านของเล่นกลไกจากยุคเอโดะ เล่นได้ฟรี",
+                    "en": "A free house of Edo-period mechanical toys to play with"
+                  },
+                  "why": {
+                    "th": "ของเล่นไม้ ไม้ไผ่ และกระดาษ ที่ขยับได้โดยไม่ใช้ไฟฟ้า",
+                    "en": "Toys of wood, bamboo and paper that move with no electricity"
+                  },
+                  "q": "奈良町からくりおもちゃ館, 陰陽町7, 奈良市",
+                  "ok": "2026-11"
+                },
+                  {
+                    "local": "ならまち糞虫館",
+                    "ages": [
+                      0,
+                      1,
+                      2,
+                      2
+                    ],
+                    "hrs": 0.5,
+                    "io": "in",
+                    "pram": "part",
+                    "price": {
+                      "th": "เช็กราคาก่อนไป",
+                      "en": "Check the price"
+                    },
+                    "book": "none",
+                    "src": "https://www.asoview.com/note/5493/",
+                    "name": {
+                      "th": "พิพิธภัณฑ์ด้วงมูลสัตว์นารามาจิ",
+                      "en": "Naramachi Dung Beetle Museum"
+                    },
+                    "kind": "museum",
+                    "area": {
+                      "th": "มินามิโจโดโจ นารามาจิ",
+                      "en": "Minami-jodo-cho, Naramachi"
+                    },
+                    "what": {
+                      "th": "พิพิธภัณฑ์เล็กๆ ของด้วงมูลสัตว์ที่เงาวาวเหมือนอัญมณี",
+                      "en": "A small private museum of dung beetles, shining like jewels"
+                    },
+                    "why": {
+                      "th": "ถูกใจเด็กที่ชอบแมลง",
+                      "en": "A treat for children who love insects"
+                    },
+                    "q": "ならまち糞虫館, 南城戸町28-13, 奈良市",
+                    "ok": "2026-11"
+                  },
+                    {
+                      "local": "キッズランドUS 奈良学園前店",
+                      "ages": [
+                        2,
+                        2,
+                        2,
+                        1
+                      ],
+                      "hrs": 2,
+                      "io": "in",
+                      "pram": "yes",
+                      "price": {
+                        "th": "เช็กราคาก่อนไป",
+                        "en": "Check the price"
+                      },
+                      "book": "none",
+                      "src": "https://www.asoview.com/note/5493/",
+                      "name": {
+                        "th": "คิดส์แลนด์ยูเอส นารากาคุเอ็นมาเอะ",
+                        "en": "Kids Land US Nara Gakuenmae"
+                      },
+                      "kind": "play",
+                      "area": {
+                        "th": "อิซุมิยะกาคุเอ็นมาเอะ ชั้น 2 กาคุเอ็นนากะ",
+                        "en": "Izumiya Gakuenmae 2F, Gakuen-naka"
+                      },
+                      "what": {
+                        "th": "สวนเล่นในร่มขนาดใหญ่ มีเครื่องปีนป่ายสองชั้น บ่อบอล และแทรมโพลีน",
+                        "en": "A big indoor play park with a two-storey jungle gym, ball pool and trampolines"
+                      },
+                      "why": {
+                        "th": "มีมุมเด็กเล็กสำหรับ 0–3 ขวบ",
+                        "en": "A baby corner for ages 0 to 3"
+                      },
+                      "q": "キッズランドUS 奈良学園前店, 学園中4丁目, 奈良市",
+                      "ok": "2026-11"
+                    }
       ]
     }
   ]
