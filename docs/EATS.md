@@ -888,3 +888,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Harbin, round 5**: +1 from Amap place pages. Proof in `docs/library-proof/cn-harbin.json`.
 
 - **26 Nov 2026, Guangzhou, round 6**: +4 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-guangzhou.json`.
+
+- **26 Nov 2026, Shenzhen, round 6**: +3 from Amap place pages (children's meals, high chairs). Proof in `docs/library-proof/cn-shenzhen.json`.
