@@ -112,6 +112,8 @@ nightlife, and religious sites that ask visitors to keep away.
 - **26 Nov 2026, Hangzhou, round 13**: +8 from Amap place pages (play parks, Hupao, Yunqi, Xixi). Proof in `docs/library-proof/cn-hangzhou.json`.
 - **26 Nov 2026, Chongqing, round 11**: +5 play parks and playgrounds from Amap place pages. Proof in `docs/library-proof/cn-chongqing.json`.
 - **26 Nov 2026, Chengdu, round 11**: +4 (Dujiangyan Panda Valley, the botanical garden, Xiling Snow Mountain, Huawu Renjian) from Amap place pages. Proof in `docs/library-proof/cn-chengdu.json`.
+- **26 Nov 2026, Yunnan, round 12**: +3 from Amap place pages (Kunming). Proof in `docs/library-proof/cn-yunnan.json`.
+- **26 Nov 2026, Beijing, round 12**: +4 play parks from Amap place pages (Haidian). Proof in `docs/library-proof/cn-beijing.json`.
 - **26 Nov 2026, Guangzhou, round 9**: +5 play parks from Amap place pages. Proof in `docs/library-proof/cn-guangzhou.json`.
 - **26 Nov 2026, Shenzhen, round 9**: +5 play spots from Amap place pages. Proof in `docs/library-proof/cn-shenzhen.json`.
 - **26 Nov 2026, Hangzhou, round 9**: +2 (a family farm, an indoor play park) from Amap place pages. Proof in `docs/library-proof/cn-hangzhou.json`.
@@ -154,6 +156,21 @@ nightlife, and religious sites that ask visitors to keep away.
 - **26 Nov 2026, Chengdu**: +6 play parks from Amap place pages. Proof in `docs/library-proof/cn-chengdu.json`.
 - **26 Nov 2026, Xi'an**: +5 play parks and a free playground under the city wall, from Amap place pages. Proof in `docs/library-proof/cn-xian.json`.
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
+- **25 Nov 2026, Kyoto** (round 4: Japan, Korea, New Zealand): +4 indoor play parks (KIRI no KO, Kameoka; Kids Land US, Yawata; Pure Heart Kids Land, Fushimi; HIYOSHI PLAY ARENA, Nantan). Proof in `docs/library-proof/jp-kyoto.json`.
+- **25 Nov 2026, Tokyo** (round 4: Japan, Korea, New Zealand): +2 (ANO-NE Kids Club, Little Planet DiverCity). Proof in `docs/library-proof/jp-tokyo.json`.
+- **25 Nov 2026, Osaka** (round 4: Japan, Korea, New Zealand): +2 (BørneLund PlayVille, Takatsuki; Ōeda Park, Moriguchi). Proof in `docs/library-proof/jp-osaka.json`.
+- **25 Nov 2026, Hakone** (round 4: Japan, Korea, New Zealand): +3 (Hakone Karakuri Museum, Hakone Craft House, Hakone Visitor Center). Proof in `docs/library-proof/jp-hakone.json`.
+- **25 Nov 2026, Hiroshima** (round 4: Japan, Korea, New Zealand): +6 (Pure Heart Kids Land Alpark, Little Planet LECT, kiond, Chikyu no Niwa Fuchu, JMSDF Kure Museum, Yamato Museum). Proof in `docs/library-proof/jp-hiroshima.json`.
+- **25 Nov 2026, Yokohama** (round 4: Japan, Korea, New Zealand): +7 indoor play parks (Fantasy Kids Resort, Kinder Platz, Chikyu no Niwa, The Kids, BørneLund, Kids Land US, Beruberu Park). Proof in `docs/library-proof/jp-yokohama.json`.
+- **25 Nov 2026, Nikko** (round 4: Japan, Korea, New Zealand): +4 (Hanaichimonme, Nikko; Yuai Hiroba, Asolabo and Rakuga Kids, Utsunomiya). Proof in `docs/library-proof/jp-nikko.json`.
+- **25 Nov 2026, Kumamoto** (round 4: Japan, Korea, New Zealand): +5 (Kids Land US Uto, athletic park Peace, Genki Challenge Hall at Aso Farm Land, Yukids Hamasen, Kumamoto Children's Culture Hall). Proof in `docs/library-proof/jp-kumamoto.json`.
+- **25 Nov 2026, Nagano and Matsumoto** (round 4: Japan, Korea, New Zealand): +2 (Jōyama Zoo, HakuBounce). Proof in `docs/library-proof/jp-nagano.json`.
+- **25 Nov 2026, Tohoku** (round 4: Japan, Korea, New Zealand): +5 (Nobikko Jumbo, Pure Heart Kids Land Natori, Tomizawa Site Museum, Smile Glico Park, Yamagata Cherry Land). Proof in `docs/library-proof/jp-tohoku.json`.
+- **25 Nov 2026, Takayama** (round 4: Japan, Korea, New Zealand): +2 (the squirrel forest, Showa Jidō Park). Proof in `docs/library-proof/jp-takayama.json`.
+- **25 Nov 2026, Kanazawa** (round 4: Japan, Korea, New Zealand): +7 (Ishikawa Children's Activity Center; play halls in Tsubata, Kahoku, Hakusan, Nomi and Nonoichi). Proof in `docs/library-proof/jp-kanazawa.json`.
+- **25 Nov 2026, Okinawa** (round 4: Japan, Korea, New Zealand): +8 (indoor play in Naha, Ginowan, Uruma, Urasoe and Rycom; Yanbaru Forest Toy Museum). Proof in `docs/library-proof/jp-okinawa.json`.
+- **25 Nov 2026, Hokkaido** (round 4: Japan, Korea, New Zealand): +4 (The Kids Fukuzumi, PLAYLOT at ES CON FIELD, Kids Land US Atsubetsu, Honoka KIDS LAND). Proof in `docs/library-proof/jp-hokkaido.json`.
+- **25 Nov 2026, Fukuoka** (round 4: Japan, Korea, New Zealand): +2 (Skids Garden Canal City, Ninja Park Momochi). Proof in `docs/library-proof/jp-fukuoka.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
 - **24 Nov 2026, Plitvice Lakes** (docs/library-briefs batch-101, round 3): +2 (Maksimir Park, Zagreb; Kotlac, Slunj). Proof in `docs/library-proof/hr-plitvice.json`.

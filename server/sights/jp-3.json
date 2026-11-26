@@ -409,6 +409,121 @@
           },
           "q": "Children's Forest Wanpaku Land, 4377-1 Kuno, Odawara",
           "ok": "2026-11"
+        },
+        {
+          "local": "箱根からくり美術館",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ 800 เยน เด็ก 500 เยน",
+            "en": "≈ adults ¥800, children ¥500"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "name": {
+            "th": "พิพิธภัณฑ์กล่องกลไกฮาโกเนะ",
+            "en": "Hakone Karakuri Museum (puzzle boxes)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ฮาโกเนะมาจิ ข้างด่านฮาโกเนะ",
+            "en": "Hakone-machi, beside the Hakone checkpoint"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์คาราคุริ กล่องกลไกแบบญี่ปุ่นดั้งเดิม",
+            "en": "A museum of karakuri, Japan's traditional trick puzzle boxes"
+          },
+          "why": {
+            "th": "เด็กชอบมุมไขกลไกเปิดกล่อง",
+            "en": "Children love the corner where you solve the tricks to open a puzzle box"
+          },
+          "q": "Hakone Karakuri Museum, Hakone 17, Hakone",
+          "ok": "2026-11"
+        },
+        {
+          "local": "箱根クラフトハウス",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 1,100–4,400 เยน ตามกิจกรรม",
+            "en": "≈ ¥1,100–4,400 by craft"
+          },
+          "book": "rec",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "name": {
+            "th": "ฮาโกเนะคราฟต์เฮาส์",
+            "en": "Hakone Craft House"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ในสวนโกระ โกระ",
+            "en": "Inside Gōra Park, Gōra"
+          },
+          "what": {
+            "th": "โรงทำงานฝีมือ ลองทำได้กว่า 20 อย่าง เป่าแก้ว ปั้นดินเผา ลูกปัดแก้ว พ่นทราย",
+            "en": "A workshop with over 20 hands-on crafts: glass blowing, pottery, glass beads, sandblasting"
+          },
+          "why": {
+            "th": "เด็กได้ทำของชิ้นเองกลับบ้าน",
+            "en": "Children make something of their own to take home"
+          },
+          "tip": {
+            "th": "ต้องเสียค่าเข้าสวนโกระ",
+            "en": "Gōra Park admission applies"
+          },
+          "q": "Hakone Craft House, Gora Park, Hakone",
+          "ok": "2026-11"
+        },
+        {
+          "local": "箱根ビジターセンター",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "name": {
+            "th": "ศูนย์บริการนักท่องเที่ยวฮาโกเนะ",
+            "en": "Hakone Visitor Center"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "โมโตฮาโกเนะ ริมทะเลสาบอาชิ",
+            "en": "Motohakone 164, by Lake Ashi"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้ธรรมชาติของฮาโกเนะ เข้าฟรี",
+            "en": "A free nature centre about Hakone's land and wildlife"
+          },
+          "why": {
+            "th": "มีแบบจำลองภูมิประเทศฮาโกเนะทั้งหมดที่เด็กชอบ",
+            "en": "A big relief model of the whole of Hakone that children enjoy"
+          },
+          "q": "Hakone Visitor Center, Motohakone 164, Hakone",
+          "ok": "2026-11"
         }
       ]
     },
@@ -667,6 +782,228 @@
             "en": "Free indoor play with a baby room"
           },
           "q": "岡山市北ふれあい児童館, 谷万成, 岡山市北区",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド アルパーク広島",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 1,200 เยน ทั้งวัน วันธรรมดา (เด็กคนแรก) 0–1 ขวบฟรี",
+            "en": "≈ ¥1,200 a day on weekdays (first child); ages 0–1 free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ อัลพาร์กฮิโรชิมะ",
+            "en": "Pure Heart Kids Land, Alpark Hiroshima"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 4 อัลพาร์กอีสต์ คุซัตสึชินมาจิ นิชิคุ",
+            "en": "Alpark East 4F, Kusatsu-shinmachi, Nishi-ku"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม เครื่องเล่นใหญ่ บ่อบอล บ่อทราย และมุมเล่นบทบาทสมมติ",
+            "en": "An indoor play park with big play equipment, a ball pool, a sandpit and pretend play"
+          },
+          "why": {
+            "th": "ที่ให้ทั้งบ้านเล่นด้วยกันในร่ม เด็ก 0–1 ขวบเข้าฟรี",
+            "en": "A place for the family to play together indoors; babies aged 0 and 1 go free"
+          },
+          "q": "ピュアハートキッズランド アルパーク広島, Kusatsu-shinmachi, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット LECT広島",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 500–700 เยน 30 นาที (เด็ก วันธรรมดา)",
+            "en": "≈ ¥500–700 for 30 min (children, weekdays)"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "ลิตเติลแพลนเน็ต เล็กต์ฮิโรชิมะ",
+            "en": "Little Planet, LECT Hiroshima"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ห้างเล็กต์ โองิ นิชิคุ",
+            "en": "LECT 2F, Ōgi, Nishi-ku"
+          },
+          "what": {
+            "th": "ที่เล่นแบบดิจิทัล บ่อบอลดิจิทัล เล่นทราย AR และรูปวาดที่ขยับได้",
+            "en": "A digital play space: a digital ball pool, AR sand play and drawings that move"
+          },
+          "why": {
+            "th": "เล่นและค้นพบ มีที่ช้อปปิ้งและร้านอาหารในตึกเดียวกัน",
+            "en": "Play and discover, with shopping and meals in the same building"
+          },
+          "q": "リトルプラネット LECT広島, Ogi, Nishi-ku, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "kiondひろしま",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 600 เยน เด็ก 30 นาทีแรก",
+            "en": "≈ ¥600 for children, first 30 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "คิอนด์ฮิโรชิมะ ที่เล่นไม้",
+            "en": "kiond Hiroshima wooden playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 ฮิโรปะ สวนสเตเดียมฮิโรชิมะ นากะคุ",
+            "en": "HiroPa 1F, Hiroshima Stadium Park, Motomachi, Naka-ku"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทำจากไม้ มีเครื่องปีนไม้",
+            "en": "A wooden indoor play space with wooden climbing frames"
+          },
+          "why": {
+            "th": "เครื่องเล่นไม้อบอุ่นในร่ม ใกล้สวนและร้านอาหาร",
+            "en": "Warm wooden play equipment indoors, with parks and food close by"
+          },
+          "q": "kiondひろしま, Motomachi, Naka-ku, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ちきゅうのにわ イオンモール広島府中",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 1,000 เยน เด็ก ชั่วโมงแรก วันธรรมดา",
+            "en": "≈ ¥1,000 for children, first hour on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "name": {
+            "th": "จิคิวโนะนิวะ อิออนมอลล์ฮิโรชิมะฟุจู",
+            "en": "Chikyu no Niwa, AEON Mall Hiroshima Fuchu"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 อิออนมอลล์ ฟุจูโจ อากิกุน",
+            "en": "AEON Mall 3F, Fuchū-chō, Aki-gun"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีเครื่องเล่นใหญ่ บ่อทราย และโซนเด็ก 0–2 ขวบ",
+            "en": "An indoor play space with big equipment, a sandpit and a baby area for ages 0–2"
+          },
+          "why": {
+            "th": "เล่นในร่มระหว่างช้อปปิ้ง ใกล้ลานจอดรถ",
+            "en": "Play indoors between shopping, close to the car park"
+          },
+          "q": "ちきゅうのにわ イオンモール広島府中, Fuchu, Aki-gun, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "海上自衛隊呉史料館（てつのくじら館）",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newt.net/jpn/hiroshima/mag-438797335027",
+          "name": {
+            "th": "พิพิธภัณฑ์กองกำลังป้องกันตนเองทางทะเล คุเระ",
+            "en": "JMSDF Kure Museum (\"Iron Whale\", Kure)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ทาการะมาจิ คุเระ",
+            "en": "Takaramachi, Kure"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีเรือดำน้ำจริงตั้งอยู่ เข้าไปข้างในได้",
+            "en": "A museum where a real submarine stands outside and you can go inside it"
+          },
+          "why": {
+            "th": "ที่เดียวในญี่ปุ่นที่ได้ดูเรือดำน้ำจริงใกล้ๆ",
+            "en": "The only place in Japan to see a real submarine up close"
+          },
+          "q": "JMSDF Kure Museum, Takaramachi, Kure",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大和ミュージアム",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newt.net/jpn/hiroshima/mag-438797335027",
+          "name": {
+            "th": "พิพิธภัณฑ์ยามาโตะ คุเระ",
+            "en": "Yamato Museum (Kure Maritime Museum)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ทาการะมาจิ คุเระ",
+            "en": "Takaramachi 5-20, Kure"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์และวิทยาศาสตร์ทางทะเลของคุเระ มีเรือรบยามาโตะจำลองขนาด 1 ใน 10",
+            "en": "Kure's museum of maritime history and science, with a one-tenth model of the battleship Yamato"
+          },
+          "why": {
+            "th": "เด็กได้ดูเรือยามาโตะจำลองลำใหญ่",
+            "en": "Children see the giant one-tenth model of the Yamato"
+          },
+          "q": "Yamato Museum, 5-20 Takaramachi, Kure",
           "ok": "2026-11"
         }
       ]
@@ -1365,6 +1702,281 @@
           },
           "q": "こどもっちパーク かなざわ, イオンタウン金沢示野",
           "ok": "2026-11"
+        },
+        {
+          "local": "いしかわ子ども交流センター",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เข้าฟรี (ท้องฟ้าจำลองเสียเงินเพิ่ม)",
+            "en": "Free (the planetarium is extra)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "ศูนย์กิจกรรมเด็กอิชิกาวะ",
+            "en": "Ishikawa Children's Activity Center"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โฮชิมะมาจิ คานาซาวะ",
+            "en": "Hōshima-machi, Kanazawa"
+          },
+          "what": {
+            "th": "ศูนย์ลงมือทำ มีท้องฟ้าจำลอง รถไฟจำลอง และตัวอย่างแมลง",
+            "en": "A hands-on centre with a planetarium, a model-railway diorama and insect specimens"
+          },
+          "why": {
+            "th": "เข้าฟรี มีห้องเด็กและพื้นที่ให้ขยับได้ปลอดภัย",
+            "en": "Free entry, a kids' room and space to move about safely"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์และช่วงปีใหม่",
+            "en": "Closed on Mondays and over New Year"
+          },
+          "q": "Ishikawa Children Activity Center, Hoshimamachi, Kanazawa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "もりのひみつきち",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 400 เยน (ต่ำกว่า 1 ขวบฟรี) อายุ 13 ขึ้นไป 300 เยน",
+            "en": "Children ¥400 (under 1 free); age 13 and up ¥300"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "โมริโนะฮิมิตสึคิจิ ที่เล่นไม้ สึบาตะ",
+            "en": "Mori no Himitsukichi wooden play hall (Tsubata)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โทริโกเอะ สึบาตะ",
+            "en": "Torigoe, Tsubata"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทำจากไม้อิชิกาวะ มีสไลเดอร์ อุโมงค์ และผนังปีน",
+            "en": "An indoor play hall built from Ishikawa timber: slides, tunnels and a climbing wall"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นได้แม้ฝนหรือหิมะตก มีโซนสำหรับหลายวัย",
+            "en": "Children run about in rain or snow; an area for mixed ages"
+          },
+          "tip": {
+            "th": "ปิดวันอังคารที่สามของเดือน",
+            "en": "Closed on the third Tuesday of the month"
+          },
+          "q": "もりのひみつきち, 鳥越, 津幡町",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびの森 かほっくる",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 400 เยน (ต่ำกว่า 1 ขวบฟรี) อายุ 13 ขึ้นไป 300 เยน",
+            "en": "Children ¥400 (under 1 free); age 13 and up ¥300"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "อาโซบิโนะโมริ คาโฮคคุรุ คาโฮกุ",
+            "en": "Asobi no Mori Kahokkuru (Kahoku)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทานิ คาโฮกุ",
+            "en": "Tani, Kahoku"
+          },
+          "what": {
+            "th": "ที่เล่นกีฬาในร่ม มีเครื่องปีน \"ต้นไม้โลก\" สูง 10 เมตร และบ่อบอล",
+            "en": "An indoor sports-play hall with a 10 m \"World Tree\" climbing frame and a ball pool"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ มีคาเฟ่ข้างๆ ให้ผู้ใหญ่นั่ง",
+            "en": "Rain or shine, with a café next door for grown-ups"
+          },
+          "tip": {
+            "th": "ปิดช่วงปีใหม่และวันซ่อมบำรุงรายเดือน",
+            "en": "Closed over New Year and on monthly maintenance days"
+          },
+          "q": "あそびの森 かほっくる, かほく市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ちきゅうのにわ 白山",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ชั่วโมงแรก วันธรรมดา ผู้ใหญ่ 600 เด็ก 1,200 เยน วันหยุด 700 / 1,400 เยน",
+            "en": "First hour: weekdays adults ¥600, children ¥1,200; weekends ¥700 / ¥1,400"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "จิคิวโนะนิวะ อิออนมอลล์ฮาคุซัง",
+            "en": "Chikyu no Niwa, AEON Mall Hakusan"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 อิออนมอลล์ โยโคเอะมาจิ ฮาคุซัง",
+            "en": "AEON Mall 1F, Yokoe-machi, Hakusan"
+          },
+          "what": {
+            "th": "ว่ากันว่าเป็นที่เล่นเด็กในร่มใหญ่ที่สุดในโฮกุริกุ มี 8 โซนธรรมชาติ",
+            "en": "Said to be Hokuriku's largest indoor kids' play area, with eight nature zones"
+          },
+          "why": {
+            "th": "มีโซนภูเขาน้ำแข็งพร้อมปืนใหญ่ลูกบอลและโซนทราย ตั้งแต่เด็กอ่อนถึงประถม",
+            "en": "An iceberg zone with a ball cannon and a sand area, from babies to primary school"
+          },
+          "q": "ちきゅうのにわ白山, イオンモール白山",
+          "ok": "2026-11"
+        },
+        {
+          "local": "子どもミュージアム のみっけ",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กโนมิกเกะ โนมิ",
+            "en": "Nomikke children's museum (Nomi)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ในพิพิธภัณฑ์โนมิฟุรุซาโตะ เทไรมาจิ โนมิ",
+            "en": "Nomi Furusato Museum, Terai-machi, Nomi"
+          },
+          "what": {
+            "th": "โซนเด็ก มีเครื่องเล่น วิดีโอ และแบบจำลองธรรมชาติในท้องถิ่น",
+            "en": "A children's area with play equipment, films and a diorama of local nature"
+          },
+          "why": {
+            "th": "สำหรับ 0–12 ขวบ มีมุมสำหรับพ่อแม่ลูก",
+            "en": "For ages 0 to 12, with a parent-and-child space"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์และวันอังคารที่สาม",
+            "en": "Closed on Mondays and the third Tuesday"
+          },
+          "q": "能美ふるさとミュージアム, 寺井町, 能美市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ 石川イオン野々市南店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "แพ็กครอบครัวทั้งวัน 1,500 เยน วันธรรมดา",
+            "en": "Family day pack ¥1,500 on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "เดอะคิดส์ อิออนโนโนอิจิมินามิ",
+            "en": "The Kids, AEON Nonoichi-minami"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 อิออน คันบายาชิ โนโนอิจิ",
+            "en": "AEON 1F, Kanbayashi, Nonoichi"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีเครื่องปีนใหญ่ บ่อบอล แทรมโพลีน และมุมบทบาทสมมติ",
+            "en": "An indoor play park with a big climbing frame, a ball pool, trampolines and pretend play"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ มีมุมเด็กอ่อน",
+            "en": "Rain or shine, with a baby corner"
+          },
+          "q": "ザキッズ 石川イオン野々市南店, 野々市市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズパーク 津幡店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5423/",
+          "name": {
+            "th": "คิดส์พาร์ก สึบาตะ",
+            "en": "Kids Park Tsubata"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 อัลพลาซาสึบาตะ (ในอามิวเซียม) สึบาตะ",
+            "en": "Al Plaza Tsubata 2F (inside Amusium), Tsubata"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อบอล เครื่องปีนเด้ง ไซเบอร์วีล และบล็อกใหญ่",
+            "en": "An indoor play park: a ball pool, a bouncy climbing frame, a cyber wheel and big blocks"
+          },
+          "why": {
+            "th": "มีที่ให้นมและเปลี่ยนผ้าอ้อม ยืมรถเข็นได้",
+            "en": "Feeding and changing spaces and a pushchair to borrow"
+          },
+          "q": "アミュージアム津幡店, アル・プラザ津幡, 津幡町",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1972,6 +2584,195 @@
             "en": "First visit: ¥500 registration fee"
           },
           "q": "ニンジャ☆パーク菊陽, 菊陽町",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 熊本宇土店",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ เด็กชั่วโมงละ 700 เยน วันธรรมดา",
+            "en": "≈ ¥700 an hour for children on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "name": {
+            "th": "คิดส์แลนด์ US คุมาโมโตะอุโตะ",
+            "en": "Kids Land US, Kumamoto Uto"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 อุโตะซิตีมอลล์ อุโตะ",
+            "en": "Uto City Mall 2F, Zendōji-machi, Uto"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม ปรับปรุงใหม่กุมภาพันธ์ 2025",
+            "en": "An indoor play park, renewed in February 2025"
+          },
+          "why": {
+            "th": "มีจังเกิลยิมยักษ์ ไซเบอร์วีล บ่อบอล และแทรมโพลีน",
+            "en": "A giant climbing frame, a cyber wheel, a ball pool and trampolines"
+          },
+          "q": "キッズランドUS 熊本宇土店, 宇土シティモール",
+          "ok": "2026-11"
+        },
+        {
+          "local": "アスレチック施設ぴーす",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 550 เยน อายุ 3–6 ขวบ วันธรรมดา",
+            "en": "≈ ¥550 for ages 3–6 on weekdays"
+          },
+          "book": "req",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "name": {
+            "th": "สนามอะธเลติกพีซ อุเอกิ",
+            "en": "Athletic park \"Peace\" (Ueki)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุเอกิมาจิ คิตะคุ",
+            "en": "Ueki-machi, Kita-ku"
+          },
+          "what": {
+            "th": "ที่เล่นกีฬาในร่ม เปิดธันวาคม 2025 มีแทรมโพลีน ปีนผา สแล็กไลน์ และพาร์กัวร์",
+            "en": "An indoor sports-play hall opened in December 2025: trampolines, climbing, slackline, parkour"
+          },
+          "why": {
+            "th": "มีโซนเบาะนุ่มสำหรับ 0–2 ขวบด้วย",
+            "en": "A soft-mat zone for ages 0–2 too"
+          },
+          "tip": {
+            "th": "ต้องจองล่วงหน้า",
+            "en": "Booking required"
+          },
+          "q": "アスレチック施設ぴーす, 植木町, 熊本市北区",
+          "ok": "2026-11"
+        },
+        {
+          "local": "元気チャレンジ館",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 1,100 เยน เด็กประถม",
+            "en": "≈ ¥1,100 for primary-school children"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "name": {
+            "th": "เก็งกิชาเลนจ์ อาโซะฟาร์มแลนด์",
+            "en": "Genki Challenge Hall, Aso Farm Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาโซะฟาร์มแลนด์ คาวาโย มินามิอาโซะ",
+            "en": "Aso Farm Land, Kawayō, Minamiaso"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่ม เกมขยับร่างกาย เล่นได้ทุกสภาพอากาศ",
+            "en": "An all-weather indoor hall of active games"
+          },
+          "why": {
+            "th": "มีเขาวงกตใหญ่ เกมฝึกสมอง และเกมวัดพลัง ในตึกเดียวกันมีที่เล่นเด็กเล็ก",
+            "en": "A big maze, brain games and fitness games; a toddlers' play hall in the same building"
+          },
+          "q": "元気チャレンジ館, 阿蘇ファームランド, 南阿蘇村",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Yukids ゆめタウンはません店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 700 เยน 60 นาที",
+            "en": "≈ ¥700 for 60 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79424",
+          "name": {
+            "th": "ยูคิดส์ ยูเมะทาวน์ฮามาเซ็น",
+            "en": "Yukids, Youme Town Hamasen"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ยูเมะทาวน์ฮามาเซ็น ไทโนชิมะ มินามิคุ",
+            "en": "Youme Town Hamasen 3F, Tainoshima, Minami-ku"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม สำหรับ 0–7 ขวบ",
+            "en": "An indoor amusement park for ages 0 to 7"
+          },
+          "why": {
+            "th": "มีสไลเดอร์เรืองแสง มุมลูกโป่ง และมุมเด็กอ่อน 0–2 ขวบ",
+            "en": "A glowing light slide, a balloon corner and a baby corner for ages 0–2"
+          },
+          "q": "Yukids ゆめタウンはません, 田井島, 熊本市南区",
+          "ok": "2026-11"
+        },
+        {
+          "local": "熊本市こども文化会館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79424",
+          "name": {
+            "th": "หอวัฒนธรรมเด็กคุมาโมโตะ",
+            "en": "Kumamoto Children's Culture Hall"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชินมาจิ จูโอคุ",
+            "en": "Shinmachi, Chūō-ku"
+          },
+          "what": {
+            "th": "ศูนย์เด็กขนาดใหญ่ เข้าฟรี เล่นได้ทั้งวัน ตั้งแต่เด็กอ่อนถึงประถม",
+            "en": "A big free children's centre to play in all day, from babies to primary school"
+          },
+          "why": {
+            "th": "มีบ่อบอลและหนังสือภาพ งานประดิษฐ์ชั้นบน และยูนิไซเคิลกับไม้โถกเถกบนดาดฟ้า",
+            "en": "A ball pool and picture books, crafts upstairs, and unicycles and stilts on the roof"
+          },
+          "q": "熊本市こども文化会館, 新町, 熊本市中央区",
           "ok": "2026-11"
         }
       ]
@@ -2588,6 +3389,84 @@
             "en": "9:30–18:00, closed some days"
           },
           "q": "OYAKI FARM BY IROHADO, 篠ノ井杵淵7-1, 長野市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "長野市城山動物園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6257/",
+          "name": {
+            "th": "สวนสัตว์โจยามะ นากาโนะ",
+            "en": "Jōyama Zoo (Nagano)"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สวนชิโรยามะ อุเอมัตสึ นากาโนะ",
+            "en": "Shiroyama Park, Uematsu, Nagano city"
+          },
+          "what": {
+            "th": "สวนสัตว์เล็กๆ เป็นกันเอง ในสวนซากุระ มีสิงโตทะเล เพนกวิน และกระรอกแดง",
+            "en": "A small, friendly zoo in the cherry-blossom park: sea lions, penguins and red squirrels"
+          },
+          "why": {
+            "th": "มีลานสัมผัสสัตว์ กระต่าย หนูตะเภา และม้าแคระ",
+            "en": "A petting square with rabbits, guinea pigs and miniature horses"
+          },
+          "tip": {
+            "th": "ธันวาคม–กุมภาพันธ์ ปิดวันจันทร์",
+            "en": "Closed on Mondays from December to February"
+          },
+          "q": "Joyama Zoo, Uematsu, Nagano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ハクバウンス",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ชั่วโมงละ 1,800 เยน",
+            "en": "¥1,800 an hour"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/83269",
+          "name": {
+            "th": "ฮาคุบาวน์ซ์ ฮากูบะ",
+            "en": "HakuBounce (Hakuba)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คามิชิโระ หมู่บ้านฮากูบะ",
+            "en": "Kamishiro, Hakuba village"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนในร่มที่ใหญ่ที่สุดของนากาโนะ แทรมโพลีนกว่า 20 อัน และบ่อโฟม",
+            "en": "Nagano's biggest indoor trampoline park: over 20 trampolines and a foam pit"
+          },
+          "why": {
+            "th": "มีมุมเด็กฟรีสำหรับ 3 ขวบลงมา เล่นในร่มได้เมื่ออากาศบนเขาไม่ดี",
+            "en": "A free kids' space for ages 3 and under; indoors when the mountain weather is bad"
+          },
+          "q": "HakuBounce, Kamishiro, Hakuba",
           "ok": "2026-11"
         }
       ]
@@ -3643,6 +4522,166 @@
           },
           "q": "日光自然博物館, 日光市中宮祠2480-1",
           "ok": "2026-11"
+        },
+        {
+          "local": "日光花いちもんめ",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "name": {
+            "th": "นิกโกฮานะอิจิมนเมะ เก็บสตรอว์เบอร์รี",
+            "en": "Nikko Hanaichimonme (strawberries and pets)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "โคซาโงเอะ นิกโก",
+            "en": "Kosagoe, Nikko"
+          },
+          "what": {
+            "th": "เก็บสตรอว์เบอร์รีในโรงเรือนกินได้ไม่อั้น มีมุมสัตว์เลี้ยงและสวนบีโกเนีย",
+            "en": "All-you-can-eat strawberry picking in greenhouses, a petting zoo and a begonia garden"
+          },
+          "why": {
+            "th": "เด็กได้ให้อาหารกระต่าย หนูแฮมสเตอร์ และหนูตะเภา",
+            "en": "Children feed rabbits, hamsters and guinea pigs"
+          },
+          "tip": {
+            "th": "เก็บสตรอว์เบอร์รีได้แม้วันฝนหรือหิมะตก",
+            "en": "Strawberry picking works on a rainy or snowy day"
+          },
+          "q": "Nikko hanaichimonme, Kosagoe, Nikko",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ゆうあいひろば",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "name": {
+            "th": "ยูไอฮิโรบะ ที่เล่นเด็ก อุตสึโนมิยะ",
+            "en": "Yuai Hiroba children's play area (Utsunomiya)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 6 โอโมเตะซันโดสแควร์ บาบะโดริ อุตสึโนมิยะ",
+            "en": "Omotesando Square 6F, Babadōri, Utsunomiya"
+          },
+          "what": {
+            "th": "ชั้นเล่นในร่ม มีทางอะธเลติก 25 เมตร ผนังปีน และแทรมโพลีนลม",
+            "en": "An indoor play floor with a 25 m athletic course, a climbing wall and air trampolines"
+          },
+          "why": {
+            "th": "วิ่งเล่นได้เต็มที่วันฝนตกหรือร้อน",
+            "en": "Room to run on a rainy or hot day"
+          },
+          "tip": {
+            "th": "ที่จอดรถเสียเงินด้านเหนือของตึก",
+            "en": "Paid parking on the building's north side"
+          },
+          "q": "Yuai Hiroba, Babadori, Utsunomiya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "遊LABO（あそらぼ）",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "name": {
+            "th": "อาโซลาโบะ อุตสึโนมิยะ",
+            "en": "Asolabo (Utsunomiya)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮิงาชิยานาเซะ อุตสึโนมิยะ",
+            "en": "Higashiyanase, Utsunomiya"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีบ่อบอล สไลเดอร์ใหญ่ และมุมเล่นบทบาทสมมติ",
+            "en": "An indoor play space with a ball pool, a big slide and pretend play"
+          },
+          "why": {
+            "th": "มีโซนเด็กอ่อนแยกสำหรับเด็กเล็กมาก",
+            "en": "A separate baby zone for the littlest"
+          },
+          "tip": {
+            "th": "ไม่จำกัดเวลา ออกไปแล้วกลับเข้ามาได้",
+            "en": "No time limit, and you may go out and back in"
+          },
+          "q": "遊LABO, 1-6-1 Higashiyanaze, Utsunomiya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "らくがキッズ 宇都宮ベルモール店",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "name": {
+            "th": "ราคุงะคิดส์ เบลมอลล์ อุตสึโนมิยะ",
+            "en": "Rakuga Kids, Belmall Utsunomiya"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 เบลมอลล์ โยโตะ อุตสึโนมิยะ",
+            "en": "Belmall 2F, Yōtō, Utsunomiya"
+          },
+          "what": {
+            "th": "ที่เล่นที่เด็กวาดตัวละครแล้วเลี้ยงให้โตด้วยการเล่น",
+            "en": "A play space where children draw a character and grow it by playing"
+          },
+          "why": {
+            "th": "มีมุมของเล่นเด็กเล็กและห้องเด็กอ่อน พี่น้องต่างวัยเล่นด้วยกันได้",
+            "en": "A toy corner for little ones and a baby room, so siblings of different ages play together"
+          },
+          "q": "らくがキッズ 宇都宮ベルモール店, Yoto, Utsunomiya",
+          "ok": "2026-11"
         }
       ]
     },
@@ -3865,6 +4904,80 @@
           "q": "飛騨大鍾乳洞, Nyukawa-cho, Takayama",
           "ok": "2026-11",
           "src": "https://www.kankou-gifu.jp/spot/detail_1229.html"
+        },
+        {
+          "local": "Squirrel Forest Hidayama Wild Grass Nature Garden",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ ผู้ใหญ่ 400–600 เยน เด็กถูกกว่า",
+            "en": "≈ ¥400–600 for adults; children less"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/takayama-with-kids-family-guide",
+          "name": {
+            "th": "ป่ากระรอกฮิดะทากายามะ",
+            "en": "Hida-Takayama squirrel forest"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "มัตสึคุระมาจิ ทากายามะ",
+            "en": "Matsukura-machi, Takayama"
+          },
+          "what": {
+            "th": "สวมถุงมือพิเศษ เข้าไปในกรงแล้วป้อนอาหารกระรอกด้วยมือ",
+            "en": "Put on special gloves, step into the enclosure and hand-feed the squirrels"
+          },
+          "why": {
+            "th": "ครอบครัวที่มีลูกต่ำกว่า 8 ขวบชอบมาก",
+            "en": "A favourite with families of children under 8"
+          },
+          "q": "Squirrel Forest Hidayama, Matsukuramachi, Takayama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "昭和児童公園",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://japanactivity.com/takayama-with-kids-family-guide",
+          "name": {
+            "th": "สวนเด็กโชวะ (ป๊อปโปะพาร์ก)",
+            "en": "Showa Jidō Park (\"Poppo Park\")"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โชวะมาจิ เดิน 7 นาทีจากสถานีทากายามะ",
+            "en": "Shōwa-machi, 7 min walk from Takayama station"
+          },
+          "what": {
+            "th": "สวนเล็กๆ มีเครื่องเล่นและห้องน้ำสาธารณะ",
+            "en": "A small park with a play structure and a public toilet"
+          },
+          "why": {
+            "th": "ให้เด็กเล็กวิ่งเล่นพักใกล้สถานี",
+            "en": "A run-around break for younger children near the station"
+          },
+          "q": "昭和児童公園, 昭和町, 高山市",
+          "ok": "2026-11"
         }
       ]
     },
@@ -4409,6 +5522,203 @@
           },
           "q": "Kurunto, Motomachi, Nagai, Yamagata",
           "ok": "2026-11"
+        },
+        {
+          "local": "のびっこジャンボ 仙台泉大沢店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 900 เยน วันธรรมดา 1,200 เยน วันหยุด",
+            "en": "Children ¥900 weekdays, ¥1,200 weekends"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6205/",
+          "name": {
+            "th": "โนบิกโกะจัมโบ้ เซ็นไดอิซุมิ",
+            "en": "Nobikko Jumbo, Sendai Izumi Ōsawa"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 อิออนทาวน์ โอซาวะ อิซุมิคุ เซ็นได",
+            "en": "AEON Town 2F, Ōsawa, Izumi-ku, Sendai"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม 0–12 ขวบ",
+            "en": "An indoor playground for ages 0 to 12"
+          },
+          "why": {
+            "th": "มีบ่อบอล บล็อกใหญ่ แทรมโพลีน และมุมเล่นบทบาทสมมติ",
+            "en": "A ball pool, big blocks, trampolines and pretend play"
+          },
+          "q": "のびっこジャンボ仙台泉大沢, Izumi-ku, Sendai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド イオンモール名取",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "วันธรรมดา ทั้งวัน 1,200 เยน",
+            "en": "Weekdays, all day ¥1,200"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6205/",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ อิออนมอลล์นาโทริ",
+            "en": "Pure Heart Kids Land, AEON Mall Natori"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 อิออนมอลล์ นาโทริ",
+            "en": "AEON Mall 3F, Natori"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มขนาดใหญ่ มีโดมเด้ง บ่อบอล และบ่อทรายในร่ม",
+            "en": "A big indoor playground: a bouncy dome, a ball pool and an indoor sandpit"
+          },
+          "why": {
+            "th": "เหมาะวันฝนตก มีมุมเล่นบทบาทสมมติ",
+            "en": "Good on a rainy day, with pretend-play corners"
+          },
+          "q": "Pure Heart Kids Land Aeon Mall Natori",
+          "ok": "2026-11"
+        },
+        {
+          "local": "地底の森ミュージアム",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 460 เยน ประถม–มัธยมต้น 110 เยน",
+            "en": "Adults ¥460, primary and middle school ¥110"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6828/",
+          "name": {
+            "th": "พิพิธภัณฑ์แหล่งโบราณโทมิซาวะ เซ็นได",
+            "en": "Tomizawa Site Museum (Sendai)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "นางามาจิมินามิ ไทฮากุคุ เซ็นได",
+            "en": "Nagamachi-minami, Taihaku-ku, Sendai"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์บนแหล่งโบราณยุคหินเก่าที่เก็บไว้ใต้ดิน",
+            "en": "A museum over an Old Stone Age site preserved underground"
+          },
+          "why": {
+            "th": "มีป่ายุคน้ำแข็งกลางแจ้งให้สัมผัสภูมิทัศน์โบราณ",
+            "en": "An outdoor Ice Age forest to feel the ancient landscape"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ (วันหยุดราชการเปิด)",
+            "en": "Closed on Mondays (open on public holidays)"
+          },
+          "q": "Sendai City Tomizawa Site Museum, Nagamachi-minami, Sendai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "スマイルグリコパーク",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก (4 ขวบ–มัธยมต้น) 500 เยน",
+            "en": "Children (4 to middle school) ¥500"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6828/",
+          "name": {
+            "th": "สไมล์กูลิโกะพาร์ก เซ็นได",
+            "en": "Smile Glico Park (Sendai)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "สนามราคุเท็นโมบายพาร์กมิยางิ มิยางิโนะคุ เซ็นได",
+            "en": "Rakuten Mobile Park Miyagi, Miyagino-ku, Sendai"
+          },
+          "what": {
+            "th": "สวนสนุกเล็กข้างสนามเบสบอล มีชิงช้าสวรรค์สูง 36 เมตร",
+            "en": "A small amusement park beside the baseball stadium, with a 36 m Ferris wheel"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นเด็ก เปิดแม้วันไม่มีแข่ง",
+            "en": "Children's rides, open on days without a game too"
+          },
+          "tip": {
+            "th": "ปิดช่วงหน้าหนาว ปลายพฤศจิกายนถึงกลางมีนาคม",
+            "en": "Closed for winter from late November to mid-March"
+          },
+          "q": "Smile Glico Park, Miyagino, Sendai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "山形チェリーランド＆上山観光フルーツ園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://aumo.jp/articles/18297",
+          "name": {
+            "th": "ยามางาตะเชอร์รีแลนด์ สวนผลไม้คามิโนยามะ",
+            "en": "Yamagata Cherry Land (Kaminoyama fruit farm)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "มิคามิ คามิโนยามะ ยามางาตะ",
+            "en": "Mikami, Kaminoyama, Yamagata"
+          },
+          "what": {
+            "th": "สวนผลไม้ เก็บเชอร์รี พลัม องุ่น และแอปเปิลตามฤดู",
+            "en": "An orchard to pick cherries, plums, grapes and apples in season"
+          },
+          "why": {
+            "th": "ได้กินผลไม้สดตามฤดู",
+            "en": "Fresh fruit picked in season"
+          },
+          "tip": {
+            "th": "เก็บเชอร์รีต้นมิถุนายน–ปลายกรกฎาคม",
+            "en": "Cherry picking from early June to late July"
+          },
+          "q": "Yamagata cherry land, Mikami, Kaminoyama",
+          "ok": "2026-11"
         }
       ]
     },
@@ -4944,6 +6254,265 @@
             "en": "Grass and playground equipment by the sea"
           },
           "q": "鎌倉海浜公園, 由比ガ浜4-5-1, 鎌倉市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ファンタジーキッズリゾート港北",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "แฟนตาซีคิดส์รีสอร์ต โคโฮกุ",
+            "en": "Fantasy Kids Resort Kohoku"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ห้างโคนัน ใกล้สถานีเซ็นเตอร์มินามิ",
+            "en": "Kōnan home centre 3F, near Center-Minami station, Tsuzuki-ku"
+          },
+          "what": {
+            "th": "สวนเด็กในร่มขนาดใหญ่ ราว 5,000 ตร.ม.",
+            "en": "A big indoor kids' park, about 5,000 m²"
+          },
+          "why": {
+            "th": "มีโซนนุ่มใหญ่และจักรยานรูปสัตว์ สำหรับ 0–12 ขวบ",
+            "en": "Big soft play and animal bikes, for ages 0 to 12"
+          },
+          "q": "Fantasy Kids Resort Kohoku, Tsuzuki-ku, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キンダープラッツ トレッサ横浜店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "คินเดอร์พลัทซ์ เทรสซาโยโกฮามา",
+            "en": "Kinder Platz, Tressa Yokohama"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 ตึกใต้เทรสซาโยโกฮามา โคโฮกุคุ",
+            "en": "Tressa Yokohama south building 1F, Kōhoku-ku"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม ปรับปรุงใหม่เมษายน 2025",
+            "en": "An indoor play area renewed in April 2025"
+          },
+          "why": {
+            "th": "มีบ่อบอล เครื่องเล่นลม มุมบ้านตุ๊กตา และหนังสือภาพ",
+            "en": "A ball pool, air play equipment, a play-house corner and picture books"
+          },
+          "q": "Kinder Platz TRESSA Yokohama, Kohoku-ku, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ちきゅうのにわ 港北店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "จิคิวโนะนิวะ โคโฮกุ",
+            "en": "Chikyu no Niwa Kohoku"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 5 โมเสกมอลล์โคโฮกุ ข้างสถานีเซ็นเตอร์คิตะ",
+            "en": "Mosaic Mall Kohoku 5F, by Center-Kita station"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม ธีมโลกและธรรมชาติ",
+            "en": "An indoor playground themed on the earth and nature"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ภูเขาน้ำแข็งและภูเขาไฟลูกบอล",
+            "en": "An iceberg slide and a volcano full of balls"
+          },
+          "q": "ちきゅうのにわ 港北, モザイクモール港北, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ 横浜ノースポートモール店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "เดอะคิดส์ นอร์ทพอร์ตมอลล์",
+            "en": "The Kids, Northport Mall"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 5 นอร์ทพอร์ตมอลล์ ใกล้สถานีเซ็นเตอร์คิตะ",
+            "en": "Northport Mall 5F, near Center-Kita station"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีเครื่องปีนสองชั้น",
+            "en": "An indoor play park with a two-storey climbing frame"
+          },
+          "why": {
+            "th": "มีบ่อบอล สไลเดอร์ และม้าหมุน เด็กเล็กเล่นได้ด้วย",
+            "en": "A ball pool, slides and a merry-go-round; babies can play too"
+          },
+          "q": "ザキッズ 横浜ノースポートモール店, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ボーネルンド あそびのせかい",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "บอร์เนอลุนด์ อาโซบิโนะเซไก มาร์กอิส",
+            "en": "BørneLund Asobi no Sekai, MARK IS"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 มาร์กอิส มินาโตะมิไร",
+            "en": "MARK IS 3F, Minato Mirai"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสำหรับพ่อแม่ลูก เครื่องเล่นจากทั่วโลก",
+            "en": "A parent-and-child indoor play area with equipment from around the world"
+          },
+          "why": {
+            "th": "มีโซนเคลื่อนไหว เล่นได้หลายวัย",
+            "en": "An active zone and play for many ages"
+          },
+          "q": "Bornelund Asobi no Sekai MARK IS Minatomirai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 横浜希望が丘店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "คิดส์แลนด์ US โยโกฮามาคิโบงาโอกะ",
+            "en": "Kids Land US, Yokohama Kibogaoka"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ห้างเค-วัน คิโบงาโอกะ อาซาฮีคุ",
+            "en": "K-1 shopping centre 3F, Kibōgaoka, Asahi-ku"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม เล่นได้ทุกสภาพอากาศ",
+            "en": "An all-weather indoor amusement park"
+          },
+          "why": {
+            "th": "มีจังเกิลยิมยักษ์ บ่อบอล ม้าหมุน แทรมโพลีน และเขาวงกต ตั้งแต่ 0 ขวบถึงประถม",
+            "en": "A giant climbing frame, ball pool, merry-go-round, trampoline and maze, for ages 0 to primary school"
+          },
+          "q": "Kids Land US, Kibogaoka, Asahi-ku, Yokohama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "べるべるパーク横浜関内店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81911",
+          "name": {
+            "th": "เบรุเบรุพาร์ก โยโกฮามาคันไน",
+            "en": "Beruberu Park Yokohama Kannai"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ใกล้สถานีคันไน นากะคุ",
+            "en": "2F, near Kannai station, Naka-ku"
+          },
+          "what": {
+            "th": "สวนเด็กกับร้านอาหารในที่เดียว",
+            "en": "A kids' park and restaurant in one"
+          },
+          "why": {
+            "th": "มีบ่อบอลใหญ่ มุมบ้านตุ๊กตา และตัวต่อ ตั้งแต่ 0 ขวบ",
+            "en": "A big ball-pool set, a play-house corner and blocks, from age 0"
+          },
+          "q": "Beruberu Park Yokohama Kannai, Naka-ku, Yokohama",
           "ok": "2026-11"
         }
       ]

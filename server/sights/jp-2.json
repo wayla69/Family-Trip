@@ -563,6 +563,306 @@
           },
           "q": "のびっこジャンボ 南風原, イオン南風原店, 沖縄",
           "ok": "2026-11"
+        },
+        {
+          "local": "波の上わくわくキッズランド",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "name": {
+            "th": "นามิโนะอุเอะ วาคุวาคุคิดส์แลนด์",
+            "en": "Naminoue Wakuwaku Kids Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 คอสตาวิลเลจ สึจิ นาฮะ",
+            "en": "Costa Village España 2F, Tsuji, Naha"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อบอล สไลเดอร์ และเครื่องเล่นลม",
+            "en": "An indoor play park with a ball pool, slides and air play equipment"
+          },
+          "why": {
+            "th": "มีห้องให้นม ที่เปลี่ยนผ้าอ้อม และห้องน้ำเด็ก",
+            "en": "A nursing room, changing tables and a kids' toilet"
+          },
+          "q": "Naminoue Wakuwaku Kids Land, Tsuji, Naha",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ くもじ店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "name": {
+            "th": "เดอะคิดส์ พาเลตต์คุโมจิ",
+            "en": "The Kids, Palette Kumoji"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 7 พาเลตต์คุโมจิ นาฮะ",
+            "en": "Palette Kumoji 7F, Kumoji, Naha"
+          },
+          "what": {
+            "th": "สวนเด็ก มีเครื่องปีนยักษ์และแทรมโพลีน",
+            "en": "A kids' park with a huge climbing frame and trampolines"
+          },
+          "why": {
+            "th": "ตั้งแต่ 0 ขวบ นำอาหารเข้าได้ มีที่จอดรถเข็น",
+            "en": "From age 0; food may be brought in, and pram parking"
+          },
+          "q": "ザキッズくもじ店, パレットくもじ, 那覇市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ジョイプラネット",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "name": {
+            "th": "จอยแพลนเน็ต ซันเอกิโนวัน",
+            "en": "Joy Planet, San-A Ginowan Convention City"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างซันเอกิโนวันคอนเวนชันซิตี อุจิโดมาริ กิโนวัน",
+            "en": "San-A Ginowan Convention City, Uchidomari, Ginowan"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม ลูกบอลหลายหมื่นลูกและสไลเดอร์ใหญ่",
+            "en": "An indoor play park with tens of thousands of balls and a big slide"
+          },
+          "why": {
+            "th": "มีที่จอดรถ ร้านค้า และศูนย์อาหารชั้นเดียวกัน",
+            "en": "Parking, shops and a food court on the same floor"
+          },
+          "q": "ジョイプラネット, サンエー宜野湾コンベンションシティ, 宜野湾市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ジョイプラネット 石川シティ店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "name": {
+            "th": "จอยแพลนเน็ต ซันเออิชิกาวะ อุรุมะ",
+            "en": "Joy Planet, San-A Ishikawa City (Uruma)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 ซันเออิชิกาวะซิตี อุรุมะ",
+            "en": "San-A Ishikawa City 1F, Ishikawa, Uruma"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มในห้าง",
+            "en": "An indoor play park in a shopping centre"
+          },
+          "why": {
+            "th": "บ่อบอลใหญ่ ที่เด็กชอบที่สุด",
+            "en": "A big ball pool, the children's favourite"
+          },
+          "q": "ジョイプラネット 石川シティ店, うるま市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびパークPLUS サンエー浦添西海岸パルコシティ店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "name": {
+            "th": "อาโซบิพาร์กพลัส พาร์โกซิตี อุราโซเอะ",
+            "en": "Asobi Park PLUS, PARCO CITY Urasoe"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ซันเอพาร์โกซิตี อุราโซเอะ",
+            "en": "San-A PARCO CITY 3F, Irijima, Urasoe"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มของบันไดนัมโค",
+            "en": "An indoor play park run by Bandai Namco"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 6 เดือนเข้าฟรี",
+            "en": "Babies under six months go in free"
+          },
+          "q": "あそびパークPLUS サンエー浦添西海岸パルコシティ店, 浦添市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ちきゅうのにわ イオンモール沖縄ライカム",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82127",
+          "name": {
+            "th": "จิคิวโนะนิวะ อิออนมอลล์โอกินาวาไรคัม",
+            "en": "Chikyu no Niwa, AEON Mall Okinawa Rycom"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนมอลล์ไรคัม คิตะนาคางุซุกุ",
+            "en": "AEON Mall Rycom, Kitanakagusuku"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม ธีมธรรมชาติและโลก มี 9 โซน",
+            "en": "An indoor playground on nature and the earth, with nine themed zones"
+          },
+          "why": {
+            "th": "มีโซนเด็กต่ำกว่า 2 ขวบ ห้องให้นม และที่เปลี่ยนผ้าอ้อม",
+            "en": "A baby-only area for under-twos, a nursing room and changing space"
+          },
+          "q": "ちきゅうのにわイオンモール沖縄ライカム, 北中城村",
+          "ok": "2026-11"
+        },
+        {
+          "local": "やんばる森のおもちゃ美術館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5490/",
+          "name": {
+            "th": "พิพิธภัณฑ์ของเล่นป่ายันบารุ",
+            "en": "Yanbaru Forest Toy Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนป่าคุนิงามิ เฮ็นโตนะ คุนิงามิ",
+            "en": "Kunigami Forest Park, Hentona, Kunigami"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ลงมือเล่น ของเล่นไม้จากไม้โอกินาวา",
+            "en": "A hands-on museum of wooden toys made from Okinawan wood"
+          },
+          "why": {
+            "th": "เด็กได้จับและเล่นทุกอย่าง",
+            "en": "Children touch and play with everything"
+          },
+          "tip": {
+            "th": "ขับรถราว 50 นาทีจากทางด่วนเคียวดะ",
+            "en": "About 50 min by car from the Kyoda interchange"
+          },
+          "q": "The Yanbaru Forest Toy Museum, Hentona, Kunigami",
+          "ok": "2026-11"
+        },
+        {
+          "local": "スキッズガーデン ライカム店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5490/",
+          "name": {
+            "th": "สคิดส์การ์เดน ไรคัม",
+            "en": "Skids Garden, Rycom"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไรคัม คิตะนาคางุซุกุ",
+            "en": "Rycom, Kitanakagusuku"
+          },
+          "what": {
+            "th": "สวนเด็กที่มีพี่เลี้ยงนำเล่นเกม",
+            "en": "A kids' park where play leaders run the games"
+          },
+          "why": {
+            "th": "เด็ก 3 ขวบขึ้นไปเข้าเองได้เกือบทุกวัน",
+            "en": "Children 3 and up may go in on their own on most days"
+          },
+          "q": "スキッズガーデン ライカム店, 北中城村",
+          "ok": "2026-11"
         }
       ]
     },

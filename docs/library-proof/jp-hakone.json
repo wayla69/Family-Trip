@@ -1,72 +1,112 @@
 {
   "town": "jp-hakone",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 12 rows from Magical Trip (Dec 2025) and Hakone Navi, 7 passed library-check.cjs, 3 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Hakone Sushi",
-      "page_name": "Hakonesushi",
-      "src": "https://www.magical-trip.com/media/top-10-family-friendly-restaurants-in-hakone-for-2025-a-guide-to-dining-with-kids/",
-      "date": "2025-12",
-      "map": "Google Maps 'Hakone Sushi はこねずし', 450 reviews, newest '12 days ago'"
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 12 rows from Magical Trip (Dec 2025) and Hakone Navi, 7 passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Hakone Sushi",
+          "page_name": "Hakonesushi",
+          "src": "https://www.magical-trip.com/media/top-10-family-friendly-restaurants-in-hakone-for-2025-a-guide-to-dining-with-kids/",
+          "date": "2025-12",
+          "map": "Google Maps 'Hakone Sushi はこねずし', 450 reviews, newest '12 days ago'"
+        },
+        {
+          "name": "Hakone Shrine",
+          "page_name": "Hakone Shrine",
+          "src": "https://www.magical-trip.com/media/hakone-shrine-explore-the-historic-lakeside-sanctuary-with-iconic-torii-gate-and-scenic-views/",
+          "date": "2025-12",
+          "map": "Google Maps 'Hakone Shrine', 80-1 Motohakone, 20,538 reviews, open 24 hours"
+        },
+        {
+          "name": "Hakone Kamon day plan",
+          "page_name": "Hakone Kamon",
+          "src": "https://www.magical-trip.com/media/top-10-family-friendly-activities-in-hakone-a-comprehensive-guide-for-2025/",
+          "date": "2025-12",
+          "map": "Google Maps 'Hakone Kamon 箱根 花紋', 4-star hotel taking bookings for Dec 2026, 717 reviews"
+        },
+        {
+          "name": "Irori Chaya",
+          "page_name": "Irori Chaya",
+          "src": "https://www.magical-trip.com/media/top-10-family-friendly-restaurants-in-hakone-for-2025-a-guide-to-dining-with-kids/",
+          "date": "2025-12",
+          "map": "Google Maps 'Irori-chaya' (919-35 Sengokuhara), newest review shown a week ago"
+        },
+        {
+          "name": "Children's Forest Wanpaku Land",
+          "page_name": "Odawara Children's Forest Wanpaku Land",
+          "src": "https://www.pref.kanagawa.jp/osirase/0602/feelshonan/en/sightseeing/3693/index.html",
+          "date": "official",
+          "map": "Google Maps 'Children's Forest Wanpaku Land' (4377-1 Kuno, Odawara), newest review shown 4 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Dining Hakone, KAI Sengokuhara, Hotel Green Plaza",
+          "why": "hotel restaurants the page says are for hotel guests"
+        },
+        {
+          "name": "Hakone Dining Kanon",
+          "why": "the map shows a different restaurant"
+        },
+        {
+          "name": "five rows from Hakone Navi",
+          "why": "library-check.cjs could not read the page date"
+        },
+        {
+          "name": "Dining Hakone, KAI Sengokuhara",
+          "why": "the kids' menus are for hotel guests only"
+        },
+        {
+          "name": "Kamameshi Giyamantei",
+          "why": "nothing about children on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 5 rows from Magical Trip (Dec 2025) and Kanagawa Prefecture (official), all passed library-check.cjs, 2 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     },
     {
-      "name": "Hakone Shrine",
-      "page_name": "Hakone Shrine",
-      "src": "https://www.magical-trip.com/media/hakone-shrine-explore-the-historic-lakeside-sanctuary-with-iconic-torii-gate-and-scenic-views/",
-      "date": "2025-12",
-      "map": "Google Maps 'Hakone Shrine', 80-1 Motohakone, 20,538 reviews, open 24 hours"
-    },
-    {
-      "name": "Hakone Kamon day plan",
-      "page_name": "Hakone Kamon",
-      "src": "https://www.magical-trip.com/media/top-10-family-friendly-activities-in-hakone-a-comprehensive-guide-for-2025/",
-      "date": "2025-12",
-      "map": "Google Maps 'Hakone Kamon 箱根 花紋', 4-star hotel taking bookings for Dec 2026, 717 reviews"
-    },
-    {
-      "name": "Irori Chaya",
-      "page_name": "Irori Chaya",
-      "src": "https://www.magical-trip.com/media/top-10-family-friendly-restaurants-in-hakone-for-2025-a-guide-to-dining-with-kids/",
-      "date": "2025-12",
-      "map": "Google Maps 'Irori-chaya' (919-35 Sengokuhara), newest review shown a week ago"
-    },
-    {
-      "name": "Children's Forest Wanpaku Land",
-      "page_name": "Odawara Children's Forest Wanpaku Land",
-      "src": "https://www.pref.kanagawa.jp/osirase/0602/feelshonan/en/sightseeing/3693/index.html",
-      "date": "official",
-      "map": "Google Maps 'Children's Forest Wanpaku Land' (4377-1 Kuno, Odawara), newest review shown 4 hours ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from hakonenavi (Mar 2025) and nap-camp (Oct 2026); 3 passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Hakone Karakuri Museum (puzzle boxes)",
+          "page_name": "箱根からくり美術館",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "date": "2025-09",
+          "map": "Google Maps 'Hakone Karakuri Museum' (Hakone 17), newest review shown 6 hours ago"
+        },
+        {
+          "name": "Hakone Craft House",
+          "page_name": "箱根クラフトハウス",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "date": "2025-09",
+          "map": "Google Maps 'Hakone Craft House' (Gōra), newest review shown 18 hours ago"
+        },
+        {
+          "name": "Hakone Visitor Center",
+          "page_name": "箱根ビジターセンター",
+          "src": "https://www.nap-camp.com/mag/34826",
+          "date": "2025-09",
+          "map": "Google Maps 'Hakone Visitor Center' (Motohakone 164), newest review shown 3 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "デリ and カフェ みつき, 囲炉裏茶寮 八里, HAKONE PICNIC, スイッチバックカフェ, COFFEE CAMP",
+          "why": "the checker could not read a date on the page (hakonenavi)"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Dining Hakone, KAI Sengokuhara, Hotel Green Plaza",
-      "why": "hotel restaurants the page says are for hotel guests"
-    },
-    {
-      "name": "Hakone Dining Kanon",
-      "why": "the map shows a different restaurant"
-    },
-    {
-      "name": "five rows from Hakone Navi",
-      "why": "library-check.cjs could not read the page date"
-    },
-    {
-      "name": "Dining Hakone, KAI Sengokuhara",
-      "why": "the kids' menus are for hotel guests only"
-    },
-    {
-      "name": "Kamameshi Giyamantei",
-      "why": "nothing about children on the page"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 5 rows from Magical Trip (Dec 2025) and Kanagawa Prefecture (official), all passed library-check.cjs, 2 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }
