@@ -5173,6 +5173,203 @@
           },
           "q": "Kurunto, Motomachi, Nagai, Yamagata",
           "ok": "2026-11"
+        },
+        {
+          "local": "のびっこジャンボ 仙台泉大沢店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 900 เยน วันธรรมดา 1,200 เยน วันหยุด",
+            "en": "Children ¥900 weekdays, ¥1,200 weekends"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6205/",
+          "name": {
+            "th": "โนบิกโกะจัมโบ้ เซ็นไดอิซุมิ",
+            "en": "Nobikko Jumbo, Sendai Izumi Ōsawa"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 อิออนทาวน์ โอซาวะ อิซุมิคุ เซ็นได",
+            "en": "AEON Town 2F, Ōsawa, Izumi-ku, Sendai"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม 0–12 ขวบ",
+            "en": "An indoor playground for ages 0 to 12"
+          },
+          "why": {
+            "th": "มีบ่อบอล บล็อกใหญ่ แทรมโพลีน และมุมเล่นบทบาทสมมติ",
+            "en": "A ball pool, big blocks, trampolines and pretend play"
+          },
+          "q": "のびっこジャンボ仙台泉大沢, Izumi-ku, Sendai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド イオンモール名取",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "วันธรรมดา ทั้งวัน 1,200 เยน",
+            "en": "Weekdays, all day ¥1,200"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6205/",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ อิออนมอลล์นาโทริ",
+            "en": "Pure Heart Kids Land, AEON Mall Natori"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 อิออนมอลล์ นาโทริ",
+            "en": "AEON Mall 3F, Natori"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มขนาดใหญ่ มีโดมเด้ง บ่อบอล และบ่อทรายในร่ม",
+            "en": "A big indoor playground: a bouncy dome, a ball pool and an indoor sandpit"
+          },
+          "why": {
+            "th": "เหมาะวันฝนตก มีมุมเล่นบทบาทสมมติ",
+            "en": "Good on a rainy day, with pretend-play corners"
+          },
+          "q": "Pure Heart Kids Land Aeon Mall Natori",
+          "ok": "2026-11"
+        },
+        {
+          "local": "地底の森ミュージアム",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 460 เยน ประถม–มัธยมต้น 110 เยน",
+            "en": "Adults ¥460, primary and middle school ¥110"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6828/",
+          "name": {
+            "th": "พิพิธภัณฑ์แหล่งโบราณโทมิซาวะ เซ็นได",
+            "en": "Tomizawa Site Museum (Sendai)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "นางามาจิมินามิ ไทฮากุคุ เซ็นได",
+            "en": "Nagamachi-minami, Taihaku-ku, Sendai"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์บนแหล่งโบราณยุคหินเก่าที่เก็บไว้ใต้ดิน",
+            "en": "A museum over an Old Stone Age site preserved underground"
+          },
+          "why": {
+            "th": "มีป่ายุคน้ำแข็งกลางแจ้งให้สัมผัสภูมิทัศน์โบราณ",
+            "en": "An outdoor Ice Age forest to feel the ancient landscape"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ (วันหยุดราชการเปิด)",
+            "en": "Closed on Mondays (open on public holidays)"
+          },
+          "q": "Sendai City Tomizawa Site Museum, Nagamachi-minami, Sendai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "スマイルグリコパーク",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก (4 ขวบ–มัธยมต้น) 500 เยน",
+            "en": "Children (4 to middle school) ¥500"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6828/",
+          "name": {
+            "th": "สไมล์กูลิโกะพาร์ก เซ็นได",
+            "en": "Smile Glico Park (Sendai)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "สนามราคุเท็นโมบายพาร์กมิยางิ มิยางิโนะคุ เซ็นได",
+            "en": "Rakuten Mobile Park Miyagi, Miyagino-ku, Sendai"
+          },
+          "what": {
+            "th": "สวนสนุกเล็กข้างสนามเบสบอล มีชิงช้าสวรรค์สูง 36 เมตร",
+            "en": "A small amusement park beside the baseball stadium, with a 36 m Ferris wheel"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นเด็ก เปิดแม้วันไม่มีแข่ง",
+            "en": "Children's rides, open on days without a game too"
+          },
+          "tip": {
+            "th": "ปิดช่วงหน้าหนาว ปลายพฤศจิกายนถึงกลางมีนาคม",
+            "en": "Closed for winter from late November to mid-March"
+          },
+          "q": "Smile Glico Park, Miyagino, Sendai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "山形チェリーランド＆上山観光フルーツ園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://aumo.jp/articles/18297",
+          "name": {
+            "th": "ยามางาตะเชอร์รีแลนด์ สวนผลไม้คามิโนยามะ",
+            "en": "Yamagata Cherry Land (Kaminoyama fruit farm)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "มิคามิ คามิโนยามะ ยามางาตะ",
+            "en": "Mikami, Kaminoyama, Yamagata"
+          },
+          "what": {
+            "th": "สวนผลไม้ เก็บเชอร์รี พลัม องุ่น และแอปเปิลตามฤดู",
+            "en": "An orchard to pick cherries, plums, grapes and apples in season"
+          },
+          "why": {
+            "th": "ได้กินผลไม้สดตามฤดู",
+            "en": "Fresh fruit picked in season"
+          },
+          "tip": {
+            "th": "เก็บเชอร์รีต้นมิถุนายน–ปลายกรกฎาคม",
+            "en": "Cherry picking from early June to late July"
+          },
+          "q": "Yamagata cherry land, Mikami, Kaminoyama",
+          "ok": "2026-11"
         }
       ]
     },

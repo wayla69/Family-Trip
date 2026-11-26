@@ -929,3 +929,4 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Yokohama** (round 4: Japan, Korea, New Zealand): +7 in Minato Mirai (Hard Rock Cafe, Soup Stock Tokyo, American House, J.S. Pancake Cafe, RHC CAFE, Blue Bottle Coffee, Megumi Suisan). Proof in `docs/library-proof/jp-yokohama.json`.
 - **25 Nov 2026, Nikko** (round 4: Japan, Korea, New Zealand): +3 in Utsunomiya (WHAT'S UP?, Wild Kitchen Kumakuma, TURQUOISE / TOKU). Proof in `docs/library-proof/jp-nikko.json`.
 - **25 Nov 2026, Kumamoto** (round 4: Japan, Korea, New Zealand): +1 (Yakiniku Horumon Ebisu). Proof in `docs/library-proof/jp-kumamoto.json`.
+- **25 Nov 2026, Tohoku** (round 4: Japan, Korea, New Zealand): +1 (Trenta, Yamagata). Proof in `docs/library-proof/jp-tohoku.json`.

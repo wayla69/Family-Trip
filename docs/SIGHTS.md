@@ -155,6 +155,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **25 Nov 2026, Nikko** (round 4: Japan, Korea, New Zealand): +4 (Hanaichimonme, Nikko; Yuai Hiroba, Asolabo and Rakuga Kids, Utsunomiya). Proof in `docs/library-proof/jp-nikko.json`.
 - **25 Nov 2026, Kumamoto** (round 4: Japan, Korea, New Zealand): +5 (Kids Land US Uto, athletic park Peace, Genki Challenge Hall at Aso Farm Land, Yukids Hamasen, Kumamoto Children's Culture Hall). Proof in `docs/library-proof/jp-kumamoto.json`.
 - **25 Nov 2026, Nagano and Matsumoto** (round 4: Japan, Korea, New Zealand): +2 (Jōyama Zoo, HakuBounce). Proof in `docs/library-proof/jp-nagano.json`.
+- **25 Nov 2026, Tohoku** (round 4: Japan, Korea, New Zealand): +5 (Nobikko Jumbo, Pure Heart Kids Land Natori, Tomizawa Site Museum, Smile Glico Park, Yamagata Cherry Land). Proof in `docs/library-proof/jp-tohoku.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
 - **24 Nov 2026, Plitvice Lakes** (docs/library-briefs batch-101, round 3): +2 (Maksimir Park, Zagreb; Kotlac, Slunj). Proof in `docs/library-proof/hr-plitvice.json`.
