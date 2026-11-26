@@ -454,6 +454,69 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Haidian, Beijing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Xibei Northwest Kitchen (Zhongguancun)",
+          "page_name": "西贝(中关村华宇店)",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E8%B4%9D(%E4%B8%AD%E5%85%B3%E6%9D%91%E5%8D%8E%E5%AE%87%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "儿童餐 · 家庭聚餐 · 带小朋友来也不会觉得乱糟糟的"
+        },
+        {
+          "name": "Huajia Yiyuan (Sijiqing)",
+          "page_name": "花家怡园(四季青店)",
+          "src": "https://www.amap.com/search?query=%E8%8A%B1%E5%AE%B6%E6%80%A1%E5%9B%AD(%E5%9B%9B%E5%AD%A3%E9%9D%92%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-06",
+          "map": "Amap: open, not marked closed, newest review 2026-11-06",
+          "quote": "儿童餐 · 有宝宝椅"
+        },
+        {
+          "name": "Yilin Eryu Yunnan (Zhongguancun)",
+          "page_name": "壹霖·洱语臻选云南菜(中关村大融城店)",
+          "src": "https://www.amap.com/search?query=%E5%A3%B9%E9%9C%96%C2%B7%E6%B4%B1%E8%AF%AD%E8%87%BB%E9%80%89%E4%BA%91%E5%8D%97%E8%8F%9C(%E4%B8%AD%E5%85%B3%E6%9D%91%E5%A4%A7%E8%9E%8D%E5%9F%8E%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-08",
+          "map": "Amap: open, not marked closed, newest review 2026-10-08",
+          "quote": "儿童餐"
+        },
+        {
+          "name": "Tangcheng Kitchen (Golden Resources Mall)",
+          "page_name": "汤城小厨(世纪金源店)",
+          "src": "https://www.amap.com/search?query=%E6%B1%A4%E5%9F%8E%E5%B0%8F%E5%8E%A8(%E4%B8%96%E7%BA%AA%E9%87%91%E6%BA%90%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "家庭聚餐 · 儿童餐营养丰富 · 孩子特别爱吃"
+        },
+        {
+          "name": "Xiu'er Sijiucheng (Zhongguancun No.1)",
+          "page_name": "秀儿四九城(北清路店)",
+          "src": "https://www.amap.com/search?query=%E7%A7%80%E5%84%BF%E5%9B%9B%E4%B9%9D%E5%9F%8E(%E5%8C%97%E6%B8%85%E8%B7%AF%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-14",
+          "map": "Amap: open, not marked closed, newest review 2026-09-14",
+          "quote": "儿童餐 · 家庭聚会"
+        },
+        {
+          "name": "Daoxiang Liyan Hunan Kitchen (Yongding Road)",
+          "page_name": "稻湘礼宴(永定路店)",
+          "src": "https://www.amap.com/search?query=%E7%A8%BB%E6%B9%98%E7%A4%BC%E5%AE%B4(%E6%B0%B8%E5%AE%9A%E8%B7%AF%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "有宝宝椅"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "峨嵋酒家 (学院路)",
+          "why": "another branch of a restaurant the list already has"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
