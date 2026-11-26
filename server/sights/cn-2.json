@@ -3105,7 +3105,6 @@
     },
     {
       "place": "cn-shenzhen",
-      "thin": true,
       "sights": [
         {
           "local": "Meland 光明星河COCO City",
@@ -3495,6 +3494,191 @@
             "en": "Most rides in the magic village area need children 1 m or taller"
           },
           "q": "龙岗儿童公园, 龙岗区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳人才公园儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E4%BA%BA%E6%89%8D%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สนามเด็กเล่นสวนทาเลนต์",
+            "en": "Talent Park Children's Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนทาเลนต์ ถนนตงปิน หนานซาน",
+            "en": "Talent Park, Dongbin Road, Nanshan"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นริมอ่าวเซินเจิ้น มีบ่อทราย สไลเดอร์ และแทรมโพลีน",
+            "en": "A playground by Shenzhen Bay with a sand pit, slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก ทางเดินริมอ่าวอยู่ข้างๆ",
+            "en": "Marked for small children; the bay walk is right beside it"
+          },
+          "q": "深圳人才公园儿童乐园, 东滨路1号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 深圳壹方天地店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E6%B7%B1%E5%9C%B3%E5%A3%B9%E6%96%B9%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=440300",
+          "name": {
+            "th": "มีแลนด์คลับ อีฟางเทียนตี้ หลงหัว",
+            "en": "Meland Club (Uniwalk, Longhua)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกงเย่ หลงหัว",
+            "en": "Industrial Road, Longhua"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีเขาวงกต งานประดิษฐ์ และบทบาทสมมติ",
+            "en": "An indoor play club with a maze, crafts and role play"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก",
+            "en": "Indoor play for a rainy day"
+          },
+          "q": "MELAND CLUB 壹方天地, 工业路98号, 龙华区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 深圳卓悦店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E6%B7%B1%E5%9C%B3%E5%8D%93%E6%82%A6%E5%BA%97)&city=440300",
+          "name": {
+            "th": "นีโอไบโอ วันอเวนิว",
+            "en": "Neobio Play Park (One Avenue)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วันอเวนิว ชั้น 1 ถนนฝูหัวสาย 1 ฝูเถียน",
+            "en": "One Avenue F1, Fuhua 1st Road, Futian"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีหนังสือภาพ งานประดิษฐ์ สระน้ำอุ่นสำหรับเด็ก และร้านอาหารครอบครัว",
+            "en": "An indoor play park with picture books, crafts, a warm children's pool and a family restaurant"
+          },
+          "why": {
+            "th": "มีโซนเล่นบุนุ่มและสระน้ำอุ่นสำหรับเด็กเล็ก",
+            "en": "Padded play and a heated pool for small children"
+          },
+          "q": "奈尔宝 深圳卓悦店, 福华一路348号, 福田区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳天宫阙航天乐园",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%A4%A9%E5%AE%AB%E9%98%99%E8%88%AA%E5%A4%A9%E4%B9%90%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนเล่นอวกาศเทียนกงเชวี่ย",
+            "en": "Tiangongque Space Play Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซินเย่ไท่ฝูพลาซ่า ชั้น B1 ซุ่นกั่ง หลัวหู",
+            "en": "Shenye Tairan Plaza B1, Sungang, Luohu"
+          },
+          "what": {
+            "th": "สวนธีมอวกาศในร่ม มีโซนลองทำ 21 โซน",
+            "en": "An indoor space-themed park with 21 hands-on zones"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะพาเด็กมาเที่ยว",
+            "en": "Reviewers say it is good for a day out with children"
+          },
+          "q": "深圳天宫阙航天乐园, 深业泰富广场负1层, 罗湖区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "宝安公园儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%AE%9D%E5%AE%89%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สนามเด็กเล่นสวนเป่าอัน",
+            "en": "Bao'an Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนเป่าอัน ฝั่งตะวันตก ถนนกงหยวน เป่าอัน",
+            "en": "Bao'an Park, west side, Gongyuan Road, Bao'an"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวน มีเส้นทางป่าและบ่อทราย",
+            "en": "A park playground with a jungle course and a sand pit"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "宝安公园儿童乐园, 公园路, 宝安区, 深圳",
           "ok": "2026-11"
         }
       ]
