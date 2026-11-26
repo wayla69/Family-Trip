@@ -439,6 +439,109 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for restaurants with high chairs and indoor play parks in Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Darongshu Xia (AEON Mall Jinshazhou)",
+          "page_name": "大榕树下(金沙洲永旺梦乐城店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%A6%95%E6%A0%91%E4%B8%8B(%E9%87%91%E6%B2%99%E6%B4%B2%E6%B0%B8%E6%97%BA%E6%A2%A6%E4%B9%90%E5%9F%8E%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "家庭聚餐 · 宝宝椅 · 广佛遛娃家庭的“家常粤味食堂”"
+        },
+        {
+          "name": "Jiumaojiu Shanxi Noodles (Link Plaza, Liwan)",
+          "page_name": "九毛九山西面馆(广州荔湾领展广场店)",
+          "src": "https://www.amap.com/search?query=%E4%B9%9D%E6%AF%9B%E4%B9%9D%E5%B1%B1%E8%A5%BF%E9%9D%A2%E9%A6%86(%E5%B9%BF%E5%B7%9E%E8%8D%94%E6%B9%BE%E9%A2%86%E5%B1%95%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-13",
+          "map": "Amap: open, not marked closed, newest review 2026-11-13",
+          "quote": "有宝宝椅 · #遛娃好去处"
+        },
+        {
+          "name": "Xin Yuexi Lou Paper-Wrapped Chicken (Liwan)",
+          "page_name": "新粤西楼-梧州纸包鸡(圣地新天地广场店)",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E7%B2%A4%E8%A5%BF%E6%A5%BC-%E6%A2%A7%E5%B7%9E%E7%BA%B8%E5%8C%85%E9%B8%A1(%E5%9C%A3%E5%9C%B0%E6%96%B0%E5%A4%A9%E5%9C%B0%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Lefu Hong Kong Cafe (Xiajiao, Panyu)",
+          "page_name": "乐富茶餐厅(厦滘岭南购物城店)",
+          "src": "https://www.amap.com/search?query=%E4%B9%90%E5%AF%8C%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%8E%A6%E6%BB%98%E5%B2%AD%E5%8D%97%E8%B4%AD%E7%89%A9%E5%9F%8E%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-26",
+          "map": "Amap: open, not marked closed, newest review 2026-10-26",
+          "quote": "提供宝宝椅 · 还有宝宝椅很多菜品都适合宝宝吃 选择很多"
+        },
+        {
+          "name": "Shifa Canteen (Lirui Plaza, Haizhu)",
+          "page_name": "实发食堂(丽日商业广场店)",
+          "src": "https://www.amap.com/search?query=%E5%AE%9E%E5%8F%91%E9%A3%9F%E5%A0%82(%E4%B8%BD%E6%97%A5%E5%95%86%E4%B8%9A%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Crazy Magic Show Experience (Panyu)",
+          "page_name": "疯狂的麦咭官方体验馆(广州店)",
+          "src": "https://www.amap.com/search?query=%E7%96%AF%E7%8B%82%E7%9A%84%E9%BA%A6%E5%92%AD%E5%AE%98%E6%96%B9%E4%BD%93%E9%AA%8C%E9%A6%86(%E5%B9%BF%E5%B7%9E%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "带娃体验电视上看到的综艺同款游戏，6岁小孩哥亲测，娃说真是超级开心的一天"
+        },
+        {
+          "name": "Wingsound Animation Science Hall",
+          "page_name": "咏声动画科技馆",
+          "src": "https://www.amap.com/search?query=%E5%92%8F%E5%A3%B0%E5%8A%A8%E7%94%BB%E7%A7%91%E6%8A%80%E9%A6%86&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "儿童VR娱乐 · 儿童赛车娱乐 · 手工体验"
+        },
+        {
+          "name": "Rebound Trampoline Park (Olympic Sports mall)",
+          "page_name": "反弹蹦床公园(优托邦·奥体超级mall店)",
+          "src": "https://www.amap.com/search?query=%E5%8F%8D%E5%BC%B9%E8%B9%A6%E5%BA%8A%E5%85%AC%E5%9B%AD(%E4%BC%98%E6%89%98%E9%82%A6%C2%B7%E5%A5%A5%E4%BD%93%E8%B6%85%E7%BA%A7mall%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "这家蹦床公园挺适合带娃的，场地大，项目多，孩子玩得开心"
+        },
+        {
+          "name": "Dafushan WAWA Beach Play Park",
+          "page_name": "大夫山WAWA赶海亲子乐园",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%A4%AB%E5%B1%B1WAWA%E8%B5%B6%E6%B5%B7%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-24",
+          "map": "Amap: open, not marked closed, newest review 2026-10-24",
+          "quote": "亲子玩乐 · 0-12岁 · 适合低龄宝宝的番禺赶海宝藏地"
+        },
+        {
+          "name": "Huanlezhou Play Park (Baiyun)",
+          "page_name": "欢乐舟主题乐园",
+          "src": "https://www.amap.com/search?query=%E6%AC%A2%E4%B9%90%E8%88%9F%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-19",
+          "map": "Amap: open, not marked closed, newest review 2026-08-19",
+          "quote": "儿童主题乐园 · 不管是低龄宝宝还是大龄孩子都能找到合适的玩法 · 母婴室"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "疆吾饭·抓饭来了",
+          "why": "“宝宝” there means the reader, not a baby"
+        },
+        {
+          "name": "飞鸟乐园-儿童乐园, 奇妙亲子水城",
+          "why": "one to four reviews only"
+        },
+        {
+          "name": "绿茶餐厅 (番禺K11)",
+          "why": "a second Green Tea; one is already in the list"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

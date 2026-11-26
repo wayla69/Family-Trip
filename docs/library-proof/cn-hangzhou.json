@@ -400,6 +400,49 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family farms and indoor play parks in Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Xiaoshiguang Family Farm (Xianlin)",
+          "page_name": "小时光亲子农场",
+          "src": "https://www.amap.com/search?query=%E5%B0%8F%E6%97%B6%E5%85%89%E4%BA%B2%E5%AD%90%E5%86%9C%E5%9C%BA&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-06",
+          "map": "Amap: open, not marked closed, newest review 2026-10-06",
+          "quote": "亲子玩乐 · 亲子山地公园 · 儿童赛车娱乐 · 小宝宝游玩 · 萌宠互动"
+        },
+        {
+          "name": "Beibile Play Park (Meitang Plaza)",
+          "page_name": "贝比乐儿童乐园(美瑭广场店)",
+          "src": "https://www.amap.com/search?query=%E8%B4%9D%E6%AF%94%E4%B9%90%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E7%BE%8E%E7%91%AD%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
+          "map": "Amap: open, not marked closed, newest review 2026-11-09",
+          "quote": "儿童乐园 · 儿童沙池 · 室内亲子园"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "杭州长乔亲子乐园",
+          "why": "its review about children is a warning about poor value"
+        },
+        {
+          "name": "火车农场",
+          "why": "its page reads as closed"
+        },
+        {
+          "name": "森泊幻想岛, 北山街摩天轮",
+          "why": "inside places the list already has (Kaiyuan Senbo, the Youth Centre park)"
+        },
+        {
+          "name": "B.Duck城市乐园, 伴乐岛, 噼里啪啦, 千岛乐",
+          "why": "two to eleven reviews only, or nothing about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
