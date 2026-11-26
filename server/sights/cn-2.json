@@ -1333,6 +1333,351 @@
           "q": "盘小宝重庆店, 协信星光天地, Yuzhong, Chongqing",
           "ok": "2026-11",
           "src": "https://news.sina.com.cn/sx/2025-12-22/detail-inhcsmfm6282289.shtml"
+        },
+        {
+          "local": "嗨萌堡亲子乐园 南坪万达广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%97%A8%E8%90%8C%E5%A0%A1%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E9%87%8D%E5%BA%86%E5%8D%97%E5%9D%AA%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=500000",
+          "name": {
+            "th": "สวนเล่นไห่เหมิงเป่า หนานผิงวั่นต๋า",
+            "en": "Haimengbao Play Park (Nanping Wanda)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างหนานผิงวั่นต๋า ชั้น 2 หนานอั้น",
+            "en": "Nanping Wanda Plaza 2F, Nan’an"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีปราสาทเป่าลม บ่อทราย สไลเดอร์ แทรมโพลีน และบ่อบอล",
+            "en": "An indoor play park with a bouncy castle, a sand area, slides, trampolines and a ball pool"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าวันธรรมดาคนน้อย เด็กเล่นสนุก",
+            "en": "Reviewers say it is quiet on weekdays and the children play happily"
+          },
+          "q": "嗨萌堡亲子乐园 南坪万达广场店, 南岸区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "飞越重庆实景 解放碑总店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%A3%9E%E8%B6%8A%E9%87%8D%E5%BA%86%E5%AE%9E%E6%99%AF(%E8%A7%A3%E6%94%BE%E7%A2%91%E6%80%BB%E5%BA%97)&city=500000",
+          "name": {
+            "th": "บินชมฉงชิ่ง เจี่ยฟ่างเปย",
+            "en": "Flying over Chongqing (Jiefangbei)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "กั๋วไท่พลาซ่า ชั้น B3 เจี่ยฟ่างเปย อวี๋จง",
+            "en": "Guotai Plaza B3, Jiefangbei, Yuzhong"
+          },
+          "what": {
+            "th": "โรงหนังจำลองการบินเหนือจุดเด่นของฉงชิ่ง ไม่ต้องใส่แว่น",
+            "en": "A flying-theatre ride over the sights of Chongqing, no glasses needed"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบความรู้สึกเหมือนนั่งรถไฟเหาะ",
+            "en": "Reviewers say children love the roller-coaster feeling"
+          },
+          "tip": {
+            "th": "อาจมีเกณฑ์ความสูงของเด็ก ถามที่เคาน์เตอร์",
+            "en": "Children may need to meet a height limit; ask at the counter"
+          },
+          "q": "飞越重庆 解放碑总店, 国泰广场, 渝中区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "美心文创乐园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%BE%8E%E5%BF%83%E6%96%87%E5%88%9B%E4%B9%90%E5%9B%AD&city=500000",
+          "name": {
+            "th": "สวนสร้างสรรค์เหม่ยซิน",
+            "en": "Meixin Creative Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไห่เสีย หนานอั้น",
+            "en": "1989 Haixia Road, Nan’an"
+          },
+          "what": {
+            "th": "สวนเล่นมีสไลเดอร์สายรุ้ง ทางผจญภัยกลางแจ้ง และมุมสัตว์",
+            "en": "A park with rainbow slides, outdoor adventure and an animal corner"
+          },
+          "why": {
+            "th": "มีสัตว์ให้ใกล้ชิดและงานประดิษฐ์ นอกจากสไลเดอร์",
+            "en": "Animals to meet and crafts to make, as well as slides"
+          },
+          "q": "美心文创乐园, 海峡路1989号, 南岸区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "重庆儿童公园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%87%8D%E5%BA%86%E5%84%BF%E7%AB%A5%E5%85%AC%E5%9B%AD&city=500000",
+          "name": {
+            "th": "สวนเด็กฉงชิ่ง",
+            "en": "Chongqing Children’s Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหงเอิน เจียงเป่ย",
+            "en": "Hong’en Road, Jiangbei"
+          },
+          "what": {
+            "th": "สวนเด็ก มีสไลเดอร์สายรุ้ง โซนเล่นเทพนิยาย และมุมสัตว์",
+            "en": "A children’s park with rainbow slides, a fairy-tale play area and an animal corner"
+          },
+          "why": {
+            "th": "เครื่องเล่นครบ และมีโซนให้พ่อแม่เล่นกับลูก",
+            "en": "Plenty of play equipment and areas for parents and children together"
+          },
+          "q": "重庆儿童公园, 鸿恩路, 江北区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鲁班奇幻乐园 重庆店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%B2%81%E7%8F%AD%E5%A5%87%E5%B9%BB%E4%B9%90%E5%9B%AD(%E9%87%8D%E5%BA%86%E5%BA%97)&city=500000",
+          "name": {
+            "th": "สวนสนุกหลู่ปาน",
+            "en": "Luban Fantasy Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เสียซินซิงกวงเมี่ยวถัง ชั้น 3–4 ถนนอู่อี อวี๋จง",
+            "en": "Xiexin Xingguang Miaotang 3–4F, Wuyi Road, Yuzhong"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม เครื่องกลไม้และด่านท้าทาย",
+            "en": "An indoor park of wooden machines and obstacle challenges"
+          },
+          "why": {
+            "th": "มีปริศนากลไกและด่านให้พ่อแม่กับลูกเล่นด้วยกัน",
+            "en": "Mechanical puzzles and challenges for parents and children to do together"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "鲁班奇幻乐园 重庆店, 五一路99号, 渝中区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "重庆海洋动物世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%87%8D%E5%BA%86%E6%B5%B7%E6%B4%8B%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&city=500000",
+          "name": {
+            "th": "โลกสัตว์ทะเลฉงชิ่ง",
+            "en": "Chongqing Ocean Animal World"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ถนนจิงเสวีย เจียงเป่ยเฉิง",
+            "en": "Jingxue Street, Jiangbeicheng"
+          },
+          "what": {
+            "th": "สวนสัตว์ทะเล มีโชว์สิงโตทะเลและสัตว์ให้สัมผัส",
+            "en": "A marine park with a sea-lion show and animals to touch"
+          },
+          "why": {
+            "th": "ผู้รีวิวพูดถึงโชว์นางเงือก โชว์ฟองสบู่ และงูให้เด็กที่กล้าลองจับ",
+            "en": "Reviewers mention a mermaid show, a bubble show and a snake to touch for brave children"
+          },
+          "q": "重庆海洋动物世界, 精学街43号, 江北区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 重庆光环店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E9%87%8D%E5%BA%86%E5%85%89%E7%8E%AF%E5%BA%97)&city=500000",
+          "name": {
+            "th": "นีโอไบโอ ฉงชิ่งกวงหวน",
+            "en": "Neobio (Chongqing Guanghuan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "กวงหวนช้อปปิ้งพาร์ก ชั้น 2 ถนนหูไฉ เหลียงเจียง",
+            "en": "Guanghuan Shopping Park L2, Hucai Road, Liangjiang"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มสำหรับครอบครัว มีหนังสือภาพ บ่อบอล บทบาทสมมุติ และร้านอาหารครอบครัว",
+            "en": "An indoor family play centre with picture books, a ball pool, role play and a family restaurant"
+          },
+          "why": {
+            "th": "บุเบาะทั้งหมด เหมาะกับเด็กเล็กและเด็กทารก",
+            "en": "Fully padded and suited to babies and small children"
+          },
+          "q": "奈尔宝 重庆光环店, 光环购物公园L2, 两江新区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND 重庆时代天街店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND(%E9%87%8D%E5%BA%86%E6%97%B6%E4%BB%A3%E5%A4%A9%E8%A1%97%E5%BA%97)&city=500000",
+          "name": {
+            "th": "มีแลนด์ ไทม์สเทียนเจีย",
+            "en": "Meland (Times Paradise Walk)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างหลงหูไทม์สเทียนเจีย อาคาร C ชั้น 2 อวี๋จง",
+            "en": "Longfor Times Paradise Walk, Hall C 2F, Yuzhong"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีแทรมโพลีน คลาสหนังสือภาพ และบทบาทสมมุติ",
+            "en": "An indoor play park with trampolines, picture-book classes and role play"
+          },
+          "why": {
+            "th": "มีโซนสำหรับเด็กเล็กและทารก",
+            "en": "Areas for babies and small children"
+          },
+          "q": "MELAND 重庆时代天街店, 长江二路174号, 渝中区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "探洞工场 爱琴海店",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%8E%A2%E6%B4%9E%E5%B7%A5%E5%9C%BA(%E7%88%B1%E7%90%B4%E6%B5%B7%E5%BA%97)&city=500000",
+          "name": {
+            "th": "ถ้ำผจญภัยทั่นต้ง",
+            "en": "Tandong Workshop (Aegean)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนกีฬาจินไค ถนนจินไค เหลียงเจียง",
+            "en": "Jinkai Sports Park, Jinkai Avenue, Liangjiang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มธีมถ้ำ มีสไลเดอร์และแทรมโพลีน",
+            "en": "An indoor cave-themed play park with slides and trampolines"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ แทรมโพลีน และงานประดิษฐ์ให้พ่อแม่ทำกับลูก",
+            "en": "Slides, trampolines and crafts for parents and children"
+          },
+          "tip": {
+            "th": "วันธรรมดาเปิด 13:00",
+            "en": "Opens at 13:00 on weekdays"
+          },
+          "q": "探洞工场 爱琴海店, 金开大道, 两江新区, 重庆",
+          "ok": "2026-11"
         }
       ]
     },
