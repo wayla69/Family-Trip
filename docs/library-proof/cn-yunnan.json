@@ -441,6 +441,53 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for high-chair restaurants in Xishan, Kunming; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yide Guandian Kunming Kitchen (Haigeng Dam)",
+          "page_name": "怡得观滇餐厅·地道昆明菜·1996(海埂大坝店)",
+          "src": "https://www.amap.com/search?query=%E6%80%A1%E5%BE%97%E8%A7%82%E6%BB%87%E9%A4%90%E5%8E%85%C2%B7%E5%9C%B0%E9%81%93%E6%98%86%E6%98%8E%E8%8F%9C%C2%B71996(%E6%B5%B7%E5%9F%82%E5%A4%A7%E5%9D%9D%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
+          "map": "Amap: open, not marked closed, newest review 2026-11-09",
+          "quote": "家庭聚餐 · 有宝宝椅 · 儿童友好"
+        },
+        {
+          "name": "Qianyunan Guizhou Kitchen (Park 1903)",
+          "page_name": "黔屿喃·山野贵州菜",
+          "src": "https://www.amap.com/search?query=%E9%BB%94%E5%B1%BF%E5%96%83%C2%B7%E5%B1%B1%E9%87%8E%E8%B4%B5%E5%B7%9E%E8%8F%9C&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-20",
+          "map": "Amap: open, not marked closed, newest review 2026-09-20",
+          "quote": "有宝宝椅 · 今天带娃来1903公园玩玩"
+        },
+        {
+          "name": "Weidao Yunnan (Fuhe Building)",
+          "page_name": "味道云南(福合商务楼店)",
+          "src": "https://www.amap.com/search?query=%E5%91%B3%E9%81%93%E4%BA%91%E5%8D%97(%E7%A6%8F%E5%90%88%E5%95%86%E5%8A%A1%E6%A5%BC%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "家庭聚餐 · 有宝宝椅 · 适合带长辈孩子一起来聚餐"
+        },
+        {
+          "name": "Yunshanzhu Simao Kitchen (Nanya)",
+          "page_name": "云山竹·思茅菜·云南特色菜(南亚店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E5%B1%B1%E7%AB%B9%C2%B7%E6%80%9D%E8%8C%85%E8%8F%9C%C2%B7%E4%BA%91%E5%8D%97%E7%89%B9%E8%89%B2%E8%8F%9C(%E5%8D%97%E4%BA%9A%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-18",
+          "map": "Amap: open, not marked closed, newest review 2026-09-18",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "丰鑫园, 留焕美食 (茶马花街)",
+          "why": "eighteen reviews only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
