@@ -4067,6 +4067,158 @@
           },
           "q": "万达宝贝王 桂林高新万达, 穿山东路43号, 七星区, 桂林",
           "ok": "2026-11"
+        },
+        {
+          "local": "聚龙潭",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%81%9A%E9%BE%99%E6%BD%AD&city=450300",
+          "name": {
+            "th": "ถ้ำจวี้หลงถาน",
+            "en": "Julong Pool Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านลี่ เกาเถียน หยางซั่ว",
+            "en": "Li Village, Gaotian, Yangshuo"
+          },
+          "what": {
+            "th": "ถ้ำหินปูน มีนั่งเรือในแม่น้ำใต้ดิน",
+            "en": "A limestone cave with an underground river boat ride"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families outdoors; children under 1.2 m go free, reviewers say"
+          },
+          "q": "聚龙潭, 高田镇历村, 阳朔县, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "桂林红溪大峡谷",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E7%BA%A2%E6%BA%AA%E5%A4%A7%E5%B3%A1%E8%B0%B7&city=450300",
+          "name": {
+            "th": "หุบเขาใหญ่หงซี",
+            "en": "Hongxi Grand Canyon"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านอี๋เล่อ จงยง หลินกุ้ย",
+            "en": "Yile Village, Zhongyong, Lingui"
+          },
+          "what": {
+            "th": "หุบเขาหินสีแดง มีน้ำตกและเล่นน้ำในหน้าร้อน",
+            "en": "A canyon of red rocks with waterfalls and water play in summer"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง ผู้รีวิวพาเด็กเล่นหิมะที่นี่ในหน้าหนาว",
+            "en": "Tagged for families outdoors; a reviewer played in the snow there with children in winter"
+          },
+          "q": "桂林红溪大峡谷, 中庸镇怡乐村, 临桂区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "桂林尧山景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E5%B0%A7%E5%B1%B1%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "เขาเหยาซาน",
+            "en": "Yao Mountain"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนจิ้งเจียง ชีซิง ห่างจากใจกลางเมือง 8 กิโลเมตร",
+            "en": "Jingjiang Road, Qixing, 8 km from the centre"
+          },
+          "what": {
+            "th": "ยอดเขาสูงสุดในกุ้ยหลิน มีกระเช้าขึ้นไปชมวิวภูเขาหินปูน",
+            "en": "Guilin's highest peak, with a cable car to views over the karst hills"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กนั่งกระเช้าขึ้นไปได้สบาย",
+            "en": "Reviewers say small children ride the cable car up easily"
+          },
+          "q": "桂林尧山景区, 靖江路, 七星区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "桂林丹霞·八角寨景区",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E9%93%81%E5%BB%BA%E6%A1%82%E6%9E%97%E4%B8%B9%E9%9C%9E%C2%B7%E5%85%AB%E8%A7%92%E5%AF%A8%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "อุทยานภูผาแดงปาเจี่ยวไจ้ จือหยวน",
+            "en": "Bajiaozhai Danxia Park (Ziyuan)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านต้าถัว เหมยซี อำเภอจือหยวน",
+            "en": "Datuo Village, Meixi, Ziyuan County"
+          },
+          "what": {
+            "th": "ยอดผาหินทรายสีแดง มีทางเดินไม้และจุดชมวิว",
+            "en": "Red sandstone peaks with wooden boardwalks and viewpoints"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าทางเดินไม้เดินง่ายเมื่อพาเด็ก และคนไม่เยอะ",
+            "en": "Reviewers say the wooden boardwalks are easy with children and crowds are small"
+          },
+          "tip": {
+            "th": "อยู่ไกลจากตัวเมืองกุ้ยหลิน ต้องขับรถไปเที่ยวแบบไปกลับวันเดียว",
+            "en": "Far from Guilin city: a day trip by car"
+          },
+          "q": "桂林丹霞八角寨景区, 梅溪镇大坨村, 资源县, 桂林",
+          "ok": "2026-11"
         }
       ]
     },
