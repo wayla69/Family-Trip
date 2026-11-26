@@ -902,3 +902,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Yunnan, round 6**: +2 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-yunnan.json`.
 
 - **26 Nov 2026, Guilin, round 6**: +2 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-guilin.json`.
+
+- **26 Nov 2026, Shanghai, round 6**: +5 from Amap place pages (children's meals). Proof in `docs/library-proof/cn-shanghai.json`.

@@ -319,6 +319,56 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Huangpu, Shanghai; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yelixiali Xinjiang Restaurant (Shimao, People's Square)",
+          "page_name": "耶里夏丽.新疆菜.景观餐厅(人民广场世茂店)",
+          "src": "https://www.amap.com/search?query=%E8%80%B6%E9%87%8C%E5%A4%8F%E4%B8%BD.%E6%96%B0%E7%96%86%E8%8F%9C.%E6%99%AF%E8%A7%82%E9%A4%90%E5%8E%85(%E4%BA%BA%E6%B0%91%E5%B9%BF%E5%9C%BA%E4%B8%96%E8%8C%82%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "凉皮很好吃，小朋友特别喜欢 · 薄饼卷羊肉很适合小孩子，有点微辣"
+        },
+        {
+          "name": "Putien (Bund Finance Centre)",
+          "page_name": "莆田PUTIEN(外滩金融中心店)",
+          "src": "https://www.amap.com/search?query=%E8%8E%86%E7%94%B0PUTIEN(%E5%A4%96%E6%BB%A9%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "家庭聚餐 · 儿童前餐 · 赠送儿童餐"
+        },
+        {
+          "name": "Yunhaiyao Yunnan (SML Centre)",
+          "page_name": "云海肴云南菜(日月光中心店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%B5%B7%E8%82%B4%E4%BA%91%E5%8D%97%E8%8F%9C(%E6%97%A5%E6%9C%88%E5%85%89%E4%B8%AD%E5%BF%83%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "家庭聚餐 · 儿童餐 · 儿童友好"
+        },
+        {
+          "name": "Sun Wong Kee (Changle Road)",
+          "page_name": "新旺茶餐厅(长乐店)",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E6%97%BA%E8%8C%B6%E9%A4%90%E5%8E%85(%E9%95%BF%E4%B9%90%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "有宝宝椅 · 今天带娃看上海马戏城的超时空之旅，就在旁边久光吃顿中饭"
+        },
+        {
+          "name": "Xiaocaiyuan Anhui Kitchen (Shimao)",
+          "page_name": "小菜园新徽菜(上海黄浦世茂店)",
+          "src": "https://www.amap.com/search?query=%E5%B0%8F%E8%8F%9C%E5%9B%AD%E6%96%B0%E5%BE%BD%E8%8F%9C(%E4%B8%8A%E6%B5%B7%E9%BB%84%E6%B5%A6%E4%B8%96%E8%8C%82%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "儿童餐"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
