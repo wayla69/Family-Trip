@@ -111,6 +111,8 @@ nightlife, and religious sites that ask visitors to keep away.
 - **22 Nov 2026, round 3 (Hong Kong and Macau)** + **our books' stops**: +4 Hong Kong (High Island Geo Trail, Playfield 5 at Kai Tak, Art Park, Dragon's Back) and +3 Macau (the Museum of Art, Kids' City at City of Dreams, the Cotai Ecological Reserve — open on guided days only). The books' own planned stops now join the library by themselves (`SIGHTLIB.syncBooks`, src `book`): 68 from the two bundled books, fewer where a built-in row already holds the place; they carry no ages or times (a book gives none).
 - **26 Nov 2026, Chongqing, round 11**: +5 play parks and playgrounds from Amap place pages. Proof in `docs/library-proof/cn-chongqing.json`.
 - **26 Nov 2026, Chengdu, round 11**: +4 (Dujiangyan Panda Valley, the botanical garden, Xiling Snow Mountain, Huawu Renjian) from Amap place pages. Proof in `docs/library-proof/cn-chengdu.json`.
+- **26 Nov 2026, Yunnan, round 12**: +3 from Amap place pages (Kunming). Proof in `docs/library-proof/cn-yunnan.json`.
+- **26 Nov 2026, Beijing, round 12**: +4 play parks from Amap place pages (Haidian). Proof in `docs/library-proof/cn-beijing.json`.
 - **26 Nov 2026, Guangzhou, round 9**: +5 play parks from Amap place pages. Proof in `docs/library-proof/cn-guangzhou.json`.
 - **26 Nov 2026, Shenzhen, round 9**: +5 play spots from Amap place pages. Proof in `docs/library-proof/cn-shenzhen.json`.
 - **26 Nov 2026, Hangzhou, round 9**: +2 (a family farm, an indoor play park) from Amap place pages. Proof in `docs/library-proof/cn-hangzhou.json`.

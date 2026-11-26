@@ -365,6 +365,53 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Xi'an; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Sufuji Seafood & Dim Sum (Lifeng City)",
+          "page_name": "苏福记海鲜佬·点心(丈八东路立丰城店)",
+          "src": "https://www.amap.com/search?query=%E8%8B%8F%E7%A6%8F%E8%AE%B0%E6%B5%B7%E9%B2%9C%E4%BD%AC%C2%B7%E7%82%B9%E5%BF%83(%E4%B8%88%E5%85%AB%E4%B8%9C%E8%B7%AF%E7%AB%8B%E4%B8%B0%E5%9F%8E%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "儿童餐"
+        },
+        {
+          "name": "Zhuxiansheng Bamboo Banquet (Greenland Centre)",
+          "page_name": "竹鲜笙全竹宴(绿地中心店)",
+          "src": "https://www.amap.com/search?query=%E7%AB%B9%E9%B2%9C%E7%AC%99%E5%85%A8%E7%AB%B9%E5%AE%B4(%E7%BB%BF%E5%9C%B0%E4%B8%AD%E5%BF%83%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-01",
+          "map": "Amap: open, not marked closed, newest review 2026-10-01",
+          "quote": "儿童餐 · 适合家庭 · 儿童友好"
+        },
+        {
+          "name": "Xibei Northwest Kitchen (Gemdale Plaza)",
+          "page_name": "西贝(金地广场店)",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E8%B4%9D(%E9%87%91%E5%9C%B0%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-08",
+          "map": "Amap: open, not marked closed, newest review 2026-10-08",
+          "quote": "儿童套餐丰富 · 儿童餐质量在线"
+        },
+        {
+          "name": "Huaiyang Fu (MixC Xi'an)",
+          "page_name": "淮扬府(西安万象城·园林景观店)",
+          "src": "https://www.amap.com/search?query=%E6%B7%AE%E6%89%AC%E5%BA%9C(%E8%A5%BF%E5%AE%89%E4%B8%87%E8%B1%A1%E5%9F%8E%C2%B7%E5%9B%AD%E6%9E%97%E6%99%AF%E8%A7%82%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童餐 · 还带的娃 · 还给赠送了宝宝餐"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "雅泰来中西餐厅",
+          "why": "no children's tag or review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
