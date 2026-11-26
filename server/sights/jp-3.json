@@ -604,12 +604,339 @@
           "q": "Odawara Castle, Odawara",
           "ok": "2026-11",
           "src": "https://trip.pref.kanagawa.jp/trip/a-day-as-a-ninja-at-odawara-castle/456"
+        },
+        {
+          "name": {
+            "en": "Karuizawa Ehon-no-Mori Museum",
+            "th": "พิพิธภัณฑ์หนังสือภาพในป่าคารุอิซาวะ"
+          },
+          "local": "軽井沢絵本の森美術館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Karuizawa (Muse no Mori, Shiozawa)",
+            "th": "คารุอิซาวะ (มูเซะโนะโมริ ชิโอซาวะ)"
+          },
+          "what": {
+            "en": "A picture-book museum in the forest with 300-year-old European picture-book originals and a picture-book library.",
+            "th": "พิพิธภัณฑ์หนังสือภาพในป่า มีต้นฉบับหนังสือภาพยุโรปอายุ 300 ปีและห้องสมุดหนังสือภาพ"
+          },
+          "why": {
+            "en": "A library of more than 1,500 picture books to read freely, and a picturesque garden to walk through.",
+            "th": "ห้องสมุดหนังสือภาพกว่า 1,500 เล่มให้อ่านได้อย่างอิสระ และสวนสวยให้เดินเล่น"
+          },
+          "tip": {
+            "en": "Closed on Tuesdays (not during Golden Week, July to September). Open 9:30–17:00 May to October, 10:00–16:00 in March, April and November to January; last entry 30 minutes before closing.",
+            "th": "ปิดวันอังคาร (ยกเว้นช่วงโกลเดนวีคและกรกฎาคม–กันยายน) เปิด 9:30–17:00 พ.ค.–ต.ค. และ 10:00–16:00 ในเดือนมี.ค. เม.ย. และพ.ย.–ม.ค. เข้าได้ถึง 30 นาทีก่อนปิด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,000 adults · ≈ ¥700 junior high and high school · ≈ ¥500 primary school · under primary school free",
+            "th": "≈ ¥1,000 ผู้ใหญ่ · ≈ ¥700 ม.ต้นและม.ปลาย · ≈ ¥500 ประถม · เด็กก่อนประถมฟรี"
+          },
+          "book": "none",
+          "q": "Karuizawa Ehon-no-Mori Museum, Nagakura, Karuizawa, Nagano, Japan",
+          "ok": "2026-11",
+          "src": "https://hoshinoresorts.com/guide/area/chubu/nagano/karuizawa/ame-2/"
+        },
+        {
+          "name": {
+            "en": "Karuizawa Taliesin",
+            "th": "คารุอิซาวะ ทาลีเอซิน"
+          },
+          "local": "軽井沢タリアセン",
+          "kind": "culture",
+          "area": {
+            "en": "Karuizawa (Lake Shiozawa, south)",
+            "th": "คารุอิซาวะ (ทะเลสาบชิโอซาวะ ทางใต้)"
+          },
+          "what": {
+            "en": "Lakeside estate with the Suikyusō villa, the Peynet museum, the Fukazawa Benikō flower museum and the Karuizawa literary archive.",
+            "th": "พื้นที่ริมทะเลสาบที่มีวิลลาซุยเคียวโซ พิพิธภัณฑ์เปเนต์ พิพิธภัณฑ์ดอกไม้ฟุคาซาวะ เบนิโกะ และหอวรรณกรรมคารุอิซาวะ"
+          },
+          "why": {
+            "en": "A rainy-day walk among museums, with lake views to finish.",
+            "th": "เดินวันฝนตกท่ามกลางพิพิธภัณฑ์ แล้วปิดท้ายด้วยวิวทะเลสาบ"
+          },
+          "tip": {
+            "en": "Open 9:00–17:00 (10:00–16:00 in December and January); irregular closing days.",
+            "th": "เปิด 9:00–17:00 (10:00–16:00 ในเดือนธันวาคมและมกราคม) วันหยุดไม่แน่นอน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Karuizawa Taliesin, Nagakura, Karuizawa, Nagano, Japan",
+          "ok": "2026-11",
+          "src": "https://hoshinoresorts.com/guide/area/chubu/nagano/karuizawa/ame-2/"
+        },
+        {
+          "name": {
+            "en": "Eltz Toy Museum Karuizawa",
+            "th": "พิพิธภัณฑ์ของเล่นเอลต์ซ คารุอิซาวะ"
+          },
+          "local": "エルツおもちゃ博物館・軽井沢",
+          "kind": "museumkid",
+          "area": {
+            "en": "Karuizawa (Muse no Mori, Shiozawa)",
+            "th": "คารุอิซาวะ (มูเซะโนะโมริ ชิโอซาวะ)"
+          },
+          "what": {
+            "en": "Museum of traditional wooden toys from Germany's Erzgebirge region and other European educational toys.",
+            "th": "พิพิธภัณฑ์ของเล่นไม้ดั้งเดิมจากแคว้นแอร์ทซ์เกอบีร์เกอของเยอรมนี และของเล่นเสริมการเรียนรู้จากยุโรป"
+          },
+          "why": {
+            "en": "Old wooden toys and educational toys to look at together, inside the same forest as the picture-book museum.",
+            "th": "ของเล่นไม้เก่าและของเล่นเสริมการเรียนรู้ให้ดูด้วยกัน อยู่ในป่าเดียวกับพิพิธภัณฑ์หนังสือภาพ"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Eltz Toy Museum Karuizawa, Nagakura, Karuizawa, Nagano, Japan",
+          "ok": "2026-11",
+          "src": "https://hoshinoresorts.com/guide/area/chubu/nagano/karuizawa/ame-2/"
+        },
+        {
+          "name": {
+            "en": "Karuizawa Hotchi Ichiba",
+            "th": "ตลาดฮตจิอิจิบะ คารุอิซาวะ"
+          },
+          "local": "軽井沢発地市庭（ほっちいちば）",
+          "kind": "market",
+          "area": {
+            "en": "Hotchi, Karuizawa (about 20 minutes by bus)",
+            "th": "ฮตจิ คารุอิซาวะ (นั่งรถบัสราว 20 นาที)"
+          },
+          "what": {
+            "en": "Local farm-produce market with a food-walk sweet, the soft-serve cheese from a cheese shop.",
+            "th": "ตลาดผักผลไม้จากฟาร์มท้องถิ่น มีขนมกินเดินเล่นคือซอฟต์เสิร์ฟชีสจากร้านชีส"
+          },
+          "why": {
+            "en": "Snacks to eat while walking around the market.",
+            "th": "มีของกินเล่นระหว่างเดินตลาด"
+          },
+          "tip": {
+            "en": "Open 9:00–17:00 (9:00–16:00 from January to March).",
+            "th": "เปิด 9:00–17:00 (9:00–16:00 ตั้งแต่มกราคมถึงมีนาคม)"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Karuizawa Hotchi Ichiba, Hotchi, Karuizawa, Nagano, Japan",
+          "ok": "2026-11",
+          "src": "https://hoshinoresorts.com/guide/area/chubu/nagano/karuizawa/ame-2/"
+        },
+        {
+          "name": {
+            "en": "Kanagawa Prefectural Museum of Natural History",
+            "th": "พิพิธภัณฑ์ธรรมชาติจังหวัดคานางาวะ"
+          },
+          "local": "神奈川県立生命の星・地球博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Irie, Odawara",
+            "th": "อิริเอะ โอดาวาระ"
+          },
+          "what": {
+            "en": "Kanagawa prefectural museum about the Earth and life, with around 10,000 specimens from dinosaurs to small insects.",
+            "th": "พิพิธภัณฑ์จังหวัดคานางาวะเรื่องโลกและสิ่งมีชีวิต มีตัวอย่างราว 10,000 ชิ้น ตั้งแต่ไดโนเสาร์ถึงแมลงเล็ก"
+          },
+          "why": {
+            "en": "Life-size dinosaur and meteorite displays, and a hands-on Yorozu Studio for children.",
+            "th": "มีไดโนเสาร์ขนาดเท่าจริง อุกกาบาต และสตูดิโอโยโรซุให้เด็กลงมือทำ"
+          },
+          "tip": {
+            "en": "Yorozu Studio events are held two or three times a month; check the website first.",
+            "th": "กิจกรรมสตูดิโอโยโรซุจัดเดือนละ 2–3 ครั้ง เช็กเว็บไซต์ก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥520 adults 20–64 · ≈ ¥100 high school and 65+ · ≈ ¥300 students under 20 · middle school and under free",
+            "th": "≈ ¥520 ผู้ใหญ่ 20–64 ปี · ≈ ¥100 มัธยมปลายและอายุ 65+ · ≈ ¥300 นักศึกษาต่ำกว่า 20 ปี · ม.ต้นลงไปฟรี"
+          },
+          "book": "none",
+          "q": "Kanagawa Prefectural Museum of Natural History, Iryuda, Odawara, Kanagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/245627/"
+        },
+        {
+          "name": {
+            "en": "Hakone Ekiden Museum",
+            "th": "พิพิธภัณฑ์เอคิเด็งฮาโกเนะ"
+          },
+          "local": "箱根駅伝ミュージアム",
+          "kind": "museum",
+          "area": {
+            "en": "Hakone-machi, by the race's finish point",
+            "th": "ฮาโกเนะมาจิ ใกล้จุดเส้นชัยของการแข่ง"
+          },
+          "what": {
+            "en": "Museum of the Hakone Ekiden relay race, with exhibits on its history since 1920 and its famous races.",
+            "th": "พิพิธภัณฑ์การวิ่งผลัดฮาโกเนะ เอคิเด็ง มีนิทรรศการประวัติตั้งแต่ปี 1920 และการแข่งที่มีชื่อเสียง"
+          },
+          "why": {
+            "en": "Free guided tour on Tuesdays, Thursdays and Saturdays, about 20 minutes, with famous races and runners' stories.",
+            "th": "มีไกด์นำชมฟรีวันอังคาร พฤหัสบดี และเสาร์ ราว 20 นาที เล่าการแข่งดังและเรื่องราวของนักวิ่ง"
+          },
+          "tip": {
+            "en": "Free guide Tuesday, Thursday and Saturday at 11:00.",
+            "th": "ไกด์ฟรีวันอังคาร พฤหัสบดี และเสาร์ เวลา 11:00"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hakone Ekiden Museum, Hakone-machi, Ashigarashimo District, Kanagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://hoshinoresorts.com/guide/area/kanto/kanagawa/hakone/hakone-ame/"
+        },
+        {
+          "name": {
+            "en": "Hakone Lalique Museum",
+            "th": "พิพิธภัณฑ์ลาลิก ฮาโกเนะ"
+          },
+          "local": "箱根ラリック美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Sengokuhara, Hakone",
+            "th": "เซ็งโกกุฮาระ ฮาโกเนะ"
+          },
+          "what": {
+            "en": "Museum of about 1,500 glass and jewellery works by René Lalique, with a real Orient Express carriage in the complex next door.",
+            "th": "พิพิธภัณฑ์ผลงานแก้วและเครื่องประดับของเรอเน ลาลิกราว 1,500 ชิ้น และมีตู้รถไฟโอเรียนท์เอ็กซ์เพรสจริงในบริเวณข้างๆ"
+          },
+          "why": {
+            "en": "You can go inside a real Orient Express carriage, and photos are allowed inside it.",
+            "th": "เข้าไปในตู้รถไฟโอเรียนท์เอ็กซ์เพรสจริงได้ และถ่ายรูปข้างในได้"
+          },
+          "tip": {
+            "en": "Strollers can be used inside the museum.",
+            "th": "ใช้รถเข็นเด็กในพิพิธภัณฑ์ได้"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥1,500 adults · ≈ ¥1,300 university, high school and seniors · ≈ ¥800 middle and primary school",
+            "th": "≈ ¥1,500 ผู้ใหญ่ · ≈ ¥1,300 มหาวิทยาลัย มัธยมปลาย และผู้สูงอายุ · ≈ ¥800 ม.ต้นและประถม"
+          },
+          "book": "none",
+          "q": "Hakone Lalique Museum, 186-1 Sengokuhara, Hakone, Kanagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/245627/"
+        },
+        {
+          "name": {
+            "en": "Kanazashi Woodcraft Workshop",
+            "th": "เวิร์กช็อปงานไม้คานาซาชิ"
+          },
+          "local": "金指ウッドクラフト",
+          "kind": "culture",
+          "area": {
+            "en": "Hatajuku, Hakone",
+            "th": "ฮาตะจูกุ ฮาโกเนะ"
+          },
+          "what": {
+            "en": "Hakone wood-marquetry (yosegi) shop and workshop where visitors make their own coaster.",
+            "th": "ร้านและเวิร์กช็อปงานไม้ประกอบลาย (โยเซกิ) ของฮาโกเนะ ให้ผู้มาเยือนทำที่รองแก้วของตัวเอง"
+          },
+          "why": {
+            "en": "Each person makes a one-of-a-kind coaster from solid-wood blocks, and the page says it suits children from 2–3 years old.",
+            "th": "ทุกคนทำที่รองแก้วชิ้นเดียวในโลกจากบล็อกไม้จริง เว็บระบุว่าเหมาะกับเด็กตั้งแต่ 2–3 ขวบ"
+          },
+          "tip": {
+            "en": "Workshops are booked by phone only (no email booking). Open 10:30–15:30; closed Mondays and Wednesdays unless a public holiday.",
+            "th": "จองเวิร์กช็อปทางโทรศัพท์เท่านั้น (ไม่รับจองทางอีเมล) เปิด 10:30–15:30 ปิดวันจันทร์และพุธ เว้นแต่ตรงวันหยุดนักขัตฤกษ์"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,300 per person, tax included",
+            "th": "≈ ¥1,300 ต่อคน รวมภาษี"
+          },
+          "book": "req",
+          "q": "Kanazashi Woodcraft, 180-1 Hatajuku, Hakone, Kanagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://www.hakonenavi.jp/feature/6801"
         }
       ]
     },
     {
       "place": "jp-hiroshima",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Peace Memorial Park", "th": "สวนอนุสรณ์สันติภาพ" },
@@ -5460,7 +5787,6 @@
     },
     {
       "place": "jp-takayama",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Hida Folk Village", "th": "หมู่บ้านพื้นบ้านฮิดะ (ฮิดะโนะซาโตะ)" },
@@ -6073,6 +6399,367 @@
           "q": "Shinhotaka Ropeway, Okuhida Onsengo, Takayama, Gifu",
           "ok": "2026-11",
           "src": "https://www.japan.travel/national-parks/parks/chubusangaku/see-and-do/shinhotaka-ropeway"
+        },
+        {
+          "name": {
+            "en": "Wada House",
+            "th": "บ้านวาดะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Ogimachi, Shirakawa-go",
+            "th": "โอกิมาจิ ชิราคาวาโกะ"
+          },
+          "what": {
+            "en": "A gassho farmhouse you can walk through inside, with admission paid at the house.",
+            "th": "บ้านทรงกัสโชที่เดินชมภายในได้ จ่ายค่าเข้าที่บ้าน"
+          },
+          "why": {
+            "en": "The easiest and most representative first visit to a farmhouse interior.",
+            "th": "เป็นบ้านไร่ภายในที่เข้าชมง่ายและเป็นตัวแทนที่ดีสำหรับครั้งแรก"
+          },
+          "tip": {
+            "en": "The observation-deck shuttle leaves from the area in front of Wada House; adult fare ≈ ¥300 per journey.",
+            "th": "รถรับส่งขึ้นจุดชมวิวออกจากบริเวณหน้าบ้านวาดะ ผู้ใหญ่ ≈ ¥300 ต่อเที่ยว"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wada House, Ogimachi, Shirakawa-go, Shirakawa, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://todolist-japan.com/en/shirakawa-go-guide/"
+        },
+        {
+          "name": {
+            "en": "Kanda House",
+            "th": "บ้านคันดะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Ogimachi, Shirakawa-go",
+            "th": "โอกิมาจิ ชิราคาวาโกะ"
+          },
+          "what": {
+            "en": "Another farmhouse open to walk through, for seeing how a different household used its upper floors.",
+            "th": "บ้านไร่อีกหลังที่เปิดให้เดินชม ดูว่าอีกครัวเรือนใช้ชั้นบนอย่างไร"
+          },
+          "why": {
+            "en": "A second interior to visit when Wada House is crowded.",
+            "th": "เป็นอีกหลังให้เข้าชมเมื่อบ้านวาดะคนแน่น"
+          },
+          "tip": {
+            "en": "Admission is paid separately at the house.",
+            "th": "จ่ายค่าเข้าแยกที่บ้าน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kanda House, 796 Ogimachi, Shirakawa-go, Shirakawa, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://todolist-japan.com/en/shirakawa-go-guide/"
+        },
+        {
+          "name": {
+            "en": "Nagase House",
+            "th": "บ้านนางาเสะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Ogimachi, Shirakawa-go",
+            "th": "โอกิมาจิ ชิราคาวาโกะ"
+          },
+          "what": {
+            "en": "A farmhouse in the Three Houses area, to compare with Wada House and Kanda House.",
+            "th": "บ้านไร่ในย่านสามบ้าน ไว้เทียบกับบ้านวาดะและบ้านคันดะ"
+          },
+          "why": {
+            "en": "Part of the Three Houses area, one of the interiors the page lists for a visit.",
+            "th": "อยู่ในย่านสามบ้าน เป็นหนึ่งในบ้านที่เว็บแนะนำให้เข้าชม"
+          },
+          "tip": {
+            "en": "Admission is paid separately at the house.",
+            "th": "จ่ายค่าเข้าแยกที่บ้าน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nagase House, 823-2 Ogimachi, Shirakawa-go, Shirakawa, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://todolist-japan.com/en/shirakawa-go-guide/"
+        },
+        {
+          "name": {
+            "en": "Ogimachi Castle Ruins Observation Area",
+            "th": "จุดชมวิวซากปราสาทโอกิมาจิ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Ogimachi, Shirakawa-go",
+            "th": "โอกิมาจิ ชิราคาวาโกะ"
+          },
+          "what": {
+            "en": "The classic overview of the whole settlement, from the public viewpoint.",
+            "th": "จุดชมวิวสาธารณะที่เห็นภาพรวมทั้งหมู่บ้านแบบคลาสสิก"
+          },
+          "why": {
+            "en": "The slope needs care, and a shuttle goes up from in front of Wada House.",
+            "th": "ทางลาดต้องระวัง และมีรถรับส่งขึ้นจากหน้าบ้านวาดะ"
+          },
+          "tip": {
+            "en": "Take the shuttle or walk up before the midday crowd.",
+            "th": "นั่งรถรับส่งหรือเดินขึ้นก่อนคนแน่นช่วงเที่ยง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "≈ ¥300 adult per shuttle journey",
+            "th": "≈ ¥300 ผู้ใหญ่ ต่อเที่ยวรถรับส่ง"
+          },
+          "book": "none",
+          "q": "Ogimachi Castle Ruins observation area, Ogimachi, Shirakawa-go, Shirakawa, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://todolist-japan.com/en/shirakawa-go-guide/"
+        },
+        {
+          "name": {
+            "en": "Deai Bridge",
+            "th": "สะพานเดอาย"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Ogimachi, Shirakawa-go",
+            "th": "โอกิมาจิ ชิราคาวาโกะ"
+          },
+          "what": {
+            "en": "A bridge crossed on the usual half-day walk round the village.",
+            "th": "สะพานที่เดินข้ามระหว่างเดินรอบหมู่บ้านครึ่งวันตามปกติ"
+          },
+          "why": {
+            "en": "A walk over a bridge is part of the village outing.",
+            "th": "การเดินข้ามสะพานเป็นส่วนหนึ่งของการเที่ยวหมู่บ้าน"
+          },
+          "tip": {
+            "en": "Allow enough time for the walk within a half-day visit.",
+            "th": "เผื่อเวลาสำหรับเดินในทริปครึ่งวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Deai Bridge, Ogimachi, Shirakawa-go, Shirakawa, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://todolist-japan.com/en/shirakawa-go-guide/"
+        },
+        {
+          "name": {
+            "en": "Hirayu Folk Museum",
+            "th": "พิพิธภัณฑ์พื้นบ้านฮิราอิยุ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Hirayu, Okuhida Onsen (Okuhida, not Takayama town)",
+            "th": "ฮิราอิยุ โอคุฮิดะออนเซ็น"
+          },
+          "what": {
+            "en": "A two-level folk museum: hemp and natural-textile garments on the first floor, folk crafts on the second.",
+            "th": "พิพิธภัณฑ์พื้นบ้านสองชั้น ชั้นหนึ่งเป็นเสื้อผ้าป่านและผ้าธรรมชาติ ชั้นสองเป็นงานหัตถกรรมพื้นบ้าน"
+          },
+          "why": {
+            "en": "A small indoor museum, two floors to walk through.",
+            "th": "พิพิธภัณฑ์เล็กในร่ม เดินชมสองชั้น"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hirayu Folk Museum, Okuhida Onsengo Hirayu, Takayama, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.sugoii-japan.com/travel-guide-okuhida-onsen"
+        },
+        {
+          "name": {
+            "en": "Grand Hirayu Waterfall",
+            "th": "น้ำตกแกรนด์ฮิราอิยุ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Hirayu, Okuhida Onsen (Okuhida, not Takayama town)",
+            "th": "ฮิราอิยุ โอคุฮิดะออนเซ็น"
+          },
+          "what": {
+            "en": "A 64 m waterfall in Hirayu, one of the area's most popular non-onsen attractions.",
+            "th": "น้ำตกสูง 64 เมตรในฮิราอิยุ หนึ่งในที่เที่ยวยอดนิยมของพื้นที่นอกจากออนเซ็น"
+          },
+          "why": {
+            "en": "On Japan's top 100 waterfalls list, and named by the page as one of the most popular non-onsen attractions.",
+            "th": "อยู่ในรายชื่อน้ำตก 100 อันดับของญี่ปุ่น และเว็บระบุเป็นที่เที่ยวยอดนิยมนอกจากออนเซ็น"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Grand Hirayu Waterfall, Okuhida Onsengo Hirayu, Takayama, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.sugoii-japan.com/travel-guide-okuhida-onsen"
+        },
+        {
+          "name": {
+            "en": "Fukuji Morning Market",
+            "th": "ตลาดเช้าฟุคุจิ"
+          },
+          "local": "福地温泉朝市",
+          "kind": "market",
+          "area": {
+            "en": "Fukuji, Okuhida Onsen (Okuhida, not Takayama town)",
+            "th": "ฟุคุจิ โอคุฮิดะออนเซ็น"
+          },
+          "what": {
+            "en": "The Fukuji morning market, with fresh seasonal ingredients from the base of the Northern Japanese Alps and specialty products.",
+            "th": "ตลาดเช้าฟุคุจิ มีวัตถุดิบสดตามฤดูกาลจากเชิงเทือกเขาแอลป์เหนือและของขึ้นชื่อ"
+          },
+          "why": {
+            "en": "A look at local life: people buy their seasonal ingredients here.",
+            "th": "ได้เห็นชีวิตท้องถิ่น คนที่นี่มาซื้อวัตถุดิบตามฤดูกาล"
+          },
+          "tip": {
+            "en": "Plan it while you are in Fukuji, in the morning.",
+            "th": "วางแผนไปตอนอยู่ที่ฟุคุจิ ช่วงเช้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Fukuji Morning Market, Okuhida Onsengo Fukuji, Takayama, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.sugoii-japan.com/travel-guide-okuhida-onsen"
+        },
+        {
+          "name": {
+            "en": "Hirayu Onsen Ski Area",
+            "th": "สกีรีสอร์ตฮิราอิยุออนเซ็น"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Hirayu, Okuhida Onsen (Okuhida, not Takayama town)",
+            "th": "ฮิราอิยุ โอคุฮิดะออนเซ็น"
+          },
+          "what": {
+            "en": "A less crowded ski area with a wide layout for skiers and snowboarders.",
+            "th": "ลานสกีที่คนไม่แน่น กว้างขวางสำหรับสกีและสโนว์บอร์ด"
+          },
+          "why": {
+            "en": "A Family Galaende slope for families and beginners.",
+            "th": "มีทางลาดแฟมิลี่ กาลาเอนเดสำหรับครอบครัวและมือใหม่"
+          },
+          "tip": {
+            "en": "Winter only; the families' slope is the Family Galaende.",
+            "th": "เปิดเฉพาะหน้าหนาว ทางลาดสำหรับครอบครัวคือแฟมิลี่ กาลาเอนเด"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hirayu Onsen Ski Area, Okuhida Onsengo Hirayu, Takayama, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.sugoii-japan.com/travel-guide-okuhida-onsen"
         }
       ]
     },
@@ -7857,7 +8544,6 @@
     },
     {
       "place": "jp-kagoshima",
-      "thin": true,
       "sights": [
         {
           "local": "平川動物公園",
@@ -8870,7 +9556,6 @@
     },
     {
       "place": "jp-sendai",
-      "thin": true,
       "sights": [
         {
           "name": {
@@ -10178,7 +10863,6 @@
     },
     {
       "place": "jp-nagoya",
-      "thin": true,
       "sights": [
         {
           "name": {
@@ -11558,7 +12242,6 @@
     },
     {
       "place": "jp-kobe",
-      "thin": true,
       "sights": [
         {
           "name": {

@@ -868,7 +868,6 @@
     },
     {
       "place": "jp-fuji",
-      "thin": true,
       "sights": [
         {
           "local": "トーマスランド",
@@ -1671,12 +1670,375 @@
           "q": "Peter Rabbit English Garden, Fuji Motosuko Resort, Fujikawaguchiko",
           "ok": "2026-11",
           "src": "https://haveagood-holiday.com/en/articles/fuji-shibazakura-festival-spring-2026"
+        },
+        {
+          "name": {
+            "en": "Kawaguchiko Craft Park",
+            "th": "คาวากูจิโกะ คราฟต์ พาร์ก"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Kawaguchi, Fujikawaguchiko",
+            "th": "คาวากูจิ ฟูจิคาวากูจิโกะ"
+          },
+          "what": {
+            "en": "A craft centre with nine hands-on classes: glass beading, stained glass, sandblasting, gel candles, pottery painting and more.",
+            "th": "ศูนย์งานฝีมือที่มีคลาสลงมือทำ 9 แบบ เช่น ร้อยลูกปัดแก้ว กระจกสี พ่นทราย เทียนเจล และเพ้นท์เครื่องปั้น"
+          },
+          "why": {
+            "en": "People of all ages, from kids to adults, can make something to take home.",
+            "th": "ทุกวัยตั้งแต่เด็กถึงผู้ใหญ่ทำของกลับบ้านได้"
+          },
+          "tip": {
+            "en": "Indoors, so it works on a wet day. Book a class ahead.",
+            "th": "อยู่ในร่ม เหมาะวันฝนตก ควรจองคลาสล่วงหน้า"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Kawaguchiko Craft Park, Kawaguchi, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.yamanashi-kankou.jp/english/explore-by-area/fujisan-fujigoko/kawaguchiko-craft-park.html"
+        },
+        {
+          "name": {
+            "en": "Fugaku Wind Cave",
+            "th": "ถ้ำลมฟุงาคุ"
+          },
+          "local": "富岳風穴",
+          "kind": "nature",
+          "area": {
+            "en": "Aokigahara, Fujikawaguchiko",
+            "th": "อาโอกิงาฮาระ ฟูจิคาวากูจิโกะ"
+          },
+          "what": {
+            "en": "A flat cave about 15 minutes long, cooled to around 3°C all summer, where ice and silkworm eggs were once stored.",
+            "th": "ถ้ำทางเรียบใช้เวลาเดินราว 15 นาที เย็นราว 3°C ตลอดฤดูร้อน เคยใช้เก็บน้ำแข็งและไข่หนอนไหม"
+          },
+          "why": {
+            "en": "Flat and easy to walk, and the cave is cool on a hot day; the rock soaks up echoes, so clapping sounds dull.",
+            "th": "ทางเรียบเดินง่าย ถ้ำเย็นสบายวันร้อน หินดูดเสียงสะท้อน เสียงปรบมือจึงทึบ"
+          },
+          "tip": {
+            "en": "Cool inside even in summer, so take a layer. Check the closing time, which changes by season.",
+            "th": "ข้างในเย็นแม้หน้าร้อน พกเสื้อคลุมไปด้วย เวลาปิดเปลี่ยนตามฤดู เช็กก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Fugaku Wind Cave, Aokigahara, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.magical-trip.com/media/top-indoor-activities-near-mt-fuji-enjoy-rainy-days-around-japanese-icon/"
+        },
+        {
+          "name": {
+            "en": "Lisa and Gaspard Town",
+            "th": "เมืองลีซ่าและกัสปาร์"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Shinnishihara, Fujiyoshida (Lake Kawaguchi side)",
+            "th": "ชินนิชิฮาระ ฟูจิโยชิดะ (ฝั่งทะเลสาบคาวากูจิ)"
+          },
+          "what": {
+            "en": "A small French-style town themed on the picture-book characters Lisa and Gaspard, with a fountain plaza, an Eiffel Tower carousel and a mirror maze.",
+            "th": "เมืองเล็กสไตล์ฝรั่งเศสธีมตัวละครหนังสือภาพลีซ่าและกัสปาร์ มีลานน้ำพุ ม้าหมุนหอไอเฟล และเขาวงกตกระจก"
+          },
+          "why": {
+            "en": "A theme park where you can meet Lisa and Gaspard; the mirror maze is built for parents and children to play together.",
+            "th": "สวนสนุกที่ได้พบลีซ่าและกัสปาร์ เขาวงกตกระจกออกแบบให้พ่อแม่เล่นกับลูกด้วยกัน"
+          },
+          "tip": {
+            "en": "Check the official site for hours and regular holidays.",
+            "th": "เช็กเวลาเปิดและวันหยุดประจำที่เว็บไซต์ทางการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free admission; Mirror Maze ≈ ¥800, Eiffel Tower Carousel ≈ ¥800",
+            "th": "เข้าฟรี เขาวงกตกระจก ≈ ¥800 ม้าหมุนหอไอเฟล ≈ ¥800"
+          },
+          "book": "none",
+          "q": "La Ville de Gaspard Et Lisa, Shinnishihara, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/chubu/yamanashi/fuji/odekake-spot"
+        },
+        {
+          "name": {
+            "en": "Forest Adventure Fuji",
+            "th": "ฟอเรสต์ แอดเวนเจอร์ ฟูจิ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Funatsu, Lake Kawaguchi",
+            "th": "ฟูนาตสึ ทะเลสาบคาวากูจิ"
+          },
+          "what": {
+            "en": "Forest adventure courses in the trees, with a separate kids course for the youngest climbers.",
+            "th": "คอร์สผจญภัยบนต้นไม้ในป่า มีคอร์สเด็กแยกสำหรับนักปีนตัวเล็ก"
+          },
+          "why": {
+            "en": "The kids course is built for young children, with a zip slide and tightrope walking 1 to 2 metres up.",
+            "th": "คอร์สเด็กทำมาสำหรับเด็กเล็ก มีสไลด์ลวดและเดินบนเชือกสูงราว 1–2 เมตร"
+          },
+          "tip": {
+            "en": "Adventure and canopy courses are for older children. Check the height rules on the site.",
+            "th": "คอร์สผจญภัยและคอร์สเรือนยอดเหมาะกับเด็กโต เช็กเกณฑ์ความสูงที่เว็บไซต์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Kids Course ≈ ¥2,100",
+            "th": "คอร์สเด็ก ≈ ¥2,100"
+          },
+          "book": "none",
+          "q": "Forest Adventure Fuji, Funatsu, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/chubu/yamanashi/fuji/odekake-spot"
+        },
+        {
+          "name": {
+            "en": "Kachi Kachi Yama Ropeway",
+            "th": "กระเช้าคาจิคาจิยามะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Azagawa, Lake Kawaguchi",
+            "th": "อาซาคาวะ ทะเลสาบคาวากูจิ"
+          },
+          "what": {
+            "en": "A ropeway up to a 360-degree lookout over Mt. Fuji and Lake Kawaguchi, with a swing that swings out toward the mountain.",
+            "th": "กระเช้าขึ้นจุดชมวิว 360 องศาเห็นภูเขาไฟฟูจิและทะเลสาบคาวากูจิ มีชิงช้าที่แกว่งออกไปทางภูเขา"
+          },
+          "why": {
+            "en": "The swing looks out at Mt. Fuji, and the view is wide from the top.",
+            "th": "ชิงช้าหันหน้าไปทางภูเขาไฟฟูจิ และวิวจากด้านบนกว้างไกล"
+          },
+          "tip": {
+            "en": "Hours 8:30–17:00 (18:00 in July and August); last descent 17:20. Closed in bad weather.",
+            "th": "เปิด 8:30–17:00 (ถึง 18:00 ในเดือนกรกฎาคมและสิงหาคม) กระเช้าลงรอบสุดท้าย 17:20 ปิดเมื่อสภาพอากาศไม่ดี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥600 one way, ¥1,000 return (junior high and up) · ≈ ¥300 one way, ¥500 return (primary school)",
+            "th": "≈ ¥600 เที่ยวเดียว ¥1,000 ไปกลับ (ม.ต้นขึ้นไป) · ≈ ¥300 เที่ยวเดียว ¥500 ไปกลับ (ประถม)"
+          },
+          "book": "none",
+          "q": "Fuji Ropeway Kachi Kachi Yama, Azagawa, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/chubu/yamanashi/fuji/odekake-spot"
+        },
+        {
+          "name": {
+            "en": "Arakurayama Sengen Park",
+            "th": "สวนอาราคุระยามะ เซ็งเง็น"
+          },
+          "local": "新倉山浅間公園",
+          "kind": "views",
+          "area": {
+            "en": "Asama, Fujiyoshida",
+            "th": "อาซามะ ฟูจิโยชิดะ"
+          },
+          "what": {
+            "en": "A park where a five-storey red pagoda stands in front of Mt. Fuji, one of the most photographed views in Japan.",
+            "th": "สวนที่มีเจดีย์แดงห้าชั้นตั้งอยู่หน้าภูเขาไฟฟูจิ เป็นวิวที่ถ่ายรูปกันมากที่สุดแห่งหนึ่งของญี่ปุ่น"
+          },
+          "why": {
+            "en": "Open grass and a classic view; it still looks good in cloudy weather.",
+            "th": "มีลานหญ้าโล่งและวิวคลาสสิก วันเมฆมากก็ยังสวย"
+          },
+          "tip": {
+            "en": "Best seen on a clear day, but a gloomy day still works here.",
+            "th": "สวยที่สุดวันฟ้าใส แต่วันครึ้มก็ยังไปได้"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Arakurayama Sengen Park, Asama, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://www.magical-trip.com/media/top-indoor-activities-near-mt-fuji-enjoy-rainy-days-around-japanese-icon/"
+        },
+        {
+          "name": {
+            "en": "Herb Garden Tabinikki Fuji-Kawaguchiko Garden",
+            "th": "สวนสมุนไพรทาบินิกกิ ฟูจิคาวากูจิโกะ"
+          },
+          "local": "ハーブ庭園旅日記　富士河口湖庭園",
+          "kind": "park",
+          "area": {
+            "en": "Funatsu, Fujikawaguchiko",
+            "th": "ฟูนาตสึ ฟูจิคาวากูจิโกะ"
+          },
+          "what": {
+            "en": "A large herb garden of about 10,000 tsubo with seasonal flowers, and a 13-metre lookout deck with views of Mt. Fuji.",
+            "th": "สวนสมุนไพรขนาดใหญ่ราว 10,000 สึโบะ มีดอกไม้ตามฤดูกาล และดาดฟ้าชมวิวสูง 13 เมตรเห็นภูเขาไฟฟูจิ"
+          },
+          "why": {
+            "en": "Lots of space to walk, smell the herbs and see the flowers, with a cafe on the top floor.",
+            "th": "มีที่ให้เดินเล่น ดมกลิ่นสมุนไพร ชมดอกไม้ และมีคาเฟ่ชั้นบนสุด"
+          },
+          "tip": {
+            "en": "Entry is free; the lookout deck has its own fee. Hands-on classes cost extra.",
+            "th": "เข้าสวนฟรี ดาดฟ้าชมวิวมีค่าเข้าแยก คลาสลงมือทำจ่ายเพิ่ม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Garden free · lookout deck ≈ ¥1,000 adults, ≈ ¥500 primary and junior high, under school age free",
+            "th": "เข้าสวนฟรี · ดาดฟ้าชมวิว ≈ ¥1,000 ผู้ใหญ่ ≈ ¥500 ประถมและ ม.ต้น เด็กเล็กฟรี"
+          },
+          "book": "none",
+          "q": "Herb Garden Tabinikki Fuji-Kawaguchiko Garden, Funatsu, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://tabiiro.jp/higaeri/article/fuji-kozure-leisure/"
+        },
+        {
+          "name": {
+            "en": "Lake Kawaguchi",
+            "th": "ทะเลสาบคาวากูจิ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Fujikawaguchiko",
+            "th": "ฟูจิคาวากูจิโกะ"
+          },
+          "what": {
+            "en": "The largest of the Fuji Five Lakes, at the foot of Mt. Fuji, where Mt. Fuji is reflected in the water on clear days.",
+            "th": "ทะเลสาบที่ใหญ่ที่สุดในห้าทะเลสาบฟูจิ อยู่เชิงภูเขาไฟฟูจิ วันฟ้าใสเห็นภูเขาสะท้อนในน้ำ"
+          },
+          "why": {
+            "en": "Mt. Fuji's reflection in the lake; a short walk along the shore to see it.",
+            "th": "ภาพภูเขาไฟฟูจิสะท้อนในทะเลสาบ เดินเลียบชายฝั่งสั้นๆ ก็ชมได้"
+          },
+          "tip": {
+            "en": "Best on a clear morning, when the reflection is clearest.",
+            "th": "ดีที่สุดตอนเช้าฟ้าใส เมื่อภาพสะท้อนชัดที่สุด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lake Kawaguchi, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.magical-trip.com/media/top-indoor-activities-near-mt-fuji-enjoy-rainy-days-around-japanese-icon/"
+        },
+        {
+          "name": {
+            "en": "Kawaguchiko Field Center",
+            "th": "คาวากูจิโกะ ฟิลด์ เซ็นเตอร์"
+          },
+          "local": "河口湖フィールドセンター",
+          "kind": "museumkid",
+          "area": {
+            "en": "Kenmaru-o lava flow, Funatsu, Kawaguchiko",
+            "th": "ธารลาวาเคนมารุโอะ ฟูนาตสึ คาวากูจิโกะ"
+          },
+          "what": {
+            "en": "A natural history museum on the Kenmaru-o lava flow, about how Mt. Fuji formed, with caves to see outside.",
+            "th": "พิพิธภัณฑ์ธรรมชาติบนธารลาวาเคนมารุโอะ เล่าการเกิดภูเขาไฟฟูจิ และมีถ้ำให้ชมด้านนอก"
+          },
+          "why": {
+            "en": "Craft experiences that use natural materials, and the museum works on a rainy day.",
+            "th": "มีกิจกรรมงานฝีมือจากวัสดุธรรมชาติ และพิพิธภัณฑ์เหมาะวันฝนตก"
+          },
+          "tip": {
+            "en": "Closed on Mondays. Craft experiences take about an hour.",
+            "th": "ปิดวันจันทร์ กิจกรรมงานฝีมือใช้เวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Kawaguchiko Field Center, Funatsu, Fujikawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.yamanashi-kankou.jp/kankou/spot/p6_2741.html"
         }
       ]
     },
     {
       "place": "jp-matsuyama",
-      "thin": true,
       "sights": [
         {
           "local": "えひめこどもの城",
@@ -3219,7 +3581,6 @@
     },
   {
       "place": "jp-izu",
-      "thin": true,
       "sights": [
         {
           "name": {
@@ -3745,6 +4106,326 @@
           "q": "Izu Teddy Bear Museum, Izu-Kogen, Ito, Japan",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/directory/item/14885/"
+        },
+        {
+          "name": {
+            "en": "MOA Museum of Art",
+            "th": "พิพิธภัณฑ์ศิลปะ MOA"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Momoyama, Atami",
+            "th": "โมโมยามะ อาตามิ"
+          },
+          "what": {
+            "en": "A hilltop art museum with a permanent collection of Japanese and East Asian art and a sea view from the main hall.",
+            "th": "พิพิธภัณฑ์ศิลปะบนเนินเขา มีคอลเลกชันถาวรศิลปะญี่ปุ่นและเอเชียตะวันออก และเห็นทะเลจากห้องโถงใหญ่"
+          },
+          "why": {
+            "en": "Indoors, with a sea view and a Japanese garden to walk through; the escalator up is part of the visit.",
+            "th": "อยู่ในร่ม เห็นทะเลและมีสวนญี่ปุ่นให้เดินเล่น การขึ้นบันไดเลื่อนก็เป็นส่วนหนึ่งของการเที่ยว"
+          },
+          "tip": {
+            "en": "Closed Thursdays (open if Thursday is a national holiday); hours 9:30 to 16:30.",
+            "th": "ปิดวันพฤหัสบดี (เปิดถ้าตรงวันหยุดนักขัตฤกษ์) เวลา 9:30–16:30"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,000 adults",
+            "th": "≈ ¥2,000 ผู้ใหญ่"
+          },
+          "book": "none",
+          "q": "MOA Museum of Art, 26-2 Momoyamacho, Atami, Japan",
+          "ok": "2026-11",
+          "src": "https://haveagood-holiday.com/en/articles/atami-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Atami Castle",
+            "th": "ปราสาทอาตามิ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Atami hilltop",
+            "th": "บนเนินเขาอาตามิ"
+          },
+          "what": {
+            "en": "A modern reconstruction on a hilltop with exhibits on local history and samurai armour.",
+            "th": "ปราสาทสร้างใหม่บนเนินเขา มีนิทรรศการประวัติศาสตร์ท้องถิ่นและเกราะซามูไร"
+          },
+          "why": {
+            "en": "Indoor exhibits and a 360-degree observation deck, so a rainy-day stop too.",
+            "th": "มีนิทรรศการในร่มและจุดชมวิว 360 องศา จึงแวะวันฝนตกได้"
+          },
+          "tip": {
+            "en": "Castle hours 9:00 to 17:00 (last entry 16:30).",
+            "th": "ปราสาทเปิด 9:00–17:00 (เข้าได้ถึง 16:30)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,200 adults · ≈ ¥650 elementary and junior high · ≈ ¥500 ages 3 to 6",
+            "th": "≈ ¥1,200 ผู้ใหญ่ · ≈ ¥650 ประถมและ ม.ต้น · ≈ ¥500 อายุ 3–6 ปี"
+          },
+          "book": "none",
+          "q": "Atami Castle, 1993 Atami, Japan",
+          "ok": "2026-11",
+          "src": "https://haveagood-holiday.com/en/articles/atami-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Atami Ropeway",
+            "th": "กระเช้าอาตามิ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Atami hilltop",
+            "th": "บนเนินเขาอาตามิ"
+          },
+          "what": {
+            "en": "A cable car from near the waterfront up to the hilltop station, about three minutes.",
+            "th": "กระเช้าจากใกล้ริมน้ำขึ้นสถานีบนเนินเขา ใช้เวลาราว 3 นาที"
+          },
+          "why": {
+            "en": "A short ride up to the castle hill and views of the coast.",
+            "th": "นั่งสั้นๆ ขึ้นเนินปราสาท ชมวิวชายฝั่ง"
+          },
+          "tip": {
+            "en": "First departure 9:30; last uphill 17:00.",
+            "th": "รอบแรก 9:30 รอบขึ้นสุดท้าย 17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Children ≈ ¥500 return (≈ ¥300 one way)",
+            "th": "เด็ก ≈ ¥500 ไปกลับ (≈ ¥300 เที่ยวเดียว)"
+          },
+          "book": "none",
+          "q": "Atami Ropeway, Atami, Japan",
+          "ok": "2026-11",
+          "src": "https://haveagood-holiday.com/en/articles/atami-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Atami Plum Garden",
+            "th": "สวนบ๊วยอาตามิ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Baiencho, Atami",
+            "th": "ไบเอ็นโจ อาตามิ"
+          },
+          "what": {
+            "en": "A garden with about 470 plum trees in 59 varieties.",
+            "th": "สวนที่มีต้นบ๊วยราว 470 ต้น 59 สายพันธุ์"
+          },
+          "why": {
+            "en": "Walks among the trees; the early blossom is a seasonal outing.",
+            "th": "เดินเล่นท่ามกลางต้นไม้ ดอกบ๊วยบานเร็วเป็นการเที่ยวตามฤดูกาล"
+          },
+          "tip": {
+            "en": "The Atami Plum Festival typically runs from early January through early March.",
+            "th": "เทศกาลบ๊วยอาตามิมักจัดตั้งแต่ต้นเดือนมกราคมถึงต้นเดือนมีนาคม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Atami Plum Garden, 8-11 Baiencho, Atami, Japan",
+          "ok": "2026-11",
+          "src": "https://haveagood-holiday.com/en/articles/atami-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Atami Sun Beach",
+            "th": "หาดอาตามิ ซันบีช"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Atami centre",
+            "th": "ใจกลางอาตามิ"
+          },
+          "what": {
+            "en": "The main beach in the centre of town, about 400 metres along the waterfront.",
+            "th": "หาดหลักกลางเมือง ยาวราว 400 เมตรริมน้ำ"
+          },
+          "why": {
+            "en": "A beach in the middle of town, with a promenade for walking outside swimming season.",
+            "th": "หาดกลางเมือง มีทางเดินริมทะเลให้เดินเล่นนอกฤดูว่ายน้ำ"
+          },
+          "tip": {
+            "en": "In summer it has lifeguards and facilities; the late afternoon promenade is pleasant.",
+            "th": "หน้าร้อนมีเจ้าหน้าที่ช่วยชีวิตและสิ่งอำนวยความสะดวก ทางเดินช่วงบ่ายแก่ๆ เดินสบาย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Atami Sun Beach, Higashikaigancho, Atami, Japan",
+          "ok": "2026-11",
+          "src": "https://haveagood-holiday.com/en/articles/atami-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Izu Animal Kingdom",
+            "th": "อิซุ แอนิมอล คิงดอม"
+          },
+          "kind": "zoo",
+          "area": {
+            "en": "Inatori, Higashi-Izu",
+            "th": "อินาโตริ ฮิงาชิอิซุ"
+          },
+          "what": {
+            "en": "A large leisure park with an animal zone, a sports zone and a play zone on a hill above Inatori.",
+            "th": "สวนสันทนาการขนาดใหญ่บนเนินเหนืออินาโตริ มีโซนสัตว์ โซนกีฬา และโซนเล่น"
+          },
+          "why": {
+            "en": "Walking safari, animal feeding and rides in the play zone for children.",
+            "th": "มีวอล์กกิ้งซาฟารี ป้อนอาหารสัตว์ และเครื่องเล่นในโซนเด็ก"
+          },
+          "tip": {
+            "en": "Check the operating status on the official site before you go.",
+            "th": "เช็กสถานะการเปิดที่เว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Izu Animal Kingdom, 3344 Inatori, Higashi-Izu, Japan",
+          "ok": "2026-11",
+          "src": "https://izu-animal-kingdom.com/en/"
+        },
+        {
+          "name": {
+            "en": "Shimoda Ropeway",
+            "th": "กระเช้าชิโมดะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Shimoda",
+            "th": "ชิโมดะ"
+          },
+          "what": {
+            "en": "A ropeway from the station area up to Nesugatayama, with a summit park of paths, gardens and a café.",
+            "th": "กระเช้าจากย่านสถานีขึ้นเขาเนซูงาตะยามะ มีสวนบนยอดเขา ทางเดิน สวน และคาเฟ่"
+          },
+          "why": {
+            "en": "Views over Shimoda harbour and a walk through summit gardens and paths.",
+            "th": "ชมวิวท่าเรือชิโมดะ และเดินเล่นในสวนและทางเดินบนยอดเขา"
+          },
+          "tip": {
+            "en": "The winds at the summit can be strong, especially on the viewing platform.",
+            "th": "ลมบนยอดเขาอาจแรง โดยเฉพาะที่ชานชาลาชมวิว"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shimoda Ropeway, Shimoda, Japan",
+          "ok": "2026-11",
+          "src": "https://en.japantravel.com/shizuoka/shimoda-mt-nesugata-to-gyokusenj/2557"
+        },
+        {
+          "name": {
+            "en": "Izu Kogen Stained Glass Museum",
+            "th": "พิพิธภัณฑ์กระจกสีอิซุโคเก็น"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Kawana, Ito",
+            "th": "คาวานะ อิโตะ"
+          },
+          "what": {
+            "en": "A brick mansion holding about 300 stained-glass works, many 19th-century British pieces.",
+            "th": "คฤหาสน์อิฐที่เก็บงานกระจกสีราว 300 ชิ้น ส่วนมากเป็นงานอังกฤษศตวรรษที่ 19"
+          },
+          "why": {
+            "en": "Indoors, with live organ and music-box concerts in the chapels.",
+            "th": "อยู่ในร่ม มีคอนเสิร์ตออร์แกนและกล่องดนตรีสดในโบสถ์"
+          },
+          "tip": {
+            "en": "Concerts in the two chapels are held almost daily.",
+            "th": "มีคอนเสิร์ตในโบสถ์สองหลังเกือบทุกวัน"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Izu Kogen Stained Glass Museum, 1439-1 Kawana, Ito, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/14886/"
         }
       ]
     },
@@ -5957,6 +6638,170 @@
           "q": "Mizu to Kirameki Kinokawa-kan, Arimoto, Wakayama, Japan",
           "ok": "2026-11",
           "src": "https://kids.rurubu.jp/article/15343/"
+        },
+        {
+          "name": {
+            "en": "Wakayama City Fire Bureau Disaster Prevention Learning Centre",
+            "th": "ศูนย์เรียนรู้การป้องกันภัยพิบัติ สำนักดับเพลิงเมืองวากายามะ"
+          },
+          "local": "和歌山市消防局防災学習センター",
+          "kind": "museumkid",
+          "area": {
+            "en": "Hachibancho, Wakayama City (3rd floor, Fire Bureau)",
+            "th": "ฮาจิบันโจ เมืองวากายามะ (ชั้น 3 สำนักดับเพลิง)"
+          },
+          "what": {
+            "en": "A disaster-prevention learning centre that teaches safety with simulators and hands-on equipment.",
+            "th": "ศูนย์เรียนรู้ป้องกันภัยพิบัติที่สอนความปลอดภัยด้วยเครื่องจำลองและอุปกรณ์ให้ลองใช้"
+          },
+          "why": {
+            "en": "Children can try an evacuation through smoke and a fire-extinguisher game, and a 119 emergency-call practice.",
+            "th": "เด็กลองหนีควัน เล่นเกมถังดับเพลิง และฝึกโทร 119"
+          },
+          "tip": {
+            "en": "Open 9:00–17:00; closed Mondays (or the next weekday if a holiday) and 28 Dec–4 Jan.",
+            "th": "เปิด 9:00–17:00 ปิดวันจันทร์ (หรือวันธรรมดาถัดไปถ้าตรงวันหยุด) และ 28 ธ.ค.–4 ม.ค."
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Wakayama City Fire Bureau Disaster Prevention Learning Center, Hachibancho, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5439/"
+        },
+        {
+          "name": {
+            "en": "Moly Fantasy Wakayama",
+            "th": "โมลี่ แฟนตาซี วากายามะ"
+          },
+          "local": "モーリーファンタジー和歌山店",
+          "kind": "play",
+          "area": {
+            "en": "3F, Aeon Mall Wakayama, Wakayama City",
+            "th": "ชั้น 3 อิออนมอลล์ วากายามะ เมืองวากายามะ"
+          },
+          "what": {
+            "en": "An indoor amusement play space inside a shopping centre, with a kids' zone for children from 0 to second grade.",
+            "th": "พื้นที่เล่นในร่มในห้างสรรพสินค้า มีโซนเด็กสำหรับเด็ก 0 ขวบถึงประถม 2"
+          },
+          "why": {
+            "en": "A ball pool and slides in the kids' zone; a good break while shopping on a rainy day.",
+            "th": "มีบ่อบอลและสไลเดอร์ในโซนเด็ก พักผ่อนระหว่างช้อปวันฝนตกได้ดี"
+          },
+          "tip": {
+            "en": "Open 9:00–21:00; irregular closing days, check before you go.",
+            "th": "เปิด 9:00–21:00 วันหยุดไม่แน่นอน เช็กก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Moly Fantasy Wakayama, Aeon Mall Wakayama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5439/"
+        },
+        {
+          "name": {
+            "en": "Wakayama Prefectural Museum of Modern Art",
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่จังหวัดวากายามะ"
+          },
+          "local": "和歌山県立近代美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Fukiage, Wakayama City, beside Wakayama Castle",
+            "th": "ฟุกิอาเงะ เมืองวากายามะ ข้างปราสาทวากายามะ"
+          },
+          "what": {
+            "en": "A modern art museum beside Wakayama Castle with over 10,000 works, from local artists to overseas masters.",
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่ข้างปราสาทวากายามะ มีผลงานกว่า 10,000 ชิ้น ตั้งแต่ศิลปินท้องถิ่นถึงปรมาจารย์ต่างประเทศ"
+          },
+          "why": {
+            "en": "A children's art club (by advance booking) helps children get to know art.",
+            "th": "มีชมรมศิลปะเด็ก (จองล่วงหน้า) ช่วยให้เด็กทำความรู้จักศิลปะ"
+          },
+          "tip": {
+            "en": "The kids' art club needs advance booking; a quiet museum, so best for the calmer ones.",
+            "th": "ชมรมศิลปะเด็กต้องจองล่วงหน้า เป็นพิพิธภัณฑ์เงียบ เหมาะกับเด็กที่นิ่งหน่อย"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400 adults · free for high school and under",
+            "th": "≈ ¥400 ผู้ใหญ่ · มัธยมปลายลงไปฟรี"
+          },
+          "book": "none",
+          "q": "Wakayama Prefectural Museum of Modern Art, 1-4-14 Fukiage, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5439/"
+        },
+        {
+          "name": {
+            "en": "Shirahama Undersea Observation Tower (Coral Princess)",
+            "th": "หอชมใต้ทะเลชิราฮามะ (คอรัล พริ้นเซส)"
+          },
+          "local": "白浜海中展望塔",
+          "kind": "aquarium",
+          "area": {
+            "en": "Shirahama, Nishimuro District (near Shin-Yunosaki)",
+            "th": "ชิราฮามะ เขตนิชิมุโระ (ใกล้ชิน-ยูโนซากิ)"
+          },
+          "what": {
+            "en": "A tower with an underwater viewing room, reached by a spiral staircase, that looks out onto the sea.",
+            "th": "หอคอยที่มีห้องชมใต้น้ำ เดินลงทางบันไดเวียน มองออกไปเห็นทะเล"
+          },
+          "why": {
+            "en": "Colourful tropical fish swim past the viewing room.",
+            "th": "ฝูงปลาเขตร้อนหลากสีว่ายผ่านห้องชม"
+          },
+          "tip": {
+            "en": "Open 9:00–16:00 (closes 16:30).",
+            "th": "เปิด 9:00–16:00 (ปิด 16:30)"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "≈ ¥800 adults · ≈ ¥500 children",
+            "th": "≈ ¥800 ผู้ใหญ่ · ≈ ¥500 เด็ก"
+          },
+          "book": "none",
+          "q": "Shirahama Undersea Observation Tower, Shirahama, Nishimuro District, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0507010100_s-situation=family/spot/"
         }
       ]
     },
