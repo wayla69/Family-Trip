@@ -622,6 +622,89 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Gongshu and Binjiang, Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Shanhaimeng Seafood & BBQ Buffet (Zhongda Intime)",
+          "page_name": "山海盟海鲜烤肉自助餐厅(中大银泰店)",
+          "src": "https://www.amap.com/search?query=%E5%B1%B1%E6%B5%B7%E7%9B%9F%E6%B5%B7%E9%B2%9C%E7%83%A4%E8%82%89%E8%87%AA%E5%8A%A9%E9%A4%90%E5%8E%85(%E4%B8%AD%E5%A4%A7%E9%93%B6%E6%B3%B0%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "儿童优惠 · 带娃来杭州过暑假"
+        },
+        {
+          "name": "Xiaocaiyuan New Anhui Kitchen (Gongshu Wuyue)",
+          "page_name": "小菜园新徽菜(杭州拱墅吾悦店)",
+          "src": "https://www.amap.com/search?query=%E5%B0%8F%E8%8F%9C%E5%9B%AD%E6%96%B0%E5%BE%BD%E8%8F%9C(%E6%9D%AD%E5%B7%9E%E6%8B%B1%E5%A2%85%E5%90%BE%E6%82%A6%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-13",
+          "map": "Amap: open, not marked closed, newest review 2026-11-13",
+          "quote": "儿童餐 · 还会给小朋友赠送儿童餐"
+        },
+        {
+          "name": "Yinhu Hangwei Hangzhou Kitchen (Wulin)",
+          "page_name": "印湖杭味·创意杭帮菜(西湖店)",
+          "src": "https://www.amap.com/search?query=%E5%8D%B0%E6%B9%96%E6%9D%AD%E5%91%B3%C2%B7%E5%88%9B%E6%84%8F%E6%9D%AD%E5%B8%AE%E8%8F%9C(%E8%A5%BF%E6%B9%96%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "孩子多吃份米饭也不收费"
+        },
+        {
+          "name": "Chunshan Shishi (Xingyao City, Binjiang)",
+          "page_name": "椿山時食·餐集酒肆(星耀城二期城市生活广场店)",
+          "src": "https://www.amap.com/search?query=%E6%A4%BF%E5%B1%B1%E6%99%82%E9%A3%9F%C2%B7%E9%A4%90%E9%9B%86%E9%85%92%E8%82%86(%E6%98%9F%E8%80%80%E5%9F%8E%E4%BA%8C%E6%9C%9F%E5%9F%8E%E5%B8%82%E7%94%9F%E6%B4%BB%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-31",
+          "map": "Amap: open, not marked closed, newest review 2026-10-31",
+          "quote": "有宝宝椅 · 有宝宝餐具"
+        },
+        {
+          "name": "Hong Afu Chaoshan Beef Hotpot (Binjiang)",
+          "page_name": "洪阿福·能单点de潮汕牛肉自助火锅(滨江首店)",
+          "src": "https://www.amap.com/search?query=%E6%B4%AA%E9%98%BF%E7%A6%8F%C2%B7%E8%83%BD%E5%8D%95%E7%82%B9de%E6%BD%AE%E6%B1%95%E7%89%9B%E8%82%89%E8%87%AA%E5%8A%A9%E7%81%AB%E9%94%85(%E6%BB%A8%E6%B1%9F%E9%A6%96%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-30",
+          "map": "Amap: open, not marked closed, newest review 2026-08-30",
+          "quote": "今天带宝宝+队友打卡"
+        },
+        {
+          "name": "Deyue Seafood (Binjiang)",
+          "page_name": "德悦海鲜·包厢宴会(杭州滨江店)",
+          "src": "https://www.amap.com/search?query=%E5%BE%B7%E6%82%A6%E6%B5%B7%E9%B2%9C%C2%B7%E5%8C%85%E5%8E%A2%E5%AE%B4%E4%BC%9A(%E6%9D%AD%E5%B7%9E%E6%BB%A8%E6%B1%9F%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童友好 · 因为带娃"
+        },
+        {
+          "name": "Tingji Hong Kong Cafe (Poly Times)",
+          "page_name": "汀记冰室(保利·时光里店)",
+          "src": "https://www.amap.com/search?query=%E6%B1%80%E8%AE%B0%E5%86%B0%E5%AE%A4(%E4%BF%9D%E5%88%A9%C2%B7%E6%97%B6%E5%85%89%E9%87%8C%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "还有儿童座椅，带小孩来也是可以的"
+        },
+        {
+          "name": "Grand Canal Hangzhou Steel Park",
+          "page_name": "大运河杭钢公园",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E8%BF%90%E6%B2%B3%E6%9D%AD%E9%92%A2%E5%85%AC%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "亲子户外 · 亲子遛娃 · 这里还有儿童乐园"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "匠岳·王宝器麻椒鱼",
+          "why": "its review about children says the food is too strong for them"
+        },
+        {
+          "name": "锻灶人家, 黄龙饭店D'cafe, 台洲湾, 南洋鸳鸯海南鸡饭",
+          "why": "twenty-three reviews or fewer"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
