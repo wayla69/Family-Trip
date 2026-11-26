@@ -7038,6 +7038,306 @@
           },
           "q": "贝比乐儿童乐园 美瑭广场, 余杭塘路2499号, 余杭区, 杭州",
           "ok": "2026-11"
+        },
+        {
+          "local": "杭州长乔亲子乐园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%95%BF%E4%B9%94%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนสนุกครอบครัวฉางเฉียว เซียงหู",
+            "en": "Changqiao Family Park (Xianghu)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเซียงหู เซียวซาน ข้างสวนมหาสมุทรขั้วโลก",
+            "en": "Xianghu Road, Xiaoshan, beside the polar ocean park"
+          },
+          "what": {
+            "th": "สวนสนุกครอบครัว มีเครื่องเล่นในร่มและกลางแจ้ง สัตว์ทะเล และกิจกรรมใกล้ชิดสัตว์",
+            "en": "A family park with indoor and outdoor rides, sea creatures and animal encounters"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กก็มีเครื่องเล่น ไม่ว่าแดดออกหรือฝนตก",
+            "en": "Reviewers say even small children find rides, rain or shine"
+          },
+          "q": "杭州长乔亲子乐园, 湘湖路777号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 杭州萧山银泰店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E6%9D%AD%E5%B7%9E%E8%90%A7%E5%B1%B1%E9%93%B6%E6%B3%B0%E5%BA%97)&city=330100",
+          "name": {
+            "th": "มีแลนด์คลับ เซียวซานอิ๋นไท่",
+            "en": "Meland Club (Xiaoshan Intime)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิ๋นไท่เซียวซาน ชั้น 3 ถนนทงฮุ่ยใต้ เซียวซาน",
+            "en": "Intime Xiaoshan F3, Tonghui South Road, Xiaoshan"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีม้าหมุน มุมเล่นบทบาทสมมติ และสระว่ายน้ำอุ่นสำหรับเด็ก",
+            "en": "An indoor play club with a carousel, pretend play and a warm children's pool"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็กและเป็นสวนเล่นครอบครัวในร่ม",
+            "en": "Tagged for babies and as an indoor family park"
+          },
+          "q": "MELAND CLUB 萧山银泰, 通惠南路667号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 杭州奥体印象城",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELANDCLUB(%E5%8D%B0%E5%8A%9B%E6%B1%87%E5%BE%B7%E9%9A%86%E6%9D%AD%E5%B7%9E%E5%A5%A5%E4%BD%93%E5%8D%B0%E8%B1%A1%E5%9F%8E)&city=330100",
+          "name": {
+            "th": "มีแลนด์คลับ อ้าวถี่อิ้นเซี่ยงเฉิง",
+            "en": "Meland Club (Olympic Impression City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อ้าวถี่อิ้นเซี่ยงเฉิง ชั้น 3 ถนนเฟยหง เซียวซาน",
+            "en": "Olympic Impression City L3, Feihong Road, Xiaoshan"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีโครงปีนป่ายสูงสามชั้น บ่อบอล และหนังสือภาพ",
+            "en": "An indoor play club with a three-storey climbing frame, ball pit and picture books"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็ก ๆ สนุกกับโครงปีนป่ายใหญ่มาก",
+            "en": "Reviewers say children love the big climbing frame"
+          },
+          "q": "MELAND CLUB 奥体印象城, 飞虹路1408号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "魔力空间运动中心 杭州未来科技城万达广场店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%AD%94%E5%8A%9B%E7%A9%BA%E9%97%B4%E8%BF%90%E5%8A%A8%E4%B8%AD%E5%BF%83(%E6%9D%AD%E5%B7%9E%E6%9C%AA%E6%9D%A5%E7%A7%91%E6%8A%80%E5%9F%8E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=330100",
+          "name": {
+            "th": "ศูนย์กีฬาโม่ลี่สเปซ วั่นต๋าเมืองวิทยาศาสตร์อนาคต",
+            "en": "Moli Space Sports Centre (Future Sci-Tech City Wanda)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วั่นต๋าเมืองวิทยาศาสตร์อนาคต ชั้น 4 ชางเฉียน อวี๋หัง",
+            "en": "Future Sci-Tech City Wanda 4F, Cangqian, Yuhang"
+          },
+          "what": {
+            "th": "ศูนย์เล่นกีฬาในร่มสำหรับครอบครัว มีล็อกเกอร์",
+            "en": "An indoor sports play centre for families, with lockers"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าลูกเล่นจนไม่อยากกลับบ้าน",
+            "en": "A reviewer says their child did not want to go home"
+          },
+          "q": "魔力空间运动中心 未来科技城万达广场, 仓前街道, 余杭区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "AP FUNLL潮玩运动主题公园 龙湖杭州吾角天街店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=AP%20FUNLL%E6%BD%AE%E7%8E%A9%E8%BF%90%E5%8A%A8%E4%B8%BB%E9%A2%98%E5%85%AC%E5%9B%AD(%E9%BE%99%E6%B9%96%E6%9D%AD%E5%B7%9E%E5%90%BE%E8%A7%92%E5%A4%A9%E8%A1%97%E5%BA%97)&city=330100",
+          "name": {
+            "th": "เอพีฟันน์ สวนเล่น อู๋เจี่ยวเทียนเจีย",
+            "en": "AP Funll Play Park (Wujiao Paradise Walk)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อู๋เจี่ยวเทียนเจีย ชั้น 5 เซี่ยซา เฉียนถัง",
+            "en": "Wujiao Paradise Walk 5F, Xiasha, Qiantang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีสไลเดอร์ แทรมโพลีน ปีนป่าย และวีอาร์",
+            "en": "An indoor play park with slides, trampolines, climbing and VR"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นสวนเล่นเด็กและสวนเล่นครอบครัวในร่ม",
+            "en": "Tagged as a children's play park and indoor family park"
+          },
+          "q": "AP FUNLL 龙湖吾角天街, 下沙, 钱塘区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "虎跑公园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%99%8E%E8%B7%91%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนหู่เผา",
+            "en": "Hupao Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหู่เผา ทางใต้ของซีหู ซีหู",
+            "en": "Hupao Road, south of West Lake, Xihu"
+          },
+          "what": {
+            "th": "สวนในป่า มีน้ำพุเก่าแก่ ลำธาร และทางเดินในป่า",
+            "en": "A wooded park with an old spring, streams and forest paths"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าทางเดินลาดชันน้อย บันไดไม่มาก เด็กเล็กเดินได้สบาย",
+            "en": "Reviewers say the paths are gentle with few steps, easy for small children"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้เตรียมยากันยุงให้เด็ก",
+            "en": "Reviewers say bring insect repellent for the children"
+          },
+          "q": "虎跑公园, 虎跑路39号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "云栖竹径",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%A0%96%E7%AB%B9%E5%BE%84&city=330100",
+          "name": {
+            "th": "ทางเดินป่าไผ่อวิ๋นชี",
+            "en": "Yunqi Bamboo Path"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนเหมยหลิงใต้ ซีหู",
+            "en": "Meiling South Road, Xihu"
+          },
+          "what": {
+            "th": "ทางเดินร่มรื่นผ่านป่าไผ่ มีต้นไม้เก่าแก่และลำธาร",
+            "en": "A shady path through a bamboo forest with old trees and streams"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี ฤดูใบไม้ผลิมีหน่อไม้",
+            "en": "Reviewers say children under 1.2 m go in free; bamboo shoots in spring"
+          },
+          "q": "云栖竹径, 梅灵南路8号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西溪国家湿地公园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%BA%AA%E5%9B%BD%E5%AE%B6%E6%B9%BF%E5%9C%B0%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "อุทยานพื้นที่ชุ่มน้ำแห่งชาติซีซี",
+            "en": "Xixi National Wetland Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางเข้าถนนเหวินเอ้อร์ตะวันตก ซีหู",
+            "en": "Wen'er West Road entrance, Xihu"
+          },
+          "what": {
+            "th": "พื้นที่ชุ่มน้ำใหญ่ มีลำคลองและทางเดิน พร้อมพิพิธภัณฑ์พื้นที่ชุ่มน้ำ",
+            "en": "A large wetland of waterways and walking trails, with a wetland museum"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับการเที่ยวครอบครัว ผู้รีวิวบอกว่าโซนฟรีเหมาะพาเด็กเดินเล่น",
+            "en": "Tagged for family trips; reviewers say the free area is good for a walk with children"
+          },
+          "q": "西溪国家湿地公园, 文二西路, 西湖区, 杭州",
+          "ok": "2026-11"
         }
       ]
     },
@@ -8140,6 +8440,232 @@
           },
           "q": "颠倒博物馆 深圳书城龙华城, 龙华大道4189号, 龙华区, 深圳",
           "ok": "2026-11"
+        },
+        {
+          "local": "玫瑰海岸文化旅游度假区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%8E%AB%E7%91%B0%E6%B5%B7%E5%B2%B8%E6%96%87%E5%8C%96%E6%97%85%E6%B8%B8%E5%BA%A6%E5%81%87%E5%8C%BA&city=440300",
+          "name": {
+            "th": "ชายฝั่งกุหลาบ",
+            "en": "Rose Coast"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ขุยหยง เขตใหม่ต้าเผิง",
+            "en": "Kuiyong, Dapeng New District"
+          },
+          "what": {
+            "th": "สวนริมทะเล มีบันไดสีรุ้ง แอ่งหินตอนน้ำลง และเล่นว่าว",
+            "en": "A seaside park with rainbow steps, rock pools at low tide and kite flying"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี ผู้รีวิวบอกว่าบันไดสีรุ้งเด็ก ๆ ชอบ",
+            "en": "Children under 1.2 m go in free; reviewers say the rainbow steps are fun for children"
+          },
+          "q": "玫瑰海岸, 深葵路551号, 大鹏新区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "海上田园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B5%B7%E4%B8%8A%E7%94%B0%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนไร่ริมทะเลไห่ซ่างเถียนหยวน",
+            "en": "Haishang Tianyuan Farm Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนหมินจู่ ซาจิ่ง เป่าอาน",
+            "en": "Minzhu Avenue, Shajing, Bao'an"
+          },
+          "what": {
+            "th": "สวนไร่ริมน้ำ มีเก็บผลไม้ ตกปลา ลานเล่นน้ำเด็ก และนกนางนวล",
+            "en": "A waterside farm park with picking, fishing, a children's water play area and seagulls"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families; children under 1.2 m go free, reviewers say"
+          },
+          "q": "海上田园, 民主大道, 沙井街道, 宝安区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "华侨城欢乐海岸",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8D%8E%E4%BE%A8%E5%9F%8E%E6%AC%A2%E4%B9%90%E6%B5%B7%E5%B2%B8&city=440300",
+          "name": {
+            "th": "โอซีทีแฮปปี้โคสต์",
+            "en": "OCT Happy Coast"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนปินไห่ หนานซาน",
+            "en": "Binhai Avenue, Nanshan"
+          },
+          "what": {
+            "th": "สวนริมน้ำเข้าฟรี ติดพื้นที่ชุ่มน้ำ มีน้ำพุดนตรีและเรือ",
+            "en": "A free waterfront park by a wetland, with a music fountain and boats"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง เข้าฟรี ผู้รีวิวพาเด็กมาเดินเล่น",
+            "en": "Tagged for families outdoors; free to enter; reviewers come for a walk with children"
+          },
+          "q": "华侨城欢乐海岸, 滨海大道2008号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "光明农场大观园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%85%89%E6%98%8E%E5%86%9C%E5%9C%BA%E5%A4%A7%E8%A7%82%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนไร่กวงหมิง",
+            "en": "Guangming Farm Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนกวงชั่น กวงหมิง",
+            "en": "Guangcan Road, Guangming"
+          },
+          "what": {
+            "th": "สวนไร่ที่เด็กได้ลองรีดนมวัว เล่นสไลเดอร์หญ้า และเล่นว่าว",
+            "en": "A farm park where children can milk a cow, slide on the grass and fly kites"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families; children under 1.2 m go in free, reviewers say"
+          },
+          "q": "光明农场大观园, 光灿路500号, 光明区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "甘坑古镇",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%94%98%E5%9D%91%E5%8F%A4%E9%95%87&city=440300",
+          "name": {
+            "th": "เมืองเก่าแคะกานเคิง",
+            "en": "Gankeng Hakka Town"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนกานหลี่ จี๋ฮว๋า หลงกั่ง",
+            "en": "Ganli Road, Jihua, Longgang"
+          },
+          "what": {
+            "th": "หมู่บ้านแคะเก่า ทางเดินหิน และโคมการ์ตูนเปิดไฟตอนกลางคืน",
+            "en": "An old Hakka village with stone lanes and cartoon lanterns lit at night"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็ก ๆ ชอบโคมการ์ตูนมาก",
+            "en": "Reviewers say children love the cartoon lanterns"
+          },
+          "q": "甘坑古镇, 甘李路18号, 龙岗区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳仙湖植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E4%BB%99%E6%B9%96%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440300",
+          "name": {
+            "th": "สวนพฤกษศาสตร์ทะเลสาบเซียนหู",
+            "en": "Fairy Lake Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนเซียนหู เหลียนถัง หลัวหู",
+            "en": "Xianhu Road, Liantang, Luohu"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ใหญ่ มีทะเลสาบ หุบผีเสื้อ และสนามหญ้ากว้าง",
+            "en": "A big botanical garden with a lake, a butterfly valley and wide lawns"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง ผู้รีวิวพาเด็กไปเล่นที่สนามหญ้าใหญ่",
+            "en": "Tagged for families outdoors; reviewers take children to the big lawn"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้นั่งรถชมสวนจากประตูทิศใต้เมื่อพาเด็กไป",
+            "en": "Reviewers say take the sightseeing cart from the south gate with children"
+          },
+          "q": "深圳仙湖植物园, 仙湖路160号, 罗湖区, 深圳",
+          "ok": "2026-11"
         }
       ]
     },
@@ -9184,6 +9710,232 @@
             "en": "Reviewers say there is something for toddlers and older children; a baby room"
           },
           "q": "欢乐舟主题乐园, 白云大道北888号安华汇, 白云区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "正佳雨林生态植物园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E4%BD%B3%E9%9B%A8%E6%9E%97%E7%94%9F%E6%80%81%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนป่าฝนแกรนด์วิว",
+            "en": "Grandview Rainforest Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ห้างแกรนด์วิว ชั้น 7 ถนนเทียนเหอ เทียนเหอ",
+            "en": "Grandview Mall F7, Tianhe Road, Tianhe"
+          },
+          "what": {
+            "th": "สวนป่าฝนในร่มบนห้าง มีสัตว์และตาข่ายปีนป่าย",
+            "en": "An indoor rainforest garden in a mall, with animals and a climbing net"
+          },
+          "why": {
+            "th": "อยู่ในร่ม ผู้รีวิวบอกว่าตาข่ายปีนและตาข่ายเด้งทำให้เด็กเล่นได้นาน",
+            "en": "Indoors; reviewers say the climbing and bouncing nets keep children busy"
+          },
+          "q": "正佳雨林生态植物园 正佳广场F7, 天河路228号, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "长隆飞鸟乐园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E9%95%BF%E9%9A%86%E9%A3%9E%E9%B8%9F%E4%B9%90%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนนกฉางหลง",
+            "en": "Chimelong Bird Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนสือเป่ย ต้าสือ พานอวี๋",
+            "en": "Shibei Avenue, Dashi, Panyu"
+          },
+          "what": {
+            "th": "สวนนกที่มีการแสดงนกน้ำ นกบก และนกบิน",
+            "en": "A bird park with water, land and flying bird shows"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะกับเด็กเล็ก มีกิจกรรมเยอะ คนไม่แน่น",
+            "en": "Reviewers say it is easy for small children: lots to do with fewer crowds"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้ไปจองที่นั่งดูโชว์ก่อน 15 นาที",
+            "en": "Reviewers say take a seat for the show 15 minutes early"
+          },
+          "q": "长隆飞鸟乐园, 石北大道, 大石镇, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "岭南印象园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B2%AD%E5%8D%97%E5%8D%B0%E8%B1%A1%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนหลิ่งหนานอิมเพรสชัน",
+            "en": "Lingnan Impression Park"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เมืองมหาวิทยาลัย พานอวี๋",
+            "en": "University Town, Panyu"
+          },
+          "what": {
+            "th": "หมู่บ้านหลิ่งหนานเก่าริมน้ำ มีงานหัตถกรรม ลานเด็กเล่น และม้าหมุน",
+            "en": "An old Lingnan village by the water, with crafts, a play area and a carousel"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็ก ๆ สนุกกับลานเด็กเล่นและม้าหมุน",
+            "en": "Reviewers say children enjoy the play area and the carousel"
+          },
+          "q": "岭南印象园, 大学城外环西路, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "云溪植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%BA%AA%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนพฤกษศาสตร์อวิ๋นซี",
+            "en": "Yunxi Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนไป๋อวิ๋นใต้ เชิงเขาไป๋อวิ๋น ไป๋อวิ๋น",
+            "en": "Baiyun Avenue South, at the foot of Baiyun Mountain, Baiyun"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ มีพื้นที่ชุ่มน้ำ สนามหญ้ากว้าง และทางเดินสีเขียว",
+            "en": "A botanical garden with wetlands, big lawns and greenway walks"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี สนามหญ้าเหมาะให้วิ่งเล่น",
+            "en": "Children under 1.2 m go in free, reviewers say; the lawns are good for running about"
+          },
+          "q": "云溪植物园, 白云大道南1028号, 白云区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "白云山风景名胜区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%B8%82%E7%99%BD%E4%BA%91%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA&city=440100",
+          "name": {
+            "th": "เขาไป๋อวิ๋น",
+            "en": "Baiyun Mountain"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนกว่างหยวนกลาง ไป๋อวิ๋น",
+            "en": "Guangyuan Middle Road, Baiyun"
+          },
+          "what": {
+            "th": "อุทยานภูเขาใหญ่ของกว่างโจว มีทางเดิน น้ำตก และวิวเมือง",
+            "en": "Guangzhou's big mountain park with walking paths, a waterfall and city views"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง ผู้รีวิวบอกว่าตั๋วเด็กราคาถูก",
+            "en": "Tagged for families outdoors; reviewers say the children's ticket is cheap"
+          },
+          "q": "白云山风景名胜区, 广园中路801号, 白云区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "沙湾古镇",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B2%99%E6%B9%BE%E5%8F%A4%E9%95%87&city=440100",
+          "name": {
+            "th": "เมืองโบราณซาวาน",
+            "en": "Shawan Ancient Town"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนฝูเป่ย ซาวาน พานอวี๋",
+            "en": "Fubei Road, Shawan, Panyu"
+          },
+          "what": {
+            "th": "เมืองน้ำหลิ่งหนานเก่า มีหอดนตรีกวางตุ้งและร้านขนมเก่าแก่",
+            "en": "An old Lingnan water town with a Cantonese music hall and old snack shops"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะพาเด็กเดินเล่นและรู้จักดนตรีกวางตุ้ง",
+            "en": "Reviewers say it suits a walk with children and a first taste of Cantonese music"
+          },
+          "q": "沙湾古镇, 福北路2号, 番禺区, 广州",
           "ok": "2026-11"
         }
       ]

@@ -943,8 +943,12 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 
 - **26 Nov 2026, Chengdu, round 11**: +2 from Amap place pages (high chairs). Proof in `docs/library-proof/cn-chengdu.json`.
 
+- **26 Nov 2026, Hangzhou, round 13**: +11 from Amap place pages (Xihu, Shangcheng). Proof in `docs/library-proof/cn-hangzhou.json`.
 - **26 Nov 2026, Yunnan, round 12**: +3 from Amap place pages (Kunming). Proof in `docs/library-proof/cn-yunnan.json`.
 
 - **26 Nov 2026, Xi'an, round 12**: +4 from Amap place pages. Proof in `docs/library-proof/cn-xian.json`.
 
 - **26 Nov 2026, nine thin Japan towns**: Nara +8, Kobe +18 (13 Mapple Western-food places, then 5 quick bites so the list has its mix), Nagoya +8, Fuji +11, Sendai +3, Beppu +1, Takamatsu +16 (11 udon shops and 5 cafés and sweets), Matsuyama +7, Kagoshima +6. Haiku agents found them on dated pages or undated Mapple/Tabelog family lists; each was then opened on Google Maps on 26 Nov 2026 and kept only when it was not marked closed and sat in the town (three were closed though a list still names them: つばめcafe, 食房たけだ, ひげぱんだ). Six national chains were left out. Proof in `docs/library-proof/jp-thin-2026-11-26.json`.
+- **26 Nov 2026, Guangzhou, round 14**: +6 from Amap place pages (Tianhe, Haizhu). Proof in `docs/library-proof/cn-guangzhou.json`.
+
+- **26 Nov 2026, Shenzhen, round 15**: +6 from Amap place pages (Futian, Nanshan). Proof in `docs/library-proof/cn-shenzhen.json`.
