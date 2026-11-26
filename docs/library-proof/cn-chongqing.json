@@ -564,6 +564,45 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for family restaurants around Jiefangbei, Chongqing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Zaiyuli Chongqing Hotpot (Bayi Food Street)",
+          "page_name": "在渝里重庆火锅(解放碑八一好吃街老店)",
+          "src": "https://www.amap.com/search?query=%E5%9C%A8%E6%B8%9D%E9%87%8C%E9%87%8D%E5%BA%86%E7%81%AB%E9%94%85(%E8%A7%A3%E6%94%BE%E7%A2%91%E5%85%AB%E4%B8%80%E5%A5%BD%E5%90%83%E8%A1%97%E8%80%81%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "有宝宝椅 · 提供宝宝椅 · 适合家庭"
+        },
+        {
+          "name": "Shancheng Laotangkou (Jiefangbei)",
+          "page_name": "山城老堂口(解放碑店)",
+          "src": "https://www.amap.com/search?query=%E5%B1%B1%E5%9F%8E%E8%80%81%E5%A0%82%E5%8F%A3(%E8%A7%A3%E6%94%BE%E7%A2%91%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "糖醋排骨小朋友非常喜欢几乎一个人干光"
+        },
+        {
+          "name": "Ershi'er Sichuan Kitchen (Bayi Plaza)",
+          "page_name": "二十二川菜",
+          "src": "https://www.amap.com/search?query=%E4%BA%8C%E5%8D%81%E4%BA%8C%E5%B7%9D%E8%8F%9C&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "适合家庭聚餐 · 因为带着孩子 · 油条小朋友很喜欢吃"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "北步园老火锅",
+          "why": "no review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

@@ -984,3 +984,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 
 - **26 Nov 2026, Zhangjiajie, round 40**: +6 from Amap place pages (Yongding, near Tianmen Mountain). Proof in `docs/library-proof/cn-zhangjiajie.json`.
 - **26 Nov 2026, Guilin, round 39**: +11 from Amap place pages (city, Yangshuo, rice noodles); this round also takes places with 15–30 reviews that meet the owner's rule. Proof in `docs/library-proof/cn-guilin.json`.
+
+- **26 Nov 2026, Chongqing, round 41**: +3 from Amap place pages (Jiefangbei). Proof in `docs/library-proof/cn-chongqing.json`.
