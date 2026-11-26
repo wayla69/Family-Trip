@@ -6015,6 +6015,343 @@
           },
           "q": "宝安公园儿童乐园, 公园路, 宝安区, 深圳",
           "ok": "2026-11"
+        },
+        {
+          "local": "深圳世界之窗",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E4%B8%96%E7%95%8C%E4%B9%8B%E7%AA%97&city=440300",
+          "name": {
+            "th": "วินโดว์ออฟเดอะเวิลด์",
+            "en": "Window of the World"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเซินหนาน โอซีที หนานซาน",
+            "en": "Shennan Avenue, OCT, Nanshan"
+          },
+          "what": {
+            "th": "สวนที่มีแลนด์มาร์กทั่วโลกย่อส่วน มีเครื่องเล่นและโชว์ตอนค่ำ",
+            "en": "A park of the world's landmarks in miniature, with rides and an evening show"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ผู้รีวิวบอกให้ดูเกณฑ์ส่วนสูงของเครื่องเล่นก่อน",
+            "en": "Children under 1.2 m go free; reviewers say check the rides' height limits first"
+          },
+          "q": "深圳世界之窗, 深南大道9037号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "锦绣中华民俗村",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E9%94%A6%E7%BB%A3%E4%B8%AD%E5%8D%8E%E6%B0%91%E4%BF%97%E6%9D%91&city=440300",
+          "name": {
+            "th": "สเปลนดิดไชน่า หมู่บ้านวัฒนธรรม",
+            "en": "Splendid China Folk Village"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเซินหนาน โอซีที หนานซาน",
+            "en": "Shennan Avenue, OCT, Nanshan"
+          },
+          "what": {
+            "th": "แลนด์มาร์กของจีนย่อส่วน และหมู่บ้านวัฒนธรรม มีโชว์และขบวนแต่งชุด",
+            "en": "China's landmarks in miniature and a folk village with shows and costumed parades"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กๆ ได้เต้นกับตัวละครแต่งชุด",
+            "en": "Reviewers say children dance with the costumed characters"
+          },
+          "q": "锦绣中华民俗村, 深南大道9003号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳观澜海洋世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E8%A7%82%E6%BE%9C%E6%B5%B7%E6%B4%8B%E4%B8%96%E7%95%8C&city=440300",
+          "name": {
+            "th": "โอเชียนเวิลด์กวนหลาน",
+            "en": "Guanlan Ocean World"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ถนนกอล์ฟ ใกล้สถานีกวนหลานหู หลงหัว",
+            "en": "Golf Avenue, by Guanlanhu metro, Longhua"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำในร่ม มีโชว์นางเงือกและการแสดง",
+            "en": "An indoor aquarium with mermaid and theatre shows"
+          },
+          "why": {
+            "th": "อยู่ในร่มทั้งหมด ฝนตกหรือร้อนก็มาได้ ผู้รีวิวพาลูกมาบ่อย",
+            "en": "All indoors, so it works in rain or heat; reviewers bring children often"
+          },
+          "q": "深圳观澜海洋世界, 高尔夫大道13号, 龙华区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳南山青青世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%8D%97%E5%B1%B1%E9%9D%92%E9%9D%92%E4%B8%96%E7%95%8C&city=440300",
+          "name": {
+            "th": "สวนนิเวศชิงชิงเวิลด์",
+            "en": "Qingqing World Eco Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนชิงชิง อ่าวพระจันทร์ หนานซาน",
+            "en": "Qingqing Road, Moon Bay, Nanshan"
+          },
+          "what": {
+            "th": "สวนนิเวศบนเนินเขา มีสวน มุมฟาร์ม และทางเดินสั้นๆ",
+            "en": "A green eco park on a hillside with gardens, farm corners and short walks"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี มีเส้นทางสั้นสำหรับเด็กเล็ก",
+            "en": "Children under 1.2 m go free; shorter routes for little legs"
+          },
+          "q": "深圳南山青青世界, 月亮湾青青路1号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "欢乐港湾",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%AC%A2%E4%B9%90%E6%B8%AF%E6%B9%BE&city=440300",
+          "name": {
+            "th": "จอยฮาร์เบอร์ ริมน้ำเป่าอัน",
+            "en": "Joy Harbour (Bao'an waterfront)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนไห่เทียน เป่าอัน",
+            "en": "Haitian Road, Bao'an"
+          },
+          "what": {
+            "th": "ทางเดินริมน้ำ มีชิงช้าสวรรค์ใหญ่และไฟยามค่ำริมอ่าว",
+            "en": "A waterfront promenade with a big Ferris wheel and evening lights by the bay"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ากระเช้าชิงช้าสวรรค์กว้างพอสำหรับเด็กเล็ก",
+            "en": "Reviewers say the wheel's cabins are roomy enough for a buggy-age child"
+          },
+          "q": "欢乐港湾, 海天路15-4号, 宝安区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西涌国际滨海旅游区",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%B6%8C%E5%9B%BD%E9%99%85%E6%BB%A8%E6%B5%B7%E6%97%85%E6%B8%B8%E5%8C%BA&city=440300",
+          "name": {
+            "th": "หาดซีชง ต้าเผิง",
+            "en": "Xichong Beach (Dapeng)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "หนานอ้าว คาบสมุทรต้าเผิง",
+            "en": "Nan'ao, Dapeng peninsula"
+          },
+          "what": {
+            "th": "ชายหาดยาวสะอาดบนคาบสมุทรต้าเผิง มีโต้คลื่น",
+            "en": "A long clean beach on the Dapeng peninsula, with surfing"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นหาดในเซินเจิ้นที่เหมาะกับเด็กที่สุด ทรายละเอียด น้ำใส",
+            "en": "Reviewers call it the best Shenzhen beach for children: fine sand, clear water"
+          },
+          "tip": {
+            "th": "วันหยุดขับจากในเมืองใช้เวลานาน ควรออกแต่เช้า",
+            "en": "A long drive from the city at weekends: start early"
+          },
+          "q": "西涌沙滩, 南澳街道, 大鹏新区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳博物馆新馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%8D%9A%E7%89%A9%E9%A6%86%E6%96%B0%E9%A6%86&city=440300",
+          "name": {
+            "th": "พิพิธภัณฑ์เซินเจิ้น ศูนย์ประชาคม",
+            "en": "Shenzhen Museum (Civic Centre)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ศูนย์ประชาคม อาคาร A ถนนฝูจง ฝูเถียน",
+            "en": "Civic Centre A, Fuzhong Road, Futian"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของเมือง ห้องประวัติศาสตร์และวิถีชาวบ้าน ใต้หลังคาศูนย์ประชาคม",
+            "en": "The city museum: history and folk life galleries under the Civic Centre roof"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเข้าฟรี ไม่ต้องจอง และเย็นสบายเวลาพาเด็กมา",
+            "en": "Reviewers say it is free, needs no booking, and is a cool place with children"
+          },
+          "q": "深圳博物馆, 福中路市民中心A区, 福田区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "宝安科技馆",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%AE%9D%E5%AE%89%E7%A7%91%E6%8A%80%E9%A6%86&city=440300",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เป่าอัน",
+            "en": "Bao'an Science and Technology Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนหลงจิ่งสาย 2 เป่าอัน",
+            "en": "Longjing 2nd Road, Bao'an"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีห้อง AI โรงหนังโดม และโซนเล่นสำหรับเด็กเล็ก",
+            "en": "A science museum with an AI hall, a dome cinema and a play area for little ones"
+          },
+          "why": {
+            "th": "มีชั้นสำหรับเด็กเล็ก และวิทยาศาสตร์แบบลงมือทำสำหรับเด็กโต",
+            "en": "A floor for young children and hands-on science for older ones"
+          },
+          "q": "宝安科技馆, 龙井二路95号, 宝安区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "蛇口海洋科普馆",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%9B%87%E5%8F%A3%E6%B5%B7%E6%B4%8B%E7%A7%91%E6%99%AE%E9%A6%86&city=440300",
+          "name": {
+            "th": "หอวิทยาศาสตร์มหาสมุทรเสอโข่ว",
+            "en": "Shekou Ocean Science Hall"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อาคารเสริมตึกเสอโข่ว เสอโข่ว หนานซาน",
+            "en": "Shekou Building annexe, Shekou, Nanshan"
+          },
+          "what": {
+            "th": "หอวิทยาศาสตร์มหาสมุทรขนาดเล็ก มีนิทรรศการสัตว์ทะเลและ VR",
+            "en": "A small ocean science hall with sea-life exhibits and VR"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นแหล่งเรียนรู้สำหรับเด็ก ใกล้ท่าเรือเสอโข่ว",
+            "en": "Tagged as a children's learning base, near the Shekou ferry"
+          },
+          "q": "蛇口海洋科普馆, 蛇口大厦副楼, 南山区, 深圳",
+          "ok": "2026-11"
         }
       ]
     },

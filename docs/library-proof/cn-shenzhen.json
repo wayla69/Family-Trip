@@ -284,6 +284,109 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights, museums and restaurants in Shenzhen; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yue Xiaopin Vietnamese (Raffles City, Nanshan)",
+          "page_name": "越小品·越南餐厅(来福士店)",
+          "src": "https://www.amap.com/search?query=%E8%B6%8A%E5%B0%8F%E5%93%81%C2%B7%E8%B6%8A%E5%8D%97%E9%A4%90%E5%8E%85(%E6%9D%A5%E7%A6%8F%E5%A3%AB%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "亲子友好 · 孩子赞不绝口"
+        },
+        {
+          "name": "Lesi Hong Kong Cafe (Cuizhu Road)",
+          "page_name": "乐斯餐厅(翠竹路店)",
+          "src": "https://www.amap.com/search?query=%E4%B9%90%E6%96%AF%E9%A4%90%E5%8E%85(%E7%BF%A0%E7%AB%B9%E8%B7%AF%E5%BA%97)&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "有宝宝椅 · 儿童友好 · 适合带娃"
+        },
+        {
+          "name": "Window of the World",
+          "page_name": "深圳世界之窗",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E4%B8%96%E7%95%8C%E4%B9%8B%E7%AA%97&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "游乐项目有身高限制，带小朋友出行提前看好项目要求 · 1.2米以下儿童及70岁以上老人可免票"
+        },
+        {
+          "name": "Splendid China Folk Village",
+          "page_name": "锦绣中华民俗村",
+          "src": "https://www.amap.com/search?query=%E9%94%A6%E7%BB%A3%E4%B8%AD%E5%8D%8E%E6%B0%91%E4%BF%97%E6%9D%91&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "适合亲子 · 大朋友小朋友们统统可以上前，和NPC手拉手蹦哒"
+        },
+        {
+          "name": "Guanlan Ocean World",
+          "page_name": "深圳观澜海洋世界",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E8%A7%82%E6%BE%9C%E6%B5%B7%E6%B4%8B%E4%B8%96%E7%95%8C&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "亲子玩乐 · 家庭友好 · 室内游玩无惧天气，趣味海洋观赏+精彩剧场表演，轻松带娃"
+        },
+        {
+          "name": "Qingqing World Eco Park",
+          "page_name": "深圳南山青青世界",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%8D%97%E5%B1%B1%E9%9D%92%E9%9D%92%E4%B8%96%E7%95%8C&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "亲子户外 · 1.2米以下儿童免票"
+        },
+        {
+          "name": "Joy Harbour (Bao'an waterfront)",
+          "page_name": "欢乐港湾",
+          "src": "https://www.amap.com/search?query=%E6%AC%A2%E4%B9%90%E6%B8%AF%E6%B9%BE&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "适合亲子 · 深圳秋日遛娃首选 · 轿厢空间宽敞，带宝宝坐完全不挤"
+        },
+        {
+          "name": "Xichong Beach (Dapeng)",
+          "page_name": "西涌国际滨海旅游区",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%B6%8C%E5%9B%BD%E9%99%85%E6%BB%A8%E6%B5%B7%E6%97%85%E6%B8%B8%E5%8C%BA&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-27",
+          "map": "Amap: open, not marked closed, newest review 2026-10-27",
+          "quote": "去过深圳几个沙滩，就数西涌的最适合小朋友玩，沙很细水很清很蓝"
+        },
+        {
+          "name": "Shenzhen Museum (Civic Centre)",
+          "page_name": "深圳博物馆新馆",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%8D%9A%E7%89%A9%E9%A6%86%E6%96%B0%E9%A6%86&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "免费免预约还凉快，带娃避暑+长知识太香了"
+        },
+        {
+          "name": "Bao'an Science and Technology Museum",
+          "page_name": "宝安科技馆",
+          "src": "https://www.amap.com/search?query=%E5%AE%9D%E5%AE%89%E7%A7%91%E6%8A%80%E9%A6%86&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-17",
+          "map": "Amap: open, not marked closed, newest review 2026-08-17",
+          "quote": "适合亲子 · 遛娃景点 · 二楼分低幼儿童乐园和基础科学互动区"
+        },
+        {
+          "name": "Shekou Ocean Science Hall",
+          "page_name": "蛇口海洋科普馆",
+          "src": "https://www.amap.com/search?query=%E8%9B%87%E5%8F%A3%E6%B5%B7%E6%B4%8B%E7%A7%91%E6%99%AE%E9%A6%86&city=440300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-06",
+          "map": "Amap: open, not marked closed, newest review 2026-08-06",
+          "quote": "亲子教育 · 亲子友好 · 儿童研学基地 · 遛娃胜地"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "画布主题餐厅",
+          "why": "a recent review says people smoked inside around a child and staff did nothing"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
