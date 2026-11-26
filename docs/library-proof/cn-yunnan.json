@@ -289,6 +289,37 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Kunming and Dali; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yunhaiyao Steam-Pot Chicken (Nanqiang Street, Kunming)",
+          "page_name": "云海肴汽锅鸡(昆明南强街店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%B5%B7%E8%82%B4%E6%B1%BD%E9%94%85%E9%B8%A1(%E6%98%86%E6%98%8E%E5%8D%97%E5%BC%BA%E8%A1%97%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "儿童餐 · 汽锅鸡特别好吃，鸡汤好鲜美，宝宝喝了 2 碗"
+        },
+        {
+          "name": "Yanxiangjia Dai Copper-Pot Hotpot (Dali Old Town)",
+          "page_name": "岩象家·傣式铜锅野生菌火锅(大理古城店)",
+          "src": "https://www.amap.com/search?query=%E5%B2%A9%E8%B1%A1%E5%AE%B6%C2%B7%E5%82%A3%E5%BC%8F%E9%93%9C%E9%94%85%E9%87%8E%E7%94%9F%E8%8F%8C%E7%81%AB%E9%94%85(%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "儿童餐 · 宝宝餐"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "萌宝饭仓, a.bb儿童私厨, 慎庐古院",
+          "why": "no reviews / one review from 2025"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
