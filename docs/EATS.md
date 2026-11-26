@@ -916,3 +916,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Beijing, round 7**: +5 from Amap place pages. Proof in `docs/library-proof/cn-beijing.json`.
 
 - **26 Nov 2026, Shanghai, round 7**: +4 from Amap place pages. Proof in `docs/library-proof/cn-shanghai.json`.
+
+- **26 Nov 2026, Guilin, round 8**: +3 from Amap place pages (high chairs). Proof in `docs/library-proof/cn-guilin.json`.
