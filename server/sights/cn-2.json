@@ -1006,6 +1006,228 @@
           "q": "成都芯智慧音乐博物馆, 国芯大道399号, 双流区, 成都",
           "src": "https://view.inews.qq.com/a/20260807A0FPP300",
           "ok": "2026-11"
+        },
+        {
+          "local": "弹力猩球家庭运动乐园 成都招商大魔方店",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%BC%B9%E5%8A%9B%E7%8C%A9%E7%90%83%E5%AE%B6%E5%BA%AD%E8%BF%90%E5%8A%A8%E4%B9%90%E5%9B%AD%C2%B7%E7%94%9F%E6%97%A5%E6%B4%BE%E5%AF%B9(%E6%88%90%E9%83%BD%E6%8B%9B%E5%95%86%E5%A4%A7%E9%AD%94%E6%96%B9%E5%BA%97)&city=510100",
+          "name": {
+            "th": "สวนแทรมโพลีนถานลี่ซิงฉิว เมจิกคิวบ์",
+            "en": "Tanli Xingqiu Trampoline Park (Magic Cube)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเคอหัวใต้ ใกล้สถานีซินเต่า อู่โหว",
+            "en": "Kehua South Road, near Xindao metro, Wuhou"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนและกีฬาสำหรับครอบครัว",
+            "en": "A family trampoline and sports park"
+          },
+          "why": {
+            "th": "บุนุ่มทั้งหมด สำหรับเด็กที่พลังเหลือ",
+            "en": "Padded throughout, for children with energy to burn"
+          },
+          "q": "弹力猩球 招商大魔方, 科华南路1366号, 武侯区, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西西屋里 群光广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E8%A5%BF%E5%B1%8B%E9%87%8C(%E7%BE%A4%E5%85%89%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=510100",
+          "name": {
+            "th": "โซนเล่นซีซีอูหลี่ แปซิฟิกพลาซ่า",
+            "en": "Xixi Wuli Play Area (Pacific Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แปซิฟิกพลาซ่า ชั้น 7 ถนนชุนซี จิ่นเจียง",
+            "en": "Pacific Plaza 7F, Chunxi Road, Jinjiang"
+          },
+          "what": {
+            "th": "โซนเล่นในร่ม อยู่ใต้ร้านติ่มซำหนึ่งชั้น บนถนนชุนซี",
+            "en": "An indoor play area one floor below the dim sum restaurant on Chunxi Road"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว อยู่กลางย่านช้อปปิ้ง",
+            "en": "Marked family-friendly, in the middle of the shopping streets"
+          },
+          "q": "西西屋里 群光广场, 春熙路南段8号, 锦江区, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "捣蛋鬼亲子主题乐园 玉林店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%8D%A3%E8%9B%8B%E9%AC%BC%E4%BA%B2%E5%AD%90%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E7%8E%89%E6%9E%97%E5%BA%97)&city=510100",
+          "name": {
+            "th": "สวนเล่นเต่าตั้นกุ่ย อวี้หลิน",
+            "en": "Daodangui Play Park (Yulin)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "กั๋วเม่าแฟชั่นฮุ่ย ชั้น 3 ซีเมี่ยนเฉียว อู่โหว",
+            "en": "Guomao Fashion Hui 3F, Ximianqiao, Wuhou"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีโครงเล่นบุนุ่ม รถโกคาร์ตเด็ก และทราย",
+            "en": "An indoor play park with a soft-play frame, children's go-karts and sand"
+          },
+          "why": {
+            "th": "แวะเล่นสั้นๆ ราคาไม่แพง สำหรับเด็กเล็ก",
+            "en": "A small, low-priced stop for little ones"
+          },
+          "q": "捣蛋鬼亲子主题乐园 玉林, 洗面桥东一街国贸时尚汇, 武侯区, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "恐龙乐园 环贸ICD店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%81%90%E9%BE%99%E4%B9%90%E5%9B%AD(%E7%8E%AF%E8%B4%B8ICD%E5%BA%97)&city=510100",
+          "name": {
+            "th": "สวนไดโนเสาร์ ไอซีดี",
+            "en": "Dinosaur Park (ICD)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เฉิงตูไอซีดี ชั้น B1 ถนนตงต้า จิ่นเจียง",
+            "en": "Chengdu ICD B1, Dongda Road, Jinjiang"
+          },
+          "what": {
+            "th": "โซนเล่นธีมไดโนเสาร์ในร่ม มี VR รถเด็ก และสัตว์เล็ก",
+            "en": "An indoor dinosaur-themed play area with VR, children's cars and small animals"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "恐龙乐园 环贸ICD, 东大路577号, 锦江区, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "江滩苍鹭乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B1%9F%E6%BB%A9%E8%8B%8D%E9%B9%AD%E4%B9%90%E5%9B%AD&city=510100",
+          "name": {
+            "th": "สวนเล่นนกกระสาเจียงทาน",
+            "en": "Jiangtan Heron Play Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเซ็นจูรีซิตี้ กุ้ยซี อู่โหว",
+            "en": "Century City Road, Guixi, Wuhou"
+          },
+          "what": {
+            "th": "สวนสนุกเด็กธีมผจญภัย มีม้าหมุน",
+            "en": "An adventure-themed children's park with a carousel"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำให้พาเด็กมามาก",
+            "en": "Reviewers strongly recommend it with children"
+          },
+          "q": "江滩苍鹭乐园, 世纪城路777号, 武侯区, 成都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 成都大悦城店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E6%88%90%E9%83%BD%E5%A4%A7%E6%82%A6%E5%9F%8E%E5%BA%97)&city=510100",
+          "name": {
+            "th": "นีโอไบโอ จอยซิตี้",
+            "en": "Neobio Play Park (Joy City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จอยซิตี้ ชั้น 1 ถนนต้าเยว่ อู่โหว",
+            "en": "Joy City 1F, Dayue Road, Wuhou"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อทราย งานประดิษฐ์ สระน้ำอุ่นสำหรับเด็ก และร้านอาหารครอบครัว",
+            "en": "An indoor play park with a sand pit, crafts, a warm children's pool and a family restaurant"
+          },
+          "why": {
+            "th": "มีโซนเล่นบุนุ่มและสระน้ำอุ่นสำหรับเด็กเล็ก",
+            "en": "Padded play and a heated pool for small children"
+          },
+          "q": "奈尔宝 成都大悦城, 大悦路518号, 武侯区, 成都",
+          "ok": "2026-11"
         }
       ]
     },

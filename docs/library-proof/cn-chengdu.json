@@ -262,6 +262,121 @@
         ],
         "removed": []
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Matata African Animal Restaurant (Luxelakes)",
+          "page_name": "Matata非洲动物主题餐厅",
+          "src": "https://www.amap.com/search?query=Matata%E9%9D%9E%E6%B4%B2%E5%8A%A8%E7%89%A9%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "亲子互动区丰富 · 亲子友好 · 非常有趣的一家餐厅，小朋友真的太喜欢了"
+        },
+        {
+          "name": "Winshare Yami Family Restaurant (Global Center)",
+          "page_name": "文轩呀咪亲子餐厅(环球中心店)",
+          "src": "https://www.amap.com/search?query=%E6%96%87%E8%BD%A9%E5%91%80%E5%92%AA%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E7%8E%AF%E7%90%83%E4%B8%AD%E5%BF%83%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-26",
+          "map": "Amap: open, not marked closed, newest review 2026-09-26",
+          "quote": "亲子友好 · 儿童餐"
+        },
+        {
+          "name": "Spacelab Zero-Gravity Restaurant (Global Center)",
+          "page_name": "spacelab失重餐厅(新世纪环球购物中心店)",
+          "src": "https://www.amap.com/search?query=spacelab%E5%A4%B1%E9%87%8D%E9%A4%90%E5%8E%85(%E6%96%B0%E4%B8%96%E7%BA%AA%E7%8E%AF%E7%90%83%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-26",
+          "map": "Amap: open, not marked closed, newest review 2026-09-26",
+          "quote": "亲子友好 · 遛娃约会 · 生日还送了一个小甜品，娃娃好喜欢"
+        },
+        {
+          "name": "Green Tea Restaurant (Taikoo Li)",
+          "page_name": "绿茶餐厅(成都太古里店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E6%88%90%E9%83%BD%E5%A4%AA%E5%8F%A4%E9%87%8C%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "绿茶餐厅很适合带小朋友、老人一起来吃"
+        },
+        {
+          "name": "Dian Dou De Dim Sum (Chunxi Road)",
+          "page_name": "点都德(春熙路群光广场店)",
+          "src": "https://www.amap.com/search?query=%E7%82%B9%E9%83%BD%E5%BE%B7(%E6%98%A5%E7%86%99%E8%B7%AF%E7%BE%A4%E5%85%89%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
+          "map": "Amap: open, not marked closed, newest review 2026-11-09",
+          "quote": "有宝宝椅 · 口味清淡美味，很适合带家里的长辈和小朋友来吃"
+        },
+        {
+          "name": "Tanli Xingqiu Trampoline Park (Magic Cube)",
+          "page_name": "弹力猩球家庭运动乐园·生日派对(成都招商大魔方店)",
+          "src": "https://www.amap.com/search?query=%E5%BC%B9%E5%8A%9B%E7%8C%A9%E7%90%83%E5%AE%B6%E5%BA%AD%E8%BF%90%E5%8A%A8%E4%B9%90%E5%9B%AD%C2%B7%E7%94%9F%E6%97%A5%E6%B4%BE%E5%AF%B9(%E6%88%90%E9%83%BD%E6%8B%9B%E5%95%86%E5%A4%A7%E9%AD%94%E6%96%B9%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-12",
+          "map": "Amap: open, not marked closed, newest review 2026-11-12",
+          "quote": "儿童乐园 · 儿童运动场所 · 儿童友好 · 蹦床馆"
+        },
+        {
+          "name": "Xixi Wuli Play Area (Pacific Plaza)",
+          "page_name": "西西屋里(群光广场店)",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E8%A5%BF%E5%B1%8B%E9%87%8C(%E7%BE%A4%E5%85%89%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-07",
+          "map": "Amap: open, not marked closed, newest review 2026-10-07",
+          "quote": "儿童乐园 · 儿童游乐区 · 亲子友好"
+        },
+        {
+          "name": "Daodangui Play Park (Yulin)",
+          "page_name": "捣蛋鬼亲子主题乐园(玉林店)",
+          "src": "https://www.amap.com/search?query=%E6%8D%A3%E8%9B%8B%E9%AC%BC%E4%BA%B2%E5%AD%90%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E7%8E%89%E6%9E%97%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "儿童乐园 · 儿童赛车 · 淘气堡 · 玩沙"
+        },
+        {
+          "name": "Dinosaur Park (ICD)",
+          "page_name": "恐龙乐园(环贸ICD店)",
+          "src": "https://www.amap.com/search?query=%E6%81%90%E9%BE%99%E4%B9%90%E5%9B%AD(%E7%8E%AF%E8%B4%B8ICD%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "儿童VR娱乐 · 儿童赛车娱乐 · 小宝宝游玩 · 萌宠互动"
+        },
+        {
+          "name": "Jiangtan Heron Play Park",
+          "page_name": "江滩苍鹭乐园",
+          "src": "https://www.amap.com/search?query=%E6%B1%9F%E6%BB%A9%E8%8B%8D%E9%B9%AD%E4%B9%90%E5%9B%AD&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-20",
+          "map": "Amap: open, not marked closed, newest review 2026-10-20",
+          "quote": "儿童主题乐园 · 强烈推荐带娃来江滩苍鹭乐园"
+        },
+        {
+          "name": "Neobio Play Park (Joy City)",
+          "page_name": "奈尔宝·儿童乐园·亲子餐厅(成都大悦城店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E6%88%90%E9%83%BD%E5%A4%A7%E6%82%A6%E5%9F%8E%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "儿童乐园 · 儿童沙池 · 儿童恒温游泳 · DIY手工"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "爱萱辅食儿童餐厅, 加咖啡亲子西餐厅",
+          "why": "one review only"
+        },
+        {
+          "name": "饕林餐厅, 世亨饭店",
+          "why": "nothing about children on the page"
+        },
+        {
+          "name": "人民公园-儿童乐园",
+          "why": "inside People's Park, which the list already has"
+        },
+        {
+          "name": "东湖公园儿童沙坑",
+          "why": "two reviews only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
