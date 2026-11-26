@@ -517,6 +517,53 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Beijing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yigongyuan Sports Space (Wukesong)",
+          "page_name": "一工元运动空间·五棵松店(奈尔宝旗下·团建派对·运动探索)",
+          "src": "https://www.amap.com/search?query=%E4%B8%80%E5%B7%A5%E5%85%83%E8%BF%90%E5%8A%A8%E7%A9%BA%E9%97%B4%C2%B7%E4%BA%94%E6%A3%B5%E6%9D%BE%E5%BA%97(%E5%A5%88%E5%B0%94%E5%AE%9D%E6%97%97%E4%B8%8B%C2%B7%E5%9B%A2%E5%BB%BA%E6%B4%BE%E5%AF%B9%C2%B7%E8%BF%90%E5%8A%A8%E6%8E%A2%E7%B4%A2)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
+          "map": "Amap: open, not marked closed, newest review 2026-11-04",
+          "quote": "儿童乐园 · 儿童玩乐 · 攀岩挑战 · 全软包防护"
+        },
+        {
+          "name": "Diwuji Children's Park (Wukesong)",
+          "page_name": "第五极儿童乐园",
+          "src": "https://www.amap.com/search?query=%E7%AC%AC%E4%BA%94%E6%9E%81%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "室内亲子园 · 小宝宝游玩 · 室内滑雪 · 旋转木马 · 绘本阅读"
+        },
+        {
+          "name": "Four Seasons Happy Island",
+          "page_name": "四季欢乐岛",
+          "src": "https://www.amap.com/search?query=%E5%9B%9B%E5%AD%A3%E6%AC%A2%E4%B9%90%E5%B2%9B&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "儿童乐园 · 儿童赛车娱乐 · 蹦床乐园 · 户外探险"
+        },
+        {
+          "name": "Meland (MixC Xisanqi)",
+          "page_name": "MELAND(西三旗万象汇)",
+          "src": "https://www.amap.com/search?query=MELAND(%E8%A5%BF%E4%B8%89%E6%97%97%E4%B8%87%E8%B1%A1%E6%B1%87)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童乐园 · 儿童沙池 · 室内亲子园 · 萌宠互动"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Meland运动 (东坝), i ball park, DopaKid, 乐立方",
+          "why": "eight to twenty-nine reviews only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
