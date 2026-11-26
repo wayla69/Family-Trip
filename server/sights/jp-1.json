@@ -6670,7 +6670,6 @@
     },
     {
       "place": "jp-takamatsu",
-      "thin": true,
       "sights": [
         {
           "local": "高松市こども未来館",
@@ -7457,6 +7456,457 @@
           "q": "Sanuki Mengyo, Takamatsu",
           "ok": "2026-11",
           "src": "https://shikoku-tourism.com/en/see-and-do/11314"
+        },
+        {
+          "name": {
+            "en": "Za Kids Kagawa Aeon Takamatsu-Higashi",
+            "th": "ซา คิดส์ คางาวะ อิออนทากามัตสึฮิงาชิ"
+          },
+          "local": "ザキッズ 香川イオン高松東店",
+          "kind": "play",
+          "area": {
+            "en": "AEON Takamatsu-Higashi, 3F, Fukuoka-cho, Takamatsu",
+            "th": "ชั้น 3 อิออนทากามัตสึฮิงาชิ ฟุกุโอกะโจ ทากามัตสึ"
+          },
+          "what": {
+            "en": "An all-weather indoor playground for ages 0 to primary school, with a giant jungle gym, ball pool and trampoline.",
+            "th": "สนามเด็กเล่นในร่มสำหรับเด็กตั้งแต่ 0 ขวบถึงประถม มีจังเกิลยิมยักษ์ บ่อบอล และแทรมโพลีน"
+          },
+          "why": {
+            "en": "There are baby and play-house corners, so siblings can play together.",
+            "th": "มีมุมเด็กอ่อนและมุมบ้านจำลอง พี่น้องเล่นด้วยกันได้"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Za Kids Kagawa Aeon Takamatsu-Higashi, Fukuokacho, Takamatsu, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83350"
+        },
+        {
+          "name": {
+            "en": "Angel Road",
+            "th": "แองเจิลโรด"
+          },
+          "local": "エンジェルロード",
+          "kind": "nature",
+          "area": {
+            "en": "Yoshima, Tonosho, Shodoshima (13 min by bus from Tonosho Port)",
+            "th": "โยชิมะ โทโนโช โชโดชิมะ (นั่งรถบัสจากท่าเรือโทโนโช 13 นาที)"
+          },
+          "what": {
+            "en": "A sand path that appears only at low tide, seen from the Promise Hill lookout next to it.",
+            "th": "ทางทรายที่โผล่ขึ้นเฉพาะตอนน้ำลง ชมได้จากจุดชมวิวเนินแห่งสัญญาที่อยู่ติดกัน"
+          },
+          "why": {
+            "en": "The sand path appears only twice a day, and children can walk on it.",
+            "th": "ทางทรายโผล่วันละสองครั้ง เด็กเดินเล่นบนทางได้"
+          },
+          "tip": {
+            "en": "Only at low tide, twice a day; check the tide times first.",
+            "th": "โผล่เฉพาะตอนน้ำลง วันละสองครั้ง เช็กเวลาน้ำก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Angel Road, Yoshima, Tonosho, Shodoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Kankakei Ropeway",
+            "th": "กระเช้าคังคะเคย์"
+          },
+          "local": "寒霞渓ロープウェイ",
+          "kind": "views",
+          "area": {
+            "en": "Shodoshima Town, Shodoshima (16 km by car from Kusakabe Port)",
+            "th": "เมืองโชโดชิมะ โชโดชิมะ (ขับจากท่าเรือคุซากาเบะ 16 กม.)"
+          },
+          "what": {
+            "en": "A ropeway over the strange rocks and cliffs of Kankakei, about 5 minutes one way.",
+            "th": "กระเช้าลอยฟ้าชมหินและหน้าผารูปร่างแปลกของคังคะเคย์ เที่ยวเดียวราว 5 นาที"
+          },
+          "why": {
+            "en": "The five-minute ride runs close to the rock face and then looks down on the rocks from above.",
+            "th": "กระเช้า 5 นาทีผ่านใกล้หน้าผา แล้วมองลงไปเห็นหินแปลกๆ จากด้านบน"
+          },
+          "tip": {
+            "en": "Open 08:30–17:00 (varies by season).",
+            "th": "เปิด 08:30–17:00 (เปลี่ยนตามฤดูกาล)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "≈ ¥1,300 adults · ¥650 children (one way, varies by season)",
+            "th": "≈ ¥1,300 ผู้ใหญ่ · ¥650 เด็ก (เที่ยวเดียว เปลี่ยนตามฤดูกาล)"
+          },
+          "book": "none",
+          "q": "Kankakei Ropeway, Shodoshima, Kagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Twenty-Four Eyes Movie Village",
+            "th": "หมู่บ้านภาพยนตร์ทเวนตี้โฟร์ อายส์"
+          },
+          "local": "二十四の瞳映画村",
+          "kind": "culture",
+          "area": {
+            "en": "Shodoshima Town, Shodoshima (1 hour by bus from Tonosho Port)",
+            "th": "เมืองโชโดชิมะ โชโดชิมะ (นั่งรถบัสจากท่าเรือโทโนโช 1 ชั่วโมง)"
+          },
+          "what": {
+            "en": "A wooden schoolhouse used as the set of the film Twenty-Four Eyes, with a Showa-era feel.",
+            "th": "โรงเรียนไม้ที่ใช้เป็นฉากภาพยนตร์ Twenty-Four Eyes คงบรรยากาศยุคโชวะ"
+          },
+          "why": {
+            "en": "It has the film's wooden schoolhouse, a literature museum and a hall about classic 1950s Japanese films.",
+            "th": "มีโรงเรียนไม้จากหนัง พิพิธภัณฑ์วรรณกรรม และห้องแนะนำหนังคลาสสิกญี่ปุ่นยุค 1950"
+          },
+          "tip": {
+            "en": "The admission fee changes with the season.",
+            "th": "ค่าเข้าเปลี่ยนตามช่วงของปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥900 adults · ¥450 primary school (the spring–summer fee)",
+            "th": "≈ ¥900 ผู้ใหญ่ · ¥450 ประถม (ค่าเข้าช่วงที่ระบุ)"
+          },
+          "book": "none",
+          "q": "Twenty-Four Eyes Movie Village, Tano-ura, Shodoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Yokai Art Museum",
+            "th": "พิพิธภัณฑ์ศิลปะโยไก"
+          },
+          "local": "妖怪美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Tonosho, Shodoshima (the maze town)",
+            "th": "โทโนโช โชโดชิมะ (ย่านตรอกเขาวงกต)"
+          },
+          "what": {
+            "en": "Four museums in old storehouses, a soy sauce warehouse and a mansion, showing works of modern yokai.",
+            "th": "พิพิธภัณฑ์สี่แห่งในโกดังเก่า คลังซีอิ๊ว และคฤหาสน์ จัดแสดงผลงานโยไกยุคใหม่"
+          },
+          "why": {
+            "en": "An indoor museum for a rainy day; primary-school children and under go free with a parent.",
+            "th": "พิพิธภัณฑ์ในร่มสำหรับวันฝนตก เด็กประถมลงมาเข้าฟรีเมื่อมากับผู้ปกครอง"
+          },
+          "tip": {
+            "en": "Children must come with a parent; open 10:00–17:00.",
+            "th": "เด็กต้องมากับผู้ปกครอง เปิด 10:00–17:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,900 adults · ¥1,450 junior and senior high · primary and under free with a parent",
+            "th": "≈ ¥2,900 ผู้ใหญ่ · ¥1,450 มัธยมต้นและปลาย · ประถมลงมาฟรีเมื่อมากับผู้ปกครอง"
+          },
+          "book": "none",
+          "q": "Yokai Art Museum, Tonosho, Shodoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Shodoshima Furusato Mura Roadside Station",
+            "th": "สถานีริมทางโชโดชิมะ ฟุรุซาโตะ มูระ"
+          },
+          "local": "道の駅 小豆島ふるさと村",
+          "kind": "park",
+          "area": {
+            "en": "Muro, Shodoshima Town, Shodoshima (8 km by car from Tonosho Port)",
+            "th": "มุโระ เมืองโชโดชิมะ โชโดชิมะ (ขับจากท่าเรือโทโนโช 8 กม.)"
+          },
+          "what": {
+            "en": "A roadside station with a summer family pool, a strawberry farm, an art museum and lodging.",
+            "th": "สถานีริมทางที่มีสระครอบครัวเปิดหน้าร้อน ไร่สตรอว์เบอร์รี พิพิธภัณฑ์ศิลปะ และที่พัก"
+          },
+          "why": {
+            "en": "The summer family pool, strawberry farm and art museum are all in one place.",
+            "th": "สระครอบครัวหน้าร้อน ไร่สตรอว์เบอร์รี และพิพิธภัณฑ์ศิลปะอยู่ในที่เดียวกัน"
+          },
+          "tip": {
+            "en": "Opening hours differ by facility (08:30–17:00; the restaurant closes 16:30).",
+            "th": "เวลาเปิดต่างกันตามส่วน (08:30–17:00 ร้านอาหารปิด 16:30)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shodoshima Furusato Mura, Muro, Shodoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Yamaroku Shoyu (soy sauce brewery visit)",
+            "th": "ยามาโรคุ โชยุ (ชมโรงซีอิ๊ว)"
+          },
+          "local": "ヤマロク醤油",
+          "kind": "culture",
+          "area": {
+            "en": "Yasuda, Shodoshima Town, Shodoshima (35 min by bus from Tonosho Port)",
+            "th": "ยาสึดะ เมืองโชโดชิมะ โชโดชิมะ (นั่งรถบัสจากท่าเรือโทโนโช 35 นาที)"
+          },
+          "what": {
+            "en": "A visit to a soy sauce brewery of about 150 years that ferments in big cedar barrels.",
+            "th": "ชมโรงซีอิ๊วอายุราว 150 ปี ที่หมักในถังไม้ซีดาร์ขนาดใหญ่"
+          },
+          "why": {
+            "en": "Inside an early Meiji storehouse you can see the wooden barrels up close; it is indoors, so fine on a rainy day.",
+            "th": "ในคลังสมัยเมจิตอนต้นดูถังไม้ใกล้ๆ ได้ อยู่ในร่ม ฝนตกก็ไปได้"
+          },
+          "tip": {
+            "en": "No reservation needed; open 09:00–17:00.",
+            "th": "ไม่ต้องจอง เปิด 09:00–17:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free (no reservation needed)",
+            "th": "ฟรี (ไม่ต้องจอง)"
+          },
+          "book": "none",
+          "q": "Yamaroku Shoyu, Yasuda, Shodoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Tenobe Somen Kan (hand-stretched somen hall)",
+            "th": "เทโนเบะ โซเมนคัง (หอเส้นโซเมนทำมือ)"
+          },
+          "local": "手延べそうめん館",
+          "kind": "culture",
+          "area": {
+            "en": "Inside Shodoshima Furusato Mura, Muro, Shodoshima Town",
+            "th": "ในโชโดชิมะ ฟุรุซาโตะ มูระ มุโระ เมืองโชโดชิมะ"
+          },
+          "what": {
+            "en": "A hall where you can watch how hand-stretched somen noodles are made, with commentary.",
+            "th": "หอที่ดูขั้นตอนทำเส้นโซเมนด้วยมือพร้อมคำบรรยาย"
+          },
+          "why": {
+            "en": "You can try the chopstick-separating step of the work (reservation needed).",
+            "th": "ลองขั้นตอนแยกเส้นด้วยตะเกียบได้ (ต้องจอง)"
+          },
+          "tip": {
+            "en": "Book the chopstick-separating experience ahead.",
+            "th": "จองประสบการณ์แยกเส้นด้วยตะเกียบล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Tenobe Somen Kan, Muro, Shodoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030100_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Yellow Pumpkin (Yayoi Kusama)",
+            "th": "ฟักทองสีเหลือง (ยาโยอิ คุซามะ)"
+          },
+          "local": "南瓜",
+          "kind": "views",
+          "area": {
+            "en": "Kotohikichi, Naoshima (12 min by bus from Miyanoura Port, get off at Tsutsuji-so)",
+            "th": "โคโตฮิกิจิ นาโอชิมะ (นั่งรถบัสจากท่าเรือมิยาโนอุระ 12 นาที ลงที่สึสึจิโซ)"
+          },
+          "what": {
+            "en": "A big yellow pumpkin artwork set on an old pier that juts into the sea.",
+            "th": "งานศิลปะฟักทองสีเหลืองขนาดใหญ่ตั้งบนท่าเรือเก่าที่ยื่นออกไปในทะเล"
+          },
+          "why": {
+            "en": "A big artwork in a setting of sea and green hills that you can view from outside.",
+            "th": "งานศิลปะชิ้นใหญ่กลางทะเลและเนินเขาเขียว ชมได้จากภายนอก"
+          },
+          "tip": {
+            "en": "At busy times there can be a queue for photos.",
+            "th": "ช่วงคนเยอะอาจมีคิวถ่ายรูป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yellow Pumpkin, Kotohikichi, Naoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603030200_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Kotohiragu Shrine",
+            "th": "ศาลเจ้าโคโตฮิระกู"
+          },
+          "local": "金刀比羅宮",
+          "kind": "culture",
+          "area": {
+            "en": "Kotohira (10 min walk from JR Kotohira Station, at the foot of the main approach steps)",
+            "th": "โคโตฮิระ (เดินจากสถานี JR โคโตฮิระ 10 นาที ที่เชิงบันไดทางเข้าหลัก)"
+          },
+          "what": {
+            "en": "A large shrine on the slope of Mount Zozu, with a long stairway from the approach to the main hall.",
+            "th": "ศาลเจ้าใหญ่บนไหล่เขาโซซุ มีบันไดยาวจากทางเข้าไปถึงศาลหลัก"
+          },
+          "why": {
+            "en": "Many historic sites and cultural properties stand along the steps, so you can look around as you climb.",
+            "th": "ตลอดบันไดมีโบราณสถานและสมบัติวัฒนธรรมมากมาย ชมไปตามทางขึ้นได้"
+          },
+          "tip": {
+            "en": "Grounds open 06:00–18:00; the amulet office 09:00–16:00.",
+            "th": "บริเวณเปิด 06:00–18:00 ที่ขายเครื่องรางเปิด 09:00–16:00"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Museum admission ≈ ¥800 adults · junior high and under free",
+            "th": "ค่าเข้าพิพิธภัณฑ์ ≈ ¥800 ผู้ใหญ่ · มัธยมต้นลงมาฟรี"
+          },
+          "book": "none",
+          "q": "Kotohiragu, Kotohira, Kagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603020400_s-situation=family/spot/"
+        },
+        {
+          "name": {
+            "en": "Nakano Udon School Kotohira",
+            "th": "โรงเรียนอุด้งนากาโนะ สาขาโคโตฮิระ"
+          },
+          "local": "中野うどん学校琴平校",
+          "kind": "culture",
+          "area": {
+            "en": "Kotohira (10 min walk from JR Kotohira Station)",
+            "th": "โคโตฮิระ (เดินจากสถานี JR โคโตฮิระ 10 นาที)"
+          },
+          "what": {
+            "en": "Knead udon under an experienced teacher, then taste what you made.",
+            "th": "นวดอุด้งโดยมีผู้เชี่ยวชาญสอน แล้วชิมของที่ทำเอง"
+          },
+          "why": {
+            "en": "Children can help knead the dough.",
+            "th": "เด็กช่วยนวดแป้งได้"
+          },
+          "tip": {
+            "en": "Classes run 09:00–15:00 (shop closes 17:00); you can take the udon home.",
+            "th": "เรียน 09:00–15:00 (ร้านปิด 17:00) เอาอุด้งกลับบ้านได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Udon-making class ≈ ¥1,760 (from 2 people)",
+            "th": "คลาสทำอุด้ง ≈ ¥1,760 (ตั้งแต่ 2 คน)"
+          },
+          "book": "req",
+          "q": "Nakano Udon School Kotohira, Kotohira, Kagawa, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/region/a0603020400_s-situation=family/spot/"
         }
       ]
     },
