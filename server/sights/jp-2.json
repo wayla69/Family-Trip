@@ -1511,6 +1511,166 @@
           "q": "Kawaguchiko Music Forest Museum, Kawaguchiko, Japan",
           "ok": "2026-11",
           "src": "https://japanforkids.jp/fuji-five-lakes-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Chureito Pagoda",
+            "th": "เจดีย์ชูเรโตะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Arakurayama",
+            "th": "อาราคุระยามะ"
+          },
+          "what": {
+            "en": "A pagoda with Mt. Fuji behind it, reached up a flight of steps",
+            "th": "เจดีย์ที่มีภูเขาไฟฟูจิอยู่ด้านหลัง ต้องเดินขึ้นบันได"
+          },
+          "why": {
+            "en": "The view from the top is the reward; the steps rule out a stroller",
+            "th": "วิวจากด้านบนคือรางวัล แต่บันไดทำให้เข็นรถเข็นไม่ได้"
+          },
+          "tip": {
+            "en": "No stroller: 398 steps",
+            "th": "ห้ามรถเข็น มีบันได 398 ขั้น"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Chureito Pagoda, Arakurayama, Fujiyoshida",
+          "ok": "2026-11",
+          "src": "https://isfujivisible.com/blog/mount-fuji-with-kids"
+        },
+        {
+          "name": {
+            "en": "Appare cruise ship",
+            "th": "เรือสำราญอัปปาเระ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Lake Kawaguchiko",
+            "th": "ทะเลสาบคาวากูจิโกะ"
+          },
+          "what": {
+            "en": "A cruise ship that tours around Lake Kawaguchiko",
+            "th": "เรือสำราญที่ล่องรอบทะเลสาบคาวากูจิโกะ"
+          },
+          "why": {
+            "en": "Mt. Fuji and the townscape from the water; the cabin is styled like tatami rooms and there are costumes for photos",
+            "th": "ชมภูเขาไฟฟูจิและเมืองจากบนน้ำ ห้องโดยสารแต่งแบบห้องเสื่อทาทามิ และมีชุดให้ลองถ่ายรูป"
+          },
+          "tip": {
+            "en": "Operating hours 9:00–16:30, varies by season",
+            "th": "เปิด 9:00–16:30 ต่างกันตามฤดูกาล"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Appare, Lake Kawaguchi, Fujikawaguchiko",
+          "ok": "2026-11",
+          "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/"
+        },
+        {
+          "name": {
+            "en": "Fuji Shibazakura Festival",
+            "th": "เทศกาลชิบะซากุระฟูจิ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Fuji Motosuko Resort",
+            "th": "ฟูจิ โมโตสึโกะ รีสอร์ต"
+          },
+          "what": {
+            "en": "About 500,000 moss phlox plants in bloom at the foot of Mt. Fuji",
+            "th": "ดอกชิบะซากุระราว 500,000 ต้นบานที่เชิงภูเขาไฟฟูจิ"
+          },
+          "why": {
+            "en": "A pink carpet of flowers to walk through, with snow-capped Mt. Fuji behind",
+            "th": "พรมดอกไม้สีชมพูให้เดินชม มีภูเขาไฟฟูจิยอดหิมะอยู่ด้านหลัง"
+          },
+          "tip": {
+            "en": "Seasonal: the 2026 season ran April 11 to May 24, 8:00–16:00",
+            "th": "งานตามฤดูกาล ปี 2026 จัด 11 เม.ย. ถึง 24 พ.ค. 8:00–16:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,000–¥1,300 adults (varies by period) · ≈ ¥500–¥700 ages 3+",
+            "th": "≈ ¥1,000–¥1,300 ผู้ใหญ่ (ต่างกันตามช่วง) · ≈ ¥500–¥700 อายุ 3 ปีขึ้นไป"
+          },
+          "book": "none",
+          "q": "Fuji Motosuko Resort, Fujikawaguchiko",
+          "ok": "2026-11",
+          "src": "https://haveagood-holiday.com/en/articles/fuji-shibazakura-festival-spring-2026"
+        },
+        {
+          "name": {
+            "en": "Peter Rabbit English Garden",
+            "th": "สวนอังกฤษปีเตอร์แรบบิท"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Fuji Motosuko Resort",
+            "th": "ฟูจิ โมโตสึโกะ รีสอร์ต"
+          },
+          "what": {
+            "en": "An English garden from The Tale of Peter Rabbit, with a café serving menu items themed on the stories, a gallery and a shop",
+            "th": "สวนอังกฤษจากเรื่องปีเตอร์แรบบิท มีคาเฟ่เมนูตามเรื่อง แกลเลอรี และร้านค้า"
+          },
+          "why": {
+            "en": "The Peter Rabbit stories come to life in the garden and the café",
+            "th": "เรื่องราวปีเตอร์แรบบิทมีชีวิตขึ้นมาในสวนและคาเฟ่"
+          },
+          "tip": {
+            "en": "Seasonal: planned to run April 11 to November 24 in 2026",
+            "th": "เปิดตามฤดูกาล ปี 2026 กำหนดเปิด 11 เม.ย. ถึง 24 พ.ย."
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Peter Rabbit English Garden, Fuji Motosuko Resort, Fujikawaguchiko",
+          "ok": "2026-11",
+          "src": "https://haveagood-holiday.com/en/articles/fuji-shibazakura-festival-spring-2026"
         }
       ]
     },
@@ -2116,8 +2276,3579 @@
           "q": "Minami-Edo Park, Minami-Edo 4-1, Matsuyama, Japan",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/6947"
+        },
+        {
+          "name": {
+            "en": "Matsuyama Castle Ropeway",
+            "th": "กระเช้าปราสาทมัตสึยามะ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Matsuyama Castle, Katsuyama",
+            "th": "ปราสาทมัตสึยามะ คัตสึยามะ"
+          },
+          "what": {
+            "en": "A ropeway and a lift that carry visitors up to the castle hill, the 8th station",
+            "th": "กระเช้าและลิฟต์พาขึ้นเนินปราสาท สถานีที่ 8"
+          },
+          "why": {
+            "en": "Makes the castle easy for families with small children and the elderly",
+            "th": "ทำให้ขึ้นปราสาทง่ายสำหรับครอบครัวที่มีเด็กเล็กและผู้สูงอายุ"
+          },
+          "tip": {
+            "en": "Preschool children are not allowed on the lift",
+            "th": "เด็กก่อนวัยเรียนขึ้นลิฟต์ไม่ได้"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥520 adults · ≈ ¥260 primary school children (ropeway)",
+            "th": "≈ ¥520 ผู้ใหญ่ · ≈ ¥260 เด็กประถม (กระเช้า)"
+          },
+          "book": "none",
+          "q": "Matsuyama Castle Ropeway, Katsuyama, Matsuyama",
+          "ok": "2026-11",
+          "src": "https://shikoku-tourism.com/en/see-and-do/12761"
+        },
+        {
+          "name": {
+            "en": "Matsuyama Castle",
+            "th": "ปราสาทมัตสึยามะ"
+          },
+          "local": "松山城",
+          "kind": "views",
+          "area": {
+            "en": "Katsuyama, Matsuyama",
+            "th": "คัตสึยามะ มัตสึยามะ"
+          },
+          "what": {
+            "en": "A castle with a keep built in the early 1600s, on a hill in the centre of Matsuyama",
+            "th": "ปราสาทที่มีหอคอยสร้างต้นทศวรรษ 1600 บนเนินกลางเมืองมัตสึยามะ"
+          },
+          "why": {
+            "en": "The keep's top floor looks out over the plain and the Seto Inland Sea",
+            "th": "ชั้นบนสุดของหอคอยมองเห็นที่ราบและทะเลเซโตะ"
+          },
+          "tip": {
+            "en": "The keep opens 9:00 to 17:00, last entry 16:30; about ten minutes' walk from the ropeway stop",
+            "th": "หอคอยเปิด 9:00–17:00 รับเข้าสุดท้าย 16:30 เดินจากสถานีกระเช้าราว 10 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Matsuyama Castle, Katsuyama, Matsuyama",
+          "ok": "2026-11",
+          "src": "https://matsuyama-sightseeing.com/spot/1-2/"
+        },
+        {
+          "name": {
+            "en": "Botchan Karakuri Clock",
+            "th": "นาฬิกากลบ็อตจัง"
+          },
+          "local": "坊っちゃんカラクリ時計",
+          "kind": "show",
+          "area": {
+            "en": "Hojoen, in front of Dogo Onsen Station",
+            "th": "โฮโจเอ หน้าสถานีโดโกะออนเซ็น"
+          },
+          "what": {
+            "en": "A mechanical clock that rises to music every hour, with characters from the novel Botchan",
+            "th": "นาฬิกากลที่ยกตัวขึ้นพร้อมดนตรีทุกชั่วโมง มีตัวละครจากนิยายบ็อตจัง"
+          },
+          "why": {
+            "en": "The clock rises to music and the characters from the novel appear",
+            "th": "นาฬิกายกตัวขึ้นพร้อมดนตรีและตัวละครจากนิยายปรากฏ"
+          },
+          "tip": {
+            "en": "Shows 8:00 to 22:00 every hour, every half hour at weekends and holidays",
+            "th": "แสดง 8:00–22:00 ทุกชั่วโมง ทุกครึ่งชั่วโมงในวันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Botchan Karakuri Clock, Dogo Onsen, Matsuyama",
+          "ok": "2026-11",
+          "src": "https://en.matsuyama-sightseeing.com/spot/14-2"
+        },
+        {
+          "name": {
+            "en": "Botchan Train",
+            "th": "รถไฟบ็อตจัง"
+          },
+          "local": "坊っちゃん列車",
+          "kind": "ride",
+          "area": {
+            "en": "Matsuyama city tram lines, Dogo Onsen",
+            "th": "รางรถรางเมืองมัตสึยามะ โดโกะออนเซ็น"
+          },
+          "what": {
+            "en": "A retro train that runs round the city, named after the novel Botchan",
+            "th": "รถไฟเรโทรวิ่งรอบเมือง ตั้งชื่อตามนิยายบ็อตจัง"
+          },
+          "why": {
+            "en": "A steam locomotive from 1888 was restored as a diesel in 2001, and its retro carriages are popular with visitors",
+            "th": "หัวรถจักรไอน้ำปี 1888 ถูกบูรณะเป็นดีเซลปี 2001 ตู้โดยสารเรโทรเป็นที่นิยม"
+          },
+          "tip": {
+            "en": "Staff uniforms are restored copies of the old ones",
+            "th": "ชุดพนักงานเป็นแบบจำลองของเก่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Botchan Ressha, Matsuyama",
+          "ok": "2026-11",
+          "src": "https://matsuyama-sightseeing.com/spot/17-2/"
+        },
+        {
+          "name": {
+            "en": "Tobe Town Ceramic Art Museum",
+            "th": "พิพิธภัณฑ์เซรามิกเมืองโทเบะ"
+          },
+          "local": "砥部町陶芸創作館",
+          "kind": "culture",
+          "area": {
+            "en": "Tobe town, Ehime",
+            "th": "เมืองโทเบะ จังหวัดเอฮิเมะ"
+          },
+          "what": {
+            "en": "A pottery studio where visitors paint Tobe ware or throw clay on a wheel",
+            "th": "สตูดิโอเครื่องปั้นดินเผาที่ให้ระบายสีเครื่องเคลือบโทเบะหรือปั้นบนแป้นหมุน"
+          },
+          "why": {
+            "en": "Children can paint a piece of Tobe ware with pigment, a painting experience for the family",
+            "th": "เด็กระบายสีชิ้นงานโทเบะด้วยสี เป็นกิจกรรมระบายสีของครอบครัว"
+          },
+          "tip": {
+            "en": "Closed Thursdays and 29 Dec–3 Jan; booking needed for the wheel and hand-building",
+            "th": "ปิดวันพฤหัสบดีและ 29 ธ.ค.–3 ม.ค. ต้องจองสำหรับแป้นหมุนและปั้นมือ"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥400 painting · from ≈ ¥2,000 hand-building or wheel",
+            "th": "≈ ¥400 ระบายสี · เริ่ม ≈ ¥2,000 ปั้นมือหรือแป้นหมุน"
+          },
+          "book": "rec",
+          "q": "Tobe Town Ceramic Art Museum, Tobe, Ehime",
+          "ok": "2026-11",
+          "src": "https://matsuyama-sightseeing.com/spot/147-2/"
+        },
+        {
+          "name": {
+            "en": "Kururin Ferris Wheel",
+            "th": "ชิงช้าสวรรค์คุรุริน"
+          },
+          "local": "くるりん",
+          "kind": "views",
+          "area": {
+            "en": "Roof of Iyotetsu Takashimaya, Matsuyama",
+            "th": "ดาดฟ้าห้างอิโยเท็ตสึ ทาคาชิมะยะ มัตสึยามะ"
+          },
+          "what": {
+            "en": "A 45-metre Ferris wheel on the roof of the department store, with see-through gondolas",
+            "th": "ชิงช้าสวรรค์สูง 45 เมตรบนดาดฟ้าห้าง มีกอนโดลาโปร่งใส"
+          },
+          "why": {
+            "en": "The air-conditioned gondolas give views over the castle and the sea, with a night view too",
+            "th": "กอนโดลาปรับอากาศ ชมวิวปราสาทและทะเล ชมวิวกลางคืนได้ด้วย"
+          },
+          "tip": {
+            "en": "Closes when the department store closes, and a few days a year for maintenance",
+            "th": "ปิดพร้อมห้าง และปิดซ่อมบำรุงปีละไม่กี่วัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "≈ ¥800 standard gondola · ≈ ¥1,300 see-through gondola (per person)",
+            "th": "≈ ¥800 กอนโดลาปกติ · ≈ ¥1,300 กอนโดลาโปร่งใส (ต่อคน)"
+          },
+          "book": "none",
+          "q": "Kururin Ferris Wheel, Iyotetsu Takashimaya, Matsuyama",
+          "ok": "2026-11",
+          "src": "https://matsuyama-sightseeing.com/spot/116-2/"
+        },
+        {
+          "name": {
+            "en": "Matsuyama Sogo Park",
+            "th": "สวนสาธารณะมัตสึยามะโซโก"
+          },
+          "local": "松山総合公園",
+          "kind": "park",
+          "area": {
+            "en": "Hill above Matsuyama",
+            "th": "เนินเขาเหนือเมืองมัตสึยามะ"
+          },
+          "what": {
+            "en": "A hilltop park with a castle-style lookout tower over the plain, and a play area",
+            "th": "สวนบนเนินเขามีหอชมวิวทรงปราสาทมองเห็นที่ราบ และมีลานเล่น"
+          },
+          "why": {
+            "en": "The toys and flowers suit all ages, from little children to grandparents",
+            "th": "เครื่องเล่นและดอกไม้เหมาะทุกวัย ตั้งแต่เด็กเล็กถึงคุณปู่คุณย่า"
+          },
+          "tip": {
+            "en": "Closed all day on the day of the Mitsuhama harbour festival fireworks",
+            "th": "ปิดทั้งวันในวันจุดพลุงานเทศกาลท่าเรือมิตสึฮามะ"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Matsuyama General Park, Matsuyama",
+          "ok": "2026-11",
+          "src": "https://matsuyama-sightseeing.com/spot/29-2/"
+        },
+        {
+          "name": {
+            "en": "Ishiteji (Temple 51)",
+            "th": "วัดอิชิเตะจิ (วัดที่ 51)"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Near Dogo Onsen, Matsuyama",
+            "th": "ใกล้โดโกะออนเซ็น มัตสึยามะ"
+          },
+          "what": {
+            "en": "Temple 51 on the Shikoku pilgrimage, with large halls and pagodas that are national treasures",
+            "th": "วัดที่ 51 ของเส้นทางแสวงบุญชิโกกุ มีหอใหญ่และเจดีย์ที่เป็นสมบัติแห่งชาติ"
+          },
+          "why": {
+            "en": "The grounds have stones with their own names, such as Ups and Downs and Stone of Energy",
+            "th": "ในวัดมีหินที่มีชื่อเฉพาะ เช่น หินขึ้นลง และหินพลัง"
+          },
+          "tip": {
+            "en": "The treasure house costs extra; children under 12 pay ¥100",
+            "th": "โฮมุสถานเก็บสมบัติเสียเพิ่ม เด็กต่ำกว่า 12 ปีจ่าย ¥100"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Treasure house ≈ ¥200 adults · ≈ ¥150 ages 13–18 · ≈ ¥100 under 12",
+            "th": "โฮมุสถานเก็บสมบัติ ≈ ¥200 ผู้ใหญ่ · ≈ ¥150 อายุ 13–18 ปี · ≈ ¥100 ต่ำกว่า 12 ปี"
+          },
+          "book": "none",
+          "q": "Ishiteji Temple, Matsuyama",
+          "ok": "2026-11",
+          "src": "https://shikoku-tourism.com/en/see-and-do/10014"
+        }
+      ]
+    },
+  {
+      "place": "jp-ise",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Toba Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำโทบะ"
+          },
+          "kind": "aquarium",
+          "area": {
+            "en": "Toba waterfront, next to Mikimoto Pearl Island",
+            "th": "ริมทะเลโทบะ ข้างเกาะไข่มุกมิกิโมโตะ"
+          },
+          "what": {
+            "en": "Features more species than any other aquarium in Japan, with sea lion and walrus shows held daily.",
+            "th": "มีสัตว์น้ำหลากชนิดมากกว่าพิพิธภัณฑ์สัตว์น้ำอื่นในญี่ปุ่น มีโชว์สิงโตทะเลและวอลรัสทุกวัน"
+          },
+          "why": {
+            "en": "Daily sea lion and walrus shows, and a big tank of fish and sea animals to watch.",
+            "th": "โชว์สิงโตทะเลและวอลรัสทุกวัน และมีตู้ใหญ่ให้ดูปลากับสัตว์ทะเล"
+          },
+          "tip": {
+            "en": "The page gives no closing day, so check before you go",
+            "th": "เว็บไม่ระบุวันปิด เช็กก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Toba Aquarium, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://shima-marineleisure.com/en/toba/tourism"
+        },
+        {
+          "name": {
+            "en": "Ise Sea Paradise Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำอิเสะ ซีพาราไดซ์"
+          },
+          "kind": "aquarium",
+          "area": {
+            "en": "Futami, Ise, by Meoto Iwa",
+            "th": "ฟุตามิ อิเสะ ข้างหินเมโอโตะอิวะ"
+          },
+          "what": {
+            "en": "An aquarium where children can meet marine animals close up, with shows and touch encounters.",
+            "th": "พิพิธภัณฑ์สัตว์น้ำที่เด็กๆ ได้พบสัตว์ทะเลใกล้ชิด มีโชว์และกิจกรรมสัมผัส"
+          },
+          "why": {
+            "en": "Marine life shows, a walrus that blows kisses, and dolphin and otter encounters.",
+            "th": "โชว์สัตว์ทะเล วอลรัสที่ส่งจูบ และกิจกรรมพบโลมากับนาก"
+          },
+          "tip": {
+            "en": "About 15 minutes on foot from Futamiura station; check the page for current hours",
+            "th": "เดินราว 15 นาทีจากสถานีฟุตามิอุระ เช็กเวลาเปิดล่าสุดจากเว็บ"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ise Sea Paradise, Futami, Ise, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://iseshima-kanko.jp/en/see-and-do/1597"
+        },
+        {
+          "name": {
+            "en": "Mikimoto Pearl Island",
+            "th": "เกาะไข่มุกมิกิโมโตะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Toba Bay, Toba",
+            "th": "อ่าวโทบะ โทบะ"
+          },
+          "what": {
+            "en": "The island where Kokichi Mikimoto first succeeded in pearl cultivation in 1893, with a pearl museum and an island walk.",
+            "th": "เกาะที่โคคิจิ มิกิโมโตะเพาะเลี้ยงไข่มุกสำเร็จเป็นครั้งแรกในปี 1893 มีพิพิธภัณฑ์ไข่มุกและทางเดินรอบเกาะ"
+          },
+          "why": {
+            "en": "Ama diver demonstrations are a must-see for children.",
+            "th": "การสาธิตของนักดำน้ำอามะเป็นสิ่งที่เด็กๆ ไม่ควรพลาด"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mikimoto Pearl Island, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://shima-marineleisure.com/en/toba/tourism"
+        },
+        {
+          "name": {
+            "en": "Toba Bay Cruise and Dolphin Island",
+            "th": "ล่องเรืออ่าวโทบะและเกาะโลมา"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Toba Bay, Toba",
+            "th": "อ่าวโทบะ โทบะ"
+          },
+          "what": {
+            "en": "A sightseeing cruise across Toba Bay that stops at Dolphin Island.",
+            "th": "ล่องเรือชมวิวข้ามอ่าวโทบะ แวะที่เกาะโลมา"
+          },
+          "why": {
+            "en": "Meet dolphins and otters; admission to Dolphin Island is included in the cruise.",
+            "th": "ได้พบโลมาและนาก ค่าเข้าเกาะโลมารวมอยู่ในค่าล่องเรือ"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Toba Bay Cruise, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21529/"
+        },
+        {
+          "name": {
+            "en": "Shima Spain Village",
+            "th": "ชิมะ สเปนวิลเลจ"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Shima City",
+            "th": "เมืองชิมะ"
+          },
+          "what": {
+            "en": "A theme park recreating Spanish streetscapes, with a variety of attractions and parades.",
+            "th": "สวนสนุกที่จำลองบรรยากาศถนนแบบสเปน มีเครื่องเล่นหลากหลายและขบวนพาเหรด"
+          },
+          "why": {
+            "en": "Parades, shows and rides; the page highlights an authentic flamenco show.",
+            "th": "มีพาเหรด โชว์ และเครื่องเล่น เว็บเน้นโชว์ฟลาเมงโกแท้ๆ"
+          },
+          "tip": {
+            "en": "Plan a full day",
+            "th": "วางแผนไว้ทั้งวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shima Spain Village, Shima, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21529/"
+        },
+        {
+          "name": {
+            "en": "Yokoyama Observatory",
+            "th": "จุดชมวิวโยโกยามะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Mount Yokoyama, Shima City",
+            "th": "ภูเขาโยโกยามะ เมืองชิมะ"
+          },
+          "what": {
+            "en": "A viewing terrace on a 140-metre mountain overlooking a coastline dotted with 60 islands, with a café.",
+            "th": "ระเบียงชมวิวบนภูเขาสูง 140 เมตร มองเห็นชายฝั่งที่มีเกาะน้อยใหญ่ราว 60 เกาะ มีคาเฟ่"
+          },
+          "why": {
+            "en": "A café with sweets and drinks on the viewing terrace, and wide views over the bay.",
+            "th": "คาเฟ่ขนมและเครื่องดื่มบนระเบียงชมวิว พร้อมวิวอ่าวกว้างไกล"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yokoyama Observatory, Shima, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21529/"
+        },
+        {
+          "name": {
+            "en": "Ise Jingu",
+            "th": "ศาลเจ้าอิเสะจิงงู"
+          },
+          "local": "伊勢神宮",
+          "kind": "culture",
+          "area": {
+            "en": "Ise City, Geku and Naiku",
+            "th": "เมืองอิเสะ เกกูและไนกู"
+          },
+          "what": {
+            "en": "Japan’s most revered Shinto shrine, with two sites, Geku and Naiku, and paths lined with ancient trees.",
+            "th": "ศาลเจ้าชินโตที่เคารพนับถือที่สุดของญี่ปุ่น มีสองแห่งคือเกกูและไนกู ทางเดินเรียงรายด้วยต้นไม้โบราณ"
+          },
+          "why": {
+            "en": "A walk through the grounds among ancient trees and fallen leaves.",
+            "th": "เดินเล่นในบริเวณศาลเจ้าท่ามกลางต้นไม้โบราณและใบไม้ร่วง"
+          },
+          "tip": {
+            "en": "Hours vary by season. Keep left at Geku and right at Naiku; no smoking, no eating or drinking, no pets in the grounds",
+            "th": "เวลาเข้าชมเปลี่ยนตามฤดู ที่เกกูเดินชิดซ้าย ที่ไนกูเดินชิดขวา ห้ามสูบบุหรี่ ห้ามกินดื่ม และห้ามนำสัตว์เลี้ยงเข้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Ise Jingu, Ise, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/20438/"
+        },
+        {
+          "name": {
+            "en": "Oharai-machi and Okage Yokocho",
+            "th": "โอฮารัยมาจิและโอคาเงะโยโกะโจ"
+          },
+          "kind": "oldtown",
+          "area": {
+            "en": "Oharai-machi, Ise",
+            "th": "โอฮารัยมาจิ อิเสะ"
+          },
+          "what": {
+            "en": "A street along the approach to Ise Jingu, with the recreated Okage Yokocho halfway along it.",
+            "th": "ถนนทางเข้าศาลเจ้าอิเสะจิงงู มีย่านโอคาเงะโยโกะโจที่จำลองไว้อยู่กลางทาง"
+          },
+          "why": {
+            "en": "Akafuku mochi and Ise udon are the local treats, and shops line the street.",
+            "th": "อะกะฟุกุโมจิและอุด้งอิเสะเป็นของอร่อยท้องถิ่น มีร้านเรียงรายสองข้างทาง"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Okage Yokocho, Oharai-machi, Ise, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/20438/"
+        },
+        {
+          "name": {
+            "en": "Shiroyama Park",
+            "th": "สวนชิโรยามะ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Shiroyama, Toba",
+            "th": "ชิโรยามะ โทบะ"
+          },
+          "what": {
+            "en": "A plaza and walkway on the 40-metre hill where the ruins of Toba Castle are, with the ♡TOBA monument.",
+            "th": "ลานและทางเดินบนเนิน 40 เมตรที่มีซากปราสาทโทบะ พร้อมอนุสาวรีย์ ♡TOBA"
+          },
+          "why": {
+            "en": "An easy walk up a small hill with views, and a photo spot.",
+            "th": "เดินขึ้นเนินเล็กๆ ได้ง่าย มีวิวและจุดถ่ายรูป"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shiroyama Park, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://shima-marineleisure.com/en/toba/tourism"
+        },
+        {
+          "name": {
+            "en": "Ago Bay Espana Cruise",
+            "th": "ล่องเรือเอสปัญญาอ่าวอาโกะ"
+          },
+          "local": "賢島エスパーニャクルーズ【あご湾遊覧】",
+          "kind": "views",
+          "area": {
+            "en": "Kashikojima, Shima",
+            "th": "คาชิโกะจิมะ ชิมะ"
+          },
+          "what": {
+            "en": "A sightseeing boat trip around Ago Bay.",
+            "th": "ล่องเรือชมวิวรอบอ่าวอาโกะ"
+          },
+          "why": {
+            "en": "A boat ride around the bay with the sea and islands in view.",
+            "th": "นั่งเรือรอบอ่าว เห็นทะเลและเกาะน้อยใหญ่"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kashikojima, Shima, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/season/64.html"
+        },
+        {
+          "name": {
+            "en": "Fishing Park Triton",
+            "th": "ฟิชชิงพาร์ก ไทรทัน"
+          },
+          "local": "フィッシングパークトリトン",
+          "kind": "nature",
+          "area": {
+            "en": "Chika, Toba",
+            "th": "ชิกะ โทบะ"
+          },
+          "what": {
+            "en": "A sea fishing pond where visitors catch, grill and eat fish; beginners can join in.",
+            "th": "บ่อตกปลาทะเลที่จับปลา ย่าง และกินเองได้ มือใหม่ร่วมได้"
+          },
+          "why": {
+            "en": "Catch and grill your own fish, with no sea-fishing experience needed.",
+            "th": "จับปลาและย่างกินเอง ไม่ต้องมีประสบการณ์ตกปลาทะเล"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Fishing Park Triton, Chika, Toba, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/season/64.html"
+        },
+        {
+          "name": {
+            "en": "Hamajima Isotaiken Facility Umi Hoozuki",
+            "th": "ศูนย์สัมผัสชายฝั่งหินฮามาจิมะ “อุมิโฮซึกิ”"
+          },
+          "local": "志摩市浜島磯体験施設「海ほおずき」",
+          "kind": "nature",
+          "area": {
+            "en": "Hamajima, Shima City",
+            "th": "ฮามาจิมะ เมืองชิมะ"
+          },
+          "what": {
+            "en": "A rocky-shore experience facility with four hands-on areas, including a tide-pool zone.",
+            "th": "ศูนย์สัมผัสชายฝั่งหิน มีสี่โซนลงมือทำ รวมโซนแอ่งน้ำทะเล"
+          },
+          "why": {
+            "en": "Hands-on tide-pool and rocky-shore play for small children.",
+            "th": "เล่นแอ่งน้ำทะเลและชายฝั่งหินด้วยมือสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Umi Hoozuki, Hamajima, Shima, Mie, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kankomie.or.jp/season/64.html"
+        }
+      ]
+    },
+  {
+      "place": "jp-izu",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Izu Shaboten Zoo",
+            "th": "สวนสัตว์อิซุ ชาโบเต็น"
+          },
+          "local": "伊豆シャボテン動物公園",
+          "kind": "zoo",
+          "area": {
+            "en": "Futo, Ito",
+            "th": "ฟุโตะ อิโตะ"
+          },
+          "what": {
+            "en": "A zoo where visitors meet free-roaming animals, with cactus greenhouses and petting animals.",
+            "th": "สวนสัตว์ที่ได้พบสัตว์เดินอิสระ มีเรือนกระจกกระบองเพชรและสัตว์ให้สัมผัส"
+          },
+          "why": {
+            "en": "Children can touch the petting animals, and in winter watch capybaras soak in the outdoor bath.",
+            "th": "เด็กๆ สัมผัสสัตว์ได้ และช่วงหนาวดูคาปิบาราแช่น้ำอุ่นกลางแจ้ง"
+          },
+          "tip": {
+            "en": "Capybara bath 21 Nov 2026–4 Apr 2027: once a day on weekdays, twice at weekends and holidays; zoo open 9:30–16:00",
+            "th": "คาปิบาราแช่น้ำ 21 พ.ย. 2026–4 เม.ย. 2027 วันธรรมดาวันละครั้ง เสาร์อาทิตย์และวันหยุดวันละสองครั้ง สวนสัตว์เปิด 9:30–16:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Izu Shaboten Zoo, Futo, Ito, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://izushaboten.com/en/kapiroten/"
+        },
+        {
+          "name": {
+            "en": "Mount Omuro",
+            "th": "ภูเขาโอมุโระ"
+          },
+          "local": "大室山",
+          "kind": "views",
+          "area": {
+            "en": "Ito",
+            "th": "อิโตะ"
+          },
+          "what": {
+            "en": "A dormant volcano in Ito with a chairlift to the summit and a 360-degree view.",
+            "th": "ภูเขาไฟที่สงบแล้วในอิโตะ มีกระเช้าลิฟต์ขึ้นยอดและวิว 360 องศา"
+          },
+          "why": {
+            "en": "Children ride the chairlift up, then walk the crater path with views of Mount Fuji on clear days.",
+            "th": "เด็กๆ นั่งกระเช้าขึ้นไป แล้วเดินรอบปากปล่องที่เห็นภูเขาไฟฟูจิเมื่อฟ้าใส"
+          },
+          "tip": {
+            "en": "On clear days the crater trail shows Mount Fuji",
+            "th": "วันฟ้าใสเดินรอบปากปล่องจะเห็นภูเขาไฟฟูจิ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mount Omuro, Ito, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        },
+        {
+          "name": {
+            "en": "Kadowaki Suspension Bridge",
+            "th": "สะพานแขวนคาโดวากิ"
+          },
+          "local": "門脇つり橋",
+          "kind": "nature",
+          "area": {
+            "en": "Jogasaki Coast, Ito",
+            "th": "ชายฝั่งโจงะซากิ อิโตะ"
+          },
+          "what": {
+            "en": "A suspension bridge over the sea, 48 metres long and 23 metres above the water.",
+            "th": "สะพานแขวนข้ามทะเล ยาว 48 เมตร สูงจากผิวน้ำ 23 เมตร"
+          },
+          "why": {
+            "en": "A short walk on a bridge high over the cliffs and the sea.",
+            "th": "เดินสั้นๆ บนสะพานที่สูงเหนือหน้าผาและทะเล"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kadowaki Suspension Bridge, Jogasaki Coast, Ito, Japan",
+          "ok": "2026-11",
+          "src": "https://travelynotes.squarespace.com/blog-japan/a-nature-day-trip-to-izu-jogasaki-coast-and-mount-omuro-itinerary"
+        },
+        {
+          "name": {
+            "en": "Jogasaki Coast",
+            "th": "ชายฝั่งโจงะซากิ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Ito",
+            "th": "อิโตะ"
+          },
+          "what": {
+            "en": "A lava coastline in Ito with cliffs, a 9-kilometre walking course and a suspension bridge.",
+            "th": "ชายฝั่งลาวาในอิโตะ มีหน้าผา เส้นทางเดิน 9 กิโลเมตร และสะพานแขวน"
+          },
+          "why": {
+            "en": "Dramatic cliffs and a thrilling suspension bridge to walk along.",
+            "th": "หน้าผาตระการตาและสะพานแขวนตื่นเต้นให้เดินข้าม"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jogasaki Coast, Ito, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        },
+        {
+          "name": {
+            "en": "Joren Falls",
+            "th": "น้ำตกโจเร็น"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Amagi, Izu",
+            "th": "อามางิ อิซุ"
+          },
+          "what": {
+            "en": "A 25-metre waterfall in the Amagi mountains.",
+            "th": "น้ำตกสูง 25 เมตรในเทือกเขาอามางิ"
+          },
+          "why": {
+            "en": "A short walk from free parking to the falls.",
+            "th": "เดินสั้นๆ จากที่จอดรถฟรีไปถึงน้ำตก"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Joren Falls, Amagi, Izu, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        },
+        {
+          "name": {
+            "en": "Kawazu Nanadaru",
+            "th": "คาวาซุ นานาดารุ (น้ำตกเจ็ดชั้น)"
+          },
+          "local": "河津七滝",
+          "kind": "nature",
+          "area": {
+            "en": "Kawazu Town",
+            "th": "เมืองคาวาซุ"
+          },
+          "what": {
+            "en": "Seven waterfalls along the Kawazu River, reached on a walk with footbaths along the trail.",
+            "th": "น้ำตกเจ็ดแห่งริมแม่น้ำคาวาซุ เดินชมได้ตามทาง มีบ่อแช่เท้าระหว่างทาง"
+          },
+          "why": {
+            "en": "Footbaths along the waterfall trail give little legs a rest stop.",
+            "th": "บ่อแช่เท้าริมทางเดินน้ำตกช่วยให้ขาน้อยๆ ได้พัก"
+          },
+          "tip": {
+            "en": "The Kawazu cherry blossoms bloom early in February",
+            "th": "ซากุระคาวาซุบานต้นเดือนกุมภาพันธ์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kawazu Nanadaru, Kawazu, Kamo, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        },
+        {
+          "name": {
+            "en": "Shimoda Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำชิโมดะ"
+          },
+          "kind": "aquarium",
+          "area": {
+            "en": "Shimoda",
+            "th": "ชิโมดะ"
+          },
+          "what": {
+            "en": "An aquarium on a natural inlet with dolphins, sea lions, seals, penguins and otters.",
+            "th": "พิพิธภัณฑ์สัตว์น้ำริมอ่าวธรรมชาติ มีโลมา สิงโตทะเล แมวน้ำ เพนกวินและนากทะเล"
+          },
+          "why": {
+            "en": "Feeding experiences bring children close to sea creatures.",
+            "th": "กิจกรรมให้อาหารช่วยให้เด็กๆ ใกล้ชิดสัตว์ทะเล"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shimoda Aquarium, Shimoda, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://www.haveagood-holiday.com/en/articles/shimoda-aquarium-cherry-blossom-nanohana-festival-2026"
+        },
+        {
+          "name": {
+            "en": "Old Amagi Tunnel",
+            "th": "อุโมงค์อามางิเก่า"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Amagi, Izu",
+            "th": "อามางิ อิซุ"
+          },
+          "what": {
+            "en": "A stone road tunnel from 1905, 445 metres long, the longest stone-built road tunnel in Japan.",
+            "th": "อุโมงค์ถนนหินสร้างเมื่อปี 1905 ยาว 445 เมตร เป็นอุโมงค์ถนนก่อด้วยหินที่ยาวที่สุดในญี่ปุ่น"
+          },
+          "why": {
+            "en": "A stone tunnel to walk through on the drive between the falls.",
+            "th": "อุโมงค์หินให้เดินผ่านระหว่างทางขับรถไปชมน้ำตก"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Old Amagi Tunnel, Amagi, Izu, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        },
+        {
+          "name": {
+            "en": "Cape Irozaki",
+            "th": "แหลมอิโระซากิ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Izu Peninsula, south",
+            "th": "ปลายใต้ของคาบสมุทรอิซุ"
+          },
+          "what": {
+            "en": "Majestic cliffs overlooking the vast Pacific Ocean.",
+            "th": "หน้าผาสง่างามมองเห็นมหาสมุทรแปซิฟิกกว้างใหญ่"
+          },
+          "why": {
+            "en": "Open cliffs for a seaside walk and a wide view.",
+            "th": "หน้าผาโล่งให้เดินเล่นริมทะเลและชมวิวกว้าง"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Cape Irozaki, Izu Peninsula, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        },
+        {
+          "name": {
+            "en": "Dogashima",
+            "th": "โดงาชิมะ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Western Izu",
+            "th": "อิซุตะวันตก"
+          },
+          "what": {
+            "en": "A sightseeing boat tour along the cliffs to the mystical sea caves.",
+            "th": "ล่องเรือชมหน้าผาไปถึงถ้ำทะเลลึกลับ"
+          },
+          "why": {
+            "en": "A boat ride to the sea caves gives children a different view of the coast.",
+            "th": "การนั่งเรือไปถ้ำทะเลทำให้เด็กๆ ได้เห็นชายฝั่งในมุมใหม่"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Dogashima, Izu Peninsula, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        },
+        {
+          "name": {
+            "en": "Shuzenji",
+            "th": "ชูเซนจิ"
+          },
+          "kind": "oldtown",
+          "area": {
+            "en": "Shuzenji, Izu",
+            "th": "ชูเซนจิ อิซุ"
+          },
+          "what": {
+            "en": "A charming hot spring town to stroll through.",
+            "th": "เมืองน้ำพุร้อนน่ารักให้เดินเล่น"
+          },
+          "why": {
+            "en": "A walk through a hot spring town is an easy reason to stop on the way.",
+            "th": "เดินเล่นในเมืองน้ำพุร้อนเป็นข้ออ้างง่ายๆ ให้แวะระหว่างทาง"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shuzenji, Izu, Shizuoka, Japan",
+          "ok": "2026-11",
+          "src": "https://livejapan.com/en/in-tokyo/in-pref-shizuoka/in-atami/article-a0005644"
+        }
+      ]
+    },
+  {
+      "place": "jp-miyazaki",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Aoshima Shrine",
+            "th": "ศาลเจ้าอาโอชิมะ"
+          },
+          "local": "青島神社",
+          "kind": "culture",
+          "area": {
+            "en": "Aoshima island, Miyazaki City",
+            "th": "เกาะอาโอชิมะ เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "A shrine on a small island reached by a bridge, said to bless marriage and matchmaking.",
+            "th": "ศาลเจ้าบนเกาะเล็กที่เดินข้ามสะพานไป เล่ากันว่าอวยพรเรื่องคู่ครอง"
+          },
+          "why": {
+            "en": "Children can hunt for the hidden heart-shaped decorations and write a wish on a heart-shaped ema plaque.",
+            "th": "เด็กๆ สนุกกับการตามหาลายรูปหัวใจที่ซ่อนอยู่ และเขียนคำอธิษฐานบนแผ่นไม้ ema รูปหัวใจ"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Aoshima Shrine, Aoshima, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://kanko-miyazaki.jp/en/itineraries/course46"
+        },
+        {
+          "name": {
+            "en": "Devil’s Washboard",
+            "th": "ดีวิลส์ วอชบอร์ด (โอนิโนะเซ็นตะคุอิวะ)"
+          },
+          "local": "鬼の洗濯板",
+          "kind": "nature",
+          "area": {
+            "en": "Aoshima, Miyazaki City",
+            "th": "อาโอชิมะ เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "Layered rock formations shaped by the waves over a long time, on the Aoshima coast.",
+            "th": "ชั้นหินเป็นริ้วที่คลื่นกัดเซาะมายาวนาน ริมชายฝั่งอาโอชิมะ"
+          },
+          "why": {
+            "en": "A unique stop for families with kids, with ridges to look at along the shore.",
+            "th": "จุดแวะที่แปลกตาสำหรับครอบครัวที่มีเด็ก มีริ้วหินให้ดูริมทะเล"
+          },
+          "tip": {
+            "en": "Walk it at high tide, as the page advises",
+            "th": "เดินช่วงน้ำขึ้นตามที่เว็บแนะนำ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Devil’s Washboard, Aoshima, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://littledayout.com/day-trip-to-miyazaki-with-kids"
+        },
+        {
+          "name": {
+            "en": "Aoshima Beach",
+            "th": "หาดอาโอชิมะ"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Aoshima Island, Miyazaki City",
+            "th": "เกาะอาโอชิมะ เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "A beach on Aoshima Island with clear water and tide pools to explore.",
+            "th": "ชายหาดบนเกาะอาโอชิมะ น้ำใส และมีแอ่งน้ำทะเลให้สำรวจ"
+          },
+          "why": {
+            "en": "Tide pools with marine life, and many pretty seashells to find.",
+            "th": "แอ่งน้ำทะเลมีสัตว์ทะเลให้ดู และมีเปลือกหอยสวยๆ ให้เก็บ"
+          },
+          "tip": {
+            "en": "Swimming depends on the month of visit, per the page",
+            "th": "ว่ายน้ำได้หรือไม่ขึ้นกับเดือนที่ไป ตามที่เว็บระบุ"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Aoshima Beach, Aoshima, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://littledayout.com/day-trip-to-miyazaki-with-kids"
+        },
+        {
+          "name": {
+            "en": "Udo Jingu Shrine",
+            "th": "ศาลเจ้าอูโดะ"
+          },
+          "local": "鵜戸神宮",
+          "kind": "culture",
+          "area": {
+            "en": "Udo, Nichinan coast",
+            "th": "อูโดะ ชายฝั่งนิจินัน"
+          },
+          "what": {
+            "en": "A shrine on a cliff over the Pacific, built in 939 AD and dedicated to Yamasachihiko.",
+            "th": "ศาลเจ้าบนหน้าผาเหนือมหาสมุทรแปซิฟิก สร้างเมื่อปี ค.ศ. 939 อุทิศแด่ยามาซาจิฮิโกะ"
+          },
+          "why": {
+            "en": "Kids can throw small stones into a crevice in the cliffside, believed to bring good luck.",
+            "th": "เด็กๆ โยนก้อนหินเล็กๆ เข้าร่องในหน้าผา เชื่อกันว่านำโชคดี"
+          },
+          "tip": {
+            "en": "Start early: the page’s one-day plan begins here at 8 am",
+            "th": "ไปแต่เช้า แผนเที่ยววันเดียวของเว็บเริ่มที่นี่ตอน 8:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Udo Jingu Shrine, Nichinan, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://littledayout.com/day-trip-to-miyazaki-with-kids"
+        },
+        {
+          "name": {
+            "en": "Sunmesse Nichinan",
+            "th": "ซันเมสเสะ นิจินัน"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Nichinan seacoast, Miyazaki",
+            "th": "ชายฝั่งนิจินัน มิยาซากิ"
+          },
+          "what": {
+            "en": "A 20-hectare park by the sea with seven replica Moai statues that visitors may touch.",
+            "th": "สวนริมทะเล 20 เฮกตาร์ มีรูปจำลองโมอายเจ็ดตัวที่เข้าไปสัมผัสได้"
+          },
+          "why": {
+            "en": "A swing set that swings toward the sea, and the Moai statues to touch up close.",
+            "th": "มีชิงช้าที่แกว่งออกไปทางทะเล และรูปโมอายให้เข้าไปสัมผัสใกล้ๆ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sunmesse Nichinan, Nichinan, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://kanko-miyazaki.jp/en/itineraries/course46"
+        },
+        {
+          "name": {
+            "en": "Miyazaki City Phoenix Zoo",
+            "th": "สวนสัตว์ฟีนิกซ์ เมืองมิยาซากิ"
+          },
+          "kind": "zoo",
+          "area": {
+            "en": "Miyazaki City, next to Phoenix Seagaia Resort",
+            "th": "เมืองมิยาซากิ ติดกับรีสอร์ตฟีนิกซ์ ซีไกอา"
+          },
+          "what": {
+            "en": "A zoo on pine-covered hills facing the Pacific, with flamingo shows and small animals to meet.",
+            "th": "สวนสัตว์บนเนินที่มีต้นสน หันหน้าสู่มหาสมุทรแปซิฟิก มีโชว์ฟลามิงโกและสัตว์เล็กให้พบ"
+          },
+          "why": {
+            "en": "Children can meet a variety of small animals and join in feeding many of the animals.",
+            "th": "เด็กๆ ได้ใกล้ชิดสัตว์เล็กหลายชนิดและร่วมให้อาหารสัตว์หลายตัว"
+          },
+          "tip": {
+            "en": "Closed Wednesdays, except holidays, Golden Week and school vacations",
+            "th": "ปิดวันพุธ ยกเว้นวันหยุด โกลเดนวีก และปิดเทอม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Miyazaki City Phoenix Zoo, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://kanko-miyazaki.jp/en/itineraries/course46"
+        },
+        {
+          "name": {
+            "en": "Florante Miyazaki",
+            "th": "ฟลอรันเตะ มิยาซากิ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Miyazaki City",
+            "th": "เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "Gardens and plazas with flowers from around the world, changing with the seasons.",
+            "th": "สวนและลานที่มีดอกไม้จากทั่วโลก เปลี่ยนไปตามฤดูกาล"
+          },
+          "why": {
+            "en": "Grassy lawns kept green all year, and seasonal events such as the winter Illumination Flower Garden.",
+            "th": "สนามหญ้าเขียวตลอดปี และมีกิจกรรมตามฤดู เช่น สวนดอกไม้ประดับไฟช่วงฤดูหนาว"
+          },
+          "tip": {
+            "en": "Closed Tuesdays (or Wednesday after a Tuesday holiday) and 31 December",
+            "th": "ปิดวันอังคาร (หรือวันพุธถัดไปถ้าอังคารเป็นวันหยุด) และ 31 ธันวาคม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Florante Miyazaki, Miyazaki City, Japan",
+          "ok": "2026-11",
+          "src": "https://kanko-miyazaki.jp/en/itineraries/course46"
+        },
+        {
+          "name": {
+            "en": "Roadside Station Phoenix",
+            "th": "สถานีริมทางฟีนิกซ์"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Aoshima route, Miyazaki",
+            "th": "เส้นทางไปอาโอชิมะ มิยาซากิ"
+          },
+          "what": {
+            "en": "An observation deck 50 metres above sea level with views of the Pacific and the Devil’s Washboard.",
+            "th": "จุดชมวิวสูงจากระดับน้ำทะเล 50 เมตร มองเห็นมหาสมุทรแปซิฟิกและดีวิลส์ วอชบอร์ด"
+          },
+          "why": {
+            "en": "Soft ice cream in local flavours such as mango and hyuganatsu.",
+            "th": "ซอฟต์ครีมรสท้องถิ่น เช่น มะม่วงและฮิวงะนัตสึ"
+          },
+          "tip": {
+            "en": "A short stop of about an hour on the way to Aoshima",
+            "th": "แวะสั้นๆ ราว 1 ชั่วโมงระหว่างทางไปอาโอชิมะ"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Roadside Station Phoenix, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://kanko-miyazaki.jp/en/itineraries/course46"
+        },
+        {
+          "name": {
+            "en": "Miyazaki Science Centre",
+            "th": "ศูนย์วิทยาศาสตร์และเทคโนโลยีมิยาซากิ"
+          },
+          "local": "宮崎科学技術館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Miyazaki City",
+            "th": "เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "A hands-on science centre with a full-size Apollo 11 lunar module model and a 27 m planetarium.",
+            "th": "ศูนย์วิทยาศาสตร์ลงมือทำเอง มีโมเดลยานลงดวงจันทร์ Apollo 11 ขนาดจริงและท้องฟ้าจำลองกว้าง 27 เมตร"
+          },
+          "why": {
+            "en": "A rest area, nursing room and nappy-changing table are on site.",
+            "th": "มีมุมพัก ห้องให้นม และโต๊ะเปลี่ยนผ้าอ้อมในอาคาร"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥550 adults · ¥210 ages 4 to junior high",
+            "th": "≈ ¥550 ผู้ใหญ่ · ¥210 เด็กอายุ 4 ปีถึงมัธยมต้น"
+          },
+          "book": "none",
+          "q": "Miyazaki Science Centre, Miyazaki City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": {
+            "en": "Miyazaki Prefectural Museum of Nature and History",
+            "th": "พิพิธภัณฑ์ธรรมชาติและประวัติศาสตร์จังหวัดมิยาซากิ"
+          },
+          "local": "宮崎県総合博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Miyazaki City",
+            "th": "เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "A free museum of Miyazaki’s nature, history and folk life, with recreated past living and specimens.",
+            "th": "พิพิธภัณฑ์เข้าฟรี เล่าเรื่องธรรมชาติ ประวัติศาสตร์และวิถีชีวิตของมิยาซากิ มีฉากจำลองและตัวอย่าง"
+          },
+          "why": {
+            "en": "Good for a rainy day: a pram can come in, with a nursing room and nappy-changing table.",
+            "th": "เหมาะวันฝนตก เข็นรถเข็นเด็กเข้าได้ มีห้องให้นมและโต๊ะเปลี่ยนผ้าอ้อม"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Miyazaki Prefectural Museum of Nature and History, Miyazaki City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": {
+            "en": "ASOBI PARK",
+            "th": "อาโซบิ พาร์ก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Shoei-cho, Miyazaki City",
+            "th": "โชเออิโจ เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "A covered indoor kids’ park with big net play equipment and a ball pool.",
+            "th": "สวนเด็กในร่มมีหลังคา มีเครื่องเล่นตาข่ายขนาดใหญ่และบ่อบอล"
+          },
+          "why": {
+            "en": "A baby corner and a picture-book space, with a rest area and nursing room.",
+            "th": "มีมุมเด็กเล็ก มุมหนังสือภาพ พร้อมที่พักและห้องให้นม"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥900 children (ages 1–12) · ¥500 adults, weekdays",
+            "th": "≈ ¥900 เด็ก (อายุ 1–12 ปี) · ¥500 ผู้ใหญ่ วันธรรมดา"
+          },
+          "book": "none",
+          "q": "ASOBI PARK, Shoei-cho, Miyazaki City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": {
+            "en": "Kids Land US Minami-Miyazaki",
+            "th": "คิดส์แลนด์ US มินามิมิยาซากิ"
+          },
+          "local": "キッズランドUS 南宮崎店",
+          "kind": "play",
+          "area": {
+            "en": "Aeon Minami-Miyazaki, 3F, Miyazaki City",
+            "th": "อิออนมินามิมิยาซากิ ชั้น 3 เมืองมิยาซากิ"
+          },
+          "what": {
+            "en": "An all-weather indoor play park on the third floor of Aeon Minami-Miyazaki.",
+            "th": "สวนเด็กในร่มเล่นได้ทุกสภาพอากาศ ชั้น 3 ของอิออนมินามิมิยาซากิ"
+          },
+          "why": {
+            "en": "A super jungle gym, trampoline and ball pool, plus a baby corner and picture books.",
+            "th": "มีจังเกิลยิมขนาดใหญ่ แทรมโปลีน บ่อบอล พร้อมมุมเด็กเล็กและหนังสือภาพ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥800 an hour or ¥1,000 a day for children · ¥700 a day for a parent",
+            "th": "≈ ¥800 ต่อชั่วโมงหรือ ¥1,000 ทั้งวัน สำหรับเด็ก · ¥700 ทั้งวัน สำหรับผู้ปกครอง"
+          },
+          "book": "none",
+          "q": "Kids Land US Minami-Miyazaki, Aeon Minami-Miyazaki, Miyazaki City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": {
+            "en": "Oyodogawa Learning Hall",
+            "th": "หอเรียนรู้แม่น้ำโออิโดะ"
+          },
+          "local": "大淀川学習館",
+          "kind": "museum",
+          "area": {
+            "en": "Miyazaki City, beside the Ōyodo River",
+            "th": "เมืองมิยาซากิ ริมแม่น้ำโออิโดะ"
+          },
+          "what": {
+            "en": "A free learning hall about the Ōyodo River and its creatures, with a firefly room and an outdoor nature garden.",
+            "th": "หอเรียนรู้เข้าฟรีเรื่องแม่น้ำโออิโดะและสัตว์ในน้ำ มีห้องหิ่งห้อยและสวนธรรมชาติกลางแจ้ง"
+          },
+          "why": {
+            "en": "A nursing room, a nappy-changing space and wheelchair loan are on site.",
+            "th": "มีห้องให้นม มุมเปลี่ยนผ้าอ้อม และบริการยืมรถเข็นวีลแชร์"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Oyodogawa Learning Hall, Miyazaki City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": {
+            "en": "Ikimenomori Yukokan",
+            "th": "พิพิธภัณฑ์อิกิเมะโนะโมริ ยูโกกัง"
+          },
+          "local": "生目の杜遊古館",
+          "kind": "museum",
+          "area": {
+            "en": "Ikimenomori, Miyazaki City, beside the Ikime burial mounds",
+            "th": "อิกิเมะโนะโมริ เมืองมิยาซากิ ข้างสุสานโคฟุนอิกิเมะ"
+          },
+          "what": {
+            "en": "A history museum next to the Ikime kofun group, with finds from Miyazaki City sites.",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ข้างกลุ่มสุสานโคฟุนอิกิเมะ จัดแสดงสิ่งที่ขุดพบจากแหล่งโบราณคดีของเมืองมิยาซากิ"
+          },
+          "why": {
+            "en": "Hands-on craft learning suits children who find displays alone not enough.",
+            "th": "มีกิจกรรมงานฝีมือให้ลงมือทำ เหมาะกับเด็กที่ดูของจัดแสดงอย่างเดียวไม่พอ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ikimenomori Yukokan, Miyazaki City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5444/"
+        }
+      ]
+    },
+  {
+      "place": "jp-niigata",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Niigata City Aquarium Marinepia Nihonkai",
+            "th": "พิพิธภัณฑ์สัตว์น้ำนีงาตะ มารีนเปีย นิฮงไก"
+          },
+          "local": "新潟市水族館 マリンピア日本海",
+          "kind": "aquarium",
+          "area": {
+            "en": "Bandai, Niigata City (Sea of Japan coast)",
+            "th": "บันได เมืองนีงาตะ (ชายฝั่งทะเลญี่ปุ่น)"
+          },
+          "what": {
+            "en": "An aquarium on the Sea of Japan with sea lion feeding, penguin promenades and dolphin shows daily, plus touch exhibits.",
+            "th": "พิพิธภัณฑ์สัตว์น้ำริมทะเลญี่ปุ่น มีให้อาหารสิงโตทะเล เดินพาเหรดเพนกวินและโชว์โลมาทุกวัน พร้อมโซนสัมผัสสัตว์"
+          },
+          "why": {
+            "en": "Sea lion feeding and dolphin shows every day, and touch exhibits where children can handle the animals.",
+            "th": "มีให้อาหารสิงโตทะเลและโชว์โลมาทุกวัน และโซนสัมผัสที่เด็กๆ จับสัตว์ได้"
+          },
+          "tip": {
+            "en": "Open 9:00–17:00; admission ends 30 minutes before closing",
+            "th": "เปิด 9:00–17:00 ปิดรับเข้าก่อนปิด 30 นาที"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,500 adults · ¥600 ages 6–14 · ¥200 ages 4–5 · free age 3 and under",
+            "th": "≈ ¥1,500 ผู้ใหญ่ · ¥600 อายุ 6–14 ปี · ¥200 อายุ 4–5 ปี · ฟรี อายุ 3 ปีลงมา"
+          },
+          "book": "none",
+          "q": "Niigata City Aquarium Marinepia Nihonkai, Niigata City, Japan",
+          "ok": "2026-11",
+          "src": "https://marinepia.or.jp/mlg/en"
+        },
+        {
+          "name": {
+            "en": "Niigata Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์จังหวัดนีงาตะ"
+          },
+          "local": "新潟県立自然科学館",
+          "kind": "museumkid",
+          "area": {
+            "en": "By Lake Toyano, Chuo Ward, Niigata City",
+            "th": "ริมทะเลสาบโทยาโนะ เขตชูโอ เมืองนีงาตะ"
+          },
+          "what": {
+            "en": "A science museum with touchable fossils and meteorites, a dinosaur diorama theatre, a VR theatre and a big planetarium.",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีฟอสซิลและอุกกาบาตให้สัมผัส โรงละครไดโอรามาไดโนเสาร์ โรงภาพยนตร์ VR และท้องฟ้าจำลองขนาดใหญ่"
+          },
+          "why": {
+            "en": "Touch real fossils and meteorites, see full-size dinosaurs move, and play outside by a steam locomotive and a rocket.",
+            "th": "สัมผัสฟอสซิลและอุกกาบาตจริง ดูไดโนเสาร์ขนาดจริงขยับได้ และเล่นกลางแจ้งข้างหัวรถจักรไอน้ำและจรวด"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Niigata Science Museum, Chuo Ward, Niigata City, Japan",
+          "ok": "2026-11",
+          "src": "https://sciencemuseum.jp/english/"
+        },
+        {
+          "name": {
+            "en": "Niigata City Children’s Creation Centre",
+            "th": "ศูนย์สร้างสรรค์เด็กเมืองนีงาตะ"
+          },
+          "local": "新潟市こども創造センター",
+          "kind": "play",
+          "area": {
+            "en": "Chuo Ward, inside Ikutopia Shokuka",
+            "th": "เขตชูโอ ภายในอิคุโทเปีย โชกกะ"
+          },
+          "what": {
+            "en": "A wooden, open-stairwell centre for ages 0 to 18, with a craft square on the first floor and climbing and play floors above.",
+            "th": "ศูนย์เด็กอายุ 0–18 ปี โครงสร้างไม้และบันไดเปิดโล่ง มีลานงานประดิษฐ์ชั้นล่างและชั้นบนมีโซนปีนป่ายและเล่น"
+          },
+          "why": {
+            "en": "A climbing wall, rainbow slide and wooden play kitchen sorted by age; strollers and lockers are free to borrow.",
+            "th": "มีกำแพงปีน สไลเดอร์สายรุ้ง และครัวไม้ แยกตามอายุ ยืมรถเข็นและล็อกเกอร์ได้ฟรี"
+          },
+          "tip": {
+            "en": "Check the hours on the page before you go",
+            "th": "เช็กเวลาเปิดจากเว็บก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Niigata City Children’s Creation Centre, Chuo Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Kameda Gymnasium Chibikko Hiroba",
+            "th": "ลานเด็กเล็กโรงยิมคาเมดะ"
+          },
+          "local": "亀田総合体育館 ちびっこ広場",
+          "kind": "play",
+          "area": {
+            "en": "Kameda, Konan Ward (Aspark Kameda)",
+            "th": "คาเมดะ เขตโคนัน (อัสปาร์กคาเมดะ)"
+          },
+          "what": {
+            "en": "An indoor play space for pre-school children inside the Kameda sports complex.",
+            "th": "พื้นที่เล่นในร่มสำหรับเด็กก่อนวัยเรียน ในศูนย์กีฬาคาเมดะ"
+          },
+          "why": {
+            "en": "A whale-shaped slide, big foam blocks, puzzle mats, a rocking toy and a crocodile seesaw, with picture books for a rest.",
+            "th": "มีสไลเดอร์รูปปลาวาฬ โฟมบล็อกใหญ่ แผ่นจิ๊กซอว์ ของเล่นโยก และกระดานหกรูปจระเข้ พร้อมหนังสือภาพไว้พัก"
+          },
+          "tip": {
+            "en": "Mon–Sat 9:00–21:00, Sun and holidays 9:00–18:00",
+            "th": "จันทร์–เสาร์ 9:00–21:00 อาทิตย์และวันหยุด 9:00–18:00"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kameda General Gymnasium, Kameda, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Toyano Gymnasium Toddler Room",
+            "th": "ห้องเด็กเล็กโรงยิมโทยาโนะ"
+          },
+          "local": "鳥屋野総合体育館 幼児ルーム",
+          "kind": "play",
+          "area": {
+            "en": "Shindoji-minami, Chuo Ward",
+            "th": "ชินโดจิมินามิ เขตชูโอ"
+          },
+          "what": {
+            "en": "A free indoor room for pre-school children at the Toyano sports hall; collect a free pass at the desk.",
+            "th": "ห้องเล่นในร่มฟรีสำหรับเด็กก่อนวัยเรียนที่โรงยิมโทยาโนะ รับบัตรผ่านฟรีที่เคาน์เตอร์"
+          },
+          "why": {
+            "en": "Play equipment, a roller slide, balance balls, hula hoops and a ride-on toy; good for a rainy day.",
+            "th": "มีเครื่องเล่น สไลเดอร์ลูกกลิ้ง ลูกบอลทรงตัว ฮูลาฮูป และของเล่นให้ขี่ เหมาะวันฝนตก"
+          },
+          "tip": {
+            "en": "Mon–Sat 9:00–21:00, Sun and holidays 9:00–17:00",
+            "th": "จันทร์–เสาร์ 9:00–21:00 อาทิตย์และวันหยุด 9:00–17:00"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Toyano General Gymnasium, Chuo Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Higashi Sports Centre Kids’ Hall",
+            "th": "ลานเด็กศูนย์กีฬาฮิงาชิ"
+          },
+          "local": "東総合スポーツセンター こども広場",
+          "kind": "play",
+          "area": {
+            "en": "Hanamizuki, Higashi Ward",
+            "th": "ฮานามิซึกิ เขตฮิงาชิ"
+          },
+          "what": {
+            "en": "A pre-school play hall inside the east Niigata sports centre, with a rest area next to it.",
+            "th": "ห้องเล่นสำหรับเด็กก่อนวัยเรียนในศูนย์กีฬาฝั่งตะวันออกของนีงาตะ มีที่พักอยู่ข้างๆ"
+          },
+          "why": {
+            "en": "Play equipment, a slide, a rocking toy and a crocodile seesaw; a bench for parents, a baby bed and a nursing corner next door.",
+            "th": "มีเครื่องเล่น สไลเดอร์ ของเล่นโยก และกระดานหกรูปจระเข้ ม้านั่งให้พ่อแม่ เตียงเด็กและมุมให้นมอยู่ข้างๆ"
+          },
+          "tip": {
+            "en": "Mon–Sat 9:00–21:00, Sun and holidays 9:00–17:00",
+            "th": "จันทร์–เสาร์ 9:00–21:00 อาทิตย์และวันหยุด 9:00–17:00"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Higashi General Sports Centre, Higashi Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Kita Sports Centre Toddler Corner",
+            "th": "มุมเด็กเล็กศูนย์กีฬาคิตะ"
+          },
+          "local": "北地区スポーツセンター 幼児コーナー",
+          "kind": "play",
+          "area": {
+            "en": "Namemedokoro, Kita Ward",
+            "th": "นาเมะโดโกโระ เขตคิตะ"
+          },
+          "what": {
+            "en": "A free play corner for pre-school children in the lobby of the north Niigata sports centre.",
+            "th": "มุมเล่นฟรีสำหรับเด็กก่อนวัยเรียนในล็อบบี้ศูนย์กีฬาฝั่งเหนือของนีงาตะ"
+          },
+          "why": {
+            "en": "A nursing room and a nappy-changing table let babies be looked after on the spot.",
+            "th": "มีห้องให้นมและโต๊ะเปลี่ยนผ้าอ้อม ดูแลทารกได้ในที่"
+          },
+          "tip": {
+            "en": "Mon–Sat 9:00–21:00, Sun and holidays 9:00–17:00",
+            "th": "จันทร์–เสาร์ 9:00–21:00 อาทิตย์และวันหยุด 9:00–17:00"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kita District Sports Centre, Kita Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Nishi Sports Centre Waiwai Corner",
+            "th": "มุมไวไวศูนย์กีฬานิชิ"
+          },
+          "local": "西総合スポーツセンター わいわいコーナー",
+          "kind": "play",
+          "area": {
+            "en": "Igarashi, Nishi Ward",
+            "th": "อิการาชิ เขตนิชิ"
+          },
+          "what": {
+            "en": "An indoor children’s space with large play equipment, inside the largest west-side sports complex in Niigata.",
+            "th": "พื้นที่เด็กในร่มมีเครื่องเล่นขนาดใหญ่ ในศูนย์กีฬาที่ใหญ่ที่สุดฝั่งตะวันตกของนีงาตะ"
+          },
+          "why": {
+            "en": "Warm inside when it is cold outside; a parent can watch while an older sibling uses the pool or gym next door.",
+            "th": "อบอุ่นเมื่อข้างนอกหนาว พ่อแม่นั่งดูได้ขณะที่พี่ใช้สระว่ายน้ำหรือโรงยิมข้างๆ"
+          },
+          "tip": {
+            "en": "Free parking. Mon–Sat 9:00–21:00, Sun and holidays 9:00–17:00",
+            "th": "ที่จอดรถฟรี จันทร์–เสาร์ 9:00–21:00 อาทิตย์และวันหยุด 9:00–17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nishi General Sports Centre, Igarashi, Nishi Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Akiha Gymnasium Kids’ Corner",
+            "th": "มุมเด็กโรงยิมอากิฮะ"
+          },
+          "local": "秋葉区総合体育館 キッズコーナー",
+          "kind": "play",
+          "area": {
+            "en": "Hodoshima, Akiha Ward (next to the ward office)",
+            "th": "โฮโดชิมะ เขตอากิฮะ (ข้างที่ว่าการเขต)"
+          },
+          "what": {
+            "en": "A free indoor play space for children aged 12 and under, beside Akiha ward office.",
+            "th": "พื้นที่เล่นในร่มฟรีสำหรับเด็กอายุ 12 ปีลงมา ข้างที่ว่าการเขตอากิฮะ"
+          },
+          "why": {
+            "en": "A triangle net, a small slide, a ride-on toy and foam blocks; the page calls it clean and well equipped.",
+            "th": "มีตาข่ายสามเหลี่ยม สไลเดอร์เล็ก ของเล่นให้ขี่ และโฟมบล็อก เว็บบอกว่าสะอาดและอุปกรณ์ครบ"
+          },
+          "tip": {
+            "en": "Shared free parking",
+            "th": "มีที่จอดรถฟรีใช้ร่วมกัน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Akiha Ward General Gymnasium, Akiha Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Ajikata Gymnasium Ajikko Hiroba",
+            "th": "ลานอาจิกโกะโรงยิมอาจิคาตะ"
+          },
+          "local": "味方体育館 あじっこ広場",
+          "kind": "play",
+          "area": {
+            "en": "Nishishirane, Minami Ward",
+            "th": "นิชิชิราเนะ เขตมินามิ"
+          },
+          "what": {
+            "en": "An indoor play space for children in a corner of the Ajikata gymnasium, used by local families with little ones.",
+            "th": "พื้นที่เล่นในร่มสำหรับเด็กมุมหนึ่งของโรงยิมอาจิคาตะ ครอบครัวในท้องถิ่นที่มีเด็กเล็กใช้กัน"
+          },
+          "why": {
+            "en": "Pre-school children go in free; the gym is big enough to run in, and older siblings can play sport in other rooms.",
+            "th": "เด็กก่อนวัยเรียนเข้าฟรี โรงยิมกว้างพอให้วิ่ง และพี่ๆ เล่นกีฬาในห้องอื่นได้"
+          },
+          "tip": {
+            "en": "Free parking. Mon–Sat 9:00–21:30, Sun and 13 August 9:00–17:00",
+            "th": "ที่จอดรถฟรี จันทร์–เสาร์ 9:00–21:30 อาทิตย์และ 13 สิงหาคม 9:00–17:00"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Ajikata Gymnasium, Nishishirane, Minami Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        },
+        {
+          "name": {
+            "en": "Kobari Aoyama Community Hall Kids’ Space",
+            "th": "ห้องเด็กศูนย์ชุมชนโคบาริอาโอยามะ"
+          },
+          "local": "小針青山公民館 子どもの広場",
+          "kind": "play",
+          "area": {
+            "en": "Kobari, Nishi Ward (beside Nishi Niigata Citizens’ Hall)",
+            "th": "โคบาริ เขตนิชิ (ข้างหอประชาคมนิชินีงาตะ)"
+          },
+          "what": {
+            "en": "A play room on the first floor of a community hall, open all year for children under primary age.",
+            "th": "ห้องเล่นชั้นหนึ่งของศูนย์ชุมชน เปิดตลอดปีสำหรับเด็กก่อนวัยประถม"
+          },
+          "why": {
+            "en": "A monthly toy hospital visits on the second Saturday so broken toys can be mended; a big lobby to sit in.",
+            "th": "มี “โรงพยาบาลของเล่น” มาซ่อมของเล่นที่พังทุกวันเสาร์ที่สองของเดือน และมีล็อบบี้กว้างไว้นั่งพัก"
+          },
+          "tip": {
+            "en": "Open 9:00–21:30; free parking shared with the hall",
+            "th": "เปิด 9:00–21:30 ที่จอดรถฟรีใช้ร่วมกับหอประชาคม"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kobari Aoyama Community Hall, Nishi Ward, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83329"
+        }
+      ]
+    },
+  {
+      "place": "jp-shirahama",
+      "sights": [
+        {
+          "name": {
+            "en": "Adventure World",
+            "th": "แอดเวนเจอร์เวิลด์"
+          },
+          "local": "アドベンチャーワールド",
+          "kind": "zoo",
+          "area": {
+            "en": "Shirahama",
+            "th": "ชิราฮามะ"
+          },
+          "what": {
+            "en": "A large zoo, aquarium and amusement park all in one.",
+            "th": "สวนสัตว์ พิพิธภัณฑ์สัตว์น้ำ และสวนสนุกขนาดใหญ่ในที่เดียว"
+          },
+          "why": {
+            "en": "Children can have close contact with animals.",
+            "th": "เด็กๆ ได้ใกล้ชิดกับสัตว์"
+          },
+          "tip": {
+            "en": "Plan a full day",
+            "th": "วางแผนไว้ทั้งวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Adventure World, Shirahama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.aws-s.com/en/"
+        },
+        {
+          "name": {
+            "en": "Shirahama Aquarium, Kyoto University",
+            "th": "พิพิธภัณฑ์สัตว์น้ำชิราฮามะ มหาวิทยาลัยเกียวโต"
+          },
+          "local": "京都大学白浜水族館",
+          "kind": "aquarium",
+          "area": {
+            "en": "Shirahama",
+            "th": "ชิราฮามะ"
+          },
+          "what": {
+            "en": "More than 500 species of invertebrates on display all year.",
+            "th": "จัดแสดงสัตว์ไม่มีกระดูกสันหลังกว่า 500 ชนิดตลอดปี"
+          },
+          "why": {
+            "en": "One of the largest invertebrate exhibitions in Japan.",
+            "th": "หนึ่งในนิทรรศการสัตว์ไม่มีกระดูกสันหลังที่ใหญ่ที่สุดของญี่ปุ่น"
+          },
+          "tip": {
+            "en": "Open 9:00–17:00 year-round; last entry 16:30",
+            "th": "เปิดทุกวัน 9:00–17:00 รับเข้าชมครั้งสุดท้าย 16:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥600 adults · ¥200 ages 6–14",
+            "th": "≈ ¥600 ผู้ใหญ่ · ¥200 อายุ 6–14 ปี"
+          },
+          "book": "none",
+          "q": "Shirahama Aquarium, Kyoto University, Shirahama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.seto.kyoto-u.ac.jp/shirahama_aqua/english/"
+        },
+        {
+          "name": {
+            "en": "Kushimoto Marine Park",
+            "th": "คุชิโมโตะ มารีนพาร์ก"
+          },
+          "kind": "aquarium",
+          "area": {
+            "en": "Kushimoto",
+            "th": "คุชิโมโตะ"
+          },
+          "what": {
+            "en": "An aquarium with an undersea observation tower.",
+            "th": "พิพิธภัณฑ์สัตว์น้ำที่มีหอชมใต้ทะเล"
+          },
+          "why": {
+            "en": "An aquarium and an undersea tower in one complex.",
+            "th": "มีทั้งพิพิธภัณฑ์สัตว์น้ำและหอชมใต้ทะเลในที่เดียว"
+          },
+          "tip": {
+            "en": "Open 9:00–16:30; last ticket 16:00",
+            "th": "เปิด 9:00–16:30 ขายตั๋วครั้งสุดท้าย 16:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,000 adults (aquarium and undersea tower)",
+            "th": "≈ ¥2,000 ผู้ใหญ่ (พิพิธภัณฑ์สัตว์น้ำและหอชมใต้ทะเล)"
+          },
+          "book": "none",
+          "q": "Kushimoto Marine Park, Kushimoto, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://kushimoto.co.jp/english/info.html"
+        },
+        {
+          "name": {
+            "en": "Shirarahama Beach",
+            "th": "หาดชิราระฮามะ"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Shirahama",
+            "th": "ชิราฮามะ"
+          },
+          "what": {
+            "en": "A famous beach of white sand.",
+            "th": "ชายหาดทรายขาวชื่อดัง"
+          },
+          "why": {
+            "en": "Sparkling white sand to play on.",
+            "th": "ทรายขาวเม็ดละเอียดให้เล่น"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shirarahama Beach, Shirahama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://en.visitwakayama.jp/destinations/shirahama-kushimoto/"
+        },
+        {
+          "name": {
+            "en": "Engetsuto Island",
+            "th": "เกาะเอ็งเกะสึโตะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Shirahama",
+            "th": "ชิราฮามะ"
+          },
+          "what": {
+            "en": "An island that is an iconic symbol of the Kii Peninsula.",
+            "th": "เกาะที่เป็นสัญลักษณ์ของคาบสมุทรคิอิ"
+          },
+          "why": {
+            "en": "A spot to watch the sunset.",
+            "th": "จุดชมพระอาทิตย์ตก"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Engetsuto Island, Shirahama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://en.visitwakayama.jp/destinations/shirahama-kushimoto/"
+        },
+        {
+          "name": {
+            "en": "Sandanbeki Rock Cliffs",
+            "th": "หน้าผาซันดันเบกิ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Shirahama",
+            "th": "ชิราฮามะ"
+          },
+          "what": {
+            "en": "Craggy sea cliffs 50 metres high facing the Pacific.",
+            "th": "หน้าผาริมทะเลสูง 50 เมตรหันหน้าสู่มหาสมุทรแปซิฟิก"
+          },
+          "why": {
+            "en": "Rock formations and views over the ocean.",
+            "th": "หินรูปทรงแปลกตาและวิวมหาสมุทร"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sandanbeki, Shirahama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://en.visitwakayama.jp/destinations/shirahama-kushimoto/"
+        },
+        {
+          "name": {
+            "en": "Toretore-ichiba",
+            "th": "โทเรโทเระอิจิบะ"
+          },
+          "kind": "market",
+          "area": {
+            "en": "Shirahama",
+            "th": "ชิราฮามะ"
+          },
+          "what": {
+            "en": "A fish market where you see what is in season.",
+            "th": "ตลาดปลาที่ได้เห็นของสดตามฤดูกาล"
+          },
+          "why": {
+            "en": "A lively market to wander through.",
+            "th": "ตลาดที่คึกคัก เดินชมได้เพลินๆ"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Toretore-ichiba, Shirahama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://en.visitwakayama.jp/destinations/shirahama-kushimoto/"
+        },
+        {
+          "name": {
+            "en": "Shirahama Energy Land",
+            "th": "ชิราฮามะ เอนเนอร์จีแลนด์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Shirahama",
+            "th": "ชิราฮามะ"
+          },
+          "what": {
+            "en": "Dinosaurs in a 3D theatre, illusion art and an adventure playground.",
+            "th": "ไดโนเสาร์ในโรงภาพยนตร์ 3D ศิลปะภาพลวงตา และสนามเด็กเล่นผจญภัย"
+          },
+          "why": {
+            "en": "Children will love learning about dinosaurs in the 3D theatre.",
+            "th": "เด็กๆ จะชอบเรียนรู้เรื่องไดโนเสาร์ในโรงภาพยนตร์ 3D"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shirahama Energy Land, Shirahama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://visitwakayama.jp/en/attractions/detail_576.html"
+        },
+        {
+          "name": {
+            "en": "Wakayama City Children’s Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เด็กเมืองวาคายามะ"
+          },
+          "local": "和歌山市立こども科学館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Yoriai-cho, Wakayama City (5 min walk from Nankai Wakayamashi station)",
+            "th": "โยริอาอิโจ เมืองวาคายามะ (เดิน 5 นาทีจากสถานีนันไกวาคายามะชิ)"
+          },
+          "what": {
+            "en": "A hands-on science museum over three floors with light, sound, electricity and space exhibits, and a planetarium on the fourth floor.",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ลงมือทำสามชั้น เรื่องแสง เสียง ไฟฟ้าและอวกาศ มีท้องฟ้าจำลองชั้นสี่"
+          },
+          "why": {
+            "en": "Children can touch and move the exhibits themselves, such as the mirror cosmos, jogging generator and earthquake experience; preschool children enter free.",
+            "th": "เด็กๆ จับและขยับนิทรรศการเองได้ เช่น จักรวาลกระจก เครื่องปั่นไฟวิ่ง และห้องจำลองแผ่นดินไหว เด็กก่อนวัยเรียนเข้าฟรี"
+          },
+          "tip": {
+            "en": "Open 9:30–16:30; mini science shows and experiment classes are held regularly",
+            "th": "เปิด 9:30–16:30 มีโชว์วิทยาศาสตร์ย่อมและคลาสทดลองเป็นประจำ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥300 high school and over · ¥150 primary and junior high · free preschool",
+            "th": "≈ ¥300 มัธยมปลายขึ้นไป · ¥150 ประถมและมัธยมต้น · ฟรี ก่อนวัยเรียน"
+          },
+          "book": "none",
+          "q": "Wakayama City Children’s Science Museum, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83177"
+        },
+        {
+          "name": {
+            "en": "Adventure Kids Land",
+            "th": "แอดเวนเจอร์คิดส์แลนด์"
+          },
+          "local": "アドベンチャーキッズランド",
+          "kind": "play",
+          "area": {
+            "en": "Porto Europa, Wakayama Marina City, Wakayama City",
+            "th": "ปอร์โต ยูโรปา วาคายามะ มารีนซิตี้ เมืองวาคายามะ"
+          },
+          "what": {
+            "en": "An indoor play area in three zones: a jungle adventure, a savanna adventure and a huge ball pool.",
+            "th": "พื้นที่เล่นในร่มสามโซน คือผจญภัยป่าดิบ ผจญภัยทุ่งสะวันนา และบ่อบอลขนาดใหญ่"
+          },
+          "why": {
+            "en": "Slides, shooting games and challenge corners, and a space set aside for crawling babies; children stay in the ball pool a long time.",
+            "th": "มีสไลเดอร์ เกมยิง และมุมท้าทาย พร้อมพื้นที่เฉพาะให้ทารกคลาน เด็กๆ เล่นบ่อบอลได้นาน"
+          },
+          "tip": {
+            "en": "Entry to Porto Europa is free; the kids’ land costs ¥800 a person and the standard pass also works",
+            "th": "เข้าปอร์โต ยูโรปาฟรี ส่วนคิดส์แลนด์คิด ¥800 ต่อคน และใช้พาสมาตรฐานได้"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥800 a person",
+            "th": "≈ ¥800 ต่อคน"
+          },
+          "book": "none",
+          "q": "Adventure Kids Land, Porto Europa, Wakayama Marina City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83177"
+        },
+        {
+          "name": {
+            "en": "Inter Bowl Tentoumushi Park Wakayama",
+            "th": "อินเตอร์โบว์ล เท็นโทมุชิพาร์ก วาคายามะ"
+          },
+          "local": "インターボウル・てんとう虫パーク 和歌山店",
+          "kind": "play",
+          "area": {
+            "en": "Matsushima, Wakayama City (near Wakayama IC)",
+            "th": "มัตสึชิมะ เมืองวาคายามะ (ใกล้ทางลงวาคายามะ IC)"
+          },
+          "what": {
+            "en": "A four-floor indoor park with trampolines, climbing, a kids’ park, karaoke and bowling lanes, with a drinks bar.",
+            "th": "สวนในร่มสี่ชั้น มีแทรมโปลีน ปีนป่าย สวนเด็ก คาราโอเกะและเลนโบว์ลิ่ง พร้อมบาร์เครื่องดื่ม"
+          },
+          "why": {
+            "en": "The whole building is a play space, with a kids’ park for small children and trampolines for older ones; food and drink may be brought in.",
+            "th": "ทั้งอาคารเป็นพื้นที่เล่น มีสวนเด็กสำหรับเด็กเล็กและแทรมโปลีนสำหรับเด็กโต นำอาหารและเครื่องดื่มเข้าไปได้"
+          },
+          "tip": {
+            "en": "Open 12:00–23:00 weekdays, 9:00–23:00 Saturday, 8:30–22:00 Sunday and holidays",
+            "th": "เปิดวันธรรมดา 12:00–23:00 เสาร์ 9:00–23:00 อาทิตย์และวันหยุด 8:30–22:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400 weekdays or ¥600 weekends for ages 3 to preschool · ¥200 or ¥400 for ages 0–2",
+            "th": "≈ ¥400 วันธรรมดา หรือ ¥600 เสาร์อาทิตย์ อายุ 3 ปีถึงก่อนวัยเรียน · ¥200 หรือ ¥400 อายุ 0–2 ปี"
+          },
+          "book": "none",
+          "q": "Inter Bowl Tentoumushi Park Wakayama, Matsushima, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83177"
+        },
+        {
+          "name": {
+            "en": "Fusion Museum",
+            "th": "ฟิวชันมิวเซียม"
+          },
+          "local": "フュージョンミュージアム",
+          "kind": "museum",
+          "area": {
+            "en": "Forte Wajima 3F, Honmachi 2-chome, Wakayama City",
+            "th": "ฟอร์เตะวาจิมะ ชั้น 3 ฮงมาจิ เมืองวาคายามะ"
+          },
+          "what": {
+            "en": "A knitting museum run by Shima Seiki on the third floor of Forte Wajima, from the first knitting machines to the latest flat-knitting machines.",
+            "th": "พิพิธภัณฑ์การถักนิตติ้งของชิมะ เซกิ ชั้น 3 ฟอร์เตะวาจิมะ ตั้งแต่เครื่องถักรุ่นแรกจนถึงเครื่องถักแบนรุ่นล่าสุด"
+          },
+          "why": {
+            "en": "Children can design a pattern and knit it themselves on a machine with a bicycle-pedal drive, and take a coaster or scarf home.",
+            "th": "เด็กๆ ออกแบบลายและถักเองบนเครื่องที่ใช้แป้นจักรยาน แล้วนำที่รองแก้วหรือผ้าพันคอกลับบ้านได้"
+          },
+          "tip": {
+            "en": "Open 10:00–19:00; the knitting experience is first come, first served and cannot be booked",
+            "th": "เปิด 10:00–19:00 กิจกรรมถักมาก่อนได้ก่อน จองไม่ได้"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free entry (≈ ¥300 coaster · ≈ ¥600 scarf)",
+            "th": "เข้าฟรี (ที่รองแก้ว ≈ ¥300 · ผ้าพันคอ ≈ ¥600)"
+          },
+          "book": "none",
+          "q": "Fusion Museum, Forte Wajima 3F, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83177"
+        },
+        {
+          "name": {
+            "en": "Little Planet Montigre Wakayama",
+            "th": "ลิตเติลแพลนเน็ต มอนติเกรวาคายามะ"
+          },
+          "local": "リトルプラネット モンティグレ和歌山",
+          "kind": "play",
+          "area": {
+            "en": "Montigre Wakayama 1F, Wakayama City",
+            "th": "มอนติเกรวาคายามะ ชั้น 1 เมืองวาคายามะ"
+          },
+          "what": {
+            "en": "A digital and analogue indoor theme play space with twelve attractions, including AR sand play, an adventure ball pool and 3D drawing racing.",
+            "th": "พื้นที่เล่นในร่มธีมดิจิทัลและอนาล็อก 12 กิจกรรม เช่น เล่นทราย AR บ่อบอลผจญภัย และแข่งรถวาดภาพ 3 มิติ"
+          },
+          "why": {
+            "en": "A digital hide-and-seek that children find thrilling, and games that level up each visit; it is all-weather.",
+            "th": "มีซ่อนหาแบบดิจิทัลที่เด็กๆ ตื่นเต้น และเกมที่เลเวลสูงขึ้นทุกครั้งที่มา เล่นได้ทุกสภาพอากาศ"
+          },
+          "tip": {
+            "en": "Open 10:00–19:00 weekdays, 10:00–20:00 weekends and holidays; bus stop Wakayama-jo Mae",
+            "th": "เปิดวันธรรมดา 10:00–19:00 เสาร์อาทิตย์และวันหยุด 10:00–20:00 ป้ายรถบัสวาคายามะโจมาเอะ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥500–700 children · ¥700 adults for 30 minutes, weekdays",
+            "th": "≈ ¥500–700 เด็ก · ¥700 ผู้ใหญ่ ต่อ 30 นาที วันธรรมดา"
+          },
+          "book": "none",
+          "q": "Little Planet Montigre Wakayama, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83177"
+        },
+        {
+          "name": {
+            "en": "Kids Land US Wakayama",
+            "th": "คิดส์แลนด์ US วาคายามะ"
+          },
+          "local": "キッズランドUS 和歌山店",
+          "kind": "play",
+          "area": {
+            "en": "Palm City Wakayama 1F, Nakano, Wakayama City",
+            "th": "ปาล์มซิตี้วาคายามะ ชั้น 1 นากาโนะ เมืองวาคายามะ"
+          },
+          "what": {
+            "en": "An indoor play park with a super jungle gym, a ball pool, trampolines, cyber wheels and a self photo studio.",
+            "th": "สวนเด็กในร่ม มีจังเกิลยิมขนาดใหญ่ บ่อบอล แทรมโปลีน ไซเบอร์วีล และสตูดิโอถ่ายรูปเอง"
+          },
+          "why": {
+            "en": "A baby corner and nursing room; children play for hours on the big jungle gym and ball pool.",
+            "th": "มีมุมเด็กเล็กและห้องให้นม เด็กๆ เล่นจังเกิลยิมและบ่อบอลได้เป็นชั่วโมง"
+          },
+          "tip": {
+            "en": "Open 10:00–18:00; the east flat car park by the entrance is the closest",
+            "th": "เปิด 10:00–18:00 ที่จอดรถราบด้านตะวันออกข้างทางเข้าอยู่ใกล้สุด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700 an hour or ¥900 a day for children · ¥600 a day for a parent",
+            "th": "≈ ¥700 ต่อชั่วโมงหรือ ¥900 ทั้งวัน สำหรับเด็ก · ¥600 ทั้งวัน สำหรับผู้ปกครอง"
+          },
+          "book": "none",
+          "q": "Kids Land US Wakayama, Palm City Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83177"
+        },
+        {
+          "name": {
+            "en": "NICOPA Garden Park Wakayama",
+            "th": "นิโคปา การ์เดนพาร์ก วาคายามะ"
+          },
+          "local": "NICOPA ガーデンパーク和歌山店",
+          "kind": "play",
+          "area": {
+            "en": "Garden Park Wakayama 2F, Matsue, Wakayama City",
+            "th": "การ์เดนพาร์กวาคายามะ ชั้น 2 มัตสึเอะ เมืองวาคายามะ"
+          },
+          "what": {
+            "en": "A compact indoor kids’ park with a big air slide, a ball pool and a room of floating balloons.",
+            "th": "สวนเด็กในร่มขนาดกะทัดรัด มีสไลเดอร์ลมขนาดใหญ่ บ่อบอล และห้องลูกโป่งลอย"
+          },
+          "why": {
+            "en": "Plenty of play equipment in a small space, with a nappy-changing area and nursing room; easy to drop into while shopping.",
+            "th": "มีเครื่องเล่นมากในพื้นที่เล็ก พร้อมมุมเปลี่ยนผ้าอ้อมและห้องให้นม แวะเล่นได้ง่ายระหว่างช้อปปิ้ง"
+          },
+          "tip": {
+            "en": "Open 10:00–21:00; a ¥500 weekday free pass is offered",
+            "th": "เปิด 10:00–21:00 วันธรรมดามีบัตรเล่นไม่จำกัด ¥500"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400 for 30 minutes · ≈ ¥500 unlimited",
+            "th": "≈ ¥400 ต่อ 30 นาที · ≈ ¥500 เล่นไม่จำกัด"
+          },
+          "book": "none",
+          "q": "NICOPA Garden Park Wakayama, Garden Park Wakayama 2F, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83177"
+        },
+        {
+          "name": {
+            "en": "Wakayama Castle Park Zoo",
+            "th": "สวนสัตว์สวนปราสาทวาคายามะ"
+          },
+          "local": "和歌山城公園動物園",
+          "kind": "zoo",
+          "area": {
+            "en": "Ichibancho, Wakayama City (inside the Wakayama Castle grounds)",
+            "th": "อิจิบันโจ เมืองวาคายามะ (ในบริเวณปราสาทวาคายามะ)"
+          },
+          "what": {
+            "en": "A small zoo inside the grounds of Wakayama Castle with about fifty animals, mostly birds and small mammals.",
+            "th": "สวนสัตว์เล็กในบริเวณปราสาทวาคายามะ มีสัตว์ราว 50 ตัว ส่วนใหญ่เป็นนกและสัตว์เลี้ยงลูกด้วยนมขนาดเล็ก"
+          },
+          "why": {
+            "en": "Free to enter, with feeding experiences on weekdays and small-animal petting at weekends and holidays, in a park with the castle in view.",
+            "th": "เข้าฟรี มีกิจกรรมให้อาหารวันธรรมดาและสัมผัสสัตว์เล็กเสาร์อาทิตย์และวันหยุด ในสวนที่เห็นปราสาท"
+          },
+          "tip": {
+            "en": "Open 9:00–17:00; closed Tuesdays June–September and December–February (or the next weekday if a holiday)",
+            "th": "เปิด 9:00–17:00 ปิดวันอังคารช่วงมิถุนายน–กันยายนและธันวาคม–กุมภาพันธ์ (หรือวันทำการถัดไปถ้าตรงวันหยุด)"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free entry; some petting experiences cost extra",
+            "th": "เข้าฟรี กิจกรรมสัมผัสสัตว์บางอย่างเสียเงินเพิ่ม"
+          },
+          "book": "none",
+          "q": "Wakayama Castle Park Zoo, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/15343/"
+        },
+        {
+          "name": {
+            "en": "Mizu to Kirameki Kinokawa-kan",
+            "th": "มิซึโตะคิราเมกิ คิโนกาวะคัง"
+          },
+          "local": "水ときらめき紀の川館",
+          "kind": "museum",
+          "area": {
+            "en": "Beside the Kinokawa barrage, Arimoto, Wakayama City",
+            "th": "ข้างเขื่อนคิโนกาวะ อาริโมโตะ เมืองวาคายามะ"
+          },
+          "what": {
+            "en": "A small museum beside the Kinokawa barrage that shows the river and the lives along it through panels and models, with a fish-passage observation room.",
+            "th": "พิพิธภัณฑ์เล็กข้างเขื่อนคิโนกาวะ แสดงแม่น้ำและชีวิตริมน้ำด้วยแผงและโมเดล มีห้องชมทางปลาผ่าน"
+          },
+          "why": {
+            "en": "Children can watch fish move up the fish pass in the observation room; the roof has a view over the barrage and the city.",
+            "th": "เด็กๆ ดูปลาว่ายขึ้นทางปลาผ่านในห้องสังเกตการณ์ ดาดฟ้ามองเห็นเขื่อนและตัวเมือง"
+          },
+          "tip": {
+            "en": "Open 9:30–16:00, closed Saturdays and holidays; weekday visits are booked three days ahead",
+            "th": "เปิด 9:30–16:00 ปิดวันเสาร์และวันหยุด วันธรรมดาจองล่วงหน้าสามวัน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "req",
+          "q": "Mizu to Kirameki Kinokawa-kan, Arimoto, Wakayama, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/15343/"
+        }
+      ]
+    },
+  {
+      "place": "jp-toyama",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Tateyama Kurobe Alpine Route",
+            "th": "อัลไพน์รูท ทาเตยามะ คุโรเบะ"
+          },
+          "local": "立山黒部アルペンルート",
+          "kind": "views",
+          "area": {
+            "en": "Tateyama (Toyama side) to Murodo, 2,450 m",
+            "th": "ทาเตยามะ (ฝั่งโทยามะ) ถึงมูโรโดะ ที่ 2,450 เมตร"
+          },
+          "what": {
+            "en": "A mountain crossing by six kinds of transport, including cable car, ropeway, electric bus and underground cable car, through the Northern Japan Alps.",
+            "th": "ข้ามภูเขาด้วยพาหนะหกแบบ รวมกระเช้า โรปเวย์ รถบัสไฟฟ้าและรถรางใต้ดิน ผ่านเทือกเขาแอลป์เหนือของญี่ปุ่น"
+          },
+          "why": {
+            "en": "The journey itself is the ride: each vehicle changes and the views change with it.",
+            "th": "การเดินทางคือเครื่องเล่น พาหนะเปลี่ยนไปและวิวก็เปลี่ยนตาม"
+          },
+          "tip": {
+            "en": "Closed December to mid-April. Book the first cable car slot online at least two weeks ahead in peak season",
+            "th": "ปิดตั้งแต่ธันวาคมถึงกลางเมษายน ช่วงคนเยอะจองเวลากระเช้ารอบแรกออนไลน์ล่วงหน้าอย่างน้อยสองสัปดาห์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Tateyama Kurobe Alpine Route, Tateyama, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/tateyama-kurobe-alpine-route/"
+        },
+        {
+          "name": {
+            "en": "Yuki no Otani",
+            "th": "ยูกิโนะโอตานิ (กำแพงหิมะ)"
+          },
+          "local": "雪の大谷",
+          "kind": "nature",
+          "area": {
+            "en": "Murodo, Tateyama Kurobe Alpine Route",
+            "th": "มูโรโดะ ทาเตยามะ คุโรเบะ อัลไพน์รูท"
+          },
+          "what": {
+            "en": "A snow corridor on the road at Murodo, with walls of compacted snow up to 20 metres high on both sides.",
+            "th": "ทางเดินหิมะบนถนนที่มูโรโดะ กำแพงหิมะอัดแน่นสูงถึง 20 เมตรสองข้างทาง"
+          },
+          "why": {
+            "en": "Kids walk a 500-metre pedestrian section and touch walls of snow taller than a building.",
+            "th": "เด็กๆ เดินส่วนทางเดินเท้า 500 เมตรและสัมผัสกำแพงหิมะที่สูงกว่าตึก"
+          },
+          "tip": {
+            "en": "Open mid-April to late June. Dress in removable layers: it is about 15 degrees colder than the base",
+            "th": "เปิดกลางเมษายนถึงปลายมิถุนายน แต่งตัวเป็นชั้นๆ ถอดได้ เพราะหนาวกว่าที่เชิงเขาราว 15 องศา"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yuki no Otani, Murodo, Tateyama, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/tateyama-kurobe-alpine-route/"
+        },
+        {
+          "name": {
+            "en": "Kurobe Dam",
+            "th": "เขื่อนคุโรเบะ"
+          },
+          "local": "黒部ダム",
+          "kind": "views",
+          "area": {
+            "en": "End of the Alpine Route (Ogizawa side)",
+            "th": "ปลายอัลไพน์รูท (ฝั่งโอกิซาวะ)"
+          },
+          "what": {
+            "en": "Japan’s tallest dam at 186 metres, with an observation deck above the gorge.",
+            "th": "เขื่อนที่สูงที่สุดของญี่ปุ่น 186 เมตร มีจุดชมวิวเหนือหุบเขา"
+          },
+          "why": {
+            "en": "From late June to mid-October the dam releases water in a spray show that throws rainbows on sunny days.",
+            "th": "ปลายมิถุนายนถึงกลางตุลาคมเขื่อนปล่อยน้ำเป็นม่านละออง เกิดรุ้งในวันแดดดี"
+          },
+          "tip": {
+            "en": "The main deck is 220 steps; the discharge viewing stage at dam level is step-free. Discharge runs late June to mid-October",
+            "th": "จุดชมวิวหลักมีบันได 220 ขั้น ส่วนจุดชมน้ำปล่อยระดับเขื่อนไม่มีขั้นบันได ปล่อยน้ำปลายมิถุนายนถึงกลางตุลาคม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kurobe Dam, Kurobe, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/tateyama-kurobe-alpine-route/"
+        },
+        {
+          "name": {
+            "en": "Mikurigaike Pond",
+            "th": "สระมิคุริงะอิเกะ"
+          },
+          "local": "みくりが池",
+          "kind": "nature",
+          "area": {
+            "en": "Murodo, Tateyama Kurobe Alpine Route",
+            "th": "มูโรโดะ ทาเตยามะ คุโรเบะ อัลไพน์รูท"
+          },
+          "what": {
+            "en": "A pond with a loop trail of about an hour, with a rest stop midway at the Mikurigaike Onsen.",
+            "th": "สระน้ำมีเส้นทางเดินวนราว 1 ชั่วโมง มีจุดพักกลางทางที่ออนเซ็นมิคุริงะอิเกะ"
+          },
+          "why": {
+            "en": "The page says the loop is manageable for elementary-age kids, and a rest stop with hot drinks sits midway.",
+            "th": "เว็บบอกว่าเด็กวัยประถมเดินวนไหว และมีจุดพักที่มีเครื่องดื่มร้อนอยู่กลางทาง"
+          },
+          "tip": {
+            "en": "More stairs and height changes than the path suggests: wear sneakers, not sandals",
+            "th": "มีบันไดและทางขึ้นลงมากกว่าที่เห็น ใส่รองเท้าผ้าใบ ไม่ใส่รองเท้าแตะ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mikurigaike Pond, Murodo, Tateyama, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/tateyama-kurobe-alpine-route/"
+        },
+        {
+          "name": {
+            "en": "Enma-dai",
+            "th": "เอ็นมะไดะ"
+          },
+          "local": "えんま台",
+          "kind": "views",
+          "area": {
+            "en": "Behind Mikurigaike Pond, Murodo",
+            "th": "หลังสระมิคุริงะอิเกะ มูโรโดะ"
+          },
+          "what": {
+            "en": "An overlook above Jigokudani, a steaming volcanic valley, where the vents can be seen from above.",
+            "th": "จุดชมวิวเหนือจิโกกุดานิ หุบเขาภูเขาไฟที่มีไอร้อนพวยพุ่ง มองเห็นปล่องไอจากด้านบน"
+          },
+          "why": {
+            "en": "The view of the steaming vents holds kids’ attention, even without going down into the valley.",
+            "th": "วิวปล่องไอที่พวยพุ่งดึงความสนใจเด็กๆ ได้ แม้ไม่ได้ลงไปในหุบเขา"
+          },
+          "tip": {
+            "en": "The valley-floor trail is usually closed for toxic gas. Watch for the dwarf pines near the trail, where ptarmigan nest",
+            "th": "ทางเดินลงหุบเขามักปิดเพราะก๊าซพิษ ระวังต้นสนแคระริมทางซึ่งเป็นที่ทำรังของไรโจ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Enma-dai, Murodo, Tateyama, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/tateyama-kurobe-alpine-route/"
+        },
+        {
+          "name": {
+            "en": "Daikanbo",
+            "th": "ไดคันโบ"
+          },
+          "local": "大観峰",
+          "kind": "views",
+          "area": {
+            "en": "Tateyama Kurobe Alpine Route (transfer station, 2,316 m)",
+            "th": "ทาเตยามะ คุโรเบะ อัลไพน์รูท (สถานีเปลี่ยนรถ 2,316 เมตร)"
+          },
+          "what": {
+            "en": "A transfer station with a rooftop terrace and mountain and lake views.",
+            "th": "สถานีเปลี่ยนรถที่มีเทอร์เรซบนดาดฟ้าและวิวภูเขากับทะเลสาบ"
+          },
+          "why": {
+            "en": "A rooftop terrace with mountain-and-lake panoramas, on the route between two vehicles.",
+            "th": "เทอร์เรซดาดฟ้าที่เห็นภูเขาและทะเลสาบกว้างไกล อยู่ระหว่างพาหนะสองต่อ"
+          },
+          "tip": {
+            "en": "Reached on the route itself; the stop is a destination as well as a change of vehicle",
+            "th": "อยู่บนเส้นทางเอง แวะได้ทั้งเพื่อเปลี่ยนรถและเพื่อชมวิว"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Daikanbo, Tateyama Kurobe Alpine Route, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/tateyama-kurobe-alpine-route/"
+        },
+        {
+          "name": {
+            "en": "Kurobedaira",
+            "th": "คุโรเบะไดระ"
+          },
+          "local": "黒部平",
+          "kind": "views",
+          "area": {
+            "en": "Tateyama Kurobe Alpine Route (transfer station, 1,828 m)",
+            "th": "ทาเตยามะ คุโรเบะ อัลไพน์รูท (สถานีเปลี่ยนรถ 1,828 เมตร)"
+          },
+          "what": {
+            "en": "A transfer station with a rooftop terrace and a free alpine-plant garden.",
+            "th": "สถานีเปลี่ยนรถที่มีเทอร์เรซดาดฟ้าและสวนพืชเขตหนาวเข้าฟรี"
+          },
+          "why": {
+            "en": "A rooftop terrace with mountain-and-lake panoramas, and a free garden of alpine plants.",
+            "th": "เทอร์เรซดาดฟ้าที่เห็นภูเขาและทะเลสาบกว้างไกล พร้อมสวนพืชเขตหนาวเข้าฟรี"
+          },
+          "tip": {
+            "en": "Reached on the route itself; the garden is free",
+            "th": "อยู่บนเส้นทางเอง สวนเข้าฟรี"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kurobedaira, Tateyama Kurobe Alpine Route, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/tateyama-kurobe-alpine-route/"
+        },
+        {
+          "name": {
+            "en": "Kurobe Gorge Railway",
+            "th": "รถไฟหุบเขาคุโรเบะ"
+          },
+          "local": "黒部峡谷鉄道",
+          "kind": "ride",
+          "area": {
+            "en": "Unazuki Station to Kedamizu Station, Kurobe Gorge (Unazuki Onsen)",
+            "th": "สถานีอูนาซูกิถึงสถานีเคดามิซุ หุบเขาคุโรเบะ (อูนาซูกิออนเซ็น)"
+          },
+          "what": {
+            "en": "A trolley train that climbs the gorge from Unazuki Station.",
+            "th": "รถไฟรางแคบที่ไต่ขึ้นหุบเขาจากสถานีอูนาซูกิ"
+          },
+          "why": {
+            "en": "The toilets at Unazuki and Kedamizu stations have a baby bed, and Unazuki station has a nursing room on its second floor.",
+            "th": "ห้องน้ำที่สถานีอูนาซูกิและเคดามิซุมีเตียงเด็ก และสถานีอูนาซูกิมีห้องให้นมชั้นสอง"
+          },
+          "tip": {
+            "en": "No toilet on the train and no toilet stops: go before boarding. Children of primary-school age or under cannot book alone",
+            "th": "ไม่มีห้องน้ำบนรถไฟและไม่แวะห้องน้ำ เข้าก่อนขึ้นรถ เด็กวัยประถมลงมาจองตั๋วเองไม่ได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Unazuki Station, Kurobe Gorge Railway, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kurotetu.co.jp/qa/"
+        },
+        {
+          "name": {
+            "en": "Toyama City Glass Art Museum",
+            "th": "พิพิธภัณฑ์ศิลปะแก้วเมืองโทยามะ"
+          },
+          "local": "富山市ガラス美術館",
+          "kind": "museum",
+          "area": {
+            "en": "TOYAMA KIRARI complex, central Toyama City",
+            "th": "อาคารโทยามะ คิราริ ใจกลางเมืองโทยามะ"
+          },
+          "what": {
+            "en": "A glass-art museum in the Kengo Kuma building TOYAMA KIRARI, with contemporary glass works.",
+            "th": "พิพิธภัณฑ์ศิลปะแก้วในอาคาร TOYAMA KIRARI ออกแบบโดยเคงโกะ คุมะ จัดแสดงงานแก้วร่วมสมัย"
+          },
+          "why": {
+            "en": "The same building has the city library, with children’s books and a space for reading aloud, so a rainy day can be spent inside.",
+            "th": "ในอาคารเดียวกันมีห้องสมุดเมือง มีหนังสือเด็กและมุมอ่านออกเสียง ใช้เวลาวันฝนตกในร่มได้"
+          },
+          "tip": {
+            "en": "2 minutes on foot from Gurando Plaza-mae tram stop; gallery and library are both indoors",
+            "th": "เดิน 2 นาทีจากป้ายรถรางกูรันโดพลาซ่ามาเอะ ทั้งแกลเลอรีและห้องสมุดอยู่ในร่ม"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Toyama City Glass Art Museum, TOYAMA KIRARI, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.info-toyama.com/articles/mika-garasu"
+        },
+        {
+          "name": {
+            "en": "Toyama Prefectural Museum of Art and Design",
+            "th": "พิพิธภัณฑ์ศิลปะและการออกแบบจังหวัดโทยามะ"
+          },
+          "local": "富山県美術館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Kanesui Park, Kiba-machi, Toyama City",
+            "th": "สวนคันซุย คิบะมาจิ เมืองโทยามะ"
+          },
+          "what": {
+            "en": "A glass-walled art museum on Kanesui Park with a rooftop garden for children.",
+            "th": "พิพิธภัณฑ์ศิลปะผนังกระจกริมสวนคันซุย มีสวนดาดฟ้าสำหรับเด็ก"
+          },
+          "why": {
+            "en": "The rooftop garden has a play area for kids; the museum has a kids’ corner, a nursing room and stroller rental.",
+            "th": "สวนดาดฟ้ามีพื้นที่เล่นสำหรับเด็ก ในพิพิธภัณฑ์มีมุมเด็ก ห้องให้นมและบริการเช่ารถเข็น"
+          },
+          "tip": {
+            "en": "Open 9:30–18:00, closed Wednesdays (not holidays); the rooftop garden is closed 1 Dec–15 Mar. Kids’ room and rooftop are free",
+            "th": "เปิด 9:30–18:00 ปิดวันพุธ (ไม่ปิดวันหยุดนักขัตฤกษ์) สวนดาดฟ้าปิด 1 ธ.ค.–15 มี.ค. ห้องเด็กและดาดฟ้าเข้าฟรี"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Toyama Prefectural Museum of Art and Design, Kanesui Park, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5440/"
+        },
+        {
+          "name": {
+            "en": "Fugan Canal Kansui Park",
+            "th": "สวนคันซุย คลองฟุกัน"
+          },
+          "local": "富岩運河環水公園",
+          "kind": "park",
+          "area": {
+            "en": "Fugan Canal, Toyama City, beside the art museum",
+            "th": "คลองฟุกัน เมืองโทยามะ ข้างพิพิธภัณฑ์ศิลปะ"
+          },
+          "what": {
+            "en": "A park on the canal beside the art museum, with the Tateyama peaks in view.",
+            "th": "สวนริมคลองข้างพิพิธภัณฑ์ศิลปะ มองเห็นยอดเขาทาเตยามะ"
+          },
+          "why": {
+            "en": "A park beside the museum, so the walk and the rooftop play fit one visit.",
+            "th": "สวนอยู่ข้างพิพิธภัณฑ์ จึงเดินเล่นและเล่นบนดาดฟ้าได้ในการไปครั้งเดียว"
+          },
+          "tip": {
+            "en": "Free to enter; the museum next door has the rooftop garden",
+            "th": "เข้าฟรี พิพิธภัณฑ์ข้างๆ มีสวนดาดฟ้า"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Fugan Canal Kansui Park, Toyama City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5440/"
+        },
+        {
+          "name": {
+            "en": "Otogi no Mori Kan",
+            "th": "โอโตงิโนะโมริคัง"
+          },
+          "local": "おとぎの森館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Takaoka Otogi no Mori Park, Sano, Takaoka (15 min walk from Shin-Takaoka Station)",
+            "th": "สวนโอโตงิโนะโมริ ซาโนะ ทาคาโอกะ (เดิน 15 นาทีจากสถานีชินทาคาโอกะ)"
+          },
+          "what": {
+            "en": "A dome-shaped learning and play building in the park, with a tropical atrium garden, a viewing tower and an underground wildlife corridor.",
+            "th": "อาคารเรียนรู้และเล่นทรงโดมในสวน มีสวนเขตร้อนในอะเทรียม หอชมวิว และทางเดินใต้ดินเรื่องสัตว์ป่า"
+          },
+          "why": {
+            "en": "It has a kids’ room and a soft-play dome for the little ones, and the Doraemon empty lot is in the park.",
+            "th": "มีห้องเด็กและโดมนุ่มๆ สำหรับเด็กเล็ก และมีลานว่างโดราเอมอนอยู่ในสวน"
+          },
+          "tip": {
+            "en": "Open 9:00–17:00, closed Tuesdays (the next day on holidays); admission is free but some facilities charge. A nursing room is inside",
+            "th": "เปิด 9:00–17:00 ปิดวันอังคาร (วันถัดไปถ้าตรงวันหยุด) เข้าฟรีแต่บางส่วนเก็บเงิน มีห้องให้นมข้างใน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Otogi no Mori Kan, Takaoka Otogi no Mori Park, Takaoka, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5440/"
+        },
+        {
+          "name": {
+            "en": "Toyama Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์โทยามะ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Central Toyama City, 10 minutes by tram from Toyama Station",
+            "th": "ใจกลางเมืองโทยามะ นั่งรถราง 10 นาทีจากสถานีโทยามะ"
+          },
+          "what": {
+            "en": "Five floors of interactive science exhibits covering natural science, astronomy and Toyama’s own environment.",
+            "th": "นิทรรศการวิทยาศาสตร์แบบโต้ตอบห้าชั้น ครอบคลุมวิทยาศาสตร์ธรรมชาติ ดาราศาสตร์ และสิ่งแวดล้อมของโทยามะ"
+          },
+          "why": {
+            "en": "Hands-on exhibits and a planetarium on the top floor make a practical half-day for younger children.",
+            "th": "นิทรรศการลงมือทำและท้องฟ้าจำลองชั้นบนสุดทำให้ครึ่งวันนี้เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "The planetarium costs extra (about ¥300)",
+            "th": "ท้องฟ้าจำลองคิดเพิ่มประมาณ ¥300"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥500 adults · ¥200 children",
+            "th": "≈ ¥500 ผู้ใหญ่ · ¥200 เด็ก"
+          },
+          "book": "none",
+          "q": "Toyama Science Museum, Toyama City, Japan",
+          "ok": "2026-11",
+          "src": "https://japanspecialtraveler.com/guides/toyama-family-trip/"
+        },
+        {
+          "name": {
+            "en": "Hotaruika Museum",
+            "th": "พิพิธภัณฑ์หมึกหิ่งห้อย"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Namerikawa City, Toyama Bay",
+            "th": "เมืองนาเมริคาวะ อ่าวโทยามะ"
+          },
+          "what": {
+            "en": "A museum on the biology and fishing culture of the firefly squid of Toyama Bay, with live squid tanks in season.",
+            "th": "พิพิธภัณฑ์เรื่องชีววิทยาและวัฒนธรรมการประมงหมึกหิ่งห้อยแห่งอ่าวโทยามะ มีตู้หมึกมีชีวิตตามฤดู"
+          },
+          "why": {
+            "en": "Light demonstrations show how the squid’s bioluminescence works, which children enjoy.",
+            "th": "การสาธิตแสงแสดงให้เห็นว่าหมึกเรืองแสงได้อย่างไร เด็กๆ ชอบ"
+          },
+          "tip": {
+            "en": "Open year-round. Dawn boat tours in March–May are for children aged 8 and up, booked 3 to 4 months ahead",
+            "th": "เปิดตลอดปี ทัวร์เรือรุ่งอรุณมีนาคม–พฤษภาคมสำหรับเด็กอายุ 8 ปีขึ้นไป จองล่วงหน้า 3–4 เดือน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥300",
+            "th": "≈ ¥300"
+          },
+          "book": "none",
+          "q": "Hotaruika Museum, Namerikawa, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanspecialtraveler.com/guides/toyama-family-trip/"
         }
       ]
     }
-  ]
+]
 }
