@@ -1,204 +1,362 @@
 {
   "town": "cn-guangzhou",
-  "kind": "eats + sights",
-  "checked": "2026-11-25",
-  "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
-  "agents": "A read here in Chrome: Amap searches for family restaurants, dim sum, cafes for families and play parks in Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
-  "added": [
+  "rounds": [
     {
-      "name": "Green Tea Restaurant (Mayflower, Yuexiu)",
-      "page_name": "绿茶餐厅(广州越秀五月花店)",
-      "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E8%B6%8A%E7%A7%80%E4%BA%94%E6%9C%88%E8%8A%B1%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
-      "map": "Amap: open, not marked closed, newest review 2026-11-19",
-      "quote": "有宝宝椅 · 亲子友好"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants, dim sum, cafes for families and play parks in Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Green Tea Restaurant (Mayflower, Yuexiu)",
+          "page_name": "绿茶餐厅(广州越秀五月花店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E8%B6%8A%E7%A7%80%E4%BA%94%E6%9C%88%E8%8A%B1%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "有宝宝椅 · 亲子友好"
+        },
+        {
+          "name": "Tsui Wah (Link Plaza, Liwan)",
+          "page_name": "翠华餐厅(广州荔湾领展广场店)",
+          "src": "https://www.amap.com/search?query=%E7%BF%A0%E5%8D%8E%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E8%8D%94%E6%B9%BE%E9%A2%86%E5%B1%95%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "家庭聚餐 · 亲子友好"
+        },
+        {
+          "name": "Haxnbauer German Restaurant (Xinghuan)",
+          "page_name": "haxnbauer海森堡德国餐厅(广州星寰店)",
+          "src": "https://www.amap.com/search?query=haxnbauer%E6%B5%B7%E6%A3%AE%E5%A0%A1%E5%BE%B7%E5%9B%BD%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E6%98%9F%E5%AF%B0%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-06",
+          "map": "Amap: open, not marked closed, newest review 2026-11-06",
+          "quote": "亲子友好 · 我们带着小朋友去的，还没询问，小哥哥就主动offer儿童餐具套装"
+        },
+        {
+          "name": "Daju Feimao Cafe (Future City)",
+          "page_name": "大橘肥猫茶餐厅(未来城店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%A9%98%E8%82%A5%E7%8C%AB%E8%8C%B6%E9%A4%90%E5%8E%85(%E6%9C%AA%E6%9D%A5%E5%9F%8E%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-05",
+          "map": "Amap: open, not marked closed, newest review 2026-11-05",
+          "quote": "亲子用餐 · 他家的鸡扒滑蛋饭特别好吃 孩子很喜欢"
+        },
+        {
+          "name": "Wong Yan Kee Cafe (Dongshankou)",
+          "page_name": "黄恩记茶餐厅(东山口店)",
+          "src": "https://www.amap.com/search?query=%E9%BB%84%E6%81%A9%E8%AE%B0%E8%8C%B6%E9%A4%90%E5%8E%85(%E4%B8%9C%E5%B1%B1%E5%8F%A3%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
+          "map": "Amap: open, not marked closed, newest review 2026-11-04",
+          "quote": "华田脆脆西多士 小朋友一个人食晒 · 柠檬茶几好饮，小朋友超钟意"
+        },
+        {
+          "name": "Luyun Teahouse Dim Sum (Tonghe)",
+          "page_name": "禄运茶居·手工点心(同和店)",
+          "src": "https://www.amap.com/search?query=%E7%A6%84%E8%BF%90%E8%8C%B6%E5%B1%85%C2%B7%E6%89%8B%E5%B7%A5%E7%82%B9%E5%BF%83(%E5%90%8C%E5%92%8C%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅 · 亲子友好 · 萝卜糕和红米糕合适给小朋友吃"
+        },
+        {
+          "name": "Xinxing Jiayu Kitchen (Pazhou)",
+          "page_name": "新兴家喻·品厨(琶洲店)",
+          "src": "https://www.amap.com/search?query=%E6%96%B0%E5%85%B4%E5%AE%B6%E5%96%BB%C2%B7%E5%93%81%E5%8E%A8(%E7%90%B6%E6%B4%B2%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅 · 亲子"
+        },
+        {
+          "name": "Mango Tree (K11)",
+          "page_name": "mango tree芒果树餐厅(K11店)",
+          "src": "https://www.amap.com/search?query=mango%20tree%E8%8A%92%E6%9E%9C%E6%A0%91%E9%A4%90%E5%8E%85(K11%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "亲子友好"
+        },
+        {
+          "name": "Gangli Hong Kong Restaurant (Teemall)",
+          "page_name": "港丽餐厅(天河城)",
+          "src": "https://www.amap.com/search?query=%E6%B8%AF%E4%B8%BD%E9%A4%90%E5%8E%85(%E5%A4%A9%E6%B2%B3%E5%9F%8E)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "适合家庭聚餐 · 金沙黑南瓜焗虾 爱吃虾的宝宝应该也会很爱"
+        },
+        {
+          "name": "Feimao Cafe (Huacheng Hui)",
+          "page_name": "肥猫茶餐厅(花城汇中区店)",
+          "src": "https://www.amap.com/search?query=%E8%82%A5%E7%8C%AB%E8%8C%B6%E9%A4%90%E5%8E%85(%E8%8A%B1%E5%9F%8E%E6%B1%87%E4%B8%AD%E5%8C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "亲子友好 · 这里的口味特别适合带小朋友来一起吃"
+        },
+        {
+          "name": "Gaga (Parc Central)",
+          "page_name": "gaga",
+          "src": "https://www.amap.com/search?query=gaga&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "家庭聚餐 · 亲子"
+        },
+        {
+          "name": "Feiyue Cafe (Yongqingfang)",
+          "page_name": "啡约咖啡馆(永庆坊店)",
+          "src": "https://www.amap.com/search?query=%E5%95%A1%E7%BA%A6%E5%92%96%E5%95%A1%E9%A6%86(%E6%B0%B8%E5%BA%86%E5%9D%8A%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "亲子友好"
+        },
+        {
+          "name": "Shangu Cafe (Baiyun Mountain)",
+          "page_name": "山谷咖啡",
+          "src": "https://www.amap.com/search?query=%E5%B1%B1%E8%B0%B7%E5%92%96%E5%95%A1&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-06",
+          "map": "Amap: open, not marked closed, newest review 2026-09-06",
+          "quote": "亲子友好 · 带孩子来白云山里面的云山丛林飞跃，老母亲可以在这个咖啡厅坐一坐"
+        },
+        {
+          "name": "Guangzhou Zoo Playground",
+          "page_name": "广州动物园游乐场",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD%E6%B8%B8%E4%B9%90%E5%9C%BA&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "亲子玩乐 · 家庭过山车 · 亲子乐园软包防护到位，孩子玩着大人很放心"
+        },
+        {
+          "name": "Ersha Island Sports Park Playground",
+          "page_name": "二沙岛体育公园-儿童活动区",
+          "src": "https://www.amap.com/search?query=%E4%BA%8C%E6%B2%99%E5%B2%9B%E4%BD%93%E8%82%B2%E5%85%AC%E5%9B%AD-%E5%84%BF%E7%AB%A5%E6%B4%BB%E5%8A%A8%E5%8C%BA&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
+          "map": "Amap: open, not marked closed, newest review 2026-10-25",
+          "quote": "儿童乐园 · 儿童沙池 · 小宝宝游玩"
+        },
+        {
+          "name": "Neobio Play Park (Yuehui City)",
+          "page_name": "奈尔宝·儿童乐园·亲子餐厅(广州悦汇城店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E6%82%A6%E6%B1%87%E5%9F%8E%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "儿童乐园 · DIY手工 · 全软包防护"
+        },
+        {
+          "name": "Luban Fantasy Park (Tianhe)",
+          "page_name": "鲁班奇幻乐园广州店",
+          "src": "https://www.amap.com/search?query=%E9%B2%81%E7%8F%AD%E5%A5%87%E5%B9%BB%E4%B9%90%E5%9B%AD%E5%B9%BF%E5%B7%9E%E5%BA%97&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-10",
+          "map": "Amap: open, not marked closed, newest review 2026-10-10",
+          "quote": "儿童乐园 · 鲁班已经二刷了，娃非常喜欢，里面的工作人员服务态度很好"
+        },
+        {
+          "name": "VeRyland Play Park (Baiyun)",
+          "page_name": "VeRyland奇境乐园",
+          "src": "https://www.amap.com/search?query=VeRyland%E5%A5%87%E5%A2%83%E4%B9%90%E5%9B%AD&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "儿童乐园 · 儿童VR娱乐 · 儿童赛车娱乐 · 全软包防护"
+        },
+        {
+          "name": "Tianhe Park Playground",
+          "page_name": "天河公园儿童活动区",
+          "src": "https://www.amap.com/search?query=%E5%A4%A9%E6%B2%B3%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E6%B4%BB%E5%8A%A8%E5%8C%BA&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
+          "map": "Amap: open, not marked closed, newest review 2026-11-09",
+          "quote": "亲子玩乐 · 儿童沙池 · 小宝宝游玩 · 丛林穿越"
+        },
+        {
+          "name": "Meland Club (Link Plaza, Tianhe)",
+          "page_name": "MELAND CLUB(广州天河领展广场店)",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E5%B9%BF%E5%B7%9E%E5%A4%A9%E6%B2%B3%E9%A2%86%E5%B1%95%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "儿童乐园 · 全软包防护 · 带娃行万里路"
+        },
+        {
+          "name": "Tandong Gongchang Cave Play Park (Pazhou)",
+          "page_name": "探洞工场(六元素旗舰店)",
+          "src": "https://www.amap.com/search?query=%E6%8E%A2%E6%B4%9E%E5%B7%A5%E5%9C%BA(%E5%85%AD%E5%85%83%E7%B4%A0%E6%97%97%E8%88%B0%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-21",
+          "map": "Amap: open, not marked closed, newest review 2026-10-21",
+          "quote": "儿童乐园 · 儿童玩乐 · 真人迷宫 · 攀岩挑战 · 海洋球池"
+        },
+        {
+          "name": "Qile’er Play Park (Poly Times)",
+          "page_name": "奇乐儿巴迪总动员儿童乐园(保利时光里店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%87%E4%B9%90%E5%84%BF%E5%B7%B4%E8%BF%AA%E6%80%BB%E5%8A%A8%E5%91%98%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E4%BF%9D%E5%88%A9%E6%97%B6%E5%85%89%E9%87%8C%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "儿童乐园 · 小宝宝游玩 · 沙地乐园 · 吹塑乐园"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "绿岛西餐 草坪露台餐厅",
+          "why": "its review about children is from 2025"
+        },
+        {
+          "name": "琪林里 味寻简餐厅",
+          "why": "newest review May 2026, over six months"
+        },
+        {
+          "name": "夫子园, 牛扒先生",
+          "why": "nothing about children beyond a family tag (or a scorpion dish)"
+        },
+        {
+          "name": "Sunrise晞初, UNCLE FONG芳叔",
+          "why": "nothing about children on the page / one review"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "Tsui Wah (Link Plaza, Liwan)",
-      "page_name": "翠华餐厅(广州荔湾领展广场店)",
-      "src": "https://www.amap.com/search?query=%E7%BF%A0%E5%8D%8E%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E8%8D%94%E6%B9%BE%E9%A2%86%E5%B1%95%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
-      "map": "Amap: open, not marked closed, newest review 2026-11-15",
-      "quote": "家庭聚餐 · 亲子友好"
-    },
-    {
-      "name": "Haxnbauer German Restaurant (Xinghuan)",
-      "page_name": "haxnbauer海森堡德国餐厅(广州星寰店)",
-      "src": "https://www.amap.com/search?query=haxnbauer%E6%B5%B7%E6%A3%AE%E5%A0%A1%E5%BE%B7%E5%9B%BD%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E6%98%9F%E5%AF%B0%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-06",
-      "map": "Amap: open, not marked closed, newest review 2026-11-06",
-      "quote": "亲子友好 · 我们带着小朋友去的，还没询问，小哥哥就主动offer儿童餐具套装"
-    },
-    {
-      "name": "Daju Feimao Cafe (Future City)",
-      "page_name": "大橘肥猫茶餐厅(未来城店)",
-      "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%A9%98%E8%82%A5%E7%8C%AB%E8%8C%B6%E9%A4%90%E5%8E%85(%E6%9C%AA%E6%9D%A5%E5%9F%8E%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-05",
-      "map": "Amap: open, not marked closed, newest review 2026-11-05",
-      "quote": "亲子用餐 · 他家的鸡扒滑蛋饭特别好吃 孩子很喜欢"
-    },
-    {
-      "name": "Wong Yan Kee Cafe (Dongshankou)",
-      "page_name": "黄恩记茶餐厅(东山口店)",
-      "src": "https://www.amap.com/search?query=%E9%BB%84%E6%81%A9%E8%AE%B0%E8%8C%B6%E9%A4%90%E5%8E%85(%E4%B8%9C%E5%B1%B1%E5%8F%A3%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
-      "map": "Amap: open, not marked closed, newest review 2026-11-04",
-      "quote": "华田脆脆西多士 小朋友一个人食晒 · 柠檬茶几好饮，小朋友超钟意"
-    },
-    {
-      "name": "Luyun Teahouse Dim Sum (Tonghe)",
-      "page_name": "禄运茶居·手工点心(同和店)",
-      "src": "https://www.amap.com/search?query=%E7%A6%84%E8%BF%90%E8%8C%B6%E5%B1%85%C2%B7%E6%89%8B%E5%B7%A5%E7%82%B9%E5%BF%83(%E5%90%8C%E5%92%8C%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
-      "map": "Amap: open, not marked closed, newest review 2026-11-24",
-      "quote": "有宝宝椅 · 亲子友好 · 萝卜糕和红米糕合适给小朋友吃"
-    },
-    {
-      "name": "Xinxing Jiayu Kitchen (Pazhou)",
-      "page_name": "新兴家喻·品厨(琶洲店)",
-      "src": "https://www.amap.com/search?query=%E6%96%B0%E5%85%B4%E5%AE%B6%E5%96%BB%C2%B7%E5%93%81%E5%8E%A8(%E7%90%B6%E6%B4%B2%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
-      "map": "Amap: open, not marked closed, newest review 2026-11-24",
-      "quote": "有宝宝椅 · 亲子"
-    },
-    {
-      "name": "Mango Tree (K11)",
-      "page_name": "mango tree芒果树餐厅(K11店)",
-      "src": "https://www.amap.com/search?query=mango%20tree%E8%8A%92%E6%9E%9C%E6%A0%91%E9%A4%90%E5%8E%85(K11%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
-      "map": "Amap: open, not marked closed, newest review 2026-11-23",
-      "quote": "亲子友好"
-    },
-    {
-      "name": "Gangli Hong Kong Restaurant (Teemall)",
-      "page_name": "港丽餐厅(天河城)",
-      "src": "https://www.amap.com/search?query=%E6%B8%AF%E4%B8%BD%E9%A4%90%E5%8E%85(%E5%A4%A9%E6%B2%B3%E5%9F%8E)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
-      "map": "Amap: open, not marked closed, newest review 2026-11-19",
-      "quote": "适合家庭聚餐 · 金沙黑南瓜焗虾 爱吃虾的宝宝应该也会很爱"
-    },
-    {
-      "name": "Feimao Cafe (Huacheng Hui)",
-      "page_name": "肥猫茶餐厅(花城汇中区店)",
-      "src": "https://www.amap.com/search?query=%E8%82%A5%E7%8C%AB%E8%8C%B6%E9%A4%90%E5%8E%85(%E8%8A%B1%E5%9F%8E%E6%B1%87%E4%B8%AD%E5%8C%BA%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
-      "map": "Amap: open, not marked closed, newest review 2026-11-10",
-      "quote": "亲子友好 · 这里的口味特别适合带小朋友来一起吃"
-    },
-    {
-      "name": "Gaga (Parc Central)",
-      "page_name": "gaga",
-      "src": "https://www.amap.com/search?query=gaga&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
-      "map": "Amap: open, not marked closed, newest review 2026-11-08",
-      "quote": "家庭聚餐 · 亲子"
-    },
-    {
-      "name": "Feiyue Cafe (Yongqingfang)",
-      "page_name": "啡约咖啡馆(永庆坊店)",
-      "src": "https://www.amap.com/search?query=%E5%95%A1%E7%BA%A6%E5%92%96%E5%95%A1%E9%A6%86(%E6%B0%B8%E5%BA%86%E5%9D%8A%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
-      "map": "Amap: open, not marked closed, newest review 2026-11-22",
-      "quote": "亲子友好"
-    },
-    {
-      "name": "Shangu Cafe (Baiyun Mountain)",
-      "page_name": "山谷咖啡",
-      "src": "https://www.amap.com/search?query=%E5%B1%B1%E8%B0%B7%E5%92%96%E5%95%A1&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-06",
-      "map": "Amap: open, not marked closed, newest review 2026-09-06",
-      "quote": "亲子友好 · 带孩子来白云山里面的云山丛林飞跃，老母亲可以在这个咖啡厅坐一坐"
-    },
-    {
-      "name": "Guangzhou Zoo Playground",
-      "page_name": "广州动物园游乐场",
-      "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD%E6%B8%B8%E4%B9%90%E5%9C%BA&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
-      "map": "Amap: open, not marked closed, newest review 2026-11-24",
-      "quote": "亲子玩乐 · 家庭过山车 · 亲子乐园软包防护到位，孩子玩着大人很放心"
-    },
-    {
-      "name": "Ersha Island Sports Park Playground",
-      "page_name": "二沙岛体育公园-儿童活动区",
-      "src": "https://www.amap.com/search?query=%E4%BA%8C%E6%B2%99%E5%B2%9B%E4%BD%93%E8%82%B2%E5%85%AC%E5%9B%AD-%E5%84%BF%E7%AB%A5%E6%B4%BB%E5%8A%A8%E5%8C%BA&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
-      "map": "Amap: open, not marked closed, newest review 2026-10-25",
-      "quote": "儿童乐园 · 儿童沙池 · 小宝宝游玩"
-    },
-    {
-      "name": "Neobio Play Park (Yuehui City)",
-      "page_name": "奈尔宝·儿童乐园·亲子餐厅(广州悦汇城店)",
-      "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E6%82%A6%E6%B1%87%E5%9F%8E%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
-      "map": "Amap: open, not marked closed, newest review 2026-11-20",
-      "quote": "儿童乐园 · DIY手工 · 全软包防护"
-    },
-    {
-      "name": "Luban Fantasy Park (Tianhe)",
-      "page_name": "鲁班奇幻乐园广州店",
-      "src": "https://www.amap.com/search?query=%E9%B2%81%E7%8F%AD%E5%A5%87%E5%B9%BB%E4%B9%90%E5%9B%AD%E5%B9%BF%E5%B7%9E%E5%BA%97&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-10",
-      "map": "Amap: open, not marked closed, newest review 2026-10-10",
-      "quote": "儿童乐园 · 鲁班已经二刷了，娃非常喜欢，里面的工作人员服务态度很好"
-    },
-    {
-      "name": "VeRyland Play Park (Baiyun)",
-      "page_name": "VeRyland奇境乐园",
-      "src": "https://www.amap.com/search?query=VeRyland%E5%A5%87%E5%A2%83%E4%B9%90%E5%9B%AD&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
-      "map": "Amap: open, not marked closed, newest review 2026-11-26",
-      "quote": "儿童乐园 · 儿童VR娱乐 · 儿童赛车娱乐 · 全软包防护"
-    },
-    {
-      "name": "Tianhe Park Playground",
-      "page_name": "天河公园儿童活动区",
-      "src": "https://www.amap.com/search?query=%E5%A4%A9%E6%B2%B3%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E6%B4%BB%E5%8A%A8%E5%8C%BA&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
-      "map": "Amap: open, not marked closed, newest review 2026-11-09",
-      "quote": "亲子玩乐 · 儿童沙池 · 小宝宝游玩 · 丛林穿越"
-    },
-    {
-      "name": "Meland Club (Link Plaza, Tianhe)",
-      "page_name": "MELAND CLUB(广州天河领展广场店)",
-      "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E5%B9%BF%E5%B7%9E%E5%A4%A9%E6%B2%B3%E9%A2%86%E5%B1%95%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
-      "map": "Amap: open, not marked closed, newest review 2026-11-19",
-      "quote": "儿童乐园 · 全软包防护 · 带娃行万里路"
-    },
-    {
-      "name": "Tandong Gongchang Cave Play Park (Pazhou)",
-      "page_name": "探洞工场(六元素旗舰店)",
-      "src": "https://www.amap.com/search?query=%E6%8E%A2%E6%B4%9E%E5%B7%A5%E5%9C%BA(%E5%85%AD%E5%85%83%E7%B4%A0%E6%97%97%E8%88%B0%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-21",
-      "map": "Amap: open, not marked closed, newest review 2026-10-21",
-      "quote": "儿童乐园 · 儿童玩乐 · 真人迷宫 · 攀岩挑战 · 海洋球池"
-    },
-    {
-      "name": "Qile’er Play Park (Poly Times)",
-      "page_name": "奇乐儿巴迪总动员儿童乐园(保利时光里店)",
-      "src": "https://www.amap.com/search?query=%E5%A5%87%E4%B9%90%E5%84%BF%E5%B7%B4%E8%BF%AA%E6%80%BB%E5%8A%A8%E5%91%98%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E4%BF%9D%E5%88%A9%E6%97%B6%E5%85%89%E9%87%8C%E5%BA%97)&city=440100",
-      "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
-      "map": "Amap: open, not marked closed, newest review 2026-11-20",
-      "quote": "儿童乐园 · 小宝宝游玩 · 沙地乐园 · 吹塑乐园"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights, museums and restaurants with high chairs in Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Dian Dou De Dim Sum (Tianhe North)",
+          "page_name": "点都德(天河北店)",
+          "src": "https://www.amap.com/search?query=%E7%82%B9%E9%83%BD%E5%BE%B7(%E5%A4%A9%E6%B2%B3%E5%8C%97%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "有宝宝椅 · 家庭聚餐"
+        },
+        {
+          "name": "Dongyuan Dim Sum and Roast Goose (Tianyu Plaza)",
+          "page_name": "東園·广州味·点心与烧鹅(天娱广场西塔楼店)",
+          "src": "https://www.amap.com/search?query=%E6%9D%B1%E5%9C%92%C2%B7%E5%B9%BF%E5%B7%9E%E5%91%B3%C2%B7%E7%82%B9%E5%BF%83%E4%B8%8E%E7%83%A7%E9%B9%85(%E5%A4%A9%E5%A8%B1%E5%B9%BF%E5%9C%BA%E8%A5%BF%E5%A1%94%E6%A5%BC%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-22",
+          "map": "Amap: open, not marked closed, newest review 2026-10-22",
+          "quote": "有宝宝椅 · 带娃或家庭聚餐都好合适"
+        },
+        {
+          "name": "Youye Hainan Coconut Chicken (Tianyu Plaza)",
+          "page_name": "有椰·海南椰子鸡(天娱广场店)",
+          "src": "https://www.amap.com/search?query=%E6%9C%89%E6%A4%B0%C2%B7%E6%B5%B7%E5%8D%97%E6%A4%B0%E5%AD%90%E9%B8%A1(%E5%A4%A9%E5%A8%B1%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "宝宝椅 · 店里还有大桌和宝宝椅，家庭聚餐、朋友团建也超合适"
+        },
+        {
+          "name": "Guangzhou Restaurant (Wenchang, the original)",
+          "page_name": "广州酒家(文昌总店)",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E9%85%92%E5%AE%B6(%E6%96%87%E6%98%8C%E6%80%BB%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "带上家人、小朋友来逛馆吃饭 有趣又有意义"
+        },
+        {
+          "name": "Chimelong Safari Park",
+          "page_name": "长隆野生动物世界",
+          "src": "https://www.amap.com/search?query=%E9%95%BF%E9%9A%86%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "适合亲子 · 还有一些孩子要坐的小火车坐上，缆车也坐上"
+        },
+        {
+          "name": "Chimelong Paradise",
+          "page_name": "长隆欢乐世界",
+          "src": "https://www.amap.com/search?query=%E9%95%BF%E9%9A%86%E6%AC%A2%E4%B9%90%E4%B8%96%E7%95%8C&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "全年龄段友好 · 广州长隆欢乐世界｜亲子遛娃全天不费妈宝藏乐园"
+        },
+        {
+          "name": "Guangdong Science Center",
+          "page_name": "广东科学中心",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E4%B8%9C%E7%A7%91%E5%AD%A6%E4%B8%AD%E5%BF%83&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "儿童专属展馆 · 不管大人还是小朋友，都能在这里沉浸式触摸科学的浪漫"
+        },
+        {
+          "name": "Grandview Aquarium",
+          "page_name": "正佳极地海洋世界",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E4%BD%B3%E6%9E%81%E5%9C%B0%E6%B5%B7%E6%B4%8B%E4%B8%96%E7%95%8C&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "海洋馆超适合遛娃，里面有好多海洋生物，还有美人鱼、喂食表演"
+        },
+        {
+          "name": "Guangzhou Zoo",
+          "page_name": "广州动物园",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "亲子户外 · 周末遛娃好去处 · 小朋友玩得很开心"
+        },
+        {
+          "name": "South China National Botanical Garden",
+          "page_name": "华南国家植物园",
+          "src": "https://www.amap.com/search?query=%E5%8D%8E%E5%8D%97%E5%9B%BD%E5%AE%B6%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "园内可租电瓶车或观光自行车代步，带娃/懒人首选"
+        },
+        {
+          "name": "Pearl River Night Cruise (Tianzi Pier)",
+          "page_name": "珠江夜游(天字码头)",
+          "src": "https://www.amap.com/search?query=%E7%8F%A0%E6%B1%9F%E5%A4%9C%E6%B8%B8(%E5%A4%A9%E5%AD%97%E7%A0%81%E5%A4%B4)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "整整120分钟沉浸式古风互动➕绝美夜景航线～娃玩嗨了"
+        },
+        {
+          "name": "Nanyue King Museum (Tomb Site)",
+          "page_name": "南越王博物院(王墓展区)",
+          "src": "https://www.amap.com/search?query=%E5%8D%97%E8%B6%8A%E7%8E%8B%E5%8D%9A%E7%89%A9%E9%99%A2(%E7%8E%8B%E5%A2%93%E5%B1%95%E5%8C%BA)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "裸眼3D、AI重建加数字黑猫\"巴斯特\"当向导，小朋友走不动道 · 带娃也省心（可租婴儿车）"
+        },
+        {
+          "name": "Greater Bay Central Wetland Park (Nansha)",
+          "page_name": "大湾区中央湿地公园",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%B9%BE%E5%8C%BA%E4%B8%AD%E5%A4%AE%E6%B9%BF%E5%9C%B0%E5%85%AC%E5%9B%AD&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "亲子户外 · 带娃吸氧观鸟游船超治愈"
+        },
+        {
+          "name": "Guangdong Museum",
+          "page_name": "广东省博物馆",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "恐龙探秘 · 带孩子也可以让他选一个问题，参观会比大人一路讲到底更有趣"
+        },
+        {
+          "name": "Grandview Natural Science Centre",
+          "page_name": "正佳自然科学探索中心",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E4%BD%B3%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2%E4%B8%AD%E5%BF%83&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-05",
+          "map": "Amap: open, not marked closed, newest review 2026-09-05",
+          "quote": "适合亲子 · 亲子友好 · 1:1天和核心舱，钻进真实太空舱，可以圆小朋友的航天梦"
+        },
+        {
+          "name": "Guangzhou Railway Museum",
+          "page_name": "广州铁路博物馆",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E9%93%81%E8%B7%AF%E5%8D%9A%E7%89%A9%E9%A6%86&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-13",
+          "map": "Amap: open, not marked closed, newest review 2026-10-13",
+          "quote": "亲子友好 · 广州遛娃神地 · 人少还能看真火车头"
+        },
+        {
+          "name": "Chen Clan Ancestral Hall",
+          "page_name": "陈家祠堂",
+          "src": "https://www.amap.com/search?query=%E9%99%88%E5%AE%B6%E7%A5%A0%E5%A0%82&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "适合亲子 · 带孩子可以只做“找人物、辨材料”两件事"
+        },
+        {
+          "name": "Guangzhou Museum (Zhenhai Tower)",
+          "page_name": "广州博物馆(镇海楼展区)",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%8D%9A%E7%89%A9%E9%A6%86(%E9%95%87%E6%B5%B7%E6%A5%BC%E5%B1%95%E5%8C%BA)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "馆内文物讲解岭南千年历史，适合带孩子科普；楼下五羊石像"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "绿岛西餐 草坪露台餐厅",
-      "why": "its review about children is from 2025"
-    },
-    {
-      "name": "琪林里 味寻简餐厅",
-      "why": "newest review May 2026, over six months"
-    },
-    {
-      "name": "夫子园, 牛扒先生",
-      "why": "nothing about children beyond a family tag (or a scorpion dish)"
-    },
-    {
-      "name": "Sunrise晞初, UNCLE FONG芳叔",
-      "why": "nothing about children on the page / one review"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

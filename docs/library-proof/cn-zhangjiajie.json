@@ -92,6 +92,40 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for family sights in Zhangjiajie; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Zhangjiajie Romance Park and Show",
+          "page_name": "张家界千古情景区",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%8D%83%E5%8F%A4%E6%83%85%E6%99%AF%E5%8C%BA&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "亲子体验 · 千古情园区不用爬山，全程平地漫步，对老人、带娃家庭友好 · 1.2米以下儿童免演出票"
+        },
+        {
+          "name": "Dayong Old Town",
+          "page_name": "大庸府城",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%BA%B8%E5%BA%9C%E5%9F%8E&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "适合亲子 · 夜景"
+        },
+        {
+          "name": "Wuwai Tianyuan Camp (Wulingyuan)",
+          "page_name": "物外田园",
+          "src": "https://www.amap.com/search?query=%E7%89%A9%E5%A4%96%E7%94%B0%E5%9B%AD&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-11",
+          "map": "Amap: open, not marked closed, newest review 2026-10-11",
+          "quote": "周末遛娃不错 · 是个休闲带娃游玩的好去处"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

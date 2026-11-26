@@ -279,6 +279,64 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights and restaurants in Chongqing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Spacelab Zero-Gravity Restaurant (Raffles City)",
+          "page_name": "SPACELAB失重餐厅(重庆来福士店)",
+          "src": "https://www.amap.com/search?query=SPACELAB%E5%A4%B1%E9%87%8D%E9%A4%90%E5%8E%85(%E9%87%8D%E5%BA%86%E6%9D%A5%E7%A6%8F%E5%A3%AB%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "亲子友好 · 很适合带朋友或者小朋友过来打卡 · 带娃家庭的小朋友眼睛瞪得比餐盘还大"
+        },
+        {
+          "name": "Shark Restaurant (Chongqing Tiandi)",
+          "page_name": "鲨鱼餐厅(重庆天地店)",
+          "src": "https://www.amap.com/search?query=%E9%B2%A8%E9%B1%BC%E9%A4%90%E5%8E%85(%E9%87%8D%E5%BA%86%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "儿童餐 · 适合家庭聚餐 · 亲子友好 · 适合带娃"
+        },
+        {
+          "name": "IKEA Restaurant (Chongqing)",
+          "page_name": "宜家餐厅(重庆商场宜家家居店)",
+          "src": "https://www.amap.com/search?query=%E5%AE%9C%E5%AE%B6%E9%A4%90%E5%8E%85(%E9%87%8D%E5%BA%86%E5%95%86%E5%9C%BA%E5%AE%9C%E5%AE%B6%E5%AE%B6%E5%B1%85%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-31",
+          "map": "Amap: open, not marked closed, newest review 2026-10-31",
+          "quote": "儿童套餐丰富 · 适合带娃"
+        },
+        {
+          "name": "Chongqing Happy Underwater World",
+          "page_name": "重庆欢乐海底世界",
+          "src": "https://www.amap.com/search?query=%E9%87%8D%E5%BA%86%E6%AC%A2%E4%B9%90%E6%B5%B7%E5%BA%95%E4%B8%96%E7%95%8C&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "亲子玩乐 · 亲子户外 · 不受天气影响，亲子遛娃、情侣约会都很合适"
+        },
+        {
+          "name": "Fairy Mountain National Forest Park (Wulong)",
+          "page_name": "仙女山国家森林公园",
+          "src": "https://www.amap.com/search?query=%E4%BB%99%E5%A5%B3%E5%B1%B1%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "亲子户外 · 被称作“重庆小瑞士”，也是国庆最适合放松遛娃、散心吸氧的宝地"
+        },
+        {
+          "name": "Huguang Guild Hall",
+          "page_name": "湖广会馆",
+          "src": "https://www.amap.com/search?query=%E6%B9%96%E5%B9%BF%E4%BC%9A%E9%A6%86&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "#遛娃好去处 · 1.2米以下儿童免大门票"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

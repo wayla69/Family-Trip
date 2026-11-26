@@ -242,6 +242,93 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights and museums in Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Hangzhou Zoo",
+          "page_name": "杭州动物园",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "杭州秋日遛娃、散心、看动物， 真的很推荐来杭州动物园 · 1.2米以下儿童免预约，但必须家长陪同"
+        },
+        {
+          "name": "Hangzhou Safari Park",
+          "page_name": "杭州野生动物世界",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "亲子玩乐 · 可以带小孩子去玩，亲子互动很不错的了"
+        },
+        {
+          "name": "Hangzhou Changqiao Polar Ocean Park",
+          "page_name": "杭州长乔极地海洋公园",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%95%BF%E4%B9%94%E6%9E%81%E5%9C%B0%E6%B5%B7%E6%B4%8B%E5%85%AC%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "亲子玩乐 · 企鹅馆 随处可见科普展板，挺适合小朋友增长见识的"
+        },
+        {
+          "name": "Liangzhu Ancient City Park",
+          "page_name": "良渚古城遗址公园",
+          "src": "https://www.amap.com/search?query=%E8%89%AF%E6%B8%9A%E5%8F%A4%E5%9F%8E%E9%81%97%E5%9D%80%E5%85%AC%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "亲子遛娃 · 场地开阔野趣十足，带娃跑跑、铺个垫子野餐、去看看鹿苑都舒服"
+        },
+        {
+          "name": "Leifeng Pagoda",
+          "page_name": "雷峰塔景区",
+          "src": "https://www.amap.com/search?query=%E9%9B%B7%E5%B3%B0%E5%A1%94%E6%99%AF%E5%8C%BA&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "符合身高的小朋友还能免票 · 身边偶遇家长指着湖面给孩子讲白娘子的传说"
+        },
+        {
+          "name": "Three Pools Mirroring the Moon (West Lake island)",
+          "page_name": "杭州西湖风景名胜区-三潭印月",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E8%A5%BF%E6%B9%96%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA-%E4%B8%89%E6%BD%AD%E5%8D%B0%E6%9C%88&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "小朋友们超积极 · 儿童政策：1.2米以下免票"
+        },
+        {
+          "name": "Zhejiang Science and Technology Museum",
+          "page_name": "浙江省科技馆",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E7%9C%81%E7%A7%91%E6%8A%80%E9%A6%86&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "适合亲子 · 非常适合带小朋友科普遛娃，超多互动展品"
+        },
+        {
+          "name": "China Animation Museum",
+          "page_name": "中国动漫博物馆",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E5%8A%A8%E6%BC%AB%E5%8D%9A%E7%89%A9%E9%A6%86&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "适合亲子 · 带孩子的家庭很多，适合对动漫感兴趣的游客"
+        },
+        {
+          "name": "Zhejiang Museum of Natural History",
+          "page_name": "浙江自然博物院",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%99%A2&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "恐龙化石 · 很适合带小朋友去 · 小朋友开心极了"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "王春春鸡汤饭, 新丰小吃",
+          "why": "quick bites with nothing about children on the page; Hangzhou needs a quick bite and a cafe before its list can pass 12"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

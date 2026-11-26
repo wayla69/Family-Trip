@@ -769,6 +769,269 @@
           },
           "q": "和平菓局, 王府井大街253号北京市百货大楼B2, 东城区, 北京",
           "ok": "2026-11"
+        },
+        {
+          "local": "北京环球度假区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 8,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E7%8E%AF%E7%90%83%E5%BA%A6%E5%81%87%E5%8C%BA&city=110000",
+          "name": {
+            "th": "ยูนิเวอร์แซล ปักกิ่ง รีสอร์ต",
+            "en": "Universal Beijing Resort"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนยูนิเวอร์แซล หลีหยวน ทงโจว",
+            "en": "Universal Boulevard, Liyuan, Tongzhou"
+          },
+          "what": {
+            "th": "ยูนิเวอร์แซลสตูดิโอ มีมินเนียนแลนด์ กังฟูแพนด้า และโชว์ยามค่ำ",
+            "en": "Universal Studios with Minion Land, Kung Fu Panda and night shows"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กไม่อยากออกจากมินเนียนแลนด์",
+            "en": "Reviewers say small children did not want to leave Minion Land"
+          },
+          "q": "北京环球度假区, 环球大道, 通州区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "古北水镇",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%8F%A4%E5%8C%97%E6%B0%B4%E9%95%87&city=110000",
+          "name": {
+            "th": "เมืองน้ำกู่เป่ย กำแพงเมืองจีนซือหม่าไถ",
+            "en": "Gubei Water Town (Simatai Great Wall)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เชิงกำแพงเมืองจีนซือหม่าไถ มี่อวิ๋น (2 ชม. จากในเมือง)",
+            "en": "Below the Simatai Great Wall, Miyun (2 h from the city)"
+          },
+          "what": {
+            "th": "เมืองน้ำที่สร้างใหม่ใต้กำแพงเมืองจีน มีโชว์ ไฟ และโซนเล่นเด็ก",
+            "en": "A rebuilt water town under the Great Wall with shows, lights and a children's play area"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ามีโชว์ทั้งวันและพาเด็กเที่ยวง่าย",
+            "en": "Reviewers say there are shows all day and it is easy with children"
+          },
+          "q": "古北水镇, 司马台长城, 密云区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "呀路古热带植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%91%80%E8%B7%AF%E5%8F%A4%E7%83%AD%E5%B8%A6%E6%A4%8D%E7%89%A9%E5%9B%AD&city=110000",
+          "name": {
+            "th": "สวนพฤกษศาสตร์เขตร้อนหย่าลู่กู่",
+            "en": "Yalugu Tropical Botanical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฉางอิ๋ง เฉาหยาง",
+            "en": "Changying, Chaoyang"
+          },
+          "what": {
+            "th": "เรือนกระจกใหญ่ของพืชเขตร้อน อุ่นราว 25 °C ในฤดูหนาว",
+            "en": "A big warm glasshouse of tropical plants, about 25 °C in winter"
+          },
+          "why": {
+            "th": "ที่เที่ยวในร่มที่อบอุ่นสำหรับพาเด็กในฤดูหนาวของปักกิ่ง",
+            "en": "A warm indoor outing with children in Beijing's winter"
+          },
+          "q": "呀路古热带植物园, 长营镇, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北京古观象台",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E5%8F%A4%E8%A7%82%E8%B1%A1%E5%8F%B0&city=110000",
+          "name": {
+            "th": "หอดูดาวโบราณปักกิ่ง",
+            "en": "Beijing Ancient Observatory"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เจี้ยนกั๋วเหมิน ตงเฉิง",
+            "en": "Jianguomen, Dongcheng"
+          },
+          "what": {
+            "th": "หอดูดาวสมัยหมิงบนกำแพงเมืองเก่า มีเครื่องมือดูดาวสัมฤทธิ์",
+            "en": "A Ming-era observatory on the old city wall with bronze star instruments"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่เงียบๆ สำหรับเริ่มสอนเด็กเรื่องดวงดาว",
+            "en": "Reviewers call it a quiet place to start children on the stars"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "北京古观象台, 建国门大街裱褙胡同2号, 东城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北京大运河博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E5%A4%A7%E8%BF%90%E6%B2%B3%E5%8D%9A%E7%89%A9%E9%A6%86(%E9%A6%96%E9%83%BD%E5%8D%9A%E7%89%A9%E9%A6%86%E4%B8%9C%E9%A6%86)&city=110000",
+          "name": {
+            "th": "พิพิธภัณฑ์คลองใหญ่ปักกิ่ง",
+            "en": "Grand Canal Museum of Beijing"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "สวนป่าใจกลางเมือง ทงโจว",
+            "en": "City Green Heart Forest Park, Tongzhou"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ใหม่ขนาดใหญ่เรื่องคลองใหญ่ มีห้องจัดแสดงแบบสมจริง",
+            "en": "A large new museum of the Grand Canal with immersive galleries"
+          },
+          "why": {
+            "th": "ผู้รีวิวเขียนคำแนะนำสำหรับพาเด็กมาเที่ยว",
+            "en": "Reviewers write guides for visiting it with children"
+          },
+          "q": "北京大运河博物馆, 城市绿心森林公园, 通州区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北京自来水博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E8%87%AA%E6%9D%A5%E6%B0%B4%E5%8D%9A%E7%89%A9%E9%A6%86&city=110000",
+          "name": {
+            "th": "พิพิธภัณฑ์ประปาปักกิ่ง",
+            "en": "Beijing Water Supply Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเซียงเหอหยวน ตงจื๋อเหมิน",
+            "en": "Xianghe Yuan Street, Dongzhimen"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เล็กในโรงประปาอายุร้อยปี เรื่องน้ำประปามาจากไหน",
+            "en": "A small museum in a century-old waterworks about where tap water comes from"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กกลับไปพร้อมคำถามมากมาย",
+            "en": "Reviewers say children come away with questions"
+          },
+          "q": "北京自来水博物馆, 香河园街3号, 东城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "史家胡同博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8F%B2%E5%AE%B6%E8%83%A1%E5%90%8C%E5%8D%9A%E7%89%A9%E9%A6%86&city=110000",
+          "name": {
+            "th": "พิพิธภัณฑ์หูท่งสื่อเจีย",
+            "en": "Shijia Hutong Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "หูท่งสื่อเจีย ตงซื่อ ตงเฉิง",
+            "en": "Shijia Hutong, Dongsi, Dongcheng"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในบ้านสี่ประสาน เรื่องชีวิตในหูท่ง มีโมเดลย่อส่วน",
+            "en": "A courtyard-house museum of hutong life with miniature models"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว โมเดลย่อส่วนดึงความสนใจเด็ก",
+            "en": "Tagged for families; the miniatures hold children's attention"
+          },
+          "q": "史家胡同博物馆, 史家胡同24号, 东城区, 北京",
+          "ok": "2026-11"
         }
     ]
     },
@@ -2270,6 +2533,117 @@
           },
           "q": "探洞工场 爱琴海店, 金开大道, 两江新区, 重庆",
           "ok": "2026-11"
+        },
+        {
+          "local": "重庆欢乐海底世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%87%8D%E5%BA%86%E6%AC%A2%E4%B9%90%E6%B5%B7%E5%BA%95%E4%B8%96%E7%95%8C&city=500000",
+          "name": {
+            "th": "โลกใต้ทะเลแสนสุข ฉงชิ่ง",
+            "en": "Chongqing Happy Underwater World"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ฉงชิ่งเทียนตี้ ฮว่าหลงเฉียว อวี๋จง",
+            "en": "Chongqing Tiandi, Hualongqiao, Yuzhong"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำกลางเมือง มีฉลามและโชว์สิงโตทะเล",
+            "en": "A city-centre aquarium with sharks and sea lion shows"
+          },
+          "why": {
+            "th": "อยู่ในร่มทั้งหมด การให้อาหารและกิจกรรมบางอย่างเสียเงินเพิ่ม",
+            "en": "All indoors whatever the weather; feeding and some extras cost more"
+          },
+          "q": "重庆欢乐海底世界, 化龙桥重庆天地, 渝中区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "仙女山国家森林公园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BB%99%E5%A5%B3%E5%B1%B1%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&city=500000",
+          "name": {
+            "th": "อุทยานป่าแห่งชาติเขาเซียนหนวี่ อู่หลง",
+            "en": "Fairy Mountain National Forest Park (Wulong)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ซวงเหอ อู่หลง (3 ชม. จากในเมือง)",
+            "en": "Shuanghe, Wulong (3 h from the city)"
+          },
+          "what": {
+            "th": "ทุ่งหญ้าบนที่สูงและป่า ได้ชื่อว่าสวิตเซอร์แลนด์น้อยของฉงชิ่ง",
+            "en": "High grassy meadows and forest, known as Chongqing's little Switzerland"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่ผ่อนคลาย เด็กวิ่งเล่นและเล่นว่าวได้",
+            "en": "Reviewers say it is a relaxed place for children to run and fly kites"
+          },
+          "q": "仙女山国家森林公园, 双河乡, 武隆区, 重庆",
+          "ok": "2026-11"
+        },
+        {
+          "local": "湖广会馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B9%96%E5%B9%BF%E4%BC%9A%E9%A6%86&city=500000",
+          "name": {
+            "th": "หอสมาคมหูกว่าง",
+            "en": "Huguang Guild Hall"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนฉางปิน ริมแม่น้ำแยงซี อวี๋จง",
+            "en": "Changbin Road, by the Yangtze, Yuzhong"
+          },
+          "what": {
+            "th": "หอสมาคมเก่าลดหลั่นตามเนินริมแม่น้ำแยงซี เปิดไฟยามค่ำ",
+            "en": "Old guild halls stepping up the hillside by the Yangtze, lit at night"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ผู้รีวิวจัดให้เป็นที่เที่ยวที่ดีกับเด็ก",
+            "en": "Children under 1.2 m go free; reviewers list it among good outings with children"
+          },
+          "q": "湖广会馆, 长江滨江路芭蕉园1号, 渝中区, 重庆",
+          "ok": "2026-11"
         }
       ]
     },
@@ -2763,6 +3137,195 @@
             "en": "Rides and animals for small children"
           },
           "q": "七星欢乐园, 七星路一号, 七星区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "世外桃源",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90&city=450300",
+          "name": {
+            "th": "แชงกรีลา หยางซั่ว (ถ้ำล่องเรือ)",
+            "en": "Shangri-La (Yangshuo boat cave)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางหลวง 321 หยางซั่ว",
+            "en": "Route 321, Yangshuo"
+          },
+          "what": {
+            "th": "ล่องเรือผ่านถ้ำและหมู่บ้านที่สร้างใหม่ริมน้ำ",
+            "en": "A boat ride through a cave and past a rebuilt village by the water"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ล่องเรือแบบสบายๆ",
+            "en": "Children under 1.2 m go free; a gentle boat outing"
+          },
+          "q": "世外桃源, 321国道, 阳朔县, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "伏波山景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BC%8F%E6%B3%A2%E5%B1%B1%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "เขาฝูปัว",
+            "en": "Fubo Hill"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนปินเจียง เตี๋ยไฉ่ ริมแม่น้ำหลี",
+            "en": "Binjiang Road, Diecai, by the Li River"
+          },
+          "what": {
+            "th": "เนินเล็กริมแม่น้ำให้ปีนชมวิว มีถ้ำและหินแกะสลัก",
+            "en": "A small hill by the river to climb for the view, with a cave and stone carvings"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบขึ้นลงเข้าถ้ำ ควรอยู่ใกล้ๆ",
+            "en": "Reviewers say children loved going up and down into the cave; keep them close"
+          },
+          "q": "伏波山, 滨江路27号, 叠彩区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "桂海晴岚景区",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BF%A1%E6%98%8C%C2%B7%E6%A1%82%E6%B5%B7%E6%99%B4%E5%B2%9A%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "ย่านทิวทัศน์กุ้ยไห่ชิงหลาน",
+            "en": "Guihai Qinglan Scenic Area"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนหังเทียน ชีซิง",
+            "en": "Hangtian Road, Qixing"
+          },
+          "what": {
+            "th": "ทะเลสาบ ทุ่ง และวิวเขาหินปูนชานเมือง มีกิจกรรมข้างใน",
+            "en": "Lakes, fields and karst views at the edge of the city, with activities inside"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ร้านอาหารริมทะเลสาบอยู่ในคลังด้วย",
+            "en": "Children under 1.2 m go free; the lakeside restaurant is in the library too"
+          },
+          "tip": {
+            "th": "กิจกรรมบางอย่างข้างในเสียเงินเพิ่ม",
+            "en": "Some activities inside cost extra"
+          },
+          "q": "桂海晴岚景区, 航天路22号, 七星区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "兴安灵渠景区",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%85%B4%E5%AE%89%E7%81%B5%E6%B8%A0%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "คลองหลิงฉวี ซิงอัน",
+            "en": "Lingqu Canal (Xing'an)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนซวงหลิง ซิงอัน (1 ชม. ทางเหนือของกุ้ยหลิน)",
+            "en": "Shuangling Road, Xing'an (1 h north of Guilin)"
+          },
+          "what": {
+            "th": "คลองอายุ 2,200 ปี มีประตูน้ำและฝายแบ่งน้ำ ในสวนริมแม่น้ำ",
+            "en": "A 2,200-year-old canal with locks and a water-dividing weir, in a riverside park"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้งและการเรียนรู้",
+            "en": "Tagged for families outdoors and for learning"
+          },
+          "q": "兴安灵渠景区, 双灵路, 兴安县, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "梦幻童年亲子乐园 万福广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%A2%A6%E5%B9%BB%E7%AB%A5%E5%B9%B4%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E4%B8%87%E7%A6%8F%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=450300",
+          "name": {
+            "th": "สวนเล่นเมิ่งฮวั่นถงเหนียน ว่านฝูพลาซ่า",
+            "en": "Menghuan Tongnian Play Park (Wanfu Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ว่านฝูพลาซ่า ถนนข่ายเฟิง เซี่ยงซาน",
+            "en": "Wanfu Plaza, Kaifeng Road, Xiangshan"
+          },
+          "what": {
+            "th": "สวนเล่นกลางแจ้ง มีสไลเดอร์และแทรมโพลีน",
+            "en": "An outdoor play park with slides and trampolines"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเครื่องเล่นเก่าแต่เด็กชอบ",
+            "en": "Reviewers say the rides are old but children love it"
+          },
+          "q": "梦幻童年亲子乐园 万福广场, 凯风路90号, 象山区, 桂林",
           "ok": "2026-11"
         }
       ]
@@ -4555,12 +5118,122 @@
           },
           "q": "Hione潮玩运动馆, 维港十字街, 永定区, 张家界",
           "ok": "2026-11"
+        },
+        {
+          "local": "张家界千古情景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%8D%83%E5%8F%A4%E6%83%85%E6%99%AF%E5%8C%BA&city=430800",
+          "name": {
+            "th": "สวนและโชว์เชียนกู่ฉิง จางเจียเจี้ย",
+            "en": "Zhangjiajie Romance Park and Show"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนเฉาหยาง อู่หลิงหยวน",
+            "en": "Chaoyang Road, Wulingyuan"
+          },
+          "what": {
+            "th": "สวนถนนโบราณและโชว์พื้นบ้าน มีการแสดงใหญ่ตอนค่ำ",
+            "en": "A park of old streets and folk shows with a big evening performance"
+          },
+          "why": {
+            "th": "เดินบนพื้นราบทั้งหมด ไม่ต้องปีน เด็กสูงไม่ถึง 1.2 ม. ดูโชว์ฟรี",
+            "en": "All flat walking, no climbing; children under 1.2 m see the show free"
+          },
+          "q": "张家界千古情景区, 朝阳路与文丰路交叉口, 武陵源区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大庸府城",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%BA%B8%E5%BA%9C%E5%9F%8E&city=430800",
+          "name": {
+            "th": "เมืองเก่าต้าหยง",
+            "en": "Dayong Old Town"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนเจี่ยฟ่าง หย่งติ้ง (ใจกลางเมือง)",
+            "en": "Jiefang Road, Yongding (city centre)"
+          },
+          "what": {
+            "th": "เมืองเก่าที่สร้างใหม่ ถนนสไตล์ถู่เจีย เปิดไฟยามค่ำ",
+            "en": "A rebuilt old town of Tujia-style streets, lit up at night"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว เดินเล่นตอนค่ำในเมืองหลังเที่ยวภูเขา",
+            "en": "Tagged for families; an evening walk in town after the mountains"
+          },
+          "q": "大庸府城, 解放路, 永定区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "物外田园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%89%A9%E5%A4%96%E7%94%B0%E5%9B%AD&city=430800",
+          "name": {
+            "th": "แคมป์อู้ไว่เถียนหยวน อู่หลิงหยวน",
+            "en": "Wuwai Tianyuan Camp (Wulingyuan)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ใกล้ประตูกลางเขตทิวทัศน์อู่หลิงหยวน",
+            "en": "Near the middle gate of the Wulingyuan scenic area"
+          },
+          "what": {
+            "th": "แคมป์ชนบท มีบาร์บีคิวและที่ให้เล่น",
+            "en": "A countryside camp with a barbecue and space to play"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่พักผ่อนสบายๆ กับเด็กในวันหยุด",
+            "en": "Reviewers call it a relaxed weekend place with children"
+          },
+          "q": "物外田园, 武陵源风景名胜区中门梓木岗, 武陵源区, 张家界",
+          "ok": "2026-11"
         }
     ]
     },
     {
       "place": "cn-hangzhou",
-      "thin": true,
       "sights": [
         {
           "local": "MELAND CLUB 杭州城西银泰店",
@@ -5094,6 +5767,347 @@
             "en": "Reviewers say children on their birthday go in free"
           },
           "q": "杭州水精灵乐园, 山阴路688号众安广场, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杭州动物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนสัตว์หางโจว",
+            "en": "Hangzhou Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนหูเผา ซีหู",
+            "en": "Hupao Road, West Lake"
+          },
+          "what": {
+            "th": "สวนสัตว์ของเมือง บนเนินเขาทางใต้ของทะเลสาบซีหู",
+            "en": "The city zoo in the hills south of West Lake"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำให้พาเด็กมา เด็กสูงไม่ถึง 1.2 ม. ไม่ต้องจองล่วงหน้า",
+            "en": "Reviewers recommend it with children; children under 1.2 m need no booking"
+          },
+          "tip": {
+            "th": "ผู้ใหญ่ต้องจองรอบเช้าหรือบ่าย ล่วงหน้าได้ไม่เกินสามวัน",
+            "en": "Grown-ups book a morning or afternoon slot, up to three days ahead"
+          },
+          "q": "杭州动物园, 虎跑路40号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杭州野生动物世界",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&city=330100",
+          "name": {
+            "th": "สวนซาฟารีหางโจว",
+            "en": "Hangzhou Safari Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "อิ๋นหู ฟู่หยาง",
+            "en": "Yinhu, Fuyang"
+          },
+          "what": {
+            "th": "สวนสัตว์ป่าขนาดใหญ่ มีแพนด้า โชว์สัตว์ และกิจกรรมแต่งชุด",
+            "en": "A large wildlife park with pandas, animal shows and costumed games"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าพาเด็กเที่ยวได้ทั้งวัน มีกิจกรรมให้เด็กมีส่วนร่วมเยอะ",
+            "en": "Reviewers say it is a full day with children, with plenty to interact with"
+          },
+          "q": "杭州野生动物世界, 银湖街道, 富阳区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杭州长乔极地海洋公园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%95%BF%E4%B9%94%E6%9E%81%E5%9C%B0%E6%B5%B7%E6%B4%8B%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนมหาสมุทรขั้วโลกฉางเฉียว หางโจว",
+            "en": "Hangzhou Changqiao Polar Ocean Park"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ทะเลสาบเซียงหู เซียวซาน",
+            "en": "Xianghu Lake, Xiaoshan"
+          },
+          "what": {
+            "th": "สวนมหาสมุทรริมทะเลสาบเซียงหู มีบ้านเพนกวินและสวนนก",
+            "en": "An ocean park by Xianghu Lake with a penguin house and a bird garden"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าป้ายความรู้ทั่วสวนสอนเด็กเล็กได้มาก",
+            "en": "Reviewers say the signs everywhere teach small children a lot"
+          },
+          "q": "杭州长乔极地海洋公园, 湘湖路777号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "良渚古城遗址公园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%89%AF%E6%B8%9A%E5%8F%A4%E5%9F%8E%E9%81%97%E5%9D%80%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "อุทยานเมืองโบราณเหลียงจู่",
+            "en": "Liangzhu Ancient City Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ผิงเหยา อวี๋หาง",
+            "en": "Pingyao, Yuhang"
+          },
+          "what": {
+            "th": "อุทยานมรดกโลกกว้างใหญ่บนเมืองอายุ 5,000 ปี มีสวนกวาง",
+            "en": "A wide open heritage park on a 5,000-year-old city, with a deer park"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กวิ่งเล่น ปิกนิก และดูกวางได้",
+            "en": "Reviewers say children can run, picnic and see the deer"
+          },
+          "q": "良渚古城遗址公园, 瓶窑镇凤都路, 余杭区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "雷峰塔景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%9B%B7%E5%B3%B0%E5%A1%94%E6%99%AF%E5%8C%BA&city=330100",
+          "name": {
+            "th": "เจดีย์เหลยเฟิง",
+            "en": "Leifeng Pagoda"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนหนานซาน ซีหู",
+            "en": "Nanshan Road, West Lake"
+          },
+          "what": {
+            "th": "เจดีย์ในตำนานนางพญางูขาว มีวิวทะเลสาบซีหู",
+            "en": "The pagoda of the White Snake legend, with views over West Lake"
+          },
+          "why": {
+            "th": "เด็กเล็กเข้าฟรี มีลิฟต์ขึ้น และตำนานเป็นนิทานเล่าให้เด็กฟังได้",
+            "en": "Small children go in free; a lift goes up and the legend is a good story to tell"
+          },
+          "q": "雷峰塔, 南山路15号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "三潭印月",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E8%A5%BF%E6%B9%96%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA-%E4%B8%89%E6%BD%AD%E5%8D%B0%E6%9C%88&city=330100",
+          "name": {
+            "th": "เกาะสามบ่อสะท้อนจันทร์ ทะเลสาบซีหู",
+            "en": "Three Pools Mirroring the Moon (West Lake island)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เกาะกลางทะเลสาบซีหู ต้องนั่งเรือไป",
+            "en": "An island in West Lake, by boat"
+          },
+          "what": {
+            "th": "นั่งเรือไปเกาะสวนที่มีตะเกียงหินสามดวงบนธนบัตรหนึ่งหยวน",
+            "en": "A boat ride to the island garden with the three stone lanterns of the one-yuan note"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. ฟรี ผู้รีวิวบอกว่าเด็กชอบนั่งเรือ",
+            "en": "Children under 1.2 m go free, and reviewers say children love the boat"
+          },
+          "tip": {
+            "th": "เรือเที่ยวสุดท้ายไปเกาะออก 16:00",
+            "en": "The last boat to the island leaves at 16:00"
+          },
+          "q": "三潭印月, 西湖, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "浙江省科技馆",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E7%9C%81%E7%A7%91%E6%8A%80%E9%A6%86&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีเจ้อเจียง",
+            "en": "Zhejiang Science and Technology Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ลานวัฒนธรรมซีหู กงซู่",
+            "en": "West Lake Cultural Square, Gongshu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แบบลงมือทำ อวกาศ อากาศ หุ่นยนต์ การพิมพ์ 3 มิติ และโต๊ะทราย",
+            "en": "A hands-on science museum: space and weather, robots, 3D printing and a sand table"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กสนุกกับการลงมือทำได้ครึ่งวัน",
+            "en": "Reviewers call it half a day of hands-on fun for children"
+          },
+          "q": "浙江省科技馆, 西湖文化广场, 拱墅区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "中国动漫博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E5%8A%A8%E6%BC%AB%E5%8D%9A%E7%89%A9%E9%A6%86&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์แอนิเมชันจีน",
+            "en": "China Animation Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนไป๋หม่าหู ปินเจียง",
+            "en": "Baimahu Road, Binjiang"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์การ์ตูนและแอนิเมชัน มีจอภาพและห้องลองทำ",
+            "en": "A museum of cartoons and animation with screens and hands-on rooms"
+          },
+          "why": {
+            "th": "มีครอบครัวพาเด็กมาเยอะ เหมาะกับเด็กที่ชอบการ์ตูน",
+            "en": "Many families with children; best for children who love cartoons"
+          },
+          "q": "中国动漫博物馆, 白马湖路375号, 滨江区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "浙江自然博物院",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%99%A2&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์ธรรมชาติวิทยาเจ้อเจียง",
+            "en": "Zhejiang Museum of Natural History"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ลานวัฒนธรรมซีหู กงซู่",
+            "en": "West Lake Cultural Square, Gongshu"
+          },
+          "what": {
+            "th": "ฟอสซิลไดโนเสาร์และสัตว์ทั่วโลก ข้างพิพิธภัณฑ์วิทยาศาสตร์",
+            "en": "Dinosaur fossils and animals of the world, beside the science museum"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กสนุกมาก",
+            "en": "Reviewers say small children were delighted"
+          },
+          "q": "浙江自然博物院, 西湖文化广场6号, 拱墅区, 杭州",
           "ok": "2026-11"
         }
       ]
@@ -5675,12 +6689,348 @@
           },
           "q": "宝安公园儿童乐园, 公园路, 宝安区, 深圳",
           "ok": "2026-11"
+        },
+        {
+          "local": "深圳世界之窗",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E4%B8%96%E7%95%8C%E4%B9%8B%E7%AA%97&city=440300",
+          "name": {
+            "th": "วินโดว์ออฟเดอะเวิลด์",
+            "en": "Window of the World"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเซินหนาน โอซีที หนานซาน",
+            "en": "Shennan Avenue, OCT, Nanshan"
+          },
+          "what": {
+            "th": "สวนที่มีแลนด์มาร์กทั่วโลกย่อส่วน มีเครื่องเล่นและโชว์ตอนค่ำ",
+            "en": "A park of the world's landmarks in miniature, with rides and an evening show"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ผู้รีวิวบอกให้ดูเกณฑ์ส่วนสูงของเครื่องเล่นก่อน",
+            "en": "Children under 1.2 m go free; reviewers say check the rides' height limits first"
+          },
+          "q": "深圳世界之窗, 深南大道9037号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "锦绣中华民俗村",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E9%94%A6%E7%BB%A3%E4%B8%AD%E5%8D%8E%E6%B0%91%E4%BF%97%E6%9D%91&city=440300",
+          "name": {
+            "th": "สเปลนดิดไชน่า หมู่บ้านวัฒนธรรม",
+            "en": "Splendid China Folk Village"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเซินหนาน โอซีที หนานซาน",
+            "en": "Shennan Avenue, OCT, Nanshan"
+          },
+          "what": {
+            "th": "แลนด์มาร์กของจีนย่อส่วน และหมู่บ้านวัฒนธรรม มีโชว์และขบวนแต่งชุด",
+            "en": "China's landmarks in miniature and a folk village with shows and costumed parades"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กๆ ได้เต้นกับตัวละครแต่งชุด",
+            "en": "Reviewers say children dance with the costumed characters"
+          },
+          "q": "锦绣中华民俗村, 深南大道9003号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳观澜海洋世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E8%A7%82%E6%BE%9C%E6%B5%B7%E6%B4%8B%E4%B8%96%E7%95%8C&city=440300",
+          "name": {
+            "th": "โอเชียนเวิลด์กวนหลาน",
+            "en": "Guanlan Ocean World"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ถนนกอล์ฟ ใกล้สถานีกวนหลานหู หลงหัว",
+            "en": "Golf Avenue, by Guanlanhu metro, Longhua"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำในร่ม มีโชว์นางเงือกและการแสดง",
+            "en": "An indoor aquarium with mermaid and theatre shows"
+          },
+          "why": {
+            "th": "อยู่ในร่มทั้งหมด ฝนตกหรือร้อนก็มาได้ ผู้รีวิวพาลูกมาบ่อย",
+            "en": "All indoors, so it works in rain or heat; reviewers bring children often"
+          },
+          "q": "深圳观澜海洋世界, 高尔夫大道13号, 龙华区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳南山青青世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%8D%97%E5%B1%B1%E9%9D%92%E9%9D%92%E4%B8%96%E7%95%8C&city=440300",
+          "name": {
+            "th": "สวนนิเวศชิงชิงเวิลด์",
+            "en": "Qingqing World Eco Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนชิงชิง อ่าวพระจันทร์ หนานซาน",
+            "en": "Qingqing Road, Moon Bay, Nanshan"
+          },
+          "what": {
+            "th": "สวนนิเวศบนเนินเขา มีสวน มุมฟาร์ม และทางเดินสั้นๆ",
+            "en": "A green eco park on a hillside with gardens, farm corners and short walks"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี มีเส้นทางสั้นสำหรับเด็กเล็ก",
+            "en": "Children under 1.2 m go free; shorter routes for little legs"
+          },
+          "q": "深圳南山青青世界, 月亮湾青青路1号, 南山区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "欢乐港湾",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%AC%A2%E4%B9%90%E6%B8%AF%E6%B9%BE&city=440300",
+          "name": {
+            "th": "จอยฮาร์เบอร์ ริมน้ำเป่าอัน",
+            "en": "Joy Harbour (Bao'an waterfront)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนไห่เทียน เป่าอัน",
+            "en": "Haitian Road, Bao'an"
+          },
+          "what": {
+            "th": "ทางเดินริมน้ำ มีชิงช้าสวรรค์ใหญ่และไฟยามค่ำริมอ่าว",
+            "en": "A waterfront promenade with a big Ferris wheel and evening lights by the bay"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ากระเช้าชิงช้าสวรรค์กว้างพอสำหรับเด็กเล็ก",
+            "en": "Reviewers say the wheel's cabins are roomy enough for a buggy-age child"
+          },
+          "q": "欢乐港湾, 海天路15-4号, 宝安区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西涌国际滨海旅游区",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%B6%8C%E5%9B%BD%E9%99%85%E6%BB%A8%E6%B5%B7%E6%97%85%E6%B8%B8%E5%8C%BA&city=440300",
+          "name": {
+            "th": "หาดซีชง ต้าเผิง",
+            "en": "Xichong Beach (Dapeng)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "หนานอ้าว คาบสมุทรต้าเผิง",
+            "en": "Nan'ao, Dapeng peninsula"
+          },
+          "what": {
+            "th": "ชายหาดยาวสะอาดบนคาบสมุทรต้าเผิง มีโต้คลื่น",
+            "en": "A long clean beach on the Dapeng peninsula, with surfing"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นหาดในเซินเจิ้นที่เหมาะกับเด็กที่สุด ทรายละเอียด น้ำใส",
+            "en": "Reviewers call it the best Shenzhen beach for children: fine sand, clear water"
+          },
+          "tip": {
+            "th": "วันหยุดขับจากในเมืองใช้เวลานาน ควรออกแต่เช้า",
+            "en": "A long drive from the city at weekends: start early"
+          },
+          "q": "西涌沙滩, 南澳街道, 大鹏新区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深圳博物馆新馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%B1%E5%9C%B3%E5%8D%9A%E7%89%A9%E9%A6%86%E6%96%B0%E9%A6%86&city=440300",
+          "name": {
+            "th": "พิพิธภัณฑ์เซินเจิ้น ศูนย์ประชาคม",
+            "en": "Shenzhen Museum (Civic Centre)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ศูนย์ประชาคม อาคาร A ถนนฝูจง ฝูเถียน",
+            "en": "Civic Centre A, Fuzhong Road, Futian"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของเมือง ห้องประวัติศาสตร์และวิถีชาวบ้าน ใต้หลังคาศูนย์ประชาคม",
+            "en": "The city museum: history and folk life galleries under the Civic Centre roof"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเข้าฟรี ไม่ต้องจอง และเย็นสบายเวลาพาเด็กมา",
+            "en": "Reviewers say it is free, needs no booking, and is a cool place with children"
+          },
+          "q": "深圳博物馆, 福中路市民中心A区, 福田区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "宝安科技馆",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%AE%9D%E5%AE%89%E7%A7%91%E6%8A%80%E9%A6%86&city=440300",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เป่าอัน",
+            "en": "Bao'an Science and Technology Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนหลงจิ่งสาย 2 เป่าอัน",
+            "en": "Longjing 2nd Road, Bao'an"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีห้อง AI โรงหนังโดม และโซนเล่นสำหรับเด็กเล็ก",
+            "en": "A science museum with an AI hall, a dome cinema and a play area for little ones"
+          },
+          "why": {
+            "th": "มีชั้นสำหรับเด็กเล็ก และวิทยาศาสตร์แบบลงมือทำสำหรับเด็กโต",
+            "en": "A floor for young children and hands-on science for older ones"
+          },
+          "q": "宝安科技馆, 龙井二路95号, 宝安区, 深圳",
+          "ok": "2026-11"
+        },
+        {
+          "local": "蛇口海洋科普馆",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%9B%87%E5%8F%A3%E6%B5%B7%E6%B4%8B%E7%A7%91%E6%99%AE%E9%A6%86&city=440300",
+          "name": {
+            "th": "หอวิทยาศาสตร์มหาสมุทรเสอโข่ว",
+            "en": "Shekou Ocean Science Hall"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อาคารเสริมตึกเสอโข่ว เสอโข่ว หนานซาน",
+            "en": "Shekou Building annexe, Shekou, Nanshan"
+          },
+          "what": {
+            "th": "หอวิทยาศาสตร์มหาสมุทรขนาดเล็ก มีนิทรรศการสัตว์ทะเลและ VR",
+            "en": "A small ocean science hall with sea-life exhibits and VR"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นแหล่งเรียนรู้สำหรับเด็ก ใกล้ท่าเรือเสอโข่ว",
+            "en": "Tagged as a children's learning base, near the Shekou ferry"
+          },
+          "q": "蛇口海洋科普馆, 蛇口大厦副楼, 南山区, 深圳",
+          "ok": "2026-11"
         }
       ]
     },
     {
       "place": "cn-guangzhou",
-      "thin": true,
       "sights": [
         {
           "local": "广州动物园游乐场",
@@ -6013,6 +7363,528 @@
             "en": "Marked for small children"
           },
           "q": "奇乐儿巴迪总动员 保利中环购物广场, 建设大马路20号, 越秀区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "长隆野生动物世界",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E9%95%BF%E9%9A%86%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&city=440100",
+          "name": {
+            "th": "สวนซาฟารีฉางหลง",
+            "en": "Chimelong Safari Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนฮั่นซีตะวันออก พานอวี้",
+            "en": "Hanxi Avenue East, Panyu"
+          },
+          "what": {
+            "th": "สวนซาฟารีขนาดใหญ่ มีแพนด้า โคอาล่า และเสือขาว รถไฟเล็กและกระเช้า",
+            "en": "A big safari park with pandas, koalas and white tigers, a little train and a cable car"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ารถไฟและกระเช้าข้างในฟรี และเด็กชอบมาก",
+            "en": "Reviewers say the train and cable car inside are free and children love them"
+          },
+          "q": "长隆野生动物世界, 汉溪大道东299号, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "长隆欢乐世界",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E9%95%BF%E9%9A%86%E6%AC%A2%E4%B9%90%E4%B8%96%E7%95%8C&city=440100",
+          "name": {
+            "th": "สวนสนุกฉางหลงพาราไดซ์",
+            "en": "Chimelong Paradise"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนฮั่นซี พานอวี้",
+            "en": "Hanxi Avenue, Panyu"
+          },
+          "what": {
+            "th": "สวนสนุกที่มีเครื่องเล่นทุกวัย ติดกับสวนซาฟารี",
+            "en": "A theme park with rides for every age, next to the safari park"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าพาเด็กเที่ยวได้ทั้งวัน มีโซนสำหรับเด็กเล็ก",
+            "en": "Reviewers call it a full day out with children; a children's area for little ones"
+          },
+          "q": "长隆欢乐世界, 汉溪大道299号, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "广东科学中心",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E4%B8%9C%E7%A7%91%E5%AD%A6%E4%B8%AD%E5%BF%83&city=440100",
+          "name": {
+            "th": "ศูนย์วิทยาศาสตร์กวางตุ้ง",
+            "en": "Guangdong Science Center"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเคอผู่ เมืองมหาวิทยาลัย พานอวี้",
+            "en": "Kepu Road, University Town, Panyu"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์ในร่มขนาดใหญ่ มีห้องโถงเด็กและโซนใต้ทะเลลึก",
+            "en": "A huge indoor science centre with a children's hall and a deep-sea gallery"
+          },
+          "why": {
+            "th": "มีห้องโถงของเด็กโดยเฉพาะ และอยู่ในร่มทั้งหมด",
+            "en": "A children's own hall, and all indoors whatever the weather"
+          },
+          "q": "广东科学中心, 科普路168号, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "正佳极地海洋世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E4%BD%B3%E6%9E%81%E5%9C%B0%E6%B5%B7%E6%B4%8B%E4%B8%96%E7%95%8C&city=440100",
+          "name": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำแกรนด์วิว",
+            "en": "Grandview Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "แกรนด์วิวมอลล์ ชั้น 2 ถนนเทียนเหอ",
+            "en": "Grandview Mall 2F, Tianhe Road"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำในห้าง มีอุโมงค์ใต้น้ำ โชว์สิงโตทะเลและการให้อาหาร และบ่อให้สัมผัส",
+            "en": "An aquarium inside a mall with an underwater tunnel, sea lion and feeding shows and a touch pool"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าพาเด็กมาได้ดีมาก อยู่กลางย่านเทียนเหอ",
+            "en": "Reviewers say it is great with children, in the middle of Tianhe"
+          },
+          "q": "正佳极地海洋世界, 天河路228号正佳广场, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "广州动物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนสัตว์กวางโจว",
+            "en": "Guangzhou Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนเซียนเลี่ยกลาง เยว่ซิ่ว",
+            "en": "Xianlie Middle Road, Yuexiu"
+          },
+          "what": {
+            "th": "สวนสัตว์ของเมือง ร่มรื่น มีสัตว์หลายชนิด",
+            "en": "The city zoo, green and shady, with many animals"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าทางเดินสบาย และเด็กๆ สนุกมาก",
+            "en": "Reviewers say the paths are easy and children have a great time"
+          },
+          "q": "广州动物园, 先烈中路120号, 越秀区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "华南国家植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8D%8E%E5%8D%97%E5%9B%BD%E5%AE%B6%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนพฤกษศาสตร์แห่งชาติจีนใต้",
+            "en": "South China National Botanical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเทียนหยวน เทียนเหอ",
+            "en": "Tianyuan Road, Tianhe"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ขนาดใหญ่ มีเรือนกระจกและทะเลสาบ",
+            "en": "A large botanical garden with glasshouses and lakes"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กเข้าฟรี และมีรถไฟฟ้าหรือจักรยานให้เช่าสำหรับเด็กที่เดินไม่ไหว",
+            "en": "Reviewers say small children ride free and electric carts or bikes help with little legs"
+          },
+          "tip": {
+            "th": "เรือนกระจกปิดก่อนสวน ไปที่นั่นก่อน",
+            "en": "The glasshouses close earlier than the park: go there first"
+          },
+          "q": "华南国家植物园, 天源路1190号, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "珠江夜游 天字码头",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E7%8F%A0%E6%B1%9F%E5%A4%9C%E6%B8%B8(%E5%A4%A9%E5%AD%97%E7%A0%81%E5%A4%B4)&city=440100",
+          "name": {
+            "th": "ล่องเรือแม่น้ำจูเจียงยามค่ำ ท่าเทียนจื้อ",
+            "en": "Pearl River Night Cruise (Tianzi Pier)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ถนนเหยียนเจียงกลาง เยว่ซิ่ว",
+            "en": "Yanjiang Middle Road, Yuexiu"
+          },
+          "what": {
+            "th": "ล่องเรือยามค่ำผ่านริมแม่น้ำที่เปิดไฟสวยและหอกวางโจว",
+            "en": "An evening boat trip past the lit-up riverside and the Canton Tower"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบรอบที่มีการแต่งชุดโบราณและวิวยามค่ำ",
+            "en": "Reviewers say children loved the costumed cruise and its night views"
+          },
+          "q": "珠江夜游 天字码头, 沿江中路200号, 越秀区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南越王博物院 王墓展区",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8D%97%E8%B6%8A%E7%8E%8B%E5%8D%9A%E7%89%A9%E9%99%A2(%E7%8E%8B%E5%A2%93%E5%B1%95%E5%8C%BA)&city=440100",
+          "name": {
+            "th": "พิพิธภัณฑ์กษัตริย์หนานเยว่ (สุสาน)",
+            "en": "Nanyue King Museum (Tomb Site)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเจี่ยฟ่างเหนือ ใกล้สถานีเยว่ซิ่วกงหยวน",
+            "en": "Jiefang North Road, by Yuexiu Park metro"
+          },
+          "what": {
+            "th": "สุสานกษัตริย์อายุ 2,000 ปี มีชุดหยก นำเสนอด้วยจอ 3 มิติและแมวดิจิทัลนำชม",
+            "en": "A 2,000-year-old king's tomb with its jade suit, shown with 3D screens and a digital cat guide"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กติดใจจอภาพ มีรถเข็นเด็กให้ยืม",
+            "en": "Reviewers say children were held by the screens; prams can be borrowed"
+          },
+          "q": "南越王博物院 王墓展区, 解放北路867号, 越秀区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大湾区中央湿地公园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%B9%BE%E5%8C%BA%E4%B8%AD%E5%A4%AE%E6%B9%BF%E5%9C%B0%E5%85%AC%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนพื้นที่ชุ่มน้ำกลางเกรตเตอร์เบย์ หนานซา",
+            "en": "Greater Bay Central Wetland Park (Nansha)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนซินกั่ง หนานซา",
+            "en": "Xingang Avenue, Nansha"
+          },
+          "what": {
+            "th": "พื้นที่ชุ่มน้ำชายฝั่ง มีป่าโกงกาง ดูนก และนั่งเรือ",
+            "en": "A coastal wetland with mangroves, birdwatching and boat rides"
+          },
+          "why": {
+            "th": "ผู้รีวิวพาลูกมาดูนกและนั่งเรือ",
+            "en": "Reviewers bring children to see the birds and take the boat"
+          },
+          "q": "大湾区中央湿地公园, 新港大道701号, 南沙区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "广东省博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86&city=440100",
+          "name": {
+            "th": "พิพิธภัณฑ์มณฑลกวางตุ้ง",
+            "en": "Guangdong Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "จูเจียงนิวทาวน์ เทียนเหอ",
+            "en": "Zhujiang New Town, Tianhe"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของมณฑลในอาคารรูปกล่องเครื่องเขิน มีไดโนเสาร์และงานฝีมือกวางตุ้ง",
+            "en": "The province's museum in its lacquer-box building, with dinosaurs and Cantonese crafts"
+          },
+          "why": {
+            "th": "มีไดโนเสาร์สำหรับเด็ก ผู้รีวิวแนะนำให้เด็กเลือกคำถามหนึ่งข้อแล้วตามหาคำตอบ",
+            "en": "Dinosaurs for children; reviewers suggest letting a child pick one question to follow"
+          },
+          "q": "广东省博物馆, 珠江东路2号, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "正佳自然科学探索中心",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E4%BD%B3%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2%E4%B8%AD%E5%BF%83&city=440100",
+          "name": {
+            "th": "ศูนย์สำรวจวิทยาศาสตร์ธรรมชาติแกรนด์วิว",
+            "en": "Grandview Natural Science Centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "แกรนด์วิวมอลล์ ชั้น 6 ถนนเทียนเหอ",
+            "en": "Grandview Mall F6, Tianhe Road"
+          },
+          "what": {
+            "th": "ฟอสซิลไดโนเสาร์ โมดูลสถานีอวกาศขนาดจริง และเขาวงกตกระจก ในห้าง",
+            "en": "Dinosaur fossils, a full-size space-station module and a mirror maze in the mall"
+          },
+          "why": {
+            "th": "อยู่ในร่ม เหนือพิพิธภัณฑ์สัตว์น้ำ สำหรับเด็กที่ชอบอวกาศและไดโนเสาร์",
+            "en": "Indoors, above the aquarium, for children who like space and dinosaurs"
+          },
+          "q": "正佳自然科学探索中心, 天河路228号正佳广场F6, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "广州铁路博物馆",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E9%93%81%E8%B7%AF%E5%8D%9A%E7%89%A9%E9%A6%86&city=440100",
+          "name": {
+            "th": "พิพิธภัณฑ์รถไฟกวางโจว",
+            "en": "Guangzhou Railway Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอวี้เจียง หวงซา ลี่วาน",
+            "en": "Yujiang Road, Huangsha, Liwan"
+          },
+          "what": {
+            "th": "หัวรถจักรจริงและประวัติรถไฟ ในสถานีเก่า",
+            "en": "Real locomotives and railway history in the old station"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าคนไม่เยอะ และเด็กชอบหัวรถจักรจริง",
+            "en": "Reviewers say it is quiet and children love the real engines"
+          },
+          "q": "广州铁路博物馆, 黄沙大道誉江路, 荔湾区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "陈家祠堂",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%99%88%E5%AE%B6%E7%A5%A0%E5%A0%82&city=440100",
+          "name": {
+            "th": "ศาลบรรพชนตระกูลเฉิน",
+            "en": "Chen Clan Ancestral Hall"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนจงซานสาย 7 ใกล้สถานีเฉินเจียฉือ ลี่วาน",
+            "en": "Zhongshan 7th Road, by Chenjiaci metro, Liwan"
+          },
+          "what": {
+            "th": "อาคารใหญ่ที่ประดับด้วยไม้แกะสลัก อิฐ และตุ๊กตาเซรามิก",
+            "en": "A grand hall covered in carved wood, brick and pottery figures"
+          },
+          "why": {
+            "th": "ผู้รีวิวให้เด็กเล่นเกม หาตัวละครและทายวัสดุ",
+            "en": "Reviewers make it a game for children: find the figures, guess the materials"
+          },
+          "q": "陈家祠堂, 中山七路恩龙里34号, 荔湾区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "广州博物馆 镇海楼展区",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%8D%9A%E7%89%A9%E9%A6%86(%E9%95%87%E6%B5%B7%E6%A5%BC%E5%B1%95%E5%8C%BA)&city=440100",
+          "name": {
+            "th": "พิพิธภัณฑ์กวางโจว (หอเจิ้นไห่)",
+            "en": "Guangzhou Museum (Zhenhai Tower)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "สวนเยว่ซิ่ว ถนนเจิ้นไห่",
+            "en": "Yuexiu Park, Zhenhai Road"
+          },
+          "what": {
+            "th": "หอสมัยหมิงบนเนินในสวนเยว่ซิ่ว มีประวัติเมืองและวิว",
+            "en": "A Ming tower on a hill in Yuexiu Park, with the city's history and views"
+          },
+          "why": {
+            "th": "เด็กเล็กเข้าฟรี รูปปั้นห้าแพะและทางเดินร่มรื่นอยู่ด้านล่าง",
+            "en": "Free for small children; the Five Rams statue and shady paths are below"
+          },
+          "q": "广州博物馆 镇海楼, 镇海路9号, 越秀区, 广州",
           "ok": "2026-11"
         }
       ]

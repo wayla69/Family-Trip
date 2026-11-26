@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "cn-harbin",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Harbin Ice and Snow World", "th": "ฮาร์บินไอซ์แอนด์สโนว์เวิลด์" },
@@ -595,6 +594,121 @@
             "en": "Play areas for babies and small children, and activities for parents and children"
           },
           "q": "悠悠宝贝海盗主题乐园 红博中央公园店, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "波塞冬海底世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B3%A2%E5%A1%9E%E5%86%AC%E6%B5%B7%E5%BA%95%E4%B8%96%E7%95%8C&city=230100",
+          "name": {
+            "th": "โพไซดอนโอเชียนเวิลด์ หูหลาน",
+            "en": "Poseidon Ocean World (Hulan)"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ถนนฮุ่ยเจียง หูหลาน (เหนือแม่น้ำซงฮัว)",
+            "en": "Huijiang Road, Hulan (north of the Songhua)"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำขนาดใหญ่ มีอุโมงค์ใต้ทะเลลึก และโชว์โลมา วอลรัส และสิงโตทะเล",
+            "en": "A big aquarium with a deep-sea tunnel and dolphin, walrus and sea lion shows"
+          },
+          "why": {
+            "th": "อยู่ในร่มหลบหนาวของฮาร์บิน ผู้รีวิวบอกว่าเด็กติดใจโชว์",
+            "en": "Indoors in the Harbin cold; reviewers say children are gripped by the shows"
+          },
+          "tip": {
+            "th": "วันหยุดคนเยอะ ควรจองที่นั่งดูโชว์หลักแต่เนิ่นๆ",
+            "en": "Busy on holidays: find seats early for the main shows"
+          },
+          "q": "波塞冬海底世界, 汇江路153号, 呼兰区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "世界欢乐城",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%96%E7%95%8C%E6%AC%A2%E4%B9%90%E5%9F%8E&city=230100",
+          "name": {
+            "th": "เวิลด์จอยซิตี้ หูหลาน",
+            "en": "World Joy City (Hulan)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเหม่ยซู่เจีย หูหลาน",
+            "en": "Meishujia Avenue, Hulan"
+          },
+          "what": {
+            "th": "สวนสนุกที่มีโชว์แสงไฟ และโซนเล่นในร่มขนาดใหญ่มีสไลเดอร์และปีนป่าย",
+            "en": "A theme park with light shows and a big indoor play area of slides and climbing"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าลูกเล่นในโซนเด็กได้ราวสามชั่วโมง",
+            "en": "Reviewers say their children played about three hours in the play area"
+          },
+          "q": "世界欢乐城, 美术家大街666号, 呼兰区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "哈尔滨文化公园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%93%88%E5%B0%94%E6%BB%A8%E6%96%87%E5%8C%96%E5%85%AC%E5%9B%AD&city=230100",
+          "name": {
+            "th": "สวนวัฒนธรรมฮาร์บิน",
+            "en": "Harbin Culture Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหนานทง หนานกั่ง",
+            "en": "Nantong Street, Nangang"
+          },
+          "what": {
+            "th": "สวนสาธารณะร่มรื่น มีอาคารแบบรัสเซีย เครื่องเล่น และชิงช้าสวรรค์ปี 1958",
+            "en": "A leafy city park with Russian-style buildings, rides and a 1958 Ferris wheel"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าคนท้องถิ่นพาเด็กมาเล่นเครื่องเล่นและชิงช้าสวรรค์เก่า",
+            "en": "Reviewers say locals bring children for the rides and the old wheel"
+          },
+          "q": "哈尔滨文化公园, 南通大街208号, 南岗区, 哈尔滨",
           "ok": "2026-11"
         }
       ]

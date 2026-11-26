@@ -209,6 +209,105 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights, museums and restaurants in Beijing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Big Tree Restaurant (Joy City Chaoyang)",
+          "page_name": "大树餐厅(北京朝阳合生汇店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E6%A0%91%E9%A4%90%E5%8E%85(%E5%8C%97%E4%BA%AC%E6%9C%9D%E9%98%B3%E5%90%88%E7%94%9F%E6%B1%87%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "要的微辣老人和孩子都可以接受味道可以 · 我跟孩子来这儿之后"
+        },
+        {
+          "name": "The Woods (Solana)",
+          "page_name": "THE WOODS餐厅(蓝色港湾店)",
+          "src": "https://www.amap.com/search?query=THE%20WOODS%E9%A4%90%E5%8E%85(%E8%93%9D%E8%89%B2%E6%B8%AF%E6%B9%BE%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-24",
+          "map": "Amap: open, not marked closed, newest review 2026-10-24",
+          "quote": "澳洲低温牛肉沙拉焗咸蛋黄三明治可以尝试，孩子特别爱吃"
+        },
+        {
+          "name": "106 Restaurant (Shilihe)",
+          "page_name": "106餐厅(十里河店)",
+          "src": "https://www.amap.com/search?query=106%E9%A4%90%E5%8E%85(%E5%8D%81%E9%87%8C%E6%B2%B3%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "家庭聚餐 · 有宝宝椅 · 亲子友好 · 松鼠桂鱼：现点现做，孩子很喜欢"
+        },
+        {
+          "name": "Universal Beijing Resort",
+          "page_name": "北京环球度假区",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E7%8E%AF%E7%90%83%E5%BA%A6%E5%81%87%E5%8C%BA&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "不管亲子遛娃、好友结伴、情侣出游都超合适 · 小朋友来了直接不想走"
+        },
+        {
+          "name": "Gubei Water Town (Simatai Great Wall)",
+          "page_name": "古北水镇",
+          "src": "https://www.amap.com/search?query=%E5%8F%A4%E5%8C%97%E6%B0%B4%E9%95%87&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "亲子户外 · 带娃去了密云的古北水镇玩，全天表演活动非常丰富，轻松遛娃"
+        },
+        {
+          "name": "Yalugu Tropical Botanical Garden",
+          "page_name": "呀路古热带植物园",
+          "src": "https://www.amap.com/search?query=%E5%91%80%E8%B7%AF%E5%8F%A4%E7%83%AD%E5%B8%A6%E6%A4%8D%E7%89%A9%E5%9B%AD&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "亲子户外 · 适合亲子 · 我带娃在呀路古找到了一个25°C的“热带春天”"
+        },
+        {
+          "name": "Beijing Ancient Observatory",
+          "page_name": "北京古观象台",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E5%8F%A4%E8%A7%82%E8%B1%A1%E5%8F%B0&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "适合带娃来科普启蒙，记得周一闭馆别跑空"
+        },
+        {
+          "name": "Grand Canal Museum of Beijing",
+          "page_name": "北京大运河博物馆(首都博物馆东馆)",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E5%A4%A7%E8%BF%90%E6%B2%B3%E5%8D%9A%E7%89%A9%E9%A6%86(%E9%A6%96%E9%83%BD%E5%8D%9A%E7%89%A9%E9%A6%86%E4%B8%9C%E9%A6%86)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "端午假期北京遛娃之大运河博物馆 · 遛娃必看指南"
+        },
+        {
+          "name": "Beijing Water Supply Museum",
+          "page_name": "北京自来水博物馆",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E8%87%AA%E6%9D%A5%E6%B0%B4%E5%8D%9A%E7%89%A9%E9%A6%86&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "增长专业知识，拓展科学视野，带孩子来更有意义"
+        },
+        {
+          "name": "Shijia Hutong Museum",
+          "page_name": "史家胡同博物馆",
+          "src": "https://www.amap.com/search?query=%E5%8F%B2%E5%AE%B6%E8%83%A1%E5%90%8C%E5%8D%9A%E7%89%A9%E9%A6%86&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-12",
+          "map": "Amap: open, not marked closed, newest review 2026-11-12",
+          "quote": "适合亲子 · 微缩复原"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "气球博物馆 (apm)",
+          "why": "seven reviews only"
+        },
+        {
+          "name": "恭王府博物馆",
+          "why": "only the free-for-children rule; nothing about visiting with children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
