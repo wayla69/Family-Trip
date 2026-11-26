@@ -2310,6 +2310,195 @@
           },
           "q": "ニンジャ☆パーク菊陽, 菊陽町",
           "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 熊本宇土店",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ เด็กชั่วโมงละ 700 เยน วันธรรมดา",
+            "en": "≈ ¥700 an hour for children on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "name": {
+            "th": "คิดส์แลนด์ US คุมาโมโตะอุโตะ",
+            "en": "Kids Land US, Kumamoto Uto"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 อุโตะซิตีมอลล์ อุโตะ",
+            "en": "Uto City Mall 2F, Zendōji-machi, Uto"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม ปรับปรุงใหม่กุมภาพันธ์ 2025",
+            "en": "An indoor play park, renewed in February 2025"
+          },
+          "why": {
+            "th": "มีจังเกิลยิมยักษ์ ไซเบอร์วีล บ่อบอล และแทรมโพลีน",
+            "en": "A giant climbing frame, a cyber wheel, a ball pool and trampolines"
+          },
+          "q": "キッズランドUS 熊本宇土店, 宇土シティモール",
+          "ok": "2026-11"
+        },
+        {
+          "local": "アスレチック施設ぴーす",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 550 เยน อายุ 3–6 ขวบ วันธรรมดา",
+            "en": "≈ ¥550 for ages 3–6 on weekdays"
+          },
+          "book": "req",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "name": {
+            "th": "สนามอะธเลติกพีซ อุเอกิ",
+            "en": "Athletic park \"Peace\" (Ueki)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุเอกิมาจิ คิตะคุ",
+            "en": "Ueki-machi, Kita-ku"
+          },
+          "what": {
+            "th": "ที่เล่นกีฬาในร่ม เปิดธันวาคม 2025 มีแทรมโพลีน ปีนผา สแล็กไลน์ และพาร์กัวร์",
+            "en": "An indoor sports-play hall opened in December 2025: trampolines, climbing, slackline, parkour"
+          },
+          "why": {
+            "th": "มีโซนเบาะนุ่มสำหรับ 0–2 ขวบด้วย",
+            "en": "A soft-mat zone for ages 0–2 too"
+          },
+          "tip": {
+            "th": "ต้องจองล่วงหน้า",
+            "en": "Booking required"
+          },
+          "q": "アスレチック施設ぴーす, 植木町, 熊本市北区",
+          "ok": "2026-11"
+        },
+        {
+          "local": "元気チャレンジ館",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 1,100 เยน เด็กประถม",
+            "en": "≈ ¥1,100 for primary-school children"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "name": {
+            "th": "เก็งกิชาเลนจ์ อาโซะฟาร์มแลนด์",
+            "en": "Genki Challenge Hall, Aso Farm Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาโซะฟาร์มแลนด์ คาวาโย มินามิอาโซะ",
+            "en": "Aso Farm Land, Kawayō, Minamiaso"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่ม เกมขยับร่างกาย เล่นได้ทุกสภาพอากาศ",
+            "en": "An all-weather indoor hall of active games"
+          },
+          "why": {
+            "th": "มีเขาวงกตใหญ่ เกมฝึกสมอง และเกมวัดพลัง ในตึกเดียวกันมีที่เล่นเด็กเล็ก",
+            "en": "A big maze, brain games and fitness games; a toddlers' play hall in the same building"
+          },
+          "q": "元気チャレンジ館, 阿蘇ファームランド, 南阿蘇村",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Yukids ゆめタウンはません店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 700 เยน 60 นาที",
+            "en": "≈ ¥700 for 60 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79424",
+          "name": {
+            "th": "ยูคิดส์ ยูเมะทาวน์ฮามาเซ็น",
+            "en": "Yukids, Youme Town Hamasen"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ยูเมะทาวน์ฮามาเซ็น ไทโนชิมะ มินามิคุ",
+            "en": "Youme Town Hamasen 3F, Tainoshima, Minami-ku"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม สำหรับ 0–7 ขวบ",
+            "en": "An indoor amusement park for ages 0 to 7"
+          },
+          "why": {
+            "th": "มีสไลเดอร์เรืองแสง มุมลูกโป่ง และมุมเด็กอ่อน 0–2 ขวบ",
+            "en": "A glowing light slide, a balloon corner and a baby corner for ages 0–2"
+          },
+          "q": "Yukids ゆめタウンはません, 田井島, 熊本市南区",
+          "ok": "2026-11"
+        },
+        {
+          "local": "熊本市こども文化会館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79424",
+          "name": {
+            "th": "หอวัฒนธรรมเด็กคุมาโมโตะ",
+            "en": "Kumamoto Children's Culture Hall"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชินมาจิ จูโอคุ",
+            "en": "Shinmachi, Chūō-ku"
+          },
+          "what": {
+            "th": "ศูนย์เด็กขนาดใหญ่ เข้าฟรี เล่นได้ทั้งวัน ตั้งแต่เด็กอ่อนถึงประถม",
+            "en": "A big free children's centre to play in all day, from babies to primary school"
+          },
+          "why": {
+            "th": "มีบ่อบอลและหนังสือภาพ งานประดิษฐ์ชั้นบน และยูนิไซเคิลกับไม้โถกเถกบนดาดฟ้า",
+            "en": "A ball pool and picture books, crafts upstairs, and unicycles and stilts on the roof"
+          },
+          "q": "熊本市こども文化会館, 新町, 熊本市中央区",
+          "ok": "2026-11"
         }
       ]
     },
