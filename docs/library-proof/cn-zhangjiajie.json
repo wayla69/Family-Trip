@@ -1,30 +1,97 @@
 {
   "town": "cn-zhangjiajie",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 3 rows without ok; nothing else in the town was re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "McDonald's Tianzi Mountain",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "page_name": "麦当劳天子山贺龙公园店",
-      "evidence": "list for '麦当劳 天子山 张家界': 麦当劳天子山贺龙公园店, 'Open now'",
-      "ok": "2026-11"
-    }
-  ],
-  "kept_without_ok": [
-    {
-      "name": "Hu Shifu Sanxiaguo",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "evidence": "place page 'Hushifu Sanxiaguo 胡师傅三下锅', 4FM9+G6W Ziwu Rd, Yongding — no hours shown"
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 3 rows without ok; nothing else in the town was re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+      "confirmed": [
+        {
+          "name": "McDonald's Tianzi Mountain",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "麦当劳天子山贺龙公园店",
+          "evidence": "list for '麦当劳 天子山 张家界': 麦当劳天子山贺龙公园店, 'Open now'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Hu Shifu Sanxiaguo",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "place page 'Hushifu Sanxiaguo 胡师傅三下锅', 4FM9+G6W Ziwu Rd, Yongding — no hours shown"
+        },
+        {
+          "name": "Zhunaoke Cold Noodles",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "'Zhunao Keliangmian', 4FFP+9GG Nanzheng St — no hours shown"
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Zhunaoke Cold Noodles",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "evidence": "'Zhunao Keliangmian', 4FFP+9GG Nanzheng St — no hours shown"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Zhangjiajie and Wulingyuan; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Gulu Restaurant (Zhongshang Plaza)",
+          "page_name": "Gulu谷露餐厅(中商广场店)",
+          "src": "https://www.amap.com/search?query=Gulu%E8%B0%B7%E9%9C%B2%E9%A4%90%E5%8E%85(%E4%B8%AD%E5%95%86%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "菜品很美味，很好吃，小朋友很爱吃 · 小吃拼盘里面的种类还是比较多的，小朋友也很喜欢吃"
+        },
+        {
+          "name": "Summer Mary Western Restaurant (Zhongshang Plaza)",
+          "page_name": "夏日玛莉西餐厅(中商广场店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%8F%E6%97%A5%E7%8E%9B%E8%8E%89%E8%A5%BF%E9%A4%90%E5%8E%85(%E4%B8%AD%E5%95%86%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-07-04",
+          "map": "Amap: open, not marked closed, newest review 2026-07-04",
+          "quote": "亲子友好 · 小食洋葱圈、薯条都是小朋友的最爱"
+        },
+        {
+          "name": "Wojia Yuanzi Hunan Kitchen (Wulingyuan)",
+          "page_name": "我家院子(武陵源店)",
+          "src": "https://www.amap.com/search?query=%E6%88%91%E5%AE%B6%E9%99%A2%E5%AD%90(%E6%AD%A6%E9%99%B5%E6%BA%90%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "适合家庭聚餐 · 亲子友好"
+        },
+        {
+          "name": "Qicai Huaduo Play Park",
+          "page_name": "七彩花朵亲子乐园(张家界店)",
+          "src": "https://www.amap.com/search?query=%E4%B8%83%E5%BD%A9%E8%8A%B1%E6%9C%B5%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%BA%97)&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "儿童乐园 · 儿童沙池 · 亲子DIY · 真人迷宫"
+        },
+        {
+          "name": "Hione Play and Sports Hall",
+          "page_name": "Hione潮玩运动馆",
+          "src": "https://www.amap.com/search?query=Hione%E6%BD%AE%E7%8E%A9%E8%BF%90%E5%8A%A8%E9%A6%86&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-05",
+          "map": "Amap: open, not marked closed, newest review 2026-09-05",
+          "quote": "儿童乐园 · 室内亲子园 · 小宝宝游玩 · 攀岩"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "彩虹屋牛排西餐厅",
+          "why": "not read: Amap showed a slider check"
+        },
+        {
+          "name": "妮可儿童乐园, 爱大喵欢乐世界, 瓦特科幻城",
+          "why": "newest review 2024–2025, or one to three reviews"
+        },
+        {
+          "name": "张家界崇山·云端小镇",
+          "why": "a guest house, newest review April 2026"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "removed": []
+  ]
 }
