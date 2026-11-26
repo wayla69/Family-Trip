@@ -1,0 +1,426 @@
+{
+  "town": "jp (round 6: things to do for the towns still short, the last places to eat)",
+  "kind": "added",
+  "checked": "2026-11-26",
+  "rule": "Haiku/Sonnet research agents (five web searches each, a sentence copied from each page) → scripts/library-check.cjs (name, quote, 2025–2026 date; an undated Mapple family food list allowed for places to eat; for things to do an official page or a Mapple 2026 family list) → every row opened on Google Maps on 26 Nov 2026 by checker agents, kept only when open, the same name and in the town → Thai and English by writer agents to docs/STYLE.md. Pharmacies: the pharmacy's or its chain's own store page only (no directories), every quote re-checked here.",
+  "towns": {
+    "jp-kumamoto": {
+      "eat": [
+        {
+          "name": "Kitchen 明ヵ里",
+          "src": "https://www.kab.co.jp/news/article/16488837"
+        },
+        {
+          "name": "Iroha Shokudo",
+          "src": "https://www.kab.co.jp/news/article/16269647"
+        },
+        {
+          "name": "Jugoya Kumamoto Iekei Ramen",
+          "src": "https://www.kab.co.jp/news/article/16269647"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-kyoto": {
+      "eat": [
+        {
+          "name": "All day dining RAQOU",
+          "src": "https://macaro-ni.jp/174709?page=2"
+        },
+        {
+          "name": "Shozankaku Matsuyama JR Kyoto Isetan",
+          "src": "https://macaro-ni.jp/174709?page=2"
+        }
+      ],
+      "do": [
+        {
+          "name": "Sanjusangen-do",
+          "src": "https://www.sanjusangendo.jp/"
+        },
+        {
+          "name": "Kyoto National Museum",
+          "src": "https://www.kyohaku.go.jp/eng/"
+        },
+        {
+          "name": "Gion Corner",
+          "src": "https://www.gioncorner.com/"
+        },
+        {
+          "name": "Nijo Castle",
+          "src": "https://www.explera.jp/blog/2026-11-20-nijo-castle-visitor-guide/"
+        }
+      ],
+      "care": []
+    },
+    "jp-miyazaki": {
+      "eat": [
+        {
+          "name": "Tachibanadori Miyachiku",
+          "src": "https://www.mapple.net/region/a0704010101_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Miyazaki Art Center",
+          "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": "Kids Bounce",
+          "src": "https://www.asoview.com/note/5444/"
+        }
+      ],
+      "care": []
+    },
+    "jp-okinawa": {
+      "eat": [
+        {
+          "name": "Yunangi",
+          "src": "https://www.mapple.net/region/a0705010100_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-sendai": {
+      "eat": [
+        {
+          "name": "Date no Gyutan Honpo Main Store",
+          "src": "https://www.mapple.net/region/a0202010100_g03000000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Poporas Hiroba",
+          "src": "https://www.nap-camp.com/mag/82352"
+        },
+        {
+          "name": "Nobikko Jumbo Sendai Izumi Osawa",
+          "src": "https://www.asoview.com/note/6205/"
+        }
+      ],
+      "care": []
+    },
+    "jp-toyama": {
+      "eat": [
+        {
+          "name": "Swallow Cafe",
+          "src": "https://www.mapple.net/region/a0401020101_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-beppu": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kamado Jigoku (Cooking-Pot Hell)",
+          "src": "https://kamadojigoku.com/"
+        },
+        {
+          "name": "Yufuin Flora House",
+          "src": "https://www.mapple.net/region/a0703010000_g04030000_s-situation=family/spot/"
+        },
+        {
+          "name": "Sagiridai Viewpoint",
+          "src": "https://www.mapple.net/region/a0703010100_s-situation=family/spot/"
+        },
+        {
+          "name": "Kagurame Lake Iris Garden",
+          "src": "https://www.mapple.net/region/a0703010000_g04030000_s-situation=family/spot/"
+        },
+        {
+          "name": "Bozu Jigoku (Monk's Head Hell)",
+          "src": "https://www.mapple.net/region/a0703010000_g04030000_s-situation=family/spot/"
+        }
+      ],
+      "care": []
+    },
+    "jp-fuji": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Yamanakako no KABA",
+          "src": "https://lake-yamanakako.com/en/see-and-do/10413"
+        },
+        {
+          "name": "Kitaguchi Hongu Fuji Sengen Shrine",
+          "src": "https://www.yamanashi-kankou.jp/english/explore-by-area/fujisan-fujigoko/oshi-former-togawa-family-house.html"
+        },
+        {
+          "name": "Oshi (Former Togawa Family House)",
+          "src": "https://www.yamanashi-kankou.jp/english/explore-by-area/fujisan-fujigoko/oshi-former-togawa-family-house.html"
+        },
+        {
+          "name": "Fuji Michi (Honcho Street)",
+          "src": "https://www.gltjp.com/en/article/item/21023/"
+        },
+        {
+          "name": "Kawaguchiko Konohana Museum",
+          "src": "https://www.yamanashi-kankou.jp/english/explore-by-area/fujisan-fujigoko/kawaguchiko-konohana-museum.html"
+        },
+        {
+          "name": "Lake Yamanakako Swan Lake Pleasure Boat",
+          "src": "https://www.gltjp.com/en/directory/item/12108"
+        },
+        {
+          "name": "Kubota Itchiku Art Museum",
+          "src": "https://gltjp.com/en/directory/item/15999"
+        }
+      ],
+      "care": [
+        {
+          "name": "Fujiyoshida Municipal Hospital",
+          "src": "https://www.fymh.jp/info/20"
+        }
+      ]
+    },
+    "jp-izu": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Izu Granpal Park",
+          "src": "https://matcha-jp.com/en/25317"
+        },
+        {
+          "name": "PICA Hatsushima",
+          "src": "https://kids.rurubu.jp/article/19437/"
+        },
+        {
+          "name": "ACAO FOREST",
+          "src": "https://kids.rurubu.jp/article/19437/"
+        }
+      ],
+      "care": []
+    },
+    "jp-kobe": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kobe City Museum",
+          "src": "https://www.tokyoartbeat.com/en/venues/-/kobe-city-museum"
+        },
+        {
+          "name": "Hyogo Prefectural Museum of Art",
+          "src": "https://www.artm.pref.hyogo.jp/?p=12"
+        },
+        {
+          "name": "Kobe Municipal Forest Botanical Garden",
+          "src": "https://kobe-brighten.pages.dev/en/spots/kobe-city-forest-botanical-garden"
+        }
+      ],
+      "care": []
+    },
+    "jp-matsuyama": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Museum of Art, Ehime",
+          "src": "https://www.ehime-art.jp/en/about"
+        },
+        {
+          "name": "Ehime University Museum",
+          "src": "https://kids.rurubu.jp/article/16235/"
+        },
+        {
+          "name": "Jonofuchi Park",
+          "src": "https://www.nap-camp.com/mag/89367"
+        },
+        {
+          "name": "Shin-Ishite Park",
+          "src": "https://www.nap-camp.com/mag/89367"
+        },
+        {
+          "name": "Miharashi Park",
+          "src": "https://www.nap-camp.com/mag/89367"
+        }
+      ],
+      "care": []
+    },
+    "jp-nagano": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Yunohana Sento Zuisho Matsumoto-kan",
+          "src": "https://en.hoshinoresorts.com/guide/area/chubu/nagano/family-2/"
+        }
+      ],
+      "care": []
+    },
+    "jp-nagasaki": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Gunkanjima (Hashima Island)",
+          "src": "https://www.discover-nagasaki.com/en/featured-topics/gunkanjima-landing-tour"
+        },
+        {
+          "name": "Megane-bashi (Spectacles Bridge)",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": "Suwa Shrine",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": "Sofukuji Temple",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": "Nagasaki Confucian Shrine & Historical Museum of China",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": "Gunkanjima Digital Museum",
+          "src": "https://www.discover-nagasaki.com/en/featured-topics/nc-activity"
+        }
+      ],
+      "care": []
+    },
+    "jp-nara": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Toshodai-ji Temple",
+          "src": "https://toshodaiji.jp/haikan.html"
+        }
+      ],
+      "care": []
+    },
+    "jp-niigata": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Nagaoka Fireworks Museum",
+          "src": "https://nagaoka-hanabikan.niigata.jp/en/"
+        }
+      ],
+      "care": []
+    },
+    "jp-nikko": {
+      "eat": [],
+      "do": [
+        {
+          "name": "SL Taiju",
+          "src": "https://kids.rurubu.jp/article/174376/"
+        }
+      ],
+      "care": []
+    },
+    "jp-osaka": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Dotonbori River Cruise",
+          "src": "https://thatmumtravellife.com/2026/05/12/osaka-with-kids-25-best-things-to-do-for-families-2026-guide/"
+        },
+        {
+          "name": "HEP FIVE Ferris Wheel",
+          "src": "https://thatmumtravellife.com/2026/05/12/osaka-with-kids-25-best-things-to-do-for-families-2026-guide/"
+        },
+        {
+          "name": "Osaka Bay Cruise Santa Maria",
+          "src": "https://osaka-info.jp/en/spot/osaka-bay-cruise-santa-maria2022/"
+        }
+      ],
+      "care": []
+    },
+    "jp-takamatsu": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kagawa Prefectural Museum",
+          "src": "https://www.asoview.com/note/5471/"
+        },
+        {
+          "name": "Shikoku Aquarium",
+          "src": "https://www.asoview.com/note/5471/"
+        },
+        {
+          "name": "Gold Tower and Play Park",
+          "src": "https://www.asoview.com/note/5471/"
+        },
+        {
+          "name": "Red Pumpkin (Yayoi Kusama)",
+          "src": "https://naoshima.net/en/art/art_miyanoura/"
+        }
+      ],
+      "care": []
+    },
+    "jp-takayama": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Hida Furukawa Festival Exhibition Hall",
+          "src": "https://okosidaiko.com/en/"
+        },
+        {
+          "name": "Fukuchi Fossil Museum",
+          "src": "https://okuhida.or.jp/en/sightseeing/"
+        },
+        {
+          "name": "Hida Kokubunji Temple",
+          "src": "https://japanactivity.com/free-things-to-do-in-takayama"
+        },
+        {
+          "name": "Sakurayama Hachimangu Shrine",
+          "src": "https://japanactivity.com/free-things-to-do-in-takayama"
+        }
+      ],
+      "care": []
+    },
+    "jp-tohoku": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Quardome The Boon",
+          "src": "https://www.gltjp.com/en/article/item/21431/"
+        },
+        {
+          "name": "Akita Inu Fureaidokoro in Senshu Park",
+          "src": "https://www.gltjp.com/en/article/item/21431/"
+        },
+        {
+          "name": "Morioka Children's Science Museum",
+          "src": "https://www.nap-camp.com/mag/?p=81747"
+        },
+        {
+          "name": "Mengoria",
+          "src": "https://www.nap-camp.com/mag/83090"
+        }
+      ],
+      "care": [
+        {
+          "name": "Akita City Hall Kosodate Hiroba",
+          "src": "https://www.city.akita.lg.jp/kurashi/kyodo-chiiki/1005328/1004312/1009566/1004300.html"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (26 Nov 2026)": [
+      "Hassen Sendai",
+      "Aqua Beat Beppu (temporarily)",
+      "Nagasaki Electric Tramway Museum"
+    ],
+    "name or place did not match on Google Maps": [
+      "Raifuku no Mori Okuhida",
+      "Otaya kids plaza Takaoka",
+      "Michi-no-eki Marugoto Imizu kids area"
+    ],
+    "other": [
+      "Fujisan World Heritage Center and Kodomo Mirai-kan (already listed)",
+      "Pokemon Center Osaka and Nintendo Store (shops)",
+      "Hamanomachi Arcade (shopping street)",
+      "Nikko monkey theatre and Japan Monkey Park (animal shows)",
+      "Round One Miyazaki (arcade chain)",
+      "Hotel Mori no Kaze kids room (hotel facility)",
+      "Maruman yakitori (izakaya-like)",
+      "Hikaru Museum (only a user post)",
+      "Ginkaku-ji, Shin-Yakushi-ji, Irie Taikichi museum, Niigata greenhouse, Nagasaki tram (quote not on the page)",
+      "two Fukuoka places (page from 2021)"
+    ],
+    "still missing (no official page found)": "baby rooms in Beppu, Fuji, Niigata, Shirahama, Takamatsu, Toyama and Tohoku"
+  }
+}

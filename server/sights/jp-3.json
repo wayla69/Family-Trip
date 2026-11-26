@@ -4766,6 +4766,47 @@
           "q": "Shinshu Sky Park, Matsumoto Airport, Matsumoto",
           "ok": "2026-11",
           "src": "https://www.go-nagano.net/en/theme/id=12246"
+        },
+        {
+          "name": {
+            "en": "Yunohana Sento Zuisho Matsumoto-kan",
+            "th": "ยูโนฮานะ เซ็นโต ซุยโช มัตสึโมโตะคัง"
+          },
+          "local": "湯の華銭湯 瑞祥 松本館",
+          "kind": "onsen",
+          "area": {
+            "en": "Nagisa, Matsumoto city centre",
+            "th": "นางิสะ ใจกลางเมืองมัตสึโมโตะ"
+          },
+          "what": {
+            "en": "A day-trip hot spring with reclining baths, pot baths and a meditation room, using water from Togura Kamiyamada Onsen",
+            "th": "ออนเซ็นแบบแวะวัน มีอ่างนอนแช่ อ่างหม้อ และห้องนั่งสมาธิ ใช้น้ำจากโทกุระ คามิยามาดะ ออนเซ็น"
+          },
+          "why": {
+            "en": "The women's bath has a kids' bath, a kids' corner, a nursing room and baby beds; a soba restaurant is in the same building",
+            "th": "ห้องอาบน้ำหญิงมีอ่างเด็ก มุมเด็ก ห้องให้นม และเตียงเด็กอ่อน และมีร้านโซบะในอาคารเดียวกัน"
+          },
+          "tip": {
+            "en": "Bathing 09:30–24:00, last entry 23:20",
+            "th": "อาบน้ำได้ 09:30–24:00 เข้าได้ถึง 23:20"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥800 adults · ¥400 elementary and junior high · ¥100 young children",
+            "th": "≈ ¥800 ผู้ใหญ่ · ¥400 ประถมและมัธยมต้น · ¥100 เด็กเล็ก"
+          },
+          "book": "none",
+          "q": "Yunohana Sento Zuisho Matsumoto-kan, Nagisa, Matsumoto, Japan",
+          "ok": "2026-11",
+          "src": "https://en.hoshinoresorts.com/guide/area/chubu/nagano/family-2/"
         }
       ]
     },
@@ -5384,6 +5425,250 @@
           "q": "Oura Cathedral, Nishizaka, Nagasaki, Japan",
           "ok": "2026-11",
           "src": "https://www.discover-nagasaki.com/en/itinerary/detail17"
+        },
+        {
+          "name": {
+            "en": "Gunkanjima (Hashima Island)",
+            "th": "กุนคันจิมะ (เกาะฮะชิมะ)"
+          },
+          "local": "軍艦島",
+          "kind": "views",
+          "area": {
+            "en": "Nagasaki Port",
+            "th": "ท่าเรือนางาซากิ"
+          },
+          "what": {
+            "en": "Hashima Island, nicknamed Gunkanjima, a former coal-mining island seen up close by boat.",
+            "th": "เกาะฮะชิมะ หรือกุนคันจิมะ อดีตเกาะขุดถ่านหิน ดูใกล้ๆ จากเรือ"
+          },
+          "why": {
+            "en": "A real ruin island to see from the boat; children enjoy the sea trip.",
+            "th": "เกาะร้างตัวจริงให้ดูจากเรือ เด็กๆ สนุกกับการนั่งเรือออกทะเล"
+          },
+          "tip": {
+            "en": "Reserve a landing tour on the operator's official website.",
+            "th": "จองทัวร์ขึ้นเกาะผ่านเว็บไซต์ทางการของบริษัททัวร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Gunkanjima, Nagasaki Port, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/featured-topics/gunkanjima-landing-tour"
+        },
+        {
+          "name": {
+            "en": "Megane-bashi (Spectacles Bridge)",
+            "th": "สะพานเมกาเนะ"
+          },
+          "local": "眼鏡橋",
+          "kind": "views",
+          "area": {
+            "en": "Nakashima River, Nagasaki",
+            "th": "แม่น้ำนากาชิมะ นางาซากิ"
+          },
+          "what": {
+            "en": "Japan's first Chinese-style stone bridge, built in 1634 and named for its reflection in the river.",
+            "th": "สะพานหินแบบจีนแห่งแรกของญี่ปุ่น สร้างเมื่อปี 1634 ตั้งชื่อตามเงาสะท้อนในแม่น้ำ"
+          },
+          "why": {
+            "en": "A small stone bridge with its reflection in the river; it is easy to walk to.",
+            "th": "สะพานหินเล็กๆ ที่มีเงาสะท้อนในแม่น้ำ เดินไปถึงง่าย"
+          },
+          "tip": {
+            "en": "Allow about an hour to walk along the river.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงเดินเล่นริมแม่น้ำ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Megane Bridge, Uonomachi, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": {
+            "en": "Suwa Shrine",
+            "th": "ศาลเจ้าสุวะ"
+          },
+          "local": "諏訪神社",
+          "kind": "culture",
+          "area": {
+            "en": "Suwa, on the hill above the city centre",
+            "th": "สุวะ บนเนินเหนือใจกลางเมือง"
+          },
+          "what": {
+            "en": "Nagasaki's main Shinto shrine, rebuilt in 1625 and moved to its hill above the city.",
+            "th": "ศาลเจ้าชินโตหลักของนางาซากิ สร้างใหม่เมื่อปี 1625 และย้ายมาอยู่บนเนินเหนือเมือง"
+          },
+          "why": {
+            "en": "A shrine on a hill with a view over the city; the autumn festival is the big event.",
+            "th": "ศาลเจ้าบนเนินที่มองเห็นวิวเมือง งานเทศกาลฤดูใบไม้ร่วงคืองานใหญ่"
+          },
+          "tip": {
+            "en": "The Kunchi Festival takes place here every autumn.",
+            "th": "เทศกาลคุนจิจัดที่นี่ทุกฤดูใบไม้ร่วง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Suwa Shrine, Kaminishiyamamachi, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": {
+            "en": "Sofukuji Temple",
+            "th": "วัดโซฟุกุจิ"
+          },
+          "local": "崇福寺",
+          "kind": "culture",
+          "area": {
+            "en": "Higashiyamate, Nagasaki",
+            "th": "ฮิงาชิยามาเตะ นางาซากิ"
+          },
+          "what": {
+            "en": "A Chinese temple built in 1629 by Chinese residents of Nagasaki who came from Fujian.",
+            "th": "วัดแบบจีนที่ชาวจีนจากฝูเจี้ยนในนางาซากิสร้างเมื่อปี 1629"
+          },
+          "why": {
+            "en": "Big temple gates and halls to walk through, with the city's Chinese history told on the spot.",
+            "th": "มีประตูและห้องโถงใหญ่เดินชม พร้อมเล่าประวัติชุมชนจีนของเมืองถึงที่"
+          },
+          "tip": {
+            "en": "Allow about an hour for the gates and halls.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงสำหรับประตูและห้องโถง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sofuku-ji Temple, Kajiyamachi, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": {
+            "en": "Nagasaki Confucian Shrine & Historical Museum of China",
+            "th": "ศาลขงจื๊อนางาซากิและพิพิธภัณฑ์ประวัติศาสตร์จีน"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Shinchi, Nagasaki",
+            "th": "ชินจิ นางาซากิ"
+          },
+          "what": {
+            "en": "A Confucian shrine built in 1893 with a museum about China's history.",
+            "th": "ศาลขงจื๊อที่สร้างเมื่อปี 1893 พร้อมพิพิธภัณฑ์ประวัติศาสตร์จีน"
+          },
+          "why": {
+            "en": "Indoor rooms to visit in the rain, with the Confucian building to look at.",
+            "th": "มีห้องในร่มไว้เดินชมวันฝนตก และอาคารศาลขงจื๊อให้ดู"
+          },
+          "tip": {
+            "en": "Allow about an hour; a good stop on a rainy day.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง เหมาะกับวันฝนตก"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Confucian Shrine and Historical Museum of China, Ouramachi, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail19"
+        },
+        {
+          "name": {
+            "en": "Gunkanjima Digital Museum",
+            "th": "พิพิธภัณฑ์ดิจิทัลกุนคันจิมะ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Matsugae, Nagasaki",
+            "th": "มัตสึงาเอะ นางาซากิ"
+          },
+          "what": {
+            "en": "An indoor museum that shows Gunkanjima with projection mapping.",
+            "th": "พิพิธภัณฑ์ในร่มที่แสดงเกาะกุนคันจิมะด้วยโปรเจกชันแมปปิง"
+          },
+          "why": {
+            "en": "An indoor projection show about the island, a way to see Gunkanjima on a rainy day.",
+            "th": "โชว์ฉายภาพในร่มเกี่ยวกับเกาะ ดูกุนคันจิมะได้แม้วันฝนตก"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Gunkanjima Digital Museum, Matsugaemachi, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/featured-topics/nc-activity"
         }
       ]
     },
@@ -6182,6 +6467,47 @@
           },
           "q": "らくがキッズ 宇都宮ベルモール店, Yoto, Utsunomiya",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "SL Taiju",
+            "th": "รถไฟไอน้ำ SL ไทจู"
+          },
+          "local": "SL大樹",
+          "kind": "ride",
+          "area": {
+            "en": "Shimo-Imaichi and Kinugawa-Onsen stations",
+            "th": "สถานีชิโมอิมาอิจิและสถานีคินุงาวะออนเซ็น"
+          },
+          "what": {
+            "en": "A steam locomotive running from Shimo-Imaichi to Kinugawa-Onsen in about 35 minutes one way, with the SL shed and a turntable at the stations",
+            "th": "รถจักรไอน้ำวิ่งจากชิโมอิมาอิจิไปคินุงาวะออนเซ็นราว 35 นาทีต่อเที่ยว มีโรงเก็บ SL และแท่นหมุนที่สถานี"
+          },
+          "why": {
+            "en": "A real steam train to ride, and at Kinugawa-Onsen station the locomotive turns on the turntable right in front of you",
+            "th": "ได้นั่งรถไฟไอน้ำของจริง และที่สถานีคินุงาวะออนเซ็นหัวรถจักรจะหมุนบนแท่นให้ดูต่อหน้า"
+          },
+          "tip": {
+            "en": "Runs 2 to 4 return trips a day, connecting with the limited express at Shimo-Imaichi",
+            "th": "วิ่งวันละ 2–4 เที่ยวไปกลับ ต่อกับรถด่วนพิเศษที่ชิโมอิมาอิจิ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.6,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shimo-Imaichi Station, Nikko, Japan",
+          "ok": "2026-11",
+          "src": "https://kids.rurubu.jp/article/174376/"
         }
       ]
     },
@@ -7160,6 +7486,170 @@
           "q": "Hirayu Onsen Ski Area, Okuhida Onsengo Hirayu, Takayama, Gifu, Japan",
           "ok": "2026-11",
           "src": "https://www.sugoii-japan.com/travel-guide-okuhida-onsen"
+        },
+        {
+          "name": {
+            "en": "Hida Furukawa Festival Exhibition Hall",
+            "th": "ศาลาจัดแสดงเทศกาลฮิดะฟุรุคาวะ"
+          },
+          "local": "飛騨古川まつり会館",
+          "kind": "museum",
+          "area": {
+            "en": "Hida-Furukawa (about 5 min walk from JR Hida-Furukawa Station)",
+            "th": "ฮิดะฟุรุคาวะ (เดินจาก JR ฮิดะฟุรุคาวะ ราว 5 นาที)"
+          },
+          "what": {
+            "en": "A hall about the Furukawa festival, with floats and a short film about it.",
+            "th": "ศาลาเกี่ยวกับเทศกาลฟุรุคาวะ มีรถแห่และภาพยนตร์สั้นเกี่ยวกับเทศกาล"
+          },
+          "why": {
+            "en": "Some of the festival floats are on show and the hall has a karakuri puppet performance, so children see the floats up close.",
+            "th": "มีรถแห่บางคันจัดแสดงและมีการแสดงหุ่นคาราคุริ เด็กๆ ได้ดูรถแห่ใกล้ๆ"
+          },
+          "tip": {
+            "en": "Allow about an hour; it suits a rainy afternoon.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง เหมาะกับบ่ายวันฝนตก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hida Furukawa Festival Exhibition Hall, Furukawacho, Hida, Gifu, Japan",
+          "ok": "2026-11",
+          "src": "https://okosidaiko.com/en/"
+        },
+        {
+          "name": {
+            "en": "Fukuchi Fossil Museum",
+            "th": "พิพิธภัณฑ์ฟอสซิลฟุกุจิ"
+          },
+          "local": "福地化石館",
+          "kind": "museum",
+          "area": {
+            "en": "Fukuchi Onsen Folktale Village, Okuhida",
+            "th": "หมู่บ้านนิทานพื้นบ้านฟุกุจิออนเซ็น โอคุฮิดะ"
+          },
+          "what": {
+            "en": "Sea-creature fossils about 400 million years old, found in Fukuchi and shown on the second floor of a family home.",
+            "th": "ฟอสซิลสัตว์ทะเลอายุราว 400 ล้านปีที่พบในฟุกุจิ จัดแสดงบนชั้นสองของบ้านครอบครัว"
+          },
+          "why": {
+            "en": "Real fossils from the age before the dinosaurs, in a small museum.",
+            "th": "ฟอสซิลจริงจากยุคก่อนไดโนเสาร์ ในพิพิธภัณฑ์เล็กๆ"
+          },
+          "tip": {
+            "en": "Allow about an hour; it is a small museum.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง เป็นพิพิธภัณฑ์เล็กๆ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Fukuchi Fossil Museum, Fukuchi Onsen, Okuhida, Takayama, Japan",
+          "ok": "2026-11",
+          "src": "https://okuhida.or.jp/en/sightseeing/"
+        },
+        {
+          "name": {
+            "en": "Hida Kokubunji Temple",
+            "th": "วัดฮิดะโคคุบุนจิ"
+          },
+          "local": "飛騨国分寺",
+          "kind": "culture",
+          "area": {
+            "en": "Kokubunji-dori, Takayama (about 5 min walk from the station)",
+            "th": "ถนนโคคุบุนจิ ทาคายามะ (เดินจากสถานีราว 5 นาที)"
+          },
+          "what": {
+            "en": "Takayama's oldest temple, founded in 746, with a pagoda and a ginkgo tree in the courtyard.",
+            "th": "วัดเก่าแก่ที่สุดของทาคายามะ ก่อตั้งเมื่อปี 746 มีเจดีย์และต้นแปะก๊วยในลาน"
+          },
+          "why": {
+            "en": "A very old ginkgo tree that children can walk around in the open courtyard.",
+            "th": "ต้นแปะก๊วยเก่าแก่ที่เด็กๆ เดินรอบได้ในลานโล่ง"
+          },
+          "tip": {
+            "en": "The ginkgo turns yellow in mid-November; 10 to 20 November is typical.",
+            "th": "ต้นแปะก๊วยเปลี่ยนเป็นสีเหลืองกลางเดือนพฤศจิกายน ปกติราว 10–20 พฤศจิกายน"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hida Kokubunji Temple, Sowamachi, Takayama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/free-things-to-do-in-takayama"
+        },
+        {
+          "name": {
+            "en": "Sakurayama Hachimangu Shrine",
+            "th": "ศาลเจ้าซากุระยามะฮาจิมังกู"
+          },
+          "local": "桜山八幡宮",
+          "kind": "culture",
+          "area": {
+            "en": "Northern old town, Takayama (about 5 min walk from Miyagawa Morning Market)",
+            "th": "ย่านเมืองเก่าทางเหนือ ทาคายามะ (เดินจากตลาดเช้ามิยากาวะราว 5 นาที)"
+          },
+          "what": {
+            "en": "A shrine with a forested approach path and wood carvings on its gate pillars, home of the Takayama festivals.",
+            "th": "ศาลเจ้าที่มีทางเดินในป่าและงานแกะไม้บนเสาประตู เป็นที่จัดเทศกาลทาคายามะ"
+          },
+          "why": {
+            "en": "A shaded forest path and open grounds for children to walk, with festival floats in spring and autumn.",
+            "th": "ทางเดินร่มรื่นในป่าและลานโล่งให้เด็กๆ เดินเล่น มีรถแห่ในฤดูใบไม้ผลิและใบไม้ร่วง"
+          },
+          "tip": {
+            "en": "The spring festival is 14–15 April and the autumn festival 9–10 October.",
+            "th": "เทศกาลฤดูใบไม้ผลิคือ 14–15 เมษายน และเทศกาลฤดูใบไม้ร่วงคือ 9–10 ตุลาคม"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sakurayama Hachimangu, Sakuramachi, Takayama, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/free-things-to-do-in-takayama"
         }
       ]
     },
@@ -8023,6 +8513,169 @@
           "q": "Benikko Hiroba, Yamagata City",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/5446/"
+        },
+        {
+          "name": {
+            "en": "Quardome The Boon",
+            "th": "ควอร์โดม เดอะ บูน"
+          },
+          "local": "クアドーム ザ・ブーン",
+          "kind": "play",
+          "area": {
+            "en": "Akita City",
+            "th": "เมืองอาคิตะ"
+          },
+          "what": {
+            "en": "An all-weather indoor pool at a leisure facility, with a hot spring and restaurant next door",
+            "th": "สระว่ายน้ำในร่มใช้ได้ทุกสภาพอากาศ อยู่ในศูนย์พักผ่อน มีออนเซ็นและร้านอาหารอยู่ติดกัน"
+          },
+          "why": {
+            "en": "An all-weather indoor pool, so it works on a rainy day; an outdoor pool opens in summer",
+            "th": "สระในร่มใช้ได้ทุกสภาพอากาศ จึงเหมาะกับวันฝนตก ช่วงฤดูร้อนมีสระกลางแจ้งเปิดด้วย"
+          },
+          "tip": {
+            "en": "The outdoor pool is open only in summer",
+            "th": "สระกลางแจ้งเปิดเฉพาะฤดูร้อน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Quardome The Boon, Akita City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21431/"
+        },
+        {
+          "name": {
+            "en": "Akita Inu Fureaidokoro in Senshu Park",
+            "th": "จุดพบอาคิตะอินุ ในสวนเซนชู"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Senshu Park, Akita City",
+            "th": "สวนเซนชู เมืองอาคิตะ"
+          },
+          "what": {
+            "en": "A place inside Senshu Park where visitors can meet Akita dogs",
+            "th": "จุดในสวนเซนชูที่ผู้มาเยือนได้พบสุนัขพันธุ์อาคิตะ"
+          },
+          "why": {
+            "en": "Children can meet Akita dogs in the park",
+            "th": "เด็กๆ ได้พบสุนัขอาคิตะในสวน"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Akita Inu Fureaidokoro, Senshu Park, Akita City, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21431/"
+        },
+        {
+          "name": {
+            "en": "Morioka Children's Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เด็กโมริโอกะ"
+          },
+          "local": "盛岡市子ども科学館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Morioka, about 15 minutes' walk from JR Morioka Station west exit",
+            "th": "โมริโอกะ เดินจากทางออกฝั่งตะวันตกของสถานี JR โมริโอกะราว 15 นาที"
+          },
+          "what": {
+            "en": "A hands-on science centre with exhibits to touch and a planetarium",
+            "th": "ศูนย์วิทยาศาสตร์ที่ให้ลงมือเล่น มีนิทรรศการให้จับต้องและท้องฟ้าจำลอง"
+          },
+          "why": {
+            "en": "Hands-on exhibits to touch, and science shows and craft workshops on weekends and holidays",
+            "th": "มีนิทรรศการให้สัมผัส และมีโชว์วิทยาศาสตร์กับเวิร์กช็อปงานประดิษฐ์ช่วงสุดสัปดาห์และวันหยุด"
+          },
+          "tip": {
+            "en": "Closed on Mondays; a night museum runs on the first Saturday of each month",
+            "th": "ปิดวันจันทร์ และมีพิพิธภัณฑ์ยามค่ำทุกวันเสาร์แรกของเดือน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Morioka Children's Science Museum, Morioka, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/?p=81747"
+        },
+        {
+          "name": {
+            "en": "Mengoria",
+            "th": "เมงโกเรีย"
+          },
+          "local": "めんごりあ",
+          "kind": "play",
+          "area": {
+            "en": "Futamachi Plaza 1F, Kaminoyama",
+            "th": "ฟุตามาจิพลาซ่า ชั้น 1 คามิโนยามะ"
+          },
+          "what": {
+            "en": "An indoor play centre with a big net play structure, a climbing wall and a ball pool, plus a separate area for under-twos",
+            "th": "ศูนย์เล่นในร่มที่มีโครงตาข่ายใหญ่ กำแพงปีนเขา และบ่อบอล พร้อมโซนแยกสำหรับเด็กต่ำกว่า 2 ปี"
+          },
+          "why": {
+            "en": "Separate areas for under-twos and over-threes, with a wooden ball pool and a play kitchen for the little ones",
+            "th": "แยกโซนเด็กต่ำกว่า 2 ปีกับเด็กเกิน 3 ปี มีบ่อบอลไม้และครัวของเล่นสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Open 09:00–17:00; free entry",
+            "th": "เปิด 09:00–17:00 เข้าฟรี"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Mengoria, Futamachi Plaza 1F, Kaminoyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/83090"
         }
       ]
     },
@@ -11698,6 +12351,88 @@
           "q": "Sendai Jomon no Mori Hiroba, 10-1 Yamada Kaminodai-cho, Taihaku Ward, Sendai",
           "ok": "2026-11",
           "src": "https://kids.rurubu.jp/article/248126/"
+        },
+        {
+          "name": {
+            "en": "Poporas Hiroba",
+            "th": "โปโปราส ฮิโรบะ"
+          },
+          "local": "ぽぽらすひろば",
+          "kind": "play",
+          "area": {
+            "en": "Navis Sendai Building 2F, Miyagino-ku",
+            "th": "อาคารนาวิสเซนได ชั้น 2 มิยางิโนะ"
+          },
+          "what": {
+            "en": "An indoor play area on the second floor of the Navis Sendai building, a short walk from the Sendai Station area",
+            "th": "ลานเล่นในร่มชั้น 2 ของอาคารนาวิสเซนได เดินสั้นๆ จากย่านสถานีเซนได"
+          },
+          "why": {
+            "en": "Close to Sendai Station, with a one-day pass for children, so it fits a short stop between trips",
+            "th": "ใกล้สถานีเซนได มีบัตรเล่นทั้งวันสำหรับเด็ก เหมาะกับการแวะสั้นๆ ระหว่างเดินทาง"
+          },
+          "tip": {
+            "en": "Open 10:00–16:00",
+            "th": "เปิด 10:00–16:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700 a child for 30 minutes · ¥2,100 one-day pass · adults free",
+            "th": "≈ ¥700 ต่อเด็ก 30 นาที · ¥2,100 บัตรเล่นทั้งวัน · ผู้ใหญ่ฟรี"
+          },
+          "book": "none",
+          "q": "Popolas Hiroba, Navis Sendai Building 2F, 5-12-55 Tsutsumi-oka, Miyagino-ku, Sendai, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/82352"
+        },
+        {
+          "name": {
+            "en": "Nobikko Jumbo Sendai Izumi Osawa",
+            "th": "โนบิกโกะ จัมโบ้ เซนได อิซุมิ โอซาวะ"
+          },
+          "local": "のびっこジャンボ 仙台泉大沢店",
+          "kind": "play",
+          "area": {
+            "en": "AEON Town Sendai Izumi Osawa 2F, Izumi-ku",
+            "th": "อิออนทาวน์เซนได อิซุมิ โอซาวะ ชั้น 2 อิซุมิ"
+          },
+          "what": {
+            "en": "An indoor playground for children aged 0 to 12 with a ball pool, big blocks, trampolines, role-play and a games corner",
+            "th": "สนามเด็กเล่นในร่มสำหรับเด็กอายุ 0–12 ปี มีบ่อบอล บล็อกใหญ่ แทรมโพลีน มุมเล่นบทบาทสมมติ และมุมเกม"
+          },
+          "why": {
+            "en": "Ball pool, big blocks and trampolines, plus a place to eat so the family can stay all day",
+            "th": "มีบ่อบอล บล็อกใหญ่ และแทรมโพลีน พร้อมที่กินข้าวในอาคาร ครอบครัวอยู่ได้ทั้งวัน"
+          },
+          "tip": {
+            "en": "Open 10:00–19:00, last entry 18:30; closed when the shopping centre is closed",
+            "th": "เปิด 10:00–19:00 เข้าได้ถึง 18:30 ปิดตามวันหยุดของศูนย์การค้า"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nobikko Jumbo, AEON Town Sendai Izumi Osawa, 1-5-1 Oosawa, Izumi-ku, Sendai, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6205/"
         }
       ]
     },
@@ -14325,6 +15060,129 @@
           "q": "Kobe Mysterious Consulate of Trick Art, Kitano Ijinkan-gai, Kobe, Japan",
           "ok": "2026-11",
           "src": "https://enjoy-osaka-kyoto-kobe.com/article/a/kobe-parents-children/"
+        },
+        {
+          "name": {
+            "en": "Kobe City Museum",
+            "th": "พิพิธภัณฑ์เมืองโกเบ"
+          },
+          "local": "神戸市立博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Kyomachi, Chuo-ku",
+            "th": "เคียวมาจิ ชูโอ"
+          },
+          "what": {
+            "en": "A city museum that holds special exhibitions and events",
+            "th": "พิพิธภัณฑ์ประจำเมืองที่จัดนิทรรศการพิเศษและกิจกรรม"
+          },
+          "why": {
+            "en": "A cafe and a library in the building make it an easy indoor stop",
+            "th": "มีคาเฟ่และห้องสมุดในอาคาร เป็นที่แวะในร่มที่สะดวก"
+          },
+          "tip": {
+            "en": "Open 09:30–17:30; closes at 20:00 on Fridays and Saturdays",
+            "th": "เปิด 09:30–17:30 วันศุกร์และเสาร์ปิด 20:00"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥300 adults · ¥150 university students · high school and under free",
+            "th": "≈ ¥300 ผู้ใหญ่ · ¥150 นักศึกษามหาวิทยาลัย · มัธยมปลายลงมาฟรี"
+          },
+          "book": "none",
+          "q": "Kobe City Museum, 24 Kyomachi, Chuo-ku, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://www.tokyoartbeat.com/en/venues/-/kobe-city-museum"
+        },
+        {
+          "name": {
+            "en": "Hyogo Prefectural Museum of Art",
+            "th": "พิพิธภัณฑ์ศิลปะจังหวัดเฮียวโงะ"
+          },
+          "local": "兵庫県立美術館",
+          "kind": "museum",
+          "area": {
+            "en": "Chuo-ku, Kobe",
+            "th": "ชูโอ โกเบ"
+          },
+          "what": {
+            "en": "An art museum with a collection exhibition and special exhibitions",
+            "th": "พิพิธภัณฑ์ศิลปะที่มีนิทรรศการคอลเลกชันและนิทรรศการพิเศษ"
+          },
+          "why": {
+            "en": "The collection exhibition is free on one day in December, a plain reason to go",
+            "th": "นิทรรศการคอลเลกชันเข้าฟรีหนึ่งวันในเดือนธันวาคม"
+          },
+          "tip": {
+            "en": "Open 10:00–18:00, entry until 30 minutes before closing; closed Mondays",
+            "th": "เปิด 10:00–18:00 เข้าได้ถึง 30 นาทีก่อนปิด ปิดวันจันทร์"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hyogo Prefectural Museum of Art, Chuo-ku, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://www.artm.pref.hyogo.jp/?p=12"
+        },
+        {
+          "name": {
+            "en": "Kobe Municipal Forest Botanical Garden",
+            "th": "สวนพฤกษศาสตร์ป่าเทศบาลโกเบ"
+          },
+          "local": "神戸市立森林植物園",
+          "kind": "park",
+          "area": {
+            "en": "Kita-ku, Mt. Rokko",
+            "th": "คิตะ ภูเขารกโกะ"
+          },
+          "what": {
+            "en": "A large botanical garden using Mt. Rokko's natural landscape, with trees from around the world",
+            "th": "สวนพฤกษศาสตร์กว้างที่ใช้ภูมิประเทศธรรมชาติของภูเขารกโกะ มีต้นไม้จากทั่วโลก"
+          },
+          "why": {
+            "en": "About 1,200 species from North America, Europe, Asia and more, planted by region, make a long shady walk",
+            "th": "มีพรรณไม้ราว 1,200 ชนิดจากอเมริกาเหนือ ยุโรป เอเชีย และอื่นๆ ปลูกแยกตามภูมิภาค เหมาะกับการเดินเล่นใต้ร่มไม้"
+          },
+          "tip": {
+            "en": "Autumn colours peak from early to late November",
+            "th": "ใบไม้เปลี่ยนสีสวยที่สุดตั้งแต่ต้นถึงปลายเดือนพฤศจิกายน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kobe Municipal Forest Botanical Garden, Kita-ku, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://kobe-brighten.pages.dev/en/spots/kobe-city-forest-botanical-garden"
         }
       ]
     }
