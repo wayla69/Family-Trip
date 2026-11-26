@@ -114,6 +114,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **26 Nov 2026, Shenzhen, round 5**: +9 (Window of the World, Splendid China, Guanlan Ocean World, Qingqing World, Joy Harbour, Xichong beach, the Shenzhen Museum, two science halls) from Amap place pages. Proof in `docs/library-proof/cn-shenzhen.json`.
 - **26 Nov 2026, Beijing, round 5**: +7 (Universal Beijing, Gubei Water Town, Yalugu glasshouse, the Ancient Observatory, the Grand Canal, Water Supply and Shijia Hutong museums) from Amap place pages. Proof in `docs/library-proof/cn-beijing.json`.
 - **26 Nov 2026, Shanghai, round 5**: +8 (Happy Valley, Oriental Land, the Film Park, Huakai flower park, Xisha lake on Chongming, the auto, Shanghai Museum East and animation museums) from Amap place pages. Proof in `docs/library-proof/cn-shanghai.json`.
+- **26 Nov 2026, Guilin, round 5**: +5 (Shangri-La boat cave, Fubo Hill, Guihai Qinglan, the Lingqu canal, a play park) from Amap place pages. Proof in `docs/library-proof/cn-guilin.json`.
 - **26 Nov 2026, Zhangjiajie**: +2 play parks from Amap place pages. Proof in `docs/library-proof/cn-zhangjiajie.json`.
 - **26 Nov 2026, Yunnan**: +4 play parks from Amap place pages (Kunming, Dali). Proof in `docs/library-proof/cn-yunnan.json`.
 - **25 Nov 2026, Wellington (new town)**: 15 (Te Papa, Zealandia, the zoo, the cable car and its museum, Capital E, Wellington Museum, Ōtari-Wilton's Bush, the chocolate factory, a children's bookshop and five playgrounds). Proof in `docs/library-proof/nz-wellington.json`.
