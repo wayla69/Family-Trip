@@ -408,6 +408,37 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Tianhe and Yuexiu, Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Jiangnan Chuzi (Taikoo Hui)",
+          "page_name": "江南厨子(太古汇店)",
+          "src": "https://www.amap.com/search?query=%E6%B1%9F%E5%8D%97%E5%8E%A8%E5%AD%90(%E5%A4%AA%E5%8F%A4%E6%B1%87%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "周末带娃出来放风，太古汇亲子配套算齐全 · 服务生态度挺好，主动拿了儿童座椅"
+        },
+        {
+          "name": "Ludingji Sichuan Fish (Qiaoxin)",
+          "page_name": "禄鼎记(侨鑫店)",
+          "src": "https://www.amap.com/search?query=%E7%A6%84%E9%BC%8E%E8%AE%B0(%E4%BE%A8%E9%91%AB%E5%BA%97)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-22",
+          "map": "Amap: open, not marked closed, newest review 2026-10-22",
+          "quote": "儿童餐 · #遛娃好去处"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "太哼冰室, 比格比萨 (时尚天河)",
+          "why": "nothing about children on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

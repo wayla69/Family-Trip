@@ -329,6 +329,77 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals, high chairs and family cafés in Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Wuji Hangzhou Kitchen (Hubin)",
+          "page_name": "吴记餐厅·杭帮菜·私房菜(西湖湖滨店)",
+          "src": "https://www.amap.com/search?query=%E5%90%B4%E8%AE%B0%E9%A4%90%E5%8E%85%C2%B7%E6%9D%AD%E5%B8%AE%E8%8F%9C%C2%B7%E7%A7%81%E6%88%BF%E8%8F%9C(%E8%A5%BF%E6%B9%96%E6%B9%96%E6%BB%A8%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "有宝宝椅 · 适合带娃"
+        },
+        {
+          "name": "Fizz Italian (Hubin Intime)",
+          "page_name": "菲滋意式餐厅(西湖银泰店)",
+          "src": "https://www.amap.com/search?query=%E8%8F%B2%E6%BB%8B%E6%84%8F%E5%BC%8F%E9%A4%90%E5%8E%85(%E8%A5%BF%E6%B9%96%E9%93%B6%E6%B3%B0%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "亲子友好 · 孩子特别喜欢儿童套餐，里面的意面吃得干干净净"
+        },
+        {
+          "name": "Bulantu Restaurant (Gongshu)",
+          "page_name": "布兰兔餐厅",
+          "src": "https://www.amap.com/search?query=%E5%B8%83%E5%85%B0%E5%85%94%E9%A4%90%E5%8E%85&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "儿童餐 · 儿童套餐丰富"
+        },
+        {
+          "name": "Laoniangjiu (Zhongda Intime)",
+          "page_name": "老娘舅(杭州中大银泰城店)",
+          "src": "https://www.amap.com/search?query=%E8%80%81%E5%A8%98%E8%88%85(%E6%9D%AD%E5%B7%9E%E4%B8%AD%E5%A4%A7%E9%93%B6%E6%B3%B0%E5%9F%8E%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        },
+        {
+          "name": "Yuanzi Courtyard Restaurant (Gongchen Bridge)",
+          "page_name": "院子餐厅(拱宸桥店)",
+          "src": "https://www.amap.com/search?query=%E9%99%A2%E5%AD%90%E9%A4%90%E5%8E%85(%E6%8B%B1%E5%AE%B8%E6%A1%A5%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "有宝宝椅 · 适合带娃"
+        },
+        {
+          "name": "Li Bai Library Restaurant (Xintiandi)",
+          "page_name": "李白图书馆餐厅(新天地店)",
+          "src": "https://www.amap.com/search?query=%E6%9D%8E%E7%99%BD%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A4%90%E5%8E%85(%E6%96%B0%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-27",
+          "map": "Amap: open, not marked closed, newest review 2026-10-27",
+          "quote": "家庭聚餐 · 有宝宝椅 · 亲子友好"
+        },
+        {
+          "name": "Moomoo Bird Café (Linping inPARK)",
+          "page_name": "MOOMOO鸟咖(杭州临平inPARK店)",
+          "src": "https://www.amap.com/search?query=MOOMOO%E9%B8%9F%E5%92%96(%E6%9D%AD%E5%B7%9E%E4%B8%B4%E5%B9%B3inPARK%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "亲子友好 · 很适合大人和小孩子逛，亲子玩乐很开心"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "大美乐抓饭",
+          "why": "nothing about children on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
