@@ -1032,6 +1032,191 @@
           },
           "q": "史家胡同博物馆, 史家胡同24号, 东城区, 北京",
           "ok": "2026-11"
+        },
+        {
+          "local": "北京科学中心儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%8C%97%E4%BA%AC%E7%A7%91%E5%AD%A6%E4%B8%AD%E5%BF%83%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=110000",
+          "name": {
+            "th": "โซนเด็ก ศูนย์วิทยาศาสตร์ปักกิ่ง",
+            "en": "Beijing Science Center Children's Area"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วิทยาศาสตร์ปักกิ่ง ถนนเป่ยเฉิน ซีเฉิง",
+            "en": "Beijing Science Center, Beichen Road, Xicheng"
+          },
+          "what": {
+            "th": "โซนเล่นสำหรับเด็กเล็กในศูนย์วิทยาศาสตร์ มีบ่อทรายและงานประดิษฐ์",
+            "en": "The science centre's play area for young children, with a sand pit and crafts"
+          },
+          "why": {
+            "th": "ทำมาสำหรับเด็กเล็ก อยู่ในศูนย์วิทยาศาสตร์แบบลงมือทำ",
+            "en": "Made for small children, inside a hands-on science centre"
+          },
+          "q": "北京科学中心, 北辰路9号院, 西城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "巴哩啵哩自然亲子乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B7%B4%E5%93%A9%E5%95%B5%E5%93%A9%E8%87%AA%E7%84%B6%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=110000",
+          "name": {
+            "th": "สวนเล่นธรรมชาติปาหลี่ปั๋วหลี่",
+            "en": "Balibobo Nature Play Park (World Flower Garden)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนดอกไม้โลก ประตูเหนือ เฟิงไถ",
+            "en": "World Flower Garden, north gate, Fengtai"
+          },
+          "what": {
+            "th": "สวนเล่นในสวนดอกไม้ มีเขาวงกต รถไฟเหาะครอบครัว และม้าหมุน",
+            "en": "A play park with a maze, a family coaster and a carousel inside a flower garden"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว มีที่ให้เด็กเล็กวิ่งปล่อยพลัง",
+            "en": "Tagged for families, with a space for little ones to run off energy"
+          },
+          "q": "巴哩啵哩自然亲子乐园, 世界花卉大观园, 丰台区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "啵乐乐主题乐园 旗舰店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%95%B5%E4%B9%90%E4%B9%90%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E6%97%97%E8%88%B0%E5%BA%97)&city=110000",
+          "name": {
+            "th": "สวนเล่นปั๋วเล่อเล่อ สาขาหลัก",
+            "en": "Bolele Play Park (flagship)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อีซีโฮม ชั้น 3 ถนนวงแหวนที่ 3 ตะวันตกใต้ เฟิงไถ",
+            "en": "Easyhome 3F, West Third Ring Road South, Fengtai"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่ มีแทรมโพลีน สไลเดอร์สายรุ้ง โกคาร์ต และปีนป่าย",
+            "en": "A big indoor play park with trampolines, a rainbow slide, go-karts and climbing"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กวัยเตาะแตะ มีที่ให้ป้อนอาหารเด็ก",
+            "en": "Tagged for toddlers, with a place to eat with babies"
+          },
+          "q": "啵乐乐主题乐园, 西三环南路甲27号居然之家, 丰台区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "一起幻城 北投购物公园店",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%80%E8%B5%B7%E5%B9%BB%E5%9F%8E(%E5%8C%97%E6%8A%95%E8%B4%AD%E7%89%A9%E5%85%AC%E5%9B%AD%E5%BA%97)&city=110000",
+          "name": {
+            "th": "อี้ฉี่ฮว่านเฉิง เป่ยโถว",
+            "en": "Yiqi Huancheng (Beitou Shopping Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เป่ยโถวช้อปปิ้งพาร์ก ชั้น B1 ถนนอานติ้ง เฉาหยาง",
+            "en": "Beitou Shopping Park B1, Anding Road, Chaoyang"
+          },
+          "what": {
+            "th": "โลกเล่นในร่ม มีห้องกระจก สไลเดอร์ยักษ์ และโดมดวงดาว",
+            "en": "An indoor play world with mirror rooms, a giant slide and a star dome"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล่นสไลเดอร์ยักษ์สนุกมาก บุนุ่มทั้งหมด",
+            "en": "Reviewers say children go wild on the giant slide; padded throughout"
+          },
+          "q": "一起幻城 北投购物公园, 安定路5号院, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 北京和谐银座店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E5%8C%97%E4%BA%AC%E5%92%8C%E8%B0%90%E9%93%B6%E5%BA%A7%E5%BA%97)&city=110000",
+          "name": {
+            "th": "มีแลนด์คลับ เหอเสียอิ๋นจั้ว เฟิงไถ",
+            "en": "Meland Club (Hexie Yinzuo, Fengtai)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิ๋นจั้วเหอเสียพลาซ่า ชั้น 1 ถนนว่านเฟิง เฟิงไถ",
+            "en": "Yinzuo Hexie Plaza 1F, Wanfeng Road, Fengtai"
+          },
+          "what": {
+            "th": "คลับเล่นขนาดใหญ่หลายโซน โบว์ลิ่ง ขี่ม้าโพนี่ บทบาทนักดับเพลิงและเชฟ",
+            "en": "A big play club of themed zones: bowling, pony rides, firefighter and chef play"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กได้ลองสิ่งใหม่ๆ มากมาย",
+            "en": "Reviewers say children try many new things"
+          },
+          "q": "MELAND CLUB 和谐银座, 万丰路68号院, 丰台区, 北京",
+          "ok": "2026-11"
         }
     ]
     },
