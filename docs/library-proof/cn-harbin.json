@@ -356,6 +356,45 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Star Park (Wangfujing Mall, Qunli)",
+          "page_name": "星际乐园(哈尔滨王府井购物中心)",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E9%99%85%E4%B9%90%E5%9B%AD(%E5%93%88%E5%B0%94%E6%BB%A8%E7%8E%8B%E5%BA%9C%E4%BA%95%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "儿童运动探险 · 王府井一楼星际太空主题乐园太适合遛娃"
+        },
+        {
+          "name": "Meland (MixC Songbei)",
+          "page_name": "MELAND(哈尔滨万象汇店)",
+          "src": "https://www.amap.com/search?query=MELAND(%E5%93%88%E5%B0%94%E6%BB%A8%E4%B8%87%E8%B1%A1%E6%B1%87%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "儿童乐园 · 亲子DIY · 各种攀岩，锻炼小朋友的协调能力和胆量"
+        },
+        {
+          "name": "Xinghewan Play Park (Maple Leaf Outlet)",
+          "page_name": "星河湾亲子游乐园(枫叶小镇奥莱店)",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E6%B2%B3%E6%B9%BE%E4%BA%B2%E5%AD%90%E6%B8%B8%E4%B9%90%E5%9B%AD(%E6%9E%AB%E5%8F%B6%E5%B0%8F%E9%95%87%E5%A5%A5%E8%8E%B1%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-20",
+          "map": "Amap: open, not marked closed, newest review 2026-09-20",
+          "quote": "儿童赛车娱乐 · 星河湾亲子游乐园枫叶小镇奥莱店遛娃一日游"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "海宁龙龙奇幻世界",
+          "why": "its review about children says rides are broken and dirty"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
