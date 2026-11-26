@@ -1862,6 +1862,286 @@
           "q": "Round1 Stadium Okayama Senoo, Okayama",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/5121/"
+        },
+        {
+          "name": {
+            "en": "Hannover Garden",
+            "th": "สวนฮันโนเวอร์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Motomachi, next to the Hiroshima Children's Museum",
+            "th": "โมโตมาจิ ข้างพิพิธภัณฑ์เด็กฮิโรชิมา"
+          },
+          "what": {
+            "en": "A small park just outside the Children's Museum",
+            "th": "สวนเล็กๆ นอกพิพิธภัณฑ์เด็ก"
+          },
+          "why": {
+            "en": "Somewhere for children to run about and calm down after the exhibits",
+            "th": "เป็นที่ให้เด็กวิ่งเล่นและพักใจหลังชมนิทรรศการ"
+          },
+          "tip": {
+            "en": "Allow about half an hour",
+            "th": "เผื่อเวลาราว 30 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hannover Garden, Motomachi, Hiroshima, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/hiroshima-with-kids-family-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Mariho Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำมาริโฮ"
+          },
+          "kind": "aquarium",
+          "area": {
+            "en": "Marina Hop shopping mall, Ujina",
+            "th": "มารีนาฮ็อป อุจินะ"
+          },
+          "what": {
+            "en": "A compact aquarium in the Marina Hop shopping mall with jellyfish corridors and a diver show in the main tank",
+            "th": "พิพิธภัณฑ์สัตว์น้ำขนาดกะทัดรัดในห้างมารีนาฮ็อป มีทางเดินแมงกะพรุนและการแสดงนักดำน้ำในตู้ใหญ่"
+          },
+          "why": {
+            "en": "Jellyfish corridors and a diver show; an annual family pass costs less than two single-day entries",
+            "th": "มีทางเดินแมงกะพรุนและการแสดงนักดำน้ำ บัตรครอบครัวรายปีถูกกว่าบัตรรายวันสองครั้ง"
+          },
+          "tip": {
+            "en": "Re-entry is permitted all day",
+            "th": "ออกแล้วเข้าซ้ำได้ตลอดวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,600 adults · children ≈ ¥800",
+            "th": "≈ ¥1,600 ผู้ใหญ่ · เด็ก ≈ ¥800"
+          },
+          "book": "none",
+          "q": "Mariho Aquarium, Kusatsushinmachi, Nishi Ward, Hiroshima, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/hiroshima-with-kids-family-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Itsukushima Shrine",
+            "th": "ศาลเจ้าอิสึคุชิมะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Miyajima",
+            "th": "มิยาจิมะ"
+          },
+          "what": {
+            "en": "A UNESCO World Heritage shrine that dates back to 593",
+            "th": "ศาลเจ้ามรดกโลกของยูเนสโก ที่มีมาตั้งแต่ปี 593"
+          },
+          "why": {
+            "en": "No stairs inside, so you can take a stroller in",
+            "th": "ไม่มีบันไดด้านใน เข็นรถเข็นเด็กเข้าไปได้"
+          },
+          "tip": {
+            "en": "Check the tide schedule: the Great Torii Gate is worth seeing at both low and high tide",
+            "th": "เช็กตารางน้ำขึ้นน้ำลง เพราะเสาโทริใหญ่น่าดูทั้งตอนน้ำลงและน้ำขึ้น"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Itsukushima Shrine, Miyajimacho, Hatsukaichi, Japan",
+          "ok": "2026-11",
+          "src": "https://tinytotintokyo.com/miyajima-with-kids"
+        },
+        {
+          "name": {
+            "en": "Mount Misen Observation Deck",
+            "th": "จุดชมวิวภูเขามิเซ็น"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Mount Misen, Miyajima",
+            "th": "ภูเขามิเซ็น มิยาจิมะ"
+          },
+          "what": {
+            "en": "The best view on the island, reached from the top of the ropeway by a short hike",
+            "th": "จุดชมวิวที่ดีที่สุดบนเกาะ เดินสั้นๆ จากสถานีปลายกระเช้า"
+          },
+          "why": {
+            "en": "The famous view from the top; the hike is too hard for young children",
+            "th": "วิวชื่อดังจากยอดเขา แต่ทางเดินยากเกินไปสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Take the ropeway up: the hike to the deck is about a 30-minute walk from Shishiiwa Station",
+            "th": "ขึ้นกระเช้าไป ทางเดินจากสถานีชิชิอิวะถึงจุดชมวิวราว 30 นาที"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mount Misen Observation Deck, Miyajimacho, Hatsukaichi, Japan",
+          "ok": "2026-11",
+          "src": "https://tinytotintokyo.com/miyajima-with-kids"
+        },
+        {
+          "name": {
+            "en": "Daisho-in Temple",
+            "th": "วัดไดโชอิน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Miyajima",
+            "th": "มิยาจิมะ"
+          },
+          "what": {
+            "en": "A temple complex on Miyajima with Henjokutsu Cave, which holds 88 icons linked to the Shikoku pilgrimage",
+            "th": "กลุ่มวัดบนมิยาจิมะ มีถ้ำเฮนโจคุสึที่เก็บรูป 88 องค์ เชื่อมโยงกับการแสวงบุญชิโกกุ"
+          },
+          "why": {
+            "en": "Hundreds of statues of guardian deities of children line the stairs",
+            "th": "มีรูปเทพผู้คุ้มครองเด็กหลายร้อยองค์เรียงข้างบันได"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Daisho-in, Miyajimacho, Hatsukaichi, Japan",
+          "ok": "2026-11",
+          "src": "https://jw-webmagazine.com/tips/daishoin-temple-miyajima"
+        },
+        {
+          "name": {
+            "en": "Hiroshima Museum of Art",
+            "th": "พิพิธภัณฑ์ศิลปะฮิโรชิมา"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Motomachi, Naka Ward",
+            "th": "โมโตมาจิ เขตนากะ"
+          },
+          "what": {
+            "en": "An art museum with a permanent collection and special exhibitions",
+            "th": "พิพิธภัณฑ์ศิลปะที่มีคอลเลกชันถาวรและนิทรรศการพิเศษ"
+          },
+          "why": {
+            "en": "Free admission for high school students and younger",
+            "th": "เด็กนักเรียนมัธยมปลายลงมาเข้าชมฟรี"
+          },
+          "tip": {
+            "en": "Closed Mondays (open on Mondays during special exhibitions)",
+            "th": "ปิดวันจันทร์ (เปิดวันจันทร์ในช่วงนิทรรศการพิเศษ)"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hiroshima Museum of Art, Motomachi, Naka Ward, Hiroshima, Japan",
+          "ok": "2026-11",
+          "src": "https://hiroshima-museum.jp/en/guide/index.html"
+        },
+        {
+          "name": {
+            "en": "Miyajima Traditional Crafts Center",
+            "th": "ศูนย์หัตถกรรมดั้งเดิมมิยาจิมะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Miyajima",
+            "th": "มิยาจิมะ"
+          },
+          "what": {
+            "en": "An interactive craft centre where you can see, make and feel traditional Miyajima crafts",
+            "th": "ศูนย์หัตถกรรมที่ดู ทำ และสัมผัสงานฝีมือดั้งเดิมของมิยาจิมะได้"
+          },
+          "why": {
+            "en": "Children press their own stamps of torii gates, maple leaves and deer onto a spatula to take home",
+            "th": "เด็กๆ ปั๊มลายเสาโทริ ใบเมเปิล และกวางลงบนพายไม้ เอากลับบ้านได้"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥550 per person (spatula workshop, tax included)",
+            "th": "≈ ¥550 ต่อคน (เวิร์กชอปพายไม้ รวมภาษี)"
+          },
+          "book": "none",
+          "q": "Miyajima Traditional Crafts Center, Miyajimacho, Hatsukaichi, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/14993/"
         }
       ]
     },
@@ -4984,6 +5264,126 @@
           "q": "Asobi Dokoro, Hamamachi, Nagasaki",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/5478/"
+        },
+        {
+          "name": {
+            "en": "Nagasaki Atomic Bomb Museum",
+            "th": "พิพิธภัณฑ์ระเบิดปรมาณูนางาซากิ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Urakami, by the Peace Park",
+            "th": "อุระคามิ ข้างสวนสันติภาพ"
+          },
+          "what": {
+            "en": "A chronological museum of Nagasaki before, during and after the 9 August 1945 bombing, with exhibits and survivor accounts",
+            "th": "พิพิธภัณฑ์เรียงตามลำดับเวลา เล่าเรื่องนางาซากิก่อน ระหว่าง และหลังการทิ้งระเบิด 9 สิงหาคม 1945 พร้อมนิทรรศการและคำบอกเล่าของผู้รอดชีวิต"
+          },
+          "why": {
+            "en": "Suits 8 and up with an adult; the page advises adult guidance",
+            "th": "เหมาะกับเด็กอายุ 8 ปีขึ้นไปพร้อมผู้ใหญ่ ตามคำแนะนำในแหล่งข้อมูล"
+          },
+          "tip": {
+            "en": "Open 08:30–18:30; budget 60 to 90 minutes",
+            "th": "เปิด 08:30–18:30 เผื่อเวลา 60–90 นาที"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥200 adults · ¥100 ages 6–18",
+            "th": "≈ ¥200 ผู้ใหญ่ · ¥100 อายุ 6–18 ปี"
+          },
+          "book": "none",
+          "q": "Nagasaki Atomic Bomb Museum, Urakami, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/things-to-do-in-nagasaki-with-kids"
+        },
+        {
+          "name": {
+            "en": "Twenty-Six Martyrs Museum",
+            "th": "พิพิธภัณฑ์ผู้พลีชีพยี่สิบหกคน"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Nishizaka Hill",
+            "th": "เนินนิชิซากะ"
+          },
+          "what": {
+            "en": "A small museum of the Christian history of Nagasaki, with hidden Christians' objects, old maps and a letter by St Francis Xavier",
+            "th": "พิพิธภัณฑ์เล็กๆ เกี่ยวกับประวัติศาสตร์คริสต์ศาสนาในนางาซากิ มีวัตถุของชาวคริสต์ที่ซ่อนตัว แผนที่เก่า และจดหมายของนักบุญฟรานซิส ซาเวียร์"
+          },
+          "why": {
+            "en": "Concrete objects from a hidden history, such as a figurine used as the Virgin Mary, make the story easy to follow",
+            "th": "วัตถุจริงจากประวัติศาสตร์ที่ถูกซ่อน เช่น รูปปั้นที่ใช้แทนพระแม่มารี ทำให้เรื่องราวตามง่าย"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Twenty-Six Martyrs Museum, Nishizaka Hill, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail17"
+        },
+        {
+          "name": {
+            "en": "Oura Cathedral",
+            "th": "โบสถ์โออุระ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Nishizaka Hill",
+            "th": "เนินนิชิซากะ"
+          },
+          "what": {
+            "en": "A church dedicated to the Twenty-Six Martyrs, facing their monument on Nishizaka Hill",
+            "th": "โบสถ์ที่อุทิศแด่ผู้พลีชีพยี่สิบหกคน ตั้งหันหน้าไปทางอนุสาวรีย์ของพวกเขาบนเนินนิชิซากะ"
+          },
+          "why": {
+            "en": "It stands facing the martyrs' monument, so one short walk covers both",
+            "th": "ตั้งหันหน้าเข้าหาอนุสาวรีย์ผู้พลีชีพ เดินสั้นๆ ก็ได้ชมทั้งสองแห่ง"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Oura Cathedral, Nishizaka, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail17"
         }
       ]
     },
@@ -9551,6 +9951,446 @@
           "q": "Kamoike Park, Yojiro, Kagoshima city",
           "ok": "2026-11",
           "src": "https://www.nap-camp.com/mag/87598"
+        },
+        {
+          "name": {
+            "en": "Shoko Shuseikan Museum",
+            "th": "พิพิธภัณฑ์โชโกะชูเซคัง"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Yoshino-cho, near Sengan-en",
+            "th": "โยชิโนะโจ ใกล้เซ็งกังเอ็น"
+          },
+          "what": {
+            "en": "A museum in the oldest Western-style stone factory building in Japan, with Shimazu family objects, Satsuma cut glass and early daguerreotype photographs",
+            "th": "พิพิธภัณฑ์ในอาคารโรงงานหินสไตล์ตะวันตกที่เก่าแก่ที่สุดของญี่ปุ่น จัดแสดงของตระกูลชิมาซุ แก้วเจียระไนซัตสึมะ และภาพถ่ายดาแกโรไทป์ยุคแรก"
+          },
+          "why": {
+            "en": "Indoors, so it works on a hot or rainy day; the building itself is the sight",
+            "th": "อยู่ในร่ม ไปได้ทั้งวันร้อนและวันฝน ตัวอาคารเองก็น่าดู"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Shoko Shuseikan Museum, Yoshino-cho, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10065"
+        },
+        {
+          "name": {
+            "en": "Kagoshima City Museum of Art",
+            "th": "พิพิธภัณฑ์ศิลปะเมืองคาโงชิมะ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Tsurumaru Castle site, Shiroyama",
+            "th": "บริเวณปราสาทซึรุมารุ ชิโรยามะ"
+          },
+          "what": {
+            "en": "A museum of Western paintings from Impressionism to modern art, plus Satsuma pottery and Satsuma Kiriko cut glass",
+            "th": "พิพิธภัณฑ์ภาพวาดตะวันตกตั้งแต่อิมเพรสชันนิสม์ถึงศิลปะสมัยใหม่ พร้อมเครื่องปั้นดินเผาและแก้วเจียระไนคิริโกะซัตสึมะ"
+          },
+          "why": {
+            "en": "Indoors, with a café and a souvenir shop inside; the castle-ruin garden outside has carp and a stroll",
+            "th": "อยู่ในร่ม มีคาเฟ่และร้านของฝากข้างใน สวนซากปราสาทด้านนอกมีปลาคาร์ปและทางเดินเล่น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kagoshima City Museum of Art, Shiroyamacho, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10032"
+        },
+        {
+          "name": {
+            "en": "Amu Plaza Kagoshima Ferris Wheel",
+            "th": "ชิงช้าสวรรค์อามุพลาซา คาโงชิมะ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "On top of Amu Plaza, Kagoshima Chuo Station",
+            "th": "บนห้างอามุพลาซา สถานีคาโงชิมะชูโอ"
+          },
+          "what": {
+            "en": "A Ferris wheel on top of the shopping building beside Kagoshima Chuo Station, with a view of the city and Sakurajima",
+            "th": "ชิงช้าสวรรค์บนอาคารห้างข้างสถานีคาโงชิมะชูโอ มองเห็นเมืองและซากุระจิมะ"
+          },
+          "why": {
+            "en": "A short ride for a view of the city and Sakurajima, right by the station",
+            "th": "นั่งสั้นๆ ชมวิวเมืองและซากุระจิมะ อยู่ติดสถานี"
+          },
+          "tip": {
+            "en": "Allow about half an hour",
+            "th": "เผื่อเวลาราว 30 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Amu Plaza Kagoshima Ferris wheel, Chuocho, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10362"
+        },
+        {
+          "name": {
+            "en": "Yunohira Observatory",
+            "th": "จุดชมวิวยูโนฮิระ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "North Peak, Sakurajima",
+            "th": "ยอดเหนือ ซากุระจิมะ"
+          },
+          "what": {
+            "en": "An observation point at 373 m on Sakurajima, the highest point on the island open to the public, with views over the bay and the city",
+            "th": "จุดชมวิวสูง 373 เมตรบนซากุระจิมะ เป็นจุดสูงสุดบนเกาะที่คนทั่วไปขึ้นได้ มองเห็นอ่าวและเมือง"
+          },
+          "why": {
+            "en": "A clear view of the volcano's rough south peak and the bay below; the observatory has seven heart marks hidden inside to find",
+            "th": "มองเห็นยอดใต้ของภูเขาไฟและอ่าวด้านล่างชัดเจน ภายในมีรูปหัวใจซ่อนอยู่เจ็ดแห่งให้ตามหา"
+          },
+          "tip": {
+            "en": "There is a bus stop for the Sakurajima Island View buses at the observatory",
+            "th": "มีป้ายรถบัสซากุระจิมะไอแลนด์วิวที่จุดชมวิว"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yunohira Observatory, Sakurajimakoikecho, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10025"
+        },
+        {
+          "name": {
+            "en": "Arimura Lava Observatory",
+            "th": "จุดชมวิวลาวาอาริมูระ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Sakurajima lava field",
+            "th": "ทุ่งลาวาซากุระจิมะ"
+          },
+          "what": {
+            "en": "An observation point on a small hill in the lava field from the 1946 eruption, on a 1 km trail",
+            "th": "จุดชมวิวบนเนินเล็กๆ ในทุ่งลาวาจากการปะทุปี 1946 เดินตามทางยาว 1 กม."
+          },
+          "why": {
+            "en": "A close view of Sakurajima and the bay across a lava field the children can walk over",
+            "th": "เห็นซากุระจิมะและอ่าวใกล้ๆ ข้ามทุ่งลาวาที่เด็กๆ เดินได้"
+          },
+          "tip": {
+            "en": "The crater can be heard roaring from here, so expect loud sounds",
+            "th": "ได้ยินเสียงคำรามของปล่องภูเขาไฟจากที่นี่ เตรียมใจรับเสียงดัง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Arimura Lava Observatory, Arimuracho, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10046"
+        },
+        {
+          "name": {
+            "en": "Kurokami Buried Torii",
+            "th": "เสาโทริที่ถูกฝัง คุโรคามิ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Kurokami, Sakurajima",
+            "th": "คุโรคามิ ซากุระจิมะ"
+          },
+          "what": {
+            "en": "A shrine gate buried by the 1914 eruption, with only its top part still above the ground",
+            "th": "เสาโทริของศาลเจ้าที่ถูกฝังโดยการปะทุปี 1914 เหลือเพียงส่วนบนโผล่พ้นพื้นดิน"
+          },
+          "why": {
+            "en": "A real, visible sign of how big the 1914 eruption was, told simply at the gate",
+            "th": "เป็นหลักฐานจริงที่มองเห็นได้ว่าการปะทุปี 1914 ใหญ่เพียงใด เล่าอย่างเรียบง่ายที่หน้าเสา"
+          },
+          "tip": {
+            "en": "Allow about half an hour",
+            "th": "เผื่อเวลาราว 30 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kurokami Buried Torii, Sakurajima, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10024"
+        },
+        {
+          "name": {
+            "en": "Saigo Takamori Statue",
+            "th": "รูปปั้นสัมฤทธิ์ไซโง ทากาโมริ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Shiroyama",
+            "th": "ชิโรยามะ"
+          },
+          "what": {
+            "en": "An eight-metre bronze statue of Saigo Takamori, the samurai leader, standing before Shiroyama",
+            "th": "รูปปั้นสัมฤทธิ์สูงแปดเมตรของไซโง ทากาโมริ ผู้นำซามูไร ตั้งอยู่หน้าชิโรยามะ"
+          },
+          "why": {
+            "en": "A big, easy-to-see statue to look up at, near the Museum of Art and the park paths",
+            "th": "รูปปั้นใหญ่ มองเห็นง่าย ใกล้พิพิธภัณฑ์ศิลปะและทางเดินในสวน"
+          },
+          "tip": {
+            "en": "A short stop of about half an hour",
+            "th": "แวะสั้นๆ ราว 30 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Saigo Takamori statue, Shiroyama, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10005"
+        },
+        {
+          "name": {
+            "en": "Terukuni Shrine",
+            "th": "ศาลเจ้าเทรุคุนิ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Terukuni-cho",
+            "th": "เทรุคุนิโจ"
+          },
+          "what": {
+            "en": "The largest shrine in Kagoshima, with a huge torii gate and a pine tree trimmed in a crane shape",
+            "th": "ศาลเจ้าที่ใหญ่ที่สุดในคาโงชิมะ มีเสาโทริขนาดใหญ่และต้นสนตัดแต่งเป็นรูปนกกระเรียน"
+          },
+          "why": {
+            "en": "Big shrine grounds to walk through, with a huge gate and a crane-shaped tree to spot",
+            "th": "บริเวณศาลเจ้ากว้างให้เดินเล่น มีเสาโทริใหญ่และต้นไม้รูปนกกระเรียนให้ตามหา"
+          },
+          "tip": {
+            "en": "The Rokugatsudo Lantern Festival is held every July, with lanterns across the grounds",
+            "th": "เทศกาลโคมไฟโรคุงัตสึโดจัดทุกเดือนกรกฎาคม มีโคมไฟทั่วบริเวณ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Terukuni Shrine, Terukuni-cho, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10026"
+        },
+        {
+          "name": {
+            "en": "Tsukiyomi Shrine",
+            "th": "ศาลเจ้าสึคิโยมิ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Sakurajima Port, Sakurajima",
+            "th": "ท่าเรือซากุระจิมะ ซากุระจิมะ"
+          },
+          "what": {
+            "en": "A shrine in the grounds beside Sakurajima Port, surrounded by nature, with pigeon and owl fortune slips",
+            "th": "ศาลเจ้าในบริเวณข้างท่าเรือซากุระจิมะ ล้อมรอบด้วยธรรมชาติ มีเซียมซีรูปนกพิราบและนกฮูก"
+          },
+          "why": {
+            "en": "Right by the ferry port, so it is an easy first stop when arriving on the island",
+            "th": "อยู่ติดท่าเรือเฟอร์รี จึงเป็นจุดแวะแรกที่ง่ายเมื่อมาถึงเกาะ"
+          },
+          "tip": {
+            "en": "Visit when you arrive at Sakurajima, as the port is next to the shrine",
+            "th": "แวะเมื่อมาถึงซากุระจิมะ เพราะท่าเรืออยู่ติดศาลเจ้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tsukiyomi Shrine, Sakurajima Port, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/20049"
+        },
+        {
+          "name": {
+            "en": "Iso Beach",
+            "th": "หาดอิโซ"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Iso, Kagoshima city centre",
+            "th": "อิโซ ใจกลางเมืองคาโงชิมะ"
+          },
+          "what": {
+            "en": "A city beach with swimming and a view of Sakurajima in the background",
+            "th": "ชายหาดในเมืองที่ว่ายน้ำได้ มีซากุระจิมะเป็นฉากหลัง"
+          },
+          "why": {
+            "en": "A beach with swimming and Sakurajima as the backdrop, near Sengan-en",
+            "th": "หาดที่ว่ายน้ำได้ มีซากุระจิมะเป็นฉากหลัง ใกล้เซ็งกังเอ็น"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Iso Beach, Iso, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10007"
+        },
+        {
+          "name": {
+            "en": "Kotsuki River Bank",
+            "th": "ริมแม่น้ำโคสึกิ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Kotsuki River",
+            "th": "แม่น้ำโคสึกิ"
+          },
+          "what": {
+            "en": "A riverside trail with about 500 cherry trees, a five-minute walk from Kagoshima Chuo Station",
+            "th": "ทางเดินริมแม่น้ำที่มีต้นซากุระราว 500 ต้น เดิน 5 นาทีจากสถานีคาโงชิมะชูโอ"
+          },
+          "why": {
+            "en": "A short, flat walk by the river a few minutes from the station",
+            "th": "ทางเดินสั้นเรียบริมแม่น้ำ ห่างสถานีไม่กี่นาที"
+          },
+          "tip": {
+            "en": "The cherry blossoms are lit up until 22:00 in spring",
+            "th": "ซากุระประดับไฟถึง 22:00 ในฤดูใบไม้ผลิ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kotsuki River Bank, Kagoshima, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10017"
         }
       ]
     },
@@ -13245,6 +14085,246 @@
           "q": "Nankinmachi, Chinatown, Kobe",
           "ok": "2026-11",
           "src": "https://livejapan.com/en/in-kansai/in-pref-hyogo/in-kobe_sannomiya_kitano/article-a2000975/"
+        },
+        {
+          "name": {
+            "en": "Rokko Alpine Pasture",
+            "th": "ทุ่งหญ้าโรคโกะอัลไพน์"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Mt. Rokko highlands",
+            "th": "ที่ราบสูงภูเขาโรคโกะ"
+          },
+          "what": {
+            "en": "A municipal ranch on the Rokko highlands where you can interact with animals and make cheese",
+            "th": "ฟาร์มของเทศบาลบนที่ราบสูงโรคโกะ พบสัตว์และทำชีสได้"
+          },
+          "why": {
+            "en": "Animals to meet and dairy-making workshops, with red brick silos for photos",
+            "th": "มีสัตว์ให้พบและเวิร์กชอปทำผลิตภัณฑ์นม มีไซโลอิฐแดงให้ถ่ายรูป"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kobe Municipal Rokko Alpine Pasture, Mt. Rokko, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21078/"
+        },
+        {
+          "name": {
+            "en": "Mt. Rokko",
+            "th": "ภูเขาโรคโกะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Rokko range",
+            "th": "เทือกเขาโรคโกะ"
+          },
+          "what": {
+            "en": "The highest peak of the Rokko mountain range, with buses running around the mountain to its facilities",
+            "th": "ยอดสูงสุดของเทือกเขาโรคโกะ มีรถบัสวิ่งรอบภูเขาไปยังสถานที่ต่างๆ"
+          },
+          "why": {
+            "en": "Active or romantic, the ways to enjoy it are top class; good for a day out in the hills",
+            "th": "มีวิธีเที่ยวทั้งแบบแอคทีฟและโรแมนติก เหมาะกับวันออกไปเที่ยวบนเขา"
+          },
+          "tip": {
+            "en": "Buses run around Mt. Rokko from Rokko Cable Rokko Sanjo Station",
+            "th": "รถบัสวิ่งรอบภูเขาโรคโกะจากสถานีโรคโกะซันโจของกระเช้าโรคโกะ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mt. Rokko, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21078/"
+        },
+        {
+          "name": {
+            "en": "Kobe Concerto Lunch Cruise",
+            "th": "ล่องเรือกินข้าวกลางวัน โกเบ คอนแชร์โต"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Kobe Harborland",
+            "th": "โกเบฮาร์เบอร์แลนด์"
+          },
+          "what": {
+            "en": "A lunch cruise on the harbour from Kobe Harborland",
+            "th": "ล่องเรือชมท่าเรือพร้อมมื้อกลางวัน ออกจากโกเบฮาร์เบอร์แลนด์"
+          },
+          "why": {
+            "en": "A lunch afloat on the water, a different way to see the port for the whole family",
+            "th": "กินมื้อกลางวันบนเรือ เป็นอีกวิธีชมท่าเรือสำหรับทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kobe Concerto, Kobe Harborland, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/21078/"
+        },
+        {
+          "name": {
+            "en": "Kobe Maritime Museum",
+            "th": "พิพิธภัณฑ์การเดินเรือโกเบ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Meriken Park",
+            "th": "สวนเมริเคน"
+          },
+          "what": {
+            "en": "A striking wave-shaped building in Meriken Park with exhibits on the history and technology of ships and maritime culture",
+            "th": "อาคารทรงคลื่นโดดเด่นในสวนเมริเคน จัดแสดงประวัติศาสตร์ เทคโนโลยีเรือ และวัฒนธรรมทางทะเล"
+          },
+          "why": {
+            "en": "Exhibits on ships and boats for a child who loves them, close to the Kawasaki World hands-on hall",
+            "th": "นิทรรศการเรือสำหรับเด็กที่ชอบเรือ อยู่ใกล้ห้องเล่นลงมือทำคาวาซากิเวิลด์"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kobe Maritime Museum, Meriken Park, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://enjoy-osaka-kyoto-kobe.com/article/a/kobe-parents-children/"
+        },
+        {
+          "name": {
+            "en": "AQUARIUM × ART átoa",
+            "th": "อควอเรียม × อาร์ต อาโตอา"
+          },
+          "kind": "aquarium",
+          "area": {
+            "en": "Kobe Port area, inside Kobe Port Museum",
+            "th": "ย่านท่าเรือโกเบ ในพิพิธภัณฑ์ท่าเรือโกเบ"
+          },
+          "what": {
+            "en": "A theatre-style aquarium that blends marine life with art, light, sound and scent",
+            "th": "พิพิธภัณฑ์สัตว์น้ำสไตล์โรงละคร ผสมสัตว์ทะเลกับศิลปะ แสง เสียง และกลิ่น"
+          },
+          "why": {
+            "en": "A sensory experience through light, sound and even scent; an animal-shaped café on the 4th floor for a break",
+            "th": "ประสบการณ์ผ่านแสง เสียง และกลิ่น มีคาเฟ่รูปสัตว์ชั้น 4 ไว้พัก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,600 adults (junior high and above) · ≈ ¥1,500 elementary · ≈ ¥500 ages 3 and up · under 3 free",
+            "th": "≈ ¥2,600 ผู้ใหญ่ (มัธยมต้นขึ้นไป) · ≈ ¥1,500 ประถม · ≈ ¥500 อายุ 3 ปีขึ้นไป · ต่ำกว่า 3 ปีฟรี"
+          },
+          "book": "none",
+          "q": "AQUARIUM × ART átoa, Kobe Port Museum, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://enjoy-osaka-kyoto-kobe.com/article/a/kobe-parents-children/"
+        },
+        {
+          "name": {
+            "en": "Kobe Mysterious Consulate of Trick Art",
+            "th": "สถานกงสุลลึกลับทริคอาร์ต โกเบ"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Kitano Ijinkan-gai, Kitano",
+            "th": "คิตาโนะ อิจินกังไก"
+          },
+          "what": {
+            "en": "Step inside trick-art illusions and take hilarious, mind-bending photos",
+            "th": "ก้าวเข้าไปในภาพลวงตาทริคอาร์ตและถ่ายรูปสนุกๆ สุดทึ่ง"
+          },
+          "why": {
+            "en": "Anyone can enjoy it by seeing, touching and snapping pictures; the instructions are only in Japanese",
+            "th": "ใครก็สนุกได้ด้วยการดู สัมผัส และถ่ายรูป แต่คำอธิบายมีเฉพาะภาษาญี่ปุ่น"
+          },
+          "tip": {
+            "en": "Visitors are guided in small groups to prevent crowding; follow the staff",
+            "th": "ผู้เข้าชมถูกพาเข้าเป็นกลุ่มเล็กเพื่อไม่ให้แออัด ทำตามพนักงาน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kobe Mysterious Consulate of Trick Art, Kitano Ijinkan-gai, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://enjoy-osaka-kyoto-kobe.com/article/a/kobe-parents-children/"
         }
       ]
     }
