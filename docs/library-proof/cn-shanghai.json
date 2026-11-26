@@ -420,6 +420,49 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Xuhui and Changning, Shanghai; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Xiding Dumplings (Gate M, West Bund)",
+          "page_name": "喜鼎(Gate M西岸梦中心)",
+          "src": "https://www.amap.com/search?query=%E5%96%9C%E9%BC%8E(Gate%20M%E8%A5%BF%E5%B2%B8%E6%A2%A6%E4%B8%AD%E5%BF%83)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "儿童餐 · 适合带娃"
+        },
+        {
+          "name": "Xunxiangji Hunan Kitchen (Xuhui SML)",
+          "page_name": "巡湘记 乡野湖南菜(徐汇日月光中心店)",
+          "src": "https://www.amap.com/search?query=%E5%B7%A1%E6%B9%98%E8%AE%B0%20%E4%B9%A1%E9%87%8E%E6%B9%96%E5%8D%97%E8%8F%9C(%E5%BE%90%E6%B1%87%E6%97%A5%E6%9C%88%E5%85%89%E4%B8%AD%E5%BF%83%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "家庭聚餐 · 儿童餐 · 亲子友好"
+        },
+        {
+          "name": "Yang Youxi Jiangxi Kitchen (Zhongshan Park)",
+          "page_name": "杨有喜·山野江西菜(中山公园龙之梦店)",
+          "src": "https://www.amap.com/search?query=%E6%9D%A8%E6%9C%89%E5%96%9C%C2%B7%E5%B1%B1%E9%87%8E%E6%B1%9F%E8%A5%BF%E8%8F%9C(%E4%B8%AD%E5%B1%B1%E5%85%AC%E5%9B%AD%E9%BE%99%E4%B9%8B%E6%A2%A6%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "宝宝餐 · 儿童餐"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Maggie&Rose EAT (南丰城)",
+          "why": "its review about children says the children's orders took an hour"
+        },
+        {
+          "name": "来财茶餐厅, 粥皇港式茶餐厅, twinkle耀童",
+          "why": "no reviews, or a smoking area"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
