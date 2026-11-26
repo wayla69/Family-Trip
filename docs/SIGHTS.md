@@ -113,6 +113,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **26 Nov 2026, Shenzhen, round 9**: +5 play spots from Amap place pages. Proof in `docs/library-proof/cn-shenzhen.json`.
 - **26 Nov 2026, Hangzhou, round 9**: +2 (a family farm, an indoor play park) from Amap place pages. Proof in `docs/library-proof/cn-hangzhou.json`.
 - **26 Nov 2026, Harbin, round 10**: +3 indoor play parks from Amap place pages. Proof in `docs/library-proof/cn-harbin.json`.
+- **26 Nov 2026, Guilin, round 10**: +2 indoor play parks from Amap place pages. Proof in `docs/library-proof/cn-guilin.json`.
 - **26 Nov 2026, Beijing, round 7**: +5 play parks from Amap place pages. Proof in `docs/library-proof/cn-beijing.json`.
 - **26 Nov 2026, Guangzhou, round 5**: +14 (Chimelong Safari and Paradise, the science centre, Grandview aquarium and science centre, the zoo, the botanical garden, the night cruise, museums, the Chen Clan Hall, the Nansha wetland) from Amap place pages; 23 now, no longer thin. Proof in `docs/library-proof/cn-guangzhou.json`.
 - **26 Nov 2026, Hangzhou, round 5**: +9 (the zoo, the safari park, Changqiao ocean park, Liangzhu, Leifeng Pagoda, the West Lake island, the science, animation and natural history museums) from Amap place pages; 23 now, no longer thin. Proof in `docs/library-proof/cn-hangzhou.json`.
