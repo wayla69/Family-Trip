@@ -16,7 +16,7 @@ const petals = (x, y, n, r, pr, c) => ring(n, (k) => { const a = k * 2 * Math.PI
 
 const items = [
   // ---------- Hiroshima, Miyajima and Kobe
-  L('jp/hiroshima/landmark-kobebeef.v1.svg', 'เนื้อโกเบย่างบนกระทะเหล็กเทปปันยากิ', 'Kobe beef on the teppanyaki grill', ['kobe beef', 'เนื้อโกเบ', 'teppanyaki', 'เทปปันยากิ', 'wagyu', 'วากิว', 'marbled beef', 'เนื้อลายหินอ่อน', 'sannomiya', 'ซันโนมิยะ'], 'หาลายไขมันสีขาวเป็นเส้นๆ บนชิ้นเนื้อ', 'Find the white marbling lines in the beef',
+  L('jp/kobe/landmark-kobebeef.v1.svg', 'เนื้อโกเบย่างบนกระทะเหล็กเทปปันยากิ', 'Kobe beef on the teppanyaki grill', ['kobe beef', 'เนื้อโกเบ', 'teppanyaki', 'เทปปันยากิ', 'wagyu', 'วากิว', 'marbled beef', 'เนื้อลายหินอ่อน', 'sannomiya', 'ซันโนมิยะ'], 'หาลายไขมันสีขาวเป็นเส้นๆ บนชิ้นเนื้อ', 'Find the white marbling lines in the beef',
     // a shiny steel hotplate with a thick marbled steak and little cubes beside it, golden garlic chips, two chef's spatulas crossed above, a tall white chef's hat at the back
     R(10, 120, 220, 100, '#90A4AE', 12) + R(20, 128, 200, 84, '#B0BEC5', 8, 3) + Lc('M30 140h40M150 200h50', '#ECEFF1', 3)
       + g(100, 168, 1, P('M-46-14c10-14 70-16 92-4 8 10 6 28-6 34-30 8-74 6-86-6-6-8-6-16 0-24z', '#E57373') + Lc('M-34-6c14 4 24-6 40 0s20-4 30 2M-30 10c14-4 30 4 44-2', '#FFF3E0', 3) + face(0, 2, 0.36))
@@ -37,7 +37,7 @@ const items = [
       + ring(6, (k) => C(84 + k * 7, 128 + (k % 2) * 4, 2.5, '#7CB342', 0))
       + g(190, 168, 1, P('M-30-8h60c0 24-14 38-30 38s-30-14-30-38z', '#FFFFFF') + E(0, -8, 30, 9, '#D32F2F') + ring(5, (k) => C(-16 + k * 8, -9 + (k % 2) * 2, 1.8, '#FFF8E1', 0)) + face(0, 14, 0.34))
       + Lc('M150 70l40 84M164 66l30 88', '#D7A86E', 4) + Lc('M188 120c-2 14 4 24 0 34', '#F6D58A', 4) + Lc('M60 96q-6-10 0-20M84 96q-6-10 0-20', '#B3E5FC', 3)),
-  L('jp/hiroshima/landmark-rokkoshidare.v1.svg', 'หอชมวิวรกโกะชิดาเระบนเขารกโกะ', 'The Rokko Shidare Observatory on Mount Rokko', ['rokko shidare observatory', 'หอชมวิวรกโกะชิดาเระ', 'mount rokko', 'rokkosan', 'ภูเขารกโกะ', 'kobe night view', 'วิวกลางคืนโกเบ', 'lattice dome', 'โดมไม้ระแนง', 'tree of ice'], 'หาโดมไม้สานลายตารางบนยอดเขา', 'Find the woven lattice dome on the mountain top',
+  L('jp/kobe/landmark-rokkoshidare.v1.svg', 'หอชมวิวรกโกะชิดาเระบนเขารกโกะ', 'The Rokko Shidare Observatory on Mount Rokko', ['rokko shidare observatory', 'หอชมวิวรกโกะชิดาเระ', 'mount rokko', 'rokkosan', 'ภูเขารกโกะ', 'kobe night view', 'วิวกลางคืนโกเบ', 'lattice dome', 'โดมไม้ระแนง', 'tree of ice'], 'หาโดมไม้สานลายตารางบนยอดเขา', 'Find the woven lattice dome on the mountain top',
     // an egg-shaped dome woven from a criss-cross wooden lattice standing on a mountain top at dusk, a viewing deck round it, the city lights of the harbour twinkling below
     sky('#3949AB') + ring(6, (k) => C(20 + k * 40, 24 + (k % 2) * 18, 2.5, '#FFF59D', 0)) + C(206, 40, 12, '#FFF9C4', 2.5)
       + P('M-4 160c40-40 90-60 124-60s90 20 128 60v84H-4z', '#2E3B6E') + R(-4, 196, 248, 48, '#1A237E', 0, 0) + ring(16, (k) => C(10 + k * 15, 208 + (k % 3) * 10, 2.6, ['#FFD54F', '#FFF59D', '#FF8A65'][k % 3], 0))
@@ -118,14 +118,14 @@ const items = [
       + P('M84 196q36-20 72 0', 'none') + Lc('M84 196q36-20 72 0', '#E53935', 7) + ring(3, (k) => Lc(`M${98 + k * 22} 190v14`, '#C62828', 3)) + face(120, 116, 0.32)),
 
   // ---------- Tohoku
-  L('jp/tohoku/landmark-gyutan.v1.svg', 'กิวตัน ลิ้นวัวย่างของเซนได', 'Gyūtan, Sendai\'s grilled beef tongue', ['gyutan', 'gyūtan', 'กิวตัน', 'beef tongue', 'ลิ้นวัวย่าง', 'sendai food', 'อาหารเซนได', 'barley rice', 'ข้าวบาร์เลย์', 'oxtail soup'], 'หารอยตะแกรงย่างบนชิ้นเนื้อ', 'Find the grill marks on the slices of meat',
+  L('jp/sendai/landmark-gyutan.v1.svg', 'กิวตัน ลิ้นวัวย่างของเซนได', 'Gyūtan, Sendai\'s grilled beef tongue', ['gyutan', 'gyūtan', 'กิวตัน', 'beef tongue', 'ลิ้นวัวย่าง', 'sendai food', 'อาหารเซนได', 'barley rice', 'ข้าวบาร์เลย์', 'oxtail soup'], 'หารอยตะแกรงย่างบนชิ้นเนื้อ', 'Find the grill marks on the slices of meat',
     // a square tray with slices of grilled beef tongue fanned out with dark grill lines, a bowl of barley rice, a little bowl of clear soup with green onion, pickled cabbage and a green chilli
     R(14, 100, 212, 120, '#3E2723', 12) + R(22, 108, 196, 104, '#5D4037', 8, 2.5)
       + E(84, 156, 54, 32, '#FFFFFF') + ring(4, (k) => g(56 + k * 18, 152 + (k % 2) * 6, 1, E(0, 0, 18, 26, '#C08D79', 3) + Lc('M-12-12l20 10M-14 2l22 10', '#6D4C41', 3), -20)) + P('M108 130c10-6 20 0 22 10l-8 12z', '#81C784', 2.5)
       + C(172, 136, 26, '#FFFFFF') + ring(10, (k) => E(156 + (k % 4) * 10, 128 + Math.floor(k / 4) * 9, 4, 2.5, '#F5DEB3', 1.5))
       + C(178, 186, 20, '#B71C1C') + C(178, 186, 15, '#FFE0B2', 0) + ring(4, (k) => C(170 + k * 5, 184 - (k % 2) * 4, 2.4, '#7CB342', 0))
       + Lc('M40 70q10-12 0-24M64 72q10-12 0-24', '#B0BEC5', 4) + face(84, 186, 0.34)),
-  L('jp/tohoku/landmark-zunda.v1.svg', 'ซุนดะโมจิ โมจิราดถั่วแระบดสีเขียว', 'Zunda mochi with sweet green edamame paste', ['zunda mochi', 'ซุนดะโมจิ', 'zunda', 'ซุนดะ', 'edamame paste', 'ถั่วแระบด', 'green bean paste', 'ถั่วเขียวบด', 'sendai sweets', 'ขนมเซนได'], 'หาฝักถั่วแระสีเขียวที่วางข้างจาน', 'Find the green edamame pods beside the plate',
+  L('jp/sendai/landmark-zunda.v1.svg', 'ซุนดะโมจิ โมจิราดถั่วแระบดสีเขียว', 'Zunda mochi with sweet green edamame paste', ['zunda mochi', 'ซุนดะโมจิ', 'zunda', 'ซุนดะ', 'edamame paste', 'ถั่วแระบด', 'green bean paste', 'ถั่วเขียวบด', 'sendai sweets', 'ขนมเซนได'], 'หาฝักถั่วแระสีเขียวที่วางข้างจาน', 'Find the green edamame pods beside the plate',
     // a small round plate with soft white rice cakes smothered in bright green mashed edamame paste with whole beans showing, edamame pods and a wooden pick beside it
     E(110, 160, 96, 34, '#FFF8E1') + E(110, 154, 80, 26, '#FFFFFF', 3)
       + [[80, 140], [130, 136], [104, 122]].map(([x, y]) => E(x, y, 30, 18, '#FFFFFF') + P(`M${x - 30} ${y}c4-22 56-22 60 0-6 10-54 10-60 0z`, '#9CCC65') + ring(3, (k) => E(x - 12 + k * 12, y - 6 + (k % 2) * 4, 4, 3, '#7CB342', 1.5))).join('')

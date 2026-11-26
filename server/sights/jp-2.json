@@ -565,6 +565,523 @@
           "ok": "2026-11"
         }
       ]
+    },
+    {
+      "place": "jp-fuji",
+      "thin": true,
+      "sights": [
+        {
+          "local": "トーマスランド",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "บัตรเล่นไม่อั้นโธมัสแลนด์เริ่ม 3,000 เยน",
+            "en": "Thomas Land free pass from ¥3,000"
+          },
+          "book": "none",
+          "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+          "name": {
+            "th": "โธมัสแลนด์ ฟูจิคิวไฮแลนด์",
+            "en": "Thomas Land, Fuji-Q Highland"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ฟูจิคิวไฮแลนด์ ฟูจิโยชิดะ",
+            "en": "Fuji-Q Highland, Fujiyoshida"
+          },
+          "what": {
+            "th": "โซนรถไฟโธมัสในฟูจิคิวไฮแลนด์ ทำมาสำหรับเด็กเล็ก",
+            "en": "A Thomas the Tank Engine area inside Fuji-Q Highland, made for young children"
+          },
+          "why": {
+            "th": "ครอบครัวที่มีเด็กเล็กชอบมาก",
+            "en": "Very popular with families with small children"
+          },
+          "q": "Thomas Land, Fuji-Q Highland, Fujiyoshida",
+          "ok": "2026-11"
+        },
+        {
+          "local": "富士急ハイランド",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เข้าฟรี บัตรเล่นไม่อั้นเริ่ม 6,000 เยน",
+            "en": "Free entry; free pass from ¥6,000"
+          },
+          "book": "rec",
+          "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+          "name": {
+            "th": "ฟูจิคิวไฮแลนด์",
+            "en": "Fuji-Q Highland"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ชินนิชิฮาระ ฟูจิโยชิดะ",
+            "en": "Shin-Nishihara, Fujiyoshida"
+          },
+          "what": {
+            "th": "สวนสนุกที่มีรถไฟเหาะและเครื่องเล่นหวาดเสียว มีโธมัสแลนด์อยู่ข้างใน",
+            "en": "An amusement park of roller coasters and thrill rides, with Thomas Land inside"
+          },
+          "why": {
+            "th": "เด็กโตเล่นเครื่องเล่นใหญ่ เด็กเล็กเล่นโธมัสแลนด์",
+            "en": "Older children get the big rides; the little ones have Thomas Land"
+          },
+          "tip": {
+            "th": "เวลาเปิดต่างกันแต่ละวัน เช็กที่เว็บไซต์",
+            "en": "Hours vary by day; check the website"
+          },
+          "q": "Fuji-Q Highland, 5-6-1 Shinnishihara, Fujiyoshida",
+          "ok": "2026-11"
+        },
+        {
+          "local": "富士すばるランド",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+          "name": {
+            "th": "ฟูจิสุบารุแลนด์",
+            "en": "Fuji Subaru Land"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นารุซาวะ ใกล้ทะเลสาบคาวากุจิ",
+            "en": "Narusawa, by Lake Kawaguchi"
+          },
+          "what": {
+            "th": "สวนในป่าที่เชิงภูเขาไฟฟูจิ มีบ้านต้นไม้ ชิงช้าเชือก และรถไฟไอน้ำจิ๋ว",
+            "en": "A forest park at the foot of Mt Fuji with tree houses, rope swings and a mini steam train"
+          },
+          "why": {
+            "th": "เด็กๆ ชอบรถไฟไอน้ำจิ๋วที่วิ่งผ่านป่า",
+            "en": "Children love the mini steam train through the forest"
+          },
+          "tip": {
+            "th": "เครื่องปีนป่ายมีจำกัดอายุ เหมาะกับเด็ก 4 ขวบขึ้นไป",
+            "en": "The climbing courses have age limits; best from age 4"
+          },
+          "q": "Fuji Subaruland, Narusawa, Yamanashi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大石公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/21605/",
+          "name": {
+            "th": "สวนโออิชิ",
+            "en": "Oishi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โออิชิ ริมทะเลสาบคาวากุจิฝั่งเหนือ",
+            "en": "Oishi, Lake Kawaguchi north shore"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบที่มีดอกไม้ตามฤดู และภูเขาไฟฟูจิเป็นฉากหลัง",
+            "en": "A lakeside park of seasonal flowers with Mt Fuji behind them"
+          },
+          "why": {
+            "th": "มีที่ให้วิ่งเล่นริมทะเลสาบพร้อมวิวภูเขาไฟฟูจิ",
+            "en": "Room to run along the lake with a view of Mt Fuji"
+          },
+          "q": "Oishi Park, Fujikawaguchiko",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鳴沢氷穴",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/21605/",
+          "name": {
+            "th": "ถ้ำน้ำแข็งนารุซาวะ",
+            "en": "Narusawa Ice Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านนารุซาวะ",
+            "en": "Narusawa village"
+          },
+          "what": {
+            "th": "ถ้ำลาวาธรรมชาติที่มีน้ำแข็งตลอดปี",
+            "en": "A natural lava cave that stays icy all year"
+          },
+          "why": {
+            "th": "ถ้ำจริงให้เด็กได้สำรวจ เย็นแม้ในหน้าร้อน",
+            "en": "A real cave to explore, cold even in summer"
+          },
+          "tip": {
+            "th": "ทางเดินแคบและเตี้ย เข็นรถเข็นเด็กไม่ได้",
+            "en": "Narrow, low passages; no prams"
+          },
+          "q": "Narusawa Ice Cave, Narusawa, Yamanashi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "山梨県立リニア見学センター",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gltjp.com/en/article/item/21605/",
+          "name": {
+            "th": "ศูนย์จัดแสดงรถไฟแม่เหล็กยามานาชิ",
+            "en": "Yamanashi Maglev Exhibition Center"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โอกาตายามะ สึรุ (ราว 30 นาทีจากทะเลสาบ)",
+            "en": "Ogatayama, Tsuru (about 30 minutes from the lakes)"
+          },
+          "what": {
+            "th": "ศูนย์ที่มีตู้รถไฟแม่เหล็กของจริงและรถไฟแม่เหล็กจิ๋วให้ลองนั่ง",
+            "en": "A centre with a real maglev train car and a small maglev to ride"
+          },
+          "why": {
+            "th": "ได้ลองนั่งรถลอยด้วยแม่เหล็ก สนุกทั้งพ่อแม่และลูก",
+            "en": "A hands-on magnetic levitation ride that parents and children both enjoy"
+          },
+          "tip": {
+            "th": "วันที่มีการทดสอบ ดูรถไฟวิ่งได้จากทุกชั้น",
+            "en": "On test days the maglev can be watched running from every floor"
+          },
+          "q": "Yamanashi Prefectural Maglev Exhibition Center, Tsuru",
+          "ok": "2026-11"
+        },
+        {
+          "local": "富士山パノラマロープウェイ",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+          "name": {
+            "th": "กระเช้าพาโนรามิกฟูจิ",
+            "en": "Mt Fuji Panoramic Ropeway"
+          },
+          "kind": "views",
+          "area": {
+            "th": "อาซากาวะ ทะเลสาบคาวากุจิ",
+            "en": "Azagawa, Lake Kawaguchi"
+          },
+          "what": {
+            "th": "กระเช้าจาก 856 เมตรขึ้นยอดเขาเท็นโจ 1,075 เมตร มองเห็นภูเขาไฟฟูจิ",
+            "en": "A ropeway from 856 m up Mt Tenjo to 1,075 m, with a view of Mt Fuji"
+          },
+          "why": {
+            "th": "เขาเท็นโจเป็นฉากของนิทานพื้นบ้านเรื่องกระต่ายกับทานูกิ",
+            "en": "Mt Tenjo is the setting of the folk tale of the rabbit and the raccoon dog"
+          },
+          "q": "Mt. Fuji Panoramic Ropeway, 1163-1 Azagawa, Fujikawaguchiko",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "jp-matsuyama",
+      "thin": true,
+      "sights": [
+        {
+          "local": "えひめこどもの城",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เข้าฟรี เครื่องเล่นจ่ายเพิ่ม",
+            "en": "Free entry; rides extra"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6290/",
+          "name": {
+            "th": "ปราสาทเด็กเอฮิเมะ",
+            "en": "Ehime Children’s Castle"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นิชิโนมาจิ มัตสึยามะ",
+            "en": "Nishino-machi, Matsuyama"
+          },
+          "what": {
+            "th": "สวนเด็ก 35 เฮกตาร์ มีเครื่องเล่น ยิมในร่มขนาดใหญ่ และเวิร์กช็อปงานประดิษฐ์",
+            "en": "A 35-hectare children’s park with rides, a big indoor gym and craft workshops"
+          },
+          "why": {
+            "th": "ยิมในร่มให้เด็กวิ่งเล่นได้แม้ฝนตก",
+            "en": "The indoor gym keeps children running even on a rainy day"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ เข้าฟรี เครื่องเล่นจ่ายเพิ่ม",
+            "en": "Closed on Mondays; entry free, rides extra"
+          },
+          "q": "Ehime Children's Castle, Nishinomachi, Matsuyama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ 松山三越店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6290/",
+          "name": {
+            "th": "เดอะคิดส์ มัตสึยามะมิตสึโคชิ",
+            "en": "The Kids, Matsuyama Mitsukoshi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิตสึโคชิ ชั้น 6 อิจิบันโจ",
+            "en": "Mitsukoshi 6F, Ichibancho"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีเครื่องเล่นนุ่ม บ่อบอล และแทรมโพลีน",
+            "en": "An indoor play area with soft play, a ball pool and trampolines"
+          },
+          "why": {
+            "th": "สำหรับเด็ก 0–12 ปี เล่นได้ทุกสภาพอากาศ",
+            "en": "For children from 0 to 12, whatever the weather"
+          },
+          "q": "ザキッズ 松山三越店, 3-1-1 Ichibancho, Matsuyama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "トンデミ愛媛",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ทั้งวัน 2,200 เยน",
+            "en": "All day ¥2,200"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6290/",
+          "name": {
+            "th": "ทนเดมิ เอฮิเมะ (เอมิฟูลมาซากิ)",
+            "en": "Tondemi Ehime (Emifull Masaki)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างเอมิฟูลมาซากิ มาซากิ (ราว 20 นาที)",
+            "en": "Emifull Masaki mall, Masaki (about 20 minutes)"
+          },
+          "what": {
+            "th": "สวนกีฬาในร่ม มีแทรมโพลีนยักษ์ ผนังปีนป่าย และสะพานเชือก",
+            "en": "An indoor athletic park with a giant trampoline, a climbing wall and a rope walk"
+          },
+          "why": {
+            "th": "มีโซนเด็กสำหรับ 3 ขวบขึ้นไป แยกจากเครื่องเล่นใหญ่",
+            "en": "A kids’ area for ages 3 and up, apart from the big equipment"
+          },
+          "q": "Tondemiehime Emifuru MASAKI, Masaki, Ehime",
+          "ok": "2026-11"
+        },
+        {
+          "local": "愛媛県立とべ動物園",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 600 เยน เด็กนักเรียน 100 เยน เด็กก่อนวัยเรียนฟรี",
+            "en": "Adults ¥600, school children ¥100, preschoolers free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6290/",
+          "name": {
+            "th": "สวนสัตว์โทเบะ",
+            "en": "Tobe Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "โทเบะ (ราว 25 นาที)",
+            "en": "Tobe (about 25 minutes)"
+          },
+          "what": {
+            "th": "สวนสัตว์ขนาดใหญ่ ขึ้นชื่อเรื่องหมีขั้วโลก กรงแบบเปิด",
+            "en": "A large zoo known for its polar bear, with open enclosures"
+          },
+          "why": {
+            "th": "ไม่มีลูกกรง เห็นสัตว์ได้ใกล้ๆ",
+            "en": "No bars, so the animals are seen close up"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Tobe Zoological Park, 240 Kamiharamachi, Tobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "えひめ森林公園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6290/",
+          "name": {
+            "th": "สวนป่าเอฮิเมะ",
+            "en": "Ehime Forest Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คามิมิทานิ อิโยะ (ราว 30 นาที)",
+            "en": "Kamimitani, Iyo (about 30 minutes)"
+          },
+          "what": {
+            "th": "สวนบนเนินมองเห็นทะเล มีเครื่องปีนป่าย 25 แบบและชิงช้าใหญ่",
+            "en": "A hill park above the sea with 25 kinds of climbing equipment and a big swing"
+          },
+          "why": {
+            "th": "มีเครื่องปีนป่ายเยอะ เข้าฟรี",
+            "en": "Lots of climbing to do, free"
+          },
+          "q": "Ehime Forest Park, Kamimitani, Iyo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "東温市総合公園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6290/",
+          "name": {
+            "th": "สวนเมืองโทอง (ป่าฮาโลวีน)",
+            "en": "Toon City Park (Halloween Forest)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นิชิโนโอกะ โทอง (ราว 30 นาที)",
+            "en": "Nishinooka, Toon (about 30 minutes)"
+          },
+          "what": {
+            "th": "สวนบนเนินที่มีเครื่องเล่นรูปฟักทองและผี และสไลเดอร์ลูกกลิ้งยาว",
+            "en": "A hillside park of pumpkin and ghost play equipment with a long roller slide"
+          },
+          "why": {
+            "th": "เครื่องเล่นใหญ่สีสันสดใสและสไลเดอร์ยาว",
+            "en": "Big colourful play equipment and a long slide"
+          },
+          "q": "Toonshi Park, 1284-1 Nishinooka, Toon",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }

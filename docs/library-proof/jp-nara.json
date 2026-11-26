@@ -1,0 +1,111 @@
+{
+  "town": "jp-nara",
+  "kind": "moved + added",
+  "checked": "2026-11-25",
+  "rule": "Places to eat: Mapple's undated 2026 Nara family-dining page, each shop open on Google Maps with a review from the last six months. Things to do: asoview's dated pages (note/5493, 2025-10; note/6199, 2025-12), each open on Google Maps with a recent review.",
+  "from": "jp-kyoto",
+  "moved": [
+    "Horiuchi Kajitsuen (place to eat)",
+    "Mount Wakakusa",
+    "Nanen-do (Kofuku-ji)",
+    "Nara Park"
+  ],
+  "added": [
+    {
+      "name": "Kamameshi Shizuka",
+      "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps 'Kamameshi Shizuka Kouen-ten', newest review a day ago"
+    },
+    {
+      "name": "Ashibi no Sato",
+      "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps 'Ashibinosato' (29 Wakidocho), newest review 2 days ago"
+    },
+    {
+      "name": "Naramachi Tofu-an Kondo",
+      "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps 'Kondou Tofu' (44 Nishinoshinyacho), newest review a week ago"
+    },
+    {
+      "name": "RAhOTSU",
+      "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps 'RAhOTSU' (1073-2 Takabatakecho), newest review 4 weeks ago"
+    },
+    {
+      "name": "Wazen Tamayura",
+      "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps '倭膳たまゆら' (4-25 Shichijo Higashimachi), newest review a week ago"
+    },
+    {
+      "name": "TEN.TEN.CAFE",
+      "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps 'Ten. Ten. Cafe' (16 Kasuganocho), newest review 20 hours ago"
+    },
+    {
+      "name": "Kuki Cake.",
+      "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps 'Kuki Cake.' (Takabatakecho), newest review a day ago"
+    },
+    {
+      "name": "Nara Ikimono Museum",
+      "src": "https://www.asoview.com/note/6199",
+      "date": "2025-12",
+      "map": "Google Maps 'Nara Ikimono Museum', newest review 5 days ago"
+    },
+    {
+      "name": "NARA KINGYO MUSEUM",
+      "src": "https://www.asoview.com/note/5493/",
+      "date": "2025-10",
+      "map": "Google Maps 'NARA KINGYO MUSEUM', newest review 6 hours ago"
+    },
+    {
+      "name": "Ninja Park Nara",
+      "src": "https://www.asoview.com/note/5493/",
+      "date": "2025-10",
+      "map": "Google Maps 'ニンジャ☆パーク奈良店', newest review a month ago"
+    },
+    {
+      "name": "Naramachi Karakuri Toy Museum",
+      "src": "https://www.asoview.com/note/5493/",
+      "date": "2025-10",
+      "map": "Google Maps 'Naramachi Karakuri Toy Museum', newest review 2 days ago"
+    },
+    {
+      "name": "Naramachi Dung Beetle Museum",
+      "src": "https://www.asoview.com/note/5493/",
+      "date": "2025-10",
+      "map": "Google Maps 'Naramachi Entomological museum of Dung beetles', newest review 22 hours ago"
+    },
+    {
+      "name": "Kids Land US Nara Gakuenmae",
+      "src": "https://www.asoview.com/note/5493/",
+      "date": "2025-10",
+      "map": "Google Maps 'キッズランドUS 奈良学園前店', newest review 4 weeks ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Izasa Nakatani-hompo Yumekaze-hiroba",
+      "why": "review dates not readable on the map"
+    },
+    {
+      "name": "Edogawa Naramachi",
+      "why": "the map showed a bar at that address"
+    },
+    {
+      "name": "Shokubo Takeda",
+      "why": "newest review a year old"
+    },
+    {
+      "name": "Kikusui, Nara Hotel Hanagiku",
+      "why": "formal kaiseki dining"
+    }
+  ]
+}

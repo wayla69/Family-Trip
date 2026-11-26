@@ -822,3 +822,51 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +1 (Buffalo Wings & Rings, Aqaba). Proof in `docs/library-proof/jo-petra.json`.
 
 - **26 Nov 2026, Zhangjiajie**: +3 from Amap place pages. Proof in `docs/library-proof/cn-zhangjiajie.json`.
+
+- **25 Nov 2026, Wellington (new town)**: 12, each checked on Google Maps. Proof in `docs/library-proof/nz-wellington.json`.
+
+- **25 Nov 2026, Incheon (new town)**: 11 (8 restaurants with playrooms or kids’ menus, 3 cafés), each checked on Google Maps. Proof in `docs/library-proof/kr-incheon.json`.
+
+- **25 Nov 2026, Fuji Five Lakes (new town)**: 8, each checked on Google Maps; two (Shirasu Udon, Sengen Chaya) from Mapple’s undated 2026 family-dining page, which the owner allowed. Proof in `docs/library-proof/jp-fuji.json`.
+
+- **25 Nov 2026, Beppu (new town)**: 9, each checked on Google Maps; four from Mapple’s undated 2026 family-dining page, which the owner allowed. Proof in `docs/library-proof/jp-beppu.json`.
+
+- **25 Nov 2026, Kagoshima (new town)**: 9, each checked on Google Maps; seven from undated Tabelog and Mapple guides, which the owner allowed. Proof in `docs/library-proof/jp-kagoshima.json`.
+
+- **25 Nov 2026, Takamatsu (new town)**: 8, each checked on Google Maps; five from Mapple’s undated 2026 family-dining page, which the owner allowed. Proof in `docs/library-proof/jp-takamatsu.json`.
+
+- **25 Nov 2026, Matsuyama (new town)**: 8, each checked on Google Maps; all from undated HotPepper and Mapple pages, which the owner allowed. Proof in `docs/library-proof/jp-matsuyama.json`.
+
+- **25 Nov 2026, Sendai (new place)**: the 12 Sendai and Matsushima rows of `jp-tohoku` moved to `jp-sendai` unchanged; Tohoku keeps 9.
+
+- **25 Nov 2026, Nagoya (new place)**: the 11 Nagoya rows of `jp-takayama` moved to `jp-nagoya` unchanged; Takayama keeps 21 and gains Cha-no-me (sweets, from Mapple’s undated family page, checked on Google Maps) so it still has two cafés or sweets shops.
+
+- **25 Nov 2026, Kobe (new place)**: the 6 Kobe rows of `jp-hiroshima` moved to `jp-kobe` unchanged, and three added from Mapple’s undated family page (Hong Kong Charo, Kohoseki, Morozoff), each checked on Google Maps; Hiroshima keeps 18.
+
+- **25 Nov 2026, Nara (new place)**: Horiuchi Kajitsuen moved from `jp-kyoto` to `jp-nara`, and seven added from Mapple’s undated family page (Kamameshi Shizuka, Ashibi no Sato, Tofu-an Kondo, RAhOTSU, Wazen Tamayura, TEN.TEN.CAFE, Kuki Cake.), each checked on Google Maps.
+
+- **25 Nov 2026, Christchurch (new town)**: 8, from ChristchurchNZ's family dining guide (undated; owner's rule for undated food guides), each checked on Google Maps. Proof in `docs/library-proof/nz-christchurch.json`.
+
+- **25 Nov 2026, Hangzhou (new town)**: 8, from Dianping shop pages (owner's China rule ข), each checked on Amap. Proof in `docs/library-proof/cn-hangzhou.json`.
+
+- **26 Nov 2026, Hangzhou**: +4 from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-hangzhou.json`.
+
+- **25 Nov 2026, Shenzhen (new town)**: 11, from Amap place pages (owner: Amap as the source and the status check), each with a children's tag or review. Proof in `docs/library-proof/cn-shenzhen.json`.
+
+- **26 Nov 2026, Shenzhen**: +5 from Amap place pages (three Hong Kong cafes, Green Tea, Dian Dou De). Proof in `docs/library-proof/cn-shenzhen.json`.
+
+- **25 Nov 2026, Chongqing**: +7, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-chongqing.json`.
+
+- **25 Nov 2026, Harbin**: +8, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-harbin.json`.
+
+- **25 Nov 2026, Guilin**: +6, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-guilin.json`.
+
+- **26 Nov 2026, Beijing**: +11, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-beijing.json`.
+
+- **26 Nov 2026, Shanghai**: +11, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-shanghai.json`.
+
+- **26 Nov 2026, Guangzhou (new town)**: 13, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-guangzhou.json`.
+
+- **26 Nov 2026, Chengdu**: +5 from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-chengdu.json`.
+
+- **26 Nov 2026, Xi'an**: +5 from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-xian.json`.

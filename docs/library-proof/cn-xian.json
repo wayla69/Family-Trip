@@ -223,6 +223,105 @@
           }
         ]
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Xi'an; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Spacelab Zero-Gravity Restaurant (Livat)",
+          "page_name": "SPACELAB失重餐厅(西安荟聚店)",
+          "src": "https://www.amap.com/search?query=SPACELAB%E5%A4%B1%E9%87%8D%E9%A4%90%E5%8E%85(%E8%A5%BF%E5%AE%89%E8%8D%9F%E8%81%9A%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "家庭聚餐 · 儿童友好 · 孩子好喜欢"
+        },
+        {
+          "name": "Green Tea Restaurant (Joy City, Big Wild Goose Pagoda)",
+          "page_name": "绿茶餐厅(西安大悦城店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E8%A5%BF%E5%AE%89%E5%A4%A7%E6%82%A6%E5%9F%8E%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "有宝宝椅 · 铁板豆腐，得到孩子的喜爱"
+        },
+        {
+          "name": "Jia'er Mengdou Children's Restaurant (Qujiang)",
+          "page_name": "佳儿萌豆儿童辅食餐厅(龙湖曲江天街店)",
+          "src": "https://www.amap.com/search?query=%E4%BD%B3%E5%84%BF%E8%90%8C%E8%B1%86%E5%84%BF%E7%AB%A5%E8%BE%85%E9%A3%9F%E9%A4%90%E5%8E%85(%E9%BE%99%E6%B9%96%E6%9B%B2%E6%B1%9F%E5%A4%A9%E8%A1%97%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "宝宝放心餐 · 儿童友好"
+        },
+        {
+          "name": "Delhi Darbar Indian Restaurant (Qujiang)",
+          "page_name": "DELHIDARBAR新德里印度餐厅",
+          "src": "https://www.amap.com/search?query=DELHIDARBAR%E6%96%B0%E5%BE%B7%E9%87%8C%E5%8D%B0%E5%BA%A6%E9%A4%90%E5%8E%85&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Three Monkeys Cafe (Fengyukou)",
+          "page_name": "三只猴子茶餐厅",
+          "src": "https://www.amap.com/search?query=%E4%B8%89%E5%8F%AA%E7%8C%B4%E5%AD%90%E8%8C%B6%E9%A4%90%E5%8E%85&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-26",
+          "map": "Amap: open, not marked closed, newest review 2026-10-26",
+          "quote": "家庭聚会 · 亲子友好 · 茶餐厅旁边就可以下河道玩水 约会 遛娃 闺蜜小聚都好适合"
+        },
+        {
+          "name": "City Wall West Garden Playground",
+          "page_name": "环城西苑儿童乐园",
+          "src": "https://www.amap.com/search?query=%E7%8E%AF%E5%9F%8E%E8%A5%BF%E8%8B%91%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "环城西苑儿童乐园是城墙下超棒的免费遛娃地，设施丰富齐全"
+        },
+        {
+          "name": "Neobio Play Park (Intime)",
+          "page_name": "奈尔宝·儿童乐园·亲子餐厅(西安银泰店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E8%A5%BF%E5%AE%89%E9%93%B6%E6%B3%B0%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-29",
+          "map": "Amap: open, not marked closed, newest review 2026-10-29",
+          "quote": "儿童乐园 · 亲子DIY · 绘本阅读 · 全软包防护"
+        },
+        {
+          "name": "Luban Fantasy Park (Tang West Market)",
+          "page_name": "鲁班奇幻乐园西市店",
+          "src": "https://www.amap.com/search?query=%E9%B2%81%E7%8F%AD%E5%A5%87%E5%B9%BB%E4%B9%90%E5%9B%AD%E8%A5%BF%E5%B8%82%E5%BA%97&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-03",
+          "map": "Amap: open, not marked closed, newest review 2026-09-03",
+          "quote": "儿童运动探险 · 陪朋友遛娃，不曾想把自己遛Hai了"
+        },
+        {
+          "name": "Octonauts Adventure Park",
+          "page_name": "海底小纵队探险乐园",
+          "src": "https://www.amap.com/search?query=%E6%B5%B7%E5%BA%95%E5%B0%8F%E7%BA%B5%E9%98%9F%E6%8E%A2%E9%99%A9%E4%B9%90%E5%9B%AD&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-27",
+          "map": "Amap: open, not marked closed, newest review 2026-10-27",
+          "quote": "儿童乐园 · 亲子乐园的项目很精彩，孩子玩到最后都不肯走"
+        },
+        {
+          "name": "Tandong Gongchang Cave Play Park (Minle Yuan)",
+          "page_name": "探洞工场(西安旗舰店)",
+          "src": "https://www.amap.com/search?query=%E6%8E%A2%E6%B4%9E%E5%B7%A5%E5%9C%BA(%E8%A5%BF%E5%AE%89%E6%97%97%E8%88%B0%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-24",
+          "map": "Amap: open, not marked closed, newest review 2026-10-24",
+          "quote": "儿童乐园 · 亲子DIY · 儿童探险"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "可爱的你秦岭四宝亲子餐厅",
+          "why": "four reviews, nothing about children"
+        },
+        {
+          "name": "绿茶餐厅 (益田假日里)",
+          "why": "a second Green Tea; kept the one by the Big Wild Goose Pagoda"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
