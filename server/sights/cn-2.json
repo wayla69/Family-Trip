@@ -399,7 +399,377 @@
       {"name":{"en":"Jingxi Intangible Heritage Park","th":"ศูนย์มรดกวัฒนธรรมไม่มีตัวตนจิงซี"},"kind":"culture","area":{"en":"Shangzhuang Town, Haidian District","th":"ตำบลซ่างจวง เขตไห่เตี้ยน"},"what":{"en":"A heritage park in Haidian where a shadow-puppet performer tells a story with delicately made puppets.","th":"สวนมรดกในไห่เตี้ยน ที่นักแสดงหนังเงาเล่าเรื่องด้วยหุ่นที่ทำอย่างประณีต"},"why":{"en":"A story told with shadow puppets, a traditional art that young children can watch up close.","th":"เรื่องเล่าด้วยหนังเงา ศิลปะดั้งเดิมที่เด็กเล็กดูได้ใกล้ๆ"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jingxi Intangible Heritage Park, Shangzhuang Town, Haidian District, Beijing","ok":"2026-11","src":"https://www.chinaxiantour.com/beijing-travel-guide/things-to-do-in-beijing-with-kids"},
       {"name":{"en":"Children's Palace","th":"วังเด็ก"},"kind":"culture","area":{"en":"Haidian district","th":"เขตไห่เตี้ยน"},"what":{"en":"A children's palace in Haidian with craft workshops and puppet shows.","th":"วังเด็กในไห่เตี้ยนที่มีเวิร์กช็อปงานฝีมือและโชว์หุ่นกระบอก"},"why":{"en":"Craft workshops and puppet shows for children.","th":"เวิร์กช็อปงานฝีมือและโชว์หุ่นกระบอกสำหรับเด็ก"},"ages":[0,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Children's Palace, Haidian District, Beijing","ok":"2026-11","src":"https://www.china-trip.org/best-family-friendly-attractions-in-beijing-fun-for-all-ages/"},
       {"name":{"en":"Nanluoguxiang","th":"หนานลั่วกู่เซียง"},"kind":"oldtown","area":{"en":"Dongcheng District","th":"เขตตงเฉิง"},"what":{"en":"A 787-metre historic hutong with side alleys, cafés, street food and small creative shops.","th":"ตรอกประวัติศาสตร์ยาว 787 เมตร มีซอยข้าง คาเฟ่ อาหารข้างทาง และร้านของเล็กๆ ที่สร้างสรรค์"},"why":{"en":"Street food and cafés along old lanes that mix history and modern life.","th":"อาหารข้างทางและคาเฟ่ตามตรอกเก่าที่ผสมประวัติศาสตร์กับชีวิตสมัยใหม่"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nanluoguxiang, Dongcheng District, Beijing","ok":"2026-11","src":"https://foyochinatrip.com/nanluoguxiang-hutong-beijing/"},
-      {"name":{"en":"Water Cube","th":"วอเตอร์คิวบ์"},"kind":"views","area":{"en":"Olympic Park, No. 11 East Tianchen Road, Chaoyang District","th":"สวนโอลิมปิก เลขที่ 11 ถนนเทียนเฉินตะวันออก เขตเฉาหยาง"},"what":{"en":"The blue, bubble-walled Olympic landmark, a striking building to see from outside.","th":"สถานที่สำคัญโอลิมปิกผนังฟองสีน้ำเงิน น่าดูจากภายนอก"},"why":{"en":"Its bubble-patterned walls look like water from afar, and it is a great place for night photos.","th":"ผนังลายฟองดูเหมือนน้ำจากระยะไกล และเป็นที่ถ่ายรูปกลางคืนที่ดี"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Water Cube, Olympic Park, Chaoyang District, Beijing","ok":"2026-11","src":"https://www.chinaxiantour.com/water-cube.html"}
+      {"name":{"en":"Water Cube","th":"วอเตอร์คิวบ์"},"kind":"views","area":{"en":"Olympic Park, No. 11 East Tianchen Road, Chaoyang District","th":"สวนโอลิมปิก เลขที่ 11 ถนนเทียนเฉินตะวันออก เขตเฉาหยาง"},"what":{"en":"The blue, bubble-walled Olympic landmark, a striking building to see from outside.","th":"สถานที่สำคัญโอลิมปิกผนังฟองสีน้ำเงิน น่าดูจากภายนอก"},"why":{"en":"Its bubble-patterned walls look like water from afar, and it is a great place for night photos.","th":"ผนังลายฟองดูเหมือนน้ำจากระยะไกล และเป็นที่ถ่ายรูปกลางคืนที่ดี"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Water Cube, Olympic Park, Chaoyang District, Beijing","ok":"2026-11","src":"https://www.chinaxiantour.com/water-cube.html"},
+        {
+          "local": "阿派朗创造力星球 朝阳公园店",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%98%BF%E6%B4%BE%E6%9C%97%E5%88%9B%E9%80%A0%E5%8A%9B%E6%98%9F%E7%90%83(%E6%9C%9D%E9%98%B3%E5%85%AC%E5%9B%AD%E5%BA%97)&city=110000",
+          "name": {
+            "th": "อาไพ่หล่าง ครีเอทิวิตี้แพลเน็ต สวนเฉาหยาง",
+            "en": "Apailang Creativity Planet (Chaoyang Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนเฉาหยาง ด้านใต้",
+            "en": "Chaoyang Park, south side"
+          },
+          "what": {
+            "th": "สวนเล่นใหญ่ มีโซนเล่นน้ำ แทรมโพลีน และผจญภัยกลางแจ้ง",
+            "en": "A big play park with water play, trampolines and outdoor adventure"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าโซนเล่นน้ำสัตว์ทะเลยักษ์เป็นที่ชอบของเด็กๆ",
+            "en": "Reviewers say the sea-monster water area is a favourite with children"
+          },
+          "q": "阿派朗创造力星球 朝阳公园店, 朝阳公园南路1号, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "老牛儿童探索馆",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%80%81%E7%89%9B%E5%84%BF%E7%AB%A5%E6%8E%A2%E7%B4%A2%E9%A6%86&city=110000",
+          "name": {
+            "th": "พิพิธภัณฑ์สำรวจสำหรับเด็กเหลาหนิว",
+            "en": "Lao Niu Children's Discovery Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์เด็กแห่งชาติจีน ผิงอันหลี่ ซีเฉิง",
+            "en": "China National Children's Center, Ping'anli, Xicheng"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กแบบลงมือทำ มีบทบาทสมมติ เล่นน้ำ และหนังสือภาพ",
+            "en": "A hands-on children's museum with role play, water play and picture books"
+          },
+          "why": {
+            "th": "ทำมาเพื่อเด็กเล็ก มีโซนบุนุ่มสำหรับเด็กทารก",
+            "en": "Made for small children, with soft padded areas for babies"
+          },
+          "q": "老牛儿童探索馆, 平安里西大街43号, 西城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND CLUB 北京芳圆里ID MALL店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E5%8C%97%E4%BA%AC%E8%8A%B3%E5%9C%86%E9%87%8CID%20MALL%E5%BA%97)&city=110000",
+          "name": {
+            "th": "มีแลนด์คลับ ฟางหยวนหลี่ ไอดีมอลล์",
+            "en": "Meland Club (Fangyuanli ID Mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไอดีมอลล์ ชั้น 3 ถนนวงแหวนที่ 4 ตะวันออก เฉาหยาง",
+            "en": "ID Mall 3F, East Fourth Ring Road, Chaoyang"
+          },
+          "what": {
+            "th": "คลับเล่นในร่มขนาดใหญ่ มีโซนเล่นน้ำและห้องพักสำหรับพ่อแม่",
+            "en": "A large indoor play club with water play and a rest room for parents"
+          },
+          "why": {
+            "th": "มีพนักงานดูแลโซนเล่น และมีห้องแม่และเด็ก",
+            "en": "Staff watch the play areas, and there is a baby room"
+          },
+          "q": "MELAND CLUB 芳圆里ID MALL, 东四环中路189号, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 北京东坝万达店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E5%8C%97%E4%BA%AC%E4%B8%9C%E5%9D%9D%E4%B8%87%E8%BE%BE%E5%BA%97)&city=110000",
+          "name": {
+            "th": "นีโอไบโอ ตงป้าวั่นต๋า",
+            "en": "Neobio Play Park (Dongba Wanda)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วั่นต๋าพลาซ่า ชั้น 2 ตงป้า เฉาหยาง",
+            "en": "Wanda Plaza 2F, Dongba, Chaoyang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบทบาทสมมติ งานประดิษฐ์ และร้านอาหารครอบครัว",
+            "en": "An indoor play park with role play, crafts and a family restaurant"
+          },
+          "why": {
+            "th": "บุนุ่มทั้งหมด เหมาะกับเด็กวัยเตาะแตะ",
+            "en": "Fully padded, so it suits toddlers"
+          },
+          "q": "奈尔宝 北京东坝万达店, 东坝南二街, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "熙乐园 枫蓝国际购物中心",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%86%99%E4%B9%90%E5%9B%AD(%E6%9E%AB%E8%93%9D%E5%9B%BD%E9%99%85%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83)&city=110000",
+          "name": {
+            "th": "สวนเล่นซีเล่อหยวน เฟิงหลานอินเตอร์",
+            "en": "Xi Le Yuan Play Park (Fenglan International)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เฟิงหลานอินเตอร์ ชั้น 3 ซีจื๋อเหมิน ไห่เตี้ยน",
+            "en": "Fenglan International 3F, Xizhimen, Haidian"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มในห้างใกล้ซีจื๋อเหมิน",
+            "en": "An indoor play park in a mall by Xizhimen"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กทารกและเด็กเล็ก ใกล้สวนสัตว์",
+            "en": "Marked for babies and small children, near the zoo"
+          },
+          "q": "熙乐园 枫蓝国际购物中心, 西直门北大街32号, 海淀区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "KOTM乐园 太阳宫凯德MALL店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=KOTM%E4%B9%90%E5%9B%AD(%E5%A4%AA%E9%98%B3%E5%AE%AB%E5%87%AF%E5%BE%B7MALL%E5%BA%97)&city=110000",
+          "name": {
+            "th": "สวนเล่น KOTM แคปปิตามอลล์ไท่หยางกง",
+            "en": "KOTM Play Park (CapitaMall Taiyanggong)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แคปปิตามอลล์ ชั้น 3 ไท่หยางกง เฉาหยาง",
+            "en": "CapitaMall 3F, Taiyanggong, Chaoyang"
+          },
+          "what": {
+            "th": "โซนเล่นในร่มขนาดเล็ก มีม้าหมุน ปราสาทเป่าลม และบ่อทราย",
+            "en": "A small indoor play area with a carousel, bouncy castle and sand pit"
+          },
+          "why": {
+            "th": "แวะเล่นในร่มสั้นๆ สำหรับเด็กเล็ก",
+            "en": "A short indoor stop for small children"
+          },
+          "q": "KOTM乐园 太阳宫凯德MALL, 太阳宫中路12号, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "青年湖公园 游乐场",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%9D%92%E5%B9%B4%E6%B9%96%E5%85%AC%E5%9B%AD-%E6%B8%B8%E4%B9%90%E5%9C%BA&city=110000",
+          "name": {
+            "th": "สวนสนุกสวนทะเลสาบชิงเหนียน",
+            "en": "Qingnian Lake Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนทะเลสาบชิงเหนียน อานติ้งเหมิน ตงเฉิง",
+            "en": "Qingnian Lake Park, Andingmen, Dongcheng"
+          },
+          "what": {
+            "th": "สวนสนุกเล็กๆ มีเครื่องเล่นเด็ก ในสวนสาธารณะของชุมชน",
+            "en": "A small fun fair with children's rides inside a neighbourhood park"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะพาเด็กมาเล่นวันหยุด",
+            "en": "Reviewers say it is a good holiday outing with children"
+          },
+          "q": "青年湖公园游乐场, 安德里北街, 东城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "工体翻斗乐儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B7%A5%E4%BD%93%E7%BF%BB%E6%96%97%E4%B9%90%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=110000",
+          "name": {
+            "th": "สวนเล่นฟันดาซเซิล กงถี่",
+            "en": "Gongti Fundazzle Play Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกงถี่ใต้ เฉาหยาง",
+            "en": "Gongti South Road, Chaoyang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อบอล ใกล้สนามกีฬากรรมกร",
+            "en": "An indoor play park with a ball pit near the Workers' Stadium"
+          },
+          "why": {
+            "th": "มีบ่อบอลและที่ปีนป่ายสำหรับเด็กเล็ก",
+            "en": "A ball pit and climbing for small children"
+          },
+          "q": "工体翻斗乐儿童乐园, 工人体育场南路14号, 朝阳区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "环游天地 北京店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%8E%AF%E6%B8%B8%E5%A4%A9%E5%9C%B0(%E5%8C%97%E4%BA%AC%E5%BA%97)&city=110000",
+          "name": {
+            "th": "โรงหนังบินหวนโหยวเทียนตี้ หลงฝูซื่อ",
+            "en": "Huanyou Tiandi Flying Theatre (Longfu Temple)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหลงฝูซื่อ ตงเฉิง",
+            "en": "Longfusi Street, Dongcheng"
+          },
+          "what": {
+            "th": "เครื่องเล่นโรงหนังบินและพื้นที่เล่น ในย่านหลงฝูซื่อ",
+            "en": "A flying-theatre ride and play space in the Longfusi area"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าลูกชอบมากจนมาซ้ำ",
+            "en": "Reviewers say their child loved it and went twice"
+          },
+          "q": "环游天地 北京店, 隆福寺街75号, 东城区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "和平菓局老北京风物馆 北京市百货大楼店",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%92%8C%E5%B9%B3%E8%8F%93%E5%B1%80%E8%80%81%E5%8C%97%E4%BA%AC%E9%A3%8E%E7%89%A9%E9%A6%86(%E5%8C%97%E4%BA%AC%E5%B8%82%E7%99%BE%E8%B4%A7%E5%A4%A7%E6%A5%BC%E5%BA%97)&city=110000",
+          "name": {
+            "th": "เหอผิงกั่วจวี๋ ถนนปักกิ่งเก่า หวังฝูจิ่ง",
+            "en": "Heping Guoju Old Beijing Street (Wangfujing)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ห้างเป่ยจิง ชั้น B2 หวังฝูจิ่ง ตงเฉิง",
+            "en": "Beijing Department Store B2, Wangfujing, Dongcheng"
+          },
+          "what": {
+            "th": "ถนนปักกิ่งยุคเก่าที่สร้างขึ้นใหม่ใต้ดิน มีขนมและร้านค้า",
+            "en": "An old Beijing street rebuilt underground, with snacks and shops"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าไม่เก็บค่าเข้านอกช่วงเทศกาล และเด็กๆ เดินดูได้สนุก",
+            "en": "Reviewers say it is free outside holidays and fun for children to look round"
+          },
+          "q": "和平菓局, 王府井大街253号北京市百货大楼B2, 东城区, 北京",
+          "ok": "2026-11"
+        }
     ]
     },
     {
