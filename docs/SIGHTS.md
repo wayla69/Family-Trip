@@ -118,6 +118,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **25 Nov 2026, Matsuyama (new town)**: 6, `thin` (Ehime Children’s Castle, The Kids at Mitsukoshi, Tondemi, Tobe Zoo, Ehime Forest Park, Toon’s Halloween park). Proof in `docs/library-proof/jp-matsuyama.json`.
 - **25 Nov 2026, Sendai (new place)**: the 12 Sendai and Matsushima rows of `jp-tohoku` moved to `jp-sendai` unchanged (`thin`); Tohoku keeps 24.
 - **25 Nov 2026, Nagoya (new place)**: the 13 Nagoya rows of `jp-takayama` (with Ghibli Park and LEGOLAND) moved to `jp-nagoya` unchanged (`thin`); Takayama keeps 12 and is now `thin` too.
+- **25 Nov 2026, Kobe (new place)**: the 10 Kobe and Himeji rows of `jp-hiroshima` moved to `jp-kobe` unchanged (`thin`); Hiroshima keeps 12 and is now `thin` too.
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
