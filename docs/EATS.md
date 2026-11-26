@@ -926,3 +926,4 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Tokyo** (round 4: Japan, Korea, New Zealand): +2 (Shumi no Mori, Shinjuku Kabuki Hall). Proof in `docs/library-proof/jp-tokyo.json`.
 - **25 Nov 2026, Osaka** (round 4: Japan, Korea, New Zealand): +2 (Babyleaf, MOULiN). Proof in `docs/library-proof/jp-osaka.json`.
 - **25 Nov 2026, Hiroshima** (round 4: Japan, Korea, New Zealand): +1 (Cafe Flowry, Hatsukaichi). Proof in `docs/library-proof/jp-hiroshima.json`.
+- **25 Nov 2026, Yokohama** (round 4: Japan, Korea, New Zealand): +7 in Minato Mirai (Hard Rock Cafe, Soup Stock Tokyo, American House, J.S. Pancake Cafe, RHC CAFE, Blue Bottle Coffee, Megumi Suisan). Proof in `docs/library-proof/jp-yokohama.json`.
