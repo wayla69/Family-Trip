@@ -854,3 +854,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Shenzhen**: +5 from Amap place pages (three Hong Kong cafes, Green Tea, Dian Dou De). Proof in `docs/library-proof/cn-shenzhen.json`.
 
 - **25 Nov 2026, Chongqing**: +7, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-chongqing.json`.
+
+- **25 Nov 2026, Harbin**: +8, from Amap place pages (owner: Amap as the source and the status check). Proof in `docs/library-proof/cn-harbin.json`.

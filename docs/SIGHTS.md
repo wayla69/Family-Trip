@@ -126,6 +126,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **26 Nov 2026, Shenzhen**: +5 play parks and playgrounds from Amap place pages; 15 now, no longer thin. Proof in `docs/library-proof/cn-shenzhen.json`.
 - **25 Nov 2026, Shenzhen (new town)**: 10, thin (Meland, Midou, K33 farm, Qingshuihe railway park, the safari park, Xiaomeisha Sea World, Yunhai Angel Bay, Melania Town, the children's discovery museum, Longgang Children's Park). Proof in `docs/library-proof/cn-shenzhen.json`.
 - **25 Nov 2026, Chongqing**: +9 from Amap place pages (play parks, the children's park, the ocean animal world, a flying theatre). Proof in `docs/library-proof/cn-chongqing.json`.
+- **25 Nov 2026, Harbin**: +8 from Amap place pages (the children's park and seven indoor play parks, warm when it is freezing outside). Proof in `docs/library-proof/cn-harbin.json`.
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
