@@ -767,6 +767,37 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Guangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Meland Club (Lefeng Plaza, Haizhu)",
+          "page_name": "meland club(乐峰广场)",
+          "src": "https://www.amap.com/search?query=meland%20club(%E4%B9%90%E5%B3%B0%E5%B9%BF%E5%9C%BA)&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "儿童乐园 · 地面做了软包防护，小朋友跑跳玩耍很安心"
+        },
+        {
+          "name": "Siji Menghuan Play Park (Chigang)",
+          "page_name": "四季梦幻亲子乐园",
+          "src": "https://www.amap.com/search?query=%E5%9B%9B%E5%AD%A3%E6%A2%A6%E5%B9%BB%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=440100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童乐园 · 室内亲子园 · 广州市中心的梦幻儿童乐园"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "卡洛卡, 奶龙星球, 小山坡乐园",
+          "why": "twenty-nine reviews or fewer, or none recent"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
