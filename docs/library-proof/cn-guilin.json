@@ -246,6 +246,37 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Guilin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Kitchen Story Riverside Restaurant (Jiefang Bridge)",
+          "page_name": "厨房故事江景餐厅(两江四湖解放桥店)",
+          "src": "https://www.amap.com/search?query=%E5%8E%A8%E6%88%BF%E6%95%85%E4%BA%8B%E6%B1%9F%E6%99%AF%E9%A4%90%E5%8E%85(%E4%B8%A4%E6%B1%9F%E5%9B%9B%E6%B9%96%E8%A7%A3%E6%94%BE%E6%A1%A5%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童餐 · 家庭聚餐 · 儿童套餐"
+        },
+        {
+          "name": "Liao Tutu Home Kitchen (MixC Guilin)",
+          "page_name": "廖土土下饭菜·小厨房(桂林万象城店)",
+          "src": "https://www.amap.com/search?query=%E5%BB%96%E5%9C%9F%E5%9C%9F%E4%B8%8B%E9%A5%AD%E8%8F%9C%C2%B7%E5%B0%8F%E5%8E%A8%E6%88%BF(%E6%A1%82%E6%9E%97%E4%B8%87%E8%B1%A1%E5%9F%8E%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "儿童餐 · 亲子友好 · 有提供小宝宝的用品"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "张美华茶餐厅",
+          "why": "a smoking area and five reviews"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
