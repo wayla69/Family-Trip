@@ -6084,6 +6084,121 @@
           },
           "q": "物外田园, 武陵源风景名胜区中门梓木岗, 武陵源区, 张家界",
           "ok": "2026-11"
+        },
+        {
+          "local": "七星山风景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E4%B8%83%E6%98%9F%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA&city=430800",
+          "name": {
+            "th": "เขาชีซิงซาน",
+            "en": "Qixing Mountain"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ประตูเหนือเขาชีซิงซาน หย่งติ้ง",
+            "en": "Qixing Mountain north gate, Yongding"
+          },
+          "what": {
+            "th": "ยอดผาหินทรายและจุดชมวิวเหนือเมฆ ขึ้นด้วยกระเช้า",
+            "en": "Sandstone peaks and cloud-top viewpoints, reached by a cable car"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กอายุต่ำกว่า 14 ปีเข้าฟรีรวมค่ารถ และเจ้าหน้าที่ดูแลครอบครัวดี",
+            "en": "Reviewers say children under 14 go free, transport included, and staff look after families well"
+          },
+          "q": "七星山景区北门, 永定区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杨家界风景区",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%9D%A8%E5%AE%B6%E7%95%8C%E9%A3%8E%E6%99%AF%E5%8C%BA&city=430800",
+          "name": {
+            "th": "เขตชมวิวหยางเจียเจี้ย",
+            "en": "Yangjiajie Scenic Area"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ฝั่งตะวันตกของเขตชมวิวอู่หลิงหยวน",
+            "en": "West side of Wulingyuan Scenic Area"
+          },
+          "what": {
+            "th": "ส่วนหนึ่งของอู่หลิงหยวน มีสันเขาคล้ายกำแพงเมืองจีนและทางเดินลอยฟ้า",
+            "en": "A part of Wulingyuan with a \"natural Great Wall\" ridge and a sky walkway"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว",
+            "en": "Tagged for families"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้พกร่มกันแดดให้เด็กบนทางเดินลอยฟ้า",
+            "en": "Reviewers say bring a sun umbrella for children on the walkway"
+          },
+          "q": "杨家界风景区, 武陵源风景名胜区, 武陵源区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "天子山风景区",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A9%E5%AD%90%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA&city=430800",
+          "name": {
+            "th": "เขตชมวิวเขาเทียนจื่อซาน",
+            "en": "Tianzi Mountain Scenic Area"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ฝั่งตะวันตกเฉียงเหนือของเขตชมวิวอู่หลิงหยวน",
+            "en": "Northwest of Wulingyuan Scenic Area"
+          },
+          "what": {
+            "th": "ป่าผาหินทราย มีจุดชมวิวเสาหินนับพัน",
+            "en": "Sandstone peak forests with viewpoints over a sea of pillars"
+          },
+          "why": {
+            "th": "ผู้รีวิวเล่าการพาลูกมาเที่ยว วิวทำให้เด็กตื่นตาตื่นใจ",
+            "en": "A reviewer shares a day there with a child; the views amaze children"
+          },
+          "q": "天子山风景区, 武陵源风景名胜区, 武陵源区, 张家界",
+          "ok": "2026-11"
         }
     ]
     },
