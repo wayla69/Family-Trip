@@ -710,6 +710,117 @@
           },
           "q": "哈尔滨文化公园, 南通大街208号, 南岗区, 哈尔滨",
           "ok": "2026-11"
+        },
+        {
+          "local": "星际乐园 哈尔滨王府井购物中心",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E9%99%85%E4%B9%90%E5%9B%AD(%E5%93%88%E5%B0%94%E6%BB%A8%E7%8E%8B%E5%BA%9C%E4%BA%95%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83)&city=230100",
+          "name": {
+            "th": "สตาร์พาร์ก ห้างหวังฝูจิ่ง ฉวินลี่",
+            "en": "Star Park (Wangfujing Mall, Qunli)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างหวังฝูจิ่ง ชั้น 1 ถนนฉวินลี่สาย 5 เต้าหลี่",
+            "en": "Wangfujing Mall 1F, Qunli 5th Avenue, Daoli"
+          },
+          "what": {
+            "th": "สวนเล่นผจญภัยในร่มธีมอวกาศ",
+            "en": "A space-themed indoor adventure play park"
+          },
+          "why": {
+            "th": "อยู่ในร่มหลบหนาวฮาร์บิน ผู้รีวิวบอกว่าเหมาะกับเด็กมาก",
+            "en": "Indoors in the Harbin cold; reviewers say it suits children well"
+          },
+          "q": "星际乐园 王府井购物中心, 群力第五大道, 道里区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND 哈尔滨万象汇店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND(%E5%93%88%E5%B0%94%E6%BB%A8%E4%B8%87%E8%B1%A1%E6%B1%87%E5%BA%97)&city=230100",
+          "name": {
+            "th": "มีแลนด์ มิกซ์ซี ซงเป่ย",
+            "en": "Meland (MixC Songbei)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิกซ์ซี ชั้น 2 ถนนซื่อเม่า ซงเป่ย",
+            "en": "MixC F2, Shimao Avenue, Songbei"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีผนังปีนป่าย ปราสาทเป่าลม หนังสือภาพ และงานประดิษฐ์",
+            "en": "An indoor play club with climbing walls, bouncy castles, picture books and crafts"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าการปีนป่ายช่วยฝึกการทรงตัวและความกล้าของเด็ก",
+            "en": "Reviewers say the climbing builds children's balance and courage"
+          },
+          "q": "MELAND 松北万象汇, 世茂大道555号, 松北区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "星河湾亲子游乐园 枫叶小镇奥莱店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E6%B2%B3%E6%B9%BE%E4%BA%B2%E5%AD%90%E6%B8%B8%E4%B9%90%E5%9B%AD(%E6%9E%AB%E5%8F%B6%E5%B0%8F%E9%95%87%E5%A5%A5%E8%8E%B1%E5%BA%97)&city=230100",
+          "name": {
+            "th": "สวนเล่นซิงเหอวาน เมเปิลลีฟเอาท์เล็ต",
+            "en": "Xinghewan Play Park (Maple Leaf Outlet)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจื้อกู่สาย 3 ซงเป่ย",
+            "en": "Zhigu 3rd Street, Songbei"
+          },
+          "what": {
+            "th": "สวนเล่นที่มีสไลเดอร์สายรุ้ง ม้าหมุน สัตว์เล็ก และรถเด็ก",
+            "en": "A play park with a rainbow slide, a carousel, small animals and children's cars"
+          },
+          "why": {
+            "th": "ผู้รีวิวพาเด็กมาเที่ยวทั้งวัน",
+            "en": "Reviewers spend a whole day here with children"
+          },
+          "q": "星河湾亲子游乐园 枫叶小镇奥莱, 智谷三街5555-1号, 松北区, 哈尔滨",
+          "ok": "2026-11"
         }
       ]
     }
