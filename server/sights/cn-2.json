@@ -1217,6 +1217,154 @@
           },
           "q": "MELAND CLUB 和谐银座, 万丰路68号院, 丰台区, 北京",
           "ok": "2026-11"
+        },
+        {
+          "local": "一工元运动空间 五棵松店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%80%E5%B7%A5%E5%85%83%E8%BF%90%E5%8A%A8%E7%A9%BA%E9%97%B4%C2%B7%E4%BA%94%E6%A3%B5%E6%9D%BE%E5%BA%97(%E5%A5%88%E5%B0%94%E5%AE%9D%E6%97%97%E4%B8%8B%C2%B7%E5%9B%A2%E5%BB%BA%E6%B4%BE%E5%AF%B9%C2%B7%E8%BF%90%E5%8A%A8%E6%8E%A2%E7%B4%A2)&city=110000",
+          "name": {
+            "th": "อี้กงหยวน สปอร์ตสเปซ อู่เคอซง",
+            "en": "Yigongyuan Sports Space (Wukesong)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อู่เคอซงวั่นต๋าพลาซ่า ชั้น 3 ถนนฟู่ซิง ไห่เตี้ยน",
+            "en": "Wukesong Wanda Plaza 3F, Fuxing Road, Haidian"
+          },
+          "what": {
+            "th": "ลานกีฬาในร่ม มีปีนป่าย บุนุ่มทั้งหมด",
+            "en": "An indoor sports play space with climbing, all soft-padded"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นสวนเล่นเด็ก ของเครือหน่ายเอ่อร์เป่า",
+            "en": "Tagged as a children's play park; by the Nale Bao group"
+          },
+          "q": "一工元运动空间 五棵松万达广场, 复兴路69号, 海淀区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "第五极儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%AC%AC%E4%BA%94%E6%9E%81%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=110000",
+          "name": {
+            "th": "สวนเล่นเด็กตี้อู่จี๋ อู่เคอซง",
+            "en": "Diwuji Children's Park (Wukesong)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "หัวซีไลฟ์ ศูนย์ลานน้ำแข็ง ชั้น 2 อู่เคอซง ไห่เตี้ยน",
+            "en": "Huaxi LIVE ice centre 2F, Wukesong, Haidian"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีเล่นหิมะในร่ม ม้าหมุน วีอาร์ และหนังสือภาพ",
+            "en": "An indoor play park with indoor snow play, a carousel, VR and picture books"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็กและเป็นสวนเล่นครอบครัวในร่ม",
+            "en": "Tagged for babies and as an indoor family park"
+          },
+          "q": "第五极儿童乐园 华熙LIVE冰上中心, 五棵松, 海淀区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "四季欢乐岛",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%9B%9B%E5%AD%A3%E6%AC%A2%E4%B9%90%E5%B2%9B&city=110000",
+          "name": {
+            "th": "เกาะสุขสันต์สี่ฤดู",
+            "en": "Four Seasons Happy Island"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจวี้ซาน ไห่เตี้ยน",
+            "en": "Jushan Road, Haidian"
+          },
+          "what": {
+            "th": "สวนเล่นที่มีแทรมโพลีน รถโกคาร์ตเด็ก สนามหญ้าปิกนิก และผจญภัยกลางแจ้ง",
+            "en": "A play park with trampolines, children's go-karts, a lawn for picnics and outdoor adventure"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นสวนเล่นเด็ก มีรถแข่งเด็ก",
+            "en": "Tagged as a children's play park with children's racing"
+          },
+          "q": "四季欢乐岛, 巨山路8号, 海淀区, 北京",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND 西三旗万象汇",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND(%E8%A5%BF%E4%B8%89%E6%97%97%E4%B8%87%E8%B1%A1%E6%B1%87)&city=110000",
+          "name": {
+            "th": "มีแลนด์ มิกซ์ซี ซีซานฉี",
+            "en": "Meland (MixC Xisanqi)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิกซ์ซีซีซานฉี ชั้น 3 ถนนเจี้ยนไฉเฉิงตะวันออก ไห่เตี้ยน",
+            "en": "MixC Xisanqi L3, Jiancaicheng East Road, Haidian"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีบ่อทราย เล่นบทบาทสมมติ และสัตว์เล็ก",
+            "en": "An indoor play club with a sand pit, role play and small animals"
+          },
+          "why": {
+            "th": "ระบุว่าเป็นสวนเล่นครอบครัวในร่ม มีบ่อทราย",
+            "en": "Tagged as an indoor family park with a sand pit"
+          },
+          "q": "MELAND 西三旗万象汇, 建材城东路33号, 海淀区, 北京",
+          "ok": "2026-11"
         }
     ]
     },

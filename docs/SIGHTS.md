@@ -112,6 +112,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **26 Nov 2026, Chongqing, round 11**: +5 play parks and playgrounds from Amap place pages. Proof in `docs/library-proof/cn-chongqing.json`.
 - **26 Nov 2026, Chengdu, round 11**: +4 (Dujiangyan Panda Valley, the botanical garden, Xiling Snow Mountain, Huawu Renjian) from Amap place pages. Proof in `docs/library-proof/cn-chengdu.json`.
 - **26 Nov 2026, Yunnan, round 12**: +3 from Amap place pages (Kunming). Proof in `docs/library-proof/cn-yunnan.json`.
+- **26 Nov 2026, Beijing, round 12**: +4 play parks from Amap place pages (Haidian). Proof in `docs/library-proof/cn-beijing.json`.
 - **26 Nov 2026, Guangzhou, round 9**: +5 play parks from Amap place pages. Proof in `docs/library-proof/cn-guangzhou.json`.
 - **26 Nov 2026, Shenzhen, round 9**: +5 play spots from Amap place pages. Proof in `docs/library-proof/cn-shenzhen.json`.
 - **26 Nov 2026, Hangzhou, round 9**: +2 (a family farm, an indoor play park) from Amap place pages. Proof in `docs/library-proof/cn-hangzhou.json`.
