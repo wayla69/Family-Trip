@@ -130,6 +130,7 @@ nightlife, and religious sites that ask visitors to keep away.
 - **25 Nov 2026, Guilin**: +3 play parks from Amap place pages. Proof in `docs/library-proof/cn-guilin.json`.
 - **26 Nov 2026, Beijing**: +10 play parks and a children's museum from Amap place pages. Proof in `docs/library-proof/cn-beijing.json`.
 - **26 Nov 2026, Shanghai**: +9 play parks and park playgrounds from Amap place pages. Proof in `docs/library-proof/cn-shanghai.json`.
+- **26 Nov 2026, Guangzhou (new town)**: 9, thin (the zoo playground, Ersha Island and Tianhe Park playgrounds, Neobio, Luban, VeRyland, Meland Club, Tandong Gongchang, Qile’er), from Amap place pages. Proof in `docs/library-proof/cn-guangzhou.json`.
 - **24 Nov 2026, Auckland** (docs/library-briefs batch-55, round 3): +3 (Chipmunks New Lynn, Muriwai Gannet Colony, Tiritiri Matangi). Proof in `docs/library-proof/nz-auckland.json`.
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +6 (Children's Museum Jordan, Gravity, Tala Kids Club, Haya Cultural Center, Prince Hashem Bird Garden — Amman; Aqaba Fort). Proof in `docs/library-proof/jo-petra.json`.
 - **24 Nov 2026, Paro, Thimphu and Punakha** (docs/library-briefs batch-101, round 3): +1 (Simply Bhutan, Thimphu). Proof in `docs/library-proof/bt-paro.json`.
