@@ -369,6 +369,57 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Pudong and Jing'an, Shanghai; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Su Xiaoliu Dim Sum (Jingyao Qiantan)",
+          "page_name": "苏小柳点心(晶耀前滩分院)",
+          "src": "https://www.amap.com/search?query=%E8%8B%8F%E5%B0%8F%E6%9F%B3%E7%82%B9%E5%BF%83(%E6%99%B6%E8%80%80%E5%89%8D%E6%BB%A9%E5%88%86%E9%99%A2)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-11",
+          "map": "Amap: open, not marked closed, newest review 2026-10-11",
+          "quote": "儿童餐 · 宝宝餐"
+        },
+        {
+          "name": "Tiger Restaurant (Shanghai Wild Animal Park)",
+          "page_name": "上海野生动物园-老虎餐厅",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E5%9B%AD-%E8%80%81%E8%99%8E%E9%A4%90%E5%8E%85&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "儿童餐 · 宝宝餐 · 适合家庭出游 · 边吃边看动物"
+        },
+        {
+          "name": "Meizhou Dongpo (Jiuguang Centre)",
+          "page_name": "眉州东坡(上海久光中心店)",
+          "src": "https://www.amap.com/search?query=%E7%9C%89%E5%B7%9E%E4%B8%9C%E5%9D%A1(%E4%B8%8A%E6%B5%B7%E4%B9%85%E5%85%89%E4%B8%AD%E5%BF%83%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "有宝宝椅 · 娃想吃宫保鸡丁，没想到意外的好吃"
+        },
+        {
+          "name": "Wangxiangyuan Hunan Kitchen (Daning)",
+          "page_name": "望湘园(大宁店)",
+          "src": "https://www.amap.com/search?query=%E6%9C%9B%E6%B9%98%E5%9B%AD(%E5%A4%A7%E5%AE%81%E5%BA%97)&city=310000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
+          "map": "Amap: open, not marked closed, newest review 2026-11-04",
+          "quote": "家庭聚餐 · 儿童餐 · 儿童套餐受欢迎"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Casa Mia, 粤湖茶餐厅",
+          "why": "one or two reviews only"
+        },
+        {
+          "name": "耶里夏丽 (正大广场)",
+          "why": "a second branch; the Shimao one is already in the list"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
