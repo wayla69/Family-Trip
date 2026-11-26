@@ -4593,6 +4593,125 @@
           },
           "q": "桂林丹霞八角寨景区, 梅溪镇大坨村, 资源县, 桂林",
           "ok": "2026-11"
+        },
+        {
+          "local": "刘三姐大观园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%88%98%E4%B8%89%E5%A7%90%E5%A4%A7%E8%A7%82%E5%9B%AD&city=450300",
+          "name": {
+            "th": "สวนวัฒนธรรมหลิวซานเจี่ย",
+            "en": "Liu Sanjie Folk Park"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเถาฮวาเจียง กุ้ยหลิน",
+            "en": "Taohuajiang Road, Guilin"
+          },
+          "what": {
+            "th": "สวนหมู่บ้านชนเผ่าจ้วงและชนกลุ่มน้อย มีเพลงพื้นบ้านและงานฝีมือ",
+            "en": "A park of Zhuang and other minority villages, songs and crafts"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเที่ยวได้ครึ่งวัน เหมาะพาเด็กดูวัฒนธรรมชนเผ่า",
+            "en": "Reviewers say it is a half-day visit suited to showing children minority folk culture"
+          },
+          "q": "刘三姐大观园, 桃花江路, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "荔浦荔江湾景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%A1%82%E6%9E%97%E5%B8%82%E8%8D%94%E6%B5%A6%E8%8D%94%E6%B1%9F%E6%B9%BE%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "เขตชมวิวลี่เจียงวาน ลี่ผู่",
+            "en": "Lijiangwan Scenic Area (Lipu)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ชิงซาน ลี่ผู่",
+            "en": "Qingshan, Lipu"
+          },
+          "what": {
+            "th": "ถ้ำหินปูนที่เข้าด้วยเรือ มีพายเรือมังกรและลานเล่น",
+            "en": "A limestone cave reached by boat, with dragon-boat rowing and play areas"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่ามีเครื่องเล่นเหมาะกับเด็กหลายอย่าง เด็กจ่ายครึ่งราคา",
+            "en": "Reviewers say there are many rides suited to children; children pay half"
+          },
+          "tip": {
+            "th": "ห่างจากกุ้ยหลินประมาณชั่วโมงครึ่งโดยรถยนต์",
+            "en": "About 1.5 hours from Guilin by car"
+          },
+          "q": "荔浦荔江湾景区, 青山镇1号, 荔浦市, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "漓江源大峡谷",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%BC%93%E6%B1%9F%E6%BA%90%E5%A4%A7%E5%B3%A1%E8%B0%B7&city=450300",
+          "name": {
+            "th": "หุบเขาต้นน้ำหลีเจียง ซิงอาน",
+            "en": "Lijiang Source Grand Canyon (Xing'an)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านเกาไจ้ ฮวาเจียง ซิงอาน",
+            "en": "Gaozhai Village, Huajiang, Xing'an"
+          },
+          "what": {
+            "th": "หุบเขามีน้ำตกและเดินลุยลำธาร ที่ต้นน้ำแม่น้ำหลีเจียง",
+            "en": "A canyon with waterfalls and stream walking at the source of the Li River"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง เด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families outdoors; children under 1.2 m go free"
+          },
+          "tip": {
+            "th": "อยู่ทางเหนือไกลจากกุ้ยหลิน ต้องขับรถไปเที่ยวแบบไปกลับวันเดียว",
+            "en": "Far north of Guilin: a day trip by car"
+          },
+          "q": "漓江源大峡谷, 华江乡高寨村, 兴安县, 桂林",
+          "ok": "2026-11"
         }
       ]
     },
