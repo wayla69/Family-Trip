@@ -2764,6 +2764,195 @@
           },
           "q": "七星欢乐园, 七星路一号, 七星区, 桂林",
           "ok": "2026-11"
+        },
+        {
+          "local": "世外桃源",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90&city=450300",
+          "name": {
+            "th": "แชงกรีลา หยางซั่ว (ถ้ำล่องเรือ)",
+            "en": "Shangri-La (Yangshuo boat cave)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางหลวง 321 หยางซั่ว",
+            "en": "Route 321, Yangshuo"
+          },
+          "what": {
+            "th": "ล่องเรือผ่านถ้ำและหมู่บ้านที่สร้างใหม่ริมน้ำ",
+            "en": "A boat ride through a cave and past a rebuilt village by the water"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ล่องเรือแบบสบายๆ",
+            "en": "Children under 1.2 m go free; a gentle boat outing"
+          },
+          "q": "世外桃源, 321国道, 阳朔县, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "伏波山景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BC%8F%E6%B3%A2%E5%B1%B1%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "เขาฝูปัว",
+            "en": "Fubo Hill"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนปินเจียง เตี๋ยไฉ่ ริมแม่น้ำหลี",
+            "en": "Binjiang Road, Diecai, by the Li River"
+          },
+          "what": {
+            "th": "เนินเล็กริมแม่น้ำให้ปีนชมวิว มีถ้ำและหินแกะสลัก",
+            "en": "A small hill by the river to climb for the view, with a cave and stone carvings"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบขึ้นลงเข้าถ้ำ ควรอยู่ใกล้ๆ",
+            "en": "Reviewers say children loved going up and down into the cave; keep them close"
+          },
+          "q": "伏波山, 滨江路27号, 叠彩区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "桂海晴岚景区",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BF%A1%E6%98%8C%C2%B7%E6%A1%82%E6%B5%B7%E6%99%B4%E5%B2%9A%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "ย่านทิวทัศน์กุ้ยไห่ชิงหลาน",
+            "en": "Guihai Qinglan Scenic Area"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนหังเทียน ชีซิง",
+            "en": "Hangtian Road, Qixing"
+          },
+          "what": {
+            "th": "ทะเลสาบ ทุ่ง และวิวเขาหินปูนชานเมือง มีกิจกรรมข้างใน",
+            "en": "Lakes, fields and karst views at the edge of the city, with activities inside"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ร้านอาหารริมทะเลสาบอยู่ในคลังด้วย",
+            "en": "Children under 1.2 m go free; the lakeside restaurant is in the library too"
+          },
+          "tip": {
+            "th": "กิจกรรมบางอย่างข้างในเสียเงินเพิ่ม",
+            "en": "Some activities inside cost extra"
+          },
+          "q": "桂海晴岚景区, 航天路22号, 七星区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "兴安灵渠景区",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%85%B4%E5%AE%89%E7%81%B5%E6%B8%A0%E6%99%AF%E5%8C%BA&city=450300",
+          "name": {
+            "th": "คลองหลิงฉวี ซิงอัน",
+            "en": "Lingqu Canal (Xing'an)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนซวงหลิง ซิงอัน (1 ชม. ทางเหนือของกุ้ยหลิน)",
+            "en": "Shuangling Road, Xing'an (1 h north of Guilin)"
+          },
+          "what": {
+            "th": "คลองอายุ 2,200 ปี มีประตูน้ำและฝายแบ่งน้ำ ในสวนริมแม่น้ำ",
+            "en": "A 2,200-year-old canal with locks and a water-dividing weir, in a riverside park"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้งและการเรียนรู้",
+            "en": "Tagged for families outdoors and for learning"
+          },
+          "q": "兴安灵渠景区, 双灵路, 兴安县, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "梦幻童年亲子乐园 万福广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%A2%A6%E5%B9%BB%E7%AB%A5%E5%B9%B4%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E4%B8%87%E7%A6%8F%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=450300",
+          "name": {
+            "th": "สวนเล่นเมิ่งฮวั่นถงเหนียน ว่านฝูพลาซ่า",
+            "en": "Menghuan Tongnian Play Park (Wanfu Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ว่านฝูพลาซ่า ถนนข่ายเฟิง เซี่ยงซาน",
+            "en": "Wanfu Plaza, Kaifeng Road, Xiangshan"
+          },
+          "what": {
+            "th": "สวนเล่นกลางแจ้ง มีสไลเดอร์และแทรมโพลีน",
+            "en": "An outdoor play park with slides and trampolines"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเครื่องเล่นเก่าแต่เด็กชอบ",
+            "en": "Reviewers say the rides are old but children love it"
+          },
+          "q": "梦幻童年亲子乐园 万福广场, 凯风路90号, 象山区, 桂林",
+          "ok": "2026-11"
         }
       ]
     },

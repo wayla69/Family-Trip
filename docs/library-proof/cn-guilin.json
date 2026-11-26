@@ -183,6 +183,69 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights and restaurants in Guilin and Yangshuo; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Wangjianglou Riverside Restaurant (Yangshuo)",
+          "page_name": "阳朔望江楼餐吧",
+          "src": "https://www.amap.com/search?query=%E9%98%B3%E6%9C%94%E6%9C%9B%E6%B1%9F%E6%A5%BC%E9%A4%90%E5%90%A7&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Shangri-La (Yangshuo boat cave)",
+          "page_name": "世外桃源",
+          "src": "https://www.amap.com/search?query=%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-07",
+          "map": "Amap: open, not marked closed, newest review 2026-10-07",
+          "quote": "亲子户外 · 亲子友好 · 端午遛娃省心攻略"
+        },
+        {
+          "name": "Fubo Hill",
+          "page_name": "伏波山景区",
+          "src": "https://www.amap.com/search?query=%E4%BC%8F%E6%B3%A2%E5%B1%B1%E6%99%AF%E5%8C%BA&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "亲子户外 · 可以上去看风景，可以下去钻洞，尤其小孩子，开心的不行"
+        },
+        {
+          "name": "Guihai Qinglan Scenic Area",
+          "page_name": "信昌·桂海晴岚景区",
+          "src": "https://www.amap.com/search?query=%E4%BF%A1%E6%98%8C%C2%B7%E6%A1%82%E6%B5%B7%E6%99%B4%E5%B2%9A%E6%99%AF%E5%8C%BA&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "亲子户外 · 1.2米以下儿童免票"
+        },
+        {
+          "name": "Lingqu Canal (Xing'an)",
+          "page_name": "兴安灵渠景区",
+          "src": "https://www.amap.com/search?query=%E5%85%B4%E5%AE%89%E7%81%B5%E6%B8%A0%E6%99%AF%E5%8C%BA&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "亲子户外 · 研学科普"
+        },
+        {
+          "name": "Menghuan Tongnian Play Park (Wanfu Plaza)",
+          "page_name": "梦幻童年亲子乐园(万福广场店)",
+          "src": "https://www.amap.com/search?query=%E6%A2%A6%E5%B9%BB%E7%AB%A5%E5%B9%B4%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E4%B8%87%E7%A6%8F%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "儿童主题乐园 · 亲子体验 · 虽然设施旧了些，孩子喜欢啊"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "阳朔源园饭店",
+          "why": "newest review February 2026"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
