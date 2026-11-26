@@ -4560,7 +4560,6 @@
     },
     {
       "place": "cn-hangzhou",
-      "thin": true,
       "sights": [
         {
           "local": "MELAND CLUB 杭州城西银泰店",
@@ -5094,6 +5093,347 @@
             "en": "Reviewers say children on their birthday go in free"
           },
           "q": "杭州水精灵乐园, 山阴路688号众安广场, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杭州动物园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนสัตว์หางโจว",
+            "en": "Hangzhou Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนหูเผา ซีหู",
+            "en": "Hupao Road, West Lake"
+          },
+          "what": {
+            "th": "สวนสัตว์ของเมือง บนเนินเขาทางใต้ของทะเลสาบซีหู",
+            "en": "The city zoo in the hills south of West Lake"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำให้พาเด็กมา เด็กสูงไม่ถึง 1.2 ม. ไม่ต้องจองล่วงหน้า",
+            "en": "Reviewers recommend it with children; children under 1.2 m need no booking"
+          },
+          "tip": {
+            "th": "ผู้ใหญ่ต้องจองรอบเช้าหรือบ่าย ล่วงหน้าได้ไม่เกินสามวัน",
+            "en": "Grown-ups book a morning or afternoon slot, up to three days ahead"
+          },
+          "q": "杭州动物园, 虎跑路40号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杭州野生动物世界",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&city=330100",
+          "name": {
+            "th": "สวนซาฟารีหางโจว",
+            "en": "Hangzhou Safari Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "อิ๋นหู ฟู่หยาง",
+            "en": "Yinhu, Fuyang"
+          },
+          "what": {
+            "th": "สวนสัตว์ป่าขนาดใหญ่ มีแพนด้า โชว์สัตว์ และกิจกรรมแต่งชุด",
+            "en": "A large wildlife park with pandas, animal shows and costumed games"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าพาเด็กเที่ยวได้ทั้งวัน มีกิจกรรมให้เด็กมีส่วนร่วมเยอะ",
+            "en": "Reviewers say it is a full day with children, with plenty to interact with"
+          },
+          "q": "杭州野生动物世界, 银湖街道, 富阳区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杭州长乔极地海洋公园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%95%BF%E4%B9%94%E6%9E%81%E5%9C%B0%E6%B5%B7%E6%B4%8B%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "สวนมหาสมุทรขั้วโลกฉางเฉียว หางโจว",
+            "en": "Hangzhou Changqiao Polar Ocean Park"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ทะเลสาบเซียงหู เซียวซาน",
+            "en": "Xianghu Lake, Xiaoshan"
+          },
+          "what": {
+            "th": "สวนมหาสมุทรริมทะเลสาบเซียงหู มีบ้านเพนกวินและสวนนก",
+            "en": "An ocean park by Xianghu Lake with a penguin house and a bird garden"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าป้ายความรู้ทั่วสวนสอนเด็กเล็กได้มาก",
+            "en": "Reviewers say the signs everywhere teach small children a lot"
+          },
+          "q": "杭州长乔极地海洋公园, 湘湖路777号, 萧山区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "良渚古城遗址公园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%89%AF%E6%B8%9A%E5%8F%A4%E5%9F%8E%E9%81%97%E5%9D%80%E5%85%AC%E5%9B%AD&city=330100",
+          "name": {
+            "th": "อุทยานเมืองโบราณเหลียงจู่",
+            "en": "Liangzhu Ancient City Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ผิงเหยา อวี๋หาง",
+            "en": "Pingyao, Yuhang"
+          },
+          "what": {
+            "th": "อุทยานมรดกโลกกว้างใหญ่บนเมืองอายุ 5,000 ปี มีสวนกวาง",
+            "en": "A wide open heritage park on a 5,000-year-old city, with a deer park"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กวิ่งเล่น ปิกนิก และดูกวางได้",
+            "en": "Reviewers say children can run, picnic and see the deer"
+          },
+          "q": "良渚古城遗址公园, 瓶窑镇凤都路, 余杭区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "雷峰塔景区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%9B%B7%E5%B3%B0%E5%A1%94%E6%99%AF%E5%8C%BA&city=330100",
+          "name": {
+            "th": "เจดีย์เหลยเฟิง",
+            "en": "Leifeng Pagoda"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนหนานซาน ซีหู",
+            "en": "Nanshan Road, West Lake"
+          },
+          "what": {
+            "th": "เจดีย์ในตำนานนางพญางูขาว มีวิวทะเลสาบซีหู",
+            "en": "The pagoda of the White Snake legend, with views over West Lake"
+          },
+          "why": {
+            "th": "เด็กเล็กเข้าฟรี มีลิฟต์ขึ้น และตำนานเป็นนิทานเล่าให้เด็กฟังได้",
+            "en": "Small children go in free; a lift goes up and the legend is a good story to tell"
+          },
+          "q": "雷峰塔, 南山路15号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "三潭印月",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E8%A5%BF%E6%B9%96%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA-%E4%B8%89%E6%BD%AD%E5%8D%B0%E6%9C%88&city=330100",
+          "name": {
+            "th": "เกาะสามบ่อสะท้อนจันทร์ ทะเลสาบซีหู",
+            "en": "Three Pools Mirroring the Moon (West Lake island)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เกาะกลางทะเลสาบซีหู ต้องนั่งเรือไป",
+            "en": "An island in West Lake, by boat"
+          },
+          "what": {
+            "th": "นั่งเรือไปเกาะสวนที่มีตะเกียงหินสามดวงบนธนบัตรหนึ่งหยวน",
+            "en": "A boat ride to the island garden with the three stone lanterns of the one-yuan note"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. ฟรี ผู้รีวิวบอกว่าเด็กชอบนั่งเรือ",
+            "en": "Children under 1.2 m go free, and reviewers say children love the boat"
+          },
+          "tip": {
+            "th": "เรือเที่ยวสุดท้ายไปเกาะออก 16:00",
+            "en": "The last boat to the island leaves at 16:00"
+          },
+          "q": "三潭印月, 西湖, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "浙江省科技馆",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E7%9C%81%E7%A7%91%E6%8A%80%E9%A6%86&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีเจ้อเจียง",
+            "en": "Zhejiang Science and Technology Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ลานวัฒนธรรมซีหู กงซู่",
+            "en": "West Lake Cultural Square, Gongshu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แบบลงมือทำ อวกาศ อากาศ หุ่นยนต์ การพิมพ์ 3 มิติ และโต๊ะทราย",
+            "en": "A hands-on science museum: space and weather, robots, 3D printing and a sand table"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กสนุกกับการลงมือทำได้ครึ่งวัน",
+            "en": "Reviewers call it half a day of hands-on fun for children"
+          },
+          "q": "浙江省科技馆, 西湖文化广场, 拱墅区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "中国动漫博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E5%8A%A8%E6%BC%AB%E5%8D%9A%E7%89%A9%E9%A6%86&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์แอนิเมชันจีน",
+            "en": "China Animation Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนไป๋หม่าหู ปินเจียง",
+            "en": "Baimahu Road, Binjiang"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์การ์ตูนและแอนิเมชัน มีจอภาพและห้องลองทำ",
+            "en": "A museum of cartoons and animation with screens and hands-on rooms"
+          },
+          "why": {
+            "th": "มีครอบครัวพาเด็กมาเยอะ เหมาะกับเด็กที่ชอบการ์ตูน",
+            "en": "Many families with children; best for children who love cartoons"
+          },
+          "q": "中国动漫博物馆, 白马湖路375号, 滨江区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "浙江自然博物院",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%99%A2&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์ธรรมชาติวิทยาเจ้อเจียง",
+            "en": "Zhejiang Museum of Natural History"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ลานวัฒนธรรมซีหู กงซู่",
+            "en": "West Lake Cultural Square, Gongshu"
+          },
+          "what": {
+            "th": "ฟอสซิลไดโนเสาร์และสัตว์ทั่วโลก ข้างพิพิธภัณฑ์วิทยาศาสตร์",
+            "en": "Dinosaur fossils and animals of the world, beside the science museum"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กสนุกมาก",
+            "en": "Reviewers say small children were delighted"
+          },
+          "q": "浙江自然博物院, 西湖文化广场6号, 拱墅区, 杭州",
           "ok": "2026-11"
         }
       ]
