@@ -2837,7 +2837,7 @@ const T = 'hk-macau-2026';
   ok(plainBg === 'none' && tilesPlain === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile (' + tilesPlain + ')');
   await page.click('.tilepick button[data-v="accent"]'); await page.waitForSelector('.hubgrid.tl-accent');
   const tilesAccent = (await apiStateWhen(page, (st) => st.family.tiles === 'accent')).family.tiles;
-  ok(tilesAccent === 'accent', 'the book\'s colour: saved too', tilesAccent);
+  ok(tilesAccent === 'accent', 'the book\'s colour: saved too (' + tilesAccent + ')');
   await page.click('.tilepick button[data-v="pastel"]'); await page.waitForSelector('.hubgrid.tl-pastel');
   ok(s.errs.length === 0, 'privacy: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
