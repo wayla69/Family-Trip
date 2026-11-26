@@ -443,6 +443,185 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals in Xihu and Shangcheng, indoor play parks and family sights in Hangzhou; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Xiaoyatou Zhejiang Kitchen (Lingyin)",
+          "page_name": "小丫头餐厅·江浙菜·烧烤(灵隐店)",
+          "src": "https://www.amap.com/search?query=%E5%B0%8F%E4%B8%AB%E5%A4%B4%E9%A4%90%E5%8E%85%C2%B7%E6%B1%9F%E6%B5%99%E8%8F%9C%C2%B7%E7%83%A7%E7%83%A4(%E7%81%B5%E9%9A%90%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-10",
+          "map": "Amap: open, not marked closed, newest review 2026-09-10",
+          "quote": "亲子友好 · 浙菜 · 农家院"
+        },
+        {
+          "name": "Su Xiaoliu Dim Sum (Zijing Paradise Walk)",
+          "page_name": "苏小柳点心(龙湖杭州紫荆天街店)",
+          "src": "https://www.amap.com/search?query=%E8%8B%8F%E5%B0%8F%E6%9F%B3%E7%82%B9%E5%BF%83(%E9%BE%99%E6%B9%96%E6%9D%AD%E5%B7%9E%E7%B4%AB%E8%8D%86%E5%A4%A9%E8%A1%97%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "儿童餐 · 宝宝餐 · 亲子友好"
+        },
+        {
+          "name": "Gulute BBQ Buffet (Xitou Intime City)",
+          "page_name": "古鲁特烤肉自助餐厅(西投银泰城店)",
+          "src": "https://www.amap.com/search?query=%E5%8F%A4%E9%B2%81%E7%89%B9%E7%83%A4%E8%82%89%E8%87%AA%E5%8A%A9%E9%A4%90%E5%8E%85(%E8%A5%BF%E6%8A%95%E9%93%B6%E6%B3%B0%E5%9F%8E%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-31",
+          "map": "Amap: open, not marked closed, newest review 2026-10-31",
+          "quote": "带娃去的，小朋友倒是吃得很开心"
+        },
+        {
+          "name": "Qiantangli (Broken Bridge)",
+          "page_name": "乾堂里(西湖断桥店)",
+          "src": "https://www.amap.com/search?query=%E4%B9%BE%E5%A0%82%E9%87%8C(%E8%A5%BF%E6%B9%96%E6%96%AD%E6%A1%A5%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "家庭聚餐 · 赠儿童饮品 · 西湖牛肉羹很鲜 小朋友喝了两碗"
+        },
+        {
+          "name": "Lianyu Garden Restaurant (Quyuan Fenghe)",
+          "page_name": "莲遇花园餐厅",
+          "src": "https://www.amap.com/search?query=%E8%8E%B2%E9%81%87%E8%8A%B1%E5%9B%AD%E9%A4%90%E5%8E%85&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-18",
+          "map": "Amap: open, not marked closed, newest review 2026-10-18",
+          "quote": "家庭聚餐 · 儿童餐 · 带三岁宝宝来杭州"
+        },
+        {
+          "name": "Yiluchi Hangzhou Kitchen (Nanshan Road)",
+          "page_name": "一路吃·新杭州杭帮菜(南山路店)",
+          "src": "https://www.amap.com/search?query=%E4%B8%80%E8%B7%AF%E5%90%83%C2%B7%E6%96%B0%E6%9D%AD%E5%B7%9E%E6%9D%AD%E5%B8%AE%E8%8F%9C(%E5%8D%97%E5%B1%B1%E8%B7%AF%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "儿童友好 · 适合家庭聚餐 · 带孩子的话，很推荐"
+        },
+        {
+          "name": "Jiangzhehui (Hubin in77)",
+          "page_name": "江浙荟(杭州湖滨in77店)",
+          "src": "https://www.amap.com/search?query=%E6%B1%9F%E6%B5%99%E8%8D%9F(%E6%9D%AD%E5%B7%9E%E6%B9%96%E6%BB%A8in77%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Zhaofu Sichu Old Hangzhou Kitchen (Hefang Street)",
+          "page_name": "赵府私厨·老杭帮菜(河坊街店)",
+          "src": "https://www.amap.com/search?query=%E8%B5%B5%E5%BA%9C%E7%A7%81%E5%8E%A8%C2%B7%E8%80%81%E6%9D%AD%E5%B8%AE%E8%8F%9C(%E6%B2%B3%E5%9D%8A%E8%A1%97%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-02",
+          "map": "Amap: open, not marked closed, newest review 2026-10-02",
+          "quote": "有宝宝椅 · 还会给小朋友拿玩具"
+        },
+        {
+          "name": "Zuozhe Shunde Cantonese (Shangcheng Paradise Walk)",
+          "page_name": "作啫·顺德粤菜(上城天街店)",
+          "src": "https://www.amap.com/search?query=%E4%BD%9C%E5%95%AB%C2%B7%E9%A1%BA%E5%BE%B7%E7%B2%A4%E8%8F%9C(%E4%B8%8A%E5%9F%8E%E5%A4%A9%E8%A1%97%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "儿童餐 · 鸡肉不柴不腻，小朋友也能放心吃"
+        },
+        {
+          "name": "Chunfeng Canteen (Shangcheng Paradise Walk)",
+          "page_name": "春风食堂·二十七道下饭菜(龙湖上城天街店)",
+          "src": "https://www.amap.com/search?query=%E6%98%A5%E9%A3%8E%E9%A3%9F%E5%A0%82%C2%B7%E4%BA%8C%E5%8D%81%E4%B8%83%E9%81%93%E4%B8%8B%E9%A5%AD%E8%8F%9C(%E9%BE%99%E6%B9%96%E4%B8%8A%E5%9F%8E%E5%A4%A9%E8%A1%97%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "宝宝餐 · 儿童餐"
+        },
+        {
+          "name": "Heyun Xizi Old Hangzhou Kitchen (Music Fountain)",
+          "page_name": "荷韵西子·老底子杭帮菜(西湖音乐喷泉店)",
+          "src": "https://www.amap.com/search?query=%E8%8D%B7%E9%9F%B5%E8%A5%BF%E5%AD%90%C2%B7%E8%80%81%E5%BA%95%E5%AD%90%E6%9D%AD%E5%B8%AE%E8%8F%9C(%E8%A5%BF%E6%B9%96%E9%9F%B3%E4%B9%90%E5%96%B7%E6%B3%89%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "有宝宝椅 · 松鼠鱼很好吃酸酸甜甜的口感小朋友非常喜欢吃"
+        },
+        {
+          "name": "Changqiao Family Park (Xianghu)",
+          "page_name": "杭州长乔亲子乐园",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E9%95%BF%E4%B9%94%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-23",
+          "map": "Amap: open, not marked closed, newest review 2026-10-23",
+          "quote": "适合亲子 · 室内外项目搭配很贴心，不怕日晒雨淋，低龄小朋友也能找到适合游玩项目"
+        },
+        {
+          "name": "Meland Club (Xiaoshan Intime)",
+          "page_name": "MELAND CLUB(杭州萧山银泰店)",
+          "src": "https://www.amap.com/search?query=MELAND%20CLUB(%E6%9D%AD%E5%B7%9E%E8%90%A7%E5%B1%B1%E9%93%B6%E6%B3%B0%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-12",
+          "map": "Amap: open, not marked closed, newest review 2026-11-12",
+          "quote": "儿童乐园 · 儿童恒温游泳 · 室内亲子园 · 小宝宝游玩"
+        },
+        {
+          "name": "Meland Club (Olympic Impression City)",
+          "page_name": "MELANDCLUB(印力汇德隆杭州奥体印象城)",
+          "src": "https://www.amap.com/search?query=MELANDCLUB(%E5%8D%B0%E5%8A%9B%E6%B1%87%E5%BE%B7%E9%9A%86%E6%9D%AD%E5%B7%9E%E5%A5%A5%E4%BD%93%E5%8D%B0%E8%B1%A1%E5%9F%8E)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-26",
+          "map": "Amap: open, not marked closed, newest review 2026-09-26",
+          "quote": "儿童乐园 · 三层楼高落地攀爬架，小朋友在里面蹦哒、闯关"
+        },
+        {
+          "name": "Moli Space Sports Centre (Future Sci-Tech City Wanda)",
+          "page_name": "魔力空间运动中心(杭州未来科技城万达广场店)",
+          "src": "https://www.amap.com/search?query=%E9%AD%94%E5%8A%9B%E7%A9%BA%E9%97%B4%E8%BF%90%E5%8A%A8%E4%B8%AD%E5%BF%83(%E6%9D%AD%E5%B7%9E%E6%9C%AA%E6%9D%A5%E7%A7%91%E6%8A%80%E5%9F%8E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "亲子玩乐 · 室内亲子园 · 娃玩到根本不想回家"
+        },
+        {
+          "name": "AP Funll Play Park (Wujiao Paradise Walk)",
+          "page_name": "AP FUNLL潮玩运动主题公园(龙湖杭州吾角天街店)",
+          "src": "https://www.amap.com/search?query=AP%20FUNLL%E6%BD%AE%E7%8E%A9%E8%BF%90%E5%8A%A8%E4%B8%BB%E9%A2%98%E5%85%AC%E5%9B%AD(%E9%BE%99%E6%B9%96%E6%9D%AD%E5%B7%9E%E5%90%BE%E8%A7%92%E5%A4%A9%E8%A1%97%E5%BA%97)&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "儿童乐园 · 儿童VR娱乐 · 室内亲子园"
+        },
+        {
+          "name": "Hupao Park",
+          "page_name": "虎跑公园",
+          "src": "https://www.amap.com/search?query=%E8%99%8E%E8%B7%91%E5%85%AC%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "路面平缓台阶不多，老人小朋友走起来没有负担 · 带娃家庭记得做好防护"
+        },
+        {
+          "name": "Yunqi Bamboo Path",
+          "page_name": "云栖竹径",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%A0%96%E7%AB%B9%E5%BE%84&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "1.2米以下儿童免票 · 春笋挖趣 · 亲近自然"
+        },
+        {
+          "name": "Xixi National Wetland Park",
+          "page_name": "西溪国家湿地公园",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%BA%AA%E5%9B%BD%E5%AE%B6%E6%B9%BF%E5%9C%B0%E5%85%AC%E5%9B%AD&city=330100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "适合亲子旅行 · 散步遛娃友好"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "菲滋意式餐厅 (古墩路印象城)",
+          "why": "another branch of a restaurant the list already has"
+        },
+        {
+          "name": "云泉餐厅, 魏庐·西湖1138",
+          "why": "three reviews or none, or a smoking area"
+        },
+        {
+          "name": "森泊幻想岛",
+          "why": "inside Kaiyuan Senbo, which the list already has"
+        },
+        {
+          "name": "径山花海, 超山风景名胜区",
+          "why": "Amap did not find the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
