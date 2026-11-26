@@ -6294,6 +6294,80 @@
           },
           "q": "浙江自然博物院, 西湖文化广场6号, 拱墅区, 杭州",
           "ok": "2026-11"
+        },
+        {
+          "local": "小时光亲子农场",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B0%8F%E6%97%B6%E5%85%89%E4%BA%B2%E5%AD%90%E5%86%9C%E5%9C%BA&city=330100",
+          "name": {
+            "th": "ฟาร์มครอบครัวเสี่ยวสือกวง เสียนหลิน",
+            "en": "Xiaoshiguang Family Farm (Xianlin)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนเสียนหลินกลาง อวี๋หาง",
+            "en": "Xianlin Middle Road, Yuhang"
+          },
+          "what": {
+            "th": "ฟาร์มครอบครัวบนเนินเขา มีสัตว์ให้ทำความรู้จักและโกคาร์ตเด็ก",
+            "en": "A hillside family farm with animals to meet and children's go-karts"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "小时光亲子农场, 闲林中路1号, 余杭区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "贝比乐儿童乐园 美瑭广场店",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%B4%9D%E6%AF%94%E4%B9%90%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E7%BE%8E%E7%91%AD%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=330100",
+          "name": {
+            "th": "สวนเล่นเป้ยปี่เล่อ เหม่ยถังพลาซ่า",
+            "en": "Beibile Play Park (Meitang Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เหม่ยถังพลาซ่า ชั้น 3 ถนนอวี๋หางถัง อวี๋หาง",
+            "en": "Meitang Plaza F3, Yuhangtang Road, Yuhang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อทราย บ่อบอล และรถไดโนเสาร์",
+            "en": "An indoor play park with a sand pit, ball pit and dinosaur cars"
+          },
+          "why": {
+            "th": "เล็กและราคาไม่แพง สำหรับเด็กเล็ก",
+            "en": "Small and low-priced, for little ones"
+          },
+          "q": "贝比乐儿童乐园 美瑭广场, 余杭塘路2499号, 余杭区, 杭州",
+          "ok": "2026-11"
         }
       ]
     },
