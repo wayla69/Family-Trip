@@ -462,7 +462,340 @@
       {"name":{"en":"Shanghai Submarine Exhibition Hall","th":"พิพิธภัณฑ์เรือดำน้ำเซี่ยงไฮ้"},"kind":"museum","area":{"en":"Huangpu Riverside, East Longhua Road","th":"ริมแม่น้ำหวงผู่ ถนนหลงหัวตะวันออก"},"what":{"en":"A retired first-generation submarine on the Huangpu riverside, on the site of the former Jiangnan Shipyard.","th":"เรือดำน้ำรุ่นแรกที่ปลดประจำการแล้วริมแม่น้ำหวงผู่ ตรงที่ตั้งอู่ต่อเรือเจียงหนานเดิม"},"why":{"en":"The page says kids can learn about submarines and the area's industrial heritage.","th":"หน้าเว็บบอกว่าเด็กเรียนรู้เรื่องเรือดำน้ำและมรดกอุตสาหกรรมของพื้นที่ได้"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shanghai Submarine Exhibition Hall, Dock No 3, 98 East Longhua Road, Huangpu, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
       {"name":{"en":"Shanghai Tunnel Science and Technology Museum","th":"พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีอุโมงค์เซี่ยงไฮ้"},"kind":"museum","area":{"en":"Huangpu District","th":"เขตหวงผู่"},"what":{"en":"A museum of tunnel technology with a realistic tunnel, a large 3D shield machine model and an emergency escape slide game.","th":"พิพิธภัณฑ์เทคโนโลยีอุโมงค์ มีอุโมงค์จำลองสมจริง โมเดลเครื่องขุดอุโมงค์ 3 มิติขนาดใหญ่ และเกมสไลด์หนีไฟ"},"why":{"en":"The page names an interactive emergency escape slide game, which keeps older children busy.","th":"หน้าเว็บบอกว่าเกมสไลด์หนีไฟแบบโต้ตอบทำให้เด็กโตสนุกนาน"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shanghai Tunnel Science and Technology Museum, Huangpu, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
       {"name":{"en":"One East","th":"วันอีสต์"},"kind":"play","area":{"en":"South Zhongshan Road","th":"ถนนจงซานใต้"},"what":{"en":"A free outdoor children's playground on the third-floor rooftop garden, with colourful tracks and play structures.","th":"สนามเด็กเล่นกลางแจ้งฟรีบนสวนดาดฟ้าชั้นสาม มีทางวิ่งสีสดใสและโครงเล่น"},"why":{"en":"The page says children have plenty of space to explore and play freely there.","th":"หน้าเว็บบอกว่าเด็กมีที่ว่างเพียงพอสำหรับสำรวจและเล่นอย่างอิสระ"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"One East, 788 South Zhongshan Road, Huangpu, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
-      {"name":{"en":"Shanghai Children's Art Theatre","th":"โรงละครเด็กเซี่ยงไฮ้"},"kind":"show","area":{"en":"Shanghai World Expo","th":"งานเอ็กซ์โปเซี่ยงไฮ้"},"what":{"en":"A professional theatre for children, with plays, concerts and exhibitions, and artist-led tours and paper-cutting workshops in its creative seasons.","th":"โรงละครมืออาชีพสำหรับเด็ก มีละคร คอนเสิร์ต และนิทรรศการ พร้อมทัวร์นำชมโดยศิลปินและเวิร์กช็อปตัดกระดาษในฤดูกิจกรรมศิลปะ"},"why":{"en":"The page describes children's plays and hands-on paper-cutting workshops as part of its creative arts season.","th":"หน้าเว็บบอกว่ามีละครเด็กและเวิร์กช็อปตัดกระดาษลงมือทำเป็นส่วนหนึ่งของฤดูศิลปะ"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Shanghai Children's Art Theatre, Shanghai World Expo, Pudong, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"}
+      {"name":{"en":"Shanghai Children's Art Theatre","th":"โรงละครเด็กเซี่ยงไฮ้"},"kind":"show","area":{"en":"Shanghai World Expo","th":"งานเอ็กซ์โปเซี่ยงไฮ้"},"what":{"en":"A professional theatre for children, with plays, concerts and exhibitions, and artist-led tours and paper-cutting workshops in its creative seasons.","th":"โรงละครมืออาชีพสำหรับเด็ก มีละคร คอนเสิร์ต และนิทรรศการ พร้อมทัวร์นำชมโดยศิลปินและเวิร์กช็อปตัดกระดาษในฤดูกิจกรรมศิลปะ"},"why":{"en":"The page describes children's plays and hands-on paper-cutting workshops as part of its creative arts season.","th":"หน้าเว็บบอกว่ามีละครเด็กและเวิร์กช็อปตัดกระดาษลงมือทำเป็นส่วนหนึ่งของฤดูศิลปะ"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Shanghai Children's Art Theatre, Shanghai World Expo, Pudong, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
+        {
+          "local": "奈尔宝 儿童乐园 豫园店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E8%B1%AB%E5%9B%AD%E5%BA%97)&city=310000",
+          "name": {
+            "th": "นีโอไบโอ อวี้หยวน",
+            "en": "Neobio Play Park (Yuyuan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจิ่วเซี่ยวฉาง ใกล้สวนอวี้หยวน หวงผู่",
+            "en": "Jiuxiaochang Road, near Yu Garden, Huangpu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มพร้อมร้านอาหารครอบครัว ใกล้สวนอวี้หยวน",
+            "en": "An indoor play park with a family restaurant near Yu Garden"
+          },
+          "why": {
+            "th": "โซนเล่นในร่มบุนุ่มทั้งหมด แวะหลังเที่ยวเมืองเก่า",
+            "en": "Fully padded indoor play after the old town"
+          },
+          "q": "奈尔宝 豫园店, 旧校场路69号, 黄浦区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 上海前滩店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E4%B8%8A%E6%B5%B7%E5%89%8D%E6%BB%A9%E5%BA%97)&city=310000",
+          "name": {
+            "th": "นีโอไบโอ เฉียนทาน",
+            "en": "Neobio Play Park (Qiantan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จิงเย่าเฉียนทาน ชั้น 2 ผู่ตง",
+            "en": "Jingyao Qiantan 2F, Pudong"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีงานประดิษฐ์ หนังสือภาพ และร้านอาหารครอบครัว",
+            "en": "An indoor play park with crafts, picture books and a family restaurant"
+          },
+          "why": {
+            "th": "มีโซนเล่นบุนุ่มและมุมเงียบสำหรับเด็กเล็ก",
+            "en": "Padded play and quiet corners for small children"
+          },
+          "q": "奈尔宝 上海前滩店, 钱家滩路388号, 浦东新区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "汤姆猫超能战队乐园 上海徐汇店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B1%A4%E5%A7%86%E7%8C%AB%E8%B6%85%E8%83%BD%E6%88%98%E9%98%9F%E4%B9%90%E5%9B%AD%C2%B7%E4%B8%8A%E6%B5%B7%E5%BE%90%E6%B1%87%E5%BA%97&city=310000",
+          "name": {
+            "th": "สวนเล่นทอล์กกิ้งทอม สวีฮุ่ย",
+            "en": "Talking Tom Play Park (Xuhui)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างซินลิ่วไป่ ชั้น 3 ถนนเหิงซาน สวีฮุ่ย",
+            "en": "New 600 mall 3F, Hengshan Road, Xuhui"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มธีมตัวการ์ตูนทอล์กกิ้งทอม",
+            "en": "An indoor themed play park with the Talking Tom characters"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "汤姆猫超能战队乐园 徐汇店, 衡山路932号, 徐汇区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "徐家汇公园 儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%BE%90%E5%AE%B6%E6%B1%87%E5%85%AC%E5%9B%AD-%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สนามเด็กเล่นสวนสวีเจียฮุ่ย",
+            "en": "Xujiahui Park Children's Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนสวีเจียฮุ่ย มุมตะวันออกเฉียงเหนือ สวีฮุ่ย",
+            "en": "Xujiahui Park, north-east corner, Xuhui"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนสวีเจียฮุ่ย มีเขาวงกต บ่อทราย สไลเดอร์ และแทรมโพลีน",
+            "en": "A playground in Xujiahui Park with a maze, sand pit, slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก อยู่กลางเมือง",
+            "en": "Marked for small children, in the middle of the city"
+          },
+          "q": "徐家汇公园儿童乐园, 肇嘉浜路986号, 徐汇区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西岸自然艺术公园儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E5%B2%B8%E8%87%AA%E7%84%B6%E8%89%BA%E6%9C%AF%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สนามเด็กเล่นสวนศิลปะธรรมชาติเวสต์บันด์",
+            "en": "West Bund Nature Art Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนศิลปะธรรมชาติเวสต์บันด์ ถนนฮวาจิง สวีฮุ่ย",
+            "en": "West Bund Nature Art Park, Huajing Road, Xuhui"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนริมแม่น้ำ มีสไลเดอร์และแทรมโพลีน",
+            "en": "A riverside park playground with slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก มีที่จอดรถใกล้ๆ",
+            "en": "Marked for small children; parking nearby"
+          },
+          "q": "西岸自然艺术公园儿童乐园, 华泾路190号, 徐汇区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "半马苏河公园二期儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8D%8A%E9%A9%AC%E8%8B%8F%E6%B2%B3%E5%85%AC%E5%9B%AD%E4%BA%8C%E6%9C%9F%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สนามเด็กเล่นสวนป้านหม่าซูเหอ",
+            "en": "Banma Suhe Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกวางฟู่ตะวันตก ผู่ถัว",
+            "en": "Guangfu West Road, Putuo"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นริมคลองซูโจว มีบ่อทราย สไลเดอร์ และแทรมโพลีน",
+            "en": "A playground by Suzhou Creek with a sand pit, slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก อยู่ข้างทางเดินริมคลอง",
+            "en": "Marked for small children, beside a walk along the creek"
+          },
+          "q": "半马苏河公园二期儿童乐园, 光复西路, 普陀区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MINI MARS KIDS CLUB 静安江宁路店",
+          "ages": [
+            2,
+            1,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MINI%20MARS%20KIDS%20CLUB%E4%BA%B2%E5%AD%90%E5%AE%B6%E5%BA%AD%E4%B8%AD%E5%BF%83(%E9%9D%99%E5%AE%89%E6%B1%9F%E5%AE%81%E8%B7%AF%E5%BA%97)&city=310000",
+          "name": {
+            "th": "มินิมาร์สคิดส์คลับ ถนนเจียงหนิง",
+            "en": "Mini Mars Kids Club (Jiangning Road)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเจียงหนิง จิ้งอัน",
+            "en": "Jiangning Road, Jing'an"
+          },
+          "what": {
+            "th": "คลับครอบครัว มีบทบาทสมมติและคาเฟ่ สำหรับเด็กทารกและเด็กวัยเตาะแตะ",
+            "en": "A family club with role play and a café, for babies and toddlers"
+          },
+          "why": {
+            "th": "ทำมาสำหรับเด็ก 0–3 ขวบ มีล็อกเกอร์เก็บของ",
+            "en": "Made for ages 0 to 3, with lockers for bags"
+          },
+          "q": "MINI MARS KIDS CLUB 江宁路店, 江宁路428号, 静安区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "UN BONBON儿童成长乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=UN%20BONBON%E5%84%BF%E7%AB%A5%E6%88%90%E9%95%BF%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนเล่นอันบงบง หยางผู่",
+            "en": "Un Bonbon Play Park (Yangpu)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหวงซิง หยางผู่",
+            "en": "Huangxing Road, Yangpu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีโซนรถตัก บ่อทราย และบทบาทสมมติ",
+            "en": "An indoor play park with a digger zone, sand pit and role play"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "UN BONBON儿童成长乐园, 黄兴路1831号, 杨浦区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "小黄鸭主题乐园 浦江店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B0%8F%E9%BB%84%E9%B8%AD%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E6%B5%A6%E6%B1%9F%E5%BA%97)&city=310000",
+          "name": {
+            "th": "สวนสนุกเป็ดเหลือง ผู่เจียง",
+            "en": "B.Duck Theme Park (Pujiang)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทางหลวงเสิ่นตู้ ผู่เจียง หมิ่นหาง",
+            "en": "Shendu Highway, Pujiang, Minhang"
+          },
+          "what": {
+            "th": "สวนเล่นธีมเป็ดเหลือง มีเส้นทางป่า สไลเดอร์สีรุ้ง และบ่อทราย",
+            "en": "A rubber-duck themed play park with a jungle course, rainbow slide and sand pit"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "小黄鸭主题乐园 浦江店, 沈杜公路4314号, 闵行区, 上海",
+          "ok": "2026-11"
+        }
     ]
     }
   ]
