@@ -194,6 +194,101 @@
         ],
         "removed": []
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Kunming, Dali and Lijiang; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Tongban Shiguang Family Restaurant (Chenggong)",
+          "page_name": "童伴拾光亲子餐厅",
+          "src": "https://www.amap.com/search?query=%E7%AB%A5%E4%BC%B4%E6%8B%BE%E5%85%89%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "亲子用餐 · 游乐设施 · 娃能玩能吃，距离近方便，一家子踏实舒坦"
+        },
+        {
+          "name": "Vaya Western Buffet (Chenggong)",
+          "page_name": "vaya探索西餐厅(七彩云南·第壹城时代广场店)",
+          "src": "https://www.amap.com/search?query=vaya%E6%8E%A2%E7%B4%A2%E8%A5%BF%E9%A4%90%E5%8E%85(%E4%B8%83%E5%BD%A9%E4%BA%91%E5%8D%97%C2%B7%E7%AC%AC%E5%A3%B9%E5%9F%8E%E6%97%B6%E4%BB%A3%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-07",
+          "map": "Amap: open, not marked closed, newest review 2026-11-07",
+          "quote": "亲子友好 · 小朋友专属的DIY甜品区，简直是神兽的快乐星球"
+        },
+        {
+          "name": "Chimido Farm Restaurant (Dali)",
+          "page_name": "柴米多CHIMIDO·农场餐厅(大理店)",
+          "src": "https://www.amap.com/search?query=%E6%9F%B4%E7%B1%B3%E5%A4%9ACHIMIDO%C2%B7%E5%86%9C%E5%9C%BA%E9%A4%90%E5%8E%85(%E5%A4%A7%E7%90%86%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-18",
+          "map": "Amap: open, not marked closed, newest review 2026-10-18",
+          "quote": "亲子友好 · 亲子互动 · 孩子们在家长的陪伴戴上草帽，背上背篓，蹦蹦跳跳的去开心农场采摘"
+        },
+        {
+          "name": "Shannanji Yunnan Kitchen (Dali Old Town)",
+          "page_name": "山喃集现炒云南菜·苍山露台花园餐厅(大理古城店)",
+          "src": "https://www.amap.com/search?query=%E5%B1%B1%E5%96%83%E9%9B%86%E7%8E%B0%E7%82%92%E4%BA%91%E5%8D%97%E8%8F%9C%C2%B7%E8%8B%8D%E5%B1%B1%E9%9C%B2%E5%8F%B0%E8%8A%B1%E5%9B%AD%E9%A4%90%E5%8E%85(%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "儿童餐 · 适合家庭聚餐"
+        },
+        {
+          "name": "Nailong Planet Play Park (New Southwest Plaza)",
+          "page_name": "奶龙星球乐园(昆百大·新西南广场店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%B6%E9%BE%99%E6%98%9F%E7%90%83%E4%B9%90%E5%9B%AD(%E6%98%86%E7%99%BE%E5%A4%A7%C2%B7%E6%96%B0%E8%A5%BF%E5%8D%97%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
+          "map": "Amap: open, not marked closed, newest review 2026-10-25",
+          "quote": "儿童主题乐园 · 小宝宝游玩 · 儿童友好 · 适合亲子"
+        },
+        {
+          "name": "Popome Play Park (Haile World, Kunming)",
+          "page_name": "泡泡米(海乐世界店)",
+          "src": "https://www.amap.com/search?query=%E6%B3%A1%E6%B3%A1%E7%B1%B3(%E6%B5%B7%E4%B9%90%E4%B8%96%E7%95%8C%E5%BA%97)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-14",
+          "map": "Amap: open, not marked closed, newest review 2026-10-14",
+          "quote": "儿童乐园 · 室内亲子园 · 小宝宝游玩 · 萌宠互动"
+        },
+        {
+          "name": "Yumeworld Sports Park (Ruiding City)",
+          "page_name": "YUMEWORLD运动超乐场(昆明瑞鼎城)",
+          "src": "https://www.amap.com/search?query=YUMEWORLD%E8%BF%90%E5%8A%A8%E8%B6%85%E4%B9%90%E5%9C%BA(%E6%98%86%E6%98%8E%E7%91%9E%E9%BC%8E%E5%9F%8E)&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-14",
+          "map": "Amap: open, not marked closed, newest review 2026-10-14",
+          "quote": "周末带娃来运动乐园放放电 · 娃在海洋球里撒欢"
+        },
+        {
+          "name": "Cloud Meadow Play Park (Cangshan, Dali)",
+          "page_name": "云上草原-无动力亲子乐园",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E4%B8%8A%E8%8D%89%E5%8E%9F-%E6%97%A0%E5%8A%A8%E5%8A%9B%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=530100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "儿童乐园 · 萌宠互动 · 喂小动物 · 孩子玩得超开心"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "丽芳饭店亲子花园餐厅, 喜洲麦田拾光亲子餐厅",
+          "why": "no reviews on the page"
+        },
+        {
+          "name": "祖母的厨房, 莱茵春天",
+          "why": "nothing about children on the page"
+        },
+        {
+          "name": "昆明羊驼小镇",
+          "why": "newest review February 2026"
+        },
+        {
+          "name": "比奇鸟, 恐龙奇遇记, 稻田小火车, 水花虾秋, 爆笑虫子",
+          "why": "one to four reviews only, or the newest from 2025"
+        },
+        {
+          "name": "Lijiang",
+          "why": "the Amap search found no family restaurant with a children's tag or review"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
