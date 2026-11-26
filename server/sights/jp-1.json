@@ -3127,6 +3127,162 @@
           },
           "q": "南幌町子ども室内遊戯施設はれっぱ",
           "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ CiiNA CiiNA福住店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 500 เยน เด็กเริ่ม 1,200 เยน",
+            "en": "Adults ¥500, children from ¥1,200"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5403/",
+          "name": {
+            "th": "เดอะคิดส์ ชีนาชีนา ฟุกุซุมิ",
+            "en": "The Kids, CiiNA CiiNA Fukuzumi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ชีนาชีนา ฟุกุซุมิ โทโยฮิระคุ ซัปโปโร",
+            "en": "CiiNA CiiNA 2F, Fukuzumi, Toyohira-ku, Sapporo"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม เครื่องเล่นใหม่",
+            "en": "An indoor play space with new play equipment"
+          },
+          "why": {
+            "th": "เครื่องเล่นใหม่และปลอดภัย",
+            "en": "New equipment and a safe place to play"
+          },
+          "q": "ザキッズ CiiNA CiiNA福住店, 豊平区, 札幌市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リポビタンキッズ PLAYLOT by BørneLund",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 6 เดือน–12 ปี 30 นาทีแรก 900 เยน ต่อทุก 30 นาที 500 เยน",
+            "en": "Children (6 months–12): ¥900 first 30 min, ¥500 each 30 min after"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6991/",
+          "name": {
+            "th": "เพลย์ล็อต บอร์เนอลุนด์ เอสคอนฟิลด์ คิตะฮิโรชิมะ",
+            "en": "PLAYLOT by BørneLund, ES CON FIELD (Kitahiroshima)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 เอสคอนฟิลด์ฮอกไกโด เอฟวิลเลจ คิตะฮิโรชิมะ",
+            "en": "ES CON FIELD HOKKAIDO 1F, F Village, Kitahiroshima"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ที่สนามเบสบอล",
+            "en": "A big all-weather indoor playground at the baseball park"
+          },
+          "why": {
+            "th": "เล่นเต็มที่ในร่มได้ทุกสภาพอากาศ",
+            "en": "Room to play hard indoors in any weather"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน หน้าหนาวปิดเร็วขึ้น",
+            "en": "Open every day; shorter hours in winter"
+          },
+          "q": "リポビタンキッズ PLAYLOT by BørneLund, 北広島市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 札幌厚別店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "วันธรรมดา เด็กชั่วโมงละ 700 หรือวันละ 900 เยน ผู้ปกครองวันละ 600 เยน",
+            "en": "Weekdays: children ¥700 an hour or ¥900 a day; parents ¥600 a day"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6991/",
+          "name": {
+            "th": "คิดส์แลนด์ US ซัปโปโรอัตสึเบ็ตสึ",
+            "en": "Kids Land US, Sapporo Atsubetsu"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ไทรอัล อัตสึเบ็ตสึคุ ซัปโปโร",
+            "en": "Trial supercentre 2F, Atsubetsu-ku, Sapporo"
+          },
+          "what": {
+            "th": "สวนสนุกในร่มขนาดใหญ่ เล่นได้ทุกสภาพอากาศ",
+            "en": "A big all-weather indoor amusement park"
+          },
+          "why": {
+            "th": "เครื่องเล่นเยอะ เข้าออกได้ นำอาหารเข้าได้",
+            "en": "Lots of play equipment; come and go freely and bring your own food"
+          },
+          "q": "キッズランドUS 札幌厚別店, 厚別区, 札幌市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ほのかスポーツクラブ KIDS LAND",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6991/",
+          "name": {
+            "th": "โฮโนกะสปอร์ตคลับ คิดส์แลนด์",
+            "en": "Honoka Sports Club KIDS LAND"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โทมิโอกะ เทเนะคุ ซัปโปโร",
+            "en": "Tomioka, Teine-ku, Sapporo"
+          },
+          "what": {
+            "th": "อะธเลติกยักษ์และปีนผาสำหรับเด็กที่ชอบขยับ",
+            "en": "Giant athletic play and climbing for active children"
+          },
+          "why": {
+            "th": "เครื่องเล่นใช้ทั้งตัวเยอะ วันหยุดเปิดโซนสระตื้น",
+            "en": "Lots of equipment to use the whole body; a shallow pool area at weekends"
+          },
+          "tip": {
+            "th": "ปกติปิดวันพฤหัสที่สามของเดือน",
+            "en": "Usually closed on the third Thursday of the month"
+          },
+          "q": "Honoka Sports Club, Tomioka 3-jo, Teine-ku, Sapporo",
+          "ok": "2026-11"
         }
       ]
     },
