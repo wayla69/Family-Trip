@@ -946,3 +946,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Yunnan, round 12**: +3 from Amap place pages (Kunming). Proof in `docs/library-proof/cn-yunnan.json`.
 
 - **26 Nov 2026, Xi'an, round 12**: +4 from Amap place pages. Proof in `docs/library-proof/cn-xian.json`.
+
+- **26 Nov 2026, Guangzhou, round 14**: +6 from Amap place pages (Tianhe, Haizhu). Proof in `docs/library-proof/cn-guangzhou.json`.

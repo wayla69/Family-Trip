@@ -9185,6 +9185,232 @@
           },
           "q": "欢乐舟主题乐园, 白云大道北888号安华汇, 白云区, 广州",
           "ok": "2026-11"
+        },
+        {
+          "local": "正佳雨林生态植物园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E4%BD%B3%E9%9B%A8%E6%9E%97%E7%94%9F%E6%80%81%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนป่าฝนแกรนด์วิว",
+            "en": "Grandview Rainforest Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ห้างแกรนด์วิว ชั้น 7 ถนนเทียนเหอ เทียนเหอ",
+            "en": "Grandview Mall F7, Tianhe Road, Tianhe"
+          },
+          "what": {
+            "th": "สวนป่าฝนในร่มบนห้าง มีสัตว์และตาข่ายปีนป่าย",
+            "en": "An indoor rainforest garden in a mall, with animals and a climbing net"
+          },
+          "why": {
+            "th": "อยู่ในร่ม ผู้รีวิวบอกว่าตาข่ายปีนและตาข่ายเด้งทำให้เด็กเล่นได้นาน",
+            "en": "Indoors; reviewers say the climbing and bouncing nets keep children busy"
+          },
+          "q": "正佳雨林生态植物园 正佳广场F7, 天河路228号, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "长隆飞鸟乐园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E9%95%BF%E9%9A%86%E9%A3%9E%E9%B8%9F%E4%B9%90%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนนกฉางหลง",
+            "en": "Chimelong Bird Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนสือเป่ย ต้าสือ พานอวี๋",
+            "en": "Shibei Avenue, Dashi, Panyu"
+          },
+          "what": {
+            "th": "สวนนกที่มีการแสดงนกน้ำ นกบก และนกบิน",
+            "en": "A bird park with water, land and flying bird shows"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะกับเด็กเล็ก มีกิจกรรมเยอะ คนไม่แน่น",
+            "en": "Reviewers say it is easy for small children: lots to do with fewer crowds"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้ไปจองที่นั่งดูโชว์ก่อน 15 นาที",
+            "en": "Reviewers say take a seat for the show 15 minutes early"
+          },
+          "q": "长隆飞鸟乐园, 石北大道, 大石镇, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "岭南印象园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B2%AD%E5%8D%97%E5%8D%B0%E8%B1%A1%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนหลิ่งหนานอิมเพรสชัน",
+            "en": "Lingnan Impression Park"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เมืองมหาวิทยาลัย พานอวี๋",
+            "en": "University Town, Panyu"
+          },
+          "what": {
+            "th": "หมู่บ้านหลิ่งหนานเก่าริมน้ำ มีงานหัตถกรรม ลานเด็กเล่น และม้าหมุน",
+            "en": "An old Lingnan village by the water, with crafts, a play area and a carousel"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็ก ๆ สนุกกับลานเด็กเล่นและม้าหมุน",
+            "en": "Reviewers say children enjoy the play area and the carousel"
+          },
+          "q": "岭南印象园, 大学城外环西路, 番禺区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "云溪植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%BA%AA%E6%A4%8D%E7%89%A9%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนพฤกษศาสตร์อวิ๋นซี",
+            "en": "Yunxi Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนไป๋อวิ๋นใต้ เชิงเขาไป๋อวิ๋น ไป๋อวิ๋น",
+            "en": "Baiyun Avenue South, at the foot of Baiyun Mountain, Baiyun"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ มีพื้นที่ชุ่มน้ำ สนามหญ้ากว้าง และทางเดินสีเขียว",
+            "en": "A botanical garden with wetlands, big lawns and greenway walks"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี สนามหญ้าเหมาะให้วิ่งเล่น",
+            "en": "Children under 1.2 m go in free, reviewers say; the lawns are good for running about"
+          },
+          "q": "云溪植物园, 白云大道南1028号, 白云区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "白云山风景名胜区",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%B8%82%E7%99%BD%E4%BA%91%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA&city=440100",
+          "name": {
+            "th": "เขาไป๋อวิ๋น",
+            "en": "Baiyun Mountain"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนกว่างหยวนกลาง ไป๋อวิ๋น",
+            "en": "Guangyuan Middle Road, Baiyun"
+          },
+          "what": {
+            "th": "อุทยานภูเขาใหญ่ของกว่างโจว มีทางเดิน น้ำตก และวิวเมือง",
+            "en": "Guangzhou's big mountain park with walking paths, a waterfall and city views"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง ผู้รีวิวบอกว่าตั๋วเด็กราคาถูก",
+            "en": "Tagged for families outdoors; reviewers say the children's ticket is cheap"
+          },
+          "q": "白云山风景名胜区, 广园中路801号, 白云区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "沙湾古镇",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B2%99%E6%B9%BE%E5%8F%A4%E9%95%87&city=440100",
+          "name": {
+            "th": "เมืองโบราณซาวาน",
+            "en": "Shawan Ancient Town"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนฝูเป่ย ซาวาน พานอวี๋",
+            "en": "Fubei Road, Shawan, Panyu"
+          },
+          "what": {
+            "th": "เมืองน้ำหลิ่งหนานเก่า มีหอดนตรีกวางตุ้งและร้านขนมเก่าแก่",
+            "en": "An old Lingnan water town with a Cantonese music hall and old snack shops"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะพาเด็กเดินเล่นและรู้จักดนตรีกวางตุ้ง",
+            "en": "Reviewers say it suits a walk with children and a first taste of Cantonese music"
+          },
+          "q": "沙湾古镇, 福北路2号, 番禺区, 广州",
+          "ok": "2026-11"
         }
       ]
     }
