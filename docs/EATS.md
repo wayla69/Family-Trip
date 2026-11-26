@@ -824,3 +824,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **25 Nov 2026, Wellington (new town)**: 12, each checked on Google Maps. Proof in `docs/library-proof/nz-wellington.json`.
 
 - **25 Nov 2026, Incheon (new town)**: 11 (8 restaurants with playrooms or kids’ menus, 3 cafés), each checked on Google Maps. Proof in `docs/library-proof/kr-incheon.json`.
+
+- **25 Nov 2026, Fuji Five Lakes (new town)**: 8, each checked on Google Maps; two (Shirasu Udon, Sengen Chaya) from Mapple’s undated 2026 family-dining page, which the owner allowed. Proof in `docs/library-proof/jp-fuji.json`.
