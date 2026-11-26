@@ -418,6 +418,61 @@
       ],
       "left_out": [],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Chongqing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Chongqing Central Park Playground",
+          "page_name": "重庆中央公园-儿童乐园",
+          "src": "https://www.amap.com/search?query=%E9%87%8D%E5%BA%86%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9B%AD-%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-07-06",
+          "map": "Amap: open, not marked closed, newest review 2026-07-06",
+          "quote": "儿童乐园 · 旋转木马 · 充气城堡 · 沙地乐园"
+        },
+        {
+          "name": "Dopamine Trampoline Park (Guanyinqiao)",
+          "page_name": "多巴胺蹦床公园",
+          "src": "https://www.amap.com/search?query=%E5%A4%9A%E5%B7%B4%E8%83%BA%E8%B9%A6%E5%BA%8A%E5%85%AC%E5%9B%AD&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-02",
+          "map": "Amap: open, not marked closed, newest review 2026-09-02",
+          "quote": "儿童游乐区 · 小朋友在里面放电还是可以的，玩个大半天应该是没问题的"
+        },
+        {
+          "name": "Neobio Play Park (Joy City Chongqing)",
+          "page_name": "奈尔宝·儿童乐园·亲子餐厅(重庆大悦城店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E9%87%8D%E5%BA%86%E5%A4%A7%E6%82%A6%E5%9F%8E%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-12",
+          "map": "Amap: open, not marked closed, newest review 2026-10-12",
+          "quote": "儿童乐园 · 全软包防护"
+        },
+        {
+          "name": "Hongyan Park Playground",
+          "page_name": "红岩公园儿童游乐场",
+          "src": "https://www.amap.com/search?query=%E7%BA%A2%E5%B2%A9%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E6%B8%B8%E4%B9%90%E5%9C%BA&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "儿童乐园 · 室内亲子园"
+        },
+        {
+          "name": "Fandou Town Play Park (Beibei)",
+          "page_name": "翻斗小镇亲子乐园",
+          "src": "https://www.amap.com/search?query=%E7%BF%BB%E6%96%97%E5%B0%8F%E9%95%87%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-10",
+          "map": "Amap: open, not marked closed, newest review 2026-08-10",
+          "quote": "儿童乐园 · 适合低龄儿童 · 亲子互动区丰富 · 小宝宝游玩"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "深海大冒险, 奇幻丛林",
+          "why": "four to nine reviews only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
