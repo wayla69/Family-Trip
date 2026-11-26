@@ -1,103 +1,175 @@
 {
   "town": "jp-nikko",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 9 rows from Japan Activity (Oct 2026) and Rurubu Kids (Sep 2026), all passed library-check.cjs, 7 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Nikko Monaka",
-      "page_name": "和スイーツ専門店 日光もなか",
-      "src": "https://kids.rurubu.jp/article/174374/",
-      "date": "2026-09",
-      "map": "Google Maps '和スイーツ専門店「日光もなか」', 86 reviews, newest shown 3 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 9 rows from Japan Activity (Oct 2026) and Rurubu Kids (Sep 2026), all passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Nikko Monaka",
+          "page_name": "和スイーツ専門店 日光もなか",
+          "src": "https://kids.rurubu.jp/article/174374/",
+          "date": "2026-09",
+          "map": "Google Maps '和スイーツ専門店「日光もなか」', 86 reviews, newest shown 3 days ago"
+        },
+        {
+          "name": "Hatsuishi Cafe",
+          "page_name": "鉢石カフェ",
+          "src": "https://kids.rurubu.jp/article/174374/",
+          "date": "2026-09",
+          "map": "Google Maps 'Hatsuishi cafe', 141 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Kumoizu (Nikko)",
+          "page_name": "にほんかし雲IZU 日光店",
+          "src": "https://kids.rurubu.jp/article/174374/",
+          "date": "2026-09",
+          "map": "Google Maps 'คูโมอิสุ' (Kumoizu), 273 reviews, newest shown 20 days ago"
+        },
+        {
+          "name": "Rinnoji Temple",
+          "page_name": "Rinnoji Temple",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "date": "2026-05",
+          "map": "Google Maps 'วัดนิกโกซัง รินโนจิ' (Rinnoji), 2,082 reviews, newest shown 4 days ago"
+        },
+        {
+          "name": "Futarasan Shrine",
+          "page_name": "Futarasan Shrine",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "date": "2026-05",
+          "map": "Google Maps 'ศาลเจ้านิกโกฟุตะระซัง' (Futarasan), 4,981 reviews, newest shown 2 days ago"
+        },
+        {
+          "name": "Italian Embassy Villa Memorial Park",
+          "page_name": "Italian Embassy Memorial Park",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "date": "2026-05",
+          "map": "Google Maps 'Italian Embassy Villa Memorial Park', 1,340 reviews, newest shown 4 days ago"
+        },
+        {
+          "name": "Yudaki Falls",
+          "page_name": "Yudaki Falls",
+          "src": "https://japanactivity.com/nikko-with-kids",
+          "date": "2026-05",
+          "map": "Google Maps 'น้ำตกยูดากิ' (Yudaki Falls), 5,429 reviews, newest shown 1 day ago"
+        },
+        {
+          "name": "Ozasa Farm",
+          "page_name": "Ozasa Farm",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "date": "official",
+          "map": "Google Maps 'Ōzasa Farm' (瀬尾大笹原), newest review shown 13 hours ago"
+        },
+        {
+          "name": "Kotoku Ranch",
+          "page_name": "Kotoku Farm",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "date": "official",
+          "map": "Google Maps 'Kotoku Ranch' (中宮祠2452), newest review shown a day ago"
+        },
+        {
+          "name": "Nikko Natural Science Museum",
+          "page_name": "Nikko Natural Science Museum",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "date": "official",
+          "map": "Google Maps 'Nikko Natural Science Museum' (中宮祠2480-1), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Nikko NASU no Rusk-yasan",
+          "why": "no review from the last six months shown on the map"
+        },
+        {
+          "name": "日光バターの杜",
+          "why": "the map's only entry is at a different address from the page's"
+        },
+        {
+          "name": "Seven Nikko restaurants from Mapple",
+          "why": "no page date and nothing about children"
+        },
+        {
+          "name": "Nikko Yuba Company workshop",
+          "why": "the map finds only its factory in Utsunomiya"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 11 rows from Mapple (2026) and Visit Nikko (official), 4 passed library-check.cjs, 3 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
     },
     {
-      "name": "Hatsuishi Cafe",
-      "page_name": "鉢石カフェ",
-      "src": "https://kids.rurubu.jp/article/174374/",
-      "date": "2026-09",
-      "map": "Google Maps 'Hatsuishi cafe', 141 reviews, newest shown 1 day ago"
-    },
-    {
-      "name": "Kumoizu (Nikko)",
-      "page_name": "にほんかし雲IZU 日光店",
-      "src": "https://kids.rurubu.jp/article/174374/",
-      "date": "2026-09",
-      "map": "Google Maps 'คูโมอิสุ' (Kumoizu), 273 reviews, newest shown 20 days ago"
-    },
-    {
-      "name": "Rinnoji Temple",
-      "page_name": "Rinnoji Temple",
-      "src": "https://japanactivity.com/nikko-with-kids",
-      "date": "2026-05",
-      "map": "Google Maps 'วัดนิกโกซัง รินโนจิ' (Rinnoji), 2,082 reviews, newest shown 4 days ago"
-    },
-    {
-      "name": "Futarasan Shrine",
-      "page_name": "Futarasan Shrine",
-      "src": "https://japanactivity.com/nikko-with-kids",
-      "date": "2026-05",
-      "map": "Google Maps 'ศาลเจ้านิกโกฟุตะระซัง' (Futarasan), 4,981 reviews, newest shown 2 days ago"
-    },
-    {
-      "name": "Italian Embassy Villa Memorial Park",
-      "page_name": "Italian Embassy Memorial Park",
-      "src": "https://japanactivity.com/nikko-with-kids",
-      "date": "2026-05",
-      "map": "Google Maps 'Italian Embassy Villa Memorial Park', 1,340 reviews, newest shown 4 days ago"
-    },
-    {
-      "name": "Yudaki Falls",
-      "page_name": "Yudaki Falls",
-      "src": "https://japanactivity.com/nikko-with-kids",
-      "date": "2026-05",
-      "map": "Google Maps 'น้ำตกยูดากิ' (Yudaki Falls), 5,429 reviews, newest shown 1 day ago"
-    },
-    {
-      "name": "Ozasa Farm",
-      "page_name": "Ozasa Farm",
-      "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
-      "date": "official",
-      "map": "Google Maps 'Ōzasa Farm' (瀬尾大笹原), newest review shown 13 hours ago"
-    },
-    {
-      "name": "Kotoku Ranch",
-      "page_name": "Kotoku Farm",
-      "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
-      "date": "official",
-      "map": "Google Maps 'Kotoku Ranch' (中宮祠2452), newest review shown a day ago"
-    },
-    {
-      "name": "Nikko Natural Science Museum",
-      "page_name": "Nikko Natural Science Museum",
-      "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
-      "date": "official",
-      "map": "Google Maps 'Nikko Natural Science Museum' (中宮祠2480-1), newest review shown a day ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 9 rows from macaroni (Jun 2026), nap-camp (Apr 2026) and the Nikko tourism site (official); 8 passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "WHAT'S UP? (Utsunomiya)",
+          "page_name": "WHAT’S UP（ワッツ アップ）？",
+          "src": "https://macaro-ni.jp/175688",
+          "date": "2026-06",
+          "map": "Google Maps 'WHAT’S UP?' (5-2-1 Inter Park), newest review shown 4 hours ago"
+        },
+        {
+          "name": "Wild Kitchen Kumakuma (Utsunomiya)",
+          "page_name": "Wildkitchen Kumakuma（ワイルドキッチン クマクマ）",
+          "src": "https://macaro-ni.jp/175688",
+          "date": "2026-06",
+          "map": "Google Maps 'ワイルドキッチンくまくま & RVパーク宇都宮ICくまくま' (Nissato-machi), newest review shown a day ago"
+        },
+        {
+          "name": "TURQUOISE / TOKU (Utsunomiya)",
+          "page_name": "TURQUOISE（ターコイズ）徳",
+          "src": "https://macaro-ni.jp/175688",
+          "date": "2026-06",
+          "map": "Google Maps 'TURQUOISE(ターコイズ)／徳(TOKU)' (Shimokawamata-machi), newest review shown 2 months ago"
+        },
+        {
+          "name": "Nikko Hanaichimonme (strawberries and pets)",
+          "page_name": "Hanaichimonme",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/",
+          "date": "official",
+          "map": "Google Maps 'Nikko hanaichimonme' (800 Kosagoe), newest review shown a week ago"
+        },
+        {
+          "name": "Yuai Hiroba children's play area (Utsunomiya)",
+          "page_name": "ゆうあいひろば",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "date": "2026-04",
+          "map": "Google Maps 'Utsunomiya Citizens\\' Plaza Yuai Hiroba Children\\'s Play Area' (Babadōri), newest review shown 4 weeks ago"
+        },
+        {
+          "name": "Asolabo (Utsunomiya)",
+          "page_name": "遊LABO 宇都宮",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "date": "2026-04",
+          "map": "Google Maps '遊LABO（あそらぼ）' (1-6-1 Higashiyanase), newest review shown a month ago"
+        },
+        {
+          "name": "Rakuga Kids, Belmall Utsunomiya",
+          "page_name": "らくがキッズ 宇都宮ベルモール店",
+          "src": "https://www.nap-camp.com/mag/82646",
+          "date": "2026-04",
+          "map": "Google Maps 'らくがキッズ 宇都宮ベルモール店' (Yōtō), newest review shown a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "鬼怒楯岩大吊橋",
+          "why": "the checker could not read a 2025–2026 date on the page"
+        },
+        {
+          "name": "The Kids 宇都宮FKDインターパーク店",
+          "why": "no review dates readable on the map"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Nikko NASU no Rusk-yasan",
-      "why": "no review from the last six months shown on the map"
-    },
-    {
-      "name": "日光バターの杜",
-      "why": "the map's only entry is at a different address from the page's"
-    },
-    {
-      "name": "Seven Nikko restaurants from Mapple",
-      "why": "no page date and nothing about children"
-    },
-    {
-      "name": "Nikko Yuba Company workshop",
-      "why": "the map finds only its factory in Utsunomiya"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
-  "round3": {
-    "checked": "2026-11-24",
-    "agents": "one Haiku agent; 11 rows from Mapple (2026) and Visit Nikko (official), 4 passed library-check.cjs, 3 went in",
-    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  ]
 }

@@ -1,70 +1,131 @@
 {
   "town": "jp-tohoku",
-  "kind": "eats + sights",
-  "checked": "2026-11-24",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 13 rows from asoview (Dec 2025) and Nap Camp (Apr 2026), all passed library-check.cjs, 6 went in; no dated page for a new place to eat",
-  "added": [
+  "rounds": [
     {
-      "name": "Hachinohe Park Children's World",
-      "page_name": "八戸公園 こどもの国・八戸植物公園",
-      "src": "https://www.asoview.com/note/6203/",
-      "date": "2025-12",
-      "map": "Google Maps 'Hachinohe Park Children's World', 1,591 reviews, newest shown 6 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 13 rows from asoview (Dec 2025) and Nap Camp (Apr 2026), all passed library-check.cjs, 6 went in; no dated page for a new place to eat",
+      "added": [
+        {
+          "name": "Hachinohe Park Children's World",
+          "page_name": "八戸公園 こどもの国・八戸植物公園",
+          "src": "https://www.asoview.com/note/6203/",
+          "date": "2025-12",
+          "map": "Google Maps 'Hachinohe Park Children's World', 1,591 reviews, newest shown 6 days ago"
+        },
+        {
+          "name": "Kodomo Hatch",
+          "page_name": "こどもはっち",
+          "src": "https://www.asoview.com/note/6203/",
+          "date": "2025-12",
+          "map": "Google Maps 'こどもはっち', 18 reviews, newest shown 3 weeks ago"
+        },
+        {
+          "name": "CLAAPIN SAGAE",
+          "page_name": "CLAAPIN SAGAE",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "date": "2026-04",
+          "map": "Google Maps 'さくらんぼこどもキャンパス CLAAPIN SAGAE', 93 reviews, newest shown 3 months ago"
+        },
+        {
+          "name": "Shelter Inclusive Place COPAL",
+          "page_name": "シェルターインクルーシブプレイス コパル",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "date": "2026-04",
+          "map": "Google Maps 'Shelter Inclusive Place Copal', 223 reviews, newest shown a week ago"
+        },
+        {
+          "name": "Morikko Park (Yamagata Tendo)",
+          "page_name": "もりっこぱ～く山形天童店",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "date": "2026-04",
+          "map": "Google Maps 'もりっこぱ～く山形天童店（アンダの森山形天童店）', 8 reviews, newest shown 6 months ago"
+        },
+        {
+          "name": "Kurunto",
+          "page_name": "くるんと",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "date": "2026-04",
+          "map": "Google Maps '長井市 遊びと学びの交流施設 くるんと', 131 reviews, newest shown 9 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "SORAIE Misawa, もっくる, めんごりあ, べにっこひろば",
+          "why": "no review from the last six months shown on the map"
+        },
+        {
+          "name": "しあわせプラザ 児童遊戯室",
+          "why": "the map has the building only, with no reviews"
+        },
+        {
+          "name": "KIDS DOME SORAI",
+          "why": "the map's match is named differently and has no recent review"
+        },
+        {
+          "name": "Link MURAYAMA",
+          "why": "not found on the map"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "Kodomo Hatch",
-      "page_name": "こどもはっち",
-      "src": "https://www.asoview.com/note/6203/",
-      "date": "2025-12",
-      "map": "Google Maps 'こどもはっち', 18 reviews, newest shown 3 weeks ago"
-    },
-    {
-      "name": "CLAAPIN SAGAE",
-      "page_name": "CLAAPIN SAGAE",
-      "src": "https://www.nap-camp.com/mag/83090",
-      "date": "2026-04",
-      "map": "Google Maps 'さくらんぼこどもキャンパス CLAAPIN SAGAE', 93 reviews, newest shown 3 months ago"
-    },
-    {
-      "name": "Shelter Inclusive Place COPAL",
-      "page_name": "シェルターインクルーシブプレイス コパル",
-      "src": "https://www.nap-camp.com/mag/83090",
-      "date": "2026-04",
-      "map": "Google Maps 'Shelter Inclusive Place Copal', 223 reviews, newest shown a week ago"
-    },
-    {
-      "name": "Morikko Park (Yamagata Tendo)",
-      "page_name": "もりっこぱ～く山形天童店",
-      "src": "https://www.nap-camp.com/mag/83090",
-      "date": "2026-04",
-      "map": "Google Maps 'もりっこぱ～く山形天童店（アンダの森山形天童店）', 8 reviews, newest shown 6 months ago"
-    },
-    {
-      "name": "Kurunto",
-      "page_name": "くるんと",
-      "src": "https://www.nap-camp.com/mag/83090",
-      "date": "2026-04",
-      "map": "Google Maps '長井市 遊びと学びの交流施設 くるんと', 131 reviews, newest shown 9 days ago"
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from nap-camp (Apr 2026), asoview (Dec 2025 – Jan 2026), aumo (Oct 2026) and tabiiro (Sep 2026), all passed library-check.cjs, 6 went in",
+      "added": [
+        {
+          "name": "Trenta, Yamagata Kita",
+          "page_name": "トレンタ 山形北店",
+          "src": "https://tabiiro.jp/gourmet/article/yamagatashi-lunch-osusume/",
+          "date": "2026-09",
+          "map": "Google Maps 'Torenta Yamagatakitaten' (2-5-17 Shimakita), newest review shown 2 months ago"
+        },
+        {
+          "name": "Nobikko Jumbo, Sendai Izumi Ōsawa",
+          "page_name": "のびっこジャンボ 仙台泉大沢店",
+          "src": "https://www.asoview.com/note/6205/",
+          "date": "2025-12",
+          "map": "Google Maps 'のびっこジャンボ仙台泉大沢' (Ōsawa, Izumi-ku), newest review shown 2 days ago"
+        },
+        {
+          "name": "Pure Heart Kids Land, AEON Mall Natori",
+          "page_name": "ピュアハートキッズランド イオンモール名取",
+          "src": "https://www.asoview.com/note/6205/",
+          "date": "2025-12",
+          "map": "Google Maps 'Pujre Heart Kids Land Aeon Mall Natori', newest review shown 2 months ago"
+        },
+        {
+          "name": "Tomizawa Site Museum (Sendai)",
+          "page_name": "地底の森ミュージアム",
+          "src": "https://www.asoview.com/note/6828/",
+          "date": "2026-01",
+          "map": "Google Maps 'Sendai City Tomizawa Site Museum' (Nagamachi-minami), newest review shown 16 hours ago"
+        },
+        {
+          "name": "Smile Glico Park (Sendai)",
+          "page_name": "スマイルグリコパーク",
+          "src": "https://www.asoview.com/note/6828/",
+          "date": "2026-01",
+          "map": "Google Maps 'Smile Glico Park' (Miyagino), newest review shown a day ago"
+        },
+        {
+          "name": "Yamagata Cherry Land (Kaminoyama fruit farm)",
+          "page_name": "山形チェリーランド＆上山観光フルーツ園",
+          "src": "https://aumo.jp/articles/18297",
+          "date": "2026-10",
+          "map": "Google Maps 'Yamagata cherry land (Kaminoyama tourism fruit garden)', newest review shown 6 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "七北田公園",
+          "why": "no review dates readable on the map"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "SORAIE Misawa, もっくる, めんごりあ, べにっこひろば",
-      "why": "no review from the last six months shown on the map"
-    },
-    {
-      "name": "しあわせプラザ 児童遊戯室",
-      "why": "the map has the building only, with no reviews"
-    },
-    {
-      "name": "KIDS DOME SORAI",
-      "why": "the map's match is named differently and has no recent review"
-    },
-    {
-      "name": "Link MURAYAMA",
-      "why": "not found on the map"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

@@ -723,6 +723,80 @@
           },
           "q": "京王あそびの森HUGHUG",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/tokyo/things-to-do/ano-ne-kids-club-in-tokyo",
+          "name": {
+            "th": "อาโนเนะคิดส์คลับ",
+            "en": "ANO-NE Kids Club"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยูราคุโจ จิโยดะ",
+            "en": "Yūrakuchō, Chiyoda"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม ของเล่นและเครื่องเล่นเต็ม มีมุมเงียบให้นอนกลางวัน",
+            "en": "An indoor play space full of toys and play equipment, with quiet corners for a nap"
+          },
+          "why": {
+            "th": "มีของเล่นและเครื่องเล่น และมุมเงียบให้เด็กเล็กงีบ",
+            "en": "Toys and play equipment, and quiet corners where little ones can nap"
+          },
+          "q": "ANO-NE Kids Club, Yurakucho, Chiyoda, Tokyo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.tokyo-odaiba.net/en/genre/litpla/",
+          "name": {
+            "th": "ลิตเติลแพลนเน็ต ไดเวอร์ซิตีโตเกียวพลาซา",
+            "en": "Little Planet, DiverCity Tokyo Plaza"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 5 ไดเวอร์ซิตีโตเกียวพลาซา โอไดบะ",
+            "en": "DiverCity Tokyo Plaza 5F, Aomi, Odaiba"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มแบบดิจิทัล รูปที่เด็กวาดขยับได้ มีไดโนจัมปิง",
+            "en": "A digital indoor playground where children's drawings start to move, with DINO JUMPING"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ เด็กเล่นได้อิสระ",
+            "en": "An all-weather place for children to play freely"
+          },
+          "q": "Little Planet Diver City Tokyo Plaza, Aomi, Koto, Tokyo",
+          "ok": "2026-11"
         }
     ]
     },
@@ -1396,6 +1470,80 @@
           },
           "q": "大泉緑地 冒険ランド",
           "ok": "2026-11"
+        },
+        {
+          "local": "ボーネルンド プレイヴィル",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 900 เยน เด็ก 1–12 ปี 30 นาทีแรก วันธรรมดา",
+            "en": "≈ ¥900 for children 1–12, first 30 min on weekdays"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "บอร์เนอลุนด์เพลย์วิลล์ ทากัตสึกิ",
+            "en": "BørneLund PlayVille, Takatsuki"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนอามาอิเซกิ ทากัตสึกิ",
+            "en": "Amaiseki Park, Hatchōnawate, Takatsuki"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม ของเล่นบอร์เนอลุนด์ โซนนุ่ม และโต๊ะเล่นทรายเล่นน้ำ",
+            "en": "An indoor playground of BørneLund toys, soft play, and sand and water tables"
+          },
+          "why": {
+            "th": "ทำมาเพื่อเด็กเล็ก เหมาะกับ 1–5 ขวบ",
+            "en": "Made for little ones, best for ages 1 to 5"
+          },
+          "q": "BørneLund PlayVille Amaiseki Park, Takatsuki, Osaka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大枝公園",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/88271",
+          "name": {
+            "th": "สวนโอเอดะ โมริงุจิ",
+            "en": "Ōeda Park (Moriguchi)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "มัตสึชิตะโจ โมริงุจิ",
+            "en": "Matsushita-chō, Moriguchi"
+          },
+          "what": {
+            "th": "สวนใหญ่สำหรับกีฬาและเล่นในโมริงุจิ",
+            "en": "A big park for sport and play in Moriguchi"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ลูกกลิ้งยาว เครื่องเล่น \"บอลทาวเวอร์\" หอจรวด และเชือกทาร์ซาน",
+            "en": "A long roller slide, a \"ball tower\" climbing frame, a rocket tower and a Tarzan rope"
+          },
+          "q": "大枝公園, 守口市, Osaka",
+          "ok": "2026-11"
         }
     ]
     },
@@ -1921,6 +2069,154 @@
             "en": "Children are welcome, with step-by-step help; matcha included"
           },
           "q": "亀屋良長 本店, 京都",
+          "ok": "2026-11"
+        },
+        {
+          "local": "KIRI no KO",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "วันธรรมดา 600 เยน วันหยุด 850 เยน ต่ำกว่า 3 ขวบฟรี",
+            "en": "¥600 weekdays, ¥850 weekends and holidays; under 3 free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "สวนเด็กในร่ม KIRI no KO คาเมโอกะ",
+            "en": "KIRI no KO indoor kids' park (Kameoka)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ในสนามซังกะสเตเดียม ทางเหนือของสถานีคาเมโอกะ",
+            "en": "Inside Sanga Stadium by KYOCERA, north of Kameoka station"
+          },
+          "what": {
+            "th": "สวนเด็กในร่ม เครื่องเล่นไม้ธีมภูเขา หมอก และแม่น้ำของคาเมโอกะ",
+            "en": "An indoor kids' park with wooden play equipment on the theme of Kameoka's mountains, mist and river"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรี มีห้องให้นมและน้ำร้อนชงนม",
+            "en": "Under-threes go in free; a nursing room and hot water for formula"
+          },
+          "q": "KIRI no KO, Sanga Stadium by KYOCERA, Kameoka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 京都八幡店",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็กชั่วโมงละ 700 เยน วันธรรมดาทั้งวัน 900 เยน วันหยุด 3 ชั่วโมง 1,200 เยน ผู้ใหญ่วันละ 600 เยน",
+            "en": "Children ¥700 an hour; a day ¥900 weekdays, 3 hours ¥1,200 weekends; adults ¥600 a day"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "คิดส์แลนด์ US เกียวโตยาวาตะ",
+            "en": "Kids Land US Kyoto Yawata"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 3 ห้างฟามิเระยาวาตะ ยาวาตะ",
+            "en": "Famile Yawata 3rd floor, Yawata"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม เล่นได้ทุกสภาพอากาศ เต็มทั้งชั้นของห้าง",
+            "en": "An all-weather indoor play park filling a whole floor of a shopping mall"
+          },
+          "why": {
+            "th": "มีจังเกิลยิมใหญ่ บ่อบอล แทรมโพลีน และโซนนุ่มๆ ตั้งแต่เด็กเล็ก",
+            "en": "A giant climbing frame, a ball pool, trampolines and soft play for toddlers and up"
+          },
+          "q": "キッズランドUS 京都八幡店, ファミレやわた 3F, 八幡市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド伏見桃山",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "0–1 ขวบฟรี ทั้งวัน 1,300 เยน (ธรรมดา) 1,600 เยน (วันหยุด) หรือทุก 30 นาที 450 / 550 เยน",
+            "en": "Ages 0–1 free; a day ¥1,300 weekdays, ¥1,600 weekends; or ¥450 / ¥550 each 30 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ ฟุชิมิโมโมยามะ",
+            "en": "Pure Heart Kids Land Fushimi Momoyama"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 อาคารเสริมโมโมเทอร์เรซ โมโมยามะ ฟุชิมิ",
+            "en": "MOMO Terrace annex, 1st floor, Momoyama, Fushimi"
+          },
+          "what": {
+            "th": "สวนในร่ม มีบ่อบอลใหญ่ สไลเดอร์นุ่ม และบ่อทรายสะอาด",
+            "en": "An indoor park with a big ball pool, soft slides and a clean sandpit"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กและมุมหนังสือภาพ เด็ก 0–1 ขวบเข้าฟรี",
+            "en": "A baby area and a picture-book corner; babies aged 0 and 1 go in free"
+          },
+          "q": "Pure Heart Kids Land Fushimi Momoyama, MOMO Terrace, Kyoto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ひよしプレイアリーナ",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "สมาชิกแอป 30 นาทีแรก 800 / 900 เยน ชั่วโมงแรก 1,300 / 1,400 เยน ผู้ปกครองฟรี",
+            "en": "App members: first 30 min ¥800 weekdays / ¥900 weekends, first hour ¥1,300 / ¥1,400; parents free"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "name": {
+            "th": "ฮิโยชิเพลย์อารีนา นันตัน",
+            "en": "HIYOSHI PLAY ARENA (Nantan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิจิโนะเอกิสปริงส์ฮิโยชิ ฮิโยชิโจ นันตัน",
+            "en": "Michi-no-Eki Springs Hiyoshi, Hiyoshi-chō, Nantan"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นลมในร่ม เครื่องเล่นราว 30 อย่าง ทางเดินคดเคี้ยวยาว และสไลเดอร์สูง 4 เมตร",
+            "en": "An indoor air playground with about 30 play features, a long winding course and a 4 m slide"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก เด็กเล็กเล่นได้ด้วย",
+            "en": "An area for babies and toddlers, so small children can join in"
+          },
+          "q": "HIYOSHI PLAY ARENA, Hiyoshi, Nantan, Kyoto",
           "ok": "2026-11"
         }
     ]
@@ -2831,6 +3127,162 @@
           },
           "q": "南幌町子ども室内遊戯施設はれっぱ",
           "ok": "2026-11"
+        },
+        {
+          "local": "ザキッズ CiiNA CiiNA福住店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 500 เยน เด็กเริ่ม 1,200 เยน",
+            "en": "Adults ¥500, children from ¥1,200"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5403/",
+          "name": {
+            "th": "เดอะคิดส์ ชีนาชีนา ฟุกุซุมิ",
+            "en": "The Kids, CiiNA CiiNA Fukuzumi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ชีนาชีนา ฟุกุซุมิ โทโยฮิระคุ ซัปโปโร",
+            "en": "CiiNA CiiNA 2F, Fukuzumi, Toyohira-ku, Sapporo"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม เครื่องเล่นใหม่",
+            "en": "An indoor play space with new play equipment"
+          },
+          "why": {
+            "th": "เครื่องเล่นใหม่และปลอดภัย",
+            "en": "New equipment and a safe place to play"
+          },
+          "q": "ザキッズ CiiNA CiiNA福住店, 豊平区, 札幌市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リポビタンキッズ PLAYLOT by BørneLund",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 6 เดือน–12 ปี 30 นาทีแรก 900 เยน ต่อทุก 30 นาที 500 เยน",
+            "en": "Children (6 months–12): ¥900 first 30 min, ¥500 each 30 min after"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6991/",
+          "name": {
+            "th": "เพลย์ล็อต บอร์เนอลุนด์ เอสคอนฟิลด์ คิตะฮิโรชิมะ",
+            "en": "PLAYLOT by BørneLund, ES CON FIELD (Kitahiroshima)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 1 เอสคอนฟิลด์ฮอกไกโด เอฟวิลเลจ คิตะฮิโรชิมะ",
+            "en": "ES CON FIELD HOKKAIDO 1F, F Village, Kitahiroshima"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ที่สนามเบสบอล",
+            "en": "A big all-weather indoor playground at the baseball park"
+          },
+          "why": {
+            "th": "เล่นเต็มที่ในร่มได้ทุกสภาพอากาศ",
+            "en": "Room to play hard indoors in any weather"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน หน้าหนาวปิดเร็วขึ้น",
+            "en": "Open every day; shorter hours in winter"
+          },
+          "q": "リポビタンキッズ PLAYLOT by BørneLund, 北広島市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 札幌厚別店",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "วันธรรมดา เด็กชั่วโมงละ 700 หรือวันละ 900 เยน ผู้ปกครองวันละ 600 เยน",
+            "en": "Weekdays: children ¥700 an hour or ¥900 a day; parents ¥600 a day"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6991/",
+          "name": {
+            "th": "คิดส์แลนด์ US ซัปโปโรอัตสึเบ็ตสึ",
+            "en": "Kids Land US, Sapporo Atsubetsu"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชั้น 2 ไทรอัล อัตสึเบ็ตสึคุ ซัปโปโร",
+            "en": "Trial supercentre 2F, Atsubetsu-ku, Sapporo"
+          },
+          "what": {
+            "th": "สวนสนุกในร่มขนาดใหญ่ เล่นได้ทุกสภาพอากาศ",
+            "en": "A big all-weather indoor amusement park"
+          },
+          "why": {
+            "th": "เครื่องเล่นเยอะ เข้าออกได้ นำอาหารเข้าได้",
+            "en": "Lots of play equipment; come and go freely and bring your own food"
+          },
+          "q": "キッズランドUS 札幌厚別店, 厚別区, 札幌市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ほのかスポーツクラブ KIDS LAND",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6991/",
+          "name": {
+            "th": "โฮโนกะสปอร์ตคลับ คิดส์แลนด์",
+            "en": "Honoka Sports Club KIDS LAND"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โทมิโอกะ เทเนะคุ ซัปโปโร",
+            "en": "Tomioka, Teine-ku, Sapporo"
+          },
+          "what": {
+            "th": "อะธเลติกยักษ์และปีนผาสำหรับเด็กที่ชอบขยับ",
+            "en": "Giant athletic play and climbing for active children"
+          },
+          "why": {
+            "th": "เครื่องเล่นใช้ทั้งตัวเยอะ วันหยุดเปิดโซนสระตื้น",
+            "en": "Lots of equipment to use the whole body; a shallow pool area at weekends"
+          },
+          "tip": {
+            "th": "ปกติปิดวันพฤหัสที่สามของเดือน",
+            "en": "Usually closed on the third Thursday of the month"
+          },
+          "q": "Honoka Sports Club, Tomioka 3-jo, Teine-ku, Sapporo",
+          "ok": "2026-11"
         }
       ]
     },
@@ -3481,6 +3933,84 @@
             "en": "Rides even young children can enjoy safely, a nursing room and rest areas"
           },
           "q": "Dazaifu Amusement Park, Dazaifu, Fukuoka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "スキッズガーデン キャナルシティ博多",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kids.rurubu.jp/article/161123/",
+          "name": {
+            "th": "สคิดส์การ์เดน แคนาลซิตีฮากาตะ",
+            "en": "Skids Garden, Canal City Hakata"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แคนาลซิตีฮากาตะ สุมิโยชิ ฮากาตะคุ",
+            "en": "Canal City Hakata, Sumiyoshi, Hakata-ku"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม 0–7 ขวบ มีพี่เลี้ยงนำเล่น",
+            "en": "An indoor playground for ages 0 to 7, with play leaders"
+          },
+          "why": {
+            "th": "เด็ก 3 ขวบขึ้นไปเข้าเองได้ พ่อแม่ไปช้อปปิ้งได้",
+            "en": "Children 3 and up can go in alone while parents shop"
+          },
+          "q": "スキッズガーデンキャナルシティ博多, 博多区",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ニンジャ☆パーク福岡ももち",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kids.rurubu.jp/article/185983/",
+          "name": {
+            "th": "นินจาพาร์ก ฟุกุโอกะโมโมจิ",
+            "en": "Ninja Park Fukuoka Momochi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จิเงียวฮามะ โมโมจิ จูโอคุ",
+            "en": "Jigyōhama, Momochi, Chūō-ku"
+          },
+          "what": {
+            "th": "สวนอะธเลติกในร่ม มีแทรมโพลีน ปีนผา และด่านลมยาว 20 เมตร",
+            "en": "An indoor athletic park: trampolines, bouldering and a 20 m inflatable course"
+          },
+          "why": {
+            "th": "มีโซนเด็กพร้อมบ่อบอลสำหรับเด็กเล็ก",
+            "en": "A kids' area with a ball pool for small children"
+          },
+          "tip": {
+            "th": "ด่านนินจาธลอนสำหรับ 10 ขวบขึ้นไป",
+            "en": "The Ninjathlon course is for age 10 and up"
+          },
+          "q": "ニンジャ☆パーク福岡ももち, 地行浜, 福岡市",
           "ok": "2026-11"
         }
       ]
