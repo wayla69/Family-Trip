@@ -1,0 +1,137 @@
+{
+  "town": "jp-fuji",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents; rows from magical-trip.com (2025–2026), gltjp.com (2026), japanactivity.com, tabiiro.jp (2026-08) and Mapple’s 2026 Fuji Five Lakes family-dining page (no page date: the owner allowed undated food guides on 25 Nov 2026 when Google Maps confirms the shop)",
+  "added": [
+    {
+      "name": "Café Blue Blanc",
+      "page_name": "Café Blue Blanc",
+      "src": "https://www.magical-trip.com/media/top-kid-friendly-restaurants-near-mt-fuji-for-a-memorable-2025-family-outing/",
+      "date": "2025-12",
+      "map": "Google Maps 'Blue Blanc' (5551-2 Kamiyoshida), newest review shown a month ago"
+    },
+    {
+      "name": "Hawaiian Dining SOLA",
+      "page_name": "Hawaiian Dining SOLA",
+      "src": "https://www.magical-trip.com/media/top-kid-friendly-restaurants-near-mt-fuji-for-a-memorable-2025-family-outing/",
+      "date": "2025-12",
+      "map": "Google Maps 'Hawaiian Dining sola' (2-6-23 Nakazone), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "FUJIYAMA Terrace (buffet)",
+      "page_name": "Resort Dining FUJIYAMA Terrace",
+      "src": "https://www.magical-trip.com/media/top-kid-friendly-restaurants-near-mt-fuji-for-a-memorable-2025-family-outing/",
+      "date": "2025-12",
+      "map": "Google Maps 'Buffet dining Fujiyama Terrace' (Shinnishihara), newest review shown 5 days ago"
+    },
+    {
+      "name": "Sanrokuen",
+      "page_name": "Sanrokuen",
+      "src": "https://www.magical-trip.com/media/top-kid-friendly-restaurants-near-mt-fuji-for-a-memorable-2025-family-outing/",
+      "date": "2025-12",
+      "map": "Google Maps 'Sanrokuen' (3370-1 Funatsu), newest review shown 2 days ago"
+    },
+    {
+      "name": "Nagare Zushi (Fujiyoshida)",
+      "page_name": "Nagare Zushi Fujiyoshida Branch",
+      "src": "https://www.magical-trip.com/media/top-kid-friendly-restaurants-near-mt-fuji-for-a-memorable-2025-family-outing/",
+      "date": "2025-12",
+      "map": "Google Maps '沼津魚がし鮨 流れ鮨 富士吉田店' (1384-1 Matsuyama), newest review shown a day ago"
+    },
+    {
+      "name": "Restaurant Hamakko (main shop)",
+      "page_name": "レストランハマッコ本店",
+      "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/",
+      "date": "2026-08",
+      "map": "Google Maps 'レストランハマッコ本店' (6-7-21 Shimoyoshida), newest review shown a week ago"
+    },
+    {
+      "name": "Shirasu Udon",
+      "page_name": "白須うどん",
+      "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Shirasu Udon' (6-1-44 Kamiyoshidahigashi), newest review shown a day ago"
+    },
+    {
+      "name": "Sengen Chaya (main shop)",
+      "page_name": "浅間茶屋 本店",
+      "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Sengenchaya Honten' (5562-7 Kamiyoshida), newest review shown 19 hours ago"
+    },
+    {
+      "name": "Thomas Land, Fuji-Q Highland",
+      "page_name": "Thomas Land",
+      "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+      "date": "2026-02",
+      "map": "Google Maps 'Thomas Land' (Fuji-Q Highland), newest review shown a day ago"
+    },
+    {
+      "name": "Fuji-Q Highland",
+      "page_name": "Fuji-Q Highland",
+      "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+      "date": "2026-02",
+      "map": "Google Maps 'Fuji-Q Highland' (5-6-1 Shinnishihara), open, first of a list"
+    },
+    {
+      "name": "Fuji Subaru Land",
+      "page_name": "Fuji Subaru Land",
+      "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+      "date": "2026-02",
+      "map": "Google Maps 'Fuji Subaruland', newest review shown 14 hours ago"
+    },
+    {
+      "name": "Oishi Park",
+      "page_name": "Oishi Park",
+      "src": "https://www.gltjp.com/en/article/item/21605/",
+      "date": "2026-11",
+      "map": "Google Maps 'Oishi Park', newest review shown 2 hours ago"
+    },
+    {
+      "name": "Narusawa Ice Cave",
+      "page_name": "Narusawa Ice Cave",
+      "src": "https://www.gltjp.com/en/article/item/21605/",
+      "date": "2026-11",
+      "map": "Google Maps 'Narusawa Ice Cave', newest review shown 11 hours ago"
+    },
+    {
+      "name": "Yamanashi Maglev Exhibition Center",
+      "page_name": "Yamanashi Prefectural Maglev Exhibition Center",
+      "src": "https://www.gltjp.com/en/article/item/21605/",
+      "date": "2026-11",
+      "map": "Google Maps 'Yamanashi Prefectural Maglev Exhibition Center' (Ogatayama, Tsuru), newest review shown 5 hours ago"
+    },
+    {
+      "name": "Mt Fuji Panoramic Ropeway",
+      "page_name": "Fuji Panorama Ropeway",
+      "src": "https://www.magical-trip.com/media/family-friendly-adventures-exploring-mt-fuji-with-kids-top-activities-and-tips/",
+      "date": "2026-02",
+      "map": "Google Maps 'Mt. Fuji Panoramic Ropeway' (1163-1 Azagawa), newest review shown an hour ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Mina no Hiroba (三七の広場)",
+      "why": "review dates not readable on the map"
+    },
+    {
+      "name": "Yoshida Udon Hinoki, すし豊",
+      "why": "open on the map, but their pages say nothing about children"
+    },
+    {
+      "name": "Kosaku Kawaguchiko, Chante Levon, 里休",
+      "why": "their children’s lines are on Tabelog lists dated 2020 and 2023"
+    },
+    {
+      "name": "Appare lake boat",
+      "why": "no map entry of its own"
+    },
+    {
+      "name": "Yamanashi Science Center (Kofu), Kikyo Shingen Mochi (Fuefuki), Makiba Park (Hokuto)",
+      "why": "an hour or more from the lakes"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

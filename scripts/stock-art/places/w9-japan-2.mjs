@@ -30,7 +30,7 @@ const items = [
       + Lc('M64 110l-10-10M120 88v-14M176 110l10-10', '#FF8A65', 3) + face(120, 150, 0.46)
       + g(70, 210, 1, Lc('M0 0l40-10', '#8D5524', 5) + Lc('M60 0l40-10', '#8D5524', 5) + C(-4, 2, 4, '#E53935', 1.5) + C(56, 2, 4, '#E53935', 1.5))
       + [[40, 60], [200, 54]].map(([x, y]) => C(x, y, 6, '#5C6BC0', 2) + Lc(`M${x + 5} ${y}v-20l10 5`, '#5C6BC0', 3)).join('')),
-  L('jp/takayama/landmark-misonikomi.v1.svg', 'มิโซะนิโคมิอุด้งในหม้อดินแบบนาโกย่า', 'Miso nikomi udon in a clay pot, Nagoya style', ['miso nikomi udon', 'มิโซะนิโคมิอุด้ง', 'misonikomi', 'มิโซะนิโคมิ', 'hatcho miso', 'มิโซะฮัตโจ', 'clay pot', 'หม้อดิน', 'nagoya meshi', 'อาหารนาโกย่า', 'red miso broth'], 'หาไข่ดิบสีเหลืองที่อยู่กลางหม้อ', 'Find the yellow egg yolk in the middle of the pot',
+  L('jp/nagoya/landmark-misonikomi.v1.svg', 'มิโซะนิโคมิอุด้งในหม้อดินแบบนาโกย่า', 'Miso nikomi udon in a clay pot, Nagoya style', ['miso nikomi udon', 'มิโซะนิโคมิอุด้ง', 'misonikomi', 'มิโซะนิโคมิ', 'hatcho miso', 'มิโซะฮัตโจ', 'clay pot', 'หม้อดิน', 'nagoya meshi', 'อาหารนาโกย่า', 'red miso broth'], 'หาไข่ดิบสีเหลืองที่อยู่กลางหม้อ', 'Find the yellow egg yolk in the middle of the pot',
     // a brown clay pot with two little handles bubbling with dark red miso broth, thick noodles, a raw egg yolk in the middle, green onion and a piece of fried chicken, the lid tilted beside it as a plate
     E(170, 70, 56, 18, '#A1673F') + C(170, 56, 8, '#8D5524', 2.5) + E(170, 76, 48, 10, '#8D5524', 0)
       + P('M24 120h170c0 56-30 90-85 90s-85-34-85-90z', '#A1673F') + Lc('M24 120h-12M194 120h12', '#8D5524', 8) + E(109, 120, 85, 22, '#6D2E2E') + E(109, 120, 76, 17, '#8E3A2A', 0)
@@ -59,14 +59,14 @@ const items = [
       + E(40, 210, 30, 10, '#8D6E63', 2.5) + C(40, 196, 12, '#2E7D32', 2.5) + E(200, 214, 24, 8, '#8D6E63', 2.5) + C(204, 202, 10, '#388E3C', 2.5)
       + g(196, 96, 1, P('M-30 0l30-24 30 24z', '#C8A16B') + R(-22, 0, 44, 18, '#FFF8E1', 0, 2.5))
       + Lc('M110 200q10-6 20 0M140 222q10-6 20 0', '#E0F7FA', 3) + E(126, 204, 7, 3, '#FF7043', 1.5) + face(120, 140, 0.3)),
-  L('jp/hiroshima/landmark-sobameshi.v1.svg', 'โซบะเมชิ ข้าวผัดบะหมี่บนเตาเหล็กของโกเบ', 'Sobameshi, Kobe\'s fried noodles and rice on the griddle', ['sobameshi', 'โซบะเมชิ', 'kobe sobameshi', 'โซบะเมชิโกเบ', 'noodles and rice', 'ข้าวผัดบะหมี่', 'nagata', 'นางาตะ', 'teppan griddle', 'เตาเหล็ก', 'kobe street food'], 'หาไม้พายเหล็กสองอันที่สับเส้นกับข้าว', 'Find the two metal spatulas chopping the noodles into the rice',
+  L('jp/kobe/landmark-sobameshi.v1.svg', 'โซบะเมชิ ข้าวผัดบะหมี่บนเตาเหล็กของโกเบ', 'Sobameshi, Kobe\'s fried noodles and rice on the griddle', ['sobameshi', 'โซบะเมชิ', 'kobe sobameshi', 'โซบะเมชิโกเบ', 'noodles and rice', 'ข้าวผัดบะหมี่', 'nagata', 'นางาตะ', 'teppan griddle', 'เตาเหล็ก', 'kobe street food'], 'หาไม้พายเหล็กสองอันที่สับเส้นกับข้าว', 'Find the two metal spatulas chopping the noodles into the rice',
     // a black iron griddle with a mound of brown sauce-fried rice mixed with chopped noodles and cabbage, two metal spatulas chopping it, pink pickled ginger, a squiggle of sauce on top
     R(10, 90, 220, 120, '#37474F', 14) + R(20, 100, 200, 100, '#455A64', 8, 3)
       + P('M54 170c0-36 30-50 66-50s66 14 66 50z', '#8D5524') + ring(14, (k) => C(64 + (k % 7) * 18, 148 + Math.floor(k / 7) * 12, 3, '#F3E2B3', 0)) + ring(6, (k) => Lc(`M${68 + k * 18} 138c6-4 10 4 16 0`, '#C68642', 3))
       + ring(4, (k) => P(`M${76 + k * 22} 134l6-6 6 6-6 4z`, '#AED581', 1.5)) + Lc('M70 128c10-6 20 6 30 0s20 6 30 0 20 6 30 0', '#3E2723', 3) + P('M150 118l8-8 8 8-8 4z', '#F48FB1', 2)
       + g(46, 120, 1, R(-14, -6, 28, 10, '#B0BEC5', 2, 2.5) + Lc('M0-6l-10-34', '#5D4037', 5), -20) + g(196, 124, 1, R(-14, -6, 28, 10, '#B0BEC5', 2, 2.5) + Lc('M0-6l10-34', '#5D4037', 5), 20)
       + face(120, 156, 0.4)),
-  L('jp/hiroshima/landmark-maritimemuseum.v1.svg', 'พิพิธภัณฑ์การเดินเรือโกเบ หลังคาเหมือนใบเรือ', 'The Kobe Maritime Museum and its white sail roof', ['kobe maritime museum', 'พิพิธภัณฑ์การเดินเรือโกเบ', 'meriken park', 'สวนเมริเก็น', 'sail roof', 'หลังคาใบเรือ', 'kobe harbour', 'ท่าเรือโกเบ', 'white frame roof', 'หลังคาโครงสีขาว'], 'หาโครงเหล็กสีขาวที่โค้งเหมือนใบเรือโดนลม', 'Find the white frame curving like sails in the wind',
+  L('jp/kobe/landmark-maritimemuseum.v1.svg', 'พิพิธภัณฑ์การเดินเรือโกเบ หลังคาเหมือนใบเรือ', 'The Kobe Maritime Museum and its white sail roof', ['kobe maritime museum', 'พิพิธภัณฑ์การเดินเรือโกเบ', 'meriken park', 'สวนเมริเก็น', 'sail roof', 'หลังคาใบเรือ', 'kobe harbour', 'ท่าเรือโกเบ', 'white frame roof', 'หลังคาโครงสีขาว'], 'หาโครงเหล็กสีขาวที่โค้งเหมือนใบเรือโดนลม', 'Find the white frame curving like sails in the wind',
     // a low glass building on the waterfront under a big open white steel frame curving up like billowing sails, the harbour water and a little boat in front
     sky('#E3F2FD') + R(-4, 190, 248, 54, '#29B6F6', 0, 0) + Lc('M30 210h40M150 224h40', '#B3E5FC', 3) + R(-4, 176, 248, 16, '#BDBDBD', 0, 2.5)
       + R(40, 140, 160, 38, '#B3E5FC') + ring(7, (k) => Lc(`M${52 + k * 22} 144v30`, '#E1F5FE', 3))

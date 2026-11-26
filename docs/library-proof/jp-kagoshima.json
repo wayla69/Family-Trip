@@ -1,0 +1,197 @@
+{
+  "town": "jp-kagoshima",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents; rows from asoview.com (2025–2026), nap-camp.com, Tabelog’s Kagoshima lists and Mapple’s 2026 Kagoshima family-dining pages (no page date: the owner allowed undated food guides on 25 Nov 2026 when Google Maps confirms the shop)",
+  "added": [
+    {
+      "name": "Tsuki to Anemone",
+      "page_name": "月とアネモネ",
+      "src": "https://www.nap-camp.com/mag/50076",
+      "date": "2025-11",
+      "map": "Google Maps '月とアネモネ' (20-1 Shiroyamacho), newest review shown a week ago"
+    },
+    {
+      "name": "Sanwa Shokudo",
+      "page_name": "さんわ食堂",
+      "src": "https://www.nap-camp.com/mag/50076",
+      "date": "2025-11",
+      "map": "Google Maps 'Sanwa Shokudo' (2-16-15 Tagami), newest review shown 6 days ago"
+    },
+    {
+      "name": "Pizzeria e Trattoria Spesso",
+      "page_name": "スペッソ",
+      "src": "https://tabelog.com/matome/29137/",
+      "date": "undated",
+      "map": "Google Maps 'Spesso' (Gofukumachi), newest review shown a month ago"
+    },
+    {
+      "name": "Tenmonkan Wakana (main shop)",
+      "page_name": "吾愛人 本店",
+      "src": "https://tabelog.com/matome/29137/",
+      "date": "undated",
+      "map": "Google Maps 'Tenmonkan Wakana' (9-14 Higashisengokucho), newest review shown 8 hours ago"
+    },
+    {
+      "name": "Kumasotei",
+      "page_name": "熊襲亭",
+      "src": "https://tabelog.com/matome/29137/",
+      "date": "undated",
+      "map": "Google Maps 'Kumasotei' (6-10 Higashisengokucho), newest review shown a day ago"
+    },
+    {
+      "name": "Yamakataya Shokudo",
+      "page_name": "山形屋食堂",
+      "src": "https://www.mapple.net/region/a0704040101_g03000000_s-situation=family/spot/?page=2",
+      "date": "undated",
+      "map": "Google Maps 'Yamakataya Shokudo' (Yamakataya, Kinseicho), newest review shown 3 days ago"
+    },
+    {
+      "name": "Sengan-en Tea House",
+      "page_name": "仙巌園茶寮",
+      "src": "https://tabelog.com/matome/28450/",
+      "date": "undated",
+      "map": "Google Maps 'Sengan-en Tea House' (9700-1 Yoshino-cho), newest review shown 19 hours ago"
+    },
+    {
+      "name": "Tenmonkan Mujaki",
+      "page_name": "天文館むじゃき",
+      "src": "https://www.mapple.net/region/a0704040101_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Tenmonkan Mujaki' (5-8 Sennichicho), newest review shown 2 hours ago"
+    },
+    {
+      "name": "Hirataya (jambo mochi)",
+      "page_name": "平田屋",
+      "src": "https://www.mapple.net/region/a0704040100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Hirataya' (9673 Yoshino-cho), newest review shown 3 days ago"
+    },
+    {
+      "name": "Hirakawa Zoo",
+      "page_name": "鹿児島市平川動物公園",
+      "src": "https://www.asoview.com/note/6273/",
+      "date": "2025-12",
+      "map": "Google Maps 'Hirakawa Zoo', newest review shown a day ago"
+    },
+    {
+      "name": "Io World Kagoshima Aquarium",
+      "page_name": "いおワールド かごしま水族館",
+      "src": "https://www.asoview.com/note/6273/",
+      "date": "2025-12",
+      "map": "Google Maps 'Kagoshima City Aquarium', newest review shown 2 hours ago"
+    },
+    {
+      "name": "Sakurajima Dinosaur Park",
+      "page_name": "桜島自然恐竜公園",
+      "src": "https://www.asoview.com/note/6273/",
+      "date": "2025-12",
+      "map": "Google Maps 'Sakurajima Natural Dinosaur Park', newest review shown a day ago"
+    },
+    {
+      "name": "Yoshino Park",
+      "page_name": "鹿児島県立吉野公園",
+      "src": "https://www.asoview.com/note/6273/",
+      "date": "2025-12",
+      "map": "Google Maps 'Kagoshima Prefectural Yoshino Park', newest review shown a day ago"
+    },
+    {
+      "name": "Kagoshima City Science Hall",
+      "page_name": "鹿児島市立科学館",
+      "src": "https://www.asoview.com/note/6273/",
+      "date": "2025-12",
+      "map": "Google Maps 'Kagoshima Municipal Science Hall', newest review shown a week ago"
+    },
+    {
+      "name": "Uenohara Jomon Forest",
+      "page_name": "上野原縄文の森",
+      "src": "https://www.asoview.com/note/6273/",
+      "date": "2025-12",
+      "map": "Google Maps 'Uenohara Jomon Forest', newest review shown a week ago"
+    },
+    {
+      "name": "Kirishima Open-Air Museum",
+      "page_name": "霧島アートの森",
+      "src": "https://www.asoview.com/note/6273/",
+      "date": "2025-12",
+      "map": "Google Maps 'Kirishima Open Air Museum', newest review shown 20 hours ago"
+    },
+    {
+      "name": "Little Planet, AEON Mall Kagoshima",
+      "page_name": "リトルプラネット イオンモール鹿児島",
+      "src": "https://www.asoview.com/note/5455/",
+      "date": "2025-10",
+      "map": "Google Maps 'リトルプラネット イオンモール鹿児島', newest review shown 4 weeks ago"
+    },
+    {
+      "name": "Sodate toy room",
+      "page_name": "知育玩具広場そだて",
+      "src": "https://www.asoview.com/note/5455/",
+      "date": "2025-10",
+      "map": "Google Maps '知育玩具広場そだて' (Dairyucho), newest review shown a month ago"
+    },
+    {
+      "name": "Sodate toy room (Usuki)",
+      "page_name": "知育玩具ひろば そだて宇宿店",
+      "src": "https://www.asoview.com/note/5455/",
+      "date": "2025-10",
+      "map": "Google Maps '知育玩具広場そだて宇宿店' (Usuki), newest review shown 3 months ago"
+    },
+    {
+      "name": "Kagoshima Museum of the Environment",
+      "page_name": "かごしま環境未来館",
+      "src": "https://www.asoview.com/note/5455/",
+      "date": "2025-10",
+      "map": "Google Maps 'Kagoshima Museum of the Environment', newest review shown a week ago"
+    },
+    {
+      "name": "Kagoshima Märchen-kan",
+      "page_name": "かごしまメルヘン館",
+      "src": "https://www.asoview.com/note/5455/",
+      "date": "2025-10",
+      "map": "Google Maps 'Kagoshima City Modern Literature Museum' (the same building, 5-1 Shiroyamacho), newest review shown 3 days ago"
+    },
+    {
+      "name": "Kagoshima Craft Village",
+      "page_name": "かごしま文化工芸村",
+      "src": "https://www.asoview.com/note/5455/",
+      "date": "2025-10",
+      "map": "Google Maps 'Kagoshima Cultural and Craft Village', newest review shown a month ago"
+    },
+    {
+      "name": "Aira Children’s Hall Childon",
+      "page_name": "姶良市子ども館「ちるどん」",
+      "src": "https://www.nap-camp.com/mag/83112",
+      "date": "2026-04",
+      "map": "Google Maps '姶良市子ども館「ちるどん」', newest review shown a week ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "鹿児島ラーメン豚とろ 天文館本店",
+      "why": "review dates not readable on the map"
+    },
+    {
+      "name": "市場食堂 (Tabelog card marked closed)",
+      "why": "closed"
+    },
+    {
+      "name": "Niku to Kaisen Grill Pastan, TANTO TANTO, KAREN",
+      "why": "their pages say nothing about children"
+    },
+    {
+      "name": "Kirishima Shinwa-no-Sato Park, Kirishima Children’s Hall",
+      "why": "no review dates on the map"
+    },
+    {
+      "name": "Kids Base HIMITSUBA, Nikoniko Garden Nishi-Kajiki",
+      "why": "the map shows another business at the address"
+    },
+    {
+      "name": "Skids Garden",
+      "why": "newest review 11 months old"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

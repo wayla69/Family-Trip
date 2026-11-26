@@ -19,7 +19,7 @@ npm run check:migrations            # CI "migrations-journaled"
 BASE=https://<domain> CODE=<code> VIEW_TOKEN=<token> node test/verify-prod.mjs   # smoke checks against a deploy (THROTTLE=1 locks your IP 10 min)
 docker build -t memory-bookshelf .  # same image Railway runs (entrypoint fixes /data ownership, then runs as `node`)
 ```
-UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after UI changes (390/320 px phone, 1440 px desktop, light + dark).
+UI screenshots go to `$SHOTS` (default: a fresh `mb-shots-*` folder under the OS temp dir, printed at the start — set `SHOTS=/tmp/mb-shots` to keep one place) — look at them after UI changes (390/320 px phone, 1440 px desktop, light + dark).
 
 ## Architecture (no build step, no framework)
 - `server/index.js` Express: login/viewer link, `/healthz` (Postgres only — Railway's deploy health check, so a bucket outage can't block a deploy; `?full=1` adds photo storage, read by the Uptime workflow; `server/health.js`), bookshelf router, backup/import, static + SPA fallback. Refuses to boot without `DATABASE_URL`.

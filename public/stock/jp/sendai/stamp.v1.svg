@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="jsd-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="jsd-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#1F4E8C" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#1F4E8C" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E8F5E9" stroke="#1F4E8C" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M54 132c14-12 30-16 46-16s32 4 46 16z" fill="#A5D6A7" stroke="none"/><rect x="95" y="98" width="10" height="26" fill="#8D6E63"/><circle cx="80" cy="92" r="17" fill="#66BB6A"/><circle cx="120" cy="92" r="17" fill="#66BB6A"/><circle cx="100" cy="76" r="20" fill="#81C784"/><circle class="f" cx="95.5" cy="86" r="1.4" fill="#22213A" stroke="none"/><circle class="f" cx="104.5" cy="86" r="1.4" fill="#22213A" stroke="none"/><ellipse class="f" cx="92.3" cy="88.9" rx="2.2" ry="1.4" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse class="f" cx="107.7" cy="88.9" rx="2.2" ry="1.4" fill="#FF8FA3" stroke="none" opacity=".7"/><path class="f" d="M98.1 88.2q1.9 1.9 3.8 0" fill="none" stroke-width="1.1"/><ellipse cx="134" cy="124" rx="9" ry="7" fill="#A1887F" stroke-width="3"/><circle cx="127" cy="118" r="5.5" fill="#BCAAA4" stroke-width="3"/><path d="M121 118l-5 2 5 1z" fill="#FFB300" stroke-width="2"/><path d="M142 122l7-3" fill="none" stroke="#6D4C41" stroke-width="3"/><path d="M132 131v4M136 131v4" fill="none" stroke="#6D4C41" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#1F4E8C"><textPath href="#jsd-st-a" startOffset="50%" text-anchor="middle">SENDAI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#2E7D32"><textPath href="#jsd-st-b" startOffset="50%" text-anchor="middle">JAPAN</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#1F4E8C"/>
+</svg>
