@@ -8090,6 +8090,158 @@
           },
           "q": "大运河杭钢公园, 城炼街, 拱墅区, 杭州",
           "ok": "2026-11"
+        },
+        {
+          "local": "良渚博物院",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E8%89%AF%E6%B8%9A%E5%8D%9A%E7%89%A9%E9%99%A2&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์เหลียงจู่",
+            "en": "Liangzhu Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเหม่ยลี่โจว เหลียงจู่ อวี๋หัง",
+            "en": "Meilizhou Road, Liangzhu, Yuhang"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์อารยธรรมเหลียงจู่อายุ 5,000 ปี มีหยกโบราณและลานบ้านสงบ",
+            "en": "A museum of the 5,000-year-old Liangzhu culture, with jade and a calm courtyard"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวแนะนำให้พักที่ลานบ้านเมื่อเด็กเหนื่อย",
+            "en": "Tagged for families; reviewers say to rest in the courtyard when children tire"
+          },
+          "q": "良渚博物院, 美丽洲路1号, 余杭区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "中国丝绸博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%AD%E5%9B%BD%E4%B8%9D%E7%BB%B8%E5%8D%9A%E7%89%A9%E9%A6%86&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์ผ้าไหมแห่งชาติจีน",
+            "en": "China National Silk Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอวี้หวงซาน ใกล้ถนนหนานซาน ซีหู",
+            "en": "Yuhuangshan Road, near Nanshan Road, Xihu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ผ้าไหมและวิธีทำ มีสวนริมน้ำ",
+            "en": "A museum of silk and how it is made, with gardens by the water"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว เข้าฟรี",
+            "en": "Tagged for families; free to enter"
+          },
+          "tip": {
+            "th": "ผู้รีวิวบอกว่าให้ดูเด็กเล็กใกล้ ๆ บนทางเดินริมน้ำที่ลื่น",
+            "en": "Reviewers say keep small children close on the slippery lakeside paths"
+          },
+          "q": "中国丝绸博物馆, 玉皇山路73-1号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "浙江省博物馆 孤山馆区",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E6%B5%99%E6%B1%9F%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86(%E5%AD%A4%E5%B1%B1%E9%A6%86%E5%8C%BA)&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์มณฑลเจ้อเจียง กูซาน",
+            "en": "Zhejiang Provincial Museum (Gushan)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนกูซาน ริมทะเลสาบซีหู ซีหู",
+            "en": "Gushan Road, on West Lake, Xihu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สำคัญบนเกาะกูซานในทะเลสาบซีหู มีนำชมฟรี",
+            "en": "A major museum on Gushan island in West Lake, with free guided talks"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำให้พาเด็กมา บางครั้งเด็ก ๆ เป็นผู้นำชมเอง",
+            "en": "Reviewers recommend it with children; children sometimes give the guided talks"
+          },
+          "q": "浙江省博物馆孤山馆区, 孤山路25号, 西湖区, 杭州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杭州博物馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%9D%AD%E5%B7%9E%E5%8D%9A%E7%89%A9%E9%A6%86&city=330100",
+          "name": {
+            "th": "พิพิธภัณฑ์หางโจว",
+            "en": "Hangzhou Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เหลียงเต้าซาน ใกล้ถนนเหอฟาง ซ่างเฉิง",
+            "en": "Liangdaoshan, by Hefang Street, Shangcheng"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เมือง มีภาพฉายชีวิตตลาดหางโจวสมัยก่อน และตราประทับให้สะสมฟรี",
+            "en": "The city museum, with projections of old Hangzhou street life and free stamps to collect"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กไม่เบื่อ ออกมาก็เจอถนนเหอฟางเลย",
+            "en": "Reviewers say children do not get bored; Hefang Street is right outside"
+          },
+          "q": "杭州博物馆, 粮道山18号, 上城区, 杭州",
+          "ok": "2026-11"
         }
       ]
     },
