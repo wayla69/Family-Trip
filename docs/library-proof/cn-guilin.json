@@ -277,6 +277,40 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for restaurants with high chairs in Guilin and Yangshuo; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yuchu Guangxi Kitchen (Yangshuo)",
+          "page_name": "遇厨餐厅·本地特色菜(阳朔西街店)",
+          "src": "https://www.amap.com/search?query=%E9%81%87%E5%8E%A8%E9%A4%90%E5%8E%85%C2%B7%E6%9C%AC%E5%9C%B0%E7%89%B9%E8%89%B2%E8%8F%9C(%E9%98%B3%E6%9C%94%E8%A5%BF%E8%A1%97%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Jiachuan Beer Fish (Ten-Mile Gallery)",
+          "page_name": "家传·啤酒鱼·锅巴鸡米饭·农家菜(十里画廊店)",
+          "src": "https://www.amap.com/search?query=%E5%AE%B6%E4%BC%A0%C2%B7%E5%95%A4%E9%85%92%E9%B1%BC%C2%B7%E9%94%85%E5%B7%B4%E9%B8%A1%E7%B1%B3%E9%A5%AD%C2%B7%E5%86%9C%E5%AE%B6%E8%8F%9C(%E5%8D%81%E9%87%8C%E7%94%BB%E5%BB%8A%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Xie Dajie Beer Fish (river view)",
+          "page_name": "谢大姐非遗啤酒鱼(江景店)",
+          "src": "https://www.amap.com/search?query=%E8%B0%A2%E5%A4%A7%E5%A7%90%E9%9D%9E%E9%81%97%E5%95%A4%E9%85%92%E9%B1%BC(%E6%B1%9F%E6%99%AF%E5%BA%97)&city=450300",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "家庭聚餐 · 有宝宝椅 · 兔肉烤串微辣孩子最爱"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
