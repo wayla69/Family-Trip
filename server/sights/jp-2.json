@@ -1144,6 +1144,373 @@
           },
           "q": "Mt. Fuji Panoramic Ropeway, 1163-1 Azagawa, Fujikawaguchiko",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Yamanashi Fuji Spring Water Village Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำฟูจิยูซุยโนะซาโตะ ยามานาชิ"
+          },
+          "local": "山梨県立富士湧水の里水族館",
+          "kind": "aquarium",
+          "area": {
+            "en": "Sakana Park, Oshino",
+            "th": "สวนปลา โอชิโนะ"
+          },
+          "what": {
+            "en": "Freshwater fish aquarium fed by Mt Fuji's spring water, with a double-circulation tank where the fish seem to fly.",
+            "th": "พิพิธภัณฑ์สัตว์น้ำจืดที่ใช้น้ำพุจากภูเขาไฟฟูจิ มีตู้น้ำหมุนเวียนสองชั้นที่ปลาดูเหมือนบินได้"
+          },
+          "why": {
+            "en": "Small children can watch the freshwater fish; the page says they stay interested even at a young age.",
+            "th": "เด็กเล็กดูปลาน้ำจืดได้ เว็บระบุว่าเด็กเล็กก็ยังสนใจ"
+          },
+          "tip": {
+            "en": "Allow about 90 minutes",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥420 adults · ¥200 school-age · free on Saturdays",
+            "th": "≈ ¥420 ผู้ใหญ่ · ¥200 เด็กนักเรียน · วันเสาร์ฟรี"
+          },
+          "book": "none",
+          "q": "Yamanashi Prefectural Fuji Spring Water Village Aquarium, Oshino, Yamanashi, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5441/"
+        },
+        {
+          "name": {
+            "en": "Fujisan no Nukumori Kipokipo",
+            "th": "ฟูจิซังโนะนุกุโมริ คิโปคิโป"
+          },
+          "local": "ふじさんのぬく森 キポキポ",
+          "kind": "play",
+          "area": {
+            "en": "Kami-Yoshida, Fujiyoshida",
+            "th": "คามิโยชิดะ ฟูจิโยชิดะ"
+          },
+          "what": {
+            "en": "Wooden indoor play centre with a baby area, a toy town, a spiral climbing route and a ball pool shaped like the Oshino springs; outdoor treehouse and net play beside it.",
+            "th": "ศูนย์เล่นในร่มไม้ มีโซนเด็กเล็ก เมืองของเล่น ทางปีนเกลียว และบ่อบอลรูปน้ำพุโอชิโนะ ข้างๆ มีบ้านต้นไม้และตาข่ายเล่นกลางแจ้ง"
+          },
+          "why": {
+            "en": "The page says each age can play in its own area: the baby hiroba, the toy town and the forest hiroba.",
+            "th": "เว็บระบุว่าแต่ละวัยเล่นในโซนของตัวเองได้ คือลานเด็กเล็ก เมืองของเล่น และลานป่า"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700 adults · ¥300 children (junior high and under) · under 1 free",
+            "th": "≈ ¥700 ผู้ใหญ่ · ¥300 เด็ก (มัธยมต้นลงมา) · อายุต่ำกว่า 1 ขวบฟรี"
+          },
+          "book": "none",
+          "q": "Fujisan no Nukumori Kipokipo, Kami-Yoshida, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/82843"
+        },
+        {
+          "name": {
+            "en": "Fujisan Museum",
+            "th": "พิพิธภัณฑ์ฟูจิซัง"
+          },
+          "local": "ふじさんミュージアム",
+          "kind": "museum",
+          "area": {
+            "en": "Kami-Yoshida Higashi, Fujiyoshida",
+            "th": "คามิโยชิดะฮิงาชิ ฟูจิโยชิดะ"
+          },
+          "what": {
+            "en": "Museum on Mt Fuji's history with projection mapping onto a large model of the mountain, a 360-degree VR film and touch panels.",
+            "th": "พิพิธภัณฑ์ประวัติภูเขาไฟฟูจิ มีโปรเจกชันแมปปิงบนโมเดลภูเขาขนาดใหญ่ ฟิล์ม VR 360 องศา และจอสัมผัส"
+          },
+          "why": {
+            "en": "Indoors, so it stays dry, and the page says it suits a wide range of ages.",
+            "th": "อยู่ในร่ม ไม่เปียกฝน และเว็บระบุว่าเหมาะกับหลายวัย"
+          },
+          "tip": {
+            "en": "Allow about 90 minutes",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Fujisan Museum, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": {
+            "en": "Mt. Fuji World Heritage Centre, Yamanashi",
+            "th": "ศูนย์มรดกโลกภูเขาไฟฟูจิ ยามานาชิ"
+          },
+          "local": "山梨県立富士山世界遺産センター",
+          "kind": "museum",
+          "area": {
+            "en": "Funatsu, Kawaguchiko",
+            "th": "ฟุนาสึ คาวากุจิโกะ"
+          },
+          "what": {
+            "en": "Two buildings (north and south) about Mt Fuji's World Heritage status, with VR panels, an 8-minute screen film and an information desk with a cafe.",
+            "th": "อาคารสองหลัง (เหนือและใต้) เกี่ยวกับการเป็นมรดกโลกของภูเขาไฟฟูจิ มีแผง VR ภาพยนตร์ 8 นาที และโต๊ะข้อมูลพร้อมคาเฟ่"
+          },
+          "why": {
+            "en": "Indoors, so a rainy day with no view of the mountain still works.",
+            "th": "อยู่ในร่ม วันฝนตกที่มองไม่เห็นภูเขาก็ยังไปได้"
+          },
+          "tip": {
+            "en": "Allow about 90 minutes",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Mt. Fuji World Heritage Centre, Funatsu, Kawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": {
+            "en": "Yamanashi Gem Museum",
+            "th": "พิพิธภัณฑ์อัญมณียามานาชิ"
+          },
+          "local": "山梨宝石博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Funatsu, Kawaguchiko",
+            "th": "ฟุนาสึ คาวากุจิโกะ"
+          },
+          "what": {
+            "en": "Museum with over 2,000 gems and crystals from around the world, including a 146-carat aquamarine and a 1,270 kg crystal.",
+            "th": "พิพิธภัณฑ์ที่มีอัญมณีและผลึกจากทั่วโลกกว่า 2,000 ชิ้น รวมอความารีน 146 กะรัตและผลึกหนัก 1,270 กก."
+          },
+          "why": {
+            "en": "The page says a rainy day suits it: the gems glitter whatever the weather outside.",
+            "th": "เว็บระบุว่าเหมาะกับวันฝนตก เพราะอัญมณีส่องประกายไม่ว่าข้างนอกอากาศเป็นอย่างไร"
+          },
+          "tip": {
+            "en": "Closed on Wednesdays; 9:00–17:30 March to October, 9:30–17:00 November to February",
+            "th": "ปิดวันพุธ เปิด 9:00–17:30 มีนาคม–ตุลาคม และ 9:30–17:00 พฤศจิกายน–กุมภาพันธ์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥600 high school and over · ¥300 school-age",
+            "th": "≈ ¥600 มัธยมปลายขึ้นไป · ¥300 เด็กนักเรียน"
+          },
+          "book": "none",
+          "q": "Yamanashi Gem Museum, Funatsu, Kawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": {
+            "en": "Mt. Fuji Radar Dome Museum",
+            "th": "พิพิธภัณฑ์เรดาร์โดมภูเขาไฟฟูจิ"
+          },
+          "local": "富士山レーダードーム館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Michi-no-Eki Fujiyoshida, Fujiyoshida",
+            "th": "มิจิโนะเอกิ ฟูจิโยชิดะ"
+          },
+          "what": {
+            "en": "Weather-observation learning hall at the Fujiyoshida roadside station, in the same complex as a food court, shops and a free dog run.",
+            "th": "ห้องเรียนรู้การสังเกตสภาพอากาศที่สถานีริมทาง ฟูจิโยชิดะ อยู่ในอาคารเดียวกับฟู้ดคอร์ต ร้านค้า และลานสุนัขฟรี"
+          },
+          "why": {
+            "en": "The page says the indoor facilities at the roadside station keep a rainy day dry; under-school-age children enter free.",
+            "th": "เว็บระบุว่าสิ่งอำนวยความสะดวกในร่มที่สถานีริมทางทำให้วันฝนตกไม่เปียก เด็กก่อนวัยเรียนเข้าฟรี"
+          },
+          "tip": {
+            "en": "Allow about 90 minutes",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥630 adults · ¥420 school-age · under school age free",
+            "th": "≈ ¥630 ผู้ใหญ่ · ¥420 เด็กนักเรียน · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "Mt. Fuji Radar Dome Museum, Michi-no-Eki Fujiyoshida, Fujiyoshida, Japan",
+          "ok": "2026-11",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": {
+            "en": "Craft Village Dallas Village",
+            "th": "หมู่บ้านงานฝีมือดัลลัสวิลเลจ"
+          },
+          "local": "クラフトの里ダラスヴィレッジ",
+          "kind": "culture",
+          "area": {
+            "en": "Yamanakako",
+            "th": "ยามานากาโกะ"
+          },
+          "what": {
+            "en": "Craft workshops for glass blowing, pottery and painting, with a barbecue restaurant beside them.",
+            "th": "เวิร์กช็อปงานฝีมือเป่าแก้ว ปั้นเซรามิก และวาดภาพ มีร้านบาร์บีคิวอยู่ข้างๆ"
+          },
+          "why": {
+            "en": "Indoor craft workshops, so a rainy day can be spent making things, the page says.",
+            "th": "เวิร์กช็อปงานฝีมือในร่ม เว็บระบุว่าวันฝนตกใช้เวลาทำของได้"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Craft no Sato Dallas Village, Yamanakako, Japan",
+          "ok": "2026-11",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": {
+            "en": "Oshino Hakkai",
+            "th": "โอชิโนะฮักไค"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Oshino",
+            "th": "โอชิโนะ"
+          },
+          "what": {
+            "en": "Eight spring-fed pools at the base of Mt Fuji, with fish feeding, grass mochi stalls and spring-water soba.",
+            "th": "สระน้ำพุ 8 แห่งที่เชิงภูเขาไฟฟูจิ มีให้อาหารปลา แผงขายคุซะโมจิ และโซบะน้ำพุ"
+          },
+          "why": {
+            "en": "Kids treat it like a stamp rally, checking off each pool on a map as they find it.",
+            "th": "เด็กๆ เล่นเหมือนสแตมป์แรลลี เจอสระไหนก็ติ๊กบนแผนที่"
+          },
+          "tip": {
+            "en": "Allow about 90 minutes",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Oshino Hakkai, Oshino, Yamanashi, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/places/oshino-hakkai/"
+        },
+        {
+          "name": {
+            "en": "Kawaguchiko Music Forest Museum",
+            "th": "พิพิธภัณฑ์ดนตรีฟอเรสต์ คาวากุจิโกะ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Kawaguchiko",
+            "th": "คาวากุจิโกะ"
+          },
+          "what": {
+            "en": "European-style gardens filled with automated music instruments, including a dance organ with 43 life-sized mechanical figures.",
+            "th": "สวนสไตล์ยุโรปที่เต็มไปด้วยเครื่องดนตรีอัตโนมัติ รวมถึงออร์แกนเต้นรำที่มีหุ่นกลขนาดเท่าคนจริง 43 ตัว"
+          },
+          "why": {
+            "en": "The page says a live programme of short performances runs through the day, and the museum works for all ages, including babies in carriers.",
+            "th": "เว็บระบุว่ามีการแสดงสั้นๆ สดตลอดวัน และเหมาะกับทุกวัย รวมถึงทารกที่อุ้มในเป้"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kawaguchiko Music Forest Museum, Kawaguchiko, Japan",
+          "ok": "2026-11",
+          "src": "https://japanforkids.jp/fuji-five-lakes-with-kids/"
         }
       ]
     },
@@ -1380,6 +1747,375 @@
           },
           "q": "Toonshi Park, 1284-1 Nishinooka, Toon",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "KIT PLAY",
+            "th": "คิตเพลย์"
+          },
+          "local": "空想こども天国 KIT PLAY",
+          "kind": "play",
+          "area": {
+            "en": "JR Matsuyama Station, Miyata-cho (Kisuke Box 3F)",
+            "th": "สถานี JR มัตสึยามะ มิยาตะโจ (Kisuke Box ชั้น 3)"
+          },
+          "what": {
+            "en": "A big indoor play park with a large climbing-and-slide structure and a net tree.",
+            "th": "สวนเด็กในร่มขนาดใหญ่ มีโครงปีนและสไลเดอร์ใหญ่ และต้นไม้ตาข่าย"
+          },
+          "why": {
+            "en": "A café, a watch-over counter and a nursing room, a minute from the station.",
+            "th": "มีคาเฟ่ เคาน์เตอร์ดูแลเด็ก และห้องให้นม เดินจากสถานีแค่ 1 นาที"
+          },
+          "tip": {
+            "en": "Weekdays 10:00–18:00; weekends and holidays 10:00–20:00; irregular closures.",
+            "th": "วันธรรมดา 10:00–18:00 เสาร์อาทิตย์และวันหยุด 10:00–20:00 มีวันปิดไม่แน่นอน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥800 per 30 min · ¥2,300 for 2 hours",
+            "th": "≈ ¥800 ต่อ 30 นาที · ¥2,300 แบบ 2 ชั่วโมง"
+          },
+          "book": "none",
+          "q": "KIT PLAY, Kisuke Box 3F, Miyata-cho, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": {
+            "en": "Nanairo Play Hall",
+            "th": "นานาอิโระ"
+          },
+          "local": "あそび場ナナイロ",
+          "kind": "play",
+          "area": {
+            "en": "Dan-dan PARK 3F, Kuko-dori",
+            "th": "Dan-dan PARK ชั้น 3 คูโกะโดริ"
+          },
+          "what": {
+            "en": "An indoor play hall supervised by Bornelund, with a baby-only area.",
+            "th": "ห้องเล่นในร่มที่ดูแลโดยบอร์เนลุนด์ มีโซนสำหรับทารกโดยเฉพาะ"
+          },
+          "why": {
+            "en": "A play area just for babies, inside a car dealership building.",
+            "th": "มีโซนเล่นสำหรับทารกโดยเฉพาะ อยู่ในอาคารโชว์รูมรถยนต์"
+          },
+          "tip": {
+            "en": "Closed Tuesdays, second Wednesdays and public holidays, as Dan-dan PARK.",
+            "th": "ปิดวันอังคาร วันพุธที่สองของเดือน และวันหยุดนักขัตฤกษ์ ตามวันของ Dan-dan PARK"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400 adults · ¥600 children (6 months to primary school)",
+            "th": "≈ ¥400 ผู้ใหญ่ · ¥600 เด็ก (6 เดือนถึงประถม)"
+          },
+          "book": "none",
+          "q": "Nanairo, Dan-dan PARK 3F, Kuko-dori, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": {
+            "en": "Matsuyama Kodomo-kan",
+            "th": "บ้านเด็กมัตสึยามะ (โคโดโมะคัง)"
+          },
+          "local": "松山市総合コミュニティセンター「こども館」",
+          "kind": "play",
+          "area": {
+            "en": "Minato-cho, 10-minute walk from Matsuyama-shi Station",
+            "th": "มินาโตะโจ เดินจากสถานีมัตสึยามะชิ 10 นาที"
+          },
+          "what": {
+            "en": "A free indoor children's centre with big blocks and a train-shaped play structure.",
+            "th": "ศูนย์เด็กในร่มเข้าฟรี มีบล็อกขนาดใหญ่และโครงเล่นรูปรถไฟ"
+          },
+          "why": {
+            "en": "Big blocks and a train to play on, plus craft classes and a planetarium.",
+            "th": "มีบล็อกใหญ่และรถไฟให้เล่น พร้อมคลาสงานฝีมือและท้องฟ้าจำลอง"
+          },
+          "tip": {
+            "en": "9:00–17:00; closed Mondays (or the next day when a holiday); the planetarium costs extra.",
+            "th": "9:00–17:00 ปิดวันจันทร์ (หรือวันถัดไปถ้าตรงวันหยุด) ท้องฟ้าจำลองคิดค่าเข้าเพิ่ม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free (planetarium extra)",
+            "th": "ฟรี (ท้องฟ้าจำลองคิดเพิ่ม)"
+          },
+          "book": "none",
+          "q": "Matsuyama City Community Centre Kodomo-kan, Minato-cho, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": {
+            "en": "Himitsu no Mori",
+            "th": "ฮิมิตสึโนะโมริ"
+          },
+          "local": "ひみつの森",
+          "kind": "play",
+          "area": {
+            "en": "Emifull MASAKI, Masaki (about 20 min from the city)",
+            "th": "เอมิฟูล มาซากิ (ห่างจากตัวเมืองราว 20 นาที)"
+          },
+          "what": {
+            "en": "An indoor adventure park for children from 0 to 12, with a pirate-ship ball pool, slides and bouldering.",
+            "th": "สวนผจญภัยในร่มสำหรับเด็ก 0–12 ปี มีบ่อบอลรูปเรือโจรสลัด สไลเดอร์ และโบลเดอริง"
+          },
+          "why": {
+            "en": "A pirate-ship ball pool and a giant-turtle ball pool.",
+            "th": "มีบ่อบอลเรือโจรสลัดและบ่อบอลเต่ายักษ์"
+          },
+          "tip": {
+            "en": "Weekdays 10:00–18:00, weekends and holidays 9:00–18:00 (last entry 17:30); closed 12:00–13:00.",
+            "th": "วันธรรมดา 10:00–18:00 เสาร์อาทิตย์และวันหยุด 9:00–18:00 (เข้าได้ถึง 17:30) ปิดพัก 12:00–13:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥600 child · ¥300 parent (30 min)",
+            "th": "≈ ¥600 เด็ก · ¥300 ผู้ปกครอง (30 นาที)"
+          },
+          "book": "none",
+          "q": "Himitsu no Mori, Emifull MASAKI, Masaki, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": {
+            "en": "Round One Stadium Matsuyama",
+            "th": "ราวด์วัน สเตเดียม มัตสึยามะ"
+          },
+          "local": "ラウンドワンスタジアム松山店",
+          "kind": "play",
+          "area": {
+            "en": "Higashinagato, Matsuyama",
+            "th": "ฮิงาชินางาโตะ มัตสึยามะ"
+          },
+          "what": {
+            "en": "An indoor amusement centre with bowling, karaoke and a sports-play area.",
+            "th": "ศูนย์ความบันเทิงในร่ม มีโบว์ลิ่ง คาราโอเกะ และโซนเล่นกีฬา"
+          },
+          "why": {
+            "en": "A kids' area inside the sports-play zone for children up to grade 3.",
+            "th": "มีโซนเด็กในโซนเล่นกีฬา สำหรับเด็กถึงประถมปีที่ 3"
+          },
+          "tip": {
+            "en": "Open daily; the kids' area is for children up to primary grade 3.",
+            "th": "เปิดทุกวัน โซนเด็กสำหรับเด็กถึงประถมปีที่ 3"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Round One Stadium Matsuyama, Higashinagato 1-3-10, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": {
+            "en": "Ura Dogo",
+            "th": "อุระโดโงะ"
+          },
+          "local": "道後温泉遊戯場ウラ道後",
+          "kind": "play",
+          "area": {
+            "en": "Dogo-Yuzuki-cho, 5 min walk from Dogo Onsen Station",
+            "th": "โดโงะยูซึกิโจ เดินจากสถานีโดโงะออนเซ็น 5 นาที"
+          },
+          "what": {
+            "en": "A shooting-gallery and game hall in the Dogo hot-spring street, with local capsule machines.",
+            "th": "ห้องเกมและยิงเป้าบนถนนออนเซ็นโดโงะ มีตู้กาชาปองของท้องถิ่น"
+          },
+          "why": {
+            "en": "A shooting gallery in the historic hot-spring street, plus ice cream and drinks.",
+            "th": "มีเกมยิงเป้าบนถนนออนเซ็นเก่าแก่ พร้อมไอศกรีมและเครื่องดื่ม"
+          },
+          "tip": {
+            "en": "Weekdays 10:00–18:00, Saturdays 10:00–21:00; Sunday and holiday hours on Instagram.",
+            "th": "วันธรรมดา 10:00–18:00 วันเสาร์ 10:00–21:00 เวลาวันอาทิตย์และวันหยุดดูที่อินสตาแกรมของร้าน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥500 for 8 shots",
+            "th": "≈ ¥500 ต่อ 8 นัด"
+          },
+          "book": "none",
+          "q": "Ura Dogo, Dogo-Yuzuki-cho 3-13, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": {
+            "en": "Dogo Onsen Honkan",
+            "th": "โดโงะออนเซ็น ฮนกัง"
+          },
+          "local": "道後温泉本館",
+          "kind": "onsen",
+          "area": {
+            "en": "Dogo-yunomachi, 5 min walk from Dogo Onsen Station",
+            "th": "โดโงะยูโนะมาจิ เดินจากสถานีโดโงะออนเซ็น 5 นาที"
+          },
+          "what": {
+            "en": "A public bathhouse and important cultural property, the first stop in Dogo.",
+            "th": "โรงอาบน้ำสาธารณะและมรดกทางวัฒนธรรมสำคัญ จุดแรกที่ต้องแวะในโดโงะ"
+          },
+          "why": {
+            "en": "The main building of Dogo Onsen, open from 6:00 in the morning.",
+            "th": "อาคารหลักของโดโงะออนเซ็น เปิดตั้งแต่ 6:00 น."
+          },
+          "tip": {
+            "en": "Open daily 6:00–23:00, last entry 22:30.",
+            "th": "เปิดทุกวัน 6:00–23:00 เข้าได้ถึง 22:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Dogo Onsen Honkan, Dogo-yunomachi 5-6, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.mapple.net/sp_spot/573290/"
+        },
+        {
+          "name": {
+            "en": "SPA P-SPO Hojo",
+            "th": "สปา พีสโป โฮโจ"
+          },
+          "local": "SPA P·SPO 北条店",
+          "kind": "play",
+          "area": {
+            "en": "Hojo-tsuji, Matsuyama",
+            "th": "โฮโจซึจิ มัตสึยามะ"
+          },
+          "what": {
+            "en": "An indoor play hall inside a sports and fitness gym, divided into areas by age.",
+            "th": "ห้องเล่นในร่มในยิมกีฬาและฟิตเนส แบ่งโซนตามวัย"
+          },
+          "why": {
+            "en": "Its play area is split by age, inside a sports and fitness gym.",
+            "th": "โซนเล่นแบ่งตามวัย อยู่ในยิมกีฬาและฟิตเนส"
+          },
+          "tip": {
+            "en": "Open 10:00–20:00 every day of the year; children from primary grade 4 up are not admitted.",
+            "th": "เปิด 10:00–20:00 ทุกวันตลอดปี เด็กตั้งแต่ประถมปีที่ 4 ขึ้นไปเข้าไม่ได้"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,000 per person (kids park visitor)",
+            "th": "≈ ¥1,000 ต่อคน (ผู้เยี่ยมชมสวนเด็ก)"
+          },
+          "book": "none",
+          "q": "SPA P-SPO Hojo, Hojo-tsuji 608-1, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": {
+            "en": "Minami-Edo Park",
+            "th": "สวนมินามิเอโดะ"
+          },
+          "local": "南江戸公園",
+          "kind": "park",
+          "area": {
+            "en": "Minami-Edo, about 15–35 min by bus or car",
+            "th": "มินามิเอโดะ นั่งรถบัสหรือรถยนต์ราว 15–35 นาที"
+          },
+          "what": {
+            "en": "A city park with play equipment, a lawn area and tennis courts.",
+            "th": "สวนสาธารณะของเมือง มีอุปกรณ์เล่น สนามหญ้า และสนามเทนนิส"
+          },
+          "why": {
+            "en": "Play equipment and a big lawn to run on, free to enter.",
+            "th": "มีอุปกรณ์เล่นและสนามหญ้ากว้างให้วิ่ง เข้าฟรี"
+          },
+          "tip": {
+            "en": "Open 7:00–19:00 April to September, 7:00–17:00 October to March; open all year.",
+            "th": "เปิด 7:00–19:00 เมษายนถึงกันยายน 7:00–17:00 ตุลาคมถึงมีนาคม เปิดตลอดปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Minami-Edo Park, Minami-Edo 4-1, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6947"
         }
       ]
     }
