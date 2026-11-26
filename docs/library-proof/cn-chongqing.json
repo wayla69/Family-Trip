@@ -384,6 +384,40 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for restaurants with high chairs in Chongqing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Gong Xiaochao (by Chongqing Zoo)",
+          "page_name": "贡小炒(动物园店)",
+          "src": "https://www.amap.com/search?query=%E8%B4%A1%E5%B0%8F%E7%82%92(%E5%8A%A8%E7%89%A9%E5%9B%AD%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "有宝宝椅 · 今天我们吃了豆花饭，调料很好吃，小孩子也吃了一碗"
+        },
+        {
+          "name": "Manjiao Congee Hotpot (MixC)",
+          "page_name": "慢搅粥底火锅(重庆万象城·黑金店)",
+          "src": "https://www.amap.com/search?query=%E6%85%A2%E6%90%85%E7%B2%A5%E5%BA%95%E7%81%AB%E9%94%85(%E9%87%8D%E5%BA%86%E4%B8%87%E8%B1%A1%E5%9F%8E%C2%B7%E9%BB%91%E9%87%91%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "有宝宝椅 · 也很适合小朋友吃"
+        },
+        {
+          "name": "Huxiu Yunyao Mushroom Soup Bistro (Yunling Paradise Walk)",
+          "page_name": "虎嗅云肴·山野菌汤Bistro(云领天街店)",
+          "src": "https://www.amap.com/search?query=%E8%99%8E%E5%97%85%E4%BA%91%E8%82%B4%C2%B7%E5%B1%B1%E9%87%8E%E8%8F%8C%E6%B1%A4Bistro(%E4%BA%91%E9%A2%86%E5%A4%A9%E8%A1%97%E5%BA%97)&city=500000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
+          "map": "Amap: open, not marked closed, newest review 2026-10-25",
+          "quote": "有宝宝椅 · 适合家庭聚会"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
