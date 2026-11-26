@@ -3102,6 +3102,197 @@
       {"name":{"en":"Misty Rain Zhangjiajie","th":"มิสตี้เรน จางเจียเจี้ย"},"kind":"show","area":{"en":"Wulingyuan, near Xibu Street","th":"อู่หลิงยวน ใกล้ถนนซีปู้"},"what":{"en":"An evening stage show set against real mountain and water scenery, with subtitles on both sides.","th":"การแสดงยามเย็นบนเวทีท่ามกลางภูเขาและน้ำจริง มีซับทั้งสองภาษา"},"why":{"en":"The page says the child followed the story, helped by the subtitles.","th":"หน้าเว็บบอกว่าเด็กตามเรื่องได้ เพราะมีซับ"},"tip":{"en":"The page suggests the 19:30 show, which has clearer subtitles for kids.","th":"หน้าเว็บแนะนำรอบ 19:30 เพราะซับชัดกว่าสำหรับเด็ก"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Misty Rain Zhangjiajie, Wulingyuan, Zhangjiajie","ok":"2026-11","src":"https://www.yunnanplay.com/en/post/zhangjiajie-4-day-family-travel-guide-take-kids-to-easily-enjoy-cable-cars-monkeys-geology-class-tired-free-version-for-traveling-with-kids/"},
       {"name":{"en":"Tianmen Cave","th":"ถ้ำเทียนเหมิน"},"kind":"views","area":{"en":"Tianmen Mountain, Zhangjiajie City","th":"ภูเขาเทียนเหมิน เมืองจางเจียเจี้ย"},"what":{"en":"A natural arch through the summit ridge of Tianmen Mountain, with 999 steps and escalators up to it.","th":"ซุ้มหินธรรมชาติบนสันเขายอดเขาเทียนเหมิน มีบันได 999 ขั้นและบันไดเลื่อนขึ้นไป"},"why":{"en":"The page says the arch looks like a door opened in the mountain, and the escalators let older travellers and young children climb without the steps.","th":"หน้าเว็บบอกว่าซุ้มดูเหมือนประตูที่เปิดในภูเขา บันไดเลื่อนช่วยให้เด็กเล็กและผู้ใหญ่ขึ้นไปได้โดยไม่ต้องเดิน"},"tip":{"en":"From 13 October 2026 everyone goes up by Line C; be on the cave square by 08:00 for the clearest light.","th":"ตั้งแต่ 13 ตุลาคม 2026 ทุกคนขึ้นด้วยสาย C ให้ไปถึงลานถ้ำตอน 08:00 เพื่อแสงที่ชัดที่สุด"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"CNY 285 plus CNY 3 insurance (cable car, shuttle and escalator); CNY 32 extra for the steps escalator","th":"CNY 285 กระเช้า (บวกประกัน CNY 3)"},"book":"rec","q":"Tianmen Cave, Tianmen Mountain, Zhangjiajie","ok":"2026-11","src":"https://chinafantasytravel.com/tianmen-cave-999-steps/"}
     ]
+    },
+    {
+      "place": "cn-guangzhou",
+      "thin": true,
+      "sights": [
+        {
+          "local": "广州动物园游乐场",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B9%BF%E5%B7%9E%E5%8A%A8%E7%89%A9%E5%9B%AD%E6%B8%B8%E4%B9%90%E5%9C%BA&city=440100",
+          "name": {
+            "th": "สวนสนุกในสวนสัตว์กวางโจว",
+            "en": "Guangzhou Zoo Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนสัตว์กวางโจว มุมตะวันออกเฉียงใต้ ถนนเซียนเลี่ยกลาง เยว่ซิ่ว",
+            "en": "Guangzhou Zoo, south-east corner, Xianlie Middle Road, Yuexiu"
+          },
+          "what": {
+            "th": "สวนสนุกในสวนสัตว์ มีรถไฟเหาะครอบครัว ทรายสี และโซนเล่นบุนุ่ม",
+            "en": "A fun fair inside the zoo with a family coaster, coloured sand and padded play"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าโซนเล่นบุนุ่มดี และพนักงานดูแลเด็กดี",
+            "en": "Reviewers say the play area is well padded and the staff guide children well"
+          },
+          "q": "广州动物园游乐场, 先烈中路120号, 越秀区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "二沙岛体育公园 儿童活动区",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%8C%E6%B2%99%E5%B2%9B%E4%BD%93%E8%82%B2%E5%85%AC%E5%9B%AD-%E5%84%BF%E7%AB%A5%E6%B4%BB%E5%8A%A8%E5%8C%BA&city=440100",
+          "name": {
+            "th": "สนามเด็กเล่นสวนกีฬาเกาะเอ้อร์ซา",
+            "en": "Ersha Island Sports Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เกาะเอ้อร์ซา ถนนต้าทง เยว่ซิ่ว",
+            "en": "Ersha Island, Datong Road, Yuexiu"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นริมแม่น้ำ มีบ่อทราย สไลเดอร์ และแทรมโพลีน",
+            "en": "A riverside playground with a sand pit, slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก อยู่บนเกาะกลางแม่น้ำจูเจียง",
+            "en": "Marked for small children, on the Pearl River island"
+          },
+          "q": "二沙岛体育公园儿童活动区, 大通路, 越秀区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 广州悦汇城店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E5%B9%BF%E5%B7%9E%E6%82%A6%E6%B1%87%E5%9F%8E%E5%BA%97)&city=440100",
+          "name": {
+            "th": "นีโอไบโอ เยว่ฮุ่ยเฉิง",
+            "en": "Neobio Play Park (Yuehui City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เยว่ฮุ่ยเฉิง ชั้น 1 ถนนซีวาน ลี่วาน",
+            "en": "Yuehui City 1F, Xiwan Road, Liwan"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีงานประดิษฐ์ เกม AR และร้านอาหารครอบครัว",
+            "en": "An indoor play park with crafts, AR games and a family restaurant"
+          },
+          "why": {
+            "th": "โซนเล่นในร่มบุนุ่มทั้งหมด",
+            "en": "Fully padded indoor play"
+          },
+          "q": "奈尔宝 广州悦汇城店, 西湾路150号, 荔湾区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鲁班奇幻乐园 广州店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%B2%81%E7%8F%AD%E5%A5%87%E5%B9%BB%E4%B9%90%E5%9B%AD%E5%B9%BF%E5%B7%9E%E5%BA%97&city=440100",
+          "name": {
+            "th": "สวนแฟนตาซีหลู่ปาน เทียนเหอ",
+            "en": "Luban Fantasy Park (Tianhe)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "กวางตุ้งดิจิทัลคัลเจอร์วัลเลย์ ถนนจงซาน เทียนเหอ",
+            "en": "Guangdong Digital Culture Valley, Zhongshan Avenue, Tianhe"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม เป็นด่านท้าทายธีมช่างไม้หลู่ปาน",
+            "en": "An indoor play park of challenge courses built around the master carpenter Lu Ban"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าลูกขอมาซ้ำ และพนักงานใจเย็น",
+            "en": "Reviewers say their child asked to come back and the staff are patient"
+          },
+          "q": "鲁班奇幻乐园 广州店, 中山大道中1242号, 天河区, 广州",
+          "ok": "2026-11"
+        },
+        {
+          "local": "VeRyland奇境乐园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=VeRyland%E5%A5%87%E5%A2%83%E4%B9%90%E5%9B%AD&city=440100",
+          "name": {
+            "th": "สวนเล่นเวรีแลนด์ ไป๋หยวิ๋น",
+            "en": "VeRyland Play Park (Baiyun)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไป๋ซิ่นพลาซ่า ชั้น 4–5 ถนนแอร์พอร์ต ไป๋หยวิ๋น",
+            "en": "Baixin Plaza 4–5F, Airport Road, Baiyun"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มี VR และรถโกคาร์ตสำหรับเด็ก",
+            "en": "An indoor play park with children's VR and go-karts"
+          },
+          "why": {
+            "th": "มีโซนบุนุ่มสำหรับเด็กเล็ก และเครื่องเล่นสำหรับเด็กโต",
+            "en": "Padded play for younger children and rides for older ones"
+          },
+          "q": "VeRyland奇境乐园, 机场路1399号百信广场, 白云区, 广州",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }
