@@ -690,6 +690,574 @@
           "ok": "2026-11"
         }
     ]
+    },
+    {
+      "place": "nz-wellington",
+      "sights": [
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/see-and-do/where-to-have-fun",
+          "name": {
+            "th": "พิพิธภัณฑ์เตปาปา",
+            "en": "Te Papa"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเคเบิล เตอาโร",
+            "en": "55 Cable Street, Te Aro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แห่งชาติ 6 ชั้น มีทั้งสมบัติ ตัวอย่างธรรมชาติ และงานศิลปะ",
+            "en": "The national museum, six floors of treasures, specimens and art"
+          },
+          "why": {
+            "th": "โซนธรรมชาติเตไทอาโอ จัดแสดงสัตว์ของนิวซีแลนด์ และมีอะไรให้เด็กทำในร่มเยอะ",
+            "en": "Te Taiao Nature shows New Zealand’s wildlife, and there is plenty to keep children busy indoors"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน ยกเว้นวันคริสต์มาส",
+            "en": "Open every day of the year except Christmas Day"
+          },
+          "q": "Museum of New Zealand Te Papa Tongarewa, 55 Cable Street, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/see-and-do/where-to-have-fun",
+          "name": {
+            "th": "โรงงานช็อกโกแลตเวลลิงตัน",
+            "en": "Wellington Chocolate Factory"
+          },
+          "kind": "shop",
+          "area": {
+            "th": "ถนนอีวา เตอาโร",
+            "en": "5 Eva Street, Te Aro"
+          },
+          "what": {
+            "th": "โรงงานช็อกโกแลตที่ทำขนมเอง แวะดูขั้นตอนการทำได้",
+            "en": "A chocolate factory that makes its own treats, where visitors can peek at the process"
+          },
+          "why": {
+            "th": "แวะโรงงานช็อกโกแลตในซอยกลางเมือง เหมาะกับวันฝนตก",
+            "en": "A chocolate-factory visit down a city laneway, good on a wet day"
+          },
+          "q": "Wellington Chocolate Factory, 5 Eva Street, Te Aro, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+          "name": {
+            "th": "ซีแลนเดีย",
+            "en": "Zealandia Te Māra a Tāne"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนไวอาปู คาโรรี",
+            "en": "53 Waiapu Road, Karori"
+          },
+          "what": {
+            "th": "เขตอนุรักษ์ธรรมชาติ 225 เฮกตาร์ มีทางเดินผ่านป่าที่เข็นรถเข็นเด็กได้",
+            "en": "A 225-hectare eco sanctuary with a pram-friendly track through native bush"
+          },
+          "why": {
+            "th": "เด็กๆ ชอบเดินหาสัตว์เล็กๆ และดูนกแก้วคาคากินอาหาร",
+            "en": "Children love searching for small creatures and watching the kākā parrots feed"
+          },
+          "q": "Zealandia Te Māra a Tāne, 53 Waiapu Road, Karori, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+          "name": {
+            "th": "สนามเด็กเล่นสวนพฤกษศาสตร์",
+            "en": "Botanic Garden Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนพฤกษศาสตร์เวลลิงตัน เคลเบิร์น",
+            "en": "Wellington Botanic Garden, Kelburn"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นที่มีโซนเด็กเล็กล้อมรั้วรอบด้าน",
+            "en": "A playground with an enclosed, fully fenced area for preschoolers"
+          },
+          "why": {
+            "th": "ครอบครัวชอบ เพราะมีพื้นที่ล้อมรั้วปลอดภัยสำหรับเด็กเล็ก",
+            "en": "A family favourite with a safe, fenced space for little ones"
+          },
+          "q": "Botanic Garden Playground, 101 Glenmore Street, Kelburn, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+          "name": {
+            "th": "สนามเด็กเล่นเวดส์ทาวน์",
+            "en": "Wadestown Play Area"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเวดส์ทาวน์ เวดส์ทาวน์",
+            "en": "Wadestown Road, Wadestown"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางแจ้งข้างศูนย์เด็กเล่นในเวดส์ทาวน์",
+            "en": "An outdoor play area beside the playcentre in Wadestown"
+          },
+          "why": {
+            "th": "พ่อแม่ในพื้นที่แนะนำสำหรับพาเด็กเล็กออกไปเล่น",
+            "en": "A local parent’s pick for an outing with little ones"
+          },
+          "q": "Wadestown Play Area, 111 Wadestown Road, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+          "name": {
+            "th": "สนามเด็กเล่นเชอร์ตันพาร์ก",
+            "en": "Churton Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เชอร์ตันพาร์ก แยกจากถนนอาบิลีนเครสเซนต์",
+            "en": "Churton Park, off Abilene Crescent"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางแจ้งในเชอร์ตันพาร์ก เข้าทางถนนอาบิลีนเครสเซนต์",
+            "en": "An outdoor play area in Churton Park, reached off Abilene Crescent"
+          },
+          "why": {
+            "th": "พ่อแม่ในพื้นที่แนะนำสำหรับพาเด็กออกไปเล่น",
+            "en": "A local parent’s pick for an outing with children"
+          },
+          "q": "Churton Park Playground, Churton Park, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+          "name": {
+            "th": "สนามเด็กเล่นชอร์แลนด์พาร์ก",
+            "en": "Shorland Park playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนรีฟ ไอแลนด์เบย์",
+            "en": "Reef Street, Island Bay"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในไอแลนด์เบย์ ริมทะเล",
+            "en": "A playground in Island Bay, by the sea"
+          },
+          "why": {
+            "th": "พ่อแม่ในพื้นที่แนะนำสำหรับพาเด็กออกไปเล่น",
+            "en": "A local parent’s pick for an outing with children"
+          },
+          "q": "Shorland Park, Reef Street, Island Bay, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+          "name": {
+            "th": "ร้านหนังสือเด็กคิลเบอร์นี",
+            "en": "The Children’s Bookshop"
+          },
+          "kind": "shop",
+          "area": {
+            "th": "คิลเบอร์นีพลาซา คิลเบอร์นี",
+            "en": "Kilbirnie Plaza, Kilbirnie"
+          },
+          "what": {
+            "th": "ร้านหนังสือเด็ก มีหนังสือและของเล่นทุกวัย",
+            "en": "A children’s bookshop with books and toys for every age"
+          },
+          "why": {
+            "th": "พนักงานรู้จักหนังสือดี และมีหนังสือครบทุกวัย",
+            "en": "The staff know their books, and the shelves cover every age"
+          },
+          "q": "The Children's Bookshop, 10 Rongotai Road, Kilbirnie, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wellingtoncablecar.co.nz/",
+          "name": {
+            "th": "รถรางเคเบิลคาร์เวลลิงตัน",
+            "en": "Wellington Cable Car"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "แลมบ์ตันคีย์ ใจกลางเมือง",
+            "en": "Lambton Quay, Wellington Central"
+          },
+          "what": {
+            "th": "รถรางเคเบิลคาร์ไต่ขึ้นจากแลมบ์ตันคีย์กลางเมืองไปเคลเบิร์น",
+            "en": "The cable car climbs from Lambton Quay in the city centre up to Kelburn"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ดูรถรางวิ่งสวนกัน และที่สถานีซาลามังกามีสนามเด็กเล่นเล็กๆ",
+            "en": "Children watch the cable cars pass, and Salamanca Station has a small playground"
+          },
+          "q": "Wellington Cable Car, 280 Lambton Quay, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.wellingtonnz.com/visit/see-and-do/fun-activities-for-the-whole-family",
+          "name": {
+            "th": "สวนสัตว์เวลลิงตัน",
+            "en": "Wellington Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนแดเนียล นิวทาวน์",
+            "en": "200 Daniell Street, Newtown"
+          },
+          "what": {
+            "th": "สวนสัตว์ที่มีสัตว์กว่า 500 ตัว แต่ละที่อยู่สร้างตามความต้องการของสัตว์",
+            "en": "A zoo with more than 500 animals, each habitat built for its animals"
+          },
+          "why": {
+            "th": "มีกิจกรรมใกล้ชิดสัตว์ เช่นลูบตัวลีเมอร์หรือป้อนอาหารเมียร์แคต เสียค่าใช้จ่ายเพิ่ม",
+            "en": "Close encounters let children pat a lemur or feed a meerkat, at extra cost"
+          },
+          "q": "Wellington Zoo, 200 Daniell Street, Newtown, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/see-and-do/fun-activities-for-the-whole-family",
+          "name": {
+            "th": "แคปิตอลอี",
+            "en": "Nōku te Ao Capital E"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนวิกตอเรีย ใจกลางเมือง",
+            "en": "65 Victoria Street, Wellington Central"
+          },
+          "what": {
+            "th": "พื้นที่สร้างสรรค์ให้เด็กเล็กลงมือทำ ทั้งศิลปะ วิทยาศาสตร์ สำรวจ และประดิษฐ์",
+            "en": "A hands-on, creative space for young children: art, science, exploring and making"
+          },
+          "why": {
+            "th": "ที่เรียนรู้แบบสนุกสำหรับเด็กเล็ก",
+            "en": "A fun place to learn for young children"
+          },
+          "q": "Nōku te Ao Capital E, 65 Victoria Street, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://nzfamilytravel.co.nz/travel-tips/things-to-do-wellington-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์รถรางเคเบิลคาร์",
+            "en": "Cable Car Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอัพแลนด์ เคลเบิร์น (สถานีบนสุด)",
+            "en": "1A Upland Road, Kelburn (top station)"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่สถานีบนสุดของรถราง เล่าว่ารถรางทำงานอย่างไร",
+            "en": "A museum at the top cable car station that shows how the cable car works"
+          },
+          "why": {
+            "th": "ใช้เวลาสัก 15 นาที เหมาะกับเด็กช่างสงสัย",
+            "en": "Worth 15 minutes for curious children"
+          },
+          "q": "Cable Car Museum, 1A Upland Road, Kelburn, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://nzfamilytravel.co.nz/travel-tips/things-to-do-wellington-with-kids/",
+          "name": {
+            "th": "สวนแฟรงก์คิตส์",
+            "en": "Frank Kitts Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ริมน้ำ ใจกลางเมือง",
+            "en": "The waterfront, Wellington Central"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นและสนามหญ้าโล่งริมน้ำเวลลิงตัน",
+            "en": "A playground and open lawns on the Wellington waterfront"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นดี และทางริมน้ำเรียบ ไม่มีรถ เหมาะกับสกูตเตอร์และจักรยาน",
+            "en": "A great playground, and the flat, car-free waterfront suits scooters and bikes"
+          },
+          "q": "Frank Kitts Park, Wellington Waterfront",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://nzfamilytravel.co.nz/travel-tips/things-to-do-wellington-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เวลลิงตัน",
+            "en": "Wellington Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เจอร์วอยส์คีย์ ควีนส์วาร์ฟ",
+            "en": "3 Jervois Quay, Queens Wharf"
+          },
+          "what": {
+            "th": "ประวัติของเมือง พร้อมนิทรรศการที่ลองเล่นได้",
+            "en": "The city’s history, with interactive exhibits"
+          },
+          "why": {
+            "th": "นิทรรศการแบบลงมือเล่น เหมาะกับเด็กวัยเรียน",
+            "en": "Good interactive exhibits for school-age children"
+          },
+          "q": "Wellington Museum, 3 Jervois Quay, Wellington",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wellingtonnz.com/visit/trails/otari-wiltons-bush",
+          "name": {
+            "th": "ป่าโอทาริวิลตัน",
+            "en": "Ōtari-Wilton’s Bush"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนวิลตัน วิลตัน",
+            "en": "150 Wilton Road, Wilton"
+          },
+          "what": {
+            "th": "เขตป่าพื้นเมือง ห่างจากใจกลางเมืองราว 5 กิโลเมตร",
+            "en": "A native bush reserve about five kilometres from the city centre"
+          },
+          "why": {
+            "th": "เปิดทุกวัน ได้เดินเล่นในป่า",
+            "en": "Open every day, for a walk in the bush"
+          },
+          "tip": {
+            "th": "เปิดทุกวันตั้งแต่เช้าตรู่ถึงพลบค่ำ",
+            "en": "Open daily from dawn to dusk"
+          },
+          "q": "Otari-Wilton's Bush, 150 Wilton Road, Wellington",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }

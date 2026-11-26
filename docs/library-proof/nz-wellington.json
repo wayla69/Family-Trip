@@ -1,0 +1,217 @@
+{
+  "town": "nz-wellington",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents; 31 rows from wellingtonnz.com and local parents' guides (2026); 32 passed library-check.cjs, 27 went in (two from the Novotel 2026 family dining guide)",
+  "added": [
+    {
+      "name": "Mr Go’s",
+      "page_name": "Mr Go’s",
+      "src": "https://wellingtonnz.com/visit/eat-and-drink/family-friendly-restaurants",
+      "date": "2026-05",
+      "map": "Google Maps 'Mr Go's' (3 Eva Street), newest review shown 4 days ago"
+    },
+    {
+      "name": "Monsoon Poon",
+      "page_name": "Monsoon Poon",
+      "src": "https://novotel.accor.com/a/en/great-escape-magazine/food-and-beverage/dining-in-wellington-new-zealand-with-kids.html",
+      "date": "2026",
+      "map": "Google Maps 'Monsoon Poon' (12 Blair Street), newest review shown a day ago"
+    },
+    {
+      "name": "1154 Pastaria",
+      "page_name": "1154 Pasteria",
+      "src": "https://novotel.accor.com/a/en/great-escape-magazine/food-and-beverage/dining-in-wellington-new-zealand-with-kids.html",
+      "date": "2026",
+      "map": "Google Maps '1154 Pastaria' (132 Cuba Street), newest review shown 10 days ago"
+    },
+    {
+      "name": "Maranui Café",
+      "page_name": "Maranui Café",
+      "src": "https://wellingtonnz.com/visit/eat-and-drink/family-friendly-restaurants",
+      "date": "2026-05",
+      "map": "Google Maps 'Maranui Cafe' (Lvl 1/7A Lyall Parade), newest review shown a week ago"
+    },
+    {
+      "name": "Scopa",
+      "page_name": "Scopa",
+      "src": "https://wellingtonnz.com/visit/eat-and-drink/family-friendly-restaurants",
+      "date": "2026-05",
+      "map": "Google Maps 'Scopa' (141 Cuba Street), newest review shown 14 hours ago"
+    },
+    {
+      "name": "Burger Liquor",
+      "page_name": "Burger Liquor",
+      "src": "https://wellingtonnz.com/visit/eat-and-drink/family-friendly-restaurants",
+      "date": "2026-05",
+      "map": "Google Maps 'Burger Liquor' (129 Willis Street), newest review shown 2 days ago"
+    },
+    {
+      "name": "Duck Island Ice Cream",
+      "page_name": "Duck Island",
+      "src": "https://wellingtonnz.com/visit/eat-and-drink/family-friendly-restaurants",
+      "date": "2026-05",
+      "map": "Google Maps 'Duck Island Ice Cream' (168 Cuba Street), newest review shown 20 hours ago"
+    },
+    {
+      "name": "Willis Lane",
+      "page_name": "Willis Lane",
+      "src": "https://wellingtonnz.com/visit/eat-and-drink/family-friendly-restaurants",
+      "date": "2026-05",
+      "map": "Google Maps 'Willis Lane' (1 Willis Street), newest review shown 4 days ago"
+    },
+    {
+      "name": "Zephyr Café & Bar",
+      "page_name": "Zephyr Café & Bar",
+      "src": "https://wellingtonnz.com/visit/eat-and-drink/family-friendly-restaurants",
+      "date": "2026-05",
+      "map": "Google Maps 'Zephyr Café & Bar' (217 Wakefield Street, Tākina's other side), newest review shown 8 hours ago"
+    },
+    {
+      "name": "Te Korōria",
+      "page_name": "Te Korōria",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'Te Kororia' (170 Karori Road), newest review shown 4 weeks ago"
+    },
+    {
+      "name": "Common Ground Café",
+      "page_name": "Common Ground Café",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'Common Ground Cafe' (34 Moorefield Road, Johnsonville), newest review shown 6 days ago"
+    },
+    {
+      "name": "Seashore Cabaret",
+      "page_name": "Seashore Cabaret",
+      "src": "https://www.wellingtonnz.com/visit/eat-and-drink/where-to-eat-hutt-valley",
+      "date": "2026-09",
+      "map": "Google Maps 'Seashore Cabaret' (160 The Esplanade), newest review shown 8 hours ago"
+    },
+    {
+      "name": "Te Papa",
+      "page_name": "Te Papa",
+      "src": "https://www.wellingtonnz.com/visit/see-and-do/where-to-have-fun",
+      "date": "2026-05",
+      "map": "Google Maps 'Museum of New Zealand Te Papa Tongarewa', newest review shown 15 hours ago"
+    },
+    {
+      "name": "Wellington Chocolate Factory",
+      "page_name": "Wellington Chocolate Factory",
+      "src": "https://www.wellingtonnz.com/visit/see-and-do/where-to-have-fun",
+      "date": "2026-05",
+      "map": "Google Maps 'Wellington Chocolate Factory' (5 Eva Street), newest review shown 3 days ago"
+    },
+    {
+      "name": "Zealandia Te Māra a Tāne",
+      "page_name": "Zealandia Te Māra a Tāne",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'Zealandia Te Māra a Tāne' (53 Waiapu Road), newest review shown 7 hours ago"
+    },
+    {
+      "name": "Botanic Garden Playground",
+      "page_name": "Botanic Gardens Playground",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'Botanic Garden Playground' (101 Glenmore Street), newest review shown a month ago"
+    },
+    {
+      "name": "Wadestown Play Area",
+      "page_name": "Wadestown Play Area",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'Wadestown Play Area' (111 Wadestown Road), newest review shown 3 months ago"
+    },
+    {
+      "name": "Churton Park Playground",
+      "page_name": "Churton Park Play Area",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'Churton Park Playground', newest review shown 3 months ago"
+    },
+    {
+      "name": "Shorland Park playground",
+      "page_name": "Shoreland Playground",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'Shorland Park' (Reef Street, Island Bay), newest review shown a month ago"
+    },
+    {
+      "name": "The Children’s Bookshop",
+      "page_name": "The Children’s Bookshop",
+      "src": "https://www.wellingtonnz.com/visit/live-like-a-local/child-friendly-places-guide",
+      "date": "2026-06",
+      "map": "Google Maps 'The Children's Bookshop' (Kilbirnie Plaza), newest review shown a month ago"
+    },
+    {
+      "name": "Wellington Cable Car",
+      "page_name": "Cable Car",
+      "src": "https://wellingtoncablecar.co.nz/",
+      "date": "official",
+      "map": "Google Maps 'Wellington Cable Car' (280 Lambton Quay), newest review shown 20 hours ago"
+    },
+    {
+      "name": "Wellington Zoo",
+      "page_name": "Wellington Zoo",
+      "src": "https://www.wellingtonnz.com/visit/see-and-do/fun-activities-for-the-whole-family",
+      "date": "2026-07",
+      "map": "Google Maps 'Wellington Zoo' (200 Daniell Street), newest review shown 12 hours ago"
+    },
+    {
+      "name": "Nōku te Ao Capital E",
+      "page_name": "Capital E",
+      "src": "https://www.wellingtonnz.com/visit/see-and-do/fun-activities-for-the-whole-family",
+      "date": "2026-07",
+      "map": "Google Maps 'Nōku te Ao Capital E' (65 Victoria Street), newest review shown 4 days ago"
+    },
+    {
+      "name": "Cable Car Museum",
+      "page_name": "cable car museum",
+      "src": "https://nzfamilytravel.co.nz/travel-tips/things-to-do-wellington-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Cable Car Museum' (1A Upland Road), newest review shown a day ago"
+    },
+    {
+      "name": "Frank Kitts Park",
+      "page_name": "Frank Kitts Park",
+      "src": "https://nzfamilytravel.co.nz/travel-tips/things-to-do-wellington-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Frank Kitts Park' (Waterfront), newest review shown 3 days ago"
+    },
+    {
+      "name": "Wellington Museum",
+      "page_name": "Wellington Museum",
+      "src": "https://nzfamilytravel.co.nz/travel-tips/things-to-do-wellington-with-kids/",
+      "date": "2026-05",
+      "map": "Google Maps 'Wellington Museum' (3 Jervois Quay), newest review shown 7 hours ago"
+    },
+    {
+      "name": "Ōtari-Wilton’s Bush",
+      "page_name": "Ōtari-Wilton’s Bush",
+      "src": "https://www.wellingtonnz.com/visit/trails/otari-wiltons-bush",
+      "date": "2025-12",
+      "map": "Google Maps 'Otari-Wilton's Bush' (150 Wilton Road), newest review shown 3 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Southern Cross Garden Bar Restaurant, Parrotdog",
+      "why": "a bar and a brewery"
+    },
+    {
+      "name": "Te Kōhanga Manaaki – Petone Playscape",
+      "why": "the newest review on the map is 9 months old"
+    },
+    {
+      "name": "Days Bay",
+      "why": "the map shows the suburb only, with no reviews"
+    },
+    {
+      "name": "Space Place at Carter Observatory",
+      "why": "the page was about a one-off school-holiday workshop, not the place"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
