@@ -308,6 +308,53 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Dongcheng, Beijing; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Baye Copper-Pot Hotpot (by the Forbidden City)",
+          "page_name": "八爷涮肉(故宫总店)",
+          "src": "https://www.amap.com/search?query=%E5%85%AB%E7%88%B7%E6%B6%AE%E8%82%89(%E6%95%85%E5%AE%AB%E6%80%BB%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "儿童友好 · 这回顺顺10岁生日，我给推荐了仨地儿，让孩子自己挑"
+        },
+        {
+          "name": "Putien (WF Central, Wangfujing)",
+          "page_name": "莆田餐厅PUTIEN(王府中环店)",
+          "src": "https://www.amap.com/search?query=%E8%8E%86%E7%94%B0%E9%A4%90%E5%8E%85PUTIEN(%E7%8E%8B%E5%BA%9C%E4%B8%AD%E7%8E%AF%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "家庭聚餐 · 儿童餐合理 · 适合带老人、孩子用餐"
+        },
+        {
+          "name": "Yunhaiyao Yunnan (Global Trade Center)",
+          "page_name": "云海肴云南菜(环球贸易中心店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E6%B5%B7%E8%82%B4%E4%BA%91%E5%8D%97%E8%8F%9C(%E7%8E%AF%E7%90%83%E8%B4%B8%E6%98%93%E4%B8%AD%E5%BF%83%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "儿童餐具 · 茉莉花炒鸡蛋很嫩很嫩，小朋友很喜欢吃"
+        },
+        {
+          "name": "Bigger Pizza Buffet (Wangfujing Xiyue)",
+          "page_name": "比格比萨自助(王府井喜悦店)",
+          "src": "https://www.amap.com/search?query=%E6%AF%94%E6%A0%BC%E6%AF%94%E8%90%A8%E8%87%AA%E5%8A%A9(%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%96%9C%E6%82%A6%E5%BA%97)&city=110000",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-03",
+          "map": "Amap: open, not marked closed, newest review 2026-09-03",
+          "quote": "比格披萨我觉着是带孩子，亲朋周末放松聚会的好地方"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "软软星球湖景餐厅 (龙潭公园)",
+          "why": "three reviews, newest May 2026"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
