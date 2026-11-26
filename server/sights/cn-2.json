@@ -4481,7 +4481,81 @@
       {"name":{"en":"Boat Ride through the Grand Canyon","th":"ล่องเรือในแกรนด์แคนยอน"},"kind":"ride","area":{"en":"Zhangjiajie Grand Canyon","th":"แกรนด์แคนยอน จางเจียเจี้ย"},"what":{"en":"A gentle boat ride along the canyon water, with misty waterfalls.","th":"นั่งเรือเบาๆ ตามลำธารในหุบเขา มีน้ำตกหมอกลอย"},"why":{"en":"The page says kids can relax on the boat while parents enjoy the scenery, and locals wave from the water.","th":"หน้าเว็บบอกว่าเด็กนั่งพักได้ระหว่างพ่อแม่ชมวิว และคนบนฝั่งโบกมือทักทาย"},"tip":{"en":"Good for ending a long day.","th":"เหมาะจบวันที่เหนื่อย"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Boat ride, Zhangjiajie Grand Canyon, Zhangjiajie","ok":"2026-11","src":"https://roamingcrew.com/zhangjiajie-with-kids/"},
       {"name":{"en":"Xilankapu Workshop","th":"เวิร์กช็อปผ้าทอซีหลานคาปู้"},"kind":"culture","area":{"en":"Xibu Street, Wulingyuan","th":"ถนนซีปู้ อู่หลิงยวน"},"what":{"en":"A brocade weaving experience where kids pick a simple pattern, such as a panda.","th":"ประสบการณ์ทอผ้า เด็กเลือกลายง่ายๆ เช่นแพนด้า"},"why":{"en":"The page says a child finished a small brocade towel in about an hour.","th":"หน้าเว็บบอกว่าเด็กคนหนึ่งทำผ้าขนหนูทอเล็กเสร็จในราวหนึ่งชั่วโมง"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Xilankapu Workshop, Xibu Street, Wulingyuan","ok":"2026-11","src":"https://www.yunnanplay.com/en/post/zhangjiajie-4-day-family-travel-guide-take-kids-to-easily-enjoy-cable-cars-monkeys-geology-class-tired-free-version-for-traveling-with-kids/"},
       {"name":{"en":"Misty Rain Zhangjiajie","th":"มิสตี้เรน จางเจียเจี้ย"},"kind":"show","area":{"en":"Wulingyuan, near Xibu Street","th":"อู่หลิงยวน ใกล้ถนนซีปู้"},"what":{"en":"An evening stage show set against real mountain and water scenery, with subtitles on both sides.","th":"การแสดงยามเย็นบนเวทีท่ามกลางภูเขาและน้ำจริง มีซับทั้งสองภาษา"},"why":{"en":"The page says the child followed the story, helped by the subtitles.","th":"หน้าเว็บบอกว่าเด็กตามเรื่องได้ เพราะมีซับ"},"tip":{"en":"The page suggests the 19:30 show, which has clearer subtitles for kids.","th":"หน้าเว็บแนะนำรอบ 19:30 เพราะซับชัดกว่าสำหรับเด็ก"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Misty Rain Zhangjiajie, Wulingyuan, Zhangjiajie","ok":"2026-11","src":"https://www.yunnanplay.com/en/post/zhangjiajie-4-day-family-travel-guide-take-kids-to-easily-enjoy-cable-cars-monkeys-geology-class-tired-free-version-for-traveling-with-kids/"},
-      {"name":{"en":"Tianmen Cave","th":"ถ้ำเทียนเหมิน"},"kind":"views","area":{"en":"Tianmen Mountain, Zhangjiajie City","th":"ภูเขาเทียนเหมิน เมืองจางเจียเจี้ย"},"what":{"en":"A natural arch through the summit ridge of Tianmen Mountain, with 999 steps and escalators up to it.","th":"ซุ้มหินธรรมชาติบนสันเขายอดเขาเทียนเหมิน มีบันได 999 ขั้นและบันไดเลื่อนขึ้นไป"},"why":{"en":"The page says the arch looks like a door opened in the mountain, and the escalators let older travellers and young children climb without the steps.","th":"หน้าเว็บบอกว่าซุ้มดูเหมือนประตูที่เปิดในภูเขา บันไดเลื่อนช่วยให้เด็กเล็กและผู้ใหญ่ขึ้นไปได้โดยไม่ต้องเดิน"},"tip":{"en":"From 13 October 2026 everyone goes up by Line C; be on the cave square by 08:00 for the clearest light.","th":"ตั้งแต่ 13 ตุลาคม 2026 ทุกคนขึ้นด้วยสาย C ให้ไปถึงลานถ้ำตอน 08:00 เพื่อแสงที่ชัดที่สุด"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"CNY 285 plus CNY 3 insurance (cable car, shuttle and escalator); CNY 32 extra for the steps escalator","th":"CNY 285 กระเช้า (บวกประกัน CNY 3)"},"book":"rec","q":"Tianmen Cave, Tianmen Mountain, Zhangjiajie","ok":"2026-11","src":"https://chinafantasytravel.com/tianmen-cave-999-steps/"}
+      {"name":{"en":"Tianmen Cave","th":"ถ้ำเทียนเหมิน"},"kind":"views","area":{"en":"Tianmen Mountain, Zhangjiajie City","th":"ภูเขาเทียนเหมิน เมืองจางเจียเจี้ย"},"what":{"en":"A natural arch through the summit ridge of Tianmen Mountain, with 999 steps and escalators up to it.","th":"ซุ้มหินธรรมชาติบนสันเขายอดเขาเทียนเหมิน มีบันได 999 ขั้นและบันไดเลื่อนขึ้นไป"},"why":{"en":"The page says the arch looks like a door opened in the mountain, and the escalators let older travellers and young children climb without the steps.","th":"หน้าเว็บบอกว่าซุ้มดูเหมือนประตูที่เปิดในภูเขา บันไดเลื่อนช่วยให้เด็กเล็กและผู้ใหญ่ขึ้นไปได้โดยไม่ต้องเดิน"},"tip":{"en":"From 13 October 2026 everyone goes up by Line C; be on the cave square by 08:00 for the clearest light.","th":"ตั้งแต่ 13 ตุลาคม 2026 ทุกคนขึ้นด้วยสาย C ให้ไปถึงลานถ้ำตอน 08:00 เพื่อแสงที่ชัดที่สุด"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"CNY 285 plus CNY 3 insurance (cable car, shuttle and escalator); CNY 32 extra for the steps escalator","th":"CNY 285 กระเช้า (บวกประกัน CNY 3)"},"book":"rec","q":"Tianmen Cave, Tianmen Mountain, Zhangjiajie","ok":"2026-11","src":"https://chinafantasytravel.com/tianmen-cave-999-steps/"},
+        {
+          "local": "七彩花朵亲子乐园 张家界店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%83%E5%BD%A9%E8%8A%B1%E6%9C%B5%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD(%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%BA%97)&city=430800",
+          "name": {
+            "th": "สวนเล่นชีไช่ฮวาตั่ว",
+            "en": "Qicai Huaduo Play Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ซวี่เซิงกั๋วอวิ้นสมาร์ทซิตี้ หย่งติ้ง",
+            "en": "Xusheng Guoyun Smart City, Yongding"
+          },
+          "what": {
+            "th": "สวนเล่น มีบ่อทราย เขาวงกต ผจญภัยกลางแจ้ง และงานประดิษฐ์",
+            "en": "A play park with a sand pit, a walk-through maze, outdoor adventure and crafts"
+          },
+          "why": {
+            "th": "ที่เล่นสำหรับวันพักระหว่างเที่ยวภูเขา",
+            "en": "Play for a rest day between the mountains"
+          },
+          "q": "七彩花朵亲子乐园, 旭升国韵智慧城, 永定区, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Hione潮玩运动馆",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=Hione%E6%BD%AE%E7%8E%A9%E8%BF%90%E5%8A%A8%E9%A6%86&city=430800",
+          "name": {
+            "th": "ไฮโอเน่ สนามเล่นและกีฬา",
+            "en": "Hione Play and Sports Hall"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เหวยกั่งสือจื้อเจีย ชั้น 2 หย่งติ้ง",
+            "en": "Weigang Crossroads Street 2F, Yongding"
+          },
+          "what": {
+            "th": "สนามเล่นและกีฬาในร่ม มีผนังปีนป่าย",
+            "en": "An indoor play and sports hall with climbing"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Indoor play for a rainy day, marked for small children"
+          },
+          "q": "Hione潮玩运动馆, 维港十字街, 永定区, 张家界",
+          "ok": "2026-11"
+        }
     ]
     },
     {

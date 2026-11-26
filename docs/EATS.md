@@ -821,6 +821,8 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 
 - **24 Nov 2026, Petra, Wadi Rum and the Dead Sea** (docs/library-briefs batch-101, round 3): +1 (Buffalo Wings & Rings, Aqaba). Proof in `docs/library-proof/jo-petra.json`.
 
+- **26 Nov 2026, Zhangjiajie**: +3 from Amap place pages. Proof in `docs/library-proof/cn-zhangjiajie.json`.
+
 - **26 Nov 2026, Yunnan**: +4 from Amap place pages (Kunming, Dali). Proof in `docs/library-proof/cn-yunnan.json`.
 
 - **25 Nov 2026, Wellington (new town)**: 12, each checked on Google Maps. Proof in `docs/library-proof/nz-wellington.json`.
