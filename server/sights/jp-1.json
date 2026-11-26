@@ -4122,6 +4122,234 @@
           "ok": "2026-11"
         }
       ]
+    },
+    {
+      "place": "jp-takamatsu",
+      "thin": true,
+      "sights": [
+        {
+          "local": "高松市こども未来館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี (ท้องฟ้าจำลองจ่ายเพิ่ม)",
+            "en": "Free (planetarium extra)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6864/",
+          "name": {
+            "th": "พิพิธภัณฑ์อนาคตเด็กทาคามัตสึ (มิไรเอะ)",
+            "en": "Takamatsu Children’s Future Museum (Mirai-e)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มัตสึชิมะโจ ทาคามัตสึ",
+            "en": "Matsushima-cho, Takamatsu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กในร่ม มีห้องเล่นและนิทรรศการลงมือทำเรื่องเสียง แสง และรูปทรง",
+            "en": "An indoor children’s museum with play rooms and hands-on displays on sound, light and shapes"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ทำตามความสนใจในจังหวะของตัวเอง",
+            "en": "Children follow their own interests at their own pace"
+          },
+          "q": "高松市こども未来館, 1-15-1 Matsushimacho, Takamatsu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "さぬきこどもの国",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี (บางส่วนเสียเงิน)",
+            "en": "Free (some parts paid)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6864/",
+          "name": {
+            "th": "ซานุกิโคโดโมโนะคุนิ",
+            "en": "Sanuki Kodomo no Kuni"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โคนันโจ ติดสนามบินทาคามัตสึ",
+            "en": "Konan-cho, next to Takamatsu Airport"
+          },
+          "what": {
+            "th": "สวนเด็กขนาดใหญ่ข้างสนามบิน มีสนามหญ้า เครื่องเล่นใหญ่ และงานประดิษฐ์ในร่ม",
+            "en": "A large children’s park by the airport, with lawns, big play equipment and indoor crafts"
+          },
+          "why": {
+            "th": "เห็นเครื่องบินใกล้ๆ และมีโซนเล่นแยกตามวัย",
+            "en": "Planes up close, and play areas by age"
+          },
+          "q": "Sanuki Kodomo no Kuni, 3209 Konancho Yusa, Takamatsu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "キッズランドUS 香川高松店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 600 เยน เด็กเริ่ม 700 เยน",
+            "en": "Adults ¥600, children from ¥700"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6864/",
+          "name": {
+            "th": "คิดส์แลนด์ยูเอส ทาคามัตสึ",
+            "en": "Kids Land US Takamatsu"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คาวารามาจิแฟล็ก ชั้น 4 โทกิวะโจ",
+            "en": "Kawaramachi FLAG 4F, Tokiwa-cho"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่ มีโซนวิ่งเล่นและมุมสงบ",
+            "en": "A large indoor play park with an active area and calmer corners"
+          },
+          "why": {
+            "th": "พี่น้องต่างวัยเล่นด้วยกันได้",
+            "en": "Brothers and sisters of different ages can play together"
+          },
+          "q": "キッズランドUS 香川高松店, Tokiwacho, Takamatsu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "讃岐おもちゃ美術館",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "อายุ 13 ปีขึ้นไป 900 เยน 6 เดือนถึง 12 ปี 700 เยน",
+            "en": "From age 13 ¥900, 6 months to 12 years ¥700"
+          },
+          "book": "rec",
+          "src": "https://www.asoview.com/note/6864/",
+          "name": {
+            "th": "พิพิธภัณฑ์ของเล่นซานุกิ",
+            "en": "Sanuki Toy Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไดกุมาจิ ทาคามัตสึ",
+            "en": "Daiku-machi, Takamatsu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของเล่นไม้และหัตถกรรมคางาวะ มีเวิร์กช็อป",
+            "en": "A museum of wooden toys and Kagawa crafts, with workshops"
+          },
+          "why": {
+            "th": "เด็กๆ ได้จับของเล่นไม้และลองประดิษฐ์เอง",
+            "en": "Children handle the wooden toys and make things themselves"
+          },
+          "q": "Sanuki Toy Museum, 8-1 Daikumachi, Takamatsu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "公渕森林公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6864/",
+          "name": {
+            "th": "สวนป่าคินบุจิ",
+            "en": "Kinbuchi Forest Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฮิงาชิอุเอตะ ทาคามัตสึ",
+            "en": "Higashi-ueta, Takamatsu"
+          },
+          "what": {
+            "th": "สวนป่าขนาดใหญ่ที่เด็กเล่นกับไม้ ดิน และน้ำ",
+            "en": "A large forest park where children play with wood, soil and water"
+          },
+          "why": {
+            "th": "ไม่มีกติกาตายตัว เด็กๆ คิดเกมเองได้",
+            "en": "No set way to play, so children invent their own games"
+          },
+          "q": "Kagawa Prefecture Kinbuchi Forest Park, Higashiuetacho, Takamatsu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "栗林公園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.veltra.com/jp/guide/domestic/spot-domestic/80837/",
+          "name": {
+            "th": "สวนริทสึริน",
+            "en": "Ritsurin Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริทสึรินโจ ทาคามัตสึ",
+            "en": "Ritsurin-cho, Takamatsu"
+          },
+          "what": {
+            "th": "สวนญี่ปุ่นขนาดใหญ่ เหมาะเดินเล่นตอนเช้า",
+            "en": "A large Japanese garden, good for a morning walk"
+          },
+          "why": {
+            "th": "ทางเดินและสระน้ำเงียบสงบ เปลี่ยนไปตามฤดู",
+            "en": "Calm paths and ponds that change with the seasons"
+          },
+          "q": "Ritsurin Garden, 1-20-16 Ritsurincho, Takamatsu",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }
