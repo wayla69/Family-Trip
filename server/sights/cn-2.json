@@ -4037,6 +4037,154 @@
           "q": "喜洲古镇, 大理",
           "src": "https://www.chinahighlights.com/dali/attraction/houses-of-bai-people-in-xizhou.htm",
           "ok": "2026-11"
+        },
+        {
+          "local": "奶龙星球乐园 昆百大新西南广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%B6%E9%BE%99%E6%98%9F%E7%90%83%E4%B9%90%E5%9B%AD(%E6%98%86%E7%99%BE%E5%A4%A7%C2%B7%E6%96%B0%E8%A5%BF%E5%8D%97%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=530100",
+          "name": {
+            "th": "สวนเล่นไหน่หลง นิวเซาท์เวสต์พลาซ่า",
+            "en": "Nailong Planet Play Park (New Southwest Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นิวเซาท์เวสต์พลาซ่า ชั้น 3 อู่หัว คุนหมิง",
+            "en": "New Southwest Plaza 3F, Wuhua, Kunming"
+          },
+          "what": {
+            "th": "สวนเล่นธีมในร่ม มีบทบาทสมมติ สไลเดอร์ แทรมโพลีน และบ่อบอล",
+            "en": "An indoor themed play park with role play, slides, trampolines and a ball pit"
+          },
+          "why": {
+            "th": "อยู่กลางเมือง ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "In the city centre, marked for small children"
+          },
+          "q": "奶龙星球乐园 昆百大新西南广场, 人民中路17号, 五华区, 昆明",
+          "ok": "2026-11"
+        },
+        {
+          "local": "泡泡米 海乐世界店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B3%A1%E6%B3%A1%E7%B1%B3(%E6%B5%B7%E4%B9%90%E4%B8%96%E7%95%8C%E5%BA%97)&city=530100",
+          "name": {
+            "th": "สวนเล่นโปโปมี ไห่เล่อเวิลด์ คุนหมิง",
+            "en": "Popome Play Park (Haile World, Kunming)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไห่เล่อเวิลด์ อาคาร B ชั้น 3 ถนนหย่งจง กวนตู้ คุนหมิง",
+            "en": "Haile World B 3F, Yongzhong Road, Guandu, Kunming"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีหนังสือภาพ สัตว์เล็ก และโซนบุนุ่ม",
+            "en": "An indoor play park with picture books, small animals and padded play"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กทารกและเด็กเล็ก",
+            "en": "Marked for babies and small children"
+          },
+          "q": "泡泡米 海乐世界, 永中路, 官渡区, 昆明",
+          "ok": "2026-11"
+        },
+        {
+          "local": "YUMEWORLD运动超乐场 昆明瑞鼎城",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=YUMEWORLD%E8%BF%90%E5%8A%A8%E8%B6%85%E4%B9%90%E5%9C%BA(%E6%98%86%E6%98%8E%E7%91%9E%E9%BC%8E%E5%9F%8E)&city=530100",
+          "name": {
+            "th": "สวนกีฬายูเมะเวิลด์ รุ่ยติ่งเฉิง",
+            "en": "Yumeworld Sports Park (Ruiding City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รุ่ยติ่งเฉิง ชั้น 6 ถนนไป๋อวิ๋น พานหลง คุนหมิง",
+            "en": "Ruiding City 6F, Baiyun Road, Panlong, Kunming"
+          },
+          "what": {
+            "th": "สวนกีฬาในร่ม มีแทรมโพลีนและบ่อบอล",
+            "en": "An indoor sports park with trampolines and a ball pit"
+          },
+          "why": {
+            "th": "ผู้รีวิวพาลูกมาปล่อยพลังวันหยุด",
+            "en": "Reviewers bring children to burn off energy at the weekend"
+          },
+          "q": "YUMEWORLD 瑞鼎城, 白云路168号, 盘龙区, 昆明",
+          "ok": "2026-11"
+        },
+        {
+          "local": "云上草原 无动力亲子乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%91%E4%B8%8A%E8%8D%89%E5%8E%9F-%E6%97%A0%E5%8A%A8%E5%8A%9B%E4%BA%B2%E5%AD%90%E4%B9%90%E5%9B%AD&city=530100",
+          "name": {
+            "th": "สวนเล่นทุ่งหญ้าบนเมฆ ชางซาน ต้าหลี่",
+            "en": "Cloud Meadow Play Park (Cangshan, Dali)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เชิงเขาชางซาน เหนือทะเลสาบเอ๋อร์ไห่ ต้าหลี่",
+            "en": "Cangshan foothills above Erhai, Dali"
+          },
+          "what": {
+            "th": "สวนเล่นกลางแจ้งบนทุ่งหญ้าเชิงเขา มีสัตว์ให้ป้อนอาหาร",
+            "en": "An outdoor play park on a hillside meadow, with animals to feed"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กๆ สนุกมาก",
+            "en": "Reviewers say children had a great time"
+          },
+          "q": "云上草原无动力亲子乐园, 苍海云上草原, 大理市, 大理",
+          "ok": "2026-11"
         }
     ]
     },
