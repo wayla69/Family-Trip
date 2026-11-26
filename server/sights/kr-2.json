@@ -834,6 +834,279 @@
           "ok": "2026-11"
         }
       ]
+    },
+    {
+      "place": "kr-incheon",
+      "thin": true,
+      "sights": [
+        {
+          "local": "국립인천해양박물관",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "req",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือแห่งชาติอินชอน",
+            "en": "National Maritime Museum of Incheon"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนวอลมี เกาะวอลมิโด",
+            "en": "Wolmi-ro, Wolmido"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์การเดินเรือแห่งชาติ เปิดปลายปี 2024 มีพิพิธภัณฑ์เด็กอยู่ข้างใน",
+            "en": "A national maritime museum, opened in late 2024, with a children’s museum inside"
+          },
+          "why": {
+            "th": "ในพิพิธภัณฑ์เด็ก เด็กๆ ได้ลองบังคับเรือและสำรวจใต้ทะเล อาคารใหม่และสะอาด",
+            "en": "Children steer a boat and explore the sea floor in the children’s museum; a clean, new building"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ พิพิธภัณฑ์เด็กต้องจองออนไลน์ เปิดจองวันที่ 1 และ 15 ของทุกเดือน",
+            "en": "Closed on Mondays; the children’s museum is booked online, released on the 1st and 15th of each month"
+          },
+          "q": "국립인천해양박물관, 월미로, 인천",
+          "ok": "2026-11"
+        },
+        {
+          "local": "원더박스",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 28,000 วอน เด็ก (37 เดือนถึง 12 ปี) 23,000 วอน ต่ำกว่า 37 เดือนฟรี",
+            "en": "Adults ₩28,000; children (37 months to 12) ₩23,000; under 37 months free"
+          },
+          "book": "rec",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places",
+          "name": {
+            "th": "วันเดอร์บ็อกซ์ พาราไดซ์ซิตี้",
+            "en": "Wonderbox, Paradise City"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "พาราไดซ์ซิตี้ ยองจง",
+            "en": "Paradise City, Yeongjong"
+          },
+          "what": {
+            "th": "สวนสนุกในร่มที่พาราไดซ์ซิตี้ มีม้าหมุน รถบั๊ม VR และบ่อบอล",
+            "en": "An indoor amusement park at Paradise City, with a carousel, bumper cars, VR and a ball pool"
+          },
+          "why": {
+            "th": "อยู่ในร่มทั้งหมด ฝนตกก็เล่นได้",
+            "en": "All indoors, so the weather does not matter"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 11:00–19:00",
+            "en": "Open daily 11:00–19:00"
+          },
+          "q": "Wonderbox, Paradise City, Incheon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "송도 센트럴파크",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=2629535",
+          "name": {
+            "th": "สวนเซ็นทรัลพาร์กซงโด",
+            "en": "Songdo Central Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนคอนเวนเซีย ยอนซูกู",
+            "en": "Convensia-daero, Yeonsu-gu"
+          },
+          "what": {
+            "th": "สวนน้ำทะเลแห่งแรกของเกาหลี ท่ามกลางตึกสูงของซงโด",
+            "en": "The country’s first seawater park, among Songdo’s towers"
+          },
+          "why": {
+            "th": "มีเรือแท็กซี่และเรือแคนูในคลองน้ำทะเลของสวน",
+            "en": "A water taxi and canoes on the park’s seawater canal"
+          },
+          "q": "Songdo Central Park, 160 Convensia-daero, Incheon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "월미공원",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=1002282",
+          "name": {
+            "th": "สวนวอลมี",
+            "en": "Wolmi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนวอลมี จุงกู",
+            "en": "Wolmi-ro, Jung-gu"
+          },
+          "what": {
+            "th": "สวนบนเนินเขาวอลมิโด เคยเป็นเขตทหาร 50 ปี มีสวนแบบเกาหลีดั้งเดิม",
+            "en": "A hill park on Wolmido, a military zone for 50 years, with traditional Korean gardens"
+          },
+          "why": {
+            "th": "มีสวนเกาหลีให้เดินเล่น เหมาะทุกวัย",
+            "en": "Korean gardens to walk through, open to all ages"
+          },
+          "q": "월미공원, 인천 중구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "마이랜드",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ตั๋วเครื่องเล่นเด็ก 6,000 วอน",
+            "en": "Children’s ride ticket ₩6,000"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/67d38d2a75fa1a4213da455c",
+          "name": {
+            "th": "มายแลนด์ วอลมิโด",
+            "en": "My Land, Wolmido"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนวอลมี เกาะวอลมิโด",
+            "en": "Wolmi-ro 234beon-gil, Wolmido"
+          },
+          "what": {
+            "th": "สวนสนุกริมทะเลบนเกาะวอลมิโด",
+            "en": "A seaside fairground on Wolmido"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นเด็กหลายอย่าง ทั้งม้าหมุน รถบั๊ม และไวกิ้งเล็ก",
+            "en": "Many children’s rides: a carousel, bumper cars and a mini Viking"
+          },
+          "q": "My Land, 7 Wolmi-ro 234beon-gil, Incheon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "송월동 동화마을",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=2372167",
+          "name": {
+            "th": "หมู่บ้านเทพนิยายซงวอลดง",
+            "en": "Songwol-dong Fairy Tale Village"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนทงฮวามาอึล จุงกู",
+            "en": "Donghwamaeul-gil, Jung-gu"
+          },
+          "what": {
+            "th": "หมู่บ้านบนเนินที่ตกแต่งด้วยภาพวาดและรูปปั้นจากนิทานคลาสสิก",
+            "en": "A hillside village painted with murals and sculptures of classic fairy tales"
+          },
+          "why": {
+            "th": "มีภาพวาดและรูปปั้นนิทานให้ตามหาตามซอย",
+            "en": "Fairy-tale murals and statues to find along the lanes"
+          },
+          "q": "송월동 동화마을, 인천 중구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "인천학생교육문화회관",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65ee5e841125833a155dba45",
+          "name": {
+            "th": "ศูนย์การศึกษาและวัฒนธรรมนักเรียนอินชอน",
+            "en": "Incheon Student Education and Culture Center"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจายูกงวอน จุงกู",
+            "en": "Jayugongwon-ro, Jung-gu"
+          },
+          "what": {
+            "th": "ศูนย์ของรัฐที่มีพื้นที่เล่นสำหรับเด็ก",
+            "en": "A public centre with a play space for children"
+          },
+          "why": {
+            "th": "มีช่วงเวลาเล่นสำหรับเด็กเล็กและอุปกรณ์เล่น ตั้งแต่เด็กอ่อนถึงวัยเรียน",
+            "en": "Play time for babies and play equipment, for ages from babies to school children"
+          },
+          "q": "인천학생교육문화회관, 자유공원로 12, 인천 중구",
+          "ok": "2026-11"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,141 @@
+{
+  "town": "nz-christchurch",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents and a read here; 8 places to eat from ChristchurchNZ's family dining guide (undated food guide, counted under the owner's 25 Nov 2026 rule only with an open Google Maps listing and a review from the last six months); 7 things to do from the attractions' own pages (dated 2026) and The Spinoff (April 2025)",
+  "added": [
+    {
+      "name": "The Lil Brew",
+      "page_name": "Lil Brew",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'The Lil Brew' (186a Main Road, Redcliffs), newest review shown 2 days ago"
+    },
+    {
+      "name": "C1 Espresso",
+      "page_name": "C1 Espresso",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'C1 Espresso' (185 High Street), newest review shown 2 days ago"
+    },
+    {
+      "name": "Beach Bar",
+      "page_name": "Beach Bar",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'Beach Bar' (25 Esplanade, Sumner), newest review shown 2 days ago"
+    },
+    {
+      "name": "Sumner Post Office",
+      "page_name": "Sumner Post Office",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'Sumner Post Office' (40 Nayland Street), newest review shown 2 days ago"
+    },
+    {
+      "name": "The Borough · Richmond Club",
+      "page_name": "The Borough | The Richmond Club",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'Richmond Club, The Borough' (75 London Street), newest review shown 10 hours ago"
+    },
+    {
+      "name": "One Good Horse Parklands",
+      "page_name": "One Good Horse Parklands",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'The Turf and One Good Horse Parklands' (6 Inwoods Road), newest review shown 3 days ago"
+    },
+    {
+      "name": "Waffle Haus",
+      "page_name": "Waffle Haus",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'Waffle Haus New Regent St' (12 New Regent Street), newest review shown 6 hours ago"
+    },
+    {
+      "name": "Cobb & Co Papanui",
+      "page_name": "Cobb & Co",
+      "src": "https://www.christchurchnz.com/visit/eat-and-drink/top-kid-friendly-dining-spots-in-christchurch",
+      "date": "undated food guide (ChristchurchNZ, the city's tourism board)",
+      "map": "Google Maps 'Cobb & Co. Papanui' (484 Cranford Street), newest review shown 7 hours ago"
+    },
+    {
+      "name": "Christchurch Gondola",
+      "page_name": "Christchurch Gondola",
+      "src": "https://www.christchurchattractions.nz/christchurch-gondola/",
+      "date": "2026-11",
+      "map": "Google Maps 'Christchurch Gondola' (10 Bridle Path Road), newest review shown 9 hours ago"
+    },
+    {
+      "name": "Punting on the Avon",
+      "page_name": "Punting on the Avon",
+      "src": "https://www.christchurchattractions.nz/punting/",
+      "date": "2026-11",
+      "map": "Google Maps 'Punting On The Avon (Antigua Boat Sheds)' (2 Cambridge Terrace), newest review shown 7 hours ago"
+    },
+    {
+      "name": "Christchurch Tram",
+      "page_name": "Christchurch Tram",
+      "src": "https://www.christchurchattractions.nz/christchurch-tram/",
+      "date": "2026-11",
+      "map": "Google Maps 'Christchurch Tram' (109 Worcester Street), newest review shown 13 hours ago"
+    },
+    {
+      "name": "Willowbank Wildlife Reserve",
+      "page_name": "Willowbank Wildlife Reserve",
+      "src": "https://www.willowbank.co.nz/",
+      "date": "2026-09",
+      "map": "Google Maps 'Willowbank Wildlife Reserve' (60 Hussey Road), newest review shown 6 hours ago"
+    },
+    {
+      "name": "Orana Wildlife Park",
+      "page_name": "Orana Wildlife Park",
+      "src": "https://www.oranawildlifepark.co.nz/",
+      "date": "official",
+      "map": "Google Maps 'Orana Wildlife Park' (793 McLeans Island Road), newest review shown 20 hours ago"
+    },
+    {
+      "name": "Ferrymead Heritage Park",
+      "page_name": "Ferrymead Heritage Park",
+      "src": "https://www.ferrymead.org.nz/",
+      "date": "official",
+      "map": "Google Maps 'Ferrymead Heritage Park' (50 Ferrymead Park Drive), newest review shown 2 days ago"
+    },
+    {
+      "name": "Margaret Mahy Family Playground",
+      "page_name": "Margaret Mahy Family Playground",
+      "src": "https://thespinoff.co.nz/society/30-04-2025/how-this-playground-became-the-jewel-in-the-crown-of-otautahi",
+      "date": "2025-04",
+      "map": "Google Maps 'The Margaret Mahy Family Playground' (Armagh Street), newest review shown a day ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "The Tap (Old Tai Tapu Road)",
+      "why": "the map shows 'Tai Tapu Hotel' at that address, not the guide's name"
+    },
+    {
+      "name": "Lower Grounds (Sign of the Takahe)",
+      "why": "the newest review on the map is 8 months old"
+    },
+    {
+      "name": "Base Woodfired Pizza",
+      "why": "the guide names several branches, not one"
+    },
+    {
+      "name": "Nori Table",
+      "why": "the guide names two locations, not one"
+    },
+    {
+      "name": "ChristchurchNZ's things-to-do pages (12 sights)",
+      "why": "the pages carry no date; the places were taken from their own sites instead where those say something about children"
+    },
+    {
+      "name": "International Antarctic Centre, Canterbury Museum, Tūranga, Botanic Gardens",
+      "why": "their own pages could not be read or said nothing about children"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

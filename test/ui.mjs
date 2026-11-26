@@ -1,13 +1,15 @@
-// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default /tmp/mb-shots).
+// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default: a fresh folder of our own under the OS temp dir, printed at the start).
 import { chromium } from 'playwright';
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { todayLost } from './today-lost.mjs';
 
 const BASE = process.env.BASE, CODE = process.env.CODE;
-const OUT = process.env.SHOTS || '/tmp/mb-shots';
-fs.mkdirSync(OUT, { recursive: true });
+const OUT = process.env.SHOTS || fs.mkdtempSync(path.join(os.tmpdir(), 'mb-shots-'));   // a folder of our own when none is given (CodeQL: no fixed path in /tmp)
+if (process.env.SHOTS) fs.mkdirSync(OUT, { recursive: true });
+console.log('screenshots →', OUT);
 const exe = process.env.CHROME || (fs.existsSync(chromium.executablePath()) ? undefined : '/opt/pw-browsers/chromium-1194/chrome-linux/chrome');
 let failures = 0;
 const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else console.log('  ok  ', m); };
@@ -2832,9 +2834,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.hubgrid.tl-pastel').count() >= 2 && await page.locator('.tilepick button[data-v="pastel"][aria-pressed="true"]').count() === 1, 'menu: pastel tiles by default, the switch at the foot');
   await page.click('.tilepick button[data-v="plain"]'); await page.waitForSelector('.hubgrid.tl-plain');
   const plainBg = await page.evaluate(() => getComputedStyle(document.querySelector('.hubgrid.tl-plain .tile.t-plan')).backgroundImage);
-  ok(plainBg === 'none' && (await apiState(page)).family.tiles === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile');
+  // the tiles redraw at once and the save follows: wait for the server to hold it (CI read 'plain' once, 26 Nov 2026)
+  const tilesPlain = (await apiStateWhen(page, (st) => st.family.tiles === 'plain')).family.tiles;
+  ok(plainBg === 'none' && tilesPlain === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile (' + tilesPlain + ')');
   await page.click('.tilepick button[data-v="accent"]'); await page.waitForSelector('.hubgrid.tl-accent');
-  ok((await apiState(page)).family.tiles === 'accent', 'the book\'s colour: saved too');
+  const tilesAccent = (await apiStateWhen(page, (st) => st.family.tiles === 'accent')).family.tiles;
+  ok(tilesAccent === 'accent', 'the book\'s colour: saved too (' + tilesAccent + ')');
   await page.click('.tilepick button[data-v="pastel"]'); await page.waitForSelector('.hubgrid.tl-pastel');
   ok(s.errs.length === 0, 'privacy: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();

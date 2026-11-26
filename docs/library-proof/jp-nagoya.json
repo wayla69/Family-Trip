@@ -1,0 +1,17 @@
+{
+  "town": "jp-nagoya",
+  "kind": "moved",
+  "checked": "2026-11-25",
+  "note": "Nagoya is now its own place (owner, 25 Nov 2026). These rows were checked when they went into jp-takayama; their proof is in docs/library-proof/jp-takayama.json. Moved unchanged: 11 places to eat, 13 things to do, 2 help-and-play places.",
+  "from": "jp-takayama",
+  "added_to_parent": [
+    {
+      "town": "jp-takayama",
+      "name": "Cha-no-me (茶乃芽)",
+      "src": "https://www.mapple.net/region/a0404040100_s-situation=family/spot/",
+      "date": "undated (owner allowed undated food guides, 25 Nov 2026)",
+      "map": "Google Maps 'Cha-No-Me Cafe' (Kamisannomachi), newest review shown 3 hours ago",
+      "why": "Takayama needed a second café or sweets shop once Nagoya’s cafés left"
+    }
+  ]
+}

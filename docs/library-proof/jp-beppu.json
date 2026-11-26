@@ -1,0 +1,182 @@
+{
+  "town": "jp-beppu",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents; rows from Hoshino Resorts’ Michikusa guides (dateModified 2026-10), japanactivity.com (2026) and Mapple’s 2026 Beppu family-dining page (no page date: the owner allowed undated food guides on 25 Nov 2026 when Google Maps confirms the shop; Mapple gives no reason per shop beyond listing it for families)",
+  "added": [
+    {
+      "name": "Beppu Kanmi Chaya",
+      "page_name": "Beppu Kanmi Chaya",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-familylunch/",
+      "date": "2026-10",
+      "map": "Google Maps 'Amamichaya' (27-3 Jissojicho), newest review shown a day ago"
+    },
+    {
+      "name": "Toyotsune (main shop)",
+      "page_name": "Toyotsune Main Store",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-familylunch/",
+      "date": "2026-10",
+      "map": "Google Maps 'Toyotsune Beppu Main Branch' (2-12-24 Kitahama), newest review shown 9 hours ago"
+    },
+    {
+      "name": "Kaisen Izutsu",
+      "page_name": "Kaisen Izutsu",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-familylunch/",
+      "date": "2026-10",
+      "map": "Google Maps 'Seafood Izutsu' (5-5 Kusunokimachi), newest review shown 3 hours ago"
+    },
+    {
+      "name": "Restaurant Ribbon",
+      "page_name": "Restaurant Ribbon",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-familylunch/",
+      "date": "2026-10",
+      "map": "Google Maps 'Restaurant Ribbon' (2-1-35 Ishigakinishi), newest review shown 2 hours ago"
+    },
+    {
+      "name": "Jigoku-mushi Kobo Kannawa",
+      "page_name": "Jigoku-mushi Kobo Kannawa",
+      "src": "https://japanactivity.com/beppu-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Jigokumushikobo Kannawa', newest review shown 7 hours ago"
+    },
+    {
+      "name": "Grill Mitsuba",
+      "page_name": "グリルみつば",
+      "src": "https://www.mapple.net/region/a0703010201_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Grill Mitsuba' (1-4-31 Kitahama), newest review shown a week ago"
+    },
+    {
+      "name": "Kogetsu",
+      "page_name": "胡月",
+      "src": "https://www.mapple.net/region/a0703010201_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Kogetsu' (8-1-26 Ishigakihigashi), newest review shown a day ago"
+    },
+    {
+      "name": "Sabo Shinanoya",
+      "page_name": "茶房信濃屋",
+      "src": "https://www.mapple.net/region/a0703010201_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Shinanoya' (6-32 Nishinoguchicho), newest review shown 4 days ago"
+    },
+    {
+      "name": "Okamotoya shop (steamed pudding)",
+      "page_name": "岡本屋売店",
+      "src": "https://www.mapple.net/region/a0703010202_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Okamotoya Jigokumushi Pudding' (Myoban), newest review shown a day ago"
+    },
+    {
+      "name": "Oniyama Jigoku",
+      "page_name": "Oniyama Jigoku (Monster Mountain Hell)",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+      "date": "2026-10",
+      "map": "Google Maps 'Oniyama Jigoku' (625 Kannawa), newest review shown 19 hours ago"
+    },
+    {
+      "name": "Umi Jigoku",
+      "page_name": "Umi Jigoku",
+      "src": "https://japanactivity.com/beppu-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Umi Jigoku' (559-1 Kannawa), newest review shown 7 hours ago"
+    },
+    {
+      "name": "Chinoike Jigoku",
+      "page_name": "Chinoike Jigoku",
+      "src": "https://japanactivity.com/beppu-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Chinoike Jigoku' (778 Noda), newest review shown 5 hours ago"
+    },
+    {
+      "name": "Jigoku-mushi Kobo Kannawa",
+      "page_name": "Jigoku-mushi Kobo Kannawa Steam Cooking",
+      "src": "https://japanactivity.com/beppu-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Jigokumushikobo Kannawa', newest review shown 7 hours ago"
+    },
+    {
+      "name": "Kyushu Natural Animal Park African Safari",
+      "page_name": "Kyushu Natural Zoological Park African Safari",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+      "date": "2026-10",
+      "map": "Google Maps 'Kyushu Wildlife Park African Safari' (Ajimu, Usa), newest review shown an hour ago"
+    },
+    {
+      "name": "Takasakiyama Monkey Park",
+      "page_name": "Takasakiyama Natural Zoological Garden",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+      "date": "2026-10",
+      "map": "Google Maps 'Takasakiyama Natural Zoological Garden', newest review shown 3 hours ago"
+    },
+    {
+      "name": "Umitamago aquarium",
+      "page_name": "Oita Marine Palace Aquarium Umitamago",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+      "date": "2026-10",
+      "map": "Google Maps 'Oita Marine Palace Aquarium Umitamago', newest review shown 21 hours ago"
+    },
+    {
+      "name": "Beppu Rakutenchi",
+      "page_name": "Beppu Rakutenchi",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+      "date": "2026-10",
+      "map": "Google Maps 'Beppu Cable Rakutenchi', newest review shown a day ago"
+    },
+    {
+      "name": "Kijima Kogen Park",
+      "page_name": "Kijima Kogen Park",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+      "date": "2026-10",
+      "map": "Google Maps 'Kijima Kogen Park', newest review shown 8 hours ago"
+    },
+    {
+      "name": "Forest Adventure Beppu",
+      "page_name": "Forest Adventure Beppu",
+      "src": "https://hoshinoresorts.com/en/guide/area/kyushu/oita/beppu/beppu-childkanko/",
+      "date": "2026-10",
+      "map": "Google Maps 'Forest Adventure - Beppu' (4380-1 Shidaka), newest review shown a week ago"
+    },
+    {
+      "name": "Oita Fragrance Museum",
+      "page_name": "Oita Fragrance Museum",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko",
+      "date": "2026-10",
+      "map": "Google Maps 'Oita Fragrance Museum' (48-1 Kitaishigaki), newest review shown 22 hours ago"
+    },
+    {
+      "name": "Beppu Bamboo Crafts Centre",
+      "page_name": "Beppu City Traditional Bamboo Crafts Center",
+      "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko",
+      "date": "2026-10",
+      "map": "Google Maps 'Beppu City Traditional Bamboo Crafts Center', newest review shown 17 hours ago"
+    },
+    {
+      "name": "Beppu Park",
+      "page_name": "Beppu Park Downtown Green Space",
+      "src": "https://japanactivity.com/beppu-with-kids",
+      "date": "2026-05",
+      "map": "Google Maps 'Beppu Park' (3018-1 Beppu), newest review shown 2 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Kappo Heike",
+      "why": "failed the page check"
+    },
+    {
+      "name": "Restaurant Toyoken",
+      "why": "review dates not readable on the map"
+    },
+    {
+      "name": "Aoyama Coffee-sha, Fujiya Hanayamomo, Cafe Ichiu",
+      "why": "open on the map, but no page says anything about children"
+    },
+    {
+      "name": "Lake Shidaka swan boats",
+      "why": "no map entry of its own"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

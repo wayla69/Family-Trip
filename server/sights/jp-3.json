@@ -414,6 +414,7 @@
     },
     {
       "place": "jp-hiroshima",
+      "thin": true,
       "sights": [
         {
           "name": { "en": "Peace Memorial Park", "th": "สวนอนุสรณ์สันติภาพ" },
@@ -560,78 +561,6 @@
           "src": "https://japanactivity.com/attractions/hiroshima/okonomimura"
         },
         {
-          "name": { "en": "Kobe Anpanman Children's Museum and Mall", "th": "พิพิธภัณฑ์เด็กแอนปังแมนโกเบและมอลล์" },
-          "local": "神戸アンパンマンこどもミュージアム&モール",
-          "kind": "museumkid",
-          "area": { "en": "Harborland, Kobe", "th": "ฮาร์เบอร์แลนด์ โกเบ" },
-          "what": { "en": "A play museum of the Anpanman characters with stage shows, play zones and a shop mall below", "th": "พิพิธภัณฑ์เล่นของตัวละครแอนปังแมน มีโชว์บนเวที โซนเล่น และมอลล์ร้านค้าชั้นล่าง" },
-          "why": { "en": "Made for the very young; indoors, with places to crawl and climb", "th": "ทำมาสำหรับเด็กเล็กมาก อยู่ในร่ม มีที่คลานและปีน" },
-          "tip": { "en": "Museum about 10:00–18:00, last entry 17:00; the ground-floor mall is free to enter", "th": "พิพิธภัณฑ์ราว 10:00–18:00 เข้าได้ถึง 17:00 มอลล์ชั้นล่างเข้าฟรี" },
-          "ages": [2, 2, 1, 0],
-          "hrs": 3,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคา" },
-          "book": "none",
-          "q": "Kobe Anpanman Children's Museum and Mall, Kobe",
-          "ok": "2026-11",
-          "src": "https://www.gltjp.com/en/directory/item/11687/"
-        },
-        {
-          "name": { "en": "Himeji Castle", "th": "ปราสาทฮิเมจิ" },
-          "local": "姫路城",
-          "kind": "culture",
-          "area": { "en": "Himeji (day trip)", "th": "ฮิเมจิ (ไปเช้าเย็นกลับ)" },
-          "what": { "en": "Japan's best-kept white castle, a World Heritage site you can climb through, with a garden next door", "th": "ปราสาทขาวที่คงสภาพดีที่สุดของญี่ปุ่น มรดกโลก ขึ้นไปชมข้างในได้ มีสวนอยู่ติดกัน" },
-          "why": { "en": "Children under 18 are free, but the keep has steep stairs and no pram access; the grounds are good for running", "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี แต่ตัวหอมีบันไดชันและเข็นรถไม่ได้ ส่วนบริเวณรอบๆ วิ่งเล่นได้" },
-          "tip": { "en": "09:00–17:00, last entry 16:00 (later in summer); the adult fare rose to ≈ ¥2,500 on 1 Mar 2026 for non-residents", "th": "09:00–17:00 เข้าได้ถึง 16:00 (ฤดูร้อนปิดช้ากว่า) ผู้ใหญ่ที่ไม่ใช่ผู้อยู่ในเมืองขึ้นเป็น ≈ ¥2,500 ตั้งแต่ 1 มี.ค. 2026" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 3,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,500 adults (non-residents) · under 18 free", "th": "≈ ¥2,500 ผู้ใหญ่ (ไม่ใช่ผู้อยู่ในเมือง) · ต่ำกว่า 18 ปีฟรี" },
-          "book": "none",
-          "q": "Himeji Castle, Himeji, Hyogo",
-          "ok": "2026-11",
-          "src": "https://www.himejicastle.jp/en"
-        },
-        {
-          "name": { "en": "Kobe Suma Sea World", "th": "โกเบ สุมะ ซีเวิลด์" },
-          "local": "神戸須磨シーワールド",
-          "kind": "aquarium",
-          "area": { "en": "Suma, Kobe", "th": "สุมะ โกเบ" },
-          "what": { "en": "A seaside aquarium that opened in 2024, with orcas, dolphins and many sea creatures", "th": "พิพิธภัณฑ์สัตว์น้ำริมทะเลที่เปิดปี 2024 มีออร์ก้า โลมา และสัตว์ทะเลมากมาย" },
-          "why": { "en": "Much of it is under cover, with shows to sit through; step-free", "th": "ส่วนใหญ่อยู่ในร่ม มีโชว์ให้นั่งดู เดินสะดวก" },
-          "tip": { "en": "Open about 10:00–18:00, last entry an hour before; prices change by season", "th": "เปิดราว 10:00–18:00 เข้าได้ถึงหนึ่งชั่วโมงก่อนปิด ราคาเปลี่ยนตามฤดู" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 4,
-          "io": "both",
-          "pram": "yes",
-          "price": { "en": "≈ ¥2,900–3,700 adults by season · children less (check)", "th": "≈ ¥2,900–3,700 ผู้ใหญ่ตามฤดู · เด็กถูกกว่า (ควรเช็ก)" },
-          "book": "rec",
-          "q": "Kobe Suma Sea World, Suma, Kobe",
-          "ok": "2026-11",
-          "src": "https://www.kobesuma-seaworld.jp/en/guide/price_ticket/group/"
-        },
-        {
-          "name": { "en": "Kobe Nunobiki Herb Garden and Ropeway", "th": "สวนสมุนไพรนูโนบิกิและกระเช้าโกเบ" },
-          "local": "神戸布引ハーブ園/ロープウェイ",
-          "kind": "park",
-          "area": { "en": "Shin-Kobe", "th": "ชินโกเบ" },
-          "what": { "en": "A ropeway up a hillside to herb and flower gardens with views over Kobe and the bay", "th": "กระเช้าขึ้นเนินสู่สวนสมุนไพรและดอกไม้ เห็นเมืองโกเบและอ่าว" },
-          "why": { "en": "The cable car is the treat; the gardens are on slopes, so a carrier suits babies better than a pram", "th": "นั่งกระเช้าคือจุดเด่น สวนอยู่บนเนิน เด็กเล็กใช้เป้อุ้มสะดวกกว่ารถเข็น" },
-          "tip": { "en": "Hours vary by season (about 10:00–17:00); the standard fare includes garden entry", "th": "เวลาเปิดเปลี่ยนตามฤดู (ราว 10:00–17:00) ค่ากระเช้ามาตรฐานรวมค่าเข้าสวน" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,500 adults return · children less (check)", "th": "≈ ¥2,500 ผู้ใหญ่ไปกลับ · เด็กถูกกว่า (ควรเช็ก)" },
-          "book": "none",
-          "q": "Kobe Nunobiki Herb Gardens, Kobe",
-          "ok": "2026-11",
-          "src": "https://hyogojapan.com/discover/nunobiki-herb-gardens-ropeway/"
-        },
-        {
           "name": { "en": "Okayama Korakuen Garden", "th": "สวนโคราคุเอ็นโอคายามะ" },
           "local": "岡山後楽園",
           "kind": "park",
@@ -648,42 +577,6 @@
           "q": "Okayama Korakuen, Okayama",
           "ok": "2026-11",
           "src": "https://okayama-korakuen.jp/section/english/info/index.html"
-        },
-        {
-          "name": { "en": "Meriken Park, Kobe", "th": "สวนเมอริเคน โกเบ" },
-          "local": "メリケンパーク",
-          "kind": "park",
-          "area": { "en": "Kobe waterfront", "th": "ริมอ่าวโกเบ" },
-          "what": { "en": "A waterfront park with the red Port Tower and open lawns by the harbour", "th": "สวนริมอ่าว มีหอคอยสีแดงพอร์ตทาวเวอร์และสนามหญ้ากว้างริมท่าเรือ" },
-          "why": { "en": "Free, flat and breezy, with space to run and a tower to look up at", "th": "ฟรี ทางเรียบ ลมเย็น มีที่ให้วิ่งเล่นและหอคอยให้แหงนดู" },
-          "tip": { "en": "The park is open 24 hours; go in daylight with children", "th": "สวนเปิด 24 ชั่วโมง พาเด็กไปตอนกลางวัน" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 1,
-          "io": "out",
-          "pram": "yes",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Meriken Park, Kobe",
-          "ok": "2026-11",
-          "src": "https://japanactivity.com/attractions/kobe/meriken-park"
-        },
-        {
-          "name": { "en": "Kobe Port Tower", "th": "โกเบพอร์ตทาวเวอร์" },
-          "local": "神戸ポートタワー",
-          "kind": "views",
-          "area": { "en": "Meriken Park, Kobe", "th": "สวนเมอริเคน โกเบ" },
-          "what": { "en": "A red lattice tower on the waterfront with indoor viewing floors and an open rooftop deck", "th": "หอคอยโครงตาข่ายสีแดงริมอ่าว มีชั้นชมวิวในร่มและดาดฟ้าโล่ง" },
-          "why": { "en": "Short lift ride and indoor floors with benches; entry is by timed ticket", "th": "นั่งลิฟต์สั้นๆ ชั้นชมวิวอยู่ในร่มมีที่นั่ง เข้าตามรอบเวลา" },
-          "tip": { "en": "Open 09:00–23:00, last entry 22:30; go by day for the view with children", "th": "เปิด 09:00–23:00 เข้าได้ถึง 22:30 พาเด็กไปตอนกลางวันเห็นวิวชัด" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ ¥1,000 adults indoor floors · ¥1,200 with rooftop (children less, check)", "th": "≈ ¥1,000 ผู้ใหญ่ชั้นในร่ม · ¥1,200 รวมดาดฟ้า (เด็กถูกกว่า ควรเช็ก)" },
-          "book": "rec",
-          "q": "Kobe Port Tower, Kobe",
-          "ok": "2026-11",
-          "src": "https://japanactivity.com/attractions/kobe/kobe-port-tower"
         },
         {
           "name": { "en": "Miyajima Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำมิยาจิมะ" },
@@ -737,158 +630,6 @@
             "en": "Hands-on science for children"
           },
           "q": "5-Days Children's Cultural Science Museum, Motomachi, Naka Ward, Hiroshima",
-          "ok": "2026-11"
-        },
-        {
-          "local": "こどもっちパーク こうべパーク",
-          "ages": [
-            2,
-            2,
-            2,
-            0
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/82216",
-          "name": {
-            "th": "สวนเล่นในร่มโคโดม็อตจิ โกเบ",
-            "en": "Kodomocchi Park Kobe Park"
-          },
-          "kind": "play",
-          "area": {
-            "th": "อาคาร HDC โกเบ ชั้น 10 โกเบ",
-            "en": "HDC Kobe 10F, Higashikawasakicho, Kobe"
-          },
-          "what": {
-            "th": "ที่เล่นในร่ม มีสไลเดอร์ใหญ่ บ่อบอล และที่ปีนป่าย",
-            "en": "An indoor play space with a big slide, a ball pool and a climbing frame"
-          },
-          "why": {
-            "th": "สำหรับเด็กแรกเกิดถึงประถม",
-            "en": "For ages 0 to primary school"
-          },
-          "q": "Kodomocchi Park Kobe Park, HDC Kobe 10F, Chuo Ward, Kobe",
-          "ok": "2026-11"
-        },
-        {
-          "local": "あそびのせかい 学園南店",
-          "ages": [
-            2,
-            2,
-            2,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/82216",
-          "name": {
-            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (กาคุเอ็นมินามิ)",
-            "en": "Bornelund Asobi no Sekai (Gakuen-minami)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "ไมตะมนนิชิ เขตทารุมิ โกเบ",
-            "en": "Maitamonnishi, Tarumi Ward, Kobe"
-          },
-          "what": {
-            "th": "ที่เล่นในร่มของบอร์เนลุนด์ พร้อมร้านของเล่น",
-            "en": "Bornelund's indoor play space with a toy shop"
-          },
-          "why": {
-            "th": "เครื่องเล่นจากทั่วโลก สำหรับ 6 เดือนถึง 12 ปี",
-            "en": "Play equipment from around the world for 6 months to 12 years"
-          },
-          "q": "Bornelund Kobe Gakuen Minami, Tarumi Ward, Kobe",
-          "ok": "2026-11"
-        },
-        {
-          "local": "あそびのせかい マリンピア神戸店",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 1.5,
-          "io": "both",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/82216",
-          "name": {
-            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (มารีนเปียโกเบ)",
-            "en": "Bornelund Asobi no Sekai (Marine Pia Kobe)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "มิตซุยเอาต์เล็ตพาร์กมารีนเปีย เขตทารุมิ โกเบ",
-            "en": "Mitsui Outlet Park Marine Pia, Tarumi Ward, Kobe"
-          },
-          "what": {
-            "th": "ที่เล่นในร่มและกลางแจ้ง มีแทรมโพลีนและเครื่องเล่นหมุน",
-            "en": "Indoor and outdoor play with a trampoline and spinning rides"
-          },
-          "why": {
-            "th": "มองเห็นสะพานอาคาชิไคเกียว",
-            "en": "The Akashi Kaikyo Bridge in view"
-          },
-          "q": "Bornelund Asobi no Sekai, Mitsui Outlet Park Marine Pia Kobe, Kobe",
-          "ok": "2026-11"
-        },
-        {
-          "local": "ピュアハートキッズランド 神戸ハーバーランドumie",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "เช็กราคาก่อนไป",
-            "en": "Check the price"
-          },
-          "book": "none",
-          "src": "https://www.asoview.com/note/6897/",
-          "name": {
-            "th": "เพียวฮาร์ตคิดส์แลนด์ โกเบฮาร์เบอร์แลนด์",
-            "en": "Pure Heart Kids Land (Kobe Harborland umie)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "อุมิเอะ นอร์ทมอลล์ ชั้น 4 เขตชูโอ โกเบ",
-            "en": "umie North Mall 4F, Chuo Ward, Kobe"
-          },
-          "what": {
-            "th": "สวนเล่นในร่มขนาดใหญ่",
-            "en": "A big indoor play park"
-          },
-          "why": {
-            "th": "เด็กวิ่งเล่นได้ทุกสภาพอากาศ",
-            "en": "Children run about whatever the weather"
-          },
-          "tip": {
-            "th": "10:00–19:00 เข้าครั้งสุดท้าย 18:30",
-            "en": "10:00–19:00, last entry 18:30"
-          },
-          "q": "ピュアハートキッズランド 神戸ハーバーランドumie",
           "ok": "2026-11"
         },
         {
@@ -3907,6 +3648,7 @@
     },
     {
       "place": "jp-takayama",
+      "thin": true,
       "sights": [
         {
           "name": { "en": "Hida Folk Village", "th": "หมู่บ้านพื้นบ้านฮิดะ (ฮิดะโนะซาโตะ)" },
@@ -4071,114 +3813,6 @@
           "src": "https://todolist-japan.com/en/shirakawa-go-guide/"
         },
         {
-          "name": { "en": "LEGOLAND Japan", "th": "เลโก้แลนด์ เจแปน" },
-          "local": "レゴランド・ジャパン",
-          "kind": "themepark",
-          "area": { "en": "Nagoya Kinjo Pier", "th": "นาโกย่า คินโจพิเออร์" },
-          "what": { "en": "A Lego theme park with gentle rides, Miniland models of Japanese towns and building zones", "th": "สวนสนุกเลโก้ มีเครื่องเล่นเบาๆ โมเดลเมืองญี่ปุ่นจิ๋ว และโซนต่อเลโก้" },
-          "why": { "en": "Built for children 2–12; plenty of rides and builds a small child can do, and the Sea Life aquarium shelters a wet day", "th": "ออกแบบสำหรับเด็ก 2–12 ปี มีเครื่องเล่นและโซนต่อให้เด็กเล็กทำได้ และมี Sea Life ไว้หลบฝน" },
-          "tip": { "en": "Hours are about 10:00–17:00 but change by date; online tickets are cheaper", "th": "เปิดราว 10:00–17:00 แต่เปลี่ยนตามวัน บัตรออนไลน์ถูกกว่า" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 6,
-          "io": "both",
-          "pram": "yes",
-          "price": { "en": "≈ ¥4,900 adults · ¥3,700 children (online, varies by date)", "th": "≈ ¥4,900 ผู้ใหญ่ · ¥3,700 เด็ก (ออนไลน์ เปลี่ยนตามวัน)" },
-          "book": "rec",
-          "q": "LEGOLAND Japan, Nagoya",
-          "ok": "2026-11",
-          "src": "https://www.japan-travel-kit.com/guides/attractions/legoland-japan-tickets"
-        },
-        {
-          "name": { "en": "Port of Nagoya Public Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำท่าเรือนาโกย่า" },
-          "local": "名古屋港水族館",
-          "kind": "aquarium",
-          "area": { "en": "Nagoya Port", "th": "ท่าเรือนาโกย่า" },
-          "what": { "en": "A big aquarium with belugas, orcas and a dolphin show in a large pool", "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ มีเบลูกา ออร์ก้า และโชว์โลมาในสระใหญ่" },
-          "why": { "en": "Indoors and step-free, with a whole day of animals to see and shows to sit through", "th": "อยู่ในร่มและเดินสะดวก มีสัตว์และโชว์ให้ดูได้ทั้งวัน" },
-          "tip": { "en": "Winter hours close about 17:00; closed on Mondays; last entry an hour before closing", "th": "หน้าหนาวปิดราว 17:00 ปิดวันจันทร์ เข้าได้ถึงหนึ่งชั่วโมงก่อนปิด" },
-          "ages": [2, 2, 2, 2],
-          "hrs": 4,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ ¥2,030 adults · ¥1,000 school children · ¥500 ages 4+ · under 4 free", "th": "≈ ¥2,030 ผู้ใหญ่ · ¥1,000 นักเรียน · ¥500 อายุ 4 ปีขึ้นไป · ต่ำกว่า 4 ปีฟรี" },
-          "book": "none",
-          "q": "Port of Nagoya Public Aquarium, Nagoya",
-          "ok": "2026-11",
-          "src": "https://www.trvlogue.com/en/port-of-nagoya-aquarium-tickets"
-        },
-        {
-          "name": { "en": "SCMAGLEV and Railway Park", "th": "พิพิธภัณฑ์รถไฟชินคันเซ็นและแมกเลฟ" },
-          "local": "リニア・鉄道館",
-          "kind": "museumkid",
-          "area": { "en": "Kinjo Pier, Nagoya", "th": "คินโจพิเออร์ นาโกย่า" },
-          "what": { "en": "A museum of real Shinkansen and maglev trains, with train simulators and a big model railway", "th": "พิพิธภัณฑ์รถไฟชินคันเซ็นและแมกเลฟของจริง มีเครื่องจำลองและรถไฟจำลองขนาดใหญ่" },
-          "why": { "en": "Indoor and step-free; children can step inside real carriages", "th": "อยู่ในร่มและเดินสะดวก เด็กขึ้นไปในตู้รถไฟจริงได้" },
-          "tip": { "en": "10:00–17:30, usually closed on Tuesdays; prices come from older listings, so check", "th": "10:00–17:30 ปกติปิดวันอังคาร ราคาจากข้อมูลเก่า ควรเช็ก" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคา" },
-          "book": "none",
-          "q": "SCMAGLEV and Railway Park, Nagoya",
-          "ok": "2026-11",
-          "src": "https://aichinow.pref.aichi.jp/en/spots/detail/5/"
-        },
-        {
-          "name": { "en": "Nagoya Castle", "th": "ปราสาทนาโกย่า" },
-          "local": "名古屋城",
-          "kind": "culture",
-          "area": { "en": "Central Nagoya", "th": "ใจกลางนาโกย่า" },
-          "what": { "en": "The castle grounds with golden shachihoko on the roof, stone walls and the Honmaru Palace; the main keep is closed", "th": "บริเวณปราสาทที่มีชาชิโฮโกะสีทองบนหลังคา กำแพงหิน และพระราชวังฮนมารุ ส่วนตัวหอหลักปิดอยู่" },
-          "why": { "en": "Wide lawns to run on and a palace with indoor rooms; junior high and under free", "th": "สนามหญ้ากว้างให้วิ่ง และพระราชวังมีห้องในร่ม เด็กมัธยมต้นลงมาเข้าฟรี" },
-          "tip": { "en": "Open 09:00–16:30, palace until 16:00; the adult fare rose to ¥1,000 from 1 Oct 2026", "th": "เปิด 09:00–16:30 พระราชวังถึง 16:00 ราคาผู้ใหญ่ขึ้นเป็น ¥1,000 ตั้งแต่ 1 ต.ค. 2026" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 2,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "≈ ¥1,000 adults from 1 October 2026 · check the child price", "th": "≈ ¥1,000 ผู้ใหญ่ ตั้งแต่ 1 ต.ค. 2026 · เช็กราคาเด็ก" },
-          "book": "none",
-          "q": "Nagoya Castle, Nagoya",
-          "ok": "2026-11",
-          "src": "https://www.trvlogue.com/en/nagoya-castle-guide-2026"
-        },
-        {
-          "name": { "en": "Higashiyama Zoo and Botanical Gardens", "th": "สวนสัตว์และสวนพฤกษศาสตร์ฮิกาชิยามะ" },
-          "local": "東山動植物園",
-          "kind": "zoo",
-          "area": { "en": "Chikusa, Nagoya", "th": "จิคุสะ นาโกย่า" },
-          "what": { "en": "A big zoo with koalas, gorillas and a children's zoo, joined to a garden and greenhouse", "th": "สวนสัตว์ใหญ่ มีโคอาล่า กอริลลา และโซนสัตว์เด็ก ติดสวนพฤกษศาสตร์และเรือนกระจก" },
-          "why": { "en": "Cheap, large and hilly in parts; pick a few animal houses for little legs", "th": "ราคาถูกและกว้าง บางช่วงเป็นเนิน เลือกดูแค่บางโซนสำหรับเด็กเล็ก" },
-          "tip": { "en": "Open 09:00–16:50 (tickets to 16:30); closed Mondays and 29 Dec–1 Jan", "th": "เปิด 09:00–16:50 (ซื้อบัตรถึง 16:30) ปิดวันจันทร์และ 29 ธ.ค.–1 ม.ค." },
-          "ages": [1, 2, 2, 2],
-          "hrs": 4,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ¥500 adults · junior high and under free", "th": "≈ ¥500 ผู้ใหญ่ · มัธยมต้นลงมาฟรี" },
-          "book": "none",
-          "q": "Higashiyama Zoo and Botanical Gardens, Nagoya",
-          "ok": "2026-11",
-          "src": "https://www.aichinow.pref.aichi.jp/en/spots/detail/8/"
-        },
-        {
-          "name": { "en": "Ghibli Park", "th": "สวนสาธารณะจิบลิ" },
-          "local": "ジブリパーク",
-          "kind": "themepark",
-          "area": { "en": "Aichi Expo Park, near Nagoya", "th": "สวนสาธารณะไอจิเอ็กซ์โป ใกล้นาโกย่า" },
-          "what": { "en": "Parkland recreating Studio Ghibli worlds, including the Totoro house in Dondoko Forest and the indoor Grand Warehouse", "th": "สวนที่จำลองโลกของสตูดิโอจิบลิ มีบ้านโทโทโร่ในป่าดงโดโกะและโกดังใหญ่ในร่ม" },
-          "why": { "en": "Gentle walking among familiar films, with the warehouse for wet days; Grand Warehouse has timed entry", "th": "เดินเล่นสบายๆ ท่ามกลางโลกในหนังที่คุ้นเคย มีโกดังไว้หลบฝน โกดังใหญ่เข้าตามรอบเวลา" },
-          "tip": { "en": "Tickets go on sale monthly and sell out; overseas buyers may only get day passes, so check the official page", "th": "บัตรเปิดขายรายเดือนและหมดเร็ว ผู้ซื้อต่างประเทศอาจซื้อได้แค่บัตรรายวัน เช็กหน้าทางการ" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 5,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "Check the price · under 4 free", "th": "เช็กราคา · ต่ำกว่า 4 ปีฟรี" },
-          "book": "req",
-          "q": "Ghibli Park, Nagakute, Aichi",
-          "ok": "2026-11",
-          "src": "https://ghibli-park.jp/en/ticket/"
-        },
-        {
           "name": { "en": "Harayama Citizens' Park", "th": "สวนสาธารณะฮารายามะ" },
           "local": "原山市民公園",
           "kind": "play",
@@ -4231,313 +3865,12 @@
           "q": "飛騨大鍾乳洞, Nyukawa-cho, Takayama",
           "ok": "2026-11",
           "src": "https://www.kankou-gifu.jp/spot/detail_1229.html"
-        },
-        {
-          "local": "あそびパークPLUS",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "≈ ¥700 30 นาทีแรก จากนั้น ¥230 ต่อ 10 นาที",
-            "en": "≈ ¥700 first 30 min, then ¥230 per 10 min"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/81944",
-          "name": {
-            "th": "อาโซบิพาร์กพลัส ลาลาพอร์ตมินาโตะ",
-            "en": "Asobi Park Plus (Lalaport Minato Aqulus)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "ลาลาพอร์ตมินาโตะอาคูลุส ชั้น 3 เขตมินาโตะ นาโงยะ",
-            "en": "Lalaport Minato Aqulus 3F, Minato Ward, Nagoya"
-          },
-          "what": {
-            "th": "สวนเล่นมีเครื่องปีนใหญ่ เนินแทรมโพลีน และบ่อบอล",
-            "en": "A play park with a big climbing set, a trampoline hill and a ball pool"
-          },
-          "why": {
-            "th": "มีลานเด็กเล็กที่มีรั้วกั้น",
-            "en": "A fenced baby terrace for the smallest"
-          },
-          "tip": {
-            "th": "10:00–19:00",
-            "en": "10:00–19:00"
-          },
-          "q": "あそびパークPLUS, ららぽーと名古屋みなとアクルス",
-          "ok": "2026-11"
-        },
-        {
-          "local": "リトルプラネット",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "≈ ¥900–2,700 ต่อวัน",
-            "en": "≈ ¥900–2,700 a day"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/81944",
-          "name": {
-            "th": "ลิตเติลแพลเน็ต โมโซวันเดอร์ซิตี้",
-            "en": "Little Planet (mozo Wonder City)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "โมโซวันเดอร์ซิตี้ ชั้น 4 เขตนิชิ นาโงยะ",
-            "en": "mozo Wonder City 4F, Nishi Ward, Nagoya"
-          },
-          "what": {
-            "th": "เล่นแบบดิจิทัล ทราย AR แทรมโพลีนดิจิทัล และบ่อบอลแสงสี",
-            "en": "Digital play: AR sand, a digital trampoline and a light-and-sound ball pool"
-          },
-          "why": {
-            "th": "บัตรรายวันออกไปกินข้าวแล้วกลับเข้ามาได้",
-            "en": "A day pass lets you leave for lunch and come back"
-          },
-          "tip": {
-            "th": "10:00–20:00",
-            "en": "10:00–20:00"
-          },
-          "q": "リトルプラネット, mozoワンダーシティ, 名古屋",
-          "ok": "2026-11"
-        },
-        {
-          "local": "ピュアハートキッズランド",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "≈ ¥1,200–1,500",
-            "en": "≈ ¥1,200–1,500"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/81944",
-          "name": {
-            "th": "เพียวฮาร์ตคิดส์แลนด์ พอร์ตวอล์กมินาโตะ",
-            "en": "Pure Heart Kids Land (Portwalk Minato)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "พอร์ตวอล์กมินาโตะ ชั้น 3 เขตมินาโตะ นาโงยะ",
-            "en": "Portwalk Minato 3F, Minato Ward, Nagoya"
-          },
-          "what": {
-            "th": "ห้องเล่นในร่มขนาดใหญ่ บ่อบอล 100,000 ลูก เปิดพฤศจิกายน 2025",
-            "en": "A big indoor play hall with a ball pool of 100,000 balls, opened November 2025"
-          },
-          "why": {
-            "th": "มีโซนเด็กเล็กถึง 24 เดือน และมุมคาเฟ่",
-            "en": "A baby park up to 24 months and a café space"
-          },
-          "tip": {
-            "th": "เฉพาะสมาชิก 10:00–19:00",
-            "en": "Members only; 10:00–19:00"
-          },
-          "q": "ピュアハートキッズランド, ポートウォークみなと",
-          "ok": "2026-11"
-        },
-        {
-          "local": "あそびのせかい",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "≈ ¥600 30 นาทีแรก",
-            "en": "≈ ¥600 first 30 min"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/81944",
-          "name": {
-            "th": "อาโซบิโนะเซไก ทาคาชิมายะเกตทาวเวอร์",
-            "en": "Asobi no Sekai (Takashimaya Gate Tower Mall)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "เกตทาวเวอร์มอลล์ ชั้น 7 สถานีนาโงยะ นาโงยะ",
-            "en": "Gate Tower Mall 7F, Nagoya Station, Nagoya"
-          },
-          "what": {
-            "th": "สวนเล่น 3 โซน บ่อบอลและแทรมโพลีน ตัวต่อและบทบาทสมมติ และสวนเด็กเล็ก",
-            "en": "A play park in three zones: ball pool and trampoline, blocks and pretend play, and a baby garden"
-          },
-          "why": {
-            "th": "สวนเด็กเล็กอายุ 6–18 เดือน และมีพี่เลี้ยงสอนเล่น",
-            "en": "A baby garden for 6 to 18 months, and play leaders"
-          },
-          "tip": {
-            "th": "10:00–19:00 เชื่อมสถานีนาโงยะ",
-            "en": "10:00–19:00; connected to Nagoya Station"
-          },
-          "q": "あそびのせかい, タカシマヤ ゲートタワーモール",
-          "ok": "2026-11"
-        },
-        {
-          "local": "JUMP LAB 名古屋 緑店",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "≈ ¥1,500 ต่อ 60 นาที (เด็ก)",
-            "en": "≈ ¥1,500 for 60 min (children)"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/81944",
-          "name": {
-            "th": "จัมป์แล็บ นารุมิ",
-            "en": "Jump Lab Narumi"
-          },
-          "kind": "play",
-          "area": {
-            "th": "นารุมิ เขตมิโดริ นาโงยะ",
-            "en": "Narumi, Midori Ward, Nagoya"
-          },
-          "what": {
-            "th": "ยิมแทรมโพลีนและเครื่องเล่นออกกำลัง มีผนังปีนและผนังนินจา",
-            "en": "A trampoline and athletics gym with a climbing wall and a ninja wall"
-          },
-          "why": {
-            "th": "สำหรับเด็กตั้งแต่ 4 ขวบ ผู้ปกครองดูฟรีจากชั้นบน",
-            "en": "For children from 4; parents watch free from upstairs"
-          },
-          "q": "JUMP LAB 鳴海, 緑区, 名古屋",
-          "ok": "2026-11"
-        },
-        {
-          "local": "こどもっちパーク 名古屋みなとパーク",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "≈ ¥600–800 ต่อ 60 นาที",
-            "en": "≈ ¥600–800 for 60 min"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/81944",
-          "name": {
-            "th": "โคโดม็อตจิพาร์ก นาโงยะมินาโตะ",
-            "en": "Kodomocchi Park (Nagoya Minato)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "คินโจฟุโตะ เขตมินาโตะ นาโงยะ",
-            "en": "Kinjo-futo, Minato Ward, Nagoya"
-          },
-          "what": {
-            "th": "สวนในร่มปูหญ้าเทียม มีเครื่องเล่นไม้ เขาวงกต และครัวของเล่น",
-            "en": "An indoor park with artificial grass, wooden play equipment, a maze and a play kitchen"
-          },
-          "why": {
-            "th": "เด็กต่ำกว่า 1 ขวบครึ่งเข้าฟรีวันธรรมดา ผู้ปกครอง 2 คนเข้าฟรี",
-            "en": "Under 1½ free on weekdays; two guardians go in free"
-          },
-          "tip": {
-            "th": "10:00–18:00 จอดฟรี 2 ชั่วโมง",
-            "en": "10:00–18:00; 2 hours' free parking"
-          },
-          "q": "こどもっちパーク 名古屋みなとパーク, 金城ふ頭",
-          "ok": "2026-11"
-        },
-        {
-          "local": "すみっコぐらしあそびスタジオ",
-          "ages": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": {
-            "th": "≈ ¥600 30 นาทีแรก จากนั้น ¥200 ต่อ 10 นาที",
-            "en": "≈ ¥600 first 30 min, then ¥200 per 10 min"
-          },
-          "book": "none",
-          "src": "https://www.nap-camp.com/mag/81944",
-          "name": {
-            "th": "สตูดิโอเล่นซุมิกโกะกุราชิ อิออนมอลล์โอดากะ",
-            "en": "Sumikko Gurashi Play Studio (AEON Mall Odaka)"
-          },
-          "kind": "play",
-          "area": {
-            "th": "อิออนมอลล์โอดากะ ชั้น 3 เขตมิโดริ นาโงยะ",
-            "en": "AEON Mall Odaka 3F, Midori Ward, Nagoya"
-          },
-          "what": {
-            "th": "สตูดิโอเล่นธีมซุมิกโกะกุราชิ มีร้านจำลองและบ่อบอลสีพาสเทล",
-            "en": "A Sumikko Gurashi play studio with pretend shops and a pastel ball pool"
-          },
-          "why": {
-            "th": "มีบ่อบอล สไลเดอร์ท่อ และร้านอาหารจำลอง",
-            "en": "A ball pool, a tube slide and a pretend food shop"
-          },
-          "tip": {
-            "th": "10:00–19:00",
-            "en": "10:00–19:00"
-          },
-          "q": "すみっコぐらしあそびスタジオ, イオンモール大高",
-          "ok": "2026-11"
         }
       ]
     },
     {
       "place": "jp-tohoku",
       "sights": [
-        {
-          "name": { "en": "Sendai Umino-Mori Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำเซนไดอุมิโนะโมริ" },
-          "local": "仙台うみの杜水族館",
-          "kind": "aquarium",
-          "area": { "en": "Sendai, Miyagi", "th": "เซนได มิยางิ" },
-          "what": { "en": "A big aquarium on the Sendai coast with a Pacific tank, dolphin and sea lion shows and a jellyfish hall", "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ริมทะเลเซนได มีตู้มหาสมุทรแปซิฟิก โชว์โลมาและสิงโตทะเล และห้องแมงกะพรุน" },
-          "why": { "en": "Shows and tanks are under one roof, so it works in any weather and children can wander at their own pace", "th": "โชว์และตู้ปลาอยู่ในอาคารเดียวกัน เที่ยวได้ทุกสภาพอากาศ เด็กเดินดูตามใจได้" },
-          "tip": { "en": "Hours change by season (winter is shorter), so check the site before you go", "th": "เวลาเปิดเปลี่ยนตามฤดู ช่วงหนาวสั้นกว่า เช็กเว็บก่อนไป" },
-          "ages": [2, 2, 2, 1],
-          "hrs": 3,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ ¥2,400 adults · lower for children · under 4 free (check)", "th": "≈ ¥2,400 ผู้ใหญ่ · เด็กถูกกว่า · ต่ำกว่า 4 ขวบฟรี (เช็กอีกครั้ง)" },
-          "book": "none",
-          "q": "Sendai Umino-Mori Aquarium, Sendai, Miyagi",
-          "ok": "2026-11",
-          "src": "https://www.uminomori.jp/umino/en/"
-        },
         {
           "name": { "en": "Miyagi Zao Fox Village", "th": "หมู่บ้านจิ้งจอกซาโอ" },
           "local": "宮城蔵王キツネ村",
@@ -4555,60 +3888,6 @@
           "q": "Miyagi Zao Fox Village, Shiroishi, Miyagi",
           "ok": "2026-11",
           "src": "https://www.ana.co.jp/en/be/japan-travel-planner/miyagi/0000006.html"
-        },
-        {
-          "name": { "en": "Matsushima Bay pleasure cruise", "th": "ล่องเรือชมอ่าวมัตสึชิมะ" },
-          "local": "松島島巡り観光船",
-          "kind": "views",
-          "area": { "en": "Matsushima, Miyagi", "th": "มัตสึชิมะ มิยางิ" },
-          "what": { "en": "A 50-minute boat ride among the pine-covered islets of one of Japan's three famous views, with gulls following the boat", "th": "ล่องเรือราว 50 นาทีผ่านเกาะสนเล็กๆ ของหนึ่งในสามทิวทัศน์งามของญี่ปุ่น มีนกนางนวลบินตามเรือ" },
-          "why": { "en": "Short and calm, with a covered cabin; under-school-age children ride free", "th": "ล่องสั้น คลื่นสงบ มีห้องโดยสารมีหลังคา เด็กก่อนวัยเรียนขึ้นฟรี" },
-          "tip": { "en": "Buy bird food on board for the gulls; the upper-deck seat costs extra", "th": "ซื้ออาหารนกบนเรือให้นกนางนวล ที่นั่งชั้นบนจ่ายเพิ่ม" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 1.5,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "≈ ¥1,500 adults · ¥750 primary school · preschool free", "th": "≈ ¥1,500 ผู้ใหญ่ · ¥750 เด็กประถม · ก่อนวัยเรียนฟรี" },
-          "book": "none",
-          "q": "Matsushima Kaigan Pier, Matsushima, Miyagi",
-          "ok": "2026-11",
-          "src": "https://www.matsushima.or.jp/en/timesheet/"
-        },
-        {
-          "name": { "en": "Sendai Mediatheque", "th": "เซนได มีเดียเธค" },
-          "local": "せんだいメディアテーク",
-          "kind": "culture",
-          "area": { "en": "Sendai, Miyagi", "th": "เซนได มิยางิ" },
-          "what": { "en": "A glass library and gallery building by Toyo Ito with a children's library and open halls", "th": "อาคารกระจกของโทโย อิโตะ มีห้องสมุด แกลเลอรี และห้องสมุดเด็ก" },
-          "why": { "en": "Free, warm, with a children's section and room to sit; a good rainy-hour stop", "th": "เข้าฟรี อบอุ่น มีมุมหนังสือเด็กและที่นั่ง เหมาะแวะเวลาฝนตก" },
-          "tip": { "en": "Closed most Mondays and at New Year; check the calendar", "th": "ปิดวันจันทร์เป็นส่วนใหญ่และช่วงปีใหม่ เช็กปฏิทินก่อนไป" },
-          "ages": [1, 1, 1, 1],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Free", "th": "ฟรี" },
-          "book": "none",
-          "q": "Sendai Mediatheque, Jozenji-dori, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.gltjp.com/en/directory/item/14024/"
-        },
-        {
-          "name": { "en": "Yagiyama Zoological Park", "th": "สวนสัตว์ยากิยามะ" },
-          "local": "仙台市八木山動物公園 フジサキの杜",
-          "kind": "zoo",
-          "area": { "en": "Sendai, Miyagi", "th": "เซนได มิยางิ" },
-          "what": { "en": "A hillside city zoo with elephants, red pandas, a children's farm corner and a small amusement park", "th": "สวนสัตว์บนเนินเขากลางเมือง มีช้าง แพนด้าแดง มุมฟาร์มเด็ก และสวนสนุกเล็กๆ" },
-          "why": { "en": "Cheap and compact, with animals and rides close together; the slope is steep for prams", "th": "ราคาถูกและไม่ใหญ่มาก มีสัตว์และเครื่องเล่นอยู่ใกล้กัน แต่ทางลาดชันสำหรับรถเข็น" },
-          "tip": { "en": "Closed on Wednesdays; earlier closing in winter", "th": "ปิดวันพุธ หน้าหนาวปิดเร็วขึ้น" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ¥480 adults · ¥120 primary and junior high · preschool free", "th": "≈ ¥480 ผู้ใหญ่ · ¥120 ประถมและมัธยมต้น · ก่อนวัยเรียนฟรี" },
-          "book": "none",
-          "q": "Yagiyama Zoological Park, Sendai, Miyagi",
-          "ok": "2026-11",
-          "src": "https://www.city.sendai.jp/zoo/map/documents/202502_english_map.pdf"
         },
         {
           "name": { "en": "Spa Resort Hawaiians", "th": "สปารีสอร์ตฮาวายเอี้ยนส์" },
@@ -4789,150 +4068,6 @@
           "q": "Kakunodate Samurai District, Senboku, Akita",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/directory/item/11573"
-        },
-        {
-          "name": { "en": "Kidsland US Sendai Nishikigaoka", "th": "คิดส์แลนด์ ยูเอส เซ็นได นิชิกิงาโอกะ" },
-          "local": "キッズランドUS仙台錦ケ丘店",
-          "kind": "play",
-          "area": { "en": "Nishikigaoka Hillside Mall 3F, Aoba-ku, Sendai", "th": "ชั้น 3 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได" },
-          "what": { "en": "A fully indoor kids' park with a super jungle gym, ball pool, trampolines and a pretend-play and picture-book corner", "th": "สวนเด็กในร่มเต็มรูปแบบ มีเครื่องปีนใหญ่ บ่อบอล แทรมโพลีน และมุมเล่นสมมติกับมุมหนังสือภาพ" },
-          "why": { "en": "Rain or shine, children can run around all day; there is a baby corner and a nursing room", "th": "ฝนหรือแดดเด็กวิ่งเล่นได้ทั้งวัน มีมุมทารกและห้องให้นม" },
-          "tip": { "en": "Food from outside may be eaten inside, so lunch can stay on site", "th": "เอาอาหารจากข้างนอกเข้าไปกินข้างในได้ มื้อกลางวันจึงอยู่ที่เดิมได้" },
-          "ages": [1, 2, 2, 0],
-          "hrs": 3,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥700 per child, 1 hour (weekday)", "th": "≈ ¥700 ต่อเด็ก 1 ชั่วโมง (วันธรรมดา)" },
-          "book": "none",
-          "q": "Kidsland US Sendai Nishikigaoka, Aoba-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Sendai Anpanman Children's Museum & Mall", "th": "พิพิธภัณฑ์เด็กอันปังแมนเซ็นได และมอลล์" },
-          "local": "仙台アンパンマンこどもミュージアム＆モール",
-          "kind": "themepark",
-          "area": { "en": "Miyagino-ku, Sendai (9 min walk from JR Sendai Station east exit)", "th": "มิยากิโนะ เซ็นได (เดิน 9 นาทีจากทางออกตะวันออกสถานี JR เซ็นได)" },
-          "what": { "en": "An Anpanman theme park with a museum for playing, a soft-floored baby terrace, and a free shopping mall on the ground floor", "th": "ธีมพาร์คอันปังแมนที่มีพิพิธภัณฑ์ให้เล่น เทอร์เรซทารกพื้นนุ่ม และมอลล์ช้อปปิงฟรีที่ชั้นล่าง" },
-          "why": { "en": "A soft floor where crawling babies can roam, and Anpanman characters who greet children", "th": "พื้นนุ่มให้ทารกคลานเล่น และตัวละครอันปังแมนที่ออกมาทักทายเด็ก" },
-          "tip": { "en": "Character greetings and stage shows run every day", "th": "มีตัวละครทักทายและโชว์บนเวทีทุกวัน" },
-          "ages": [2, 2, 2, 1],
-          "hrs": 3,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,000–2,200 per child, 1 year and up", "th": "≈ ¥2,000–2,200 ต่อเด็ก อายุ 1 ขวบขึ้นไป" },
-          "book": "none",
-          "q": "Sendai Anpanman Children's Museum & Mall, Miyagino-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Yagiyama Benyland", "th": "ยางิยามะ เบนนี่แลนด์" },
-          "local": "八木山ベニーランド",
-          "kind": "themepark",
-          "area": { "en": "Yagiyama, Taihaku-ku, Sendai", "th": "ยางิยามะ ไทฮาคุ เซ็นได" },
-          "what": { "en": "A long-running amusement park opened in 1968 with about 30 rides, a Ferris wheel with views over the city and the Pacific", "th": "สวนสนุกเก่าแก่เปิดตั้งแต่ปี 1968 มีเครื่องเล่นราว 30 ชนิด และชิงช้าสวรรค์มองเห็นเมืองและมหาสมุทรแปซิฟิก" },
-          "why": { "en": "Over 20 rides are open from age 3 with a parent, so small children can ride too", "th": "เครื่องเล่นกว่า 20 ชนิดเริ่มได้ตั้งแต่ 3 ขวบพร้อมผู้ปกครอง เด็กเล็กจึงเล่นได้ด้วย" },
-          "tip": { "en": "Character shows are sometimes held on holidays", "th": "บางครั้งมีโชว์ตัวละครในวันหยุด" },
-          "ages": [0, 2, 2, 2],
-          "hrs": 4,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ¥1,200 adult · ¥600 child (entry)", "th": "≈ ¥1,200 ผู้ใหญ่ · ¥600 เด็ก (ค่าเข้า)" },
-          "book": "none",
-          "q": "Yagiyama Benyland, Taihaku-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "HOKUSHU Sendai City Science Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์เมืองเซ็นได HOKUSHU" },
-          "local": "仙台市科学館",
-          "kind": "museumkid",
-          "area": { "en": "Dainohara Forest Park, Aoba-ku, Sendai", "th": "สวนป่าไดโนฮาระ อาโอบะ เซ็นได" },
-          "what": { "en": "A hands-on science museum in three zones: an elephant skeleton and river diorama, physics experiments, and a giant soap-bubble booth", "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือเล่น 3 โซน ได้แก่โครงกระดูกช้างกับฉากจำลองแม่น้ำ ทดลองฟิสิกส์ และบูทฟองสบู่ยักษ์" },
-          "why": { "en": "Play-style exhibits, a maze and a giant bubble you can walk into, for toddlers up to primary-school age", "th": "นิทรรศการแบบเล่นได้ มีเขาวงกตและฟองสบู่ยักษ์ให้เดินเข้าไป ตั้งแต่เด็กเล็กถึงวัยประถม" },
-          "tip": { "en": "Daily Challenge Lab: a craft or experiment that kids join in on the spot", "th": "ห้องแล็บชาเลนจ์ประจำวัน เด็กร่วมทำงานประดิษฐ์หรือการทดลองได้ทันที" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 3,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥550 adult · ¥210 child (entry)", "th": "≈ ¥550 ผู้ใหญ่ · ¥210 เด็ก (ค่าเข้า)" },
-          "book": "none",
-          "q": "HOKUSHU Sendai City Science Museum, Aoba-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Kansei-no-Mori", "th": "คันเซโนะโมริ" },
-          "local": "感性の森",
-          "kind": "play",
-          "area": { "en": "Nishikigaoka Hillside Mall 2F, Aoba-ku, Sendai", "th": "ชั้น 2 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได" },
-          "what": { "en": "A wooden indoor play space: floor, walls and equipment are all wood, with a big wooden slide, bouldering and a wooden ball pool", "th": "พื้นที่เล่นในร่มทำจากไม้ ทั้งพื้น ผนัง และอุปกรณ์ มีสไลเดอร์ไม้ใหญ่ ผนังปีน และบ่อบอลไม้" },
-          "why": { "en": "No electric toys or digital games; natural materials for free play, and a separate baby zone for ages 0–2", "th": "ไม่มีของเล่นไฟฟ้าหรือเกมดิจิทัล ใช้วัสดุธรรมชาติให้เล่นอิสระ และมีโซนทารกแยกสำหรับ 0–2 ขวบ" },
-          "tip": { "en": "A dedicated baby zone for 0–2 year olds, and picture-book corners", "th": "มีโซนทารกเฉพาะสำหรับ 0–2 ขวบ และมุมหนังสือภาพ" },
-          "ages": [2, 2, 1, 0],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥400 per 30 min, 1 year and up · under 10 months free", "th": "≈ ¥400 ต่อ 30 นาที อายุ 1 ขวบขึ้นไป · ต่ำกว่า 10 เดือนฟรี" },
-          "book": "none",
-          "q": "Kanseinomori, Nishikigaoka Hillside Mall 2F, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "JOYPOLIS SPORTS AEON Sendai Nakayama", "th": "จอยโพลิส สปอร์ตส์ อิออนเซ็นได นากายามะ" },
-          "local": "JOYPOLIS SPORTS イオン仙台中山店",
-          "kind": "play",
-          "area": { "en": "AEON Sendai Nakayama annex 1F, Izumi-ku, Sendai", "th": "ชั้น 1 อาคารเสริมอิออนเซ็นได นากายามะ อิซุมิ เซ็นได" },
-          "what": { "en": "An indoor sports and games hall with trampolines, bubble football and over 30 activities, plus a kids' zone with an air play area", "th": "ห้องกีฬาและเกมในร่ม มีแทรมโพลีน บับเบิลฟุตบอล และกิจกรรมกว่า 30 อย่าง พร้อมโซนเด็กที่มีพื้นที่เล่นลม" },
-          "why": { "en": "Under school age is free, and a play kitchen and big blocks suit small children", "th": "เด็กก่อนวัยเรียนเข้าฟรี และมีครัวของเล่นกับบล็อกใหญ่เหมาะกับเด็กเล็ก" },
-          "tip": { "en": "Inside AEON, so shopping and a meal fit in on the same day", "th": "อยู่ในอิออน จึงช้อปปิงและกินข้าวได้ในวันเดียวกัน" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥2,200 adult · ¥1,100 primary school · under school age free", "th": "≈ ¥2,200 ผู้ใหญ่ · ¥1,100 ประถม · ก่อนวัยเรียนฟรี" },
-          "book": "none",
-          "q": "JOYPOLIS SPORTS AEON Sendai Nakayama, Izumi-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Sendai Astronomical Observatory", "th": "หอดูดาวเซ็นได" },
-          "local": "仙台市天文台",
-          "kind": "museum",
-          "area": { "en": "Nishikigaoka, Aoba-ku, Sendai", "th": "นิชิกิงาโอกะ อาโอบะ เซ็นได" },
-          "what": { "en": "An astronomy museum with a planetarium, exhibits on the solar system and constellations, and a large telescope", "th": "พิพิธภัณฑ์ดาราศาสตร์ มีท้องฟ้าจำลอง นิทรรศการระบบสุริยะและกลุ่มดาว และกล้องโทรทรรศน์ขนาดใหญ่" },
-          "why": { "en": "Children's planetarium programmes, with quizzes and a live guide; a first look at the stars for small children", "th": "มีรอบท้องฟ้าจำลองสำหรับเด็ก พร้อมควิซและไกด์สด เป็นการดูดาวครั้งแรกของเด็กเล็ก" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ ¥250 child · ¥610 adult (exhibits or planetarium)", "th": "≈ ¥250 เด็ก · ¥610 ผู้ใหญ่ (นิทรรศการหรือท้องฟ้าจำลอง)" },
-          "book": "none",
-          "q": "Sendai Astronomical Observatory, Aoba-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
-        },
-        {
-          "name": { "en": "Skids Garden Yodobashi Sendai", "th": "สกิดส์ การ์เดน โยโดบาชิ เซ็นได" },
-          "local": "スキッズガーデン ヨドバシ仙台店",
-          "kind": "play",
-          "area": { "en": "Yodobashi Sendai Building 1, 5F, next to Sendai Station east exit", "th": "ชั้น 5 อาคารโยโดบาชิ เซ็นได 1 ติดทางออกตะวันออกสถานีเซ็นได" },
-          "what": { "en": "An indoor playground for ages 0 to second grade, with a ball pool, slides and a pretend-play corner", "th": "สนามเด็กเล่นในร่มสำหรับ 0 ขวบถึงชั้นประถม 2 มีบ่อบอล สไลเดอร์ และมุมเล่นสมมติ" },
-          "why": { "en": "Play leaders are on hand; children aged 3 and up can go in on their own while parents shop", "th": "มีพี่เลี้ยงเล่นประจำ เด็ก 3 ขวบขึ้นไปเข้าเล่นเองได้ระหว่างที่พ่อแม่ช้อปปิง" },
-          "tip": { "en": "Children aged 3 and up may enter alone", "th": "เด็ก 3 ขวบขึ้นไปเข้าเองได้" },
-          "ages": [2, 2, 1, 0],
-          "hrs": 2,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Skids Garden Yodobashi Sendai, Miyagino-ku, Sendai",
-          "ok": "2026-11",
-          "src": "https://www.nap-camp.com/mag/79125"
         },
         {
           "name": { "en": "Aomori Prefectural Asamushi Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำอาซามูชิ จังหวัดอาโอโมริ" },
@@ -5809,6 +4944,2007 @@
             "en": "Grass and playground equipment by the sea"
           },
           "q": "鎌倉海浜公園, 由比ガ浜4-5-1, 鎌倉市",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "jp-kagoshima",
+      "thin": true,
+      "sights": [
+        {
+          "local": "平川動物公園",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 1,000 เยน (ชาวเมือง 750 เยน)",
+            "en": "Adults ¥1,000 (¥750 for city residents)"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "สวนสัตว์ฮิราคาวะ",
+            "en": "Hirakawa Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ฮิราคาวะโจ คาโกชิมะ",
+            "en": "Hirakawa-cho, Kagoshima"
+          },
+          "what": {
+            "th": "สวนสัตว์ราว 900 ตัว มองเห็นซากุระจิมะและอ่าว",
+            "en": "A zoo of about 900 animals with a view of Sakurajima and the bay"
+          },
+          "why": {
+            "th": "มีโคอาลา และสวนสนุกเล็กๆ ข้างสวนสัตว์",
+            "en": "Koalas, and a small amusement park beside the zoo"
+          },
+          "tip": {
+            "th": "เปิด 9:00–17:00 เข้าได้ถึง 16:30",
+            "en": "Open 9:00–17:00, last entry 16:30"
+          },
+          "q": "Hirakawa Zoo, 5669-1 Hirakawacho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "いおワールドかごしま水族館",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 2,000 เยน เด็กนักเรียน 1,000 เยน",
+            "en": "Adults ¥2,000, school children ¥1,000"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำอิโอเวิลด์คาโกชิมะ",
+            "en": "Io World Kagoshima Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ฮงโกชินมาจิ ใกล้ท่าเรือเฟอร์รี",
+            "en": "Honko-shinmachi, by the ferry port"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำของอ่าวคาโกชิมะและกระแสน้ำคุโรชิโอะ ราว 800 ชนิด",
+            "en": "An aquarium of Kagoshima Bay and the Kuroshio current, about 800 kinds"
+          },
+          "why": {
+            "th": "มีคลองโลมาให้ดูโลมาใกล้ๆ และการให้อาหารฉลาม",
+            "en": "A dolphin channel to watch dolphins up close, and shark feeding"
+          },
+          "tip": {
+            "th": "เปิด 9:30–18:00 เข้าได้ถึง 17:00",
+            "en": "Open 9:30–18:00, last entry 17:00"
+          },
+          "q": "Kagoshima City Aquarium, 3-1 Honkoshinmachi, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "桜島自然恐竜公園",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "สวนไดโนเสาร์ซากุระจิมะ",
+            "en": "Sakurajima Dinosaur Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โยโกยามะโจ ซากุระจิมะ",
+            "en": "Yokoyama-cho, Sakurajima"
+          },
+          "what": {
+            "th": "สวนฟรีบนซากุระจิมะ มีไดโนเสาร์ขนาดเท่าจริงและเครื่องเล่น",
+            "en": "A free park on Sakurajima with life-size dinosaurs and play equipment"
+          },
+          "why": {
+            "th": "มีสไลเดอร์สูงกว่า 10 เมตรและเครื่องปีนป่าย",
+            "en": "A slide over 10 m high and climbing frames"
+          },
+          "tip": {
+            "th": "เดินราว 15 นาทีจากท่าเรือเฟอร์รีซากุระจิมะ",
+            "en": "About 15 minutes’ walk from the Sakurajima ferry"
+          },
+          "q": "Sakurajima Natural Dinosaur Park, Sakurajimayokoyamacho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "県立吉野公園",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "สวนโยชิโนะ",
+            "en": "Yoshino Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โยชิโนโจ คาโกชิมะ",
+            "en": "Yoshino-cho, Kagoshima"
+          },
+          "what": {
+            "th": "สวน 30 เฮกตาร์บนที่ราบสูง มีสนามหญ้า ลานน้ำพุ และต้นไม้มากมาย",
+            "en": "A 30-hectare park on a plateau with lawns, a fountain square and many trees"
+          },
+          "why": {
+            "th": "มีที่ปิกนิกและวิ่งเล่น",
+            "en": "Room to picnic and run about"
+          },
+          "q": "Kagoshima Prefectural Yoshino Park, Yoshinocho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鹿児島市立科学館",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "หอวิทยาศาสตร์เมืองคาโกชิมะ",
+            "en": "Kagoshima City Science Hall"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "คาโมอิเกะ คาโกชิมะ",
+            "en": "Kamoike, Kagoshima"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีนิทรรศการลงมือทำ โชว์การทดลอง และท้องฟ้าจำลอง",
+            "en": "A science museum with hands-on exhibits, experiment shows and a planetarium"
+          },
+          "why": {
+            "th": "มีการทดลองที่เด็กได้ลองทำเอง",
+            "en": "Experiments children try with their own hands"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "Kagoshima Municipal Science Hall, 2-31-18 Kamoike, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上野原縄文の森",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "ป่าโจมงอุเอโนฮาระ",
+            "en": "Uenohara Jomon Forest"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โคคุบุอุเอโนฮาระ คิริชิมะ (ราว 45 นาที)",
+            "en": "Kokubu-Uenohara, Kirishima (about 45 minutes)"
+          },
+          "what": {
+            "th": "แหล่งหมู่บ้านยุคหินที่มีบ้านหลุมและหอนิทรรศการ",
+            "en": "A Stone Age village site with pit houses and an exhibition hall"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลองจุดไฟและปั้นดินเผา",
+            "en": "Children try making fire and pottery"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Uenohara Jomon Forest, Kokubuuenohara, Kirishima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "霧島アートの森",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 320 เยน เด็กนักเรียน 160 เยน เด็กก่อนวัยเรียนฟรี",
+            "en": "Adults ¥320, school children ¥160, preschoolers free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6273/",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปะกลางแจ้งคิริชิมะ",
+            "en": "Kirishima Open-Air Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "โคบะ ยูซุย (เทือกเขาคิริชิมะ)",
+            "en": "Koba, Yusui (Kirishima mountains)"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะบนภูเขาสูง 700 เมตร มีประติมากรรมกลางแจ้ง",
+            "en": "An art museum 700 m up in the mountains with sculptures outdoors"
+          },
+          "why": {
+            "th": "หลายชิ้นจับหรือนั่งได้",
+            "en": "Many works can be touched or sat on"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Kirishima Open Air Museum, 6340-220 Koba, Yusui",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "วันธรรมดา 30 นาที อายุ 2–3 ขวบ 500 เยน 4–12 ปี 700 เยน",
+            "en": "Weekday 30 minutes: ages 2–3 ¥500, 4–12 ¥700"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "ลิตเติลแพลนเน็ต อิออนมอลล์คาโกชิมะ",
+            "en": "Little Planet, AEON Mall Kagoshima"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนมอลล์ โทไกโจ",
+            "en": "AEON Mall, Tokai-cho"
+          },
+          "what": {
+            "th": "สวนเล่นดิจิทัล เล่นทรายฉายภาพ บ่อบอลดิจิทัล และภาพวาดที่ขยับได้",
+            "en": "A digital play park: projected sand play, a digital ball pool, drawings that move"
+          },
+          "why": {
+            "th": "ภาพที่เด็กวาดเองขยับบนจอ",
+            "en": "Children’s own drawings come alive on the screen"
+          },
+          "q": "リトルプラネット イオンモール鹿児島",
+          "ok": "2026-11"
+        },
+        {
+          "local": "知育玩具広場そだて",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "1 ชั่วโมง 800 เยน",
+            "en": "1 hour ¥800"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "ห้องของเล่นโซดาเตะ",
+            "en": "Sodate toy room"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไดริวโจ คาโกชิมะ",
+            "en": "Dairyu-cho, Kagoshima"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่ม มีของเล่นเสริมพัฒนาการ รถไฟ และของเล่นบทบาทสมมุติ",
+            "en": "An indoor room of educational toys, trains and pretend play"
+          },
+          "why": {
+            "th": "มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "A nursing room and nappy-changing table for little ones"
+          },
+          "q": "知育玩具広場そだて, Dairyucho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "そだて宇宿店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "60 นาที 800 เยน เด็กอ่อน 30 นาที 300 เยน",
+            "en": "60 minutes ¥800; babies 30 minutes ¥300"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "ห้องของเล่นโซดาเตะ (อุซุกิ)",
+            "en": "Sodate toy room (Usuki)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุซุกิ คาโกชิมะ",
+            "en": "Usuki, Kagoshima"
+          },
+          "what": {
+            "th": "ห้องของเล่นที่มีของเล่นกว่า 100 ชนิด",
+            "en": "A toy room with over 100 kinds of toys"
+          },
+          "why": {
+            "th": "มีของเล่นเด็กอ่อน ห้องให้นม และที่เปลี่ยนผ้าอ้อม",
+            "en": "Baby toys too, a nursing room and nappy-changing table"
+          },
+          "q": "知育玩具広場そだて宇宿店, 1-10-2 Usuki, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "かごしま環境未来館",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "พิพิธภัณฑ์สิ่งแวดล้อมคาโกชิมะ",
+            "en": "Kagoshima Museum of the Environment"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โจเซ คาโกชิมะ",
+            "en": "Josei, Kagoshima"
+          },
+          "what": {
+            "th": "ศูนย์ฟรีเรื่องธรรมชาติและภูมิอากาศ มีนิทรรศการลงมือทำ",
+            "en": "A free centre on nature and the climate, with hands-on displays"
+          },
+          "why": {
+            "th": "มีเกมตอบคำถามและมุมเด็กที่ของเล่นทำจากวัสดุธรรมชาติ",
+            "en": "Quiz games and a kids’ corner of toys made from natural things"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Kagoshima Museum of the Environment, 2-1-5 Josei, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "かごしまメルヘン館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ผู้ใหญ่ 600 เยน เด็กนักเรียน 300 เยน เด็กก่อนวัยเรียนฟรี",
+            "en": "Adults ¥600, school children ¥300, preschoolers free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "บ้านนิทานคาโกชิมะ",
+            "en": "Kagoshima Märchen-kan"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ชิโรยามะโจ (อาคารเดียวกับพิพิธภัณฑ์วรรณกรรม)",
+            "en": "Shiroyama-cho (with the Modern Literature Museum)"
+          },
+          "what": {
+            "th": "บ้านนิทานและหนังสือภาพ มีเครื่องปีนป่ายรูปปราสาท",
+            "en": "A fairy-tale and picture-book house with a castle climbing frame"
+          },
+          "why": {
+            "th": "มีการอ่านนิทาน เล่นนิ้ว และนิทรรศการที่เด็กเดินเข้าไปได้",
+            "en": "Story readings, finger plays and displays children walk into"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "かごしま近代文学館・メルヘン館, 5-1 Shiroyamacho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "かごしま文化工芸村",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "ผู้ใหญ่ 400 เยน เด็ก 200 เยน",
+            "en": "Adults ¥400, children ¥200"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5455/",
+          "name": {
+            "th": "หมู่บ้านหัตถกรรมคาโกชิมะ",
+            "en": "Kagoshima Craft Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "นิชิเบปปุโจ คาโกชิมะ",
+            "en": "Nishibeppu-cho, Kagoshima"
+          },
+          "what": {
+            "th": "เวิร์กช็อปในร่ม ทั้งเครื่องปั้นดินเผา งานไม้ และการย้อมผ้า",
+            "en": "Indoor workshops in pottery, woodwork and dyeing"
+          },
+          "why": {
+            "th": "ปั้นดินบนแป้นหมุนไฟฟ้า ตั้งแต่วัยประถม",
+            "en": "Pottery on an electric wheel, from primary-school age"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "Kagoshima Cultural and Craft Village, 2758 Nishibeppucho, Kagoshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "姶良市子ども館「ちるどん」",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.nap-camp.com/mag/83112",
+          "name": {
+            "th": "หอเด็กอาอิระ ชิรุดง",
+            "en": "Aira Children’s Hall Childon"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คาจิกิ อาอิระ (ราว 30 นาที)",
+            "en": "Kajiki, Aira (about 30 minutes)"
+          },
+          "what": {
+            "th": "ศูนย์เด็กที่มีห้องเล่นไม้ สำหรับเด็กถึง 9 ขวบที่มากับผู้ปกครอง",
+            "en": "A children’s centre with a wooden play hall, for children up to 9 with a parent"
+          },
+          "why": {
+            "th": "ห้องไม้บรรยากาศอบอุ่น สงบสำหรับครอบครัว",
+            "en": "Warm wooden rooms, calm for families"
+          },
+          "tip": {
+            "th": "ต้องจองล่วงหน้า",
+            "en": "Booking needed"
+          },
+          "q": "姶良市子ども館「ちるどん」, 400 Kajikicho Motomachi, Aira",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "jp-sendai",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Sendai Umino-Mori Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำเซนไดอุมิโนะโมริ"
+          },
+          "local": "仙台うみの杜水族館",
+          "kind": "aquarium",
+          "area": {
+            "en": "Sendai, Miyagi",
+            "th": "เซนได มิยางิ"
+          },
+          "what": {
+            "en": "A big aquarium on the Sendai coast with a Pacific tank, dolphin and sea lion shows and a jellyfish hall",
+            "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ริมทะเลเซนได มีตู้มหาสมุทรแปซิฟิก โชว์โลมาและสิงโตทะเล และห้องแมงกะพรุน"
+          },
+          "why": {
+            "en": "Shows and tanks are under one roof, so it works in any weather and children can wander at their own pace",
+            "th": "โชว์และตู้ปลาอยู่ในอาคารเดียวกัน เที่ยวได้ทุกสภาพอากาศ เด็กเดินดูตามใจได้"
+          },
+          "tip": {
+            "en": "Hours change by season (winter is shorter), so check the site before you go",
+            "th": "เวลาเปิดเปลี่ยนตามฤดู ช่วงหนาวสั้นกว่า เช็กเว็บก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥2,400 adults · lower for children · under 4 free (check)",
+            "th": "≈ ¥2,400 ผู้ใหญ่ · เด็กถูกกว่า · ต่ำกว่า 4 ขวบฟรี (เช็กอีกครั้ง)"
+          },
+          "book": "none",
+          "q": "Sendai Umino-Mori Aquarium, Sendai, Miyagi",
+          "ok": "2026-11",
+          "src": "https://www.uminomori.jp/umino/en/"
+        },
+        {
+          "name": {
+            "en": "Matsushima Bay pleasure cruise",
+            "th": "ล่องเรือชมอ่าวมัตสึชิมะ"
+          },
+          "local": "松島島巡り観光船",
+          "kind": "views",
+          "area": {
+            "en": "Matsushima, Miyagi",
+            "th": "มัตสึชิมะ มิยางิ"
+          },
+          "what": {
+            "en": "A 50-minute boat ride among the pine-covered islets of one of Japan's three famous views, with gulls following the boat",
+            "th": "ล่องเรือราว 50 นาทีผ่านเกาะสนเล็กๆ ของหนึ่งในสามทิวทัศน์งามของญี่ปุ่น มีนกนางนวลบินตามเรือ"
+          },
+          "why": {
+            "en": "Short and calm, with a covered cabin; under-school-age children ride free",
+            "th": "ล่องสั้น คลื่นสงบ มีห้องโดยสารมีหลังคา เด็กก่อนวัยเรียนขึ้นฟรี"
+          },
+          "tip": {
+            "en": "Buy bird food on board for the gulls; the upper-deck seat costs extra",
+            "th": "ซื้ออาหารนกบนเรือให้นกนางนวล ที่นั่งชั้นบนจ่ายเพิ่ม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,500 adults · ¥750 primary school · preschool free",
+            "th": "≈ ¥1,500 ผู้ใหญ่ · ¥750 เด็กประถม · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "Matsushima Kaigan Pier, Matsushima, Miyagi",
+          "ok": "2026-11",
+          "src": "https://www.matsushima.or.jp/en/timesheet/"
+        },
+        {
+          "name": {
+            "en": "Sendai Mediatheque",
+            "th": "เซนได มีเดียเธค"
+          },
+          "local": "せんだいメディアテーク",
+          "kind": "culture",
+          "area": {
+            "en": "Sendai, Miyagi",
+            "th": "เซนได มิยางิ"
+          },
+          "what": {
+            "en": "A glass library and gallery building by Toyo Ito with a children's library and open halls",
+            "th": "อาคารกระจกของโทโย อิโตะ มีห้องสมุด แกลเลอรี และห้องสมุดเด็ก"
+          },
+          "why": {
+            "en": "Free, warm, with a children's section and room to sit; a good rainy-hour stop",
+            "th": "เข้าฟรี อบอุ่น มีมุมหนังสือเด็กและที่นั่ง เหมาะแวะเวลาฝนตก"
+          },
+          "tip": {
+            "en": "Closed most Mondays and at New Year; check the calendar",
+            "th": "ปิดวันจันทร์เป็นส่วนใหญ่และช่วงปีใหม่ เช็กปฏิทินก่อนไป"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sendai Mediatheque, Jozenji-dori, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/14024/"
+        },
+        {
+          "name": {
+            "en": "Yagiyama Zoological Park",
+            "th": "สวนสัตว์ยากิยามะ"
+          },
+          "local": "仙台市八木山動物公園 フジサキの杜",
+          "kind": "zoo",
+          "area": {
+            "en": "Sendai, Miyagi",
+            "th": "เซนได มิยางิ"
+          },
+          "what": {
+            "en": "A hillside city zoo with elephants, red pandas, a children's farm corner and a small amusement park",
+            "th": "สวนสัตว์บนเนินเขากลางเมือง มีช้าง แพนด้าแดง มุมฟาร์มเด็ก และสวนสนุกเล็กๆ"
+          },
+          "why": {
+            "en": "Cheap and compact, with animals and rides close together; the slope is steep for prams",
+            "th": "ราคาถูกและไม่ใหญ่มาก มีสัตว์และเครื่องเล่นอยู่ใกล้กัน แต่ทางลาดชันสำหรับรถเข็น"
+          },
+          "tip": {
+            "en": "Closed on Wednesdays; earlier closing in winter",
+            "th": "ปิดวันพุธ หน้าหนาวปิดเร็วขึ้น"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥480 adults · ¥120 primary and junior high · preschool free",
+            "th": "≈ ¥480 ผู้ใหญ่ · ¥120 ประถมและมัธยมต้น · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "Yagiyama Zoological Park, Sendai, Miyagi",
+          "ok": "2026-11",
+          "src": "https://www.city.sendai.jp/zoo/map/documents/202502_english_map.pdf"
+        },
+        {
+          "name": {
+            "en": "Kidsland US Sendai Nishikigaoka",
+            "th": "คิดส์แลนด์ ยูเอส เซ็นได นิชิกิงาโอกะ"
+          },
+          "local": "キッズランドUS仙台錦ケ丘店",
+          "kind": "play",
+          "area": {
+            "en": "Nishikigaoka Hillside Mall 3F, Aoba-ku, Sendai",
+            "th": "ชั้น 3 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "A fully indoor kids' park with a super jungle gym, ball pool, trampolines and a pretend-play and picture-book corner",
+            "th": "สวนเด็กในร่มเต็มรูปแบบ มีเครื่องปีนใหญ่ บ่อบอล แทรมโพลีน และมุมเล่นสมมติกับมุมหนังสือภาพ"
+          },
+          "why": {
+            "en": "Rain or shine, children can run around all day; there is a baby corner and a nursing room",
+            "th": "ฝนหรือแดดเด็กวิ่งเล่นได้ทั้งวัน มีมุมทารกและห้องให้นม"
+          },
+          "tip": {
+            "en": "Food from outside may be eaten inside, so lunch can stay on site",
+            "th": "เอาอาหารจากข้างนอกเข้าไปกินข้างในได้ มื้อกลางวันจึงอยู่ที่เดิมได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700 per child, 1 hour (weekday)",
+            "th": "≈ ¥700 ต่อเด็ก 1 ชั่วโมง (วันธรรมดา)"
+          },
+          "book": "none",
+          "q": "Kidsland US Sendai Nishikigaoka, Aoba-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Sendai Anpanman Children's Museum & Mall",
+            "th": "พิพิธภัณฑ์เด็กอันปังแมนเซ็นได และมอลล์"
+          },
+          "local": "仙台アンパンマンこどもミュージアム＆モール",
+          "kind": "themepark",
+          "area": {
+            "en": "Miyagino-ku, Sendai (9 min walk from JR Sendai Station east exit)",
+            "th": "มิยากิโนะ เซ็นได (เดิน 9 นาทีจากทางออกตะวันออกสถานี JR เซ็นได)"
+          },
+          "what": {
+            "en": "An Anpanman theme park with a museum for playing, a soft-floored baby terrace, and a free shopping mall on the ground floor",
+            "th": "ธีมพาร์คอันปังแมนที่มีพิพิธภัณฑ์ให้เล่น เทอร์เรซทารกพื้นนุ่ม และมอลล์ช้อปปิงฟรีที่ชั้นล่าง"
+          },
+          "why": {
+            "en": "A soft floor where crawling babies can roam, and Anpanman characters who greet children",
+            "th": "พื้นนุ่มให้ทารกคลานเล่น และตัวละครอันปังแมนที่ออกมาทักทายเด็ก"
+          },
+          "tip": {
+            "en": "Character greetings and stage shows run every day",
+            "th": "มีตัวละครทักทายและโชว์บนเวทีทุกวัน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,000–2,200 per child, 1 year and up",
+            "th": "≈ ¥2,000–2,200 ต่อเด็ก อายุ 1 ขวบขึ้นไป"
+          },
+          "book": "none",
+          "q": "Sendai Anpanman Children's Museum & Mall, Miyagino-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Yagiyama Benyland",
+            "th": "ยางิยามะ เบนนี่แลนด์"
+          },
+          "local": "八木山ベニーランド",
+          "kind": "themepark",
+          "area": {
+            "en": "Yagiyama, Taihaku-ku, Sendai",
+            "th": "ยางิยามะ ไทฮาคุ เซ็นได"
+          },
+          "what": {
+            "en": "A long-running amusement park opened in 1968 with about 30 rides, a Ferris wheel with views over the city and the Pacific",
+            "th": "สวนสนุกเก่าแก่เปิดตั้งแต่ปี 1968 มีเครื่องเล่นราว 30 ชนิด และชิงช้าสวรรค์มองเห็นเมืองและมหาสมุทรแปซิฟิก"
+          },
+          "why": {
+            "en": "Over 20 rides are open from age 3 with a parent, so small children can ride too",
+            "th": "เครื่องเล่นกว่า 20 ชนิดเริ่มได้ตั้งแต่ 3 ขวบพร้อมผู้ปกครอง เด็กเล็กจึงเล่นได้ด้วย"
+          },
+          "tip": {
+            "en": "Character shows are sometimes held on holidays",
+            "th": "บางครั้งมีโชว์ตัวละครในวันหยุด"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,200 adult · ¥600 child (entry)",
+            "th": "≈ ¥1,200 ผู้ใหญ่ · ¥600 เด็ก (ค่าเข้า)"
+          },
+          "book": "none",
+          "q": "Yagiyama Benyland, Taihaku-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "HOKUSHU Sendai City Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เมืองเซ็นได HOKUSHU"
+          },
+          "local": "仙台市科学館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Dainohara Forest Park, Aoba-ku, Sendai",
+            "th": "สวนป่าไดโนฮาระ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "A hands-on science museum in three zones: an elephant skeleton and river diorama, physics experiments, and a giant soap-bubble booth",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือเล่น 3 โซน ได้แก่โครงกระดูกช้างกับฉากจำลองแม่น้ำ ทดลองฟิสิกส์ และบูทฟองสบู่ยักษ์"
+          },
+          "why": {
+            "en": "Play-style exhibits, a maze and a giant bubble you can walk into, for toddlers up to primary-school age",
+            "th": "นิทรรศการแบบเล่นได้ มีเขาวงกตและฟองสบู่ยักษ์ให้เดินเข้าไป ตั้งแต่เด็กเล็กถึงวัยประถม"
+          },
+          "tip": {
+            "en": "Daily Challenge Lab: a craft or experiment that kids join in on the spot",
+            "th": "ห้องแล็บชาเลนจ์ประจำวัน เด็กร่วมทำงานประดิษฐ์หรือการทดลองได้ทันที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥550 adult · ¥210 child (entry)",
+            "th": "≈ ¥550 ผู้ใหญ่ · ¥210 เด็ก (ค่าเข้า)"
+          },
+          "book": "none",
+          "q": "HOKUSHU Sendai City Science Museum, Aoba-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Kansei-no-Mori",
+            "th": "คันเซโนะโมริ"
+          },
+          "local": "感性の森",
+          "kind": "play",
+          "area": {
+            "en": "Nishikigaoka Hillside Mall 2F, Aoba-ku, Sendai",
+            "th": "ชั้น 2 นิชิกิงาโอกะ ฮิลล์ไซด์ มอลล์ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "A wooden indoor play space: floor, walls and equipment are all wood, with a big wooden slide, bouldering and a wooden ball pool",
+            "th": "พื้นที่เล่นในร่มทำจากไม้ ทั้งพื้น ผนัง และอุปกรณ์ มีสไลเดอร์ไม้ใหญ่ ผนังปีน และบ่อบอลไม้"
+          },
+          "why": {
+            "en": "No electric toys or digital games; natural materials for free play, and a separate baby zone for ages 0–2",
+            "th": "ไม่มีของเล่นไฟฟ้าหรือเกมดิจิทัล ใช้วัสดุธรรมชาติให้เล่นอิสระ และมีโซนทารกแยกสำหรับ 0–2 ขวบ"
+          },
+          "tip": {
+            "en": "A dedicated baby zone for 0–2 year olds, and picture-book corners",
+            "th": "มีโซนทารกเฉพาะสำหรับ 0–2 ขวบ และมุมหนังสือภาพ"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥400 per 30 min, 1 year and up · under 10 months free",
+            "th": "≈ ¥400 ต่อ 30 นาที อายุ 1 ขวบขึ้นไป · ต่ำกว่า 10 เดือนฟรี"
+          },
+          "book": "none",
+          "q": "Kanseinomori, Nishikigaoka Hillside Mall 2F, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "JOYPOLIS SPORTS AEON Sendai Nakayama",
+            "th": "จอยโพลิส สปอร์ตส์ อิออนเซ็นได นากายามะ"
+          },
+          "local": "JOYPOLIS SPORTS イオン仙台中山店",
+          "kind": "play",
+          "area": {
+            "en": "AEON Sendai Nakayama annex 1F, Izumi-ku, Sendai",
+            "th": "ชั้น 1 อาคารเสริมอิออนเซ็นได นากายามะ อิซุมิ เซ็นได"
+          },
+          "what": {
+            "en": "An indoor sports and games hall with trampolines, bubble football and over 30 activities, plus a kids' zone with an air play area",
+            "th": "ห้องกีฬาและเกมในร่ม มีแทรมโพลีน บับเบิลฟุตบอล และกิจกรรมกว่า 30 อย่าง พร้อมโซนเด็กที่มีพื้นที่เล่นลม"
+          },
+          "why": {
+            "en": "Under school age is free, and a play kitchen and big blocks suit small children",
+            "th": "เด็กก่อนวัยเรียนเข้าฟรี และมีครัวของเล่นกับบล็อกใหญ่เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Inside AEON, so shopping and a meal fit in on the same day",
+            "th": "อยู่ในอิออน จึงช้อปปิงและกินข้าวได้ในวันเดียวกัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,200 adult · ¥1,100 primary school · under school age free",
+            "th": "≈ ¥2,200 ผู้ใหญ่ · ¥1,100 ประถม · ก่อนวัยเรียนฟรี"
+          },
+          "book": "none",
+          "q": "JOYPOLIS SPORTS AEON Sendai Nakayama, Izumi-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Sendai Astronomical Observatory",
+            "th": "หอดูดาวเซ็นได"
+          },
+          "local": "仙台市天文台",
+          "kind": "museum",
+          "area": {
+            "en": "Nishikigaoka, Aoba-ku, Sendai",
+            "th": "นิชิกิงาโอกะ อาโอบะ เซ็นได"
+          },
+          "what": {
+            "en": "An astronomy museum with a planetarium, exhibits on the solar system and constellations, and a large telescope",
+            "th": "พิพิธภัณฑ์ดาราศาสตร์ มีท้องฟ้าจำลอง นิทรรศการระบบสุริยะและกลุ่มดาว และกล้องโทรทรรศน์ขนาดใหญ่"
+          },
+          "why": {
+            "en": "Children's planetarium programmes, with quizzes and a live guide; a first look at the stars for small children",
+            "th": "มีรอบท้องฟ้าจำลองสำหรับเด็ก พร้อมควิซและไกด์สด เป็นการดูดาวครั้งแรกของเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥250 child · ¥610 adult (exhibits or planetarium)",
+            "th": "≈ ¥250 เด็ก · ¥610 ผู้ใหญ่ (นิทรรศการหรือท้องฟ้าจำลอง)"
+          },
+          "book": "none",
+          "q": "Sendai Astronomical Observatory, Aoba-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        },
+        {
+          "name": {
+            "en": "Skids Garden Yodobashi Sendai",
+            "th": "สกิดส์ การ์เดน โยโดบาชิ เซ็นได"
+          },
+          "local": "スキッズガーデン ヨドバシ仙台店",
+          "kind": "play",
+          "area": {
+            "en": "Yodobashi Sendai Building 1, 5F, next to Sendai Station east exit",
+            "th": "ชั้น 5 อาคารโยโดบาชิ เซ็นได 1 ติดทางออกตะวันออกสถานีเซ็นได"
+          },
+          "what": {
+            "en": "An indoor playground for ages 0 to second grade, with a ball pool, slides and a pretend-play corner",
+            "th": "สนามเด็กเล่นในร่มสำหรับ 0 ขวบถึงชั้นประถม 2 มีบ่อบอล สไลเดอร์ และมุมเล่นสมมติ"
+          },
+          "why": {
+            "en": "Play leaders are on hand; children aged 3 and up can go in on their own while parents shop",
+            "th": "มีพี่เลี้ยงเล่นประจำ เด็ก 3 ขวบขึ้นไปเข้าเล่นเองได้ระหว่างที่พ่อแม่ช้อปปิง"
+          },
+          "tip": {
+            "en": "Children aged 3 and up may enter alone",
+            "th": "เด็ก 3 ขวบขึ้นไปเข้าเองได้"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Skids Garden Yodobashi Sendai, Miyagino-ku, Sendai",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/79125"
+        }
+      ]
+    },
+    {
+      "place": "jp-nagoya",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "LEGOLAND Japan",
+            "th": "เลโก้แลนด์ เจแปน"
+          },
+          "local": "レゴランド・ジャパン",
+          "kind": "themepark",
+          "area": {
+            "en": "Nagoya Kinjo Pier",
+            "th": "นาโกย่า คินโจพิเออร์"
+          },
+          "what": {
+            "en": "A Lego theme park with gentle rides, Miniland models of Japanese towns and building zones",
+            "th": "สวนสนุกเลโก้ มีเครื่องเล่นเบาๆ โมเดลเมืองญี่ปุ่นจิ๋ว และโซนต่อเลโก้"
+          },
+          "why": {
+            "en": "Built for children 2–12; plenty of rides and builds a small child can do, and the Sea Life aquarium shelters a wet day",
+            "th": "ออกแบบสำหรับเด็ก 2–12 ปี มีเครื่องเล่นและโซนต่อให้เด็กเล็กทำได้ และมี Sea Life ไว้หลบฝน"
+          },
+          "tip": {
+            "en": "Hours are about 10:00–17:00 but change by date; online tickets are cheaper",
+            "th": "เปิดราว 10:00–17:00 แต่เปลี่ยนตามวัน บัตรออนไลน์ถูกกว่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 6,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥4,900 adults · ¥3,700 children (online, varies by date)",
+            "th": "≈ ¥4,900 ผู้ใหญ่ · ¥3,700 เด็ก (ออนไลน์ เปลี่ยนตามวัน)"
+          },
+          "book": "rec",
+          "q": "LEGOLAND Japan, Nagoya",
+          "ok": "2026-11",
+          "src": "https://www.japan-travel-kit.com/guides/attractions/legoland-japan-tickets"
+        },
+        {
+          "name": {
+            "en": "Port of Nagoya Public Aquarium",
+            "th": "พิพิธภัณฑ์สัตว์น้ำท่าเรือนาโกย่า"
+          },
+          "local": "名古屋港水族館",
+          "kind": "aquarium",
+          "area": {
+            "en": "Nagoya Port",
+            "th": "ท่าเรือนาโกย่า"
+          },
+          "what": {
+            "en": "A big aquarium with belugas, orcas and a dolphin show in a large pool",
+            "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ มีเบลูกา ออร์ก้า และโชว์โลมาในสระใหญ่"
+          },
+          "why": {
+            "en": "Indoors and step-free, with a whole day of animals to see and shows to sit through",
+            "th": "อยู่ในร่มและเดินสะดวก มีสัตว์และโชว์ให้ดูได้ทั้งวัน"
+          },
+          "tip": {
+            "en": "Winter hours close about 17:00; closed on Mondays; last entry an hour before closing",
+            "th": "หน้าหนาวปิดราว 17:00 ปิดวันจันทร์ เข้าได้ถึงหนึ่งชั่วโมงก่อนปิด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥2,030 adults · ¥1,000 school children · ¥500 ages 4+ · under 4 free",
+            "th": "≈ ¥2,030 ผู้ใหญ่ · ¥1,000 นักเรียน · ¥500 อายุ 4 ปีขึ้นไป · ต่ำกว่า 4 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Port of Nagoya Public Aquarium, Nagoya",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/port-of-nagoya-aquarium-tickets"
+        },
+        {
+          "name": {
+            "en": "SCMAGLEV and Railway Park",
+            "th": "พิพิธภัณฑ์รถไฟชินคันเซ็นและแมกเลฟ"
+          },
+          "local": "リニア・鉄道館",
+          "kind": "museumkid",
+          "area": {
+            "en": "Kinjo Pier, Nagoya",
+            "th": "คินโจพิเออร์ นาโกย่า"
+          },
+          "what": {
+            "en": "A museum of real Shinkansen and maglev trains, with train simulators and a big model railway",
+            "th": "พิพิธภัณฑ์รถไฟชินคันเซ็นและแมกเลฟของจริง มีเครื่องจำลองและรถไฟจำลองขนาดใหญ่"
+          },
+          "why": {
+            "en": "Indoor and step-free; children can step inside real carriages",
+            "th": "อยู่ในร่มและเดินสะดวก เด็กขึ้นไปในตู้รถไฟจริงได้"
+          },
+          "tip": {
+            "en": "10:00–17:30, usually closed on Tuesdays; prices come from older listings, so check",
+            "th": "10:00–17:30 ปกติปิดวันอังคาร ราคาจากข้อมูลเก่า ควรเช็ก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคา"
+          },
+          "book": "none",
+          "q": "SCMAGLEV and Railway Park, Nagoya",
+          "ok": "2026-11",
+          "src": "https://aichinow.pref.aichi.jp/en/spots/detail/5/"
+        },
+        {
+          "name": {
+            "en": "Nagoya Castle",
+            "th": "ปราสาทนาโกย่า"
+          },
+          "local": "名古屋城",
+          "kind": "culture",
+          "area": {
+            "en": "Central Nagoya",
+            "th": "ใจกลางนาโกย่า"
+          },
+          "what": {
+            "en": "The castle grounds with golden shachihoko on the roof, stone walls and the Honmaru Palace; the main keep is closed",
+            "th": "บริเวณปราสาทที่มีชาชิโฮโกะสีทองบนหลังคา กำแพงหิน และพระราชวังฮนมารุ ส่วนตัวหอหลักปิดอยู่"
+          },
+          "why": {
+            "en": "Wide lawns to run on and a palace with indoor rooms; junior high and under free",
+            "th": "สนามหญ้ากว้างให้วิ่ง และพระราชวังมีห้องในร่ม เด็กมัธยมต้นลงมาเข้าฟรี"
+          },
+          "tip": {
+            "en": "Open 09:00–16:30, palace until 16:00; the adult fare rose to ¥1,000 from 1 Oct 2026",
+            "th": "เปิด 09:00–16:30 พระราชวังถึง 16:00 ราคาผู้ใหญ่ขึ้นเป็น ¥1,000 ตั้งแต่ 1 ต.ค. 2026"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥1,000 adults from 1 October 2026 · check the child price",
+            "th": "≈ ¥1,000 ผู้ใหญ่ ตั้งแต่ 1 ต.ค. 2026 · เช็กราคาเด็ก"
+          },
+          "book": "none",
+          "q": "Nagoya Castle, Nagoya",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/nagoya-castle-guide-2026"
+        },
+        {
+          "name": {
+            "en": "Higashiyama Zoo and Botanical Gardens",
+            "th": "สวนสัตว์และสวนพฤกษศาสตร์ฮิกาชิยามะ"
+          },
+          "local": "東山動植物園",
+          "kind": "zoo",
+          "area": {
+            "en": "Chikusa, Nagoya",
+            "th": "จิคุสะ นาโกย่า"
+          },
+          "what": {
+            "en": "A big zoo with koalas, gorillas and a children's zoo, joined to a garden and greenhouse",
+            "th": "สวนสัตว์ใหญ่ มีโคอาล่า กอริลลา และโซนสัตว์เด็ก ติดสวนพฤกษศาสตร์และเรือนกระจก"
+          },
+          "why": {
+            "en": "Cheap, large and hilly in parts; pick a few animal houses for little legs",
+            "th": "ราคาถูกและกว้าง บางช่วงเป็นเนิน เลือกดูแค่บางโซนสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Open 09:00–16:50 (tickets to 16:30); closed Mondays and 29 Dec–1 Jan",
+            "th": "เปิด 09:00–16:50 (ซื้อบัตรถึง 16:30) ปิดวันจันทร์และ 29 ธ.ค.–1 ม.ค."
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥500 adults · junior high and under free",
+            "th": "≈ ¥500 ผู้ใหญ่ · มัธยมต้นลงมาฟรี"
+          },
+          "book": "none",
+          "q": "Higashiyama Zoo and Botanical Gardens, Nagoya",
+          "ok": "2026-11",
+          "src": "https://www.aichinow.pref.aichi.jp/en/spots/detail/8/"
+        },
+        {
+          "name": {
+            "en": "Ghibli Park",
+            "th": "สวนสาธารณะจิบลิ"
+          },
+          "local": "ジブリパーク",
+          "kind": "themepark",
+          "area": {
+            "en": "Aichi Expo Park, near Nagoya",
+            "th": "สวนสาธารณะไอจิเอ็กซ์โป ใกล้นาโกย่า"
+          },
+          "what": {
+            "en": "Parkland recreating Studio Ghibli worlds, including the Totoro house in Dondoko Forest and the indoor Grand Warehouse",
+            "th": "สวนที่จำลองโลกของสตูดิโอจิบลิ มีบ้านโทโทโร่ในป่าดงโดโกะและโกดังใหญ่ในร่ม"
+          },
+          "why": {
+            "en": "Gentle walking among familiar films, with the warehouse for wet days; Grand Warehouse has timed entry",
+            "th": "เดินเล่นสบายๆ ท่ามกลางโลกในหนังที่คุ้นเคย มีโกดังไว้หลบฝน โกดังใหญ่เข้าตามรอบเวลา"
+          },
+          "tip": {
+            "en": "Tickets go on sale monthly and sell out; overseas buyers may only get day passes, so check the official page",
+            "th": "บัตรเปิดขายรายเดือนและหมดเร็ว ผู้ซื้อต่างประเทศอาจซื้อได้แค่บัตรรายวัน เช็กหน้าทางการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price · under 4 free",
+            "th": "เช็กราคา · ต่ำกว่า 4 ปีฟรี"
+          },
+          "book": "req",
+          "q": "Ghibli Park, Nagakute, Aichi",
+          "ok": "2026-11",
+          "src": "https://ghibli-park.jp/en/ticket/"
+        },
+        {
+          "local": "あそびパークPLUS",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥700 30 นาทีแรก จากนั้น ¥230 ต่อ 10 นาที",
+            "en": "≈ ¥700 first 30 min, then ¥230 per 10 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "อาโซบิพาร์กพลัส ลาลาพอร์ตมินาโตะ",
+            "en": "Asobi Park Plus (Lalaport Minato Aqulus)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลาลาพอร์ตมินาโตะอาคูลุส ชั้น 3 เขตมินาโตะ นาโงยะ",
+            "en": "Lalaport Minato Aqulus 3F, Minato Ward, Nagoya"
+          },
+          "what": {
+            "th": "สวนเล่นมีเครื่องปีนใหญ่ เนินแทรมโพลีน และบ่อบอล",
+            "en": "A play park with a big climbing set, a trampoline hill and a ball pool"
+          },
+          "why": {
+            "th": "มีลานเด็กเล็กที่มีรั้วกั้น",
+            "en": "A fenced baby terrace for the smallest"
+          },
+          "tip": {
+            "th": "10:00–19:00",
+            "en": "10:00–19:00"
+          },
+          "q": "あそびパークPLUS, ららぽーと名古屋みなとアクルス",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥900–2,700 ต่อวัน",
+            "en": "≈ ¥900–2,700 a day"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "ลิตเติลแพลเน็ต โมโซวันเดอร์ซิตี้",
+            "en": "Little Planet (mozo Wonder City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โมโซวันเดอร์ซิตี้ ชั้น 4 เขตนิชิ นาโงยะ",
+            "en": "mozo Wonder City 4F, Nishi Ward, Nagoya"
+          },
+          "what": {
+            "th": "เล่นแบบดิจิทัล ทราย AR แทรมโพลีนดิจิทัล และบ่อบอลแสงสี",
+            "en": "Digital play: AR sand, a digital trampoline and a light-and-sound ball pool"
+          },
+          "why": {
+            "th": "บัตรรายวันออกไปกินข้าวแล้วกลับเข้ามาได้",
+            "en": "A day pass lets you leave for lunch and come back"
+          },
+          "tip": {
+            "th": "10:00–20:00",
+            "en": "10:00–20:00"
+          },
+          "q": "リトルプラネット, mozoワンダーシティ, 名古屋",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥1,200–1,500",
+            "en": "≈ ¥1,200–1,500"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ พอร์ตวอล์กมินาโตะ",
+            "en": "Pure Heart Kids Land (Portwalk Minato)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "พอร์ตวอล์กมินาโตะ ชั้น 3 เขตมินาโตะ นาโงยะ",
+            "en": "Portwalk Minato 3F, Minato Ward, Nagoya"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่มขนาดใหญ่ บ่อบอล 100,000 ลูก เปิดพฤศจิกายน 2025",
+            "en": "A big indoor play hall with a ball pool of 100,000 balls, opened November 2025"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กถึง 24 เดือน และมุมคาเฟ่",
+            "en": "A baby park up to 24 months and a café space"
+          },
+          "tip": {
+            "th": "เฉพาะสมาชิก 10:00–19:00",
+            "en": "Members only; 10:00–19:00"
+          },
+          "q": "ピュアハートキッズランド, ポートウォークみなと",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥600 30 นาทีแรก",
+            "en": "≈ ¥600 first 30 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "อาโซบิโนะเซไก ทาคาชิมายะเกตทาวเวอร์",
+            "en": "Asobi no Sekai (Takashimaya Gate Tower Mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เกตทาวเวอร์มอลล์ ชั้น 7 สถานีนาโงยะ นาโงยะ",
+            "en": "Gate Tower Mall 7F, Nagoya Station, Nagoya"
+          },
+          "what": {
+            "th": "สวนเล่น 3 โซน บ่อบอลและแทรมโพลีน ตัวต่อและบทบาทสมมติ และสวนเด็กเล็ก",
+            "en": "A play park in three zones: ball pool and trampoline, blocks and pretend play, and a baby garden"
+          },
+          "why": {
+            "th": "สวนเด็กเล็กอายุ 6–18 เดือน และมีพี่เลี้ยงสอนเล่น",
+            "en": "A baby garden for 6 to 18 months, and play leaders"
+          },
+          "tip": {
+            "th": "10:00–19:00 เชื่อมสถานีนาโงยะ",
+            "en": "10:00–19:00; connected to Nagoya Station"
+          },
+          "q": "あそびのせかい, タカシマヤ ゲートタワーモール",
+          "ok": "2026-11"
+        },
+        {
+          "local": "JUMP LAB 名古屋 緑店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥1,500 ต่อ 60 นาที (เด็ก)",
+            "en": "≈ ¥1,500 for 60 min (children)"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "จัมป์แล็บ นารุมิ",
+            "en": "Jump Lab Narumi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นารุมิ เขตมิโดริ นาโงยะ",
+            "en": "Narumi, Midori Ward, Nagoya"
+          },
+          "what": {
+            "th": "ยิมแทรมโพลีนและเครื่องเล่นออกกำลัง มีผนังปีนและผนังนินจา",
+            "en": "A trampoline and athletics gym with a climbing wall and a ninja wall"
+          },
+          "why": {
+            "th": "สำหรับเด็กตั้งแต่ 4 ขวบ ผู้ปกครองดูฟรีจากชั้นบน",
+            "en": "For children from 4; parents watch free from upstairs"
+          },
+          "q": "JUMP LAB 鳴海, 緑区, 名古屋",
+          "ok": "2026-11"
+        },
+        {
+          "local": "こどもっちパーク 名古屋みなとパーク",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥600–800 ต่อ 60 นาที",
+            "en": "≈ ¥600–800 for 60 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "โคโดม็อตจิพาร์ก นาโงยะมินาโตะ",
+            "en": "Kodomocchi Park (Nagoya Minato)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คินโจฟุโตะ เขตมินาโตะ นาโงยะ",
+            "en": "Kinjo-futo, Minato Ward, Nagoya"
+          },
+          "what": {
+            "th": "สวนในร่มปูหญ้าเทียม มีเครื่องเล่นไม้ เขาวงกต และครัวของเล่น",
+            "en": "An indoor park with artificial grass, wooden play equipment, a maze and a play kitchen"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 1 ขวบครึ่งเข้าฟรีวันธรรมดา ผู้ปกครอง 2 คนเข้าฟรี",
+            "en": "Under 1½ free on weekdays; two guardians go in free"
+          },
+          "tip": {
+            "th": "10:00–18:00 จอดฟรี 2 ชั่วโมง",
+            "en": "10:00–18:00; 2 hours' free parking"
+          },
+          "q": "こどもっちパーク 名古屋みなとパーク, 金城ふ頭",
+          "ok": "2026-11"
+        },
+        {
+          "local": "すみっコぐらしあそびスタジオ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥600 30 นาทีแรก จากนั้น ¥200 ต่อ 10 นาที",
+            "en": "≈ ¥600 first 30 min, then ¥200 per 10 min"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "name": {
+            "th": "สตูดิโอเล่นซุมิกโกะกุราชิ อิออนมอลล์โอดากะ",
+            "en": "Sumikko Gurashi Play Studio (AEON Mall Odaka)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนมอลล์โอดากะ ชั้น 3 เขตมิโดริ นาโงยะ",
+            "en": "AEON Mall Odaka 3F, Midori Ward, Nagoya"
+          },
+          "what": {
+            "th": "สตูดิโอเล่นธีมซุมิกโกะกุราชิ มีร้านจำลองและบ่อบอลสีพาสเทล",
+            "en": "A Sumikko Gurashi play studio with pretend shops and a pastel ball pool"
+          },
+          "why": {
+            "th": "มีบ่อบอล สไลเดอร์ท่อ และร้านอาหารจำลอง",
+            "en": "A ball pool, a tube slide and a pretend food shop"
+          },
+          "tip": {
+            "th": "10:00–19:00",
+            "en": "10:00–19:00"
+          },
+          "q": "すみっコぐらしあそびスタジオ, イオンモール大高",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "jp-kobe",
+      "thin": true,
+      "sights": [
+        {
+          "name": {
+            "en": "Kobe Anpanman Children's Museum and Mall",
+            "th": "พิพิธภัณฑ์เด็กแอนปังแมนโกเบและมอลล์"
+          },
+          "local": "神戸アンパンマンこどもミュージアム&モール",
+          "kind": "museumkid",
+          "area": {
+            "en": "Harborland, Kobe",
+            "th": "ฮาร์เบอร์แลนด์ โกเบ"
+          },
+          "what": {
+            "en": "A play museum of the Anpanman characters with stage shows, play zones and a shop mall below",
+            "th": "พิพิธภัณฑ์เล่นของตัวละครแอนปังแมน มีโชว์บนเวที โซนเล่น และมอลล์ร้านค้าชั้นล่าง"
+          },
+          "why": {
+            "en": "Made for the very young; indoors, with places to crawl and climb",
+            "th": "ทำมาสำหรับเด็กเล็กมาก อยู่ในร่ม มีที่คลานและปีน"
+          },
+          "tip": {
+            "en": "Museum about 10:00–18:00, last entry 17:00; the ground-floor mall is free to enter",
+            "th": "พิพิธภัณฑ์ราว 10:00–18:00 เข้าได้ถึง 17:00 มอลล์ชั้นล่างเข้าฟรี"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคา"
+          },
+          "book": "none",
+          "q": "Kobe Anpanman Children's Museum and Mall, Kobe",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/directory/item/11687/"
+        },
+        {
+          "name": {
+            "en": "Himeji Castle",
+            "th": "ปราสาทฮิเมจิ"
+          },
+          "local": "姫路城",
+          "kind": "culture",
+          "area": {
+            "en": "Himeji (day trip)",
+            "th": "ฮิเมจิ (ไปเช้าเย็นกลับ)"
+          },
+          "what": {
+            "en": "Japan's best-kept white castle, a World Heritage site you can climb through, with a garden next door",
+            "th": "ปราสาทขาวที่คงสภาพดีที่สุดของญี่ปุ่น มรดกโลก ขึ้นไปชมข้างในได้ มีสวนอยู่ติดกัน"
+          },
+          "why": {
+            "en": "Children under 18 are free, but the keep has steep stairs and no pram access; the grounds are good for running",
+            "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี แต่ตัวหอมีบันไดชันและเข็นรถไม่ได้ ส่วนบริเวณรอบๆ วิ่งเล่นได้"
+          },
+          "tip": {
+            "en": "09:00–17:00, last entry 16:00 (later in summer); the adult fare rose to ≈ ¥2,500 on 1 Mar 2026 for non-residents",
+            "th": "09:00–17:00 เข้าได้ถึง 16:00 (ฤดูร้อนปิดช้ากว่า) ผู้ใหญ่ที่ไม่ใช่ผู้อยู่ในเมืองขึ้นเป็น ≈ ¥2,500 ตั้งแต่ 1 มี.ค. 2026"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,500 adults (non-residents) · under 18 free",
+            "th": "≈ ¥2,500 ผู้ใหญ่ (ไม่ใช่ผู้อยู่ในเมือง) · ต่ำกว่า 18 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Himeji Castle, Himeji, Hyogo",
+          "ok": "2026-11",
+          "src": "https://www.himejicastle.jp/en"
+        },
+        {
+          "name": {
+            "en": "Kobe Suma Sea World",
+            "th": "โกเบ สุมะ ซีเวิลด์"
+          },
+          "local": "神戸須磨シーワールド",
+          "kind": "aquarium",
+          "area": {
+            "en": "Suma, Kobe",
+            "th": "สุมะ โกเบ"
+          },
+          "what": {
+            "en": "A seaside aquarium that opened in 2024, with orcas, dolphins and many sea creatures",
+            "th": "พิพิธภัณฑ์สัตว์น้ำริมทะเลที่เปิดปี 2024 มีออร์ก้า โลมา และสัตว์ทะเลมากมาย"
+          },
+          "why": {
+            "en": "Much of it is under cover, with shows to sit through; step-free",
+            "th": "ส่วนใหญ่อยู่ในร่ม มีโชว์ให้นั่งดู เดินสะดวก"
+          },
+          "tip": {
+            "en": "Open about 10:00–18:00, last entry an hour before; prices change by season",
+            "th": "เปิดราว 10:00–18:00 เข้าได้ถึงหนึ่งชั่วโมงก่อนปิด ราคาเปลี่ยนตามฤดู"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥2,900–3,700 adults by season · children less (check)",
+            "th": "≈ ¥2,900–3,700 ผู้ใหญ่ตามฤดู · เด็กถูกกว่า (ควรเช็ก)"
+          },
+          "book": "rec",
+          "q": "Kobe Suma Sea World, Suma, Kobe",
+          "ok": "2026-11",
+          "src": "https://www.kobesuma-seaworld.jp/en/guide/price_ticket/group/"
+        },
+        {
+          "name": {
+            "en": "Kobe Nunobiki Herb Garden and Ropeway",
+            "th": "สวนสมุนไพรนูโนบิกิและกระเช้าโกเบ"
+          },
+          "local": "神戸布引ハーブ園/ロープウェイ",
+          "kind": "park",
+          "area": {
+            "en": "Shin-Kobe",
+            "th": "ชินโกเบ"
+          },
+          "what": {
+            "en": "A ropeway up a hillside to herb and flower gardens with views over Kobe and the bay",
+            "th": "กระเช้าขึ้นเนินสู่สวนสมุนไพรและดอกไม้ เห็นเมืองโกเบและอ่าว"
+          },
+          "why": {
+            "en": "The cable car is the treat; the gardens are on slopes, so a carrier suits babies better than a pram",
+            "th": "นั่งกระเช้าคือจุดเด่น สวนอยู่บนเนิน เด็กเล็กใช้เป้อุ้มสะดวกกว่ารถเข็น"
+          },
+          "tip": {
+            "en": "Hours vary by season (about 10:00–17:00); the standard fare includes garden entry",
+            "th": "เวลาเปิดเปลี่ยนตามฤดู (ราว 10:00–17:00) ค่ากระเช้ามาตรฐานรวมค่าเข้าสวน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,500 adults return · children less (check)",
+            "th": "≈ ¥2,500 ผู้ใหญ่ไปกลับ · เด็กถูกกว่า (ควรเช็ก)"
+          },
+          "book": "none",
+          "q": "Kobe Nunobiki Herb Gardens, Kobe",
+          "ok": "2026-11",
+          "src": "https://hyogojapan.com/discover/nunobiki-herb-gardens-ropeway/"
+        },
+        {
+          "name": {
+            "en": "Meriken Park, Kobe",
+            "th": "สวนเมอริเคน โกเบ"
+          },
+          "local": "メリケンパーク",
+          "kind": "park",
+          "area": {
+            "en": "Kobe waterfront",
+            "th": "ริมอ่าวโกเบ"
+          },
+          "what": {
+            "en": "A waterfront park with the red Port Tower and open lawns by the harbour",
+            "th": "สวนริมอ่าว มีหอคอยสีแดงพอร์ตทาวเวอร์และสนามหญ้ากว้างริมท่าเรือ"
+          },
+          "why": {
+            "en": "Free, flat and breezy, with space to run and a tower to look up at",
+            "th": "ฟรี ทางเรียบ ลมเย็น มีที่ให้วิ่งเล่นและหอคอยให้แหงนดู"
+          },
+          "tip": {
+            "en": "The park is open 24 hours; go in daylight with children",
+            "th": "สวนเปิด 24 ชั่วโมง พาเด็กไปตอนกลางวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Meriken Park, Kobe",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/attractions/kobe/meriken-park"
+        },
+        {
+          "name": {
+            "en": "Kobe Port Tower",
+            "th": "โกเบพอร์ตทาวเวอร์"
+          },
+          "local": "神戸ポートタワー",
+          "kind": "views",
+          "area": {
+            "en": "Meriken Park, Kobe",
+            "th": "สวนเมอริเคน โกเบ"
+          },
+          "what": {
+            "en": "A red lattice tower on the waterfront with indoor viewing floors and an open rooftop deck",
+            "th": "หอคอยโครงตาข่ายสีแดงริมอ่าว มีชั้นชมวิวในร่มและดาดฟ้าโล่ง"
+          },
+          "why": {
+            "en": "Short lift ride and indoor floors with benches; entry is by timed ticket",
+            "th": "นั่งลิฟต์สั้นๆ ชั้นชมวิวอยู่ในร่มมีที่นั่ง เข้าตามรอบเวลา"
+          },
+          "tip": {
+            "en": "Open 09:00–23:00, last entry 22:30; go by day for the view with children",
+            "th": "เปิด 09:00–23:00 เข้าได้ถึง 22:30 พาเด็กไปตอนกลางวันเห็นวิวชัด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥1,000 adults indoor floors · ¥1,200 with rooftop (children less, check)",
+            "th": "≈ ¥1,000 ผู้ใหญ่ชั้นในร่ม · ¥1,200 รวมดาดฟ้า (เด็กถูกกว่า ควรเช็ก)"
+          },
+          "book": "rec",
+          "q": "Kobe Port Tower, Kobe",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/attractions/kobe/kobe-port-tower"
+        },
+        {
+          "local": "こどもっちパーク こうべパーク",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "สวนเล่นในร่มโคโดม็อตจิ โกเบ",
+            "en": "Kodomocchi Park Kobe Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาคาร HDC โกเบ ชั้น 10 โกเบ",
+            "en": "HDC Kobe 10F, Higashikawasakicho, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีสไลเดอร์ใหญ่ บ่อบอล และที่ปีนป่าย",
+            "en": "An indoor play space with a big slide, a ball pool and a climbing frame"
+          },
+          "why": {
+            "th": "สำหรับเด็กแรกเกิดถึงประถม",
+            "en": "For ages 0 to primary school"
+          },
+          "q": "Kodomocchi Park Kobe Park, HDC Kobe 10F, Chuo Ward, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい 学園南店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (กาคุเอ็นมินามิ)",
+            "en": "Bornelund Asobi no Sekai (Gakuen-minami)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไมตะมนนิชิ เขตทารุมิ โกเบ",
+            "en": "Maitamonnishi, Tarumi Ward, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มของบอร์เนลุนด์ พร้อมร้านของเล่น",
+            "en": "Bornelund's indoor play space with a toy shop"
+          },
+          "why": {
+            "th": "เครื่องเล่นจากทั่วโลก สำหรับ 6 เดือนถึง 12 ปี",
+            "en": "Play equipment from around the world for 6 months to 12 years"
+          },
+          "q": "Bornelund Kobe Gakuen Minami, Tarumi Ward, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい マリンピア神戸店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (มารีนเปียโกเบ)",
+            "en": "Bornelund Asobi no Sekai (Marine Pia Kobe)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิตซุยเอาต์เล็ตพาร์กมารีนเปีย เขตทารุมิ โกเบ",
+            "en": "Mitsui Outlet Park Marine Pia, Tarumi Ward, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มและกลางแจ้ง มีแทรมโพลีนและเครื่องเล่นหมุน",
+            "en": "Indoor and outdoor play with a trampoline and spinning rides"
+          },
+          "why": {
+            "th": "มองเห็นสะพานอาคาชิไคเกียว",
+            "en": "The Akashi Kaikyo Bridge in view"
+          },
+          "q": "Bornelund Asobi no Sekai, Mitsui Outlet Park Marine Pia Kobe, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ピュアハートキッズランド 神戸ハーバーランドumie",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6897/",
+          "name": {
+            "th": "เพียวฮาร์ตคิดส์แลนด์ โกเบฮาร์เบอร์แลนด์",
+            "en": "Pure Heart Kids Land (Kobe Harborland umie)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อุมิเอะ นอร์ทมอลล์ ชั้น 4 เขตชูโอ โกเบ",
+            "en": "umie North Mall 4F, Chuo Ward, Kobe"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่",
+            "en": "A big indoor play park"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นได้ทุกสภาพอากาศ",
+            "en": "Children run about whatever the weather"
+          },
+          "tip": {
+            "th": "10:00–19:00 เข้าครั้งสุดท้าย 18:30",
+            "en": "10:00–19:00, last entry 18:30"
+          },
+          "q": "ピュアハートキッズランド 神戸ハーバーランドumie",
           "ok": "2026-11"
         }
       ]

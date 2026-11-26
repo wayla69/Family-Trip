@@ -1,0 +1,170 @@
+{
+  "town": "kr-incheon",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents; 41 rows from mom-mom.net, Korean blogs and the Incheon and Korea tourism sites (2025–2026); 38 passed library-check.cjs, 18 went in",
+  "added": [
+    {
+      "name": "Goguryeo Jjamppong 10101 (Seonhak)",
+      "page_name": "Goguryeo Jjamppong 10101 Incheon Seonhak Branch",
+      "src": "https://mom-mom.net/en/travel/places/67fc6f0530a9bd8edc503ee2",
+      "date": "2025-04",
+      "map": "Google Maps '고구려짬뽕 10101 인천선학점', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Lala Coast (Geomdan)",
+      "page_name": "Lala Coast Incheon Geomdan Sageori Branch",
+      "src": "https://mom-mom.net/en/travel/places/69087a3849f3a3ebe6475414",
+      "date": "2025-12",
+      "map": "Google Maps '라라코스트 인천검단점', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Hanmaeum Jeongyuk Sikdang (Yeongjong)",
+      "page_name": "Hanmaeum Jeongyuk Sikdang Yeongjong Haneul Dosi Branch",
+      "src": "https://mom-mom.net/en/travel/places/691ee786b7d823f6a9d69f6d",
+      "date": "2025-11",
+      "map": "Google Maps '한마음정육식당 영종하늘도시점', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Suksungdo (Songdo)",
+      "page_name": "Suksungdo Incheon Songdo Branch",
+      "src": "https://mom-mom.net/en/travel/places/64dec3f1ed38876c4775c264",
+      "date": "2026-09",
+      "map": "Google Maps '숙성도 인천송도점', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "VIPS Premier (Songdo)",
+      "page_name": "VIPS Songdo Branch",
+      "src": "https://mom-mom.net/en/travel/places/6a73e281addfaa709aedd55e",
+      "date": "2026-08",
+      "map": "Google Maps '빕스 프리미어 송도점', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Yanjing (Chinatown)",
+      "page_name": "Yanjing",
+      "src": "https://mom-mom.net/en/travel/places/64d97ca4067b0031e512b411",
+      "date": "2026-09",
+      "map": "Google Maps 'Yanjing' (Chinatown head store), open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Pasta 1 Beonji (Cheongna)",
+      "page_name": "Pasta 1 Beonji Cheongna Branch",
+      "src": "https://mom-mom.net/en/travel/places/66ab4dd16b0594bd5754ffce",
+      "date": "2026-09",
+      "map": "Google Maps '파스타1번지 청라점', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Pyeonpyeonjip (Yeongjong)",
+      "page_name": "Pyeonpyeonjip Yeongjong Sky City Branch",
+      "src": "https://mom-mom.net/en/travel/places/69ae7c4890fb7392e07964e4",
+      "date": "2026-03",
+      "map": "Google Maps '편편집 영종하늘도시점', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Cafe Vadassong",
+      "page_name": "Bada Song",
+      "src": "https://mom-mom.net/en/travel/places/66cec235fe4af5e56d7a6498",
+      "date": "2026-09",
+      "map": "Google Maps 'Cafe VADASSONG', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "The Sunset Cafe",
+      "page_name": "The Sunset Cafe",
+      "src": "https://mom-mom.net/en/travel/places/69dc50a016873d7d696fb0c3",
+      "date": "2026-04",
+      "map": "Google Maps '더선셋카페' (21 Jayugongwonseo-ro), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Cafe Song (Fairy Tale Village)",
+      "page_name": "카페송 동화마을점",
+      "src": "https://mom-mom.net/travel/places/6a44f31037ec36af4ebcfc59",
+      "date": "2026-02",
+      "map": "Google Maps 'CAFE SONG_카페송(동화마을점)' (Chinatown-ro), newest review shown 6 days ago"
+    },
+    {
+      "name": "National Maritime Museum of Incheon",
+      "page_name": "국립인천해양박물관",
+      "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places",
+      "date": "2026-02",
+      "map": "Google Maps '국립인천해양박물관', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Wonderbox, Paradise City",
+      "page_name": "파라다이스시티 원더박스",
+      "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places",
+      "date": "2026-02",
+      "map": "Google Maps 'Wonderbox, Paradise City', open, with a review from the last six months (checked 25 Nov 2026)"
+    },
+    {
+      "name": "Songdo Central Park",
+      "page_name": "Songdo Central Park",
+      "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=2629535",
+      "date": "official",
+      "map": "Google Maps 'Songdo Central Park' (160 Convensia-daero), newest review shown 21 hours ago"
+    },
+    {
+      "name": "Wolmi Park",
+      "page_name": "Wolmi Park",
+      "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=1002282",
+      "date": "official",
+      "map": "Google Maps '월미공원' (Bukseong-dong), newest review shown 5 days ago"
+    },
+    {
+      "name": "My Land, Wolmido",
+      "page_name": "My Land",
+      "src": "https://mom-mom.net/en/travel/places/67d38d2a75fa1a4213da455c",
+      "date": "2026-05",
+      "map": "Google Maps 'My Land' (7 Wolmi-ro 234beon-gil), newest review shown 2 days ago"
+    },
+    {
+      "name": "Songwol-dong Fairy Tale Village",
+      "page_name": "Songwol-dong Fairy Tale Village",
+      "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=2372167",
+      "date": "official",
+      "map": "Google Maps 'Songwol-dong Fairy Tale Village', newest review shown 2 hours ago"
+    },
+    {
+      "name": "Incheon Student Education and Culture Center",
+      "page_name": "Incheon Student Education and Culture Center",
+      "src": "https://mom-mom.net/en/travel/places/65ee5e841125833a155dba45",
+      "date": "2026-05",
+      "map": "Google Maps 'Incheon Student Education and Culture Center' (12 Jayugongwon-ro), newest review shown a day ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Sangnok Hoegwan, Sideshow, Hanmaeum (Seochang, Geomdan), Seoga and Cook, Yoogane, Sangil Hoegwan, Dangsingwa Naui Siktak, Yejeon",
+      "why": "the map found another branch, an old newest review, or no entry of its own"
+    },
+    {
+      "name": "Wang Donkaseu Bunsik, Paradise City Premium Food Hall",
+      "why": "no map entry of its own"
+    },
+    {
+      "name": "Channel Twelve",
+      "why": "the newest review on the map is a year old"
+    },
+    {
+      "name": "테이블에이 송도",
+      "why": "the map name differs and it has two reviews"
+    },
+    {
+      "name": "부평 스카이롤러장",
+      "why": "the map shows a rink in Jung-gu, not Bupyeong"
+    },
+    {
+      "name": "인천어린이박물관",
+      "why": "the newest review on the map is 7 months old"
+    },
+    {
+      "name": "Kids Play Ground (Hyundai outlet), 아이사랑꿈터 9 and 10, Songnimgol plaza, The Cream House",
+      "why": "no map entry of their own (or only another branch)"
+    },
+    {
+      "name": "Pororo Tayo Theme Park, Incheon Dino World, Sudoguksan Moon Village Museum",
+      "why": "failed the page check"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

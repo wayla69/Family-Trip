@@ -104,7 +104,7 @@ const items = [
 ];
 export default {
   places: {
-    kr: { country: 'kr', wave: 1, name: nm('เกาหลีใต้', 'South Korea'), tz: 'Asia/Seoul', alias: ['korea', 'south korea', 'เกาหลี', '한국'], colors: K },
+    kr: { country: 'kr', wave: 1, name: nm('เกาหลีใต้', 'South Korea'), tz: 'Asia/Seoul', alias: ['korea', 'south korea', 'เกาหลี', '한국', 'incheon airport', 'incheon international airport', 'สนามบินอินชอน', 'สนามบินนานาชาติอินชอน', '인천공항', 'ICN'], colors: K },
     'kr-seoul': { country: 'kr', wave: 1, name: nm('โซล', 'Seoul'), tz: 'Asia/Seoul', ll: [37.57, 126.98], alias: ['seoul', 'โซล', '서울', 'myeongdong', 'เมียงดง', 'hongdae', 'ฮงแด', 'gangnam', 'คังนัม', 'insadong', 'jamsil', 'itaewon'], colors: K },
   },
   items,

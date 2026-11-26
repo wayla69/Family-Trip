@@ -1,0 +1,126 @@
+{
+  "town": "jp-takamatsu",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents; rows from tsunagujapan (2025), aumo (2025), Savor Japan (2025), asoview.com (2026), veltra (2026) and Mapple’s 2026 Takamatsu family-dining page (no page date: the owner allowed undated food guides on 25 Nov 2026 when Google Maps confirms the shop)",
+  "added": [
+    {
+      "name": "Merikenya (Takamatsu Station)",
+      "page_name": "Merikenya",
+      "src": "https://www.tsunagujapan.com/19-recommendations-for-sightseeing-and-udon-in-takamatsu-kagawa/",
+      "date": "2025-05",
+      "map": "Google Maps 'Merikenya Takamatsu Ekimae' (6-20 Nishinomarucho), newest review shown 3 days ago"
+    },
+    {
+      "name": "Vent (JR Hotel Clement)",
+      "page_name": "ヴァン",
+      "src": "https://aumo.jp/articles/17943",
+      "date": "2025-08",
+      "map": "Google Maps 'Vent' (JR Hotel Clement, 1-1 Hamanocho), newest review shown 4 days ago"
+    },
+    {
+      "name": "Shunsai Kocho",
+      "page_name": "旬菜小蝶",
+      "src": "https://aumo.jp/articles/17943",
+      "date": "2025-08",
+      "map": "Google Maps '旬菜 小蝶' (1531-6 Tahi Shimomachi), newest review shown a week ago"
+    },
+    {
+      "name": "Udon Honjin Yamadaya (main shop)",
+      "page_name": "うどん本陣 山田家本店",
+      "src": "https://www.mapple.net/region/a0603010100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Udon Honjin Yamadaya Main Branch' (Mure), newest review shown 16 hours ago"
+    },
+    {
+      "name": "Waraya",
+      "page_name": "わら家",
+      "src": "https://www.mapple.net/region/a0603010100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Waraya' (Yashima Nakamachi), newest review shown 3 days ago"
+    },
+    {
+      "name": "Fumiya okonomiyaki",
+      "page_name": "ふみや お好み焼き本店",
+      "src": "https://www.mapple.net/region/a0603010100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Fumiya' (Kawaramachi), newest review shown 5 days ago"
+    },
+    {
+      "name": "Chikusei",
+      "page_name": "竹清",
+      "src": "https://www.mapple.net/region/a0603010100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Chikusei' (2-23 Kameokacho), newest review shown 3 hours ago"
+    },
+    {
+      "name": "Udon Sakaeda (main shop)",
+      "page_name": "さか枝うどん本店",
+      "src": "https://www.mapple.net/region/a0603010100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Udon Sakaeda' (5-2-23 Bancho), newest review shown 20 hours ago"
+    },
+    {
+      "name": "Takamatsu Children’s Future Museum (Mirai-e)",
+      "page_name": "高松市こども未来館",
+      "src": "https://www.asoview.com/note/6864/",
+      "date": "2026-01",
+      "map": "Google Maps '高松市こども未来館（高松ミライエ）', newest review shown 2 days ago"
+    },
+    {
+      "name": "Sanuki Kodomo no Kuni",
+      "page_name": "さぬきこどもの国",
+      "src": "https://www.asoview.com/note/6864/",
+      "date": "2026-01",
+      "map": "Google Maps 'Sanuki Kodomo no Kuni', newest review shown a day ago"
+    },
+    {
+      "name": "Kids Land US Takamatsu",
+      "page_name": "キッズランドUS 香川高松店",
+      "src": "https://www.asoview.com/note/6864/",
+      "date": "2026-01",
+      "map": "Google Maps 'キッズランドUS 香川高松店', newest review shown 3 months ago"
+    },
+    {
+      "name": "Sanuki Toy Museum",
+      "page_name": "讃岐おもちゃ美術館",
+      "src": "https://www.asoview.com/note/6864/",
+      "date": "2026-01",
+      "map": "Google Maps 'Sanuki Toy Museum', newest review shown 2 days ago"
+    },
+    {
+      "name": "Kinbuchi Forest Park",
+      "page_name": "公渕森林公園",
+      "src": "https://www.asoview.com/note/6864/",
+      "date": "2026-01",
+      "map": "Google Maps 'Kagawa Prefecture Kinbuchi Forest Park', newest review shown a week ago"
+    },
+    {
+      "name": "Ritsurin Garden",
+      "page_name": "栗林公園",
+      "src": "https://www.veltra.com/jp/guide/domestic/spot-domestic/80837/",
+      "date": "2026-11",
+      "map": "Google Maps 'Ritsurin Garden', newest review shown 3 hours ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Shabutei Maru Shimotai, Tenjinmae Sukishabutei, Mio Paese",
+      "why": "review dates not readable on the map"
+    },
+    {
+      "name": "Goyashiki",
+      "why": "no map entry of its own"
+    },
+    {
+      "name": "Hanazonotei, Ramen Port",
+      "why": "no children’s line / failed the page check"
+    },
+    {
+      "name": "Jungle Kids AEON Mall Takamatsu",
+      "why": "not on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

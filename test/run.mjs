@@ -1,7 +1,7 @@
 // Test runner: each group gets a throw-away Postgres database + DATA_DIR + server on a free port; suites in a group share them.
 //   TEST_DATABASE_URL=postgres://postgres:pg@localhost:5432/postgres npm test     (admin connection; temp databases are created and dropped)
 // Env: TEST_S3_ENDPOINT=http://localhost:4569 (+ TEST_S3_KEY/SECRET) also tests the S3 adapter (s3rver / MinIO).
-//      CHROME=/path/to/chrome to use a specific browser; SHOTS=dir for screenshots (default /tmp/mb-shots).
+//      CHROME=/path/to/chrome to use a specific browser; SHOTS=dir for screenshots (default: a fresh folder under the OS temp dir).
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
