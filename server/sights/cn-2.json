@@ -3512,6 +3512,80 @@
           },
           "q": "梦幻童年亲子乐园 万福广场, 凯风路90号, 象山区, 桂林",
           "ok": "2026-11"
+        },
+        {
+          "local": "MELAND 桂林万象城店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND(%E6%A1%82%E6%9E%97%E4%B8%87%E8%B1%A1%E5%9F%8E%E5%BA%97)&city=450300",
+          "name": {
+            "th": "มีแลนด์ มิกซ์ซี กุ้ยหลิน",
+            "en": "Meland (MixC Guilin)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิกซ์ซี ชั้น 3 ถนนหงหลิ่ง ซิ่วเฟิง",
+            "en": "MixC L3, Hongling Road, Xiufeng"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีมุมพักสำหรับพ่อแม่",
+            "en": "An indoor play club with a parents' area"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตกที่กุ้ยหลิน ร้านอาหารในมิกซ์ซีอยู่ชั้นล่าง",
+            "en": "Indoor play for a rainy day in Guilin; the MixC restaurants are downstairs"
+          },
+          "q": "MELAND 桂林万象城, 红岭路1号, 秀峰区, 桂林",
+          "ok": "2026-11"
+        },
+        {
+          "local": "万达宝贝王 桂林高新",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%87%E8%BE%BE%E5%AE%9D%E8%B4%9D%E7%8E%8B(%E6%A1%82%E6%9E%97%E9%AB%98%E6%96%B0)&city=450300",
+          "name": {
+            "th": "วั่นต๋าเบบี้คิง เกาซิน",
+            "en": "Wanda Baby King (Gaoxin Wanda)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เกาซินวั่นต๋าพลาซ่า ชั้น 2 ถนนชวนซานตะวันออก ชีซิง",
+            "en": "Gaoxin Wanda Plaza 2F, Chuanshan East Road, Qixing"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มสำหรับเด็ก 0–12 ขวบ มีงานประดิษฐ์",
+            "en": "An indoor play park for ages 0–12 with crafts"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กทารกและเด็กเล็ก มีล็อกเกอร์",
+            "en": "Marked for babies and small children; lockers for bags"
+          },
+          "q": "万达宝贝王 桂林高新万达, 穿山东路43号, 七星区, 桂林",
+          "ok": "2026-11"
         }
       ]
     },
