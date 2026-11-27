@@ -1037,3 +1037,9 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   And 28 of Little Steps Asia's 2026 openings (Lola María, Stübli, Dan Ryan's Causeway Bay, NOOK@The Peak, Tienmo, Food Atlas, Terrace
   Boulud…). Google Maps only; nine left out (not found, only the building on the map, or bars). Hong Kong now holds 319 — the owner's
   300–400. Sources not used: Little Steps' breakfast, kids-eat-free, vegetarian and airport guides (last updated 2023–2024).
+- **Round 8**: +31 from more of Little Steps Asia's current guides — budget lunches in Central (Sept 2026: NOOD Food, Tommy Yummy, Priyo
+  Shaad, One Dim Sum, The Monogamous Chinese under the escalator, Central Market…), kids' menus and unique family meals (Tung Po Kitchen,
+  Nadaman, Aqua), frozen yoghurt (Myka, Law of Yogurt, Yo Mama, Smile, Noon, Drool…), teppanyaki (Benkei, Teppanroom, Matsubishi, IM
+  Teppanyaki) and Sai Kung (Dec 2025: Sing Kee Seafood, Jaspas, Thai Dao, Zeugma, Honeymoon Dessert, Camden Town…). Google Maps only.
+  Nine places in these guides are closed on Maps (Walt's Café temporarily; Yoajung, More Yogurt, Cali-Mex and five in Sai Kung for good).
+  Hong Kong now holds 350.
