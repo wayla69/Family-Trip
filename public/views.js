@@ -3431,7 +3431,11 @@ function bedEats(t, i, fbox) {
   const slot = `<section class="cbox bedslot" data-k="${esc(key)}" hidden><h3 class="ch"></h3></section>`;   // filled in place once the list arrives
   if (!eatBed.list) return slot;
   const own = new Set([...(pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]), ...(pl.food || []).flatMap((f) => f.items.map((x) => x.name))].filter(Boolean).map((n) => String(n).toLowerCase()));
-  const list = (eatBed.list || []).filter((x) => !own.has(String(x.name).toLowerCase()) && x.st !== 'closed' && famRank(x) >= 0).map((x, k) => [x, k]).sort((a, b) => famRank(b[0]) - famRank(a[0]) || tasteFitEat(b[0]) - tasteFitEat(a[0]) || a[1] - b[1]).map((p) => p[0]);   // the places we loved first, the ones we would not go back to left out
+  // a big town (Hong Kong holds some 400 places): the ones in the district tonight's address names come first — the row's area
+  // before its brackets ("Ma Wan (Park Island)" → "ma wan"), matched as text inside the stay's address
+  const stTxt = `${(pl.stay && pl.stay.addr) || ''} ${(pl.stay && pl.stay.q) || ''}`.toLowerCase();
+  const near = (x) => { const d = String((x.area && x.area.en) || '').split(/[(,·]/)[0].trim().toLowerCase(); return d.length >= 4 && stTxt.includes(d) ? 1 : 0; };
+  const list = (eatBed.list || []).filter((x) => !own.has(String(x.name).toLowerCase()) && x.st !== 'closed' && famRank(x) >= 0).map((x, k) => [x, k]).sort((a, b) => famRank(b[0]) - famRank(a[0]) || near(b[0]) - near(a[0]) || tasteFitEat(b[0]) - tasteFitEat(a[0]) || a[1] - b[1]).map((p) => p[0]);   // the places we loved first, then the bed's own district, the ones we would not go back to left out
   if (!list.length || !eatBed.town) return '';
   // on the day itself, the kind that fits the hour leads (E5, "กินอะไรดี"): cafés for breakfast and the afternoon, quick places and
   // restaurants at lunch, restaurants for dinner — in the town's own time
@@ -3446,7 +3450,7 @@ const eatSt = (x) => (x.st === 'closed' ? `<span class="etag st-closed">${L('ป
 // one place as the book's own card (views.js viewEat): name + pin + kind of food, where, a line about it, price / hours, directions
 const eatLibCard = (g, x, del) => `<li class="eatc${tasteFitEat(x) > 0 ? ' fit' : ''}" data-s="${esc(eatText(g, x))}" data-k="${x.kind}" data-p="0" data-t="${placeTags(x).join(' ')}"${eatShow(g, x) && eatTagOk(placeTags(x)) ? '' : ' hidden'}>
 <div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${eatSt(x)}${famStar(x)}${fitBadge(x)}</div>
-${x.zh || x.where ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(T(x.where))}</span>` : ''}</div>` : ''}
+${x.zh || x.where || areaSub(x) ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(T(x.where))}</span>` : areaSub(x) ? `<span>${esc(areaSub(x))}</span>` : ''}</div>` : ''}
 ${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}${kidTagChips(x)}
 <div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>${prThb(x)}` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div>
 <div class="elsrc"><small>${eatSrc(x)}</small>${del ? `<button type="button" class="mini" data-a="eatlibdel" data-v="${esc(x.id)}">${L('เอาออก', 'Take out')}</button>` : ''}</div></li>`;
@@ -3678,7 +3682,10 @@ ${groups.map(([name, list], k) => `<section class="elgrp" style="--g1:${snapPal(
   if (!tk) return `${head}${el.towns === 'loading' ? `<p class="label">${L('กำลังเปิดคลัง…', 'Opening the library…')}</p>` : towns.length ? `<div class="part pickh">${L(`${towns.length} เมือง · ${total.toLocaleString()} ร้าน — แตะเมืองเพื่อดู`, `${towns.length} towns · ${total.toLocaleString()} places — tap a town`)}</div>${chips}` : emptyCard(null, L('คลังยังว่าง', 'The library is empty'), L('ร้านจากเล่มของเราจะมาอยู่ที่นี่เอง', 'The places from our books will appear here by themselves'))}${wait}${err}${addCard}`;
   const places = el.places || [], kinds = [L('ร้านอาหาร', 'Restaurants'), L('ศูนย์อาหารและของกินเร็ว', 'Food courts & quick bites'), L('คาเฟ่ ขนม ของหวาน', 'Cafés & sweets')];
   // a town's places under the areas its book (or the helper) put them in, in the order they came
-  const areas = []; for (const x of places) { const k = T(x.area) || ''; let g = areas.find((a) => a.k === k); if (!g) areas.push(g = { k, area: x.area, items: [] }); g.items.push(x); }
+  // grouped by the district before any brackets ("Central (IFC Mall)" → Central), so a big town (Hong Kong, ~400 places) reads as districts;
+  // the bracket part shows on the card (eatLibCard)
+  const areaHead = (v) => (v ? { th: String(v.th || '').split(' (')[0], en: String(v.en || '').split(' (')[0] } : v);
+  const areas = []; for (const x of places) { const k = T(areaHead(x.area)) || ''; let g = areas.find((a) => a.k === k); if (!g) areas.push(g = { k, area: areaHead(x.area), items: [] }); g.items.push(x); }
   const shown = places.filter((x) => eatShow({ area: x.area }, x) && eatTagOk(placeTags(x))).length;
   for (const g of areas) g.items = g.items.map((x, k) => [x, k]).sort((a, b) => tasteFitEat(b[0]) - tasteFitEat(a[0]) || a[1] - b[1]).map((p) => p[0]);   // our style first, the styles we avoid last
   return `${bare ? '' : head + chips}
@@ -3797,7 +3804,9 @@ function eatData(t) {
   return { kinds: [], groups };
 }
 const eatCount = (t) => eatData(t).groups.reduce((n, g) => n + g.items.length, 0);
-const eatText = (g, x) => [x.name, x.zh, x.where, T(x.tag), (x.tag || {}).en, (x.tag || {}).th, T(x.what), T(x.why), T(x.note), T(g.area)].filter(Boolean).join(' ').toLowerCase();
+// the part of a library row's area inside brackets ("Central (IFC Mall)" → IFC Mall), shown on its card under the district's heading
+const areaSub = (x) => { const m = /\(([^)]+)\)/.exec(T(x.area) || ''); return m ? m[1] : ''; };
+const eatText = (g, x) => [x.name, x.zh, x.where, T(x.tag), (x.tag || {}).en, (x.tag || {}).th, T(x.what), T(x.why), T(x.note), T(g.area), T(x.area)].filter(Boolean).join(' ').toLowerCase();
 const eatKindOf = (g, x) => (x.kind !== undefined ? x.kind : g.kind);   // AU: kind per area · HK: kind per place
 const eatShow = (g, x) => (eatKind < 0 || eatKindOf(g, x) === eatKind) && (!eatPick || (x.pick || []).length) && (!eatQ || eatText(g, x).includes(eatQ.toLowerCase()) || !!fzFind(eatText(g, x), eatQ));
 // Eat, one day at a time: each meal's pick + backup, then what else fits that meal nearby, then every place near the day's route and bed.
