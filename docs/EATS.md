@@ -1017,3 +1017,8 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Factory, Lau Sum Kee, Yue Kee, Tai Wing Wah…), the street-food stalls and sweet shops (Hop Yik Tai, Man Kee Cart Noodles, Mrs. Fong,
   Hung Hom Pancake, So Kee, Owl's…) and the island's casual picks (Luk Yu Tea House, Ho Lee Fook, Kam's Roast Goose…). Each checked on
   Google Maps; Temple Street Beef Offal left out (another name at its address). Hong Kong now holds 165.
+- **Round 5**: +62. The MICHELIN Guide 2026's other Hong Kong picks that take an à la carte order (Lung King Heen, Man Wah, T'ang Court,
+  Spring Moon, Chesa, Yè Shanghai, Jardin de Jade, Liu Yuan Pavilion, Kam's Roast Goose, Yardbird…), and four from the family list
+  (Little Mario's on Ma Wan, One-ThirtyOne, Lantana, Oolaa Central). The owner then asked (27 Nov 2026): "Use Google Maps only, skip
+  OpenRice" — from this round every place is checked on Google Maps alone, and the proof says so. Hansik Goo left out (newest review 8 months
+  ago). Hong Kong now holds 227.
