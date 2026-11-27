@@ -991,3 +991,17 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Chongqing, round 41**: +3 from Amap place pages (Jiefangbei). Proof in `docs/library-proof/cn-chongqing.json`.
 
 - **27 Nov 2026, Chengdu, round 43**: +2 from Amap place pages (Wuhou). Proof in `docs/library-proof/cn-chengdu.json`.
+
+### Hong Kong towards 300–400 places, 27 Nov 2026
+Owner: "ฮ่องกงมีร้านอาหารเยอะมาก อยากให้มีร้านอาหารแนว hidden gem และ local guide ด้วย ควรมีประมาณ 300-400 ร้าน" and "พอเสร็จแล้วเช็คกับ
+google map และ open rice อีกที". Hong Kong may now hold up to 420 places (`MAX_TOWN` in `scripts/eats-lint.mjs`; every other town stays at
+80). In the app the town page groups a town's places by the district before any brackets ("Central (IFC Mall)" → Central) and shows the
+bracket part on the card, and "near tonight's bed" puts the places in the district the stay's address names first. Each place is read from a
+dated page in the owner's Chrome (Little Steps Asia's family list updated 15 Oct 2026, the MICHELIN Guide's 2026 Hong Kong selection), then
+checked on Google Maps (not marked closed, a review in the last six months, the same name) and on OpenRice (listed, not Closed Down or
+Relocated); a price is OpenRice's band per person where it showed one. Proof in `docs/library-proof/hk-hongkong.json` (round 2 on).
+- **Round 2**: +19 (Falcone IFC, Pecorino, The Grill at Grand Hyatt, One Small Step, Origami Kids Cafe, Fiata, Mr Wolf, Shiro Pacific
+  Place, Madame Fù, Rajasthan Rifles, BaseHall, Burger Circus, Zuma, Pondside, The Cheesecake Factory, Hutong, Dockyard, Kau Kee, Tsim Chai
+  Kee). Six places on the 2026 family list are marked permanently closed on Maps (Chiikawa Ramen Buta, Mr. Tree, Baked at The Pulse, Turtle
+  by the Sea, Cafe Roma, Groundswell) and were left out with the rest named in the proof. OpenRice shows a slide puzzle after a run of
+  searches, so the next rounds go a few dozen places at a time.
