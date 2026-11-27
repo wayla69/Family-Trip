@@ -297,6 +297,170 @@
           },
           "q": "หาดแหลมแม่พิมพ์, แกลง, ระยอง",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Sri Mueang Park, Rayong",
+            "th": "สวนศรีเมือง"
+          },
+          "local": "สวนศรีเมือง",
+          "kind": "park",
+          "area": {
+            "en": "Taksin Maharat Road, Tha Pradu, Mueang Rayong",
+            "th": "ถนนตากสินมหาราช ท่าประดู่ เมืองระยอง"
+          },
+          "what": {
+            "en": "A central city park with a pond, a running track, an activity lawn and a children’s playground",
+            "th": "สวนสาธารณะกลางเมือง มีสระน้ำ ลู่วิ่ง ลานกิจกรรม และสนามเด็กเล่น"
+          },
+          "why": {
+            "en": "A playground for little ones in the same park as the pond and the track",
+            "th": "มีสนามเด็กเล่นสำหรับเด็กเล็กในสวนเดียวกับสระน้ำและลู่วิ่ง"
+          },
+          "tip": {
+            "en": "Open every day 05:00–21:00; coffee shops and a small market are nearby",
+            "th": "เปิดทุกวัน 05:00–21:00 ใกล้ๆ มีร้านกาแฟและตลาดเล็กๆ"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sri Mueang Park, Taksin Maharat Road, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": {
+            "en": "Rayong City Museum",
+            "th": "พิพิธภัณฑ์เมืองระยอง"
+          },
+          "local": "พิพิธภัณฑ์เมืองระยอง",
+          "kind": "museum",
+          "area": {
+            "en": "Yom Chinda Road, Tha Pradu, Mueang Rayong",
+            "th": "ถนนยมจินดา ท่าประดู่ เมืองระยอง"
+          },
+          "what": {
+            "en": "An old building on Yom Chinda Road telling the story of the town, from its founding and fishing to the time of King Taksin",
+            "th": "อาคารเก่าบนถนนยมจินดา เล่าเรื่องเมืองตั้งแต่การก่อตั้ง การประมง ไปจนถึงสมัยพระเจ้าตากสิน"
+          },
+          "why": {
+            "en": "A small hall with old photos and models, short enough for a rainy morning",
+            "th": "ห้องจัดแสดงเล็กๆ มีภาพเก่าและโมเดล ใช้เวลาไม่นาน เหมาะกับเช้าวันฝนตก"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 09:00–16:00, closed Mondays",
+            "th": "เปิดวันอังคารถึงอาทิตย์ 09:00–16:00 ปิดวันจันทร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Rayong City Museum, Yom Chinda Road, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": {
+            "en": "Suan Son Beach, Klaeng",
+            "th": "หาดสวนสน"
+          },
+          "local": "หาดสวนสน",
+          "kind": "beach",
+          "area": {
+            "en": "Klaeng, Rayong",
+            "th": "แกลง ระยอง"
+          },
+          "what": {
+            "en": "A beach named after the sea pines planted along it, with shade all day for a mat on the sand",
+            "th": "หาดที่ตั้งชื่อตามสนทะเลที่ปลูกเรียงริมหาด ร่มเงาตลอดวัน ปูเสื่อนั่งบนทรายได้"
+          },
+          "why": {
+            "en": "The waves are gentle and the shallow water runs out a long way, so families bring children to paddle",
+            "th": "คลื่นเบา น้ำตื้นไกลออกไป ครอบครัวพาเด็กมาเล่นน้ำ"
+          },
+          "tip": {
+            "en": "Open at all times; there is a car park and restaurants on the same stretch",
+            "th": "เปิดตลอดเวลา มีที่จอดรถและร้านอาหารริมหาด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Suan Son Beach, Klaeng, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": {
+            "en": "Yom Chinda Road old town",
+            "th": "ถนนยมจินดา"
+          },
+          "local": "ถนนยมจินดา",
+          "kind": "oldtown",
+          "area": {
+            "en": "Old town by the Rayong river",
+            "th": "ย่านเมืองเก่าริมแม่น้ำระยอง"
+          },
+          "what": {
+            "en": "An old-town street by the Rayong river with wooden shophouses and colonial buildings, each with a sign on its history",
+            "th": "ถนนเมืองเก่าริมแม่น้ำระยอง มีเรือนไม้และอาคารสไตล์โคโลเนียล แต่ละหลังมีป้ายเล่าประวัติ"
+          },
+          "why": {
+            "en": "An easy walk with old buildings to look at, and cafés and small collector shops in the old houses",
+            "th": "เดินสบาย มีอาคารเก่าให้ชม และคาเฟ่กับร้านของสะสมเล็กๆ ในบ้านเก่า"
+          },
+          "tip": {
+            "en": "On Saturday and Sunday evenings it becomes a walking street; if you drive, park at Sri Mueang Park and walk in",
+            "th": "เย็นวันเสาร์และอาทิตย์เป็นถนนคนเดิน ถ้าขับรถให้จอดที่สวนศรีเมืองแล้วเดินเข้าไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yom Chinda Road, Tha Pradu, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
         }
       ]
     }
