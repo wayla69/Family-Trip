@@ -1,27 +1,246 @@
 {
   "town": "hk-hongkong",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 3 rows from Cathay Pacific and family pages (2026) passed library-check.cjs, 1 went in; no thing to do passed",
-  "added": [
+  "rounds": [
     {
-      "name": "Smoke & Barrel",
-      "page_name": "Smoke & Barrel",
-      "src": "https://www.cathaypacific.com/cx/en_GB/inspiration/dining/best-child-friendly-restaurants-hong-kong.html",
-      "date": "2026-06",
-      "map": "Google Maps 443 reviews, newest shown '1 day ago'; the map's address (2/F, Wyndham Mansion, 32 Wyndham St) matches the page — the move noted in docs/EATS.md is now confirmed"
-    }
-  ],
-  "left_out": [
-    {
-      "name": "Transformers: The Ark",
-      "why": "closed in Hong Kong, Feb 2025 (docs/EATS.md)"
+      "town": "hk-hongkong",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Cathay Pacific and family pages (2026) passed library-check.cjs, 1 went in; no thing to do passed",
+      "added": [
+        {
+          "name": "Smoke & Barrel",
+          "page_name": "Smoke & Barrel",
+          "src": "https://www.cathaypacific.com/cx/en_GB/inspiration/dining/best-child-friendly-restaurants-hong-kong.html",
+          "date": "2026-06",
+          "map": "Google Maps 443 reviews, newest shown '1 day ago'; the map's address (2/F, Wyndham Mansion, 32 Wyndham St) matches the page — the move noted in docs/EATS.md is now confirmed"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Transformers: The Ark",
+          "why": "closed in Hong Kong, Feb 2025 (docs/EATS.md)"
+        },
+        {
+          "name": "Baumhaus",
+          "why": "the map marks it permanently closed"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     },
     {
-      "name": "Baumhaus",
-      "why": "the map marks it permanently closed"
+      "town": "hk-hongkong",
+      "kind": "eats",
+      "title": "Round 2: Little Steps Asia's 2026 family list and Michelin, first 19 checked on both",
+      "checked": "2026-11-27",
+      "rule": "Owner, 27 Nov 2026: every place from a dated 2025–2026 page read in the owner's Chrome, then Google Maps (not marked permanently or temporarily closed, a review from the last six months, the map's name matching the page's) and OpenRice (listed, not Closed Down or Relocated). A price is OpenRice's band per person where it showed one.",
+      "added": [
+        {
+          "name": "Falcone IFC",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"FALCONE IFC\": 583 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "listed as \"Falcone\", Shop 1082, 1/F, ifc mall, 8 Finance Street, $201-400; not Closed Down or Relocated"
+        },
+        {
+          "name": "Pecorino",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"PECORINO\": 1,253 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "listed as \"PECORINO\", Shop 2, G/F, Mandarin Building, 35-45B Bonham Strand, $101-200; not Closed Down or Relocated"
+        },
+        {
+          "name": "The Grill at Grand Hyatt",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"The Grill at Grand Hyatt Hong Kong\": 93 reviews, newest seen 2 months ago, not marked closed",
+          "openrice": "listed as \"The Grill\", 11/F, Grand Hyatt Hong Kong, 1 Harbour Road, $401-800; not Closed Down or Relocated"
+        },
+        {
+          "name": "One Small Step",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"One Small Step Family Cafe\": 147 reviews, newest seen a month ago, not marked closed",
+          "openrice": "listed as \"One Small Step\", Shop 612, 6/F, Hopewell Hotel．Mall, 183 Queen's Road East, $201-400; not Closed Down or Relocated"
+        },
+        {
+          "name": "Origami Kids Cafe",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Origami Kids Cafe\": 609 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "listed as \"Origami Kids Cafe\", Shop N305, Rooftop, North End, Zone B, Kai Tak Cruise Terminal, $101-200; not Closed Down or Relocated"
+        },
+        {
+          "name": "Fiata",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Fiata Pizza\": 1,104 reviews, newest seen a week ago, not marked closed",
+          "openrice": "listed as \"Fiata Pizza\", G/F, 2 Staunton Street, Soho, $101-200; not Closed Down or Relocated"
+        },
+        {
+          "name": "Mr Wolf",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Mr Wolf\": 1,127 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "listed as \"Mr Wolf\", 5/F, Crawford House, 70 Queen's Road Central, $201-400; not Closed Down or Relocated"
+        },
+        {
+          "name": "Shiro Pacific Place",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Shiro Pacific Place\": 330 reviews, newest seen a week ago, not marked closed",
+          "openrice": "listed as \"Shiro (Pacific Place)\", Shop 132, L1/F, Pacific Place, 88 Queensway, $201-400; not Closed Down or Relocated"
+        },
+        {
+          "name": "Madame Fù",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Madame Fu-Grand Cafe Chinois\": 653 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "listed as \"Madame Fu-Grand Cafe Chinois\", 3/F, Barrack Block, Tai Kwun, 10 Hollywood Road, $401-800; not Closed Down or Relocated"
+        },
+        {
+          "name": "Rajasthan Rifles",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Rajasthan Rifles\": 1,506 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "listed as \"Rajasthan Rifles\", Shop G01, G/F, Peak Galleria, 118 Peak Road, $201-400; not Closed Down or Relocated"
+        },
+        {
+          "name": "BaseHall",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"BaseHall\": 452 reviews, newest seen 18 days ago, not marked closed",
+          "openrice": "listed as \"BaseHall 01\", Shop LG9, LG/F, Jardine House, 1 Connaught Place, $101-200; not Closed Down or Relocated"
+        },
+        {
+          "name": "Burger Circus",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Burger Circus\": 1,234 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "listed as \"Burger Circus\", G/F, 22 Hollywood Road, Soho, $101-200; not Closed Down or Relocated"
+        },
+        {
+          "name": "Zuma",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Zuma Hong Kong\": 1,278 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "listed as \"Zuma Hong Kong\", 5/F & 6/F, Landmark Atrium, 15 Queen's Road Central, Above $801; not Closed Down or Relocated"
+        },
+        {
+          "name": "Pondside",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Pondside\": 426 reviews, newest seen 10 days ago, not marked closed",
+          "openrice": "listed as \"Pondside\", Hong Kong Park, 10 Cotton Tree Drive, $201-400; not Closed Down or Relocated"
+        },
+        {
+          "name": "The Cheesecake Factory",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"The Cheesecake Factory\": 3,524 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "listed as \"The Cheesecake Factory\", Shop G102, G/F, Gateway Arcade, Harbour City, $101-200; not Closed Down or Relocated"
+        },
+        {
+          "name": "Hutong",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Hutong\": 1,484 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "listed as \"Hutong\", 18/F, H Zentre, 15 Middle Road, $401-800; not Closed Down or Relocated"
+        },
+        {
+          "name": "Dockyard",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/top-kid-friendly-restaurants-in-hong-kong/",
+          "date": "updated 2026-10-15",
+          "map": "Google Maps \"Dockyard\": 800 reviews, newest seen 7 days ago, not marked closed",
+          "openrice": "listed as \"Dockyard\", 1/F, Kerry Hotel Hong Kong, 38 Hung Luen Road, $51-100; not Closed Down or Relocated"
+        },
+        {
+          "name": "Kau Kee",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/kau-kee",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Kau Kee\": 4,778 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "listed as \"Kau Kee Restaurant\", G/F, 21 Gough Street, $51-100; not Closed Down or Relocated"
+        },
+        {
+          "name": "Tsim Chai Kee",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/tsim-chai-kee-wellington-street",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Tsim Chai Kee Noodle\": 4,435 reviews, newest seen a day ago, not marked closed",
+          "openrice": "listed as \"Tsim Chai Kee Noodle (Wellington Street)\", Shop B, G/F, Jade Centre, 98 Wellington Street; not Closed Down or Relocated"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Chiikawa Ramen Buta",
+          "from": "Little Steps Asia 2026 list",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Mr. Tree (Lai Chi Kok)",
+          "from": "Little Steps Asia 2026 list",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Baked (The Pulse)",
+          "from": "Little Steps Asia 2026 list",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Turtle By The Sea (Sai Kung)",
+          "from": "Little Steps Asia 2026 list",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Cafe Roma (Ma Wan)",
+          "from": "Little Steps Asia 2026 list",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Groundswell (AIRSIDE)",
+          "from": "Little Steps Asia 2026 list",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Bowlbie (Kai Tak)",
+          "from": "Little Steps Asia 2026 list",
+          "why": "5 reviews on Google Maps, the newest a year ago"
+        },
+        {
+          "name": "Dan Ryan's",
+          "from": "Little Steps Asia 2026 list",
+          "why": "the page names four branches; a chain, no one branch checked"
+        },
+        {
+          "name": "Motorino, The Pizza Project, Alfresco Lane, Aqualuna, Feather & Bone, Elephant Grounds, Ruby Tuesday, Pici, Shake Shack, Frites, Genki Sushi, Dough Bros",
+          "from": "Little Steps Asia 2026 list",
+          "why": "no single branch named, or a boat trip rather than a restaurant"
+        },
+        {
+          "name": "Garden Lounge (The Murray)",
+          "from": "brief",
+          "why": "not on the Little Steps page as read on 27 Nov 2026; waits for a source"
+        },
+        {
+          "name": "Chiu Ka Banquet",
+          "from": "MICHELIN Guide 2026 Bib Gourmand",
+          "why": "newest Google Maps review 10 months ago"
+        },
+        {
+          "name": "Prof Chan's (Western District)",
+          "from": "MICHELIN Guide 2026 Bib Gourmand",
+          "why": "Google Maps shows Café Hunan at 420–424 Queen's Road West; the names differ"
+        },
+        {
+          "name": "Eng Kee Noodle Shop",
+          "from": "MICHELIN Guide 2026 Bib Gourmand",
+          "why": "Google Maps shows Ying Kee Noodle at 28 High Street, not 32; the names differ"
+        },
+        {
+          "name": "Sang Kee Foods (Western District)",
+          "from": "MICHELIN Guide 2026 Bib Gourmand",
+          "why": "not found on Google Maps (the address is Kwan Kee Claypot Rice's)"
+        }
+      ]
     }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }
