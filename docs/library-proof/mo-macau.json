@@ -1947,6 +1947,47 @@
           "why": "neighbourhood parks far from where visitors stay"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "The Municipal Affairs Bureau's (IAM) own Nature pages (education facilities, leisure areas), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Pavilion of Animal Specimens in Macao",
+          "src": "https://www.iam.gov.mo/nature/e/facility/educational/detail?id=782e4458-216c-4cac-b1f8-4575b51e8bea&type=educational",
+          "map": "Google Maps: 澳門動物標本展示館, open, a review 5 days ago"
+        },
+        {
+          "name": "Wetland science zone, Avenida da Praia (Taipa)",
+          "src": "https://www.iam.gov.mo/nature/e/facility/educational/detail?id=13e2bbed-a023-4d3d-9598-07e4177f820f&type=educational",
+          "map": "Google Maps: Wetland in Avenida da Praia, Taipa, a review 3 days ago"
+        },
+        {
+          "name": "Sai Van Lake leisure area",
+          "src": "https://www.iam.gov.mo/nature/e/facility/rest/detail?id=52d400df-7154-4df9-860a-1dbf9bb6f6af&type=rest",
+          "map": "Google Maps: Sai Van Lake, a review 2 months ago"
+        },
+        {
+          "name": "South Shore Waterfront Green Promenade",
+          "src": "https://www.iam.gov.mo/nature/e/facility/rest/detail?id=f1d54981-0ec0-4e40-a404-c66963afd07c&type=rest",
+          "map": "Google Maps: open, a review 4 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pavilion of Amphibians and Reptiles",
+          "why": "no Google Maps listing of its own (inside Seac Pai Van Park)"
+        },
+        {
+          "name": "Garden of Exotic Plants and Garden of Medicinal Plants",
+          "why": "inside Seac Pai Van Park, already in the library"
+        },
+        {
+          "name": "Hac Sá Beach Campsite",
+          "why": "the IAM marks it temporarily closed"
+        }
+      ]
     }
   ]
 }

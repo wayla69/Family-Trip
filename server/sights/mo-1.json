@@ -3714,6 +3714,170 @@
           "book": "none",
           "q": "Leisure Area on Taipa Waterfront, Macau",
           "src": "https://www.iam.gov.mo/nature/e/facility/trail/detail?id=0cde451c-3225-4ba3-ab39-8ac564025ed8&type=trails"
+        },
+        {
+          "local": "澳門動物標本展示館",
+          "ok": "2026-11",
+          "name": {
+            "th": "หอแสดงตัวอย่างสัตว์มาเก๊า",
+            "en": "Pavilion of Animal Specimens in Macao"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โคโลอาน ถนนกอร์โดอาเรีย",
+            "en": "Coloane, Rua da Cordoaria"
+          },
+          "what": {
+            "th": "หอแรกที่แสดงสัตว์ของมาเก๊าเอง แปดห้องเล็ก ๆ จัดตัวอย่างสัตว์บนเนินเขา พื้นที่ชุ่มน้ำ สัตว์เลื้อยคลาน และสัตว์หายาก",
+            "en": "Macau's first pavilion of the city's own animals: eight small rooms of specimens on hills, wetlands, reptiles and rare animals"
+          },
+          "why": {
+            "th": "แวะในร่มเย็น ๆ ฟรี สำหรับเด็กที่ชอบสัตว์",
+            "en": "A free, cool indoor stop for animal-loving children"
+          },
+          "tip": {
+            "th": "เปิดอังคาร–อาทิตย์ 10:00–17:30 ปิดวันจันทร์",
+            "en": "Open Tuesday–Sunday 10:00–17:30; closed on Mondays"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "澳門動物標本展示館, Rua da Cordoaria, Coloane, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/educational/detail?id=782e4458-216c-4cac-b1f8-4575b51e8bea&type=educational"
+        },
+        {
+          "local": "氹仔海邊馬路濕地科普區",
+          "ok": "2026-11",
+          "name": {
+            "th": "โซนเรียนรู้พื้นที่ชุ่มน้ำ ไทปา",
+            "en": "Wetland science zone, Avenida da Praia (Taipa)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไทปา ถนนปรายา ใกล้สระว่ายน้ำการ์โม",
+            "en": "Taipa, Avenida da Praia, near the Carmo pools"
+          },
+          "what": {
+            "th": "มุมธรรมชาติกลางแจ้งริมพื้นที่ชุ่มน้ำไทปา มีโรงแรมแมลงและป้ายเรื่องนกและพืช",
+            "en": "An outdoor nature corner on the Taipa wetland, with insect hotels and signs about the birds and plants"
+          },
+          "why": {
+            "th": "ตามหาแมลงและนก ห่างบ้านไทปาไม่กี่ก้าว",
+            "en": "Bugs and birds to spot, a few steps from the Taipa Houses"
+          },
+          "tip": {
+            "th": "เปิดทั้งวัน",
+            "en": "Open all day"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Wetland in Avenida da Praia, Taipa, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/educational/detail?id=13e2bbed-a023-4d3d-9598-07e4177f820f&type=educational"
+        },
+        {
+          "local": "西灣湖休憩區",
+          "ok": "2026-11",
+          "name": {
+            "th": "ลานพักผ่อนทะเลสาบไซวาน",
+            "en": "Sai Van Lake leisure area"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนพาโนรามิกาทะเลสาบไซวาน คาบสมุทรมาเก๊า",
+            "en": "Avenida Panorâmica do Lago Sai Van, Macau Peninsula"
+          },
+          "what": {
+            "th": "ทางเดินเขียวริมทะเลสาบ วิวเนินเปนยา เชื่อมด้วยสะพานคนเดิน ระหว่างทางเดินไปมาเก๊าทาวเวอร์",
+            "en": "Green lakeside paths with views of Penha Hill, linked by a footbridge, on the walk towards Macau Tower"
+          },
+          "why": {
+            "th": "ทางเดินราบ ลมเย็น เข็นรถเข็นได้ ระหว่างทางไปมาเก๊าทาวเวอร์",
+            "en": "A flat, breezy walk with a pram on the way to Macau Tower"
+          },
+          "tip": {
+            "th": "เปิดทั้งวัน",
+            "en": "Open all day"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Sai Van Lake, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/rest/detail?id=52d400df-7154-4df9-860a-1dbf9bb6f6af&type=rest"
+        },
+        {
+          "local": "南岸綠色長廊",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินริมน้ำสีเขียวฝั่งใต้",
+            "en": "South Shore Waterfront Green Promenade"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริมน้ำไซวาน ระหว่างสะพานโนเบรเดการ์วัลโญกับมาเก๊าทาวเวอร์ คาบสมุทรมาเก๊า",
+            "en": "Sai Van waterfront, between the Nobre de Carvalho Bridge and Macau Tower, Macau Peninsula"
+          },
+          "what": {
+            "th": "ทางเดินริมทะเลใหม่ 60,000 ตร.ม. ออกแบบเพื่อครอบครัว มีทางไม้ริมน้ำ ทางจักรยาน สนามกีฬาฟรี และสวน",
+            "en": "A new 60,000 m² seafront promenade built around family play: a boardwalk, a cycle track, free sports courts and gardens"
+          },
+          "why": {
+            "th": "มีที่ให้วิ่งและปั่นริมทะเล บางช่วงเปิดพฤศจิกายน 2025 และเมษายน 2026",
+            "en": "Room to run and ride by the sea; parts opened in November 2025 and April 2026"
+          },
+          "tip": {
+            "th": "เปิดทั้งวัน บางช่วงยังก่อสร้างอยู่",
+            "en": "Open all day; some sections are still being built"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "South Shore Waterfront Green Promenade, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/rest/detail?id=f1d54981-0ec0-4e40-a404-c66963afd07c&type=rest"
         }
       ]
     }
