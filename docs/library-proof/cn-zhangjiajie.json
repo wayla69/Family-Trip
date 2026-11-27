@@ -312,6 +312,61 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights in Yongding and Cili, Zhangjiajie; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Zhangjiajie Ice and Snow World (Cili)",
+          "page_name": "张家界冰雪世界",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%86%B0%E9%9B%AA%E4%B8%96%E7%95%8C&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-29",
+          "map": "Amap: open, not marked closed, newest review 2026-10-29",
+          "quote": "亲子友好 · 还有一个儿童热身道 · 从宝宝场到标准场"
+        },
+        {
+          "name": "Cili Difeng Gorge",
+          "page_name": "张家界慈利地缝景区",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E6%85%88%E5%88%A9%E5%9C%B0%E7%BC%9D%E6%99%AF%E5%8C%BA&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-06",
+          "map": "Amap: open, not marked closed, newest review 2026-11-06",
+          "quote": "亲子户外 · 老人小朋友可能要带件薄外套 · 路上有小溪可以玩水 · 带孩子来的体验感拉满"
+        },
+        {
+          "name": "Longfeng Park (Cili)",
+          "page_name": "慈利龙峰公园",
+          "src": "https://www.amap.com/search?query=%E6%85%88%E5%88%A9%E9%BE%99%E5%B3%B0%E5%85%AC%E5%9B%AD&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-27",
+          "map": "Amap: open, not marked closed, newest review 2026-10-27",
+          "quote": "亲子户外 · 可以周末带着小朋友来玩 · 包括儿童乐园和丛林穿越"
+        },
+        {
+          "name": "Dayong Bridge Park",
+          "page_name": "大庸桥公园",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%BA%B8%E6%A1%A5%E5%85%AC%E5%9B%AD&city=430800",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-28",
+          "map": "Amap: open, not marked closed, newest review 2026-09-28",
+          "quote": "亲子户外 · 亲子友好 · 还有儿童游乐区 · 整体很适合本地人遛娃"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "奇幻大庸城",
+          "why": "may be the same old town as 大庸府城, already in the list"
+        },
+        {
+          "name": "慈利青源农庄",
+          "why": "a place to stay, not a thing to do"
+        },
+        {
+          "name": "张家界紫薇花田亲子农场",
+          "why": "three reviews only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
