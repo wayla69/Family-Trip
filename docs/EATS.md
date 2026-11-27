@@ -1057,3 +1057,12 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Moon, Petrus) and Hay Market at Sha Tin Racecourse. Google Maps only. Left out: Pak Loh (newest review a year old), Auntie ĀYI and
   Genso/Keiba (no matching place), Sushi Saito (the map's address did not match), a cruise and a show, two chains. Hong Kong now holds
   400.
+
+### Macau towards 200 places, 27 Nov 2026
+The owner raised Macau's limit from 100 to 200 ("Raise to 200"). Rows come from dated pages read in the owner's Chrome and are checked
+on Google Maps only (not closed, a review in the last six months, the name matching); OpenRice is skipped at the owner's request.
+- **Round 1**: +47 from the MICHELIN Guide Hong Kong Macau 2026 — every Macau restaurant of the selection not yet in the list: old-town
+  noodle, congee, rice-roll and dessert shops (Lok Kei, Ngao Kei Ka Lei Chon, Lun Kee, Ving Kei, Yi Shun, Kika), Taipa (Manuel, O Castiço,
+  Litoral, Kapok, Unique, Fong Kei, Mok Yee Kei), the UTM training restaurant's Macanese menu, and the resorts' Cantonese, Japanese and
+  European rooms. Left out: The Kitchen, 002 Mohinga, Ng Teng Kei, Chan Seng Kei and Mizumi (no recent review), Don Alfonso 1890 (Maps
+  shows another name). Macau now holds 147. Proof in `docs/library-proof/mo-macau.json`.
