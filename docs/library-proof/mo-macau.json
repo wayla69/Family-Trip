@@ -944,6 +944,82 @@
           "why": "Google Maps shows \"Casa Don Alfonso\", a different name; left out until it can be told apart"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The resort's own page (what it is, hours, ages, prices), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months; a show or ride with no listing of its own is checked through its resort's listing.",
+      "added": [
+        {
+          "name": "Nickelodeon Town (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/attractions/nickelodeon-town",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Legend Heroes Park (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/attractions/legend-heroes-park",
+          "map": "Google Maps: open, newest review 2 months ago"
+        },
+        {
+          "name": "Studio City Stardust",
+          "src": "https://www.studiocity-macau.com/en/attractions/studio-city-stardust",
+          "map": "Google Maps: inside Studio City (open, thousands of reviews); the ride has no listing of its own"
+        },
+        {
+          "name": "Gondola rides (The Venetian)",
+          "src": "https://www.venetianmacao.com/hotel/amenities/gondola-rides.html",
+          "map": "Google Maps: Outdoor Gondola Ride, open, a review 28 days ago"
+        },
+        {
+          "name": "Laserama (Galaxy)",
+          "src": "https://www.galaxymacau.com/entertainment/laserama/",
+          "map": "Google Maps: at Galaxy Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Diamond Show (Galaxy)",
+          "src": "https://www.galaxymacau.com/entertainment/galaxy-resort-diamond-show/",
+          "map": "Google Maps: at Galaxy Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Crystal Lobby Show (Galaxy)",
+          "src": "https://www.galaxymacau.com/entertainment/crystal-lobby/",
+          "map": "Google Maps: at Galaxy Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Wynn Macau Performance Lake",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment",
+          "map": "Google Maps: at Wynn Macau (open, thousands of reviews); the lake has no listing of its own here"
+        },
+        {
+          "name": "Tree of Prosperity (Wynn Macau)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment",
+          "map": "Google Maps: inside Wynn Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Moon Jelly Aquarium (Wynn Macau)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment",
+          "map": "Google Maps: inside Wynn Macau (open, thousands of reviews); the tank has no listing of its own"
+        },
+        {
+          "name": "Sea Odyssey at The Spectacle (MGM Cotai)",
+          "src": "https://www.mgm.mo/en/entertainment/happening/sea-odyssey",
+          "map": "Google Maps: inside MGM Cotai (open, thousands of reviews); the show has no listing of its own"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Studio City Sk8te Park",
+          "why": "no reviews on Google Maps yet"
+        },
+        {
+          "name": "Galaxy Kidz",
+          "why": "hotel guests only"
+        },
+        {
+          "name": "Galaxy Grand Resort Deck",
+          "why": "closed until March 2027, hotel guests only"
+        }
+      ]
     }
   ]
 }
