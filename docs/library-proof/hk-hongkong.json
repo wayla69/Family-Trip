@@ -2164,6 +2164,279 @@
           "why": "bars and nightlife are left out by the brief"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "eats",
+      "title": "Round 8: Little Steps Asia's budget lunches, kids' menus, unique dining, frozen yoghurt, teppanyaki and Sai Kung guides — Google Maps only, at the owner's request",
+      "checked": "2026-11-27",
+      "rule": "Owner, 27 Nov 2026: every place from a dated 2025–2026 page read in the owner's Chrome, then Google Maps (not marked permanently or temporarily closed, a review from the last six months, the map's name matching the page's) and OpenRice (listed, not Closed Down or Relocated). A price is OpenRice's band per person where it showed one.",
+      "added": [
+        {
+          "name": "NOOD Food",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"nood food\": 213 reviews, newest seen 2 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Tommy Yummy",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"Tommy Yummy\": 225 reviews, newest seen 10 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Priyo Shaad",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"Priyo Shaad\": 252 reviews, newest seen a day ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "One Dim Sum",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"One Dim Sum\": 1,032 reviews, newest seen 2 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Servo",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"SERVO\": 68 reviews, newest seen a day ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Monogamous Chinese",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"The Monogamous Chinese\": 662 reviews, newest seen 19 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Flat Iron Steak",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"Flat Iron Steak (Soho)\": 581 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Central Market",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/budget-lunches-central/",
+          "date": "updated 2026-09-15",
+          "map": "Google Maps \"Central Market\": 9,774 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Tung Po Kitchen",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/unique-experience-family-restaurants/",
+          "date": "updated 2026-08-31",
+          "map": "Google Maps \"Tung Po Kitchen\": 1,946 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Nadaman",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/unique-experience-family-restaurants/",
+          "date": "updated 2026-08-31",
+          "map": "Google Maps \"Nadaman at Island Shangri-La\": 289 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Aqua",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/unique-experience-family-restaurants/",
+          "date": "updated 2026-08-31",
+          "map": "Google Maps \"aqua (H Zentre)\": 2,859 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Myka Greek Frozen Yogurt",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/frozen-yoghurt-spots/",
+          "date": "updated 2026-09-23",
+          "map": "Google Maps \"MYKA Greek Frozen Yogurt\": 161 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Law of Yogurt Sai Kung",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/frozen-yoghurt-spots/",
+          "date": "updated 2026-09-23",
+          "map": "Google Maps \"Law of Yogurt (Sai Kung)\": 240 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Yo Mama Frozen Yogurt IFC",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/frozen-yoghurt-spots/",
+          "date": "updated 2026-09-23",
+          "map": "Google Maps \"Yo Mama Frozen Yogurt (Central)\": 124 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Gulu Greek Yogurt",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/frozen-yoghurt-spots/",
+          "date": "updated 2026-09-23",
+          "map": "Google Maps \"GULU Greek Yogurt\": 34 reviews, newest seen 21 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Smile Yogurt & Dessert Bar",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/frozen-yoghurt-spots/",
+          "date": "updated 2026-09-23",
+          "map": "Google Maps \"Smile Froyo•Cake•Gift (Hysan Place)\": 143 reviews, newest seen a month ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Noon",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/frozen-yoghurt-spots/",
+          "date": "updated 2026-09-23",
+          "map": "Google Maps \"Noon.dfd\": 55 reviews, newest seen 2 weeks ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Drool Froyo",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/frozen-yoghurt-spots/",
+          "date": "updated 2026-09-23",
+          "map": "Google Maps \"Drool Froyo (Central)\": 370 reviews, newest seen 18 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Kaen Izakaya",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/best-teppanyaki-restaurants/",
+          "date": "updated 2026-08-26",
+          "map": "Google Maps \"KAEN Izakaya\": 46 reviews, newest seen a month ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Benkei Okonomiyaki Teppanyaki",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/best-teppanyaki-restaurants/",
+          "date": "updated 2026-08-26",
+          "map": "Google Maps \"BENKEI Okonomiyaki Teppanyaki\": 200 reviews, newest seen 11 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Teppanroom",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/best-teppanyaki-restaurants/",
+          "date": "updated 2026-08-26",
+          "map": "Google Maps \"TEPPANROOM\": 20 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Matsubishi",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/best-teppanyaki-restaurants/",
+          "date": "updated 2026-08-26",
+          "map": "Google Maps \"Matsubishi\": 299 reviews, newest seen 15 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "IM Teppanyaki & Wine",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/best-teppanyaki-restaurants/",
+          "date": "updated 2026-08-26",
+          "map": "Google Maps \"I M Teppanyaki & Wine\": 188 reviews, newest seen 29 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Sing Kee Seafood Sai Kung",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Sing Kee Seafood Restaurant (Sai Kung)\": 1,149 reviews, newest seen 18 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Jaspas Sai Kung",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Jaspas Bar & Grill\": 344 reviews, newest seen 11 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Thai Dao",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Thai Dao\": 758 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Zeugma",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Zeugma\": 144 reviews, newest seen 27 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Sawaddee Thailand",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Sawaddee Thailand\": 216 reviews, newest seen 25 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Honeymoon Dessert Sai Kung",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Honeymoon Dessert (Sai Kung)\": 1,112 reviews, newest seen 27 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Pepperoni's Sai Kung",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Pepperoni's Sai Kung\": 395 reviews, newest seen 23 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Camden Town",
+          "src": "https://www.littlestepsasia.com/hong-kong/play/neighborhood-guides/guide-to-sai-kung/",
+          "date": "updated 2025-12-08",
+          "map": "Google Maps \"Camden Town\": 30 reviews, newest seen a day ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Walt's Café (Hong Kong Disneyland Hotel)",
+          "from": "Little Steps Asia kids' menus, Oct 2026",
+          "why": "Google Maps marks it temporarily closed"
+        },
+        {
+          "name": "Yoajung (Olympian City 3)",
+          "from": "Little Steps Asia frozen yoghurt, Sept 2026",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "More Yogurt (Soy Street)",
+          "from": "Little Steps Asia frozen yoghurt, Sept 2026",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Cali-Mex (Stanley)",
+          "from": "Little Steps Asia Stanley guide, Jan 2025",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "Piccolo's, Ali Oli, Padstow, Shiba Taro Cafe, Cozy Coffee (Sai Kung)",
+          "from": "Little Steps Asia Sai Kung guide, Dec 2025",
+          "why": "Google Maps marks each permanently closed"
+        },
+        {
+          "name": "Hung Kee Seafood, 2084 (Sai Kung)",
+          "from": "Little Steps Asia Sai Kung guide, Dec 2025",
+          "why": "not found on Google Maps under its name"
+        },
+        {
+          "name": "Chill Hill (Sai Wan)",
+          "from": "Little Steps Asia frozen yoghurt, Sept 2026",
+          "why": "the map shows Hill Laundry with 7 reviews; the froyo counter is not named"
+        },
+        {
+          "name": "Teppanyaki Tempura Shun (Four Seasons)",
+          "from": "Little Steps Asia teppanyaki, Aug 2026",
+          "why": "12 Google Maps reviews, the newest a year ago"
+        },
+        {
+          "name": "Siü Siü",
+          "from": "Little Steps Asia teppanyaki, Aug 2026",
+          "why": "a sake-focused izakaya open evenings only — left out as nightlife"
+        }
+      ]
     }
   ]
 }
