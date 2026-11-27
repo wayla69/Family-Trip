@@ -674,6 +674,127 @@
           },
           "q": "숲속에동물농장, 청골길 12, 평창",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "ARTE Museum Gangneung",
+            "th": "อาร์เต้ มิวเซียม คังนึง"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Gangneung",
+            "th": "คังนึง"
+          },
+          "what": {
+            "en": "An immersive media art hall where the walls, floors and ceilings become the picture, open all year",
+            "th": "หอศิลป์สื่อผสมแบบดื่มด่ำ ผนัง พื้น และเพดานกลายเป็นภาพ เปิดทั้งปี"
+          },
+          "why": {
+            "en": "Indoors and easy in any weather; children born after 2023 enter free",
+            "th": "อยู่ในร่ม ไปได้ทุกสภาพอากาศ เด็กที่เกิดหลังปี 2023 เข้าฟรี"
+          },
+          "tip": {
+            "en": "Open 10:00–20:00, last entry 19:00; tickets sold on site",
+            "th": "เปิด 10:00–20:00 เข้าได้ถึง 19:00 ซื้อบัตรหน้างาน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "ARTE Museum Gangneung, Gangneung, South Korea",
+          "ok": "2026-11",
+          "src": "https://artemuseum.com/faq-gangenung"
+        },
+        {
+          "name": {
+            "en": "Ocean 700 Water Park, Alpensia",
+            "th": "โอเชียน 700 สวนน้ำ อัลเพนเซีย"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Alpensia Resort, Daegwallyeong-myeon, Pyeongchang",
+            "th": "อัลเพนเซีย รีสอร์ต แทกวัลลยอง-มยอน พย็องชัง"
+          },
+          "what": {
+            "en": "A large water park with an indoor wave pool, lazy river and slides, and outdoor pools in summer",
+            "th": "สวนน้ำขนาดใหญ่ มีสระคลื่นในร่ม แม่น้ำวน และสไลเดอร์ มีสระกลางแจ้งในฤดูร้อน"
+          },
+          "why": {
+            "en": "The water is kept lukewarm and suits infants and toddlers",
+            "th": "น้ำอุ่นพอดี เหมาะกับเด็กทารกและเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Pools close at 17:00; a life jacket and swim cap are required, so bring them",
+            "th": "สระปิด 17:00 ต้องใส่เสื้อชูชีพและหมวกว่ายน้ำ เอาไปเองด้วย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩68,000 adults · ₩57,000 children",
+            "th": "≈ ₩68,000 ผู้ใหญ่ · ₩57,000 เด็ก"
+          },
+          "book": "none",
+          "q": "Ocean 700 Water Park, Alpensia, Alpensia Resort, Daegwallyeong-myeon, Pyeongchang, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/6a4c53f7305eeb88a4b798cf"
+        },
+        {
+          "name": {
+            "en": "Abai Village",
+            "th": "หมู่บ้านอาบัย"
+          },
+          "local": "아바이마을",
+          "kind": "culture",
+          "area": {
+            "en": "Cheongho-ro, Sokcho",
+            "th": "ช็องโฮโร ซกโช"
+          },
+          "what": {
+            "en": "A village of people from Hamgyeong-do with alley murals, old houses and North Korean-style food",
+            "th": "หมู่บ้านของผู้ย้ายถิ่นจากฮัมกย็องโด มีภาพวาดตามตรอก บ้านเก่า และอาหารแบบเกาหลีเหนือ"
+          },
+          "why": {
+            "en": "A short gaetbae ferry ride pulled along a cable, and alleys with no passing cars",
+            "th": "นั่งเรือแก๊ตเบสั้นๆ ที่ดึงไปตามสายเคเบิล ตรอกไม่มีรถผ่าน"
+          },
+          "tip": {
+            "en": "Crowded at weekends and holidays; free parking in front of the dock, and a stroller works",
+            "th": "วันหยุดคนเยอะ จอดรถฟรีหน้าท่า เข็นรถเข็นเด็กได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Ferry ≈ ₩500 adults · ₩300 children",
+            "th": "ค่าเรือ ≈ ₩500 ผู้ใหญ่ · ₩300 เด็ก"
+          },
+          "book": "none",
+          "q": "Abai Village, Cheongho-ro, Sokcho, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/67c17388673981571ce28876"
         }
       ]
     },
@@ -1152,6 +1273,249 @@
           },
           "q": "코스믹 리조트, 천북남로 176, 경주",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Bunny Bear Museum",
+            "th": "พิพิธภัณฑ์บันนี่แบร์"
+          },
+          "local": "경주 바니베어뮤지움",
+          "kind": "museumkid",
+          "area": {
+            "en": "Bomun-ro, Gyeongju",
+            "th": "โบมุนโร คย็องจู"
+          },
+          "what": {
+            "en": "An indoor museum built around Sylvanian Families and teddy bears, with photo spots",
+            "th": "พิพิธภัณฑ์ในร่มธีมซิลวาเนียนแฟมิลีและหมีเท็ดดี้ มีมุมถ่ายรูป"
+          },
+          "why": {
+            "en": "Under-3s enter free, with a nursing room, changing table and stroller rental",
+            "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรี มีห้องให้นม โต๊ะเปลี่ยนผ้าอ้อม และให้เช่ารถเข็นเด็ก"
+          },
+          "tip": {
+            "en": "Hands-on activities start at 11:00 and not Tuesday to Thursday; last entry 19:50",
+            "th": "กิจกรรมเริ่ม 11:00 และไม่มีวันอังคารถึงพฤหัสฯ เข้าได้ถึง 19:50"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ₩12,000",
+            "th": "≈ ₩12,000"
+          },
+          "book": "rec",
+          "q": "Bunny Bear Museum, Bomun-ro, Gyeongju, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/62cd173e2718fee95297d7d4"
+        },
+        {
+          "name": {
+            "en": "Gyochon Village",
+            "th": "หมู่บ้านคโยชน"
+          },
+          "kind": "oldtown",
+          "area": {
+            "en": "Gyochon-gil, Gyo-dong, Gyeongju",
+            "th": "คโยชนกิล คโยดง คย็องจู"
+          },
+          "what": {
+            "en": "A hanok village with the Choi family house and a promotion hall",
+            "th": "หมู่บ้านฮันอกที่มีบ้านตระกูลชเวและหอเผยแพร่วัฒนธรรม"
+          },
+          "why": {
+            "en": "A slow walk with children, with bicycles and electric carts to rent and clean toilets",
+            "th": "เดินเล่นช้าๆ กับเด็กได้ มีจักรยานและรถไฟฟ้าให้เช่า ห้องน้ำสะอาด"
+          },
+          "tip": {
+            "en": "Open 09:00–18:00; no car park of its own, use the one about five minutes' walk away",
+            "th": "เปิด 09:00–18:00 ไม่มีที่จอดรถของตัวเอง ใช้ที่จอดห่างไปเดินราว 5 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Gyochon Village, Gyochon-gil, Gyo-dong, Gyeongju, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/63d2144b6e2efc966cf687c9"
+        },
+        {
+          "name": {
+            "en": "Seokguram Grotto",
+            "th": "ถ้ำซอกกูรัม"
+          },
+          "local": "경주 석굴암",
+          "kind": "culture",
+          "area": {
+            "en": "Seokgul-ro, Gyeongju",
+            "th": "ซอกกุลโร คย็องจู"
+          },
+          "what": {
+            "en": "A UNESCO-listed grotto with a seated Buddha facing the East Sea",
+            "th": "ถ้ำมรดกโลกยูเนสโก มีพระพุทธรูปนั่งหันหน้าสู่ทะเลตะวันออก"
+          },
+          "why": {
+            "en": "Free entry and a calm, open setting near Bulguksa; a short look suits small children",
+            "th": "เข้าฟรี บรรยากาศสงบโปร่ง อยู่ใกล้วัดพุลกุกซา แวะดูสั้นๆ ก็เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Open 09:00–18:00; hours can change, so check first",
+            "th": "เปิด 09:00–18:00 เวลาอาจเปลี่ยน เช็กก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Seokguram Grotto, Seokgul-ro, Gyeongju, South Korea",
+          "ok": "2026-11",
+          "src": "https://koreatriptips.com/en/tourist-attractions/264260.html"
+        },
+        {
+          "name": {
+            "en": "Gyeongju Changgo",
+            "th": "คย็องจู ชังโก"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Yongsa-gil, Cheonbuk-myeon, Gyeongju",
+            "th": "ยงซากิล ช็อนบุก-มยอน คย็องจู"
+          },
+          "what": {
+            "en": "A large cultural space made from a former rice warehouse, with a cafe and shelves of books",
+            "th": "พื้นที่วัฒนธรรมขนาดใหญ่ที่ดัดแปลงจากโกดังข้าวเก่า มีคาเฟ่และชั้นหนังสือ"
+          },
+          "why": {
+            "en": "Children's books on one wall, a high open ceiling and wide space to move around",
+            "th": "มีหนังสือเด็กหนึ่งผนัง เพดานสูงโปร่ง และมีพื้นที่กว้างให้เดิน"
+          },
+          "tip": {
+            "en": "Open 11:00–21:00; there is no play area",
+            "th": "เปิด 11:00–21:00 ไม่มีพื้นที่เล่น"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Gyeongju Changgo, Yongsa-gil, Cheonbuk-myeon, Gyeongju, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/679c5ccd008db9011392bb97"
+        },
+        {
+          "name": {
+            "en": "Silla Royal Palace Video Theater",
+            "th": "โรงฉายวิดีโอพระราชวังชิลลา"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Wonhwa-ro, Inwang-dong, Gyeongju",
+            "th": "วอนฮวาโร อินวังดง คย็องจู"
+          },
+          "what": {
+            "en": "A free media screening hall about Silla artifacts and the birth legend of Silla's founder",
+            "th": "ห้องฉายสื่อฟรี เล่าเรื่องโบราณวัตถุชิลลาและตำนานกำเนิดผู้ก่อตั้งราชวงศ์"
+          },
+          "why": {
+            "en": "A short, immersive screening, then a three-minute video of Gyeongju's sights",
+            "th": "ฉายสั้นๆ แบบดื่มด่ำ แล้วต่อด้วยวิดีโอสามนาทีของที่เที่ยวในคย็องจู"
+          },
+          "tip": {
+            "en": "Screenings from 09:30, last entry 19:30",
+            "th": "ฉายตั้งแต่ 09:30 เข้าได้ถึง 19:30"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Silla Royal Palace Video Theater, Wonhwa-ro, Inwang-dong, Gyeongju, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/66bac1ed81821444c62eed7e"
+        },
+        {
+          "name": {
+            "en": "Gyeongju Bird Park",
+            "th": "เกียงจู เบิร์ดพาร์ก"
+          },
+          "local": "경주 버드파크",
+          "kind": "zoo",
+          "area": {
+            "en": "Bomun Tourist Complex, Bomun-ro",
+            "th": "แหล่งท่องเที่ยวโบมุน โบมุนโร คย็องจู"
+          },
+          "what": {
+            "en": "A bird park shaped like a nest, with many birds plus reptiles, fish and small animals indoors",
+            "th": "สวนนกรูปรังนก มีนกหลายชนิด และสัตว์เลื้อยคลาน ปลา สัตว์เล็กในร่ม"
+          },
+          "why": {
+            "en": "Children can feed birds, koi, ostriches, sheep and goats for a small fee; nursing room and stroller rental",
+            "th": "เด็กให้อาหารนก ปลาคาร์ป นกกระจอกเทศ แกะ และแพะได้โดยเสียเงินเล็กน้อย มีห้องให้นมและเช่ารถเข็นเด็ก"
+          },
+          "tip": {
+            "en": "Open 10:00–19:00, last entry an hour before closing",
+            "th": "เปิด 10:00–19:00 เข้าได้ถึงก่อนปิดหนึ่งชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩20,000 adults · ₩15,000 children",
+            "th": "≈ ₩20,000 ผู้ใหญ่ · ₩15,000 เด็ก"
+          },
+          "book": "none",
+          "q": "Gyeongju Bird Park, Bomun Tourist Complex, Bomun-ro, Gyeongju, South Korea",
+          "ok": "2026-11",
+          "src": "https://www.ktriptips.com/eng/tourspot/2371627"
         }
       ]
     },
@@ -1806,6 +2170,287 @@
           },
           "q": "완산벙커 더 스페이스, 완산5길 70, 전주",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Jaman Mural Village",
+            "th": "หมู่บ้านภาพวาดจามัน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Gyo-dong, Wansan-gu",
+            "th": "คโยดง วันซัน-กู"
+          },
+          "what": {
+            "en": "A small hillside village across the road from Jeonju Hanok Village, covered in alley murals",
+            "th": "หมู่บ้านเล็กบนเนินเขาตรงข้ามหมู่บ้านฮันอกชอนจู เต็มไปด้วยภาพวาดตามตรอก"
+          },
+          "why": {
+            "en": "Totoro, Spirited Away, Doraemon and Snoopy on the walls, with benches and children's toys along the walk",
+            "th": "มีโทโทโร สปิริเทดอะเวย์ โดราเอมอน และสนูปปี้บนกำแพง พร้อมม้านั่งและของเล่นเด็กตลอดทาง"
+          },
+          "tip": {
+            "en": "The alleys are narrow, so hold a young child's hand; a stroller is inconvenient",
+            "th": "ตรอกแคบ จับมือเด็กเล็กไว้ รถเข็นเด็กไม่สะดวก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Jaman Mural Village, Gyo-dong, Wansan-gu, Jeonju, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/67736ecb6f7a5e66598db8d7"
+        },
+        {
+          "name": {
+            "en": "Pungnammun Gate",
+            "th": "ประตูพุงนัมมุน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Wansan-gu",
+            "th": "วันซัน-กู"
+          },
+          "what": {
+            "en": "The south gate of the old Jeonju fortress, built in 1389 and rebuilt in 1768",
+            "th": "ประตูใต้ของป้อมเมืองชอนจูเก่า สร้างปี 1389 และสร้างใหม่ปี 1768"
+          },
+          "why": {
+            "en": "The one of the four main gates left standing when the fortress was taken apart",
+            "th": "เป็นประตูเดียวในสี่ประตูหลักที่ยังเหลืออยู่ตอนรื้อป้อม"
+          },
+          "tip": {
+            "en": "Look at it from outside; the page gives no opening hours",
+            "th": "ดูจากด้านนอกได้ ไม่มีข้อมูลเวลาเปิด"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Pungnammun Gate, Wansan-gu, Jeonju, South Korea",
+          "ok": "2026-11",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": {
+            "en": "Jeondong Catholic Cathedral",
+            "th": "อาสนวิหารคาทอลิกจอนดง"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Wansan-gu",
+            "th": "วันซัน-กู"
+          },
+          "what": {
+            "en": "A cathedral built from 1907 to 1914, the first Romanesque-style church in the Honam region",
+            "th": "อาสนวิหารสร้างปี 1907–1914 โบสถ์แบบโรมาเนสก์แห่งแรกของภูมิภาคโฮนัม"
+          },
+          "why": {
+            "en": "A building to walk around and look inside on a short visit, with the old town close by",
+            "th": "เดินรอบและเข้าไปดูข้างในได้ในเวลาสั้นๆ ย่านเมืองเก่าอยู่ใกล้"
+          },
+          "tip": {
+            "en": "Open 09:00–17:00 except during mass",
+            "th": "เปิด 09:00–17:00 ยกเว้นช่วงพิธีมิสซา"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jeondong Catholic Cathedral, Wansan-gu, Jeonju, South Korea",
+          "ok": "2026-11",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": {
+            "en": "Jeonju Hyanggyo Confucian School",
+            "th": "โรงเรียนขงจื๊อชอนจูฮยังกโย"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Wansan-gu",
+            "th": "วันซัน-กู"
+          },
+          "what": {
+            "en": "A Confucian school founded in the Goryeo dynasty, with a shrine at its centre and a lecture hall",
+            "th": "โรงเรียนขงจื๊อที่ตั้งขึ้นสมัยโครยอ มีศาลอยู่ตรงกลางและห้องบรรยาย"
+          },
+          "why": {
+            "en": "A quiet courtyard of old wooden halls for a short look around",
+            "th": "ลานเงียบสงบล้อมด้วยอาคารไม้เก่า เดินดูสั้นๆ ได้"
+          },
+          "tip": {
+            "en": "Viewing hours 10:00–18:00",
+            "th": "เข้าชม 10:00–18:00"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jeonju Hyanggyo Confucian School, Wansan-gu, Jeonju, South Korea",
+          "ok": "2026-11",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": {
+            "en": "Hanbyeokdang Pavilion",
+            "th": "ศาลาฮันบยอกดัง"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Foot of Seungamsan, Wansan-gu",
+            "th": "เชิงเขาซึงอัมซัน วันซัน-กู"
+          },
+          "what": {
+            "en": "A pavilion carved out of the cliff at the head of Balsan, one of Jeonju's eight scenic spots",
+            "th": "ศาลาที่เจาะเข้าไปในหน้าผาตรงหัวบัลซัน หนึ่งในแปดวิวงามของชอนจู"
+          },
+          "why": {
+            "en": "A scenic pavilion on the cliff and a quick stop for the view",
+            "th": "ศาลาชมวิวบนหน้าผา แวะดูวิวได้เร็วๆ"
+          },
+          "tip": {
+            "en": "Steps up to the pavilion; check the route before taking little ones",
+            "th": "ต้องเดินขึ้นบันได เช็กเส้นทางก่อนพาเด็กเล็กไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hanbyeokdang Pavilion, Foot of Seungamsan, Wansan-gu, Jeonju, South Korea",
+          "ok": "2026-11",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": {
+            "en": "Hagindang",
+            "th": "ฮักอินดัง"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Hanok Village, Wansan-gu",
+            "th": "หมู่บ้านฮันอก วันซัน-กู"
+          },
+          "what": {
+            "en": "A Joseon-era house built 1905–1908, a filming location for Mr. Sunshine, run as a traditional culture experience centre",
+            "th": "บ้านสมัยโชซอนสร้างปี 1905–1908 เป็นสถานที่ถ่ายทำซีรีส์ Mr. Sunshine ใช้เป็นศูนย์ประสบการณ์วัฒนธรรมดั้งเดิม"
+          },
+          "why": {
+            "en": "Hands-on traditional culture experiences inside a historic house",
+            "th": "ได้ลงมือทำกิจกรรมวัฒนธรรมดั้งเดิมในบ้านเก่า"
+          },
+          "tip": {
+            "en": "Ask about experience times before you go",
+            "th": "ถามเวลากิจกรรมก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Hagindang, Hanok Village, Wansan-gu, Jeonju, South Korea",
+          "ok": "2026-11",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": {
+            "en": "Eojin Museum (Royal Portrait Museum)",
+            "th": "พิพิธภัณฑ์พระบรมสาทิสลักษณ์ออจิน"
+          },
+          "local": "어진박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Inside Gyeonggijeon, Hanok Village",
+            "th": "ภายในศาลคย็องกีจอน หมู่บ้านฮันอก"
+          },
+          "what": {
+            "en": "A museum inside Gyeonggijeon Shrine, seen on the same visit",
+            "th": "พิพิธภัณฑ์ภายในศาลคย็องกีจอน ชมได้ในการเยือนครั้งเดียวกัน"
+          },
+          "why": {
+            "en": "Indoors, and included in the Gyeonggijeon visit with no separate fee",
+            "th": "อยู่ในร่ม รวมอยู่ในการเข้าชมคย็องกีจอน ไม่เสียค่าเข้าแยก"
+          },
+          "tip": {
+            "en": "Shares the Gyeonggijeon ticket",
+            "th": "ใช้บัตรเดียวกับคย็องกีจอน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Eojin Museum (Royal Portrait Museum), Inside Gyeonggijeon, Hanok Village, Jeonju, South Korea",
+          "ok": "2026-11",
+          "src": "https://baby.tali.kr/%EC%A0%84%EC%A3%BC-%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84-1%EB%B0%952%EC%9D%BC-%EA%B0%80%EC%A1%B1%EC%97%AC%ED%96%89-%EC%BD%94%EC%8A%A4"
         }
       ]
     },
@@ -2266,6 +2911,47 @@
           },
           "q": "경기도 업사이클플라자, 서둔로 166, 수원",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Bounce Super Park Suwon Yeongtong",
+            "th": "บาวน์ซ์ ซูเปอร์ปาร์ก ซูวอน ยองทง"
+          },
+          "local": "바운스슈퍼파크 수원영통센터",
+          "kind": "play",
+          "area": {
+            "en": "Mangpo area, Yeongtong-gu",
+            "th": "ย่านมังโพ ยองทง-กู"
+          },
+          "what": {
+            "en": "An indoor trampoline and sports park with jump, climb and dunk zones, a super trampoline zone and a VR zone",
+            "th": "สวนแทรมโพลีนและกีฬาในร่ม มีโซนกระโดด ปีนป่าย ชู้ตบาส โซนซูเปอร์แทรมโพลีน และโซน VR"
+          },
+          "why": {
+            "en": "Indoor play all year for active kids; grown-ups can join in too",
+            "th": "เล่นในร่มได้ทั้งปีสำหรับเด็กที่ซน ผู้ใหญ่เล่นด้วยได้"
+          },
+          "tip": {
+            "en": "Non-slip socks are required; sessions run in 30-minute slots for safety checks",
+            "th": "ต้องใส่ถุงเท้ากันลื่น แบ่งเป็นรอบละ 30 นาทีเพื่อตรวจความปลอดภัย"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "150-minute pass ≈ ₩24,000 weekday · ₩27,000 weekend; guardian ≈ ₩6,000",
+            "th": "บัตร 150 นาที ≈ ₩24,000 วันธรรมดา · ₩27,000 วันหยุด ผู้ปกครอง ≈ ₩6,000"
+          },
+          "book": "none",
+          "q": "Bounce Super Park Suwon Yeongtong, Mangpo area, Yeongtong-gu, Suwon, South Korea",
+          "ok": "2026-11",
+          "src": "https://www.ktriptips.com/kor/leisure/3057775"
         }
       ]
     }

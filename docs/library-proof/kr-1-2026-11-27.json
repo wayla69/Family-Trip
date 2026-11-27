@@ -1,0 +1,426 @@
+{
+  "town": "kr (Korea round 1: Seoul, Incheon, Gyeongju, Suwon, Jeonju, Gangwon, Jeju, Busan)",
+  "kind": "added",
+  "checked": "2026-11-27",
+  "rule": "Haiku research agents with the Korea notes (VisitKorea and the cities' tourism pages count as official; otherwise a 2025-2026 page, incl. mom-mom.net place pages with their own update date; no national franchises, no bars, no no-kids-zone places) -> scripts/library-check.cjs -> every place opened on Google Maps on 27 Nov 2026 by checker agents, kept only when open, the same name and in the town (four places with an official page that Maps could not pin down kept by hand) -> Thai and English by writer agents to docs/STYLE.md. Care rows: the hospital's and Incheon Airport's own pages, every quote re-checked here.",
+  "towns": {
+    "kr-gangwon": {
+      "eat": [
+        {
+          "name": "Doldwaeji 314 Jagal Gui Samgyeopsal Sokcho Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/68ecdf137f3dca489a56f337"
+        },
+        {
+          "name": "Obok Sikdang Sokcho Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/686264fc617dbb59a0f19c5e"
+        },
+        {
+          "name": "Sokcho Tapgol Makguksu Main Branch",
+          "src": "https://mom-mom.net/en/travel/places/6a9a4af71ef3a573d182003f"
+        },
+        {
+          "name": "Yet Goeul Soft Tofu",
+          "src": "https://mom-mom.net/en/travel/places/68149dfce234f9aaa3a89074"
+        },
+        {
+          "name": "Sokcho Haenyeo Village",
+          "src": "https://mom-mom.net/en/travel/places/67b546da481bed22d4162309"
+        },
+        {
+          "name": "Gallery Babs",
+          "src": "https://mom-mom.net/en/travel/places/6891e750ff7c47aaaa555015"
+        },
+        {
+          "name": "Huskmil",
+          "src": "https://mom-mom.net/en/travel/places/66d9084d51b153a599d9b98f"
+        },
+        {
+          "name": "Bali Coconut",
+          "src": "https://mom-mom.net/en/travel/places/652c8d0aad38f0df6396e859"
+        },
+        {
+          "name": "Gangneung Greem Cafe",
+          "src": "https://mom-mom.net/en/travel/places/64095207c7e515221d07bf7b"
+        }
+      ],
+      "do": [
+        {
+          "name": "ARTE Museum Gangneung",
+          "src": "https://artemuseum.com/faq-gangenung"
+        },
+        {
+          "name": "Ocean 700 Water Park, Alpensia",
+          "src": "https://mom-mom.net/en/travel/places/6a4c53f7305eeb88a4b798cf"
+        },
+        {
+          "name": "Abai Village",
+          "src": "https://mom-mom.net/en/travel/places/67c17388673981571ce28876"
+        }
+      ],
+      "care": []
+    },
+    "kr-gyeongju": {
+      "eat": [
+        {
+          "name": "Daehwa Sutbul Garden Hwangridan-gil",
+          "src": "https://mom-mom.net/travel/places/6a4376dc66eb9a3ea2edf607"
+        },
+        {
+          "name": "Sol Cafe",
+          "src": "https://mom-mom.net/travel/places/66175eccbf181fc22ad98525"
+        },
+        {
+          "name": "Cafe Neung",
+          "src": "https://mom-mom.net/travel/places/6461c78be23edef9810acd68"
+        },
+        {
+          "name": "Bagel Bageler",
+          "src": "https://mom-mom.net/travel/places/650b8d55e1869c9fff0b5849"
+        },
+        {
+          "name": "Anata Cafe",
+          "src": "https://mom-mom.net/travel/places/65a7335c272913ea11d08f3e"
+        },
+        {
+          "name": "Gyeongju Gyodong Sundubu",
+          "src": "https://www.yeogi.com/content/tripholic-dom-ko-hwangridan-gil-parking"
+        }
+      ],
+      "do": [
+        {
+          "name": "Bunny Bear Museum",
+          "src": "https://mom-mom.net/en/travel/places/62cd173e2718fee95297d7d4"
+        },
+        {
+          "name": "Gyochon Village",
+          "src": "https://mom-mom.net/en/travel/places/63d2144b6e2efc966cf687c9"
+        },
+        {
+          "name": "Seokguram Grotto",
+          "src": "https://koreatriptips.com/en/tourist-attractions/264260.html"
+        },
+        {
+          "name": "Gyeongju Changgo",
+          "src": "https://mom-mom.net/en/travel/places/679c5ccd008db9011392bb97"
+        },
+        {
+          "name": "Silla Royal Palace Video Theater",
+          "src": "https://mom-mom.net/en/travel/places/66bac1ed81821444c62eed7e"
+        },
+        {
+          "name": "Gyeongju Bird Park",
+          "src": "https://www.ktriptips.com/eng/tourspot/2371627"
+        }
+      ],
+      "care": []
+    },
+    "kr-incheon": {
+      "eat": [
+        {
+          "name": "Yejeon",
+          "src": "https://mom-mom.net/en/travel/places/6826b310c5fbe72ca0a69f06"
+        },
+        {
+          "name": "Bongbeulle",
+          "src": "https://mom-mom.net/en/travel/places/6814a2ece234f9aaa3a89086"
+        },
+        {
+          "name": "Sangnok Hoegwan Gajwa",
+          "src": "https://mom-mom.net/en/travel/places/68c945f9155faa248913546c"
+        },
+        {
+          "name": "Akira Coffee Songdo",
+          "src": "https://mom-mom.net/en/travel/places/65d32d0f9af6b32c85e83d6d"
+        },
+        {
+          "name": "Bbok Sikdang Triple Street",
+          "src": "https://mom-mom.net/en/travel/places/69ce03327609358f0a3c5821"
+        },
+        {
+          "name": "Mandabog",
+          "src": "https://coreanismo.com/en/mandaboks-jajangmyeon-in-incheon"
+        }
+      ],
+      "do": [
+        {
+          "name": "Incheon Children's Science Museum",
+          "src": "https://www.insiseol.or.kr/culture/icsmuseum/"
+        },
+        {
+          "name": "Incheon Urban History Museum",
+          "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=77235"
+        },
+        {
+          "name": "Yeongjong Seaside Rail Bike",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=112553"
+        },
+        {
+          "name": "Eurwangni Beach",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=105441"
+        },
+        {
+          "name": "Incheon Dino World",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": "Sudoguksan Moon Village Museum",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": "Noodle Platform",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": "Wolmi Sea Train",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000081/1917bbsDetail.do"
+        }
+      ],
+      "care": [
+        {
+          "name": "Incheon St. Mary's Hospital children's hospital",
+          "src": "https://www.cmcism.or.kr/m/treatment_info?deptSeq=32"
+        },
+        {
+          "name": "Annyeong Pharmacy, Incheon Airport T1",
+          "src": "https://airport.kr/ap_ko/1008/subview.do"
+        },
+        {
+          "name": "Skywell Pharmacy, Incheon Airport T1",
+          "src": "https://airport.kr/ap_ko/1008/subview.do"
+        },
+        {
+          "name": "Incheon Airport T2 infant lounge",
+          "src": "https://www.airport.kr/ap_ko/949/subview.do"
+        }
+      ]
+    },
+    "kr-jeju": {
+      "eat": [
+        {
+          "name": "Dombedon",
+          "src": "https://www.funliday.com/posts/?p=120036"
+        },
+        {
+          "name": "Eorin Wangja Gamgyulbat",
+          "src": "https://mom-mom.net/en/travel/places/62cd18212718fee95297dc15"
+        }
+      ],
+      "do": [
+        {
+          "name": "Seolmundae Halmang Exhibition Hall",
+          "src": "https://mom-mom.net/en/travel/places/6a1e299d263e8eb875199919"
+        }
+      ],
+      "care": []
+    },
+    "kr-jeonju": {
+      "eat": [
+        {
+          "name": "Indibijueol Hanok Village Branch",
+          "src": "https://mom-mom.net/travel/places/6954bc7491a6021d5a93a826"
+        },
+        {
+          "name": "Lahan Hotel Jeonju Hanokdang",
+          "src": "https://mom-mom.net/travel/places/69520636669da585e5e7302e"
+        }
+      ],
+      "do": [
+        {
+          "name": "Jaman Mural Village",
+          "src": "https://mom-mom.net/en/travel/places/67736ecb6f7a5e66598db8d7"
+        },
+        {
+          "name": "Pungnammun Gate",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": "Jeondong Catholic Cathedral",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": "Jeonju Hyanggyo Confucian School",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": "Hanbyeokdang Pavilion",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": "Hagindang",
+          "src": "https://hanok.jeonju.go.kr/contents/en_place"
+        },
+        {
+          "name": "Eojin Museum (Royal Portrait Museum)",
+          "src": "https://baby.tali.kr/%EC%A0%84%EC%A3%BC-%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84-1%EB%B0%952%EC%9D%BC-%EA%B0%80%EC%A1%B1%EC%97%AC%ED%96%89-%EC%BD%94%EC%8A%A4"
+        }
+      ],
+      "care": []
+    },
+    "kr-seoul": {
+      "eat": [
+        {
+          "name": "Itda Project Yeonnam",
+          "src": "https://mom-mom.net/travel/places/6a9a822bcd43341e8ed2d1c2"
+        },
+        {
+          "name": "Eoseowa Kalguksu Hongdae-Hapjeong",
+          "src": "https://mom-mom.net/travel/places/68a5542cee2892a6b878d31f"
+        },
+        {
+          "name": "GOD EAT Yeonnam",
+          "src": "https://mom-mom.net/travel/places/6a4b315adbd21007272095a0"
+        },
+        {
+          "name": "Obokdang Daehangno",
+          "src": "https://mom-mom.net/en/travel/places/69ce26807609358f0a3c5bfd"
+        },
+        {
+          "name": "Rafre Fruit Dessert Cafe Seongsu",
+          "src": "https://bestofkorea.com/?p=52849"
+        },
+        {
+          "name": "Rain Report Gyeongridan",
+          "src": "https://bestofkorea.com/?p=52849"
+        },
+        {
+          "name": "Cheongsudang Bakery",
+          "src": "https://bestofkorea.com/?p=52849"
+        },
+        {
+          "name": "Hakrim Dabang",
+          "src": "https://bestofkorea.com/?p=52849"
+        },
+        {
+          "name": "Coffee Hanyakbang",
+          "src": "https://bestofkorea.com/?p=52849"
+        },
+        {
+          "name": "Dotori Yongsan",
+          "src": "https://bestofkorea.com/?p=52849"
+        },
+        {
+          "name": "Eoseul Gangnam",
+          "src": "https://mom-mom.net/en/travel/places/68ba81f2238486c38c534a83"
+        },
+        {
+          "name": "Renliang Hotpot",
+          "src": "https://mom-mom.net/en/travel/places/66b09119e149d08f057a44f0"
+        },
+        {
+          "name": "Gwanghwamun Seokgalbi COEX",
+          "src": "https://mom-mom.net/en/travel/places/6603d288d9508774dbc2c56b"
+        },
+        {
+          "name": "Lotte Hotel World Dorim The Canton Table",
+          "src": "https://mom-mom.net/en/travel/places/688c96b032919deab997c508"
+        },
+        {
+          "name": "Mooni Apgujeong",
+          "src": "https://mom-mom.net/en/travel/places/6361ce14535d48fc86a214c9"
+        },
+        {
+          "name": "Aqua Garden Cafe Lotte World Tower",
+          "src": "https://mom-mom.net/en/travel/places/64acc1aa0f284628233a2c4f"
+        },
+        {
+          "name": "All Mornings of the World forME Lotte World Mall",
+          "src": "https://mom-mom.net/en/travel/places/65ea67a57a71770e78931406"
+        }
+      ],
+      "do": [
+        {
+          "name": "Seoul Robot & AI Museum",
+          "src": "https://mediahub.seoul.go.kr/archives/2013393"
+        },
+        {
+          "name": "Arisu Nara",
+          "src": "https://mediahub.seoul.go.kr/archives/2018830"
+        },
+        {
+          "name": "Seoul Kids Plaza",
+          "src": "https://mediahub.seoul.go.kr/archives/2016627"
+        },
+        {
+          "name": "Seoullo 7017",
+          "src": "https://english.visitseoul.net/other/Seoullo-7017_/23965"
+        },
+        {
+          "name": "Namsan Cable Car",
+          "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=96828"
+        },
+        {
+          "name": "E-Land Cruise (Han River)",
+          "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=80429"
+        },
+        {
+          "name": "Changdeokgung Palace and Secret Garden",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=94399"
+        }
+      ],
+      "care": []
+    },
+    "kr-suwon": {
+      "eat": [
+        {
+          "name": "Nudeu Aencheu",
+          "src": "https://www.harpersbazaar.co.kr/article/1881262"
+        },
+        {
+          "name": "Gyejeol Gotgan",
+          "src": "https://www.harpersbazaar.co.kr/article/1881262"
+        },
+        {
+          "name": "Heol Coffee Roasters",
+          "src": "https://www.harpersbazaar.co.kr/article/1881262"
+        },
+        {
+          "name": "Hwansang Cafe",
+          "src": "https://www.harpersbazaar.co.kr/article/1881262"
+        },
+        {
+          "name": "Namsuwon Galbi",
+          "src": "https://mom-mom.net/travel/places/64f0404bd391719a54365bfe"
+        }
+      ],
+      "do": [
+        {
+          "name": "Bounce Super Park Suwon Yeongtong",
+          "src": "https://www.ktriptips.com/kor/leisure/3057775"
+        }
+      ],
+      "care": []
+    },
+    "kr-busan": {
+      "eat": [],
+      "do": [
+        {
+          "name": "KidZania Busan",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/"
+        }
+      ],
+      "care": []
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (27 Nov 2026)": [
+      "Butter Book Gyeongju",
+      "Cafe Marche Gyeongju",
+      "Eoneu Meotjin Nal Gyeongju",
+      "Gyuldangri Jeju (temporarily)",
+      "Jipnagan Geobugi Jeju (temporarily)",
+      "Pley Lego Cafe Busan",
+      "Triple Bagel Seoul",
+      "Babi Red Gangnam (temporarily)",
+      "Dalmatian Apgujeong"
+    ],
+    "name or place did not match on Google Maps": "about 20 (another business at the address, or only a result list)",
+    "other": [
+      "Barbecue Plaza, Manokamana, Casa de Taco Songdo (chains)",
+      "Heunoni Jeonju (a no-kids floor)",
+      "Tasting Museum Gwanggyo (a second branch of a listed place)",
+      "Suwon World Cup Stadium play park (a one-day event)",
+      "Cafe 1938 and Samsin Garosu-gil (quote not on the page)",
+      "Bada Song Incheon and the Museum of Korean Contemporary History (already listed)"
+    ]
+  }
+}
