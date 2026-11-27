@@ -630,6 +630,322 @@
       ]
     },
     {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "title": "MICHELIN Guide Hong Kong Macau 2026: every Macau restaurant not yet in the list",
+      "rule": "Owner, 27 Nov 2026 (\"Raise to 200\"): every place from a dated page read in the owner's Chrome, then Google Maps only (not marked closed, a review from the last six months, the map's name matching the page's). OpenRice skipped at the owner's request.",
+      "added": [
+        {
+          "name": "Justindia",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/justindia",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"JUSTINDIA 印象派\": 121 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Nok Song",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/nok-song",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Nok Song\": 42 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "Drunken Fish",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/drunken-fish",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Drunken Fish\": 3 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "Feng Wei Ju",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/feng-wei-ju",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"FENG WEI JU 風味居\": 130 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "Wing Lei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/wing-lei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Wing Lei\": 383 reviews, newest seen 9 days ago, not marked closed"
+        },
+        {
+          "name": "The Eight",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/the-eight",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"The Eight\": 683 reviews, newest seen 20 days ago, not marked closed"
+        },
+        {
+          "name": "Kika",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/kika",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Kika Gelato\": 166 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Ving Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ving-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"榮記豆腐麵食\": 293 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Robuchon au Dôme",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/robuchon-dome",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Robuchon au Dôme\": 450 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Lun Kee Rice Roll",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lun-kee",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lun Kee Cheung Fun Rice roll\": 472 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Ngao Kei Ka Lei Chon",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ngao-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ngao Kei Ka Lei Chon\": 502 reviews, newest seen a week ago, not marked closed"
+        },
+        {
+          "name": "Yi Shun",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/yi-shun",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yee Shun Milk Company\": 844 reviews, newest seen 5 days ago, not marked closed"
+        },
+        {
+          "name": "Lou Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lou-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lou Kei (Fai Chi Kei)\": 136 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "UTM Educational Restaurant",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/utm-rest",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"UTM Educational Restaurant\": 191 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Ying",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ying",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ying\": 77 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Son Tak Kong",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/son-tak-kong",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Estab De Comidas Son Tak Kong\": 67 reviews, newest seen 26 days ago, not marked closed"
+        },
+        {
+          "name": "Manuel Cozinha Portuguesa",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/manuel",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Manuel\": 184 reviews, newest seen a week ago, not marked closed"
+        },
+        {
+          "name": "Twelve25",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/twelve25",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Twelve25\": 23 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "O Castiço (Taipa)",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/o-castico-taipa",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"O Castiço\": 297 reviews, newest seen a week ago, not marked closed"
+        },
+        {
+          "name": "Lok Kei Noodles",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lok-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lok Kei Noodle\": 699 reviews, newest seen a day ago, not marked closed"
+        },
+        {
+          "name": "Fong Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/fong-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Pastelaria Fong Kei\": 370 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "Unique",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/unique",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"無二湯包 小籠湯包專門店\": 21 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Kapok",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/kapok",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Restaurante Kapok\": 275 reviews, newest seen 28 days ago, not marked closed"
+        },
+        {
+          "name": "Zi Yat Heen",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/zi-yat-heen",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Zi Yat Heen\": 144 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Sushi Kissho by Miyakawa",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/sushi-kissho",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Sushi Kissho by Miyakawa\": 14 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Restaurante Litoral (Taipa)",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/litoral-taipa",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Restaurante Litoral Taipa\": 743 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Mok Yee Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/mok-yee-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Gelatina Mok Yi Kei\": 279 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Alain Ducasse at Morpheus",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ducasse",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Alain Ducasse at Morpheus\": 79 reviews, newest seen 25 days ago, not marked closed"
+        },
+        {
+          "name": "Estuary by Vicky Cheng",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/estuary",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Estuary by Vicky Cheng\": 3 reviews, newest seen 3 months ago, not marked closed"
+        },
+        {
+          "name": "Sushi Kinetsu",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/sushi-kinetsu",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Sushi Kinetsu\": 24 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Lai Heen",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lai-heen",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lai Heen\": 128 reviews, newest seen 3 months ago, not marked closed"
+        },
+        {
+          "name": "Teppanyaki Shou",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/teppanyaki-shou",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Teppanyaki Shou 承‧铁板料理\": 11 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "Jade Dragon",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/jade-dragon",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Jade Dragon\": 270 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Yi",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/yi",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yi\": 29 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Pin Yue Xuan",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/pin-yue-xuan",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Pin Yue Xuan\": 65 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Chef Tam's Seasons",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/chef-tam",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Chef Tam's Seasons\": 73 reviews, newest seen 9 days ago, not marked closed"
+        },
+        {
+          "name": "Lakeview Palace",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lakeview-palace",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lakeview Palace\": 135 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "The Mews",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/the-mews",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"The Mews\": 155 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Five Foot Road",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/five-foot-road",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Five Foot Road\": 84 reviews, newest seen 22 days ago, not marked closed"
+        },
+        {
+          "name": "8½ Otto e Mezzo Bombana (Macau)",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/otto-macau",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"8½ Otto e Mezzo BOMBANA\": 109 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Aji",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/aji",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Aji 雅吉\": 55 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "SW Steakhouse",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/sw-steakhouse",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"SW Steakhouse\": 3,179 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Palace Garden",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/palace-garden",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Palace Garden\": 57 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "The Huaiyang Garden",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/huaiyang",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"The Huai Yang Garden\": 116 reviews, newest seen 9 days ago, not marked closed"
+        },
+        {
+          "name": "Pearl Dragon",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/pearl-dragon",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Pearl Dragon\": 154 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Zuicho",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/zuicho",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Zuicho\": 9 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Mesa",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/mesa",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Mesa by José Avillez\": 143 reviews, newest seen a day ago, not marked closed"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Kitchen (Grand Lisboa)",
+          "why": "Google Maps: newest review a year old"
+        },
+        {
+          "name": "002 Mohinga",
+          "why": "Google Maps: newest review four years old"
+        },
+        {
+          "name": "Ng Teng Kei (Rua da Praia do Manduco)",
+          "why": "Google Maps: 3 reviews, the newest six years old"
+        },
+        {
+          "name": "Chan Seng Kei (Coloane)",
+          "why": "Google Maps: newest review eight months old"
+        },
+        {
+          "name": "Mizumi (Wynn Palace)",
+          "why": "Google Maps: newest review a year old"
+        },
+        {
+          "name": "Don Alfonso 1890",
+          "why": "Google Maps shows \"Casa Don Alfonso\", a different name; left out until it can be told apart"
+        }
+      ]
+    },
+    {
       "kind": "sights",
       "checked": "2026-11-27",
       "rule": "The resort's own page (what it is, hours, ages, prices), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months; a show or ride with no listing of its own is checked through its resort's listing.",
