@@ -657,6 +657,127 @@
           },
           "q": "Froggy's Fun Park, Jungceylon, Patong, Phuket",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Kidzooona",
+            "th": "คิดซูน่า"
+          },
+          "kind": "play",
+          "area": {
+            "en": "3F The Botanica Zone, Jungceylon, Patong",
+            "th": "ชั้น 3 โซนเดอะโบทานิกา จังซีลอน ป่าตอง"
+          },
+          "what": {
+            "en": "Indoor playground on the third floor of Jungceylon, with a Toy Master Corner for hands-on play",
+            "th": "สนามเด็กเล่นในร่มชั้น 3 ของจังซีลอน มีมุม Toy Master Corner ให้เด็กลงมือเล่น"
+          },
+          "why": {
+            "en": "Hands-on activities that help fine motor skills and confidence, set out for children aged 1 to 8",
+            "th": "กิจกรรมลงมือทำที่ช่วยกล้ามเนื้อมัดเล็กและความมั่นใจ จัดไว้สำหรับเด็กอายุ 1–8 ปี"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kidzoona, 3F Jungceylon, Patong, Phuket, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.jungceylon.com/explore/top-activities-for-kids-to-do-at-jungceylon-phuket"
+        },
+        {
+          "name": {
+            "en": "Surin Beach",
+            "th": "หาดสุรินทร์"
+          },
+          "local": "หาดสุรินทร์",
+          "kind": "beach",
+          "area": {
+            "en": "Surin, Choeng Thale",
+            "th": "สุรินทร์ เชิงทะเล"
+          },
+          "what": {
+            "en": "Beach with clear water and rocky outcrops, several lifeguard stations, bathrooms and restaurants nearby",
+            "th": "ชายหาดน้ำใสมีโขดหิน มีจุดไลฟ์การ์ดหลายแห่ง ห้องน้ำ และร้านอาหารใกล้ๆ"
+          },
+          "why": {
+            "en": "Clear water; snorkelling once the children are old enough",
+            "th": "น้ำใส เด็กโตพอแล้วดำน้ำตื้นได้"
+          },
+          "tip": {
+            "en": "Weekends in high season are crowded",
+            "th": "ช่วงสุดสัปดาห์ในหน้าไฮซีซันคนเยอะ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Surin Beach, Choeng Thale, Phuket, Thailand",
+          "ok": "2026-11",
+          "src": "https://phuketexpatguide.com/blog/best-phuket-beaches-families-kids/"
+        },
+        {
+          "name": {
+            "en": "Ko Fun Kids Rope Park",
+            "th": "โก ฟัน คิดส์ โรป พาร์ค"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Rawai Beach",
+            "th": "หาดราไวย์"
+          },
+          "what": {
+            "en": "Outdoor rope and net park, two levels high, with swinging platforms, hanging hoops, balance beams and net tunnels",
+            "th": "สวนเชือกและตาข่ายกลางแจ้งสูงสองชั้น มีแท่นแกว่ง ห่วงแขวน คานทรงตัว และอุโมงค์ตาข่าย"
+          },
+          "why": {
+            "en": "Every level is wrapped in heavy netting, so there are no harnesses to fit and no queue to start a lap",
+            "th": "ทุกชั้นหุ้มด้วยตาข่ายหนา ไม่ต้องใส่สายรัดและไม่ต้องรอคิวเริ่มเล่น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "KO FUN Kids Rope Park, Rawai, Mueang Phuket, Phuket, Thailand",
+          "ok": "2026-11",
+          "src": "https://phuket101.net/best-kids-clubs-in-phuket"
         }
       ]
     },
