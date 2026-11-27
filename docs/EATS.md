@@ -1045,3 +1045,8 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Hong Kong now holds 350.
 
 - **27 Nov 2026, Macau, rounds 47–48**: +30 to reach 100, from the own restaurant pages of City of Dreams, Wynn Palace and Wynn Macau, MGM Macau, the Venetian food court, Galaxy and Broadway Macau, Studio City, the Londoner, the Parisian and Macau Tower, each checked on Google Maps. Proof in `docs/library-proof/mo-macau.json`.
+- **Round 9**: +23 from Discover Hong Kong's food pages (official, undated, read 2026-11-27): Tai Kwun (Café Claudel, The Chinese
+  Library), desserts (Nun, Fleur, Via Tokyo, Messina at the Peak), Kai Tak (Food Gala, Gyu-Kaku J, Ha Noi, Bellavista, Yonna Yonna),
+  buffets (The Food Gallery, Jashan, The Grand Buffet), cheese (The Swiss Chalet, Terroirs by LQV, ROUCOU) and special meals (The
+  Verandah, Louise, Popinjays, Lobster Bar & Grill, L'Atelier de Joël Robuchon, Wing). Google Maps only. Eight left out: Jing closed for
+  good, The Dutch's newest review two years old, six with no matching place on Maps. Hong Kong now holds 373.
