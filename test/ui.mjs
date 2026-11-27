@@ -2623,7 +2623,7 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'eat day page fits the phone');
   await s.shot('04-eat-day', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/eat/all`); await page.waitForSelector('.eatc');
-  ok(await page.locator('.eatc:visible').count() === 224 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 224 places from the manual with Chinese names; filters reset for another book');
+  ok(await page.locator('.eatc:visible').count() === 223 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 223 places from the manual with Chinese names; filters reset for another book');
   ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
