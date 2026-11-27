@@ -1084,6 +1084,355 @@
           "q": "Bank of Korea Money Museum, Jung-gu, Seoul",
           "ok": "2026-11",
           "src": "https://www.koreatriptips.com/en/cultural-facilities/3024927.html"
+        },
+        {
+          "name": {
+            "en": "Seoul Baekje Children's Museum",
+            "th": "พิพิธภัณฑ์เด็กแพคเจโซล"
+          },
+          "local": "서울백제어린이박물관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Olympic Park, Songpa-gu",
+            "th": "โอลิมปิกปาร์ก ซงพากู"
+          },
+          "what": {
+            "en": "Children learn Baekje-era history by doing, with a digital screen where they build a Baekje wall virtually",
+            "th": "เด็กเรียนรู้ประวัติศาสตร์สมัยแพคเจด้วยการลงมือทำ มีจอดิจิทัลให้สร้างกำแพงแพคเจเสมือนจริง"
+          },
+          "why": {
+            "en": "Hands-on history play indoors, for children who like to build and explore",
+            "th": "เล่นเรียนรู้ประวัติศาสตร์ในร่ม เหมาะกับเด็กที่ชอบสร้างและสำรวจ"
+          },
+          "tip": {
+            "en": "Closed Mondays and 1 January; weekends and public holidays need a pre-booking",
+            "th": "ปิดวันจันทร์และ 1 มกราคม วันเสาร์อาทิตย์และวันหยุดนักขัตฤกษ์ต้องจองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Seoul Baekje Children's Museum, Olympic Park, Songpa-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2018712"
+        },
+        {
+          "name": {
+            "en": "Seoul Gallery",
+            "th": "โซลแกลเลอรี"
+          },
+          "local": "서울시청 서울갤러리",
+          "kind": "museum",
+          "area": {
+            "en": "Seoul City Hall, Jung-gu",
+            "th": "ศาลาว่าการกรุงโซล จุงกู"
+          },
+          "what": {
+            "en": "An underground gallery under Seoul City Hall with a bookshop, a kids' lounge and exhibitions",
+            "th": "แกลเลอรีใต้ดินใต้ศาลาว่าการกรุงโซล มีร้านหนังสือ ห้องพักเด็ก และนิทรรศการ"
+          },
+          "why": {
+            "en": "You can walk in from the subway without going outside, with a kids' lounge inside",
+            "th": "เดินเข้าจากรถไฟใต้ดินได้โดยไม่ต้องออกข้างนอก มีห้องพักเด็กอยู่ข้างใน"
+          },
+          "tip": {
+            "en": "The 9th-floor sky observatory is not open on weekends and public holidays",
+            "th": "จุดชมวิวชั้น 9 ไม่เปิดวันเสาร์อาทิตย์และวันหยุดนักขัตฤกษ์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Seoul Gallery, Seoul City Hall, Jung-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2018846"
+        },
+        {
+          "name": {
+            "en": "Seoul Waterworks Museum",
+            "th": "พิพิธภัณฑ์ประปาโซล"
+          },
+          "local": "수도박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Gwangjin-gu, next to Arisu Nara",
+            "th": "ควังจินกู ข้างอารีซูนาระ"
+          },
+          "what": {
+            "en": "A museum about Seoul's water supply, with indoor water-related hands-on experiences",
+            "th": "พิพิธภัณฑ์เรื่องระบบน้ำประปาของโซล มีกิจกรรมลงมือทำเกี่ยวกับน้ำในร่ม"
+          },
+          "why": {
+            "en": "Indoor water experiences for children, next to Arisu Nara on a rainy day",
+            "th": "กิจกรรมเกี่ยวกับน้ำในร่มสำหรับเด็ก อยู่ข้างอารีซูนาระ เหมาะกับวันฝนตก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Seoul Waterworks Museum, Gwangjin-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2018830"
+        },
+        {
+          "name": {
+            "en": "Seodaemun Museum of Natural History",
+            "th": "พิพิธภัณฑ์ธรรมชาติวิทยาซอแดมุน"
+          },
+          "local": "서대문자연사박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Seodaemun-gu",
+            "th": "ซอแดมุนกู"
+          },
+          "what": {
+            "en": "Life-size dinosaur bones and fossils, with an outdoor sand dig for children",
+            "th": "กระดูกไดโนเสาร์และฟอสซิลขนาดเท่าของจริง มีลานทรายขุดค้นกลางแจ้งสำหรับเด็ก"
+          },
+          "why": {
+            "en": "A dinosaur-loving child gets a real dig and life-size bones to see",
+            "th": "เด็กที่รักไดโนเสาร์ได้ขุดจริงและได้ดูกระดูกขนาดเท่าของจริง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Seodaemun Museum of Natural History, Seodaemun-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/seoul-weekend-kids"
+        },
+        {
+          "name": {
+            "en": "Gangseo Starlight Space Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์อวกาศคังซอพยอลบิต"
+          },
+          "local": "강서별빛우주과학관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Gangseo-gu",
+            "th": "คังซอกู"
+          },
+          "what": {
+            "en": "A space science museum with a space experience hall, from the Big Bang onwards",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์อวกาศ มีห้องประสบการณ์อวกาศ เล่าตั้งแต่บิกแบง"
+          },
+          "why": {
+            "en": "Indoor space experiences for children who are curious about science",
+            "th": "กิจกรรมอวกาศในร่มสำหรับเด็กที่สนใจวิทยาศาสตร์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Gangseo Starlight Space Museum, Gangseo-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2019438"
+        },
+        {
+          "name": {
+            "en": "Seoul Hanseong Baekje Museum",
+            "th": "พิพิธภัณฑ์ฮันซองแพคเจ"
+          },
+          "local": "한성백제박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Olympic Park, Songpa-gu",
+            "th": "โอลิมปิกปาร์ก ซงพากู"
+          },
+          "what": {
+            "en": "A Baekje history museum that also runs children's culture programmes on France and Italy",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์แพคเจ ที่มีกิจกรรมวัฒนธรรมสำหรับเด็กเกี่ยวกับฝรั่งเศสและอิตาลีด้วย"
+          },
+          "why": {
+            "en": "Children can try other countries' culture first-hand, in an indoor programme",
+            "th": "เด็กได้ลองสัมผัสวัฒนธรรมของประเทศอื่นด้วยตัวเองในกิจกรรมในร่ม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Hanseong Baekje Museum, Olympic Park, Songpa-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2018642"
+        },
+        {
+          "name": {
+            "en": "Seoul Urban Life Museum and Ompang Playground",
+            "th": "พิพิธภัณฑ์วิถีชีวิตโซลและสนามเด็กเล่นออมปัง"
+          },
+          "local": "서울생활사박물관 옴팡놀이터",
+          "kind": "museum",
+          "area": {
+            "en": "Nowon-gu, near Taereung-ipgu station",
+            "th": "โนวอนกู ใกล้สถานีแทรึงอิบกู"
+          },
+          "what": {
+            "en": "A free indoor playground and a museum of modern Korean daily life",
+            "th": "สนามเด็กเล่นในร่มฟรี และพิพิธภัณฑ์วิถีชีวิตเกาหลียุคใหม่"
+          },
+          "why": {
+            "en": "A free indoor play space for little ones, beside a museum of everyday life",
+            "th": "พื้นที่เล่นในร่มฟรีสำหรับเด็กเล็ก อยู่ข้างพิพิธภัณฑ์วิถีชีวิตประจำวัน"
+          },
+          "tip": {
+            "en": "Closed on Mondays; open 09:00–18:00",
+            "th": "ปิดวันจันทร์ เปิด 09:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Seoul Life History Museum, Nowon-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/seoul-indoor-places-for-kids"
+        },
+        {
+          "name": {
+            "en": "Seoul Archives children's experience room",
+            "th": "ห้องกิจกรรมเด็กหอจดหมายเหตุโซล"
+          },
+          "local": "서울기록원 어린이 체험실",
+          "kind": "museum",
+          "area": {
+            "en": "Eunpyeong-gu",
+            "th": "อึนพยองกู"
+          },
+          "what": {
+            "en": "A children's experience room where play shows what the Seoul Archives does",
+            "th": "ห้องกิจกรรมสำหรับเด็กที่เล่นไปเรียนรู้ไปว่าหอจดหมายเหตุโซลทำอะไร"
+          },
+          "why": {
+            "en": "Play-based experiences for children of about 7 to 10",
+            "th": "กิจกรรมแบบเล่นสำหรับเด็กวัยราว 7–10 ขวบ"
+          },
+          "tip": {
+            "en": "Recommended for ages 7 to 10",
+            "th": "แนะนำสำหรับอายุ 7–10 ขวบ"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Seoul Archives children's experience room, Eunpyeong-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/seoul-elementary-kids-best-spots"
+        },
+        {
+          "name": {
+            "en": "Seoul Chaekbogo",
+            "th": "โซลเชกโบโก"
+          },
+          "local": "서울책보고",
+          "kind": "culture",
+          "area": {
+            "en": "Next to Jamsil Naru station, Songpa-gu",
+            "th": "ข้างสถานีชัมซิลนารู ซงพากู"
+          },
+          "what": {
+            "en": "A quiet reading space where adults and children can read together",
+            "th": "พื้นที่อ่านหนังสือเงียบสงบที่ผู้ใหญ่และเด็กอ่านด้วยกันได้"
+          },
+          "why": {
+            "en": "A calm reading space, a good match for a school-age child who loves books",
+            "th": "พื้นที่อ่านหนังสือที่สงบ เหมาะกับเด็กวัยเรียนที่รักหนังสือ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Seoul Chaekbogo, Jamsil Naru station, Songpa-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/seoul-elementary-kids-best-spots"
         }
     ]
     },

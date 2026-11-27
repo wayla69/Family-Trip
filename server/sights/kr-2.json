@@ -2001,6 +2001,248 @@
           "q": "Haedoji Park, Haedoji-ro 51, Songdo, Incheon",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "Juvuckx & Junimal, Seochang",
+            "th": "จูบักส์แอนด์จูนิมอล ซอชัง"
+          },
+          "local": "쥬벅스 앤 쥬니멀 서창점",
+          "kind": "zoo",
+          "area": {
+            "en": "Seochang, Namdong-gu",
+            "th": "ซอชัง นัมดงกู"
+          },
+          "what": {
+            "en": "Indoor zoo with rabbits, goats, sheep and reptiles, and a feeding experience",
+            "th": "สวนสัตว์ในร่มที่มีกระต่าย แพะ แกะ และสัตว์เลื้อยคลาน พร้อมให้อาหารสัตว์"
+          },
+          "why": {
+            "en": "Indoor with no smell, so it is comfortable with children on hot or rainy days",
+            "th": "อยู่ในร่มและไม่มีกลิ่น สบายสำหรับเด็กในวันร้อนหรือฝนตก"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩15,000 per person · under 18 months free",
+            "th": "≈ ₩15,000 ต่อคน · เด็กอายุต่ำกว่า 18 เดือนฟรี"
+          },
+          "book": "rec",
+          "q": "Juvuckx Juniamal Seochang, Seochang, Namdong-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-kids-places"
+        },
+        {
+          "name": {
+            "en": "Splash Bay, Inspire Resort",
+            "th": "สแปลชเบย์ อินสไปร์รีสอร์ต"
+          },
+          "local": "스플래시베이",
+          "kind": "play",
+          "area": {
+            "en": "Inspire Resort, Yeongjong Island",
+            "th": "อินสไปร์รีสอร์ต เกาะยองจง"
+          },
+          "what": {
+            "en": "Indoor kids' zone, slime café, pool and slides at the Inspire Resort on Yeongjong Island",
+            "th": "โซนเด็กในร่ม คาเฟ่สไลม์ สระว่ายน้ำและสไลเดอร์ ที่อินสไปร์รีสอร์ตบนเกาะยองจง"
+          },
+          "why": {
+            "en": "Children under 48 months enter free; a good choice on rainy or cold days",
+            "th": "เด็กอายุต่ำกว่า 48 เดือนเข้าฟรี เหมาะกับวันฝนตกหรืออากาศหนาว"
+          },
+          "tip": {
+            "en": "Open 08:00–20:00",
+            "th": "เปิด 08:00–20:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Splash Bay, Inspire Resort, Yeongjong, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-kids-places"
+        },
+        {
+          "name": {
+            "en": "Indoo Songdo",
+            "th": "อินดูจู ซงโด"
+          },
+          "local": "인더쥬 송도",
+          "kind": "zoo",
+          "area": {
+            "en": "Triple Street, Songdo",
+            "th": "ทริปเปิลสตรีท ซงโด"
+          },
+          "what": {
+            "en": "Indoor zoo with raccoons, guinea pigs, alpacas and fennec foxes, with a feeding experience",
+            "th": "สวนสัตว์ในร่มที่มีแรคคูน หนูตะเภา อัลปากา และสุนัขจิ้งจอกเฟนเนก พร้อมให้อาหารสัตว์"
+          },
+          "why": {
+            "en": "Indoor, so it works in any weather; in a shopping mall with places to eat and shop",
+            "th": "อยู่ในร่ม ไปได้ทุกสภาพอากาศ ตั้งอยู่ในห้างที่มีร้านอาหารและร้านค้า"
+          },
+          "tip": {
+            "en": "Open 11:00–20:00 daily",
+            "th": "เปิดทุกวัน 11:00–20:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩18,000 per person · under 18 months free",
+            "th": "≈ ₩18,000 ต่อคน · เด็กอายุต่ำกว่า 18 เดือนฟรี"
+          },
+          "book": "rec",
+          "q": "Indoo Songdo, Triple Street, Songdo, Yeonsu-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-kids-places"
+        },
+        {
+          "name": {
+            "en": "Tri-Bowl",
+            "th": "ทรีโบวล์"
+          },
+          "local": "트라이보울",
+          "kind": "culture",
+          "area": {
+            "en": "Songdo Central Park, Yeonsu-gu",
+            "th": "ซงโดเซ็นทรัลปาร์ก ยอนซูกู"
+          },
+          "what": {
+            "en": "Three bowl-shaped buildings with changing exhibitions and children's programmes, indoors and outdoors",
+            "th": "อาคารทรงชามสามหลัง มีนิทรรศการหมุนเวียนและกิจกรรมสำหรับเด็ก ทั้งในร่มและกลางแจ้ง"
+          },
+          "why": {
+            "en": "Children's programmes are mostly free; a walk in Songdo Central Park can follow",
+            "th": "กิจกรรมสำหรับเด็กส่วนใหญ่ฟรี และเดินเล่นต่อในซงโดเซ็นทรัลปาร์กได้"
+          },
+          "tip": {
+            "en": "Pairs well with the World Writing Systems Museum, close by",
+            "th": "ไปคู่กับพิพิธภัณฑ์อักษรโลกที่อยู่ใกล้ๆ ได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tri-Bowl, Songdo Central Park, Yeonsu-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-kids-places"
+        },
+        {
+          "name": {
+            "en": "Sorae Port Fish Market",
+            "th": "ตลาดปลาท่าเรือโซเร"
+          },
+          "local": "소래포구",
+          "kind": "market",
+          "area": {
+            "en": "Namdong-gu",
+            "th": "นัมดงกู"
+          },
+          "what": {
+            "en": "Seaside fish market with fresh shrimp, salted seafood and crab, with gulls overhead",
+            "th": "ตลาดปลาริมทะเล มีกุ้งสด อาหารทะเลหมักเกลือและปู มีนางนวลบินอยู่เหนือหัว"
+          },
+          "why": {
+            "en": "The renovated market has a baby café and family facilities on its second floor",
+            "th": "ตลาดที่ปรับปรุงใหม่มีคาเฟ่เลี้ยงเด็กและสิ่งอำนวยความสะดวกสำหรับครอบครัวบนชั้นสอง"
+          },
+          "tip": {
+            "en": "Open all year; parking is free",
+            "th": "เปิดตลอดปี จอดรถฟรี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sorae Fish Market, Namdong-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "Open Port Street",
+            "th": "ถนนเกฮังจัง"
+          },
+          "local": "개항장 거리",
+          "kind": "oldtown",
+          "area": {
+            "en": "Gwandong-1-ga, Jung-gu",
+            "th": "ควันดง 1 กา จุงกู"
+          },
+          "what": {
+            "en": "Street of old Open Port buildings from the late 1800s, with former Chinese and Japanese settlement borders and Western-style buildings",
+            "th": "ถนนอาคารยุคเปิดท่าเรือปลายศตวรรษที่ 19 มีแนวเขตชุมชนจีนและญี่ปุ่นเดิมและอาคารสไตล์ตะวันตก"
+          },
+          "why": {
+            "en": "Free and open all year; Chinatown and the Jjajangmyeon Museum are nearby",
+            "th": "ฟรีและเปิดตลอดปี ใกล้ไชน่าทาวน์และพิพิธภัณฑ์จาจังมยอน"
+          },
+          "tip": {
+            "en": "No parking; book a heritage guide in advance if you want one",
+            "th": "ไม่มีที่จอดรถ หากต้องการไกด์นำชมมรดกทางวัฒนธรรมให้จองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Incheon Open Port District, Jung-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-places-to-visit"
         }
       ]
     }

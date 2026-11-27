@@ -876,6 +876,170 @@
           "q": "Jeongdongjin Railbike, Jeongdongjin, Gangneung",
           "ok": "2026-11",
           "src": "https://ae.trip.com/moments/poi-jeongdongjin-railbike-137419147"
+        },
+        {
+          "name": {
+            "en": "Haslla Art World",
+            "th": "ฮาซึลลาอาร์ตเวิลด์"
+          },
+          "local": "하슬라아트월드",
+          "kind": "culture",
+          "area": {
+            "en": "Gangneung",
+            "th": "คังนึง"
+          },
+          "what": {
+            "en": "Art and sculpture park on a hillside, with a large sculpture park and an indoor art museum",
+            "th": "สวนศิลปะและประติมากรรมบนเนินเขา มีลานประติมากรรมขนาดใหญ่และพิพิธภัณฑ์ศิลปะในร่ม"
+          },
+          "why": {
+            "en": "An indoor art museum and an open sculpture park in one visit",
+            "th": "ได้ทั้งพิพิธภัณฑ์ศิลปะในร่มและลานประติมากรรมกลางแจ้งในครั้งเดียว"
+          },
+          "tip": {
+            "en": "Open 09:00–18:00 and every day of the year",
+            "th": "เปิด 09:00–18:00 ทุกวันตลอดปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩11,000 child",
+            "th": "≈ ₩11,000 เด็ก"
+          },
+          "book": "none",
+          "q": "Haslla Art World, Gangneung",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/gangneung-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "Gangneung Embroidery Museum",
+            "th": "พิพิธภัณฑ์งานปักคังนึง"
+          },
+          "local": "강릉자수박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Ojukheon art village, Gangneung",
+            "th": "หมู่บ้านศิลปะโอจุกฮอน คังนึง"
+          },
+          "what": {
+            "en": "Embroidery museum with about 500 traditional embroidery pieces from Korea, China and Japan",
+            "th": "พิพิธภัณฑ์งานปักที่มีผลงานปักดั้งเดิมราว 500 ชิ้นจากเกาหลี จีน และญี่ปุ่น"
+          },
+          "why": {
+            "en": "Indoors and open every day of the year, in the Ojukheon art village",
+            "th": "อยู่ในร่มและเปิดทุกวันตลอดปี ตั้งอยู่ในหมู่บ้านศิลปะโอจุกฮอน"
+          },
+          "tip": {
+            "en": "Open every day of the year",
+            "th": "เปิดทุกวันตลอดปี"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩4,000 child",
+            "th": "≈ ₩4,000 เด็ก"
+          },
+          "book": "none",
+          "q": "Gangneung Embroidery Museum, Ojukheon, Gangneung",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/gangneung-museums"
+        },
+        {
+          "name": {
+            "en": "Chamsori Edison Museum",
+            "th": "พิพิธภัณฑ์เอดิสันชัมโซรี"
+          },
+          "local": "참소리에디슨손성목영화박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Gyeongpo, Gangneung",
+            "th": "คย็องโพ คังนึง"
+          },
+          "what": {
+            "en": "Edison and film museum with about 2,500 pieces, including phonographs, music boxes, radios and televisions, and a lake viewing deck on the third floor",
+            "th": "พิพิธภัณฑ์เอดิสันและภาพยนตร์ มีราว 2,500 ชิ้น เช่น เครื่องเล่นแผ่นเสียง กล่องดนตรี วิทยุ โทรทัศน์ และดาดฟ้าชมทะเลสาบชั้นสาม"
+          },
+          "why": {
+            "en": "Indoors, with Edison's inventions and old machines to look at and a view over Gyeongpo Lake",
+            "th": "อยู่ในร่ม มีสิ่งประดิษฐ์ของเอดิสันและเครื่องจักรเก่าให้ดู และวิวทะเลสาบคย็องโพ"
+          },
+          "tip": {
+            "en": "Closed Tuesdays; viewing 10:00–15:40",
+            "th": "ปิดวันอังคาร เข้าชม 10:00–15:40"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩10,000 child",
+            "th": "≈ ₩10,000 เด็ก"
+          },
+          "book": "none",
+          "q": "Chamsori Edison Museum, Gyeongpo, Gangneung",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/gangneung-museums"
+        },
+        {
+          "name": {
+            "en": "National Mountain Museum",
+            "th": "พิพิธภัณฑ์ภูเขาแห่งชาติ"
+          },
+          "local": "국립산악박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Sokcho",
+            "th": "ซ็อกโช"
+          },
+          "what": {
+            "en": "National mountain museum with a free climbing area, a reading café, colouring on the second floor and a VR experience on the ground floor",
+            "th": "พิพิธภัณฑ์ภูเขาแห่งชาติ มีลานปีนผาฟรี คาเฟ่อ่านหนังสือ ระบายสีชั้นสอง และประสบการณ์ VR ชั้นล่าง"
+          },
+          "why": {
+            "en": "Free entry, with climbing and colouring for children; a lift, a nursing room and a stroller rental make it easy with little ones",
+            "th": "เข้าฟรี มีปีนผาและระบายสีสำหรับเด็ก มีลิฟต์ ห้องให้นม และเช่ารถเข็นเด็ก สะดวกกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Closed Mondays; 09:00–18:00 (17:00 in winter); the high-altitude experience is booked online and not run on Sundays",
+            "th": "ปิดวันจันทร์ 09:00–18:00 (ฤดูหนาวถึง 17:00) ประสบการณ์ที่สูงจองออนไลน์และไม่เปิดวันอาทิตย์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "National Mountain Museum, Sokcho, Gangwon",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/travel/places/63be827708f3207c63d7e269"
         }
       ]
     },
@@ -955,13 +1119,13 @@
           "src": "https://www.trvlogue.com/en/gyeongju-cheomseongdae-night-2026"
         },
         {
-          "name": { "en": "Gyeongju National Museum and Children's Museum", "th": "พิพิธภัณฑ์แห่งชาติคย็องจูและพิพิธภัณฑ์เด็ก" },
-          "local": "국립경주박물관 어린이박물관",
-          "kind": "museumkid",
+          "name": { "en": "Gyeongju National Museum", "th": "พิพิธภัณฑ์แห่งชาติคย็องจู" },
+          "local": "국립경주박물관",
+          "kind": "museum",
           "area": { "en": "Central Gyeongju", "th": "ใจกลางคย็องจู" },
-          "what": { "en": "Silla treasures, including the golden crown, plus a separate children's museum with hands-on play", "th": "สมบัติสมัยซิลลา เช่น มงกุฎทอง และมีพิพิธภัณฑ์เด็กแยกให้ลงมือเล่น" },
-          "why": { "en": "Free, indoors and spacious; the children's museum needs a booked slot", "th": "ฟรี อยู่ในร่ม กว้างขวาง พิพิธภัณฑ์เด็กต้องจองรอบล่วงหน้า" },
-          "tip": { "en": "Hours roughly 10:00–18:00 (later on weekends); closed on New Year's Day, Seollal and Chuseok; reserve the children's museum online", "th": "เปิดราว 10:00–18:00 (สุดสัปดาห์ปิดดึกกว่า) ปิดวันปีใหม่ ซอลลัล และชูซอก จองพิพิธภัณฑ์เด็กออนไลน์" },
+          "what": { "en": "Silla treasures, including the golden crown", "th": "สมบัติสมัยซิลลา เช่น มงกุฎทอง" },
+          "why": { "en": "Free, indoors and spacious, with room for a pram", "th": "ฟรี อยู่ในร่ม กว้างขวาง เข็นรถเข็นเด็กได้" },
+          "tip": { "en": "Hours roughly 10:00–18:00 (later on weekends); closed on New Year's Day, Seollal and Chuseok; the children's museum is closed for now (November 2026), with no date to reopen", "th": "เปิดราว 10:00–18:00 (สุดสัปดาห์ปิดดึกกว่า) ปิดวันปีใหม่ ซอลลัล และชูซอก พิพิธภัณฑ์เด็กปิดชั่วคราว (พ.ย. 2026) ยังไม่มีกำหนดเปิด" },
           "ages": [1, 2, 2, 2],
           "hrs": 2.5,
           "io": "in",
@@ -1678,6 +1842,88 @@
           "q": "Hanwha Resort Gyeongju Pororo Aqua Village, 182-27 Bomun-ro, Gyeongju",
           "ok": "2026-11",
           "src": "https://mom-mom.net/en/travel/places/63aa8f31576d3cf16f49784c"
+        },
+        {
+          "name": {
+            "en": "Namsan Mountain",
+            "th": "ภูเขานัมซัน"
+          },
+          "local": "경주 남산",
+          "kind": "nature",
+          "area": {
+            "en": "Namsan Belt, outside the city centre",
+            "th": "แนวนัมซัน นอกตัวเมือง"
+          },
+          "what": {
+            "en": "A mountain with more than 50 temple sites, 100 stone pagodas and 80 stone Buddha images on its slopes, many from the Silla period",
+            "th": "ภูเขาที่มีซากวัดกว่า 50 แห่ง เจดีย์หิน 100 องค์ และพระพุทธรูปหิน 80 องค์ตามเนินเขา หลายแห่งมาจากสมัยชิลลา"
+          },
+          "why": {
+            "en": "For children old enough for a longer trek: the Samneung Valley trail is about 6 km and takes around three hours",
+            "th": "เหมาะกับเด็กที่โตพอเดินไกล เส้นทางหุบเขาซัมนึงยาวราว 6 กม. ใช้เวลาราว 3 ชั่วโมง"
+          },
+          "tip": {
+            "en": "Best in spring and autumn; bring plenty of water. Buses run to the Samneung Royal Tombs stop, where the route starts",
+            "th": "ไปช่วงฤดูใบไม้ผลิและใบไม้ร่วงดีที่สุด เตรียมน้ำให้พอ มีรถบัสไปป้ายสุสานหลวงซัมนึงที่เป็นจุดเริ่มเส้นทาง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Namsan Mountain, Gyeongju",
+          "ok": "2026-11",
+          "src": "https://www.mummytravels.com/gyeongju-with-kids-south-korea/"
+        },
+        {
+          "name": {
+            "en": "Girimsa Temple",
+            "th": "วัดคิริมซา"
+          },
+          "local": "기림사",
+          "kind": "culture",
+          "area": {
+            "en": "Hamwol Mountains, north-east of Gyeongju",
+            "th": "เทือกเขาฮัมวอล ทางตะวันออกเฉียงเหนือของคย็องจู"
+          },
+          "what": {
+            "en": "A 7th-century temple complex tucked into a forested valley, the second largest in the area after Bulguksa",
+            "th": "กลุ่มวัดจากศตวรรษที่ 7 ตั้งอยู่ในหุบเขาป่าไม้ ใหญ่เป็นอันดับสองของพื้นที่รองจากวัดพุลกุกซา"
+          },
+          "why": {
+            "en": "The approach along the forested valley path is lovely, and the atmosphere is peaceful and unhurried",
+            "th": "ทางเดินเข้าวัดผ่านหุบเขาป่าไม้สวยงาม บรรยากาศสงบไม่เร่งรีบ"
+          },
+          "tip": {
+            "en": "About half an hour by taxi from central Gyeongju; a taxi or tour is best, as public transport is harder",
+            "th": "นั่งแท็กซี่จากกลางเมืองคย็องจูราวครึ่งชั่วโมง แท็กซี่หรือทัวร์สะดวกที่สุด เพราะขนส่งสาธารณะไปยากกว่า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Girimsa Temple, Gyeongju",
+          "ok": "2026-11",
+          "src": "https://www.mummytravels.com/gyeongju-with-kids-south-korea/"
         }
       ]
     },
@@ -3236,6 +3482,88 @@
           "q": "Champion 1250, Fantasium 3F, Yeongtong-gu, Suwon",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/7664/"
+        },
+        {
+          "name": {
+            "en": "Gwanggyo Museum",
+            "th": "พิพิธภัณฑ์ควังกโย"
+          },
+          "local": "광교박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Gwanggyo, Suwon",
+            "th": "ควังกโย ซูวอน"
+          },
+          "what": {
+            "en": "A museum in Gwanggyo, Suwon, with indoor exhibitions",
+            "th": "พิพิธภัณฑ์ในควังกโย ซูวอน มีนิทรรศการในร่ม"
+          },
+          "why": {
+            "en": "Indoors, so good for a rainy day; children under 12 enter free",
+            "th": "อยู่ในร่ม เหมาะกับวันฝนตก เด็กอายุไม่เกิน 12 ปีเข้าฟรี"
+          },
+          "tip": {
+            "en": "Closed Mondays; free for ages 19–39 on Fridays",
+            "th": "ปิดวันจันทร์ วันศุกร์อายุ 19–39 ปีเข้าฟรี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩2,000 adults · children free",
+            "th": "≈ ₩2,000 ผู้ใหญ่ · เด็กฟรี"
+          },
+          "book": "none",
+          "q": "Suwon Gwanggyo Museum, Gwanggyo, Suwon",
+          "ok": "2026-11",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots"
+        },
+        {
+          "name": {
+            "en": "Suwon Media Centre",
+            "th": "ศูนย์สื่อซูวอน"
+          },
+          "local": "수원미디어센터",
+          "kind": "museum",
+          "area": {
+            "en": "Suwon",
+            "th": "ซูวอน"
+          },
+          "what": {
+            "en": "A free media-art centre with media-art exhibitions, a free film screening room and a hands-on studio",
+            "th": "ศูนย์สื่อศิลปะฟรี มีนิทรรศการสื่อศิลปะ ห้องฉายภาพยนตร์ฟรี และสตูดิโอให้ลงมือทำ"
+          },
+          "why": {
+            "en": "Free entry, indoors, with a studio where children can try things out",
+            "th": "เข้าฟรี อยู่ในร่ม มีสตูดิโอให้เด็กลองทำ"
+          },
+          "tip": {
+            "en": "Closed Mondays, the founding anniversary and Labour Day; open 09:00–22:00 Tue–Sat, to 18:00 on Sundays",
+            "th": "ปิดวันจันทร์ วันครบรอบก่อตั้งและวันแรงงาน เปิด 09:00–22:00 วันอังคาร–เสาร์ วันอาทิตย์ถึง 18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Suwon Media Centre, Suwon",
+          "ok": "2026-11",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots"
         }
       ]
     }
