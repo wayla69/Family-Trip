@@ -2438,6 +2438,580 @@
           "book": "none",
           "q": "St. Joseph's Seminary and Church, Rua do Seminário, Macau",
           "src": "https://www.macaotourism.gov.mo/en/sightseeing/churches/st-josephs-seminary-and-church"
+        },
+        {
+          "local": "益隆炮竹廠舊址",
+          "ok": "2026-11",
+          "name": {
+            "th": "โรงงานประทัดเอี๊ยกหลงเก่า",
+            "en": "Former Iec Long Firecracker Factory"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านไทปา ถนนเฟอร์เนาเมนเดสปินโต",
+            "en": "Taipa Village, Rua de Fernão Mendes Pinto"
+          },
+          "what": {
+            "th": "โรงงานประทัดอายุเกือบ 100 ปีที่เก็บไว้อย่างเดิม มีโรงงานเก่าท่ามกลางต้นไม้และห้องนิทรรศการเล็ก ๆ",
+            "en": "A nearly 100-year-old firecracker works kept as it was, with old workshops among the trees and a small exhibition hall"
+          },
+          "why": {
+            "th": "เดินเล่นร่มรื่นผ่านอาคารเก่า ห่างหมู่บ้านไทปาไม่ไกล",
+            "en": "A shady wander through old buildings, a short walk from Taipa Village"
+          },
+          "tip": {
+            "th": "บริเวณเปิด 06:00–19:00 วันพุธถึง 15:00 ห้องนิทรรศการเปิด 11:00 รับคนได้ครั้งละไม่เกิน 200 คน",
+            "en": "Grounds 06:00–19:00, to 15:00 on Wednesdays; exhibition hall from 11:00; at most 200 visitors at once"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Former Iec Long Firecracker Factory, Taipa, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/former-iec-long-firecracker-factory"
+        },
+        {
+          "local": "加思欄馬路公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนคาร์ลอสดาสซุมเซา",
+            "en": "Dr. Carlos d'Assumpção Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นาเป ถนนคาร์ลอสดาสซุมเซา คาบสมุทรมาเก๊า",
+            "en": "NAPE, Alameda Dr. Carlos d'Assumpção, Macau Peninsula"
+          },
+          "what": {
+            "th": "แนวสวนเขียวมีซุ้มไม้และทางเดินต้นปาล์ม ทอดยาวไปถึงรูปปั้นเจ้าแม่กวนอิมทองสัมฤทธิ์ มีสนามเด็กเล่น",
+            "en": "A green strip of arbours and palm avenues running down to the bronze Kun Iam statue, with a children's playground"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นระหว่างทางไปริมน้ำเจ้าแม่กวนอิม",
+            "en": "A playground on the way to the Kun Iam waterfront"
+          },
+          "tip": {
+            "th": "เปิด 06:00–24:00",
+            "en": "Open 06:00–24:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Dr. Carlos d'Assumpção Park, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/dr-carlos-dassumpcao-park"
+        },
+        {
+          "local": "加思欄花園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนเซาฟรานซิสโก",
+            "en": "S. Francisco Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนปรายากรานเด คาบสมุทรมาเก๊า",
+            "en": "Avenida da Praia Grande, Macau Peninsula"
+          },
+          "what": {
+            "th": "แปลงดอกไม้และทางเดินกว้างขึ้นไปยังบันไดหินคู่ ข้างค่ายทหารเซาฟรานซิสโกสีชมพู",
+            "en": "Flower beds and wide paths up to a double stone staircase, beside the pink St Francis Barracks"
+          },
+          "why": {
+            "th": "แวะพักสีเขียวสั้น ๆ ใกล้พิพิธภัณฑ์กองกำลังความมั่นคง",
+            "en": "A short green stop near the Security Forces museum"
+          },
+          "tip": {
+            "th": "เปิด 24 ชั่วโมง",
+            "en": "Open 24 hours"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "S. Francisco Garden, Avenida da Praia Grande, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/s-francisco-garden"
+        },
+        {
+          "local": "華士古達嘉馬花園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนวาสโกดากามา",
+            "en": "Vasco da Gama Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเฟอร์ไรราโดอามารัล คาบสมุทรมาเก๊า",
+            "en": "Rua de Ferreira do Amaral, Macau Peninsula"
+          },
+          "what": {
+            "th": "สวนเล็กศตวรรษที่ 19 ใต้ต้นไทรเก่า มีอนุสาวรีย์วาสโกดากามา",
+            "en": "A small 19th-century garden under old fig trees, with a monument to Vasco da Gama"
+          },
+          "why": {
+            "th": "ร่มเงาและม้านั่งระหว่างทางไปเนินกวยา",
+            "en": "Shade and a bench on the way to Guia Hill"
+          },
+          "tip": {
+            "th": "เปิด 24 ชั่วโมง",
+            "en": "Open 24 hours"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Jardim de Vasco da Gama, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/vasco-da-gama-garden"
+        },
+        {
+          "local": "主教座堂",
+          "ok": "2026-11",
+          "name": {
+            "th": "มหาวิหารมาเก๊า",
+            "en": "Macau Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ลานมหาวิหาร ใกล้จัตุรัสเซนาโด คาบสมุทรมาเก๊า",
+            "en": "Cathedral Square, near Senado Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "มหาวิหารของเมือง สร้างครั้งแรกราวปี 1622 บนลานเงียบ อยู่ในเขตมรดกโลก",
+            "en": "The city's cathedral, first built around 1622, on a quiet square, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "ลานสงบห่างฝูงคนจัตุรัสเซนาโดสองนาที",
+            "en": "A calm square two minutes from the Senado Square crowds"
+          },
+          "tip": {
+            "th": "เปิด 07:30–20:00",
+            "en": "Open 07:30–20:00"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Cathedral of the Nativity of Our Lady, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/cathedral"
+        },
+        {
+          "local": "聖奧斯定堂",
+          "ok": "2026-11",
+          "name": {
+            "th": "โบสถ์เซนต์ออกัสติน",
+            "en": "St. Augustine's Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ลานเซนต์ออกัสติน คาบสมุทรมาเก๊า",
+            "en": "St Augustine's Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "โบสถ์ที่ก่อตั้งปี 1591 จุดเริ่มขบวนแห่อีสเตอร์ อยู่ในเขตมรดกโลก",
+            "en": "A church founded in 1591, home of the Easter procession, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "อยู่ลานเดียวกับสวนห้องสมุดโฮตุง",
+            "en": "On the same square as the Ho Tung Library garden"
+          },
+          "tip": {
+            "th": "เปิด 10:00–18:00",
+            "en": "Open 10:00–18:00"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "St. Augustine's Church, Largo de Santo Agostinho, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-augustines-church"
+        },
+        {
+          "local": "聖老楞佐堂",
+          "ok": "2026-11",
+          "name": {
+            "th": "โบสถ์เซนต์ลอว์เรนซ์",
+            "en": "St. Lawrence's Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเซาลอเรนโซ คาบสมุทรมาเก๊า",
+            "en": "Rua de São Lourenço, Macau Peninsula"
+          },
+          "what": {
+            "th": "หนึ่งในสามโบสถ์เก่าแก่ที่สุด ครอบครัวชาวเรือเคยนั่งรอบนบันได อยู่ในเขตมรดกโลก",
+            "en": "One of the three oldest churches, where sailors' families once waited on the steps, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ ระหว่างเดินไปบ้านขุนนางจีน",
+            "en": "A short stop on the walk to Mandarin's House"
+          },
+          "tip": {
+            "th": "เปิด 07:00–18:00 วันธรรมดา ถึง 21:00 วันหยุด",
+            "en": "Open 07:00–18:00 weekdays, to 21:00 at weekends"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "St. Lawrence's Church, Rua de São Lourenço, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-lawrences-church"
+        },
+        {
+          "local": "聖安多尼堂",
+          "ok": "2026-11",
+          "name": {
+            "th": "โบสถ์เซนต์แอนโทนี",
+            "en": "St. Anthony's Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ลานซานโตอันโตนิโอ คาบสมุทรมาเก๊า",
+            "en": "Santo António Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "หนึ่งในโบสถ์เก่าแก่ที่สุด บนที่ตั้งฐานแรกของคณะเยซูอิต อยู่ในเขตมรดกโลก",
+            "en": "One of the oldest churches, on the site of the Jesuits' first base, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "อยู่ระหว่างทางจากซากโบสถ์เซนต์พอลไปสวนคาโมเอส",
+            "en": "On the way between the Ruins of St Paul's and Camões Garden"
+          },
+          "tip": {
+            "th": "เปิด 09:00–18:00",
+            "en": "Open 09:00–18:00"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "St. Anthony's Church, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-anthonys-church"
+        },
+        {
+          "local": "東方基金會會址",
+          "ok": "2026-11",
+          "name": {
+            "th": "บ้านคาซาการ์เดน",
+            "en": "Casa Garden"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ข้างลานคาโมเอส คาบสมุทรมาเก๊า",
+            "en": "beside Camões Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "บ้านพ่อค้าปี 1770 ปัจจุบันเป็นมูลนิธิโอเรียนท์ มีแกลเลอรีเล็กและสวน อยู่ในเขตมรดกโลก",
+            "en": "A 1770 merchant's house, now the Orient Foundation, with a small gallery and garden, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "เที่ยวคู่กับสวนคาโมเอสข้าง ๆ",
+            "en": "Pairs with Camões Garden next door"
+          },
+          "tip": {
+            "th": "เปิด 10:00–19:00 ปิดวันจันทร์",
+            "en": "Open 10:00–19:00; closed on Mondays"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Casa Garden, Praça de Luís de Camões, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/casa-garden"
+        },
+        {
+          "local": "仁慈堂博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์โฮลีเฮาส์ออฟเมอร์ซี",
+            "en": "Museum of the Holy House of Mercy"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "จัตุรัสเซนาโด คาบสมุทรมาเก๊า",
+            "en": "Senado Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "ของเก่าทางคาทอลิกตั้งแต่ศตวรรษที่ 16 ในอาคารซุ้มโค้งสีขาวบนจัตุรัสเซนาโด",
+            "en": "Catholic relics from the 16th century on, in the white arcaded building on Senado Square"
+          },
+          "why": {
+            "th": "แวะในร่มเงียบ ๆ บนจัตุรัสเลย",
+            "en": "A quiet indoor stop right on the square"
+          },
+          "tip": {
+            "th": "เปิด 10:00–13:00 และ 14:30–17:30 ปิดวันจันทร์และวันหยุดราชการ",
+            "en": "Open 10:00–13:00 and 14:30–17:30; closed on Mondays and public holidays"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "10 ปาตากา นักเรียนและผู้อายุเกิน 65 ฟรี",
+            "en": "MOP 10; students and over-65s free"
+          },
+          "book": "none",
+          "q": "Holy House of Mercy, Travessa da Misericórdia, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-the-holy-house-of-mercy"
+        },
+        {
+          "local": "三街會館",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดซามไกวุยกุน",
+            "en": "Sam Kai Vui Kun"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ข้างตลาดเซนต์โดมินิก คาบสมุทรมาเก๊า",
+            "en": "beside St Dominic's Market, Macau Peninsula"
+          },
+          "what": {
+            "th": "ศาลเจ้ากวนอูเล็ก ๆ ข้างตลาดจีนเก่า อยู่ในเขตมรดกโลก",
+            "en": "A small Kuan Tai temple by the old Chinese bazaar, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "แวะสองนาทีระหว่างจัตุรัสเซนาโดกับซอยตลาด",
+            "en": "A two-minute stop between Senado Square and the market lanes"
+          },
+          "tip": {
+            "th": "เปิด 09:00–18:00",
+            "en": "Open 09:00–18:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Sam Kai Vui Kun, Rua Sul do Mercado de São Domingos, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/sam-kai-vui-kun-kuan-tai-temple"
+        },
+        {
+          "local": "澳門中央圖書館",
+          "ok": "2026-11",
+          "name": {
+            "th": "ห้องสมุดกลางมาเก๊า",
+            "en": "Macao Central Library"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ทับเซียก ถนนคอนเซลเฮโรเฟอร์ไรราเดอัลเมดา คาบสมุทรมาเก๊า",
+            "en": "Tap Seac, Av. Conselheiro Ferreira de Almeida, Macau Peninsula"
+          },
+          "what": {
+            "th": "ห้องสมุดประชาชนหลักในอาคารสไตล์โปรตุเกส ข้างลานทับเซียก",
+            "en": "The main public library in a Portuguese-style building by Tap Seac Square"
+          },
+          "why": {
+            "th": "ที่เย็นและเงียบไว้อ่านหนังสือในบ่ายที่ร้อนหรือฝนตก",
+            "en": "A cool, quiet place to read on a hot or rainy afternoon"
+          },
+          "tip": {
+            "th": "เปิด 08:00–24:00 วันจันทร์เปิดบ่ายสอง",
+            "en": "Open 08:00–24:00; Mondays from 14:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Macao Central Library, Av. Conselheiro Ferreira de Almeida, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macao-central-library"
+        },
+        {
+          "local": "路環圖書館",
+          "ok": "2026-11",
+          "name": {
+            "th": "ห้องสมุดโคโลอาน",
+            "en": "Coloane Library"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "หมู่บ้านโคโลอาน ถนนซิงโกเดอูตูบรู",
+            "en": "Coloane Village, Av. Cinco de Outubro"
+          },
+          "what": {
+            "th": "ห้องสมุดชั้นเดียวราวปี 1911 อดีตโรงเรียนของหมู่บ้าน ริมน้ำ",
+            "en": "A one-storey library of about 1911, once the village school, by the waterfront"
+          },
+          "why": {
+            "th": "แวะสวย ๆ ระหว่างเดินริมน้ำหมู่บ้านโคโลอาน",
+            "en": "A pretty stop on the Coloane Village waterfront walk"
+          },
+          "tip": {
+            "th": "เปิด 08:00–20:00 วันจันทร์เปิดบ่ายสอง",
+            "en": "Open 08:00–20:00; Mondays from 14:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Coloane Library, Av. Cinco de Outubro, Coloane, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/coloane-library"
+        },
+        {
+          "local": "港務局大樓",
+          "ok": "2026-11",
+          "name": {
+            "th": "ค่ายทหารมัวร์",
+            "en": "Moorish Barracks"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ทางลาดบาร์รา ใกล้วัดอาม่า คาบสมุทรมาเก๊า",
+            "en": "Calçada da Barra, near A-Ma Temple, Macau Peninsula"
+          },
+          "what": {
+            "th": "อาคารปี 1874 มีซุ้มโค้งสไตล์โมกุล ปัจจุบันเป็นสำนักงานกิจการทางทะเล อยู่ในเขตมรดกโลก",
+            "en": "An 1874 building with Moghul-style arches, now the Marine and Water Bureau, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "เดินตามระเบียงซุ้มโค้งหลังไหว้วัดอาม่า",
+            "en": "A walk along its arched verandah after A-Ma Temple"
+          },
+          "tip": {
+            "th": "ระเบียงเปิด 09:00–18:00",
+            "en": "Verandah open 09:00–18:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Moorish Barracks, Calçada da Barra, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/moorish-barracks"
         }
       ]
     }

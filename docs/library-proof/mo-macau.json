@@ -1650,6 +1650,121 @@
           "why": "no listing of its own on Google Maps"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The Macao Government Tourism Office's own sightseeing page (description, address, hours, fees), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Former Iec Long Firecracker Factory",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/former-iec-long-firecracker-factory",
+          "map": "Google Maps: open, a review 26 days ago"
+        },
+        {
+          "name": "Dr. Carlos d'Assumpção Park",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/dr-carlos-dassumpcao-park",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "S. Francisco Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/s-francisco-garden",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Vasco da Gama Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/vasco-da-gama-garden",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Macau Cathedral",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/cathedral",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "St. Augustine's Church",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-augustines-church",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "St. Lawrence's Church",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-lawrences-church",
+          "map": "Google Maps: open, a review 3 days ago"
+        },
+        {
+          "name": "St. Anthony's Church",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-anthonys-church",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Casa Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/casa-garden",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Museum of the Holy House of Mercy",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-the-holy-house-of-mercy",
+          "map": "Google Maps: Holy House of Mercy, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Sam Kai Vui Kun",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/sam-kai-vui-kun-kuan-tai-temple",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Macao Central Library",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macao-central-library",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Coloane Library",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/coloane-library",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Moorish Barracks",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/moorish-barracks",
+          "map": "Google Maps: open, a review 4 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Macao Tea Culture House",
+          "why": "Google Maps marks it closed"
+        },
+        {
+          "name": "Dom Pedro V Theatre",
+          "why": "the tourism office marks it temporarily closed for renovation"
+        },
+        {
+          "name": "The Patane Night Watch House",
+          "why": "the tourism office marks it temporarily closed"
+        },
+        {
+          "name": "Jao Tsung-I Academy",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Exhibition Room of Master Lu Ban's Woodcraft Works",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Xian Xinghai Memorial Museum",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "The Sculpture Park of the Chinese Ethnics",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Cinematheque Passion",
+          "why": "art and independent films, not a family outing"
+        },
+        {
+          "name": "Macao Contemporary Art Center - Navy Yard No.1",
+          "why": "open only when an exhibition is on"
+        }
+      ]
     }
   ]
 }
