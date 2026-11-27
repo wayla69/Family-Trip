@@ -1765,6 +1765,92 @@
           "why": "open only when an exhibition is on"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The Macao Government Tourism Office's own sightseeing page, then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Tin Hau Temple (Coloane)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/ancient-temple-of-tin-hau-in-coloane",
+          "map": "Google Maps: Tin Hau Temple Coloane, open, a review a month ago"
+        },
+        {
+          "name": "Kun Iam Temple (Coloane)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/ancient-temple-of-kun-iam-in-coloane",
+          "map": "Google Maps: Kun Iam Temple, Coloane, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Pou Tai Un Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pou-tai-sin-un",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Tin Hau Temple (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/tin-hau-temple-in-taipa",
+          "map": "Google Maps: Tin Hau Temple, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Travessa da Paixão (Love Lane)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/travessa-da-paixao",
+          "map": "Google Maps: Tv. da Paixao, a review 5 months ago"
+        },
+        {
+          "name": "Praça de Ponte e Horta",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/praca-de-ponte-e-horta",
+          "map": "Google Maps: a review 2 weeks ago"
+        },
+        {
+          "name": "General Ye Ting's Former Residence",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/general-ye-tings-former-residence",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Pau Kung Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pao-kong-temple-and-temple-of-divinity-of-medicine",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Hong Kung Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/hong-kung-temple",
+          "map": "Google Maps: Hong Chan Kuan Temple, open, a review 5 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Grande Praça at MGM MACAU",
+          "why": "no Google Maps listing of its own (the hotel lobby)"
+        },
+        {
+          "name": "Coloane Pier",
+          "why": "newest Google Maps review 9 months old"
+        },
+        {
+          "name": "Former Municipal Cattle Stable",
+          "why": "no recent Google Maps review could be confirmed"
+        },
+        {
+          "name": "Tung Sin Tong Historical Archive Exhibition Hall",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Museum of Sacred Art and Crypt",
+          "why": "no Google Maps review within six months could be confirmed"
+        },
+        {
+          "name": "Rua de Cinco de Outubro",
+          "why": "a street, no reviews to check"
+        },
+        {
+          "name": "Zheng Guanying Memorial Museum",
+          "why": "inside Mandarin's House, already in the library"
+        },
+        {
+          "name": "Protestant Cemetery",
+          "why": "not a family outing"
+        }
+      ]
     }
   ]
 }

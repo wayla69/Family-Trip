@@ -3012,6 +3012,347 @@
           "book": "none",
           "q": "Moorish Barracks, Calçada da Barra, Macau",
           "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/moorish-barracks"
+        },
+        {
+          "local": "路環天后古廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "ศาลเจ้าทินเฮา โคโลอาน",
+            "en": "Tin Hau Temple (Coloane)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านโคโลอาน",
+            "en": "Coloane Village"
+          },
+          "what": {
+            "th": "วัดเก่าแก่ที่สุดบนเกาะโคโลอาน ราวปี 1763 มีระฆังโบราณและเรือไม้เก็บไว้ข้างใน",
+            "en": "The oldest temple on Coloane, from about 1763, with an antique bell and a wooden boat kept inside"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ ระหว่างเดินหมู่บ้านโคโลอาน",
+            "en": "A short stop on the Coloane Village walk"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tin Hau Temple, Coloane Village, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/ancient-temple-of-tin-hau-in-coloane"
+        },
+        {
+          "local": "路環觀音古廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดเจ้าแม่กวนอิม โคโลอาน",
+            "en": "Kun Iam Temple (Coloane)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ริมน้ำหมู่บ้านโคโลอาน",
+            "en": "Coloane Village waterfront"
+          },
+          "what": {
+            "th": "วัดเล็กที่พ่อค้าทางทะเลสร้างราวปี 1800 ที่ปลายริมน้ำโคโลอาน",
+            "en": "A small temple built by sea traders around 1800, at the end of the Coloane waterfront"
+          },
+          "why": {
+            "th": "เที่ยวคู่กับศาลเจ้าทินเฮาระหว่างเดินหมู่บ้าน",
+            "en": "Pairs with the Tin Hau temple on a village walk"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Kun Iam Temple, Coloane, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/ancient-temple-of-kun-iam-in-coloane"
+        },
+        {
+          "local": "菩提禪院",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดโผวไท่อวิ๋น",
+            "en": "Pou Tai Un Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ไทปา ถนนโหลวลิมเอียก",
+            "en": "Taipa, Estrada Lou Lim Ieok"
+          },
+          "what": {
+            "th": "หนึ่งในวัดที่สวยที่สุดของมาเก๊า มีรูปหล่อสัมฤทธิ์สูง 5.4 เมตรในวิหารหลัก และสวนรอบ ๆ",
+            "en": "One of Macau's most picturesque temples, with a 5.4 m bronze statue in the main hall and gardens around"
+          },
+          "why": {
+            "th": "มีสวนให้เดินเล่น และร้านอาหารเจชั้นบนไว้กินกลางวัน",
+            "en": "Gardens to stroll and a vegetarian restaurant upstairs for lunch"
+          },
+          "tip": {
+            "th": "เปิด 09:00–18:00",
+            "en": "Open 09:00–18:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Pou Tai Un Temple, Estrada Lou Lim Ieok, Taipa, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pou-tai-sin-un"
+        },
+        {
+          "local": "氹仔天后宮",
+          "ok": "2026-11",
+          "name": {
+            "th": "ศาลเจ้าทินเฮา ไทปา",
+            "en": "Tin Hau Temple (Taipa)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านไทปา",
+            "en": "Taipa Village"
+          },
+          "what": {
+            "th": "หนึ่งในวัดเก่าแก่ที่สุดบนเกาะไทปา ระฆังลงปี 1785",
+            "en": "One of the oldest temples on Taipa, its bell dated 1785"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ ระหว่างเดินหมู่บ้านไทปา",
+            "en": "A short stop on the Taipa Village walk"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tin Hau Temple, Taipa Village, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/tin-hau-temple-in-taipa"
+        },
+        {
+          "local": "戀愛巷",
+          "ok": "2026-11",
+          "name": {
+            "th": "ตรอกแห่งความรัก",
+            "en": "Travessa da Paixão (Love Lane)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ข้างซากโบสถ์เซนต์พอล คาบสมุทรมาเก๊า",
+            "en": "beside the Ruins of St Paul's, Macau Peninsula"
+          },
+          "what": {
+            "th": "ตรอกสั้นสีพาสเทลข้างซากโบสถ์เซนต์พอล ได้ชื่อตรอกแห่งความรักเพราะแปลผิด",
+            "en": "A short pastel lane by the Ruins of St Paul's, named 'Love Lane' through a mistranslation"
+          },
+          "why": {
+            "th": "ถ่ายรูปครอบครัวเร็ว ๆ ห่างซากโบสถ์ไม่กี่ก้าว",
+            "en": "A quick family photo a few steps from the Ruins"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Travessa da Paixão, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/travessa-da-paixao"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ลานปอนเตเอออร์ตา",
+            "en": "Praça de Ponte e Horta"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ท่าเรือชั้นใน คาบสมุทรมาเก๊า",
+            "en": "Inner Harbour, Macau Peninsula"
+          },
+          "what": {
+            "th": "ลานที่บูรณะใหม่ริมท่าเรือชั้นใน อดีตท่าเรือเก่า ล้อมด้วยตึกแถวเก่า",
+            "en": "A restored plaza by the Inner Harbour, once an old pier, ringed by old shophouses"
+          },
+          "why": {
+            "th": "มีที่ให้ยืดขาระหว่างเดินถนนเก่าย่านท่าเรือ",
+            "en": "Room to stretch the legs on a walk through the old harbour streets"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Praça de Ponte e Horta, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/praca-de-ponte-e-horta"
+        },
+        {
+          "local": "葉挺將軍故居",
+          "ok": "2026-11",
+          "name": {
+            "th": "บ้านเดิมนายพลเย่ถิง",
+            "en": "General Ye Ting's Former Residence"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอัลมิรันเตกอสตากาบรัล คาบสมุทรมาเก๊า",
+            "en": "Rua do Almirante Costa Cabral, Macau Peninsula"
+          },
+          "what": {
+            "th": "วิลล่าที่บูรณะแล้วซึ่งนายพลเย่ถิงเคยอาศัยเจ็ดปี มีห้องต่าง ๆ และนิทรรศการ",
+            "en": "The restored villa where General Ye Ting lived for seven years, with rooms and an exhibition"
+          },
+          "why": {
+            "th": "แวะเงียบ ๆ ฟรีสำหรับเด็กโตที่ชอบประวัติศาสตร์",
+            "en": "A quiet free stop for older children who like history"
+          },
+          "tip": {
+            "th": "เปิด 10:00–18:00 ปิดวันพุธ",
+            "en": "Open 10:00–18:00; closed on Wednesdays"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "General Ye Ting's Former Residence, Rua do Almirante Costa Cabral, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/general-ye-tings-former-residence"
+        },
+        {
+          "local": "包公廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดเปาเกิง",
+            "en": "Pau Kung Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนฟิเกรา คาบสมุทรมาเก๊า",
+            "en": "Rua da Figueira, Macau Peninsula"
+          },
+          "what": {
+            "th": "วัดคู่ยุคปี 1880–90 สร้างตอนโรคระบาดในเมือง หลังหนึ่งบูชาเปาบุ้นจิ้น อีกหลังเทพแห่งการแพทย์",
+            "en": "Twin temples of the 1880s–90s, built when an epidemic struck the city, one to Judge Bao and one to the god of medicine"
+          },
+          "why": {
+            "th": "แวะเล็ก ๆ สำหรับเด็กที่รู้จักเรื่องเปาบุ้นจิ้น",
+            "en": "A small stop for children who know Judge Bao's stories"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Pau Kung Temple, Rua da Figueira, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pao-kong-temple-and-temple-of-divinity-of-medicine"
+        },
+        {
+          "local": "康真君廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดฮงกุง",
+            "en": "Hong Kung Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ลานปาโกดาโดบาซาร์ ใกล้ท่าเรือชั้นใน คาบสมุทรมาเก๊า",
+            "en": "Largo do Pagode do Bazar, near the Inner Harbour, Macau Peninsula"
+          },
+          "what": {
+            "th": "วัดปี 1860 สร้างให้รูปไม้ของท่านหงที่ลอยมาในท่าเรือ",
+            "en": "An 1860 temple built for a wooden statue of Duke Hong found floating in the harbour"
+          },
+          "why": {
+            "th": "วัดที่มีเรื่องเล่าให้ลูกฟังระหว่างเดินย่านท่าเรือเก่า",
+            "en": "A temple with a story to tell on the old-harbour walk"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Hong Chan Kuan Temple, Largo do Pagode do Bazar, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/hong-kung-temple"
         }
       ]
     }
