@@ -1184,6 +1184,46 @@
           "q": "Wat Phra Yai Big Buddha, Pratumnak Hill, Pattaya",
           "ok": "2026-11",
           "src": "https://pickyourtrail.com/attractions/pattaya/wat-phra-yai-thailand"
+        },
+        {
+          "name": {
+            "en": "Pattaya Sheep Farm",
+            "th": "พัทยา ชีพ ฟาร์ม"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Na Chom Thian, Sattahip",
+            "th": "นาจอมเทียน สัตหีบ"
+          },
+          "what": {
+            "en": "A farm with colourful photo zones, friendly animals and a relaxed countryside feel, open 09:00–18:00 daily.",
+            "th": "ฟาร์มที่มีมุมถ่ายรูปสีสัน สัตว์ใจดี และบรรยากาศชนบทสบายๆ เปิดทุกวัน 09:00–18:00"
+          },
+          "why": {
+            "en": "Children can feed and pet sheep, goats and rabbits, which the page calls gentle animals that come up to you.",
+            "th": "เด็กๆ ให้อาหารและลูบแกะ แพะ และกระต่าย ซึ่งเว็บไซต์บอกว่าเป็นสัตว์เชื่องที่เข้ามาหา"
+          },
+          "tip": {
+            "en": "The page suggests the morning and the cooler months; little ones enter free",
+            "th": "เว็บไซต์แนะนำช่วงเช้าและหน้าหนาว เด็กเล็กเข้าฟรี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿500 per person · little ones free",
+            "th": "≈ ฿500 ต่อคน · เด็กเล็กเข้าฟรี"
+          },
+          "book": "none",
+          "q": "Pattaya Sheep Farm, Na Chom Thian, Sattahip, Chonburi",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/pattaya/pattaya-sheep-farm"
         }
       ]
     },
@@ -1817,6 +1857,88 @@
           "q": "Samphan Nam Floating Market, Thap Tai, Hua Hin",
           "ok": "2026-11",
           "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": {
+            "en": "Khao Tao Reservoir",
+            "th": "อ่างเก็บน้ำเขาเต่า"
+          },
+          "local": "อ่างเก็บน้ำเขาเต่า",
+          "kind": "views",
+          "area": {
+            "en": "Nong Kae, Hua Hin",
+            "th": "หนองแก หัวหิน"
+          },
+          "what": {
+            "en": "A reservoir in a small seaside village near the hills, with a pavilion built out in the middle of the water.",
+            "th": "อ่างเก็บน้ำในหมู่บ้านเล็กๆ ริมทะเลใกล้ภูเขา มีศาลากลางน้ำ"
+          },
+          "why": {
+            "en": "Open-air space with a pavilion in the water and hill views, a short drive from town.",
+            "th": "พื้นที่โล่ง มีศาลากลางน้ำและวิวภูเขา ขับรถจากตัวเมืองไม่นาน"
+          },
+          "tip": {
+            "en": "Open 09:00–17:00",
+            "th": "เปิด 09:00–17:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Tao Reservoir, Nong Kae, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/introducing-the-most-popular-places-to-visit-in-hua-hin"
+        },
+        {
+          "name": {
+            "en": "Khao Takiab Beach",
+            "th": "หาดเขาตะเกียบ"
+          },
+          "local": "หาดเขาตะเกียบ",
+          "kind": "beach",
+          "area": {
+            "en": "Khao Takiab, Hua Hin",
+            "th": "เขาตะเกียบ หัวหิน"
+          },
+          "what": {
+            "en": "A long, quiet sand beach south of the town centre.",
+            "th": "หาดทรายยาวเงียบสงบ อยู่ทางใต้ของตัวเมือง"
+          },
+          "why": {
+            "en": "Calm and away from the busy town, a plain place to paddle and play on the sand.",
+            "th": "สงบ ห่างจากความวุ่นวายของเมือง เหมาะเล่นน้ำตื้นและเล่นทราย"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Takiab Beach, Nong Kae, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/introducing-the-most-popular-places-to-visit-in-hua-hin"
         }
       ]
     },
@@ -2334,6 +2456,47 @@
           },
           "q": "Krabi Urban Forest, Krabi",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Huay Toh Waterfall",
+            "th": "น้ำตกห้วยโต้"
+          },
+          "local": "น้ำตกห้วยโต้",
+          "kind": "nature",
+          "area": {
+            "en": "Khao Phanom Bencha National Park",
+            "th": "อุทยานแห่งชาติเขาพนมเบญจา"
+          },
+          "what": {
+            "en": "A forest waterfall with pools, reached by an easy walk from the national park headquarters.",
+            "th": "น้ำตกในป่ามีแอ่งน้ำ เดินสบายๆ จากที่ทำการอุทยาน"
+          },
+          "why": {
+            "en": "The page says young children can enjoy the lower waterfall, swimming, butterflies and easy walking.",
+            "th": "เว็บไซต์บอกว่าเด็กเล็กสนุกกับน้ำตกชั้นล่าง เล่นน้ำ ดูผีเสื้อ และเดินง่าย"
+          },
+          "tip": {
+            "en": "The park's Thai restaurant normally closes at about 14:00",
+            "th": "ร้านอาหารไทยในอุทยานมักปิดราว 14:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿200 adults · ฿100 children (park entrance)",
+            "th": "≈ ฿200 ผู้ใหญ่ · ฿100 เด็ก (ค่าเข้าอุทยาน)"
+          },
+          "book": "none",
+          "q": "Huay Toh Waterfall, Khao Phanom Bencha National Park, Krabi",
+          "ok": "2026-11",
+          "src": "https://krabinature.com/attractions/huay-to-waterfall/"
         }
       ]
     }

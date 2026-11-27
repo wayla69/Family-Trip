@@ -417,6 +417,129 @@
           "q": "The Million Toy Museum, U Thong Road, Ayutthaya",
           "ok": "2026-11",
           "src": "https://wanderingwagars.com/?p=25689"
+        },
+        {
+          "name": {
+            "en": "The Rabbit Water Park",
+            "th": "สวนน้ำอยุธยาวอเตอร์ปาร์ค"
+          },
+          "local": "สวนน้ำอยุธยาวอเตอร์ปาร์ค",
+          "kind": "play",
+          "area": {
+            "en": "Pak Chan, Nakhon Luang",
+            "th": "ปากจั่น นครหลวง"
+          },
+          "what": {
+            "en": "A newly opened water park with nine zones, on the Ayutthaya side of the river",
+            "th": "สวนน้ำเปิดใหม่ มี 9 โซน ในเขตอยุธยา"
+          },
+          "why": {
+            "en": "Has a children's pool called Bunny Pool, plus a lazy river and a wave pool",
+            "th": "มีสระเด็กชื่อบันนี่พูล รวมถึงสระน้ำวนและสระคลื่น"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "The Rabbit Water Park, Pak Chan, Nakhon Luang, Phra Nakhon Si Ayutthaya",
+          "ok": "2026-11",
+          "src": "https://tripsiam.com/travel-ayutthaya"
+        },
+        {
+          "name": {
+            "en": "Wat Phanan Choeng",
+            "th": "วัดพนัญเชิงวรวิหาร"
+          },
+          "local": "วัดพนัญเชิงวรวิหาร",
+          "kind": "culture",
+          "area": {
+            "en": "Outside the island town, on the Pa Sak river",
+            "th": "นอกเกาะเมืองอยุธยา ริมแม่น้ำป่าสัก"
+          },
+          "what": {
+            "en": "An old temple outside the island town, on the Pa Sak river where it meets the Chao Phraya",
+            "th": "วัดเก่านอกเกาะเมือง ริมแม่น้ำป่าสักตรงที่บรรจบแม่น้ำเจ้าพระยา"
+          },
+          "why": {
+            "en": "Visitors pay respects to Luang Pho To, the big Buddha image",
+            "th": "ผู้มาเยือนกราบไหว้หลวงพ่อโต พระพุทธรูปองค์ใหญ่"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wat Phanan Choeng, Phra Nakhon Si Ayutthaya",
+          "ok": "2026-11",
+          "src": "https://travel.kapook.com/view277840.html"
+        },
+        {
+          "name": {
+            "en": "Wat Nivet Thammaprawat",
+            "th": "วัดนิเวศธรรมประวัติราชวรวิหาร"
+          },
+          "local": "วัดนิเวศธรรมประวัติราชวรวิหาร",
+          "kind": "culture",
+          "area": {
+            "en": "Island in the Chao Phraya, opposite Bang Pa-In Palace",
+            "th": "เกาะกลางแม่น้ำเจ้าพระยา ตรงข้ามพระราชวังบางปะอิน"
+          },
+          "what": {
+            "en": "A Buddhist temple built on an island in the Chao Phraya river, opposite Bang Pa-In Palace",
+            "th": "วัดพุทธบนเกาะกลางแม่น้ำเจ้าพระยา ตรงข้ามพระราชวังบางปะอิน"
+          },
+          "why": {
+            "en": "Its church is built in the Gothic revival style, built in 1878",
+            "th": "โบสถ์สร้างในสถาปัตยกรรมแบบกอทิกรีไววัล สร้างเมื่อ พ.ศ. 2421"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wat Nivet Thammaprawat, Bang Pa-In, Phra Nakhon Si Ayutthaya",
+          "ok": "2026-11",
+          "src": "https://travel.kapook.com/view277840.html"
         }
       ]
     },
@@ -1047,6 +1170,129 @@
           },
           "q": "สวนเคพี การ์เด้น, ท่าหลวง, มะขาม, จันทบุรี",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Viva Foresta Farm",
+            "th": "วีว่า ฟอเรสต้า ฟาร์ม"
+          },
+          "local": "วีว่า ฟอเรสต้า ฟาร์ม",
+          "kind": "farm",
+          "area": {
+            "en": "Nayai Am, Chanthaburi",
+            "th": "นายายอาม จันทบุรี"
+          },
+          "what": {
+            "en": "A farm of over 30 rai with more than 70 kinds of unusual animals, a cafe and a small waterfall garden.",
+            "th": "ฟาร์มกว่า 30 ไร่ มีสัตว์แปลกกว่า 70 ชนิด คาเฟ่ และสวนน้ำตกเล็กๆ"
+          },
+          "why": {
+            "en": "The page calls it a learning centre for young people, with deer, sheep, peacocks and turtles to see.",
+            "th": "เป็นแหล่งเรียนรู้สำหรับเด็กและเยาวชน มีกวาง แกะ นกยูง และเต่าให้ดู"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Viva Foresta Farm, Nayai Am, Chanthaburi",
+          "ok": "2026-11",
+          "src": "https://www.posttoday.com/smart-sme/744769"
+        },
+        {
+          "name": {
+            "en": "Lan Hin Si Chomphu (Pink Rock Beach)",
+            "th": "ลานหินสีชมพู"
+          },
+          "local": "ลานหินสีชมพู",
+          "kind": "beach",
+          "area": {
+            "en": "Khlong Khut, Tha Mai",
+            "th": "คลองขุด ท่าใหม่"
+          },
+          "what": {
+            "en": "Pink-brown rocks line a long stretch of sand at Tha Mai.",
+            "th": "หินสีชมพูอมน้ำตาลเรียงรายตามหาดทรายที่ทอดยาวที่ท่าใหม่"
+          },
+          "why": {
+            "en": "Climbing and looking at the rocks along the beach is the outing the page describes for families.",
+            "th": "เดินปีนและชมก้อนหินริมหาด เป็นกิจกรรมที่เหมาะกับครอบครัว"
+          },
+          "tip": {
+            "en": "Open 08:30–16:30",
+            "th": "เปิด 08:30–16:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lan Hin Si Chomphu, Khlong Khut, Tha Mai, Chanthaburi",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/4qjv9bPoxq8"
+        },
+        {
+          "name": {
+            "en": "Wat Pak Nam Khaem Nu",
+            "th": "วัดปากน้ำแขมหนู"
+          },
+          "local": "วัดปากน้ำแขมหนู",
+          "kind": "culture",
+          "area": {
+            "en": "Takat Ngao, Tha Mai",
+            "th": "ตะกาดเง้า ท่าใหม่"
+          },
+          "what": {
+            "en": "A temple by the sea with a blue and white ceramic church, rebuilt after the old church was damaged by the sea air.",
+            "th": "วัดริมทะเลที่มีโบสถ์เซรามิกสีน้ำเงินขาว สร้างใหม่หลังโบสถ์เดิมเสียหายจากลมทะเล"
+          },
+          "why": {
+            "en": "A bright blue church to look at and photograph, next to the beach.",
+            "th": "โบสถ์สีน้ำเงินสดใสให้ชมและถ่ายรูป อยู่ติดชายหาด"
+          },
+          "tip": {
+            "en": "Open 08:00–18:00",
+            "th": "เปิด 08:00–18:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wat Pak Nam Khaem Nu, Tha Mai, Chanthaburi",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/4qjv9bPoxq8"
         }
       ]
     },
@@ -1702,6 +1948,88 @@
           "q": "PSU Natural History Museum, Prince of Songkla University, Hat Yai, Songkhla, Thailand",
           "ok": "2026-11",
           "src": "https://nhm.psu.ac.th/"
+        },
+        {
+          "name": {
+            "en": "Hat Yai Junction railway station",
+            "th": "สถานีรถไฟชุมทางหาดใหญ่"
+          },
+          "local": "สถานีรถไฟชุมทางหาดใหญ่",
+          "kind": "views",
+          "area": {
+            "en": "Rot Fai Road, Hat Yai",
+            "th": "ถนนรถไฟ หาดใหญ่"
+          },
+          "what": {
+            "en": "A Level 1 railway station on the southern line, where two railway lines meet.",
+            "th": "สถานีรถไฟชั้น 1 ของสายใต้ เป็นจุดที่ทางรถไฟสองสายมาบรรจบกัน"
+          },
+          "why": {
+            "en": "Trains from two lines meet here, and visitors can walk around and take a classic station photo.",
+            "th": "รถไฟจากสองสายมาพบกันที่นี่ เดินชมและถ่ายรูปสถานีสไตล์คลาสสิกได้"
+          },
+          "tip": {
+            "en": "Open all day",
+            "th": "เปิดทั้งวัน"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hat Yai Junction railway station, Hat Yai",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        },
+        {
+          "name": {
+            "en": "ASEAN Night Bazaar Hat Yai",
+            "th": "ตลาดอาเซียน ไนท์บาซาร์"
+          },
+          "local": "ตลาดอาเซียน ไนท์บาซาร์",
+          "kind": "market",
+          "area": {
+            "en": "Chotiwittayakul 4 Road, Hat Yai",
+            "th": "ถนนโชติวิทยะกุล 4 หาดใหญ่"
+          },
+          "what": {
+            "en": "A night bazaar in Hat Yai selling clothes, accessories and home goods, with a food zone.",
+            "th": "ตลาดกลางคืนในหาดใหญ่ ขายเสื้อผ้า เครื่องประดับ ของใช้ในบ้าน และมีโซนอาหาร"
+          },
+          "why": {
+            "en": "A food zone gathers the city's well-known dishes in one place.",
+            "th": "โซนอาหารรวมเมนูเด็ดของเมืองไว้ในที่เดียว"
+          },
+          "tip": {
+            "en": "Open 16:30–22:00",
+            "th": "เปิด 16:30–22:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "ASEAN Night Bazaar Hat Yai, Hat Yai",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
         }
       ]
     },
@@ -2308,6 +2636,211 @@
           "q": "เทเลทับบี้ส์คาเฟ่-ทุ่งกังหันลมเขาค้อ, Thung Samo, Khao Kho, Phetchabun, Thailand",
           "ok": "2026-11",
           "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W"
+        },
+        {
+          "name": {
+            "en": "Khao Kho district office viewpoint",
+            "th": "จุดชมวิวทะเลหมอก อำเภอเขาค้อ"
+          },
+          "local": "จุดชมวิวทะเลหมอก อำเภอเขาค้อ",
+          "kind": "views",
+          "area": {
+            "en": "Khao Kho district office, above Ang Ratanai reservoir",
+            "th": "ที่ว่าการอำเภอเขาค้อ เหนืออ่างรัตนัย"
+          },
+          "what": {
+            "en": "A viewpoint by the district office over the mountains above Ang Ratanai reservoir, with souvenir shops",
+            "th": "จุดชมวิวข้างที่ว่าการอำเภอ มองเห็นภูเขาเหนืออ่างรัตนัย มีร้านของฝาก"
+          },
+          "why": {
+            "en": "Sea of mist in the morning and cool wind all day, with a short walk from the road",
+            "th": "มีทะเลหมอกยามเช้าและลมเย็นทั้งวัน เดินสั้นๆ จากถนน"
+          },
+          "tip": {
+            "en": "Come early in the morning for the mist",
+            "th": "มาแต่เช้าเพื่อดูทะเลหมอก"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Kho district office viewpoint, Khao Kho, Phetchabun",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": {
+            "en": "Rai B.N. Khao Kho",
+            "th": "ไร่ บี.เอ็น. เขาค้อ"
+          },
+          "local": "ไร่ บี.เอ็น. เขาค้อ",
+          "kind": "farm",
+          "area": {
+            "en": "Khamp Son, Khao Kho",
+            "th": "แคมป์สน เขาค้อ"
+          },
+          "what": {
+            "en": "A farm growing vegetables, fruit and cool-climate flowers for sale, with a café inside",
+            "th": "ไร่ปลูกผัก ผลไม้ และดอกไม้เมืองหนาวขาย มีคาเฟ่ภายในไร่"
+          },
+          "why": {
+            "en": "Fruit and flowers to look at, and a shaded café among the trees",
+            "th": "มีผลไม้และดอกไม้ให้ดู และคาเฟ่ร่มรื่นท่ามกลางต้นไม้"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "ไร่ บี.เอ็น. เขาค้อ, Khao Kho, Phetchabun",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": {
+            "en": "Rachamangkhalaphisek Garden viewpoint",
+            "th": "จุดชมวิวสวนรัชมังคลาภิเษก เขาค้อ"
+          },
+          "local": "จุดชมวิวสวนรัชมังคลาภิเษก",
+          "kind": "views",
+          "area": {
+            "en": "Route 12, Khamp Son to Lom Sak road",
+            "th": "ทางหลวงหมายเลข 12 ถนนแคมป์สน–หล่มสัก"
+          },
+          "what": {
+            "en": "A roadside viewpoint on Route 12 with a shop selling farm produce, fruit and souvenirs",
+            "th": "จุดชมวิวริมทางหลวงหมายเลข 12 มีร้านขายผลผลิตทางการเกษตร ผลไม้ และของฝาก"
+          },
+          "why": {
+            "en": "Fruit and vegetables to buy at the roadside, with a view over the range",
+            "th": "มีผลไม้และผักให้เลือกซื้อริมทาง พร้อมวิวเทือกเขา"
+          },
+          "tip": {
+            "en": "Allow about half an hour",
+            "th": "เผื่อเวลาราวครึ่งชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Rachamangkhalaphisek Garden viewpoint, Khao Kho, Phetchabun",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": {
+            "en": "Phetchabun fire-control pine forest",
+            "th": "ป่าสนหน่วยควบคุมไฟป่าเพชรบูรณ์ ทุ่งแสลงหลวง"
+          },
+          "local": "ป่าสนหน่วยควบคุมไฟป่าเพชรบูรณ์ ทุ่งแสลงหลวง",
+          "kind": "nature",
+          "area": {
+            "en": "Route 12, Khek Noi, Khao Kho",
+            "th": "ทางหลวงหมายเลข 12 เข็กน้อย เขาค้อ"
+          },
+          "what": {
+            "en": "A pine forest of three-needle pines beside Route 12, by the Phetchabun fire-control unit",
+            "th": "ป่าสนสามใบริมทางหลวงหมายเลข 12 ข้างหน่วยควบคุมไฟป่าเพชรบูรณ์"
+          },
+          "why": {
+            "en": "Rows of tall pines with shade, good for a walk and photos",
+            "th": "ต้นสนสูงเรียงรายให้ร่มเงา เหมาะเดินเล่นและถ่ายรูป"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Phetchabun fire-control pine forest, Thung Salaeng Luang, Khao Kho",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": {
+            "en": "Pha Son Kaeo ranger post viewpoint",
+            "th": "จุดชมวิว หน่วยพิทักษ์อุทยานแห่งชาติเขาค้อ ผาซ่อนแก้ว"
+          },
+          "local": "จุดชมวิวผาซ่อนแก้ว",
+          "kind": "views",
+          "area": {
+            "en": "Route 12, Pha Son Kaeo, Khamp Son",
+            "th": "ทางหลวงหมายเลข 12 ผาซ่อนแก้ว แคมป์สน"
+          },
+          "what": {
+            "en": "A roadside viewpoint on Route 12 at the national park ranger post, over the range",
+            "th": "จุดชมวิวริมทางหลวงหมายเลข 12 ที่หน่วยพิทักษ์อุทยาน มองเห็นเทือกเขา"
+          },
+          "why": {
+            "en": "Views along the mountain road, and Phu Thap Boek can be seen in the distance",
+            "th": "วิวตลอดทางบนถนนภูเขา และมองเห็นภูทับเบิกได้ไกลๆ"
+          },
+          "tip": {
+            "en": "Allow about half an hour",
+            "th": "เผื่อเวลาราวครึ่งชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Kho national park ranger viewpoint, Pha Son Kaeo, Khao Kho",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
         }
       ]
     },
@@ -4302,6 +4835,88 @@
           "q": "อุทยานแห่งชาติหมู่เกาะช้าง, Koh Chang, Trat, Thailand",
           "ok": "2026-11",
           "src": "https://www.trip.com/things-to-do/kohchang-128607/"
+        },
+        {
+          "name": {
+            "en": "Sunken Buddha, Khao Rakam reservoir",
+            "th": "พระจมน้ำ อ่างเก็บน้ำเขาระกำ"
+          },
+          "local": "พระจมน้ำ อ่างเก็บน้ำเขาระกำ",
+          "kind": "culture",
+          "area": {
+            "en": "Khao Rakam reservoir, Nong Sono, Mueang Trat",
+            "th": "อ่างเก็บน้ำเขาระกำ หนองโสน เมืองตราด"
+          },
+          "what": {
+            "en": "A large Buddha statue, about 5 m tall, standing in the reservoir, visible above the water only from November to May",
+            "th": "พระพุทธรูปองค์ใหญ่สูงราว 5 เมตรในอ่างเก็บน้ำ เห็นเหนือผิวน้ำเฉพาะช่วงพฤศจิกายนถึงพฤษภาคม"
+          },
+          "why": {
+            "en": "A long-tail boat from the villagers takes you close to the statue",
+            "th": "นั่งเรือหางยาวของชาวบ้านเข้าไปใกล้พระพุทธรูปได้"
+          },
+          "tip": {
+            "en": "Visible above the water from November to May. Open daily 08:00–18:00",
+            "th": "เห็นเหนือผิวน้ำช่วงพฤศจิกายนถึงพฤษภาคม เปิดทุกวัน 08:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Rakam Reservoir, Nong Sono, Mueang Trat, Trat",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/amazing-trat"
+        },
+        {
+          "name": {
+            "en": "Lan Tabun century-old mangrove grove",
+            "th": "ลานตะบูนร้อยปี"
+          },
+          "local": "ลานตะบูนร้อยปี",
+          "kind": "nature",
+          "area": {
+            "en": "Ban Tha Rae Nae, Nong Khan Song, Mueang Trat",
+            "th": "บ้านท่าระแนะ หนองคันทรง เมืองตราด"
+          },
+          "what": {
+            "en": "A century-old tabun tree grove in the mangroves, with its roots spreading over the ground like woven waves",
+            "th": "ลานต้นตะบูนอายุร้อยปีในป่าโกงกาง รากแผ่คลุมพื้นดินเหมือนคลื่นสานกัน"
+          },
+          "why": {
+            "en": "Children can see the strange roots by boat through the mangrove forest",
+            "th": "เด็กๆ นั่งเรือผ่านป่าโกงกางไปดูรากไม้แปลกตาได้"
+          },
+          "tip": {
+            "en": "Go by the villagers' boat through the canal, about 10 minutes",
+            "th": "นั่งเรือของชาวบ้านผ่านคลองราว 10 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Lan Tabun, Ban Tha Rae Nae, Nong Khan Song, Mueang Trat, Trat",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/amazing-trat"
         }
       ]
     },
@@ -4699,23 +5314,6 @@
       "place": "th-lampang",
       "sights": [
         {
-          "name": { "en": "Thai Elephant Conservation Center", "th": "ศูนย์อนุรักษ์ช้างไทย" },
-          "kind": "farm",
-          "area": { "en": "Hang Chat, about 35 km north-east of Lampang", "th": "ห้างฉัตร ห่างจากตัวเมืองลำปางราว 35 กม." },
-          "what": { "en": "A national centre for elephants: morning bathing, then shows of elephants working and painting", "th": "ศูนย์ของรัฐดูแลช้าง มีช้างอาบน้ำตอนเช้า และการแสดงช้างทำงานและวาดภาพ" },
-          "why": { "en": "Children see elephants up close with plenty of shaded benches, and the shows are short", "th": "เด็กได้เห็นช้างใกล้ๆ มีม้านั่งใต้ร่มเยอะ และรอบแสดงสั้น" },
-          "tip": { "en": "Shows are usually at 10:00, 11:00 and 13:30 (sources differ); bathing comes before the first show", "th": "รอบแสดงมักเป็น 10:00, 11:00 และ 13:30 (แหล่งข้อมูลต่างกัน) ช้างอาบน้ำก่อนรอบแรก" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "out",
-          "pram": "yes",
-          "price": { "en": "≈ ฿100 adults · ฿50 children by shuttle bus; ฿200 a car if you drive in (check)", "th": "≈ ฿100 ผู้ใหญ่ · ฿50 เด็ก นั่งรถรับส่ง ขับรถเข้าเอง ≈ ฿200 ต่อคัน (เช็กอีกครั้ง)" },
-          "book": "none",
-          "q": "Thai Elephant Conservation Center, Hang Chat, Lampang",
-          "ok": "2026-11",
-          "src": "https://www.khaosodenglish.com/life/2026/11/08/lampang-elephant-centre-to-host-free-three-day-open-house-in-december/"
-        },
-        {
           "name": { "en": "Kad Kong Ta weekend walking street", "th": "กาดกองต้า ถนนคนเดิน" },
           "kind": "market",
           "area": { "en": "Talat Kao, old town", "th": "ตลาดจีน เมืองเก่า" },
@@ -4783,23 +5381,6 @@
           "q": "Wat Phra That Lampang Luang, Ko Kha, Lampang",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/wat-phrathat-lampang-luang/"
-        },
-        {
-          "name": { "en": "Lampang horse-carriage ride", "th": "นั่งรถม้าลำปาง" },
-          "kind": "ride",
-          "area": { "en": "Old town", "th": "เมืองเก่า" },
-          "what": { "en": "A circuit of the old town in a horse-drawn carriage past the main temples along the Wang River", "th": "นั่งรถม้าชมเมืองเก่าผ่านวัดสำคัญริมแม่น้ำวัง" },
-          "why": { "en": "A gentle, slow ride that small children enjoy; it is the only Thai city where carriages still share the public road", "th": "นั่งสบาย ช้า ๆ เด็กเล็กชอบ ลำปางเป็นเมืองเดียวที่ยังมีรถม้าวิ่งบนถนนจริง" },
-          "tip": { "en": "Agree the price before you board; a circuit is quoted at ≈ ฿200–300 and the driver sets the route", "th": "ตกลงราคาก่อนขึ้นรถ รอบเมืองเก่าราว ≈ ฿200–300 คนขับเป็นผู้กำหนดเส้นทาง" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 1,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "≈ ฿200–300 a circuit of the old town (agree first)", "th": "≈ ฿200–300 ต่อรอบเมืองเก่า (ตกลงราคาก่อน)" },
-          "book": "none",
-          "q": "Horse carriage ride, old town, Mueang Lampang",
-          "ok": "2026-11",
-          "src": "https://www.thaiholidayguide.com/visit/lampang/"
         },
         {
           "name": { "en": "Wang Huea Reservoir raft cafés", "th": "อ่างเก็บน้ำวังเฮือ แพกาแฟ" },
@@ -5379,6 +5960,88 @@
           },
           "q": "Nhong Krathing Park, Mueang Lampang",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "The Louis Leonowens House",
+            "th": "บ้านหลุยส์ ที. เลียวโนเวนส์"
+          },
+          "local": "บ้านหลุยส์ ที. เลียวโนเวนส์",
+          "kind": "museum",
+          "area": {
+            "en": "Wat Chong Kham Road, Phra Bat, Mueang Lampang",
+            "th": "ถนนวัดจองคำ พระบาท เมืองลำปาง"
+          },
+          "what": {
+            "en": "A colonial-style teak house more than 115 years old, once the home of a British teak trader",
+            "th": "เรือนไม้สักสไตล์โคโลเนียลอายุกว่า 115 ปี เคยเป็นบ้านของพ่อค้าไม้สักชาวอังกฤษ"
+          },
+          "why": {
+            "en": "Small, shaded and indoors, with a seven-sided front porch to walk round; small children enter free",
+            "th": "บ้านเล็กร่มรื่น มีระเบียงหน้าเจ็ดเหลี่ยมให้เดินรอบ เด็กเล็กเข้าฟรี"
+          },
+          "tip": {
+            "en": "Open every day 09:00–17:00",
+            "th": "เปิดทุกวัน 09:00–17:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿60 adults · small children free",
+            "th": "≈ ฿60 ผู้ใหญ่ · เด็กเล็กฟรี"
+          },
+          "book": "none",
+          "q": "The Louis Leonowens House, Phra Bat, Mueang Lampang",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": {
+            "en": "Wat Si Rong Muang",
+            "th": "วัดศรีรองเมือง"
+          },
+          "local": "วัดศรีรองเมือง",
+          "kind": "culture",
+          "area": {
+            "en": "Wang Khwa Road, Sop Tui, Mueang Lampang",
+            "th": "ถนนวังขวา สบตุ๋ย เมืองลำปาง"
+          },
+          "what": {
+            "en": "A Burmese-style teak temple more than a hundred years old, with nine stacked roofs and carved gables",
+            "th": "วัดไม้สักแบบพม่าอายุกว่าร้อยปี หลังคาเก้าชั้นและหน้าบันแกะสลัก"
+          },
+          "why": {
+            "en": "A short walk to see carved wood and coloured-glass pillars inside the hall; a quiet stop in town",
+            "th": "เดินสั้นๆ ดูไม้แกะสลักและเสากระจกสีในวิหาร เป็นจุดแวะเงียบสงบในเมือง"
+          },
+          "tip": {
+            "en": "Open every day 08:00–17:00",
+            "th": "เปิดทุกวัน 08:00–17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Si Rongmuang temple, Sop Tui, Mueang Lampang",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
         }
       ]
     },
@@ -5722,6 +6385,87 @@
           "q": "Hin Ngam Reef, Koh Lipe, Satun",
           "ok": "2026-11",
           "src": "https://pickyourtrail.com/tourism/thailand/things-to-do-in-koh-lipe"
+        },
+        {
+          "name": {
+            "en": "Chado Cliff",
+            "th": "หน้าผาชาโด"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Koh Adang, Tarutao National Park, from Koh Lipe",
+            "th": "เกาะอาดัง อุทยานแห่งชาติตะรุเตา (จากเกาะหลีเป๊ะ)"
+          },
+          "what": {
+            "en": "A steep hike up Chado Cliff on Koh Adang to a viewpoint over Koh Lipe.",
+            "th": "เดินป่าชันขึ้นหน้าผาชาโดบนเกาะอาดัง ไปยังจุดชมวิวเกาะหลีเป๊ะ"
+          },
+          "why": {
+            "en": "The top looks over the whole of Koh Lipe and the turquoise sea, a reward for older children who can climb.",
+            "th": "จากยอดเห็นเกาะหลีเป๊ะและทะเลสีเทอร์ควอยซ์ทั้งเกาะ เหมาะกับเด็กโตที่เดินปีนไหว"
+          },
+          "tip": {
+            "en": "Wear decent shoes: it is a pretty steep climb up the hill",
+            "th": "ใส่รองเท้าที่ดี เพราะทางขึ้นเขาค่อนข้างชัน"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Chado Cliff viewpoint, Koh Adang, Satun",
+          "ok": "2026-11",
+          "src": "https://www.twowanderingsoles.com/blog/things-to-do-in-koh-lipe-thailand"
+        },
+        {
+          "name": {
+            "en": "Koh Usen",
+            "th": "เกาะอุเสน"
+          },
+          "local": "เกาะอุเสน",
+          "kind": "beach",
+          "area": {
+            "en": "Off the southern side of Sunrise Beach, Koh Lipe",
+            "th": "ทางใต้ของหาดซันไรส์ เกาะหลีเป๊ะ"
+          },
+          "what": {
+            "en": "A small island you can paddle to from Sunrise Beach, with a white sand beach and a viewpoint.",
+            "th": "เกาะเล็กที่พายเรือไปได้จากหาดซันไรส์ มีหาดทรายขาวและจุดชมวิว"
+          },
+          "why": {
+            "en": "A quiet white sand beach to play on, away from the resort crowds.",
+            "th": "หาดทรายขาวเงียบสงบให้เล่น ห่างจากความคึกคักของรีสอร์ต"
+          },
+          "tip": {
+            "en": "Paddle across from the southern side of Sunrise Beach",
+            "th": "พายเรือข้ามจากฝั่งใต้ของหาดซันไรส์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Koh Usen, Koh Lipe, Satun",
+          "ok": "2026-11",
+          "src": "https://www.twowanderingsoles.com/blog/things-to-do-in-koh-lipe-thailand"
         }
       ]
     },
@@ -7795,6 +8539,88 @@
           "q": "Wat Ming Mueang, Nan city",
           "ok": "2026-11",
           "src": "https://travel.trueid.net/detail/aqP4e528vNd"
+        },
+        {
+          "name": {
+            "en": "Wat Si Phan Ton",
+            "th": "วัดศรีพันต้น"
+          },
+          "local": "วัดศรีพันต้น",
+          "kind": "culture",
+          "area": {
+            "en": "Chao Fa Road, Nai Wiang, Mueang Nan",
+            "th": "ถนนเจ้าฟ้า ในเวียง เมืองน่าน"
+          },
+          "what": {
+            "en": "A temple built in the 1960s by the Nan ruler Phya Phan Ton, with a golden church and a hall painted with the story of the Buddha and the founding of Nan",
+            "th": "วัดที่เจ้าพันต้นผู้ครองนครน่านสร้างในทศวรรษ 2500 มีโบสถ์สีทอง และวิหารเขียนภาพเรื่องพระพุทธเจ้าและการสร้างเมืองน่าน"
+          },
+          "why": {
+            "en": "Line drawings of the Buddha's life on the hall walls, a place to look and talk about the story",
+            "th": "ผนังวิหารมีภาพเส้นพุทธประวัติ ให้ดูและเล่าเรื่องคุยกันได้"
+          },
+          "tip": {
+            "en": "Open 08:00–18:00. Dress modestly to enter the temple",
+            "th": "เปิด 08:00–18:00 แต่งกายสุภาพเมื่อเข้าวัด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wat Si Phan Ton, Nan city",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
+        },
+        {
+          "name": {
+            "en": "Sapan village",
+            "th": "หมู่บ้านสะปัน"
+          },
+          "local": "หมู่บ้านสะปัน",
+          "kind": "nature",
+          "area": {
+            "en": "Dong Phaya, Bo Kluea",
+            "th": "ดงพญา บ่อเกลือ"
+          },
+          "what": {
+            "en": "A small village with terraced rice fields and mountains, where the mist rolls in from the rainy season to the cold season, with homestays close to nature",
+            "th": "หมู่บ้านเล็กที่มีนาขั้นบันไดและภูเขา หมอกลงตั้งแต่หน้าฝนถึงหน้าหนาว มีโฮมสเตย์ใกล้ชิดธรรมชาติ"
+          },
+          "why": {
+            "en": "Rice terraces and misty hills to look at, and homestays for a night in the countryside",
+            "th": "มีนาขั้นบันไดและเขาหมอกให้ชม และโฮมสเตย์ให้พักค้างคืนในชนบท"
+          },
+          "tip": {
+            "en": "Opening times differ for each spot in the village",
+            "th": "เวลาเปิดของแต่ละจุดในหมู่บ้านไม่เหมือนกัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sapan village, Dong Phaya, Bo Kluea, Nan",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
         }
       ]
     },
@@ -9474,6 +10300,88 @@
           "q": "Phraya Ratsadanupradit Monument, Trang-Phatthalung Road, Trang",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/phraya-ratsadanupradit-mahisornpakdee-monument/"
+        },
+        {
+          "name": {
+            "en": "Dugong Roundabout",
+            "th": "วงเวียนพะยูน"
+          },
+          "local": "วงเวียนพะยูน",
+          "kind": "park",
+          "area": {
+            "en": "Thap Thiang, Mueang Trang",
+            "th": "ทับเที่ยง เมืองตรัง"
+          },
+          "what": {
+            "en": "A roundabout at the heart of Trang city with a golden dugong sculpture and a small garden, the province symbol.",
+            "th": "วงเวียนกลางเมืองตรัง มีประติมากรรมพะยูนสีทองและสวนเล็กๆ เป็นสัญลักษณ์ของจังหวัด"
+          },
+          "why": {
+            "en": "A small garden to walk about in and take photos of the golden dugong.",
+            "th": "สวนเล็กๆ ให้เดินเล่นและถ่ายรูปกับพะยูนสีทอง"
+          },
+          "tip": {
+            "en": "Near the old-town cafés and restaurants",
+            "th": "อยู่ใกล้คาเฟ่และร้านอาหารในย่านเมืองเก่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Dugong Roundabout, Thap Thiang, Trang",
+          "ok": "2026-11",
+          "src": "https://www.traveloka.com/en-th/explore/destination/places-to-go-in-trang/157562"
+        },
+        {
+          "name": {
+            "en": "Phaya Phichai Songkram Cave",
+            "th": "ถ้ำวังพระยาพิชัยสงคราม"
+          },
+          "local": "ถ้ำวังพระยาพิชัยสงคราม",
+          "kind": "nature",
+          "area": {
+            "en": "Ban Nai Wang, Nong Bua, Ratsada",
+            "th": "บ้านในวัง หนองบัว รัษฎา"
+          },
+          "what": {
+            "en": "A cave near the city with stalactites and stalagmites, said to have been used by Phaya Phichai Songkram on ancient campaigns.",
+            "th": "ถ้ำใกล้เมืองที่มีหินงอกหินย้อย เล่าว่าพระยาพิชัยสงครามเคยใช้ในการศึกสมัยโบราณ"
+          },
+          "why": {
+            "en": "A short climb up well-kept steps to a cave of stalactites and stalagmites.",
+            "th": "ปีนบันไดที่ดูแลดีไม่ไกล ไปถึงถ้ำหินงอกหินย้อย"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Phaya Phichai Songkram Cave, Ratsada, Trang",
+          "ok": "2026-11",
+          "src": "https://www.traveloka.com/en-th/explore/destination/places-to-go-in-trang/157562"
         }
       ]
     },

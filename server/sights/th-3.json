@@ -577,6 +577,46 @@
           "q": "จุดชมวิวลาดเกาะ, Koh Samui, Surat Thani, Thailand",
           "ok": "2026-11",
           "src": "https://pickyourtrail.com/attractions/koh-samui/lad-koh-view-point-koh-samui"
+        },
+        {
+          "name": {
+            "en": "Laem Sor Pagoda",
+            "th": "เจดีย์แหลมสอ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Southwest coast near Taling Ngam",
+            "th": "ชายฝั่งตะวันตกเฉียงใต้ ใกล้ตลิ่งงาม"
+          },
+          "what": {
+            "en": "A golden seaside pagoda on a hill over the Gulf of Thailand, with gardens and walking trails.",
+            "th": "เจดีย์สีทองริมทะเลบนเนินเหนืออ่าวไทย มีสวนและทางเดิน"
+          },
+          "why": {
+            "en": "Free entry, with gardens and trails to walk through and calm sea views.",
+            "th": "เข้าฟรี มีสวนและทางเดินให้เดินเล่น วิวทะเลสงบ"
+          },
+          "tip": {
+            "en": "Go in the early morning or late afternoon; midday is hot and humid. Sunset is especially pretty",
+            "th": "ไปช่วงเช้าตรู่หรือบ่ายแก่ เพราะกลางวันร้อนชื้น พระอาทิตย์ตกสวยเป็นพิเศษ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Laem Sor Pagoda, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/koh-samui/laem-sor-pagoda-koh-samui"
         }
       ]
     }
