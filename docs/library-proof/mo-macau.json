@@ -1449,6 +1449,112 @@
           "why": "no dated source found in this round"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The Macao Government Tourism Office's own sightseeing page (description, address, hours, fees), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Communications Museum",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/communications-museum",
+          "map": "Google Maps: open, a review 23 days ago"
+        },
+        {
+          "name": "Fire Services Museum",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/fire-services-museum",
+          "map": "Google Maps: open, a review 25 days ago"
+        },
+        {
+          "name": "Handover Gifts Museum of Macao",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/handover-gifts-museum-of-macao",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Mandarin's House",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/mandarins-house",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Museum of Taipa and Coloane History",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-taipa-and-coloane-history",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Tak Seng On pawnshop",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/heritage-exhibition-of-a-traditional-pawnshop-business",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Lin Zexu Memorial Museum",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/lin-zexu-memorial-museum-of-macao",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Lin Fong Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/lin-fong-temple",
+          "map": "Google Maps: Lin Fung Temple, open, a review 10 days ago"
+        },
+        {
+          "name": "Camões Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/luis-de-camoes-park",
+          "map": "Google Maps: open, a review 2 days ago"
+        },
+        {
+          "name": "Flower City Park (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/flower-city-park",
+          "map": "Google Maps: Garden of Flower City, open, a review 5 months ago"
+        },
+        {
+          "name": "Coloane Hill park and A-Ma statue",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/coloane-height-park-and-statue-of-a-ma",
+          "map": "Google Maps: A-Má Goddess Statue, open, a review 5 months ago"
+        },
+        {
+          "name": "A-Ma Cultural Village",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/a-ma-cultural-village",
+          "map": "Google Maps: open, a review 16 days ago"
+        },
+        {
+          "name": "Taipa Municipal Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/taipa-municipal-garden",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Macau Fisherman's Wharf",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macau-fishermans-wharf",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Lai Chi Vun Shipyards",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/lai-chi-vun-shipyards",
+          "map": "Google Maps: Estaleiros Navais de Lai Chi Vun, open, a review 2 days ago"
+        },
+        {
+          "name": "Taipa Grande Viewing Platform",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/taipa-grande-viewing-platform",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Lotus Square",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/lotus-square",
+          "map": "Google Maps: open, a review 12 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Macao Tea Culture House",
+          "why": "Google Maps marks it closed"
+        },
+        {
+          "name": "Coloane Pier",
+          "why": "Google Maps marks it closed; newest review years old"
+        },
+        {
+          "name": "The Grande Praça at MGM Macau",
+          "why": "no listing of its own on Google Maps"
+        }
+      ]
     }
   ]
 }

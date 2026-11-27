@@ -1187,6 +1187,691 @@
           "book": "none",
           "q": "The Spectacle, MGM Cotai, Macau",
           "src": "https://www.mgm.mo/en/entertainment/happening/sea-odyssey"
+        },
+        {
+          "local": "通訊博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์การสื่อสาร",
+            "en": "Communications Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนดอมมาเรียที่ 2 คาบสมุทรมาเก๊า",
+            "en": "Estrada de D. Maria II, Macau Peninsula"
+          },
+          "what": {
+            "th": "นิทรรศการการสื่อสารแบบลองเล่นได้ ห้องแสตมป์ และลานกลางแจ้งข้างป้อมเก่า",
+            "en": "Hands-on telecommunications exhibits, a stamp gallery and an outdoor terrace by an old fort"
+          },
+          "why": {
+            "th": "นิทรรศการวิทยาศาสตร์แบบลงมือเล่น เน้นเรียนรู้อย่างสนุก",
+            "en": "Interactive science exhibits made for \"fun learning\""
+          },
+          "tip": {
+            "th": "เปิด 09:00–17:30 ปิดวันหยุดราชการ",
+            "en": "Open 09:00–17:30; closed on public holidays"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Communications Museum, Estrada de D. Maria II, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/communications-museum"
+        },
+        {
+          "local": "消防博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์ดับเพลิง",
+            "en": "Fire Services Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนโกเอลยูดูอามารัล คาบสมุทรมาเก๊า",
+            "en": "Estrada de Coelho do Amaral, Macau Peninsula"
+          },
+          "what": {
+            "th": "เครื่องสูบน้ำมือแบบเก่า รถดับเพลิงอังกฤษ หมวก และโมเดล ในสถานีดับเพลิงปี 1920",
+            "en": "Old hand pumps, British fire engines, helmets and models in a 1920 fire station"
+          },
+          "why": {
+            "th": "รถดับเพลิงจริงที่เด็กชอบดู",
+            "en": "Real fire engines children love to see"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–18:00 ปิดปรับปรุง 24 พ.ย. – 1 ธ.ค. 2026",
+            "en": "Open 10:00–18:00 daily; closed for works 24 Nov – 1 Dec 2026"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Fire Services Museum, Estrada de Coelho do Amaral, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/fire-services-museum"
+        },
+        {
+          "local": "澳門回歸賀禮陳列館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์ของขวัญส่งมอบมาเก๊า",
+            "en": "Handover Gifts Museum of Macao"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเซียนซิงไห่ คาบสมุทรมาเก๊า",
+            "en": "Av. Xian Xing Hai, Macau Peninsula"
+          },
+          "what": {
+            "th": "ของขวัญจาก 56 ชนชาติของจีนเนื่องในการส่งมอบมาเก๊า",
+            "en": "Gifts from China's 56 ethnic groups for Macau's handover"
+          },
+          "why": {
+            "th": "แวะในร่มฟรีสั้น ๆ ใกล้ลานดอกบัว",
+            "en": "A short, free indoor stop near Lotus Square"
+          },
+          "tip": {
+            "th": "เปิด 10:00–19:00 ปิดวันจันทร์",
+            "en": "Open 10:00–19:00; closed on Mondays"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Handover Gifts Museum of Macao, Av. Xian Xing Hai, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/handover-gifts-museum-of-macao"
+        },
+        {
+          "local": "鄭家大屋",
+          "ok": "2026-11",
+          "name": {
+            "th": "บ้านขุนนางจีน",
+            "en": "Mandarin's House"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ซอยอันโตนิโอดาซิลวา คาบสมุทรมาเก๊า",
+            "en": "Travessa de António da Silva, Macau Peninsula"
+          },
+          "what": {
+            "th": "บ้านตระกูลจีนแบบลานบ้านหลายหลัง สร้างก่อนปี 1869 อยู่ในเขตมรดกโลก",
+            "en": "A traditional Chinese family compound of courtyard houses built before 1869, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "ลานบ้านและหน้าต่างไม้ฉลุให้เดินสำรวจด้วยกัน",
+            "en": "Courtyards and lattice windows to explore together"
+          },
+          "tip": {
+            "th": "เปิด 10:00–18:00 ปิดวันพุธ ยกเว้นวันหยุดราชการ",
+            "en": "Open 10:00–18:00; closed on Wednesdays except public holidays"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Mandarin's House, Travessa de António da Silva, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/mandarins-house"
+        },
+        {
+          "local": "路氹歷史館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ไทปาและโคโลอาน",
+            "en": "Museum of Taipa and Coloane History"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคอร์เรยาดาซิลวา หมู่บ้านไทปา",
+            "en": "Rua Correia da Silva, Taipa Village"
+          },
+          "what": {
+            "th": "โบราณวัตถุจากโคโลอาน และชีวิต งานฝีมือ และอาคารเก่าของสองเกาะ",
+            "en": "Relics found on Coloane and the old village life, crafts and buildings of the two islands"
+          },
+          "why": {
+            "th": "แวะในร่มฟรีระหว่างเดินเล่นหมู่บ้านไทปา",
+            "en": "A free indoor stop on a Taipa Village walk"
+          },
+          "tip": {
+            "th": "เปิด 10:00–18:00 ปิดวันจันทร์",
+            "en": "Open 10:00–18:00; closed on Mondays"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Museum of Taipa and Coloane History, Rua Correia da Silva, Taipa, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-taipa-and-coloane-history"
+        },
+        {
+          "local": "德成按",
+          "ok": "2026-11",
+          "name": {
+            "th": "โรงรับจำนำโบราณเต๊กเซงออน",
+            "en": "Tak Seng On pawnshop"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอัลเมดาริเบโร คาบสมุทรมาเก๊า",
+            "en": "Av. de Almeida Ribeiro, Macau Peninsula"
+          },
+          "what": {
+            "th": "โรงรับจำนำปี 1917 ที่บูรณะให้เหมือนเดิม มีหอเก็บของสูง",
+            "en": "A 1917 pawnshop restored to how it looked, with its tall storage tower"
+          },
+          "why": {
+            "th": "ดูมาเก๊าในอดีตแบบสั้น ๆ ใกล้จัตุรัสเซนาโด",
+            "en": "A quick look at old Macau near Senado Square"
+          },
+          "tip": {
+            "th": "เปิด 10:30–19:00 ปิดวันจันทร์แรกของเดือน",
+            "en": "Open 10:30–19:00; closed on the first Monday of each month"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tak Seng On Pawnshop Museum, 396 Av. de Almeida Ribeiro, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/heritage-exhibition-of-a-traditional-pawnshop-business"
+        },
+        {
+          "local": "林則徐紀念館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์อนุสรณ์หลินเจ๋อสวี",
+            "en": "Lin Zexu Memorial Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอัลมิรันเตลาแซร์ดา คาบสมุทรมาเก๊า",
+            "en": "Av. do Almirante Lacerda, Macau Peninsula"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เล็ก ๆ เรื่องการมาเยือนของข้าหลวงหลินเจ๋อสวีในปี 1839 และการค้าฝิ่น",
+            "en": "A small museum on Commissioner Lin Zexu's 1839 visit and the opium trade"
+          },
+          "why": {
+            "th": "ไปคู่กับวัดลินฟงที่อยู่ติดกัน",
+            "en": "Pairs with Lin Fong Temple next door"
+          },
+          "tip": {
+            "th": "เปิด 09:00–17:00 ปิดวันจันทร์",
+            "en": "Open 09:00–17:00; closed on Mondays"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "MOP 5 เด็กต่ำกว่า 8 ขวบ MOP 3",
+            "en": "MOP 5; children under 8 MOP 3"
+          },
+          "book": "none",
+          "q": "Lin Zexu Memorial Museum of Macao, Av. do Almirante Lacerda, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/lin-zexu-memorial-museum-of-macao"
+        },
+        {
+          "local": "蓮峰廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดลินฟง",
+            "en": "Lin Fong Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนอัลมิรันเตลาแซร์ดา คาบสมุทรมาเก๊า",
+            "en": "Av. do Almirante Lacerda, Macau Peninsula"
+          },
+          "what": {
+            "th": "วัดจากปี 1592 มีรูปปั้นดินเผา สิงโตหิน ลายมังกร และสระบัว",
+            "en": "A temple from 1592 with clay reliefs, stone lions, a dragon frieze and a lotus pond"
+          },
+          "why": {
+            "th": "สิงโตหินและมังกรที่เด็กชอบมองหา",
+            "en": "Stone lions and dragons children like to spot"
+          },
+          "tip": {
+            "th": "เปิด 07:00–17:00",
+            "en": "Open 07:00–17:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lin Fong Temple, Av. do Almirante Lacerda, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/lin-fong-temple"
+        },
+        {
+          "local": "白鴿巢公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนกามอยส์",
+            "en": "Camões Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ลานลูอิสเดกามอยส์ คาบสมุทรมาเก๊า",
+            "en": "Praça de Luís de Camões, Macau Peninsula"
+          },
+          "what": {
+            "th": "สวนบนเนินร่มรื่น มีถ้ำหิน ต้นไทร คนเล่นหมากรุก และศาลา",
+            "en": "A shady hillside garden with a grotto, banyan trees, chess players and a pavilion"
+          },
+          "why": {
+            "th": "ทางเดินและร่มเงาสำหรับเดินช้า ๆ กับเด็กเล็ก",
+            "en": "Paths and shade for a slow walk with little ones"
+          },
+          "tip": {
+            "th": "เปิด 06:00–24:00 ใกล้ซากโบสถ์เซนต์พอล",
+            "en": "Open 06:00–24:00; near the Ruins of St Paul"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Camões Garden, Praça de Luís de Camões, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/luis-de-camoes-park"
+        },
+        {
+          "local": "花城公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนฟลาวเวอร์ซิตี ไทปา",
+            "en": "Flower City Park (Taipa)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเอโวรา ไทปา",
+            "en": "Rua de Évora, Taipa"
+          },
+          "what": {
+            "th": "สวนสไตล์จีนมีสระบัวและสะพาน พร้อมสนามเด็กเล่นและลานสกูตเตอร์",
+            "en": "A Chinese-style garden with lotus ponds and bridges, plus a children's playground and a scooter area"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นกลางไทปา",
+            "en": "A playground in the middle of Taipa"
+          },
+          "tip": {
+            "th": "เปิด 06:00–24:00",
+            "en": "Open 06:00–24:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Garden of Flower City, Rua de Évora, Taipa, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/flower-city-park"
+        },
+        {
+          "local": "路環疊石塘山公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนบนเขาโคโลอานและรูปปั้นเจ้าแม่อาม่า",
+            "en": "Coloane Hill park and A-Ma statue"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนอัลโตเดโคโลอาน โคโลอาน",
+            "en": "Estrada do Alto de Coloane, Coloane"
+          },
+          "what": {
+            "th": "รูปปั้นเจ้าแม่อาม่าสูง 20 เมตรบนยอดเขาโคโลอาน มีจุดปิกนิกและสวนพฤกษชาติระหว่างทาง",
+            "en": "A 20 m statue of the goddess A-Ma on Coloane Peak, with a picnic area and an arboretum on the way up"
+          },
+          "why": {
+            "th": "วิวกว้างและจุดปิกนิกบนยอดเกาะ",
+            "en": "Wide views and a picnic spot on top of the island"
+          },
+          "tip": {
+            "th": "เปิด 24 ชั่วโมง ไปทางถนนจากสวนเซ็กไป๋วาน",
+            "en": "Open 24 hours; reached by road from Seac Pai Van Park"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "A-Má Goddess Statue, Coloane, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/coloane-height-park-and-statue-of-a-ma"
+        },
+        {
+          "local": "媽祖文化村",
+          "ok": "2026-11",
+          "name": {
+            "th": "หมู่บ้านวัฒนธรรมอาม่า",
+            "en": "A-Ma Cultural Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนอัลโตเดโคโลอาน โคโลอาน",
+            "en": "Estrada do Alto de Coloane, Coloane"
+          },
+          "what": {
+            "th": "กลุ่มวัดเจ้าแม่ผู้คุ้มครองชาวเรือ มีหอระฆังและหอกลอง ใกล้รูปปั้นอาม่า",
+            "en": "A temple complex to the goddess of seafarers, with a bell and drum tower, near the A-Ma statue"
+          },
+          "why": {
+            "th": "หอระฆัง หอกลอง และสวนข้าง ๆ",
+            "en": "A bell tower, a drum tower and a park next door"
+          },
+          "tip": {
+            "th": "ตำหนักเทียนโหวเปิด 09:00–18:00",
+            "en": "Tin Hau Palace open 09:00–18:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "A-Ma Cultural Village, Estrada do Alto de Coloane, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/a-ma-cultural-village"
+        },
+        {
+          "local": "氹仔市政公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนเทศบาลไทปา",
+            "en": "Taipa Municipal Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนคาร์ลอสดาไมอา ไทปา",
+            "en": "Avenida de Carlos da Maia, Taipa"
+          },
+          "what": {
+            "th": "สวนแบบยุโรปข้างโบสถ์แม่พระคาร์เมล มีศาลาและน้ำพุเหนือริมน้ำเก่า",
+            "en": "A formal European garden by Our Lady of Carmel church, with a gazebo and fountains above the old praia"
+          },
+          "why": {
+            "th": "เดินลงไปถึงบ้านไทปาได้ไม่ไกล",
+            "en": "A short walk down to the Taipa Houses"
+          },
+          "tip": {
+            "th": "เปิด 24 ชั่วโมง",
+            "en": "Open 24 hours"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Taipa Municipal Garden, Avenida de Carlos da Maia, Taipa, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/taipa-municipal-garden"
+        },
+        {
+          "local": "澳門漁人碼頭",
+          "ok": "2026-11",
+          "name": {
+            "th": "ฟิชเชอร์แมนส์วอร์ฟ มาเก๊า",
+            "en": "Macau Fisherman's Wharf"
+          },
+          "kind": "shop",
+          "area": {
+            "th": "ท่าเรือชั้นนอก คาบสมุทรมาเก๊า",
+            "en": "Outer Harbour, Macau Peninsula"
+          },
+          "what": {
+            "th": "ย่านริมน้ำธีมต่าง ๆ มีร้านค้าและร้านอาหาร ห่างท่าเรือข้ามฟากห้านาที",
+            "en": "A themed waterfront of shops and restaurants, five minutes from the ferry terminal"
+          },
+          "why": {
+            "th": "เดินเล่นริมน้ำฟรีใกล้ท่าเรือ",
+            "en": "A free walk by the water near the ferry"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Macau Fisherman's Wharf, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macau-fishermans-wharf"
+        },
+        {
+          "local": "荔枝碗船廠片區",
+          "ok": "2026-11",
+          "name": {
+            "th": "อู่ต่อเรือไหลจีหวัน",
+            "en": "Lai Chi Vun Shipyards"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนไหลจีหวัน โคโลอาน",
+            "en": "Estrada de Lai Chi Vun, Coloane"
+          },
+          "what": {
+            "th": "อู่ต่อเรือไม้เก่าที่กลายเป็นนิทรรศการ ตลาด และนักดนตรีเปิดหมวก เรื่องการต่อเรือของมาเก๊า",
+            "en": "Old wooden-boat shipyards turned into exhibitions, a market and buskers on Macau's shipbuilding"
+          },
+          "why": {
+            "th": "โรงต่อเรือเก่าใหญ่ ๆ ริมน้ำในโคโลอานที่เงียบสงบ",
+            "en": "Big old boat sheds by the water in quiet Coloane"
+          },
+          "tip": {
+            "th": "เปิด 10:00–18:00 วันธรรมดา ถึง 19:30 วันหยุด",
+            "en": "Open 10:00–18:00 weekdays, to 19:30 at weekends"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lai Chi Vun Shipyards, Coloane, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/lai-chi-vun-shipyards"
+        },
+        {
+          "local": "大潭山觀景台",
+          "ok": "2026-11",
+          "name": {
+            "th": "จุดชมวิวไทปากรันจี",
+            "en": "Taipa Grande Viewing Platform"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เนินไทปากรันจี ไทปา",
+            "en": "Taipa Grande Hill, Taipa"
+          },
+          "what": {
+            "th": "ลิฟต์ขึ้นเนินไปยังจุดชมวิวเหนือหมู่บ้านไทปาและโคไท",
+            "en": "An inclined lift up the hill to a platform looking over Taipa Village and Cotai"
+          },
+          "why": {
+            "th": "นั่งลิฟต์ขึ้นเนินแล้วชมวิวกว้าง",
+            "en": "A lift ride and a wide view"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Taipa Grande Viewing Platform, Taipa, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/taipa-grande-viewing-platform"
+        },
+        {
+          "local": "金蓮花廣場",
+          "ok": "2026-11",
+          "name": {
+            "th": "ลานดอกบัว",
+            "en": "Lotus Square"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนลูอิสกอนซากาโกเมส คาบสมุทรมาเก๊า",
+            "en": "Rua Luís Gonzaga Gomes, Macau Peninsula"
+          },
+          "what": {
+            "th": "ดอกบัวสำริดปิดทองสูง 6 เมตร ระลึกการส่งมอบปี 1999",
+            "en": "A 6 m gilded bronze lotus marking the 1999 handover"
+          },
+          "why": {
+            "th": "แวะถ่ายรูปสั้น ๆ ข้างพิพิธภัณฑ์ของขวัญส่งมอบ",
+            "en": "A quick photo stop next to the Handover Gifts Museum"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lotus Square, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/lotus-square"
         }
       ]
     }
