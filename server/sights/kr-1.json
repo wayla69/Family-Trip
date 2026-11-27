@@ -551,6 +551,293 @@
           },
           "q": "서울역사박물관, 새문안로 55, 서울",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Seoul Robot & AI Museum",
+            "th": "พิพิธภัณฑ์หุ่นยนต์และเอไอโซล"
+          },
+          "local": "서울로봇인공지능과학관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Changdong, Dobong-gu",
+            "th": "ชังดง โดบง-กู"
+          },
+          "what": {
+            "en": "A hands-on robot and AI science museum with free sessions on the second floor and guided tours above",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์หุ่นยนต์และเอไอที่ได้ลงมือทำ มีกิจกรรมฟรีชั้น 2 และทัวร์นำชมชั้นบน"
+          },
+          "why": {
+            "en": "Kids can try self-driving, robot coding and robot experiences; the first floor has a family nursing room",
+            "th": "เด็กลองรถไร้คนขับ เขียนโค้ดหุ่นยนต์ และประสบการณ์หุ่นยนต์ ชั้น 1 มีห้องให้นมสำหรับครอบครัว"
+          },
+          "tip": {
+            "en": "Closed Mondays; open 09:30–17:30; guided floors need a booking",
+            "th": "ปิดวันจันทร์ เปิด 09:30–17:30 ชั้นนำชมต้องจองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Children and teens free · adults ≈ ₩2,000 (guided tour)",
+            "th": "เด็กและวัยรุ่นฟรี · ผู้ใหญ่ ≈ ₩2,000 (ทัวร์นำชม)"
+          },
+          "book": "rec",
+          "q": "Seoul Robot & AI Museum, Changdong, Dobong-gu, Seoul, South Korea",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2013393"
+        },
+        {
+          "name": {
+            "en": "Arisu Nara",
+            "th": "อาริซูนารา"
+          },
+          "local": "아리수나라",
+          "kind": "museumkid",
+          "area": {
+            "en": "Seoul Children's Grand Park, Gwangjin-gu",
+            "th": "สวนสนุกเด็กแห่งโซล ควังจิน-กู"
+          },
+          "what": {
+            "en": "Seoul's first children's tap-water experience hall, inside Seoul Children's Grand Park",
+            "th": "ห้องเรียนรู้เรื่องน้ำประปาสำหรับเด็กแห่งแรกของโซล อยู่ในสวนสนุกเด็กแห่งโซล"
+          },
+          "why": {
+            "en": "Built for children aged 3 to 9 with a grown-up, to learn how tap water reaches the home",
+            "th": "ออกแบบสำหรับเด็ก 3–9 ขวบพร้อมผู้ปกครอง เรียนรู้ว่าน้ำประปามาถึงบ้านได้อย่างไร"
+          },
+          "tip": {
+            "en": "Open Tuesday–Sunday 09:30–17:40; sessions run 80–100 minutes; book online or walk in if seats are left",
+            "th": "เปิดอังคาร–อาทิตย์ 09:30–17:40 แต่ละรอบ 80–100 นาที จองออนไลน์หรือเดินเข้าไปถ้ามีที่ว่าง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "rec",
+          "q": "Arisu Nara, Seoul Children's Grand Park, Gwangjin-gu, Seoul, South Korea",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2018830"
+        },
+        {
+          "name": {
+            "en": "Seoul Kids Plaza",
+            "th": "โซลคิดส์พลาซ่า"
+          },
+          "local": "서울 키즈플라자",
+          "kind": "play",
+          "area": {
+            "en": "Hwagok, Gangseo-gu",
+            "th": "ฮวากก คังซอ-กู"
+          },
+          "what": {
+            "en": "A building with play, childcare and mind-health services, and a jungle-themed kids cafe on the first floor",
+            "th": "อาคารที่รวมที่เล่น การดูแลเด็ก และบริการสุขภาพใจ มีคิดส์คาเฟ่ธีมป่าชั้น 1"
+          },
+          "why": {
+            "en": "Big slides, climbing and a zip line in the jungle zone for ages 4 to 12; parents enter free",
+            "th": "สไลเดอร์ใหญ่ ปีนป่าย และสลิงในโซนป่า สำหรับเด็ก 4–12 ขวบ ผู้ปกครองเข้าฟรี"
+          },
+          "tip": {
+            "en": "Kids cafe for ages 4–12; reserve through the Seoul kids cafe booking",
+            "th": "คาเฟ่สำหรับเด็ก 4–12 ขวบ จองผ่านระบบจองคิดส์คาเฟ่ของโซล"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩5,000 per child (care fee ₩2,000) · parents free",
+            "th": "≈ ₩5,000 ต่อเด็ก (ค่าดูแล ₩2,000) · ผู้ปกครองฟรี"
+          },
+          "book": "rec",
+          "q": "Seoul Kids Plaza, Hwagok, Gangseo-gu, Seoul, South Korea",
+          "ok": "2026-11",
+          "src": "https://mediahub.seoul.go.kr/archives/2016627"
+        },
+        {
+          "name": {
+            "en": "Seoullo 7017",
+            "th": "ซอลลู 7017"
+          },
+          "local": "서울로 7017",
+          "kind": "park",
+          "area": {
+            "en": "Jung-gu, Seoul Station to Hoehyeon",
+            "th": "จุง-กู ตั้งแต่สถานีโซลถึงฮเวฮยอน"
+          },
+          "what": {
+            "en": "An urban walkway on a former elevated road, with trees, cafes and a piano area",
+            "th": "ทางเดินกลางเมืองบนถนนยกระดับเก่า มีต้นไม้ คาเฟ่ และมุมเปียโน"
+          },
+          "why": {
+            "en": "Open 24 hours with free entry and fine night views",
+            "th": "เปิด 24 ชั่วโมง เข้าฟรี วิวกลางคืนสวย"
+          },
+          "tip": {
+            "en": "Lit up at night",
+            "th": "เปิดไฟสวยตอนกลางคืน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Seoullo 7017, Jung-gu, Seoul Station to Hoehyeon, Seoul, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitseoul.net/other/Seoullo-7017_/23965"
+        },
+        {
+          "name": {
+            "en": "Namsan Cable Car",
+            "th": "กระเช้าลอยฟ้านัมซาน"
+          },
+          "local": "남산 케이블카",
+          "kind": "ride",
+          "area": {
+            "en": "Namsan, Jung-gu",
+            "th": "นัมซาน จุง-กู"
+          },
+          "what": {
+            "en": "A cable car up to the top of Namsan, near N Seoul Tower",
+            "th": "กระเช้าขึ้นยอดเขานัมซาน ใกล้หอคอยเอ็นโซล"
+          },
+          "why": {
+            "en": "A panoramic view of downtown Seoul from the ride itself",
+            "th": "เห็นวิวพาโนรามาของใจกลางโซลจากบนกระเช้า"
+          },
+          "tip": {
+            "en": "Last entry 22:30 round trip, 22:45 one way",
+            "th": "เข้าได้ถึง 22:30 แบบไปกลับ และ 22:45 แบบเที่ยวเดียว"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Round trip ≈ ₩15,000 adults · ₩11,500 children",
+            "th": "ไปกลับ ≈ ₩15,000 ผู้ใหญ่ · ₩11,500 เด็ก"
+          },
+          "book": "none",
+          "q": "Namsan Cable Car, Namsan, Jung-gu, Seoul, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=96828"
+        },
+        {
+          "name": {
+            "en": "E-Land Cruise (Han River)",
+            "th": "อีแลนด์ครูซ (แม่น้ำฮัน)"
+          },
+          "local": "이랜드크루즈 (한강유람선)",
+          "kind": "ride",
+          "area": {
+            "en": "Yeouido, Yeongdeungpo-gu",
+            "th": "ยออีโด ยองดึงโพ-กู"
+          },
+          "what": {
+            "en": "A sightseeing cruise on the Han River, run from the Yeouido side",
+            "th": "เรือล่องแม่น้ำฮันชมวิว ออกจากฝั่งยออีโด"
+          },
+          "why": {
+            "en": "A boat ride on the river in the middle of the city",
+            "th": "นั่งเรือบนแม่น้ำกลางเมือง"
+          },
+          "tip": {
+            "en": "Hours are listed by weekday; check the operator before going",
+            "th": "เวลาแตกต่างตามวัน เช็กกับผู้ให้บริการก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "E-Land Cruise (Han River), Yeouido, Yeongdeungpo-gu, Seoul, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=80429"
+        },
+        {
+          "name": {
+            "en": "Changdeokgung Palace and Secret Garden",
+            "th": "พระราชวังชางด็อกกุงและสวนลับ"
+          },
+          "local": "창덕궁과 후원",
+          "kind": "culture",
+          "area": {
+            "en": "Jongno-gu",
+            "th": "ช็องโน-กู"
+          },
+          "what": {
+            "en": "A UNESCO royal palace complex with a rear garden called the Secret Garden",
+            "th": "กลุ่มพระราชวังมรดกโลกยูเนสโก มีสวนด้านหลังเรียกว่าสวนลับ"
+          },
+          "why": {
+            "en": "A palace to walk through, with a garden for a slower wander",
+            "th": "เดินชมพระราชวัง และมีสวนให้เดินเล่นช้าๆ"
+          },
+          "tip": {
+            "en": "Closed Mondays; Secret Garden tickets are separate (≈ ₩5,000 adults · ₩2,500 children); last entry an hour before closing",
+            "th": "ปิดวันจันทร์ บัตรสวนลับแยกต่างหาก (≈ ₩5,000 ผู้ใหญ่ · ₩2,500 เด็ก) เข้าได้ถึงก่อนปิดหนึ่งชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Changdeokgung Palace and Secret Garden, Jongno-gu, Seoul, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=94399"
         }
     ]
     },
@@ -1266,6 +1553,46 @@
           },
           "q": "당신처럼 애지중지 키즈카페, 시민공원로 73, 부산",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "KidZania Busan",
+            "th": "คิดซาเนีย ปูซาน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Shinsegae Centum City, Haeundae",
+            "th": "ชินเซเก เซ็นทัมซิตี้ แฮอุนแด"
+          },
+          "what": {
+            "en": "An indoor city built for children inside the Shinsegae Centum City mall",
+            "th": "เมืองจำลองในร่มสำหรับเด็ก อยู่ในห้างชินเซเก เซ็นทัมซิตี้"
+          },
+          "why": {
+            "en": "It is indoors and made and curated for children, so it works on a rainy day",
+            "th": "อยู่ในร่มและออกแบบมาสำหรับเด็กโดยเฉพาะ เหมาะกับวันฝนตก"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "KidZania Busan, Shinsegae Centum City, Haeundae, Busan, South Korea",
+          "ok": "2026-11",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/"
         }
     ]
     }

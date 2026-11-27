@@ -832,12 +832,52 @@
           },
           "q": "새별프렌즈, 평화로 1529, 제주",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Seolmundae Halmang Exhibition Hall",
+            "th": "หอนิทรรศการซอลมุนแดฮัลมัง"
+          },
+          "local": "설문대할망전시관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Jeju Stone Park, Jeju-si",
+            "th": "สวนหินเชจู เชจูซี"
+          },
+          "what": {
+            "en": "An indoor exhibition hall where children can explore Jeju myths, with a Children's Hall",
+            "th": "หอนิทรรศการในร่มให้เด็กสำรวจตำนานเชจู มีห้องสำหรับเด็ก"
+          },
+          "why": {
+            "en": "Indoor exhibits made for children, and a nursing room",
+            "th": "นิทรรศการในร่มที่ทำมาสำหรับเด็ก และมีห้องให้นม"
+          },
+          "tip": {
+            "en": "Last entry 17:00",
+            "th": "เข้าได้ถึง 17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩5,000 adults · ₩3,500 youth",
+            "th": "≈ ₩5,000 ผู้ใหญ่ · ₩3,500 เยาวชน"
+          },
+          "book": "none",
+          "q": "Seolmundae Halmang Exhibition Hall, Jeju Stone Park, Jeju-si, Jeju, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/6a1e299d263e8eb875199919"
         }
       ]
     },
     {
       "place": "kr-incheon",
-      "thin": true,
       "sights": [
         {
           "local": "국립인천해양박물관",
@@ -1105,6 +1145,331 @@
           },
           "q": "인천학생교육문화회관, 자유공원로 12, 인천 중구",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Incheon Children's Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เด็กอินช็อน"
+          },
+          "local": "인천어린이과학관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Munhak Stadium grounds, Gyeyang-gu",
+            "th": "ในบริเวณสนามมุนฮัก เคย์ยัง-กู"
+          },
+          "what": {
+            "en": "A children's science museum with permanent and special halls, a 4D cinema and science sessions",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เด็ก มีห้องนิทรรศการถาวรและพิเศษ โรงหนัง 4D และกิจกรรมวิทยาศาสตร์"
+          },
+          "why": {
+            "en": "Sessions run in timed two-hour slots, so a family can plan a morning around one",
+            "th": "เข้าชมเป็นรอบละ 2 ชั่วโมง วางแผนครึ่งวันเช้าได้ง่าย"
+          },
+          "tip": {
+            "en": "Closed Mondays; tickets stop at 17:00; book online in advance, no tickets on the day",
+            "th": "ปิดวันจันทร์ ขายบัตรถึง 17:00 จองออนไลน์ล่วงหน้า ไม่ขายหน้างาน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Incheon Children's Science Museum, Munhak Stadium grounds, Gyeyang-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://www.insiseol.or.kr/culture/icsmuseum/"
+        },
+        {
+          "name": {
+            "en": "Incheon Urban History Museum",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์เมืองอินช็อน"
+          },
+          "local": "인천도시역사관",
+          "kind": "museum",
+          "area": {
+            "en": "Songdo, Yeonsu-gu",
+            "th": "ซงโด ยอนซู-กู"
+          },
+          "what": {
+            "en": "Shows Incheon's history since the port opened in 1883, with simulations and models",
+            "th": "เล่าประวัติศาสตร์อินช็อนตั้งแต่เปิดท่าเรือปี 1883 ด้วยแบบจำลองและภาพจำลอง"
+          },
+          "why": {
+            "en": "Simulations and models show how the city changed, and the museum runs educational programmes",
+            "th": "แบบจำลองช่วยให้เห็นเมืองเปลี่ยนไปอย่างไร และมีกิจกรรมการเรียนรู้"
+          },
+          "tip": {
+            "en": "Closed Mondays; last entry 30 minutes before closing",
+            "th": "ปิดวันจันทร์ เข้าได้ถึงก่อนปิด 30 นาที"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Incheon Urban History Museum, Songdo, Yeonsu-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=77235"
+        },
+        {
+          "name": {
+            "en": "Yeongjong Seaside Rail Bike",
+            "th": "เรลไบค์ริมทะเลยองจง"
+          },
+          "local": "영종씨사이드 레일바이크",
+          "kind": "ride",
+          "area": {
+            "en": "Gueup-ro, Yeongjong-gu",
+            "th": "คูอึบโร ยองจง-กู"
+          },
+          "what": {
+            "en": "A four-seater rail bike on a 5.6 km round-trip track along the coast of Seaside Park",
+            "th": "จักรยานราง 4 ที่นั่ง วิ่งไปกลับ 5.6 กม. ริมชายฝั่งซีไซด์พาร์ก"
+          },
+          "why": {
+            "en": "The open sea right in front makes a pleasant ride for the whole family",
+            "th": "เห็นทะเลโล่งอยู่ตรงหน้า เป็นการปั่นที่สนุกสำหรับทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "Weekdays 10:00–17:20, weekends 09:00–18:00; open all year",
+            "th": "วันธรรมดา 10:00–17:20 วันหยุด 09:00–18:00 เปิดทั้งปี"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Two-seater ≈ ₩25,000 per person",
+            "th": "แบบ 2 ที่นั่ง ≈ ₩25,000 ต่อคน"
+          },
+          "book": "none",
+          "q": "Yeongjong Seaside Rail Bike, Gueup-ro, Yeongjong-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=112553"
+        },
+        {
+          "name": {
+            "en": "Eurwangni Beach",
+            "th": "หาดอึลวังนี"
+          },
+          "local": "을왕리해수욕장",
+          "kind": "beach",
+          "area": {
+            "en": "Eurwang-dong, Yeongjong-gu",
+            "th": "อึลวัง-ดง ยองจง-กู"
+          },
+          "what": {
+            "en": "A white sand beach about 700 m long with shallow water, a big grass field and places to stay nearby",
+            "th": "หาดทรายขาวยาวราว 700 ม. น้ำตื้น มีสนามหญ้ากว้างและที่พักใกล้ๆ"
+          },
+          "why": {
+            "en": "Shallow water and a big grass field suit small children",
+            "th": "น้ำตื้นและสนามหญ้ากว้าง เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Known for its sunsets; open 24 hours",
+            "th": "ขึ้นชื่อเรื่องพระอาทิตย์ตก เปิด 24 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Eurwangni Beach, Eurwang-dong, Yeongjong-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=105441"
+        },
+        {
+          "name": {
+            "en": "Incheon Dino World",
+            "th": "อินช็อน ไดโนเวิลด์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Songdo, Yeonsu-gu",
+            "th": "ซงโด ยอนซู-กู"
+          },
+          "what": {
+            "en": "An indoor dinosaur world with giant lifelike dinosaurs that move and roar, plus shows every hour",
+            "th": "โลกไดโนเสาร์ในร่ม มีไดโนเสาร์ยักษ์เหมือนจริงที่ขยับและคำราม และโชว์ทุกชั่วโมง"
+          },
+          "why": {
+            "en": "No time limit, and you can leave for a meal and come back in, so small children can rest between shows",
+            "th": "ไม่จำกัดเวลา ออกไปกินข้าวแล้วกลับเข้ามาได้ เด็กเล็กพักระหว่างโชว์ได้"
+          },
+          "tip": {
+            "en": "Closed Tuesdays; wear comfortable clothes for the hands-on activities",
+            "th": "ปิดวันอังคาร ใส่เสื้อผ้าสบายๆ สำหรับกิจกรรมที่ได้ลงมือทำ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩22,000 weekdays · ₩25,000 weekends",
+            "th": "≈ ₩22,000 วันธรรมดา · ₩25,000 วันหยุด"
+          },
+          "book": "none",
+          "q": "Incheon Dino World, Songdo, Yeonsu-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": {
+            "en": "Sudoguksan Moon Village Museum",
+            "th": "พิพิธภัณฑ์หมู่บ้านพระจันทร์ซูโดกุกซาน"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Solbit-ro, Jemulpo-gu",
+            "th": "ซอลบิโร เจมูลโพ-กู"
+          },
+          "what": {
+            "en": "An exhibition recreating Incheon's 1960s–70s hillside neighbourhoods, with classrooms and home interiors",
+            "th": "นิทรรศการจำลองย่านบนเนินเขาของอินช็อนในยุค 1960–70 มีห้องเรียนและบ้านจำลอง"
+          },
+          "why": {
+            "en": "Children can try a school uniform, and parents can relive old memories",
+            "th": "เด็กลองใส่ชุดนักเรียนได้ ผู้ใหญ่ได้ย้อนความทรงจำเก่าๆ"
+          },
+          "tip": {
+            "en": "Closed Mondays; school uniform experience and audio guide ₩3,000",
+            "th": "ปิดวันจันทร์ ชุดนักเรียนและเครื่องนำชมเสียง ₩3,000"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sudoguksan Moon Village Museum, Solbit-ro, Jemulpo-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": {
+            "en": "Noodle Platform",
+            "th": "นู้ดเดิลแพลตฟอร์ม"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Sinpo-ro, Jemulpo-gu",
+            "th": "ชินโพโร เจมูลโพ-กู"
+          },
+          "what": {
+            "en": "A hands-on exhibition on the history and culture of noodles, a dish Incheon is known for",
+            "th": "นิทรรศการให้ลงมือทำเรื่องประวัติและวัฒนธรรมก๋วยเตี๋ยว อาหารที่อินช็อนขึ้นชื่อ"
+          },
+          "why": {
+            "en": "Children can discover the exhibits themselves at their own level",
+            "th": "เด็กสำรวจนิทรรศการด้วยตัวเองตามระดับของตน"
+          },
+          "tip": {
+            "en": "Closed Mondays; open Tuesday–Sunday 09:00–18:00",
+            "th": "ปิดวันจันทร์ เปิดอังคาร–อาทิตย์ 09:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Noodle Platform, Sinpo-ro, Jemulpo-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": {
+            "en": "Wolmi Sea Train",
+            "th": "รถไฟทะเลวอลมี"
+          },
+          "local": "월미바다열차",
+          "kind": "ride",
+          "area": {
+            "en": "Wolmido, Jemulpo-gu",
+            "th": "เกาะวอลมี เจมูลโพ-กู"
+          },
+          "what": {
+            "en": "A monorail looping round Wolmido along 6.1 km close to the sea, with views of the Inner Port and Incheon Bridge",
+            "th": "โมโนเรลวนรอบเกาะวอลมียาว 6.1 กม. ใกล้ทะเล เห็นท่าเรือชั้นในและสะพานอินช็อน"
+          },
+          "why": {
+            "en": "A high seat over the water gives children a view of ships and the bridge",
+            "th": "นั่งที่สูงเหนือน้ำ เด็กๆ เห็นเรือและสะพานชัดเจน"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩8,000 adults · ₩5,000 children",
+            "th": "≈ ₩8,000 ผู้ใหญ่ · ₩5,000 เด็ก"
+          },
+          "book": "rec",
+          "q": "Wolmi Sea Train, Wolmido, Jemulpo-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000081/1917bbsDetail.do"
         }
       ]
     }
