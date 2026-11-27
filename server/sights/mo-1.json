@@ -3468,6 +3468,252 @@
           "book": "none",
           "q": "Hong Chan Kuan Temple, Largo do Pagode do Bazar, Macau",
           "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/hong-kung-temple"
+        },
+        {
+          "local": "氹仔中央公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนกลางไทปา",
+            "en": "Taipa Central Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไทปา ถนนเซงโต",
+            "en": "Taipa, Rua de Seng Tou"
+          },
+          "what": {
+            "th": "สวน 23,000 ตร.ม. กลางไทปา มีที่เล่นของเด็ก ห้องสมุด สระว่ายน้ำ และต้นซากุระ",
+            "en": "A 23,000 m² park in the middle of Taipa with children's play areas, a public library, a swimming pool and cherry trees"
+          },
+          "why": {
+            "th": "สนามเด็กเล่น ห้องสมุดไว้พักหลบร้อน และซุ้มขนม ใกล้โรงแรมฝั่งไทปา",
+            "en": "Playgrounds, a library for a cool break and a snack kiosk, close to Taipa's hotels"
+          },
+          "tip": {
+            "th": "เปิด 06:00–24:00 สระว่ายน้ำเปิดเฉพาะหน้าร้อน",
+            "en": "Open 06:00–24:00; the pool opens in summer only"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Taipa Central Park, Rua de Seng Tou, Taipa, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=5571ff2b-219d-4978-a15a-ad5daa43ee5e&type=garden"
+        },
+        {
+          "local": "黑沙公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนฮักซา",
+            "en": "Hac Sá Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "หาดฮักซา โคโลอาน",
+            "en": "Hac Sá Beach, Coloane"
+          },
+          "what": {
+            "th": "สวนข้างหาดฮักซา มีสนามเด็กเล่น ลานปั่นสามล้อเด็ก สระว่ายน้ำ สนามกีฬา และที่ปิกนิก",
+            "en": "A park beside Hac Sá Beach with a children's playground, a tricycle ground, a swimming pool, courts and a picnic area"
+          },
+          "why": {
+            "th": "เล่นและปิกนิกระหว่างลงทะเล",
+            "en": "Play and picnic between swims at the beach"
+          },
+          "tip": {
+            "th": "เปิด 06:00–24:00 สระว่ายน้ำเปิดเฉพาะหน้าร้อน",
+            "en": "Open 06:00–24:00; the pool opens in summer only"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Hac Sa Park, Estrada Nova de Hac Sá, Coloane, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=3119e6e4-f703-430a-9fc5-4a1914110ff1&type=garden"
+        },
+        {
+          "local": "黑沙水庫郊野公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "อุทยานธรรมชาติอ่างเก็บน้ำฮักซา",
+            "en": "Hac Sá Reservoir Natural Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนฮักซา โคโลอาน",
+            "en": "Estrada de Hac Sá, Coloane"
+          },
+          "what": {
+            "th": "สวนป่ารอบอ่างเก็บน้ำ มีที่บาร์บีคิวและปิกนิก ลานสไลด์หญ้าจริง และทางเดินครอบครัวราบ ๆ ยาว 2.65 กม.",
+            "en": "A wooded park around the reservoir with barbecue and picnic areas, a real-grass skiing slope and a level 2.65 km family trail"
+          },
+          "why": {
+            "th": "ทางเดินวนราบ ๆ สำหรับขาเล็ก ๆ และเนินหญ้าให้ไถลลง",
+            "en": "A level loop for small legs and a grass slope to slide down"
+          },
+          "tip": {
+            "th": "เปิดทั้งวัน ที่บาร์บีคิวคนแน่นวันหยุด",
+            "en": "Open all day; the barbecue areas fill up at weekends"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Hac Sa Reservoir Barbecue Park, Estrada de Hac Sá, Coloane, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=9bdd239f-a241-4c95-b9bc-6a0f3e4de1a0&type=park"
+        },
+        {
+          "local": "大潭山郊野公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "อุทยานธรรมชาติไทปากรันเด",
+            "en": "Taipa Grande Natural Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไทปา ทางลาดหอดูดาว",
+            "en": "Taipa, Rampa do Observatório"
+          },
+          "what": {
+            "th": "สวนป่าบนเนิน มีทางเดิน จุดชมวิว สนามเด็กเล่น ลานสไลด์หญ้าเทียม และสวนคามีเลีย",
+            "en": "A hill forest park with trails, viewing platforms, a children's playground, an artificial grass skiing slope and a camellia garden"
+          },
+          "why": {
+            "th": "ไถลหญ้าและสนามเด็กเล่นพร้อมวิวโคไท",
+            "en": "Grass sliding and a playground with a view over Cotai"
+          },
+          "tip": {
+            "th": "เปิดทั้งวัน",
+            "en": "Open all day"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Taipa Grande Natural Park, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=44ca23c2-4486-4eb5-802d-4490ca890d42&type=park"
+        },
+        {
+          "local": "黑沙龍爪角海岸徑",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินริมทะเลหลงเจ่ากก ฮักซา",
+            "en": "Hac Sá Long Chao Kok Coastal Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ฮักซา โคโลอาน",
+            "en": "Hac Sá, Coloane"
+          },
+          "what": {
+            "th": "ทางเดินริมทะเล 1.2 กม. ผ่านหินรูปแปลก ๆ อย่างหินกรงเล็บมังกร วิวทะเลและพืชชายฝั่ง",
+            "en": "A 1.2 km coastal path past odd rocks such as 'Dragon Claw Rock', with sea views and coastal plants"
+          },
+          "why": {
+            "th": "เดินสั้น ๆ ได้ตามหาหินรูปแปลก อยู่ติดหาดฮักซา",
+            "en": "A short walk with rocks to spot, right by Hac Sá Beach"
+          },
+          "tip": {
+            "th": "เปิดทั้งวัน ไปจบที่เจ็กวัน",
+            "en": "Open all day; ends at Cheoc Van"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Hac Sá Long Chao Kok Coastal Trail, Coloane, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/trail/detail?id=4a8be116-77eb-4a35-95e9-5d6e82ba4b23&type=trails"
+        },
+        {
+          "local": "氹仔海濱休憩區",
+          "ok": "2026-11",
+          "name": {
+            "th": "ลานพักผ่อนริมน้ำไทปา",
+            "en": "Leisure Area on Taipa Waterfront"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไทปา ถนนโจโกสดาอาเซียโอเรียนตัล",
+            "en": "Taipa, Avenida dos Jogos da Ásia Oriental"
+          },
+          "what": {
+            "th": "แนวริมน้ำมีทางจักรยาน ทางวิ่ง สนามเด็กเล่น และมุมออกกำลังกาย",
+            "en": "A waterfront strip with a cycle track, a jogging track, a children's playground and fitness corners"
+          },
+          "why": {
+            "th": "ปั่นจักรยานและสนามเด็กเล่นริมน้ำ เดินไม่ไกลจากหมู่บ้านไทปา",
+            "en": "Bikes and a playground by the water, a short walk from Taipa Village"
+          },
+          "tip": {
+            "th": "เปิด 24 ชั่วโมง",
+            "en": "Open 24 hours"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Leisure Area on Taipa Waterfront, Macau",
+          "src": "https://www.iam.gov.mo/nature/e/facility/trail/detail?id=0cde451c-3225-4ba3-ab39-8ac564025ed8&type=trails"
         }
       ]
     }

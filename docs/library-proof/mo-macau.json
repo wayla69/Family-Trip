@@ -1888,6 +1888,65 @@
           "map": "Google Maps: open, a review 3 months ago"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "The Municipal Affairs Bureau's (IAM) own Nature pages (address, area, hours, fee, facilities; site updated 28 Nov 2026), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Taipa Central Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=5571ff2b-219d-4978-a15a-ad5daa43ee5e&type=garden",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Hac Sá Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=3119e6e4-f703-430a-9fc5-4a1914110ff1&type=garden",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Hac Sá Reservoir Natural Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=9bdd239f-a241-4c95-b9bc-6a0f3e4de1a0&type=park",
+          "map": "Google Maps: Hác Sá Reservoir Barbecue Park, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Taipa Grande Natural Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=44ca23c2-4486-4eb5-802d-4490ca890d42&type=park",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Hac Sá Long Chao Kok Coastal Trail",
+          "src": "https://www.iam.gov.mo/nature/e/facility/trail/detail?id=4a8be116-77eb-4a35-95e9-5d6e82ba4b23&type=trails",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Leisure Area on Taipa Waterfront",
+          "src": "https://www.iam.gov.mo/nature/e/facility/trail/detail?id=0cde451c-3225-4ba3-ab39-8ac564025ed8&type=trails",
+          "map": "Google Maps: open, a review a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Coloane Children's Park",
+          "why": "its Google Maps listing could not be confirmed"
+        },
+        {
+          "name": "Ká Hó Reservoir Natural Park",
+          "why": "newest Google Maps review 2 years old"
+        },
+        {
+          "name": "Seac Pai Van Urban Park",
+          "why": "no Google Maps reviews"
+        },
+        {
+          "name": "Morro de Hac Sá Family Trail",
+          "why": "no Google Maps listing of its own"
+        },
+        {
+          "name": "Iao Hon Market Park and Areia Preta Urban Park",
+          "why": "neighbourhood parks far from where visitors stay"
+        }
+      ]
     }
   ]
 }
