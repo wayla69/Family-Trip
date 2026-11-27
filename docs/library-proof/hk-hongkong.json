@@ -1786,6 +1786,384 @@
           "why": "last updated 2023–2024, outside 2025–2026"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "eats",
+      "title": "Round 7: Discover Hong Kong's local food pages and Little Steps Asia's 2026 openings — Google Maps only, at the owner's request",
+      "checked": "2026-11-27",
+      "rule": "Owner, 27 Nov 2026: every place from a dated 2025–2026 page read in the owner's Chrome, then Google Maps (not marked permanently or temporarily closed, a review from the last six months, the map's name matching the page's) and OpenRice (listed, not Closed Down or Relocated). A price is OpenRice's band per person where it showed one.",
+      "added": [
+        {
+          "name": "Cheung Hing Coffee Shop",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-visit-cha-chaan-tengs.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Cheung Hing Coffee Shop\": 1,300 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Haiphong Road Cooked Food Hawker Bazaar",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-visit-dai-pai-dongs.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Haiphong Road Temporary Market Cooked Food Hawker Bazaar\": 681 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Woosung Street Cooked Food Hawker Bazaar",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-visit-dai-pai-dongs.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Woosung Street Temporary Cooked Food Hawker Bazaar\": 273 reviews, newest seen 7 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Bing Kee Cha Dong",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-visit-dai-pai-dongs.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Bing Kee Cha Dong\": 1,143 reviews, newest seen 15 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "So Kee Dai Pai Dong",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-visit-dai-pai-dongs.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"So Kee (Sham Shui Po)\": 247 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Sing Kee Dai Pai Dong",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-visit-dai-pai-dongs.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Sing Kee (Stanley Street)\": 461 reviews, newest seen 7 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Dim Sum Here",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/local-cuisine-to-try-on-temple-street.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"DimSumHere\": 2,528 reviews, newest seen 2 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Hing Kee Restaurant (Temple Street)",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/local-cuisine-to-try-on-temple-street.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Hing Kee Restaurant (clay pot)\": 4,073 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Foodtrip Bedañas",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/taste-the-world-in-temple-street.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Foodtrip Bedana's Filipino Restaurant\": 427 reviews, newest seen 22 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Manakamana Nepali Restaurant",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/taste-the-world-in-temple-street.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Manakamana Nepali Restaurant\": 709 reviews, newest seen 25 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "My Kitchen Tibetan",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/taste-the-world-in-temple-street.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"MY KITCHEN TIBETAN HALAL RESTAURANT\": 1,121 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Pizza Max Bistro",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/taste-the-world-in-temple-street.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Pizza Max Bistro\": 258 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "V.Dimpal Fusion & Pizza House",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/taste-the-world-in-temple-street.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"V Dimpal Fusion and Pizza House\": 531 reviews, newest seen 25 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Kung Lee Herbal Tea",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-try-street-food-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Kung Lee Sugar Cane Drink\": 604 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Dor Bo Mei Sik",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-try-street-food-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"多寶美食\": 43 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Tung Tat Food Shop",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-try-street-food-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Tung Tat\": 905 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Mott 32",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/unmissable-hong-kong-dim-sum-restaurants.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Mott 32\": 2,544 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Le Petit Chef",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/interactive-and-entertaining-family-dining-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27 (the site links the MICHELIN Guide 2026 and WinterFest 2026)",
+          "map": "Google Maps \"Le Petit Chef - Hong Kong\": 822 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Lola María Wan Chai",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"LOLA MARÍA Wanchai\": 34 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Two Men Bagel House",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Two Men Bagel House Sai Ying Pun\": 47 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Mama Dough",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Mama Dough HK\": 172 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "NOOK@The Peak",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"NOOK@The Peak\": 29 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Tim Ho Wan Lee Garden Two",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Tim Ho Wan (Causeway Bay)\": 122 reviews, newest seen a day ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Canton Library",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"The Canton Library\": 210 reviews, newest seen 2 weeks ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "RAF by Roucou",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"RAF\": 45 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Il Presidente",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Il Presidente\": 124 reviews, newest seen 16 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Tienmo",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"TIENMO 天模粉食\": 37 reviews, newest seen 15 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Food Atlas",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Food Atlas\": 16 reviews, newest seen a month ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Ninetta",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Ninetta\": 71 reviews, newest seen 13 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "FALCO",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"FALCO\": 57 reviews, newest seen 21 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Spoon Focaccia",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"The Spoon Bistro | Focaccia\": 26 reviews, newest seen 18 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Mala Mia",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Mala Mia\": 112 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Avalon",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Avalon\": 43 reviews, newest seen 3 weeks ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Tiffany Blue Box Café",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Tiffany Blue Box Café, Hong Kong\": 52 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "PARKSIDE@NINA CWB",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"PARKSIDE@NINA CWB\": 71 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Don Pedro",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Don Pedro\": 232 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Manteigaria",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Manteigaria Hong Kong\": 286 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Stübli",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Stübli\": 88 reviews, newest seen 11 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Butter Babe",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Butter Babe\": 80 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Poppy By Aster",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Poppy & Aster\": 113 reviews, newest seen 13 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Dan Ryan's Causeway Bay",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Dan Ryan's Chicago Grill (Causeway Bay)\": 72 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Orient",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"The Orient\": 143 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Happy Samurai",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Happy Samurai | Hong Kong\": 94 reviews, newest seen 3 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "DEDICA",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Dedica\": 40 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Terrace Boulud",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"Terrace Boulud by Mandarin Oriental\": 211 reviews, newest seen 3 weeks ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Grill Room Mong Kok",
+          "src": "https://www.littlestepsasia.com/hong-kong/dine/kid-friendly-restaurants/new-restaurants-hong-kong/",
+          "date": "updated 2026-10-30 (monthly new-openings list)",
+          "map": "Google Maps \"The Grill Room MK\": 86 reviews, newest seen a day ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pak Po Tong (Temple Street)",
+          "from": "Discover Hong Kong",
+          "why": "not found on Google Maps under its name"
+        },
+        {
+          "name": "Ser Wong Sun (Temple Street)",
+          "from": "Discover Hong Kong",
+          "why": "not found on Google Maps under its name"
+        },
+        {
+          "name": "Dong Hing Snack Food (Tai Kok Tsui)",
+          "from": "Discover Hong Kong",
+          "why": "the map shows 'Tung Hing'; not sure it is the same stall"
+        },
+        {
+          "name": "THE CHATER",
+          "from": "Little Steps Asia new openings, Oct 2026",
+          "why": "the map shows only the Landmark Chater building"
+        },
+        {
+          "name": "One Duck Lane",
+          "from": "Little Steps Asia new openings, Oct 2026",
+          "why": "the map shows only the hotel"
+        },
+        {
+          "name": "Shake Shack The Peak",
+          "from": "Little Steps Asia new openings, Oct 2026",
+          "why": "the map search landed in another country; not checked"
+        },
+        {
+          "name": "Central Table (Landmark Atrium)",
+          "from": "Little Steps Asia new openings, Oct 2026",
+          "why": "the map shows another restaurant"
+        },
+        {
+          "name": "Konjiki Hototogisu Cityplaza",
+          "from": "Little Steps Asia new openings, Oct 2026",
+          "why": "the map's branch could not be tied to Cityplaza"
+        },
+        {
+          "name": "Bars and nightlife on the openings list (AOAO, Bar Camillo, Fello, Bar 41, Nice Nori, Blanc de Noirs, James Suckling Wine Central)",
+          "from": "Little Steps Asia new openings, Oct 2026",
+          "why": "bars and nightlife are left out by the brief"
+        }
+      ]
     }
   ]
 }

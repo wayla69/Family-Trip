@@ -1027,3 +1027,10 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Capuano, Pocofino, Peak Pizza, BRKLYN, Motorino Wan Chai, Ming Kee on Po Toi, Yau Ley on High Island, Concerto Inn, the Kai Tak malls'
   restaurants, Shiro Central, Portico at Spiga… Google Maps only. Closed although still listed: Dim Sum Icon, Mr Tree (Causeway Bay),
   Jacomax. Hong Kong now holds 273.
+- **Round 7**: +46. Eighteen local spots from Discover Hong Kong's food pages (the cha chaan teng, dai pai dong, Temple Street, street
+  food and dim sum pages — the tourism board's pages carry no date; read 27 Nov 2026 while the site links the MICHELIN Guide 2026): Cheung
+  Hing Coffee Shop, the Haiphong Road and Woosung Street cooked-food bazaars, Bing Kee Cha Dong, So Kee and Sing Kee dai pai dongs, Dim Sum
+  Here, Hing Kee claypot rice, Foodtrip Bedañas, Manakamana, My Kitchen Tibetan, Kung Lee sugar cane, Tung Tat, Mott 32, Le Petit Chef…
+  And 28 of Little Steps Asia's 2026 openings (Lola María, Stübli, Dan Ryan's Causeway Bay, NOOK@The Peak, Tienmo, Food Atlas, Terrace
+  Boulud…). Google Maps only; nine left out (not found, only the building on the map, or bars). Hong Kong now holds 319 — the owner's
+  300–400. Sources not used: Little Steps' breakfast, kids-eat-free, vegetarian and airport guides (last updated 2023–2024).
