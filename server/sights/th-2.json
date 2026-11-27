@@ -1022,6 +1022,47 @@
           },
           "q": "Nong Nooch Tropical Garden, Pattaya, Chonburi",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Wat Phra Yai (Big Buddha)",
+            "th": "วัดพระใหญ่"
+          },
+          "local": "วัดพระใหญ่",
+          "kind": "culture",
+          "area": {
+            "en": "Pratumnak Hill, between Pattaya and Jomtien",
+            "th": "เขาพระตำหนัก ระหว่างพัทยากับจอมเทียน"
+          },
+          "what": {
+            "en": "A temple on Pratumnak Hill with an 18-metre golden Big Buddha and views over the bay",
+            "th": "วัดบนเขาพระตำหนัก มีพระพุทธรูปทองสูง 18 เมตร และวิวอ่าวพัทยา"
+          },
+          "why": {
+            "en": "Climb the dragon stairway, see the Buddha statues and enjoy the coastline views",
+            "th": "ขึ้นบันไดนาค ชมพระพุทธรูป และมองวิวชายฝั่ง"
+          },
+          "tip": {
+            "en": "Dress modestly with covered shoulders and knees; go early morning or at sunset for cooler weather",
+            "th": "แต่งกายสุภาพ ปิดไหล่และเข่า ไปแต่เช้าหรือตอนพระอาทิตย์ตกจะเย็นกว่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free (donation ≈ ฿50 suggested)",
+            "th": "ฟรี (แนะนำบริจาค ≈ ฿50)"
+          },
+          "book": "none",
+          "q": "Wat Phra Yai Big Buddha, Pratumnak Hill, Pattaya",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/pattaya/wat-phra-yai-thailand"
         }
       ]
     },
@@ -1492,6 +1533,169 @@
           },
           "q": "Holiday Inn Resort Vana Nava Hua Hin",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Tree Top Adventure Park Hua Hin",
+            "th": "ทรีท็อป แอดเวนเจอร์ พาร์ค หัวหิน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Thap Tai, Hua Hin",
+            "th": "ทับใต้ หัวหิน"
+          },
+          "what": {
+            "en": "A treetop course with ziplines, balance walks and a zigzag swing, with staff guiding the way",
+            "th": "คอร์สผจญภัยบนต้นไม้ มีซิปไลน์ ทางเดินทรงตัว และชิงช้าซิกแซก มีเจ้าหน้าที่คอยดูแล"
+          },
+          "why": {
+            "en": "The page says it suits children aged eight or over who are at least 120 cm tall",
+            "th": "เว็บระบุว่าเหมาะกับเด็กอายุ 8 ปีขึ้นไปที่สูงอย่างน้อย 120 ซม."
+          },
+          "tip": {
+            "en": "Open daily 09:00–15:00; the course takes about 1–1.5 hours",
+            "th": "เปิดทุกวัน 09:00–15:00 คอร์สใช้เวลาราว 1–1.5 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tree Top Adventure Park Hua Hin, Thap Tai, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.ticket2attraction.com/blogs/hua-hin-kids-attractions/"
+        },
+        {
+          "name": {
+            "en": "Hua Hin Beach",
+            "th": "หาดหัวหิน"
+          },
+          "local": "หาดหัวหิน",
+          "kind": "beach",
+          "area": {
+            "en": "Hua Hin town",
+            "th": "ตัวเมืองหัวหิน"
+          },
+          "what": {
+            "en": "A long beach of fine white sand running on from the town",
+            "th": "หาดทรายขาวละเอียดยาวต่อเนื่องจากตัวเมือง"
+          },
+          "why": {
+            "en": "The page says the water is shallow with fine sand, which suits children playing in the sea",
+            "th": "เว็บระบุว่าน้ำตื้นและทรายละเอียด เหมาะให้เด็กเล่นน้ำทะเล"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hua Hin Beach, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": {
+            "en": "Pradipat Pine Beach (Suan Son)",
+            "th": "หาดสวนสนประดิพัทธ์"
+          },
+          "local": "หาดสวนสนประดิพัทธ์",
+          "kind": "beach",
+          "area": {
+            "en": "Nong Kae, Hua Hin",
+            "th": "หนองแก หัวหิน"
+          },
+          "what": {
+            "en": "A quiet, classic beach shaded by a line of pine trees",
+            "th": "หาดเงียบสงบ มีแนวสนให้ร่มเงา"
+          },
+          "why": {
+            "en": "Calm and quiet, with pine trees for shade",
+            "th": "บรรยากาศสงบ มีต้นสนให้ร่มเงา"
+          },
+          "tip": {
+            "en": "The page gives visiting hours of 06:00–18:30",
+            "th": "เว็บระบุเวลาเข้าชม 06:00–18:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Pradipat Pine Beach, Nong Kae, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": {
+            "en": "Samphan Nam Hua Hin Floating Market",
+            "th": "ตลาดน้ำหัวหินสามพันนาม"
+          },
+          "local": "ตลาดน้ำหัวหินสามพันนาม",
+          "kind": "market",
+          "area": {
+            "en": "Thap Tai, Hua Hin",
+            "th": "ทับใต้ หัวหิน"
+          },
+          "what": {
+            "en": "An old-style Thai floating market of about 100 rai, with Rattanakosin-era architecture and waterside life",
+            "th": "ตลาดน้ำสไตล์ไทยโบราณราว 100 ไร่ มีสถาปัตยกรรมแบบรัตนโกสินทร์และวิถีริมน้ำ"
+          },
+          "why": {
+            "en": "A photogenic old-style market with shops and food for a slow outing",
+            "th": "ตลาดบรรยากาศโบราณ มีร้านค้าและอาหาร เหมาะกับการเดินเที่ยวสบายๆ"
+          },
+          "tip": {
+            "en": "Open 09:00–16:00",
+            "th": "เปิด 09:00–16:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Samphan Nam Floating Market, Thap Tai, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
         }
       ]
     },

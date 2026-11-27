@@ -5191,6 +5191,47 @@
           "q": "Koh Tarutao, Satun",
           "ok": "2026-11",
           "src": "https://postcardsbyhannah.com/koh-lipe-travel-guide/"
+        },
+        {
+          "name": {
+            "en": "Hin Ngam Reef",
+            "th": "เกาะหินงาม"
+          },
+          "local": "เกาะหินงาม",
+          "kind": "nature",
+          "area": {
+            "en": "Koh Lipe, north end of Sunrise Beach",
+            "th": "เกาะหลีเป๊ะ ปลายด้านเหนือของหาดซันไรส์"
+          },
+          "what": {
+            "en": "A snorkelling reef off Koh Lipe that needs no dive licence",
+            "th": "แนวปะการังสำหรับดำน้ำตื้นนอกเกาะหลีเป๊ะ ไม่ต้องมีใบอนุญาตดำน้ำลึก"
+          },
+          "why": {
+            "en": "Good for beginners and marine life; visibility reaches 15–20 metres on calm days",
+            "th": "เหมาะกับมือใหม่และชมสัตว์ทะเล ทัศนวิสัยราว 15–20 เมตรในวันที่ทะเลสงบ"
+          },
+          "tip": {
+            "en": "Skip full-day snorkel tours unless you enjoy large groups",
+            "th": "ถ้าไม่ชอบกลุ่มใหญ่ ไม่ต้องเลือกทัวร์ดำน้ำเต็มวัน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Hin Ngam Reef, Koh Lipe, Satun",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/tourism/thailand/things-to-do-in-koh-lipe"
         }
       ]
     },
@@ -6895,6 +6936,129 @@
           },
           "q": "วังศิลาแลง ตำบลศิลาแลง อำเภอปัว น่าน",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Sri Mueang Park, Nan",
+            "th": "สวนศรีเมือง"
+          },
+          "local": "สวนศรีเมือง",
+          "kind": "park",
+          "area": {
+            "en": "Nan city centre",
+            "th": "ใจกลางเมืองน่าน"
+          },
+          "what": {
+            "en": "A central city park of about 8 rai with a stage, a bridge with views of the old town and a safe children’s playground",
+            "th": "สวนสาธารณะกลางเมืองราว 8 ไร่ มีเวที สะพานชมเมืองเก่า และสนามเด็กเล่นที่ปลอดภัย"
+          },
+          "why": {
+            "en": "A safe children’s playground in the park",
+            "th": "มีสนามเด็กเล่นที่ปลอดภัยในสวน"
+          },
+          "tip": {
+            "en": "Open daily 05:00–22:00, part of the park only (news of 18 Nov 2025)",
+            "th": "เปิดทุกวัน 05:00–22:00 เฉพาะบางส่วนของสวน (ข่าววันที่ 18 พ.ย. 2568)"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sri Muang Park, Nan city",
+          "ok": "2026-11",
+          "src": "https://www.naewna.com/likesara/928814"
+        },
+        {
+          "name": {
+            "en": "Wat Phrathat Khao Noi",
+            "th": "วัดพระธาตุเขาน้อย"
+          },
+          "local": "วัดพระธาตุเขาน้อย",
+          "kind": "views",
+          "area": {
+            "en": "Tambon Du Tai, Nan",
+            "th": "ตำบลดู่ใต้ เมืองน่าน"
+          },
+          "what": {
+            "en": "A hilltop chedi in Burmese-Lanna style with a 360-degree view of Nan city",
+            "th": "เจดีย์บนเนินเขาแบบพม่าผสมล้านนา มองเห็นเมืองน่านได้รอบ 360 องศา"
+          },
+          "why": {
+            "en": "A 360-degree view over the city from the top of the hill",
+            "th": "วิวเมืองน่านรอบทิศจากยอดเขา"
+          },
+          "tip": {
+            "en": "Open 06:00–18:00",
+            "th": "เปิด 06:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wat Phra That Khao Noi, Nan",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
+        },
+        {
+          "name": {
+            "en": "Wat Ming Mueang",
+            "th": "วัดมิ่งเมือง"
+          },
+          "local": "วัดมิ่งเมือง",
+          "kind": "culture",
+          "area": {
+            "en": "Surisongpong Road, Nai Wiang, Nan city",
+            "th": "ถนนสุริยพงษ์ ในเวียง เมืองน่าน"
+          },
+          "what": {
+            "en": "A well-known temple with the city pillar shrine in four directions and carved stucco outside the church",
+            "th": "วัดชื่อดังที่มีศาลหลักเมืองสี่ทิศ และปูนปั้นลวดลายด้านนอกวิหาร"
+          },
+          "why": {
+            "en": "A short visit to see the city pillar and the painted walls",
+            "th": "แวะสั้นๆ ชมหลักเมืองและผนังภาพวาด"
+          },
+          "tip": {
+            "en": "Open 08:00–18:00",
+            "th": "เปิด 08:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wat Ming Mueang, Nan city",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
         }
       ]
     },
@@ -8410,6 +8574,129 @@
           },
           "q": "ศาลเจ้าท่ามก๋งเยี่ย (ยุวเทพ), ตรัง",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Kantang Hot Spring Forest Park",
+            "th": "วนอุทยานบ่อน้ำร้อนกันตัง"
+          },
+          "local": "วนอุทยานบ่อน้ำร้อนกันตัง",
+          "kind": "nature",
+          "area": {
+            "en": "Bo Nam Ron, Kantang",
+            "th": "บ่อน้ำร้อน กันตัง"
+          },
+          "what": {
+            "en": "A forest park with three concrete hot-spring pools, roughly 40 to 55 °C",
+            "th": "วนอุทยานที่มีบ่อน้ำร้อนคอนกรีตสามบ่อ อุณหภูมิราว 40–55 °C"
+          },
+          "why": {
+            "en": "Warm water to soak in; the page points to the cooler two pools, since the hottest is not for everyone",
+            "th": "แช่น้ำอุ่นได้ เว็บแนะนำสองบ่อที่เย็นกว่า เพราะบ่อที่ร้อนที่สุดไม่เหมาะกับทุกคน"
+          },
+          "tip": {
+            "en": "Open daily 08:30–16:30; no lifeguard and the edges are slick when wet",
+            "th": "เปิดทุกวัน 08:30–16:30 ไม่มีเจ้าหน้าที่ช่วยชีวิต และขอบบ่อลื่นเมื่อเปียก"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿100 adult, ≈ ฿50 child (foreigners)",
+            "th": "≈ ฿100 ผู้ใหญ่ ≈ ฿50 เด็ก (ชาวต่างชาติ)"
+          },
+          "book": "none",
+          "q": "Kantang Hot Spring Forest Park, Bo Nam Ron, Kantang, Trang",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/kantang-hot-spring-forest-park/"
+        },
+        {
+          "name": {
+            "en": "Ban Nam Rap community mangrove trip",
+            "th": "ชุมชนบ้านน้ำราบ"
+          },
+          "local": "ชุมชนบ้านน้ำราบ",
+          "kind": "nature",
+          "area": {
+            "en": "Bang Sak, Kantang",
+            "th": "บางสัก กันตัง"
+          },
+          "what": {
+            "en": "A community trip by longtail boat and bamboo raft through mangrove channels, with a sandbar and a heart-shaped island view at low tide",
+            "th": "ทริปชุมชนนั่งเรือหางยาวและแพไม้ไผ่ผ่านคลองป่าชายเลน มีหาดทรายกลางน้ำและมุมเกาะรูปหัวใจตอนน้ำลง"
+          },
+          "why": {
+            "en": "Flat calm water through the mangroves, not rapids, with local guides running small groups",
+            "th": "น้ำนิ่งผ่านป่าชายเลน ไม่ใช่แก่ง มีไกด์ชุมชนพาเที่ยวกลุ่มเล็ก"
+          },
+          "tip": {
+            "en": "Ask for a morning slot timed to low tide; the sandbar shows only for a couple of hours either side of it",
+            "th": "ขอรอบเช้าที่ตรงกับน้ำลง หาดทรายโผล่เพียงสองสามชั่วโมงก่อนและหลังน้ำลงสุด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Ban Nam Rap, Bang Sak, Kantang, Trang",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/ban-nam-rap-rafting/"
+        },
+        {
+          "name": {
+            "en": "Phraya Ratsadanupradit Monument",
+            "th": "อนุสาวรีย์พระยารัษฎานุประดิษฐ์มหิศรภักดี"
+          },
+          "local": "อนุสาวรีย์พระยารัษฎานุประดิษฐ์มหิศรภักดี",
+          "kind": "park",
+          "area": {
+            "en": "Trang–Phatthalung Road, Trang",
+            "th": "ถนนตรัง–พัทลุง ตรัง"
+          },
+          "what": {
+            "en": "A bronze statue of the governor who brought Trang its first rubber trees, in a public park about 1 km from the provincial hall",
+            "th": "อนุสาวรีย์สัมฤทธิ์ของผู้ว่าฯ ผู้นำยางพาราต้นแรกมาสู่ตรัง ในสวนสาธารณะห่างศาลากลางราว 1 กม."
+          },
+          "why": {
+            "en": "A quick open-air stop with a photo spot and bilingual plaques; there is little shade",
+            "th": "แวะสั้นๆ กลางแจ้ง มีจุดถ่ายรูปและป้ายสองภาษา ร่มเงาน้อย"
+          },
+          "tip": {
+            "en": "Open daily 05:00–20:00; go early morning or after 17:00 to avoid the heat",
+            "th": "เปิดทุกวัน 05:00–20:00 ไปแต่เช้าหรือหลัง 17:00 เพื่อเลี่ยงแดด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Phraya Ratsadanupradit Monument, Trang-Phatthalung Road, Trang",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/phraya-ratsadanupradit-mahisornpakdee-monument/"
         }
       ]
     },
