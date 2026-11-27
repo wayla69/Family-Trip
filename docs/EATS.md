@@ -1022,3 +1022,8 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   (Little Mario's on Ma Wan, One-ThirtyOne, Lantana, Oolaa Central). The owner then asked (27 Nov 2026): "Use Google Maps only, skip
   OpenRice" — from this round every place is checked on Google Maps alone, and the proof says so. Hansik Goo left out (newest review 8 months
   ago). Hong Kong now holds 227.
+- **Round 6**: +46 from Little Steps Asia's current guides — dim sum (June 2025), playrooms (Aug 2026), pizza (May 2026), beach (Aug
+  2026), Kai Tak (Oct 2026), alfresco (Oct 2026): Lin Heung Tea House, LockCha, Sun Hing, Dragon-i, Frites Quarry Bay, Q Time Cafe, Vincenzo
+  Capuano, Pocofino, Peak Pizza, BRKLYN, Motorino Wan Chai, Ming Kee on Po Toi, Yau Ley on High Island, Concerto Inn, the Kai Tak malls'
+  restaurants, Shiro Central, Portico at Spiga… Google Maps only. Closed although still listed: Dim Sum Icon, Mr Tree (Causeway Bay),
+  Jacomax. Hong Kong now holds 273.
