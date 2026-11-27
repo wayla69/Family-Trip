@@ -1872,6 +1872,572 @@
           "book": "none",
           "q": "Lotus Square, Macau",
           "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/lotus-square"
+        },
+        {
+          "local": "何賢公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนโคเมนดาดอร์โฮยิน",
+            "en": "Comendador Ho Yin Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนคาร์ลอสดาสซุมเซา คาบสมุทรมาเก๊า",
+            "en": "Alameda Dr. Carlos d'Assumpção, Macau Peninsula"
+          },
+          "what": {
+            "th": "แนวสวนเขียวระหว่างตึก มีดงไผ่ โต๊ะหมากรุก สนามเด็กเล่น และคาเฟ่เล็ก ๆ",
+            "en": "A green strip between the towers with bamboo groves, chess tables, a playground and a small café"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นและร่มเงาใกล้โรงแรมย่านท่าเรือชั้นนอก",
+            "en": "A playground and shade near the hotels of the outer harbour"
+          },
+          "tip": {
+            "th": "เปิด 06:00–24:00",
+            "en": "Open 06:00–24:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Jardim Comendador Ho Yin, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/comendador-ho-yin-park"
+        },
+        {
+          "local": "紀念孫中山市政公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนสาธารณะซุนยัตเซ็น",
+            "en": "Dr. Sun Yat Sen Municipal Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนโคเมนดาดอร์โฮยิน ใกล้ด่านชายแดน คาบสมุทรมาเก๊า",
+            "en": "Avenida do Comendador Ho Yin, near the Border Gate, Macau Peninsula"
+          },
+          "what": {
+            "th": "สวนใหญ่ริมคลองชายแดน มีกรงนก เรือนกระจกสไตล์วิกตอเรียน สนามเด็กเล่น และสนามกีฬา",
+            "en": "A big park by the border canal with an aviary, a Victorian-style greenhouse, a children's playground and sports fields"
+          },
+          "why": {
+            "th": "มีนก เรือนกระจก และสนามเด็กเล่นในสวนเดียว",
+            "en": "Birds, a greenhouse and a playground in one park"
+          },
+          "tip": {
+            "th": "เปิด 24 ชั่วโมง",
+            "en": "Open 24 hours"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Dr. Sun Yat Sen Municipal Park, Avenida do Comendador Ho Yin, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/dr-sun-yat-sen-municipal-park"
+        },
+        {
+          "local": "望廈山市政公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนเนินมงฮาและป้อม",
+            "en": "Mong-Ha Hill park and fort"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนโกโรเนลเมสกีตา คาบสมุทรมาเก๊า",
+            "en": "Avenida do Coronel Mesquita, Macau Peninsula"
+          },
+          "what": {
+            "th": "เนินหญ้าและทางเดินรอบป้อมปี 1866 วิวเมืองฝั่งเหนือ",
+            "en": "Grassy slopes and walkways around an 1866 fort, with views over the north of the city"
+          },
+          "why": {
+            "th": "กำแพงป้อมเก่าให้สำรวจและที่ให้วิ่งเล่น",
+            "en": "Old fort walls to explore and room to run"
+          },
+          "tip": {
+            "th": "เปิด 24 ชั่วโมง วัดกุนอิมท่องอยู่เชิงเนิน",
+            "en": "Open 24 hours; Kun Iam Tong is at the foot of the hill"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Mong-Ha Fort, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/mong-ha-hill-municipal-park"
+        },
+        {
+          "local": "澳門文化中心",
+          "ok": "2026-11",
+          "name": {
+            "th": "ศูนย์วัฒนธรรมมาเก๊า",
+            "en": "Macao Cultural Centre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "นาเป ถนนเซียนซิงไห่ คาบสมุทรมาเก๊า",
+            "en": "NAPE, Avenida Xian Xing Hai, Macau Peninsula"
+          },
+          "what": {
+            "th": "โรงละครหลักของเมือง จัดการแสดงทัวร์ เทศกาล และละครเพลง เช่น ปีเตอร์แพน",
+            "en": "The city's main theatre, hosting touring shows, festivals and musicals such as Peter Pan"
+          },
+          "why": {
+            "th": "เช็กตารางการแสดงสำหรับครอบครัวระหว่างเที่ยว",
+            "en": "Check the programme for a family show during the stay"
+          },
+          "tip": {
+            "th": "ห้องขายตั๋วเปิด 09:00–19:00",
+            "en": "Box office open 09:00–19:00"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "q": "Macao Cultural Centre, Avenida Xian Xing Hai, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macao-cultural-centre"
+        },
+        {
+          "local": "主教山小堂",
+          "ok": "2026-11",
+          "name": {
+            "th": "โบสถ์แม่พระเปนยา",
+            "en": "Chapel of Our Lady of Penha"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ยอดเนินเปนยา คาบสมุทรมาเก๊า",
+            "en": "top of Penha Hill, Macau Peninsula"
+          },
+          "what": {
+            "th": "โบสถ์เล็กที่ชาวเรือสร้างในปี 1622 บนยอดเนินเปนยา วิวอ่าวและสะพาน",
+            "en": "A chapel founded by sailors in 1622 on top of Penha Hill, with views over the bay and the bridges"
+          },
+          "why": {
+            "th": "ยอดเนินเงียบสงบพร้อมวิวกว้าง",
+            "en": "A quiet hilltop with a wide view"
+          },
+          "tip": {
+            "th": "เปิด 10:00–17:00",
+            "en": "Open 10:00–17:00"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Chapel of Our Lady of Penha, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/churches/chapel-of-our-lady-of-penha"
+        },
+        {
+          "local": "亞婆井前地",
+          "ok": "2026-11",
+          "name": {
+            "th": "ลานลิเลา",
+            "en": "Lilau Square"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ลานลิเลา คาบสมุทรมาเก๊า",
+            "en": "Largo do Lilau, Macau Peninsula"
+          },
+          "what": {
+            "th": "ย่านชาวโปรตุเกสแห่งแรก ๆ อดีตแหล่งน้ำพุหลักของมาเก๊า อยู่ในเขตมรดกโลก",
+            "en": "One of the first Portuguese quarters, once Macau's main spring, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "ลานเล็ก ๆ แวะระหว่างเดินไปบ้านขุนนางจีน",
+            "en": "A small square to stop at on the walk to Mandarin's House"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lilau Square, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/lilau-square"
+        },
+        {
+          "local": "觀音堂",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดกุนอิมท่อง",
+            "en": "Kun Iam Tong"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนโกโรเนลเมสกีตา คาบสมุทรมาเก๊า",
+            "en": "Avenida do Coronel Mesquita, Macau Peninsula"
+          },
+          "what": {
+            "th": "วัดใหญ่ที่สุดแห่งหนึ่ง สร้างปี 1627 มีตุ๊กตากระเบื้องบนหลังคา สวนขั้นบันได และต้นไม้คู่รัก",
+            "en": "One of the biggest temples, dating from 1627, with porcelain figures on the roofs, terraced gardens and the Lovers' Tree"
+          },
+          "why": {
+            "th": "ลานวัด สวน และน้ำพุภูเขาจำลองให้เดินชม",
+            "en": "Courtyards, gardens and mini-landscape fountains to wander"
+          },
+          "tip": {
+            "th": "เปิด 07:30–17:00",
+            "en": "Open 07:30–17:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Kun Iam Tong, Avenida do Coronel Mesquita, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/kun-iam-tong"
+        },
+        {
+          "local": "氹仔北帝廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดปักไท่ ไทปา",
+            "en": "Pak Tai Temple (Taipa)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านไทปา",
+            "en": "Taipa Village"
+          },
+          "what": {
+            "th": "วัดเจ้าพ่อปักไท่อายุ 160 ปี มีศาลาไหว้อยู่ด้านหน้า",
+            "en": "A 160-year-old temple to the Northern Emperor with a worship pavilion in front"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ ระหว่างเดินหมู่บ้านไทปา มีจักรยานให้เช่าใกล้ ๆ",
+            "en": "A short stop on a Taipa Village walk; bikes for hire nearby"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Pak Tai Temple, Taipa, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pak-tai-temple-in-taipa"
+        },
+        {
+          "local": "哪吒廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดนาจา",
+            "en": "Na Tcha Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ข้างซากโบสถ์เซนต์พอล คาบสมุทรมาเก๊า",
+            "en": "beside the Ruins of St Paul's, Macau Peninsula"
+          },
+          "what": {
+            "th": "วัดเล็ก ๆ ปี 1888 ข้างซากโบสถ์เซนต์พอล มีห้องนิทรรศการข้าง ๆ",
+            "en": "A small 1888 temple beside the Ruins of St Paul's, with an exhibition room next door"
+          },
+          "why": {
+            "th": "แวะสองนาทีข้างซากโบสถ์",
+            "en": "A two-minute stop right next to the Ruins"
+          },
+          "tip": {
+            "th": "วัดเปิด 08:00–17:00 ห้องนิทรรศการปิดวันพุธ",
+            "en": "Temple 08:00–17:00; exhibition room closed on Wednesdays"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Na Tcha Temple, Calçada de S. Paulo, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/na-tcha-temple"
+        },
+        {
+          "local": "盧家大屋",
+          "ok": "2026-11",
+          "name": {
+            "th": "คฤหาสน์หลูเกา",
+            "en": "Lou Kau Mansion"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ซอยเซ ใกล้จัตุรัสเซนาโด คาบสมุทรมาเก๊า",
+            "en": "Travessa da Sé, near Senado Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "บ้านลานอิฐเทาปี 1889 ของพ่อค้าชาวจีน อยู่ในเขตมรดกโลก",
+            "en": "An 1889 grey-brick courtyard house of a Chinese merchant, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "ชมบ้านเก่าฟรี ห่างจัตุรัสเซนาโดไม่กี่ก้าว",
+            "en": "A free look inside an old house steps from Senado Square"
+          },
+          "tip": {
+            "th": "เปิด 10:00–18:00 ปิดวันจันทร์",
+            "en": "Open 10:00–18:00; closed on Mondays"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lou Kau Mansion, 7 Travessa da Sé, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/lou-kau-mansion"
+        },
+        {
+          "local": "國父紀念館",
+          "ok": "2026-11",
+          "name": {
+            "th": "บ้านอนุสรณ์ซุนยัตเซ็น",
+            "en": "Dr. Sun Yat-sen Memorial House"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนซิลวาเมนเดส คาบสมุทรมาเก๊า",
+            "en": "Rua Silva Mendes, Macau Peninsula"
+          },
+          "what": {
+            "th": "บ้านที่จัดแสดงเอกสารเรื่องการพำนักของซุนยัตเซ็นในมาเก๊า",
+            "en": "A house with documents on Dr Sun Yat-sen's stay in Macau"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ ฟรีสำหรับเด็กโตที่เรียนประวัติศาสตร์",
+            "en": "A short free stop for older children studying history"
+          },
+          "tip": {
+            "th": "เปิด 10:00–17:00 ปิดวันอังคาร",
+            "en": "Open 10:00–17:00; closed on Tuesdays"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Dr. Sun Yat Sen Memorial House, 1 Rua Silva Mendes, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/dr-sun-yat-sen-memorial-house-in-macau"
+        },
+        {
+          "local": "保安部隊博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์กองกำลังความมั่นคงมาเก๊า",
+            "en": "Museum of the Macao Security Forces"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ทางลาดกวาร์เตส ข้างสวนเซาฟรานซิสโก คาบสมุทรมาเก๊า",
+            "en": "Calçada dos Quartéis, by S. Francisco Garden, Macau Peninsula"
+          },
+          "what": {
+            "th": "อุปกรณ์ทางทหารและประวัติตำรวจมาเก๊า",
+            "en": "Military equipment and the history of the Macau police"
+          },
+          "why": {
+            "th": "เครื่องแบบและอุปกรณ์ที่เด็กชอบดู",
+            "en": "Uniforms and equipment children like to see"
+          },
+          "tip": {
+            "th": "เปิด 09:00–17:45 วันธรรมดา 09:00–17:00 วันหยุด",
+            "en": "Open 09:00–17:45 weekdays, 09:00–17:00 at weekends"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Museum of the Macau Security Forces, Calçada dos Quartéis, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-the-macao-security-forces"
+        },
+        {
+          "local": "何東圖書館",
+          "ok": "2026-11",
+          "name": {
+            "th": "ห้องสมุดเซอร์โรเบิร์ตโฮตุง",
+            "en": "Sir Robert Ho Tung Library"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ลานเซนต์ออกัสติน คาบสมุทรมาเก๊า",
+            "en": "St Augustine's Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "คฤหาสน์ศตวรรษที่ 19 ที่กลายเป็นห้องสมุด มีสวนเงียบสงบด้านหลัง อยู่ในเขตมรดกโลก",
+            "en": "A 19th-century mansion turned public library, with a quiet garden at the back, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "สวนสงบไว้พักระหว่างเดินเมืองเก่า",
+            "en": "A calm garden for a rest during the old-town walk"
+          },
+          "tip": {
+            "th": "เปิด 08:00–20:00 วันจันทร์เปิดบ่ายสอง",
+            "en": "Open 08:00–20:00; Mondays from 14:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Sir Robert Ho Tung Library, Largo de Santo Agostinho, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/sir-robert-ho-tung-library"
+        },
+        {
+          "local": "聖若瑟修院聖堂",
+          "ok": "2026-11",
+          "name": {
+            "th": "โบสถ์เซนต์โจเซฟ",
+            "en": "St. Joseph's Seminary Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเซมินาริโอ คาบสมุทรมาเก๊า",
+            "en": "Rua do Seminário, Macau Peninsula"
+          },
+          "what": {
+            "th": "โบสถ์บาโรกปี 1758 มีบันไดใหญ่ อยู่ในเขตมรดกโลก",
+            "en": "A 1758 baroque church with a grand staircase, part of the World Heritage centre"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ ชมโดมสวยภายใน",
+            "en": "A short stop with a striking dome inside"
+          },
+          "tip": {
+            "th": "โบสถ์เปิด 10:00–17:00 ตัวเซมินารีไม่เปิดให้ชม",
+            "en": "Church open 10:00–17:00; the seminary is not open"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "St. Joseph's Seminary and Church, Rua do Seminário, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/churches/st-josephs-seminary-and-church"
         }
       ]
     }
