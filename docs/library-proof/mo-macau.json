@@ -1248,6 +1248,136 @@
           "why": "Google Maps found only the hotel"
         }
       ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "title": "Time Out (Macau cafés 2025–2026, desserts 2024, signature dishes 2023) and Tatler Asia (Macanese and iconic local restaurants 2023, restaurant pages)",
+      "rule": "Owner, 27 Nov 2026: older guides allowed for the place and its facts (\"Allow older guides + Maps\"), each place kept only when Google Maps shows it not closed, a review from the last six months and the name and address matching. OpenRice skipped at the owner's request.",
+      "added": [
+        {
+          "name": "António",
+          "src": "https://www.tatlerasia.com/dining/food/macanese-restaurants-in-macau",
+          "srcDate": "Tatler Asia, 27 Mar 2023, updated 11 Sep 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"António Macau\": 1,120 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Riquexó",
+          "src": "https://www.tatlerasia.com/dining/food/macanese-restaurants-in-macau",
+          "srcDate": "Tatler Asia, 27 Mar 2023, updated 11 Sep 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Riquexó\": 194 reviews, newest seen 18 days ago, not marked closed"
+        },
+        {
+          "name": "Chan Kong Kei",
+          "src": "https://www.tatlerasia.com/dining/food/iconic-restaurants-local-dishes-macau",
+          "srcDate": "Tatler Asia, 20 Mar 2023, updated 18 May 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Chan Kwong Kei BBQ Shop\": 1,370 reviews, newest seen 24 days ago, not marked closed"
+        },
+        {
+          "name": "Seng Cheong",
+          "src": "https://www.tatlerasia.com/dining/food/iconic-restaurants-local-dishes-macau",
+          "srcDate": "Tatler Asia, 20 Mar 2023, updated 18 May 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Seng Cheong\": 1,312 reviews, newest seen 15 days ago, not marked closed"
+        },
+        {
+          "name": "Common Table",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"Common Table Macau\": 194 reviews, newest seen 13 days ago, not marked closed"
+        },
+        {
+          "name": "Lord Stow's Garden Café",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"Lord Stow's Garden Café\": 62 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Ora Coffee",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"ORA Coffee and Food\": 29 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Shansheng Coffee",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"Shanshang Coffee\": 97 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "The Rooftop Macau",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"ROOFTOP MACAU\": 65 reviews, newest seen 17 days ago, not marked closed"
+        },
+        {
+          "name": "Lai Kei Sorvetes",
+          "src": "https://www.timeout.com/macau/restaurants/macau-dessert-spots-to-try-on-your-next-trip-over",
+          "srcDate": "Time Out, 25 Jun 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Lai Kei Sorvetes\": 621 reviews, newest seen 18 days ago, not marked closed"
+        },
+        {
+          "name": "One Brother Food",
+          "src": "https://www.timeout.com/macau/restaurants/must-try-local-dishes-in-macau",
+          "srcDate": "Time Out, 28 Apr 2023, updated 5 Mar 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"一哥美食 - 水蟹粥\": 411 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Cocos Hung Heng",
+          "src": "https://www.timeout.com/macau/restaurants/must-try-local-dishes-in-macau",
+          "srcDate": "Time Out, 28 Apr 2023, updated 5 Mar 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"洪馨記椰子雪糕\": 279 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Henri's Galley",
+          "src": "https://www.timeout.com/macau/restaurants/must-try-local-dishes-in-macau",
+          "srcDate": "Time Out, 28 Apr 2023, updated 5 Mar 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"HENRI'S Galley\": 134 reviews, newest seen 23 days ago, not marked closed"
+        },
+        {
+          "name": "Quarter Square",
+          "src": "https://www.timeout.hk/restaurant/quarter-square",
+          "srcDate": "Time Out Hong Kong venue page, updated 16 Sep 2026",
+          "map": "Google Maps \"Quarter Square\": 10 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Guincho a Galera",
+          "src": "https://www.tatlerasia.com/dining/guincho-a-galera",
+          "srcDate": "Tatler Asia restaurant page, 9 Jul 2026",
+          "map": "Google Maps \"Guincho a Galera\": 521 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Tapas de Portugal",
+          "src": "https://www.tatlerasia.com/dining/casa-de-tapas-macau",
+          "srcDate": "Tatler Asia restaurant page, 2017 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Tapas de Portugal\": 319 reviews, newest seen 9 days ago, not marked closed"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Tou Tou Koi",
+          "why": "Google Maps marks it permanently closed (Time Out's page still lists it)"
+        },
+        {
+          "name": "Bookand, Soul of Seed, Lemon Cello, Da Tie Tofu Pudding, Choi Heong Yuen",
+          "why": "Google Maps: newest review seven months or more old"
+        },
+        {
+          "name": "Sichuan Moon, Lucky Tree Coffee, Shuxia Coffee, Padaria Wai Kei, Fat Siu Lau 2",
+          "why": "Google Maps found no matching place (the hotel, another café or another branch)"
+        },
+        {
+          "name": "Bamboo bistro & bar",
+          "why": "a karaoke bar at night (nightlife is left out)"
+        },
+        {
+          "name": "Terra, Kam Lei, Goat Bakers",
+          "why": "chains with several branches and none named"
+        },
+        {
+          "name": "Gosto (Galaxy)",
+          "why": "Google Maps shows another restaurant (Gaga) in its place"
+        }
+      ]
     }
   ]
 }
