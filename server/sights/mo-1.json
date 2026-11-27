@@ -530,6 +530,240 @@
           },
           "q": "House of Dancing Water, City of Dreams, Macau",
           "ok": "2026-11"
+        },
+        {
+          "local": "影滙之星",
+          "ok": "2026-11",
+          "name": {
+            "th": "ชิงช้าสวรรค์โกลเด้นรีล สตูดิโอซิตี",
+            "en": "Golden Reel (Studio City)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สตูดิโอซิตี โคไท",
+            "en": "Studio City, Cotai"
+          },
+          "what": {
+            "th": "ชิงช้าสวรรค์รูปเลขแปด สูง 130 เมตร อยู่ระหว่างตึกโรงแรมสองตึก",
+            "en": "A figure-of-eight Ferris wheel 130 m up between the two hotel towers"
+          },
+          "why": {
+            "th": "เห็นวิวโคไทจากห้องโดยสารปิด เด็กต่ำกว่า 2 ขวบฟรี",
+            "en": "Views over Cotai from a closed cabin; under 2s go free"
+          },
+          "tip": {
+            "th": "เปิด 14:00–20:00 เด็กอายุ 12 ปีลงไปต้องมีผู้ใหญ่ไปด้วย",
+            "en": "Open 14:00–20:00; children 12 and under ride with an adult"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "MOP 100",
+            "en": "MOP 100"
+          },
+          "book": "none",
+          "q": "Golden Reel, Studio City, Cotai, Macau",
+          "src": "https://www.studiocity-macau.com/en/attractions/golden-reel"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "กระเช้าสกายแค็บ วินน์พาเลซ",
+            "en": "Wynn Palace SkyCab"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "วินน์พาเลซ โคไท",
+            "en": "Wynn Palace, Cotai"
+          },
+          "what": {
+            "th": "กระเช้าหกที่นั่งติดแอร์ ลอยข้ามทะเลสาบน้ำพุไปถึงโรงแรม",
+            "en": "Air-conditioned six-person cabins gliding over the Performance Lake to the hotel"
+          },
+          "why": {
+            "th": "นั่งไม่นานและนิ่ม เห็นน้ำพุอยู่ด้านล่าง",
+            "en": "A short, gentle ride with the fountains below"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "SkyCab, Wynn Palace, Cotai, Macau",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/experiences/entertainment/"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทะเลสาบน้ำพุวินน์พาเลซ",
+            "en": "Wynn Palace Performance Lake"
+          },
+          "kind": "show",
+          "area": {
+            "th": "วินน์พาเลซ โคไท",
+            "en": "Wynn Palace, Cotai"
+          },
+          "what": {
+            "th": "น้ำพุเต้นตามเพลงบนทะเลสาบหน้าวินน์พาเลซ",
+            "en": "Fountains that dance to music on the lake in front of Wynn Palace"
+          },
+          "why": {
+            "th": "การแสดงฟรี ดูได้จากริมทะเลสาบ",
+            "en": "A free show to watch from the edge of the lake"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Performance Lake, Wynn Palace, Cotai, Macau",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/experiences/entertainment/"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "จุดชมวิวหอไอเฟล เดอะปาริเซียน",
+            "en": "Eiffel Tower observation deck (The Parisian)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เดอะปาริเซียน โคไท",
+            "en": "The Parisian, Cotai"
+          },
+          "what": {
+            "th": "หอไอเฟลขนาดครึ่งหนึ่ง มีจุดชมวิวชั้น 6, 7 และ 37",
+            "en": "A half-size Eiffel Tower with viewing decks on levels 6, 7 and 37"
+          },
+          "why": {
+            "th": "ขึ้นลิฟต์ไปดูไฟโคไทยามค่ำ",
+            "en": "A lift ride up and the Cotai lights at night"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "MOP 98",
+            "en": "MOP 98"
+          },
+          "book": "none",
+          "q": "Eiffel Tower, The Parisian Macao, Cotai, Macau",
+          "src": "https://www.parisianmacao.com/macau-entertainment/eiffel-tower.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิธีเปลี่ยนเวรทหารยาม เดอะลอนดอนเนอร์",
+            "en": "Changing of the Guard (The Londoner)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "คริสตัลพาเลซ เดอะลอนดอนเนอร์ โคไท",
+            "en": "Crystal Palace, The Londoner, Cotai"
+          },
+          "what": {
+            "th": "ทหารยามเสื้อแดงเดินแถวพร้อมวงดนตรีในคริสตัลพาเลซ",
+            "en": "Guards in red coats march with a band in the Crystal Palace"
+          },
+          "why": {
+            "th": "ขบวนสั้น ๆ ฟรี เด็กดูได้ใกล้ ๆ",
+            "en": "A short free parade children can watch up close"
+          },
+          "tip": {
+            "th": "อังคาร–พฤหัสบดี 18:00 และ 20:30 ศุกร์–อาทิตย์และวันหยุด 16:00, 18:00 และ 20:30 ไม่มีวันจันทร์",
+            "en": "Tue–Thu 18:00 and 20:30; Fri–Sun and holidays 16:00, 18:00 and 20:30; none on Mondays"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "The Londoner Macao, Cotai, Macau",
+          "src": "https://www.londonermacao.com/macau-attractions.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "การแสดงแสงสีเสียง เดอะลอนดอนเนอร์",
+            "en": "Light and Sound Spectacular (The Londoner)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ด้านหน้าเดอะลอนดอนเนอร์ โคไท",
+            "en": "The Londoner façade, Cotai"
+          },
+          "what": {
+            "th": "การแสดงแสงและเพลงฉายบนด้านหน้าเดอะลอนดอนเนอร์",
+            "en": "Light and music shows projected on the Londoner's front"
+          },
+          "why": {
+            "th": "ฟรี มีทุกชั่วโมงช่วงค่ำ ดูจากด้านนอก",
+            "en": "Free, every hour in the evening, watched from outside"
+          },
+          "tip": {
+            "th": "ทุกชั่วโมง 19:30–23:30",
+            "en": "Every hour 19:30–23:30"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "The Londoner Macao, Cotai, Macau",
+          "src": "https://www.londonermacao.com/macau-attractions.html"
         }
       ]
     }

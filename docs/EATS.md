@@ -991,3 +991,5 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 - **26 Nov 2026, Chongqing, round 41**: +3 from Amap place pages (Jiefangbei). Proof in `docs/library-proof/cn-chongqing.json`.
 
 - **27 Nov 2026, Chengdu, round 43**: +2 from Amap place pages (Wuhou). Proof in `docs/library-proof/cn-chengdu.json`.
+
+- **27 Nov 2026, Macau, round 44**: +13 from the resorts' own dining pages (The Londoner, Studio City, City of Dreams, Galaxy), each checked on Google Maps (not closed, a review in the last six months). Proof in `docs/library-proof/mo-macau.json`.

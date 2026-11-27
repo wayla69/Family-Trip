@@ -99,6 +99,130 @@
         "agents": "one Haiku agent; 4 rows from MGM's own pages and Sing Tao (May 2026), all passed library-check.cjs, 2 went in",
         "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-27",
+      "rule": "The resort's own page for each place (what it serves, its children's terms, hours), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "North Palace (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/north-palace.html",
+          "map": "Google Maps: 511 reviews, newest 4 months ago"
+        },
+        {
+          "name": "Churchill's Table (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/churchills-table.html",
+          "map": "Google Maps: 584 reviews, newest a day ago"
+        },
+        {
+          "name": "Hampton Court (Londoner Grand)",
+          "src": "https://www.londonermacao.com/macau-restaurants/hampton-court.html",
+          "map": "Google Maps: 407 reviews, newest a week ago"
+        },
+        {
+          "name": "Gordon Ramsay Pub & Grill (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/gordon-ramsay-pub-n-grill.html",
+          "map": "Google Maps: 317 reviews, newest 4 days ago"
+        },
+        {
+          "name": "The Cheesecake Factory (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/the-cheesecake-factory.html",
+          "map": "Google Maps: 355 reviews, newest a day ago"
+        },
+        {
+          "name": "Chelsea Garden (Londoner Grand)",
+          "src": "https://www.londonermacao.com/macau-restaurants/chelsea-garden.html",
+          "map": "Google Maps: 617 reviews, open, newest 2 days ago"
+        },
+        {
+          "name": "Koufu (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/koufu.html",
+          "map": "Google Maps: The Londoner Food Court - Koufu, 19 reviews, newest 5 months ago"
+        },
+        {
+          "name": "Joyride Diner (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/joyride-diner",
+          "map": "Google Maps: 99 reviews, newest a week ago"
+        },
+        {
+          "name": "Spice Road (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/spice-road",
+          "map": "Google Maps: 16 reviews, newest 3 months ago"
+        },
+        {
+          "name": "Gala (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/gala",
+          "map": "Google Maps: 31 reviews, newest 4 months ago"
+        },
+        {
+          "name": "Din Tai Fung (City of Dreams)",
+          "src": "https://www.cityofdreamsmacau.com/en/dining/din-tai-fung",
+          "map": "Google Maps: 156 reviews, newest 8 days ago"
+        },
+        {
+          "name": "Beijing Kitchen (City of Dreams)",
+          "src": "https://www.cityofdreamsmacau.com/en/dining/beijing-kitchen",
+          "map": "Google Maps: 277 reviews, newest 11 days ago"
+        },
+        {
+          "name": "Pak Loh Chiu Chow (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/pak-loh-chiu-chow-restaurant/",
+          "map": "Google Maps: 50 reviews, newest 5 months ago"
+        },
+        {
+          "name": "Golden Reel (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/attractions/golden-reel",
+          "map": "Google Maps: 271 reviews, newest 18 days ago"
+        },
+        {
+          "name": "Wynn Palace SkyCab",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/experiences/entertainment/",
+          "map": "Google Maps: 329 reviews, newest 3 days ago"
+        },
+        {
+          "name": "Wynn Palace Performance Lake",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/experiences/entertainment/",
+          "map": "Google Maps: 141 reviews, newest 16 days ago"
+        },
+        {
+          "name": "Eiffel Tower observation deck (The Parisian)",
+          "src": "https://www.parisianmacao.com/macau-entertainment/eiffel-tower.html",
+          "map": "Google Maps: 1,534 reviews, newest a day ago"
+        },
+        {
+          "name": "Changing of the Guard (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-attractions.html",
+          "map": "Google Maps: shown inside The Londoner Macao (6,926 reviews, open); the show has no listing of its own"
+        },
+        {
+          "name": "Light and Sound Spectacular (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-attractions.html",
+          "map": "Google Maps: shown on The Londoner Macao (6,926 reviews, open); the show has no listing of its own"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Louvre Pastry & Deli (Studio City)",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Kiku Ramen (Studio City)",
+          "why": "no Google Maps listing found"
+        },
+        {
+          "name": "Galaxy Grand Resort Deck",
+          "why": "closed 16 Nov 2026 – 26 Mar 2027, hotel guests only"
+        },
+        {
+          "name": "Jiang Nan, Huaiyang Garden, Chiado (dinner)",
+          "why": "children under 10 only in private rooms at dinner"
+        },
+        {
+          "name": "Zhen Dim Sum, Chan Kee Roasted Goose",
+          "why": "the page gave no usable description"
+        }
+      ]
     }
   ]
 }
