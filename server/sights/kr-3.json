@@ -795,6 +795,87 @@
           "q": "Abai Village, Cheongho-ro, Sokcho, South Korea",
           "ok": "2026-11",
           "src": "https://mom-mom.net/en/travel/places/67c17388673981571ce28876"
+        },
+        {
+          "name": {
+            "en": "Jeongdongjin Time Museum",
+            "th": "พิพิธภัณฑ์ไทม์ จองดงจิน"
+          },
+          "local": "정동진 시간박물관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Gangdong-myeon, Gangneung",
+            "th": "คังดงมยอน คังนึง"
+          },
+          "what": {
+            "en": "A museum in a steam locomotive and passenger cars on a 180-metre stretch of track, with an observatory over Jeongdongjin Beach and the East Sea",
+            "th": "พิพิธภัณฑ์ในหัวรถจักรไอน้ำและโบกี้โดยสารบนรางยาว 180 เมตร มีจุดชมวิวหาดจองดงจินและทะเลตะวันออก"
+          },
+          "why": {
+            "en": "A kid-friendly museum and experience hall right in front of Hourglass Park, so the two make one outing",
+            "th": "พิพิธภัณฑ์และห้องกิจกรรมที่เด็กชอบ อยู่หน้าสวนนาฬิกาทราย จึงเที่ยวต่อกันได้ในทริปเดียว"
+          },
+          "tip": {
+            "en": "Open 09:30–18:00",
+            "th": "เปิด 09:30–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jeongdongjin Time Museum, Gangdong-myeon, Gangneung",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/6a31f7010d5c71e013e8c3a8"
+        },
+        {
+          "name": {
+            "en": "Jeongdongjin Railbike",
+            "th": "เรลไบก์จองดงจิน"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Jeongdongjin, Gangdong-myeon, Gangneung",
+            "th": "จองดงจิน คังดงมยอน คังนึง"
+          },
+          "what": {
+            "en": "Pedal and electric rail bikes along the coast at Jeongdongjin, with two departure points and a loop back to the start",
+            "th": "จักรยานรางแบบปั่นและไฟฟ้าเลียบชายฝั่งจองดงจิน มีจุดออกตัวสองแห่งและวนกลับมาจุดเริ่ม"
+          },
+          "why": {
+            "en": "Besides the rail bikes, the same site has a sightseeing train and a Ferris wheel for children",
+            "th": "นอกจากจักรยานราง ที่เดียวกันยังมีรถไฟท่องเที่ยวและชิงช้าสวรรค์สำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jeongdongjin Railbike, Jeongdongjin, Gangneung",
+          "ok": "2026-11",
+          "src": "https://ae.trip.com/moments/poi-jeongdongjin-railbike-137419147"
         }
       ]
     },
@@ -1516,6 +1597,87 @@
           "q": "Gyeongju Bird Park, Bomun Tourist Complex, Bomun-ro, Gyeongju, South Korea",
           "ok": "2026-11",
           "src": "https://www.ktriptips.com/eng/tourspot/2371627"
+        },
+        {
+          "name": {
+            "en": "Natural History Museum, Gyeongju Expo Park",
+            "th": "พิพิธภัณฑ์ธรรมชาติวิทยา เอ็กซ์โปคย็องจู"
+          },
+          "local": "자연사박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Gyeongju Expo Grand Park, Bomun",
+            "th": "สวนเอ็กซ์โปแกรนด์พาร์ก โบมุน"
+          },
+          "what": {
+            "en": "A museum inside Gyeongju Expo Grand Park with fossils and dinosaur displays",
+            "th": "พิพิธภัณฑ์ในสวนเอ็กซ์โปแกรนด์พาร์กคย็องจู มีฟอสซิลและนิทรรศการไดโนเสาร์"
+          },
+          "why": {
+            "en": "Fossils and dinosaur trick art make it an engaging space for children",
+            "th": "ฟอสซิลและภาพไดโนเสาร์สามมิติทำให้เด็กๆ สนุกกับการเดินดู"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Natural History Museum, Gyeongju Expo Grand Park, Gyeonggam-ro, Gyeongju",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/62cd15d92718fee95297d0b6"
+        },
+        {
+          "name": {
+            "en": "Pororo Aqua Village, Hanwha Resort Gyeongju",
+            "th": "โพโรโระ อควา วิลเลจ ฮันฮวา รีสอร์ต คย็องจู"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Hanwha Resort Gyeongju, Bomun",
+            "th": "ฮันฮวา รีสอร์ต คย็องจู โบมุน"
+          },
+          "what": {
+            "en": "A Pororo-themed water park with indoor and outdoor pools, lazy rivers and slides",
+            "th": "สวนน้ำธีมโพโรโระ มีสระในร่มและกลางแจ้ง แม่น้ำให้ลอยตัวและสไลเดอร์"
+          },
+          "why": {
+            "en": "Much of it is shallow water, so it suits playing with small children",
+            "th": "ส่วนใหญ่เป็นน้ำตื้น เหมาะกับเด็กเล็กที่เล่นน้ำ"
+          },
+          "tip": {
+            "en": "Life jackets and tubes are not for rent, so bring your own; swimming hats are required",
+            "th": "ห่วงยางและเสื้อชูชีพไม่มีให้เช่า ต้องนำไปเอง และต้องสวมหมวกว่ายน้ำ"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩47,000 child · ₩52,000 adults (full day)",
+            "th": "≈ ₩47,000 เด็ก · ₩52,000 ผู้ใหญ่ (เต็มวัน)"
+          },
+          "book": "rec",
+          "q": "Hanwha Resort Gyeongju Pororo Aqua Village, 182-27 Bomun-ro, Gyeongju",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/63aa8f31576d3cf16f49784c"
         }
       ]
     },
@@ -2952,6 +3114,128 @@
           "q": "Bounce Super Park Suwon Yeongtong, Mangpo area, Yeongtong-gu, Suwon, South Korea",
           "ok": "2026-11",
           "src": "https://www.ktriptips.com/kor/leisure/3057775"
+        },
+        {
+          "name": {
+            "en": "Banghwasuryujeong Pavilion",
+            "th": "ศาลาบังฮวาซูรยูจอง"
+          },
+          "local": "방화수류정",
+          "kind": "views",
+          "area": {
+            "en": "Haenggung-dong, Paldal-gu",
+            "th": "แฮงกุงดง พัลดัลกู"
+          },
+          "what": {
+            "en": "A pavilion on the wall of Hwaseong Fortress, one of the stops on the fortress tourist trolley",
+            "th": "ศาลาบนกำแพงป้อมฮวาซอง เป็นหนึ่งในจุดจอดของรถรางท่องเที่ยวรอบป้อม"
+          },
+          "why": {
+            "en": "The trolley stops here, so children can see the pavilion from the trolley and then walk up to it",
+            "th": "รถรางจอดที่นี่ เด็กๆ ดูศาลาจากรถราง แล้วเดินขึ้นไปดูใกล้ๆ ได้"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Banghwasuryujeong Pavilion, Haenggung-dong, Suwon",
+          "ok": "2026-11",
+          "src": "https://www.mcst.go.kr/english/policy/kocis/newsView.jsp?pSeq=245"
+        },
+        {
+          "name": {
+            "en": "Haenggung-dong Mural Village",
+            "th": "หมู่บ้านภาพจิตรกรรมฝาผนังแฮงกุงดง"
+          },
+          "kind": "oldtown",
+          "area": {
+            "en": "Haenggung-dong, Paldal-gu",
+            "th": "แฮงกุงดง พัลดัลกู"
+          },
+          "what": {
+            "en": "A village of murals painted by local residents, civic groups and artists, inside the fortress walls",
+            "th": "หมู่บ้านภาพจิตรกรรมฝาผนังที่ชาวบ้าน กลุ่มพลเมือง และศิลปินช่วยกันวาด อยู่ในกำแพงป้อม"
+          },
+          "why": {
+            "en": "Murals on walls, roofs and fences make a warm, friendly walk for children",
+            "th": "ภาพบนกำแพง หลังคา และรั้ว ทำให้การเดินเล่นอบอุ่นและเป็นมิตรสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Haenggung-dong Mural Village, Suwon",
+          "ok": "2026-11",
+          "src": "https://www.mcst.go.kr/english/policy/kocis/newsView.jsp?pSeq=245"
+        },
+        {
+          "name": {
+            "en": "Champion 1250, Fantasium Yeongtong",
+            "th": "แชมเปียน 1250 ฟันตาเซียม ยองทง"
+          },
+          "local": "챔피언1250 판타지움 영통점",
+          "kind": "play",
+          "area": {
+            "en": "Fantasium, Deogyeong-daero, Yeongtong-gu",
+            "th": "ฟันตาเซียม ถนนต็อกยอง ยองทงกู"
+          },
+          "what": {
+            "en": "A large indoor athletics play area on the 3rd floor of the Fantasium complex, with climbing, trampolines and slides",
+            "th": "พื้นที่เล่นกีฬาในร่มขนาดใหญ่ชั้น 3 ของฟันตาเซียม มีโซนปีนป่าย แทรมโพลีนและสไลเดอร์"
+          },
+          "why": {
+            "en": "A full-body play area for kids who like to climb and jump, with a rest space for parents watching from the side",
+            "th": "พื้นที่เล่นให้เด็กที่ชอบปีนและกระโดด มีที่นั่งพักให้พ่อแม่ดูอยู่ข้างๆ"
+          },
+          "tip": {
+            "en": "Check the opening hours and price on the official site before you go",
+            "th": "เช็กเวลาเปิดและราคาที่เว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Champion 1250, Fantasium 3F, Yeongtong-gu, Suwon",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/7664/"
         }
       ]
     }

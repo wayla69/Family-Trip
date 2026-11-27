@@ -838,6 +838,252 @@
           "q": "Changdeokgung Palace and Secret Garden, Jongno-gu, Seoul, South Korea",
           "ok": "2026-11",
           "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=94399"
+        },
+        {
+          "name": {
+            "en": "Olympic Park",
+            "th": "สวนโอลิมปิก"
+          },
+          "local": "올림픽공원",
+          "kind": "park",
+          "area": {
+            "en": "Songpa-gu",
+            "th": "ซงพากู"
+          },
+          "what": {
+            "en": "The 1988 Olympic site, now a big park with sculptures, grass fields and a ginkgo path",
+            "th": "สนามโอลิมปิกปี 1988 ที่กลายเป็นสวนใหญ่ มีประติมากรรม สนามหญ้า และทางเดินต้นแปะก๊วย"
+          },
+          "why": {
+            "en": "Wide open lawns and sculptures to run around, with the World Peace Gate to see",
+            "th": "สนามหญ้ากว้างและประติมากรรมให้วิ่งเล่น มีประตูสันติภาพโลกให้ชม"
+          },
+          "tip": {
+            "en": "Ginkgo colour peaks in October",
+            "th": "ใบแปะก๊วยสวยที่สุดเดือนตุลาคม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Olympic Park, Songpa, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": {
+            "en": "Seoul Botanic Park",
+            "th": "สวนพฤกษศาสตร์โซล"
+          },
+          "local": "서울식물원",
+          "kind": "nature",
+          "area": {
+            "en": "Magok, Gangseo-gu",
+            "th": "มากก กังซอกู"
+          },
+          "what": {
+            "en": "Korea's botanical park with greenhouses and a traditional Korean garden",
+            "th": "สวนพฤกษศาสตร์ของเกาหลี มีเรือนกระจกและสวนเกาหลีแบบดั้งเดิม"
+          },
+          "why": {
+            "en": "Warm greenhouses to walk through when it is cold, and an outdoor garden when it is not",
+            "th": "เรือนกระจกอบอุ่นให้เดินตอนอากาศหนาว และสวนกลางแจ้งให้เล่นตอนอากาศดี"
+          },
+          "tip": {
+            "en": "Only the greenhouse charges entry",
+            "th": "เสียค่าเข้าเฉพาะเรือนกระจก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ₩5,000 (greenhouse)",
+            "th": "≈ ₩5,000 (เรือนกระจก)"
+          },
+          "book": "none",
+          "q": "Seoul Botanic Park, Magok, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": {
+            "en": "Haneul Park",
+            "th": "สวนฮานึล"
+          },
+          "local": "하늘공원",
+          "kind": "park",
+          "area": {
+            "en": "World Cup Park, Mapo-gu",
+            "th": "เวิลด์คัพพาร์ก มาโปกู"
+          },
+          "what": {
+            "en": "A hilltop park on a former landfill, known for its pink muhly grass",
+            "th": "สวนบนเนินที่เคยเป็นที่ฝังกลบขยะ ขึ้นชื่อเรื่องหญ้ามูห์ลีสีชมพู"
+          },
+          "why": {
+            "en": "Big grassy slopes and views over the city",
+            "th": "เนินหญ้ากว้างและวิวเมืองให้ชม"
+          },
+          "tip": {
+            "en": "The pink muhly grass is at its best in autumn (October)",
+            "th": "หญ้าสีชมพูสวยที่สุดในฤดูใบไม้ร่วง (ตุลาคม)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Haneul Park, World Cup Park, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": {
+            "en": "Yeouido Hangang Park",
+            "th": "สวนริมแม่น้ำฮันกังยออีโด"
+          },
+          "local": "여의도한강공원",
+          "kind": "park",
+          "area": {
+            "en": "Yeouido, Yeongdeungpo-gu",
+            "th": "ยออีโด ยองดึงโพกู"
+          },
+          "what": {
+            "en": "A riverside park on the Han River, famous for its cherry blossoms",
+            "th": "สวนริมแม่น้ำฮันกัง ขึ้นชื่อเรื่องซากุระ"
+          },
+          "why": {
+            "en": "Wide lawns and a river to walk beside",
+            "th": "สนามหญ้ากว้างและแม่น้ำให้เดินเล่นริมน้ำ"
+          },
+          "tip": {
+            "en": "The cherry blossom festival is usually 5–15 April",
+            "th": "เทศกาลซากุระมักอยู่ราว 5–15 เมษายน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yeouido Hangang Park, Yeouido, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": {
+            "en": "Cheonggyecheon Stream",
+            "th": "ลำธารช็องกเยช็อน"
+          },
+          "local": "청계천",
+          "kind": "park",
+          "area": {
+            "en": "Jongno-gu and Jung-gu",
+            "th": "จงโนกูและจุงกู"
+          },
+          "what": {
+            "en": "A stream walk through the middle of the city",
+            "th": "ทางเดินริมลำธารกลางเมือง"
+          },
+          "why": {
+            "en": "A flat walk beside the water with places to rest",
+            "th": "ทางเดินเรียบข้างน้ำ มีที่ให้นั่งพัก"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Cheonggyecheon Stream, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": {
+            "en": "Bank of Korea Money Museum",
+            "th": "พิพิธภัณฑ์เงินตราธนาคารแห่งเกาหลี"
+          },
+          "local": "화폐박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Jung-gu, near Hoehyeon Station",
+            "th": "จุงกู ใกล้สถานีโฮฮยอน"
+          },
+          "what": {
+            "en": "The Bank of Korea's museum, in a 1912 stone building, with exhibits on money and banknotes",
+            "th": "พิพิธภัณฑ์ของธนาคารแห่งเกาหลี ในอาคารหินปี 1912 แสดงเรื่องเงินตราและธนบัตร"
+          },
+          "why": {
+            "en": "A good place for children to learn about currencies from around the world",
+            "th": "เด็กๆ ได้เรียนรู้เรื่องเงินตราจากทั่วโลก"
+          },
+          "tip": {
+            "en": "Closed Mondays; book ahead",
+            "th": "ปิดวันจันทร์ ต้องจองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "req",
+          "q": "Bank of Korea Money Museum, Jung-gu, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.koreatriptips.com/en/cultural-facilities/3024927.html"
         }
     ]
     },
