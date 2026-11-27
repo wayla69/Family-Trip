@@ -1072,3 +1072,8 @@ on Google Maps only (not closed, a review in the last six months, the name match
   address. Old-town cafés, bakeries and dessert shops (Nam Peng, Ma Hing Hong, Chion Chau, Jim Sai, Hang Heong Un, Sei Kee), Clube Militar,
   Coloane's pier noodles and La Gondola, Taipa's La Famiglia and Cafe Neptune, and the hotels' breakfast rooms. Seven places in these
   guides are closed for good on Maps, one temporarily. Macau now holds 178.
+- **Round 3**: +16 from Time Out (Macau cafés 2025–2026, dessert spots 2024, signature dishes 2023, Quarter Square's page) and Tatler
+  Asia (Macanese and iconic local restaurants 2023, the Guincho a Galera and Tapas de Portugal pages): António, Riquexó, Chan Kong Kei,
+  Seng Cheong, One Brother Food's crab congee, Henri's Galley, Lai Kei Sorvetes and Cocos Hung Heng's ice cream, five cafés. Same rule
+  as round 2. Tou Tou Koi is closed for good on Maps although Time Out's page still lists it. Macau now holds 194; the readable guides
+  are used up, so the last six of the 200 limit stay open for later.
