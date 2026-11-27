@@ -376,6 +376,47 @@
           },
           "q": "วัดไชยวัฒนาราม, อยุธยา",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "The Million Toy Museum",
+            "th": "พิพิธภัณฑ์ล้านของเล่น"
+          },
+          "local": "พิพิธภัณฑ์ล้านของเล่นเกริกยุ้นพันธ์",
+          "kind": "museumkid",
+          "area": {
+            "en": "Tha Wasukri, U Thong Road",
+            "th": "ท่าวาสุกรี ถนนอู่ทอง"
+          },
+          "what": {
+            "en": "A two-storey toy museum with thousands of toys, from ancient wooden toys to Happy Meal gifts",
+            "th": "พิพิธภัณฑ์ของเล่นสองชั้น มีของเล่นหลายพันชิ้น ตั้งแต่ของเล่นไม้โบราณถึงของแถมจากชุดแฮปปี้มีล"
+          },
+          "why": {
+            "en": "Thousands of toys to see, and the owner hosts a children's storytime on most weekends",
+            "th": "มีของเล่นให้ชมหลายพันชิ้น และเจ้าของพิพิธภัณฑ์เล่านิทานให้เด็กฟังเกือบทุกสุดสัปดาห์"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "The Million Toy Museum, U Thong Road, Ayutthaya",
+          "ok": "2026-11",
+          "src": "https://wanderingwagars.com/?p=25689"
         }
       ]
     },
