@@ -1851,6 +1851,43 @@
           "why": "not a family outing"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "Re-sourced: these five cited a Macao News guide first published in March 2023 (updated May 2024), older than the 2025–2026 rule. Each now cites an official page or a guide updated in 2025–2026, and was re-checked on Google Maps (not closed, a review in the last six months).",
+      "resourced": [
+        {
+          "name": "Kun Iam Statue Waterfront",
+          "src": "https://www.littlestepsasia.com/macau/play/cultural-activities/ultimate-toddler-guide-to-macao/",
+          "source": "Little Steps toddler guide, updated 16 Nov 2026",
+          "map": "Google Maps: Kun Iam Ecumenical Center, open, a review a day ago"
+        },
+        {
+          "name": "Happy Farm",
+          "src": "https://yearbook.gcs.gov.mo/yearbook_pdf/2025/myb2025ePA01CH18.pdf",
+          "source": "Macao Yearbook 2025 (government) and the IAM's listing",
+          "map": "Google Maps: Macau Urban Farm, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Oscar Farm",
+          "src": "https://nature.iam.gov.mo/e/edufacility/detail/04cd4379-ed50-40f2-921d-8737a8628fd5",
+          "source": "the IAM's own Oscar Farm page (government)",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Aqua World",
+          "src": "https://www.parisianmacao.com/amenities/aqua-world.html",
+          "source": "The Parisian Macao's own Aqua World page",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Future Bright amusement centre",
+          "src": "https://www.littlestepsasia.com/macau/play/indoor-activities/best-playrooms-and-playgrounds-macau/",
+          "source": "Little Steps playrooms guide, updated 10 Dec 2025",
+          "map": "Google Maps: open, a review 3 months ago"
+        }
+      ]
     }
   ]
 }

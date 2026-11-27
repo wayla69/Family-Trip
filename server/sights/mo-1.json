@@ -291,55 +291,124 @@
           "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/"
         },
         {
-          "name": { "en": "Kun Iam Statue Waterfront", "th": "สวนริมน้ำรูปปั้นกวนอิม" },
+          "name": {
+            "en": "Kun Iam Statue Waterfront",
+            "th": "สวนริมน้ำรูปปั้นกวนอิม"
+          },
           "kind": "park",
-          "area": { "en": "Avenida Dr. Sun Yat-Sen", "th": "ถนนอเวนิดา ดร.ซุน ยัตเซ็น" },
-          "what": { "en": "A downtown waterfront park of about 15,000 square metres with leisure amenities, winding paths and a roller skating rink, beside the Kun Iam Statue.", "th": "สวนริมน้ำกลางเมืองราว 15,000 ตารางเมตร มีสิ่งอำนวยความสะดวกพักผ่อน ทางเดินคดเคี้ยว และลานโรลเลอร์สเก็ต ข้างรูปปั้นกวนอิม" },
-          "why": { "en": "A large and excellent children's playground, and a café by the sea air to rest.", "th": "มีสนามเด็กเล่นขนาดใหญ่และดีมาก และคาเฟ่รับลมทะเลให้พัก" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [1, 2, 2, 2],
+          "area": {
+            "en": "Avenida Dr. Sun Yat-Sen",
+            "th": "ถนนอเวนิดา ดร.ซุน ยัตเซ็น"
+          },
+          "what": {
+            "en": "A downtown waterfront park of about 15,000 square metres with leisure amenities, winding paths and a roller skating rink, beside the Kun Iam Statue.",
+            "th": "สวนริมน้ำกลางเมืองราว 15,000 ตารางเมตร มีสิ่งอำนวยความสะดวกพักผ่อน ทางเดินคดเคี้ยว และลานโรลเลอร์สเก็ต ข้างรูปปั้นกวนอิม"
+          },
+          "why": {
+            "th": "สนามเด็กเล่น 2,700 ตร.ม. แบ่งโซนตามวัย เด็กเล็กมีมุมของตัวเอง และมีทางเดินเรียบริมน้ำ",
+            "en": "A 2,700 m² playground split by age, so toddlers have their own corner, and a flat path along the water"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
           "book": "none",
           "q": "Kun Iam Statue Waterfront, Avenida Dr. Sun Yat-Sen, Macau",
           "ok": "2026-11",
-          "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
+          "src": "https://www.littlestepsasia.com/macau/play/cultural-activities/ultimate-toddler-guide-to-macao/"
         },
         {
-          "name": { "en": "Happy Farm", "th": "แฮปปี้ฟาร์ม" },
+          "name": {
+            "en": "Happy Farm",
+            "th": "แฮปปี้ฟาร์ม"
+          },
           "kind": "farm",
-          "area": { "en": "Hac Sa Beach, Coloane", "th": "หาดฮักซา โคโลอาน" },
-          "what": { "en": "An outdoor farm classroom beside Hac Sa Park on Coloane, where urban families learn about farming.", "th": "ห้องเรียนฟาร์มกลางแจ้งข้างสวนฮักซาในโคโลอาน ให้ครอบครัวคนเมืองเรียนรู้เรื่องการเกษตร" },
-          "why": { "en": "Recycling, composting and soil and water care are shown through hands-on activities and displays.", "th": "แสดงเรื่องการรีไซเคิล การทำปุ๋ยหมัก และการดูแลดินและน้ำ ผ่านกิจกรรมลงมือทำและนิทรรศการ" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [1, 2, 2, 1],
+          "area": {
+            "en": "Hac Sa Beach, Coloane",
+            "th": "หาดฮักซา โคโลอาน"
+          },
+          "what": {
+            "th": "ฟาร์มอินทรีย์ราว 23,000 ตร.ม. หลังสวนฮักซา เมืองดูแลให้ลองทำเกษตรด้วยมือ",
+            "en": "An organic farm of about 23,000 m² behind Hac Sa Park, run by the city for hands-on farming"
+          },
+          "why": {
+            "en": "Recycling, composting and soil and water care are shown through hands-on activities and displays.",
+            "th": "แสดงเรื่องการรีไซเคิล การทำปุ๋ยหมัก และการดูแลดินและน้ำ ผ่านกิจกรรมลงมือทำและนิทรรศการ"
+          },
+          "tip": {
+            "th": "เปิด 09:00–18:00",
+            "en": "Open 09:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
           "book": "none",
-          "q": "Happy Farm, Hac Sa Park, Hac Sa Beach, Coloane, Macau",
+          "q": "Macau Urban Farm, Hac Sa, Coloane, Macau",
           "ok": "2026-11",
-          "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
+          "src": "https://yearbook.gcs.gov.mo/yearbook_pdf/2025/myb2025ePA01CH18.pdf"
         },
         {
-          "name": { "en": "Oscar Farm", "th": "ออสการ์ฟาร์ม" },
+          "name": {
+            "en": "Oscar Farm",
+            "th": "ออสการ์ฟาร์ม"
+          },
           "kind": "farm",
-          "area": { "en": "Cheoc Van, Coloane", "th": "เจ็กวัน โคโลอาน" },
-          "what": { "en": "A farm on Coloane where children can see water buffalo, pigs and goats, with a mini trail up to a high point over Cheoc Van Bay.", "th": "ฟาร์มในโคโลอาน เด็กดูควายน้ำ หมู และแพะได้ มีเส้นทางเดินสั้น ๆ ขึ้นไปจุดสูงมองอ่าวเจ็กวัน" },
-          "why": { "en": "Animals to see up close, and a short trail with views over the bay.", "th": "ดูสัตว์ได้ใกล้ชิด และมีเส้นทางเดินสั้น ๆ วิวอ่าว" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [1, 2, 2, 1],
+          "area": {
+            "en": "Cheoc Van, Coloane",
+            "th": "เจ็กวัน โคโลอาน"
+          },
+          "what": {
+            "en": "A farm on Coloane where children can see water buffalo, pigs and goats, with a mini trail up to a high point over Cheoc Van Bay.",
+            "th": "ฟาร์มในโคโลอาน เด็กดูควายน้ำ หมู และแพะได้ มีเส้นทางเดินสั้น ๆ ขึ้นไปจุดสูงมองอ่าวเจ็กวัน"
+          },
+          "why": {
+            "en": "Animals to see up close, and a short trail with views over the bay.",
+            "th": "ดูสัตว์ได้ใกล้ชิด และมีเส้นทางเดินสั้น ๆ วิวอ่าว"
+          },
+          "tip": {
+            "th": "เปิด 09:00–18:00 ทางเดินวนยาว 1.15 กม. เริ่มด้วยบันไดชัน",
+            "en": "Open 09:00–18:00; the 1.15 km loop path starts with steep steps"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
           "book": "none",
           "q": "Oscar Farm, Estrada de Cheoc Van, Coloane, Macau",
           "ok": "2026-11",
-          "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
+          "src": "https://nature.iam.gov.mo/e/edufacility/detail/04cd4379-ed50-40f2-921d-8737a8628fd5"
         },
         {
           "name": { "en": "Qube Kingdom (The Parisian)", "th": "คิวบ์คิงดอม (เดอะปารีเซียน)" },
@@ -376,38 +445,84 @@
           "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/"
         },
         {
-          "name": { "en": "Aqua World", "th": "อควาเวิลด์" },
+          "name": {
+            "en": "Aqua World",
+            "th": "อควาเวิลด์"
+          },
           "kind": "themepark",
-          "area": { "en": "The Parisian Macao, Cotai", "th": "เดอะปารีเซียน มาเก๊า โคไทย" },
-          "what": { "en": "A compact indoor water park at The Parisian Macao with pools, slides, a pirate ship and things that splash.", "th": "สวนน้ำในร่มขนาดกะทัดรัดในเดอะปารีเซียน มาเก๊า มีสระ สไลเดอร์ เรือโจรสลัด และของเล่นที่กระเซ็นน้ำ" },
-          "why": { "en": "Pools, slides and a pirate ship to splash about in, indoors.", "th": "มีสระ สไลเดอร์ และเรือโจรสลัดให้เล่นน้ำ ในร่ม" },
-          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
-          "ages": [0, 1, 2, 1],
+          "area": {
+            "en": "The Parisian Macao, Cotai",
+            "th": "เดอะปารีเซียน มาเก๊า โคไทย"
+          },
+          "what": {
+            "en": "A compact indoor water park at The Parisian Macao with pools, slides, a pirate ship and things that splash.",
+            "th": "สวนน้ำในร่มขนาดกะทัดรัดในเดอะปารีเซียน มาเก๊า มีสระ สไลเดอร์ เรือโจรสลัด และของเล่นที่กระเซ็นน้ำ"
+          },
+          "why": {
+            "en": "Pools, slides and a pirate ship to splash about in, indoors.",
+            "th": "มีสระ สไลเดอร์ และเรือโจรสลัดให้เล่นน้ำ ในร่ม"
+          },
+          "tip": {
+            "th": "ชั้น 6 เปิด 10:00–20:00 เด็กสูงไม่ถึง 1.4 เมตรต้องใส่ปลอกแขนหรือเสื้อชูชีพ",
+            "en": "Level 6, open 10:00–20:00; children under 1.4 m wear armbands or a life vest"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
           "hrs": 3,
           "io": "in",
           "pram": "no",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "price": {
+            "th": "คนละ 200 ปาตากาสำหรับคนนอก ฟรีสำหรับแขกโรงแรมและเด็กต่ำกว่า 1 ขวบ",
+            "en": "MOP 200 a person for non-guests; free for hotel guests and under-1s"
+          },
           "book": "none",
           "q": "Aqua World, The Parisian Macao, Cotai, Macau",
           "ok": "2026-11",
-          "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
+          "src": "https://www.parisianmacao.com/amenities/aqua-world.html"
         },
         {
-          "name": { "en": "Future Bright amusement centre", "th": "ศูนย์สนุกฟิวเจอร์ไบรต์" },
+          "name": {
+            "en": "Future Bright amusement centre",
+            "th": "ศูนย์สนุกฟิวเจอร์ไบรต์"
+          },
           "kind": "play",
-          "area": { "en": "Praça Luís de Camões", "th": "ปราซา ลุยส์ เดอ กามอยช์" },
-          "what": { "en": "An amusement centre with bowling and an ice rink.", "th": "ศูนย์สนุกที่มีโบว์ลิ่งและลานสเก็ตน้ำแข็ง" },
-          "why": { "en": "Bowling and an ice rink for a rainy afternoon.", "th": "มีโบว์ลิ่งและลานสเก็ตน้ำแข็งสำหรับบ่ายวันฝน" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [1, 2, 2, 2],
+          "area": {
+            "en": "Praça Luís de Camões",
+            "th": "ปราซา ลุยส์ เดอ กามอยช์"
+          },
+          "what": {
+            "th": "ศูนย์สนุกในร่ม มีโบว์ลิ่ง เกมอาร์เคดที่ต่อกับสนามเด็กเล่น และร้านอาหาร",
+            "en": "An indoor amusement centre with bowling, an arcade linked to a children's playground, and a restaurant"
+          },
+          "why": {
+            "th": "โบว์ลิ่งและห้องเล่นสำหรับบ่ายวันฝนหรือวันร้อนจัด",
+            "en": "Bowling and a playroom for a rainy or very hot afternoon"
+          },
+          "tip": {
+            "th": "ลานสเก็ตน้ำแข็งปิดชั่วคราว",
+            "en": "The ice rink is temporarily closed"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
           "hrs": 2,
           "io": "in",
           "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
           "book": "none",
           "q": "Future Bright amusement centre, Praça Luís de Camões, Macau",
           "ok": "2026-11",
-          "src": "https://macaonews.org/life/the-best-things-to-do-with-kids-in-macao/"
+          "src": "https://www.littlestepsasia.com/macau/play/indoor-activities/best-playrooms-and-playgrounds-macau/"
         },
         {"name":{"en":"Macao Museum of Art","th":"พิพิธภัณฑ์ศิลปะมาเก๊า"},"local":"澳門藝術博物館","kind":"museum","area":{"en":"Avenida Xian Xing Hai, Macau Peninsula","th":"ถนนเซียนซิงไห่ คาบสมุทรมาเก๊า"},"what":{"en":"The city's art museum, with art workshops for children aged 4 to 16","th":"พิพิธภัณฑ์ศิลปะของเมือง มีเวิร์กช็อปศิลปะสำหรับเด็ก 4–16 ปี"},"why":{"en":"Children make their own art in the workshops","th":"เด็กๆ ได้ทำงานศิลปะเองในเวิร์กช็อป"},"tip":{"en":"Closed on Mondays; workshops are booked ahead","th":"ปิดวันจันทร์ เวิร์กช็อปต้องจองล่วงหน้า"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Macao Museum of Art, Avenida Xian Xing Hai, Macau","ok":"2026-11","src":"https://www.gcs.gov.mo/news/detail/en/N26CB3CDQ3"},
         {"name":{"en":"Kids’ City, City of Dreams","th":"คิดส์ซิตี้ ซิตี้ออฟดรีมส์"},"kind":"play","area":{"en":"City of Dreams, Cotai","th":"ซิตี้ออฟดรีมส์ โคไท"},"what":{"en":"A large, naturally lit indoor play centre with four zones","th":"ศูนย์เล่นในร่มขนาดใหญ่ แสงธรรมชาติ แบ่งเป็น 4 โซน"},"why":{"en":"Messy play for the little ones and room to run in the other zones","th":"เด็กเล็กเล่นเลอะได้ และโซนอื่นมีที่ให้วิ่ง"},"tip":{"en":"Usually closed midweek outside school holidays; check the days before you go","th":"ปกติปิดกลางสัปดาห์นอกช่วงปิดเทอม เช็กวันเปิดก่อนไป"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Kids' City, City of Dreams, Cotai, Macau","ok":"2026-11","src":"https://www.cityofdreamsmacau.com/en/attractions/kids-city"},
