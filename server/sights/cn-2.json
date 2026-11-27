@@ -6996,6 +6996,166 @@
           },
           "q": "张家界世界地质公园博物馆, 武陵源区, 张家界",
           "ok": "2026-11"
+        },
+        {
+          "local": "张家界冰雪世界",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%86%B0%E9%9B%AA%E4%B8%96%E7%95%8C&city=430800",
+          "name": {
+            "th": "โลกน้ำแข็งและหิมะจางเจียเจี้ย ฉือลี่",
+            "en": "Zhangjiajie Ice and Snow World (Cili)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนอำเภอ 014 ฉือลี่",
+            "en": "County road 014, Cili"
+          },
+          "what": {
+            "th": "สวนหิมะ มีลานสกีระดับเริ่มต้นและกลาง ลานวอร์มอัพสำหรับเด็ก และรูปปั้นน้ำแข็ง",
+            "en": "A snow park with beginner and intermediate slopes, a children's warm-up slope and ice sculptures"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่ามีลานสำหรับเด็กเล็ก",
+            "en": "Tagged family-friendly; reviewers mention a slope for little ones"
+          },
+          "tip": {
+            "th": "ห่างจากตัวเมืองจางเจียเจี้ยประมาณหนึ่งชั่วโมงโดยรถยนต์",
+            "en": "About an hour from Zhangjiajie city by car"
+          },
+          "q": "张家界冰雪世界, 014县道, 慈利县, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "张家界慈利地缝景区",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%BC%A0%E5%AE%B6%E7%95%8C%E6%85%88%E5%88%A9%E5%9C%B0%E7%BC%9D%E6%99%AF%E5%8C%BA&city=430800",
+          "name": {
+            "th": "หุบเขาตี้เฟิง ฉือลี่",
+            "en": "Cili Difeng Gorge"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อำเภอฉือลี่",
+            "en": "Cili County"
+          },
+          "what": {
+            "th": "หุบเขาแคบ มีลำธารเย็น น้ำตก และถ้ำ",
+            "en": "A narrow gorge with a cool stream, waterfalls and caves"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่าเด็กเล่นน้ำในลำธารได้และคนไม่เยอะ",
+            "en": "Tagged for families; reviewers say children can play in the stream and the crowds are small"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้เตรียมเสื้อแจ็กเก็ตบาง ๆ ให้เด็ก ข้างในเย็น",
+            "en": "Reviewers say bring a light jacket for children; it is cool inside"
+          },
+          "q": "张家界地缝景区北1门, 慈利县, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "慈利龙峰公园",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%85%88%E5%88%A9%E9%BE%99%E5%B3%B0%E5%85%AC%E5%9B%AD&city=430800",
+          "name": {
+            "th": "สวนหลงเฟิง ฉือลี่",
+            "en": "Longfeng Park (Cili)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "หมู่บ้านหลงเฟิง หลิงหยาง ฉือลี่",
+            "en": "Longfeng Village, Lingyang, Cili"
+          },
+          "what": {
+            "th": "สวนบนเนินเขา มีลานเด็กเล่น เครื่องเล่นผจญภัยบนต้นไม้ และทางเดิน",
+            "en": "A hillside park with a children's play area, a treetop course and walks"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวพาเด็กมาเที่ยวช่วงสุดสัปดาห์",
+            "en": "Tagged for families; reviewers bring children at weekends"
+          },
+          "q": "慈利龙峰公园, 零阳镇龙峰村, 慈利县, 张家界",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大庸桥公园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E5%BA%B8%E6%A1%A5%E5%85%AC%E5%9B%AD&city=430800",
+          "name": {
+            "th": "สวนสะพานต้าหยง",
+            "en": "Dayong Bridge Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนจื่ออู่ หย่งติ้ง",
+            "en": "Ziwu Road, Yongding"
+          },
+          "what": {
+            "th": "สวนในเมืองริมทะเลสาบ มีลานเด็กเล่น เรือ และวิวเขาเทียนเหมิน",
+            "en": "A city park by a lake with a children's play area, boats and views of Tianmen Mountain"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว ผู้รีวิวบอกว่าเหมาะพาเด็กเดินเล่น",
+            "en": "Tagged family-friendly; reviewers say it suits a walk with children"
+          },
+          "tip": {
+            "th": "ผู้รีวิวบอกว่าในสวนไม่มีร้านค้า ควรพกน้ำไปเอง",
+            "en": "Reviewers say there is no shop inside, so bring water"
+          },
+          "q": "大庸桥公园, 子午路, 永定区, 张家界",
+          "ok": "2026-11"
         }
     ]
     },
