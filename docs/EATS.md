@@ -1077,3 +1077,5 @@ on Google Maps only (not closed, a review in the last six months, the name match
   Seng Cheong, One Brother Food's crab congee, Henri's Galley, Lai Kei Sorvetes and Cocos Hung Heng's ice cream, five cafés. Same rule
   as round 2. Tou Tou Koi is closed for good on Maps although Time Out's page still lists it. Macau now holds 194; the readable guides
   are used up, so the last six of the 200 limit stay open for later.
+
+- **27 Nov 2026, Macau, round 50**: +6 to reach 200 (Fat Siu Lau, Cozinha Pinocchio, Miramar, Brown & Friends at Lisboeta, Chinese Cafe Imprint, Shanghai 4.5.6), from the Macao Government Tourism Office's award register and Trip.com's November 2026 list, each checked on Google Maps; more confirmed places are named in the proof for a later swap. Proof in `docs/library-proof/mo-macau.json`.
