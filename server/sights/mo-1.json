@@ -764,6 +764,429 @@
           "book": "none",
           "q": "The Londoner Macao, Cotai, Macau",
           "src": "https://www.londonermacao.com/macau-attractions.html"
+        },
+        {
+          "local": "尼克酷玩小鎮",
+          "ok": "2026-11",
+          "name": {
+            "th": "นิคเคโลเดียนทาวน์ สตูดิโอซิตี",
+            "en": "Nickelodeon Town (Studio City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สตูดิโอซิตี ร้าน 2148 ชั้น 2 โคไท",
+            "en": "Studio City, Shop 2148, Level 2, Cotai"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มนิคเคโลเดียนแห่งแรกในมาเก๊า 20,000 ตารางฟุต มีสพันจ์บ็อบ พาว พาโทรล และเต่านินจา",
+            "en": "Macau's first Nickelodeon indoor playground, 20,000 sq ft, with SpongeBob, PAW Patrol and Ninja Turtles"
+          },
+          "why": {
+            "th": "ที่เล่นกว้าง ๆ กับตัวการ์ตูนที่เด็กรู้จัก",
+            "en": "Big soft play with the cartoon friends children know"
+          },
+          "tip": {
+            "th": "เปิด 10:30–19:30 ตั๋วเล่นได้สองชั่วโมง ผู้ใหญ่เพิ่มต้องซื้อตั๋วเอง",
+            "en": "Open 10:30–19:30; tickets are for two hours, extra adults pay their own ticket"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ MOP 268 ต่อ 2 ชั่วโมง (วันธรรมดา)",
+            "en": "≈ MOP 268 for 2 hours (weekdays)"
+          },
+          "book": "rec",
+          "q": "Nickelodeon Town, Shop 2148, Studio City, Cotai, Macau",
+          "src": "https://www.studiocity-macau.com/en/attractions/nickelodeon-town"
+        },
+        {
+          "local": "傳奇英雄科技城",
+          "ok": "2026-11",
+          "name": {
+            "th": "เลเจนด์ฮีโร่ส์พาร์ก สตูดิโอซิตี",
+            "en": "Legend Heroes Park (Studio City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สตูดิโอซิตี ปีกตะวันออก ชั้น 2 โคไท",
+            "en": "Studio City, East Wing, Level 2, Cotai"
+          },
+          "what": {
+            "th": "สวนเกมเทคโนโลยี ผสมความจริงเสมือนกับการเล่นจริง",
+            "en": "A tech games park that mixes virtual reality with real play"
+          },
+          "why": {
+            "th": "เกมเสมือนจริงสำหรับเด็กโตในวันฝนตก",
+            "en": "Virtual reality games for older children on a rainy day"
+          },
+          "tip": {
+            "th": "เปิด 12:00–20:00",
+            "en": "Open 12:00–20:00"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Legend Heroes Park, Studio City, Cotai, Macau",
+          "src": "https://www.studiocity-macau.com/en/attractions/legend-heroes-park"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "สตาร์ดัสต์ สตูดิโอซิตี",
+            "en": "Studio City Stardust"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สตูดิโอซิตี โคไท",
+            "en": "Studio City, Cotai"
+          },
+          "what": {
+            "th": "โรงภาพยนตร์บิน 4 มิติ บิน 10–15 นาทีที่โยกและวูบ",
+            "en": "A 4D flying theatre: a 10–15 minute flight that moves and drops"
+          },
+          "why": {
+            "th": "เครื่องเล่นตื่นเต้นสั้น ๆ ในร่ม",
+            "en": "A short thrill ride indoors"
+          },
+          "tip": {
+            "th": "ผู้เล่นต้องสูง 100–195 ซม. รอบทุกชั่วโมง 12:00–20:00",
+            "en": "Riders must be 100–195 cm tall; hourly 12:00–20:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "MOP 150",
+            "en": "MOP 150"
+          },
+          "book": "rec",
+          "q": "Studio City, Cotai, Macau",
+          "src": "https://www.studiocity-macau.com/en/attractions/studio-city-stardust"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "นั่งเรือกอนโดลา เดอะเวเนเชียน",
+            "en": "Gondola rides (The Venetian)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เดอะเวเนเชียน โคไท",
+            "en": "The Venetian, Cotai"
+          },
+          "what": {
+            "th": "นั่งเรือกอนโดลาไปตามคลอง มีคนพายร้องเพลง",
+            "en": "A gondola ride along the canals with a singing gondolier"
+          },
+          "why": {
+            "th": "นั่งเรือช้า ๆ นิ่ม ๆ ที่เด็กชอบ",
+            "en": "A slow, gentle boat ride children enjoy"
+          },
+          "tip": {
+            "th": "เด็กต่ำกว่า 14 ปีต้องมีผู้ใหญ่ไปด้วย เรือลำหนึ่งนั่งได้หกคน",
+            "en": "Children under 14 must ride with an adult; a boat seats six"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "≈ เด็ก MOP 130–160 ผู้ใหญ่ MOP 165–195 ต่ำกว่า 1 ขวบฟรี",
+            "en": "≈ MOP 130–160 child, MOP 165–195 adult; under 1 free"
+          },
+          "book": "none",
+          "q": "Gondola Rides, The Venetian Macao, Cotai, Macau",
+          "src": "https://www.venetianmacao.com/hotel/amenities/gondola-rides.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "เลเซอร์รามา กาแล็กซี่",
+            "en": "Laserama (Galaxy)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "กาแล็กซี่มาเก๊า โคไท",
+            "en": "Galaxy Macau, Cotai"
+          },
+          "what": {
+            "th": "การแสดงเลเซอร์ประกอบเพลงทุกคืนเหนือรีสอร์ต",
+            "en": "A nightly laser show synchronised with music over the resort"
+          },
+          "why": {
+            "th": "ดูแสงสีฟรีหลังมื้อเย็น",
+            "en": "Free lights to watch after dinner"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Galaxy Macau, Cotai, Macau",
+          "src": "https://www.galaxymacau.com/entertainment/laserama/"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "การแสดงเพชรยักษ์ กาแล็กซี่",
+            "en": "Diamond Show (Galaxy)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "กาแล็กซี่มาเก๊า ล็อบบี้เพชร โคไท",
+            "en": "Galaxy Macau, Diamond Lobby, Cotai"
+          },
+          "what": {
+            "th": "เพชรยักษ์โผล่ขึ้นจากน้ำพุพร้อมแสง น้ำ และเพลง",
+            "en": "A giant diamond rises from a fountain with light, water and music"
+          },
+          "why": {
+            "th": "การแสดงสั้น ๆ ฟรีที่เด็กชอบดูเพชรโผล่ขึ้นมา",
+            "en": "A short free show children love to watch rise"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Galaxy Macau Diamond Lobby, Cotai, Macau",
+          "src": "https://www.galaxymacau.com/entertainment/galaxy-resort-diamond-show/"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "การแสดงคริสตัลล็อบบี้ กาแล็กซี่",
+            "en": "Crystal Lobby Show (Galaxy)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "กาแล็กซี่มาเก๊า โคไท",
+            "en": "Galaxy Macau, Cotai"
+          },
+          "what": {
+            "th": "ศาลาคริสตัล 380,000 ชิ้นที่เปล่งแสงหลากสี",
+            "en": "A pavilion of 380,000 crystals that lights up in colour"
+          },
+          "why": {
+            "th": "การแสดงระยิบระยับฟรีในร่ม",
+            "en": "A sparkling free show indoors"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Galaxy Macau Crystal Lobby, Cotai, Macau",
+          "src": "https://www.galaxymacau.com/entertainment/crystal-lobby/"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทะเลสาบน้ำพุวินน์มาเก๊า",
+            "en": "Wynn Macau Performance Lake"
+          },
+          "kind": "show",
+          "area": {
+            "th": "วินน์มาเก๊า คาบสมุทรมาเก๊า",
+            "en": "Wynn Macau, Macau Peninsula"
+          },
+          "what": {
+            "th": "น้ำพุเต้นตามเพลงพร้อมสีสันและไฟ",
+            "en": "Fountains that dance with music, colour and fire"
+          },
+          "why": {
+            "th": "การแสดงฟรีระหว่างเที่ยวคาบสมุทร",
+            "en": "A free show on the way through the peninsula"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Wynn Macau, Rua Cidade de Sintra, Macau",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ต้นไม้แห่งความรุ่งเรือง วินน์มาเก๊า",
+            "en": "Tree of Prosperity (Wynn Macau)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "วินน์มาเก๊า คาบสมุทรมาเก๊า",
+            "en": "Wynn Macau, Macau Peninsula"
+          },
+          "what": {
+            "th": "ต้นไม้ทองและทองเหลืองที่โผล่ขึ้นจากพื้นและเปลี่ยนตามฤดู",
+            "en": "A gold and brass tree that rises from the floor and changes with the seasons"
+          },
+          "why": {
+            "th": "การแสดงสั้น ๆ ฟรีในร่ม",
+            "en": "A short free show indoors"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Wynn Macau, Rua Cidade de Sintra, Macau",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ตู้แมงกะพรุน วินน์มาเก๊า",
+            "en": "Moon Jelly Aquarium (Wynn Macau)"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ล็อบบี้อังกอร์ วินน์มาเก๊า คาบสมุทรมาเก๊า",
+            "en": "Encore Lobby, Wynn Macau, Macau Peninsula"
+          },
+          "what": {
+            "th": "ตู้ใหญ่ที่มีแมงกะพรุนว่ายอยู่เหนือหัวในล็อบบี้",
+            "en": "A large tank of moon jellyfish overhead in the lobby"
+          },
+          "why": {
+            "th": "แวะดูแมงกะพรุนลอยไปมาฟรี เงียบสงบ",
+            "en": "A calm free stop to watch the jellyfish float"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Wynn Macau Encore Lobby, Macau",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ซีโอดิสซีย์ เดอะสเปกตาเคิล เอ็มจีเอ็มโคไท",
+            "en": "Sea Odyssey at The Spectacle (MGM Cotai)"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เดอะสเปกตาเคิล เอ็มจีเอ็มโคไท",
+            "en": "The Spectacle, MGM Cotai"
+          },
+          "what": {
+            "th": "ปลาโลมาและโลกใต้ทะเลบนจอยักษ์ในร่มของเดอะสเปกตาเคิล",
+            "en": "Dolphins and an underwater world on the huge indoor screens of The Spectacle"
+          },
+          "why": {
+            "th": "การแสดงฟรีทุกวัน เด็กดูได้จากโต๊ะคาเฟ่",
+            "en": "A free daily show children can watch from the café tables"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "The Spectacle, MGM Cotai, Macau",
+          "src": "https://www.mgm.mo/en/entertainment/happening/sea-odyssey"
         }
       ]
     }
