@@ -2477,6 +2477,47 @@
           "q": "Kaiyodo Figure Museum Miraiza Osaka-Jo, Chuo, Osaka, Japan",
           "ok": "2026-11",
           "src": "https://osaka-info.jp/en/spot/kaiyodo-miraiza/"
+        },
+        {
+          "name": {
+            "en": "Kids Land US Osaka Bay Tower",
+            "th": "คิดส์แลนด์ ยูเอส โอซาก้า เบย์ทาวเวอร์"
+          },
+          "local": "キッズランドUS 大阪ベイタワー店",
+          "kind": "play",
+          "area": {
+            "en": "Osaka Bay Tower East 7F, Benten-cho, Minato-ku",
+            "th": "โอซาก้า เบย์ทาวเวอร์ อีสต์ ชั้น 7 เบ็นโจะ มินาโตะ"
+          },
+          "what": {
+            "en": "An indoor kids' park of about 500 tsubo with a super jungle gym, ball pool, trampoline and bouncy dome, directly linked to Bentencho Station.",
+            "th": "สวนเด็กในร่มกว้างราว 500 สึโบะ มีซูเปอร์จังเกิลยิม สระบอล แทรมโพลีน และโดมเด้งดึ๋ง เชื่อมตรงกับสถานีเบ็นโจ"
+          },
+          "why": {
+            "en": "Free-play games, a pretend-play and picture-book corner and a baby space for small children; you may bring your own food.",
+            "th": "มีเกมเล่นอิสระ มุมเล่นสมมติและมุมหนังสือภาพ พื้นที่สำหรับเด็กทารก และนำอาหารมาเองได้"
+          },
+          "tip": {
+            "en": "Open 10:00–19:00; linked to Bentencho Station on the JR and subway lines.",
+            "th": "เปิด 10:00–19:00 เชื่อมกับสถานีเบ็นโจทั้งสาย JR และรถไฟใต้ดิน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Weekday child 1-hour pack ≈ ¥700 · all-day pack ≈ ¥900 · adult all-day ≈ ¥600",
+            "th": "วันธรรมดา เด็กแพ็กเกจ 1 ชม. ≈ ¥700 · ทั้งวัน ≈ ¥900 · ผู้ใหญ่ทั้งวัน ≈ ¥600"
+          },
+          "book": "none",
+          "q": "Kids Land US Osaka Bay Tower, Osaka Bay Tower East 7F, Minato-ku, Osaka, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/81318"
         }
     ]
     },

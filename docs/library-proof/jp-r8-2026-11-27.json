@@ -1,0 +1,129 @@
+{
+  "town": "jp (round 8: the last places to eat, Osaka to 60, three baby rooms)",
+  "kind": "added",
+  "checked": "2026-11-27",
+  "rule": "Haiku/Sonnet research agents (five web searches each, a sentence copied from each page) → scripts/library-check.cjs (name, quote, 2025–2026 date; an undated Mapple family food list allowed for places to eat; for things to do an official page or a Mapple 2026 family list) → every row opened on Google Maps on 26 Nov 2026 by checker agents, kept only when open, the same name and in the town → Thai and English by writer agents to docs/STYLE.md. Pharmacies: the pharmacy's or its chain's own store page only (no directories), every quote re-checked here.",
+  "towns": {
+    "jp-sendai": {
+      "eat": [
+        {
+          "name": "Kirin Beer Port Sendai",
+          "src": "https://www.kirin.co.jp/experience/factory/sendai/restaurant/"
+        },
+        {
+          "name": "Gyutan no Issen",
+          "src": "https://www.mapple.net/region/a0202010100_g03050c00_s-situation=family/spot/"
+        },
+        {
+          "name": "Sumiyaki Gyutan Higashiyama Sendai Honten",
+          "src": "https://www.mapple.net/region/a0202010100_g03050c00_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-takamatsu": {
+      "eat": [
+        {
+          "name": "Peking Honkan",
+          "src": "https://retty.me/theme/200248115/"
+        },
+        {
+          "name": "Sumibi Yakiniku Nakamura Nishinomaru",
+          "src": "https://retty.me/theme/200248115/"
+        },
+        {
+          "name": "Wa Tomori",
+          "src": "https://retty.me/theme/200248115/"
+        }
+      ],
+      "do": [],
+      "care": [
+        {
+          "name": "Takamatsu Mitsukoshi baby room",
+          "src": "https://www.mitsukoshi.mistore.jp/takamatsu/service/faq.html"
+        }
+      ]
+    },
+    "jp-hakone": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Asobi Park PLUS Namco Odawara Dynacity",
+          "src": "https://www.asoview.com/note/6836/"
+        },
+        {
+          "name": "Odawara Flower Garden",
+          "src": "https://www.asoview.com/note/6836/"
+        }
+      ],
+      "care": []
+    },
+    "jp-matsuyama": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Bunkanomori Park (Kono-Beppu Park)",
+          "src": "https://www.nap-camp.com/mag/89367"
+        }
+      ],
+      "care": []
+    },
+    "jp-niigata": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Niigata Furusato Village",
+          "src": "https://www.asoview.com/note/6262/"
+        }
+      ],
+      "care": [
+        {
+          "name": "Niigata Isetan baby rest area",
+          "src": "https://www.isetan.mistore.jp/niigata/service.html"
+        }
+      ]
+    },
+    "jp-osaka": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kids Land US Osaka Bay Tower",
+          "src": "https://www.nap-camp.com/mag/81318"
+        }
+      ],
+      "care": []
+    },
+    "jp-toyama": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Toyama Municipal Central Children's Hall",
+          "src": "https://www.asoview.com/note/6293/"
+        },
+        {
+          "name": "Osawano Wellness Resort Windy",
+          "src": "https://www.asoview.com/note/6293/"
+        }
+      ],
+      "care": []
+    },
+    "jp-beppu": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Beppu Station nursing room",
+          "src": "https://www.city.beppu.oita.jp/kosodate/kosodatesien/jyunyusitu.html"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "name or place did not match on Google Maps": [
+      "Jido Plaza Racco Odawara (no listing of its own)"
+    ],
+    "baby rooms": "Takamatsu Mitsukoshi (its own FAQ page), Niigata Isetan (its own service page), the city nursing room in JR Beppu Station (Beppu city page); Fuji and Shirahama still have none",
+    "still short": "Hakone 34 and Matsuyama 33 of 35 things to do"
+  }
+}

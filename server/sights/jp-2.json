@@ -3617,6 +3617,47 @@
           "q": "Miharashi Park, Yadono-cho, Matsuyama, Japan",
           "ok": "2026-11",
           "src": "https://www.nap-camp.com/mag/89367"
+        },
+        {
+          "name": {
+            "en": "Bunkanomori Park (Kono-Beppu Park)",
+            "th": "สวนบุงกะโนะโมริ (สวนโคโนะเบ็ปปุ)"
+          },
+          "local": "河野別府公園（文化の森公園）",
+          "kind": "park",
+          "area": {
+            "en": "Kono-Beppu, Matsuyama",
+            "th": "โคโนะเบ็ปปุ มัตสึยามะ"
+          },
+          "what": {
+            "en": "A large general park with sports grounds and a children's play area, free and open at all times.",
+            "th": "สวนสาธารณะขนาดใหญ่ มีสนามกีฬาและลานเล่นสำหรับเด็ก เข้าฟรีและเปิดตลอดเวลา"
+          },
+          "why": {
+            "en": "A big ship-shaped play structure with a roller slide that families with children enjoy, and free parking.",
+            "th": "เครื่องเล่นรูปเรือขนาดใหญ่พร้อมสไลเดอร์ลูกกลิ้งที่ครอบครัวชอบ และจอดรถฟรี"
+          },
+          "tip": {
+            "en": "Open at all times; about 20 min walk from Yanagihara Station, so a car is easier.",
+            "th": "เปิดตลอดเวลา เดินจากสถานียานางิฮาระราว 20 นาที ไปด้วยรถสะดวกกว่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Bunkanomori Park, Konobeppu, Matsuyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nap-camp.com/mag/89367"
         }
       ]
     },
@@ -7246,6 +7287,47 @@
           "q": "Befco Bakauke Observation Deck, Toki Messe, Chuo, Niigata, Japan",
           "ok": "2026-11",
           "src": "https://gltjp.com/en/directory/item/14217"
+        },
+        {
+          "name": {
+            "en": "Niigata Furusato Village",
+            "th": "นีงาตะ ฟุรุซาโตะ มูระ"
+          },
+          "local": "新潟ふるさと村",
+          "kind": "play",
+          "area": {
+            "en": "Yamada, Nishi-ku, Niigata",
+            "th": "ยามาดะ เขตนิชิ นีงาตะ"
+          },
+          "what": {
+            "en": "A roadside station with local food that is also a play place, with a weather-proof indoor garden holding a big wooden jungle gym and slides.",
+            "th": "ที่พักริมทางที่มีอาหารท้องถิ่นและเป็นที่เล่นด้วย มีสวนในร่มกันฝนที่มีเครื่องเล่นไม้ขนาดใหญ่และสไลเดอร์"
+          },
+          "why": {
+            "en": "A wooden play area in the all-weather Green House, real snow to touch all year in the snow-country corner, and carp to feed.",
+            "th": "ที่เล่นไม้ในกรีนเฮาส์ที่ใช้ได้ทุกอากาศ มีหิมะจริงให้สัมผัสตลอดปีในมุมเมืองหิมะ และมีปลาคาร์ปให้ป้อนอาหาร"
+          },
+          "tip": {
+            "en": "Open every day, free to enter; Five One Iine Niigata hall 9:00–17:00, Bazaar hall 9:30–17:30.",
+            "th": "เปิดทุกวัน เข้าฟรี ฮอลล์ Five One Iine Niigata 9:00–17:00 ฮอลล์บาซาร์ 9:30–17:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Niigata Furusato Village Road Station, Yamada, Nishi-ku, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6262/"
         }
       ]
     },
@@ -8928,6 +9010,88 @@
           "q": "Takaoka Station, Takaoka, Toyama, Japan",
           "ok": "2026-11",
           "src": "https://visit-toyama-japan.com/en/things-to-do/21137"
+        },
+        {
+          "name": {
+            "en": "Toyama Municipal Central Children's Hall",
+            "th": "ศูนย์เด็กกลางเมืองโทยามะ"
+          },
+          "local": "富山市立中央児童館",
+          "kind": "play",
+          "area": {
+            "en": "CiC Building 5F, in front of Toyama Station",
+            "th": "อาคาร CiC ชั้น 5 หน้าสถานีโทยามะ"
+          },
+          "what": {
+            "en": "A free children's hall by Toyama Station with a play room with exercise equipment, a toddler room, a drawing corner and a craft corner.",
+            "th": "ศูนย์เด็กเข้าฟรีใกล้สถานีโทยามะ มีห้องเล่นพร้อมอุปกรณ์ออกกำลัง ห้องเด็กเล็ก มุมวาดภาพ และมุมงานประดิษฐ์"
+          },
+          "why": {
+            "en": "A toddler room for small children, a corner to draw on a glass wall and a craft corner, three minutes on foot from the station, handy on a bad-weather day.",
+            "th": "มีห้องสำหรับเด็กเล็ก มุมวาดบนผนังกระจก และมุมงานประดิษฐ์ เดินจากสถานี 3 นาที สะดวกในวันอากาศไม่ดี"
+          },
+          "tip": {
+            "en": "Open 10:00–18:00; closed on the CiC building's closing days and 29 Dec–3 Jan.",
+            "th": "เปิด 10:00–18:00 ปิดตามวันหยุดของอาคาร CiC และช่วง 29 ธ.ค.–3 ม.ค."
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Toyama Municipal Central Children's Hall, CiC Building 5F, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6293/"
+        },
+        {
+          "name": {
+            "en": "Osawano Wellness Resort Windy",
+            "th": "โอซาวาโนะ เวลเนส รีสอร์ต วินดี้"
+          },
+          "local": "大沢野ウェルネスリゾート ウィンディ",
+          "kind": "play",
+          "area": {
+            "en": "Kasuga, Osawano, Toyama",
+            "th": "คาสึงะ โอซาวาโนะ โทยามะ"
+          },
+          "what": {
+            "en": "A public pool and onsen park with a flow pool with a water slide, a 20 m pool and a pool for little children, plus baths from two hot springs.",
+            "th": "สวนสระว่ายน้ำและออนเซ็นสาธารณะ มีสระน้ำไหลพร้อมสไลเดอร์น้ำ สระ 20 ม. สระสำหรับเด็กเล็ก และอ่างน้ำแร่จากบ่อน้ำพุร้อนสองแห่ง"
+          },
+          "why": {
+            "en": "A pool for little children and a flow pool with a slide for a family water day, then a warm bath to rest after.",
+            "th": "มีสระสำหรับเด็กเล็กและสระน้ำไหลพร้อมสไลเดอร์สำหรับวันเล่นน้ำของครอบครัว แล้วแช่น้ำอุ่นพักผ่อนต่อ"
+          },
+          "tip": {
+            "en": "Open 10:00–21:00 (last entry 20:00); closed the 2nd and 4th Tuesday of the month; about 8 min walk from Sasazu Station.",
+            "th": "เปิด 10:00–21:00 (เข้าได้ถึง 20:00) ปิดวันอังคารที่ 2 และ 4 ของเดือน เดินจากสถานีซาซาซุราว 8 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Pool and bath ≈ ¥1,540 adults · ≈ ¥770 primary · ≈ ¥550 pre-school (3+)",
+            "th": "สระและอ่างอาบน้ำ ≈ ¥1,540 ผู้ใหญ่ · ≈ ¥770 ประถม · ≈ ¥550 ก่อนวัยเรียน (3 ขวบขึ้นไป)"
+          },
+          "book": "none",
+          "q": "Osawano Wellness Resort Windy, Kasuga, Osawano, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6293/"
         }
       ]
     }
