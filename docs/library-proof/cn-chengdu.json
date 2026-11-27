@@ -517,6 +517,37 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals and high chairs in Wuhou and Gaoxin, Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Darongho Ronghe Kitchen (Zhonghang Merchants Garden City)",
+          "page_name": "大蓉和·蓉和小厨(高新招商花园城店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E8%93%89%E5%92%8C%C2%B7%E8%93%89%E5%92%8C%E5%B0%8F%E5%8E%A8(%E9%AB%98%E6%96%B0%E6%8B%9B%E5%95%86%E8%8A%B1%E5%9B%AD%E5%9F%8E%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "适合带娃吃饭"
+        },
+        {
+          "name": "Tanxinyuan Creative Sichuan (Jiaozi Avenue)",
+          "page_name": "檀馨苑创新川菜(交子大道店)",
+          "src": "https://www.amap.com/search?query=%E6%AA%80%E9%A6%A8%E8%8B%91%E5%88%9B%E6%96%B0%E5%B7%9D%E8%8F%9C(%E4%BA%A4%E5%AD%90%E5%A4%A7%E9%81%93%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "有宝宝椅 · 小朋友友好"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "永乐饭店, 卢记正街饭店",
+          "why": "no children's tag or review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
