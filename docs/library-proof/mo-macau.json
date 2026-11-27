@@ -1988,6 +1988,37 @@
           "why": "the IAM marks it temporarily closed"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "An official page (the Marine and Water Bureau notice of 4 Sep 2026 that watches Cheoc Van Beach, with the Macao Yearbook 2025 naming the beach and its pool; Lisboeta Macau's own attraction pages), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Cheoc Van Beach",
+          "src": "https://www.gcs.gov.mo/news/detail/pt/N26ID0d78U",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "ZIPCITY (Lisboeta)",
+          "src": "https://www.lisboetamacau.com/en/enjoy/zipcity/",
+          "map": "Google Maps: ZIPCITY Macau, open, a review 2 hours ago"
+        },
+        {
+          "name": "Fun Fun Kart (Lisboeta)",
+          "src": "https://www.lisboetamacau.com/en/enjoy/funfunkart/",
+          "map": "Google Maps: FunFunKart, open, a review 2 months ago"
+        }
+      ],
+      "also": [
+        "https://yearbook.gcs.gov.mo/yearbook_pdf/2025/myb2025ePA01CH17.pdf"
+      ],
+      "left_out": [
+        {
+          "name": "Anim'Arte NAM VAN water bikes",
+          "why": "Google Maps marks it permanently closed (the 2025 yearbook still lists it)"
+        }
+      ]
     }
   ]
 }
