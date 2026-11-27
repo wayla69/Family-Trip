@@ -1378,6 +1378,77 @@
           "why": "Google Maps shows another restaurant (Gaga) in its place"
         }
       ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "A dated or official source (the Macao Government Tourism Office's restaurant register, holders of its Quality Tourism Services Merchant Award; hongkong-trip.com's Macau food guide, 2026; Trip.com's Macau restaurants, updated November 2026), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months; what a place serves is the source's or Google's own category.",
+      "added": [
+        {
+          "name": "Restaurante Fat Siu Lau",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Cozinha Pinocchio (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Miramar (Hac Sa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 11 days ago"
+        },
+        {
+          "name": "Brown & Friends Cafe & Bistro (Lisboeta)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 20 days ago"
+        },
+        {
+          "name": "Shanghai 4.5.6 (Hotel Lisboa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 5 months ago"
+        },
+        {
+          "name": "Chinese Cafe Imprint (Studio City)",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 7 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Café Noite e Dia",
+          "why": "the register says closed temporarily"
+        },
+        {
+          "name": "Belcanção (Four Seasons), Café Panorama (Grand Coloane), Guincho a Galera (Hotel Lisboa), Hang Heong Un, Henri's Galley, La Gondola (Cheoc Van), Lord Stow's Bakery (Taipa), Praha (Harbourview Hotel), Riquexó, Sei Kee Cafe (Taipa), The Grand Buffet (Grand Lisboa Palace), Vida Rica (Mandarin Oriental), Macau Military Club Restaurant, Nam Ping Cafe, Coloane Pier Ribbon Soup Shop",
+          "why": "already added by the other session's rounds 2–3 (#887, #888) under its own names"
+        },
+        {
+          "name": "Kwun Hoi Heen, Catalpa Garden, Dong Guo, Golden Court, Li Jing Xuan, Temptations, The Kitchen, Villa Picasso, Restaurante Amigo, Valência, Gold Coast Oyster & Seafood, Fei Chai Man",
+          "why": "newest Google Maps review six months old or more"
+        },
+        {
+          "name": "Splash",
+          "why": "marked temporarily closed on Google Maps"
+        },
+        {
+          "name": "Ka Nin Wa, Ping, Zam Zam",
+          "why": "neither the register nor Google says what they serve"
+        },
+        {
+          "name": "Tim Fat Vun Chai Chi",
+          "why": "its highlight is shark fin soup"
+        },
+        {
+          "name": "Brilliant Lake (Hotel Guia), Federal Restaurant, Hao Guo (MGM Cotai), Hua Ting (Grand Lisboa Palace), Hoi Wan Café, Imperial Kitchen (Crowne Plaza), Kam Lai Heen (Grand Lapa), La Cucina Italiana (Taipa), Naam Thai (Grand Lapa), Portas do Sol (Hotel Lisboa), Nga Heong Burmese Restaurant, Kam Wan (Northeastern Chinese), Antica Trattoria, Round-the-Clock Coffee Shop (Grand Lisboa), Shun Hin Seafood Restaurant, Signature Noodles (Lisboeta), Stanley's Cafe (Lisboeta), Wa Fong Restaurant, Talay Thai (Fisherman's Wharf), Tenmasa (Altira), Café Bela Vista (Grand Lapa), Copa Steakhouse (Sands Macao), Dom Galo, Naughty Nuri's, Café Vong Kei, Café Ip Chi Kei, Samurai Fish (Tap Seac), Aurora (Altira), Restaurante Solmar, Uncle Bo Noodle Restaurant, DIVA (Studio City), Macao Galo",
+          "why": "also confirmed open with a recent review, but Macau reached its 200-place limit (the other session added rounds 2–3 meanwhile); kept here for a later swap"
+        },
+        {
+          "name": "Casa Maquista, Ou Pou, Sun Yick and other Maps favourites",
+          "why": "no dated source found in this round"
+        }
+      ]
     }
   ]
 }
