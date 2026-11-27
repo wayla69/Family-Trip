@@ -1539,6 +1539,128 @@
           },
           "q": "PSU Kaset Market, Hat Yai, Songkhla",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Hatyai City Bodhisattva Guanyin",
+            "th": "พระโพธิสัตว์กวนอิมนครหาดใหญ่"
+          },
+          "local": "พระโพธิสัตว์กวนอิมนครหาดใหญ่",
+          "kind": "culture",
+          "area": {
+            "en": "Khao Kho Hong, Hat Yai",
+            "th": "เขาคอหงส์ หาดใหญ่"
+          },
+          "what": {
+            "en": "A 9.9-metre Guanyin carving in the Hat Yai municipal park, carved in the Chinese style in 1996",
+            "th": "รูปแกะสลักกวนอิมสูง 9.9 เมตรในสวนสาธารณะเทศบาลนครหาดใหญ่ แกะสลักแบบจีนเมื่อปี 1996"
+          },
+          "why": {
+            "en": "A huge figure to look up at, set in the park grounds near the cable car",
+            "th": "รูปใหญ่ให้เด็กเงยหน้ามอง ตั้งอยู่ในสวนใกล้กระเช้า"
+          },
+          "tip": {
+            "en": "Open 07:00–18:00",
+            "th": "เปิด 07:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "พระโพธิสัตว์กวนอิมนครหาดใหญ่, Khao Kho Hong, Hat Yai, Songkhla, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        },
+        {
+          "name": {
+            "en": "Phra Phutthamongkol Maharat",
+            "th": "พระพุทธมงคลมหาราช"
+          },
+          "local": "พระพุทธมงคลมหาราช",
+          "kind": "views",
+          "area": {
+            "en": "Khao Kho Hong, Hat Yai",
+            "th": "เขาคอหงส์ หาดใหญ่"
+          },
+          "what": {
+            "en": "A large golden Buddha on Khao Kho Hong hill inside the municipal park, with a view over the city",
+            "th": "พระพุทธรูปสีทององค์ใหญ่บนเขาคอหงส์ในสวนสาธารณะเทศบาล มองเห็นวิวเมือง"
+          },
+          "why": {
+            "en": "A short walk to the top gives a wide view over Hat Yai, a good stop after the park",
+            "th": "เดินสั้นๆ ขึ้นไปเห็นวิวหาดใหญ่กว้าง แวะต่อจากสวนได้"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "พระพุทธมงคลมหาราช, Kho Hong, Hat Yai, Songkhla, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        },
+        {
+          "name": {
+            "en": "PSU Natural History Museum",
+            "th": "พิพิธภัณฑ์ธรรมชาติวิทยา มอ."
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Prince of Songkla University, Hat Yai",
+            "th": "มหาวิทยาลัยสงขลานครินทร์ หาดใหญ่"
+          },
+          "what": {
+            "en": "A natural history museum on the university campus with five main exhibition zones, dinosaur figures and a specimen collection",
+            "th": "พิพิธภัณฑ์ธรรมชาติวิทยาในมหาวิทยาลัย มี 5 โซนนิทรรศการหลัก หุ่นไดโนเสาร์ และตัวอย่างสัตว์"
+          },
+          "why": {
+            "en": "Dinosaur figures and zones on life and ecosystems suit children; the museum says it aims to teach children and families about local nature",
+            "th": "มีหุ่นไดโนเสาร์และโซนเรื่องชีวิตกับระบบนิเวศที่เด็กชอบ พิพิธภัณฑ์บอกว่าตั้งใจให้ความรู้เด็กและครอบครัวเรื่องธรรมชาติท้องถิ่น"
+          },
+          "tip": {
+            "en": "Open Tuesday to Saturday, 09:00–16:00; closed Sunday and Monday; booking by phone is offered",
+            "th": "เปิดวันอังคารถึงเสาร์ 09:00–16:00 ปิดวันอาทิตย์และจันทร์ โทรจองล่วงหน้าได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿40 adults · ฿60 foreign visitors · free for children up to 90 cm",
+            "th": "≈ ฿40 ผู้ทั่วไป · ฿60 ชาวต่างชาติ · เด็กสูงไม่เกิน 90 ซม. ฟรี"
+          },
+          "book": "rec",
+          "q": "PSU Natural History Museum, Prince of Songkla University, Hat Yai, Songkhla, Thailand",
+          "ok": "2026-11",
+          "src": "https://nhm.psu.ac.th/"
         }
       ]
     },
@@ -2063,6 +2185,88 @@
           },
           "q": "Wat Pa Phu Thap Boek, Lom Kao, Phetchabun",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Rai GB Khao Kho",
+            "th": "ไร่ GB เขาค้อ"
+          },
+          "local": "ไร่ GB เขาค้อ",
+          "kind": "farm",
+          "area": {
+            "en": "Ban Phet Dam, Thung Samo, Khao Kho",
+            "th": "บ้านเพชรดำ ทุ่งสมอ เขาค้อ"
+          },
+          "what": {
+            "en": "A strawberry farm behind Ban Phet Dam, with a purple verbena flower field, wooden train rides and swings",
+            "th": "ไร่สตรอว์เบอร์รีหลังบ้านเพชรดำ มีทุ่งดอกเวอร์บีน่าสีม่วง รถไฟไม้ และชิงช้า"
+          },
+          "why": {
+            "en": "Kids can ride the wooden train and swing, and the farm has a wooden tower to climb for the view",
+            "th": "เด็กนั่งรถไฟไม้และเล่นชิงช้าได้ มีหอคอยไม้ให้ขึ้นชมวิว"
+          },
+          "tip": {
+            "en": "Open 07:00–18:00 on the listing; the flowers are planted in turns through the year, so something is always in bloom",
+            "th": "เปิด 07:00–18:00 ตามรายการ ดอกไม้ปลูกสลับกันตลอดปี จึงมีดอกบานอยู่เสมอ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "ไร่จีบีทุ่งกังหันลม เขาค้อ, Thung Samo, Khao Kho, Phetchabun, Thailand",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W"
+        },
+        {
+          "name": {
+            "en": "Teletubbies Café Khao Kho",
+            "th": "เทเลทับบี้ส์คาเฟ่ เขาค้อ"
+          },
+          "local": "เทเลทับบี้ส์คาเฟ่",
+          "kind": "views",
+          "area": {
+            "en": "Ban Thung Samo, Khao Kho (by the windmill field)",
+            "th": "บ้านทุ่งสมอ เขาค้อ (ข้างทุ่งกังหันลม)"
+          },
+          "what": {
+            "en": "A café by the windmill field with big straw scarecrows of King Kong, the Teletubbies and dinosaurs, and a long skywalk over the hills",
+            "th": "คาเฟ่ข้างทุ่งกังหันลม มีหุ่นฟางตัวใหญ่รูปคิงคอง เทเลทับบี้ส์ และไดโนเสาร์ กับสกายวอล์กยาวเหนือเนินเขา"
+          },
+          "why": {
+            "en": "The giant figures and the skywalk are the kind of photo stop small children enjoy; the windmill field is next door",
+            "th": "หุ่นยักษ์และสกายวอล์กเป็นจุดถ่ายรูปที่เด็กเล็กชอบ และทุ่งกังหันลมอยู่ติดกัน"
+          },
+          "tip": {
+            "en": "Open 07:00–18:00 on the listing",
+            "th": "เปิด 07:00–18:00 ตามรายการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "เทเลทับบี้ส์คาเฟ่-ทุ่งกังหันลมเขาค้อ, Thung Samo, Khao Kho, Phetchabun, Thailand",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W"
         }
       ]
     },
@@ -2534,6 +2738,170 @@
           },
           "q": "Bonanza Exotic Zoo, Khanong Phra, Pak Chong",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Hokkaido Flower Park Khao Yai",
+            "th": "ฮอกไกโด ฟลาวเวอร์ พาร์ค เขาใหญ่"
+          },
+          "local": "ฮอกไกโด ฟลาวเวอร์ พาร์ค",
+          "kind": "park",
+          "area": {
+            "en": "Mu Si, Pak Chong (near the national park gate)",
+            "th": "หมูสี ปากช่อง (ใกล้ทางเข้าอุทยานฯ)"
+          },
+          "what": {
+            "en": "A flower garden planted in Japanese-style zones that change with the seasons, with a small café and soft-serve ice cream",
+            "th": "สวนดอกไม้แบ่งเป็นโซนสไตล์ญี่ปุ่นที่เปลี่ยนไปตามฤดู มีคาเฟ่เล็กๆ และไอศกรีมซอฟต์เสิร์ฟ"
+          },
+          "why": {
+            "en": "Colourful flower zones to walk through and photograph; the page says children can enjoy it safely among the flowers",
+            "th": "เดินชมและถ่ายรูปโซนดอกไม้หลากสี เว็บบอกว่าเด็กเล่นท่ามกลางดอกไม้ได้อย่างปลอดภัย"
+          },
+          "tip": {
+            "en": "Morning or evening is best, when the sun is softer; the page gives opening hours 08:00–17:30",
+            "th": "ช่วงเช้าหรือเย็นแดดนุ่มกว่า เว็บระบุเวลาเปิด 08:00–17:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "ฮอกไกโด ฟลาวเวอร์ พาร์ค, Mu Si, Pak Chong, Nakhon Ratchasima, Thailand",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/82EYgvWnjkE2"
+        },
+        {
+          "name": {
+            "en": "The Birder's Lodge Farmers Market",
+            "th": "เดอะ เบิร์ดเดอร์ ลอดจ์ ฟาร์มเมอร์ส มาร์เก็ต"
+          },
+          "local": "",
+          "kind": "market",
+          "area": {
+            "en": "Mu Si, Pak Chong",
+            "th": "หมูสี ปากช่อง"
+          },
+          "what": {
+            "en": "A farmers' market in a barn-style setting, selling organic produce, homemade goods and local products",
+            "th": "ตลาดเกษตรกรในบรรยากาศโรงนา ขายผักออร์แกนิก ของทำเองในบ้าน และสินค้าท้องถิ่น"
+          },
+          "why": {
+            "en": "A barn-style market with organic produce and homemade treats, a relaxed stop for the family",
+            "th": "ตลาดสไตล์โรงนา มีผักออร์แกนิกและขนมทำเอง แวะเดินชิลล์กับครอบครัวได้"
+          },
+          "tip": {
+            "en": "Friday 10:00–18:00, Saturday 09:00–19:00, Sunday 09:00–18:00 (weekends only, per the page)",
+            "th": "ศุกร์ 10:00–18:00 เสาร์ 09:00–19:00 อาทิตย์ 09:00–18:00 (เปิดเฉพาะช่วงสุดสัปดาห์ ตามเว็บ)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "The Birder's Lodge Farmers Market, Mu Si, Pak Chong, Nakhon Ratchasima, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/"
+        },
+        {
+          "name": {
+            "en": "Wat Tham Sila Thong",
+            "th": "วัดถ้ำศิลาทอง"
+          },
+          "local": "วัดถ้ำศิลาทอง",
+          "kind": "culture",
+          "area": {
+            "en": "Wang Katha, Pak Chong",
+            "th": "วังกะทะ ปากช่อง"
+          },
+          "what": {
+            "en": "A Buddhist temple inside a natural cave on the hill, with Buddha images and statues that local people revere",
+            "th": "วัดในถ้ำธรรมชาติบนเนินเขา มีพระพุทธรูปและรูปปั้นที่ชาวบ้านเคารพ"
+          },
+          "why": {
+            "en": "A natural cave temple that the page calls mysterious and sacred; a different kind of stop from the parks",
+            "th": "วัดในถ้ำธรรมชาติที่เว็บเรียกว่าลึกลับและศักดิ์สิทธิ์ เป็นจุดแวะที่ต่างจากสวนและอุทยาน"
+          },
+          "tip": {
+            "en": "Open 06:00–18:00 per the page; the page gives no dress code",
+            "th": "เปิด 06:00–18:00 ตามเว็บ เว็บไม่ได้ระบุการแต่งกาย"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "วัดถ้ำศิลาทอง, Wang Katha, Pak Chong, Nakhon Ratchasima, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/"
+        },
+        {
+          "name": {
+            "en": "Wat Thep Phithak Punnaram (Wat Phra Khao)",
+            "th": "วัดเทพพิทักษ์ปุณณาราม (วัดพระขาว)"
+          },
+          "local": "วัดเทพพิทักษ์ปุณณาราม",
+          "kind": "views",
+          "area": {
+            "en": "Klang Dong, Pak Chong",
+            "th": "กลางดง ปากช่อง"
+          },
+          "what": {
+            "en": "The temple known as Luang Pho Khao, with a large white Buddha in the giving-blessing pose on a hillside",
+            "th": "วัดที่รู้จักกันว่าหลวงพ่อขาว มีพระพุทธรูปสีขาวองค์ใหญ่ปางประทานพรบนเนินเขา"
+          },
+          "why": {
+            "en": "The page says the white Buddha stands out on the hill and can be seen from far away, a simple sight to look at from the road",
+            "th": "เว็บบอกว่าพระขาวเด่นอยู่บนเนินและเห็นได้จากที่ไกล เป็นจุดชมง่ายๆ จากริมทาง"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "วัดเทพพิทักษ์ปุณณาราม (วัดพระขาว), Klang Dong, Pak Chong, Nakhon Ratchasima, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/"
         }
       ]
     },
@@ -3812,6 +4180,87 @@
           },
           "q": "Khiri Phet Waterfall, Salak Phet, Koh Chang",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Kai Bae Waterfall",
+            "th": "น้ำตกไก่แบ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Kai Bae, Koh Chang",
+            "th": "ไก่แบ เกาะช้าง"
+          },
+          "what": {
+            "en": "A waterfall in the valley behind Kai Bae Beach, reached on a walk of about thirty minutes from the main street, ending at a plunge pool",
+            "th": "น้ำตกในหุบเขาหลังหาดไก่แบ เดินจากถนนหลักราว 30 นาที ปลายทางเป็นแอ่งน้ำให้ลงเล่น"
+          },
+          "why": {
+            "en": "A free, easy-enough walk with a pool to cool off in; the page calls it the most rarely visited of the Koh Chang waterfalls",
+            "th": "เดินไม่ยากเกินไปและไม่เสียเงิน มีแอ่งน้ำให้คลายร้อน เว็บบอกว่ามีคนมาน้อยที่สุดในบรรดาน้ำตกเกาะช้าง"
+          },
+          "tip": {
+            "en": "Best from May to November, when the plunge pool has water; the path is narrow and slippery in places",
+            "th": "ไปช่วงพฤษภาคมถึงพฤศจิกายนที่แอ่งน้ำมีน้ำ ทางแคบและลื่นในบางช่วง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kai Bae Waterfall, Kai Bae, Koh Chang, Trat, Thailand",
+          "ok": "2026-11",
+          "src": "https://explorekohchang.com/koh-chang/things-to-do-in-koh-chang/koh-chang-waterfalls/"
+        },
+        {
+          "name": {
+            "en": "Mu Ko Chang National Park",
+            "th": "อุทยานแห่งชาติหมู่เกาะช้าง"
+          },
+          "local": "อุทยานแห่งชาติหมู่เกาะช้าง",
+          "kind": "nature",
+          "area": {
+            "en": "Koh Chang and nearby islands, Trat Province",
+            "th": "เกาะช้างและเกาะใกล้เคียง จังหวัดตราด"
+          },
+          "what": {
+            "en": "The national park of Koh Chang and the islands around it, with beaches, forests, waterfalls and mountain views",
+            "th": "อุทยานแห่งชาติของเกาะช้างและเกาะรอบๆ มีชายหาด ป่า น้ำตก และวิวภูเขา"
+          },
+          "why": {
+            "en": "Clear water and white or golden beaches, with walks along the sand and sunset views",
+            "th": "น้ำใสและหาดทรายขาวหรือสีทอง เดินเล่นริมหาดและชมพระอาทิตย์ตกได้"
+          },
+          "tip": {
+            "en": "Park entry and island trips are sold separately; check the entry fee and boat times before you go",
+            "th": "ค่าเข้าอุทยานฯ และทริปเที่ยวเกาะแยกกัน เช็กค่าเข้าและเวลาเรือก่อนไป"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "อุทยานแห่งชาติหมู่เกาะช้าง, Koh Chang, Trat, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.trip.com/things-to-do/kohchang-128607/"
         }
       ]
     },
@@ -6119,6 +6568,252 @@
           },
           "q": "Pai Historic Bridge, Tha Pai, Mae Hi, Pai",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Romance Farm",
+            "th": "โรแมนซ์ ฟาร์ม"
+          },
+          "local": "",
+          "kind": "farm",
+          "area": {
+            "en": "Wiang Nuea, Pai",
+            "th": "เวียงเหนือ ปาย"
+          },
+          "what": {
+            "en": "A small farm hidden in a valley with barley fields, fruit trees, organic vegetable beds and a homemade café",
+            "th": "ฟาร์มเล็กๆ ซ่อนในหุบเขา มีทุ่งข้าวบาร์เลย์ ต้นผลไม้ แปลงผักออร์แกนิก และคาเฟ่ทำเอง"
+          },
+          "why": {
+            "en": "Children can feed the fluffy sheep",
+            "th": "เด็กป้อนอาหารแกะขนฟูได้"
+          },
+          "tip": {
+            "en": "Open daily 09:00–18:00; the page suggests going November to February",
+            "th": "เปิดทุกวัน 09:00–18:00 เว็บแนะนำช่วงพฤศจิกายนถึงกุมภาพันธ์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿50",
+            "th": "≈ ฿50"
+          },
+          "book": "none",
+          "q": "Romance Farm & Cafe, Wiang Nuea, Pai, Mae Hong Son, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": {
+            "en": "Huai Nam Dang National Park",
+            "th": "อุทยานแห่งชาติห้วยน้ำดัง"
+          },
+          "local": "อุทยานแห่งชาติห้วยน้ำดัง",
+          "kind": "nature",
+          "area": {
+            "en": "Mae Hi, Pai",
+            "th": "แม่ฮี้ ปาย"
+          },
+          "what": {
+            "en": "A forest national park on the Pai side, with cool air all year and walking trails under the trees",
+            "th": "อุทยานแห่งชาติป่าไม้ฝั่งปาย อากาศเย็นตลอดปี มีเส้นทางเดินใต้ร่มไม้"
+          },
+          "why": {
+            "en": "Cool forest air and a walk among the trees, away from the town heat",
+            "th": "อากาศป่าเย็นสบาย เดินใต้ร่มไม้ หนีความร้อนในเมือง"
+          },
+          "tip": {
+            "en": "Open daily 06:00–18:00; the page suggests going November to February",
+            "th": "เปิดทุกวัน 06:00–18:00 เว็บแนะนำช่วงพฤศจิกายนถึงกุมภาพันธ์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿40 adults · ฿20 children",
+            "th": "≈ ฿40 ผู้ใหญ่ · ฿20 เด็ก"
+          },
+          "book": "none",
+          "q": "อุทยานแห่งชาติห้วยน้ำดัง, Mae Hi, Pai, Mae Hong Son, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": {
+            "en": "Doi Khun Mae Ya",
+            "th": "ดอยขุนแม่ยะ"
+          },
+          "local": "ดอยขุนแม่ยะ",
+          "kind": "views",
+          "area": {
+            "en": "Mae Hi, Pai",
+            "th": "แม่ฮี้ ปาย"
+          },
+          "what": {
+            "en": "A hill covered in pink wild sunflowers (nang phaya suea khrai), with a view over the hills",
+            "th": "เนินเขาที่เต็มไปด้วยดอกนางพญาเสือโคร่งสีชมพู มองเห็นวิวเขา"
+          },
+          "why": {
+            "en": "A hillside of pink flowers that is pretty for a short walk and photos",
+            "th": "เนินดอกไม้สีชมพูสวย เหมาะเดินสั้นๆ และถ่ายรูป"
+          },
+          "tip": {
+            "en": "Open daily 08:00–18:00; the page says January is the peak of the flowers",
+            "th": "เปิดทุกวัน 08:00–18:00 เว็บบอกว่าดอกบานสูงสุดเดือนมกราคม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "ดอยขุนแม่ยะ, Pong Sa, Pai, Mae Hong Son, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": {
+            "en": "Doi Thong",
+            "th": "ดอยธง"
+          },
+          "local": "ดอยธง",
+          "kind": "views",
+          "area": {
+            "en": "Thung Yao, Pai",
+            "th": "ทุ่งยาว ปาย"
+          },
+          "what": {
+            "en": "The highest peak of Pai at 1,895 m, with a viewpoint at the top and a pagoda that holds relics",
+            "th": "ยอดเขาที่สูงที่สุดของปาย 1,895 เมตร มีจุดชมวิวบนยอดและเจดีย์บรรจุพระธาตุ"
+          },
+          "why": {
+            "en": "A walk up the hill to a wide view over Pai",
+            "th": "เดินขึ้นเนินไปชมวิวปายกว้างๆ"
+          },
+          "tip": {
+            "en": "The page suggests going November to February and gives no opening hours; it is a walk uphill, so take it slowly with little ones",
+            "th": "เว็บแนะนำช่วงพฤศจิกายนถึงกุมภาพันธ์ ไม่ระบุเวลาเปิด ต้องเดินขึ้นเนิน ไปช้าๆ กับเด็กเล็ก"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "ดอยธง, Thung Yao, Pai, Mae Hong Son, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": {
+            "en": "Wat Nam Hu",
+            "th": "วัดน้ำฮู"
+          },
+          "local": "วัดน้ำฮู",
+          "kind": "culture",
+          "area": {
+            "en": "Wiang Tai, Pai",
+            "th": "เวียงใต้ ปาย"
+          },
+          "what": {
+            "en": "An old temple in Pai whose Buddha image has water seeping from its head all the time",
+            "th": "วัดเก่าในปายที่พระพุทธรูปมีน้ำซึมออกจากพระเศียรตลอดเวลา"
+          },
+          "why": {
+            "en": "Children can see a Buddha image with water dripping from it, a short stop in town",
+            "th": "เด็กได้ดูพระพุทธรูปที่มีน้ำหยด เป็นจุดแวะสั้นๆ ในเมือง"
+          },
+          "tip": {
+            "en": "Open daily 08:00–18:00; the page suggests going November to February",
+            "th": "เปิดทุกวัน 08:00–18:00 เว็บแนะนำช่วงพฤศจิกายนถึงกุมภาพันธ์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "วัดน้ำฮู, Wiang Tai, Pai, Mae Hong Son, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": {
+            "en": "Wat Si Don Chai",
+            "th": "วัดศรีดอนชัย"
+          },
+          "local": "วัดศรีดอนชัย",
+          "kind": "culture",
+          "area": {
+            "en": "Wiang Nuea, Pai",
+            "th": "เวียงเหนือ ปาย"
+          },
+          "what": {
+            "en": "The first temple of Pai, more than 700 years old, which houses the Phra Phuttha Sihing image, the town's guardian Buddha",
+            "th": "วัดแห่งแรกของปาย อายุกว่า 700 ปี ประดิษฐานพระพุทธสิหิงค์ พระพุทธรูปปกป้องเมือง"
+          },
+          "why": {
+            "en": "A short, easy stop in the middle of Pai to see the town's oldest temple and its Buddha image",
+            "th": "แวะสั้นๆ ง่ายๆ กลางเมืองปายเพื่อชมวัดเก่าแก่ที่สุดและพระพุทธรูป"
+          },
+          "tip": {
+            "en": "The page gives no opening hours or entry price; check before you go",
+            "th": "เว็บไม่ระบุเวลาเปิดและค่าเข้า เช็กก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "วัดศรีดอนชัย, Pai, Mae Hong Son, Thailand",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/n2lpboApKWZ"
         }
       ]
     },
@@ -7645,6 +8340,47 @@
           },
           "q": "Wat Saphan Hin, Mueang Kao, Sukhothai",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Sukhothai morning market",
+            "th": "ตลาดสดวัดตระพังทอง"
+          },
+          "local": "ตลาดสดวัดตระพังทอง",
+          "kind": "market",
+          "area": {
+            "en": "Old Town, next to Wat Trapang Thong",
+            "th": "เมืองเก่า ข้างวัดตระพังทอง"
+          },
+          "what": {
+            "en": "Meat, vegetables, food, flowers and everything for cooking at home, sold in a market beside the temple",
+            "th": "ตลาดข้างวัด ขายเนื้อ ผัก อาหาร ดอกไม้ และของทำครัวทุกอย่าง"
+          },
+          "why": {
+            "en": "A real local market to see daily life",
+            "th": "ตลาดจริงของคนท้องถิ่น ได้เห็นชีวิตประจำวัน"
+          },
+          "tip": {
+            "en": "Go in the morning with the alms at Wat Trapang Thong, as the page suggests",
+            "th": "ไปตอนเช้าพร้อมใส่บาตรที่วัดตระพังทอง ตามที่เว็บแนะนำ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sukhothai morning market, Wat Trapang Thong, Old Town, Sukhothai, Thailand",
+          "ok": "2026-11",
+          "src": "https://thailandwherestay.com/things-to-do-see-in-sukhothai/"
         }
       ]
     },
@@ -9645,6 +10381,211 @@
           },
           "q": "Thung Si Mueang, Mak Khaeng, Udon Thani",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Ban Huai Samran flower garden",
+            "th": "สวนดอกไม้ บ้านห้วยสำราญ"
+          },
+          "local": "สวนดอกไม้ บ้านห้วยสำราญ",
+          "kind": "park",
+          "area": {
+            "en": "Nong Hai, Mueang Udon Thani",
+            "th": "หนองไฮ เมืองอุดรธานี"
+          },
+          "what": {
+            "en": "A flower farm of about 625 rai with marigolds, chrysanthemums, jasmine and roses, where garlands and arrangements are also made",
+            "th": "สวนดอกไม้ราว 625 ไร่ มีดาวเรือง เบญจมาศ มะลิ และกุหลาบ และทำพวงมาลัยกับจัดดอกไม้ด้วย"
+          },
+          "why": {
+            "en": "Small children enter free, and it is a large open garden to walk round",
+            "th": "เด็กเล็กเข้าฟรี เป็นสวนโล่งกว้างให้เดินเล่น"
+          },
+          "tip": {
+            "en": "Open daily 08:30–17:30",
+            "th": "เปิดทุกวัน 08:30–17:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿40 (small children free)",
+            "th": "≈ ฿40 (เด็กเล็กเข้าฟรี)"
+          },
+          "book": "none",
+          "q": "Ban Huai Samran flower garden, Nong Hai, Udon Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": {
+            "en": "Ganesha Udon Thani",
+            "th": "องค์ศรีสุขคเณศ"
+          },
+          "local": "องค์ศรีสุขคเณศ",
+          "kind": "culture",
+          "area": {
+            "en": "Pho Si Road, Mak Khaeng, Mueang Udon Thani",
+            "th": "ถนนโพศรี หมากแข้ง เมืองอุดรธานี"
+          },
+          "what": {
+            "en": "An eight-armed Ganesha with a nine-headed naga, a shrine where the city's people and visitors come to pay respects",
+            "th": "พระพิฆเนศแปดกรมีพญานาคเก้าเศียร ศาลที่คนในเมืองและนักท่องเที่ยวมากราบไหว้"
+          },
+          "why": {
+            "en": "Free to enter, so it fits any time of day",
+            "th": "เข้าฟรี แวะได้ทุกช่วงเวลา"
+          },
+          "tip": {
+            "en": "Open every day, 24 hours. The page does not give a dress code",
+            "th": "เปิดทุกวัน 24 ชั่วโมง เว็บไม่ได้ระบุการแต่งกาย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Ganesha Udon Thani, Pho Si Road, Mak Khaeng, Udon Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": {
+            "en": "Vietnam Town Udon Thani",
+            "th": "เวียดนามทาวน์ อุดรธานี"
+          },
+          "local": "เวียดนามทาวน์ อุดรธานี",
+          "kind": "market",
+          "area": {
+            "en": "Sri Suk Road, Mak Khaeng, Mueang Udon Thani",
+            "th": "ถนนศรีสุข หมากแข้ง เมืองอุดรธานี"
+          },
+          "what": {
+            "en": "A Vietnamese food and snack market with drinks, seats to sit down and photo spots",
+            "th": "ตลาดอาหารและขนมเวียดนาม มีเครื่องดื่ม ที่นั่ง และมุมถ่ายรูป"
+          },
+          "why": {
+            "en": "Snacks, drinks and photo spots all in one place, with seats to sit down",
+            "th": "มีขนม เครื่องดื่ม และมุมถ่ายรูปในที่เดียว มีที่นั่งพัก"
+          },
+          "tip": {
+            "en": "Open Saturday and Sunday mornings only, 07:00–12:30",
+            "th": "เปิดเฉพาะเช้าวันเสาร์และอาทิตย์ 07:00–12:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Vietnam Town Udon Thani, Sri Suk Road, Mak Khaeng, Udon Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": {
+            "en": "The Ho Chi Minh Historical Park",
+            "th": "แหล่งศึกษาและท่องเที่ยวเชิงประวัติศาสตร์โฮจิมินห์"
+          },
+          "local": "แหล่งศึกษาและท่องเที่ยวเชิงประวัติศาสตร์โฮจิมินห์",
+          "kind": "museum",
+          "area": {
+            "en": "Chiang Phin, Mueang Udon Thani",
+            "th": "เชียงพิณ เมืองอุดรธานี"
+          },
+          "what": {
+            "en": "The house where Ho Chi Minh lived in Udon Thani in 1928, now a small exhibition on the Thai-Vietnamese community",
+            "th": "บ้านที่โฮจิมินห์เคยอาศัยในอุดรธานีเมื่อ พ.ศ. 2471 ปัจจุบันเป็นนิทรรศการเล็กๆ เรื่องชุมชนไทย-เวียดนาม"
+          },
+          "why": {
+            "en": "Free entry, with an exhibition on the Thai-Vietnamese community in Udon Thani",
+            "th": "เข้าฟรี มีนิทรรศการเรื่องชุมชนไทย-เวียดนามในอุดรธานี"
+          },
+          "tip": {
+            "en": "Open daily 08:00–16:00",
+            "th": "เปิดทุกวัน 08:00–16:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Ho Chi Minh Historical Park, Chiang Phin, Udon Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": {
+            "en": "Phothisomphon Temple",
+            "th": "วัดโพธิสมภรณ์"
+          },
+          "local": "วัดโพธิสมภรณ์",
+          "kind": "culture",
+          "area": {
+            "en": "Ban Lueam, Mueang Udon Thani",
+            "th": "บ้านเลื่อม เมืองอุดรธานี"
+          },
+          "what": {
+            "en": "A Rattanakosin-era temple with a laterite Buddha image of Lopburi style about 1,300 years old and a Bodhi tree grown from a cutting given by Sri Lanka",
+            "th": "วัดสมัยรัตนโกสินทร์ มีพระพุทธรูปศิลาแลงแบบลพบุรีอายุราว 1,300 ปี และต้นโพธิ์จากกิ่งที่ศรีลังกามอบให้"
+          },
+          "why": {
+            "en": "Free entry, with an old Buddha image and a replica Buddha footprint to look at",
+            "th": "เข้าฟรี มีพระพุทธรูปเก่าและรอยพระพุทธบาทจำลองให้ชม"
+          },
+          "tip": {
+            "en": "Open daily 07:00–18:00. The page does not give a dress code",
+            "th": "เปิดทุกวัน 07:00–18:00 เว็บไม่ได้ระบุการแต่งกาย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Phothisomphon Temple, Ban Lueam, Udon Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
         }
       ]
     }

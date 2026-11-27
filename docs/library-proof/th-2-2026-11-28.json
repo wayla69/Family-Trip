@@ -1,0 +1,360 @@
+{
+  "town": "th (Thailand round 2: Phuket, Sukhothai, Lampang, Krabi, Surat Thani, Khon Kaen, Hat Yai, Mae Hong Son and Pai, Udon Thani, Khao Yai, Samui, Khao Kho, Koh Chang)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Thailand notes (TAT counts as official; otherwise a 2025–2026 page — a Thai date 2568/2569 counts; no national chains, no bars) -> scripts/library-check.cjs (single Wongnai place pages carry no page date and were left out) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town (a waterfall that headed the result list in the right town, and a university museum on its own site, kept by hand) -> Thai and English by writer agents to docs/STYLE.md, opening hours taken out of the text.",
+  "towns": {
+    "th-hatyai": {
+      "eat": [
+        {
+          "name": "Comeback Espresso Cafe",
+          "src": "https://www.wongnai.com/listings/natural-cafe-hatyai-songkhla"
+        }
+      ],
+      "do": [
+        {
+          "name": "Hatyai City Bodhisattva Guanyin",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        },
+        {
+          "name": "Phra Phutthamongkol Maharat",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        },
+        {
+          "name": "PSU Natural History Museum",
+          "src": "https://nhm.psu.ac.th/"
+        }
+      ]
+    },
+    "th-khonkaen": {
+      "eat": [
+        {
+          "name": "Refill Coffee",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2853503"
+        }
+      ],
+      "do": []
+    },
+    "th-krabi": {
+      "eat": [
+        {
+          "name": "Treehouse Cafe Krabi",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food"
+        },
+        {
+          "name": "See The Sea Restaurant",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food"
+        },
+        {
+          "name": "Vieng Ta-Lay Restaurant",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food"
+        },
+        {
+          "name": "Kanabnam View Seafood",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food"
+        },
+        {
+          "name": "Nong Joke Restaurant",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food"
+        }
+      ],
+      "do": []
+    },
+    "th-lampang": {
+      "eat": [
+        {
+          "name": "Ku Chang Heng",
+          "src": "https://www.bucketlistly.blog/posts/lampang-best-cafes-restaurants"
+        },
+        {
+          "name": "Ma Kong Ta Egg Noodle Restaurant",
+          "src": "https://www.bucketlistly.blog/posts/lampang-best-cafes-restaurants"
+        },
+        {
+          "name": "Khao Soi Bun Yuen",
+          "src": "https://www.bucketlistly.blog/posts/lampang-best-cafes-restaurants"
+        },
+        {
+          "name": "Pad Thai Yai Fong",
+          "src": "https://www.bucketlistly.blog/posts/lampang-best-cafes-restaurants"
+        },
+        {
+          "name": "Thep Rot 66",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang"
+        },
+        {
+          "name": "Po Kuay Chap",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang"
+        }
+      ],
+      "do": []
+    },
+    "th-phuket": {
+      "eat": [
+        {
+          "name": "Baan Mae Taan",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "VIVA Rooftop and Restaurant",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Azzurro Thailand",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Lhong Khao",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Piset Restaurant",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Wanlamun",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Mee Ko Lan",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Go La Hokkien Noodles",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Chuan Chim",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Ko Ang Seafood",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Krua Kao Kuk",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Cafe Delight",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Chom Chan",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        },
+        {
+          "name": "Pizzeria Da Moreno @ Town",
+          "src": "https://www.phuket101.net/best-thai-restaurants-in-phuket-town/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Kidzooona",
+          "src": "https://www.jungceylon.com/explore/top-activities-for-kids-to-do-at-jungceylon-phuket"
+        },
+        {
+          "name": "Surin Beach",
+          "src": "https://phuketexpatguide.com/blog/best-phuket-beaches-families-kids/"
+        },
+        {
+          "name": "Ko Fun Kids Rope Park",
+          "src": "https://phuket101.net/best-kids-clubs-in-phuket"
+        }
+      ]
+    },
+    "th-sukhothai": {
+      "eat": [
+        {
+          "name": "Ratcha Khao Tom 1 Baht",
+          "src": "https://www.wongnai.com/listings/sukhothai-restaurants"
+        },
+        {
+          "name": "Je Pao Phochana",
+          "src": "https://www.wongnai.com/listings/sukhothai-restaurants"
+        },
+        {
+          "name": "Krua Kuk Kaen",
+          "src": "https://www.wongnai.com/listings/sukhothai-restaurants"
+        },
+        {
+          "name": "Cafe De Tree",
+          "src": "https://www.wongnai.com/listings/cafes-good-view-sukhothai"
+        },
+        {
+          "name": "18+ Coffee By Tee",
+          "src": "https://www.wongnai.com/listings/cafes-good-view-sukhothai"
+        },
+        {
+          "name": "The Warmth",
+          "src": "https://www.wongnai.com/listings/cafes-good-view-sukhothai"
+        },
+        {
+          "name": "Crossroad Cafe & Hangout",
+          "src": "https://www.wongnai.com/listings/cafes-good-view-sukhothai"
+        },
+        {
+          "name": "Idin Coffee Brewer",
+          "src": "https://www.wongnai.com/listings/cafes-good-view-sukhothai"
+        }
+      ],
+      "do": [
+        {
+          "name": "Sukhothai morning market",
+          "src": "https://thailandwherestay.com/things-to-do-see-in-sukhothai/"
+        }
+      ]
+    },
+    "th-suratthani": {
+      "eat": [
+        {
+          "name": "Kumpun",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommended-restaurants-in-surat-thani"
+        },
+        {
+          "name": "Artia Seafood Riverside",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommended-restaurants-in-surat-thani"
+        }
+      ],
+      "do": []
+    },
+    "th-khaokho": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Rai GB Khao Kho",
+          "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W"
+        },
+        {
+          "name": "Teletubbies Café Khao Kho",
+          "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W"
+        }
+      ]
+    },
+    "th-khaoyai": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Hokkaido Flower Park Khao Yai",
+          "src": "https://travel.trueid.net/detail/82EYgvWnjkE2"
+        },
+        {
+          "name": "The Birder's Lodge Farmers Market",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/"
+        },
+        {
+          "name": "Wat Tham Sila Thong",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/"
+        },
+        {
+          "name": "Wat Thep Phithak Punnaram (Wat Phra Khao)",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/"
+        }
+      ]
+    },
+    "th-kohchang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kai Bae Waterfall",
+          "src": "https://explorekohchang.com/koh-chang/things-to-do-in-koh-chang/koh-chang-waterfalls/"
+        },
+        {
+          "name": "Mu Ko Chang National Park",
+          "src": "https://www.trip.com/things-to-do/kohchang-128607/"
+        }
+      ]
+    },
+    "th-maehongson": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Romance Farm",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": "Huai Nam Dang National Park",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": "Doi Khun Mae Ya",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": "Doi Thong",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": "Wat Nam Hu",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/pai-maehongson-attractions"
+        },
+        {
+          "name": "Wat Si Don Chai",
+          "src": "https://travel.trueid.net/detail/n2lpboApKWZ"
+        }
+      ]
+    },
+    "th-samui": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Samui Water Park",
+          "src": "https://www.kohsamuitravelhub.com/attractions/pink-elephant-samui-water-park/"
+        },
+        {
+          "name": "Hin Lad Waterfall",
+          "src": "https://samui69.com/waterfalls/hin-lad"
+        },
+        {
+          "name": "Lad Koh View Point",
+          "src": "https://pickyourtrail.com/attractions/koh-samui/lad-koh-view-point-koh-samui"
+        }
+      ]
+    },
+    "th-udon": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Ban Huai Samran flower garden",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": "Ganesha Udon Thani",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": "Vietnam Town Udon Thani",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": "The Ho Chi Minh Historical Park",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": "Phothisomphon Temple",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "Charlotte Doughnuts Hat Yai",
+      "Nutt-Phob coffee and more Hat Yai",
+      "Phong Yun Pai Orange Farm",
+      "Rawai Park Kids Club (temporarily)"
+    ],
+    "name or place did not match on Google Maps": "four (a train ride, a temple with only a result list, a beach park with no place of its own)",
+    "source refused": "atly.com (machine summaries of reviews): twelve Koh Samui places to eat; a trip.com page of user posts: one Pai farm",
+    "other": [
+      "Aquarium & Tiger Zoo Samui (tiger and sea-lion shows)",
+      "The Blue Sky Garden Khao Kho (part of a resort)",
+      "KAEN Khon Kaen and Synth Surat Thani (tasting-menu fine dining)",
+      "Pizza House by Somprasong (a guesthouse restaurant)",
+      "three Sukhothai places in Sawankhalok and Thung Saliam (30+ km from the town)",
+      "a second Kidzooona and a second Dose Espresso (branches of a place already listed)",
+      "three Udon Thani cafés (the list gave nothing about them but their names)"
+    ],
+    "nothing new on a dated page": "Chanthaburi places to eat (the only list would not load as text); Hat Yai places to eat from a Wongnai list dated 2024"
+  }
+}

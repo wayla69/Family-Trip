@@ -455,6 +455,128 @@
           },
           "q": "Samui Football Golf",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Samui Water Park",
+            "th": "สมุย วอเตอร์ พาร์ค"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Mae Nam, north coast (inland, Maenam Soi 1)",
+            "th": "แม่น้ำ ชายฝั่งทางเหนือ (ซอยแม่น้ำ 1)"
+          },
+          "what": {
+            "en": "A family water park with high-speed slides, racing attractions and gentler water play",
+            "th": "สวนน้ำครอบครัว มีสไลเดอร์ความเร็วสูง เครื่องเล่นแข่งความเร็ว และมุมเล่นน้ำที่เบากว่า"
+          },
+          "why": {
+            "en": "Smaller visitors may enjoy the junior play area while an older child or adult uses a larger slide",
+            "th": "เด็กเล็กเล่นโซนจูเนียร์ได้ ขณะที่เด็กโตหรือผู้ใหญ่เล่นสไลเดอร์ใหญ่"
+          },
+          "tip": {
+            "en": "Listed as open Tuesday to Sunday, about 10:00–18:00, Monday closed; allow three to five hours; check the day's slides and the booking terms",
+            "th": "ระบุว่าเปิดอังคารถึงอาทิตย์ ราว 10:00–18:00 ปิดวันจันทร์ เผื่อเวลา 3–5 ชั่วโมง เช็กสไลเดอร์ที่เปิดและเงื่อนไขการจอง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Samui Water Park, Maenam Soi 1, Mae Nam, Koh Samui, Surat Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.kohsamuitravelhub.com/attractions/pink-elephant-samui-water-park/"
+        },
+        {
+          "name": {
+            "en": "Hin Lad Waterfall",
+            "th": "น้ำตกหินลาด"
+          },
+          "local": "น้ำตกหินลาด",
+          "kind": "nature",
+          "area": {
+            "en": "Jungle hills above Nathon, the island's main port town",
+            "th": "เนินป่าเหนือหน้าทอน เมืองท่าหลักของเกาะ"
+          },
+          "what": {
+            "en": "A 30-metre multi-tiered waterfall hidden in the jungle hills above Nathon, with a temple at its base",
+            "th": "น้ำตกหลายชั้นสูง 30 เมตรซ่อนอยู่ในเนินป่าเหนือหน้าทอน มีวัดอยู่ที่ฐาน"
+          },
+          "why": {
+            "en": "Several smaller plunge pools dot the trail below the main waterfall, offering quieter spots to cool off",
+            "th": "ตามทางเดินใต้น้ำตกหลักมีแอ่งน้ำเล็กหลายแห่ง เป็นจุดคลายร้อนที่เงียบกว่า"
+          },
+          "tip": {
+            "en": "Swimming months are May, June and July; allow 1.5 to 2 hours round trip; the trail is uneven, so only older kids with an adult close by",
+            "th": "ลงเล่นน้ำได้เดือนพฤษภาคมถึงกรกฎาคม ไป-กลับราว 1.5–2 ชั่วโมง ทางไม่เรียบ เหมาะกับเด็กโตที่มีผู้ใหญ่ดูใกล้ชิด"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "น้ำตกหินลาด, Nathon, Koh Samui, Surat Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://samui69.com/waterfalls/hin-lad"
+        },
+        {
+          "name": {
+            "en": "Lad Koh View Point",
+            "th": "จุดชมวิวลาดเกาะ"
+          },
+          "local": "จุดชมวิวลาดเกาะ",
+          "kind": "views",
+          "area": {
+            "en": "East coast, between Chaweng and Lamai (also called Zenith Viewpoint)",
+            "th": "ชายฝั่งตะวันออก ระหว่างเฉวงกับละไม (หรือเรียกว่า Zenith Viewpoint)"
+          },
+          "what": {
+            "en": "A popular viewpoint over the Gulf of Thailand, open 24 hours with free entry",
+            "th": "จุดชมวิวยอดนิยมเหนืออ่าวไทย เปิด 24 ชั่วโมง เข้าฟรี"
+          },
+          "why": {
+            "en": "A short stop for a wide view over the sea",
+            "th": "แวะสั้นๆ ชมวิวทะเลกว้าง"
+          },
+          "tip": {
+            "en": "Best at sunrise or sunset; arrive early, as mornings are less crowded",
+            "th": "สวยที่สุดตอนพระอาทิตย์ขึ้นหรือตก ไปเช้าคนน้อยกว่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "จุดชมวิวลาดเกาะ, Koh Samui, Surat Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/koh-samui/lad-koh-view-point-koh-samui"
         }
       ]
     }
