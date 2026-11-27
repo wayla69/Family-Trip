@@ -223,6 +223,87 @@
           "why": "the page gave no usable description"
         }
       ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "The resort's own restaurant page (what it serves, its shop and hours), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Hiro Ramen (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/hiro-ramen.html",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Imperial House Dim Sum (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/imperial-house-dim-sum.html",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Red Dragon Noodles (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/red-dragon-noodles.html",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Five Guys (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/five-guys.html",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "North (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/north.html",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Haidilao Hot Pot (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/haidilao.html",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Tim Ho Wan (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/tim-ho-wan.html",
+          "map": "Google Maps: open, a review 2 days ago"
+        },
+        {
+          "name": "Shake Shack (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/shake-shack.html",
+          "map": "Google Maps: open, a review 4 weeks ago"
+        },
+        {
+          "name": "G Bear Cafe (Londoner Grand)",
+          "src": "https://www.londonermacao.com/macau-restaurants/g-bear-cafe.html",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Lady M (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/lady-m.html",
+          "map": "Google Maps: open, newest review 3 months ago"
+        },
+        {
+          "name": "Jin Yue Xuan (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/jin-yue-xuan.html",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Crystal Jade La Mian Xiao Long Bao (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/crystal-jade.html",
+          "map": "Google Maps: open, newest review 2 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Tai Hing (The Venetian)",
+          "why": "newest Google Maps review 10 months old"
+        },
+        {
+          "name": "Portofino, Glorious Seafood, Green Tea, Lan Zhou Noodle (The Venetian)",
+          "why": "no matching Google Maps listing could be opened"
+        },
+        {
+          "name": "The Mews, Marmeleira, O'Picken's",
+          "why": "tasting menus, a bar or a pub; not for children"
+        }
+      ]
     }
   ]
 }

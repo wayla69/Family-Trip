@@ -16,7 +16,7 @@ const norm = (x) => String(x || '').normalize('NFKC').toLowerCase().replace(/[^a
 const THAI = /[฀-๿]/;
 export const MIN = 8, MAX = 80;   // 80: the growth plan (owner, 20 Nov 2026) — big cities 70, other towns 40, small ones 22
 // a town the owner asked to go deep on: Hong Kong, 300–400 places with hidden gems and local favourites (owner, 27 Nov 2026)
-export const MAX_TOWN = { 'hk-hongkong': 420 };
+export const MAX_TOWN = { 'hk-hongkong': 420, 'mo-macau': 100 };   // Macau: owner, 27 Nov 2026 ("Macau can have more than 40 to 100")
 
 export function lintEats(only) {
   const index = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'stock', 'index.json'), 'utf8'));

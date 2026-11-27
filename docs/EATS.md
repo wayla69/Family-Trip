@@ -1027,3 +1027,5 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Capuano, Pocofino, Peak Pizza, BRKLYN, Motorino Wan Chai, Ming Kee on Po Toi, Yau Ley on High Island, Concerto Inn, the Kai Tak malls'
   restaurants, Shiro Central, Portico at Spiga… Google Maps only. Closed although still listed: Dim Sum Icon, Mr Tree (Causeway Bay),
   Jacomax. Hong Kong now holds 273.
+
+- **27 Nov 2026, Macau, round 45**: Macau may hold up to 100 (owner: "Macau can have more than 40 to 100"); +12 from The Venetian's and The Londoner's own restaurant pages, each checked on Google Maps. Proof in `docs/library-proof/mo-macau.json`.
