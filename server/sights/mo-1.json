@@ -3878,6 +3878,129 @@
           "book": "none",
           "q": "South Shore Waterfront Green Promenade, Macau",
           "src": "https://www.iam.gov.mo/nature/e/facility/rest/detail?id=f1d54981-0ec0-4e40-a404-c66963afd07c&type=rest"
+        },
+        {
+          "local": "竹灣海灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดเจ็กวัน",
+            "en": "Cheoc Van Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เจ็กวัน โคโลอาน",
+            "en": "Cheoc Van, Coloane"
+          },
+          "what": {
+            "th": "อ่าวทรายเล็ก ๆ มีเขตว่ายน้ำกั้นเชือกและไลฟ์การ์ด ดูแลโดยสำนักงานกิจการทางทะเลและน้ำ มีสระว่ายน้ำสาธารณะข้าง ๆ",
+            "en": "A small sandy bay with a roped swimming area and lifeguards, run by the Marine and Water Bureau, with a public pool beside it"
+          },
+          "why": {
+            "th": "เงียบกว่าฮักซา มีทรายให้ขุดและเขตกั้นเชือกให้ลงเล่นน้ำ",
+            "en": "Quieter than Hac Sá, with sand to dig and a roped area for paddling"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะในเขตเชือกตอนไลฟ์การ์ดประจำ สระว่ายน้ำเปิดเฉพาะหน้าร้อน",
+            "en": "Swim only inside the ropes when lifeguards are on duty; the pool opens in summer only"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Cheoc Van Beach, Coloane, Macau",
+          "src": "https://www.gcs.gov.mo/news/detail/pt/N26ID0d78U"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ซิปซิตี้ ลิสโบเอตา",
+            "en": "ZIPCITY (Lisboeta)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ลิสโบเอตา มาเก๊า โคไท",
+            "en": "Lisboeta Macau, Cotai"
+          },
+          "what": {
+            "th": "ซิปไลน์กลางเมือง 5 เส้นจากหอสูง 60 เมตร ยาว 388 เมตรข้ามโคไท เร็วถึง 60 กม./ชม. มีรอบกลางวันและกลางคืน",
+            "en": "An urban zipline of five lines from a 60 m tower, 388 m across Cotai at up to 60 km/h, by day or by night"
+          },
+          "why": {
+            "th": "ความตื่นเต้นใหญ่สำหรับเด็กโตที่ชอบที่สูง",
+            "en": "A big thrill for older children who like heights"
+          },
+          "tip": {
+            "th": "เปิด 14:00–16:30 และ 18:00–21:30 ปิดวันอังคาร มีเกณฑ์อายุและส่วนสูงตอนจอง",
+            "en": "Open 14:00–16:30 and 18:00–21:30; closed on Tuesdays; age and height rules apply when booking"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "ZIPCITY Macau, Lisboeta, Cotai, Macau",
+          "src": "https://www.lisboetamacau.com/en/enjoy/zipcity/"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ฟันฟันคาร์ท ลิสโบเอตา",
+            "en": "Fun Fun Kart (Lisboeta)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลิสโบเอตา มาเก๊า โคไท",
+            "en": "Lisboeta Macau, Cotai"
+          },
+          "what": {
+            "th": "สนามโกคาร์ทในร่มแห่งแรกของมาเก๊า ทำมาเพื่อให้เด็กและวัยรุ่นได้ลองขับโกคาร์ท",
+            "en": "Macau's first indoor karting venue, set up to get children and young people into karting"
+          },
+          "why": {
+            "th": "ขับโกคาร์ทในร่มสำหรับบ่ายวันร้อนหรือฝนตก",
+            "en": "Indoor karting for a hot or rainy afternoon"
+          },
+          "tip": {
+            "th": "เช็กเกณฑ์อายุและส่วนสูงก่อนไป",
+            "en": "Check the age and height rules before going"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "FunFunKart, Lisboeta Macau, Cotai, Macau",
+          "src": "https://www.lisboetamacau.com/en/enjoy/funfunkart/"
         }
       ]
     }
