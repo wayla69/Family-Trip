@@ -601,6 +601,372 @@
         }
       ],
       "left_out": []
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "eats",
+      "title": "Round 4: the MICHELIN Guide 2026 — Bib Gourmand in Kowloon and the New Territories, street food, and the island's casual picks",
+      "checked": "2026-11-27",
+      "rule": "Owner, 27 Nov 2026: every place from a dated 2025–2026 page read in the owner's Chrome, then Google Maps (not marked permanently or temporarily closed, a review from the last six months, the map's name matching the page's) and OpenRice (listed, not Closed Down or Relocated). A price is OpenRice's band per person where it showed one.",
+      "added": [
+        {
+          "name": "Heartwarming",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/heartwarming-prince-edward",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Heartwarming\": 588 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Glorious Cuisine",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/glorious-cuisine",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Glorious Cuisine\": 1,178 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Kung Wo Beancurd Factory",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/kung-wo-tofu",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Kung Wo Beancurd Factory\": 2,976 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Lau Sum Kee",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/lau-sum-kee-fuk-wing-street",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lau Sum Kee Noodle (Fuk Wing Street)\": 630 reviews, newest seen a day ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Kwan Kee Bamboo Noodles",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/kwan-kee-bamboo-noodles-cheung-sha-wan",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Kwan Kee Bamboo Noodle\": 847 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Dragons' Den",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/dragons-den",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Dragons' Den\": 94 reviews, newest seen 27 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Lucky Indonesia",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/lucky-indonesia",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lucky Indonesia Restaurant\": 370 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Tai Wai Dining Room",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/tai-wai-dining-room",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Tai Wai Dining Room\": 1,168 reviews, newest seen a week ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Hao Tang Hao Mian",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/hao-tang-hao-mian",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Hao Tang Hao Mian (Tai Wai)\": 834 reviews, newest seen 10 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Yue Kee",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/yue-kee",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yue Kee Roast Goose Restaurant\": 2,749 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Dragon Inn",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/dragon-inn",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Dragon Inn Seafood Restaurant\": 1,964 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Banana Boy",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/banana-boy",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Banana Boy\": 114 reviews, newest seen a month ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Tin Hung",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/tin-hung",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Tin Hung Roast Goose Restaurant\": 717 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Ho To Tai",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/ho-to-tai-yuen-long",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ho To Tai Noodle Shop\": 1,113 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Tai Wing Wah",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/tai-wing-wah",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yuen Long Tai Wing Wah Restaurant\": 2,977 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Ju Xing Home",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/ju-xing-home",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"聚興家 Ju Xing Home\": 558 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Snack Baby Central",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/snack-baby",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Snack Baby Gelato & Drinks (Hollywood Road)\": 494 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Owl's",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/owl-s",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Owl's Choux.Gelato.Coffee\": 557 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Beanmountain",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/beanmountain",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Beanmountain\": 146 reviews, newest seen a week ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Twist & Buckle",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/twist-buckle",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Twist & Buckle Churros Specialists Tsim Sha Tsui\": 326 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Fat Boy",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/fat-boy",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Fat Boy Shop\": 303 reviews, newest seen a week ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Mrs. Fong Chinese Desserts",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/mrs-fong-chinese-desserts",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Mrs. Fong Dessert\": 515 reviews, newest seen 12 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Hung Hom Pancake",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/hung-hom-pancake",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Hung Hom Pancake (53 Bulkeley St, the corner of Taku Street)\": 400 reviews, newest seen a month ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Mak Kee May Ka Mansion",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/mak-kee",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Mak Kee\": 750 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Ki Tsui",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/kei-tsui",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ki Tsui Cake Shop\": 748 reviews, newest seen a month ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Ho Kee Dessert",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/ho-kee-dessert-to-kwa-wan",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ho Kee Dessert\": 335 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Fishball Man",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/fishball-man-to-kwa-wan",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Fish Ball Man\": 48 reviews, newest seen 19 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Hop Yik Tai",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/hop-yik-tai",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Hop Yik Tai\": 3,393 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Man Kee Cart Noodles",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/man-kei-cart-noodles",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Man Kee Cart Noodles\": 2,814 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Shum Shum Desserts",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/shum-shum-desserts",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Shum Shum Desserts\": 382 reviews, newest seen 26 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "So Kee",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/so-kee",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ar Yes So Kee\": 282 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Bánh Mì Nếm",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/banh-mi-nem",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Banh Mi Nem\": 262 reviews, newest seen a week ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Luk Yu Tea House",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/luk-yu-tea-house",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Luk Yu Tea House\": 1,865 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Prince and the Peacock",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/prince-and-the-peacock",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Prince and The Peacock\": 196 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Toritama",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/toritama",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Toritama\": 181 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Neighborhood",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/neighborhood",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Neighborhood\": 340 reviews, newest seen 2 months ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Ho Lee Fook",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/ho-lee-fook",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ho Lee Fook\": 1,437 reviews, newest seen a day ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Jean-Pierre",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/jean-pierre",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Jean-Pierre\": 371 reviews, newest seen a week ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Mâm Amis",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/mam-amis",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"MâmAmis\": 599 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Yardbird",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/yardbird",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yardbird\": 1,979 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Liu Yuan Pavilion",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/liu-yuan-pavilion",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Liu Yuan Pavilion\": 382 reviews, newest seen 23 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Seventh Son",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/seventh-son",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Seventh Son Restaurant\": 467 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Trattoria Felino",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/trattoria-felino",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Trattoria Felino\": 871 reviews, newest seen a day ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Lucale",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/lucale",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"LucAle Tasting Italy\": 492 reviews, newest seen a day ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Yuan",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/yuan-1215508",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"圓 Yuan\": 85 reviews, newest seen 7 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Kam's Roast Goose",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/kam-s-roast-goose",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Kam's Roast Goose\": 6,469 reviews, newest seen a day ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Imperial Treasure Fine Chinese Cuisine",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/imperial-treasure-fine-chinese-cuisine",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Imperial Treasure Fine Chinese Cuisine (Tsim Sha Tsui)\": 218 reviews, newest seen 2 weeks ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Jardin de Jade Wan Chai",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/jardin-de-jade-wan-chai",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Jardin de Jade\": 343 reviews, newest seen 7 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Celestial Court",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/celestial-court",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Celestial Court Chinese Restaurant\": 399 reviews, newest seen 2 weeks ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        },
+        {
+          "name": "Yè Shanghai Tsim Sha Tsui",
+          "src": "https://guide.michelin.com/hk/en/hong-kong-region/hong-kong/restaurant/ye-shanghai-tsim-sha-tsui-1191719",
+          "date": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yè Shanghai — Tsim Sha Tsui\": 631 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "not checked: OpenRice put up its slide puzzle after every search, and the owner chose Google Maps and the MICHELIN Guide 2026 as the two checks for places in the guide (27 Nov 2026)"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Temple Street Beef Offal",
+          "from": "MICHELIN Guide 2026 street food",
+          "why": "Google Maps shows Menudos Noodles at 18 Arthur Street; the names differ"
+        }
+      ]
     }
   ]
 }
