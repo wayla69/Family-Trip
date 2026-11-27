@@ -2649,6 +2649,236 @@
           "why": "Google Maps: newest review two years old"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "eats",
+      "title": "Round 10 — Discover Hong Kong food pages (celebrations, family dining, Michelin for every budget, desserts, chefs' picks, romantic meals, racecourses), Google Maps only",
+      "checked": "2026-11-27",
+      "rule": "Owner, 27 Nov 2026: every place from a dated 2025–2026 page read in the owner's Chrome, then Google Maps (not marked permanently or temporarily closed, a review from the last six months, the map's name matching the page's) and OpenRice (listed, not Closed Down or Relocated). A price is OpenRice's band per person where it showed one.",
+      "added": [
+        {
+          "name": "VEA Restaurant",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-celebrations-and-anniversaries.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"VEA Restaurant\": 332 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Grissini",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-celebrations-and-anniversaries.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Grissini\": 579 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "TATE Dining Room",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-celebrations-and-anniversaries.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"TATE Dining Room\": 267 reviews, newest seen 19 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Tosca di Angelo",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-celebrations-and-anniversaries.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Tosca Di Angelo\": 512 reviews, newest seen 3 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Felix",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-celebrations-and-anniversaries.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Felix\": 714 reviews, newest seen 9 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Divino Patio",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/interactive-and-entertaining-family-dining-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"DiVino Patio\": 575 reviews, newest seen 17 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Amber",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/hong-kong-michelin-feasts-for-every-budget.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Amber\": 710 reviews, newest seen 9 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Mora",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/hong-kong-michelin-feasts-for-every-budget.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Mora\": 155 reviews, newest seen 19 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "8½ Otto e Mezzo Bombana",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/hong-kong-michelin-feasts-for-every-budget.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"8 1/2 Otto E Mezzo Bombana\": 645 reviews, newest seen a day ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Luk Lam Dessert",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-try-traditional-hong-kong-desserts.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Luk Lam Dessert\": 1,729 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Chiu Chow Hop Shing Dessert",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/must-try-traditional-hong-kong-desserts.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Chiu Chow Hop Shing Dessert\": 876 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Stone Coffee",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/culinary-connoisseurs-of-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Stone Coffee\": 125 reviews, newest seen 11 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Sai Kung Cafe & Bakery",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/culinary-connoisseurs-of-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Sai Kung Cafe & Bakery\": 559 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Stellar House",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/culinary-connoisseurs-of-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Stellar House 星月居\": 224 reviews, newest seen 4 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Kong Chai Kee",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/culinary-connoisseurs-of-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Kong Chai Kee\": 707 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "ABC Kitchen",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/culinary-connoisseurs-of-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"ABC Kitchen\": 390 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Caprice",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/culinary-connoisseurs-of-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Caprice\": 648 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "La Taverna",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"La Taverna Ristorante Italiano\": 489 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Casa Lisboa",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Casa Lisboa\": 518 reviews, newest seen 11 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Francis West",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"FRANCIS west\": 373 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Embla",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Embla\": 256 reviews, newest seen 8 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Hugo's",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Hugo's\": 457 reviews, newest seen 9 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Angelini",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Angelini\": 358 reviews, newest seen 9 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "La Rambla by Catalunya",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"La Rambla By Catalunya\": 714 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Paper Moon",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Paper Moon Hong Kong\": 1,241 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Restaurant Petrus",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-a-romantic-meal-for-two.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Petrus\": 299 reviews, newest seen 19 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Hay Market",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/unique-dining-at-hong-kong-racecourses.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Hay Market\": 54 reviews, newest seen 2 weeks ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pak Loh Chiu Chow Restaurant",
+          "from": "Discover Hong Kong, culinary connoisseurs",
+          "why": "Google Maps: newest review a year old"
+        },
+        {
+          "name": "Auntie ĀYI",
+          "from": "Discover Hong Kong, culinary connoisseurs",
+          "why": "Google Maps found no place of that name"
+        },
+        {
+          "name": "Sushi Saito",
+          "from": "Discover Hong Kong, Michelin feasts for every budget",
+          "why": "Google Maps gave an address that does not match the page (on Lantau, not the Ritz-Carlton)"
+        },
+        {
+          "name": "Genso and Keiba (racecourses)",
+          "from": "Discover Hong Kong, racecourse dining",
+          "why": "Google Maps: Genso only as the racecourse; Keiba 3 reviews"
+        },
+        {
+          "name": "aqualuna Dim Sum Cruise, Tea and Opera at Xiqu Centre",
+          "from": "Discover Hong Kong, interactive family dining",
+          "why": "a cruise and a show, not a place to eat"
+        },
+        {
+          "name": "Waso Cafe, Tai Hing",
+          "from": "Discover Hong Kong, cha chaan tengs",
+          "why": "chains with no single branch named"
+        }
+      ]
     }
   ]
 }

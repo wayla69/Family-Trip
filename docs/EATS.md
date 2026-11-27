@@ -1050,3 +1050,10 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   buffets (The Food Gallery, Jashan, The Grand Buffet), cheese (The Swiss Chalet, Terroirs by LQV, ROUCOU) and special meals (The
   Verandah, Louise, Popinjays, Lobster Bar & Grill, L'Atelier de Joël Robuchon, Wing). Google Maps only. Eight left out: Jing closed for
   good, The Dutch's newest review two years old, six with no matching place on Maps. Hong Kong now holds 373.
+- **Round 10**: +27 from more Discover Hong Kong pages (official, undated, read 2026-11-27): celebrations (VEA, Grissini, TATE,
+  Tosca di Angelo, Felix), family dining (Divino Patio's pizza making), Michelin for every budget (Amber, Mora, 8½ Otto e Mezzo), the
+  traditional desserts (Luk Lam, Chiu Chow Hop Shing), the chefs' own picks (Stone Coffee, Sai Kung Cafe & Bakery, Stellar House, Kong
+  Chai Kee, ABC Kitchen, Caprice), romantic meals (La Taverna, Casa Lisboa, Francis West, Embla, Hugo's, Angelini, La Rambla, Paper
+  Moon, Petrus) and Hay Market at Sha Tin Racecourse. Google Maps only. Left out: Pak Loh (newest review a year old), Auntie ĀYI and
+  Genso/Keiba (no matching place), Sushi Saito (the map's address did not match), a cruise and a show, two chains. Hong Kong now holds
+  400.
