@@ -932,6 +932,88 @@
           "q": "Kanazashi Woodcraft, 180-1 Hatajuku, Hakone, Kanagawa, Japan",
           "ok": "2026-11",
           "src": "https://www.hakonenavi.jp/feature/6801"
+        },
+        {
+          "name": {
+            "en": "Asobi Park PLUS Namco Odawara Dynacity",
+            "th": "อะโซบิ พาร์ค พลัส นัมโค โอดาวาระ ไดนาซิตี้"
+          },
+          "local": "あそびパークPLUS 小田原ダイナシティ店",
+          "kind": "play",
+          "area": {
+            "en": "Dynacity West 3F, Nakazato, Odawara",
+            "th": "ไดนาซิตี้ เวสต์ ชั้น 3 นากาซาโตะ โอดาวาระ"
+          },
+          "what": {
+            "en": "A big indoor play space inside the Dynacity shopping centre, with athletic equipment and amusements for small children up to primary school.",
+            "th": "พื้นที่เล่นในร่มขนาดใหญ่ในศูนย์การค้าไดนาซิตี้ มีอุปกรณ์ออกกำลังและเครื่องเล่นสำหรับเด็กเล็กจนถึงวัยประถม"
+          },
+          "why": {
+            "en": "A baby plan for under-3s, and play that suits each age from toddlers to primary school children, whatever the weather.",
+            "th": "มีแพ็กเกจสำหรับเด็กต่ำกว่า 3 ขวบ และเครื่องเล่นที่เหมาะกับแต่ละวัย เล่นได้ไม่ว่าอากาศเป็นอย่างไร"
+          },
+          "tip": {
+            "en": "Open daily 10:00–19:00 with no closing day.",
+            "th": "เปิดทุกวัน 10:00–19:00 ไม่มีวันหยุด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Child from ≈ ¥700 for the first 30 min on weekdays; baby plan under 3 ≈ ¥1,500 for 2 h with a parent",
+            "th": "เด็กเริ่มต้น ≈ ¥700 สำหรับ 30 นาทีแรกวันธรรมดา แพ็กเกจเด็กต่ำกว่า 3 ขวบ ≈ ¥1,500 สำหรับ 2 ชม. พร้อมผู้ปกครอง"
+          },
+          "book": "none",
+          "q": "Asobi Park PLUS Namco Odawara Dynacity, Dynacity West 3F, Nakazato, Odawara, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6836/"
+        },
+        {
+          "name": {
+            "en": "Odawara Flower Garden",
+            "th": "สวนดอกไม้โอดาวาระ"
+          },
+          "local": "小田原フラワーガーデン",
+          "kind": "park",
+          "area": {
+            "en": "Kuno, Odawara",
+            "th": "คูโนะ โอดาวาระ"
+          },
+          "what": {
+            "en": "A flower garden with plum and rose gardens and iris beds, plus a Tropical Dome greenhouse growing about 300 kinds of flowering trees and fruit.",
+            "th": "สวนดอกไม้ที่มีสวนบ๊วยและกุหลาบ แปลงไอริส และเรือนกระจกทรอปิคัลโดมที่ปลูกไม้ดอกไม้ผลราว 300 ชนิด"
+          },
+          "why": {
+            "en": "A greenhouse open all year that is good on a rainy day, with seasonal flowers close up and wide paths to walk.",
+            "th": "เรือนกระจกเปิดตลอดปี เหมาะกับวันฝนตก ดูดอกไม้ตามฤดูกาลใกล้ๆ และมีทางเดินกว้าง"
+          },
+          "tip": {
+            "en": "Closed Mondays (next day if a holiday) and over New Year; about 30 min by bus from Odawara Station.",
+            "th": "ปิดวันจันทร์ (เลื่อนเป็นวันถัดไปถ้าตรงวันหยุด) และช่วงปีใหม่ นั่งรถบัสจากสถานีโอดาวาระราว 30 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥200 adults · ≈ ¥100 primary and junior high",
+            "th": "≈ ¥200 ผู้ใหญ่ · ≈ ¥100 ประถมและมัธยมต้น"
+          },
+          "book": "none",
+          "q": "Odawara Flower Garden, Kuno, Odawara, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/6836/"
         }
       ]
     },
