@@ -6341,6 +6341,46 @@
           "q": "Kids Bounce, Otsuka-cho Takeshita 532-10, Miyazaki, Japan",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/5444/"
+        },
+        {
+          "name": {
+            "en": "Kodomo no Kuni (Aoshima Picnic Club)",
+            "th": "โคโดโมะโนะคุนิ (อาโอชิมะ ปิกนิก คลับ)"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Near Aoshima, Miyazaki",
+            "th": "ใกล้อาโอชิมะ มิยาซากิ"
+          },
+          "what": {
+            "en": "A huge park with an athletics area, park golf course, botanical garden, and a picnic club with a shop and restaurant.",
+            "th": "สวนขนาดใหญ่ มีลานกีฬา สนามปาร์กกอล์ฟ สวนพฤกษศาสตร์ และปิกนิกคลับที่มีร้านค้าและร้านอาหาร"
+          },
+          "why": {
+            "en": "Built for active children, with forest and beachside camping areas.",
+            "th": "ออกแบบมาสำหรับเด็กที่ชอบเคลื่อนไหว มีลานแคมป์ในป่าและริมชายหาด"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Aoshima Picnic Club, Aoshima, Miyazaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1221"
         }
       ]
     },
@@ -7125,6 +7165,87 @@
           "q": "Nagaoka Fireworks Museum, Nagaoka, Niigata, Japan",
           "ok": "2026-11",
           "src": "https://nagaoka-hanabikan.niigata.jp/en/"
+        },
+        {
+          "name": {
+            "en": "Northern Culture Museum and Ito Estate",
+            "th": "พิพิธภัณฑ์วัฒนธรรมภาคเหนือและคฤหาสน์อิโต"
+          },
+          "local": "北方文化博物館",
+          "kind": "museum",
+          "area": {
+            "en": "Suburbs of Niigata City",
+            "th": "ชานเมืองนีงาตะ"
+          },
+          "what": {
+            "en": "A private museum in the former Ito family residence, with a main house, great hall, tea ceremony room and pond garden.",
+            "th": "พิพิธภัณฑ์เอกชนในบ้านเก่าตระกูลอิโต มีเรือนใหญ่ ห้องโถง ห้องชงชา และสวนบ่อน้ำ"
+          },
+          "why": {
+            "en": "A garden to walk through and a museum of treasures the Ito family collected, with free parking.",
+            "th": "มีสวนให้เดินเล่นและของสะสมของตระกูลอิโต จอดรถฟรี"
+          },
+          "tip": {
+            "en": "Open 09:00–17:00 (April–November), 09:00–16:30 (December–March)",
+            "th": "เปิด 09:00–17:00 (เมษายน–พฤศจิกายน) 09:00–16:30 (ธันวาคม–มีนาคม)"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700–800 adults",
+            "th": "≈ ¥700–800 ผู้ใหญ่"
+          },
+          "book": "none",
+          "q": "Northern Culture Museum, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://enjoyniigata.com/en/spot/5559"
+        },
+        {
+          "name": {
+            "en": "Befco Bakauke Observation Room",
+            "th": "ห้องชมวิวเบฟโก บะกะอุเกะ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Toki Messe, Bandaijima, Niigata",
+            "th": "โทกิเมสเสะ บันไดจิมะ นีงาตะ"
+          },
+          "what": {
+            "en": "A 360-degree view from the 31st floor of Toki Messe over the city centre and the Sea of Japan coast.",
+            "th": "วิว 360 องศาจากชั้น 31 ของโทกิเมสเสะ เห็นใจกลางเมืองและชายฝั่งทะเลญี่ปุ่น"
+          },
+          "why": {
+            "en": "Indoors and lift-served, so it works on a rainy day; the view is easy to show small children from the window.",
+            "th": "อยู่ในอาคารและมีลิฟต์ เหมาะวันฝนตก เด็กเล็กดูวิวจากหน้าต่างได้ง่าย"
+          },
+          "tip": {
+            "en": "Open 08:00–22:00, last entry 21:30",
+            "th": "เปิด 08:00–22:00 เข้าได้ถึง 21:30"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Befco Bakauke Observation Deck, Toki Messe, Chuo, Niigata, Japan",
+          "ok": "2026-11",
+          "src": "https://gltjp.com/en/directory/item/14217"
         }
       ]
     },
@@ -8767,6 +8888,46 @@
           "q": "Kureha Hills Multipurpose Plaza, Gofuku, Toyama, Japan",
           "ok": "2026-11",
           "src": "https://www.nap-camp.com/mag/89946"
+        },
+        {
+          "name": {
+            "en": "Doraemon Tram, Takaoka",
+            "th": "รถรางโดราเอมอน ทาคาโอกะ"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Takaoka Station, Takaoka",
+            "th": "สถานีทาคาโอกะ ทาคาโอกะ"
+          },
+          "what": {
+            "en": "A Manyo Line tram decorated with Doraemon artwork, running between Takaoka and Shinminato.",
+            "th": "รถราง Manyo Line ตกแต่งด้วยภาพโดราเอมอน วิ่งระหว่างทาคาโอกะกับชินมินาโตะ"
+          },
+          "why": {
+            "en": "Doraemon artwork on the tram itself, from the manga artist Fujiko F. Fujio's hometown.",
+            "th": "มีภาพโดราเอมอนบนตัวรถ จากบ้านเกิดของ Fujiko F. Fujio นักวาดการ์ตูน"
+          },
+          "tip": {
+            "en": "Boards at Takaoka Station; a short ride, about half an hour",
+            "th": "ขึ้นที่สถานีทาคาโอกะ นั่งสั้น ๆ ราวครึ่งชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Takaoka Station, Takaoka, Toyama, Japan",
+          "ok": "2026-11",
+          "src": "https://visit-toyama-japan.com/en/things-to-do/21137"
         }
       ]
     }

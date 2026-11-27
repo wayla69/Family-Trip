@@ -3911,6 +3911,47 @@
           },
           "q": "熊本市こども文化会館, 新町, 熊本市中央区",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Lake Ezu",
+            "th": "ทะเลสาบเอซุ"
+          },
+          "local": "江津湖",
+          "kind": "park",
+          "area": {
+            "en": "Kumamoto city",
+            "th": "เมืองคุมาโมโตะ"
+          },
+          "what": {
+            "en": "A lake near the city centre with green space where children can run about.",
+            "th": "ทะเลสาบใกล้กลางเมืองที่มีพื้นที่สีเขียวให้เด็ก ๆ วิ่งเล่น"
+          },
+          "why": {
+            "en": "Room to run between the structured visits of a city day.",
+            "th": "มีที่ให้วิ่งเล่นคั่นระหว่างทริปในเมือง"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ezu Lake, Kumamoto, Japan",
+          "ok": "2026-11",
+          "src": "https://japanactivity.com/kumamoto-with-kids"
         }
       ]
     },
@@ -4807,6 +4848,87 @@
           "q": "Yunohana Sento Zuisho Matsumoto-kan, Nagisa, Matsumoto, Japan",
           "ok": "2026-11",
           "src": "https://en.hoshinoresorts.com/guide/area/chubu/nagano/family-2/"
+        },
+        {
+          "name": {
+            "en": "Togakushi Ninja Museum",
+            "th": "พิพิธภัณฑ์นินจาโทงาคุชิ"
+          },
+          "local": "戸隠流忍法資料館",
+          "kind": "museum",
+          "area": {
+            "en": "Togakushi, Nagano city",
+            "th": "โทงาคุชิ เมืองนากาโนะ"
+          },
+          "what": {
+            "en": "A museum displaying secret ninja tools, with a ninja fun house where you look for hidden escape doors.",
+            "th": "พิพิธภัณฑ์แสดงอุปกรณ์ลับของนินจา มีบ้านนินจาให้หาประตูหนีซ่อน"
+          },
+          "why": {
+            "en": "The ninja fun house with its hidden escape doors is something children can search for and find.",
+            "th": "บ้านนินจาที่มีประตูหนีซ่อน เด็ก ๆ ตามหาได้สนุก"
+          },
+          "tip": {
+            "en": "Closed in winter — check the season; open late April to mid-November, closed Wednesdays · 09:00–17:00, last entry 16:30",
+            "th": "ปิดช่วงหน้าหนาว เช็กฤดูกาลก่อนไป เปิดปลายเม.ย.–กลางพ.ย. ปิดวันพุธ · 09:00–17:00 เข้าได้ถึง 16:30"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥700 general · ¥500 children 6–15 · ¥200 children 4–5",
+            "th": "≈ ¥700 ทั่วไป · ¥500 เด็ก 6–15 ปี · ¥200 เด็ก 4–5 ปี"
+          },
+          "book": "none",
+          "q": "Togakushi Ninja Museum, Togakushi, Nagano, Japan",
+          "ok": "2026-11",
+          "src": "https://www.go-nagano.net/en/trip-idea/family-friendly-adventures"
+        },
+        {
+          "name": {
+            "en": "Temari Candy Making Experience",
+            "th": "ประสบการณ์ทำลูกอมเทมาริ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Candy Town, Matsumoto",
+            "th": "แคนดี้ทาวน์ มัตสึโมโตะ"
+          },
+          "what": {
+            "en": "A traditional candy-making experience at a long-established candy shop in Matsumoto's Candy Town.",
+            "th": "ลองทำลูกอมแบบดั้งเดิมที่ร้านลูกอมเก่าแก่ในแคนดี้ทาวน์ของมัตสึโมโตะ"
+          },
+          "why": {
+            "en": "A hands-on food-culture activity that the page presents as family-friendly.",
+            "th": "กิจกรรมลงมือทำเกี่ยวกับวัฒนธรรมอาหาร ที่เว็บไซต์แนะนำว่าเหมาะกับครอบครัว"
+          },
+          "tip": {
+            "en": "Book ahead; allow about an hour",
+            "th": "จองล่วงหน้า เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Temariya, Matsumoto, Nagano, Japan",
+          "ok": "2026-11",
+          "src": "https://visitmatsumoto.com/en/plan/detail_2001.html"
         }
       ]
     },
@@ -5669,6 +5791,88 @@
           "q": "Gunkanjima Digital Museum, Matsugaemachi, Nagasaki, Japan",
           "ok": "2026-11",
           "src": "https://www.discover-nagasaki.com/en/featured-topics/nc-activity"
+        },
+        {
+          "name": {
+            "en": "Nagasaki Park",
+            "th": "สวนนางาซากิ"
+          },
+          "local": "長崎公園",
+          "kind": "park",
+          "area": {
+            "en": "Kamanishiyama-machi, Nagasaki",
+            "th": "คามานิชิยามะมาจิ นางาซากิ"
+          },
+          "what": {
+            "en": "A city park with an animal plaza where monkeys, goats, peacocks and squirrels can be seen up close.",
+            "th": "สวนสาธารณะในเมืองที่มีลานสัตว์ ให้ดูลิง แพะ นกยูง และกระรอกใกล้ ๆ"
+          },
+          "why": {
+            "en": "Feeding and touching the animals is fun for children, the page says.",
+            "th": "เว็บไซต์บอกว่าเด็ก ๆ สนุกกับการให้อาหารและสัมผัสสัตว์"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nagasaki Park, Kamanishiyama-machi, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.at-nagasaki.jp/spot/60664"
+        },
+        {
+          "name": {
+            "en": "Iojima Costa del Sol Beach",
+            "th": "หาดคอสตาเดลโซล เกาะอิโอจิมะ"
+          },
+          "local": "伊王島海水浴場 コスタ・デル・ソル",
+          "kind": "beach",
+          "area": {
+            "en": "Iojima island, Nagasaki",
+            "th": "เกาะอิโอจิมะ นางาซากิ"
+          },
+          "what": {
+            "en": "A beach with clear shallow water, the Nagasaki Water Island sea play course and beach huts.",
+            "th": "ชายหาดน้ำใสตื้น มีคอร์สเล่นน้ำทะเล Nagasaki Water Island และกระท่อมริมหาด"
+          },
+          "why": {
+            "en": "Two children's pools and rental play equipment along the shore.",
+            "th": "มีสระเด็ก 2 สระ และอุปกรณ์เล่นน้ำให้เช่าริมชายหาด"
+          },
+          "tip": {
+            "en": "Swimming season 11 Jul to 31 Aug 2026; summer only",
+            "th": "ฤดูเล่นน้ำ 11 ก.ค.–31 ส.ค. 2026 เปิดเฉพาะหน้าร้อน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Costa del Sol Beach, Iojima, Nagasaki, Japan",
+          "ok": "2026-11",
+          "src": "https://www.at-nagasaki.jp/spot/396"
         }
       ]
     },
@@ -6508,6 +6712,87 @@
           "q": "Shimo-Imaichi Station, Nikko, Japan",
           "ok": "2026-11",
           "src": "https://kids.rurubu.jp/article/174376/"
+        },
+        {
+          "name": {
+            "en": "Chuzenji Lakeside Boathouse",
+            "th": "บ้านเรือริมทะเลสาบชูเซ็นจิ"
+          },
+          "local": "中禅寺湖畔ボートハウス",
+          "kind": "views",
+          "area": {
+            "en": "Lake Chuzenji, Nikko",
+            "th": "ทะเลสาบชูเซ็นจิ นิกโก"
+          },
+          "what": {
+            "en": "A lakeside boathouse rebuilt to its 1947 look, with a wooden deck over the lake and old boats on show.",
+            "th": "บ้านเรือริมทะเลสาบที่สร้างใหม่ให้เหมือนปี 1947 มีระเบียงไม้ยื่นเหนือทะเลสาบและเรือเก่าให้ชม"
+          },
+          "why": {
+            "en": "The deck juts out over the lake, and entry is free.",
+            "th": "ระเบียงยื่นออกไปเหนือทะเลสาบ และเข้าชมฟรี"
+          },
+          "tip": {
+            "en": "Open 4 Apr to 30 Nov; closed Mondays in April · 09:00–17:00 (16:00 in April and 11–30 Nov)",
+            "th": "เปิด 4 เม.ย.–30 พ.ย. ปิดวันจันทร์ในเดือนเมษายน · 09:00–17:00 (16:00 ในเดือนเมษายนและ 11–30 พ.ย.)"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Chuzenji Lakeside Boathouse, Lake Chuzenji, Nikko, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nikko-nsm.co.jp/boathouse.html"
+        },
+        {
+          "name": {
+            "en": "Nikko Yumoto Onsen Ski Slope",
+            "th": "ลานสกีนิกโกยุโมโตะออนเซ็น"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Yumoto Onsen, Nikko",
+            "th": "ยุโมโตะออนเซ็น นิกโก"
+          },
+          "what": {
+            "en": "A snow slope with gentle courses for beginner skiers and snowboarders.",
+            "th": "ลานหิมะที่มีเส้นทางเบา ๆ สำหรับมือใหม่ที่เล่นสกีและสโนว์บอร์ด"
+          },
+          "why": {
+            "en": "Small children can go sledding on the soft, fluffy snow, and lessons include children.",
+            "th": "เด็กเล็กเล่นเลื่อนบนหิมะนุ่มฟู และมีคลาสเรียนสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Winter only, when Nikko is snow-covered",
+            "th": "เปิดเฉพาะหน้าหนาวที่นิกโกมีหิมะปกคลุม"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nikko Yumoto Onsen Ski Park, Yumoto, Nikko, Japan",
+          "ok": "2026-11",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/"
         }
       ]
     },
@@ -12433,6 +12718,86 @@
           "q": "Nobikko Jumbo, AEON Town Sendai Izumi Osawa, 1-5-1 Oosawa, Izumi-ku, Sendai, Japan",
           "ok": "2026-11",
           "src": "https://www.asoview.com/note/6205/"
+        },
+        {
+          "name": {
+            "en": "Smile Glico Park",
+            "th": "สไมล์ กลิโกะ ปาร์ก"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Rakuten Mobile Park Miyagi, Sendai",
+            "th": "ราคูเท็น โมบาย ปาร์ก มิยากิ เซนได"
+          },
+          "what": {
+            "en": "A small amusement park with many attractions and a lawn plaza, next to the baseball stadium.",
+            "th": "สวนสนุกเล็ก ๆ ข้างสนามเบสบอล มีเครื่องเล่นหลายอย่างและลานหญ้า"
+          },
+          "why": {
+            "en": "Many attractions and a lawn plaza, and a Ferris wheel that looks down over the whole stadium.",
+            "th": "มีเครื่องเล่นหลายอย่างและลานหญ้า กับชิงช้าสวรรค์ที่มองเห็นทั้งสนาม"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Smile Glico Park, Rakuten Mobile Park Miyagi, Sendai, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/20987/"
+        },
+        {
+          "name": {
+            "en": "Sendai City Wildflower Garden",
+            "th": "สวนดอกไม้ป่าเมืองเซนได"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Sendai, about 20 min by bus from the station",
+            "th": "เซนได นั่งรถบัสจากสถานีราว 20 นาที"
+          },
+          "what": {
+            "en": "Vast grounds with about 1,100 wild plant species from the Tohoku region, in alpine, hydrangea and Acorn Hill areas.",
+            "th": "พื้นที่กว้างที่มีพืชป่าจากภูมิภาคโทโฮคุราว 1,100 ชนิด แบ่งเป็นโซนอัลไพน์ ไฮเดรนเยีย และเนินโอ๊ก"
+          },
+          "why": {
+            "en": "A lawn plaza and sculpture plaza for picnics, and an easy stroll through the seasons.",
+            "th": "มีลานหญ้าและลานประติมากรรมไว้ปิกนิก เดินเล่นสบาย ๆ ตามฤดูกาล"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sendai City Wild Grass Garden, Sendai, Japan",
+          "ok": "2026-11",
+          "src": "https://www.gltjp.com/en/article/item/20987/"
         }
       ]
     },
@@ -13812,6 +14177,86 @@
           "q": "Meiji-Mura, Inuyama, Aichi",
           "ok": "2026-11",
           "src": "https://japanesefestival.net/nagoya/inuyama-castle-meiji-mura-day-trip/"
+        },
+        {
+          "name": {
+            "en": "Nagoya Port Sea Train Land",
+            "th": "นาโกย่า พอร์ต ซี เทรน แลนด์"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Nagoya Port, Nagoya",
+            "th": "ท่าเรือนาโกย่า นาโกย่า"
+          },
+          "what": {
+            "en": "An amusement park at the port with rides and a Ferris wheel.",
+            "th": "สวนสนุกริมท่าเรือ มีเครื่องเล่นและชิงช้าสวรรค์"
+          },
+          "why": {
+            "en": "Rides for children, plus the Digital ASOBU interactive games and video experience.",
+            "th": "มีเครื่องเล่นสำหรับเด็ก และเกมโต้ตอบ Digital ASOBU กับประสบการณ์วิดีโอ"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nagoya Port Sea Train Land, Minato, Nagoya, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nagoya-info.jp/en/spot/detail/12/"
+        },
+        {
+          "name": {
+            "en": "Brother Museum",
+            "th": "พิพิธภัณฑ์บราเธอร์"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Southern Nagoya",
+            "th": "นาโกย่าตอนใต้"
+          },
+          "what": {
+            "en": "A museum about the history of manufacturing, shown through hands-on experiences and displays.",
+            "th": "พิพิธภัณฑ์เรื่องประวัติศาสตร์การผลิต นำเสนอผ่านกิจกรรมลงมือทำและนิทรรศการ"
+          },
+          "why": {
+            "en": "Hands-on experiences that let children try the manufacturing history for themselves.",
+            "th": "มีกิจกรรมลงมือทำให้เด็กลองประวัติศาสตร์การผลิตด้วยตัวเอง"
+          },
+          "tip": {
+            "en": "Reservations are required for admission; check the official website",
+            "th": "ต้องจองก่อนเข้าชม เช็กเว็บไซต์ทางการ"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Brother Museum, Nagoya, Japan",
+          "ok": "2026-11",
+          "src": "https://www.nagoya-info.jp/en/spot/detail/129/"
         }
       ]
     },
@@ -15183,6 +15628,88 @@
           "q": "Kobe Municipal Forest Botanical Garden, Kita-ku, Kobe, Japan",
           "ok": "2026-11",
           "src": "https://kobe-brighten.pages.dev/en/spots/kobe-city-forest-botanical-garden"
+        },
+        {
+          "name": {
+            "en": "Kobekko Land",
+            "th": "โคเบ็กโกะแลนด์"
+          },
+          "local": "こべっこランド",
+          "kind": "play",
+          "area": {
+            "en": "Hyogo ward, Kobe",
+            "th": "เขตเฮียวโงะ โกเบ"
+          },
+          "what": {
+            "en": "A large children's centre run by Kobe city, with a play room, a library corner, a craft studio and a music studio.",
+            "th": "ศูนย์เด็กขนาดใหญ่ของเมืองโกเบ มีห้องเล่น มุมห้องสมุด ห้องงานฝีมือ และห้องดนตรี"
+          },
+          "why": {
+            "en": "Room to play and learn indoors, with several different spaces for children to try.",
+            "th": "เล่นและเรียนรู้ในร่มได้ มีหลายโซนให้เด็กลอง"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kobekko Land, Hyogo, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5414/"
+        },
+        {
+          "name": {
+            "en": "KOBE SUPER STADIUM",
+            "th": "โกเบ ซูเปอร์ สเตเดียม"
+          },
+          "local": "神戸スーパースタジアム",
+          "kind": "play",
+          "area": {
+            "en": "ROKKO i PARK, Rokko Island, Kobe",
+            "th": "ร็อกโกะ ไอ ปาร์ก เกาะร็อกโกะ โกเบ"
+          },
+          "what": {
+            "en": "An indoor sports-entertainment venue inside the ROKKO i PARK shopping complex on Rokko Island.",
+            "th": "สถานที่เล่นกีฬาแบบบันเทิงในร่ม อยู่ในห้าง ROKKO i PARK บนเกาะร็อกโกะ"
+          },
+          "why": {
+            "en": "Indoor, so it works on a rainy day, with a large hall of activities to try.",
+            "th": "อยู่ในร่ม เหมาะวันฝนตก มีโถงใหญ่ให้ลองกิจกรรมหลายอย่าง"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "KOBE SUPER STADIUM, ROKKO i PARK, Higashinada, Kobe, Japan",
+          "ok": "2026-11",
+          "src": "https://www.asoview.com/note/5414/"
         }
       ]
     }
