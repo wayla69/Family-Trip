@@ -1020,6 +1020,234 @@
           "why": "closed until March 2027, hotel guests only"
         }
       ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "title": "Time Out (Macau 2020; Hong Kong 2025–2026 cha chaan teng and street food guides) and Little Steps Asia (2023 family, 2025 brunch, 2026 breakfast guides)",
+      "rule": "Owner, 27 Nov 2026: older guides allowed for the place and its facts (\"Allow older guides + Maps\"), each place kept only when Google Maps shows it not closed, a review from the last six months and the name and address matching. OpenRice skipped at the owner's request.",
+      "added": [
+        {
+          "name": "Apomac",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Apomac\": 190 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "A Vencedora",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"A Vencedora 坤記餐室\": 405 reviews, newest seen 23 days ago, not marked closed"
+        },
+        {
+          "name": "Bistro d'Indochine (BIC)",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Bistro D’Indochine\": 96 reviews, newest seen 13 days ago, not marked closed"
+        },
+        {
+          "name": "Clube Militar de Macau",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Macau Military Club Restaurant\": 449 reviews, newest seen 10 days ago, not marked closed"
+        },
+        {
+          "name": "Hin Kei",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Estabelcimento de Comida Hin Kei\": 67 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Nam Peng Café",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Nam Ping Cafe\": 1,292 reviews, newest seen 4 weeks ago, not marked closed"
+        },
+        {
+          "name": "Sei Kee Cafe",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Sei Kee Cafe\": 1,035 reviews, newest seen 4 weeks ago, not marked closed"
+        },
+        {
+          "name": "Choi Lou Kei",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"Choi Lou Kei\": 84 reviews, newest seen 26 days ago, not marked closed"
+        },
+        {
+          "name": "The Home Cafe (Shea I)",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"舍意咖啡室 The Home Cafe\": 26 reviews, newest seen 19 days ago, not marked closed"
+        },
+        {
+          "name": "Ma Hing Hong",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"馬慶康南天咖啡室\": 335 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Cafe Neptune",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"CAFE Neptune\": 121 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Coloane Pier Noodle Shop",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"Coloane Pier Ribbon Soup Shop\": 233 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Chion Chau Cafe",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Cafe Chion Chau\": 146 reviews, newest seen 6 days ago, not marked closed"
+        },
+        {
+          "name": "Comidas Chi Kei",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"梓記牛什\": 111 reviews, newest seen 24 days ago, not marked closed"
+        },
+        {
+          "name": "Daily Meals",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"天天食 Daily Meals\": 9 reviews, newest seen 10 days ago, not marked closed"
+        },
+        {
+          "name": "Hang Heong Un",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Hang Heong Un\": 270 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Jim Sai Padarias",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Jim Sai Bakery\": 135 reviews, newest seen a day ago, not marked closed"
+        },
+        {
+          "name": "3 Sardines",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/family-friendly-restaurants-in-macau/",
+          "srcDate": "Little Steps Asia, updated 24 Nov 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"3 Sardines Portuguese Restaurant\": 1,014 reviews, newest seen 2 weeks ago, not marked closed"
+        },
+        {
+          "name": "La Famiglia",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/family-friendly-restaurants-in-macau/",
+          "srcDate": "Little Steps Asia, updated 24 Nov 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"La Famiglia\": 189 reviews, newest seen 5 days ago, not marked closed"
+        },
+        {
+          "name": "La Gondola",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/family-friendly-restaurants-in-macau/",
+          "srcDate": "Little Steps Asia, updated 24 Nov 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"La Gondola 陸舟餐廳\": 135 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Aux Beaux Arts",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-brunches-buffets/",
+          "srcDate": "Little Steps Asia, updated 27 Jan 2025",
+          "map": "Google Maps \"Aux Beaux Arts 寶雅座\": 60 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Hawker Hawker",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-brunches-buffets/",
+          "srcDate": "Little Steps Asia, updated 27 Jan 2025",
+          "map": "Google Maps \"Hawker Hawker\": 84 reviews, newest seen 17 days ago, not marked closed"
+        },
+        {
+          "name": "Belcanção",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-brunches-buffets/",
+          "srcDate": "Little Steps Asia, updated 27 Jan 2025",
+          "map": "Google Maps \"Belcancao\": 76 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "The Grand Buffet (Grand Lisboa Palace)",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"The Grand Buffet\": 543 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "mezza9",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"mezza9 Macau\": 325 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "The Manor (St. Regis)",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"The Manor\": 170 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Brasserie de Paris",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Brasserie de Paris\": 94 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Praha Restaurante",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Praha Restaurante\": 43 reviews, newest seen 19 days ago, not marked closed"
+        },
+        {
+          "name": "Café Panorama",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Café Panorama\": 23 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "Vida Rica",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Vida Rica Restaurant\": 65 reviews, newest seen a day ago, not marked closed"
+        },
+        {
+          "name": "Café Fontana",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Wynn Palace: Cafe Fontana\": 43 reviews, newest seen 2 months ago, not marked closed"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Blissful Carrot, Casa do Porco Preto, Carlos Restaurant, Medan Indonesian Restaurant, Duckling Gourmet, Lotus Palace, Feast (The Londoner)",
+          "why": "Google Maps marks each permanently closed"
+        },
+        {
+          "name": "Splash (Four Seasons)",
+          "why": "Google Maps marks it temporarily closed"
+        },
+        {
+          "name": "Friendmily, Japas, Hong Heng Tai",
+          "why": "Google Maps: newest review a year or more old"
+        },
+        {
+          "name": "Hon Kee Coffee (Coloane), Alves Cafe",
+          "why": "Google Maps: newest review seven months old"
+        },
+        {
+          "name": "Tacos (Taipa)",
+          "why": "Google Maps shows \"TACOS by miumiu\" at another address"
+        },
+        {
+          "name": "Mei Mei Hin",
+          "why": "Google Maps shows another restaurant (I Food) at its address"
+        },
+        {
+          "name": "Kam Seng, San Hong Cafe",
+          "why": "Google Maps found them only at other addresses than the guide gives"
+        },
+        {
+          "name": "Mistral (Sofitel)",
+          "why": "Google Maps found only the hotel"
+        }
+      ]
     }
   ]
 }

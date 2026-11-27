@@ -1066,3 +1066,9 @@ on Google Maps only (not closed, a review in the last six months, the name match
   Litoral, Kapok, Unique, Fong Kei, Mok Yee Kei), the UTM training restaurant's Macanese menu, and the resorts' Cantonese, Japanese and
   European rooms. Left out: The Kitchen, 002 Mohinga, Ng Teng Kei, Chan Seng Kei and Mizumi (no recent review), Don Alfonso 1890 (Maps
   shows another name). Macau now holds 147. Proof in `docs/library-proof/mo-macau.json`.
+- **Round 2**: +31 from Time Out (the Macau "off the eaten path" guide of 2020, and Time Out Hong Kong's cha chaan teng and street-food guides
+  updated September 2026) and Little Steps Asia (family-friendly 2023, brunches 2025, hotel breakfasts 2026). The owner allowed older
+  guides for the place and its facts; each place is kept only with a Google Maps review from the last six months and a matching name and
+  address. Old-town cafés, bakeries and dessert shops (Nam Peng, Ma Hing Hong, Chion Chau, Jim Sai, Hang Heong Un, Sei Kee), Clube Militar,
+  Coloane's pier noodles and La Gondola, Taipa's La Famiglia and Cafe Neptune, and the hotels' breakfast rooms. Seven places in these
+  guides are closed for good on Maps, one temporarily. Macau now holds 178.
