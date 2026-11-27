@@ -1013,3 +1013,7 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   search, so the owner chose (27 Nov 2026) Google Maps and the MICHELIN Guide 2026 — re-inspected every year — as the two checks for places
   in the guide; every other place still needs OpenRice (Little Mario's, One-ThirtyOne, Lantana and Oolaa wait for it). The proof says which
   check each place had.
+- **Round 4**: +50 from the MICHELIN Guide 2026: the rest of the Bib Gourmand in Kowloon and the New Territories (Kung Wo Beancurd
+  Factory, Lau Sum Kee, Yue Kee, Tai Wing Wah…), the street-food stalls and sweet shops (Hop Yik Tai, Man Kee Cart Noodles, Mrs. Fong,
+  Hung Hom Pancake, So Kee, Owl's…) and the island's casual picks (Luk Yu Tea House, Ho Lee Fook, Kam's Roast Goose…). Each checked on
+  Google Maps; Temple Street Beef Offal left out (another name at its address). Hong Kong now holds 165.
