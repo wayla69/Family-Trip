@@ -428,6 +428,206 @@
           "why": "no Galaxy listing on Google Maps"
         }
       ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "The resort's own restaurant page (what it serves, its hours and children's prices), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Futago (City of Dreams)",
+          "src": "https://www.cityofdreamsmacau.com/en/dining/futago-macau",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Sweets (Wynn Palace)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/dining/sweets",
+          "map": "Google Maps: open, a review 19 days ago"
+        },
+        {
+          "name": "Pronto (Wynn Palace)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/dining/pronto",
+          "map": "Google Maps: open, a review 6 days ago"
+        },
+        {
+          "name": "99 Noodles (Wynn Palace)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/dining/99-noodles-wynn-palace",
+          "map": "Google Maps: open, a review 5 months ago"
+        },
+        {
+          "name": "Lakeside Trattoria (Wynn Macau)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/dining/lakeside-trattoria",
+          "map": "Google Maps: open, a review 12 days ago"
+        },
+        {
+          "name": "Chatterbox Café (MGM Macau)",
+          "src": "https://www.mgm.mo/en/dining/mgm-macau/chatterbox-cafe",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Hei Kei Wanton Noodles (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/hei-kei-wanton-noodles.html",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Rasa Singapura (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/rasa-singapura.html",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "O Castiço (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/o-castico.html",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Clay Pot King (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/claypot-king.html",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Chiang Mai Thai (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/chiangmait-thai.html",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Tsui Wah (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/tsui-wah-restaurant/",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Blossom Palaces (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/blossom-palaces/",
+          "map": "Google Maps: open, a review 10 days ago"
+        },
+        {
+          "name": "Waso Cafe (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/waso-cafe/",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Sham Tseng Chan Kee Roasted Goose (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/chan-kee-roasted-goose/",
+          "map": "Google Maps: open, a review a week ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Flaming Queen, Fontana, Red 8 (Wynn Macau), Good Luck Hong Kong Restaurant, Hoi Ngan Hoi Kei",
+          "why": "newest Google Maps review 6 months old or more"
+        },
+        {
+          "name": "Ging Sun Ho, San Mou I, Beef #1, Xishangong, Fat Boy Dumplings, Xita Laotaitai",
+          "why": "no Google Maps listing found"
+        },
+        {
+          "name": "Ocean Empire, Ximen Taiwanese Bistro",
+          "why": "a low rating or a handful of reviews"
+        },
+        {
+          "name": "Bacha Coffee, Aux Beaux Arts",
+          "why": "a coffee boutique and a fine-dining brasserie; not for children"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "The resort's or Macau Tower's own restaurant page, then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Yoshimori Teppanyaki (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/yoshimori-teppanyaki/",
+          "map": "Google Maps: open, a review 15 days ago"
+        },
+        {
+          "name": "The Ritz-Carlton Café (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/the-ritz-carlton-cafe/",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Lord Stow's Bakery & Café (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/lord-stow-bakery-cafe.html",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Hip Seng Seafood Hot Pot (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/hip-seng-seafood-hot-pot-restaurant/",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "360° Café (Macau Tower)",
+          "src": "https://www.macautower.com.mo/en/dining/360-cafe/",
+          "map": "Google Maps: open, a review 4 days ago"
+        },
+        {
+          "name": "Bi Ying (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/bi-ying",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Herbal Treasures (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/herbal-treasures",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Tai Er (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/tai-er.html",
+          "map": "Google Maps: open, newest review 2 months ago"
+        },
+        {
+          "name": "Edo Japanese Restaurant (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/edo.html",
+          "map": "Google Maps: open, a review 25 days ago"
+        },
+        {
+          "name": "Heytea (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/heytea.html",
+          "map": "Google Maps: open, a review 8 days ago"
+        },
+        {
+          "name": "Chagee (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/chagee.html",
+          "map": "Google Maps: open, newest review a day ago"
+        },
+        {
+          "name": "Saffron (Banyan Tree)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/saffron/",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Lua Azul (Macau Tower)",
+          "src": "https://www.macautower.com.mo/en/dining/lua-azul/",
+          "map": "Google Maps: open, a review 12 days ago"
+        },
+        {
+          "name": "Tromba Rija (Macau Tower)",
+          "src": "https://www.macautower.com.mo/en/dining/tromba-rija/",
+          "map": "Google Maps: open, newest review 2 weeks ago"
+        },
+        {
+          "name": "Brasserie (The Parisian)",
+          "src": "https://www.parisianmacao.com/restaurants/brasserie.html",
+          "map": "Google Maps: open (Google lists it as a French restaurant), a review a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Café on 4 (Macau Tower)",
+          "why": "marked closed on Google Maps"
+        },
+        {
+          "name": "Kyo Watami, Lobby Café (Studio City), Wu Fang Zhai",
+          "why": "newest Google Maps review 7 months old or more"
+        },
+        {
+          "name": "La Chine, Taste Yue, Good Fortune Kitchen (The Parisian)",
+          "why": "the page says nothing about the food, or the Maps listing found was another branch"
+        },
+        {
+          "name": "Raffles Lounge & Terrace, Glorious BBQ King, Casa da Rosa, Pho 88",
+          "why": "a lounge bar, a low rating or a handful of reviews"
+        }
+      ]
     }
   ]
 }

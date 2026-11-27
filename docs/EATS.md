@@ -1043,3 +1043,5 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Teppanyaki) and Sai Kung (Dec 2025: Sing Kee Seafood, Jaspas, Thai Dao, Zeugma, Honeymoon Dessert, Camden Town…). Google Maps only.
   Nine places in these guides are closed on Maps (Walt's Café temporarily; Yoajung, More Yogurt, Cali-Mex and five in Sai Kung for good).
   Hong Kong now holds 350.
+
+- **27 Nov 2026, Macau, rounds 47–48**: +30 to reach 100, from the own restaurant pages of City of Dreams, Wynn Palace and Wynn Macau, MGM Macau, the Venetian food court, Galaxy and Broadway Macau, Studio City, the Londoner, the Parisian and Macau Tower, each checked on Google Maps. Proof in `docs/library-proof/mo-macau.json`.
