@@ -1043,3 +1043,8 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Teppanyaki) and Sai Kung (Dec 2025: Sing Kee Seafood, Jaspas, Thai Dao, Zeugma, Honeymoon Dessert, Camden Town…). Google Maps only.
   Nine places in these guides are closed on Maps (Walt's Café temporarily; Yoajung, More Yogurt, Cali-Mex and five in Sai Kung for good).
   Hong Kong now holds 350.
+- **Round 9**: +23 from Discover Hong Kong's food pages (official, undated, read 2026-11-27): Tai Kwun (Café Claudel, The Chinese
+  Library), desserts (Nun, Fleur, Via Tokyo, Messina at the Peak), Kai Tak (Food Gala, Gyu-Kaku J, Ha Noi, Bellavista, Yonna Yonna),
+  buffets (The Food Gallery, Jashan, The Grand Buffet), cheese (The Swiss Chalet, Terroirs by LQV, ROUCOU) and special meals (The
+  Verandah, Louise, Popinjays, Lobster Bar & Grill, L'Atelier de Joël Robuchon, Wing). Google Maps only. Eight left out: Jing closed for
+  good, The Dutch's newest review two years old, six with no matching place on Maps. Hong Kong now holds 373.

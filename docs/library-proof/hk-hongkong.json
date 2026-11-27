@@ -2437,6 +2437,218 @@
           "why": "a sake-focused izakaya open evenings only — left out as nightlife"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "eats",
+      "title": "Round 9 — Discover Hong Kong food pages (Tai Kwun, desserts, Kai Tak, buffets, cheese, design, gourmet), Google Maps only",
+      "checked": "2026-11-27",
+      "rule": "Owner, 27 Nov 2026: every place from a dated 2025–2026 page read in the owner's Chrome, then Google Maps (not marked permanently or temporarily closed, a review from the last six months, the map's name matching the page's) and OpenRice (listed, not Closed Down or Relocated). A price is OpenRice's band per person where it showed one.",
+      "added": [
+        {
+          "name": "Café Claudel",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/6-must-try-restaurants-in-tai-kwun.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Café Claudel\": 496 reviews, newest seen 13 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Chinese Library",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/6-must-try-restaurants-in-tai-kwun.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"The Chinese Library\": 649 reviews, newest seen a day ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Nun Desserts Cafe",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/the-best-artistic-cakes-and-creative-desserts-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Nun Desserts Cafe\": 567 reviews, newest seen 7 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Fleur",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/the-best-artistic-cakes-and-creative-desserts-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Fleur (Tsuen Wan)\": 203 reviews, newest seen 11 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Via Tokyo",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/hong-kongs-essential-desserts-to-beat-the-heat.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Via Tokyo Cafe\": 979 reviews, newest seen a month ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Messina The Peak",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/hong-kongs-essential-desserts-to-beat-the-heat.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Messina (The Peak)\": 118 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Food Gala",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/exciting-eats-at-kai-tak-sports-park-and-beyond.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Food Gala\": 22 reviews, newest seen 3 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Gyu-Kaku J",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/exciting-eats-at-kai-tak-sports-park-and-beyond.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"牛角J (Gyu-Kaku J)\": 22 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Ha Noi Vietnamese Cuisine",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/exciting-eats-at-kai-tak-sports-park-and-beyond.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Ha Noi 越南菜（啟德體育園零售館）\": 123 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Bellavista",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/exciting-eats-at-kai-tak-sports-park-and-beyond.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Bellavista\": 326 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Yonna Yonna",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/exciting-eats-at-kai-tak-sports-park-and-beyond.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Yonna Yonna by Yanbaru Gelato\": 25 reviews, newest seen 27 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Food Gallery",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/the-ultimate-indulgence-a-buffet-for-every-occasion.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"The Food Gallery\": 441 reviews, newest seen 13 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Jashan Celebrating Indian Cuisine",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/the-ultimate-indulgence-a-buffet-for-every-occasion.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Jashan Celebrating Indian Cuisine\": 695 reviews, newest seen 2 weeks ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Grand Buffet",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/the-ultimate-indulgence-a-buffet-for-every-occasion.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"The Grand Buffet\": 1,539 reviews, newest seen a month ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Swiss Chalet",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-cheese-lovers-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"The Swiss Chalet\": 462 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Terroirs by LQV",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-cheese-lovers-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Terroirs by LQV\": 132 reviews, newest seen 5 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "ROUCOU",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/best-restaurants-for-cheese-lovers-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"ROUCOU\": 132 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Verandah",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/gourmet-adventures-unique-dining-experiences-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"The Verandah (The Repulse Bay)\": 721 reviews, newest seen 2 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Louise",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/hong-kong-s-most-beautifully-designed-restaurants.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"LOUISE\": 703 reviews, newest seen 3 months ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Popinjays",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/hong-kong-s-most-beautifully-designed-restaurants.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Popinjays\": 743 reviews, newest seen 4 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "The Lobster Bar & Grill",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/gourmet-adventures-unique-dining-experiences-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"Lobster Bar and Grill\": 299 reviews, newest seen 6 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "L'Atelier de Joël Robuchon",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/gourmet-adventures-unique-dining-experiences-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"L'Atelier de Joël Robuchon Hong Kong\": 825 reviews, newest seen a week ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        },
+        {
+          "name": "Wing",
+          "src": "https://www.discoverhongkong.com/eng/food-and-drink/8-best-modern-chinese-restaurants-in-hong-kong.html",
+          "date": "Hong Kong Tourism Board page, undated, read 2026-11-27",
+          "map": "Google Maps \"WING Restaurant\": 125 reviews, newest seen 3 days ago, not marked closed",
+          "openrice": "skipped at the owner's request: \"Use Google Maps only, skip OpenRice\" (27 Nov 2026)"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Oookie (artistic cakes)",
+          "from": "Discover Hong Kong, artistic cakes and desserts",
+          "why": "Google Maps: one review, a year old"
+        },
+        {
+          "name": "Ming Garden",
+          "from": "Discover Hong Kong, essential desserts",
+          "why": "Google Maps showed another place (Min Tong), no match"
+        },
+        {
+          "name": "So Gor",
+          "from": "Discover Hong Kong, Kai Tak eats",
+          "why": "Google Maps found no place of that name"
+        },
+        {
+          "name": "Washabu",
+          "from": "Discover Hong Kong, Kai Tak eats",
+          "why": "Google Maps found no place of that name"
+        },
+        {
+          "name": "Dans le Noir?",
+          "from": "Discover Hong Kong, gourmet adventures",
+          "why": "Google Maps showed only the hotel, not the restaurant"
+        },
+        {
+          "name": "7Paintings",
+          "from": "Discover Hong Kong, beautifully designed restaurants",
+          "why": "Google Maps matched a place in Bangkok only"
+        },
+        {
+          "name": "Jing",
+          "from": "Discover Hong Kong, 8 best modern Chinese",
+          "why": "Google Maps marks it permanently closed"
+        },
+        {
+          "name": "The Dutch",
+          "from": "Discover Hong Kong, cheese lovers",
+          "why": "Google Maps: newest review two years old"
+        }
+      ]
     }
   ]
 }
