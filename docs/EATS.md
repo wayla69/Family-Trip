@@ -1007,3 +1007,9 @@ Relocated); a price is OpenRice's band per person where it showed one. Proof in 
   Kee). Six places on the 2026 family list are marked permanently closed on Maps (Chiikawa Ramen Buta, Mr. Tree, Baked at The Pulse, Turtle
   by the Sea, Cafe Roma, Groundswell) and were left out with the rest named in the proof. OpenRice shows a slide puzzle after a run of
   searches, so the next rounds go a few dozen places at a time.
+- **Round 3**: +50. Seven more from the family list (Treasure Island Beach Club, Pane e Latte, Cococabana, Classified, Amalfitana, Nonna,
+  Little Cove Espresso), checked on both maps, and 43 of the MICHELIN Guide 2026's Bib Gourmand on the island and in Kowloon (Uncle Quek,
+  Sister Wah, Mak Man Kee, Ah Chun Shandong Dumpling…). OpenRice now puts up its slide puzzle after every
+  search, so the owner chose (27 Nov 2026) Google Maps and the MICHELIN Guide 2026 — re-inspected every year — as the two checks for places
+  in the guide; every other place still needs OpenRice (Little Mario's, One-ThirtyOne, Lantana and Oolaa wait for it). The proof says which
+  check each place had.
