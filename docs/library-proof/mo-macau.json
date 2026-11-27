@@ -1020,6 +1020,304 @@
           "why": "closed until March 2027, hotel guests only"
         }
       ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "A dated or official source (the Macao Government Tourism Office's restaurant register, holders of its Quality Tourism Services Merchant Award; hongkong-trip.com's Macau food guide, 2026; Trip.com's Macau restaurants, updated November 2026), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months; what a place serves is the source's or Google's own category.",
+      "added": [
+        {
+          "name": "Restaurante Fat Siu Lau",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Cozinha Pinocchio (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Miramar (Hac Sa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 11 days ago"
+        },
+        {
+          "name": "La Gondola (Cheoc Van)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Café Panorama (Grand Coloane)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Brown & Friends Cafe & Bistro (Lisboeta)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 20 days ago"
+        },
+        {
+          "name": "Shanghai 4.5.6 (Hotel Lisboa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 5 months ago"
+        },
+        {
+          "name": "Brilliant Lake (Hotel Guia)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Federal Restaurant",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 8 days ago"
+        },
+        {
+          "name": "Hao Guo (MGM Cotai)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 23 days ago"
+        },
+        {
+          "name": "Hua Ting (Grand Lisboa Palace)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 16 days ago"
+        },
+        {
+          "name": "Hoi Wan Café",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 13 days ago"
+        },
+        {
+          "name": "Imperial Kitchen (Crowne Plaza)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 27 days ago"
+        },
+        {
+          "name": "Kam Lai Heen (Grand Lapa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "La Cucina Italiana (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Naam Thai (Grand Lapa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 20 days ago"
+        },
+        {
+          "name": "Portas do Sol (Hotel Lisboa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Praha (Harbourview Hotel)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Nga Heong Burmese Restaurant",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Kam Wan (Northeastern Chinese)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Antica Trattoria",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Round-the-Clock Coffee Shop (Grand Lisboa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 27 days ago"
+        },
+        {
+          "name": "Shun Hin Seafood Restaurant",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Signature Noodles (Lisboeta)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 27 days ago"
+        },
+        {
+          "name": "Stanley's Cafe (Lisboeta)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 3 days ago"
+        },
+        {
+          "name": "The Grand Buffet (Grand Lisboa Palace)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 2 days ago"
+        },
+        {
+          "name": "Vida Rica (Mandarin Oriental)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Wa Fong Restaurant",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Talay Thai (Fisherman's Wharf)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Tenmasa (Altira)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Belcanção (Four Seasons)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Café Bela Vista (Grand Lapa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Copa Steakhouse (Sands Macao)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Riquexó",
+          "src": "https://www.hongkong-trip.com/guides/macau-food-guide/",
+          "map": "Google Maps: open, a review 18 days ago"
+        },
+        {
+          "name": "Henri's Galley",
+          "src": "https://www.hongkong-trip.com/guides/macau-food-guide/",
+          "map": "Google Maps: open, a review 23 days ago"
+        },
+        {
+          "name": "Dom Galo",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review 12 days ago"
+        },
+        {
+          "name": "Naughty Nuri's",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review 9 days ago"
+        },
+        {
+          "name": "Café Vong Kei",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Café Ip Chi Kei",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Samurai Fish (Tap Seac)",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Nam Ping Cafe",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review 4 weeks ago"
+        },
+        {
+          "name": "Guincho a Galera (Hotel Lisboa)",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review 2 days ago"
+        },
+        {
+          "name": "Hang Heong Un",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review 13 days ago"
+        },
+        {
+          "name": "Lord Stow's Bakery (Taipa)",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Aurora (Altira)",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Sei Kee Cafe (Taipa)",
+          "src": "https://www.trip.com/restaurant/macau-39/",
+          "map": "Google Maps: open, a review 4 weeks ago"
+        },
+        {
+          "name": "Restaurante Solmar",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Macau Military Club Restaurant",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 10 days ago"
+        },
+        {
+          "name": "Chinese Cafe Imprint (Studio City)",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 7 days ago"
+        },
+        {
+          "name": "Uncle Bo Noodle Restaurant",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 23 days ago"
+        },
+        {
+          "name": "DIVA (Studio City)",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Coloane Pier Ribbon Soup Shop",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 4 days ago"
+        },
+        {
+          "name": "Macao Galo",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 3 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Café Noite e Dia",
+          "why": "the register says closed temporarily"
+        },
+        {
+          "name": "Kwun Hoi Heen, Catalpa Garden, Dong Guo, Golden Court, Li Jing Xuan, Temptations, The Kitchen, Villa Picasso, Restaurante Amigo, Valência, Gold Coast Oyster & Seafood, Fei Chai Man",
+          "why": "newest Google Maps review six months old or more"
+        },
+        {
+          "name": "Splash",
+          "why": "marked temporarily closed on Google Maps"
+        },
+        {
+          "name": "Ka Nin Wa, Ping, Zam Zam",
+          "why": "neither the register nor Google says what they serve"
+        },
+        {
+          "name": "Tim Fat Vun Chai Chi",
+          "why": "its highlight is shark fin soup"
+        },
+        {
+          "name": "Casa Maquista, Ou Pou, Sun Yick and other Maps favourites",
+          "why": "no dated source found in this round"
+        }
+      ]
     }
   ]
 }

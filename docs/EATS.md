@@ -1066,3 +1066,5 @@ on Google Maps only (not closed, a review in the last six months, the name match
   Litoral, Kapok, Unique, Fong Kei, Mok Yee Kei), the UTM training restaurant's Macanese menu, and the resorts' Cantonese, Japanese and
   European rooms. Left out: The Kitchen, 002 Mohinga, Ng Teng Kei, Chan Seng Kei and Mizumi (no recent review), Don Alfonso 1890 (Maps
   shows another name). Macau now holds 147. Proof in `docs/library-proof/mo-macau.json`.
+
+- **27 Nov 2026, Macau, round 50**: +53 to reach 200: holders of the Macao Government Tourism Office's Quality Tourism award from its restaurant register, hongkong-trip.com's 2026 Macau food guide and Trip.com's Macau list (updated November 2026), each checked on Google Maps. Proof in `docs/library-proof/mo-macau.json`.
