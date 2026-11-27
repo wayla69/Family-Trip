@@ -992,6 +992,7 @@ batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botani
 
 - **27 Nov 2026, Chengdu, round 43**: +2 from Amap place pages (Wuhou). Proof in `docs/library-proof/cn-chengdu.json`.
 
+- **27 Nov 2026, Macau, round 44**: +13 from the resorts' own dining pages (The Londoner, Studio City, City of Dreams, Galaxy), each checked on Google Maps (not closed, a review in the last six months). Proof in `docs/library-proof/mo-macau.json`.
 ### Hong Kong towards 300–400 places, 27 Nov 2026
 Owner: "ฮ่องกงมีร้านอาหารเยอะมาก อยากให้มีร้านอาหารแนว hidden gem และ local guide ด้วย ควรมีประมาณ 300-400 ร้าน" and "พอเสร็จแล้วเช็คกับ
 google map และ open rice อีกที". Hong Kong may now hold up to 420 places (`MAX_TOWN` in `scripts/eats-lint.mjs`; every other town stays at
