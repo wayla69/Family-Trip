@@ -798,6 +798,168 @@
           },
           "q": "Deutsches Spionagemuseum, Leipziger Platz 9, Berlin",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Waslala adventure playground and children's farm",
+            "th": "สนามผจญภัยและฟาร์มเด็กวัสลาลา"
+          },
+          "local": "WASLALA Kinderbauernhof",
+          "kind": "farm",
+          "area": {
+            "en": "Altglienicke, Treptow-Köpenick",
+            "th": "อัลท์กลีนิคเคอ เทรปทาว-เคอเพนิค"
+          },
+          "what": {
+            "en": "An adventure playground and children's farm with a climbing wall and a mini-farm.",
+            "th": "สนามผจญภัยและฟาร์มเด็กที่มีกำแพงปีนและมินิฟาร์ม"
+          },
+          "why": {
+            "en": "A mini-farm, a climbing wall and a building area; all activities are free.",
+            "th": "มีมินิฟาร์ม กำแพงปีน และมุมก่อสร้าง กิจกรรมทั้งหมดฟรี"
+          },
+          "tip": {
+            "en": "Closed Mondays and Sundays; Tuesday to Friday 13:00–18:30.",
+            "th": "ปิดวันจันทร์และวันอาทิตย์ เปิดวันอังคารถึงศุกร์ 13:00–18:30"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "WASLALA Kinderbauernhof, Venusstraße 48, Altglienicke, Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.aspwaslala.de/home"
+        },
+        {
+          "name": {
+            "en": "Kinderbauernhof Pinke-Panke",
+            "th": "ฟาร์มเด็กพิงเคอ-ปันเคอ"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Pankow, Berlin",
+            "th": "พันโคว์ เบอร์ลิน"
+          },
+          "what": {
+            "en": "A children's farm in Pankow where children help care for the animals.",
+            "th": "ฟาร์มเด็กในพันโคว์ที่เด็กช่วยดูแลสัตว์ได้"
+          },
+          "why": {
+            "en": "Children can help with the care of the animals, which play an important role here.",
+            "th": "เด็กช่วยดูแลสัตว์ได้ และสัตว์เป็นหัวใจของที่นี่"
+          },
+          "tip": {
+            "en": "Closed Mondays all year.",
+            "th": "ปิดทุกวันจันทร์ตลอดปี"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kinderbauernhof Pinke-Panke, Am Bürgerpark 15-18, Pankow, Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.berlin.de/kultur-und-tickets/tipps/kinder/kinderbauernhoefe/3076973-3076561-kinderbauernhof-pinkepanke.html"
+        },
+        {
+          "name": {
+            "en": "Mirakulum puppet theatre",
+            "th": "โรงละครหุ่นมิรากูลุม"
+          },
+          "local": "Puppentheater Mirakulum",
+          "kind": "show",
+          "area": {
+            "en": "Mitte, Berlin",
+            "th": "มิทเทอ เบอร์ลิน"
+          },
+          "what": {
+            "en": "A puppet theatre with children's shows, supported by the Mitte district.",
+            "th": "โรงละครหุ่นที่มีการแสดงสำหรับเด็ก ได้รับการสนับสนุนจากเขตมิทเทอ"
+          },
+          "why": {
+            "en": "Puppet shows for children aged 3½ to 10, such as Das Fest im Tierhäuschen.",
+            "th": "การแสดงหุ่นสำหรับเด็กอายุ 3 ขวบครึ่งถึง 10 ขวบ เช่น Das Fest im Tierhäuschen"
+          },
+          "tip": {
+            "en": "Tickets are paid in cash at the box office 30 minutes before the show.",
+            "th": "จ่ายค่าตั๋วเป็นเงินสดที่ช่องขายตั๋วก่อนการแสดง 30 นาที"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Mirakulum puppet theater, Brunnenstraße 35, Mitte, Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.mirakulum.de/spiel.html"
+        },
+        {
+          "name": {
+            "en": "Puppentheater-Museum Berlin",
+            "th": "พิพิธภัณฑ์โรงละครหุ่นเบอร์ลิน"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Neukölln, Berlin",
+            "th": "นอยเคิลน์ เบอร์ลิน"
+          },
+          "what": {
+            "en": "A puppet theatre museum with children's shows, workshops and family days.",
+            "th": "พิพิธภัณฑ์โรงละครหุ่นที่มีการแสดงเด็ก เวิร์กช็อป และวันครอบครัว"
+          },
+          "why": {
+            "en": "Children's puppet shows from age 4, and a family day with puppets and stories.",
+            "th": "การแสดงหุ่นสำหรับเด็กตั้งแต่อายุ 4 ขวบ และวันครอบครัวที่มีหุ่นกับนิทาน"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 14:00–18:00.",
+            "th": "เปิดวันอังคารถึงอาทิตย์ 14:00–18:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Puppentheater-Museum, Karl-Marx-Straße 135, Neukölln, Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.puppentheater-museum.de/programm-2026/"
         }
     ]
     },

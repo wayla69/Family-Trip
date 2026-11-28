@@ -1421,6 +1421,127 @@
           "q": "Museo Etnografico Giovanni Podenzana, Via del Prione 156, La Spezia, Italy",
           "ok": "2026-11",
           "src": "https://camec.museilaspezia.it/wp-content/uploads/2025/10/Programma-Divertiamoci-Imparando-2026.pdf"
+        },
+        {
+          "name": {
+            "en": "Venere Azzurra beach",
+            "th": "ชายหาดเวเนเร อัซซูร์รา"
+          },
+          "local": "Venere Azzurra",
+          "kind": "beach",
+          "area": {
+            "en": "Between Lerici and San Terenzo",
+            "th": "ระหว่างเลริชีกับซานเตเรนโซ"
+          },
+          "what": {
+            "en": "A large, sunny beach in the heart of the bay, between Lerici and San Terenzo.",
+            "th": "ชายหาดกว้างแดดดีกลางอ่าว ระหว่างเลริชีกับซานเตเรนโซ"
+          },
+          "why": {
+            "en": "A free beach, with pedal boats to rent for a trip away from the crowd.",
+            "th": "เป็นหาดฟรี และมีเรือถีบให้เช่าออกไปให้ไกลจากความพลุกพล่าน"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Venere Azzurra beach, Lerici, La Spezia, Italy",
+          "ok": "2026-11",
+          "src": "https://lericicoast.it/en/portfolio/beaches/"
+        },
+        {
+          "name": {
+            "en": "Lido di Lerici",
+            "th": "ลีโดดีเลริชี"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Lerici",
+            "th": "เลริชี"
+          },
+          "what": {
+            "en": "A private lido with a wide beach, shallow water and a long wharf for jumping into the deeper sea.",
+            "th": "ลีโดเอกชนที่มีหาดกว้าง น้ำตื้น และท่าเทียบเรือยาวไว้กระโดดลงทะเลที่ลึกกว่า"
+          },
+          "why": {
+            "en": "The page says it is the perfect place with children to swim safely in shallow water.",
+            "th": "เว็บไซต์บอกว่าเหมาะกับการพาเด็กว่ายน้ำอย่างปลอดภัยในน้ำตื้น"
+          },
+          "tip": {
+            "en": "Allow about three hours.",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lido di Lerici, Via S. Biaggini 24, Lerici, La Spezia, Italy",
+          "ok": "2026-11",
+          "src": "https://lericicoast.it/en/portfolio/beaches/"
+        },
+        {
+          "name": {
+            "en": "San Terenzo beach",
+            "th": "ชายหาดซานเตเรนโซ"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "San Terenzo, Lerici",
+            "th": "ซานเตเรนโซ เลริชี"
+          },
+          "what": {
+            "en": "A fine white sand beach along the village, partly free and partly equipped.",
+            "th": "ชายหาดทรายขาวละเอียดตลอดแนวหมู่บ้าน ส่วนหนึ่งเข้าฟรีและอีกส่วนมีบริการ"
+          },
+          "why": {
+            "en": "You can rent sunbeds, deckchairs, umbrellas, canoes and pedal boats here.",
+            "th": "เช่าเตียงอาบแดด เก้าอี้ ร่ม เรือแคนู และเรือถีบได้ที่นี่"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "San Terenzo beach, San Terenzo, Lerici, La Spezia, Italy",
+          "ok": "2026-11",
+          "src": "https://lericicoast.it/en/portfolio/beaches/"
         }
       ]
     },
@@ -4548,6 +4669,167 @@
           },
           "q": "Luneur Park, Via delle Tre Fontane 100, Rome",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Cinecittà si Mostra",
+            "th": "ชิเนชิตตา ซี มอสตรา"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Cinecittà",
+            "th": "ชิเนชิตตา"
+          },
+          "what": {
+            "en": "A guided tour of three permanent film sets, including the Ancient Rome set built for the HBO series Rome.",
+            "th": "ทัวร์นำชมฉากภาพยนตร์ถาวรสามฉาก รวมฉากกรุงโรมโบราณที่สร้างสำหรับซีรีส์ Rome ของ HBO"
+          },
+          "why": {
+            "en": "Children see the sets and the Dream Factory behind the films, with guides who explain how it is made.",
+            "th": "เด็กได้ชมฉากและโรงงานแห่งความฝันเบื้องหลังภาพยนตร์ โดยมีไกด์อธิบายว่าสร้างกันอย่างไร"
+          },
+          "tip": {
+            "en": "Three sets are toured every day; check the times on the official site.",
+            "th": "ทัวร์ฉากสามฉากทุกวัน เช็กเวลาที่เว็บไซต์ทางการ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Cinecittà si Mostra, Via Tuscolana 1055, 00173 Roma, Italy",
+          "ok": "2026-11",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        },
+        {
+          "name": {
+            "en": "Leonardo Da Vinci Experience Museum",
+            "th": "พิพิธภัณฑ์ลีโอนาร์โด ดา วินชี เอ็กซ์พีเรียนซ์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Via della Conciliazione",
+            "th": "ถนนเวีย เดลลา คอนชิลิอาซีโอเน"
+          },
+          "what": {
+            "en": "A museum with machines taken from Leonardo's sketches, in 1:1 reproductions, and life-size copies of his famous paintings.",
+            "th": "พิพิธภัณฑ์เครื่องจักรจากภาพร่างของลีโอนาร์โด ทำเป็นแบบจำลองขนาดจริง 1:1 และภาพวาดชื่อดังฉบับขนาดเท่าของจริง"
+          },
+          "why": {
+            "en": "Children can see working machines and life-size paintings up close, with a mirror room to read the coded messages.",
+            "th": "เด็กได้ดูเครื่องจักรที่ทำงานได้และภาพวาดขนาดจริงใกล้ๆ มีห้องกระจกให้อ่านข้อความรหัส"
+          },
+          "tip": {
+            "en": "Indoors; check the times on the official site.",
+            "th": "อยู่ในร่ม เช็กเวลาที่เว็บไซต์ทางการ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Leonardo Da Vinci Experience Museum, Via della Conciliazione 19/21, 00193 Roma RM, Italy",
+          "ok": "2026-11",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        },
+        {
+          "name": {
+            "en": "Villa Ada Savoia",
+            "th": "วิลลาอาดา ซาโวยา"
+          },
+          "local": "Villa Ada",
+          "kind": "park",
+          "area": {
+            "en": "Villa Ada",
+            "th": "วิลลาอาดา"
+          },
+          "what": {
+            "en": "A large park with sports areas, nature trails, fairground rides and a dog play area, plus the equipped play area for children.",
+            "th": "สวนขนาดใหญ่ มีโซนกีฬา เส้นทางธรรมชาติ เครื่องเล่นแบบงานวัด และลานเล่นของสุนัข รวมถึงสนามเด็กเล่น"
+          },
+          "why": {
+            "en": "Children have a fitted play area in the park, plus fairground rides and nature trails.",
+            "th": "เด็กมีสนามเด็กเล่นในสวน พร้อมเครื่องเล่นแบบงานวัดและเส้นทางธรรมชาติ"
+          },
+          "tip": {
+            "en": "The park is large, so plan a walk between the play area and the rides.",
+            "th": "สวนกว้าง ควรเผื่อเวลาเดินระหว่างสนามเด็กเล่นกับเครื่องเล่น"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Villa Ada Savoia, Villa Ada, Rome, Italy",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/places/villa-ada-savoia"
+        },
+        {
+          "name": {
+            "en": "Parco Yitzhak Rabin (Via Panama)",
+            "th": "สวนยิตซัค ราบิน ถนนเวีย ปานามา"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Via Panama entrance, Villa Ada",
+            "th": "ทางเข้าเวีย ปานามา วิลลาอาดา"
+          },
+          "what": {
+            "en": "A children's play area opened in 2022 with towers, slides and a cableway, made of chestnut wood.",
+            "th": "สนามเด็กเล่นเปิดปี 2022 มีหอคอย สไลเดอร์ และสายเคเบิลไต่ ทำจากไม้เกาลัด"
+          },
+          "why": {
+            "en": "Its whole play area is for children up to 12 years old, including children with disabilities.",
+            "th": "สนามเด็กเล่นทั้งหมดทำสำหรับเด็กถึง 12 ปี รวมเด็กพิการ"
+          },
+          "tip": {
+            "en": "Open from dawn to dusk, per the Turismo Roma listing.",
+            "th": "เปิดตั้งแต่รุ่งเช้าจนค่ำ ตามรายการของ Turismo Roma"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco Yitzhak Rabin, Via Panama, 00199 Roma RM, Italy",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/places/parco-yitzhak-rabin-di-panama-villa-ada"
         }
     ]
     },

@@ -2161,6 +2161,126 @@
           "q": "Centre aquatique L'Hippocampe, Rue des Lycées, Granville, France",
           "ok": "2026-11",
           "src": "https://en.tourisme-granville-terre-mer.com/stay/on-site-activities/what-to-do-when-it-rains"
+        },
+        {
+          "name": {
+            "en": "La Ferme de Grémi",
+            "th": "ฟาร์มลาแฟร์ม เดอ เกรมี"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Saint-Ovin",
+            "th": "แซ็งต์-โอแว็ง"
+          },
+          "what": {
+            "en": "A farm close to the Mont where you can get up close to and touch the farm animals of Normandy and French heritage.",
+            "th": "ฟาร์มใกล้มงต์แซ็งต์-มีแชล ให้เข้าใกล้และสัมผัสสัตว์ฟาร์มของนอร์ม็องดีและสัตว์พันธุ์ดั้งเดิมของฝรั่งเศส"
+          },
+          "why": {
+            "en": "Visits suit all ages, and from age 5 children can try being a farmer for a day.",
+            "th": "เหมาะกับทุกวัย และเด็กตั้งแต่ 5 ขวบลองเป็นชาวนาหนึ่งวันได้"
+          },
+          "tip": {
+            "en": "Booking is recommended.",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €1–5",
+            "th": "≈ €1–5"
+          },
+          "book": "rec",
+          "q": "La Ferme de Grémi, 2 impasse, 50300 Saint-Ovin, France",
+          "ok": "2026-11",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/la-ferme-de-gremi"
+        },
+        {
+          "name": {
+            "en": "Jardin des Plantes d'Avranches",
+            "th": "สวนพฤกษศาสตร์อาฟร็องช์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Avranches",
+            "th": "อาฟร็องช์"
+          },
+          "what": {
+            "en": "A garden in Avranches laid out in twelve areas, with a lookout over the immense bay of Mont Saint-Michel.",
+            "th": "สวนในอาฟร็องช์แบ่งเป็นสิบสองโซน มีจุดชมวิวอ่าวมงต์แซ็งต์-มีแชลอันกว้างใหญ่"
+          },
+          "why": {
+            "en": "Outdoor games, a children's toilet and a picnic area.",
+            "th": "มีเครื่องเล่นกลางแจ้ง ห้องน้ำเด็ก และมุมปิกนิก"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Jardin des Plantes d'Avranches, 10 Pl. Carnot, 50300 Avranches, France",
+          "ok": "2026-11",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/jardin-des-plantes/"
+        },
+        {
+          "name": {
+            "en": "Le jardin des collections",
+            "th": "สวนเลอ ฌาร์แด็ง เด โกลเล็กซียง"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Pontorson",
+            "th": "ปงตอร์ซง"
+          },
+          "what": {
+            "en": "A private garden with four small museums of collections and a freely accessible perched hut.",
+            "th": "สวนส่วนตัวที่มีพิพิธภัณฑ์เล็กสี่แห่งเก็บของสะสม และกระท่อมยกพื้นที่เข้าชมได้โดยไม่เสียค่าเข้า"
+          },
+          "why": {
+            "en": "Multicoloured salt-meadow sheep greet visitors at the gate.",
+            "th": "แกะจากทุ่งเกลือหลากสีคอยต้อนรับผู้มาเยือนที่ประตู"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Le jardin des collections, 10 Rue de Tanis, 50170 Pontorson, France",
+          "ok": "2026-11",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/jardins-des-collections/"
         }
       ]
     },

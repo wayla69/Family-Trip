@@ -466,6 +466,329 @@
           },
           "q": "La Maison des Histoires, Chantelivre, Rue de Sèvres, Paris",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Marionnettes du Champ de Mars",
+            "th": "หุ่นกระบอกช็องเดอมาร์ส"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Champ-de-Mars, 7th",
+            "th": "ช็องเดอมาร์ส เขต 7"
+          },
+          "what": {
+            "en": "A Napoleon III-style puppet theatre with fairy-tale shows such as Cinderella, Sleeping Beauty and Little Red Riding Hood, plus original creations.",
+            "th": "โรงละครหุ่นสไตล์นโปเลียนที่ 3 แสดงเทพนิยายอย่างซินเดอเรลลา เจ้าหญิงนิทรา หนูน้อยหมวกแดง และงานสร้างสรรค์ใหม่"
+          },
+          "why": {
+            "en": "Classic fairy-tale puppet shows for children, on Wednesdays, Saturdays, Sundays, public holidays and every school holiday day.",
+            "th": "หุ่นเทพนิยายคลาสสิกสำหรับเด็ก วันพุธ เสาร์ อาทิตย์ วันหยุดราชการ และทุกวันในช่วงปิดเทอม"
+          },
+          "tip": {
+            "en": "Shows at 3.15pm and 4.15pm on the days it opens.",
+            "th": "รอบแสดง 15:15 และ 16:15 ในวันที่เปิด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 and up",
+            "th": "≈ €6 ขึ้นไป"
+          },
+          "book": "none",
+          "q": "Marionnettes du Champ de Mars, Av. du Général Margueritte, 75007 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": {
+            "en": "Guignol du Parc Floral",
+            "th": "กีญอลปาร์กฟลอรัล"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Parc Floral, 12th",
+            "th": "ปาร์กฟลอรัล เขต 12"
+          },
+          "what": {
+            "en": "The Parc Floral's Guignol theatre, opposite Le Bosquet restaurant, with shows from the classical repertoire and some modern pieces.",
+            "th": "โรงละครกีญอลในปาร์กฟลอรัล ตรงข้ามร้านเลอ บอสเก แสดงทั้งเรื่องคลาสสิกและเรื่องร่วมสมัยบางเรื่อง"
+          },
+          "why": {
+            "en": "Shows from the classical puppet repertoire for young visitors, opening every Wednesday, Saturday, Sunday and public holiday.",
+            "th": "การแสดงหุ่นคลาสสิกสำหรับผู้ชมตัวเล็ก เปิดทุกวันพุธ เสาร์ อาทิตย์ และวันหยุดราชการ"
+          },
+          "tip": {
+            "en": "Shows at 3pm and 4pm; every day except Monday in school holidays.",
+            "th": "รอบแสดง 15:00 และ 16:00 ช่วงปิดเทอมเปิดทุกวันยกเว้นวันจันทร์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €4 and up",
+            "th": "≈ €4 ขึ้นไป"
+          },
+          "book": "none",
+          "q": "Guignol du Parc Floral, Parc Floral Bois de Vincennes, Rte de la Pyramide, 75012 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": {
+            "en": "Marionnettes du Parc Monceau",
+            "th": "หุ่นกระบอกปาร์กมงโซ"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Parc Monceau, 8th",
+            "th": "ปาร์กมงโซ เขต 8"
+          },
+          "what": {
+            "en": "A small open-air puppet theatre in the heart of Parc Monceau, reached by the avenue Vélasquez entrance near the Musée Cernuschi.",
+            "th": "โรงละครหุ่นกลางแจ้งขนาดเล็กใจกลางปาร์กมงโซ เข้าทางประตูถนนอาเวนิว เบลัสเกซ ใกล้พิพิธภัณฑ์แซร์นุสกี"
+          },
+          "why": {
+            "en": "A little outdoor puppet show in a garden, on Wednesdays, Saturdays and Sundays; it depends on the weather.",
+            "th": "การแสดงหุ่นเล็กๆ กลางแจ้งในสวน วันพุธ เสาร์ อาทิตย์ ขึ้นกับสภาพอากาศ"
+          },
+          "tip": {
+            "en": "The show is at 5.30pm and depends on the weather.",
+            "th": "แสดงเวลา 17:30 และขึ้นกับสภาพอากาศ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 and up",
+            "th": "≈ €6 ขึ้นไป"
+          },
+          "book": "none",
+          "q": "Parc Monceau, 75008 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": {
+            "en": "Marionnettes du Parc Montsouris",
+            "th": "หุ่นกระบอกปาร์กมงซูรี"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Parc Montsouris, 14th",
+            "th": "ปาร์กมงซูรี เขต 14"
+          },
+          "what": {
+            "en": "A covered puppet theatre heated in winter and air-conditioned in summer, with Art Deco-style club chairs.",
+            "th": "โรงละครหุ่นมีหลังคา ทำความร้อนในหน้าหนาวและแอร์ในหน้าร้อน มีเก้าอี้สไตล์อาร์ตเดโค"
+          },
+          "why": {
+            "en": "Indoor-comfort puppet show in a park, so it works in cold or hot weather; open Wednesdays, Saturdays, Sundays and school holidays.",
+            "th": "ดูหุ่นอย่างสบายในร่มกลางสวน เหมาะทั้งวันหนาวและร้อน เปิดวันพุธ เสาร์ อาทิตย์ และช่วงปิดเทอม"
+          },
+          "tip": {
+            "en": "Shows at 11.15am and/or 3.45pm; doors open 15 minutes before.",
+            "th": "รอบแสดง 11:15 และ/หรือ 15:45 เปิดประตูก่อน 15 นาที"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 and up",
+            "th": "≈ €6 ขึ้นไป"
+          },
+          "book": "none",
+          "q": "Parc Montsouris, 75014 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": {
+            "en": "Guignol de Paris",
+            "th": "กีญอลเดอปารี"
+          },
+          "local": "Petits Bouffons de Paris",
+          "kind": "show",
+          "area": {
+            "en": "Buttes-Chaumont, 19th",
+            "th": "บูตส์-โชมงต์ เขต 19"
+          },
+          "what": {
+            "en": "A troupe of professional puppeteers who make the puppets and sets, and write and adapt many of their own texts, performing in Buttes-Chaumont park.",
+            "th": "คณะนักเชิดหุ่นมืออาชีพที่ทำหุ่นและฉากเอง เขียนและดัดแปลงบทหลายเรื่องเอง แสดงในสวนบูตส์-โชมงต์"
+          },
+          "why": {
+            "en": "A puppet show in the park for children, on Wednesdays, Saturdays and Sundays.",
+            "th": "การแสดงหุ่นในสวนสำหรับเด็ก วันพุธ เสาร์ อาทิตย์"
+          },
+          "tip": {
+            "en": "Shows at 11.15am, 3.15pm and 4.30pm; enter by the rue Botzaris entrance.",
+            "th": "รอบแสดง 11:15, 15:15 และ 16:30 เข้าทางประตูถนนรูว์ โบตซาริส"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 and up",
+            "th": "≈ €6 ขึ้นไป"
+          },
+          "book": "none",
+          "q": "Guignol de Paris, Av. Jacques de Liniers, 75019 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": {
+            "en": "Petit Palais",
+            "th": "เปอตีปาแล"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Champs-Élysées, 8th",
+            "th": "ช็องเซลิเซ เขต 8"
+          },
+          "what": {
+            "en": "A municipal art museum with a rich family programme of books, tours and workshops, and a garden for a snack break.",
+            "th": "พิพิธภัณฑ์ศิลปะของเมืองที่มีกิจกรรมครอบครัวหลากหลาย ทั้งหนังสือ ทัวร์ และเวิร์กช็อป พร้อมสวนไว้พักกินขนม"
+          },
+          "why": {
+            "en": "Creative workshops let children make their own artwork after a visit adapted to their age; game books turn the visit into a visual adventure.",
+            "th": "เวิร์กช็อปให้เด็กทำงานศิลปะของตัวเองหลังเข้าชมแบบปรับตามวัย และหนังสือเกมทำให้การชมเป็นการผจญภัยทางภาพ"
+          },
+          "tip": {
+            "en": "Free entry to the permanent collections; the interior garden is a snack spot between rooms.",
+            "th": "เข้าชมคอลเลกชันถาวรฟรี สวนด้านในเป็นที่พักกินขนมระหว่างห้อง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Free (permanent collections)",
+            "th": "ฟรี (คอลเลกชันถาวร)"
+          },
+          "book": "rec",
+          "q": "Petit Palais, Av. Winston Churchill, 75008 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/331948-what-to-do-children-musee-petit-palais-family-paris"
+        },
+        {
+          "name": {
+            "en": "Musée des Arts Forains",
+            "th": "พิพิธภัณฑ์อาร์ ฟอแรง"
+          },
+          "local": "Musée des Arts Forains",
+          "kind": "museum",
+          "area": {
+            "en": "Pavillons de Bercy, 12th",
+            "th": "ปาวียงเบอร์ซี เขต 12"
+          },
+          "what": {
+            "en": "Europe's largest collection of fairground and show objects from the 19th and 20th centuries, in old Bercy wine warehouses.",
+            "th": "คอลเลกชันของงานวัดและงานแสดงศตวรรษที่ 19–20 ที่ใหญ่ที่สุดในยุโรป ในโกดังไวน์เก่าของเบอร์ซี"
+          },
+          "why": {
+            "en": "A guided visit with century-old fairground rides and hands-on old attractions for children to play with.",
+            "th": "ทัวร์นำชมพร้อมเครื่องเล่นงานวัดอายุร้อยปีและของเล่นโบราณให้เด็กลองเล่น"
+          },
+          "tip": {
+            "en": "Visits only on booking, mostly Wednesdays, Saturdays and Sundays and every school holiday day; 11am to 4.30pm.",
+            "th": "เข้าชมได้เฉพาะเมื่อจอง ส่วนใหญ่วันพุธ เสาร์ อาทิตย์ และทุกวันช่วงปิดเทอม 11:00–16:30"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €18.80 adults · €12.80 children (4–11)",
+            "th": "≈ €18.80 ผู้ใหญ่ · €12.80 เด็ก (4–11 ปี)"
+          },
+          "book": "req",
+          "q": "Musée des Arts Forains, 53 Av. des Terroirs de France, 75012 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.visitparisregion.com/fr/musee-des-arts-forains"
+        },
+        {
+          "name": {
+            "en": "House of Fishing and Nature",
+            "th": "บ้านแห่งการตกปลาและธรรมชาติ"
+          },
+          "local": "Maison de la Pêche et de la Nature",
+          "kind": "museum",
+          "area": {
+            "en": "Levallois-Perret, near Paris",
+            "th": "เลอวาลัว-แปเรต์ ใกล้ปารีส"
+          },
+          "what": {
+            "en": "A museum and aquarium about fish and the life in ponds and rivers, plus fishing courses.",
+            "th": "พิพิธภัณฑ์และตู้ปลาเกี่ยวกับปลาและสิ่งมีชีวิตในบึงและแม่น้ำ พร้อมคอร์สตกปลา"
+          },
+          "why": {
+            "en": "Explains fish and nature in a museum and aquarium, and can teach children to fish.",
+            "th": "อธิบายเรื่องปลาและธรรมชาติผ่านพิพิธภัณฑ์และตู้ปลา และสอนเด็กตกปลาได้"
+          },
+          "tip": {
+            "en": "Book a fishing course in advance if you want one.",
+            "th": "ถ้าอยากเรียนตกปลาให้จองคอร์สล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "House of Fishing and Nature, 22 All. Claude Monet, 92300 Levallois-Perret, France",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/child-and-family/guides/42524-things-to-do-in-paris-with-the-kids-on-a-rainy-day/lang/en"
         }
     ]
     }

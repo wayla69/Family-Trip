@@ -566,6 +566,206 @@
           },
           "q": "You Jump Amsterdam-Noord, Sportpark Kadoelen 4, Amsterdam",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Hortus Botanicus",
+            "th": "สวนพฤกษศาสตร์ฮอร์ตุส"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Plantage, Amsterdam",
+            "th": "พลานตาเคอ อัมสเตอร์ดัม"
+          },
+          "what": {
+            "en": "A botanic garden whose 1993 greenhouse is now a Climate House you walk through in three climate zones.",
+            "th": "สวนพฤกษศาสตร์ที่เรือนกระจกปี 1993 เป็น Climate House ให้เดินผ่านสามเขตภูมิอากาศ"
+          },
+          "why": {
+            "en": "A guided audio-visual tour called Sounds of Nature leads you past the species and landscapes on show.",
+            "th": "ทัวร์เสียงและภาพ Sounds of Nature พาเดินชมพันธุ์พืชและภูมิทัศน์ในสวน"
+          },
+          "tip": {
+            "en": "Guided tours are also available if you want one.",
+            "th": "มีทัวร์นำเที่ยวให้ด้วยถ้าต้องการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hortus Botanicus, Plantage Middenlaan 2a, Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.iamsterdam.com/en/see-and-do/attractions-and-sights/hortus-botanicus"
+        },
+        {
+          "name": {
+            "en": "Speelboerderij Elsenhove",
+            "th": "สเปลบูร์เดอไรเอลเซนโฮเฟอ"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Amstelveen",
+            "th": "อัมสเตลเฟน"
+          },
+          "what": {
+            "en": "A farm with all kinds of farm animals and a large, adventurous natural playground.",
+            "th": "ฟาร์มที่มีสัตว์ฟาร์มหลายชนิดและสนามเด็กเล่นธรรมชาติขนาดใหญ่"
+          },
+          "why": {
+            "en": "Animals and a big natural playground in one place, with activities for children.",
+            "th": "มีทั้งสัตว์และสนามเด็กเล่นธรรมชาติใหญ่ในที่เดียว พร้อมกิจกรรมสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "From March to November there are activities, mostly on Sundays, such as bread baking.",
+            "th": "มีนาคมถึงพฤศจิกายนมีกิจกรรม ส่วนใหญ่วันอาทิตย์ เช่น ทำขนมปัง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Speelboerderij Elsenhove, Bankrasweg 1, Amstelveen, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        },
+        {
+          "name": {
+            "en": "Boerderij Polderzicht",
+            "th": "ฟาร์มโพลเดอร์ซิชต์"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Ouderkerk aan de Amstel",
+            "th": "เอาเดอร์เคิร์ก อัน เดอ อัมสเตล"
+          },
+          "what": {
+            "en": "A farm with a big playground, a trampoline, a pedal car and a small tractor, and walks in the Ronde Hoep polder.",
+            "th": "ฟาร์มที่มีสนามเด็กเล่นใหญ่ แทรมโพลีน รถถีบ รถแทรกเตอร์เล็ก และเส้นทางเดินในโพลเดอร์ Ronde Hoep"
+          },
+          "why": {
+            "en": "A kid-friendly terrace beside the playground lets parents sit while the children run about.",
+            "th": "ระเบียงที่เป็นมิตรกับเด็กอยู่ข้างสนามเด็กเล่น พ่อแม่นั่งพักได้ขณะเด็กวิ่งเล่น"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Boerderij Polderzicht, Polderweg 23, Ouderkerk aan de Amstel, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        },
+        {
+          "name": {
+            "en": "Natuurboerderij Hardebol",
+            "th": "ฟาร์มธรรมชาติฮาร์เดอบอล"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Landsmeer",
+            "th": "ลันด์สเมียร์"
+          },
+          "what": {
+            "en": "A nature farm with a farm shop and a play stable where cows, sheep, lambs and goats roam.",
+            "th": "ฟาร์มธรรมชาติที่มีร้านขายผลผลิตและโรงเล่นที่มีวัว แกะ ลูกแกะ และแพะเดินไปมา"
+          },
+          "why": {
+            "en": "Children can ride pedal tractors in several sizes and colours inside the play stable.",
+            "th": "เด็กถีบรถแทรกเตอร์หลายขนาดและสีในโรงเล่นได้"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Natuurboerderij Hardebol, Kanaaldijk 28, Landsmeer, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        },
+        {
+          "name": {
+            "en": "Zorgboerderij De Marsen",
+            "th": "ฟาร์มเดอ มาร์เซิน"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Landsmeer",
+            "th": "ลันด์สเมียร์"
+          },
+          "what": {
+            "en": "An organic farm, also a care farm, with a farm shop, a vegetable garden, a picnic spot and farm animals.",
+            "th": "ฟาร์มออร์แกนิกที่เป็นฟาร์มบำบัดด้วย มีร้านผลผลิต สวนผัก จุดปิกนิก และสัตว์ฟาร์ม"
+          },
+          "why": {
+            "en": "A free-range yard set up for children to play in, and the farm's own produce to taste.",
+            "th": "ลานเลี้ยงปล่อยที่จัดให้เด็กเล่น และมีผลผลิตของฟาร์มให้ชิม"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Zorgboerderij De Marsen, Pikpotweg 1, Landsmeer, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
         }
     ]
     }

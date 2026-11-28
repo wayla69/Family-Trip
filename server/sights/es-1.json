@@ -778,6 +778,126 @@
           "q": "Museu Olímpic i de l'Esport Joan Antoni Samaranch, Av. de l'Estadi 60, Montjuïc, Barcelona, Spain",
           "ok": "2026-11",
           "src": "https://irbarcelona.org/barcelona-museums/joan-antoni-samaranch-olympics-sport-museum/"
+        },
+        {
+          "name": {
+            "en": "Parc de l'Espanya Industrial",
+            "th": "ปาร์กเดลเอสปันยา อินดุสเตรียล"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Sants, Barcelona",
+            "th": "ซันส์ บาร์เซโลนา"
+          },
+          "what": {
+            "en": "A park on a former textile factory site with a lake, wide lawns and a dragon sculpture.",
+            "th": "สวนบนที่ตั้งโรงงานทอผ้าเก่า มีทะเลสาบ สนามหญ้ากว้าง และประติมากรรมมังกร"
+          },
+          "why": {
+            "en": "A 32-metre dragon doubles as a children's slide, and the lake has ducks.",
+            "th": "มังกรยาว 32 เมตรเป็นสไลเดอร์ของเด็ก และทะเลสาบมีเป็ด"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc de l'Espanya Industrial, Carrer de Muntadas 1, Sants, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://barcelona.cat/en/conocebcn/pics/el-parque-de-la-espanya-industrial-92086015836"
+        },
+        {
+          "name": {
+            "en": "Parc de la Creueta del Coll",
+            "th": "ปาร์กเดลาเครเวตาเดลกอล"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Coll, Barcelona",
+            "th": "กอล บาร์เซโลนา"
+          },
+          "what": {
+            "en": "A former quarry turned park, with a lake and a sculpture by Eduardo Chillida.",
+            "th": "เหมืองหินเก่าที่กลายเป็นสวน มีทะเลสาบและประติมากรรมของเอดูอาร์โด ชิลลิดา"
+          },
+          "why": {
+            "en": "Its children's play area is accessible, though the park has paths and changes in level.",
+            "th": "ลานเด็กเล่นเข้าถึงได้ แต่สวนมีทางเดินและระดับพื้นต่างกัน"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc de la Creueta del Coll, Passeig de la Mare de Déu del Coll 77, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://barcelonaturisme.com/wv3/en/page/673/parc-de-la-creueta-del-coll.html"
+        },
+        {
+          "name": {
+            "en": "Biblioteca Gabriel García Márquez",
+            "th": "ห้องสมุดกาเบรียล การ์เซีย มาร์เกซ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "El Born, Barcelona",
+            "th": "เอลบอร์น บาร์เซโลนา"
+          },
+          "what": {
+            "en": "A neighbourhood library with children's reading areas and free weekend storytime sessions.",
+            "th": "ห้องสมุดชุมชนที่มีมุมอ่านหนังสือเด็กและกิจกรรมเล่านิทานฟรีช่วงสุดสัปดาห์"
+          },
+          "why": {
+            "en": "Storytime is in Catalan or Spanish, sometimes English, and there are rugs and cushions to sit on.",
+            "th": "เล่านิทานเป็นภาษาคาตาลันหรือสเปน บางครั้งภาษาอังกฤษ และมีพรมกับเบาะให้นั่ง"
+          },
+          "tip": {
+            "en": "Check the library's calendar on xarxabiblioteques.cat before going.",
+            "th": "เช็กปฏิทินของห้องสมุดที่ xarxabiblioteques.cat ก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Biblioteca Gabriel García Márquez, Plaça Carmen Balcells Segalà 1, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://barcelonaurbana.com/en/blog/barcelona-kids-rainy-day-guide"
         }
     ]
     },
@@ -1573,6 +1693,326 @@
           "q": "The Robot Museum, The Dreamland Project, Madrid, Spain",
           "ok": "2026-11",
           "src": "https://www.esmadrid.com/en/tourist-information/robot-museum"
+        },
+        {
+          "name": {
+            "en": "Palacio de Hielo",
+            "th": "ปาลาซิโอ เด เอโย"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Hortaleza",
+            "th": "ออร์ตาเลซา"
+          },
+          "what": {
+            "en": "The only Olympic-size public ice rink in the city, open all year except four summer months.",
+            "th": "ลานสเก็ตน้ำแข็งสาธารณะขนาดโอลิมปิกแห่งเดียวของเมือง เปิดตลอดปีเว้นสี่เดือนหน้าร้อน"
+          },
+          "why": {
+            "en": "A rainy or cold-day activity for children, about twenty minutes from the city centre.",
+            "th": "กิจกรรมวันฝนตกหรืออากาศเย็นสำหรับเด็ก ห่างใจกลางเมืองราวยี่สิบนาที"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Palacio de Hielo, C. de Silvano 77, Hortaleza, 28043 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": {
+            "en": "Casita-Museo de Ratón Pérez",
+            "th": "บ้านพิพิธภัณฑ์ราโตนซิโต เปเรซ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Centro",
+            "th": "เซนโตร"
+          },
+          "what": {
+            "en": "A house museum telling the story of the Ratoncito Pérez, the Spanish tooth fairy mouse.",
+            "th": "พิพิธภัณฑ์ในบ้านที่เล่าเรื่องราโตนซิโต เปเรซ หนูนางฟ้าฟันของสเปน"
+          },
+          "why": {
+            "en": "A story-based museum for young children on a cold or wet day, indoors.",
+            "th": "พิพิธภัณฑ์เล่าเรื่องสำหรับเด็กเล็ก อยู่ในร่ม เหมาะวันหนาวหรือฝนตก"
+          },
+          "tip": {
+            "en": "It is on the first floor, so a pram may need folding.",
+            "th": "อยู่ชั้นหนึ่ง อาจต้องพับรถเข็นเด็ก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Casita-Museo de Ratón Pérez, C. del Arenal 8, primera planta, Centro, 28013 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": {
+            "en": "Virtual Arena",
+            "th": "เวอร์ชวล อารีนา"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Arganzuela",
+            "th": "อาร์กันซูเอลา"
+          },
+          "what": {
+            "en": "Free-roaming virtual reality centre, the largest in Madrid, with over 500 m² for VR play.",
+            "th": "ศูนย์เกมเสมือนจริงแบบเดินได้อิสระ ใหญ่ที่สุดในมาดริด พื้นที่เล่นกว่า 500 ตร.ม."
+          },
+          "why": {
+            "en": "An indoor game for older children and grown-ups together; it is not a pram place.",
+            "th": "เกมในร่มสำหรับเด็กโตและผู้ใหญ่เล่นด้วยกัน ไม่เหมาะกับรถเข็นเด็ก"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "VIRTUAL ARENA, C. de Tomás Bretón 52, Arganzuela, 28045 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": {
+            "en": "Espacio Abierto Quinta de los Molinos",
+            "th": "เอสปาซิโอ อาเบียร์โต กินตา เด โลส โมลิโนส"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "San Blas-Canillejas",
+            "th": "ซานบลัส-กานีเยฆัส"
+          },
+          "what": {
+            "en": "An open cultural space with a programme for children and young people.",
+            "th": "พื้นที่วัฒนธรรมเปิดที่มีกิจกรรมสำหรับเด็กและเยาวชน"
+          },
+          "why": {
+            "en": "Its programme is built for children from 0 to 16 years, to grow creativity from early childhood.",
+            "th": "กิจกรรมออกแบบมาสำหรับเด็กอายุ 0–16 ปี เพื่อปลูกฝังความคิดสร้างสรรค์ตั้งแต่เด็กเล็ก"
+          },
+          "tip": {
+            "en": "Check the programme before you go.",
+            "th": "เช็กโปรแกรมกิจกรรมก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Espacio Abierto Quinta de los Molinos, C. de Juan Ignacio Luca de Tena 20, San Blas-Canillejas, Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": {
+            "en": "Real Teatro de Retiro",
+            "th": "เรอัล เตอาโตร เด เรติโร"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Retiro",
+            "th": "เรติโร"
+          },
+          "what": {
+            "en": "An artistic children's theatre project held at the Daoíz y Velarde cultural centre in the Retiro district.",
+            "th": "โครงการละครเวทีสำหรับเด็กที่จัดที่ศูนย์วัฒนธรรมดาโออิซ อี เบลาร์เด ในย่านเรติโร"
+          },
+          "why": {
+            "en": "Made for children, so the performances suit small audiences; indoors.",
+            "th": "ทำมาเพื่อเด็ก การแสดงจึงเหมาะกับผู้ชมตัวเล็ก อยู่ในร่ม"
+          },
+          "tip": {
+            "en": "Check the show times before you go.",
+            "th": "เช็กรอบการแสดงก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Real Teatro de Retiro, Pl. de Daoíz y Velarde 4, Retiro, 28007 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": {
+            "en": "Puerta de Rodajos playground",
+            "th": "สนามเด็กเล่นปวยร์ตา เด โรดาโคส"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Casa de Campo",
+            "th": "กาซา เด กัมโป"
+          },
+          "what": {
+            "en": "A double castle playground with slides and walkways, at the entrance by the Puerta de Rodajos.",
+            "th": "สนามเด็กเล่นปราสาทคู่ มีสไลเดอร์และทางเดินยกระดับ ตรงทางเข้าปวยร์ตา เด โรดาโคส"
+          },
+          "why": {
+            "en": "The page highlights its slides and walkways among the Casa de Campo play areas, a good stop after the zoo.",
+            "th": "เว็บไซต์เน้นสไลเดอร์และทางเดินยกระดับ เป็นจุดแวะที่ดีหลังเที่ยวสวนสัตว์"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Puerta de Rodajos, Av. de Rodajos 1, Casa de Campo, 28011 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/areas-de-juego-infantiles-madrid"
+        },
+        {
+          "name": {
+            "en": "Parque de Salvador Allende",
+            "th": "สวนซัลบาดอร์ อาเยนเด"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Carabanchel",
+            "th": "การาบันเชล"
+          },
+          "what": {
+            "en": "A children's play area of about 540 m² in the Salvador Allende park, designed for children of different ages and abilities.",
+            "th": "สนามเด็กเล่นราว 540 ตร.ม. ในสวนซัลบาดอร์ อาเยนเด ออกแบบให้เด็กต่างวัยและต่างความสามารถ"
+          },
+          "why": {
+            "en": "A dedicated area for children of mixed ages in the park.",
+            "th": "มีโซนเฉพาะสำหรับเด็กหลายช่วงวัยในสวน"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parque de Salvador Allende, C. de Salvador Allende 22, Carabanchel, 28054 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/areas-de-juego-infantiles-madrid"
+        },
+        {
+          "name": {
+            "en": "Plaza de las Tizas",
+            "th": "จัตุรัสลาส ติซัส"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Usera",
+            "th": "อูเซรา"
+          },
+          "what": {
+            "en": "A new playground shaped like a red dragon, with more than sixteen ground-level games and eight inside the dragon.",
+            "th": "สนามเด็กเล่นใหม่รูปมังกรแดง มีเครื่องเล่นระดับพื้นกว่าสิบหกอย่างและแปดอย่างในตัวมังกร"
+          },
+          "why": {
+            "en": "Room for over a hundred children of all ages, with a maze panel, a rain panel and a rope circuit inside the dragon.",
+            "th": "รองรับเด็กได้กว่าร้อยคนทุกวัย ในตัวมังกรมีแผงเขาวงกต แผงฝน และเส้นทางเชือก"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plaza de las Tizas, C. de José Bielsa, Usera, 28026 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/areas-de-juego-infantiles-madrid"
         }
     ]
     },

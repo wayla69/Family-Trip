@@ -689,6 +689,170 @@
           "q": "Domein Beisbroek, Zeeweg 96, Bruges, Belgium",
           "ok": "2026-11",
           "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/stedelijk-domein-beisbroek-municipal-domain"
+        },
+        {
+          "name": {
+            "en": "Graaf Visartpark (Count Visart Park)",
+            "th": "สวนกราฟ ฟิซาร์ต"
+          },
+          "local": "Graaf Visartpark",
+          "kind": "park",
+          "area": {
+            "en": "Koolkerke, Bruges",
+            "th": "โคลเคอร์เคอ บรูจส์"
+          },
+          "what": {
+            "en": "A park with a traffic garden for small legs and an adventure playground built largely from tree trunks.",
+            "th": "สวนที่มีสวนจราจรสำหรับขาเล็กๆ และสนามผจญภัยที่สร้างจากท่อนไม้เป็นส่วนใหญ่"
+          },
+          "why": {
+            "en": "Pre-school and school-age children climb, swing and slide on a challenging adventure playground.",
+            "th": "เด็กวัยอนุบาลและวัยเรียนปีน แกว่ง และสไลด์บนสนามผจญภัยที่ท้าทาย"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Graaf Visartpark, Karel de Stoutelaan 10, Koolkerke, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/graaf-visartpark-count-visart-park"
+        },
+        {
+          "name": {
+            "en": "Marie Siska playground",
+            "th": "สนามเด็กเล่นมารี ซิสกา"
+          },
+          "local": "Marie Siska",
+          "kind": "play",
+          "area": {
+            "en": "Het Zoute, Knokke-Heist",
+            "th": "เฮ็ต โซเทอ คนอกเคอ-ไฮสต์"
+          },
+          "what": {
+            "en": "A waffle house with mini golf and playgrounds, where Moeder Siska waffles have been baked since 1882.",
+            "th": "ร้านวาฟเฟิลที่มีมินิกอล์ฟและสนามเด็กเล่น อบวาฟเฟิลมูเดอร์ซิสกามาตั้งแต่ปี 1882"
+          },
+          "why": {
+            "en": "A fenced baby playground for ages 1 to 4, a large supervised one for ages 4 to 14, a maze and an indoor play area for bad weather.",
+            "th": "มีสนามเด็กเล็กมีรั้วสำหรับ 1–4 ขวบ สนามใหญ่มีผู้ดูแลสำหรับ 4–14 ปี เขาวงกต และลานเล่นในร่มวันอากาศไม่ดี"
+          },
+          "tip": {
+            "en": "Open daily from the Easter holidays to the end of September.",
+            "th": "เปิดทุกวันตั้งแต่ช่วงอีสเตอร์ถึงสิ้นเดือนกันยายน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Marie Siska, Het Zoute, Knokke-Heist, Belgium",
+          "ok": "2026-11",
+          "src": "https://knokkeheist.com/en/farm/9657/marie-siska.html"
+        },
+        {
+          "name": {
+            "en": "Sportoase Duinenwater swimming pool",
+            "th": "สระว่ายน้ำสปอร์โตอาเซอ ดุยเนนวาเทอร์"
+          },
+          "local": "Sportoase Duinenwater",
+          "kind": "play",
+          "area": {
+            "en": "Knokke-Heist",
+            "th": "คนอกเคอ-ไฮสต์"
+          },
+          "what": {
+            "en": "A pool complex with a 25-metre pool, a slide complex, a wave pool, water rapids and fountains.",
+            "th": "สระว่ายน้ำรวมที่มีสระ 25 เมตร สไลเดอร์ สระคลื่น น้ำเชี่ยว และน้ำพุ"
+          },
+          "why": {
+            "en": "A toddler and preschool zone with fountains and fun animations at a safe depth.",
+            "th": "มีโซนเด็กเล็กและก่อนวัยเรียนที่มีน้ำพุและกิจกรรมสนุกในระดับน้ำที่ปลอดภัย"
+          },
+          "tip": {
+            "en": "Allow about three hours.",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sportoase Duinenwater, Duinenwater 43, Knokke-Heist, Belgium",
+          "ok": "2026-11",
+          "src": "https://knokkeheist.com/en/surf/9339/swimming-pool-duinenwater.html"
+        },
+        {
+          "name": {
+            "en": "De Zes Bochten",
+            "th": "เดอ เซส โบคเทน"
+          },
+          "local": "Restaurant De Zes Bochten",
+          "kind": "play",
+          "area": {
+            "en": "Knokke-Heist",
+            "th": "คนอกเคอ-ไฮสต์"
+          },
+          "what": {
+            "en": "A cosy brasserie and tearoom in an old farmhouse on a cycle route, with an indoor and an outdoor playground.",
+            "th": "บราสเซอรีและร้านน้ำชาในบ้านไร่เก่าริมเส้นทางจักรยาน มีสนามเด็กเล่นในร่มและกลางแจ้ง"
+          },
+          "why": {
+            "en": "Indoors and outdoors there is a separate toddler zone, and the outdoor playground is fully fenced.",
+            "th": "ทั้งในร่มและกลางแจ้งมีโซนเด็กเล็กแยกต่างหาก และสนามกลางแจ้งมีรั้วรอบ"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Restaurant De Zes Bochten, Nieuwstraat 127, Knokke-Heist, Belgium",
+          "ok": "2026-11",
+          "src": "https://knokkeheist.com/en/indoor-playground/9069/de-zes-bochten.html"
         }
       ]
     },
