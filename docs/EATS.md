@@ -1096,3 +1096,4 @@ on Google Maps only (not closed, a review in the last six months, the name match
   are used up, so the last six of the 200 limit stay open for later.
 
 - **27 Nov 2026, Macau, round 50**: +6 to reach 200 (Fat Siu Lau, Cozinha Pinocchio, Miramar, Brown & Friends at Lisboeta, Chinese Cafe Imprint, Shanghai 4.5.6), from the Macao Government Tourism Office's award register and Trip.com's November 2026 list, each checked on Google Maps; more confirmed places are named in the proof for a later swap. Proof in `docs/library-proof/mo-macau.json`.
+- **25 Nov 2026, Daegu (new town)**: 10 from Dong-gu's "YES! Kids Zone" list, each checked on Google Maps. Proof in `docs/library-proof/kr-daegu.json`.
