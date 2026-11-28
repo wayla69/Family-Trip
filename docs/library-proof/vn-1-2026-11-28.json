@@ -1,0 +1,522 @@
+{
+  "town": "vn (Vietnam round 1: Saigon, Hanoi, Da Nang and Hoi An, Hue, Da Lat, Nha Trang, Phu Quoc)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Vietnam notes (city tourism sites count as official; otherwise a 2025–2026 page; no chains, no bars, no resort restaurants) -> scripts/library-check.cjs (40 rows whose page carries its date in a form the script does not read — VinWonders dd/mm/yyyy beside today’s date, Vietnam Airlines contentDatePublished, Mytour dd-mm-yyyy, diff.vn — dated by hand) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town (none kept by hand) -> Thai and English by writer agents to docs/STYLE.md, opening hours taken out of the text.",
+  "towns": {
+    "vn-dalat": {
+      "eat": [
+        {
+          "name": "Lẩu Gà Lá É 668 - Gà Nướng Lu",
+          "src": "https://www.vietnamairlines.com/vn/vi/useful-information/travel-guide/lau-ga-la-e-da-lat"
+        },
+        {
+          "name": "Quán lẩu gà lá é Thúy Hiếu",
+          "src": "https://www.vietnamairlines.com/vn/vi/useful-information/travel-guide/lau-ga-la-e-da-lat"
+        },
+        {
+          "name": "Quán lẩu gà lá é Cao Phụng",
+          "src": "https://www.vietnamairlines.com/vn/vi/useful-information/travel-guide/lau-ga-la-e-da-lat"
+        },
+        {
+          "name": "Lẩu gà lá é 39",
+          "src": "https://www.vietnamairlines.com/vn/vi/useful-information/travel-guide/lau-ga-la-e-da-lat"
+        },
+        {
+          "name": "Ò ó o - Lẩu gà lá é Đà Lạt",
+          "src": "https://www.vietnamairlines.com/vn/vi/useful-information/travel-guide/lau-ga-la-e-da-lat"
+        },
+        {
+          "name": "Nhà hàng Trên Đỉnh Đồi Trăng",
+          "src": "https://www.vietnamairlines.com/vn/vi/useful-information/travel-guide/lau-ga-la-e-da-lat"
+        },
+        {
+          "name": "Bánh tráng nướng 112 Nguyễn Văn Trỗi",
+          "src": "https://mia.vn/cam-nang-du-lich/bo-tui-ngay-dia-chi-10-quan-ban-banh-trang-nuong-ngon-xuat-sac-giua-long-da-lat-1283"
+        },
+        {
+          "name": "Bánh tráng nướng cô Phượng",
+          "src": "https://mia.vn/cam-nang-du-lich/bo-tui-ngay-dia-chi-10-quan-ban-banh-trang-nuong-ngon-xuat-sac-giua-long-da-lat-1283"
+        },
+        {
+          "name": "Tiệm Cà Phê Túi Mơ To",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/cafe-da-lat"
+        },
+        {
+          "name": "Chuyện của Mơ Coffee",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/cafe-da-lat"
+        },
+        {
+          "name": "Bao tiền một mớ bình yên",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/cafe-da-lat"
+        },
+        {
+          "name": "Bánh căn Lệ",
+          "src": "https://mia.vn/cam-nang-du-lich/review-quan-banh-can-le-da-lat-18801"
+        }
+      ],
+      "do": []
+    },
+    "vn-danang": {
+      "eat": [
+        {
+          "name": "Mộc",
+          "src": "https://danangfantasticity.com/discovery/list-of-michelin-guide-dining-establishments-in-da-nang-2025"
+        },
+        {
+          "name": "Quê Xưa",
+          "src": "https://danangfantasticity.com/discovery/list-of-michelin-guide-dining-establishments-in-da-nang-2025"
+        },
+        {
+          "name": "Bếp Cuốn",
+          "src": "https://danangfantasticity.com/discovery/list-of-michelin-guide-dining-establishments-in-da-nang-2025"
+        },
+        {
+          "name": "Bánh Xèo 76",
+          "src": "https://danangfantasticity.com/discovery/list-of-michelin-guide-dining-establishments-in-da-nang-2025"
+        },
+        {
+          "name": "Bún Riêu Cua 39",
+          "src": "https://danangfantasticity.com/discovery/list-of-michelin-guide-dining-establishments-in-da-nang-2025"
+        },
+        {
+          "name": "Bún Bò Huế Bà Thương",
+          "src": "https://danangfantasticity.com/discovery/list-of-michelin-guide-dining-establishments-in-da-nang-2025"
+        },
+        {
+          "name": "Thanh Cao Lầu",
+          "src": "https://junglebosstours.com/explorer/tourism-blog/best-cao-lau-in-hoi-an"
+        },
+        {
+          "name": "Cao Lầu Không Gian Xanh",
+          "src": "https://junglebosstours.com/explorer/tourism-blog/best-cao-lau-in-hoi-an"
+        },
+        {
+          "name": "Cao Lầu Bá Lễ",
+          "src": "https://junglebosstours.com/explorer/tourism-blog/best-cao-lau-in-hoi-an"
+        },
+        {
+          "name": "Bánh Mì Heo Nướng Lu Ông Phú Đạt",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-da-nang"
+        },
+        {
+          "name": "Bánh Mì Trung Lương",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-da-nang"
+        },
+        {
+          "name": "Ùmm Banh Mi & Cafe",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-da-nang"
+        },
+        {
+          "name": "Bánh Mì Ông Tý",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-da-nang"
+        },
+        {
+          "name": "Bánh Mì Bà Lan",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-da-nang"
+        },
+        {
+          "name": "Bánh Mì Bình Hiền",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-da-nang"
+        },
+        {
+          "name": "Mì Quảng 1A",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-mi-quang-in-da-nang/"
+        },
+        {
+          "name": "Mì Quảng Nhung",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-mi-quang-in-da-nang/"
+        },
+        {
+          "name": "Mì Quảng Cô Sáu",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-mi-quang-in-da-nang/"
+        },
+        {
+          "name": "Mì Quảng Hồng Vân",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-mi-quang-in-da-nang/"
+        },
+        {
+          "name": "DD Wonderland",
+          "src": "https://diff.vn/en/danang-taste/top-kid-friendly-cafes-in-da-nang-loved-by-families/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Thanh Ha Pottery Village",
+          "src": "https://danangfantasticity.com/see-and-do/the-craft-of-thanh-ha-pottery-in-hoi-an"
+        },
+        {
+          "name": "Green Bamboo Cooking School",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": "Hoi An Eco Cooking Class by Kien Nguyen",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": "Vinh Vo Cooking Class",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": "Baby Farm",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        },
+        {
+          "name": "TiNiWorld",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        },
+        {
+          "name": "Helio Center",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        }
+      ]
+    },
+    "vn-hanoi": {
+      "eat": [
+        {
+          "name": "Chả Cá Anh Vũ",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Ngon Garden",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Hanoi Garden",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Phở Cuốn Chinh Thắng",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Bánh Cuốn Bà Hoành",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Bánh Cuốn Bà Xuân",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Phở Gà Châm",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Phở Gà Huyền Hương",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Phở Tiến",
+          "src": "https://flavorsofhanoi.com/hanoi-michelin-selected-restaurants/"
+        },
+        {
+          "name": "Mr Bảy Miền Tây",
+          "src": "https://flavorsofhanoi.com/hanoi-bib-gourmand-restaurants-2026/"
+        },
+        {
+          "name": "Miến Lươn Đông Thịnh",
+          "src": "https://flavorsofhanoi.com/hanoi-bib-gourmand-restaurants-2026/"
+        },
+        {
+          "name": "Habakuk",
+          "src": "https://flavorsofhanoi.com/hanoi-bib-gourmand-restaurants-2026/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Vietnam Museum of Fine Arts",
+          "src": "https://www.mykingdom.com.vn/en/blogs/hom-nay-con-choi-gi/5-bao-tang-cho-tre-em-trai-nghiem-da-dang-hoc-hoi-thu-vi"
+        },
+        {
+          "name": "Truc Bach Lake",
+          "src": "https://localvietnam.com/hanoi/truc-bach-lake/"
+        },
+        {
+          "name": "Timezone AEON Mall Long Bien",
+          "src": "https://editor.timezonegames.com/en-vn/venues/hanoi/aeon-mall-long-bien/"
+        },
+        {
+          "name": "Worldgame Playground for Kids",
+          "src": "https://mytour.vn/en/blog/xep-hang/top-10-indoor-playgrounds-for-kids-in-hanoi-mytour.html"
+        },
+        {
+          "name": "Play 'N' Learn Vietnam",
+          "src": "https://mytour.vn/en/blog/xep-hang/top-10-indoor-playgrounds-for-kids-in-hanoi-mytour.html"
+        }
+      ]
+    },
+    "vn-hue": {
+      "eat": [
+        {
+          "name": "Vị Huế",
+          "src": "https://e.vnexpress.net/photo/food-recipes/the-10-best-restaurants-in-hue-according-to-tripadvisor-4911637.html"
+        },
+        {
+          "name": "Bánh Gánh",
+          "src": "https://e.vnexpress.net/photo/food-recipes/the-10-best-restaurants-in-hue-according-to-tripadvisor-4911637.html"
+        },
+        {
+          "name": "Bánh Khoái Tài Phú",
+          "src": "https://vnexpress.net/quan-banh-khoai-26-nam-o-hue-5132915.html"
+        },
+        {
+          "name": "Sân Mây",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-restaurants-in-hue-vietnam/"
+        },
+        {
+          "name": "Làng An Việt",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-restaurants-in-hue-vietnam/"
+        },
+        {
+          "name": "Ngự Phố",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-restaurants-in-hue-vietnam/"
+        },
+        {
+          "name": "Gạo",
+          "src": "https://vinwonders.com/en/wonderpedia/news/best-restaurants-in-hue-vietnam/"
+        },
+        {
+          "name": "Bánh Khoái Hồng Mai",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/12-dia-chi-banh-khoai-hue-ngon/"
+        },
+        {
+          "name": "Bún Bò Mụ Rơi",
+          "src": "https://vnexpress.net/6-quan-bun-bo-nen-thu-khi-den-hue-4910981.html"
+        },
+        {
+          "name": "Bún Bò Ô Nhơn",
+          "src": "https://vnexpress.net/6-quan-bun-bo-nen-thu-khi-den-hue-4910981.html"
+        },
+        {
+          "name": "Bún Bò Bà Nga",
+          "src": "https://vnexpress.net/6-quan-bun-bo-nen-thu-khi-den-hue-4910981.html"
+        }
+      ],
+      "do": [
+        {
+          "name": "Thuy Bieu Village",
+          "src": "https://alike.io/blog/best-places-to-visit-in-hue-for-families"
+        }
+      ]
+    },
+    "vn-nhatrang": {
+      "eat": [
+        {
+          "name": "Hải Sản Bến Cảng",
+          "src": "https://newlifetravel.vn/hai-san-ben-cang-nha-trang/"
+        },
+        {
+          "name": "Bờ Kè Quán",
+          "src": "https://vietpowertravel.com/blog/seafood-restaurants-nha-trang.html"
+        },
+        {
+          "name": "Hải sản Nhật Phong 3",
+          "src": "https://vietpowertravel.com/blog/seafood-restaurants-nha-trang.html"
+        },
+        {
+          "name": "Làng Biển Sea Village",
+          "src": "https://vietpowertravel.com/blog/seafood-restaurants-nha-trang.html"
+        },
+        {
+          "name": "Bien Tien Restaurant",
+          "src": "https://vietpowertravel.com/blog/seafood-restaurants-nha-trang.html"
+        },
+        {
+          "name": "Luong Son Cang Restaurant",
+          "src": "https://vietpowertravel.com/blog/seafood-restaurants-nha-trang.html"
+        },
+        {
+          "name": "Hải sản Thanh Sương",
+          "src": "https://vivunhatrang.vn/6-quan-hai-san-binh-dan-nha-trang/"
+        },
+        {
+          "name": "Hải sản Tám Mẹo",
+          "src": "https://vivunhatrang.vn/6-quan-hai-san-binh-dan-nha-trang/"
+        },
+        {
+          "name": "I Like Buffet",
+          "src": "https://vivunhatrang.vn/6-quan-hai-san-binh-dan-nha-trang/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Playtime Kids Club",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/kham-pha-ngay-top-13-khu-vui-choi-tre-em-nha-trang-hot-nhat/"
+        },
+        {
+          "name": "Phu Dong Water Park",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/kham-pha-ngay-top-13-khu-vui-choi-tre-em-nha-trang-hot-nhat/"
+        }
+      ]
+    },
+    "vn-phuquoc": {
+      "eat": [
+        {
+          "name": "Biên Hải Quán",
+          "src": "https://blog.premierresidencesphuquoc.com/best-seafood-restaurant-in-phu-quoc/"
+        },
+        {
+          "name": "Bánh Khéo cô Dung",
+          "src": "https://sunparadiseland.com/SunParadiseLandPhuQuoc/tin-tuc/top-9-tiem-banh-ngon-o-phu-quoc-du-khach-khong-nen-bo-lo-17880"
+        },
+        {
+          "name": "Hủ tiếu mực Tư Hường",
+          "src": "https://sunparadiseland.com/SunParadiseLandPhuQuoc/tin-tuc/top-10-quan-an-binh-dan-phu-quoc-ngon-re-cho-du-khach-20541"
+        },
+        {
+          "name": "Cafe Cào",
+          "src": "https://sunparadiseland.com/SunParadiseLandPhuQuoc/tin-tuc/danh-sach-quan-cafe-dep-o-duong-dong-duoc-yeu-thich-nhat-20304"
+        },
+        {
+          "name": "Góc Cà Phê",
+          "src": "https://sunparadiseland.com/SunParadiseLandPhuQuoc/tin-tuc/danh-sach-quan-cafe-dep-o-duong-dong-duoc-yeu-thich-nhat-20304"
+        },
+        {
+          "name": "Zyzu Kafé",
+          "src": "https://sunparadiseland.com/SunParadiseLandPhuQuoc/tin-tuc/danh-sach-quan-cafe-dep-o-duong-dong-duoc-yeu-thich-nhat-20304"
+        },
+        {
+          "name": "Bánh canh chả cá Phụng",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/quan-an-ngon-phu-quoc/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Khai Hoan Fish Sauce Factory",
+          "src": "https://nashaplaneta.net/asia/vietnam/phuquoc-fabriki-rybnogo-sousa_en"
+        },
+        {
+          "name": "Bai Trao Beach",
+          "src": "https://sunparadiseland.com/SunParadiseLandPhuQuoc/tin-tuc/recommendations-for-play-spots-suitable-for-a-2-year-old-in-phu-quoc-24121"
+        },
+        {
+          "name": "Quoc An Pearl Farm",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids"
+        }
+      ]
+    },
+    "vn-saigon": {
+      "eat": [
+        {
+          "name": "Bún Thịt Nướng Chị Tuyền",
+          "src": "https://www.timeout.com/vietnam/restaurants/best-restaurants-ho-chi-minh-city"
+        },
+        {
+          "name": "Madame Lam",
+          "src": "https://www.timeout.com/vietnam/restaurants/best-restaurants-ho-chi-minh-city"
+        },
+        {
+          "name": "Ốc Đào",
+          "src": "https://www.timeout.com/vietnam/restaurants/best-restaurants-ho-chi-minh-city"
+        },
+        {
+          "name": "Chay Garden",
+          "src": "https://www.timeout.com/vietnam/restaurants/best-restaurants-ho-chi-minh-city"
+        },
+        {
+          "name": "My Banh Mi Saigon",
+          "src": "https://wnfdiary.com/best-banh-mi-in-saigon"
+        },
+        {
+          "name": "Bánh Mì Tuấn Mập",
+          "src": "https://wnfdiary.com/best-banh-mi-in-saigon"
+        },
+        {
+          "name": "Bánh Mì Hồng Hoa",
+          "src": "https://wnfdiary.com/best-banh-mi-in-saigon"
+        },
+        {
+          "name": "Bánh Mì Kẹp Chả Bò Hưng Phát",
+          "src": "https://wnfdiary.com/best-banh-mi-in-saigon"
+        },
+        {
+          "name": "Bánh Mì Hiền",
+          "src": "https://vietnamcoracle.com/banh-mi-in-ho-chi-minh-city"
+        },
+        {
+          "name": "Bánh Mì Sáu Minh",
+          "src": "https://vietnamcoracle.com/banh-mi-in-ho-chi-minh-city"
+        },
+        {
+          "name": "Lò Bánh Mì Lương Phan",
+          "src": "https://vietnamcoracle.com/banh-mi-in-ho-chi-minh-city"
+        },
+        {
+          "name": "Bánh Mì Bà Huynh (Madam Win)",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-saigon"
+        },
+        {
+          "name": "Bánh Mì Hòa Mã",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-saigon"
+        },
+        {
+          "name": "Bánh Mì Cụ Lý",
+          "src": "https://gtrip.vn/travel-blogs/best-banh-mi-in-saigon"
+        },
+        {
+          "name": "Tiệm Cơm 67 Tấm",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/best-broken-rice-ho-chi-minh"
+        },
+        {
+          "name": "Cơm Tấm Múc",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/best-broken-rice-ho-chi-minh"
+        },
+        {
+          "name": "Cơm Tấm Dì Út",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/best-broken-rice-ho-chi-minh"
+        },
+        {
+          "name": "Cơm Tấm Sà Bì Chưởng",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/best-broken-rice-ho-chi-minh"
+        },
+        {
+          "name": "Nhà Hàng Hương Lúa 8",
+          "src": "https://mytour.vn/vi/blog/am-thuc/top-13-nha-hang-hai-san-ngon-tai-phuong-tan-hung-tp-ho-chi-minh-mytour.html"
+        },
+        {
+          "name": "Hải Sản Biển Nhớ",
+          "src": "https://mytour.vn/vi/blog/am-thuc/top-13-nha-hang-hai-san-ngon-tai-phuong-tan-hung-tp-ho-chi-minh-mytour.html"
+        },
+        {
+          "name": "Cơm Tấm Mộc",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/best-broken-rice-ho-chi-minh"
+        }
+      ],
+      "do": [
+        {
+          "name": "Kizciti Center Saigon",
+          "src": "https://www.edarabia.com/things-to-do-ho-chi-minh-city-with-kids/"
+        },
+        {
+          "name": "Pho Museum",
+          "src": "https://news.tuoitre.vn/unexpected-and-engaging-lesser-known-museums-worth-a-visit-in-ho-chi-minh-city-103260415162217683.htm"
+        },
+        {
+          "name": "Vietnam People's Air Force Museum",
+          "src": "https://news.tuoitre.vn/unexpected-and-engaging-lesser-known-museums-worth-a-visit-in-ho-chi-minh-city-103260415162217683.htm"
+        },
+        {
+          "name": "Lê Văn Tám Park",
+          "src": "https://vietnamcoracle.com/saigons-parks-open-spaces"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "tiNiWorld Nha Trang",
+      "Phu Quoc Puppet Theatre",
+      "Artinus 3D Art Museum Saigon",
+      "Buffet hải sản 3 Miền K-Food"
+    ],
+    "name or place did not match on Google Maps": "about forty (a result list with no clear match, branches, or another business at the address)",
+    "other": [
+      "Sơn Trà Hill’s 1973 Bistro (in Da Nang, not Phu Quoc)",
+      "Mặn Mòi (name only on the page)",
+      "cooking classes that give no child age or price",
+      "a broken-rice house with several branches",
+      "cafés with no clear address",
+      "places already in the library under another spelling"
+    ]
+  }
+}

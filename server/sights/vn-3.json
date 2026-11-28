@@ -1015,6 +1015,47 @@
           "q": "Hoa Giấy Thanh Tiên, Phú Vang, Huế",
           "src": "https://vietnam.travel/places-to-go/central-vietnam/hue",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Thuy Bieu Village",
+            "th": "หมู่บ้านถุ่ยเบี่ยว"
+          },
+          "local": "Làng Thủy Biều",
+          "kind": "culture",
+          "area": {
+            "en": "7 km from the city centre",
+            "th": "ห่างใจกลางเมือง 7 กม."
+          },
+          "what": {
+            "en": "A leafy village known for pomelos, home-style lunches and craft workshops",
+            "th": "หมู่บ้านร่มรื่นที่ขึ้นชื่อเรื่องส้มโอ อาหารกลางวันแบบบ้าน ๆ และเวิร์กช็อปงานฝีมือ"
+          },
+          "why": {
+            "en": "Craft workshops where kids play with clay, colours and traditional techniques; safe village roads for cycling",
+            "th": "มีเวิร์กช็อปให้เด็กเล่นดินเหนียว สี และเทคนิคแบบดั้งเดิม ถนนในหมู่บ้านปลอดภัยสำหรับปั่นจักรยาน"
+          },
+          "tip": {
+            "en": "The page's sample two-day plan puts cycling and crafts here on day 2",
+            "th": "แผนตัวอย่างสองวันในเว็บให้มาปั่นจักรยานและทำงานฝีมือที่นี่ในวันที่สอง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Thủy Biều, Huế",
+          "ok": "2026-11",
+          "src": "https://alike.io/blog/best-places-to-visit-in-hue-for-families"
         }
     ]
     },
@@ -1578,6 +1619,88 @@
           },
           "q": "100 Eggs Mud Bath, Nguyen Tat Thanh, Nha Trang",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Playtime Kids Club",
+            "th": "เพลย์ไทม์ คิดส์ คลับ"
+          },
+          "local": "Khu vui chơi trẻ em Vincom Nha Trang",
+          "kind": "play",
+          "area": {
+            "en": "Level 3, Vincom Plaza, 44–46 Le Thanh Ton",
+            "th": "ชั้น 3 วินคอมพลาซ่า 44–46 เล แถ่ญ ตั๋น"
+          },
+          "what": {
+            "en": "An indoor play area in Vincom Plaza with play houses, bouncy houses and slides",
+            "th": "โซนเล่นในร่มในวินคอมพลาซ่า มีบ้านเล่น บ้านลมและสไลเดอร์"
+          },
+          "why": {
+            "en": "There is space for parents to play with the child too",
+            "th": "มีพื้นที่ให้พ่อแม่เล่นกับลูกด้วย"
+          },
+          "tip": {
+            "en": "Open 09:00–22:00 (per the page)",
+            "th": "เปิด 09:00–22:00 (ตามหน้าเว็บ)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Playtime Kids Club, Vincom Plaza, 44-46 Le Thanh Ton, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/kham-pha-ngay-top-13-khu-vui-choi-tre-em-nha-trang-hot-nhat/"
+        },
+        {
+          "name": {
+            "en": "Phu Dong Water Park",
+            "th": "สวนน้ำฝูด่ง"
+          },
+          "local": "Công viên nước Phù Đổng",
+          "kind": "themepark",
+          "area": {
+            "en": "78 Tran Phu, by the sea",
+            "th": "78 ถนนจันฟู ติดทะเล"
+          },
+          "what": {
+            "en": "A 2-hectare park by the sea with a water world, electric cars, bouncy houses and a Ferris wheel",
+            "th": "สวนริมทะเลขนาด 2 เฮกตาร์ มีโลกน้ำ รถไฟฟ้า บ้านลม และชิงช้าสวรรค์"
+          },
+          "why": {
+            "en": "Suits families on hot days and at weekends, with a water world and rides",
+            "th": "เหมาะกับครอบครัววันอากาศร้อนและวันหยุด มีโลกน้ำและเครื่องเล่น"
+          },
+          "tip": {
+            "en": "Open 07:00–23:59 (per the page)",
+            "th": "เปิด 07:00–23:59 (ตามหน้าเว็บ)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Phu Dong Park, 100 Tran Phu, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/kham-pha-ngay-top-13-khu-vui-choi-tre-em-nha-trang-hot-nhat/"
         }
       ]
     }
