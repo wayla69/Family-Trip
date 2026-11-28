@@ -2441,6 +2441,206 @@
           "q": "Le jardin des collections, 10 Rue de Tanis, 50170 Pontorson, France",
           "ok": "2026-11",
           "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/jardins-des-collections/"
+        },
+        {
+          "name": {
+            "en": "Micro Zoo Saint-Malo",
+            "th": "ไมโครซู แซ็งต์-มาโล"
+          },
+          "kind": "zoo",
+          "area": {
+            "en": "Intra-muros, Saint-Malo (about 1 hour 15 away)",
+            "th": "ในกำแพงเมือง แซ็งต์-มาโล (ห่างประมาณ 1 ชั่วโมง 15 นาที)"
+          },
+          "what": {
+            "en": "An exhibition of animals from five continents in recreated habitats: reptiles, fish, amphibians, birds, crocodiles and ants",
+            "th": "นิทรรศการสัตว์จากห้าทวีปในที่อยู่จำลอง มีสัตว์เลื้อยคลาน ปลา สัตว์สะเทินน้ำสะเทินบก นก จระเข้ และมด"
+          },
+          "why": {
+            "en": "Small animals close up, including crocodiles, in a historic rampart setting",
+            "th": "ได้ดูสัตว์เล็กใกล้ ๆ รวมถึงจระเข้ ในบรรยากาศกำแพงเมืองเก่า"
+          },
+          "tip": {
+            "en": "The till closes one hour before the doors do",
+            "th": "เคาน์เตอร์ขายตั๋วปิดก่อนประตูหนึ่งชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Micro Zoo Saint-Malo, 9 Place Vauban, 35400 Saint-Malo, France",
+          "ok": "2026-11",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/micro-zoo-saint-malo-en-3646717/"
+        },
+        {
+          "name": {
+            "en": "Carrousel Malouin",
+            "th": "การูเซลมาลูอัง"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Porte Saint-Thomas, Intra-Muros, Saint-Malo (about 1 hour 15 away)",
+            "th": "ประตู Saint-Thomas ในกำแพงเมือง แซ็งต์-มาโล (ห่างประมาณ 1 ชั่วโมง 15 นาที)"
+          },
+          "what": {
+            "en": "A copy of an old carousel, decorated with engravings showing Saint-Malo",
+            "th": "ม้าหมุนจำลองแบบโบราณ ตกแต่งด้วยภาพแกะสลักของแซ็งต์-มาโล"
+          },
+          "why": {
+            "en": "A small carousel for the little ones, at the foot of the ramparts",
+            "th": "ม้าหมุนเล็ก ๆ สำหรับเด็กเล็ก อยู่ตีนกำแพงเมือง"
+          },
+          "tip": {
+            "en": "A short stop of about half an hour",
+            "th": "แวะสั้น ๆ ราวครึ่งชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Manège Carrousel Malouin, Porte Saint-Thomas, 35400 Saint-Malo, France",
+          "ok": "2026-11",
+          "src": "https://saint-malo-tourisme.co.uk/offers/carrousel-malouin-saint-malo-en-3646275"
+        },
+        {
+          "name": {
+            "en": "Plage des Bas Sablons",
+            "th": "หาดบาซาบลง"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Bas Sablons marina, Saint-Servan, Saint-Malo (about 1 hour 15 away)",
+            "th": "ท่าจอดเรือบาซาบลง แซ็งต์-แซร์วอง แซ็งต์-มาโล (ห่างประมาณ 1 ชั่วโมง 15 นาที)"
+          },
+          "what": {
+            "en": "A sandy beach beside the marina, protected by a dike 750 metres long",
+            "th": "หาดทรายข้างท่าจอดเรือ มีเขื่อนยาว 750 เมตรกันคลื่น"
+          },
+          "why": {
+            "en": "Sheltered by the dike, with a café on the shore and the view over the Rance",
+            "th": "มีเขื่อนบังคลื่น มีร้านกาแฟริมหาด และวิวแม่น้ำร็องซ์"
+          },
+          "tip": {
+            "en": "Rescue station in summer only; no dogs from 1 April to 30 September",
+            "th": "มีหน่วยช่วยชีวิตเฉพาะหน้าร้อน ห้ามนำสุนัขเข้าระหว่าง 1 เมษายน–30 กันยายน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plage des Bas Sablons, 35400 Saint-Malo, France",
+          "ok": "2026-11",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/plage-des-bas-sablons-saint-malo-en-3646049/"
+        },
+        {
+          "name": {
+            "en": "Plage du Pont",
+            "th": "หาดดูปง"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Paramé, on the way to Rothéneuf, Saint-Malo (about 1 hour 15 away)",
+            "th": "ปารามเม ทางไปโรเตอเนิฟ แซ็งต์-มาโล (ห่างประมาณ 1 ชั่วโมง 15 นาที)"
+          },
+          "what": {
+            "en": "A fine sand beach sheltered from the wind, good for family swims",
+            "th": "หาดทรายละเอียดที่กำบังลม เหมาะกับครอบครัวลงเล่นน้ำ"
+          },
+          "why": {
+            "en": "A play area for children, set up for the tourist season",
+            "th": "มีลานเล่นสำหรับเด็ก จัดไว้ในช่วงฤดูท่องเที่ยว"
+          },
+          "tip": {
+            "en": "The play area is laid out during the tourist season",
+            "th": "ลานเล่นเปิดเฉพาะช่วงฤดูท่องเที่ยว"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plage du Pont, Paramé, 35400 Saint-Malo, France",
+          "ok": "2026-11",
+          "src": "https://www.tourismebretagne.com/preparer-mon-sejour/bouger-visiter/toutes-les-activites/plage-du-pont-saint-malo-fr-2012853/"
+        },
+        {
+          "name": {
+            "en": "Plage du Minihic",
+            "th": "หาดมีนิก"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Facing the Sillon and the old town, Saint-Malo (about 1 hour 15 away)",
+            "th": "หันหน้าสู่ซียงและเมืองเก่า แซ็งต์-มาโล (ห่างประมาณ 1 ชั่วโมง 15 นาที)"
+          },
+          "what": {
+            "en": "A large expanse of white sand where lifeguards watch over swimmers",
+            "th": "หาดทรายขาวกว้างใหญ่ มีเจ้าหน้าที่ช่วยชีวิตดูแลผู้เล่นน้ำ"
+          },
+          "why": {
+            "en": "A family beach with a view over the Sillon and the old town of Saint-Malo",
+            "th": "หาดสำหรับครอบครัว วิวซียงและเมืองเก่าแซ็งต์-มาโล"
+          },
+          "tip": {
+            "en": "Allow about three hours for a beach stop",
+            "th": "เผื่อเวลาราว 3 ชั่วโมงสำหรับนั่งเล่นริมหาด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plage du Minihic, 35400 Saint-Malo, France",
+          "ok": "2026-11",
+          "src": "https://www.tourismebretagne.com/offres/plage-du-minihic-saint-malo-fr-2012826/"
         }
       ]
     },
@@ -5751,6 +5951,209 @@
           "q": "Château de Champs-sur-Marne, 31 Rue de Paris, 77420 Champs-sur-Marne, France",
           "ok": "2026-11",
           "src": "https://www.sortiraparis.com/en/what-to-visit-in-paris/walks/articles/193135-for-the-2026-jardins-events-at-the-chateau-de-champs-sur-marne-family-friendly-scavenger-hunts-and-workshops"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Garden of the Five Senses",
+            "th": "สวนห้าประสาทสัมผัส"
+          },
+          "local": "Le jardin des cinq sens",
+          "kind": "park",
+          "area": {
+            "en": "Coupvray, Louis Braille Museum",
+            "th": "คูปวร์ พิพิธภัณฑ์หลุยส์ เบรลล์"
+          },
+          "what": {
+            "en": "A garden at the Louis Braille museum where all the senses are awake",
+            "th": "สวนที่พิพิธภัณฑ์หลุยส์ เบรลล์ ซึ่งปลุกประสาทสัมผัสทุกอย่าง"
+          },
+          "why": {
+            "en": "The page calls it a magical garden for the senses, a place for children to explore with touch, smell and sound",
+            "th": "เว็บไซต์เรียกว่าสวนมหัศจรรย์แห่งประสาทสัมผัส เป็นที่ให้เด็ก ๆ สำรวจด้วยการสัมผัส กลิ่น และเสียง"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Musée Louis Braille, 13 Rue Louis Braille, Coupvray, France",
+          "src": "https://www.coupvray.fr/"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Bossuet Garden",
+            "th": "สวนบอสซูเอ"
+          },
+          "local": "Le Jardin Bossuet",
+          "kind": "park",
+          "area": {
+            "en": "Meaux town centre",
+            "th": "ใจกลางเมืองโม"
+          },
+          "what": {
+            "en": "A small garden in the centre of Meaux, overlooking the cathedral",
+            "th": "สวนเล็ก ๆ ใจกลางเมืองโม มองเห็นมหาวิหาร"
+          },
+          "why": {
+            "en": "A stroll in the middle of town, a plain reason for a short break on the way",
+            "th": "เดินเล่นกลางเมือง เป็นที่แวะพักสั้น ๆ ระหว่างทาง"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Bossuet Garden of Meaux, 5 Pl. Charles de Gaulle, Meaux, France",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/316357-what-to-do-with-children-in-seine-et-marne-our-ideas-for-family-outings-in-77"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Skywalls",
+            "th": "สกายวอลส์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Saint-Mard",
+            "th": "แซ็งต์-มาร์"
+          },
+          "what": {
+            "en": "An indoor climbing and tree-climbing park in a large sports hall of 500 m²",
+            "th": "สวนปีนป่ายและทางผจญภัยบนต้นไม้ในร่ม ในโถงกีฬาขนาดใหญ่ 500 ตารางเมตร"
+          },
+          "why": {
+            "en": "Indoors, so it works on a wet day; climbing and bouldering in one hall",
+            "th": "อยู่ในร่ม เหมาะกับวันฝนตก มีทั้งปีนป่ายและโบลเดอริงในโถงเดียว"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "SKYWALLS, 38 Av. de la Font du Berger, Saint-Mard, France",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/316357-what-to-do-with-children-in-seine-et-marne-our-ideas-for-family-outings-in-77"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Arche Guédon swimming pool",
+            "th": "สระว่ายน้ำอาร์ช เกอดง"
+          },
+          "local": "Piscine de l’Arche Guédon",
+          "kind": "play",
+          "area": {
+            "en": "Torcy, Arche Guédon",
+            "th": "ตอร์ซี อาร์ช เกอดง"
+          },
+          "what": {
+            "en": "A 25 m sports pool with a separate play and discovery pool for the smallest children",
+            "th": "สระกีฬายาว 25 เมตร พร้อมสระเล่นน้ำและสำรวจแยกต่างหากสำหรับเด็กเล็กที่สุด"
+          },
+          "why": {
+            "en": "The page says the little pool is for children, beginners and gentle activities",
+            "th": "เว็บไซต์ระบุว่าสระเล็กเหมาะกับเด็ก ผู้เริ่มว่ายน้ำ และกิจกรรมเบา ๆ"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Arche Guédon swimming pool, 4 Pl. des Rencontres, Torcy, France",
+          "src": "https://www.ville-torcy.fr/wp-content/uploads/2025/07/Doc-PISCINES_CAPVM.pdf"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Le Nautil",
+            "th": "เลอ โนติล"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Pontault-Combault",
+            "th": "ปงโตลต์-ก็งโบลต์"
+          },
+          "what": {
+            "en": "An aquatic area with a wave pool, a water slide and a splash pad",
+            "th": "พื้นที่เล่นน้ำ มีสระคลื่น สไลเดอร์น้ำ และลานน้ำพุเล่นน้ำ"
+          },
+          "why": {
+            "en": "A splash pad and a shallow pool for the smallest, and a wave pool to have fun as a family",
+            "th": "มีลานน้ำพุและสระน้ำตื้นสำหรับเด็กเล็ก และสระคลื่นให้สนุกกันทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Le Nautil, RD 21 La Mare au Coq, Pontault-Combault, France",
+          "src": "https://www.ville-torcy.fr/wp-content/uploads/2025/07/Doc-PISCINES_CAPVM.pdf"
         }
       ]
     }

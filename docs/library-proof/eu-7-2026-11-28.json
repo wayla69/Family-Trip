@@ -1,0 +1,541 @@
+{
+  "town": "eu (Europe round 7: places to eat in Chamonix and Annecy, Bruges, Seville and Granada, Strasbourg, Amsterdam, the Lake District, Brussels, the Riviera, the Dolomites, Edinburgh, the Amalfi Coast, York; things to do in Rome, Barcelona, Madrid, Paris, Saint-Malo, around Disneyland Paris, Cologne, Brussels)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Europe notes and every source refused so far -> scripts/library-check.cjs; rows that failed only because the live page differed from the agent's saved copy were checked against the saved copy (the Torcy pool brochure with pdftotext) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town; the unclear ones opened again by hand; kept by hand: Agrippabad and Lentpark (Cologne's city pools, addresses from their own pages), the Louis Braille Museum for its garden, the Musée de l'Air et de l'Espace for Le Cocon, Fundación MAPFRE's Sala Recoletos, Batobus, the Boathouse Café at National Trust Fell Foot, the bistro at The Lakes Distillery, Rifugio Cherz (Passo Campolongo), and Plage du Minihic and the Rouge-Cloître playground (shown in a Maps list, not on one place page) -> Thai and English by writer agents to docs/STYLE.md.",
+  "towns": {
+    "be-bruges": {
+      "eat": [
+        {
+          "name": "Bar Lowie",
+          "src": "https://www.visitbruges.be/en/restaurants"
+        },
+        {
+          "name": "Benedict Cafe",
+          "src": "https://www.visitbruges.be/en/restaurants"
+        },
+        {
+          "name": "Sanseveria Bagelsalon",
+          "src": "https://www.visitbruges.be/en/restaurants"
+        },
+        {
+          "name": "MARO",
+          "src": "https://www.visitbruges.be/en/restaurants"
+        },
+        {
+          "name": "Kaffee Kamiel",
+          "src": "https://www.visitbruges.be/en/restaurants"
+        },
+        {
+          "name": "Bistro Refter",
+          "src": "https://www.visitbruges.be/en/restaurants"
+        }
+      ]
+    },
+    "be-brussels": {
+      "eat": [
+        {
+          "name": "Ricotta & Parmesan",
+          "src": "https://www.brusselstimes.com/1829386/much-loved-italian-restaurant-has-fed-brussels-for-a-quarter-of-a-century"
+        }
+      ],
+      "do": [
+        {
+          "name": "Ferme Nos Pilifs",
+          "src": "https://fermenospilifs.be/"
+        },
+        {
+          "name": "Rouge-Cloître playground",
+          "src": "https://bruxellessecrete.com/en/playgrounds-brussels/"
+        },
+        {
+          "name": "Rainbow Kids",
+          "src": "https://bruxellessecrete.com/en/playgrounds-brussels/"
+        }
+      ]
+    },
+    "es-seville": {
+      "eat": [
+        {
+          "name": "El Molino del Puente",
+          "src": "https://www.granadadirect.com/comer-beber/restaurantes-ninos/"
+        },
+        {
+          "name": "Mesón J.R",
+          "src": "https://www.granadadirect.com/comer-beber/restaurantes-ninos/"
+        },
+        {
+          "name": "Calentería 1860",
+          "src": "https://www.salir.com/los-mejores-churros-de-sevilla-art-1787.html"
+        },
+        {
+          "name": "Churrería San Pablo",
+          "src": "https://www.salir.com/los-mejores-churros-de-sevilla-art-1787.html"
+        }
+      ]
+    },
+    "fr-alps": {
+      "eat": [
+        {
+          "name": "La Petite Cuisine",
+          "src": "https://hautesavoiemontblanc-tourisme.com/en/offers/la-petite-cuisine-chamonix-mont-blanc-en-5833354/"
+        },
+        {
+          "name": "Le Sunset Beach",
+          "src": "https://bichearoundtheworld.fr/10-restaurants-kids-friendly-a-annecy/"
+        },
+        {
+          "name": "La Ferme de la Charbonnière",
+          "src": "https://bichearoundtheworld.fr/10-restaurants-kids-friendly-a-annecy/"
+        },
+        {
+          "name": "La Taverne Savoyarde",
+          "src": "https://bichearoundtheworld.fr/10-restaurants-kids-friendly-a-annecy/"
+        }
+      ]
+    },
+    "fr-nice": {
+      "eat": [
+        {
+          "name": "Mellow Factory",
+          "src": "https://www.antibesjuanlespins.com/en/must-see-must-do/going-out/restaurants/mellow-factory-5777085"
+        },
+        {
+          "name": "Da.Vi.Tri",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/da-vi-tri-menton-en-6395458/"
+        },
+        {
+          "name": "Happynest",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/elite-happynest-nice-en-6350964/"
+        },
+        {
+          "name": "Maman Les P'tits Bateaux",
+          "src": "https://www.explorenicecotedazur.com/en/shop/maman-les-ptits-bateaux/"
+        },
+        {
+          "name": "Chez Thérésa",
+          "src": "https://www.explorenicecotedazur.com/en/info/chez-theresa-en"
+        },
+        {
+          "name": "Chez Marie-Thé",
+          "src": "https://www.explorenicecotedazur.com/en/shop/chez-marie-the-socca-du-cours/"
+        }
+      ]
+    },
+    "fr-strasbourg": {
+      "eat": [
+        {
+          "name": "Le Tire-Bouchon",
+          "src": "https://fr.gaultmillau.com/en/restaurants/winstub-le-tire-bouchon"
+        },
+        {
+          "name": "Au Cruchon",
+          "src": "https://fr.gaultmillau.com/en/restaurant/au-cruchon"
+        },
+        {
+          "name": "Winstub La Vieille Enseigne",
+          "src": "https://fr.gaultmillau.com/en/restaurant/la-vieille-enseigne"
+        },
+        {
+          "name": "Au Pont Corbeau",
+          "src": "https://fr.gaultmillau.com/en/restaurant/au-pont-corbeau"
+        }
+      ]
+    },
+    "gb-edinburgh": {
+      "eat": [
+        {
+          "name": "Margot",
+          "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids"
+        },
+        {
+          "name": "Relish",
+          "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids"
+        },
+        {
+          "name": "Alandas Gelato",
+          "src": "https://edinburgh.org/blog/top-ice-cream-shops-in-edinburgh/"
+        },
+        {
+          "name": "Sweet Paradice Desserts",
+          "src": "https://edinburgh.org/blog/top-ice-cream-shops-in-edinburgh/"
+        },
+        {
+          "name": "Crolla's Gelateria",
+          "src": "https://edinburgh.org/blog/top-ice-cream-shops-in-edinburgh/"
+        },
+        {
+          "name": "LouLou’s Ice Cream & Coffee Shop",
+          "src": "https://edinburgh.org/blog/top-ice-cream-shops-in-edinburgh/"
+        },
+        {
+          "name": "The Little Parlour",
+          "src": "https://edinburgh.org/blog/top-ice-cream-shops-in-edinburgh/"
+        },
+        {
+          "name": "Oscar’s Gelato",
+          "src": "https://edinburgh.org/blog/top-ice-cream-shops-in-edinburgh/"
+        }
+      ]
+    },
+    "gb-lakes": {
+      "eat": [
+        {
+          "name": "The Chalet Tearooms & Restaurant",
+          "src": "https://keswick.org/whats-on/visit-keswick-blog/places-to-eat-in-keswick"
+        },
+        {
+          "name": "Bistro at the Distillery",
+          "src": "https://keswick.org/whats-on/visit-keswick-blog/places-to-eat-in-keswick"
+        },
+        {
+          "name": "Boathouse Café",
+          "src": "https://www.nationaltrust.org.uk/visit/lake-district/fell-foot/eating-at-fell-foot"
+        }
+      ]
+    },
+    "gb-york": {
+      "eat": [
+        {
+          "name": "KREP Artisan Crêpes & Galettes",
+          "src": "https://little-vikings.co.uk/where-to-eat-york-kids"
+        },
+        {
+          "name": "Tabanco by Ambiente",
+          "src": "https://little-vikings.co.uk/best-breakfast-brunch-york/"
+        },
+        {
+          "name": "Bluebird Bakery",
+          "src": "https://little-vikings.co.uk/best-breakfast-brunch-york/"
+        },
+        {
+          "name": "Rise",
+          "src": "https://little-vikings.co.uk/best-breakfast-brunch-york/"
+        },
+        {
+          "name": "Little Arras",
+          "src": "https://little-vikings.co.uk/best-breakfast-brunch-york/"
+        },
+        {
+          "name": "Roberto Authentic Italian Gelato",
+          "src": "https://little-vikings.co.uk/best-ice-cream-york"
+        },
+        {
+          "name": "Loopy Scoops",
+          "src": "https://little-vikings.co.uk/best-ice-cream-york"
+        },
+        {
+          "name": "Curlew Fields Dairies",
+          "src": "https://little-vikings.co.uk/best-ice-cream-york"
+        }
+      ]
+    },
+    "it-amalfi": {
+      "eat": [
+        {
+          "name": "Da Gemma",
+          "src": "https://www.positano.com/it/c/da-gemma-2"
+        },
+        {
+          "name": "Ristorante Zi'Ntonio",
+          "src": "https://bluekeys.it/blog/what-to-eat-in-sorrento"
+        },
+        {
+          "name": "Donna Rosa",
+          "src": "https://mesprestiges.com/it/amalfi-coast/stories/the-family-trattorie-that-outlasted-the-fashion"
+        },
+        {
+          "name": "Antico Francischiello",
+          "src": "https://mesprestiges.com/it/amalfi-coast/stories/the-family-trattorie-that-outlasted-the-fashion"
+        },
+        {
+          "name": "Bougainvillea",
+          "src": "https://www.italia.it/it/campania/sorrento/dove-mangiare/bougainvillea"
+        },
+        {
+          "name": "Pasticceria Savoia",
+          "src": "https://www.voloscontato.it/guide-per-viaggiatori/le-migliori-gelaterie-della-costiera-amalfitana-dove-vale-la-pena-fare-la-fila-per-un-cono.php"
+        }
+      ]
+    },
+    "it-dolomites": {
+      "eat": [
+        {
+          "name": "Aida Restaurant Pizzeria",
+          "src": "https://www.suedtirol.info/en/en/experiences-and-events/plp-experiences/experiences-south-tyrol/pdp-experience.smgpoib44ecfc6898deec35c03cb0e359501e6.ristorante-pizzeria-gelateria-pasticceria-aida.bolzano-centro-bozen-zentrum"
+        },
+        {
+          "name": "Rifugio Cherz",
+          "src": "https://www.altabadia.org/en/info/uetia-cherz.html"
+        },
+        {
+          "name": "La Pizzerai",
+          "src": "https://www.val-gardena.com/it/indirizzi/dettaglio/base/company/santa-cristina-val-gardena/la-pizzerai/75C3C5B2B23B5DBB49BA1FDF41838DBA/"
+        },
+        {
+          "name": "E-Quattro Pizza Genuine",
+          "src": "https://www.val-gardena.com/it/indirizzi/dettaglio/base/company/ortisei-val-gardena/genuine-pizza-e-quattro/9F8332E5E90CEEAE2E3022272E6944B1/"
+        },
+        {
+          "name": "La Tambra Steakhouse & Pizzeria",
+          "src": "https://www.val-gardena.com/it/indirizzi/dettaglio/base/company/santa-cristina-val-gardena/steakhouse-la-tambra/C0DF8E3676D911D18F2900A02427D15E/"
+        }
+      ]
+    },
+    "nl-amsterdam": {
+      "eat": [
+        {
+          "name": "Boothuis Sloterplas",
+          "src": "https://www.kidsproof.nl/Amsterdam/blog/onze-favoriete-terrasjes-met-speelgelegenheid-in-amsterdam"
+        },
+        {
+          "name": "Café Restaurant Polder",
+          "src": "https://www.kidsproof.nl/Amsterdam/blog/onze-favoriete-terrasjes-met-speelgelegenheid-in-amsterdam"
+        },
+        {
+          "name": "Café De Kleine Bes",
+          "src": "https://www.yourlittleblackbook.me/es/kindvriendelijke-terrassen-amsterdam/"
+        },
+        {
+          "name": "Café Noorderlicht",
+          "src": "https://www.yourlittleblackbook.me/es/kindvriendelijke-terrassen-amsterdam/"
+        },
+        {
+          "name": "De VerbroederIJ",
+          "src": "https://www.deverbroederij.nl"
+        }
+      ]
+    },
+    "de-cologne": {
+      "do": [
+        {
+          "name": "Zollstockbad",
+          "src": "https://www.koeln.de/koeln/freizeit/entspannen_und_geniessen/schwimmen/hallenbaeder/schwimmbaeder-in-koeln-zollstockbad_33988.html"
+        },
+        {
+          "name": "Höhenbergbad",
+          "src": "https://koelnbaeder.de/baeder/hoehenbergbad/"
+        },
+        {
+          "name": "Chorweilerbad",
+          "src": "https://koelnbaeder.de/baeder/chorweilerbad/"
+        },
+        {
+          "name": "Zündorfbad",
+          "src": "https://koelnbaeder.de/baeder/zuendorfbad/"
+        },
+        {
+          "name": "Agrippabad",
+          "src": "https://koelnbaeder.de/baeder/agrippabad/"
+        },
+        {
+          "name": "Lentpark",
+          "src": "https://koelnbaeder.de/baeder/lentpark/"
+        },
+        {
+          "name": "Ossendorfbad",
+          "src": "https://koelnbaeder.de/bad/ossendorfbad/attraktionen"
+        }
+      ]
+    },
+    "es-barcelona": {
+      "do": [
+        {
+          "name": "Montjuïc Castle",
+          "src": "https://ajuntament.barcelona.cat/castelldemontjuic/en/node/125"
+        },
+        {
+          "name": "Masia Can Mestres",
+          "src": "https://ajuntament.barcelona.cat/espaisverds/en/news/barcelonas-urban-farms-have-been-renovated-and-now-feature-educational-trails-1529801"
+        },
+        {
+          "name": "Can Cadena",
+          "src": "https://ajuntament.barcelona.cat/espaisverds/en/news/barcelonas-urban-farms-have-been-renovated-and-now-feature-educational-trails-1529801"
+        }
+      ]
+    },
+    "es-madrid": {
+      "do": [
+        {
+          "name": "Lázaro Galdiano Museum",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "name": "National Museum of Decorative Arts",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "name": "Fundación MAPFRE, Sala Recoletos",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "name": "National Museum of Anthropology",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "name": "Cerralbo Museum",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "name": "Autocine Madrid RACE",
+          "src": "https://www.esmadrid.com/node/105626"
+        },
+        {
+          "name": "Casa de Campo Environmental Education Centre",
+          "src": "https://www.miteco.gob.es/es/ceneam/formacion-ambiental/congresos/actividades-en-familia---cea-casa-de-campo.html"
+        }
+      ]
+    },
+    "fr-montstmichel": {
+      "do": [
+        {
+          "name": "Micro Zoo Saint-Malo",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/micro-zoo-saint-malo-en-3646717/"
+        },
+        {
+          "name": "Carrousel Malouin",
+          "src": "https://saint-malo-tourisme.co.uk/offers/carrousel-malouin-saint-malo-en-3646275"
+        },
+        {
+          "name": "Plage des Bas Sablons",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/plage-des-bas-sablons-saint-malo-en-3646049/"
+        },
+        {
+          "name": "Plage du Pont",
+          "src": "https://www.tourismebretagne.com/preparer-mon-sejour/bouger-visiter/toutes-les-activites/plage-du-pont-saint-malo-fr-2012853/"
+        },
+        {
+          "name": "Plage du Minihic",
+          "src": "https://www.tourismebretagne.com/offres/plage-du-minihic-saint-malo-fr-2012826/"
+        }
+      ]
+    },
+    "fr-paris": {
+      "do": [
+        {
+          "name": "Batobus",
+          "src": "https://batobus.com/en/faq"
+        },
+        {
+          "name": "Piscine Alfred Nakache",
+          "src": "https://www.paris.fr/pages/5-piscines-ou-sauter-nager-et-s-amuser-en-famille-24453"
+        },
+        {
+          "name": "Piscine Pailleron",
+          "src": "https://www.paris.fr/pages/5-piscines-ou-sauter-nager-et-s-amuser-en-famille-24453"
+        },
+        {
+          "name": "Piscine Joséphine Baker",
+          "src": "https://www.paris.fr/pages/5-piscines-ou-sauter-nager-et-s-amuser-en-famille-24453"
+        },
+        {
+          "name": "Parc Monceau",
+          "src": "https://www.paris.fr/lieux/parc-monceau-1804"
+        },
+        {
+          "name": "Le Cocon au musée de l'Air et de l'Espace",
+          "src": "https://www.paris.fr/lieux/parc-monceau-1804"
+        },
+        {
+          "name": "L'espace familles au musée de l'Orangerie",
+          "src": "https://www.paris.fr/lieux/parc-monceau-1804"
+        },
+        {
+          "name": "Le Studio à la Cinémathèque française",
+          "src": "https://www.paris.fr/lieux/parc-monceau-1804"
+        }
+      ]
+    },
+    "it-rome": {
+      "do": [
+        {
+          "name": "Villa Balestra",
+          "src": "https://turismoroma.it/en/node/49244"
+        },
+        {
+          "name": "La Casina di Raffaello",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        },
+        {
+          "name": "Salaria Sport Village",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
+        },
+        {
+          "name": "Piscina delle Rose",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
+        },
+        {
+          "name": "Domar Sporting Club",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
+        },
+        {
+          "name": "Circolo Arca",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
+        }
+      ]
+    },
+    "p-disney-paris": {
+      "do": [
+        {
+          "name": "Garden of the Five Senses",
+          "src": "https://www.coupvray.fr/"
+        },
+        {
+          "name": "Bossuet Garden",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/316357-what-to-do-with-children-in-seine-et-marne-our-ideas-for-family-outings-in-77"
+        },
+        {
+          "name": "Skywalls",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/316357-what-to-do-with-children-in-seine-et-marne-our-ideas-for-family-outings-in-77"
+        },
+        {
+          "name": "Arche Guédon swimming pool",
+          "src": "https://www.ville-torcy.fr/wp-content/uploads/2025/07/Doc-PISCINES_CAPVM.pdf"
+        },
+        {
+          "name": "Le Nautil",
+          "src": "https://www.ville-torcy.fr/wp-content/uploads/2025/07/Doc-PISCINES_CAPVM.pdf"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026), most for winter": [
+      "Le Carrousel (Chamonix, for good)",
+      "Café Soleil (for good)",
+      "Le Petit Paradis",
+      "Le Chalet de la Brune",
+      "Le Pêcheur",
+      "Terracotta",
+      "Gelateria David",
+      "Baffone Gelateria Artigianale",
+      "Amsterdam Buiten",
+      "Parc del Laberint d'Horta",
+      "OXO Museo del Videojuego",
+      "La Dolce Vita (Menton)",
+      "Baita Pauli",
+      "Turonda",
+      "Restaurant de la Gravette"
+    ],
+    "another place or town on Google Maps": [
+      "Scheutbos playground (a hospital at the address)",
+      "Kid's Factory (now another business)",
+      "Hawkshead Shop (another shop at the address)",
+      "The Dark Horse Espresso Bar (not at that address)",
+      "The Pantry (a different café on Maps)"
+    ],
+    "outside the town's area": [
+      "three Knokke-Heist restaurants (the coast, not Bruges)"
+    ],
+    "other": [
+      "chains: Italiana Fitness, Kukuchurro",
+      "Buca di Bacco (a hotel's ice-cream shop)",
+      "Le Restaurant (Annecy, wine-cellar bistronomy)",
+      "La Stua (an après-ski bar)",
+      "the LEGO exhibition in Rome (temporary)",
+      "Frietkot De Markt and Northern Bloc (not one place)",
+      "Caffè Val d'Anna (already in the library)",
+      "S. Luca (no address on Maps)"
+    ]
+  }
+}

@@ -949,6 +949,326 @@
           "q": "Les Petits Bateaux, Grand bassin octogonal, Jardin des Tuileries, 75001 Paris, France",
           "ok": "2026-11",
           "src": "https://www.sortiraparis.com/en/child-and-family/articles/321311-the-little-boats-of-the-jardin-des-tuileries-the-playful-sailboats-to-sail-on-the-grand-bassin"
+        },
+        {
+          "name": {
+            "en": "Batobus",
+            "th": "บาโตบุส"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Seine river stops, Paris",
+            "th": "ท่าเรือริมแม่น้ำแซน ปารีส"
+          },
+          "what": {
+            "en": "A river boat service on the Seine with nine stops, where you can get on and off along the route",
+            "th": "เรือโดยสารริมแม่น้ำแซนมีเก้าท่า ขึ้นลงได้ตลอดเส้นทาง"
+          },
+          "why": {
+            "en": "A boat ride that rests tired legs; children under four ride free with a 24-hour or 48-hour pass collected before boarding",
+            "th": "นั่งเรือพักขาเมื่อยได้ เด็กต่ำกว่า 4 ปีขึ้นฟรีโดยรับพาส 24 หรือ 48 ชั่วโมงก่อนขึ้นเรือ"
+          },
+          "tip": {
+            "en": "Passes start on first use and run during opening hours (10:00–19:00 or 20:00)",
+            "th": "พาสเริ่มนับเมื่อใช้ครั้งแรก ใช้ได้ในเวลาเปิด (10:00–19:00 หรือ 20:00)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €13 for ages 4–11, 24-hour pass",
+            "th": "≈ €13 เด็กอายุ 4–11 ปี พาส 24 ชั่วโมง"
+          },
+          "book": "none",
+          "q": "Batobus, Seine stops, Paris, France",
+          "ok": "2026-11",
+          "src": "https://batobus.com/en/faq"
+        },
+        {
+          "name": {
+            "en": "Piscine Alfred Nakache",
+            "th": "ปิซีน อัลเฟรด นาคาช"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Rue Denoyez, 20th arrondissement",
+            "th": "ถนน Rue Denoyez เขต 20"
+          },
+          "what": {
+            "en": "A 25-metre pool beside a children's pool with a water slide",
+            "th": "สระยาว 25 เมตร ติดกับสระเด็กที่มีสไลเดอร์น้ำ"
+          },
+          "why": {
+            "en": "A small pool with planks and rings for young swimmers, and a slide to glide down",
+            "th": "สระเล็กมีแผ่นโฟมและห่วงยางสำหรับนักว่ายน้ำตัวน้อย และมีสไลเดอร์ให้ไหล"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Piscine Alfred Nakache, 4-12 Rue Denoyez, 75020 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/pages/5-piscines-ou-sauter-nager-et-s-amuser-en-famille-24453"
+        },
+        {
+          "name": {
+            "en": "Piscine Pailleron",
+            "th": "ปิซีน ปาโยรง"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Rue Édouard-Pailleron, 19th arrondissement",
+            "th": "ถนน Rue Édouard-Pailleron เขต 19"
+          },
+          "what": {
+            "en": "A pool in a listed historic building with a paddling pool, a water slide and a solarium",
+            "th": "สระในอาคารเก่าที่ขึ้นทะเบียนอนุรักษ์ มีสระเด็กเล่น สไลเดอร์น้ำ และลานอาบแดด"
+          },
+          "why": {
+            "en": "A paddling pool and a water slide made for children, with a solarium to rest between slides",
+            "th": "มีสระเด็กเล่นและสไลเดอร์น้ำสำหรับเด็ก และลานอาบแดดไว้พักระหว่างเล่น"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Piscine Pailleron, 32 Rue Édouard-Pailleron, 75019 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/pages/5-piscines-ou-sauter-nager-et-s-amuser-en-famille-24453"
+        },
+        {
+          "name": {
+            "en": "Piscine Joséphine Baker",
+            "th": "ปิซีน โฌเซฟีน เบเกอร์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Quai François Mauriac, 13th arrondissement, on the Seine",
+            "th": "ริมแม่น้ำแซน Quai François Mauriac เขต 13"
+          },
+          "what": {
+            "en": "A pool on the Seine with a basin of 90 cm to 2 m, where you can swim with children",
+            "th": "สระริมแม่น้ำแซน มีอ่างลึก 90 เซนติเมตรถึง 2 เมตร ว่ายน้ำกับเด็กได้"
+          },
+          "why": {
+            "en": "A basin from 90 cm to 2 m deep, and the pool lends swim rings",
+            "th": "อ่างลึกตั้งแต่ 90 เซนติเมตรถึง 2 เมตร และสระมีห่วงยางให้ยืม"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Piscine Joséphine-Baker, Quai François Mauriac, 75013 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/pages/5-piscines-ou-sauter-nager-et-s-amuser-en-famille-24453"
+        },
+        {
+          "name": {
+            "en": "Parc Monceau",
+            "th": "ปาร์กมงโซ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "8th arrondissement",
+            "th": "เขต 8"
+          },
+          "what": {
+            "en": "The park has a children's play area with swings, a carousel and drinking water",
+            "th": "สวนมีลานเด็กเล่น ชิงช้า ม้าหมุน และน้ำดื่ม"
+          },
+          "why": {
+            "en": "Swings, a carousel and a play area in a big park",
+            "th": "ชิงช้า ม้าหมุน และลานเด็กเล่นในสวนใหญ่"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc Monceau, 75008 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/lieux/parc-monceau-1804"
+        },
+        {
+          "name": {
+            "en": "Le Cocon au musée de l'Air et de l'Espace",
+            "th": "เลอ โกกง ที่พิพิธภัณฑ์อากาศและอวกาศ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Musée de l'Air et de l'Espace, Le Bourget",
+            "th": "พิพิธภัณฑ์อากาศและอวกาศ เลอ บูร์เฌ"
+          },
+          "what": {
+            "en": "A children's space at the Air and Space Museum for the youngest visitors",
+            "th": "พื้นที่สำหรับเด็กที่พิพิธภัณฑ์อากาศและอวกาศ สำหรับผู้เยี่ยมชมตัวน้อยที่สุด"
+          },
+          "why": {
+            "en": "Made for the youngest children, ages 0 to 4",
+            "th": "ทำไว้สำหรับเด็กเล็ก อายุ 0–4 ปี"
+          },
+          "tip": {
+            "en": "It sits inside the museum, which is outside central Paris",
+            "th": "อยู่ในพิพิธภัณฑ์ ซึ่งอยู่นอกใจกลางปารีส"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Musée de l'Air et de l'Espace, 3 Esplanade de l'Air et de l'Espace, 93350 Le Bourget, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/pages/ces-lieux-dedies-aux-enfants-dans-les-musees-parisiens-26543"
+        },
+        {
+          "name": {
+            "en": "L'espace familles au musée de l'Orangerie",
+            "th": "เลสเปซ ฟามีย ที่พิพิธภัณฑ์ออรองเฌอรี"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Musée de l'Orangerie, Jardin des Tuileries, Paris Centre",
+            "th": "พิพิธภัณฑ์ออรองเฌอรี สวนตุยเลอรี ปารีสตอนกลาง"
+          },
+          "what": {
+            "en": "A family space at the Orangerie with a multisensory game about the paintings, a reading corner and a sound alcove",
+            "th": "พื้นที่ครอบครัวที่ออรองเฌอรี มีเกมหลายประสาทสัมผัสเกี่ยวกับภาพวาด มุมอ่านหนังสือ และมุมเสียง"
+          },
+          "why": {
+            "en": "Children can try a multisensory game for the Monet paintings, and a reading corner gives a quiet moment",
+            "th": "เด็กเล่นเกมหลายประสาทสัมผัสเรื่องภาพของโมเนต์ได้ และมุมอ่านหนังสือให้พักเงียบ ๆ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Musée de l'Orangerie, Jardin des Tuileries, 75001 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/pages/ces-lieux-dedies-aux-enfants-dans-les-musees-parisiens-26543"
+        },
+        {
+          "name": {
+            "en": "Le Studio à la Cinémathèque française",
+            "th": "เลอ สตูดิโอ ที่ซีเนมาแตกฝรองแซซ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Cinémathèque française, Bercy, 12th arrondissement",
+            "th": "ซีเนมาแตกฝรองแซซ แบร์ซี เขต 12"
+          },
+          "what": {
+            "en": "A film studio at the Cinémathèque française with workshops on making films, with professional equipment",
+            "th": "สตูดิโอภาพยนตร์ที่ซีเนมาแตกฝรองแซซ มีเวิร์กชอปทำหนังด้วยอุปกรณ์มืออาชีพ"
+          },
+          "why": {
+            "en": "Hands-on workshops for film-minded children; suited to older children, around 7 and up",
+            "th": "เวิร์กชอปลงมือทำสำหรับเด็กที่ชอบหนัง เหมาะกับเด็กโต อายุราว 7 ปีขึ้นไป"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Cinémathèque française, 51 Rue de Bercy, 75012 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/pages/ces-lieux-dedies-aux-enfants-dans-les-musees-parisiens-26543"
         }
     ]
     }

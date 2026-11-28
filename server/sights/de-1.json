@@ -2076,6 +2076,287 @@
           "q": "Schloss Drachenburg, Drachenfelsstraße 118, Königswinter, Germany",
           "ok": "2026-11",
           "src": "https://www.koeln.de/freizeit/ll/ausfluege/schloesser-burgen/schloss-drachenburg-drachenfels-ausflug/"
+        },
+        {
+          "ok": "2026-11",
+          "kind": "play",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "book": "none",
+          "price": {
+            "en": "≈ €4.20 ages 6–17 · ≈ €0.50 under 6",
+            "th": "≈ €4.20 อายุ 6–17 ปี · ≈ €0.50 ต่ำกว่า 6 ปี"
+          },
+          "name": {
+            "en": "Zollstockbad",
+            "th": "ซอลล์ชตอคบาด"
+          },
+          "area": {
+            "en": "Zollstock",
+            "th": "ซอลล์ชตอค"
+          },
+          "io": "both",
+          "what": {
+            "en": "A combined indoor and outdoor pool in the Zollstock district, with a children’s paddling pool",
+            "th": "สระว่ายน้ำทั้งในร่มและกลางแจ้งในย่านซอลล์ชตอค มีสระน้ำตื้นสำหรับเด็ก"
+          },
+          "why": {
+            "en": "There is a paddling pool for children, and indoors a climbing wall for children",
+            "th": "มีสระน้ำตื้นสำหรับเด็ก และในอาคารมีผนังปีนเขาสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "q": "Zollstockbad, Raderthalgürtel 8-10, Zollstock, Köln, Germany",
+          "src": "https://www.koeln.de/koeln/freizeit/entspannen_und_geniessen/schwimmen/hallenbaeder/schwimmbaeder-in-koeln-zollstockbad_33988.html"
+        },
+        {
+          "ok": "2026-11",
+          "kind": "play",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "pram": "part",
+          "book": "none",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "name": {
+            "en": "Höhenbergbad",
+            "th": "เฮอเอินแบร์กบาด"
+          },
+          "area": {
+            "en": "Kalk",
+            "th": "คัลค์"
+          },
+          "io": "out",
+          "what": {
+            "en": "An outdoor pool with a 25-metre pool in the swimming season, a children’s landscape and a 65-metre water slide",
+            "th": "สระกลางแจ้ง มีสระยาว 25 เมตรในฤดูว่ายน้ำ พื้นที่เล่นน้ำสำหรับเด็ก และสไลเดอร์น้ำยาว 65 เมตร"
+          },
+          "why": {
+            "en": "The page lists a children’s landscape and an outdoor children’s paddling pool",
+            "th": "มีพื้นที่เล่นน้ำสำหรับเด็กและสระน้ำตื้นสำหรับเด็กกลางแจ้ง"
+          },
+          "tip": {
+            "en": "The 25-metre outdoor pool runs in the swimming season",
+            "th": "สระกลางแจ้งยาว 25 เมตรเปิดในฤดูว่ายน้ำ"
+          },
+          "q": "Höhenbergbad, Schwarzburger Str. 4, Kalk, Köln, Germany",
+          "src": "https://koelnbaeder.de/baeder/hoehenbergbad/"
+        },
+        {
+          "ok": "2026-11",
+          "kind": "play",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "book": "none",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "name": {
+            "en": "Chorweilerbad",
+            "th": "ชอร์ไวเลอร์บาด"
+          },
+          "area": {
+            "en": "Chorweiler",
+            "th": "ชอร์ไวเลอร์"
+          },
+          "io": "both",
+          "what": {
+            "en": "A pool in Chorweiler with a children’s landscape, a children’s paddling pool and a sand-and-water playground",
+            "th": "สระว่ายน้ำในชอร์ไวเลอร์ มีพื้นที่เล่นสำหรับเด็ก สระน้ำตื้น และสนามเล่นทรายกับน้ำ"
+          },
+          "why": {
+            "en": "A sand-and-water playground and a play landscape for children",
+            "th": "มีสนามเล่นทรายกับน้ำและพื้นที่เล่นสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "q": "Chorweilerbad, Liller Str., Chorweiler, Köln, Germany",
+          "src": "https://koelnbaeder.de/baeder/chorweilerbad/"
+        },
+        {
+          "ok": "2026-11",
+          "kind": "play",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "book": "none",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "name": {
+            "en": "Zündorfbad",
+            "th": "ซึนดอร์ฟบาด"
+          },
+          "local": "Zündorfbad Hallenbad",
+          "area": {
+            "en": "Zündorf, Porz",
+            "th": "ซึนดอร์ฟ พอร์ซ"
+          },
+          "io": "both",
+          "what": {
+            "en": "A pool with a 25-metre pool, a four-season pool and an outdoor 80-metre water slide",
+            "th": "สระว่ายน้ำมีสระยาว 25 เมตร สระที่ใช้ได้ทุกฤดู และสไลเดอร์น้ำกลางแจ้งยาว 80 เมตร"
+          },
+          "why": {
+            "en": "A children’s paddling pool and an outdoor 80-metre water slide",
+            "th": "มีสระน้ำตื้นสำหรับเด็กและสไลเดอร์น้ำกลางแจ้งยาว 80 เมตร"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "q": "Zündorfbad Hallenbad, Trankgasse 10A, Zündorf, Porz, Köln, Germany",
+          "src": "https://koelnbaeder.de/baeder/zuendorfbad/"
+        },
+        {
+          "ok": "2026-11",
+          "kind": "play",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "book": "none",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "name": {
+            "en": "Agrippabad",
+            "th": "อกริปปาบาด"
+          },
+          "area": {
+            "en": "Altstadt-Süd",
+            "th": "อัลท์ชตัดท์-ซืด"
+          },
+          "io": "in",
+          "what": {
+            "en": "An indoor KölnBäder pool that the page lists with a children’s paddling pool, a climbing wall and a slide",
+            "th": "สระว่ายน้ำในร่มของโคลน์แบเดอร์ ที่มีสระน้ำตื้นสำหรับเด็ก ผนังปีนเขา และสไลเดอร์"
+          },
+          "why": {
+            "en": "The page lists a children’s paddling pool, a climbing wall and a slide for children",
+            "th": "มีสระน้ำตื้นสำหรับเด็ก ผนังปีนเขา และสไลเดอร์สำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "q": "Agrippabad, Kämmergasse 1, Altstadt-Süd, Köln, Germany",
+          "src": "https://koelnbaeder.de/baeder/agrippabad/"
+        },
+        {
+          "ok": "2026-11",
+          "kind": "play",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "book": "none",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "name": {
+            "en": "Lentpark",
+            "th": "เลนท์พาร์ค"
+          },
+          "area": {
+            "en": "Neustadt-Nord",
+            "th": "นอยชตัดท์-นอร์ด"
+          },
+          "io": "both",
+          "what": {
+            "en": "A pool with an outdoor and an indoor pool, open as both an open-air and an indoor pool",
+            "th": "สระว่ายน้ำที่มีทั้งสระกลางแจ้งและสระในร่ม"
+          },
+          "why": {
+            "en": "The page lists an outdoor and indoor children’s area and a toddler water playground",
+            "th": "มีพื้นที่สำหรับเด็กทั้งกลางแจ้งและในร่ม และลานเล่นน้ำสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "q": "Lentpark, Lentstraße 30, Neustadt-Nord, Köln, Germany",
+          "src": "https://koelnbaeder.de/baeder/lentpark/"
+        },
+        {
+          "ok": "2026-11",
+          "kind": "play",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "book": "none",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "name": {
+            "en": "Ossendorfbad",
+            "th": "ออสเซินดอร์ฟบาด"
+          },
+          "area": {
+            "en": "Ossendorf, Ehrenfeld",
+            "th": "ออสเซินดอร์ฟ เอห์เรินเฟลด์"
+          },
+          "io": "both",
+          "what": {
+            "en": "A combined indoor and outdoor pool with a four-season pool, a children’s paddling pool and a slide",
+            "th": "สระว่ายน้ำทั้งในร่มและกลางแจ้ง มีสระที่ใช้ได้ทุกฤดู สระน้ำตื้นสำหรับเด็ก และสไลเดอร์"
+          },
+          "why": {
+            "en": "A children’s paddling pool and a slide for children",
+            "th": "มีสระน้ำตื้นสำหรับเด็กและสไลเดอร์"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "q": "Ossendorfbad, Äußere Kanalstraße 191, Ossendorf, Köln, Germany",
+          "src": "https://koelnbaeder.de/bad/ossendorfbad/attraktionen"
         }
       ]
     },

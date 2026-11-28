@@ -4990,6 +4990,247 @@
           "q": "Welcome To Rome, Corso Vittorio Emanuele II, 203, 00186 Roma RM, Italy",
           "ok": "2026-11",
           "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        },
+        {
+          "name": {
+            "en": "Villa Balestra",
+            "th": "วิลลา บาเลสตรา"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Monte Parioli, Via Bartolomeo Ammannati",
+            "th": "มอนเตปาริโอลี ถนน Via Bartolomeo Ammannati"
+          },
+          "what": {
+            "en": "A small elliptical garden on top of Monte Parioli with wide avenues, large flowerbeds and timber trees, and a view over Rome and the Vatican City",
+            "th": "สวนรูปวงรีเล็ก ๆ บนยอดมอนเตปาริโอลี มีทางกว้าง แปลงดอกไม้ใหญ่ ต้นไม้ใหญ่ และวิวกรุงโรมกับนครวาติกัน"
+          },
+          "why": {
+            "en": "A playground for the kids and a refreshment point for adults and children",
+            "th": "มีลานเด็กเล่น และจุดพักดื่มของว่างสำหรับผู้ใหญ่และเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Villa Balestra, Via Bartolomeo Ammannati 3, 00197 Roma, Italy",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/node/49244"
+        },
+        {
+          "name": {
+            "en": "La Casina di Raffaello",
+            "th": "ลา กาซีนา ดี ราฟฟาเอลโล"
+          },
+          "local": "Casina di Raffaello",
+          "kind": "play",
+          "area": {
+            "en": "Villa Borghese",
+            "th": "วิลลา บอร์เกเซ"
+          },
+          "what": {
+            "en": "A play room in Villa Borghese for children from three to fourteen, on the official Turismo Roma families itinerary of the park",
+            "th": "ห้องเล่นใน Villa Borghese สำหรับเด็กอายุ 3–14 ปี อยู่ในเส้นทางครอบครัวของสวนตามเว็บไซต์ท่องเที่ยวโรมอย่างเป็นทางการ"
+          },
+          "why": {
+            "en": "Built for children aged 3 to 14, so the little ones have a place to play inside the park",
+            "th": "ทำไว้สำหรับเด็กอายุ 3–14 ปี เด็กเล็กจึงมีที่เล่นในสวน"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "La Casina di Raffaello, Viale della Casina di Raffaello, Villa Borghese, Roma, Italy",
+          "ok": "2026-11",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        },
+        {
+          "name": {
+            "en": "Salaria Sport Village",
+            "th": "ซาลาเรีย สปอร์ต วิลเลจ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Via San Gaggio, north Rome",
+            "th": "ถนน Via San Gaggio โรมตอนเหนือ"
+          },
+          "what": {
+            "en": "A sports village in the north of Rome with an Olympic pool and a pool for children set in greenery",
+            "th": "สปอร์ตวิลเลจทางเหนือของโรม มีสระโอลิมปิกและสระเด็กท่ามกลางสีเขียว"
+          },
+          "why": {
+            "en": "A pool for children in the shade of the trees",
+            "th": "มีสระเด็กอยู่ใต้ร่มไม้"
+          },
+          "tip": {
+            "en": "Open from 9 May 2026; booking recommended",
+            "th": "เปิดตั้งแต่ 9 พฤษภาคม 2026 แนะนำให้จองก่อน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Salaria Sport Village, Via San Gaggio 5, 00138 Roma, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
+        },
+        {
+          "name": {
+            "en": "Piscina delle Rose",
+            "th": "ปิชินา เดลเล โรเซ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Viale America, EUR",
+            "th": "ถนน Viale America ย่านเออูร์"
+          },
+          "what": {
+            "en": "An outdoor pool inside the EUR park with an Olympic-size pool, open by the day or by time slots",
+            "th": "สระกลางแจ้งในสวนเออูร์ มีสระขนาดโอลิมปิก เข้าได้แบบรายวันหรือตามช่วงเวลา"
+          },
+          "why": {
+            "en": "Ample space, well-kept services and comfortable with children along",
+            "th": "พื้นที่กว้าง บริการดูแลดี สะดวกเมื่อมาพร้อมเด็ก"
+          },
+          "tip": {
+            "en": "Entry is by the day or by time slots; booking recommended",
+            "th": "เข้าได้แบบรายวันหรือตามช่วงเวลา แนะนำให้จองก่อน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Piscina delle Rose, Viale America 20, 00144 Roma, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
+        },
+        {
+          "name": {
+            "en": "Domar Sporting Club",
+            "th": "โดมาร์ สปอร์ติง คลับ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Via Portuense",
+            "th": "ถนน Via Portuense"
+          },
+          "what": {
+            "en": "A historic sports club with a large pool and a corner for the little ones, with sun loungers, umbrellas and a snack area",
+            "th": "สปอร์ตคลับเก่าแก่ มีสระใหญ่และมุมเด็กเล็ก พร้อมเตียงอาบแดด ร่ม และจุดขายของว่าง"
+          },
+          "why": {
+            "en": "A zone for the smallest children with shallow water and a slide",
+            "th": "โซนสำหรับเด็กเล็กที่สุด น้ำตื้นและมีสไลเดอร์"
+          },
+          "tip": {
+            "en": "Booking is recommended, by phone",
+            "th": "แนะนำให้จองล่วงหน้าทางโทรศัพท์"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Domar Sporting Club, Via Portuense 761/B, 00148 Roma, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
+        },
+        {
+          "name": {
+            "en": "Circolo Arca",
+            "th": "ซีร์โกโล อาร์กา"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Via degli Angeli",
+            "th": "ถนน Via degli Angeli"
+          },
+          "what": {
+            "en": "A club in the green with one pool for adults and one for children, umbrellas and sun loungers, open every day including August",
+            "th": "คลับท่ามกลางสีเขียว มีสระผู้ใหญ่หนึ่งสระและสระเด็กหนึ่งสระ ร่มและเตียงอาบแดด เปิดทุกวันรวมถึงเดือนสิงหาคม"
+          },
+          "why": {
+            "en": "A pool for children and a shaded wooded area, with a kiosk and an area with play",
+            "th": "มีสระเด็ก พื้นที่ร่มรื่นใต้ต้นไม้ ร้านขายของว่าง และมุมเล่น"
+          },
+          "tip": {
+            "en": "Open every day, including August",
+            "th": "เปิดทุกวัน รวมถึงเดือนสิงหาคม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Circolo Arca, Via degli Angeli 146, 00176 Roma, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/piscine-roma-all-aperto-bambini/"
         }
     ]
     },
