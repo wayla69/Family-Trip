@@ -617,6 +617,128 @@
           "q": "Laem Sor Pagoda, Koh Samui",
           "ok": "2026-11",
           "src": "https://pickyourtrail.com/attractions/koh-samui/laem-sor-pagoda-koh-samui"
+        },
+        {
+          "name": {
+            "en": "Ban Boran Na Samui",
+            "th": "บ้านโบราณ ณ สมุย"
+          },
+          "local": "บ้านโบราณ ณ สมุย",
+          "kind": "museum",
+          "area": {
+            "en": "Na Mueang, Koh Samui",
+            "th": "หน้าเมือง เกาะสมุย"
+          },
+          "what": {
+            "en": "A Chinese-Thai wooden house over 150 years old, now a museum and learning centre",
+            "th": "บ้านไม้จีน-ไทยอายุกว่า 150 ปี ปัจจุบันเป็นพิพิธภัณฑ์และศูนย์การเรียนรู้"
+          },
+          "why": {
+            "en": "Old furniture and everyday things to look at, and local sweet-making to join in",
+            "th": "มีเฟอร์นิเจอร์และของใช้เก่าให้ดู และทำขนมพื้นบ้านร่วมสนุกได้"
+          },
+          "tip": {
+            "en": "Open 11:00–18:00, closed on Mondays",
+            "th": "เปิด 11:00–18:00 ปิดวันจันทร์"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "บ้านโบราณ ณ สมุย, Muang Samui, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2"
+        },
+        {
+          "name": {
+            "en": "Guan Yu Shrine, Koh Samui",
+            "th": "ศาลเจ้าพ่อกวนอู เกาะสมุย"
+          },
+          "local": "ศาลเจ้าพ่อกวนอู เกาะสมุย",
+          "kind": "culture",
+          "area": {
+            "en": "Moo 1, Koh Samui",
+            "th": "หมู่ 1 เกาะสมุย"
+          },
+          "what": {
+            "en": "A Chinese shrine over 150 years old with a bronze Guan Yu statue 16 metres tall",
+            "th": "ศาลเจ้าจีนอายุกว่า 150 ปี มีรูปปั้นกวนอูสัมฤทธิ์สูง 16 เมตร"
+          },
+          "why": {
+            "en": "A big statue to see up close, and a short visit between the beach stops",
+            "th": "รูปปั้นใหญ่ให้ดูใกล้ ๆ แวะสั้น ๆ ระหว่างเที่ยวชายหาด"
+          },
+          "tip": {
+            "en": "Open 09:00–17:00",
+            "th": "เปิด 09:00–17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "ศาลเจ้าพ่อกวนอู, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2"
+        },
+        {
+          "name": {
+            "en": "The Nature Samui",
+            "th": "เดอะ เนเจอร์ สมุย"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Moo 1, Koh Samui",
+            "th": "หมู่ 1 เกาะสมุย"
+          },
+          "what": {
+            "en": "An organic garden with lotus ponds, vegetables and Thai fruit, and a cafe in the shade",
+            "th": "สวนออร์แกนิกที่มีบ่อบัว ผักและผลไม้ไทย และคาเฟ่ใต้ร่มไม้"
+          },
+          "why": {
+            "en": "Children can plant vegetables, collect fresh eggs from the hens and walk the garden paths",
+            "th": "เด็ก ๆ ปลูกผัก เก็บไข่สดจากแม่ไก่ และเดินเล่นตามทางในสวนได้"
+          },
+          "tip": {
+            "en": "Open 11:00–17:00, closed on Wednesdays",
+            "th": "เปิด 11:00–17:00 ปิดวันพุธ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "The Nature Samui, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2"
         }
       ]
     }

@@ -540,6 +540,46 @@
           "q": "Wat Nivet Thammaprawat, Bang Pa-In, Phra Nakhon Si Ayutthaya",
           "ok": "2026-11",
           "src": "https://travel.kapook.com/view277840.html"
+        },
+        {
+          "name": {
+            "en": "Sala Pla Thai",
+            "th": "ศาลาปลาไทย"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Ayutthaya",
+            "th": "อยุธยา"
+          },
+          "what": {
+            "en": "A workshop where visitors learn to make pla taphian, the fish-shaped palm-leaf mobile Ayutthaya is known for",
+            "th": "เวิร์กช็อปสอนทำปลาตะเพียนสานจากใบลาน ของที่ระลึกที่อยุธยาขึ้นชื่อ"
+          },
+          "why": {
+            "en": "Kids and adults can learn to make the keepsakes themselves",
+            "th": "เด็กและผู้ใหญ่ลองทำของที่ระลึกด้วยตัวเองได้"
+          },
+          "tip": {
+            "en": "Allow about an hour; booking is advised",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง ควรจองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Sala Pla Thai, Ayutthaya, Thailand",
+          "ok": "2026-11",
+          "src": "https://wanderingwagars.com/?p=25689"
         }
       ]
     },
@@ -2030,6 +2070,88 @@
           "q": "ASEAN Night Bazaar Hat Yai, Hat Yai",
           "ok": "2026-11",
           "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        },
+        {
+          "name": {
+            "en": "Khao Khuha",
+            "th": "เขาคูหา"
+          },
+          "local": "เขาคูหา",
+          "kind": "views",
+          "area": {
+            "en": "Khuha Tai, Rattaphum",
+            "th": "คูหาใต้ รัตภูมิ"
+          },
+          "what": {
+            "en": "A mountain viewpoint over a former quarry, with an unusual shape and a sea of mist in the morning",
+            "th": "จุดชมวิวบนภูเขาที่เคยเป็นแหล่งทำเหมืองหิน รูปทรงแปลกตา และมีทะเลหมอกตอนเช้า"
+          },
+          "why": {
+            "en": "A 360-degree view and mist to watch at dawn, only a short drive from Hat Yai",
+            "th": "ชมวิวรอบ 360 องศาและทะเลหมอกตอนเช้า ห่างหาดใหญ่ไม่ไกล"
+          },
+          "tip": {
+            "en": "Open daily; go in the morning for the mist",
+            "th": "เปิดทุกวัน ไปตอนเช้าเพื่อชมทะเลหมอก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Khu Ha, Ratphum, Songkhla, Thailand",
+          "ok": "2026-11",
+          "src": "https://th.trip.com/guide/attraction/things-to-do-in-songkhla.html"
+        },
+        {
+          "name": {
+            "en": "Chalathat Beach",
+            "th": "หาดชลาทัศน์"
+          },
+          "local": "หาดชลาทัศน์",
+          "kind": "beach",
+          "area": {
+            "en": "Chalathat Road, Bo Yang, Mueang Songkhla",
+            "th": "ถนนชลาทัศน์ บ่อยาง เมืองสงขลา"
+          },
+          "what": {
+            "en": "A clean white-sand beach joined to Samila Beach, with a sunrise viewpoint",
+            "th": "ชายหาดทรายขาวสะอาดต่อกับหาดสมิหลา มีจุดชมพระอาทิตย์ขึ้น"
+          },
+          "why": {
+            "en": "White sand to play on, and the sea to paddle in",
+            "th": "ทรายขาวให้เล่น และลงเล่นน้ำทะเลได้"
+          },
+          "tip": {
+            "en": "Free to enter; the sunrise can be watched from here",
+            "th": "เข้าฟรี ดูพระอาทิตย์ขึ้นได้จากหาดนี้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Chalathat Beach, Mueang Songkhla, Songkhla, Thailand",
+          "ok": "2026-11",
+          "src": "https://th.trip.com/guide/attraction/things-to-do-in-songkhla.html"
         }
       ]
     },
@@ -2841,6 +2963,128 @@
           "q": "Khao Kho national park ranger viewpoint, Pha Son Kaeo, Khao Kho",
           "ok": "2026-11",
           "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": {
+            "en": "Phetchabun Intrachai Archaeological Hall",
+            "th": "หอโบราณคดีเพ็ชรบูรณ์อินทราชัย"
+          },
+          "local": "หอโบราณคดีเพ็ชรบูรณ์อินทราชัย",
+          "kind": "museum",
+          "area": {
+            "en": "Phetchabun City",
+            "th": "ตัวเมืองเพชรบูรณ์"
+          },
+          "what": {
+            "en": "A free museum on the province's history, from prehistoric times and Si Thep through the Dvaravati period to the communist insurgency, with exhibits in Thai and English",
+            "th": "พิพิธภัณฑ์เข้าฟรีเรื่องประวัติศาสตร์จังหวัด ตั้งแต่ยุคก่อนประวัติศาสตร์ ศรีเทพ ทวารวดี จนถึงยุคคอมมิวนิสต์ มีป้ายไทยและอังกฤษ"
+          },
+          "why": {
+            "en": "Old photographs of the province and a room of local delicacies to look at",
+            "th": "มีภาพถ่ายเก่าของจังหวัดและห้องของกินพื้นเมืองให้ดู"
+          },
+          "tip": {
+            "en": "Open 8:30–16:30 on weekdays; on weekends 9:30–15:30",
+            "th": "เปิด 8:30–16:30 วันธรรมดา ส่วนวันหยุดสุดสัปดาห์ 9:30–15:30"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Phetchabun Intrachai Archaeological Hall, Phetchabun City, Phetchabun",
+          "ok": "2026-11",
+          "src": "https://www.bucketlistly.blog/posts/phetchabun-best-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Phetchabun Buddhist Park",
+            "th": "พุทธอุทยานเพชรบุระ"
+          },
+          "local": "พุทธอุทยานเพชรบุระ",
+          "kind": "park",
+          "area": {
+            "en": "Sadiang, Phetchabun City",
+            "th": "สะเดียง เมืองเพชรบูรณ์"
+          },
+          "what": {
+            "en": "A park on a small lake in the city centre, with a large Buddha statue, walking trails and a pavilion on an island in the lake",
+            "th": "สวนริมทะเลสาบเล็กกลางเมือง มีพระพุทธรูปองค์ใหญ่ ทางเดิน และศาลาบนเกาะกลางทะเลสาบ"
+          },
+          "why": {
+            "en": "A place to walk and stroll in the evening, with the lake and the pavilion to look at",
+            "th": "เดินเล่นยามเย็นพร้อมชมทะเลสาบและศาลา"
+          },
+          "tip": {
+            "en": "Best at sunset",
+            "th": "ไปตอนพระอาทิตย์ตกจะสวยที่สุด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Phetchabun Buddhist Park, Phetchabun City, Phetchabun",
+          "ok": "2026-11",
+          "src": "https://www.bucketlistly.blog/posts/phetchabun-best-things-to-do"
+        },
+        {
+          "name": {
+            "en": "Khao Kho Flower Terrace",
+            "th": "เขาค้อ ฟลาวเวอร์ เทอเรส"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Khao Kho",
+            "th": "เขาค้อ"
+          },
+          "what": {
+            "en": "A vast flower field on a hillside in terraces, with viewpoints, a skywalk over the blooms and a café at the top",
+            "th": "ทุ่งดอกไม้กว้างบนเนินเขาเป็นขั้นบันได มีจุดชมวิว สกายวอล์กเหนือดอกไม้ และคาเฟ่บนยอด"
+          },
+          "why": {
+            "en": "Blooms from marguerites to hydrangeas, and a skywalk to see the fields from above",
+            "th": "มีดอกไม้ตั้งแต่มาร์กาเร็ตถึงไฮเดรนเยีย และสกายวอล์กให้ชมทุ่งจากมุมสูง"
+          },
+          "tip": {
+            "en": "Open 7:00–17:00 daily",
+            "th": "เปิดทุกวัน 7:00–17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿60 per person",
+            "th": "≈ ฿60 ต่อคน"
+          },
+          "book": "none",
+          "q": "Khao Kho Flower Terrace, Khao Kho, Phetchabun",
+          "ok": "2026-11",
+          "src": "https://www.bucketlistly.blog/posts/phetchabun-best-things-to-do"
         }
       ]
     },
@@ -3476,6 +3720,46 @@
           "q": "วัดเทพพิทักษ์ปุณณาราม (วัดพระขาว), Klang Dong, Pak Chong, Nakhon Ratchasima, Thailand",
           "ok": "2026-11",
           "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88/"
+        },
+        {
+          "name": {
+            "en": "Ban Tha Maprang and Khlong Phle community",
+            "th": "ชุมชนบ้านท่ามะปรางค์ – คลองเพล"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Mu Si, Pak Chong",
+            "th": "หมูสี ปากช่อง"
+          },
+          "what": {
+            "en": "A low-carbon community by the Lam Ta Khong stream, with forest, clear water, an organic garden and a bicycle route through two villages",
+            "th": "ชุมชนโลว์คาร์บอนริมลำตะคอง มีป่า น้ำใส สวนผักอินทรีย์ และเส้นทางปั่นจักรยานผ่านสองหมู่บ้าน"
+          },
+          "why": {
+            "en": "A stream to net water creatures in, and a shallow stretch to sit or paddle in the rainy season",
+            "th": "มีลำธารให้ตักจับสัตว์น้ำ และช่วงน้ำตื้นนั่งเล่นหรือเล่นน้ำได้ในหน้าฝน"
+          },
+          "tip": {
+            "en": "Book the community visit ahead",
+            "th": "ควรจองกิจกรรมกับชุมชนล่วงหน้า"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Ban Tha Maprang, Mu Si, Pak Chong, Nakhon Ratchasima, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.bangkokbiznews.com/lifestyle/travel/1254422"
         }
       ]
     },
@@ -4917,6 +5201,88 @@
           "q": "Lan Tabun, Ban Tha Rae Nae, Nong Khan Song, Mueang Trat, Trat",
           "ok": "2026-11",
           "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/amazing-trat"
+        },
+        {
+          "name": {
+            "en": "Laem Klat community",
+            "th": "ชุมชนบ้านแหลมกลัด"
+          },
+          "local": "ชุมชนบ้านแหลมกลัด",
+          "kind": "culture",
+          "area": {
+            "en": "Laem Klat, Mueang Trat",
+            "th": "แหลมกลัด เมืองตราด"
+          },
+          "what": {
+            "en": "A seaside community with a long white-sand beach to stroll along and fishing-village activities",
+            "th": "ชุมชนริมทะเลที่มีหาดทรายขาวทอดยาวให้เดินเล่น และกิจกรรมตามวิถีชาวประมง"
+          },
+          "why": {
+            "en": "Catching shells and crabs the fishermen's way, hands-on for children",
+            "th": "จับหอยจับปูตามวิถีชาวประมง เด็กๆ ได้ลงมือทำ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "ชุมชนบ้านแหลมกลัด, แหลมกลัด, เมืองตราด, ตราด",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/amazing-trat"
+        },
+        {
+          "name": {
+            "en": "Ao Bai Lan",
+            "th": "อ่าวใบลาน"
+          },
+          "local": "อ่าวใบลาน",
+          "kind": "beach",
+          "area": {
+            "en": "Koh Chang, Trat (after Kai Bae Beach)",
+            "th": "เกาะช้าง ตราด (ต่อจากหาดไก่แบ้)"
+          },
+          "what": {
+            "en": "A long, quiet white-sand beach with a rocky outcrop reaching into the sea",
+            "th": "หาดทรายขาวยาวที่เงียบสงบ มีชะง่อนหินยื่นออกไปในทะเล"
+          },
+          "why": {
+            "en": "Quiet and not a busy tourist spot, with easy walking on the sand",
+            "th": "เงียบสงบ ไม่พลุกพล่าน เดินเล่นบนทรายได้สบาย"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ao Bai Lan, Koh Chang, Trat, Thailand",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/DY70G86E7gP"
         }
       ]
     },
@@ -6040,6 +6406,47 @@
           },
           "book": "none",
           "q": "Si Rongmuang temple, Sop Tui, Mueang Lampang",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": {
+            "en": "Kad Nang Kom market",
+            "th": "กาดนั่งก้อม"
+          },
+          "local": "กาดนั่งก้อม",
+          "kind": "market",
+          "area": {
+            "en": "Bo Haeo, Mueang Lampang",
+            "th": "บ่อแฮ้ว เมืองลำปาง"
+          },
+          "what": {
+            "en": "A local market set up to support the community and local goods, where people meet",
+            "th": "ตลาดชุมชนที่ตั้งขึ้นเพื่อสนับสนุนชุมชนและสินค้าท้องถิ่น เป็นที่พบปะของคนในพื้นที่"
+          },
+          "why": {
+            "en": "A short morning walk through a real local market, free to enter",
+            "th": "เดินเล่นสั้นๆ ตอนเช้าในตลาดท้องถิ่นจริง เข้าฟรี"
+          },
+          "tip": {
+            "en": "Open Saturday and Sunday 06:00–14:00",
+            "th": "เปิดวันเสาร์และอาทิตย์ 06:00–14:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kad Nang Kom, Bo Haeo, Mueang Lampang, Lampang, Thailand",
           "ok": "2026-11",
           "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
         }
@@ -10382,6 +10789,170 @@
           "q": "Phaya Phichai Songkram Cave, Ratsada, Trang",
           "ok": "2026-11",
           "src": "https://www.traveloka.com/en-th/explore/destination/places-to-go-in-trang/157562"
+        },
+        {
+          "name": {
+            "en": "Trang Clock Tower Roundabout",
+            "th": "วงเวียนหอนาฬิกา ตรัง"
+          },
+          "local": "หอนาฬิกาตรัง",
+          "kind": "views",
+          "area": {
+            "en": "In front of the provincial hall, Trang town",
+            "th": "หน้าศาลากลางจังหวัดตรัง ตัวเมืองตรัง"
+          },
+          "what": {
+            "en": "A clock tower on a roundabout in front of the provincial hall, with the roads around it tidied up for visitors",
+            "th": "หอนาฬิกากลางวงเวียนหน้าศาลากลางจังหวัด ปรับถนนรอบ ๆ ให้น่าเดินสำหรับผู้มาเยือน"
+          },
+          "why": {
+            "en": "The city tidied the roads around it so families can enjoy the town in the evening",
+            "th": "เมืองปรับถนนรอบหอนาฬิกาให้ครอบครัวเดินเล่นยามเย็นได้"
+          },
+          "tip": {
+            "en": "Visit in the evening, when the page says the view is best",
+            "th": "ไปตอนเย็น ซึ่งหน้าเว็บบอกว่าวิวสวยที่สุด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Clock tower roundabout, Trang town",
+          "ok": "2026-11",
+          "src": "https://www.wongnai.com/listings/attractions-trang"
+        },
+        {
+          "name": {
+            "en": "Trang Old Conservation House",
+            "th": "ตึกเก่าเมืองตรัง"
+          },
+          "local": "ตึกเก่าเมืองตรัง",
+          "kind": "oldtown",
+          "area": {
+            "en": "Ratchadamnoen Road, Thap Thiang",
+            "th": "ถนนราชดำเนิน ทับเที่ยง ตรัง"
+          },
+          "what": {
+            "en": "A conservation house on Ratchadamnoen Road that shows how people lived in the past, through its architecture",
+            "th": "บ้านอนุรักษ์บนถนนราชดำเนินที่แสดงวิถีชีวิตคนในอดีตผ่านสถาปัตยกรรม"
+          },
+          "why": {
+            "en": "A short, easy stop that shows the town's past through its old buildings",
+            "th": "แวะสั้น ๆ ง่าย ๆ ดูอดีตของเมืองผ่านอาคารเก่า"
+          },
+          "tip": {
+            "en": "Check the opening hours before you go",
+            "th": "เช็กเวลาเปิดก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Old conservation house, Ratchadamnoen Road, Trang town",
+          "ok": "2026-11",
+          "src": "https://www.wongnai.com/listings/attractions-trang"
+        },
+        {
+          "name": {
+            "en": "Trang Street Art",
+            "th": "สตรีทอาร์ตเมืองตรัง"
+          },
+          "local": "สตรีทอาร์ตเมืองตรัง",
+          "kind": "culture",
+          "area": {
+            "en": "Trang town centre",
+            "th": "ในเขตเมืองตรัง"
+          },
+          "what": {
+            "en": "Street art painted around the town centre, showing the province's way of life and story, such as its rubber plantations",
+            "th": "ภาพสตรีทอาร์ตรอบเมืองที่เล่าวิถีชีวิตและเรื่องราวของจังหวัด เช่น สวนยางพารา"
+          },
+          "why": {
+            "en": "Each spot is not far from the next, so a short walk takes in several murals",
+            "th": "แต่ละจุดอยู่ไม่ไกลกัน เดินสั้น ๆ ก็ดูภาพวาดได้หลายภาพ"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Street art murals, Trang town",
+          "ok": "2026-11",
+          "src": "https://www.wongnai.com/listings/attractions-trang"
+        },
+        {
+          "name": {
+            "en": "Trang Railway Station",
+            "th": "สถานีรถไฟตรัง"
+          },
+          "local": "สถานีรถไฟตรัง",
+          "kind": "culture",
+          "area": {
+            "en": "Pha Ram VI Road, Trang town",
+            "th": "ถนนพระราม 6 ตัวเมืองตรัง"
+          },
+          "what": {
+            "en": "A yellow early-20th-century station building with a platform and wooden benches, still used by trains",
+            "th": "อาคารสถานีสีเหลืองจากต้นศตวรรษที่ 20 มีชานชาลาและม้านั่งไม้ ยังมีรถไฟใช้อยู่"
+          },
+          "why": {
+            "en": "Early mornings are when the trains arrive and the vendors set up nearby, so there is something to watch",
+            "th": "ช่วงเช้าตรู่รถไฟเข้าและพ่อค้าแม่ค้าตั้งร้านใกล้ ๆ จึงมีของให้ดู"
+          },
+          "tip": {
+            "en": "Go early, around 6 to 8am, when trains arrive and vendors set up nearby",
+            "th": "ไปแต่เช้า ราว 06:00–08:00 ตอนรถไฟเข้าและพ่อค้าแม่ค้าตั้งร้าน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Trang Railway Station, Pha Ram VI Road, Trang",
+          "ok": "2026-11",
+          "src": "https://thingstodointrang.com/free-things/"
         }
       ]
     },
@@ -11535,6 +12106,47 @@
           "q": "Phothisomphon Temple, Ban Lueam, Udon Thani, Thailand",
           "ok": "2026-11",
           "src": "https://www.ktc.co.th/article/travel-guide/thailand/destinations-udonthani"
+        },
+        {
+          "name": {
+            "en": "Nong Khon Kwang Public Park",
+            "th": "สวนสาธารณะหนองขอนกว้าง"
+          },
+          "local": "สวนสาธารณะหนองขอนกว้าง",
+          "kind": "park",
+          "area": {
+            "en": "Nong Khon Kwang, Mueang Udon Thani",
+            "th": "หนองขอนกว้าง เมืองอุดรธานี"
+          },
+          "what": {
+            "en": "A public park on 51 rai with a 961 m running track, pavilions, toilets and a water pier, opened in July 2026",
+            "th": "สวนสาธารณะ 51 ไร่ มีลู่วิ่ง 961 เมตร ศาลา ห้องน้ำ และท่าน้ำ เปิดเมื่อกรกฎาคม 2569"
+          },
+          "why": {
+            "en": "A family recreation spot with room to run and rest",
+            "th": "จุดพักผ่อนสำหรับครอบครัว มีที่ให้วิ่งเล่นและนั่งพัก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Nong Khon Kwang Public Park, Mueang Udon Thani, Udon Thani, Thailand",
+          "ok": "2026-11",
+          "src": "https://mgronline.com/local/detail/9690000064800"
         }
       ]
     }

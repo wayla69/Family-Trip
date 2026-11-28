@@ -1224,6 +1224,252 @@
           "q": "Pattaya Sheep Farm, Na Chom Thian, Sattahip, Chonburi",
           "ok": "2026-11",
           "src": "https://pickyourtrail.com/attractions/pattaya/pattaya-sheep-farm"
+        },
+        {
+          "name": {
+            "en": "Pattaya Beach",
+            "th": "หาดพัทยา"
+          },
+          "local": "หาดพัทยา",
+          "kind": "beach",
+          "area": {
+            "en": "Beach Road, Pattaya",
+            "th": "ถนนเลียบชายหาด เมืองพัทยา"
+          },
+          "what": {
+            "en": "The most popular beach in Pattaya, the city's landmark",
+            "th": "ชายหาดยอดนิยมที่สุดของพัทยา เป็นแลนด์มาร์กของเมือง"
+          },
+          "why": {
+            "en": "A famous beach to play by the sea and take a photo at the landmark spot",
+            "th": "หาดดังให้เล่นน้ำทะเลและถ่ายรูปตรงจุดแลนด์มาร์ก"
+          },
+          "tip": {
+            "en": "Open all day",
+            "th": "เปิดตลอดวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Pattaya Beach, Pattaya, Chonburi",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Wong Amat Beach",
+            "th": "หาดวงศ์อมาตย์"
+          },
+          "local": "หาดวงศ์อมาตย์",
+          "kind": "beach",
+          "area": {
+            "en": "Na Kluea, Bang Lamung",
+            "th": "นาเกลือ บางละมุง"
+          },
+          "what": {
+            "en": "A beach next to North Pattaya's beach, quieter than the city beaches",
+            "th": "ชายหาดติดกับหาดพัทยาเหนือ เงียบกว่าหาดในเมือง"
+          },
+          "why": {
+            "en": "Quieter and more private, with no road running along the sand",
+            "th": "เงียบและเป็นส่วนตัวกว่า ไม่มีถนนวิ่งขนานไปกับผืนทราย"
+          },
+          "tip": {
+            "en": "Open all day",
+            "th": "เปิดตลอดวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wong Amat Beach, Na Kluea, Pattaya",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Koh Phai",
+            "th": "เกาะไผ่"
+          },
+          "local": "เกาะไผ่ พัทยา",
+          "kind": "beach",
+          "area": {
+            "en": "Pattaya Bay, Na Kluea",
+            "th": "อ่าวพัทยา นาเกลือ"
+          },
+          "what": {
+            "en": "A pretty island with clear water and white sand, the largest of the Koh Phai group, reached by tour boat",
+            "th": "เกาะสวยน้ำใสทรายขาว ใหญ่ที่สุดในหมู่เกาะไผ่ ไปโดยเรือทัวร์"
+          },
+          "why": {
+            "en": "Clear water and white sand, a natural spot near Pattaya for a day out by boat",
+            "th": "น้ำใสทรายขาว เที่ยวธรรมชาติใกล้พัทยาด้วยเรือ"
+          },
+          "tip": {
+            "en": "Go by the tour boat's trip times",
+            "th": "ไปตามเวลาเรือทัวร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Koh Phai, Ao Pattaya, Na Kluea, Bang Lamung",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Sak Ngaew Old Market",
+            "th": "ตลาดโบราณซากแง้ว"
+          },
+          "local": "ตลาดโบราณซากแง้ว",
+          "kind": "market",
+          "area": {
+            "en": "Huai Yai, Bang Lamung",
+            "th": "ห้วยใหญ่ บางละมุง"
+          },
+          "what": {
+            "en": "An old Chinese community market with lots of buying and selling",
+            "th": "ตลาดชุมชนชาวจีนโบราณที่ค้าขายคึกคัก"
+          },
+          "why": {
+            "en": "An old-style market to walk through and look at things, a change from the beach",
+            "th": "ตลาดแบบโบราณให้เดินดูของ เปลี่ยนบรรยากาศจากชายหาด"
+          },
+          "tip": {
+            "en": "Open Saturdays 15:00–21:00 only",
+            "th": "เปิดเฉพาะวันเสาร์ 15:00–21:00"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sak Ngaew old market, Huai Yai, Bang Lamung",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Baan Sukhawadee",
+            "th": "บ้านสุขาวดี"
+          },
+          "local": "บ้านสุขาวดี",
+          "kind": "park",
+          "area": {
+            "en": "Sukhumvit Road, Na Kluea",
+            "th": "ถนนสุขุมวิท นาเกลือ"
+          },
+          "what": {
+            "en": "A big mansion by the sea with a European garden, pink and blue buildings and rows of Greek statues",
+            "th": "คฤหาสน์ริมทะเลหลังใหญ่ มีสวนแบบยุโรป อาคารสีชมพูและสีฟ้า และรูปปั้นกรีกเรียงราย"
+          },
+          "why": {
+            "en": "A grand garden to walk round, open until 21:00",
+            "th": "สวนใหญ่ให้เดินเล่น เปิดถึง 21:00"
+          },
+          "tip": {
+            "en": "Open 08:00–21:00",
+            "th": "เปิด 08:00–21:00"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Baan Sukhawadee, Na Kluea, Pattaya",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Legend Siam Pattaya",
+            "th": "เลเจนด์สยาม พัทยา"
+          },
+          "local": "เลเจนด์สยาม พัทยา",
+          "kind": "themepark",
+          "area": {
+            "en": "Sukhumvit Road, Na Chom Thian, Sattahip",
+            "th": "ถนนสุขุมวิท นาจอมเทียน สัตหีบ"
+          },
+          "what": {
+            "en": "A miniature Thailand theme park that gathers many Thai scenes in one place, including a Mae Nak house and a temple fair",
+            "th": "สวนสนุกจำลองประเทศไทยที่รวมฉากไทยหลายแบบไว้ในที่เดียว มีบ้านแม่นาคและงานวัด"
+          },
+          "why": {
+            "en": "Covers many Thai lifestyles in one place, suiting a whole family",
+            "th": "รวมวิถีชีวิตไทยหลายแบบไว้ที่เดียว เหมาะกับทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "Open 10:00–18:00",
+            "th": "เปิด 10:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Legend Siam Pattaya, Na Chom Thian, Sattahip",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
         }
       ]
     },
@@ -2497,6 +2743,47 @@
           "q": "Huay Toh Waterfall, Khao Phanom Bencha National Park, Krabi",
           "ok": "2026-11",
           "src": "https://krabinature.com/attractions/huay-to-waterfall/"
+        },
+        {
+          "name": {
+            "en": "Andaman Cultural Study Center",
+            "th": "ศูนย์การเรียนรู้วัฒนธรรมอันดามัน"
+          },
+          "local": "ศูนย์การเรียนรู้วัฒนธรรมอันดามัน",
+          "kind": "museumkid",
+          "area": {
+            "en": "Maharat Road, Pak Nam, Mueang Krabi",
+            "th": "ถนนมหาราช ปากน้ำ เมืองกระบี่"
+          },
+          "what": {
+            "en": "A museum and learning centre on the history and culture of the Andaman region, with a glass-bead exhibit",
+            "th": "พิพิธภัณฑ์และศูนย์เรียนรู้ประวัติศาสตร์และวัฒนธรรมอันดามัน มีนิทรรศการลูกปัดแก้ว"
+          },
+          "why": {
+            "en": "The exhibits are designed to engage both children and adults",
+            "th": "นิทรรศการออกแบบให้ทั้งเด็กและผู้ใหญ่สนุกไปด้วยกัน"
+          },
+          "tip": {
+            "en": "Usually open 09:00–16:00; check hours before you go",
+            "th": "ปกติเปิด 09:00–16:00 เช็กเวลาก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Andaman Cultural Study Center, Mueang Krabi, Krabi, Thailand",
+          "ok": "2026-11",
+          "src": "https://hopsa.io/en/blog/post/interaktywne-muzea-i-parki-w-krabi-edukacja-i-zabawa-w-jednym"
         }
       ]
     }

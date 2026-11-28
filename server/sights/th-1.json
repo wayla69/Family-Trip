@@ -1426,6 +1426,86 @@
           },
           "q": "Choui Fong Tea Plantation, Mae Chan, Chiang Rai",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Bouncetopia",
+            "th": "บาวน์ซ์โทเปีย"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Central Chiang Mai, 3rd floor, Fa Ham",
+            "th": "เซ็นทรัล เชียงใหม่ ชั้น 3 ฟ้าฮ่าม"
+          },
+          "what": {
+            "en": "An indoor inflatable playground of 2,000 square metres with 15 attractions, including a rafting zone around a ball pit, a Ninja Zone and a giant Lego area",
+            "th": "สนามเด็กเล่นลมยางในร่มกว้าง 2,000 ตารางเมตร มี 15 กิจกรรม เช่น โซนล่องแพรอบบ่อบอล โซนนินจา และโซนเลโก้ยักษ์"
+          },
+          "why": {
+            "en": "Giant slides, a sand play area and a ball pit to jump, climb and play in",
+            "th": "สไลเดอร์ยักษ์ ลานเล่นทราย และบ่อบอลให้เด็กกระโดด ปีน และเล่น"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Bouncetopia, Central Chiang Mai, Fa Ham, Chiang Mai, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.chiangmaicitylife.com/citynews/general/bouncetopia-chiang-mai-launches-new-superhero-theme-with-giant-inflatable-playground/"
+        },
+        {
+          "name": {
+            "en": "XVENTURE",
+            "th": "เอ็กซ์เวนเจอร์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Central Chiang Mai, Fa Ham",
+            "th": "เซ็นทรัล เชียงใหม่ ฟ้าฮ่าม"
+          },
+          "what": {
+            "en": "An indoor active park of over 2,200 square metres with nine themed zones and more than 30 activities",
+            "th": "สวนกิจกรรมในร่มกว้างกว่า 2,200 ตารางเมตร มี 9 โซนตามธีมและกว่า 30 กิจกรรม"
+          },
+          "why": {
+            "en": "A Jump Arena of trampolines and indoor sports games such as basketball, football and bowling",
+            "th": "ลานกระโดดแทรมโพลีนและเกมกีฬาในร่ม เช่น บาสเกตบอล ฟุตบอล และโบว์ลิ่ง"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Xventure, Central Chiang Mai, Fa Ham, Chiang Mai, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.chiangmaicitylife.com/citynews/general/get-ready-for-a-new-adventure-worlds-first-xventure-active-park-opens-oct-16-at-central-chiang-mai/"
         }
       ]
     }
