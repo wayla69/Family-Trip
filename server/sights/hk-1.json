@@ -1984,6 +1984,416 @@
           "book": "none",
           "q": "Man Mo Temple, 124–126 Hollywood Road, Sheung Wan, Hong Kong",
           "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ฟาร์มออร์แกนิกโกกรีน",
+            "en": "Go Green Organic Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "หยวนหลง",
+            "en": "Yuen Long"
+          },
+          "what": {
+            "th": "ฟาร์มออร์แกนิกที่เด็กได้เจออัลปากา กระต่าย และแพะ ชิมสับปะรดสด และเข้าทัวร์ฟาร์มพร้อมไกด์",
+            "en": "An organic farm where children meet alpacas, rabbits and goats, taste fresh pineapple and join guided farm tours"
+          },
+          "why": {
+            "th": "มีสัตว์ให้ลูบ ห่างไกลตึกสูง",
+            "en": "Animals to stroke, far from the skyscrapers"
+          },
+          "tip": {
+            "th": "เช็กวันเปิดก่อนไป เพราะเป็นฟาร์มที่ทำงานจริง",
+            "en": "Check the opening days before going; it is a working farm"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Go Green Farm, Yuen Long, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/culture/unique-things-to-do-in-hong-kong.html"
+        },
+        {
+          "local": "九龍寨城公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนกำแพงเมืองเกาลูน",
+            "en": "Kowloon Walled City Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เกาลูนซิตี้",
+            "en": "Kowloon City"
+          },
+          "what": {
+            "th": "ที่ตั้งเมืองกำแพงเก่า ตอนนี้เป็นสวนสงบ มีสวน บ่อน้ำ และอาคารแบบจีนดั้งเดิม",
+            "en": "The site of the old Walled City, now a peaceful park of gardens, ponds and traditional Chinese buildings"
+          },
+          "why": {
+            "th": "มีบ่อน้ำ ศาลา และที่ให้เข็นรถเข็นเดินเล่น",
+            "en": "Ponds, pavilions and room to stroll with a pram"
+          },
+          "tip": {
+            "th": "เดินลงใต้ไปย่านร้านค้าและร้านอาหารไทยของเกาลูนซิตี้ต่อได้",
+            "en": "Walk south to the Thai shops and restaurants of Kowloon City afterwards"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Kowloon Walled City Park, Kowloon City, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/unique-things-to-do-in-hong-kong.html"
+        },
+        {
+          "local": "海下灣海岸公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "อุทยานทางทะเลฮอยฮาวาน",
+            "en": "Hoi Ha Wan Marine Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไซกง",
+            "en": "Sai Kung"
+          },
+          "what": {
+            "th": "อ่าวคุ้มครองมีปะการังแข็งและปลาแนวปะการัง ดูได้ดีที่สุดด้วยการดำน้ำตื้นหรือพายเรือคายักผ่านป่าโกงกาง",
+            "en": "A protected bay of hard corals and coral fish, best seen snorkelling or by kayak through the mangroves"
+          },
+          "why": {
+            "th": "เห็นปลาและปะการังจากน้ำตื้น มีหมู่บ้านเล็กและวัดริมอ่าว",
+            "en": "Fish and coral from the shallows, with a small village and temple by the bay"
+          },
+          "tip": {
+            "th": "เช่าอุปกรณ์ดำน้ำตื้นได้ที่หมู่บ้านฮอยฮา",
+            "en": "Snorkelling gear can be hired in Hoi Ha village"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hoi Ha Wan Marine Park, Sai Kung, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/from-marine-parks-to-hong-kong-geopark.html"
+        },
+        {
+          "local": "添馬公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนทามาร์",
+            "en": "Tamar Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "แอดมิรัลตี้",
+            "en": "Admiralty"
+          },
+          "what": {
+            "th": "สนามหญ้ากว้างลาดเอียงริมอ่าว เห็นอ่าววิกตอเรียและตึกสูงแบบเต็มตา",
+            "en": "Wide sloping lawns by the harbour with a front-row view of Victoria Harbour and the skyline"
+          },
+          "why": {
+            "th": "ทางกว้าง เข็นรถเข็นสะดวก มีหญ้าให้วิ่ง",
+            "en": "Wide, pram-friendly paths and grass to run on"
+          },
+          "tip": {
+            "th": "เป็นที่ถือโคมไฟช่วงไหว้พระจันทร์ที่สวยมาก",
+            "en": "A lovely spot for Mid-Autumn lanterns"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tamar Park, Admiralty, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html"
+        },
+        {
+          "local": "佐敦谷公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนจอร์แดนแวลลีย์",
+            "en": "Jordan Valley Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กวนตง",
+            "en": "Kwun Tong"
+          },
+          "what": {
+            "th": "สวนที่คนท้องถิ่นชอบ มีลานกว้างและเครื่องเล่นเด็กดีที่สุดแห่งหนึ่งในเมือง",
+            "en": "A local favourite with large open fields and some of the best play equipment in town"
+          },
+          "why": {
+            "th": "กว้าง ปลอดภัย และห่างจากคนเยอะริมอ่าว",
+            "en": "Big, safe and away from the harbourfront crowds"
+          },
+          "tip": {
+            "th": "แวะตอนเช้าได้ดีก่อนไปห้างฝั่งเกาลูนตะวันออก",
+            "en": "A good morning stop before the Kowloon East malls"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Jordan Valley Park, Kwun Tong, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html"
+        },
+        {
+          "local": "蝴蝶灣泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดบัตเตอร์ฟลาย",
+            "en": "Butterfly Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถุนมุน",
+            "en": "Tuen Mun"
+          },
+          "what": {
+            "th": "หาดสำหรับครอบครัวไว้ปิกนิกริมทะเล มีสวนเครื่องปีนป่ายฝั่งตรงข้ามถนน",
+            "en": "A family beach for seaside picnics, with a park of climbing frames across the road"
+          },
+          "why": {
+            "th": "ทรายอยู่ฝั่งหนึ่ง สนามเด็กเล่นอยู่อีกฝั่ง",
+            "en": "Sand on one side, a playground on the other"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Butterfly Beach, Tuen Mun, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html"
+        },
+        {
+          "local": "城門水塘",
+          "ok": "2026-11",
+          "name": {
+            "th": "อ่างเก็บน้ำชิงมุน",
+            "en": "Shing Mun Reservoir"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "จวนวาน",
+            "en": "Tsuen Wan"
+          },
+          "what": {
+            "th": "ทางเดินง่ายสำหรับครอบครัว ท่ามกลางต้นเปเปอร์บาร์กรอบอ่างน้ำใส มีเส้นทางซากสงครามสำหรับเด็กโต",
+            "en": "An easy family walk among paperbark trees round clear water, with a war relics trail for older children"
+          },
+          "why": {
+            "th": "เดินไม่เหนื่อย วิวสวยมาก",
+            "en": "Low effort, big views"
+          },
+          "tip": {
+            "th": "อย่าถือขนมให้เห็น มีลิงอาศัยรอบอ่างเก็บน้ำ",
+            "en": "Keep snacks out of sight; monkeys live round the reservoir"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Shing Mun Reservoir, Tsuen Wan, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html"
+        },
+        {
+          "local": "新娘潭自然教育徑",
+          "ok": "2026-11",
+          "name": {
+            "th": "เส้นทางธรรมชาติไบรด์พูล",
+            "en": "Bride's Pool Nature Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานชนบทพโลเวอร์โคฟ ไท่โป",
+            "en": "Plover Cove Country Park, Tai Po"
+          },
+          "what": {
+            "th": "เส้นทางสั้นสำหรับครอบครัว ผ่านน้ำตกไบรด์พูลและมิเรอร์พูล และสะพานหินเก่า",
+            "en": "A short family trail past Bride's Pool and Mirror Pool waterfalls and old stone bridges"
+          },
+          "why": {
+            "th": "น้ำตกที่เดินจากถนนไม่ไกล",
+            "en": "Waterfalls a short walk from the road"
+          },
+          "tip": {
+            "th": "หินริมน้ำลื่น ดูเด็กเล็กใกล้ ๆ",
+            "en": "Rocks by the water are slippery; keep little ones close"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Bride's Pool Nature Trail, Tai Po, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html"
+        },
+        {
+          "local": "大帽山郊野公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "อุทยานชนบทไท่โหมวซาน",
+            "en": "Tai Mo Shan Country Park"
+          },
+          "kind": "views",
+          "area": {
+            "th": "จวนวาน",
+            "en": "Tsuen Wan"
+          },
+          "what": {
+            "th": "ยอดเขาสูงที่สุดของฮ่องกง 957 เมตร ดูพระอาทิตย์ตก และบางวันมีทะเลหมอก",
+            "en": "Hong Kong's highest peak at 957 m, for sunsets and, on some days, a sea of clouds"
+          },
+          "why": {
+            "th": "นั่งรถขึ้นไปรับลมเย็นและวิวเหนือเมฆ",
+            "en": "A drive up to cool air and a view above the clouds"
+          },
+          "tip": {
+            "th": "บนยอดหนาวและลมแรงกว่ามาก พกเสื้อกันหนาว",
+            "en": "It is much colder and windier at the top; bring jackets"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tai Mo Shan Country Park, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html"
+        },
+        {
+          "local": "米埔自然保護區",
+          "ok": "2026-11",
+          "name": {
+            "th": "เขตอนุรักษ์ธรรมชาติไมโป",
+            "en": "Mai Po Nature Reserve"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หยวนหลง",
+            "en": "Yuen Long"
+          },
+          "what": {
+            "th": "พื้นที่ชุ่มน้ำมีชื่อระดับโลก นกอพยพแวะพัก 90,000 ตัว รวมถึงนกช้อนหอยหน้าดำ",
+            "en": "An internationally known wetland where 90,000 migratory birds stop, including the black-faced spoonbill"
+          },
+          "why": {
+            "th": "ฝูงนกใหญ่ให้ส่องด้วยกล้องสองตา",
+            "en": "Big flocks of birds to watch with binoculars"
+          },
+          "tip": {
+            "th": "เช็กวิธีจองเข้าชมก่อนไป หน้าหนาวมีนกมากที่สุด",
+            "en": "Check how to book a visit before going; winter has the most birds"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "q": "Mai Po Nature Reserve, Yuen Long, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/from-marine-parks-to-hong-kong-geopark.html"
         }
     ]
     }
