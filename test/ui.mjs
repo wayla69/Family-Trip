@@ -2496,9 +2496,13 @@ const T = 'hk-macau-2026';
       ok(lb.r >= 12 && lb.bg && lb.pts >= 2 && lb.sum === 'none', `a topic's opening paragraph and its points are one soft card (${JSON.stringify(lb)})`);
       // key facts in colour stay readable in dark mode inside every card (the learn page's cards once kept the light-mode navy on a dark card)
       await page.emulateMedia({ colorScheme: 'dark' }); await page.goto(`${BASE}/#/t/${T}/learn/full/0`); await page.waitForSelector('.tp.one .gcard b.kf');
-      const lum = await page.$$eval('.tp.one .gcard b.kf', (bs) => bs.map((b) => { const n = (getComputedStyle(b).color.match(/[\d.]+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2); }));
+      // read the colours in one step inside the page, once every one of them is a colour: $$eval finds the elements and reads them in two
+      // steps, and the page's redraw with the fresh state in between left elements no longer on the page, whose colour is '' (CI, 28 Nov 2026: all NaN)
+      const kfLum = () => [...document.querySelectorAll('.tp.one .gcard b.kf')].map((b) => { const c = getComputedStyle(b).color, n = (c.match(/\d*\.?\d+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return { c, l: n.length >= 3 ? +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2) : null }; });
+      await page.waitForFunction(`(${kfLum})().length > 0 && (${kfLum})().every((x) => x.l !== null)`, null, { timeout: 8000 }).catch(() => {});
+      const kf = await page.evaluate(kfLum), lum = kf.map((x) => x.l);
       await page.emulateMedia({ colorScheme: null });
-      ok(lum.length && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')})`);
+      ok(lum.length && lum.every((l) => l !== null) && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')}${lum.every((l) => l !== null) ? '' : ' · ' + kf.slice(0, 3).map((x) => JSON.stringify(x.c)).join(' ')})`);
     await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.glg');
     const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
     let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
