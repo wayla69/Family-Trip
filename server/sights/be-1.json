@@ -1115,6 +1115,167 @@
           },
           "q": "Koezio, Boulevard Lambermont 1, Brussels",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Stardust Park",
+            "th": "สตาร์ดัสต์ พาร์ก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Forest, Brussels",
+            "th": "ฟอเรสต์ บรัสเซลส์"
+          },
+          "what": {
+            "en": "The largest indoor playground in Brussels, 4,000 m², with bumper cars, rock climbing, bungee jumping, go-karting and a Mayan temple of games.",
+            "th": "สนามเด็กเล่นในร่มใหญ่สุดในบรัสเซลส์ 4,000 ตร.ม. มีรถบั๊มเปอร์ ปีนผา บันจี้จัมพ์ โกคาร์ต และวิหารมายาที่รวมเกม"
+          },
+          "why": {
+            "en": "For children aged 18 months to 12 years.",
+            "th": "สำหรับเด็กอายุ 18 เดือนถึง 12 ปี"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Stardust Park, Avenue du Globe 36, 1190 Forest, Brussels, Belgium",
+          "ok": "2026-11",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/"
+        },
+        {
+          "name": {
+            "en": "The Family Station",
+            "th": "เดอะ แฟมิลี สเตชัน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Waterloo",
+            "th": "วอเตอร์ลู"
+          },
+          "what": {
+            "en": "Indoor play in 1,000 m² divided into 8 play areas, with slides, mazes, inflatable castles, trampolines and arcade games.",
+            "th": "สนามเล่นในร่ม 1,000 ตร.ม. แบ่งเป็น 8 โซน มีสไลเดอร์ เขาวงกต ปราสาทเป่าลม แทรมโพลีน และเกมอาร์เคด"
+          },
+          "why": {
+            "en": "For children aged 1 to 10, with so much choice that kids never get bored.",
+            "th": "สำหรับเด็ก 1–10 ขวบ มีให้เลือกมากจนเด็กไม่เบื่อ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "The Family Station, Chaussée de Bruxelles 63, 1410 Waterloo, Belgium",
+          "ok": "2026-11",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/"
+        },
+        {
+          "name": {
+            "en": "Van Buuren Museum & Gardens",
+            "th": "พิพิธภัณฑ์และสวนแวน บูเรน"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Uccle, Brussels",
+            "th": "อุกเคิล บรัสเซลส์"
+          },
+          "what": {
+            "en": "A garden of six distinct spaces, from the Picturesque Garden to the Labyrinth with a yew maze, next to a house museum.",
+            "th": "สวนหกโซน ตั้งแต่สวนพิคเจอเรสก์ถึงเขาวงกตต้นยู ติดกับพิพิธภัณฑ์บ้าน"
+          },
+          "why": {
+            "en": "Children under 7 enter free, and a paid guide for children is available.",
+            "th": "เด็กต่ำกว่า 7 ปีเข้าฟรี และมีไกด์สำหรับเด็กแบบเสียเงิน"
+          },
+          "tip": {
+            "en": "Booking is compulsory to guarantee your access",
+            "th": "ต้องจองล่วงหน้าเพื่อให้แน่ใจว่าได้เข้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "en": "Adults €18 · ages 7–11 €3 · under 7 free",
+            "th": "ผู้ใหญ่ €18 · 7–11 ปี €3 · ต่ำกว่า 7 ปีฟรี"
+          },
+          "book": "req",
+          "q": "Museum David and Alice van Buuren, Avenue Léo Errera 41, 1180 Uccle, Brussels, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.museumvanbuuren.be/en/visit"
+        },
+        {
+          "name": {
+            "en": "Royal Peruchet Theatre",
+            "th": "โรงละครหุ่นเชิดรอยัลเปรูเช"
+          },
+          "local": "Théâtre Royal du Peruchet",
+          "kind": "show",
+          "area": {
+            "en": "Ixelles, Brussels",
+            "th": "อิกเซลส์ บรัสเซลส์"
+          },
+          "what": {
+            "en": "Fairytales told with string puppets in an 18th-century farmhouse; the International Puppet Museum is included with every ticket.",
+            "th": "นิทานเล่าด้วยหุ่นชักในฟาร์มเฮาส์ศตวรรษที่ 18 ตั๋วทุกใบรวมพิพิธภัณฑ์หุ่นนานาชาติ"
+          },
+          "why": {
+            "en": "Ages 4+, performed in French and easy to follow for every child.",
+            "th": "สำหรับ 4 ขวบขึ้นไป แสดงเป็นภาษาฝรั่งเศส เด็กทุกคนตามเรื่องได้ง่าย"
+          },
+          "tip": {
+            "en": "Performed in French",
+            "th": "แสดงเป็นภาษาฝรั่งเศส"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €12 child · €14 adult",
+            "th": "≈ €12 เด็ก · €14 ผู้ใหญ่"
+          },
+          "book": "rec",
+          "q": "Théâtre Royal du Peruchet, Avenue de la Forêt 50, 1050 Ixelles, Brussels, Belgium",
+          "ok": "2026-11",
+          "src": "https://theatreperuchet.be/"
         }
     ]
     }

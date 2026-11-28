@@ -3034,6 +3034,454 @@
           },
           "q": "Cascina Biblioteca, Parco Lambro, Milano",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Wonderwood Green Forest",
+            "th": "วันเดอร์วูด กรีนฟอเรสต์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Merlata Bloom, Via Daimler, Milan",
+            "th": "เมอร์ลาตา บลูม มิลาน"
+          },
+          "what": {
+            "en": "An indoor play park inside the Merlata Bloom centre, with a big central tree and themed areas.",
+            "th": "สวนเล่นในร่มภายในศูนย์ Merlata Bloom มีต้นไม้ใหญ่กลางโซนและพื้นที่ธีมต่างๆ"
+          },
+          "why": {
+            "en": "Built for children aged 3 to 12, with over 600 square metres of play space and educational workshops.",
+            "th": "สร้างสำหรับเด็กอายุ 3–12 ปี พื้นที่เล่นกว่า 600 ตารางเมตร และมีเวิร์กช็อปให้ความรู้"
+          },
+          "tip": {
+            "en": "Check the official site for current opening times before you go.",
+            "th": "เช็กเวลาเปิดล่าสุดจากเว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Green Forest, Via Gottlieb Wilhelm Daimler, 61, 20151 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "Zero Gravity Freestyle Park",
+            "th": "ซีโร่ กราวิตี้ ฟรีสไตล์ พาร์ก"
+          },
+          "local": "Zero-Gravity Milano",
+          "kind": "play",
+          "area": {
+            "en": "Lambrate, Via Carlo Valvassori Peroni, Milan",
+            "th": "แลมบราเต มิลาน"
+          },
+          "what": {
+            "en": "A trampoline gym with foam pits, in the Lambrate area of Milan.",
+            "th": "ยิมแทรมโพลีนมีหลุมโฟม ในย่านแลมบราเตของมิลาน"
+          },
+          "why": {
+            "en": "Children can jump, do somersaults and fall into the foam pits on trampolines.",
+            "th": "เด็กกระโดด ตีลังกา และล้มลงหลุมโฟมบนแทรมโพลีนได้"
+          },
+          "tip": {
+            "en": "Booking is recommended, especially at weekends. Weekdays 14:00–23:00, weekends 10:00–23:00.",
+            "th": "แนะนำให้จอง โดยเฉพาะวันหยุดสุดสัปดาห์ วันธรรมดา 14:00–23:00 เสาร์อาทิตย์ 10:00–23:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Zero-Gravity Milano, Via Carlo Valvassori Peroni, 48, 20133 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "MIC – Interactive Cinema Museum",
+            "th": "พิพิธภัณฑ์ภาพยนตร์เชิงโต้ตอบ MIC"
+          },
+          "local": "Museo Interattivo del Cinema",
+          "kind": "museum",
+          "area": {
+            "en": "Viale Fulvio Testi, near Bicocca metro, Milan",
+            "th": "Viale Fulvio Testi ใกล้รถไฟใต้ดินบิกอกกา มิลาน"
+          },
+          "what": {
+            "en": "An interactive museum about the history of cinema, with exhibits and screenings.",
+            "th": "พิพิธภัณฑ์เชิงโต้ตอบเกี่ยวกับประวัติศาสตร์ภาพยนตร์ มีนิทรรศการและรอบฉาย"
+          },
+          "why": {
+            "en": "Interactive exhibits, screenings for children and young people, and creative workshops for little ones.",
+            "th": "มีนิทรรศการให้ลงมือเล่น รอบฉายสำหรับเด็กและเยาวชน และเวิร์กช็อปสร้างสรรค์สำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 15:00–19:00, closed Mondays.",
+            "th": "เปิดวันอังคารถึงอาทิตย์ 15:00–19:00 ปิดวันจันทร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Museo Interattivo del Cinema, Cineteca Milano MIC, Viale Fulvio Testi, 121, 20162 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "STEP FuturAbility District",
+            "th": "สเต็ป ฟิวเจอร์แอบิลิตี้ ดิสทริกต์"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Piazza Adriano Olivetti, Milan",
+            "th": "Piazza Adriano Olivetti มิลาน"
+          },
+          "what": {
+            "en": "A ten-stop interactive exhibition about technology, artificial intelligence and digital skills, with multimedia installations.",
+            "th": "นิทรรศการเชิงโต้ตอบสิบจุดเรื่องเทคโนโลยี ปัญญาประดิษฐ์ และทักษะดิจิทัล พร้อมสื่อมัลติมีเดีย"
+          },
+          "why": {
+            "en": "Free family workshops, with digital-explorer labs for children aged 8 to 16.",
+            "th": "มีเวิร์กช็อปครอบครัวฟรี และห้องทดลองนักสำรวจดิจิทัลสำหรับเด็กอายุ 8–16 ปี"
+          },
+          "tip": {
+            "en": "Free family activities run by booking; check the site for the Sunday schedule.",
+            "th": "กิจกรรมครอบครัวฟรีต้องจอง เช็กตารางวันอาทิตย์จากเว็บไซต์"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "STEP FuturAbility District, P.za Adriano Olivetti, 1, 20139 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "Villa Finzi park",
+            "th": "สวนวิลลาฟินซี"
+          },
+          "local": "Parco di Villa Finzi",
+          "kind": "play",
+          "area": {
+            "en": "Gorla, Via Sant'Erlembaldo, Milan",
+            "th": "กอร์ลา มิลาน"
+          },
+          "what": {
+            "en": "An inclusive play area of about 280 square metres with an accessible carousel, music and sensory panels.",
+            "th": "สนามเด็กเล่นสำหรับทุกคนราว 280 ตารางเมตร มีม้าหมุนที่เข้าถึงได้ ดนตรี และแผงสัมผัส"
+          },
+          "why": {
+            "en": "Good for children who enjoy sounds, hands-on panels, spinning and shared games.",
+            "th": "เหมาะกับเด็กที่ชอบเสียง แผงให้จับ การหมุน และเล่นด้วยกัน"
+          },
+          "tip": {
+            "en": "Trees and paths let you alternate play with a quieter break.",
+            "th": "มีต้นไม้และทางเดิน สลับเล่นกับพักเงียบๆ ได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco di Villa Finzi, Via Sant'Erlembaldo, 4, 20126 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Giardini Ezio Lucarelli",
+            "th": "สวนเอซีโอ ลูกาเรลลี"
+          },
+          "local": "Giardino \"Ezio Lucarelli\"",
+          "kind": "play",
+          "area": {
+            "en": "Via Passo Rolle, Milan",
+            "th": "Via Passo Rolle มิลาน"
+          },
+          "what": {
+            "en": "A large inclusive play garden with a variety of structures.",
+            "th": "สวนเด็กเล่นสำหรับทุกคนขนาดใหญ่ มีเครื่องเล่นหลากหลาย"
+          },
+          "why": {
+            "en": "Good for siblings and groups of children of different ages and abilities, with creative activities and paths on the ground.",
+            "th": "เหมาะกับพี่น้องและเด็กหลายวัยหลายความสามารถ มีกิจกรรมสร้างสรรค์และลายทางบนพื้น"
+          },
+          "tip": {
+            "en": "Less competitive play, suited to creative games as well as movement.",
+            "th": "เล่นแบบไม่แข่งขัน เหมาะกับเกมสร้างสรรค์และการเคลื่อนไหว"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Giardino \"Ezio Lucarelli\", Via Passo Rolle, 39-41, 20134 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Parco Chiesa Rossa",
+            "th": "ปาร์โก เคียซา รอสซา"
+          },
+          "local": "Parco delle Cascine di Chiesa Rossa",
+          "kind": "play",
+          "area": {
+            "en": "Via San Domenico Savio, Chiesa Rossa, Milan",
+            "th": "Via San Domenico Savio เคียซา รอสซา มิลาน"
+          },
+          "what": {
+            "en": "A play area of about 530 square metres set in the flower beds around the fountain and the Centauro monument.",
+            "th": "สนามเด็กเล่นราว 530 ตารางเมตร อยู่ท่ามกลางแปลงดอกไม้รอบน้ำพุและอนุสาวรีย์ Centauro"
+          },
+          "why": {
+            "en": "Music, movement and creative play, plus a library beside it for a quieter spell.",
+            "th": "มีดนตรี การเคลื่อนไหว และการเล่นสร้างสรรค์ และมีห้องสมุดข้างๆ ไว้พักสงบ"
+          },
+          "tip": {
+            "en": "Library, park and play area can be used on the same day.",
+            "th": "ใช้ห้องสมุด สวน และสนามเด็กเล่นได้ในวันเดียวกัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco delle Cascine di Chiesa Rossa, Via S. Domenico Savio, 20141 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Giardini Martinetti",
+            "th": "สวนมาร์ติเนตติ"
+          },
+          "local": "Parchetto via Martinetti",
+          "kind": "play",
+          "area": {
+            "en": "Via Privata Piero Martinetti, Milan",
+            "th": "Via Privata Piero Martinetti มิลาน"
+          },
+          "what": {
+            "en": "An inclusive garden where the centre is dedicated to music, with instruments that can be played by children with and without disabilities.",
+            "th": "สวนสำหรับทุกคนที่มีใจกลางเป็นโซนดนตรี มีเครื่องดนตรีให้เด็กทั้งที่มีและไม่มีความพิการเล่นได้"
+          },
+          "why": {
+            "en": "Musical instruments, some played by blowing or striking, that children can touch and hear.",
+            "th": "มีเครื่องดนตรีที่เป่าหรือตี ให้เด็กจับและฟังเสียงได้"
+          },
+          "tip": {
+            "en": "Music-themed play; the instruments work as touch and sight experiences too.",
+            "th": "เล่นตามธีมดนตรี เครื่องดนตรียังให้สัมผัสและดูได้ด้วย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parchetto via Martinetti, Via Privata Piero Martinetti, 25/23, 20147 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Il Villaggio dei Bambini, Idroscalo",
+            "th": "หมู่บ้านเด็ก อิโดรสกาโล"
+          },
+          "local": "Villaggio del Bambino",
+          "kind": "play",
+          "area": {
+            "en": "Idroscalo, Novegro-Tregarezzo",
+            "th": "อิโดรสกาโล โนเวโกร-เตรกาเรซโซ"
+          },
+          "what": {
+            "en": "A large free play park built from recycled and recyclable materials, on a surface that cushions falls.",
+            "th": "สวนเด็กเล่นขนาดใหญ่ฟรี สร้างจากวัสดุรีไซเคิล บนพื้นที่ซับแรงกระแทก"
+          },
+          "why": {
+            "en": "Ground games and water play on a soft, anti-trauma surface at the Idroscalo lake.",
+            "th": "มีเกมเล่นบนพื้นและเล่นน้ำ บนพื้นนุ่มกันบาดเจ็บ ริมทะเลสาบอิโดรสกาโล"
+          },
+          "tip": {
+            "en": "Choose the equipped areas for the water; the lake has supervised swimming zones.",
+            "th": "เลือกโซนที่มีอุปกรณ์สำหรับเล่นน้ำ ทะเลสาบมีโซนว่ายน้ำที่มีผู้ดูแล"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Villaggio del Bambino, Via Circonvallazione Idroscalo, 20054 Novegro-Tregarezzo MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/idroscalo-di-milano-cosa-fare-con-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "MUDEC – Museum of Cultures",
+            "th": "พิพิธภัณฑ์วัฒนธรรม MUDEC"
+          },
+          "local": "Mudec – Museo delle Culture",
+          "kind": "museum",
+          "area": {
+            "en": "Via Tortona, Milan",
+            "th": "Via Tortona มิลาน"
+          },
+          "what": {
+            "en": "A museum of world cultures with a space for children with creative workshops and storytelling inspired by world cultures.",
+            "th": "พิพิธภัณฑ์วัฒนธรรมโลก มีพื้นที่สำหรับเด็กพร้อมเวิร์กช็อปสร้างสรรค์และการเล่านิทานจากวัฒนธรรมต่างๆ"
+          },
+          "why": {
+            "en": "A children's space with creative workshops and storytelling.",
+            "th": "มีพื้นที่เด็กพร้อมเวิร์กช็อปสร้างสรรค์และเล่านิทาน"
+          },
+          "tip": {
+            "en": "Booking the workshops in advance on the official site is recommended.",
+            "th": "แนะนำให้จองเวิร์กช็อปล่วงหน้าบนเว็บไซต์ทางการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Mudec, Via Tortona, 56, 20144 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/"
+        },
+        {
+          "name": {
+            "en": "Acquaworld",
+            "th": "อควาเวิลด์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Concorezzo, 30–40 minutes from Milan",
+            "th": "คอนโกเรซโซ ห่างมิลานราว 30–40 นาที"
+          },
+          "what": {
+            "en": "A large covered water park.",
+            "th": "สวนน้ำในร่มขนาดใหญ่"
+          },
+          "why": {
+            "en": "A covered water park where a rainy day can turn into a swim day.",
+            "th": "สวนน้ำในร่ม วันฝนตกกลายเป็นวันว่ายน้ำได้"
+          },
+          "tip": {
+            "en": "Buy tickets online; check the site for times before you go.",
+            "th": "ซื้อตั๋วออนไลน์ และเช็กเวลาจากเว็บไซต์ก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Acquaworld, Via Giorgio la Pira, 16, 20863 Concorezzo MB, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
         }
     ]
     },

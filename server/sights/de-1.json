@@ -3430,6 +3430,371 @@
           },
           "q": "Müller’sches Volksbad, Rosenheimer Straße 1, München",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Munich Action Park",
+            "th": "มิวนิก แอคชั่น พาร์ก"
+          },
+          "local": "Munich Action Park - Move & Climb",
+          "kind": "play",
+          "area": {
+            "en": "Olympiapark, Spiridon-Louis-Ring, Munich",
+            "th": "โอลิมเปียพาร์ก มิวนิก"
+          },
+          "what": {
+            "en": "Indoor action-sports hall in the Olympiapark with bouldering, Ninja Warrior, parkour, calisthenics, trampolines and a kids area.",
+            "th": "ฮอลล์กีฬาแอคชั่นในร่มที่โอลิมเปียพาร์ก มีโบลเดอริ่ง นินจาวอร์ริเออร์ พาร์กัวร์ คาลิสเธนิกส์ แทรมโพลีน และโซนเด็ก"
+          },
+          "why": {
+            "en": "The kids area is meant for the younger children; the sports areas have their own age rules.",
+            "th": "โซนเด็กสำหรับเด็กเล็ก ส่วนโซนกีฬามีกฎอายุของแต่ละโซน"
+          },
+          "tip": {
+            "en": "Bring clean indoor shoes. Check the age rules for each area and whether a time slot is needed.",
+            "th": "เตรียมรองเท้าในร่มที่สะอาด เช็กกฎอายุของแต่ละโซนและว่าต้องจองรอบหรือไม่"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Munich Action Park - Move & Climb, Spiridon-Louis-Ring 3, 80809 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/sehenswuerdigkeiten/muenchen-bei-regen-tipps-fuer-spannende-indoor-aktivitaeten"
+        },
+        {
+          "name": {
+            "en": "Adventure playground Hasenbergl (ABIX)",
+            "th": "สนามผจญภัยฮาเซนแบร์กล์ (ABIX)"
+          },
+          "local": "Abenteuerspielplatz Hasenbergl - ABIX",
+          "kind": "play",
+          "area": {
+            "en": "Weitlstraße, Hasenbergl, Munich",
+            "th": "Weitlstraße ฮาเซนแบร์กล์ มิวนิก"
+          },
+          "what": {
+            "en": "An open kids' meeting place on 12,000 m² of trees, with wooden huts that children rent with a play pass and decorate themselves.",
+            "th": "พื้นที่พบปะเด็กแบบเปิดบนพื้นที่ต้นไม้ 12,000 ตร.ม. มีกระท่อมไม้ให้เด็กเช่าด้วยบัตรเล่นและตกแต่งเอง"
+          },
+          "why": {
+            "en": "A rainy-day option: the house has table football, billiards and board games, and a padded room to run about in.",
+            "th": "ใช้ได้ในวันฝนตก บ้านเล่นมีโต๊ะฟุตบอล บิลเลียด บอร์ดเกม และห้องบุนวมให้วิ่งเล่น"
+          },
+          "tip": {
+            "en": "Open Tuesday to Saturday, 13:00–19:00 in summer and 13:00–18:00 in winter; closed on public holidays. The page lists it as free.",
+            "th": "เปิดอังคารถึงเสาร์ 13:00–19:00 ช่วงร้อน และ 13:00–18:00 ช่วงหนาว ปิดวันหยุดนักขัตฤกษ์ หน้าเว็บระบุว่าฟรี"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Abenteuerspielplatz Hasenbergl - ABIX, Weitlstraße 125, 80935 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Adventure playground Maulwurfshausen",
+            "th": "สนามผจญภัยเมาล์วูร์ฟสเฮาเซน"
+          },
+          "local": "Abenteuerspielplatz Maulwurfshausen",
+          "kind": "play",
+          "area": {
+            "en": "Albert-Schweitzer-Straße, Neuperlach, Munich",
+            "th": "Albert-Schweitzer-Straße นอยแปร์ลัค มิวนิก"
+          },
+          "what": {
+            "en": "A 2,600 m² adventure playground open all year, with a hut landscape, a football meadow, a bird-nest swing and a covered outdoor kitchen.",
+            "th": "สนามผจญภัย 2,600 ตร.ม. เปิดทั้งปี มีกระท่อมไม้ ทุ่งฟุตบอล ชิงช้ารังนก และครัวกลางแจ้งมีหลังคา"
+          },
+          "why": {
+            "en": "A water slide opens on hot days in summer. It is for children aged 6 to 13, so it fits the older children only.",
+            "th": "มีสไลเดอร์น้ำเปิดในวันร้อนช่วงฤดูร้อน สำหรับเด็ก 6–13 ปี จึงเหมาะกับเด็กโตเท่านั้น"
+          },
+          "tip": {
+            "en": "School term: Wednesday to Friday 14:00–18:00. Holidays: Monday to Friday 14:00–18:00, to 19:00 in summer.",
+            "th": "ช่วงเปิดเทอม พุธถึงศุกร์ 14:00–18:00 ช่วงปิดเทอม จันทร์ถึงศุกร์ 14:00–18:00 ช่วงร้อนถึง 19:00"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Abenteuerspielplatz Maulwurfshausen, Albert-Schweitzer-Straße 24, 81735 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Adventure playground ASP Neuhausen",
+            "th": "สนามผจญภัย ASP นอยเฮาเซน"
+          },
+          "local": "Oase Neuhausen - Abenteuerspielplatz",
+          "kind": "play",
+          "area": {
+            "en": "Hanebergstraße, Neuhausen, Munich",
+            "th": "Hanebergstraße นอยเฮาเซน มิวนิก"
+          },
+          "what": {
+            "en": "A 6,400 m² adventure playground built on four elements: a sand-and-mud landscape, water, fire and air. Children build their own huts.",
+            "th": "สนามผจญภัย 6,400 ตร.ม. ตามสี่ธาตุ คือภูมิทัศน์ทรายและโคลน น้ำ ไฟ และลม เด็กสร้างกระท่อมเอง"
+          },
+          "why": {
+            "en": "Children up to 13 can take a cordless-drill driving licence.",
+            "th": "เด็กอายุถึง 13 ปีสอบ \"ใบขับขี่สว่านไร้สาย\" ได้"
+          },
+          "tip": {
+            "en": "Open Monday to Wednesday and Friday, 15:00–18:00. Thursday is a project afternoon, so the open meeting is off.",
+            "th": "เปิดจันทร์ถึงพุธและศุกร์ 15:00–18:00 วันพฤหัสเป็นบ่ายทำโปรเจกต์ ไม่เปิดให้เข้าอิสระ"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Oase Neuhausen - Abenteuerspielplatz, Hanebergstraße 14, 80637 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Westpark water playground",
+            "th": "สนามเล่นน้ำเวสต์พาร์ก"
+          },
+          "local": "Wasserspielplatz Westpark",
+          "kind": "play",
+          "area": {
+            "en": "Westpark, Heiterwanger Straße, Munich",
+            "th": "เวสต์พาร์ก Heiterwanger Straße มิวนิก"
+          },
+          "what": {
+            "en": "A large water playground in the east of the park, with a stream, stone slides and climbing and play equipment.",
+            "th": "สนามเล่นน้ำขนาดใหญ่ทางตะวันออกของสวน มีลำธาร สไลเดอร์หิน และอุปกรณ์ปีนป่าย"
+          },
+          "why": {
+            "en": "The stream is where children build dams; there is plenty of shade for parents.",
+            "th": "เด็กๆ สร้างเขื่อนกั้นลำธารได้ และมีร่มเงามากสำหรับพ่อแม่"
+          },
+          "tip": {
+            "en": "Water usually runs from May to the end of September. On Tuesdays it is switched on only from late afternoon, for cleaning. The playground is open all year.",
+            "th": "น้ำเปิดตั้งแต่พฤษภาคมถึงสิ้นกันยายน วันอังคารเปิดน้ำตอนเย็นเพราะต้องทำความสะอาด สนามเล่นเปิดทั้งปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wasserspielplatz Westpark, Heiterwanger Str. 34, 81373 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Riemer See",
+            "th": "ทะเลสาบรีเมอร์"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Messestadt Riem, Munich",
+            "th": "เมสเซอชตัดท์ รีม มิวนิก"
+          },
+          "what": {
+            "en": "A 12-hectare lake laid out for the 2005 garden show, with a flat gravel beach and lawns on the east shore.",
+            "th": "ทะเลสาบ 12 เฮกตาร์ที่ทำขึ้นสำหรับงานสวนปี 2005 มีหาดกรวดราบและสนามหญ้าฝั่งตะวันออก"
+          },
+          "why": {
+            "en": "A flat gravel beach with a non-swimmers' area marked by buoys at about 1.35 m.",
+            "th": "หาดกรวดราบ มีโซนสำหรับคนว่ายน้ำไม่เป็นที่ลึกราว 1.35 ม. กั้นด้วยทุ่น"
+          },
+          "tip": {
+            "en": "Bathing only at the marked spots; jumping into the water is forbidden. Keep children within sight.",
+            "th": "ลงเล่นน้ำได้เฉพาะจุดที่กำหนด ห้ามกระโดดลงน้ำ ดูแลเด็กให้อยู่ในสายตา"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Riemer See, Trudering-Riem, 81829 München, Germany",
+          "ok": "2026-11",
+          "src": "https://stadt.muenchen.de/service/info/riemer-see/10313894/"
+        },
+        {
+          "name": {
+            "en": "Lerchenauer See",
+            "th": "ทะเลสาบแลร์เชอเนาเออร์"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Feldmoching-Hasenbergl, north Munich",
+            "th": "เฟลด์โมชิง-ฮาเซนแบร์กล์ ทางเหนือของมิวนิก"
+          },
+          "what": {
+            "en": "One of the smallest and oldest bathing lakes in north Munich, with lawns all round and a restaurant by the water.",
+            "th": "หนึ่งในทะเลสาบเล่นน้ำที่เล็กและเก่าแก่ที่สุดทางเหนือของมิวนิก มีสนามหญ้ารอบและร้านอาหารริมน้ำ"
+          },
+          "why": {
+            "en": "A large playground for the little visitors.",
+            "th": "มีสนามเด็กเล่นขนาดใหญ่สำหรับผู้มาเยือนตัวเล็ก"
+          },
+          "tip": {
+            "en": "Grilling is allowed only in marked grill zones. Lifeguards are on duty only on fine weekends and holidays.",
+            "th": "ย่างบาร์บีคิวได้เฉพาะโซนที่กำหนด ไลฟ์การ์ดประจำเฉพาะเสาร์อาทิตย์และวันหยุดที่อากาศดี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lerchenauer See, Feldmoching-Hasenbergl, 80995 München, Germany",
+          "ok": "2026-11",
+          "src": "https://stadt.muenchen.de/service/info/lerchenauer-see/10313887/"
+        },
+        {
+          "name": {
+            "en": "Feldmochinger See",
+            "th": "ทะเลสาบเฟลด์โมชิงเงอร์"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Feldmoching-Hasenbergl, north Munich",
+            "th": "เฟลด์โมชิง-ฮาเซนแบร์กล์ ทางเหนือของมิวนิก"
+          },
+          "what": {
+            "en": "A large lake with wide lawns and a restaurant and kiosk. A fenced swimming area of about 2,500 m² is reached by a jetty and a ramp.",
+            "th": "ทะเลสาบใหญ่ มีสนามหญ้ากว้าง ร้านอาหารและคีออสก์ โซนว่ายน้ำล้อมรั้วราว 2,500 ตร.ม. เข้าทางสะพานท่าและทางลาด"
+          },
+          "why": {
+            "en": "The page says it suits families, and the swimming area is barrier-free.",
+            "th": "หน้าเว็บระบุว่าเหมาะกับครอบครัว และโซนว่ายน้ำไม่มีสิ่งกีดขวาง"
+          },
+          "tip": {
+            "en": "Paid parking at the lake. Arrive early on hot days; the lake fills fast. Grilling only in marked zones.",
+            "th": "ที่จอดรถเสียเงิน วันร้อนควรไปเช้า เพราะคนเต็มเร็ว ย่างบาร์บีคิวได้เฉพาะโซนที่กำหนด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Feldmochinger See, Feldmoching-Hasenbergl, 80995 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/badeseen-muenchen-und-umgebung"
+        },
+        {
+          "name": {
+            "en": "Lußsee",
+            "th": "ทะเลสาบลุสเซ"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Langwieder Seenplatte, Aubing-Lochhausen-Langwied, Munich",
+            "th": "แลงไวเดอร์ เซนเพลตเทอ มิวนิกตะวันตกเฉียงเหนือ"
+          },
+          "what": {
+            "en": "About 17 hectares, almost the size of the Langwieder See but deeper and clearer, with a gravel beach and wide lawns.",
+            "th": "ราว 17 เฮกตาร์ ใหญ่เกือบเท่าทะเลสาบแลงไวเดอร์ แต่ลึกและใสกว่า มีหาดกรวดและสนามหญ้ากว้าง"
+          },
+          "why": {
+            "en": "The page lists it for families, for long bathing days and for a picnic.",
+            "th": "หน้าเว็บแนะนำสำหรับครอบครัว วันเล่นน้ำยาวๆ และปิกนิก"
+          },
+          "tip": {
+            "en": "The page also lists it as a bike-ride setting.",
+            "th": "หน้าเว็บระบุว่าเหมาะกับการปั่นจักรยานด้วย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lußsee, Aubing-Lochhausen-Langwied, 81249 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/badeseen-muenchen-und-umgebung"
         }
     ]
     },

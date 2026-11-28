@@ -3925,6 +3925,86 @@
           },
           "q": "Parc de la Citadelle, Strasbourg",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Musée Historique",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์สตราสบูร์ก"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Grandes Boucheries, Strasbourg",
+            "th": "กร็องบูเชอรี สตราสบูร์ก"
+          },
+          "what": {
+            "en": "The history of Strasbourg from the Middle Ages to 1800, with objects visitors can touch or try on.",
+            "th": "ประวัติศาสตร์สตราสบูร์กตั้งแต่ยุคกลางถึงปี 1800 มีวัตถุให้สัมผัสหรือลองสวม"
+          },
+          "why": {
+            "en": "Some objects can be touched or tried, and a plan-relief of the medieval and Renaissance city (about 70 m²) is on show.",
+            "th": "มีวัตถุให้จับหรือลองสวม และมีแบบจำลองเมืองยุคกลางและยุคเรอเนสซองส์ขนาดราว 70 ตร.ม."
+          },
+          "tip": {
+            "en": "Closed at Christmas and New Year, so check the dates before you go.",
+            "th": "ปิดช่วงคริสต์มาสและปีใหม่ เช็กวันก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Musée Historique, 2 Rue du Vieux-Marché-aux-Poissons, Strasbourg, France",
+          "ok": "2026-11",
+          "src": "https://www.strasbourg.eu/lieu/-/entity/id/685940/musee-historique"
+        },
+        {
+          "name": {
+            "en": "Jardin Botanique de l'université de Strasbourg",
+            "th": "สวนพฤกษศาสตร์ มหาวิทยาลัยสตราสบูร์ก"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Jardin des sciences, Rue Goethe, Strasbourg",
+            "th": "ฌาร์แด็งเดซีอ็องส์ Rue Goethe สตราสบูร์ก"
+          },
+          "what": {
+            "en": "A green garden in the middle of the city, part of the university's Jardin des sciences.",
+            "th": "สวนเขียวกลางเมือง เป็นส่วนหนึ่งของ Jardin des sciences ของมหาวิทยาลัย"
+          },
+          "why": {
+            "en": "A green place to walk in the middle of town, with a stroll in greenery at the heart of the city.",
+            "th": "ที่เดินเล่นสีเขียวกลางเมือง เหมาะพาเด็กเดินชมต้นไม้ช้าๆ"
+          },
+          "tip": {
+            "en": "Open afternoons only: 14:00–18:00 in March–April and September–October, 14:00–19:00 May–August, 14:00–16:00 November–December.",
+            "th": "เปิดช่วงบ่ายเท่านั้น: 14:00–18:00 มี.ค.–เม.ย. และ ก.ย.–ต.ค. 14:00–19:00 พ.ค.–ส.ค. 14:00–16:00 พ.ย.–ธ.ค."
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jardin Botanique de l'université de Strasbourg, 28 Rue Goethe, Strasbourg, France",
+          "ok": "2026-11",
+          "src": "https://jardin-sciences.unistra.fr/visite/le-jardin-botanique"
         }
       ]
     },
@@ -4471,6 +4551,166 @@
           },
           "q": "Buzz Lightyear Laser Blast, Disneyland Paris",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Palomano Val d'Europe",
+            "th": "ปาโลมาโน วาล เดอรอป"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Chanteloup-en-Brie, Val d'Europe",
+            "th": "ชองตาลูป็อง-บรี วาล เดอรอป"
+          },
+          "what": {
+            "en": "An indoor mini-city where children aged 0 to 10 move between everyday sets such as a fire station, supermarket, hospital, restaurant and airport.",
+            "th": "เมืองจำลองในร่มที่เด็ก 0–10 ขวบเดินเล่นตามฉากชีวิตประจำวัน เช่น สถานีดับเพลิง ซูเปอร์มาร์เก็ต โรงพยาบาล ร้านอาหาร และสนามบิน"
+          },
+          "why": {
+            "en": "Indoor play for a rainy day; trained staff guide the scenarios and the children explore on their own.",
+            "th": "เล่นในร่มยามฝนตก พนักงานที่ผ่านการอบรมดูแลสถานการณ์ และเด็กสำรวจเองได้"
+          },
+          "tip": {
+            "en": "Two hours of play per session; reservations are recommended. Babies aged 0 to 1 enter free.",
+            "th": "เล่นรอบละ 2 ชั่วโมง แนะนำให้จอง ทารก 0–1 ขวบเข้าฟรี"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €13 per child from age 1",
+            "th": "≈ €13 ต่อเด็ก ตั้งแต่ 1 ขวบ"
+          },
+          "book": "rec",
+          "q": "Palomano Val d'Europe, Le Clos du Chêne, Chanteloup-en-Brie, Val d'Europe, France",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/346783-palomano-the-educational-play-park-for-kids-opens-a-new-location-in-val-d-europe"
+        },
+        {
+          "name": {
+            "en": "Île de Loisirs de Vaires-Torcy",
+            "th": "อีล เดอ ลัวซีร์ แห่งแวร์-ตอร์ซี"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Vaires-sur-Marne and Torcy",
+            "th": "แวร์-ซูร์-มาร์น และตอร์ซี"
+          },
+          "what": {
+            "en": "A leisure island on the Marne with a sandy beach for swimming, a lake for paddling and lawns for a picnic.",
+            "th": "เกาะพักผ่อนริมแม่น้ำมาร์น มีหาดทรายสำหรับว่ายน้ำ ทะเลสาบสำหรับพายเล่น และสนามหญ้าสำหรับปิกนิก"
+          },
+          "why": {
+            "en": "A beach with a lifeguard for children to swim, open every day in July and August.",
+            "th": "หาดมีเจ้าหน้าที่ช่วยชีวิตให้เด็กว่ายน้ำ เปิดทุกวันในเดือนกรกฎาคมและสิงหาคม"
+          },
+          "tip": {
+            "en": "Swimming only with a lifeguard present; check the beach days before you go.",
+            "th": "ว่ายน้ำได้เฉพาะตอนมีเจ้าหน้าที่ช่วยชีวิต เช็กวันเปิดหาดก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Vaires-Torcy Leisure Park, Route de Lagny, 77200 Torcy, France",
+          "ok": "2026-11",
+          "src": "https://vaires-torcy.iledeloisirs.fr/"
+        },
+        {
+          "name": {
+            "en": "Ferme pédagogique de La Prée",
+            "th": "ฟาร์มเรียนรู้ลาเปร"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Claye-Souilly",
+            "th": "แกลย์-ซุยยี"
+          },
+          "what": {
+            "en": "A charity-run farm in a community park with more than 150 animals, including hens, ducks, sheep, rabbits, cows, pigs and llamas.",
+            "th": "ฟาร์มที่ดูแลโดยองค์กรการกุศลในสวนชุมชน มีสัตว์กว่า 150 ตัว เช่น ไก่ เป็ด แกะ กระต่าย วัว หมู และลามะ"
+          },
+          "why": {
+            "en": "Walk-in visit with no booking; most animals were rescued from neglect or abandonment.",
+            "th": "เดินเข้าได้เลยไม่ต้องจอง สัตว์ส่วนใหญ่ได้รับการช่วยเหลือจากการถูกทอดทิ้ง"
+          },
+          "tip": {
+            "en": "Open April to October, Monday to Saturday 10:00–17:00; the farm is a 15 to 20 minute walk from the car park.",
+            "th": "เปิดเมษายนถึงตุลาคม จันทร์–เสาร์ 10:00–17:00 เดินจากที่จอดรถราว 15–20 นาที"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €5 per person · under 3 free",
+            "th": "≈ €5 ต่อคน · ต่ำกว่า 3 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Parc communal du papillon de la Prée et sa ferme pédagogique, Rue Robert Schuman, 77410 Claye-Souilly, France",
+          "ok": "2026-11",
+          "src": "https://onivapp.com/blog/ferme-pedagogique-autour-de-meaux"
+        },
+        {
+          "name": {
+            "en": "Château de Champs-sur-Marne",
+            "th": "ปราสาทชองส์-ซูร์-มาร์น"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Champs-sur-Marne",
+            "th": "ชองส์-ซูร์-มาร์น"
+          },
+          "what": {
+            "en": "A Renaissance château set in a large wooded park of about 85 hectares, open all year round.",
+            "th": "ปราสาทสมัยเรอเนซองส์ในสวนป่าใหญ่ราว 85 เฮกตาร์ เปิดตลอดทั้งปี"
+          },
+          "why": {
+            "en": "Woods and a garden to walk in; the June Rendez-vous aux Jardins weekend has free treasure-hunt games and workshops for children.",
+            "th": "มีป่าและสวนให้เดินเล่น สุดสัปดาห์ Rendez-vous aux Jardins เดือนมิถุนายนมีเกมล่าสมบัติและเวิร์กช็อปฟรีสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "The June garden weekend is the time for children's games; booking is needed for the ages 3 to 6 sessions.",
+            "th": "สุดสัปดาห์สวนเดือนมิถุนายนเหมาะกับเกมเด็ก รอบสำหรับ 3–6 ขวบต้องจอง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Château de Champs-sur-Marne, 31 Rue de Paris, 77420 Champs-sur-Marne, France",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/what-to-visit-in-paris/walks/articles/193135-for-the-2026-jardins-events-at-the-chateau-de-champs-sur-marne-family-friendly-scavenger-hunts-and-workshops"
         }
       ]
     }
