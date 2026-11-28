@@ -3348,6 +3348,60 @@
           "why": "shopping and heritage malls, little for children"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "sights",
+      "title": "Things to do round 10 — the Hong Kong Tourism Board's own pages (family Halloween, after dark, skyline vantage points, a day out on the outlying islands), Google Maps only",
+      "checked": "2026-11-28",
+      "rule": "An official page (Discover Hong Kong, the Hong Kong Tourism Board), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Discovery Bay",
+          "src": "https://www.discoverhongkong.com/eng/culture/family-friendly-places-visit-with-kids-for-halloween.html",
+          "map": "Google Maps: DB Plaza, a review 3 days ago"
+        },
+        {
+          "name": "Garden Hill",
+          "src": "https://www.discoverhongkong.com/eng/attractions/hong-kong-after-dark.html",
+          "map": "Google Maps: a review a week ago"
+        },
+        {
+          "name": "Ocean Terminal Deck",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html",
+          "map": "Google Maps: a review a day ago"
+        },
+        {
+          "name": "Golden Bauhinia Square",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html",
+          "map": "Google Maps: a review a day ago"
+        },
+        {
+          "name": "Hong Kong Observation Wheel",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html",
+          "map": "Google Maps: a review 7 hours ago"
+        },
+        {
+          "name": "Hong Kong Water Taxi",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html",
+          "map": "Google Maps: a review 3 months ago"
+        },
+        {
+          "name": "Mui Wo and Silvermine Bay Beach",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/a-unique-day-out-on-outlying-islands.html",
+          "map": "Google Maps: Silvermine Bay Beach, a review a week ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Old Yau Ma Tei Police Station",
+          "why": "no Google Maps listing of its own (the search leads to the working police station)"
+        },
+        {
+          "name": "Lee Tung Avenue, Harbour City, rooftop bars, Kai Tak photo spots",
+          "why": "shopping streets, malls and bars, or already in the library (Kai Tak Sports Park)"
+        }
+      ]
     }
   ]
 }
