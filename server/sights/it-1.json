@@ -1565,6 +1565,249 @@
           "tip": { "en": "The lifts stop between seasons; the winter season opens on 4 December 2026", "th": "กระเช้าหยุดช่วงระหว่างฤดู ฤดูหนาวเปิด 4 ธ.ค. 2026" },
           "q": "Talstation Seilbahn Meran 2000, Via Val di Nova, Merano",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Naturmuseum Südtirol",
+            "th": "พิพิธภัณฑ์ธรรมชาติเซาท์ทีโรล (Naturmuseum Südtirol)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Bolzano (Bozen)",
+            "th": "โบลซาโน (บอลซาโน)"
+          },
+          "what": {
+            "en": "A natural history museum in Bolzano with exhibitions suited especially to families.",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติในโบลซาโน มีนิทรรศการที่เหมาะกับครอบครัวเป็นพิเศษ"
+          },
+          "why": {
+            "en": "Its exhibitions suit families, and it is an indoor place for a rainy day.",
+            "th": "นิทรรศการเหมาะกับครอบครัว และเป็นที่ในร่มสำหรับวันฝนตก"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 10:00–18:00; closed 1 Jan, 1 May and 25 Dec.",
+            "th": "เปิดอังคารถึงอาทิตย์ 10:00–18:00 ปิด 1 ม.ค. 1 พ.ค. และ 25 ธ.ค."
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Naturmuseum Südtirol, Bolzano, Italy",
+          "ok": "2026-11",
+          "src": "https://www.naturmuseum.it/en/"
+        },
+        {
+          "name": {
+            "en": "Museion",
+            "th": "มูเซออน (Museion)"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Piazza Piero Siena, Bolzano",
+            "th": "Piazza Piero Siena โบลซาโน"
+          },
+          "what": {
+            "en": "A museum of modern and contemporary art in Bolzano with creative workshops for children.",
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่และร่วมสมัยในโบลซาโน มีเวิร์กช็อปสร้างสรรค์สำหรับเด็ก"
+          },
+          "why": {
+            "en": "Two-hour creative workshops for children aged 5 to 10, and a free family tour kit for every exhibition.",
+            "th": "มีเวิร์กช็อปสร้างสรรค์ 2 ชั่วโมงสำหรับเด็กอายุ 5–10 ปี และชุดนำชมสำหรับครอบครัวฟรีทุกนิทรรศการ"
+          },
+          "tip": {
+            "en": "Book the children's workshop in advance.",
+            "th": "จองเวิร์กช็อปเด็กล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Museion, Piazza Piero Siena 1, Bolzano, Italy",
+          "ok": "2026-11",
+          "src": "https://www.museion.it/en/pages/6099-mediation-and-visitor-services"
+        },
+        {
+          "name": {
+            "en": "Calfosch Animal Park",
+            "th": "สวนสัตว์คัลฟอส (Calfosch Animal Park)"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Colfosco, Alta Badia",
+            "th": "คอลฟอสโก อัลตาบาเดีย"
+          },
+          "what": {
+            "en": "An animal park at the entrance to the village of Colfosco, in a peaceful spot under larch and fir trees.",
+            "th": "สวนสัตว์ที่ทางเข้าหมู่บ้านคอลฟอสโก ในบรรยากาศสงบใต้ต้นลาร์ชและต้นสนเฟอร์"
+          },
+          "why": {
+            "en": "Along an easy path you meet geese, rabbits, chickens, sheep and alpacas.",
+            "th": "เดินตามทางสบายๆ พบห่าน กระต่าย ไก่ แกะ และอัลปากา"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Calfosch Animal Park, Colfosco, Corvara, Alta Badia, Italy",
+          "ok": "2026-11",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/animal-park"
+        },
+        {
+          "name": {
+            "en": "Biotope lake Corvara",
+            "th": "ทะเลสาบไบโอโทป คอร์วารา (Lago Biotopo)"
+          },
+          "local": "Lago Biotopo",
+          "kind": "nature",
+          "area": {
+            "en": "Corvara, Alta Badia",
+            "th": "คอร์วารา อัลตาบาเดีย"
+          },
+          "what": {
+            "en": "A relaxing area with three small ponds, a lawn with showers and a bar with restaurant.",
+            "th": "พื้นที่พักผ่อนมีบ่อเล็ก 3 บ่อ สนามหญ้าพร้อมที่อาบน้ำ และบาร์พร้อมร้านอาหาร"
+          },
+          "why": {
+            "en": "There is a children's playground and a children's pool.",
+            "th": "มีสนามเด็กเล่นและสระเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lago Biotopo, Strada Sotscores, Corvara in Badia, Italy",
+          "ok": "2026-11",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/biotope-lake-corvara-1"
+        },
+        {
+          "name": {
+            "en": "Deer Park Sompunt",
+            "th": "สวนกวางซอมปุนต์ (Sompunt)"
+          },
+          "local": "Parco Cervi Sompunt",
+          "kind": "park",
+          "area": {
+            "en": "Between La Villa and Badia, Alta Badia",
+            "th": "ระหว่างลาวิลลากับบาเดีย อัลตาบาเดีย"
+          },
+          "what": {
+            "en": "More than 7 hectares of meadows and forest with deer and fallow deer.",
+            "th": "ทุ่งหญ้าและป่ากว่า 7 เฮกตาร์ มีกวางและกวางฟอลโล"
+          },
+          "why": {
+            "en": "An easy marked path from the Paraciora hut to see the deer living in unspoilt nature.",
+            "th": "ทางเดินมีป้ายง่ายๆ จากกระท่อมปาราชิออรา ไปดูกวางที่อยู่ในธรรมชาติบริสุทธิ์"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco Cervi Sompunt, Strada Sompunt 8, Badia, Alta Badia, Italy",
+          "ok": "2026-11",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/deer-park-sompunt"
+        },
+        {
+          "name": {
+            "en": "Mendola Funicular",
+            "th": "กระเช้าราง เมนโดลา (Funicolare della Mendola)"
+          },
+          "local": "Funicolare della Mendola",
+          "kind": "ride",
+          "area": {
+            "en": "Sant'Antonio, Caldaro",
+            "th": "ซานต์อันโตนิโอ คัลดาโร"
+          },
+          "what": {
+            "en": "A funicular railway from Sant'Antonio in Caldaro up to the Mendola pass, inaugurated in 1903.",
+            "th": "รถรางกระเช้าจากซานต์อันโตนิโอในคัลดาโรขึ้นไปช่องเขาเมนโดลา เปิดใช้ปี 1903"
+          },
+          "why": {
+            "en": "One of the steepest funicular railways in Europe.",
+            "th": "เป็นหนึ่งในรถรางกระเช้าที่ชันที่สุดในยุโรป"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Funicolare della Mendola, Sant'Antonio, Caldaro, Italy",
+          "ok": "2026-11",
+          "src": "https://www.kalterersee.com/en/highlights/mendola-funicular/"
         }
       ]
     },
