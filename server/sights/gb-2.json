@@ -3323,6 +3323,406 @@
           },
           "q": "Pannett Park, Whitby",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Derwent Valley Light Railway",
+            "th": "เดอร์เวนต์ วัลเลย์ ไลต์ เรลเวย์"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Murton Park, near York",
+            "th": "เมอร์ตัน พาร์ก, ใกล้ยอร์ก"
+          },
+          "what": {
+            "en": "A volunteer-run heritage railway that runs half a mile within the grounds of Murton Park",
+            "th": "ทางรถไฟมรดกที่อาสาสมัครดูแล วิ่งครึ่งไมล์ภายในบริเวณเมอร์ตัน พาร์ก"
+          },
+          "why": {
+            "en": "A perfect spot for train lovers, and under 1s ride free",
+            "th": "เหมาะกับเด็กรักรถไฟ และเด็กอายุต่ำกว่า 1 ขวบนั่งฟรี"
+          },
+          "tip": {
+            "en": "Call before you travel to make sure the train is running that day",
+            "th": "โทรถามก่อนเดินทางว่ารถไฟวิ่งวันนั้นหรือไม่"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ £1 per person per ride · ≈ £5 per group (up to five) for unlimited rides, with park admission",
+            "th": "≈ £1 ต่อคนต่อเที่ยว · ≈ £5 ต่อกลุ่ม (ไม่เกิน 5 คน) นั่งได้ไม่จำกัด พร้อมค่าเข้าสวน"
+          },
+          "book": "none",
+          "q": "Derwent Valley Light Railway, Murton Park, Murton, York, UK",
+          "ok": "2026-11",
+          "src": "https://www.murtonpark.co.uk/dvlr/"
+        },
+        {
+          "name": {
+            "en": "Toddlers World at York Leisure Centre",
+            "th": "ทอดเดิลเลอร์ส เวิลด์ ที่ยอร์ก เลชัวร์ เซนเตอร์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "York Leisure Centre, Huntington",
+            "th": "ยอร์ก เลชัวร์ เซนเตอร์, ฮันติงตัน"
+          },
+          "what": {
+            "en": "A soft-play session in the sports hall with a Jungle Bouncer and matted play shapes",
+            "th": "เซสชันซอฟต์เพลย์ในห้องกีฬา มีจังเกิลเบาน์เซอร์และรูปทรงเล่นปูเสื่อ"
+          },
+          "why": {
+            "en": "Built for toddlers, a good way to burn off energy and socialise with friends",
+            "th": "ออกแบบสำหรับเด็กวัยเตาะแตะ เป็นวิธีที่ดีในการปล่อยพลังและเจอเพื่อนๆ"
+          },
+          "tip": {
+            "en": "Described as really good value",
+            "th": "มีการบอกว่าคุ้มค่ามาก"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Toddlers World at York Leisure Centre, Kathryn Avenue, Monks Cross Dr, Huntington, York YO32 9AF",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/?p=37871"
+        },
+        {
+          "name": {
+            "en": "Agility York",
+            "th": "แอจิลิตี ยอร์ก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Millfield Lane, York",
+            "th": "มิลล์ฟิลด์ เลน, ยอร์ก"
+          },
+          "what": {
+            "en": "An indoor fitness park with a ninja warrior course",
+            "th": "สวนฟิตเนสในร่มที่มีคอร์สนินจาวอร์ริเออร์"
+          },
+          "why": {
+            "en": "A dedicated soft-play area for little ones up to three, with slides, a climbing wall and building blocks",
+            "th": "มีโซนซอฟต์เพลย์สำหรับเด็กเล็กถึงสามขวบ มีสไลเดอร์ ผนังปีน และบล็อกต่อ"
+          },
+          "tip": {
+            "en": "Ninja Warrior Tots sessions let younger children try the bigger course",
+            "th": "รอบ Ninja Warrior Tots ให้เด็กเล็กลองคอร์สใหญ่ได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Agility, London Ebor Business Park, Millfield Ln, York YO26 6QY",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/?p=37871"
+        },
+        {
+          "name": {
+            "en": "Glen Gardens play area",
+            "th": "สนามเด็กเล่นเกลนการ์เดนส์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Heworth, York",
+            "th": "ฮีเวิร์ท, ยอร์ก"
+          },
+          "what": {
+            "en": "A council play area with 12 play units",
+            "th": "สนามเด็กเล่นของสภาท้องถิ่น มีเครื่องเล่น 12 ชิ้น"
+          },
+          "why": {
+            "en": "Equipment for children from toddler age up to 13",
+            "th": "มีเครื่องเล่นสำหรับเด็กตั้งแต่วัยเตาะแตะถึง 13 ปี"
+          },
+          "tip": {
+            "en": "The play area is locked overnight",
+            "th": "สนามเด็กเล่นล็อกตอนกลางคืน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Glen Gardens Play Area, Heworth, York YO31 0XH",
+          "ok": "2026-11",
+          "src": "https://www.york.gov.uk/directory-record/2780/glen-gardens-play-area"
+        },
+        {
+          "name": {
+            "en": "Homestead Park",
+            "th": "โฮมสเตด พาร์ก"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Clifton, York",
+            "th": "คลิฟตัน, ยอร์ก"
+          },
+          "what": {
+            "en": "A 14-acre park with formal gardens, a wildflower meadow, a pond and a rock garden",
+            "th": "สวนขนาด 14 เอเคอร์ มีสวนทางการ ทุ่งดอกไม้ป่า บ่อน้ำ และสวนหิน"
+          },
+          "why": {
+            "en": "Two play areas, and loos too",
+            "th": "มีสนามเด็กเล่นสองแห่ง และมีห้องน้ำ"
+          },
+          "tip": {
+            "en": "Picnic benches, but the car park is small, so you may park on the road at busy times",
+            "th": "มีม้านั่งปิกนิก แต่ที่จอดรถเล็ก ช่วงคนเยอะอาจต้องจอดริมถนน"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Homestead Park, The Homestead, 40 Water End, York YO30 6WP",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": {
+            "en": "Beningbrough Hall",
+            "th": "เบนิงบรอ ฮอลล์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Beningbrough, near York",
+            "th": "เบนิงบรอ, ใกล้ยอร์ก"
+          },
+          "what": {
+            "en": "A National Trust 18th-century house with pretty grounds",
+            "th": "คฤหาสน์ศตวรรษที่ 18 ของ National Trust พร้อมบริเวณสวยงาม"
+          },
+          "why": {
+            "en": "Plenty of space to run about, and a great adventure playground and wilderness play area",
+            "th": "มีที่ให้วิ่งเล่นมาก และมีสนามผจญภัยกับพื้นที่เล่นแบบป่า"
+          },
+          "tip": {
+            "en": "Check the house's opening times before you go",
+            "th": "เช็กเวลาเปิดของตัวบ้านก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "National Trust - Beningbrough Hall, Gallery and Gardens, York YO30 1DD",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": {
+            "en": "Burnby Hall Gardens",
+            "th": "เบิร์นบี ฮอลล์ การ์เดนส์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Pocklington, near York",
+            "th": "พ็อกคลิงตัน, ใกล้ยอร์ก"
+          },
+          "what": {
+            "en": "Gardens with two lakes of fish and water lilies, a rockery and secret gardens",
+            "th": "สวนที่มีทะเลสาบสองแห่งเต็มไปด้วยปลาและบัว สวนหิน และสวนลับ"
+          },
+          "why": {
+            "en": "A playground, and feeding the fish on the grass",
+            "th": "มีสนามเด็กเล่น และให้อาหารปลาได้บนสนามหญ้า"
+          },
+          "tip": {
+            "en": "Buy a pot of fish food on your way in",
+            "th": "ซื้อถ้วยอาหารปลาตอนเดินเข้า"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Burnby Hall Gardens, 33 The Balk, Pocklington, York YO42 2QF",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": {
+            "en": "Knavesmire Wood",
+            "th": "เนฟสไมร์ วูด"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Dringhouses, York",
+            "th": "ดริงเฮาส์เซส, ยอร์ก"
+          },
+          "what": {
+            "en": "A woodland close to York city centre with dens, rope swings and trees to climb",
+            "th": "ป่าใกล้ใจกลางเมืองยอร์ก มีที่ทำกระท่อม ชิงช้าเชือก และต้นไม้ให้ปีน"
+          },
+          "why": {
+            "en": "Children love the dens, rope swings and trees to climb",
+            "th": "เด็กๆ ชอบที่ทำกระท่อม ชิงช้าเชือก และต้นไม้ให้ปีน"
+          },
+          "tip": {
+            "en": "No parking, no loos, no café",
+            "th": "ไม่มีที่จอดรถ ไม่มีห้องน้ำ ไม่มีคาเฟ่"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Knavesmire Wood, Dringhouses, York, UK",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": {
+            "en": "Moorlands Nature Reserve",
+            "th": "มัวร์แลนด์ส เนเจอร์ รีเซิร์ฟ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Moor Lane, York",
+            "th": "มัวร์ เลน, ยอร์ก"
+          },
+          "what": {
+            "en": "A woodland nature reserve outside York with a collection of trees and wildlife",
+            "th": "เขตอนุรักษ์ป่านอกเมืองยอร์ก มีต้นไม้หลากชนิดและสัตว์ป่า"
+          },
+          "why": {
+            "en": "A paradise for little nature spotters",
+            "th": "สวรรค์ของนักสังเกตธรรมชาติตัวน้อย"
+          },
+          "tip": {
+            "en": "A pleasure to wander through at any time of year",
+            "th": "เดินเล่นได้เพลินทุกฤดูกาล"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "YWT Moorlands Woodland Nature Reserve, Moor Lane, York, UK",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": {
+            "en": "Hagg Wood",
+            "th": "แฮกก์ วูด"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Dunnington, near York",
+            "th": "ดันนิงตัน, ใกล้ยอร์ก"
+          },
+          "what": {
+            "en": "An ancient wood with tall trees, massive ferns, wildlife and an interesting history",
+            "th": "ป่าโบราณที่มีต้นไม้สูง เฟิร์นใหญ่ สัตว์ป่า และประวัติที่น่าสนใจ"
+          },
+          "why": {
+            "en": "Children can run free, make dens and collect sticks",
+            "th": "เด็กๆ วิ่งเล่นอิสระ ทำกระท่อม และเก็บกิ่งไม้ได้"
+          },
+          "tip": {
+            "en": "Parking is debated locally, so park in the village and walk",
+            "th": "เรื่องที่จอดรถมีข้อถกเถียงในท้องถิ่น จอดในหมู่บ้านแล้วเดินไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hagg Wood, Dunnington, York, UK",
+          "ok": "2026-11",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
         }
       ]
     }

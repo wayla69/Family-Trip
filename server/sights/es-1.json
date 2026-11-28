@@ -616,6 +616,168 @@
           },
           "q": "Fantàstix del Super3, Carrer del Rosselló 485, Barcelona",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Parc de Diagonal Mar",
+            "th": "ปาร์กเดดิอากอนัลมาร์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Diagonal Mar, Poblenou seafront",
+            "th": "ดิอากอนัลมาร์ ริมทะเลโปเบลนู"
+          },
+          "what": {
+            "en": "Barcelona's second largest park, by the sea with a lake fed by water running down sloping steps.",
+            "th": "สวนใหญ่เป็นอันดับสองของบาร์เซโลนา อยู่ริมทะเล มีทะเลสาบที่น้ำไหลลงมาตามขั้นบันได"
+          },
+          "why": {
+            "en": "A big open space that runs down to the sea, with water running down steps into the lake.",
+            "th": "พื้นที่โล่งกว้างทอดยาวถึงทะเล มีน้ำไหลตามขั้นบันไดลงสู่ทะเลสาบ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc de Diagonal Mar, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/parks-and-gardens/parc-de-diagonal-mar_99085102712.html"
+        },
+        {
+          "name": {
+            "en": "Barcelona Music Museum",
+            "th": "พิพิธภัณฑ์ดนตรีบาร์เซโลนา"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "L'Auditori, Barcelona",
+            "th": "ลาวดิโตรี บาร์เซโลนา"
+          },
+          "what": {
+            "en": "The city's music museum, with a permanent collection of 500 instruments from different periods and cultures.",
+            "th": "พิพิธภัณฑ์ดนตรีของเมือง มีเครื่องดนตรี 500 ชิ้นจากหลายยุคหลายวัฒนธรรมจัดแสดงถาวร"
+          },
+          "why": {
+            "en": "Children under 16 go in free, so the collection costs only the grown-ups.",
+            "th": "เด็กอายุต่ำกว่า 16 ปีเข้าฟรี จ่ายเฉพาะผู้ใหญ่"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 general admission",
+            "th": "≈ €6 ตั๋วทั่วไป"
+          },
+          "book": "none",
+          "q": "Museu de la Música de Barcelona, L'Auditori, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/culture/museums/museu-de-la-musica-92086004112",
+          "local": "Museu de la Música de Barcelona"
+        },
+        {
+          "name": {
+            "en": "Castell de l'Oreneta Park",
+            "th": "สวนปราสาทโอเรเนตา"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Castell de l'Oreneta, Barcelona",
+            "th": "กัสเตลเดโอเรเนตา บาร์เซโลนา"
+          },
+          "what": {
+            "en": "A park with wide open spaces and a miniature train, set in nature.",
+            "th": "สวนที่มีลานกว้างและรถไฟจิ๋ว อยู่กลางธรรมชาติ"
+          },
+          "why": {
+            "en": "Wide open spaces for running and playing in the safety of nature, plus a miniature train for little ones.",
+            "th": "ลานกว้างให้วิ่งเล่นอย่างปลอดภัยท่ามกลางธรรมชาติ และมีรถไฟจิ๋วให้เด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc del Castell de l'Oreneta, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/internationalwelcome/en/live-and-settle/what-you-need/family-and-kids/outdoor-fun-whole-family"
+        },
+        {
+          "name": {
+            "en": "Joan Antoni Samaranch Olympic and Sports Museum",
+            "th": "พิพิธภัณฑ์โอลิมปิกและกีฬาโจอันอันโตนีซามารันช์"
+          },
+          "local": "Museu Olímpic i de l'Esport Joan Antoni Samaranch",
+          "kind": "museum",
+          "area": {
+            "en": "Avinguda de l'Estadi, Montjuïc",
+            "th": "อาวีงูดาเดเลสตาดี มงจูอิก"
+          },
+          "what": {
+            "en": "A museum on Montjuïc about the Olympic Games and sport, with its exhibits shown in an interactive way.",
+            "th": "พิพิธภัณฑ์บนมงจูอิกเรื่องโอลิมปิกและกีฬา จัดแสดงแบบโต้ตอบได้"
+          },
+          "why": {
+            "en": "Children under 7 go in free, and the interactive exhibits suit young visitors.",
+            "th": "เด็กอายุต่ำกว่า 7 ปีเข้าฟรี และนิทรรศการแบบโต้ตอบเหมาะกับผู้เข้าชมวัยเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Museu Olímpic i de l'Esport Joan Antoni Samaranch, Av. de l'Estadi 60, Montjuïc, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://irbarcelona.org/barcelona-museums/joan-antoni-samaranch-olympics-sport-museum/"
         }
     ]
     },
@@ -1250,6 +1412,167 @@
           },
           "q": "Estación Museo de Chamberí, Plaza de Chamberí, Madrid",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "The Magic Forest",
+            "th": "เดอะ แมจิก ฟอเรสต์ มาดริด"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Ciudad de la Imagen, Kinépolis Madrid",
+            "th": "ชิวดัด เด ลา อิมาเกน, คิเนโปลิส มาดริด"
+          },
+          "what": {
+            "en": "Children's park at Kinépolis Madrid with slides, labyrinths and climbing structures",
+            "th": "สวนเด็กที่คิเนโปลิส มาดริด มีสไลเดอร์ เขาวงกต และโครงปีนป่าย"
+          },
+          "why": {
+            "en": "Kids slide down many slides and hide in labyrinths; there is a restaurant with children's menus and a waiting area for parents",
+            "th": "เด็กๆ เล่นสไลเดอร์หลายแบบและซ่อนในเขาวงกต มีร้านอาหารเมนูเด็กและที่รอสำหรับพ่อแม่"
+          },
+          "tip": {
+            "en": "The restaurant has children's menus; the site is designed for birthday parties",
+            "th": "ร้านอาหารมีเมนูเด็ก สถานที่ออกแบบมาสำหรับงานวันเกิด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "The Magic Forest, C. Edgar Neville, s/n, 28223 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/the-magic-forest"
+        },
+        {
+          "name": {
+            "en": "Puppet Theatre in El Retiro Park",
+            "th": "โรงละครหุ่นกระบอก สวนเอลเรติโร"
+          },
+          "local": "Teatro de Títeres del Parque del Retiro",
+          "kind": "show",
+          "area": {
+            "en": "Retiro Park, Retiro",
+            "th": "สวนเอลเรติโร, เรติโร"
+          },
+          "what": {
+            "en": "An outdoor puppet theatre in Retiro Park with shows for children",
+            "th": "โรงละครหุ่นกลางแจ้งในสวนเอลเรติโร มีการแสดงสำหรับเด็ก"
+          },
+          "why": {
+            "en": "There are shows for children every weekend, free of charge",
+            "th": "มีการแสดงสำหรับเด็กทุกสุดสัปดาห์ ไม่เสียค่าเข้า"
+          },
+          "tip": {
+            "en": "Mornings in winter and afternoons in summer; special dates at Christmas",
+            "th": "ช่วงเช้าในฤดูหนาวและช่วงบ่ายในฤดูร้อน มีรอบพิเศษช่วงคริสต์มาส"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Teatro de Títeres del Parque del Retiro, Parque de El Retiro, Avda de Méjico, Retiro, 28009 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/teatro-de-titeres-de-el-retiro"
+        },
+        {
+          "name": {
+            "en": "Indi Park",
+            "th": "อินดี พาร์ก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Metropolitano stadium, Madrid",
+            "th": "สนามเมโทรโพลิตาโน, มาดริด"
+          },
+          "what": {
+            "en": "A children's leisure park over two floors beside Gate 30 of the Metropolitano stadium",
+            "th": "สวนสนุกเด็กสองชั้นข้างประตู 30 ของสนามเมโทรโพลิตาโน"
+          },
+          "why": {
+            "en": "A circuit of activities and interactive experiences for children aged 4 to 12",
+            "th": "มีเส้นทางกิจกรรมและประสบการณ์แบบโต้ตอบสำหรับเด็กอายุ 4 ถึง 12 ปี"
+          },
+          "tip": {
+            "en": "Play hours on Saturdays and holidays: 12:30–15:00 and 17:30–20:30; opens daily",
+            "th": "เวลาเล่นวันเสาร์และวันหยุด 12:30–15:00 และ 17:30–20:30 เปิดทุกวัน"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Indi Park, Riyadh Air Metropolitano Stadium, Av. de Luis Aragonés, 4, Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/indi-park"
+        },
+        {
+          "name": {
+            "en": "The Robot Museum",
+            "th": "พิพิธภัณฑ์หุ่นยนต์ มาดริด"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "The Dreamland Project, Madrid",
+            "th": "เดอะ ดรีมแลนด์ โปรเจกต์, มาดริด"
+          },
+          "what": {
+            "en": "A robot museum with moving entertainment robots on a spaceship-style tour of 1,200 m²",
+            "th": "พิพิธภัณฑ์หุ่นยนต์ที่มีหุ่นยนต์เคลื่อนไหวได้ ในเส้นทางสไตล์ยานอวกาศ 1,200 ตร.ม."
+          },
+          "why": {
+            "en": "More moving robots and fun than before, for visitors of all ages",
+            "th": "มีหุ่นยนต์เคลื่อนไหวและความสนุกมากกว่าเดิม สำหรับผู้เข้าชมทุกวัย"
+          },
+          "tip": {
+            "en": "Children's tickets (up to 12) are cheaper; family tickets 2+1 and 2+2 are offered",
+            "th": "ตั๋วเด็ก (ไม่เกิน 12 ปี) ถูกกว่า และมีตั๋วครอบครัว 2+1 และ 2+2"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €11 single · children up to 12 ≈ €9",
+            "th": "≈ €11 ตั๋วเดี่ยว · เด็กไม่เกิน 12 ปี ≈ €9"
+          },
+          "book": "none",
+          "q": "The Robot Museum, The Dreamland Project, Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/robot-museum"
         }
     ]
     },
