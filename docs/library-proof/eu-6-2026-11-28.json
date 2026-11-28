@@ -1,0 +1,479 @@
+{
+  "town": "eu (Europe round 6: Madrid, Provence, Sicily (Palermo, Cefalù), Mont-Saint-Michel, Heidelberg, Cologne and Bonn, Lyon, Paris; things to do in Berlin, Amsterdam, Madrid, Barcelona, Nice and Antibes, Lyon, Paris, Rome, Strasbourg)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Europe notes and every source refused so far -> scripts/library-check.cjs (Berlin's own city pages taken as official) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town; kept by hand: Kombibad Gropiusstadt and Kombibad Seestraße (the indoor hall open; only the summer pool shut), CaixaForum Barcelona (the family programme's building), the Musée du quai Branly (its storytelling visit), Lido di Ostia, Plage du Ponteil and Plage de Juan-les-Pins (beaches Maps lists without one place page), SCN Italienische Küche (the SCN clubhouse at the same address) -> Thai and English by writer agents to docs/STYLE.md. Also: four Munich restaurants added in round 4 from munichtourism.org taken out — that site belongs to the same 'Tourism Guide' network as berlintourism.org and paristourism.org, which are paid by advertising and booking links.",
+  "towns": {
+    "de-cologne": {
+      "eat": [
+        {
+          "name": "HELLERS Volksgarten",
+          "src": "https://www.koeln.de/koeln/essen_und_trinken/tipps/die-schoensten-koelner-biergaerten-fuer-familien_1120779.html"
+        },
+        {
+          "name": "Eiscafé Da Vinci",
+          "src": "https://freizeitmonster.de/blog/eiscafes-bonn"
+        },
+        {
+          "name": "Heisskalt",
+          "src": "https://freizeitmonster.de/blog/eiscafes-bonn"
+        },
+        {
+          "name": "Bredershof",
+          "src": "https://freizeitmonster.de/blog/biergaerten-bonn"
+        }
+      ]
+    },
+    "de-heidelberg": {
+      "eat": [
+        {
+          "name": "Kaschmir Tandoori",
+          "src": "https://www.vielmehr.heidelberg.de/dankstelle/kaschmir-tandoori-bahnstadt/"
+        },
+        {
+          "name": "SCN Italienische Küche",
+          "src": "https://www.vielmehr.heidelberg.de/dankstelle/sportclub-neuenheim-1902-e-v/"
+        },
+        {
+          "name": "Alsafi Restaurant",
+          "src": "https://www.vielmehr.heidelberg.de/dankstelle/alsafi-restaurant/"
+        },
+        {
+          "name": "Elvish Inn Cafe & Restaurant",
+          "src": "https://www.vielmehr.heidelberg.de/dankstelle/elvish-inn/"
+        },
+        {
+          "name": "Sunday Café",
+          "src": "https://www.vielmehr.heidelberg.de/dankstelle/cafe-sunday/"
+        }
+      ]
+    },
+    "es-madrid": {
+      "eat": [
+        {
+          "name": "Settebello Ristorante",
+          "src": "https://unbuendiaenmadrid.com/restaurantes-para-ir-con-ninos/"
+        },
+        {
+          "name": "Boom Boom Ciao",
+          "src": "https://unbuendiaenmadrid.com/restaurantes-para-ir-con-ninos/"
+        },
+        {
+          "name": "Casa Emiliana",
+          "src": "https://unbuendiaenmadrid.com/restaurantes-para-ir-con-ninos/"
+        },
+        {
+          "name": "Luigi's Cucina Italiana",
+          "src": "https://unbuendiaenmadrid.com/restaurantes-para-ir-con-ninos/"
+        },
+        {
+          "name": "The Kaiten Lab Wonderland",
+          "src": "https://unbuendiaenmadrid.com/restaurantes-para-ir-con-ninos/"
+        },
+        {
+          "name": "Solo de Croquetas Reina Victoria",
+          "src": "https://myfamilytime.es/mejores-restaurantes-para-ir-con-ninos-en-madrid-y-disfrutar-de-la-comida/"
+        },
+        {
+          "name": "Andén",
+          "src": "https://myfamilytime.es/mejores-restaurantes-para-ir-con-ninos-en-madrid-y-disfrutar-de-la-comida/"
+        },
+        {
+          "name": "Canijinos Café",
+          "src": "https://canijinoscafe.com/"
+        },
+        {
+          "name": "Little & Latte Family Play Café",
+          "src": "https://littleandlatte.com/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Teatro San Pol",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": "Teseo Teatro",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": "Plot Point",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": "Teatro Maravillas",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": "MUNCYT Alcobendas",
+          "src": "https://www.muncyt.es/"
+        },
+        {
+          "name": "Ciudad Deportiva Valdelasfuentes",
+          "src": "https://guiadelocio.es/madrid/las-mejores-piscinas-climatizadas-para-disfrutar-en-familia-en-madrid/"
+        },
+        {
+          "name": "Centro Deportivo Municipal La Masó",
+          "src": "https://guiadelocio.es/madrid/las-mejores-piscinas-climatizadas-para-disfrutar-en-familia-en-madrid/"
+        }
+      ]
+    },
+    "fr-lyon": {
+      "eat": [
+        {
+          "name": "L'Auberge des Canuts",
+          "src": "https://www.visiterlyon.com/se-regaler/restaurants-et-gastronomie/label-bouchons-lyonnais/l-auberge-des-canuts"
+        },
+        {
+          "name": "Bouchon Palais Grillet",
+          "src": "https://www.visiterlyon.com/se-regaler/restaurants-et-gastronomie/label-bouchons-lyonnais/bouchon-palais-grillet"
+        },
+        {
+          "name": "Le Bouchon des Cordeliers",
+          "src": "https://www.visiterlyon.com/se-regaler/restaurants-et-gastronomie/label-bouchons-lyonnais/bouchon-des-cordeliers"
+        },
+        {
+          "name": "La Meunière",
+          "src": "https://traveltrade.lyon-france.com/en/discover-lyon/restaurants/Lyon-s-cuisine/la-meuniere"
+        }
+      ],
+      "do": [
+        {
+          "name": "Parc Georges Bazin",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/lyon-parks-squares-and-play-areas-for-happy-children"
+        },
+        {
+          "name": "Parc de la Visitation",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/lyon-parks-squares-and-play-areas-for-happy-children"
+        },
+        {
+          "name": "Parc de Gerland",
+          "src": "https://www.lyon.fr/node/28877"
+        },
+        {
+          "name": "Piscine de Vaise",
+          "src": "https://www.lyon.fr/lieu/piscines-ete/piscine-de-vaise"
+        }
+      ]
+    },
+    "fr-montstmichel": {
+      "eat": [
+        {
+          "name": "Chez P'tit Georges",
+          "src": "https://www.ot-montsaintmichel.com/en/restaurant/chez-ptit-georges"
+        },
+        {
+          "name": "Le Royal",
+          "src": "https://www.ot-montsaintmichel.com/en/restaurant/le-royal/"
+        },
+        {
+          "name": "Crêperie Le Gallo",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/creperie-gallo-salon-de-the-saint-malo-en-3645737/"
+        },
+        {
+          "name": "Le Chateaubriand",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/la-brasserie-chateaubriand-saint-malo-en-3646567/"
+        },
+        {
+          "name": "La Licorne",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/la-licorne-saint-malo-en-3645748/"
+        },
+        {
+          "name": "Restaurant de l'Antinéa",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/restaurant-antinea-saint-malo-en-3646266/"
+        }
+      ]
+    },
+    "fr-paris": {
+      "eat": [
+        {
+          "name": "Le Petit Poucet",
+          "src": "https://www.ludilabel.fr/blog/sorties-kids-friendly-paris/"
+        },
+        {
+          "name": "La REcyclerie",
+          "src": "https://www.ludilabel.fr/blog/sorties-kids-friendly-paris/"
+        },
+        {
+          "name": "Café Zoïde",
+          "src": "https://www.ludilabel.fr/blog/sorties-kids-friendly-paris/"
+        }
+      ],
+      "do": [
+        {
+          "name": "La Ferme de Paris",
+          "src": "https://www.paris.fr/pages/la-ferme-de-paris-4489/"
+        },
+        {
+          "name": "Musée du quai Branly – Jacques Chirac",
+          "src": "https://www.paris.fr/evenements/ma-petite-visite-contee-au-musee-du-quai-branly-124892"
+        },
+        {
+          "name": "Les Petits Bateaux",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/321311-the-little-boats-of-the-jardin-des-tuileries-the-playful-sailboats-to-sail-on-the-grand-bassin"
+        },
+        {
+          "name": "Les Fermes de Gally, Saint-Denis",
+          "src": "https://www.sortiraparis.com/en/news/easter/articles/273200-easter-2026-egg-hunt-and-animal-feeding-activities-at-gally-farm-saint-denis-93"
+        }
+      ]
+    },
+    "fr-provence": {
+      "eat": [
+        {
+          "name": "Restaurant O'Papilles",
+          "src": "https://avignon-tourisme.com/en/offres/o-papilles-avignon-en-6043358/"
+        },
+        {
+          "name": "Le Petit Comptoir",
+          "src": "https://www.provenceguide.com/restaurants/avignon/le-petit-comptoir/provence-4778067-1.html"
+        },
+        {
+          "name": "La Crep' Sautière",
+          "src": "https://www.aixenprovencetourism.com/en/fiche/la-crep-sautiere-5225548"
+        },
+        {
+          "name": "Crêpes à Gogo",
+          "src": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/crepes-a-gogo-aix-en-provence-fr-2879233/"
+        },
+        {
+          "name": "L'Apostrophe",
+          "src": "https://www.aixenprovencetourism.com/en/fiche/l-apostrophe-7447202"
+        },
+        {
+          "name": "Loucau Espariat",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/useful-information/all-practical-services/loucau-espariat-aix-en-provence-en-5715935/"
+        },
+        {
+          "name": "Maison Mignon à Aix",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/maison-mignon-a-aix-aix-en-provence-en-2856593/"
+        }
+      ]
+    },
+    "it-sicily": {
+      "eat": [
+        {
+          "name": "Corona Trattoria",
+          "src": "https://travel.thewom.it/italia/sicilia/palermo/ristoranti-economici-palermo.html"
+        },
+        {
+          "name": "Buatta Cucina Popolana",
+          "src": "https://travel.thewom.it/italia/sicilia/palermo/ristoranti-economici-palermo.html"
+        },
+        {
+          "name": "Archestrato di Gela",
+          "src": "https://travel.thewom.it/italia/sicilia/palermo/ristoranti-economici-palermo.html"
+        },
+        {
+          "name": "Nni Franco U Vastiddaru",
+          "src": "https://travel.thewom.it/italia/sicilia/palermo/cucina-di-strada-a-palermo.html"
+        },
+        {
+          "name": "Friggitoria Chiluzzo",
+          "src": "https://travel.thewom.it/italia/sicilia/palermo/cucina-di-strada-a-palermo.html"
+        },
+        {
+          "name": "Nino 'u Ballerino",
+          "src": "https://travel.thewom.it/italia/sicilia/palermo/cucina-di-strada-a-palermo.html"
+        },
+        {
+          "name": "I Cuochini",
+          "src": "https://travel.thewom.it/italia/sicilia/palermo/cucina-di-strada-a-palermo.html"
+        },
+        {
+          "name": "Mon Chou-Chou",
+          "src": "https://www.balarm.it/news/cefalu-sul-podio-del-gelato-mon-chou-chou-conquista-i-due-coni-del-gambero-rosso-167709"
+        }
+      ]
+    },
+    "de-berlin": {
+      "do": [
+        {
+          "name": "Waldspielplatz Rallenweg",
+          "src": "https://www.berlin.de/forsten/walderlebnis/waldspielplaetze/rallenweg/"
+        },
+        {
+          "name": "Bambooland Berlin Spandau",
+          "src": "https://www.visitberlin.de/en/indoor-playground-bambooland"
+        },
+        {
+          "name": "Jolos Kinder-Welt",
+          "src": "https://www.visitberlin.de/en/jolos-kinderwelt"
+        },
+        {
+          "name": "Tommys Tobewelt",
+          "src": "https://www.visitberlin.de/en/indoor-playgrounds"
+        },
+        {
+          "name": "Kombibad Gropiusstadt",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7658982-7642368-kombibad-gropiusstadt.en.html"
+        },
+        {
+          "name": "Kombibad Spandau Süd",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7659534-7642368-kombibad-spandau-sued.en.html"
+        },
+        {
+          "name": "Kombibad Seestraße",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7656630-7642368-kombibad-seestrasse.en.html"
+        },
+        {
+          "name": "Strandbad Grünau",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7652010-7642368-strandbad-gruenau.en.html"
+        },
+        {
+          "name": "Seebad Friedrichshagen",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7651659-7642368-strandbad-friedrichshagen.en.html"
+        }
+      ]
+    },
+    "es-barcelona": {
+      "do": [
+        {
+          "name": "Museu Etnològic de Barcelona",
+          "src": "https://www.museuetnologic.bcn.cat/en"
+        },
+        {
+          "name": "Tibidabo Panoramic Area",
+          "src": "https://www.tibidabo.cat/en/"
+        },
+        {
+          "name": "Fundació Joan Miró",
+          "src": "https://www.barcelona.cat/en/living-in-bcn/with-children"
+        },
+        {
+          "name": "CaixaForum Barcelona",
+          "src": "https://www.barcelona.cat/en/living-in-bcn/with-children"
+        },
+        {
+          "name": "Parc Maria Baldó",
+          "src": "https://www.barcelona.cat/infobarcelona/en/culmina-un-projecte-pioner-dinnovacio-i-tecnologia-per-dissenyar-arees-de-joc-infantils_1553116.html"
+        },
+        {
+          "name": "Jardins de la Indústria",
+          "src": "https://www.barcelona.cat/infobarcelona/en/culmina-un-projecte-pioner-dinnovacio-i-tecnologia-per-dissenyar-arees-de-joc-infantils_1553116.html"
+        }
+      ]
+    },
+    "fr-nice": {
+      "do": [
+        {
+          "name": "La Pinède",
+          "src": "https://www.antibesjuanlespins.com/en/discover/walks-and-gardens/the-parks-and-gardens/the-pine-grove-la-pinede"
+        },
+        {
+          "name": "Plage du Ponteil",
+          "src": "https://www.antibesjuanlespins.com/en/discover/the-must-sees/the-beaches"
+        },
+        {
+          "name": "Plage de la Gravette",
+          "src": "https://www.antibesjuanlespins.com/en/discover/the-must-sees/the-beaches"
+        },
+        {
+          "name": "Plage de Juan-les-Pins",
+          "src": "https://www.antibesjuanlespins.com/en/discover/the-must-sees/the-beaches"
+        },
+        {
+          "name": "Antibes Land Park",
+          "src": "https://www.antibesjuanlespins.com/en/discover/visit-antibes-in/visit-antibes-juan-les-pins-with-family"
+        }
+      ]
+    },
+    "fr-strasbourg": {
+      "do": [
+        {
+          "name": "Piscine de la Kibitzenau",
+          "src": "https://www.strasbourg.eu/lieu/-/entity/id/684484/piscine-de-la-kibitzenau"
+        },
+        {
+          "name": "Piscine du Wacken",
+          "src": "https://www.strasbourg.eu/lieu/-/entity/id/684492/piscine-du-wacken"
+        }
+      ]
+    },
+    "it-rome": {
+      "do": [
+        {
+          "name": "Villa Celimontana",
+          "src": "https://turismoroma.it/en/node/1921"
+        },
+        {
+          "name": "Musei Capitolini",
+          "src": "https://www.museicapitolini.org/en/infopage/il-sistema-museale"
+        },
+        {
+          "name": "Lido di Ostia",
+          "src": "https://www.turismoroma.it/it/node/133515"
+        },
+        {
+          "name": "Welcome to Rome",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        }
+      ]
+    },
+    "nl-amsterdam": {
+      "do": [
+        {
+          "name": "Kinderboerderij De Bijlmerweide",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/kinderboerderij-bijlmerweide-de-bijlmerweide-kinderboerderij/"
+        },
+        {
+          "name": "Zimmerhoeve kinderboerderij",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/stadsboerderij-zimmerhoeve-stadsboerderij-zimmerhoeve/"
+        },
+        {
+          "name": "Kinderboerderij De Buiktuin",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/kinderboerderij-de-buiktuin-kinderboerderij-de-buiktuin/"
+        },
+        {
+          "name": "Stichting De Dierencapel",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/de-dierencapel-kinderboerderij-eropuit-dieren-natuur/"
+        },
+        {
+          "name": "Kinderboerderij De Uylenburg",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/kinderboerderij-de-uylenburg-dieren-in-het-rembrandtpark/"
+        },
+        {
+          "name": "WOPL!",
+          "src": "https://www.wopl.nl/"
+        },
+        {
+          "name": "Sloterparkbad",
+          "src": "https://www.kidsproof.nl/amsterdam/eropuit/sloterparkbad/zwemmen-sloterpark-recreatie-zwemles-uitje"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026), most for winter": [
+      "Rocket's Cafe",
+      "Cook and Book",
+      "Ka'fête ô mômes",
+      "Jardín el Torero",
+      "Le Café du Musée",
+      "Biergarten Palmengarten",
+      "Biergarten Schwimmbad Rhein-Sommergarten",
+      "Eislabor",
+      "Schänzchen",
+      "Kinderplanet",
+      "Zipline Monte Pana",
+      "Olympic Ice Stadium",
+      "Strandbad Plötzensee",
+      "Strandbad Weißensee"
+    ],
+    "another town on Google Maps": [
+      "Aire du Castor (Neyron)",
+      "Monde des Lutins (Hostun)"
+    ],
+    "not pinned to one place on Google Maps": "16",
+    "refused source": [
+      "six Paris restaurants (paristourism.org, paid by booking links)"
+    ],
+    "other": [
+      "chains: Monkey Town, Ballorig, La Boucherie, Rocambolesc",
+      "events or programmes, not places: a baby-swim course, Noël au palais, a museum-workshop programme, a Colmar children's market, the butterfly house and a LEGO exhibition in Rome, Val Gardena Kids Active, winter sledding and skating set-ups, two Paris summer funfairs",
+      "turned down in earlier rounds: Arsouille, Sugar Crash, Atelier Tipi, Op Weule, La Salicorne, La Morenilla, the Calle Osa Mayor playground, Skama Bros.",
+      "Le Greeniotage (fine dining)",
+      "Passerelle du Collège and La croisière des moussaillons (not on the page / a boat-trip product)"
+    ]
+  }
+}

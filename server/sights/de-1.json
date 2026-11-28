@@ -960,6 +960,366 @@
           "q": "Puppentheater-Museum, Karl-Marx-Straße 135, Neukölln, Berlin, Germany",
           "ok": "2026-11",
           "src": "https://www.puppentheater-museum.de/programm-2026/"
+        },
+        {
+          "name": {
+            "en": "Waldspielplatz Rallenweg",
+            "th": "วัลด์ชปีลพลัทซ์ รัลเลินเวก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Rallenweg, Reinickendorf",
+            "th": "ถนน Rallenweg ไรนิคเคินดอร์ฟ"
+          },
+          "what": {
+            "en": "A nature-style forest playground at the edge of the woods, renewed and enlarged in summer 2026.",
+            "th": "ลานเด็กเล่นสไตล์ธรรมชาติริมป่า ปรับปรุงและขยายใหม่ในฤดูร้อนปี 2026"
+          },
+          "why": {
+            "en": "It has a balance course, climbing wall, nest swing and slide tower.",
+            "th": "มีทางทรงตัว ผนังปีน ชิงช้ารังนก และหอสไลเดอร์"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Waldspielplatz Rallenweg, Rallenweg 4, 13505 Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.berlin.de/forsten/walderlebnis/waldspielplaetze/rallenweg/"
+        },
+        {
+          "name": {
+            "en": "Bambooland Berlin Spandau",
+            "th": "แบมบูแลนด์ เบอร์ลิน ชปันเดา"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Spandau, Nonnendammallee",
+            "th": "ชปันเดา ถนน Nonnendammallee"
+          },
+          "what": {
+            "en": "A jungle-themed indoor playground with paddle boats on a river, trampolines, bouncy castles, a go-kart track and air hockey.",
+            "th": "ลานเด็กเล่นในร่มธีมป่า มีเรือพายบนแม่น้ำ แทรมโพลีน ปราสาทเป่าลม สนามโกคาร์ต และโต๊ะแอร์ฮอกกี้"
+          },
+          "why": {
+            "en": "Little treasure hunters can dig for gold and try a tree carousel and a climbing labyrinth; hot and cold food for children is on site.",
+            "th": "นักล่าสมบัติตัวน้อยขุดหาทอง เล่นม้าหมุนต้นไม้และเขาวงกตปีนป่าย มีอาหารร้อนและเย็นสำหรับเด็กในที่"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Bambooland Berlin Spandau, Nonnendammallee 117, 13629 Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.visitberlin.de/en/indoor-playground-bambooland"
+        },
+        {
+          "name": {
+            "en": "Jolos Kinder-Welt",
+            "th": "โยโลส์ คินเดอร์-เวลท์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Friedrichshain-Kreuzberg, Am Tempelhofer Berg",
+            "th": "ฟรีดริชสฮายน์-ครอยซ์แบร์ก ถนน Am Tempelhofer Berg"
+          },
+          "what": {
+            "en": "An indoor playground of 1,500 square metres with a ball pit, spiral chutes, bobby cars, bumper cars and a bouncy castle.",
+            "th": "ลานเด็กเล่นในร่ม 1,500 ตารางเมตร มีบ่อบอล สไลเดอร์เกลียว รถบ็อบบี้ รถชน และปราสาทเป่าลม"
+          },
+          "why": {
+            "en": "It has a special area for children aged 1 to 3 and a cafeteria where parents can keep an eye on play.",
+            "th": "มีโซนพิเศษสำหรับเด็ก 1–3 ขวบ และโรงอาหารที่พ่อแม่นั่งดูลูกเล่นได้"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jolos Kinder-Welt, Am Tempelhofer Berg 7D, 10965 Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.visitberlin.de/en/jolos-kinderwelt"
+        },
+        {
+          "name": {
+            "en": "Tommys Tobewelt",
+            "th": "ทอมมีส์ โทเบเวลท์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Weißensee, Roelckestraße",
+            "th": "ไวส์เซนเซ ถนน Roelckestraße"
+          },
+          "what": {
+            "en": "An indoor playground with trampolines, climbing walls, rope bridges and the Wobbly Castle.",
+            "th": "ลานเด็กเล่นในร่ม มีแทรมโพลีน ผนังปีน สะพานเชือก และปราสาทโยกเยก"
+          },
+          "why": {
+            "en": "There is a special toddler breakfast on Thursdays.",
+            "th": "มีอาหารเช้าพิเศษสำหรับเด็กเล็กทุกวันพฤหัสบดี"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tommys Tobewelt, Roelckestraße 105, 13088 Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.visitberlin.de/en/indoor-playgrounds"
+        },
+        {
+          "name": {
+            "en": "Kombibad Gropiusstadt",
+            "th": "คอมบิบาด โกรพิอุสชตัดท์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Gropiusstadt, Lipschitzallee",
+            "th": "โกรพิอุสชตัดท์ ถนน Lipschitzallee"
+          },
+          "what": {
+            "en": "A large combined pool with an indoor pool and an outdoor pool for warm days, open all year round.",
+            "th": "สระรวมขนาดใหญ่ มีสระในร่มและสระกลางแจ้งสำหรับวันอากาศอบอุ่น เปิดตลอดปี"
+          },
+          "why": {
+            "en": "It has a non-swimmer pool and an outdoor playground for children.",
+            "th": "มีสระสำหรับผู้ว่ายน้ำไม่เป็นและสนามเด็กเล่นกลางแจ้ง"
+          },
+          "tip": {
+            "en": "The indoor hall is open all year; the outdoor pool is open in summer only",
+            "th": "ห้องสระในร่มเปิดตลอดปี ส่วนสระกลางแจ้งเปิดเฉพาะหน้าร้อน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kombibad Gropiusstadt, Lipschitzallee 27, Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7658982-7642368-kombibad-gropiusstadt.en.html"
+        },
+        {
+          "name": {
+            "en": "Kombibad Spandau Süd",
+            "th": "คอมบิบาด ชปันเดา ซูด"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Spandau, Gatower Straße",
+            "th": "ชปันเดา ถนน Gatower Straße"
+          },
+          "what": {
+            "en": "An indoor pool in winter and an outdoor pool in summer, with a 50-metre pool and a 3-metre diving board.",
+            "th": "สระในร่มหน้าหนาวและสระกลางแจ้งหน้าร้อน มีสระ 50 เมตรและแป้นกระโดดน้ำสูง 3 เมตร"
+          },
+          "why": {
+            "en": "It has a 20-metre water slide in the non-swimmers' pool and a paddling pool for children.",
+            "th": "มีสไลเดอร์น้ำยาว 20 เมตรในสระสำหรับผู้ว่ายน้ำไม่เป็น และสระเด็กเล็กให้เล่นน้ำ"
+          },
+          "tip": {
+            "en": "Outdoor pool in summer; indoor pool in winter",
+            "th": "หน้าร้อนใช้สระกลางแจ้ง หน้าหนาวใช้สระในร่ม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kombibad Spandau Süd, Gatower Straße, 13595 Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7659534-7642368-kombibad-spandau-sued.en.html"
+        },
+        {
+          "name": {
+            "en": "Kombibad Seestraße",
+            "th": "คอมบิบาด เซสตราเซอ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Wedding, Seestraße",
+            "th": "เวดดิง ถนน Seestraße"
+          },
+          "what": {
+            "en": "A public pool with an indoor pool in winter and an outdoor summer pool in one, with a 50-metre pool and a therapy pool.",
+            "th": "สระสาธารณะที่รวมสระในร่มหน้าหนาวและสระกลางแจ้งหน้าร้อน มีสระ 50 เมตรและสระบำบัด"
+          },
+          "why": {
+            "en": "A non-swimmer indoor pool with a water slide, an outdoor paddling pool with a slide, and a children's playground.",
+            "th": "มีสระในร่มสำหรับผู้ว่ายน้ำไม่เป็นพร้อมสไลเดอร์น้ำ สระเด็กเล็กกลางแจ้งพร้อมสไลเดอร์ และสนามเด็กเล่น"
+          },
+          "tip": {
+            "en": "The indoor hall is open in the cooler months; in summer only the outdoor pool is open",
+            "th": "ห้องสระในร่มเปิดช่วงอากาศเย็น หน้าร้อนเปิดเฉพาะสระกลางแจ้ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kombibad Seestraße, Seestraße 80, Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7656630-7642368-kombibad-seestrasse.en.html"
+        },
+        {
+          "name": {
+            "en": "Strandbad Grünau",
+            "th": "ชทรันด์บาด กรือเนา"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Grünau, Sportpromenade",
+            "th": "กรือเนา ถนน Sportpromenade"
+          },
+          "what": {
+            "en": "A lido on the Langer See with a sandy beach, beach chairs, sunbathing lawns, a beach volleyball court and a restaurant with an outdoor terrace.",
+            "th": "ชายหาดริมทะเลสาบ Langer See มีหาดทราย เก้าอี้ชายหาด สนามหญ้าอาบแดด สนามวอลเลย์บอลชายหาด และร้านอาหารพร้อมระเบียงกลางแจ้ง"
+          },
+          "why": {
+            "en": "It has playgrounds for children and a non-swimmer area beside the lake.",
+            "th": "มีสนามเด็กเล่นและโซนสำหรับผู้ว่ายน้ำไม่เป็นริมทะเลสาบ"
+          },
+          "tip": {
+            "en": "Open in summer; allow about four hours",
+            "th": "เปิดหน้าร้อน เผื่อเวลาราว 4 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Strandbad Grünau, Sportpromenade 9, 12527 Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7652010-7642368-strandbad-gruenau.en.html"
+        },
+        {
+          "name": {
+            "en": "Seebad Friedrichshagen",
+            "th": "เซบาด ฟรีดริชสฮาเกน"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Friedrichshagen, Müggelseedamm",
+            "th": "ฟรีดริชสฮาเกน ถนน Müggelseedamm"
+          },
+          "what": {
+            "en": "A lakeside lido on the Müggelsee with a sandy beach, a diving tower, ping-pong tables, a beach basketball court and a snack bar.",
+            "th": "ชายหาดริมทะเลสาบ Müggelsee มีหาดทราย หอกระโดดน้ำ โต๊ะปิงปอง สนามบาสเกตบอลชายหาด และร้านขายของว่าง"
+          },
+          "why": {
+            "en": "Children can splash around in the water under the supervision of a lifeguard.",
+            "th": "เด็กๆ เล่นน้ำได้โดยมีเจ้าหน้าที่ช่วยชีวิตดูแล"
+          },
+          "tip": {
+            "en": "Open in summer; allow about four hours",
+            "th": "เปิดหน้าร้อน เผื่อเวลาราว 4 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Seebad Friedrichshagen, Müggelseedamm 216, 12587 Berlin, Germany",
+          "ok": "2026-11",
+          "src": "https://www.berlin.de/en/sports-leisure/swimming-pools/7651659-7642368-strandbad-friedrichshagen.en.html"
         }
     ]
     },

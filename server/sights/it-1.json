@@ -4830,6 +4830,166 @@
           "q": "Parco Yitzhak Rabin, Via Panama, 00199 Roma RM, Italy",
           "ok": "2026-11",
           "src": "https://turismoroma.it/en/places/parco-yitzhak-rabin-di-panama-villa-ada"
+        },
+        {
+          "name": {
+            "en": "Villa Celimontana",
+            "th": "วิลลา เชลีมอนตานา"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Celio hill, Via della Navicella",
+            "th": "เนินเชลีโอ ถนนเวีย เดลลา นาวีเชลลา"
+          },
+          "what": {
+            "en": "One of the villas the Romans love most, on the Celio hill, with its main entrance in Piazza della Navicella.",
+            "th": "หนึ่งในวิลลาที่ชาวโรมันรักที่สุด อยู่บนเนินเชลีโอ ทางเข้าหลักอยู่ที่ปิอัซซา เดลลา นาวีเชลลา"
+          },
+          "why": {
+            "en": "It has an equipped children's play area, listed among its services.",
+            "th": "มีลานเด็กเล่นพร้อมอุปกรณ์ ระบุไว้ในบริการของสวน"
+          },
+          "tip": {
+            "en": "Open 7:00–18:00 from 1 May to 31 October and 7:00–17:00 from 1 November to 30 April.",
+            "th": "เปิด 7:00–18:00 ตั้งแต่ 1 พ.ค. ถึง 31 ต.ค. และ 7:00–17:00 ตั้งแต่ 1 พ.ย. ถึง 30 เม.ย."
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Villa Celimontana, Via della Navicella, 12, 00184 Roma RM, Italy",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/node/1921"
+        },
+        {
+          "name": {
+            "en": "Musei Capitolini",
+            "th": "พิพิธภัณฑ์กาปิโตลินี"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Capitoline Hill, Piazza del Campidoglio",
+            "th": "เนินกาปิโตลิโน ปิอัซซา เดล กัมปิโดลโย"
+          },
+          "what": {
+            "en": "The civic museum of Rome on the Capitol, in the Ancient Capitol Piazza and its palaces.",
+            "th": "พิพิธภัณฑ์ประจำเมืองโรม ตั้งอยู่บนเนินกาปิโตลิโน ในจัตุรัสโบราณและพระราชวังโดยรอบ"
+          },
+          "why": {
+            "en": "An audio guide for children and families, recommended for ages 6 to 12, costs €4.",
+            "th": "มีออดิโอไกด์สำหรับเด็กและครอบครัว แนะนำสำหรับอายุ 6 ถึง 12 ปี ราคา €4"
+          },
+          "tip": {
+            "en": "Guided tours and workshops are by appointment only.",
+            "th": "ทัวร์นำชมและเวิร์กช็อปต้องนัดล่วงหน้าเท่านั้น"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Musei Capitolini, Piazza del Campidoglio, 1, 00186 Roma RM, Italy",
+          "ok": "2026-11",
+          "src": "https://www.museicapitolini.org/en/infopage/il-sistema-museale"
+        },
+        {
+          "name": {
+            "en": "Lido di Ostia",
+            "th": "ลีโด ดิ โอสเตีย"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Ostia, the Rome coast",
+            "th": "โอสเตีย ชายฝั่งของโรม"
+          },
+          "what": {
+            "en": "The Rome coast's beaches, with free access to the shoreline and seasonal bathing establishments.",
+            "th": "ชายหาดบนชายฝั่งของโรม เข้าถึงริมน้ำได้ฟรี และมีสถานที่อาบน้ำทะเลตามฤดูกาล"
+          },
+          "why": {
+            "en": "Walkways and seasonal shade were put in for parents with small children.",
+            "th": "มีทางเดินและร่มเงาตามฤดูกาลสำหรับพ่อแม่ที่พาเด็กเล็กมา"
+          },
+          "tip": {
+            "en": "The 2025 season ran from 1 May to 30 October; check the 2026 season before you go.",
+            "th": "ฤดูกาลปี 2025 เปิด 1 พ.ค. ถึง 30 ต.ค. เช็กฤดูกาลปี 2026 ก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lido di Ostia, Ostia, Rome, Italy",
+          "ok": "2026-11",
+          "src": "https://www.turismoroma.it/it/node/133515"
+        },
+        {
+          "name": {
+            "en": "Welcome to Rome",
+            "th": "เวลคัม ทู โรม"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Corso Vittorio Emanuele II",
+            "th": "คอร์โซ วิตตอริโอ เอมานูเอเล ที่ 2"
+          },
+          "what": {
+            "en": "An immersive walk through Rome's history with video projections on the walls, ceiling and floor, and a model of the ancient city.",
+            "th": "ทางเดินชมประวัติศาสตร์โรมแบบสมจริง มีภาพวิดีโอฉายบนผนัง เพดาน และพื้น และมีแบบจำลองเมืองโบราณ"
+          },
+          "why": {
+            "en": "A short film and interactive models of the main sights make the city's geography easy to follow.",
+            "th": "ภาพยนตร์สั้นและแบบจำลองโต้ตอบของสถานที่สำคัญช่วยให้เข้าใจแผนที่เมืองได้ง่าย"
+          },
+          "tip": {
+            "en": "Audio guides are available in 8 languages.",
+            "th": "มีออดิโอไกด์ 8 ภาษา"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Welcome To Rome, Corso Vittorio Emanuele II, 203, 00186 Roma RM, Italy",
+          "ok": "2026-11",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
         }
     ]
     },
