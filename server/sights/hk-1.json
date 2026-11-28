@@ -1451,6 +1451,539 @@
           "book": "none",
           "q": "Inspiration Lake Recreation Centre, Lantau Island, Hong Kong",
           "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "โกพาร์ก ไซซา",
+            "en": "GO PARK Sai Sha"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไซซา หมาออนซาน",
+            "en": "Sai Sha, Ma On Shan"
+          },
+          "what": {
+            "th": "ทางจักรยานสองเลนยาว 1.5 กม. บนทางกว้างไม่มีรถ มีสนามเด็กเล่นและจักรยานให้เช่า",
+            "en": "A 1.5 km two-lane cycle track on wide car-free paths, with playgrounds and bikes to hire"
+          },
+          "why": {
+            "th": "เด็กเล็กปั่นวงในที่ราบ เด็กโตปั่นวงเต็ม",
+            "en": "Toddlers ride the flat inner loop while older children take the full circuit"
+          },
+          "tip": {
+            "th": "เช่าจักรยานที่นั่นได้ พกหมวกกันน็อกให้เด็กเล็ก",
+            "en": "Hire bikes on site; bring helmets for little ones"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "GO PARK Sai Sha, Ma On Shan, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html"
+        },
+        {
+          "local": "東岸板道",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินไม้ริมฝั่งตะวันออก",
+            "en": "East Coast Boardwalk"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นอร์ทพอยต์ เกาะฮ่องกง",
+            "en": "North Point, Hong Kong Island"
+          },
+          "what": {
+            "th": "ทางเดินไม้ริมอ่าวยาว 2.2 กม. ทางเรียบให้ปั่นจักรยาน มีที่เล่นสำหรับเด็ก และที่นั่งดูพระอาทิตย์ตก",
+            "en": "A 2.2 km harbourfront boardwalk with smooth paths to cycle, play areas and seats to watch the sunset"
+          },
+          "why": {
+            "th": "ทางราบ เข็นรถเข็นสะดวก เห็นอ่าววิกตอเรียตลอดทาง",
+            "en": "Flat and pram-friendly, with Victoria Harbour beside you all the way"
+          },
+          "tip": {
+            "th": "สวยสุดช่วงพระอาทิตย์ตก แวะที่เล่นระหว่างทางได้",
+            "en": "Best near sunset; play areas along the way make good stops"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "East Coast Boardwalk, North Point, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html"
+        },
+        {
+          "local": "將軍澳海濱公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนริมน้ำจวงกวนโอ",
+            "en": "Tseung Kwan O Waterfront Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "จวงกวนโอ",
+            "en": "Tseung Kwan O"
+          },
+          "what": {
+            "th": "ทางริมทะเลกว้าง ไม่มีรถ มีสนามเด็กเล่น คาเฟ่ และที่พักเยอะ",
+            "en": "Wide car-free seaside paths with playgrounds, cafés and plenty of places to rest"
+          },
+          "why": {
+            "th": "ปั่นจักรยานสลับปิกนิกได้ง่ายบนทางราบ",
+            "en": "Easy to mix a bike ride with a picnic on flat ground"
+          },
+          "tip": {
+            "th": "ลมทะเลเย็นสบาย เหมาะกับบ่ายวันร้อน",
+            "en": "A breezy choice on a hot afternoon"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tseung Kwan O Waterfront Park, Tseung Kwan O, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html"
+        },
+        {
+          "local": "蒲崗村道公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนถนนโปกองวิลเลจ",
+            "en": "Po Kong Village Road Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไดมอนด์ฮิลล์",
+            "en": "Diamond Hill"
+          },
+          "what": {
+            "th": "สวนมีทางจักรยานยกระดับยาว 1 กม. และทางลาด BMX มีจักรยานให้เช่า",
+            "en": "A park with a 1 km raised cycle track and BMX ramps, with bikes to hire"
+          },
+          "why": {
+            "th": "ความท้าทายจริงสำหรับเด็กโตที่ปั่นเป็นแล้ว",
+            "en": "A real challenge for older children who already ride well"
+          },
+          "tip": {
+            "th": "ใกล้วัดชีหลิน ไปคู่กันในเช้าเดียว",
+            "en": "Near Chi Lin Nunnery; pair the two in one morning"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Po Kong Village Road Park, Diamond Hill, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html"
+        },
+        {
+          "local": "黃金泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดโกลเดนบีช",
+            "en": "Golden Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โซกวั่นวัต ถุนมุน",
+            "en": "So Kwun Wat, Tuen Mun"
+          },
+          "what": {
+            "th": "หาดทรายยาวข้างโรงแรมโกลด์โคสต์ มีที่กว้างและร่มไม้ ครอบครัวนิยมมาก",
+            "en": "A long sandy beach by the Gold Coast Hotel, with plenty of room and shade trees, popular with families"
+          },
+          "why": {
+            "th": "มีที่ให้ขุดทรายและวิ่ง มีทางเดินริมโรงแรมข้าง ๆ",
+            "en": "Room to dig and run, with the hotel promenade beside it"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Golden Beach, So Kwun Wat, Tuen Mun",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "長沙泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดเชิงซา",
+            "en": "Cheung Sha Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ลันเตาใต้",
+            "en": "South Lantau"
+          },
+          "what": {
+            "th": "หาดที่ยาวที่สุดในฮ่องกง น้ำใส แบ่งเป็นสองช่วง เชิงซาล่างและเชิงซาบน",
+            "en": "Hong Kong's longest beach, with clear water, in two parts: Lower and Upper Cheung Sha"
+          },
+          "why": {
+            "th": "ทรายสะอาด น้ำไม่แรง ในวันเงียบ ๆ บนเกาะลันเตา",
+            "en": "Clean sand and gentle water on a quiet Lantau day"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lower Cheung Sha Beach, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "貝澳泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดปุยโอ",
+            "en": "Pui O Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ลันเตาใต้",
+            "en": "South Lantau"
+          },
+          "what": {
+            "th": "หาดลับทรายสีดำสลับขาวบนชายฝั่งใต้ของเกาะลันเตา",
+            "en": "A hidden beach of black and white sand on the south coast of Lantau"
+          },
+          "why": {
+            "th": "เงียบกว่าเชิงซา มีทรายสองสีให้ดู",
+            "en": "Quieter than Cheung Sha, with sand of two colours to look at"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Pui O Beach, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "坪洲",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะเผิงเชา",
+            "en": "Peng Chau"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เกาะเผิงเชา",
+            "en": "Peng Chau island"
+          },
+          "what": {
+            "th": "เกาะเล็ก นั่งเรือจากเซ็นทรัลไม่ถึงชั่วโมง มีทางเดินง่าย ๆ พื้นที่ศิลปะ และโรงงานหนังฟุกยวนเก่า",
+            "en": "A small island under an hour by boat from Central, with easy walking trails, art spaces and the old Fook Yuen Leather Factory"
+          },
+          "why": {
+            "th": "เดินเล่นช้า ๆ บนเกาะไม่มีรถกับเด็กเล็ก",
+            "en": "A slow, car-free island walk with little ones"
+          },
+          "tip": {
+            "th": "เรือจากท่าเรือเซ็นทรัล 6",
+            "en": "Ferries from Central Pier 6"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Peng Chau, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "南丫島",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะลัมมา",
+            "en": "Lamma Island"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เกาะลัมมา",
+            "en": "Lamma Island"
+          },
+          "what": {
+            "th": "นั่งเรือจากเซ็นทรัลไม่นาน ถึงตรอกแคบที่มีร้านอาหารทะเล เวิร์กช็อปงานฝีมือ คาเฟ่ และศาลเจ้าเล็ก ๆ",
+            "en": "A short ferry ride from Central to narrow lanes of seafood restaurants, craft workshops, cafés and small temples"
+          },
+          "why": {
+            "th": "วันเที่ยวที่ไม่มีรถ มีทางเดินครอบครัวระหว่างสองหมู่บ้าน",
+            "en": "A car-free day out with a family trail between the two villages"
+          },
+          "tip": {
+            "th": "ทางเดินจากหยุงชุวานไปซกกวูวานเหมาะกับเด็ก 5 ขวบขึ้นไป",
+            "en": "The trail from Yung Shue Wan to Sok Kwu Wan suits children of five and up"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Yung Shue Wan, Lamma Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "橋咀洲",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะชาร์ป",
+            "en": "Sharp Island"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไซกง",
+            "en": "Sai Kung"
+          },
+          "what": {
+            "th": "เกาะในอุทยานธรณีฮ่องกงที่ไปง่ายที่สุด ห่างตัวเมืองไซกง 2 กม. ว่ายน้ำ ดำน้ำตื้น และเดินป่าสั้น ๆ",
+            "en": "The easiest Hong Kong Geopark island to reach, 2 km from Sai Kung town, for swimming, snorkelling and a short hike"
+          },
+          "why": {
+            "th": "นั่งเรือและเล่นชายหาดในครึ่งวันง่าย ๆ",
+            "en": "A boat ride and a beach in one easy half day"
+          },
+          "tip": {
+            "th": "เรือแจวและเรือไคโตออกจากท่าเรือไซกง",
+            "en": "Sampans and kaito boats leave from Sai Kung pier"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Sharp Island, Sai Kung, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "鹽田梓",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะยิมตินไจ๋",
+            "en": "Yim Tin Tsai"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ไซกง",
+            "en": "Sai Kung"
+          },
+          "what": {
+            "th": "เกาะเล็กที่มีนาเกลือเก่า หมู่บ้านที่ดูแลอย่างดี และโบสถ์เซนต์โจเซฟ",
+            "en": "A small island of old salt fields, a well-kept village and St Joseph's Chapel"
+          },
+          "why": {
+            "th": "ดูการทำเกลือ แล้วเดินเล่นในหมู่บ้านเงียบ ๆ",
+            "en": "See how salt was made, then wander a quiet village"
+          },
+          "tip": {
+            "th": "มีเรือจากท่าเรือไซกง",
+            "en": "Boats run from Sai Kung pier"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Yim Tin Tsai, Sai Kung, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "元創方",
+          "ok": "2026-11",
+          "name": {
+            "th": "พีเอ็มคิว",
+            "en": "PMQ"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โซโห เซ็นทรัล",
+            "en": "SoHo, Central"
+          },
+          "what": {
+            "th": "ที่พักตำรวจเก่า กลายเป็นสตูดิโอออกแบบและร้านป๊อปอัปของนักออกแบบฮ่องกง",
+            "en": "The old Police Married Quarters, now design studios and pop-up shops of Hong Kong makers"
+          },
+          "why": {
+            "th": "ลานโล่งและร้านเล็ก ๆ ให้เดินดู ทั้งในร่มและกลางแจ้ง",
+            "en": "An open courtyard and small shops to browse, indoors and out"
+          },
+          "tip": {
+            "th": "เดินต่อไปวัดหมานโหมวและไท่ขวั่นที่อยู่ใกล้ ๆ",
+            "en": "Walk on to Man Mo Temple and Tai Kwun nearby"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "PMQ, 35 Aberdeen Street, Central, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/revitalised-historic-buildings-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "文武廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดหมานโหมว",
+            "en": "Man Mo Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนฮอลลีวูด เชิงหวั่น",
+            "en": "Hollywood Road, Sheung Wan"
+          },
+          "what": {
+            "th": "วัดเก่าของเทพแห่งวรรณคดีและเทพแห่งสงคราม ห้อยธูปขดยักษ์เต็มเพดาน",
+            "en": "A historic temple to the gods of literature and war, hung with giant incense coils"
+          },
+          "why": {
+            "th": "ธูปขดวงใหญ่บนเพดานน่าตื่นตาไม่ลืม",
+            "en": "The huge spiral incense coils overhead are unforgettable"
+          },
+          "tip": {
+            "th": "ข้างในเล็กและมีควันธูป แวะสั้น ๆ พอสำหรับเด็กเล็ก",
+            "en": "Small and smoky inside; a short visit is enough with little ones"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Man Mo Temple, 124–126 Hollywood Road, Sheung Wan, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
         }
     ]
     }

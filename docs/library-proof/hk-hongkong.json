@@ -3026,6 +3026,86 @@
           "why": "the beach's children's playground is already in the library"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "sights",
+      "title": "Things to do round 6 — the Hong Kong Tourism Board's own pages (family biking, beaches, island escapes, revitalised buildings, temples), Google Maps only",
+      "checked": "2026-11-28",
+      "rule": "An official page (Discover Hong Kong, the Hong Kong Tourism Board), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "GO PARK Sai Sha",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html",
+          "map": "Google Maps: a review 5 hours ago"
+        },
+        {
+          "name": "East Coast Boardwalk",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html",
+          "map": "Google Maps: a review a day ago"
+        },
+        {
+          "name": "Tseung Kwan O Waterfront Park",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html",
+          "map": "Google Maps: a review a day ago"
+        },
+        {
+          "name": "Po Kong Village Road Park",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html",
+          "map": "Google Maps: a review 3 days ago"
+        },
+        {
+          "name": "Golden Beach",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html",
+          "map": "Google Maps: a review a week ago"
+        },
+        {
+          "name": "Cheung Sha Beach",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html",
+          "map": "Google Maps: Lower Cheung Sha Beach, a review a week ago"
+        },
+        {
+          "name": "Pui O Beach",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html",
+          "map": "Google Maps: a review a day ago"
+        },
+        {
+          "name": "Peng Chau",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: Peng Chau, a review a day ago"
+        },
+        {
+          "name": "Lamma Island",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: Lamma Island, a review a week ago"
+        },
+        {
+          "name": "Sharp Island",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: a review a week ago"
+        },
+        {
+          "name": "Yim Tin Tsai",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: a review 2 weeks ago"
+        },
+        {
+          "name": "PMQ",
+          "src": "https://www.discoverhongkong.com/eng/culture/revitalised-historic-buildings-to-visit-in-hong-kong.html",
+          "map": "Google Maps: a review 3 hours ago"
+        },
+        {
+          "name": "Man Mo Temple",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: Man Mo Temple, a review 2 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Mills",
+          "why": "a textile heritage and business hub, little for children"
+        }
+      ]
     }
   ]
 }
