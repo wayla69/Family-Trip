@@ -590,7 +590,417 @@
       {"name":{"en":"High Island Geo Trail","th":"เส้นทางธรณีไฮไอส์แลนด์"},"kind":"nature","area":{"en":"Sai Kung, New Territories","th":"ไซกง นิวเทร์ริทอรีส์"},"what":{"en":"An easy 2.8 km trail in the geopark past sea cliffs of six-sided rock columns","th":"ทางเดินง่าย 2.8 กม. ในอุทยานธรณี ผ่านหน้าผาริมทะเลที่เป็นเสาหินหกเหลี่ยม"},"why":{"en":"The rock columns look like giant pencils; the visitor centre gives out maps and fun fact sheets","th":"เสาหินเหมือนดินสอยักษ์ และศูนย์บริการให้แผนที่กับเอกสารความรู้สนุกๆ ติดไปด้วย"},"tip":{"en":"Pick up the maps at the Sai Kung visitor centre first; not for a pram","th":"แวะรับแผนที่ที่ศูนย์บริการไซกงก่อน รถเข็นเด็กไปไม่ได้"},"ages":[0,1,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"High Island Geo Trail, East Dam, Sai Kung, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_PH/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
       {"name":{"en":"Playfield 5, Kai Tak Sports Park","th":"เพลย์ฟิลด์ 5 ไคตั๊กสปอร์ตพาร์ก"},"kind":"play","area":{"en":"Kai Tak Sports Park, Kai Tak","th":"ไคตั๊กสปอร์ตพาร์ก ไคตั๊ก"},"what":{"en":"An outdoor playground with sandpits, climbing walls, water play and ziplines","th":"สนามเด็กเล่นกลางแจ้ง มีบ่อทราย กำแพงปีน ที่เล่นน้ำ และสลิง"},"why":{"en":"Room to run off energy and plenty of free play","th":"มีที่ให้วิ่งปล่อยพลัง เล่นได้เต็มที่"},"tip":{"en":"Bring spare clothes for the water play","th":"เตรียมเสื้อผ้าสำรองไว้สำหรับโซนเล่นน้ำ"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Playfield 5, Kai Tak Sports Park, Kowloon, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_PH/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
       {"name":{"en":"Art Park, West Kowloon","th":"อาร์ตพาร์ก เวสต์เกาลูน"},"kind":"park","area":{"en":"West Kowloon Cultural District","th":"เขตวัฒนธรรมเวสต์เกาลูน"},"what":{"en":"Wide lawns by the harbour for a picnic and free play","th":"สนามหญ้ากว้างริมอ่าว ปิกนิกและเล่นได้เต็มที่"},"why":{"en":"Grass to run on, with food trucks nearby for a snack","th":"มีสนามหญ้าให้วิ่ง และมีรถขายอาหารอยู่ใกล้ๆ"},"tip":{"en":"Buy a snack from the food trucks for the picnic","th":"ซื้อของว่างจากรถขายอาหารไว้ปิกนิก"},"ages":[2,2,2,2],"hrs":2,"io":"out","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Art Park, West Kowloon Cultural District, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_PH/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
-      {"name":{"en":"Dragon’s Back Trail","th":"เส้นทางหลังมังกร"},"kind":"nature","area":{"en":"Shek O Country Park, to Big Wave Bay","th":"อุทยานเช็กโอ ถึงหาดบิ๊กเวฟเบย์"},"what":{"en":"A hike of about 8.5 km over the ridge to Big Wave Bay, with views along the coast","th":"เดินป่าราว 8.5 กม. ตามสันเขาไปถึงหาดบิ๊กเวฟเบย์ มองเห็นชายฝั่งตลอดทาง"},"why":{"en":"Big views for older children who can walk a long way; it ends at a beach","th":"วิวกว้างสำหรับเด็กโตที่เดินไกลได้ และจบที่ชายหาด"},"tip":{"en":"Rocky in places and no water on the way: bring water, snacks and good shoes","th":"บางช่วงเป็นหิน ระหว่างทางไม่มีน้ำ พกน้ำ ของว่าง และใส่รองเท้าดีๆ"},"ages":[0,0,1,2],"hrs":4,"io":"out","pram":"no","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Dragon's Back, Shek O Country Park, Hong Kong","ok":"2026-11","src":"https://www.treksplorer.com/dragons-back-trail-hong-kong/"}
+      {"name":{"en":"Dragon’s Back Trail","th":"เส้นทางหลังมังกร"},"kind":"nature","area":{"en":"Shek O Country Park, to Big Wave Bay","th":"อุทยานเช็กโอ ถึงหาดบิ๊กเวฟเบย์"},"what":{"en":"A hike of about 8.5 km over the ridge to Big Wave Bay, with views along the coast","th":"เดินป่าราว 8.5 กม. ตามสันเขาไปถึงหาดบิ๊กเวฟเบย์ มองเห็นชายฝั่งตลอดทาง"},"why":{"en":"Big views for older children who can walk a long way; it ends at a beach","th":"วิวกว้างสำหรับเด็กโตที่เดินไกลได้ และจบที่ชายหาด"},"tip":{"en":"Rocky in places and no water on the way: bring water, snacks and good shoes","th":"บางช่วงเป็นหิน ระหว่างทางไม่มีน้ำ พกน้ำ ของว่าง และใส่รองเท้าดีๆ"},"ages":[0,0,1,2],"hrs":4,"io":"out","pram":"no","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Dragon's Back, Shek O Country Park, Hong Kong","ok":"2026-11","src":"https://www.treksplorer.com/dragons-back-trail-hong-kong/"},
+        {
+          "local": "香港杜莎夫人蠟像館",
+          "ok": "2026-11",
+          "name": {
+            "th": "มาดามทุสโซ ฮ่องกง",
+            "en": "Madame Tussauds Hong Kong"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "พีคทาวเวอร์ เดอะพีค",
+            "en": "The Peak Tower, The Peak"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งดาราหนัง นักร้อง และนักกีฬากว่า 100 ตัว ตั้งแต่บรูซ ลี ถึงเหยาหมิง",
+            "en": "More than 100 wax figures of film, music and sports stars, from Bruce Lee to Yao Ming"
+          },
+          "why": {
+            "th": "ถ่ายรูปกับคนดัง ในร่ม อยู่บนสุดของพีคแทรม",
+            "en": "Photos with famous faces, indoors, at the top of the Peak Tram"
+          },
+          "tip": {
+            "th": "ไปพร้อมพีคแทรมและสกายเทอเรซ 428 ในตึกเดียวกัน",
+            "en": "Pair it with the Peak Tram and Sky Terrace 428 in the same tower"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Madame Tussauds Hong Kong, The Peak Tower, The Peak, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "จอยโพลิส สปอร์ต ฮ่องกง",
+            "en": "JOYPOLIS SPORTS Hong Kong"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคตั๊กสปอร์ตพาร์ก เกาลูน",
+            "en": "Kai Tak Sports Park, Kowloon"
+          },
+          "what": {
+            "th": "ศูนย์กีฬาผสมเกมจากญี่ปุ่นแห่งแรกนอกประเทศ ห้าชั้น มีนินจาโดโจ สนามโซนิก และกำแพงปีนผาแบบเออาร์",
+            "en": "Japan's first overseas 'sportainment' hub over five floors: a Ninja Dojo, the SONIC Stadium and an augmented-reality climbing wall"
+          },
+          "why": {
+            "th": "เกมเล่นได้ทุกสภาพอากาศ ให้เด็กได้วิ่งและปีน",
+            "en": "All-weather games that get children running and climbing"
+          },
+          "tip": {
+            "th": "อยู่ในอาคาร Health and Wellness Centre ชั้น G ถึงชั้น 4",
+            "en": "In the Health and Wellness Centre, G/F to 4/F"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Joypolis Sports Hong Kong, Kai Tak Sports Park, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html"
+        },
+        {
+          "local": "挪亞方舟",
+          "ok": "2026-11",
+          "name": {
+            "th": "เรือโนอาห์ ฮ่องกง",
+            "en": "Noah's Ark Hong Kong"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "หม่าวาน",
+            "en": "Ma Wan"
+          },
+          "what": {
+            "th": "เรือโนอาห์ขนาดเท่าจริงบนเกาะหม่าวาน มีรูปปั้นสัตว์เดินเป็นคู่ ห้องจัดแสดง และเกมสำหรับครอบครัว",
+            "en": "A full-size replica of the ark on Ma Wan island, with animal statues walking two by two, galleries and family games"
+          },
+          "why": {
+            "th": "รูปปั้นสัตว์ตัวใหญ่ให้ตามหา และวันเที่ยวเกาะสบาย ๆ",
+            "en": "Big animal statues to spot and a calm island day out"
+          },
+          "tip": {
+            "th": "ไปหม่าวานได้ด้วยเรือข้ามฟากหรือรถบัสจากชิงยี่",
+            "en": "Ma Wan is reached by ferry or bus from Tsing Yi"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Noah's Ark Hong Kong, Ma Wan, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "บาวน์โทเปีย บาย คิซโทเปีย",
+            "en": "Bouncetopia by Kiztopia (AIRSIDE)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แอร์ไซด์ ไคตั๊ก",
+            "en": "AIRSIDE, Kai Tak"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มธีมปราสาท 8,000 ตร.ฟุต มีด่าน 12 ด่าน และบ่อบอล 30,000 ลูก",
+            "en": "An 8,000 sq ft indoor castle playground with 12 obstacle courses and a ball pit of 30,000 balls"
+          },
+          "why": {
+            "th": "กระโดดและปีนป่ายสำหรับบ่ายวันฝนตก",
+            "en": "Bouncing and climbing for a rainy afternoon"
+          },
+          "tip": {
+            "th": "อยู่ชั้น 4 ของแอร์ไซด์ ถนน Concorde Road",
+            "en": "On 4/F of AIRSIDE, 2 Concorde Road"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Bouncetopia AIRSIDE, 2 Concorde Road, Kai Tak, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "จัสต์ไคลมบ์ ไคตั๊ก",
+            "en": "JUST CLIMB (Kai Tak)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคตั๊กสปอร์ตพาร์ก เกาลูน",
+            "en": "Kai Tak Sports Park, Kowloon"
+          },
+          "what": {
+            "th": "กำแพงปีนผากลางแจ้งมีหลังคาคลุมแห่งเดียวของฮ่องกง มีทั้งแบบเชือกอัตโนมัติ เชือกด้านบน ปีนเร็ว และปีนลีด สำหรับหลายวัยหลายระดับ",
+            "en": "Hong Kong's only outdoor, fully covered climbing walls: auto-belay, top-rope, speed and lead walls for different ages and levels"
+          },
+          "why": {
+            "th": "กำแพงปีนผาจริงสำหรับเด็กโต มีหลังคากันฝนกันแดด",
+            "en": "A real climbing wall for older children, sheltered from rain and sun"
+          },
+          "tip": {
+            "th": "อยู่หน้า Kai Tak Arena ถนน Kai Tak Sports Avenue เช็กเกณฑ์อายุตอนจอง",
+            "en": "Outside Kai Tak Arena on Kai Tak Sports Avenue; check the age rules when booking"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "JUST CLIMB Kai Tak, Kai Tak Sports Park, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ท็อปโบวล์ โบว์ลิ่ง",
+            "en": "Top Bowl Tenpin Bowling"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคตั๊กมอลล์ 1 ไคตั๊กสปอร์ตพาร์ก",
+            "en": "Kai Tak Mall 1, Kai Tak Sports Park"
+          },
+          "what": {
+            "th": "ศูนย์โบว์ลิ่งใหญ่ที่สุดในเกาลูน 40 เลน พื้นที่ 40,000 ตร.ฟุต มีโต๊ะพูลและคาเฟ่",
+            "en": "Kowloon's largest bowling centre, 40 lanes over 40,000 sq ft, with pool tables and a café"
+          },
+          "why": {
+            "th": "เกมในร่มง่าย ๆ เล่นได้ทั้งครอบครัว",
+            "en": "An easy indoor game for the whole family"
+          },
+          "tip": {
+            "th": "อยู่ชั้น 3 ของไคตั๊กมอลล์ 1",
+            "en": "On 3/F of Kai Tak Mall 1"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Top Bowl Tenpin Bowling, Kai Tak Mall 1, Kai Tak, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html"
+        },
+        {
+          "local": "星光大道",
+          "ok": "2026-11",
+          "name": {
+            "th": "อเวนิวออฟสตาร์",
+            "en": "Avenue of Stars"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ริมน้ำจิมซาจุ่ย",
+            "en": "Tsim Sha Tsui waterfront"
+          },
+          "what": {
+            "th": "ทางเดินริมอ่าว มีรูปปั้นดาราหนังฮ่องกงและรอยมือดาราบนราวกว่า 100 รอย",
+            "en": "A harbourfront walk with statues of Hong Kong film stars and over 100 handprints on the railings"
+          },
+          "why": {
+            "th": "ฟรี ทางราบ เข็นรถเข็นสะดวก วิวตึกฝั่งตรงข้ามอ่าวสวยที่สุด",
+            "en": "Free, flat and pram-friendly, with the best skyline view across the harbour"
+          },
+          "tip": {
+            "th": "เดินต่อไปหอนาฬิกาปี 1915 ข้างท่าเรือสตาร์เฟอร์รี่",
+            "en": "Walk on to the 1915 Clock Tower by the Star Ferry pier"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Avenue of Stars, Tsim Sha Tsui, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/top-things-to-see-and-do-around-tsim-sha-tsui-promenade.html"
+        },
+        {
+          "local": "天壇大佛",
+          "ok": "2026-11",
+          "name": {
+            "th": "พระใหญ่และวัดโป่หลิน",
+            "en": "Big Buddha and Po Lin Monastery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หง่องปิง เกาะลันเตา",
+            "en": "Ngong Ping, Lantau Island"
+          },
+          "what": {
+            "th": "พระพุทธรูปสำริดองค์ใหญ่และวัดบนเขาสูงของเกาะลันเตา ล้อมด้วยภูเขาเหนือทะเล",
+            "en": "A giant bronze Buddha and a monastery high on Lantau, set among mountains above the sea"
+          },
+          "why": {
+            "th": "จุดเด่นที่ไปคู่กับกระเช้าหง่องปิง 360",
+            "en": "A big sight to pair with the Ngong Ping 360 cable car"
+          },
+          "tip": {
+            "th": "องค์พระอยู่บนบันไดยาวมาก ทิ้งรถเข็นไว้ข้างล่าง",
+            "en": "The statue is up a long flight of steps; leave the pram at the bottom"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Tian Tan Buddha, Ngong Ping, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html"
+        },
+        {
+          "local": "鴨靈號",
+          "ok": "2026-11",
+          "name": {
+            "th": "ล่องเรือสำเภาดุ๊กลิง",
+            "en": "Dukling junk boat cruise"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "อ่าววิกตอเรีย ออกจากจิมซาจุ่ย",
+            "en": "Victoria Harbour, from Tsim Sha Tsui"
+          },
+          "what": {
+            "th": "เรือสำเภาจีนไม้ใบเรือสีแดงแบบดั้งเดิม ล่องอ่าววิกตอเรีย เห็นตึกทั้งสองฝั่ง",
+            "en": "A traditional wooden Chinese junk with red sails cruising Victoria Harbour, both skylines on either side"
+          },
+          "why": {
+            "th": "ชมไฟริมอ่าวแบบช้า ๆ และน่าจำ",
+            "en": "A slow, memorable way to see the harbour lights"
+          },
+          "tip": {
+            "th": "จองรอบเย็น เด็กใส่เสื้อชูชีพบนเรือ",
+            "en": "Book an evening sailing; children wear life jackets on board"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "q": "Dukling Tour Boarding, Tsim Sha Tsui, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html"
+        },
+        {
+          "local": "大浪灣泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดบิ๊กเวฟเบย์",
+            "en": "Big Wave Bay Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เช็กโอ เกาะฮ่องกง",
+            "en": "Shek O, Hong Kong Island"
+          },
+          "what": {
+            "th": "หาดทรายตรงปลายเส้นทางดราก้อนแบ็ก มีคลื่นและหมู่บ้านเล็ก ๆ บรรยากาศสบาย ๆ ริมหาด",
+            "en": "A sandy beach at the end of the Dragon's Back trail, with surf and a laid-back village by the sand"
+          },
+          "why": {
+            "th": "มีทรายให้ขุดเล่นหลังเดินป่า",
+            "en": "Sand to dig after the walk"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Big Wave Bay Beach, Shek O, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html"
+        }
     ]
     }
   ]

@@ -2879,6 +2879,75 @@
           "why": "chains with no single branch named"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "sights",
+      "title": "Things to do — the Hong Kong Tourism Board's own pages (family attractions, Kai Tak venues, Tsim Sha Tsui promenade, iconic things to do), Google Maps only",
+      "checked": "2026-11-28",
+      "rule": "An official page (Discover Hong Kong, the Hong Kong Tourism Board), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Madame Tussauds Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html",
+          "map": "Google Maps: open, a review 19 hours ago"
+        },
+        {
+          "name": "JOYPOLIS SPORTS Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html",
+          "map": "Google Maps: open, a review 4 days ago"
+        },
+        {
+          "name": "Noah's Ark Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html",
+          "map": "Google Maps: Noah's Ark Hong Kong Theme Park, open, a review 3 days ago"
+        },
+        {
+          "name": "Bouncetopia by Kiztopia (AIRSIDE)",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html",
+          "map": "Google Maps: Bouncetopia AIRSIDE, open, a review 2 months ago"
+        },
+        {
+          "name": "JUST CLIMB (Kai Tak)",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html",
+          "map": "Google Maps: JUST CLIMB | Kai Tak, open, a review 23 hours ago"
+        },
+        {
+          "name": "Top Bowl Tenpin Bowling",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html",
+          "map": "Google Maps: open, a review 3 days ago"
+        },
+        {
+          "name": "Avenue of Stars",
+          "src": "https://www.discoverhongkong.com/eng/attractions/top-things-to-see-and-do-around-tsim-sha-tsui-promenade.html",
+          "map": "Google Maps: Avenue of Stars HK, a review 3 hours ago"
+        },
+        {
+          "name": "Big Buddha and Po Lin Monastery",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html",
+          "map": "Google Maps: Tian Tan Buddha, a review 17 hours ago"
+        },
+        {
+          "name": "Dukling junk boat cruise",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html",
+          "map": "Google Maps: Dukling Tour Boarding, a review 3 months ago"
+        },
+        {
+          "name": "Big Wave Bay Beach",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html",
+          "map": "Google Maps: a review a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Hong Kong Cultural Centre",
+          "why": "a concert and theatre venue, not a sight for children"
+        },
+        {
+          "name": "K11 MUSEA",
+          "why": "a shopping mall (its LEGOLAND Discovery Centre is already in)"
+        }
+      ]
     }
   ]
 }
