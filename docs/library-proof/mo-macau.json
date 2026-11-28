@@ -2019,6 +2019,37 @@
           "why": "Google Maps marks it permanently closed (the 2025 yearbook still lists it)"
         }
       ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "An official page (MGTO's World Heritage page, updated 29 Jul 2025; Lisboeta Macau's own attraction page), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Leal Senado Building (IAM Building)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/leal-senado-building",
+          "map": "Google Maps: Municipal Affairs Bureau, open, a review 23 hours ago"
+        },
+        {
+          "name": "BeeBeeLand (Lisboeta)",
+          "src": "https://www.lisboetamacau.com/en/enjoy/beebeeland/",
+          "map": "Google Maps: BEEBEELAND 蜂狂天地, open, a review 2 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "St. Dominic's Church and its Treasure of Sacred Art",
+          "why": "MGTO says closed for maintenance until about October 2026; Google Maps still marks the museum temporarily closed, newest review 8 months ago"
+        },
+        {
+          "name": "H853 The Pool Skate Park",
+          "why": "Lisboeta's page says coming soon"
+        },
+        {
+          "name": "H853 Entertainment Place",
+          "why": "a concert venue, not a family attraction"
+        }
+      ]
     }
   ]
 }

@@ -4001,6 +4001,88 @@
           "book": "rec",
           "q": "FunFunKart, Lisboeta Macau, Cotai, Macau",
           "src": "https://www.lisboetamacau.com/en/enjoy/funfunkart/"
+        },
+        {
+          "local": "民政總署大樓",
+          "ok": "2026-11",
+          "name": {
+            "th": "อาคารเลอัลเซนาโด",
+            "en": "Leal Senado Building (IAM Building)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "จัตุรัสเซนาโด คาบสมุทรมาเก๊า",
+            "en": "Senado Square, Macau Peninsula"
+          },
+          "what": {
+            "th": "ศาลาว่าการแห่งแรกของมาเก๊า สร้างปี 1784 ยังใช้เป็นที่ทำการเมืองอยู่ มีสวนกลางลานด้านหลัง ห้องสมุดไม้แกะสลัก และห้องแสดงงานฟรี",
+            "en": "Macau's first municipal chamber, built in 1784 and still the city hall, with a courtyard garden at the back, a carved library and a free gallery"
+          },
+          "why": {
+            "th": "สวนกลางลานเย็นและเงียบ ห่างจัตุรัสเซนาโดที่คึกคักแค่ก้าวเดียว",
+            "en": "A cool, quiet courtyard garden a step off busy Senado Square"
+          },
+          "tip": {
+            "th": "เปิด 09:00–21:00 ห้องแสดงงานเปิดเฉพาะช่วงมีนิทรรศการ",
+            "en": "Open 09:00–21:00; the gallery opens only when there is an exhibition"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "163 Avenida de Almeida Ribeiro, Macau",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/leal-senado-building"
+        },
+        {
+          "local": "蜂狂天地",
+          "ok": "2026-11",
+          "name": {
+            "th": "บีบีแลนด์ ลิสโบเอตา",
+            "en": "BeeBeeLand (Lisboeta)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "H853 ฟันแฟกทอรี ลิสโบเอตา มาเก๊า โคไท",
+            "en": "H853 Fun Factory, Lisboeta Macau, Cotai"
+          },
+          "what": {
+            "th": "ร้านเกมอาเขต มีสนามเด็กเล่นสำหรับเด็กเล็ก มีสไลเดอร์ บ่อบอล และจอโปรเจกเตอร์ให้เล่นโต้ตอบ",
+            "en": "An arcade with a kids’ playground of slides, a ball pool and interactive projection screens for young children"
+          },
+          "why": {
+            "th": "สไลเดอร์และบ่อบอลให้เด็กเล็ก เกมให้เด็กโต อยู่ในร่ม",
+            "en": "Slides and a ball pool for little ones, games for older children, indoors"
+          },
+          "tip": {
+            "th": "เปิดจันทร์–พฤหัส 11:00–20:00 ศุกร์–อาทิตย์ 10:00–22:00",
+            "en": "Open Monday–Thursday 11:00–20:00, Friday–Sunday 10:00–22:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "BEEBEELAND 蜂狂天地, Lisboeta Macau, Cotai",
+          "src": "https://www.lisboetamacau.com/en/enjoy/beebeeland/"
         }
       ]
     }
