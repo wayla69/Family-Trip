@@ -1683,8 +1683,14 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => queue.length === 0 && document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 8000 });   // the blue tap's save is back and the picture redrawn
     // every redraw empties the pad and fills its picture back from the SVG a moment later (kid.js hydrateColours): after the blue tap's save
     // the state refresh redraws, so wait for the shape to be on screen again before tapping (a CI failure of Nov 2026: "Element is not visible")
-    const shape0 = page.locator('.colourpad [data-c]').nth(0);
-    await page.click('.palette button[data-v="#EF5350"]'); await shape0.waitFor({ state: 'visible', timeout: 8000 }); await shape0.click({ force: true });
+    // a second CI failure (28 Nov 2026, the same "Element is not visible" after the wait): the list of more pictures (kid.js colFetch) came back
+    // between the wait and the click and redrew the page, so the click held a shape no longer on it. Wait for that list first, then tap the
+    // shape as it is now in one step inside the page (the click event the app listens for), so no redraw can fall between finding and tapping.
+    await page.waitForFunction(() => Array.isArray(colLib['hk-macau-2026']) && queue.length === 0, null, { timeout: 8000 });
+    await page.click('.palette button[data-v="#EF5350"]');
+    await page.waitForFunction(() => !!document.querySelector('.colourpad [data-c="0"]'), null, { timeout: 8000 });
+    const tap0 = await page.evaluate(() => { const el = document.querySelector('.colourpad [data-c="0"]'), r = el.getBoundingClientRect(); el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true })); return { w: Math.round(r.width), h: Math.round(r.height), fill: el.getAttribute('fill') }; });
+    ok(tap0.w > 0 && tap0.h > 0 && /EF5350/i.test(tap0.fill), `colouring: the first shape is on screen and takes the red (${JSON.stringify(tap0)})`);
     // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
     await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
     const two = await filled(), why = await page.evaluate(() => ({ pend: Object.values(colPend), fill: (document.querySelector('.colourpad') || {}).dataset.fill, saved: (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text, hist: colHist.length, q: queue.length }));
