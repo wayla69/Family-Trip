@@ -700,6 +700,246 @@
           },
           "q": "Kidspace Croydon, The Colonnades, 619 Purley Way, Croydon",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Little Angel Theatre",
+            "th": "ลิตเทิล แองเจิล เธียเตอร์"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Islington, London",
+            "th": "อิสลิงตัน ลอนดอน"
+          },
+          "what": {
+            "en": "A puppet theatre in north London that runs a children's puppet festival each summer.",
+            "th": "โรงละครหุ่นในลอนดอนเหนือที่จัดเทศกาลหุ่นสำหรับเด็กทุกฤดูร้อน"
+          },
+          "why": {
+            "en": "Puppet shows and workshops made for small children, with shows aimed at ages 3–6 and 5–9.",
+            "th": "การแสดงหุ่นและเวิร์กช็อปสำหรับเด็กเล็ก มีรอบสำหรับอายุ 3–6 และ 5–9 ปี"
+          },
+          "tip": {
+            "en": "The 2026 festival ran from 28 July to 30 August.",
+            "th": "เทศกาลปี 2026 จัดตั้งแต่ 28 กรกฎาคมถึง 30 สิงหาคม"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Little Angel Theatre, 14 Dagmar Passage, Islington, London N1 2DN, UK",
+          "ok": "2026-11",
+          "src": "https://www.littleangeltheatre.com/little-angel-theatre-childrens-puppet-festival-2026/"
+        },
+        {
+          "name": {
+            "en": "Puppet Theatre Barge",
+            "th": "พัปเพต เธียเตอร์ บาร์จ"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Little Venice, London",
+            "th": "ลิตเทิล เวนิส ลอนดอน"
+          },
+          "what": {
+            "en": "A 55-seat marionette theatre on a canal barge at Little Venice; in summer the barge sails on to Richmond.",
+            "th": "โรงละครหุ่นสาย 55 ที่นั่งบนเรือบรรทุกในคลองที่ลิตเทิล เวนิส หน้าร้อนเรือไปต่อที่ริชมอนด์"
+          },
+          "why": {
+            "en": "Puppet shows with a modern twist on traditional tales, made for children in a small, intimate theatre.",
+            "th": "การแสดงหุ่นที่เล่านิทานดั้งเดิมในมุมใหม่ สำหรับเด็กในโรงละครเล็กอบอุ่น"
+          },
+          "tip": {
+            "en": "Show times are on the theatre's own website.",
+            "th": "เวลาแสดงอยู่ในเว็บไซต์ของโรงละครเอง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Puppet Theatre Barge, 35 Blomfield Road, Little Venice, London W9 2PF, UK",
+          "ok": "2026-11",
+          "src": "https://www.timeout.com/london/theatre/puppet-theatre-barge"
+        },
+        {
+          "name": {
+            "en": "Parliament Hill Lido",
+            "th": "ลีโดพาร์เลียเมนต์ ฮิลล์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Hampstead Heath, London",
+            "th": "แฮมป์สเตด ฮีธ ลอนดอน"
+          },
+          "what": {
+            "en": "A lido built in 1938 on Hampstead Heath, with an unheated pool and a café.",
+            "th": "ลีโดสร้างปี 1938 บนแฮมป์สเตด ฮีธ มีสระน้ำไม่อุ่นและคาเฟ่"
+          },
+          "why": {
+            "en": "A paddling pool for under-fives, and a walk up Parliament Hill afterwards.",
+            "th": "มีสระน้ำตื้นสำหรับเด็กต่ำกว่า 5 ขวบ และเดินขึ้นพาร์เลียเมนต์ ฮิลล์ต่อได้"
+          },
+          "tip": {
+            "en": "Under-16s must be with an adult, and children are not allowed at evening sessions.",
+            "th": "เด็กต่ำกว่า 16 ปีต้องมีผู้ใหญ่ไปด้วย และเด็กเข้ารอบเย็นไม่ได้"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Parliament Hill Fields Lido, Gordon House Road, London NW5 1LT, UK",
+          "ok": "2026-11",
+          "src": "https://timeout.com/london/things-to-do/lidos-and-outdoor-swimming-pools-in-london"
+        },
+        {
+          "name": {
+            "en": "Union Park",
+            "th": "ยูเนียน พาร์ก"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Wembley Park, London",
+            "th": "เวมบลีย์ พาร์ก ลอนดอน"
+          },
+          "what": {
+            "en": "A large park in Wembley Park with fountains in Arena Square and a play area.",
+            "th": "สวนใหญ่ในเวมบลีย์ พาร์ก มีน้ำพุที่ลาน Arena Square และลานเด็กเล่น"
+          },
+          "why": {
+            "en": "The splash pad and the play area with a shallow paddling pool are the best corner for children.",
+            "th": "ลานน้ำพุและลานเล่นที่มีสระน้ำตื้นเป็นมุมที่ดีที่สุดสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "The fountains in Arena Square bubble up when events are not on.",
+            "th": "น้ำพุที่ Arena Square พุ่งขึ้นเมื่อไม่มีงาน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Union Park, Wembley Park, London HA9 0JP, UK",
+          "ok": "2026-11",
+          "src": "https://globetotting.com/best-london-splash-parks-outdoor-pools/"
+        },
+        {
+          "name": {
+            "en": "Leyton Square Adventure Playground",
+            "th": "สนามผจญภัยเลย์ตัน สแควร์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Peckham, London",
+            "th": "เพ็กแฮม ลอนดอน"
+          },
+          "what": {
+            "en": "A free, staffed adventure playground for children in Peckham.",
+            "th": "สนามผจญภัยฟรีมีเจ้าหน้าที่ดูแลสำหรับเด็กในเพ็กแฮม"
+          },
+          "why": {
+            "en": "Free and staffed, so children have an adventure play space to use.",
+            "th": "ฟรีและมีเจ้าหน้าที่ดูแล เด็กจึงมีพื้นที่เล่นผจญภัยไว้ใช้"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Leyton Square Adventure Playground, Peckham Park Road, London SE15 6SX, UK",
+          "ok": "2026-11",
+          "src": "https://whattheredheadsaid.com/free-kids-parks-in-london/"
+        },
+        {
+          "name": {
+            "en": "Lollard Street Adventure Playground",
+            "th": "สนามผจญภัยลอลลาร์ด สตรีท"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Kennington, London",
+            "th": "เคนนิงตัน ลอนดอน"
+          },
+          "what": {
+            "en": "An adventure playground on Lollard Street with indoor and outdoor play spaces.",
+            "th": "สนามผจญภัยบนถนนลอลลาร์ดที่มีพื้นที่เล่นทั้งในร่มและกลางแจ้ง"
+          },
+          "why": {
+            "en": "Indoor and outdoor play in one place, so children can choose where to play.",
+            "th": "เล่นได้ทั้งในร่มและกลางแจ้งในที่เดียว เด็กเลือกที่เล่นได้"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lollard Street Adventure Playground, 102 Lollard Street, Kennington, London SE11 6PX, UK",
+          "ok": "2026-11",
+          "src": "https://whattheredheadsaid.com/free-kids-parks-in-london/"
         }
     ]
     }

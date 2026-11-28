@@ -1,0 +1,423 @@
+{
+  "town": "eu (Europe round 5: Amsterdam, the Lake District, Paris, Strasbourg and Colmar, Granada, Barcelona, Madrid; things to do in Madrid, Paris, London, Amsterdam, Berlin, Bruges, Rome, Barcelona, Cinque Terre, Mont-Saint-Michel)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Europe notes and the sources refused so far (affiliate and booking-link sites, tour and ticket sellers' blogs, review aggregators, pages dated before 2025) -> scripts/library-check.cjs; dates printed on a page that the script does not read (CitizenKid 'Mis à jour', Hola Barcelona's 12/02/2026) checked by hand -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town; kept by hand: Marie Siska (Het Zoute), Sportoase Duinenwater (the Duinenwater pool under its operator's name), Guignol de Paris (the Petits Bouffons theatre in the Buttes-Chaumont), La Terraza de La Casa Encendida (the building's rooftop terrace), Villa Ada Savoia (a city park opened by name) -> Thai and English by writer agents to docs/STYLE.md.",
+  "towns": {
+    "es-barcelona": {
+      "eat": [
+        {
+          "name": "Kauai Gavà Mar",
+          "src": "https://es.ara.cat/criaturas/5-restaurantes-disfrutar-ninos-comida-veraniega_1_5479080.html"
+        },
+        {
+          "name": "La Caseta del Migdia",
+          "src": "https://es.ara.cat/criaturas/5-restaurantes-disfrutar-ninos-comida-veraniega_1_5479080.html"
+        }
+      ],
+      "do": [
+        {
+          "name": "Parc de l'Espanya Industrial",
+          "src": "https://barcelona.cat/en/conocebcn/pics/el-parque-de-la-espanya-industrial-92086015836"
+        },
+        {
+          "name": "Parc de la Creueta del Coll",
+          "src": "https://barcelonaturisme.com/wv3/en/page/673/parc-de-la-creueta-del-coll.html"
+        },
+        {
+          "name": "Biblioteca Gabriel García Márquez",
+          "src": "https://barcelonaurbana.com/en/blog/barcelona-kids-rainy-day-guide"
+        }
+      ]
+    },
+    "es-madrid": {
+      "eat": [
+        {
+          "name": "La Terraza de La Casa Encendida",
+          "src": "https://guiadelocio.es/madrid/bares-con-zona-infantil-en-madrid-recomendaciones-para-tapear-en-familia/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Palacio de Hielo",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": "Casita-Museo de Ratón Pérez",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": "Virtual Arena",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": "Espacio Abierto Quinta de los Molinos",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": "Real Teatro de Retiro",
+          "src": "https://www.esmadrid.com/en-familia-otono-invierno-madrid"
+        },
+        {
+          "name": "Puerta de Rodajos playground",
+          "src": "https://www.esmadrid.com/areas-de-juego-infantiles-madrid"
+        },
+        {
+          "name": "Parque de Salvador Allende",
+          "src": "https://www.esmadrid.com/areas-de-juego-infantiles-madrid"
+        },
+        {
+          "name": "Plaza de las Tizas",
+          "src": "https://www.esmadrid.com/areas-de-juego-infantiles-madrid"
+        }
+      ]
+    },
+    "es-seville": {
+      "eat": [
+        {
+          "name": "Restaurante El Cortijo",
+          "src": "https://www.granadadirect.com/comer-beber/restaurantes-ninos/"
+        },
+        {
+          "name": "Restaurante El Guerra",
+          "src": "https://www.granadadirect.com/comer-beber/restaurantes-ninos/"
+        },
+        {
+          "name": "Restaurante Balcón del Genil",
+          "src": "https://www.granadadirect.com/comer-beber/restaurantes-ninos/"
+        }
+      ]
+    },
+    "fr-paris": {
+      "eat": [
+        {
+          "name": "Voie 15",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/brunch-cafe-tea-time/articles/327193-le-brunch-de-voie-15-gourmet-formula-for-a-sunday-brunch-on-the-terrace-in-the-15th-arrondissement"
+        },
+        {
+          "name": "Le Cocon",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/350430-le-cocon-cafe-restaurant-kid-friendly-seasonal-and-locally-sourced-in-vincennes-94"
+        },
+        {
+          "name": "Café d'Ami",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/355506-le-cafe-d-ami-a-welcoming-food-loving-neighborhood-cafe-restaurant-in-sannois-95"
+        },
+        {
+          "name": "La Riotte",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/324877-la-riotte-a-lively-french-bistro-and-fine-cuvees-in-the-cellar"
+        },
+        {
+          "name": "Lili Caffè – So Pizza",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/352663-lili-caffe-wood-fired-pizzas-and-generous-italian-cuisine-in-saint-ouen"
+        }
+      ],
+      "do": [
+        {
+          "name": "Marionnettes du Champ de Mars",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": "Guignol du Parc Floral",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": "Marionnettes du Parc Monceau",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": "Marionnettes du Parc Montsouris",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": "Guignol de Paris",
+          "src": "https://www.paris.fr/en/pages/eight-places-to-see-puppet-shows-in-paris-29627"
+        },
+        {
+          "name": "Petit Palais",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/331948-what-to-do-children-musee-petit-palais-family-paris"
+        },
+        {
+          "name": "Musée des Arts Forains",
+          "src": "https://www.visitparisregion.com/fr/musee-des-arts-forains"
+        },
+        {
+          "name": "House of Fishing and Nature",
+          "src": "https://www.sortiraparis.com/child-and-family/guides/42524-things-to-do-in-paris-with-the-kids-on-a-rainy-day/lang/en"
+        }
+      ]
+    },
+    "fr-strasbourg": {
+      "eat": [
+        {
+          "name": "Le Fer Rouge",
+          "src": "https://fr.gaultmillau.com/en/restaurant/le-fer-rouge"
+        },
+        {
+          "name": "Restaurant Bartholdi",
+          "src": "https://fr.gaultmillau.com/fr/restaurants/restaurant-bartholdi"
+        },
+        {
+          "name": "Hey Mama Cathédrale",
+          "src": "https://www.citizenkid.com/sortie/hey-mama-strasbourg-a1064147"
+        }
+      ]
+    },
+    "gb-lakes": {
+      "eat": [
+        {
+          "name": "The Peter Rabbit Café",
+          "src": "https://www.worldofbeatrixpotter.com/"
+        },
+        {
+          "name": "Cafe Ambio Whinlatter Forest",
+          "src": "https://www.forestryengland.uk/whinlatter"
+        },
+        {
+          "name": "Brockhole on Windermere",
+          "src": "https://www.brockhole.co.uk/"
+        },
+        {
+          "name": "The Lingholm Kitchen and Walled Garden",
+          "src": "https://keswick.org/whats-on/visit-keswick-blog/places-to-eat-in-keswick"
+        },
+        {
+          "name": "Bassenthwaite Lake Station",
+          "src": "https://keswick.org/whats-on/visit-keswick-blog/places-to-eat-in-keswick"
+        },
+        {
+          "name": "Café Hope",
+          "src": "https://keswick.org/whats-on/visit-keswick-blog/places-to-eat-in-keswick"
+        },
+        {
+          "name": "café HNW",
+          "src": "https://keswick.org/whats-on/visit-keswick-blog/places-to-eat-in-keswick"
+        },
+        {
+          "name": "Merienda",
+          "src": "https://keswick.org/whats-on/visit-keswick-blog/places-to-eat-in-keswick"
+        }
+      ]
+    },
+    "nl-amsterdam": {
+      "eat": [
+        {
+          "name": "Café Cook",
+          "src": "https://www.bartsboekje.com/horeca-met-kids-amsterdam/"
+        },
+        {
+          "name": "Tweede Thuys",
+          "src": "https://www.bartsboekje.com/horeca-met-kids-amsterdam/"
+        },
+        {
+          "name": "Café Hermans",
+          "src": "https://www.bartsboekje.com/horeca-met-kids-amsterdam/"
+        },
+        {
+          "name": "Boerderij Meerzicht",
+          "src": "https://www.amsterdamfoodie.nl/amsterdam-food-guide/child-friendly-restaurants-amsterdam/"
+        },
+        {
+          "name": "Podium Mozaïek",
+          "src": "https://www.amsterdamfoodie.nl/amsterdam-food-guide/child-friendly-restaurants-amsterdam/"
+        },
+        {
+          "name": "Coffee Bru",
+          "src": "https://www.bartsboekje.com/horeca-met-kids-amsterdam/"
+        },
+        {
+          "name": "Hotel De Goudfazant",
+          "src": "https://www.bartsboekje.com/horeca-met-kids-amsterdam/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Hortus Botanicus",
+          "src": "https://www.iamsterdam.com/en/see-and-do/attractions-and-sights/hortus-botanicus"
+        },
+        {
+          "name": "Speelboerderij Elsenhove",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        },
+        {
+          "name": "Boerderij Polderzicht",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        },
+        {
+          "name": "Natuurboerderij Hardebol",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        },
+        {
+          "name": "Zorgboerderij De Marsen",
+          "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        }
+      ]
+    },
+    "be-bruges": {
+      "do": [
+        {
+          "name": "Graaf Visartpark (Count Visart Park)",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/graaf-visartpark-count-visart-park"
+        },
+        {
+          "name": "Marie Siska playground",
+          "src": "https://knokkeheist.com/en/farm/9657/marie-siska.html"
+        },
+        {
+          "name": "Sportoase Duinenwater swimming pool",
+          "src": "https://knokkeheist.com/en/surf/9339/swimming-pool-duinenwater.html"
+        },
+        {
+          "name": "De Zes Bochten",
+          "src": "https://knokkeheist.com/en/indoor-playground/9069/de-zes-bochten.html"
+        }
+      ]
+    },
+    "de-berlin": {
+      "do": [
+        {
+          "name": "Waslala adventure playground and children's farm",
+          "src": "https://www.aspwaslala.de/home"
+        },
+        {
+          "name": "Kinderbauernhof Pinke-Panke",
+          "src": "https://www.berlin.de/kultur-und-tickets/tipps/kinder/kinderbauernhoefe/3076973-3076561-kinderbauernhof-pinkepanke.html"
+        },
+        {
+          "name": "Mirakulum puppet theatre",
+          "src": "https://www.mirakulum.de/spiel.html"
+        },
+        {
+          "name": "Puppentheater-Museum Berlin",
+          "src": "https://www.puppentheater-museum.de/programm-2026/"
+        }
+      ]
+    },
+    "fr-montstmichel": {
+      "do": [
+        {
+          "name": "La Ferme de Grémi",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/la-ferme-de-gremi"
+        },
+        {
+          "name": "Jardin des Plantes d'Avranches",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/jardin-des-plantes/"
+        },
+        {
+          "name": "Le jardin des collections",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/jardins-des-collections/"
+        }
+      ]
+    },
+    "gb-london": {
+      "do": [
+        {
+          "name": "Little Angel Theatre",
+          "src": "https://www.littleangeltheatre.com/little-angel-theatre-childrens-puppet-festival-2026/"
+        },
+        {
+          "name": "Puppet Theatre Barge",
+          "src": "https://www.timeout.com/london/theatre/puppet-theatre-barge"
+        },
+        {
+          "name": "Parliament Hill Lido",
+          "src": "https://timeout.com/london/things-to-do/lidos-and-outdoor-swimming-pools-in-london"
+        },
+        {
+          "name": "Union Park",
+          "src": "https://globetotting.com/best-london-splash-parks-outdoor-pools/"
+        },
+        {
+          "name": "Leyton Square Adventure Playground",
+          "src": "https://whattheredheadsaid.com/free-kids-parks-in-london/"
+        },
+        {
+          "name": "Lollard Street Adventure Playground",
+          "src": "https://whattheredheadsaid.com/free-kids-parks-in-london/"
+        }
+      ]
+    },
+    "it-cinqueterre": {
+      "do": [
+        {
+          "name": "Venere Azzurra beach",
+          "src": "https://lericicoast.it/en/portfolio/beaches/"
+        },
+        {
+          "name": "Lido di Lerici",
+          "src": "https://lericicoast.it/en/portfolio/beaches/"
+        },
+        {
+          "name": "San Terenzo beach",
+          "src": "https://lericicoast.it/en/portfolio/beaches/"
+        }
+      ]
+    },
+    "it-rome": {
+      "do": [
+        {
+          "name": "Cinecittà si Mostra",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        },
+        {
+          "name": "Leonardo Da Vinci Experience Museum",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome"
+        },
+        {
+          "name": "Villa Ada Savoia",
+          "src": "https://turismoroma.it/en/places/villa-ada-savoia"
+        },
+        {
+          "name": "Parco Yitzhak Rabin (Via Panama)",
+          "src": "https://turismoroma.it/en/places/parco-yitzhak-rabin-di-panama-villa-ada"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "Cantina – Matadero",
+      "Viva Burguer",
+      "Lulu et Dame Nature",
+      "ROMA WORLD",
+      "Basilico e Limone",
+      "Stella Marina Alta Gelateria"
+    ],
+    "another place on Google Maps": [
+      "La ludoteca di Villa Borghese (the Casina di Raffaello opened instead)"
+    ],
+    "not pinned to one place on Google Maps": [
+      "Stadsboerderij Amsteldieren",
+      "Sincfalpark",
+      "Marinella",
+      "Station Waiting Room",
+      "ABC Arcade",
+      "Torre Ingeniería",
+      "Calle Osa Mayor",
+      "The Palais des enfants",
+      "El Molino del Puente Durcal",
+      "Pâtisserie GC",
+      "SweetCan",
+      "Golosone",
+      "Musée Maritime",
+      "Restaurante Mesón JR"
+    ],
+    "refused source": [
+      "eight Berlin rows (berlintourism.org, paid by advertising and booking links)",
+      "seven Barcelona parks (Hola Barcelona, a ticket seller's blog)",
+      "two Barcelona restaurants (a food-tour company's blog)",
+      "a Rothenburg bakery (spinach.guide)"
+    ],
+    "undated or old page": [
+      "four Lerici walks (a 2024 PDF)",
+      "four Strasbourg cafés (CitizenKid, no date)"
+    ],
+    "other": [
+      "turned down in earlier rounds: Pof, IJ-Kantine, Lunchroom Lastig, Mama Campo, WaffCachee",
+      "chains: Lamucca, De Pizzabakkers, Armelle, Cinnamood, Paradox Museum, Museum of Illusions",
+      "Hong Bao (inside a mall)",
+      "Summer Splash (a summer pop-up)",
+      "Nostalgie-Restaurant Madame Plüsch (nothing about children)",
+      "Gato Malasaña (a bar on Maps)"
+    ]
+  }
+}
