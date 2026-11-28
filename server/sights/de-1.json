@@ -2340,6 +2340,167 @@
           },
           "q": "Spielplatz Planten Un Blomen Große Wallanlagen, Glacischaussee 1, Hamburg",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "LEGO Discovery Centre Hamburg (DUPLO Park)",
+            "th": "เลโก้ ดิสคัฟเวอรี เซ็นเตอร์ ฮัมบวร์ก (ดูโปล์ ปาร์ก)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Baltimore Straße 1, HafenCity",
+            "th": "Baltimore Straße 1 ฮาเฟนซิตี้"
+          },
+          "what": {
+            "en": "A Discovery Centre with a DUPLO play area for under-5s: oversized bricks, puzzles, a meadow with animal figures and a giant spinning wheel.",
+            "th": "ศูนย์เลโก้ที่มีโซนเล่นดูโปล์สำหรับเด็กต่ำกว่า 5 ขวบ มีบล็อกชิ้นใหญ่ ปริศนาจิ๊กซอว์ ทุ่งหญ้าพร้อมตุ๊กตาสัตว์ และวงล้อหมุนยักษ์"
+          },
+          "why": {
+            "en": "Bricks are sized for small hands and the meadow is cheerful for the youngest visitors.",
+            "th": "บล็อกขนาดพอดีมือเล็ก และทุ่งหญ้าสดใสสำหรับผู้เยี่ยมชมตัวน้อย"
+          },
+          "tip": {
+            "en": "The DUPLO page showed 10:00–19:00 with last entry at 17:00; check before you go.",
+            "th": "หน้าดูโปล์แจ้งเปิด 10:00–19:00 เข้าได้ถึง 17:00 ควรเช็กก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "LEGO Discovery Centre Hamburg, Baltimore Str. 1, Hamburg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.legodiscoverycentre.com/hamburg/en/whats-inside/lego-duplo-park/"
+        },
+        {
+          "name": {
+            "en": "JUMP House Hamburg-Stellingen",
+            "th": "จัมป์เฮาส์ ฮัมบวร์ก-สเทลลิงเงน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Stellingen",
+            "th": "สเทลลิงเงน"
+          },
+          "what": {
+            "en": "A trampoline park of about 3,000 square metres in nine areas, with a Ninja course, foam pits and a free-jump area.",
+            "th": "สวนทรามโพลีนราว 3,000 ตารางเมตร แบ่งเป็นเก้าโซน มีสนามนินจา หลุมโฟม และโซนกระโดดอิสระ"
+          },
+          "why": {
+            "en": "Trampolines and obstacle courses for older children; the page gives 6 years as the recommended age.",
+            "th": "ทรามโพลีนและสนามอุปสรรคสำหรับเด็กโต เว็บไซต์แนะนำให้อายุ 6 ปีขึ้นไป"
+          },
+          "tip": {
+            "en": "Recommended age 6 and up, as the page prints it.",
+            "th": "แนะนำอายุ 6 ปีขึ้นไปตามที่เว็บไซต์ระบุ"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "≈ €14.90 for 1 hour (online price)",
+            "th": "≈ €14.90 ต่อ 1 ชั่วโมง (ราคาออนไลน์)"
+          },
+          "book": "rec",
+          "q": "JUMP House, Stellingen, Hamburg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.hamburg.de/freizeit/aktivitaeten/indoor/trampolinparks-304698"
+        },
+        {
+          "name": {
+            "en": "HADAG ferry line 62 (Landungsbrücken)",
+            "th": "เรือข้ามฟากฮาดัก สาย 62 (ลันดุงส์บรึคเคิน)"
+          },
+          "local": "HADAG Linie 62",
+          "kind": "ride",
+          "area": {
+            "en": "Landungsbrücken, pier 3, to Finkenwerder",
+            "th": "ลันดุงส์บรึคเคิน ท่า 3 ไปฟิงเคนแวร์เดอร์"
+          },
+          "what": {
+            "en": "A HADAG harbour ferry that runs down the Elbe from Landungsbrücken past the fish market, Cruise Center Altona, Dockland and the Övelgönne museum harbour.",
+            "th": "เรือข้ามฟากท่าเรือฮาดักที่แล่นลงแม่น้ำเอลเบ้จากลันดุงส์บรึคเคิน ผ่านตลาดปลา ท่าเรือสำราญอัลโทนา ด็อกแลนด์ และท่าเรือพิพิธภัณฑ์เอิฟเวลเกิ๊นเนอ"
+          },
+          "why": {
+            "en": "A ferry ride on the water that is part of the public transport network, with many sights passed on the way.",
+            "th": "นั่งเรือชมน้ำเป็นส่วนหนึ่งของระบบขนส่งสาธารณะ ผ่านจุดน่าสนใจมากมายระหว่างทาง"
+          },
+          "tip": {
+            "en": "Mon–Fri about every 15 minutes from 6:45 to 22:15, every 30 minutes before and after; Saturday from 5:45.",
+            "th": "จันทร์–ศุกร์ ทุก 15 นาทีราว 6:45–22:15 ก่อนและหลังนั้นทุก 30 นาที วันเสาร์เริ่ม 5:45"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Landungsbrücken Brücke 3, Hamburg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.hamburg.de/verkehr/hadag-linie-62-314160"
+        },
+        {
+          "name": {
+            "en": "Freilichtmuseum am Kiekeberg",
+            "th": "พิพิธภัณฑ์กลางแจ้งคีเคอแบร์ก"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Am Kiekeberg 1, Rosengarten-Ehestorf",
+            "th": "Am Kiekeberg 1 โรเซินการ์เทิน-เอเฮสทอร์ฟ ใกล้ฮัมบวร์ก"
+          },
+          "what": {
+            "en": "An open-air museum with more than 40 historic buildings and gardens, where visitors can touch things and see farm animals such as spotted Bentheimer pigs.",
+            "th": "พิพิธภัณฑ์กลางแจ้งที่มีอาคารเก่ากว่า 40 หลังและสวน สัมผัสสิ่งของได้ และดูสัตว์ฟาร์มอย่างหมูลายจุดพันธุ์เบนไทเมอร์"
+          },
+          "why": {
+            "en": "Children and young people under 18 get in free, and the museum calls itself family friendly.",
+            "th": "เด็กและเยาวชนอายุต่ำกว่า 18 ปีเข้าฟรี และพิพิธภัณฑ์ระบุว่าเป็นมิตรกับครอบครัว"
+          },
+          "tip": {
+            "en": "Check the opening times before you go.",
+            "th": "ควรเช็กเวลาเปิดก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Freilichtmuseum am Kiekeberg, Am Kiekeberg 1, Rosengarten, Germany",
+          "ok": "2026-11",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580"
         }
       ]
     },
@@ -3068,6 +3229,290 @@
           },
           "q": "Puppentheater Plappermaul, Steinhofweg 20, Heidelberg",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Heidelberg Public Library",
+            "th": "ห้องสมุดสาธารณะไฮเดลแบร์ก"
+          },
+          "local": "Stadtbücherei Heidelberg",
+          "kind": "culture",
+          "area": {
+            "en": "Poststraße 15, Bergheim",
+            "th": "Poststraße 15 แบร์กไฮม์ ไฮเดลแบร์ก"
+          },
+          "what": {
+            "en": "The city's public library, with books, newspapers, media, quiet reading corners and a café.",
+            "th": "ห้องสมุดสาธารณะของเมือง มีหนังสือ หนังสือพิมพ์ สื่อต่างๆ มุมอ่านเงียบๆ และคาเฟ่"
+          },
+          "why": {
+            "en": "The city's family page calls it a wet-weather option and says families will want to come back again and again.",
+            "th": "หน้าครอบครัวของเมืองระบุว่าเป็นทางเลือกวันฝนตก และครอบครัวมักอยากกลับมาอีกเรื่อยๆ"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Stadtbücherei Heidelberg, Poststraße 15, Heidelberg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.heidelberg.de/english/Home/Visit/activities+for+families.html"
+        },
+        {
+          "name": {
+            "en": "Gloria & Gloriette children's cinema",
+            "th": "โรงภาพยนตร์เด็กกลอเรีย แอนด์ กลอเรียตต์"
+          },
+          "local": "Gloria / Gloriette",
+          "kind": "show",
+          "area": {
+            "en": "Hauptstraße 146, Heidelberg",
+            "th": "Hauptstraße 146 ไฮเดลแบร์ก"
+          },
+          "what": {
+            "en": "A theatre with a children's cinema.",
+            "th": "โรงละครที่มีโรงภาพยนตร์สำหรับเด็ก"
+          },
+          "why": {
+            "en": "The city's family page says families will love its multi-award-winning children's cinema.",
+            "th": "หน้าครอบครัวของเมืองระบุว่าครอบครัวจะรักโรงภาพยนตร์เด็กที่ได้รับรางวัลมากมายแห่งนี้"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Gloria & Gloriette, Hauptstraße 146, Heidelberg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.heidelberg.de/english/Home/Visit/activities+for+families.html"
+        },
+        {
+          "name": {
+            "en": "Junges Theater Heidelberg (youth theatre)",
+            "th": "ยุงเงสเธียเตอร์ ไฮเดลแบร์ก (โรงละครเยาวชน)"
+          },
+          "local": "Junges Theater Heidelberg",
+          "kind": "show",
+          "area": {
+            "en": "Heidelberg Stadtheater",
+            "th": "สตัดท์เธียเตอร์ ไฮเดลแบร์ก"
+          },
+          "what": {
+            "en": "The youth theatre at the Stadtheater.",
+            "th": "โรงละครเยาวชนที่สตัดท์เธียเตอร์"
+          },
+          "why": {
+            "en": "The city's family page lists a trip to the theatre as a family favourite.",
+            "th": "หน้าครอบครัวของเมืองระบุว่าการไปดูละครเป็นกิจกรรมโปรดของครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Junges Theater Heidelberg, Heidelberg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.heidelberg.de/english/Home/Visit/activities+for+families.html"
+        },
+        {
+          "name": {
+            "en": "Thermen & Badewelt Sinsheim",
+            "th": "เทอร์เมนแอนด์บาเดอเวลต์ ซินส์ไฮม์"
+          },
+          "kind": "onsen",
+          "area": {
+            "en": "Badewelt 1, Sinsheim",
+            "th": "Badewelt 1 ซินส์ไฮม์"
+          },
+          "what": {
+            "en": "A spa with thermal baths and a palm-tree family pool area.",
+            "th": "สปาที่มีบ่อน้ำพุร้อนและโซนสระสำหรับครอบครัวที่ประดับด้วยต้นปาล์ม"
+          },
+          "why": {
+            "en": "The official site says infants may visit the thermal baths free of charge.",
+            "th": "เว็บไซต์ทางการระบุว่าทารกเข้าบ่อน้ำพุร้อนได้ฟรี"
+          },
+          "tip": {
+            "en": "Mon–Thu 10:00–22:00, Fri 10:00–23:00, Sat 9:00–24:00, Sun 9:00–22:00; book a date-specific ticket online before you go.",
+            "th": "จันทร์–พฤหัสฯ 10:00–22:00 ศุกร์ 10:00–23:00 เสาร์ 9:00–24:00 อาทิตย์ 9:00–22:00 จองตั๋วระบุวันออนไลน์ก่อนไป"
+          },
+          "ages": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Thermen & Badewelt Sinsheim, Badewelt 1, Sinsheim, Germany",
+          "ok": "2026-11",
+          "src": "https://www.badewelt-sinsheim.de/en/information/latest-news/visitor-information.php"
+        },
+        {
+          "name": {
+            "en": "Hasenleiser indoor pool",
+            "th": "สระว่ายน้ำในร่มฮาเซนไลเซอร์"
+          },
+          "local": "Hallenbad Hasenleiser",
+          "kind": "play",
+          "area": {
+            "en": "Baden-Badener Straße 14, Heidelberg",
+            "th": "Baden-Badener Straße 14 ไฮเดลแบร์ก"
+          },
+          "what": {
+            "en": "An indoor swimming pool run by the city of Heidelberg.",
+            "th": "สระว่ายน้ำในร่มที่เมืองไฮเดลแบร์กดูแล"
+          },
+          "why": {
+            "en": "The city's family page names a swim in one of Heidelberg's many swimming pools as a family outing.",
+            "th": "หน้าครอบครัวของเมืองแนะนำการว่ายน้ำในสระหนึ่งของไฮเดลแบร์กเป็นกิจกรรมของครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hallenbad Hasenleiser, Baden-Badener Straße 14, Heidelberg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.heidelberg.de/HD/Leben/Schwimmbaeder.html"
+        },
+        {
+          "name": {
+            "en": "City-Bad indoor pool",
+            "th": "สระว่ายน้ำในร่มซิตี้บาด"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Fahrtgasse 12, Altstadt (Darmstädter Hof centre)",
+            "th": "Fahrtgasse 12 เมืองเก่า ไฮเดลแบร์ก (ศูนย์ Darmstädter Hof)"
+          },
+          "what": {
+            "en": "An indoor swimming pool in the Darmstädter Hof centre.",
+            "th": "สระว่ายน้ำในร่มในศูนย์ Darmstädter Hof"
+          },
+          "why": {
+            "en": "The city's family page names a swim in one of Heidelberg's many swimming pools as a family outing.",
+            "th": "หน้าครอบครัวของเมืองแนะนำการว่ายน้ำในสระหนึ่งของไฮเดลแบร์กเป็นกิจกรรมของครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "City-Bad, Fahrtgasse 12, Heidelberg, Germany",
+          "ok": "2026-11",
+          "src": "https://www.heidelberg.de/HD/Leben/Schwimmbaeder.html"
+        },
+        {
+          "name": {
+            "en": "Schwetzingen Palace garden children's tours",
+            "th": "ทัวร์เด็กสวนพระราชวังชเวทซิงเงน"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Schwetzingen Palace",
+            "th": "พระราชวังชเวทซิงเงน"
+          },
+          "what": {
+            "en": "The palace garden holds a summer programme of two-hour children's and family tours with riddles, fountains and a children's detective story.",
+            "th": "สวนพระราชวังมีโปรแกรมฤดูร้อนเป็นทัวร์เด็กและครอบครัวสองชั่วโมง มีปริศนา น้ำพุ และเรื่องสืบสวนสำหรับเด็ก"
+          },
+          "why": {
+            "en": "Children from eight years old can take a rally through the garden about climate.",
+            "th": "เด็กอายุ 8 ปีขึ้นไปร่วมกิจกรรมเดินเกมในสวนเรื่องภูมิอากาศได้"
+          },
+          "tip": {
+            "en": "A summer programme (the 2026 dates were on Wednesdays, 14:30); register by phone first and check this year's dates.",
+            "th": "เป็นโปรแกรมฤดูร้อน (ปี 2026 จัดวันพุธ 14:30) ต้องลงทะเบียนทางโทรศัพท์ก่อน และเช็กวันของปีนี้"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Schwetzingen Palace, Schwetzingen, Germany",
+          "ok": "2026-11",
+          "src": "https://www.schloesser-und-gaerten.de/fileadmin/Presse/pressemeldungen/37_schwetzingen_2026/ssg_schloss-schwetzingen_pm_sommer-kinder-und-familienfuehrungen_260805-0909.pdf"
         }
       ]
     },
@@ -4367,6 +4812,167 @@
           "q": "RothenburgBad, Nördlinger Str. 20, Rothenburg ob der Tauber, Germany",
           "ok": "2026-11",
           "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
+        },
+        {
+          "name": {
+            "en": "Kletterwald Rothenburg",
+            "th": "เคลทเทอร์วัลด์ โรเทนบวร์ก"
+          },
+          "local": "Kletterwald Rothenburg ob der Tauber",
+          "kind": "play",
+          "area": {
+            "en": "Taubertal, near Rothenburg ob der Tauber",
+            "th": "เทาเบอร์ทาล ใกล้โรเทนบวร์ก"
+          },
+          "what": {
+            "en": "A climbing forest with over 150 climbing elements on 15 TÜV-checked courses, for families.",
+            "th": "ป่าปีนป่ายมีกว่า 150 จุดปีนบน 15 เส้นทางที่ผ่านการตรวจโดย TÜV สำหรับครอบครัว"
+          },
+          "why": {
+            "en": "Children from age 5 go in with an adult, so it suits the older ones in this family.",
+            "th": "เด็กอายุ 5 ปีขึ้นไปเข้าได้พร้อมผู้ใหญ่ จึงเหมาะกับลูกคนโต"
+          },
+          "tip": {
+            "en": "Reserve in advance; parking is right there, or it is a 30-minute walk, says the tourism page.",
+            "th": "จองล่วงหน้า มีที่จอดรถอยู่ติดกัน หรือเดินราว 30 นาที ตามที่หน้าท่องเที่ยวระบุ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Kletterwald Rothenburg, Leuzenbronner Steige, Rothenburg ob der Tauber, Germany",
+          "ok": "2026-11",
+          "src": "https://kletterwald-rothenburg.com/"
+        },
+        {
+          "name": {
+            "en": "Mohrenhof Franken",
+            "th": "โมเรนฮอฟ ฟรังเคิน"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Lauterbach 2, Geslau, near Rothenburg",
+            "th": "Lauterbach 2 เกสเลา ใกล้โรเทนบวร์ก"
+          },
+          "what": {
+            "en": "A family campsite with an aquapark, a play barn, alpacas and adventure golf.",
+            "th": "แคมป์ไซต์สำหรับครอบครัว มีอควาพาร์ก โรงเล่นในโรงนา อัลปากา และมินิกอล์ฟผจญภัย"
+          },
+          "why": {
+            "en": "A play barn and alpacas to meet, so there is something for each child, as the page says.",
+            "th": "มีโรงเล่นในโรงนาและอัลปากาให้ทักทาย ทุกคนจึงมีอะไรทำ ตามที่เว็บไซต์ระบุ"
+          },
+          "tip": {
+            "en": "Prices and booking are on the campsite's own page.",
+            "th": "ราคาและการจองดูได้ที่หน้าเว็บของแคมป์ไซต์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Mohrenhof Franken, Lauterbach 2, Geslau, Germany",
+          "ok": "2026-11",
+          "src": "https://www.mohrenhof-franken.de/"
+        },
+        {
+          "name": {
+            "en": "Armory dress-up",
+            "th": "ห้องแต่งตัวย้อนยุคที่คลังอาวุธ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Rothenburg ob der Tauber",
+            "th": "โรเทนบวร์ก ออบ แดร์ เทาเบอร์"
+          },
+          "what": {
+            "en": "Medieval costumes to dress up in, in the armory, with the whole family.",
+            "th": "ชุดยุคกลางให้ใส่เล่นในคลังอาวุธ ทั้งครอบครัว"
+          },
+          "why": {
+            "en": "The whole family dresses up in medieval costumes, a good indoor stop for children.",
+            "th": "ทั้งครอบครัวแต่งชุดยุคกลาง เป็นจุดแวะในร่มที่เด็กๆ ชอบ"
+          },
+          "tip": {
+            "en": "The armory's own site was in maintenance mode when checked; check it before going.",
+            "th": "เว็บไซต์ของคลังอาวุธอยู่ระหว่างปรับปรุงตอนเช็ก ควรเช็กก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Armory, Rothenburg ob der Tauber, Germany",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
+        },
+        {
+          "name": {
+            "en": "Frankenhüpfer trampoline hall",
+            "th": "แฟรงเคินฮึพเฟอร์ ลานทรามโพลีน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Südring 6, Uffenheim (about 15 km north)",
+            "th": "Südring 6 อุฟเฟินไฮม์ (ห่างไปทางเหนือราว 15 กม.)"
+          },
+          "what": {
+            "en": "A trampoline hall of over 800 m² with several kinds of trampolines, a foam pit, a boulder wall and basketball hoops.",
+            "th": "ลานทรามโพลีนกว่า 800 ตร.ม. มีทรามโพลีนหลายแบบ หลุมโฟม ผนังปีนก้อนหิน และห่วงบาสเกตบอล"
+          },
+          "why": {
+            "en": "There is a Bambini jumping slot for the little ones from 10:30 to 12:00.",
+            "th": "มีช่วง Bambini สำหรับเด็กเล็กกระโดดได้ 10:30–12:00"
+          },
+          "tip": {
+            "en": "Children under 18 need a consent form signed by a parent.",
+            "th": "เด็กต่ำกว่า 18 ปีต้องมีใบยินยอมที่พ่อแม่เซ็น"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Frankenhüpfer Trampolinhalle, Südring 6, Uffenheim, Germany",
+          "ok": "2026-11",
+          "src": "https://www.frankenhuepfer.de/"
         }
       ]
     },
@@ -4942,6 +5548,166 @@
           },
           "q": "Reptilienzoo Allgäu, Mühlbachgasse 10, Füssen",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Playground at the Hopfensee boat rental",
+            "th": "สนามเด็กเล่นที่ร้านเช่าเรือทะเลสาบฮอพเฟินเซ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Hopfen am See, Füssen",
+            "th": "ฮอพเฟินอัมเซ ฟึสเซิน"
+          },
+          "what": {
+            "en": "A slide and climbing playground next to the boat hire on Lake Hopfensee, with the mountains behind it.",
+            "th": "สนามเด็กเล่นสไลเดอร์และปีนป่ายข้างร้านเช่าเรือที่ทะเลสาบฮอพเฟินเซ มีภูเขาอยู่ด้านหลัง"
+          },
+          "why": {
+            "en": "The lakeside walk around Hopfensee is barrier-free and suitable for prams, so it fits an easy outing.",
+            "th": "ทางเดินริมทะเลสาบรอบฮอพเฟินเซไม่มีสิ่งกีดขวางและเหมาะกับรถเข็นเด็ก จึงเป็นการออกไปเที่ยวที่ไม่เหนื่อย"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Playground at the Hopfensee boat rental, Hopfen am See, Füssen, Germany",
+          "ok": "2026-11",
+          "src": "https://fuessen.de/en/playing-and-climbing"
+        },
+        {
+          "name": {
+            "en": "Playground in Füssen-Stadt",
+            "th": "สนามเด็กเล่นในเมืองฟึสเซิน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Western part of Füssen",
+            "th": "ฟึสเซินฝั่งตะวันตก"
+          },
+          "what": {
+            "en": "A playground in the western part of Füssen town.",
+            "th": "สนามเด็กเล่นทางฝั่งตะวันตกของเมืองฟึสเซิน"
+          },
+          "why": {
+            "en": "Listed among the playgrounds in and around Füssen that the tourist office recommends for children.",
+            "th": "อยู่ในรายชื่อสนามเด็กเล่นในและรอบฟึสเซินที่สำนักงานท่องเที่ยวแนะนำสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Playground in Füssen-Stadt, Füssen, Germany",
+          "ok": "2026-11",
+          "src": "https://fuessen.de/en/playing-and-climbing"
+        },
+        {
+          "name": {
+            "en": "Kletterzentrum Allgäu (DAV Climbing Centre Rieden)",
+            "th": "ศูนย์ปีนหน้าผาจำลองอัลก็อยเออ รีเดิน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Rieden am Forggensee, Füssen",
+            "th": "รีเดินอัมฟอร์กเกนเซ ฟึสเซิน"
+          },
+          "what": {
+            "en": "An indoor climbing centre at Rieden, listed with the climbing and playing places of Füssen.",
+            "th": "ศูนย์ปีนหน้าผาจำลองในร่มที่รีเดิน อยู่ในรายชื่อที่ปีนและที่เล่นของฟึสเซิน"
+          },
+          "why": {
+            "en": "An indoor option for children when the weather is wet.",
+            "th": "เป็นตัวเลือกในร่มสำหรับเด็กเมื่อฝนตก"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kletterzentrum Allgäu, Dietringer Str. 50, Rieden am Forggensee, Germany",
+          "ok": "2026-11",
+          "src": "https://fuessen.de/en/playing-and-climbing"
+        },
+        {
+          "name": {
+            "en": "Forggensee",
+            "th": "ทะเลสาบฟอร์กเกนเซ"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Forggensee, Füssen and Schwangau",
+            "th": "ฟอร์กเกนเซ ฟึสเซินและชวานเกา"
+          },
+          "what": {
+            "en": "Lake Forggensee, a reservoir in the Ostallgäu with bathing places that are free to reach and a flat shore path.",
+            "th": "ทะเลสาบฟอร์กเกนเซ อ่างเก็บน้ำในออสทัลก็อยมีจุดเล่นน้ำที่เข้าถึงได้ฟรีและทางเดินริมฝั่งที่ราบเรียบ"
+          },
+          "why": {
+            "en": "The flat shore walk from Rieden is 3.6 km there and back, with bathing places and a playground by the water.",
+            "th": "ทางเดินริมฝั่งจากรีเดินราบเรียบ ไปกลับ 3.6 กม. มีจุดเล่นน้ำและสนามเด็กเล่นริมน้ำ"
+          },
+          "tip": {
+            "en": "Parking by the bathing places fills quickly on summer days.",
+            "th": "ที่จอดรถตรงจุดเล่นน้ำเต็มเร็วในวันฤดูร้อน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Forggensee, Füssen, Germany",
+          "ok": "2026-11",
+          "src": "https://www.familienurlaub-info.com/ausflugsziele/deutschland/allgaeu/forggensee-mit-kindern/"
         }
       ]
     }

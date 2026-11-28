@@ -2514,6 +2514,366 @@
           "q": "Jardin Exotique de Monaco, 62 Boulevard du Jardin Exotique, Monaco",
           "ok": "2026-11",
           "src": "https://www.jardin-exotique.mc/en/"
+        },
+        {
+          "name": {
+            "en": "Jardin des Arènes de Cimiez",
+            "th": "จาร์แดงเดซาแรนเดอซิมีเอ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Cimiez, Nice",
+            "th": "ซิมีเอ นีซ"
+          },
+          "what": {
+            "en": "A vast olive grove of hundreds of century-old trees, with open lawns that are freely accessible.",
+            "th": "สวนมะกอกกว้างใหญ่ที่มีต้นไม้อายุร้อยปีหลายร้อยต้น และมีสนามหญ้าโล่งเข้าได้อย่างอิสระ"
+          },
+          "why": {
+            "en": "Playgrounds for children, pétanque courts and a refreshment stand; a favourite spot for family walks.",
+            "th": "มีสนามเด็กเล่น สนามเปตองและร้านเครื่องดื่ม เป็นที่เดินเล่นของครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jardin des Arènes de Cimiez, 184 Av. des Arènes de Cimiez, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "Parc Honoré d'Estienne d'Orves",
+            "th": "ปาร์กโอโนเรเดสเตียนดอร์ฟ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Avenue Estienne d'Orves, Nice",
+            "th": "อเวอนูเอสเตียนดอร์ฟ นีซ"
+          },
+          "what": {
+            "en": "A 15-hectare park in the heart of Nice with a thousand-year-old olive tree and nature trails over the city and sea.",
+            "th": "สวนสาธารณะ 15 เฮกตาร์กลางนีซ มีต้นมะกอกอายุพันปีและเส้นทางธรรมชาติที่เห็นเมืองและทะเล"
+          },
+          "why": {
+            "en": "Two play areas for children at the entrance, and a discovery scavenger hunt with a small activity booklet.",
+            "th": "มีพื้นที่เล่นสองแห่งที่ทางเข้า และเกมตามหาของพร้อมสมุดกิจกรรมเล่มเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc Honoré d'Estienne d'Orves, 44 Avenue Estienne d'Orves, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "Jardin botanique de Nice",
+            "th": "สวนพฤกษศาสตร์นีซ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Corniche Fleurie, Nice",
+            "th": "กอร์นิชเฟลอรี นีซ"
+          },
+          "what": {
+            "en": "A hillside garden above western Nice with Mediterranean flora and a view of the city.",
+            "th": "สวนบนเนินเขาเหนือนีซฝั่งตะวันตก มีพืชเมดิเตอร์เรเนียนและวิวเมือง"
+          },
+          "why": {
+            "en": "A dedicated playground for young children, and a free-admission garden for a quiet morning.",
+            "th": "มีสนามเด็กเล่นสำหรับเด็กเล็กโดยเฉพาะ และเป็นสวนเข้าฟรีสำหรับเช้าที่เงียบสงบ"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Jardin botanique de Nice, 78 Corniche Fleurie, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "Parc Castel des Deux Rois",
+            "th": "ปาร์กกัสเตลเดเดอรัว"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Av. du Mont Alban, Nice",
+            "th": "อเวอนูดูมงต์อัลบ็อง นีซ"
+          },
+          "what": {
+            "en": "A park on Mont Alban hill with a large shaded lawn and a view of Nice and the harbour.",
+            "th": "สวนบนเนินมงต์อัลบ็อง มีสนามหญ้าร่มรื่นกว้างและวิวเมืองนีซกับท่าเรือ"
+          },
+          "why": {
+            "en": "A playground with new equipment, a merry-go-round and a playhouse, designed for children with disabilities or limited mobility.",
+            "th": "สนามเด็กเล่นอุปกรณ์ใหม่ มีม้าหมุนและบ้านเล่น ออกแบบสำหรับเด็กพิการหรือเคลื่อนไหวลำบาก"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc Castel des Deux Rois, 32 Av. du Mont Alban, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "Maison de l'Environnement",
+            "th": "เมซงเดอล็องวีรงเนอม็อง"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Avenue de Castellane, Nice",
+            "th": "อเวอนูเดอกัสเตลลาน นีซ"
+          },
+          "what": {
+            "en": "An environment centre with an educational garden, exhibitions and themed events.",
+            "th": "ศูนย์สิ่งแวดล้อมที่มีสวนเพื่อการเรียนรู้ นิทรรศการและกิจกรรมตามธีม"
+          },
+          "why": {
+            "en": "Free entry for families, and children as young as 2 can try organic gardening.",
+            "th": "ครอบครัวเข้าฟรี และเด็กอายุเพียง 2 ปีก็ลองทำสวนออร์แกนิกได้"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Maison de l'Environnement, 31 Av. de Castellane, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "Musée départemental des Arts Asiatiques",
+            "th": "พิพิธภัณฑ์ศิลปะเอเชียประจำจังหวัดนีซ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Parc Phoenix, Promenade des Anglais, Nice",
+            "th": "ปาร์กเฟนิกซ์ โพรมนาดเดแซ็งเกล นีซ"
+          },
+          "what": {
+            "en": "A museum of Asian civilisations in a modern building designed by Kenzo Tange, in the heart of Parc Phoenix.",
+            "th": "พิพิธภัณฑ์อารยธรรมเอเชียในอาคารทันสมัยที่เคนโซ ทังเงะออกแบบ ใจกลางปาร์กเฟนิกซ์"
+          },
+          "why": {
+            "en": "Fun workshops for ages 6 or 8 and up (calligraphy, origami), and activity booklets for ages 3 to 14.",
+            "th": "เวิร์กชอปสนุก ๆ สำหรับอายุ 6 หรือ 8 ปีขึ้นไป (การเขียนพู่กัน โอริงามิ) และสมุดกิจกรรมสำหรับอายุ 3–14 ปี"
+          },
+          "tip": {
+            "en": "Open 10:00–18:00 in July and August, 10:00–17:00 the rest of the year; closed 1 January, 1 May and 25 December.",
+            "th": "เปิด 10:00–18:00 ในเดือนกรกฎาคมและสิงหาคม นอกนั้น 10:00–17:00 ปิดวันที่ 1 มกราคม 1 พฤษภาคม และ 25 ธันวาคม"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Musée départemental des Arts Asiatiques, 405 Promenade des Anglais, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "Atelier Terracotta",
+            "th": "อาเตอลีเยเทอราคอตตา"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Rue de Dijon, Nice",
+            "th": "ถนนเดอดีฌง นีซ"
+          },
+          "what": {
+            "en": "A friendly pottery and sculpture studio where children learn modelling, wheel-throwing and plate decorating.",
+            "th": "สตูดิโอปั้นและเครื่องปั้นดินเผาอบอุ่นเป็นกันเอง เด็ก ๆ เรียนปั้น ใช้แป้นหมุน และตกแต่งจาน"
+          },
+          "why": {
+            "en": "Classes for children aged 4 and up, in a space accessible to strollers; a rainy-day clay activity.",
+            "th": "มีคลาสสำหรับเด็กอายุ 4 ปีขึ้นไป พื้นที่เข้าได้ด้วยรถเข็นเด็ก เป็นกิจกรรมปั้นดินเหนียวสำหรับวันฝนตก"
+          },
+          "tip": {
+            "en": "Booking is recommended.",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Atelier Terracotta, 19 Rue de Dijon, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "Seazen",
+            "th": "ซีเซน"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Môle des Pêcheurs, Beaulieu-sur-Mer",
+            "th": "โมลเดแปเชอร์ โบลิเยอซูร์แมร์"
+          },
+          "what": {
+            "en": "A solar-powered catamaran cruise of one to three hours along the coast with an exclusive guide for up to six people.",
+            "th": "ล่องเรือแคทามารันพลังแสงอาทิตย์ 1–3 ชั่วโมงตามชายฝั่ง พร้อมไกด์เฉพาะกลุ่มไม่เกิน 6 คน"
+          },
+          "why": {
+            "en": "Masks, snorkels and foam floats are provided for children; ages 7 and up.",
+            "th": "มีหน้ากาก สน็อร์เกิลและทุ่นโฟมให้เด็ก อายุ 7 ปีขึ้นไป"
+          },
+          "tip": {
+            "en": "Booking is recommended.",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Seazen, Môle des Pêcheurs, Beaulieu-sur-Mer, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "BlackTenders Nice",
+            "th": "แบล็กเทนเดอร์ส นีซ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Quai Entrecasteaux, Nice",
+            "th": "แกเอ็งเตรอกาสโต นีซ"
+          },
+          "what": {
+            "en": "A 2.5-hour RIB excursion from Nice to see protected areas, cliffs and nature reserves on the Riviera.",
+            "th": "ทริปเรือ RIB 2.5 ชั่วโมงจากนีซ ชมพื้นที่คุ้มครอง หน้าผาและเขตอนุรักษ์ธรรมชาติบนริเวียรา"
+          },
+          "why": {
+            "en": "Ages 4 and up: a first adventure at sea, guided by an experienced captain.",
+            "th": "อายุ 4 ปีขึ้นไป เป็นการผจญภัยกลางทะเลครั้งแรก นำโดยกัปตันผู้มีประสบการณ์"
+          },
+          "tip": {
+            "en": "Booking is recommended.",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "BlackTenders Nice, 51 Quai Entrecasteaux, Nice, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
         }
       ]
     },
@@ -3316,6 +3676,126 @@
           },
           "q": "Les chevrettes de malo, Av. du Couleton, Puyvert",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Le Thor Canoë Kayak",
+            "th": "เลอตอร์ คาโนเอ คายัค"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Le Thor, on the river Sorgue",
+            "th": "เลอตอร์ ริมแม่น้ำซอร์ก"
+          },
+          "what": {
+            "en": "A two-hour guided canoe trip on a quiet branch of the river Sorgue.",
+            "th": "ทริปพายแคนูพร้อมไกด์ 2 ชั่วโมงบนสาขาที่เงียบสงบของแม่น้ำซอร์ก"
+          },
+          "why": {
+            "en": "No minimum age; children under 9 go free with their guardian, and the semi-nocturnal trip can spot beavers and herons.",
+            "th": "ไม่มีอายุขั้นต่ำ เด็กอายุต่ำกว่า 9 ปีไปฟรีกับผู้ดูแล และทริปช่วงค่ำอาจเห็นบีเวอร์และนกกระสา"
+          },
+          "tip": {
+            "en": "Booking is recommended.",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Le Thor Canoë Kayak, Le Thor, France",
+          "ok": "2026-11",
+          "src": "https://provence-alpes-cotedazur.com/en/offers/canoeing-in-le-thor-le-thor-en-2871016/"
+        },
+        {
+          "name": {
+            "en": "Canoë Kayak Vert Fontaine-de-Vaucluse",
+            "th": "คาโนเอ คายัค แวร์ ฟงแตนเดอโวกลูซ"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Av. Robert Garcin, Fontaine-de-Vaucluse",
+            "th": "ถนนโรแบร์ การ์แซ็ง ฟงแตนเดอโวกลูซ"
+          },
+          "what": {
+            "en": "A guided canoe-kayak tour from Fontaine-de-Vaucluse, 8 km down the river.",
+            "th": "ทัวร์พายแคนูคายัคพร้อมไกด์จากฟงแตนเดอโวกลูซ ล่องตามแม่น้ำ 8 กม."
+          },
+          "why": {
+            "en": "A family trip of about two hours, with two-, three- or four-person canoes and fun jackets provided.",
+            "th": "ทริปครอบครัวราว 2 ชั่วโมง มีแคนูสำหรับ 2, 3 หรือ 4 คน และเสื้อชูชีพให้"
+          },
+          "tip": {
+            "en": "Allow half a day.",
+            "th": "เผื่อเวลาครึ่งวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Canoë Kayak Vert, Av. Robert Garcin, Fontaine-de-Vaucluse, France",
+          "ok": "2026-11",
+          "src": "https://provence-alpes-cotedazur.com/en/offers/kayak-vert-fontaine-de-vaucluse-en-2863869"
+        },
+        {
+          "name": {
+            "en": "Musée Lapidaire",
+            "th": "พิพิธภัณฑ์ลาปิแดร์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Rue de la République, Avignon",
+            "th": "ถนนเดอลาเรปูบลิก อาวีญง"
+          },
+          "what": {
+            "en": "A museum in Avignon that holds free family workshops on objects from past to present.",
+            "th": "พิพิธภัณฑ์ในอาวีญงที่จัดเวิร์กชอปสำหรับครอบครัวฟรีเรื่องข้าวของจากอดีตถึงปัจจุบัน"
+          },
+          "why": {
+            "en": "Workshops are made for children aged 6 to 12 with an adult, free with a booking.",
+            "th": "เวิร์กชอปทำสำหรับเด็กอายุ 6–12 ปีที่มากับผู้ใหญ่ ฟรีเมื่อจองล่วงหน้า"
+          },
+          "tip": {
+            "en": "Book by email; places are limited.",
+            "th": "จองทางอีเมล จำนวนที่นั่งจำกัด"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "req",
+          "q": "Musée Lapidaire, 27 Rue de la République, Avignon, France",
+          "ok": "2026-11",
+          "src": "https://www.provenceguide.com/fetes-et-manifestations/avignon/visite-atelier-en-famille-au-musee-lapidaire-objets-d-hier-a-aujourd-hui/provence-8053384-1.html"
         }
       ]
     },

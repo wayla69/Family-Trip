@@ -908,6 +908,286 @@
           },
           "q": "Kennedys Pet Farm, Glenflesk, Killarney",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Newbridge House & Farm",
+            "th": "นิวบริดจ์เฮาส์แอนด์ฟาร์ม"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Donabate, Fingal, north of Dublin",
+            "th": "โดนาเบต ฟิงกัล ทางเหนือของดับลิน"
+          },
+          "what": {
+            "en": "A traditional working farm beside the only intact Georgian mansion in Ireland.",
+            "th": "ฟาร์มที่ยังทำงานจริงแบบดั้งเดิม ข้างคฤหาสน์สมัยจอร์เจียนที่สมบูรณ์หลังเดียวในไอร์แลนด์"
+          },
+          "why": {
+            "en": "Meet piglets, goats and Connemara ponies along the Farmyard Discovery Trail.",
+            "th": "ได้พบลูกหมู แพะ และม้าคอนเนมาราตามเส้นทางสำรวจฟาร์ม"
+          },
+          "tip": {
+            "en": "Pack a lunch and take a break before the woodland playground.",
+            "th": "เตรียมอาหารกลางวันไป และพักก่อนไปสนามเด็กเล่นในป่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Newbridge House & Farm, Hearse Rd, Donabate, Co. Dublin, Ireland",
+          "ok": "2026-11",
+          "src": "https://www.discoverireland.ie/dublin/visit-dublin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Airfield Estate",
+            "th": "แอร์ฟิลด์เอสเตท"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Dundrum, Dublin 14",
+            "th": "ดันดรัม ดับลิน 14"
+          },
+          "what": {
+            "en": "An urban farm with native woodland walks and ever-changing gardens.",
+            "th": "ฟาร์มในเมืองที่มีทางเดินในป่าพื้นเมืองและสวนที่เปลี่ยนไปเรื่อย ๆ"
+          },
+          "why": {
+            "en": "Kids can help collect eggs, feed the calves, milk the Jersey cows and meet the resident donkeys.",
+            "th": "เด็กช่วยเก็บไข่ ป้อนลูกวัว รีดนมวัวเจอร์ซีย์ และทำความรู้จักลาประจำฟาร์มได้"
+          },
+          "tip": {
+            "en": "At weekends the café at Overends Kitchen is open; the farm shop sells takeaway food daily.",
+            "th": "สุดสัปดาห์คาเฟ่ที่ Overends Kitchen เปิด ร้านฟาร์มขายอาหารห่อกลับบ้านทุกวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Airfield Estate, Overend Ave, Dundrum, Dublin 14, Ireland",
+          "ok": "2026-11",
+          "src": "https://www.discoverireland.ie/dublin/visit-dublin-with-kids"
+        },
+        {
+          "name": {
+            "en": "Galway City Museum",
+            "th": "พิพิธภัณฑ์เมืองกัลเวย์"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Spanish Parade, Galway",
+            "th": "สแปนิชพาเหรด กัลเวย์"
+          },
+          "what": {
+            "en": "A city museum with family-friendly exhibitions and hands-on activities about Galway's history.",
+            "th": "พิพิธภัณฑ์เมืองที่มีนิทรรศการเหมาะกับครอบครัวและกิจกรรมลงมือทำเรื่องประวัติศาสตร์กัลเวย์"
+          },
+          "why": {
+            "en": "Family-friendly exhibitions and hands-on activities bring Galway's history to life for children.",
+            "th": "นิทรรศการและกิจกรรมลงมือทำช่วยให้เด็กเข้าใจประวัติศาสตร์กัลเวย์"
+          },
+          "tip": {
+            "en": "Open Tuesday to Saturday, 10:00–17:00; the page suggests a donation of €5.",
+            "th": "เปิดวันอังคารถึงเสาร์ 10:00–17:00 หน้าเว็บแนะนำให้บริจาค €5"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free · suggested donation ≈ €5",
+            "th": "ฟรี · แนะนำบริจาค ≈ €5"
+          },
+          "book": "none",
+          "q": "Galway City Museum, Spanish Parade, Galway, Ireland",
+          "ok": "2026-11",
+          "src": "https://galwaycitymuseum.ie/"
+        },
+        {
+          "name": {
+            "en": "Wildlands",
+            "th": "ไวลด์แลนด์ส"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Ballyquirke, Moycullen, near Galway",
+            "th": "บัลลีควิร์ก มอยคัลเลน ใกล้กัลเวย์"
+          },
+          "what": {
+            "en": "An outdoor and indoor adventure and entertainment centre for all ages, whatever the weather.",
+            "th": "ศูนย์ผจญภัยและความบันเทิงทั้งกลางแจ้งและในร่มสำหรับทุกวัย ไม่ว่าอากาศจะเป็นอย่างไร"
+          },
+          "why": {
+            "en": "Little ones get mini off-road adventures and Baile Beag, a miniature play village full of props.",
+            "th": "เด็กเล็กได้ผจญภัยออฟโรดขนาดเล็กและ Baile Beag หมู่บ้านจำลองที่เต็มไปด้วยอุปกรณ์เล่นสมมติ"
+          },
+          "tip": {
+            "en": "Pre-booking is essential, according to the page.",
+            "th": "หน้าเว็บบอกว่าต้องจองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Wildlands, Ballyquirke, Moycullen, Co. Galway, Ireland",
+          "ok": "2026-11",
+          "src": "https://www.discoverireland.ie/galway/wildlands"
+        },
+        {
+          "name": {
+            "en": "Killarney House",
+            "th": "คิลลาร์นีย์เฮาส์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Muckross Road, Killarney, Co. Kerry",
+            "th": "ถนนมัคครอส คิลลาร์นีย์ เคาน์ตีเคอร์รี"
+          },
+          "what": {
+            "en": "Gardens with a children's play area and an interactive exhibition, and the gateway to Killarney National Park.",
+            "th": "สวนที่มีสนามเด็กเล่นและนิทรรศการแบบโต้ตอบ และเป็นทางเข้าสู่อุทยานแห่งชาติคิลลาร์นีย์"
+          },
+          "why": {
+            "en": "A children's play area in the gardens and an interactive exhibition.",
+            "th": "มีสนามเด็กเล่นในสวนและนิทรรศการแบบโต้ตอบ"
+          },
+          "tip": {
+            "en": "Check opening times before you go.",
+            "th": "เช็กเวลาเปิดก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Killarney House, Muckross Rd, Killarney, Co. Kerry, Ireland",
+          "ok": "2026-11",
+          "src": "https://killarney.ie/?p=14862"
+        },
+        {
+          "name": {
+            "en": "Christ Church Cathedral",
+            "th": "มหาวิหารคริสต์เชิร์ช"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Christchurch Place, Dublin",
+            "th": "คริสต์เชิร์ชเพลซ ดับลิน"
+          },
+          "what": {
+            "en": "A medieval cathedral with a crypt where visitors can dress up.",
+            "th": "มหาวิหารยุคกลางที่มีห้องใต้ดินให้ผู้มาเยือนแต่งตัวย้อนยุค"
+          },
+          "why": {
+            "en": "In the crypt all ages can dress up as medieval knights or try on Tudor ruffs.",
+            "th": "ในห้องใต้ดินทุกวัยแต่งเป็นอัศวินยุคกลางหรือลองสวมปลอกคอจีบแบบทิวดอร์ได้"
+          },
+          "tip": {
+            "en": "Over-12s and adults can climb to the belfry to ring the bells; a discounted ticket pairs it with Dublinia.",
+            "th": "อายุเกิน 12 ปีและผู้ใหญ่ขึ้นหอระฆังไปตีระฆังได้ มีตั๋วคู่ลดราคากับ Dublinia"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Christ Church Cathedral, Christchurch Pl, Wood Quay, Dublin, Ireland",
+          "ok": "2026-11",
+          "src": "https://www.discoverireland.ie/dublin/visit-dublin-with-kids"
+        },
+        {
+          "name": {
+            "en": "The Ark",
+            "th": "ดิอาร์ก"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Eustace Street, Temple Bar, Dublin",
+            "th": "ยูสเตซสตรีท เทมเปิลบาร์ ดับลิน"
+          },
+          "what": {
+            "en": "A children's cultural centre in Temple Bar with programmes built around visual arts, music and crafts.",
+            "th": "ศูนย์วัฒนธรรมสำหรับเด็กในเทมเปิลบาร์ มีโปรแกรมด้านทัศนศิลป์ ดนตรีและงานฝีมือ"
+          },
+          "why": {
+            "en": "Programmes are designed for specific ages, around visual arts, music and crafts.",
+            "th": "โปรแกรมออกแบบตามช่วงอายุ เกี่ยวกับทัศนศิลป์ ดนตรีและงานฝีมือ"
+          },
+          "tip": {
+            "en": "Check the current programme and prices before you go.",
+            "th": "เช็กโปรแกรมและราคาล่าสุดก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "The Ark, 11A Eustace St, Temple Bar, Dublin 2, Ireland",
+          "ok": "2026-11",
+          "src": "https://www.lonelyplanet.com/articles/dublin-with-kids"
         }
       ]
     }
