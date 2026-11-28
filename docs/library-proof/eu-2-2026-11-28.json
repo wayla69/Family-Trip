@@ -1,0 +1,557 @@
+{
+  "town": "eu (Europe round 2: Brussels, Copenhagen, Nice, Strasbourg, Edinburgh, York, the Lake District, Ireland, Amalfi, Milan, Sicily, Venice, Munich, the Disneyland Paris area)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Europe notes (official tourism and city sites count as official; otherwise a 2025–2026 page; no chains, no bars, no hotel restaurants, no affiliate or holiday-rental pages) -> scripts/library-check.cjs (one name that failed only on a curly apostrophe re-read) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town; kept by hand: Mimí Pizzeria & Cucina (Da Mimì under its Maps name, same Ravello address), Torre Normanna (a place page in Maiori), Tana Space (Tana Liberi Tutti, same Milan address) -> Thai and English by writer agents to docs/STYLE.md.",
+  "towns": {
+    "be-brussels": {
+      "eat": [
+        {
+          "name": "PauseandPlay Indoor Playground Café",
+          "src": "https://worldwildschooling.com/best-kids-friendly-cafes-in-brussels-and-around-map/"
+        },
+        {
+          "name": "Leopold Café Presse",
+          "src": "https://worldwildschooling.com/best-kids-friendly-cafes-in-brussels-and-around-map/"
+        },
+        {
+          "name": "Kamilou",
+          "src": "https://worldwildschooling.com/best-kids-friendly-cafes-in-brussels-and-around-map/"
+        },
+        {
+          "name": "La Laiterie",
+          "src": "https://www.elle.be/fr/272561-restos-kids-friendly-a-tester-en-famille.html"
+        },
+        {
+          "name": "La Cabane d'Ayden",
+          "src": "https://worldwildschooling.com/best-kids-friendly-cafes-in-brussels-and-around-map/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Stardust Park",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/"
+        },
+        {
+          "name": "The Family Station",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/"
+        },
+        {
+          "name": "Van Buuren Museum & Gardens",
+          "src": "https://www.museumvanbuuren.be/en/visit"
+        },
+        {
+          "name": "Royal Peruchet Theatre",
+          "src": "https://theatreperuchet.be/"
+        }
+      ]
+    },
+    "dk-copenhagen": {
+      "eat": [
+        {
+          "name": "Bistro Royal",
+          "src": "https://www.visitcopenhagen.com/copenhagen/eat-drink/restaurants/family-friendly-restaurants"
+        },
+        {
+          "name": "Café Bopa",
+          "src": "https://www.visitcopenhagen.com/copenhagen/eat-drink/restaurants/family-friendly-restaurants"
+        },
+        {
+          "name": "Folkehuset Absalon",
+          "src": "https://www.visitcopenhagen.com/copenhagen/eat-drink/restaurants/family-friendly-restaurants"
+        },
+        {
+          "name": "Juno the Bakery",
+          "src": "https://www.copenhagentourism.org/best-bakeries-copenhagen/"
+        },
+        {
+          "name": "Hart Bageri",
+          "src": "https://www.copenhagentourism.org/best-bakeries-copenhagen/"
+        },
+        {
+          "name": "Andersen & Maillard",
+          "src": "https://www.copenhagentourism.org/best-bakeries-copenhagen/"
+        },
+        {
+          "name": "Lille Bakery",
+          "src": "https://www.copenhagentourism.org/best-bakeries-copenhagen/"
+        }
+      ]
+    },
+    "fr-nice": {
+      "eat": [
+        {
+          "name": "Chez Max Les Flots Bleus – Saint-Laurent-du-Var",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/chez-max/"
+        },
+        {
+          "name": "Jardin Du Cap",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/le-jardin-du-cap/"
+        },
+        {
+          "name": "Evasion",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/evasion/"
+        },
+        {
+          "name": "Panasia",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/le-panasia/"
+        },
+        {
+          "name": "La Merenda deï Cagnenc",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/restaurant-la-merenda-dei-cagnenc/"
+        },
+        {
+          "name": "Cigalon Plage",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/cigalon-beach-restaurant/"
+        },
+        {
+          "name": "Brasserie La Régence Café",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/la-regence-cafe/"
+        },
+        {
+          "name": "Le Brasier",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/le-brasier/"
+        },
+        {
+          "name": "La Socca d'Or",
+          "src": "https://www.explorenicecotedazur.com/en/info/restaurant-socca-d-or-en"
+        },
+        {
+          "name": "A l'Auberge'in Kat et Max",
+          "src": "https://www.explorenicecotedazur.com/en/restaurant/a-laubergein-kat-et-max/"
+        }
+      ]
+    },
+    "fr-strasbourg": {
+      "eat": [
+        {
+          "name": "Zuem Strissel",
+          "src": "https://fr.gaultmillau.com/en/restaurants/winstub-zuem-strissel"
+        },
+        {
+          "name": "Winstub le Clou",
+          "src": "https://fr.gaultmillau.com/restaurant/winstub-le-clou"
+        },
+        {
+          "name": "Wistub de la Petite Venise",
+          "src": "https://fr.gaultmillau.com/en/restaurant/winstub-de-la-petite-venise"
+        },
+        {
+          "name": "Au Fond du Jardin",
+          "src": "https://www.lebonbon.fr/strasbourg/news/fond-jardin-salon-the-strasbourg-meilleur-france/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Musée Historique",
+          "src": "https://www.strasbourg.eu/lieu/-/entity/id/685940/musee-historique"
+        },
+        {
+          "name": "Jardin Botanique de l'université de Strasbourg",
+          "src": "https://jardin-sciences.unistra.fr/visite/le-jardin-botanique"
+        }
+      ]
+    },
+    "gb-edinburgh": {
+      "eat": [
+        {
+          "name": "Luckenbooths",
+          "src": "https://edinburgh.org/food-and-drink/family-friendly-food-and-drink-in-edinburgh/"
+        },
+        {
+          "name": "McLarens on the Corner",
+          "src": "https://edinburgh.org/food-and-drink/family-friendly-food-and-drink-in-edinburgh/"
+        },
+        {
+          "name": "Dine Murrayfield",
+          "src": "https://edinburgh.org/food-and-drink/family-friendly-food-and-drink-in-edinburgh/"
+        },
+        {
+          "name": "Badger & Co",
+          "src": "https://edinburgh.org/point-of-interest/badger-co/"
+        },
+        {
+          "name": "Hendersons",
+          "src": "https://edinburgh.org/point-of-interest/hendersons-eat-better-live-better/"
+        },
+        {
+          "name": "Rising Tide Cafe",
+          "src": "https://edinburgh.org/point-of-interest/rising-tide-cafe/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Jupiter Artland",
+          "src": "https://www.jupiterartland.org/tickets/"
+        },
+        {
+          "name": "Lauriston Castle",
+          "src": "https://cultureedinburgh.com/our-venues/lauriston-castle"
+        }
+      ]
+    },
+    "gb-lakes": {
+      "eat": [
+        {
+          "name": "Royal Oak",
+          "src": "https://www.thelakedistrict.org/kpkq"
+        }
+      ]
+    },
+    "gb-york": {
+      "eat": [
+        {
+          "name": "The Balloon Tree Farmshop & Cafe",
+          "src": "https://little-vikings.co.uk/fun-places-to-eat-in-york-families/"
+        },
+        {
+          "name": "Fancy Hank's Bar & Kitchen",
+          "src": "https://theyorkshirepress.co.uk/food-drink/family-friendly-restaurants-in-york/"
+        },
+        {
+          "name": "Ate O'Clock",
+          "src": "https://theyorkshirepress.co.uk/food-drink/family-friendly-restaurants-in-york/"
+        },
+        {
+          "name": "The Perky Peacock",
+          "src": "https://little-vikings.co.uk/places-to-eat-with-a-view-yorkshire/"
+        },
+        {
+          "name": "The Riverfront York",
+          "src": "https://little-vikings.co.uk/places-to-eat-with-a-view-yorkshire/"
+        },
+        {
+          "name": "SOPHiE, Lendal Bridge",
+          "src": "https://little-vikings.co.uk/places-to-eat-with-a-view-yorkshire/"
+        },
+        {
+          "name": "SOPHiE, Skeldergate Bridge",
+          "src": "https://little-vikings.co.uk/places-to-eat-with-a-view-yorkshire/"
+        },
+        {
+          "name": "Full Moo Ice Cream Boat",
+          "src": "https://little-vikings.co.uk/best-cafes-york-river/"
+        },
+        {
+          "name": "Two Hoots Ice Cream Boat",
+          "src": "https://little-vikings.co.uk/best-cafes-york-river/"
+        }
+      ]
+    },
+    "ie-ireland": {
+      "eat": [
+        {
+          "name": "BIGFAN",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well"
+        },
+        {
+          "name": "Old St",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well"
+        },
+        {
+          "name": "SOLE Seafood & Grill",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well"
+        },
+        {
+          "name": "Nightmarket",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well"
+        },
+        {
+          "name": "Doolally",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well"
+        },
+        {
+          "name": "Wrights Anglers Rest",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well"
+        },
+        {
+          "name": "Cava Bodega",
+          "src": "https://www.irishtimes.com/food/2025/08/09/fifteen-restaurants-where-adults-and-kids-will-eat-happily-and-well"
+        },
+        {
+          "name": "Kaph",
+          "src": "https://www.dublintown.ie/stories-guides/family-friendly-coffee-shops-in-dublin/"
+        },
+        {
+          "name": "First Chapter",
+          "src": "https://www.dublintown.ie/stories-guides/family-friendly-coffee-shops-in-dublin/"
+        }
+      ]
+    },
+    "it-amalfi": {
+      "eat": [
+        {
+          "name": "Mimí Pizzeria & Cucina",
+          "src": "https://www.positano.com/en/c/ristorante-da-mimi"
+        },
+        {
+          "name": "Ristorante Vittoria",
+          "src": "https://www.positano.com/en/c/ristorante-vittoria"
+        },
+        {
+          "name": "Casa e Bottega",
+          "src": "https://www.positano.com/en/c/casa-e-bottega"
+        },
+        {
+          "name": "La Tonnarella",
+          "src": "https://www.positano.com/en/c/la-tonnarella"
+        },
+        {
+          "name": "'A Paranza",
+          "src": "https://www.positano.com/en/c/paranza"
+        },
+        {
+          "name": "Torre Normanna",
+          "src": "https://www.positano.com/en/c/torre-normanna"
+        },
+        {
+          "name": "Raki",
+          "src": "https://exploredbymarta.com/travel/italy/things-to-do-in-sorrento-italy/"
+        }
+      ]
+    },
+    "it-milan": {
+      "eat": [
+        {
+          "name": "Al Garghet",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/"
+        },
+        {
+          "name": "Tana Space",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/"
+        },
+        {
+          "name": "Le Specialità",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/"
+        },
+        {
+          "name": "Hug",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/"
+        },
+        {
+          "name": "Cooperativa Cascina Biblioteca",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Wonderwood Green Forest",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": "Zero Gravity Freestyle Park",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": "MIC – Interactive Cinema Museum",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": "STEP FuturAbility District",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": "Villa Finzi park",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": "Giardini Ezio Lucarelli",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": "Parco Chiesa Rossa",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": "Giardini Martinetti",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": "Il Villaggio dei Bambini, Idroscalo",
+          "src": "https://www.milanofree.it/milano/bambini/idroscalo-di-milano-cosa-fare-con-i-bambini.html"
+        },
+        {
+          "name": "MUDEC – Museum of Cultures",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/"
+        },
+        {
+          "name": "Acquaworld",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        }
+      ]
+    },
+    "it-sicily": {
+      "eat": [
+        {
+          "name": "Sazi e Sani - Catania",
+          "src": "https://www.thebellaboot.com/blog/catania-food-guide"
+        },
+        {
+          "name": "Levante Gelato Artigianale",
+          "src": "https://www.thebellaboot.com/blog/catania-food-guide"
+        },
+        {
+          "name": "Pasticceria Sottile",
+          "src": "https://www.thebellaboot.com/blog/catania-food-guide"
+        },
+        {
+          "name": "Bar Pasticceria Arabica",
+          "src": "https://www.thebellaboot.com/blog/catania-food-guide"
+        },
+        {
+          "name": "Bar Pasticceria Spinella",
+          "src": "https://www.thebellaboot.com/blog/catania-food-guide"
+        },
+        {
+          "name": "Laboratorio Pasticceria Roberto",
+          "src": "https://www.sicilyvoyages.com/where-to-eat-in-taormina-with-kids/"
+        },
+        {
+          "name": "Tito Mare fresh & fried street food",
+          "src": "https://www.nostrofiglio.it/famiglia/viaggi/ortigia-con-i-bambini-l-isola-siciliana-tra-piazze-scenografiche-miti-e-riti-golosi"
+        },
+        {
+          "name": "Trattoria La Foglia",
+          "src": "https://www.nostrofiglio.it/famiglia/viaggi/ortigia-con-i-bambini-l-isola-siciliana-tra-piazze-scenografiche-miti-e-riti-golosi"
+        }
+      ]
+    },
+    "it-venice": {
+      "eat": [
+        {
+          "name": "Osteria Acquastanca",
+          "src": "https://thetourguy.com/travel-blog/italy/venice/best-restaurants-in-murano-and-burano-venice/"
+        },
+        {
+          "name": "Murano Trattoria Valmarana",
+          "src": "https://thetourguy.com/travel-blog/italy/venice/best-restaurants-in-murano-and-burano-venice/"
+        },
+        {
+          "name": "B Restaurant alla Vecchia Pescheria",
+          "src": "https://thetourguy.com/travel-blog/italy/venice/best-restaurants-in-murano-and-burano-venice/"
+        },
+        {
+          "name": "Panini e Vini da Babbo",
+          "src": "https://mominitaly.com/where-to-eat-in-venice-with-kids/"
+        },
+        {
+          "name": "Bacarando Corte dell'Orso",
+          "src": "https://mominitaly.com/where-to-eat-in-venice-with-kids/"
+        },
+        {
+          "name": "Panificio Pavan",
+          "src": "https://mominitaly.com/where-to-eat-in-venice-with-kids/"
+        }
+      ]
+    },
+    "de-munich": {
+      "do": [
+        {
+          "name": "Munich Action Park",
+          "src": "https://www.muenchen.de/sehenswuerdigkeiten/muenchen-bei-regen-tipps-fuer-spannende-indoor-aktivitaeten"
+        },
+        {
+          "name": "Adventure playground Hasenbergl (ABIX)",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": "Adventure playground Maulwurfshausen",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": "Adventure playground ASP Neuhausen",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": "Westpark water playground",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": "Riemer See",
+          "src": "https://stadt.muenchen.de/service/info/riemer-see/10313894/"
+        },
+        {
+          "name": "Lerchenauer See",
+          "src": "https://stadt.muenchen.de/service/info/lerchenauer-see/10313887/"
+        },
+        {
+          "name": "Feldmochinger See",
+          "src": "https://www.muenchen.de/freizeit/badeseen-muenchen-und-umgebung"
+        },
+        {
+          "name": "Lußsee",
+          "src": "https://www.muenchen.de/freizeit/badeseen-muenchen-und-umgebung"
+        }
+      ]
+    },
+    "p-disney-paris": {
+      "do": [
+        {
+          "name": "Palomano Val d'Europe",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/346783-palomano-the-educational-play-park-for-kids-opens-a-new-location-in-val-d-europe"
+        },
+        {
+          "name": "Île de Loisirs de Vaires-Torcy",
+          "src": "https://vaires-torcy.iledeloisirs.fr/"
+        },
+        {
+          "name": "Ferme pédagogique de La Prée",
+          "src": "https://onivapp.com/blog/ferme-pedagogique-autour-de-meaux"
+        },
+        {
+          "name": "Château de Champs-sur-Marne",
+          "src": "https://www.sortiraparis.com/en/what-to-visit-in-paris/walks/articles/193135-for-the-2026-jardins-events-at-the-chateau-de-champs-sur-marne-family-friendly-scavenger-hunts-and-workshops"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "Da Adolfo",
+      "Antica Gelateria Sorrentina",
+      "L'atelier TiPi",
+      "Sugar Crash",
+      "Rocket's",
+      "Arsouille",
+      "SULT",
+      "Bette Café",
+      "Belle Epoque",
+      "La Casa del Gelato",
+      "Super Heroes Steakhouse",
+      "Uovodiseppia Café",
+      "Rabbit Hole Café",
+      "Bocca Mar",
+      "Gelateria Iceberg",
+      "Trattoria Andri",
+      "Il Paradiso Perduto"
+    ],
+    "another place on Google Maps": [
+      "Plush Cafe (Toronto)",
+      "Huckleberry's Diner (Lincoln)",
+      "Elite Happynest (Bangkok)"
+    ],
+    "not pinned to one place on Google Maps": [
+      "Møller Kafe & Bageri",
+      "Mamma Farina",
+      "Cascina Bellaria",
+      "La Cantina",
+      "Rosticceria Da Cristina",
+      "Farini"
+    ],
+    "undated or gone page": [
+      "six Brussels playgrounds and the Chalet Robinson (environnement.brussels blog, now offline)",
+      "five Strasbourg cafés and Plumy Park (CitizenKid, no date)",
+      "three Munich restaurants (muenchen.de page of 2022)"
+    ],
+    "refused source": [
+      "four Catania rows (a holiday-rental host's blog)"
+    ],
+    "other": [
+      "chains: Sticks'n'Sushi, Halifax, Pizzium, Hello Kitty Café, Minuto Bauli",
+      "bars or hotel restaurants: Lake View Garden Bar, Top Cut Steak & Cocktails, Eve",
+      "CityLife (shopping district)",
+      "Krep Truck (inside an existing food-court row)",
+      "Op Weule, Bageriet Brødflov (quote or name not on the page)"
+    ]
+  }
+}

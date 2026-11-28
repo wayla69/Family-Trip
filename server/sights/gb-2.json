@@ -1667,6 +1667,86 @@
           },
           "q": "Tumbles at Portobello, 20 Westbank Street, Edinburgh",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Jupiter Artland",
+            "th": "จูปิเตอร์ อาร์ตแลนด์"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Wilkieston, Edinburgh",
+            "th": "วิลกีสตัน เอดินบะระ"
+          },
+          "what": {
+            "en": "An outdoor sculpture park and woodland of art works, open to visitors in the winter months.",
+            "th": "สวนประติมากรรมกลางแจ้งและป่าที่มีผลงานศิลปะ เปิดให้เข้าชมช่วงฤดูหนาว"
+          },
+          "why": {
+            "en": "Children and dogs go free in winter, and the outdoor programme is for children of all ages.",
+            "th": "เด็กและสุนัขเข้าฟรีในฤดูหนาว และโปรแกรมกลางแจ้งเหมาะกับเด็กทุกวัย"
+          },
+          "tip": {
+            "en": "Open Friday to Sunday in November and December 2026, 10:00–16:00, last entry 15:00",
+            "th": "เปิดศุกร์–อาทิตย์ในเดือนพฤศจิกายนและธันวาคม 2026 เวลา 10:00–16:00 เข้าได้ถึง 15:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Jupiter Artland, Bonnington House, Wilkieston, Edinburgh EH27 8, UK",
+          "ok": "2026-11",
+          "src": "https://www.jupiterartland.org/tickets/"
+        },
+        {
+          "name": {
+            "en": "Lauriston Castle",
+            "th": "ปราสาทลอริสตัน"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Cramond Road South, Edinburgh",
+            "th": "Cramond Road South เอดินบะระ"
+          },
+          "what": {
+            "en": "Gardens free to enter all year round, beside a castle with a guided tour and family workshops.",
+            "th": "สวนเข้าฟรีตลอดปี ติดกับปราสาทที่มีทัวร์นำชมและเวิร์กช็อปสำหรับครอบครัว"
+          },
+          "why": {
+            "en": "The castle runs family activities and creative workshops through the year; workshops suit ages 5+ with a paying adult.",
+            "th": "ปราสาทจัดกิจกรรมครอบครัวและเวิร์กช็อปสร้างสรรค์ตลอดปี เวิร์กช็อปเหมาะกับ 5 ขวบขึ้นไปพร้อมผู้ใหญ่ที่จ่ายค่าเข้า"
+          },
+          "tip": {
+            "en": "The castle is visited by a guided tour booked online; the family workshops are pre-booked",
+            "th": "ชมปราสาทด้วยทัวร์นำชมที่จองออนไลน์ เวิร์กช็อปครอบครัวต้องจองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free (gardens)",
+            "th": "ฟรี (สวน)"
+          },
+          "book": "rec",
+          "q": "Lauriston Castle, 2a Cramond Road South, Edinburgh EH4 6AD, UK",
+          "ok": "2026-11",
+          "src": "https://cultureedinburgh.com/our-venues/lauriston-castle"
         }
       ]
     },
