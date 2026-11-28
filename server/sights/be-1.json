@@ -1440,6 +1440,126 @@
           "q": "Théâtre Royal du Peruchet, Avenue de la Forêt 50, 1050 Ixelles, Brussels, Belgium",
           "ok": "2026-11",
           "src": "https://theatreperuchet.be/"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Ferme Nos Pilifs",
+            "th": "ฟาร์มโนส์ ปีลิฟส์"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Neder-Over-Heembeek",
+            "th": "เนเดอร์-โอเวอร์-เฮมเบก"
+          },
+          "what": {
+            "en": "An animation farm on 5 hectares where children meet the animals, see the vegetable garden and explore biodiversity",
+            "th": "ฟาร์มกิจกรรมบนพื้นที่ 5 เฮกตาร์ เด็ก ๆ ได้พบสัตว์ ชมแปลงผัก และเรียนรู้ความหลากหลายทางชีวภาพ"
+          },
+          "why": {
+            "en": "Meeting the farm animals and the vegetable garden suits small children, and there is a lot of open green space to run in",
+            "th": "ได้พบสัตว์ในฟาร์มและแปลงผักถูกใจเด็กเล็ก และมีพื้นที่สีเขียวกว้างให้วิ่งเล่น"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ferme Nos Pilifs, Trassersweg 347, Neder-Over-Heembeek, Brussels, Belgium",
+          "src": "https://fermenospilifs.be/"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Rouge-Cloître playground",
+            "th": "สนามเด็กเล่นรูจ-โคลตร์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Auderghem",
+            "th": "โอเดอร์เกม"
+          },
+          "what": {
+            "en": "An outdoor playground in a green space with swings, slides and a zip line",
+            "th": "สนามเด็กเล่นกลางแจ้งในพื้นที่สีเขียว มีชิงช้า สไลเดอร์ และสายลวดไหล"
+          },
+          "why": {
+            "en": "Swings, slides and a zip line for children of all ages, in a calm green setting where parents can relax",
+            "th": "ชิงช้า สไลเดอร์ และสายลวดไหลสำหรับเด็กทุกวัย ในบรรยากาศสีเขียวสงบที่พ่อแม่นั่งพักได้"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Playground The Red Closter, Rue du Rouge-Cloître, Auderghem, Brussels, Belgium",
+          "src": "https://bruxellessecrete.com/en/playgrounds-brussels/"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Rainbow Kids",
+            "th": "เรนโบว์ คิดส์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Auderghem (Auderghem shopping centre)",
+            "th": "โอเดอร์เกม (ในศูนย์การค้าโอเดอร์เกม)"
+          },
+          "what": {
+            "en": "An indoor play centre with a Pampers Zone, a psychomotor maze and a bouncy castle",
+            "th": "ศูนย์เล่นในร่ม มีโซนแพมเพอร์ส เขาวงกตฝึกการเคลื่อนไหว และบ้านบอลลูนให้เด้ง"
+          },
+          "why": {
+            "en": "Play areas made for little ones, and a cafeteria where parents can sit while the children play",
+            "th": "พื้นที่เล่นที่ทำมาเพื่อเด็กเล็ก และมีคาเฟทีเรียให้พ่อแม่นั่งระหว่างที่เด็กเล่น"
+          },
+          "tip": {
+            "en": "Indoors, so it suits a wet day",
+            "th": "อยู่ในร่ม เหมาะกับวันฝนตก"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "LS Rainbow Kids, Chaussée de Wavre 1308, Auderghem, Brussels, Belgium",
+          "src": "https://bruxellessecrete.com/en/playgrounds-brussels/"
         }
     ]
     }
