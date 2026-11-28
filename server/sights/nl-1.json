@@ -766,6 +766,290 @@
           "q": "Zorgboerderij De Marsen, Pikpotweg 1, Landsmeer, Netherlands",
           "ok": "2026-11",
           "src": "https://www.kidsproof.nl/amsterdam/blog/kinderboerderij-dieren-boerderij-spelen-amsterdam-amstelveen-zaandam/"
+        },
+        {
+          "name": {
+            "en": "Kinderboerderij De Bijlmerweide",
+            "th": "คินเดอร์บูร์เดอไรจ์ เดอ ไบล์เมอร์ไวเดอ"
+          },
+          "local": "Kinderboerderij De Bijlmerweide",
+          "kind": "farm",
+          "area": {
+            "en": "Bijlmerweide, Provincialeweg",
+            "th": "ไบล์เมอร์ไวเดอ ถนน Provincialeweg"
+          },
+          "what": {
+            "en": "A large farm with cows, donkeys, pigs, goats and sheep, plus rabbits, guinea pigs and old Dutch breeds.",
+            "th": "ฟาร์มใหญ่ มีวัว ลา หมู แพะ แกะ รวมถึงกระต่าย หนูตะเภา และสัตว์พันธุ์ดั้งเดิมของเนเธอร์แลนด์"
+          },
+          "why": {
+            "en": "Children can feed and stroke the animals; there is a big playground and a canteen selling fresh eggs.",
+            "th": "เด็กๆ ให้อาหารและลูบสัตว์ได้ มีสนามเด็กเล่นใหญ่และโรงอาหารขายไข่สด"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kinderboerderij De Bijlmerweide, Provincialeweg 46-A, 1103 SB Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/kinderboerderij-bijlmerweide-de-bijlmerweide-kinderboerderij/"
+        },
+        {
+          "name": {
+            "en": "Zimmerhoeve kinderboerderij",
+            "th": "คินเดอร์บูร์เดอไรจ์ ซิมเมอร์ฮูเฟอ"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Oud-West, Schimmelstraat",
+            "th": "เอาด์-เวสต์ ถนน Schimmelstraat"
+          },
+          "what": {
+            "en": "A wooden city farm in Oud-West with chickens, sheep, pigs, cats and dogs, and goats called Bloem, Lala and Stippel.",
+            "th": "ฟาร์มไม้กลางย่านเอาด์-เวสต์ มีไก่ แกะ หมู แมว หมา และแพะชื่อ Bloem, Lala และ Stippel"
+          },
+          "why": {
+            "en": "The goats have names and children can try to tell them apart, right in the middle of the city.",
+            "th": "แพะมีชื่อ เด็กๆ ลองแยกว่าตัวไหนเป็นตัวไหนได้ กลางเมืองเลย"
+          },
+          "tip": {
+            "en": "In spring and autumn it opens at 12:00 because of school lessons",
+            "th": "ช่วงฤดูใบไม้ผลิและใบไม้ร่วงเปิดเวลา 12:00 เพราะมีเด็กนักเรียนมาเรียน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Zimmerhoeve kinderboerderij, Schimmelstraat 44, 1053 TH Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/stadsboerderij-zimmerhoeve-stadsboerderij-zimmerhoeve/"
+        },
+        {
+          "name": {
+            "en": "Kinderboerderij De Buiktuin",
+            "th": "คินเดอร์บูร์เดอไรจ์ เดอ บุยก์ทัยน์"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Noordhollandschkanaaldijk",
+            "th": "ถนน Noordhollandschkanaaldijk อัมสเตอร์ดัม"
+          },
+          "what": {
+            "en": "A farm with a tame goose called Lady, mini pigs, dwarf goats, rabbits and aviary birds.",
+            "th": "ฟาร์มที่มีห่านเชื่องชื่อ Lady หมูจิ๋ว แพะแคระ กระต่าย และนกในกรง"
+          },
+          "why": {
+            "en": "Children can call to the goose, which calls back, and see the mini pigs and the rabbits.",
+            "th": "เด็กๆ ลองเรียกห่าน ห่านจะร้องตอบ และได้ดูหมูจิ๋วกับกระต่าย"
+          },
+          "tip": {
+            "en": "Bring leftover bread, vegetables or fruit for the animals",
+            "th": "เอาขนมปัง ผัก หรือผลไม้ที่เหลือไปให้สัตว์ได้"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kinderboerderij De Buiktuin, Noordhollandschkanaaldijk 19, 1034 ZL Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/kinderboerderij-de-buiktuin-kinderboerderij-de-buiktuin/"
+        },
+        {
+          "name": {
+            "en": "Stichting De Dierencapel",
+            "th": "สติชติง เดอ ดีเรินคาเปล"
+          },
+          "local": "De Dierencapel",
+          "kind": "farm",
+          "area": {
+            "en": "Bickersgracht, Amsterdam",
+            "th": "ถนน Bickersgracht อัมสเตอร์ดัม"
+          },
+          "what": {
+            "en": "A small farm by the water where children can stroke the sheep, walk among the animals and pick fresh eggs.",
+            "th": "ฟาร์มเล็กริมน้ำ เด็กๆ ลูบแกะ เดินดูสัตว์ และเก็บไข่สดได้"
+          },
+          "why": {
+            "en": "Gentle and small, a farm outing for young and old right in the city.",
+            "th": "เล็กและอ่อนโยน เป็นการไปเที่ยวฟาร์มสำหรับทุกวัยกลางเมือง"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Stichting De Dierencapel, Bickersgracht 207, 1013 LH Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/de-dierencapel-kinderboerderij-eropuit-dieren-natuur/"
+        },
+        {
+          "name": {
+            "en": "Kinderboerderij De Uylenburg",
+            "th": "คินเดอร์บูร์เดอไรจ์ เดอ เอาลเลินบูร์ค"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Rembrandtpark, Staalmeesterslaan",
+            "th": "เรมบรานต์พาร์ก ถนน Staalmeesterslaan"
+          },
+          "what": {
+            "en": "A farm with big and small animals inside the Rembrandtpark.",
+            "th": "ฟาร์มที่มีสัตว์ใหญ่และเล็ก ตั้งอยู่ในสวนเรมบรานต์พาร์ก"
+          },
+          "why": {
+            "en": "It sits inside a city park, so it fits a walk in the park.",
+            "th": "อยู่ในสวนสาธารณะของเมือง แวะได้ระหว่างเดินเล่นในสวน"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kinderboerderij De Uylenburg, Staalmeesterslaan 420, 1057 PH Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/kinderboerderij-de-uylenburg-dieren-in-het-rembrandtpark/"
+        },
+        {
+          "name": {
+            "en": "WOPL!",
+            "th": "วอปล์"
+          },
+          "local": "WOPL! (World of Play & Learning)",
+          "kind": "play",
+          "area": {
+            "en": "Stadionplein, Amsterdam",
+            "th": "สตาดิโอนพลาย อัมสเตอร์ดัม"
+          },
+          "what": {
+            "en": "Indoor play worlds for children aged 1 to 8, developed with a pedagogue, with three play worlds to explore.",
+            "th": "โลกเล่นในร่มสำหรับเด็ก 1–8 ขวบ พัฒนาร่วมกับนักการศึกษา มีสามโซนให้สำรวจ"
+          },
+          "why": {
+            "en": "Made for ages 1 to 8, with a place where parents can have coffee or lunch while the children play.",
+            "th": "ทำมาเพื่อเด็ก 1–8 ขวบ มีที่ให้พ่อแม่นั่งดื่มกาแฟหรือกินมื้อกลางวันระหว่างเด็กๆ เล่น"
+          },
+          "tip": {
+            "en": "Booking is recommended; allow about two hours",
+            "th": "แนะนำให้จองล่วงหน้า เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "WOPL!, Stadionplein 300, 1076 CK Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.wopl.nl/"
+        },
+        {
+          "name": {
+            "en": "Sloterparkbad",
+            "th": "สโลเทอร์พาร์กบาด"
+          },
+          "local": "Het Sloterparkbad",
+          "kind": "play",
+          "area": {
+            "en": "Sloterpark, President Allendelaan",
+            "th": "สโลเทอร์พาร์ก ถนน President Allendelaan"
+          },
+          "what": {
+            "en": "A large swimming complex with a 58-metre slide, a toddler pool and a 50-metre competition pool.",
+            "th": "ศูนย์ว่ายน้ำขนาดใหญ่ มีสไลเดอร์ยาว 58 เมตร สระเด็กเล็ก และสระแข่งขัน 50 เมตร"
+          },
+          "why": {
+            "en": "A toddler pool for the little ones, with a slide and a bubble bath for older children.",
+            "th": "มีสระสำหรับเด็กเล็ก ส่วนเด็กโตมีสไลเดอร์และอ่างน้ำวน"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sloterparkbad, President Allendelaan 3, 1064 GW Amsterdam, Netherlands",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/eropuit/sloterparkbad/zwemmen-sloterpark-recreatie-zwemles-uitje"
         }
     ]
     }

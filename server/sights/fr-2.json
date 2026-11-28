@@ -1569,6 +1569,166 @@
           "q": "Musée des Sapeurs-Pompiers de Lyon, 358 Avenue de Champagne, Lyon 9, France",
           "ok": "2026-11",
           "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": {
+            "en": "Parc Georges Bazin",
+            "th": "ปาร์ก ฌอร์ฌ บาแซ็ง"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Montchat, Lyon 3",
+            "th": "มงต์ชา ลียงเขต 3"
+          },
+          "what": {
+            "en": "A park with large lawns for ball games and a play area.",
+            "th": "สวนสาธารณะที่มีสนามหญ้ากว้างสำหรับเล่นบอล และมีลานเด็กเล่น"
+          },
+          "why": {
+            "en": "Slides and roundabouts for little ones; climbing frames and ping-pong tables for older children.",
+            "th": "มีสไลเดอร์และม้าหมุนสำหรับเด็กเล็ก โครงปีนและโต๊ะปิงปองสำหรับเด็กโต"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc Georges Bazin, 16 Av. des Acacias, 69003 Lyon, France",
+          "ok": "2026-11",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/lyon-parks-squares-and-play-areas-for-happy-children"
+        },
+        {
+          "name": {
+            "en": "Parc de la Visitation",
+            "th": "ปาร์ก เดอ ลา วิซีตาซียง"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Fourvière, Lyon 5",
+            "th": "ฟูร์วีแยร์ ลียงเขต 5"
+          },
+          "what": {
+            "en": "A shaded, quiet garden in the Fourvière district with a play area.",
+            "th": "สวนร่มรื่นเงียบสงบในย่านฟูร์วีแยร์ มีลานเด็กเล่น"
+          },
+          "why": {
+            "en": "A pirate boat, slides, roundabouts and climbing frames in the shade.",
+            "th": "มีเรือโจรสลัด สไลเดอร์ ม้าหมุน และโครงปีน อยู่ใต้ร่มไม้"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc de la Visitation, 69005 Lyon, France",
+          "ok": "2026-11",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/lyon-parks-squares-and-play-areas-for-happy-children"
+        },
+        {
+          "name": {
+            "en": "Parc de Gerland",
+            "th": "ปาร์ก เดอ แฌร์ล็อง"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Gerland, Lyon 7",
+            "th": "แฌร์ลอง ลียงเขต 7"
+          },
+          "what": {
+            "en": "A large park for leisure and sport with a wide play lawn, a promenade, family gardens and a skate park.",
+            "th": "สวนสาธารณะขนาดใหญ่สำหรับพักผ่อนและออกกำลังกาย มีสนามหญ้ากว้าง ทางเดินเล่น สวนครอบครัว และสเกตพาร์ก"
+          },
+          "why": {
+            "en": "A vast play lawn and room to run.",
+            "th": "มีสนามหญ้ากว้างให้เล่นและวิ่ง"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc de Gerland, All. Pierre de Coubertin, 69007 Lyon, France",
+          "ok": "2026-11",
+          "src": "https://www.lyon.fr/node/28877"
+        },
+        {
+          "name": {
+            "en": "Piscine de Vaise",
+            "th": "ปิซีน เดอ แวซ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Vaise, Lyon 9",
+            "th": "แวซ ลียงเขต 9"
+          },
+          "what": {
+            "en": "A public pool with a play pool for young children and a 50 m olympic basin.",
+            "th": "สระว่ายน้ำสาธารณะ มีสระเล่นน้ำสำหรับเด็กเล็กและสระโอลิมปิกยาว 50 เมตร"
+          },
+          "why": {
+            "en": "A play pool for young children, 84 cm deep at most.",
+            "th": "มีสระเล่นน้ำสำหรับเด็กเล็ก ลึกไม่เกิน 84 เซนติเมตร"
+          },
+          "tip": {
+            "en": "Book a slot on the pool booking site before you go.",
+            "th": "จองรอบผ่านเว็บไซต์จองสระก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "en": "≈ €4 per entry (full price)",
+            "th": "≈ €4 ต่อครั้ง (ราคาเต็ม)"
+          },
+          "book": "rec",
+          "q": "Pool Vaise, 50 Av. Sidoine Apollinaire, 69009 Lyon, France",
+          "ok": "2026-11",
+          "src": "https://www.lyon.fr/lieu/piscines-ete/piscine-de-vaise"
         }
       ]
     },
@@ -2994,6 +3154,206 @@
           "q": "BlackTenders Nice, 51 Quai Entrecasteaux, Nice, France",
           "ok": "2026-11",
           "src": "https://www.explorenicecotedazur.com/app/uploads/2026/03/guide-famille-nice-gb-web-comp2.pdf"
+        },
+        {
+          "name": {
+            "en": "La Pinède",
+            "th": "ลา ปีเนด"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Juan-les-Pins, by the sea",
+            "th": "ฆวน-เล-แปง ริมทะเล"
+          },
+          "what": {
+            "en": "A pine grove in the heart of Juan-les-Pins, with a shaded north side and an open-air theatre on the south.",
+            "th": "ป่าสนกลางเมืองฆวน-เล-แปง ฝั่งเหนือร่มรื่น ฝั่งใต้มีโรงละครกลางแจ้ง"
+          },
+          "why": {
+            "en": "A children's playground and a merry-go-round sit in the north part of the grove.",
+            "th": "มีลานเด็กเล่นและม้าหมุนอยู่ในส่วนเหนือของป่าสน"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "La Pinède, 06160 Antibes (Juan-les-Pins), France",
+          "ok": "2026-11",
+          "src": "https://www.antibesjuanlespins.com/en/discover/walks-and-gardens/the-parks-and-gardens/the-pine-grove-la-pinede"
+        },
+        {
+          "name": {
+            "en": "Plage du Ponteil",
+            "th": "หาดปงเตย"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Old Antibes towards Cap d'Antibes",
+            "th": "ย่านเมืองเก่าอ็องตีบ ไปทางแหลมอ็องตีบ"
+          },
+          "what": {
+            "en": "Two long sandy beaches, Ponteil and Salis, leaving Old Antibes towards Cap d'Antibes, with a large car park.",
+            "th": "หาดทรายยาวสองแห่ง คือปงเตยและซาลีส ออกจากเมืองเก่าอ็องตีบไปทางแหลมอ็องตีบ มีที่จอดรถกว้าง"
+          },
+          "why": {
+            "en": "The water is shallow, so the page calls them perfect for young children.",
+            "th": "น้ำตื้น เว็บไซต์ท่องเที่ยวจึงบอกว่าเหมาะกับเด็กเล็กมาก"
+          },
+          "tip": {
+            "en": "Allow about three hours.",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plage du Ponteil, Antibes, France",
+          "ok": "2026-11",
+          "src": "https://www.antibesjuanlespins.com/en/discover/the-must-sees/the-beaches"
+        },
+        {
+          "name": {
+            "en": "Plage de la Gravette",
+            "th": "หาดลา กราเวต"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Antibes harbour",
+            "th": "ท่าเรืออ็องตีบ"
+          },
+          "what": {
+            "en": "A sandy beach reached from the harbour, shaded by the ramparts when the sun drops behind the roofs.",
+            "th": "หาดทรายที่เดินไปจากท่าเรือ ได้ร่มเงากำแพงเมืองเมื่อดวงอาทิตย์ลับหลังหลังคา"
+          },
+          "why": {
+            "en": "It is protected from the wind and the swell, and has a surveillance and emergency post.",
+            "th": "กำบังลมและคลื่น และมีจุดเฝ้าระวังและช่วยเหลือฉุกเฉิน"
+          },
+          "tip": {
+            "en": "Allow about three hours.",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plage de la Gravette, Antibes, France",
+          "ok": "2026-11",
+          "src": "https://www.antibesjuanlespins.com/en/discover/the-must-sees/the-beaches"
+        },
+        {
+          "name": {
+            "en": "Plage de Juan-les-Pins",
+            "th": "หาดฆวน-เล-แปง"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Juan-les-Pins, town centre to Golf-Juan",
+            "th": "ฆวน-เล-แปง จากกลางเมืองถึงทางออกไปกอล์ฟ-ฆวน"
+          },
+          "what": {
+            "en": "The public beaches of Juan-les-Pins run from the town centre to the exit towards Golf-Juan.",
+            "th": "หาดสาธารณะของฆวน-เล-แปง ยาวจากกลางเมืองไปจนถึงทางออกไปกอล์ฟ-ฆวน"
+          },
+          "why": {
+            "en": "Surveillance and emergency posts, food, showers and toilets are along them.",
+            "th": "ตลอดแนวหาดมีจุดเฝ้าระวังและช่วยเหลือฉุกเฉิน ร้านอาหาร ฝักบัว และห้องน้ำ"
+          },
+          "tip": {
+            "en": "Allow about three hours.",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plage de Juan-les-Pins, Juan-les-Pins, Antibes, France",
+          "ok": "2026-11",
+          "src": "https://www.antibesjuanlespins.com/en/discover/the-must-sees/the-beaches"
+        },
+        {
+          "name": {
+            "en": "Antibes Land Park",
+            "th": "แอนตีบส์ แลนด์ ปาร์ก"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Route de Biot, Antibes",
+            "th": "ถนนรูต เดอ บีโอต์ อ็องตีบ"
+          },
+          "what": {
+            "en": "The amusement park of Antibes.",
+            "th": "สวนสนุกของเมืองอ็องตีบ"
+          },
+          "why": {
+            "en": "The tourist office suggests it as the way to end a family day out in Antibes.",
+            "th": "สำนักงานท่องเที่ยวแนะนำเป็นที่ปิดท้ายวันเที่ยวของครอบครัวในอ็องตีบ"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Antibes Land Park, 301 Rte de Biot, 06600 Antibes, France",
+          "ok": "2026-11",
+          "src": "https://www.antibesjuanlespins.com/en/discover/visit-antibes-in/visit-antibes-juan-les-pins-with-family"
         }
       ]
     },
@@ -4605,6 +4965,86 @@
           "q": "Jardin Botanique de l'université de Strasbourg, 28 Rue Goethe, Strasbourg, France",
           "ok": "2026-11",
           "src": "https://jardin-sciences.unistra.fr/visite/le-jardin-botanique"
+        },
+        {
+          "name": {
+            "en": "Piscine de la Kibitzenau",
+            "th": "ปิซีน เดอ ลา คีบิตเซอโน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Kibitzenau, Strasbourg",
+            "th": "คีบิตเซอโน สตราสบูร์ก"
+          },
+          "what": {
+            "en": "A swimming pool with a separate paddling pool for the little ones and an outdoor water play area in fine weather.",
+            "th": "สระว่ายน้ำที่มีสระเด็กเล็กแยกต่างหาก และลานเล่นน้ำกลางแจ้งในช่วงอากาศดี"
+          },
+          "why": {
+            "en": "A 50 m² paddling pool with a small slide was built for the smallest children.",
+            "th": "มีสระเด็กเล็กขนาด 50 ตารางเมตรพร้อมสไลเดอร์เล็ก สร้างไว้สำหรับเด็กตัวเล็กที่สุด"
+          },
+          "tip": {
+            "en": "Family changing cubicles have a baby-changing table; the changing rooms are mixed.",
+            "th": "ห้องแต่งตัวครอบครัวมีโต๊ะเปลี่ยนผ้าอ้อม ห้องแต่งตัวรวมชายหญิง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Piscine de la Kibitzenau, 1 Rue de la Kibitzenau, 67100 Strasbourg, France",
+          "ok": "2026-11",
+          "src": "https://www.strasbourg.eu/lieu/-/entity/id/684484/piscine-de-la-kibitzenau"
+        },
+        {
+          "name": {
+            "en": "Piscine du Wacken",
+            "th": "ปิซีน ดู วากเคน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Wacken, Strasbourg",
+            "th": "วากเคน สตราสบูร์ก"
+          },
+          "what": {
+            "en": "Outdoor summer pools for parents and children, with water play outside in the warm months.",
+            "th": "สระกลางแจ้งในฤดูร้อนสำหรับพ่อแม่และเด็ก มีลานเล่นน้ำกลางแจ้งในเดือนที่อากาศอุ่น"
+          },
+          "why": {
+            "en": "In summer two shallow pools, mostly under one metre deep, take parents and children.",
+            "th": "ฤดูร้อนมีสระตื้นสองสระ ส่วนใหญ่ลึกไม่ถึงหนึ่งเมตร สำหรับพ่อแม่และเด็ก"
+          },
+          "tip": {
+            "en": "The summer pools are for the warm months only.",
+            "th": "สระฤดูร้อนเปิดเฉพาะเดือนที่อากาศอุ่น"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Piscine du Wacken, 8 Rue Pierre de Coubertin, 67000 Strasbourg, France",
+          "ok": "2026-11",
+          "src": "https://www.strasbourg.eu/lieu/-/entity/id/684492/piscine-du-wacken"
         }
       ]
     },

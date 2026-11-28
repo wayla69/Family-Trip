@@ -789,6 +789,166 @@
           "q": "House of Fishing and Nature, 22 All. Claude Monet, 92300 Levallois-Perret, France",
           "ok": "2026-11",
           "src": "https://www.sortiraparis.com/child-and-family/guides/42524-things-to-do-in-paris-with-the-kids-on-a-rainy-day/lang/en"
+        },
+        {
+          "name": {
+            "en": "La Ferme de Paris",
+            "th": "ลา แฟร์ม เดอ ปารีส"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Bois de Vincennes, Paris 12e",
+            "th": "บัวส์ เดอ แว็งแซนน์ ปารีสเขต 12"
+          },
+          "what": {
+            "en": "A 5-hectare working farm in the Bois de Vincennes, with sheep, goats, pigs, hens, ducks and rabbits.",
+            "th": "ฟาร์มใช้งานจริงขนาด 5 เฮกตาร์ในบัวส์ เดอ แว็งแซนน์ มีแกะ แพะ หมู ไก่ เป็ด และกระต่าย"
+          },
+          "why": {
+            "en": "Children can meet the animals; the paris.fr page lists workshops on animal care and the vegetable garden.",
+            "th": "เด็กๆ ได้พบสัตว์ และเว็บไซต์ paris.fr มีเวิร์กช็อปเรื่องการดูแลสัตว์และสวนผัก"
+          },
+          "tip": {
+            "en": "Opening hours change with the school holidays; check paris.fr before you go.",
+            "th": "เวลาเปิดเปลี่ยนตามช่วงปิดเทอม เช็กที่ paris.fr ก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "La Ferme de Paris, 24 Rte de la Tourelle, 75012 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/pages/la-ferme-de-paris-4489/"
+        },
+        {
+          "name": {
+            "en": "Les Fermes de Gally, Saint-Denis",
+            "th": "แฟร์ม เดอ กาลี แซ็ง-เดอนี"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Saint-Denis (93), urban farm",
+            "th": "แซ็ง-เดอนี (93) ฟาร์มในเมือง"
+          },
+          "what": {
+            "en": "An urban farm in Saint-Denis with an Easter egg hunt, animal feeding and workshops.",
+            "th": "ฟาร์มในเมืองที่แซ็ง-เดอนี มีกิจกรรมล่าไข่อีสเตอร์ ให้อาหารสัตว์ และเวิร์กช็อป"
+          },
+          "why": {
+            "en": "Children hunt for eggs across the farm and feed the animals; the egg hunt is for ages 3 to 10.",
+            "th": "เด็กๆ ตามหาไข่ทั่วฟาร์มและให้อาหารสัตว์ การล่าไข่สำหรับอายุ 3 ถึง 10 ปี"
+          },
+          "tip": {
+            "en": "Reserve your spots for the whole family before you come.",
+            "th": "จองที่สำหรับทั้งครอบครัวก่อนมา"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Les Fermes de Gally, 114 Av. de Stalingrad, 93200 Saint-Denis, France",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/news/easter/articles/273200-easter-2026-egg-hunt-and-animal-feeding-activities-at-gally-farm-saint-denis-93"
+        },
+        {
+          "name": {
+            "en": "Musée du quai Branly – Jacques Chirac",
+            "th": "พิพิธภัณฑ์เกแบรนลี–ฌัก ชีรัก"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Quai Jacques Chirac, Paris 7e",
+            "th": "เกฌัก ชีรัก ปารีสเขต 7"
+          },
+          "what": {
+            "en": "A museum that offers Ma petite visite contée, a narrated tour built for the youngest visitors and their parents.",
+            "th": "พิพิธภัณฑ์ที่มีทัวร์เล่านิทาน Ma petite visite contée จัดสำหรับผู้เข้าชมวัยเล็กที่สุดและพ่อแม่"
+          },
+          "why": {
+            "en": "A short, story-led visit made for the youngest visitors and their parents.",
+            "th": "เป็นการเยี่ยมชมสั้นๆ ผ่านเรื่องเล่า จัดสำหรับเด็กเล็กและพ่อแม่"
+          },
+          "tip": {
+            "en": "Allow about an hour for the family visit.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงสำหรับทัวร์ครอบครัว"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Musée du quai Branly – Jacques Chirac, 37 Quai Jacques Chirac, 75007 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.paris.fr/evenements/ma-petite-visite-contee-au-musee-du-quai-branly-124892"
+        },
+        {
+          "name": {
+            "en": "Les Petits Bateaux",
+            "th": "เล เปอตี บาโตว์ ในสวนตุยเลอรี"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Grand Bassin, Jardin des Tuileries, Paris 1er",
+            "th": "แกรนด์ บาแซ็ง สวนตุยเลอรี ปารีสเขต 1"
+          },
+          "what": {
+            "en": "Small motorless sailboats that children push with a rod on the Grand Bassin.",
+            "th": "เรือใบเล็กไม่มีเครื่องยนต์ที่เด็กๆ ใช้ไม้ดันบนสระแกรนด์ บาแซ็ง"
+          },
+          "why": {
+            "en": "Children push the boats around the basin themselves.",
+            "th": "เด็กๆ ดันเรือไปรอบสระเอง"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Les Petits Bateaux, Grand bassin octogonal, Jardin des Tuileries, 75001 Paris, France",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/child-and-family/articles/321311-the-little-boats-of-the-jardin-des-tuileries-the-playful-sailboats-to-sail-on-the-grand-bassin"
         }
     ]
     }

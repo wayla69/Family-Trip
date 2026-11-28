@@ -898,6 +898,246 @@
           "q": "Biblioteca Gabriel García Márquez, Plaça Carmen Balcells Segalà 1, Barcelona, Spain",
           "ok": "2026-11",
           "src": "https://barcelonaurbana.com/en/blog/barcelona-kids-rainy-day-guide"
+        },
+        {
+          "name": {
+            "en": "Museu Etnològic de Barcelona",
+            "th": "พิพิธภัณฑ์ชาติพันธุ์วิทยาบาร์เซโลนา"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Montjuïc, Sants-Montjuïc",
+            "th": "มงต์จุยก์ ซานตส์-มงต์จุยก์"
+          },
+          "what": {
+            "en": "The ethnology museum's Montjuïc building, with a permanent exhibition and a programme of guided visits and educational activities.",
+            "th": "อาคารพิพิธภัณฑ์ชาติพันธุ์วิทยาบนเนินมงต์จุยก์ มีนิทรรศการถาวรและกิจกรรมนำชมกับกิจกรรมการเรียนรู้เป็นประจำ"
+          },
+          "why": {
+            "en": "The museum runs family activities on its programme, so children can join in with their parents.",
+            "th": "พิพิธภัณฑ์มีกิจกรรมสำหรับครอบครัว เด็กๆ ร่วมกับพ่อแม่ได้"
+          },
+          "tip": {
+            "en": "Check the programme for family activities on your day",
+            "th": "เช็กตารางกิจกรรมครอบครัวของวันที่จะไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Museu Etnològic de Barcelona, Passeig de Santa Madrona 16, 08038 Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.museuetnologic.bcn.cat/en"
+        },
+        {
+          "name": {
+            "en": "Tibidabo Panoramic Area",
+            "th": "จุดชมวิวทิบิดาโบ"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Tibidabo, Sarrià-Sant Gervasi",
+            "th": "ทิบิดาโบ ซาร์ริอา-ซานต์ แจร์วาซี"
+          },
+          "what": {
+            "en": "The panoramic viewpoint at Tibidabo, next to the amusement park.",
+            "th": "จุดชมวิวพาโนรามาที่ทิบิดาโบ ติดกับสวนสนุก"
+          },
+          "why": {
+            "en": "Open-air views over the city for a walk up the hill with children.",
+            "th": "วิวเมืองกลางแจ้ง เหมาะกับการเดินขึ้นเนินพร้อมเด็กๆ"
+          },
+          "tip": {
+            "en": "Booking is recommended; allow about two hours",
+            "th": "แนะนำให้จองล่วงหน้า เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Tibidabo Panoramic Area, Plaça del Tibidabo 3-4, 08035 Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.tibidabo.cat/en/"
+        },
+        {
+          "name": {
+            "en": "Fundació Joan Miró",
+            "th": "มูลนิธิโจน มิโร"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Parc de Montjuïc, Sants-Montjuïc",
+            "th": "สวนมงต์จุยก์ ซานตส์-มงต์จุยก์"
+          },
+          "what": {
+            "en": "The most important public collection of Joan Miró's paintings, sculptures, ceramics, textiles, engravings and drawings.",
+            "th": "คอลเลกชันสาธารณะที่สำคัญที่สุดของผลงานโจน มิโร ทั้งภาพวาด ประติมากรรม เซรามิก สิ่งทอ ภาพพิมพ์ และภาพร่าง"
+          },
+          "why": {
+            "en": "The city lists it among its museums for children, so the visit is planned with young visitors in mind.",
+            "th": "เมืองจัดให้เป็นหนึ่งในพิพิธภัณฑ์สำหรับเด็ก การเยี่ยมชมจึงคำนึงถึงผู้เข้าชมวัยเด็ก"
+          },
+          "tip": {
+            "en": "Booking is recommended; allow about two hours",
+            "th": "แนะนำให้จองล่วงหน้า เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Fundació Joan Miró, Parc de Montjuïc s/n, 08038 Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/living-in-bcn/with-children"
+        },
+        {
+          "name": {
+            "en": "CaixaForum Barcelona",
+            "th": "ไกชาฟอรุม บาร์เซโลนา"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Montjuïc, Sants-Montjuïc",
+            "th": "มงต์จุยก์ ซานตส์-มงต์จุยก์"
+          },
+          "what": {
+            "en": "The CaixaForum Barcelona art centre, with a family programme of workshops and shows and exhibition routes for children.",
+            "th": "ศูนย์ศิลปะไกชาฟอรุม บาร์เซโลนา มีโปรแกรมครอบครัวเป็นเวิร์กช็อปและการแสดง พร้อมเส้นทางชมนิทรรศการสำหรับเด็ก"
+          },
+          "why": {
+            "en": "Workshops and shows are made for families, with educational material for children.",
+            "th": "เวิร์กช็อปและการแสดงทำมาเพื่อครอบครัว มีสื่อการเรียนรู้สำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Booking is recommended; check the family programme for your day",
+            "th": "แนะนำให้จองล่วงหน้า เช็กโปรแกรมครอบครัวของวันที่จะไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "CaixaForum Barcelona, Av. de Francesc Ferrer i Guàrdia 6-8, 08038 Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/living-in-bcn/with-children"
+        },
+        {
+          "name": {
+            "en": "Parc Maria Baldó",
+            "th": "ปาร์ก มาเรีย บัลโด"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Gràcia, Carrer de Sant Camil",
+            "th": "กราเซีย ถนน Carrer de Sant Camil"
+          },
+          "what": {
+            "en": "A garden in Gràcia with a children's play area that the city measures with sensors.",
+            "th": "สวนในย่านกราเซียที่มีลานเด็กเล่น ซึ่งเมืองใช้เซนเซอร์วัดการใช้งาน"
+          },
+          "why": {
+            "en": "A play area in a garden in Gràcia.",
+            "th": "ลานเด็กเล่นในสวนย่านกราเซีย"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc Maria Baldó, Carrer de Sant Camil 20X, 08023 Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/infobarcelona/en/culmina-un-projecte-pioner-dinnovacio-i-tecnologia-per-dissenyar-arees-de-joc-infantils_1553116.html"
+        },
+        {
+          "name": {
+            "en": "Jardins de la Indústria",
+            "th": "ฮาร์ดินส์ เด ลา อินดุสเตรีย"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Eixample, Carrer de la Marina",
+            "th": "เอซัมปลา ถนน Carrer de la Marina"
+          },
+          "what": {
+            "en": "A garden in the Eixample with a children's play area that the city measures with sensors.",
+            "th": "สวนในย่านเอซัมปลาที่มีลานเด็กเล่น ซึ่งเมืองใช้เซนเซอร์วัดการใช้งาน"
+          },
+          "why": {
+            "en": "A play area in a garden in the Eixample.",
+            "th": "ลานเด็กเล่นในสวนย่านเอซัมปลา"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jardins de la Indústria, Carrer de la Marina 358, 08025 Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/infobarcelona/en/culmina-un-projecte-pioner-dinnovacio-i-tecnologia-per-dissenyar-arees-de-joc-infantils_1553116.html"
         }
     ]
     },
@@ -2013,6 +2253,287 @@
           "q": "Plaza de las Tizas, C. de José Bielsa, Usera, 28026 Madrid, Spain",
           "ok": "2026-11",
           "src": "https://www.esmadrid.com/areas-de-juego-infantiles-madrid"
+        },
+        {
+          "name": {
+            "en": "Teatro San Pol",
+            "th": "เตอาโตร ซาน โปล"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Moncloa-Aravaca, Calle de San Pol de Mar",
+            "th": "มอนกลัวา-อาราวากา ถนน Calle de San Pol de Mar"
+          },
+          "what": {
+            "en": "A theatre in Madrid that focuses almost entirely on children and young audiences.",
+            "th": "โรงละครในมาดริดที่เน้นผู้ชมเด็กและเยาวชนเกือบทั้งหมด"
+          },
+          "why": {
+            "en": "Children are its whole audience, so the shows are made for small children.",
+            "th": "ผู้ชมส่วนใหญ่เป็นเด็ก การแสดงจึงทำมาเพื่อเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Check the programme for the day you want",
+            "th": "เช็กตารางการแสดงของวันที่ต้องการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Teatro San Pol, Calle de San Pol de Mar 1, 28008 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": {
+            "en": "Teseo Teatro",
+            "th": "เตเซโอ เตอาโตร"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Centro, Ronda de Segovia",
+            "th": "เซนโตร ถนน Ronda de Segovia"
+          },
+          "what": {
+            "en": "A small theatre that brings classic children's stories to the stage with its resident company.",
+            "th": "โรงละครเล็กที่นำนิทานเด็กคลาสสิกขึ้นเวทีโดยคณะประจำ"
+          },
+          "why": {
+            "en": "Classic children's stories are adapted for the little ones.",
+            "th": "นิทานเด็กคลาสสิกถูกดัดแปลงให้เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Check the programme for the day you want",
+            "th": "เช็กตารางการแสดงของวันที่ต้องการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Teseo Teatro, Ronda de Segovia 61, 28005 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": {
+            "en": "Plot Point",
+            "th": "พล็อต พอยต์"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Arganzuela, Calle de Ercilla",
+            "th": "อาร์กันซูเอลา ถนน Calle de Ercilla"
+          },
+          "what": {
+            "en": "A theatre with a children's programme of musical shows.",
+            "th": "โรงละครที่มีโปรแกรมการแสดงดนตรีสำหรับเด็ก"
+          },
+          "why": {
+            "en": "Its programme includes shows for babies aged 0 to 6.",
+            "th": "มีการแสดงสำหรับเด็กเล็กอายุ 0–6 ขวบในโปรแกรม"
+          },
+          "tip": {
+            "en": "Check the programme for the day you want",
+            "th": "เช็กตารางการแสดงของวันที่ต้องการ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Plot Point, Calle de Ercilla 29, 28005 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": {
+            "en": "Teatro Maravillas",
+            "th": "เตอาโตร มาราบิยัส"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Malasaña, Centro",
+            "th": "มาลาซัญญา เซนโตร"
+          },
+          "what": {
+            "en": "A theatre in Malasaña that stages popular children's musicals.",
+            "th": "โรงละครในย่านมาลาซัญญาที่จัดการแสดงละครเพลงเด็กยอดนิยม"
+          },
+          "why": {
+            "en": "Its children's musicals include El Mago de Oz, Peter Pan and Aladdin.",
+            "th": "ละครเพลงเด็กมีเรื่อง พ่อมดแห่งออซ ปีเตอร์แพน และอะลาดิน"
+          },
+          "tip": {
+            "en": "Check the programme for the day you want",
+            "th": "เช็กตารางการแสดงของวันที่ต้องการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Teatro Maravillas Madrid, Calle de Manuela Malasaña 6, 28004 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/teatros-para-ninos"
+        },
+        {
+          "name": {
+            "en": "MUNCYT Alcobendas",
+            "th": "มุนซิต อัลโกเบนดัส"
+          },
+          "local": "Museo Nacional de Ciencia y Tecnología",
+          "kind": "museumkid",
+          "area": {
+            "en": "Alcobendas, Calle del Pintor Velázquez",
+            "th": "อัลโกเบนดัส ถนน Calle del Pintor Velázquez"
+          },
+          "what": {
+            "en": "A science museum in Alcobendas with family workshops and a planetarium.",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ในอัลโกเบนดัส มีเวิร์กช็อปสำหรับครอบครัวและท้องฟ้าจำลอง"
+          },
+          "why": {
+            "en": "The planetarium has just reopened, and the site lists family workshops such as Origami en familia.",
+            "th": "ท้องฟ้าจำลองเพิ่งเปิดใหม่ และเว็บไซต์ลงเวิร์กช็อปครอบครัว เช่น Origami en familia"
+          },
+          "tip": {
+            "en": "Booking is recommended; allow about two hours",
+            "th": "แนะนำให้จองล่วงหน้า เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "MUNCYT Alcobendas, Calle del Pintor Velázquez 5, 28100 Alcobendas, Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.muncyt.es/"
+        },
+        {
+          "name": {
+            "en": "Ciudad Deportiva Valdelasfuentes",
+            "th": "ซิวดัด เดปอร์ติบา บัลเดลัสฟูเอนเตส"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Alcobendas, Calle de Miguel de Cervantes",
+            "th": "อัลโกเบนดัส ถนน Calle de Miguel de Cervantes"
+          },
+          "what": {
+            "en": "A sports complex in Alcobendas with a water complex of play pools and a wave pool.",
+            "th": "ศูนย์กีฬาในอัลโกเบนดัส มีโซนสระน้ำสำหรับเล่นและสระคลื่น"
+          },
+          "why": {
+            "en": "Play pools, a wave pool and a recreational lagoon for a whole afternoon with the family.",
+            "th": "มีสระเล่นน้ำ สระคลื่น และลากูนพักผ่อน เล่นได้ทั้งบ่ายกับครอบครัว"
+          },
+          "tip": {
+            "en": "Allow about three hours",
+            "th": "เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ciudad Deportiva Valdelasfuentes, Calle de Miguel de Cervantes s/n, 28100 Alcobendas, Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://guiadelocio.es/madrid/las-mejores-piscinas-climatizadas-para-disfrutar-en-familia-en-madrid/"
+        },
+        {
+          "name": {
+            "en": "Centro Deportivo Municipal La Masó",
+            "th": "เซนโตร เดปอร์ติโบ มูนิซิปัล ลา มาโซ"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Fuencarral-El Pardo, Calle de La Masó",
+            "th": "ฟูเอนการ์รัล-เอล ปาร์โด ถนน Calle de La Masó"
+          },
+          "what": {
+            "en": "A municipal sports centre in Madrid with a teaching pool open for free swimming at weekends.",
+            "th": "ศูนย์กีฬาของเทศบาลในมาดริด มีสระสอนว่ายน้ำที่เปิดให้ว่ายอิสระช่วงสุดสัปดาห์"
+          },
+          "why": {
+            "en": "Children under 5 go in free, and the family changing rooms and café are there.",
+            "th": "เด็กอายุต่ำกว่า 5 ขวบเข้าฟรี มีห้องเปลี่ยนชุดครอบครัวและคาเฟ่"
+          },
+          "tip": {
+            "en": "The teaching pool is open on Saturdays and Sundays",
+            "th": "สระสอนว่ายน้ำเปิดวันเสาร์และวันอาทิตย์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Centro Deportivo Municipal La Masó, Calle de La Masó 80, 28034 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://guiadelocio.es/madrid/las-mejores-piscinas-climatizadas-para-disfrutar-en-familia-en-madrid/"
         }
     ]
     },
