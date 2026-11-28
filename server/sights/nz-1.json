@@ -643,6 +643,88 @@
           },
           "q": "Tiritiri Matangi Island, Hauraki Gulf",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "ทางเดินริมแอ่งน้ำโอราเกอิ",
+            "en": "Ōrākei Basin boardwalk"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "แอ่งน้ำโอราเกอิ โอราเกอิ",
+            "en": "Ōrākei Basin, Ōrākei"
+          },
+          "what": {
+            "th": "ทางเดินไม้วนรอบแอ่งน้ำโอราเกอิ มีนกให้ดูเยอะ",
+            "en": "A boardwalk loop around Ōrākei Basin with plenty of birds to spot"
+          },
+          "why": {
+            "th": "ทางราบ เข็นรถเข็นได้",
+            "en": "A flat loop that suits a pram"
+          },
+          "tip": {
+            "th": "หน้าหนาวแต่งตัวอุ่นๆ และพกเครื่องดื่มร้อน",
+            "en": "In winter, wrap up and bring a warm drink"
+          },
+          "q": "Orakei Basin Walkway, Orakei, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/whats-on/september-october-school-holidays-auckland/",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือนิวซีแลนด์",
+            "en": "New Zealand Maritime Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าเรือไวอาดักต์ หัวมุมถนนคีย์และฮ็อบสัน",
+            "en": "Viaduct Harbour, corner of Quay and Hobson Streets"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องชีวิตทางทะเลของนิวซีแลนด์ ริมท่าเรือ",
+            "en": "The museum of New Zealand's life on the sea, by the harbour"
+          },
+          "why": {
+            "th": "มีกิจกรรมเด็กช่วงปิดเทอม เช่น ผจญภัยเกาะคิริบาส",
+            "en": "School-holiday activities for children, such as an island adventure on Kiribati"
+          },
+          "tip": {
+            "th": "กิจกรรมช่วงปิดเทอมเปลี่ยนไปเรื่อยๆ เช็กวันก่อนไป",
+            "en": "Holiday activities change; check the dates before going"
+          },
+          "q": "New Zealand Maritime Museum, Quay Street, Auckland",
+          "ok": "2026-11"
         }
     ]
     },
@@ -1205,6 +1287,43 @@
             "en": "In the ski season"
           },
           "q": "Coronet Peak, Queenstown",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidspot.co.nz/?p=1121149",
+          "name": {
+            "th": "สนามเด็กเล่นไดโนเสาร์ วานาคา",
+            "en": "Wānaka Dinosaur Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเลกไซด์ ใจกลางวานาคา",
+            "en": "Lakeside Road, Wānaka town centre"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นปรับปรุงใหม่ ริมทะเลสาบกลางเมืองวานาคา",
+            "en": "A refurbished playground on the lake edge in the middle of Wānaka"
+          },
+          "why": {
+            "th": "นั่งพักได้ขณะเด็กเล่น และว่ายน้ำได้เมื่ออากาศอุ่น",
+            "en": "A spot to relax while the children play, and a swim when it is warm"
+          },
+          "q": "Wānaka Dinosaur Playground, Lakeside Road, Wānaka",
           "ok": "2026-11"
         }
     ]

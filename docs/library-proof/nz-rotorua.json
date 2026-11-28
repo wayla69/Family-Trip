@@ -164,6 +164,39 @@
         }
       ],
       "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 5 rows from RotoruaNZ (official), Love Taupō and exploretaupo.co.nz (Jun 2025); 3 passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Woollen Mill Café (Agrodome)",
+          "page_name": "Woollen Mill Café",
+          "src": "https://www.rotoruanz.com/eat-drink/woollen-mill-cafe-agrodome",
+          "date": "official",
+          "map": "Google Maps 'Woollen Mill Cafe and Gift Shop' (141 Western Road), newest review shown a month ago"
+        },
+        {
+          "name": "Lone Star Taupō",
+          "page_name": "Lone Star Taupo",
+          "src": "https://exploretaupo.co.nz/?p=16187",
+          "date": "2025-06",
+          "map": "Google Maps 'Lone Star Taupo' (24 Roberts Street), newest review shown 3 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Goody Goodies",
+          "why": "the map found only another name (Glorious Goodies)"
+        },
+        {
+          "name": "Two Mile Bay Sailing Club, Hare & Copper Eatery & Bar",
+          "why": "the checker could not open the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

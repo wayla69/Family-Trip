@@ -1,5 +1,13 @@
 # The library of places to eat
 
+- **25 Nov 2026, Rotorua and Taupō** (round 4: Japan, Korea, New Zealand): +2 (Woollen Mill Café at the Agrodome, Lone Star Taupō). Proof in `docs/library-proof/nz-rotorua.json`.
+- **25 Nov 2026, Queenstown** (round 4: Japan, Korea, New Zealand): +1 (Cardrona Hotel). Proof in `docs/library-proof/nz-queenstown.json`.
+- **25 Nov 2026, Jeju** (round 4: Japan, Korea, New Zealand): +3 (Jeju Haemulbap, Geobu Galbi, Cocomama Seongsan). Proof in `docs/library-proof/kr-jeju.json`.
+- **25 Nov 2026, Gangwon** (round 4: Japan, Korea, New Zealand): +1 (Samgyori Dongchimi Makguksu, Gangneung). Proof in `docs/library-proof/kr-gangwon.json`.
+- **25 Nov 2026, Suwon** (round 4: Japan, Korea, New Zealand): +2 (Sodamhwaro, P&P Pasta House). Proof in `docs/library-proof/kr-suwon.json`.
+- **25 Nov 2026, Busan** (round 4: Japan, Korea, New Zealand): +2 (Matna Gamjatang Yongho, Woominam Seomyeon). Proof in `docs/library-proof/kr-busan.json`.
+- **25 Nov 2026, Seoul** (round 4: Japan, Korea, New Zealand): +5 (Saint Augustin SFC, Highway Seoul Times Square, Maranbang Cheongnyangni, Kyochon Chicken Yaksu, Qoo Qoo Gold Sangbong). Proof in `docs/library-proof/kr-seoul.json`.
+- **25 Nov 2026, Auckland** (round 4: Japan, Korea, New Zealand): +11 (Filly Café, Try It Out, Hello Mister, Saigonz, Hansan, Mi & Chi, Grand Harbour, Harbour Eats, The Terrace at Sylvia Park, The Eatery at Eastridge, Crave). Proof in `docs/library-proof/nz-auckland.json`.
 Owner, 19 Nov 2026: "ร้านอาหารด้วย แนวเดียวกับเล่มฮ่องกงและออสเตรเลีย ทำเป็นคลัง" → "คลังเติมเอง", then "เพิ่มร้านอาหารให้ครบทุกประเทศเลย
 เอาแบบลึกๆ". Code: `server/eatlib.js`, table `eat_lib` (migration 0036), page `#/eats`, the planner's "where to eat along the route".
 

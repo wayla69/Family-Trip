@@ -1924,6 +1924,47 @@
           "q": "Girimsa Temple, Gyeongju",
           "ok": "2026-11",
           "src": "https://www.mummytravels.com/gyeongju-with-kids-south-korea/"
+        },
+        {
+          "local": "키덜트뮤지엄",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 8,000 วอน",
+            "en": "Children ₩8,000"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/gyeongju-museums",
+          "name": {
+            "th": "พิพิธภัณฑ์คิดัลต์ โพมุน",
+            "en": "Kidult Museum (Bomun)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนโพมุน ย่านทะเลสาบโพมุน",
+            "en": "Bomun-ro, Bomun Lake resort"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของเล่นและฟิกเกอร์ขนาดใหญ่ ใหญ่ที่สุดในคย็องซังเหนือ",
+            "en": "A big toy-and-figure museum for the whole family, the largest of its kind in North Gyeongsang"
+          },
+          "why": {
+            "th": "ทั้งบ้านเที่ยวด้วยกันได้",
+            "en": "The whole family can enjoy it together"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน",
+            "en": "Open every day"
+          },
+          "q": "키덜트뮤지엄, 132-16 Bomun-ro, Gyeongju",
+          "ok": "2026-11"
         }
       ]
     },
@@ -3564,6 +3605,47 @@
           "q": "Suwon Media Centre, Suwon",
           "ok": "2026-11",
           "src": "https://baby.tali.kr/gyeonggi-south-kids-spots"
+        },
+        {
+          "local": "광교박물관",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "2,000 วอน เด็กฟรี",
+            "en": "₩2,000; children free"
+          },
+          "book": "none",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots",
+          "name": {
+            "th": "พิพิธภัณฑ์ควังกโย ซูวอน",
+            "en": "Suwon Gwanggyo Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนควังกโย ข้างสวนทะเลสาบควังกโย ยองทงกู",
+            "en": "Gwanggyo-ro, by Gwanggyo Lake Park, Yeongtong-gu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ท้องถิ่นบนทางเดินรอบสวนทะเลสาบควังกโย",
+            "en": "A local museum on the walk round Gwanggyo Lake Park"
+          },
+          "why": {
+            "th": "เด็ก 12 ปีลงมาเข้าฟรี",
+            "en": "Free for children aged 12 and under"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Suwon Gwanggyo Museum, 182 Gwanggyo-ro, Suwon",
+          "ok": "2026-11"
         }
       ]
     }
