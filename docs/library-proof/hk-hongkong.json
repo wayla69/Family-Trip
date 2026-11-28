@@ -3171,6 +3171,84 @@
           "why": "Google Maps lists it only as a place name, with no reviews to check"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "sights",
+      "title": "Things to do round 8 — the Hong Kong Tourism Board's own pages (waterfront promenades, beaches, island escapes, temples, revitalised buildings, moon gazing with kids), Google Maps only",
+      "checked": "2026-11-28",
+      "rule": "An official page (Discover Hong Kong, the Hong Kong Tourism Board), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Belcher Bay Promenade and K-Farm",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html",
+          "map": "Google Maps: Belcher Bay Promenade, a review 3 days ago"
+        },
+        {
+          "name": "Wan Chai Promenade",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html",
+          "map": "Google Maps: Wan Chai Promenade, a review a week ago"
+        },
+        {
+          "name": "Tsuen Wan Promenade",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html",
+          "map": "Google Maps: Tsuen Wan Riviera Park, a review 4 days ago"
+        },
+        {
+          "name": "Clear Water Bay Second Beach",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html",
+          "map": "Google Maps: a review a week ago"
+        },
+        {
+          "name": "Shek O Beach",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html",
+          "map": "Google Maps: a review 4 days ago"
+        },
+        {
+          "name": "Lido Beach",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html",
+          "map": "Google Maps: a review 10 hours ago"
+        },
+        {
+          "name": "Tap Mun (Grass Island)",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: Grass Island, a review 2 weeks ago"
+        },
+        {
+          "name": "Tung Ping Chau",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: a review 5 days ago"
+        },
+        {
+          "name": "Sha Tin Che Kung Temple",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: a review a day ago"
+        },
+        {
+          "name": "The Blue House",
+          "src": "https://www.discoverhongkong.com/eng/culture/revitalised-historic-buildings-to-visit-in-hong-kong.html",
+          "map": "Google Maps: Blue House, a review a day ago"
+        },
+        {
+          "name": "Sun Yat Sen Memorial Park",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html",
+          "map": "Google Maps: a review 8 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Nam Sang Wai",
+          "why": "Google Maps lists it only as a place name, with no reviews to check"
+        },
+        {
+          "name": "Sai Kung Promenade",
+          "why": "already in the library as Sai Kung Waterfront Park"
+        },
+        {
+          "name": "Hap Mun Bay Beach",
+          "why": "on Sharp Island, already in the library"
+        }
+      ]
     }
   ]
 }

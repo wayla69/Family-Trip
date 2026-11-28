@@ -2394,6 +2394,457 @@
           "book": "req",
           "q": "Mai Po Nature Reserve, Yuen Long, New Territories",
           "src": "https://www.discoverhongkong.com/eng/outdoors/from-marine-parks-to-hong-kong-geopark.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินริมน้ำเบลเชอร์เบย์และเคฟาร์ม",
+            "en": "Belcher Bay Promenade and K-Farm"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เคนเนดีทาวน์",
+            "en": "Kennedy Town"
+          },
+          "what": {
+            "th": "พื้นที่ริมน้ำมีสนามเด็กเล่นและที่นั่ง ข้างสวนชุมชนเคฟาร์มที่มีทัวร์นำชมและกิจกรรมปลูกผัก",
+            "en": "A waterfront space with a children’s playground and seating, beside the K-Farm community garden with guided tours and farming activities"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นริมทะเลและสวนให้ลองปลูก",
+            "en": "A playground by the sea and a garden to dig in"
+          },
+          "tip": {
+            "th": "อยู่ปลายสายไอส์แลนด์ฝั่งตะวันตก เช็กวันกิจกรรมของเคฟาร์ม",
+            "en": "At the western end of the Island line; check K-Farm’s activity days"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Belcher Bay Promenade, Kennedy Town, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html"
+        },
+        {
+          "local": "灣仔海濱長廊",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินริมน้ำหว่านไจ๋",
+            "en": "Wan Chai Promenade"
+          },
+          "kind": "park",
+          "area": {
+            "th": "หว่านไจ๋ จากทามาร์ถึงศูนย์ประชุม",
+            "en": "Wan Chai, from Tamar to the Convention Centre"
+          },
+          "what": {
+            "th": "ทางเดินริมอ่าวจากทามาร์ถึงศูนย์ประชุมและนิทรรศการ มีพื้นที่สีเขียว สนามเด็กเล่น และวิวอ่าว",
+            "en": "A harbourfront walk from Tamar to the Convention Centre, with green spaces, children’s playgrounds and harbour views"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นที่มีอ่าวเป็นฉากหลัง",
+            "en": "Playgrounds with the harbour as the backdrop"
+          },
+          "tip": {
+            "th": "เดินต่อจากสวนทามาร์ได้",
+            "en": "Walk on from Tamar Park"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Wan Chai Promenade, Wan Chai, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html"
+        },
+        {
+          "local": "荃灣海濱長廊",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินริมน้ำจวนวาน",
+            "en": "Tsuen Wan Promenade"
+          },
+          "kind": "park",
+          "area": {
+            "th": "จวนวาน",
+            "en": "Tsuen Wan"
+          },
+          "what": {
+            "th": "ทางเดินริมน้ำยาว 2.5 กม. เห็นสะพานติงเกาและเรือแล่นผ่าน ขอบทางต่ำใกล้น้ำ",
+            "en": "A 2.5 km promenade with views of Ting Kau Bridge and passing boats, and a low kerb close to the water"
+          },
+          "why": {
+            "th": "มีเรือและสะพานให้ดู พระอาทิตย์ตกสวยมาก",
+            "en": "Boats and bridges to watch and great sunsets"
+          },
+          "tip": {
+            "th": "ริมน้ำไม่มีรั้ว จับมือเด็กเล็กไว้",
+            "en": "There is no fence at the water’s edge; hold little hands"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tsuen Wan Riviera Park, Tsuen Wan, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html"
+        },
+        {
+          "local": "清水灣第二灣泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดเคลียร์วอเตอร์เบย์ที่สอง",
+            "en": "Clear Water Bay Second Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เคลียร์วอเตอร์เบย์ ไซกง",
+            "en": "Clear Water Bay, Sai Kung"
+          },
+          "what": {
+            "th": "อ่าวสวยฝั่งตะวันออกของคาบสมุทรเคลียร์วอเตอร์เบย์ ขึ้นชื่อเรื่องน้ำสะอาดและทรายนุ่ม",
+            "en": "A charming bay on the east of the Clear Water Bay peninsula, known for its clean water and soft sand"
+          },
+          "why": {
+            "th": "น้ำสะอาดและนิ่ง ลงเล่นน้ำได้",
+            "en": "Clean, calm water for a paddle"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Clear Water Bay Second Beach, Sai Kung, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "石澳泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดเช็กโอ",
+            "en": "Shek O Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เช็กโอ เกาะฮ่องกง",
+            "en": "Shek O, Hong Kong Island"
+          },
+          "what": {
+            "th": "หาดทรายขาวข้างหมู่บ้านเช็กโอ เป็น \"สวนหลังบ้าน\" ของเกาะฮ่องกง",
+            "en": "A white-sand beach by Shek O village, the \"backyard\" of Hong Kong Island"
+          },
+          "why": {
+            "th": "วันชายหาดง่าย ๆ มีหมู่บ้านของกินอยู่ข้างหลัง",
+            "en": "An easy beach day with a village of snacks behind it"
+          },
+          "tip": {
+            "th": "สุดสัปดาห์คนเยอะ ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Busy at weekends; swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Shek O Beach, Shek O, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "麗都灣泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดลิโด",
+            "en": "Lido Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ติงเกา จวนวาน",
+            "en": "Ting Kau, Tsuen Wan"
+          },
+          "what": {
+            "th": "หาดทรายนุ่มฝั่งตะวันตกของสะพานติงเกา เห็นสะพานอยู่เหนือหัว",
+            "en": "A soft-sand beach on the west side of Ting Kau Bridge, with views of the bridges above"
+          },
+          "why": {
+            "th": "ขุดทรายเล่นโดยมีสะพานยักษ์อยู่ด้านบน",
+            "en": "Sand to dig with giant bridges overhead"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lido Beach, Ting Kau, Tsuen Wan",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-beaches-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "塔門",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะทับมุน",
+            "en": "Tap Mun (Grass Island)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไท่โป",
+            "en": "Tai Po"
+          },
+          "what": {
+            "th": "เกาะเนินหญ้าลอนคลื่นมีวิวทะเล นิยมมาเล่นว่าว ปิกนิก และดูพระอาทิตย์ตก",
+            "en": "An island of rolling grassy hills with sea views, popular for kite-flying, picnics and sunsets"
+          },
+          "why": {
+            "th": "มีทุ่งหญ้ากว้างให้วิ่งและเล่นว่าว",
+            "en": "Wide grass to run on and kites to fly"
+          },
+          "tip": {
+            "th": "เรือมีไม่กี่รอบ เช็กเวลาไปกลับก่อนออกเดินทาง",
+            "en": "Ferries are few; check the times both ways before setting off"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tap Mun, Tai Po, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "東平洲",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะตุงผิงเชา",
+            "en": "Tung Ping Chau"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อ่าวเมียร์ส ไท่โป",
+            "en": "Mirs Bay, Tai Po"
+          },
+          "what": {
+            "th": "\"เกาะแบน\" สูงไม่เกิน 48 เมตร มีหินเป็นชั้น ๆ น่าทึ่งและปะการังในอุทยานทางทะเล",
+            "en": "\"Flat Island\", no higher than 48 m, with striking layered rocks and stony corals in its marine park"
+          },
+          "why": {
+            "th": "หินเป็นชั้นแปลกตาให้สำรวจบนทางราบ",
+            "en": "Strange rock layers to explore on flat paths"
+          },
+          "tip": {
+            "th": "เรือมีวิ่งหลัก ๆ ช่วงสุดสัปดาห์ เช็กก่อนไป",
+            "en": "Ferries run mainly at weekends; check before going"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tung Ping Chau, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "沙田車公廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดแชกง ชาทิน",
+            "en": "Sha Tin Che Kung Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ไท่หวาย ชาทิน",
+            "en": "Tai Wai, Sha Tin"
+          },
+          "what": {
+            "th": "วัดของแชกง แม่ทัพสมัยราชวงศ์ซ่ง ผู้มาไหว้หมุนกังหันนำโชค",
+            "en": "A temple to Che Kung, a Song-dynasty general, where visitors spin a lucky windmill"
+          },
+          "why": {
+            "th": "กังหันทองเหลืองให้เด็กหมุนเล่นสนุก",
+            "en": "The brass windmills are fun for children to spin"
+          },
+          "tip": {
+            "th": "วันที่สามของตรุษจีนคนแน่นมาก",
+            "en": "Packed on the third day of Lunar New Year"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Sha Tin Che Kung Temple, Tai Wai, Sha Tin",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "藍屋",
+          "ok": "2026-11",
+          "name": {
+            "th": "บ้านสีฟ้า",
+            "en": "The Blue House"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ซอยสโตนนัลลาห์ หว่านไจ๋",
+            "en": "Stone Nullah Lane, Wan Chai"
+          },
+          "what": {
+            "th": "ตึกแถวยุค 1920 ที่บูรณะแล้ว ทาสีฟ้า เป็นอาคารประวัติศาสตร์ระดับ 1 มีพิพิธภัณฑ์เล็ก ๆ เรื่องหว่านไจ๋สมัยก่อน",
+            "en": "A restored 1920s tenement painted blue, a Grade I historic building with a small museum of old Wan Chai"
+          },
+          "why": {
+            "th": "ตึกสีฟ้าสดให้ตามหาและถ่ายรูป",
+            "en": "A bright blue building to spot and photograph"
+          },
+          "tip": {
+            "th": "ไปคู่กับวัดหุ่งเซ่งที่อยู่ใกล้ ๆ",
+            "en": "Pair it with the Hung Shing Temple nearby"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Blue House, 72 Stone Nullah Lane, Wan Chai, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/revitalised-historic-buildings-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "中山紀念公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "สวนอนุสรณ์ซุนยัตเซ็น",
+            "en": "Sun Yat Sen Memorial Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไซหยิงปุน",
+            "en": "Sai Ying Pun"
+          },
+          "what": {
+            "th": "สวนประจำย่าน มีสนามหญ้าวงกลมใหญ่ สนามเด็กเล่นยอดนิยม และวิวอ่าว",
+            "en": "A neighbourhood park with a big round lawn, a popular playground and harbour views"
+          },
+          "why": {
+            "th": "สนามหญ้าสบาย ๆ และสนามเด็กเล่นริมน้ำ",
+            "en": "A relaxed lawn and playground by the water"
+          },
+          "tip": {
+            "th": "เดินไม่ไกลจากสถานีไซหยิงปุน",
+            "en": "A short walk from Sai Ying Pun station"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Sun Yat Sen Memorial Park, Sai Ying Pun, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html"
         }
     ]
     }
