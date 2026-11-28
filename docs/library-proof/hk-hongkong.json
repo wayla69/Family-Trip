@@ -3106,6 +3106,71 @@
           "why": "a textile heritage and business hub, little for children"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "sights",
+      "title": "Things to do round 7 — the Hong Kong Tourism Board's own pages (easy hikes, marine parks and the geopark, unique things to do, moon gazing with kids), Google Maps only",
+      "checked": "2026-11-28",
+      "rule": "An official page (Discover Hong Kong, the Hong Kong Tourism Board), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Go Green Organic Farm",
+          "src": "https://www.discoverhongkong.com/eng/culture/unique-things-to-do-in-hong-kong.html",
+          "map": "Google Maps: Go Green Farm, a review 2 months ago"
+        },
+        {
+          "name": "Kowloon Walled City Park",
+          "src": "https://www.discoverhongkong.com/eng/culture/unique-things-to-do-in-hong-kong.html",
+          "map": "Google Maps: a review 3 hours ago"
+        },
+        {
+          "name": "Hoi Ha Wan Marine Park",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/from-marine-parks-to-hong-kong-geopark.html",
+          "map": "Google Maps: a review 22 minutes ago"
+        },
+        {
+          "name": "Tamar Park",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html",
+          "map": "Google Maps: a review 9 hours ago"
+        },
+        {
+          "name": "Jordan Valley Park",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html",
+          "map": "Google Maps: a review 12 hours ago"
+        },
+        {
+          "name": "Butterfly Beach",
+          "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html",
+          "map": "Google Maps: a review 4 hours ago"
+        },
+        {
+          "name": "Shing Mun Reservoir",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html",
+          "map": "Google Maps: Upper Shing Mun Reservoir, a review a day ago"
+        },
+        {
+          "name": "Bride's Pool Nature Trail",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html",
+          "map": "Google Maps: a review a month ago"
+        },
+        {
+          "name": "Tai Mo Shan Country Park",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html",
+          "map": "Google Maps: a review 5 days ago"
+        },
+        {
+          "name": "Mai Po Nature Reserve",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/from-marine-parks-to-hong-kong-geopark.html",
+          "map": "Google Maps: a review 3 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Lai Chi Wo Hakka village",
+          "why": "Google Maps lists it only as a place name, with no reviews to check"
+        }
+      ]
     }
   ]
 }
