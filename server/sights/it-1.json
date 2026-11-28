@@ -712,6 +712,126 @@
           },
           "q": "Museo Correale di Terranova, Via Correale 50, Sorrento",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Ancient Arsenal of the Republic of Amalfi",
+            "th": "อาร์เซนอลโบราณของสาธารณรัฐอามาลฟี"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Largo Cesareo Console, Amalfi",
+            "th": "ลาร์โกเชซาเรโอคอนโซเล อามาลฟี"
+          },
+          "what": {
+            "en": "One of the last medieval arsenals in Italy, where ships of the Maritime Republic were built and repaired.",
+            "th": "หนึ่งในอู่ต่อเรือยุคกลางที่เหลืออยู่ไม่กี่แห่งของอิตาลี เคยใช้ต่อและซ่อมเรือของสาธารณรัฐทางทะเล"
+          },
+          "why": {
+            "en": "A reconstructed medieval galleon and an interactive map of the trade routes to look at.",
+            "th": "มีเรือใหญ่ยุคกลางจำลองและแผนที่โต้ตอบของเส้นทางการค้าให้ดู"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ancient Arsenal of the Republic of Amalfi, Largo Cesareo Console 4, Amalfi, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-things-to-do-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Marina Piccola beach",
+            "th": "หาดมารีนาปิกโกลา"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "By the port, Sorrento",
+            "th": "ติดท่าเรือ ซอร์เรนโต"
+          },
+          "what": {
+            "en": "A beach by the port with beach clubs offering sunbeds, umbrellas and sea access by ladders.",
+            "th": "หาดติดท่าเรือ มีบีชคลับให้เช่าเตียงและร่ม ลงทะเลทางบันได"
+          },
+          "why": {
+            "en": "A lift from the town centre brings you down to the beach, easy with a stroller and tired kids.",
+            "th": "มีลิฟต์จากใจกลางเมืองลงมาถึงหาด สะดวกเมื่อมีรถเข็นหรือเด็กเหนื่อย"
+          },
+          "tip": {
+            "en": "Take the lift down from the town centre",
+            "th": "นั่งลิฟต์ลงมาจากใจกลางเมือง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Marina Piccola, Sorrento, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/sorrento-italy-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Atrani beach",
+            "th": "หาดอาตรานี"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Atrani, next to Amalfi",
+            "th": "อาตรานี ติดกับอามาลฟี"
+          },
+          "what": {
+            "en": "A small beach beneath the village of Atrani.",
+            "th": "หาดเล็กๆ ใต้หมู่บ้านอาตรานี"
+          },
+          "why": {
+            "en": "A very scenic little beach.",
+            "th": "เป็นหาดเล็กที่วิวสวยมาก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Atrani beach, Atrani, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-things-to-do-with-kids/"
         }
       ]
     },
@@ -4807,6 +4927,366 @@
           },
           "q": "Parco Gandhi, Catania",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Grotta Azzurra",
+            "th": "กรอตตา อัซซูร์รา"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Mazzarò, Taormina coast",
+            "th": "มัซซาโร, ชายฝั่งเตาร์มีนา"
+          },
+          "what": {
+            "en": "Boat trips to the blue sea cave near Taormina",
+            "th": "ล่องเรือไปชมถ้ำทะเลสีน้ำเงินใกล้เตาร์มีนา"
+          },
+          "why": {
+            "en": "Older tots enjoy the boat trip to the blue sea cave; dolphin-watching cruises are also offered",
+            "th": "เด็กเล็กโตหน่อยสนุกกับการล่องเรือไปถ้ำทะเลสีน้ำเงิน และมีล่องเรือดูโลมาด้วย"
+          },
+          "tip": {
+            "en": "Booking ahead is recommended",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Grotta Azzurra, Mazzarò, Taormina, Messina, Italy",
+          "ok": "2026-11",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids"
+        },
+        {
+          "name": {
+            "en": "Parco dei Miti",
+            "th": "ปาร์โก เดย มีตี"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Zafferana Etnea, east side of Etna",
+            "th": "ซัฟเฟรานา เอตเนอา, ฝั่งตะวันออกของเอตนา"
+          },
+          "what": {
+            "en": "A park where Homer's Odyssey comes alive: children board Ulysses' ship, sit by the sea of the Odyssey and meet Polyphemus",
+            "th": "สวนที่เรื่องโอดิสซีย์ของโฮเมอร์มีชีวิต เด็กๆ ขึ้นเรือของยูลิสซีส นั่งริมทะเลโอดิสซีย์ และพบโพลีฟีมัส"
+          },
+          "why": {
+            "en": "Children can put their own questions to the Cyclops, which leaves room for the most unpredictable questions",
+            "th": "เด็กๆ ถามคำถามของตัวเองกับไซคลอปส์ได้ ซึ่งเปิดทางให้คำถามที่คาดไม่ถึงที่สุด"
+          },
+          "tip": {
+            "en": "The Odissea in Sicilia event ran on Sundays from 10:00; phone or WhatsApp ahead and check the dates",
+            "th": "กิจกรรม Odissea in Sicilia จัดวันอาทิตย์ตั้งแต่ 10:00 โทรหรือส่งวอตส์แอปถามล่วงหน้าและเช็กวันก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Parco dei Miti, Via Zerbate, 20, 95019 Zafferana Etnea, Italy",
+          "ok": "2026-11",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/eventi/catania/odissea-in-sicilia-parco-dei-miti/"
+        },
+        {
+          "name": {
+            "en": "Aci Trezza",
+            "th": "อาจิ เทรซซา"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Aci Trezza, near Catania",
+            "th": "อาจิ เทรซซา, ใกล้กาตาเนีย"
+          },
+          "what": {
+            "en": "A small fishing harbour with the Cyclops rocks (Faraglioni dei Ciclopi) standing out of the sea",
+            "th": "ท่าเรือประมงเล็กๆ ที่มีโขดหินไซคลอปส์ (Faraglioni dei Ciclopi) โผล่จากทะเล"
+          },
+          "why": {
+            "en": "The big dark rocks in the sea spark children's imagination, and the harbour has wooden fishing boats to watch",
+            "th": "โขดหินสีเข้มใหญ่กลางทะเลปลุกจินตนาการเด็กๆ และท่าเรือมีเรือประมงไม้ให้ดู"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Aci Trezza, 95021 Aci Trezza, Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/il-borgo-vicino-catania-dove-i-bambini-possono-scoprire-la-leggenda-dei-ciclopi.html"
+        },
+        {
+          "name": {
+            "en": "Ferrovia Circumetnea",
+            "th": "เฟอร์โรเวีย เชียร์คูเมตเนอา"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Catania Borgo to Riposto",
+            "th": "กาตาเนีย บอร์โก ถึงริโปสโต"
+          },
+          "what": {
+            "en": "A slow local train from Catania (Borgo) that runs almost all the way round the volcano to Riposto",
+            "th": "รถไฟท้องถิ่นขบวนช้าจากกาตาเนีย (บอร์โก) วิ่งอ้อมภูเขาไฟเกือบรอบไปถึงริโปสโต"
+          },
+          "why": {
+            "en": "Villages, old stations, orchards and vineyards pass by, and the line crosses lava fields that children can watch from the window",
+            "th": "ผ่านหมู่บ้าน สถานีเก่า สวนผลไม้และไร่องุ่น และข้ามทุ่งลาวาที่เด็กๆ ดูได้จากหน้าต่าง"
+          },
+          "tip": {
+            "en": "Check the current timetable and any replacement buses on the official site before going",
+            "th": "เช็กตารางเวลาปัจจุบันและรถบัสทดแทนบนเว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ferrovia Circumetnea, Via Caronda, 352a, 95128 Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/viaggi/catania/visitare-vulcano-etna-con-bambini/"
+        },
+        {
+          "name": {
+            "en": "Monti Rossi Adventure Park",
+            "th": "มอนตี รอสซี แอดเวนเจอร์ พาร์ก"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Nicolosi, north side of Etna",
+            "th": "นิโคโลซี, ฝั่งเหนือของเอตนา"
+          },
+          "what": {
+            "en": "An adventure park on the volcano's slopes with forest paths and bridges, a hammock relax area and a picnic space",
+            "th": "สวนผจญภัยบนเนินภูเขาไฟ มีทางป่าและสะพาน โซนพักผ่อนเปลญวน และที่ปิกนิก"
+          },
+          "why": {
+            "en": "Children cross bridges and walk the nature paths, then rest on the hammocks; one family found the paths great fun",
+            "th": "เด็กๆ ข้ามสะพานและเดินทางธรรมชาติ แล้วพักบนเปลญวน ครอบครัวหนึ่งว่าทางเดินสนุกมาก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Monti Rossi Adventure Park, Via Goethe, 95030 Nicolosi, Italy",
+          "ok": "2026-11",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/viaggi/catania/visitare-vulcano-etna-con-bambini/"
+        },
+        {
+          "name": {
+            "en": "Piazza Duomo, Catania",
+            "th": "ปิอัซซา ดูโอโม กาตาเนีย"
+          },
+          "kind": "oldtown",
+          "area": {
+            "en": "Catania old town",
+            "th": "เมืองเก่ากาตาเนีย"
+          },
+          "what": {
+            "en": "The city's main square, with the lava-stone Elephant Fountain as the symbol of Catania",
+            "th": "จัตุรัสหลักของเมือง มีน้ำพุช้างหินลาวาเป็นสัญลักษณ์ของกาตาเนีย"
+          },
+          "why": {
+            "en": "The elephant usually catches the attention of the youngest children first",
+            "th": "ช้างมักดึงความสนใจเด็กเล็กที่สุดก่อน"
+          },
+          "tip": {
+            "en": "The fish market next to the square is closed on Sundays",
+            "th": "ตลาดปลาข้างจัตุรัสปิดวันอาทิตย์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Piazza Duomo, Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.nostrofiglio.it/famiglia/viaggi/catania-con-i-bambini-alla-scoperta-del-castello-di-lava-che-ha-sfidato-l-etna"
+        },
+        {
+          "name": {
+            "en": "Porticciolo di Ognina",
+            "th": "ปอร์ติชโชโล ดิ โอนยีนา"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Ognina, Catania seafront",
+            "th": "โอนยีนา, ริมทะเลกาตาเนีย"
+          },
+          "what": {
+            "en": "A flat walk by the sea from Piazza Europa to the Ognina harbour",
+            "th": "เดินเลียบทะเลทางเรียบจากปิอัซซา ยูโรปา ไปท่าเรือโอนยีนา"
+          },
+          "why": {
+            "en": "The sea is always alongside, and children like watching the boats",
+            "th": "มีทะเลอยู่ข้างทางตลอด และเด็กๆ ชอบดูเรือ"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Porticciolo di Ognina, Via Marittima, 4, 95126 Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/catania-con-i-bambini-la-meta-dautunno-per-fuggire-dal-freddo-tra-mare-e-vulcani.html"
+        },
+        {
+          "name": {
+            "en": "Mazzarò beach",
+            "th": "หาดมัซซาโร"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Mazzarò, below Taormina",
+            "th": "มัซซาโร, ใต้เตาร์มีนา"
+          },
+          "what": {
+            "en": "A pebble beach with small beach clubs on the sea, reached from Taormina by cable car or bus",
+            "th": "หาดกรวดที่มีบีชคลับเล็กๆ ริมทะเล ไปจากเตาร์มีนาได้ด้วยกระเช้าหรือรถบัส"
+          },
+          "why": {
+            "en": "The clear water lets children look for the coast running towards Catania from the shore",
+            "th": "น้ำใสทำให้เด็กๆ มองเห็นแนวชายฝั่งที่ทอดไปทางกาตาเนียจากริมหาด"
+          },
+          "tip": {
+            "en": "In summer, shuttle buses run to the seaside hamlets",
+            "th": "ช่วงฤดูร้อนมีรถรับส่งไปหมู่บ้านริมทะเล"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Spiaggia libera di Mazzarò, 98039 Mazzarò, Taormina, Messina, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/taormina-con-i-bambini-tra-la-funivia-sul-mare-e-il-borgo-da-storia-illustrata.html"
+        },
+        {
+          "name": {
+            "en": "Isola Bella",
+            "th": "อิโซลา เบลลา"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Taormina, Giardini-Naxos coast",
+            "th": "เตาร์มีนา, ชายฝั่งจาร์ดีนี-นักซอส"
+          },
+          "what": {
+            "en": "A small islet joined to the coast by a strip of sand and pebbles; it is a nature reserve and regional natural-history museum",
+            "th": "เกาะเล็กที่เชื่อมกับฝั่งด้วยแนวทรายและกรวด เป็นเขตอนุรักษ์ธรรมชาติและพิพิธภัณฑ์ธรรมชาติวิทยาของภูมิภาค"
+          },
+          "why": {
+            "en": "A short walk over the strip of sand and pebbles to a green islet, with the sea on both sides",
+            "th": "เดินสั้นๆ บนแนวทรายและกรวดไปยังเกาะสีเขียว มีทะเลสองข้าง"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Isola Bella, Taormina, Messina, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/taormina-con-i-bambini-tra-la-funivia-sul-mare-e-il-borgo-da-storia-illustrata.html"
         }
       ]
     },
@@ -5281,6 +5761,208 @@
           },
           "q": "Da Vinci Interactive Museum, Campo San Rocco, Venezia",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Ca' Rezzonico",
+            "th": "กา เรซโซนีโก"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Dorsoduro, Venice",
+            "th": "ดอร์โซดูโร, เวนิส"
+          },
+          "what": {
+            "en": "The museum of 18th-century Venice, with family workshops",
+            "th": "พิพิธภัณฑ์เวนิสสมัยศตวรรษที่ 18 มีเวิร์กชอปสำหรับครอบครัว"
+          },
+          "why": {
+            "en": "Workshops: build and colour your own 3D gondola, or follow a riddle notebook treasure hunt through the rooms",
+            "th": "มีเวิร์กชอปให้ประกอบและระบายสีกอนโดลา 3 มิติเอง หรือตามหาสมบัติด้วยสมุดปริศนาในห้องต่างๆ"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Ca' Rezzonico, Sestiere Dorsoduro, 3136, 30123 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Museo Correr",
+            "th": "พิพิธภัณฑ์คอร์เรร์"
+          },
+          "local": "Museo Correr",
+          "kind": "museumkid",
+          "area": {
+            "en": "Piazza San Marco, Venice",
+            "th": "ปิอัซซา ซานมาร์โก, เวนิส"
+          },
+          "what": {
+            "en": "The museum on Piazza San Marco, with a Venetian picture gallery",
+            "th": "พิพิธภัณฑ์บนจัตุรัสซานมาร์โก มีหอศิลป์ภาพเขียนแบบเวนิส"
+          },
+          "why": {
+            "en": "Workshop: an activity book, story-telling and puzzles lead children to clues in the paintings",
+            "th": "มีเวิร์กชอปที่ใช้สมุดกิจกรรม การเล่าเรื่อง และปริศนา พาเด็กๆ หาเงื่อนงำในภาพเขียน"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Museo Correr, P.za San Marco, 52, 30124 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Ca' Pesaro",
+            "th": "กา เปซาโร"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Calle del Tentor, Venice",
+            "th": "กาลเล เดล เทนตอร์, เวนิส"
+          },
+          "what": {
+            "en": "The International Gallery of Modern Art, with a family workshop",
+            "th": "หอศิลป์นานาชาติศิลปะสมัยใหม่ มีเวิร์กชอปสำหรับครอบครัว"
+          },
+          "why": {
+            "en": "Workshop: children look at Kandinsky's White Zig-Zags, then make a piece of their own with shapes, lines and colours",
+            "th": "มีเวิร์กชอปให้เด็กดูภาพ White Zig-Zags ของคันดินสกี แล้วทำงานของตัวเองด้วยรูปทรง เส้น และสี"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Ca' Pesaro International Gallery of Modern Art, C. del Tentor, 2076, 30135 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Palazzo Mocenigo",
+            "th": "ปาลัซโซ โมเชนีโก"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Calle del Tentor, Venice",
+            "th": "กาลเล เดล เทนตอร์, เวนิส"
+          },
+          "what": {
+            "en": "A palace museum with textile collections, clothes and furnishings",
+            "th": "พิพิธภัณฑ์ในพระราชวังเก่า มีคอลเลกชันสิ่งทอ เสื้อผ้า และเครื่องเรือน"
+          },
+          "why": {
+            "en": "Workshops: a fashion game for ages 7 to 14 with a perfume activity, and weaving on a small wooden loom (kept afterwards)",
+            "th": "มีเวิร์กชอปเกมแฟชั่นสำหรับอายุ 7 ถึง 14 ปีพร้อมกิจกรรมน้ำหอม และทอผ้าบนกี่ไม้เล็ก (เก็บชุดไว้กลับบ้านได้)"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Palazzo Mocenigo, C. del Tentor, 1992, 30135 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Casa di Carlo Goldoni",
+            "th": "บ้านคาร์โล โกลโดนี"
+          },
+          "local": "Casa di Carlo Goldoni",
+          "kind": "museumkid",
+          "area": {
+            "en": "San Polo, Venice",
+            "th": "ซานโปโล, เวนิส"
+          },
+          "what": {
+            "en": "The house where Goldoni played as a boy, with a puppet theatre of original eighteenth-century puppets",
+            "th": "บ้านที่โกลโดนีเคยเล่นสมัยเด็ก มีโรงละครหุ่นที่ใช้หุ่นต้นฉบับศตวรรษที่ 18"
+          },
+          "why": {
+            "en": "Workshop: a puppet theatre that children aged 5 to 10 can take part in",
+            "th": "มีเวิร์กชอปโรงละครหุ่นที่เด็กอายุ 5 ถึง 10 ปีร่วมเล่นได้"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Carlo Goldoni's House, S. Polo, 2794, 30125 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
         }
     ]
     }

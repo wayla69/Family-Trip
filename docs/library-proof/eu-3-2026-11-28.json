@@ -1,0 +1,455 @@
+{
+  "town": "eu (Europe round 3: Stockholm, Amsterdam, Madrid, the Dolomites, Mont-Saint-Michel, the Disneyland Paris area, Florence; Venice, Amalfi, Sicily, York, Madrid, Barcelona things to do)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Europe notes (official tourism and city sites count as official; otherwise a 2025–2026 page; no chains, no bars, no hotel restaurants, no affiliate pages) -> scripts/library-check.cjs -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town; kept by hand: Malga Giau (San Vito di Cadore) and Ütia Cherz (Livinallongo), Dolomites villages; Isola Bella, the Derwent Valley Light Railway, Marina Piccola and Atrani (map pin in the right place, no street address); Parc de Diagonal Mar, The Hollywood Gardens, The Robot Museum and Catania's Piazza Duomo (Maps opened them by name in a list); Toddlers World (inside York Leisure Centre) -> Venice's nine museum workshops folded into one row per museum -> Thai and English by writer agents to docs/STYLE.md.",
+  "towns": {
+    "es-madrid": {
+      "eat": [
+        {
+          "name": "Gobu",
+          "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid"
+        },
+        {
+          "name": "Los Secretos de Lola",
+          "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid"
+        },
+        {
+          "name": "Heladería Véneta",
+          "src": "https://www.esmadrid.com/heladerias-artesanas-madrid"
+        },
+        {
+          "name": "Kalúa Helado Artesanal",
+          "src": "https://www.esmadrid.com/heladerias-artesanas-madrid"
+        },
+        {
+          "name": "Mercado de Antón Martín",
+          "src": "https://www.esmadrid.com/mercados-gastronomia-madrid"
+        }
+      ],
+      "do": [
+        {
+          "name": "The Magic Forest",
+          "src": "https://www.esmadrid.com/en/tourist-information/the-magic-forest"
+        },
+        {
+          "name": "Puppet Theatre in El Retiro Park",
+          "src": "https://www.esmadrid.com/en/tourist-information/teatro-de-titeres-de-el-retiro"
+        },
+        {
+          "name": "Indi Park",
+          "src": "https://www.esmadrid.com/en/tourist-information/indi-park"
+        },
+        {
+          "name": "The Robot Museum",
+          "src": "https://www.esmadrid.com/en/tourist-information/robot-museum"
+        }
+      ]
+    },
+    "fr-montstmichel": {
+      "eat": [
+        {
+          "name": "Crêperie La Cloche",
+          "src": "https://www.ot-montsaintmichel.com/en/restaurant/creperie-la-cloche"
+        },
+        {
+          "name": "Le Bistrot de Cancale",
+          "src": "https://lefooding.com/restaurants/le-bistrot-de-cancale"
+        },
+        {
+          "name": "Crêperie Artisanale Ty Skorn",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/creperie-le-ty-skorn-cancale-en-4564916/"
+        },
+        {
+          "name": "Les Galettes de Saint-Malo",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/les-galettes-de-saint-malo-saint-malo-en-3645716/"
+        },
+        {
+          "name": "Crêperie Le Tournesol",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/creperie-le-tournesol-saint-malo-en-3645680/"
+        },
+        {
+          "name": "Café de l’Ouest",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/cafe-de-louest-saint-malo-en-3646480/"
+        },
+        {
+          "name": "Les Voiles de Solidor",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/les-voiles-de-solidor-saint-malo-en-6164583/"
+        },
+        {
+          "name": "Glaces Moustache-Artisan Glacier",
+          "src": "https://www.saint-malo-tourisme.co.uk/living-like-home/where-to-eat/restaurants/moustache-artisan-glacier-intra-muros-saint-malo-en-6264993/"
+        }
+      ]
+    },
+    "it-dolomites": {
+      "eat": [
+        {
+          "name": "Rifugio Col Gallina",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        },
+        {
+          "name": "Baita Son Zuogo",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        },
+        {
+          "name": "Pizzeria Porto Rotondo",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        },
+        {
+          "name": "Ristorante Pizzeria El Bronsin",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        },
+        {
+          "name": "La Tavernetta di Cortina",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        },
+        {
+          "name": "Malga Giau",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        },
+        {
+          "name": "Ütia Cherz",
+          "src": "https://www.altabadia.org/en/info/uetia-cherz.html"
+        },
+        {
+          "name": "Da Po'",
+          "src": "https://cortina.dolomiti.org/en/dove-mangiare/bar-gelateria-da-po-en"
+        },
+        {
+          "name": "Lovat Bar Pasticceria",
+          "src": "https://cortina.dolomiti.org/dove-mangiare/bar-pasticceria-lovat-en"
+        },
+        {
+          "name": "Pasticceria Andrea Ghedina",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        },
+        {
+          "name": "Café Royal",
+          "src": "https://cortina.dolomiti.org/en/summer/plan/where-to-eat/?pag=10"
+        }
+      ]
+    },
+    "it-florence": {
+      "eat": [
+        {
+          "name": "Perché no!",
+          "src": "https://attivitastoriche.destinationflorence.com/en/attivita_storiche/perche-no/"
+        },
+        {
+          "name": "Caffe Concerto Paszkowski",
+          "src": "https://www.lunediacolazione.it/2025/11/10/weekend-a-firenze-con-bambini/"
+        }
+      ]
+    },
+    "nl-amsterdam": {
+      "eat": [
+        {
+          "name": "WOPL! Café",
+          "src": "https://wopl.nl/wopl-cafe"
+        },
+        {
+          "name": "Coffee and Kids",
+          "src": "https://www.bartsboekje.com/en/coffee-and-kids-kindercafe-ijburg/"
+        },
+        {
+          "name": "La Fucina",
+          "src": "https://reistipsmetkids.nl/kindvriendelijk-restaurant-in-amsterdam/"
+        },
+        {
+          "name": "At Seven",
+          "src": "https://reistipsmetkids.nl/kindvriendelijk-restaurant-in-amsterdam/"
+        },
+        {
+          "name": "De Vondeltuin",
+          "src": "https://www.leukmetkids.nl/kindvriendelijke-restaurants-in-amsterdam/"
+        },
+        {
+          "name": "Café-Restaurant Meyer",
+          "src": "https://www.leukmetkids.nl/kindvriendelijke-restaurants-in-amsterdam/"
+        },
+        {
+          "name": "Terrasmus",
+          "src": "https://www.leukmetkids.nl/kindvriendelijke-restaurants-in-amsterdam/"
+        },
+        {
+          "name": "Leescafé Belcampo",
+          "src": "https://www.leukmetkids.nl/kindvriendelijke-restaurants-in-amsterdam/"
+        },
+        {
+          "name": "NAP Amsterdam",
+          "src": "https://www.leukmetkids.nl/kindvriendelijke-restaurants-in-amsterdam/"
+        }
+      ]
+    },
+    "p-disney-paris": {
+      "eat": [
+        {
+          "name": "The Hollywood Gardens",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks"
+        },
+        {
+          "name": "March Hare Refreshments",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks"
+        },
+        {
+          "name": "La Terrasse Panoramique",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks"
+        },
+        {
+          "name": "FAN-tastic Food Truck",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks"
+        },
+        {
+          "name": "Nordic Crowns Tavern",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks"
+        }
+      ]
+    },
+    "se-stockholm": {
+      "eat": [
+        {
+          "name": "BAK Bakery",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Bullar & Bröd",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Fabrique Klarabergsgatan 60",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Gunnarsons Specialkonditori",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Flickorna Helin",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Ritorno Konditori",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Stora bageriet",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Magnus Johansson Bageri & Konditori",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Socker Sucker",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Robin Delselius Bageri",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Bergstrands Bageri",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Komet Café Stockholm",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Gast Café",
+          "src": "https://www.visitstockholm.com/eat-drink/cafes/fika-in-stockholm/"
+        },
+        {
+          "name": "Stockholms Glass- & Pastahus",
+          "src": "https://www.timeout.com/stockholm/restaurants/stockholms-best-ice-cream-parlours-our-5-ice-cold-favourites"
+        }
+      ]
+    },
+    "es-barcelona": {
+      "do": [
+        {
+          "name": "Parc de Diagonal Mar",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/parks-and-gardens/parc-de-diagonal-mar_99085102712.html"
+        },
+        {
+          "name": "Barcelona Music Museum",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/culture/museums/museu-de-la-musica-92086004112"
+        },
+        {
+          "name": "Castell de l'Oreneta Park",
+          "src": "https://www.barcelona.cat/internationalwelcome/en/live-and-settle/what-you-need/family-and-kids/outdoor-fun-whole-family"
+        },
+        {
+          "name": "Joan Antoni Samaranch Olympic and Sports Museum",
+          "src": "https://irbarcelona.org/barcelona-museums/joan-antoni-samaranch-olympics-sport-museum/"
+        }
+      ]
+    },
+    "gb-york": {
+      "do": [
+        {
+          "name": "Derwent Valley Light Railway",
+          "src": "https://www.murtonpark.co.uk/dvlr/"
+        },
+        {
+          "name": "Toddlers World at York Leisure Centre",
+          "src": "https://little-vikings.co.uk/?p=37871"
+        },
+        {
+          "name": "Agility York",
+          "src": "https://little-vikings.co.uk/?p=37871"
+        },
+        {
+          "name": "Glen Gardens play area",
+          "src": "https://www.york.gov.uk/directory-record/2780/glen-gardens-play-area"
+        },
+        {
+          "name": "Homestead Park",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": "Beningbrough Hall",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": "Burnby Hall Gardens",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": "Knavesmire Wood",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": "Moorlands Nature Reserve",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        },
+        {
+          "name": "Hagg Wood",
+          "src": "https://little-vikings.co.uk/best-parks-york/"
+        }
+      ]
+    },
+    "it-amalfi": {
+      "do": [
+        {
+          "name": "Ancient Arsenal of the Republic of Amalfi",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-things-to-do-with-kids/"
+        },
+        {
+          "name": "Marina Piccola beach",
+          "src": "https://www.viaggiapiccoli.com/en/sorrento-italy-with-kids/"
+        },
+        {
+          "name": "Atrani beach",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-things-to-do-with-kids/"
+        }
+      ]
+    },
+    "it-sicily": {
+      "do": [
+        {
+          "name": "Grotta Azzurra",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids"
+        },
+        {
+          "name": "Parco dei Miti",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/eventi/catania/odissea-in-sicilia-parco-dei-miti/"
+        },
+        {
+          "name": "Aci Trezza",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/il-borgo-vicino-catania-dove-i-bambini-possono-scoprire-la-leggenda-dei-ciclopi.html"
+        },
+        {
+          "name": "Ferrovia Circumetnea",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/viaggi/catania/visitare-vulcano-etna-con-bambini/"
+        },
+        {
+          "name": "Monti Rossi Adventure Park",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/viaggi/catania/visitare-vulcano-etna-con-bambini/"
+        },
+        {
+          "name": "Piazza Duomo, Catania",
+          "src": "https://www.nostrofiglio.it/famiglia/viaggi/catania-con-i-bambini-alla-scoperta-del-castello-di-lava-che-ha-sfidato-l-etna"
+        },
+        {
+          "name": "Porticciolo di Ognina",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/catania-con-i-bambini-la-meta-dautunno-per-fuggire-dal-freddo-tra-mare-e-vulcani.html"
+        },
+        {
+          "name": "Mazzarò beach",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/taormina-con-i-bambini-tra-la-funivia-sul-mare-e-il-borgo-da-storia-illustrata.html"
+        },
+        {
+          "name": "Isola Bella",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/taormina-con-i-bambini-tra-la-funivia-sul-mare-e-il-borgo-da-storia-illustrata.html"
+        }
+      ]
+    },
+    "it-venice": {
+      "do": [
+        {
+          "name": "Ca' Rezzonico",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": "Museo Correr",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": "Ca' Pesaro",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": "Palazzo Mocenigo",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": "Casa di Carlo Goldoni",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "Pof",
+      "IJ-Kantine",
+      "Aventurico",
+      "L'Hippocampe",
+      "La Salicorne",
+      "Baita Resch",
+      "Da Garibardi",
+      "Mama Campo"
+    ],
+    "another place or none on Google Maps": [
+      "Ristorante Self-Service Magro",
+      "three Madrid addresses where another business trades now (Runni, La Cantina, La Morenilla)",
+      "Wonderland Restaurante (now a sushi bar)",
+      "Etna Experience (another address)",
+      "Chez Marie (only the Disney Village place)"
+    ],
+    "not pinned to one place on Google Maps": [
+      "Amalfi seafront",
+      "Minori",
+      "Sant'Agnello Belvedere",
+      "Piazza della Vittoria",
+      "Lunchroom Lastig (renamed)",
+      "Hout",
+      "Experiencity Express Train",
+      "Thelins Konditori",
+      "Scuola del Vetro Abate Zanetti"
+    ],
+    "refused source": [
+      "eight Florence rows from eurovistatrips.com and four from tablejourney.com (affiliate pages)"
+    ],
+    "other": [
+      "chains: Giangrossi, Wok 4 You, Magasand, De Pizzabakkers, De Burgerij",
+      "Grand Mère Augustine (a wine bar)",
+      "Sedil Dominova (a monument with nothing for children)",
+      "Wonderwoods (a themed dining show, no address)",
+      "Mercado de la Paz (no fact about food)",
+      "L'Adresse Gourmande, Onigiri café (quote not on the page)"
+    ]
+  }
+}
