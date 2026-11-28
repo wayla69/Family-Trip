@@ -3337,6 +3337,293 @@
           "book": "none",
           "q": "East Coast Park Precinct, Fortress Hill, Hong Kong",
           "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html"
+        },
+        {
+          "local": "愉景灣",
+          "ok": "2026-11",
+          "name": {
+            "th": "ดิสคัฟเวอรีเบย์",
+            "en": "Discovery Bay"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เกาะลันเตา",
+            "en": "Lantau Island"
+          },
+          "what": {
+            "th": "เมืองริมทะเลบรรยากาศสบาย ๆ บนเกาะลันเตา มีพื้นที่โล่งกว้างและ DB Plaza ขึ้นชื่อเรื่องตลาดกลางคืนฮาโลวีนและขบวนแต่งตัวสำหรับครอบครัว",
+            "en": "A relaxed seaside town on Lantau with wide open spaces and DB Plaza, known for its family Halloween night market and costume parades"
+          },
+          "why": {
+            "th": "พื้นที่กว้างให้เด็กเล็กวิ่งเล่น",
+            "en": "Wide open spaces where younger children can run"
+          },
+          "tip": {
+            "th": "เรือจากท่าเรือเซ็นทรัล 3",
+            "en": "Ferries from Central Pier 3"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "DB Plaza, Discovery Bay, Lantau Island",
+          "src": "https://www.discoverhongkong.com/eng/culture/family-friendly-places-visit-with-kids-for-halloween.html"
+        },
+        {
+          "local": "嘉頓山",
+          "ok": "2026-11",
+          "name": {
+            "th": "การ์เดนฮิลล์",
+            "en": "Garden Hill"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ซัมซุยโป",
+            "en": "Sham Shui Po"
+          },
+          "what": {
+            "th": "เดิน 15 นาทีขึ้นจุดชมวิวที่มองเห็นแฟลตการเคหะและถนนนามเชิง ขึ้นชื่อเรื่องวิวกลางคืนและแสงไฟรถเป็นเส้น",
+            "en": "A 15-minute walk up to a lookout over public housing and Nam Cheong Street, loved for its night views and light trails"
+          },
+          "why": {
+            "th": "เดินขึ้นไม่นานก็เห็นไฟเมืองทั้งเมืองอยู่ข้างล่าง",
+            "en": "A short climb to see the city lights spread out below"
+          },
+          "tip": {
+            "th": "ทางเดินเป็นบันได อุ้มเด็กเล็กขึ้นไป",
+            "en": "The path has steps; carry little ones"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Garden Hill, Sham Shui Po, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/hong-kong-after-dark.html"
+        },
+        {
+          "local": "海運觀點",
+          "ok": "2026-11",
+          "name": {
+            "th": "โอเชียนเทอร์มินัลเด็ก",
+            "en": "Ocean Terminal Deck"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ฮาร์เบอร์ซิตี้ จิมซาจุ่ย",
+            "en": "Harbour City, Tsim Sha Tsui"
+          },
+          "what": {
+            "th": "ดาดฟ้าที่ล้อมด้วยทะเล มองเห็นอ่าวและตึกฝั่งเกาะฮ่องกงได้ 270 องศา",
+            "en": "A rooftop deck surrounded by the sea, with a 270-degree view of the harbour and the Hong Kong Island skyline"
+          },
+          "why": {
+            "th": "วิวอ่าวกว้างเต็มตา ห่างร้านค้าไม่กี่ก้าว",
+            "en": "A big open view of the harbour, steps from the shops"
+          },
+          "tip": {
+            "th": "สวยมากตอนพระอาทิตย์ตก มีลิฟต์ขึ้นไป",
+            "en": "Lovely at sunset; there are lifts up"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Ocean Terminal Deck, Harbour City, Tsim Sha Tsui",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html"
+        },
+        {
+          "local": "金紫荊廣場",
+          "ok": "2026-11",
+          "name": {
+            "th": "จัตุรัสโกลเดนโบฮิเนีย",
+            "en": "Golden Bauhinia Square"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ริมน้ำหว่านไจ๋",
+            "en": "Wan Chai waterfront"
+          },
+          "what": {
+            "th": "จัตุรัสริมอ่าวที่มีรูปปั้นดอกโบฮิเนียสีทอง สัญลักษณ์ของฮ่องกง และมีพิธีชักธงทุกวัน",
+            "en": "A harbourside square with the golden bauhinia statue, Hong Kong's emblem, and the daily flag-raising"
+          },
+          "why": {
+            "th": "ดอกไม้สีทองให้ดู มีอ่าวเป็นฉากหลัง",
+            "en": "A golden flower to spot and the harbour behind it"
+          },
+          "tip": {
+            "th": "พิธีชักธงทำตอนเช้าตรู่",
+            "en": "The flag-raising is early in the morning"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Golden Bauhinia Square, 1 Expo Drive, Wan Chai",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html"
+        },
+        {
+          "local": "香港摩天輪",
+          "ok": "2026-11",
+          "name": {
+            "th": "ชิงช้าสวรรค์ฮ่องกง",
+            "en": "Hong Kong Observation Wheel"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ริมอ่าวเซ็นทรัล",
+            "en": "Central Harbourfront"
+          },
+          "what": {
+            "th": "ชิงช้าสวรรค์สูง 60 เมตรริมอ่าวเซ็นทรัล มี 42 กระเช้า เห็นวิวทั้งกลางวันและกลางคืน",
+            "en": "Hong Kong's 60 m Ferris wheel on the Central harbourfront, with 42 gondolas and views by day and by night"
+          },
+          "why": {
+            "th": "นั่งช้า ๆ ขึ้นไปสูงเหนืออ่าว",
+            "en": "A gentle ride high over the harbour"
+          },
+          "tip": {
+            "th": "อยู่ใกล้ท่าเรือเซ็นทรัล ไปคู่กับการนั่งสตาร์เฟอร์รี่",
+            "en": "Near the Central ferry piers; pair it with a Star Ferry ride"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Observation Wheel, Central Harbourfront, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "เรือวอเตอร์แท็กซี่ฮ่องกง",
+            "en": "Hong Kong Water Taxi"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "อ่าววิกตอเรีย",
+            "en": "Victoria Harbour"
+          },
+          "what": {
+            "th": "ทัวร์อ่าวบนเรือเปิดหลังคา ผ่านชิงช้าสวรรค์ ตึก IFC และริมน้ำจิมซาจุ่ย",
+            "en": "A harbour tour on an open-top boat past the Observation Wheel, the IFC and the Tsim Sha Tsui waterfront"
+          },
+          "why": {
+            "th": "เห็นทั้งสองฝั่งอ่าวในการนั่งเรือครั้งเดียว",
+            "en": "Both sides of the harbour in one easy boat ride"
+          },
+          "tip": {
+            "th": "เด็กใส่เสื้อชูชีพบนเรือ",
+            "en": "Children wear life jackets on board"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Hong Kong Water Taxi, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-vantage-points-for-viewing-the-iconic-skyline.html"
+        },
+        {
+          "local": "梅窩",
+          "ok": "2026-11",
+          "name": {
+            "th": "มุยวอและหาดซิลเวอร์ไมน์เบย์",
+            "en": "Mui Wo and Silvermine Bay Beach"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ลันเตาใต้",
+            "en": "South Lantau"
+          },
+          "what": {
+            "th": "เมืองเงียบสงบบนเกาะลันเตา มีร้านอาหารสบาย ๆ ทางจักรยาน ทางเดินไปน้ำตก และอาคารต้นศตวรรษที่ 20 ข้างหาดซิลเวอร์ไมน์เบย์",
+            "en": "A quiet Lantau town of casual eateries, cycling trails, waterfall walks and early 20th-century buildings, by Silvermine Bay Beach"
+          },
+          "why": {
+            "th": "มีชายหาด จักรยาน และวันพักผ่อนช้า ๆ บนเกาะ",
+            "en": "A beach, bikes and a slow island day"
+          },
+          "tip": {
+            "th": "เรือจากท่าเรือเซ็นทรัล 6",
+            "en": "Ferries from Central Pier 6"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Silvermine Bay Beach, Mui Wo, Lantau Island",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/a-unique-day-out-on-outlying-islands.html"
         }
     ]
     }
