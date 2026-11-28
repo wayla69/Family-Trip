@@ -393,6 +393,287 @@
           "q": "Cham Islands, Quang Nam",
           "ok": "2026-11",
           "src": "https://thinkingnomads.com/guide-to-visit-cham-islands-with-children-snorkeling-diving"
+        },
+        {
+          "name": {
+            "en": "Thanh Ha Pottery Village",
+            "th": "หมู่บ้านเครื่องปั้นดินเผาแทงห่า"
+          },
+          "local": "Làng gốm Thanh Hà",
+          "kind": "culture",
+          "area": {
+            "en": "Thanh Ha, Hoi An Tay ward",
+            "th": "แทงห่า แขวงฮอยอันเต๊ย"
+          },
+          "what": {
+            "en": "A pottery village where potters still throw clay on the wheel and fire it in traditional kilns",
+            "th": "หมู่บ้านเครื่องปั้นดินเผาที่ช่างยังปั้นดินบนแป้นหมุนและเผาในเตาแบบดั้งเดิม"
+          },
+          "why": {
+            "en": "Children can watch the potter's wheel at work and see a craft that has carried on in one village for generations",
+            "th": "เด็กๆ ดูแป้นหมุนทำงานและเห็นงานฝีมือที่สืบต่อกันมาในหมู่บ้านเดียวหลายรุ่น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราวหนึ่งชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Thanh Ha Pottery Village, Hội An",
+          "ok": "2026-11",
+          "src": "https://danangfantasticity.com/see-and-do/the-craft-of-thanh-ha-pottery-in-hoi-an"
+        },
+        {
+          "name": {
+            "en": "Green Bamboo Cooking School",
+            "th": "โรงเรียนสอนทำอาหารกรีนแบมบู"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Hoi An Tay ward",
+            "th": "แขวงฮอยอันเต๊ย"
+          },
+          "what": {
+            "en": "A hands-on Vietnamese cooking class in Hoi An where you cook the dishes you then eat",
+            "th": "คลาสทำอาหารเวียดนามในฮอยอัน ลงมือทำเองแล้วกินอาหารที่ทำ"
+          },
+          "why": {
+            "en": "Free for children aged 1 to 7, the page says",
+            "th": "เด็กอายุ 1 ถึง 7 ขวบเข้าฟรี ตามที่หน้าเว็บระบุ"
+          },
+          "tip": {
+            "en": "Book ahead; allow about three hours",
+            "th": "จองล่วงหน้า เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Green Bamboo Cooking School, 21 Trương Minh Hưng, Hội An",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": {
+            "en": "Hoi An Eco Cooking Class by Kien Nguyen",
+            "th": "คลาสทำอาหารฮอยอันอีโค โดยเกียน เหงียน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Hamlet 2, Hoi An Dong ward",
+            "th": "หมู่บ้าน 2 แขวงฮอยอันด๋ง"
+          },
+          "what": {
+            "en": "A countryside cooking class that includes a visit to the local market",
+            "th": "คลาสทำอาหารชนบทที่มีแวะตลาดท้องถิ่นด้วย"
+          },
+          "why": {
+            "en": "Children aged 7 to 11 join the morning tour for a child price",
+            "th": "เด็กอายุ 7 ถึง 11 ขวบร่วมทัวร์ช่วงเช้าได้ในราคาเด็ก"
+          },
+          "tip": {
+            "en": "Book ahead; allow about three hours",
+            "th": "จองล่วงหน้า เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "≈ US$22 for children aged 7–11 (morning tour)",
+            "th": "≈ US$22 สำหรับเด็ก 7–11 ขวบ (ทัวร์ช่วงเช้า)"
+          },
+          "book": "rec",
+          "q": "Hoi An Eco Cooking Class by Kien Nguyen, Hội An Đông, Hội An",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": {
+            "en": "Vinh Vo Cooking Class",
+            "th": "คลาสทำอาหารวิญโหวะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Tran Nhan Tong Street, Hoi An Dong ward",
+            "th": "ถนนจั่นเญินตง แขวงฮอยอันด๋ง"
+          },
+          "what": {
+            "en": "A cooking class with a morning or afternoon session, a market visit and a basket boat ride",
+            "th": "คลาสทำอาหารรอบเช้าหรือบ่าย มีแวะตลาดและนั่งเรือกระด้ง"
+          },
+          "why": {
+            "en": "A child price is printed for ages 4 to 10, and a basket boat ride is included",
+            "th": "มีราคาเด็กสำหรับอายุ 4 ถึง 10 ขวบ และรวมการนั่งเรือกระด้ง"
+          },
+          "tip": {
+            "en": "Book ahead; allow about four hours",
+            "th": "จองล่วงหน้า เผื่อเวลาราว 4 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ 350,000 ₫ per child (aged 4–10)",
+            "th": "≈ 350,000 ₫ ต่อเด็ก (อายุ 4–10 ขวบ)"
+          },
+          "book": "rec",
+          "q": "Vinh Vo Cooking Class, Trần Nhân Tông, Hội An Đông, Hội An",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": {
+            "en": "Baby Farm",
+            "th": "เบบี้ฟาร์ม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Do Doc Lan, Cam Le, Da Nang",
+            "th": "ถนนโดด๊กเลิน เขตก่ามเล ดานัง"
+          },
+          "what": {
+            "en": "A play centre for little ones in a quiet setting near nature, with lego, colouring, sandcastles and a ball pit",
+            "th": "ศูนย์เล่นสำหรับเด็กเล็กในบรรยากาศเงียบสงบใกล้ธรรมชาติ มีเลโก้ ระบายสี ปราสาททราย และบ่อบอล"
+          },
+          "why": {
+            "en": "Lego, colouring and a ball pit for the little ones, with regular kids' events such as a Baby Olympic game",
+            "th": "มีเลโก้ ระบายสี และบ่อบอลสำหรับเด็กเล็ก และมีกิจกรรมเด็กเป็นประจำ เช่น เบบี้โอลิมปิก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ 100,000 ₫ (Monday to Friday)",
+            "th": "≈ 100,000 ₫ (วันจันทร์ถึงศุกร์)"
+          },
+          "book": "none",
+          "q": "Baby Farm, 80 Đô Đốc Lân, Cẩm Lệ, Đà Nẵng",
+          "ok": "2026-11",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        },
+        {
+          "name": {
+            "en": "TiNiWorld",
+            "th": "ทีนีเวิลด์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Vincom Plaza, Ngo Quyen, Da Nang",
+            "th": "วินคอมพลาซ่า ถนนโงกวเยน ดานัง"
+          },
+          "what": {
+            "en": "An indoor children's play centre on the third floor of Vincom Plaza, split into areas for different ages",
+            "th": "ศูนย์เล่นในร่มสำหรับเด็กบนชั้น 3 ของวินคอมพลาซ่า แบ่งโซนตามช่วงอายุ"
+          },
+          "why": {
+            "en": "Areas split by age, and it mixes play with learning",
+            "th": "แบ่งโซนตามอายุ และผสมการเล่นกับการเรียนรู้"
+          },
+          "tip": {
+            "en": "Weekend and holiday tickets cost more; allow about two hours",
+            "th": "ตั๋ววันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์แพงกว่า เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ 80,000 ₫ weekdays · ≈ 100,000 ₫ weekends and holidays",
+            "th": "≈ 80,000 ₫ วันธรรมดา · ≈ 100,000 ₫ วันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์"
+          },
+          "book": "none",
+          "q": "TiNiWorld, Vincom Plaza, 910 Ngô Quyền, Đà Nẵng",
+          "ok": "2026-11",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        },
+        {
+          "name": {
+            "en": "Helio Center",
+            "th": "เฮลิโอเซ็นเตอร์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "2 Thang 9 street, Hai Chau, Da Nang",
+            "th": "ถนน 2 ทังชิน เขตไห่เจิว ดานัง"
+          },
+          "what": {
+            "en": "A family entertainment centre with hundreds of games, water play, fishing and a Helio Kids zone",
+            "th": "ศูนย์ความบันเทิงครอบครัว มีเกมหลายร้อยเกม เล่นน้ำ ตกปลา และโซนเฮลิโอคิดส์"
+          },
+          "why": {
+            "en": "A Helio Kids zone with its own child ticket, and a kids' kitchen (bếp nhí) for an extra fee",
+            "th": "มีโซนเฮลิโอคิดส์พร้อมตั๋วเด็กโดยเฉพาะ และครัวเด็ก (เบ๊บญี) ที่เสียค่าใช้จ่ายเพิ่ม"
+          },
+          "tip": {
+            "en": "Open in the evening only; allow about two hours",
+            "th": "เปิดเฉพาะช่วงเย็น เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ 95,000 ₫ per child (Helio Kids)",
+            "th": "≈ 95,000 ₫ ต่อเด็ก (เฮลิโอคิดส์)"
+          },
+          "book": "none",
+          "q": "Helio Center, 01 Đường 2 Tháng 9, Hòa Cường Bắc, Hải Châu, Đà Nẵng",
+          "ok": "2026-11",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
         }
       ]
     },
@@ -707,6 +988,208 @@
           },
           "q": "Cung Thiếu nhi Hà Nội",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Vietnam Museum of Fine Arts",
+            "th": "พิพิธภัณฑ์ศิลปะเวียดนาม"
+          },
+          "local": "Bảo tàng Mỹ thuật Việt Nam",
+          "kind": "museum",
+          "area": {
+            "en": "Ba Dinh, 66 Nguyễn Thái Học",
+            "th": "บาดิ่ญ ถนนเหงียนไทฮอก"
+          },
+          "what": {
+            "en": "A museum of artworks with a creative space where visitors paint, sculpt and make other art",
+            "th": "พิพิธภัณฑ์ผลงานศิลปะ มีพื้นที่สร้างสรรค์ให้ผู้เข้าชมวาด ปั้น และทำงานศิลป์"
+          },
+          "why": {
+            "en": "It has an art-creation area for children, where kids paint and sculpt",
+            "th": "มีมุมสร้างงานศิลป์สำหรับเด็ก ให้เด็กวาดและปั้น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Vietnam National Museum of Fine Arts, 66 Nguyễn Thái Học, Ba Đình, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://www.mykingdom.com.vn/en/blogs/hom-nay-con-choi-gi/5-bao-tang-cho-tre-em-trai-nghiem-da-dang-hoc-hoi-thu-vi"
+        },
+        {
+          "name": {
+            "en": "Truc Bach Lake",
+            "th": "ทะเลสาบจุ๊กบั๊ก"
+          },
+          "local": "Hồ Trúc Bạch",
+          "kind": "park",
+          "area": {
+            "en": "Ba Dinh, northwest of the Old Quarter",
+            "th": "บาดิ่ญ ทางตะวันตกเฉียงเหนือของย่านเมืองเก่า"
+          },
+          "what": {
+            "en": "A calm, smaller lake beside West Lake, with a loop path to stroll or cycle and swan-shaped pedal boats to hire",
+            "th": "ทะเลสาบเล็กเงียบสงบข้างทะเลสาบตะวันตก มีทางเดินรอบสำหรับเดินหรือปั่นจักรยาน และเรือถีบรูปหงส์ให้เช่า"
+          },
+          "why": {
+            "en": "Calm and residential with far less traffic than the Old Quarter; kids enjoy the swan pedal boats",
+            "th": "เงียบแบบย่านที่อยู่อาศัย รถน้อยกว่าย่านเมืองเก่ามาก เด็กชอบเรือถีบรูปหงส์"
+          },
+          "tip": {
+            "en": "A peaceful place for a sunset stroll",
+            "th": "เหมาะกับการเดินเล่นยามพระอาทิตย์ตกอย่างสงบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Truc Bach Lake, Ba Đình, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://localvietnam.com/hanoi/truc-bach-lake/"
+        },
+        {
+          "name": {
+            "en": "Timezone AEON Mall Long Bien",
+            "th": "ไทม์โซน อิออนมอลล์ ลองเบียน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "AEON Mall Long Bien, Long Bien",
+            "th": "อิออนมอลล์ ลองเบียน"
+          },
+          "what": {
+            "en": "A family game centre of 1,004 m² on the 3rd floor of AEON Mall Long Bien, with mini bowling, VR and prize games",
+            "th": "ศูนย์เกมครอบครัว 1,004 ตร.ม. ชั้น 3 ของอิออนมอลล์ ลองเบียน มีมินิโบว์ลิ่ง วีอาร์ และเกมแลกของรางวัล"
+          },
+          "why": {
+            "en": "Mini bowling suits kids and adults together, and the prize corner is a favourite with young guests",
+            "th": "มินิโบว์ลิ่งเล่นด้วยกันได้ทั้งเด็กและผู้ใหญ่ และมุมของรางวัลเป็นที่ชื่นชอบของเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Timezone AEON Mall Long Biên, 27 Đường Cổ Linh, Long Biên, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://editor.timezonegames.com/en-vn/venues/hanoi/aeon-mall-long-bien/"
+        },
+        {
+          "name": {
+            "en": "Worldgame Playground for Kids",
+            "th": "เวิลด์เกม สนามเด็กเล่น"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Melinh Plaza, Ha Dong",
+            "th": "เมลินห์พลาซา ห่าดง"
+          },
+          "what": {
+            "en": "A children-only play centre of over 1,300 m² on the 4th floor of Melinh Plaza, with a ball pit, slides, painting, a mini car area and coin-operated games",
+            "th": "ศูนย์เล่นสำหรับเด็กล้วน ๆ กว่า 1,300 ตร.ม. ชั้น 4 ของเมลินห์พลาซา มีบ่อบอล สไลเดอร์ วาดรูป โซนรถมินิ และเกมหยอดเหรียญ"
+          },
+          "why": {
+            "en": "A Fairy Tale Garden, a multi-functional climbing house and a Smart Corner where children role-play as doctors",
+            "th": "มีสวนเทพนิยาย บ้านปีนป่ายอเนกประสงค์ และมุมสมาร์ทที่เด็กเล่นบทบาทสมมุติเป็นหมอ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "World Game, Melinh Plaza Đông, Đường Tô Hiệu, Hà Đông, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://mytour.vn/en/blog/xep-hang/top-10-indoor-playgrounds-for-kids-in-hanoi-mytour.html"
+        },
+        {
+          "name": {
+            "en": "Play 'N' Learn Vietnam",
+            "th": "เพลย์ แอนด์ เลิร์น เวียดนาม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Vincom Center Metropolis, Ba Dinh",
+            "th": "วินคอมเซ็นเตอร์ เมโทรโพลิส บาดิ่ญ"
+          },
+          "what": {
+            "en": "A newly opened indoor playground on the 3rd floor of Vincom Center Metropolis, with a focus on young children",
+            "th": "สนามเด็กเล่นในร่มเปิดใหม่ ชั้น 3 ของวินคอมเซ็นเตอร์ เมโทรโพลิส เน้นเด็กเล็ก"
+          },
+          "why": {
+            "en": "A dedicated Toddler Zone, and a three-step check (temperature, socks, hand sanitiser) before children play",
+            "th": "มีโซนเด็กวัยเตาะแตะโดยเฉพาะ และตรวจสามขั้นก่อนเข้าเล่น (วัดอุณหภูมิ ถุงเท้า เจลล้างมือ)"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Play n Learn Metropolis, Vincom Metropolis, 29 Liễu Giai, Ba Đình, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://mytour.vn/en/blog/xep-hang/top-10-indoor-playgrounds-for-kids-in-hanoi-mytour.html"
         }
       ]
     }
