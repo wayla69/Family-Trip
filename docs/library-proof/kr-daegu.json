@@ -1,0 +1,200 @@
+{
+  "town": "kr-daegu",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "two Haiku agents; 36 rows from yugacrew.com (Oct–Nov 2026, Dong-gu's YES! Kids Zone list) and kbmaeil.com (2025); all passed library-check.cjs, 24 went in",
+  "added": [
+    {
+      "name": "Ttotto Gimbap",
+      "page_name": "또또김밥",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps 'Tto-tto Gimbap' (59 Ayang-ro 15-gil), newest review shown 5 months ago"
+    },
+    {
+      "name": "Sodam Sutbul, Sinam",
+      "page_name": "소담숯불 신암점",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '소담숯불 신암점' (148 Songna-ro), newest review shown a day ago"
+    },
+    {
+      "name": "Stella Tteokbokki, Sinam-Sincheon",
+      "page_name": "스텔라떡볶이 대구신암신천점",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '스텔라떡볶이 대구신암신천점' (590 Dongdaegu-ro), newest review shown 2 months ago"
+    },
+    {
+      "name": "A Twosome Place, Dongbuk-ro",
+      "page_name": "투썸플레이스 동북로점",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '투썸플레이스 대구동북로점' (Sinam 4-dong), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Caffè Pascucci, Daegu Sinam",
+      "page_name": "파스쿠찌 대구신암점",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps 'Caffe Pascucci Daegu Sinam Branch' (Sinam-dong), newest review shown a month ago"
+    },
+    {
+      "name": "Sinseo Bogeo",
+      "page_name": "신서복어",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '신서복어' (370-4 Banyawol-ro), newest review shown a week ago"
+    },
+    {
+      "name": "Bareun Donkatsu (main shop)",
+      "page_name": "바른돈카츠 본점",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '바른돈카츠' (Hwarang-ro, Sincheon-dong), newest review shown a month ago"
+    },
+    {
+      "name": "Shabu World",
+      "page_name": "샤브월드",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '샤브월드' (Yulha-dong), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "The Buja Baeksuk (main shop)",
+      "page_name": "더 부자백숙본점",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '더 부자백숙 본점' (169 Haedong-ro), newest review shown 14 hours ago"
+    },
+    {
+      "name": "Palgongsan Dakgalbi",
+      "page_name": "팔공산닭갈비",
+      "src": "https://www.yugacrew.com/crewletter/daegu-donggu-yes-kids-zone-restaurants",
+      "date": "2026-10",
+      "map": "Google Maps '팔공산닭갈비' (154-8 Pagye-ro), newest review shown a week ago"
+    },
+    {
+      "name": "Daegu Children's World, Kkumnuri Hall",
+      "page_name": "대구어린이세상 꿈누리관",
+      "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+      "date": "2026-11",
+      "map": "Google Maps '어린이세상' (176 Dongdaegu-ro), newest review shown 5 days ago"
+    },
+    {
+      "name": "Daegu Safety Theme Park",
+      "page_name": "대구시민안전테마파크",
+      "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+      "date": "2026-11",
+      "map": "Google Maps 'Daegu Safety Theme Park' (1155 Palgongsan-ro), newest review shown a month ago"
+    },
+    {
+      "name": "Daegu Modern History Museum",
+      "page_name": "대구근대역사관",
+      "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+      "date": "2026-11",
+      "map": "Google Maps 'Daegu Modern History Museum', newest review shown 13 hours ago"
+    },
+    {
+      "name": "Yangnyeongsi Museum of Oriental Medicine",
+      "page_name": "대구 약령시 한의약박물관",
+      "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+      "date": "2026-11",
+      "map": "Google Maps 'Daegu Yangnyeongsi Museum of Oriental Medicine', newest review shown a day ago"
+    },
+    {
+      "name": "Gukchae Bosang Memorial Library (Jungang Library)",
+      "page_name": "국채보상운동기념도서관",
+      "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+      "date": "2026-11",
+      "map": "Google Maps 'Daegu Metropolitan Jungang Library' (공평로10길 25, the same address), newest review shown 6 days ago"
+    },
+    {
+      "name": "Dalseong Fossil Museum",
+      "page_name": "달성화석박물관",
+      "src": "https://kbmaeil.com/article/20250423500328",
+      "date": "2025-04",
+      "map": "Google Maps '달성화석박물관' (Technopolis, Yuga-eup), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Dalseong Children's Forest Library",
+      "page_name": "달성어린이숲도서관",
+      "src": "https://kbmaeil.com/article/20250723500334",
+      "date": "2025-07",
+      "map": "Google Maps '달성어린이숲도서관' (Hyeonpung-eup), newest review shown a month ago"
+    },
+    {
+      "name": "National Daegu Science Museum",
+      "page_name": "국립대구과학관",
+      "src": "https://www.yugacrew.com/crewletter/daegu-baby-friendly-places",
+      "date": "2026-10",
+      "map": "Google Maps 'Daegu National Science Museum', newest review shown a day ago"
+    },
+    {
+      "name": "Daegu Aquarium",
+      "page_name": "대구아쿠아리움",
+      "src": "https://www.yugacrew.com/crewletter/daegu-baby-friendly-places",
+      "date": "2026-10",
+      "map": "Google Maps 'Daegu Aquarium' (149 Dongbu-ro), newest review shown a month ago"
+    },
+    {
+      "name": "83 Tower (E-World)",
+      "page_name": "이월드 83타워",
+      "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+      "date": "2026-10",
+      "map": "Google Maps 'Daegu 83 Tower' (200 Duryugongwon-ro), newest review shown 19 hours ago"
+    },
+    {
+      "name": "Suseong Lake (Suseongmot)",
+      "page_name": "수성못 유원지",
+      "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+      "date": "2026-10",
+      "map": "Google Maps 'Suseongmot' (Dusan-dong), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Kim Gwang-seok Street",
+      "page_name": "김광석다시그리기길",
+      "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+      "date": "2026-10",
+      "map": "Google Maps 'Kim Gwang Seok Street' (Daebong-dong), newest review shown 3 days ago"
+    },
+    {
+      "name": "Apsan Cable Car",
+      "page_name": "앞산 케이블카",
+      "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+      "date": "2026-10",
+      "map": "Google Maps 'Apsan Cablecar' (Nam-gu), newest review shown 23 hours ago"
+    },
+    {
+      "name": "Cheongna Hill",
+      "page_name": "동산청라언덕",
+      "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+      "date": "2026-10",
+      "map": "Google Maps 'Cheongna Hill' (2029 Dalgubeol-daero), newest review shown a day ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "사누키제면소, 모모한우진갈비, 신촌설렁탕",
+      "why": "the newest review on the map is 9 months to 2 years old"
+    },
+    {
+      "name": "일품양평해장국 신암점, 다온가야밀면, 신아나고곰장어, 모닥텍사스바베큐",
+      "why": "the map found only another branch or a list"
+    },
+    {
+      "name": "마카로니 경양식, 장수오리, 황금코다리",
+      "why": "no review dates readable on the map"
+    },
+    {
+      "name": "네버랜드",
+      "why": "no map entry of its own (only the sports centre)"
+    },
+    {
+      "name": "국립대구박물관 어린이박물관",
+      "why": "the newest review on the map is a year old"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

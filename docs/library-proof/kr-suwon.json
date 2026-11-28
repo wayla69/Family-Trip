@@ -92,6 +92,50 @@
         "agents": "one Haiku agent; 3 rows from mom-mom.net, KTripTips and Yugacrew (2026), 2 passed library-check.cjs, 2 went in",
         "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from mom-mom.net (Apr 2025 – May 2026), yugacrew.com (Feb 2026) and baby.tali.kr (Aug 2026), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Sodamhwaro",
+          "page_name": "Sodamhwa-ro",
+          "src": "https://mom-mom.net/en/travel/places/65a7332c5c7274e908fa97e9",
+          "date": "2026-05",
+          "map": "Google Maps '소담화로' (Gwonseon-gu), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "P&P Pasta House",
+          "page_name": "Pnp Pasta House",
+          "src": "https://mom-mom.net/en/travel/places/653f09066702b6172b90d2bf",
+          "date": "2026-05",
+          "map": "Google Maps '파앤피파스타하우스' (Maesan-ro 1-ga), newest review shown a day ago"
+        },
+        {
+          "name": "Suwon Gwanggyo Museum",
+          "page_name": "광교박물관",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots",
+          "date": "2026-08",
+          "map": "Google Maps 'Suwon Gwanggyo Museum' (182 Gwanggyo-ro), newest review shown 2 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Japanese Cuisine Miyoyi",
+          "why": "the newest review on the map is 7 months old"
+        },
+        {
+          "name": "헬로방방 수원점",
+          "why": "the newest review on the map is a year old"
+        },
+        {
+          "name": "Brunch Bean Gwonseon, 카페아이, 어푸어푸 수원판타지움점",
+          "why": "no map entry of their own"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

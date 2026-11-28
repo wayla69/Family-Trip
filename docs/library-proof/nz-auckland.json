@@ -163,5 +163,257 @@
     "checked": "2026-11-24",
     "agents": "one Haiku agent; 3 rows from Chipmunks' own site (2026), Auckland for Kids (May 2025) and DOC, all passed library-check.cjs, 3 went in",
     "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
-  }
+  },
+  "rounds": [
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 19 rows offered, 19 passed library-check.cjs, 15 went in",
+      "added": [
+        {
+          "name": "MASU",
+          "page_name": "MASU",
+          "src": "https://www.aucklandnz.com/inspire/the-best-family-friendly-restaurants-in-auckland",
+          "date": "2025-09",
+          "map": "Google Maps 'MASU by Nic Watt', 1,277 reviews, newest '9 hours ago'"
+        },
+        {
+          "name": "BODA",
+          "page_name": "Boda",
+          "src": "https://www.aucklandnz.com/inspire/the-best-family-friendly-restaurants-in-auckland",
+          "date": "2025-09",
+          "map": "Google Maps 'BODA', 407 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "The Heke",
+          "page_name": "The Heke",
+          "src": "https://www.aucklandnz.com/inspire/the-best-family-friendly-restaurants-in-auckland",
+          "date": "2025-09",
+          "map": "Google Maps 'The Heke - Restaurant, Brewery & Distillery', 1,007 reviews, newest '4 hours ago'"
+        },
+        {
+          "name": "Sugar at Chelsea Bay",
+          "page_name": "Sugar Café",
+          "src": "https://www.aucklandnz.com/inspire/the-best-family-friendly-restaurants-in-auckland",
+          "date": "2025-09",
+          "map": "Google Maps 'Sugar at Chelsea Bay', 1,714 reviews, newest '5 hours ago'"
+        },
+        {
+          "name": "K10 Sushi Train",
+          "page_name": "K10 Sushi Train",
+          "src": "https://www.aucklandnz.com/inspire/the-best-family-friendly-restaurants-in-auckland",
+          "date": "2025-09",
+          "map": "Google Maps 'K10 Sushi Train Newmarket', 163 reviews, newest 'a month ago'"
+        },
+        {
+          "name": "Azabu Mission Bay",
+          "page_name": "Azabu Mission Bay",
+          "src": "https://www.aucklandnz.com/inspire/the-best-family-friendly-restaurants-in-auckland",
+          "date": "2025-09",
+          "map": "Google Maps 634 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Baduzzi",
+          "page_name": "Baduzzi",
+          "src": "https://www.aucklandforkids.co.nz/cafes-restaurants/",
+          "date": "2025-05",
+          "map": "Google Maps 2,861 reviews, newest '22 hours ago'"
+        },
+        {
+          "name": "Huddle Cafe",
+          "page_name": "Huddle Cafe",
+          "src": "https://www.aucklandforkids.co.nz/cafes-restaurants/",
+          "date": "2025-05",
+          "map": "Google Maps 251 reviews, newest '3 weeks ago'"
+        },
+        {
+          "name": "Cornwall Park Cafe",
+          "page_name": "Cornwall Park Cafe",
+          "src": "https://www.aucklandforkids.co.nz/cafes-restaurants/",
+          "date": "2025-05",
+          "map": "Google Maps 2,797 reviews, newest '5 hours ago'"
+        },
+        {
+          "name": "Cornwall Park",
+          "page_name": "Cornwall Park",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "date": "2026-06",
+          "map": "Google Maps 11,575 reviews, newest '20 hours ago'"
+        },
+        {
+          "name": "Long Bay Regional Park",
+          "page_name": "Long Bay Regional Park",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "date": "2026-06",
+          "map": "Google Maps 5,154 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Auckland Dockline Tram",
+          "page_name": "Auckland Dockline Tram",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "date": "2026-06",
+          "map": "Google Maps 'Auckland Dockline Trams', 39 reviews, newest '4 weeks ago'"
+        },
+        {
+          "name": "Manukau Live Steamers",
+          "page_name": "Manukau Live Steamers",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "date": "2026-06",
+          "map": "Google Maps 'Manukau Live Steamers Inc.', 246 reviews, newest 'a month ago'"
+        },
+        {
+          "name": "Adventure Alley",
+          "page_name": "Adventure Alley",
+          "src": "https://adventurealley.co.nz/",
+          "date": "official",
+          "map": "Google Maps 342 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Magic Loft",
+          "page_name": "Magic Loft",
+          "src": "https://www.magicloft.co.nz/",
+          "date": "official",
+          "map": "Google Maps 'Magic Loft Playground & Cafe - Browns Bay store', 938 reviews, newest '1 day ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "East",
+          "why": "too generic a name to match one place on the map"
+        },
+        {
+          "name": "Olaf’s Artisan Bakery Café",
+          "why": "the map's newest review is a year old"
+        },
+        {
+          "name": "Kings Garden Cafe Remuera",
+          "why": "the map's match is the garden centre 'Kings Plant Barn Remuera'"
+        },
+        {
+          "name": "Ōrākei Basin Boardwalk",
+          "why": "the map's walkway has 17 reviews, the newest eleven months old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 17 rows from aucklandforkids.co.nz guides (Feb 2025 – Jun 2026), all passed library-check.cjs, 13 went in",
+      "added": [
+        {
+          "name": "Filly Café",
+          "page_name": "Filly Café",
+          "src": "https://www.aucklandforkids.co.nz/food/filly-cafe-sylvia-park-family-friendly-review/",
+          "date": "2025-05",
+          "map": "Google Maps 'Filly' (Sylvia Park), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Try It Out",
+          "page_name": "Try It Out",
+          "src": "https://www.aucklandforkids.co.nz/food/best-family-friendly-vietnamese-auckland/",
+          "date": "2025-03",
+          "map": "Google Maps 'Try It Out Restaurant' (79 Atkinson Avenue, Ōtāhuhu — the page says 9), newest review shown 3 days ago"
+        },
+        {
+          "name": "Hello Mister Newmarket",
+          "page_name": "Hello Mister",
+          "src": "https://www.aucklandforkids.co.nz/food/best-family-friendly-vietnamese-auckland/",
+          "date": "2025-03",
+          "map": "Google Maps 'Hello Mister Newmarket' (123 Carlton Gore Road), newest review shown 3 months ago"
+        },
+        {
+          "name": "Saigonz",
+          "page_name": "Saigonz",
+          "src": "https://www.aucklandforkids.co.nz/food/best-family-friendly-vietnamese-auckland/",
+          "date": "2025-03",
+          "map": "Google Maps 'Saigonz' (40 Beach Road), newest review shown 2 days ago"
+        },
+        {
+          "name": "Hansan Newmarket",
+          "page_name": "Hansan",
+          "src": "https://www.aucklandforkids.co.nz/food/best-family-friendly-vietnamese-auckland/",
+          "date": "2025-03",
+          "map": "Google Maps 'Hansan' (55 Nuffield Street, Newmarket), newest review shown 5 days ago"
+        },
+        {
+          "name": "Mi & Chi",
+          "page_name": "Mi & Chi",
+          "src": "https://www.aucklandforkids.co.nz/food/best-family-friendly-vietnamese-auckland/",
+          "date": "2025-03",
+          "map": "Google Maps 'MI & CHI' (Level 3 food court, 277 Broadway, Newmarket), newest review shown a week ago"
+        },
+        {
+          "name": "Grand Harbour",
+          "page_name": "Grand Harbour Chinese Restaurant",
+          "src": "https://www.aucklandforkids.co.nz/food/best-yum-cha-restaurants-in-auckland-for-families-and-food-lovers/",
+          "date": "2025-02",
+          "map": "Google Maps 'Grand Harbour' (Customs Street West / Pakenham Street East), newest review shown a week ago"
+        },
+        {
+          "name": "Harbour Eats",
+          "page_name": "Harbour Eats",
+          "src": "https://www.aucklandforkids.co.nz/food/aucklands-best-food-courts-where-families-dine/",
+          "date": "2025-05",
+          "map": "Google Maps 'Harbour Eats' (21 Queen Street), newest review shown 3 days ago"
+        },
+        {
+          "name": "The Terrace at Sylvia Park",
+          "page_name": "The Terrace at Sylvia Park",
+          "src": "https://www.aucklandforkids.co.nz/food/aucklands-best-food-courts-where-families-dine/",
+          "date": "2025-05",
+          "map": "Google Maps 'The Terrace at Sylvia Park' (Sylvia Park Road), newest review shown 2 months ago"
+        },
+        {
+          "name": "The Eatery at Eastridge",
+          "page_name": "The Eatery at Eastridge",
+          "src": "https://www.aucklandforkids.co.nz/food/aucklands-best-food-courts-where-families-dine/",
+          "date": "2025-05",
+          "map": "Google Maps 'The Eatery at Eastridge' (215 Kepa Road), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Crave",
+          "page_name": "Crave Café",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "date": "2026-06",
+          "map": "Google Maps 'Crave' (6 Morningside Drive), newest review shown a day ago"
+        },
+        {
+          "name": "Ōrākei Basin boardwalk",
+          "page_name": "Ōrākei Basin Boardwalk",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "date": "2026-06",
+          "map": "Google Maps 'Orakei Basin Walkway', newest review shown 3 days ago"
+        },
+        {
+          "name": "New Zealand Maritime Museum",
+          "page_name": "New Zealand Maritime Museum",
+          "src": "https://www.aucklandforkids.co.nz/whats-on/september-october-school-holidays-auckland/",
+          "date": "2025-09",
+          "map": "Google Maps 'New Zealand Maritime Museum' (Quay and Hobson Streets), newest review shown 8 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Olaf's Artisan Bakery Café",
+          "why": "the newest review on the map is a year old"
+        },
+        {
+          "name": "Little Lato Gelato Bar",
+          "why": "the newest review on the map is two years old"
+        },
+        {
+          "name": "Food Workshop and Co",
+          "why": "the newest review on the map is 8 months old"
+        },
+        {
+          "name": "Atrium on Elliott",
+          "why": "the food court has no map entry of its own with reviews"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
 }

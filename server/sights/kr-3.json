@@ -1924,6 +1924,47 @@
           "q": "Girimsa Temple, Gyeongju",
           "ok": "2026-11",
           "src": "https://www.mummytravels.com/gyeongju-with-kids-south-korea/"
+        },
+        {
+          "local": "키덜트뮤지엄",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 8,000 วอน",
+            "en": "Children ₩8,000"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/gyeongju-museums",
+          "name": {
+            "th": "พิพิธภัณฑ์คิดัลต์ โพมุน",
+            "en": "Kidult Museum (Bomun)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนโพมุน ย่านทะเลสาบโพมุน",
+            "en": "Bomun-ro, Bomun Lake resort"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของเล่นและฟิกเกอร์ขนาดใหญ่ ใหญ่ที่สุดในคย็องซังเหนือ",
+            "en": "A big toy-and-figure museum for the whole family, the largest of its kind in North Gyeongsang"
+          },
+          "why": {
+            "th": "ทั้งบ้านเที่ยวด้วยกันได้",
+            "en": "The whole family can enjoy it together"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน",
+            "en": "Open every day"
+          },
+          "q": "키덜트뮤지엄, 132-16 Bomun-ro, Gyeongju",
+          "ok": "2026-11"
         }
       ]
     },
@@ -3564,6 +3605,615 @@
           "q": "Suwon Media Centre, Suwon",
           "ok": "2026-11",
           "src": "https://baby.tali.kr/gyeonggi-south-kids-spots"
+        },
+        {
+          "local": "광교박물관",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "2,000 วอน เด็กฟรี",
+            "en": "₩2,000; children free"
+          },
+          "book": "none",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots",
+          "name": {
+            "th": "พิพิธภัณฑ์ควังกโย ซูวอน",
+            "en": "Suwon Gwanggyo Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนควังกโย ข้างสวนทะเลสาบควังกโย ยองทงกู",
+            "en": "Gwanggyo-ro, by Gwanggyo Lake Park, Yeongtong-gu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ท้องถิ่นบนทางเดินรอบสวนทะเลสาบควังกโย",
+            "en": "A local museum on the walk round Gwanggyo Lake Park"
+          },
+          "why": {
+            "th": "เด็ก 12 ปีลงมาเข้าฟรี",
+            "en": "Free for children aged 12 and under"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Suwon Gwanggyo Museum, 182 Gwanggyo-ro, Suwon",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "kr-daegu",
+      "thin": true,
+      "sights": [
+        {
+          "local": "대구어린이세상 꿈누리관",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "คนละ 4,000 วอน (ทั้งเด็กและผู้ใหญ่)",
+            "en": "₩4,000 a person (children and adults)"
+          },
+          "book": "req",
+          "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+          "name": {
+            "th": "โลกเด็กแทกู อาคารกุมนูรี",
+            "en": "Daegu Children's World, Kkumnuri Hall"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนทงแทกู ฮวังกึมดง ซูซองกู",
+            "en": "Dongdaegu-ro, Hwanggeum-dong, Suseong-gu"
+          },
+          "what": {
+            "th": "หอเด็กปี 1983 ปรับปรุงใหม่เปิดปี 2023 มีโซนลงมือทำ 4 โซน",
+            "en": "The 1983 children's hall rebuilt and reopened in 2023, with four hands-on zones"
+          },
+          "why": {
+            "th": "มีโซนเด็กอ่อน 0–30 เดือน และสนามเล่นสำหรับ 36 เดือนขึ้นไป",
+            "en": "A baby zone for 0–30 months and a playground for 36 months and up"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ ต้องจองรอบออนไลน์เท่านั้น",
+            "en": "Closed on Mondays; sessions booked online only"
+          },
+          "q": "어린이세상, 동대구로 176, 대구 수성구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "대구시민안전테마파크",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "rec",
+          "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+          "name": {
+            "th": "สวนธีมความปลอดภัยแทกู",
+            "en": "Daegu Safety Theme Park"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนพัลกงซาน ยงซูดง ทงกู",
+            "en": "Palgongsan-ro, Yongsu-dong, Dong-gu"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้ความปลอดภัย รถไฟใต้ดิน แผ่นดินไหว หนัง 4D และจราจร",
+            "en": "Safety experiences: subway, earthquake, a 4D film and traffic"
+          },
+          "why": {
+            "th": "เด็กได้ขับรถคันเล็กเรียนรู้กฎจราจร",
+            "en": "Children learn road safety driving mini cars"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Daegu Safety Theme Park, 팔공산로 1155, 대구 동구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "대구근대역사관",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์สมัยใหม่แทกู",
+            "en": "Daegu Modern History Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคย็องซังกัมยอง จุงกู",
+            "en": "Gyeongsanggamyeong-gil, Jung-gu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ในอาคารธนาคารปี 1932",
+            "en": "A local history museum in a 1932 bank building"
+          },
+          "why": {
+            "th": "มีห้องลงมือทำ และจองรอบนำชมได้",
+            "en": "A hands-on room and guided tours to book"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ สวนคย็องซังกัมยองอยู่ติดกัน",
+            "en": "Closed on Mondays; Gyeongsang-gamyeong Park is next door"
+          },
+          "q": "Daegu Modern History Museum, 경상감영길 67, 대구 중구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "대구 약령시 한의약박물관",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+          "name": {
+            "th": "พิพิธภัณฑ์การแพทย์แผนโบราณยังนยองชี",
+            "en": "Yangnyeongsi Museum of Oriental Medicine"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "นัมซองโร จุงกู",
+            "en": "Namseong-ro, Jung-gu"
+          },
+          "what": {
+            "th": "เรื่องตลาดสมุนไพรแทกู มีแอนิเมชันและสมุนไพรกับตำรากว่า 300 ชิ้น",
+            "en": "The story of Daegu's herb market with animations and about 300 herbs and books"
+          },
+          "why": {
+            "th": "มีแบบจำลองตลาดเก่าและกิจกรรมทำสบู่สมุนไพร",
+            "en": "Models of the old market and making herbal soap"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Daegu Yangnyeongsi Museum of Oriental Medicine, 달구벌대로415길 49, 대구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "국채보상운동기념도서관",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-indoor-kids-places",
+          "name": {
+            "th": "ห้องสมุดกุกแชโบซัง (ห้องสมุดกลาง)",
+            "en": "Gukchae Bosang Memorial Library (Jungang Library)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนกงพยอง ทงอินดง จุงกู",
+            "en": "Gongpyeong-ro 10-gil, Dongin-dong, Jung-gu"
+          },
+          "what": {
+            "th": "ห้องสมุดกับห้องจัดแสดงกลางเมือง",
+            "en": "A library with an exhibition hall in the city centre"
+          },
+          "why": {
+            "th": "มีห้องเด็ก เดินถึงพิพิธภัณฑ์สมุนไพรและพิพิธภัณฑ์ประวัติศาสตร์",
+            "en": "A children's room, a walk from the herb museum and the history museum"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์แรกและที่สามของเดือน และวันหยุดราชการ",
+            "en": "Closed on the first and third Monday and public holidays"
+          },
+          "q": "대구광역시립중앙도서관, 공평로10길 25, 대구 중구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "달성화석박물관",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kbmaeil.com/article/20250423500328",
+          "name": {
+            "th": "พิพิธภัณฑ์ฟอสซิลทัลซอง",
+            "en": "Dalseong Fossil Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เทคโนโพลิส ยูกาอึบ ทัลซองกุน",
+            "en": "Daegu Technopolis, Yuga-eup, Dalseong-gun"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ฟอสซิลสาธารณะแห่งแรกของเกาหลี เปิดตุลาคม 2024",
+            "en": "Korea's first public fossil museum, opened in October 2024"
+          },
+          "why": {
+            "th": "มีกิจกรรมวิทยาศาสตร์สำหรับเด็กวันหยุด",
+            "en": "Weekend science programmes for children"
+          },
+          "q": "달성화석박물관, 테크노폴리스, 대구 달성군",
+          "ok": "2026-11"
+        },
+        {
+          "local": "달성어린이숲도서관",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kbmaeil.com/article/20250723500334",
+          "name": {
+            "th": "ห้องสมุดป่าเด็กทัลซอง",
+            "en": "Dalseong Children's Forest Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเทคโนจุงอัง ฮยอนพุงอึบ ทัลซองกุน",
+            "en": "Techno-jungang-daero, Hyeonpung-eup, Dalseong-gun"
+          },
+          "what": {
+            "th": "ห้องสมุดสามชั้นสำหรับเด็กและเด็กเล็ก เปิดกรกฎาคม 2025",
+            "en": "A three-storey library for children and babies, opened in July 2025"
+          },
+          "why": {
+            "th": "มีห้องอ่านสำหรับเด็กเล็ก ห้องเล่นภาษาอังกฤษ และห้องให้นม",
+            "en": "A baby reading room, an English play room and a nursing room"
+          },
+          "q": "달성어린이숲도서관, 테크노중앙대로 231, 대구 달성군",
+          "ok": "2026-11"
+        },
+        {
+          "local": "국립대구과학관",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ต่ำกว่า 36 เดือนฟรี อายุ 7–19 ปี 2,000 วอน (ห้องหลัก)",
+            "en": "Under 36 months free; ages 7–19 ₩2,000 (main halls)"
+          },
+          "book": "rec",
+          "src": "https://www.yugacrew.com/crewletter/daegu-baby-friendly-places",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์แห่งชาติแทกู",
+            "en": "National Daegu Science Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเทคโน 6 ทัลซองกุน",
+            "en": "Techno-daero 6-gil, Dalseong-gun"
+          },
+          "what": {
+            "th": "ห้องจัดแสดง ท้องฟ้าจำลอง และหอวิทยาศาสตร์สำหรับเด็กเล็ก",
+            "en": "Exhibition halls, a planetarium and a science hall for little ones"
+          },
+          "why": {
+            "th": "มีห้องให้นมสองห้อง พร้อมน้ำและไมโครเวฟ",
+            "en": "Two nursing rooms with water and a microwave"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ หอสำหรับเด็กเล็กเช็กการจองก่อน",
+            "en": "Closed on Mondays; check bookings for the little ones' hall"
+          },
+          "q": "Daegu National Science Museum, 테크노대로6길 20, 대구 달성군",
+          "ok": "2026-11"
+        },
+        {
+          "local": "대구아쿠아리움",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก (36 เดือน–12 ปี) 25,000 วอน ผู้ใหญ่ 29,000 วอน",
+            "en": "Children (36 months–12) ₩25,000, adults ₩29,000"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-baby-friendly-places",
+          "name": {
+            "th": "อควาเรียมแทกู",
+            "en": "Daegu Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ห้างชินเซเก ถนนทงบู ทงกู",
+            "en": "Shinsegae Department Store, Dongbu-ro, Dong-gu"
+          },
+          "what": {
+            "th": "อควาเรียมในร่ม ไปได้ทุกสภาพอากาศ",
+            "en": "An indoor aquarium for any weather"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 36 เดือนเข้าฟรี ผู้ใหญ่หนึ่งคนต่อเด็กหนึ่งคน",
+            "en": "Under-36-month babies go in free, one per adult"
+          },
+          "q": "Daegu Aquarium, 동부로 149, 대구 동구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "83타워",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เด็ก 12,000 วอน (จุดชมวิวและพิพิธภัณฑ์)",
+            "en": "Children ₩12,000 (deck and museum)"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+          "name": {
+            "th": "หอคอย 83 อีเวิลด์",
+            "en": "83 Tower (E-World)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "สวนทูรยู ทัลซอกู",
+            "en": "Duryu Park, Dalseo-gu"
+          },
+          "what": {
+            "th": "จุดชมวิวเห็นทั้งเมือง มีห้องจัดแสดง",
+            "en": "An observation deck over the whole city, with exhibitions"
+          },
+          "why": {
+            "th": "มีศูนย์อาหารที่ทั้งบ้านกินได้",
+            "en": "A food court the whole family can enjoy"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน มีทางเดินประดับไฟขึ้นไปชมวิวกลางคืน",
+            "en": "Open every day; a lit path up for the night view"
+          },
+          "q": "Daegu 83 Tower, 두류공원로 200, 대구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "수성못",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+          "name": {
+            "th": "ทะเลสาบซูซอง",
+            "en": "Suseong Lake (Suseongmot)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทูซันดง ซูซองกู",
+            "en": "Dusan-dong, Suseong-gu"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบตั้งแต่ปี 1925 มีเรือถีบ",
+            "en": "A lakeside park from 1925 with pedal boats"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น น้ำตก และน้ำพุดนตรี",
+            "en": "A playground, a waterfall and a music fountain"
+          },
+          "tip": {
+            "th": "เปิดตลอด น้ำพุหยุดวันจันทร์",
+            "en": "Open all the time; the fountain rests on Mondays"
+          },
+          "q": "Suseongmot, Dusan-dong, Suseong-gu, Daegu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "김광석다시그리기길",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+          "name": {
+            "th": "ถนนคิมกวังซ็อก",
+            "en": "Kim Gwang-seok Street"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ข้างตลาดบังชอน จุงกู",
+            "en": "By Bangcheon Market, Jung-gu"
+          },
+          "what": {
+            "th": "ตรอกภาพวาดฝาผนังเรื่องชีวิตและเพลงของนักร้อง",
+            "en": "A mural lane about a singer's life and music"
+          },
+          "why": {
+            "th": "มีรูปปั้นถือกีตาร์และภาพวาดตลอดตรอก",
+            "en": "Statues with guitars and murals all along the lane"
+          },
+          "tip": {
+            "th": "เปิดตลอด ไม่มีที่จอดรถ",
+            "en": "Open all the time; no parking"
+          },
+          "q": "Kim Gwang Seok Street, Daebong-dong, Daegu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "앞산 케이블카",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เด็กไปกลับ 10,000 วอน",
+            "en": "Children return ₩10,000"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+          "name": {
+            "th": "กระเช้าอัปซาน",
+            "en": "Apsan Cable Car"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สวนอัปซาน พงด็อกดง นัมกู",
+            "en": "Apsan Park, Bongdeok-dong, Nam-gu"
+          },
+          "what": {
+            "th": "กระเช้าขึ้นผ่านป่า มองเห็นวิวเมือง",
+            "en": "A cable car up through the forest with views of the city"
+          },
+          "why": {
+            "th": "เห็นวิวเมืองและป่าทึบจากกระเช้า",
+            "en": "City views and thick forest from the car"
+          },
+          "tip": {
+            "th": "เวลาเปลี่ยนตามเดือน ฝนตกอาจปิดเร็ว",
+            "en": "Hours change by month; may stop early in rain"
+          },
+          "q": "Apsan Cablecar, Nam-gu, Daegu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "동산청라언덕",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/daegu-places-to-visit",
+          "name": {
+            "th": "เนินชองนา",
+            "en": "Cheongna Hill"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนทัลกูบอล ทงซันดง จุงกู",
+            "en": "Dalgubeol-daero, Dongsan-dong, Jung-gu"
+          },
+          "what": {
+            "th": "เนินที่มีบ้านมิชชันนารีเก่า",
+            "en": "A hill of old missionary houses"
+          },
+          "why": {
+            "th": "มีบ้านตะวันตก 3 หลัง บันได 90 ขั้น และทางเดินวันที่ 1 มีนาคม",
+            "en": "Three Western houses, the 90 steps and the March 1st path to walk"
+          },
+          "tip": {
+            "th": "เปิดตลอด ไม่มีที่จอดรถ",
+            "en": "Open all the time; no parking"
+          },
+          "q": "Cheongna Hill, 달구벌대로 2029, 대구",
+          "ok": "2026-11"
         }
       ]
     }

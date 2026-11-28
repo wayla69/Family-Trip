@@ -1433,6 +1433,191 @@
           "q": "Seoul Chaekbogo, Jamsil Naru station, Songpa-gu, Seoul",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/seoul-elementary-kids-best-spots"
+        },
+        {
+          "local": "아리수나라",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2018830",
+          "name": {
+            "th": "อาริซูนารา ศูนย์เรียนรู้น้ำประปาสำหรับเด็ก",
+            "en": "Arisu Nara (tap-water hall for children)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนเด็กแกรนด์พาร์ก ถนนนึงดง ควังจินกู",
+            "en": "Children's Grand Park, Neungdong-ro, Gwangjin-gu"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้เรื่องน้ำประปาของโซลสำหรับเด็ก ในสวนเด็กแกรนด์พาร์ก",
+            "en": "A children's hall about Seoul's tap water inside Children's Grand Park"
+          },
+          "why": {
+            "th": "เด็กได้ลองเรื่องน้ำประปาด้วยมือตัวเอง",
+            "en": "Children try out how tap water works with their hands"
+          },
+          "q": "Arisu Nara, 238 Neungdong-ro, Gwangjin-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "보라매공원",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-dongjak",
+          "name": {
+            "th": "สวนโบราแม",
+            "en": "Boramae Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนยออีแดบัง ทงจักกู",
+            "en": "Yeouidaebang-ro, Dongjak-gu"
+          },
+          "what": {
+            "th": "สวนสาธารณะใหญ่ในทงจัก มีพื้นที่ชุ่มน้ำให้เด็กดูแมลงและพืชฟรี",
+            "en": "A big city park in Dongjak, with a free wetland where children look at insects and plants"
+          },
+          "why": {
+            "th": "คนในย่านแนะนำ พื้นที่ชุ่มน้ำให้เด็กเห็นธรรมชาติใกล้ๆ",
+            "en": "Locals recommend it; the wetland lets children see nature up close"
+          },
+          "q": "Boramae Park, Dongjak-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "광나루 모두의놀이터",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "name": {
+            "th": "สนามเด็กเล่นของทุกคน สวนริมแม่น้ำฮันกวังนารู",
+            "en": "Gwangnaru Han River Park \"Everyone's Playground\""
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนริมแม่น้ำฮันกวังนารู ชอนโฮดง คังดงกู",
+            "en": "Gwangnaru Han River Park, Cheonho-dong, Gangdong-gu"
+          },
+          "what": {
+            "th": "สนามเด็กเล่น 6,000 ตร.ม. มีลานหัดปั่นจักรยานสำหรับเด็กเล็ก",
+            "en": "A 6,000 m² playground with a bike-learning track for small children"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่ และมีที่ให้เด็กเล็กหัดปั่นจักรยาน",
+            "en": "A huge playground plus a place for toddlers to learn to ride"
+          },
+          "q": "광나루 모두의놀이터, Cheonho-dong, Gangdong-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "암사동 유적",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป เด็ก 6 ขวบลงมาฟรี",
+            "en": "Check the price; ages 6 and under free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "name": {
+            "th": "แหล่งโบราณคดีอัมซาดง",
+            "en": "Amsa-dong Prehistoric Settlement Site"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อัมซาดง คังดงกู",
+            "en": "Amsa-dong, Gangdong-gu"
+          },
+          "what": {
+            "th": "แหล่งหมู่บ้านยุคหินใหม่ มีกระท่อมจำลองและพิพิธภัณฑ์",
+            "en": "A Neolithic village site with rebuilt huts and a museum"
+          },
+          "why": {
+            "th": "เด็ก 6 ขวบลงมาเข้าฟรี",
+            "en": "Children aged 6 and under go in free"
+          },
+          "q": "Amsa-dong Prehistoric Site, Gangdong-gu, Seoul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "암사생태공원",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/best-places-for-kids-seoul-gangdong",
+          "name": {
+            "th": "สวนนิเวศอัมซา",
+            "en": "Amsa Ecological Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริมแม่น้ำฮัน อัมซาดง คังดงกู",
+            "en": "Han River bank, Amsa-dong, Gangdong-gu"
+          },
+          "what": {
+            "th": "สวนธรรมชาติริมแม่น้ำ มีดาดฟ้าชมวิวแม่น้ำฮัน",
+            "en": "A riverside nature park with a viewing deck over the Han"
+          },
+          "why": {
+            "th": "เดินชมธรรมชาติริมน้ำฟรี มีกิจกรรมธรรมชาติสำหรับเด็ก",
+            "en": "A free nature walk by the river, with children's nature programmes"
+          },
+          "q": "Amsa Ecological Park, Gangdong-gu, Seoul",
+          "ok": "2026-11"
         }
     ]
     },
@@ -2188,6 +2373,125 @@
           "q": "KidZania Busan, Shinsegae Centum City, Haeundae, Busan, South Korea",
           "ok": "2026-11",
           "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/"
+        },
+        {
+          "local": "태종대 오션플라잉 테마파크",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ห้องมีเดียอาร์ต เด็ก 5,000 วอน ต่ำกว่า 4 ขวบฟรี",
+            "en": "Media-art hall: children ₩5,000; under 4 free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/busan-theme-parks",
+          "name": {
+            "th": "สวนสนุกโอเชียนฟลายอิง แทจงแด",
+            "en": "Taejongdae Ocean Flying Theme Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนแทจง ยองโดกู",
+            "en": "Taejong-ro, Yeongdo-gu"
+          },
+          "what": {
+            "th": "สวนที่แทจงแด มีซิปไลน์ยาว 653 เมตร ห้องมีเดียอาร์ต และคาเฟ่วิวทะเล",
+            "en": "A park at Taejongdae with a 653 m zipline, an immersive media-art hall and a sea-view café"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 4 ขวบเข้าห้องมีเดียอาร์ตฟรี เด็กโตเล่นซิปไลน์ได้",
+            "en": "Under-4s see the media-art hall free; older children can ride the zipline"
+          },
+          "tip": {
+            "th": "ซิปไลน์ขึ้นกับสภาพอากาศ",
+            "en": "The zipline depends on the weather"
+          },
+          "q": "Taejongdae Ocean Flying Theme Park, Taejong-ro, Yeongdo-gu, Busan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "히어로 플레이파크 부산정관점",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก ตั๋วทั้งวัน 25,000 วอน",
+            "en": "Children, all day ₩25,000"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/busan-theme-parks",
+          "name": {
+            "th": "ฮีโร่เพลย์พาร์ก ชองกวาน",
+            "en": "Hero Play Park, Jeonggwan"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชองกวานอึบ คีจังกุน",
+            "en": "Jeonggwan-eup, Gijang-gun"
+          },
+          "what": {
+            "th": "สวนในร่มขนาดใหญ่ มีโซนกีฬา สวนเล่น และบ้านลม",
+            "en": "A big indoor park with a sports area, a play park and an air bounce"
+          },
+          "why": {
+            "th": "มีโซนเด็ก โซนฟุตบอล บ่อบอล ตัวต่อ และโซนเด็กเล็ก",
+            "en": "A kids' zone, a football zone, a ball pool, blocks and a baby zone"
+          },
+          "q": "히어로 플레이파크 부산정관점, Gijang-gun, Busan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "부산도서관 꿈뜨락 어린이실",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.yugacrew.com/crewletter/busan-baby-friendly-places",
+          "name": {
+            "th": "ห้องเด็กห้องสมุดปูซาน",
+            "en": "Busan Library children's room (Kkumtteurak)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชั้น 1 ห้องสมุดปูซาน ซาซังกู",
+            "en": "Busan Library 1st floor, Sasang-gu"
+          },
+          "what": {
+            "th": "ห้องหนังสือภาพฟรีในห้องเด็กของห้องสมุด",
+            "en": "A free picture-book room inside the library's children's room"
+          },
+          "why": {
+            "th": "เงียบ มีห้องให้นม เหมาะวันฝนตกพร้อมลูกเล็ก",
+            "en": "Quiet, with a nursing room: handy on a rainy day with a baby"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์และวันหยุดราชการ ไม่ต้องจอง",
+            "en": "Closed Mondays and public holidays; no booking needed"
+          },
+          "q": "Busan Library, 33 Sasang-ro 310beon-gil, Sasang-gu, Busan",
+          "ok": "2026-11"
         }
     ]
     }

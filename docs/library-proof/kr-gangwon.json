@@ -148,6 +148,28 @@
         "agents": "one Haiku agent; 5 rows from mom-mom.net (2025–2026), all passed library-check.cjs, 4 went in",
         "rule": "library-check.cjs, then Kakao Map (Naver Map is blocked here; Google Maps shows few reviews in Korea): ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
       }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 2 rows from mom-mom.net (Feb and Sep 2026), both passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Samgyori Dongchimi Makguksu, Namhangjin",
+          "page_name": "삼교리동치미막국수 남항진점",
+          "src": "https://mom-mom.net/travel/places/6a9e196e5536e944a9890738",
+          "date": "2026-09",
+          "map": "Google Maps 'Samgyo-ri Dongchimi Makguksu' (Gonghang-gil, Gangneung), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "퍼플 키즈카페 춘천점",
+          "why": "no map entry of its own"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
