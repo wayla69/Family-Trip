@@ -1138,6 +1138,127 @@
           "q": "Jardins de la Indústria, Carrer de la Marina 358, 08025 Barcelona, Spain",
           "ok": "2026-11",
           "src": "https://www.barcelona.cat/infobarcelona/en/culmina-un-projecte-pioner-dinnovacio-i-tecnologia-per-dissenyar-arees-de-joc-infantils_1553116.html"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Montjuïc Castle",
+            "th": "ปราสาทมงจูอิก"
+          },
+          "local": "Castell de Montjuïc",
+          "kind": "views",
+          "area": {
+            "en": "Montjuïc",
+            "th": "มงจูอิก"
+          },
+          "what": {
+            "en": "The hilltop castle of Montjuïc, which has open classrooms for visitors to use",
+            "th": "ปราสาทบนยอดเขามงจูอิก มีห้องเรียนเปิดให้ผู้มาเยือนใช้"
+          },
+          "why": {
+            "en": "Admission is free for under 16s, and the castle is open every day of the year",
+            "th": "เด็กต่ำกว่า 16 ปีเข้าฟรี และปราสาทเปิดทุกวันตลอดปี"
+          },
+          "tip": {
+            "en": "Open 10:00–20:00 from March to October and 10:00–18:00 from November to February; free for under 16s every Sunday from 15:00",
+            "th": "เปิด 10:00–20:00 ช่วงมีนาคมถึงตุลาคม และ 10:00–18:00 ช่วงพฤศจิกายนถึงกุมภาพันธ์ เด็กต่ำกว่า 16 ปีเข้าฟรีทุกวันอาทิตย์หลัง 15:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free for under 16s",
+            "th": "เด็กต่ำกว่า 16 ปีเข้าฟรี"
+          },
+          "book": "none",
+          "q": "Montjuïc Castle, Ctra. de Montjuïc 66, Sants-Montjuïc, Barcelona, Spain",
+          "src": "https://ajuntament.barcelona.cat/castelldemontjuic/en/node/125"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Masia Can Mestres",
+            "th": "ฟาร์มมาซีอา กัน เมสเตรส"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Sants-Montjuïc",
+            "th": "ซานส์-มงจูอิก"
+          },
+          "what": {
+            "en": "A city-run farmhouse with sheep, goats, ducks, rabbits, geese and chickens, plus vegetable gardens, orchards and a classroom",
+            "th": "ฟาร์มของเมือง มีแกะ แพะ เป็ด กระต่าย ห่าน และไก่ พร้อมแปลงผัก สวนผลไม้ และห้องเรียน"
+          },
+          "why": {
+            "en": "The animals are the draw for little ones, and the classroom runs activities for children",
+            "th": "สัตว์ต่าง ๆ ถูกใจเด็กเล็ก และห้องเรียนมีกิจกรรมสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Open at weekends 10:00–14:00; it is closed at weekends from 25 June to 23 September",
+            "th": "เปิดเสาร์–อาทิตย์ 10:00–14:00 แต่ปิดวันเสาร์–อาทิตย์ช่วง 25 มิถุนายนถึง 23 กันยายน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Masia Can Mestres, Camí de Can Clos 99, Sants-Montjuïc, Barcelona, Spain",
+          "src": "https://ajuntament.barcelona.cat/espaisverds/en/news/barcelonas-urban-farms-have-been-renovated-and-now-feature-educational-trails-1529801"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Can Cadena",
+            "th": "ฟาร์มกัน กาเดนา"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Sant Martí",
+            "th": "ซานต์ มาร์ตี"
+          },
+          "what": {
+            "en": "A city-run farmhouse with a small urban farm, hens, geese, ducks, rabbits, goats and sheep, and an educational trail",
+            "th": "ฟาร์มของเมืองขนาดเล็ก มีไก่ ห่าน เป็ด กระต่าย แพะ และแกะ พร้อมเส้นทางเรียนรู้"
+          },
+          "why": {
+            "en": "Its educational trail has information panels about the farm’s history, so children can learn while they walk",
+            "th": "เส้นทางเรียนรู้มีป้ายเล่าประวัติของฟาร์ม เด็ก ๆ จึงเรียนรู้ไปพร้อมกับเดิน"
+          },
+          "tip": {
+            "en": "Open to the public at weekends 10:00–14:00",
+            "th": "เปิดให้เข้าชมเสาร์–อาทิตย์ 10:00–14:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Can Cadena, Carrer de Menorca 25, Sant Martí, Barcelona, Spain",
+          "src": "https://ajuntament.barcelona.cat/espaisverds/en/news/barcelonas-urban-farms-have-been-renovated-and-now-feature-educational-trails-1529801"
         }
     ]
     },
@@ -2534,6 +2655,293 @@
           "q": "Centro Deportivo Municipal La Masó, Calle de La Masó 80, 28034 Madrid, Spain",
           "ok": "2026-11",
           "src": "https://guiadelocio.es/madrid/las-mejores-piscinas-climatizadas-para-disfrutar-en-familia-en-madrid/"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Lázaro Galdiano Museum",
+            "th": "พิพิธภัณฑ์ลาซาโร กัลดิอาโน"
+          },
+          "local": "Museo Lázaro Galdiano",
+          "kind": "museum",
+          "area": {
+            "en": "Salamanca",
+            "th": "ซาลามังกา"
+          },
+          "what": {
+            "en": "A museum whose Sunday workshops invite families to visit together",
+            "th": "พิพิธภัณฑ์ที่มีเวิร์กช็อปวันอาทิตย์ให้ครอบครัวมาชมด้วยกัน"
+          },
+          "why": {
+            "en": "The museum runs workshops every Sunday to enjoy with family or friends, so children can join in beside their parents",
+            "th": "พิพิธภัณฑ์จัดเวิร์กช็อปทุกวันอาทิตย์ให้สนุกกับครอบครัวหรือเพื่อน เด็ก ๆ จึงร่วมกิจกรรมข้างพ่อแม่ได้"
+          },
+          "tip": {
+            "en": "Workshops are on Sundays; check the museum’s current programme before you go",
+            "th": "เวิร์กช็อปจัดวันอาทิตย์ เช็กโปรแกรมล่าสุดของพิพิธภัณฑ์ก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Museo Lázaro Galdiano, C. de Serrano 122, Salamanca, Madrid, Spain",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "National Museum of Decorative Arts",
+            "th": "พิพิธภัณฑ์ศิลปะการตกแต่งแห่งชาติ"
+          },
+          "local": "Museo Nacional de Artes Decorativas",
+          "kind": "museumkid",
+          "area": {
+            "en": "Retiro",
+            "th": "เรติโร"
+          },
+          "what": {
+            "en": "Visit-workshops and storytelling for children, built around pieces of the collection and everyday life in the past",
+            "th": "กิจกรรมชมพร้อมเวิร์กช็อปและเล่านิทานสำหรับเด็ก จากชิ้นงานในคอลเลกชันและชีวิตประจำวันในอดีต"
+          },
+          "why": {
+            "en": "Its visit-workshops end with a hands-on craft activity, letting children use their imagination and their hands",
+            "th": "เวิร์กช็อปจบด้วยงานฝีมือที่ลงมือทำเอง ให้เด็กใช้จินตนาการและมือของตัวเอง"
+          },
+          "tip": {
+            "en": "Workshops and storytelling run through the year; check the dates before you go",
+            "th": "เวิร์กช็อปและการเล่านิทานจัดตลอดปี เช็กวันก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Museo Nacional de Artes Decorativas, C. de Montalbán 12, Retiro, Madrid, Spain",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Fundación MAPFRE, Sala Recoletos",
+            "th": "ฟุนดาซิออน มาปเฟร ซาลา เรโกเลโตส"
+          },
+          "local": "Fundación MAPFRE - Sala de exposiciones",
+          "kind": "museumkid",
+          "area": {
+            "en": "Centro (Paseo de Recoletos)",
+            "th": "เซนโตร (ถนนปาเซโอ เด เรโกเลโตส)"
+          },
+          "what": {
+            "en": "Family visit-workshops where the whole family can interact with the most representative artworks of each exhibition",
+            "th": "กิจกรรมชมพร้อมเวิร์กช็อปสำหรับครอบครัว ที่ทุกคนได้มีส่วนร่วมกับผลงานเด่นของแต่ละนิทรรศการ"
+          },
+          "why": {
+            "en": "It offers family visit-workshops for children aged 3 to 6, so little ones learn about art through doing",
+            "th": "มีกิจกรรมชมพร้อมเวิร์กช็อปสำหรับเด็กอายุ 3–6 ปี เด็กเล็กเรียนรู้ศิลปะผ่านการลงมือทำ"
+          },
+          "tip": {
+            "en": "Family workshops are for ages 3 to 6; children aged 7 to 12 have their own",
+            "th": "เวิร์กช็อปครอบครัวสำหรับอายุ 3–6 ปี เด็กอายุ 7–12 ปีมีกิจกรรมของตัวเอง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Fundación MAPFRE - Sala de exposiciones, P.º de Recoletos 23, Centro, Madrid, Spain",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "National Museum of Anthropology",
+            "th": "พิพิธภัณฑ์มานุษยวิทยาแห่งชาติ"
+          },
+          "local": "Museo Nacional de Antropología",
+          "kind": "museumkid",
+          "area": {
+            "en": "Retiro",
+            "th": "เรติโร"
+          },
+          "what": {
+            "en": "The national anthropology museum, with a permanent exhibition of cultures from around the world",
+            "th": "พิพิธภัณฑ์มานุษยวิทยาแห่งชาติ มีนิทรรศการถาวรเรื่องวัฒนธรรมจากทั่วโลก"
+          },
+          "why": {
+            "en": "A detective trail called \"The MNA in the suitcase\" is made for families with children aged 6 to 10, who pick a favourite piece to write about or draw",
+            "th": "เส้นทางนักสืบ \"MNA ในกระเป๋าเดินทาง\" ทำมาสำหรับครอบครัวที่มีเด็กอายุ 6–10 ปี เด็ก ๆ เลือกชิ้นโปรดมาเขียนหรือวาด"
+          },
+          "tip": {
+            "en": "The trail is a permanent family activity; the museum also runs storytelling and guided visits",
+            "th": "เส้นทางนี้เป็นกิจกรรมครอบครัวถาวร พิพิธภัณฑ์ยังมีเล่านิทานและทัวร์นำชมด้วย"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Museo Nacional de Antropología, C. de Alfonso XII 68, Retiro, Madrid, Spain",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Cerralbo Museum",
+            "th": "พิพิธภัณฑ์เซร์ราลโบ"
+          },
+          "local": "Museo Cerralbo",
+          "kind": "museumkid",
+          "area": {
+            "en": "Moncloa-Aravaca",
+            "th": "มอนโกลอา-อาราบากา"
+          },
+          "what": {
+            "en": "A museum with an educational section for families, with trails and workshops",
+            "th": "พิพิธภัณฑ์ที่มีส่วนการเรียนรู้สำหรับครอบครัว มีเส้นทางชมและเวิร์กช็อป"
+          },
+          "why": {
+            "en": "It has a family section that mixes play, creativity and culture in trails and workshops, so children learn while they have fun",
+            "th": "มีส่วนสำหรับครอบครัวที่ผสมการเล่น ความคิดสร้างสรรค์ และวัฒนธรรมไว้ในเส้นทางชมและเวิร์กช็อป เด็กเรียนรู้ไปพร้อมความสนุก"
+          },
+          "tip": {
+            "en": "Dates and how to book are on the museum’s website; check before you go",
+            "th": "วันและวิธีจองอยู่บนเว็บไซต์ของพิพิธภัณฑ์ เช็กก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Museo Cerralbo, C. de Ventura Rodríguez 17, Moncloa-Aravaca, Madrid, Spain",
+          "src": "https://www.esmadrid.com/actividades-ninos-museos-madrid"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Autocine Madrid RACE",
+            "th": "ออโตซีเน มาดริด เรซ"
+          },
+          "local": "Autocine Madrid RACE",
+          "kind": "show",
+          "area": {
+            "en": "Fuencarral-El Pardo",
+            "th": "ฟูเอนการ์รัล-เอล ปาร์โด"
+          },
+          "what": {
+            "en": "An open-air drive-in cinema with a 250 square metre screen",
+            "th": "โรงหนังกลางแจ้งแบบขับรถเข้าไปดู จอใหญ่ 250 ตารางเมตร"
+          },
+          "why": {
+            "en": "Children aged 0 to 3 get in free, and the big screen makes a film night an outing for the whole family",
+            "th": "เด็กอายุ 0–3 ปีเข้าฟรี และจอใหญ่ทำให้คืนดูหนังเป็นการออกไปเที่ยวของทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "Check the film programme and the price before you go",
+            "th": "เช็กโปรแกรมหนังและราคาก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Autocine Madrid RACE, C. Antonio de Cabezón 2, Fuencarral-El Pardo, Madrid, Spain",
+          "src": "https://www.esmadrid.com/node/105626"
+        },
+        {
+          "ok": "2026-11",
+          "name": {
+            "en": "Casa de Campo Environmental Education Centre",
+            "th": "ศูนย์ข้อมูลและการศึกษาสิ่งแวดล้อมคาซา เด กัมโป"
+          },
+          "local": "Centro de Información y Educación Ambiental de Casa de Campo",
+          "kind": "nature",
+          "area": {
+            "en": "Casa de Campo, by the boat dock",
+            "th": "คาซา เด กัมโป ใกล้ท่าเรือพาย"
+          },
+          "what": {
+            "en": "An environmental education centre in the Casa de Campo park that runs nature workshops and walks for families",
+            "th": "ศูนย์การศึกษาสิ่งแวดล้อมในสวนคาซา เด กัมโป จัดเวิร์กช็อปธรรมชาติและเดินเล่นสำหรับครอบครัว"
+          },
+          "why": {
+            "en": "Its family workshops use games and handicrafts to learn about animals, plants and insects, and they are held in the park",
+            "th": "เวิร์กช็อปครอบครัวใช้เกมและงานฝีมือเรียนรู้เรื่องสัตว์ พืช และแมลง จัดในสวน"
+          },
+          "tip": {
+            "en": "Sign up by e-mail; places go in order of registration; the page says it is for families with children from 7",
+            "th": "สมัครทางอีเมล รับตามลำดับการลงทะเบียน เว็บไซต์ระบุว่าสำหรับครอบครัวที่มีเด็กอายุ 7 ปีขึ้นไป"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Centro de Información y Educación Ambiental Casa de Campo, P.º del Embarcadero 6, Moncloa-Aravaca, Madrid, Spain",
+          "src": "https://www.miteco.gob.es/es/ceneam/formacion-ambiental/congresos/actividades-en-familia---cea-casa-de-campo.html"
         }
     ]
     },
