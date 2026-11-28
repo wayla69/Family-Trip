@@ -1000,6 +1000,457 @@
           "book": "none",
           "q": "Big Wave Bay Beach, Shek O, Hong Kong",
           "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html"
+        },
+        {
+          "local": "香港歷史博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ฮ่องกง",
+            "en": "Hong Kong Museum of History"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "จิมซาจุ่ยตะวันออก",
+            "en": "Tsim Sha Tsui East"
+          },
+          "what": {
+            "th": "เรื่องราวของฮ่องกงตั้งแต่ 400 ล้านปีก่อนถึงยุค 1960 ตั้งแต่เครื่องปั้นดินเผาสมัยราชวงศ์ฮั่นถึงฉากถนนเก่าและเทศกาลพื้นบ้าน",
+            "en": "Hong Kong's story from 400 million years ago to the 1960s, from Han-dynasty pottery to old street scenes and folk festivals"
+          },
+          "why": {
+            "th": "มีถนนและร้านค้าจำลองแบบเก่าให้เด็กเดินเข้าไปดูได้",
+            "en": "Walk-through old streets and shops that children can step into"
+          },
+          "tip": {
+            "th": "อยู่ข้างพิพิธภัณฑ์วิทยาศาสตร์ ไปที่หนึ่งตอนเช้า อีกที่หลังมื้อกลางวัน",
+            "en": "Next door to the Science Museum; do one in the morning, the other after lunch"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Museum of History, 100 Chatham Road South, Tsim Sha Tsui, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "香港鐵路博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์รถไฟฮ่องกง",
+            "en": "Hong Kong Railway Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไท่โปมาร์เก็ต",
+            "en": "Tai Po Market"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์กลางแจ้งในสถานีไท่โปมาร์เก็ตเก่า มีหัวรถจักร ตู้รถไฟเก่าให้ขึ้นไปดู และรถไฟจำลอง",
+            "en": "An open-air museum in the old Tai Po Market station, with locomotives, historic coaches to climb into and model trains"
+          },
+          "why": {
+            "th": "มีรถไฟเก่าของจริงให้ขึ้นไปนั่งและถ่ายรูปบนราง",
+            "en": "Real old trains to climb aboard and photograph on the tracks"
+          },
+          "tip": {
+            "th": "เป็นโบราณสถาน ส่วนใหญ่อยู่กลางแจ้ง พกหมวกไปด้วย",
+            "en": "A declared monument; much of it is outdoors, so bring a hat"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Railway Museum, Tai Po Market, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "香港文化博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์มรดกฮ่องกง",
+            "en": "Hong Kong Heritage Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ชาทิน",
+            "en": "Sha Tin"
+          },
+          "what": {
+            "th": "วัฒนธรรมป๊อปและกังฟูของฮ่องกง มีนิทรรศการเรื่องกิมย้ง และห้องเด็ก Children’s Discovery Gallery ที่มีโซนให้เล่น",
+            "en": "Hong Kong pop culture and martial arts, with an exhibition on the author Louis Cha and a Children's Discovery Gallery of play zones"
+          },
+          "why": {
+            "th": "ห้อง Children’s Discovery Gallery ทำมาให้เด็กเล็กได้จับเล่น",
+            "en": "The Children's Discovery Gallery is made for little hands"
+          },
+          "tip": {
+            "th": "อยู่ริมแม่น้ำชิงมุนที่ชาทิน แวะง่ายระหว่างทางไปนิวเทร์ริทอรีส์",
+            "en": "By the Shing Mun River in Sha Tin, an easy stop on the way to the New Territories"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Heritage Museum, 1 Man Lam Road, Sha Tin",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "香港海事博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือฮ่องกง",
+            "en": "Hong Kong Maritime Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าเรือเซ็นทรัล 8",
+            "en": "Central Pier 8"
+          },
+          "what": {
+            "th": "ฮ่องกงเติบโตจากหมู่บ้านชาวประมงเป็นเมืองท่าการค้าใหญ่ได้อย่างไร เล่าผ่านเรือและทะเล",
+            "en": "How Hong Kong grew from a fishing village into a great trading port, told through ships and the sea"
+          },
+          "why": {
+            "th": "เด็กได้ลองบังคับเรือในห้องจำลองสะพานเดินเรือ",
+            "en": "Children can steer a ship on the Ship Bridge Simulator"
+          },
+          "tip": {
+            "th": "อยู่บนท่าเรือข้างสตาร์เฟอร์รี่ ไปคู่กับการนั่งเรือข้ามฟาก",
+            "en": "On the pier next to the Star Ferry; pair it with a ferry ride"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Maritime Museum, Central Pier 8, Central, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินรอบเดอะพีค",
+            "en": "Peak Circle Walk"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนลูการ์ดและถนนฮาร์เลช เดอะพีค",
+            "en": "Lugard Road and Harlech Road, The Peak"
+          },
+          "what": {
+            "th": "ทางเดินวงรอบเดอะพีค ราบและปูพื้นตลอด เห็นวิวที่มีชื่อเสียงที่สุดของฮ่องกงไปตลอดทาง",
+            "en": "A flat, fully paved loop round the Peak with Hong Kong's most famous views all the way"
+          },
+          "why": {
+            "th": "ทางเดินที่เหมาะกับเด็กเล็กและทารก เข็นรถเข็นได้",
+            "en": "The one walk that suits babies and toddlers, with a pram"
+          },
+          "tip": {
+            "th": "เริ่มจากสถานีบนของพีคแทรม ใช้เวลาราวหนึ่งชั่วโมง",
+            "en": "Start from the Peak Tram upper terminus; allow about an hour"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lugard Road, The Peak, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-hikes-in-hong-kong.html"
+        },
+        {
+          "local": "長洲",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะเชิงเชา",
+            "en": "Cheung Chau"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เกาะเชิงเชา",
+            "en": "Cheung Chau island"
+          },
+          "what": {
+            "th": "เกาะไม่มีรถยนต์ มีชายหาด คาเฟ่ และทางเดินเลียบทะเล ขึ้นชื่อเรื่องลูกชิ้นปลายักษ์ ปลาหมึกย่าง และโมจิมะม่วง",
+            "en": "A car-free island of beaches, cafés and coastal paths, known for giant fishballs, grilled squid and mango mochi"
+          },
+          "why": {
+            "th": "ถนนไม่มีรถให้เดินเล่น และของกินที่เด็กชอบ",
+            "en": "Car-free streets to wander and snacks children love"
+          },
+          "tip": {
+            "th": "เรือจากท่าเรือเซ็นทรัล 5 สุดสัปดาห์คนเยอะ",
+            "en": "Ferries from Central Pier 5; weekends are busy"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Cheung Chau, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "大澳",
+          "ok": "2026-11",
+          "name": {
+            "th": "หมู่บ้านชาวประมงไทโอ",
+            "en": "Tai O fishing village"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เกาะลันเตา",
+            "en": "Lantau Island"
+          },
+          "what": {
+            "th": "หนึ่งในหมู่บ้านชาวประมงเก่าแก่ที่สุดของฮ่องกง มีบ้านเสาสูงของชาวเรือตั้นกา และแผงขายปลาแห้งกับกะปิ",
+            "en": "One of Hong Kong's oldest fishing villages, with stilt houses of the Tanka boat people and stalls of dried fish and shrimp paste"
+          },
+          "why": {
+            "th": "บ้านเสาสูงเหนือน้ำและเรือเต็มไปหมด",
+            "en": "Houses on stilts over the water and boats everywhere"
+          },
+          "tip": {
+            "th": "ไปคู่กับพระใหญ่ นั่งรถบัสจากหง่องปิง",
+            "en": "Pair it with the Big Buddha by bus from Ngong Ping"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tai O, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "志蓮淨苑",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดชีหลินและสวนหนานเหลียน",
+            "en": "Chi Lin Nunnery and Nan Lian Garden"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ไดมอนด์ฮิลล์",
+            "en": "Diamond Hill"
+          },
+          "what": {
+            "th": "วัดแม่ชีสไตล์ราชวงศ์ถังที่สร้างโดยไม่ใช้ตะปูสักตัว ข้างสวนจีนคลาสสิกมีสระน้ำ ต้นสน และศาลาสีทอง",
+            "en": "A Tang-style nunnery built without a single nail, beside a classical garden of ponds, pines and a golden pavilion"
+          },
+          "why": {
+            "th": "สวนสงบกลางเมือง มีบ่อปลาให้ชะโงกดู",
+            "en": "A calm garden in the city with fish ponds to look into"
+          },
+          "tip": {
+            "th": "ในวัดพูดเบา ๆ ไปเดินเล่นในสวนแทน",
+            "en": "Keep voices low inside the nunnery; the garden is the place to stroll"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Chi Lin Nunnery, Diamond Hill, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "嗇色園黃大仙祠",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดหวังต้าเซียน",
+            "en": "Wong Tai Sin Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หวังต้าเซียน",
+            "en": "Wong Tai Sin"
+          },
+          "what": {
+            "th": "วัดของสามศาสนา พุทธ เต๋า และขงจื๊อ ขึ้นชื่อเรื่องขอพรสมหวัง มีศาลเจ้าวิจิตรและสวน",
+            "en": "A temple of three faiths, Buddhist, Taoist and Confucian, known for granting wishes, with ornate shrines and a garden"
+          },
+          "why": {
+            "th": "สีสดใส ควันธูป และการเสี่ยงเซียมซีให้ดู",
+            "en": "Bright colours, incense and fortune sticks to watch"
+          },
+          "tip": {
+            "th": "ช่วงตรุษจีนคนแน่นมาก วันอื่นไปแต่เช้า",
+            "en": "Very crowded at Lunar New Year; go early on other days"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Sik Sik Yuen Wong Tai Sin Temple, Wong Tai Sin, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "大館",
+          "ok": "2026-11",
+          "name": {
+            "th": "ไท่ขวั่น",
+            "en": "Tai Kwun"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เซ็นทรัล",
+            "en": "Central"
+          },
+          "what": {
+            "th": "สถานีตำรวจกลาง เรือนจำวิกตอเรีย และศาลเก่า กลายเป็นแกลเลอรี ร้านค้า และร้านอาหาร รอบลานสวนสนามกว้าง",
+            "en": "The old Central Police Station, Victoria Prison and magistracy, now galleries, shops and restaurants round a big parade ground"
+          },
+          "why": {
+            "th": "ลานกว้างให้เด็กวิ่งเล่นกลางเซ็นทรัล",
+            "en": "A wide open courtyard for children to run in the middle of Central"
+          },
+          "tip": {
+            "th": "แวะดูห้องขังเก่า ขึ้นไปทางบันไดเลื่อนมิดเลเวล",
+            "en": "Peek into the old prison cells; take the Mid-Levels escalator up"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tai Kwun, 10 Hollywood Road, Central, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/revitalised-historic-buildings-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "迪欣湖",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทะเลสาบอินสไปเรชัน",
+            "en": "Inspiration Lake"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เกาะลันเตา ข้างฮ่องกงดิสนีย์แลนด์",
+            "en": "Lantau Island, next to Hong Kong Disneyland"
+          },
+          "what": {
+            "th": "ทะเลสาบสงบ มีทางปั่นจักรยานรอบ ที่ปิกนิก และที่พอสำหรับรถพ่วงจักรยานเด็ก",
+            "en": "A calm lake with paths to cycle round, picnic areas and room for bike trailers"
+          },
+          "why": {
+            "th": "ครึ่งวันง่าย ๆ เงียบ ๆ สำหรับครอบครัวเด็กเล็ก ข้างดิสนีย์แลนด์",
+            "en": "An easy, quiet half day for young families beside Disneyland"
+          },
+          "tip": {
+            "th": "เหมาะไปวันก่อนหรือหลังเข้าสวนสนุก",
+            "en": "Ideal the day before or after the park"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Inspiration Lake Recreation Centre, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html"
         }
     ]
     }

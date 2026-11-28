@@ -2948,6 +2948,84 @@
           "why": "a shopping mall (its LEGOLAND Discovery Centre is already in)"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "sights",
+      "title": "Things to do round 5 — the Hong Kong Tourism Board's own pages (family museums, family hikes, island escapes, temples, revitalised buildings, family biking), Google Maps only",
+      "checked": "2026-11-28",
+      "rule": "An official page (Discover Hong Kong, the Hong Kong Tourism Board), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Hong Kong Museum of History",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html",
+          "map": "Google Maps: open, a review an hour ago"
+        },
+        {
+          "name": "Hong Kong Railway Museum",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html",
+          "map": "Google Maps: open, a review 3 days ago"
+        },
+        {
+          "name": "Hong Kong Heritage Museum",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html",
+          "map": "Google Maps: open, a review 2 hours ago"
+        },
+        {
+          "name": "Hong Kong Maritime Museum",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Peak Circle Walk",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-hikes-in-hong-kong.html",
+          "map": "Google Maps: Peak Trail, a review a week ago"
+        },
+        {
+          "name": "Cheung Chau",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: Cheung Chau, a review 15 hours ago"
+        },
+        {
+          "name": "Tai O fishing village",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: Tai O Promenade, a review a day ago"
+        },
+        {
+          "name": "Chi Lin Nunnery and Nan Lian Garden",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: Chi Lin Nunnery, a review 2 days ago"
+        },
+        {
+          "name": "Wong Tai Sin Temple",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: Sik Sik Yuen Wong Tai Sin Temple, a review 19 hours ago"
+        },
+        {
+          "name": "Tai Kwun",
+          "src": "https://www.discoverhongkong.com/eng/culture/revitalised-historic-buildings-to-visit-in-hong-kong.html",
+          "map": "Google Maps: Tai Kwun, a review 50 minutes ago"
+        },
+        {
+          "name": "Inspiration Lake",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html",
+          "map": "Google Maps: Inspiration Lake, a review a week ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Stanley Main Beach",
+          "why": "Google Maps marks it closed"
+        },
+        {
+          "name": "Lamma Island Family Trail",
+          "why": "no Google Maps listing of its own"
+        },
+        {
+          "name": "Repulse Bay Beach",
+          "why": "the beach's children's playground is already in the library"
+        }
+      ]
     }
   ]
 }
