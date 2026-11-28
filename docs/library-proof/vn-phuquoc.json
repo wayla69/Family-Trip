@@ -1,0 +1,30 @@
+{
+  "town": "vn-phuquoc",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 20 rows offered, 19 passed library-check.cjs, 12 went in",
+  "added": [
+    { "name": "Clubhouse Restaurant (Premier Residences)", "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids", "date": "2025-12", "map": "the resort on Google Maps, 10,449 reviews, newest '5 months ago'; the restaurant has no listing of its own" },
+    { "name": "Paradiso Restaurant", "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids", "date": "2025-12", "map": "Google Maps 1,337 reviews, newest 'a week ago'" },
+    { "name": "Huong Bien Restaurant", "src": "https://kampatour.com/phu-quoc-restaurants", "date": "2025-06", "map": "Google Maps 807 reviews, newest 'a week ago'" },
+    { "name": "Hủ Tiếu Mực Tư Hường", "src": "https://kampatour.com/phu-quoc-restaurants", "date": "2025-06", "map": "Google Maps 634 reviews, newest '5 months ago'" },
+    { "name": "Mai Hương Beachfront", "src": "https://kampatour.com/phu-quoc-restaurants", "date": "2025-06", "map": "Google Maps 3,645 reviews, newest 'a month ago'" },
+    { "name": "Cội Nguồn Museum", "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-when-it-rains/", "date": "2025-12", "map": "Google Maps 575 reviews, newest '3 months ago'" },
+    { "name": "Ngọc Hiền Pearl Farm", "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-when-it-rains/", "date": "2025-12", "map": "Google Maps 3,833 reviews, newest '3 weeks ago'" },
+    { "name": "Phú Quốc National Park", "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids", "date": "2025-12", "map": "Google Maps 1,114 reviews, newest 'a month ago'" },
+    { "name": "Suối Tranh Waterfall", "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids", "date": "2025-12", "map": "Google Maps 'Khu du lịch Suối Tranh', 230 reviews, newest 'a week ago'" },
+    { "name": "Ông Lang Beach", "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/", "date": "2026-05", "map": "Google Maps 492 reviews, newest 'a month ago'" },
+    { "name": "Bãi Dài Beach", "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/", "date": "2026-05", "map": "Google Maps 525 reviews, newest '4 months ago'" },
+    { "name": "Khem Beach", "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/", "date": "2026-05", "map": "Google Maps 2,261 reviews, newest 'a week ago'" }
+  ],
+  "left_out": [
+    { "name": "Biển Bãi Sao Restaurant", "why": "the map shows a different restaurant (X Club) for that name" },
+    { "name": "Phu Quoc Theater (water puppet show)", "why": "the map's match is another theatre (À Ơi) with three reviews" },
+    { "name": "GoCA gallery", "why": "the map's match is another gallery" },
+    { "name": "Nemo, Taras, Mai Hương (Grand World)", "why": "resort restaurants, not checked on the map this round" },
+    { "name": "Long Beach", "why": "not checked this round" },
+    { "name": "Bánh Canh Phụng", "why": "failed library-check.cjs (quote not on page)" }
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them."
+}

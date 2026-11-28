@@ -144,6 +144,7 @@ function toSeed(p, notes, opts = {}) {
     note(`passport: Master Explorer list built from the ${items.length} planned stops (goal ${goal})`);
   }
   const doors = (pp.countdown && Array.isArray(pp.countdown.doors) ? pp.countdown.doors : []).slice(0, 14);
+  const own = doors.length;   // how many doors this trip wrote for itself (the draft page says so)
   const generic = D.doors(placeTh, placeEn);
   if (doors.length < 14) { note(`countdown: ${14 - doors.length} of 14 doors are the generic ones`); while (doors.length < 14) doors.push(generic[doors.length]); }
   let pins = pp.pins;
@@ -194,8 +195,9 @@ function toSeed(p, notes, opts = {}) {
       style: pp.style || { ...D.passportStyle({ slug, accent, placeTh, placeEn }), ...(opts.art === false ? { crest: '' } : {}) },
       pins,
       ...(pp.declaration ? { declaration: pp.declaration } : {}),
+      ...(pp.little && Array.isArray(pp.little.days) && pp.little.days.length === days.length ? { little: pp.little } : {}),
       colour: pp.colour || (opts.art === false ? '' : `/art/${slug}/day-{n}.svg`),
-      countdown: { doors, pack: (pp.countdown && pp.countdown.pack) || D.PACK },
+      countdown: { doors, pack: (pp.countdown && pp.countdown.pack) || D.PACK, ...(own ? { own } : {}) },
       map,
     },
   };
@@ -224,7 +226,7 @@ function report(seed) {
   const lines = [
     `  days ${ds.length} · stops ${sum('planned')} · timeline ${sum('plan')} · legs ${sum('legs')} · picks ${sum('picks')} · food-by-stop ${sum('food')} · eat ${sum('eat')} · learn ${sum('learn')} · quiz ${sum('quiz')} · stay cards ${ds.filter((d) => d.stay).length}`,
     `  info: emergency ${n(inf.emergency)} · stays ${n(inf.stays)} · guide ${n(inf.guide)} · prices ${inf.prices ? n(inf.prices.rows) + ' rows' : '—'} · pack ${n(inf.pack)} groups · general ${n(inf.general)} · wild ${n(inf.wild)} · restaurants ${rest ? `${rest} in ${inf.restaurants.groups.length} areas` : '— (built from the days)'} · also: ${['drive', 'car', 'kit', 'ifthen', 'visa', 'bio', 'eatRules'].filter((k) => inf[k]).join(', ') || 'none'}`,
-    `  passport: missions ${n(pp.days)} (facts ${(pp.days || []).reduce((a, d) => a + n(d.facts), 0)}, spots ${(pp.days || []).reduce((a, d) => a + n(d.spot), 0)}) · lists ${(pp.lists || []).map((l) => `${l.key} ${(l.groups || []).reduce((a, g) => a + n(g.items), 0)}`).join(', ') || '—'} · doors ${n(pp.countdown && pp.countdown.doors)} · pack ${n(pp.countdown && pp.countdown.pack && pp.countdown.pack.items)} · map ${n(pp.map && pp.map.stops)} stops · pins ${n(pp.pins && pp.pins.items)} · guides ${n(pp.guides)}`,
+    `  passport: missions ${n(pp.days)} (facts ${(pp.days || []).reduce((a, d) => a + n(d.facts), 0)}, spots ${(pp.days || []).reduce((a, d) => a + n(d.spot), 0)}) · lists ${(pp.lists || []).map((l) => `${l.key} ${(l.groups || []).reduce((a, g) => a + n(g.items), 0)}`).join(', ') || '—'} · doors ${n(pp.countdown && pp.countdown.doors)} · pack ${n(pp.countdown && pp.countdown.pack && pp.countdown.pack.items)} · map ${n(pp.map && pp.map.stops)} stops · pins ${n(pp.pins && pp.pins.items)} · guides ${n(pp.guides)} · customs form ${pp.declaration ? n(pp.declaration.counts) + ' counts' : '—'} · little one ${pp.little ? n(pp.little.days) + ' days' : '—'}`,
   ];
   return lines.join('\n');
 }

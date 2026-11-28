@@ -1,0 +1,113 @@
+{
+  "town": "mx-yucatan",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from Lonely Planet (2026), An Adventurous World (2026) and Porfirio's own site passed library-check.cjs, 8 went in",
+  "added": [
+    {
+      "name": "Porfirio's Cancún",
+      "page_name": "Porfirio’s Cancún",
+      "src": "https://porfirios.com.mx/en/porfiritos-unique-experiences-for-the-little-ones-now-in-merida/",
+      "date": "official",
+      "map": "Google Maps 'Porfirio's Cancún | Restaurante de comida mexicana', Blvd. Kukulcan km 14.2, 5,642 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Porfirio's Mérida",
+      "page_name": "Porfirio’s Mérida",
+      "src": "https://porfirios.com.mx/en/porfiritos-unique-experiences-for-the-little-ones-now-in-merida/",
+      "date": "official",
+      "map": "Google Maps Paseo de Montejo, 2,789 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Playa Hermosa Caleta",
+      "page_name": "Playa Hermosa Caleta",
+      "src": "https://www.lonelyplanet.com/articles/cancun-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Hermosa Caleta', 150 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Gran Parque La Plancha",
+      "page_name": "Gran Parque la Plancha",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 3,659 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Museo de la Luz",
+      "page_name": "Museo de la Luz",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'Museo de la Luz Mérida UNAM', 1,029 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Palacio de la Música",
+      "page_name": "Palacio de la Música",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 3,841 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Uxmal",
+      "page_name": "Uxmal",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'Uxmal Archaeological Zone', 22,012 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "La Peni light show",
+      "page_name": "La Peni",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'Parque de la Paz' (where the show is projected), 7,457 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Railway Museum (Museo de los Ferrocarriles)",
+      "page_name": "Museo de los Ferrocarriles",
+      "src": "https://www.yucatan.com.mx/merida/2026/07/13/que-hacer-en-merida-en-vacaciones.html",
+      "date": "2026-07",
+      "map": "Google Maps 'Railroad Museum' (Calle 43, Centro, Mérida), newest review shown a day ago"
+    },
+    {
+      "name": "Extreme Sports Park (Parque de Deportes Extremos)",
+      "page_name": "Parque Municipal de Deportes Extremos",
+      "src": "https://www.yucatan.com.mx/merida/2026/07/13/que-hacer-en-merida-en-vacaciones.html",
+      "date": "2026-07",
+      "map": "Google Maps 'Parque de deportes extremos' (C. 132, Bosques del Poniente), newest review shown 4 days ago"
+    },
+    {
+      "name": "Playa Langosta",
+      "page_name": "Playa Langosta",
+      "src": "https://www.poresto.com/quintana-roo/cancun/2026/3/16/mejores-playas-de-cancun-ideales-para-ir-con-los-ninos-en-vacaciones-de-semana-santa.html",
+      "date": "2026-03",
+      "map": "Google Maps 'Playa Langosta' (Kukulcan Boulevard, Hotel Zone), newest review shown a day ago"
+    },
+    {
+      "name": "Playa Caracol",
+      "page_name": "Playa Caracol",
+      "src": "https://www.poresto.com/quintana-roo/cancun/2026/3/16/mejores-playas-de-cancun-ideales-para-ir-con-los-ninos-en-vacaciones-de-semana-santa.html",
+      "date": "2026-03",
+      "map": "Google Maps 'Caracol Beach' (Punta Cancún), newest review shown 9 hours ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "La Plancha playground",
+      "why": "the same park as Gran Parque La Plancha"
+    },
+    {
+      "name": "Acuaparque",
+      "why": "the map puts it in San Antonio Kaua, not the Poniente the row said"
+    },
+    {
+      "name": "Parque Arqueoecológico del Poniente",
+      "why": "no review dates readable on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 6 rows from Yucatán Hoy (Jul 2026) and Por Esto (Mar 2026), all passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

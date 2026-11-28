@@ -1,0 +1,494 @@
+{
+ "kind": "sights",
+ "checked": "2026-11",
+ "how": "The 65 rows a Google Maps batch (2026-11-24) showed closed were looked at again: Maps re-run on the place (gm2) where the closure was not plainly seasonal, then one web search or the place's own site. Seasonal winter closures kept (season added to tip when missing, both languages); permanent closures, moves and closures with no reopening date removed. No town fell under its minimums, so nothing was replaced.",
+ "rows": [
+  {
+   "file": "server/sights/au-1.json",
+   "town": "au-sydney",
+   "name": "Wadanggari Park",
+   "verdict": "keep",
+   "evidence": "Maps: \"Temporarily closed\". Lane Cove Council: playground closed for vandalism repairs, reopening Tuesday 25 November 2026 — a short closure.",
+   "src": "https://www.lanecove.nsw.gov.au/Council-News/Wadanggari-Playground-Update"
+  },
+  {
+   "file": "server/sights/au-1.json",
+   "town": "au-melbourne",
+   "name": "Chipmunks Docklands",
+   "verdict": "removed",
+   "evidence": "Maps (re-run, \"Chipmunks Playland & Café Docklands\", Shop SWF09, The District Docklands): \"Permanently closed\"."
+  },
+  {
+   "file": "server/sights/au-1.json",
+   "town": "au-goldcoast",
+   "name": "Planet Chill",
+   "verdict": "removed",
+   "evidence": "Maps: \"Temporarily closed\". Paradise Resort's own page: \"temporarily closed until further notice\" after an electrical fire on 28 September 2026; closed for several months, reopening hoped for in 2027 — no date.",
+   "src": "https://paradiseresort.com.au/play/for-kids/planet-chill-ice-skating-rink"
+  },
+  {
+   "file": "server/sights/be-1.json",
+   "town": "be-bruges",
+   "name": "Sint-Janshuismolen windmill",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says open 1 April–2 November, closed Mondays — the winter closure."
+  },
+  {
+   "file": "server/sights/ca-1.json",
+   "town": "ca-banff",
+   "name": "Lake Minnewanka Cruise",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already gives the 2026 season (about 8 May–12 October)."
+  },
+  {
+   "file": "server/sights/ca-1.json",
+   "town": "ca-banff",
+   "name": "Lake Agnes Tea House",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". The tea house runs June to October and is shut in the cold months (Wikipedia, Lake Agnes Tea House); season added to tip.",
+   "src": "https://en.wikipedia.org/wiki/Lake_Agnes_Tea_House"
+  },
+  {
+   "file": "server/sights/ca-1.json",
+   "town": "ca-toronto",
+   "name": "Centreville Amusement Park",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". 2026 season 2 May–27 September (weekends in May and September, daily June–Labour Day); season added to tip.",
+   "src": "https://www.blogto.com/sports_play/2026/04/centreville-amusement-park-open-2026/"
+  },
+  {
+   "file": "server/sights/ca-1.json",
+   "town": "ca-toronto",
+   "name": "High Park Animal Display",
+   "verdict": "season",
+   "evidence": "Maps (\"High Park Zoo\"): \"Temporarily closed\". City of Toronto: closed for Deer Pen Road works from 13 October 2026 through spring 2027 (within ~6 months); note added to tip.",
+   "src": "https://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/beaches-gardens-attractions/zoos-farms/high-park-animal-display/"
+  },
+  {
+   "file": "server/sights/ca-1.json",
+   "town": "ca-vancouver",
+   "name": "Burnaby Village Museum",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says it is seasonal."
+  },
+  {
+   "file": "server/sights/cl-1.json",
+   "town": "cl-atacama",
+   "name": "Kari viewpoint (Piedra del Coyote)",
+   "verdict": "removed",
+   "evidence": "Maps: \"Temporarily closed\". Local news (g5noticias, 13 Aug 2026): Mirador de Ckari closed until further notice for road works; later reports repeat it, no reopening date.",
+   "src": "https://g5noticias.cl/2026/08/13/tras-dos-jornadas-de-leves-lluvias-la-gran-mayoria-de-los-atractivos-turisticos-esta-disponible-en-san-pedro-de-atacama/"
+  },
+  {
+   "file": "server/sights/cl-1.json",
+   "town": "cl-santiago",
+   "name": "Fantasilandia",
+   "verdict": "removed",
+   "evidence": "Maps: \"Temporarily closed\". Meganoticias (11 Jul 2026): the park leaves Parque O'Higgins and stays closed through 2027 while it moves to San Bernardo (another commune).",
+   "src": "https://www.meganoticias.cl/nacional/526626-fantasilandia-confirma-fecha-de-cierre-dejara-de-funcionar-durante-todo-2027-traslado-san-bernardo-11-07-2026.html"
+  },
+  {
+   "file": "server/sights/es-1.json",
+   "town": "es-madrid",
+   "name": "OXO Video Game Museum",
+   "verdict": "removed",
+   "evidence": "Maps: \"Temporarily closed\". Its own site now reads \"MUY PRONTO NUEVA UBICACIÓN EN MADRID\" — moving to a new, unnamed address, no reopening date.",
+   "src": "https://oxomuseomadrid.com"
+  },
+  {
+   "file": "server/sights/es-1.json",
+   "town": "es-seville",
+   "name": "Isla Mágica",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says seasonal, closed November–March."
+  },
+  {
+   "file": "server/sights/es-1.json",
+   "town": "es-seville",
+   "name": "Aquaola water park",
+   "verdict": "season",
+   "evidence": "Maps list (first result Aquatropic, another park): \"Temporarily closed\". Row tip already says about June–September."
+  },
+  {
+   "file": "server/sights/fi-1.json",
+   "town": "fi-helsinki",
+   "name": "Linnanmäki Amusement Park",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already gives the summer and October seasons."
+  },
+  {
+   "file": "server/sights/fi-1.json",
+   "town": "fi-helsinki",
+   "name": "Seurasaari Open-Air Museum",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says buildings open mid-May–mid-September."
+  },
+  {
+   "file": "server/sights/fi-1.json",
+   "town": "p-lapland",
+   "name": "Pilke Science Centre",
+   "verdict": "removed",
+   "evidence": "Maps (re-run, \"Tiedekeskus Pilke, Metsähallitus\"): \"Permanently closed\". Yle: Metsähallitus lopettaa tiedekeskus Pilkkeen (Metsähallitus is ending the centre).",
+   "src": "https://yle.fi/t/18-217195/fi"
+  },
+  {
+   "file": "server/sights/fi-1.json",
+   "town": "p-lapland",
+   "name": "Snowman World",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says winter only, from 6 December 2026."
+  },
+  {
+   "file": "server/sights/fi-1.json",
+   "town": "p-lapland",
+   "name": "Kotatieva Winter Leisure Park",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says winter only."
+  },
+  {
+   "file": "server/sights/gb-2.json",
+   "town": "gb-cotswolds",
+   "name": "Cotswold Farm Park",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". The park closes for a winter break and reopens mid-February (2025 reopening 14 Feb, Visit Cheltenham); \"open daily\" replaced with the break.",
+   "src": "https://www.visitcheltenham.com/blog/post/cotswold-farm-park-reopens-with-over-600-new-arrivals/"
+  },
+  {
+   "file": "server/sights/gb-2.json",
+   "town": "gb-cotswolds",
+   "name": "Sudeley Castle and Gardens",
+   "verdict": "season",
+   "evidence": "Maps list: \"Temporarily closed\". Historic Houses: open daily 14 March–1 November 2026, closed in winter; season added to tip.",
+   "src": "https://www.historichouses.org/house/sudeley-castle/"
+  },
+  {
+   "file": "server/sights/gb-2.json",
+   "town": "gb-cotswolds",
+   "name": "Painswick Rococo Garden",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Visit Gloucester: open 10 January–30 November 2026, days vary; Wed–Sun from 9 September (Historic Houses); season added to tip.",
+   "src": "https://www.visitgloucester.co.uk/things-to-do/painswick-rococo-garden-p129443"
+  },
+  {
+   "file": "server/sights/gb-2.json",
+   "town": "gb-cotswolds",
+   "name": "Gloucestershire Warwickshire Steam Railway",
+   "verdict": "season",
+   "evidence": "Maps (Winchcombe Station): \"Temporarily closed\". Visit Cheltenham: 2025 season 2 March 2025–1 January 2026; no trains January–February; season added to tip.",
+   "src": "https://www.visitcheltenham.com/things-to-do/activities/gwsr"
+  },
+  {
+   "file": "server/sights/gb-2.json",
+   "town": "gb-lakes",
+   "name": "Wray Castle",
+   "verdict": "season",
+   "evidence": "Maps (\"National Trust - Wray\"): \"Temporarily closed\". National Trust: castle interior closed since August 2025 for repairs, partially reopens spring 2027; grounds open 8:00–20:00 to 31 Dec 2026; note added to tip.",
+   "src": "https://www.nationaltrust.org.uk/visit/lake-district/wray/wray-refurbishment-project"
+  },
+  {
+   "file": "server/sights/gb-2.json",
+   "town": "gb-lakes",
+   "name": "Derwent Pencil Museum",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Museums Association (21 Aug 2026): closes in its current home on 1 November and reopens at Rawnsley Hall, Keswick, in March 2027 (four months); note added to tip.",
+   "src": "https://www.museumsassociation.org/museums-journal/news/2026/08/derwent-pencil-museum-prepares-to-write-new-chapter-in-larger-premises/"
+  },
+  {
+   "file": "server/sights/gb-2.json",
+   "town": "gb-york",
+   "name": "Eden Camp Modern History Museum",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Season 23 March–1 November 2026 (Visit Malton / Eden Camp); season added to tip.",
+   "src": "https://www.visitmalton.com/whats-on/eden-camp-reopens-for-2026"
+  },
+  {
+   "file": "server/sights/gr-1.json",
+   "town": "gr-athens",
+   "name": "Athens Happy Train",
+   "verdict": "removed",
+   "evidence": "Maps (re-run): \"Temporarily closed\", rating 3.1. Its domain athenshappytrain.com now carries an unrelated gambling site; no 2026 sign of service found."
+  },
+  {
+   "file": "server/sights/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Lost Atlantis Experience",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says mid-April to 31 October 2026."
+  },
+  {
+   "file": "server/sights/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Lignos Folklore Museum",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says 15 April–15 October."
+  },
+  {
+   "file": "server/sights/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Tomato Industrial Museum",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Museum's own site announced the 2026 opening on 7 April; Tue–Sun 10:00–18:00; season (about April–October) added to tip.",
+   "src": "https://www.tomatomuseum.gr/"
+  },
+  {
+   "file": "server/sights/hr-1.json",
+   "town": "hr-plitvice",
+   "name": "Barać Caves",
+   "verdict": "season",
+   "evidence": "Maps list: \"Temporarily closed\". Row tip already says it closes in winter."
+  },
+  {
+   "file": "server/sights/hu-1.json",
+   "town": "hu-budapest",
+   "name": "Hungarian Open Air Museum (Skanzen)",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says the 2026 season ended mid-November, reopens late March 2027."
+  },
+  {
+   "file": "server/sights/ie-1.json",
+   "town": "ie-ireland",
+   "name": "Moher Hill Open Farm",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Its own site lists Saturday 10–18 and Sunday 11–18, Mon–Fri closed; tip says winter opening is not confirmed.",
+   "src": "https://moherfarm.com"
+  },
+  {
+   "file": "server/sights/ie-1.json",
+   "town": "ie-ireland",
+   "name": "Caherconnell Fort",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Official \"Plan your visit\" lists hours March to October only; season added to tip.",
+   "src": "https://caherconnell.com/?p=27394"
+  },
+  {
+   "file": "server/sights/lu-1.json",
+   "town": "lu-luxembourg",
+   "name": "Parc Merveilleux",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says 21 March–11 October 2026."
+  },
+  {
+   "file": "server/sights/lu-1.json",
+   "town": "lu-luxembourg",
+   "name": "Vianden chairlift",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says 4 April–19 October."
+  },
+  {
+   "file": "server/sights/lu-1.json",
+   "town": "lu-luxembourg",
+   "name": "Minigolf Vianden",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Visit Luxembourg lists 14:00–19:00 on set days (Feb weekends, July–August); \"hours subject to change\"; tip added.",
+   "src": "https://www.visitluxembourg.com/place/minigolf-vianden"
+  },
+  {
+   "file": "server/sights/mt-1.json",
+   "town": "mt-valletta",
+   "name": "Fort Manoel",
+   "verdict": "removed",
+   "evidence": "Maps: \"Temporarily closed\". The fort's interior opens only on occasional open days (last found April 2025); the island passed to Heritage Malta in May 2026 with no visiting hours set.",
+   "src": "https://www.independent.com.mt/articles/2025-04-13/newspaper-lifestyleculture/Open-Day-at-Fort-Manoel-attracts-over-3-000-visitors-6736269289"
+  },
+  {
+   "file": "server/sights/nl-1.json",
+   "town": "nl-amsterdam",
+   "name": "Free ferries across the IJ",
+   "verdict": "keep",
+   "evidence": "Maps list for \"GVB Veer Buiksloterweg\": the closed entry is a duplicate \"Buiksloterweg\" terminal listing; \"Buiksloterveer\" (ferry service) and \"Gvb Veren\" are listed open — the ferries run."
+  },
+  {
+   "file": "server/sights/nl-1.json",
+   "town": "nl-amsterdam",
+   "name": "Flevoparkbad",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". An outdoor pool: Kidsproof lists late April to late August, 10:00–17:30; season added to tip.",
+   "src": "https://www.kidsproof.nl/amsterdam/?p=33155"
+  },
+  {
+   "file": "server/sights/no-1.json",
+   "town": "no-bergen",
+   "name": "Old Bergen Museum",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says buildings open 20 May–13 Sept 2026."
+  },
+  {
+   "file": "server/sights/no-1.json",
+   "town": "no-bergen",
+   "name": "Høyt & Lavt Bergen",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". An outdoor climbing park: Visit Bergen lists summer and April opening only; season added to tip.",
+   "src": "https://en.visitbergen.com/things-to-do/klatreparken-hoyt-and-lavt-bergen-p1829933"
+  },
+  {
+   "file": "server/sights/no-1.json",
+   "town": "no-bergen",
+   "name": "Høyt Under Taket Kokstad",
+   "verdict": "removed",
+   "evidence": "Maps: \"Permanently closed\". The chain's own site lists only Letohallen, Moss, Skien and Tønsberg (hoytundertaket.no/kokstad is a 404); a company register lists the Kokstad company in liquidation.",
+   "src": "https://hoytundertaket.no"
+  },
+  {
+   "file": "server/sights/nz-1.json",
+   "town": "nz-queenstown",
+   "name": "Queenstown Ice Arena",
+   "verdict": "keep",
+   "evidence": "Maps: \"Temporarily closed\". Its own site still sells all-day indoor skating; Bookme reviews run through 2026. No closure notice found.",
+   "src": "https://www.queenstownicearena.co.nz"
+  },
+  {
+   "file": "server/sights/nz-1.json",
+   "town": "nz-queenstown",
+   "name": "Odyssey Sensory Maze",
+   "verdict": "removed",
+   "evidence": "Maps: \"Temporarily closed\". Its own site: \"our Queenstown Location is currently closed for maintenance\", \"Queenstown (Temporarily Closed)\" — no reopening date.",
+   "src": "https://odysseum.co.nz"
+  },
+  {
+   "file": "server/sights/nz-1.json",
+   "town": "nz-queenstown",
+   "name": "Glenorchy Animal Experience",
+   "verdict": "removed",
+   "evidence": "Maps: \"Permanently closed\". Its domain glenorchyanimalexperience.co.nz now reads \"This domain is for sale\"."
+  },
+  {
+   "file": "server/sights/nz-1.json",
+   "town": "nz-queenstown",
+   "name": "Coronet Peak",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\" (a ski field in the off-season). Row tip already says \"In the ski season\"."
+  },
+  {
+   "file": "server/sights/pl-1.json",
+   "town": "pl-krakow",
+   "name": "Barbican",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Muzeum Krakowa's page: \"Branch temporarily closed\", no date — the Barbican's usual winter break; season added to tip.",
+   "src": "https://www.muzeumkrakowa.pl/en/branches/barbican"
+  },
+  {
+   "file": "server/sights/pl-1.json",
+   "town": "pl-krakow",
+   "name": "Stanisław Lem Garden of Experiences",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says seasonal (opened 20 April 2026)."
+  },
+  {
+   "file": "server/sights/pl-1.json",
+   "town": "pl-krakow",
+   "name": "Dragon's Den",
+   "verdict": "season",
+   "evidence": "Maps list: \"Temporarily closed\". Row tip already says roughly April to October."
+  },
+  {
+   "file": "server/sights/pt-1.json",
+   "town": "pt-lisbon",
+   "name": "Lisbon Cable Car",
+   "verdict": "season",
+   "evidence": "Maps list (both stations): \"Temporarily closed\". A 2026 guide says the yearly maintenance closure usually falls in mid-November; no closure news; note added to tip.",
+   "src": "https://thebettervacation.com/lisbon/lisbon-cable-car-tickets/"
+  },
+  {
+   "file": "server/sights/pt-1.json",
+   "town": "pt-porto",
+   "name": "Piscina das Marés",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says open in summer and early autumn."
+  },
+  {
+   "file": "server/sights/se-1.json",
+   "town": "se-stockholm",
+   "name": "Skistar",
+   "verdict": "season",
+   "evidence": "Maps (\"SkiStar Hammarbybacken\", ski resort): \"Temporarily closed\". The row is the summer activity park; in winter the hill is a ski slope (past openings mid-December to January); season added to tip.",
+   "src": "https://skistar.com/en/hammarbybacken/winter-at-hammarbybacken"
+  },
+  {
+   "file": "server/sights/se-1.json",
+   "town": "se-stockholm",
+   "name": "Kampementsbadet",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". An outdoor pool on Gärdet used in summer (the row says so); season added to tip.",
+   "src": "https://thatsup.co.uk/stockholm/activity/kampementsbadet/"
+  },
+  {
+   "file": "server/sights/se-1.json",
+   "town": "se-stockholm",
+   "name": "Ersta Minigolf",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says May through August."
+  },
+  {
+   "file": "server/sights/si-1.json",
+   "town": "si-bled",
+   "name": "Vintgar Gorge",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says about April to October."
+  },
+  {
+   "file": "server/sights/si-1.json",
+   "town": "si-bled",
+   "name": "Vogel cable car",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says closed for maintenance, reopening no earlier than 1 December 2026."
+  },
+  {
+   "file": "server/sights/si-1.json",
+   "town": "si-bled",
+   "name": "Straža summer toboggan",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says warmer months only."
+  },
+  {
+   "file": "server/sights/us-2.json",
+   "town": "p-yellowstone",
+   "name": "Firehole Canyon swimming area",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says it may be closed in winter."
+  },
+  {
+   "file": "server/sights/us-2.json",
+   "town": "p-yellowstone",
+   "name": "Museum of the Yellowstone",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says mid-May to mid-October."
+  },
+  {
+   "file": "server/sights/us-2.json",
+   "town": "p-yellowstone",
+   "name": "Old Faithful Inn",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Yellowstone National Park Lodges: 2026 season 1 May–12 October; season added to tip.",
+   "src": "https://www.yellowstonenationalparklodges.com/stay/plan/opening-and-closing-dates/"
+  },
+  {
+   "file": "server/sights/us-2.json",
+   "town": "us-alaska",
+   "name": "Alyeska Aerial Tram",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says summer only."
+  },
+  {
+   "file": "server/sights/us-2.json",
+   "town": "us-alaska",
+   "name": "Anchorage Weekend Downtown Market",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says summer weekends only."
+  },
+  {
+   "file": "server/sights/us-2.json",
+   "town": "us-alaska",
+   "name": "Indian Valley Mine",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Its own site: open May 15 to September 15; season added to tip.",
+   "src": "https://indianvalleymine.com/"
+  },
+  {
+   "file": "server/sights/us-2.json",
+   "town": "us-boston",
+   "name": "Swan Boats in the Public Garden",
+   "verdict": "season",
+   "evidence": "Maps: \"Temporarily closed\". Row tip already says the 2026 season ran 18 April to Labor Day, reopening April 2027."
+  }
+ ]
+}

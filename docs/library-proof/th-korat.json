@@ -1,0 +1,157 @@
+{
+  "town": "th-korat",
+  "rounds": [
+    {
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 5 rows without ok; the town holds 12 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [
+        {
+          "name": "Pier 21 Terminal 21 Korat",
+          "src": "https://www.google.com/maps/place/pier21+Food+Center+-+Terminal21+Korat",
+          "page_name": "pier21 Food Center - Terminal21 Korat",
+          "evidence": "Google Maps (2026-11-23): food court, 4.3★, X3JR+G2G, Nai Mueang, 'Located in: Terminal21 Korat'; 'Open · Closes 9 PM'; nothing says closed",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Khanom Chin Ban Pradok",
+          "page_name": "ครูเอก ขนมจีนประโดก and others",
+          "evidence": "Google Maps (2026-11-23): a row of khanom chin shops at Pradok, Muen Wai: 'ครูเอก ขนมจีนประโดก' (264 Moo 4, 'Open · Closes 5 PM'), 'ร้านขนมจีน หม่อดิ๋น' (39/2 Muen Wai, 'Open · Closes 6 PM'), 'ขนมจีนประโดก ร้านต้นมะละกอ' (X3XX+CF5, 'Open · Closes 4:30 PM'), 'Khanom Jeen Kru Yot Shop, Pradok' ('Open · Closes 4 PM'). The row's English query was not tried alone; the Thai query lists the shops",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Chao Sua",
+          "src": "https://www.google.com/maps/place/บริษัท+เจ้าสัว+ฟู้ดส์",
+          "page_name": "บริษัท เจ้าสัว ฟู้ดส์ อินดัสทรี จำกัด (มหาชน) สำนักงานใหญ่ - ศูนย์ของฝากเจ้าสัว",
+          "evidence": "Google Maps (2026-11-23): shop, 4.3★, 99 Moo 9 Mittraphap Rd, Suranari (W2V4+CV); 'Open · Closes 7 PM', chaosua.com; a noodle shop at this place 'Open · Closes 4 PM'; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Baiteiy Restaurant",
+          "evidence": "Google Maps (2026-11-23): 'ร้านใบเตย โดยนางรวีวรรณ อ่อนสอาด', 246 Chom Suda Sadej Rd, Phimai (6F8W+H5), listed as a store with a phone but no hours ('Add hours'); another 'Bai Toei Restaurant' on highway 206 is 'Permanently closed'. The Chom Suda Sadej shop exists, nothing current confirms the restaurant"
+        }
+      ],
+      "removed": [
+        {
+          "name": "Kai Yang Wang Fa",
+          "reason": "Google Maps (2026-11-23): 'ไก่ย่างวังฟ้า', '… นครราชสีมา' and 'Kai Yang Wang Fa Nakhon Ratchasima' find only 'Wang Feungfah / ร้านอาหารวังเฟื่องฟ้า' (P6VF+R3R, Tha Yiam, Chok Chai District — another restaurant some 30 km from the city) or the city itself; no grilled-chicken shop of this name in Korat"
+        }
+      ]
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 18 rows from Thairath English (May and June 2026) and TrueID Travel (Nov 2025), 17 passed library-check.cjs, 12 went in",
+      "added": [
+        {
+          "name": "Nub Pochana",
+          "page_name": "Nub Pochana",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 'หนับโภชนา', 642 ถ. จอมพล, 96 reviews, newest photos '4 days ago', open"
+        },
+        {
+          "name": "Larb Somphit",
+          "page_name": "Larb Somphit",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 169 ถ. จันทน์, 691 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Soy Jeck Pochana",
+          "page_name": "Soy Jeck Pochana",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 'โซ้ยเจ็กโภชนา', 183/8 ถนนมหาราช, 192 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Khrua Suwimon",
+          "page_name": "Khrua Suwimon",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 1229 ถ. มิตรภาพ, 1,481 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Pa Plueang Pad Mee Krathok",
+          "page_name": "Pa Plueang Pad Mee Krathok",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 'ร้านผัดหมี่กระโทกป้าเปลื้อง', Chok Chai, 266 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "Khanom Jeen Yai Pao",
+          "page_name": "Khanom Jeen Yai Pao",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 'ร้านขนมจีนยายเป้า (กระเด้าหม้อ)', Nai Mueang, 599 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "Ko Kia",
+          "page_name": "Ko Kia",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 'ก๋วยเตี๋ยวเรือโกเกี้ย', 531 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Kin Dee",
+          "page_name": "Kin Dee",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 'กินดีโคราช', Suranari, 13 reviews, newest 'last month'"
+        },
+        {
+          "name": "Khanom Oshin",
+          "page_name": "Khanom Oshin",
+          "src": "https://en.thairath.co.th/lifestyle/food/2935224",
+          "date": "2026-05",
+          "map": "Google Maps 'ขนมโอชิน โคราช', 91 ถนนจอมสุรางค์ยาตร์, 135 reviews, newest 'last week'"
+        },
+        {
+          "name": "100-year wooden bridge",
+          "page_name": "สะพานไม้ 100 ปี",
+          "src": "https://travel.trueid.net/detail/WgV9Lj45W68Q",
+          "date": "2025-11",
+          "map": "Google Maps 597 reviews, newest '6 hours ago'"
+        },
+        {
+          "name": "Wat Phra Narai Maharat",
+          "page_name": "วัดพระนารายณ์มหาราช",
+          "src": "https://travel.trueid.net/detail/WgV9Lj45W68Q",
+          "date": "2025-11",
+          "map": "Google Maps 274 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Man Fa waterfall",
+          "page_name": "น้ำตกม่านฟ้า",
+          "src": "https://travel.trueid.net/detail/WgV9Lj45W68Q",
+          "date": "2025-11",
+          "map": "Google Maps 113 reviews, newest '1 day ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Na Korat Plato",
+          "why": "permanently closed on the map"
+        },
+        {
+          "name": "Rak Jang Melon",
+          "why": "the map has only a different place (a herb shop)"
+        },
+        {
+          "name": "Khao Yai National Park, Wat Khao Wanchai, the Mani Sorn sunflower field",
+          "why": "in Pak Chong: the library's Khao Yai town"
+        },
+        {
+          "name": "Wat Sala Loi",
+          "why": "quote not on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

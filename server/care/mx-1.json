@@ -1,0 +1,8 @@
+{"cc":"mx","towns":[
+ {"place":"mx-yucatan","places":[
+  {"name":"Hospiten Cancún","kind":"hospital","area":{"th":"แคนคูน","en":"Cancún"},"what":{"th":"โรงพยาบาลเอกชนนานาชาติ มีห้องฉุกเฉิน","en":"Private international hospital with an emergency department"},"why":{"th":"เครือโรงพยาบาลนานาชาติ มีกุมารแพทย์เฉพาะทาง","en":"An international hospital group with paediatric specialists"},"q":"Hospiten Cancún, Cancún, Quintana Roo, Mexico","ok":"2026-11"},
+  {"name":"Hospital Galenia","kind":"hospital","area":{"th":"แคนคูน","en":"Cancún"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉิน","en":"Private hospital with an emergency department"},"why":{"th":"โรงพยาบาลที่นักท่องเที่ยวในแคนคูนนิยมใช้","en":"A hospital many visitors to Cancún use"},"q":"Hospital Galenia, Cancún, Quintana Roo, Mexico","ok":"2026-11"},
+  {"name":"Parque de las Palapas","kind":"play","area":{"th":"ใจกลางเมืองแคนคูน","en":"Downtown Cancún"},"what":{"th":"ลานเมืองที่มีมุมเครื่องเล่นเด็ก","en":"Town square with a children's play area"},"why":{"th":"ครอบครัวท้องถิ่นมาเล่นและหาของกินกัน โดยเฉพาะตอนเย็นวันหยุด","en":"Where local families play and snack, busiest at weekend dusk"},"q":"Parque de las Palapas, Centro, Cancún","ok":"2026-11"},
+  {"name":"Gran Parque La Plancha","kind":"play","area":{"th":"เมรีดา","en":"Mérida"},"what":{"th":"สวนสาธารณะใหญ่ มีหลายลานเครื่องเล่นเด็ก","en":"Big city park with several children's play areas"},"why":{"th":"สวนใหม่ มีลานเด็กเล่นและตลาดอาหารในสวน","en":"A newer park with play areas and a food market inside"},"q":"Gran Parque La Plancha, Mérida, Yucatán","ok":"2026-11"}
+ ]}
+]}

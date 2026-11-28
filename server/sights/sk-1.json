@@ -1,0 +1,538 @@
+{
+  "cc": "sk",
+  "towns": [
+    {
+      "place": "sk-bratislava",
+      "sights": [
+        {
+          "name": { "en": "Bratislava Zoo", "th": "สวนสัตว์บราติสลาวา" },
+          "kind": "zoo",
+          "area": { "en": "Mlynská dolina", "th": "มลินสกา โดลินา" },
+          "what": { "en": "The city zoo, open every day of the year including holidays", "th": "สวนสัตว์ของเมือง เปิดทุกวันตลอดปีรวมวันหยุด" },
+          "why": { "en": "Plan three to four hours; most pavilions close about 30 minutes before the gates", "th": "ควรกันเวลา 3-4 ชั่วโมง ส่วนใหญ่ปิดก่อนประตูหลักราว 30 นาที" },
+          "tip": { "en": "Adult price is lower from December to February; check the child price and the current gate times", "th": "ราคาผู้ใหญ่ถูกลงช่วงธันวาคมถึงกุมภาพันธ์ เช็กราคาเด็กและเวลาปิดก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €11 adults March–November · €8 December–February · check the child price", "th": "≈ €11 ผู้ใหญ่ มีนาคม-พฤศจิกายน · €8 ธันวาคม-กุมภาพันธ์ · เช็กราคาเด็ก" },
+          "book": "none",
+          "q": "ZOO Bratislava, Mlynská dolina, Bratislava",
+          "ok": "2026-11",
+          "src": "https://zoobratislava.sk/en/for-visitors/prices-and-tickets/"
+        },
+        {
+          "name": { "en": "Bratislava Castle", "th": "ปราสาทบราติสลาวา" },
+          "local": "Bratislavský hrad",
+          "kind": "culture",
+          "area": { "en": "Castle Hill", "th": "เนินปราสาท" },
+          "what": { "en": "The hilltop castle with the Historical Museum inside; the courtyard, terraces and baroque garden can be entered without a ticket", "th": "ปราสาทบนเนิน มีพิพิธภัณฑ์ประวัติศาสตร์ภายใน ลานด้านนอก ระเบียงและสวนบาร็อคเข้าได้ไม่ต้องซื้อบัตร" },
+          "why": { "en": "Small children can run in the courtyard and look at the view; only the exhibitions cost money", "th": "เด็กเล็กวิ่งเล่นในลานและดูวิวได้ มีค่าเข้าเฉพาะนิทรรศการ" },
+          "tip": { "en": "Museum open Wednesday–Monday 10:00–18:00, closed Tuesday; garden hours change with the season", "th": "พิพิธภัณฑ์เปิดพุธ-จันทร์ 10:00-18:00 ปิดวันอังคาร สวนเปิดตามฤดู" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €14 adults · €7 children · family ticket €18 · courtyard and garden not ticketed", "th": "≈ €14 ผู้ใหญ่ · €7 เด็ก · ตั๋วครอบครัว €18 · ลานและสวนไม่ต้องมีบัตร" },
+          "book": "none",
+          "q": "Bratislava Castle, Bratislava",
+          "ok": "2026-11",
+          "src": "https://loudavymkrokem.cz/en/hrady/bratislavsky-hrad/"
+        },
+        {
+          "name": { "en": "UFO Observation Deck", "th": "จุดชมวิวยูเอฟโอ" },
+          "local": "UFO Bratislava",
+          "kind": "views",
+          "area": { "en": "Most SNP bridge", "th": "สะพานโมสต์ เอสเอ็นพี" },
+          "what": { "en": "A viewing deck in the saucer on top of the bridge pylon, open every day", "th": "จุดชมวิวบนจานบินที่ปลายเสาสะพาน เปิดทุกวัน" },
+          "why": { "en": "A short ride up to see the Danube and the city; no booking needed", "th": "ขึ้นลิฟต์ไม่นานก็เห็นแม่น้ำดานูบและเมือง ไม่ต้องจองล่วงหน้า" },
+          "tip": { "en": "Open 10:00–23:00; tickets are sold only on site and the sources disagree on prices, so check at the desk", "th": "เปิด 10:00-23:00 ขายบัตรหน้างานเท่านั้น ราคาแต่ละแหล่งไม่ตรงกัน เช็กที่เคาน์เตอร์" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "UFO Observation Deck, Most SNP, Bratislava",
+          "ok": "2026-11",
+          "src": "https://u-f-o.sk/observation-deck"
+        },
+        {
+          "name": { "en": "Janko Kráľ Park", "th": "สวนยันโค กราล" },
+          "local": "Sad Janka Kráľa",
+          "kind": "park",
+          "area": { "en": "Petržalka", "th": "เปตร์ชัลกา" },
+          "what": { "en": "The oldest public park in the city, with children's playgrounds and flat paths", "th": "สวนสาธารณะเก่าแก่ของเมือง มีสนามเด็กเล่นและทางเรียบ" },
+          "why": { "en": "Flat, stroller-friendly paths and room to run, close to the Old Bridge and Aupark", "th": "ทางเรียบเหมาะกับรถเข็น มีที่ให้วิ่ง อยู่ใกล้สะพานเก่าและออพาร์ก" },
+          "tip": { "en": "Listed as open around the clock; bring snacks, there is no ticket", "th": "ระบุว่าเปิดตลอด 24 ชั่วโมง เตรียมขนมไปเอง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Sad Janka Kráľa, Petržalka, Bratislava",
+          "ok": "2026-11",
+          "src": "https://new.visitbratislava.com/sights-attractions/janko-kral-park/"
+        },
+        {
+          "name": { "en": "Železná Studienka", "th": "เจเลซนา สตูเดียนกา" },
+          "kind": "nature",
+          "area": { "en": "Bratislava forest park", "th": "ป่าสวนสาธารณะบราติสลาวา" },
+          "what": { "en": "A forest recreation area with two small lakes, playgrounds and boating", "th": "พื้นที่พักผ่อนในป่า มีทะเลสาบเล็กสองแห่ง สนามเด็กเล่นและพายเรือ" },
+          "why": { "en": "Shaded forest paths are cooler than the city on a warm day", "th": "ทางเดินในป่าร่มรื่นเย็นกว่าในเมืองวันที่อากาศร้อน" },
+          "tip": { "en": "Entry is free; boating and trampolines cost extra, check the prices at the lake", "th": "เข้าฟรี การพายเรือและแทรมโพลีนมีค่าใช้จ่ายเพิ่ม เช็กราคาที่ทะเลสาบ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Železná studienka, Bratislava",
+          "ok": "2026-11",
+          "src": "https://dev.visitbratislava.com/sights-attractions/zelezna-studienka/"
+        },
+        {
+          "name": { "en": "Bratislava Transport Museum", "th": "พิพิธภัณฑ์การคมนาคมบราติสลาวา" },
+          "local": "Múzeum dopravy v Bratislave",
+          "kind": "museumkid",
+          "area": { "en": "Old Town", "th": "เมืองเก่า" },
+          "what": { "en": "A museum of trams, cars and other vehicles, part of the Slovak Technical Museum", "th": "พิพิธภัณฑ์รถรางและยานพาหนะ เป็นสาขาของพิพิธภัณฑ์เทคนิคสโลวัก" },
+          "why": { "en": "Children like looking at big vehicles up close; special programmes are listed on the museum site", "th": "เด็กชอบดูยานพาหนะคันใหญ่ใกล้ๆ มีกิจกรรมพิเศษประกาศบนเว็บไซต์ของพิพิธภัณฑ์" },
+          "tip": { "en": "Accepts the Bratislava Card; check opening days and the admission price before you go", "th": "รับบราติสลาวาการ์ด เช็กวันเปิดและราคาก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Múzeum dopravy, Šancová, Bratislava",
+          "ok": "2026-11",
+          "src": "https://stm-ke.sk/sk/pobocky/muzeum-dopravy-v-bratislave/vstupne?lang=en"
+        },
+        {
+          "name": { "en": "Kamzík Hill and TV Tower", "th": "เนินคัมซิกและหอโทรทัศน์" },
+          "local": "Kamzík",
+          "kind": "views",
+          "area": { "en": "Kamzík, Nové Mesto", "th": "คัมซิก โนเว เมสโต" },
+          "what": { "en": "A forested hill above the city with a TV tower, a restaurant and a children's playground", "th": "เนินป่าเหนือเมือง มีหอโทรทัศน์ ร้านอาหารและสนามเด็กเล่น" },
+          "why": { "en": "Space to run and play on the hill; the city says the playground there is being reworked", "th": "มีที่วิ่งเล่นบนเนิน เมืองแจ้งว่าสนามเด็กเล่นกำลังปรับปรุง" },
+          "tip": { "en": "The public area is free; the tower deck price is reported differently, so check it, and reserve if you want the restaurant", "th": "พื้นที่สาธารณะฟรี ราคาขึ้นจุดชมวิวหอคอยแต่ละแหล่งไม่ตรงกัน เช็กก่อน และจองถ้าจะกินที่ร้าน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free (public area) · tower deck: check the price", "th": "ฟรี (พื้นที่สาธารณะ) · ขึ้นหอคอย: เช็กราคา" },
+          "book": "none",
+          "q": "Kamzík TV Tower, Bratislava",
+          "ok": "2026-11",
+          "src": "https://new.visitbratislava.com/sights-attractions/kamzik-hill-tv-tower/"
+        },
+        {
+          "name": { "en": "Freedom Square water playground", "th": "ลานเล่นน้ำจตุรัสเสรีภาพ" },
+          "local": "Námestie slobody",
+          "kind": "play",
+          "area": { "en": "Old Town", "th": "เมืองเก่า" },
+          "what": { "en": "A water playground on Freedom Square in the Old Town", "th": "ลานเล่นน้ำที่จตุรัสเสรีภาพในเมืองเก่า" },
+          "why": { "en": "A short stop in the centre where children can play with water", "th": "จุดแวะสั้นๆ กลางเมืองให้เด็กเล่นน้ำ" },
+          "tip": { "en": "Water features usually run in the warm months only; check that it is running and bring spare clothes", "th": "น้ำพุมักเปิดเฉพาะหน้าอุ่น เช็กว่าเปิดอยู่และพกเสื้อผ้าสำรอง" },
+          "ages": [1, 2, 2, 0],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Námestie slobody, Bratislava",
+          "ok": "2026-11",
+          "src": "https://new.visitbratislava.com/sights-attractions/freedom-square-water-playground/"
+        },
+        {
+          "name": { "en": "Dejisko History Playground", "th": "เดย์อิสโก พื้นที่เล่นประวัติศาสตร์" },
+          "kind": "museumkid",
+          "area": { "en": "Old Town Hall", "th": "ศาลาว่าการเมืองเก่า" },
+          "what": { "en": "Six play rooms in the Old Town Hall where children guard city walls, join a coronation and hide inside a giant beluga sturgeon", "th": "ห้องเล่น 6 ห้องในศาลาว่าการเมืองเก่า เด็กๆ เฝ้ากำแพงเมือง ร่วมพิธีราชาภิเษก และมุดเข้าไปในปลาสเตอร์เจียนยักษ์" },
+          "why": { "en": "Designed for ages 3 to 12, with a €4 ticket for ages 1 to 3; open from 12 September 2026", "th": "ออกแบบสำหรับอายุ 3–12 ปี มีตั๋ว €4 สำหรับอายุ 1–3 ปี เปิดตั้งแต่ 12 กันยายน 2026" },
+          "tip": { "en": "About two hours; the Old Town Hall ticket does not cover it", "th": "ใช้เวลาราว 2 ชั่วโมง ตั๋วศาลาว่าการเมืองเก่าไม่รวมที่นี่" },
+          "ages": [2, 2, 2, 0],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €6 children 3–18 · €4 ages 1–3 · €4 adults", "th": "≈ €6 เด็ก 3–18 ปี · €4 อายุ 1–3 ปี · €4 ผู้ใหญ่" },
+          "book": "rec",
+          "q": "Dejisko History Playground, Primaciálne námestie 3, Bratislava",
+          "ok": "2026-11",
+          "src": "https://www.mmb.sk/en/exhibitions/dejisko-history-playground"
+        },
+        {
+          "name": { "en": "Old Town Hall and its tower", "th": "ศาลาว่าการเมืองเก่าและหอคอย" },
+          "kind": "museum",
+          "area": { "en": "Main Square", "th": "จัตุรัสหลัก" },
+          "what": { "en": "The city history exhibition and a tower with views over the old town centre", "th": "นิทรรศการประวัติศาสตร์เมืองและหอคอยชมวิวใจกลางเมืองเก่า" },
+          "why": { "en": "Under-6s are free; the history rooms suit children of six and over and the tower adds a view", "th": "เด็กต่ำกว่า 6 ปีเข้าฟรี ห้องประวัติศาสตร์เหมาะกับเด็ก 6 ปีขึ้นไป และหอคอยมีวิวให้ชม" },
+          "tip": { "en": "The ticket also covers the viticulture exhibition and the Apponyi Palace", "th": "ตั๋วเข้าชมนิทรรศการองุ่นและไวน์และพระราชวังอัปโปนยีได้ด้วย" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €8 adults · €4 reduced · under 6 free", "th": "≈ €8 ผู้ใหญ่ · €4 ลดราคา · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "Old Town Hall, Primaciálne námestie 3, Bratislava",
+          "ok": "2026-11",
+          "src": "https://www.mmb.sk/en/locations-and-opening-hours"
+        },
+        {
+          "name": { "en": "Michael’s Tower", "th": "หอคอยไมเคิล" },
+          "kind": "views",
+          "area": { "en": "Old Town", "th": "เมืองเก่า" },
+          "what": { "en": "The last preserved city gate, with a climb to a viewing gallery and an exhibition of weapons", "th": "ประตูเมืองที่เหลืออยู่แห่งสุดท้าย ปีนขึ้นไปห้องชมวิวและนิทรรศการอาวุธ" },
+          "why": { "en": "A short climb that suits children of five and over; under-6s are free", "th": "ปีนไม่นาน เหมาะกับเด็ก 5 ปีขึ้นไป ต่ำกว่า 6 ปีเข้าฟรี" },
+          "tip": { "en": "Closed on Tuesdays; tickets are sold at the Red Crayfish Pharmacy", "th": "ปิดวันอังคาร ขายตั๋วที่ร้านขายยาเรดเครย์ฟิช" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €6 adults · €4 reduced · under 6 free", "th": "≈ €6 ผู้ใหญ่ · €4 ลดราคา · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "Michalská brána, Michalská 22, Bratislava",
+          "ok": "2026-11",
+          "src": "https://www.mmb.sk/en/locations/michael-s-tower"
+        },
+        {
+          "name": { "en": "Devín Castle", "th": "ปราสาทเดวิน" },
+          "kind": "culture",
+          "area": { "en": "Devín", "th": "เดวิน" },
+          "what": { "en": "A ruined castle on a rock at the meeting of the Danube and Morava rivers, on the old Iron Curtain line", "th": "ปราสาทปรักหักพังบนหินที่จุดบรรจบแม่น้ำดานูบและโมราวา อยู่บนแนวม่านเหล็กเดิม" },
+          "why": { "en": "Open ground and ruins to explore for children of five and over, but uneven paths and no prams", "th": "พื้นที่โล่งและซากปรักให้สำรวจสำหรับเด็ก 5 ปีขึ้นไป แต่ทางไม่เรียบและรถเข็นไปไม่ได้" },
+          "tip": { "en": "Winter season: Tuesday to Sunday 10:00–16:00; the summer price is higher", "th": "ฤดูหนาว: อังคารถึงอาทิตย์ 10:00–16:00 ราคาฤดูร้อนสูงกว่า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €6 adults · €3 reduced (winter season)", "th": "≈ €6 ผู้ใหญ่ · €3 ลดราคา (ฤดูหนาว)" },
+          "book": "none",
+          "q": "Devín Castle, Muránska 10, Devín, Bratislava",
+          "ok": "2026-11",
+          "src": "https://www.mmb.sk/en/locations/devin-castle"
+        },
+        {
+          "name": { "en": "Exhibition of Clocks", "th": "นิทรรศการนาฬิกา" },
+          "kind": "museum",
+          "area": { "en": "House at the Good Shepherd", "th": "บ้านผู้เลี้ยงแกะที่ดี" },
+          "what": { "en": "Clocks from the 19th century and the early modern period in the narrow House at the Good Shepherd", "th": "นาฬิกาจากศตวรรษที่ 19 และยุคต้นสมัยใหม่ในบ้านแคบๆ ชื่อบ้านผู้เลี้ยงแกะที่ดี" },
+          "why": { "en": "A tiny 40-minute stop; children like the ticking and chiming", "th": "แวะสั้นๆ 40 นาที เด็กชอบเสียงติ๊กต๊อกและเสียงระฆัง" },
+          "tip": { "en": "Not wheelchair accessible; stairs inside", "th": "เก้าอี้รถเข็นเข้าไม่ได้ ภายในมีบันได" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €3 adults · €2 reduced", "th": "≈ €3 ผู้ใหญ่ · €2 ลดราคา" },
+          "book": "none",
+          "q": "House at the Good Shepherd, Židovská 1, Bratislava",
+          "ok": "2026-11",
+          "src": "https://www.mmb.sk/en/exhibitions/exhibition-of-clocks"
+        },
+        {
+          "name": { "en": "Slovak National Museum, Natural History", "th": "พิพิธภัณฑ์แห่งชาติสโลวัก ประวัติศาสตร์ธรรมชาติ" },
+          "kind": "museum",
+          "area": { "en": "Danube embankment", "th": "ริมแม่น้ำดานูบ" },
+          "what": { "en": "Exhibitions on the biodiversity of Slovakia, the history of life on Earth and minerals", "th": "นิทรรศการความหลากหลายทางชีวภาพของสโลวาเกีย ประวัติชีวิตบนโลกและแร่" },
+          "why": { "en": "A sheltered museum by the Danube with a discovery room; under-6s are free and family tickets are cheap", "th": "พิพิธภัณฑ์ในร่มริมดานูบ มีห้องค้นพบ เด็กต่ำกว่า 6 ปีเข้าฟรี และมีตั๋วครอบครัวราคาประหยัด" },
+          "tip": { "en": "Open daily except Monday 9:00–17:00, last entry 16:30", "th": "เปิดทุกวันยกเว้นวันจันทร์ 9:00–17:00 เข้าชมรอบสุดท้าย 16:30" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €7 adults · €4 reduced · family from €12 · under 6 free", "th": "≈ €7 ผู้ใหญ่ · €4 ลดราคา · ครอบครัวเริ่ม €12 · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "Slovak National Museum Natural History, Vajanského nábrežie 2, Bratislava",
+          "ok": "2026-11",
+          "src": "https://www.snm.sk/en/visit/admission-fees"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Primate's Palace", "th": "พระราชวังไพรเมต" },
+          "kind": "museum",
+          "area": { "en": "Old Town", "th": "เมืองเก่า" },
+          "what": { "en": "A neoclassical palace with a gallery of tapestries and a Mirror Hall, run by the city museum", "th": "วังสไตล์นีโอคลาสสิก มีห้องแขวนผ้าทอและห้องกระจก ดูแลโดยพิพิธภัณฑ์เมือง" },
+          "why": { "en": "A dry indoor stop in the middle of the Old Town; everyone under 18 goes in free", "th": "ที่ในร่มกลางเมืองเก่า ผู้ที่อายุต่ำกว่า 18 ปีเข้าฟรี" },
+          "tip": { "en": "Opening days change week by week, so check the palace page for this week's hours", "th": "วันเปิดเปลี่ยนไปแต่ละสัปดาห์ เช็กเวลาประจำสัปดาห์ที่หน้าเว็บของวัง" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €5 adults · under 18 free", "th": "≈ €5 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี" },
+          "book": "none",
+          "q": "Primate's Palace, Primaciálne námestie 1, Bratislava",
+          "src": "https://bratislava.sk/en/city-of-bratislava/transparent-city/city-property/primates-palace/visit-us"
+        },
+        {
+          "local": "Kostol svätej Alžbety",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/best-things-to-do-in-bratislava-with-kids/",
+          "name": {
+            "th": "โบสถ์สีฟ้า",
+            "en": "Blue Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเบซรูโชวา บราติสลาวา",
+            "en": "Bezručova, Bratislava"
+          },
+          "what": {
+            "th": "โบสถ์อาร์นูโวสีฟ้าพาสเทลหลังเล็ก",
+            "en": "A small pastel-blue Art Nouveau church"
+          },
+          "why": {
+            "th": "หน้าตาเหมือนหลุดมาจากหนังดิสนีย์ แวะชมได้เร็ว",
+            "en": "Looks like something out of a Disney film; a quick stop"
+          },
+          "q": "The Blue Church, Bezručova 2, Bratislava",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Dóm svätého Martina",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/bratislava-with-kids/",
+          "name": {
+            "th": "มหาวิหารเซนต์มาร์ติน",
+            "en": "St Martin's Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ใต้ปราสาท บราติสลาวา",
+            "en": "below the castle, Bratislava"
+          },
+          "what": {
+            "th": "โบสถ์ที่มีชื่อเสียงที่สุดแห่งหนึ่งของบราติสลาวา สร้างใหม่แบบกอทิก",
+            "en": "One of Bratislava's best-known churches, rebuilt in Gothic style"
+          },
+          "why": {
+            "th": "ยอดแหลมและซุ้มโค้งชี้ให้เด็กดูได้ง่าย",
+            "en": "The spire and arches are easy to show children"
+          },
+          "tip": {
+            "th": "เข้าฟรี แต่งกายปิดไหล่ ใส่กางเกงหรือกระโปรงยาว",
+            "en": "Free; cover shoulders, with long trousers or skirts"
+          },
+          "q": "St. Martin's Cathedral, Rudnayovo námestie 1, Bratislava",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Centrum vedy Aurelium",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitbratislava.com/news/aurelium-science-adventure-center/",
+          "name": {
+            "th": "ศูนย์วิทยาศาสตร์ออเรเลียม",
+            "en": "Aurelium science centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โนเวเมสโต บราติสลาวา",
+            "en": "Nové Mesto, Bratislava"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์ลงมือเล่น 7 โซน ตั้งแต่กลศาสตร์ถึงคณิตศาสตร์",
+            "en": "A hands-on science centre with seven zones, from mechanics to maths"
+          },
+          "why": {
+            "th": "ได้ดึง หมุน และทดลอง ดีสำหรับวันฝนตก",
+            "en": "Pull, spin and test the exhibits; good on a rainy day"
+          },
+          "tip": {
+            "th": "เปิดอังคาร–เสาร์ 09:00–16:00 ปิดอาทิตย์และจันทร์ เผื่อเวลาราว 2 ชั่วโมง",
+            "en": "Open Tue–Sat 09:00–16:00, closed Sunday and Monday; allow about two hours"
+          },
+          "q": "Centrum vedy CVTI SR, Bojnická 3, Bratislava",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "หอชมวิวทาทราส",
+            "en": "Tatras Tower"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ชตรบสเกเปลโซ",
+            "en": "Štrbské Pleso"
+          },
+          "what": {
+            "th": "หอชมวิวเทือกเขาทาทราสูง",
+            "en": "A viewing tower over the High Tatras"
+          },
+          "why": {
+            "th": "มีตาข่ายแขวนและทางเดินพื้นกระจก",
+            "en": "A hanging net and a glass-floored walkway"
+          },
+          "q": "Tatras Tower, Štrbské Pleso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "สกัลนาเตเปลโซ",
+            "en": "Skalnaté Pleso"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ขึ้นกระเช้าจากทาทรันสกาลอมนีตซา",
+            "en": "Cable car from Tatranská Lomnica"
+          },
+          "what": {
+            "th": "สถานีบนภูเขามีวิวและทะเลสาบ ขึ้นกระเช้าไป",
+            "en": "A mountain station with views and a lake, reached by cable car"
+          },
+          "why": {
+            "th": "เที่ยวภูเขาได้โดยไม่ต้องเดินป่าหนัก",
+            "en": "A mountain day out without a hard hike"
+          },
+          "q": "Skalnaté Pleso, Vysoké Tatry",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "เฮรบีเอนอก",
+            "en": "Hrebienok"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สตารีสโมโกเวตซ์",
+            "en": "Starý Smokovec"
+          },
+          "what": {
+            "th": "เส้นทางง่ายจากสตารีสโมโกเวตซ์ ขึ้นรถรางไต่เขาหรือเดิน",
+            "en": "An easy route from Starý Smokovec, by funicular or on foot"
+          },
+          "why": {
+            "th": "รถเข็นเด็กไปได้ และรถรางพาขึ้นเนิน",
+            "en": "Suits pushchairs, and the funicular takes the hill for you"
+          },
+          "q": "Hrebienok, Vysoké Tatry",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Belianska jaskyňa",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "ถ้ำเบลียนสกา",
+            "en": "Belianska Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทาทรันสกาโคตลีนา",
+            "en": "Tatranská Kotlina"
+          },
+          "what": {
+            "th": "ถ้ำในเทือกเขาทาทราสูง",
+            "en": "A cave in the High Tatras"
+          },
+          "why": {
+            "th": "เหมาะสำหรับวันที่อากาศไม่ดี",
+            "en": "A good choice when the weather is bad"
+          },
+          "q": "Belianska jaskyňa, Tatranská Kotlina",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

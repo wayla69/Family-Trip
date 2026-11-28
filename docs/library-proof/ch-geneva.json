@@ -1,0 +1,189 @@
+{
+  "town": "ch-geneva",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 22 rows from geneve.com, lausanne-tourisme.ch and chaplinsworld.com, 19 passed library-check.cjs, 16 went in",
+  "added": [
+    {
+      "name": "La Storia",
+      "page_name": "La Storia",
+      "src": "https://www.geneve.com/en/eat-drink/restaurants/family-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps Route de Frontenex 62bis, 359 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Inglewood (Eaux-Vives)",
+      "page_name": "Inglewood",
+      "src": "https://www.geneve.com/en/eat-drink/restaurants/family-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps 'Inglewood Eaux-Vives', 1,712 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Molino (Molard)",
+      "page_name": "Molino",
+      "src": "https://www.geneve.com/en/eat-drink/restaurants/family-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps 'Pizzeria Ristorante Molino Molard', 7,203 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "The Hamburger Foundation (Pâquis)",
+      "page_name": "The Hamburger Foundation",
+      "src": "https://www.geneve.com/en/eat-drink/restaurants/family-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps 'The Hamburger Foundation - Pâquis', 1,677 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Café du MEG",
+      "page_name": "MEG Café",
+      "src": "https://www.geneve.com/en/eat-drink/restaurants/family-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps 'Café du MEG', 173 reviews, newest 'last month'"
+    },
+    {
+      "name": "Un R de Famille",
+      "page_name": "Un R de Famille",
+      "src": "https://www.geneve.com/en/eat-drink/restaurants/family-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps Rue Goetz-Monin 10, 375 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Auberge du Chalet des Enfants",
+      "page_name": "Chalet-des-Enfants",
+      "src": "https://www.lausanne-tourisme.ch/en/explore/chalet-des-enfants/",
+      "date": "official",
+      "map": "Google Maps 'Auberge du Chalet des Enfants', 2,511 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Bois de la Bâtie",
+      "page_name": "Bois de la Bâtie",
+      "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+      "date": "official",
+      "map": "Google Maps 2,514 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "AIRLOOP",
+      "page_name": "AIRLOOP®",
+      "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+      "date": "official",
+      "map": "Google Maps 'AIRLOOP', Lancy, 685 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Geneva Adventure Park (Evaux)",
+      "page_name": "Parc Aventure des Evaux",
+      "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+      "date": "official",
+      "map": "Google Maps 'Geneva Adventure Park', 660 reviews, newest 'last month'"
+    },
+    {
+      "name": "Chaplin’s World",
+      "page_name": "Chaplin’s World",
+      "src": "https://www.chaplinsworld.com/en/",
+      "date": "official",
+      "map": "Google Maps 10,355 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "The Olympic Museum",
+      "page_name": "The Olympic Museum",
+      "src": "https://www.lausanne-tourisme.ch/en/explore/the-olympic-museum/",
+      "date": "official",
+      "map": "Google Maps 10,984 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "AQUATIS Aquarium-Vivarium",
+      "page_name": "AQUATIS Aquarium-Vivarium Lausanne",
+      "src": "https://www.lausanne-tourisme.ch/en/explore/aquatis-aquarium-vivarium-lausanne/",
+      "date": "official",
+      "map": "Google Maps 9,277 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Sauvabelin",
+      "page_name": "The Sauvabelin site",
+      "src": "https://www.lausanne-tourisme.ch/en/explore/the-sauvabelin-site/",
+      "date": "official",
+      "map": "Google Maps 'Sauvabelin Tower' (the site's tower), 2,650 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Zoology museum, Palais de Rumine",
+      "page_name": "Vaud Zoology Museum",
+      "src": "https://www.lausanne-tourisme.ch/en/explore/vaud-zoology-museum/",
+      "date": "official",
+      "map": "Google Maps 'Naturéum - département de zoologie' (the museum's current name), Palais de Rumine, 148 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Lausanne Botanical Garden",
+      "page_name": "Lausanne botanical museum and garden",
+      "src": "https://www.lausanne-tourisme.ch/en/explore/lausanne-botanical-museum-and-garden/",
+      "date": "official",
+      "map": "Google Maps 'Lausanne Botanical Garden', 1,003 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Brasserie des Trois Rois",
+      "page_name": "Brasserie Les Trois Rois",
+      "src": "https://www.lausanne-tourisme.ch/fr/decouvrir/les-trois-rois/",
+      "date": "official",
+      "map": "Google Maps 'Brasserie des Trois Rois' (Rue du Simplon 7), newest review shown 22 hours ago"
+    },
+    {
+      "name": "La Riguenette",
+      "page_name": "La Riguenette",
+      "src": "https://www.lausanne-tourisme.ch/fr/decouvrir/la-riguenette/",
+      "date": "official",
+      "map": "Google Maps 'La Riguenette' (Prom. du Bois-de-Beaulieu 4), newest review shown 2 months ago"
+    },
+    {
+      "name": "Le Pierrier beach",
+      "page_name": "Le Pierrier",
+      "src": "https://www.montreuxriviera.com/en/PA456/blog/all-to-the-beach",
+      "date": "official",
+      "map": "Google Maps 'Pierrier - Montreux Plage' (Chemin du Pierrier), newest review shown 14 hours ago"
+    },
+    {
+      "name": "Franchises park paddling pool",
+      "page_name": "Pataugeoire du parc des Franchises",
+      "src": "https://www.geneve.ch/pataugeoire-parc-franchises",
+      "date": "official",
+      "map": "Google Maps 'Pataugeoire du parc des Franchises' (Av. de Châtelaine), newest review shown 2 months ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Le CouCou (Montreux), Le Contretemps, Downtown",
+      "why": "library-check.cjs: no date on the page"
+    },
+    {
+      "name": "Blé Noir",
+      "why": "the page names no branch"
+    },
+    {
+      "name": "Home",
+      "why": "the map has no place of that name near the airport"
+    },
+    {
+      "name": "Les Ateliers Découvertes",
+      "why": "the map has no place of that name"
+    },
+    {
+      "name": "Home (near the airport)",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Place Chateaubriand playground",
+      "why": "newest Google Maps review 3 years old"
+    },
+    {
+      "name": "Mon Repos playground",
+      "why": "no recent review could be read"
+    },
+    {
+      "name": "Espace des inventions",
+      "why": "library-check.cjs could not confirm the row"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 8 rows from Geneva Tourism, the city of Geneva (Sep 2026), Lausanne Tourisme and Montreux Riviera, 7 passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

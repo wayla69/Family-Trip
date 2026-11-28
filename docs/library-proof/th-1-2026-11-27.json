@@ -1,0 +1,344 @@
+{
+  "town": "th (Thailand round 1: Bangkok, Chiang Mai, Loei, Rayong, Ubon, Pattaya, Hua Hin, Nan, Trang, Koh Lipe)",
+  "kind": "added",
+  "checked": "2026-11-27",
+  "rule": "Haiku research agents with the Thailand notes (TAT counts as official; otherwise a 2025–2026 page — a Thai date 2568/2569 counts; no national chains, no bars) -> scripts/library-check.cjs (single Wongnai place pages carry no page date and were left out) -> every place opened on Google Maps on 27 Nov 2026 by checker agents, kept only when open, the same name and in the town (two public places that came first in a result list in the right town kept by hand) -> Thai and English by writer agents to docs/STYLE.md, opening hours taken out of the text.",
+  "towns": {
+    "th-bangkok": {
+      "eat": [
+        {
+          "name": "Take a Breath Cafe & Eatery",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/"
+        },
+        {
+          "name": "Wisdom International Buffet Siam Paragon",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/"
+        },
+        {
+          "name": "YWCA Restaurant",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/"
+        },
+        {
+          "name": "Ban Ice Thong Lo",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/"
+        },
+        {
+          "name": "An An Lao",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/"
+        },
+        {
+          "name": "Steve Cafe & Cuisine",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/"
+        },
+        {
+          "name": "Ti Phochana (Ratchaprarop)",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%84%e0%b8%a3%e0%b8%ad%e0%b8%9a%e0%b8%84%e0%b8%a3%e0%b8%b1%e0%b8%a7/"
+        },
+        {
+          "name": "Seven Sisters Kids Cafe & Halal Cuisine",
+          "src": "https://thestandard.co/?p=1190251"
+        },
+        {
+          "name": "Baantonkla Cafe",
+          "src": "https://thestandard.co/?p=1190251"
+        },
+        {
+          "name": "Ban Kaptan Ruea",
+          "src": "https://thestandard.co/?p=1190251"
+        },
+        {
+          "name": "Wild Duck Cafe",
+          "src": "https://thestandard.co/?p=1190251"
+        }
+      ],
+      "do": []
+    },
+    "th-chiangmai": {
+      "eat": [
+        {
+          "name": "Baan Suan Café",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Bella Goose Cafe on the Pond",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Chada Café and Restaurant",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Din Cafe",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Early Owls",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Fernpresso at Lake",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Ma Plearn Family Space",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Kaffekeen",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Living The Dream Cafe & Playground",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "LONLO the Family Community",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Mug Cafe And Bistro",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "The Ours Cafe",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Hannah • Hahn",
+          "src": "https://cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        }
+      ],
+      "do": []
+    },
+    "th-loei": {
+      "eat": [
+        {
+          "name": "Driptionary: Specialty Coffee",
+          "src": "https://www.wongnai.com/listings/chill-out-cafe-in-loei"
+        },
+        {
+          "name": "Our cafe",
+          "src": "https://www.wongnai.com/listings/chill-out-cafe-in-loei"
+        },
+        {
+          "name": "Chamloei Rak Cafe",
+          "src": "https://www.wongnai.com/listings/chill-out-cafe-in-loei"
+        },
+        {
+          "name": "Smile @ Chiang Khan",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        },
+        {
+          "name": "Ran Ahan Lan Chang",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        },
+        {
+          "name": "Pae Nguan Ahan Chao",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        },
+        {
+          "name": "Chum Nua Yai Phat",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        },
+        {
+          "name": "Soi Sao Chiang Khan",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        }
+      ],
+      "do": []
+    },
+    "th-pattaya": {
+      "eat": [
+        {
+          "name": "LariDea Kids' Cafe: Playground & Coffee Shop",
+          "src": "https://offpeaktrip.com/en/guide/pattaya/laridea-kids-caf-playground-coffee-shop"
+        }
+      ],
+      "do": [
+        {
+          "name": "Wat Phra Yai (Big Buddha)",
+          "src": "https://pickyourtrail.com/attractions/pattaya/wat-phra-yai-thailand"
+        }
+      ]
+    },
+    "th-rayong": {
+      "eat": [
+        {
+          "name": "Pa Ya Seafood Mae Ramphueng",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "Je Ueng Seafood Mae Ramphueng",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "Ban Khrua Pramong",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "Homok Pa Chio Ban Phe",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "J-Tai Pupen Seafood Ban Phe",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "Kiao Pla Nai Khiam",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "Je Lang Chuan Chim",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "Khrua Ban Ban by Chamlong",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        },
+        {
+          "name": "Khru Mu (Yom Chinda family original)",
+          "src": "https://www.wongnai.com/listings/restaurant-rayong"
+        }
+      ],
+      "do": [
+        {
+          "name": "Sri Mueang Park, Rayong",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": "Rayong City Museum",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": "Suan Son Beach, Klaeng",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": "Yom Chinda Road old town",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        }
+      ]
+    },
+    "th-ubon": {
+      "eat": [
+        {
+          "name": "Peppers Restaurant & Bakery",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        },
+        {
+          "name": "Somtum Jinda Restaurant",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        },
+        {
+          "name": "Kuay Jab Rot Seab 899",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        },
+        {
+          "name": "Big Ubon Breakfasts",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        },
+        {
+          "name": "Risotto Restaurant",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        },
+        {
+          "name": "Phonphet Suki Tochin",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        },
+        {
+          "name": "Je Koi Pingyang & Shabu",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        },
+        {
+          "name": "Lek Nom Sod",
+          "src": "https://wanderlog.com/list/geoCategory/550438/best-family-restaurants-in-ubon-ratchathani"
+        }
+      ],
+      "do": []
+    },
+    "th-huahin": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Tree Top Adventure Park Hua Hin",
+          "src": "https://www.ticket2attraction.com/blogs/hua-hin-kids-attractions/"
+        },
+        {
+          "name": "Hua Hin Beach",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": "Pradipat Pine Beach (Suan Son)",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": "Samphan Nam Hua Hin Floating Market",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        }
+      ]
+    },
+    "th-lipe": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Hin Ngam Reef",
+          "src": "https://pickyourtrail.com/tourism/thailand/things-to-do-in-koh-lipe"
+        }
+      ]
+    },
+    "th-nan": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Sri Mueang Park, Nan",
+          "src": "https://www.naewna.com/likesara/928814"
+        },
+        {
+          "name": "Wat Phrathat Khao Noi",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
+        },
+        {
+          "name": "Wat Ming Mueang",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
+        }
+      ]
+    },
+    "th-trang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kantang Hot Spring Forest Park",
+          "src": "https://www.thaiholidayguide.com/attraction/kantang-hot-spring-forest-park/"
+        },
+        {
+          "name": "Ban Nam Rap community mangrove trip",
+          "src": "https://www.thaiholidayguide.com/attraction/ban-nam-rap-rafting/"
+        },
+        {
+          "name": "Phraya Ratsadanupradit Monument",
+          "src": "https://www.thaiholidayguide.com/attraction/phraya-ratsadanupradit-mahisornpakdee-monument/"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (27 Nov 2026)": [
+      "Camin Cuisine & Cafe, CentralWorld (permanently)",
+      "Wang Nam Pua (permanently)",
+      "Teddy Bear Museum Pattaya (permanently)",
+      "Phraya Ratsadanupradit Museum, Kantang (temporarily)"
+    ],
+    "name or place did not match on Google Maps": "eight (a road of the same name, several branches with no one place, or only a result list)",
+    "source refused": "visitthailandtoday.com (a ranking made from Google review counts, with sponsored hotel links): four Koh Lipe places; restaurantsforkings.com (as before): one Bangkok café",
+    "other": [
+      "Little Den Cafe and The Zookeeper Thailand (animal cafés)",
+      "an elephant sanctuary in Pattaya (elephant contact)",
+      "JUMBO Seafood and Gold Curry (chains)",
+      "two Holiday Inn Pattaya restaurants and three resort activities in Hua Hin (part of a hotel)",
+      "Siam Venezia (a shopping mall)",
+      "Ricco Cafe Ubon (a wine restaurant)",
+      "Rayong Aquarium (sources disagree whether it is open)"
+    ],
+    "nothing new on a dated page": "Koh Chang places to eat, Korat things to do; Nakhon Si Thammarat, Nan and Ayutthaya places to eat had only undated Wongnai place pages"
+  }
+}

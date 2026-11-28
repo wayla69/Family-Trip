@@ -1,0 +1,166 @@
+{
+  "town": "gb-york",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 16 rows from Little Vikings (2025–26) passed library-check.cjs, 13 went in",
+  "added": [
+    {
+      "name": "Ambiente Tapas (Fossgate)",
+      "page_name": "Ambiente Tapas",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 'Ambiente Tapas Fossgate', 2,702 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "SPARK:York",
+      "page_name": "Spark:York",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 'SPARK:York CIC', 2,749 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Brew & Brownie",
+      "page_name": "Brew & Brownie",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 2,423 reviews, newest '21 hours ago'"
+    },
+    {
+      "name": "Partisan",
+      "page_name": "Partisan",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 112 Micklegate, 1,677 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Trinacria",
+      "page_name": "Trinacria",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 687 reviews, newest 'last week'"
+    },
+    {
+      "name": "The Pig & Pastry",
+      "page_name": "The Pig & Pastry",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 990 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Robinsons Café",
+      "page_name": "Robinsons",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 'Robinsons Cafe', 935 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Rowntree Park Reading Café",
+      "page_name": "Rowntree Park Reading Cafe",
+      "src": "https://little-vikings.co.uk/fun-places-to-eat-york/",
+      "date": "2026-08",
+      "map": "Google Maps 210 reviews, newest '23 hours ago'"
+    },
+    {
+      "name": "The Web Adventure Park",
+      "page_name": "The Web Adventure Park",
+      "src": "https://little-vikings.co.uk/rainy-days-york",
+      "date": "2026-10",
+      "map": "Google Maps 2,653 reviews, newest '23 hours ago'"
+    },
+    {
+      "name": "The Hole in Wand",
+      "page_name": "The Hole in Wand",
+      "src": "https://little-vikings.co.uk/rainy-days-york",
+      "date": "2026-10",
+      "map": "Google Maps 872 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Rainbows Ceramics",
+      "page_name": "Rainbows Ceramics",
+      "src": "https://little-vikings.co.uk/rainy-days-york",
+      "date": "2026-10",
+      "map": "Google Maps 'Rainbows Ceramics Painting Studio', 159 reviews, newest 'last month'"
+    },
+    {
+      "name": "York Minster",
+      "page_name": "York Minster",
+      "src": "https://little-vikings.co.uk/rainy-days-york",
+      "date": "2026-10",
+      "map": "Google Maps 25,094 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Hollywood Bowl (Monks Cross)",
+      "page_name": "Hollywood Bowl",
+      "src": "https://little-vikings.co.uk/rainy-days-york",
+      "date": "2026-10",
+      "map": "Google Maps 'Hollywood Bowl York', Monks Cross, 671 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Oxygen York",
+      "page_name": "Oxygen York",
+      "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+      "date": "2026-02",
+      "map": "Google Maps 'Oxygen York' (Clifton Moor Centre), newest review shown 4 days ago"
+    },
+    {
+      "name": "Flip Out York",
+      "page_name": "Flip Out York",
+      "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+      "date": "2026-02",
+      "map": "Google Maps 'Flip Out York' (3-7 Rose Ave), newest review shown 4 days ago"
+    },
+    {
+      "name": "Crazy Tykes",
+      "page_name": "Crazy Tykes",
+      "src": "https://little-vikings.co.uk/soft-indoor-play-york/",
+      "date": "2026-02",
+      "map": "Google Maps 'Crazy Tykes Indoor and Outdoor Children's Soft play centre' (Thorp Arch, Wetherby), newest review shown a day ago"
+    },
+    {
+      "name": "Murton Park",
+      "page_name": "Murton Park",
+      "src": "https://www.murtonpark.co.uk/play/",
+      "date": "2026-10",
+      "map": "Google Maps 'Murton Park' (Murton Lane), newest review shown 6 days ago"
+    },
+    {
+      "name": "Sandsend Beach",
+      "page_name": "Sandsend Beach",
+      "src": "https://www.mummytravels.com/things-to-do-in-whitby-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Sandsend Beach' (Whitby), newest review shown a week ago"
+    },
+    {
+      "name": "Pannett Park",
+      "page_name": "Pannett Park",
+      "src": "https://www.mummytravels.com/things-to-do-in-whitby-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Pannett Park' (Whitby), newest review shown a week ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "The Balloon Tree, PlayHive (Stockeld Park)",
+      "why": "outside York"
+    },
+    {
+      "name": "York Maze",
+      "why": "seasonal; the page says it opens July–September 2027"
+    },
+    {
+      "name": "Toddlers World",
+      "why": "a session inside York Leisure Centre, no map entry of its own"
+    },
+    {
+      "name": "Krep Truck, The Grand, Balloon Tree",
+      "why": "no street on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Little Vikings (2025–2026), Murton Park's own site and Mummy Travels (Aug 2026), all passed library-check.cjs, 6 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

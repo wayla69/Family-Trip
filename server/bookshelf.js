@@ -12,7 +12,11 @@ const IMPORT = require('./bookimport');
 const PLANNER = require('./planner');
 const CF = require('./countryfacts');
 const EATLIB = require('./eatlib');
+const CARE = require('./care');   // hospitals, pharmacies, play and baby rooms per library town (server/care/*.json)
+const SIGHTLIB = require('./sightlib');
+const BUDGET = require('./budget');
 const VERIFY = require('./verify');
+const TAGS = require('../public/tags.js');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
@@ -43,7 +47,8 @@ const fpOf = (s) => (/^[0-9a-f]{16,64}$/.test(String(s || '')) ? String(s) : nul
 const tagList = (v) => (Array.isArray(v) && v.length <= 10 && v.every((x) => typeof x === 'string') ? [...new Set(v.map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))] : null);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
 const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
-const bad = (res, error, code = 400) => res.status(code).json({ error });
+// a 5xx answer names its reason on the room page's server problems (watch.js reads res.locals.errMsg) — the planner's 502s said nothing
+const bad = (res, error, code = 400, why) => { if (code >= 500) res.locals.errMsg = String(why || error).slice(0, 200); return res.status(code).json({ error }); };
 // the state carries every book's plan (~1 MB of text for a 16-day road trip): gzip it, a phone on hotel wifi feels the difference
 const sha = (s) => crypto.createHash('sha1').update(s).digest('base64url').slice(0, 20);
 // etag: answer 304 (no body) when the phone already holds exactly this — the app asks every 30 s and on every return
@@ -158,7 +163,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'orphans_last')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'sight_starter', 'orphans_last', 'budget_plan')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); await eatSyncAll(pool); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -189,8 +194,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const b = req.body || {};
       if (b.tiles !== undefined && !FAM.TILES.includes(b.tiles)) return bad(res, 'tiles');
+      if (b.taste !== undefined && (!b.taste || typeof b.taste !== 'object' || JSON.stringify(b.taste).length > 4000)) return bad(res, 'taste');
       const cur = (await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0], prof = FAM.cleanProfile(cur ? cur.profile : null);
       if (b.tiles !== undefined) prof.tiles = b.tiles;
+      if (b.taste !== undefined) { const t = TAGS.cleanTaste(b.taste); prof.taste = TAGS.tasteEmpty(t) ? undefined : t; }
       await q('UPDATE families SET profile=$2 WHERE id=$1', [FAMILY, JSON.stringify(prof)]);
       res.json({ ok: true, family: FAM.profile(prof, await kidRows()) });
     } catch (e) { next(e); }
@@ -198,7 +205,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.put('/api/b/family', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
-      if (!prof.tiles) prof.tiles = FAM.cleanProfile((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0]?.profile).tiles;   // the form sends no tile look: keep the one chosen on the menu
+      { const was = FAM.cleanProfile((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0]?.profile); if (!prof.tiles) prof.tiles = was.tiles; if (!prof.taste) prof.taste = was.taste; }   // the form sends no tile look or taste: keep the ones chosen on the menu and on #/taste
       const kids = (Array.isArray(b.children) ? b.children : []).slice(0, 6).map(FAM.cleanKid).filter(Boolean);
       if (new Set(kids.map((k) => k.slug)).size !== kids.length) return bad(res, 'slug');
       if (kids.some((k) => !k.birth_ym)) return bad(res, 'birth');   // the age at each trip (and the age a character is drawn at) comes from it
@@ -333,7 +340,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       // a relatives' group sees only its ticked books — everything tied to another book is left out here, at the source
       const see = (x) => A.canSee(req.user, x.trip_id === undefined ? x.id : x.trip_id);
       if (req.user.group) for (const list of [trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, comments]) list.splice(0, list.length, ...list.filter(see));
-      if (req.user.role !== 'editor') spendRows.length = 0;   // what the family spent is the parents' own ledger (the spend page is editors-only; the state must be too)
+      if (req.user.role !== 'editor') spendRows.length = 0;
+      // B3 (docs/BUDGET.md): the plan a book's spending is held against — the parents' own (settings) or the planner's estimate the
+      // book was written with (theme.budget); editors only, like the spend ledger it is read against
+      const budgets = req.user.role === 'editor' ? await budgetsOf(trips) : {};   // what the family spent is the parents' own ledger (the spend page is editors-only; the state must be too)
       // ?lite=1 (the app): each book's guide text (info, passport, day plans — ~95% of the bytes, changes only with a new seed)
       // is left out and named by a hash; the app keeps the copy it has or fetches /api/b/seed/<trip>/<hash> once
       res.setHeader('Cache-Control', 'no-store');
@@ -343,7 +353,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         children: children.map((k) => ({ ...k, v: FAM.lookVersion(k.look) })),
         trips: trips.map((t) => {
           const td = days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) }));
-          const out = { ...t, theme: STOCK.maybe(t.theme), passport: STOCK.maybe(t.passport), info: STOCK.maybe(t.info), days: td.map((d) => ({ ...d, plan: STOCK.maybe(d.plan) })), firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
+          const out = { ...t, theme: STOCK.maybe(req.user.role === 'editor' ? t.theme : { ...(t.theme || {}), budget: undefined }), passport: STOCK.maybe(t.passport), info: STOCK.maybe(t.info), days: td.map((d) => ({ ...d, plan: STOCK.maybe(d.plan) })), firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
           if (!lite) return out;
           return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: hashes[t.id] };
         }),
@@ -351,6 +361,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ai_at, edited_at, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at), ai: !!ai_at, v: ms(edited_at) })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
+        budgets,
         comments: comments.map(({ trip_id, media_id, created_uid, created_at, from_name, ...c }) => ({ ...c, trip: trip_id, media: media_id, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         emoji: EMOJI.outAll(emojiRows),   // the family's emoji library: each emoji's picture (core.js emo)
@@ -882,11 +893,37 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     res.setHeader('Cache-Control', 'private, max-age=86400');
     res.json({ landmarks: (ix.items || []).filter((it) => it && it.ok && !it.withdrawn && it.cat === 'landmark' && it.id.startsWith(id + '.')).map((it) => ({ id: it.id, name: it.name, art: STOCK.url(it.id) })) });
   });
+  const alOf = (p) => (Array.isArray(p.alias) ? p.alias : []).filter((x) => typeof x === 'string' && x.length >= 2 && x.length <= 40).slice(0, 14);
   r.get('/api/b/geo', A.requireUser, (_req, res) => {
     const ps = Object.entries(STOCK.read().places || {});
     res.setHeader('Cache-Control', 'private, max-age=86400');
-    res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '' })),   // art + c: the town's own stamp and colour for the photo-book screens
-      countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null })) });
+    res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '', al: alOf(p) })),   // art + c: the town's own stamp and colour for the photo-book screens; al: its other names (the planner's suggestions)
+      countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '', al: alOf(p) })) });
+  });
+  // help and play near a stay (server/care.js): ?ids=<place id>,… → the built-in rows of those library towns (no family data)
+  r.get('/api/b/care', A.requireUser, (req, res) => {
+    const ids = String(req.query.ids || '').split(',').map((x) => x.trim()).filter((x) => SLUG_RE.test(x));
+    // the built-in rows, then the family's own places of those towns (care_own, own: true) — the own ones are why this is not cached long
+    const out = CARE.forPlaces(ids);
+    q('SELECT id, place, name, kind, note FROM care_own WHERE family_id=$1 AND place = ANY($2) ORDER BY created_at', [FAMILY, ids.slice(0, 20)]).then((rows) => {
+      for (const r of rows) (out[r.place] = out[r.place] || []).push({ id: r.id, own: true, name: r.name, kind: r.kind, area: { th: '', en: '' }, what: { th: r.note, en: r.note }, q: r.name });
+      res.setHeader('Cache-Control', 'private, no-cache');
+      res.json({ places: out });
+    }, (e) => res.status(500).json({ error: e.message }));
+  });
+  // a place the family knows (editors): name ≤ 90, one of the four kinds, a note ≤ 160 — never hours or a phone number (refused)
+  r.put('/api/b/care/own/:id', ...W, async (req, res, next) => {
+    try {
+      const id = String(req.params.id), b = req.body || {}, name = String(b.name || '').trim().slice(0, 90), note = String(b.note || '').trim().slice(0, 160), place = String(b.place || '');
+      if (!/^co-[a-z0-9]{6,32}$/.test(id) || !SLUG_RE.test(place) || name.length < 2 || !Object.keys(CARE.ORDER).includes(b.kind)) return bad(res, 'bad');
+      if (/\+?\d[\d ()-]{7,}\d/.test(name + ' ' + note)) return bad(res, 'phone');
+      await q(`INSERT INTO care_own (id, family_id, place, name, kind, note, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)
+        ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, kind=EXCLUDED.kind, note=EXCLUDED.note WHERE care_own.family_id = EXCLUDED.family_id`, [id, FAMILY, place, name, b.kind, note, String((req.user && req.user.name) || '').slice(0, 24)]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/care/own/:id', ...W, async (req, res, next) => {
+    try { await q('DELETE FROM care_own WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
   });
   // the online place-name lookup (editors; the phone sends it only with the family's switch on): a position rounded to ~1 km in,
   // the names out — never stored, never logged (server/nearname.js)
@@ -1115,7 +1152,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     return { title: seed.title, cover: seed.cover || null, date_from: seed.date_from || null, date_to: seed.date_to || null, days: n(seed.days),
       toc: (seed.days || []).map((d) => ({ t: d.title, e: d.emoji || '' })),
       peek: { stops: (seed.days || []).reduce((a, d) => a + n(d.planned), 0), restaurants: ((inf.restaurants && inf.restaurants.groups) || []).reduce((a, g) => a + n(g.items), 0), missions: n(pp.days),
-        wild: n(inf.wild), firsts: n(seed.firsts_catalog), words: list('words'), food: list('food'), map: n(pp.map && pp.map.stops), stays: n(inf.stays) } };
+        wild: n(inf.wild), firsts: n(seed.firsts_catalog), words: list('words'), food: list('food'), map: n(pp.map && pp.map.stops), stays: n(inf.stays),
+        doors: (pp.countdown && pp.countdown.own) || 0, customs: n(pp.declaration && pp.declaration.counts), little: pp.little ? n(pp.little.days) : 0,
+        littleKids: pp.little ? (pp.little.kids || []) : [] } };
   };
   const IMPORT_CALLS = 30;   // a manual of ~300 restaurants: structure, info, ~12 restaurant calls, kids, extras, ~4 Thai batches, and room for retries
   let job = null;   // { id, slug, status: running|done|error, log, draft, error, started }
@@ -1141,8 +1180,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try {
         const kids = await q('SELECT slug, name_th, name_en, emoji, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
         const out = await IMPORT.run({ buf, slug, client: new ai.SDK(), take: aiTake, onUsage: addUsage, log, dir: DATA_TMP,
-          kids: kids.map((k) => ({ name_en: k.name_en, age: k.birth_ym ? Math.max(0, Math.floor((Date.now() - new Date(k.birth_ym + '-01')) / 31557600000)) : '' })) });
+          kids: kids.map((k) => ({ name_en: k.name_en, age: k.birth_ym ? Math.max(0, Math.floor((Date.now() - new Date(k.birth_ym + '-01')) / 31557600000)) : '' })),
+          little: FAM.littleKids(kids, new Date(Date.now() + 365 * 864e5).toISOString()).length > 0 || FAM.littleKids(kids).length > 0 });   // a child under three now or within the year
         if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);   // the book is about this family's children, whatever the manual's defaults
+        FAM.fitLittle(out.seed, kids);   // the little one's edition goes to the children under three on the trip's first day
         await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
         job.draft = { id, slug, title: out.seed.title, days: out.seed.days.length, report: out.report, cost: out.cost };
         job.status = 'done'; log('done — review the draft, then save it as a book');
@@ -1201,7 +1242,59 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   });
   // what the app itself knows about the route's countries (server/countryfacts.js, the checked table — never the helper): shown on the
   // page as "before you go"; the page sends it back with the route, where the cleaning drops it
+  /* B3: the plan each book's spending is held against. The parents' own plan lives in settings.budget_plan ({trip: {lines, at, by}},
+     lines = [{cat, cur, amt}], a spending category of `spend`) — a bundled book's theme is written again on every boot; else the
+     planner's estimate kept in theme.budget is turned into the same shape (the middle of each range; flights count as transport). */
+  const BUD_CAT = { food: 'food', tickets: 'tickets', move: 'transport', stay: 'stay', flights: 'transport' };
+  const budgetRead = async () => { const v = (await q("SELECT value FROM settings WHERE key='budget_plan'"))[0]; try { const o = JSON.parse(v.value); return o && typeof o === 'object' ? o : {}; } catch (_) { return {}; } };
+  async function budgetsOf(trips) {
+    const own = await budgetRead(), out = {};
+    for (const t of trips) {
+      if (own[t.id] && Array.isArray(own[t.id].lines)) { out[t.id] = { src: 'own', lines: own[t.id].lines, at: own[t.id].at || null }; continue; }
+      const b = t.theme && t.theme.budget;
+      if (b && Array.isArray(b.lines) && b.lines.length) {
+        const m = new Map();
+        for (const l of b.lines) { const cat = BUD_CAT[l.k]; if (!cat || !/^[A-Z]{3}$/.test(l.cur || '')) continue; const key = `${cat}|${l.cur}`; m.set(key, (m.get(key) || 0) + Math.round(((+l.lo || 0) + (+l.hi || 0)) / 2)); }
+        out[t.id] = { src: 'plan', lines: [...m].map(([key, amt]) => { const [cat, cur] = key.split('|'); return { cat, cur, amt }; }), at: b.at || null };
+      }
+    }
+    return out;
+  }
+  const SPEND_CATS_OK = ['food', 'transport', 'tickets', 'stay', 'shop', 'other'];
+  r.put('/api/b/budget/:trip', ...W, async (req, res, next) => {
+    try {
+      const t = await trip(String(req.params.trip)); if (!t) return bad(res, 'trip');
+      const raw = Array.isArray((req.body || {}).lines) ? req.body.lines : null; if (!raw) return bad(res, 'lines');
+      const lines = []; const seen = new Set();
+      for (const l of raw.slice(0, 40)) {
+        const cat = String((l && l.cat) || ''), cur = String((l && l.cur) || '').toUpperCase(), amt = Math.round(Number(l && l.amt));
+        if (!SPEND_CATS_OK.includes(cat) || !/^[A-Z]{3}$/.test(cur) || !Number.isFinite(amt) || amt <= 0 || amt > 1e9 || seen.has(`${cat}|${cur}`)) continue;
+        seen.add(`${cat}|${cur}`); lines.push({ cat, cur, amt });
+      }
+      const all = await budgetRead();
+      if (lines.length) all[t.id] = { lines, at: Date.now(), by: req.user.name || '' }; else delete all[t.id];   // an empty plan goes back to the planner's estimate
+      await q("INSERT INTO settings (key, value) VALUES ('budget_plan', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify(all)]);
+      res.json({ ok: true, budget: (await budgetsOf([t]))[t.id] || null });
+    } catch (e) { next(e); }
+  });
   const withFacts = (rt) => ({ ...rt, facts: CF.factsFor(rt.countries) });
+  /* the rough budget (docs/BUDGET.md B1): tickets from the library's sight prices, food from the eat library's prices of each day's town,
+     a night's stay, getting around and flights from the helper's numbers in the same answer — worked out again on every answer */
+  async function withBudget(rt, answers) {
+    const out = withFacts(rt);
+    try {
+      const idx = STOCK.read(), cof = EATLIB.countryOf(idx), sights = new Map((await SIGHTLIB.all(pool, FAMILY)).map((r) => [r.id, SIGHTLIB.out(r)])), eats = await EATLIB.all(pool, FAMILY);
+      const ccOfPlace = (pl) => { const p = idx.places && idx.places[pl]; return (p && p.country) || String(pl || '').slice(0, 2); };
+      // B2: what we really spent on trips that are over (editors only — the spend ledger never reaches a relative)
+      const past = await q(`SELECT s.trip_id trip, t.title, t.date_from::text date_from, s.cat, s.cur, sum(s.amount)::float total,
+          (SELECT count(*)::int FROM trip_days d WHERE d.trip_id = t.id) days
+        FROM spend s JOIN trips t ON t.id = s.trip_id WHERE s.family_id=$1 AND t.date_to < current_date GROUP BY s.trip_id, t.id, s.cat, s.cur`, [FAMILY]);
+      const b = BUDGET.estimate({ route: rt, answers: answers || {}, kids: await kidRows(), past, sightById: (id) => sights.get(id), ccOfPlace,
+        eatsOfTown: (tw) => EATLIB.forTown(eats, [tw.en, tw.th].filter(Boolean)).map((r) => ({ ...EATLIB.out(r), cc: (cof.get(r.tkey) || {}).cc || '' })) });
+      if (b) out.budget = b;
+    } catch (e) { console.warn('budget:', e.message); }
+    return out;
+  }
   // "where shall we go?": a few places that fit the family, before there is a destination (one daily call)
   r.post('/api/b/planner/ideas', ...W, async (req, res, next) => {
     try {
@@ -1211,7 +1304,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ideas: list });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     }
   });
@@ -1222,7 +1315,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const plansRead = async () => { const v = (await q("SELECT value FROM settings WHERE key='planner_plans'"))[0]; try { const l = JSON.parse(v.value); return Array.isArray(l) ? l : []; } catch (_) { return []; } };
   const plansWrite = (fn) => { const run = plansLock.then(async () => { const l = fn(await plansRead()); await q("INSERT INTO settings (key, value) VALUES ('planner_plans', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify(l.slice(0, PLANS_MAX))]); return l; }); plansLock = run.catch(() => {}); return run; };
   r.get('/api/b/planner/plans', A.requireEditor, async (_req, res, next) => {
-    try { res.setHeader('Cache-Control', 'no-store'); res.json({ plans: (await plansRead()).map((p) => ({ ...p, route: withFacts(p.route) })) }); } catch (e) { next(e); }
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ plans: await Promise.all((await plansRead()).map(async (p) => ({ ...p, route: p.route ? await withBudget(p.route, p.answers) : p.route }))) }); } catch (e) { next(e); }
   });
   r.put('/api/b/planner/plans/:id', ...W, async (req, res, next) => {
     try {
@@ -1242,16 +1335,18 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // by the helper with a web check. GET lists the towns, or the places of one town (?town=<key>), or of a route's towns
   // (?for=<JSON [[en, th], …]>: a town's own rows and rows whose area or map address names it).
   let eatBusy = false;
-  const eatSync = () => EATLIB.syncBooks(pool, FAMILY, STOCK.read()).catch((e) => { console.error('eatlib sync', e.message); return 0; });
+  const eatSync = () => { SIGHTLIB.syncBooks(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)).catch((e) => console.error('sightlib books', e.message)); return EATLIB.syncBooks(pool, FAMILY, STOCK.read()).catch((e) => { console.error('eatlib sync', e.message); return 0; }); };
   const eatFor = (rows, pairs) => pairs.map(([en, th]) => ({ en, th: th || en, places: EATLIB.forTown(rows, [en, th].filter(Boolean)).map(EATLIB.out) }));
   const eatPairs = (v) => { let a; try { a = JSON.parse(v); } catch (_) { a = []; } return (Array.isArray(a) ? a : []).slice(0, 12).map((x) => [clip(Array.isArray(x) ? x[0] : x, 80).trim(), clip(Array.isArray(x) ? x[1] : '', 80).trim()]).filter((x) => x[0]); };
   r.get('/api/b/eatlib', A.requireEditor, async (req, res, next) => {
     try {
       res.setHeader('Cache-Control', 'no-store');
-      const rows = await EATLIB.all(pool, FAMILY);
-      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))) });
-      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out) });
-      const cof = EATLIB.countryOf(STOCK.read());
+      const rows = await EATLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read());
+      // the family's own verdict (a food review of the same name, any book: its stars and "would go again") and its check-ins there
+      const fam = await famOf('food');
+      const withCc = (x) => ({ ...x, cc: (cof.get(x.tkey) || {}).cc || '', ...(fam.has(EATLIB.norm(x.name)) ? { fam: fam.get(EATLIB.norm(x.name)) } : {}) });   // the place's country (≈ ฿ on the phone) and our own verdict
+      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))).map((t) => ({ ...t, places: t.places.map(withCc) })) });
+      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out).map(withCc) });
       res.json({ towns: EATLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length, on: !!(ai && ai.enabled()) });
     } catch (e) { next(e); }
   });
@@ -1271,13 +1366,50 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ok: true, added: rows.length, tkey: EATLIB.norm(t.en) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     } finally { eatBusy = false; }
   });
   // a place the parents do not want: it stays out (the next boot does not bring it back from its book)
   r.delete('/api/b/eatlib/:id', ...W, async (req, res, next) => {
     try { await q('UPDATE eat_lib SET gone=true WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+  /* The library of things to do (docs/PLACES-ECOSYSTEM.md E2; server/sightlib.js), editors: GET = the towns with how many sights (and how
+     many for a rainy day); ?town=<tkey> or ?place=<place id> = a town's sights, each with how well it suits this family (`fit`: the
+     youngest child's age, the outing styles of #/taste, the needs; -9 = not for the youngest); ?for=[[en, th], …] = a route's towns.
+     DELETE takes a sight out for good; PUT …/wish {on} keeps it on the family's wish list. */
+  /* What this family did and thought of a place, by its name in either language, from every book (E5, docs/PLACES-ECOSYSTEM.md F7):
+     the travel notebook's stars and "would go again" (reviews of that kind) and how many times it was checked in (places). The libraries
+     show it on their cards ("✓ been", "★★★★ ours"), Today puts the loved ones first and the planner offers them again. */
+  async function famOf(kind) {
+    const m = new Map(), keys = (nm) => [...new Set([nm && nm.en, nm && nm.th].filter(Boolean).map((n) => EATLIB.norm(n)).filter((k) => k.length >= 3))];
+    for (const r of await q('SELECT name, rating, again FROM reviews WHERE family_id=$1 AND kind=$2 AND (rating IS NOT NULL OR again IS NOT NULL) ORDER BY updated_at', [FAMILY, kind]))
+      for (const k of keys(r.name)) m.set(k, { ...(m.get(k) || {}), r: r.rating || 0, again: r.again });
+    for (const p of await q('SELECT name, count(*)::int AS n FROM places WHERE family_id=$1 AND kind=$2 GROUP BY name', [FAMILY, kind]))
+      for (const k of keys(p.name)) { const o = m.get(k) || {}; m.set(k, { ...o, been: (o.been || 0) + p.n }); }
+    return m;
+  }
+  const famFor = (fam, name) => { for (const n of [name && name.en, name && name.th, typeof name === 'string' ? name : ''].filter(Boolean)) { const f = fam.get(EATLIB.norm(n)); if (f) return f; } return null; };
+  const sightKids = async () => { const ys = (await kidRows()).map((k) => (k.birth_ym ? (Date.now() - Date.parse(k.birth_ym + '-15')) / (365.25 * 864e5) : null)).filter((y) => y != null && y >= 0); return ys.length ? Math.min(...ys) : null; };
+  // what the family's reviews taught (E6): the same reading the phone does (public/tags.js learnTaste)
+  const sightLearned = async (taste) => TAGS.learnTaste(await q('SELECT kind, name, rating, tags, again, note FROM reviews WHERE family_id=$1', [FAMILY]), taste);
+  const sightTaste = async () => FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile).taste || null;
+  r.get('/api/b/sights', A.requireEditor, async (req, res, next) => {
+    try {
+      res.setHeader('Cache-Control', 'no-store');
+      const rows = await SIGHTLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste(), fam = await famOf('place'), learned = await sightLearned(taste);
+      const full = (x) => { const o = SIGHTLIB.out(x), f = famFor(fam, o.name); return { ...o, cc: (cof.get(x.tkey) || {}).cc || o.cc || '', fit: SIGHTLIB.fitOf(o, taste, y, learned), ...(f ? { fam: f } : {}) }; };
+      if (req.query.for) return res.json({ for: eatPairs(String(req.query.for)).map(([en, th]) => ({ en, th: th || en, sights: SIGHTLIB.forTown(rows, [en, th].filter(Boolean)).map(full) })) });
+      if (req.query.town || req.query.place) { const k = String(req.query.town || ''), p = String(req.query.place || ''); return res.json({ sights: rows.filter((x) => (k && x.tkey === k) || (p && x.place === p)).map(full) }); }
+      const ix = STOCK.read(), ccName = (cc) => { const c = cc && ix.places && ix.places[cc]; return c && c.name ? { cc, th: c.name.th || cc, en: c.name.en || cc } : null; };   // a town of a book that the picture library lacks: its GeoNames country
+      res.json({ towns: SIGHTLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || ccName(t.cc) })), total: rows.length });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/sights/:id', ...W, async (req, res, next) => {
+    try { await q('UPDATE sight_lib SET gone=true, wish=false WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+  r.put('/api/b/sights/:id/wish', ...W, async (req, res, next) => {
+    try { const on = !!(req.body || {}).on, r2 = await q('UPDATE sight_lib SET wish=$3 WHERE family_id=$1 AND id=$2 AND NOT gone RETURNING id', [FAMILY, String(req.params.id), on]); if (!r2.length) return bad(res, 'id', 404); res.json({ ok: true, wish: on }); } catch (e) { next(e); }
   });
   /* What this family learned on its past trips (owner, Nov 2026: "ให้หน้าวางแผนอ่านบทเรียนจากทุกเล่มและสิ่งที่ครอบครัวชอบด้วย"): the travel
      notebook's summary (settings.family_likes) and the last six books' lessons (entry kind 'lessons') — words the parents kept, never a
@@ -1286,27 +1418,50 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     const likes = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0];
     let lk = ''; if (likes) { try { const v = JSON.parse(likes.value); lk = typeof v === 'string' ? v : v && (v.text || v.th || v.en) ? String(v.text || v.th || v.en) : JSON.stringify(v); } catch (_) { lk = String(likes.value); } }
     const ls = await q("SELECT e.text, t.title FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.family_id=$1 AND e.kind='lessons' AND e.text <> '' ORDER BY t.date_from DESC LIMIT 6", [FAMILY]);
-    const out = [lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
+    const prof = FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile), tw = prof.taste ? TAGS.tasteWords(prof.taste, (await kidRows()).map((k) => k.slug)) : '';
+    // the family's wish list of things to do (#/explore ♥): their names and towns, so a route through those towns puts them in
+    const wish = await q("SELECT name, town FROM sight_lib WHERE family_id=$1 AND wish AND NOT gone ORDER BY town, name LIMIT 30", [FAMILY]);
+    const ww = wish.length ? `Places we would love to go to (put them in when the route passes their town): ${wish.map((w) => `${w.name} (${w.town})`).join('; ')}.` : '';
+    const lr = await sightLearned(prof.taste), lw = (side, which, list) => lr[side][which].map((k) => (list.find((x) => x[0] === k) || [])[3]).filter(Boolean).join(', ');
+    const lt = [lw('out', 'like', TAGS.TASTE_OUT) && `outings ${lw('out', 'like', TAGS.TASTE_OUT)}`, lw('food', 'like', TAGS.TASTE_FOOD) && `food ${lw('food', 'like', TAGS.TASTE_FOOD)}`].filter(Boolean).join('; '), lo = [lw('out', 'avoid', TAGS.TASTE_OUT), lw('food', 'avoid', TAGS.TASTE_FOOD)].filter(Boolean).join(', ');
+    const lrn = lt || lo ? `What our own reviews suggest (a gentle hint, not our choice): ${lt ? `we rated these well — ${lt}` : ''}${lt && lo ? '; ' : ''}${lo ? `we rated these low — ${lo}` : ''}` : '';   // E6
+    const out = [tw ? `The styles our family chose: ${tw}` : '', lrn, ww, lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
     // the planner never sends a child's name (only their ages): each name the family gave becomes "the child" / "ลูก"
     let txt = out.slice(0, 5000);
     for (const k of await kidRows()) for (const [nm, w] of [[k.name_th, 'ลูก'], [k.name_en, 'the child']]) if (nm && nm.trim().length > 1) txt = txt.split(nm.trim()).join(w);
     return txt;
   }
+  /* The planner uses the library first (docs/PLACES-ECOSYSTEM.md E4): the towns of the things-to-do library that the plan names (the
+     place typed, the wishes, the stays, the route so far — else every town of a country it names, at most four) each give a menu of up
+     to 25 sights that suit the family (the youngest child's age, the taste, the wish list first; never one "not for" the youngest). */
+  async function planMenu(answers, prev) {
+    const rows = await SIGHTLIB.all(pool, FAMILY); if (!rows.length) return [];
+    const cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste(), fam = await famOf('place'), learned = await sightLearned(taste);
+    const loved = (x) => (x.fam && (x.fam.r >= 4 || x.fam.again === true) ? 1 : 0);
+    const text = [answers.dest, answers.want, answers.stays, ...((prev && Array.isArray(prev.days)) ? prev.days.map((d) => `${(d && d.town && d.town.en) || ''} ${(d && d.town && d.town.th) || ''}`) : [])].join(' ').toLowerCase();
+    const hit = (w) => { w = String(w || '').toLowerCase().trim(); if (w.length < 3) return false; return /^[a-z]/.test(w) ? new RegExp(`(^|[^a-z])${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z]|$)`).test(text) : text.includes(w); };
+    const towns = SIGHTLIB.towns(rows);
+    let pick = towns.filter((t) => hit(t.town) || hit(t.town_th));
+    if (!pick.length) pick = towns.filter((t) => { const c = cof.get(t.tkey); return c && (hit(c.en) || hit(c.th)); });
+    let n = 0;
+    return pick.slice(0, 4).map((t) => ({ town: { en: t.town, th: t.town_th }, sights: rows.filter((r) => r.tkey === t.tkey).map((r) => { const o = SIGHTLIB.out(r), f = famFor(fam, o.name); return { ...o, fit: SIGHTLIB.fitOf(o, taste, y, learned), ...(f ? { fam: f } : {}) }; })
+      .filter((x) => x.fit !== -9 && !(x.fam && x.fam.again === false)).map((x, i) => [x, i]).sort((a, b) => (b[0].wish ? 1 : 0) - (a[0].wish ? 1 : 0) || loved(b[0]) - loved(a[0]) || b[0].fit - a[0].fit || a[1] - b[1]).slice(0, 25).map((p) => ({ ...p[0], k: `s${++n}` })) })).filter((t) => t.sights.length);
+  }
   // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
   r.post('/api/b/planner/route', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, answers = PLANNER.cleanAnswers(b.answers);
-      if (b.route && !b.ask) { try { return res.json({ route: withFacts(PLANNER.cleanRoute(b.route, answers)) }); } catch (_) { return bad(res, 'route'); } }
+      if (b.route && !b.ask) { let rt; try { rt = PLANNER.cleanRoute(b.route, answers); } catch (_) { return bad(res, 'route'); } return res.json({ route: await withBudget(rt, answers) }); }
       if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
       if (!answers.dest) return bad(res, 'dest');
       if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
       const who = PLANNER.whoLine(await kidRows(), answers.from);
       const two = !!b.two && !b.ask;
-      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two, family: await familyLessons() });
-      res.json(two ? { routes: route.map(withFacts) } : { route: withFacts(route) });
+      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two, family: await familyLessons(), menu: await planMenu(answers, b.ask ? b.route : null) });
+      res.json(two ? { routes: await Promise.all(route.map((x) => withBudget(x, answers))) } : { route: await withBudget(route, answers) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     }
   });
@@ -1335,9 +1490,15 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         const townPairs = [...new Map(rt.days.map((d) => [EATLIB.norm(d.town.en), [d.town.en, d.town.th]])).values()].filter((x) => x[0]);
         const eatTowns = eatFor(await EATLIB.all(pool, FAMILY), townPairs), eats = EATLIB.groupsFor(eatTowns);
         if (eats) log(`places to eat: ${eats.groups.reduce((n, g) => n + g.items.length, 0)} from the family's library (${eats.groups.map((g) => g.area.en).join(', ')})`);
-        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
+        // the stops the route took from the things-to-do library carry its checked facts into the book (E4); the log says how many
+        const sights = new Map((await SIGHTLIB.all(pool, FAMILY)).map((r) => [r.id, SIGHTLIB.out(r)]));
+        const nLib = new Set(rt.days.flatMap((d) => d.stops.filter((x) => x.lib && sights.has(x.lib)).map((x) => x.lib))).size, nNew = new Set(rt.days.flatMap((d) => d.stops.filter((x) => x.new).map((x) => x.en))).size;   // each place once
+        if (nLib || nNew) log(`stops: from the library ${nLib} · new ${nNew}`);
+        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats, sights), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP, little: FAM.littleKids(kids, rt.from).length > 0 });
         if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);
-        out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) } };   // no child's name in it: kept for "change this day" (phase 2)
+        FAM.fitLittle(out.seed, kids);
+        const est = ((await withBudget(rt, answers)).budget || {}).lines || [];   // B3: the estimate travels with the book (editors only in the state)
+        out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) }, ...(est.length ? { budget: { at: Date.now(), lines: est.map(({ k, cur, lo, hi }) => ({ k, cur, lo, hi })) } } : {}) };   // no child's name in it: kept for "change this day" (phase 2)
         out.report.planner = true;
         await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
         await plannerCount();
@@ -1384,7 +1545,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ day, forecast: forecast || null });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['day', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['day', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     }
   });
@@ -1416,37 +1577,70 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   let vfJob = null;   // { trip, status, done, total, error, started }
   const vfView = () => (vfJob ? { trip: vfJob.trip, status: vfJob.status, done: vfJob.done, total: vfJob.total, error: vfJob.error || null, started: vfJob.started } : { status: 'idle' });
   r.get('/api/b/planner/verify', A.requireEditor, (_req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json(vfView()); });
-  r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
-    let held = null;
+  // one check of a book (the route and the check made by itself before a trip): claimed before the first await; answers what happened
+  async function startVerify(tripId, by) {
+    if (!(ai && ai.enabled())) return { code: 'ai', status: 503 };
+    if (vfJob && vfJob.status === 'running') return { code: 'busy', status: 409 };
+    const prev = vfJob; vfJob = { trip: tripId, status: 'running', done: 0, total: 0, started: Date.now() }; let held = () => { vfJob = prev; };
     try {
-      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
-      if (vfJob && vfJob.status === 'running') return bad(res, 'busy', 409);
-      const prev = vfJob; vfJob = { trip: req.params.trip, status: 'running', done: 0, total: 0, started: Date.now() }; held = () => { vfJob = prev; };   // claimed before the first await
-      const t = (await q('SELECT id, source, theme FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
-      if (!t) { held(); return bad(res, 'trip', 404); }
-      if (t.source === 'seed') { held(); return bad(res, 'seed', 409); }
+      const t = (await q('SELECT id, source, theme, title, date_to FROM trips WHERE id=$1 AND family_id=$2', [tripId, FAMILY]))[0];
+      if (!t) { held(); return { code: 'trip', status: 404 }; }
+      if (t.source === 'seed') { held(); return { code: 'seed', status: 409 }; }
       const days = await q('SELECT day_index, planned, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
-      const places = VERIFY.placesOf(days);
-      if (!places.length) { held(); return bad(res, 'none', 422); }
+      const all = VERIFY.placesOf(days);
+      if (!all.length) { held(); return { code: 'none', status: 422 }; }
+      // E4: a place the family's libraries confirmed on the web within the last 12 months (a sight, or a place to eat marked open) is
+      // taken as it stands — only the rest go to the web search
+      const year = Date.now() - 365 * 864e5, fresh = new Map();
+      for (const r of await q("SELECT nkey, name, checked, url, 'place' AS lk FROM sight_lib WHERE family_id=$1 AND NOT gone AND checked IS NOT NULL UNION ALL SELECT nkey, name, checked, url, 'food' FROM eat_lib WHERE family_id=$1 AND NOT gone AND st='open' AND checked IS NOT NULL", [FAMILY]))
+        if (new Date(r.checked).getTime() >= year) fresh.set(VERIFY.norm(r.name), r);
+      const known = [], places = [];
+      for (const p of all) { const f = fresh.get(VERIFY.norm(p.name)); if (f) { const m = new Date(f.checked).toISOString().slice(0, 7); known.push({ key: VERIFY.norm(p.name), name: p.name, day: p.day, kind: p.kind, st: 'open', hours: '', note: { th: `อยู่ในคลัง เช็กกับเว็บแล้ว ${m}`, en: `In the library, checked on the web ${m}` }, url: f.url || '', lib: true }); } else places.push(p); }
       const need = VERIFY.calls(places.length);
       const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
-      if (STORY_DAILY - used < need) { held(); return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need }); }
-      vfJob.total = places.length; held = null;
-      res.status(202).json({ total: places.length, calls: need });
-      const job = vfJob, rows = [];
-      try {
-        for (let i = 0; i < places.length; i += VERIFY.BATCH) {
-          const out = await VERIFY.checkBatch({ client: new ai.SDK(), model: IMPORT.WRITE(), list: places.slice(i, i + VERIFY.BATCH), take: aiTake, onUsage: addUsage });
-          rows.push(...out.rows); job.done = rows.length;
-        }
-        const verify = { at: Date.now(), by: clip(req.user.name, 40), places: rows };
-        await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
-        // what the check found also marks the family's library of places to eat (the place by its name, wherever it is kept)
-        for (const pl of verify.places || []) if (pl.kind === 'food' && pl.st && pl.st !== 'unsure') await q('UPDATE eat_lib SET st=$3, checked=$4::date, url=CASE WHEN $5 <> \'\' THEN $5 ELSE url END WHERE family_id=$1 AND nkey=$2', [FAMILY, EATLIB.norm(pl.name), pl.st, new Date(verify.at).toISOString().slice(0, 10), pl.url || '']).catch(() => {});
-        job.status = 'done';
-      } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
-    } catch (e) { if (held) held(); next(e); }
+      if (STORY_DAILY - used < need) { held(); return { code: 'limit', status: 429, left: Math.max(0, STORY_DAILY - used), need }; }
+      vfJob.total = all.length; vfJob.done = known.length; held = null;
+      const job = vfJob, rows = [...known];
+      const run = (async () => {
+        try {
+          for (let i = 0; i < places.length; i += VERIFY.BATCH) {
+            const out = await VERIFY.checkBatch({ client: new ai.SDK(), model: IMPORT.WRITE(), list: places.slice(i, i + VERIFY.BATCH), take: aiTake, onUsage: addUsage });
+            rows.push(...out.rows); job.done = rows.length;
+          }
+          const verify = { at: Date.now(), by: clip(by, 40), places: rows };
+          await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
+          // what the check found also marks the family's library of places to eat (the place by its name, wherever it is kept)
+          for (const pl of verify.places || []) if (pl.kind === 'food' && pl.st && pl.st !== 'unsure') await q('UPDATE eat_lib SET st=$3, checked=$4::date, url=CASE WHEN $5 <> \'\' THEN $5 ELSE url END WHERE family_id=$1 AND nkey=$2', [FAMILY, EATLIB.norm(pl.name), pl.st, new Date(verify.at).toISOString().slice(0, 10), pl.url || '']).catch(() => {});
+          job.status = 'done';
+          // a place closed or moved in a book whose trip is still to come: the parents' phones are told (the book's name and how many only)
+          const n = rows.filter((x) => x.st === 'closed' || x.st === 'moved').length;
+          if (n && hooks.closed && String(t.date_to || '') >= new Date().toISOString().slice(0, 10)) Promise.resolve(hooks.closed({ trip: t.id, title: t.title, n })).catch((e) => console.error('closed push', e.message));
+        } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
+      })();
+      return { status: 202, total: all.length, calls: need, lib: known.length, run };
+    } catch (e) { if (held) held(); throw e; }
+  }
+  r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
+    try {
+      const v = await startVerify(req.params.trip, req.user.name);
+      if (v.status === 202) return res.status(202).json({ total: v.total, calls: v.calls, lib: v.lib });
+      if (v.code === 'limit') return res.status(429).json({ error: 'limit', left: v.left, need: v.need });
+      return bad(res, v.code, v.status);
+    } catch (e) { next(e); }
   });
+  // the check made by itself (owner, Nov 2026: "แจ้งเตือนเมื่อร้านในเล่มที่กำลังจะไปปิด"): a book the family made, starting within ten days,
+  // not checked in the last two weeks, is checked once — only with the helper on and when today's allowance carries it (startVerify asks)
+  async function autoVerify(now = Date.now()) {
+    if (!(ai && ai.enabled()) || (vfJob && vfJob.status === 'running')) return null;
+    const today = new Date(now).toISOString().slice(0, 10), soon = new Date(now + 10 * 864e5).toISOString().slice(0, 10);
+    const books = await q("SELECT id, theme FROM trips WHERE family_id=$1 AND source <> 'seed' AND date_from >= $2 AND date_from <= $3 ORDER BY date_from", [FAMILY, today, soon]);
+    const due = books.find((t) => !((t.theme || {}).verify && (t.theme.verify.at || 0) > now - 14 * 864e5));
+    if (!due) return null;
+    const v = await startVerify(due.id, 'auto');
+    return { trip: due.id, ...v };
+  }
+  if (!process.env.VERIFY_AUTO_OFF) { const tk = setInterval(() => autoVerify().catch((e) => console.error('auto verify', e.message)), 6 * 36e5); tk.unref(); }
+  r.autoVerify = autoVerify;   // for the tests
 
   // ---------- the book's own pictures (server/bookart.js): Claude draws a circle per day, the passport crest and the two guides as SVG ----------
   const artKeys = (id, v, days) => (v ? [...Array.from({ length: days }, (_, n) => ART.dayKey(id, v, n + 1)), ART.crestKey(id, v), ART.guideKey(id, v, 1), ART.guideKey(id, v, 2)] : []);
@@ -1921,5 +2115,9 @@ async function backfillPh(pool, media) {
   }
   return n;
 }
-const eatSyncAll = async (pool) => { try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; } };
+const eatSyncAll = async (pool) => {
+  try { await SIGHTLIB.syncStarter(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)); } catch (e) { console.error('sightlib sync', e.message); }
+  try { await SIGHTLIB.syncBooks(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)); } catch (e) { console.error('sightlib books', e.message); }   // the stops our own books visit   // the things-to-do library (E2) with the eat library
+  try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; }
+};
 module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh, eatSyncAll };

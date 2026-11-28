@@ -9,6 +9,21 @@ function putEntry(t, row, id) {
   if (TEXTY.includes(body.kind) && cur && cur.v) body.base = cur.v;   // the version this phone edits from: a change from the other parent's phone since is told, not written over
   return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, tr, src, created_by: S.me.name, mine: true } } });
 }
+/* a locked tick or mood in the passport (owner, Nov 2026: "ไม่ให้ติดตรงไหน"): it used to be a disabled button that did nothing at all.
+   Now a tap says what to do — a child in kid mode is sent to today's things to find (or told a grown-up ticks it), a relative is told
+   the parents tick, a parent is shown the ✏️ button that unlocks the page */
+function ppLocked(b) {
+  const t = trip(b.dataset.t), kid = b.dataset.k, key = b.dataset.v || '', m = /^(?:spot|little)\.d(\d+)\./.exec(key);
+  b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope');
+  if (route().parts[0] === 'kid') {
+    if (t && m && typeof kidDayOf === 'function' && +m[1] === kidDayOf(t)) { const say = L('ไปหาของของวันนี้กัน!', 'Let’s go and find today’s things!'); toast(say); if (typeof sayUi === 'function') sayUi(say); nav(`#/kid/${kid}/spot`); return; }
+    const say = L('อันนี้ให้พ่อแม่ช่วยติ๊กนะ', 'Ask a grown-up to tick this one'); toast(say); if (typeof sayUi === 'function') sayUi(say); return;
+  }
+  if (!isEditor()) { toast(L('พ่อแม่เป็นคนติ๊ก ญาติดูได้อย่างเดียวนะ', 'The parents tick these — relatives can look')); return; }
+  const ed = document.querySelector('[data-a="ppedit"]');
+  toast(L('แตะ ✏️ แก้ไข ด้านบนก่อน แล้วค่อยติ๊ก', 'Tap ✏️ Edit at the top first, then tick'));
+  if (ed) { ed.scrollIntoView({ block: 'center', behavior: 'smooth' }); ed.classList.remove('golit'); void ed.offsetWidth; ed.classList.add('golit'); }
+}
 const delEntry = (id) => enqueue({ method: 'DELETE', url: '/api/b/entries/' + encodeURIComponent(id), local: { coll: 'entries', id, del: true } });
 let spendCat = 'food', spendCur = '';   // the spend box remembers the last category / money while recording
 
@@ -202,7 +217,7 @@ async function eatFill(town, th, where) {
 // plan with the helper: the plan lives on this phone (ls plan / planRoute) and, once it has a route, on the family's server too
 // (PUT /api/b/planner/plans/:id, 1.5 s after the last change) so the other parent's phone can open it
 let planSaveT = null;
-const planBare = () => { if (!pln.route) return null; const { facts, ...r } = pln.route; return r; };   // the app's own facts never travel back
+const planBare = () => { if (!pln.route) return null; const { facts, budget, ...r } = pln.route; return r; };   // the app's own facts and budget never travel back
 function planKeepA() { ls('plan', pln.a); planSaveSoon(); }
 function planKeep() { ls('plan', pln.a); ls('planRoute', pln.route); planSaveSoon(); }
 function planSaveSoon() {
@@ -241,7 +256,7 @@ function planEdit(fn) {
 // the route call (a draft, two to compare, or a change asked in words); a change keeps the old route for one undo
 async function planCall(body) {
   if (pln.busy) return;
-  if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); render(); const d = $('#pldest'); if (d) d.focus(); return; }
+  if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); if (!$('#pldest')) { location.hash = '#/planner/where'; return; } render(); const d = $('#pldest'); if (d) d.focus(); return; }   // asked from a later page: back to "where"
   const old = pln.route;
   pln.busy = 'route'; pln.err = ''; render();
   try {
@@ -309,6 +324,13 @@ async function impRefresh() {
   if (route().parts[0] === 'import') safeRender();
 }
 /* ---------- actions ---------- */
+// the family's taste (#/taste): kept on S.family at once, sent 700 ms after the last tap (one save for a run of taps)
+let tasteT = 0;
+function tasteSave(t) {
+  if (S && S.family) S.family.taste = cleanTaste(t);
+  clearTimeout(tasteT);
+  tasteT = setTimeout(() => api('PATCH', '/api/b/family/profile', { taste: S.family.taste }).then((r) => { if (r && r.family && S.family) S.family.taste = r.family.taste; }, () => toast(L('บันทึกไม่สำเร็จ ลองใหม่', 'Could not save — try again'))), 700);
+}
 const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); if (ls('remind')) pushSub().then((s) => s && api('POST', '/api/b/push/sub', { ...s.toJSON(), lang })).catch(() => {}); },   // reminders follow the language
   fs(b) {   // text size: normal → large → larger → largest (the page content zooms; the bars stay put) — a value from the shelf's four Aa, else the sign-in page's one Aa cycles
@@ -359,6 +381,7 @@ const A = {
   // the setup steps: skip them for good (the shelf's welcome card still leads back) · "not now" on the reminders step
   startskip() { ls('startDone', 1); nav('#/'); },
   // the passport before the trip: open that day's mission (the others fold) and go to it
+  ppedit() { ppEditOn = !ppEditOn; render(); },   // the passport's ✏️: a parent opens the boxes and ticks of the book (never in kid mode)
   mday(b) { mdayPick[b.dataset.t] = +b.dataset.v; render(); const el = $('#m' + b.dataset.v); if (el) el.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); },
   // the sample book: made for this family on request; opens its menu (already there: just opens it)
   async sample(b) {
@@ -418,7 +441,7 @@ const A = {
       const r = await fetch(b.getAttribute('href'), { credentials: 'same-origin' });
       if (!r.ok || !/pdf/.test(r.headers.get('content-type') || '')) throw new Error(String(r.status));
       const url = URL.createObjectURL(await r.blob()), a = document.createElement('a');
-      a.href = url; a.download = (b.getAttribute('href').split('/').pop() || 'memory-book') + '.pdf'; document.body.append(a); a.click();
+      a.href = url; a.download = ((b.getAttribute('href').split('?')[0].split('/').pop() || 'memory-book') + (b.dataset.sfx || '')) + '.pdf'; document.body.append(a); a.click();
       setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 10000);
       toast(L('ได้ไฟล์ PDF แล้ว ✓', 'PDF ready ✓'));
     } catch (_) { toast(L('สร้าง PDF ไม่สำเร็จ ลองอีกครั้งในอีกสักครู่', 'Could not make the PDF — try again in a moment')); }
@@ -454,7 +477,7 @@ const A = {
   spendcur(b) { spendCur = b.dataset.v; $$('[data-a="spendcur"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === spendCur)); },
   async addspend(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, amt = $('#spendamt'), note = $('#spendnote');
-    const n = Number(String(amt.value).replace(/[^\d.]/g, ''));
+    const n = fzAmount(amt.value);   // 1,200 · ๑๒๐๐ · 1.2k · ฿300 · 3 พัน
     if (!(n >= 0) || !amt.value.trim()) { amt.focus(); return; }
     const curs = tripCurs(t), cur = curs.includes(spendCur) ? spendCur : curs[0], id = uid('sp');
     const body = { trip: t.id, day: d, amount: n, cur, cat: spendCat, note: note.value.trim() };
@@ -492,6 +515,7 @@ const A = {
   },
   delentry(b) { if (armed(b)) delEntry(b.dataset.v); },
   mood(b) {
+    if (b.getAttribute('aria-disabled') === 'true') return ppLocked(b);
     const t = trip(b.dataset.t), d = +b.dataset.d, k = b.dataset.k, id = `${t.id}.mood.d${d}.${k}`;
     const cur = S.entries.find((e) => e.id === id);
     if (cur && cur.mood === b.dataset.v) delEntry(id);   // tap again = clear
@@ -518,6 +542,7 @@ const A = {
   },
   // passport: a mission spot / animal / explorer box (tap again to untick); food has YUM / YUCK
   tick(b) {
+    if (b.getAttribute('aria-disabled') === 'true') return ppLocked(b);
     const t = trip(b.dataset.t), k = b.dataset.k, key = b.dataset.v, yum = b.dataset.yum || '', id = `${t.id}.tick.${key}.${k}`;
     const cur = S.entries.find((e) => e.id === id), before = certEarned(t, k);
     if (cur && cur.text === yum) { delEntry(id); return; }
@@ -878,11 +903,12 @@ const A = {
   lb(b) { openLb(b.dataset.t, b.dataset.v); },
   newtrip() { openSheet(newTripSheet()); },
   async impstart() {
-    const f = imp.file, slug = ($('#impslug') || {}).value || imp.slug;
-    imp.slug = (slug || '').trim().toLowerCase(); imp.err = '';
+    const f = imp.file, typed = (($('#impslug') || {}).value || '').trim();
+    imp.err = '';
     if (!f) { imp.err = L('เลือกไฟล์ PDF ก่อน', 'Choose a PDF first'); render(); return; }
-    if (!/^[a-z0-9-]{2,60}$/.test(imp.slug)) { imp.err = L('รหัสเล่ม: a-z 0-9 - เท่านั้น (2–60 ตัว)', 'Book id: a-z 0-9 - only (2–60 chars)'); render(); return; }
-    if (S.trips.some((t) => t.slug === imp.slug || t.id === imp.slug)) { imp.err = L('มีเล่มรหัสนี้แล้ว', 'A book with this id exists'); render(); return; }
+    // the link name is the app's job (owner, Nov 2026: a parent should never be stuck on a box they cannot fill): what was typed,
+    // made safe, else the file's name, else "book-<date>"; a name a book already has gets -2, -3 …
+    imp.slug = bookSlug(typed || f.name.replace(/\.pdf$/i, ''));
     try {
       imp.job = { status: 'running', slug: imp.slug, log: [] }; render();
       await api('POST', `/api/b/import?slug=${encodeURIComponent(imp.slug)}`, undefined, new Blob([await f.arrayBuffer()], { type: 'application/pdf' }));
@@ -932,6 +958,55 @@ const A = {
     try { await api('POST', `/api/b/planner/day/${encodeURIComponent(b.dataset.t)}/${+b.dataset.d}/undo`, {}); await load(); render(); toast(L('กลับไปแผนเดิมแล้ว', 'Back to the old plan')); }
     catch (e) { toast(dchErr(e)); }
   },
+  careadd(b) {   // the SOS page: a place this family knows in a town of the list (a clinic, a playground, a baby room) — no hours, no phone
+    openSheet(`<h3>${L('เพิ่มที่ที่เรารู้จัก', 'Add a place we know')} · ${esc(b.dataset.n)}</h3>
+<div class="pform"><input class="field" id="coname" maxlength="90" placeholder="${L('ชื่อสถานที่', 'The place’s name')}">
+<div class="row chips" role="group">${CARE_KINDS.map(([k, e, th, en], i) => `<button class="chip" data-a="carekind" data-v="${k}" aria-pressed="${i === 0}">${emo(e)} ${L(th, en)}</button>`).join('')}</div>
+<input class="field" id="conote" maxlength="160" placeholder="${L('โน้ตสั้นๆ เช่น ชั้นไหน ทำไมดี (ไม่ต้องใส่เบอร์โทรหรือเวลาเปิด)', 'A short note — which floor, why it is good (no phone number or hours)')}">
+<div class="row"><button class="btn" data-a="careaddgo" data-v="${esc(b.dataset.v)}">${L('บันทึก', 'Save')}</button><button class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button></div></div>`);
+  },
+  carekind(b) { $$('[data-a="carekind"]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); },
+  async careaddgo(b) {
+    const name = (($('#coname') || {}).value || '').trim(), note = (($('#conote') || {}).value || '').trim(), pick = $('[data-a="carekind"][aria-pressed="true"]'), kind = (pick && pick.dataset.v) || 'hospital';
+    if (name.length < 2) { toast(L('ใส่ชื่อสถานที่ก่อน', 'Type the place’s name first')); return; }
+    const id = 'co-' + Math.random().toString(36).slice(2, 12);
+    try {
+      await api('PUT', `/api/b/care/own/${id}`, { place: b.dataset.v, name, kind, note });
+      closeSheet(); careAsk = ''; toast(L('เพิ่มแล้ว', 'Added')); render();
+    } catch (e) { toast(e && e.error === 'phone' ? L('ไม่ต้องใส่เบอร์โทร', 'Leave the phone number out') : L('เพิ่มไม่ได้ ลองอีกครั้ง', 'Could not add it — try again')); }
+  },
+  async caredel(b) {
+    if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to remove'))) return;
+    try { await api('DELETE', `/api/b/care/own/${encodeURIComponent(b.dataset.v)}`); careAsk = ''; render(); }
+    catch (_) { toast(L('เอาออกไม่ได้ ลองอีกครั้ง', 'Could not remove it — try again')); }
+  },
+  sightk(b) { SIGHT.kind = b.dataset.v; render(); },   // explore a town: the filters redraw the page (the search box keeps what was typed)
+  sightst(b) { SIGHT.st = SIGHT.st === b.dataset.v ? '' : b.dataset.v; render(); },
+  sightkid(b) { SIGHT.kid = SIGHT.kid === b.dataset.v ? '' : b.dataset.v; render(); },
+  sightf(b) { const k = b.dataset.v; if (['io', 'free', 'wish'].includes(k)) SIGHT[k] = !SIGHT[k]; render(); },
+  async sightwish(b) {   // ♡ → ♥: on the family's wish list (both parents; the planner reads it)
+    const x = (SIGHT.list || []).find((y) => y.id === b.dataset.v); if (!x) return;
+    const on = !x.wish; x.wish = on; SIGHT.towns = null; render();
+    try { await api('PUT', `/api/b/sights/${encodeURIComponent(x.id)}/wish`, { on }); toast(on ? L('เก็บไว้ในที่อยากไปแล้ว ♥', 'On our wish list ♥') : L('เอาออกจากที่อยากไปแล้ว', 'Off the wish list')); }
+    catch (_) { x.wish = !on; render(); toast(L('บันทึกไม่ได้ ต้องมีเน็ต', 'Not saved — you need a connection')); }
+  },
+  dayagain() { SIGHT.seed++; SIGHT.day = buildDay(SIGHT.list || [], Array.isArray(SIGHT.eats) ? SIGHT.eats : [], SIGHT.seed); render(); },
+  dayplan() {   // the day's sights become the plan's "must do" and its town "where to"
+    const d = SIGHT.day; if (!d) return;
+    const cur = (Array.isArray(SIGHT.towns) ? SIGHT.towns : []).find((t) => t.tkey === SIGHT.town), town = cur ? L(cur.town_th || cur.town, cur.town) : '';
+    if (!pln.a) pln.a = { dest: '', want: '', likes: [], needs: [], ...(ls('plan') || {}) };
+    const parts = String(pln.a.dest || '').split(',').map((x) => x.trim()).filter(Boolean); if (town && !parts.some((x) => plNorm(x) === plNorm(town))) parts.push(town);
+    pln.a.dest = parts.join(', ');
+    const want = String(pln.a.want || '').split(/,\s*/).filter(Boolean); for (const x of d.cost) { const n = T(x.name); if (!want.includes(n)) want.push(n); }
+    pln.a.want = want.join(', ').slice(0, 500); planKeepA();
+    location.hash = '#/planner/where';
+  },
+  async sightdel(b) {   // a sight the parents do not want: two taps, it stays out
+    if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to take it out'))) return;
+    const id = b.dataset.v;
+    try { await api('DELETE', `/api/b/sights/${encodeURIComponent(id)}`); SIGHT.list = (SIGHT.list || []).filter((x) => x.id !== id); SIGHT.towns = null; render(); }
+    catch (_) { toast(L('เอาออกไม่ได้ ลองอีกครั้ง', 'Could not take it out — try again')); }
+  },
   async eatlibdel(b) {   // a place the parents do not want in the library: two taps, it stays out
     if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to take it out'))) return;
     const id = b.dataset.v;
@@ -949,6 +1024,16 @@ const A = {
   planopt(b) { pln.a[b.dataset.k] = b.dataset.v; planKeepA(); b.closest('.plopts').querySelectorAll('.tpo').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); },
   planseniors(b) { pln.a.seniors = !!b.checked; planKeepA(); },
   planchip(b) { const k = b.dataset.k, v = b.dataset.v, l = pln.a[k] = Array.isArray(pln.a[k]) ? pln.a[k] : []; const i = l.indexOf(v); if (i >= 0) l.splice(i, 1); else l.push(v); planKeepA(); b.setAttribute('aria-pressed', i < 0 ? 'true' : 'false'); },
+  plantx(b) {   // a choice on the planner's extras page: its words in the box or out of it; a choice of the same group (land in the morning / evening) gives way
+    const k = b.dataset.k, on = b.getAttribute('aria-pressed') === 'true', box = $(`#pl${k}`);
+    const sib = b.dataset.g ? [...b.parentNode.querySelectorAll(`[data-g="${b.dataset.g}"]`)].filter((x) => x !== b) : [];
+    const drop = new Set([b, ...sib].flatMap((x) => [x.dataset.p, x.dataset.p2]).filter(Boolean).map((x) => x.toLowerCase()));
+    const parts = String(pln.a[k] || '').split(/\s*,\s*/).map((x) => x.trim()).filter((x) => x && !drop.has(x.toLowerCase()));
+    if (!on) parts.push(b.dataset.p);
+    pln.a[k] = parts.join(', ').slice(0, box && box.maxLength > 0 ? box.maxLength : 500); planKeepA();
+    if (box) box.value = pln.a[k];
+    b.setAttribute('aria-pressed', on ? 'false' : 'true'); sib.forEach((x) => x.setAttribute('aria-pressed', 'false'));
+  },
   planlen(b) {   // how long: with a first day it sets the last day, without one it is kept as a number of days
     const n = +b.dataset.v, a = pln.a;
     if (a.from) { a.to = plAdd(a.from, n - 1); const el = $('#plto'); if (el) el.value = a.to; } else a.len = a.len === n ? 0 : n;
@@ -956,11 +1041,34 @@ const A = {
   },
   planmon(b) { const a = pln.a; a.approx = a.approx === b.dataset.v ? '' : b.dataset.v; planKeepA(); b.closest('.plmons').querySelectorAll('.plchip').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === a.approx ? 'true' : 'false')); const el = $('#plapprox'); if (el) el.value = a.approx; },
   planadults(b) { pln.a.adults = Math.max(1, Math.min(8, (parseInt(pln.a.adults, 10) || 2) + (+b.dataset.v))); planKeepA(); const el = $('#pladults'); if (el) el.textContent = pln.a.adults; },
+  plancc(b) {   // where to, country first: open a country's towns ('' = back to the countries)
+    pln.cc = b.dataset.v || ''; const w = $('#plwhere'); if (w) { w.innerHTML = plWhereHtml(pln.a); w.scrollIntoView({ block: 'nearest' }); }
+  },
+  planallcc() { pln.allcc = !pln.allcc; const w = $('#plwhere'); if (w) w.innerHTML = plWhereHtml(pln.a); },
+  plantown(b) {   // a town of the open country (or the whole country) in or out of "where to"
+    const name = b.dataset.v, k = plNorm(name), g = plGeo(), cur = g && (g.countries || []).find((c) => c.cc === pln.cc);
+    let parts = String(pln.a.dest || '').split(/[,،、]/).map((x) => x.trim()).filter(Boolean);
+    const has = parts.some((x) => plNorm(x) === k);
+    if (has) parts = parts.filter((x) => plNorm(x) !== k);
+    else {
+      // a town replaces "the whole country" and the whole country replaces its towns: one or the other
+      const cn = cur ? [plNorm(snapShort(cur.name).en), plNorm(snapShort(cur.name).th)] : [];
+      const towns = cur ? g.places.filter((p) => p.cc === cur.cc).flatMap((p) => [plNorm(snapShort(p.name).en), plNorm(snapShort(p.name).th)]) : [];
+      parts = parts.filter((x) => !(b.dataset.whole ? towns : cn).includes(plNorm(x)));
+      parts.push(name);
+    }
+    pln.a.dest = parts.join(', ').slice(0, 200); planKeepA();
+    const el = $('#pldest'); if (el) el.value = pln.a.dest;
+    const w = $('#plwhere'); if (w) w.innerHTML = plWhereHtml(pln.a);
+    const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(pln.a.dest);
+  },
   plansug(b) {   // a suggested place: it finishes the word being typed, else it is added to the list
     const parts = String(pln.a.dest || '').split(',').map((x) => x.trim()).filter(Boolean), name = b.dataset.v, last = parts[parts.length - 1] || '';
-    if (last && plNorm(name).includes(plNorm(last)) && plNorm(last).length >= 2) parts[parts.length - 1] = name; else parts.push(name);
+    if (last && plNorm(last).length >= 2 && (b.dataset.r || plNorm(name).includes(plNorm(last)))) parts[parts.length - 1] = name; else parts.push(name);   // data-r: offered for what is being typed (USA → The United States)
     pln.a.dest = parts.join(', ').slice(0, 200); planKeepA();
     const el = $('#pldest'); if (el) el.value = pln.a.dest; const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(pln.a.dest);
+    if (b.dataset.cc) pln.cc = b.dataset.cc;   // a typed town opens its country's towns above
+    const w = $('#plwhere'); if (w) w.innerHTML = plWhereHtml(pln.a);
   },
   async planideas() {
     if (pln.busy) return;
@@ -986,6 +1094,19 @@ const A = {
   planday(b) { pln.ask = L(`วันที่ ${+b.dataset.i + 1}: `, `Day ${+b.dataset.i + 1}: `); render(); const el = $('#plask'); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus(); el.setSelectionRange(el.value.length, el.value.length); } },
   planundo() { if (!pln.prev || pln.busy) return; [pln.route, pln.prev] = [pln.prev, pln.route]; pln.edit = -1; planKeep(); render(); toast(L('ย้อนกลับแล้ว', 'Undone')); },
   async planquick(b) { await planCall({ answers: pln.a, route: planBare(), ask: b.dataset.v }); },
+  // B3: the plan a book's spending is held against (the spend page)
+  budedit() { budEdit = !budEdit; render(); },
+  async budsave(b) {
+    const box = b.closest('.budblk'), ed = box && box.querySelector('.budedit'); if (!ed) return;
+    const t = trip(b.dataset.trip), cur0 = ed.dataset.cur, old = ((budgetOf(t) || {}).lines || []).filter((l) => l.cur !== cur0);
+    const mine = [...ed.querySelectorAll('[data-bud]')].map((i) => ({ cat: i.dataset.bud, cur: cur0, amt: Math.round(parseFloat(String(i.value).replace(/[^\d.]/g, '')) || 0) })).filter((l) => l.amt > 0);
+    if (!mine.length && !old.length) { toast(L('ใส่งบอย่างน้อยหนึ่งหมวด', 'Type a plan for at least one kind')); return; }
+    try { const r = await api('PUT', `/api/b/budget/${t.id}`, { lines: [...mine, ...old] }); S.budgets = { ...(S.budgets || {}), [t.id]: r.budget }; budEdit = false; toast(L('บันทึกงบแล้ว', 'Plan saved')); render(); } catch (_) { toast(L('ยังบันทึกไม่ได้ ลองใหม่เมื่อมีเน็ต', 'Could not save — try again with signal')); }
+  },
+  async budclear(b) {
+    const t = trip(b.dataset.trip);
+    try { const r = await api('PUT', `/api/b/budget/${t.id}`, { lines: [] }); S.budgets = { ...(S.budgets || {}) }; if (r.budget) S.budgets[t.id] = r.budget; else delete S.budgets[t.id]; budEdit = false; render(); } catch (_) { toast(L('ยังบันทึกไม่ได้ ลองใหม่เมื่อมีเน็ต', 'Could not save — try again with signal')); }
+  },
   async planask() { const ask = (($('#plask') || {}).value || '').trim(); if (!ask || /^(วันที่|Day) \d+:$/.test(ask)) { toast(L('พิมพ์ก่อนว่าอยากเปลี่ยนอะไร', 'Type what should change first')); return; } await planCall({ answers: pln.a, route: planBare(), ask }); },
   async planshare() {
     if (!pln.route) return; const text = plText(pln.route);
@@ -997,7 +1118,9 @@ const A = {
     clearTimeout(planSaveT); planSaveT = null; planSave();
     pln.a = { ...pln.a, dest: '', from: '', to: '', approx: '', len: 0, stays: '', flights: '', want: '', avoid: '' };
     pln.route = null; pln.alts = null; pln.ideas = null; pln.prev = null; pln.id = ''; pln.at = 0; pln.open = false; pln.err = '';
-    ls('plan', pln.a); ls('planRoute', null); ls('planId', null); ls('planAt', null); render(); scrollTo(0, 0);
+    ls('plan', pln.a); ls('planRoute', null); ls('planId', null); ls('planAt', null);
+    if (location.hash !== '#/planner/where') location.hash = '#/planner/where'; else render();   // a new plan starts on its first question
+    scrollTo(0, 0);
   },
   planload(b) {
     const p = (pln.plans || []).find((x) => x.id === b.dataset.v); if (!p) return;
@@ -1039,15 +1162,30 @@ const A = {
   },
   async createtrip(b, e) {
     e.preventDefault();
-    const f = $('#ntf'), title = f.title.value.trim(), from = f.from.value, to = f.to.value;
-    const slug = (f.slug.value.trim() || title).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || uid('trip');
-    if (!title || !from || !to) return;
+    const f = $('#ntf'), from = f.from.value, to = f.to.value;
+    if (!from || !to) { $('#nterr').textContent = L('ใส่วันแรกและวันสุดท้าย หรือแตะจำนวนวัน', 'Give the first and last day, or tap how long'); return; }
+    const mon = (l) => new Date(from + 'T12:00:00').toLocaleDateString(l, { month: 'long', year: 'numeric' });
+    const typed = f.title.value.trim(), th = typed || `ทริป${mon('th-TH')}`, en = f.title_en.value.trim() || typed || `Trip · ${mon('en-GB')}`;
+    const slug = bookSlug(f.slug.value.trim() || f.title_en.value.trim() || f.title.value.trim() || `trip-${from}`);
     try {
-      await api('POST', '/api/b/trips', { slug, title: { th: title, en: f.title_en.value.trim() || title }, date_from: from, date_to: to, accent: f.accent.value });
+      await api('POST', '/api/b/trips', { slug, title: { th, en }, date_from: from, date_to: to, accent: f.accent.value });
       closeSheet(); await load(); nav('#/t/' + slug);
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  ntlen(b) {   // how long: the last day from the first (today when none was given)
+    const f = $('#ntf'); if (!f) return;
+    const pad = (x) => String(x).padStart(2, '0'), iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    if (!f.from.value) f.from.value = iso(new Date());
+    const d = new Date(f.from.value + 'T12:00:00'); d.setDate(d.getDate() + (+b.dataset.v) - 1); f.to.value = iso(d);
+    f.querySelectorAll('[data-a="ntlen"]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  },
+  vgrandpin() {   // a PIN the parents do not have to think up: six digits, never one digit repeated or a plain run
+    const box = $('#vgpin'); if (!box) return; let p = '';
+    do { const a = new Uint32Array(6); crypto.getRandomValues(a); p = [...a].map((x) => x % 10).join(''); } while (/^(\d)\1+$/.test(p) || '0123456789'.includes(p) || '9876543210'.includes(p));
+    box.value = p; drafts['vg:pin'] = p;
+  },
+  vgnamechip(b) { const box = $('#vgname'); if (box) { box.value = b.dataset.v; drafts['vg:name'] = b.dataset.v; } },
   nearpick(b) {   // in place: the sheet stays as it is
     if (!nearHeld) return; const k = +b.dataset.k, on = !nearHeld.pick.has(k); if (on) nearHeld.pick.add(k); else nearHeld.pick.delete(k);
     b.classList.toggle('kept', on); b.classList.toggle('off', !on); b.setAttribute('aria-pressed', String(on));
@@ -1092,6 +1230,24 @@ const A = {
     } catch (_) { toast(L('ต้องมีเน็ตเพื่อส่งคลิป', 'You need a connection to send the film')); }
     finally { b.disabled = false; }
   },
+  taste(b) {   // a style chip on #/taste: none → love → skip → none, saved in place
+    const side = b.dataset.g, k = b.dataset.v, t = famTaste(), s = t[side], st = tasteState(side, k);
+    s.like = s.like.filter((x) => x !== k); s.avoid = s.avoid.filter((x) => x !== k);
+    const next = st === '' ? 'like' : st === 'like' ? 'avoid' : '';
+    if (next) s[next].push(k);
+    b.dataset.st = next; b.setAttribute('aria-pressed', !!next); const m = b.querySelector('.tsm'); if (m) m.textContent = next === 'like' ? '💛' : next === 'avoid' ? '🚫' : '';
+    tasteSave(t);
+  },
+  tasteadd(b) {   // a style the stars suggest: loved, the chip above shows it, the suggestion goes
+    const side = b.dataset.g, k = b.dataset.v, t = famTaste(), sd = t[side];
+    sd.avoid = sd.avoid.filter((x) => x !== k); if (!sd.like.includes(k)) sd.like.push(k);
+    tasteSave(t);
+    const c = document.querySelector(`.tastechip[data-g="${side}"][data-v="${k}"]`); if (c) { c.dataset.st = 'like'; c.setAttribute('aria-pressed', 'true'); const m = c.querySelector('.tsm'); if (m) m.textContent = '💛'; }
+    b.remove();
+  },
+  tasteneed(b) { const t = famTaste(), k = b.dataset.v; t.needs = t.needs.includes(k) ? t.needs.filter((x) => x !== k) : [...t.needs, k]; b.setAttribute('aria-pressed', t.needs.includes(k)); tasteSave(t); },
+  tastekid(b) { const t = famTaste(), k = b.dataset.v, s = b.dataset.k, cur = t.kids[s] || []; t.kids[s] = cur.includes(k) ? cur.filter((x) => x !== k) : [...cur, k]; b.setAttribute('aria-pressed', t.kids[s].includes(k)); tasteSave(t); const sm = document.querySelector(`.tks[data-k="${CSS.escape(s)}"]`); if (sm) { const rows = [...TASTE_OUT, ...TASTE_FOOD].filter((r) => t.kids[s].includes(r[0])); sm.textContent = rows.length ? rows.slice(0, 6).map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ') + (rows.length > 6 ? ' …' : '') : L('แตะเพื่อเลือก (ไม่ใส่ก็ได้)', 'Tap to choose (optional)'); } },
+  eattag(b) { const k = b.dataset.v; if (eatTags.has(k)) eatTags.delete(k); else eatTags.add(k); b.setAttribute('aria-pressed', eatTags.has(k)); eatFilter(); },
   eatk(b) { eatKind = +b.dataset.v; $$('[data-a="eatk"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === b.dataset.v)); eatFilter(); },
   eatpick(b) { eatPick = !eatPick; b.setAttribute('aria-pressed', eatPick); eatFilter(); },
   driver(b) {   // big-print address card to hand a taxi driver (works offline: it's in the book's state)
@@ -1483,14 +1639,28 @@ function saveTags(inp) {
 function openSheet(html) { $('#scrim').hidden = false; const s = $('#sheet'); s.innerHTML = html; s.hidden = false; const f = s.querySelector('input'); if (f) f.focus(); }
 function closeSheet() { $('#scrim').hidden = true; $('#sheet').hidden = true; $('#sheet').innerHTML = ''; }
 const sheetOpen = () => !$('#sheet').hidden || !$('#lb').hidden;
+function bookSlug(base) {
+  let b = String(base || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+  if (b.length < 3) { const d = new Date(); b = `book-${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`; }
+  const taken = (x) => (S.trips || []).some((t) => t.slug === x || t.id === x);
+  let out = b, n = 2; while (taken(out)) out = `${b}-${n++}`;
+  return out;
+}
 function newTripSheet() {
-  return `<h3>${L('เล่มใหม่', 'New book')}</h3><form id="ntf">
-<label class="label">${L('ชื่อทริป', 'Trip name')}</label><input name="title" class="field" required maxlength="80" placeholder="${L('เช่น เชียงใหม่หน้าหนาว', 'e.g. Chiang Mai in winter')}">
-<label class="label">${L('ชื่อภาษาอังกฤษ (ไม่บังคับ)', 'English name (optional)')}</label><input name="title_en" class="field" maxlength="80">
-<div class="row" style="margin-top:8px"><label class="label" style="flex:1">${L('วันแรก', 'From')}<input name="from" type="date" class="field" required></label><label class="label" style="flex:1">${L('วันสุดท้าย', 'To')}<input name="to" type="date" class="field" required></label></div>
-<div class="row" style="margin-top:8px"><label class="label" style="flex:1">${L('รหัสเล่ม (ไม่บังคับ)', 'Book id (optional)')}<input name="slug" class="field" maxlength="40" placeholder="chiang-mai-2027"></label><label class="label">${L('สีปก', 'Colour')}<input name="accent" type="color" value="#1F3A5F" class="field" style="height:44px;width:70px;padding:4px"></label></div>
-<div class="err" id="nterr" style="color:var(--accent2);min-height:20px;margin-top:6px"></div>
-<div class="row end"><button type="button" class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="createtrip">${L('สร้างเล่ม', 'Create')}</button></div></form>`;
+  // in the app's card look (owner, Nov 2026): the name, the days, then the rarely used settings folded away — nothing must be typed
+  // but the days, and those are one tap on how long
+  return `<form id="ntf" class="ntsheet"><h3 class="ntt">${L('เล่มใหม่', 'New book')}</h3>
+${S.features && S.features.story ? `<a class="ntplan pz" style="--g1:${PG.purple}" href="#/planner" data-a="closesheet"><span class="pcpic">${hubIc('plan')}</span><span><b>${L('ยังไม่รู้จะไปไหนหรือวันไหน?', 'Not sure where or when yet?')}</b><small>${L('วางแผนกับผู้ช่วย ตอบไม่กี่ข้อ ได้เส้นทางทั้งทริป', 'Plan with the helper — a few answers, a whole route')}</small></span><i aria-hidden="true">›</i></a>` : ''}
+${pcard('pencil', PG.gold, L('ชื่อทริป', 'Trip name'), `<div class="pform"><input name="title" class="field" maxlength="80" aria-label="${L('ชื่อทริป', 'Trip name')}" placeholder="${L('เช่น เชียงใหม่หน้าหนาว', 'e.g. Chiang Mai in winter')}">
+<p class="label">${L('ไม่ใส่ก็ได้ แอปตั้งให้จากเดือนที่ไป', 'Optional — the app names it from the month')}</p></div>`)}
+${pcard('today', PG.teal, L('ไปวันไหน', 'When'), `<div class="pform"><div class="plchips ntlens" role="group" aria-label="${L('กี่วัน', 'How many days')}">${[2, 3, 4, 5, 7, 10].map((n) => `<button type="button" class="plchip" data-a="ntlen" data-v="${n}">${n} ${L('วัน', 'days')}</button>`).join('')}</div>
+<div class="pform2"><label class="vgl">${L('วันแรก', 'From')}<input name="from" type="date" class="field"></label><label class="vgl">${L('วันสุดท้าย', 'To')}<input name="to" type="date" class="field"></label></div>
+<p class="label">${L('แตะจำนวนวันได้ ถ้ายังไม่ใส่วันแรกจะเริ่มวันนี้', 'Tap how long — with no first day it starts today')}</p></div>`)}
+<details class="ntmore"><summary>${L('ตั้งค่าเพิ่มเติม (ไม่ต้องก็ได้)', 'More settings (optional)')}${ic('chev', 'chv')}</summary><div class="pform">
+<label class="vgl">${L('ชื่อภาษาอังกฤษ', 'English name')}<input name="title_en" class="field" maxlength="80"></label>
+<div class="pform2"><label class="vgl">${L('รหัสเล่มในลิงก์', 'Book id in the link')}<input name="slug" class="field" maxlength="40" placeholder="chiang-mai-2027"></label><label class="vgl">${L('สีปก', 'Colour')}<input name="accent" type="color" value="#1F3A5F" class="field ntcol"></label></div></div></details>
+<div class="err" id="nterr"></div>
+<div class="row end ntgo"><button type="button" class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="createtrip">${L('สร้างเล่ม', 'Create')}</button></div></form>`;
 }
 
 /* ---------- the emoji library beside a text box (core.js EMOJI_LIB / emoBtn) ----------
@@ -1569,15 +1739,7 @@ document.addEventListener('click', (e) => {
   if (e.target.id === 'scrim') closeSheet();
 });
 document.addEventListener('input', (e) => { const el = e.target; if (el.id === 'erasetxt') { eraseTyped = el.value; const bt = document.querySelector('[data-a="erase"]'); if (bt) bt.disabled = el.value.trim() !== appName(); } if (el.dataset && el.dataset.emf) emoForm[el.dataset.emf] = el.value; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'findq') { findQ = el.value; const r = $('#findres'); if (r) r.innerHTML = findResults(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
-// a child's height on a trip (#/grow): a book-wide field entry, saved when the box is left (an empty box removes it)
-function saveHeight(el) {
-  const t = trip(el.dataset.t), kid = el.dataset.k; if (!t || !kid) return;
-  const v = parseFloat(el.value), id = `${t.id}.field.height.${kid}`, cur = S.entries.find((x) => x.id === id);
-  if (!(v > 30 && v < 220)) { if (cur && !el.value) delEntry(id); return; }
-  const text = String(Math.round(v * 10) / 10); if (cur && cur.text === text) return;
-  putEntry(t, { day: null, kind: 'field', child: kid, first_key: 'height', text }, id);
-}
-document.addEventListener('focusout', (e) => { const el = e.target; if (el.classList && el.classList.contains('ghinp')) saveHeight(el); if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
+document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
   const id = el.dataset.v, m = S && S.media.find((x) => x.id === id), cap = el.value.trim();
@@ -1634,7 +1796,13 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeSheet();
   if (e.key === 'Enter' && e.target.id === 'askq') { e.preventDefault(); const b = $('#askgo'); if (b && !b.disabled) A.ask(b); }   // Enter = ask the guide
   if (e.key === 'Enter' && e.target.id === 'bookq') { e.preventDefault(); const a = $('.sres a'); if (a) a.click(); }   // Enter = open the best hit
+  if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && $('.ppbook') && !/^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '') && !$('#sheet.open')) ppTurn(e.key === 'ArrowRight' ? 'next' : 'prev');   // the passport: arrow keys turn the page
 });
+// the passport book turns a page with a swipe — never from a sticker, the map, a box or the page tabs (they scroll or drag on their own)
+function ppTurn(dir) { const b = $(`.ppturn [data-dir="${dir}"]`); if (b) b.click(); }
+let ppx = null;
+document.addEventListener('touchstart', (e) => { ppx = e.touches.length === 1 && e.target.closest && e.target.closest('.ppbody') && !e.target.closest('.stkboard, .stktray, svg, input, textarea, .pptabs, .mapdays, .cstamps, .colsvg') ? [e.touches[0].clientX, e.touches[0].clientY] : null; }, { passive: true });
+document.addEventListener('touchend', (e) => { if (!ppx) return; const dx = e.changedTouches[0].clientX - ppx[0], dy = e.changedTouches[0].clientY - ppx[1]; ppx = null; if (Math.abs(dx) > 70 && Math.abs(dx) > 2 * Math.abs(dy)) ppTurn(dx < 0 ? 'next' : 'prev'); });
 let sx = null;
 document.addEventListener('touchstart', (e) => { if (lbState && e.target.closest('.stage')) sx = e.touches[0].clientX; }, { passive: true });
 document.addEventListener('touchend', (e) => { if (sx === null || !lbState) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 50) lbAct(dx < 0 ? 'next' : 'prev'); });
@@ -1728,7 +1896,10 @@ async function refresh() {
 function brandLoad() {
   fetch('/api/brand', { credentials: 'same-origin', cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((b) => { if (!b) return; const changed = JSON.stringify(b) !== JSON.stringify(BRAND); BRAND = b; ls('brand', b); const pin = $('#lcode'); if (!S && changed && !(pin && pin.value)) render(); }).catch(() => {});   // never redraw the login form under someone typing
 }
-(async function boot() {
+// Boot only once every script has run (DOMContentLoaded comes after the last deferred script): boot's first await (IndexedDB) can come back
+// while the browser still waits for kid.js / snap.js — on a reload just as the service worker takes the page over, snap.js arrived late,
+// the first render met "snapGeo is not defined" and the page stayed blank (the CI flake of 26 Nov 2026, test/ui.mjs "a tick in today's bag")
+async function boot() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
   // the app's name and the children's drawings for the login page (kept on the phone for the next cold start)
   brandLoad();
@@ -1751,7 +1922,8 @@ function brandLoad() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => render());
   setInterval(() => { if (queue.length && !(allHeld && holdMedia())) flush(); else refresh(); }, 30000);
   if (S) flush();
-})();
+}
+if (document.readyState === 'complete') boot(); else document.addEventListener('DOMContentLoaded', boot, { once: true });
 
 // a relative's photos for a book: made small on the phone (shrinkPh), sent one by one to wait for the parents (server/inbox.js)
 document.addEventListener('change', async (e) => {
@@ -1781,12 +1953,21 @@ document.addEventListener('input', (e) => { if (['captitle', 'captext', 'capdate
 document.addEventListener('input', (e) => {
   const el = e.target; if (!el) return;
   if (el.id === 'eltown') { eatLib.add = el.value; return; }
+  if (el.id === 'sightq') {   // explore a town: the search hides cards in place (the box keeps the focus)
+    SIGHT.q = el.value; const q = el.value.trim().toLowerCase(); let n = 0;
+    const lis = [...document.querySelectorAll('.sightl .sightc')], fz = fzFilter(lis.map((li) => li.dataset.s || ''), q);
+    lis.forEach((li, i) => { const ok = !q || fz.ok(i); li.hidden = !ok; if (ok) n++; });
+    document.querySelectorAll('.sagegrp').forEach((g) => { g.hidden = !g.querySelector('.sightc:not([hidden])'); });
+    const c = document.getElementById('sightn'), none = document.getElementById('sightnone'), all = (SIGHT.list || []).length;
+    if (c) c.textContent = L(`แสดง ${n} จาก ${all} แห่ง`, `Showing ${n} of ${all}`); if (none) none.hidden = n > 0; return;
+  }
   if (el.id === 'eltq') {   // the library's towns: filter the chips in place (the box keeps the focus)
     const q = el.value.trim().toLowerCase(); let n = 0;
-    document.querySelectorAll('.elgrp').forEach((g) => { let any = false; g.querySelectorAll('.plchip').forEach((c) => { const ok = !q || c.dataset.s.includes(q); c.hidden = !ok; if (ok) { any = true; n++; } }); g.hidden = !any; });
+    const chips = [...document.querySelectorAll('.elgrp .plchip')], fz = fzFilter(chips.map((c) => c.dataset.s || ''), q), at = new Map(chips.map((c, i) => [c, i]));
+    document.querySelectorAll('.elgrp').forEach((g) => { let any = false; g.querySelectorAll('.plchip').forEach((c) => { const ok = !q || fz.ok(at.get(c)); c.hidden = !ok; if (ok) { any = true; n++; } }); g.hidden = !any; });
     const none = document.getElementById('eltnone'); if (none) none.hidden = n > 0; return;
   }
   if (!pln.a) return;
   if (el.id === 'plask') { pln.ask = el.value; return; }
-  if (el.dataset && el.dataset.pl && el.type !== 'date') { pln.a[el.dataset.pl] = el.value; ls('plan', pln.a); if (el.id === 'pldest') { const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(el.value); } }
+  if (el.dataset && el.dataset.pl && el.type !== 'date') { pln.a[el.dataset.pl] = el.value; ls('plan', pln.a); document.querySelectorAll(`[data-a="plantx"][data-k="${el.dataset.pl}"]`).forEach((c) => c.setAttribute('aria-pressed', plHasTx(el.value, [c.dataset.p, c.dataset.p2]) ? 'true' : 'false')); if (el.id === 'pldest') { const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(el.value); } }
 });

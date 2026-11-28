@@ -30,6 +30,9 @@ ok(new Date(PUSH.zoned('2027-04-04', '08:30', 'Australia/Sydney')).toISOString()
   ok(keys(atHK('2026-11-21', '08:00')) === '', 'a door is not sent at 08:00 Hong Kong time (07:00 at home)');
   { const x = PUSH.extras([hk], at('2026-11-30', '08:00'))[0]; ok(x.key === 'hk-macau-2026.x.door10' && /5 sleeps to Hong Kong/.test(x.en.body) && /อีก 5 วันไปฮ่องกง/.test(x.th.body), 'door 10 says 5 sleeps to go, in both languages'); }
   ok(keys(atHK('2026-12-05', '21:30')) === 'hk-macau-2026.x.log.d0' && keys(atHK('2026-12-10', '21:30')) === 'hk-macau-2026.x.log.d5' && keys(atHK('2026-12-11', '21:30')) === '' && PUSH.extras([hk], atHK('2026-12-06', '21:31'))[0].url === '/#/t/hk-macau-2026/log/1/ai', 'every trip evening, 21:30 trip time: "record day N" (opens that day’s record page at the evening Claude buttons)');
+  { const a = PUSH.extras([hk], at('2026-11-05', '09:00')), b = PUSH.extras([hk], at('2026-11-28', '09:05'));
+    ok(a.map((x) => x.key).join() === 'hk-macau-2026.x.ahead30' && a[0].url === '/#/t/hk-macau-2026/prep' && /อีก 30 วัน/.test(a[0].th.title) && b.some((x) => x.key === 'hk-macau-2026.x.ahead7') && keys(at('2026-11-05', '08:59')) === '',
+      'book ahead: 30 and 7 days before, 09:00 home time, opens the prep page'); }
   ok(PUSH.extras([{ ...hk, doors: 0 }], at('2026-11-21', '08:00')).length === 0, 'a book without countdown doors sends no door mornings');
   { // a book from photos: its own days (12 and 14 Dec are days 1 and 2 — no evening on the 13th), no store-the-book or doors, and an open
     // book is nudged on an evening it has no day for yet (the app was never opened that day), on its own page
@@ -78,6 +81,9 @@ ok(sent[0].p.body.length <= 140 && !/booking|PNR|passport no/i.test(sent[0].p.bo
 { const n0 = sent.length;
   ok(await R.tick(PUSH.zoned('2026-12-03', '19:00', 'Asia/Bangkok')) === 1 && sent[n0].p.url === '/#/t/hk-macau-2026/offline' && /เก็บเล่มนี้ไว้ในเครื่อง/.test(sent[n0].p.body) && sent[n0].p.tag === 'hk-macau-2026.x.pack', 'scheduler: the store-the-book nudge goes out two evenings before, in the phone’s language');
   ok(await R.tick(PUSH.zoned('2026-12-03', '19:01', 'Asia/Bangkok')) === 0, '…once');
+  // the live test server runs its own minute ticker on the real clock: on 21 Nov 2026 between 08:00 and 08:15 Bangkok time (door 1 of the
+  // bundled HK book, for real) it claimed this door before the test could (CI, 21 Nov 2026) — the test's clock is the one under test
+  await pool.query("DELETE FROM push_sent WHERE key LIKE 'hk-macau-2026.x.door%'");
   ok(await R.tick(PUSH.zoned('2026-11-21', '08:00', 'Asia/Bangkok')) === 1 && /ประตูที่ 1/.test(sent[sent.length - 1].p.title), 'scheduler: door 1 the morning 14 sleeps before');
   const rec = async (i) => (await pool.query(`SELECT 1 FROM entries WHERE trip_id='hk-macau-2026' AND day_index=$1 AND kind IN ('quote','mood','fav','note','first') UNION ALL SELECT 1 FROM media WHERE trip_id='hk-macau-2026' AND day_index=$1`, [i])).rowCount > 0;
   const days = [0, 1, 2, 3, 4, 5], recorded = []; for (const i of days) if (await rec(i)) recorded.push(i);

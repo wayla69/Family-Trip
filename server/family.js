@@ -1,3 +1,4 @@
+const TAGS = require('../public/tags.js');   // the styles a family can like — the same table as the phone's
 // The family's own profile: the app's name and the children as they want them drawn — so a family on its own instance never
 // sees Mimi and Mika. The drawings stay the two hand-drawn characters (a girl with her wagon, a toddler) recoloured from each
 // child's "look": base template + skin, hair and top colours. Everything that names the children (prompts, push texts, the
@@ -78,7 +79,7 @@ function profile(stored, kids) {
   const ini = kids.map((k) => (k.name_en || '?')[0].toUpperCase()).join('');
   const app = { th: (p.app && p.app.th) || 'LifeBook', en: (p.app && p.app.en) || 'LifeBook' };
   const kicker = { th: (p.kicker && p.kicker.th) || (kids.length ? `ของ${names(kids, 'th')}` : 'สมุดความทรงจำของครอบครัว'), en: (p.kicker && p.kicker.en) || (kids.length ? kids.map((k) => k.name_en).join(' & ') : 'Our family memory books') };
-  return { app, kicker, tiles: TILES.includes(p.tiles) ? p.tiles : 'pastel', custom: { app: p.app || null, kicker: p.kicker || null } };   // custom = what the parents typed (the form edits that, the rest is built)
+  return { app, kicker, tiles: TILES.includes(p.tiles) ? p.tiles : 'pastel', taste: TAGS.cleanTaste(p.taste), custom: { app: p.app || null, kicker: p.kicker || null } };   // custom = what the parents typed (the form edits that, the rest is built)
 }
 const clip = (s, n) => String(s == null ? '' : s).replace(/\s+/g, ' ').trim().slice(0, n);
 // what PUT /api/b/family may store
@@ -86,7 +87,8 @@ const TILES = ['pastel', 'accent', 'plain'];   // the book menu's tiles: every t
 function cleanProfile(b) {
   const p = b && typeof b === 'object' ? b : {}, i18n = (o) => (o && typeof o === 'object' ? { th: clip(o.th, 40), en: clip(o.en, 40) } : { th: '', en: '' });
   const app = i18n(p.app), kicker = i18n(p.kicker);
-  return { app: app.th || app.en ? app : undefined, kicker: kicker.th || kicker.en ? kicker : undefined, tiles: TILES.includes(p.tiles) ? p.tiles : undefined };
+  const taste = TAGS.cleanTaste(p.taste);   // what the family likes (#/taste; docs/PLACES-ECOSYSTEM.md F3)
+  return { app: app.th || app.en ? app : undefined, kicker: kicker.th || kicker.en ? kicker : undefined, tiles: TILES.includes(p.tiles) ? p.tiles : undefined, taste: TAGS.tasteEmpty(taste) ? undefined : taste };
 }
 const slugOf = (s) => String(s || '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 20);
 function cleanKid(k, i) {
@@ -98,4 +100,10 @@ function cleanKid(k, i) {
 // the children rows as a seed's "children" (names, emoji, age at the trip's first day) — an imported book is about this family's kids
 const seedChildren = (kids, dateFrom) => kids.map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji || '🧒', age_at_trip: ageOf(k, dateFrom ? new Date(dateFrom + 'T00:00:00Z') : null) || { th: '', en: '' } }));
 
-module.exports = { PALETTE, OUTFITS, cleanLook, lookVersion, renderKid, kidsFor, profile, cleanProfile, cleanKid, seedChildren, names, TILES };
+// the children under three on a date (by birth month): the little one's edition of an AI-written passport is theirs (owner, Nov 2026)
+const LITTLE_MONTHS = 36;
+const littleKids = (kids, date) => { const at = date ? new Date(String(date).slice(0, 10) + 'T00:00:00Z') : new Date(); if (isNaN(at)) return [];
+  return kids.filter((k) => /^\d{4}-\d{2}$/.test(k.birth_ym || '')).filter((k) => { const [y, m] = k.birth_ym.split('-').map(Number); return (at.getUTCFullYear() - y) * 12 + (at.getUTCMonth() + 1 - m) < LITTLE_MONTHS; }).map((k) => k.slug); };
+// a seed's little edition goes to the children under three on its first day; with none, the edition is dropped
+const fitLittle = (seed, kids) => { const pp = seed && seed.passport; if (!pp || !pp.little) return seed; const ks = littleKids(kids, seed.date_from); if (ks.length) pp.little.kids = ks; else delete pp.little; return seed; };
+module.exports = { littleKids, fitLittle, PALETTE, OUTFITS, cleanLook, lookVersion, renderKid, kidsFor, profile, cleanProfile, cleanKid, seedChildren, names, TILES };

@@ -1,0 +1,807 @@
+{
+  "cc": "my",
+  "towns": [
+    {
+      "place": "my-penang",
+      "sights": [
+        {
+          "name": { "en": "Penang Hill", "th": "ปีนังฮิลล์" },
+          "local": "Bukit Bendera",
+          "kind": "views",
+          "area": { "en": "Air Itam", "th": "แอร์อิตัม" },
+          "what": { "en": "A steep funicular train up the hill to cool air, gardens and a view over George Town", "th": "รถรางไต่เขาชันขึ้นไปรับลมเย็น ชมสวนและวิวเมืองจอร์จทาวน์" },
+          "why": { "en": "The train ride itself is the treat for small children, and the top is cooler than the city", "th": "เด็กเล็กตื่นเต้นกับรถรางไต่เขา และบนเขาอากาศเย็นกว่าในเมือง" },
+          "tip": { "en": "Go at opening time; on busy days the queue is long unless you pay for the fast lane", "th": "ไปตอนเปิด วันคนเยอะต้องรอคิวนาน เว้นแต่ซื้อตั๋วช่องด่วน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ RM30 return non-Malaysian adults · RM15 children 4–12 · fast lane extra", "th": "≈ RM30 ไปกลับ ผู้ใหญ่ต่างชาติ · RM15 เด็ก 4–12 ปี · ช่องด่วนแพงกว่า" },
+          "book": "none",
+          "q": "Penang Hill Lower Station, Air Itam, Penang",
+          "ok": "2026-11",
+          "src": "https://www.penanghill.gov.my/index.php/en/tickets"
+        },
+        {
+          "name": { "en": "The Habitat Penang Hill", "th": "เดอะฮาบิแทต ปีนังฮิลล์" },
+          "kind": "nature",
+          "area": { "en": "Top of Penang Hill", "th": "บนยอดปีนังฮิลล์" },
+          "what": { "en": "A rainforest trail on the hilltop with a canopy walk and a round treetop viewing deck", "th": "เส้นทางเดินป่าฝนบนยอดเขา มีสะพานเดินบนเรือนยอดไม้และจุดชมวิววงกลม" },
+          "why": { "en": "A gentle, well-made path where children spot giant leaves, insects and birds", "th": "ทางเดินทำดี เดินสบาย เด็กๆ ได้ดูใบไม้ยักษ์ แมลงและนก" },
+          "tip": { "en": "The funicular ticket is separate; a carrier is easier than a pram on the steeper parts", "th": "ตั๋วรถรางขึ้นเขาแยกต่างหาก ช่วงชันใช้เป้อุ้มเด็กง่ายกว่ารถเข็น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ RM54 standard pass from (online) · under 3 free", "th": "≈ RM54 ขึ้นไป บัตรมาตรฐาน (ซื้อออนไลน์) · ต่ำกว่า 3 ปีฟรี" },
+          "book": "rec",
+          "q": "The Habitat Penang Hill, Bukit Bendera, Penang",
+          "ok": "2026-11",
+          "src": "https://book.thehabitat.my/tours/malaysia/penang/standard-entrance-pass"
+        },
+        {
+          "name": { "en": "Entopia", "th": "เอนโทเปีย" },
+          "kind": "zoo",
+          "area": { "en": "Teluk Bahang", "th": "เตอลุกบาฮัง" },
+          "what": { "en": "A big butterfly garden with insects, reptiles and an indoor discovery hall", "th": "สวนผีเสื้อใหญ่ มีแมลง สัตว์เลื้อยคลาน และห้องเรียนรู้ในร่ม" },
+          "why": { "en": "Butterflies land on small hands, and the indoor half works when it rains", "th": "ผีเสื้อเกาะมือเด็กๆ ได้ และครึ่งในร่มใช้ได้ตอนฝนตก" },
+          "tip": { "en": "Mornings have the most butterflies flying; pair it with ESCAPE next door", "th": "ช่วงเช้าผีเสื้อบินเยอะที่สุด ไปต่อเอสเคปที่อยู่ใกล้ๆ ได้" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ RM75 non-Malaysian adults · RM55 children 4–12 · 3 and under free", "th": "≈ RM75 ผู้ใหญ่ต่างชาติ · RM55 เด็ก 4–12 ปี · 3 ขวบลงไปฟรี" },
+          "book": "none",
+          "q": "Entopia by Penang Butterfly Farm, Teluk Bahang, Penang",
+          "ok": "2026-11",
+          "src": "https://www.entopia.com/visitor-info/"
+        },
+        {
+          "name": { "en": "ESCAPE Penang", "th": "เอสเคป ปีนัง" },
+          "kind": "themepark",
+          "area": { "en": "Teluk Bahang", "th": "เตอลุกบาฮัง" },
+          "what": { "en": "An outdoor adventure park of rope courses, zip lines, water slides and splash pools", "th": "สวนผจญภัยกลางแจ้ง มีเชือกปีน ซิปไลน์ สไลเดอร์น้ำ และสระเล่นน้ำ" },
+          "why": { "en": "Most of it is for older children, but the splash and play areas suit little ones with a parent", "th": "ส่วนใหญ่เหมาะกับเด็กโต แต่โซนเล่นน้ำและลานเล่นให้เด็กเล็กเล่นกับพ่อแม่ได้" },
+          "tip": { "en": "Tickets are sold online only; bring swimwear and go early before the heat", "th": "ขายตั๋วออนไลน์เท่านั้น เตรียมชุดว่ายน้ำ และไปเช้าก่อนแดดแรง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ RM190 adults · RM120 children (2026 listing, online only)", "th": "≈ RM190 ผู้ใหญ่ · RM120 เด็ก (ราคาปี 2026 ซื้อออนไลน์เท่านั้น)" },
+          "book": "req",
+          "q": "ESCAPE Penang, Teluk Bahang, Penang",
+          "ok": "2026-11",
+          "src": "https://the-malaysia-move.pages.dev/penang-family-attractions/"
+        },
+        {
+          "name": { "en": "The TOP Penang", "th": "เดอะท็อป ปีนัง" },
+          "kind": "views",
+          "area": { "en": "Komtar, George Town", "th": "คอมตาร์ จอร์จทาวน์" },
+          "what": { "en": "The top of Komtar tower: a glass-floored Rainbow Skywalk, an observatory deck and indoor attractions", "th": "ยอดตึกคอมตาร์ มีทางเดินพื้นกระจกเรนโบว์สกายวอล์ก จุดชมวิว และเครื่องเล่นในร่ม" },
+          "why": { "en": "A fast lift, air conditioning and a view children love; the indoor floors suit a rainy day", "th": "ลิฟต์เร็ว แอร์เย็น วิวที่เด็กชอบ ชั้นในร่มใช้ได้วันฝนตก" },
+          "tip": { "en": "The skywalk shuts in rain; booking a day ahead online saves about 10 %", "th": "สกายวอล์กปิดตอนฝนตก จองออนไลน์ล่วงหน้าหนึ่งวันลดราว 10 %" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ RM78 adults · RM58 children (three-attraction pass)", "th": "≈ RM78 ผู้ใหญ่ · RM58 เด็ก (บัตรสามจุด)" },
+          "book": "rec",
+          "q": "The TOP Komtar, George Town, Penang",
+          "ok": "2026-11",
+          "src": "https://thetop.com.my/buy-tickets2/"
+        },
+        {
+          "name": { "en": "Penang National Park", "th": "อุทยานแห่งชาติปีนัง" },
+          "local": "Taman Negara Pulau Pinang",
+          "kind": "nature",
+          "area": { "en": "Teluk Bahang", "th": "เตอลุกบาฮัง" },
+          "what": { "en": "Jungle trails and quiet beaches at the island's north-west tip, with boats to Monkey Beach", "th": "เส้นทางป่าและชายหาดเงียบที่ปลายเกาะ มีเรือไปหาดลิง" },
+          "why": { "en": "A boat ride to a beach is the easy way in with little ones; the trails are long for small legs", "th": "นั่งเรือไปชายหาดเป็นทางง่ายสำหรับเด็กเล็ก เดินป่าไกลเกินขาเล็กๆ" },
+          "tip": { "en": "Bring cash for the entry and the boat, and keep snacks away from the monkeys", "th": "พกเงินสดจ่ายค่าเข้าและค่าเรือ และเก็บขนมให้พ้นลิง" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ RM50 entry for non-Malaysians (cash) · boats to the beaches extra", "th": "≈ RM50 ค่าเข้าชาวต่างชาติ (เงินสด) · ค่าเรือไปหาดแยกต่างหาก" },
+          "book": "none",
+          "q": "Penang National Park entrance, Teluk Bahang, Penang",
+          "ok": "2026-11",
+          "src": "https://thebackpackingfamily.com/monkey-beach-penang-national-park/"
+        },
+        {
+          "name": { "en": "Penang Botanic Gardens", "th": "สวนพฤกษศาสตร์ปีนัง" },
+          "kind": "park",
+          "area": { "en": "Jalan Kebun Bunga", "th": "ถนนเกอบุนบุงงา" },
+          "what": { "en": "A big old garden in a green valley with lawns, a stream and a small tram ride", "th": "สวนเก่าขนาดใหญ่ในหุบเขา มีสนามหญ้า ลำธาร และรถรางเล็กให้นั่ง" },
+          "why": { "en": "Free, flat paths and space to run; a fine morning before the heat", "th": "เข้าฟรี ทางเรียบ มีที่วิ่งเล่น เหมาะช่วงเช้าก่อนแดดร้อน" },
+          "tip": { "en": "Keep food out of sight: the long-tailed macaques are bold", "th": "เก็บอาหารให้มิด ลิงหางยาวที่นี่กล้ามาก" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · small fee for the tram", "th": "ฟรี · รถรางเก็บค่าโดยสารเล็กน้อย" },
+          "book": "none",
+          "q": "Penang Botanic Gardens, Jalan Kebun Bunga, George Town",
+          "ok": "2026-11",
+          "src": "https://botanicalgardens.penang.gov.my/index.php/en/soalan-lazim"
+        },
+        {
+          "name": { "en": "Batu Ferringhi Beach", "th": "หาดบาตูเฟอริงกี" },
+          "kind": "beach",
+          "area": { "en": "Batu Ferringhi", "th": "บาตูเฟอริงกี" },
+          "what": { "en": "Penang's main resort beach: a long strip of sand with water sports and sunset cafés", "th": "ชายหาดหลักของปีนัง ทรายยาว มีกีฬาทางน้ำและร้านนั่งชมพระอาทิตย์ตก" },
+          "why": { "en": "Soft sand for digging and an easy late-afternoon outing from the beach hotels", "th": "ทรายนุ่มให้ขุดเล่น และเดินออกมาจากโรงแรมริมหาดได้ง่ายตอนบ่ายแก่ๆ" },
+          "tip": { "en": "Watch for jellyfish in some months and keep clear of the jet skis", "th": "บางเดือนมีแมงกะพรุน และอยู่ห่างจากเจ็ตสกี" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Batu Ferringhi Beach, Batu Ferringhi, Penang",
+          "ok": "2026-11",
+          "src": "https://www.traveloka.com/en-my/explore/destination/ferringhi-beach-penang-guide-acc/1009803"
+        },
+        {
+          "name": { "en": "Batu Ferringhi Night Market", "th": "ตลาดกลางคืนบาตูเฟอริงกี" },
+          "kind": "market",
+          "area": { "en": "Jalan Batu Ferringhi", "th": "ถนนบาตูเฟอริงกี" },
+          "what": { "en": "About a kilometre of evening stalls along the beach road: snacks, toys and souvenirs", "th": "แผงขายของตอนเย็นยาวราวหนึ่งกิโลเมตรริมถนนเลียบหาด มีขนม ของเล่น ของที่ระลึก" },
+          "why": { "en": "A cool evening stroll with lights and small treats; there is a little ride area for young children", "th": "เดินเล่นตอนเย็นอากาศสบาย มีไฟสวยและขนม มีมุมเครื่องเล่นเล็กๆ ให้เด็ก" },
+          "tip": { "en": "Traffic is heavy at weekends, so walk from a nearby hotel; bring small cash", "th": "วันหยุดรถติดมาก เดินมาจากโรงแรมใกล้ๆ ดีกว่า พกเงินสดย่อย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk", "th": "เดินชมฟรี" },
+          "book": "none",
+          "q": "Batu Ferringhi Night Market, Jalan Batu Ferringhi, Penang",
+          "ok": "2026-11",
+          "src": "https://onpenang.com/batu-ferringhi-night-market/"
+        },
+        {
+          "name": { "en": "George Town Street Art", "th": "สตรีทอาร์ตจอร์จทาวน์" },
+          "kind": "oldtown",
+          "area": { "en": "Armenian Street and the heritage core", "th": "ถนนอาร์มีเนียนและย่านเมืองเก่า" },
+          "what": { "en": "Murals and iron caricatures on old shophouse walls across the UNESCO heritage town", "th": "ภาพวาดฝาผนังและรูปลวดเหล็กบนตึกแถวเก่าทั่วเมืองมรดกโลก" },
+          "why": { "en": "A treasure hunt for murals keeps small children walking, with photos at every stop", "th": "ล่าหาภาพวาดเหมือนล่าสมบัติ เด็กๆ เดินได้เรื่อยๆ ถ่ายรูปได้ทุกจุด" },
+          "tip": { "en": "Pick up a street art map and go early, before the midday heat", "th": "หยิบแผนที่สตรีทอาร์ต และไปเช้าก่อนแดดเที่ยง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Armenian Street, George Town, Penang",
+          "ok": "2026-11",
+          "src": "https://www.malaysiatravel.com/articles/post/the-ultimate-guide-to-family-holidays-in-penang-best-things-to-do-in-2026"
+        },
+        {
+          "name": { "en": "Chew Jetty", "th": "ชิวเจ็ตตี้" },
+          "kind": "oldtown",
+          "area": { "en": "Weld Quay, George Town", "th": "เวลด์คีย์ จอร์จทาวน์" },
+          "what": { "en": "A village of wooden houses on stilts over the sea, built by one Chinese clan", "th": "หมู่บ้านบ้านไม้ยกเสาเหนือทะเล สร้างโดยตระกูลจีนตระกูลเดียว" },
+          "why": { "en": "Children enjoy the planks over the water and peeking at boats, crabs and fish", "th": "เด็กๆ ชอบเดินบนสะพานไม้เหนือน้ำ ดูเรือ ปู และปลา" },
+          "tip": { "en": "People live here, so keep voices low; hold small hands, as there are few railings", "th": "มีคนอยู่อาศัย พูดเบาๆ และจูงมือเด็กไว้ ราวกันตกมีน้อย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Chew Jetty, Weld Quay, George Town, Penang",
+          "ok": "2026-11",
+          "src": "https://the-malaysia-move.pages.dev/penang-george-town-heritage/"
+        },
+        {
+          "name": { "en": "Kek Lok Si Temple", "th": "วัดเก๊กลกสี" },
+          "kind": "culture",
+          "area": { "en": "Air Itam", "th": "แอร์อิตัม" },
+          "what": { "en": "Malaysia's largest Buddhist temple on a hillside, with a tall pagoda and a huge bronze Guanyin", "th": "วัดพุทธใหญ่ที่สุดของมาเลเซียบนเนินเขา มีเจดีย์สูงและเจ้าแม่กวนอิมสำริดองค์ใหญ่" },
+          "why": { "en": "Colourful halls and a fish and turtle pond; a short sloping lift saves little legs", "th": "อาคารสีสันสดใส มีบ่อปลาและเต่า ลิฟต์ขึ้นเนินช่วยไม่ให้เด็กเดินเหนื่อย" },
+          "tip": { "en": "The lift is cash only; cover shoulders and knees", "th": "ลิฟต์รับเงินสดเท่านั้น แต่งกายคลุมไหล่และเข่า" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free · lift and pagoda ≈ RM2–3 each", "th": "ฟรี · ลิฟต์และเจดีย์ ≈ RM2–3 ต่ออย่าง" },
+          "book": "none",
+          "q": "Kek Lok Si Temple, Air Itam, Penang",
+          "ok": "2026-11",
+          "src": "https://onpenang.com/kek-lok-si-temple/"
+        },
+        {
+          "name": { "en": "Wonderfood Museum", "th": "พิพิธภัณฑ์วันเดอร์ฟู้ด" },
+          "kind": "museum",
+          "area": { "en": "Lebuh Pantai, George Town", "th": "เลอบูปันไต จอร์จทาวน์" },
+          "what": { "en": "Giant and life-sized models of Malaysian food, made to pose with for photos", "th": "โมเดลอาหารมาเลเซียทั้งขนาดยักษ์และขนาดจริง ไว้โพสท่าถ่ายรูป" },
+          "why": { "en": "A huge bowl of noodles is funny to a small child, and it is cool indoors", "th": "ชามก๋วยเตี๋ยวยักษ์ทำให้เด็กหัวเราะ และอยู่ในห้องแอร์เย็นๆ" },
+          "tip": { "en": "A good stop in the hottest part of the day between street art walks", "th": "แวะช่วงแดดร้อนที่สุด ระหว่างเดินชมสตรีทอาร์ต" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ RM30 adults · RM20 children 3–12", "th": "≈ RM30 ผู้ใหญ่ · RM20 เด็ก 3–12 ปี" },
+          "book": "none",
+          "q": "Wonderfood Museum, Lebuh Pantai, George Town, Penang",
+          "ok": "2026-11",
+          "src": "https://onpenang.com/wonderfood-museum/"
+        },
+        {
+          "name": { "en": "Penang 3D Trick Art Museum", "th": "พิพิธภัณฑ์ภาพสามมิติปีนัง" },
+          "kind": "museum",
+          "area": { "en": "Lebuh Penang, George Town", "th": "เลอบูปีนัง จอร์จทาวน์" },
+          "what": { "en": "Painted rooms where the photo makes you ride a dragon or fall off a cliff", "th": "ห้องภาพวาดที่ถ่ายรูปออกมาเหมือนขี่มังกรหรือตกหน้าผา" },
+          "why": { "en": "Short, air-conditioned and silly: children see themselves in the pictures", "th": "ใช้เวลาไม่นาน ห้องแอร์ และสนุก เด็กๆ เห็นตัวเองอยู่ในภาพ" },
+          "tip": { "en": "Check the camera spot marked on the floor for each picture", "th": "ยืนถ่ายตรงจุดที่มาร์กไว้บนพื้นของแต่ละภาพ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ RM22 international visitors (online) · under 4 free", "th": "≈ RM22 นักท่องเที่ยวต่างชาติ (ซื้อออนไลน์) · ต่ำกว่า 4 ปีฟรี" },
+          "book": "none",
+          "q": "Penang 3D Trick Art Museum, Lebuh Penang, George Town",
+          "ok": "2026-11",
+          "src": "https://www.pelago.com/en-MY/activity/pemyn-penang-3d-trick-art-museum-penang/"
+        },
+        {
+          "name": { "en": "Teddyville Museum", "th": "พิพิธภัณฑ์เท็ดดี้วิลล์" },
+          "kind": "museum",
+          "area": { "en": "DoubleTree Resort, Batu Ferringhi", "th": "โรงแรมดับเบิลทรี บาตูเฟอริงกี" },
+          "what": { "en": "Rooms of teddy bears dressed up in scenes from around the world", "th": "ห้องตุ๊กตาหมีแต่งตัวเป็นฉากต่างๆ จากทั่วโลก" },
+          "why": { "en": "Gentle, indoors and full of bears: an easy rainy-hour for toddlers", "th": "บรรยากาศสบาย อยู่ในร่ม มีแต่ตุ๊กตาหมี เด็กเล็กเที่ยวได้ง่ายตอนฝนตก" },
+          "tip": { "en": "Guests of the hotel above it get a discount", "th": "แขกของโรงแรมด้านบนได้ส่วนลด" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ RM32 from (online) · children 2–12 less · under 2 free", "th": "≈ RM32 ขึ้นไป (ซื้อออนไลน์) · เด็ก 2–12 ปีถูกกว่า · ต่ำกว่า 2 ปีฟรี" },
+          "book": "none",
+          "q": "Teddyville Museum, DoubleTree Resort, Batu Ferringhi, Penang",
+          "ok": "2026-11",
+          "src": "https://www.pelago.com/en-MY/activity/pcm5p-teddyville-museum-penang/"
+        },
+        {
+          "name": { "en": "Gurney Drive Hawker Centre", "th": "ศูนย์อาหารเกอร์นีย์ไดรฟ์" },
+          "kind": "market",
+          "area": { "en": "Gurney Drive, by Gurney Plaza", "th": "เกอร์นีย์ไดรฟ์ ข้างห้างเกอร์นีย์พลาซ่า" },
+          "what": { "en": "Penang's best-known evening hawker centre on the seafront: noodles, satay and ais kacang", "th": "ศูนย์อาหารตอนเย็นที่ดังที่สุดของปีนังริมทะเล มีก๋วยเตี๋ยว สะเต๊ะ และน้ำแข็งไส" },
+          "why": { "en": "Plain dishes for small eaters, a sea breeze and space beside it to stretch out", "th": "มีอาหารไม่เผ็ดให้เด็ก ลมทะเลเย็นสบาย และมีที่ให้เดินยืดเส้นข้างๆ" },
+          "tip": { "en": "Come at about 18:00 before stalls sell out; bring cash", "th": "มาราว 18:00 ก่อนของหมด พกเงินสด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ RM10–18 a meal", "th": "≈ RM10–18 ต่อมื้อ" },
+          "book": "none",
+          "q": "Gurney Drive Hawker Centre, Persiaran Gurney, George Town",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/penang-gurney-drive-hawker-center-food"
+        },
+        {
+          "name": { "en": "Tropical Spice Garden", "th": "ทรอปิคัลสไปซ์การ์เดน" },
+          "kind": "nature",
+          "area": { "en": "Teluk Bahang", "th": "เตลุกบาหัง" },
+          "what": { "en": "A jungle garden of spice plants and orchids on a hillside, with a pond, shaded paths and a cafe", "th": "สวนป่าของพืชเครื่องเทศและกล้วยไม้บนเนินเขา มีบ่อน้ำ ทางเดินร่มรื่น และคาเฟ่" },
+          "why": { "en": "Shaded and cool for a walk, with guided walks daily that children enjoy sniffing and tasting along", "th": "ร่มและเย็นสบาย มีไกด์นำเดินทุกวันที่เด็กชอบดมและชิมระหว่างทาง" },
+          "tip": { "en": "Open 9am to 6pm Friday to Sunday and 9am to 4.30pm Monday to Thursday; last entry is an hour before closing; wear repellent", "th": "เปิด 9:00–18:00 ศุกร์–อาทิตย์ และ 9:00–16:30 จันทร์–พฤหัสฯ รอบสุดท้ายก่อนปิด 1 ชั่วโมง ทายากันยุง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Tropical Spice Garden, Teluk Bahang, Penang",
+          "ok": "2026-11",
+          "src": "https://tropicalspicegarden.com/visitor-info"
+        },
+        {
+          "name": { "en": "Kidster Gurney Plaza", "th": "คิดสเตอร์ กูร์นีย์ พลาซ่า" },
+          "local": "",
+          "kind": "play",
+          "area": { "en": "Gurney Plaza, George Town", "th": "กูร์นีย์ พลาซ่า จอร์จทาวน์" },
+          "what": { "en": "An indoor playground in Gurney Plaza, one of the most convenient indoor playgrounds on Penang island.", "th": "สนามเด็กเล่นในร่มในกูร์นีย์ พลาซ่า เป็นสนามเด็กเล่นในร่มที่สะดวกที่สุดแห่งหนึ่งบนเกาะปีนัง" },
+          "why": { "en": "An indoor place to play when the weather is hot or wet.", "th": "ที่เล่นในร่มเมื่ออากาศร้อนหรือฝนตก" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kidster Gurney Plaza, George Town, Penang",
+          "ok": "2026-11",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "พิพิธภัณฑ์รัฐปีนัง",
+            "en": "Penang State Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนฟาร์ควาร์ จอร์จทาวน์",
+            "en": "Lebuh Farquhar, George Town"
+          },
+          "what": {
+            "th": "อาคารยุคอาณานิคม เปิดใหม่เดือนกรกฎาคม 2026 มี 15 ห้องจัดแสดงเรื่องประวัติศาสตร์ วัฒนธรรม และสัตว์ป่าของปีนัง",
+            "en": "A colonial building reopened in July 2026 with 15 galleries on Penang’s history, culture and wildlife"
+          },
+          "why": {
+            "th": "มีจุดจัดแสดงแบบโต้ตอบที่ใช้เทคโนโลยีได้ฉลาด",
+            "en": "Interactive displays that use technology cleverly"
+          },
+          "tip": {
+            "th": "เปิดทุกวันยกเว้นวันศุกร์ 9:00–17:00 ป้ายส่วนใหญ่เป็นภาษามลายู ภาษาอังกฤษอยู่ในคิวอาร์โค้ด",
+            "en": "Open every day except Friday, 9:00–17:00; most labels are in Malay, English on QR codes"
+          },
+          "q": "Penang State Museum, Lebuh Farquhar, George Town",
+          "src": "https://onpenang.com/museums-galleries-penang/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "RM25 เด็ก 6–12 ปี RM12 ต่ำกว่า 6 ปีฟรี",
+            "en": "RM25; children 6–12 RM12; under 6 free"
+          },
+          "book": "none",
+          "name": {
+            "th": "คฤหาสน์เปอรานากันปีนัง",
+            "en": "Pinang Peranakan Mansion"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "จอร์จทาวน์",
+            "en": "George Town"
+          },
+          "what": {
+            "th": "คฤหาสน์จีนที่บูรณะแล้ว มีของเก่าเปอรานากันกว่า 1,000 ชิ้น",
+            "en": "A restored Chinese mansion with over 1,000 Peranakan antiques"
+          },
+          "why": {
+            "th": "งานไม้จีน กระเบื้องพื้นอังกฤษ และงานเหล็กสกอตแลนด์ในบ้านหลังเดียว",
+            "en": "Chinese woodwork, English floor tiles and Scottish ironwork in one house"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 9:30–17:00",
+            "en": "Open every day 9:30–17:00"
+          },
+          "q": "Pinang Peranakan Mansion, George Town",
+          "src": "https://onpenang.com/museums-galleries-penang/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "พิพิธภัณฑ์เรือเฟอร์รีปีนัง",
+            "en": "Penang Ferry Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ข้างท่าเรือเฟอร์รีจอร์จทาวน์",
+            "en": "By the George Town ferry terminal"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์บนเรือเฟอร์รีปูเลาปีนังที่ปลดระวางแล้ว มีโมเดล หนังเก่า และห้องบังคับเรือให้ดู",
+            "en": "A museum on the retired ferry Pulau Penang, with models, old films and the bridge to see"
+          },
+          "why": {
+            "th": "มีจุดจัดแสดงแบบโต้ตอบและโมเดลท่าเวลด์คีย์ที่มีรถราง สามล้อ และเรือ",
+            "en": "Interactive displays and a model of Weld Quay with trams, trishaws and ships"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 9:00–22:00",
+            "en": "Open every day 9:00–22:00"
+          },
+          "q": "Penang Ferry Museum, George Town",
+          "src": "https://onpenang.com/museums-galleries-penang/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "เทคโดมปีนัง",
+            "en": "Tech Dome Penang"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "คอมตาร์ จอร์จทาวน์",
+            "en": "Komtar, George Town"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ของปีนัง มีของให้ลองเล่น 120 ชิ้น",
+            "en": "Penang’s science museum with 120 hands-on exhibits"
+          },
+          "why": {
+            "th": "ลองแรงโน้มถ่วงที่ G-Drop บังคับหุ่นยนต์ผ่านเขาวงกต หลบแสงเลเซอร์ และปีนกำแพง",
+            "en": "Feel gravity on the G-Drop, steer a robot through a maze, dodge laser beams and climb the wall"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–19:00",
+            "en": "Open every day 10:00–19:00"
+          },
+          "q": "Tech Dome Penang, Komtar, George Town",
+          "src": "https://onpenang.com/museums-galleries-penang/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "พิพิธภัณฑ์กลับหัว",
+            "en": "Upside Down Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคิมเบอร์ลีย์ จอร์จทาวน์",
+            "en": "Lebuh Kimberley, George Town"
+          },
+          "what": {
+            "th": "ห้องที่สร้างกลับหัว ถ่ายรูปออกมาเหมือนเราลอยกลับหัว",
+            "en": "Rooms built upside down, so in photos you seem to defy gravity"
+          },
+          "why": {
+            "th": "มีพนักงานช่วยถ่ายรูปให้",
+            "en": "Staff photographers take the pictures for you"
+          },
+          "tip": {
+            "th": "ใส่กางเกงขายาว รูปจะดูสมจริงกว่า",
+            "en": "Wear trousers so the photos look more real"
+          },
+          "q": "Upside Down Museum, Lebuh Kimberley, George Town",
+          "src": "https://www.littledayout.com/penang-with-kids-family-travel/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "ตลาดฮิน",
+            "en": "Hin Market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "ฮินบัสดีโป ถนนกุรุดวารา",
+            "en": "Hin Bus Depot, Jalan Gurdwara"
+          },
+          "what": {
+            "th": "ตลาดนัดสุดสัปดาห์ของคนทำของท้องถิ่น ในอู่รถเมล์ปี 1947 ที่กลายเป็นพื้นที่ศิลปะ",
+            "en": "A weekend market of local makers in a 1947 bus depot turned art space"
+          },
+          "why": {
+            "th": "มีดนตรีสดตามแผง และของกินอย่างพิซซ่า เนื้อเสียบไม้ และอัสสัมลักซา",
+            "en": "Live music at the stalls and food such as pizza, skewers and assam laksa"
+          },
+          "tip": {
+            "th": "เฉพาะเสาร์และอาทิตย์ 11:00–17:00",
+            "en": "Saturday and Sunday only, 11:00–17:00"
+          },
+          "q": "Hin Bus Depot, 31A Jalan Gurdwara, George Town",
+          "src": "https://www.littledayout.com/penang-with-kids-family-travel/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "ยูโฟเรีย",
+            "en": "UFOREA"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไอส์แลนด์ 88 ตันจงโตกง",
+            "en": "Island 88, Tanjung Tokong"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มหลายห้อง มีโครงปีนสูง มุมเล่นบทบาทสมมติ และเกม",
+            "en": "A multi-room indoor play centre with tall climbing frames, role-play corners and games"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กแยก และมีของให้เด็กโตเล่นด้วย",
+            "en": "A toddler area of its own, and enough for older children too"
+          },
+          "tip": {
+            "th": "จันทร์–ศุกร์ 11:00–22:00 เสาร์–อาทิตย์ 10:00–22:00",
+            "en": "Mon–Fri 11:00–22:00; Sat–Sun 10:00–22:00"
+          },
+          "q": "UFOREA Indoor Children's Playground, Tanjung Tokong, Penang",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "แอดเวนเจอร์โซน",
+            "en": "Adventure Zone"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รีสอร์ตโกลเดนแซนด์ บาตูเฟอริงกี",
+            "en": "Golden Sands Resort, Batu Ferringhi"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มในรีสอร์ตโกลเดนแซนด์ มีบ่อบอลยักษ์ แทรมโพลีน และสไลเดอร์",
+            "en": "An indoor play centre in the Golden Sands Resort with a giant ball pool, trampolines and slides"
+          },
+          "why": {
+            "th": "มีโครงเล่นหลายชั้น และมุมเบาๆ สำหรับเด็กเล็กสุด",
+            "en": "A multi-level play frame, and a gentler corner for the smallest"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–13:00 และ 14:00–18:00",
+            "en": "Open every day 10:00–13:00 and 14:00–18:00"
+          },
+          "q": "Adventure Zone, Golden Sands Resort, Batu Ferringhi",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "คิดแลนด์",
+            "en": "Kidland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ปรางินมอลล์ จอร์จทาวน์",
+            "en": "Prangin Mall, George Town"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มแบบคลาสสิก เด็กเล่นเป็นอาชีพต่างๆ ของผู้ใหญ่",
+            "en": "An old-school indoor play centre where children play at grown-up jobs"
+          },
+          "why": {
+            "th": "มีมุมเล่นบทบาทสมมติ นอกจากสไลเดอร์และโครงปีน",
+            "en": "Role-play beside the usual slides and climbing frames"
+          },
+          "tip": {
+            "th": "จันทร์–ศุกร์ 11:00–19:00 เสาร์–อาทิตย์ 11:00–21:00",
+            "en": "Mon–Fri 11:00–19:00; Sat–Sun 11:00–21:00"
+          },
+          "q": "Kidland Penang, Prangin Mall, George Town",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "แจมีวันเดอร์แลนด์",
+            "en": "Jaemi Wonderland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เฟิร์สอเวนิวมอลล์ ชั้น 3",
+            "en": "1st Avenue Mall, level 3"
+          },
+          "what": {
+            "th": "ที่เล่นสไตล์เกาหลี โทนสีพาสเทลนุ่มๆ",
+            "en": "A Korean-style play space in soft pastel colours"
+          },
+          "why": {
+            "th": "มีบ่อบอล สไลเดอร์ ซูเปอร์มาร์เก็ตจำลอง และโซนนุ่มสำหรับเด็กต่ำกว่าสามขวบ",
+            "en": "A ball pit, slides, a pretend supermarket and padded baby areas for the under-threes"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–22:00",
+            "en": "Open every day 10:00–22:00"
+          },
+          "q": "Jaemi Wonderland @ 1st Avenue, George Town, Penang",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "name": {
+            "th": "คิดส์วิลล์ วอเทอร์ฟรอนต์",
+            "en": "Kidsville WaterFront"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ควีนส์วอเทอร์ฟรอนต์ บายันเลปัส",
+            "en": "Queens Waterfront, Bayan Lepas"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทันสมัย มีโซนนุ่ม สไลเดอร์ และบ่อบอล",
+            "en": "A modern indoor play space with soft play, slides and a ball pool"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก เล่นเสร็จเดินเล่นริมน้ำต่อ",
+            "en": "A toddler zone, and a waterfront walk afterwards"
+          },
+          "tip": {
+            "th": "ต้องใส่ถุงเท้า ควรพกคู่สำรอง",
+            "en": "Socks needed; bring a spare pair"
+          },
+          "q": "Kidsville WaterFront, Queens Waterfront, Penang",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf",
+          "name": {
+            "th": "คิดส์แอดเวนเจอร์แลนด์ ซันไชน์เซ็นทรัล",
+            "en": "Kids Adventureland (Sunshine Central)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างซันไชน์เซ็นทรัล อาเยอร์อีตัม",
+            "en": "Sunshine Central mall, Air Itam"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีเครื่องปีนป่าย สไลเดอร์ บ่อบอล และมุมบทบาทสมมติ",
+            "en": "An indoor play space with climbing, slides, a ball pool and role play"
+          },
+          "why": {
+            "th": "มีของเล่นทุกวัย พร้อมโซนเด็กเล็ก",
+            "en": "Something for each age, with a toddler zone"
+          },
+          "q": "Kids Adventureland, Sunshine Central, Penang",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

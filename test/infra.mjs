@@ -175,6 +175,52 @@ if (process.env.BASE) {
   const a = await health(pgUp, stDown, false), b = await health(pgUp, stDown, true), c = await health(pgDown, stUp, false), d = await health(pgUp, stUp, true);
   ok(a.ok && !b.ok && /storage/.test(b.why) && !c.ok && /postgres/.test(c.why) && d.ok, 'health: storage down → deploy check ok, full check fails; Postgres down → both fail'); }
 
+// the built-in things to do (server/sights, docs/SIGHTS.md, scripts/sights-lint.mjs): every row web-checked (ok + src), both languages,
+// ≥ 15 a town with three for a rainy day; the checker refuses a row without its check; the library reads a row's kind into an outing style
+{ const { lintAll, lintFile } = await import('../scripts/sights-lint.mjs');
+  const r = lintAll();
+  ok(!r.errs.length && r.files >= 1, `sights: the built-in things to do are clean (${r.files} files, ${r.towns} towns)` + (r.errs.length ? ' — ' + r.errs.slice(0, 6).join(' · ') : ''));
+  const tmpd = fs.mkdtempSync(path.join(os.tmpdir(), 'sights-')), tmp = path.join(tmpd, 'jp-9.json'),   // a folder of our own (CodeQL: no predictable file in the shared temp dir)
+    idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
+  fs.writeFileSync(tmp, JSON.stringify({ cc: 'jp', towns: [{ place: 'jp-tokyo', sights: [{ name: { en: 'Made Up Zoo', th: 'สวนสัตว์สมมุติ' }, kind: 'zoo', area: { en: 'Ueno', th: 'อุเอโนะ' }, what: { en: 'x', th: 'ก' }, why: { en: 'x', th: 'ก' }, ages: [2, 2, 2, 1], hrs: 3, io: 'out', pram: 'yes', price: { en: 'Free', th: 'ฟรี' }, book: 'none', q: 'Made Up Zoo, Tokyo' }] }] }));
+  const e = lintFile(tmp, idx.places).join(' ');
+  const S = require('../server/sightlib.js'), row = S.rowOf({ name: { en: 'Tokyo Sea Life Park', th: 'สวนสัตว์ทะเล' }, kind: 'aquarium', what: { en: 'Penguins and a big tuna tank by the beach', th: 'เพนกวิน' }, ages: [1, 2, 2, 2] });
+  fs.rmSync(tmpd, { recursive: true, force: true });
+  ok(/ok = the month/.test(e) && /src = the https page/.test(e) && /1 sights \(15 or more\)/.test(e) && row.styles.includes('aquarium') && row.styles.includes('sea') && S.fitOf(row, null, 1) === 1 && S.fitOf({ ages: [0, 2, 2, 2] }, null, 1) === -9 && S.fitOf(row, { out: { like: ['aquarium'] } }, 4) === 4,
+    `sights: a row with no web check is refused, a town needs 15; a sight's kind and words give its outing styles; the fit reads the youngest child's age and the taste (${e.slice(0, 160)} · ${row.styles})`); }
+
+// the rough budget (docs/BUDGET.md B1): a sight's price text read by pieces — adults, a child price, "under N free", a range, free,
+// "check the price" = unknown; the money a text is in; the helper's three numbers cleaned; a whole estimate with two children
+{ const B = require('../server/budget.js');
+  const p1 = B.priceOf('≈ €22 adults · ≈ €17 children 3–12 · under 3 free'), p2 = B.priceOf('≈ CHF 34 adults · CHF 21 children 6–15 · ages 0–5 free'),
+    p3 = B.priceOf('≈ ¥2,200–2,600 per person, by day · under 1 free (check)'), p4 = B.priceOf('Check the price · under 6 free'), p5 = B.priceOf('Free · lockers extra');
+  ok(p1.adult.lo === 22 && p1.child.lo === 17 && p1.freeUnder === 3 && p2.freeUnder === 6 && p3.adult.lo === 2200 && p3.adult.hi === 2600 && p4.unknown && p5.free
+    && B.ticketFor(p1, 2, [3.5, 1.5]).lo === 61 && B.ticketFor(p2, 2, [3.5, 1.5]).lo === 68 && B.ticketFor(p4, 2, [3]) === null,
+    `budget: a price text is read by its pieces and each child counts by age (${JSON.stringify([p1, p2, p3])})`);
+  ok(B.curOf('≈ ¥600 adults', 'jp') === 'JPY' && B.curOf('≈ ¥260 adults', 'cn') === 'CNY' && B.curOf('resellers from US$26', 'kh') === 'USD' && B.curOf('≈ 50 JD adults', 'jo') === 'JOD' && B.curOf('≈ NZ$42', 'nz') === 'NZD'
+    && B.cleanMoney({ cur: 'jpy', stay: ['30,000', 18000], move: [-5], flights: 'x' }).stay.join() === '18000,30000' && B.cleanMoney({ cur: 'JPY' }) === null && B.cleanMoney(null) === null,
+    'budget: the money of a price text, and the helper\'s numbers cleaned (sorted, plain numbers, junk dropped)');
+  const sight = { id: 's', place: 'fr-paris', price: { en: '≈ €22 adults · ≈ €17 children 3–12 · under 3 free' } };
+  const eats = [{ kind: 0, pr: { en: '≈ €20–30' }, cc: 'fr' }, { kind: 1, pr: { en: '≈ €10–14' }, cc: 'fr' }, { kind: 2, pr: { en: '≈ €6–8' }, cc: 'fr' }];
+  const route = { from: '2027-04-01', days: [0, 1, 2].map((i) => ({ town: { en: i < 2 ? 'Paris' : 'Nowhere' }, stops: [{ lib: 's' }] })), money: { cur: 'EUR', stay: [150, 200], move: [60, 90], flights: [70000, 90000] } };
+  const est = B.estimate({ route, answers: { adults: 2, budget: 'mid' }, kids: [{ birth_ym: '2023-10' }, { birth_ym: '2025-10' }], sightById: (id) => (id === 's' ? sight : null), ccOfPlace: () => 'fr', eatsOfTown: (t) => (t.en === 'Paris' ? eats : []) });
+  const L = (k) => est.lines.find((l) => l.k === k) || {};
+  ok(L('tickets').lo === 61 && L('tickets').n === 1 && L('stay').lo === 300 && L('stay').hi === 400 && L('flights').cur === 'THB' && L('food').cur === 'EUR' && L('food').lo === 2 * 36 * 2.5 && est.unknown.food === 1 && est.totals.length === 2 && est.lines[0].k === 'flights',
+    `budget: an estimate — the sight once, two nights, food for the two days with prices (2½ eaters: two adults and a child of 3; the baby eats off the bill), a day with none counted as unknown (${JSON.stringify(est)})`);
+  const low = B.estimate({ route, answers: { adults: 2, budget: 'low', flights: 'booked' }, kids: [], sightById: () => sight, ccOfPlace: () => 'fr', eatsOfTown: () => eats });
+  ok(!low.lines.some((l) => l.k === 'flights') && low.lines.find((l) => l.k === 'stay').hi === 350, 'budget: a careful budget keeps the low half of each range; flights the family typed are not estimated');
+  // B2: what we really spent before, in the same money, leans each line towards it; a kind the estimate lacks comes from it alone
+  const past = [{ trip: 'a', title: { en: 'Paris 2025' }, date_from: '2025-05-01', days: 4, cat: 'food', cur: 'EUR', total: 480 },
+    { trip: 'a', title: { en: 'Paris 2025' }, date_from: '2025-05-01', days: 4, cat: 'transport', cur: 'EUR', total: 100 },
+    { trip: 'a', title: { en: 'Paris 2025' }, date_from: '2025-05-01', days: 4, cat: 'shop', cur: 'EUR', total: 900 },
+    { trip: 'b', title: { en: 'Tokyo 2024' }, date_from: '2024-03-01', days: 5, cat: 'food', cur: 'JPY', total: 50000 }];
+  const pe = B.pastPer(past);
+  const e2 = B.estimate({ route: { ...route, money: { cur: 'EUR', stay: [150, 200] } }, answers: { adults: 2, budget: 'mid' }, kids: [{ birth_ym: '2023-10' }, { birth_ym: '2025-10' }], past, sightById: () => sight, ccOfPlace: () => 'fr', eatsOfTown: (t) => (t.en === 'Paris' ? eats : []) });
+  const L2 = (k) => e2.lines.find((l) => l.k === k) || {};
+  ok(pe.per.food.EUR.v === 120 && pe.per.transport.EUR.v === 25 && !pe.per.shop && pe.trips[0].id === 'a'
+    && L2('food').past === 360 && L2('food').lo === 250 && L2('food').hi === 330 && L2('move').src === 'past' && L2('move').past === 75 && !e2.lines.some((l) => l.cur === 'JPY') && e2.past.trips[0].title.en === 'Paris 2025',
+    `budget (B2): our own past spending in the same money — a day's food over 3 days leans the food line, getting around comes from it alone, shopping and other money never count (${JSON.stringify(e2.lines)})`); }
+
 // the built-in list of places to eat (server/eats, scripts/eats-lint.mjs): every file reads, every row has the book's shape in both
 // languages, and the checker catches what it should
 { const { lintEats } = await import('../scripts/eats-lint.mjs');
@@ -184,6 +230,23 @@ if (process.env.BASE) {
   const rows = E.starterRows('th-1.json', idx), bk = rows.filter((x) => x.tkey === 'bangkok');
   ok(bk.length >= 12 && bk[0].town === 'Bangkok' && /[\u0E00-\u0E7F]/.test(bk[0].town_th) && bk.every((x) => x.row.what && x.row.what.th && x.row.q && !x.row.hours && !x.row.pick),
     `eats: a file's rows go under the picture library's own name for the town (${bk.length} in ${bk[0] && bk[0].town} / ${bk[0] && bk[0].town_th})`); }
+
+// CI runs the test groups in parallel parts (.github/workflows/ci.yml matrix): every group of test/run.mjs must fall in a part,
+// or it would never run on CI
+{ const run = fs.readFileSync(path.resolve('test/run.mjs'), 'utf8'), ci = fs.readFileSync(path.resolve('.github/workflows/ci.yml'), 'utf8');
+  const groups = [...(run.match(/const GROUPS = (\[\[.*?\]\])/) || [])[1].matchAll(/\[([^\[\]]+)\]/g)].map((m) => m[1].match(/test\/[\w-]+\.mjs/g));
+  const parts = [...ci.matchAll(/only: '([^']+)'/g)].map((m) => m[1].split(','));
+  const lost = groups.filter((g) => !parts.some((p) => p.some((o) => g.some((f) => f.includes(o))))).map((g) => g[0]);
+  ok(groups.length > 10 && parts.length >= 2 && !lost.length, `CI: every test group runs in one of the ${parts.length} parallel parts (${groups.length} groups)${lost.length ? ' — missing: ' + lost.join(', ') : ''}`); }
+
+// help and play near a stay (server/care, scripts/care-lint.mjs): every file reads, every row is confirmed (ok), names no opening hours
+// or phone number; the server answers only the towns asked for
+{ const { lintCare } = await import('../scripts/care-lint.mjs');
+  const r = lintCare();
+  ok(!r.errs.length && r.rows > 300 && r.kinds.hospital > 150 && r.kinds.play > 80, `care: the built-in list is clean (${r.rows} places in ${r.towns} towns)` + (r.errs.length ? ' — ' + r.errs.slice(0, 6).join(' · ') : ''));
+  const CARE = require('../server/care.js'), got = CARE.forPlaces(['hk-hongkong', 'zz-nowhere', 'th-bangkok']);
+  ok(Object.keys(got).sort().join() === 'hk-hongkong,th-bangkok' && got['hk-hongkong'][0].kind === 'hospital' && got['hk-hongkong'].every((x) => x.q && x.ok && x.area.th),
+    `care: forPlaces gives the asked towns only, hospitals first (${Object.keys(got).join(', ')})`);}
 
 // the stock art library (docs/STOCK-ART.md): the shipped index is clean, the lint catches what §6.3 says, stock: ids resolve only when approved
 { const STOCK = require('../server/stock.js');
@@ -490,6 +553,20 @@ for (const f of ['core.js', 'views.js', 'sheets.js', 'kid.js', 'snap.js', 'sw.js
   const split = (x) => { const out = []; let d = 0, cur = ''; for (const ch of x) { if (ch === '(') d++; if (ch === ')') d--; if (ch === ',' && !d) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map((y) => y.trim()); };
   for (const m of css.matchAll(/(?:^|[{}])\s*([^{}@]*(?::root\[data-theme=dark\]|:root:not\(\[data-theme=light\]\))[^{}]*)\{/g)) bad.push(...split(m[1]).filter((x) => !/^:root(\[data-theme=dark\]|:not\(\[data-theme=light\]\))/.test(x)));
   ok(!bad.length, `app.css: every selector of a dark-mode rule carries the dark scope${bad.length ? ' — ' + bad.slice(0, 3).join(' | ') : ''}`); }
+{ // every style the family can pick (public/tags.js) has its painted picture on disk (views.js TASTE_PIC)
+  const { createRequire } = await import('node:module'), fs = await import('node:fs'), TG = createRequire(import.meta.url)('../public/tags.js');
+  const src = fs.readFileSync(new URL('../public/views.js', import.meta.url), 'utf8'), m = src.match(/const TASTE_PIC = \{([\s\S]*?)\};/), pic = {};
+  for (const [, k, v] of (m ? m[1] : '').matchAll(/(\w+): '([^']+)'/g)) pic[k] = v;
+  const keys = [...TG.TASTE_FOOD, ...TG.TASTE_OUT, ...TG.TASTE_NEED].map((r) => r[0]), bad = keys.filter((k) => !pic[k] || !fs.existsSync(new URL(`../public/art/${pic[k]}.webp`, import.meta.url)));
+  ok(keys.length > 30 && !bad.length, `every taste style has its picture (${keys.length})${bad.length ? ' — missing: ' + bad.join(', ') : ''}`); }
+// every thing Today's bag can name draws a picture of the family's emoji library (the forecast's umbrella was ☂️, which no picture
+// answered — the test of the bag only saw it on a day the mock forecast said rain)
+{ const vsrc = fs.readFileSync(new URL('../public/views.js', import.meta.url), 'utf8');
+  const body = vsrc.slice(vsrc.indexOf('const BAG = ['), vsrc.indexOf('const BAG_ALWAYS'));
+  const bag = [...body.matchAll(/^\s*\['(\w+)', '([^']+)'/gm)].map((m) => [m[1], m[2]]);
+  const vs = (e) => e.replace(/️/g, ''), have = new Set(require('../server/emoji.js').DEFAULTS.flatMap((d) => [d[1], ...d.slice(4)]).map(vs));
+  const bad = bag.filter(([, e]) => !have.has(vs(e))).map(([k, e]) => `${k} ${e}`);
+  ok(bag.length > 15 && !bad.length, `every thing Today's bag can name has a picture in the emoji library (${bag.length})${bad.length ? ' — missing: ' + bad.join(', ') : ''}`); }
 if (process.env.BASE) { const r = await fetch(process.env.BASE + '/app-legacy.css'); ok(r.ok && /text\/css/.test(r.headers.get('content-type')) && !(await r.text()).includes('color-mix('), '/app-legacy.css is served, resolved'); }
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');

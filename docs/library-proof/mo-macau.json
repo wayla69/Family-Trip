@@ -1,0 +1,2055 @@
+{
+  "town": "mo-macau",
+  "rounds": [
+    {
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the town holds 21 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Tou Tou Koi",
+          "reason": "Google Maps (2026-11-23): 'Tou Tou Koi Restaurante 陶陶居海鲜酒家', 12 Tv. do Mastro (5GVQ+W4) — 'Temporarily closed'; the other listing 'Tou Tou Koi 陶陶居海鮮酒家', Edificio I Chan Kok, R. de Pequim (5GVQ+V3) — 'Permanently closed'"
+        }
+      ]
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from MGM's family dining guide (Jan 2025) and Macao News (Apr 2026) passed library-check.cjs, all 6 went in",
+      "added": [
+        {
+          "name": "Rossio (MGM Macau)",
+          "page_name": "Rossio",
+          "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+          "date": "2025-01",
+          "map": "Google Maps 119 reviews, newest shown '19 days ago'"
+        },
+        {
+          "name": "Anytime (MGM Cotai)",
+          "page_name": "Anytime",
+          "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+          "date": "2025-01",
+          "map": "Google Maps 'Anytime 視博茶點', 36 reviews, newest shown '16 days ago'"
+        },
+        {
+          "name": "Imperial Court (MGM Macau)",
+          "page_name": "Imperial Court",
+          "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+          "date": "2025-01",
+          "map": "Google Maps 58 reviews, newest shown 'last month'"
+        },
+        {
+          "name": "Qube Kid's Zone (The Venetian)",
+          "page_name": "Qube – Kid’s Play Zone",
+          "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/",
+          "date": "2026-04",
+          "map": "Google Maps 'Qube Kid's zone', 16 reviews, newest shown '3 months ago'"
+        },
+        {
+          "name": "Poly MGM Museum",
+          "page_name": "POLY MGM MUSEUM",
+          "src": "https://www.mgm.mo/en/dining/story/macau-family-dining-food-activities-mgm",
+          "date": "2025-01",
+          "map": "Google Maps 164 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "The House of Dancing Water",
+          "page_name": "House of Dancing Water",
+          "src": "https://macaonews.org/life/entertainment/best-indoor-activities-macao/",
+          "date": "2026-04",
+          "map": "Google Maps 7,197 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Coast (MGM Cotai)",
+          "page_name": "Coast",
+          "src": "https://www.mgm.mo/en/dining/mgm-cotai/coast",
+          "date": "official",
+          "map": "Google Maps 'Coast' (MGM Cotai), newest review shown 4 months ago"
+        },
+        {
+          "name": "Spotlight (Studio City)",
+          "page_name": "星滙餐廳Spotlight",
+          "src": "https://www.stheadline.com/parenting/3570890/澳門新濠影滙水上樂園5折249玩齊雙園區-星滙餐廳限量快閃自助午餐低至88澳門親子好去處",
+          "date": "2026-05",
+          "map": "Google Maps 'Spotlight 星滙餐廳', newest review shown 8 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "La Famiglia, La Gondola",
+          "why": "no dated page"
+        },
+        {
+          "name": "Nickelodeon Town",
+          "why": "inside Super Fun Zone, already in the app"
+        },
+        {
+          "name": "Garden Wonderland at Spectacle",
+          "why": "no map entry of its own"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 4 rows from MGM's own pages and Sing Tao (May 2026), all passed library-check.cjs, 2 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-27",
+      "rule": "The resort's own page for each place (what it serves, its children's terms, hours), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "North Palace (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/north-palace.html",
+          "map": "Google Maps: 511 reviews, newest 4 months ago"
+        },
+        {
+          "name": "Churchill's Table (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/churchills-table.html",
+          "map": "Google Maps: 584 reviews, newest a day ago"
+        },
+        {
+          "name": "Hampton Court (Londoner Grand)",
+          "src": "https://www.londonermacao.com/macau-restaurants/hampton-court.html",
+          "map": "Google Maps: 407 reviews, newest a week ago"
+        },
+        {
+          "name": "Gordon Ramsay Pub & Grill (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/gordon-ramsay-pub-n-grill.html",
+          "map": "Google Maps: 317 reviews, newest 4 days ago"
+        },
+        {
+          "name": "The Cheesecake Factory (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/the-cheesecake-factory.html",
+          "map": "Google Maps: 355 reviews, newest a day ago"
+        },
+        {
+          "name": "Chelsea Garden (Londoner Grand)",
+          "src": "https://www.londonermacao.com/macau-restaurants/chelsea-garden.html",
+          "map": "Google Maps: 617 reviews, open, newest 2 days ago"
+        },
+        {
+          "name": "Koufu (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/koufu.html",
+          "map": "Google Maps: The Londoner Food Court - Koufu, 19 reviews, newest 5 months ago"
+        },
+        {
+          "name": "Joyride Diner (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/joyride-diner",
+          "map": "Google Maps: 99 reviews, newest a week ago"
+        },
+        {
+          "name": "Spice Road (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/spice-road",
+          "map": "Google Maps: 16 reviews, newest 3 months ago"
+        },
+        {
+          "name": "Gala (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/gala",
+          "map": "Google Maps: 31 reviews, newest 4 months ago"
+        },
+        {
+          "name": "Din Tai Fung (City of Dreams)",
+          "src": "https://www.cityofdreamsmacau.com/en/dining/din-tai-fung",
+          "map": "Google Maps: 156 reviews, newest 8 days ago"
+        },
+        {
+          "name": "Beijing Kitchen (City of Dreams)",
+          "src": "https://www.cityofdreamsmacau.com/en/dining/beijing-kitchen",
+          "map": "Google Maps: 277 reviews, newest 11 days ago"
+        },
+        {
+          "name": "Pak Loh Chiu Chow (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/pak-loh-chiu-chow-restaurant/",
+          "map": "Google Maps: 50 reviews, newest 5 months ago"
+        },
+        {
+          "name": "Golden Reel (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/attractions/golden-reel",
+          "map": "Google Maps: 271 reviews, newest 18 days ago"
+        },
+        {
+          "name": "Wynn Palace SkyCab",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/experiences/entertainment/",
+          "map": "Google Maps: 329 reviews, newest 3 days ago"
+        },
+        {
+          "name": "Wynn Palace Performance Lake",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/experiences/entertainment/",
+          "map": "Google Maps: 141 reviews, newest 16 days ago"
+        },
+        {
+          "name": "Eiffel Tower observation deck (The Parisian)",
+          "src": "https://www.parisianmacao.com/macau-entertainment/eiffel-tower.html",
+          "map": "Google Maps: 1,534 reviews, newest a day ago"
+        },
+        {
+          "name": "Changing of the Guard (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-attractions.html",
+          "map": "Google Maps: shown inside The Londoner Macao (6,926 reviews, open); the show has no listing of its own"
+        },
+        {
+          "name": "Light and Sound Spectacular (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-attractions.html",
+          "map": "Google Maps: shown on The Londoner Macao (6,926 reviews, open); the show has no listing of its own"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Louvre Pastry & Deli (Studio City)",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Kiku Ramen (Studio City)",
+          "why": "no Google Maps listing found"
+        },
+        {
+          "name": "Galaxy Grand Resort Deck",
+          "why": "closed 16 Nov 2026 – 26 Mar 2027, hotel guests only"
+        },
+        {
+          "name": "Jiang Nan, Huaiyang Garden, Chiado (dinner)",
+          "why": "children under 10 only in private rooms at dinner"
+        },
+        {
+          "name": "Zhen Dim Sum, Chan Kee Roasted Goose",
+          "why": "the page gave no usable description"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "The resort's own restaurant page (what it serves, its shop and hours), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Hiro Ramen (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/hiro-ramen.html",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Imperial House Dim Sum (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/imperial-house-dim-sum.html",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Red Dragon Noodles (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/red-dragon-noodles.html",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Five Guys (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/five-guys.html",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "North (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/north.html",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Haidilao Hot Pot (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/haidilao.html",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Tim Ho Wan (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/tim-ho-wan.html",
+          "map": "Google Maps: open, a review 2 days ago"
+        },
+        {
+          "name": "Shake Shack (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/shake-shack.html",
+          "map": "Google Maps: open, a review 4 weeks ago"
+        },
+        {
+          "name": "G Bear Cafe (Londoner Grand)",
+          "src": "https://www.londonermacao.com/macau-restaurants/g-bear-cafe.html",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Lady M (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/lady-m.html",
+          "map": "Google Maps: open, newest review 3 months ago"
+        },
+        {
+          "name": "Jin Yue Xuan (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/jin-yue-xuan.html",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Crystal Jade La Mian Xiao Long Bao (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/crystal-jade.html",
+          "map": "Google Maps: open, newest review 2 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Tai Hing (The Venetian)",
+          "why": "newest Google Maps review 10 months old"
+        },
+        {
+          "name": "Portofino, Glorious Seafood, Green Tea, Lan Zhou Noodle (The Venetian)",
+          "why": "no matching Google Maps listing could be opened"
+        },
+        {
+          "name": "The Mews, Marmeleira, O'Picken's",
+          "why": "tasting menus, a bar or a pub; not for children"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "The resort's own restaurant page (what it serves, its hours), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Le Buffet (The Parisian)",
+          "src": "https://www.parisianmacao.com/restaurants/le-buffet.html",
+          "map": "Google Maps: open, newest review a day ago"
+        },
+        {
+          "name": "Market Bistro (The Parisian)",
+          "src": "https://www.parisianmacao.com/restaurants/market-bistro.html",
+          "map": "Google Maps: open, a review 2 days ago"
+        },
+        {
+          "name": "Pepper Lunch (The Parisian)",
+          "src": "https://www.parisianmacao.com/restaurants/pepper-lunch.html",
+          "map": "Google Maps: open, newest review 4 months ago"
+        },
+        {
+          "name": "Élysée Bakery (The Parisian)",
+          "src": "https://www.parisianmacao.com/restaurants/elysee-bakery.html",
+          "map": "Google Maps: open, newest review 2 weeks ago"
+        },
+        {
+          "name": "Tam Chai Yu Chun (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/tam-chai-yu-chun/",
+          "map": "Google Maps: open, newest review 2 weeks ago"
+        },
+        {
+          "name": "Bei Shan Lou (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/bei-shan-lou/",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Cha Bei (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/chabei/",
+          "map": "Google Maps: open, newest review 3 weeks ago"
+        },
+        {
+          "name": "Lei Ka Choi (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/lei-ka-choi/",
+          "map": "Google Maps: open, a review 6 days ago"
+        },
+        {
+          "name": "Cheng Chau Lam Kei (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/cheng-chau-lam-kei/",
+          "map": "Google Maps: open, newest review a week ago"
+        },
+        {
+          "name": "Café Gausiu (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/cafe-gausiu/",
+          "map": "Google Maps: open, newest review 4 days ago"
+        },
+        {
+          "name": "Chak In Kei (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/chak-kei/",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Apgujeong by Kim's (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/apgujeong-kims-korean-cuisine/",
+          "map": "Google Maps: open, a review 7 days ago"
+        },
+        {
+          "name": "Urban Kitchen (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/urban-kitchen/",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Gaga (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/gaga/",
+          "map": "Google Maps: open, newest review a week ago"
+        },
+        {
+          "name": "Butao Ramen (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/butao-ramen/",
+          "map": "Google Maps: open, newest review 4 weeks ago"
+        },
+        {
+          "name": "Cafe Hanoi (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/cafe-hanoi/",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Lugang Cafe (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/lugang-cafe/",
+          "map": "Google Maps: open, a review 19 days ago"
+        },
+        {
+          "name": "Andaz Kitchen (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/andaz-kitchen/",
+          "map": "Google Maps: open, a review 3 days ago"
+        },
+        {
+          "name": "Dragon Portuguese Cuisine (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/dragon-pourtuguse-cuisine/",
+          "map": "Google Maps: open, a review 18 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "1983 Taste of Nanyang, Toei Delights (The Parisian)",
+          "why": "a 2.8 rating on few reviews"
+        },
+        {
+          "name": "Lake Chong Fa Dumplings (The Parisian)",
+          "why": "newest Google Maps review a year old"
+        },
+        {
+          "name": "The Noodle Kitchen (Galaxy)",
+          "why": "newest Google Maps review 7 months old"
+        },
+        {
+          "name": "The Apron (Galaxy)",
+          "why": "the page does not say what it serves"
+        },
+        {
+          "name": "Old Village Cafe, Song Hua Hu Dumplings, Fuchinobe Ramen (Galaxy)",
+          "why": "no Galaxy listing on Google Maps"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "The resort's own restaurant page (what it serves, its hours and children's prices), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Futago (City of Dreams)",
+          "src": "https://www.cityofdreamsmacau.com/en/dining/futago-macau",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Sweets (Wynn Palace)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/dining/sweets",
+          "map": "Google Maps: open, a review 19 days ago"
+        },
+        {
+          "name": "Pronto (Wynn Palace)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/dining/pronto",
+          "map": "Google Maps: open, a review 6 days ago"
+        },
+        {
+          "name": "99 Noodles (Wynn Palace)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-palace/dining/99-noodles-wynn-palace",
+          "map": "Google Maps: open, a review 5 months ago"
+        },
+        {
+          "name": "Lakeside Trattoria (Wynn Macau)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/dining/lakeside-trattoria",
+          "map": "Google Maps: open, a review 12 days ago"
+        },
+        {
+          "name": "Chatterbox Café (MGM Macau)",
+          "src": "https://www.mgm.mo/en/dining/mgm-macau/chatterbox-cafe",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Hei Kei Wanton Noodles (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/hei-kei-wanton-noodles.html",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Rasa Singapura (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/rasa-singapura.html",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "O Castiço (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/o-castico.html",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Clay Pot King (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/claypot-king.html",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Chiang Mai Thai (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/chiangmait-thai.html",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Tsui Wah (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/tsui-wah-restaurant/",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Blossom Palaces (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/blossom-palaces/",
+          "map": "Google Maps: open, a review 10 days ago"
+        },
+        {
+          "name": "Waso Cafe (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/waso-cafe/",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Sham Tseng Chan Kee Roasted Goose (Broadway)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/chan-kee-roasted-goose/",
+          "map": "Google Maps: open, a review a week ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Flaming Queen, Fontana, Red 8 (Wynn Macau), Good Luck Hong Kong Restaurant, Hoi Ngan Hoi Kei",
+          "why": "newest Google Maps review 6 months old or more"
+        },
+        {
+          "name": "Ging Sun Ho, San Mou I, Beef #1, Xishangong, Fat Boy Dumplings, Xita Laotaitai",
+          "why": "no Google Maps listing found"
+        },
+        {
+          "name": "Ocean Empire, Ximen Taiwanese Bistro",
+          "why": "a low rating or a handful of reviews"
+        },
+        {
+          "name": "Bacha Coffee, Aux Beaux Arts",
+          "why": "a coffee boutique and a fine-dining brasserie; not for children"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "The resort's or Macau Tower's own restaurant page, then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Yoshimori Teppanyaki (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/yoshimori-teppanyaki/",
+          "map": "Google Maps: open, a review 15 days ago"
+        },
+        {
+          "name": "The Ritz-Carlton Café (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/the-ritz-carlton-cafe/",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Lord Stow's Bakery & Café (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/lord-stow-bakery-cafe.html",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Hip Seng Seafood Hot Pot (Galaxy)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/hip-seng-seafood-hot-pot-restaurant/",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "360° Café (Macau Tower)",
+          "src": "https://www.macautower.com.mo/en/dining/360-cafe/",
+          "map": "Google Maps: open, a review 4 days ago"
+        },
+        {
+          "name": "Bi Ying (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/bi-ying",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Herbal Treasures (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/dining/herbal-treasures",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Tai Er (The Londoner)",
+          "src": "https://www.londonermacao.com/macau-restaurants/tai-er.html",
+          "map": "Google Maps: open, newest review 2 months ago"
+        },
+        {
+          "name": "Edo Japanese Restaurant (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/edo.html",
+          "map": "Google Maps: open, a review 25 days ago"
+        },
+        {
+          "name": "Heytea (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/heytea.html",
+          "map": "Google Maps: open, a review 8 days ago"
+        },
+        {
+          "name": "Chagee (The Venetian)",
+          "src": "https://www.venetianmacao.com/restaurants/chagee.html",
+          "map": "Google Maps: open, newest review a day ago"
+        },
+        {
+          "name": "Saffron (Banyan Tree)",
+          "src": "https://www.galaxymacau.com/dining/restaurants/saffron/",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Lua Azul (Macau Tower)",
+          "src": "https://www.macautower.com.mo/en/dining/lua-azul/",
+          "map": "Google Maps: open, a review 12 days ago"
+        },
+        {
+          "name": "Tromba Rija (Macau Tower)",
+          "src": "https://www.macautower.com.mo/en/dining/tromba-rija/",
+          "map": "Google Maps: open, newest review 2 weeks ago"
+        },
+        {
+          "name": "Brasserie (The Parisian)",
+          "src": "https://www.parisianmacao.com/restaurants/brasserie.html",
+          "map": "Google Maps: open (Google lists it as a French restaurant), a review a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Café on 4 (Macau Tower)",
+          "why": "marked closed on Google Maps"
+        },
+        {
+          "name": "Kyo Watami, Lobby Café (Studio City), Wu Fang Zhai",
+          "why": "newest Google Maps review 7 months old or more"
+        },
+        {
+          "name": "La Chine, Taste Yue, Good Fortune Kitchen (The Parisian)",
+          "why": "the page says nothing about the food, or the Maps listing found was another branch"
+        },
+        {
+          "name": "Raffles Lounge & Terrace, Glorious BBQ King, Casa da Rosa, Pho 88",
+          "why": "a lounge bar, a low rating or a handful of reviews"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "title": "MICHELIN Guide Hong Kong Macau 2026: every Macau restaurant not yet in the list",
+      "rule": "Owner, 27 Nov 2026 (\"Raise to 200\"): every place from a dated page read in the owner's Chrome, then Google Maps only (not marked closed, a review from the last six months, the map's name matching the page's). OpenRice skipped at the owner's request.",
+      "added": [
+        {
+          "name": "Justindia",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/justindia",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"JUSTINDIA 印象派\": 121 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Nok Song",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/nok-song",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Nok Song\": 42 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "Drunken Fish",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/drunken-fish",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Drunken Fish\": 3 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "Feng Wei Ju",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/feng-wei-ju",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"FENG WEI JU 風味居\": 130 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "Wing Lei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/wing-lei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Wing Lei\": 383 reviews, newest seen 9 days ago, not marked closed"
+        },
+        {
+          "name": "The Eight",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/the-eight",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"The Eight\": 683 reviews, newest seen 20 days ago, not marked closed"
+        },
+        {
+          "name": "Kika",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/kika",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Kika Gelato\": 166 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Ving Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ving-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"榮記豆腐麵食\": 293 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Robuchon au Dôme",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/robuchon-dome",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Robuchon au Dôme\": 450 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Lun Kee Rice Roll",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lun-kee",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lun Kee Cheung Fun Rice roll\": 472 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Ngao Kei Ka Lei Chon",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ngao-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ngao Kei Ka Lei Chon\": 502 reviews, newest seen a week ago, not marked closed"
+        },
+        {
+          "name": "Yi Shun",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/yi-shun",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yee Shun Milk Company\": 844 reviews, newest seen 5 days ago, not marked closed"
+        },
+        {
+          "name": "Lou Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lou-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lou Kei (Fai Chi Kei)\": 136 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "UTM Educational Restaurant",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/utm-rest",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"UTM Educational Restaurant\": 191 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Ying",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ying",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Ying\": 77 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Son Tak Kong",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/son-tak-kong",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Estab De Comidas Son Tak Kong\": 67 reviews, newest seen 26 days ago, not marked closed"
+        },
+        {
+          "name": "Manuel Cozinha Portuguesa",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/manuel",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Manuel\": 184 reviews, newest seen a week ago, not marked closed"
+        },
+        {
+          "name": "Twelve25",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/twelve25",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Twelve25\": 23 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "O Castiço (Taipa)",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/o-castico-taipa",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"O Castiço\": 297 reviews, newest seen a week ago, not marked closed"
+        },
+        {
+          "name": "Lok Kei Noodles",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lok-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lok Kei Noodle\": 699 reviews, newest seen a day ago, not marked closed"
+        },
+        {
+          "name": "Fong Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/fong-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Pastelaria Fong Kei\": 370 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "Unique",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/unique",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"無二湯包 小籠湯包專門店\": 21 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Kapok",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/kapok",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Restaurante Kapok\": 275 reviews, newest seen 28 days ago, not marked closed"
+        },
+        {
+          "name": "Zi Yat Heen",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/zi-yat-heen",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Zi Yat Heen\": 144 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Sushi Kissho by Miyakawa",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/sushi-kissho",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Sushi Kissho by Miyakawa\": 14 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Restaurante Litoral (Taipa)",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/litoral-taipa",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Restaurante Litoral Taipa\": 743 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Mok Yee Kei",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/mok-yee-kei",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Gelatina Mok Yi Kei\": 279 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Alain Ducasse at Morpheus",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/ducasse",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Alain Ducasse at Morpheus\": 79 reviews, newest seen 25 days ago, not marked closed"
+        },
+        {
+          "name": "Estuary by Vicky Cheng",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/estuary",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Estuary by Vicky Cheng\": 3 reviews, newest seen 3 months ago, not marked closed"
+        },
+        {
+          "name": "Sushi Kinetsu",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/sushi-kinetsu",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Sushi Kinetsu\": 24 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Lai Heen",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lai-heen",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lai Heen\": 128 reviews, newest seen 3 months ago, not marked closed"
+        },
+        {
+          "name": "Teppanyaki Shou",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/teppanyaki-shou",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Teppanyaki Shou 承‧铁板料理\": 11 reviews, newest seen 4 months ago, not marked closed"
+        },
+        {
+          "name": "Jade Dragon",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/jade-dragon",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Jade Dragon\": 270 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Yi",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/yi",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Yi\": 29 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Pin Yue Xuan",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/pin-yue-xuan",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Pin Yue Xuan\": 65 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Chef Tam's Seasons",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/chef-tam",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Chef Tam's Seasons\": 73 reviews, newest seen 9 days ago, not marked closed"
+        },
+        {
+          "name": "Lakeview Palace",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/lakeview-palace",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Lakeview Palace\": 135 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "The Mews",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/the-mews",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"The Mews\": 155 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Five Foot Road",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/five-foot-road",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Five Foot Road\": 84 reviews, newest seen 22 days ago, not marked closed"
+        },
+        {
+          "name": "8½ Otto e Mezzo Bombana (Macau)",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/otto-macau",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"8½ Otto e Mezzo BOMBANA\": 109 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Aji",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/aji",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Aji 雅吉\": 55 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "SW Steakhouse",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/sw-steakhouse",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"SW Steakhouse\": 3,179 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Palace Garden",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/palace-garden",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Palace Garden\": 57 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "The Huaiyang Garden",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/huaiyang",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"The Huai Yang Garden\": 116 reviews, newest seen 9 days ago, not marked closed"
+        },
+        {
+          "name": "Pearl Dragon",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/pearl-dragon",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Pearl Dragon\": 154 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Zuicho",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/zuicho",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Zuicho\": 9 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Mesa",
+          "src": "https://guide.michelin.com/hk/en/macau-region/macau/restaurant/mesa",
+          "srcDate": "MICHELIN Guide Hong Kong Macau 2026 selection, page read 2026-11-27",
+          "map": "Google Maps \"Mesa by José Avillez\": 143 reviews, newest seen a day ago, not marked closed"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Kitchen (Grand Lisboa)",
+          "why": "Google Maps: newest review a year old"
+        },
+        {
+          "name": "002 Mohinga",
+          "why": "Google Maps: newest review four years old"
+        },
+        {
+          "name": "Ng Teng Kei (Rua da Praia do Manduco)",
+          "why": "Google Maps: 3 reviews, the newest six years old"
+        },
+        {
+          "name": "Chan Seng Kei (Coloane)",
+          "why": "Google Maps: newest review eight months old"
+        },
+        {
+          "name": "Mizumi (Wynn Palace)",
+          "why": "Google Maps: newest review a year old"
+        },
+        {
+          "name": "Don Alfonso 1890",
+          "why": "Google Maps shows \"Casa Don Alfonso\", a different name; left out until it can be told apart"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The resort's own page (what it is, hours, ages, prices), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months; a show or ride with no listing of its own is checked through its resort's listing.",
+      "added": [
+        {
+          "name": "Nickelodeon Town (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/attractions/nickelodeon-town",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Legend Heroes Park (Studio City)",
+          "src": "https://www.studiocity-macau.com/en/attractions/legend-heroes-park",
+          "map": "Google Maps: open, newest review 2 months ago"
+        },
+        {
+          "name": "Studio City Stardust",
+          "src": "https://www.studiocity-macau.com/en/attractions/studio-city-stardust",
+          "map": "Google Maps: inside Studio City (open, thousands of reviews); the ride has no listing of its own"
+        },
+        {
+          "name": "Gondola rides (The Venetian)",
+          "src": "https://www.venetianmacao.com/hotel/amenities/gondola-rides.html",
+          "map": "Google Maps: Outdoor Gondola Ride, open, a review 28 days ago"
+        },
+        {
+          "name": "Laserama (Galaxy)",
+          "src": "https://www.galaxymacau.com/entertainment/laserama/",
+          "map": "Google Maps: at Galaxy Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Diamond Show (Galaxy)",
+          "src": "https://www.galaxymacau.com/entertainment/galaxy-resort-diamond-show/",
+          "map": "Google Maps: at Galaxy Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Crystal Lobby Show (Galaxy)",
+          "src": "https://www.galaxymacau.com/entertainment/crystal-lobby/",
+          "map": "Google Maps: at Galaxy Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Wynn Macau Performance Lake",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment",
+          "map": "Google Maps: at Wynn Macau (open, thousands of reviews); the lake has no listing of its own here"
+        },
+        {
+          "name": "Tree of Prosperity (Wynn Macau)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment",
+          "map": "Google Maps: inside Wynn Macau (open, thousands of reviews); the show has no listing of its own"
+        },
+        {
+          "name": "Moon Jelly Aquarium (Wynn Macau)",
+          "src": "https://www.wynnresortsmacau.com/en/wynn-macau/experiences/entertainment",
+          "map": "Google Maps: inside Wynn Macau (open, thousands of reviews); the tank has no listing of its own"
+        },
+        {
+          "name": "Sea Odyssey at The Spectacle (MGM Cotai)",
+          "src": "https://www.mgm.mo/en/entertainment/happening/sea-odyssey",
+          "map": "Google Maps: inside MGM Cotai (open, thousands of reviews); the show has no listing of its own"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Studio City Sk8te Park",
+          "why": "no reviews on Google Maps yet"
+        },
+        {
+          "name": "Galaxy Kidz",
+          "why": "hotel guests only"
+        },
+        {
+          "name": "Galaxy Grand Resort Deck",
+          "why": "closed until March 2027, hotel guests only"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "title": "Time Out (Macau 2020; Hong Kong 2025–2026 cha chaan teng and street food guides) and Little Steps Asia (2023 family, 2025 brunch, 2026 breakfast guides)",
+      "rule": "Owner, 27 Nov 2026: older guides allowed for the place and its facts (\"Allow older guides + Maps\"), each place kept only when Google Maps shows it not closed, a review from the last six months and the name and address matching. OpenRice skipped at the owner's request.",
+      "added": [
+        {
+          "name": "Apomac",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Apomac\": 190 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "A Vencedora",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"A Vencedora 坤記餐室\": 405 reviews, newest seen 23 days ago, not marked closed"
+        },
+        {
+          "name": "Bistro d'Indochine (BIC)",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Bistro D’Indochine\": 96 reviews, newest seen 13 days ago, not marked closed"
+        },
+        {
+          "name": "Clube Militar de Macau",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Macau Military Club Restaurant\": 449 reviews, newest seen 10 days ago, not marked closed"
+        },
+        {
+          "name": "Hin Kei",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Estabelcimento de Comida Hin Kei\": 67 reviews, newest seen 8 days ago, not marked closed"
+        },
+        {
+          "name": "Nam Peng Café",
+          "src": "https://www.timeout.com/macau/restaurants/off-the-eaten-path-the-best-restaurants-in-macau-outside-the-casinos",
+          "srcDate": "Time Out Macau, 6 Jan 2020 (older guide, allowed by the owner 27 Nov 2026 with a recent Maps review)",
+          "map": "Google Maps \"Nam Ping Cafe\": 1,292 reviews, newest seen 4 weeks ago, not marked closed"
+        },
+        {
+          "name": "Sei Kee Cafe",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Sei Kee Cafe\": 1,035 reviews, newest seen 4 weeks ago, not marked closed"
+        },
+        {
+          "name": "Choi Lou Kei",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"Choi Lou Kei\": 84 reviews, newest seen 26 days ago, not marked closed"
+        },
+        {
+          "name": "The Home Cafe (Shea I)",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"舍意咖啡室 The Home Cafe\": 26 reviews, newest seen 19 days ago, not marked closed"
+        },
+        {
+          "name": "Ma Hing Hong",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"馬慶康南天咖啡室\": 335 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "Cafe Neptune",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"CAFE Neptune\": 121 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Coloane Pier Noodle Shop",
+          "src": "https://www.timeout.hk/restaurant/macau-best-cha-chaan-teng-cafes",
+          "srcDate": "Time Out Hong Kong, published 29 Aug 2025, updated 17 Sep 2026",
+          "map": "Google Maps \"Coloane Pier Ribbon Soup Shop\": 233 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Chion Chau Cafe",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Cafe Chion Chau\": 146 reviews, newest seen 6 days ago, not marked closed"
+        },
+        {
+          "name": "Comidas Chi Kei",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"梓記牛什\": 111 reviews, newest seen 24 days ago, not marked closed"
+        },
+        {
+          "name": "Daily Meals",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"天天食 Daily Meals\": 9 reviews, newest seen 10 days ago, not marked closed"
+        },
+        {
+          "name": "Hang Heong Un",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Hang Heong Un\": 270 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Jim Sai Padarias",
+          "src": "https://www.timeout.hk/restaurant/a-guide-to-macaus-best-street-food",
+          "srcDate": "Time Out Hong Kong, updated 15 Sep 2026",
+          "map": "Google Maps \"Jim Sai Bakery\": 135 reviews, newest seen a day ago, not marked closed"
+        },
+        {
+          "name": "3 Sardines",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/family-friendly-restaurants-in-macau/",
+          "srcDate": "Little Steps Asia, updated 24 Nov 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"3 Sardines Portuguese Restaurant\": 1,014 reviews, newest seen 2 weeks ago, not marked closed"
+        },
+        {
+          "name": "La Famiglia",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/family-friendly-restaurants-in-macau/",
+          "srcDate": "Little Steps Asia, updated 24 Nov 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"La Famiglia\": 189 reviews, newest seen 5 days ago, not marked closed"
+        },
+        {
+          "name": "La Gondola",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/family-friendly-restaurants-in-macau/",
+          "srcDate": "Little Steps Asia, updated 24 Nov 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"La Gondola 陸舟餐廳\": 135 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Aux Beaux Arts",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-brunches-buffets/",
+          "srcDate": "Little Steps Asia, updated 27 Jan 2025",
+          "map": "Google Maps \"Aux Beaux Arts 寶雅座\": 60 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Hawker Hawker",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-brunches-buffets/",
+          "srcDate": "Little Steps Asia, updated 27 Jan 2025",
+          "map": "Google Maps \"Hawker Hawker\": 84 reviews, newest seen 17 days ago, not marked closed"
+        },
+        {
+          "name": "Belcanção",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-brunches-buffets/",
+          "srcDate": "Little Steps Asia, updated 27 Jan 2025",
+          "map": "Google Maps \"Belcancao\": 76 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "The Grand Buffet (Grand Lisboa Palace)",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"The Grand Buffet\": 543 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "mezza9",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"mezza9 Macau\": 325 reviews, newest seen 3 days ago, not marked closed"
+        },
+        {
+          "name": "The Manor (St. Regis)",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"The Manor\": 170 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Brasserie de Paris",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Brasserie de Paris\": 94 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Praha Restaurante",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Praha Restaurante\": 43 reviews, newest seen 19 days ago, not marked closed"
+        },
+        {
+          "name": "Café Panorama",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Café Panorama\": 23 reviews, newest seen 2 months ago, not marked closed"
+        },
+        {
+          "name": "Vida Rica",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Vida Rica Restaurant\": 65 reviews, newest seen a day ago, not marked closed"
+        },
+        {
+          "name": "Café Fontana",
+          "src": "https://www.littlestepsasia.com/macau/dine/kid-friendly-restaurants/best-hotel-breakfast-buffet/",
+          "srcDate": "Little Steps Asia, 2026 guide, updated 29 May 2026",
+          "map": "Google Maps \"Wynn Palace: Cafe Fontana\": 43 reviews, newest seen 2 months ago, not marked closed"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Blissful Carrot, Casa do Porco Preto, Carlos Restaurant, Medan Indonesian Restaurant, Duckling Gourmet, Lotus Palace, Feast (The Londoner)",
+          "why": "Google Maps marks each permanently closed"
+        },
+        {
+          "name": "Splash (Four Seasons)",
+          "why": "Google Maps marks it temporarily closed"
+        },
+        {
+          "name": "Friendmily, Japas, Hong Heng Tai",
+          "why": "Google Maps: newest review a year or more old"
+        },
+        {
+          "name": "Hon Kee Coffee (Coloane), Alves Cafe",
+          "why": "Google Maps: newest review seven months old"
+        },
+        {
+          "name": "Tacos (Taipa)",
+          "why": "Google Maps shows \"TACOS by miumiu\" at another address"
+        },
+        {
+          "name": "Mei Mei Hin",
+          "why": "Google Maps shows another restaurant (I Food) at its address"
+        },
+        {
+          "name": "Kam Seng, San Hong Cafe",
+          "why": "Google Maps found them only at other addresses than the guide gives"
+        },
+        {
+          "name": "Mistral (Sofitel)",
+          "why": "Google Maps found only the hotel"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "title": "Time Out (Macau cafés 2025–2026, desserts 2024, signature dishes 2023) and Tatler Asia (Macanese and iconic local restaurants 2023, restaurant pages)",
+      "rule": "Owner, 27 Nov 2026: older guides allowed for the place and its facts (\"Allow older guides + Maps\"), each place kept only when Google Maps shows it not closed, a review from the last six months and the name and address matching. OpenRice skipped at the owner's request.",
+      "added": [
+        {
+          "name": "António",
+          "src": "https://www.tatlerasia.com/dining/food/macanese-restaurants-in-macau",
+          "srcDate": "Tatler Asia, 27 Mar 2023, updated 11 Sep 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"António Macau\": 1,120 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Riquexó",
+          "src": "https://www.tatlerasia.com/dining/food/macanese-restaurants-in-macau",
+          "srcDate": "Tatler Asia, 27 Mar 2023, updated 11 Sep 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Riquexó\": 194 reviews, newest seen 18 days ago, not marked closed"
+        },
+        {
+          "name": "Chan Kong Kei",
+          "src": "https://www.tatlerasia.com/dining/food/iconic-restaurants-local-dishes-macau",
+          "srcDate": "Tatler Asia, 20 Mar 2023, updated 18 May 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Chan Kwong Kei BBQ Shop\": 1,370 reviews, newest seen 24 days ago, not marked closed"
+        },
+        {
+          "name": "Seng Cheong",
+          "src": "https://www.tatlerasia.com/dining/food/iconic-restaurants-local-dishes-macau",
+          "srcDate": "Tatler Asia, 20 Mar 2023, updated 18 May 2023 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Seng Cheong\": 1,312 reviews, newest seen 15 days ago, not marked closed"
+        },
+        {
+          "name": "Common Table",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"Common Table Macau\": 194 reviews, newest seen 13 days ago, not marked closed"
+        },
+        {
+          "name": "Lord Stow's Garden Café",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"Lord Stow's Garden Café\": 62 reviews, newest seen 16 days ago, not marked closed"
+        },
+        {
+          "name": "Ora Coffee",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"ORA Coffee and Food\": 29 reviews, newest seen a month ago, not marked closed"
+        },
+        {
+          "name": "Shansheng Coffee",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"Shanshang Coffee\": 97 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "The Rooftop Macau",
+          "src": "https://www.timeout.hk/restaurant/the-best-cafes-and-coffee-shops-in-macau",
+          "srcDate": "Time Out Hong Kong, published 8 Mar 2025, updated 14 Sep 2026",
+          "map": "Google Maps \"ROOFTOP MACAU\": 65 reviews, newest seen 17 days ago, not marked closed"
+        },
+        {
+          "name": "Lai Kei Sorvetes",
+          "src": "https://www.timeout.com/macau/restaurants/macau-dessert-spots-to-try-on-your-next-trip-over",
+          "srcDate": "Time Out, 25 Jun 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Lai Kei Sorvetes\": 621 reviews, newest seen 18 days ago, not marked closed"
+        },
+        {
+          "name": "One Brother Food",
+          "src": "https://www.timeout.com/macau/restaurants/must-try-local-dishes-in-macau",
+          "srcDate": "Time Out, 28 Apr 2023, updated 5 Mar 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"一哥美食 - 水蟹粥\": 411 reviews, newest seen 4 days ago, not marked closed"
+        },
+        {
+          "name": "Cocos Hung Heng",
+          "src": "https://www.timeout.com/macau/restaurants/must-try-local-dishes-in-macau",
+          "srcDate": "Time Out, 28 Apr 2023, updated 5 Mar 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"洪馨記椰子雪糕\": 279 reviews, newest seen 12 days ago, not marked closed"
+        },
+        {
+          "name": "Henri's Galley",
+          "src": "https://www.timeout.com/macau/restaurants/must-try-local-dishes-in-macau",
+          "srcDate": "Time Out, 28 Apr 2023, updated 5 Mar 2024 (older guide, allowed by the owner)",
+          "map": "Google Maps \"HENRI'S Galley\": 134 reviews, newest seen 23 days ago, not marked closed"
+        },
+        {
+          "name": "Quarter Square",
+          "src": "https://www.timeout.hk/restaurant/quarter-square",
+          "srcDate": "Time Out Hong Kong venue page, updated 16 Sep 2026",
+          "map": "Google Maps \"Quarter Square\": 10 reviews, newest seen 11 days ago, not marked closed"
+        },
+        {
+          "name": "Guincho a Galera",
+          "src": "https://www.tatlerasia.com/dining/guincho-a-galera",
+          "srcDate": "Tatler Asia restaurant page, 9 Jul 2026",
+          "map": "Google Maps \"Guincho a Galera\": 521 reviews, newest seen 2 days ago, not marked closed"
+        },
+        {
+          "name": "Tapas de Portugal",
+          "src": "https://www.tatlerasia.com/dining/casa-de-tapas-macau",
+          "srcDate": "Tatler Asia restaurant page, 2017 (older guide, allowed by the owner)",
+          "map": "Google Maps \"Tapas de Portugal\": 319 reviews, newest seen 9 days ago, not marked closed"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Tou Tou Koi",
+          "why": "Google Maps marks it permanently closed (Time Out's page still lists it)"
+        },
+        {
+          "name": "Bookand, Soul of Seed, Lemon Cello, Da Tie Tofu Pudding, Choi Heong Yuen",
+          "why": "Google Maps: newest review seven months or more old"
+        },
+        {
+          "name": "Sichuan Moon, Lucky Tree Coffee, Shuxia Coffee, Padaria Wai Kei, Fat Siu Lau 2",
+          "why": "Google Maps found no matching place (the hotel, another café or another branch)"
+        },
+        {
+          "name": "Bamboo bistro & bar",
+          "why": "a karaoke bar at night (nightlife is left out)"
+        },
+        {
+          "name": "Terra, Kam Lei, Goat Bakers",
+          "why": "chains with several branches and none named"
+        },
+        {
+          "name": "Gosto (Galaxy)",
+          "why": "Google Maps shows another restaurant (Gaga) in its place"
+        }
+      ]
+    },
+    {
+      "kind": "eats",
+      "checked": "2026-11-27",
+      "rule": "A dated or official source (the Macao Government Tourism Office's restaurant register, holders of its Quality Tourism Services Merchant Award; hongkong-trip.com's Macau food guide, 2026; Trip.com's Macau restaurants, updated November 2026), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months; what a place serves is the source's or Google's own category.",
+      "added": [
+        {
+          "name": "Restaurante Fat Siu Lau",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Cozinha Pinocchio (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Miramar (Hac Sa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 11 days ago"
+        },
+        {
+          "name": "Brown & Friends Cafe & Bistro (Lisboeta)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 20 days ago"
+        },
+        {
+          "name": "Shanghai 4.5.6 (Hotel Lisboa)",
+          "src": "https://www.macaotourism.gov.mo/en/dining/restaurant",
+          "map": "Google Maps: open, a review 5 months ago"
+        },
+        {
+          "name": "Chinese Cafe Imprint (Studio City)",
+          "src": "https://www.trip.com/restaurant/macau-39/2/",
+          "map": "Google Maps: open, a review 7 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Café Noite e Dia",
+          "why": "the register says closed temporarily"
+        },
+        {
+          "name": "Belcanção (Four Seasons), Café Panorama (Grand Coloane), Guincho a Galera (Hotel Lisboa), Hang Heong Un, Henri's Galley, La Gondola (Cheoc Van), Lord Stow's Bakery (Taipa), Praha (Harbourview Hotel), Riquexó, Sei Kee Cafe (Taipa), The Grand Buffet (Grand Lisboa Palace), Vida Rica (Mandarin Oriental), Macau Military Club Restaurant, Nam Ping Cafe, Coloane Pier Ribbon Soup Shop",
+          "why": "already added by the other session's rounds 2–3 (#887, #888) under its own names"
+        },
+        {
+          "name": "Kwun Hoi Heen, Catalpa Garden, Dong Guo, Golden Court, Li Jing Xuan, Temptations, The Kitchen, Villa Picasso, Restaurante Amigo, Valência, Gold Coast Oyster & Seafood, Fei Chai Man",
+          "why": "newest Google Maps review six months old or more"
+        },
+        {
+          "name": "Splash",
+          "why": "marked temporarily closed on Google Maps"
+        },
+        {
+          "name": "Ka Nin Wa, Ping, Zam Zam",
+          "why": "neither the register nor Google says what they serve"
+        },
+        {
+          "name": "Tim Fat Vun Chai Chi",
+          "why": "its highlight is shark fin soup"
+        },
+        {
+          "name": "Brilliant Lake (Hotel Guia), Federal Restaurant, Hao Guo (MGM Cotai), Hua Ting (Grand Lisboa Palace), Hoi Wan Café, Imperial Kitchen (Crowne Plaza), Kam Lai Heen (Grand Lapa), La Cucina Italiana (Taipa), Naam Thai (Grand Lapa), Portas do Sol (Hotel Lisboa), Nga Heong Burmese Restaurant, Kam Wan (Northeastern Chinese), Antica Trattoria, Round-the-Clock Coffee Shop (Grand Lisboa), Shun Hin Seafood Restaurant, Signature Noodles (Lisboeta), Stanley's Cafe (Lisboeta), Wa Fong Restaurant, Talay Thai (Fisherman's Wharf), Tenmasa (Altira), Café Bela Vista (Grand Lapa), Copa Steakhouse (Sands Macao), Dom Galo, Naughty Nuri's, Café Vong Kei, Café Ip Chi Kei, Samurai Fish (Tap Seac), Aurora (Altira), Restaurante Solmar, Uncle Bo Noodle Restaurant, DIVA (Studio City), Macao Galo",
+          "why": "also confirmed open with a recent review, but Macau reached its 200-place limit (the other session added rounds 2–3 meanwhile); kept here for a later swap"
+        },
+        {
+          "name": "Casa Maquista, Ou Pou, Sun Yick and other Maps favourites",
+          "why": "no dated source found in this round"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The Macao Government Tourism Office's own sightseeing page (description, address, hours, fees), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Communications Museum",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/communications-museum",
+          "map": "Google Maps: open, a review 23 days ago"
+        },
+        {
+          "name": "Fire Services Museum",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/fire-services-museum",
+          "map": "Google Maps: open, a review 25 days ago"
+        },
+        {
+          "name": "Handover Gifts Museum of Macao",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/handover-gifts-museum-of-macao",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Mandarin's House",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/mandarins-house",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Museum of Taipa and Coloane History",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-taipa-and-coloane-history",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Tak Seng On pawnshop",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/heritage-exhibition-of-a-traditional-pawnshop-business",
+          "map": "Google Maps: open, newest review a month ago"
+        },
+        {
+          "name": "Lin Zexu Memorial Museum",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/lin-zexu-memorial-museum-of-macao",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Lin Fong Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/lin-fong-temple",
+          "map": "Google Maps: Lin Fung Temple, open, a review 10 days ago"
+        },
+        {
+          "name": "Camões Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/luis-de-camoes-park",
+          "map": "Google Maps: open, a review 2 days ago"
+        },
+        {
+          "name": "Flower City Park (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/flower-city-park",
+          "map": "Google Maps: Garden of Flower City, open, a review 5 months ago"
+        },
+        {
+          "name": "Coloane Hill park and A-Ma statue",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/coloane-height-park-and-statue-of-a-ma",
+          "map": "Google Maps: A-Má Goddess Statue, open, a review 5 months ago"
+        },
+        {
+          "name": "A-Ma Cultural Village",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/a-ma-cultural-village",
+          "map": "Google Maps: open, a review 16 days ago"
+        },
+        {
+          "name": "Taipa Municipal Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/taipa-municipal-garden",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Macau Fisherman's Wharf",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macau-fishermans-wharf",
+          "map": "Google Maps: open, a review a day ago"
+        },
+        {
+          "name": "Lai Chi Vun Shipyards",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/lai-chi-vun-shipyards",
+          "map": "Google Maps: Estaleiros Navais de Lai Chi Vun, open, a review 2 days ago"
+        },
+        {
+          "name": "Taipa Grande Viewing Platform",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/taipa-grande-viewing-platform",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Lotus Square",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/lotus-square",
+          "map": "Google Maps: open, a review 12 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Macao Tea Culture House",
+          "why": "Google Maps marks it closed"
+        },
+        {
+          "name": "Coloane Pier",
+          "why": "Google Maps marks it closed; newest review years old"
+        },
+        {
+          "name": "The Grande Praça at MGM Macau",
+          "why": "no listing of its own on Google Maps"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The Macao Government Tourism Office's own sightseeing page (description, address, hours, fees), then Google Maps in the owner's Chrome: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Comendador Ho Yin Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/comendador-ho-yin-park",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Dr. Sun Yat Sen Municipal Park",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/dr-sun-yat-sen-municipal-park",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Mong-Ha Hill park and fort",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/mong-ha-hill-municipal-park",
+          "map": "Google Maps: Mong-Ha Fort, open, a review 15 days ago"
+        },
+        {
+          "name": "Macao Cultural Centre",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macao-cultural-centre",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Chapel of Our Lady of Penha",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/churches/chapel-of-our-lady-of-penha",
+          "map": "Google Maps: open, a review 8 days ago"
+        },
+        {
+          "name": "Lilau Square",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/lilau-square",
+          "map": "Google Maps: open, a review 3 days ago"
+        },
+        {
+          "name": "Kun Iam Tong",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/kun-iam-tong",
+          "map": "Google Maps: Templo de Kun Iam, open, a review 6 days ago"
+        },
+        {
+          "name": "Pak Tai Temple (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pak-tai-temple-in-taipa",
+          "map": "Google Maps: open, a review 4 months ago"
+        },
+        {
+          "name": "Na Tcha Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/na-tcha-temple",
+          "map": "Google Maps: open, a review 4 days ago"
+        },
+        {
+          "name": "Lou Kau Mansion",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/lou-kau-mansion",
+          "map": "Google Maps: open, a review 29 days ago"
+        },
+        {
+          "name": "Dr. Sun Yat-sen Memorial House",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/dr-sun-yat-sen-memorial-house-in-macau",
+          "map": "Google Maps: open, a review 11 days ago"
+        },
+        {
+          "name": "Museum of the Macao Security Forces",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-the-macao-security-forces",
+          "map": "Google Maps: open, newest review 3 months ago"
+        },
+        {
+          "name": "Sir Robert Ho Tung Library",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/sir-robert-ho-tung-library",
+          "map": "Google Maps: open, a review 4 days ago"
+        },
+        {
+          "name": "St. Joseph's Seminary Church",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/churches/st-josephs-seminary-and-church",
+          "map": "Google Maps: open, a review 5 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "St. Dominic's Church",
+          "why": "Google Maps and the tourism office both mark it temporarily closed"
+        },
+        {
+          "name": "Montanha Russa Park",
+          "why": "newest Google Maps review 10 months old"
+        },
+        {
+          "name": "Tam Kong Temple",
+          "why": "no recent review could be confirmed"
+        },
+        {
+          "name": "Border Gate",
+          "why": "no listing of its own on Google Maps"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The Macao Government Tourism Office's own sightseeing page (description, address, hours, fees), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Former Iec Long Firecracker Factory",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/former-iec-long-firecracker-factory",
+          "map": "Google Maps: open, a review 26 days ago"
+        },
+        {
+          "name": "Dr. Carlos d'Assumpção Park",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/dr-carlos-dassumpcao-park",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "S. Francisco Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/s-francisco-garden",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Vasco da Gama Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/gardens/vasco-da-gama-garden",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Macau Cathedral",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/cathedral",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "St. Augustine's Church",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-augustines-church",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "St. Lawrence's Church",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-lawrences-church",
+          "map": "Google Maps: open, a review 3 days ago"
+        },
+        {
+          "name": "St. Anthony's Church",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/st-anthonys-church",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Casa Garden",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/casa-garden",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Museum of the Holy House of Mercy",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/museum-of-the-holy-house-of-mercy",
+          "map": "Google Maps: Holy House of Mercy, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Sam Kai Vui Kun",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/sam-kai-vui-kun-kuan-tai-temple",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Macao Central Library",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/macao-central-library",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Coloane Library",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/coloane-library",
+          "map": "Google Maps: open, a review 5 days ago"
+        },
+        {
+          "name": "Moorish Barracks",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/moorish-barracks",
+          "map": "Google Maps: open, a review 4 weeks ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Macao Tea Culture House",
+          "why": "Google Maps marks it closed"
+        },
+        {
+          "name": "Dom Pedro V Theatre",
+          "why": "the tourism office marks it temporarily closed for renovation"
+        },
+        {
+          "name": "The Patane Night Watch House",
+          "why": "the tourism office marks it temporarily closed"
+        },
+        {
+          "name": "Jao Tsung-I Academy",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Exhibition Room of Master Lu Ban's Woodcraft Works",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Xian Xinghai Memorial Museum",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "The Sculpture Park of the Chinese Ethnics",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Cinematheque Passion",
+          "why": "art and independent films, not a family outing"
+        },
+        {
+          "name": "Macao Contemporary Art Center - Navy Yard No.1",
+          "why": "open only when an exhibition is on"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-27",
+      "rule": "The Macao Government Tourism Office's own sightseeing page, then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Tin Hau Temple (Coloane)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/ancient-temple-of-tin-hau-in-coloane",
+          "map": "Google Maps: Tin Hau Temple Coloane, open, a review a month ago"
+        },
+        {
+          "name": "Kun Iam Temple (Coloane)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/ancient-temple-of-kun-iam-in-coloane",
+          "map": "Google Maps: Kun Iam Temple, Coloane, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Pou Tai Un Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pou-tai-sin-un",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Tin Hau Temple (Taipa)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/tin-hau-temple-in-taipa",
+          "map": "Google Maps: Tin Hau Temple, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Travessa da Paixão (Love Lane)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/travessa-da-paixao",
+          "map": "Google Maps: Tv. da Paixao, a review 5 months ago"
+        },
+        {
+          "name": "Praça de Ponte e Horta",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/other-attractions/praca-de-ponte-e-horta",
+          "map": "Google Maps: a review 2 weeks ago"
+        },
+        {
+          "name": "General Ye Ting's Former Residence",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/museums-and-galleries/general-ye-tings-former-residence",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Pau Kung Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/pao-kong-temple-and-temple-of-divinity-of-medicine",
+          "map": "Google Maps: open, a review 3 months ago"
+        },
+        {
+          "name": "Hong Kung Temple",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/temples/hong-kung-temple",
+          "map": "Google Maps: Hong Chan Kuan Temple, open, a review 5 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Grande Praça at MGM MACAU",
+          "why": "no Google Maps listing of its own (the hotel lobby)"
+        },
+        {
+          "name": "Coloane Pier",
+          "why": "newest Google Maps review 9 months old"
+        },
+        {
+          "name": "Former Municipal Cattle Stable",
+          "why": "no recent Google Maps review could be confirmed"
+        },
+        {
+          "name": "Tung Sin Tong Historical Archive Exhibition Hall",
+          "why": "newest Google Maps review 6 months old"
+        },
+        {
+          "name": "Museum of Sacred Art and Crypt",
+          "why": "no Google Maps review within six months could be confirmed"
+        },
+        {
+          "name": "Rua de Cinco de Outubro",
+          "why": "a street, no reviews to check"
+        },
+        {
+          "name": "Zheng Guanying Memorial Museum",
+          "why": "inside Mandarin's House, already in the library"
+        },
+        {
+          "name": "Protestant Cemetery",
+          "why": "not a family outing"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "Re-sourced: these five cited a Macao News guide first published in March 2023 (updated May 2024), older than the 2025–2026 rule. Each now cites an official page or a guide updated in 2025–2026, and was re-checked on Google Maps (not closed, a review in the last six months).",
+      "resourced": [
+        {
+          "name": "Kun Iam Statue Waterfront",
+          "src": "https://www.littlestepsasia.com/macau/play/cultural-activities/ultimate-toddler-guide-to-macao/",
+          "source": "Little Steps toddler guide, updated 16 Nov 2026",
+          "map": "Google Maps: Kun Iam Ecumenical Center, open, a review a day ago"
+        },
+        {
+          "name": "Happy Farm",
+          "src": "https://yearbook.gcs.gov.mo/yearbook_pdf/2025/myb2025ePA01CH18.pdf",
+          "source": "Macao Yearbook 2025 (government) and the IAM's listing",
+          "map": "Google Maps: Macau Urban Farm, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Oscar Farm",
+          "src": "https://nature.iam.gov.mo/e/edufacility/detail/04cd4379-ed50-40f2-921d-8737a8628fd5",
+          "source": "the IAM's own Oscar Farm page (government)",
+          "map": "Google Maps: open, a review 2 months ago"
+        },
+        {
+          "name": "Aqua World",
+          "src": "https://www.parisianmacao.com/amenities/aqua-world.html",
+          "source": "The Parisian Macao's own Aqua World page",
+          "map": "Google Maps: open, a review a month ago"
+        },
+        {
+          "name": "Future Bright amusement centre",
+          "src": "https://www.littlestepsasia.com/macau/play/indoor-activities/best-playrooms-and-playgrounds-macau/",
+          "source": "Little Steps playrooms guide, updated 10 Dec 2025",
+          "map": "Google Maps: open, a review 3 months ago"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "The Municipal Affairs Bureau's (IAM) own Nature pages (address, area, hours, fee, facilities; site updated 28 Nov 2026), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Taipa Central Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=5571ff2b-219d-4978-a15a-ad5daa43ee5e&type=garden",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Hac Sá Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=3119e6e4-f703-430a-9fc5-4a1914110ff1&type=garden",
+          "map": "Google Maps: open, a review a week ago"
+        },
+        {
+          "name": "Hac Sá Reservoir Natural Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=9bdd239f-a241-4c95-b9bc-6a0f3e4de1a0&type=park",
+          "map": "Google Maps: Hác Sá Reservoir Barbecue Park, open, a review 2 weeks ago"
+        },
+        {
+          "name": "Taipa Grande Natural Park",
+          "src": "https://www.iam.gov.mo/nature/e/facility/park/detail?id=44ca23c2-4486-4eb5-802d-4490ca890d42&type=park",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "Hac Sá Long Chao Kok Coastal Trail",
+          "src": "https://www.iam.gov.mo/nature/e/facility/trail/detail?id=4a8be116-77eb-4a35-95e9-5d6e82ba4b23&type=trails",
+          "map": "Google Maps: open, a review 3 weeks ago"
+        },
+        {
+          "name": "Leisure Area on Taipa Waterfront",
+          "src": "https://www.iam.gov.mo/nature/e/facility/trail/detail?id=0cde451c-3225-4ba3-ab39-8ac564025ed8&type=trails",
+          "map": "Google Maps: open, a review a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Coloane Children's Park",
+          "why": "its Google Maps listing could not be confirmed"
+        },
+        {
+          "name": "Ká Hó Reservoir Natural Park",
+          "why": "newest Google Maps review 2 years old"
+        },
+        {
+          "name": "Seac Pai Van Urban Park",
+          "why": "no Google Maps reviews"
+        },
+        {
+          "name": "Morro de Hac Sá Family Trail",
+          "why": "no Google Maps listing of its own"
+        },
+        {
+          "name": "Iao Hon Market Park and Areia Preta Urban Park",
+          "why": "neighbourhood parks far from where visitors stay"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "The Municipal Affairs Bureau's (IAM) own Nature pages (education facilities, leisure areas), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Pavilion of Animal Specimens in Macao",
+          "src": "https://www.iam.gov.mo/nature/e/facility/educational/detail?id=782e4458-216c-4cac-b1f8-4575b51e8bea&type=educational",
+          "map": "Google Maps: 澳門動物標本展示館, open, a review 5 days ago"
+        },
+        {
+          "name": "Wetland science zone, Avenida da Praia (Taipa)",
+          "src": "https://www.iam.gov.mo/nature/e/facility/educational/detail?id=13e2bbed-a023-4d3d-9598-07e4177f820f&type=educational",
+          "map": "Google Maps: Wetland in Avenida da Praia, Taipa, a review 3 days ago"
+        },
+        {
+          "name": "Sai Van Lake leisure area",
+          "src": "https://www.iam.gov.mo/nature/e/facility/rest/detail?id=52d400df-7154-4df9-860a-1dbf9bb6f6af&type=rest",
+          "map": "Google Maps: Sai Van Lake, a review 2 months ago"
+        },
+        {
+          "name": "South Shore Waterfront Green Promenade",
+          "src": "https://www.iam.gov.mo/nature/e/facility/rest/detail?id=f1d54981-0ec0-4e40-a404-c66963afd07c&type=rest",
+          "map": "Google Maps: open, a review 4 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pavilion of Amphibians and Reptiles",
+          "why": "no Google Maps listing of its own (inside Seac Pai Van Park)"
+        },
+        {
+          "name": "Garden of Exotic Plants and Garden of Medicinal Plants",
+          "why": "inside Seac Pai Van Park, already in the library"
+        },
+        {
+          "name": "Hac Sá Beach Campsite",
+          "why": "the IAM marks it temporarily closed"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "An official page (the Marine and Water Bureau notice of 4 Sep 2026 that watches Cheoc Van Beach, with the Macao Yearbook 2025 naming the beach and its pool; Lisboeta Macau's own attraction pages), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Cheoc Van Beach",
+          "src": "https://www.gcs.gov.mo/news/detail/pt/N26ID0d78U",
+          "map": "Google Maps: open, a review 2 weeks ago"
+        },
+        {
+          "name": "ZIPCITY (Lisboeta)",
+          "src": "https://www.lisboetamacau.com/en/enjoy/zipcity/",
+          "map": "Google Maps: ZIPCITY Macau, open, a review 2 hours ago"
+        },
+        {
+          "name": "Fun Fun Kart (Lisboeta)",
+          "src": "https://www.lisboetamacau.com/en/enjoy/funfunkart/",
+          "map": "Google Maps: FunFunKart, open, a review 2 months ago"
+        }
+      ],
+      "also": [
+        "https://yearbook.gcs.gov.mo/yearbook_pdf/2025/myb2025ePA01CH17.pdf"
+      ],
+      "left_out": [
+        {
+          "name": "Anim'Arte NAM VAN water bikes",
+          "why": "Google Maps marks it permanently closed (the 2025 yearbook still lists it)"
+        }
+      ]
+    },
+    {
+      "kind": "sights",
+      "checked": "2026-11-28",
+      "rule": "An official page (MGTO's World Heritage page, updated 29 Jul 2025; Lisboeta Macau's own attraction page), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Leal Senado Building (IAM Building)",
+          "src": "https://www.macaotourism.gov.mo/en/sightseeing/macao-world-heritage/leal-senado-building",
+          "map": "Google Maps: Municipal Affairs Bureau, open, a review 23 hours ago"
+        },
+        {
+          "name": "BeeBeeLand (Lisboeta)",
+          "src": "https://www.lisboetamacau.com/en/enjoy/beebeeland/",
+          "map": "Google Maps: BEEBEELAND 蜂狂天地, open, a review 2 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "St. Dominic's Church and its Treasure of Sacred Art",
+          "why": "MGTO says closed for maintenance until about October 2026; Google Maps still marks the museum temporarily closed, newest review 8 months ago"
+        },
+        {
+          "name": "H853 The Pool Skate Park",
+          "why": "Lisboeta's page says coming soon"
+        },
+        {
+          "name": "H853 Entertainment Place",
+          "why": "a concert venue, not a family attraction"
+        }
+      ]
+    }
+  ]
+}

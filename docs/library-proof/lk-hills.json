@@ -1,0 +1,96 @@
+{
+  "town": "lk-hills",
+  "rounds": [
+    {
+      "town": "lk-hills",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Hela Bojun Hala",
+          "src": "https://www.google.com/maps/place/Hela+Bojun+Hala+-+Gannoruwa/@7.2727724,80.6030309,17z",
+          "page_name": "Hela Bojun Hala - Gannoruwa",
+          "evidence": "Google Maps: health food restaurant, 4.4★, Gannoruwa Road (7JF3+462), located in the Gannoruwa Agricultural Complex near Peradeniya, 'Open · Closes 7 PM'; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Sharon Inn",
+          "src": "https://www.google.com/maps/place/Sharon+Inn/@7.2872307,80.6420901,17z",
+          "evidence": "Google Maps: 'Sharon Inn', 3-star hotel, 4.2★, on the hillside above Kandy, but no prices ('Contact this property for rates and availability'), and nothing current shows its dinner buffet"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "town": "lk-hills",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 9 of 18 rows from Flashpacking Family (2025), Sri Lanka Villa (2025), Away with the Steiners (2026) and Travel Triangle (2025) passed library-check.cjs, 6 went in",
+      "added": [
+        {
+          "name": "Honey Pot Restaurant",
+          "page_name": "Honeypot Restaurant",
+          "src": "https://www.srilanka-villa.com/guide/?p=833",
+          "date": "2025-08",
+          "map": "Google Maps 'Honey Pot Restaurant', 559 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Little Adam's Peak",
+          "page_name": "Little Adam’s Peak",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "date": "2025-06",
+          "map": "Google Maps 'Little Adam's Peak Trailhead', 815 reviews, newest '3 days ago'"
+        },
+        {
+          "name": "Ravana Falls",
+          "page_name": "Ravana Falls",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "date": "2025-06",
+          "map": "Google Maps 'Ravana waterfall', 5,490 reviews, newest '3 hours ago'"
+        },
+        {
+          "name": "Dambulla Cave Temple",
+          "page_name": "Dambulla Cave Temples",
+          "src": "https://awaywiththesteiners.com/sigiriya-with-kids/amp/",
+          "date": "2026-02",
+          "map": "Google Maps 17,219 reviews, newest '8 hours ago'"
+        },
+        {
+          "name": "Pidurangala Rock",
+          "page_name": "Pidurangala Rock",
+          "src": "https://awaywiththesteiners.com/sigiriya-with-kids/amp/",
+          "date": "2026-02",
+          "map": "Google Maps 'Pidurangala Royal Cave Temple' (the temple at the foot of the climb), 351 reviews, newest '21 hours ago'"
+        },
+        {
+          "name": "Horton Plains National Park",
+          "page_name": "Horton Plains National Park",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "date": "2025-06",
+          "map": "Google Maps 10,765 reviews, newest '2 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Jasmine Song (Kandy)",
+          "why": "marked permanently closed on Google Maps"
+        },
+        {
+          "name": "Ceylon Tea Factory (Ella)",
+          "why": "the map shows a \"Ceylon Tea Centre\" instead"
+        },
+        {
+          "name": "Kandy to Ella train",
+          "why": "a train ride, not one place"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 // Test runner: each group gets a throw-away Postgres database + DATA_DIR + server on a free port; suites in a group share them.
 //   TEST_DATABASE_URL=postgres://postgres:pg@localhost:5432/postgres npm test     (admin connection; temp databases are created and dropped)
 // Env: TEST_S3_ENDPOINT=http://localhost:4569 (+ TEST_S3_KEY/SECRET) also tests the S3 adapter (s3rver / MinIO).
-//      CHROME=/path/to/chrome to use a specific browser; SHOTS=dir for screenshots (default /tmp/mb-shots).
+//      CHROME=/path/to/chrome to use a specific browser; SHOTS=dir for screenshots (default: a fresh folder under the OS temp dir).
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
@@ -17,7 +17,7 @@ const admin = new Client({ connectionString: process.env.TEST_DATABASE_URL });
 await admin.connect();
 
 const GROUPS = [['test/infra.mjs', 'test/provision.mjs'], ['test/bookshelf.mjs', 'test/push.mjs'], ['test/family.mjs', 'test/emoji.mjs'], ['test/import.mjs'], ['test/story.mjs'], ['test/weather.mjs'], ['test/auth.mjs'], ['test/devices.mjs'], ['test/passkey.mjs'], ['test/visual.mjs'], ['test/viewers.mjs'], ['test/offline.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
-  .filter((g) => !process.env.TEST_ONLY || g.some((f) => f.includes(process.env.TEST_ONLY)));   // e.g. TEST_ONLY=ui
+  .filter((g) => !process.env.TEST_ONLY || process.env.TEST_ONLY.split(',').some((o) => o.trim() && g.some((f) => f.includes(o.trim()))));   // e.g. TEST_ONLY=ui, or a list: TEST_ONLY=story,offline (CI runs the groups in parallel parts)
 const freePort = () => new Promise((res) => { const s = net.createServer().listen(0, () => { const p = s.address().port; s.close(() => res(p)); }); });
 
 async function group(suites) {

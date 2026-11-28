@@ -1,0 +1,783 @@
+{
+  "cc": "ma",
+  "towns": [
+    {
+      "place": "ma-fes",
+      "sights": [
+        {
+          "name": { "en": "Jnan Sbil Gardens", "th": "สวนจนันสบิล" },
+          "local": "Jardin Jnan Sbil",
+          "kind": "park",
+          "area": { "en": "Fes, next to the old medina", "th": "เฟส ติดเมืองเก่า" },
+          "what": { "en": "A public garden with a long water channel, shady trees and ponds beside the old medina", "th": "สวนสาธารณะที่มีคลองน้ำยาว ต้นไม้ร่มรื่น และสระ ติดกับเมืองเก่า" },
+          "why": { "en": "Flat shaded paths and space to run, a calm break from the crowded medina", "th": "ทางเรียบมีร่ม มีที่ให้วิ่ง เป็นที่พักจากเมืองเก่าที่แน่น" },
+          "tip": { "en": "Guides say it is open in daylight hours and normally closed on Mondays; it also closes for festival events, so check", "th": "คู่มือระบุเปิดช่วงกลางวัน และมักปิดวันจันทร์ ปิดตอนมีงานเทศกาลด้วย เช็กก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jnan Sbil Gardens, Fes",
+          "ok": "2026-11",
+          "src": "https://www.vanupied.com/fes/parcs-fes/"
+        },
+        {
+          "name": { "en": "Fes el-Bali medina", "th": "เมืองเก่าเฟสเอลบาลี" },
+          "local": "فاس البالي",
+          "kind": "oldtown",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "The walled old city's maze of lanes, craft workshops and souks, listed by UNESCO", "th": "เมืองเก่ามีกำแพง ตรอกซอกซอยเป็นเขาวงกต ร้านงานฝีมือและตลาด ขึ้นทะเบียนยูเนสโก" },
+          "why": { "en": "Narrow, busy lanes with carts: carry the smallest, hold hands and keep the walk short", "th": "ตรอกแคบและคึกคักมีรถเข็นของ อุ้มเด็กเล็ก จูงมือ และเดินช่วงสั้นๆ" },
+          "tip": { "en": "Many families take a half-day guided walk; there is no ticket for the lanes themselves", "th": "หลายครอบครัวจ้างไกด์เดินครึ่งวัน ตัวตรอกเองไม่มีบัตรเข้า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Fes el-Bali, Fes",
+          "ok": "2026-11",
+          "src": "https://departly.pages.dev/to/morocco/fez-el-bali-medina/"
+        },
+        {
+          "name": { "en": "Chouara Tannery viewpoint", "th": "จุดชมโรงฟอกหนังชูอารา" },
+          "local": "Tannerie Chouara",
+          "kind": "culture",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "A terrace over the stone dye pits where hides are coloured, reached through a leather shop", "th": "ระเบียงมองลงไปยังบ่อย้อมหินที่ใช้ย้อมหนัง เดินผ่านร้านขายหนังขึ้นไป" },
+          "why": { "en": "A short, strong-smelling look at old work; shops give mint to sniff, and children may find the smell hard", "th": "ดูงานฝีมือโบราณช่วงสั้นๆ กลิ่นแรง ร้านมีสะระแหน่ให้ดมกลบ เด็กอาจทนกลิ่นยาก" },
+          "tip": { "en": "A 2026 guide says there is no ticket office and a tip is expected; plan 30–45 minutes, mid-morning for the colours", "th": "คู่มือปี 2026 ระบุไม่มีช่องขายบัตร แต่ควรให้ทิป ใช้เวลา 30–45 นาที ช่วงสายสีสวยสุด" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 0.75,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Chouara Tannery, Fes",
+          "ok": "2026-11",
+          "src": "https://departly.pages.dev/to/morocco/chouara-tannery/"
+        },
+        {
+          "name": { "en": "Nejjarine Museum of Wooden Arts and Crafts", "th": "พิพิธภัณฑ์งานไม้เนจจารีน" },
+          "local": "Musée Nejjarine",
+          "kind": "museum",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "A museum of carved wood and craft tools in a restored caravanserai, with a courtyard and a roof terrace", "th": "พิพิธภัณฑ์งานไม้แกะสลักและเครื่องมือช่างในคาราวานซารายที่บูรณะแล้ว มีลานกลางและดาดฟ้า" },
+          "why": { "en": "A compact indoor visit; sources say children can dress up in local clothes for a photo", "th": "เที่ยวในร่มแบบกระชับ แหล่งข้อมูลบอกว่าเด็กลองแต่งชุดท้องถิ่นถ่ายรูปได้" },
+          "tip": { "en": "A tour page sells entry tickets for it; sources disagree on the price and hours, so check on the day", "th": "หน้าทัวร์ขายบัตรเข้า แหล่งข้อมูลระบุราคาและเวลาไม่ตรงกัน เช็กในวันนั้น" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Nejjarine Museum of Wooden Arts and Crafts, Fes",
+          "ok": "2026-11",
+          "src": "https://tourteller.com/fez-d2429/attractions/nejjarine-museum-of-wooden-arts-and-crafts-a1128"
+        },
+        {
+          "name": { "en": "Dar Batha Museum", "th": "พิพิธภัณฑ์ดาร์บาธา" },
+          "local": "Musée Dar Batha",
+          "kind": "museum",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "A palace museum of Moroccan arts around a courtyard garden of tall palms, reopened in early 2025 after restoration", "th": "พิพิธภัณฑ์ในวังแสดงศิลปะโมร็อกโก รอบสวนลานที่มีปาล์มสูง เปิดใหม่ต้นปี 2025 หลังบูรณะ" },
+          "why": { "en": "The shady garden is a place to sit and let children wander; a visitor review mentions clean toilets", "th": "สวนร่มรื่นเหมาะนั่งพักให้เด็กเดินเล่น รีวิวผู้เข้าชมระบุว่ามีห้องน้ำสะอาด" },
+          "tip": { "en": "Blogs disagree on whether it closes Monday or Tuesday and on the price; phone or check before you go", "th": "บล็อกระบุวันปิดไม่ตรงกัน (จันทร์หรืออังคาร) และราคาต่างกัน โทรหรือเช็กก่อนไป" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Dar Batha Museum, Fes",
+          "ok": "2026-11",
+          "src": "https://malika-in-morocco.com/1238/dar-batha-museum-islamic-arts"
+        },
+        {
+          "name": { "en": "Borj Nord arms museum", "th": "พิพิธภัณฑ์อาวุธบอร์จนอร์ด" },
+          "local": "Borj Nord",
+          "kind": "museum",
+          "area": { "en": "Hill north of the medina", "th": "เนินทางเหนือของเมืองเก่า" },
+          "what": { "en": "A 16th-century fort on a hill with an arms museum and a wide view over Fes", "th": "ป้อมศตวรรษที่ 16 บนเนิน มีพิพิธภัณฑ์อาวุธและวิวกว้างทั่วเมืองเฟส" },
+          "why": { "en": "A family blog says its boys loved the weapons; the climb up is steep, so take a taxi with small children", "th": "บล็อกครอบครัวบอกว่าลูกชายชอบอาวุธ ทางขึ้นชัน กับเด็กเล็กควรนั่งแท็กซี่" },
+          "tip": { "en": "Sources disagree on the hours and give 10 or 20 MAD; check at the ticket booth", "th": "แหล่งข้อมูลระบุเวลาไม่ตรงกัน และราคา 10 หรือ 20 MAD เช็กที่ช่องขายบัตร" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Borj Nord, Fes",
+          "ok": "2026-11",
+          "src": "https://travellingfoot.com/best-places-to-visit-in-morocco/tourist-attractions-in-fes/borj-nord"
+        },
+        {
+          "name": { "en": "Volubilis Roman ruins", "th": "ซากโรมันโวลูบิลิส" },
+          "local": "Volubilis",
+          "kind": "culture",
+          "area": { "en": "Near Meknes, about 1 h from Fes", "th": "ใกล้เม็กเนส ห่างเฟสราว 1 ชม." },
+          "what": { "en": "The ruins of a Roman town with mosaic floors and tall columns on an open hillside", "th": "ซากเมืองโรมันที่มีพื้นโมเสกและเสาสูง บนเนินโล่ง" },
+          "why": { "en": "Room to run among the stones, but little shade and uneven ground for a pram", "th": "มีที่วิ่งระหว่างก้อนหิน แต่ร่มเงาน้อยและพื้นไม่เรียบสำหรับรถเข็น" },
+          "tip": { "en": "A guide lists 08:30 until an hour before sunset; it shows two official prices that conflict (100 or 70 MAD), so check", "th": "คู่มือระบุเปิด 08:30 ถึงก่อนอาทิตย์ตก 1 ชม. และมีราคาทางการสองตัวที่ขัดกัน (100 หรือ 70 MAD) เช็กก่อน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Volubilis, Meknes, Morocco",
+          "ok": "2026-11",
+          "src": "https://cityvoyagerhub.com/en/local-culture/volubilis-roman-ruins-visit/"
+        },
+        {
+          "name": { "en": "Heri es-Souani granaries", "th": "ฉางหลวงเฮรีเอสซูอานี" },
+          "local": "Heri es-Souani",
+          "kind": "culture",
+          "area": { "en": "Meknes", "th": "เม็กเนส" },
+          "what": { "en": "Huge cool tunnel-like halls of the royal granaries and stables built by Sultan Moulay Ismail", "th": "ห้องโถงใหญ่เย็นๆ คล้ายอุโมงค์ของฉางและคอกม้าหลวงที่สร้างโดยสุลต่านมูไล อิสมาอิล" },
+          "why": { "en": "A visitor guide says the big halls fascinate children; a short, cool stop", "th": "คู่มือผู้เข้าชมบอกว่าห้องโถงใหญ่ดึงดูดเด็ก เป็นจุดแวะสั้นๆ ที่เย็นสบาย" },
+          "tip": { "en": "Sources give about 45–60 minutes, mornings are pleasanter, and the price differs by source", "th": "แหล่งข้อมูลระบุใช้เวลาราว 45–60 นาที ตอนเช้าสบายกว่า และราคาต่างกันตามแหล่ง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Heri es-Souani, Meknes",
+          "ok": "2026-11",
+          "src": "https://www.travellingfoot.com/best-places-to-visit-in-morocco/tourist-attractions-in-meknes/heri-es-souani"
+        },
+        {
+          "name": { "en": "Azrou cedar forest and Ifrane", "th": "ป่าซีดาร์อัซรูและอิฟราน" },
+          "local": "Forêt de cèdres d'Azrou",
+          "kind": "nature",
+          "area": { "en": "Middle Atlas, about 1.5 h from Fes", "th": "มิดเดิลแอตลาส ห่างเฟสราว 1.5 ชม." },
+          "what": { "en": "A day trip to the cedar forest where Barbary macaques may be seen, with the Swiss-style town of Ifrane on the way", "th": "ทริปวันเดียวไปป่าซีดาร์ที่อาจเจอลิงแสมบาร์บารี ผ่านเมืองอิฟรานแบบสวิส" },
+          "why": { "en": "Sightings are not certain; a guide asks visitors not to feed the monkeys, so tell the children", "th": "ไม่แน่ว่าจะเจอลิง คู่มือขอไม่ให้ป้อนอาหารลิง ควรบอกเด็กก่อน" },
+          "tip": { "en": "Tours loop through Ifrane and the forest for about an hour's stop there; Ifrane is a ski town, so winter weather is cold", "th": "ทัวร์วนผ่านอิฟรานและป่า หยุดที่ป่าราวหนึ่งชั่วโมง อิฟรานเป็นเมืองสกี หน้าหนาวอากาศเย็น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 8,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Azrou Cedar Forest, Morocco",
+          "ok": "2026-11",
+          "src": "https://evanevans.headout.com/day-trips/from-fes-day-trip-to-middle-atlas-mountains-and-monkey-forest-with-barbary-macaques-e-45427/"
+        },
+        {
+          "name": { "en": "Ras el Maa waterfall, Chefchaouen", "th": "น้ำตกราสเอลมา เชฟชาอูน" },
+          "local": "Ras El Maa",
+          "kind": "nature",
+          "area": { "en": "Chefchaouen", "th": "เชฟชาอูน" },
+          "what": { "en": "A spring and small waterfall at the edge of the blue town, where children paddle and cafés serve tea", "th": "ธารน้ำและน้ำตกเล็กที่ขอบเมืองสีฟ้า เด็กลงเล่นน้ำได้ มีร้านชา" },
+          "why": { "en": "Close to the medina and cool for a splash; the path is short but uneven", "th": "อยู่ใกล้เมืองเก่าและเย็นสบายสำหรับเล่นน้ำ ทางสั้นแต่ไม่เรียบ" },
+          "tip": { "en": "Chefchaouen is a long way from Fes, so most families stay a night or take a full-day trip", "th": "เชฟชาอูนอยู่ไกลจากเฟส ครอบครัวส่วนใหญ่พักค้างหนึ่งคืนหรือไปเช้าเย็นกลับ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Ras El Maa, Chefchaouen",
+          "ok": "2026-11",
+          "src": "https://travelynnfamily.com/chefchaouen-with-kids/"
+        },
+        {
+          "name": { "en": "Chefchaouen Kasbah and museum", "th": "ป้อมกัสบาห์และพิพิธภัณฑ์เชฟชาอูน" },
+          "local": "Kasbah Chefchaouen",
+          "kind": "museum",
+          "area": { "en": "Plaza Uta el-Hammam, Chefchaouen", "th": "จัตุรัสอูตาเอลฮัมมัม เชฟชาอูน" },
+          "what": { "en": "A restored fortress on the main square with a small museum, gardens and a tower with a view over the blue quarter", "th": "ป้อมที่บูรณะแล้วบนจัตุรัสหลัก มีพิพิธภัณฑ์เล็ก สวน และหอชมวิวย่านสีฟ้า" },
+          "why": { "en": "A garden to rest in and a tower to climb; the museum is small and quick", "th": "มีสวนให้พักและหอให้ปีน พิพิธภัณฑ์เล็กและดูได้เร็ว" },
+          "tip": { "en": "No current ticket price was found; one day-trip listing bundles the Kasbah museum, so ask at the gate", "th": "ยังไม่พบราคาบัตรปัจจุบัน รายการทัวร์หนึ่งรวมค่าเข้าพิพิธภัณฑ์ไว้ ถามที่ประตู" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kasbah Museum, Chefchaouen",
+          "ok": "2026-11",
+          "src": "https://travelynnfamily.com/chefchaouen-with-kids/"
+        },
+        {
+          "name": { "en": "Bab Boujloud (the Blue Gate)", "th": "บับ บูจลูด (ประตูสีน้ำเงิน)" },
+          "kind": "oldtown",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "The blue-tiled gate of 1913 where most visitors enter the old medina", "th": "ประตูกระเบื้องสีน้ำเงินปี 1913 ทางเข้าหลักสู่เมืองเก่า" },
+          "why": { "en": "Colourful and free to see; a good starting point before the narrow lanes", "th": "สีสวย ดูฟรี เป็นจุดเริ่มก่อนเข้าซอยแคบ" },
+          "tip": { "en": "Taxis stop here, as they cannot enter the medina; use a carrier, not a pram", "th": "แท็กซี่ส่งที่นี่เพราะเข้าเมืองเก่าไม่ได้ ใช้เป้อุ้มดีกว่ารถเข็น" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Bab Bou Jeloud, Fes el-Bali, Fes",
+          "ok": "2026-11",
+          "src": "https://loudavymkrokem.cz/en/fes-morocco-guide/"
+        },
+        {
+          "name": { "en": "Bou Inania Madrasa", "th": "มาดราซาบูอินานียา" },
+          "kind": "culture",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "A 14th-century school with tile work, carved cedar and a calm courtyard", "th": "โรงเรียนเก่าศตวรรษที่ 14 มีกระเบื้องโมเสก ไม้ซีดาร์แกะสลัก และลานกลางสงบ" },
+          "why": { "en": "Short to visit and rich in colour and pattern for curious children", "th": "ใช้เวลาเที่ยวสั้น สีสันและลวดลายเยอะ เด็กช่างสังเกตชอบ" },
+          "tip": { "en": "Open 9 am to 6 pm, closing briefly at prayer times", "th": "เปิด 09:00–18:00 น. ปิดชั่วคราวตอนเวลาละหมาด" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Medersa Bou Inania, Talaa Kebira, Fes",
+          "ok": "2026-11",
+          "src": "https://loudavymkrokem.cz/en/fes-morocco-guide/"
+        },
+        {
+          "name": { "en": "Al-Attarine Madrasa", "th": "มาดราซาอัล-อัตตารีน" },
+          "kind": "culture",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "A small 14th-century school known for its geometric tile and plaster work", "th": "โรงเรียนเก่าขนาดเล็กศตวรรษที่ 14 เด่นเรื่องกระเบื้องและปูนปั้นลายเรขาคณิต" },
+          "why": { "en": "Compact and quiet, with patterns children enjoy spotting", "th": "เล็กและเงียบ มีลวดลายให้เด็กๆ ตามหา" },
+          "tip": { "en": "Open 9 am to 6 pm; go early for fewer people", "th": "เปิด 09:00–18:00 น. ไปเช้าคนน้อยกว่า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Al-Attarine Madrasa, Fes el-Bali, Fes",
+          "ok": "2026-11",
+          "src": "https://loudavymkrokem.cz/en/fes-morocco-guide/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Merenid Tombs viewpoint", "th": "จุดชมวิวสุสานเมรีนิด" },
+          "kind": "views",
+          "area": { "en": "Hill above Fes el-Bali", "th": "เนินเหนือเฟสเอลบาลี" },
+          "what": { "en": "Ruined 14th-century tombs on a hill with a wide view over the whole medina", "th": "ซากสุสานศตวรรษที่ 14 บนเนินเขา มองเห็นเมดินาทั้งเมือง" },
+          "why": { "en": "A short climb to a big view; the open hilltop gives children room to run before sunset", "th": "เดินขึ้นเนินสั้นๆ ได้วิวกว้าง ยอดเขาโล่งให้เด็กวิ่งเล่นก่อนพระอาทิตย์ตก" },
+          "tip": { "en": "Go for sunset but leave before dark; a taxi from Bab Boujloud is short and cheap", "th": "ไปชมพระอาทิตย์ตกแต่กลับก่อนมืด นั่งแท็กซี่จากบาบบูจลูดใกล้และไม่แพง" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Merenid Tombs, Fes, Morocco",
+          "src": "https://thirdeyetraveller.com/merenid-tombs-in-fes-best-viewpoint/"
+        },
+        {
+          "local": "Bouzafer Mosque",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.sharingthewander.com/chefchaouen-with-kids/",
+          "name": {
+            "th": "จุดชมวิวมัสยิดสเปน",
+            "en": "Spanish Mosque viewpoint"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือเมดินา เชฟชาอูน",
+            "en": "Above the medina, Chefchaouen"
+          },
+          "what": {
+            "th": "จุดชมวิว ขึ้นบันไดจากแม่น้ำ มองลงไปเห็นเมืองสีฟ้า",
+            "en": "A viewpoint up the steps from the river, looking down over the blue town"
+          },
+          "why": {
+            "th": "นั่งบนกำแพงแล้วมองลงไปยังเมือง",
+            "en": "Sit on the wall and look down over the town"
+          },
+          "tip": {
+            "th": "คนนิยมไปตอนพระอาทิตย์ตก เข้าไปในมัสยิดไม่ได้",
+            "en": "Popular at sunset; you cannot go inside the mosque"
+          },
+          "q": "Bouzafer Mosque, Chefchaouen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bab el-Mansour",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timetravelturtle.com/things-in-meknes-morocco/",
+          "name": {
+            "th": "ประตูบับมันซูร์",
+            "en": "Bab Mansour"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "จัตุรัสเอลเฮดิม เม็กเนส",
+            "en": "Place el-Hedim, Meknes"
+          },
+          "what": {
+            "th": "หนึ่งในประตูใหญ่สู่เมืองเก่าผ่านกำแพงเมือง",
+            "en": "One of the huge gates into the old city through its walls"
+          },
+          "why": {
+            "th": "จุดถ่ายรูปเด่น หน้าจัตุรัสที่คึกคัก",
+            "en": "A strong photo stop on a lively square"
+          },
+          "q": "Bab el-Mansour, Meknes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ไม่มีค่าเข้า",
+            "en": "No entrance fee"
+          },
+          "book": "none",
+          "src": "https://www.timetravelturtle.com/things-in-meknes-morocco/",
+          "name": {
+            "th": "สุสานมูเลย์อิสมาอิล",
+            "en": "Mausoleum of Moulay Ismail"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ใกล้ประตูบับมันซูร์ เม็กเนส",
+            "en": "Near Bab Mansour, Meknes"
+          },
+          "what": {
+            "th": "สุสานของมูเลย์อิสมาอิลที่ตกแต่งงดงาม",
+            "en": "The lavishly decorated mausoleum of Moulay Ismail"
+          },
+          "why": {
+            "th": "ถอดรองเท้าแล้วเดินชมห้องด้านใน",
+            "en": "Walk round the inner rooms once your shoes are off"
+          },
+          "tip": {
+            "th": "เปิดจันทร์–ศุกร์ 9:00–18:30 ถอดรองเท้าก่อนเข้า",
+            "en": "Open Monday to Friday 9:00 to 18:30; take off your shoes"
+          },
+          "q": "Mausoleum of Moulay Ismail, Meknes",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "ma-marrakech",
+      "sights": [
+        {
+          "name": { "en": "Jardin Majorelle", "th": "ฌาร์แดงมาจอแรล" },
+          "local": "Jardin Majorelle",
+          "kind": "park",
+          "area": { "en": "Gueliz", "th": "เกลิซ" },
+          "what": { "en": "A small garden of cobalt-blue walls, cacti and bamboo, with a Berber museum and the Yves Saint Laurent museum beside it", "th": "สวนเล็กที่มีผนังสีน้ำเงินโคบอลต์ กระบองเพชร และไผ่ มีพิพิธภัณฑ์เบอร์เบอร์และพิพิธภัณฑ์อีฟ แซงต์ โลรองต์อยู่ข้างๆ" },
+          "why": { "en": "Short, shaded paths and bright colours hold small children's attention, but it gets crowded", "th": "ทางเดินสั้นๆ มีร่มเงาและสีสดใสที่ดึงความสนใจเด็กเล็ก แต่คนแน่น" },
+          "tip": { "en": "Tickets are sold online only, with no ticket window at the gate; guides say arrive at the opening time to beat the crowd", "th": "ขายบัตรออนไลน์เท่านั้น ไม่มีช่องขายที่ประตู คู่มือแนะนำให้ไปตอนเปิดเพื่อเลี่ยงคนแน่น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "Jardin Majorelle, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.avygeo.com/en/activities/21572-majorelle-garden"
+        },
+        {
+          "name": { "en": "Yves Saint Laurent Museum", "th": "พิพิธภัณฑ์อีฟ แซงต์ โลรองต์" },
+          "local": "Musée Yves Saint Laurent Marrakech",
+          "kind": "museum",
+          "area": { "en": "Gueliz", "th": "เกลิซ" },
+          "what": { "en": "A fashion museum beside the Majorelle garden; its current show of stage costumes and sets runs to 5 January 2027", "th": "พิพิธภัณฑ์แฟชั่นข้างสวนมาจอแรล นิทรรศการชุดและฉากการแสดงที่จัดอยู่ถึง 5 มกราคม 2027" },
+          "why": { "en": "Air-conditioned and calm, but more for school-age children who like costumes than for toddlers", "th": "มีเครื่องปรับอากาศและสงบ เหมาะกับเด็กโตที่ชอบชุดมากกว่าเด็กเล็ก" },
+          "tip": { "en": "The museum's own notice says closed on Wednesdays, open 10:00–18:00 with last admission 17:30", "th": "ประกาศของพิพิธภัณฑ์ระบุปิดวันพุธ เปิด 10:00–18:00 รับคนสุดท้าย 17:30" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Musée Yves Saint Laurent, Rue Yves Saint Laurent, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.museeyslmarrakech.com/CP%20FR%20-%20Exposition%20%27%27Yves%20Saint%20%20Laurent%20en%20sce%CC%80ne%27%27%20au%20mYSLm.docx.pdf"
+        },
+        {
+          "name": { "en": "Oasiria water park", "th": "สวนน้ำโอเอซิเรีย" },
+          "local": "Oasiria",
+          "kind": "themepark",
+          "area": { "en": "Route de Tahanaout", "th": "ถนนไปตาฮานาอุต" },
+          "what": { "en": "A water park with slides, a wave pool, a river ride and two children's areas", "th": "สวนน้ำที่มีสไลเดอร์ สระคลื่น แม่น้ำให้ลอย และโซนเด็กสองโซน" },
+          "why": { "en": "The children's areas suit small ones; the pools may be cold or shut in winter", "th": "โซนเด็กเหมาะกับเด็กเล็ก ช่วงหนาวสระอาจเย็นหรือปิด" },
+          "tip": { "en": "Guides list it open about 10:00–18:00; a June 2026 listing shows a lower winter-season tariff, so check the season and the shuttle", "th": "คู่มือระบุเปิดราว 10:00–18:00 รายการเดือนมิถุนายน 2026 มีราคาฤดูหนาวที่ถูกกว่า เช็กฤดูกาลและรถรับส่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Oasiria Water Park, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.cityzeum.com/le-parc-oasiria"
+        },
+        {
+          "name": { "en": "Anima Garden", "th": "สวนอานิมา" },
+          "local": "ANIMA Garden",
+          "kind": "park",
+          "area": { "en": "Ourika road, about 27 km out", "th": "ถนนสู่อูริกา ห่างราว 27 กม." },
+          "what": { "en": "André Heller's art garden of sculptures, pools and plants on the road to the Ourika valley", "th": "สวนศิลปะของอังเดร เฮลเลอร์ มีประติมากรรม สระน้ำ และพรรณไม้ บนทางไปหุบเขาอูริกา" },
+          "why": { "en": "Open paths and things to find in the garden; the last 500 m to the gate is an unpaved track", "th": "ทางโล่งและมีของให้ตามหาในสวน ช่วง 500 เมตรสุดท้ายก่อนถึงประตูเป็นทางลูกรัง" },
+          "tip": { "en": "The official site says open every day 09:00–18:00, closed during the Eid holidays, with a free shuttle from the medina", "th": "เว็บไซต์ทางการระบุเปิดทุกวัน 09:00–18:00 ปิดช่วงวันอีด มีรถรับส่งฟรีจากเมืองเก่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "ANIMA Garden, Route d'Ourika, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.anima-garden.com/visit/"
+        },
+        {
+          "name": { "en": "Le Jardin Secret", "th": "เลอ ฌาร์แดงเซเครต" },
+          "local": "Le Jardin Secret",
+          "kind": "park",
+          "area": { "en": "Medina, Rue Mouassine", "th": "เมืองเก่า ถนนมูอัสซีน" },
+          "what": { "en": "A restored palace garden hidden in the medina, with courtyards, fountains and a tower to climb", "th": "สวนพระราชวังที่บูรณะแล้ว ซ่อนอยู่ในเมืองเก่า มีลานบ้าน น้ำพุ และหอให้ขึ้น" },
+          "why": { "en": "A quiet break from the busy souks; the tower stairs are steep for the youngest", "th": "เป็นที่พักเงียบๆ จากตลาดที่วุ่นวาย บันไดหอชันสำหรับเด็กเล็ก" },
+          "tip": { "en": "A review listing says it opens at 09:30 and from November to January closes at 18:00, last entry 17:30; check the time", "th": "รายการรีวิวระบุเปิด 09:30 และช่วงพฤศจิกายนถึงมกราคมปิด 18:00 เข้าได้ถึง 17:30 เช็กเวลาอีกครั้ง" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Le Jardin Secret, Rue Mouassine, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.lejardinsecretmarrakech.com/en/blog/when-to-visit-the-gardens-of-marrakech-a-season-by-season/35/"
+        },
+        {
+          "name": { "en": "Menara Gardens", "th": "สวนเมนารา" },
+          "local": "Jardins de la Ménara",
+          "kind": "park",
+          "area": { "en": "West of the medina", "th": "ทางตะวันตกของเมืองเก่า" },
+          "what": { "en": "An olive grove around a big basin with a pavilion and a view of the Atlas Mountains", "th": "สวนมะกอกรอบสระน้ำใหญ่ มีศาลาและวิวเทือกเขาแอตลาส" },
+          "why": { "en": "Space to run under the olive trees; there is no playground to speak of", "th": "มีที่ให้วิ่งใต้ต้นมะกอก แต่ไม่มีสนามเด็กเล่นที่เด่นชัด" },
+          "tip": { "en": "Guides say the gardens are free and only the pavilion charges, with hours listed from about 08:00 to 18:00; check both", "th": "คู่มือระบุว่าสวนเข้าฟรี เสียเงินเฉพาะศาลา เวลาเปิดราว 08:00–18:00 เช็กทั้งสองอย่าง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Menara Gardens, Marrakech",
+          "ok": "2026-11",
+          "src": "https://cityvoyagerhub.com/en/nature-outdoors/menara-gardens-marrakech-visit/"
+        },
+        {
+          "name": { "en": "Cyber Park", "th": "ไซเบอร์ปาร์ก" },
+          "local": "Cyber Parc Arsat Moulay Abdeslam",
+          "kind": "park",
+          "area": { "en": "Near the Koutoubia", "th": "ใกล้กูตูบียา" },
+          "what": { "en": "A public garden of fountains and palms with free Wi-Fi, a two-minute walk from Lalla Hasna Park", "th": "สวนสาธารณะที่มีน้ำพุและต้นปาล์ม มีไวไฟฟรี เดินสองนาทีจากสวนลัลลาฮัสนา" },
+          "why": { "en": "Shade, benches and room to walk between the medina's busy hours", "th": "มีร่มเงา ม้านั่ง และที่เดินเล่นระหว่างช่วงที่เมืองเก่าวุ่นวาย" },
+          "tip": { "en": "Listings give about 07:00–19:00 and differ by an hour; check the sign at the gate", "th": "รายการระบุราว 07:00–19:00 ต่างกันหนึ่งชั่วโมง ดูป้ายที่ประตู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Cyber Parc Arsat Moulay Abdeslam, Marrakech",
+          "ok": "2026-11",
+          "src": "https://visitmarrakech.com/en/listing/cyber-parc-arsat-moulay-abdeslam"
+        },
+        {
+          "name": { "en": "Lalla Hasna Park", "th": "สวนลัลลาฮัสนา" },
+          "local": "Parc Lalla Hasna",
+          "kind": "park",
+          "area": { "en": "Behind the Koutoubia", "th": "หลังกูตูบียา" },
+          "what": { "en": "A park of fountains, palms, orange trees and rose bushes behind the Koutoubia", "th": "สวนที่มีน้ำพุ ปาล์ม ส้ม และกุหลาบ อยู่หลังกูตูบียา" },
+          "why": { "en": "A calm place for a family stroll and a rest on a bench", "th": "เป็นที่สงบสำหรับเดินเล่นกับครอบครัวและนั่งพัก" },
+          "tip": { "en": "A guide lists it open in daylight hours; check locally", "th": "คู่มือระบุเปิดในเวลากลางวัน เช็กหน้างาน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lalla Hasna Park, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.nomads-travel-guide.com/places/koutoubia-gardens-lalla-hassna-park/"
+        },
+        {
+          "name": { "en": "Jemaa el-Fnaa square", "th": "จัตุรัสเจมาเอลฟนา" },
+          "local": "ساحة جامع الفنا",
+          "kind": "market",
+          "area": { "en": "Medina", "th": "เมืองเก่า" },
+          "what": { "en": "The medina's great square, a day market that turns into a night food market with musicians and performers", "th": "จัตุรัสใหญ่ของเมืองเก่า ตลาดกลางวันที่กลายเป็นตลาดอาหารกลางคืน มีนักดนตรีและนักแสดง" },
+          "why": { "en": "Crowded, with touts and pickpockets reported; keep small children by the hand and choose stalls with visible cooking", "th": "คนแน่น มีรายงานคนตื๊อขายของและล้วงกระเป๋า จูงมือเด็กเล็กไว้ และเลือกร้านที่เห็นการปรุง" },
+          "tip": { "en": "A guide suggests arriving around 17:00 to see the change from day to evening; performers ask for money for photos", "th": "คู่มือแนะนำไปราว 17:00 เพื่อดูการเปลี่ยนจากกลางวันเป็นเย็น นักแสดงขอเงินค่าถ่ายรูป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jemaa el-Fnaa, Marrakech",
+          "ok": "2026-11",
+          "src": "https://passaportenobolso.com/en/jemaa-el-fna-marrakech/"
+        },
+        {
+          "name": { "en": "Maison de la Photographie", "th": "เมซงเดอลาโฟโตกราฟี" },
+          "local": "Maison de la Photographie de Marrakech",
+          "kind": "museum",
+          "area": { "en": "Medina", "th": "เมืองเก่า" },
+          "what": { "en": "A museum of old photographs of Morocco in a medina house, with a roof terrace over the rooftops", "th": "พิพิธภัณฑ์ภาพถ่ายเก่าของโมร็อกโกในบ้านเมืองเก่า มีดาดฟ้าชมหลังคาเมือง" },
+          "why": { "en": "A short, quiet indoor visit; the official page says children under 15 go free", "th": "ใช้เวลาสั้นๆ ในร่ม หน้าทางการระบุว่าเด็กต่ำกว่า 15 ปีเข้าฟรี" },
+          "tip": { "en": "Official page: open daily 09:30–19:00, tickets on site only; one ticket also covers the Music Museum", "th": "หน้าทางการ: เปิดทุกวัน 09:30–19:00 ซื้อบัตรหน้างานเท่านั้น บัตรเดียวใช้เข้าพิพิธภัณฑ์ดนตรีได้ด้วย" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ 80 MAD adults · under 15 free", "th": "≈ 80 MAD ผู้ใหญ่ · ต่ำกว่า 15 ปีฟรี" },
+          "book": "none",
+          "q": "Maison de la Photographie, Marrakech",
+          "ok": "2026-11",
+          "src": "https://maisondelaphotographie.ma/about/?lang=en"
+        },
+        {
+          "name": { "en": "Bahia Palace", "th": "พระราชวังบาเฮีย" },
+          "local": "Palais de la Bahia",
+          "kind": "culture",
+          "area": { "en": "Mellah", "th": "เมลลาห์" },
+          "what": { "en": "A 19th-century palace of painted ceilings, courtyards and gardens", "th": "พระราชวังศตวรรษที่ 19 มีเพดานลวดลายสี ลานบ้าน และสวน" },
+          "why": { "en": "Flat courtyards to wander, but tour groups fill the rooms; some areas may be shut for renovation", "th": "ลานเรียบให้เดินเล่น แต่กรุ๊ปทัวร์แน่นห้อง บางส่วนอาจปิดซ่อม" },
+          "tip": { "en": "Guides disagree on the hours, around 09:00–17:00; tickets at the gate or the Ministry of Culture portal; check both price and hours", "th": "คู่มือระบุเวลาไม่ตรงกัน ราว 09:00–17:00 ซื้อบัตรที่ประตูหรือพอร์ทัลกระทรวงวัฒนธรรม เช็กทั้งราคาและเวลา" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Bahia Palace, Marrakech",
+          "ok": "2026-11",
+          "src": "https://cityvoyagerhub.com/en/local-culture/bahia-palace-visit-marrakech/"
+        },
+        {
+          "name": { "en": "Marrakech Museum", "th": "พิพิธภัณฑ์มาร์ราเกช" },
+          "local": "Musée de Marrakech",
+          "kind": "museum",
+          "area": { "en": "Medina", "th": "เมืองเก่า" },
+          "what": { "en": "Art and crafts shown in the Dar Menebhi palace, around a courtyard with a big chandelier", "th": "ศิลปะและงานฝีมือที่จัดแสดงในวังดาร์เมเนบี รอบลานที่มีโคมระย้าใหญ่" },
+          "why": { "en": "A small indoor stop for a hot or wet day; look more than touch with young children", "th": "จุดแวะในร่มเล็กๆ ในวันร้อนหรือฝนตก กับเด็กเล็กเน้นดูมากกว่าจับ" },
+          "tip": { "en": "A guide lists it open about 09:00–18:00; check the hours and price", "th": "คู่มือระบุเปิดราว 09:00–18:00 เช็กเวลาและราคา" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Musée de Marrakech, Place Ben Youssef, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/marrakech-museum"
+        },
+        {
+          "name": { "en": "Ourika Valley and Setti Fatma waterfalls", "th": "หุบเขาอูริกาและน้ำตกเซตติฟาตมา" },
+          "local": "Vallée de l'Ourika",
+          "kind": "nature",
+          "area": { "en": "Ourika, about 1.5 h by road", "th": "อูริกา ขับรถราว 1.5 ชม." },
+          "what": { "en": "A mountain valley with a river and waterfalls reached on foot with a local guide", "th": "หุบเขาที่มีแม่น้ำและน้ำตก เดินไปกับไกด์ท้องถิ่น" },
+          "why": { "en": "A day out of the heat, but the walk up to the falls is rough ground, not for a pram", "th": "เป็นทริปหนีร้อนทั้งวัน แต่ทางเดินขึ้นน้ำตกเป็นพื้นขรุขระ ไม่เหมาะกับรถเข็น" },
+          "tip": { "en": "Tour listings quote about 1.5 hours each way by road and list children's prices for ages 5–12; compare operators", "th": "รายการทัวร์ระบุขับรถราว 1.5 ชม. ต่อเที่ยว และมีราคาเด็กอายุ 5–12 ปี เปรียบเทียบผู้จัด" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 8,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Setti Fatma, Ourika Valley, Morocco",
+          "ok": "2026-11",
+          "src": "https://www.civitatis.com/en/marrakech/ourika-valley-trip/"
+        },
+        {
+          "name": { "en": "Kawkab Jeux indoor play centre", "th": "ศูนย์เล่นในร่มคาวคับ เฌอซ์" },
+          "kind": "play",
+          "area": { "en": "Gueliz", "th": "เกลิซ" },
+          "what": { "en": "A soft-play centre in the Centre Harti for children of about 1 to 8", "th": "ศูนย์เล่นนุ่มๆ ในร่มที่ Centre Harti สำหรับเด็กราว 1–8 ขวบ" },
+          "why": { "en": "A cool, safe place for a hot afternoon while adults rest", "th": "ที่เล่นเย็นสบายและปลอดภัยสำหรับบ่ายร้อนๆ ให้ผู้ใหญ่ได้พัก" },
+          "tip": { "en": "Entry starts from around 25 MAD; check the opening hours on the day", "th": "ค่าเข้าเริ่มราว 25 MAD เช็กเวลาเปิดในวันที่ไป" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ from 25 MAD", "th": "≈ เริ่มราว 25 MAD" },
+          "book": "none",
+          "q": "Kawkab Jeux, Centre Harti, Gueliz, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/guides/marrakech-with-kids"
+        },
+        {
+          "name": { "en": "Hot-air balloon over the Agafay Desert", "th": "บอลลูนลมร้อนเหนือทะเลทรายอากาฟาย" },
+          "kind": "ride",
+          "area": { "en": "Agafay Desert", "th": "ทะเลทรายอากาฟาย" },
+          "what": { "en": "A sunrise flight of about an hour that departs from outside the city", "th": "เที่ยวบินตอนเช้าตรู่ราวหนึ่งชั่วโมง ออกจากนอกเมือง" },
+          "why": { "en": "Most operators take children from 5 only, so it suits older ones", "th": "ผู้ให้บริการส่วนใหญ่รับเด็กตั้งแต่ 5 ขวบ จึงเหมาะกับเด็กโต" },
+          "tip": { "en": "Check the minimum age before booking; pick-up is before dawn", "th": "เช็กอายุขั้นต่ำก่อนจอง รถรับก่อนฟ้าสาง" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "Hot air balloon, Agafay Desert, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/guides/marrakech-with-kids"
+        },
+        {
+          "local": "Cascades d'Ouzoud",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เรือที่นั่งละ 10–20 MAD",
+            "en": "10–20 MAD a seat (boat)"
+          },
+          "book": "none",
+          "src": "https://www.marrakech-desert-trips.com/best-day-trips-from-marrakech-for-families-with-kids",
+          "name": {
+            "th": "น้ำตกอูซูด",
+            "en": "Ouzoud Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เทือกเขาแอตลาส ไปกลับจากมาราเกชในวันเดียว",
+            "en": "Atlas Mountains, a day trip from Marrakech"
+          },
+          "what": {
+            "th": "น้ำตกสูง 110 เมตร ลิงบาร์บารี และแอ่งน้ำธรรมชาติ",
+            "en": "110 metres of falling water, Barbary macaques and natural pools"
+          },
+          "why": {
+            "th": "นั่งเรือไม้ไปถึงตีนน้ำตก มีเสื้อชูชีพให้ขอ",
+            "en": "Wooden boats to the foot of the falls, with life jackets on request"
+          },
+          "tip": {
+            "th": "คนเยอะวันอาทิตย์และช่วงปิดเทอมของโมร็อกโก วันธรรมดาหน้าใบไม้ผลิดีที่สุด",
+            "en": "Busy on Sundays and in Moroccan school holidays; a spring weekday is best"
+          },
+          "q": "Ouzoud Waterfalls, Ouzoud",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "name": {
+            "th": "พิพิธภัณฑ์น้ำ มาร์ราเกช",
+            "en": "Water Museum (Musée de l'Eau)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปาลแมเรย์ มาร์ราเกช",
+            "en": "Palmeraie, Marrakech"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องน้ำในโมร็อกโกและการจัดการน้ำ",
+            "en": "A museum about water in Morocco and how it is managed"
+          },
+          "why": {
+            "th": "มีแผนที่และวิดีโอแบบโต้ตอบสำหรับทุกวัย",
+            "en": "Interactive maps and videos for all ages"
+          },
+          "q": "Water Museum, Palmeraie, Marrakech",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/best-museums-in-marrakesh",
+          "name": {
+            "th": "เมย์เดน",
+            "en": "Meydene"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เอ็มอเวนิว ด้านตะวันตกของเมดินา มาร์ราเกช",
+            "en": "M Avenue, west of the medina, Marrakech"
+          },
+          "what": {
+            "th": "ศูนย์วัฒนธรรมที่พาเที่ยวมาร์ราเกชผ่านแว่นเสมือนจริง มีโรงละครและคาเฟ่ดาดฟ้า",
+            "en": "A cultural centre with virtual-reality journeys through Marrakech, a theatre and a rooftop café"
+          },
+          "why": {
+            "th": "เด็กๆ ชอบ ได้เดินชมถนนในเมืองแบบเสมือนจริง",
+            "en": "Popular with children, who explore the city's streets virtually"
+          },
+          "q": "Meydene, M Avenue, Marrakech",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

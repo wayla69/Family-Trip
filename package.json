@@ -15,6 +15,8 @@
     "import-pdf": "node scripts/import-pdf.mjs",
     "stock:lint": "node scripts/stock-lint.mjs",
     "eats:lint": "node scripts/eats-lint.mjs",
+    "care:lint": "node scripts/care-lint.mjs",
+    "sights:lint": "node scripts/sights-lint.mjs",
     "stock:sheet": "node scripts/stock-sheet.mjs",
     "s3": "s3rver -d ./data/s3 -p 4569 --configure-bucket mb-test --silent"
   },
@@ -22,12 +24,12 @@
     "node": ">=22.12"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^1.4.0",
-    "@aws-sdk/client-s3": "3.1161.0",
-    "@simplewebauthn/server": "14.0.3",
+    "@anthropic-ai/sdk": "^1.10.0",
+    "@aws-sdk/client-s3": "3.1172.0",
+    "@simplewebauthn/server": "14.1.0",
     "archiver": "^8.0.0",
     "express": "^5.3.0",
-    "express-rate-limit": "8.7.1",
+    "express-rate-limit": "8.7.5",
     "pg": "8.23.1",
     "playwright-core": "1.64.1",
     "sharp": "^0.35.5",

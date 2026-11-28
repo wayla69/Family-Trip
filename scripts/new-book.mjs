@@ -18,7 +18,6 @@ if (!/^[a-z0-9-]{2,60}$/.test(slug)) { console.error('slug: a-z 0-9 - only'); pr
 const d0 = D.parseDay(from), d1 = D.parseDay(to);
 if (!d0 || !d1 || d1 < d0 || (d1 - d0) / 864e5 > 60) { console.error('dates: YYYY-MM-DD, end after start, 60 days max'); process.exit(1); }
 const out = path.join(root, 'server', 'seeds', `${slug}.json`);
-if (fs.existsSync(out) && !args.force) { console.error(`${out} exists — pass --force to overwrite`); process.exit(1); }
 
 const kids = String(args.kids || 'mimi,mika').split(',').map((s) => s.trim()).filter(Boolean);
 const { i18n, TODO } = D;
@@ -75,7 +74,8 @@ const seed = {
     map: { title: i18n('แผนที่การผจญภัย', 'Our adventure map'), sea: TODO('sea / ocean name'), stops: [{ k: 'start', e: '✈️', th: 'TODO', en: 'TODO', x: 20, y: 50 }], days: days.map(() => ['start']) },
   },
 };
-fs.writeFileSync(out, JSON.stringify(seed, null, 1) + '\n');
+try { fs.writeFileSync(out, JSON.stringify(seed, null, 1) + '\n', { flag: args.force ? 'w' : 'wx' }); }   // 'wx': refuses an existing file in the same step that writes
+catch (e) { if (e.code !== 'EEXIST') throw e; console.error(`${out} exists — pass --force to overwrite`); process.exit(1); }
 console.log(`wrote ${path.relative(root, out)} — ${days.length} days, format 2\n`);
 console.log(`checklist:
   [ ] fill every TODO from the manual (docs/NEW-BOOK.md §2) — no bookings, PNRs, confirmations, costs, passport data

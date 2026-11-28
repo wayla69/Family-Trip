@@ -1,0 +1,262 @@
+{
+  "town": "kr (Korea round 3: Incheon, Seoul, Jeonju, Jeju, Gangwon, Gyeongju, Suwon)",
+  "kind": "added",
+  "checked": "2026-11-27",
+  "rule": "Haiku research agents with the Korea notes (VisitKorea and the cities' tourism pages count as official; otherwise a 2025-2026 page, incl. mom-mom.net place pages with their own update date; no national franchises, no bars, no no-kids-zone places) -> scripts/library-check.cjs -> every place opened on Google Maps on 27 Nov 2026 by checker agents, kept only when open, the same name and in the town -> Thai and English by writer agents to docs/STYLE.md. Pharmacies: only the cities' own pages (Suwon's 2026 emergency-care list, its Paldal-gu file; Chuncheon's list of public late-night pharmacies), each name read in the file here and each address opened on Google Maps here.",
+  "towns": {
+    "kr-incheon": {
+      "eat": [
+        {
+          "name": "Upan Deungsim Incheon",
+          "src": "https://mom-mom.net/travel/places/68145172e234f9aaa3a88deb"
+        },
+        {
+          "name": "Hansol Naengmyeon, Hyundai Outlet Songdo",
+          "src": "https://mom-mom.net/travel/places/69b3948709fbb11855c0e646"
+        },
+        {
+          "name": "Dangsin-gwa Na-ui Siktak",
+          "src": "https://mom-mom.net/travel/places/683d7edf08605c4592ba976c"
+        },
+        {
+          "name": "Aewoldo",
+          "src": "https://mom-mom.net/travel/places/6a0d6dcf3a0c683f82bc6cf6"
+        },
+        {
+          "name": "Oasis Gourmet Village, Inspire Resort",
+          "src": "https://mom-mom.net/travel/places/671ee7e22566b190477cd557"
+        },
+        {
+          "name": "Garden Farm Cafe",
+          "src": "https://mom-mom.net/travel/places/65bc5ad70c56730fa3cf52bf"
+        },
+        {
+          "name": "Forest Outings Songdo",
+          "src": "https://mom-mom.net/travel/places/657f9a9075861048a00843ce"
+        },
+        {
+          "name": "Dongyang Chajip Yeongjongdo",
+          "src": "https://mom-mom.net/travel/places/65d2c0d49af6b32c85e83b53"
+        },
+        {
+          "name": "Kidscape Songdo",
+          "src": "https://mom-mom.net/travel/places/654881b5c2d2b67bbd03d859"
+        }
+      ],
+      "do": [
+        {
+          "name": "Juvuckx & Junimal, Seochang",
+          "src": "https://www.yugacrew.com/crewletter/incheon-kids-places"
+        },
+        {
+          "name": "Splash Bay, Inspire Resort",
+          "src": "https://www.yugacrew.com/crewletter/incheon-kids-places"
+        },
+        {
+          "name": "Indoo Songdo",
+          "src": "https://www.yugacrew.com/crewletter/songdo-kids-places"
+        },
+        {
+          "name": "Tri-Bowl",
+          "src": "https://www.yugacrew.com/crewletter/songdo-kids-places"
+        },
+        {
+          "name": "Sorae Port Fish Market",
+          "src": "https://www.yugacrew.com/crewletter/incheon-places-to-visit"
+        },
+        {
+          "name": "Open Port Street",
+          "src": "https://www.yugacrew.com/crewletter/incheon-places-to-visit"
+        }
+      ],
+      "care": []
+    },
+    "kr-jeju": {
+      "eat": [
+        {
+          "name": "Simba Coffee Simba Curry",
+          "src": "https://www.allurekorea.com/?p=298655"
+        },
+        {
+          "name": "Mureungsoun The Table",
+          "src": "https://www.allurekorea.com/?p=298655"
+        },
+        {
+          "name": "Wiee",
+          "src": "https://www.allurekorea.com/?p=298655"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "kr-jeonju": {
+      "eat": [
+        {
+          "name": "Namno Galbi Seogok",
+          "src": "https://www.gqkorea.co.kr/?p=372181"
+        },
+        {
+          "name": "Daebojang",
+          "src": "https://www.gqkorea.co.kr/?p=372181"
+        },
+        {
+          "name": "Gyodong Sibwonppang",
+          "src": "https://travelmapjourney.com/jeonju-hanok-village-day-trip-course-2026/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "kr-seoul": {
+      "eat": [
+        {
+          "name": "La Seine",
+          "src": "https://www.yugacrew.com/crewletter/baby-restaurant"
+        },
+        {
+          "name": "Maeranbang Cheongnyangni Station",
+          "src": "https://www.yugacrew.com/crewletter/baby-restaurant"
+        },
+        {
+          "name": "Walkerhill The Buffet",
+          "src": "https://www.yugacrew.com/crewletter/baby-restaurant"
+        },
+        {
+          "name": "Gyerimwon Sangdo",
+          "src": "https://www.yugacrew.com/crewletter/kid-friendly-restaurants-seoul-best"
+        },
+        {
+          "name": "HIGHWAY SEOUL Yeongdeungpo Times Square",
+          "src": "https://www.yugacrew.com/crewletter/kid-friendly-restaurants-seoul-best"
+        }
+      ],
+      "do": [
+        {
+          "name": "Seoul Baekje Children's Museum",
+          "src": "https://mediahub.seoul.go.kr/archives/2018712"
+        },
+        {
+          "name": "Seoul Gallery",
+          "src": "https://mediahub.seoul.go.kr/archives/2018846"
+        },
+        {
+          "name": "Seoul Waterworks Museum",
+          "src": "https://mediahub.seoul.go.kr/archives/2018830"
+        },
+        {
+          "name": "Seodaemun Museum of Natural History",
+          "src": "https://www.yugacrew.com/crewletter/seoul-weekend-kids"
+        },
+        {
+          "name": "Gangseo Starlight Space Science Museum",
+          "src": "https://mediahub.seoul.go.kr/archives/2019438"
+        },
+        {
+          "name": "Seoul Hanseong Baekje Museum",
+          "src": "https://mediahub.seoul.go.kr/archives/2018642"
+        },
+        {
+          "name": "Seoul Urban Life Museum and Ompang Playground",
+          "src": "https://www.yugacrew.com/crewletter/seoul-indoor-places-for-kids"
+        },
+        {
+          "name": "Seoul Archives children's experience room",
+          "src": "https://www.yugacrew.com/crewletter/seoul-elementary-kids-best-spots"
+        },
+        {
+          "name": "Seoul Chaekbogo",
+          "src": "https://www.yugacrew.com/crewletter/seoul-elementary-kids-best-spots"
+        }
+      ],
+      "care": []
+    },
+    "kr-gangwon": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Haslla Art World",
+          "src": "https://www.yugacrew.com/crewletter/gangneung-places-to-visit"
+        },
+        {
+          "name": "Gangneung Embroidery Museum",
+          "src": "https://www.yugacrew.com/crewletter/gangneung-museums"
+        },
+        {
+          "name": "Chamsori Edison Museum",
+          "src": "https://www.yugacrew.com/crewletter/gangneung-museums"
+        },
+        {
+          "name": "National Mountain Museum",
+          "src": "https://mom-mom.net/travel/places/63be827708f3207c63d7e269"
+        }
+      ],
+      "care": [
+        {
+          "name": "Gangnam Pharmacy, Chuncheon",
+          "src": "https://www.chuncheon.go.kr/health/fooddrug/drug/hospital-pharmacy/"
+        },
+        {
+          "name": "365 Daehyeong Pharmacy",
+          "src": "https://www.chuncheon.go.kr/health/fooddrug/drug/hospital-pharmacy/"
+        }
+      ]
+    },
+    "kr-gyeongju": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Namsan Mountain",
+          "src": "https://www.mummytravels.com/gyeongju-with-kids-south-korea/"
+        },
+        {
+          "name": "Girimsa Temple",
+          "src": "https://www.mummytravels.com/gyeongju-with-kids-south-korea/"
+        }
+      ],
+      "care": []
+    },
+    "kr-suwon": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Gwanggyo Museum",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots"
+        },
+        {
+          "name": "Suwon Media Centre",
+          "src": "https://baby.tali.kr/gyeonggi-south-kids-spots"
+        }
+      ],
+      "care": [
+        {
+          "name": "Nammun Market Pharmacy",
+          "src": "https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1412&seq=20260724133224070"
+        },
+        {
+          "name": "365 Nammun Pharmacy",
+          "src": "https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1412&seq=20260724133224070"
+        },
+        {
+          "name": "Namu Pharmacy",
+          "src": "https://www.suwon.go.kr/web/board/BD_board.view.do?bbsCd=1412&seq=20260724133224070"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (27 Nov 2026)": [
+      "FA Jeonju (permanently closed)",
+      "Bupyeong Sky Roller rink (closed marker)"
+    ],
+    "name or place did not match on Google Maps": "eleven (another business at the address, a food-court shop Maps does not list, or only a result list)",
+    "other": [
+      "Table A Songdo and Table A indoor zoo Seoul (animal cafes)",
+      "Petit Monde kids cafe (a chain, no address)",
+      "the B1 cafe of the Handpicked Hotel (not listed on its own)",
+      "Gyodong Croquette (weak Maps match)",
+      "National Museum of Korean Contemporary History (already listed)",
+      "three Jeonju pharmacies (only a 2023 city press release, no address)"
+    ],
+    "changed": "Gyeongju National Museum: its children’s museum is closed for now (official blog notice, Nov 2026) — the row no longer offers it and the children’s museum nursing room row was removed"
+  }
+}

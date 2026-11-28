@@ -1,0 +1,462 @@
+{
+  "cc": "ke",
+  "towns": [
+    {
+      "place": "ke-mara",
+      "sights": [
+        {
+          "name": { "en": "Nairobi National Park", "th": "อุทยานแห่งชาติไนโรบี" },
+          "kind": "nature",
+          "area": { "en": "Nairobi", "th": "ไนโรบี" },
+          "what": { "en": "A game drive with lions, giraffes and zebras on the edge of the city, with the skyline behind", "th": "ขับรถชมสัตว์ป่า มีสิงโต ยีราฟ และม้าลายที่ชายเมือง โดยมีตึกไนโรบีเป็นฉากหลัง" },
+          "why": { "en": "A half-day drive from the hotel, so no long transfer; children watch from the car", "th": "ขับครึ่งวันจากโรงแรม ไม่ต้องเดินทางไกล เด็กนั่งดูสัตว์จากในรถ" },
+          "tip": { "en": "KWS lists a child as aged 5 to under 18 and under 5 as free; fees are paid online (eCitizen) before you arrive", "th": "KWS นับเด็กอายุ 5 ปีถึงต่ำกว่า 18 ปี ต่ำกว่า 5 ปีไม่เสียค่าเข้า และจ่ายออนไลน์ผ่าน eCitizen ก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ USD 80 non-resident adults · USD 40 children · KSh 1,000 and KSh 500 East African citizens · under 5 free", "th": "≈ USD 80 ผู้ใหญ่ต่างชาติ · USD 40 เด็ก · KSh 1,000 และ KSh 500 พลเมืองแอฟริกาตะวันออก · ต่ำกว่า 5 ปีฟรี" },
+          "book": "req",
+          "q": "Nairobi National Park, Nairobi, Kenya",
+          "ok": "2026-11",
+          "src": "https://www.kws.go.ke/sites/default/files/2025-09/KWS%20Conservation%20Fee%20October%20%202025.pdf"
+        },
+        {
+          "name": { "en": "Nairobi Safari Walk and Animal Orphanage", "th": "ซาฟารีวอล์กและสถานรับเลี้ยงสัตว์ไนโรบี" },
+          "kind": "zoo",
+          "area": { "en": "Nairobi National Park gate", "th": "ใกล้ประตูอุทยานแห่งชาติไนโรบี" },
+          "what": { "en": "A raised boardwalk and enclosures with rescued animals at the national park's main gate", "th": "ทางเดินยกพื้นและคอกสัตว์ที่ได้รับการช่วยเหลือ ใกล้ประตูหลักของอุทยาน" },
+          "why": { "en": "Short, close views of animals without a drive; boardwalks are easier for small legs", "th": "ดูสัตว์ใกล้ๆ โดยไม่ต้องนั่งรถนาน ทางเดินยกพื้นเหมาะกับเด็กเล็ก" },
+          "tip": { "en": "KWS lists a combined Animal Orphanage and Safari Walk ticket; check which one you need", "th": "KWS มีบัตรรวมสถานรับเลี้ยงสัตว์และซาฟารีวอล์ก ควรเช็กว่าต้องใช้บัตรไหน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Nairobi Safari Walk, Nairobi National Park, Langata Road, Nairobi",
+          "ok": "2026-11",
+          "src": "https://www.kws.go.ke:443/content/nairobi-safari-walk"
+        },
+        {
+          "name": { "en": "Giraffe Centre", "th": "จิราฟเซ็นเตอร์" },
+          "kind": "nature",
+          "area": { "en": "Lang'ata", "th": "ลังกาตา" },
+          "what": { "en": "A raised platform where you hand-feed Rothschild's giraffes", "th": "ชานชาลายกสูงให้ป้อนอาหารยีราฟโรทส์ไชลด์ด้วยมือ" },
+          "why": { "en": "Children are face to face with a giraffe at the platform's height, and the short visit suits a small attention span", "th": "เด็กได้เห็นหน้ายีราฟระดับเดียวกัน และใช้เวลาไม่นานเหมาะกับเด็กเล็ก" },
+          "tip": { "en": "Third-party pages say open daily 09:00–17:00; no advance ticket is usually needed", "th": "เว็บไซต์ภายนอกระบุว่าเปิดทุกวัน 09:00–17:00 และมักไม่ต้องซื้อบัตรล่วงหน้า" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price (listings disagree)", "th": "เช็กราคา (แหล่งข้อมูลไม่ตรงกัน)" },
+          "book": "none",
+          "q": "The Giraffe Centre, Duma Road, Lang'ata, Nairobi",
+          "ok": "2026-11",
+          "src": "https://giraffecentre.org/faqs/"
+        },
+        {
+          "name": { "en": "Sheldrick Elephant Orphanage", "th": "สถานรับเลี้ยงลูกช้างเชลดริก" },
+          "kind": "nature",
+          "area": { "en": "Nairobi National Park, Lang'ata", "th": "อุทยานแห่งชาติไนโรบี ลังกาตา" },
+          "what": { "en": "Orphaned baby elephants come in for their daily mud bath and milk in front of visitors", "th": "ลูกช้างกำพร้ามาเล่นโคลนและกินนมให้ผู้เข้าชมดูทุกวัน" },
+          "why": { "en": "Small children love watching the babies; the viewing hour is short and the spot is flat", "th": "เด็กเล็กชอบดูลูกช้าง ชมเพียงชั่วโมงเดียวและพื้นราบ" },
+          "tip": { "en": "A listing says public viewing is daily 11:00–12:00 and the orphanage is closed on 25 December", "th": "แหล่งข้อมูลระบุว่าเปิดให้ชมทุกวัน 11:00–12:00 และปิดวันที่ 25 ธันวาคม" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price (listings disagree)", "th": "เช็กราคา (แหล่งข้อมูลไม่ตรงกัน)" },
+          "book": "rec",
+          "q": "David Sheldrick Wildlife Trust Elephant Orphanage, Nairobi National Park",
+          "ok": "2026-11",
+          "src": "https://magpie.travel/things-to-do/nairobi-elephant-orphanage/a4dd7e26-aeed-4f65-8b1d-72ab46a6c97e"
+        },
+        {
+          "name": { "en": "Nairobi National Museum and Snake Park", "th": "พิพิธภัณฑ์แห่งชาติไนโรบีและสวนงู" },
+          "kind": "museumkid",
+          "area": { "en": "Museum Hill", "th": "มิวเซียมฮิลล์" },
+          "what": { "en": "Kenya's national museum with natural history and culture halls, next to a snake and reptile park", "th": "พิพิธภัณฑ์แห่งชาติเคนยา มีห้องธรรมชาติและวัฒนธรรม ติดกับสวนงูและสัตว์เลื้อยคลาน" },
+          "why": { "en": "A good indoor stop when it rains; children like the animals and the snakes", "th": "จุดในร่มที่ดีเวลาฝนตก เด็กชอบสัตว์และงู" },
+          "tip": { "en": "Fees rose in May 2026; one source gives hours of 08:30–17:30 but none is official", "th": "ค่าเข้าเพิ่มขึ้นเดือนพฤษภาคม 2026 แหล่งข้อมูลหนึ่งระบุ 08:30–17:30 แต่ไม่ใช่ทางการ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ KSh 350 adults · KSh 200 children (Kenyan and East African citizens) · check the visitor price", "th": "≈ KSh 350 ผู้ใหญ่ · KSh 200 เด็ก (พลเมืองเคนยาและแอฟริกาตะวันออก) · เช็กราคาสำหรับผู้มาเยือน" },
+          "book": "none",
+          "q": "Nairobi National Museum, Museum Hill Road, Nairobi",
+          "ok": "2026-11",
+          "src": "https://www.the-star.co.ke/news/2026-05-07-new-museum-entry-fees-take-effect-who-pays-what"
+        },
+        {
+          "name": { "en": "Karen Blixen Museum", "th": "พิพิธภัณฑ์คาเรน บลิกเซน" },
+          "kind": "museum",
+          "area": { "en": "Karen", "th": "คาเรน" },
+          "what": { "en": "The farmhouse and garden of the writer of Out of Africa", "th": "บ้านไร่และสวนของนักเขียนเรื่อง Out of Africa" },
+          "why": { "en": "A calm lawn for little ones; the house tour is for older children", "th": "สนามหญ้าสงบสำหรับเด็กเล็ก ส่วนทัวร์ในบ้านเหมาะกับเด็กโต" },
+          "tip": { "en": "Guides say open daily about 08:30–18:00, last entry around 17:30", "th": "แหล่งข้อมูลระบุเปิดทุกวันราว 08:30–18:00 เข้าได้ถึงราว 17:30" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price (listings disagree)", "th": "เช็กราคา (แหล่งข้อมูลไม่ตรงกัน)" },
+          "book": "none",
+          "q": "Karen Blixen Museum, Karen Road, Nairobi",
+          "ok": "2026-11",
+          "src": "https://www.masaimara.travel/karen-blixen-museum-kenya.php"
+        },
+        {
+          "name": { "en": "Karura Forest", "th": "ป่ากะรุระ" },
+          "kind": "park",
+          "area": { "en": "Gigiri, Nairobi", "th": "กิกิริ ไนโรบี" },
+          "what": { "en": "A big city forest with shaded trails, a waterfall and picnic spots", "th": "ป่าใหญ่กลางเมือง มีทางเดินร่มรื่น น้ำตก และจุดปิกนิก" },
+          "why": { "en": "Room for children to run in the shade; easy trails suit short legs", "th": "เด็กวิ่งเล่นในร่มเงาได้กว้างขวาง ทางเดินง่ายเหมาะกับขาสั้นๆ" },
+          "tip": { "en": "Since 29 August 2025 gate and parking fees are paid through eCitizen", "th": "ตั้งแต่ 29 สิงหาคม 2025 ค่าเข้าและค่าจอดรถจ่ายผ่าน eCitizen" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ KSh 174 adults · KSh 116 children (Kenyans, plus VAT) · check the visitor price", "th": "≈ KSh 174 ผู้ใหญ่ · KSh 116 เด็ก (ชาวเคนยา ยังไม่รวม VAT) · เช็กราคาสำหรับผู้มาเยือน" },
+          "book": "none",
+          "q": "Karura Forest, Limuru Road, Nairobi",
+          "ok": "2026-11",
+          "src": "https://www.the-star.co.ke/news/2025-09-02-kfs-explains-hike-in-karura-forest-entry-charges"
+        },
+        {
+          "name": { "en": "Nairobi Arboretum", "th": "สวนพฤกษชาติไนโรบี" },
+          "kind": "park",
+          "area": { "en": "Kilimani", "th": "คิลิมานี" },
+          "what": { "en": "A shady tree garden in the city with birds and monkeys", "th": "สวนต้นไม้ร่มรื่นในเมือง มีนกและลิง" },
+          "why": { "en": "A quiet, flat place for a picnic and a walk with a pram", "th": "สถานที่เงียบและราบ ปิกนิกและเดินเล่นพร้อมรถเข็นได้" },
+          "tip": { "en": "News reports a 2025 fee rise that the forest service had not explained; ask at the gate", "th": "ข่าวระบุว่าค่าเข้าขึ้นในปี 2025 โดยยังไม่มีคำชี้แจงทางการ ควรถามที่ประตู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Nairobi Arboretum, State House Road, Nairobi",
+          "ok": "2026-11",
+          "src": "https://www.kenyans.co.ke/news/112577-kfs-spot-over-increase-entry-fees-nairobi-arboretum"
+        },
+        {
+          "name": { "en": "Kazuri Beads Centre", "th": "คาซูริบีดส์เซ็นเตอร์" },
+          "kind": "shop",
+          "area": { "en": "Karen", "th": "คาเรน" },
+          "what": { "en": "A workshop where women roll and paint ceramic beads, with a shop", "th": "โรงงานที่ช่างหญิงปั้นและเพ้นต์ลูกปัดเซรามิก มีร้านขายของ" },
+          "why": { "en": "Children watch the beads being made; a short indoor stop", "th": "เด็กได้ดูการทำลูกปัด แวะสั้นๆ ในร่ม" },
+          "tip": { "en": "One operator lists shop hours Mon–Sat 08:30–18:00, Sun 09:00–16:00; another gives different closing times", "th": "ผู้ให้บริการรายหนึ่งระบุร้านเปิดจันทร์–เสาร์ 08:30–18:00 อาทิตย์ 09:00–16:00 อีกรายระบุเวลาปิดต่างกัน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Kazuri Beads, Mbagathi Ridge, Karen, Nairobi",
+          "ok": "2026-11",
+          "src": "https://africanspicesafaris.com/tour/kazuri-factory-ceramic-beads-jewelry-pottery"
+        },
+        {
+          "name": { "en": "Maasai Market", "th": "ตลาดมาไซ" },
+          "kind": "market",
+          "area": { "en": "Changes by day of the week", "th": "เปลี่ยนที่ตามวันในสัปดาห์" },
+          "what": { "en": "A travelling craft market of beads, fabrics and carvings, held in a different Nairobi place each day", "th": "ตลาดงานฝีมือหมุนเวียน ขายลูกปัด ผ้า และของแกะสลัก ย้ายที่ในไนโรบีตามวัน" },
+          "why": { "en": "Colour for children to look at; the aisles are crowded, so keep little ones close", "th": "สีสันให้เด็กดู แต่ทางเดินแน่น ควรจูงมือเด็กเล็กไว้" },
+          "tip": { "en": "A 2026 guide gives the weekly places; Friday at Village Market is the most consistent; check the day's place", "th": "คู่มือปี 2026 ระบุที่ตั้งตามวัน วันศุกร์ที่วิลเลจมาร์เก็ตตรงกันมากที่สุด ควรเช็กที่ตั้งของวันนั้น" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Maasai Market, Village Market, Limuru Road, Gigiri, Nairobi",
+          "ok": "2026-11",
+          "src": "https://cheetahsafaris.com/blog/maasai-market-days/"
+        },
+        {
+          "name": { "en": "Hell's Gate National Park", "th": "อุทยานแห่งชาติเฮลส์เกต" },
+          "kind": "nature",
+          "area": { "en": "Naivasha, about 2 hours from Nairobi", "th": "ไนวาชา ห่างจากไนโรบีราว 2 ชั่วโมง" },
+          "what": { "en": "Cliffs and gorge where you can cycle or walk among zebras and giraffes", "th": "หน้าผาและหุบเขา ปั่นจักรยานหรือเดินชมม้าลายและยีราฟได้" },
+          "why": { "en": "Flat cycling tracks and no big predators; small children ride in a car or on a trailer seat", "th": "ทางจักรยานราบและไม่มีสัตว์ล่าเหยื่อใหญ่ เด็กเล็กนั่งรถหรือที่นั่งพ่วงได้" },
+          "tip": { "en": "Cycling is paid on top of entry; KWS counts ages 5 to 17 as children and under 5 free", "th": "ค่าปั่นจักรยานแยกจากค่าเข้า KWS นับอายุ 5–17 ปีเป็นเด็ก ต่ำกว่า 5 ปีฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price (sources disagree)", "th": "เช็กราคา (แหล่งข้อมูลไม่ตรงกัน)" },
+          "book": "none",
+          "q": "Hell's Gate National Park, Naivasha, Kenya",
+          "ok": "2026-11",
+          "src": "https://www.kws.go.ke/sites/default/files/2025-09/KWS%20Conservation%20Fee%20October%20%202025.pdf"
+        },
+        {
+          "name": { "en": "Crescent Island Game Sanctuary", "th": "เขตรักษาพันธุ์สัตว์เกาะเครสเซนต์" },
+          "kind": "nature",
+          "area": { "en": "Lake Naivasha", "th": "ทะเลสาบไนวาชา" },
+          "what": { "en": "A lake island where you walk among giraffes, zebras and antelopes with no predators", "th": "เกาะกลางทะเลสาบ เดินชมยีราฟ ม้าลาย และแอนทีโลปโดยไม่มีสัตว์ล่าเหยื่อ" },
+          "why": { "en": "A gentle guided walk that suits children who can walk for an hour", "th": "เดินเบาๆ มีไกด์ เหมาะกับเด็กที่เดินได้ราวหนึ่งชั่วโมง" },
+          "tip": { "en": "A page lists entry about USD 33 for non-resident adults and a separate boat ride; confirm both", "th": "เว็บไซต์ระบุค่าเข้าราว USD 33 สำหรับผู้ใหญ่ต่างชาติและค่าเรือแยก ควรเช็กทั้งสองอย่าง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price (sources disagree)", "th": "เช็กราคา (แหล่งข้อมูลไม่ตรงกัน)" },
+          "book": "rec",
+          "q": "Crescent Island Game Sanctuary, Lake Naivasha, Kenya",
+          "ok": "2026-11",
+          "src": "https://theabroadguide.com/lake-naivasha-crescent-island-game-sanctuary/"
+        },
+        {
+          "name": { "en": "Maasai Mara National Reserve", "th": "เขตสงวนแห่งชาติมาไซมารา" },
+          "kind": "nature",
+          "area": { "en": "Narok County, a long drive or flight from Nairobi", "th": "เทศมณฑลนาร็อก ต้องขับรถไกลหรือบินจากไนโรบี" },
+          "what": { "en": "Game drives among lions, elephants and the wildebeest herds on the savannah", "th": "ขับรถชมสิงโต ช้าง และฝูงวิลเดอบีสต์บนทุ่งสะวันนา" },
+          "why": { "en": "Drives are long for under-fives; no off-road driving is allowed", "th": "การขับชมสัตว์ใช้เวลานานสำหรับเด็กต่ำกว่า 5 ขวบ และห้ามขับออกนอกเส้นทาง" },
+          "tip": { "en": "No page gave a minimum age for the reserve; ask your lodge. Narok sets the fees, and vehicle fees are separate", "th": "ไม่พบเว็บที่ระบุอายุขั้นต่ำของเขตสงวน ควรถามที่พัก ค่าเข้ากำหนดโดยนาร็อกและค่ารถแยกต่างหาก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ USD 200 non-resident adults a day from July to December 2026 (USD 100 January–June) · check the child rate", "th": "≈ USD 200 ผู้ใหญ่ต่างชาติต่อวัน กรกฎาคม–ธันวาคม 2026 (USD 100 มกราคม–มิถุนายน) · เช็กราคาเด็ก" },
+          "book": "req",
+          "q": "Maasai Mara National Reserve, Narok, Kenya",
+          "ok": "2026-11",
+          "src": "https://www.masaimara.travel/park-entry-fees.php"
+        },
+        {
+          "name": { "en": "Maasai Mara hot air balloon flight", "th": "ขึ้นบอลลูนชมมาไซมารา" },
+          "kind": "ride",
+          "area": { "en": "Maasai Mara", "th": "มาไซมารา" },
+          "what": { "en": "A dawn balloon flight over the savannah", "th": "นั่งบอลลูนยามรุ่งอรุณชมทุ่งสะวันนา" },
+          "why": { "en": "Only for older children: one operator's terms say passengers must be at least 7 years old", "th": "เหมาะกับเด็กโตเท่านั้น เงื่อนไขของผู้ให้บริการรายหนึ่งระบุผู้โดยสารต้องอายุอย่างน้อย 7 ปี" },
+          "tip": { "en": "Minimum age and height vary by operator (7 or 8, about 1.2–1.4 m); confirm with yours", "th": "อายุและส่วนสูงขั้นต่ำต่างกันตามผู้ให้บริการ (7 หรือ 8 ปี ราว 1.2–1.4 ม.) ควรเช็กกับผู้ให้บริการ" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "req",
+          "q": "Masai Balloons, Maasai Mara, Kenya",
+          "ok": "2026-11",
+          "src": "https://masaiballoons-com.nuxt.dev/terms"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Nairobi Gallery", "th": "หอศิลป์ไนโรบี" },
+          "kind": "museum",
+          "area": { "en": "City centre", "th": "ใจกลางเมือง" },
+          "what": { "en": "A National Museums of Kenya gallery in a historic building in the city centre", "th": "หอศิลป์ของพิพิธภัณฑ์แห่งชาติเคนยา ในอาคารเก่าใจกลางเมือง" },
+          "why": { "en": "A short, quiet indoor stop in town; best for children who like to look at pictures", "th": "แวะในร่มสั้นๆ ใจกลางเมือง เหมาะกับเด็กที่ชอบดูภาพ" },
+          "tip": { "en": "Museum fees were revised from 7 May 2026; the museums ask visitors to pay online", "th": "ค่าเข้าพิพิธภัณฑ์ปรับใหม่ตั้งแต่ 7 พ.ค. 2569 และให้ชำระออนไลน์" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ US$14 adults · US$7 children (visitors from outside Africa)", "th": "≈ US$14 ผู้ใหญ่ · US$7 เด็ก (ผู้มาจากนอกแอฟริกา)" },
+          "book": "none",
+          "q": "Nairobi Gallery, Kenyatta Avenue, Nairobi",
+          "src": "https://museums.or.ke/wp-content/uploads/2026/04/Revision-of-NMK-admission-fees-2026-Website.pdf"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "name": {
+            "th": "เนินเขางอง",
+            "en": "Ngong Hills"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางตะวันตกเฉียงใต้ของไนโรบี",
+            "en": "Southwest of Nairobi"
+          },
+          "what": {
+            "th": "เส้นทางเดินเขาวิวหุบเขาริฟต์",
+            "en": "Hiking trails with views of the Rift Valley"
+          },
+          "why": {
+            "th": "มีซิปไลน์ ทางจักรยาน และยิงธนู",
+            "en": "Zip lines, cycling paths and archery"
+          },
+          "tip": {
+            "th": "ไปเช้าตรู่หรือบ่ายแก่ ๆ อากาศเย็นกว่า",
+            "en": "Go early morning or late afternoon, when it is cooler"
+          },
+          "q": "Ngong Hills, Kenya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "name": {
+            "th": "สวนอูฮูรู",
+            "en": "Uhuru Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไนโรบี",
+            "en": "Nairobi"
+          },
+          "what": {
+            "th": "อุทยานอนุสรณ์แห่งชาติกว้างใหญ่ ทั้งประวัติศาสตร์และพักผ่อน",
+            "en": "A big national monument park with history and recreation"
+          },
+          "why": {
+            "th": "ลานเล่นใหญ่ มีม้าหมุน ชิงช้าสวรรค์ และปราสาทเป่าลม",
+            "en": "A big play area with merry-go-rounds, a Ferris wheel and bouncy castles"
+          },
+          "tip": {
+            "th": "เช้าตรู่ถึงราว 11:00 คนน้อยที่สุด",
+            "en": "Early morning until about 11:00 is quietest"
+          },
+          "q": "Uhuru Gardens, Nairobi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "name": {
+            "th": "พิพิธภัณฑ์รถไฟไนโรบี",
+            "en": "Nairobi Railway Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไนโรบี",
+            "en": "Nairobi"
+          },
+          "what": {
+            "th": "หัวรถจักรเก่าและสิ่งของเล่าเรื่องรถไฟของเคนยา",
+            "en": "Old locomotives and railway objects telling Kenya's railway story"
+          },
+          "why": {
+            "th": "มีไกด์เล่าเรื่องรถไฟ",
+            "en": "A guide shares the trains' stories"
+          },
+          "tip": {
+            "th": "8:00–11:00 คนน้อยที่สุด",
+            "en": "8:00 to 11:00 is quietest"
+          },
+          "q": "Kenya Railway Museum, Station Road, Nairobi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
+          "name": {
+            "th": "สวนอนุสรณ์จอห์น มิชูกิ",
+            "en": "John Michuki Memorial Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ระหว่างใจกลางเมืองกับอัปเปอร์ฮิลล์",
+            "en": "Between the centre and Upper Hill"
+          },
+          "what": {
+            "th": "พื้นที่สีเขียวเงียบสงบ มีทางเดิน สนามหญ้า และที่นั่งร่ม",
+            "en": "A quiet green space with walking paths, lawns and shade"
+          },
+          "why": {
+            "th": "เดินชมธรรมชาติ ดูนก และเล่นเกมง่าย ๆ",
+            "en": "Nature walks, bird watching and simple games"
+          },
+          "q": "John Michuki Memorial Park, Nairobi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
+          "name": {
+            "th": "สวนซิตีพาร์ก",
+            "en": "City Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไนโรบี",
+            "en": "Nairobi"
+          },
+          "what": {
+            "th": "พื้นที่สีเขียวกว้างกับป่าธรรมชาติ",
+            "en": "Open green space with natural woodland"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กที่ชอบสำรวจกลางแจ้ง",
+            "en": "For children who like exploring outdoors"
+          },
+          "q": "City Park, Nairobi",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

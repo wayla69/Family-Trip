@@ -43,9 +43,9 @@ jobs:
           due=$(curl -fsS --retry 3 -H "Authorization: Bearer $MB_BACKUP_TOKEN" "${MB_URL%/}/api/backup/due" | python3 -c "import json,sys; print('yes' if json.load(sys.stdin)['due'] else 'no')")
           echo "a trip is on: $due"
           echo "run=$due" >> "$GITHUB_OUTPUT"; echo "keep=30" >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@v5   # first: checkout cleans the folder, so the zip comes after it
+      - uses: actions/checkout@v7   # first: checkout cleans the folder, so the zip comes after it
         if: steps.due.outputs.run == 'yes'
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         if: steps.due.outputs.run == 'yes'
         with:
           node-version-file: .nvmrc
@@ -92,7 +92,7 @@ jobs:
           printf '%s' "$MB_BACKUP_PASSPHRASE" | gpg --batch --yes --quiet --pinentry-mode loopback --passphrase-fd 0 -d -o check.zip memory-book-backup.zip.gpg
           unzip -tq check.zip && shred -u check.zip
           echo "encrypted: $(du -h memory-book-backup.zip.gpg | cut -f1)"
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: always() && steps.due.outputs.run == 'yes'
         with:
           name: memory-book-backup-${{ github.run_number }}

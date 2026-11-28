@@ -1,0 +1,205 @@
+{
+  "town": "th (Thailand round 4, things to do: Khao Kho, Chanthaburi, Ayutthaya, Hat Yai, Hua Hin, Trat and Koh Chang, Lampang, Koh Lipe, Nan, Trang, Krabi, Pattaya, Samui)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Thailand notes (TAT counts as official; otherwise a 2025–2026 page — a Thai date 2568/2569 counts; no national chains, no bars) -> scripts/library-check.cjs (single Wongnai place pages carry no page date and were left out) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town (none kept by hand) -> Thai and English by writer agents to docs/STYLE.md, opening hours taken out of the text.",
+  "towns": {
+    "th-ayutthaya": {
+      "eat": [],
+      "do": [
+        {
+          "name": "The Rabbit Water Park",
+          "src": "https://tripsiam.com/travel-ayutthaya"
+        },
+        {
+          "name": "Wat Phanan Choeng",
+          "src": "https://travel.kapook.com/view277840.html"
+        },
+        {
+          "name": "Wat Nivet Thammaprawat",
+          "src": "https://travel.kapook.com/view277840.html"
+        }
+      ]
+    },
+    "th-chanthaburi": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Viva Foresta Farm",
+          "src": "https://www.posttoday.com/smart-sme/744769"
+        },
+        {
+          "name": "Lan Hin Si Chomphu (Pink Rock Beach)",
+          "src": "https://travel.trueid.net/detail/4qjv9bPoxq8"
+        },
+        {
+          "name": "Wat Pak Nam Khaem Nu",
+          "src": "https://travel.trueid.net/detail/4qjv9bPoxq8"
+        }
+      ]
+    },
+    "th-hatyai": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Hat Yai Junction railway station",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        },
+        {
+          "name": "ASEAN Night Bazaar Hat Yai",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/destinations-hatyai-songkhla"
+        }
+      ]
+    },
+    "th-huahin": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Khao Tao Reservoir",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/introducing-the-most-popular-places-to-visit-in-hua-hin"
+        },
+        {
+          "name": "Khao Takiab Beach",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/introducing-the-most-popular-places-to-visit-in-hua-hin"
+        }
+      ]
+    },
+    "th-khaokho": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Khao Kho district office viewpoint",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": "Rai B.N. Khao Kho",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": "Rachamangkhalaphisek Garden viewpoint",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": "Phetchabun fire-control pine forest",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        },
+        {
+          "name": "Pha Son Kaeo ranger post viewpoint",
+          "src": "https://travel.trueid.net/detail/NM2oa5byAD8L"
+        }
+      ]
+    },
+    "th-kohchang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Sunken Buddha, Khao Rakam reservoir",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/amazing-trat"
+        },
+        {
+          "name": "Lan Tabun century-old mangrove grove",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/amazing-trat"
+        }
+      ]
+    },
+    "th-krabi": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Huay Toh Waterfall",
+          "src": "https://krabinature.com/attractions/huay-to-waterfall/"
+        }
+      ]
+    },
+    "th-lampang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "The Louis Leonowens House",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Wat Si Rong Muang",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        }
+      ]
+    },
+    "th-lipe": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Chado Cliff",
+          "src": "https://www.twowanderingsoles.com/blog/things-to-do-in-koh-lipe-thailand"
+        },
+        {
+          "name": "Koh Usen",
+          "src": "https://www.twowanderingsoles.com/blog/things-to-do-in-koh-lipe-thailand"
+        }
+      ]
+    },
+    "th-nan": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Wat Si Phan Ton",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
+        },
+        {
+          "name": "Sapan village",
+          "src": "https://travel.trueid.net/detail/aqP4e528vNd"
+        }
+      ]
+    },
+    "th-pattaya": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Pattaya Sheep Farm",
+          "src": "https://pickyourtrail.com/attractions/pattaya/pattaya-sheep-farm"
+        }
+      ]
+    },
+    "th-samui": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Laem Sor Pagoda",
+          "src": "https://pickyourtrail.com/attractions/koh-samui/laem-sor-pagoda-koh-samui"
+        }
+      ]
+    },
+    "th-trang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Dugong Roundabout",
+          "src": "https://www.traveloka.com/en-th/explore/destination/places-to-go-in-trang/157562"
+        },
+        {
+          "name": "Phaya Phichai Songkram Cave",
+          "src": "https://www.traveloka.com/en-th/explore/destination/places-to-go-in-trang/157562"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "Hug You Sheep Farm, Lampang"
+    ],
+    "name or place did not match on Google Maps": "fifteen (tours that are not one place, the Ayutthaya night market listed twice, Pha Diao Dai and Sai Sorn on the Nakhon Nayok side of Khao Yai, a marigold field Maps does not list)",
+    "source refused": "trip.com user posts (two Hat Yai rows)",
+    "other": [
+      "Sriayuthaya Lion Park (elephant riding and tiger walks)",
+      "Samui Aquarium and Tiger Zoo, Hua Hin Safari (animal shows)",
+      "Monsoon Valley Vineyard (a winery)",
+      "Ban Tha Chang spring (closed for renovation from June 2026)",
+      "Khao Yai Thiang and EGAT Lam Takong (Sikhio, too far; the first already a Korat row)",
+      "Wang Nam Pua (closed on Maps) and Doi Tee Du (about 30 km)",
+      "Koh Mak rows (another island)",
+      "war memorials and a military base at Khao Kho",
+      "Krabi Fishery (the existing Krabi Aquarium)"
+    ],
+    "nothing new on a dated page": "Bangkok, Rayong, Ubon, Loei, Nakhon Si Thammarat; Korat not searched again (empty twice)",
+    "removed (owner, 28 Nov 2026)": "Lampang horse-carriage ride (animal riding, as the Bruges carriage removed earlier) and the Thai Elephant Conservation Center (elephant shows, about 35 km from the town) — the 20 Nov audit had kept both"
+  }
+}

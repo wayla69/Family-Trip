@@ -1,0 +1,282 @@
+{
+  "cc": "np",
+  "towns": [
+    {
+      "place": "np-kathmandu",
+      "thin": true,
+      "sights": [
+        {
+          "name": { "en": "Garden of Dreams", "th": "การ์เดนออฟดรีมส์" },
+          "local": "स्वप्नबगैँचा",
+          "kind": "park",
+          "area": { "en": "Thamel", "th": "ทาเมล" },
+          "what": { "en": "A restored walled garden with lawns, ponds, pergolas and a café, a quiet pocket beside busy Thamel", "th": "สวนมีกำแพงที่บูรณะแล้ว มีสนามหญ้า สระน้ำ ศาลาไม้เลื้อย และคาเฟ่ ใกล้ย่านทาเมลที่วุ่นวาย" },
+          "why": { "en": "One of the few places downtown where small children can run on grass away from traffic", "th": "เป็นที่ไม่กี่แห่งกลางเมืองที่เด็กเล็กวิ่งเล่นบนสนามหญ้าได้โดยไม่มีรถ" },
+          "tip": { "en": "Usually open 09:00 to 22:00; sources disagree on the fee, so check at the gate", "th": "มักเปิด 09:00–22:00 แหล่งข้อมูลให้ค่าเข้าไม่ตรงกัน เช็กที่ประตูก่อน" },
+          "ages": [2, 2, 1, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price: sources show about NPR 400–500 for foreign adults, lower for children", "th": "เช็กราคา: แหล่งข้อมูลให้ราว 400–500 รูปีเนปาลสำหรับผู้ใหญ่ต่างชาติ เด็กถูกกว่า" },
+          "book": "none",
+          "q": "Garden of Dreams, Thamel, Kathmandu",
+          "ok": "2026-11",
+          "src": "https://www.bestheritagetour.com/blog/entrance-fees-and-travel-tips-in-nepal"
+        },
+        {
+          "name": { "en": "Central Zoo, Jawalakhel", "th": "สวนสัตว์กลางจาวาลาเคล" },
+          "local": "केन्द्रीय चिडियाखाना",
+          "kind": "zoo",
+          "area": { "en": "Jawalakhel, Lalitpur", "th": "จาวาลาเคล ลลิตปุระ" },
+          "what": { "en": "Nepal's national zoo, run by the National Trust for Nature Conservation, with a lake, deer, tigers and birds", "th": "สวนสัตว์แห่งชาติของเนปาล ดูแลโดยมูลนิธิอนุรักษ์ธรรมชาติ มีทะเลสาบ กวาง เสือ และนก" },
+          "why": { "en": "Shaded paths and a pond make an easy half day; bring your own snacks and expect some uneven ground", "th": "ทางเดินร่มรื่นและมีสระ เที่ยวครึ่งวันสบาย ทางบางช่วงไม่เรียบ" },
+          "tip": { "en": "NTNC lists 10:00 to 19:00 with new rates from July 2025; a bird-flu closure happened in 2025, so check it is open", "th": "NTNC แจ้งเปิด 10:00–19:00 ราคาใหม่ตั้งแต่ก.ค. 2025 เคยปิดเพราะไข้หวัดนกในปี 2025 เช็กก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price: the zoo revised its rates in July 2025", "th": "เช็กราคา: สวนสัตว์ปรับอัตราใหม่เดือนกรกฎาคม 2025" },
+          "book": "none",
+          "q": "Central Zoo, Jawalakhel, Lalitpur",
+          "ok": "2026-11",
+          "src": "https://ntnc.org.np/project/central-zoo"
+        },
+        {
+          "name": { "en": "Chandragiri Hills cable car", "th": "กระเช้าลอยฟ้าจันทรคีรี" },
+          "local": "चन्द्रागिरि केबलकार",
+          "kind": "views",
+          "area": { "en": "Thankot", "th": "ทันโกต" },
+          "what": { "en": "A cable car from Thankot up to a ridge above the valley with a view of the Himalayan range on clear days", "th": "กระเช้าจากทันโกตขึ้นสันเขาเหนือหุบเขา เห็นเทือกเขาหิมาลัยในวันฟ้าใส" },
+          "why": { "en": "The ride itself thrills most children; children under 3 feet ride free and under 4 feet get a discount", "th": "นั่งกระเช้าก็ตื่นเต้นแล้ว เด็กสูงไม่ถึง 3 ฟุตฟรี ไม่ถึง 4 ฟุตลดราคา" },
+          "tip": { "en": "Go on a clear morning; a lunch break and the weather can stop the cars, so confirm with the operator", "th": "ไปตอนเช้าที่ฟ้าใส ช่วงพักเที่ยงและสภาพอากาศอาจหยุดกระเช้า ถามผู้ให้บริการก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ US$23 adults round trip (operator's page) · children under 3 feet free", "th": "≈ 23 ดอลลาร์สหรัฐ ผู้ใหญ่ไป-กลับ (หน้าเว็บผู้ให้บริการ) · เด็กสูงไม่ถึง 3 ฟุตฟรี" },
+          "book": "none",
+          "q": "Chandragiri Hills Cable Car, Thankot, Kathmandu",
+          "ok": "2026-11",
+          "src": "https://www.chandragirihills.com/cable-car-ride/"
+        },
+        {
+          "name": { "en": "Patan Durbar Square and Patan Museum", "th": "จัตุรัสปาตันและพิพิธภัณฑ์ปาตัน" },
+          "local": "पाटन संग्रहालय",
+          "kind": "museum",
+          "area": { "en": "Patan, Lalitpur", "th": "ปาตัน ลลิตปุระ" },
+          "what": { "en": "A royal palace courtyard turned museum of bronze and wood craft, beside an old-town square you can walk around", "th": "ลานพระราชวังเก่าที่เป็นพิพิธภัณฑ์งานโลหะและงานไม้ ติดกับจัตุรัสเมืองเก่าที่เดินเที่ยวได้" },
+          "why": { "en": "Short museum visit plus a flat square to wander; cool inside on a hot day", "th": "เข้าชมพิพิธภัณฑ์ได้สั้นๆ และเดินเล่นในจัตุรัสที่ราบเรียบ ข้างในเย็นสบาย" },
+          "tip": { "en": "Listings give 10:00 to 17:00 and a ticket that covers the square; hours vary by season", "th": "ข้อมูลแจ้ง 10:00–17:00 ตั๋วใช้เข้าจัตุรัสด้วย เวลาเปลี่ยนตามฤดูกาล" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price: sources show about NPR 1,000 for foreign adults", "th": "เช็กราคา: แหล่งข้อมูลให้ราว 1,000 รูปีเนปาลสำหรับผู้ใหญ่ต่างชาติ" },
+          "book": "none",
+          "q": "Patan Museum, Patan Durbar Square, Lalitpur",
+          "ok": "2026-11",
+          "src": "https://kathmandutriennale.org/visit"
+        },
+        {
+          "name": { "en": "Bhaktapur old town walk", "th": "เดินชมเมืองเก่าภักตะปุระ" },
+          "local": "भक्तपुर",
+          "kind": "oldtown",
+          "area": { "en": "Bhaktapur", "th": "ภักตะปุระ" },
+          "what": { "en": "A brick old town of squares, lanes and potters' yards, walked rather than queued for", "th": "เมืองเก่าอิฐแดง มีจัตุรัส ตรอกซอกซอย และลานปั้นหม้อ เดินเที่ยวเรื่อยๆ ได้" },
+          "why": { "en": "Car-free lanes suit a carrier or a light stroller; children like watching potters at work", "th": "ตรอกไม่มีรถ เหมาะกับเป้อุ้มหรือรถเข็นเบา เด็กชอบดูช่างปั้นหม้อ" },
+          "tip": { "en": "A visitor fee applies; a July 2025 report puts it at NPR 2,000 for non-SAARC foreigners, children under 10 free per one fee list", "th": "มีค่าเข้าเมือง รายงานเดือนก.ค. 2025 ระบุ 2,000 รูปีเนปาลสำหรับต่างชาติ เด็กต่ำกว่า 10 ปีฟรีตามตารางหนึ่ง" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price: ≈ NPR 2,000 for foreign adults (July 2025 report) · children under 10 free", "th": "เช็กราคา: ≈ 2,000 รูปีเนปาลผู้ใหญ่ต่างชาติ (รายงานก.ค. 2025) · เด็กต่ำกว่า 10 ปีฟรี" },
+          "book": "none",
+          "q": "Bhaktapur Durbar Square, Bhaktapur",
+          "ok": "2026-11",
+          "src": "https://www.bhaktapur.com/entry-fees-of-the-heritage-sites-in-nepal/"
+        },
+        {
+          "name": { "en": "Whoopee Land amusement and water park", "th": "วูปีแลนด์ สวนสนุกและสวนน้ำ" },
+          "local": "",
+          "kind": "themepark",
+          "area": { "en": "Chobhar, Kirtipur", "th": "โชภาร์ กีรติปุระ" },
+          "what": { "en": "A family amusement and water park south-west of the city with rides for small and bigger children", "th": "สวนสนุกและสวนน้ำสำหรับครอบครัวทางใต้ของเมือง มีเครื่องเล่นทั้งเด็กเล็กและเด็กโต" },
+          "why": { "en": "Gentle rides and a splash area give a rainy-day or hot-day option; the lists show a children's price", "th": "มีเครื่องเล่นเบาๆ และโซนเล่นน้ำ เป็นทางเลือกวันฝนหรือวันร้อน มีราคาเด็ก" },
+          "tip": { "en": "Listed as 10:00 to 17:30; prices differ between pages, so ask the park's social pages first", "th": "แจ้งเปิด 10:00–17:30 ราคาแต่ละเว็บไม่ตรงกัน ถามเพจของสวนก่อน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price: sources show about NPR 500–700 for adults, less for children", "th": "เช็กราคา: แหล่งข้อมูลให้ราว 500–700 รูปีเนปาลผู้ใหญ่ เด็กถูกกว่า" },
+          "book": "none",
+          "q": "Whoopee Land, Chobhar, Kirtipur",
+          "ok": "2026-11",
+          "src": "https://traveltriangle.com/blog/water-parks-in-nepal/"
+        },
+        {
+          "name": { "en": "Godawari Botanical Garden", "th": "สวนพฤกษศาสตร์โกดาวารี" },
+          "local": "राष्ट्रिय वनस्पति उद्यान",
+          "kind": "nature",
+          "area": { "en": "Godawari, Lalitpur", "th": "โกดาวารี ลลิตปุระ" },
+          "what": { "en": "The national botanical garden at the foot of Phulchoki, with shaded paths, ponds and plant collections", "th": "สวนพฤกษศาสตร์แห่งชาติที่เชิงเขาพุลโชกี มีทางเดินร่มรื่น สระน้ำ และพืชสะสม" },
+          "why": { "en": "Quiet and green with space to run; about an hour by taxi, so pack food and plan a half day", "th": "เงียบและเขียว มีที่วิ่งเล่น นั่งแท็กซี่ราวชั่วโมง เตรียมอาหารและเที่ยวครึ่งวัน" },
+          "tip": { "en": "A forum lists gates 10:00 to 16:00; the ticket price was not shown, so ask at the gate", "th": "เว็บบอร์ดแจ้งเปิด 10:00–16:00 ไม่พบราคาตั๋ว ถามที่ประตู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "National Botanical Garden, Godawari, Lalitpur",
+          "ok": "2026-11",
+          "src": "https://nepaltraveller.com/sidetrack/3428"
+        },
+        {
+          "name": { "en": "Swayambhunath (Monkey Temple)", "th": "สวายัมภูนาถ (วัดลิง)" },
+          "kind": "culture",
+          "area": { "en": "Swayambhu", "th": "สวายัมภู" },
+          "what": { "en": "A hilltop stupa with prayer wheels, views over the valley and many wild monkeys", "th": "เจดีย์บนเนินพร้อมกงล้อมนตร์ มีวิวหุบเขาและลิงอยู่เต็ม" },
+          "why": { "en": "The monkeys delight children but can snatch food; stairs are steep for prams", "th": "เด็กๆ ชอบลิง แต่ลิงแย่งอาหารได้ และบันไดชัน รถเข็นขึ้นยาก" },
+          "tip": { "en": "Keep snacks in the bag, carry little ones on the long steps, go early", "th": "เก็บขนมในกระเป๋า อุ้มเด็กเล็กตอนขึ้นบันได ไปแต่เช้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Swayambhunath Stupa, Kathmandu",
+          "ok": "2026-11",
+          "src": "https://www.bestheritagetour.com/blog/entrance-fees-and-travel-tips-in-nepal"
+        },
+        {
+          "name": { "en": "Shivapuri Nagarjun National Park", "th": "อุทยานแห่งชาติศิวปุรี นาการ์ชุน" },
+          "kind": "nature",
+          "area": { "en": "Budhanilkantha", "th": "พุทธนิลกัณฐะ" },
+          "what": { "en": "A forested hill park on the valley's northern rim with easy walks, birds and cool shade", "th": "อุทยานป่าบนเนินเหนือหุบเขา มีทางเดินสบายๆ นกและร่มเงาเย็น" },
+          "why": { "en": "A quiet break from city traffic; keep to the lower, gentler paths with small children", "th": "พักจากรถติดในเมือง เด็กเล็กควรเดินทางล่างที่ลาดน้อย" },
+          "tip": { "en": "Bring water and layers; hire a local guide if you go beyond the gate area", "th": "เตรียมน้ำและเสื้อกันหนาว หากเข้าลึกควรมีไกด์ท้องถิ่น" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Shivapuri Nagarjun National Park, Budhanilkantha, Kathmandu",
+          "ok": "2026-11",
+          "src": "https://www.bestheritagetour.com/blog/entrance-fees-and-travel-tips-in-nepal"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "1,000 รูปี",
+            "en": "1000 Rupees"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/kathmandu-with-kids/",
+          "name": {
+            "th": "จัตุรัสกาฐมาณฑุดูร์บาร์",
+            "en": "Kathmandu Durbar Square"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "กาฐมาณฑุ",
+            "en": "Kathmandu"
+          },
+          "what": {
+            "th": "จัตุรัสหลวงที่มีวัดและพระราชวัง บางส่วนสร้างใหม่หลังแผ่นดินไหวปี 2015",
+            "en": "A royal square of temples and palaces, partly rebuilt after the 2015 earthquake"
+          },
+          "why": {
+            "th": "จัตุรัสหลวงที่ไปง่ายที่สุดจากในเมือง",
+            "en": "The easiest of the valley's royal squares to reach from the city"
+          },
+          "q": "Kathmandu Durbar Square, Basantapur, Kathmandu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/kathmandu-with-kids/",
+          "name": {
+            "th": "จัตุรัสช่างปั้นหม้อ",
+            "en": "Pottery Square"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ภักตปุระ",
+            "en": "Bhaktapur"
+          },
+          "what": {
+            "th": "จัตุรัสที่ช่างปั้นหม้อทำงานให้ดู",
+            "en": "A square where potters work in front of visitors"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ดูช่างปั้นหม้อทำงาน",
+            "en": "Children watch the potters at work"
+          },
+          "q": "Pottery Square, Bhaktapur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ntb.gov.np/plan-your-trip/trip-ideas/travel-with-children",
+          "name": {
+            "th": "เจดีย์สันติภาพโลก โปขรา",
+            "en": "World Peace Pagoda (Pokhara)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ฝั่งตรงข้ามทะเลสาบเฟวาจากเลกไซด์ โปขรา",
+            "en": "Across Phewa Lake from Lakeside, Pokhara"
+          },
+          "what": {
+            "th": "นั่งเรือข้ามทะเลสาบเฟวาสั้นๆ แล้วเดินขึ้นราวหนึ่งชั่วโมงถึงเจดีย์ วิวทะเลสาบและภูเขา",
+            "en": "A short boat ride across Phewa Lake, then about an hour's walk up to a stupa with lake and mountain views"
+          },
+          "why": {
+            "th": "การท่องเที่ยวเนปาลบอกว่าเป็นวันเที่ยวที่ดีสำหรับเด็ก",
+            "en": "The Nepal Tourism Board calls the walk a great day out for children"
+          },
+          "q": "World Peace Pagoda, Pokhara",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

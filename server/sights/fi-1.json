@@ -1,0 +1,1097 @@
+{
+  "cc": "fi",
+  "towns": [
+    {
+      "place": "fi-helsinki",
+      "sights": [
+        {
+          "name": { "en": "Linnanmäki Amusement Park", "th": "สวนสนุกลินนันมากิ" },
+          "local": "Linnanmäki",
+          "kind": "themepark",
+          "area": { "en": "Alppila", "th": "อัลป์ปิลา" },
+          "what": { "en": "A hilltop amusement park near the city centre with rides for all heights, from a gentle carousel to roller coasters", "th": "สวนสนุกบนเนินใกล้ใจกลางเมือง มีเครื่องเล่นสำหรับทุกความสูง ตั้งแต่ม้าหมุนเบาๆ ไปจนถึงรถไฟเหาะ" },
+          "why": { "en": "Many rides have no height limit or only a low one, so a small child can ride with a parent", "th": "เครื่องเล่นหลายอย่างไม่จำกัดความสูงหรือจำกัดต่ำ เด็กเล็กนั่งกับพ่อแม่ได้" },
+          "tip": { "en": "Summer season runs 30 April–6 September 2026; autumn events such as the Carnival of Light are in October", "th": "ฤดูร้อนเปิดช่วงปลายเมษายนถึงต้นกันยายน ส่วนช่วงตุลาคมมีงานอย่าง Carnival of Light" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €11 for one ride with park entry · check the wristband price", "th": "≈ €11 เล่น 1 รอบพร้อมค่าเข้า · เช็กราคาสายรัดข้อมือ" },
+          "book": "rec",
+          "q": "Linnanmäki, Tivolikuja 1, Helsinki",
+          "ok": "2026-11",
+          "src": "https://kauppa.linnanmaki.fi/en/tuote/ride-ticket-summer-season"
+        },
+        {
+          "name": { "en": "Korkeasaari Zoo", "th": "สวนสัตว์คอร์เคอาซารี" },
+          "local": "Korkeasaaren eläintarha",
+          "kind": "zoo",
+          "area": { "en": "Korkeasaari island", "th": "เกาะคอร์เคอาซารี" },
+          "what": { "en": "Finland's biggest zoo on its own island, with snow leopards, Amur tigers, lemurs and a farm corner", "th": "สวนสัตว์ใหญ่สุดของฟินแลนด์บนเกาะของตัวเอง มีเสือดาวหิมะ เสือไซบีเรีย ลีเมอร์ และมุมฟาร์ม" },
+          "why": { "en": "A long day out with paths through forest and sea views; small children tire, so plan a stroller and a picnic", "th": "เดินได้ทั้งวันท่ามกลางป่าและวิวทะเล เด็กเล็กเหนื่อยง่าย เตรียมรถเข็นและอาหารปิกนิกไปด้วย" },
+          "tip": { "en": "Open daily with longer hours in school holidays; a summer evening ticket from 16:00 is cheaper (guide, 2026)", "th": "เปิดทุกวัน ช่วงปิดเทอมเปิดนานขึ้น ในฤดูร้อนมีบัตรหลัง 16:00 ที่ถูกกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €26 adults online · €18 children 4–17 · under 4 free", "th": "≈ €26 ผู้ใหญ่ซื้อออนไลน์ · €18 เด็ก 4–17 ปี · ต่ำกว่า 4 ขวบฟรี" },
+          "book": "none",
+          "q": "Korkeasaari Zoo, Helsinki",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/helsinki-zoo-korkeasaari"
+        },
+        {
+          "name": { "en": "Heureka Science Centre", "th": "ศูนย์วิทยาศาสตร์เฮอเรกา" },
+          "local": "Tiedekeskus Heureka",
+          "kind": "museumkid",
+          "area": { "en": "Tikkurila, Vantaa", "th": "ติกกูริลา วันตา" },
+          "what": { "en": "A hands-on science centre with exhibitions, planetarium films and shows, plus an outdoor science park in summer", "th": "ศูนย์วิทยาศาสตร์ให้ลงมือเล่น มีนิทรรศการ หนังดาราศาสตร์ในท้องฟ้าจำลอง และสวนวิทยาศาสตร์กลางแจ้งในฤดูร้อน" },
+          "why": { "en": "Plenty to press, climb and try; a good rainy-day plan for every age", "th": "มีของให้กด ปีน ลองเล่นเยอะ เหมาะวันฝนตกทุกวัย" },
+          "tip": { "en": "A 20-minute train ride from the centre; same-day online tickets cost less than at the door", "th": "นั่งรถไฟจากใจกลางเมืองราว 20 นาที ซื้อบัตรออนไลน์วันเดียวกันถูกกว่าที่หน้าประตู" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €23 adults · €16 ages 5–17 · under 5 free", "th": "≈ €23 ผู้ใหญ่ · €16 อายุ 5–17 ปี · ต่ำกว่า 5 ขวบฟรี" },
+          "book": "rec",
+          "q": "Heureka, Tiedepuisto 1, Vantaa",
+          "ok": "2026-11",
+          "src": "https://www.heureka.fi/en/pages/info"
+        },
+        {
+          "name": { "en": "Suomenlinna Sea Fortress", "th": "ป้อมปราการทะเลซูโอเมนลินนา" },
+          "local": "Suomenlinna",
+          "kind": "oldtown",
+          "area": { "en": "Suomenlinna island", "th": "เกาะซูโอเมนลินนา" },
+          "what": { "en": "A UNESCO island fortress with grassy ramparts, tunnels, cannons and cafés, reached by a 15-minute ferry", "th": "ป้อมปราการบนเกาะมรดกโลก มีกำแพงหญ้า อุโมงค์ ปืนใหญ่ และคาเฟ่ นั่งเรือข้ามฟากราว 15 นาที" },
+          "why": { "en": "The ferry ride is half the fun; open grass and cannons to climb on, but some paths are cobbled", "th": "นั่งเรือก็สนุกแล้ว มีสนามหญ้าโล่งและปืนใหญ่ให้ดู บางทางเป็นถนนหิน" },
+          "tip": { "en": "Entering the fortress grounds is free; museums charge separately", "th": "เดินเข้าป้อมฟรี แต่พิพิธภัณฑ์ในเกาะคิดค่าเข้าแยก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk in · the ferry needs an HSL AB ticket, check the price", "th": "เดินเข้าฟรี · เรือใช้ตั๋ว HSL โซน AB เช็กราคา" },
+          "book": "none",
+          "q": "Suomenlinna ferry, Kauppatori, Helsinki",
+          "ok": "2026-11",
+          "src": "https://www.myhelsinki.fi/en/see-and-do-neighbourhoods/seaside-helsinki/islands-within-a-fifteen-minute-ferry-ride"
+        },
+        {
+          "name": { "en": "SEA LIFE Helsinki", "th": "ซีไลฟ์ เฮลซิงกิ" },
+          "local": "SEA LIFE Helsinki",
+          "kind": "aquarium",
+          "area": { "en": "Linnanmäki", "th": "ลินนันมากิ" },
+          "what": { "en": "An aquarium by Linnanmäki with Baltic and tropical fish, a tunnel and a rescue-squad children's trail", "th": "พิพิธภัณฑ์สัตว์น้ำข้างลินนันมากิ มีปลาทะเลบอลติกและปลาเขตร้อน อุโมงค์ และเส้นทางสำหรับเด็ก" },
+          "why": { "en": "Dark, calm rooms at toddler height; easy to pair with Linnanmäki", "th": "ห้องมืดสงบ ตู้อยู่ระดับสายตาเด็กเล็ก ไปคู่กับลินนันมากิได้ง่าย" },
+          "tip": { "en": "Booking online at least a day ahead is cheaper than the door", "th": "จองออนไลน์ล่วงหน้าอย่างน้อยหนึ่งวันถูกกว่าซื้อหน้าประตู" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €28.50 adults · €23.50 children 2–14 (check the price, online is cheaper)", "th": "≈ €28.50 ผู้ใหญ่ · €23.50 เด็ก 2–14 ปี (เช็กราคา ออนไลน์ถูกกว่า)" },
+          "book": "rec",
+          "q": "SEA LIFE Helsinki, Tivolikuja 10",
+          "ok": "2026-11",
+          "src": "https://www.visitsealife.com/helsinki/en/prices"
+        },
+        {
+          "name": { "en": "Oodi Central Library", "th": "ห้องสมุดกลางโอดี" },
+          "local": "Keskustakirjasto Oodi",
+          "kind": "culture",
+          "area": { "en": "Töölönlahti", "th": "เติลเลินลาห์ติ" },
+          "what": { "en": "A modern library with a children's floor, a play corner called Loru, a sunny terrace and cafés", "th": "ห้องสมุดทันสมัย มีชั้นเด็ก มุมเล่น Loru ระเบียงรับแดด และคาเฟ่" },
+          "why": { "en": "Free, warm and made for families: picture books, soft seating and space to run on the third floor", "th": "ฟรี อบอุ่น เหมาะครอบครัว มีหนังสือภาพ ที่นั่งนุ่ม และที่วิ่งเล่นบนชั้นสาม" },
+          "tip": { "en": "Open Mon–Fri 8–21, Sat–Sun 10–20; check Loru's programme", "th": "เปิดจันทร์–ศุกร์ 8–21 เสาร์–อาทิตย์ 10–20 เช็กตารางกิจกรรม Loru" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Oodi Helsinki Central Library, Töölönlahdenkatu 4",
+          "ok": "2026-11",
+          "src": "https://www.oodihelsinki.fi/en/arrival/"
+        },
+        {
+          "name": { "en": "Helsinki City Museum and Children's Town", "th": "พิพิธภัณฑ์เมืองเฮลซิงกิและเมืองของเด็ก" },
+          "local": "Helsingin kaupunginmuseo, Lasten kaupunki",
+          "kind": "museumkid",
+          "area": { "en": "Kruununhaka", "th": "ครูนูนฮากา" },
+          "what": { "en": "A free museum whose Children's Town lets kids touch everything: costumes, a cobbler's shop, a ship and a horse carriage", "th": "พิพิธภัณฑ์ฟรี โซนเมืองของเด็กให้จับต้องได้ทุกอย่าง มีชุดแต่งตัว ร้านซ่อมรองเท้า เรือ และรถม้า" },
+          "why": { "en": "Made for play under a parent's eye, with no entry fee", "th": "ออกแบบมาให้เล่นโดยมีพ่อแม่ดูแล และไม่เสียค่าเข้า" },
+          "tip": { "en": "Open Mon–Fri 11–19, Sat–Sun 11–17", "th": "เปิดจันทร์–ศุกร์ 11–19 เสาร์–อาทิตย์ 11–17" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Helsinki City Museum, Aleksanterinkatu 16",
+          "ok": "2026-11",
+          "src": "https://www.helsinginkaupunginmuseo.fi/exhibitions/childrens-town/"
+        },
+        {
+          "name": { "en": "Seurasaari Open-Air Museum", "th": "พิพิธภัณฑ์กลางแจ้งซอยราซารี" },
+          "local": "Seurasaaren ulkomuseo",
+          "kind": "culture",
+          "area": { "en": "Seurasaari island", "th": "เกาะซอยราซารี" },
+          "what": { "en": "An island of old Finnish farmhouses and a manor in a forest park, linked to the mainland by a footbridge", "th": "เกาะที่มีบ้านไร่เก่าและคฤหาสน์ในสวนป่า เดินข้ามสะพานจากแผ่นดินใหญ่ได้" },
+          "why": { "en": "Squirrels, forest paths and wooden houses to peek into; the paths are uneven for prams", "th": "มีกระรอก ทางเดินในป่า และบ้านไม้ให้ชะโงกดู ทางไม่เรียบสำหรับรถเข็น" },
+          "tip": { "en": "Museum buildings open mid-May to mid-September (2026: 15 May–15 September)", "th": "อาคารพิพิธภัณฑ์เปิดกลางพฤษภาคมถึงกลางกันยายน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price (listings differ; under-18s were free on one listing)", "th": "เช็กราคา (แต่ละที่ไม่ตรงกัน) " },
+          "book": "none",
+          "q": "Seurasaari Open-Air Museum, Helsinki",
+          "ok": "2026-11",
+          "src": "https://museot.fi/en/museums/seurasaaren-ulkomuseo"
+        },
+        {
+          "name": { "en": "Old Market Hall", "th": "ตลาดในร่มโอลด์มาร์เก็ตฮอลล์" },
+          "local": "Vanha Kauppahalli",
+          "kind": "market",
+          "area": { "en": "Kaartinkaupunki, by the harbour", "th": "การ์ตินเคาปุงกี ริมท่าเรือ" },
+          "what": { "en": "A 19th-century covered market with smoked fish, cheeses, pastries and small lunch counters", "th": "ตลาดในร่มสมัยศตวรรษที่ 19 ขายปลารมควัน ชีส ขนมอบ และร้านอาหารกลางวันเล็กๆ" },
+          "why": { "en": "Dry and warm for a snack stop beside the harbour; narrow aisles get busy at lunch", "th": "แห้งและอุ่น แวะกินของว่างริมท่าเรือได้ ทางเดินแคบและคนแน่นช่วงกลางวัน" },
+          "tip": { "en": "Mon–Sat 8–18 on the hall's own site; closed on Sundays except in summer and at Christmas, so check", "th": "จันทร์–เสาร์ 8–18 ตามเว็บของตลาด วันอาทิตย์ปิด ยกเว้นฤดูร้อนและช่วงคริสต์มาส เช็กก่อนไป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Free to enter · pay for what you eat", "th": "เข้าฟรี · จ่ายตามที่กิน" },
+          "book": "none",
+          "q": "Old Market Hall, Eteläranta, Helsinki",
+          "ok": "2026-11",
+          "src": "https://vanhakauppahalli.fi/en/contact-information/"
+        },
+        {
+          "name": { "en": "Natural History Museum", "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติ" },
+          "local": "Luonnontieteellinen museo",
+          "kind": "museum",
+          "area": { "en": "Kaisaniemi", "th": "ไคซานีเอมิ" },
+          "what": { "en": "The university's natural history museum: a dinosaur skeleton, Finnish animals and a large mammal hall", "th": "พิพิธภัณฑ์ธรรมชาติของมหาวิทยาลัย มีโครงกระดูกไดโนเสาร์ สัตว์ของฟินแลนด์ และห้องสัตว์เลี้ยงลูกด้วยนมขนาดใหญ่" },
+          "why": { "en": "Big animals at a child's eye level and a short, easy visit in the rain", "th": "สัตว์ตัวใหญ่ในระดับสายตาเด็ก เดินชมสั้นๆ ง่ายๆ ในวันฝนตก" },
+          "tip": { "en": "Closed Mondays; hours seen were 2025, so check", "th": "ปิดวันจันทร์ ชั่วโมงเปิดที่เห็นเป็นของปี 2025 เช็กก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €7 children 5–18 (online €6) · under 5 free · check the adult price", "th": "≈ €7 เด็ก 5–18 ปี (ออนไลน์ €6) · ต่ำกว่า 5 ขวบฟรี · เช็กราคาผู้ใหญ่" },
+          "book": "none",
+          "q": "Natural History Museum, Pohjoinen Rautatiekatu 13, Helsinki",
+          "ok": "2026-11",
+          "src": "https://www.helsinki.fi/en/luomus/visit-us/natural-history-museum"
+        },
+        {
+          "name": { "en": "Serena Water Park", "th": "สวนน้ำเซเรนา" },
+          "local": "Serena Vesipuisto",
+          "kind": "play",
+          "area": { "en": "Espoo (Tapiola side)", "th": "เอสโป" },
+          "what": { "en": "An indoor water park with slides, a wave pool and a children's area, a short drive west of Helsinki", "th": "สวนน้ำในร่ม มีสไลเดอร์ สระคลื่น และโซนเด็ก ขับรถจากเฮลซิงกิไปทางตะวันตกไม่นาน" },
+          "why": { "en": "Warm water year-round; children under 10 must stay with an adult", "th": "น้ำอุ่นตลอดปี เด็กต่ำกว่า 10 ขวบต้องอยู่กับผู้ใหญ่" },
+          "tip": { "en": "Closes for maintenance for a few weeks each late summer (17 Aug–9 Oct in 2026)", "th": "ปิดซ่อมบำรุงสองสามสัปดาห์ช่วงปลายฤดูร้อน (ปี 2026 ปิด 17 ส.ค.–9 ต.ค.)" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €35.50 day pass · ages 0–3 free · family ticket ≈ €122 online", "th": "≈ €35.50 ทั้งวัน · อายุ 0–3 ปีฟรี · ตั๋วครอบครัว ≈ €122 ออนไลน์" },
+          "book": "none",
+          "q": "Serena, Tarvonsalmenkatu 17, Espoo",
+          "ok": "2026-11",
+          "src": "https://serena.fi/en/water-park/prices/"
+        },
+        {
+          "name": { "en": "Allas Sea Pool", "th": "อัลลัส ซีพูล" },
+          "local": "Allas Sea Pool",
+          "kind": "beach",
+          "area": { "en": "Market Square harbour", "th": "ท่าเรือตลาดกลางแจ้ง" },
+          "what": { "en": "Heated pools and saunas on the harbour front, with a shallow children's pool and a café terrace", "th": "สระอุ่นและซาวน่าริมท่าเรือ มีสระเด็กตื้นและระเบียงคาเฟ่" },
+          "why": { "en": "The children's pool is 60 cm deep and heated; it is emptied in winter", "th": "สระเด็กลึก 60 ซม. มีน้ำอุ่น แต่ระบายน้ำออกในฤดูหนาว" },
+          "tip": { "en": "Children are welcome all year in the heated pool with an adult", "th": "เด็กเข้าสระน้ำอุ่นได้ตลอดปีโดยมีผู้ใหญ่ดูแล" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €18 a ticket for pools and saunas · check the child price", "th": "≈ €18 ต่อบัตรสระและซาวน่า · เช็กราคาเด็ก" },
+          "book": "none",
+          "q": "Allas Sea Pool, Katajanokanlaituri 2a, Helsinki",
+          "ok": "2026-11",
+          "src": "https://allasseapool.fi/plan-your-visit/tickets/?lang=en"
+        },
+        {
+          "name": { "en": "Kaivopuisto Park and playground", "th": "สวนไกโวปุยสโตและสนามเด็กเล่น" },
+          "local": "Kaivopuisto",
+          "kind": "park",
+          "area": { "en": "Kaivopuisto", "th": "ไกโวปุยสโต" },
+          "what": { "en": "One of Helsinki's oldest seaside parks with a dragon-guarded playground, big chess boards and ice-cream kiosks in summer", "th": "สวนริมทะเลเก่าแก่ของเฮลซิงกิ มีสนามเด็กเล่นที่มีรูปมังกร กระดานหมากรุกยักษ์ และแผงไอศกรีมในฤดูร้อน" },
+          "why": { "en": "Free, with toilets near the playground and room to run by the sea", "th": "ฟรี มีห้องน้ำใกล้สนามเด็กเล่น และที่วิ่งเล่นริมทะเล" },
+          "tip": { "en": "Take the nearby tram and add the Meripuisto playground next door", "th": "นั่งรถรางไปได้ และแวะสนามเด็กเล่นเมริปุยสโตที่อยู่ติดกัน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Kaivopuisto, Helsinki",
+          "ok": "2026-11",
+          "src": "https://www.myhelsinki.fi/en/see-and-do/sights/kaivopuisto-park"
+        },
+        {
+          "name": { "en": "Architecture and Design Museum", "th": "พิพิธภัณฑ์สถาปัตยกรรมและการออกแบบ" },
+          "local": "Arkkitehtuuri- ja designmuseo",
+          "kind": "museum",
+          "area": { "en": "Kaartinkaupunki", "th": "การ์ตินเคาปุงกี" },
+          "what": { "en": "Finnish design from furniture to toys and architecture, in the former Design Museum building", "th": "งานดีไซน์ฟินแลนด์ ตั้งแต่เฟอร์นิเจอร์ของเล่นไปจนถึงสถาปัตยกรรม ในอาคารเดิมของพิพิธภัณฑ์ดีไซน์" },
+          "why": { "en": "Under-18s are free, but it suits older children more than toddlers", "th": "อายุต่ำกว่า 18 ปีเข้าฟรี แต่เหมาะกับเด็กโตมากกว่าเด็กเล็ก" },
+          "tip": { "en": "Free for everyone on the last Tuesday of the month, 16–20, in most months", "th": "ฟรีทุกคนวันอังคารสุดท้ายของเดือน 16–20 น. ในหลายเดือน" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €20 adults · under 18 free", "th": "≈ €20 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี" },
+          "book": "none",
+          "q": "Architecture and Design Museum, Korkeavuorenkatu 23, Helsinki",
+          "ok": "2026-11",
+          "src": "https://admuseo.fi/en/visit-us/"
+        },
+        {
+          "name": { "en": "Kiasma Museum of Contemporary Art", "th": "พิพิธภัณฑ์ศิลปะร่วมสมัยเคียสมา" },
+          "kind": "museum",
+          "area": { "en": "Kamppi", "th": "คัมปี" },
+          "what": { "en": "Finland's museum of contemporary art, with workshops for babies and families", "th": "พิพิธภัณฑ์ศิลปะร่วมสมัยของฟินแลนด์ มีเวิร์กช็อปสำหรับเด็กทารกและครอบครัว" },
+          "why": { "en": "Children under 18 go in free, and it is a warm place to spend a short, dark afternoon", "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี และเป็นที่อบอุ่นสำหรับบ่ายสั้นๆ" },
+          "tip": { "en": "Closed on Mondays; check the family workshops on the museum page", "th": "ปิดวันจันทร์ เช็กเวิร์กช็อปครอบครัวที่หน้าเว็บ" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €23 adults · discounted €13 · under 18 free", "th": "≈ €23 ผู้ใหญ่ · ลดราคา €13 · ต่ำกว่า 18 ปีฟรี" },
+          "book": "none",
+          "q": "Kiasma, Mannerheiminaukio 2, Helsinki",
+          "ok": "2026-11",
+          "src": "https://kiasma.fi/en/visit/tickets-and-prices/"
+        },
+        {
+          "local": "Nukketeatteri Sampo",
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €9–20",
+            "en": "≈ €9–20"
+          },
+          "book": "rec",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "โรงละครหุ่นซัมโป",
+            "en": "Puppet Theatre Sampo"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เอร็อตตายา",
+            "en": "Erottaja"
+          },
+          "what": {
+            "th": "โรงละครหุ่นสำหรับเด็ก บอกช่วงวัยชัดเจน ตั้งแต่ทารก",
+            "en": "A children’s puppet theatre with clear age guidance, from babies up"
+          },
+          "why": {
+            "th": "เสียงไม่ดังเกินไป เนื้อหาอ่อนโยน ไปได้แม้เด็กเล็กมาก",
+            "en": "Never too loud and gentle in content, fine even for the very small"
+          },
+          "tip": {
+            "th": "การแสดงเป็นภาษาฟินแลนด์ จอดรถเข็นที่ลานด้านใน",
+            "en": "Shows in Finnish; pram parking in the courtyard"
+          },
+          "q": "Puppet Theatre Sampo, Erottajankatu 7, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Talvipuutarha",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "สวนฤดูหนาวเฮลซิงกิ",
+            "en": "Helsinki Winter Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริมอ่าวเตอเลินลาห์ตี",
+            "en": "By Töölönlahti bay"
+          },
+          "what": {
+            "th": "เรือนกระจกจากทศวรรษ 1890 มีห้องปาล์ม ห้องกระบองเพชร และบ่อปลาคาร์ป",
+            "en": "An 1890s glasshouse with a palm room, a cactus room and a koi pond"
+          },
+          "why": {
+            "th": "ป่าเล็กๆ กลางเมือง มีระเบียงให้ขึ้นไปดู",
+            "en": "A mini jungle with a balcony to climb to"
+          },
+          "tip": {
+            "th": "ปิดวันศุกร์ ต้องจอดรถเข็นไว้ข้างนอก",
+            "en": "Closed on Fridays; prams stay outside"
+          },
+          "q": "Helsinki Winter Garden, Hammarskjöldintie 1 A, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "ถ้ำเล่นไลก์กิลัวลา",
+            "en": "Leikkiluola"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮากานิเอมี",
+            "en": "Hakaniemi"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มในหลุมหลบภัยเก่า มีสไลเดอร์และบ้านลม",
+            "en": "An indoor playground in a former civil-defence shelter, with slides and bouncy castles"
+          },
+          "why": {
+            "th": "ที่เล่นอุ่นๆ เมื่อสนามเด็กเล่นข้างนอกเป็นน้ำแข็ง",
+            "en": "A warm place to play when the playgrounds freeze"
+          },
+          "q": "Leikkiluola, Miina Sillanpään katu 2, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.strawberryhotels.com/blog/finland/family-activities-helsinki/",
+          "name": {
+            "th": "ชิงช้าสวรรค์สกายวีล",
+            "en": "SkyWheel Helsinki"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ท่าเรือคาตายาโนกกา",
+            "en": "Katajanokka harbour"
+          },
+          "what": {
+            "th": "นั่งกระเช้าชิงช้าสวรรค์สั้นๆ ชมท่าเรือและเกาะ",
+            "en": "A short ride in a cabin over the harbour and islands"
+          },
+          "why": {
+            "th": "เด็กได้หาจุดสังเกตจากข้างบน",
+            "en": "Children spot the landmarks from above"
+          },
+          "q": "SkyWheel Helsinki, Katajanokanlaituri 2, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Raitioliikennemuseo",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "พิพิธภัณฑ์รถรางเฮลซิงกิ",
+            "en": "Helsinki Tram Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เตอเลอ",
+            "en": "Töölö"
+          },
+          "what": {
+            "th": "รถรางเก่าในโรงจอดเก่า ได้ลองนั่งที่คนขับ",
+            "en": "Historic trams in an old depot, with the driver’s seat to try"
+          },
+          "why": {
+            "th": "ได้ขึ้นไปบนรถรางจริง",
+            "en": "Real trams to climb into"
+          },
+          "tip": {
+            "th": "อังคาร–อาทิตย์ 11–17 น. กลับใจกลางเมืองด้วยรถราง 2",
+            "en": "Tuesday to Sunday 11–17; tram 2 back to the centre"
+          },
+          "q": "Helsinki Tram Museum, Töölönkatu 51 A, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Leikkimuseo",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leikki-museum-play",
+          "name": {
+            "th": "พิพิธภัณฑ์การเล่นไลก์กี",
+            "en": "Leikki – the Museum of Play"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วีจี ตาปิโอลา เอสโป",
+            "en": "WeeGee centre, Tapiola, Espoo"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องวัยเด็ก ของเล่น และการเล่น",
+            "en": "A museum of childhood, toys and play"
+          },
+          "why": {
+            "th": "มีของเล่นและเกมจากหลายยุคให้ลอง",
+            "en": "Toys and games from different times to try"
+          },
+          "q": "Leikki - The Museum Of Play, Ahertajantie 3, Espoo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leos-espoo-laajalahti",
+          "name": {
+            "th": "ลีโอส์ เอสโป ลาจาลาห์ติ",
+            "en": "Leo's Espoo Laajalahti"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซินีแมนติเอ ลาจาลาห์ติ เอสโป",
+            "en": "Sinimäentie, Laajalahti, Espoo"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม เปิดทุกวันตลอดปี",
+            "en": "An indoor play centre, open every day all year"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นสำหรับทุกวัยและทุกระดับ",
+            "en": "Something for every age and skill level"
+          },
+          "q": "Leo's Espoo Laajalahti, Sinimäentie 20, Espoo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitespoo.fi/en/products/leos-espoo-suomenoja",
+          "name": {
+            "th": "ลีโอส์ เอสโป ซูโอเมโนยา",
+            "en": "Leo's Espoo Suomenoja"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนฟินโนนลากซอนติเอ ซูโอเมโนยา เอสโป",
+            "en": "Finnoonlaaksontie, Suomenoja, Espoo"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม มีโซนเล่นทุกวัย เปิดทุกวัน",
+            "en": "An indoor play centre with play areas for all ages, open every day"
+          },
+          "why": {
+            "th": "มีอะไรให้ทุกคนเล่นได้",
+            "en": "Something for everyone, whatever their skill"
+          },
+          "q": "Leo's Espoo Suomenoja, Finnoonlaaksontie 9, Espoo",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "p-lapland",
+      "sights": [
+        {
+          "name": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "local": "Joulupukin Pajakylä",
+          "kind": "themepark",
+          "area": { "en": "Rovaniemi, on the Arctic Circle", "th": "โรวาเนียมี บนเส้นอาร์กติกเซอร์เคิล" },
+          "what": { "en": "A village of shops, cafés, Santa's office and the Arctic Circle line, with paid husky, reindeer and snow activities", "th": "หมู่บ้านที่มีร้านค้า คาเฟ่ ออฟฟิศซานตา และเส้นอาร์กติกเซอร์เคิล มีกิจกรรมฮัสกี้ กวางเรนเดียร์ และหิมะที่ต้องจ่ายเงินแยก" },
+          "why": { "en": "Walking around is free and easy for little ones; the paid rides are short and add up quickly", "th": "เดินเล่นฟรีและง่ายสำหรับเด็กเล็ก ส่วนกิจกรรมที่ต้องจ่ายสั้นและค่าใช้จ่ายสะสมเร็ว" },
+          "tip": { "en": "Open every day of the year; Santa's Office hours run from 10–17 in late summer to 8–20 from 30 Nov 2026 to 3 Jan 2027", "th": "เปิดทุกวันตลอดปี ออฟฟิศซานตาเปิด 10–17 ปลายฤดูร้อน และ 8–20 ตั้งแต่ 30 พ.ย. 2026 ถึง 3 ม.ค. 2027" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free to walk in · activities are paid, check the price", "th": "เดินเข้าฟรี · กิจกรรมต้องจ่ายแยก เช็กราคา" },
+          "book": "none",
+          "q": "Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://santaclausvillage.info/info-and-tips/opening-hours-and-dates/"
+        },
+        {
+          "name": { "en": "SantaPark", "th": "ซานตาปาร์ก" },
+          "local": "Joulupukin Pajakylä SantaPark",
+          "kind": "themepark",
+          "area": { "en": "Rovaniemi", "th": "โรวาเนียมี" },
+          "what": { "en": "An indoor Christmas theme park in a cave, with an elf school, a bakery, an ice gallery, shows and a meeting with Santa", "th": "สวนสนุกคริสต์มาสในร่มในถ้ำ มีโรงเรียนเอลฟ์ เบเกอรี แกลเลอรีน้ำแข็ง โชว์ และพบซานตา" },
+          "why": { "en": "Warm and indoors, built around small children; children under 3 enter free", "th": "อบอุ่นอยู่ในร่ม ออกแบบมาเพื่อเด็กเล็ก เด็กต่ำกว่า 3 ขวบเข้าฟรี" },
+          "tip": { "en": "The winter season opens 31 October 2026 (one official page says to 16 January 2027); dates and prices vary by day", "th": "ฤดูหนาวเปิด 31 ต.ค. 2026 (หน้าทางการหนึ่งว่าถึง 16 ม.ค. 2027) วันและราคาเปลี่ยนตามวัน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ from €42 adults · from €37 children 3–12 · under 3 free (another official page says €49 and €40)", "th": "≈ เริ่ม €42 ผู้ใหญ่ · เริ่ม €37 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี (อีกหน้าทางการว่า €49 และ €40)" },
+          "book": "rec",
+          "q": "SantaPark, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://santapark.fi/tickets-packages/"
+        },
+        {
+          "name": { "en": "Arktikum Science Centre", "th": "ศูนย์วิทยาศาสตร์อาร์กติกุม" },
+          "local": "Arktikum",
+          "kind": "museum",
+          "area": { "en": "Rovaniemi", "th": "โรวาเนียมี" },
+          "what": { "en": "A museum and science centre about life in the Arctic and Lapland's people and nature", "th": "พิพิธภัณฑ์และศูนย์วิทยาศาสตร์เรื่องชีวิตในอาร์กติก ผู้คนและธรรมชาติของแลปแลนด์" },
+          "why": { "en": "A warm, dry stop in winter; children under 7 are free", "th": "จุดแวะอบอุ่นอยู่ในร่มหน้าหนาว เด็กต่ำกว่า 7 ขวบเข้าฟรี" },
+          "tip": { "en": "Exhibitions open Tue–Sun 10–18, closed Mondays (an official page); check the winter season hours", "th": "นิทรรศการเปิดอังคาร–อาทิตย์ 10–18 ปิดวันจันทร์ (หน้าทางการ) เช็กเวลาช่วงฤดูหนาว" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €22 adults · €10 ages 7–17 · under 7 free · family ticket ≈ €54", "th": "≈ €22 ผู้ใหญ่ · €10 อายุ 7–17 ปี · ต่ำกว่า 7 ขวบฟรี · ตั๋วครอบครัว ≈ €54" },
+          "book": "none",
+          "q": "Arktikum, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://arktikum.fi/en/visit/tickets/"
+        },
+        {
+          "name": { "en": "Ranua Wildlife Park", "th": "สวนสัตว์ป่ารานูอา" },
+          "local": "Ranuan eläinpuisto",
+          "kind": "zoo",
+          "area": { "en": "Ranua, about 70 km from Rovaniemi", "th": "รานูอา ห่างโรวาเนียมีราว 70 กม." },
+          "what": { "en": "A park of Arctic animals including Finland's only polar bears, with a boardwalk through forest and keeper talks", "th": "สวนสัตว์สัตว์เขตอาร์กติก มีหมีขั้วโลกเพียงแห่งเดียวของฟินแลนด์ ทางเดินไม้ผ่านป่า และการพูดคุยกับผู้ดูแลสัตว์" },
+          "why": { "en": "A big outdoor day in the cold, so dress warmly; best with a car", "th": "ทั้งวันกลางแจ้งในอากาศหนาว แต่งตัวให้อุ่น ไปด้วยรถสะดวกที่สุด" },
+          "tip": { "en": "Open daily from 10:00; summer hours started 1 June 2026, and winter hours are shorter, so check", "th": "เปิดทุกวันตั้งแต่ 10:00 ช่วงฤดูร้อนเริ่ม 1 มิ.ย. 2026 ฤดูหนาวปิดเร็วกว่า เช็กก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price (online tickets are cheaper)", "th": "เช็กราคา (ซื้อออนไลน์ถูกกว่า)" },
+          "book": "rec",
+          "q": "Ranua Wildlife Park, Ranua",
+          "ok": "2026-11",
+          "src": "https://ranuaresort.com/en/wildlife-park/"
+        },
+        {
+          "name": { "en": "Snowman World", "th": "สโนว์แมนเวิลด์" },
+          "local": "Snowman World",
+          "kind": "play",
+          "area": { "en": "Rovaniemi", "th": "โรวาเนียมี" },
+          "what": { "en": "A winter snow and ice park with an ice slide on tubes, ice sculptures and snow play; equipment is included in the ticket", "th": "สวนหิมะและน้ำแข็งหน้าหนาว มีสไลเดอร์น้ำแข็งบนห่วงยาง ประติมากรรมน้ำแข็ง และเล่นหิมะ ค่าอุปกรณ์รวมในบัตร" },
+          "why": { "en": "Children play in the snow all day; under 2 free", "th": "เด็กเล่นหิมะได้ทั้งวัน ต่ำกว่า 2 ขวบเข้าฟรี" },
+          "tip": { "en": "Open only in winter: 6 December 2026 to mid-March 2027, weather permitting (10–20, then 11–19 from 7 January)", "th": "เปิดเฉพาะหน้าหนาว 6 ธ.ค. 2026 ถึงกลางมีนาคม 2027 ขึ้นกับอากาศ (10–20 แล้ว 11–19 ตั้งแต่ 7 ม.ค.)" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €35 a person · under 2 free (a 2026 listing, check the price)", "th": "≈ €35 ต่อคน · ต่ำกว่า 2 ขวบฟรี (ข้อมูลปี 2026 เช็กราคา)" },
+          "book": "rec",
+          "q": "Snowman World, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.civitatis.com/en/rovaniemi/snowman-world-tickets/"
+        },
+        {
+          "name": { "en": "Arctic Snow Hotel", "th": "อาร์กติกสโนว์โฮเทล" },
+          "local": "Arctic Snow Hotel",
+          "kind": "culture",
+          "area": { "en": "Near Rovaniemi", "th": "ใกล้โรวาเนียมี" },
+          "what": { "en": "A hotel made of snow and ice that day visitors can tour, with a sleigh ride that can be added if there is enough snow", "th": "โรงแรมที่สร้างจากหิมะและน้ำแข็ง ผู้มาเยือนตอนกลางวันเข้าชมได้ และเพิ่มรถเลื่อนได้ถ้าหิมะพอ" },
+          "why": { "en": "A short, memorable visit for children, but the ice rooms are very cold", "th": "ชมสั้นๆ น่าจดจำสำหรับเด็ก แต่ห้องน้ำแข็งหนาวมาก" },
+          "tip": { "en": "Built fresh each winter: it opens about 15 December; check the dates", "th": "สร้างใหม่ทุกหน้าหนาว เปิดราว 15 ธันวาคม เช็กวันก่อนไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €35 adults · €17 children", "th": "≈ €35 ผู้ใหญ่ · €17 เด็ก" },
+          "book": "rec",
+          "q": "Arctic Snow Hotel, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://arcticsnowhotel.fi/?p=7964"
+        },
+        {
+          "name": { "en": "Kotatieva Winter Leisure Park", "th": "สวนสันทนาการหน้าหนาวโกตาติเอวา" },
+          "local": "Kotatieva",
+          "kind": "play",
+          "area": { "en": "About 10 km from Rovaniemi", "th": "ห่างโรวาเนียมีราว 10 กม." },
+          "what": { "en": "A winter park with a forest ice-skating trail, an ice rink, sledding, snowshoeing and ice bowling; equipment is included in the day ticket", "th": "สวนหน้าหนาวที่มีเส้นทางสเก็ตน้ำแข็งในป่า ลานสเก็ต เล่นเลื่อน เดินรองเท้าหิมะ และโบว์ลิ่งน้ำแข็ง ค่าอุปกรณ์รวมในบัตรทั้งวัน" },
+          "why": { "en": "Plenty to do outdoors for a whole day; dress in layers", "th": "มีกิจกรรมกลางแจ้งเยอะทั้งวัน ใส่เสื้อหลายชั้น" },
+          "tip": { "en": "A winter-only park (last season ran 6 December–22 March); check this season's dates", "th": "เปิดเฉพาะหน้าหนาว (ฤดูที่แล้ว 6 ธ.ค.–22 มี.ค.) เช็กวันเปิดของฤดูนี้" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "rec",
+          "q": "Kotatieva, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/?p=41184"
+        },
+        {
+          "name": { "en": "Santa Claus Office", "th": "สำนักงานซานตาคลอส" },
+          "kind": "culture",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "The official place to meet Santa for a private chat in Santa Claus Village at the Arctic Circle", "th": "สถานที่พบซานตาอย่างเป็นทางการ ได้คุยส่วนตัวในหมู่บ้านซานตาคลอสที่เส้นอาร์กติกเซอร์เคิล" },
+          "why": { "en": "Free to enter and indoors, so a good first stop for children who believe", "th": "เข้าฟรี อยู่ในร่ม เหมาะเป็นจุดแรกสำหรับเด็กที่เชื่อในซานต้า" },
+          "tip": { "en": "Open every day with seasonal hours; queues are longest around Christmas", "th": "เปิดทุกวัน เวลาเปลี่ยนตามฤดูกาล ช่วงคริสต์มาสคิวยาว" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Santa Claus Office, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/santa-claus-office/"
+        },
+        {
+          "name": { "en": "Santa Claus Main Post Office", "th": "ที่ทำการไปรษณีย์ซานตาคลอส" },
+          "kind": "shop",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "The official post office of Santa, where letters and cards get a special Arctic Circle postmark", "th": "ที่ทำการไปรษณีย์ของซานตา ส่งจดหมายและโปสการ์ดพร้อมตราไปรษณีย์อาร์กติกเซอร์เคิล" },
+          "why": { "en": "Children can post a card to themselves or to grandparents, and it is warm inside", "th": "เด็กๆ เขียนการ์ดส่งถึงตัวเองหรือคุณตาคุณยายได้ ข้างในอบอุ่น" },
+          "tip": { "en": "When it is closed, the yellow postbox by the door still gets the postmark", "th": "ถ้าปิด ใส่ตู้ไปรษณีย์สีเหลืองหน้าประตูก็ได้ตราเหมือนกัน" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free to enter · pay for stamps and gifts", "th": "เข้าฟรี · จ่ายค่าแสตมป์และของที่ซื้อ" },
+          "book": "none",
+          "q": "Santa Claus Main Post Office, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/santa-claus-main-post-office/"
+        },
+        {
+          "name": { "en": "Santa's Pets", "th": "สัตว์เลี้ยงของซานตา" },
+          "kind": "farm",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "A small farm yard with reindeer, alpacas, donkeys, sheep, goats, rabbits and birds, where you can feed the reindeer", "th": "ลานฟาร์มเล็กๆ มีเรนเดียร์ อัลปากา ลา แกะ แพะ กระต่าย และนก ป้อนเรนเดียร์ได้" },
+          "why": { "en": "Close contact with gentle animals, in a visit of about 30–60 minutes", "th": "ใกล้ชิดสัตว์ใจดี ใช้เวลาประมาณ 30–60 นาที" },
+          "tip": { "en": "Buy tickets on arrival; the ticket is valid all day, 11:00–18:00", "th": "ซื้อตั๋วหน้างาน ใช้ได้ทั้งวัน 11:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €10 adults · €6 children 3–15 · winter season €15 and €10", "th": "≈ €10 ผู้ใหญ่ · €6 เด็ก 3–15 ปี · ฤดูหนาว €15 และ €10" },
+          "book": "none",
+          "q": "Santa's Pets, Pukinpolku 12, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/santas-pets/"
+        },
+        {
+          "name": { "en": "Mrs Santa Claus Christmas Cottage", "th": "กระท่อมคริสต์มาสของมิสซิสซานตา" },
+          "kind": "culture",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "A private meeting with Mrs Santa Claus in her cottage, with a keepsake photo to take home", "th": "พบมิสซิสซานตาแบบส่วนตัวในกระท่อมของเธอ ได้รูปที่ระลึกกลับบ้าน" },
+          "why": { "en": "A quiet, unhurried visit for young children who find a big queue too much", "th": "เหมาะกับเด็กเล็กที่ไม่ชอบคิวยาวและเสียงดัง" },
+          "tip": { "en": "Book ahead, as meetings are private and timed", "th": "จองล่วงหน้า เพราะเป็นการพบแบบส่วนตัวตามเวลา" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "From ≈ €130 for a private meeting", "th": "เริ่มต้น ≈ €130 สำหรับการพบแบบส่วนตัว" },
+          "book": "req",
+          "q": "Mrs Santa Claus Christmas Cottage, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/mrs-santa-claus-christmas-cottage/"
+        },
+        {
+          "name": { "en": "Arctic Garden", "th": "สวนอาร์กติก" },
+          "kind": "park",
+          "area": { "en": "Rovaniemi centre", "th": "ใจกลางโรวาเนียมี" },
+          "what": { "en": "A seven-hectare garden by the river in front of Arktikum, kept by the University of Lapland, with a small sandy beach in summer", "th": "สวนเจ็ดเฮกตาร์ริมแม่น้ำหน้าอาร์คติคุม ดูแลโดยมหาวิทยาลัยลาปแลนด์ มีหาดทรายเล็กๆ ในฤดูร้อน" },
+          "why": { "en": "An easy walk from the city centre next to the science centre, good for a break between museums", "th": "เดินจากใจกลางเมืองได้ง่าย อยู่ติดศูนย์วิทยาศาสตร์ เหมาะพักระหว่างพิพิธภัณฑ์" },
+          "tip": { "en": "Best in summer; in winter it is a quiet place to watch for northern lights", "th": "สวยที่สุดหน้าร้อน หน้าหนาวเป็นที่เงียบๆ ดูแสงเหนือ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Arctic Garden, Pohjoisranta, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/arctic-garden/"
+        },
+        {
+          "name": { "en": "Santa's Snowtubing", "th": "สโนว์ทูบบิ้งซานตา" },
+          "kind": "play",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "A family snow-tubing slope in Santa Claus Village, with a warm hut between runs", "th": "ลานสไลด์ห่วงยางบนหิมะสำหรับครอบครัว มีกระท่อมอุ่นๆ ให้พักระหว่างรอบ" },
+          "why": { "en": "Fun for children who can sit on a tube; the ticket lasts all day so you can come and go", "th": "สนุกสำหรับเด็กที่นั่งบนห่วงยางได้ ตั๋วใช้ได้ทั้งวัน ออกมาพักแล้วกลับเข้าได้" },
+          "tip": { "en": "Open daily 12:00–18:00 in December and from January to March only", "th": "เปิดทุกวัน 12:00–18:00 เฉพาะเดือนธันวาคมและมกราคมถึงมีนาคม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Santa's Snowtubing, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/snowtubing/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Korundi – Rovaniemi Art Museum", "th": "โคลุนดิ พิพิธภัณฑ์ศิลปะโรวาเนียมี" },
+          "local": "Kulttuuritalo Korundi",
+          "kind": "museum",
+          "area": { "en": "Rovaniemi centre", "th": "ใจกลางโรวาเนียมี" },
+          "what": { "en": "A house of culture in an old postal-bus garage, with the art museum's exhibitions", "th": "บ้านวัฒนธรรมในอู่รถไปรษณีย์เก่า มีนิทรรศการของพิพิธภัณฑ์ศิลปะ" },
+          "why": { "en": "A warm, calm stop on a freezing day; children under 7 go in free", "th": "ที่หลบหนาวสงบๆ ในวันที่อากาศเย็นจัด เด็กต่ำกว่า 7 ปีเข้าฟรี" },
+          "tip": { "en": "The exhibitions are free on Thursdays from 16:00 to 18:00", "th": "ชมนิทรรศการฟรีทุกวันพฤหัสบดี 16:00–18:00" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €13 adults · €7 children 7–17 · under 7 free", "th": "≈ €13 ผู้ใหญ่ · €7 เด็ก 7–17 ปี · ต่ำกว่า 7 ปีฟรี" },
+          "book": "none",
+          "q": "Korundi House of Culture, Lapinkävijäntie 2, Rovaniemi",
+          "src": "https://korundi.fi/en/korundi/korundi-house-of-culture/tickets"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สวนผจญภัยฮุยมา",
+            "en": "Huima adventure park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โอนาสวารา โรวาเนียมิ",
+            "en": "Ounasvaara, Rovaniemi"
+          },
+          "what": {
+            "th": "สวนผจญภัยบนต้นไม้ 10 เส้นทาง สูงถึง 7 เมตร",
+            "en": "A treetop park with ten courses, up to seven metres off the ground"
+          },
+          "why": {
+            "th": "มีเชือก คาน สะพาน และตาข่ายระหว่างต้นไม้",
+            "en": "Ropes, beams, bridges and nets between living trees"
+          },
+          "q": "Adventure Park Huima, Hiihtomajantie 4, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สนามเด็กเล่นแองกรีเบิร์ดส์",
+            "en": "Angry Birds playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ใจกลางโรวาเนียมิ ริมแม่น้ำ",
+            "en": "Rovaniemi centre, by the river"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางแจ้ง มีทางเดินเชือกและสไลเดอร์ เข้าฟรี",
+            "en": "An open-air playground with rope walks and slides; free entry"
+          },
+          "why": {
+            "th": "สนุกได้ตั้งแต่เด็กเล็กถึงคุณตาคุณยาย",
+            "en": "Fun for toddlers and grandparents alike"
+          },
+          "q": "Angry Birds Playground, Valtakatu 4, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สวนน้ำลอยน้ำรอยสเก",
+            "en": "Roiske floating water park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรวาเนียมิ",
+            "en": "Rovaniemi"
+          },
+          "what": {
+            "th": "สวนน้ำลอยน้ำ มีด่านแบบนินจา เช่าเรือและบอร์ด และมีซาวน่า",
+            "en": "A floating water park with a ninja-style course, boat and board hire, and a sauna"
+          },
+          "why": {
+            "th": "ด่านนินจาสนุกได้ทั้งครอบครัว",
+            "en": "The ninja-style course is fun for the whole family"
+          },
+          "q": "Roiske Water Activities Centre, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "เหมืองอเมทิสต์ลัมปิวารา",
+            "en": "Lampivaara amethyst mine"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติปิฮา-ลูออสโต ลูออสโต",
+            "en": "Pyhä-Luosto national park, Luosto"
+          },
+          "what": {
+            "th": "เหมืองอัญมณีบนยอดเขา หน้าเว็บบอกว่าอเมทิสต์มีอายุ 2,000 ล้านปี",
+            "en": "A gem mine on a hilltop, with amethyst the page says is 2,000 million years old"
+          },
+          "why": {
+            "th": "มีทัวร์นำชมเหมืองช่วงหน้าหนาว",
+            "en": "A guided tour of the mine in winter"
+          },
+          "q": "Lampivaara Amethyst Mine, Luosto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Santasport",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สระว่ายน้ำซานตาสปอร์ต",
+            "en": "Santasport pools"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรวาเนียมิ",
+            "en": "Rovaniemi"
+          },
+          "what": {
+            "th": "สระว่ายน้ำของซานตาสปอร์ต ทั้งเรียนว่ายและว่ายเล่น",
+            "en": "Santasport's pools, for lessons and fun swimming"
+          },
+          "why": {
+            "th": "ว่ายเล่นกับครอบครัวได้ ไม่ได้มีไว้แข่งอย่างเดียว",
+            "en": "Good for a family swim, not only for racers"
+          },
+          "q": "Santasport, Hiihtomajantie 2, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "ป่าลับซานตาคลอส ยูลุกกา",
+            "en": "Santa Claus Secret Forest – Joulukka"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านซานตาคลอส โรวาเนียมิ",
+            "en": "Santa Claus Village, Rovaniemi"
+          },
+          "what": {
+            "th": "สถานที่คริสต์มาสที่ไปชมแบบส่วนตัวหรือกลุ่มเล็ก",
+            "en": "A Christmas place to visit privately or in a small group"
+          },
+          "why": {
+            "th": "บรรยากาศคริสต์มาสโดยไม่ต้องเบียดคน",
+            "en": "Christmas magic without the crowds"
+          },
+          "q": "Santa Claus Secret Forest Joulukka, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/attraction/snowglow-winterpark/",
+          "name": {
+            "th": "สโนว์โกลว์ วินเทอร์พาร์ก",
+            "en": "SnowGlow Winterpark"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สนามกีฬากลาง ใจกลางเมืองโรวาเนียมิ",
+            "en": "Central stadium, Rovaniemi city centre"
+          },
+          "what": {
+            "th": "สวนกิจกรรมฤดูหนาวใจกลางโรวาเนียมิ มีแสงไฟ",
+            "en": "A winter activity park in the centre of Rovaniemi, with lights"
+          },
+          "why": {
+            "th": "มีกิจกรรมสนุกและแสงไฟสำหรับทุกวัย",
+            "en": "Fun activities and lights for all ages"
+          },
+          "q": "SnowGlow Winterpark, Rovaniemi",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

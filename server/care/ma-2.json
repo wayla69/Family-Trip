@@ -1,0 +1,6 @@
+{"cc":"ma","towns":[
+ {"place":"ma-fes","places":[
+  {"name":"Hôpital Mère-Enfant, CHU Hassan II","kind":"hospital","area":{"th":"เฟส","en":"Fes"},"what":{"th":"โรงพยาบาลแม่และเด็กของโรงพยาบาลมหาวิทยาลัยของรัฐ","en":"Mother-and-child hospital of the public university hospital"},"why":{"th":"รับเด็กโดยเฉพาะ คนไข้เยอะ อาจต้องรอนาน","en":"For children; it is busy, so waits can be long"},"q":"Hôpital Mère-Enfant, CHU Hassan II, Fès, Morocco","ok":"2026-11"},
+  {"name":"Jnan Sbil","kind":"play","area":{"th":"เฟส","en":"Fes"},"what":{"th":"สวนสาธารณะร่มรื่น มีน้ำพุ ทางเดินต้นปาล์ม และป่าไผ่","en":"Shady public garden with fountains, a palm walk and a bamboo grove"},"why":{"th":"เด็กเล็กวิ่งเล่นได้ เข้าฟรี ช่วงเย็นครอบครัวคนท้องถิ่นมาเดินเล่น","en":"Free, room for little ones to run; local families come in the late afternoon"},"q":"Jnan Sbil, Bou Jeloud, Fès","ok":"2026-11"}
+ ]}
+]}

@@ -1,0 +1,196 @@
+{
+  "town": "th (Thailand round 6, things to do: Pattaya, Trang, Samui, Khao Kho, Chiang Mai, Hat Yai, Trat and Koh Chang, Ayutthaya, Khao Yai, Krabi, Lampang, Udon)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Thailand notes (TAT counts as official; otherwise a 2025–2026 page — a Thai date 2568/2569 counts; no national chains, no bars) -> scripts/library-check.cjs (single Wongnai place pages carry no page date and were left out) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town (none kept by hand) -> Thai and English by writer agents to docs/STYLE.md, opening hours taken out of the text.",
+  "towns": {
+    "th-ayutthaya": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Sala Pla Thai",
+          "src": "https://wanderingwagars.com/?p=25689"
+        }
+      ]
+    },
+    "th-chiangmai": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Bouncetopia",
+          "src": "https://www.chiangmaicitylife.com/citynews/general/bouncetopia-chiang-mai-launches-new-superhero-theme-with-giant-inflatable-playground/"
+        },
+        {
+          "name": "XVENTURE",
+          "src": "https://www.chiangmaicitylife.com/citynews/general/get-ready-for-a-new-adventure-worlds-first-xventure-active-park-opens-oct-16-at-central-chiang-mai/"
+        }
+      ]
+    },
+    "th-hatyai": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Khao Khuha",
+          "src": "https://th.trip.com/guide/attraction/things-to-do-in-songkhla.html"
+        },
+        {
+          "name": "Chalathat Beach",
+          "src": "https://th.trip.com/guide/attraction/things-to-do-in-songkhla.html"
+        }
+      ]
+    },
+    "th-khaokho": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Phetchabun Intrachai Archaeological Hall",
+          "src": "https://www.bucketlistly.blog/posts/phetchabun-best-things-to-do"
+        },
+        {
+          "name": "Phetchabun Buddhist Park",
+          "src": "https://www.bucketlistly.blog/posts/phetchabun-best-things-to-do"
+        },
+        {
+          "name": "Khao Kho Flower Terrace",
+          "src": "https://www.bucketlistly.blog/posts/phetchabun-best-things-to-do"
+        }
+      ]
+    },
+    "th-khaoyai": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Ban Tha Maprang and Khlong Phle community",
+          "src": "https://www.bangkokbiznews.com/lifestyle/travel/1254422"
+        }
+      ]
+    },
+    "th-kohchang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Laem Klat community",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/amazing-trat"
+        },
+        {
+          "name": "Ao Bai Lan",
+          "src": "https://travel.trueid.net/detail/DY70G86E7gP"
+        }
+      ]
+    },
+    "th-krabi": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Andaman Cultural Study Center",
+          "src": "https://hopsa.io/en/blog/post/interaktywne-muzea-i-parki-w-krabi-edukacja-i-zabawa-w-jednym"
+        }
+      ]
+    },
+    "th-lampang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kad Nang Kom market",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        }
+      ]
+    },
+    "th-pattaya": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Pattaya Beach",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": "Wong Amat Beach",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": "Koh Phai",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": "Sak Ngaew Old Market",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": "Baan Sukhawadee",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": "Legend Siam Pattaya",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        }
+      ]
+    },
+    "th-samui": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Ban Boran Na Samui",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2"
+        },
+        {
+          "name": "Guan Yu Shrine, Koh Samui",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2"
+        },
+        {
+          "name": "The Nature Samui",
+          "src": "https://www.grab.com/th/blog/driver/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2"
+        }
+      ]
+    },
+    "th-trang": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Trang Clock Tower Roundabout",
+          "src": "https://www.wongnai.com/listings/attractions-trang"
+        },
+        {
+          "name": "Trang Old Conservation House",
+          "src": "https://www.wongnai.com/listings/attractions-trang"
+        },
+        {
+          "name": "Trang Street Art",
+          "src": "https://www.wongnai.com/listings/attractions-trang"
+        },
+        {
+          "name": "Trang Railway Station",
+          "src": "https://thingstodointrang.com/free-things/"
+        }
+      ]
+    },
+    "th-udon": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Nong Khon Kwang Public Park",
+          "src": "https://mgronline.com/local/detail/9690000064800"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed or unclear on Google Maps (28 Nov 2026)": "eight, among them the World Elephant Museum Sukhothai (permanently closed), the Mae Moh mine and two museums whose result lists showed a closed note, and a lighthouse Maps puts at the Bang Bao pier",
+    "events, not places": [
+      "Poy Sang Long in Pai",
+      "the Bo Sang umbrella festival",
+      "Glom Glom (one day in January)",
+      "a star-watching night at the Khon Kaen observatory",
+      "the Chak Phra festival in Surat Thani"
+    ],
+    "other": [
+      "three Surat Thani shrines known only by name",
+      "a Chao Ley community as a sight (a people, not a place to visit)",
+      "temples and a dam with nothing for children",
+      "places already in the library under another name (Teletubbies Café, the Emerald Pool, the Songkhla observatory)",
+      "Pa La-U, the Sukhothai airport zoo, the Kao Fu waterfall and the Ngao film museum (30+ km)",
+      "Hug You Sheep Farm (closed in round 4)",
+      "a train ride (not one place)"
+    ],
+    "nothing new on a dated page": "Nan, Khon Kaen, Surat Thani and Koh Lipe things to do"
+  }
+}

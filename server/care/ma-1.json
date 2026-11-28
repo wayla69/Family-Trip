@@ -1,0 +1,7 @@
+{"cc":"ma","towns":[
+ {"place":"ma-marrakech","places":[
+  {"name":"CHU Mohammed VI","kind":"hospital","area":{"th":"มาร์ราเกช","en":"Marrakech"},"what":{"th":"โรงพยาบาลมหาวิทยาลัยของรัฐ มีห้องฉุกเฉินเด็ก","en":"Public university hospital with a children's emergency department"},"why":{"th":"โรงพยาบาลใหญ่ที่สุดของเมือง มีหมอเด็กเฉพาะทาง","en":"The city's largest hospital, with children's specialists"},"q":"CHU Mohammed VI, Marrakech, Morocco","ok":"2026-11"},
+  {"name":"Polyclinique du Sud","kind":"hospital","area":{"th":"เกลิซ","en":"Gueliz"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉิน","en":"Private clinic with an emergency department"},"why":{"th":"อยู่ในเมืองใหม่ ควรถามเรื่องหมอเด็กก่อน","en":"In the new town; ask about a children's doctor when you arrive"},"q":"Polyclinique du Sud, 2 Rue Yougoslavie, Gueliz, Marrakech","ok":"2026-11"},
+  {"name":"Kidzo, Menara Mall","kind":"play","area":{"th":"เมนาราม็อลล์ มาร์ราเกช","en":"Menara Mall, Marrakech"},"what":{"th":"สวนสนุกในร่มสำหรับเด็ก มีโซนซอฟต์เพลย์","en":"Indoor children's play park with a soft play area"},"why":{"th":"ในห้างแอร์เย็น เหมาะตอนอากาศร้อน","en":"Air-conditioned, good when it is too hot outside"},"q":"Kidzo, Menara Mall, Marrakech","ok":"2026-11"}
+ ]}
+]}

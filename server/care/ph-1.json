@@ -1,0 +1,9 @@
+{"cc":"ph","towns":[
+ {"place":"ph-boracay","places":[
+  {"name":"Ciriaco S. Tirol Hospital","kind":"hospital","area":{"th":"บาลาบัก โบราไกย์","en":"Balabag, Boracay"},"what":{"th":"โรงพยาบาลรัฐแห่งเดียวบนเกาะ มีห้องฉุกเฉิน","en":"The island's only public hospital, with an emergency room"},"why":{"th":"รักษาเบื้องต้นได้ รายที่หนักต้องส่งข้ามไปฝั่งเกาะใหญ่","en":"First care on the island; serious cases are moved to the mainland"},"q":"Ciriaco S. Tirol Hospital, Balabag, Boracay, Malay, Aklan","ok":"2026-11"}
+ ]},
+ {"place":"ph-bohol","places":[
+  {"name":"Ramiro Community Hospital","kind":"hospital","area":{"th":"ตักบิลารัน","en":"Tagbilaran"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉินและแผนกเด็ก","en":"Private hospital with an emergency department and a children's department"},"why":{"th":"อยู่เมืองหลักของโบโฮล ข้ามสะพานจากปังเลา บนปังเลายังไม่มีโรงพยาบาล","en":"In Bohol's main city, over the bridge from Panglao, which has no hospital"},"q":"Ramiro Community Hospital, 0139 Gallares Street, Poblacion II, Tagbilaran City, Bohol","ok":"2026-11"},
+  {"name":"Governor Celestino Gallares Memorial Medical Center","kind":"hospital","area":{"th":"ตักบิลารัน","en":"Tagbilaran"},"what":{"th":"โรงพยาบาลรัฐระดับสูงสุดของจังหวัด","en":"The province's main public referral hospital"},"why":{"th":"รับส่งต่อเคสหนักจากทั้งเกาะ","en":"Takes serious cases from the whole island"},"q":"Governor Celestino Gallares Memorial Medical Center, Tagbilaran City, Bohol","ok":"2026-11"}
+ ]}
+]}

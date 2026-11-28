@@ -22,7 +22,7 @@ const items = [
     // a deep blue lake curving between steep mountains, the little lakeside town of red and white roofs on the shore, a pine tree and children on the pebbly beach
     svg: scene('zqn-d1', '#BBDEFB', range([[-4, 120], [20, 70], [44, 96], [70, 54], [96, 92], [124, 64], [150, 98], [176, 60], [204, 90], [226, 66], [244, 120]], 124, '#7E57C2', '#FFFFFF')
       + P('M-4 116c40 0 80 6 120 10v20H-4z', '#689F38') + R(-4, 130, 248, 120, '#1565C0') + ring(4, (k) => Lc(`M${30 + k * 56} ${156 + (k % 2) * 22}c10-5 20 5 30 0`, '#90CAF9', 3))
-      + P('M-4 176c40-14 80-14 112 0v74H-4z', '#8BC34A') + ring(6, (k) => R(6 + k * 16, 150 - (k % 2) * 6, 14, 14, '#FFFFFF', 1, 2.5) + P(`M${4 + k * 16} ${150 - (k % 2) * 6}l9-8 9 8z`, k % 2 ? '#E53935' : '#546E7A', 2)).replace(/^/, '')
+      + P('M-4 176c40-14 80-14 112 0v74H-4z', '#8BC34A') + ring(6, (k) => R(6 + k * 16, 150 - (k % 2) * 6, 14, 14, '#FFFFFF', 1, 2.5) + P(`M${4 + k * 16} ${150 - (k % 2) * 6}l9-8 9 8z`, k % 2 ? '#E53935' : '#546E7A', 2))
       + P('M120 210c40-10 90-12 124-4v44H120z', '#D7CCC8') + Lc('M210 210v-40', '#5D4037', 5) + P('M196 186l14-30 14 30z', '#2E7D32') + P('M198 172l12-26 12 26z', '#388E3C')
       + kid(150, 216, '#FFCA28') + kid(176, 214, '#EF5350', 0.9)) },
   { id: 'nz-queenstown.day.milford', cat: 'day', file: T + 'day-milford.v1.svg', name: nm('ยอดเขาไมเทอร์ที่มิลฟอร์ดซาวด์', 'Mitre Peak at Milford Sound'), kw: ['milford sound', 'มิลฟอร์ดซาวด์', 'mitre peak', 'ยอดเขาไมเทอร์', 'fiordland', 'ฟยอร์ดแลนด์', 'piopiotahi', 'fiord', 'ฟยอร์ด', 'milford road'],

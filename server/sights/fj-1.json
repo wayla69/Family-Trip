@@ -1,0 +1,354 @@
+{
+  "cc": "fj",
+  "towns": [
+    {
+      "place": "fj-islands",
+      "thin": true,
+      "sights": [
+        {
+          "name": { "en": "Garden of the Sleeping Giant", "th": "การ์เดนออฟเดอะสลีปปิ้งไจแอนท์" },
+          "kind": "nature",
+          "area": { "en": "Wailoko Road, Nadi", "th": "ถนนไวโลโก นาดี" },
+          "what": { "en": "A garden of orchids and tropical plants on the slopes of the Sabeto hills", "th": "สวนกล้วยไม้และพืชเขตร้อนบนเชิงเขาซาเบโต" },
+          "why": { "en": "Shaded walking paths that suit a slow, short visit with small children", "th": "ทางเดินร่มรื่น เหมาะกับการแวะสั้น ๆ ช้า ๆ กับเด็กเล็ก" },
+          "tip": { "en": "Arrive about 9:00 before the tour groups; sources disagree on the days it opens, so check", "th": "ไปราว 9:00 ก่อนกรุ๊ปทัวร์ แหล่งข้อมูลไม่ตรงกันเรื่องวันเปิด ควรเช็ก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Listings differ (one gives adults FJD 30 · FJD 15 children 6–15 · under 6 free), check the price", "th": "ข้อมูลไม่ตรงกัน (แห่งหนึ่งระบุ FJD 30 ผู้ใหญ่ · FJD 15 เด็ก 6–15 ปี · ต่ำกว่า 6 ขวบฟรี) เช็กราคาอีกครั้ง" },
+          "book": "none",
+          "q": "Garden of the Sleeping Giant, Wailoko Road, Nadi, Fiji",
+          "ok": "2026-11",
+          "src": "https://fijisun.com.fj/news/business/enjoy-the-garden-of-the-sleeping-giant"
+        },
+        {
+          "name": { "en": "Kula Wild Adventure Park", "th": "คูลาไวลด์แอดเวนเจอร์พาร์ค" },
+          "kind": "zoo",
+          "area": { "en": "Coral Coast, about an hour south of Nadi", "th": "คอรัลโคสต์ ห่างนาดีไปทางใต้ราวหนึ่งชั่วโมง" },
+          "what": { "en": "A wildlife and adventure park with animals, a water slide and a zip line", "th": "สวนสัตว์ป่าและสวนผจญภัย มีสัตว์ สไลเดอร์น้ำ และสายซิปไลน์" },
+          "why": { "en": "A reseller says children aged 2–11 pay a child rate; a children's ranger day exists for ages 6–12", "th": "ผู้ขายบัตรระบุว่าเด็กอายุ 2–11 ปีจ่ายราคาเด็ก และมีกิจกรรมเรนเจอร์สำหรับเด็ก 6–12 ปี" },
+          "tip": { "en": "Prices on resellers differ by currency and date, so check the park's own page", "th": "ราคาจากผู้ขายต่างกันตามสกุลเงินและวันที่ เช็กกับหน้าของสวนโดยตรง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Reseller prices differ, check the price", "th": "ราคาจากผู้ขายบัตรต่างกัน เช็กราคาอีกครั้ง" },
+          "book": "rec",
+          "q": "Kula Wild Adventure Park, Coral Coast, Fiji",
+          "ok": "2026-11",
+          "src": "https://www.klook.com/en-AU/activity/65831-kula-wild-adventure-park-fiji-admission"
+        },
+        {
+          "name": { "en": "Sabeto Mud Pool and Hot Springs", "th": "บ่อโคลนและน้ำพุร้อนซาเบโต" },
+          "kind": "onsen",
+          "area": { "en": "Sabeto, near Nadi", "th": "ซาเบโต ใกล้นาดี" },
+          "what": { "en": "Natural mud pools and warm springs where visitors paint on mud and soak", "th": "บ่อโคลนธรรมชาติและน้ำพุอุ่น ให้ทาโคลนและแช่ตัว" },
+          "why": { "en": "Messy mud play children enjoy; keep very small children out of the hottest pools", "th": "เด็กชอบเล่นโคลนเลอะเทอะ แต่อย่าให้เด็กเล็กมากลงบ่อที่ร้อนที่สุด" },
+          "tip": { "en": "A June 2026 blog gives hours of 7:00–17:00 daily; bring a towel and clothes you can ruin", "th": "บล็อกเดือนมิถุนายน 2026 ระบุเปิด 7:00–17:00 ทุกวัน เตรียมผ้าเช็ดตัวและเสื้อผ้าที่เลอะได้" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Sources disagree on the amount and currency, check the price", "th": "แหล่งข้อมูลไม่ตรงกันทั้งจำนวนและสกุลเงิน เช็กราคาอีกครั้ง" },
+          "book": "none",
+          "q": "Sabeto Mud Pool and Hot Springs, Nadi, Fiji",
+          "ok": "2026-11",
+          "src": "https://destinationlesstravel.com/sabeto-mud-pools-fiji/"
+        },
+        {
+          "name": { "en": "Captain Cook Cruises island day sail", "th": "ล่องเรือแคปเทนคุกครูยส์ไปเกาะแบบวันเดียว" },
+          "kind": "nature",
+          "area": { "en": "Port Denarau Marina", "th": "ท่าเรือพอร์ตเดนาราว" },
+          "what": { "en": "A day sail from Port Denarau to a private beach in the Mamanuca islands, with a 10:00 departure and 17:00 return", "th": "ล่องเรือใบวันเดียวจากพอร์ตเดนาราวไปหาดส่วนตัวในหมู่เกาะมามานูกา ออก 10:00 กลับ 17:00" },
+          "why": { "en": "A child fare covers ages 3–15 in one listing; the sail and the beach make a restful day for small children", "th": "รายการหนึ่งระบุราคาเด็กอายุ 3–15 ปี การล่องเรือและหาดช่วยให้เด็กเล็กได้พักผ่อน" },
+          "tip": { "en": "Listings disagree on the destination island and price; confirm with the operator", "th": "รายการต่าง ๆ ระบุเกาะปลายทางและราคาไม่ตรงกัน ยืนยันกับผู้ให้บริการ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Child fares in listings range about FJD 174–184, check the price", "th": "ราคาเด็กในรายการต่าง ๆ ราว FJD 174–184 เช็กราคาอีกครั้ง" },
+          "book": "rec",
+          "q": "Port Denarau Marina, Nadi, Fiji",
+          "ok": "2026-11",
+          "src": "https://www.bookme.co.nz/things-to-do/fiji-islands-viti-levu-mamanucas/activity/captain-cook-cruises-island-day-sail/2715"
+        },
+        {
+          "name": { "en": "Nadi Handicraft Market", "th": "ตลาดงานฝีมือนาดี" },
+          "kind": "market",
+          "area": { "en": "Nadi town", "th": "ตัวเมืองนาดี" },
+          "what": { "en": "Stalls of carved wood, shell and woven crafts along the main street", "th": "แผงขายงานไม้แกะสลัก เปลือกหอย และงานสานริมถนนสายหลัก" },
+          "why": { "en": "A short, shaded wander; entry is free and you only pay for what you buy", "th": "เดินเล่นสั้น ๆ ในร่ม เข้าฟรี จ่ายเฉพาะของที่ซื้อ" },
+          "tip": { "en": "Hours differ by source, roughly 8:00 to afternoon, Monday to Saturday; check locally", "th": "เวลาเปิดต่างกันตามแหล่งข้อมูล ราว 8:00 ถึงบ่าย วันจันทร์ถึงเสาร์ เช็กกับคนในพื้นที่" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Nadi Handicraft Market, Nadi, Fiji",
+          "ok": "2026-11",
+          "src": "https://airial.travel/attractions/fiji/nadi/nadi-handicraft-market-_AC7ZZ0C"
+        },
+        {
+          "name": { "en": "Nadi Municipal Market", "th": "ตลาดเทศบาลนาดี" },
+          "kind": "market",
+          "area": { "en": "Nadi town", "th": "ตัวเมืองนาดี" },
+          "what": { "en": "The town's fruit, vegetable and spice market", "th": "ตลาดผัก ผลไม้ และเครื่องเทศของเมือง" },
+          "why": { "en": "Colourful tropical fruit to look at and taste, a quick and cheap stop", "th": "ผลไม้เมืองร้อนสีสันสดใสให้ดูและชิม แวะสั้น ๆ ราคาไม่แพง" },
+          "tip": { "en": "Guides give hours of about 6:00–18:00; check locally", "th": "คู่มือระบุเปิดราว 6:00–18:00 เช็กกับคนในพื้นที่" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free to enter", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Nadi Municipal Market, Nadi, Fiji",
+          "ok": "2026-11",
+          "src": "https://all.accor.com/a/en/limitless/thematics/shopping/nadi-market-fiji.html"
+        },
+        {
+          "name": { "en": "Wailoaloa Beach", "th": "หาดไวโลอาโลอา" },
+          "kind": "beach",
+          "area": { "en": "Nadi, near the airport", "th": "นาดี ใกล้สนามบิน" },
+          "what": { "en": "A public beach strip close to the airport, with no resort facilities", "th": "หาดสาธารณะใกล้สนามบิน ไม่มีสิ่งอำนวยความสะดวกแบบรีสอร์ต" },
+          "why": { "en": "Easy and close for a short paddle, but described more as a social strip than a top swimming beach", "th": "ไปง่ายและใกล้ เล่นน้ำตื้นสั้น ๆ ได้ แต่ถูกบรรยายว่าเป็นหาดสังสรรค์มากกว่าหาดว่ายน้ำชั้นยอด" },
+          "tip": { "en": "No amenities, so bring water and shade", "th": "ไม่มีสิ่งอำนวยความสะดวก พกน้ำและร่มไปเอง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Public beach (no fee seen)", "th": "ชายหาดสาธารณะ (ไม่พบค่าเข้า)" },
+          "book": "none",
+          "q": "Wailoaloa Beach, Nadi, Fiji",
+          "ok": "2026-11",
+          "src": "https://www.fiji.travel/things-to-do/family-adventures/best-public-beaches-on-viti-levu"
+        },
+        {
+          "name": { "en": "Natadola Beach", "th": "หาดนาตาโดลา" },
+          "kind": "beach",
+          "area": { "en": "Natadola, about an hour from Nadi", "th": "นาตาโดลา ห่างนาดีราวหนึ่งชั่วโมง" },
+          "what": { "en": "A long white beach with public sections, named the best swimming beach near Nadi", "th": "หาดทรายขาวยาว มีส่วนที่เป็นสาธารณะ ถูกกล่าวว่าเป็นหาดว่ายน้ำที่ดีที่สุดใกล้นาดี" },
+          "why": { "en": "Room to paddle and dig; public sections cost nothing", "th": "มีที่ให้เล่นน้ำตื้นและขุดทราย ส่วนสาธารณะไม่เสียค่าเข้า" },
+          "tip": { "en": "About an hour from Nadi; bring shade and water", "th": "ห่างนาดีราวหนึ่งชั่วโมง พกร่มและน้ำไปด้วย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free (public sections)", "th": "ฟรี (ส่วนสาธารณะ)" },
+          "book": "none",
+          "q": "Natadola Beach, Viti Levu, Fiji",
+          "ok": "2026-11",
+          "src": "https://destinationlesstravel.com/best-beaches-in-fiji/"
+        },
+        {
+          "name": { "en": "Fiji Museum", "th": "พิพิธภัณฑ์ฟิจิ" },
+          "kind": "museum",
+          "area": { "en": "Suva", "th": "ซูวา" },
+          "what": { "en": "200 years of Fijian culture in Thurston Gardens, open every day 9:00–16:30", "th": "วัฒนธรรมฟิจิ 200 ปีในเธอร์สตันการ์เดนส์ เปิดทุกวัน 9:00–16:30" },
+          "why": { "en": "Canoes and old artefacts hold curious children; the gardens outside are good for a run", "th": "เรือแคนูและโบราณวัตถุดึงดูดเด็กช่างสงสัย สวนด้านนอกเหมาะวิ่งเล่น" },
+          "tip": { "en": "It is in Suva, far from Nadi, so make it a day trip; closed on Christmas, New Year's Day, Easter Sunday and Diwali", "th": "อยู่ที่ซูวา ไกลจากนาดี เหมาะเที่ยวทั้งวัน ปิดวันคริสต์มาส ปีใหม่ อีสเตอร์ และดีวาลี" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ FJ$20 adults · FJ$10 child 2–15 (overseas visitors)", "th": "≈ FJ$20 ผู้ใหญ่ · FJ$10 เด็ก 2–15 ปี (ผู้มาเยือนจากต่างประเทศ)" },
+          "book": "none",
+          "q": "Fiji Museum, Thurston Gardens, Cakobau Road, Suva",
+          "ok": "2026-11",
+          "src": "https://www.fijimuseum.org.fj/"
+        },
+        {
+          "name": { "en": "Sigatoka Sand Dunes National Park", "th": "อุทยานแห่งชาติเนินทรายซิงกาโตกา" },
+          "kind": "nature",
+          "area": { "en": "Sigatoka", "th": "ซิงกาโตกา" },
+          "what": { "en": "Towering dunes by the sea with two walking trails, ranger guides and a lookout", "th": "เนินทรายสูงริมทะเล มีทางเดินสองสาย เจ้าหน้าที่นำชม และจุดชมวิว" },
+          "why": { "en": "Fun soft sand for children, but the trails are sandy and hot, so pick the shorter one", "th": "ทรายนุ่มสนุกสำหรับเด็ก แต่ทางเป็นทรายและร้อน เลือกเส้นสั้นกว่า" },
+          "tip": { "en": "Open 8:00–16:30, closed 13:00–14:00 each day", "th": "เปิด 8:00–16:30 ปิดพัก 13:00–14:00 ทุกวัน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ FJ$10 adults · local students 6–17 FJ$5 · 5 and under free", "th": "≈ FJ$10 ผู้ใหญ่ · นักเรียนท้องถิ่น 6–17 ปี FJ$5 · 5 ปีและต่ำกว่าฟรี" },
+          "book": "none",
+          "q": "Sigatoka Sand Dunes National Park, Queens Road, Sigatoka",
+          "ok": "2026-11",
+          "src": "https://nationaltrust.org.fj/ssd/"
+        },
+        {
+          "name": { "en": "South Sea Island day trip", "th": "ทัวร์วันเดียวเกาะเซาท์ซี" },
+          "kind": "beach",
+          "area": { "en": "Mamanuca Islands, from Port Denarau", "th": "หมู่เกาะมามานูกา ออกจากพอร์ตเดนารอ" },
+          "what": { "en": "A short high-speed catamaran ride from Port Denarau to a Mamanuca island, sold as an all-inclusive day trip", "th": "นั่งเรือเร็วสั้นๆ จากพอร์ตเดนารอไปเกาะในหมู่เกาะมามานูกา ขายเป็นทัวร์วันเดียวแบบรวมทุกอย่าง" },
+          "why": { "en": "A day set up for families, with a child price; the sea is a short boat ride away", "th": "โปรแกรมทั้งวันสำหรับครอบครัว มีราคาเด็ก นั่งเรือสั้นๆ ก็ถึงเกาะ" },
+          "tip": { "en": "A half-day trip and a Finding Nemo option are cheaper; take sun cream and a rash vest", "th": "มีแบบครึ่งวันและแบบฟายดิงนีโมราคาถูกกว่า เตรียมครีมกันแดดและเสื้อกันแดดลงน้ำ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ FJ$285 adults · FJ$149 children (full day)", "th": "≈ FJ$285 ผู้ใหญ่ · FJ$149 เด็ก (เต็มวัน)" },
+          "book": "rec",
+          "q": "South Sea Island, Port Denarau, Fiji",
+          "ok": "2026-11",
+          "src": "https://www.southseaislandfiji.com"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.awinterescape.com/things-to-do-fiji/",
+          "name": {
+            "th": "วัดศรีศิวะสุบรามานิยะ",
+            "en": "Sri Siva Subramaniya Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "นาดี",
+            "en": "Nadi"
+          },
+          "what": {
+            "th": "วัดฮินดูสไตล์ดราวิเดียน ด้านหน้าทาสีสดใส",
+            "en": "A Hindu temple in Dravidian style with a brightly painted front"
+          },
+          "why": {
+            "th": "ให้เด็ก ๆ เห็นว่าฟิจิมีหลายวัฒนธรรม",
+            "en": "Shows children that Fiji has many cultures"
+          },
+          "tip": {
+            "th": "แต่งกายปิดไหล่และเข่า และขอให้ไม่กินอาหารก่อนเข้า",
+            "en": "Cover shoulders and knees; visitors are asked not to have eaten a meal before"
+          },
+          "q": "Sri Siva Subramaniya Temple, Queens Rd, Nadi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fijipocketguide.com/the-guide-to-denarau-island-for-families/",
+          "name": {
+            "th": "สวนน้ำบิ๊กบูลา",
+            "en": "Big Bula Waterpark"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "เกาะเดนาเรา",
+            "en": "Denarau Island"
+          },
+          "what": {
+            "th": "สไลเดอร์น้ำยักษ์ สไลเดอร์เป่าลม และด่านอุปสรรค",
+            "en": "Giant waterslides, inflatable slides and obstacle courses"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบเครื่องเล่นเป่าลม",
+            "en": "Children love the inflatables"
+          },
+          "q": "Big Bula Waterpark, Jayant Rd, Denarau Island",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Namaka Farmers Market",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "name": {
+            "th": "ตลาดนามากา",
+            "en": "Namaka market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "นามากา นาดี",
+            "en": "Namaka, Nadi"
+          },
+          "what": {
+            "th": "ตลาดเล็กบรรยากาศสบาย ขายผักผลไม้ตามฤดูกาล",
+            "en": "A smaller, calmer market of seasonal fruit and vegetables"
+          },
+          "why": {
+            "th": "สบาย ๆ กว่าตลาดใหญ่",
+            "en": "More relaxed than the big markets"
+          },
+          "tip": {
+            "th": "ปิดวันอาทิตย์",
+            "en": "Closed on Sundays"
+          },
+          "q": "Namaka Farmers Market, Nadi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fijipocketguide.com/10-things-to-do-on-the-coral-coast-with-kids/",
+          "name": {
+            "th": "น้ำตกเบียอูเซวู",
+            "en": "Biausevu Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หมู่บ้านเบียอูเซวู ถนนควีนส์ โคโรเลวู",
+            "en": "Biausevu Village, Queens Road at Korolevu"
+          },
+          "what": {
+            "th": "ไกด์จากหมู่บ้านพาเดินไปน้ำตกและแอ่งเล่นน้ำ",
+            "en": "A village guide walks you to a waterfall and swimming hole"
+          },
+          "why": {
+            "th": "เดินไม่ถึงชั่วโมง เด็กส่วนใหญ่เดินไหว",
+            "en": "Under an hour's walk, which most children manage"
+          },
+          "q": "Biausevu Waterfall, Korolevu, Coral Coast",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

@@ -61,13 +61,20 @@ try {
   await page.goto(`${BASE}/#/t/${T}`); await page.reload(); await page.waitForSelector('.hubgrid', { timeout: 20000 });
   ok(await page.locator('.notice').count() === 1, 'no server: the menu opens from the phone, with the "last synced" notice');
   const pages = [['today/1', '.tl.plan.brief'], ['today/1', '.bag'], ['plan', 'main h1'], ['plan/full', '.itin'], ['eat', 'main h1'], ['eat/all', '.eatpage .eatc'], ['stays', 'main h1'],
-    ['sos', 'main h1'], ['prep', 'main h1'], ['learn', 'main h1'], ['book', '.cover'], ['log/1', '#qtext']];
+    ['sos', 'main h1'], ['prep', 'main h1'], ['learn', 'main h1'], ['book', '.cover'], ['log/1/all', '#qtext']];
   for (const [r, sel] of pages) {
     await page.goto(`${BASE}/#/t/${T}/${r}`);
     const there = await page.waitForSelector(sel, { timeout: 8000 }).then(() => true, () => false);
     const words = there ? (await page.textContent('main')).trim().length : 0;
     ok(there && words > 80, `no server: #/t/${T}/${r} opens with its content (${words} chars)`);
   }
+  // storing the book also kept what Today and SOS read from the libraries (warmOffline → apiKeep / careFetch): the places to eat near
+  // tonight's bed, the rainy-day list and the help near the bed open with no server (a phone that stored the book at home never opened them online)
+  await page.goto(`${BASE}/#/t/${T}/today/1`);
+  const libs = await page.waitForFunction(() => eatBed.list && eatBed.list.length && sightRain.list && sightRain.list.length && [eatBed.list.length, sightRain.list.length], null, { timeout: 10000 }).then((h) => h.jsonValue(), () => null);
+  ok(!!libs, `no server: Today's places near the bed and rainy-day list come from the phone (${libs})`);
+  await page.goto(`${BASE}/#/t/${T}/sos`);
+  ok(await page.waitForSelector('#carelib:not([hidden]) .cown, #carelib:not([hidden]) li, #carelib:not([hidden]) details', { timeout: 8000 }).then(() => true, () => false), 'no server: the help near the bed opens from the phone');
   await page.goto(`${BASE}/#/passport/mimi/${T}`);
   ok(await page.waitForSelector('.pp .advc', { timeout: 8000 }).then(() => true, () => false), 'no server: the adventure passport opens');
   const art = await page.evaluate(() => Promise.all([...document.querySelectorAll('img')].slice(0, 6).map((i) => (i.complete ? i.naturalWidth : new Promise((r) => { i.onload = () => r(i.naturalWidth); i.onerror = () => r(0); })))));
@@ -80,7 +87,7 @@ try {
   ok(await page.waitForSelector('#askans .sres a, .ask .sres a', { timeout: 15000 }).then(() => true, () => false), 'no server: "ask the guide" answers from the manual on the phone');
 
   // ---- record the day with no server
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#qtext');
   await page.fill('#qtext', 'ไม่มีเน็ตก็จดได้'); await page.click('button[data-a="savequote"]');
   await page.waitForSelector('.items .tag'); await page.waitForTimeout(50);
   await page.setInputFiles('#fpick', [{ name: 'a.jpg', mimeType: 'image/jpeg', buffer: await jpg('#C8402B') }]);
@@ -120,7 +127,7 @@ try {
   const [sfc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snapadd"]')]);
   await sfc.setFiles([{ name: 'today.jpg', mimeType: 'image/jpeg', buffer: await jpg('#2C5646') }]);
   const snapPhoto = await page.waitForFunction((tid) => queue.some((o) => o.blob && /^image/.test(o.blob.type) && o.url.includes('trip=' + tid)), sid, { timeout: 20000 }).then(() => true, () => false);
-  await page.goto(`${BASE}/#/t/${sid}/log/0`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${sid}/log/0/all`); await page.waitForSelector('#qtext');
   await page.fill('#qtext', 'เล่มจากรูปจดได้แม้ไม่มีเน็ต'); await page.click('button[data-a="savequote"]');
   // wait for the phone's stored copy, not the in-memory queue: enqueue() writes IndexedDB a moment after it queues, and a reload in that
   // moment found only the photo (one run in four, Nov 2026) — no person closes the app within those milliseconds
@@ -137,7 +144,7 @@ try {
   await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), sid); await page.evaluate(() => load());
 
   // ---- photos on Wi-Fi only (headless Chromium does not say its network type, like an iPhone: photos wait for "send now")
-  await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/2/all`); await page.waitForSelector('#qtext');
   await page.check('.upw input[data-a="wifionly"]'); await page.waitForSelector('.upw input[data-a="wifionly"]:checked');
   ok(/tap send/.test(await page.textContent('.upw')), 'Wi-Fi only: ticking it explains at once (with the switch still focused) that photos wait for "send now" here');
   await page.setInputFiles('#fpick', [{ name: 'b.jpg', mimeType: 'image/jpeg', buffer: await jpg('#14C2A3') }]);

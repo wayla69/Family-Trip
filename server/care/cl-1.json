@@ -1,0 +1,11 @@
+{"cc":"cl","towns":[
+ {"place":"cl-santiago","places":[
+  {"name":"Clínica Alemana – Urgencia Pediátrica","kind":"hospital","area":{"th":"บิตากูรา ซานติอาโก","en":"Vitacura, Santiago"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉินเด็ก","en":"Private hospital with a children's emergency service"},"why":{"th":"ห้องฉุกเฉินเด็กแยกเฉพาะ มีกุมารแพทย์เฉพาะทางหลายสาขา","en":"Separate children's emergency area with many paediatric specialists"},"q":"Clínica Alemana Urgencia Pediátrica, Avenida Manquehue 1410, Vitacura, Santiago","ok":"2026-11"},
+  {"name":"Hospital Carlos van Buren","kind":"hospital","area":{"th":"บัลปาราอิโซ","en":"Valparaíso"},"what":{"th":"โรงพยาบาลรัฐ มีห้องฉุกเฉินเด็ก","en":"Public hospital with a children's emergency unit"},"why":{"th":"โรงพยาบาลหลักของบัลปาราอิโซ","en":"The main hospital in Valparaíso"},"q":"Hospital Carlos van Buren, San Ignacio 725, Valparaíso","ok":"2026-11"},
+  {"name":"Museo Interactivo Mirador (MIM)","kind":"play","area":{"th":"ลา กรันฆา ซานติอาโก","en":"La Granja, Santiago"},"what":{"th":"พิพิธภัณฑ์วิทยาศาสตร์ให้เด็กลงมือเล่น","en":"Hands-on science museum for children"},"why":{"th":"ของให้กดให้เล่นกว่า 300 ชิ้น ในร่ม ใกล้สถานีรถไฟใต้ดินสาย 5","en":"Over 300 hands-on exhibits, indoors, near Metro Line 5"},"q":"Museo Interactivo Mirador, Avenida Punta Arenas 6711, La Granja, Santiago","ok":"2026-11"},
+  {"name":"Santiago Airport nursing rooms","kind":"baby","area":{"th":"สนามบินซานเตียโก (SCL)","en":"Santiago airport (SCL)"},"what":{"th":"ห้องให้นมในเขตขึ้นเครื่อง ใช้ให้นมและเปลี่ยนผ้าอ้อม","en":"Nursing rooms in the boarding areas for feeding and changing"},"why":{"th":"เช็กตำแหน่งกับป้ายในอาคารผู้โดยสารอีกครั้ง","en":"Check the exact spot on the terminal signs"},"q":"Aeropuerto Internacional Arturo Merino Benítez, Pudahuel, Santiago","ok":"2026-11"}
+ ]},
+ {"place":"cl-atacama","places":[
+  {"name":"Hospital Dr. Carlos Cisternas","kind":"hospital","area":{"th":"คาลามา (จากซานเปโดรเดอาตากามาราว 100 กม.)","en":"Calama (about 100 km from San Pedro de Atacama)"},"what":{"th":"โรงพยาบาลรัฐขนาดใหญ่ มีหอผู้ป่วยเด็ก","en":"Large public hospital with a children's unit"},"why":{"th":"โรงพยาบาลใหญ่ที่ใกล้ทะเลทรายอาตากามาที่สุด","en":"The nearest large hospital to the Atacama"},"q":"Hospital Dr. Carlos Cisternas, Calama, Antofagasta","ok":"2026-11"}
+ ]}
+]}

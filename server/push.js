@@ -86,6 +86,14 @@ function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
     if (live(pack) && !snap) out.push({ key: `${x.trip}.x.pack`, at: pack, url: `/#/t/${x.trip}/offline`,
       th: { title: `อีก 2 วันออกเดินทาง · ${nTh}`, body: 'กด "เก็บเล่มนี้ไว้ในเครื่อง" ก่อนขึ้นเครื่อง ถ้ายังไม่ได้เก็บ — เปิดได้แม้ไม่มีสัญญาณ' },
       en: { title: `2 days to go · ${nEn}`, body: 'Tap "Keep this book on the phone" before the flight, if you haven’t yet — it opens without signal' } });
+    // a month and a week before (owner, Nov 2026: "เตือนจองล่วงหน้า"): 09:00 home time, opens the prep page — what to book ahead
+    // (the manual's book-ahead list, a planner book's "ahead") and the papers to have ready; never a booking or a place's name
+    for (const [n, k] of [[30, 'ahead30'], [7, 'ahead7']]) {
+      const at = zoned(addDays(x.from, -n), ANN_AT, home);
+      if (live(at) && !snap) out.push({ key: `${x.trip}.x.${k}`, at, url: `/#/t/${x.trip}/prep`,
+        th: { title: `อีก ${n} วันออกเดินทาง · ${nTh}`, body: n > 7 ? 'ถึงเวลาจองสิ่งที่ต้องจองล่วงหน้า และเช็กหนังสือเดินทางกับประกันของทุกคน' : 'เช็กของที่จองไว้และเอกสารให้ครบ ก่อนสัปดาห์สุดท้าย' },
+        en: { title: `${n} days to go · ${nEn}`, body: n > 7 ? 'Time to book what needs booking ahead, and check everyone’s passports and insurance' : 'Check the bookings and the papers before the last week' } });
+    }
     // the countdown doors: door k opens when N-k+1 sleeps are left (kid.js doorOpen), one morning each
     for (let left = snap ? 0 : x.doors || 0; left >= 1; left--) {
       const k = (x.doors || 0) - left + 1, at = zoned(addDays(x.from, -left), DOOR_AT, home);
@@ -128,6 +136,9 @@ function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
   return out;
 }
 
+// Apple's push service (an iPhone or iPad) — the host of the subscription's endpoint, never a match anywhere in the address
+const appleHost = (u) => { try { const h = new URL(u).hostname; return h === 'push.apple.com' || h.endsWith('.push.apple.com'); } catch (_) { return false; } };
+
 function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendNotification(sub, payload, opt) }) {   // sender: the tests pass a fake
   // true when the push service took it; otherwise {status, reason} (Apple says why in the body, e.g. {"reason":"BadJwtToken"}) — logged, never the endpoint
   const send = async (sub, payload, why) => {
@@ -157,7 +168,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const trips = (await pool.query(`SELECT id trip, title, timezone tz, to_char(date_from,'YYYY-MM-DD') "from", to_char(date_to,'YYYY-MM-DD') "to",
         coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors, kind, open,
         CASE WHEN kind = 'snap' THEN (SELECT json_agg(json_build_object('i', day_index, 'date', to_char(date,'YYYY-MM-DD')) ORDER BY day_index) FROM trip_days WHERE trip_id=trips.id) END days
-      FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 16 AND date_to + 1 OR date_to < $2::date OR (kind = 'snap' AND open))`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
+      FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 31 AND date_to + 1 OR date_to < $2::date OR (kind = 'snap' AND open))`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
     const list = due(days.filter((d) => tzOk(d.tz) && (d.rows || []).every((r) => !r || !r.tz || tzOk(r.tz))), now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
     for (const x of extras(trips.filter((t) => tzOk(t.tz)), now, await kidNames())) {
       if (x.day !== undefined) {
@@ -284,6 +295,19 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     for (const s of subs) if (await send(s, msg(s.lang))) n++;
     return n;
   }
+  // the web check of a book found places that closed or moved, in a book whose trip is still to come (owner, Nov 2026: "แจ้งเตือนเมื่อร้านในเล่มปิด"):
+  // the book's name and how many — never a place's name on the lock screen; it opens the book's check page with "change this day"
+  async function closed({ trip, title, n }, now = Date.now()) {
+    const key = `closed.${trip}.${new Date(now).toISOString().slice(0, 10)}`;   // at most once a day a book
+    if (!(n > 0) || !(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
+    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows, n0 = title || {};
+    const msg = (lang) => JSON.stringify(lang === 'en'
+      ? { title: `${n} place${n > 1 ? 's' : ''} in the plan closed or moved`, body: `${n0.en || n0.th || 'Your book'} — have a look and change the day`, tag: 'closed-' + trip, url: `/#/t/${trip}/check` }
+      : { title: `ร้านหรือที่เที่ยวในแผน ${n} แห่งปิดหรือย้ายแล้ว`, body: `${n0.th || n0.en || 'เล่มของเรา'} — เปิดดูแล้วเปลี่ยนวันได้เลย`, tag: 'closed-' + trip, url: `/#/t/${trip}/check` });
+    let k = 0;
+    for (const s of subs) if (await send(s, msg(s.lang))) k++;
+    return k;
+  }
   let timer = null;
   const start = () => { const run = () => tick().catch((e) => console.error('push tick', e.message)); timer = setInterval(run, 60000); timer.unref(); setTimeout(run, 5000).unref(); };
   const stop = () => clearInterval(timer);
@@ -314,9 +338,9 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const th = s.lang === 'th';
     const why = {};
     const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: s.role === 'viewer' ? (th ? `ใช้ได้แล้ว — จะเตือนตอนค่ำเมื่อมีรูปใหม่ของวันนั้น` : 'Working — you will hear in the evening when there are new photos that day') : th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
-    res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
+    res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: appleHost(s.endpoint) });
   });
-  return { router: r, tick, heart, draft, reel, inbox, alert, relatives, comment, start, stop };
+  return { router: r, tick, heart, draft, reel, inbox, alert, relatives, comment, closed, start, stop };
 }
 
 module.exports = { init, create, due, extras, zoned, short, subject, LEAD };

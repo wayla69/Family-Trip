@@ -1,0 +1,118 @@
+{
+  "town": "th-suratthani",
+  "rounds": [
+    {
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the town holds 14 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Central Surat Thani food court",
+          "evidence": "Google Maps (2026-11-23): Central Surat Thani (88 Wat Pradu) open to 9 PM; its 'Food Park' food court listing (4852+WR4, 'Located in: Central Surat Thani', 3.6★) has no hours ('Add hours'), so the food court itself is not confirmed"
+        }
+      ],
+      "removed": [
+        {
+          "name": "Alive Cafe",
+          "reason": "Google Maps (2026-11-23): 'อะไลฟ์ คาเฟ่ สุราษฎร์ธานี', 'Alive Cafe Surat Thani' and 'Alive Cafe and Restaurant Mueang Surat Thani' list other cafés only (A3Cafe, TooDay Cafe, Alert Cafe', Yield, Doz Coffee Lab …); no place of this name found"
+        }
+      ]
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 14 rows from KTC (Jan 2026) and TrueID (Aug 2026), all passed library-check.cjs, 10 went in",
+      "added": [
+        {
+          "name": "Tapee Seafood",
+          "page_name": "Tapee Seafood",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommended-restaurants-in-surat-thani",
+          "date": "2026-01",
+          "map": "Google Maps 'ตาปี ซีฟู้ด', 667 reviews, newest shown 21 days ago"
+        },
+        {
+          "name": "Nai Aow Seafood",
+          "page_name": "Nai Aow Seafood",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommended-restaurants-in-surat-thani",
+          "date": "2026-01",
+          "map": "Google Maps 'ร้านในอ่าวซีฟู๊ด', 474 reviews, newest shown a month ago"
+        },
+        {
+          "name": "Ban Lung Moon Garden Restaurant",
+          "page_name": "Ban Lung Moon",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommended-restaurants-in-surat-thani",
+          "date": "2026-01",
+          "map": "Google Maps 'สวนอาหารบ้านลุงมูล บางใบไม้', 209 reviews, newest shown 22 days ago"
+        },
+        {
+          "name": "Phunisa",
+          "page_name": "Phunisa",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommended-restaurants-in-surat-thani",
+          "date": "2026-01",
+          "map": "Google Maps 'ภูณิศา สุราษฎร์ธานี', 978 reviews, newest shown 4 days ago"
+        },
+        {
+          "name": "Surat Thani City Pillar Shrine",
+          "page_name": "ศาลหลักเมืองสุราษฎร์ธานี",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "date": "2026-08",
+          "map": "Google Maps 'ศาลหลักเมืองสุราษฎร์ธานี', 1,361 reviews, newest shown 10 days ago"
+        },
+        {
+          "name": "Hokkien Shrine",
+          "page_name": "ศาลเจ้าฮกเกี้ยน",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "date": "2026-08",
+          "map": "Google Maps 'ศาลเจ้าฮกเกี้ยน', 36 reviews, newest shown 3 weeks ago"
+        },
+        {
+          "name": "Laem Pho Beach",
+          "page_name": "ชายหาดแหลมโพธิ์",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "date": "2026-08",
+          "map": "Google Maps 'แหลมโพธ์', 1,049 reviews, newest shown 8 days ago"
+        },
+        {
+          "name": "Ban Nam Rad Spring Forest",
+          "page_name": "ป่าต้นน้ำ บ้านน้ำราด",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "date": "2026-08",
+          "map": "Google Maps 'ป่าต้นน้ำ บ้านน้ำราด', 4,608 reviews, newest shown 2 days ago"
+        },
+        {
+          "name": "Khao Phang Suspension Bridge",
+          "page_name": "สะพานแขวนเขาพัง",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "date": "2026-08",
+          "map": "Google Maps 'สะพานแขวน ภูเขารูปหัวใจ', 1,852 reviews, newest shown 5 days ago"
+        },
+        {
+          "name": "Khao Na Nai Luang Dharma Park",
+          "page_name": "อุทยานธรรมเขานาในหลวง",
+          "src": "https://travel.trueid.net/detail/BDgKzyo1ne1D",
+          "date": "2026-08",
+          "map": "Google Maps 'อุทยานธรรมเขานาในหลวง', 2,437 reviews, newest shown 2 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Artia Seafood Riverside, Baan Bon Khao",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Kumpun",
+          "why": "not found on the map"
+        },
+        {
+          "name": "จุดชมวิวเขาสก",
+          "why": "the map's match is the national park itself, already in"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

@@ -1,0 +1,1120 @@
+{
+  "cc": "pt",
+  "towns": [
+    {
+      "place": "pt-lisbon",
+      "sights": [
+        {
+          "name": { "en": "Lisbon Oceanarium", "th": "โอเชียนาเรียมลิสบอน" },
+          "local": "Oceanário de Lisboa",
+          "kind": "aquarium",
+          "area": { "en": "Parque das Nações", "th": "ปาร์กดัสนาซอนช์" },
+          "what": { "en": "One of Europe's biggest aquariums, built around a huge central tank with sharks, rays, sunfish and sea otters", "th": "หนึ่งในพิพิธภัณฑ์สัตว์น้ำใหญ่สุดของยุโรป รอบตู้กลางยักษ์ที่มีฉลาม กระเบน ปลาแสงอาทิตย์ และนาก" },
+          "why": { "en": "Children can watch the big tank for a long time; flat, buggy-friendly and dark and calm for tired toddlers", "th": "เด็กนั่งดูตู้ใหญ่ได้นาน ทางเรียบเข็นรถเข็นได้ ห้องมืดสงบเหมาะกับเด็กเล็กที่เหนื่อย" },
+          "tip": { "en": "Book online to skip the queue; a late-afternoon happy-hour price ran until March 2026, so check for a new one", "th": "จองออนไลน์เพื่อเลี่ยงคิว มีราคาช่วงเย็นถึงเดือนมีนาคม 2026 เช็กว่ามีรอบใหม่ไหม" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €25 adults · €15 children 3–12 · under 3 free (2026 guide, check the price)", "th": "≈ €25 ผู้ใหญ่ · €15 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี (เช็กราคา)" },
+          "book": "rec",
+          "q": "Oceanário de Lisboa, Esplanada Dom Carlos I, Lisboa",
+          "ok": "2026-11",
+          "src": "https://thebettervacation.com/pt/Lisboa/bilhetes-ocean%C3%A1rio-lisboa/"
+        },
+        {
+          "name": { "en": "Lisbon Zoo", "th": "สวนสัตว์ลิสบอน" },
+          "local": "Jardim Zoológico de Lisboa",
+          "kind": "zoo",
+          "area": { "en": "Sete Rios", "th": "เซเตรีอุช" },
+          "what": { "en": "A hillside zoo with over 300 species, dolphin and bird shows, a cable car over the park and a small train", "th": "สวนสัตว์บนเนินกว่า 300 ชนิด มีโชว์โลมาและนก กระเช้าข้ามสวน และรถไฟเล็ก" },
+          "why": { "en": "Lots for children, but the slopes are steep for strollers; the train is paid separately", "th": "เด็กสนุกมาก แต่ทางลาดชันสำหรับรถเข็น รถไฟคิดเงินแยก" },
+          "tip": { "en": "Open every day: about 10–20 in summer, 10–18 in winter, last entry about an hour before closing", "th": "เปิดทุกวัน หน้าร้อนราว 10–20 น. หน้าหนาว 10–18 น. เข้าได้ถึงก่อนปิดราวหนึ่งชั่วโมง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €29 adults online · €18 children 3–12 · under 3 free (check the price)", "th": "≈ €29 ผู้ใหญ่ออนไลน์ · €18 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี (เช็กราคา)" },
+          "book": "rec",
+          "q": "Jardim Zoológico de Lisboa, Estrada de Benfica 158",
+          "ok": "2026-11",
+          "src": "https://thebettervacation.com/pt/Lisboa/ingressos-para-o-zool%C3%B3gico-de-lisboa/amp/"
+        },
+        {
+          "name": { "en": "Pavilion of Knowledge", "th": "ศูนย์วิทยาศาสตร์ปาวิลเยาดูโคนเยซีเมนตู" },
+          "local": "Pavilhão do Conhecimento",
+          "kind": "museumkid",
+          "area": { "en": "Parque das Nações", "th": "ปาร์กดัสนาซอนช์" },
+          "what": { "en": "A hands-on science centre with play exhibitions and a section for the smallest children", "th": "ศูนย์วิทยาศาสตร์ให้ลงมือเล่น มีนิทรรศการสนุกๆ และมุมสำหรับเด็กเล็กที่สุด" },
+          "why": { "en": "Touch-and-try exhibits for all ages, a good rainy-day plan beside the Oceanarium", "th": "นิทรรศการให้จับและลอง เหมาะทุกวัย เป็นแผนวันฝนตกที่อยู่ข้างโอเชียนาเรียม" },
+          "tip": { "en": "Pair it with the Oceanarium; temporary shows change, so check what is on", "th": "ไปคู่กับโอเชียนาเรียมได้ นิทรรศการชั่วคราวเปลี่ยนบ่อย เช็กก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Pavilhão do Conhecimento, Largo José Mariano Gago, Lisboa",
+          "ok": "2026-11",
+          "src": "https://www.visitlisboa.com/pt-pt/locais/pavilhao-do-conhecimento"
+        },
+        {
+          "name": { "en": "Castelo de São Jorge", "th": "ปราสาทเซาจอร์ฌ" },
+          "local": "Castelo de São Jorge",
+          "kind": "views",
+          "area": { "en": "Alfama", "th": "อัลฟามา" },
+          "what": { "en": "A hilltop Moorish castle with ramparts, towers, peacocks in the gardens and views over the city and the river", "th": "ปราสาทมัวร์บนเนิน มีกำแพง หอคอย นกยูงในสวน และวิวเมืองกับแม่น้ำ" },
+          "why": { "en": "Children love running along the walls and climbing towers; steps and cobbles are hard with a pram", "th": "เด็กชอบวิ่งบนกำแพงและปีนหอคอย แต่บันไดกับถนนหินลำบากสำหรับรถเข็น" },
+          "tip": { "en": "Take the tram or a taxi up the steep hill, then walk down through Alfama", "th": "นั่งรถรางหรือแท็กซี่ขึ้นเนิน แล้วเดินลงผ่านอัลฟามา" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "≈ €17 adults · under 12 free", "th": "≈ €17 ผู้ใหญ่ · ต่ำกว่า 12 ปีฟรี" },
+          "book": "rec",
+          "q": "Castelo de São Jorge, Rua de Santa Cruz do Castelo, Lisboa",
+          "ok": "2026-11",
+          "src": "https://castelodesaojorge.pt/en/?p=7238"
+        },
+        {
+          "name": { "en": "Pena Palace", "th": "พระราชวังเปนา" },
+          "local": "Palácio Nacional da Pena",
+          "kind": "culture",
+          "area": { "en": "Sintra", "th": "ซินตรา" },
+          "what": { "en": "A colourful hilltop palace in a forest park above Sintra, with terraces and a long garden walk", "th": "พระราชวังสีสดบนเนินในสวนป่าเหนือซินตรา มีระเบียงและทางเดินเลียบสวนยาว" },
+          "why": { "en": "Bright colours that children like; steep and busy, so carry small ones rather than push a pram", "th": "สีสดที่เด็กชอบ แต่ชันและคนเยอะ ควรอุ้มเด็กเล็กแทนการเข็นรถเข็น" },
+          "tip": { "en": "Timed entry is required for the palace; go early and take the park shuttle up the hill", "th": "ต้องจองเวลาเข้าพระราชวัง ไปแต่เช้าและใช้รถรับส่งขึ้นเนิน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price (a 2026 guide says ≈ €14 adults for palace and park) · under 5 free but needs a ticket", "th": "เช็กราคา (คู่มือปี 2026 ว่า ≈ €14 ผู้ใหญ่รวมพระราชวังและสวน) · ต่ำกว่า 5 ขวบฟรีแต่ต้องมีบัตร" },
+          "book": "req",
+          "q": "Palácio Nacional da Pena, Estrada da Pena, Sintra",
+          "ok": "2026-11",
+          "src": "https://thebettervacation.com/pt/Lisboa/pal%C3%A1cio-da-pena/"
+        },
+        {
+          "name": { "en": "Quinta da Regaleira", "th": "กินตาดาเรกาเลย์รา" },
+          "local": "Quinta da Regaleira",
+          "kind": "nature",
+          "area": { "en": "Sintra", "th": "ซินตรา" },
+          "what": { "en": "A fairytale estate with a neo-Gothic villa, gardens, grottoes, tunnels and a spiral well you can walk down", "th": "คฤหาสน์ในเทพนิยาย มีวิลล่านีโอโกธิก สวน ถ้ำ อุโมงค์ และบ่อน้ำก้นหอยให้เดินลง" },
+          "why": { "en": "Tunnels and towers are an adventure for 4–10-year-olds; paths are steep and damp", "th": "อุโมงค์และหอคอยเป็นการผจญภัยของเด็ก 4–10 ปี ทางชันและชื้น" },
+          "tip": { "en": "Timed entry; a flashlight helps in the tunnels", "th": "ต้องจองเวลาเข้า พกไฟฉายช่วยในอุโมงค์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €15 adults · €10 ages 6–17 · under 6 free (one table, check the price)", "th": "≈ €15 ผู้ใหญ่ · €10 อายุ 6–17 ปี · ต่ำกว่า 6 ขวบฟรี (เช็กราคา)" },
+          "book": "rec",
+          "q": "Quinta da Regaleira, Rua Barbosa do Bocage, Sintra",
+          "ok": "2026-11",
+          "src": "https://www.idealista.pt/en/news/node/61830"
+        },
+        {
+          "name": { "en": "National Coach Museum", "th": "พิพิธภัณฑ์รถม้าแห่งชาติ" },
+          "local": "Museu Nacional dos Coches",
+          "kind": "museum",
+          "area": { "en": "Belém", "th": "เบเลม" },
+          "what": { "en": "A museum of royal carriages and coaches in a modern building beside Belém's old riding hall", "th": "พิพิธภัณฑ์รถม้าหลวงในอาคารใหม่ ข้างโรงฝึกม้าเก่าของเบเลม" },
+          "why": { "en": "Gilded carriages and horses fascinate small children; a short, dry visit", "th": "รถม้าทองและม้าทำให้เด็กเล็กตื่นเต้น ชมสั้นๆ ในร่ม" },
+          "tip": { "en": "Combine with a walk in Belém; children under 12 enter free", "th": "ไปคู่กับเดินเล่นที่เบเลม เด็กต่ำกว่า 12 ปีเข้าฟรี" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (sources said ≈ €15 adults) · under 12 free", "th": "เช็กราคา (แหล่งข้อมูลบอก ≈ €15 ผู้ใหญ่) · ต่ำกว่า 12 ปีฟรี" },
+          "book": "none",
+          "q": "Museu Nacional dos Coches, Av. da Índia 136, Lisboa",
+          "ok": "2026-11",
+          "src": "https://www.visitlisboa.com/pt-pt/locais/museu-nacional-dos-coches"
+        },
+        {
+          "name": { "en": "Lisbon Cable Car", "th": "กระเช้าลิสบอน" },
+          "local": "Telecabine Lisboa",
+          "kind": "ride",
+          "area": { "en": "Parque das Nações", "th": "ปาร์กดัสนาซอนช์" },
+          "what": { "en": "A 10-minute cable car ride above the Tagus riverside, from near the Oceanarium to the Vasco da Gama tower", "th": "นั่งกระเช้าราว 10 นาทีเหนือริมแม่น้ำเทกัส จากใกล้โอเชียนาเรียมถึงหอคอยวัสโกดากามา" },
+          "why": { "en": "Short and exciting for small children; walk back along the flat riverside promenade", "th": "สั้นและตื่นเต้นสำหรับเด็กเล็ก เดินกลับทางริมแม่น้ำที่ราบเรียบได้" },
+          "tip": { "en": "It may close for its yearly maintenance around mid-November. Runs daily from around 11:00; closing time changes with the season", "th": "อาจปิดซ่อมบำรุงประจำปีราวกลางพฤศจิกายน เปิดทุกวันตั้งแต่ราว 11:00 เวลาปิดเปลี่ยนตามฤดู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €10 adults one way · ≈ €7 children 3–12 · under 3 free (one blog, check the price)", "th": "≈ €10 ผู้ใหญ่เที่ยวเดียว · ≈ €7 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี (เช็กราคา)" },
+          "book": "none",
+          "q": "Telecabine Lisboa, Parque das Nações",
+          "ok": "2026-11",
+          "src": "https://thebettervacation.com/lisbon/lisbon-cable-car-tickets/"
+        },
+        {
+          "name": { "en": "Time Out Market Lisboa", "th": "ไทม์เอาต์มาร์เก็ตลิสบอน" },
+          "local": "Mercado da Ribeira",
+          "kind": "market",
+          "area": { "en": "Cais do Sodré", "th": "ไกชดูโซดเร" },
+          "what": { "en": "A big covered food hall with stalls from many of the city's chefs, in the old Ribeira market", "th": "ฟู้ดฮอลล์ในร่มขนาดใหญ่ มีแผงอาหารจากเชฟหลายคนของเมือง ในตลาดริเบราเก่า" },
+          "why": { "en": "Everyone picks their own dish, so fussy children find something; very busy at lunch and dinner", "th": "ทุกคนเลือกจานเองได้ เด็กเลือกกินก็หาของถูกใจได้ แต่คนแน่นช่วงเที่ยงและเย็น" },
+          "tip": { "en": "Open every day 10:00–midnight; quieter between about 15:00 and 17:00", "th": "เปิดทุกวัน 10:00–เที่ยงคืน เงียบกว่าช่วงราว 15:00–17:00" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free to enter · pay for what you eat", "th": "เข้าฟรี · จ่ายตามที่กิน" },
+          "book": "none",
+          "q": "Time Out Market Lisboa, Av. 24 de Julho 49",
+          "ok": "2026-11",
+          "src": "https://www.lisbontourism.org/time-out-market-lisbon/"
+        },
+        {
+          "name": { "en": "Navy Museum", "th": "พิพิธภัณฑ์กองทัพเรือ" },
+          "local": "Museu de Marinha",
+          "kind": "museum",
+          "area": { "en": "Belém", "th": "เบเลม" },
+          "what": { "en": "Ship models, royal barges and old navigation tools in Belém, with a planetarium next door", "th": "แบบจำลองเรือ เรือหลวง และเครื่องมือเดินเรือเก่าที่เบเลม มีท้องฟ้าจำลองอยู่ติดกัน" },
+          "why": { "en": "Big ships and model boats suit boat-loving children; flat and dry", "th": "เรือใหญ่และเรือจำลองถูกใจเด็กที่ชอบเรือ ทางเรียบและอยู่ในร่ม" },
+          "tip": { "en": "A family ticket exists; free on the first Sunday of the month until 14:00 (one ticket site)", "th": "มีบัตรครอบครัว ฟรีวันอาทิตย์แรกของเดือนจนถึง 14:00 (จากเว็บขายบัตร)" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (the Navy's 2026 price list is a PDF)", "th": "เช็กราคา (ตารางราคาปี 2026 ของกองทัพเรือเป็นไฟล์ PDF)" },
+          "book": "none",
+          "q": "Museu de Marinha, Praça do Império, Lisboa",
+          "ok": "2026-11",
+          "src": "https://cultura.marinha.pt/pt/Documents/precarios_2026.pdf"
+        },
+        {
+          "name": { "en": "Vasco da Gama Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำวัสโกดากามา" },
+          "local": "Aquário Vasco da Gama",
+          "kind": "aquarium",
+          "area": { "en": "Algés", "th": "อัลเจส" },
+          "what": { "en": "A small, old aquarium of Portuguese coastal fish, run by the Navy, on the river west of Belém", "th": "พิพิธภัณฑ์สัตว์น้ำเล็กๆ รุ่นเก่า มีปลาชายฝั่งโปรตุเกส ดูแลโดยกองทัพเรือ อยู่ริมแม่น้ำทางตะวันตกของเบเลม" },
+          "why": { "en": "Quick and quiet for toddlers who find a big aquarium too much", "th": "เข้าชมเร็วและเงียบ เหมาะกับเด็กเล็กที่คิดว่าพิพิธภัณฑ์ใหญ่เกินไป" },
+          "tip": { "en": "Free for children 4–12 on 1 June (Children's Day)", "th": "เด็ก 4–12 ปีเข้าฟรีวันที่ 1 มิถุนายน (วันเด็ก)" },
+          "ages": [2, 2, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Aquário Vasco da Gama, Rua Direita do Dafundo, Cruz Quebrada",
+          "ok": "2026-11",
+          "src": "https://www.visitlisboa.com/pt-pt/locais/aquario-vasco-da-gama"
+        },
+        {
+          "name": { "en": "Gulbenkian Garden", "th": "สวนกุลเบงเกียน" },
+          "local": "Jardim Gulbenkian",
+          "kind": "park",
+          "area": { "en": "Avenidas Novas", "th": "อาเวนิดัสโนวัส" },
+          "what": { "en": "A calm modern garden with a pond, ducks and turtles, shaded paths and a summer garden festival", "th": "สวนสมัยใหม่ที่สงบ มีบ่อ เป็ด เต่า ทางเดินร่มรื่น และงานสวนฤดูร้อน" },
+          "why": { "en": "Free and flat, with room to wander; there is no confirmed playground inside", "th": "ฟรีและราบเรียบ เดินเล่นสบาย แต่ยังยืนยันไม่ได้ว่ามีสนามเด็กเล่นข้างใน" },
+          "tip": { "en": "Open every day from sunrise to sunset; the Summer Garden ran 27 June–12 July in 2026", "th": "เปิดทุกวันตั้งแต่ตะวันขึ้นถึงตะวันตก งานสวนฤดูร้อนปี 2026 จัด 27 มิ.ย.–12 ก.ค." },
+          "ages": [2, 2, 1, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jardim Gulbenkian, Av. de Berna 45A, Lisboa",
+          "ok": "2026-11",
+          "src": "https://www.timeout.pt/lisboa/pt/atraccoes/jardins-da-gulbenkian"
+        },
+        {
+          "name": { "en": "Puppet Museum", "th": "พิพิธภัณฑ์หุ่นกระบอก" },
+          "local": "Museu da Marioneta",
+          "kind": "museumkid",
+          "area": { "en": "Santos", "th": "ซานโตส" },
+          "what": { "en": "A small museum in a former convent with puppets and marionettes from Portugal and the world", "th": "พิพิธภัณฑ์เล็กๆ ในอดีตสำนักชี มีหุ่นกระบอกและหุ่นชักจากโปรตุเกสและทั่วโลก" },
+          "why": { "en": "Colourful puppets at child height and workshops for children; a short, calm visit", "th": "หุ่นสีสดในระดับสายตาเด็ก และมีเวิร์กชอปสำหรับเด็ก ชมสั้นๆ สงบ" },
+          "tip": { "en": "Open Tuesday–Sunday 10:00–18:00 (a listing, undated)", "th": "เปิดอังคาร–อาทิตย์ 10:00–18:00 (จากข้อมูลที่ไม่ระบุวันที่)" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Museu da Marioneta, Rua da Esperança 146, Lisboa",
+          "ok": "2026-11",
+          "src": "https://www.museudamarioneta.pt/en/useful-information/"
+        },
+        {
+          "name": { "en": "Eduardo VII Park", "th": "สวนเอดูอาร์ดูที่เจ็ด" },
+          "local": "Parque Eduardo VII",
+          "kind": "play",
+          "area": { "en": "Marquês de Pombal", "th": "มาร์เกสดึปงบัล" },
+          "what": { "en": "A big green hillside park with a playground between the Estufa Fria and Clube VII, a picnic area and city views", "th": "สวนเขียวบนเนินกว้าง มีสนามเด็กเล่นระหว่างเอสตูฟาฟรีอากับคลับเซเต มีที่ปิกนิกและวิวเมือง" },
+          "why": { "en": "A pleasant playground and lawns to run on; free", "th": "สนามเด็กเล่นน่าเล่นและมีสนามหญ้าให้วิ่ง ฟรี" },
+          "tip": { "en": "The city lists the playground at about 09:00–17:30 in winter", "th": "เทศบาลลิสต์ว่าสนามเด็กเล่นเปิดราว 09:00–17:30 ในฤดูหนาว" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Parque Eduardo VII, Lisboa",
+          "ok": "2026-11",
+          "src": "https://www.visitportugal.com/en/content/parque-eduardo-vii"
+        },
+        {
+          "name": { "en": "Feira da Ladra flea market", "th": "ตลาดนัดไฟรอดาลาดรา" },
+          "local": "Feira da Ladra",
+          "kind": "market",
+          "area": { "en": "Campo de Santa Clara, Alfama", "th": "กัมปูดีซันตาไกลรา อัลฟามา" },
+          "what": { "en": "Lisbon's old flea market on Tuesdays and Saturdays, with antiques, tiles, records and second-hand toys", "th": "ตลาดนัดของเก่าของลิสบอน เปิดวันอังคารและเสาร์ มีของเก่า กระเบื้อง แผ่นเสียง และของเล่นมือสอง" },
+          "why": { "en": "Fun to browse with children who like treasure hunts; crowded and uneven underfoot", "th": "เดินดูสนุกสำหรับเด็กที่ชอบตามหาของ แต่คนแน่นและพื้นไม่เรียบ" },
+          "tip": { "en": "Tuesdays and Saturdays about 09:00–18:00; hours vary with the weather", "th": "วันอังคารและเสาร์ ราว 09:00–18:00 เวลาเปลี่ยนตามสภาพอากาศ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to enter", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Feira da Ladra, Campo de Santa Clara, Lisboa",
+          "ok": "2026-11",
+          "src": "https://www.visitlisboa.com/pt-pt/locais/feira-da-ladra"
+        },
+      {"name":{"en":"Hippotrip","th":"ฮิปโปทริป"},"kind":"ride","area":{"en":"Santo Amaro Dock, Alcântara","th":"ท่าซานโต อามาโร อัลคันตารา"},"what":{"en":"Amphibious bus tour: about 60 minutes on land, then nearly 30 minutes on the Tagus River.","th":"ทัวร์รถบัสสะเทินน้ำสะเทินบก ราว 60 นาทีบนบก แล้วเกือบ 30 นาทีบนแม่น้ำทากัส"},"why":{"en":"The page says the bus turns into a boat, which all the kids will love.","th":"หน้าเว็บบอกว่ารถบัสกลายเป็นเรือ ซึ่งเด็กทุกคนชอบ"},"ages":[0,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"From €20","th":"ตั้งแต่ 20 ยูโร"},"book":"rec","q":"Hippotrip, Santo Amaro Dock, Alcântara, Lisbon","ok":"2026-11","src":"https://lisboasecreta.co/en/places-in-lisbon-to-entertain-children/"},
+      {"name":{"en":"Jardim do Torel","th":"สวนโตเรล"},"kind":"park","area":{"en":"Campo dos Mártires da Pátria Square","th":"กัมโปดอสมาร์ตีเรสดาปาเตรียสแควร์"},"what":{"en":"Garden with a playground, a ping-pong table and a viewpoint over the city; a kiosk next door is not always open.","th":"สวนที่มีสนามเด็กเล่น โต๊ะปิงปอง และจุดชมวิวเมือง มีร้านขายของว่างข้างๆ ที่ไม่ค่อยเปิด"},"why":{"en":"A playground with plenty of challenges for children, per the page.","th":"สนามเด็กเล่นที่มีความท้าทายมากสำหรับเด็ก ตามหน้าเว็บ"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"From €0","th":"ตั้งแต่ 0 ยูโร"},"book":"none","q":"Jardim do Torel, Campo dos Mártires da Pátria, Lisbon","ok":"2026-11","src":"https://lisboasecreta.co/en/places-in-lisbon-to-entertain-children/"},
+      {"name":{"en":"LU.CA","th":"ลูกา (LU.CA)"},"kind":"show","area":{"en":"Ajuda","th":"อาจูดา"},"what":{"en":"Luís de Camões Municipal Theatre, with plays, parties, debates and activities for younger audiences.","th":"โรงละครเทศบาลลุยส์ เดอ กามเอส มีละคร งานปาร์ตี้ การอภิปราย และกิจกรรมสำหรับผู้ชมอายุน้อย"},"why":{"en":"The page says the theatre is designed for younger audiences.","th":"หน้าเว็บบอกว่าโรงละครออกแบบมาสำหรับผู้ชมอายุน้อย"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"LU.CA, Calçada da Ajuda, Lisbon","ok":"2026-11","src":"https://lisboasecreta.co/en/places-in-lisbon-to-entertain-children/"},
+      {"name":{"en":"Marinha Planetarium","th":"ท้องฟ้าจำลองมารินญา"},"kind":"museumkid","area":{"en":"Praça do Império, Belém","th":"พราซา โด อิมเปริโอ เบเลง"},"what":{"en":"Planetarium next to the Marinha Museum, with a projector that recreates more than 9,000 stars and the Milky Way.","th":"ท้องฟ้าจำลองติดพิพิธภัณฑ์มารินญา เครื่องฉายสร้างดาวกว่า 9,000 ดวงและทางช้างเผือก"},"why":{"en":"The page says the projector shows the constellations and interplanetary stories.","th":"หน้าเว็บบอกว่าเครื่องฉายแสดงกลุ่มดาวและเรื่องราวระหว่างดาวเคราะห์"},"tip":{"en":"Open Tuesday to Sunday, 10 a.m. to 5 p.m. (per the page)","th":"เปิดอังคารถึงอาทิตย์ 10:00–17:00 ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Marinha Planetarium, Praça do Império, Belém, Lisbon","ok":"2026-11","src":"https://lisboasecreta.co/en/places-in-lisbon-to-entertain-children/"},
+      {"name":{"en":"Passeio das Tágides","th":"ล่องเรือทากีเดส"},"kind":"ride","area":{"en":"North Station","th":"สถานีเหนือ"},"what":{"en":"Scenic cruise along the Tagus River, from the North Station.","th":"ล่องเรือชมวิวริมแม่น้ำทากัส จากสถานีเหนือ"},"why":{"en":"The page calls it a peaceful, scenic cruise along the Tagus River.","th":"หน้าเว็บเรียกว่าเป็นทริปเรือชมวิวที่สงบริมแม่น้ำทากัส"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"From €6.50","th":"ตั้งแต่ 6.50 ยูโร"},"book":"none","q":"Passeio das Tágides, North Station, Lisbon","ok":"2026-11","src":"https://lisboasecreta.co/en/places-in-lisbon-to-entertain-children/"},
+      {"name":{"en":"Quake - Lisbon Earthquake Museum","th":"ควิค พิพิธภัณฑ์แผ่นดินไหวลิสบอน"},"kind":"museum","area":{"en":"Rua Cais da Alfândega Velha, 39","th":"รัวกาอิส ดา อัลฟันเดกา เวลยา 39"},"what":{"en":"Immersive museum on the science of earthquakes and the 1755 earthquake that shaped the city.","th":"พิพิธภัณฑ์แบบดื่มด่ำเรื่องวิทยาศาสตร์แผ่นดินไหวและแผ่นดินไหวปี 1755 ที่หล่อหลอมเมือง"},"why":{"en":"The page says it explains why the streets of Baixa look the way they do, so the city outside makes sense.","th":"หน้าเว็บอธิบายว่าทำไมถนนในบาอิชาจึงเป็นแบบนั้น ทำให้เมืองด้านนอกเข้าใจได้"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Quake Lisbon Earthquake Museum, Rua Cais da Alfândega Velha, Lisbon","ok":"2026-11","src":"https://lisbonquake.com/en-GB/blog/things-to-do-in-lisbon-for-families"},
+      {"name":{"en":"LX Factory","th":"แอลเอ็กซ์แฟกทอรี"},"kind":"market","area":{"en":"Alcântara","th":"อัลคันตารา"},"what":{"en":"Repurposed industrial complex with bars, restaurants, shops and a market on Sundays.","th":"อาคารอุตสาหกรรมที่ดัดแปลงใหม่ มีบาร์ ร้านอาหาร ร้านค้า และตลาดวันอาทิตย์"},"why":{"en":"Street food and open space; the page says children can eat well there.","th":"สตรีทฟู้ดและพื้นที่โล่ง หน้าเว็บบอกว่าเด็กกินได้ดีที่นั่น"},"tip":{"en":"A market on Sundays; busiest at weekends and in the evenings (per the page)","th":"ตลาดวันอาทิตย์ ยุ่งสุดในวันหยุดและช่วงเย็น ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"LX Factory, Alcântara, Lisbon","ok":"2026-11","src":"https://lisbonquake.com/en-GB/blog/things-to-do-in-lisbon-for-families"},
+      {"name":{"en":"Tram 28","th":"รถราง 28"},"kind":"ride","area":{"en":"Alfama, Baixa and Chiado","th":"อัลฟามา บาอิชา และชีอาดู"},"what":{"en":"Historic yellow tram through the old quarters of Alfama, Baixa and Chiado.","th":"รถรางสีเหลืองประวัติศาสตร์ผ่านย่านเก่าอัลฟามา บาอิชา และชีอาดู"},"why":{"en":"The page says it is the highlight of the morning for many families.","th":"หน้าเว็บบอกว่าเป็นช่วงเช้าที่ดีที่สุดของครอบครัวหลายครอบครัว"},"tip":{"en":"Seats fill quickly; arrive early (per the page)","th":"ที่นั่งเต็มเร็ว มาถึงแต่เช้า ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":0.5,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Tram 28, Alfama, Lisbon","ok":"2026-11","src":"https://lisbonquake.com/en-GB/blog/things-to-do-in-lisbon-for-families"},
+      {"name":{"en":"Jardim da Estrela","th":"สวนเอสเตลา"},"kind":"park","area":{"en":"Estrela","th":"เอสเตลา"},"what":{"en":"Park near the Estrela Basilica with a duck pond, a playground and shaded benches.","th":"สวนใกล้มหาวิหารเอสเตลา มีบ่อเป็ด สนามเด็กเล่น และม้านั่งใต้ร่มเงา"},"why":{"en":"A playground and a duck pond for a midday break, per the page.","th":"สนามเด็กเล่นและบ่อเป็ดสำหรับพักเที่ยง ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jardim da Estrela, Estrela, Lisbon","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/lisbon-with-kids"},
+        {
+          "local": "Parque Recreativo do Alto da Serafina",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-parques-infantis-em-lisboa",
+          "name": {
+            "th": "สวนอัลตูดาเซราฟีนา",
+            "en": "Alto da Serafina park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเซราฟีนา ลิสบอน",
+            "en": "Estrada da Serafina, Lisbon"
+          },
+          "what": {
+            "th": "สวนกว้าง มีที่ปิกนิก โซนเล่นสำหรับเด็กต่ำกว่า 5 ขวบและ 6–12 ขวบ และวิวเมือง",
+            "en": "A big park with picnic spots, play areas for under-fives and 6–12s, and a city view"
+          },
+          "why": {
+            "th": "มีถนนจำลองให้หัดปั่นจักรยานและสกู๊ตเตอร์",
+            "en": "A small traffic course for learning to ride bikes and scooters"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–20:00 (1 เม.ย.–30 ก.ย.) และ 09:00–18:00 (1 ต.ค.–31 มี.ค.)",
+            "en": "Open daily 09.00–20.00 from 1 April to 30 September; 09.00–18.00 from 1 October to 31 March"
+          },
+          "q": "Parque Recreativo do Alto da Serafina, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/coisas-fazer-criancas-inverno-chuva-lisboa",
+          "name": {
+            "th": "โบว์ลิงซิตี",
+            "en": "Bowling City"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์การค้าโคลอมโบ ลิสบอน",
+            "en": "Colombo shopping centre, Lisbon"
+          },
+          "what": {
+            "th": "โบว์ลิงในร่ม 12 เลน",
+            "en": "An indoor bowling centre with twelve lanes"
+          },
+          "why": {
+            "th": "สนุกในร่มสำหรับวันฝนตก",
+            "en": "Indoor fun for a rainy day"
+          },
+          "tip": {
+            "th": "โซนเกมสำหรับอายุ 16 ปีขึ้นไป พาเด็กเล่นแค่เลนโบว์ลิง",
+            "en": "The arcade zone is for over-16s; stay at the lanes with children"
+          },
+          "q": "Bowling City Colombo, Av. Lusíada, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/sintra-with-kids/",
+          "name": {
+            "th": "หาดปรายาดัชมาซัช",
+            "en": "Praia das Maçãs"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ซินตรา",
+            "en": "Sintra"
+          },
+          "what": {
+            "th": "หาดแอตแลนติกแคบแต่ลึก มีทางเดินขึ้นหน้าผา",
+            "en": "A narrow, deep Atlantic beach with a path up to the cliffs"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเหมาะกับครอบครัวมาก",
+            "en": "The page calls it very family-friendly"
+          },
+          "tip": {
+            "th": "คลื่นแอตแลนติกแรงมาก ให้เด็กเล่นบนหาดทราย",
+            "en": "The Atlantic waves can be very strong: keep children on the sand"
+          },
+          "q": "Praia das Maçãs, Colares, Sintra",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Castelo dos Mouros",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/sintra-with-kids/",
+          "name": {
+            "th": "ปราสาทมัวร์",
+            "en": "Moorish Castle"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ซินตรา",
+            "en": "Sintra"
+          },
+          "what": {
+            "th": "ปราสาทยุคกลางบนเขาเหนือซินตรา เดินขึ้นไป",
+            "en": "A medieval castle in the hills above Sintra, reached on foot"
+          },
+          "why": {
+            "th": "การเดินขึ้นเขาก็เป็นส่วนหนึ่งของความสนุก",
+            "en": "The walk up is part of the fun"
+          },
+          "q": "Castelo dos Mouros, Sintra",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parque Recreativo do Alvito",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nomadotravel.app/pt/guides/lisbon-with-kids",
+          "name": {
+            "th": "สวนนันทนาการอัลวีตู",
+            "en": "Alvito Recreational Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อัลวีตู มงซานตู ลิสบอน",
+            "en": "Alvito, Monsanto, Lisbon"
+          },
+          "what": {
+            "th": "สวนที่มีสนามเด็กเล่นครบครันและม้านั่งในร่ม",
+            "en": "A park with a well-equipped playground and shady benches"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่ หน้าร้อนมีสระเล่นน้ำ",
+            "en": "A big playground, with splash pools in the warm months"
+          },
+          "tip": {
+            "th": "สระเล่นน้ำเปิดช่วงพฤษภาคมถึงกันยายนเป็นหลัก",
+            "en": "The splash pools run mainly May to September"
+          },
+          "q": "Parque Recreativo do Alvito, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museu da Carris",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+          "name": {
+            "th": "พิพิธภัณฑ์คาร์ริส (รถราง รถบัส)",
+            "en": "Carris Museum (trams and buses)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อัลกันตารา ลิสบอน",
+            "en": "Alcântara, Lisbon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์รถรางและรถบัสของลิสบอนในอู่เก่า",
+            "en": "Lisbon's tram and bus museum in an old depot"
+          },
+          "why": {
+            "th": "มีเกมสำหรับครอบครัวพร้อมผู้นำชม และเวิร์กชอปสำหรับเด็ก",
+            "en": "Family games with a guide, and workshops for children"
+          },
+          "q": "Museu da Carris, Alcântara, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MAAT",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+          "name": {
+            "th": "พิพิธภัณฑ์ MAAT ศิลปะ สถาปัตยกรรม และเทคโนโลยี",
+            "en": "MAAT (Museum of Art, Architecture and Technology)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ริมแม่น้ำเบเลง ลิสบอน",
+            "en": "Belém riverside, Lisbon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ริมแม่น้ำในอาคารโค้ง",
+            "en": "A riverside museum in a curved building"
+          },
+          "why": {
+            "th": "กิจกรรมวันหยุดสำหรับเด็ก เช่น ประดิษฐ์รถพลังแสงอาทิตย์",
+            "en": "Weekend activities for children, such as building a solar car"
+          },
+          "q": "MAAT, Avenida Brasília, Belém, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museu das Comunicações",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+          "name": {
+            "th": "พิพิธภัณฑ์การสื่อสาร",
+            "en": "Communications Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไกช์ดูโซเดร ลิสบอน",
+            "en": "Cais do Sodré, Lisbon"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ไปรษณีย์และโทรคมนาคม",
+            "en": "A museum of post and telecommunications"
+          },
+          "why": {
+            "th": "มีเวิร์กชอปสำหรับครอบครัวที่มีเด็กเล็กถึง 36 เดือน",
+            "en": "Workshops for families with babies up to 36 months"
+          },
+          "tip": {
+            "th": "เข้าฟรีวันพฤหัสสุดท้ายของเดือน 18:00–22:00",
+            "en": "Free on the last Thursday of the month, 18:00–22:00"
+          },
+          "q": "Museu das Comunicações, Rua do Instituto Industrial, Lisbon",
+          "ok": "2026-11"
+        }
+    ]
+    },
+    {
+      "place": "pt-porto",
+      "sights": [
+        {
+          "name": { "en": "Santo Inácio Zoo", "th": "สวนสัตว์ซานตูอินาซิอู" },
+          "local": "Zoo Santo Inácio",
+          "kind": "zoo",
+          "area": { "en": "Avintes, Vila Nova de Gaia", "th": "อาวินเตส วีลานูวาดีไกยา" },
+          "what": { "en": "A family zoo across the river from Porto in Vila Nova de Gaia, with lemurs and many other animals", "th": "สวนสัตว์ครอบครัวฝั่งตรงข้ามแม่น้ำของปอร์โตในวีลานูวาดีไกยา มีลีเมอร์และสัตว์อื่นอีกมาก" },
+          "why": { "en": "Space to wander and many animals for small children", "th": "มีที่ให้เดินเล่นและสัตว์หลายชนิดสำหรับเด็กเล็ก" },
+          "tip": { "en": "A family ticket for two adults and two children is cheaper than single tickets", "th": "ตั๋วครอบครัว 2 ผู้ใหญ่ 2 เด็กถูกกว่าซื้อแยก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €19.90 adults · €13.90 children 3–12 · under 3 free (Oct 2026 article)", "th": "≈ €19.90 ผู้ใหญ่ · €13.90 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี (บทความ ต.ค. 2026)" },
+          "book": "none",
+          "q": "Zoo Santo Inácio, Avintes, Vila Nova de Gaia",
+          "ok": "2026-11",
+          "src": "https://www.e-konomista.pt/jardins-zoologicos-portugal/"
+        },
+        {
+          "name": { "en": "Serralves Park and Museum", "th": "สวนและพิพิธภัณฑ์เซอร์ราลเวส" },
+          "local": "Fundação de Serralves",
+          "kind": "park",
+          "area": { "en": "Foz do Douro", "th": "โฟซดูดูโร" },
+          "what": { "en": "A big landscaped park with an art-deco villa, a contemporary art museum, a tree-top walk and a farm", "th": "สวนกว้างจัดแต่งสวย มีวิลล่าอาร์ตเดโค พิพิธภัณฑ์ศิลปะร่วมสมัย ทางเดินบนยอดไม้ และฟาร์ม" },
+          "why": { "en": "Lawns, ponds and paths suit running children; the museum is for older ones", "th": "สนามหญ้า บ่อ และทางเดินเหมาะกับเด็กที่ชอบวิ่ง ส่วนพิพิธภัณฑ์เหมาะกับเด็กโต" },
+          "tip": { "en": "Park-only tickets exist; a 2026 show by Jenny Holzer fills the museum until January 2027", "th": "มีบัตรเข้าสวนอย่างเดียว นิทรรศการเจนนี โฮลเซอร์ปี 2026 อยู่ในพิพิธภัณฑ์ถึงมกราคม 2027" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price (one guide: under 12 free)", "th": "เช็กราคา (คู่มือหนึ่งว่าต่ำกว่า 12 ปีฟรี)" },
+          "book": "none",
+          "q": "Fundação de Serralves, Rua Dom João de Castro 210, Porto",
+          "ok": "2026-11",
+          "src": "https://www.nit.pt/cultura/teatro-e-exposicoes/este-verao-serralves-vive-se-de-manha-ate-a-noite-com-precos-especiais"
+        },
+        {
+          "name": { "en": "Gaia Cable Car", "th": "กระเช้าไกยา" },
+          "local": "Teleférico de Gaia",
+          "kind": "ride",
+          "area": { "en": "Ribeira and Gaia riverside", "th": "ริเบราและริมแม่น้ำไกยา" },
+          "what": { "en": "A short cable car ride above the Douro between the Gaia quay and the upper deck of the Dom Luís I bridge", "th": "นั่งกระเช้าสั้นๆ เหนือแม่น้ำดูโร ระหว่างท่าเรือไกยากับชั้นบนของสะพานดอมลูอิสที่ 1" },
+          "why": { "en": "A few minutes of views children enjoy; a steep walk back up if you ride one way", "th": "ชมวิวไม่กี่นาทีที่เด็กชอบ ถ้านั่งเที่ยวเดียวต้องเดินขึ้นเนินชัน" },
+          "tip": { "en": "Hours change with the season; the fares seen differ by source", "th": "เวลาเปลี่ยนตามฤดู ราคาที่พบไม่ตรงกันแต่ละแหล่ง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Teleférico de Gaia, Av. Diogo Leite, Vila Nova de Gaia",
+          "ok": "2026-11",
+          "src": "https://www.timeout.com/porto/travel/gaia-cable-car"
+        },
+        {
+          "name": { "en": "Bolhão Market", "th": "ตลาดโบลเยา" },
+          "local": "Mercado do Bolhão",
+          "kind": "market",
+          "area": { "en": "Bolhão", "th": "โบลเยา" },
+          "what": { "en": "Porto's renovated covered market with fruit, fish, flowers and food stalls", "th": "ตลาดในร่มของปอร์โตที่ปรับปรุงใหม่ มีผลไม้ ปลา ดอกไม้ และแผงอาหาร" },
+          "why": { "en": "Colourful stalls and a warm place to snack; busy mid-morning", "th": "แผงสีสันสดใสและมีที่นั่งกินของว่างอุ่นๆ สายๆ คนแน่น" },
+          "tip": { "en": "Fresh market Mon–Fri 8–20, Sat until 18, closed Sunday (undated page)", "th": "ตลาดสดจันทร์–ศุกร์ 8–20 เสาร์ถึง 18 วันอาทิตย์ปิด (หน้าไม่ระบุวันที่)" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free to enter · pay for what you buy", "th": "เข้าฟรี · จ่ายตามที่ซื้อ" },
+          "book": "none",
+          "q": "Mercado do Bolhão, Rua Formosa, Porto",
+          "ok": "2026-11",
+          "src": "https://mercadobolhao.pt/historias"
+        },
+        {
+          "name": { "en": "SEA LIFE Porto", "th": "ซีไลฟ์ ปอร์โต" },
+          "local": "SEA LIFE Porto",
+          "kind": "aquarium",
+          "area": { "en": "Parque da Cidade, Foz", "th": "ปาร์กดากีดาดี โฟซ" },
+          "what": { "en": "An aquarium inside the city park with sharks, rays, turtles and touch pools", "th": "พิพิธภัณฑ์สัตว์น้ำในสวนเมือง มีฉลาม กระเบน เต่า และบ่อให้สัมผัส" },
+          "why": { "en": "Easy, dry and calm for young children, and next to a big park", "th": "เข้าชมง่าย อยู่ในร่ม สงบสำหรับเด็กเล็ก และอยู่ติดสวนใหญ่" },
+          "tip": { "en": "Book online; resellers list it from about US$22", "th": "จองออนไลน์ ตัวแทนขายบัตรลิสต์ราคาเริ่มราว US$22" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "rec",
+          "q": "SEA LIFE Porto, Parque da Cidade, Porto",
+          "ok": "2026-11",
+          "src": "https://www.civitatis.com/pt/porto/ingresso-sealife-porto/"
+        },
+        {
+          "name": { "en": "WOW Cultural District", "th": "ย่านวัฒนธรรมดับเบิลยูโอดับเบิลยู" },
+          "local": "WOW – World of Wine",
+          "kind": "museum",
+          "area": { "en": "Gaia riverside", "th": "ริมแม่น้ำไกยา" },
+          "what": { "en": "A riverside quarter of museums in old port cellars, including a chocolate museum and an exhibit on the Porto region", "th": "ย่านพิพิธภัณฑ์ริมแม่น้ำในโกดังไวน์พอร์ตเก่า มีพิพิธภัณฑ์ช็อกโกแลตและนิทรรศการเกี่ยวกับภูมิภาคปอร์โต" },
+          "why": { "en": "Several short museums in one place with cafés and terraces; the wine museum is for adults", "th": "พิพิธภัณฑ์สั้นๆ หลายแห่งในที่เดียว มีคาเฟ่และระเบียง ส่วนพิพิธภัณฑ์ไวน์เหมาะกับผู้ใหญ่" },
+          "tip": { "en": "Pick the chocolate and region exhibits rather than the full day pass", "th": "เลือกนิทรรศการช็อกโกแลตและภูมิภาคแทนบัตรทั้งวัน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "rec",
+          "q": "WOW World of Wine, Rua do Choupelo 39, Vila Nova de Gaia",
+          "ok": "2026-11",
+          "src": "https://www.wow.pt/terms-and-conditions"
+        },
+        {
+          "name": { "en": "Crystal Palace Gardens", "th": "สวนพระราชวังคริสตัล" },
+          "local": "Jardins do Palácio de Cristal",
+          "kind": "park",
+          "area": { "en": "Massarelos", "th": "มัสซาเรลูช" },
+          "what": { "en": "Hilltop gardens with free-roaming peacocks and roosters, ponds and views over the Douro", "th": "สวนบนเนิน มีนกยูงและไก่เดินเล่นอิสระ มีบ่อน้ำ และวิวแม่น้ำดูโร" },
+          "why": { "en": "Free and full of animals to chase gently; one source lists a playground", "th": "ฟรีและมีสัตว์ให้เด็กตามดู มีแหล่งหนึ่งลิสต์ว่ามีสนามเด็กเล่น" },
+          "tip": { "en": "Open about 8–21 in summer and 8–19 in winter", "th": "เปิดราว 8–21 หน้าร้อน และ 8–19 หน้าหนาว" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jardins do Palácio de Cristal, Rua de Dom Manuel II, Porto",
+          "ok": "2026-11",
+          "src": "https://www.timeout.pt/porto/pt/atraccoes/jardins-do-palacio-de-cristal"
+        },
+        {
+          "name": { "en": "Tram Museum", "th": "พิพิธภัณฑ์รถรางไฟฟ้า" },
+          "local": "Museu do Carro Eléctrico",
+          "kind": "museumkid",
+          "area": { "en": "Massarelos", "th": "มัสซาเรลูช" },
+          "what": { "en": "A museum of old Porto trams in a former power station, with family programmes", "th": "พิพิธภัณฑ์รถรางเก่าของปอร์โตในโรงไฟฟ้าเดิม มีกิจกรรมสำหรับครอบครัว" },
+          "why": { "en": "Big vehicles to look inside; check the family workshops, which suit older children", "th": "รถคันใหญ่ให้เข้าไปดูข้างใน เช็กเวิร์กชอปครอบครัวที่เหมาะกับเด็กโตกว่า" },
+          "tip": { "en": "Family events were ≈ €10–15 in 2025; the regular ticket price was not found", "th": "กิจกรรมครอบครัวปี 2025 ราว €10–15 ยังไม่พบราคาบัตรปกติ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Museu do Carro Eléctrico, Alameda Basílio Teles 51, Porto",
+          "ok": "2026-11",
+          "src": "https://visitporto.travel/en-GB/poi/5cd04b47f979e00001c8341b"
+        },
+        {
+          "name": { "en": "City Park", "th": "สวนเมืองปอร์โต" },
+          "local": "Parque da Cidade do Porto",
+          "kind": "park",
+          "area": { "en": "Foz", "th": "โฟซ" },
+          "what": { "en": "Porto's biggest park, 83 hectares of meadows, lakes with ducks and swans, running down to the Atlantic coast", "th": "สวนใหญ่สุดของปอร์โต 83 เฮกตาร์ มีทุ่งหญ้า ทะเลสาบมีเป็ดและหงส์ ไล่ลงไปถึงชายฝั่งแอตแลนติก" },
+          "why": { "en": "Free, wide and flat for running and picnics; a playground inside was not confirmed", "th": "ฟรี กว้างและราบ เหมาะวิ่งเล่นและปิกนิก แต่ยังยืนยันสนามเด็กเล่นข้างในไม่ได้" },
+          "tip": { "en": "Walk down to Castelo do Queijo and the beach at the west end", "th": "เดินลงไปที่ปราสาทชีสและชายหาดทางปลายตะวันตกได้" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Parque da Cidade do Porto, Estrada Interior da Circunvalação",
+          "ok": "2026-11",
+          "src": "https://www.portugalvisitor.com/portugal-attractions/parque-de-cidade-do-porto"
+        },
+        {
+          "name": { "en": "Porto Planetarium", "th": "ท้องฟ้าจำลองปอร์โต" },
+          "local": "Planetário do Porto",
+          "kind": "show",
+          "area": { "en": "Vila Nova de Gaia", "th": "วีลานูวาดีไกยา" },
+          "what": { "en": "A planetarium with afternoon sessions on the sky and space, run as a Ciência Viva centre", "th": "ท้องฟ้าจำลองมีรอบฉายช่วงบ่ายเรื่องท้องฟ้าและอวกาศ เป็นศูนย์ Ciência Viva" },
+          "why": { "en": "A calm, dark seat in the rain; check the language of the session", "th": "ที่นั่งมืดและสงบในวันฝนตก เช็กภาษาของรอบฉาย" },
+          "tip": { "en": "Open Mon–Fri 9–17:30, Sat afternoon only, closed Sunday; session at 16:00 on weekdays", "th": "เปิดจันทร์–ศุกร์ 9–17:30 เสาร์ช่วงบ่าย อาทิตย์ปิด รอบ 16:00 วันธรรมดา" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €6.60 adults · €4.40 ages 3–17", "th": "≈ €6.60 ผู้ใหญ่ · €4.40 อายุ 3–17 ปี" },
+          "book": "rec",
+          "q": "Planetário do Porto, Rua Campo Alegre, Porto",
+          "ok": "2026-11",
+          "src": "https://planetario.up.pt/pt/planear/precos"
+        },
+        {
+          "name": { "en": "Six Bridges Douro Cruise", "th": "ล่องเรือแม่น้ำดูโรหกสะพาน" },
+          "local": "Cruzeiro das Seis Pontes",
+          "kind": "ride",
+          "area": { "en": "Ribeira quay", "th": "ท่าเรือริเบรา" },
+          "what": { "en": "A 50-minute boat trip on the Douro, one of several cruises sold from the Porto riverfront", "th": "ล่องเรือราว 50 นาทีบนแม่น้ำดูโร หนึ่งในหลายรอบที่ขายที่ริมแม่น้ำปอร์โต" },
+          "why": { "en": "Short enough for young children; check the boarding point and any child fare", "th": "สั้นพอสำหรับเด็กเล็ก เช็กจุดขึ้นเรือและราคาเด็ก" },
+          "tip": { "en": "Other cruises at the same quay carry child discounts of 50 % for ages 4–11", "th": "เรือรอบอื่นที่ท่าเดียวกันลดครึ่งราคาสำหรับเด็ก 4–11 ปี" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "From ≈ €18 for the 50-minute trip · check the child price", "th": "เริ่ม ≈ €18 สำหรับรอบ 50 นาที · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Cruzeiros Douro, Cais da Ribeira, Porto",
+          "ok": "2026-11",
+          "src": "https://cruzeiros-douro.pt/en/1-day-cruises/6-bridges-cruise"
+        },
+        {
+          "name": { "en": "Casa da Música", "th": "กาซาดามูซิกา" },
+          "local": "Casa da Música",
+          "kind": "show",
+          "area": { "en": "Boavista", "th": "โบอาวิสตา" },
+          "what": { "en": "Porto's striking concert hall, with guided tours at 11:00 and 16:00 and children's workshops and concerts", "th": "ห้องแสดงดนตรีสุดโดดเด่นของปอร์โต มีทัวร์นำชม 11:00 และ 16:00 และเวิร์กชอปกับคอนเสิร์ตสำหรับเด็ก" },
+          "why": { "en": "The 2026 programme has family workshops; the tour suits older children", "th": "โปรแกรมปี 2026 มีเวิร์กชอปครอบครัว ส่วนทัวร์เหมาะกับเด็กโต" },
+          "tip": { "en": "Workshops in July 2026 cost about €10–12 a session", "th": "เวิร์กชอปเดือนกรกฎาคม 2026 ราว €10–12 ต่อรอบ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (guides: tour ≈ €10–12.50)", "th": "เช็กราคา (คู่มือ: ทัวร์ ≈ €10–12.50)" },
+          "book": "rec",
+          "q": "Casa da Música, Av. da Boavista 604-610, Porto",
+          "ok": "2026-11",
+          "src": "https://casadamusica.com/wp-content/uploads/2026/05/Partitura-·-Junho-2026.pdf"
+        },
+        {
+          "name": { "en": "Livraria Lello", "th": "ร้านหนังสือลิเบรเรียเลลโล" },
+          "local": "Livraria Lello",
+          "kind": "culture",
+          "area": { "en": "Clérigos", "th": "เคลริโกส" },
+          "what": { "en": "A famous 1906 bookshop with a carved wooden staircase, now a national monument", "th": "ร้านหนังสือชื่อดังปี 1906 มีบันไดไม้แกะสลัก ปัจจุบันเป็นอนุสรณ์สถานแห่งชาติ" },
+          "why": { "en": "Short and pretty but crowded; children under 12 must stay with an adult", "th": "ชมสั้นๆ สวยงามแต่คนแน่น เด็กต่ำกว่า 12 ปีต้องอยู่กับผู้ใหญ่ตลอด" },
+          "tip": { "en": "Book a timed ticket; the ticket can be used as a voucher towards a book", "th": "จองบัตรตามเวลา บัตรใช้เป็นส่วนลดซื้อหนังสือได้" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price (aggregators show from ≈ €16)", "th": "เช็กราคา (ตัวแทนขายบัตรเริ่มราว €16)" },
+          "book": "req",
+          "q": "Livraria Lello, Rua das Carmelitas 144, Porto",
+          "ok": "2026-11",
+          "src": "https://www.avygeo.com/pt/guia/atividades/88480-livraria-lello"
+        },
+        {
+          "name": { "en": "Water Pavilion (Pavilhão da Água)", "th": "พาวิลเลียนน้ำ (ปาวีลยาวดาอากัว)" },
+          "kind": "museumkid",
+          "area": { "en": "Boavista", "th": "โบอาวิสตา" },
+          "what": { "en": "An interactive museum about water run by the city's water company", "th": "พิพิธภัณฑ์เชิงโต้ตอบเรื่องน้ำ ดำเนินการโดยบริษัทน้ำของเมือง" },
+          "why": { "en": "A calm hands-on stop indoors for a wet or hot afternoon", "th": "จุดแวะในร่มที่ให้ลงมือเล่น เหมาะวันฝนตกหรือบ่ายร้อน" },
+          "tip": { "en": "Open in morning and afternoon sessions; check the day before you go", "th": "เปิดเป็นรอบเช้าและบ่าย เช็กวันก่อนไป" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €8 (Visit Porto lists €8, check the child price)", "th": "≈ €8 (Visit Porto ระบุ €8 เช็กราคาเด็กก่อนไป)" },
+          "book": "none",
+          "q": "Pavilhão da Água, Estrada da Circunvalação 15443, Porto",
+          "ok": "2026-11",
+          "src": "https://visitporto.travel/en-GB/poi/5cd04b45f979e000018e5a80"
+        },
+        {
+          "name": { "en": "Porto Botanical Garden", "th": "สวนพฤกษศาสตร์ปอร์โต" },
+          "kind": "park",
+          "area": { "en": "Boavista", "th": "โบอาวิสตา" },
+          "what": { "en": "A garden at the former Quinta do Campo Alegre with old trees, run by the University of Porto's natural history museum", "th": "สวนที่ควินตาดูกัมปูอาเลเกร มีต้นไม้เก่าแก่ ดูแลโดยพิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติของมหาวิทยาลัยปอร์โต" },
+          "why": { "en": "Free, shaded and quiet, with room to run between the trees", "th": "ฟรี ร่มรื่น เงียบ มีที่ให้วิ่งเล่นระหว่างต้นไม้" },
+          "tip": { "en": "Open daily; 09:00–18:00 on weekdays, 10:00–18:00 at weekends", "th": "เปิดทุกวัน วันธรรมดา 09:00–18:00 วันหยุด 10:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jardim Botânico do Porto, Rua do Campo Alegre 1191, Porto",
+          "ok": "2026-11",
+          "src": "https://visitporto.travel/en-GB/poi/5cd04b49f979e0000169b570"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://familytraveller.com/holiday-destinations/europe/portugal/8-things-to-do-in-porto-with-family/",
+          "name": {
+            "th": "สระน้ำทะเลปิชินาดัชมาเรช",
+            "en": "Piscina das Marés"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เลซาดาปัลไมรา ใกล้ปอร์โต",
+            "en": "Leça da Palmeira, by Porto"
+          },
+          "what": {
+            "th": "สระน้ำทะเลในโขดหินริมมหาสมุทร มีสระแยกสำหรับผู้ใหญ่",
+            "en": "Sea pools in the rocks by the ocean, with a separate pool for adults"
+          },
+          "why": {
+            "th": "เด็ก ๆ เล่นน้ำในสระที่ให้ความรู้สึกเหมือนทะเล",
+            "en": "Children splash in pools that feel like the ocean"
+          },
+          "tip": {
+            "th": "เปิดช่วงหน้าร้อนและต้นใบไม้ร่วง",
+            "en": "Open in summer and early autumn"
+          },
+          "q": "Piscina das Marés, Av. da Liberdade, Leça da Palmeira",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://familytraveller.com/holiday-destinations/europe/portugal/8-things-to-do-in-porto-with-family/",
+          "name": {
+            "th": "เวิลด์ออฟดิสคัฟเวอรีส์",
+            "en": "World of Discoveries"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มีรากายา ปอร์โต",
+            "en": "Miragaia, Porto"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์และสวนสนุกเรื่องยุคแห่งการค้นพบ นั่งเรือผ่านฉากขนาดเท่าจริง",
+            "en": "A museum and theme park about the Age of Discovery, with a boat ride past life-size scenes"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้รู้ว่ากะลาสีกินอะไรและใช้ปืนใหญ่แบบไหน",
+            "en": "Children learn what sailors ate and the cannons they used"
+          },
+          "q": "World of Discoveries, Rua de Miragaia 106, Porto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ (12 ปีขึ้นไป) 13€",
+            "en": "Adults (12 and over) 13€"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพสามมิติ ปอร์โต",
+            "en": "3D Fun Art Museum Porto"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนฟาเรียกีมาไรช์ ใกล้สถานีมาร์เกช ปอร์โต",
+            "en": "Rua de Faria Guimarães, near Marquês, Porto"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา ให้เดินเล่นและถ่ายรูป",
+            "en": "A museum of optical illusions to explore and photograph"
+          },
+          "why": {
+            "th": "พิพิธภัณฑ์สำหรับครอบครัว ที่ไม่มีอะไรเป็นอย่างที่เห็น",
+            "en": "A family museum where nothing is quite what it seems"
+          },
+          "tip": {
+            "th": "นั่งรถไฟใต้ดินไปสถานีมาร์เกช เหมาะกับเด็กอายุเกิน 5 ขวบ",
+            "en": "Take the metro to Marquês; best for children over 5"
+          },
+          "q": "3D Fun Art Museum Porto, R. de Faria Guimarães 712, Porto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "ห้องสมุดอัลเมดาการ์เร็ตต์",
+            "en": "Almeida Garrett Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สวนพระราชวังคริสตัล ปอร์โต",
+            "en": "Palácio de Cristal gardens, Porto"
+          },
+          "what": {
+            "th": "ห้องสมุดสาธารณะในสวนพระราชวังคริสตัล มีมุมเด็กขนาดใหญ่",
+            "en": "A public library in the Crystal Palace gardens with a big children's section"
+          },
+          "why": {
+            "th": "มีบ้านตุ๊กตา หนังสือภาพ และโต๊ะกับกระดาษและสีเทียนให้วาดรูป",
+            "en": "A doll's house, picture books and tables with paper and crayons to draw"
+          },
+          "tip": {
+            "th": "เข้าฟรี เดินเล่นในสวนต่อได้",
+            "en": "Free; a walk in the gardens afterwards"
+          },
+          "q": "Biblioteca Municipal Almeida Garrett, Jardins do Palácio de Cristal, Porto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เยาวชนและผู้ใหญ่ (11 ปีขึ้นไป) 10€",
+            "en": "Young people and adults (11 and over) 10€"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "การแสดงแสงสีเสียงที่โบสถ์เคลรีกุช",
+            "en": "Sound-and-light show at the Clérigos Church"
+          },
+          "kind": "show",
+          "area": {
+            "th": "โบสถ์เคลรีกุช ข้างสวนกอร์โดอาเรีย ปอร์โต",
+            "en": "Clérigos Church, by the Cordoaria garden, Porto"
+          },
+          "what": {
+            "th": "การแสดงแสงสีเสียงครึ่งชั่วโมงในโบสถ์เคลรีกุช",
+            "en": "A half-hour sound-and-light show inside the Clérigos Church"
+          },
+          "why": {
+            "th": "สั้นพอสำหรับเด็ก หน้าเว็บบอกว่าไม่เหมาะกับเด็กต่ำกว่า 4 ขวบ",
+            "en": "Short enough for children; not for under-4s, the page says"
+          },
+          "tip": {
+            "th": "ฉายหลายรอบทุกเย็น เล่นในสวนกอร์โดอาเรียก่อนได้",
+            "en": "Several showings each evening; play in the Cordoaria garden first"
+          },
+          "q": "Clérigos Church, R. de São Filipe de Nery, Porto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ตั๋วครอบครัว 7.50€",
+            "en": "Family ticket 7.50€"
+          },
+          "book": "none",
+          "src": "https://portoalities.com/pt/atividades-porto-familias-com-criancas/",
+          "name": {
+            "th": "สวนชีวภาพไกอา",
+            "en": "Parque Biológico de Gaia"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาวินตึช วิลาโนวาดึไกอา",
+            "en": "Avintes, Vila Nova de Gaia"
+          },
+          "what": {
+            "th": "สวนธรรมชาติ 3 กม. มีสัตว์ในฟาร์ม นาก ไบซัน บ้านไร่เก่า และศูนย์ฟื้นฟูนก",
+            "en": "A 3 km nature park with farm animals, otters and bison, old farm buildings and a bird hospital"
+          },
+          "why": {
+            "th": "มีลา แพะ แกะ และโรงนา คอกม้าให้เด็กดู",
+            "en": "Donkeys, goats and sheep, and barns and stables to look into"
+          },
+          "tip": {
+            "th": "สวนใหญ่ หน้าเว็บบอกว่าเด็กต่ำกว่า 4 ขวบเหนื่อยเร็ว มีร้านอาหารในสวน",
+            "en": "Big: the page says under-4s tire quickly; a restaurant on site"
+          },
+          "q": "Parque Biológico de Gaia, R. Cunha, Avintes",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

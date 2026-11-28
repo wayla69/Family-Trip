@@ -1,0 +1,498 @@
+{
+  "cc": "ch",
+  "towns": [
+    {
+      "place": "ch-lucerne",
+      "sights": [
+        {
+          "name": { "en": "Swiss Museum of Transport", "th": "พิพิธภัณฑ์การขนส่งสวิส" },
+          "local": "Verkehrshaus der Schweiz",
+          "kind": "museumkid",
+          "area": { "en": "Lidostrasse, by the lake", "th": "ถนนลีโด ริมทะเลสาบ" },
+          "what": { "en": "Trains, planes, boats and cars to climb into, with play areas, a planetarium and a giant Swiss map to walk on", "th": "รถไฟ เครื่องบิน เรือ และรถยนต์ให้ปีนขึ้นไปดู มีลานเล่น ท้องฟ้าจำลอง และแผนที่สวิสยักษ์ให้เดินบน" },
+          "why": { "en": "Almost everything can be touched or driven, and there are indoor and outdoor play corners for little ones", "th": "แทบทุกอย่างจับได้ ขับได้ มีมุมเล่นทั้งในร่มและกลางแจ้งสำหรับเด็กเล็ก" },
+          "tip": { "en": "Come by train or boat with RailAway for 20% off; reduced hours 16–20 November 2026 for maintenance", "th": "มาด้วยรถไฟหรือเรือแบบ RailAway ลด 20% · ช่วง 16–20 พ.ย. 2026 เปิดสั้นลงเพราะซ่อมบำรุง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ CHF 35 adults · CHF 15 ages 6–15 · under 6 free", "th": "≈ CHF 35 ผู้ใหญ่ · CHF 15 อายุ 6–15 ปี · ต่ำกว่า 6 ปีฟรี" },
+          "book": "rec",
+          "q": "Verkehrshaus der Schweiz, Lidostrasse 5, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.verkehrshaus.ch/en/your-visit/plan-a-visit/prices-and-tickets"
+        },
+        {
+          "name": { "en": "Swiss Chocolate Adventure", "th": "สวิสช็อกโกแลตแอดเวนเจอร์" },
+          "kind": "show",
+          "area": { "en": "Swiss Museum of Transport, Lidostrasse", "th": "ในพิพิธภัณฑ์การขนส่งสวิส ถนนลีโด" },
+          "what": { "en": "A ride-through show on little carts that follows cocoa from the farm to a Swiss chocolate bar, with tastings at the end", "th": "นั่งรถคันเล็กชมเรื่องราวของโกโก้ ตั้งแต่ไร่จนเป็นช็อกโกแลตสวิส มีให้ชิมตอนจบ" },
+          "why": { "en": "Short, seated and indoors, with chocolate to taste: an easy add-on for a rainy day at the museum", "th": "สั้น นั่งตลอด อยู่ในร่ม แถมได้ชิมช็อกโกแลต เหมาะต่อจากพิพิธภัณฑ์ในวันฝนตก" },
+          "tip": { "en": "A museum day pass includes it; book a time slot in busy holidays", "th": "บัตรแบบรวมทั้งวันของพิพิธภัณฑ์รวมรอบนี้ด้วย · ช่วงวันหยุดยาวควรจองรอบ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ CHF 18 adults · CHF 10 children and toddlers", "th": "≈ CHF 18 ผู้ใหญ่ · CHF 10 เด็กและเด็กเล็ก" },
+          "book": "rec",
+          "q": "Swiss Chocolate Adventure, Verkehrshaus, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.verkehrshaus.ch/en/visit/swiss-chocolate-adventure.html"
+        },
+        {
+          "name": { "en": "Mount Pilatus", "th": "ภูเขาพิลาตุส" },
+          "kind": "views",
+          "area": { "en": "Kriens and Alpnachstad", "th": "ครีนส์ และอัลพ์นัคชตาด" },
+          "what": { "en": "The dragon mountain: up by gondola from Kriens or the world's steepest cogwheel railway from Alpnachstad, with a lake boat back", "th": "ภูเขามังกร ขึ้นด้วยกระเช้าจากครีนส์ หรือรถไฟฟันเฟืองที่ชันที่สุดในโลกจากอัลพ์นัคชตาด แล้วนั่งเรือกลับ" },
+          "why": { "en": "Gondolas, a cogwheel train and a boat in one day are a dream for children who love things that move", "th": "ได้นั่งกระเช้า รถไฟฟันเฟือง และเรือในวันเดียว เด็กที่ชอบยานพาหนะจะชอบมาก" },
+          "tip": { "en": "The cogwheel railway runs only in summer; from 19 October to 27 November 2026 the round trip has no boat", "th": "รถไฟฟันเฟืองวิ่งเฉพาะหน้าร้อน · 19 ต.ค.–27 พ.ย. 2026 ทริปวงกลมไม่มีเรือ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ CHF 137 adults · CHF 68 ages 6–15 (Golden Round Trip) · under 6 free", "th": "≈ CHF 137 ผู้ใหญ่ · CHF 68 อายุ 6–15 ปี (โกลเด้นราวด์ทริป) · ต่ำกว่า 6 ปีฟรี" },
+          "book": "rec",
+          "q": "Pilatus Kulm, Alpnach, Obwalden",
+          "ok": "2026-11",
+          "src": "https://www.pilatus.ch/en/booking/prices"
+        },
+        {
+          "name": { "en": "Mount Rigi", "th": "ภูเขาริกิ" },
+          "kind": "views",
+          "area": { "en": "Vitznau, Weggis and Goldau", "th": "วิทซ์เนา ไวกิส และโกลเดา" },
+          "what": { "en": "The queen of the mountains: cogwheel trains and a cable car to gentle meadow paths with views over Lake Lucerne", "th": "ราชินีแห่งขุนเขา ขึ้นรถไฟฟันเฟืองหรือกระเช้าไปเดินทุ่งหญ้าเรียบ ๆ ชมวิวทะเลสาบลูเซิร์น" },
+          "why": { "en": "Children up to 15 ride free with an adult, and the paths around Rigi Kaltbad are easy for little legs", "th": "เด็กถึง 15 ปีขึ้นฟรีเมื่อมากับผู้ใหญ่ ทางเดินรอบริกิคัลท์บาดง่ายสำหรับขาเล็ก ๆ" },
+          "tip": { "en": "Combine a boat from Lucerne to Vitznau with the cogwheel train up", "th": "นั่งเรือจากลูเซิร์นไปวิทซ์เนา แล้วต่อรถไฟฟันเฟืองขึ้นเขา" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ CHF 58 adults return Weggis–Rigi Kaltbad · children up to 15 free with an adult", "th": "≈ CHF 58 ผู้ใหญ่ ไปกลับไวกิส–ริกิคัลท์บาด · เด็กถึง 15 ปีฟรีเมื่อมากับผู้ใหญ่" },
+          "book": "none",
+          "q": "Rigi Kaltbad, Weggis",
+          "ok": "2026-11",
+          "src": "https://www.rigi.ch/en/inform/prices"
+        },
+        {
+          "name": { "en": "Mount Titlis", "th": "ภูเขาทิตลิส" },
+          "kind": "views",
+          "area": { "en": "Engelberg, an hour from Lucerne", "th": "เอ็งเงิลแบร์ก ห่างจากลูเซิร์นราว 1 ชั่วโมง" },
+          "what": { "en": "Snow all year at 3,000 m: a cable car to the glacier, an ice cave and the Ice Flyer chairlift over the ice", "th": "หิมะทั้งปีที่ความสูง 3,000 เมตร ขึ้นกระเช้าไปธารน้ำแข็ง มีถ้ำน้ำแข็ง และเก้าอี้ลอยฟ้าไอซ์ฟลายเออร์" },
+          "why": { "en": "Playing in real snow in summer is unforgettable; keep it short for toddlers because of the height and cold", "th": "ได้เล่นหิมะจริงแม้หน้าร้อน · เด็กเล็กควรอยู่ไม่นานเพราะสูงและหนาว" },
+          "tip": { "en": "The Rotair is closed 10 August–11 December 2026; the new Titlis Connect cable car goes up instead", "th": "กระเช้าหมุนโรแทร์ปิด 10 ส.ค.–11 ธ.ค. 2026 ใช้กระเช้าใหม่ทิตลิสคอนเน็กต์ขึ้นแทน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ CHF 108 adults · CHF 60 ages 6–15 (return incl. Ice Flyer) · under 6 free", "th": "≈ CHF 108 ผู้ใหญ่ · CHF 60 อายุ 6–15 ปี (ไปกลับรวมไอซ์ฟลายเออร์) · ต่ำกว่า 6 ปีฟรี" },
+          "book": "rec",
+          "q": "Titlis Bergbahnen, Engelberg",
+          "ok": "2026-11",
+          "src": "https://www.swissrailways.com/en/buy-titlis-ticket"
+        },
+        {
+          "name": { "en": "Stanserhorn CabriO", "th": "กระเช้าคาบริโอ ชตันเซอร์ฮอร์น" },
+          "kind": "ride",
+          "area": { "en": "Stans", "th": "ชตันส์" },
+          "what": { "en": "A vintage funicular, then the world's first open-top double-deck cable car to a summit with marmots and a lake view", "th": "รถรางไต่เขาแบบโบราณ ต่อกระเช้าสองชั้นเปิดหลังคาคันแรกของโลก ขึ้นยอดเขาที่มีมาร์มอตและวิวทะเลสาบ" },
+          "why": { "en": "Riding on the open roof in the wind is a thrill for children, and the summit loop is short", "th": "ยืนบนหลังคากระเช้าท่ามกลางลมเป็นความตื่นเต้นของเด็ก ๆ ทางเดินบนยอดก็สั้น" },
+          "tip": { "en": "Season from 11 April 2026; Junior Card children ride free with a parent", "th": "เปิดฤดูกาลตั้งแต่ 11 เม.ย. 2026 · เด็กที่มีจูเนียร์การ์ดขึ้นฟรีเมื่อมากับพ่อแม่" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ CHF 20.50 return ages 6–15 · under 6 free · adult fare on the price page", "th": "≈ CHF 20.50 ไปกลับ อายุ 6–15 ปี · ต่ำกว่า 6 ปีฟรี · ราคาผู้ใหญ่ดูในหน้าราคา" },
+          "book": "none",
+          "q": "Stanserhorn-Bahn, Stans",
+          "ok": "2026-11",
+          "src": "https://www.stanserhorn.ch/en/informations/prices"
+        },
+        {
+          "name": { "en": "Goldau Nature and Wildlife Park", "th": "สวนสัตว์ธรรมชาติโกลเดา" },
+          "local": "Natur- und Tierpark Goldau",
+          "kind": "zoo",
+          "area": { "en": "Goldau, 30 minutes by train", "th": "โกลเดา นั่งรถไฟราว 30 นาที" },
+          "what": { "en": "A wild park among old rockfall boulders where sika deer roam free, with bears, wolves and wild cats", "th": "สวนสัตว์ป่าท่ามกลางก้อนหินยักษ์ กวางเดินเล่นอิสระ มีหมี หมาป่า และแมวป่า" },
+          "why": { "en": "Children can feed the free-roaming deer with park food, and there are big playgrounds along the way", "th": "เด็ก ๆ ป้อนอาหารกวางที่เดินอิสระได้ด้วยอาหารของสวน และมีสนามเด็กเล่นใหญ่ระหว่างทาง" },
+          "tip": { "en": "Buy the deer food at the entrance; the station is right next to the gate", "th": "ซื้ออาหารกวางที่ทางเข้า · สถานีรถไฟอยู่ติดประตู" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ CHF 26 adults · CHF 13 ages 6–16 · under 6 free", "th": "≈ CHF 26 ผู้ใหญ่ · CHF 13 อายุ 6–16 ปี · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "Natur- und Tierpark Goldau, Arth-Goldau",
+          "ok": "2026-11",
+          "src": "https://www.freizeit.ch/freizeit/natur-und-tierpark-goldau/"
+        },
+        {
+          "name": { "en": "Glacier Garden Lucerne", "th": "สวนธารน้ำแข็งลูเซิร์น" },
+          "local": "Gletschergarten Luzern",
+          "kind": "museum",
+          "area": { "en": "Denkmalstrasse, by the Lion Monument", "th": "ถนนเดงค์มาล ติดอนุสาวรีย์สิงโต" },
+          "what": { "en": "Giant glacier potholes from the Ice Age, a rock gallery to explore and an old mirror maze", "th": "หลุมธารน้ำแข็งยักษ์จากยุคน้ำแข็ง ทางเดินในหินให้สำรวจ และเขาวงกตกระจกเก่าแก่" },
+          "why": { "en": "The mirror maze makes children laugh, and half the visit is indoors for a rainy day", "th": "เขาวงกตกระจกทำให้เด็กหัวเราะได้ และครึ่งหนึ่งอยู่ในร่ม เหมาะกับวันฝนตก" },
+          "tip": { "en": "Open every day; 15% off arriving by public transport; closed 24–25 December", "th": "เปิดทุกวัน · มาด้วยขนส่งสาธารณะลด 15% · ปิด 24–25 ธ.ค." },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ CHF 24 adults · CHF 12 ages 6–16 · under 6 free", "th": "≈ CHF 24 ผู้ใหญ่ · CHF 12 อายุ 6–16 ปี · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "Gletschergarten, Denkmalstrasse 4, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.luzern.com/de/package/gletschergarten-luzern"
+        },
+        {
+          "name": { "en": "Museum Luzern", "th": "พิพิธภัณฑ์ลูเซิร์น" },
+          "kind": "museumkid",
+          "area": { "en": "Kasernenplatz, Old Town", "th": "คาแซร์เนินพลัทซ์ เมืองเก่า" },
+          "what": { "en": "The city's natural history and history museum in one, with live animals, insects and hands-on corners", "th": "พิพิธภัณฑ์ธรรมชาติและประวัติศาสตร์ของเมืองรวมกัน มีสัตว์จริง แมลง และมุมให้ลงมือทำ" },
+          "why": { "en": "Small, cheap and indoors, with animals to look at up close: a calm rainy-day stop", "th": "เล็ก ราคาถูก อยู่ในร่ม มีสัตว์ให้ดูใกล้ ๆ เป็นที่แวะสบาย ๆ วันฝนตก" },
+          "tip": { "en": "Closed on Mondays; reduced prices on Thursdays from 16:00", "th": "ปิดวันจันทร์ · วันพฤหัสบดีหลัง 16:00 ราคาลด" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ CHF 4 ages 6–16 · under 6 free · Thursdays from 16:00 ≈ CHF 6 adults", "th": "≈ CHF 4 อายุ 6–16 ปี · ต่ำกว่า 6 ปีฟรี · พฤหัสบดีหลัง 16:00 ≈ CHF 6 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Museum Luzern, Kasernenplatz 6, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.luzern.com/de/poi/museum-luzern"
+        },
+        {
+          "name": { "en": "Bourbaki Panorama", "th": "บูร์บากิพาโนรามา" },
+          "kind": "culture",
+          "area": { "en": "Löwenplatz", "th": "เลอเวินพลัทซ์" },
+          "what": { "en": "A huge round painting that surrounds you, showing an army arriving in the snow, with a museum below", "th": "ภาพวาดวงกลมยักษ์ล้อมรอบตัว เล่าเรื่องกองทัพเดินทางมาท่ามกลางหิมะ มีพิพิธภัณฑ์อยู่ชั้นล่าง" },
+          "why": { "en": "Standing inside a picture amazes older children; for toddlers it is a short indoor look", "th": "การยืนอยู่กลางภาพทำให้เด็กโตตื่นตา สำหรับเด็กเล็กเป็นที่แวะดูในร่มสั้น ๆ" },
+          "tip": { "en": "Children's guided tours for ages 5–12 run on set dates", "th": "มีรอบนำชมสำหรับเด็ก 5–12 ปีตามวันที่กำหนด" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ CHF 15 adults · CHF 7 ages 6–16", "th": "≈ CHF 15 ผู้ใหญ่ · CHF 7 อายุ 6–16 ปี" },
+          "book": "none",
+          "q": "Bourbaki Panorama, Löwenplatz 11, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.myswitzerland.com/en/experiences/events/360-gruen/"
+        },
+        {
+          "name": { "en": "Chapel Bridge", "th": "สะพานไม้คาเปลล์" },
+          "local": "Kapellbrücke",
+          "kind": "oldtown",
+          "area": { "en": "Old Town, over the Reuss", "th": "เมืองเก่า ข้ามแม่น้ำรอยส์" },
+          "what": { "en": "Europe's oldest covered wooden bridge, with painted panels under the roof and a stone water tower", "th": "สะพานไม้มีหลังคาที่เก่าแก่ที่สุดในยุโรป มีภาพวาดใต้หลังคาและหอคอยหินกลางน้ำ" },
+          "why": { "en": "A short, flat walk with swans below; children like counting the pictures overhead", "th": "เดินสั้น ๆ ทางเรียบ มีหงส์ว่ายอยู่ข้างล่าง เด็ก ๆ ชอบนับภาพบนหลังคา" },
+          "tip": { "en": "Open at any hour; early morning is the quietest for photos", "th": "เดินได้ทุกเวลา · เช้าตรู่คนน้อยที่สุด ถ่ายรูปสวย" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Kapellbrücke, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.machupicchu.org/free-things-to-do-in-lucerne-2026-complete-guide-to-no-cost-experiences.htm"
+        },
+        {
+          "name": { "en": "Lion Monument", "th": "อนุสาวรีย์สิงโต" },
+          "local": "Löwendenkmal",
+          "kind": "culture",
+          "area": { "en": "Denkmalstrasse", "th": "ถนนเดงค์มาล" },
+          "what": { "en": "A great dying lion carved into a cliff above a little pond, in memory of the Swiss Guards", "th": "สิงโตตัวใหญ่สลักบนหน้าผาเหนือสระน้ำเล็ก ๆ เพื่อระลึกถึงทหารรักษาพระองค์ชาวสวิส" },
+          "why": { "en": "Quick and free, ten minutes' walk from Chapel Bridge, and right beside the Glacier Garden", "th": "แวะเร็ว ฟรี เดินจากสะพานคาเปลล์ราว 10 นาที และอยู่ติดสวนธารน้ำแข็ง" },
+          "tip": { "en": "It is a quiet memorial; a soft voice suits the place", "th": "เป็นที่รำลึกที่เงียบสงบ ควรพูดเบา ๆ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Löwendenkmal, Denkmalstrasse, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.luzern.com/en/poi/lion-monument"
+        },
+        {
+          "name": { "en": "Musegg Wall", "th": "กำแพงเมืองมูเซ็กก์" },
+          "local": "Museggmauer",
+          "kind": "views",
+          "area": { "en": "Old Town, north side", "th": "เมืองเก่า ฝั่งเหนือ" },
+          "what": { "en": "The old city wall with four towers to climb, including the Zytturm with the town's oldest clock", "th": "กำแพงเมืองเก่ามีหอคอยให้ปีนสี่หอ รวมหอซีททวร์มที่มีนาฬิกาเก่าแก่ที่สุดของเมือง" },
+          "why": { "en": "A real castle wall to walk along for free; the stairs are steep, so hold small hands", "th": "ได้เดินบนกำแพงเมืองจริงฟรี ๆ · บันไดชัน ควรจูงมือเด็กเล็ก" },
+          "tip": { "en": "Open 1 April–1 November, 08:00–19:00; closed in winter", "th": "เปิด 1 เม.ย.–1 พ.ย. 08:00–19:00 · ปิดช่วงหน้าหนาว" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Museggmauer, Luzern",
+          "ok": "2026-11",
+          "src": "https://luzern.com/en/poi/musegg-wall"
+        },
+        {
+          "name": { "en": "Lake Lucerne boat trip", "th": "ล่องเรือทะเลสาบลูเซิร์น" },
+          "kind": "ride",
+          "area": { "en": "Bahnhofquai pier, by the station", "th": "ท่าเรือบานโฮฟไก ข้างสถานีรถไฟ" },
+          "what": { "en": "Paddle steamers and motor ships to lakeside villages and the foot of Rigi and Pilatus", "th": "เรือกลไฟใบพายและเรือยนต์ ไปหมู่บ้านริมทะเลสาบและเชิงเขาริกิกับพิลาตุส" },
+          "why": { "en": "Children can watch the steam engine work on a paddle steamer, and there is room to move about", "th": "บนเรือกลไฟเด็ก ๆ ดูเครื่องจักรไอน้ำทำงานได้ และมีที่ให้เดินไปมา" },
+          "tip": { "en": "With a Junior Card, children up to 16 travel free with a parent on scheduled boats", "th": "เด็กที่มีจูเนียร์การ์ดอายุถึง 16 ปี นั่งเรือประจำทางฟรีเมื่อมากับพ่อแม่" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Fares by route · under 6 free · ≈ CHF 12 ages 6–15 on a cruise", "th": "ราคาตามเส้นทาง · ต่ำกว่า 6 ปีฟรี · ≈ CHF 12 อายุ 6–15 ปีบนเรือชมวิว" },
+          "book": "none",
+          "q": "Schiffstation Luzern Bahnhofquai, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.lakelucerne.ch/en/"
+        },
+        {
+          "name": { "en": "Lucerne weekly market", "th": "ตลาดนัดริมแม่น้ำรอยส์" },
+          "local": "Luzerner Wochenmarkt",
+          "kind": "market",
+          "area": { "en": "Rathausquai and Unter der Egg", "th": "ราทเฮาส์ไก และอุนเทอร์เดอร์เอ็ก" },
+          "what": { "en": "Stalls of fruit, cheese, bread and flowers along the river, on Tuesday and Saturday mornings", "th": "แผงผลไม้ ชีส ขนมปัง และดอกไม้ริมแม่น้ำ ทุกเช้าวันอังคารและวันเสาร์" },
+          "why": { "en": "A picnic shop and a show in one, flat beside the water, with snacks to try", "th": "ได้ทั้งซื้อของปิกนิกและเดินดูเพลิน ๆ ทางเรียบริมน้ำ มีของว่างให้ลอง" },
+          "tip": { "en": "Go before 11:00; most stalls pack up around midday", "th": "ไปก่อน 11:00 แผงส่วนใหญ่เก็บราวเที่ยง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Rathausquai, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.luzern.com/en/the-city/things-to-do/shopping/markets-in-lucerne"
+        },
+        {
+          "name": { "en": "Ufschötti", "th": "ชายหาดอูฟเชิตตี" },
+          "kind": "beach",
+          "area": { "en": "Alpenquai, south shore", "th": "อัลเพินไก ฝั่งใต้ของทะเลสาบ" },
+          "what": { "en": "A big lakeside meadow with a shallow shore, where Lucerne swims in the lake for free", "th": "ทุ่งหญ้ากว้างริมทะเลสาบ ชายน้ำตื้น เป็นที่คนลูเซิร์นลงเล่นน้ำฟรี" },
+          "why": { "en": "Grass to run on, shallow water to paddle, and showers, toilets and a kiosk", "th": "มีหญ้าให้วิ่ง น้ำตื้นให้ย่ำเล่น พร้อมฝักบัว ห้องน้ำ และร้านขายของ" },
+          "tip": { "en": "No lifeguard; keep small children within reach in the water", "th": "ไม่มีเจ้าหน้าที่ช่วยชีวิต · เด็กเล็กลงน้ำต้องอยู่ใกล้มือ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Ufschötti, Alpenquai, Luzern",
+          "ok": "2026-11",
+          "src": "https://www.luzern.com/en/highlights/the-lake/ufschoetti-lucerne/"
+        },
+        {
+          "name": { "en": "Inseli Park playground", "th": "สนามเด็กเล่นสวนอินเซลี" },
+          "kind": "park",
+          "area": { "en": "Lake promenade, behind the station", "th": "ทางเดินริมทะเลสาบ หลังสถานีรถไฟ" },
+          "what": { "en": "A small green park on the water by the KKL, with a playground, gravel paths and a summer snack bar", "th": "สวนเล็กสีเขียวริมน้ำข้างอาคาร KKL มีสนามเด็กเล่น ทางเดินกรวด และร้านของว่างช่วงหน้าร้อน" },
+          "why": { "en": "Right by the station and the boats: a handy place to let children run between trains", "th": "อยู่ติดสถานีและท่าเรือ เป็นที่ให้เด็กวิ่งเล่นระหว่างรอรถไฟหรือเรือ" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Spielplatz Inseli, Inseliquai, Luzern",
+          "ok": "2026-11",
+          "src": "https://luzern.com/en/poi/playground-inseli-lucerne"
+        },
+        {
+          "local": "Hallenbad Allmend",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://holidaystoswitzerland.com/11-rainy-day-activities-in-lucerne/",
+          "name": {
+            "th": "สระว่ายน้ำในร่มอัลเมนด์",
+            "en": "Allmend indoor pool"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อัลเมนด์ ลูเซิร์น",
+            "en": "Allmend, Lucerne"
+          },
+          "what": {
+            "th": "สระว่ายน้ำในร่มห้าสระ มีสระเด็กเล็กและสระผจญภัย",
+            "en": "An indoor pool with five pools, including a paddling pool and an adventure pool"
+          },
+          "why": {
+            "th": "มีสระเด็กเล็กและสระผจญภัย เล่นได้ทุกสภาพอากาศ",
+            "en": "A paddling pool and an adventure pool, whatever the weather"
+          },
+          "q": "Hallenbad Allmend, Zihlmattweg 46, Luzern",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 11 เพิ่มสำหรับแต่งช็อกโกแลตแท่ง",
+            "en": "≈ CHF 11 extra to decorate a bar"
+          },
+          "book": "none",
+          "src": "https://holidaystoswitzerland.com/11-rainy-day-activities-in-lucerne/",
+          "name": {
+            "th": "ช็อกโกเวลต์ เอชบัค",
+            "en": "Aeschbach ChocoWelt"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "รูต ใกล้ลูเซิร์น",
+            "en": "Root, near Lucerne"
+          },
+          "what": {
+            "th": "นิทรรศการช็อกโกแลตเดินชมเองในโรงงานช็อกโกแลต ตั้งแต่เมล็ดโกโก้จนเป็นแท่ง",
+            "en": "A self-guided chocolate exhibition at a chocolate maker, from cocoa bean to bar"
+          },
+          "why": {
+            "th": "มีจุดให้ลองเล่น และเด็กแต่งช็อกโกแลตแท่ง 200 กรัมของตัวเองได้",
+            "en": "Interactive displays, and children decorate their own 200 g bar"
+          },
+          "tip": {
+            "th": "นั่งรถไฟ 11 นาทีจากลูเซิร์นไปสถานีรูต D4 ติดโรงงาน",
+            "en": "11 minutes by train from Lucerne to Root D4, beside the factory"
+          },
+          "q": "Aeschbach Chocolatier, ChocoDromo 1, Root",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Sammlung Rosengart",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://holidaystoswitzerland.com/11-rainy-day-activities-in-lucerne/",
+          "name": {
+            "th": "พิพิธภัณฑ์โรเซนการ์ต",
+            "en": "Rosengart Collection"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนพิลาทุส ลูเซิร์น",
+            "en": "Pilatusstrasse, Lucerne"
+          },
+          "what": {
+            "th": "คอลเล็กชันส่วนตัวที่มีผลงานของปีกัสโซ พอล เคล และศิลปินอิมเพรสชันนิสม์ ในอาคารธนาคารเก่า",
+            "en": "A private collection with works by Picasso, Paul Klee and the Impressionists, in a former bank"
+          },
+          "why": {
+            "th": "มีทัวร์นำชมสำหรับเด็กและครอบครัว",
+            "en": "Guided tours for children and families"
+          },
+          "tip": {
+            "th": "ทัวร์เด็กมีเฉพาะบางวัน",
+            "en": "Children’s tours on selected dates only"
+          },
+          "q": "Sammlung Rosengart, Pilatusstrasse 10, Luzern",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://engelberg.ch/en/summer/families/children-playgrounds/playscape-fuerenalp",
+          "name": {
+            "th": "สนามเด็กเล่นเฟือเรนอัลป์",
+            "en": "Fürenalp playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เฟือเรนอัลป์ เองเกิลแบร์ก",
+            "en": "Fürenalp, Engelberg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางธรรมชาติ ติดร้านอาหารบนเขาเฟือเรนอัลป์",
+            "en": "A playground in nature next to the Fürenalp mountain restaurant"
+          },
+          "why": {
+            "th": "มีแทรมโพลีน สไลเดอร์ และลำธารภูเขาสำหรับเด็กเล็ก",
+            "en": "A trampoline, a slide and a mountain stream for little ones"
+          },
+          "q": "Mountain Restaurant Fürenalp, Fürenalp 1, Engelberg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://engelberg.ch/en/summer/families/children-playgrounds/playscape-ristis/",
+          "name": {
+            "th": "สนามเด็กเล่นบนเขาของโกลบี ริสติส",
+            "en": "Globi's alpine playground (Ristis)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ริสติส บรุนนี เองเกิลแบร์ก",
+            "en": "Ristis, Brunni, Engelberg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นบนเขาขนาดใหญ่ มีรางเลื่อนฤดูร้อนและโซนเล่นน้ำ",
+            "en": "A large alpine playground with a summer toboggan run and a water world"
+          },
+          "why": {
+            "th": "มีแทรมโพลีน บ้านลม ม้าหมุน ชิงช้า และสไลเดอร์ยาว",
+            "en": "Trampoline, bouncy castle, carousel, swings and a long slide"
+          },
+          "q": "Globis Alpenspielplatz, Ristis, Engelberg",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

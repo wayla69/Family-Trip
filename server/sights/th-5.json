@@ -1,0 +1,468 @@
+{
+  "cc": "th",
+  "towns": [
+    {
+      "place": "th-rayong",
+      "sights": [
+        {
+          "name": { "en": "Koh Samet beaches (Khao Laem Ya–Mu Ko Samet National Park)", "th": "เกาะเสม็ด (อุทยานแห่งชาติเขาแหลมหญ้า–หมู่เกาะเสม็ด)" },
+          "local": "เกาะเสม็ด",
+          "kind": "beach",
+          "area": { "en": "Koh Samet, by ferry from Ban Phe", "th": "เกาะเสม็ด นั่งเรือจากบ้านเพ" },
+          "what": { "en": "A small island of white-sand bays such as Hat Sai Kaew and Ao Wong Duean, a short ferry hop from the mainland", "th": "เกาะเล็กที่มีอ่าวหาดทรายขาว เช่น หาดทรายแก้วและอ่าววงเดือน นั่งเรือจากฝั่งไม่นาน" },
+          "why": { "en": "Shallow, easy bays for sand play; the ferry is open-deck and the sun is strong, so bring hats and life jackets for toddlers", "th": "อ่าวน้ำตื้นเล่นทรายสะดวก เรือเป็นเรือโล่ง แดดแรง ควรมีหมวกและเสื้อชูชีพสำหรับเด็กเล็ก" },
+          "tip": { "en": "Ferries from Ban Phe run about 08:00–16:30; the park fee is paid in cash near Na Dan pier", "th": "เรือจากบ้านเพออกราว 08:00–16:30 ค่าอุทยานจ่ายเงินสดใกล้ท่าเรือหน้าด่าน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Park ≈ ฿200 foreign adults · ฿100 foreign children · ฿40 Thai adults · ฿20 Thai children; ferry ≈ ฿50–70 each way slow boat (check)", "th": "ค่าอุทยาน ≈ ฿200 ผู้ใหญ่ต่างชาติ · ฿100 เด็กต่างชาติ · ฿40 ผู้ใหญ่ไทย · ฿20 เด็กไทย ค่าเรือช้า ≈ ฿50–70 ต่อเที่ยว (เช็กอีกครั้ง)" },
+          "book": "none",
+          "q": "Koh Samet, Rayong",
+          "ok": "2026-11",
+          "src": "https://rollinggrace.com/2026/08/07/koh-samet-thailand-attractions/"
+        },
+        {
+          "name": { "en": "Hat Mae Ramphueng beach", "th": "หาดแม่รำพึง" },
+          "kind": "beach",
+          "area": { "en": "Phe, near Ban Phe", "th": "เพ ใกล้บ้านเพ" },
+          "what": { "en": "A long, quiet Gulf beach on the mainland with pines and a calm shore outside the rainy months", "th": "หาดยาวเงียบบนแผ่นดินใหญ่ มีสนร่มรื่น ทะเลสงบนอกฤดูฝน" },
+          "why": { "en": "No ferry needed, free, and easy for a half-day paddle with small children", "th": "ไม่ต้องนั่งเรือ เข้าฟรี เล่นน้ำครึ่งวันกับเด็กเล็กได้สบาย" },
+          "tip": { "en": "The beach itself is free; reach it by car, and avoid midday sun", "th": "หาดเข้าฟรี ไปด้วยรถยนต์ เลี่ยงแดดเที่ยง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hat Mae Ramphueng, Ban Phe, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/hat-mae-ramphueng/"
+        },
+        {
+          "name": { "en": "Khao Chamao–Khao Wong National Park, Khao Chamao waterfall", "th": "อุทยานแห่งชาติเขาชะเมา–เขาวง น้ำตกเขาชะเมา" },
+          "kind": "nature",
+          "area": { "en": "Wang Chan, about 1 hour inland from Rayong", "th": "วังจันทร์ ห่างจากตัวเมืองระยองเข้าไปราว 1 ชั่วโมง" },
+          "what": { "en": "A forest park with a chain of waterfalls and cool pools along a stream", "th": "อุทยานป่ามีน้ำตกหลายชั้นและแอ่งน้ำเย็นตามลำธาร" },
+          "why": { "en": "A shady break from the beach; the first pool is close to the entrance, but there is no restaurant so pack food and water", "th": "ร่มรื่นพักจากทะเล แอ่งน้ำแรกอยู่ใกล้ทางเข้า ไม่มีร้านอาหาร ควรเตรียมอาหารและน้ำ" },
+          "tip": { "en": "Open about 08:30–16:00; phone the park first, as the online booking was reported down in mid-2026", "th": "เปิดราว 08:30–16:00 ควรโทรถามอุทยานก่อน ระบบจองออนไลน์ขัดข้องช่วงกลางปี 2569" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ฿200 foreign adults · ฿40 Thai adults (child rates: ask at the gate; check before you go)", "th": "≈ ฿200 ผู้ใหญ่ต่างชาติ · ฿40 ผู้ใหญ่ไทย (ราคาเด็กถามที่ประตู เช็กก่อนไป)" },
+          "book": "none",
+          "q": "Khao Chamao Khao Wong National Park, Wang Chan, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thainationalparks.com/khao-chamao-khao-wong-national-park"
+        },
+        {
+          "name": { "en": "Rayong Botanical Garden", "th": "สวนพฤกษศาสตร์ระยอง" },
+          "kind": "park",
+          "area": { "en": "Mueang Rayong", "th": "เมืองระยอง" },
+          "what": { "en": "A large lakeside garden with shaded paths, a lake and kayaks or flat boats for hire", "th": "สวนกว้างริมทะเลสาบ มีทางเดินร่มรื่น และเช่าคายัคหรือเรือท้องแบนได้" },
+          "why": { "en": "Free, flat and shady, a good place for toddlers to walk and for older children to try a kayak", "th": "เข้าฟรี ทางเรียบและร่มรื่น เด็กเล็กเดินเล่นได้ เด็กโตลองพายคายัค" },
+          "tip": { "en": "Open daily about 08:30–16:30; kayaks about ฿100 an hour (older price), check on the day", "th": "เปิดทุกวันราว 08:30–16:30 คายัคประมาณ ฿100 ต่อชั่วโมง (ราคาเก่ากว่า) เช็กหน้างาน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · kayak about ฿100 an hour", "th": "ฟรี · คายัคประมาณ ฿100 ต่อชั่วโมง" },
+          "book": "none",
+          "q": "Rayong Botanical Garden",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/rayong-botanical-garden/"
+        },
+        {
+          "name": { "en": "Sopha Arboretum", "th": "สวนพฤกษชาติโสภา" },
+          "kind": "park",
+          "area": { "en": "Ban Phe", "th": "บ้านเพ" },
+          "what": { "en": "A 32-rai garden of native and ornamental plants with old Thai wooden houses showing porcelain and pottery", "th": "สวนพืชพรรณไทยและไม้ประดับ 32 ไร่ มีเรือนไทยเก่าแสดงเครื่องเคลือบและเครื่องปั้นดินเผา" },
+          "why": { "en": "Quiet and shaded; the wooden houses give a dry corner when it rains, but steps make prams difficult", "th": "เงียบและร่มรื่น เรือนไทยมีที่หลบฝน แต่มีบันไดทำให้เข้ารถเข็นลำบาก" },
+          "tip": { "en": "Sources disagree on hours (about 09:00–16:30, closed one day a week) and price, so call before you go", "th": "แหล่งข้อมูลเวลาเปิดไม่ตรงกัน (ราว 09:00–16:30 ปิดสัปดาห์ละวัน) และราคาต่างกัน ควรโทรเช็กก่อน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ฿50–80 adults · ≈ ฿40 children (sources differ, check the price)", "th": "≈ ฿50–80 ผู้ใหญ่ · ≈ ฿40 เด็ก (แหล่งข้อมูลต่างกัน เช็กราคา)" },
+          "book": "none",
+          "q": "Sopha Arboretum, Ban Phe",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/sopha-arboretum/"
+        },
+        {
+          "name": { "en": "Saeng Chan beach", "th": "หาดแสงจันทร์" },
+          "kind": "beach",
+          "area": { "en": "Mueang Rayong", "th": "เมืองระยอง" },
+          "what": { "en": "The beach closest to Rayong town, with a seafront road, rock breakwater and seafood stalls for the sunset", "th": "ชายหาดใกล้ตัวเมืองระยองที่สุด มีถนนเลียบหาด เขื่อนหิน และร้านอาหารทะเลตอนพระอาทิตย์ตก" },
+          "why": { "en": "A calm place for a walk or cycle; paddle only at the edge because waves can be strong", "th": "เดินหรือปั่นจักรยานสบาย ลงเล่นน้ำเฉพาะริมฝั่งเพราะคลื่นอาจแรง" },
+          "tip": { "en": "Free parking on the shore; no sunbeds or boats for hire", "th": "จอดรถริมหาดฟรี ไม่มีเตียงผ้าใบหรือเรือให้เช่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hat Saeng Chan, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.lovethailand.org/travel/-/60-ระยอง/2604-หาดแสงจันทร์.html"
+        },
+        {
+          "name": { "en": "Raksa Sam Bridge mangrove walkway", "th": "สะพานรักษ์แสม" },
+          "local": "สะพานรักษ์แสม",
+          "kind": "nature",
+          "area": { "en": "Klaeng", "th": "แกลง" },
+          "what": { "en": "A wooden boardwalk of about 100 metres through a protected mangrove forest where small sea creatures breed", "th": "สะพานไม้ยาวราว 100 เมตรเดินชมป่าชายเลนที่เป็นเขตอนุรักษ์และแหล่งเพาะพันธุ์สัตว์น้ำ" },
+          "why": { "en": "A short, shaded, flat walk that small legs can finish, with crabs and mudskippers to spot", "th": "เดินสั้น ๆ ทางเรียบ มีร่มไม้ เด็กเล็กเดินไหว และมีปูกับปลาตีนให้ดู" },
+          "tip": { "en": "Open daily 08:00–18:00; go in the cooler morning and bring mosquito repellent", "th": "เปิดทุกวัน 08:00–18:00 ไปตอนเช้าอากาศเย็นกว่า และเตรียมยากันยุง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sapan Raksa Saem, Klaeng, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Thung Prong Thong (golden mangrove meadow)", "th": "ทุ่งโปรงทอง" },
+          "kind": "nature",
+          "area": { "en": "Pak Nam Prasae, Klaeng", "th": "ปากน้ำประแส แกลง" },
+          "what": { "en": "A wide mangrove meadow whose prong leaves turn gold in the dry season, with a short walk and a boat ride through the canals.", "th": "ทุ่งป่าโปรงกว้างที่ใบเปลี่ยนเป็นสีทองในหน้าแล้ง เดินเล่นสั้นๆ และนั่งเรือชมคลองได้" },
+          "why": { "en": "Open flat ground and a boat ride keep little ones busy; the views are wide and there is no queue.", "th": "พื้นราบโล่งและมีเรือให้นั่ง เด็กเล็กไม่เบื่อ ไม่ต้องต่อคิว" },
+          "tip": { "en": "Open daily 06:00–18:00; go early or late, the midday sun is strong.", "th": "เปิดทุกวัน 06.00–18.00 น. ไปเช้าหรือเย็น แดดเที่ยงแรง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Thung Prong Thong, Pak Nam Prasae, Klaeng, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Suan Lung Thong Bai fruit orchard", "th": "สวนลุงทองใบ" },
+          "kind": "farm",
+          "area": { "en": "Rayong", "th": "ระยอง" },
+          "what": { "en": "A working fruit orchard where, in the harvest months, visitors taste durian, mangosteen and other fruit.", "th": "สวนผลไม้ที่เปิดให้ชิมทุเรียน มังคุด และผลไม้อื่นๆ ในช่วงที่ผลไม้ออก" },
+          "why": { "en": "Walking among the trees and tasting fruit suits curious children; shade and picnic seating are easy to find.", "th": "เดินดูต้นไม้และชิมผลไม้ เหมาะกับเด็กช่างสงสัย มีร่มเงาและที่นั่ง" },
+          "tip": { "en": "Open daily 09:00–17:00; fruit is seasonal, so ask before you go what is ripe.", "th": "เปิดทุกวัน 09.00–17.00 น. ผลไม้ตามฤดูกาล โทรถามก่อนว่ามีอะไรสุก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Suan Lung Thong Bai, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Suan La-Mai fruit orchard", "th": "สวนละไม" },
+          "kind": "farm",
+          "area": { "en": "Rayong", "th": "ระยอง" },
+          "what": { "en": "A 500-rai orchard of durian, rambutan, mangosteen and longkong with seasonal fruit buffets.", "th": "สวนผลไม้กว่า 500 ไร่ มีทุเรียน เงาะ มังคุด ลองกอง และบุฟเฟ่ต์ผลไม้ตามฤดูกาล" },
+          "why": { "en": "Shaded paths and plenty to taste; children can see where fruit grows.", "th": "ทางเดินร่มรื่น มีของให้ชิม เด็กๆ ได้เห็นว่าผลไม้มาจากไหน" },
+          "tip": { "en": "Open daily 08:00–17:00; the buffet runs only in fruit season.", "th": "เปิดทุกวัน 08.00–17.00 น. บุฟเฟ่ต์มีเฉพาะช่วงผลไม้ออก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Suan La-Mai, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Suphattra Land", "th": "ศุภัตรา แลนด์" },
+          "kind": "farm",
+          "area": { "en": "Ban Khai", "th": "บ้านค่าย" },
+          "what": { "en": "A big fruit garden with a tram ride and, in season, a durian-and-fruit buffet among the orchards", "th": "สวนผลไม้ขนาดใหญ่ มีรถรางพาชมสวน และบุฟเฟต์ทุเรียนกับผลไม้ในฤดูกาล" },
+          "why": { "en": "The tram saves little legs, there is shade, and children under 90 cm go in free", "th": "มีรถรางช่วยให้เด็กไม่เหนื่อย มีร่มเงา และเด็กสูงไม่ถึง 90 ซม. เข้าฟรี" },
+          "tip": { "en": "Open daily about 08:00–17:00; the durian buffet runs April–August; booking ahead costs less", "th": "เปิดทุกวันราว 08:00–17:00 บุฟเฟต์ทุเรียนช่วงเมษายน–สิงหาคม จองล่วงหน้าถูกกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ฿650 Thai adults · ฿700 foreigners · under 90 cm free · 90–120 cm half price (buffet season; check)", "th": "≈ ฿650 คนไทย · ฿700 ชาวต่างชาติ · เด็กต่ำกว่า 90 ซม. ฟรี · 90–120 ซม. ครึ่งราคา (ช่วงบุฟเฟต์ เช็กอีกครั้ง)" },
+          "book": "rec",
+          "q": "Suphattra Land, Ban Khai, Rayong",
+          "ok": "2026-11",
+          "src": "https://thailandtourismdirectory.go.th/en/activities/102553"
+        },
+        {
+          "name": { "en": "Koh Kloi floating market", "th": "ตลาดน้ำเกาะกลอย" },
+          "kind": "market",
+          "area": { "en": "Koh Kloi", "th": "เกาะกลอย" },
+          "what": { "en": "A small canal-side market of local snacks and cheap goods beside Central Plaza Rayong, by the Koh Kloi junction", "th": "ตลาดริมคลองเล็กๆ ขายขนมพื้นเมืองและของราคาถูก ข้างเซ็นทรัลพลาซา ระยอง ตรงสี่แยกเกาะกลอย" },
+          "why": { "en": "Easy and free for a quick snack stop on the way into town; it is quiet on weekdays and some stalls are shut", "th": "แวะกินขนมได้ง่ายและฟรีระหว่างทางเข้าเมือง วันธรรมดาเงียบและร้านบางส่วนปิด" },
+          "tip": { "en": "Open about 08:00–18:30 on weekdays and to 19:30 at weekends", "th": "เปิดราว 08:00–18:30 วันธรรมดา และถึง 19:30 วันเสาร์–อาทิตย์" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free to enter · pay for food", "th": "ฟรี · จ่ายค่าอาหาร" },
+          "book": "none",
+          "q": "Koh Kloi Floating Market, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.rayong-pao.go.th/th/travel/g/6/detail-news/11902.html"
+        },
+        {
+          "name": { "en": "Laem Charoen Beach", "th": "หาดแหลมเจริญ" },
+          "kind": "beach",
+          "area": { "en": "Rayong city", "th": "ตัวเมืองระยอง" },
+          "what": { "en": "A pine-shaded beach 15 minutes from Rayong city, with seaside cafés, and weekend mini tractors and beach painting for children", "th": "ชายหาดร่มสนห่างตัวเมืองระยองราว 15 นาที มีคาเฟ่ริมทะเล และวันหยุดมีรถแทรกเตอร์คันเล็กกับกิจกรรมวาดภาพริมหาดให้เด็กเล่น" },
+          "why": { "en": "Easy for a picnic and a paddle; the mini tractors carry up to 60 kg and stay on the sand, away from the sea", "th": "ปูเสื่อนั่งเล่นลงเล่นน้ำง่าย รถแทรกเตอร์คันเล็กรับน้ำหนักได้ 60 กก. และขับบนทรายเท่านั้น ไม่ลงทะเล" },
+          "tip": { "en": "Weekends are livelier; the activities are priced separately", "th": "วันเสาร์–อาทิตย์คึกคักกว่า กิจกรรมคิดเงินแยก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to visit · activities priced separately", "th": "ฟรี · กิจกรรมคิดเงินแยก" },
+          "book": "none",
+          "q": "Laem Charoen Beach, Rayong",
+          "ok": "2026-11",
+          "src": "https://rayong.holidayinn.com/blog/travel-rayong-family"
+        },
+        {
+          "name": { "en": "Rock and Mineral Research Centre", "th": "ศูนย์วิจัยทรัพยากรแร่และหิน ระยอง" },
+          "kind": "museumkid",
+          "area": { "en": "Mueang Rayong", "th": "เมืองระยอง" },
+          "what": { "en": "A Department of Mineral Resources site with indoor cases of minerals, gems and fossils and a stone garden of big rock samples outside", "th": "ศูนย์ของกรมทรัพยากรธรณี มีตู้โชว์แร่ อัญมณี ฟอสซิลในอาคาร และสวนหินตัวอย่างขนาดใหญ่กลางแจ้ง" },
+          "why": { "en": "Free, cool indoors and easy for children to look at shiny stones, then run round the stone garden", "th": "เข้าฟรี ในร่มเย็น เด็กชอบดูหินสวยๆ แล้ววิ่งเล่นในสวนหิน" },
+          "tip": { "en": "Open Tuesday to Sunday 09:30 to 16:30, closed Monday; there is no direct public transport", "th": "เปิดอังคารถึงอาทิตย์ 09:30 ถึง 16:30 ปิดวันจันทร์ ไม่มีขนส่งสาธารณะตรง" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Rock and Mineral Research Center, Klaeng, Mueang Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/rock-and-mineral-research-center-rayong-province/"
+        },
+        {
+          "name": { "en": "Wat Ban Don shadow play museum", "th": "พิพิธภัณฑ์หนังใหญ่วัดบ้านดอน" },
+          "kind": "museum",
+          "area": { "en": "Choeng Noen", "th": "เชิงเนิน" },
+          "what": { "en": "A museum hall of about 200 large carved-leather nang yai puppets from 1888, one of only three such collections left in Thailand", "th": "อาคารพิพิธภัณฑ์เก็บหนังใหญ่แกะสลักราว 200 ตัวจากปี 2431 หนึ่งในสามแห่งที่เหลือในไทย" },
+          "why": { "en": "Big dramatic figures hold children's eyes for a short visit, and it is free and indoors", "th": "ตัวหนังใหญ่ดูตื่นตา เด็กสนใจได้สั้นๆ เข้าฟรี อยู่ในร่ม" },
+          "tip": { "en": "Inside a working temple, so cover shoulders and knees; a live show must be arranged days ahead", "th": "อยู่ในวัด แต่งกายสุภาพ ถ้าอยากดูการแสดงสดต้องนัดล่วงหน้าหลายวัน" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "rec",
+          "q": "Wat Ban Don Nang Yai Museum, Choeng Noen, Mueang Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-ban-don-shadow-play-museum/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.pptvhd36.com/travel/thailand/285042",
+          "name": {
+            "th": "หาดแหลมแม่พิมพ์",
+            "en": "Laem Mae Phim beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อำเภอแกลง ระยอง",
+            "en": "Klaeng, Rayong"
+          },
+          "what": {
+            "th": "ชายหาดในอำเภอแกลง เหมาะกับการพักผ่อนริมทะเล",
+            "en": "A beach in Klaeng district for resting by the sea"
+          },
+          "why": {
+            "th": "มีร้านอาหารใกล้ ๆ ไม่ต้องข้ามเรือไปเกาะ",
+            "en": "Restaurants nearby, and no boat to an island needed"
+          },
+          "q": "หาดแหลมแม่พิมพ์, แกลง, ระยอง",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Sri Mueang Park, Rayong",
+            "th": "สวนศรีเมือง"
+          },
+          "local": "สวนศรีเมือง",
+          "kind": "park",
+          "area": {
+            "en": "Taksin Maharat Road, Tha Pradu, Mueang Rayong",
+            "th": "ถนนตากสินมหาราช ท่าประดู่ เมืองระยอง"
+          },
+          "what": {
+            "en": "A central city park with a pond, a running track, an activity lawn and a children’s playground",
+            "th": "สวนสาธารณะกลางเมือง มีสระน้ำ ลู่วิ่ง ลานกิจกรรม และสนามเด็กเล่น"
+          },
+          "why": {
+            "en": "A playground for little ones in the same park as the pond and the track",
+            "th": "มีสนามเด็กเล่นสำหรับเด็กเล็กในสวนเดียวกับสระน้ำและลู่วิ่ง"
+          },
+          "tip": {
+            "en": "Open every day 05:00–21:00; coffee shops and a small market are nearby",
+            "th": "เปิดทุกวัน 05:00–21:00 ใกล้ๆ มีร้านกาแฟและตลาดเล็กๆ"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sri Mueang Park, Taksin Maharat Road, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": {
+            "en": "Rayong City Museum",
+            "th": "พิพิธภัณฑ์เมืองระยอง"
+          },
+          "local": "พิพิธภัณฑ์เมืองระยอง",
+          "kind": "museum",
+          "area": {
+            "en": "Yom Chinda Road, Tha Pradu, Mueang Rayong",
+            "th": "ถนนยมจินดา ท่าประดู่ เมืองระยอง"
+          },
+          "what": {
+            "en": "An old building on Yom Chinda Road telling the story of the town, from its founding and fishing to the time of King Taksin",
+            "th": "อาคารเก่าบนถนนยมจินดา เล่าเรื่องเมืองตั้งแต่การก่อตั้ง การประมง ไปจนถึงสมัยพระเจ้าตากสิน"
+          },
+          "why": {
+            "en": "A small hall with old photos and models, short enough for a rainy morning",
+            "th": "ห้องจัดแสดงเล็กๆ มีภาพเก่าและโมเดล ใช้เวลาไม่นาน เหมาะกับเช้าวันฝนตก"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 09:00–16:00, closed Mondays",
+            "th": "เปิดวันอังคารถึงอาทิตย์ 09:00–16:00 ปิดวันจันทร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Rayong City Museum, Yom Chinda Road, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": {
+            "en": "Suan Son Beach, Klaeng",
+            "th": "หาดสวนสน"
+          },
+          "local": "หาดสวนสน",
+          "kind": "beach",
+          "area": {
+            "en": "Klaeng, Rayong",
+            "th": "แกลง ระยอง"
+          },
+          "what": {
+            "en": "A beach named after the sea pines planted along it, with shade all day for a mat on the sand",
+            "th": "หาดที่ตั้งชื่อตามสนทะเลที่ปลูกเรียงริมหาด ร่มเงาตลอดวัน ปูเสื่อนั่งบนทรายได้"
+          },
+          "why": {
+            "en": "The waves are gentle and the shallow water runs out a long way, so families bring children to paddle",
+            "th": "คลื่นเบา น้ำตื้นไกลออกไป ครอบครัวพาเด็กมาเล่นน้ำ"
+          },
+          "tip": {
+            "en": "Open at all times; there is a car park and restaurants on the same stretch",
+            "th": "เปิดตลอดเวลา มีที่จอดรถและร้านอาหารริมหาด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Suan Son Beach, Klaeng, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        },
+        {
+          "name": {
+            "en": "Yom Chinda Road old town",
+            "th": "ถนนยมจินดา"
+          },
+          "local": "ถนนยมจินดา",
+          "kind": "oldtown",
+          "area": {
+            "en": "Old town by the Rayong river",
+            "th": "ย่านเมืองเก่าริมแม่น้ำระยอง"
+          },
+          "what": {
+            "en": "An old-town street by the Rayong river with wooden shophouses and colonial buildings, each with a sign on its history",
+            "th": "ถนนเมืองเก่าริมแม่น้ำระยอง มีเรือนไม้และอาคารสไตล์โคโลเนียล แต่ละหลังมีป้ายเล่าประวัติ"
+          },
+          "why": {
+            "en": "An easy walk with old buildings to look at, and cafés and small collector shops in the old houses",
+            "th": "เดินสบาย มีอาคารเก่าให้ชม และคาเฟ่กับร้านของสะสมเล็กๆ ในบ้านเก่า"
+          },
+          "tip": {
+            "en": "On Saturday and Sunday evenings it becomes a walking street; if you drive, park at Sri Mueang Park and walk in",
+            "th": "เย็นวันเสาร์และอาทิตย์เป็นถนนคนเดิน ถ้าขับรถให้จอดที่สวนศรีเมืองแล้วเดินเข้าไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Yom Chinda Road, Tha Pradu, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "town": "za-kruger",
+  "rounds": [
+    {
+      "town": "za-kruger",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 4 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "Skukuza Golf Club Restaurant",
+          "src": "Google Maps",
+          "page_name": "Skukuza Golf Club Restaurant",
+          "evidence": "The club page lists at this place \"Skukuza Golf Club Restaurant\", 2H8G+5W Skukuza, \"Located in: Skukuza Golf Club\"; \"Open · Closes 10 PM\". q now names the restaurant.",
+          "ok": "2026-11",
+          "q_changed_to": "Skukuza Golf Club Restaurant, Skukuza, Kruger National Park"
+        },
+        {
+          "name": "Afsaal Picnic Site",
+          "src": "Google Maps",
+          "page_name": "Tindlovu Bush Cafe @ Afsaal Picnic Site",
+          "evidence": "\"Afsaal Picnic site\" (picnic ground, PG7J+9J) has no hours, but its kiosk \"Tindlovu Bush Cafe @ Afsaal Picnic Site\", Restaurant, shows \"Open · Closes 4 PM\". q now names the kiosk.",
+          "ok": "2026-11",
+          "q_changed_to": "Tindlovu Bush Cafe, Afsaal Picnic Site, Kruger National Park"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Pioneer's Butcher & Grill",
+          "src": "Google Maps + web search",
+          "evidence": "Maps shows \"Pioneer's Grill\", Steak house, 1 Perry's Bridge Trading Post, R40, X47F+6Q Hazyview, \"Closed · Opens 12 PM\" (pioneersgrill.co.za) — a shorter name at Perry's Bridge, not the Rendezvous Tourism Centre the row names; a 2021 Lowvelder piece put \"Pioneer's Butcher & Grill\" at Perry's Bridge. Only a similar name, so no ok."
+        }
+      ],
+      "removed": [
+        {
+          "name": "Tindlovu Restaurant Satara",
+          "src": "Google Maps",
+          "reason": "\"Tindlovu Restaurant @ Satara Camp\", Satara Camp Rd, located in Satara Rest Camp: \"Permanently closed\"."
+        }
+      ]
+    },
+    {
+      "town": "za-kruger",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 10 rows from krugerpark.co.za (a booking company's guide, 2026) passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Mugg & Bean (Lower Sabie)",
+          "page_name": "Mugg & Bean Restaurant",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Mugg & Bean @ Lower Sabie', 765 reviews, newest 'last month'"
+        },
+        {
+          "name": "Tindlovu Restaurant (Letaba)",
+          "page_name": "Tindlovu Letaba Restaurant",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Tindlovu Restaurant @ Letaba Rest Camp', 245 reviews, newest 'last month'"
+        },
+        {
+          "name": "Tindlovu Restaurant (Berg-en-Dal)",
+          "page_name": "Tindlovu Berg en Dal Restaurant",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Tindlovu Restaurant Berg-En-Dal Rest Camp', 2,115 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Mopani Restaurant",
+          "page_name": "Mopani Restaurant",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Mopani Rest Camp' (the restaurant is in the camp), 2,322 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Pretoriuskop restaurant",
+          "page_name": "Pretoriuskop Rest Camp Restaurant",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Pretoriuskop Rest Camp' (the restaurant is in the camp), 2,500 reviews, newest '3 days ago'"
+        },
+        {
+          "name": "Wimpy (Pretoriuskop)",
+          "page_name": "Wimpy Restaurant",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Wimpy Pretoriuskop', 317 reviews, newest 'last month'"
+        },
+        {
+          "name": "Punda Maria restaurant",
+          "page_name": "Punda Maria Rest Camp Restaurant",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Punda Maria Rest Camp' (the restaurant is in the camp), 1,527 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Shingwedzi restaurant",
+          "page_name": "Restaurant at Shingwedzi",
+          "src": "https://www.krugerpark.co.za/Kruger-Park-Travel-Advisory/restaurant-facilities-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Shingwedzi Rest Camp' (the restaurant is in the camp), 1,929 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Lower Sabie Rest Camp",
+          "page_name": "Lower Sabie",
+          "src": "https://www.krugerpark.co.za/Kruger_Park_Travel_Advisory-travel/taking-children-to-kruger-park.html",
+          "date": "official",
+          "map": "Google Maps 'Lower Sabie Rest Camp', 6,022 reviews, newest '1 day ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Pioneer Dam",
+          "why": "the map has no entry of its own (only the Mopani camp)"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "town": "jp-hiroshima",
+  "rounds": [
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from macaroni (May 2026), Nap Camp (Apr 2026) and Mapple (Sep 2025), all passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Marina Mario Espresso",
+          "page_name": "マリーナ マリオ エスプレッソ",
+          "src": "https://macaro-ni.jp/176057",
+          "date": "2026-05",
+          "map": "Google Maps 'Marina Mario Espresso', 384 reviews, newest shown 21 days ago"
+        },
+        {
+          "name": "5-Days Children's Cultural Science Museum",
+          "page_name": "５－Ｄａｙｓこども文化科学館",
+          "src": "https://www.mapple.net/original/322000/",
+          "date": "2025-09",
+          "map": "Google Maps '5-Days Children's Cultural Science Museum', 935 reviews, newest shown 5 months ago"
+        },
+        {
+          "name": "Kodomocchi Park Kobe Park",
+          "page_name": "こどもっちパーク こうべパーク",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "date": "2026-04",
+          "map": "Google Maps 'こどもっちパーク こうべパーク', 98 reviews, newest shown a month ago"
+        },
+        {
+          "name": "Bornelund Asobi no Sekai (Gakuen-minami)",
+          "page_name": "あそびのせかい 学園南店",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "date": "2026-04",
+          "map": "Google Maps 'Børnelund Kōbe Gakuen Minami', 216 reviews, newest shown 3 months ago"
+        },
+        {
+          "name": "Bornelund Asobi no Sekai (Marine Pia Kobe)",
+          "page_name": "あそびのせかい 三井アウトレットパーク マリンピア神戸店",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "date": "2026-04",
+          "map": "Google Maps 'ボーネルンドあそびのせかいマリンピア神戸', 14 reviews, newest shown 16 days ago"
+        },
+        {
+          "name": "aruhi morinonaka",
+          "page_name": "アルヒモリノナカ",
+          "src": "https://macaro-ni.jp/176057",
+          "date": "2026-05",
+          "map": "Google Maps 'aruhi_morinonaka（アルヒモリノナカ）' (Hondori, Naka Ward), newest review shown a month ago"
+        },
+        {
+          "name": "Namaste (Fuji Grand Koyo)",
+          "page_name": "ナマステ フジグラン広島高陽店",
+          "src": "https://macaro-ni.jp/176057",
+          "date": "2026-05",
+          "map": "Google Maps 'インド料理 ナマステ フジグラン 高陽店' (Asakita Ward), newest review shown 2 hours ago"
+        },
+        {
+          "name": "Wa Cafe Plus Roche",
+          "page_name": "和カフェ プラスロシェ",
+          "src": "https://macaro-ni.jp/176057",
+          "date": "2026-05",
+          "map": "Google Maps '和カフェ プラスロシェ' (Furue-shinmachi), newest review shown a week ago"
+        },
+        {
+          "name": "Pure Heart Kids Land (Kobe Harborland umie)",
+          "page_name": "ピュアハートキッズランド 神戸ハーバーランドumie",
+          "src": "https://www.asoview.com/note/6897/",
+          "date": "2026-01",
+          "map": "Google Maps 'ピュアハートキッズランド 神戸ハーバーランドumie' (Chuo Ward, Kobe), newest review shown 3 months ago"
+        },
+        {
+          "name": "Kita Fureai children's centre (Okayama)",
+          "page_name": "北ふれあい児童館（北ふれあいセンター内）",
+          "src": "https://kyounoko.jp/article/shitsunai-asobi-okayama",
+          "date": "2026-11",
+          "map": "Google Maps '岡山市北ふれあい児童館' (Tanimannari), newest review shown 3 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "アルヒモリノナカ, ナマステ フジグラン高陽店, 和カフェ プラスロシェ",
+          "why": "no review from the last six months shown on the map"
+        },
+        {
+          "name": "Skids Garden Okayama, Okayama Fureai children's centre",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "Skids Garden Hiroshima-Gion",
+          "why": "library-check.cjs could not confirm the row"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 8 rows from macaroni (May 2026), Japan for Kids (Jul 2026), asoview (2025–2026) and kyounoko (Nov 2026), 7 passed library-check.cjs, 5 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 7 rows from macaroni (May 2026), nap-camp (Oct 2026) and NEWT (Nov 2026), all passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Cafe Flowry",
+          "page_name": "カフェフロウリー",
+          "src": "https://macaro-ni.jp/176057",
+          "date": "2026-05",
+          "map": "Google Maps 'カフェ フロウリー/学研四季が丘教室' (Shikigaoka, Hatsukaichi), newest review shown a day ago"
+        },
+        {
+          "name": "Pure Heart Kids Land, Alpark Hiroshima",
+          "page_name": "ピュアハートキッズランド広島アルパーク",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "date": "2026-04",
+          "map": "Google Maps 'ピュアハートキッズランド｜アルパーク広島' (Kusatsu-shinmachi), newest review shown 4 months ago"
+        },
+        {
+          "name": "Little Planet, LECT Hiroshima",
+          "page_name": "リトルプラネット LECT広島",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "date": "2026-04",
+          "map": "Google Maps 'リトルプラネット LECT広島' (Ōgi, Nishi-ku), newest review shown 2 months ago"
+        },
+        {
+          "name": "kiond Hiroshima wooden playground",
+          "page_name": "kiondひろしま キノパーク",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "date": "2026-04",
+          "map": "Google Maps 'kiondひろしま' (Motomachi, Naka-ku), newest review shown a month ago"
+        },
+        {
+          "name": "Chikyu no Niwa, AEON Mall Hiroshima Fuchu",
+          "page_name": "ちきゅうのにわ イオンモール広島府中店",
+          "src": "https://www.nap-camp.com/mag/82249",
+          "date": "2026-04",
+          "map": "Google Maps 'ちきゅうのにわイオンモール広島府中' (Fuchū), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "JMSDF Kure Museum (\"Iron Whale\", Kure)",
+          "page_name": "海上自衛隊呉史料館 （てつのくじら館）",
+          "src": "https://newt.net/jpn/hiroshima/mag-438797335027",
+          "date": "2026-11",
+          "map": "Google Maps 'Japan Maritime Self-Defense Force (JMSDF) Kure Museum' (Takaramachi), newest review shown 2 hours ago"
+        },
+        {
+          "name": "Yamato Museum (Kure Maritime Museum)",
+          "page_name": "大和ミュージアム（呉市海事歴史科学館）",
+          "src": "https://newt.net/jpn/hiroshima/mag-438797335027",
+          "date": "2026-11",
+          "map": "Google Maps 'Yamato Museum (Kure Maritime Museum)' (5-20 Takaramachi), newest review shown 3 hours ago"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

@@ -1,0 +1,770 @@
+{
+  "cc": "in",
+  "towns": [
+    {
+      "place": "in-golden",
+      "sights": [
+        {
+          "name": { "en": "Taj Mahal", "th": "ทัชมาฮาล" },
+          "kind": "culture",
+          "area": { "en": "Agra", "th": "อัครา" },
+          "what": { "en": "The white marble tomb beside the Yamuna, set in long gardens with pools and paths", "th": "สุสานหินอ่อนสีขาวริมแม่น้ำยมุนา อยู่ในสวนยาวที่มีสระน้ำและทางเดิน" },
+          "why": { "en": "Wide, flat paths and open lawns suit a pram or a carrier; go at opening time before the sun and queues build", "th": "ทางเดินกว้างและเรียบ มีสนามหญ้ากว้าง เหมาะกับรถเข็นหรือเป้อุ้ม ไปตอนเปิดก่อนแดดและคิวจะมากขึ้น" },
+          "tip": { "en": "Sources disagree on extra local charges; check the child rule and which day it is closed on the official page", "th": "แหล่งข้อมูลไม่ตรงกันเรื่องค่าธรรมเนียมท้องถิ่นเพิ่ม เช็กกฎของเด็กและวันปิดจากหน้าทางการ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Foreign visitors ≈ ₹1,100 + ₹200 for the main mausoleum (official page; check the price for children)", "th": "ชาวต่างชาติ ≈ ₹1,100 + ₹200 สำหรับตัวสุสานหลัก (หน้าทางการ เช็กราคาเด็กอีกครั้ง)" },
+          "book": "rec",
+          "q": "Taj Mahal, Agra",
+          "ok": "2026-11",
+          "src": "https://tajmahal.gov.in/visiting-hours.aspx"
+        },
+        {
+          "name": { "en": "Agra Fort", "th": "ป้อมอัครา" },
+          "kind": "culture",
+          "area": { "en": "Agra", "th": "อัครา" },
+          "what": { "en": "A huge red sandstone fort with courtyards, halls and views across the river towards the Taj Mahal", "th": "ป้อมหินทรายแดงขนาดใหญ่ มีลานกว้าง ห้องโถง และวิวข้ามแม่น้ำไปทางทัชมาฮาล" },
+          "why": { "en": "Space to run in the courtyards, but ramps, steps and sun make it tiring for toddlers", "th": "ลานกว้างให้วิ่งเล่นได้ แต่ทางลาด บันได และแดดทำให้เด็กเล็กเหนื่อย" },
+          "tip": { "en": "A 2025–26 guide says online tickets are cheaper and there is a discount if you visit after the Taj Mahal", "th": "คู่มือปี 2025–26 บอกว่าบัตรออนไลน์ถูกกว่า และมีส่วนลดถ้าไปหลังทัชมาฮาล" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Foreign visitors ≈ ₹650 (₹600 on Fridays) from a travel guide; check the price", "th": "ชาวต่างชาติ ≈ ₹650 (วันศุกร์ ₹600) จากคู่มือท่องเที่ยว เช็กราคาอีกครั้ง" },
+          "book": "none",
+          "q": "Agra Fort, Agra",
+          "ok": "2026-11",
+          "src": "https://www.trivenicabs.in/blog/agra-fort-complete-guide-2026"
+        },
+        {
+          "name": { "en": "Mehtab Bagh", "th": "เมห์ตาบบาก" },
+          "kind": "park",
+          "area": { "en": "Agra, across the river", "th": "อัครา ฝั่งตรงข้ามแม่น้ำ" },
+          "what": { "en": "A riverside garden facing the Taj Mahal, quieter than the monument itself and known for sunset views", "th": "สวนริมแม่น้ำหันหน้าไปทางทัชมาฮาล เงียบกว่าตัวอนุสรณ์ และขึ้นชื่อเรื่องพระอาทิตย์ตก" },
+          "why": { "en": "Open lawns and short paths where children can run while the grown-ups look at the Taj", "th": "สนามหญ้ากว้างและทางเดินสั้นให้เด็กวิ่งเล่น ขณะที่ผู้ใหญ่ชมทัชมาฮาล" },
+          "tip": { "en": "The district page lists children under 15 as free; hours differ between sources, so confirm on arrival", "th": "หน้าของเขตระบุว่าเด็กต่ำกว่า 15 ปีฟรี เวลาเปิดแต่ละแหล่งไม่ตรงกัน ยืนยันตอนไปถึง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Foreign visitors ≈ ₹300 · under 15 free (the district page; other guides say ₹200, check the price)", "th": "ชาวต่างชาติ ≈ ₹300 · ต่ำกว่า 15 ปีฟรี (หน้าของเขต คู่มืออื่นบอก ₹200 เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Mehtab Bagh, Agra",
+          "ok": "2026-11",
+          "src": "https://agra.nic.in/tourist-place/mehtab-bagh/"
+        },
+        {
+          "name": { "en": "Red Fort", "th": "ป้อมแดง (เรดฟอร์ต)" },
+          "kind": "culture",
+          "area": { "en": "Old Delhi", "th": "เดลีเก่า" },
+          "what": { "en": "The great red sandstone fort of Old Delhi, with a covered bazaar inside the main gate", "th": "ป้อมหินทรายแดงใหญ่แห่งเดลีเก่า มีตลาดมีหลังคาอยู่ในประตูหลัก" },
+          "why": { "en": "Big lawns for children to run on, though the sun is strong and the crowds are thick", "th": "มีสนามหญ้ากว้างให้เด็กวิ่ง แต่แดดแรงและคนแน่น" },
+          "tip": { "en": "A 2026 guide says it is closed on Mondays and that children under 15 are free", "th": "คู่มือปี 2026 บอกว่าปิดวันจันทร์ และเด็กต่ำกว่า 15 ปีเข้าฟรี" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Foreign visitors ≈ ₹550 · under 15 free (a 2026 guide, check the price)", "th": "ชาวต่างชาติ ≈ ₹550 · ต่ำกว่า 15 ปีฟรี (คู่มือปี 2026 เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Red Fort, Netaji Subhash Marg, Old Delhi",
+          "ok": "2026-11",
+          "src": "https://www.nativeplanet.com/entry-details/red-fort-entry-fee-timings-30.html"
+        },
+        {
+          "name": { "en": "Lodhi Garden", "th": "สวนโลดี" },
+          "kind": "park",
+          "area": { "en": "Lodhi Estate, Delhi", "th": "โลดีเอสเตต เดลี" },
+          "what": { "en": "A big green park with old tombs, lawns, shady trees and long walking paths", "th": "สวนสาธารณะใหญ่ มีสุสานเก่า สนามหญ้า ต้นไม้ร่มรื่น และทางเดินยาว" },
+          "why": { "en": "Free space to run, with benches and shade; early morning is cooler and quieter for families", "th": "มีที่ว่างให้วิ่งเล่นฟรี มีม้านั่งและร่มเงา ตอนเช้าเย็นและเงียบกว่าสำหรับครอบครัว" },
+          "tip": { "en": "Most pages say it is free; one guide mentions a small fee, so carry a little cash", "th": "ส่วนใหญ่บอกว่าเข้าฟรี มีคู่มือหนึ่งบอกว่ามีค่าเข้าเล็กน้อย พกเงินสดติดตัวไว้" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lodhi Garden, Lodhi Road, New Delhi",
+          "ok": "2026-11",
+          "src": "https://www.amecipizzakitchen.com/blog/lodhi-garden-delhi-ticket-price-timings-attraction-2026"
+        },
+        {
+          "name": { "en": "Dilli Haat INA", "th": "ดิลลีฮาต อินะ" },
+          "kind": "market",
+          "area": { "en": "INA, South Delhi", "th": "อินะ เดลีใต้" },
+          "what": { "en": "An open-air craft and food market with stalls from many states of India", "th": "ตลาดงานฝีมือและอาหารกลางแจ้ง มีร้านจากหลายรัฐของอินเดีย" },
+          "why": { "en": "Easy to walk with a pram, with places to sit and eat; the crafts are fun to look at with children", "th": "เดินกับรถเข็นง่าย มีที่นั่งกินอาหาร ของงานฝีมือน่าดูสำหรับเด็ก" },
+          "tip": { "en": "Delhi Tourism's page lists a small entry fee, with a higher one for foreign visitors; hours differ between pages", "th": "หน้าของการท่องเที่ยวเดลีระบุค่าเข้าเล็กน้อย และสูงกว่าสำหรับชาวต่างชาติ เวลาแต่ละหน้าไม่ตรงกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ₹30 adults · ₹20 children · ₹100 foreign visitors (check the price)", "th": "≈ ₹30 ผู้ใหญ่ · ₹20 เด็ก · ₹100 ชาวต่างชาติ (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Dilli Haat INA, Aurobindo Marg, New Delhi",
+          "ok": "2026-11",
+          "src": "https://delhitourism.travel/dilli-haat-delhi"
+        },
+        {
+          "name": { "en": "National Science Centre", "th": "ศูนย์วิทยาศาสตร์แห่งชาติ" },
+          "kind": "museumkid",
+          "area": { "en": "Pragati Maidan, Delhi", "th": "ปรากาติไมดาน เดลี" },
+          "what": { "en": "A hands-on science museum with exhibit halls and a planetarium-style show room", "th": "พิพิธภัณฑ์วิทยาศาสตร์ที่เล่นได้จริง มีห้องจัดแสดงและห้องฉายแบบท้องฟ้าจำลอง" },
+          "why": { "en": "Indoors and cool, with buttons and models that older children enjoy; younger ones like the simple exhibits", "th": "อยู่ในร่มและเย็น มีปุ่มและโมเดลที่เด็กโตชอบ เด็กเล็กชอบนิทรรศการง่ายๆ" },
+          "tip": { "en": "The official page says it is open every day except Holi and Diwali; guides show 09:30–18:00 with ticket sales ending 17:15", "th": "หน้าทางการระบุเปิดทุกวันยกเว้นโฮลีและดิวาลี คู่มือแสดงเวลา 09:30–18:00 ขายบัตรถึง 17:15" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "General entry ≈ ₹70–80 in guides; shows cost extra (check the price)", "th": "ค่าเข้าทั่วไป ≈ ₹70–80 ตามคู่มือ รอบฉายจ่ายเพิ่ม (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "National Science Centre, Gate 1, Pragati Maidan, New Delhi",
+          "ok": "2026-11",
+          "src": "https://nscd.gov.in/plan-your-visit/"
+        },
+        {
+          "name": { "en": "National Rail Museum", "th": "พิพิธภัณฑ์รถไฟแห่งชาติ" },
+          "kind": "museumkid",
+          "area": { "en": "Chanakyapuri, Delhi", "th": "จาณักยปุรี เดลี" },
+          "what": { "en": "Old steam engines and carriages in a yard, with a small toy-train ride", "th": "หัวรถจักรไอน้ำและตู้รถไฟเก่าในลานกว้าง มีรถไฟของเล่นให้นั่งเล็กน้อย" },
+          "why": { "en": "Children can climb into some carriages and watch the engines up close; part is outdoors, with shaded halls", "th": "เด็กขึ้นไปในตู้รถไฟบางตู้และดูหัวรถจักรใกล้ๆ ได้ บางส่วนอยู่กลางแจ้ง มีโถงให้ร่ม" },
+          "tip": { "en": "Guides say it is closed on Mondays; prices and toy-train times differ between pages, so check on arrival", "th": "คู่มือบอกว่าปิดวันจันทร์ ราคาและเวลารถไฟของเล่นแต่ละหน้าไม่ตรงกัน เช็กตอนไปถึง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Adults about ₹50 on weekdays · children about ₹10 (guides differ, check the price)", "th": "ผู้ใหญ่ราว ₹50 วันธรรมดา · เด็กราว ₹10 (คู่มือไม่ตรงกัน เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "National Rail Museum, Chanakyapuri, New Delhi",
+          "ok": "2026-11",
+          "src": "https://delhitourism.travel/national-rail-museum-delhi"
+        },
+        {
+          "name": { "en": "Amber Fort", "th": "ป้อมแอมเบอร์" },
+          "kind": "culture",
+          "area": { "en": "Amer, Jaipur", "th": "อาเมร์ ชัยปุระ" },
+          "what": { "en": "A hilltop fort-palace of sandstone and marble above a lake, with courtyards and mirrored halls", "th": "ป้อมวังบนเนินเขาจากหินทรายและหินอ่อนเหนือทะเลสาบ มีลานกว้างและห้องกระจก" },
+          "why": { "en": "Steep ramps and steps, strong sun and crowds; best with a carrier, and a short visit for under-5s", "th": "ทางลาดและบันไดชัน แดดแรงและคนเยอะ เหมาะกับเป้อุ้ม และควรไปสั้นๆ สำหรับเด็กต่ำกว่า 5 ปี" },
+          "tip": { "en": "A 2026 guide lists a much higher foreign price than in 2025; check the price and whether children pay", "th": "คู่มือปี 2026 แสดงราคาชาวต่างชาติสูงกว่าปี 2025 มาก เช็กราคาและว่าเด็กจ่ายหรือไม่" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Foreign visitors ≈ ₹1,000 (a 2026 guide; the 2025 list said ₹500, check the price)", "th": "ชาวต่างชาติ ≈ ₹1,000 (คู่มือปี 2026 รายการปี 2025 ระบุ ₹500 เช็กราคาอีกครั้ง)" },
+          "book": "rec",
+          "q": "Amber Fort, Amer, Jaipur",
+          "ok": "2026-11",
+          "src": "https://thrillingtravel.in/planning-guide-amer-fort-tour-jaipur.html"
+        },
+        {
+          "name": { "en": "Hawa Mahal", "th": "หัวมาฮาล" },
+          "kind": "culture",
+          "area": { "en": "Old city, Jaipur", "th": "เมืองเก่า ชัยปุระ" },
+          "what": { "en": "The pink sandstone Palace of Winds with hundreds of small windows, and a short climb inside", "th": "พระราชวังสายลมหินทรายสีชมพู มีหน้าต่างเล็กนับร้อย และทางขึ้นสั้นๆ ภายใน" },
+          "why": { "en": "A short visit; the front is best seen from the street, and the narrow ramps inside are hard with a pram", "th": "ใช้เวลาไม่นาน ดูด้านหน้าจากถนนได้สวยที่สุด ทางลาดแคบข้างในไม่เหมาะกับรถเข็น" },
+          "tip": { "en": "A revision listed from 1 January raised the foreign price to ₹600; other guides still show less", "th": "การปรับราคาที่ประกาศตั้งแต่ 1 มกราคมขึ้นราคาชาวต่างชาติเป็น ₹600 คู่มืออื่นยังแสดงราคาต่ำกว่า" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Foreign visitors ≈ ₹600 (a revision listed by a local paper; check the price)", "th": "ชาวต่างชาติ ≈ ₹600 (การปรับราคาตามหนังสือพิมพ์ท้องถิ่น เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Hawa Mahal, Badi Choupad, Jaipur",
+          "ok": "2026-11",
+          "src": "https://www.pinkcitypost.com/visiting-jaipurs-heritage-sites-to-cost-more-from-jan-1-what-tourists-should-know/"
+        },
+        {
+          "name": { "en": "Jantar Mantar", "th": "จันตาร์มันตาร์" },
+          "kind": "culture",
+          "area": { "en": "Old city, Jaipur", "th": "เมืองเก่า ชัยปุระ" },
+          "what": { "en": "An open-air park of giant stone instruments for reading the sky, including a very large sundial", "th": "สวนกลางแจ้งของเครื่องมือหินยักษ์สำหรับดูท้องฟ้า มีนาฬิกาแดดขนาดใหญ่มาก" },
+          "why": { "en": "Children can run between the big shapes and climb the low steps; there is little shade, so go early", "th": "เด็กวิ่งระหว่างรูปทรงใหญ่และปีนบันไดเตี้ยได้ ร่มเงาน้อย ควรไปเช้า" },
+          "tip": { "en": "A local paper lists the revised price from 1 January; guides in other places show different figures", "th": "หนังสือพิมพ์ท้องถิ่นระบุราคาปรับใหม่ตั้งแต่ 1 มกราคม คู่มือที่อื่นแสดงตัวเลขต่างกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Foreign visitors ≈ ₹600 (check the price)", "th": "ชาวต่างชาติ ≈ ₹600 (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Jantar Mantar, Gangori Bazaar, Jaipur",
+          "ok": "2026-11",
+          "src": "https://www.pinkcitypost.com/visiting-jaipurs-heritage-sites-to-cost-more-from-jan-1-what-tourists-should-know/"
+        },
+        {
+          "name": { "en": "Albert Hall Museum", "th": "พิพิธภัณฑ์อัลเบิร์ตฮอลล์" },
+          "kind": "museum",
+          "area": { "en": "Ram Niwas Garden, Jaipur", "th": "สวนรามนิวาส ชัยปุระ" },
+          "what": { "en": "Rajasthan's oldest museum in a grand building, with galleries of crafts and local history", "th": "พิพิธภัณฑ์เก่าแก่ที่สุดของรัฐราชสถานในอาคารโอ่อ่า มีห้องจัดแสดงงานฝีมือและประวัติศาสตร์ท้องถิ่น" },
+          "why": { "en": "Indoors and out of the sun, and the garden around it is a place to run; the halls are quiet, so keep visits short for toddlers", "th": "อยู่ในร่มพ้นแดด และสวนรอบๆ ให้วิ่งเล่นได้ ห้องเงียบ เด็กเล็กควรดูไม่นาน" },
+          "tip": { "en": "A 2026 guide lists the revised foreign price; some guides say children under 7 often enter free", "th": "คู่มือปี 2026 ระบุราคาชาวต่างชาติที่ปรับใหม่ บางคู่มือบอกว่าเด็กต่ำกว่า 7 ปีมักเข้าฟรี" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Albert Hall Museum, Ram Niwas Garden, Jaipur",
+          "ok": "2026-11",
+          "src": "https://www.rajasthantourtrip.com/blog/albert-hall-museum-jaipur-complete-guide.html"
+        },
+        {
+          "name": { "en": "Humayun's Tomb", "th": "สุสานหุมายุน" },
+          "kind": "culture",
+          "area": { "en": "Nizamuddin, Delhi", "th": "นิซามุดดิน เดลี" },
+          "what": { "en": "A red-sandstone Mughal tomb in a vast square garden, the model for the Taj Mahal", "th": "สุสานราชวงศ์โมกุลหินทรายแดงในสวนสี่เหลี่ยมกว้าง ต้นแบบทัชมาฮาล" },
+          "why": { "en": "Wide lawns and flat paths let small children run safely", "th": "สนามหญ้ากว้างและทางราบ ให้เด็กเล็กวิ่งเล่นได้ปลอดภัย" },
+          "tip": { "en": "Come mid-morning and walk on to Sunder Nursery next door", "th": "ไปสายๆ แล้วเดินต่อไปสวนซุนเดอร์ที่อยู่ติดกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Humayun's Tomb, Nizamuddin, New Delhi",
+          "ok": "2026-11",
+          "src": "https://lbb.in/delhi/humayun-tomb"
+        },
+        {
+          "name": { "en": "Sunder Nursery", "th": "ซุนเดอร์ เนอร์สเซอรี" },
+          "kind": "park",
+          "area": { "en": "Nizamuddin, Delhi", "th": "นิซามุดดิน เดลี" },
+          "what": { "en": "A restored heritage park with Mughal tombs, lawns, a lake and bird and butterfly zones", "th": "สวนมรดกที่บูรณะแล้ว มีสุสานโมกุล สนามหญ้า ทะเลสาบ และโซนนกกับผีเสื้อ" },
+          "why": { "en": "It has its own children's play zone and shaded picnic lawns beside Humayun's Tomb", "th": "มีโซนเล่นสำหรับเด็กและสนามปิกนิกร่มรื่น ติดสุสานหุมายุน" },
+          "tip": { "en": "Under-5s are listed as free; the page's price table is old, so check", "th": "เด็กต่ำกว่า 5 ปีฟรีตามเว็บไซต์ แต่ตารางราคาเก่า ให้เช็กก่อน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sunder Nursery, Mathura Road, New Delhi",
+          "ok": "2026-11",
+          "src": "https://sundernursery.org/book-tickets.php"
+        },
+        {
+          "name": { "en": "City Palace, Jaipur", "th": "ซิตี้พาเลซ ชัยปุระ" },
+          "kind": "museum",
+          "area": { "en": "Old City, Jaipur", "th": "เมืองเก่า ชัยปุระ" },
+          "what": { "en": "The royal family's palace complex with courtyards, giant silver urns and costume and arms galleries", "th": "พระราชวังมีลานกว้าง โถเงินยักษ์ และห้องแสดงเครื่องแต่งกายกับอาวุธ" },
+          "why": { "en": "Shaded courtyards and short indoor galleries suit a rainy or hot afternoon", "th": "ลานร่มและห้องแสดงสั้นๆ ในร่ม เหมาะวันฝนหรือบ่ายร้อน" },
+          "tip": { "en": "Open 9.30 am to 5 pm, last entry 4.30 pm; closed on Holi", "th": "เปิด 09.30–17.00 น. เข้าได้ถึง 16.30 น. ปิดวันโฮลี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ₹300 foreign adults · children under 7 ₹50", "th": "≈ ₹300 ผู้ใหญ่ต่างชาติ · เด็กต่ำกว่า 7 ปี ₹50" },
+          "book": "none",
+          "q": "City Palace, Jaipur",
+          "ok": "2026-11",
+          "src": "https://www.trivenicabs.in/blog/city-palace-jaipur-complete-guide-2026"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://curlytales.com/india/food/restaurants-in-india-where-kids-can-eat-play-and-have-the-best-childrens-day-ever/",
+          "name": {
+            "th": "เพลย์เฮาส์ บาย เอสเซกซ์ฟาร์มส์",
+            "en": "Playhouse by Essex Farms"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนออโรบินโด นิวเดลี",
+            "en": "Aurobindo Marg, New Delhi"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีสไลเดอร์ บ่อบอล แทรมโพลีน มุมบทบาทสมมติ และด่านอุปสรรค",
+            "en": "Indoor play with slides, a ball pool, a trampoline, role play and an obstacle course"
+          },
+          "why": {
+            "th": "สำหรับเด็กตั้งแต่ 8 เดือน มีเลานจ์ให้พ่อแม่นั่งข้าง ๆ",
+            "en": "For children from eight months, with a lounge for parents beside it"
+          },
+          "tip": {
+            "th": "เปิด 11:00–20:00",
+            "en": "Open 11 AM to 8 PM"
+          },
+          "q": "Playhouse by Essex Farms, 4 Aurobindo Marg, New Delhi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://maverickbird.com/india/west/rajasthan-india-3/things-to-do-in-jaipur-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ผ้าพิมพ์มืออโนคี",
+            "en": "Anokhi Museum of Hand Printing"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อาเมร์ ชัยปุระ",
+            "en": "Amer, Jaipur"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เล็ก ๆ เรื่องการพิมพ์ผ้าด้วยแม่พิมพ์ไม้ ในคฤหาสน์ฮาเวลีศตวรรษที่ 16",
+            "en": "A small museum of hand-block printing in a restored 16th-century haveli"
+          },
+          "why": {
+            "th": "เด็ก ๆ พิมพ์เสื้อยืดหรือผ้าพันคอของตัวเองได้",
+            "en": "Children can block-print their own T-shirt or scarf"
+          },
+          "q": "Anokhi Museum of Hand Printing, Amer, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ชาวต่างชาติ Rs200 · เด็กต่ำกว่า 12 ปีเข้าฟรี",
+            "en": "Rs200 (foreigners); children under 12 free"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/japiur-with-kids-top-5-things-to-do/",
+          "name": {
+            "th": "ป้อมนาหัรครห์",
+            "en": "Nahargarh Fort"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เทือกเขาอราวัลลี ชัยปุระ",
+            "en": "Aravalli Hills, Jaipur"
+          },
+          "what": {
+            "th": "ป้อมบนเนินเขามองหลังคาบ้านของชัยปุระ",
+            "en": "A fort on the hills above Jaipur's rooftops"
+          },
+          "why": {
+            "th": "วิวจากดาดฟ้าวังสวยมากตอนพระอาทิตย์ตก",
+            "en": "The palace rooftop view is spectacular at sunset"
+          },
+          "tip": {
+            "th": "ไปช่วงพระอาทิตย์ตก ประตูวังปิด 17:30",
+            "en": "Go for sunset; the palace doors close at 5:30pm"
+          },
+          "q": "Nahargarh Fort, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Galta Ji",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://maverickbird.com/india/west/rajasthan-india-3/things-to-do-in-jaipur-with-kids/",
+          "name": {
+            "th": "วัดกัลตาจี วัดลิง",
+            "en": "Galtaji, the Monkey Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชัยปุระ",
+            "en": "Jaipur"
+          },
+          "what": {
+            "th": "กลุ่มวัดฮินดูในหุบเขาหิน มีลิงแสมและค่างอาศัยอยู่",
+            "en": "Hindu temples in a rocky valley, home to macaques and langurs"
+          },
+          "why": {
+            "th": "มีที่ให้เด็กวิ่งเล่น และมีภาพจิตรกรรมฝาผนังสวย",
+            "en": "Room to let off steam, and fine murals"
+          },
+          "q": "Shri Galta Peeth, Galta Ji, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://maverickbird.com/india/west/rajasthan-india-3/things-to-do-in-jaipur-with-kids/",
+          "name": {
+            "th": "สวนชวาหะร์เซอร์เคิล",
+            "en": "Jawahar Circle garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ชัยปุระ",
+            "en": "Jaipur"
+          },
+          "what": {
+            "th": "สวนที่มีน้ำพุดนตรี",
+            "en": "A garden with a musical fountain"
+          },
+          "why": {
+            "th": "หน้าเว็บแนะนำสำหรับเด็กเล็กอายุ 1–4 ปี",
+            "en": "The page lists it for toddlers aged 1 to 4"
+          },
+          "q": "Jawahar Circle Garden, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://curlytales.com/india/food/restaurants-in-india-where-kids-can-eat-play-and-have-the-best-childrens-day-ever/",
+          "name": {
+            "th": "จังเกิลดูเดิล คิดส์โซน",
+            "en": "Jungle Doodle Kids Zone"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศยามนคร ชัยปุระ",
+            "en": "Shyam Nagar, Jaipur"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีบ่อบอลและโครงปีนป่าย",
+            "en": "An indoor play centre with a ball pit and climbing frames"
+          },
+          "why": {
+            "th": "มีกิจกรรมพอให้เด็กพลังเยอะได้เล่นเต็มที่",
+            "en": "Enough to keep energetic children busy"
+          },
+          "tip": {
+            "th": "ร้านบอกว่าเปิดทุกวัน 11:00–20:00",
+            "en": "Open 11 AM to 8 PM daily, the venue says"
+          },
+          "q": "Jungle Doodle Kids Zone, Ayodhya Path, Shyam Nagar, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Soor Sarovar",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ค่าเข้า Rs. 30",
+            "en": "Rs. 30 (entry)"
+          },
+          "book": "none",
+          "src": "https://www.eurokidsindia.com/blog/kid-friendly-places-to-visit-in-agra.php",
+          "name": {
+            "th": "เขตรักษาพันธุ์นกสุรสโรวร",
+            "en": "Sur Sarovar Bird Sanctuary"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อักรา",
+            "en": "Agra"
+          },
+          "what": {
+            "th": "เขตรักษาพันธุ์นก มีนกหลายชนิดที่หาดูยากในอินเดีย",
+            "en": "A bird sanctuary with many species rarely seen in India"
+          },
+          "why": {
+            "th": "เด็กที่ชอบดูนกจะชอบมาก",
+            "en": "A treat for a little bird-watcher"
+          },
+          "tip": {
+            "th": "หน้าหนาวดีที่สุดสำหรับดูนกอพยพ",
+            "en": "Winter is best for the migrating birds"
+          },
+          "q": "Soor Sarovar Bird Sanctuary, Agra",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ Rs. 550 เด็ก Rs. 400",
+            "en": "Adults Rs. 550, children Rs. 400"
+          },
+          "book": "none",
+          "src": "https://www.eurokidsindia.com/blog/kid-friendly-places-to-visit-in-agra.php",
+          "name": {
+            "th": "สวนน้ำดอลฟิน",
+            "en": "Dolphin Water Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "อักรา ห่างสถานีรถบัสอีดกาห์ 18 กม.",
+            "en": "Agra, 18 km from the Idgah bus stand"
+          },
+          "what": {
+            "th": "เครื่องเล่นและสวนน้ำสำหรับเด็กและผู้ใหญ่",
+            "en": "Rides and a water park for children and adults"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นเด็กเยอะ อย่างม้าหมุนหนอนและม้าหมุน",
+            "en": "Plenty for children, like the caterpillar carousel and a merry-go-round"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 11:30–18:00 มีตู้ล็อกเกอร์ค่าบริการเล็กน้อย",
+            "en": "Open daily 11.30 a.m. to 6 p.m.; lockers for a small charge"
+          },
+          "q": "Dolphin Water Park, Agra",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ค่าเข้า Rs. 50",
+            "en": "Rs. 50 (entry)"
+          },
+          "book": "req",
+          "src": "https://www.eurokidsindia.com/blog/kid-friendly-places-to-visit-in-agra.php",
+          "name": {
+            "th": "ศูนย์อนุรักษ์และดูแลช้าง Wildlife SOS",
+            "en": "Wildlife SOS Elephant Conservation and Care Centre"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ใกล้มถุรา ระหว่างเดลีกับอักรา",
+            "en": "Near Mathura, between Delhi and Agra"
+          },
+          "what": {
+            "th": "องค์กรการกุศลที่ดูแลช้างป่วยและช้างที่ได้รับการช่วยเหลือ",
+            "en": "A charity that cares for sick and rescued elephants"
+          },
+          "why": {
+            "th": "ช่วยให้เด็ก ๆ เห็นใจสัตว์",
+            "en": "Helps children feel for animals"
+          },
+          "tip": {
+            "th": "ต้องจองก่อนทุกครั้ง เปิดทุกวัน",
+            "en": "Every visit must be booked ahead; open 7 days a week"
+          },
+          "q": "Wildlife SOS Elephant Conservation and Care Center, NH2, Mathura",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.easeindiatrip.com/blog/best-family-things-to-do-in-jaipur-with-kids/",
+          "name": {
+            "th": "เซ็นทรัลพาร์ก ชัยปุระ",
+            "en": "Central Park (Jaipur)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนปฤถวีราช รามบาฆ ชัยปุระ",
+            "en": "Prithviraj Road, Rambagh, Jaipur"
+          },
+          "what": {
+            "th": "สวนใหญ่มีทางเดินและน้ำพุดนตรี",
+            "en": "A large park with walking trails and a musical fountain"
+          },
+          "why": {
+            "th": "มีที่กว้างให้วิ่งเล่น",
+            "en": "Open space to run and play"
+          },
+          "q": "Central Park, Prithviraj Rd, Rambagh, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.easeindiatrip.com/blog/best-family-things-to-do-in-jaipur-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้งชัยปุระ",
+            "en": "Jaipur Wax Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ป้อมนาหาร์การห์ ชัยปุระ",
+            "en": "Nahargarh Fort, Jaipur"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้งในป้อมนาหาร์การห์",
+            "en": "A wax museum at Nahargarh Fort with lifelike figures"
+          },
+          "why": {
+            "th": "มีหุ่นดารา บุคคลในประวัติศาสตร์ และซูเปอร์ฮีโร่ที่เด็กชอบ",
+            "en": "Film stars, historical figures and superheroes children enjoy"
+          },
+          "q": "Jaipur Wax Museum, Nahargarh Fort, Jaipur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.holidify.com/blog/places-in-delhi-for-kids/",
+          "name": {
+            "th": "สวนเด็ก อินเดียเกต",
+            "en": "Children's Park, India Gate"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนกรรตัพยปาฐ อินเดียเกต นิวเดลี",
+            "en": "Kartavya Path, India Gate, New Delhi"
+          },
+          "what": {
+            "th": "สวนเด็กข้างอินเดียเกต",
+            "en": "A children's park beside India Gate"
+          },
+          "why": {
+            "th": "ติดรายชื่อที่เที่ยวสนุกสำหรับเด็กในเดลี",
+            "en": "On Delhi's list of fun places for children"
+          },
+          "q": "Children's Park, India Gate, New Delhi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 500 รูปี",
+            "en": "≈ ₹500"
+          },
+          "book": "none",
+          "src": "https://www.kangarookids.in/blog/indoor-and-outdoor-play-areas-in-delhi-for-kids/",
+          "name": {
+            "th": "ทีนีทาวน์ ปัญชาบีบาฆ",
+            "en": "Teeny Town (Punjabi Bagh)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนคลับ ปัญชาบีบาฆ เดลี",
+            "en": "Club Road, Punjabi Bagh, Delhi"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสำหรับเด็ก",
+            "en": "An indoor play place for children"
+          },
+          "why": {
+            "th": "เล่นในร่ม เปิด 11:00–21:00",
+            "en": "Indoor play, open 11:00 to 21:00"
+          },
+          "q": "Teeny Town, Club Road, Punjabi Bagh, New Delhi",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

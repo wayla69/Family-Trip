@@ -1,0 +1,719 @@
+{
+  "town": "jp (nine thin towns)",
+  "kind": "added",
+  "checked": "2026-11-26",
+  "rule": "Haiku agents, five web searches each, every row with a sentence copied from its page; scripts/library-check.cjs (name, quote, page date 2025–2026, or an undated Mapple/Tabelog food list the owner allowed on 25 Nov 2026); then every place opened on Google Maps on 2026-11-26 and kept only when it was not marked closed, matched the name and sat in the town. Well-known landmarks (temples, castles, national museums) were not looked up one by one.",
+  "towns": {
+    "jp-beppu": {
+      "eat": [
+        {
+          "name": "Komorebi",
+          "src": "https://tabelog.com/en/oita/A4402/A440202/44011179/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Hyotan Onsen",
+          "src": "https://japanactivity.com/rainy-day-in-beppu"
+        },
+        {
+          "name": "Beppu Hoyoland",
+          "src": "https://japanactivity.com/rainy-day-in-beppu"
+        },
+        {
+          "name": "Beppu Kaihin Sunamushi Onsen (sand bath)",
+          "src": "https://japanactivity.com/rainy-day-in-beppu"
+        },
+        {
+          "name": "Beppu Station Market",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        },
+        {
+          "name": "Jigoku Onsen Museum",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        },
+        {
+          "name": "Beppu Tower",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        },
+        {
+          "name": "Beppu Art Museum",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/oita/beppu/beppu-amekanko"
+        }
+      ]
+    },
+    "jp-fuji": {
+      "eat": [
+        {
+          "name": "Expression Kawaguchiko",
+          "src": "https://gurunavi.com/en/ncbx100/rst"
+        },
+        {
+          "name": "Mina no Hiroba",
+          "src": "https://www.magical-trip.com/media/top-kid-friendly-restaurants-near-mt-fuji-for-a-memorable-2025-family-outing/"
+        },
+        {
+          "name": "Happy Days Cafe",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Mori no Restaurant",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Sakurai Udon",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kosaku Kawaguchiko Hoto Noodles",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Curry House JIB",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Sanrakuen",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Shinsuido",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Abend",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Shoya no Ie",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Yamanashi Fuji Spring Water Village Aquarium",
+          "src": "https://www.asoview.com/note/5441/"
+        },
+        {
+          "name": "Fujisan no Nukumori Kipokipo",
+          "src": "https://www.nap-camp.com/mag/82843"
+        },
+        {
+          "name": "Fujisan Museum",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": "Mt. Fuji World Heritage Centre, Yamanashi",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": "Yamanashi Gem Museum",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": "Mt. Fuji Radar Dome Museum",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": "Craft Village Dallas Village",
+          "src": "https://www.jalan.net/news/article/722770/"
+        },
+        {
+          "name": "Oshino Hakkai",
+          "src": "https://japanforkids.jp/places/oshino-hakkai/"
+        },
+        {
+          "name": "Kawaguchiko Music Forest Museum",
+          "src": "https://japanforkids.jp/fuji-five-lakes-with-kids/"
+        }
+      ]
+    },
+    "jp-kagoshima": {
+      "eat": [
+        {
+          "name": "Cafe Ours",
+          "src": "https://achi-kochi.jp/article/15943/"
+        },
+        {
+          "name": "Kaikatei Taniyama",
+          "src": "https://www.happiness-life-hl.com/kagoshima-tyubu-bringing-children-lunch/"
+        },
+        {
+          "name": "Cafe Shokudo JyuJyu",
+          "src": "https://www.happiness-life-hl.com/kagoshima-tyubu-bringing-children-lunch/"
+        },
+        {
+          "name": "Angelo Cafe",
+          "src": "https://www.happiness-life-hl.com/kagoshima-tyubu-bringing-children-lunch/"
+        },
+        {
+          "name": "Chikyubatake Cafe",
+          "src": "https://www.happiness-life-hl.com/kagoshima-tyubu-bringing-children-lunch/"
+        },
+        {
+          "name": "Ramen Sora",
+          "src": "https://www.happiness-life-hl.com/kagoshima-tyubu-bringing-children-lunch/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Kagoshima Prefectural Museum",
+          "src": "https://www.asoview.com/note/5455/"
+        },
+        {
+          "name": "Sakurajima Visitor Centre",
+          "src": "https://www.gltjp.com/ja/article/item/21261/"
+        },
+        {
+          "name": "Sengan-en",
+          "src": "https://www.senganen.jp/"
+        },
+        {
+          "name": "Kinkowan Park",
+          "src": "https://www.nap-camp.com/mag/87598"
+        },
+        {
+          "name": "Yaeyama Park",
+          "src": "https://www.nap-camp.com/mag/87598"
+        },
+        {
+          "name": "Kagoshima Health Forest Park",
+          "src": "https://www.nap-camp.com/mag/87598"
+        },
+        {
+          "name": "Shiroyama Observation Deck",
+          "src": "https://summer.walkerplus.com/odekake/detail/ar1046s393418/"
+        }
+      ]
+    },
+    "jp-kobe": {
+      "eat": [
+        {
+          "name": "Mon",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Merican",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Grill Jujiya",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Diner Genji",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Fisherman's Market Mosaic",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Charcoal Steak Kitayama",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kobe Kitchen",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Grill Suematsu",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kobe Duchamp",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Yoshokuya So-hey",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Grill Miyako",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kobe Brando-tei",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Bona Trice",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Obon de Gohan Sannomiya Opa 2",
+          "src": "https://kobe-journal.com/archives/3769556976.html"
+        },
+        {
+          "name": "J.S. Burgers Cafe Kobe umie",
+          "src": "https://kobe-journal.com/archives/3769556976.html"
+        },
+        {
+          "name": "Roshoki",
+          "src": "https://prtimes.jp/main/html/rd/p/000000011.000088216.html"
+        },
+        {
+          "name": "Ganso Gyozaen",
+          "src": "https://www.mapple.net/region/a0504010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Nagata Tanku-suji",
+          "src": "https://www.mapple.net/region/a0504010100_g03000000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Bando Kobe Youth Science Museum",
+          "src": "https://www.asoview.com/note/5414/"
+        },
+        {
+          "name": "Nadahama Science Square",
+          "src": "https://www.asoview.com/note/5414/"
+        },
+        {
+          "name": "Kawasaki World",
+          "src": "https://www.asoview.com/note/5414/"
+        },
+        {
+          "name": "Toy's Campus",
+          "src": "https://www.asoview.com/note/5414/"
+        },
+        {
+          "name": "The Kids Kobe ROKKO i PARK",
+          "src": "https://www.nap-camp.com/mag/79042"
+        },
+        {
+          "name": "Kobe Animal Kingdom",
+          "src": "https://japanactivity.com/kobe-with-kids"
+        },
+        {
+          "name": "Oji Zoo",
+          "src": "https://japanactivity.com/kobe-with-kids"
+        },
+        {
+          "name": "Rokkosan Farm, Mount Rokko",
+          "src": "https://japanactivity.com/kobe-with-kids"
+        },
+        {
+          "name": "Kobe Harborland and Mosaic Ferris Wheel",
+          "src": "https://japanactivity.com/kobe-with-kids"
+        }
+      ]
+    },
+    "jp-matsuyama": {
+      "eat": [
+        {
+          "name": "Kappo Tsujii",
+          "src": ""
+        },
+        {
+          "name": "Kurofune Soba Ropeway Street",
+          "src": ""
+        },
+        {
+          "name": "Umenohana Matsuyama",
+          "src": ""
+        },
+        {
+          "name": "Setouchi Kappo Himemusubi",
+          "src": ""
+        },
+        {
+          "name": "Yakiniku Niku no Miya",
+          "src": ""
+        },
+        {
+          "name": "Rokujiya Dogo",
+          "src": "https://www.mapple.net/region/a0603070100_s-situation=family/spot/"
+        },
+        {
+          "name": "Ichiroku Honpo Dogo",
+          "src": "https://www.mapple.net/region/a0603070100_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "KIT PLAY",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": "Nanairo Play Hall",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": "Matsuyama Kodomo-kan",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": "Himitsu no Mori",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": "Round One Stadium Matsuyama",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": "Ura Dogo",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": "Dogo Onsen Honkan",
+          "src": "https://www.mapple.net/sp_spot/573290/"
+        },
+        {
+          "name": "SPA P-SPO Hojo",
+          "src": "https://www.asoview.com/note/5469/"
+        },
+        {
+          "name": "Minami-Edo Park",
+          "src": "https://www.asoview.com/note/6947"
+        }
+      ]
+    },
+    "jp-nagoya": {
+      "eat": [
+        {
+          "name": "Espresso D Works Nagoya",
+          "src": ""
+        },
+        {
+          "name": "Rob's Pasta Sakae",
+          "src": "https://macaro-ni.jp/175279"
+        },
+        {
+          "name": "Eikichi Hanten",
+          "src": "https://macaro-ni.jp/175279"
+        },
+        {
+          "name": "Bistro Cafe The Flower Table",
+          "src": "https://macaro-ni.jp/175279"
+        },
+        {
+          "name": "Kato Coffee Sakae",
+          "src": "https://www.mapple.net/region/a0403020000_g03040000_s-situation=family/spot/"
+        },
+        {
+          "name": "Bucyo Coffee",
+          "src": "https://www.mapple.net/region/a0403020000_g03040000_s-situation=family/spot/"
+        },
+        {
+          "name": "Pancake House HoiHoi",
+          "src": "https://www.mapple.net/region/a0403020000_g03040000_s-situation=family/spot/"
+        },
+        {
+          "name": "Zarame Nagoya",
+          "src": "https://www.mapple.net/region/a0403020000_g03040000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Fuji Nagoya Science Museum",
+          "src": "https://japanactivity.com/rainy-day-things-to-do-in-nagoya"
+        },
+        {
+          "name": "Toyota Commemorative Museum of Industry and Technology",
+          "src": "https://japanactivity.com/rainy-day-things-to-do-in-nagoya"
+        },
+        {
+          "name": "Nagoya City Art Museum",
+          "src": "https://japanactivity.com/rainy-day-things-to-do-in-nagoya"
+        },
+        {
+          "name": "Noritake Garden Craft Center and Museum",
+          "src": "https://japanactivity.com/rainy-day-things-to-do-in-nagoya"
+        },
+        {
+          "name": "Tokugawa Art Museum",
+          "src": "https://japanactivity.com/rainy-day-things-to-do-in-nagoya"
+        },
+        {
+          "name": "Yamazaki Mazak Museum of Art",
+          "src": "https://japanactivity.com/rainy-day-things-to-do-in-nagoya"
+        },
+        {
+          "name": "Osu Kannon District and Arcade",
+          "src": "https://japanactivity.com/things-to-do-in-nagoya-with-kids"
+        },
+        {
+          "name": "Sea Life Nagoya Aquarium",
+          "src": "https://japanactivity.com/things-to-do-in-nagoya-with-kids"
+        },
+        {
+          "name": "The Electricity Museum",
+          "src": "https://nagoya-info.jp/en/spot/detail/50"
+        },
+        {
+          "name": "Atsuta Jingu Shrine",
+          "src": "https://aichinow.pref.aichi.jp/spots/detail/10/"
+        },
+        {
+          "name": "Sky Boat",
+          "src": "https://aichinow.pref.aichi.jp/en/columns/detail/279/"
+        },
+        {
+          "name": "Shirakawa Park",
+          "src": "https://japanactivity.com/things-to-do-in-nagoya-with-kids"
+        }
+      ]
+    },
+    "jp-nara": {
+      "eat": [
+        {
+          "name": "Izasa Nakatani-hompo Yumekaze-hiroba",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Mia's Bread",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Jubei Shokudo (Yagyu)",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Edogawa Naramachi",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Cafe Cojica",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Koharu Cafe",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Bolik Coffee",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Drink Drank",
+          "src": "https://www.mapple.net/region/a0506010100_g03000000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Todai-ji Temple Great Buddha",
+          "src": "https://japanactivity.com/nara-with-kids"
+        },
+        {
+          "name": "Nara National Museum",
+          "src": "https://japanactivity.com/nara-with-kids"
+        },
+        {
+          "name": "National Treasure Museum, Kasuga Taisha",
+          "src": "https://japanactivity.com/nara-with-kids"
+        },
+        {
+          "name": "Kasuga Taisha Shrine",
+          "src": "https://japanactivity.com/nara-with-kids"
+        },
+        {
+          "name": "Isuien Garden",
+          "src": "https://japanactivity.com/nara-with-kids"
+        },
+        {
+          "name": "Yoshikien Garden",
+          "src": "https://selfguidejapan.com/blog/things-to-do-in-nara"
+        },
+        {
+          "name": "Naramachi Old Town",
+          "src": "https://japanactivity.com/nara-with-kids"
+        },
+        {
+          "name": "Naramachi Koshi-no-Ie",
+          "src": "https://selfguidejapan.com/blog/things-to-do-in-nara"
+        },
+        {
+          "name": "Yakushi-ji",
+          "src": "https://selfguidejapan.com/blog/things-to-do-in-nara"
+        }
+      ]
+    },
+    "jp-sendai": {
+      "eat": [
+        {
+          "name": "Cafe Knit",
+          "src": "https://local-media.heteml.net/archives/43219"
+        },
+        {
+          "name": "Cafe & Kissa Sugasol",
+          "src": "https://local-media.heteml.net/archives/43219"
+        },
+        {
+          "name": "Ooedo Onsen Premium Hotel Sokan (buffet)",
+          "src": "https://newt.net/jpn/miyagi/mag-2068655196"
+        }
+      ],
+      "do": [
+        {
+          "name": "Trampo-Pit",
+          "src": "https://www.nap-camp.com/mag/82352"
+        },
+        {
+          "name": "D Bouldering Sendai Nagamachi",
+          "src": "https://www.nap-camp.com/mag/82352"
+        },
+        {
+          "name": "Tsutsujigaoka Park",
+          "src": "https://www.gltjp.com/en/article/item/20987/"
+        },
+        {
+          "name": "Sendai Castle Ruins (Aoba Castle)",
+          "src": "https://www.gltjp.com/en/article/item/21046/"
+        },
+        {
+          "name": "Zuihoden",
+          "src": "https://www.gltjp.com/en/article/item/21046/"
+        },
+        {
+          "name": "Jozenji-dori",
+          "src": "https://www.haveagood-holiday.com/th/articles/sendai-things-to-do"
+        },
+        {
+          "name": "Osaki Hachimangu",
+          "src": "https://www.haveagood-holiday.com/th/articles/sendai-things-to-do"
+        },
+        {
+          "name": "Zuiganji",
+          "src": "https://www.haveagood-holiday.com/th/articles/sendai-things-to-do"
+        },
+        {
+          "name": "Shiogama Seafood Wholesale Market",
+          "src": "https://www.tohokukanko.jp/en/features/detail_220.html"
+        }
+      ]
+    },
+    "jp-takamatsu": {
+      "eat": [
+        {
+          "name": "Goyashiki",
+          "src": "https://www.mapple.net/spot/37000081/"
+        },
+        {
+          "name": "Tsurumaru",
+          "src": "https://www.mapple.net/spot/37010088/"
+        },
+        {
+          "name": "Kume-ike Udon",
+          "src": "https://www.mapple.net/spot/37010161/"
+        },
+        {
+          "name": "Matsushita Seimenjo",
+          "src": "https://www.mapple.net/spot/37010219/"
+        },
+        {
+          "name": "Ikegami Seimenjo",
+          "src": "https://www.mapple.net/spot/37010303/"
+        },
+        {
+          "name": "Teuchi Udon Santoku",
+          "src": "https://www.mapple.net/spot/37010483/"
+        },
+        {
+          "name": "Moriya",
+          "src": "https://www.mapple.net/spot/37010484/"
+        },
+        {
+          "name": "Udon Baka Ichidai",
+          "src": "https://www.mapple.net/spot/37010536/"
+        },
+        {
+          "name": "Oshimaya",
+          "src": "https://www.mapple.net/spot/37010585/"
+        },
+        {
+          "name": "Miyatake Udon",
+          "src": "https://www.mapple.net/spot/37010588/"
+        },
+        {
+          "name": "Ippuku Kokubunji",
+          "src": "https://www.mapple.net/spot/37010589/"
+        },
+        {
+          "name": "Sanbiki-no-Kobuta",
+          "src": "https://tabiiro.jp/gourmet/article/kagawa-sweets-wagashi/"
+        },
+        {
+          "name": "Patissier Yama",
+          "src": "https://tabiiro.jp/gourmet/article/kagawa-sweets-wagashi/"
+        },
+        {
+          "name": "Cafe Konditorei & Rest Shika",
+          "src": "https://retty.me/theme/100796100/"
+        },
+        {
+          "name": "Kawahigashi Kashiten",
+          "src": "https://retty.me/theme/100796100/"
+        },
+        {
+          "name": "La Famille",
+          "src": "https://retty.me/theme/100796100/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Chichu Art Museum",
+          "src": "https://benesse-artsite.jp/en/art/chichu.html"
+        },
+        {
+          "name": "Lee Ufan Museum",
+          "src": "https://benesse-artsite.jp/en/art/lee-ufan.html"
+        },
+        {
+          "name": "Naoshima New Museum of Art",
+          "src": "https://benesse-artsite.jp/en/art/nnmoa.html"
+        },
+        {
+          "name": "Benesse House Museum",
+          "src": "https://benesse-artsite.jp/en/art/benessehouse-museum.html"
+        },
+        {
+          "name": "Hiroshi Sugimoto Gallery: Time Corridors",
+          "src": "https://benesse-artsite.jp/en/art/sugimoto-gallery.html"
+        },
+        {
+          "name": "Takamatsu Art Museum",
+          "src": "https://www.city.takamatsu.kagawa.jp/museum/takamatsu/english"
+        },
+        {
+          "name": "Ferry from Takamatsu to Naoshima",
+          "src": "https://naoshima.net/en/access/access_area/"
+        },
+        {
+          "name": "Shodoshima Olive Park",
+          "src": "https://www.japan-guide.com/e/e5432.html"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps": [
+      "つばめcafe (Kagoshima)",
+      "食房たけだ (Nara)",
+      "ひげぱんだ (Sendai)"
+    ],
+    "name or place did not match on Google Maps": [
+      "オルソンさんのいちご",
+      "Sango Café",
+      "和食・菊水",
+      "奈良ホテル 花菊",
+      "ちきゅうのにわ ぽっぷ",
+      "Kids Base HIMITSUBA"
+    ],
+    "other town": [
+      "番所鼻自然公園 (Ibusuki)",
+      "岡製麺所 and うどん喫茶スタート (Ayagawa)",
+      "KidZania Koshien (Nishinomiya)",
+      "Ijuin/Hioki places"
+    ],
+    "not for the library": [
+      "路のカフェ (a café-bar)",
+      "河口湖猿まわし劇場 (animal show)",
+      "Nagoya Station underground malls, Oasis 21, Higashimuki shopping street",
+      "six Joyful branches, Gusto, Jolly Pasta, Royal Host, Gyukaku (chains)",
+      "スキッズガーデン 鹿児島 (2.5★)"
+    ],
+    "quote not on its page": 7
+  }
+}

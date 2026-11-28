@@ -176,6 +176,19 @@ fs.writeFileSync(path.join(DATA_DIR, 'media', 'p', 'other-trip', 'ph-other-001.j
 ok((await fetch(BASE + '/media/ph-other-001', { headers: { cookie: ck } })).status === 404, "another family's photo id → 404 (IDOR)");
 ok((await up('ph-other-001')).status === 409, "can't overwrite another family's photo id");
 
+// one height per child (migration 0042): an old "Growing up" height moves into the passport's Explorer ID — the last day's box when it is
+// empty, else the first day's; when both are filled the passport keeps its own (the old row stays, never read)
+{ const fam = (await pool.query('SELECT family_id FROM trips WHERE id = $1', [T])).rows[0].family_id;
+  const row = (kid, key, text) => pool.query("INSERT INTO entries (id, family_id, trip_id, kind, child, first_key, text) VALUES ($1, $2, $3, 'field', $4, $5, $6)", [`${T}.field.${key}.${kid}`, fam, T, kid, key, text]);
+  await row('hz1', 'height', '96');                                                    // nothing in the passport yet → the last day's box
+  await row('hz2', 'height', '80'); await row('hz2', 'height_last', '82');            // the last day is filled → the first day's box
+  await row('hz3', 'height', '101'); await row('hz3', 'height_first', '99'); await row('hz3', 'height_last', '100');   // both filled → kept
+  await pool.query(fs.readFileSync(new URL('../migrations/0042_one_height.sql', import.meta.url), 'utf8'));
+  const got = Object.fromEntries((await pool.query("SELECT id, text FROM entries WHERE child IN ('hz1','hz2','hz3')")).rows.map((r) => [r.id.slice(T.length + 7), r.text]));
+  ok(JSON.stringify(got, Object.keys(got).sort()) === JSON.stringify({ 'height.hz3': '101', 'height_first.hz2': '80', 'height_first.hz3': '99', 'height_last.hz1': '96', 'height_last.hz2': '82', 'height_last.hz3': '100' }),
+    `migration 0042: the old height moves into the passport's empty box (last day first), a filled passport keeps its own (${JSON.stringify(got)})`);
+  await pool.query("DELETE FROM entries WHERE child IN ('hz1','hz2','hz3')"); }
+
 // ---- check-ins, days, firsts, trips
 ok((await put('/api/b/places', { trip: T, key: 'Hong Kong Disneyland', day: 1, kind: 'place', name: { en: 'Hong Kong Disneyland', th: 'ฮ่องกงดิสนีย์แลนด์' } })).ok, 'check in at Disneyland');
 await put('/api/b/places', { trip: T, key: 'Hong Kong Disneyland', day: 1 });
@@ -191,6 +204,15 @@ ok((await put(`/api/b/spend/${T}.sp.bad1`, { ...sp, cat: 'casino' })).status ===
   && (await put(`/api/b/spend/${T}.sp.bad3`, { ...sp, cur: 'dollars' })).status === 400 && (await put(`/api/b/spend/${T}.sp.bad4`, { ...sp, day: 99 })).status === 400, 'spend: unknown category, negative amount, bad currency or day → 400');
 ok((await state(vck)).spend.length === 0 && (await state()).spend.length > 0, 'spending is the parents\' own ledger: a relative\'s state carries none of it');
 ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'tz-test-book', title: { th: 'ทดสอบ', en: 'Test' }, date_from: '2030-01-01', date_to: '2030-01-02', timezone: 'Pacific/Sidney' }) })).status === 400, 'a new book with a timezone the platform does not know is refused (reminders would stop for every book)');
+{ // B3: the plan a book's spending is held against — the parents' own, kept in settings (a bundled book's theme is rewritten on boot)
+  const bp = await put(`/api/b/budget/${T}`, { lines: [{ cat: 'food', cur: 'mop', amt: 2000 }, { cat: 'casino', cur: 'MOP', amt: 5 }, { cat: 'tickets', cur: 'MOP', amt: -1 }, { cat: 'food', cur: 'MOP', amt: 9 }] });
+  const bj = await bp.json(), s1 = await state(), sv = await state(vck);
+  ok(bp.ok && bj.budget.src === 'own' && JSON.stringify(bj.budget.lines) === '[{"cat":"food","cur":"MOP","amt":2000}]' && s1.budgets[T].lines[0].amt === 2000 && !Object.keys(sv.budgets || {}).length,
+    `budget (B3): a plan of our own is kept (bad category, amount and a second line of the same kind and money dropped) and only the parents see it (${JSON.stringify(bj)})`);
+  ok((await put(`/api/b/budget/${T}`, { lines: 'x' })).status === 400 && (await put(`/api/b/budget/no-such-book`, { lines: [] })).status === 400 && (await put(`/api/b/budget/${T}`, { lines: [] }, { ...H, cookie: vck })).status === 403,
+    'budget (B3): a malformed plan, an unknown book or a relative → refused');
+  const bc = await (await put(`/api/b/budget/${T}`, { lines: [] })).json();
+  ok(bc.budget === null && !(await state()).budgets[T], 'budget (B3): an empty plan takes our own away'); }
 ok((await fetch(BASE + `/api/b/spend/${T}.sp.0001`, { method: 'DELETE', headers: H })).ok && !(await state()).spend.length, 'spend deleted');
 const nt = await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'chiang-mai-2027', title: { th: 'เชียงใหม่', en: 'Chiang Mai' }, date_from: '2027-08-10', date_to: '2027-08-13' }) });
 s = await state();
@@ -354,7 +376,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(au.days.every((d) => d.plan.plan.length >= 4) && a2.plan.length === 9 && a2.plan[3].t === '11:20' && /Bald Hill/.test(a2.plan[3].en) && a2.plan[3].note, 'AU: 16 timed days; day 2 has 9 steps with notes');
   { const whole = (t) => t.days.every((d) => { const x = d.plan.tale; return x && x.scenes.length >= 3 && x.scenes.every((s) => s.e && s.h.th && s.h.en) && x.scenes.map((s) => s.en).join(' ') === x.en && x.scenes.map((s) => s.th).join(' ').replace(/\s+/g, ' ') === x.th.replace(/\s+/g, ' '); });
     ok(whole(au) && whole(hk), 'both books: a guide’s story every day, cut into scenes (emoji + heading) that keep the story’s own words'); }
-  ok(/Waldegrave/.test(a2.stay.addr) && /google\.com\/maps/.test(a2.route) && a2.eat.length === 26 && a2.learn.length >= 3 && a2.quiz.length === 3 && a2.moving.en === '2 h 55 in 3 legs', 'AU day 2: stay + address, maps route, 26 places to eat, learn cards, 3 quiz questions, moving summary');
+  ok(/Waldegrave/.test(a2.stay.addr) && /^https:\/\/www\.google\.com\/maps\//.test(a2.route) && a2.eat.length === 26 && a2.learn.length >= 3 && a2.quiz.length === 3 && a2.moving.en === '2 h 55 in 3 legs', 'AU day 2: stay + address, maps route, 26 places to eat, learn cards, 3 quiz questions, moving summary');
   // nothing abbreviated: every leg with its directions link, the meal picks with what to order + a backup, the food along the route by stop
   ok(a2.legs.length === 3 && a2.legs[0].from === 'Sydney Airport' && a2.legs[0].to === 'Bald Hill Lookout' && a2.legs[0].min === 50 && /maps\/dir\/.*travelmode=driving/.test(a2.legs[0].url), 'AU day 2: 3 drive legs, each with Google Maps directions');
   ok(a2.picks.length === 3 && a2.picks[0].name === 'Fish Vibes' && /barramundi/.test(a2.picks[0].what.en) && a2.picks[0].alt.q.includes('Kiama') && a2.food.length === 6 && a2.food.every((f) => f.items.every((x) => x.q && x.what.en)), 'AU day 2: 3 meal picks (what + backup) and food by stop, every place with a maps query');
@@ -367,7 +389,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(/AUD 1,375/.test(JSON.stringify(n.car)) && !/฿|THB/.test(JSON.stringify(n.car)), 'AU van: the rental price in AUD (owner\'s call, 18 Oct 2026), never in baht');
   const rs = n.restaurants, rItems = rs.groups.flatMap((g) => g.items);
   ok(rs.groups.length === 26 && rItems.length === 294 && rs.kinds.length === 3 && rItems.every((x) => x.q && x.name && x.what.th && x.what.en) && rItems.filter((x) => x.pick).length === 61, 'AU "Where to eat": 26 areas, 294 places (3 kinds), each with Thai + English and a maps query; 61 picks');
-  ok(hk.info.restaurants.groups.length === 21 && hk.info.restaurants.groups.flatMap((g) => g.items).length === 224 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q && x.what.th && x.what.en && [0, 1, 2].includes(x.kind)), 'HK manual Part 12 "Restaurant guide": 21 sections, 223 places, Thai + English, a maps query each');
+  ok(hk.info.restaurants.groups.length === 21 && hk.info.restaurants.groups.flatMap((g) => g.items).length === 222 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q && x.what.th && x.what.en && [0, 1, 2].includes(x.kind)), 'HK manual Part 12 "Restaurant guide": 21 sections, 222 places, Thai + English, a maps query each');
   ok(hk.days.every((d) => d.wx && (d.plan.learn || []).length >= 2 && (d.plan.quiz || []).length >= 3 && /^https:\/\/www\.google\.com\/maps\/dir\/\?api=1&origin=.+&destination=.+&travelmode=driving$/.test(d.plan.route)) && hk.info.wild.length >= 10 && hk.info.wild.some((w) => /Mickey/.test(w.name.en)) && hk.info.wildLabel.short.th, 'HK: weather, learn cards, quiz and a whole-day route every day; animals + Disney characters under their own label');
   ok(au.days.every((d) => d.plan.money && /A\$/.test(d.plan.money.en) && !/฿|THB|baht/i.test(JSON.stringify(d.plan.money)) && d.plan.pick) && au.passport.declaration.counts.length === 6, 'AU: money today in AUD (never baht) and a local pick on all 16 days; kids\' customs declaration in the passport');
   ok(au.info.emergency.some((e) => e.tel === '000' && e.main) && au.info.stays.length === 8 && au.info.pack.length === 4 && au.info.general.length === 4 && au.info.wild.length === 10 && au.info.prices.rows.length === 9 && au.info.more.some((m) => /Budget/.test(m.title.en) && m.table.rows.length >= 10), 'AU pocket guide: 000, 8 stays, packing, learn-in-the-car, animals, prices, AUD budget');
@@ -578,6 +600,20 @@ ok(!(await state()).comments.some((c) => c.media === 'ph-test-0001'), 'a photo d
   ok(slow >= 1, `phone problems: a phone sending in a loop is slowed (${slow} of 25 refused)`); }
 // the library of places to eat with the app's built-in list (server/eats): the towns carry their country; a built-in place says so;
 // a place of our own book wins over a built-in one of the same name
+// the family's own places in the help-and-play list (care_own, migration 0040): a parent adds one under a library town, it comes back
+// with the built-in rows marked own; a phone number is refused, a relative cannot add, a parent removes it
+{ const care = async (c = ck) => (await (await fetch(BASE + '/api/b/care?ids=th-nan', { headers: { cookie: c } })).json()).places['th-nan'] || [];
+  const before = (await care()).length;
+  const add = await put('/api/b/care/own/co-test0001', { place: 'th-nan', name: 'Our test clinic', kind: 'hospital', note: 'Ground floor, kind staff' });
+  const got = await care(), mine = got.find((x) => x.id === 'co-test0001');
+  const phone = await put('/api/b/care/own/co-test0002', { place: 'th-nan', name: 'Call us', kind: 'pharmacy', note: '+66 81 234 5678' });
+  const rel = await put('/api/b/care/own/co-test0003', { place: 'th-nan', name: 'Relative place', kind: 'play', note: '' }, { ...H, cookie: vck });
+  const relSees = (await care(vck)).some((x) => x.id === 'co-test0001');
+  await fetch(BASE + '/api/b/care/own/co-test0001', { method: 'DELETE', headers: H });
+  const after = (await care()).length;
+  ok(add.status === 200 && mine && mine.own && mine.kind === 'hospital' && mine.what.en === 'Ground floor, kind staff' && got.length === before + 1 && phone.status === 400 && rel.status === 403 && relSees && after === before,
+    `care: a parent adds a place we know (own: ${!!(mine && mine.own)}), a phone number is refused (${phone.status}), a relative cannot add (${rel.status}) but sees it, a parent removes it (${before} → ${got.length} → ${after})`); }
+
 { const lib = await (await fetch(BASE + '/api/b/eatlib', { headers: { cookie: ck } })).json();
   const tok = (lib.towns || []).find((t) => t.tkey === 'tokyo'), mac = (lib.towns || []).find((t) => t.tkey === 'macau');
   ok(lib.towns.length > 100 && tok && tok.n >= 12 && !tok.own && tok.country && tok.country.cc === 'jp' && mac && mac.own > 100 && mac.n >= mac.own, `eat library: the built-in list fills the towns of the picture library, each with its country; our own books' towns count their own (${lib.towns.length} towns · Tokyo ${tok && tok.n} · Macau ${mac && mac.n}/${mac && mac.own} ours)`);
@@ -587,6 +623,14 @@ ok(!(await state()).comments.some((c) => c.media === 'ph-test-0001'), 'a photo d
   const okNames = new Set(E0.starterFiles().flatMap((f) => E0.starterRows(f, idx0)).filter((x) => x.tkey === 'tokyo' && x.st === 'open').map((x) => x.name));
   ok(tk.every((x) => x.src === 'starter' && x.what && x.pr && x.q && (okNames.has(x.name) ? x.st === 'open' && /^20\d\d-\d\d-01$/.test(x.checked) : !x.st && !x.checked)),
     `eat library: a built-in place is marked as one — not checked, unless its file says a web search confirmed it (${okNames.size} of ${tk.length} in Tokyo confirmed)`);
+  { // our own verdict from the travel notebook rides on the library place of the same name
+    const fam1 = (await pool.query('SELECT id FROM families LIMIT 1')).rows[0].id, trip1 = (await pool.query('SELECT id FROM trips LIMIT 1')).rows[0].id;
+    await pool.query("INSERT INTO reviews (id, family_id, trip_id, kind, key, name, rating, again) VALUES ($1, $2, $3, 'food', 'x', $4, 5, true) ON CONFLICT DO NOTHING", [`${trip1}.rev.food.libtest`, fam1, trip1, JSON.stringify({ en: tk[0].name, th: tk[0].name })]);
+    const again = (await (await fetch(BASE + '/api/b/eatlib?town=tokyo', { headers: { cookie: ck } })).json()).places;
+    const hit = again.find((x) => x.name === tk[0].name), others = again.filter((x) => x.fam);
+    ok(hit && hit.fam && hit.fam.r === 5 && hit.fam.again === true && others.length === 1, `eat library: a place we rated in the travel notebook carries our stars (${JSON.stringify(hit && hit.fam)} · ${others.length} rated)`);
+    await pool.query("DELETE FROM reviews WHERE id=$1", [`${trip1}.rev.food.libtest`]); }
+  ok(tk.length && tk.every((x) => x.cc === 'jp'), `eat library: each place carries its country, so the phone can show its price roughly in baht (${[...new Set(tk.map((x) => x.cc))].join(',')})`);
   const dup = (await pool.query("SELECT name, count(*)::int n FROM eat_lib WHERE tkey='macau' GROUP BY nkey, name HAVING count(*) > 1")).rows;
   // the names our Hong Kong–Macau book and the built-in Macau file both hold: each is one row, and it is the book's
   const E = createRequire(import.meta.url)('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8')), seed = JSON.parse(fs.readFileSync('server/seeds/hk-macau-2026.json', 'utf8'));

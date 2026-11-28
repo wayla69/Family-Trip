@@ -1,0 +1,130 @@
+{
+  "town": "jp-matsuyama",
+  "kind": "eats + sights",
+  "checked": "2026-11-25",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "Haiku agents; rows from asoview.com (2025-12), HotPepper (undated) and Mapple’s 2026 Matsuyama family-dining page (no page date: the owner allowed undated food guides on 25 Nov 2026 when Google Maps confirms the shop)",
+  "added": [
+    {
+      "name": "LAVINA (Tsubaki)",
+      "page_name": "和牛ハンバーグと生パスタ LAVINA(ラビーナ)松山椿店",
+      "src": "https://www.hotpepper.jp/SA83/G011/dncLY0084/",
+      "date": "2026-11",
+      "map": "Google Maps 'LAVINA 松山椿店' (5-9-25 Iai), newest review shown a day ago"
+    },
+    {
+      "name": "Kushikatsu Tanaka (Oguri)",
+      "page_name": "串カツ田中　松山小栗店",
+      "src": "https://www.hotpepper.jp/SA83/G011/dncLY0084/",
+      "date": "2026-11",
+      "map": "Google Maps 'Kushikatsu Tanaka Matsuyama Oguri Store' (3-5-10 Oguri), newest review shown 9 hours ago"
+    },
+    {
+      "name": "Sushimaru",
+      "page_name": "日本料理 すし丸",
+      "src": "https://www.mapple.net/region/a0603070100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Sushimaru' (Nibancho), newest review shown 5 days ago"
+    },
+    {
+      "name": "Hinode okonomiyaki",
+      "page_name": "お好み焼 日の出",
+      "src": "https://www.mapple.net/region/a0603070100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Hinode' (11-8 Misugimachi), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Restaurant Kadota",
+      "page_name": "レストラン門田",
+      "src": "https://www.mapple.net/region/a0603070100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Kadota Restaurant' (Sanbancho), newest review shown 3 weeks ago"
+    },
+    {
+      "name": "Kotori",
+      "page_name": "ことり",
+      "src": "https://www.mapple.net/region/a0603070100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'Kotori' (3-7-2 Minatomachi), newest review shown 3 days ago"
+    },
+    {
+      "name": "Hyota",
+      "page_name": "瓢太",
+      "src": "https://www.mapple.net/region/a0603070100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps '中華そば・おでん 瓢太' (6-1-10 Sanbancho), newest review shown 20 hours ago"
+    },
+    {
+      "name": "Kamesoba Jun",
+      "page_name": "かめそば じゅん",
+      "src": "https://www.mapple.net/region/a0603070100_g03000000_s-situation=family/spot/",
+      "date": "undated",
+      "map": "Google Maps 'かめそば おでんの店 じゅん' (Nibancho), newest review shown 6 days ago"
+    },
+    {
+      "name": "Ehime Children’s Castle",
+      "page_name": "えひめこどもの城",
+      "src": "https://www.asoview.com/note/6290/",
+      "date": "2025-12",
+      "map": "Google Maps 'Ehime Children's Castle', newest review shown a day ago"
+    },
+    {
+      "name": "The Kids, Matsuyama Mitsukoshi",
+      "page_name": "ザキッズ 松山三越店",
+      "src": "https://www.asoview.com/note/6290/",
+      "date": "2025-12",
+      "map": "Google Maps 'ザキッズ 松山三越店' (Ichibancho), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Tondemi Ehime (Emifull Masaki)",
+      "page_name": "トンデミ愛媛 エミフルMASAKI店",
+      "src": "https://www.asoview.com/note/6290/",
+      "date": "2025-12",
+      "map": "Google Maps 'Tondemiehime Emifuru MASAKI', newest review shown a month ago"
+    },
+    {
+      "name": "Tobe Zoo",
+      "page_name": "愛媛県立とべ動物園",
+      "src": "https://www.asoview.com/note/6290/",
+      "date": "2025-12",
+      "map": "Google Maps 'Tobe Zoological Park', newest review shown 4 hours ago"
+    },
+    {
+      "name": "Ehime Forest Park",
+      "page_name": "えひめ森林公園",
+      "src": "https://www.asoview.com/note/6290/",
+      "date": "2025-12",
+      "map": "Google Maps 'Ehime Forest Park', newest review shown a day ago"
+    },
+    {
+      "name": "Toon City Park (Halloween Forest)",
+      "page_name": "東温市総合公園 ハロウィンの森",
+      "src": "https://www.asoview.com/note/6290/",
+      "date": "2025-12",
+      "map": "Google Maps 'Toonshi Park' (1284-1 Nishinooka), newest review shown 3 weeks ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "金牛亭",
+      "why": "no review dates on the map"
+    },
+    {
+      "name": "道後麦酒館, RUE DU BAC",
+      "why": "a brewery pub and a bar"
+    },
+    {
+      "name": "五志喜, 谷本蒲鉾店",
+      "why": "their page says nothing about children"
+    },
+    {
+      "name": "Dogo Onsen Honkan, the karakuri clock, the Botchan train, Dogo Park",
+      "why": "their pages had no date or failed the page check"
+    },
+    {
+      "name": "Ehime Science Museum (Niihama), Railway History Park (Saijo)",
+      "why": "an hour or more from Matsuyama"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

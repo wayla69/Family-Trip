@@ -1,0 +1,1319 @@
+{
+  "cc": "at",
+  "towns": [
+    {
+      "place": "at-hallstatt",
+      "sights": [
+        {
+          "name": { "en": "Hallstatt Salt Mine (Salzwelten)", "th": "เหมืองเกลือฮัลล์ชตัทท์ (ซัลซ์เวลเทน)" },
+          "kind": "culture",
+          "area": { "en": "Salzberg above Hallstatt", "th": "ซัลซ์แบร์ก เหนือฮัลล์ชตัทท์" },
+          "what": { "en": "A guided tour into the world's oldest salt mine, with wooden miners' slides and a Bronze Age film, reached by a funicular", "th": "ทัวร์นำชมเหมืองเกลือที่เก่าแก่ที่สุดในโลก มีสไลเดอร์ไม้ของคนงานเหมืองและภาพยนตร์ยุคสำริด ขึ้นด้วยรถรางไต่เขา" },
+          "why": { "en": "Children from 4 enjoy the slides; the mine is cool and has steps, so no prams", "th": "เด็กตั้งแต่ 4 ขวบสนุกกับสไลเดอร์ ในเหมืองเย็นและมีบันได ห้ามรถเข็น" },
+          "tip": { "en": "Autumn hours 09:30–16:00 until 23 October, then 09:30–14:30; the funicular was rebuilt in 2026, so check it is running", "th": "ฤดูใบไม้ร่วง 09:30–16:00 ถึง 23 ตุลาคม หลังจากนั้น 09:30–14:30 รถรางสร้างใหม่ในปี 2026 เช็กว่าเปิดวิ่งแล้ว" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €49 adults · ≈ €23 children 4–15 with the funicular (check the price) · under 4 not admitted", "th": "≈ €49 ผู้ใหญ่ · ≈ €23 เด็ก 4–15 ปี รวมรถราง (เช็กราคาอีกครั้ง) · ต่ำกว่า 4 ขวบเข้าไม่ได้" },
+          "book": "rec",
+          "q": "Salzwelten Hallstatt, Salzbergstraße, Hallstatt",
+          "ok": "2026-11",
+          "src": "https://www.salzwelten.at/en/hallstatt/prices-opening-times/"
+        },
+        {
+          "name": { "en": "Skywalk Welterbeblick", "th": "สกายวอล์กเวลเทอร์เบอบลิค" },
+          "kind": "views",
+          "area": { "en": "Salzberg above Hallstatt", "th": "ซัลซ์แบร์ก เหนือฮัลล์ชตัทท์" },
+          "what": { "en": "A viewing platform high above the village and the lake, reached by the funicular", "th": "จุดชมวิวสูงเหนือหมู่บ้านและทะเลสาบ ขึ้นด้วยรถรางไต่เขา" },
+          "why": { "en": "The view is the reward; keep a firm hold on small children at the railing", "th": "วิวคือรางวัล ควรจับเด็กเล็กให้แน่นตรงราวกั้น" },
+          "tip": { "en": "Reopening with the new funicular was given as 29 August 2026; check it before you go", "th": "แจ้งว่าเปิดอีกครั้งพร้อมรถรางใหม่ 29 สิงหาคม 2026 เช็กก่อนไป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €29 adults · ≈ €14 children 4–15, funicular return (check the price)", "th": "≈ €29 ผู้ใหญ่ · ≈ €14 เด็ก 4–15 ปี ไปกลับรวมรถราง (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Skywalk Welterbeblick, Hallstatt",
+          "ok": "2026-11",
+          "src": "https://dachstein.salzkammergut.at/oesterreich-poi/detail/430011864/aussichtsplattform-skywalk-welterbeblick.html"
+        },
+        {
+          "name": { "en": "Lake Hallstatt boat trip", "th": "ล่องเรือทะเลสาบฮัลล์ชตัทท์" },
+          "kind": "ride",
+          "area": { "en": "Hallstatt", "th": "ฮัลล์ชตัทท์" },
+          "what": { "en": "A boat across the lake, with a round trip to Obertraun or the lake's far end", "th": "ล่องเรือข้ามทะเลสาบ มีรอบไปกลับถึงโอแบร์เทรานหรือปลายอีกด้านของทะเลสาบ" },
+          "why": { "en": "A calm ride with village views for children; under-4s travel free if they sit on a lap", "th": "นั่งสบายและเห็นหมู่บ้านจากทะเลสาบ เด็กต่ำกว่า 4 ขวบนั่งตักไม่เสียค่าโดยสาร" },
+          "tip": { "en": "Cash only on board; trips can be cancelled in bad weather, so check the timetable", "th": "จ่ายเงินสดบนเรือเท่านั้น เรืออาจงดในอากาศแย่ เช็กตารางเวลา" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €18 adults · ≈ €12 children 4–13 for the Hallstatt–Obertraun round trip (check the price)", "th": "≈ €18 ผู้ใหญ่ · ≈ €12 เด็ก 4–13 ปี รอบฮัลล์ชตัทท์–โอแบร์เทราน (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Schifffahrt Hallstatt, Seestraße, Hallstatt",
+          "ok": "2026-11",
+          "src": "https://www.salzkammergut.at/oesterreich-poi/detail/400387/hallstaettersee-schifffahrt-gmbh.html"
+        },
+        {
+          "name": { "en": "Hallstatt World Heritage Museum", "th": "พิพิธภัณฑ์มรดกโลกฮัลล์ชตัทท์" },
+          "kind": "museum",
+          "area": { "en": "Hallstatt village", "th": "หมู่บ้านฮัลล์ชตัทท์" },
+          "what": { "en": "A museum of the village's 7,000 years of salt and Iron Age history, with finds from the old graves", "th": "พิพิธภัณฑ์ประวัติศาสตร์เกลือและยุคเหล็กของหมู่บ้าน 7,000 ปี พร้อมโบราณวัตถุ" },
+          "why": { "en": "A dry stop for a wet day; it is small, so it fits school-age children best", "th": "แวะในร่มวันฝนตก พิพิธภัณฑ์เล็ก เหมาะกับเด็กวัยเรียน" },
+          "tip": { "en": "Daily 10:00–18:00 from May to September; shorter hours in winter", "th": "ทุกวัน 10:00–18:00 พฤษภาคมถึงกันยายน หน้าหนาวเปิดสั้นกว่า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €12 adults · ≈ €8 children 6–14 · ≈ €20 family (check the price)", "th": "≈ €12 ผู้ใหญ่ · ≈ €8 เด็ก 6–14 ปี · ≈ €20 ครอบครัว (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Welterbemuseum Hallstatt, Seestraße, Hallstatt",
+          "ok": "2026-11",
+          "src": "https://dachstein.salzkammergut.at/oesterreich-poi/detail/430010148/welterbemuseum-hallstatt.html"
+        },
+        {
+          "name": { "en": "Dachstein Krippenstein cable car", "th": "กระเช้าดัคชไตน์ ครีพเพินชไตน์" },
+          "kind": "views",
+          "area": { "en": "Obertraun", "th": "โอแบร์เทราน" },
+          "what": { "en": "A cable car from Obertraun up the Dachstein, to viewing platforms and in winter snowshoe trails", "th": "กระเช้าจากโอแบร์เทรานขึ้นดัคชไตน์ ไปจุดชมวิว และหน้าหนาวมีเส้นทางเดินสโนว์ชู" },
+          "why": { "en": "The ride is the fun part; it is cold and windy up top, so dress children warmly", "th": "การนั่งกระเช้าคือความสนุก ข้างบนหนาวและลมแรง แต่งตัวเด็กให้อุ่น" },
+          "tip": { "en": "Summer 1 May–1 November 2026; winter 19 December 2026–29 March 2027", "th": "หน้าร้อน 1 พฤษภาคม–1 พฤศจิกายน 2026 หน้าหนาว 19 ธันวาคม 2026–29 มีนาคม 2027" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "winter Panorama ticket ≈ €47.60 adults · ≈ €28.90 children (born 2011–2020); summer price: check the price", "th": "บัตรพาโนรามาหน้าหนาว ≈ €47.60 ผู้ใหญ่ · ≈ €28.90 เด็ก (เกิดปี 2011–2020) ราคาหน้าร้อน: เช็กราคา" },
+          "book": "rec",
+          "q": "Dachstein Krippenstein Seilbahn, Obertraun",
+          "ok": "2026-11",
+          "src": "https://www.dachstein-salzkammergut.com/en/tickets-offers/tickets-winter/panorama-ticket"
+        },
+        {
+          "name": { "en": "Dachstein Giant Ice Cave", "th": "ถ้ำน้ำแข็งยักษ์ดัคชไตน์" },
+          "kind": "nature",
+          "area": { "en": "Obertraun", "th": "โอแบร์เทราน" },
+          "what": { "en": "A guided walk through huge ice caves, reached by cable car and a short walk", "th": "เดินชมถ้ำน้ำแข็งขนาดใหญ่พร้อมไกด์ ขึ้นด้วยกระเช้าและเดินต่ออีกเล็กน้อย" },
+          "why": { "en": "Cold and with steps, so best from about age 4; small children go in a carrier", "th": "หนาวและมีบันได เหมาะตั้งแต่ราว 4 ขวบ เด็กเล็กใช้เป้อุ้ม" },
+          "tip": { "en": "Open 1 May–1 November 2026; wear warm clothes even in summer", "th": "เปิด 1 พฤษภาคม–1 พฤศจิกายน 2026 แต่งตัวให้อุ่นแม้หน้าร้อน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 4,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "rec",
+          "q": "Dachstein Rieseneishöhle, Obertraun",
+          "ok": "2026-11",
+          "src": "https://dachstein.salzkammergut.at/highlights-obertraun/oesterreich/poi/400756/dachstein-rieseneishoehle.html"
+        },
+        {
+          "name": { "en": "Dachstein Mammoth Cave", "th": "ถ้ำแมมมอธดัคชไตน์" },
+          "kind": "nature",
+          "area": { "en": "Obertraun", "th": "โอแบร์เทราน" },
+          "what": { "en": "Huge limestone passages with a light show, in a guided tour from the same cable car", "th": "ทางเดินหินปูนขนาดใหญ่ พร้อมแสงสีในทัวร์นำชม ขึ้นจากกระเช้าเดียวกัน" },
+          "why": { "en": "A big dark cave with steps; it suits children who like adventure, not toddlers", "th": "ถ้ำใหญ่มืดและมีบันได เหมาะกับเด็กที่ชอบผจญภัย ไม่เหมาะกับเด็กเล็กมาก" },
+          "tip": { "en": "Open 9 May–1 November 2026; take the uphill ride by 13:00", "th": "เปิด 9 พฤษภาคม–1 พฤศจิกายน 2026 ควรขึ้นกระเช้าก่อน 13:00" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "check the price (a combined ticket with the ice cave and cable car exists)", "th": "เช็กราคา (มีบัตรรวมกับถ้ำน้ำแข็งและกระเช้า)" },
+          "book": "rec",
+          "q": "Mammuthöhle, Obertraun",
+          "ok": "2026-11",
+          "src": "https://dachstein.salzkammergut.at/oesterreich-poi/detail/401363/mammuthoehle.html"
+        },
+        {
+          "name": { "en": "Koppenbrüller Cave", "th": "ถ้ำคอพเพินบรึลเลอร์" },
+          "kind": "nature",
+          "area": { "en": "Obertraun", "th": "โอแบร์เทราน" },
+          "what": { "en": "A show cave at the foot of the mountain, reached on foot with no cable car", "th": "ถ้ำท่องเที่ยวที่ตีนเขา เดินไปได้โดยไม่ต้องใช้กระเช้า" },
+          "why": { "en": "A shorter, easier cave visit than the Dachstein caves; tours run at least hourly", "th": "เที่ยวถ้ำง่ายและสั้นกว่าถ้ำดัคชไตน์ ทัวร์ออกอย่างน้อยทุกชั่วโมง" },
+          "tip": { "en": "Open 1 May–27 September 2026; closed in autumn and winter", "th": "เปิด 1 พฤษภาคม–27 กันยายน 2026 ปิดช่วงใบไม้ร่วงและหน้าหนาว" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "check the price (children, family and senior reductions exist)", "th": "เช็กราคา (มีส่วนลดเด็ก ครอบครัว และผู้สูงอายุ)" },
+          "book": "none",
+          "q": "Koppenbrüllerhöhle, Obertraun",
+          "ok": "2026-11",
+          "src": "https://www.salzkammergut.at/oesterreich-poi/detail/401672/koppenbrueller-cave-near-obertraun.html"
+        },
+        {
+          "name": { "en": "Echerntal valley walk", "th": "เดินเล่นหุบเขาเอเชอร์น" },
+          "kind": "nature",
+          "area": { "en": "Hallstatt", "th": "ฮัลล์ชตัทท์" },
+          "what": { "en": "A themed trail into the Echern valley towards the Waldbach waterfall, with information boards", "th": "เส้นทางตามธีมเข้าหุบเขาเอเชอร์นไปทางน้ำตกวัลด์บัค มีป้ายให้ข้อมูล" },
+          "why": { "en": "The first part is an easy valley walk; the stepped last stretch to the falls is for sturdy walkers only", "th": "ช่วงแรกเป็นทางเดินหุบเขาง่ายๆ ช่วงสุดท้ายถึงน้ำตกเป็นขั้นบันไดเหมาะกับคนที่เดินเก่งเท่านั้น" },
+          "tip": { "en": "About 2 hours one way to the waterfall; turn back earlier with small children", "th": "ไปน้ำตกราว 2 ชั่วโมงเที่ยวเดียว ถ้ามีเด็กเล็กให้เดินกลับก่อนได้" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "check the price (a public trail; no fee was listed)", "th": "เช็กราคา (เส้นทางสาธารณะ ไม่พบค่าเข้า)" },
+          "book": "none",
+          "q": "Echerntal, Hallstatt",
+          "ok": "2026-11",
+          "src": "https://www.hallstatt.net/ueber-hallstatt/sehenswertes/echerntal/"
+        },
+        {
+          "name": { "en": "Lake Gosau loop", "th": "เดินรอบทะเลสาบโกเซา" },
+          "kind": "nature",
+          "area": { "en": "Gosau, about 30 minutes from Hallstatt", "th": "โกเซา ห่างฮัลล์ชตัทท์ราว 30 นาที" },
+          "what": { "en": "An easy walk of about 4 km round a mountain lake under the Dachstein glacier", "th": "เดินสบายๆ ราว 4 กม. รอบทะเลสาบภูเขาใต้ธารน้ำแข็งดัคชไตน์" },
+          "why": { "en": "A flat, easy path of about an hour that suits children from about 4; parking by the lake is paid", "th": "ทางเรียบเดินสบายราวหนึ่งชั่วโมง เหมาะกับเด็กตั้งแต่ราว 4 ขวบ ที่จอดรถริมทะเลสาบเสียเงิน" },
+          "tip": { "en": "Bus 542 runs to the lake but is irregular on Sundays", "th": "รถบัสสาย 542 ไปถึงทะเลสาบ แต่วันอาทิตย์ไม่สม่ำเสมอ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk · car parking is paid, check the price", "th": "เดินฟรี · ที่จอดรถเสียเงิน เช็กราคา" },
+          "book": "none",
+          "q": "Vorderer Gosausee, Gosau",
+          "ok": "2026-11",
+          "src": "https://dachstein.salzkammergut.at/leichte-wandertouren/oesterreich-tour/detail/430000685/rund-um-den-gosausee.html"
+        },
+        {
+          "name": { "en": "Loser Panorama cable car", "th": "กระเช้าพาโนรามาโลเซอร์" },
+          "kind": "views",
+          "area": { "en": "Altaussee, about 45 minutes from Hallstatt", "th": "อัลเทาส์เซ ห่างฮัลล์ชตัทท์ราว 45 นาที" },
+          "what": { "en": "A cable car up the Loser mountain above Altaussee, with views and easy walks at the top", "th": "กระเช้าขึ้นภูเขาโลเซอร์เหนืออัลเทาส์เซ ชมวิวและเดินเล่นสบายๆ ข้างบน" },
+          "why": { "en": "A short ride and easy paths at the top; wrap children warmly, as it is cold and windy", "th": "นั่งกระเช้าสั้นๆ ข้างบนมีทางเดินสบาย ห่มเด็กให้อุ่นเพราะหนาวและลมแรง" },
+          "tip": { "en": "The cable car does not run all the time; when it is closed the toll road is open", "th": "กระเช้าไม่ได้วิ่งตลอด เมื่อปิดจะเปิดถนนเก็บค่าผ่านทางแทน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €30 adults · ≈ €15 children return (2026 season, check the price)", "th": "≈ €30 ผู้ใหญ่ · ≈ €15 เด็ก ไปกลับ (ฤดูกาลปี 2026 เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Loser Panoramabahn, Altaussee",
+          "ok": "2026-11",
+          "src": "https://www.salzkammergut.at/bergeseen-e-trail/oesterreich-poi/detail/430036084/loser-panoramabahn-altaussee.html"
+        },
+        {
+          "name": { "en": "Altaussee Salt Mine (Salzwelten)", "th": "เหมืองเกลืออัลเทาส์เซ (ซัลซ์เวลเทน)" },
+          "kind": "culture",
+          "area": { "en": "Altaussee, about 45 minutes from Hallstatt", "th": "อัลเทาส์เซ ห่างฮัลล์ชตัทท์ราว 45 นาที" },
+          "what": { "en": "A guided tour of Austria's biggest working salt mine, with a children's tour for ages 4–10", "th": "ทัวร์นำชมเหมืองเกลือที่ยังทำงานใหญ่ที่สุดของออสเตรีย มีทัวร์เด็กสำหรับ 4–10 ปี" },
+          "why": { "en": "About 7 °C inside for 90 minutes on foot, so it suits children who can walk and stay warm", "th": "ข้างในราว 7 °C เดินราว 90 นาที เหมาะกับเด็กที่เดินไหวและแต่งตัวอุ่น" },
+          "tip": { "en": "Hours 09:00–16:00 to 30 September, then 09:00–15:00 to 2 November; in winter it may be shut, so check", "th": "เปิด 09:00–16:00 ถึง 30 กันยายน แล้ว 09:00–15:00 ถึง 2 พฤศจิกายน หน้าหนาวอาจปิด ควรเช็ก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €27 adults · ≈ €13 children (check the price)", "th": "≈ €27 ผู้ใหญ่ · ≈ €13 เด็ก (เช็กราคาอีกครั้ง)" },
+          "book": "rec",
+          "q": "Salzwelten Altaussee, Altaussee",
+          "ok": "2026-11",
+          "src": "https://dachstein.salzkammergut.at/oesterreich-poi/detail/402147/salzwelten-altaussee.html"
+        },
+        {
+          "name": { "en": "Altaussee lake boat", "th": "ล่องเรือทะเลสาบอัลเทาส์เซ" },
+          "kind": "ride",
+          "area": { "en": "Altaussee, about 45 minutes from Hallstatt", "th": "อัลเทาส์เซ ห่างฮัลล์ชตัทท์ราว 45 นาที" },
+          "what": { "en": "A solar-powered boat trip of about an hour on the Altaussee lake", "th": "ล่องเรือพลังงานแสงอาทิตย์ราวหนึ่งชั่วโมงบนทะเลสาบอัลเทาส์เซ" },
+          "why": { "en": "A quiet lake ride; under-6s travel free with an adult", "th": "ล่องเรือเงียบสงบ เด็กต่ำกว่า 6 ขวบเดินทางฟรีกับผู้ใหญ่" },
+          "tip": { "en": "The 2026 timetable runs 28 March–1 November, with the most trips in July–September; trips are cancelled in bad weather", "th": "ตารางปี 2026 วิ่ง 28 มีนาคม–1 พฤศจิกายน เที่ยวถี่สุดกรกฎาคม–กันยายน งดเมื่ออากาศแย่" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €21 adults · ≈ €10.50–13 children 6–14 (sources differ, check the price) · under 6 free", "th": "≈ €21 ผู้ใหญ่ · ≈ €10.50–13 เด็ก 6–14 ปี (แหล่งข้อมูลต่างกัน เช็กราคา) · ต่ำกว่า 6 ขวบฟรี" },
+          "book": "none",
+          "q": "Altaussee Schifffahrt, Altaussee",
+          "ok": "2026-11",
+          "src": "https://www.mamilade.at/ste/liezen/ausflugstipps/dies-das/altaussee-schifffahrt"
+        },
+        {
+          "name": { "en": "Hallstatt lakeside playground and swimming island", "th": "สนามเด็กเล่นริมทะเลสาบและเกาะว่ายน้ำฮัลล์ชตัทท์" },
+          "kind": "play",
+          "area": { "en": "Lahn, Hallstatt", "th": "ลาน ฮัลล์ชตัทท์" },
+          "what": { "en": "A free playground beside a lake beach and a swimming island", "th": "สนามเด็กเล่นฟรีข้างหาดทะเลสาบและเกาะว่ายน้ำ" },
+          "why": { "en": "Free and open all day, a place to run off energy beside the water; swimming only in summer", "th": "ฟรีและเปิดทั้งวัน ให้เด็กวิ่งเล่นข้างน้ำ ว่ายน้ำได้เฉพาะหน้าร้อน" },
+          "tip": { "en": "About 10 minutes' walk from the market square; bring a swim ring only in summer", "th": "เดินจากลานตลาดราว 10 นาที เอาห่วงยางไปเฉพาะหน้าร้อน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Badeinsel Hallstatt, Lahn, Hallstatt",
+          "ok": "2026-11",
+          "src": "https://www.hallstatt.net/ueber-hallstatt/aktiv-urlaub-im-salzkammergut/baden-im-salzkammergut/badeinsel-kinderspielplatz/"
+        },
+        {
+          "name": { "en": "Obertraun lido playground", "th": "สนามเด็กเล่นหาดโอแบร์เทราน" },
+          "kind": "play",
+          "area": { "en": "Obertraun", "th": "โอแบร์เทราน" },
+          "what": { "en": "A free playground on the grounds of the Obertraun lake lido, a short walk from the bus stop", "th": "สนามเด็กเล่นฟรีในบริเวณหาดทะเลสาบโอแบร์เทราน เดินจากป้ายรถบัสไม่ไกล" },
+          "why": { "en": "Free, with swings and slides by the lake; equipment is used at your own risk", "th": "ฟรี มีชิงช้าและสไลเดอร์ริมทะเลสาบ ใช้เครื่องเล่นด้วยความรับผิดชอบเอง" },
+          "tip": { "en": "Take the bus to Obertraun Bahnhof/Feriendorf, then walk 100 m", "th": "นั่งรถบัสไปป้ายโอแบร์เทราน บาห์นฮอฟ/เฟเรียนดอร์ฟ แล้วเดินต่อ 100 ม." },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Strandbad Obertraun, Obertraun",
+          "ok": "2026-11",
+          "src": "https://www.oberoesterreich.at/oesterreich-poi/detail/430014281/kinderspielplatz-am-strandbadgelaende.html"
+        },
+      {"name":{"en":"Beinhaus in der Michaelskapelle","th":"ห้องกระดูกในโบสถ์น้อยมิคาเอล"},"kind":"culture","area":{"en":"Hallstatt historic town centre","th":"ใจกลางเมืองเก่าฮัลชตัท"},"what":{"en":"Bone house with about 1,200 skulls in the St. Michael's chapel, the skulls of families painted and dated.","th":"ห้องกระดูกที่มีกะโหลกราว 1,200 ชิ้นในโบสถ์น้อยเซนต์ไมเคิล กะโหลกของครอบครัวต่างๆ ถูกวาดสีและลงปีไว้"},"why":{"en":"A short, quiet visit in the old town centre; the page says it suits children.","th":"ชมสั้นๆ อย่างเงียบสงบในใจกลางเมืองเก่า หน้าเว็บบอกว่าเหมาะกับเด็ก"},"tip":{"en":"Open May to September 10:00 to 18:00; October 10:00 to 17:00; November to April 11:30 to 15:30.","th":"เปิดพฤษภาคมถึงกันยายน 10:00–18:00 ตุลาคม 10:00–17:00 พฤศจิกายนถึงเมษายน 11:30–15:30"},"ages":[0,1,2,2],"hrs":0.5,"io":"in","pram":"part","price":{"en":"€ 0.50","th":"€ 0.50"},"book":"none","q":"Beinhaus Michaelskapelle, Kirchenweg 40, Hallstatt","ok":"2026-11","src":"https://dachstein.salzkammergut.at/en/oesterreich-poi/detail/400341/bone-house-ossuary-in-the-st-michaels-chapel.html"},
+      {"name":{"en":"Little Bear via ferrata","th":"ลิตเติลแบร์ เฟียเฟอร์ราตา (เส้นทางไต่เขาสำหรับเด็ก)"},"kind":"nature","area":{"en":"Dachstein Krippenstein cable car mountain station","th":"สถานีบนเขาของกระเช้า Dachstein Krippenstein"},"what":{"en":"Children's via ferrata beside the Krippenstein cable car mountain station, with wire ropes, stepping sticks and suspension bridges.","th":"เส้นทางไต่เขาสำหรับเด็กข้างสถานีกระเช้า Krippenstein มีเชือกลวด ขั้นเหยียบ และสะพานแขวน"},"why":{"en":"Built for children and beginners; the children must reach the rope at a 1.35 m measuring station.","th":"ออกแบบสำหรับเด็กและมือใหม่ เด็กต้องเอื้อมถึงเชือกที่จุดวัดความสูง 1.35 เมตร"},"tip":{"en":"Summer only, during the cable car's opening times.","th":"เปิดเฉพาะฤดูร้อน ตามเวลาเปิดของกระเช้า"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Little Bear via ferrata, Dachstein Krippenstein, Obertraun","ok":"2026-11","src":"https://dachstein.salzkammergut.at/en/adventure/listen-tourdata/via-ferratas-for-kids/oesterreich-tour/detail/430007114/familienklettersteig-little-bear.html"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hallstatt.net/about-hallstatt/active-summer-holiday/wanderzeit-en-US/neue-content-holder-en-us/hiking-in-hallstatt/hiking-to-the-waldbachstrub-waterfall-in-hallstatt/",
+          "name": {
+            "th": "น้ำตกวัลด์บัคชตรูบ",
+            "en": "Waldbachstrub waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หุบเขาเอเชิร์นทัล ฮัลล์ชตัทท์",
+            "en": "Echerntal valley, Hallstatt"
+          },
+          "what": {
+            "th": "เดินขึ้นหุบเขาเอเชิร์นทัลไปน้ำตก ราว 2–2.5 ชั่วโมงต่อเที่ยว",
+            "en": "A walk up the Echerntal valley to a waterfall, about 2–2.5 hours each way"
+          },
+          "why": {
+            "th": "เหมาะกับครอบครัว และค่อนข้างง่าย",
+            "en": "Family-friendly and fairly easy"
+          },
+          "tip": {
+            "th": "ต้องใส่รองเท้าเดินป่า",
+            "en": "Proper outdoor shoes are a must"
+          },
+          "q": "Waldbachstrub wasserfall, Echerntalweg, Hallstatt",
+          "ok": "2026-11"
+        }
+    ]
+    },
+    {
+      "place": "at-salzburg",
+      "sights": [
+        {
+          "name": { "en": "Hohensalzburg Fortress", "th": "ป้อมโฮเฮนซาลซ์บวร์ก" },
+          "local": "Festung Hohensalzburg",
+          "kind": "culture",
+          "area": { "en": "Mönchsberg", "th": "เมินช์สแบร์ก" },
+          "what": { "en": "A huge medieval fortress above the old town, reached by a funicular, with courtyards, a puppet museum and views over the roofs", "th": "ป้อมปราการยุคกลางขนาดใหญ่เหนือเมืองเก่า นั่งกระเช้ารางขึ้นไป มีลานกว้าง พิพิธภัณฑ์หุ่นกระบอก และวิวหลังคาเมือง" },
+          "why": { "en": "The funicular is a treat for small children and there are family tours; paths inside are cobbled", "th": "เด็กชอบนั่งกระเช้ารางขึ้นเขา และมีทัวร์สำหรับครอบครัว แต่พื้นข้างในเป็นหินกรวด" },
+          "tip": { "en": "Open daily; about 09:30–17:00 in winter. The funicular closes for a service each January, check before you go", "th": "เปิดทุกวัน ช่วงหนาวประมาณ 09:30–17:00 กระเช้าปิดซ่อมบำรุงช่วงมกราคม ควรเช็กก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €19.20 adults · €7.30 children 6–14 (all-inclusive ticket)", "th": "≈ €19.20 ผู้ใหญ่ · €7.30 เด็ก 6–14 ปี (ตั๋วรวมทุกอย่าง)" },
+          "book": "rec",
+          "q": "Festung Hohensalzburg, Mönchsberg, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.mamilade.at/sbg/salzburg-stadt/ausflugstipps/schlechtwetter/festung-hohensalzburg"
+        },
+        {
+          "name": { "en": "Salzburg Zoo Hellbrunn", "th": "สวนสัตว์ซาลซ์บวร์ก เฮลล์บรุนน์" },
+          "local": "Zoo Salzburg Hellbrunn",
+          "kind": "zoo",
+          "area": { "en": "Anif, Hellbrunn", "th": "อานิฟ เฮลล์บรุนน์" },
+          "what": { "en": "A hillside zoo with open enclosures at the foot of the Untersberg, from lions to alpine animals", "th": "สวนสัตว์ตีนเขาอุนเทอร์สแบร์ก มีคอกเปิดโล่ง ตั้งแต่สิงโตไปจนถึงสัตว์แถบเทือกเขาแอลป์" },
+          "why": { "en": "Compact enough for little legs, with a playground and shaded paths; the first visit with a Salzburg Card is free", "th": "ขนาดกำลังพอดีกับขาเล็กๆ มีสนามเด็กเล่นและทางร่มรื่น ใช้ Salzburg Card เข้าฟรีหนึ่งครั้ง" },
+          "tip": { "en": "Open daily about 09:00–18:00, last entry 17:00 (shorter in winter). Prices rise on 1 March 2027", "th": "เปิดทุกวันประมาณ 09:00–18:00 เข้าได้ถึง 17:00 (ฤดูหนาวสั้นกว่า) ราคาขึ้นวันที่ 1 มีนาคม 2027" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €17 adults · €7 children 4–14 · €11 teenagers 15–19", "th": "≈ €17 ผู้ใหญ่ · €7 เด็ก 4–14 ปี · €11 วัยรุ่น 15–19 ปี" },
+          "book": "none",
+          "q": "Zoo Salzburg, Anif, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.salzburg.info/en/travel-info/infos/salzburg-zoo-hellbrunn_az_4106"
+        },
+        {
+          "name": { "en": "Hellbrunn Palace and Trick Fountains", "th": "พระราชวังเฮลล์บรุนน์และน้ำพุกลเม็ด" },
+          "local": "Schloss Hellbrunn und Wasserspiele",
+          "kind": "culture",
+          "area": { "en": "Hellbrunn", "th": "เฮลล์บรุนน์" },
+          "what": { "en": "A summer palace whose guided tour ends in trick fountains that squirt visitors from stone seats and hidden jets", "th": "พระราชวังฤดูร้อนที่ทัวร์พาเดินชมน้ำพุกลเม็ด มีหัวฉีดซ่อนอยู่ตามที่นั่งหินและทางเดิน" },
+          "why": { "en": "Children love the surprise sprays; expect to get wet, and the ticket also covers the folk museum in the Monatsschlössl", "th": "เด็กๆ สนุกกับน้ำที่พุ่งออกมาโดยไม่รู้ตัว เตรียมตัวเปียก ตั๋วรวมพิพิธภัณฑ์พื้นบ้านในโมนัทส์ชเลิสเซิลด้วย" },
+          "tip": { "en": "Open daily 28 March – 1 November 2026; the park itself is free to walk", "th": "เปิดทุกวัน 28 มีนาคม – 1 พฤศจิกายน 2026 ส่วนสวนเดินเล่นได้ฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €16.50 adults · €6.50 children 4–18 · family ticket (2 adults + 1 child) €36.50", "th": "≈ €16.50 ผู้ใหญ่ · €6.50 เด็ก 4–18 ปี · ตั๋วครอบครัว (ผู้ใหญ่ 2 + เด็ก 1) €36.50" },
+          "book": "rec",
+          "q": "Schloss Hellbrunn, Fürstenweg 37, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.hellbrunn.at/en/info"
+        },
+        {
+          "name": { "en": "Haus der Natur", "th": "เฮาส์แดร์นาทูร์" },
+          "local": "Haus der Natur",
+          "kind": "museumkid",
+          "area": { "en": "Old town", "th": "เมืองเก่า" },
+          "what": { "en": "A natural history and science museum with an aquarium, reptile house, dinosaurs, a space hall and hands-on science", "th": "พิพิธภัณฑ์ธรรมชาติและวิทยาศาสตร์ มีตู้ปลา บ้านสัตว์เลื้อยคลาน ไดโนเสาร์ ห้องอวกาศ และของให้ลองเล่น" },
+          "why": { "en": "A dry day out for every age: live animals on one floor, experiments to touch on another", "th": "วันฝนตกก็สนุกได้ทุกวัย มีสัตว์จริงชั้นหนึ่งและของทดลองให้ลองจับอีกชั้น" },
+          "tip": { "en": "Open daily about 09:00–17:00; closed 25 December", "th": "เปิดทุกวันประมาณ 09:00–17:00 ปิดวันที่ 25 ธันวาคม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €16 adults · €10.50 children 4–15 · under 4 free", "th": "≈ €16 ผู้ใหญ่ · €10.50 เด็ก 4–15 ปี · ต่ำกว่า 4 ขวบฟรี" },
+          "book": "none",
+          "q": "Haus der Natur, Museumsplatz 5, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.freizeitpark-welt.de/museum/haus_der_natur/preise/"
+        },
+        {
+          "name": { "en": "Salzburg Marionette Theatre", "th": "โรงละครหุ่นกระบอกซาลซ์บวร์ก" },
+          "local": "Salzburger Marionettentheater",
+          "kind": "show",
+          "area": { "en": "Mirabell, Schwarzstraße", "th": "มีราเบล ชวาร์ซสตราเซอ" },
+          "what": { "en": "A famous puppet theatre with hand-made marionettes playing fairy tales and short operas", "th": "โรงละครหุ่นกระบอกชื่อดัง เล่นนิทานและโอเปร่าสั้นด้วยหุ่นทำมือ" },
+          "why": { "en": "Children from about 4 can follow Peter and the Wolf and Little Red Riding Hood; the Magic Flute short version suits ages 8 and up", "th": "เด็กตั้งแต่ราว 4 ขวบดูเรื่องปีเตอร์กับหมาป่าและหนูน้อยหมวกแดงได้ ส่วนขลุ่ยวิเศษแบบสั้นเหมาะ 8 ขวบขึ้นไป" },
+          "tip": { "en": "Performances run on set dates; the 2026 programme shows tickets around €28–43 and the 2025 children's rate was €15, so check the price", "th": "รอบแสดงมีเฉพาะบางวัน ตารางปี 2026 ตั๋วประมาณ €28–43 ปีก่อนเด็กราคา €15 ควรเช็กราคา" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (programme shows ≈ €28–43; children under 12 were €15 in 2025)", "th": "เช็กราคา (ตารางปีนี้ ≈ €28–43 เด็กต่ำกว่า 12 ปีเคย €15 ในปี 2025)" },
+          "book": "req",
+          "q": "Salzburger Marionettentheater, Schwarzstraße 24, Salzburg",
+          "ok": "2026-11",
+          "src": "https://marionetten.at/assets/files/MT_Spielplan_2026_V4.pdf"
+        },
+        {
+          "name": { "en": "Mozart's Birthplace", "th": "บ้านเกิดโมสาร์ท" },
+          "local": "Mozarts Geburtshaus",
+          "kind": "museum",
+          "area": { "en": "Getreidegasse", "th": "เก็ทไรเดอกัสเซอ" },
+          "what": { "en": "The yellow house on Getreidegasse where Mozart was born, with his childhood violin and family rooms", "th": "บ้านสีเหลืองบนถนนเก็ทไรเดอกัสเซอที่โมสาร์ทเกิด มีไวโอลินสมัยเด็กและห้องของครอบครัว" },
+          "why": { "en": "Short and easy for a first museum; under-6s go free and there are family tours with games", "th": "เล็กและเดินง่าย เหมาะเป็นพิพิธภัณฑ์แรกของเด็ก ต่ำกว่า 6 ขวบฟรี และมีทัวร์ครอบครัวพร้อมเกม" },
+          "tip": { "en": "Open daily about 09:00–17:30 (to 19:00 in July–August); narrow stairs, so prams stay at the entrance", "th": "เปิดทุกวันประมาณ 09:00–17:30 (ถึง 19:00 กรกฎาคม–สิงหาคม) บันไดแคบ รถเข็นต้องฝากไว้ทางเข้า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €4.50 children 6–14 · under 6 free (adult price: check)", "th": "≈ €4.50 เด็ก 6–14 ปี · ต่ำกว่า 6 ขวบฟรี (ราคาผู้ใหญ่: เช็กอีกครั้ง)" },
+          "book": "none",
+          "q": "Mozarts Geburtshaus, Getreidegasse 9, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/mozarts-geburtshaus_az_13748"
+        },
+        {
+          "name": { "en": "Untersberg Cable Car", "th": "กระเช้าอุนเทอร์สแบร์ก" },
+          "local": "Untersbergbahn",
+          "kind": "views",
+          "area": { "en": "St. Leonhard, Grödig", "th": "ซังท์เลออนฮาร์ด เกรอดิก" },
+          "what": { "en": "A cable car up the Untersberg to nearly 1,800 m, with Alpine views over Salzburg and short summit walks", "th": "กระเช้าขึ้นเขาอุนเทอร์สแบร์กสูงเกือบ 1,800 เมตร วิวเทือกเขาแอลป์เหนือเมืองซาลซ์บวร์ก มีทางเดินสั้นๆ บนยอด" },
+          "why": { "en": "The ride itself thrills children; it is cold and windy at the top so bring warm layers and keep to the easy paths", "th": "เด็กตื่นเต้นกับการนั่งกระเช้า ข้างบนหนาวและลมแรง เตรียมเสื้ออุ่นและเลือกทางเดินง่าย" },
+          "tip": { "en": "May–September 08:30–17:30; shorter in winter. Closed for a service about 2 November to 13 December 2026", "th": "พฤษภาคม–กันยายน 08:30–17:30 ฤดูหนาวสั้นกว่า ปิดซ่อมบำรุงประมาณ 2 พฤศจิกายน ถึง 13 ธันวาคม 2026" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €34 adults return · check the child price", "th": "≈ €34 ผู้ใหญ่ไป-กลับ · เช็กราคาเด็ก" },
+          "book": "none",
+          "q": "Untersbergbahn, St. Leonhard, Grödig",
+          "ok": "2026-11",
+          "src": "https://salzburg.info/en/sights/excursions/cable-car-untersberg"
+        },
+        {
+          "name": { "en": "Salzwelten Hallein Salt Mine", "th": "เหมืองเกลือซาลซ์เวลเทน ฮัลไลน์" },
+          "local": "Salzwelten Hallein",
+          "kind": "nature",
+          "area": { "en": "Hallein, Dürrnberg", "th": "ฮัลไลน์ ดือร์นแบร์ก" },
+          "what": { "en": "A salt mine tour in miners' overalls, with wooden slides down into the mountain, an underground salt lake and a Celtic village", "th": "ทัวร์เหมืองเกลือโดยใส่ชุดคนงาน มีสไลเดอร์ไม้ลงสู่ภูเขา ทะเลสาบเกลือใต้ดิน และหมู่บ้านเคลต์" },
+          "why": { "en": "The slides and the little train make it a favourite for ages 4 and up; the tour lasts about 90 minutes", "th": "สไลเดอร์ไม้และรถไฟเล็กถูกใจเด็กตั้งแต่ 4 ขวบ ทัวร์ใช้เวลาราว 90 นาที" },
+          "tip": { "en": "Meet 15 minutes before the tour; it is about 8 °C inside, so bring a jacket. January–March hours are 09:00–15:00", "th": "มาก่อนทัวร์ 15 นาที ข้างในประมาณ 8 °C เอาแจ็กเก็ตไป ม.ค.–มี.ค. เปิด 09:00–15:00" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €16 children 4–5 · €19.60 children 6–14 at the door (adult price: check)", "th": "≈ €16 เด็ก 4–5 ปี · €19.60 เด็ก 6–14 ปี หน้าร้าน (ราคาผู้ใหญ่: เช็กอีกครั้ง)" },
+          "book": "rec",
+          "q": "Salzwelten Hallein, Ramsaustraße 3, Hallein",
+          "ok": "2026-11",
+          "src": "https://www.oebb.at/de/tickets-kundenkarten/freizeit-urlaub/oebb-plus/salzburg/salzwelten-hallein-salina"
+        },
+        {
+          "name": { "en": "Salzburg Christkindlmarkt", "th": "ตลาดคริสต์มาสซาลซ์บวร์ก" },
+          "local": "Salzburger Christkindlmarkt",
+          "kind": "market",
+          "area": { "en": "Domplatz and Residenzplatz", "th": "ดอมพลัทซ์และเรซิเดนซ์พลัทซ์" },
+          "what": { "en": "A traditional Advent market on the cathedral square, with wooden stalls, crafts, a crib exhibition and tower brass bands", "th": "ตลาดช่วงเทศกาลคริสต์มาสแบบดั้งเดิมหน้าอาสนวิหาร แผงไม้ งานฝีมือ นิทรรศการรางหญ้า และวงเป่าทองเหลืองบนหอ" },
+          "why": { "en": "Free to walk through and pram-friendly; Nikolaus and the children's Krampus come on 6 December, but the big Krampus run on 5 December can frighten little ones", "th": "เดินเข้าได้ฟรี ใช้รถเข็นได้ วันที่ 6 ธันวาคมมีนิโคลัสมาพบเด็ก แต่ขบวนกรัมปุสวันที่ 5 อาจทำเด็กเล็กกลัว" },
+          "tip": { "en": "Seasonal: about 19–20 November to 1 January (2026); most days from 10:00", "th": "ตามฤดูกาล: ประมาณ 19–20 พฤศจิกายน ถึง 1 มกราคม (ปี 2026) ส่วนใหญ่เปิดตั้งแต่ 10:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Domplatz, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.salzburg.info/de/veranstaltungen/veranstaltungskalender/salzburger-christkindlmarkt-am-dom-und-residenzplatz_event_42164337?date=20261128090000"
+        },
+        {
+          "name": { "en": "Salzburg Open-Air Museum", "th": "พิพิธภัณฑ์กลางแจ้งซาลซ์บวร์ก" },
+          "local": "Salzburger Freilichtmuseum",
+          "kind": "farm",
+          "area": { "en": "Großgmain", "th": "กรอสก์ไมน์" },
+          "what": { "en": "More than 100 old farmhouses and barns from the Salzburg region in a big meadow park, with a museum railway and farm animals", "th": "บ้านไร่และยุ้งฉางเก่ากว่า 100 หลังจากแคว้นซาลซ์บวร์กในสวนทุ่งหญ้า มีรถไฟพิพิธภัณฑ์และสัตว์ฟาร์ม" },
+          "why": { "en": "Children run free across the meadows and use the adventure playground; the railway saves tired legs", "th": "เด็กวิ่งเล่นในทุ่งได้อิสระและมีสนามเด็กเล่นผจญภัย รถไฟช่วยเมื่อเมื่อยขา" },
+          "tip": { "en": "Open daily about 09:00–18:00 from spring to autumn, last entry 17:00; Advent weekends from 28 November", "th": "เปิดทุกวันประมาณ 09:00–18:00 ตั้งแต่ฤดูใบไม้ผลิถึงใบไม้ร่วง เข้าได้ถึง 17:00 มีกิจกรรมคริสต์มาสสุดสัปดาห์ตั้งแต่ 28 พฤศจิกายน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €15 adults · €6 children from 6", "th": "≈ €15 ผู้ใหญ่ · €6 เด็กตั้งแต่ 6 ขวบ" },
+          "book": "none",
+          "q": "Salzburger Freilichtmuseum, Hasenweg 1, Großgmain",
+          "ok": "2026-11",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/salzburger-freilichtmuseum_az_7591"
+        },
+        {
+          "name": { "en": "Eisriesenwelt Ice Cave", "th": "ถ้ำน้ำแข็งไอส์รีเซนเวลต์" },
+          "local": "Eisriesenwelt Werfen",
+          "kind": "nature",
+          "area": { "en": "Werfen (about 40 km south)", "th": "แวร์เฟน (ห่างไปทางใต้ราว 40 กม.)" },
+          "what": { "en": "The world's largest ice cave, reached by a cable car and a short climb, with frozen formations lit by lamps", "th": "ถ้ำน้ำแข็งที่ใหญ่ที่สุดในโลก ขึ้นกระเช้าแล้วเดินปีนสั้นๆ มีน้ำแข็งหลากรูปทรงส่องด้วยตะเกียง" },
+          "why": { "en": "Steep stairs (hundreds of steps) and freezing air make it hard for under-5s; no prams inside, so carry a baby in a sling", "th": "บันไดชันหลายร้อยขั้นและอากาศเย็นจัด เด็กต่ำกว่า 5 ขวบจะลำบาก เข็นรถเข็นเข้าไม่ได้ ควรอุ้มเด็กเล็กด้วยเป้" },
+          "tip": { "en": "Open daily 1 May – end of October (some pages say to 1 November); tickets are for a set 30-minute slot", "th": "เปิดทุกวัน 1 พฤษภาคม – สิ้นเดือนตุลาคม (บางหน้าว่าถึง 1 พฤศจิกายน) ตั๋วระบุช่วงเวลา 30 นาที" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €45 adults · €24 children 5–14 · €32 teenagers 15–18 (cave and cable car)", "th": "≈ €45 ผู้ใหญ่ · €24 เด็ก 5–14 ปี · €32 วัยรุ่น 15–18 ปี (รวมถ้ำและกระเช้า)" },
+          "book": "rec",
+          "q": "Eisriesenwelt, Werfen",
+          "ok": "2026-11",
+          "src": "https://www.eisriesenwelt.at/fileadmin/pdfs_en/eisriesenwelt_info_2026-EN.pdf"
+        },
+        {
+          "name": { "en": "Mirabell Gardens and Dwarf Garden", "th": "สวนมีราเบลและสวนคนแคระ" },
+          "local": "Mirabellgarten und Zwergerlgarten",
+          "kind": "park",
+          "area": { "en": "Mirabell", "th": "มีราเบล" },
+          "what": { "en": "Baroque gardens of flower beds, fountains and a hedge theatre, with Europe's oldest dwarf garden of 17 original stone figures", "th": "สวนบาโรกที่มีแปลงดอกไม้ น้ำพุ และโรงละครพุ่มไม้ รวมถึงสวนคนแคระที่เก่าที่สุดในยุโรป มีรูปปั้นหินดั้งเดิม 17 ตัว" },
+          "why": { "en": "Free, flat and open to all ages; the children hunt for the dwarfs and the Sound of Music steps", "th": "ฟรี ทางเรียบ เหมาะทุกวัย เด็กๆ ตามหาคนแคระและบันไดจากหนังเรื่องเดอะซาวด์ออฟมิวสิก" },
+          "tip": { "en": "Open daily (hours vary by source, from morning until dusk); parts close in winter and the Orangery is closed until December 2026", "th": "เปิดทุกวัน (เวลาต่างกันตามแหล่ง ตั้งแต่เช้าถึงพลบค่ำ) บางส่วนปิดช่วงหนาว และเรือนส้มปิดถึงธันวาคม 2026" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Mirabellgarten, Mirabellplatz, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/schloss-mirabell-mirabellgarten_az_11350"
+        },
+        {
+          "name": { "en": "Zauberflöten Playground", "th": "สนามเด็กเล่นขลุ่ยวิเศษ" },
+          "local": "Zauberflöten-Spielplatz",
+          "kind": "play",
+          "area": { "en": "Mirabell", "th": "มีราเบล" },
+          "what": { "en": "A playground themed on Mozart's Magic Flute, tucked in the Mirabell gardens", "th": "สนามเด็กเล่นธีมขลุ่ยวิเศษของโมสาร์ท อยู่ในสวนมีราเบล" },
+          "why": { "en": "Free and open all year; a good stop between the gardens and the old town", "th": "ฟรีและเปิดตลอดปี แวะได้ระหว่างสวนกับเมืองเก่า" },
+          "tip": { "en": "Weather-dependent, so pair it with the gardens on a dry day", "th": "ขึ้นกับอากาศ ควรไปคู่กับสวนในวันที่แห้ง" },
+          "ages": [2, 2, 2, 0],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Zauberflöten Spielplatz, Mirabellgarten, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.mamilade.at/sbg/salzburg-stadt/ausflugstipps/spielplaetze/zauberfloten-spielplatz-salzburg-mirabell"
+        },
+        {
+          "name": { "en": "Hangar-7", "th": "ฮังการ์-7" },
+          "local": "Red Bull Hangar-7",
+          "kind": "museum",
+          "area": { "en": "Salzburg Airport", "th": "สนามบินซาลซ์บวร์ก" },
+          "what": { "en": "A glass-and-steel hangar showing the Flying Bulls' vintage aircraft, helicopters and racing cars", "th": "โรงเก็บเครื่องบินกระจกและเหล็ก จัดแสดงเครื่องบินโบราณ เฮลิคอปเตอร์ และรถแข่งของ Flying Bulls" },
+          "why": { "en": "Free to enter and dry; children love sitting by the planes, and a cafe is on site", "th": "เข้าฟรีและอยู่ในร่ม เด็กๆ ชอบดูเครื่องบินใกล้ๆ มีคาเฟ่ในพื้นที่" },
+          "tip": { "en": "Open daily from about 09:00 (closing time differs by source, check before you go)", "th": "เปิดทุกวันตั้งแต่ราว 09:00 (เวลาปิดต่างกันตามแหล่ง ควรเช็ก)" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hangar-7, Wilhelm-Spazier-Straße 7A, Salzburg",
+          "ok": "2026-11",
+          "src": "https://hangar-7.com/en/hangar-7-destination-in-salzburg"
+        },
+        {
+          "name": { "en": "Getreidegasse", "th": "ถนนเก็ทไรเดอกัสเซอ" },
+          "local": "Getreidegasse",
+          "kind": "oldtown",
+          "area": { "en": "Old town", "th": "เมืองเก่า" },
+          "what": { "en": "The old town's main lane, lined with narrow houses, wrought-iron guild signs and passage courtyards leading off it", "th": "ถนนสายหลักของเมืองเก่า สองฝั่งเป็นบ้านแคบ ป้ายเหล็กดัดของสมาคมช่าง และลานทะลุบ้าน" },
+          "why": { "en": "Free to stroll; children enjoy looking up in the courtyard passages, and the lane is flat", "th": "เดินเล่นฟรี เด็กชอบแหงนมองในลานทะลุบ้าน ทางเรียบ" },
+          "tip": { "en": "Busy at midday in summer; go early, and combine it with Mozart's birthplace", "th": "ช่วงเที่ยงฤดูร้อนคนเยอะ ไปเช้าและแวะบ้านเกิดโมสาร์ทด้วย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Getreidegasse, Salzburg",
+          "ok": "2026-11",
+          "src": "https://www.salzburg.info/de/sehenswertes/top10/getreidegasse"
+        },
+      {"name":{"en":"Toy Museum","th":"พิพิธภัณฑ์ของเล่น"},"kind":"museumkid","area":{"en":"Bürgerspitalgasse 2","th":"บือร์เกอร์สปิทาลกัสเซอ 2"},"what":{"en":"Three levels of toys and play rooms, with a slide and a Carrera track that can be hired for half an hour.","th":"ของเล่นสามชั้นและห้องเล่น มีสไลด์ และลู่รถแข่งคาร์เรรา ให้เช่าครึ่งชั่วโมง"},"why":{"en":"Hands-on rooms for children aged 0–10, with a children's library and a Wunderkammer.","th":"ห้องลงมือเล่นสำหรับเด็กอายุ 0–10 ปี มีห้องสมุดเด็กและห้องของแปลกหายาก"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Toy Museum, Bürgerspitalgasse 2, Salzburg","ok":"2026-11","src":"https://www.salzburgmuseum.at/en/location/toymuseum/"},
+      {"name":{"en":"JumpDome","th":"จัมพ์โดม"},"kind":"play","area":{"en":"Wilhelm-Spazier-Straße","th":"วิลเฮล์ม-สปาซีเออร์-สตราสเซอ"},"what":{"en":"An indoor trampoline park with obstacle courses, foam pits and competition lanes.","th":"สนามแทรมโพลีนในร่ม มีคอร์สอุปสรรค บ่อโฟม และลู่แข่ง"},"why":{"en":"A great option on a rainy day, for children of primary school age and older.","th":"เหมาะวันฝนตก สำหรับเด็กประถมขึ้นไป"},"ages":[0,0,2,2],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"JumpDome, Wilhelm-Spazier-Straße, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
+      {"name":{"en":"Amadeus Salzach River Boat","th":"เรืออามาเดอุสบนแม่น้ำซัลซัค"},"kind":"ride","area":{"en":"Makartsteg landing stage","th":"ท่าเรือมักคาร์ตสเตก"},"what":{"en":"A 40-minute round trip along the Salzach that ends with the captain spinning the boat to Mozart's music.","th":"เที่ยวไปกลับ 40 นาทีตามแม่น้ำซัลซัค จบด้วยกัปตันหมุนเรือตามเพลงของโมสาร์ท"},"why":{"en":"The Captain's Dance, to the sound of Mozart, is a particular favourite with children.","th":"การเต้นของกัปตันตามเสียงโมสาร์ทเป็นที่โปรดของเด็กหลายคน"},"tip":{"en":"Cruises operate seasonally from spring through autumn.","th":"เปิดให้นั่งเฉพาะฤดูกาล ตั้งแต่ฤดูใบไม้ผลิถึงฤดูใบไม้ร่วง"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Amadeus Salzach River Boat, Makartsteg, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
+      {"name":{"en":"Leopoldskron Outdoor Pool","th":"สระว่ายน้ำกลางแจ้งเลโอโปลด์สครอน"},"kind":"play","area":{"en":"Beside Leopoldskron Pond, southwest of the Old Town","th":"ข้างทะเลสาบเลโอโปลด์สครอน ทางตะวันตกเฉียงใต้ของเมืองเก่า"},"what":{"en":"A large sunbathing lawn, diving platforms, a children's pool and views of Hohensalzburg Fortress.","th":"สนามหญ้าใหญ่สำหรับอาบแดด แท่นกระโดดน้ำ สระเด็ก และวิวป้อมฮอเฮนซัลส์บวร์ก"},"why":{"en":"A classic favourite with Salzburg families.","th":"ขึ้นชื่อสำหรับครอบครัวซัลซ์บวร์ก"},"tip":{"en":"Summer pool: the 2026 season ran 8 May–20 September; it gets very busy at the height of summer","th":"สระหน้าร้อน ฤดูกาล 2026 เปิด 8 พ.ค.–20 ก.ย. ช่วงร้อนจัดคนแน่นมาก"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Leopoldskron Outdoor Pool, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
+      {"name":{"en":"Marionette Museum","th":"พิพิธภัณฑ์หุ่นกระบอก"},"kind":"museumkid","area":{"en":"Inside Hohensalzburg Fortress","th":"ในป้อมฮอเฮนซัลส์บวร์ก"},"what":{"en":"Historic puppets from traditional theatres, with short video presentations on how marionettes work.","th":"หุ่นโบราณจากโรงละครดั้งเดิม มีวิดีโอสั้นอธิบายการเชิดหุ่น"},"why":{"en":"Children appreciate seeing the actual puppets used in performances.","th":"เด็กได้เห็นหุ่นตัวจริงที่ใช้แสดง"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Marionette Museum, Hohensalzburg Fortress, Salzburg","ok":"2026-11","src":"https://www.nomadepicureans.com/europe/austria/salzburg-with-kids-2026-family-itinerary/"},
+      {"name":{"en":"Steintheater","th":"โรงละครหิน"},"kind":"culture","area":{"en":"Hellbrunn","th":"เฮลบรุนน์"},"what":{"en":"A hidden theatre carved into natural stone, reached by a trail after the animal encounters.","th":"โรงละครที่สลักเข้าไปในหินธรรมชาติ ไปถึงด้วยทางเดินหลังชมสัตว์"},"why":{"en":"A true off-the-beaten-path site to finish a Hellbrunn visit.","th":"จุดซ่อนเร้นนอกเส้นทางปกติ ไว้จบการเที่ยวเฮลบรุนน์"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Steintheater, Hellbrunn, Salzburg","ok":"2026-11","src":"https://freewalkingtoursalzburg.com/salzburg-with-kids/"},
+      {"name":{"en":"Folklore Museum","th":"พิพิธภัณฑ์พื้นบ้าน"},"kind":"museum","area":{"en":"Monatsschlössl, Hellbrunn","th":"โมนาทสชลเลิสเซิล เฮลบรุนน์"},"what":{"en":"A compact, peaceful folk museum in the Monatsschlössl at Hellbrunn.","th":"พิพิธภัณฑ์พื้นบ้านขนาดกะทัดรัดและสงบในโมนาทสชลเลิสเซิลที่เฮลบรุนน์"},"why":{"en":"Especially interesting for older children.","th":"น่าสนใจโดยเฉพาะกับเด็กโต"},"ages":[0,0,1,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Folklore Museum, Monatsschlössl, Hellbrunn, Salzburg","ok":"2026-11","src":"https://www.my-salzburg-guide.at/en/salzburg-with-kids-the-best-family-activities"},
+      {"name":{"en":"Salzach riverside path","th":"ทางเดินริมแม่น้ำซัลซัค"},"kind":"park","area":{"en":"Both directions from the Altstadt","th":"ไปได้ทั้งสองทิศทางจากเมืองเก่า"},"what":{"en":"A flat, car-free riverside path that runs in both directions from the Old Town.","th":"ทางเดินริมแม่น้ำปลอดรถ ราบเรียบ ไปได้ทั้งสองทิศทางจากเมืองเก่า"},"why":{"en":"Children who can ride on their own from about age 5 or 6 find it an easy cycle.","th":"เด็กที่ขี่จักรยานเองได้ตั้งแต่อายุราว 5–6 ปี ปั่นได้ง่าย"},"ages":[2,2,2,2],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Salzach riverside path, Salzburg","ok":"2026-11","src":"https://www.salzburg-trip.com/guides/family-activities-salzburg/"},
+      {"name":{"en":"Mönchsberg lift","th":"ลิฟต์เมินช์สแบร์ก"},"kind":"views","area":{"en":"Gstättengasse","th":"เกสเทินเกอกัสเซอ"},"what":{"en":"A glass lift that carries you up about 60 metres in half a minute to the Museum der Moderne and the cliff-top viewpoints.","th":"ลิฟต์กระจกพาขึ้นราว 60 เมตรในครึ่งนาที ไปถึงพิพิธภัณฑ์โมแดร์เนและจุดชมวิวริมหน้าผา"},"why":{"en":"Half a minute up, an easy way to the Mönchsberg views.","th":"ครึ่งนาทีก็ถึงยอด วิธีง่ายไปชมวิวเมินช์สแบร์ก"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Mönchsberg lift, Gstättengasse, Salzburg","ok":"2026-11","src":"https://www.salzburgcitybreaks.com/areas/mulln"},
+      {"name":{"en":"Hettwer Bastei","th":"เฮตต์เวอร์ บาสไตเอ"},"kind":"views","area":{"en":"Steingasse, up the Mönchsberg","th":"สไตน์กัสเซอ บนเมินช์สแบร์ก"},"what":{"en":"A lookout that frames the fortress across the river, on a loop of two to three hours from the top of Steingasse.","th":"จุดชมวิวที่กรอบป้อมข้ามแม่น้ำ เป็นทางเดินวนสองถึงสามชั่วโมงจากปลายสไตน์กัสเซอ"},"why":{"en":"Part of a walking loop that passes the Paschinger Schlössl and the Franziskischlössl.","th":"อยู่ในเส้นทางเดินที่ผ่านพาชิงเงอร์ชลเลิสเซิลและฟรานซิสกิชลเลิสเซิล"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hettwer Bastei, Mönchsberg, Salzburg","ok":"2026-11","src":"https://www.salzburgcitybreaks.com/areas/andraviertel"},
+      {"name":{"en":"Gaisberg","th":"ไกส์แบร์ก"},"kind":"nature","area":{"en":"A few kilometres from the Old Town","th":"ห่างเมืองเก่าไม่กี่กิโลเมตร"},"what":{"en":"A popular local mountain at 1,287 m, with hiking, cycling and outdoor games.","th":"ภูเขาท้องถิ่นยอดนิยม สูง 1,287 เมตร มีเดินป่า ปั่นจักรยาน และเกมกลางแจ้ง"},"why":{"en":"Suitable for children for the most part, with outdoor games and a bite to eat.","th":"เหมาะกับเด็กส่วนใหญ่ มีเกมกลางแจ้งและของกินเล็กน้อย"},"ages":[0,1,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Gaisberg, Salzburg","ok":"2026-11","src":"https://www.salzburg.info/en/sights/excursions/gaisberg"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €13 ผู้ใหญ่ · €5 อายุ 6–18 ปี · ต่ำกว่า 6 ขวบฟรี",
+            "en": "≈ €13 a grown-up · €5 ages 6–18 · under 6 free"
+          },
+          "book": "none",
+          "src": "https://tourismattractions.net/austria/salzburg-family-activities-kids",
+          "name": {
+            "th": "ดอมควอเทียร์",
+            "en": "DomQuartier"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เมืองเก่า",
+            "en": "Old town"
+          },
+          "what": {
+            "th": "ห้าพิพิธภัณฑ์ในตั๋วเดียว ห้องรับรองในวังเรซิเดนซ์ แกลเลอรีมหาวิหาร และวิวจากระเบียง",
+            "en": "Five museums on one ticket: the Residenz state rooms, the cathedral gallery and terrace views"
+          },
+          "why": {
+            "th": "เด็กโต (8 ขวบขึ้นไป) ชอบห้องสมบัติและวิวมองลงไปในมหาวิหาร",
+            "en": "Older children (8+) like the treasure rooms and the view down into the cathedral"
+          },
+          "tip": {
+            "th": "เปิดวันพุธถึงวันจันทร์ 10:00–17:00",
+            "en": "Open Wednesday to Monday, 10:00–17:00"
+          },
+          "q": "DomQuartier Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.salzburg24.at/news/salzburg/stadt/spielplatz-test-in-der-stadt-salzburg-kinder-und-eltern-fuehlen-sich-im-sueden-am-wohlsten-art-331780",
+          "name": {
+            "th": "สวนเลเฮเนอร์",
+            "en": "Lehener Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เลเฮิน",
+            "en": "Lehen"
+          },
+          "what": {
+            "th": "สวนในเมือง มีสนามเด็กเล่น ชิงช้า และโครงปีน",
+            "en": "A city park with a playground of swings and a climbing frame"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นติดกลุ่มบนในการสำรวจสนามเด็กเล่นของเมืองปี 2026",
+            "en": "Its playground came near the top of a 2026 survey of the city’s playgrounds"
+          },
+          "q": "Lehener Park, Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spielplatz im Volksgarten",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/spielplaetze_az_13858",
+          "name": {
+            "th": "สนามเด็กเล่นโฟล์คสการ์เทิน",
+            "en": "Volksgarten playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนโฟล์คสการ์เทิน ริมแม่น้ำ",
+            "en": "Volksgarten, by the river"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนโฟล์คสการ์เทินริมแม่น้ำ",
+            "en": "A playground in the Volksgarten park by the river"
+          },
+          "why": {
+            "th": "อยู่ในรายชื่อสนามเด็กเล่นทางการของเมือง",
+            "en": "On the city’s official list of playgrounds"
+          },
+          "q": "Spielplatz Volksgarten, Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spielplatz in Hellbrunn",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/spielplaetze_az_13858",
+          "name": {
+            "th": "สนามเด็กเล่นเฮลบรุนน์",
+            "en": "Hellbrunn playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนวังเฮลบรุนน์",
+            "en": "Hellbrunn Palace park"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนวังเฮลบรุนน์",
+            "en": "A playground in the Hellbrunn Palace park"
+          },
+          "why": {
+            "th": "อยู่ใกล้น้ำพุกลและสวนสัตว์",
+            "en": "Next to the trick fountains and the zoo"
+          },
+          "q": "Spielplatz, Hellbrunn, Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bibelwelt Erlebnishaus",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €7 เด็กอายุ 4–15 ปี",
+            "en": "≈ €7 children (4–15)"
+          },
+          "book": "none",
+          "src": "https://salzburg.info/en/sights/museums/bibelwelt",
+          "name": {
+            "th": "ไบเบิลเวิลด์ (บีเบิลเวลท์)",
+            "en": "Bible World (Bibelwelt)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โบสถ์เอลิซาเบท ถนนพลายน์ ซาลซ์บวร์ก",
+            "en": "Elisabethkirche, Plainstraße, Salzburg"
+          },
+          "what": {
+            "th": "นิทรรศการเรื่องเล่าในพระคัมภีร์แบบลงมือสัมผัส พื้นที่ราว 1,000 ตร.ม. ในโบสถ์",
+            "en": "A hands-on exhibition of Bible stories over about 1,000 m² in a church"
+          },
+          "why": {
+            "th": "เรื่องเล่าให้ดู ฟัง และจับได้ ทุกวัย",
+            "en": "Stories to see, hear and touch, for all ages"
+          },
+          "tip": {
+            "th": "ปิดวันพุธ เข้าได้ถึง 1 ชั่วโมงก่อนปิด",
+            "en": "Closed on Wednesdays; last entry an hour before closing"
+          },
+          "q": "Bibelwelt Erlebnishaus, Plainstraße 42a, Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Badesee Liefering",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.salzburg.info/en/travel-info/infos/salzachsee-badesee-liefering_az_5366",
+          "name": {
+            "th": "ทะเลสาบว่ายน้ำซัลซัคเซ ลีเฟอริง",
+            "en": "Salzachsee Swimming Lake (Liefering)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ลีเฟอริง ทางเหนือของเมือง ซาลซ์บวร์ก",
+            "en": "Liefering, north of the city, Salzburg"
+          },
+          "what": {
+            "th": "ทะเลสาบว่ายน้ำเล็ก ๆ จากน้ำใต้ดิน มีสนามหญ้าให้นอนอาบแดด",
+            "en": "A small swimming lake fed by groundwater, with lawns for sunbathing"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นพร้อมตาข่ายปีนและชิงช้าริมน้ำ",
+            "en": "A playground with climbing nets and swings by the water"
+          },
+          "tip": {
+            "th": "เปิดพฤษภาคมถึงปลายกันยายน มีห้องเปลี่ยนเสื้อผ้าและฝักบัวน้ำเย็น",
+            "en": "Open May to the end of September; changing rooms and cold showers"
+          },
+          "q": "Badesee Liefering - Salzachseen, Salzburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spielplatz Franz-Josef-Kai",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.salzburg.info/en/playgrounds_az_13858",
+          "name": {
+            "th": "สนามเด็กเล่นฟรันซ์โยเซฟไค",
+            "en": "Franz-Josef-Kai Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟรันซ์โยเซฟไค ริมแม่น้ำซัลซัค ซาลซ์บวร์ก",
+            "en": "Franz-Josef-Kai, by the Salzach, Salzburg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นสาธารณะริมแม่น้ำ ตรวจและทำความสะอาดหลายครั้งต่อสัปดาห์",
+            "en": "A public playground by the river, checked and cleaned several times a week"
+          },
+          "why": {
+            "th": "ที่ให้เด็กเล่นและวิ่งในที่โล่ง",
+            "en": "A place to play and run in the fresh air"
+          },
+          "q": "Spielplatz Franz-Josef-Kai, Salzburg",
+          "ok": "2026-11"
+        }
+    ]
+    },
+    {
+      "place": "at-vienna",
+      "sights": [
+        {
+          "name": { "en": "Schönbrunn Zoo (Tiergarten Schönbrunn)", "th": "สวนสัตว์เชินบรุนน์" },
+          "kind": "zoo",
+          "area": { "en": "Hietzing", "th": "ฮีทซิง" },
+          "what": { "en": "The world's oldest zoo, in the palace grounds, with giant pandas, polar bears and a rainforest house", "th": "สวนสัตว์ที่เก่าแก่ที่สุดในโลก อยู่ในบริเวณพระราชวัง มีแพนด้ายักษ์ หมีขั้วโลก และบ้านป่าฝน" },
+          "why": { "en": "Wide, flat paths for prams and many indoor houses for rainy hours; under-6s are free", "th": "ทางกว้างเรียบเหมาะกับรถเข็น มีอาคารในร่มหลายหลังไว้หลบฝน เด็กต่ำกว่า 6 ขวบเข้าฟรี" },
+          "tip": { "en": "Opens at 09:00; closing runs from 16:30 in winter to 18:30 in summer, so check the day", "th": "เปิด 09:00 ปิด 16:30 หน้าหนาวถึง 18:30 หน้าร้อน เช็กเวลาของวันที่ไป" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €29 adults · ≈ €17 children 6–18 · under 6 free (2026 listing, check the price)", "th": "≈ €29 ผู้ใหญ่ · ≈ €17 เด็ก 6–18 ปี · ต่ำกว่า 6 ขวบฟรี (ข้อมูลปี 2026 เช็กราคาอีกครั้ง)" },
+          "book": "rec",
+          "q": "Tiergarten Schönbrunn, Maxingstraße, Wien",
+          "ok": "2026-11",
+          "src": "https://www.freizeitpark-welt.de/zoo/tiergarten_schoenbrunn/preise/"
+        },
+        {
+          "name": { "en": "Wurstelprater funfair", "th": "สวนสนุกวูร์สเทลปราเตอร์" },
+          "kind": "ride",
+          "area": { "en": "Prater, Leopoldstadt", "th": "ปราเตอร์ ลีโอโพลด์ชตัท" },
+          "what": { "en": "An old funfair in the Prater with carousels, a miniature train and rides, free to walk in", "th": "สวนสนุกเก่าแก่ในปราเตอร์ มีม้าหมุน รถไฟจิ๋ว และเครื่องเล่นต่างๆ เดินเข้าได้ฟรี" },
+          "why": { "en": "Many gentle rides for small children, paid one by one; many stalls take cash only", "th": "มีเครื่องเล่นเบาๆ สำหรับเด็กเล็กหลายอย่าง จ่ายทีละเครื่อง ร้านเล็กๆ หลายร้านรับเงินสดเท่านั้น" },
+          "tip": { "en": "The main season runs mid-March to the end of October; many rides close in winter", "th": "ฤดูหลักกลางเดือนมีนาคมถึงสิ้นเดือนตุลาคม เครื่องเล่นหลายอย่างปิดหน้าหนาว" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free to enter · rides ≈ €3.50–15 each (check the price)", "th": "เข้าฟรี · เครื่องเล่น ≈ €3.50–15 ต่อครั้ง (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Wurstelprater, Riesenradplatz, Wien",
+          "ok": "2026-11",
+          "src": "https://www.mamilade.at/wien/wien-2/ausflugstipps/freizeitparks/wiener-prater-wurstelprater"
+        },
+        {
+          "name": { "en": "Vienna Giant Ferris Wheel (Riesenrad)", "th": "ชิงช้าสวรรค์ยักษ์เวียนนา" },
+          "kind": "views",
+          "area": { "en": "Prater", "th": "ปราเตอร์" },
+          "what": { "en": "A big historic Ferris wheel with closed red cabins and views across the city", "th": "ชิงช้าสวรรค์ใหญ่เก่าแก่ ห้องโดยสารปิดสีแดง ชมวิวเมืองได้ทั่ว" },
+          "why": { "en": "A slow, safe ride in a closed cabin; children enjoy it from about age 3", "th": "หมุนช้าและปลอดภัยในห้องโดยสารปิด เด็กสนุกได้ตั้งแต่ราว 3 ขวบ" },
+          "tip": { "en": "Daily 11:00–23:00 in the main season (mid-March–October); the hours are shorter in winter", "th": "ทุกวัน 11:00–23:00 ในฤดูหลัก (กลางมีนาคม–ตุลาคม) หน้าหนาวเปิดสั้นกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 0.75,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €15 adults · children's fare lower and sources differ (check the price)", "th": "≈ €15 ผู้ใหญ่ · ราคาเด็กถูกกว่าแต่แหล่งข้อมูลไม่ตรงกัน (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Wiener Riesenrad, Riesenradplatz, Wien",
+          "ok": "2026-11",
+          "src": "https://www.mamilade.at/wien/wien-2/ausflugstipps/freizeitparks/wiener-riesenrad-im-prater"
+        },
+        {
+          "name": { "en": "Haus des Meeres (Aqua Terra Zoo)", "th": "ฮาอุส เดส เมเรส (สวนสัตว์น้ำและบก)" },
+          "kind": "aquarium",
+          "area": { "en": "Mariahilf", "th": "มาเรียฮิลฟ์" },
+          "what": { "en": "An aquarium and tropical zoo in an old flak tower, with sharks, turtles and a monkey house", "th": "พิพิธภัณฑ์สัตว์น้ำและสวนสัตว์เขตร้อนในหอคอยเก่า มีฉลาม เต่า และบ้านลิง" },
+          "why": { "en": "All indoors and warm, with a free-flight tropical house; it is steep in places, so a carrier helps", "th": "อยู่ในร่มและอบอุ่น มีเรือนเขตร้อนที่สัตว์เดินเล่นอิสระ บางช่วงชัน ใช้เป้อุ้มเด็กสะดวกกว่า" },
+          "tip": { "en": "Open daily 09:00–20:00, last entry 19:30; the lift saves the stairs", "th": "เปิดทุกวัน 09:00–20:00 เข้าได้ถึง 19:30 มีลิฟต์ช่วยไม่ต้องขึ้นบันได" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €23.50 adults · ≈ €9.80 children 6–15 · ≈ €6.50 aged 3–5 · under 3 free (check the price)", "th": "≈ €23.50 ผู้ใหญ่ · ≈ €9.80 เด็ก 6–15 ปี · ≈ €6.50 เด็ก 3–5 ปี · ต่ำกว่า 3 ขวบฟรี (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Haus des Meeres, Fritz-Grünbaum-Platz, Wien",
+          "ok": "2026-11",
+          "src": "https://www.mamilade.at/mami-check/mami-check-haus-des-meeres"
+        },
+        {
+          "name": { "en": "ZOOM Children's Museum", "th": "พิพิธภัณฑ์เด็กซูม" },
+          "kind": "museumkid",
+          "area": { "en": "MuseumsQuartier", "th": "มิวเซียมส์ควอร์เทียร์" },
+          "what": { "en": "A hands-on children's museum with play exhibitions, an ocean area and workshops, by age group", "th": "พิพิธภัณฑ์เด็กที่ได้ลงมือเล่น มีนิทรรศการ โซนมหาสมุทร และเวิร์กช็อป แบ่งตามช่วงอายุ" },
+          "why": { "en": "Made for small children from about 8 months; visits are in timed sessions, so book ahead", "th": "ทำสำหรับเด็กเล็กตั้งแต่ราว 8 เดือน เข้าเป็นรอบเวลา ควรจองล่วงหน้า" },
+          "tip": { "en": "Tuesday–Friday from 08:30, weekends from 09:45; closed Mondays", "th": "อังคาร–ศุกร์ เริ่ม 08:30 เสาร์–อาทิตย์ เริ่ม 09:45 ปิดวันจันทร์" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €6–8 a person (sources differ, check the price)", "th": "≈ €6–8 ต่อคน (แหล่งข้อมูลไม่ตรงกัน เช็กราคาอีกครั้ง)" },
+          "book": "req",
+          "q": "ZOOM Kindermuseum, Museumsplatz, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/zoom-kindermuseum-126552"
+        },
+        {
+          "name": { "en": "Technical Museum Vienna with miniTi", "th": "พิพิธภัณฑ์เทคนิควีนนา พร้อมโซนมินิตี" },
+          "kind": "museumkid",
+          "area": { "en": "Penzing", "th": "เพนซิง" },
+          "what": { "en": "A big technology museum with locomotives, cars and a play area for little ones called miniTi", "th": "พิพิธภัณฑ์เทคโนโลยีใหญ่ มีหัวรถจักร รถยนต์ และโซนเล่นสำหรับเด็กเล็กชื่อ miniTi" },
+          "why": { "en": "Everyone under 19 enters free, and miniTi takes children from 1.5 years", "th": "ผู้ที่อายุต่ำกว่า 19 ปีเข้าฟรี และ miniTi รับเด็กตั้งแต่ 1.5 ขวบ" },
+          "tip": { "en": "Open 09:00–18:00 on weekdays, 10:00–18:00 at weekends; miniTi has short timed slots", "th": "เปิด 09:00–18:00 วันธรรมดา 10:00–18:00 วันหยุด miniTi มีรอบเวลาสั้นๆ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €18 adults · under 19 free (check the price)", "th": "≈ €18 ผู้ใหญ่ · ต่ำกว่า 19 ปีฟรี (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Technisches Museum Wien, Mariahilfer Straße, Wien",
+          "ok": "2026-11",
+          "src": "https://www.technischesmuseum.at/exhibition/minti"
+        },
+        {
+          "name": { "en": "Schönbrunn maze and Labyrinthikon playground", "th": "เขาวงกตและสนามเด็กเล่นลาบีรินติคอนเชินบรุนน์" },
+          "kind": "play",
+          "area": { "en": "Schönbrunn palace park", "th": "สวนพระราชวังเชินบรุนน์" },
+          "what": { "en": "A hedge maze with a labyrinth playground in the palace gardens", "th": "เขาวงกตพุ่มไม้และสนามเด็กเล่นแบบลาบีรินท์ในสวนพระราชวัง" },
+          "why": { "en": "Space to run and a playground made for children; it is outdoors, so it suits dry days", "th": "มีที่ให้วิ่งและสนามเด็กเล่นสำหรับเด็ก อยู่กลางแจ้งจึงเหมาะกับวันที่ฝนไม่ตก" },
+          "tip": { "en": "Entry is through a combined ticket for the palace gardens; check what it includes and the season's hours", "th": "เข้าด้วยบัตรรวมของสวนพระราชวัง เช็กว่าอะไรรวมอยู่บ้างและเวลาเปิดตามฤดูกาล" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "check the price (included in the palace gardens' combined ticket)", "th": "เช็กราคา (รวมอยู่ในบัตรรวมของสวนพระราชวัง)" },
+          "book": "none",
+          "q": "Irrgarten Schönbrunn, Schönbrunner Schlossstraße, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/sehen-erleben/familien/sightseeing/irrgarten-337888"
+        },
+        {
+          "name": { "en": "Natural History Museum Vienna", "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติเวียนนา" },
+          "kind": "museumkid",
+          "area": { "en": "Ringstrasse", "th": "ริงชตราสเซอ" },
+          "what": { "en": "A grand museum of dinosaurs, minerals and animals, with a big dinosaur hall", "th": "พิพิธภัณฑ์ใหญ่โตเรื่องไดโนเสาร์ แร่ และสัตว์ มีห้องไดโนเสาร์ขนาดใหญ่" },
+          "why": { "en": "Under-19s enter free and the dinosaur hall holds older children's attention; a lift reaches the upper floor", "th": "ต่ำกว่า 19 ปีเข้าฟรี ห้องไดโนเสาร์ดึงดูดเด็กโต มีลิฟต์ขึ้นชั้นบน" },
+          "tip": { "en": "Thursday–Monday 09:00–18:00, Wednesday to 20:00, closed Tuesday", "th": "พฤหัส–จันทร์ 09:00–18:00 พุธถึง 20:00 ปิดวันอังคาร" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €18 adults · under 19 free (sources say about €18, check the price)", "th": "≈ €18 ผู้ใหญ่ · ต่ำกว่า 19 ปีฟรี (แหล่งข้อมูลบอกราว €18 เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Naturhistorisches Museum Wien, Maria-Theresien-Platz, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/sehen-erleben/familien/naturhistorisches-museum-353650"
+        },
+        {
+          "name": { "en": "Vienna Christmas Market at the Rathaus", "th": "ตลาดคริสต์มาสเวียนนาที่ศาลาว่าการ" },
+          "kind": "market",
+          "area": { "en": "Rathausplatz", "th": "ราทเฮาส์พลัทซ์" },
+          "what": { "en": "The big Christmas market in front of the town hall, with a tall carousel and a children's hut", "th": "ตลาดคริสต์มาสใหญ่หน้าศาลาว่าการ มีม้าหมุนสูงและกระท่อมเด็ก" },
+          "why": { "en": "Free to enter, with puppet theatre and magic shows at weekends; very crowded in the evening", "th": "เข้าฟรี มีละครหุ่นและมายากลวันหยุด ตอนเย็นแน่นมาก" },
+          "tip": { "en": "13 November–26 December 2026, daily 10:00–22:00 (24 December to 18:30)", "th": "13 พฤศจิกายน–26 ธันวาคม 2026 ทุกวัน 10:00–22:00 (24 ธันวาคมถึง 18:30)" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Wiener Christkindlmarkt, Rathausplatz, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/aktuell/veranstaltungen/wiener-christkindlmarkt-1001446"
+        },
+        {
+          "name": { "en": "Wiener Eistraum ice rink", "th": "ลานสเก็ตน้ำแข็งวีนเนอร์ ไอส์ทราม" },
+          "kind": "play",
+          "area": { "en": "Rathausplatz", "th": "ราทเฮาส์พลัทซ์" },
+          "what": { "en": "A big winter ice rink in front of the town hall, with a small separate area for children", "th": "ลานสเก็ตน้ำแข็งหน้าศาลาว่าการช่วงหน้าหนาว มีโซนเล็กแยกสำหรับเด็ก" },
+          "why": { "en": "The children's ice area is free to use, with skate hire on the spot", "th": "โซนน้ำแข็งสำหรับเด็กใช้ฟรี และเช่ารองเท้าสเก็ตได้ที่นั่น" },
+          "tip": { "en": "Season 13 November 2026–6 January 2027, daily 10:00–22:00; check the adult ticket and hire prices", "th": "ฤดูกาล 13 พฤศจิกายน 2026–6 มกราคม 2027 ทุกวัน 10:00–22:00 เช็กราคาบัตรผู้ใหญ่และค่าเช่ารองเท้า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Children's ice area free · check the price for the main rink", "th": "โซนเด็กฟรี · เช็กราคาลานหลัก" },
+          "book": "none",
+          "q": "Wiener Eistraum, Rathausplatz, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/aktuell/veranstaltungen/eistraum-am-christkindlmarkt-1001422"
+        },
+        {
+          "name": { "en": "Naschmarkt", "th": "นาชมาร์กท์" },
+          "kind": "market",
+          "area": { "en": "Wieden / Mariahilf", "th": "วีเดน / มาเรียฮิลฟ์" },
+          "what": { "en": "Vienna's biggest food market, with fruit, cheese, spices and small eateries, and a flea market on Saturdays", "th": "ตลาดอาหารใหญ่ที่สุดของเวียนนา มีผลไม้ ชีส เครื่องเทศ และร้านอาหารเล็กๆ วันเสาร์มีตลาดนัดของเก่า" },
+          "why": { "en": "Free to walk and taste; it gets crowded on Saturdays, so a carrier is easier than a pram", "th": "เดินและชิมได้ฟรี วันเสาร์คนแน่น ใช้เป้อุ้มสะดวกกว่ารถเข็น" },
+          "tip": { "en": "Stalls Monday–Friday from 06:00 and Saturday 06:00–18:00; the flea market Saturday about 06:30–15:00", "th": "แผงเปิดจันทร์–ศุกร์ ตั้งแต่ 06:00 เสาร์ 06:00–18:00 ตลาดนัดของเก่าวันเสาร์ราว 06:30–15:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Naschmarkt, Linke Wienzeile, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.gv.at/freizeit/einkaufen/maerkte/lebensmittel/naschmarkt/"
+        },
+        {
+          "name": { "en": "House of Music (Haus der Musik)", "th": "บ้านดนตรี (ฮาอุส แดร์ มูซิค)" },
+          "kind": "museumkid",
+          "area": { "en": "Inner city", "th": "ใจกลางเมือง" },
+          "what": { "en": "A sound museum where you can compose, conduct and play with music on touch screens", "th": "พิพิธภัณฑ์เสียงที่เล่นแต่งเพลง ควบคุมวง และเล่นดนตรีผ่านจอสัมผัส" },
+          "why": { "en": "Lots to press and listen to; guided children's tours on weekends are for ages 6–12", "th": "มีให้กดและฟังเยอะ ทัวร์เด็กวันหยุดเหมาะกับ 6–12 ปี" },
+          "tip": { "en": "Open daily 10:00–22:00, last entry 21:00; children's tours at 14:00 on Saturday and Sunday", "th": "เปิดทุกวัน 10:00–22:00 เข้าได้ถึง 21:00 ทัวร์เด็ก 14:00 วันเสาร์และอาทิตย์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €17–19 adults · ≈ €7 children up to 11 · under 3 free (sources differ, check the price)", "th": "≈ €17–19 ผู้ใหญ่ · ≈ €7 เด็กถึง 11 ปี · ต่ำกว่า 3 ขวบฟรี (แหล่งข้อมูลต่างกัน เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Haus der Musik, Seilerstätte, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/haus-der-musik-128042"
+        },
+        {
+          "name": { "en": "Butterfly House (Schmetterlinghaus)", "th": "บ้านผีเสื้อ (ชเมทเทอร์ลิงฮาอุส)" },
+          "kind": "nature",
+          "area": { "en": "Burggarten", "th": "บูร์กการ์เทิน" },
+          "what": { "en": "A warm Art Nouveau palm house full of free-flying butterflies, in the Burggarten park", "th": "เรือนปาล์มสไตล์อาร์ตนูโวอบอุ่น มีผีเสื้อบินอิสระ อยู่ในสวนบูร์กการ์เทิน" },
+          "why": { "en": "Warm and calm on a cold day; small children like the butterflies landing close by", "th": "อบอุ่นและสงบในวันหนาว เด็กเล็กชอบผีเสื้อที่มาเกาะใกล้ๆ" },
+          "tip": { "en": "Open daily, about 10:00–17:45 in summer and 10:00–15:45 in winter; the park around it is free", "th": "เปิดทุกวัน ราว 10:00–17:45 หน้าร้อน และ 10:00–15:45 หน้าหนาว สวนรอบๆ เข้าฟรี" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €10 adults · ≈ €6 children 3–6 (check the price)", "th": "≈ €10 ผู้ใหญ่ · ≈ €6 เด็ก 3–6 ปี (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Schmetterlinghaus, Burggarten, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/sehen-erleben/sehenswuerdigkeiten-a-z/schmetterlingshaus-357456"
+        },
+        {
+          "name": { "en": "Danube Tower (Donauturm)", "th": "หอคอยดานูบ (โดเนาทูร์ม)" },
+          "kind": "views",
+          "area": { "en": "Donaupark", "th": "โดเนาพาร์ค" },
+          "what": { "en": "A 252 m tower with a fast lift, a viewing deck and a long indoor slide beside the Donaupark", "th": "หอคอยสูง 252 ม. มีลิฟต์เร็ว ดาดฟ้าชมวิว และสไลเดอร์ในร่มยาวข้างสวนโดเนาพาร์ค" },
+          "why": { "en": "A quick lift ride children like; the slide is paid separately on the spot", "th": "นั่งลิฟต์เร็วๆ เด็กชอบ สไลเดอร์ซื้อบัตรแยกที่หน้างาน" },
+          "tip": { "en": "Open all year; check the opening times on the tower's page", "th": "เปิดทั้งปี เช็กเวลาเปิดในหน้าของหอคอย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €18–19.90 adults · ≈ €10.80–11.90 children 6–14 · under 3 free (sources differ, check the price)", "th": "≈ €18–19.90 ผู้ใหญ่ · ≈ €10.80–11.90 เด็ก 6–14 ปี · ต่ำกว่า 3 ขวบฟรี (แหล่งข้อมูลต่างกัน เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Donauturm, Donauparkstraße, Wien",
+          "ok": "2026-11",
+          "src": "https://www.oebb.at/de/tickets-kundenkarten/freizeit-urlaub/oebb-plus/wien/donauturm"
+        },
+        {
+          "name": { "en": "Sisi Museum and Imperial Apartments", "th": "พิพิธภัณฑ์ซิซีและห้องจักรพรรดิ" },
+          "kind": "culture",
+          "area": { "en": "Hofburg", "th": "ฮอฟบวร์ก" },
+          "what": { "en": "The emperor's rooms and the Sisi museum in the Hofburg palace, with the silver collection", "th": "ห้องของจักรพรรดิและพิพิธภัณฑ์ซิซีในพระราชวังฮอฟบวร์ก พร้อมห้องเครื่องเงิน" },
+          "why": { "en": "Best for school-age children: long rooms and an audio guide, not much to touch", "th": "เหมาะกับเด็กวัยเรียน ห้องยาวและมีเสียงบรรยาย แต่แตะต้องของได้น้อย" },
+          "tip": { "en": "Open daily about 09:00–17:30, last entry 16:30; a shared ticket covers all three parts", "th": "เปิดทุกวันราว 09:00–17:30 เข้าได้ถึง 16:30 บัตรใบเดียวใช้ได้ทั้งสามส่วน" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €20 adults · ≈ €12 children 6–18 · under 6 free (third-party listings, check the price)", "th": "≈ €20 ผู้ใหญ่ · ≈ €12 เด็ก 6–18 ปี · ต่ำกว่า 6 ขวบฟรี (จากเว็บภายนอก เช็กราคาอีกครั้ง)" },
+          "book": "rec",
+          "q": "Sisi Museum, Hofburg, Michaelerkuppel, Wien",
+          "ok": "2026-11",
+          "src": "https://www.wien.info/de/sightseeing/sehenswuerdigkeiten/imperiales/sisi-museum-359008"
+        },
+      {"name":{"en":"Donauinsel","th":"เกาะดานูบ (โดเนาอินเซล)"},"kind":"beach","area":{"en":"Danube Island","th":"เกาะดานูบ"},"what":{"en":"21-km island in the Danube with sandy swimming beaches, cycling paths, playgrounds and beach bars.","th":"เกาะยาว 21 กม. ในแม่น้ำดานูบ มีชายหาดทรายให้ว่ายน้ำ ทางจักรยาน สนามเด็กเล่น และบาร์ริมชายหาด"},"why":{"en":"Vienna's best free outdoor playground.","th":"สนามเด็กเล่นกลางแจ้งฟรีที่ดีที่สุดของเวียนนา"},"tip":{"en":"Best from late May through September.","th":"ดีที่สุดตั้งแต่ปลายพฤษภาคมถึงกันยายน"},"ages":[1,2,2,2],"hrs":4,"io":"out","pram":"part","price":{"en":"free","th":"ฟรี"},"book":"none","q":"Donauinsel, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"Alte Donau","th":"อัลเทอดูเนา"},"kind":"beach","area":{"en":"Alte Donau","th":"อัลเทอดูเนา"},"what":{"en":"Oxbow lake with pedal boats, rowing boats for hire and lido beaches with shallow entry points.","th":"ทะเลสาบแม่น้ำโค้งที่มีเรือถีบ เรือพายให้เช่า และชายหาดลิโดที่มีจุดลงน้ำตื้น"},"why":{"en":"Calmer and safer for young children than the main river; a very local, relaxed summer half-day.","th":"สงบและปลอดภัยสำหรับเด็กเล็กกว่าแม่น้ำหลัก เป็นบ่ายฤดูร้อนแบบท้องถิ่นที่ผ่อนคลาย"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Alte Donau, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"Lainzer Tiergarten","th":"สวนสัตว์ป่าไลน์เซอร์ (ไลน์เซอร์ทีร์การ์เทิน)"},"kind":"nature","area":{"en":"Lainzer Tiergarten","th":"ไลน์เซอร์ทีร์การ์เทิน"},"what":{"en":"Former imperial hunting ground where wild boar and red deer roam through old-growth forest.","th":"อดีตพื้นที่ล่าสัตว์ของจักรพรรดิ มีหมูป่าและกวางแดงเดินอยู่ในป่าเก่าแก่"},"why":{"en":"Entry is free, trails are easy, and spotting animals in the wild thrills kids far more than a zoo enclosure.","th":"เข้าชมฟรี เส้นทางเดินง่าย และการได้เห็นสัตว์ในป่าทำให้เด็กตื่นเต้นมากกว่าคอกสัตว์"},"tip":{"en":"Bring a picnic.","th":"เอาอาหารปิกนิกไปด้วย"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Entry is free","th":"เข้าชมฟรี"},"book":"none","q":"Lainzer Tiergarten, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"Stadtpark","th":"สตัดท์พาร์ค"},"kind":"park","area":{"en":"Innere Stadt","th":"อินแนร์ชตัดท์"},"what":{"en":"Central park with wide lawns, a gilded Strauss statue and a duck pond.","th":"สวนกลางเมืองที่มีสนามหญ้ากว้าง รูปปั้นสเตราส์ปิดทอง และบ่อเป็ด"},"why":{"en":"The famous gilded Strauss statue kids love to photograph; playgrounds and food kiosks.","th":"รูปปั้นสเตราส์ปิดทองที่เด็กชอบถ่ายรูป มีสนามเด็กเล่นและแผงอาหาร"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"No entry fee","th":"ไม่เสียค่าเข้า"},"book":"none","q":"Stadtpark, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"Kahlenberg","th":"คาห์เลนแบร์ค"},"kind":"views","area":{"en":"Kahlenberg","th":"คาห์เลนแบร์ค"},"what":{"en":"484-metre hilltop reached by a regular city bus, with views from the Danube to the Alps on clear days.","th":"ยอดเขา 484 เมตร ขึ้นด้วยรถเมล์ประจำเมือง มีวิวตั้งแต่แม่น้ำดานูบถึงเทือกเขาแอลป์ในวันอากาศแจ่มใส"},"why":{"en":"Vienna's best panorama, with a short forest walk for older kids.","th":"วิวพาโนรามาที่ดีที่สุดของเวียนนา มีทางเดินป่าสั้นๆ สำหรับเด็กโต"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kahlenberg, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"Gloriette","th":"กลอริเอตต์"},"kind":"views","area":{"en":"Schönbrunn Palace gardens","th":"สวนพระราชวังเชินบรุนน์"},"what":{"en":"Neoclassical colonnade at the top of Schönbrunn's formal gardens, reached by a gentle climb.","th":"ซุ้มเสาคลาสสิกบนยอดสวนทางการของพระราชวังเชินบรุนน์ เดินขึ้นไม่ชัน"},"why":{"en":"Sweeping views over the palace and city; the café inside is good for cake after the walk.","th":"วิวกว้างเหนือพระราชวังและเมือง คาเฟ่ข้างในดีสำหรับกินเค้กหลังเดิน"},"tip":{"en":"Free to walk up.","th":"ขึ้นไปเดินได้ฟรี"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Free to walk up","th":"ขึ้นไปเดินได้ฟรี"},"book":"none","q":"Gloriette, Schönbrunn Palace, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"Hundertwasser Museum","th":"พิพิธภัณฑ์ฮุนเดิร์ทวาสเซอร์"},"kind":"museum","area":{"en":"Near the Hundertwasserhaus","th":"ใกล้บ้านฮุนเดิร์ทวาสเซอร์"},"what":{"en":"Museum of Hundertwasser's work in an irregular building a few minutes' walk from the Hundertwasserhaus.","th":"พิพิธภัณฑ์ผลงานของฮุนเดิร์ทวาสเซอร์ในอาคารไม่สม่ำเสมอ เดินไม่กี่นาทีจากบ้านฮุนเดิร์ทวาสเซอร์"},"why":{"en":"His bold, nature-inspired art appeals to children, and the building itself is an attraction.","th":"ศิลปะที่กล้าและได้แรงบันดาลใจจากธรรมชาติดึงดูดเด็ก และตัวอาคารก็เป็นสถานที่ท่องเที่ยว"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"free for under-18s","th":"ฟรีสำหรับอายุต่ำกว่า 18 ปี"},"book":"none","q":"Hundertwasser Museum, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"MuseumsQuartier","th":"มิวเซียมส์ควอร์เทียร์"},"kind":"play","area":{"en":"MuseumsQuartier","th":"มูเซียมส์ควอร์เทียร์"},"what":{"en":"Courtyard complex with giant outdoor loungers where families picnic between museum visits.","th":"ลานรวมอาคารที่มีเก้าอี้พักผ่อนกลางแจ้งขนาดยักษ์ ครอบครัวปิกนิกระหว่างเที่ยวพิพิธภัณฑ์"},"why":{"en":"The ZOOM children's museum inside is purpose-built for under-14s.","th":"พิพิธภัณฑ์เด็กซูมอยู่ภายใน ออกแบบสำหรับเด็กอายุต่ำกว่า 14 ปี"},"ages":[1,2,2,1],"hrs":1.5,"io":"both","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"MuseumsQuartier, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+      {"name":{"en":"Palmenhaus","th":"เรือนกระจกปาล์ม (ปาล์มเฮาส์)"},"kind":"nature","area":{"en":"Schönbrunn gardens","th":"สวนเชินบรุนน์"},"what":{"en":"19th-century iron-and-glass greenhouse with towering tropical plants and a popular café.","th":"เรือนกระจกเหล็กและกระจกศตวรรษที่ 19 มีพืชเขตร้อนสูงใหญ่และคาเฟ่ยอดนิยม"},"why":{"en":"Delights kids on any weather day; a 15-minute visit that fits into a palace visit.","th":"ทำให้เด็กเพลิดเพลินในวันอากาศไม่ดี เยี่ยมชมได้ 15 นาทีระหว่างเที่ยวพระราชวัง"},"ages":[1,2,2,2],"hrs":0.5,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Palmenhaus, Schönbrunn gardens, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/top-5-family-friendly-things-to-do-in-vienna-austria/",
+          "name": {
+            "th": "สวนเอาการ์เทิน",
+            "en": "Augarten"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เลโอโพลด์ชตัดท์ เขต 2",
+            "en": "Leopoldstadt (2nd district)"
+          },
+          "what": {
+            "th": "สวนใหญ่ มีสนามเด็กเล่นห้าแห่งและโรงงานเครื่องลายคราม",
+            "en": "A large park with five play areas and the porcelain manufactory"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นห้าแห่ง มีชิงช้า สไลเดอร์ และโครงปีน",
+            "en": "Five playgrounds with swings, slides and climbing frames"
+          },
+          "q": "Augarten, Wien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Stephansdom",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เข้าชมฟรี",
+            "en": "Free to enter"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/top-5-family-friendly-things-to-do-in-vienna-austria/",
+          "name": {
+            "th": "มหาวิหารเซนต์สตีเฟน",
+            "en": "St. Stephen’s Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "จัตุรัสสเตฟาน",
+            "en": "Stephansplatz"
+          },
+          "what": {
+            "th": "มหาวิหารกอทิกกลางเมือง มีทัวร์สุสานใต้ดินและหอคอย",
+            "en": "The Gothic cathedral in the city centre, with tours of the catacombs and towers"
+          },
+          "why": {
+            "th": "กระเบื้องหลากสีบนหลังคาเรียงเป็นตราประจำเมือง",
+            "en": "The roof’s coloured tiles make the city’s coat of arms"
+          },
+          "q": "Stephansdom, Stephansplatz, Wien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nomadotravel.app/en/guides/vienna-with-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ศิลปะ",
+            "en": "Kunsthistorisches Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "จัตุรัสมาเรียเทเรเซีย",
+            "en": "Maria-Theresien-Platz"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะใหญ่ที่เด็กตามหาของน่าทึ่งในคอลเลกชัน",
+            "en": "A great art museum where children hunt for wonders in the collection"
+          },
+          "why": {
+            "th": "อายุต่ำกว่า 19 ปีเข้าฟรี",
+            "en": "Free under 19"
+          },
+          "q": "Kunsthistorisches Museum, Wien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.dschungel-cafe.at/de",
+          "name": {
+            "th": "โรงละครเด็กดชุงเงิลเวียน",
+            "en": "Dschungel Wien"
+          },
+          "kind": "show",
+          "area": {
+            "th": "มิวเซียมควอเทียร์",
+            "en": "MuseumsQuartier"
+          },
+          "what": {
+            "th": "โรงละครสำหรับเด็กและเยาวชน",
+            "en": "A theatre for children and young people"
+          },
+          "why": {
+            "th": "ละครที่ทำมาสำหรับเด็ก มีคาเฟ่ในโถง",
+            "en": "Theatre made for children, with a café in the foyer"
+          },
+          "q": "Dschungel Wien Theaterhaus, MuseumsQuartier",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://monkipark.at",
+          "name": {
+            "th": "มังกี้พาร์ก มิลเลนเนียมซิตี",
+            "en": "Monki Park (Millennium City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิลเลนเนียมซิตี บริกิทเทเนา (เขต 20)",
+            "en": "Millennium City, Brigittenau (20th district)"
+          },
+          "what": {
+            "th": "สวนเด็กเล่นในร่ม มีเส้นทางเชือกสูงและโซนเล่น",
+            "en": "An indoor family play park with a high-ropes course and play areas"
+          },
+          "why": {
+            "th": "ปีนป่ายและเล่นได้ เด็กตั้งแต่ 8 ขวบอยู่ได้โดยไม่ต้องมีผู้ปกครอง",
+            "en": "Climbing and play; from eight, children may stay without parents"
+          },
+          "q": "Monki Park, Millennium City, Wien",
+          "ok": "2026-11"
+        }
+    ]
+    }
+  ]
+}

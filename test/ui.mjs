@@ -1,13 +1,15 @@
-// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default /tmp/mb-shots).
+// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default: a fresh folder of our own under the OS temp dir, printed at the start).
 import { chromium } from 'playwright';
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { todayLost } from './today-lost.mjs';
 
 const BASE = process.env.BASE, CODE = process.env.CODE;
-const OUT = process.env.SHOTS || '/tmp/mb-shots';
-fs.mkdirSync(OUT, { recursive: true });
+const OUT = process.env.SHOTS || fs.mkdtempSync(path.join(os.tmpdir(), 'mb-shots-'));   // a folder of our own when none is given (CodeQL: no fixed path in /tmp)
+if (process.env.SHOTS) fs.mkdirSync(OUT, { recursive: true });
+console.log('screenshots →', OUT);
 const exe = process.env.CHROME || (fs.existsSync(chromium.executablePath()) ? undefined : '/opt/pw-browsers/chromium-1194/chrome-linux/chrome');
 let failures = 0;
 const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else console.log('  ok  ', m); };
@@ -45,8 +47,18 @@ async function login(page) {
   await page.waitForSelector('.shelf');
 }
 // the page re-renders after each sync; measure again if the element was just swapped
+// the kids' passport is a book shown a page at a time (#/passport/<kid>/<trip>/<page>): open one page and wait for it
+const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.ppbook[data-page="${key}"][data-trip="${tid}"][data-kid="${kid}"]`); };   // the trip too: the same page of another book is still on screen for a moment
+// the passport's ✏️ (a parent opens its boxes and ticks): switch it to the state asked for
+const ppEdit = async (page, on) => { const b = page.locator('.ppedit'); if (await b.count() && (await b.getAttribute('aria-pressed')) !== String(on)) { await b.click(); await page.waitForSelector(`.ppedit[aria-pressed="${on}"]`); } };
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
 const apiState = (page) => page.evaluate(async () => (await fetch('/api/b/state')).json());
+// a tap is drawn at once and sent later by the phone's queue: wait (≤ 8 s) until the server holds what the test expects
+const apiStateWhen = async (page, fn, ms = 8000) => {
+  const end = Date.now() + ms; let st;
+  do { st = await apiState(page); if (fn(st)) return st; await page.waitForTimeout(200); } while (Date.now() < end);
+  return st;
+};
 const T = 'hk-macau-2026';
 
 // ---------- editor on a phone ----------
@@ -83,6 +95,14 @@ const T = 'hk-macau-2026';
     'shelf: every way to a new book sits in the new-book tile; family and relatives in one settings list; sign out on its own');
   ok(await page.locator('.setlist > a .e.pic img').count() === await page.locator('.setlist > a').count() && await page.locator('.setlist a[href="#/family"] img[src$="/art/hub/family.webp"]').count() === 1
     && await page.locator('.setlist a[href="#/viewers"] img[src$="/art/hub/relatives.webp"]').count() === 1, 'settings list: each row has its own picture (family, emoji, relatives)');
+  { // how to use the app (#/help): a card on the shelf for everyone, a card a job, the topics jump to their card
+    ok(await page.locator('a.helpcard[href="#/help"]').count() === 1, 'shelf: a card for the guide');
+    await page.goto(`${BASE}/#/help`); await page.waitForSelector('.helppg .helpc');
+    const hp = await page.evaluate(() => ({ cards: document.querySelectorAll('.helpc').length, toc: document.querySelectorAll('.helptoc [data-a="jump"]').length, tag: document.querySelectorAll('.helpc .hwho').length, sx: document.documentElement.scrollWidth > innerWidth + 1 }));
+    await page.click('.helptoc [data-v="#help-kid"]'); await page.waitForTimeout(300);
+    const top = await page.evaluate(() => Math.round(document.querySelector('#help-kid').getBoundingClientRect().top));
+    ok(hp.cards === 11 && hp.toc === 11 && hp.tag >= 4 && !hp.sx && top >= 0 && top < 200, `guide: eleven topics, the parents' jobs tagged, a topic chip jumps to its card (${JSON.stringify({ ...hp, top })})`);
+    await page.goto(`${BASE}/#/`); await page.waitForSelector('.shelf'); }
   { // owner, Nov 2026: four rows wore the same gear — every settings row, shelf card and new-book way has a picture of its own
     const pics = await page.$$eval('.setlist:not(.disp) > a .e.pic img', (xs) => xs.map((x) => x.getAttribute('src')));
     const cards = await page.$$eval('a.nbcard .emb', (xs) => xs.map((x) => !!x.querySelector('img')));
@@ -107,9 +127,18 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.lead .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
   { // a fresh phone: the record page shows tonight's three (photos, words, moods) and "day done", the rest folded under "more"
     const f = await session('fold', { logall: false }); await login(f.page);
-    await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('details.more');
+    // a page a step (owner: "หน้า record ยาวมากเลย … แบบมีหลายหน้า"): the day's overview is tiles, a tile opens its step alone,
+    // the step dots and next lead on, the whole day stays one link away
+    await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('.lgtiles');
+    const ov = await f.page.evaluate(() => ({ tiles: document.querySelectorAll('.lgtile').length, blocks: document.querySelectorAll('.blk:not(.planblk)').length, all: !!document.querySelector('.lgallgo a[href$="/log/0/all"]'), h: document.documentElement.scrollHeight, small: [...document.querySelectorAll('.lgtile, .lgallgo a')].filter((e) => e.getBoundingClientRect().height < 44).length }));
+    await f.page.click('.lgtile[href$="/log/0/words"]'); await f.page.waitForSelector('.lgstep[data-step="words"] #qtext');
+    const st = await f.page.evaluate(() => ({ dots: document.querySelectorAll('.lgqs .plqd').length, now: (document.querySelector('.lgqs .plqd.now') || {}).textContent, photos: !!document.querySelector('#lgphotos'), strip: [...document.querySelectorAll('.daystrip a')].every((a) => /\/words$/.test(a.getAttribute('href'))) }));
+    await f.page.click('.plnav .plnext'); await f.page.waitForSelector('.lgstep[data-step="feel"] #lgmood');
+    ok(ov.tiles >= 6 && ov.blocks === 0 && ov.all && !ov.small && st.dots === ov.tiles && /2/.test(st.now) && !st.photos && st.strip,
+      `record page, a page a step: ${ov.tiles} tiles and no long blocks on the overview (${ov.h} px), the words step alone with its dots, the day strip keeps the step, next goes on to the mood (${JSON.stringify({ ov, st })})`);
+    await f.page.goto(`${BASE}/#/t/${T}/log/0/all`); await f.page.waitForSelector('details.more');
     const y = (q) => f.page.evaluate((q) => document.querySelector(q).getBoundingClientRect().top, q);
-    ok(await f.page.locator('details.planblk:not([open])').count() === 1 && (await y('#lgphotos')) - (await y('.logprog')) < 140, 'record page: with the plan folded, the photo box sits right under the strip');
+    ok(await f.page.locator('details.planblk:not([open])').count() === 1 && (await y('#lgphotos')) - (await y('.logprog')) < 140, `record page: with the plan folded, the photo box sits right under the strip (${(await y('#lgphotos')) - (await y('.logprog'))} px)`);
     ok(!(await f.page.locator('details.more').evaluate((d) => d.open)) && (await y('#qtext')) < (await y('[data-a="done"]')) && (await y('[data-a="done"]')) < (await y('details.more')) && !(await f.page.locator('#favtext').isVisible()), 'record page: quotes → mood → day done above the fold; favourite/note/firsts folded on a fresh day');
     await f.page.click('details.more .linkbtn[data-a="logall"]'); await f.page.waitForSelector('#favtext');
     ok(await f.page.locator('#favtext').isVisible() && await f.page.evaluate(() => localStorage.getItem('mbs_logall') === '1'), 'record page: "keep open" shows every box and is remembered on this phone');
@@ -137,14 +166,14 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => getComputedStyle(document.querySelector('.cover h1')).fontFamily.includes('Cormorant')), 'HK title in Cormorant Garamond (as in the manual)');
 
   // record day 2
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.daystrip');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.daystrip');
   // the strip under the date: tonight's three, ✓ where the day holds something, ○ where it is still empty; a tap jumps to that box
   ok(await page.evaluate(() => { const cs = [...document.querySelectorAll('.logprog .lpc')], es = entriesOf('hk-macau-2026', 1);
     const want = { '#lgphotos': mediaOf('hk-macau-2026', 1).length > 0, '#lgquotes': es.some((e) => e.kind === 'quote'), '#lgmood': es.some((e) => e.kind === 'mood' && e.mood) };
     return cs.length === 3 && cs.every((c) => document.querySelector(c.dataset.v) && c.classList.contains('on') === want[c.dataset.v] && c.querySelector('i').textContent === (want[c.dataset.v] ? '✓' : '○')); }), 'record page: the strip under the date says which of photos · words · mood the day already holds');
   await page.click('.logprog .lpc[data-v="#lgmood"]'); await page.waitForFunction(() => Math.abs(document.querySelector('#lgmood').getBoundingClientRect().top) < 140);
   ok(true, 'record page: a tap on the strip scrolls to that box');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.daystrip');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.daystrip');
   ok(await page.locator('.daystrip a').count() === 6, 'day strip shows 6 days');
   await page.fill('#qtext', 'ปลาอยู่ในน้ำเหมือนหนูเลย');
   await page.click('button[data-a="who"][data-v="mika"]');
@@ -173,12 +202,12 @@ const T = 'hk-macau-2026';
   await page.click('button[data-a="place"][data-v="Hong Kong Disneyland"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   // a first belongs to its own day: day 3's page shows Mimi met Mickey on day 2 (not ticked there), and a tap there keeps it
-  await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
+  await page.goto(`${BASE}/#/t/${T}/log/2/all`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
   const fbtn = page.locator('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
   ok(await fbtn.getAttribute('aria-pressed') === 'false' && /2/.test(await fbtn.locator('.fday').textContent()), 'firsts: another day shows the day it happened, not a tick');
   await fbtn.click(); await page.waitForTimeout(300);
   ok(await page.evaluate(() => S.entries.some((e) => e.kind === 'first' && e.first_key === 'mickey' && e.child === 'mimi' && e.day === 1)), 'firsts: a tap on another day never removes it from its own day');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"][aria-pressed="true"]');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"][aria-pressed="true"]');
   // what we actually spent: category + amount + a word → a row and the day's total; the trip total appears underneath
   await page.click('button[data-a="spendcat"][data-v="transport"]');
   await page.fill('#spendamt', '120'); await page.fill('#spendnote', 'แท็กซี่ไปดิสนีย์'); await page.click('button[data-a="addspend"]');
@@ -186,6 +215,10 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.spend .items li', { hasText: 'แท็กซี่ไปดิสนีย์' }).count() === 1 && /120/.test(await page.locator('.spend h3 .label').textContent()) && /120/.test(await page.locator('.spend p.lede').textContent()), 'spend: a row with its note, the day total and the trip total');
   ok(await page.locator('button[data-a="spendcat"] img.emi').count() === 6 && await page.locator('.spend .items li img.emi[src="/art/emoji/taxi.webp"]').count() === 1, 'spend: the categories and the row show the library pictures (🚕 = the taxi)');
   ok(await page.evaluate(() => { const box = document.createElement('div'); box.innerHTML = tagHtml('animals') + bagBlock(trip(location.hash.split('/')[2]), 1); return !!box.querySelector('img.emi[src="/art/emoji/koala.webp"]') && box.querySelectorAll('.bagl img.emi').length === box.querySelectorAll('.bagl li').length; }), 'photo tags and today’s bag draw the library pictures');
+  // the forecast adds rows (rain, warm, sun) only within 16 days of a trip, so check every thing the bag can hold, not just today's
+  // (21 Nov 2026: the HK book came within the forecast's reach and its rain row ☂️ had no picture)
+  { const miss = await page.evaluate(() => BAG.filter((b) => !emoOf(b[1])).map((b) => b[0]));
+    ok(!miss.length, `every thing today's bag can hold has a library picture (${miss.join(', ') || 'all'})`); }
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   ok((await page.evaluate(async () => (await (await fetch('/api/b/state', { credentials: 'same-origin' })).json()).spend)).some((x) => x.amount === 120 && x.cur === 'HKD' && x.cat === 'transport'), 'spend: saved on the server in the book’s money (HKD)');
   // food: the day's places in a dropdown (plan picks first, then the route, the bed, the rest) — picking one writes the note; "other" leaves it free
@@ -204,12 +237,12 @@ const T = 'hk-macau-2026';
   await page.fill('.fxbox input[data-fx="HKD"]', '4.5');
   const fxTxt = await page.textContent('#fxres');
   ok(/≈/.test(fxTxt) && fxTxt.replace(/[^\d]/g, '').includes(String(Math.round((120 + 268) * 4.5))) && await page.evaluate(() => document.activeElement && document.activeElement.dataset.fx === 'HKD'), `baht: typing the rate shows the whole trip ≈ ฿${Math.round(388 * 4.5)} at once, the field keeps the cursor`);
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.spend p.lede');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.spend p.lede');
   ok(/≈/.test(await page.textContent('.spend p.lede')) && await page.evaluate(() => (ls('fx') || {}).HKD) === 4.5, 'baht: the record page shows the trip total in baht too; the rate lives on this phone');
   // the home-screen icon shortcuts open today's record page with the box in view
   await page.goto(`${BASE}/#/go/quote`); await page.waitForSelector('#qtext');
   await page.waitForFunction(() => document.activeElement && document.activeElement.id === 'qtext', null, { timeout: 3000 }).catch(() => {});
-  ok(/\/log\/\d+$/.test(await page.evaluate(() => location.hash)) && await page.evaluate(() => document.activeElement && document.activeElement.id === 'qtext'), 'shortcut "quote": today\'s record page, the cursor in the quote box');
+  ok(/\/log\/\d+\/words$/.test(await page.evaluate(() => location.hash)) && await page.evaluate(() => document.activeElement && document.activeElement.id === 'qtext'), 'shortcut "quote": today\'s record page at its words step, the cursor in the quote box');
   await page.goto(`${BASE}/#/go/photo`); await page.waitForSelector('.golit .btn[data-a="pickphotos"]', { timeout: 3000 }).catch(() => {});
   ok(await page.locator('.golit .btn[data-a="pickphotos"]').count() === 1 && await page.locator('.golit .phstop').count() >= 3, 'shortcut "photo": the photo box is lit up and in view, with the day\'s places under the add button');
   const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
@@ -276,6 +309,9 @@ const T = 'hk-macau-2026';
     const fr = await page.evaluate(() => ({ n: document.querySelectorAll('#findres .sres li').length, txt: (document.querySelector('#findres') || {}).textContent || '' }));
     await s.shot('find');
     ok(fr.n >= 1 && /ปลาอยู่ในน้ำ/.test(fr.txt) && /Words/.test(fr.txt) && await s.noHScroll(), `search every book: the kids' words found across the books, with when and in which book (${fr.n} hits)`);
+    await page.fill('#findq', 'ปลาอยู่ในนำ'); await page.waitForTimeout(250);   // a tone mark missed: still found, said to be close
+    const fz2 = await page.evaluate(() => ({ n: document.querySelectorAll('#findres .sres li').length, near: !!document.querySelector('#findres .fznear') }));
+    ok(fz2.n >= 1 && fz2.near, `search every book: a missed tone mark still finds the words, marked as close (${JSON.stringify(fz2)})`);
     await page.goto(`${BASE}/#/devices`); await page.waitForSelector('.devs li', { timeout: 8000 }).catch(() => {});
     const dv = await page.evaluate(() => ({ me: document.querySelectorAll('.devs li.me').length, n: document.querySelectorAll('.devs li').length, head: !!document.querySelector('.phead .phpic img[src$="devices.webp"]'), cards: document.querySelectorAll('.pcard .pch .pcpic img').length }));
     await s.shot('devices');
@@ -287,14 +323,31 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => document.querySelector('.caps li.sealed'), null, { timeout: 8000 }).catch(() => {});
     const cp = await page.evaluate(() => ({ sealed: document.querySelectorAll('.caps li.sealed').length, text: (document.querySelector('.caps') || {}).textContent || '' }));
     await s.shot('capsules');
-    // growing up, trip by trip (#/grow): every book of the child, the age then, a height noted on each book, then the line of heights
-    await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.growl li');
-    const ins = page.locator('.growl .ghinp');
-    if (await ins.count() >= 2) { await ins.nth(0).fill('96'); await ins.nth(0).blur(); await ins.nth(1).fill('103.5'); await ins.nth(1).blur(); }
+    // growing up, trip by trip — now the passport's Explorer ID (#/grow redirects there): the height is typed once, in the passport, and the line reads it
+    await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.ppbook[data-page="id"] .growl li');
+    const redir = page.url().endsWith('#/passport/mimi/id');
+    await ppEdit(page, true);
+    await page.fill('.ppf[data-v="height_last"]', '96'); await page.locator('.ppf[data-v="height_last"]').blur();
+    const other = (await page.getAttribute('.growl a.grgo', 'href')).split('/')[3];   // the other book's Explorer ID
+    await page.click('.growl a.grgo'); await page.waitForSelector(`.ppbook[data-page="id"][data-trip="${other}"] .ppf[data-v="height_first"]`);
+    await page.fill('.ppf[data-v="height_first"]', '1.035 ม.'); await page.locator('.ppf[data-v="height_first"]').blur();   // in metres, with the unit: read as 103.5 cm
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {});
+    const saved = await page.evaluate(() => S.entries.filter((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id)).map((e) => `${e.id.split('.field.')[0]}:${e.first_key}=${e.text}`));
+    await ppOpen(page, 'mimi', 'big-hop-2027', 'id');   // drawn again from the saved state
     await page.waitForSelector('.grchart polyline', { timeout: 8000 }).catch(() => {});
-    const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.grcard') || {}).textContent || '' }));
+    const gr = await page.evaluate(() => ({ saved: [], n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.pp-page.grow') || {}).textContent || '', ghinp: document.querySelectorAll('.ghinp').length }));
     await s.shot('grow');
-    ok(gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && await s.noHScroll(), `growing up: each book with the character of its time; two heights draw the line (${JSON.stringify({ ...gr, note: gr.note.slice(-40) })})`);
+    gr.saved = saved;
+    ok(redir && saved.length === 2 && new Set(saved.map((x) => x.split(':')[0])).size === 2 && gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && !gr.ghinp && await s.noHScroll(), `growing up lives in the passport: each book with the character of its time; the heights typed in two books' Explorer IDs draw the line (${JSON.stringify({ redir, ...gr, note: gr.note.slice(-40) })})`);
+    // clear both again (an empty box removes the answer): the printed book's checks below expect a passport page of stamps only
+    for (const tid of [T, 'big-hop-2027']) { await ppOpen(page, 'mimi', tid, 'id');
+      for (const k of ['height_first', 'height_last']) { await page.fill(`.ppf[data-v="${k}"]`, ''); await page.locator(`.ppf[data-v="${k}"]`).blur(); }
+      await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {}); }
+    await page.waitForFunction(() => queue.length === 0 && !S.entries.some((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id)), null, { timeout: 10000 }).catch(() => {});
+    ok(await page.evaluate(() => !S.entries.some((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id))), 'Explorer ID: an emptied height box removes the height');
+    await ppEdit(page, false);
+    await page.goto(`${BASE}/#/`); await page.waitForSelector('.shelf');
+    ok(await page.locator('a[href^="#/grow"]').count() === 0 && await page.locator('.ppmini .ppc').count() >= 1, 'shelf: the "Growing up" card is gone — the passport cards are the one door');
     ok(cp.sealed === 1 && !/fish were huge/.test(cp.text) && /🔒/.test(cp.text), `letters for the future: written, sealed with two taps, then only to whom and when shows (${cp.text.replace(/\s+/g, ' ').slice(0, 80)})`);
     const kp = await page.evaluate(() => { const t = trips()[0]; return t ? { keep: viewBook(t).includes('keepbtn'), tell: kidTell(t, { id: 'ph-any-0001', day: 0 }).includes('data-a="kidtell"') } : null; });
     ok(kp && kp.keep && kp.tell, `the book page offers "keep as one file"; the kids' photo viewer offers "tell its story" (${JSON.stringify(kp)})`);
@@ -586,8 +639,10 @@ const T = 'hk-macau-2026';
         `the trip film: made in ${secs} s (${st.reel && st.reel.secs} s long, ${st.reel && st.reel.n} photos), portrait 720×1280 H.264/AAC, played in byte ranges, no metadata (${JSON.stringify({ running, status: v.status, type: v.type, range: v.range, w: vs.width, h: vs.height, aac: !!as, dur: (pr.format || {}).duration, tags, err: v.err })})`);
       await page.evaluate(() => document.getElementById('reelbox').scrollIntoView());
       await s.shot('reel-book');
-      ok(await page.locator('[data-a="reelshare"]').count() === 1 && await page.locator('#reelbox a[download]').count() === 1 && await page.locator('[data-a="reelmake"]').count() === 1,
-        'the trip film: the memory book plays it, sends it through the phone\'s share sheet, saves it, and the parents can make it again'); }
+      // wait for the film's buttons (the page redraws once the state says the film is there), never one look
+      const rb = await page.waitForFunction(() => document.querySelectorAll('[data-a="reelshare"]').length === 1 && document.querySelectorAll('#reelbox a[download]').length === 1 && document.querySelectorAll('[data-a="reelmake"]').length === 1, null, { timeout: 8000 }).then(() => true, () => false);
+      const rbSeen = await page.evaluate(() => ({ share: document.querySelectorAll('[data-a="reelshare"]').length, save: document.querySelectorAll('#reelbox a[download]').length, make: document.querySelectorAll('[data-a="reelmake"]').length, box: !!document.getElementById('reelbox') }));
+      ok(rb, `the trip film: the memory book plays it, sends it through the phone's share sheet, saves it, and the parents can make it again (${JSON.stringify(rbSeen)})`); }
     // a book with fewer than three photos has no film to make yet
     { const r = await page.evaluate(async () => { const t = trips().find((x) => !mediaOf(x.id).length); return t ? (await fetch(`/api/b/reel/${t.id}`, { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: '{}' })).json() : null; });
       ok(!r || r.error === 'few', `the trip film: a book with too few photos is told so (${JSON.stringify(r)})`); }
@@ -677,7 +732,7 @@ const T = 'hk-macau-2026';
   await page.click('[data-a="emoadd"]');
   await page.waitForFunction(() => S.emoji.some((e) => e.ch === '🦘'), null, { timeout: 8000 }).catch(() => {});
   ok(await page.locator('.emocard').count() === 72 && (await page.textContent('.emolist')).includes('Kangaroo') && await page.inputValue('[data-emf="ch"]') === '', 'emoji page: a new one with its picture, the form cleared');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#qtext');
   await page.click('[data-a="emopick"][data-for="qtext"]'); await page.waitForSelector('#emopop');
   ok(await page.locator('#emopop [data-a="emoput"][data-v="🦘"] img.emi[src^="/media/emoji/"]').count() === 1, 'emoji page: the new one is in the grid beside a text box');
   await page.keyboard.press('Escape'); await page.goto(`${BASE}/#/emoji`); await page.waitForSelector('.emolist');
@@ -696,7 +751,7 @@ const T = 'hk-macau-2026';
   const touch = await page.evaluate(() => document.querySelector('link[rel="apple-touch-icon"]').getAttribute('href'));
   const tm = await sharp(await (await page.request.get(BASE + touch)).body()).metadata();
   ok(sizes.every(Boolean) && new Set(man.shortcuts.map((s) => s.icons[0].src)).size === 4 && man.icons.some((i) => i.purpose === 'maskable') && tm.width === 180 && !tm.hasAlpha, 'app icons: every manifest icon at its size, four shortcut pictures, a maskable one, an opaque 180 px iPhone icon');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#qtext');
   // the day as a message for relatives: title line, the quotes in quotation marks, never a link; the button only where the phone can share
   const shTxt = await page.evaluate(() => shareText(trip('hk-macau-2026'), 1));
   ok(shTxt.split('\n').length >= 2 && /“.+”/.test(shTxt) && !/https?:/.test(shTxt) && !/undefined/.test(shTxt), 'share text: title + quotes, no link');
@@ -719,14 +774,14 @@ const T = 'hk-macau-2026';
     const { execFile } = await import('node:child_process');
     const vf = path.join(OUT, 'clip-ui.mp4');
     await new Promise((res, rej) => execFile('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=640x360:rate=12', '-f', 'lavfi', '-i', 'sine=frequency=330', '-t', '3', '-c:v', 'libx264', '-preset', 'ultrafast', '-c:a', 'aac', '-shortest', vf], (e) => (e ? rej(e) : res())));
-    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('[data-a="pickvideo"]');
+    await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('[data-a="pickvideo"]');
     const ph0 = await page.evaluate(() => stats(trip('hk-macau-2026')).photos);
     const [vc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="pickvideo"]')]);
     await vc.setFiles(vf);
     await page.waitForFunction(() => S.media.some((m) => (m.mime || '').startsWith('video/')), null, { timeout: 15000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 60000 });
     const sv = (await apiState(page)).media.find((m) => (m.mime || '').startsWith('video/'));
-    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.vclip video');
+    await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.vclip video');
     const recOk = await page.evaluate(() => { const v = document.querySelector('.vclip video'); return !!v && /\/media\/.+\/t$/.test(v.getAttribute('poster') || '') && document.querySelector('.vclip .clipcap') && document.querySelector('.vclip [data-a="delclip"]').getBoundingClientRect().height >= 44; });
     await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
     const bookOk = await page.locator('#d1 .vclips.noprint video').count() === 1;
@@ -734,7 +789,7 @@ const T = 'hk-macau-2026';
     ok(!!sv && sv.mime === 'video/mp4' && sv.day === 1 && recOk && bookOk && posterOk && (await page.evaluate(() => stats(trip('hk-macau-2026')).photos)) === ph0,
       `video clip: sent, made into an mp4, plays on the record page (poster, caption, delete) and in the book (not printed), not counted as a photo (${JSON.stringify({ sv: !!sv, recOk, bookOk, posterOk })})`);
   }
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.clips audio');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.clips audio');
   let st = await apiState(page);
   const es = st.entries.filter((e) => e.trip === 'hk-macau-2026' && e.day === 1);
   ok(es.filter((e) => e.kind === 'quote' && e.child === 'mika' && e.highlight).length === 1, 'server: one ⭐ quote by Mika');
@@ -825,7 +880,7 @@ const T = 'hk-macau-2026';
   const bagKeys = await page.$$eval('.bag input[data-ck]', (els) => els.map((e) => e.dataset.ck));
   ok(['kidpp', 'sun', 'pram', 'spare'].every((k) => bagKeys.includes(`${T}.bag.d1.${k}`)) && !bagKeys.includes(`${T}.bag.d1.passports`) && /\d\d:\d\d · /.test(await page.textContent('.bag')), "today page: today's bag lists what the day's plan needs, with the reason (and not the passports on a city day)");
   ok(await page.locator('details.bag:not([open])').count() === 1 && !/0\//.test(await page.textContent('.bag summary')), 'today page before the trip: the bag is one closed line and names how many things, never “0/n packed”');
-  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag');
+  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag').catch(async (e) => { console.log('DEBUG after reload:', await page.evaluate(() => `${location.hash} · ${document.readyState} · scripts ${['L', 'render', 'A', 'kidArt', 'snapMeta'].map((f) => typeof window[f] === 'function' ? 1 : 0).join('')} · S ${typeof S === 'undefined' ? '-' : S ? 'set' : 'null'} · sw ${navigator.serviceWorker && navigator.serviceWorker.controller ? navigator.serviceWorker.controller.state : 'none'} · ${document.querySelectorAll('.bag').length} bag · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`), '· errors:', s.errs.join(' | ') || 'none'); await page.screenshot({ path: `${OUT}/debug-bag.png` }); throw e; });
   ok(await page.isChecked(`.bag input[data-ck="${T}.bag.d1.sun"]`), "today page: a tick in today's bag stays after a reload");
   ok(await page.locator('.remind.line [data-a="remind"]').count() === 1 && await page.locator('.remind:not(.line)').count() === 0 && /30/.test(await page.textContent('.remind')), 'today page: one line with a “turn on” button — not a second reminder card (the ask lives on the shelf)');
   const tlRows = await page.$$eval('.tl.plan.brief li div', (els) => els.map((e) => e.textContent));
@@ -921,6 +976,14 @@ const T = 'hk-macau-2026';
   ok(/hoi lin/i.test(await page.inputValue('#eatq')) && page.url().endsWith(`#/t/${T}/eat/all`), 'a place found by the search opens the eat list already filtered to it');
   await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq'); await page.fill('#bookq', 'zzzzqq');
   ok(await page.locator('.sres li').count() === 0 && await page.locator('#bookres .empty').count() === 1, 'a word that is nowhere says so');
+  { // forgiving (owner: "อย่าตึงเกินไป"): nothing as typed → close matches, said so; a word that is found as typed shows no such line
+    await page.fill('#bookq', 'disnyland'); await page.waitForTimeout(200);
+    const fz = await page.evaluate(() => ({ n: document.querySelectorAll('#bookres .sres li').length, near: !!document.querySelector('#bookres .fznear'), mark: document.querySelectorAll('#bookres mark').length }));
+    await page.fill('#bookq', 'senadosquare'); await page.waitForTimeout(200); const op = await page.locator('#bookres .sres li').count();
+    await page.fill('#bookq', 'Disneyland'); await page.waitForTimeout(200); const ex = await page.locator('#bookres .fznear').count();
+    const nums = await page.evaluate(() => [fzAmount('1,200'), fzAmount('๑๒๐๐'), fzAmount('1.2k'), fzAmount('฿300'), fzAmount('3 พัน'), fzAmount('HK$ 85.50'), fzHeight('1.05 ม.'), fzHeight('105ซม'), fzHeight('๑๐๕')].join());
+    ok(fz.n > 0 && fz.near && fz.mark > 0 && op > 0 && ex === 0 && nums === '1200,1200,1200,300,3000,85.5,105,105,105',
+      `search forgives a slip and spacing and says the results are close ones; money and heights read the way people type them (${JSON.stringify(fz)} · senadosquare ${op} · ${nums})`); }
   // English reader, Thai word: the snippets stay English; an "If… then…" hit is titled by its situation, not the section name
   await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
   ok(await page.evaluate(() => [...document.querySelectorAll('.sres .ssnip')].every((x) => !/[\u0E00-\u0E7F]/.test(x.textContent))), 'English reader: every snippet is English even when a Thai word found it');
@@ -978,6 +1041,62 @@ const T = 'hk-macau-2026';
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
   const colH = await page.$$eval('.cgrid.packed > .ccol', (cs) => cs.map((c) => c.offsetHeight));
   ok(colH.length === 2 && Math.abs(colH[0] - colH[1]) < 260 && await page.locator('.cgrid .cbox').count() >= 5 && await page.locator('.cgrid .cbox.cone').count() >= 3, `HK today, wide screen: the boxes (four answer boxes and the one-line ones under them) packed into two columns of near-equal height (${colH.join(' / ')})`);
+  { // the eat library: what makes a place easy with a little one is read from its own words and filters in place; a typed rate shows its price roughly in baht
+    await page.evaluate(() => localStorage.setItem('mbs_fx', JSON.stringify({ JPY: 0.23 })));
+    await page.goto(`${BASE}/#/eats/tokyo`); await page.waitForSelector('.eatc');
+    const e0 = await page.evaluate(() => ({ all: document.querySelectorAll('.eatc').length, thb: document.querySelectorAll('.eatc .prthb').length, priced: [...document.querySelectorAll('.eatc')].filter((li) => /¥\s?\d/.test(li.textContent)).length, chips: [...document.querySelectorAll('.ektagbar .chip')].map((b) => b.dataset.v) }));
+    await page.locator('.ektagbar .chip').first().click();
+    const e1 = await page.evaluate((k) => { const shown = [...document.querySelectorAll('.eatc')].filter((li) => !li.hidden); return { n: shown.length, ok: shown.every((li) => li.dataset.t.split(' ').includes(k)), line: document.querySelector('#eatn').textContent }; }, e0.chips[0]);
+    ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.priced >= 5 && e0.thb >= e0.priced - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; every place with a yen price shows it roughly in baht from the rate typed on this phone — a place whose page gave no price says "Check the price" (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht of ${e0.priced} priced)`);
+    await page.evaluate(() => localStorage.removeItem('mbs_fx')); }
+  { // explore a town (#/explore, E3): the library's things to do with their ages, the rainy-day filter, a child's age, the wish list ♥ kept on the server, and the town's places to eat in a tab
+    await page.goto(`${BASE}/#/explore`); await page.waitForSelector('.xptowns .plchip');
+    await page.goto(`${BASE}/#/explore/tokyo`); await page.waitForSelector('.sightc');
+    const x0 = await page.evaluate(() => ({ n: document.querySelectorAll('.sightc').length, ages: document.querySelectorAll('.sightc .sages .sa').length, back: (document.querySelector('header.top .ibtn') || {}).getAttribute('href'), sx: document.documentElement.scrollWidth - innerWidth }));
+    await page.$eval('[data-a="sightf"][data-v="io"]', (e) => e.click()); await page.waitForFunction(() => document.querySelector('[data-a="sightf"][data-v="io"]').getAttribute('aria-pressed') === 'true');
+    const x1 = await page.$$eval('.sightc', (l) => l.length);
+    await page.$eval('[data-a="sightf"][data-v="io"]', (e) => e.click());
+    const kid = await page.$('[data-a="sightkid"]'); let x2 = x0.n;
+    if (kid) { await kid.evaluate((e) => e.click()); await page.waitForFunction(() => document.querySelector('[data-a="sightkid"]').getAttribute('aria-pressed') === 'true'); x2 = await page.$$eval('.sightc', (l) => l.length); await page.$eval('[data-a="sightkid"]', (e) => e.click()); }
+    await page.fill('#sightq', 'zzzz-nothing'); const none = await page.evaluate(() => !document.querySelector('#sightnone').hidden && [...document.querySelectorAll('.sightc')].every((li) => li.hidden)); await page.fill('#sightq', ''); await page.evaluate(() => { document.querySelector('#sightq').dispatchEvent(new Event('input', { bubbles: true })); });
+    const id = await page.$eval('.sightc .sheart', (b) => { b.click(); return b.dataset.v; });
+    await page.waitForFunction((v) => document.querySelector(`.sheart[data-v="${v}"]`) && document.querySelector(`.sheart[data-v="${v}"]`).getAttribute('aria-pressed') === 'true', id);
+    // the heart turns on before the server has it (the PUT is still on its way): wait for the server, never one look
+    const kept = await page.waitForFunction(async (v) => { const r = await fetch('/api/b/sights?town=tokyo').then((x) => x.json()); return r.sights.find((x) => x.id === v).wish === true; }, id, { timeout: 8000, polling: 250 }).then(() => true, () => false);
+    await page.$eval(`.sheart[data-v="${id}"]`, (b) => b.click()); await page.waitForFunction((v) => document.querySelector(`.sheart[data-v="${v}"]`).getAttribute('aria-pressed') === 'false', id);
+    await page.goto(`${BASE}/#/explore/tokyo/eat`); await page.waitForSelector('.eatc:not([hidden])'); const eats = await page.$$eval('.eatc', (l) => l.length);
+    ok(x0.n >= 15 && x0.ages === x0.n * 4 && x1 >= 3 && x1 < x0.n && x2 <= x0.n && none && kept === true && eats >= 5 && x0.back === '#/explore' && x0.sx <= 0, `explore Tokyo: ${x0.n} things to do with their ages, ${x1} indoors for a rainy day, ${x2} for one child, the search empties in place, ♥ kept on the server, ${eats} places to eat in the tab, back goes to every town (${JSON.stringify({ x0, none, kept })})`);
+    await page.screenshot({ path: `${OUT}/explore-tokyo.png` }).catch(() => {});
+    // the stops our own books visit join the library (owner, Nov 2026): Macau's from the Hong Kong book, with the book and day they are from,
+    // no age bands (a book gives none — never guessed), never a ferry terminal or a hotel, and Paddington in Sydney never filed under London
+    { const mo = await page.evaluate(async () => (await fetch('/api/b/sights?town=macau').then((x) => x.json())).sights.filter((x) => x.src === 'book'));
+      const ld = await page.evaluate(async () => (await fetch('/api/b/sights?town=london').then((x) => x.json())).sights.filter((x) => x.src === 'book').map((x) => x.name.en));
+      // one town, one name in both libraries (owner, Nov 2026: Jervis Bay's stops were "Sanctuary Point" while its places to eat were "Jervis Bay")
+      const lib2 = await page.evaluate(async () => { const st = (await fetch('/api/b/sights').then((x) => x.json())).towns, et = (await fetch('/api/b/eatlib').then((x) => x.json())).towns;
+        const ek = new Set(et.map((t) => t.tkey)); const all = await Promise.all(st.map(async (t) => [t.tkey, (await fetch('/api/b/sights?town=' + t.tkey).then((x) => x.json())).sights.some((x) => x.src === 'book')]));
+        return all.filter(([, b]) => b).map(([k]) => k).filter((k) => !ek.has(k)); });
+      ok(lib2.length === 0, `the library: every town our books' stops sit in has its places to eat under the same name (${JSON.stringify(lib2)})`);
+      const tl = mo[0];   // (a stop the built-in list already holds — teamLab, the Venetian — stays the built-in row, which carries the facts)
+      await page.goto(`${BASE}/#/explore/macau`); await page.waitForSelector('.sightc');
+      const card = await page.evaluate((id) => { const li = [...document.querySelectorAll('.sightc')].find((l) => l.querySelector(`[data-v="${id}"]`)); return li ? { ages: li.querySelectorAll('.sa').length, src: li.querySelector('.elsrc').textContent, grp: li.closest('.sagegrp').querySelector('h3').textContent } : null; }, tl && tl.id);
+      ok(mo.length >= 4 && tl && tl.trip === 'hk-macau-2026' && !mo.some((x) => /teamLab/.test(x.name.en)) && tl.day >= 0 && !tl.ages && !mo.some((x) => /Shun Tak|HZMB|terminus|Hotel/i.test(x.name.en)) && !ld.includes('Paddington') && card && card.ages === 0 && /Harbour Hop|ฮ่องกง/.test(card.src) && /own books|เล่มของเรา/.test(card.grp),
+        `the library: our books' stops join it under their towns, from which book and day, no guessed ages (${mo.length} in Macau · ${JSON.stringify(card)} · London ${JSON.stringify(ld)})`); }
+    // plan a day: built on the phone from the library (a long sight, lunch, a shorter sight, dinner), then carried into the planner
+    await page.goto(`${BASE}/#/explore/tokyo/day`); await page.waitForSelector('.bday li');
+    const dr = await page.evaluate(() => ({ rows: document.querySelectorAll('.bday li').length, small: [...document.querySelectorAll('.bdayb .btn, .xptabs a')].filter((b) => b.getBoundingClientRect().height < 43.5).length, sx: document.documentElement.scrollWidth - innerWidth }));
+    await page.click('[data-a="dayplan"]'); await page.waitForFunction(() => location.hash.startsWith('#/planner'));
+    const dp = await page.evaluate(() => ({ dest: pln.a.dest, want: pln.a.want }));
+    ok(dr.rows >= 3 && !dr.small && dr.sx <= 0 && /Tokyo|โตเกียว/.test(dp.dest) && dp.want.length > 3, `explore Tokyo, plan a day: ${dr.rows} rows built on the phone, taps 44 px, the day's sights become the plan's "must do" (${JSON.stringify(dp).slice(0, 140)})`); }
+  { // today's bag reads the live forecast too: rain → umbrella, a cold morning → a jacket, a hot day → sunscreen, each with its own reason
+    const bag = await page.evaluate(() => { const t = S.trips.find((x) => x.id === 'hk-macau-2026'), keep = WX[t.id]; WX[t.id] = { at: Date.now(), days: [null, null, { tmin: 11, tmax: 33, code: 61, pop: 70 }] };
+      const r = dayBag(t, 2).filter((x) => ['rain', 'warm', 'sun'].includes(x.k)).map((x) => [x.k, x.why]); WX[t.id] = keep; return r; });
+    const why = Object.fromEntries(bag);
+    await page.goto(`${BASE}/#/t/hk-macau-2026/prep`); await page.waitForSelector('.docsck');
+    await page.locator('.docsck input').first().check(); await page.reload(); await page.waitForSelector('.docsck');
+    const dk = await page.evaluate(() => ({ n: document.querySelectorAll('.docsck li').length, on: document.querySelectorAll('.docsck input:checked').length, said: document.querySelector('.docsck summary .label').textContent }));
+    ok(dk.n === 8 && dk.on === 1 && /1\/8/.test(dk.said), `prep: the papers to have ready are ticked on this phone and stay ticked (${dk.on}/${dk.n} · ${dk.said})`);
+    await page.locator('.docsck input').first().uncheck();
+    ok(bag.length === 3 && /70%/.test(why.rain) && /11°C/.test(why.warm) && /33°C/.test(why.sun), `today's bag: the live forecast adds an umbrella, a jacket and sunscreen, each saying why (${bag.map((x) => x.join(': ')).join(' · ')})`); }
   { // a fold opened on a wide screen: the boxes after it change sides so the columns stay near each other; the tapped fold and everything before it stay put
     await page.goto(`${BASE}/#/t/big-hop-2027/today/1`); await page.waitForSelector('details.dmore'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await page.waitForSelector('.cgrid.packed');
     const two = () => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 60)))));
@@ -1022,15 +1141,39 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#packbtn, [data-a="offline"]');
   ok(await page.locator('a[data-a="pdf"]').count() === 0 && await page.evaluate(() => { const h = document.querySelector('main h1'); return !!h && h.getBoundingClientRect().width <= 2 && /Offline|ไม่มีเน็ต/.test(document.querySelector('header.top .ttl').textContent); }),
     'no-signal page: the PDF button lives in the memory book only; the page\'s name is in the bar, not repeated as a heading');
-  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.pp .advc');
-  ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a:not([role=tab])').count() === 2, 'passport: one per child, a page set per trip');
-  ok(await page.locator('.advc .xbox img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1 && await page.locator('.bio .photo img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1, 'passport: Mimi drawn as her character on the cover and photo page');
+  // one passport per child: a book shown a page at a time — cover · Explorer ID · a visa per trip · missions · map · lists · stickers · trophies · certificate
+  // the shelf's card opens the child's cover: a passport a trip (owner, Nov 2026: "แยกเล่มได้ไหม … เป็นหน้าปกแล้วกดแยกเล่มได้")
+  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.ppshelf .ppbk2');
+  { const sh = await page.evaluate(() => ({ books: [...document.querySelectorAll('.ppshelf .ppbk2')].map((a) => a.getAttribute('href')), back: document.querySelector('header.top a.ibtn').getAttribute('href'), book: !!document.querySelector('.ppbook') }));
+    ok(sh.books.join() === '#/passport/mimi/hk-macau-2026/cover,#/passport/mimi/big-hop-2027/cover' && sh.back === '#/' && !sh.book, `passport: the child's cover holds one passport a trip, oldest first (${JSON.stringify(sh)})`); }
+  await page.click('.ppshelf .ppbk2[href*="hk-macau-2026"]'); await page.waitForSelector('.ppbook[data-page="cover"] .pp .advc');
+  ok(await page.getAttribute('header.top a.ibtn', 'href') === '#/passport/mimi', 'passport: a book\'s back goes to the child\'s cover');
+  { const hd = await page.evaluate(() => { const r = document.querySelector('.ppkids'), ch = [...r.children].map((c) => c.getBoundingClientRect().top); return { kids: r.querySelectorAll('a[role=tab]').length, kidgo: !!r.querySelector('.kidgo'), oneRow: ch.every((y) => Math.abs(y - ch[0]) < 2), print: !!document.querySelector('.ppbody .ppfoot a.ppprint[href^="/api/b/pdf/"]'), topPrint: !!r.querySelector('.ppprint, .ppall') }; });
+    ok(hd.kids === 2 && hd.kidgo && hd.oneRow && hd.print && !hd.topPrint, `passport: the children and kid mode in one row above the book, print at the cover's foot (${JSON.stringify(hd)})`); }
+  { const tabs = await page.$$eval('.pptabs .ppt', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
+    ok(tabs.join() === 'cover,id,visa-hk-macau-2026,missions,map,lists,stickers,trophies,cert' && await page.locator('.ppbody .mission, .ppbody .pp-page.visa, .ppbody #cert').count() === 0 && await page.locator('.ppturn [data-dir="next"][href$="/id"]').count() === 1,
+      `passport book: the pages in order — one trip a book, its own visa — and only one page on screen at a time (${tabs.join()})`); }
+  ok(await page.locator('.advc .xbox img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1, 'passport: Mimi drawn as her character on the cover');
   ok(await page.locator('.advc img.crest[src="/art/crest/hk.svg"]').count() === 1 && (await page.textContent('.advc')).includes('DOLPHIN-2026-MIMI'), 'passport cover as printed: crest, title, passport no. per child');
-  ok(await page.evaluate(() => getComputedStyle(document.querySelector('#m1 header')).backgroundColor) === 'rgb(252, 231, 241)', 'day 2 mission in the printed pink (#FCE7F1)');
-  ok((await page.textContent('.guides')).includes('Captain Pinky') && await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'Captain Pinky, Say It Like a Local (10), Dim Sum Tasting Card (stars)');
-  ok(await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0)), 'character, guide and stamp drawings load');
+  ok((await page.textContent('.guides')).includes('Captain Pinky') && await page.locator('.guides .bubble img.guide').count() === 2, 'passport cover: the two guides say hello (Captain Pinky)');
+  { // a lazy picture loads only near the screen: bring each into view in turn, wait for every one, then name any that did not arrive
+    await page.evaluate(async () => { for (const i of document.querySelectorAll('img[src^="/art/"]')) { i.scrollIntoView({ block: 'center' }); await new Promise((r) => setTimeout(r, 30)); } scrollTo(0, 0); });
+    await page.waitForFunction(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 8000 }).catch(() => {});
+    const bad = await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).filter((i) => !(i.complete && i.naturalWidth > 0)).map((i) => i.getAttribute('src')));
+    ok(!bad.length, `character, guide and stamp drawings load${bad.length ? ` (not loaded: ${bad.slice(0, 5).join(', ')})` : ''}`); }
+  ok(await s.noHScroll(), 'passport cover: no horizontal scroll at 390 px');
+  await s.shot('06-passport');
+  // the arrow keys turn the pages (a swipe does the same on a phone: sheets.js ppTurn)
+  await page.keyboard.press('ArrowRight'); await page.waitForSelector('.ppbook[data-page="id"]');
+  ok(await page.locator('.bio .photo img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1 && await page.locator('.ppbody .advc').count() === 0 && /#\/passport\/mimi\/hk-macau-2026\/id$/.test(page.url()), 'passport: → turns to the Explorer ID page (Mimi\'s character on the photo page)');
+  await page.keyboard.press('ArrowLeft'); await page.waitForSelector('.ppbook[data-page="cover"]');
+  await ppOpen(page, 'mika', 'big-hop-2027', 'cover');
+  ok((await page.textContent('.advc')).includes('KOALA-2027-MIKA') && (await page.textContent('.guides')).includes('Ranger Roo'), 'Australia: a passport number per child (KOALA-2027-MIKA), Ranger Roo on the cover');
+  await ppOpen(page, 'mimi', T, `visa-${T}`);
   ok(await page.locator('.pp-page.visa').count() === 1 && await page.locator('.dstamp').count() === 6, 'passport: HK visa page, a stamp slot per day');
   ok(await page.locator('.dstamp.on').count() === 1 && await page.locator('.dstamp.new').count() === 1, 'passport: recorded day is stamped (with the stamp animation the first time)');
+  ok(await page.locator('.stampbtn').count() === 0, 'passport before the trip: no stamp button for a grown-up (the stamp is the kids\' ceremony on a trip day)');
+  await ppOpen(page, 'mimi', T, 'map');
   { await page.click('.mapdays [data-v="3"]'); await page.waitForFunction(() => document.querySelector('.mapsec .kicker').textContent.includes('4'));
     await page.locator('.tmap .pin[data-v="senado"]').dispatchEvent('click'); await page.waitForSelector('#sheet:not([hidden]) .pinacts');
     const hrefs = await page.$$eval('#sheet a', (as) => as.map((a) => a.getAttribute('href')));
@@ -1038,11 +1181,13 @@ const T = 'hk-macau-2026';
     { await page.locator('.tmap .pin[data-v="mawan"]').dispatchEvent('click'); await page.waitForSelector('#sheet:not([hidden]) .pinstay');
       ok(/Noah's Ark/.test(await page.textContent('#sheet .pinstays')) && await page.locator('#sheet .pinstay a[href*="maps/dir/"]').count() === 1, 'passport map: a pin lists the night’s stay with directions'); await page.click('#sheet [data-a="closesheet"]'); }
   }
-  ok(await page.locator('.guides .bubble img.guide').count() === 2 && await page.locator('.mission').count() === 6, 'passport: two guides + a mission per day');
   ok(await page.locator('.sleep li').count() === 6, 'passport: where we go — 6 pins as printed');
-  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey'), 'passport: Mimi’s first is a badge');
+  await ppOpen(page, 'mimi', T, 'trophies');
+  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey') && await page.locator('.ppbody .tro:not(.got)').count() === 0 && await page.locator('.ppbody .tro.new').count() === 0, 'passport: Mimi’s first is a badge; the grown-ups see only trophies earned — no wall of grey ones — and looking never takes the child\'s "new!"');
   ok(!(await page.textContent('#app')).match(/\b[A-Z]{1,2}\d{6,9}\b|e-ticket/), 'passport: nothing that looks like a real passport / ticket number');
-  // tick a mission spot, a food (yum), an Explorer ID answer
+  await ppOpen(page, 'mimi', T, 'missions');
+  ok(await page.locator('.mission').count() === 6, 'passport: a mission per day');
+  ok(await page.evaluate(() => getComputedStyle(document.querySelector('#m1 header')).backgroundColor) === 'rgb(252, 231, 241)', 'day 2 mission in the printed pink (#FCE7F1)');
   ok(await page.locator('.mdays .chip').count() === 6 && await page.locator('.mfold[open]').count() === 1 && await page.locator('#m0 .mfold[open]').count() === 1 && await page.evaluate(() => document.documentElement.scrollHeight < 11000), `passport before the trip: day chips, only day 1's mission open (${await page.evaluate(() => document.documentElement.scrollHeight)} px)`);
   await page.click('.mdays [data-a="mday"][data-v="1"]'); await page.waitForSelector('#m1 .mfold[open]');
   ok(await page.locator('.mfold[open]').count() === 1 && await page.locator('.mdays .chip[aria-pressed="true"][data-v="1"]').count() === 1, 'a tap on day 2 opens its mission and folds day 1');
@@ -1052,44 +1197,66 @@ const T = 'hk-macau-2026';
     ok(Math.abs(w[0] - w[1]) < 2 && w[2] < w[1] * 0.7, `passport on a tablet: the open day fills the row, the folded ones stay a grid (${w.map(Math.round).join(' / ')})`);
     await page.setViewportSize(vp);
   }
+  // the grown-ups' boxes and ticks wait behind ✏️ (parents only, never in kid mode)
+  ok(await page.locator('#m1 button[data-a="tick"][data-v="spot.d1.tower"][aria-disabled="true"]').count() === 1 && await page.locator('#m1 .felt button[aria-disabled="true"]').count() === 3, 'passport: ticks are closed until a parent taps ✏️');
+  await ppEdit(page, true);
   await page.click('#m1 button[data-a="tick"][data-v="spot.d1.tower"]');
+  await page.click('#m1 .felt button[data-v="🤩"]');
+  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'a found thing is celebrated (⭐ 1), nothing missing is counted');
+  await ppOpen(page, 'mimi', T, 'lists');
+  ok(await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'lists: Say It Like a Local (10), Dim Sum Tasting Card (stars)');
+  { const jr = await page.$$eval('.pljump button[data-a="jump"]', (bs) => bs.map((b) => [b.dataset.v, !!document.querySelector(b.dataset.v)])); ok(jr.some(([v]) => v === '#pl-dimsum') && jr.some(([v]) => v === '#decl') && jr.every(([, f]) => f), `lists: a row jumps to each list (${JSON.stringify(jr)})`); }
+  { // a rated dish keeps its whole name on one line beside its picture; 🔊 and the stars go under it (owner's Samsung, Nov 2026: the stars squeezed the name to a word a line)
+    const rt = await page.evaluate(() => [...document.querySelectorAll('#pl-dimsum .tick.rate')].map((r) => { const t = r.querySelector('.t').getBoundingClientRect(), st = r.querySelector('.stars').getBoundingClientRect(); return { w: Math.round(t.width / r.getBoundingClientRect().width * 100), below: st.top >= t.bottom - 2 }; }));
+    ok(rt.length === 10 && rt.every((x) => x.w >= 60 && x.below), `tasting card: each dish's name takes the line, the stars sit under it (${JSON.stringify(rt.slice(0, 3))})`); }
   await page.click('#pl-dimsum button[data-v="dimsum.eggtart"][data-yum="3"]');
   await page.click('#pl-words button[data-v="words.mhgoi"]');
   await page.fill('.ppf[data-v="decl.eggtarts"]', '7'); await page.locator('.ppf[data-v="decl.eggtarts"]').blur();
-  ok(await page.locator('.ppf').count() >= 4 && await page.locator('.ppf[placeholder]').count() === 0 && await page.locator('.unitd .unit').count() === 2, 'passport ID: blank boxes (no "e.g." hints), the height boxes show cm beside them');
+  ok(!/Tick \d|0\/|more in/.test(await page.textContent('.ppbody')), 'lists: no "0/27" counters or "tick N more"');
+  await ppOpen(page, 'mimi', T, 'id');
+  ok(await page.locator('.ppf').count() === 4 && await page.locator('.ppf[placeholder]').count() === 0 && await page.locator('.unitd .unit').count() === 2, 'passport ID: blank boxes (no "e.g." hints), the height boxes show cm beside them');
   await page.fill('.ppf[data-v="superpower"]', 'วิ่งเร็วมาก'); await page.locator('.ppf[data-v="superpower"]').blur();
-  await page.click('#m1 .felt button[data-v="🤩"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   st = await apiState(page);
   ok(st.entries.some((e) => e.id === `${'hk-macau-2026'}.tick.spot.d1.tower.mimi`) && st.entries.some((e) => e.first_key === 'dimsum.eggtart' && e.text === '3') && st.entries.some((e) => e.first_key === 'words.mhgoi'), 'server: mission spot, 3 stars for the egg tart, a word said — for Mimi');
   ok(st.entries.some((e) => e.kind === 'field' && e.first_key === 'decl.eggtarts' && e.text === '7'), 'server: customs declaration answer');
   ok(st.entries.some((e) => e.kind === 'field' && e.text === 'วิ่งเร็วมาก') && st.entries.some((e) => e.id === 'hk-macau-2026.mood.d1.mimi' && e.mood === '🤩'), 'server: superpower answer + “today I felt” (same mood as the record page)');
-  ok(await page.locator('#m1 .tick.on').count() === 1 && await page.inputValue('.ppf[data-v="superpower"]') === 'วิ่งเร็วมาก', 'passport shows the ticks after saving');
-  ok(await page.locator('.cert:not(.earned)').count() === 1 && /last day/.test(await page.textContent('#cert')) && !/Tick \d|0\/|more in/.test(await page.textContent('.pp')),
-    'play, not homework: before the trip the certificate simply waits for the last day; no "0/27" counters or "tick N more" anywhere');
-  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'a found thing is celebrated (⭐ 1), nothing missing is counted');
-  ok(await s.noHScroll(), 'passport: no horizontal scroll at 390 px');
-  await s.shot('06-passport');
-  await page.click('.ppkids a[role=tab][href^="#/passport/mika"]'); await page.waitForSelector('.pp.kid-mika');
+  await ppEdit(page, false);
+  ok(await page.locator('.ppf').count() === 0 && /วิ่งเร็วมาก/.test(await page.textContent('.bio')), 'passport ID: ✏️ off shows the answers as text');
+  await ppOpen(page, 'mimi', T, 'missions');
+  ok(await page.locator('#m1 .tick.on').count() === 1, 'passport shows the ticks after saving');
+  await ppOpen(page, 'mimi', T, 'cert');
+  ok(await page.locator('.cert:not(.earned)').count() === 1 && /last day/.test(await page.textContent('#cert')) && !/Tick \d|0\/|more in/.test(await page.textContent('.ppbody')),
+    'play, not homework: before the trip the certificate simply waits for the last day');
+  ok(await page.locator('.ppturn [data-dir="next"]').count() === 0 && await page.locator('.ppturn [data-dir="prev"][href$="/trophies"]').count() === 1, 'the certificate is the last page');
+  for (const k of ['cover', 'id', `visa-${T}`, 'missions', 'map', 'lists', 'stickers', 'trophies', 'cert']) { await ppOpen(page, 'mimi', T, k); if (!(await s.noHScroll())) ok(false, `passport page ${k}: no horizontal scroll at 390 px`); }
+  await ppOpen(page, 'mika', T, `visa-${T}`);
   ok(await page.locator('.dstamp.new').count() === 0, 'passport: stamp animation plays once, not on every visit');
-  ok(await page.locator('.bdg').count() === 0 && await page.locator('#lwords .lwl li').count() === 1 && await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet) and her own words');
+  await ppOpen(page, 'mika', T, 'trophies'); ok(await page.locator('.bdg').count() === 0, 'passport: Mika has her own badges (none yet)');
+  await ppOpen(page, 'mika', T, 'missions'); ok(await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet)');
   // the little one's edition (seed passport.little): point / touch / sound missions, no words-to-say or explorer list, a new-words page
-  ok(await page.locator('#m1 .spot.little button[data-v="little.d1.castle"]').count() === 1 && await page.locator('#m1 .mquiz').count() === 0 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#pl-dimsum').count() === 1,
-    'little edition: Mika points at the castle; no quiz, no Cantonese words, no explorer list or customs form (the dim sum card stays)');
+  ok(await page.locator('#m1 .spot.little button[data-v="little.d1.castle"]').count() === 1 && await page.locator('#m1 .mquiz').count() === 0, 'little edition: Mika points at the castle; no quiz');
+  await ppOpen(page, 'mika', T, 'lists');
+  ok(await page.locator('#lwords .lwl li').count() === 1 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#pl-dimsum').count() === 1,
+    'little edition: her own words; no Cantonese words, no explorer list or customs form (the dim sum card stays)');
+  await ppEdit(page, true);
   ok(/bye-bye/.test(await page.getAttribute('#lw-mika', 'placeholder')), 'little edition: the word box shows its whole example (quotes do not cut it)');
   await page.fill('#lw-mika', 'บ๊ายบาย'); await page.click('[data-a="littleword"][data-k="mika"]');
   await page.waitForFunction(() => [...document.querySelectorAll('#lwords .lwl li')].some((li) => li.textContent.includes('บ๊ายบาย')), null, { timeout: 5000 });
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   ok((await apiState(page)).entries.some((e) => e.kind === 'quote' && e.child === 'mika' && e.text === 'บ๊ายบาย'), 'little edition: a new word is saved as Mika’s quote (book, PDF and story see it)');
+  await ppOpen(page, 'mika', T, 'missions');
   await page.click('button[data-a="tick"][data-v="little.d1.castle"]'); await page.waitForSelector('#m1 .tick.on');
-  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')) && !(await page.locator('#cert').getAttribute('class')).includes('earned'), 'little edition: a pointed-at castle gets a star; the certificate still just waits for the last day');
+  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'little edition: a pointed-at castle gets a star');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
-  await page.click('.ppkids a[href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('#m15');
-  ok(await page.locator('.mission').count() === 16 && (await page.textContent('.guides')).includes('Ranger Roo'), 'passport: Australia — Ranger Roo, Kiki and 16 missions');
-  ok(await page.locator('#m3 .spot.little button[data-v="little.d3.hop"]').count() === 1 && await page.locator('.mission .spot.little').count() === 16 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#lwords').count() === 1,
-    'Australia, little edition too: Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day, her new-words page, no words-to-say, explorer list or customs form');
-  await page.click('.ppkids a[role=tab][href="#/passport/mimi/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mimi #pl-master');
+  await ppOpen(page, 'mika', T, 'cert'); ok(!(await page.locator('#cert').getAttribute('class')).includes('earned'), 'little edition: the certificate still just waits for the last day');
+  await ppOpen(page, 'mika', 'big-hop-2027', 'missions');
+  ok(await page.locator('.mission').count() === 16 && await page.locator('#m3 .spot.little button[data-v="little.d3.hop"]').count() === 1 && await page.locator('.mission .spot.little').count() === 16, 'Australia, little edition too: 16 missions, Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day');
+  await ppOpen(page, 'mika', 'big-hop-2027', 'lists');
+  ok(await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#lwords').count() === 1, 'Australia, little edition: her new-words page, no words-to-say, explorer list or customs form');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'missions');
   ok(await page.locator('.mission .spot.little').count() === 0 && await page.locator('#m3 button[data-v^="spot.d3."]').count() === 4, 'Australia: Mimi keeps her own find-these missions');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'lists'); await page.waitForSelector('.pp.kid-mimi #pl-master');
   {   // the tasting card draws each dish from the food library (owner, Nov 2026: "ต่อรูปใน การ์ดชิมอาหารในพาสปอร์ต"); a dish tasted is a sticker of its picture
     await page.waitForFunction(() => [...document.querySelectorAll('.ticks.food .tick .e img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
     const taste = await page.evaluate(() => { const t = trip('big-hop-2027'), l = kidLists(t, 'mimi').find((x) => x.yum || x.stars), rows = [...document.querySelectorAll(`#pl-${l.key} .tick`)];
@@ -1101,7 +1268,7 @@ const T = 'hk-macau-2026';
       `passport tasting card: every dish with a picture in the food library is drawn as that picture and its sticker carries it; a dish that names its own picture shows it (the lamington is the chocolate and coconut cube, the meat pie a savoury pie); an animal's picture never stands in for a dish (${JSON.stringify(taste)})`);
     await page.evaluate(() => { const l = kidLists(trip('big-hop-2027'), 'mimi').find((x) => x.yum || x.stars); document.querySelector(`#pl-${l.key}`).scrollIntoView({ block: 'start' }); window.scrollBy(0, -70); }); await s.shot('07c-passport-tasting', false);
   }
-  await page.click('.ppkids a[role=tab][href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mika #lwords'); await page.waitForSelector('#m15 .spot.little', { state: 'attached' });   // (folded before the trip) Mika's page itself (#m15 alone also matches Mimi's page still on screen)
+  await ppOpen(page, 'mika', 'big-hop-2027', 'map');
   await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
   // kid mode: big buttons, locked until a grown-up holds the lock
   await page.evaluate(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
@@ -1114,8 +1281,14 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
+  { // owner's Samsung, Nov 2026: "จะพิมพ์แล้ว keyboard เด้งหาย" — the keyboard shrinks the screen's height, and the resize re-packed the
+    // passport's pages, moving the box under the focused field, which closed the keyboard
+    await ppOpen(page, 'mimi', T, 'id'); const vs = page.viewportSize(); await page.focus('input.ppf'); await page.setViewportSize({ width: vs.width, height: Math.round(vs.height * 0.55) }); await page.waitForTimeout(400);
+    const kept = await page.evaluate(() => !!(document.activeElement && document.activeElement.matches('input.ppf')));
+    await page.setViewportSize(vs); await page.waitForTimeout(300);
+    ok(kept, `passport: a field keeps the focus when the keyboard shrinks the screen (focused: ${await page.evaluate(() => document.activeElement && document.activeElement.className)})`); }
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 34 && await page.locator('.kidtiles button[data-v$="/wear"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 34 big tiles (what comes first, what\'s missing, spot the difference, green light red light, dress up, colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, copy the tune, join the dots, how many, cake, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 35 && await page.locator('.kidtiles button[data-v$="/dish"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/wear"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 35 big tiles (what dish is this, what comes first, what\'s missing, spot the difference, green light red light, dress up, colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, copy the tune, join the dots, how many, cake, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
   ok(await page.evaluate(() => { const mm = window.matchMedia; window.matchMedia = () => ({ matches: false }); celebrate(); window.matchMedia = mm; const n = document.querySelectorAll('.confetti').length; return n === 36 && [...document.querySelectorAll('.confetti')].every((c) => getComputedStyle(c).position === 'fixed'); }), 'kid mode: the big celebration drops 36 pieces of confetti over the whole screen (stamp, surprise box, a finished game)');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
@@ -1147,6 +1320,11 @@ const T = 'hk-macau-2026';
     const foodLib = await page.evaluate(() => ({ n: Object.values(GAME_ART).filter((v) => v.startsWith('food/')).length, ramen: gE('🍜'), tea: gE('☕️'), plain: gE('🧿') }));
     ok(artBad.length === 0 && foodLib.n === 60 && /food\/noodles\.webp/.test(foodLib.ramen) && /food\/hotdrink\.webp/.test(foodLib.tea) && foodLib.plain === '🧿',
       `kid pictures: every picture the games name is served, the food library holds 60 dishes, a book's ramen and tea draw as pictures and an emoji without one stays an emoji (bad: ${artBad.join(' ') || 'none'}, ${foodLib.n})`);
+    // a dish named in a book finds its own picture by its name (either language), and every such picture is served
+    const dishes = await page.evaluate(async () => { const bad = []; for (const [, n] of DISH_ART) { const r = await fetch(`/art/food/${n}.webp`); if (!r.ok) bad.push(n); }
+      return { bad, ramen: foodArt('🍜', '', 'Tempura เทมปุระ'), th: foodArt('🥘', '', 'ต็อกบกกี'), pho: foodArt('🍜', '', 'Phở bò'), photo: dishArt('Photo stop'), tart: dishArt('Egg tart 蛋撻'), rice: dishArt('ข้าวมันไก่'), own: foodArt('🍜', 'food/noodles', 'Ramen') }; });
+    ok(!dishes.bad.length && /tempura\.webp/.test(dishes.ramen) && /pho\.webp/.test(dishes.pho) && /tteokbokki\.webp/.test(dishes.th) && dishes.photo === '' && dishes.tart === 'food/eggtart' && dishes.rice === 'food/chickenrice' && /noodles\.webp/.test(dishes.own),
+      `dish pictures by name: Tempura → tempura, Phở → pho, ต็อกบกกี → tteokbokki, "Photo" is not phở, a book's own art wins (${JSON.stringify(dishes)})`);
   }
   for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow'], ['where', '.whereb'], ['odd', '.oddch'], ['next', '.nextrow'], ['howmany', '.hmbox']]) {
     await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector(sel);
@@ -1168,8 +1346,8 @@ const T = 'hk-macau-2026';
       const nextBtn = page.locator('[data-a="kglv"][data-v="3"].kidbig');
       const hadNext = await nextBtn.count() === 1; if (hadNext) await nextBtn.click();
       await page.waitForSelector('.lvbar');
-      const lv = await page.evaluate(() => ({ at: kg.at, opts: kg.r.opts.length, chips: document.querySelectorAll('.lvbar .lvc').length, on: document.querySelector('.lvc.on').dataset.v, won: document.querySelectorAll('.lvc i').length }));
-      ok(hadNext && lv.at === 3 && lv.opts === 4 && lv.chips === 3 && lv.on === '3' && lv.won === 2, `kid levels: a won level opens the next (level 3: four pictures; three chips, a star on the two won) (${JSON.stringify({ hadNext, ...lv })})`);
+      const lv = await page.evaluate(() => ({ at: kg.at, opts: kg.r.opts.length, chips: document.querySelectorAll('.lvbar .lvc').length, on: document.querySelector('.lvc.on').dataset.v, won: document.querySelectorAll('.lvc i').length, l1: document.querySelector('.lvc[data-v="1"]').classList.contains('won') }));
+      ok(hadNext && lv.at === 3 && lv.opts === 4 && lv.chips === 3 && lv.on === '3' && lv.won === 1 && lv.l1 === false, `kid levels: a won level opens the next (level 3: four pictures; three chips, a star only on level 2 — the one played and won; level 1, skipped by starting at 2, wears none) (${JSON.stringify({ hadNext, ...lv })})`);
       // the levels start again (owner, Nov 2026: "อันนี้จะล้างยังไง"): a tap on "Level" does nothing, a grown-up's 1.5 s hold goes back to the start
       const rb = await page.locator('.lvbar .lvreset').boundingBox();
       await page.mouse.click(rb.x + rb.width / 2, rb.y + rb.height / 2); await page.waitForTimeout(300);
@@ -1505,8 +1683,14 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => queue.length === 0 && document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 8000 });   // the blue tap's save is back and the picture redrawn
     // every redraw empties the pad and fills its picture back from the SVG a moment later (kid.js hydrateColours): after the blue tap's save
     // the state refresh redraws, so wait for the shape to be on screen again before tapping (a CI failure of Nov 2026: "Element is not visible")
-    const shape0 = page.locator('.colourpad [data-c]').nth(0);
-    await page.click('.palette button[data-v="#EF5350"]'); await shape0.waitFor({ state: 'visible', timeout: 8000 }); await shape0.click({ force: true });
+    // a second CI failure (28 Nov 2026, the same "Element is not visible" after the wait): the list of more pictures (kid.js colFetch) came back
+    // between the wait and the click and redrew the page, so the click held a shape no longer on it. Wait for that list first, then tap the
+    // shape as it is now in one step inside the page (the click event the app listens for), so no redraw can fall between finding and tapping.
+    await page.waitForFunction(() => Array.isArray(colLib['hk-macau-2026']) && queue.length === 0, null, { timeout: 8000 });
+    await page.click('.palette button[data-v="#EF5350"]');
+    await page.waitForFunction(() => !!document.querySelector('.colourpad [data-c="0"]'), null, { timeout: 8000 });
+    const tap0 = await page.evaluate(() => { const el = document.querySelector('.colourpad [data-c="0"]'), r = el.getBoundingClientRect(); el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true })); return { w: Math.round(r.width), h: Math.round(r.height), fill: el.getAttribute('fill') }; });
+    ok(tap0.w > 0 && tap0.h > 0 && /EF5350/i.test(tap0.fill), `colouring: the first shape is on screen and takes the red (${JSON.stringify(tap0)})`);
     // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
     await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
     const two = await filled(), why = await page.evaluate(() => ({ pend: Object.values(colPend), fill: (document.querySelector('.colourpad') || {}).dataset.fill, saved: (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text, hist: colHist.length, q: queue.length }));
@@ -1660,9 +1844,13 @@ const T = 'hk-macau-2026';
     return Math.abs((r.left + r.width / 2) - (q.left + q.width / 2)) < 1 && Math.abs((r.top + r.height / 2) - (q.top + q.height / 2)) < 1; }), 'the lock is a drawn icon in the middle of its circle (the emoji sat off-centre in Safari)');
   ok(await page.evaluate(() => ['.kidhear', '.kidme'].every((q) => { const b = document.querySelector(q); if (!b) return true; const c = getComputedStyle(b); return c.display === 'grid' && c.paddingLeft === '0px' && c.paddingTop === '0px'; })), 'the kid header\'s round buttons centre what they hold (no default button padding)');
   await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
-  await page.waitForSelector('.pp .advc');
-  ok(page.url().includes('#/passport/mimi') && await page.locator('#m1 .colsvg.sm svg').count() === 1, 'holding the lock leaves kid mode; the passport shows the colouring');
-  ok(await page.locator('.mapsec .tmap .pin').count() === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made');
+  await page.waitForSelector('.ppshelf .ppbk2');
+  ok(page.url().includes('#/passport/mimi') && await page.locator('.ppshelf .ppbk2').count() === 2, 'holding the lock leaves kid mode: Mimi\'s passports, the grown-ups\' door');
+  await ppOpen(page, 'mimi', T, 'missions'); await page.waitForSelector('#m1 .colsvg.sm svg', { timeout: 5000 }).catch(() => {});
+  ok(await page.locator('#m1 .colsvg.sm svg').count() === 1, 'the passport shows the colouring');
+  await ppOpen(page, 'mimi', T, 'map'); const pins = await page.locator('.mapsec .tmap .pin').count();
+  await ppOpen(page, 'mimi', T, 'stickers');
+  ok(pins === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made — the same page kid mode sticks them on');
   await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
   ok(/1 (รีวิว|review)/.test(await page.textContent('a.nbcard[href="#/notebook"]')), 'shelf: travel notebook card counts the review');
@@ -1695,7 +1883,7 @@ const T = 'hk-macau-2026';
   ok(s.errs.length === 0, 'no console errors: ' + s.errs.join(' | '));
 
   // offline capture → reconnect → drains once
-  await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/2/all`); await page.waitForSelector('#qtext');
   await s.ctx.setOffline(true);
   await page.fill('#qtext', 'ออฟไลน์บนสะพาน'); await page.click('button[data-a="savequote"]');
   await page.waitForSelector('.items .tag'); await page.waitForTimeout(50);   // the save's re-render first (it replaces the file input)
@@ -1763,7 +1951,7 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => queue.length >= 1, null, { timeout: 5000 });
   const lock2 = await boxOf(page, '#kidexit');
   await page.mouse.move(lock2.x + lock2.width / 2, lock2.y + lock2.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
-  await page.waitForSelector('.pp .advc');
+  await page.waitForSelector('.ppshelf .ppbk2');
   await s.ctx.setOffline(false);
   await page.evaluate(() => { offline = false; return flush(); });
   await page.waitForFunction(() => queue.length === 0 && !offline, null, { timeout: 20000 });
@@ -1798,6 +1986,28 @@ const T = 'hk-macau-2026';
     pages: (pb.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length };
   ok(pdf.status === 200 && pdf.type === 'application/pdf' && pdf.head === '%PDF-', `server PDF: ${Math.round(pdf.size / 1024)} KB, ${pdf.pages} A4 pages`);
   ok(pdf.pages >= 7 && pdf.size > 40000, 'memory book PDF: cover, numbers, contents, day pages, firsts, words, a passport spread per child, back cover');
+  { const r5 = await s.page.request.get(`${BASE}/api/b/pdf/hk-macau-2026?size=a5`, { timeout: 120000 }), b5 = (await r5.body()).toString('latin1');
+    const p5 = (b5.match(/\/Type\s*\/Page[^s]/g) || []).length, box = (b5.match(/\/MediaBox\s*\[\s*0 0 ([\d.]+) ([\d.]+)/) || []).slice(1).map(Number);
+    ok(r5.status() === 200 && /-a5\.pdf/.test(r5.headers()['content-disposition'] || '') && Math.round(box[0]) === 420 && p5 === pdf.pages, `the A5 book: A4's pages scaled whole, none spill (${p5} pages vs ${pdf.pages}, ${box.join('×')} pt)`); }
+  // help and play near where we sleep (views.js careBlock, server/care.js): Hong Kong's hospitals first, a pin each, no hours or phone
+  await s.page.goto(`${BASE}/#/t/hk-macau-2026/sos`);
+  await s.page.waitForSelector('#carelib:not([hidden]) .cfold[open] ul.carel li', { timeout: 20000 });
+  { const c = await s.page.evaluate(() => { const b = document.getElementById('carelib'); return { first: b.querySelector('.cfold[open] h5').textContent, n: b.querySelectorAll('.cfold[open] li').length, pins: b.querySelectorAll('.cfold[open] li .navb').length, text: b.textContent }; });
+    ok(/hospital|โรงพยาบาล/i.test(c.first) && c.n >= 3 && c.pins === c.n && !/24[- ]hour|\+852/.test(c.text), `SOS: hospitals and play near the stay (${c.n} places, the first group "${c.first.trim()}")`); }
+  // a place the family knows (care_own): the town's "add" sheet, a kind chip, saved — it shows under its kind with "our own" and a pin
+  await s.page.click('#carelib .cfold[open] [data-a="careadd"]');
+  await s.page.fill('#coname', 'Our UI test playground');
+  await s.page.click('[data-a="carekind"][data-v="play"]');
+  await s.page.fill('#conote', 'Shady, soft ground');
+  await s.page.click('[data-a="careaddgo"]');
+  await s.page.waitForFunction(() => [...document.querySelectorAll('#carelib .cown')].some((li) => li.textContent.includes('Our UI test playground')), null, { timeout: 15000 });
+  { const own = await s.page.evaluate(() => { const li = [...document.querySelectorAll('#carelib .cown')].find((x) => x.textContent.includes('Our UI test playground')); return { pin: !!li.querySelector('.navb'), del: !!li.querySelector('[data-a="caredel"]'), under: li.closest('ul').previousElementSibling.textContent }; });
+    ok(own.pin && own.del && /play|เล่น/i.test(own.under), `SOS: a place we know is added under its kind with a pin and a remove button (${own.under.trim()})`); }
+  // what dish is this? (kid.js dishFor): the book's tasting card, a right pick says the dish and its Cantonese name
+  await s.page.goto(`${BASE}/#/kid/mimi/dish`); await s.page.waitForSelector('.dishpic', { timeout: 15000 });
+  { const k = await s.page.evaluate(() => dsh.r.want.k); await s.page.click(`.dishopt[data-v="${k}"]`);
+    const d = await s.page.evaluate(() => ({ got: dsh.got, opts: document.querySelectorAll('.dishopt').length, zh: [...document.querySelectorAll('.dishopt small')].map((x) => x.textContent) }));
+    ok(d.got && d.opts >= 2 && d.zh.some((x) => /[\u4e00-\u9fff]/.test(x)), `kid mode: what dish is this — ${d.opts} names, the local word under them (${d.zh.join(' ')})`); }
   // the memory book preview on screen (what the PDF prints)
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.pg.cover');
   const pgs = await s.page.locator('.pg').evaluateAll((els) => els.map((e) => e.className.replace('pg ', '').split(' ')[0]));
@@ -1824,15 +2034,18 @@ const T = 'hk-macau-2026';
   ok(await s.page.locator('.printset .agek .tpo').count() === 3 && await s.page.locator('.agek .tpo[data-age="little"][data-v="auto"][aria-pressed="true"] .psfit').count() === 1 && await s.page.locator('.printset .psi').count() === 3, 'book page: one card for the printed book — three age styles with the app\'s icons, the one that fits the youngest child chosen by default');
   await s.page.click('.agek .tpo[data-age="big"]'); await s.page.waitForSelector('.agek .tpo[data-age="big"][aria-pressed="true"]');
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
+  const ageRow = (st) => st.entries.find((e) => e.id === 'hk-macau-2026.bookage.all');
+  const ageBig = ageRow(await apiStateWhen(s.page, (st) => (ageRow(st) || {}).text === 'big'));
   ok(await s.page.locator('.kbook.age-big').count() === 1 && await s.page.locator('.pg.mypage .myact.journal .wlines i').count() >= 14
-    && (await apiState(s.page)).entries.some((e) => e.id === 'hk-macau-2026.bookage.all' && e.kind === 'bookage' && e.text === 'big' && e.day === null), 'printed book: "big kids" chosen → the journal pages with writing lines; one trip-wide entry');
+    && !!ageBig && ageBig.kind === 'bookage' && ageBig.text === 'big' && ageBig.day === null, `printed book: "big kids" chosen → the journal pages with writing lines; one trip-wide entry (server: ${JSON.stringify(ageBig && { kind: ageBig.kind, text: ageBig.text, day: ageBig.day })})`);
   await s.page.goto(`${BASE}/#/t/hk-macau-2026/book`); await s.page.waitForSelector('.agepick'); await s.page.click('.agek .tpo[data-v="auto"]'); await s.page.waitForSelector('.agek .tpo[data-age="little"][aria-pressed="true"]');
+  await apiStateWhen(s.page, (st) => (ageRow(st) || {}).text === 'auto');   // later checks read the book as the server holds it
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
   await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
   await s.shot('10-book-wide');
-  await s.page.goto(`${BASE}/#/passport/mimi`); await s.page.waitForSelector('.pp .dstamp');
-  await s.page.waitForSelector('.pp.packed');
-  const pw = await s.page.evaluate(() => { const c = [...document.querySelectorAll('.pp.packed > .ccol')].map((x) => x.offsetHeight); return { cols: c.length, gap: Math.abs(c[0] - c[1]), st: document.querySelector('.dstamp .art').getBoundingClientRect().width }; });
+  await ppOpen(s.page, 'mimi', T, 'id'); await s.page.waitForSelector('.pp.packed');
+  const pw = await s.page.evaluate(() => { const c = [...document.querySelectorAll('.pp.packed > .ccol')].map((x) => x.offsetHeight); return { cols: c.length, gap: Math.abs(c[0] - c[1]) }; });
+  await ppOpen(s.page, 'mimi', T, `visa-${T}`); pw.st = await s.page.evaluate(() => document.querySelector('.dstamp .art').getBoundingClientRect().width);
   ok(pw.gap < 520, `wide passport: the two columns end close together (${pw.gap}px apart), no big hole beside the cover`);
   ok(pw.cols >= 2 && pw.st >= 56 && pw.st <= 90, `wide: passport pages side by side (${pw.cols} cols), stamps ${Math.round(pw.st)}px`);
   await s.shot('11-passport-wide');
@@ -1849,10 +2062,10 @@ const T = 'hk-macau-2026';
     ok(await p.noHScroll(), `${w}px dark: no horizontal scroll`);
     ok(await p.page.evaluate(() => getComputedStyle(document.body).backgroundColor) === 'rgb(27, 34, 48)', `${w}px: dark paper`);
     await p.shot('book-dark');
-    await p.page.goto(`${BASE}/#/t/${T}/log/1`); await p.page.waitForSelector('.daystrip');
+    await p.page.goto(`${BASE}/#/t/${T}/log/1/all`); await p.page.waitForSelector('.daystrip');
     ok(await p.noHScroll(), `${w}px dark: record page fits`);
     await p.shot('record-dark');
-    await p.page.goto(`${BASE}/#/passport/mimi`); await p.page.waitForSelector('.pp .dstamp');
+    await ppOpen(p.page, 'mimi', T, `visa-${T}`);
     ok(await p.noHScroll(), `${w}px dark: passport fits`);
     await p.shot('passport-dark');
     await p.page.goto(BASE + '/'); await p.page.waitForSelector('.shelf');
@@ -1871,9 +2084,9 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.spine.add').count() === 0, 'viewer: no "new book"');
   ok(await page.locator('.setlist.disp [data-a="lang"]').count() === 2 && await page.locator('.setlist.disp .fsseg').count() === 1 && await page.locator('.top [data-a="lang"], .top .fsb').count() === 0, 'viewer: relatives get the language and text-size card on the shelf too (and no controls in the top bar)');
   ok(await page.locator('nav.bar a[href*="/log/"]').count() === 0, 'viewer: no Record tab');
-  ok(await page.locator('nav.bar a[href="#/passport"]').count() === 1 && await page.locator('nav.bar a[href$="/today"]').count() === 1, 'viewer: relatives get menu, today, book, firsts, passports');
-  await page.goto(`${BASE}/#/passport/mimi`); await page.waitForSelector('.mission');
-  ok(await page.locator('button[data-a="tick"]:not([disabled])').count() === 0 && await page.locator('.ppf').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only');
+  ok(await page.locator('nav.bar a[href*="#/passport"]').count() === 0 && await page.locator('nav.bar .in > *').count() === 4 && await page.locator('nav.bar a[href$="/today"]').count() === 1, 'viewer: relatives get menu, today, book, firsts — the passports open from the shelf (one door for grown-ups)');
+  await ppOpen(page, 'mimi', T, 'missions');
+  ok(await page.locator('button[data-a="tick"]:not([disabled]):not([aria-disabled="true"])').count() === 0 && await page.locator('.ppf, .ppedit').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only (no ✏️)');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   ok(await page.locator('.tile[href*="/log/"], .tile[href$="/offline"], .tile.kid').count() === 0 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/eat"]').count() === 1, 'viewer menu: no record, offline or kid-mode tiles; emergency numbers stay, and the eat tile (their bar has no eat button)');
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
@@ -1891,7 +2104,7 @@ const T = 'hk-macau-2026';
     ok(/ยาย/.test(cm.text) && cm.mine === 1 && saved === 1, `viewer: writes a line under the photo, shown with the name and removable by its writer (${cm.text.slice(0, 40)} · ${saved})`);
     await page.click('#lb [data-lb="close"]');
     await page.evaluate(() => localStorage.removeItem('mbs_heartfrom')); }   // the hearts below ask for the sender's name afresh
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.cover');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.cover');
   ok(true, 'viewer: record URL falls back to the book');
   const w = await page.evaluate(async () => (await fetch('/api/b/entries/q-hack-0001', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: 0, kind: 'quote', child: 'mimi', text: 'x' }) })).status);
   ok(w === 403, 'viewer write → 403');
@@ -1951,6 +2164,8 @@ const T = 'hk-macau-2026';
   await login(page);
   await page.click('button[data-a="lang"][data-v="en"]');
   ok(await page.locator('.hero [data-a="kidmode"]').count() === 1, "shelf: before the trip grown-ups get a “today's surprise” button");
+  { const hb = await page.evaluate(() => [...document.querySelectorAll('.hero .heroacts .hbtn')].map((x) => { const r = x.getBoundingClientRect(); return [Math.round(r.left), Math.round(r.width)]; }));
+    ok(hb.length === 2 && hb[0][0] === hb[1][0] && hb[0][1] === hb[1][1], `shelf: the hero's two buttons are one width, one under the other (owner's Samsung: two widths) (${JSON.stringify(hb)})`); }
   await page.click('.hero [data-a="kidmode"]'); await page.waitForSelector('.kidpick');
   ok(await page.evaluate(() => new Set([...document.querySelectorAll('.kidpick button')].map((b) => Math.round(b.getBoundingClientRect().width))).size === 1), 'kid picker: every child\'s card the same width (Mimi\'s wagon no longer widens hers)');
   await page.click('.kidpick button[data-v="mimi"]'); await page.waitForSelector('.kidtiles');
@@ -2087,7 +2302,7 @@ const T = 'hk-macau-2026';
   // leave kid mode; the drawing is in the book, then a bedtime story read aloud with turning pages
   const lock = await page.locator('#kidexit').boundingBox();
   await page.mouse.move(lock.x + lock.width / 2, lock.y + lock.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
-  await page.waitForSelector('.pp .advc');
+  await page.waitForSelector('.ppshelf .ppbk2');
   await page.evaluate(async () => { await fetch('/api/b/entries/hk-macau-2026.story.all', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: null, kind: 'story', text: 'Once upon a time Mimi and Mika flew to Hong Kong. The plane went whoosh!\n\nThey met Captain Pinky by the sea. Then they slept in a castle of lights.\n\nThe end.', lang: 'en' }) }); await load(); });
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.cover');
   ok(await page.locator('.mosaic.drawings img').count() === 1, "book: the kids' drawings section");
@@ -2098,7 +2313,7 @@ const T = 'hk-macau-2026';
   const p4 = await page.locator('.itin > li').nth(3).locator('.dayplan').textContent();
   ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local tip/.test(p4), 'itinerary: day 4 plan shows the timeline, local tip, plan B and money');
   await page.locator('.itin > li').nth(3).screenshot({ path: path.join(OUT, 'countdown-05-dayplan.png') });
-  await page.goto(`${BASE}/#/t/${T}/log/3`); await page.waitForSelector('.planblk');
+  await page.goto(`${BASE}/#/t/${T}/log/3/all`); await page.waitForSelector('.planblk');
   ok(await page.locator('.planblk .dayplan').count() === 0 && await page.locator('.planblk details').count() === 0 && await page.locator('.planblk .pll > li').count() >= 4 && await page.$$eval('.planblk .pll > li', (ls) => ls.every((l) => l.querySelector('time').textContent.trim() && l.querySelector('span').textContent.trim().length > 3))
     && await page.locator(`.planblk a.learnlink[href="#/t/${T}/today/3/full"]`).count() === 1 && await page.locator('.planblk .plstay b').count() === 1 && !(await page.textContent('.planblk')).includes('Wong Chi Kei') && await s.noHScroll(),
     'record page: the plan is one fold and nothing folds inside it — a line a step (time + headline), tonight\'s bed, one link to the full plan (the manual page no longer sits in it)');
@@ -2196,7 +2411,7 @@ const T = 'hk-macau-2026';
     await s.shot('au-02-today-one-page', false);
   }
   { // photos by spot (owner, Nov 2026): the record page's photo box lists the day's places; a tap adds photos that carry the place and checks it in
-    await page.goto(`${BASE}/#/t/big-hop-2027/log/1`); await page.waitForSelector('#lgphotos .phstop');
+    await page.goto(`${BASE}/#/t/big-hop-2027/log/1/all`); await page.waitForSelector('#lgphotos .phstop');
     const read = () => page.$$eval('#lgphotos .phstop', (els) => els.map((e) => ({ place: e.dataset.place, kind: e.dataset.kind, key: e.dataset.key, h: Math.round(e.getBoundingClientRect().height), txt: e.textContent.trim(), shown: getComputedStyle(e).display !== 'none' })));
     const chips = await read(), vis = chips.filter((c) => c.shown);
     const plan = await page.evaluate(() => { const t = S.trips.find((x) => x.id === 'big-hop-2027'), d = t.days[1]; return { places: d.planned.filter((p) => p.kind !== 'food').map((p) => p.en), food: d.planned.filter((p) => p.kind === 'food').map((p) => p.en), bed: d.plan.stay.name, morning: t.days[0].plan.stay.name, was: S.places.filter((p) => p.trip === 'big-hop-2027').length }; });
@@ -2255,8 +2470,8 @@ const T = 'hk-macau-2026';
     && await page.locator('.backsum').count() === 0 && /\/prep$/.test(await page.getAttribute('header.top .ibtn', 'href')) && await s.noHScroll(), 'a glance card opens that topic alone: its title the heading, every detail open, no switch and nothing to unfold, ‹ › to the topics beside it; the top bar\'s back goes to the summary');
   { await page.goto(`${BASE}/#/t/${T}/prep/full/2`); await page.waitForSelector('.tp.one .tphead');
     const r = await page.evaluate(() => { const tr = document.querySelector('.tp.one .prices tbody tr'), td = tr.querySelector('td[data-h]'), b = td.getBoundingClientRect(), h = getComputedStyle(td, '::before');
-      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, borderTop: parseFloat(getComputedStyle(tr).borderTopWidth), labelBlock: h.display, w: Math.round(b.width) }; });
-    ok(r.head && r.card === 'grid' && r.borderTop >= 3 && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
+      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, fill: getComputedStyle(tr).backgroundColor !== 'rgba(0, 0, 0, 0)', labelBlock: h.display, w: Math.round(b.width) }; });
+    ok(r.head && r.card === 'grid' && r.fill && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
   { await page.goto(`${BASE}/#/t/${T}/prep`); await page.waitForSelector('.glg');
     ok(await page.locator('.glg').count() === 2 && await page.locator('.glg').nth(1).locator('.glc .gday').count() >= 5 && await page.locator('.glg').first().locator('.gday').count() === 0, 'HK get-ready summary: the whole-trip topics first, the chapters for one day under their own heading with the day as a chip');
     await page.goto(`${BASE}/#/t/${T}/prep/full/0`); await page.waitForSelector('.tp.one .steps');
@@ -2281,17 +2496,21 @@ const T = 'hk-macau-2026';
       ok(lb.r >= 12 && lb.bg && lb.pts >= 2 && lb.sum === 'none', `a topic's opening paragraph and its points are one soft card (${JSON.stringify(lb)})`);
       // key facts in colour stay readable in dark mode inside every card (the learn page's cards once kept the light-mode navy on a dark card)
       await page.emulateMedia({ colorScheme: 'dark' }); await page.goto(`${BASE}/#/t/${T}/learn/full/0`); await page.waitForSelector('.tp.one .gcard b.kf');
-      const lum = await page.$$eval('.tp.one .gcard b.kf', (bs) => bs.map((b) => { const n = (getComputedStyle(b).color.match(/[\d.]+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2); }));
+      // read the colours in one step inside the page, once every one of them is a colour: $$eval finds the elements and reads them in two
+      // steps, and the page's redraw with the fresh state in between left elements no longer on the page, whose colour is '' (CI, 28 Nov 2026: all NaN)
+      const kfLum = () => [...document.querySelectorAll('.tp.one .gcard b.kf')].map((b) => { const c = getComputedStyle(b).color, n = (c.match(/\d*\.?\d+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return { c, l: n.length >= 3 ? +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2) : null }; });
+      await page.waitForFunction(`(${kfLum})().length > 0 && (${kfLum})().every((x) => x.l !== null)`, null, { timeout: 8000 }).catch(() => {});
+      const kf = await page.evaluate(kfLum), lum = kf.map((x) => x.l);
       await page.emulateMedia({ colorScheme: null });
-      ok(lum.length && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')})`);
+      ok(lum.length && lum.every((l) => l !== null) && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')}${lum.every((l) => l !== null) ? '' : ' · ' + kf.slice(0, 3).map((x) => JSON.stringify(x.c)).join(' ')})`);
     await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.glg');
     const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
     let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
     ok(!!ift, `an if-then page among the emergency topics (${sosLinks.join(' ')})`);
     for (const [r, sel] of [[`${T}/learn/full/0`, '.tp.one .gcard'], [`${T}/learn/full/1`, '.tp.one details.sub'], [ift, '.tp.one .ifts details.ifold'], ['big-hop-2027/prep/full/7', '.tp.one .pg1>.call.info']]) {
       await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector(sel, { state: 'attached' });
-      const c = await page.$$eval(sel, (es) => es.map((e) => ({ top: parseFloat(getComputedStyle(e).borderTopWidth), r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
-      ok(c.length && c.every((x) => x.top >= 3 && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a coloured top edge, bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
+      const c = await page.$$eval(sel, (es) => es.map((e) => ({ fill: getComputedStyle(e).backgroundColor !== 'rgba(0, 0, 0, 0)', r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
+      ok(c.length && c.every((x) => x.fill && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a soft fill of its colour (no top stripe, UI review Nov 2026), bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
     await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid .tile.today small');
     await page.evaluate(() => document.querySelectorAll('.hubgrid').forEach((g) => { g.className = g.className.replace(/tl-\w+/, 'tl-pastel'); }));   // the colourful look, whatever an earlier step chose
     const c = await page.evaluate(`(${CONTRAST})(document.querySelectorAll('.hubgrid .tile small'), (e) => { const g = document.createElement('i'); g.style.backgroundColor = getComputedStyle(e.closest('.tile')).borderTopColor; document.body.appendChild(g); return g; })`);
@@ -2363,10 +2582,11 @@ const T = 'hk-macau-2026';
   ok((await page.textContent('#pocket .emerg li.main')).includes('000') && await page.locator('#pocket .emerg a[href="tel:000"]').count() === 1, 'pocket guide: 000 is a tap-to-call link');
   await page.locator('#pocket').screenshot({ path: path.join(OUT, 'au-02-pocket.png') });
   ok(await s.noHScroll(), 'AU book with the pocket guide fits the phone');
-  await page.goto(`${BASE}/#/passport/mimi/big-hop-2027`); await page.waitForSelector('#m1');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'missions');
   ok(await page.locator('#m1 .says li').count() >= 4 && await page.locator('#m1 .mquiz .qa').count() === 3, 'passport mission: the guide tells the facts + one line per stop; Kiki asks 3 quiz questions');
   await page.locator('#m1 .qa summary').first().click();
   ok(await page.locator('#m1 .qa[open] p').count() === 1, 'passport quiz: tap reveals the answer');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'lists');
   ok(await page.locator('#pl-words .sayrow .hearbtn[data-lang="en-AU"]').count() === 8, 'passport: 8 Aussie words with an en-AU 🔊');
   await page.click('.kidgo'); await page.waitForSelector('.kidtiles');
   ok(await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/words"]').count() === 1, 'kid mode (AU): quiz + say-it tiles');
@@ -2392,6 +2612,8 @@ const T = 'hk-macau-2026';
   await page.fill('#eatq', 'pie');
   const pies = await page.$$eval('.eatc', (els) => els.filter((e) => e.dataset.s.includes('pie')).length), shownPies = await page.locator('.eatc:visible').count();
   ok(shownPies === pies && pies > 10 && pies < 294 && await page.evaluate(() => document.activeElement.id) === 'eatq', `eat page: search filters in place and keeps the keyboard (${shownPies} pies)`);
+  await page.fill('#eatq', 'noodel'); const ndl = await page.locator('.eatc:visible').count(), ndn = await page.textContent('#eatn');
+  ok(ndl > 0 && ndl < 294 && /close|ใกล้เคียง/.test(ndn), `eat page: a slip ("noodel") still finds the noodles and says so (${ndl} · ${ndn})`);
   await page.fill('#eatq', ''); await page.click('[data-a="eatk"][data-v="2"]');
   ok(await page.locator('.eatc:visible').count() === 30, 'eat page: "cook it yourself" chip');
   await page.click('[data-a="eatk"][data-v="-1"]'); await page.click('[data-a="eatpick"]');
@@ -2411,7 +2633,7 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'eat day page fits the phone');
   await s.shot('04-eat-day', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/eat/all`); await page.waitForSelector('.eatc');
-  ok(await page.locator('.eatc:visible').count() === 224 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 224 places from the manual with Chinese names; filters reset for another book');
+  ok(await page.locator('.eatc:visible').count() === 222 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 222 places from the manual with Chinese names; filters reset for another book');
   ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
@@ -2547,7 +2769,7 @@ const T = 'hk-macau-2026';
   ok(zeros.length === 0, `menu tiles never show a zero or "0/6" (${zeros.join(' | ') || 'none'})`);
   // the same rule on every page a parent or a child reads before anything is recorded (a crawl of the app found these)
   { const Z = /(^|\s)0\/\d|(^|\s)0 (รูป|วัน|คำพูด|ครั้งแรก|ข้อความ|photos?|days?|quotes?|firsts?)\b/;
-    for (const [r, w] of [[`#/t/${T}/prep`, '.tp-prep, .glc'], [`#/passport/mika/big-hop-2027`, '.stkhd'], [`#/print/big-hop-2027`, '.facts'], [`#/t/big-hop-2027/log/12`, '#lgphotos'], ['#/kid/mika/stickers', '.stkhd'], ['#/kid/mika/trophies', '.trophies'], ['#/notebook', 'main h1'], ['#/family', '.famh3']]) {
+    for (const [r, w] of [[`#/t/${T}/prep`, '.tp-prep, .glc'], [`#/passport/mika/big-hop-2027/stickers`, '.stkhd'], [`#/print/big-hop-2027`, '.facts'], [`#/t/big-hop-2027/log/12/all`, '#lgphotos'], ['#/kid/mika/stickers', '.stkhd'], ['#/kid/mika/trophies', '.trophies'], ['#/notebook', 'main h1'], ['#/family', '.famh3']]) {
       await page.goto(`${BASE}/${r}`); await page.waitForSelector(w); const tx = await page.evaluate(() => (document.querySelector('main') || document.body).textContent.replace(/\s+/g, ' '));
       ok(!Z.test(tx), `${r}: no zero counter on the page (${(tx.match(Z) || [''])[0].trim() || 'none'})`); }
     // kid mode guards: a map with stops but no day that reaches one, two keys with one face in the match game, the words trophy, bubbles that survive a redraw, a child without a book
@@ -2561,7 +2783,7 @@ const T = 'hk-macau-2026';
     });
     ok(kidChecks.map === null && !kidChecks.dupes && kidChecks.words && kidChecks.kept === 7 && kidChecks.lock, `kid mode: no walk → no map (${kidChecks.map}); one card per face (dupes ${kidChecks.dupes}); the words trophy counts (${kidChecks.words}); bubbles keep their score over a redraw (${kidChecks.kept}); a child without a book keeps the lock (${kidChecks.lock})`);
     // the record page: the spend amount and the day's summary are different drafts; the quote's child chip never redraws the page
-    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#spendamt'); await page.fill('#spendamt', '120'); await page.locator('#spendamt').blur();
+    await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#spendamt'); await page.fill('#spendamt', '120'); await page.locator('#spendamt').blur();
     const dr = await page.evaluate(() => { const ks = Object.keys(drafts); document.querySelector('#app').dataset.mark = 'kept'; return { sa: ks.some((k) => k.startsWith('sa:')), s: ks.some((k) => k.startsWith('s:')), sum: document.querySelector('#sumtext').value }; });
     await page.click('[data-a="who"][data-v="mika"]');
     ok(dr.sa && !dr.s && dr.sum !== '120' && await page.evaluate(() => document.querySelector('#app').dataset.mark === 'kept' && document.querySelector('[data-a="who"][data-v="mika"]').getAttribute('aria-pressed') === 'true'), 'record page: a typed amount never lands in the summary box; the child chip switches in place');
@@ -2580,13 +2802,13 @@ const T = 'hk-macau-2026';
     ok(await page.evaluate(() => { const t = JSON.parse(JSON.stringify(S.trips[0])); t.info = { ...t.info, ifthen: { plans: { head: { en: 'If' }, cols: [{ en: 'If' }, { en: 'Then' }], rows: [[{ en: 'Rain' }, { en: 'Museum' }]] } }, visa: { lede: { en: 'Visa-free' }, groups: [{ title: { en: 'Bring' }, items: [{ en: 'Passport' }] }] }, stays: undefined, more: [{ page: 'stays', title: { en: 'Where we sleep' }, text: { en: 'x' } }] }; try { return typeof infoBlocks(t) === 'object' && [viewHub(t), viewSearch(t), viewSos(t), viewPrep(t), viewStays(t), viewLearn(t), viewSos(t, true), viewPrep(t, true)].every((h) => typeof h === 'string' && h.length > 100); } catch (e) { return 'threw: ' + e.message; } }) === true, 'info pages render a book whose if-then table came as {plans}, whose visa has no steps and whose stays live only in a chapter');
   }
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.cover');
-  ok(await page.locator('.bookstart').count() === 0 && await page.locator('.letterblk').count() === 1 && await page.locator('a[data-a="pdf"]').count() === 1, 'a book with records: no “still empty” card; the letter box and the PDF button are there');
+  ok(await page.locator('.bookstart').count() === 0 && await page.locator('.letterblk').count() === 1 && await page.locator('a[data-a="pdf"]:not(.linkbtn)').count() === 1 && await page.locator('.pdfsizes a[data-a="pdf"]').count() === 2, 'a book with records: no “still empty” card; the letter box and the PDF button are there');
   ok(await page.locator('.bookmore .linkbtn[data-a="print"]').count() === 1 && await page.locator('.bookmore .linkbtn[data-a="copytext"]').count() === 1 && await page.locator('.btn[data-a="print"], .btn[data-a="copytext"]').count() === 0 && await page.evaluate(() => document.querySelector('.bookmore').getBoundingClientRect().top > document.querySelector('a[data-a="pdf"]').getBoundingClientRect().bottom), 'book page: print and copy are quiet text buttons under the PDF button, not two more buttons beside it');
   ok(await page.locator('.cover .line .nowrap').count() === 2 && await page.evaluate(() => [...document.querySelectorAll('.cover .line .nowrap')].every((e) => e.getClientRects().length === 1)), 'cover: each child\'s name and age sits on one line (Thai word breaking split a name)');
   // every control a parent taps is at least 44 px tall on the pages used during the trip
   const audit = `(sel) => [...document.querySelectorAll(sel)].filter((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 44 && !e.closest('details:not([open])'); }).map((e) => (e.textContent || e.className).trim().slice(0, 24) + ' ' + Math.round(e.getBoundingClientRect().height))`;
   const SEL = 'main .chip, main .btn.small, main .mini, main .seg button, main .linkbtn, a.maplink, .navb, .stayc .go, .eatday .go, .bag summary, .chk label, .remind .btn, .lpc, .dmore > summary';
-  for (const [name, path, wait] of [['record', `/log/1`, '.daystrip'], ['today', `/today/1`, '.day.today'], ['eat', `/eat/d/1`, '.eatday'], ['sos', `/sos`, '.tp-sos']]) {
+  for (const [name, path, wait] of [['record', `/log/1/all`, '.daystrip'], ['today', `/today/1`, '.day.today'], ['eat', `/eat/d/1`, '.eatday'], ['sos', `/sos`, '.tp-sos']]) {
     await page.goto(`${BASE}/#/t/${T}${path}`); await page.waitForSelector(wait);
     const small = await page.evaluate(`(${audit})(${JSON.stringify(SEL)})`);
     ok(small.length === 0, `${name}: every tap target is 44 px or taller (${small.slice(0, 6).join(' | ') || 'all good'})`);
@@ -2605,6 +2827,10 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.privacy .pvsec a[href*="Barking_of_a_dog"]').count() === 1 && await page.locator('.privacy .pvsec a[href*="by-sa/3.0"]').count() === 1, 'the privacy page credits the dog\'s bark (CC BY-SA: author, source and licence)');
   await page.goto(`${BASE}/#/`); await page.waitForSelector('#lcode');
   ok(await page.locator('.login a[href="#/privacy"]').count() === 1, 'the login page links to it');
+  ok(await page.locator('.login a[href="#/help"]').count() === 1, 'the login page links to the guide');
+  await page.goto(`${BASE}/#/help`); await page.waitForSelector('.helppg');
+  ok(await page.locator('.helpc').count() === 11 && await page.locator('.helppg a.btn[href="#/"]').count() === 1 && await page.locator('#lcode').count() === 0, 'signed out: the guide reads in full, with a way back to sign in');
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('#lcode');
   await login(page);
   await page.goto(`${BASE}/#/privacy`); await page.waitForSelector('.pverase');
   ok(await page.locator('[data-a="erase"]').isDisabled() && await page.locator('.setlist a[href="#/privacy"]').count() === 0, 'editor: the erase box, its button off until the app name is typed');
@@ -2618,9 +2844,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.hubgrid.tl-pastel').count() >= 2 && await page.locator('.tilepick button[data-v="pastel"][aria-pressed="true"]').count() === 1, 'menu: pastel tiles by default, the switch at the foot');
   await page.click('.tilepick button[data-v="plain"]'); await page.waitForSelector('.hubgrid.tl-plain');
   const plainBg = await page.evaluate(() => getComputedStyle(document.querySelector('.hubgrid.tl-plain .tile.t-plan')).backgroundImage);
-  ok(plainBg === 'none' && (await apiState(page)).family.tiles === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile');
+  // the tiles redraw at once and the save follows: wait for the server to hold it (CI read 'plain' once, 26 Nov 2026)
+  const tilesPlain = (await apiStateWhen(page, (st) => st.family.tiles === 'plain')).family.tiles;
+  ok(plainBg === 'none' && tilesPlain === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile (' + tilesPlain + ')');
   await page.click('.tilepick button[data-v="accent"]'); await page.waitForSelector('.hubgrid.tl-accent');
-  ok((await apiState(page)).family.tiles === 'accent', 'the book\'s colour: saved too');
+  const tilesAccent = (await apiStateWhen(page, (st) => st.family.tiles === 'accent')).family.tiles;
+  ok(tilesAccent === 'accent', 'the book\'s colour: saved too (' + tilesAccent + ')');
   await page.click('.tilepick button[data-v="pastel"]'); await page.waitForSelector('.hubgrid.tl-pastel');
   ok(s.errs.length === 0, 'privacy: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
@@ -2674,7 +2903,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.cover img[src^="/stock/"]').count() >= 1 || await page.locator('img[src^="/stock/"]').count() >= 1, 'sample: the book shows the library pictures');
   ok(await page.locator('.bookstart a.btn[href*="/log/"]').count() === 1 && await page.locator('.foreblk, .letterblk, .coverpick').count() === 0 && await page.locator('a[data-a="pdf"]:visible').count() === 0 && await page.evaluate(() => document.querySelector('.bookstart').getBoundingClientRect().top < document.querySelector('.bookstart').getBoundingClientRect().height + 900), 'empty book: the way in (“record the first day”) comes right after the cover; the foreword, letter, cover choice and PDF wait for content');
   await page.goto(`${BASE}/#/passport/${st1.children[0].slug}/sakura-hop-2028`); await page.waitForSelector('.advc');
-  ok(/^\/stock\/jp\/stamp\.v\d+\.svg$/.test(await page.getAttribute('.advc img.crest', 'src')) && await page.locator('.pp-page').count() >= 2, 'sample: the passport takes the stock library\'s Japan stamp as its crest (no drawn art of its own, the generic guides)');
+  ok(/^\/stock\/jp\/stamp\.v\d+\.svg$/.test(await page.getAttribute('.advc img.crest', 'src')) && await page.locator('.pp-page').count() >= 1, 'sample: the passport takes the stock library\'s Japan stamp as its crest (no drawn art of its own, the generic guides)');
   { const ad = (sample.theme || {}).artDays || [], stamps = ((await page.evaluate(() => S.trips.find((t) => t.id === 'sakura-hop-2028').passport)) || {}).stamps || [];
     ok(ad.length === 6 && ad.every((u) => /^\/stock\/jp\/tokyo\/[a-z-]+\.v\d+\.svg$/.test(u)) && stamps.map((x) => x.art).join() === '/stock/jp/stamp.v1.svg,/stock/jp/tokyo/stamp.v1.svg',
       'sample: every Tokyo day has a stock library picture and the passport holds the Japan and Tokyo stamps (resolved by the server)');
@@ -2696,11 +2925,22 @@ const T = 'hk-macau-2026';
   await s.page.clock.setFixedTime(new Date('2026-12-07T03:00:00Z'));   // 11:00 in Hong Kong / Macau, day 3 of the HK book
   await login(s.page);
   const page = s.page;
-  await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('#m2');
+  await ppOpen(page, 'mimi', T, 'missions'); await page.waitForSelector('#m2');
   ok(await page.evaluate(() => ['#m0', '#m1', '#m2', '#m3'].map((id) => document.querySelector(`${id} details.mfold`).open).join()) === 'false,false,true,false' && await page.locator('#m2.today').count() === 1,
     'passport during the trip: only today’s mission is open, the other days fold away');
   await page.click('#m4 summary'); await page.waitForFunction(() => document.querySelector('#m4 details.mfold').open);
   ok(await page.locator('#m4 .spot button[data-a="tick"]').first().isVisible(), 'passport during the trip: a tap opens another day');
+  await ppOpen(page, 'mimi', T, `visa-${T}`);
+  ok(await page.locator('.ppstamp .stampbtn[data-d="2"]').count() === 1, 'passport during the trip: this trip\'s visa holds today\'s stamp button for a parent too');
+  { // the kid door: the same book inside kid mode — locked, its pages turn by big buttons read aloud, no ✏️, no print
+    await page.goto(`${BASE}/#/kid/mimi/stamp`); await page.waitForSelector(`.kidwrap .ppbook.inkid[data-page="visa-${T}"] .stampbtn[data-d="2"]`);
+    const kd = await page.evaluate(() => ({ lock: !!document.querySelector('.kidwrap #kidexit'), tabs: document.querySelectorAll('.ppbook .pptabs button[data-a="kidnav"][data-say]').length, grown: document.querySelectorAll('.ppedit, .ppf, .ppprint, .ppkids, nav.bar').length,
+      next: (document.querySelector('.ppturn [data-dir="next"]') || {}).dataset || {} }));
+    ok(kd.lock && kd.tabs === 9 && kd.grown === 0 && kd.next.v === '#/kid/mimi/pass/missions', `kid door: this trip's visa with today's stamp, the book's nine pages as kid buttons, the lock, and nothing of the grown-ups' (${JSON.stringify(kd)})`);
+    await page.click('.ppturn [data-dir="next"]'); await page.waitForSelector('.ppbook.inkid[data-page="missions"] .mission');
+    ok(page.url().endsWith('#/kid/mimi/pass/missions') && await page.locator('.mission button[data-a="tick"]:not([disabled]):not([aria-disabled="true"])').count() === 0, 'kid door: ‹ › turn the pages inside kid mode; ticks stay with the grown-ups');
+    await page.goto(`${BASE}/#/kid/mimi/pass/id`); await page.waitForSelector('.ppbook.inkid[data-page="id"] .bio');
+    ok(await page.locator('.ppf').count() === 0 && await page.locator('.ppbook .growl li').count() === 2 && await page.locator('.kidbar').count() === 1, 'kid door: the Explorer ID with Mimi\'s trips, no boxes'); }
   await page.goto(`${BASE}/#/kid/mika/spot`); await page.waitForSelector('.kidspots');
   ok(await page.locator('.kidspots.little button[data-v^="little.d2."]').count() === 3, 'kid mode: Mika’s "point it" page has her three missions of today');
   // the morning surprise box: on a trip day kid mode greets with a box; opening it gives a sticker and shows today's missions; once
@@ -2714,6 +2954,61 @@ const T = 'hk-macau-2026';
   ok((await apiState(page)).entries.some((e) => e.first_key === 'gift.d2' && e.child === 'mimi') && await page.evaluate(() => stickerSet(trip('hk-macau-2026'), 'mimi').some((x) => x.k === 'gift.d2' && x.got)), 'surprise box: opened once (saved), its sticker is in Mimi’s sticker tray');
   await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles');
   ok(await page.locator('.kidgift').count() === 0, 'surprise box: gone from home once opened');
+  // every box's sticker is a picture of the library, never a bare emoji (owner, Nov 2026: "รูปการ์ดทำให้สวยขึ้นโดยใช้ไฟล์ในคลัง")
+  { const bad = await page.evaluate(() => GIFT_E.map((e, i) => [e, giftArt(i)]).filter(([, a]) => !a).map(([e]) => e));
+    const gone = await page.evaluate(async () => { const out = []; for (let i = 0; i < GIFT_E.length; i++) { const r = await fetch(giftArt(i)); if (!r.ok) out.push(giftArt(i)); } return out; });
+    ok(!bad.length && !gone.length && await page.evaluate(() => stickerSet(trip('hk-macau-2026'), 'mimi').find((x) => x.k === 'gift.d2').img === giftArt(2)), `surprise box: all ${16} stickers are the library's pictures, in the sticker tray too (${bad.join(' ')} ${gone.join(' ')})`); }
+  // every thing the books ask the children to find has a painted picture (owner, Nov 2026: 33 drawn with GPT from our prompts, public/art/spot)
+  { const r = await page.evaluate(async () => { const out = { n: 0, miss: [], bad: [] }, seen = new Set();
+      for (const t of S.trips.filter((x) => x.passport && (x.passport.days || []).length)) for (const kid of (t.theme.children || []).map((c) => c.slug)) t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => { out.n++; const src = spotSrc(s.e, s); if (!src) out.miss.push(s.e + ' ' + (s.en || '')); else seen.add(src); }));
+      for (const src of seen) { const r = await fetch(src); if (!r.ok) out.bad.push(src); }
+      out.castle = [spotSrc('🏰', { en: 'A sandcastle' }), spotSrc('🏰', { en: 'Point at the castle' }), spotSrc('⛪', { en: 'A church' })];
+      return out; });
+    ok(r.n > 40 && !r.miss.length && !r.bad.length && r.castle[0].endsWith('sandcastle.webp') && r.castle[1].endsWith('fairytale.webp') && !r.castle[2], `every thing to find has a picture, read by its name where an emoji means two things (${r.n} · ${r.miss.slice(0, 5).join(', ')} · ${r.bad.join(' ')} · ${r.castle.join(' ')})`); }
+  // the fresh-start card (owner, Nov 2026: "รวมปุ่มล้างของเด็กไว้ที่เดียว"): one card on the book's menu, a row a kind of play with its count,
+  // only what is ticked goes, for every child, two taps — the boxes first, then the doors (other rows unticked so the rest of the run keeps its play)
+  const freshClear = async (key) => {
+    await page.waitForSelector(`.freshline input[data-fr="${key}"]`);
+    await page.$$eval('.freshline input[data-fr]', (xs, k) => xs.forEach((x) => { x.checked = x.dataset.fr === k; }), key);
+    await page.click('.freshline [data-a="freshgo"]'); await page.click('.freshline [data-a="freshgo"]'); };
+  { await page.evaluate(() => { ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }); await page.evaluate(() => refresh && refresh()); await page.waitForTimeout(600);
+    const rowsSeen = await page.$$eval('.freshline input[data-fr]', (xs) => xs.map((x) => x.dataset.fr + (x.checked ? '+' : '-')));
+    await freshClear('gift');
+    await page.waitForFunction(() => !S.entries.some((e) => /^gift\.d/.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    const left = (await apiState(page)).entries.filter((e) => /^gift\.d/.test(e.first_key || '')).length;
+    const others = (await apiState(page)).entries.filter((e) => /^quest\./.test(e.first_key || '')).length;
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles');
+    ok(left === 0 && await page.locator('.kidgift').count() === 1 && rowsSeen.includes('gift+') && !rowsSeen.some((r) => r.startsWith('pp+')),
+      `fresh start: the parents close every surprise box again, the morning box is back, a trip day leaves the passport unticked (${left} left · ${rowsSeen.join(' ')} · quest kept ${others})`);
+    await page.click('.kidgift'); await page.waitForSelector('.giftbox'); await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk img', { timeout: 5000 });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); }
+  { await page.evaluate(() => { const t = trip('hk-macau-2026'); for (const [n, k] of [[1, 'mimi'], [1, 'mika'], [2, 'mimi']]) putEntry(t, { day: null, kind: 'tick', child: k, first_key: `cd.${n}`, text: '' }, `${t.id}.tick.cd.${n}.${k}`);
+      ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; render(); });
+    // the opened doors reach the server first: their sync redraws the menu, and a redraw between the two taps is a fresh, unarmed button
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }); await page.evaluate(() => refresh && refresh()); await page.waitForTimeout(600);
+    const said = await page.textContent('.freshline');
+    await freshClear('cd');
+    await page.waitForFunction(() => !S.entries.some((e) => /^cd\./.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    const left = (await apiState(page)).entries.filter((e) => /^cd\./.test(e.first_key || '')).length;
+    ok(left === 0 && /\d/.test(said) && await page.locator('.freshline input[data-fr="cd"]').count() === 0, `fresh start: every countdown door closes again, two taps (${left} left · "${said.replace(/\s+/g, ' ').trim().slice(0, 160)}")`);
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles'); }
+  // nowhere to get stuck (owner, Nov 2026: item 5 of the follow-ups): a locked tick in the passport says what to do, the lock says to hold
+  { const toastIs = async (re) => page.waitForFunction((src) => [...document.querySelectorAll('.toast')].some((x) => new RegExp(src, 'i').test(x.textContent)), re.source, { timeout: 3000 }).then(() => true, () => false);
+    await page.goto(`${BASE}/#/kid/mimi/pass/missions`); await page.waitForSelector('.mission.today .tick[aria-disabled="true"]');
+    await page.click('.mission.today .tick[aria-disabled="true"] >> nth=0', { force: true });
+    await page.waitForFunction(() => /\/kid\/mimi\/spot$/.test(location.hash), null, { timeout: 3000 }).catch(() => {});
+    const toSpot = /\/kid\/mimi\/spot$/.test(await page.evaluate(() => location.hash));
+    await page.locator('#kidexit').click(); const lockSays = await toastIs(/press and hold|กดแม่กุญแจ/);
+    await page.evaluate(() => { ls('kidmode', null); location.hash = '#/passport/mimi/hk-macau-2026/missions'; }); await page.waitForSelector('.mission.today .tick[aria-disabled="true"]');
+    await page.click('.mission.today .tick[aria-disabled="true"] >> nth=0', { force: true }); const editSays = await toastIs(/Edit|แก้ไข/);
+    const lit = await page.locator('[data-a="ppedit"].golit').count();
+    const pins = await page.evaluate(() => [...document.querySelectorAll('.mapdays .chip')].every((c) => c.getBoundingClientRect().height >= 44));
+    ok(toSpot && lockSays && editSays && lit === 1 && pins, `nowhere to get stuck: a child's locked mission leads to today's things to find, the lock says to hold, a parent's locked tick points at ✏️, day chips are 44 px (${toSpot} · ${lockSays} · ${editSays} · ${lit} · ${pins})`);
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles'); }
   // the evening: a "stamp today before bed" banner until the stamp is done
   await page.clock.setFixedTime(new Date('2026-12-07T11:00:00Z'));   // 19:00 in Macau
   await page.reload(); await page.waitForSelector('.kidtiles');
@@ -2736,7 +3031,7 @@ const T = 'hk-macau-2026';
   ok(true, 'memory game: two questions, then a well-done and "play again"');
   await page.evaluate(() => ls('kidmode', null));
   await page.clock.setFixedTime(new Date('2026-12-10T03:00:00Z'));   // the last day: the certificate comes by itself, for both
-  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert'); }
+  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}/cert`); await page.reload(); await page.waitForSelector('#cert').catch(async (e) => { console.log('DEBUG cert after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('#cert').length} cert · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-cert.png` }); throw e; }); }
   ok(await page.locator('#cert.earned').count() === 1 && (await page.textContent('#cert')).includes('pointed, touched'), 'on the last day the certificate is there without any ticking (Mika gets her own words)');
   await page.clock.setFixedTime(new Date('2026-12-07T03:00:00Z'));
   await page.goto(`${BASE}/#/kid/mimi/numbers`); await page.waitForSelector('.cnt');
@@ -2768,6 +3063,20 @@ const T = 'hk-macau-2026';
   await page.waitForTimeout(3200);
   ok(await page.locator('.shelf').count() === 1 && await page.locator('#lf').count() === 0, 'a sign-in quicker than the app\'s first ask keeps the shelf: the late “not signed in” answer does not send the phone back to the sign-in page');
   await s.ctx.close();
+}
+// ---------- the last script arrives late: the app waits for it before drawing ----------
+// (CI, 26 Nov 2026: a reload just as the service worker took the page over got snap.js late; boot's IndexedDB answer came back first,
+// the first render met "snapGeo is not defined" and Today stayed blank. The service worker is blocked here so the delay below is what the page sees.)
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce', serviceWorkers: 'block' });
+  const page = await ctx.newPage(), errs = []; page.on('pageerror', (e) => errs.push(e.message));
+  await login(page);
+  await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.bag');
+  await page.route('**/snap.js', async (route) => { await new Promise((r) => setTimeout(r, 1500)); return route.continue(); });
+  const t0 = Date.now(); await page.reload();
+  const drawn = await page.waitForSelector('.bag', { timeout: 10000 }).then(() => true, () => false);
+  ok(drawn && !errs.length, `a reload whose last script comes 1.5 s late still draws Today, with no script error (${drawn ? `drawn in ${Date.now() - t0} ms` : 'blank page'}; errors: ${errs.join(' | ') || 'none'})`);
+  await ctx.close();
 }
 // ---------- on the trip, a parent's phone: the app opens on Today, and Today opens with what is next ----------
 {

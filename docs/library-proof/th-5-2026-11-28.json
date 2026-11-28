@@ -1,0 +1,425 @@
+{
+  "town": "th (Thailand round 5, places to eat: Chiang Mai, Lampang, Pattaya, Rayong, Khao Kho, Trat and Koh Chang, Sukhothai, Koh Lipe, Surat Thani, Mae Hong Son and Pai, Samui, Ayutthaya, Khao Yai, Korat, Hat Yai)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Thailand notes (TAT counts as official; otherwise a 2025–2026 page — a Thai date 2568/2569 counts; no national chains, no bars) -> scripts/library-check.cjs (single Wongnai place pages carry no page date and were left out) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town (Shabu Monster, Korat, opened on Maps here) -> Thai and English by writer agents to docs/STYLE.md, opening hours taken out of the text.",
+  "towns": {
+    "th-ayutthaya": {
+      "eat": [
+        {
+          "name": "Civilize Ayutthaya",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        },
+        {
+          "name": "Tonnam Riverview",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        }
+      ],
+      "do": []
+    },
+    "th-chiangmai": {
+      "eat": [
+        {
+          "name": "Daddy Lion Chiangmai",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Nics Restaurant & Playground",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Namthong Cafe",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Wooden Ville Kids Cafe",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Little Sea Kids Cafe",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Little Soul Kids Planet",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Yardoo Kids Cafe",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Reyn.ne' Playhouse and Cafe",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "Lenmaii Playground & Cafe",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "YuuBaan Studio",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        },
+        {
+          "name": "LOL Kids Castle",
+          "src": "https://www.cnxlocal.com/kid-friendly-cafes-parks-and-playgrounds-in-chiang-mai/"
+        }
+      ],
+      "do": []
+    },
+    "th-hatyai": {
+      "eat": [
+        {
+          "name": "Thian Thian Lai (Pattana Phochana)",
+          "src": "https://www.wongnai.com/listings/old-restaurants-songkhla"
+        }
+      ],
+      "do": []
+    },
+    "th-khaokho": {
+      "eat": [
+        {
+          "name": "Ban Nai Toi",
+          "src": "https://gangtravel.com/14173"
+        },
+        {
+          "name": "Krua Ban Suan Khao Kho",
+          "src": "https://gangtravel.com/14173"
+        },
+        {
+          "name": "Kod Mok Cafe",
+          "src": "https://paiduaykan.com/khaokho-cafe/"
+        },
+        {
+          "name": "Cedar Cafe",
+          "src": "https://tripsiam.com/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%84%E0%B9%89%E0%B8%AD"
+        },
+        {
+          "name": "Dragon Hill",
+          "src": "https://tripsiam.com/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%84%E0%B9%89%E0%B8%AD"
+        },
+        {
+          "name": "180 All Day All Season",
+          "src": "https://gangtravel.com/14173"
+        },
+        {
+          "name": "Ricco Slowbar Khaokho",
+          "src": "https://www.whanjai.com/cafes-khao-kho/"
+        }
+      ],
+      "do": []
+    },
+    "th-khaoyai": {
+      "eat": [
+        {
+          "name": "Ribs Mannn",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommend-khao-yai-restaurant"
+        },
+        {
+          "name": "Steak in Khao Yai",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommend-khao-yai-restaurant"
+        }
+      ],
+      "do": []
+    },
+    "th-kohchang": {
+      "eat": [
+        {
+          "name": "Mordi e Fuggi",
+          "src": "https://iamkohchang.com/restaurants/guide.html"
+        },
+        {
+          "name": "A Taste of India",
+          "src": "https://iamkohchang.com/restaurants/guide.html"
+        },
+        {
+          "name": "El Greco",
+          "src": "https://iamkohchang.com/restaurants/guide.html"
+        },
+        {
+          "name": "Ronny's Coconut Organic Garden",
+          "src": "https://iamkohchang.com/restaurants/guide.html"
+        },
+        {
+          "name": "Burger Station",
+          "src": "https://iamkohchang.com/restaurants/guide.html"
+        },
+        {
+          "name": "Fig Cafe",
+          "src": "https://iamkohchang.com/restaurants/guide.html"
+        }
+      ],
+      "do": []
+    },
+    "th-korat": {
+      "eat": [
+        {
+          "name": "Shabu Monster",
+          "src": "https://www.wongnai.com/listings/shabu-restaurants-korat"
+        },
+        {
+          "name": "Shabu Zeed",
+          "src": "https://www.wongnai.com/listings/shabu-restaurants-korat"
+        }
+      ],
+      "do": []
+    },
+    "th-lampang": {
+      "eat": [
+        {
+          "name": "Our Hours Cafe",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Memmoth Cafe & Hostel",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Yasumi Cafe",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Mhoh Baking House",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Lakon Paris",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Bakingdays",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Mate Contemporary",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "CHER Garden",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Jojo's Coffee Art",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "name": "Krua Nuea Hom",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang"
+        },
+        {
+          "name": "Krua Chat Somboon",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang"
+        }
+      ],
+      "do": []
+    },
+    "th-lipe": {
+      "eat": [
+        {
+          "name": "Noy Wangcha-Aon Seafood & Thai Food",
+          "src": "https://wanderlog.com/list/geoCategory/184191"
+        },
+        {
+          "name": "Tonkow Restaurant",
+          "src": "https://wanderlog.com/list/geoCategory/184191"
+        },
+        {
+          "name": "La Luna Italian Restaurant & Accommodation",
+          "src": "https://wanderlog.com/list/geoCategory/184191"
+        },
+        {
+          "name": "Royal Indian Restaurant Koh Lipe",
+          "src": "https://wanderlog.com/list/geoCategory/184191"
+        }
+      ],
+      "do": []
+    },
+    "th-maehongson": {
+      "eat": [
+        {
+          "name": "Som Tam Na Amphoe",
+          "src": "https://www.wongnai.com/listings/restaurants-maehongson"
+        },
+        {
+          "name": "Ban Song Thai Restaurant",
+          "src": "https://www.wongnai.com/listings/restaurants-maehongson"
+        },
+        {
+          "name": "Yunnan Chinese Community Restaurant, Santichon Village",
+          "src": "https://www.wongnai.com/listings/restaurants-maehongson"
+        }
+      ],
+      "do": []
+    },
+    "th-pattaya": {
+      "eat": [
+        {
+          "name": "À La Campagne",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Skoop Beach Café",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Bake n' Brew",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Sheeva Cafe Pattaya",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "The Lunar Beach House",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Unnie Pattaya",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Sunrise Café",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "3 Mermaid",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Tree Tales Cafe",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Anytime Cafe",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        },
+        {
+          "name": "Ordinary Coffee X The Now",
+          "src": "https://www.wongnai.com/listings/cool-cafes-in-pattaya"
+        }
+      ],
+      "do": []
+    },
+    "th-rayong": {
+      "eat": [
+        {
+          "name": "Khrua Lung Ra",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Nai Don Makham Thao",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Det Et Noodles",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Ban Rabiang Mai",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Talay-Tara",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Khrua Kaeng Phet",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Ban Rai Sai Lom",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Je Phon Pak Tai Seafood",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        },
+        {
+          "name": "Ban Khun Chai",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/rayong-restuarant"
+        }
+      ],
+      "do": []
+    },
+    "th-samui": {
+      "eat": [
+        {
+          "name": "Krua Tai Muang",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        },
+        {
+          "name": "Aromi Diversi",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        },
+        {
+          "name": "I-Talay Samui (Khao Pa Na Le)",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        }
+      ],
+      "do": []
+    },
+    "th-sukhothai": {
+      "eat": [
+        {
+          "name": "Kuaitiao Chak Thong Du Di",
+          "src": "https://www.wongnai.com/listings/noodles-sukhothai"
+        },
+        {
+          "name": "Kuaitiao Han Lang Sukhothai",
+          "src": "https://www.wongnai.com/listings/noodles-sukhothai"
+        },
+        {
+          "name": "Ban Rak Mai Kuaitiao Sukhothai",
+          "src": "https://www.wongnai.com/listings/noodles-sukhothai"
+        },
+        {
+          "name": "Ban Chin (Suchin)",
+          "src": "https://www.wongnai.com/listings/noodles-sukhothai"
+        }
+      ],
+      "do": []
+    },
+    "th-suratthani": {
+      "eat": [
+        {
+          "name": "Nong Eve Pu Nueng",
+          "src": "https://www.wongnai.com/listings/seafood-restaurants-surat-thani"
+        },
+        {
+          "name": "Ruean Thai Seafood Bang Kung",
+          "src": "https://www.wongnai.com/listings/seafood-restaurants-surat-thani"
+        },
+        {
+          "name": "KENS Surat Thani",
+          "src": "https://www.wongnai.com/listings/coffee-cafe-suratthani"
+        },
+        {
+          "name": "Tree Space Cafe",
+          "src": "https://www.wongnai.com/listings/coffee-cafe-suratthani"
+        }
+      ],
+      "do": []
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "El Barrio Koh Chang (temporarily)",
+      "Tastory Koh Chang",
+      "The Rice Pot Pattaya",
+      "BOTANY Eatery Café Samui (temporarily)",
+      "Kane Shabu & Grill Korat",
+      "Treescape (temporarily)",
+      "Malee Restaurant Udon"
+    ],
+    "name or place did not match on Google Maps": "about fifteen (a list that did not resolve, a renamed café, a shop in another district)",
+    "source refused": "a Khon Kaen card-promotion page listing names only; a Wongnai page that ranks businesses automatically (Ubon); a Trang Wongnai list dated 2024",
+    "other": [
+      "Marigold Samui, Wolf’s Den Udon (closed in earlier rounds)",
+      "Beach 59 Samui, Wine Gallery and Blues Blues Koh Chang (bar-like)",
+      "Mister Bean Shabu, Hotpotman (chains)",
+      "Ayutthaya Retreat (a resort), Raan Tha Luang (a riverside bar)",
+      "a Lampang place in Thoen and Sukhothai places in Sawankhalok and Si Samrong (30+ km)",
+      "a Sukhothai shop already listed under another name"
+    ],
+    "nothing new on a dated page": "Ubon, Khon Kaen and Nakhon Si Thammarat places to eat"
+  }
+}

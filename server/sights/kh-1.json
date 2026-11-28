@@ -1,0 +1,454 @@
+{
+  "cc": "kh",
+  "towns": [
+    {
+      "place": "kh-siemreap",
+      "sights": [
+        {
+          "name": { "en": "Angkor Wat", "th": "นครวัด" },
+          "kind": "culture",
+          "area": { "en": "Angkor Archaeological Park", "th": "อุทยานโบราณคดีนครวัด" },
+          "what": { "en": "The great stone complex with long galleries of carved walls, moats and wide causeways", "th": "กลุ่มปราสาทหินขนาดใหญ่ มีระเบียงยาวสลักผนัง คูน้ำและทางเดินกว้าง" },
+          "why": { "en": "Wide causeways and shaded galleries suit a morning walk; the steep upper tower is closed to children under 12", "th": "ทางเดินกว้างและระเบียงมีร่ม เหมาะกับเดินตอนเช้า หอชั้นบนที่ชันห้ามเด็กต่ำกว่า 12 ปีขึ้น" },
+          "tip": { "en": "Go early, bring water, and carry each child's passport as proof of age for the free entry", "th": "ไปแต่เช้า เตรียมน้ำ และพกพาสปอร์ตเด็กเป็นหลักฐานอายุเพื่อเข้าฟรี" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Angkor Pass $37 for one day · $62 for three days · $72 for seven days · children under 12 free", "th": "บัตรนครวัด $37 หนึ่งวัน · $62 สามวัน · $72 เจ็ดวัน · เด็กต่ำกว่า 12 ปีฟรี" },
+          "book": "none",
+          "q": "Angkor Wat, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://helloangkor.com/angkor-ticket-prices/"
+        },
+        {
+          "name": { "en": "Ta Prohm", "th": "ตาพรหม" },
+          "kind": "nature",
+          "area": { "en": "Angkor Archaeological Park", "th": "อุทยานโบราณคดีนครวัด" },
+          "what": { "en": "Ruins gripped by huge tree roots, left half-wild among the forest", "th": "ซากปราสาทที่รากไม้ใหญ่โอบรัด ปล่อยให้กลมกลืนกับป่า" },
+          "why": { "en": "Children love the giant roots and scrambling paths; the moss makes stones slippery, so hold hands", "th": "เด็กๆ ชอบรากไม้ยักษ์และทางลัดเลาะ ตะไคร่ทำให้หินลื่น ควรจูงมือ" },
+          "tip": { "en": "Covered by the Angkor Pass; go early before the tour groups", "th": "รวมอยู่ในบัตรนครวัด ไปแต่เช้าก่อนกรุ๊ปทัวร์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Angkor Pass $37 for one day · children under 12 free", "th": "บัตรนครวัด $37 หนึ่งวัน · เด็กต่ำกว่า 12 ปีฟรี" },
+          "book": "none",
+          "q": "Ta Prohm, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://helloangkor.com/angkor-ticket-prices/"
+        },
+        {
+          "name": { "en": "Bayon and Angkor Thom", "th": "บายนและนครธม" },
+          "kind": "culture",
+          "area": { "en": "Angkor Thom", "th": "นครธม" },
+          "what": { "en": "A walled city whose central temple has about 200 large smiling stone faces", "th": "เมืองมีกำแพงที่ปราสาทกลางมีใบหน้าหินยิ้มขนาดใหญ่ราว 200 หน้า" },
+          "why": { "en": "Children count the faces and climb the low levels; the toilets are basic with no nappy-changing, so plan before you go", "th": "เด็กๆ นับใบหน้าและเดินขึ้นชั้นต่ำได้ ห้องน้ำเรียบง่ายและไม่มีที่เปลี่ยนผ้าอ้อม ควรเตรียมตัวก่อนไป" },
+          "tip": { "en": "Covered by the Angkor Pass", "th": "รวมอยู่ในบัตรนครวัด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Angkor Pass $37 for one day · children under 12 free", "th": "บัตรนครวัด $37 หนึ่งวัน · เด็กต่ำกว่า 12 ปีฟรี" },
+          "book": "none",
+          "q": "Bayon Temple, Angkor Thom, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://helloangkor.com/angkor-ticket-prices/"
+        },
+        {
+          "name": { "en": "Angkor National Museum", "th": "พิพิธภัณฑ์แห่งชาตินครวัด" },
+          "kind": "museum",
+          "area": { "en": "Siem Reap town", "th": "ตัวเมืองเสียมราฐ" },
+          "what": { "en": "Galleries of Khmer history and statues, open 08:30–18:00 daily", "th": "ห้องจัดแสดงประวัติศาสตร์เขมรและรูปปั้น เปิดทุกวัน 08:30–18:00" },
+          "why": { "en": "Air-conditioned and flat, a good rainy or midday break; a pram or stroller can be taken in", "th": "แอร์เย็นและพื้นเรียบ เหมาะเป็นแผนวันฝนหรือพักช่วงกลางวัน เข็นรถเข็นเด็กเข้าได้" },
+          "tip": { "en": "Last entry about 17:30 on one listing", "th": "เว็บหนึ่งระบุเข้าได้ถึงราว 17:30" },
+          "ages": [1, 1, 1, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาอีกครั้ง" },
+          "book": "none",
+          "q": "Angkor National Museum, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://lokalee.app/tours/angkor-national-museum-admission"
+        },
+        {
+          "name": { "en": "Phare, the Cambodian Circus", "th": "ฟาเร กายกรรมกัมพูชา" },
+          "kind": "show",
+          "area": { "en": "Siem Reap town", "th": "ตัวเมืองเสียมราฐ" },
+          "what": { "en": "A nightly circus show of acrobatics, music and story by young Cambodian artists", "th": "การแสดงกายกรรม ดนตรีและเรื่องราวทุกคืนโดยศิลปินหนุ่มสาวชาวกัมพูชา" },
+          "why": { "en": "Lively and under cover; the 19:00 start can be late for toddlers, so best for ages 4 and up", "th": "สนุกและอยู่ในร่ม รอบ 19:00 อาจดึกสำหรับเด็กเล็ก เหมาะกับอายุ 4 ปีขึ้นไป" },
+          "tip": { "en": "A listing shows a 19:00 show; book ahead and arrive early", "th": "เว็บจองระบุรอบ 19:00 จองล่วงหน้าและมาเร็ว" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (resellers list from $26.00)", "th": "เช็กราคาอีกครั้ง (เว็บจองเริ่มที่ $26.00)" },
+          "book": "req",
+          "q": "Phare, The Cambodian Circus, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://b2c-tuimusement.prod.musement.com/us/cambodia/siem-reap/phare-the-cambodian-circus-show-tickets-in-siem-reap/e_j955wk-d_260-c_29"
+        },
+        {
+          "name": { "en": "Artisans Angkor workshops", "th": "เวิร์กช็อปอาร์ติซานส์ อังกอร์" },
+          "kind": "culture",
+          "area": { "en": "Siem Reap town", "th": "ตัวเมืองเสียมราฐ" },
+          "what": { "en": "Craft workshops where you watch stone carving, silk and lacquer made, plus a shop", "th": "เวิร์กช็อปงานฝีมือที่ได้ดูการแกะหิน ทอผ้าไหมและทำเครื่องเขิน พร้อมร้านค้า" },
+          "why": { "en": "Free and under cover, an easy hour of watching skilled hands", "th": "เข้าฟรีและอยู่ในร่ม ดูช่างทำงานได้ง่ายราวหนึ่งชั่วโมง" },
+          "tip": { "en": "One listing gives 07:30–18:00 daily; the silk farm outside town is a separate trip", "th": "เว็บหนึ่งระบุเปิดทุกวัน 07:30–18:00 ฟาร์มไหมนอกเมืองเป็นอีกทริป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Artisans Angkor, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://artisansangkor.com/visit-us/siem-reap"
+        },
+        {
+          "name": { "en": "Kampong Phluk stilt village", "th": "หมู่บ้านบนเสากำปงพลุก" },
+          "kind": "nature",
+          "area": { "en": "Tonle Sap lake, about 30 km from town", "th": "ทะเลสาบโตนเลสาบ ห่างเมืองราว 30 กม." },
+          "what": { "en": "A village on tall stilts reached by boat, with the lake rising to meet it for half the year", "th": "หมู่บ้านบนเสาสูงไปทางเรือ น้ำในทะเลสาบสูงขึ้นถึงตัวบ้านครึ่งปี" },
+          "why": { "en": "Children enjoy the boat and the houses on poles; wear life jackets and take shade and water", "th": "เด็กๆ ชอบนั่งเรือและบ้านบนเสา สวมเสื้อชูชีพ และเตรียมร่มกับน้ำดื่ม" },
+          "tip": { "en": "Tours differ a lot in length and price; ask what the boat and fee include", "th": "ทัวร์ต่างกันมากทั้งเวลาและราคา ถามว่าค่าเรือและค่าเข้ารวมอะไร" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price (listings show shared tours from $19 and operators' own trips from $95)", "th": "เช็กราคาอีกครั้ง (ทัวร์รวมเริ่ม $19 และทริปของบางเจ้า $95)" },
+          "book": "rec",
+          "q": "Kampong Phluk, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://adventurescambodia.com/blog/siem-reap-floating-villages/"
+        },
+        {
+          "name": { "en": "Banteay Srey Butterfly Centre", "th": "ศูนย์ผีเสื้อบันทายสรี" },
+          "kind": "nature",
+          "area": { "en": "Banteay Srei road, about 25 km north", "th": "ถนนบันทายสรี ทางเหนือราว 25 กม." },
+          "what": { "en": "A netted garden of butterflies with a guided tour of about 20 minutes on their life cycle", "th": "สวนมีตาข่ายคลุมเต็มไปด้วยผีเสื้อ มีไกด์พาชมราว 20 นาทีเรื่องวงจรชีวิต" },
+          "why": { "en": "Easy, shaded and short for small children; pairs well with the countryside drive", "th": "เดินง่าย มีร่ม ใช้เวลาไม่นาน เหมาะกับเด็กเล็ก และแวะได้ระหว่างขับไปชนบท" },
+          "tip": { "en": "A listing says open daily 09:00–17:00", "th": "เว็บจองระบุเปิดทุกวัน 09:00–17:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาอีกครั้ง" },
+          "book": "none",
+          "q": "Banteay Srey Butterfly Centre, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://www.mylittleadventure.com/best-things/krong-siem-reap/tours/full-day-banteay-srei-with-butterfly-centre-and-local-lunch-MQw0ATD05P"
+        },
+        {
+          "name": { "en": "Cambodia Landmine Museum", "th": "พิพิธภัณฑ์กับระเบิดกัมพูชา" },
+          "kind": "museum",
+          "area": { "en": "Banteay Srei road", "th": "ถนนไปบันเตียยศรี" },
+          "what": { "en": "A museum founded by a former child soldier on mine clearing and survivors' stories, open daily 7:30 AM to 5:30 PM", "th": "พิพิธภัณฑ์ที่ก่อตั้งโดยอดีตทหารเด็ก เล่าเรื่องการเก็บกู้กับระเบิดและผู้รอดชีวิต เปิดทุกวัน 7:30–17:30" },
+          "why": { "en": "The subject is serious, so it suits older children best; children under 13 go in free", "th": "เรื่องที่เล่นหนักจึงเหมาะกับเด็กโต เด็กต่ำกว่า 13 ปีเข้าฟรี" },
+          "tip": { "en": "It sits on the road to Banteay Srei, so combine the two; cash is preferred", "th": "อยู่บนถนนไปบันเตียยศรี แวะคู่กันได้ ควรมีเงินสด" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ $7 foreign adults · children under 13 free", "th": "≈ $7 ผู้ใหญ่ต่างชาติ · เด็กต่ำกว่า 13 ปีฟรี" },
+          "book": "none",
+          "q": "Cambodia Landmine Museum, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://www.cambodialandminemuseum.org/"
+        },
+        {
+          "name": { "en": "Artisans Angkor Silk Farm", "th": "ฟาร์มไหมอาร์ติซองส์ อังกอร์" },
+          "kind": "farm",
+          "area": { "en": "Puok district", "th": "อำเภอปวก" },
+          "what": { "en": "A working silk farm where you see mulberry trees, silkworms and weaving; guided tours daily 7:30 AM to 5:30 PM", "th": "ฟาร์มไหมที่เห็นต้นหม่อน หนอนไหม และการทอผ้า มีไกด์นำชมทุกวัน 7:30–17:30" },
+          "why": { "en": "Silkworms and looms are easy for children to watch and ask about", "th": "หนอนไหมและกี่ทอผ้าให้เด็กดูและถามได้ง่าย" },
+          "tip": { "en": "It lies on National Road 6, about a 30-minute drive out, so pair it with the Roluos temples", "th": "อยู่บนทางหลวงหมายเลข 6 นั่งรถราว 30 นาที แวะคู่กับปราสาทโรลัวะได้" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Artisans Angkor Silk Farm, National Road 6, Puok, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://artisansangkor.com/visit-us/angkor-silk-farm/"
+        },
+        {
+          "name": { "en": "Angkor Wildlife and Aquarium", "th": "สวนสัตว์และพิพิธภัณฑ์สัตว์น้ำอังกอร์" },
+          "kind": "zoo",
+          "area": { "en": "National Road 6, Damdek", "th": "ทางหลวงหมายเลข 6 ดัมเดก" },
+          "what": { "en": "A freshwater and saltwater aquarium plus 10 hectares of outdoor exhibits with tigers, otters, civets and crocodiles, open 9 AM to 6 PM", "th": "ตู้ปลาน้ำจืดและน้ำเค็ม พร้อมโซนกลางแจ้ง 10 เฮกตาร์ มีเสือ นากพันธุ์เล็ก ชะมด และจระเข้ เปิด 9:00–18:00" },
+          "why": { "en": "The route starts indoors with air conditioning and has a café and a green space with shaded huts", "th": "เส้นทางเริ่มในอาคารที่มีแอร์ มีคาเฟ่และสนามหญ้าพร้อมศาลาร่มรื่น" },
+          "tip": { "en": "About 26 km east of town; avoid the local holiday weekends, when it gets very crowded", "th": "อยู่ห่างตัวเมืองไปทางตะวันออกราว 26 กม. หลีกเลี่ยงวันหยุดยาวของคนท้องถิ่นที่แน่นมาก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ $18 foreign adults · $10 children", "th": "≈ $18 ผู้ใหญ่ต่างชาติ · $10 เด็ก" },
+          "book": "none",
+          "q": "Angkor Wildlife and Aquarium, National Road 6, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://helloangkor.com/attractions/angkor-wildlife-aquarium/"
+        },
+        {
+          "name": { "en": "Angkor Wonder Garden", "th": "อังกอร์ วันเดอร์ การ์เด้น" },
+          "kind": "park",
+          "area": { "en": "National Road 6, Damdek", "th": "ทางหลวงหมายเลข 6 ดัมเดก" },
+          "what": { "en": "A 7-hectare flower garden with small statues, village-style huts and a café on a little hill, open daily 8 AM to 6 PM", "th": "สวนดอกไม้ 7 เฮกตาร์ มีรูปปั้นเล็กๆ กระท่อมสไตล์หมู่บ้าน และคาเฟ่บนเนินเล็ก เปิดทุกวัน 8:00–18:00" },
+          "why": { "en": "Wide paths and a golf-cart rental let small legs rest, and the flowers are easy for children to enjoy", "th": "ทางกว้างและเช่ารถกอล์ฟได้ ให้ขาเล็กๆ ได้พัก ดอกไม้ดูเพลินสำหรับเด็ก" },
+          "tip": { "en": "Go in the morning or late afternoon for softer light; it is close to the Wildlife and Aquarium park", "th": "ไปตอนเช้าหรือเย็นแสงสวย อยู่ใกล้สวนสัตว์และพิพิธภัณฑ์สัตว์น้ำอังกอร์" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ $10 foreign adults · $5 children under 1.2 m · golf cart $10 extra", "th": "≈ $10 ผู้ใหญ่ต่างชาติ · $5 เด็กสูงไม่ถึง 1.2 ม. · รถกอล์ฟเพิ่ม $10" },
+          "book": "none",
+          "q": "Angkor Wonder Garden, National Road 6, Damdek, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://helloangkor.com/attractions/angkor-wonder-garden/"
+        },
+        {
+          "name": { "en": "Preah Khan", "th": "พระขรรค์" },
+          "kind": "culture",
+          "area": { "en": "Angkor Archaeological Park", "th": "อุทยานโบราณคดีอังกอร์" },
+          "what": { "en": "A large 12th-century temple north of Angkor Thom with long shaded corridors and trees growing over the stones", "th": "ปราสาทใหญ่ศตวรรษที่ 12 ทางเหนือของนครธม มีระเบียงยาวร่มรื่นและต้นไม้ปกคลุมก้อนหิน" },
+          "why": { "en": "Shady corridors and exploring make it more fun for children than a busy main temple", "th": "ระเบียงร่มรื่นและการเดินสำรวจ สนุกสำหรับเด็กกว่าปราสาทหลักที่คนแน่น" },
+          "tip": { "en": "Needs an Angkor Pass; uneven stone paths are hard with a pram, so carry a small child", "th": "ต้องมีบัตรอังกอร์ ทางหินไม่เรียบ รถเข็นลำบาก ควรอุ้มเด็กเล็ก" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Angkor Pass ≈ $37 for one day (adults) · check the child price", "th": "บัตรอังกอร์ ≈ $37 ต่อวัน (ผู้ใหญ่) · เช็กราคาเด็กก่อนไป" },
+          "book": "none",
+          "q": "Preah Khan, Angkor Archaeological Park, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://helloangkor.com/angkor-ticket-prices/"
+        },
+        {
+          "name": { "en": "Banteay Kdei and Srah Srang", "th": "บันเตียย์กเด็ย และสระสรง" },
+          "kind": "culture",
+          "area": { "en": "Angkor Archaeological Park", "th": "อุทยานโบราณคดีอังกอร์" },
+          "what": { "en": "A quieter 12th-century monastery temple facing Srah Srang, a large bathing pond", "th": "วัดพระสงฆ์ศตวรรษที่ 12 ที่เงียบกว่า หันหน้าสู่สระสรงขนาดใหญ่" },
+          "why": { "en": "Fewer crowds and a pond to walk beside suit a gentle morning with small children", "th": "คนน้อยและมีสระให้เดินริมน้ำ เหมาะกับเช้าสบายๆ ของเด็กเล็ก" },
+          "tip": { "en": "Needs an Angkor Pass; it sits near Ta Prohm, so visit the two together", "th": "ต้องมีบัตรอังกอร์ อยู่ใกล้ตาพรหม แวะคู่กันได้" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Angkor Pass ≈ $37 for one day (adults) · check the child price", "th": "บัตรอังกอร์ ≈ $37 ต่อวัน (ผู้ใหญ่) · เช็กราคาเด็กก่อนไป" },
+          "book": "none",
+          "q": "Banteay Kdei, Angkor Archaeological Park, Siem Reap",
+          "ok": "2026-11",
+          "src": "https://helloangkor.com/angkor-ticket-prices/"
+        },
+      {"name":{"en":"Angkor Zipline","th":"อังกอร์ซิปไลน์"},"kind":"nature","area":{"en":"near the Angkor temples","th":"ใกล้วัดอังกอร์"},"what":{"en":"A canopy zipline course through the jungle, with ziplines and rope bridges.","th":"สนามซิปไลน์ในป่าเป็นทางบนยอดไม้ มีซิปไลน์และสะพานเชือก"},"why":{"en":"The page says it suits adventurous families with older kids.","th":"หน้าเว็บบอกว่าเหมาะกับครอบครัวที่ชอบผจญภัยและมีเด็กโต"},"tip":{"en":"Open daily, 7:00 AM to 5:00 PM. Booking in advance is recommended.","th":"เปิดทุกวัน 07:00–17:00 แนะนำให้จองล่วงหน้า"},"ages":[0,0,1,2],"hrs":2,"io":"out","pram":"no","price":{"en":"$49-$79","th":"$49–79"},"book":"rec","q":"Angkor Zipline, near the Angkor temples, Siem Reap","ok":"2026-11","src":"https://sillysuitcase.com/siem-reap-family-activities/"},
+      {"name":{"en":"Angkor Wat Putt","th":"อังกอร์วัตพัตต์"},"kind":"play","area":{"en":"a few kilometres out of town","th":"อยู่ห่างจากตัวเมืองไม่กี่กิโลเมตร"},"what":{"en":"A 14-hole mini-golf course with replicas of the temples.","th":"สนามมินิกอล์ฟ 14 หลุม มีแบบจำลองวัด"},"why":{"en":"Water misters keep you cool on a hot day.","th":"มีสเปรย์น้ำช่วยให้เย็นในวันร้อน"},"tip":{"en":"Open daily, 8:00 AM to 8:00 PM.","th":"เปิดทุกวัน 08:00–20:00"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"$5/person","th":"$5 ต่อคน"},"book":"none","q":"Angkor Wat Putt, Siem Reap","ok":"2026-11","src":"https://sillysuitcase.com/siem-reap-family-activities/"},
+      {"name":{"en":"Lotus Silk Farm (by Samatoa)","th":"ฟาร์มไหมบัว (ซามาโตอา)"},"kind":"farm","area":{"en":"Cambodian countryside","th":"ชนบทกัมพูชา"},"what":{"en":"A hands-on tour of how lotus stems are turned into silk, with a paper flower to make.","th":"ทัวร์ลงมือทำว่าก้านบัวกลายเป็นไหมได้อย่างไร มีดอกไม้กระดาษให้ทำ"},"why":{"en":"The page says children can try extracting silk threads and crafting a paper flower.","th":"หน้าเว็บบอกว่าเด็กลองดึงเส้นไหมและทำดอกไม้กระดาษได้"},"tip":{"en":"Open daily, 8:30 AM to 5:30 PM. Shuttle back to town.","th":"เปิดทุกวัน 08:30–17:30 มีรถรับกลับเข้าเมือง"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"around $10 USD","th":"ราว $10 USD"},"book":"none","q":"Lotus Silk Farm (by Samatoa), Cambodian countryside, Siem Reap","ok":"2026-11","src":"https://sillysuitcase.com/siem-reap-family-activities/"},
+      {"name":{"en":"Kit Playground","th":"คิตเพลย์กราวด์"},"kind":"play","area":{"en":"60m Street","th":"ถนน 60 เมตร"},"what":{"en":"An outdoor playground with play structures, swings, slides and climbing frames.","th":"สนามเด็กเล่นกลางแจ้ง มีโครงเล่น ชิงช้า สไลด์ และโครงปีนป่าย"},"why":{"en":"The page says it is a safe place for children to run, jump and explore.","th":"หน้าเว็บบอกว่าเป็นที่ปลอดภัยให้เด็กวิ่ง กระโดด และสำรวจ"},"tip":{"en":"Family pass for 4 entries: $10.","th":"บัตรครอบครัว 4 ครั้งราคา $10"},"ages":[2,2,1,0],"hrs":2,"io":"out","pram":"part","price":{"en":"$3 per entry","th":"$3 ต่อครั้ง"},"book":"none","q":"Kit Playground, 60m Street, Siem Reap","ok":"2026-11","src":"https://sillysuitcase.com/siem-reap-family-activities/"},
+      {"name":{"en":"Kameng Leng","th":"กเมงเล็ง"},"local":"ក្មេងៗលេង","kind":"play","area":{"en":"Siem Reap","th":"เสียมราฐ"},"what":{"en":"A daycare, playground and family restaurant with indoor and outdoor play areas.","th":"ศูนย์ดูแลเด็ก สนามเด็กเล่น และร้านอาหารครอบครัว มีพื้นที่เล่นทั้งในร่มและกลางแจ้ง"},"why":{"en":"The page says the indoor and outdoor play areas include a mud kitchen and a little library, good for toddlers.","th":"หน้าเว็บบอกว่ามีครัวโคลนและห้องสมุดเล็กๆ เหมาะกับเด็กวัยเตาะแตะ"},"tip":{"en":"Open daily; call ahead to check hours.","th":"เปิดทุกวัน โทรถามเวลาก่อนไป"},"ages":[2,2,1,0],"hrs":1.5,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kameng Leng, Siem Reap","ok":"2026-11","src":"https://sillysuitcase.com/siem-reap-family-activities/"},
+      {"name":{"en":"Flying Foxes","th":"ค้างคาวผลไม้ยักษ์"},"kind":"nature","area":{"en":"near a local temple","th":"ใกล้วัดในท้องถิ่น"},"what":{"en":"Giant fruit bats that roost in the trees near a local temple.","th":"ค้างคาวผลไม้ขนาดยักษ์ที่เกาะนอนบนต้นไม้ใกล้วัดในท้องถิ่น"},"why":{"en":"The page calls it a free wildlife sight, especially around sunrise or sunset.","th":"หน้าเว็บเรียกว่าเป็นสัตว์ป่าที่ดูฟรี โดยเฉพาะตอนพระอาทิตย์ขึ้นหรือตก"},"tip":{"en":"Best around sunrise or sunset.","th":"ดีที่สุดตอนพระอาทิตย์ขึ้นหรือตก"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Flying Foxes, near a local temple, Siem Reap","ok":"2026-11","src":"https://sillysuitcase.com/siem-reap-family-activities/"},
+      {"name":{"en":"Public Play Center","th":"พับลิกเพลย์เซ็นเตอร์"},"kind":"play","area":{"en":"by the Siem Reap River","th":"ริมแม่น้ำเสียมราฐ"},"what":{"en":"An open riverside area with exercise machines, benches and space to run and kick a ball.","th":"พื้นที่ริมแม่น้ำกลางแจ้งมีเครื่องออกกำลังกาย ม้านั่ง และที่ให้วิ่งและเตะบอล"},"why":{"en":"The page says kids can run around, kick a ball or enjoy the river breeze.","th":"หน้าเว็บบอกว่าเด็กวิ่งเล่น เตะบอล หรือรับลมแม่น้ำได้"},"tip":{"en":"Best visited in the cooler mornings or evenings.","th":"ดีที่สุดตอนเช้าที่อากาศเย็นหรือตอนเย็น"},"ages":[1,2,2,1],"hrs":1.5,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Public Play Center, by the Siem Reap River, Siem Reap","ok":"2026-11","src":"https://sillysuitcase.com/siem-reap-family-activities/"},
+      {"name":{"en":"Phare Circus","th":"ฟาร์เซอร์คัส"},"kind":"show","area":{"en":"Siem Reap","th":"เสียมราฐ"},"what":{"en":"A circus show that mixes acrobatics with contemporary theatre, music and dance.","th":"การแสดงละครสัตว์ผสมกายกรรมกับการแสดงร่วมสมัย ดนตรี และการเต้น"},"why":{"en":"The page says it was a highlight of their Cambodia trip with kids.","th":"หน้าเว็บบอกว่าเป็นไฮไลต์ของการเที่ยวกัมพูชากับลูกๆ"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Phare Circus, Siem Reap","ok":"2026-11","src":"https://travelynnfamily.com/visiting-siem-reap-with-kids/"},
+      {"name":{"en":"Apopo Centre","th":"ศูนย์อาโพโพ"},"kind":"museum","area":{"en":"Siem Reap","th":"เสียมราฐ"},"what":{"en":"A guided tour about landmines, with a demonstration by the hero rats that search for them.","th":"ทัวร์นำชมเรื่องทุ่นระเบิด พร้อมการสาธิตของหนูฮีโร่ที่ตรวจหาทุ่นระเบิด"},"why":{"en":"The page says the demonstration is a fun thing to do for kids.","th":"หน้าเว็บบอกว่าการสาธิตเป็นกิจกรรมสนุกสำหรับเด็ก"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Apopo Centre, Siem Reap","ok":"2026-11","src":"https://travelynnfamily.com/visiting-siem-reap-with-kids/"},
+      {"name":{"en":"Landmine Museum","th":"พิพิธภัณฑ์ทุ่นระเบิด"},"kind":"museum","area":{"en":"Siem Reap","th":"เสียมราฐ"},"what":{"en":"Displays on landmines and unexploded bombs, with safe examples to see.","th":"จัดแสดงทุ่นระเบิดและระเบิดที่ยังไม่ระเบิด พร้อมตัวอย่างปลอดภัยให้ดู"},"why":{"en":"The page says it is suitable for most younger children if they know the history first.","th":"หน้าเว็บบอกว่าเด็กเล็กส่วนใหญ่ดูได้ถ้ารู้ประวัติศาสตร์ก่อน"},"tip":{"en":"An optional tour with a landmine survivor is available.","th":"มีทัวร์เสริมกับผู้รอดชีวิตจากทุ่นระเบิด"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Landmine Museum, Siem Reap","ok":"2026-11","src":"https://travelynnfamily.com/visiting-siem-reap-with-kids/"},
+      {"name":{"en":"Angkor Botanical Garden","th":"สวนพฤกษศาสตร์อังกอร์"},"kind":"park","area":{"en":"city-centre","th":"ใจกลางเมือง"},"what":{"en":"A shady city-centre park with ponds, streams, cafés and animals to see.","th":"สวนร่มรื่นกลางเมือง มีบ่อน้ำ ลำธาร คาเฟ่ และสัตว์ให้ดู"},"why":{"en":"The page says it is a good place for little ones to explore freely.","th":"หน้าเว็บบอกว่าเป็นที่ดีให้เด็กเล็กได้สำรวจอย่างอิสระ"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Angkor Botanical Garden, city centre, Siem Reap","ok":"2026-11","src":"https://travelynnfamily.com/visiting-siem-reap-with-kids/"},
+      {"name":{"en":"Phsar Leu Thom Tmey","th":"ตลาดพซาร์เลอทมเตย"},"kind":"market","area":{"en":"Siem Reap","th":"เสียมราฐ"},"what":{"en":"A local market with food, clothes, toys and most other everyday things.","th":"ตลาดท้องถิ่นมีอาหาร เสื้อผ้า ของเล่น และของใช้ประจำวันเกือบทุกอย่าง"},"why":{"en":"The page says it is a good place for snacks or breakfast before a tour.","th":"หน้าเว็บบอกว่าเป็นที่ดีให้หาของว่างหรือมื้อเช้าก่อนออกทัวร์"},"ages":[0,1,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Phsar Leu Thom Tmey, Siem Reap","ok":"2026-11","src":"https://travelynnfamily.com/visiting-siem-reap-with-kids/"},
+      {"name":{"en":"Bayon","th":"ปราสาทบายน"},"kind":"culture","area":{"en":"Angkor Thom","th":"อังกอร์ธม"},"what":{"en":"A temple with scores of carved faces in its rocks.","th":"วัดที่มีใบหน้าแกะสลักหลายสิบอยู่บนหิน"},"why":{"en":"The page says the faces are fun for kids to point at and marvel over.","th":"หน้าเว็บบอกว่าใบหน้าเหล่านี้ให้เด็กชี้และตื่นเต้นได้สนุก"},"tip":{"en":"Be there at 7:00 or 8:00 AM, before the day gets hot. Watch for monkeys.","th":"ไปถึงตอน 07:00 หรือ 08:00 น. ก่อนร้อน และระวังลิง"},"ages":[0,1,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"$37/62/72 for 1, 3 or 7 days","th":"$37/62/72 สำหรับ 1, 3 หรือ 7 วัน"},"book":"none","q":"Bayon, Angkor Thom, Siem Reap","ok":"2026-11","src":"https://travelynnfamily.com/visiting-siem-reap-with-kids/"},
+        {
+          "local": "",
+          "kind": "culture",
+          "area": {
+            "th": "อุทยานประวัติศาสตร์นครวัด",
+            "en": "Angkor Archaeological Park"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+          "name": {
+            "th": "ปราสาทนาคพัน",
+            "en": "Neak Poan"
+          },
+          "what": {
+            "th": "ปราสาทศตวรรษที่ 12 บนเกาะเล็กกลางบารายเก่า เดินไปทางทางเดินเหนือน้ำ",
+            "en": "A 12th-century temple on a small island in an old reservoir, reached by a walkway over the water"
+          },
+          "why": {
+            "th": "ได้เดินบนทางเหนือน้ำ มีดอกบัวสองข้างทาง",
+            "en": "The walk over the water, with lotus flowers along the path"
+          },
+          "q": "Neak Pean, Siem Reap",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "kind": "culture",
+          "area": {
+            "th": "อุทยานประวัติศาสตร์นครวัด",
+            "en": "Angkor Archaeological Park"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+          "name": {
+            "th": "ปราสาทบันทายศรี",
+            "en": "Banteay Srei"
+          },
+          "what": {
+            "th": "ปราสาทศตวรรษที่ 10 สร้างจากหินทรายสีชมพู มีลายแกะสลักละเอียด",
+            "en": "A 10th-century temple of pink sandstone with fine carvings"
+          },
+          "why": {
+            "th": "มีลายแกะสลักให้เด็กๆ ส่องดูใกล้ๆ",
+            "en": "Fine carvings to look at closely"
+          },
+          "q": "Banteay Srei, Siem Reap",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "kind": "views",
+          "area": {
+            "th": "อุทยานประวัติศาสตร์นครวัด",
+            "en": "Angkor Archaeological Park"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+          "name": {
+            "th": "ปราสาทพนมบาเค็ง",
+            "en": "Phnom Bakheng"
+          },
+          "what": {
+            "th": "ปราสาทศตวรรษที่ 9 บนเนินเขา จุดดูพระอาทิตย์ตกยอดนิยม",
+            "en": "A 9th-century temple on a hill, a favourite place to watch the sunset"
+          },
+          "why": {
+            "th": "ได้ดูพระอาทิตย์ตกเหนือปราสาท",
+            "en": "A sunset view over the temples"
+          },
+          "tip": {
+            "th": "เด็กเล็กอาจขึ้นไปข้างบนไม่ได้ มีลานใกล้ๆ ที่ดูวิวได้เหมือนกัน",
+            "en": "Young children may not be let up to the top; a platform nearby has a view too"
+          },
+          "q": "Phnom Bakheng, Siem Reap",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "kind": "culture",
+          "area": {
+            "th": "อุทยานประวัติศาสตร์นครวัด",
+            "en": "Angkor Archaeological Park"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+          "name": {
+            "th": "ปราสาทตาเนย",
+            "en": "Ta Nei"
+          },
+          "what": {
+            "th": "ปราสาทศตวรรษที่ 12 ที่เงียบ บูรณะน้อย เคยเป็นโรงพยาบาลมาก่อน",
+            "en": "A quiet, little-restored 12th-century temple that was once a hospital"
+          },
+          "why": {
+            "th": "คนน้อย ได้ความรู้สึกเหมือนสำรวจซากโบราณ",
+            "en": "Fewer people, so it feels like exploring a ruin"
+          },
+          "q": "Ta Nei Temple, Siem Reap",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "name": {
+            "th": "อาร์ตบ็อกซ์ เสียมเรียบ",
+            "en": "ArtBox Siem Reap"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ตัวเมืองเสียมเรียบ",
+            "en": "Siem Reap town"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ติดแอร์ ภาพวาดลวงตาสามมิติ",
+            "en": "An air-conditioned museum of 3D illusion paintings"
+          },
+          "why": {
+            "th": "หลบร้อนได้ มีภาพชีวิตชาวกัมพูชาและสถานที่ดังทั่วโลก",
+            "en": "A cool place out of the heat, with pictures of Cambodian life and world landmarks"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 9:00–17:00",
+            "en": "Open every day 9:00–17:00"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "ArtBox, Siem Reap",
+          "src": "https://wyldfamilytravel.com/?p=34099",
+          "ok": "2026-11"
+        }
+    ]
+    }
+  ]
+}

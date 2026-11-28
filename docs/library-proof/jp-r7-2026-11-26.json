@@ -1,0 +1,280 @@
+{
+  "town": "jp (round 7: Nara to 35, the last gaps, two baby rooms)",
+  "kind": "added",
+  "checked": "2026-11-26",
+  "rule": "Haiku/Sonnet research agents (five web searches each, a sentence copied from each page) → scripts/library-check.cjs (name, quote, 2025–2026 date; an undated Mapple family food list allowed for places to eat; for things to do an official page or a Mapple 2026 family list) → every row opened on Google Maps on 26 Nov 2026 by checker agents, kept only when open, the same name and in the town → Thai and English by writer agents to docs/STYLE.md. Pharmacies: the pharmacy's or its chain's own store page only (no directories), every quote re-checked here.",
+  "towns": {
+    "jp-fukuoka": {
+      "eat": [
+        {
+          "name": "Kalonoulon",
+          "src": "https://www.mapple.net/region/a0701010100_g03050000_s-situation=family/spot/"
+        },
+        {
+          "name": "Mentai Ryori Hakata Shobo-an",
+          "src": "https://www.mapple.net/region/a0701010100_g03050000_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-kagoshima": {
+      "eat": [
+        {
+          "name": "Juan Central Station West Entrance Branch",
+          "src": "https://www.mapple.net/region/a0704040100_g03050000_s-situation=family/spot/"
+        },
+        {
+          "name": "Ichiba Shokudo Jonan",
+          "src": "https://www.mapple.net/region/a0704040100_g03050000_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-nagasaki": {
+      "eat": [
+        {
+          "name": "Nihon Ryori Sokaraku",
+          "src": "https://www.mapple.net/region/a0702010100_g03050000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Nagasaki Park",
+          "src": "https://www.at-nagasaki.jp/spot/60664"
+        },
+        {
+          "name": "Iojima Costa del Sol Beach",
+          "src": "https://www.at-nagasaki.jp/spot/396"
+        }
+      ],
+      "care": []
+    },
+    "jp-nagoya": {
+      "eat": [
+        {
+          "name": "Miya Kishimen Jingu",
+          "src": "https://www.mapple.net/region/a0403000000_g03050000_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Nagoya Port Sea Train Land",
+          "src": "https://www.nagoya-info.jp/en/spot/detail/12/"
+        },
+        {
+          "name": "Brother Museum",
+          "src": "https://www.nagoya-info.jp/en/spot/detail/129/"
+        }
+      ],
+      "care": []
+    },
+    "jp-shirahama": {
+      "eat": [
+        {
+          "name": "Shirahama Paradise",
+          "src": "https://www.nap-camp.com/mag/48762"
+        },
+        {
+          "name": "Furuminka Cafe Shihatobu",
+          "src": "https://www.nap-camp.com/mag/48762"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-kobe": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kobekko Land",
+          "src": "https://www.asoview.com/note/5414/"
+        },
+        {
+          "name": "KOBE SUPER STADIUM",
+          "src": "https://www.asoview.com/note/5414/"
+        }
+      ],
+      "care": []
+    },
+    "jp-kumamoto": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Lake Ezu",
+          "src": "https://japanactivity.com/kumamoto-with-kids"
+        }
+      ],
+      "care": []
+    },
+    "jp-miyazaki": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Kodomo no Kuni (Aoshima Picnic Club)",
+          "src": "https://www.kanko-miyazaki.jp/en/sightseeing/1221"
+        }
+      ],
+      "care": []
+    },
+    "jp-nagano": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Togakushi Ninja Museum",
+          "src": "https://www.go-nagano.net/en/trip-idea/family-friendly-adventures"
+        },
+        {
+          "name": "Temari Candy Making Experience",
+          "src": "https://visitmatsumoto.com/en/plan/detail_2001.html"
+        }
+      ],
+      "care": []
+    },
+    "jp-nara": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Gango-ji Temple",
+          "src": "https://gangoji-tera.or.jp/about/"
+        },
+        {
+          "name": "Kofuku-ji National Treasure Hall",
+          "src": "https://www.kohfukuji.com/info/info-guide/"
+        },
+        {
+          "name": "Kofuku-ji Chukon-do",
+          "src": "https://www.kohfukuji.com/info/info-guide/"
+        },
+        {
+          "name": "Heijo Palace Izanaikan",
+          "src": "https://www.heijo-park.jp/guide/suzakumon/izanaikan/"
+        },
+        {
+          "name": "Suzakumon Gate",
+          "src": "https://www.heijo-park.jp/guide/suzakumon/"
+        },
+        {
+          "name": "First Imperial Audience Hall (Daigokuden)",
+          "src": "https://www.heijo-park.jp/guide/daigokuden/"
+        },
+        {
+          "name": "Nara Prison Museum by Hoshino Resorts",
+          "src": "https://narashikanko.or.jp/spot/detail_10470.html"
+        },
+        {
+          "name": "Ukimido",
+          "src": "https://narashikanko.or.jp/spot/detail_10105.html"
+        },
+        {
+          "name": "Sarusawa Pond",
+          "src": "https://narashikanko.or.jp/spot/detail_10110.html"
+        },
+        {
+          "name": "Akishino-dera Temple",
+          "src": "https://narashikanko.or.jp/spot/detail_10018.html"
+        }
+      ],
+      "care": []
+    },
+    "jp-niigata": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Northern Culture Museum and Ito Estate",
+          "src": "https://enjoyniigata.com/en/spot/5559"
+        },
+        {
+          "name": "Befco Bakauke Observation Room",
+          "src": "https://gltjp.com/en/directory/item/14217"
+        }
+      ],
+      "care": []
+    },
+    "jp-nikko": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Chuzenji Lakeside Boathouse",
+          "src": "https://www.nikko-nsm.co.jp/boathouse.html"
+        },
+        {
+          "name": "Nikko Yumoto Onsen Ski Slope",
+          "src": "https://visitnikko.jp/en/stories/family-fun-in-all-seasons/"
+        }
+      ],
+      "care": []
+    },
+    "jp-osaka": {
+      "eat": [],
+      "do": [
+        {
+          "name": "MIRACLE WORLD Osaka",
+          "src": "https://osaka-info.jp/en/spot/miracle_world/"
+        },
+        {
+          "name": "Kaiyodo Figure Museum Miraiza Osaka Castle",
+          "src": "https://osaka-info.jp/en/spot/kaiyodo-miraiza/"
+        }
+      ],
+      "care": []
+    },
+    "jp-sendai": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Smile Glico Park",
+          "src": "https://www.gltjp.com/en/article/item/20987/"
+        },
+        {
+          "name": "Sendai City Wildflower Garden",
+          "src": "https://www.gltjp.com/en/article/item/20987/"
+        }
+      ],
+      "care": []
+    },
+    "jp-toyama": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Doraemon Tram, Takaoka",
+          "src": "https://visit-toyama-japan.com/en/things-to-do/21137"
+        }
+      ],
+      "care": [
+        {
+          "name": "Daiwa Toyama nursing room",
+          "src": "https://www.toyamashi-kankoukyoukai.jp/spot/daiwadepartmentstore/"
+        }
+      ]
+    },
+    "jp-tohoku": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Akita East Service Centre baby room",
+          "src": "https://www.city.akita.lg.jp/kurashi/kyodo-chiiki/1005328/1004358/1009567/1004359.html"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (26 Nov 2026)": [
+      "Shirahama Ginza footbath alley",
+      "Daidokoro Hasegawa Nagoya"
+    ],
+    "other": [
+      "Toyama Castle museum (closed Nov 2026 to Feb 2027)",
+      "Kumamon Village (souvenir shops)",
+      "a Kinugawa hotel spa (hotel facility)",
+      "Pokemon Center Osaka and Nintendo Store (shops)",
+      "Oshokuji Mon and Higepanda (failed or closed in earlier rounds)",
+      "Suisan Shokudo Nagasaki (quote not on the page)",
+      "Nagasaki Seaside Park (already listed)",
+      "Beppu Bay service area baby room (an expressway stop, a carmaker page)"
+    ],
+    "still short": "Hakone 32 and Matsuyama 32 of 35 things to do (every dated page names places already listed), Toyama 20 and Niigata 21 of 22, Osaka 59 of 60; Sendai and Takamatsu 39 of 40 places to eat; baby rooms in Beppu, Fuji, Niigata, Shirahama, Takamatsu"
+  }
+}

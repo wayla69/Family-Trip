@@ -1,0 +1,156 @@
+{
+  "town": "jp-takayama",
+  "rounds": [
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 16 rows from nap-camp (Apr and Oct 2026), macaroni (Mar 2026) and aumo (Apr 2026), all passed library-check.cjs, 13 went in",
+      "added": [
+        {
+          "name": "Mameya genge (tofu)",
+          "page_name": "豆家本店 genge（ゲンゲ）",
+          "src": "https://macaro-ni.jp/175279",
+          "date": "2026-03",
+          "map": "Google Maps 'Mameya genge' (Sakae), newest review shown 5 days ago"
+        },
+        {
+          "name": "chano-ma Nagoya",
+          "page_name": "chano-ma（チャノマ）名古屋",
+          "src": "https://macaro-ni.jp/175279",
+          "date": "2026-03",
+          "map": "Google Maps 'chano-ma Nagoya' (Sakae), newest review shown 7 hours ago"
+        },
+        {
+          "name": "Nangokushuka (Nagoya Tokyu Hotel)",
+          "page_name": "南国酒家 名古屋店",
+          "src": "https://macaro-ni.jp/175279",
+          "date": "2026-03",
+          "map": "Google Maps 'Nangokushuka Nagoyatokyuhoteruten' (Sakae), newest review shown 6 days ago"
+        },
+        {
+          "name": "Umenohana Sakae",
+          "page_name": "梅の花 栄店",
+          "src": "https://macaro-ni.jp/175279",
+          "date": "2026-03",
+          "map": "Google Maps 'Umenohana Sakae', newest review shown 4 days ago"
+        },
+        {
+          "name": "Bakuroichidai Nagoya West (Hida beef)",
+          "page_name": "飛騨牛一頭家 馬喰一代 名古屋WEST",
+          "src": "https://aumo.jp/articles/54216",
+          "date": "2026-04",
+          "map": "Google Maps 'Bakuroichidai Nagoya West' (Nishi Ward), newest review shown 9 hours ago"
+        },
+        {
+          "name": "Marushin Shokudo",
+          "page_name": "まるしん食堂",
+          "src": "https://www.nap-camp.com/mag/50956",
+          "date": "2026-10",
+          "map": "Google Maps 'まるしん食堂' (Tenmanmachi, Takayama), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Asobi Park Plus (Lalaport Minato Aqulus)",
+          "page_name": "あそびパークPLUS ららぽーと名古屋みなとアクルス店",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "date": "2026-04",
+          "map": "Google Maps 'Asobi Park Plus' (Minato Ward), newest review shown a month ago"
+        },
+        {
+          "name": "Little Planet (mozo Wonder City)",
+          "page_name": "リトルプラネット mozoワンダーシティ",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "date": "2026-04",
+          "map": "Google Maps 'Little Planet' (Nishi Ward), newest review shown a week ago"
+        },
+        {
+          "name": "Pure Heart Kids Land (Portwalk Minato)",
+          "page_name": "ピュアハートキッズランド ポートウォークみなと",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "date": "2026-04",
+          "map": "Google Maps 'Pure Heart Kids Land' (Minato Ward), newest review shown 2 months ago"
+        },
+        {
+          "name": "Asobi no Sekai (Takashimaya Gate Tower Mall)",
+          "page_name": "あそびのせかい タカシマヤ ゲートタワーモール店",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "date": "2026-04",
+          "map": "Google Maps 'Asobinosekai' (Nakamura Ward), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Jump Lab Narumi",
+          "page_name": "JUMP LAB 名古屋 緑店",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "date": "2026-04",
+          "map": "Google Maps 'Jump Lab Narumi' (Midori Ward), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "Kodomocchi Park (Nagoya Minato)",
+          "page_name": "こどもっちパーク 名古屋みなと店",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "date": "2026-04",
+          "map": "Google Maps 'こどもっちパーク 名古屋みなとパーク' (Kinjofuto), newest review shown a month ago"
+        },
+        {
+          "name": "Sumikko Gurashi Play Studio (AEON Mall Odaka)",
+          "page_name": "すみっコぐらしあそびスタジオ イオンモール大高",
+          "src": "https://www.nap-camp.com/mag/81944",
+          "date": "2026-04",
+          "map": "Google Maps 'すみっコぐらしあそびスタジオ イオンモール大高', newest review shown a month ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "ホイホイ栄本店",
+          "why": "no review dates readable on the map"
+        },
+        {
+          "name": "ダイニンググラマー",
+          "why": "not found on the map"
+        },
+        {
+          "name": "キッズランドUS 茶屋",
+          "why": "the map shows another name at that mall"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 21 rows from japanactivity.com (Oct 2026), mapple.net and aichinow; 4 passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Hida-Takayama squirrel forest",
+          "page_name": "Takayama Squirrel Park",
+          "src": "https://japanactivity.com/takayama-with-kids-family-guide",
+          "date": "2026-05",
+          "map": "Google Maps 'Squirrel Forest Hidayama Wild Grass Nature Garden' (Matsukura-machi), newest review shown 2 hours ago"
+        },
+        {
+          "name": "Showa Jidō Park (\"Poppo Park\")",
+          "page_name": "Showa Jidou Park (also called Poppo Park)",
+          "src": "https://japanactivity.com/takayama-with-kids-family-guide",
+          "date": "2026-05",
+          "map": "Google Maps 'Showajidokoenpoppo Park' (Shōwa-machi), newest review shown 5 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "13 places to eat and 4 sights from mapple.net",
+          "why": "the checker found no date on the pages"
+        },
+        {
+          "name": "Takayama Showa Museum",
+          "why": "the page gives no district"
+        },
+        {
+          "name": "Hida Takayama Crafts Experience Center",
+          "why": "the page puts it in the old town; the map's is in Kami-Okamoto-machi"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

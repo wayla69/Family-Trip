@@ -136,6 +136,7 @@ HOOKS.heart = (h) => REMIND.heart(h);   // a relative's heart nudges the parents
 HOOKS.comment = (c) => REMIND.comment(c);   // a relative's line under a photo, the same
 HOOKS.draft = (x) => REMIND.draft(x);
 HOOKS.reel = (x) => REMIND.reel(x);
+HOOKS.closed = (x) => REMIND.closed(x);   // the web check of a coming book found a place closed or moved
 HOOKS.inbox = (x) => REMIND.inbox(x);   // a relative sent photos: a nudge to the parents' phones   // the film made by itself is ready: a push to the parents' phones   // the helper finished a photo book's draft: "ready to check" on the parents' phones
 app.use(REMIND.router);
 // the owner hears when something goes wrong: problems on the phones, room running out, the nightly copy failing (server/alerts.js)
@@ -195,9 +196,10 @@ app.get('/api/b/pdf/:trip', A.requireUser, async (req, res, next) => {
     const t = (await PG.query('SELECT slug, title FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, BS.FAMILY])).rows[0];
     if (!t) return res.status(404).json({ error: 'trip' });
     const cookie = A.makeToken('viewer', 'PDF', crypto.randomBytes(6).toString('hex'));   // read-only session for the renderer
-    const pdf = await PDF.render({ base: `http://127.0.0.1:${PORT}`, cookie, trip: t.slug, footer: `${t.title.en || t.title.th} · ${new Date().toISOString().slice(0, 10)}` });
+    const size = req.query.size === 'a5' ? 'a5' : 'a4', shop = req.query.shop === '1';   // A5, and a print shop's copy without our page footer
+    const pdf = await PDF.render({ base: `http://127.0.0.1:${PORT}`, cookie, trip: t.slug, size, shop, footer: `${t.title.en || t.title.th} · ${new Date().toISOString().slice(0, 10)}` });
     res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename="${t.slug}.pdf"`);
+    res.setHeader('Content-Disposition', `attachment; filename="${t.slug}${size === 'a5' ? '-a5' : ''}${shop ? '-print' : ''}.pdf"`);
     res.setHeader('Cache-Control', 'no-store');
     res.end(pdf);
   } catch (e) { console.error('pdf', e.message); res.status(503).json({ error: 'pdf-unavailable' }); }

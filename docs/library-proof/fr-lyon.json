@@ -1,0 +1,90 @@
+{
+  "town": "fr-lyon",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 17 rows from visiterlyon.com and lyon-france.com, 14 passed library-check.cjs, 10 went in",
+  "added": [
+    {
+      "name": "Mama Shelter Lyon",
+      "page_name": "Mama Shelter (Lyon 7th)",
+      "src": "https://en.lyon-france.com/discover-lyon/as-a-family/In-Lyon-as-a-family-kid-friendly-places",
+      "date": "2026-06",
+      "map": "Google Maps 'Mama Shelter Lyon', 13 Rue Domer, 3,904 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Zucca",
+      "page_name": "Brasserie Zucca",
+      "src": "https://en.lyon-france.com/discover-lyon/as-a-family/In-Lyon-as-a-family-kid-friendly-places",
+      "date": "2026-06",
+      "map": "Google Maps 'ZUCCA Restaurant & Bar', 70 Quai Charles de Gaulle, 666 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Yakapiocher",
+      "page_name": "Yakapiocher",
+      "src": "https://en.lyon-france.com/discover-lyon/as-a-family/In-Lyon-as-a-family-kid-friendly-places",
+      "date": "2026-06",
+      "map": "Google Maps 8 Rue Rivet, 299 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Bouillon Baratte",
+      "page_name": "Bouillon Baratte",
+      "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/enjoying-lyon-with-a-baby-our-favourite-spots",
+      "date": "2025-06",
+      "map": "Google Maps 'Brasserie Bouillon Baratte', 3,359 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "La Commune",
+      "page_name": "La Commune",
+      "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/enjoying-lyon-with-a-baby-our-favourite-spots",
+      "date": "2025-06",
+      "map": "Google Maps 6,505 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Maison des Canuts",
+      "page_name": "Maison des Canuts",
+      "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+      "date": "2026-10",
+      "map": "Google Maps 'La Maison des Canuts', 1,625 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Soierie Vivante",
+      "page_name": "Soierie Vivante",
+      "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+      "date": "2026-10",
+      "map": "Google Maps 'Association Soierie Vivante', 269 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Museum of Illusions Lyon",
+      "page_name": "Museum of Illusion",
+      "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+      "date": "2026-10",
+      "map": "Google Maps 'Museum of Illusions Lyon', 20,058 reviews, newest '8 hours ago'"
+    },
+    {
+      "name": "GAME IN Lyon",
+      "page_name": "Game In Lyon",
+      "src": "https://en.visiterlyon.com/out-and-about/culture-and-leisure/activities-and-relaxation/indoor-activities/game-in-lyon",
+      "date": "2026-04",
+      "map": "Google Maps 'GAME IN Lyon', 381 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Natespa",
+      "page_name": "Natespa",
+      "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/enjoying-lyon-with-a-baby-our-favourite-spots",
+      "date": "2025-06",
+      "map": "Google Maps 152 reviews, newest 'last month'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "City Aventures, France Aventures Fort de Bron, Exalto Villeurbanne, Mini World",
+      "why": "in Sainte-Foy, Bron, Villeurbanne and Vaulx-en-Velin, outside Lyon"
+    },
+    {
+      "name": "Navigône, Musée des Sapeurs-Pompiers, Science Expériences",
+      "why": "library-check.cjs: name and quote not on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

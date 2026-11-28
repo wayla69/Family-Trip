@@ -10,9 +10,13 @@ const ART = require('./bookart');
 const IMG = require('./images');
 const { FAMILY, AUDIO_EXT } = require('./bookshelf');
 const EMOJI = require('./emoji');
+const EATLIB = require('./eatlib');
+const SIGHTLIB = require('./sightlib');
 
 // restore order follows foreign keys
-const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules', 'comments'];   // capsules: letters to open in the future (migration 0034); comments: lines under photos (0038, after media)
+const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules', 'comments', 'eat_lib', 'sight_lib', 'care_own'];   // capsules: letters to open in the future (migration 0034); comments: lines under photos (0038, after media)
+// eat_lib: only the family's own part — the helper's web-checked finds and the places the parents took out (gone); the books' and the
+// built-in places are read again on every boot
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const thumbKey = (k) => k.replace(/^p\//, 't/');
@@ -21,10 +25,13 @@ const familyScoped = (t) => !['trip_days', 'firsts_catalog'].includes(t);
 async function dump(pool) {
   const tables = {};
   for (const t of TABLES) {
-    tables[t] = (await pool.query(familyScoped(t) ? `SELECT * FROM ${t} WHERE family_id=$1` : `SELECT x.* FROM ${t} x JOIN trips p ON p.id=x.trip_id WHERE p.family_id=$1`, [FAMILY])).rows;
+    tables[t] = (await pool.query(t === 'eat_lib' ? "SELECT * FROM eat_lib WHERE family_id=$1 AND (src = 'helper' OR gone)" : t === 'sight_lib' ? "SELECT * FROM sight_lib WHERE family_id=$1 AND (gone OR wish)" : familyScoped(t) ? `SELECT * FROM ${t} WHERE family_id=$1` : `SELECT x.* FROM ${t} x JOIN trips p ON p.id=x.trip_id WHERE p.family_id=$1`, [FAMILY])).rows;
   }
   const fam = (await pool.query('SELECT profile FROM families WHERE id=$1', [FAMILY])).rows[0];
-  return { format: 'memory-bookshelf-backup', version: 1, at: Date.now(), complete: true, family: FAMILY, profile: (fam && fam.profile) || null, tables };
+  // the budget plans the parents typed (docs/BUDGET.md B3, settings.budget_plan: {trip: {lines, at, by}}), only for this family's books
+  const bp = (await pool.query("SELECT value FROM settings WHERE key='budget_plan'")).rows[0];
+  let budgets = null; try { const o = bp ? JSON.parse(bp.value) : null, ids = new Set(tables.trips.map((x) => x.id)); if (o && typeof o === 'object') budgets = Object.fromEntries(Object.entries(o).filter(([k]) => ids.has(k))); } catch (_) { budgets = null; }
+  return { format: 'memory-bookshelf-backup', version: 1, at: Date.now(), complete: true, family: FAMILY, profile: (fam && fam.profile) || null, ...(budgets && Object.keys(budgets).length ? { budgets } : {}), tables };
 }
 
 async function sendZip(res, pool, media) {
@@ -176,11 +183,26 @@ async function importZip(file, pool, media) {
       await c.query('BEGIN');
       await c.query('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       if (b.profile && typeof b.profile === 'object') await c.query("UPDATE families SET profile = CASE WHEN profile IS NULL OR profile = '{}'::jsonb THEN $2::jsonb ELSE profile END WHERE id=$1", [FAMILY, JSON.stringify(b.profile)]);   // the app's name, kicker and menu look, where none was set yet
+      if (b.budgets && typeof b.budgets === 'object') {   // budget plans: a book's plan comes back where this server has none for it (a second restore is a no-op)
+        const cur = (await c.query("SELECT value FROM settings WHERE key='budget_plan'")).rows[0];
+        let all = {}; try { all = cur ? JSON.parse(cur.value) || {} : {}; } catch (_) { all = {}; }
+        let n = 0;
+        for (const [tid, v] of Object.entries(b.budgets)) {
+          if (!ID_RE.test(tid) || all[tid] || !v || !Array.isArray(v.lines)) continue;
+          const lines = v.lines.filter((l) => l && /^(food|transport|tickets|stay|shop|other)$/.test(l.cat) && /^[A-Z]{3}$/.test(l.cur) && Number.isFinite(+l.amt) && +l.amt > 0 && +l.amt <= 1e9).slice(0, 40).map((l) => ({ cat: l.cat, cur: l.cur, amt: Math.round(+l.amt) }));
+          if (lines.length) { all[tid] = { lines, at: +v.at || Date.now(), by: String(v.by || '').slice(0, 40) }; n++; }
+        }
+        if (n) await c.query("INSERT INTO settings (key, value) VALUES ('budget_plan', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify(all)]);
+      }
       for (const t of TABLES) {
         const cols = (await c.query("SELECT column_name, data_type FROM information_schema.columns WHERE table_schema='public' AND table_name=$1", [t])).rows;
         const jsonb = new Set(cols.filter((x) => x.data_type === 'jsonb').map((x) => x.column_name));
         let rows = Array.isArray(b.tables[t]) ? b.tables[t] : [];
         if (t === 'media') rows = rows.filter((m) => okMedia.has(m.id));
+        if (t === 'eat_lib') rows = rows.filter((r) => r && typeof r.tkey === 'string' && typeof r.nkey === 'string' && r.tkey && r.nkey && (r.src === 'helper' || r.gone))
+          .map((r) => ({ ...r, id: EATLIB.idOf(FAMILY, r.tkey, r.nkey) }));   // the id is this family's, never the file's
+        if (t === 'sight_lib') rows = rows.filter((r) => r && typeof r.tkey === 'string' && typeof r.nkey === 'string' && r.tkey && r.nkey && (r.gone || r.wish))
+          .map((r) => ({ ...r, id: SIGHTLIB.idOf(FAMILY, r.tkey, r.nkey) }));   // the parents' marks on the things-to-do library (E2)
         let n = 0;
         for (const r of rows) {
           if (!r || typeof r !== 'object') continue;
@@ -197,6 +219,9 @@ async function importZip(file, pool, media) {
               : t === 'children' ? ((fill) => (fill.length ? `ON CONFLICT (family_id, slug) DO UPDATE SET ${fill.map(([k]) => (k === 'avatars' ? "avatars = CASE WHEN children.avatars IS NULL OR children.avatars = '[]'::jsonb THEN EXCLUDED.avatars ELSE children.avatars END" : `${k} = COALESCE(children.${k}, EXCLUDED.${k})`)).join(', ')} WHERE ${fill.map(([, w]) => w).join(' OR ')}` : 'ON CONFLICT DO NOTHING'))(   // only a blank the backup can fill counts as a change, so a second restore is still a no-op
                   [...['birth_ym', 'look', 'avatar'].filter((k) => ks.includes(k)).map((k) => [k, `(children.${k} IS NULL AND EXCLUDED.${k} IS NOT NULL)`]),
                     ...(ks.includes('avatars') ? [['avatars', "((children.avatars IS NULL OR children.avatars = '[]'::jsonb) AND EXCLUDED.avatars IS NOT NULL AND EXCLUDED.avatars <> '[]'::jsonb)"]] : [])])
+              // a place the built-in list or a book already holds: the parents' "take out" mark comes back, and a helper's find replaces a built-in or book row
+              : t === 'sight_lib' ? "ON CONFLICT (family_id, tkey, nkey) DO UPDATE SET gone = sight_lib.gone OR EXCLUDED.gone, wish = (sight_lib.wish OR EXCLUDED.wish) AND NOT (sight_lib.gone OR EXCLUDED.gone) WHERE (EXCLUDED.gone AND NOT sight_lib.gone) OR (EXCLUDED.wish AND NOT sight_lib.wish)"
+              : t === 'eat_lib' ? "ON CONFLICT (family_id, tkey, nkey) DO UPDATE SET gone = eat_lib.gone OR EXCLUDED.gone, src = CASE WHEN EXCLUDED.src = 'helper' THEN 'helper' ELSE eat_lib.src END, row = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.row ELSE eat_lib.row END, st = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.st ELSE eat_lib.st END, url = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.url ELSE eat_lib.url END, checked = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.checked ELSE eat_lib.checked END WHERE (EXCLUDED.gone AND NOT eat_lib.gone) OR (EXCLUDED.src = 'helper' AND eat_lib.src <> 'helper')"
               : 'ON CONFLICT DO NOTHING';
             n += (await c.query(`INSERT INTO ${t} (${ks.join(',')}) VALUES (${ks.map((_, i) => '$' + (i + 1)).join(',')}) ${onConflict}`, vals)).rowCount;
             await c.query('RELEASE SAVEPOINT r');

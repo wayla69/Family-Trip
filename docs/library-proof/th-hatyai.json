@@ -1,0 +1,69 @@
+{
+  "town": "th-hatyai",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent (rerun; the first run's fetches were refused); 9 rows from two Wongnai lists (Feb and Mar 2025), all passed library-check.cjs, 7 went in",
+  "added": [
+    {
+      "name": "Hashi Japanese Restaurant",
+      "page_name": "ฮาชิ",
+      "src": "https://www.wongnai.com/listings/japanese-food-hatyai",
+      "date": "2025-02",
+      "map": "Google Maps 'Hashi Japanese Restaurant & Izakaya', 248 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Stainless Steel Temple",
+      "page_name": "วัดแสตนเลส",
+      "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+      "date": "2025-03",
+      "map": "Google Maps 'Stainless Steel Temple', 293 reviews, newest shown 2 months ago"
+    },
+    {
+      "name": "Wat Chue Chang",
+      "page_name": "วัดฉื่อฉาง",
+      "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+      "date": "2025-03",
+      "map": "Google Maps 'วัดฉื่อฉาง', 1,221 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "Wat Hat Yai Nai (Wat Mahattamangkhalaram)",
+      "page_name": "วัดมหัตตมังคลาราม (วัดหาดใหญ่ใน)",
+      "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+      "date": "2025-03",
+      "map": "Google Maps 'วัดมหัตตมังคลาราม (วัดหาดใหญ่ใน)', 2,326 reviews, newest shown 15 days ago"
+    },
+    {
+      "name": "Thung Na La Ton Do rice fields",
+      "page_name": "ทุ่งนาหลาต้นโด",
+      "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+      "date": "2025-03",
+      "map": "Google Maps 'ทุ่งนาหลาต้นโด', 225 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "Songkhla Central Mosque",
+      "page_name": "มัสยิดกลางสงขลา",
+      "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+      "date": "2025-03",
+      "map": "Google Maps 'มัสยิดกลางประจำจังหวัดสงขลา', 3,638 reviews, newest shown 10 days ago"
+    },
+    {
+      "name": "PSU Kaset Market",
+      "page_name": "ตลาดเกษตร ม.อ.",
+      "src": "https://www.wongnai.com/listings/attractions-in-hatyai",
+      "date": "2025-03",
+      "map": "Google Maps 'ตลาดเกษตร ม.อ.', 337 reviews, newest shown 27 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Kenta Hatyai",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Street art hatyai",
+      "why": "murals along streets, not one place"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
