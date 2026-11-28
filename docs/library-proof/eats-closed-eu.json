@@ -1,0 +1,513 @@
+{
+ "kind": "eats",
+ "checked": "2026-11",
+ "how": "Each flagged row re-run on Google Maps (2026-11-24, one at a time, by its map query; the place's name and address on the page compared with the row), then one web search or the place's own / official tourism page for the reason and a reopening date. Permanently closed on Maps for this place → removed; seasonal or a short closure with a dated source → kept (season note added to 'why' when the row did not already name it); temporarily closed for renovation with no date, or with no reason or reopening date found → removed. No town fell under its minimums, so nothing was added.",
+ "rows": [
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-vienna",
+   "name": "Schweizerhaus",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; seasonal beer garden, 2026 season 15 March–31 October (Wien.info, aviation.direct 2026); the row's 'what' already says 'open March to October only'",
+   "src": "https://aviation.direct/wiener-schweizerhaus-startet-mit-preisstabilitaet-und-jubilaeum-in-die-saison-2026"
+  },
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-vienna",
+   "name": "Zwölf Apostelkeller",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own site: 'Aufgrund eines technischen Gebrechens ist unser Restaurant derzeit vorübergehend geschlossen' — no reopening date",
+   "src": "https://www.zwoelf-apostelkeller.at/"
+  },
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-vienna",
+   "name": "Café Central",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own site: closed for renovation from 16 March 2026, 'Reopening is scheduled for winter 2026' (pop-up Decentral meanwhile); note added",
+   "src": "https://cafecentral.wien/en/"
+  },
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-vienna",
+   "name": "Ufertaverne",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; seasonal (April–October, Wien.info/Falter, closed in winter); the row's 'why' already says 'in the summer months'",
+   "src": "https://www.falter.at/lokal/1038/ufertaverne"
+  },
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-hallstatt",
+   "name": "Restaurant Seeauer",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (landed on 'Heritage Cafe & Bar Hallstatt — Restaurant Seeauer'); Dachstein Salzkammergut 'Sperrzeiten Herbst/Winter 2026/27': Restaurant „Seeauer“ im Heritage.Hotel closed 1.11. bis 24.11.2026 — a short break",
+   "src": "https://dachstein.salzkammergut.at/fileadmin/user_upload/dachstein-salzkammergut/Pdf_Downloads/Sperrzeiten/Sperrzeiten-Betriebe-Herbst-2026.pdf"
+  },
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-hallstatt",
+   "name": "Gasthof Höllwirt",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (listed as a guest house, now 'Dormio Gasthof Höllwirt'); not in the region's autumn 2026 closure list, tourism listing says year-round; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-hallstatt",
+   "name": "Gasthof Gosausee",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; Sperrzeiten Herbst/Winter 2026/27: 'Gasthof Gosausee 27.10. bis 31.01.2027'; note added",
+   "src": "https://dachstein.salzkammergut.at/fileadmin/user_upload/dachstein-salzkammergut/Pdf_Downloads/Sperrzeiten/Sperrzeiten-Betriebe-Herbst-2026.pdf"
+  },
+  {
+   "file": "server/eats/at-1.json",
+   "town": "at-hallstatt",
+   "name": "Café Derbl",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; derbl.at now shows 'Marktbeisl Zur Ruth Hallstatt Café, Bar, Snacks' (renamed into another place); no reopening date",
+   "src": "https://www.derbl.at/"
+  },
+  {
+   "file": "server/eats/be-1.json",
+   "town": "be-brussels",
+   "name": "Arsouille",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Rue d'Alost 7)"
+  },
+  {
+   "file": "server/eats/be-1.json",
+   "town": "be-bruges",
+   "name": "Da Vinci",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Gelateria Da Vinci, Geldmuntstraat 34); own site lists only regular hours; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)",
+   "src": "https://www.davincibrugge.com/"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-lucerne",
+   "name": "Zunfthausrestaurant Pfistern",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own site: 'Unser Restaurant bleibt aufgrund von Sanierungsarbeiten bis zur Wiedereröffnung im Frühling 2027 geschlossen' (within ~6 months); note added",
+   "src": "https://www.restaurant-pfistern.ch/"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-lucerne",
+   "name": "Gelateria dell'Alpi",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own page (alpineum.lu/gelateriadellalpi): 'Winterpause'; note added",
+   "src": "https://www.alpineum.lu/gelateriadellalpi/"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-interlaken",
+   "name": "Hotel Oberland Restaurant",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Restaurant Hotel Oberland, Lauterbrunnen); Hotels.com/Tiket: 'The property is closed between October 21 and December 14'; note added",
+   "src": "https://www.tiket.com/en-us/hotel/switzerland/hotel-oberland-206001560498099024"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-interlaken",
+   "name": "C und M Café Bar Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Almisgässli 1, Grindelwald)"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-zermatt",
+   "name": "Chez Vrony",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own site: winter season 5 Dec 2026–11 Apr 2027, summer 3 Jul–17 Oct 2027; note added",
+   "src": "https://www.chezvrony.ch/"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-zermatt",
+   "name": "Restaurant Zum See",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; zermatt.swiss: closed, 'open from Sat, 5 Dec 2026'; note added",
+   "src": "https://zermatt.swiss/en/Media/Restaurants-bars-clubs/mountain-restaurant-Zermatt-Zum-See"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-zermatt",
+   "name": "Findlerhof",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; zermatt.swiss: closed, open from Sat 28 Nov 2026; the row's 'why' already says 'in season'",
+   "src": "https://zermatt.swiss/en/Media/Restaurants-bars-clubs/mountain-restaurant-Zermatt-Findlerhof"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-zurich",
+   "name": "Fischer's Fritz",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own site and listings give no closure or reopening date (only reduced winter hours elsewhere); no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)",
+   "src": "https://www.fischers-fritz.ch/"
+  },
+  {
+   "file": "server/eats/ch-1.json",
+   "town": "ch-geneva",
+   "name": "Gelatomania",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Gelatomania Pâquis); Le Temps describes the shop as closed in winter; note added",
+   "src": "https://www.letemps.ch/economie/petites-entreprises-ne-vivent-quen-55-gelatomania-ne-dune-idee-mystique"
+  },
+  {
+   "file": "server/eats/cz-1.json",
+   "town": "cz-krumlov",
+   "name": "Restaurace Konvice",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Restaurant Konvice, Horní 144); no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/cz-1.json",
+   "town": "cz-krumlov",
+   "name": "Restaurant Pivoňka",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Řízková restaurace Pivoňka); Český Krumlov info centre: 'open seasonally'; note added",
+   "src": "https://www.ckrumlov.info/en/gastronomy-143-restaurant-pivonka/"
+  },
+  {
+   "file": "server/eats/de-1.json",
+   "town": "de-munich",
+   "name": "Ratskeller München",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed'; closed since 1 January 2026 for basement renovation, inventory sold off, no reopening date (München Wiki, Abendzeitung)",
+   "src": "https://www.muenchenwiki.de/wiki/Ratskeller"
+  },
+  {
+   "file": "server/eats/de-1.json",
+   "town": "de-munich",
+   "name": "Ballabeni Icecream",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Ballabeni Icecream Stammhaus); own site: 'Winterpause — Wir sind ab März 2027 wieder für Sie da!'; note added",
+   "src": "https://www.ballabeni.de/"
+  },
+  {
+   "file": "server/eats/de-1.json",
+   "town": "p-neuschwanstein",
+   "name": "Schlossrestaurant Neuschwanstein",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own site and listings give no closure reason or reopening date; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)",
+   "src": "https://www.schlossrestaurant-neuschwanstein.de/"
+  },
+  {
+   "file": "server/eats/de-1.json",
+   "town": "de-berlin",
+   "name": "Prater Garten",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24: 'Prater Beer Garden' temporarily closed (seasonal), 'Prater Gaststätte' (the restaurant) open 'Opens 5 PM'; the row's 'why' already says 'open in fair weather'"
+  },
+  {
+   "file": "server/eats/de-1.json",
+   "town": "de-berlin",
+   "name": "Thai Park",
+   "verdict": "keep",
+   "evidence": "Google Maps landed on Preußenpark (the park, not the market); thaipark.de: market on Württembergische Straße, season April–September, weekends, now in winter break; the row's 'what' already says 'Seasonal: warm months, weekends'",
+   "src": "https://thaipark.de/"
+  },
+  {
+   "file": "server/eats/de-1.json",
+   "town": "de-berlin",
+   "name": "Mrs Robinson's",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Pappelallee)"
+  },
+  {
+   "file": "server/eats/de-2.json",
+   "town": "de-hamburg",
+   "name": "Schönes Leben Speicherstadt",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Alter Wandrahm 15)"
+  },
+  {
+   "file": "server/eats/de-2.json",
+   "town": "de-hamburg",
+   "name": "Alt Hamburger Aalspeicher",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Deichstraße 43)"
+  },
+  {
+   "file": "server/eats/de-2.json",
+   "town": "de-hamburg",
+   "name": "Luicella's Ice Cream",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Luicella's Ice Cream St. Pauli); own store finder lists it with no winter break; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)",
+   "src": "https://luicellas.de/blogs/erleben/eisladen"
+  },
+  {
+   "file": "server/eats/de-2.json",
+   "town": "de-cologne",
+   "name": "Weindorf Koblenz",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; visit-koblenz.de: 'currently undergoing extensive renovation and is therefore closed to the public', no reopening date",
+   "src": "https://www.visit-koblenz.de/en/wine-city-koblenz/weindorf"
+  },
+  {
+   "file": "server/eats/de-2.json",
+   "town": "de-cologne",
+   "name": "Café Eigel",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Café Konditorei Eigel, Brückenstraße 1-3)"
+  },
+  {
+   "file": "server/eats/ee-1.json",
+   "town": "ee-tallinn",
+   "name": "Kohvik Boheem",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Kopli 18); ERR: the café, 18 years in Kalamaja, announced its closure",
+   "src": "https://www.err.ee/1610143378/ak-nadal-uuris-mis-tagab-soogikohtadele-pikaajalise-edukuse"
+  },
+  {
+   "file": "server/eats/fr-1.json",
+   "town": "fr-paris",
+   "name": "Marché des Enfants Rouges",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; the market hall was gutted by a fire on 11–12 October 2026, no reopening date (Euronews, Le Bonbon: will not reopen for several years)",
+   "src": "https://www.lebonbon.fr/paris/news/marche-enfants-rouges-rouvrira-pas-plusieurs-annees/"
+  },
+  {
+   "file": "server/eats/fr-1.json",
+   "town": "fr-montstmichel",
+   "name": "Crêperie La Sirène",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (La Sirène Lochet); Mont-Saint-Michel tourist office: 'Opening from 02 February 2026 to 30 November 2026'; note added",
+   "src": "https://www.ot-montsaintmichel.com/en/restaurant/creperie-la-sirene/"
+  },
+  {
+   "file": "server/eats/fr-1.json",
+   "town": "fr-montstmichel",
+   "name": "Le Mouton Blanc",
+   "verdict": "keep",
+   "evidence": "Google Maps landed on the hotel 'Le Mouton Blanc' (3-star hotel, temporarily closed, rooms priced for Dec 5–6); tourist office lists the restaurant 'Opening from 05 February 2026 to 31 December 2026' — a short break",
+   "src": "https://www.ot-montsaintmichel.com/en/restaurant/auberge-le-mouton-blanc/"
+  },
+  {
+   "file": "server/eats/fr-1.json",
+   "town": "fr-montstmichel",
+   "name": "Le Logis Sainte-Catherine",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; own site lists only weekly hours; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)",
+   "src": "https://lelogissaintecatherine.com/"
+  },
+  {
+   "file": "server/eats/fr-1.json",
+   "town": "fr-nice",
+   "name": "Chez René Socca",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Chez Rene Socca, 2 rue Miralheti); no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/fr-1.json",
+   "town": "fr-nice",
+   "name": "Fenocchio",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24: both Fenocchio shops 'Temporarily closed'; Koifaire: 'fermé le 15 novembre au 15 février'; note added",
+   "src": "https://www.koifaire.com/paca/fenocchio,glacier-52211.html"
+  },
+  {
+   "file": "server/eats/fr-2.json",
+   "town": "fr-provence",
+   "name": "Chez Féraud",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (CHEZ FERAUD, 8 rue du Puits Juif)"
+  },
+  {
+   "file": "server/eats/fr-2.json",
+   "town": "fr-provence",
+   "name": "Toinou Les Fruits de Mer",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Toinou, cours Saint-Louis)"
+  },
+  {
+   "file": "server/eats/fr-2.json",
+   "town": "fr-alps",
+   "name": "La Crèmerie du Glacier",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; seechamonix.com: winter mid-December to mid-May, summer late June to mid-September; note added",
+   "src": "https://www.seechamonix.com/food/restaurants/la-cremerie-du-glacier"
+  },
+  {
+   "file": "server/eats/fr-2.json",
+   "town": "fr-alps",
+   "name": "L’Aquarama (Angon)",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; Lake Annecy tourism: 'From 01/05 to 30/09/2026 daily'; note added",
+   "src": "https://en.lac-annecy.com/restaurant/laquarama-talloires-montmin/"
+  },
+  {
+   "file": "server/eats/gb-1.json",
+   "town": "gb-london",
+   "name": "RedFarm",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Covent Garden); also in Hot Dinners' list of London closures",
+   "src": "https://www.hot-dinners.com/202001319148/Gastroblog/Latest-news/recent-restaurant-closures-shut-london"
+  },
+  {
+   "file": "server/eats/gb-1.json",
+   "town": "gb-edinburgh",
+   "name": "Oban Seafood Hut",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Oban Seafood Hut (Green Shack)); listing: 'Closed over winter'; note added",
+   "src": "https://www.airbnb.dk/things-to-do/places/1379081"
+  },
+  {
+   "file": "server/eats/gb-1.json",
+   "town": "gb-cotswolds",
+   "name": "The Ox Shed at Cotswold Farm Park",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24: Cotswold Farm Park temporarily closed; own site: 'The Farm Park is closed 2-26 November … We reopen on 27 November for Christmas on the Farm' — a short break",
+   "src": "https://www.cotswoldfarmpark.co.uk/"
+  },
+  {
+   "file": "server/eats/gb-1.json",
+   "town": "gb-york",
+   "name": "The Harbour Bar",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Harbour Bar Ltd); listing: 'typically closes for a four-week maintenance break at the end of November to beginning of December' — a short break",
+   "src": "https://tripaligner.com/countries/united-kingdom-34/destinations/scarborough-4767/places/harbour-bar-752597"
+  },
+  {
+   "file": "server/eats/ge-1.json",
+   "town": "ge-tbilisi",
+   "name": "Zakhar Zakharich",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Zakhar Zakharichi, Sanapiro 3); Culinary Backstreets editor's note: closed",
+   "src": "https://culinarybackstreets.com/cities-category/tbilisi/2016/the-khinkali-chronicles-part-2"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Dimitris Ammoudi Taverna",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; listed as seasonal (exploring-greece.gr); note added",
+   "src": "https://exploring-greece.gr/en/show/45675/:ttd/DIMITRIS-AMMOUDI-TAVERNA"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "To Psaraki",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; only an anecdotal off-season remark found; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Anogi",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; Santorini Dave: season roughly early March to early December; note added",
+   "src": "https://santorinidave.com/santorini-restaurant-anogi"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Pitogyros",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Pitogyros Traditional Grill House); listing: seasonal closures during the winter months; note added",
+   "src": "https://tripaligner.com/countries/greece-2/destinations/phera-9284/places/pitogyros-traditional-grill-house-6691018"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Lolita's Gelato",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Cava Alta",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; Santorini Dave: 'Season: Early April to early December'; note added",
+   "src": "https://santorinidave.com/santorini-cava-alta-pyrgos"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Oia Gefsis",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Oia Gefsis Greek Restaurant); The Rooftop Guide: operating April – November; note added",
+   "src": "https://therooftopguide.com/rooftop-bars-in-santorini/sunset-bar-at-oia-gefsis.html"
+  },
+  {
+   "file": "server/eats/gr-1.json",
+   "town": "gr-santorini",
+   "name": "Anemomilos Traditional Greek Taverna",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; listings give daily hours only; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-dubrovnik",
+   "name": "Pizzeria Mea Culpa",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (Mea Culpa Pizzeria & Trattoria); no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-dubrovnik",
+   "name": "Konoba Dubrava",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; listings give regular hours (a December 2023 visit reported); no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-dubrovnik",
+   "name": "Pizzeria Tabasco",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; listings give winter hours, so not a known seasonal closure; no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-dubrovnik",
+   "name": "Moby Dick",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed' (MOBY DICK, Prijeko 20); no reason or reopening date found on its own site or a dated page → removed (temporarily closed, no reopening date)"
+  },
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-plitvice",
+   "name": "Bistro & Caffe Plum",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Plum bistro & more, Čatrnja)"
+  },
+  {
+   "file": "server/eats/hr-1.json",
+   "town": "hr-plitvice",
+   "name": "Caffe Bar Flora",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Temporarily closed'; the national park's Flora page: 'TEMPORARILY CLOSED', and its winter page: in the colder part of the year most hospitality facilities are closed; note added",
+   "src": "https://np-plitvicka-jezera.hr/en/plan-your-visit/hospitality-facilities/caffe-flora/"
+  },
+  {
+   "file": "server/eats/hu-1.json",
+   "town": "hu-budapest",
+   "name": "Ruszwurm Cukrászda",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed'; the district took back the premises with bailiffs on 6 August 2025 (444.hu, Telex)",
+   "src": "https://444.hu/2025/08/06/bakanccsal-a-kremesbe-ezert-zart-be-az-egyik-legregebbi-magyar-cukraszda-a-ruszwurm"
+  },
+  {
+   "file": "server/eats/hu-1.json",
+   "town": "hu-budapest",
+   "name": "Spíler Buda",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (MOM Park)"
+  },
+  {
+   "file": "server/eats/lu-1.json",
+   "town": "lu-luxembourg",
+   "name": "Am Tiirmschen",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed'; Chronicle.lu: 'has officially closed its doors after nineteen years'",
+   "src": "https://chronicle.lu/category/dining-out-1/47856-am-tiirmschen-restaurant-closes-doors-after-19-years"
+  },
+  {
+   "file": "server/eats/nl-1.json",
+   "town": "nl-amsterdam",
+   "name": "Kantjil & de Tijger",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24 on this place: 'Permanently closed' (Kantjil & De Tijger, Spuistraat 291-293)"
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+  "town": "jp-kyoto",
+  "rounds": [
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from Inside Kyoto (Nov 2025), Kyoto tourism (Apr 2026), Tiny Tot in Tokyo (Nov 2026) and Have a Good Holiday (Apr 2026) passed library-check.cjs, 6 went in",
+      "added": [
+        {
+          "name": "Horiuchi Kajitsuen (Nara)",
+          "page_name": "Horiuchi Kajitsuen",
+          "src": "https://www.tinytotintokyo.com/nara-with-kids",
+          "date": "2025-12",
+          "map": "Google Maps 'Horiuchi-kajitsuen', 548 reviews (search card, open)"
+        },
+        {
+          "name": "AriHana Kyoto",
+          "page_name": "AriHana Kyoto",
+          "src": "https://kyoto.travel/en/travel-inspiration/attractions-for-kids/",
+          "date": "2026-04",
+          "map": "Google Maps 103 reviews, newest shown '14 hours ago'"
+        },
+        {
+          "name": "Nara Park",
+          "page_name": "Nara Park",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "date": "2025-12",
+          "map": "Google Maps 79,163 reviews (search card, open 24 hours)"
+        },
+        {
+          "name": "Nanen-do (Kofuku-ji)",
+          "page_name": "Nanen-do",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "date": "2025-12",
+          "map": "Google Maps 'Nanen-do 南円堂(興福寺）', 1,281 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Mount Wakakusa",
+          "page_name": "Mount Wakakusa",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "date": "2025-12",
+          "map": "Google Maps '若草山', 1,011 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Kameya Yoshinaga wagashi workshop",
+          "page_name": "Kameya Yoshinaga",
+          "src": "https://haveagood-holiday.com/en/articles/kameya-yoshinaga-kyoto-wagashi-workshop-golden-week",
+          "date": "2026-04",
+          "map": "Google Maps 'Kameya Yoshinaga 亀屋良長', 641 reviews, newest shown '4 days ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Ganko Sushi",
+          "why": "a chain of many branches; the page names none"
+        },
+        {
+          "name": "MAIKOYA",
+          "why": "a class-booking company's page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 12 rows from macaroni (Feb 2026) and nap-camp (Oct 2026); 9 passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "IN THE GREEN",
+          "page_name": "IN THE GREEN",
+          "src": "https://macaro-ni.jp/174709",
+          "date": "2026-02",
+          "map": "Google Maps 'IN THE GREEN' (Shimogamo Hangi-chō, Sakyo), newest review shown 4 days ago"
+        },
+        {
+          "name": "Merry Go Round kids' café",
+          "page_name": "キッズカフェ＆ティーサロン メリーゴーランド",
+          "src": "https://macaro-ni.jp/174709",
+          "date": "2026-02",
+          "map": "Google Maps 'merry go round｜cafe, salon, and indoor playground' (595 Kusunoki-chō, Nakagyō), newest review shown a month ago"
+        },
+        {
+          "name": "The Kitchen Salvatore Cuomo Kyoto",
+          "page_name": "The Kitchen Salvatore Cuomo KYOTO",
+          "src": "https://macaro-ni.jp/174709",
+          "date": "2026-02",
+          "map": "Google Maps 'The Kitchen Salvatore Cuomo Kyoto' (Higashi-Shiokōji, Shimogyō), newest review shown a day ago"
+        },
+        {
+          "name": "KIRI no KO indoor kids' park (Kameoka)",
+          "page_name": "KIRI no KO",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "date": "2026-10",
+          "map": "Google Maps 'KIRI no KO' (Kameoka-eki-kita, Kameoka), newest review shown a month ago"
+        },
+        {
+          "name": "Kids Land US Kyoto Yawata",
+          "page_name": "キッズランドUS 京都八幡店",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "date": "2026-10",
+          "map": "Google Maps 'キッズランドUS 京都八幡店' (ファミレやわた 3F, Yawata), newest review shown a week ago"
+        },
+        {
+          "name": "Pure Heart Kids Land Fushimi Momoyama",
+          "page_name": "ピュアハートキッズランド伏見桃山",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "date": "2026-10",
+          "map": "Google Maps 'Pure Heart Kids Land Fushimi Momoyama' (Momoyama, Fushimi), newest review shown 3 weeks ago"
+        },
+        {
+          "name": "HIYOSHI PLAY ARENA (Nantan)",
+          "page_name": "HIYOSHI PLAY ARENA",
+          "src": "https://www.nap-camp.com/mag/79016",
+          "date": "2026-10",
+          "map": "Google Maps 'HIYOSHI PLAY ARENA' (Hiyoshi-chō, Nantan), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "whole cacao プラスショコラ西陣",
+          "why": "the newest review on the map is 11 months old"
+        },
+        {
+          "name": "豆乳とんしゃぶ 寅太郎",
+          "why": "the page gives no district; the map's Torataro could not be tied to it"
+        },
+        {
+          "name": "オールデイダイニング 洛空, 食と森, 松山閣",
+          "why": "the copied sentence was not on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

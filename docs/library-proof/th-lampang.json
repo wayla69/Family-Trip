@@ -1,0 +1,209 @@
+{
+  "town": "th-lampang",
+  "rounds": [
+    {
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the five rows without ok; the twelve rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Khanom Chin Pa Bun Si",
+          "src": "https://www.google.com/maps/place/Kanom+Jeen+Pa+Boon+Sri/@18.2925654,99.5007766,17z",
+          "page_name": "Kanom Jeen Pa Boon Sri / ขนมจีนป้าบุญศรี",
+          "evidence": "Google Maps: noodle shop, 4.4★, 2 Talad Gao Rd, Hua Wiang (7GV2+28) — Kad Kong Ta's road, as the row says; 'Open · Closes 3 PM', phone listed; nothing says closed",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Cha Bar Cafe Mae Moh",
+          "src": "https://www.google.com/maps/place/CHA+BAR+Cafe'+Mae+Moh/@18.2756409,99.6492688,17z",
+          "page_name": "CHA BAR Cafe' Mae Moh",
+          "evidence": "Google Maps: coffee shop, 4.9★, 570/4 Moo 8, Mae Mo, inside the agricultural co-operative's grounds (7JGX+7P); 'Open · Closes 3:30 PM', a Facebook page and phone listed; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Central Lampang food court",
+          "src": "https://www.google.com/maps/place/Food+Park/@18.2823982,99.4910888,17z",
+          "evidence": "the mall is open (Central Lampang, 319 Lampang–Ngao Superhighway, 'Open · Closes 9 PM') and Maps lists 'Food Park' (Thai restaurant, 4.7★, 7FJW+X7R, located in Robinson Lampang) inside it, but the Food Park listing shows no hours, so the food court itself is not confirmed. The map query named Highway 1; it now names Food Park and the superhighway"
+        }
+      ],
+      "removed": [
+        {
+          "name": "Huen Chom Wang",
+          "reason": "Google Maps searches for เฮือนชมวัง ลำปาง, Huen Chom Wang Lampang and ร้านอาหารเฮือนชมวัง found no restaurant of that name (only other places by the Wang river), and one web search found none either"
+        },
+        {
+          "name": "Khao Taen Thawee Phan",
+          "src": "https://www.google.com/maps/place/ข้าวแต๋นทวีพรรณ/@18.1429591,99.3662359,17z",
+          "reason": "Google Maps' only ข้าวแต๋นทวีพรรณ is a food maker at 81 Moo 2, Ban Song Khwae Tai, Na Kaeo, Ko Kha District (49V8+5F), about 20 km from Lampang town — not in town as the row said; the location disagrees, so it is taken out, as misplaced rows were in Nakhon Si (#384)"
+        }
+      ]
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 21 rows from Wongnai (June 2025) and Grab's Lampang guide (Oct 2026), 19 passed library-check.cjs, 16 went in",
+      "added": [
+        {
+          "name": "Khao Soi Pa Boon",
+          "page_name": "ข้าวซอยป้าบุญ",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang",
+          "date": "2025-06",
+          "map": "Google Maps 809 reviews, newest shown '18 days ago'"
+        },
+        {
+          "name": "Khao Soi Super",
+          "page_name": "ข้าวซอยซูปเปอร์",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang",
+          "date": "2025-06",
+          "map": "Google Maps 'ร้านข้าวซอยซุปเปอร์', 447 reviews, newest shown '2 months ago'"
+        },
+        {
+          "name": "Kuay Tiew Luk Thung Dab Daeng",
+          "page_name": "ก๋วยเตี๋ยวลูกทุ่งดาบแดง",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang",
+          "date": "2025-06",
+          "map": "Google Maps 804 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Rad Na Super",
+          "page_name": "ราดหน้า ซุปเปอร์",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang",
+          "date": "2025-06",
+          "map": "Google Maps 1,287 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Khao Man Gai Thip Chang",
+          "page_name": "ข้าวมันไก่ ทิพย์ช้าง ลำปาง",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang",
+          "date": "2025-06",
+          "map": "Google Maps 568 reviews, newest shown '29 days ago'"
+        },
+        {
+          "name": "The Pappa Pizza and Steak",
+          "page_name": "The Pappa Pizza and Steak ลำปาง",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang",
+          "date": "2025-06",
+          "map": "Google Maps 'The Pappa', 256 reviews, newest shown '15 days ago'"
+        },
+        {
+          "name": "Sai Ua Pao Tao Luang",
+          "page_name": "ไส้อั่วเผาเตาหลวง ลำปาง เกาะคา",
+          "src": "https://www.wongnai.com/listings/must-try-restaurants-lampang",
+          "date": "2025-06",
+          "map": "Google Maps 561 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Wat Phra Chedi Sao Lang",
+          "page_name": "วัดพระเจดีย์ซาวหลัง",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 810 reviews, newest shown '5 days ago'"
+        },
+        {
+          "name": "Nakhon Lampang railway station",
+          "page_name": "สถานีรถไฟนครลำปาง",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 'Nakhon Lampang', a working station, 748 ratings"
+        },
+        {
+          "name": "Ratsadaphisek Bridge",
+          "page_name": "สะพานรัษฎาภิเศก",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 207 reviews, newest shown '9 days ago'"
+        },
+        {
+          "name": "Rai Hom Fa",
+          "page_name": "ไร่ห่มฟ้า",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 270 reviews, newest shown '29 days ago'"
+        },
+        {
+          "name": "Doi Khun Tan National Park",
+          "page_name": "อุทยานแห่งชาติดอยขุนตาล",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 2,396 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Wat Akkho Chai Khiri",
+          "page_name": "วัดอักโขชัยคีรี",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 9 reviews, newest shown '5 months ago'"
+        },
+        {
+          "name": "Wat Mon Phraya Chae",
+          "page_name": "วัดม่อนพระยาแช่และวนอุทยานม่อนพระยาแช่",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 'วัดม่อนพระยาแช่', 99 reviews, newest shown '29 days ago'"
+        },
+        {
+          "name": "Kad Thung Kwian market",
+          "page_name": "กาดทุ่งเกวียน",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 3,839 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Floating pagodas, Wat Phutthabat Sutthawat",
+          "page_name": "เจดีย์ลอยฟ้า วัดพุทธบาทสุทธาวาส",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "date": "2026-10",
+          "map": "Google Maps 'วัดพุทธบาทสุทธาวาส', 112 reviews, newest shown 'last month'"
+        },
+        {
+          "name": "Nong Kra Ting Park",
+          "page_name": "Nong Kra Ting Park",
+          "src": "https://www.thaiholidayguide.com/attraction/nong-kra-ting-park/",
+          "date": "2026-07",
+          "map": "Google Maps 'Nhong Krathing Park' (Mueang Lampang), newest review shown 2 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Baan Sao Nak",
+          "why": "temporarily closed on the map"
+        },
+        {
+          "name": "Lampang Street Art",
+          "why": "a whole street"
+        },
+        {
+          "name": "Saphan Bun, Wat Phra That Sandon",
+          "why": "the map entry is listed oddly and its reviews shown are years old"
+        },
+        {
+          "name": "Black Canyon Central Lampang",
+          "why": "no readable page date; a chain"
+        },
+        {
+          "name": "Por Kuay Jab",
+          "why": "quote not on the page"
+        },
+        {
+          "name": "Yayoi (Central Lampang), Home at Lampang",
+          "why": "library-check.cjs could not find the name and quote on the page"
+        },
+        {
+          "name": "Mae Kae Waterfall, Talat Rat market",
+          "why": "the page gave no child detail"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 3 rows from Thai Holiday Guide (Jul 2026) and Wongnai (2025–2026), 1 passed library-check.cjs, 1 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
+    }
+  ]
+}

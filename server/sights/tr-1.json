@@ -271,6 +271,117 @@
           "q": "Hair Museum Chez Galip, Avanos",
           "ok": "2026-11",
           "src": "https://www.dailysabah.com/arts/from-balloons-to-lock-of-hair-unexpected-cappadocia-discovery/news"
+        },
+        {
+          "local": "Paşabağ",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chasingthedonkey.com/family-vacation-in-cappadocia-with-kids",
+          "name": {
+            "th": "ปาชาบาจ",
+            "en": "Paşabağ"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ใกล้เซลเว",
+            "en": "Near Zelve"
+          },
+          "what": {
+            "th": "ปล่องนางฟ้าในหุบเขาเล็ก ๆ ชมได้ใน 1–2 ชั่วโมง",
+            "en": "Fairy chimneys in a small valley, seen in an hour or two"
+          },
+          "why": {
+            "th": "เด็ก ๆ ปีนหินได้",
+            "en": "Children may climb the rocks"
+          },
+          "q": "Paşabağ, Göreme",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Gül Vadisi",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://chasingthedonkey.com/family-vacation-in-cappadocia-with-kids",
+          "name": {
+            "th": "หุบเขากุหลาบ",
+            "en": "Rose Valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เกอเรเม",
+            "en": "Göreme"
+          },
+          "what": {
+            "th": "หุบเขาเดินป่าผ่านปล่องนางฟ้าชื่อดัง",
+            "en": "A hiking valley past the famous fairy chimneys"
+          },
+          "why": {
+            "th": "วิวสวยมาก และคนน้อยกว่าอีห์ลารา",
+            "en": "Amazing views, and fewer people than Ihlara"
+          },
+          "q": "Rose Valley, Göreme",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://cappadocia4u.com/cappadocia-for-families-kids",
+          "name": {
+            "th": "สามสาวงาม",
+            "en": "The Three Beauties"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ระหว่างเออร์กึปกับออร์ตาฮิซาร์",
+            "en": "Between Ürgüp and Ortahisar"
+          },
+          "what": {
+            "th": "ปล่องนางฟ้าสามแท่งมีหมวกริมถนน",
+            "en": "Three capped fairy chimneys beside the road"
+          },
+          "why": {
+            "th": "แวะชมได้เร็วระหว่างทางจากเออร์กึป",
+            "en": "A quick stop on the road from Ürgüp"
+          },
+          "q": "Three Beauties, Ürgüp",
+          "ok": "2026-11"
         }
       ]
     },
@@ -766,6 +877,80 @@
           "q": "Kemerburgaz Urban Forest, Kemerburgaz, Istanbul",
           "ok": "2026-11",
           "src": "https://artandthensome.com/things-to-do-with-kids-in-istanbul/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+          "name": {
+            "th": "อิสฟานบูล (วิอาแลนด์)",
+            "en": "Isfanbul (Vialand)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "เอยุปสุลต่าน อิสตันบูล",
+            "en": "Eyüpsultan, Istanbul"
+          },
+          "what": {
+            "th": "สวนสนุกขนาดใหญ่ ชื่อเดิมวิอาแลนด์ มีเครื่องเล่น ร้านค้า และที่เล่น",
+            "en": "A big theme park, formerly Vialand, with rides, shops and play areas"
+          },
+          "why": {
+            "th": "เครื่องเล่นและที่เล่นสำหรับเด็กในพื้นที่กว้าง",
+            "en": "Rides and play areas for children over a big site"
+          },
+          "q": "Isfanbul, Eyüpsultan, Istanbul",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ไม่ถึง 1 ดอลลาร์ต่อเที่ยว",
+            "en": "Under $1 a ride"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-istanbul-with-kids/",
+          "name": {
+            "th": "รถรางย้อนยุค (ถนนอิสติกลาล)",
+            "en": "Nostalgic Tram (İstiklal Avenue)"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ถนนอิสติกลาล เบยอลู อิสตันบูล",
+            "en": "İstiklal Avenue, Beyoğlu, Istanbul"
+          },
+          "what": {
+            "th": "รถรางแบบเก่าวิ่งไปตามถนนอิสติกลาล",
+            "en": "An old-style tram along İstiklal Avenue"
+          },
+          "why": {
+            "th": "เด็กชอบรถรางสีสดที่วิ่งช้า ๆ และเสียงกระดิ่ง",
+            "en": "Children love the slow, colourful tram and its bell"
+          },
+          "q": "Nostalgic Tram, İstiklal Avenue, Beyoğlu, Istanbul",
+          "ok": "2026-11"
         }
       ]
     },
@@ -952,24 +1137,6 @@
           "src": "https://goturkiye.com/pamukkale/10-vibes-for-pamukkale"
         },
         {
-          "name": { "en": "Halıcı Ahmet Urkay Museum", "th": "พิพิธภัณฑ์ฮาลิจึ อาห์เมต เออร์เคย์" },
-          "local": "Halıcı Ahmet Urkay Müzesi",
-          "kind": "museum",
-          "area": { "en": "Denizli", "th": "เดนิซลี" },
-          "what": { "en": "A museum of about 2,000 objects, from geological finds and ethnography to old coins and manuscripts", "th": "พิพิธภัณฑ์ที่มีราว 2,000 ชิ้น ตั้งแต่ตัวอย่างธรณีวิทยาและชาติพันธุ์วิทยาจนถึงเหรียญเก่าและต้นฉบับ" },
-          "why": { "en": "Indoors and quiet, a short rainy-day stop best for children who like to look at collections", "th": "อยู่ในร่มและเงียบ แวะสั้นๆ วันฝน เหมาะกับเด็กที่ชอบดูของสะสม" },
-          "tip": { "en": "Check the opening hours and ticket price at the door", "th": "เช็กเวลาเปิดและราคาตั๋วที่หน้าพิพิธภัณฑ์" },
-          "ages": [0, 1, 1, 2],
-          "hrs": 1,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Halıcı Ahmet Urkay Museum, Denizli",
-          "ok": "2026-11",
-          "src": "https://goturkiye.com/pamukkale/10-vibes-for-pamukkale"
-        },
-        {
           "name": { "en": "Denizli Atatürk House and Ethnographic Museum", "th": "บ้านอตาเติร์กและพิพิธภัณฑ์ชาติพันธุ์เดนิซลี" },
           "local": "Denizli Atatürk Evi ve Etnografya Müzesi",
           "kind": "museum",
@@ -1039,6 +1206,117 @@
           "book": "none",
           "q": "Sinpaş Aquamall, Gültepe, Merkezefendi, Denizli",
           "src": "https://yolcu360.com/blog/denizli-gezilecek-yerler/"
+        },
+        {
+          "local": "Pamukkale Tabiat Parkı",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://goturkiye.com/pamukkale/see",
+          "name": {
+            "th": "สวนธรรมชาติปามุกกาเล",
+            "en": "Pamukkale Natural Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทางเข้าปามุกกาเล",
+            "en": "Entrance to Pamukkale"
+          },
+          "what": {
+            "th": "สนามหญ้าเขียว คาเฟ่ และบ่อน้ำจากน้ำพุร้อน",
+            "en": "Green lawns, a café and a pond fed by warm spring water"
+          },
+          "why": {
+            "th": "มีเรือถีบในบ่อ มีปลาและห่าน",
+            "en": "Paddle boats on the pond, with fish and geese"
+          },
+          "q": "Pamukkale Natural Park, Menderes Cd., Pamukkale",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://goturkiye.com/pamukkale/see",
+          "name": {
+            "th": "สวนชัมลึก",
+            "en": "Çamlık Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ห่างใจกลางเดนิซลี 3 กม.",
+            "en": "3 km from central Denizli"
+          },
+          "what": {
+            "th": "สวนป่าสน 30 เฮกตาร์ มีทางเดิน บ่อน้ำ สวนสัตว์เล็ก ๆ และที่ปิกนิก",
+            "en": "A 30-hectare pine-forest park with paths, ponds, a small zoo and picnic spots"
+          },
+          "why": {
+            "th": "มีสวนสัตว์ บ่อน้ำ และที่ปิกนิกสำหรับวันกลางแจ้ง",
+            "en": "A zoo, ponds and picnics for a day outdoors"
+          },
+          "q": "Çamlık Park, Denizli",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://yolcu360.com/blog/izmir-gezilecek-yerler/",
+          "name": {
+            "th": "สวนสัตว์ธรรมชาติอิซมีร์",
+            "en": "İzmir Wildlife Park (Doğal Yaşam Parkı)"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ซาซาลึ ชิกลิ อิซมีร์",
+            "en": "Sasalı, Çiğli, İzmir"
+          },
+          "what": {
+            "th": "สวนใหญ่ที่สัตว์อยู่ในพื้นที่กว้างแบบธรรมชาติ มีหอดูนก",
+            "en": "A large park where animals live in wide natural enclosures, with bird-watching towers"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นที่แรกที่ครอบครัวที่มีลูกเลือก",
+            "en": "The page calls it a first choice for families with children"
+          },
+          "q": "Izmir Wildlife Park, Sasalı, Çiğli, İzmir",
+          "ok": "2026-11"
         }
       ]
     }

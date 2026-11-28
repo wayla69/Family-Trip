@@ -397,6 +397,1852 @@
           "q": "본태박물관, 서귀포시 안덕면 산록남로762번길 69",
           "ok": "2026-11",
           "src": "https://www.yugacrew.com/crewletter/jeju-indoor-places"
+        },
+        {
+          "local": "메이즈랜드",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "เมซแลนด์",
+            "en": "Maze Land"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คุจวาอึบ เชจู",
+            "en": "Gujwa-eup, Jeju"
+          },
+          "what": {
+            "th": "สวนเขาวงกตตามสัญลักษณ์สามอย่างของเชจู หิน ลม และผู้หญิง",
+            "en": "A maze park built around Jeju's three symbols: stones, wind and women"
+          },
+          "why": {
+            "th": "พื้นที่กว้างให้ทั้งครอบครัวเล่น",
+            "en": "Acres of family fun"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:00 เข้าได้ถึง 17:00",
+            "en": "Daily 09:00–18:00, last entry 17:00"
+          },
+          "q": "메이즈랜드",
+          "ok": "2026-11"
+        },
+        {
+          "local": "피규어뮤지엄 제주",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "พิพิธภัณฑ์ฟิกเกอร์เชจู",
+            "en": "Figure Museum Jeju"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อันด็อก ซอกวิโพ เชจู",
+            "en": "Andeok-myeon, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "ฟิกเกอร์ตัวละครและซูเปอร์ฮีโร่ที่ชอบ ละเอียดมาก",
+            "en": "Detailed figures of favourite characters and superheroes"
+          },
+          "why": {
+            "th": "เด็กและผู้ใหญ่ได้เจอตัวละครที่ชอบ",
+            "en": "Children and grown-ups meet their favourite characters"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:30–18:00 เข้าได้ถึง 17:30",
+            "en": "Daily 09:30–18:00, last entry 17:30"
+          },
+          "q": "피규어뮤지엄 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "선녀와 나무꾼 테마공원",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "สวนสนุกนางฟ้ากับคนตัดไม้",
+            "en": "Fairy and Woodcutter Theme Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "โจชอนอึบ เชจู",
+            "en": "Jocheon-eup, Jeju"
+          },
+          "what": {
+            "th": "นิทรรศการ 15 ส่วน จำลองถนนและโรงเรียนเกาหลียุค 1960–70",
+            "en": "Fifteen exhibitions of Korean streets and schools of the 1960s and 70s"
+          },
+          "why": {
+            "th": "ย้อนเวลาไปดูชีวิตในเกาหลีเมื่อหลายสิบปีก่อน",
+            "en": "Step back in time to life in Korea 50 years ago"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:30 เข้าได้ถึง 18:00",
+            "en": "Daily 09:00–18:30, last entry 18:00"
+          },
+          "q": "선녀와 나무꾼 테마공원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "여미지식물원",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์ยอมีจี",
+            "en": "Yeomiji Botanical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ชุงมุน ซอกวิโพ เชจู",
+            "en": "Jungmun, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "เรือนกระจกที่มีพืชเขตร้อนและกึ่งร้อนราว 2,000 ชนิด",
+            "en": "A greenhouse garden of about 2,000 tropical and subtropical plants"
+          },
+          "why": {
+            "th": "เรือนกระจกที่ควรมาสักครั้งในเชจู",
+            "en": "A must-see greenhouse on Jeju"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:00",
+            "en": "Daily 09:00–18:00"
+          },
+          "q": "여미지식물원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "휴애리 자연생활공원",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "สวนธรรมชาติฮยูเอรี",
+            "en": "Hueree Nature Life Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นัมวอน ซอกวิโพ เชจู",
+            "en": "Namwon-eup, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "สวนดอกคาโนลาและหญ้ามูลีสีชมพู",
+            "en": "A park of canola flowers and pink muhly grass"
+          },
+          "why": {
+            "th": "หนึ่งในสวนที่สวยที่สุดของเชจู",
+            "en": "One of the prettiest local parks on Jeju"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–18:00 เข้าได้ถึง 17:30 (มี.ค.–ก.ย.) หรือ 16:30 (ต.ค.–ก.พ.)",
+            "en": "Daily 09:00–18:00; last entry 17:30 (Mar–Sep), 16:30 (Oct–Feb)"
+          },
+          "q": "휴애리 자연생활공원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "워터월드 제주",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "เชจูวอเตอร์เวิลด์",
+            "en": "Jeju Water World"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สนามเชจูเวิลด์คัพ ซอกวิโพ เชจู",
+            "en": "Jeju World Cup Stadium, Seogwipo, Jeju"
+          },
+          "what": {
+            "th": "งานศิลปะกับน้ำใน 12 โซน มีทางเดินน้ำตื้นและจอภาพสีสดใส",
+            "en": "Art and water in 12 themed zones, with shallow water paths and colourful screens"
+          },
+          "why": {
+            "th": "เด็กเดินลุยทางน้ำตื้นได้",
+            "en": "Children walk through the shallow water paths"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–20:00 เข้าได้ถึง 19:00",
+            "en": "Daily 10:00–20:00, last entry 19:00"
+          },
+          "q": "워터월드 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "감귤카트",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+          "name": {
+            "th": "เชจูแทนเจอรีนคาร์ต",
+            "en": "Jeju Tangerine Kart"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เชจู",
+            "en": "Jeju"
+          },
+          "what": {
+            "th": "สนามโกคาร์ตที่มีรถธีมต่างๆ",
+            "en": "A go-kart track with themed karts"
+          },
+          "why": {
+            "th": "ขับโกคาร์ตด้วยกันทั้งครอบครัว",
+            "en": "Drive the karts together as a family"
+          },
+          "q": "감귤카트 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "타요키즈카페 제주용담점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65b6f9c1abd92fac2f7bcc1f",
+          "name": {
+            "th": "คิดส์คาเฟ่ทาโยะ ยงดัม",
+            "en": "Tayo Kids Café (Yongdam)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์ประชุมมีแร ชั้น 6 ถนนนัมซ็อง เชจู",
+            "en": "Mirae Convention Center 6F, Namseong-ro, Jeju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ในร่ม มีรถบัสทาโยะกับเพื่อน ๆ",
+            "en": "An indoor kids café with Tayo the little bus and friends"
+          },
+          "why": {
+            "th": "มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "A nursing room and nappy changing"
+          },
+          "tip": {
+            "th": "ปิดวันอังคาร",
+            "en": "Closed on Tuesdays"
+          },
+          "q": "타요키즈카페 제주용담점, 남성로 75, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "콩순이키즈카페 제주점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65b86da167a2df7173b902d9",
+          "name": {
+            "th": "คิดส์คาเฟ่คงซูนี เชจู",
+            "en": "Kongsuni Kids Café (Jeju)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนย็อนซา 2 โอรา เชจู",
+            "en": "Yeonsa 2-gil, Ora 2-dong, Jeju"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ตกแต่งธีมการ์ตูนคงซูนี",
+            "en": "A kids café decorated with the cartoon girl Kongsuni"
+          },
+          "why": {
+            "th": "เด็กชอบธีม มีห้องให้นมและที่เปลี่ยนผ้าอ้อม",
+            "en": "Children love the theme; a nursing room and nappy changing"
+          },
+          "q": "콩순이키즈카페 제주점, 연사2길 82, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "김녕미로공원",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "name": {
+            "th": "สวนเขาวงกตคิมนย็อง",
+            "en": "Gimnyeong Maze Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คิมนย็อง คูจวา เชจู",
+            "en": "Gimnyeong, Gujwa-eup, Jeju"
+          },
+          "what": {
+            "th": "สวนเขาวงกตต้นไม้ มีสนามหญ้ากว้าง",
+            "en": "A hedge maze park with a wide lawn"
+          },
+          "why": {
+            "th": "เขาวงกตให้เดินหาทางและสนามหญ้าให้วิ่ง",
+            "en": "A maze to puzzle through and open grass to run on"
+          },
+          "q": "김녕미로공원, 만장굴길 122, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "local": "새별프렌즈",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.funliday.com/posts/?p=144352",
+          "name": {
+            "th": "แซบย็อลเฟรนด์ส ฟาร์มแกะ",
+            "en": "Saebyeol Friends (sheep farm)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนพย็องฮวา แอวอล เชจู",
+            "en": "Pyeonghwa-ro, Aewol-eup, Jeju"
+          },
+          "what": {
+            "th": "ฟาร์มแกะบนเนินเขาเขียว ตกแต่งเหมือนหมู่บ้านในนิทาน",
+            "en": "A sheep farm on green hills, built like a storybook village"
+          },
+          "why": {
+            "th": "มีแกะและสัตว์ในฟาร์มบนเนินโล่ง",
+            "en": "Sheep and other farm animals on the open hillside"
+          },
+          "q": "새별프렌즈, 평화로 1529, 제주",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Seolmundae Halmang Exhibition Hall",
+            "th": "หอนิทรรศการซอลมุนแดฮัลมัง"
+          },
+          "local": "설문대할망전시관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Jeju Stone Park, Jeju-si",
+            "th": "สวนหินเชจู เชจูซี"
+          },
+          "what": {
+            "en": "An indoor exhibition hall where children can explore Jeju myths, with a Children's Hall",
+            "th": "หอนิทรรศการในร่มให้เด็กสำรวจตำนานเชจู มีห้องสำหรับเด็ก"
+          },
+          "why": {
+            "en": "Indoor exhibits made for children, and a nursing room",
+            "th": "นิทรรศการในร่มที่ทำมาสำหรับเด็ก และมีห้องให้นม"
+          },
+          "tip": {
+            "en": "Last entry 17:00",
+            "th": "เข้าได้ถึง 17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩5,000 adults · ₩3,500 youth",
+            "th": "≈ ₩5,000 ผู้ใหญ่ · ₩3,500 เยาวชน"
+          },
+          "book": "none",
+          "q": "Seolmundae Halmang Exhibition Hall, Jeju Stone Park, Jeju-si, Jeju, South Korea",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/6a1e299d263e8eb875199919"
+        },
+        {
+          "name": {
+            "en": "Arte Kids Park",
+            "th": "อาร์เต คิดส์ ปาร์ก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Aewol-eup, Jeju-si",
+            "th": "แอวอลอึบ เชจูชี"
+          },
+          "what": {
+            "en": "A media-art playground with sixteen play zones in its Main Square and three interactive media-art experiences",
+            "th": "สนามเด็กเล่นมีเดียอาร์ต มีโซนเล่น 16 โซนที่ลานหลัก และกิจกรรมมีเดียอาร์ตเชิงโต้ตอบ 3 อย่าง"
+          },
+          "why": {
+            "en": "Kids can swoosh down a slide hill, go fishing at the Fish Catcher and doodle in a ball pit",
+            "th": "เด็กๆ ไถลสไลเดอร์เนิน ตกปลาที่ฟิชแคตเชอร์ และขีดเขียนในบ่อบอล"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Arte Kids Park, 929 Wolgak-ro, Aewol-eup, Jeju-si",
+          "ok": "2026-11",
+          "src": "https://www.littledayout.com/jeju-with-kids-itinerary-korea-travel/"
+        },
+        {
+          "name": {
+            "en": "Udo Island",
+            "th": "เกาะอูโด"
+          },
+          "local": "우도",
+          "kind": "nature",
+          "area": {
+            "en": "Udo-myeon, Jeju-si",
+            "th": "อูโดมยอน เชจูชี"
+          },
+          "what": {
+            "en": "Jeju's largest offshore island, also called Cow Island because its shape looks like a sleeping cow",
+            "th": "เกาะนอกชายฝั่งที่ใหญ่ที่สุดของเชจู เรียกอีกชื่อว่าเกาะวัว เพราะรูปร่างคล้ายวัวนอน"
+          },
+          "why": {
+            "en": "Scenic views, coral sand beaches and crystal-clear water at Hagosudong Beach for a nature day with children",
+            "th": "วิวสวย หาดทรายปะการัง และน้ำใสที่หาดฮาโกซูดง เหมาะกับวันธรรมชาติกับเด็กๆ"
+          },
+          "tip": {
+            "en": "Allow about four hours",
+            "th": "เผื่อเวลาราว 4 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Udo Island, off the east coast of Jeju Island",
+          "ok": "2026-11",
+          "src": "https://www.littledayout.com/jeju-with-kids-itinerary-korea-travel/"
+        }
+      ]
+    },
+    {
+      "place": "kr-incheon",
+      "sights": [
+        {
+          "local": "국립인천해양박물관",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "req",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือแห่งชาติอินชอน",
+            "en": "National Maritime Museum of Incheon"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนวอลมี เกาะวอลมิโด",
+            "en": "Wolmi-ro, Wolmido"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์การเดินเรือแห่งชาติ เปิดปลายปี 2024 มีพิพิธภัณฑ์เด็กอยู่ข้างใน",
+            "en": "A national maritime museum, opened in late 2024, with a children’s museum inside"
+          },
+          "why": {
+            "th": "ในพิพิธภัณฑ์เด็ก เด็กๆ ได้ลองบังคับเรือและสำรวจใต้ทะเล อาคารใหม่และสะอาด",
+            "en": "Children steer a boat and explore the sea floor in the children’s museum; a clean, new building"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ พิพิธภัณฑ์เด็กต้องจองออนไลน์ เปิดจองวันที่ 1 และ 15 ของทุกเดือน",
+            "en": "Closed on Mondays; the children’s museum is booked online, released on the 1st and 15th of each month"
+          },
+          "q": "국립인천해양박물관, 월미로, 인천",
+          "ok": "2026-11"
+        },
+        {
+          "local": "원더박스",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 28,000 วอน เด็ก (37 เดือนถึง 12 ปี) 23,000 วอน ต่ำกว่า 37 เดือนฟรี",
+            "en": "Adults ₩28,000; children (37 months to 12) ₩23,000; under 37 months free"
+          },
+          "book": "rec",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places",
+          "name": {
+            "th": "วันเดอร์บ็อกซ์ พาราไดซ์ซิตี้",
+            "en": "Wonderbox, Paradise City"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "พาราไดซ์ซิตี้ ยองจง",
+            "en": "Paradise City, Yeongjong"
+          },
+          "what": {
+            "th": "สวนสนุกในร่มที่พาราไดซ์ซิตี้ มีม้าหมุน รถบั๊ม VR และบ่อบอล",
+            "en": "An indoor amusement park at Paradise City, with a carousel, bumper cars, VR and a ball pool"
+          },
+          "why": {
+            "th": "อยู่ในร่มทั้งหมด ฝนตกก็เล่นได้",
+            "en": "All indoors, so the weather does not matter"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 11:00–19:00",
+            "en": "Open daily 11:00–19:00"
+          },
+          "q": "Wonderbox, Paradise City, Incheon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "송도 센트럴파크",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=2629535",
+          "name": {
+            "th": "สวนเซ็นทรัลพาร์กซงโด",
+            "en": "Songdo Central Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนคอนเวนเซีย ยอนซูกู",
+            "en": "Convensia-daero, Yeonsu-gu"
+          },
+          "what": {
+            "th": "สวนน้ำทะเลแห่งแรกของเกาหลี ท่ามกลางตึกสูงของซงโด",
+            "en": "The country’s first seawater park, among Songdo’s towers"
+          },
+          "why": {
+            "th": "มีเรือแท็กซี่และเรือแคนูในคลองน้ำทะเลของสวน",
+            "en": "A water taxi and canoes on the park’s seawater canal"
+          },
+          "q": "Songdo Central Park, 160 Convensia-daero, Incheon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "월미공원",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=1002282",
+          "name": {
+            "th": "สวนวอลมี",
+            "en": "Wolmi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนวอลมี จุงกู",
+            "en": "Wolmi-ro, Jung-gu"
+          },
+          "what": {
+            "th": "สวนบนเนินเขาวอลมิโด เคยเป็นเขตทหาร 50 ปี มีสวนแบบเกาหลีดั้งเดิม",
+            "en": "A hill park on Wolmido, a military zone for 50 years, with traditional Korean gardens"
+          },
+          "why": {
+            "th": "มีสวนเกาหลีให้เดินเล่น เหมาะทุกวัย",
+            "en": "Korean gardens to walk through, open to all ages"
+          },
+          "q": "월미공원, 인천 중구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "마이랜드",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ตั๋วเครื่องเล่นเด็ก 6,000 วอน",
+            "en": "Children’s ride ticket ₩6,000"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/67d38d2a75fa1a4213da455c",
+          "name": {
+            "th": "มายแลนด์ วอลมิโด",
+            "en": "My Land, Wolmido"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนวอลมี เกาะวอลมิโด",
+            "en": "Wolmi-ro 234beon-gil, Wolmido"
+          },
+          "what": {
+            "th": "สวนสนุกริมทะเลบนเกาะวอลมิโด",
+            "en": "A seaside fairground on Wolmido"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นเด็กหลายอย่าง ทั้งม้าหมุน รถบั๊ม และไวกิ้งเล็ก",
+            "en": "Many children’s rides: a carousel, bumper cars and a mini Viking"
+          },
+          "q": "My Land, 7 Wolmi-ro 234beon-gil, Incheon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "송월동 동화마을",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=2372167",
+          "name": {
+            "th": "หมู่บ้านเทพนิยายซงวอลดง",
+            "en": "Songwol-dong Fairy Tale Village"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนทงฮวามาอึล จุงกู",
+            "en": "Donghwamaeul-gil, Jung-gu"
+          },
+          "what": {
+            "th": "หมู่บ้านบนเนินที่ตกแต่งด้วยภาพวาดและรูปปั้นจากนิทานคลาสสิก",
+            "en": "A hillside village painted with murals and sculptures of classic fairy tales"
+          },
+          "why": {
+            "th": "มีภาพวาดและรูปปั้นนิทานให้ตามหาตามซอย",
+            "en": "Fairy-tale murals and statues to find along the lanes"
+          },
+          "q": "송월동 동화마을, 인천 중구",
+          "ok": "2026-11"
+        },
+        {
+          "local": "인천학생교육문화회관",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/en/travel/places/65ee5e841125833a155dba45",
+          "name": {
+            "th": "ศูนย์การศึกษาและวัฒนธรรมนักเรียนอินชอน",
+            "en": "Incheon Student Education and Culture Center"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจายูกงวอน จุงกู",
+            "en": "Jayugongwon-ro, Jung-gu"
+          },
+          "what": {
+            "th": "ศูนย์ของรัฐที่มีพื้นที่เล่นสำหรับเด็ก",
+            "en": "A public centre with a play space for children"
+          },
+          "why": {
+            "th": "มีช่วงเวลาเล่นสำหรับเด็กเล็กและอุปกรณ์เล่น ตั้งแต่เด็กอ่อนถึงวัยเรียน",
+            "en": "Play time for babies and play equipment, for ages from babies to school children"
+          },
+          "q": "인천학생교육문화회관, 자유공원로 12, 인천 중구",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Incheon Children's Science Museum",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เด็กอินช็อน"
+          },
+          "local": "인천어린이과학관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Munhak Stadium grounds, Gyeyang-gu",
+            "th": "ในบริเวณสนามมุนฮัก เคย์ยัง-กู"
+          },
+          "what": {
+            "en": "A children's science museum with permanent and special halls, a 4D cinema and science sessions",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เด็ก มีห้องนิทรรศการถาวรและพิเศษ โรงหนัง 4D และกิจกรรมวิทยาศาสตร์"
+          },
+          "why": {
+            "en": "Sessions run in timed two-hour slots, so a family can plan a morning around one",
+            "th": "เข้าชมเป็นรอบละ 2 ชั่วโมง วางแผนครึ่งวันเช้าได้ง่าย"
+          },
+          "tip": {
+            "en": "Closed Mondays; tickets stop at 17:00; book online in advance, no tickets on the day",
+            "th": "ปิดวันจันทร์ ขายบัตรถึง 17:00 จองออนไลน์ล่วงหน้า ไม่ขายหน้างาน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Incheon Children's Science Museum, Munhak Stadium grounds, Gyeyang-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://www.insiseol.or.kr/culture/icsmuseum/"
+        },
+        {
+          "name": {
+            "en": "Incheon Urban History Museum",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์เมืองอินช็อน"
+          },
+          "local": "인천도시역사관",
+          "kind": "museum",
+          "area": {
+            "en": "Songdo, Yeonsu-gu",
+            "th": "ซงโด ยอนซู-กู"
+          },
+          "what": {
+            "en": "Shows Incheon's history since the port opened in 1883, with simulations and models",
+            "th": "เล่าประวัติศาสตร์อินช็อนตั้งแต่เปิดท่าเรือปี 1883 ด้วยแบบจำลองและภาพจำลอง"
+          },
+          "why": {
+            "en": "Simulations and models show how the city changed, and the museum runs educational programmes",
+            "th": "แบบจำลองช่วยให้เห็นเมืองเปลี่ยนไปอย่างไร และมีกิจกรรมการเรียนรู้"
+          },
+          "tip": {
+            "en": "Closed Mondays; last entry 30 minutes before closing",
+            "th": "ปิดวันจันทร์ เข้าได้ถึงก่อนปิด 30 นาที"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Incheon Urban History Museum, Songdo, Yeonsu-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=77235"
+        },
+        {
+          "name": {
+            "en": "Yeongjong Seaside Rail Bike",
+            "th": "เรลไบค์ริมทะเลยองจง"
+          },
+          "local": "영종씨사이드 레일바이크",
+          "kind": "ride",
+          "area": {
+            "en": "Gueup-ro, Yeongjong-gu",
+            "th": "คูอึบโร ยองจง-กู"
+          },
+          "what": {
+            "en": "A four-seater rail bike on a 5.6 km round-trip track along the coast of Seaside Park",
+            "th": "จักรยานราง 4 ที่นั่ง วิ่งไปกลับ 5.6 กม. ริมชายฝั่งซีไซด์พาร์ก"
+          },
+          "why": {
+            "en": "The open sea right in front makes a pleasant ride for the whole family",
+            "th": "เห็นทะเลโล่งอยู่ตรงหน้า เป็นการปั่นที่สนุกสำหรับทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "Weekdays 10:00–17:20, weekends 09:00–18:00; open all year",
+            "th": "วันธรรมดา 10:00–17:20 วันหยุด 09:00–18:00 เปิดทั้งปี"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Two-seater ≈ ₩25,000 per person",
+            "th": "แบบ 2 ที่นั่ง ≈ ₩25,000 ต่อคน"
+          },
+          "book": "none",
+          "q": "Yeongjong Seaside Rail Bike, Gueup-ro, Yeongjong-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=112553"
+        },
+        {
+          "name": {
+            "en": "Eurwangni Beach",
+            "th": "หาดอึลวังนี"
+          },
+          "local": "을왕리해수욕장",
+          "kind": "beach",
+          "area": {
+            "en": "Eurwang-dong, Yeongjong-gu",
+            "th": "อึลวัง-ดง ยองจง-กู"
+          },
+          "what": {
+            "en": "A white sand beach about 700 m long with shallow water, a big grass field and places to stay nearby",
+            "th": "หาดทรายขาวยาวราว 700 ม. น้ำตื้น มีสนามหญ้ากว้างและที่พักใกล้ๆ"
+          },
+          "why": {
+            "en": "Shallow water and a big grass field suit small children",
+            "th": "น้ำตื้นและสนามหญ้ากว้าง เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Known for its sunsets; open 24 hours",
+            "th": "ขึ้นชื่อเรื่องพระอาทิตย์ตก เปิด 24 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Eurwangni Beach, Eurwang-dong, Yeongjong-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=105441"
+        },
+        {
+          "name": {
+            "en": "Incheon Dino World",
+            "th": "อินช็อน ไดโนเวิลด์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Songdo, Yeonsu-gu",
+            "th": "ซงโด ยอนซู-กู"
+          },
+          "what": {
+            "en": "An indoor dinosaur world with giant lifelike dinosaurs that move and roar, plus shows every hour",
+            "th": "โลกไดโนเสาร์ในร่ม มีไดโนเสาร์ยักษ์เหมือนจริงที่ขยับและคำราม และโชว์ทุกชั่วโมง"
+          },
+          "why": {
+            "en": "No time limit, and you can leave for a meal and come back in, so small children can rest between shows",
+            "th": "ไม่จำกัดเวลา ออกไปกินข้าวแล้วกลับเข้ามาได้ เด็กเล็กพักระหว่างโชว์ได้"
+          },
+          "tip": {
+            "en": "Closed Tuesdays; wear comfortable clothes for the hands-on activities",
+            "th": "ปิดวันอังคาร ใส่เสื้อผ้าสบายๆ สำหรับกิจกรรมที่ได้ลงมือทำ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩22,000 weekdays · ₩25,000 weekends",
+            "th": "≈ ₩22,000 วันธรรมดา · ₩25,000 วันหยุด"
+          },
+          "book": "none",
+          "q": "Incheon Dino World, Songdo, Yeonsu-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": {
+            "en": "Sudoguksan Moon Village Museum",
+            "th": "พิพิธภัณฑ์หมู่บ้านพระจันทร์ซูโดกุกซาน"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Solbit-ro, Jemulpo-gu",
+            "th": "ซอลบิโร เจมูลโพ-กู"
+          },
+          "what": {
+            "en": "An exhibition recreating Incheon's 1960s–70s hillside neighbourhoods, with classrooms and home interiors",
+            "th": "นิทรรศการจำลองย่านบนเนินเขาของอินช็อนในยุค 1960–70 มีห้องเรียนและบ้านจำลอง"
+          },
+          "why": {
+            "en": "Children can try a school uniform, and parents can relive old memories",
+            "th": "เด็กลองใส่ชุดนักเรียนได้ ผู้ใหญ่ได้ย้อนความทรงจำเก่าๆ"
+          },
+          "tip": {
+            "en": "Closed Mondays; school uniform experience and audio guide ₩3,000",
+            "th": "ปิดวันจันทร์ ชุดนักเรียนและเครื่องนำชมเสียง ₩3,000"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sudoguksan Moon Village Museum, Solbit-ro, Jemulpo-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": {
+            "en": "Noodle Platform",
+            "th": "นู้ดเดิลแพลตฟอร์ม"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Sinpo-ro, Jemulpo-gu",
+            "th": "ชินโพโร เจมูลโพ-กู"
+          },
+          "what": {
+            "en": "A hands-on exhibition on the history and culture of noodles, a dish Incheon is known for",
+            "th": "นิทรรศการให้ลงมือทำเรื่องประวัติและวัฒนธรรมก๋วยเตี๋ยว อาหารที่อินช็อนขึ้นชื่อ"
+          },
+          "why": {
+            "en": "Children can discover the exhibits themselves at their own level",
+            "th": "เด็กสำรวจนิทรรศการด้วยตัวเองตามระดับของตน"
+          },
+          "tip": {
+            "en": "Closed Mondays; open Tuesday–Sunday 09:00–18:00",
+            "th": "ปิดวันจันทร์ เปิดอังคาร–อาทิตย์ 09:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Noodle Platform, Sinpo-ro, Jemulpo-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000080/6143bbsDetail.do"
+        },
+        {
+          "name": {
+            "en": "Wolmi Sea Train",
+            "th": "รถไฟทะเลวอลมี"
+          },
+          "local": "월미바다열차",
+          "kind": "ride",
+          "area": {
+            "en": "Wolmido, Jemulpo-gu",
+            "th": "เกาะวอลมี เจมูลโพ-กู"
+          },
+          "what": {
+            "en": "A monorail looping round Wolmido along 6.1 km close to the sea, with views of the Inner Port and Incheon Bridge",
+            "th": "โมโนเรลวนรอบเกาะวอลมียาว 6.1 กม. ใกล้ทะเล เห็นท่าเรือชั้นในและสะพานอินช็อน"
+          },
+          "why": {
+            "en": "A high seat over the water gives children a view of ships and the bridge",
+            "th": "นั่งที่สูงเหนือน้ำ เด็กๆ เห็นเรือและสะพานชัดเจน"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩8,000 adults · ₩5,000 children",
+            "th": "≈ ₩8,000 ผู้ใหญ่ · ₩5,000 เด็ก"
+          },
+          "book": "rec",
+          "q": "Wolmi Sea Train, Wolmido, Jemulpo-gu, Incheon, South Korea",
+          "ok": "2026-11",
+          "src": "https://eng-itour.incheon.go.kr/cmn/board/BBSMSTR_000000000081/1917bbsDetail.do"
+        },
+        {
+          "name": {
+            "en": "Incheon Grand Park Children's Zoo",
+            "th": "สวนสัตว์เด็กอินชอนแกรนด์พาร์ก"
+          },
+          "local": "인천대공원 어린이동물원",
+          "kind": "zoo",
+          "area": {
+            "en": "Incheon Grand Park, Namdong-gu",
+            "th": "อินชอนแกรนด์พาร์ก นัมดงกู"
+          },
+          "what": {
+            "en": "A children's zoo with over 230 animals of 27 species, mostly gentle ones such as rabbits, guinea pigs, meerkats, macaws and ostriches",
+            "th": "สวนสัตว์เด็กที่มีสัตว์กว่า 230 ตัว 27 ชนิด ส่วนใหญ่เป็นสัตว์ใจเย็น เช่น กระต่าย หนูตะเภา เมียร์แคต มาคอว์และนกกระจอกเทศ"
+          },
+          "why": {
+            "en": "Children can see gentle animals up close; there are no animal-feeding programmes, to prevent accidents and stress",
+            "th": "เด็กๆ ดูสัตว์ใจเย็นได้ใกล้ชิด ที่นี่ไม่มีกิจกรรมให้อาหารสัตว์ เพื่อป้องกันอุบัติเหตุและความเครียดของสัตว์"
+          },
+          "tip": {
+            "en": "Open 10:00–17:00",
+            "th": "เปิด 10:00–17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Incheon Grand Park Children's Zoo, Incheon Grand Park, Incheon",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=194456"
+        },
+        {
+          "name": {
+            "en": "Jayu Park (Freedom Park)",
+            "th": "สวนชายู"
+          },
+          "local": "자유공원",
+          "kind": "park",
+          "area": {
+            "en": "Jung-gu, above the Open Port area",
+            "th": "จุงกู เนินเหนือย่านเปิดท่า"
+          },
+          "what": {
+            "en": "Korea's first Western-style park, on high ground with a small zoo, a pagoda, a statue of General MacArthur and the Korea-U.S.A. Centennial Monument",
+            "th": "สวนแบบตะวันตกแห่งแรกของเกาหลี อยู่บนที่สูง มีสวนสัตว์เล็กๆ เจดีย์ รูปปั้นนายพลแมกอาร์เธอร์ และอนุสาวรีย์ครบรอบ 100 ปีเกาหลี-สหรัฐฯ"
+          },
+          "why": {
+            "en": "A small zoo inside the park and a wide view over the city and the harbour",
+            "th": "มีสวนสัตว์เล็กๆ ในสวน และวิวกว้างของเมืองและท่าเรือ"
+          },
+          "tip": {
+            "en": "Open 24 hours; allow about an hour and a half",
+            "th": "เปิดตลอด 24 ชั่วโมง เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jayu Park, Jung-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/locIntrdnList.do?vcontsId=105439&menuSn=351"
+        },
+        {
+          "name": {
+            "en": "Jjajangmyeon Museum",
+            "th": "พิพิธภัณฑ์จาจังมยอน"
+          },
+          "local": "짜장면박물관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Jung-gu, near Incheon Station and Chinatown",
+            "th": "จุงกู ใกล้สถานีอินชอนและไชนาทาวน์"
+          },
+          "what": {
+            "en": "Korea's first museum themed on jjajangmyeon, in a remodelled former Gonghwachun building with six permanent halls and one special exhibition room",
+            "th": "พิพิธภัณฑ์จาจังมยอนแห่งแรกของเกาหลี ในอาคารกงฮวาชุนเดิมที่ปรับใหม่ มีห้องถาวร 6 ห้องและห้องนิทรรศการพิเศษ 1 ห้อง"
+          },
+          "why": {
+            "en": "A familiar dish explained simply in a short visit, good for a light look around with children",
+            "th": "อธิบายอาหารที่คุ้นเคยอย่างเข้าใจง่ายในเวลาสั้นๆ เหมาะกับการแวะดูเบาๆ กับเด็ก"
+          },
+          "tip": {
+            "en": "Open 09:00–18:00",
+            "th": "เปิด 09:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Jjajangmyeon Museum, Jung-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/64f684fbc401c623d8d85ff8"
+        },
+        {
+          "name": {
+            "en": "Incheon Bridge Observatory (Songdo Ocean Scope)",
+            "th": "หอชมวิวสะพานอินชอน (ซงโด โอเชียนสโคป)"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Songdo, Yeonsu-gu",
+            "th": "ซงโด ยอนซูกู"
+          },
+          "what": {
+            "en": "An observatory built from shipping containers, with exhibition areas and a view of the Incheon Bridge",
+            "th": "หอชมวิวที่สร้างจากตู้คอนเทนเนอร์ มีพื้นที่จัดนิทรรศการและมองเห็นสะพานอินชอน"
+          },
+          "why": {
+            "en": "A shipping-container building to walk through, with the long bridge in view from inside",
+            "th": "ได้เดินในอาคารตู้คอนเทนเนอร์ และมองเห็นสะพานยาวจากข้างใน"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Incheon Bridge Observatory (Songdo Ocean Scope), Songdo-dong, Yeonsu-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.incheonbridge.com/eng/tour/viewpoint"
+        },
+        {
+          "name": {
+            "en": "Sorae Marsh Ecological Park",
+            "th": "สวนนิเวศพื้นที่ชุ่มน้ำโซแร"
+          },
+          "local": "소래습지생태공원",
+          "kind": "nature",
+          "area": {
+            "en": "Namdong-gu",
+            "th": "นัมดงกู"
+          },
+          "what": {
+            "en": "A marsh park on a former saltern, with an Ecology Hall on the area's plants and animals and a Nature Learning Center",
+            "th": "สวนพื้นที่ชุ่มน้ำบนนาเกลือเก่า มีอาคารนิเวศแสดงพืชและสัตว์ของพื้นที่ และศูนย์เรียนรู้ธรรมชาติ"
+          },
+          "why": {
+            "en": "Hands-on learning in the Ecology Hall, plus walking paths by the old salt store and the windmill",
+            "th": "มีกิจกรรมเรียนรู้ในอาคารนิเวศ และทางเดินเลียบโกดังเกลือเก่าและกังหันลม"
+          },
+          "tip": {
+            "en": "Ecology Hall 10:00–18:00, closed Mondays; trails 09:30–17:30",
+            "th": "อาคารนิเวศ 10:00–18:00 ปิดวันจันทร์ ทางเดินเปิด 09:30–17:30"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sorae Marsh Ecological Park, Namdong-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=1751275"
+        },
+        {
+          "name": {
+            "en": "Incheon Children's Museum",
+            "th": "พิพิธภัณฑ์เด็กอินชอน"
+          },
+          "local": "인천어린이박물관",
+          "kind": "museumkid",
+          "area": {
+            "en": "Munhak Stadium, Michuhol-gu",
+            "th": "สนามมุนฮัก มีชูฮลกู"
+          },
+          "what": {
+            "en": "A children's museum of hands-on exhibits: culture and science zones, play, dinosaur exploration, a 3D cinema and art",
+            "th": "พิพิธภัณฑ์เด็กที่จับต้องได้ทุกอย่าง มีโซนวัฒนธรรม วิทยาศาสตร์ การเล่น สำรวจไดโนเสาร์ โรงหนัง 3 มิติ และศิลปะ"
+          },
+          "why": {
+            "en": "Children can touch and work every exhibit, with zones for ages from 12 months up to primary school",
+            "th": "เด็กๆ จับและลองเล่นได้ทุกชิ้น มีโซนสำหรับอายุ 12 เดือนขึ้นไปจนถึงวัยประถม"
+          },
+          "tip": {
+            "en": "Under 12 months enter free",
+            "th": "เด็กต่ำกว่า 12 เดือนเข้าฟรี"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩6,000 children · ₩5,000 adults",
+            "th": "≈ ₩6,000 เด็ก · ₩5,000 ผู้ใหญ่"
+          },
+          "book": "none",
+          "q": "Incheon Children's Museum, Munhak Stadium, Michuhol-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places"
+        },
+        {
+          "name": {
+            "en": "National Institute of Biological Resources",
+            "th": "สถาบันทรัพยากรชีวภาพแห่งชาติ"
+          },
+          "local": "국립생물자원관",
+          "kind": "museum",
+          "area": {
+            "en": "Hwangyeong-ro, Seo-gu",
+            "th": "ถนนฮวางยอง ซอกู"
+          },
+          "what": {
+            "en": "Three floors of insect, animal, bird and plant specimens and dioramas of the Korean peninsula, plus an outdoor garden",
+            "th": "ตัวอย่างแมลง สัตว์ นกและพืช 3 ชั้น กับฉากจำลองของคาบสมุทรเกาหลี และสวนกลางแจ้ง"
+          },
+          "why": {
+            "en": "Life-size, detailed models let children look closely and ask questions; a lawn and a maze outside",
+            "th": "โมเดลขนาดเท่าจริงที่ละเอียดให้เด็กๆ ดูใกล้ๆ และถามได้ มีสนามหญ้าและเขาวงกตด้านนอก"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 09:30–17:30, closed Mondays",
+            "th": "เปิดอังคาร–อาทิตย์ 09:30–17:30 ปิดวันจันทร์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "National Institute of Biological Resources, Hwankyeong-ro 42, Seo-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places"
+        },
+        {
+          "name": {
+            "en": "National Museum of World Writing Systems",
+            "th": "พิพิธภัณฑ์อักษรโลกแห่งชาติ"
+          },
+          "local": "국립세계문자박물관",
+          "kind": "museum",
+          "area": {
+            "en": "Central-ro, Songdo, Yeonsu-gu",
+            "th": "ถนนเซ็นทรัล ซงโด ยอนซูกู"
+          },
+          "what": {
+            "en": "The national museum of writing systems, from cuneiform to Hangul, on how writing was born and grew",
+            "th": "พิพิธภัณฑ์แห่งชาติว่าด้วยตัวอักษร ตั้งแต่อักษรรูปลิ่มถึงฮันกึล เล่าว่าการเขียนเกิดและพัฒนาอย่างไร"
+          },
+          "why": {
+            "en": "Free entry to the main galleries, so an easy indoor stop in Songdo",
+            "th": "เข้าชมห้องหลักฟรี แวะในร่มที่ซงโดได้สบายๆ"
+          },
+          "tip": {
+            "en": "Open 10:00–18:00, closed Mondays; last entry 17:30",
+            "th": "เปิด 10:00–18:00 ปิดวันจันทร์ เข้าได้ถึง 17:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "National World Writing Museum, Central-ro 217, Songdo, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "G-Tower Observatory",
+            "th": "หอชมวิวจีทาวเวอร์"
+          },
+          "local": "G타워 전망대",
+          "kind": "views",
+          "area": {
+            "en": "Art Center-daero, Songdo, Yeonsu-gu",
+            "th": "ถนนอาร์ตเซ็นเตอร์ ซงโด ยอนซูกู"
+          },
+          "what": {
+            "en": "An observatory on the 33rd floor of G-Tower, with 360-degree glass over Songdo and the West Sea and an exhibition on the free economic zone",
+            "th": "หอชมวิวชั้น 33 ของจีทาวเวอร์ กระจกรอบทิศมองเห็นซงโดและทะเลตะวันตก และมีนิทรรศการเขตเศรษฐกิจเสรี"
+          },
+          "why": {
+            "en": "Indoors and free, with a digital media exhibition on how Songdo was planned",
+            "th": "อยู่ในร่มและเข้าฟรี มีนิทรรศการสื่อดิจิทัลเรื่องการวางผังซงโด"
+          },
+          "tip": {
+            "en": "Closed Mondays; weekdays 10:00–21:00, weekends and holidays 13:00–21:00",
+            "th": "ปิดวันจันทร์ วันธรรมดา 10:00–21:00 เสาร์–อาทิตย์และวันหยุด 13:00–21:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "G-Tower Observatory, Art Center-daero 175, Songdo, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "Songdo Hanok Village",
+            "th": "หมู่บ้านฮันอกซงโด"
+          },
+          "local": "송도 한옥마을",
+          "kind": "oldtown",
+          "area": {
+            "en": "Technopark-ro, Songdo, Yeonsu-gu",
+            "th": "ถนนเทคโนพาร์ก ซงโด ยอนซูกู"
+          },
+          "what": {
+            "en": "A hanok village built in 2013 among Songdo's high-rises, with hanok restaurants and cafés",
+            "th": "หมู่บ้านฮันอกที่สร้างปี 2013 ท่ามกลางตึกสูงของซงโด มีร้านอาหารและคาเฟ่ในเรือนฮันอก"
+          },
+          "why": {
+            "en": "Traditional roofs make a good backdrop for family photos; the cafés and restaurants are in the village",
+            "th": "หลังคาแบบดั้งเดิมเป็นฉากถ่ายรูปครอบครัวที่สวย มีคาเฟ่และร้านอาหารในหมู่บ้าน"
+          },
+          "tip": {
+            "en": "Open every day; free entry and free parking",
+            "th": "เปิดทุกวัน เข้าและจอดรถฟรี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Songdo Hanok Village, Technopark-ro 180, Yeonsu-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "Haedoji Park",
+            "th": "สวนแฮโดจี"
+          },
+          "local": "해돋이공원",
+          "kind": "park",
+          "area": {
+            "en": "Haedoji-ro, Songdo, Yeonsu-gu",
+            "th": "ถนนแฮโดจี ซงโด ยอนซูกู"
+          },
+          "what": {
+            "en": "A 210,468 m² park beside Central Park, with lawns, a 91 m music fountain plaza and pavilions",
+            "th": "สวนขนาด 210,468 ตารางเมตรข้างเซ็นทรัลพาร์ก มีสนามหญ้า ลานน้ำพุดนตรียาว 91 เมตร และศาลา"
+          },
+          "why": {
+            "en": "Play equipment for children: a communication play area, a science play area, a kaleidoscope and a boat-building play frame",
+            "th": "มีเครื่องเล่นสำหรับเด็ก ทั้งโซนเล่นสื่อสาร โซนเล่นวิทยาศาสตร์ กล้องคาไลโดสโคป และโครงเล่นต่อเรือ"
+          },
+          "tip": {
+            "en": "Free entry and free parking; the rose garden and maze bloom in May",
+            "th": "เข้าและจอดรถฟรี สวนกุหลาบและเขาวงกตกุหลาบบานเดือนพฤษภาคม"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Haedoji Park, Haedoji-ro 51, Songdo, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "Juvuckx & Junimal, Seochang",
+            "th": "จูบักส์แอนด์จูนิมอล ซอชัง"
+          },
+          "local": "쥬벅스 앤 쥬니멀 서창점",
+          "kind": "zoo",
+          "area": {
+            "en": "Seochang, Namdong-gu",
+            "th": "ซอชัง นัมดงกู"
+          },
+          "what": {
+            "en": "Indoor zoo with rabbits, goats, sheep and reptiles, and a feeding experience",
+            "th": "สวนสัตว์ในร่มที่มีกระต่าย แพะ แกะ และสัตว์เลื้อยคลาน พร้อมให้อาหารสัตว์"
+          },
+          "why": {
+            "en": "Indoor with no smell, so it is comfortable with children on hot or rainy days",
+            "th": "อยู่ในร่มและไม่มีกลิ่น สบายสำหรับเด็กในวันร้อนหรือฝนตก"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩15,000 per person · under 18 months free",
+            "th": "≈ ₩15,000 ต่อคน · เด็กอายุต่ำกว่า 18 เดือนฟรี"
+          },
+          "book": "rec",
+          "q": "Juvuckx Juniamal Seochang, Seochang, Namdong-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-kids-places"
+        },
+        {
+          "name": {
+            "en": "Splash Bay, Inspire Resort",
+            "th": "สแปลชเบย์ อินสไปร์รีสอร์ต"
+          },
+          "local": "스플래시베이",
+          "kind": "play",
+          "area": {
+            "en": "Inspire Resort, Yeongjong Island",
+            "th": "อินสไปร์รีสอร์ต เกาะยองจง"
+          },
+          "what": {
+            "en": "Indoor kids' zone, slime café, pool and slides at the Inspire Resort on Yeongjong Island",
+            "th": "โซนเด็กในร่ม คาเฟ่สไลม์ สระว่ายน้ำและสไลเดอร์ ที่อินสไปร์รีสอร์ตบนเกาะยองจง"
+          },
+          "why": {
+            "en": "Children under 48 months enter free; a good choice on rainy or cold days",
+            "th": "เด็กอายุต่ำกว่า 48 เดือนเข้าฟรี เหมาะกับวันฝนตกหรืออากาศหนาว"
+          },
+          "tip": {
+            "en": "Open 08:00–20:00",
+            "th": "เปิด 08:00–20:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Splash Bay, Inspire Resort, Yeongjong, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-kids-places"
+        },
+        {
+          "name": {
+            "en": "Indoo Songdo",
+            "th": "อินดูจู ซงโด"
+          },
+          "local": "인더쥬 송도",
+          "kind": "zoo",
+          "area": {
+            "en": "Triple Street, Songdo",
+            "th": "ทริปเปิลสตรีท ซงโด"
+          },
+          "what": {
+            "en": "Indoor zoo with raccoons, guinea pigs, alpacas and fennec foxes, with a feeding experience",
+            "th": "สวนสัตว์ในร่มที่มีแรคคูน หนูตะเภา อัลปากา และสุนัขจิ้งจอกเฟนเนก พร้อมให้อาหารสัตว์"
+          },
+          "why": {
+            "en": "Indoor, so it works in any weather; in a shopping mall with places to eat and shop",
+            "th": "อยู่ในร่ม ไปได้ทุกสภาพอากาศ ตั้งอยู่ในห้างที่มีร้านอาหารและร้านค้า"
+          },
+          "tip": {
+            "en": "Open 11:00–20:00 daily",
+            "th": "เปิดทุกวัน 11:00–20:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ ₩18,000 per person · under 18 months free",
+            "th": "≈ ₩18,000 ต่อคน · เด็กอายุต่ำกว่า 18 เดือนฟรี"
+          },
+          "book": "rec",
+          "q": "Indoo Songdo, Triple Street, Songdo, Yeonsu-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-kids-places"
+        },
+        {
+          "name": {
+            "en": "Tri-Bowl",
+            "th": "ทรีโบวล์"
+          },
+          "local": "트라이보울",
+          "kind": "culture",
+          "area": {
+            "en": "Songdo Central Park, Yeonsu-gu",
+            "th": "ซงโดเซ็นทรัลปาร์ก ยอนซูกู"
+          },
+          "what": {
+            "en": "Three bowl-shaped buildings with changing exhibitions and children's programmes, indoors and outdoors",
+            "th": "อาคารทรงชามสามหลัง มีนิทรรศการหมุนเวียนและกิจกรรมสำหรับเด็ก ทั้งในร่มและกลางแจ้ง"
+          },
+          "why": {
+            "en": "Children's programmes are mostly free; a walk in Songdo Central Park can follow",
+            "th": "กิจกรรมสำหรับเด็กส่วนใหญ่ฟรี และเดินเล่นต่อในซงโดเซ็นทรัลปาร์กได้"
+          },
+          "tip": {
+            "en": "Pairs well with the World Writing Systems Museum, close by",
+            "th": "ไปคู่กับพิพิธภัณฑ์อักษรโลกที่อยู่ใกล้ๆ ได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tri-Bowl, Songdo Central Park, Yeonsu-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/songdo-kids-places"
+        },
+        {
+          "name": {
+            "en": "Sorae Port Fish Market",
+            "th": "ตลาดปลาท่าเรือโซเร"
+          },
+          "local": "소래포구",
+          "kind": "market",
+          "area": {
+            "en": "Namdong-gu",
+            "th": "นัมดงกู"
+          },
+          "what": {
+            "en": "Seaside fish market with fresh shrimp, salted seafood and crab, with gulls overhead",
+            "th": "ตลาดปลาริมทะเล มีกุ้งสด อาหารทะเลหมักเกลือและปู มีนางนวลบินอยู่เหนือหัว"
+          },
+          "why": {
+            "en": "The renovated market has a baby café and family facilities on its second floor",
+            "th": "ตลาดที่ปรับปรุงใหม่มีคาเฟ่เลี้ยงเด็กและสิ่งอำนวยความสะดวกสำหรับครอบครัวบนชั้นสอง"
+          },
+          "tip": {
+            "en": "Open all year; parking is free",
+            "th": "เปิดตลอดปี จอดรถฟรี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Sorae Fish Market, Namdong-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-places-to-visit"
+        },
+        {
+          "name": {
+            "en": "Open Port Street",
+            "th": "ถนนเกฮังจัง"
+          },
+          "local": "개항장 거리",
+          "kind": "oldtown",
+          "area": {
+            "en": "Gwandong-1-ga, Jung-gu",
+            "th": "ควันดง 1 กา จุงกู"
+          },
+          "what": {
+            "en": "Street of old Open Port buildings from the late 1800s, with former Chinese and Japanese settlement borders and Western-style buildings",
+            "th": "ถนนอาคารยุคเปิดท่าเรือปลายศตวรรษที่ 19 มีแนวเขตชุมชนจีนและญี่ปุ่นเดิมและอาคารสไตล์ตะวันตก"
+          },
+          "why": {
+            "en": "Free and open all year; Chinatown and the Jjajangmyeon Museum are nearby",
+            "th": "ฟรีและเปิดตลอดปี ใกล้ไชน่าทาวน์และพิพิธภัณฑ์จาจังมยอน"
+          },
+          "tip": {
+            "en": "No parking; book a heritage guide in advance if you want one",
+            "th": "ไม่มีที่จอดรถ หากต้องการไกด์นำชมมรดกทางวัฒนธรรมให้จองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Incheon Open Port District, Jung-gu, Incheon",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/incheon-places-to-visit"
         }
       ]
     }

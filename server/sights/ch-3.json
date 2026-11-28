@@ -263,6 +263,430 @@
           "q": "Parc La Grange, Quai Gustave-Ador, Geneva",
           "ok": "2026-11",
           "src": "https://www.myswitzerland.com/en/experiences/cities-culture/city-parks-and-squares-search/-/geneva/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+          "name": {
+            "th": "บัวเดอลาบาตี",
+            "en": "Bois de la Bâtie"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เจนีวา ริมแม่น้ำโรน",
+            "en": "Geneva, by the Rhône"
+          },
+          "what": {
+            "th": "ฟาร์มในเมืองและสนามเด็กเล่นขนาดใหญ่กลางธรรมชาติ",
+            "en": "A city farm and a huge playground in the middle of nature"
+          },
+          "why": {
+            "th": "มีสัตว์ในฟาร์มและสนามเด็กเล่นใหญ่ในที่เดียว",
+            "en": "Farm animals and a big playground in one place"
+          },
+          "q": "Bois de la Bâtie, Genève",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+          "name": {
+            "th": "แอร์ลูป",
+            "en": "AIRLOOP"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลองซี",
+            "en": "Lancy"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีน",
+            "en": "A trampoline park"
+          },
+          "why": {
+            "th": "แทรมโพลีนสนุกๆ ที่เด็กได้เล่นโต้ตอบ",
+            "en": "Fun, interactive trampolines for children"
+          },
+          "q": "AIRLOOP, Route des Jeunes 28, Lancy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parc Aventure des Evaux",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+          "name": {
+            "th": "สวนผจญภัยเจนีวา เอโว",
+            "en": "Geneva Adventure Park (Evaux)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เลเอโว ออนเน็กซ์",
+            "en": "Les Evaux, Onex"
+          },
+          "what": {
+            "th": "สวนผจญภัยบนต้นไม้ มีซิปไลน์",
+            "en": "A treetop adventure park with zip lines"
+          },
+          "why": {
+            "th": "มีซิปไลน์และเส้นทางบนต้นไม้สำหรับเด็กชอบปีน",
+            "en": "Zip lines and tree courses for children who like to climb"
+          },
+          "tip": { "en": "Closed in winter; open about March to November, closed on Mondays", "th": "ปิดช่วงหน้าหนาว เปิดราว มี.ค.–พ.ย. ปิดวันจันทร์" },
+          "q": "Geneva Adventure Park, Les Evaux, Onex",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.chaplinsworld.com/en/",
+          "name": {
+            "th": "แชปลินส์เวิลด์",
+            "en": "Chaplin’s World"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "กอร์ซิเยซูร์เวอแว",
+            "en": "Corsier-sur-Vevey"
+          },
+          "what": {
+            "th": "บ้านของชาร์ลี แชปลินและครอบครัว มีพิพิธภัณฑ์และสวนเหนือทะเลสาบ",
+            "en": "Charlie Chaplin’s family home, with a museum and a park above the lake"
+          },
+          "why": {
+            "th": "มีสวนให้วิ่งเล่นและชมวิว",
+            "en": "A park to play in and enjoy the view"
+          },
+          "tip": {
+            "th": "เวลาเปิดเปลี่ยนตามฤดู ปกติ 10:00 ถึง 18:00 หรือ 17:00 หน้าหนาวปิดเร็วกว่า",
+            "en": "Hours change with the seasons, usually 10:00 to 18:00 or 17:00, shorter in winter"
+          },
+          "q": "Chaplin's World, Route de Fenil 2, Corsier-sur-Vevey",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/the-olympic-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์โอลิมปิก",
+            "en": "The Olympic Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อูชี โลซาน",
+            "en": "Ouchy, Lausanne"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์โอลิมปิกริมทะเลสาบ มีนิทรรศการถาวรเรื่องที่มาของการแข่งขัน",
+            "en": "The Olympic Museum by the lake, with a permanent exhibition on how the Games began"
+          },
+          "why": {
+            "th": "ได้ลองเล่นเยอะ มีจอใหญ่ฉายช่วงเวลาดีที่สุดของโอลิมปิก",
+            "en": "Very interactive, with a huge screen of the best Olympic moments"
+          },
+          "tip": {
+            "th": "เปิดอังคารถึงอาทิตย์ 9:00–18:00 ปิดวันจันทร์ ยกเว้นวันหยุด",
+            "en": "Tuesday to Sunday 9:00–18:00, closed Mondays except holidays"
+          },
+          "q": "The Olympic Museum, Quai d’Ouchy 1, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/aquatis-aquarium-vivarium-lausanne/",
+          "name": {
+            "th": "อควาติส อควาเรียม-วิวาเรียม",
+            "en": "AQUATIS Aquarium-Vivarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "โลซาน",
+            "en": "Lausanne"
+          },
+          "what": {
+            "th": "อควาเรียม-วิวาเรียมน้ำจืดใหญ่ที่สุดในสวิตเซอร์แลนด์ เดินทางผ่านห้าทวีป",
+            "en": "Switzerland’s largest freshwater aquarium-vivarium, a journey across five continents"
+          },
+          "why": {
+            "th": "เหมาะกับวันฝนตก",
+            "en": "Made for a rainy day"
+          },
+          "q": "AQUATIS Aquarium-Vivarium, Route de Berne 144, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/the-sauvabelin-site/",
+          "name": {
+            "th": "โซวาเบอแลง",
+            "en": "Sauvabelin"
+          },
+          "kind": "park",
+          "area": {
+            "th": "บนเนินเหนือโลซาน",
+            "en": "Above Lausanne"
+          },
+          "what": {
+            "th": "สวนเหนือเมืองโลซาน มีสัตว์ฟาร์มและสัตว์ป่า ทะเลสาบ และหอโซวาเบอแลง",
+            "en": "A park above Lausanne with farm and forest animals, a lake and the Sauvabelin Tower"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นเล็กๆ และโต๊ะปิกนิก",
+            "en": "A small play area with picnic tables"
+          },
+          "q": "Lac de Sauvabelin, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Naturéum – département de zoologie",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/vaud-zoology-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์สัตววิทยา พระราชวังรูมีน",
+            "en": "Zoology museum, Palais de Rumine"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "พระราชวังรูมีน โลซาน",
+            "en": "Palais de Rumine, Lausanne"
+          },
+          "what": {
+            "th": "สัตว์จากทั่วโลกในนิทรรศการถาวร เข้าฟรี",
+            "en": "Animals from around the world in a free permanent exhibition"
+          },
+          "why": {
+            "th": "มีสัตว์จากทุกทวีปให้ดูใกล้ๆ",
+            "en": "Animals from every continent to look at up close"
+          },
+          "q": "Naturéum, Palais de Rumine, Place de la Riponne 6, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/lausanne-botanical-museum-and-garden/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์โลซาน",
+            "en": "Lausanne Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "มงทริยง โลซาน",
+            "en": "Montriond, Lausanne"
+          },
+          "what": {
+            "th": "พืชหลายพันชนิด เรือนกระจก สวนหิน และทางเดินร่มรื่น",
+            "en": "Thousands of plant species, greenhouses, rock gardens and shady paths"
+          },
+          "why": {
+            "th": "เดินเล่นในเรือนกระจกและสวนหิน",
+            "en": "Greenhouses and rock gardens to wander through"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน",
+            "en": "Open every day"
+          },
+          "q": "Lausanne Botanical Garden, Avenue de Cour 14B, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.montreuxriviera.com/en/PA456/blog/all-to-the-beach",
+          "name": {
+            "th": "ชายหาดเลอปิเยริเย",
+            "en": "Le Pierrier beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "กลาร็อง มองเทรอซ์",
+            "en": "Clarens, Montreux"
+          },
+          "what": {
+            "th": "ชายหาดริมทะเลสาบ มีวอลเลย์บอล ปิงปอง และเช่าบอร์ดยืนพายกับคายัค",
+            "en": "A lake beach with volleyball, table tennis, paddleboards and kayaks to hire"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นและที่พักระหว่างว่ายน้ำ",
+            "en": "A playground and room to rest between swims"
+          },
+          "q": "Pierrier - Montreux Plage, Chemin du Pierrier, Clarens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Pataugeoire du parc des Franchises",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.geneve.ch/pataugeoire-parc-franchises",
+          "name": {
+            "th": "สระตื้นในสวนฟร็องชีซ",
+            "en": "Franchises park paddling pool"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนชาเตอแลน เจนีวา",
+            "en": "Avenue de Châtelaine, Geneva"
+          },
+          "what": {
+            "th": "สระตื้นของเมืองในสวนฟร็องชีซ",
+            "en": "A city paddling pool in the Franchises park"
+          },
+          "why": {
+            "th": "สระน้ำตื้นสำหรับเด็กเล็กหน้าร้อน",
+            "en": "A shallow pool for small children in summer"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าร้อน",
+            "en": "Summer only"
+          },
+          "q": "Pataugeoire du parc des Franchises, Av. de Châtelaine, Genève",
+          "ok": "2026-11"
         }
       ]
     },
@@ -523,6 +947,47 @@
           "q": "Walk of Climb, Bahnhofstrasse, Zermatt",
           "ok": "2026-11",
           "src": "https://www.zermatt.swiss/en/p/walk-of-climb-01tVj000005DnWHIA0"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://swissfamilyfun.com/zermatt-guide/",
+          "name": {
+            "th": "หุบผากอร์เนอร์",
+            "en": "Gorner Gorge (Gornerschlucht)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บนทางเดินจากฟูรีลงมาหมู่บ้าน แซร์มัท",
+            "en": "on the trail from Furi down to the village, Zermatt"
+          },
+          "what": {
+            "th": "ทางเดินไม้ผ่านหุบผาแคบ บนทางเดินลงจากฟูรี",
+            "en": "Wooden walkways through a narrow gorge on the walk down from Furi"
+          },
+          "why": {
+            "th": "นั่งกระเช้าไปฟูรีกับเด็กเล็ก แล้วเดินลงผ่านหุบผา",
+            "en": "Take the gondola to Furi with younger children, then walk down through the gorge"
+          },
+          "tip": {
+            "th": "มีค่าเข้าเล็กน้อย",
+            "en": "A small entry fee"
+          },
+          "q": "Gornerschlucht, Zermatt",
+          "ok": "2026-11"
         }
       ]
     },
@@ -798,7 +1263,360 @@
       {"name":{"en":"Strandbad Mythenquai","th":"สแตรนด์บัด มิเธนไกว"},"kind":"beach","area":{"en":"Mythenquai","th":"มิเธนไกว"},"what":{"en":"A sandy beach with grassy areas, a non-swimmer section in the lake and a diving tower.","th":"ชายหาดทรายที่มีพื้นหญ้า มีโซนสำหรับคนว่ายน้ำไม่เป็นในทะเลสาบ และหอกระโดดน้ำ"},"why":{"en":"The page says younger children play near the water while older ones swim further out.","th":"หน้าเว็บบอกว่าเด็กเล็กเล่นใกล้น้ำ ส่วนเด็กโตว่ายออกไปไกลกว่า"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Strandbad Mythenquai, Zurich","ok":"2026-11","src":"https://www.iszn.ch/blog/what-to-do-in-zurich-in-summer/"},
       {"name":{"en":"Chinese Garden Zurich","th":"สวนจีนซูริก"},"kind":"park","area":{"en":"Zürichhorn","th":"ซูริคฮอร์น"},"what":{"en":"A small Chinese garden with ponds, pavilions and quiet corners.","th":"สวนจีนขนาดเล็กที่มีบ่อ ศาลาและมุมเงียบ"},"why":{"en":"The page calls it a calm break during a summer day by the lake.","th":"หน้าเว็บเรียกว่าเป็นที่พักที่สงบในวันฤดูร้อนริมทะเลสาบ"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Chinese Garden Zurich, Zürichhorn, Zurich","ok":"2026-11","src":"https://www.iszn.ch/blog/what-to-do-in-zurich-in-summer/"},
       {"name":{"en":"Zurich Succulent Plant Collection","th":"คอลเลกชันพืชอวบน้ำซูริก"},"kind":"park","area":{"en":"Mythenquai","th":"มิเธนไกว"},"what":{"en":"A free collection of unusual succulent plants near Mythenquai.","th":"คอลเลกชันพืชอวบน้ำแปลกๆ ฟรี อยู่ใกล้มิเธนไกว"},"why":{"en":"The page says the plants look strange and sculptural, and children often enjoy them.","th":"หน้าเว็บบอกว่าต้นไม้ดูแปลกและเป็นงานปั้น เด็กมักชอบ"},"ages":[1,2,2,1],"hrs":1,"io":"both","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Zurich Succulent Plant Collection, Mythenquai, Zurich","ok":"2026-11","src":"https://www.iszn.ch/blog/what-to-do-in-zurich-in-summer/"},
-      {"name":{"en":"Oberer Letten","th":"โอเบอเรอเลตเทน"},"kind":"beach","area":{"en":"Limmat, Zurich","th":"ลิมมัท ซูริก"},"what":{"en":"River swimming in the Limmat, around Oberer Letten and Unterer Letten.","th":"ว่ายน้ำในแม่น้ำลิมมัท รอบโอเบอเรอเลตเทนและอูนเทอเรอเลตเทน"},"why":{"en":"The page suggests it for older children who are confident swimmers.","th":"หน้าเว็บแนะนำให้เด็กโตที่ว่ายน้ำได้มั่นใจ"},"tip":{"en":"The page says to check entry and exit points, water conditions and safety guidance before swimming in the river.","th":"หน้าเว็บบอกให้เช็กจุดลงและขึ้น สภาพน้ำ และคำแนะนำความปลอดภัยก่อนว่ายในแม่น้ำ"},"ages":[0,0,1,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Oberer Letten, Limmat, Zurich","ok":"2026-11","src":"https://www.iszn.ch/blog/what-to-do-in-zurich-in-summer/"}
+      {"name":{"en":"Oberer Letten","th":"โอเบอเรอเลตเทน"},"kind":"beach","area":{"en":"Limmat, Zurich","th":"ลิมมัท ซูริก"},"what":{"en":"River swimming in the Limmat, around Oberer Letten and Unterer Letten.","th":"ว่ายน้ำในแม่น้ำลิมมัท รอบโอเบอเรอเลตเทนและอูนเทอเรอเลตเทน"},"why":{"en":"The page suggests it for older children who are confident swimmers.","th":"หน้าเว็บแนะนำให้เด็กโตที่ว่ายน้ำได้มั่นใจ"},"tip":{"en":"The page says to check entry and exit points, water conditions and safety guidance before swimming in the river.","th":"หน้าเว็บบอกให้เช็กจุดลงและขึ้น สภาพน้ำ และคำแนะนำความปลอดภัยก่อนว่ายในแม่น้ำ"},"ages":[0,0,1,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Oberer Letten, Limmat, Zurich","ok":"2026-11","src":"https://www.iszn.ch/blog/what-to-do-in-zurich-in-summer/"},
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 10 เด็กคลาน · CHF 18 เด็กเดินได้",
+            "en": "≈ CHF 10 crawlers · CHF 18 walkers"
+          },
+          "book": "none",
+          "src": "https://mycation.ch/fuenf-indoor-spielplaetze-in-zuerich-im-vergleich/",
+          "name": {
+            "th": "คิดส์เพลย์แลนด์",
+            "en": "Kids Playland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโฮลชตราสเซอ อัลท์ชเต็ทเทิน",
+            "en": "Hohlstrasse, Altstetten"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มแบบนุ่ม มีปีนป่าย อุโมงค์ สะพานเชือก และสไลเดอร์ลงบ่อบอล",
+            "en": "An indoor soft-play land with climbing, tunnels, a rope bridge and a slide into a ball pit"
+          },
+          "why": {
+            "th": "มีมุมงานประดิษฐ์ มุมเล่น และบ่อตัวต่อไม้",
+            "en": "Craft and play corners and a wooden-block sandpit too"
+          },
+          "tip": {
+            "th": "เปิดจันทร์ถึงเสาร์ตั้งแต่ 10:00 วันอาทิตย์ตั้งแต่ 10:30",
+            "en": "Open Monday to Saturday from 10:00, Sunday from 10:30"
+          },
+          "q": "KIDS PLAYLAND, Hohlstrasse 461, Zürich",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spielsaal im GZ Hirzenbach",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี ไม่ต้องลงทะเบียน",
+            "en": "Free, no sign-up needed"
+          },
+          "book": "none",
+          "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+          "name": {
+            "th": "ห้องเล่น ศูนย์ชุมชนฮีร์เซินบัค",
+            "en": "Play hall, GZ Hirzenbach"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชวาเมนดิงเงิน เขต 12",
+            "en": "Schwamendingen, Kreis 12"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่มฟรีสำหรับเด็กก่อนวัยเรียน ในศูนย์ชุมชน",
+            "en": "A free indoor play hall for pre-school children in a community centre"
+          },
+          "why": {
+            "th": "มีที่ให้เล่นและเคลื่อนไหวในวันหนาวหรือฝนตก",
+            "en": "Room to play and move on a cold or wet day"
+          },
+          "tip": {
+            "th": "ต.ค.–เม.ย. วันอังคาร 14–17 น. วันพฤหัสฯ 10–17 น.",
+            "en": "October to April: Tuesday 14–17, Thursday 10–17"
+          },
+          "q": "GZ Hirzenbach, Helen-Keller-Strasse 55, Zürich",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Indoor Spielplatz Bäckeranlage",
+          "ages": [
+            2,
+            1,
+            0,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี ไม่ต้องลงทะเบียน",
+            "en": "Free, no sign-up needed"
+          },
+          "book": "none",
+          "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+          "name": {
+            "th": "ที่เล่นในร่ม เบคเคอร์อันลาเกอ",
+            "en": "Indoor play, Bäckeranlage"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโฮลชตราสเซอ เขต 4",
+            "en": "Hohlstrasse, Kreis 4"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่มฟรี มีเบาะ เครื่องกีดขวาง และผ้าทำเต็นท์ สำหรับเด็กไม่เกิน 4 ขวบ",
+            "en": "A free indoor play room with mats, obstacles and cloth tents for children up to four"
+          },
+          "why": {
+            "th": "มีเบาะให้กลิ้งเล่น และผ้าให้สร้างบ้าน",
+            "en": "Mats to romp on and cloths to build a den with"
+          },
+          "tip": {
+            "th": "ต.ค.–เม.ย. บางวันพฤหัสฯ 9:30–12 น. ปิดช่วงปิดเทอม",
+            "en": "October to April, some Thursdays 9:30–12, not in school holidays"
+          },
+          "q": "Quartierzentrum Bäckeranlage, Hohlstrasse 67, Zürich",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Indoorspielplatz im GZ Oerlikon",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี ไม่ต้องลงทะเบียน",
+            "en": "Free, no sign-up needed"
+          },
+          "book": "none",
+          "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+          "name": {
+            "th": "ที่เล่นในร่ม ศูนย์ชุมชนเออร์ลิคอน",
+            "en": "Indoor play, GZ Oerlikon"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เออร์ลิคอน",
+            "en": "Oerlikon"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มฟรีในศูนย์ชุมชน มีโรงอาหาร",
+            "en": "A free indoor play space in a community centre with a cafeteria"
+          },
+          "why": {
+            "th": "มีที่ให้เล่นและสำรวจ ใกล้โรงอาหาร",
+            "en": "Room to play and explore, with the cafeteria close by"
+          },
+          "tip": {
+            "th": "จันทร์ 13:30–17 น. อังคาร–ศุกร์ 9–17 น. อาทิตย์ 14–18 น.",
+            "en": "Monday 13:30–17, Tuesday to Friday 9–17, Sunday 14–18"
+          },
+          "q": "GZ Oerlikon, Gubelstrasse 10, Zürich",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Indoorspielplatz im GZ Höngg",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี ไม่ต้องลงทะเบียน",
+            "en": "Free, no sign-up needed"
+          },
+          "book": "none",
+          "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+          "name": {
+            "th": "ที่เล่นในร่ม ศูนย์ชุมชนเฮิงก์",
+            "en": "Indoor play, GZ Höngg"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เฮิงก์ เขต 10",
+            "en": "Höngg, Kreis 10"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มฟรี มีรถขาไถ ตาข่ายปีน และชิงช้า",
+            "en": "A free indoor play space with ride-on cars, a climbing net and swings"
+          },
+          "why": {
+            "th": "ของเล่นเยอะ มีกาแฟและชาให้ผู้ใหญ่",
+            "en": "Lots of toys, and coffee and tea for the grown-ups"
+          },
+          "q": "GZ Höngg, Limmattalstrasse 214, Zürich",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Indoorspielplatz im Zentrum Krokodil",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี ไม่ต้องลงทะเบียน",
+            "en": "Free, no sign-up needed"
+          },
+          "book": "none",
+          "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+          "name": {
+            "th": "ที่เล่นในร่ม ศูนย์ครอบครัวโครโคดิล",
+            "en": "Indoor play, Zentrum Krokodil"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชวาเมนดิงเงิน เขต 12",
+            "en": "Schwamendingen, Kreis 12"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มฟรีในศูนย์ครอบครัว อยู่ห้องเดียวกับคาเฟ่",
+            "en": "A free indoor play space in a family centre, in the same room as its café"
+          },
+          "why": {
+            "th": "เด็กเล่น พ่อแม่นั่งดื่มกาแฟในห้องเดียวกัน",
+            "en": "Children play while parents have a coffee in the same room"
+          },
+          "q": "Familienzentrum Krokodil, Friedrichstrasse 9, Zürich",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nume.ch/wohin-in-zuerich-mit-kindern-events-preise-2026/",
+          "name": {
+            "th": "รถรางไต่เขาโพลีบาห์น",
+            "en": "Polybahn funicular"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เซ็นทรัล ริมแม่น้ำลิมมัต",
+            "en": "Central, by the Limmat"
+          },
+          "what": {
+            "th": "นั่งรถรางไต่เขาสั้นๆ ขึ้นไปชมวิวเมือง",
+            "en": "A short funicular ride up to a view over the city"
+          },
+          "why": {
+            "th": "นั่งสั้นๆ ได้วิว",
+            "en": "A short ride with a view"
+          },
+          "q": "UBS Polybahn, Limmatquai 144, Zürich",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.nume.ch/wohin-in-zuerich-mit-kindern-events-preise-2026/",
+          "name": {
+            "th": "อุทยานสัตว์ป่าลังเงินแบร์ก",
+            "en": "Wildnispark Langenberg"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ลังเนาอัมอัลบิส",
+            "en": "Langnau am Albis"
+          },
+          "what": {
+            "th": "อุทยานสัตว์ป่ากว้างแบบธรรมชาติ มีสัตว์ท้องถิ่น เช่น ลิงซ์ หมาป่า และกวาง",
+            "en": "A large, natural wildlife park with native animals such as lynx, wolves and deer"
+          },
+          "why": {
+            "th": "ได้ดูลิงซ์ หมาป่า และกวาง เที่ยวได้ครึ่งวัน",
+            "en": "Lynx, wolves and deer to watch, good for half a day"
+          },
+          "q": "Wildnispark Zürich Langenberg, Langnau am Albis",
+          "ok": "2026-11"
+        },
+        {
+          "local": "KULTURAMA Museum des Menschen",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.kulturama.ch/",
+          "name": {
+            "th": "พิพิธภัณฑ์มนุษย์ คุลทูรามา",
+            "en": "KULTURAMA Museum of Humankind"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฮอตทิงเงิน",
+            "en": "Hottingen"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่ได้ลงมือเรื่องมนุษย์ วิวัฒนาการ และวัฒนธรรม มีเวิร์กช็อปเด็ก",
+            "en": "A hands-on museum about people, evolution and culture, with workshops for children"
+          },
+          "why": {
+            "th": "มีเวิร์กช็อป และทัวร์กลางคืนถือไฟฉายเอง",
+            "en": "Workshops, and a night tour with your own torch"
+          },
+          "tip": {
+            "th": "เปิดอังคาร พฤหัสฯ และศุกร์ 13:00–17:00",
+            "en": "Open Tuesday, Thursday and Friday 13:00–17:00"
+          },
+          "q": "KULTURAMA Museum des Menschen, Englischviertelstrasse 9, Zürich",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

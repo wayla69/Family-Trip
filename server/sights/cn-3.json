@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "cn-harbin",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Harbin Ice and Snow World", "th": "ฮาร์บินไอซ์แอนด์สโนว์เวิลด์" },
@@ -255,6 +254,807 @@
           "q": "松花江冰雪嘉年华, Songhua River, Harbin",
           "ok": "2026-11",
           "src": "https://m.heb.bendibao.com/xiuxian/80720.shtm"
+        },
+        {
+          "local": "黑龙江省科学技术馆",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://offpeaktrip.com/en/guide/haerbin/Heilongjiang%20Science%20and%20Technology%20Museum",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีเฮยหลงเจียง",
+            "en": "Heilongjiang Science and Technology Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เกาะสุริยัน ซงเป่ย ฮาร์บิน",
+            "en": "Sun Island, Songbei, Harbin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ทันสมัยย่านเกาะสุริยัน",
+            "en": "A modern popular-science museum in the Sun Island area"
+          },
+          "why": {
+            "th": "เข้าชมฟรี",
+            "en": "Free to visit"
+          },
+          "tip": {
+            "th": "เปิด 09:00–16:00 เช็กเวลาล่าสุดก่อนไป",
+            "en": "Open 09:00–16:00; check the latest hours before you go"
+          },
+          "q": "黑龙江省科学技术馆, 太阳大道1458号, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "哈尔滨市儿童公园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%93%88%E5%B0%94%E6%BB%A8%E5%B8%82%E5%84%BF%E7%AB%A5%E5%85%AC%E5%9B%AD&city=230100",
+          "name": {
+            "th": "สวนเด็กฮาร์บิน",
+            "en": "Harbin Children’s Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนกั๋วเกอลี่ หนานกั่ง",
+            "en": "295 Guogeli Street, Nangang"
+          },
+          "what": {
+            "th": "สวนเด็กของเมือง ครอบครัวชอบมา มีเครื่องเล่นกลางแจ้ง",
+            "en": "The city’s children’s park, much loved by families, with outdoor play"
+          },
+          "why": {
+            "th": "สวนกลางแจ้งที่ทำมาสำหรับเด็กและครอบครัว",
+            "en": "An outdoor park made for children and families"
+          },
+          "q": "哈尔滨市儿童公园, 果戈里大街295号, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "松松小镇 乐松购物广场店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%9D%BE%E6%9D%BE%E5%B0%8F%E9%95%87(%E4%B9%90%E6%9D%BE%E8%B4%AD%E7%89%A9%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "name": {
+            "th": "เมืองซงซง เล่อซงพลาซ่า",
+            "en": "Songsong Town (Lesong Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เล่อซงพลาซ่า ชั้น 3 ถนนซานต้าต้งลี่ เซียงฟาง",
+            "en": "Lesong Plaza 3F, Sandadongli Road, Xiangfang"
+          },
+          "what": {
+            "th": "เมืองเล่นในร่มอุ่นสบาย มีบ่อทรายขุดฟอสซิล สัตว์ให้ใกล้ชิด และงานประดิษฐ์",
+            "en": "A warm indoor play town with a fossil sandpit, animals to meet and crafts"
+          },
+          "why": {
+            "th": "ข้างในอุ่น เหมาะวันที่ข้างนอกหนาวจัด",
+            "en": "Warm inside when it is freezing outside"
+          },
+          "tip": {
+            "th": "เครื่องเล่นบางอย่างจ่ายเพิ่ม",
+            "en": "Some rides cost extra"
+          },
+          "q": "松松小镇 乐松购物广场店, 三大动力路8号, 香坊区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "逃离星球儿童益智探索乐园 乐松店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%80%83%E7%A6%BB%E6%98%9F%E7%90%83%E5%84%BF%E7%AB%A5%E7%9B%8A%E6%99%BA%E6%8E%A2%E7%B4%A2%E4%B9%90%E5%9B%AD(%E4%B9%90%E6%9D%BE%E5%BA%97)&city=230100",
+          "name": {
+            "th": "ห้องปริศนาเด็ก เอสเคปแพลนเน็ต เล่อซง",
+            "en": "Escape Planet Children’s Puzzle Rooms (Lesong)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เล่อซงพลาซ่า ชั้น 3 เซียงฟาง",
+            "en": "Lesong Plaza 3F, Xiangfang"
+          },
+          "what": {
+            "th": "ห้องหนีปริศนาสำหรับเด็ก มีหลายธีม",
+            "en": "Escape rooms made for children, with several themes"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล่นติดกัน 5 ธีมและสนุกมาก",
+            "en": "A reviewer’s child played five themes in a row and loved it"
+          },
+          "q": "逃离星球儿童益智探索乐园, 乐松广场3楼, 香坊区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "万达宝贝王儿童乐园 哈西万达广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%87%E8%BE%BE%E5%AE%9D%E8%B4%9D%E7%8E%8B%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E5%93%88%E5%B0%94%E6%BB%A8%E5%93%88%E8%A5%BF%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "name": {
+            "th": "วั่นต๋าคิดส์เพลส ฮาซีวั่นต๋า",
+            "en": "Wanda Kidsplace (Haxi Wanda Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วั่นต๋าพลาซ่า ชั้น 2 ถนนจงซิง หนานกั่ง",
+            "en": "Wanda Plaza 2F, Zhongxing Avenue, Nangang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มสำหรับเด็ก 0–12 ปี มีโซนเบาะ สไลเดอร์ บ่อบอล และบทบาทสมมุติ",
+            "en": "An indoor play park for ages 0–12 with soft play, slides, a ball pool and role play"
+          },
+          "why": {
+            "th": "มีล็อกเกอร์ และมีเครื่องเล่นสำหรับทุกวัยตั้งแต่ทารก",
+            "en": "Lockers and play for every age from babies up"
+          },
+          "q": "万达宝贝王儿童乐园 哈西万达广场店, 中兴大道168号, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "魔法星球",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E9%AD%94%E6%B3%95%E6%98%9F%E7%90%83&city=230100",
+          "name": {
+            "th": "เมจิกแพลนเน็ต จินเจวี๋ยว่านเซี่ยง",
+            "en": "Magic Planet (Jinjue Wanxiang)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จินเจวี๋ยว่านเซี่ยงพลาซ่า ชั้น 3 ฮาซี หนานกั่ง",
+            "en": "Jinjue Wanxiang Plaza 3F, Haxi, Nangang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบทบาทสมมุติ",
+            "en": "An indoor play park with role play"
+          },
+          "why": {
+            "th": "พ่อแม่เข้าไปกับลูกหรือรอข้างนอกก็ได้ รอบหนึ่งราวครึ่งชั่วโมง",
+            "en": "Parents can go in with the child or wait outside; a round takes about half an hour"
+          },
+          "q": "魔法星球, 金爵万象商业广场F3, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "疯狂的毛哩 金爵万象商业广场店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%96%AF%E7%8B%82%E7%9A%84%E6%AF%9B%E5%93%A9(%E9%87%91%E7%88%B5%E4%B8%87%E8%B1%A1%E5%95%86%E4%B8%9A%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "name": {
+            "th": "เครซี่เหมาลี่ จินเจวี๋ยว่านเซี่ยง",
+            "en": "Crazy Maoli (Jinjue Wanxiang)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จินเจวี๋ยว่านเซี่ยงพลาซ่า ชั้น 2 ฮาซี หนานกั่ง",
+            "en": "Jinjue Wanxiang Plaza 2F, Haxi, Nangang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีงานประดิษฐ์",
+            "en": "An indoor play park with crafts"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเหมาะพาเด็กมามาก",
+            "en": "Reviewers say it is just right for bringing children"
+          },
+          "q": "疯狂的毛哩 金爵万象商业广场店, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "淘鸭逃呀儿童探案馆 红博中央公园店",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B7%98%E9%B8%AD%E9%80%83%E5%91%80%E5%84%BF%E7%AB%A5%E6%8E%A2%E6%A1%88%E9%A6%86(%E7%BA%A2%E5%8D%9A%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9B%AD%E5%BA%97)&city=230100",
+          "name": {
+            "th": "บ้านนักสืบเด็กเถาย่า หงปั๋ว",
+            "en": "Taoya Children’s Detective House (Hongbo Central Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "หงปั๋วเซ็นทรัลพาร์ก ชั้น B1 หนานกั่ง",
+            "en": "Hongbo Central Park B1, Nangang"
+          },
+          "what": {
+            "th": "บ้านเล่นเกมนักสืบสำหรับเด็ก",
+            "en": "A detective-game play house for children"
+          },
+          "why": {
+            "th": "เกมปริศนาในร่มสำหรับเด็ก",
+            "en": "Puzzle play indoors for children"
+          },
+          "q": "淘鸭逃呀儿童探案馆 红博中央公园店, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "悠悠宝贝海盗主题乐园 红博中央公园店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%82%A0%E6%82%A0%E5%AE%9D%E8%B4%9D%E6%B5%B7%E7%9B%97%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E7%BA%A2%E5%8D%9A%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9B%AD%E5%BA%97)&city=230100",
+          "name": {
+            "th": "สวนโจรสลัดโหยวโหยว หงปั๋ว",
+            "en": "Youyou Baby Pirate Park (Hongbo Central Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "หงปั๋วเซ็นทรัลพาร์ก ชั้น B1 หนานกั่ง",
+            "en": "Hongbo Central Park B1, Nangang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มธีมโจรสลัด",
+            "en": "A pirate-themed indoor play park"
+          },
+          "why": {
+            "th": "มีโซนสำหรับทารกและเด็กเล็ก และกิจกรรมพ่อแม่ลูก",
+            "en": "Play areas for babies and small children, and activities for parents and children"
+          },
+          "q": "悠悠宝贝海盗主题乐园 红博中央公园店, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "波塞冬海底世界",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B3%A2%E5%A1%9E%E5%86%AC%E6%B5%B7%E5%BA%95%E4%B8%96%E7%95%8C&city=230100",
+          "name": {
+            "th": "โพไซดอนโอเชียนเวิลด์ หูหลาน",
+            "en": "Poseidon Ocean World (Hulan)"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "ถนนฮุ่ยเจียง หูหลาน (เหนือแม่น้ำซงฮัว)",
+            "en": "Huijiang Road, Hulan (north of the Songhua)"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตว์น้ำขนาดใหญ่ มีอุโมงค์ใต้ทะเลลึก และโชว์โลมา วอลรัส และสิงโตทะเล",
+            "en": "A big aquarium with a deep-sea tunnel and dolphin, walrus and sea lion shows"
+          },
+          "why": {
+            "th": "อยู่ในร่มหลบหนาวของฮาร์บิน ผู้รีวิวบอกว่าเด็กติดใจโชว์",
+            "en": "Indoors in the Harbin cold; reviewers say children are gripped by the shows"
+          },
+          "tip": {
+            "th": "วันหยุดคนเยอะ ควรจองที่นั่งดูโชว์หลักแต่เนิ่นๆ",
+            "en": "Busy on holidays: find seats early for the main shows"
+          },
+          "q": "波塞冬海底世界, 汇江路153号, 呼兰区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "世界欢乐城",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%96%E7%95%8C%E6%AC%A2%E4%B9%90%E5%9F%8E&city=230100",
+          "name": {
+            "th": "เวิลด์จอยซิตี้ หูหลาน",
+            "en": "World Joy City (Hulan)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเหม่ยซู่เจีย หูหลาน",
+            "en": "Meishujia Avenue, Hulan"
+          },
+          "what": {
+            "th": "สวนสนุกที่มีโชว์แสงไฟ และโซนเล่นในร่มขนาดใหญ่มีสไลเดอร์และปีนป่าย",
+            "en": "A theme park with light shows and a big indoor play area of slides and climbing"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าลูกเล่นในโซนเด็กได้ราวสามชั่วโมง",
+            "en": "Reviewers say their children played about three hours in the play area"
+          },
+          "q": "世界欢乐城, 美术家大街666号, 呼兰区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "哈尔滨文化公园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%93%88%E5%B0%94%E6%BB%A8%E6%96%87%E5%8C%96%E5%85%AC%E5%9B%AD&city=230100",
+          "name": {
+            "th": "สวนวัฒนธรรมฮาร์บิน",
+            "en": "Harbin Culture Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหนานทง หนานกั่ง",
+            "en": "Nantong Street, Nangang"
+          },
+          "what": {
+            "th": "สวนสาธารณะร่มรื่น มีอาคารแบบรัสเซีย เครื่องเล่น และชิงช้าสวรรค์ปี 1958",
+            "en": "A leafy city park with Russian-style buildings, rides and a 1958 Ferris wheel"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าคนท้องถิ่นพาเด็กมาเล่นเครื่องเล่นและชิงช้าสวรรค์เก่า",
+            "en": "Reviewers say locals bring children for the rides and the old wheel"
+          },
+          "q": "哈尔滨文化公园, 南通大街208号, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "星际乐园 哈尔滨王府井购物中心",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E9%99%85%E4%B9%90%E5%9B%AD(%E5%93%88%E5%B0%94%E6%BB%A8%E7%8E%8B%E5%BA%9C%E4%BA%95%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83)&city=230100",
+          "name": {
+            "th": "สตาร์พาร์ก ห้างหวังฝูจิ่ง ฉวินลี่",
+            "en": "Star Park (Wangfujing Mall, Qunli)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างหวังฝูจิ่ง ชั้น 1 ถนนฉวินลี่สาย 5 เต้าหลี่",
+            "en": "Wangfujing Mall 1F, Qunli 5th Avenue, Daoli"
+          },
+          "what": {
+            "th": "สวนเล่นผจญภัยในร่มธีมอวกาศ",
+            "en": "A space-themed indoor adventure play park"
+          },
+          "why": {
+            "th": "อยู่ในร่มหลบหนาวฮาร์บิน ผู้รีวิวบอกว่าเหมาะกับเด็กมาก",
+            "en": "Indoors in the Harbin cold; reviewers say it suits children well"
+          },
+          "q": "星际乐园 王府井购物中心, 群力第五大道, 道里区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MELAND 哈尔滨万象汇店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MELAND(%E5%93%88%E5%B0%94%E6%BB%A8%E4%B8%87%E8%B1%A1%E6%B1%87%E5%BA%97)&city=230100",
+          "name": {
+            "th": "มีแลนด์ มิกซ์ซี ซงเป่ย",
+            "en": "Meland (MixC Songbei)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิกซ์ซี ชั้น 2 ถนนซื่อเม่า ซงเป่ย",
+            "en": "MixC F2, Shimao Avenue, Songbei"
+          },
+          "what": {
+            "th": "คลับเล่นในร่ม มีผนังปีนป่าย ปราสาทเป่าลม หนังสือภาพ และงานประดิษฐ์",
+            "en": "An indoor play club with climbing walls, bouncy castles, picture books and crafts"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าการปีนป่ายช่วยฝึกการทรงตัวและความกล้าของเด็ก",
+            "en": "Reviewers say the climbing builds children's balance and courage"
+          },
+          "q": "MELAND 松北万象汇, 世茂大道555号, 松北区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "星河湾亲子游乐园 枫叶小镇奥莱店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E6%B2%B3%E6%B9%BE%E4%BA%B2%E5%AD%90%E6%B8%B8%E4%B9%90%E5%9B%AD(%E6%9E%AB%E5%8F%B6%E5%B0%8F%E9%95%87%E5%A5%A5%E8%8E%B1%E5%BA%97)&city=230100",
+          "name": {
+            "th": "สวนเล่นซิงเหอวาน เมเปิลลีฟเอาท์เล็ต",
+            "en": "Xinghewan Play Park (Maple Leaf Outlet)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจื้อกู่สาย 3 ซงเป่ย",
+            "en": "Zhigu 3rd Street, Songbei"
+          },
+          "what": {
+            "th": "สวนเล่นที่มีสไลเดอร์สายรุ้ง ม้าหมุน สัตว์เล็ก และรถเด็ก",
+            "en": "A play park with a rainbow slide, a carousel, small animals and children's cars"
+          },
+          "why": {
+            "th": "ผู้รีวิวพาเด็กมาเที่ยวทั้งวัน",
+            "en": "Reviewers spend a whole day here with children"
+          },
+          "q": "星河湾亲子游乐园 枫叶小镇奥莱, 智谷三街5555-1号, 松北区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "太阳岛风景区俄罗斯风情小镇",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%AA%E9%98%B3%E5%B2%9B%E9%A3%8E%E6%99%AF%E5%8C%BA%E4%BF%84%E7%BD%97%E6%96%AF%E9%A3%8E%E6%83%85%E5%B0%8F%E9%95%87&city=230100",
+          "name": {
+            "th": "หมู่บ้านรัสเซีย เกาะไท่หยาง",
+            "en": "Russian Town (Sun Island)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนผิงหยวน เกาะไท่หยาง ซงเป่ย",
+            "en": "Pingyuan Street, Sun Island, Songbei"
+          },
+          "what": {
+            "th": "บ้านไม้แบบรัสเซียในป่า มีตุ๊กตาแม่ลูกดกยักษ์และรูปปั้นคนแคระ",
+            "en": "Russian-style wooden houses in the woods, with giant nesting dolls and dwarf statues"
+          },
+          "why": {
+            "th": "ผู้รีวิวพาเด็กมาและบอกว่าเหมือนหลุดเข้าไปในบ้านนิทาน",
+            "en": "A reviewer brought children and calls it a little fairy-tale estate"
+          },
+          "q": "太阳岛俄罗斯风情小镇, 平原街20号, 松北区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "外滩雪人码头",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A4%96%E6%BB%A9%E9%9B%AA%E4%BA%BA%E7%A0%81%E5%A4%B4&city=230100",
+          "name": {
+            "th": "ท่าเรือสโนว์แมน (หน้าหนาว)",
+            "en": "Bund Snowman Pier (winter)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโหย่วอี้ตะวันตก ริมแม่น้ำซงฮวา เต้าหลี่",
+            "en": "Youyi West Road, by the Songhua River, Daoli"
+          },
+          "what": {
+            "th": "ลานหิมะหน้าหนาว มีสไลเดอร์น้ำแข็งยาว รถหิมะ และเครื่องเล่นเด็ก",
+            "en": "A winter snow park with a long ice slide, snow bikes and children's rides"
+          },
+          "why": {
+            "th": "ตั๋วใบเดียวเล่นได้ทุกอย่าง ผู้รีวิวบอกว่าลูกสามขวบชอบขับรถถังเล็กมาก",
+            "en": "One ticket for all; a reviewer's three-year-old loved driving a little tank"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าหนาว ผู้รีวิวแนะนำให้เตรียมแผ่นรองเท้าให้ความร้อน",
+            "en": "Winter only; reviewers say bring heated insoles"
+          },
+          "q": "外滩雪人码头, 友谊西路1966号, 道里区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "玉泉威虎山森林公园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%8E%89%E6%B3%89%E5%A8%81%E8%99%8E%E5%B1%B1%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&city=230100",
+          "name": {
+            "th": "อุทยานป่าเวยหู่ซาน อวี้เฉวียน",
+            "en": "Yuquan Weihushan Forest Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริมทางหลวง 301 อวี้เฉวียน อาเฉิง",
+            "en": "By route 301, Yuquan, Acheng"
+          },
+          "what": {
+            "th": "อุทยานป่า มีกระเช้า สระว่ายน้ำใหญ่ และทางเดินในป่า",
+            "en": "A forest park with a cable car, a big swimming pool and woodland walks"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 เมตรเข้าฟรี ผู้รีวิวบอกว่าเด็ก ๆ สนุกมาก",
+            "en": "Children under 1.2 m go free; a reviewer says the children had a great time"
+          },
+          "tip": {
+            "th": "ห่างจากตัวเมืองประมาณหนึ่งชั่วโมงโดยรถยนต์",
+            "en": "About an hour out of town by car"
+          },
+          "q": "玉泉威虎山森林公园, 玉泉镇, 阿城区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "亚布力熊猫馆",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%BA%9A%E5%B8%83%E5%8A%9B%E7%86%8A%E7%8C%AB%E9%A6%86&city=230100",
+          "name": {
+            "th": "บ้านแพนด้ายาบูลี่",
+            "en": "Yabuli Panda House"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนจินไผ่ ยาบูลี่ ซ่างจื้อ",
+            "en": "Jinpai Avenue, Yabuli, Shangzhi"
+          },
+          "what": {
+            "th": "บ้านแพนด้ายักษ์ในพื้นที่สกียาบูลี่",
+            "en": "A giant panda house at the Yabuli ski area"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัว เด็กอายุต่ำกว่า 6 ขวบหรือสูงไม่ถึง 1.2 เมตรเข้าฟรี",
+            "en": "Tagged for families; children under six or under 1.2 m go free"
+          },
+          "tip": {
+            "th": "ห่างจากฮาร์บินประมาณสามชั่วโมง ไปพร้อมวันเล่นสกีที่ยาบูลี่",
+            "en": "About three hours from Harbin; pair it with a Yabuli ski day"
+          },
+          "q": "亚布力熊猫馆, 金牌大道84号, 尚志市, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "爱尼吖梦幻潮玩",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E7%88%B1%E5%B0%BC%E5%90%96%E6%A2%A6%E5%B9%BB%E6%BD%AE%E7%8E%A9&city=230100",
+          "name": {
+            "th": "สวนเล่นอ้ายหนีหยา ถนนหงฉี",
+            "en": "Ainiya Play Park (Hongqi Street)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหงฉี หนานกั่ง",
+            "en": "Hongqi Street, Nangang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีบ่อทราย หนังสือภาพ และเครื่องเล่นบุนุ่ม",
+            "en": "An indoor play park with a sand pit, picture books and soft-padded play"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก อยู่ในร่มหลบหนาวฮาร์บิน",
+            "en": "Tagged for babies and small children; indoors in the Harbin cold"
+          },
+          "q": "爱尼吖梦幻潮玩, 红旗大街240号, 南岗区, 哈尔滨",
+          "ok": "2026-11"
+        },
+        {
+          "local": "快乐专+ 哈尔滨店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%BF%AB%E4%B9%90%E4%B8%93%2B(%E5%93%88%E5%B0%94%E6%BB%A8%E5%BA%97)&city=230100",
+          "name": {
+            "th": "ไคว่เล่อจวน+ วั่นต๋าฮาตง",
+            "en": "Kuaile Zhuan+ (Wanda Hadong)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วั่นต๋าพลาซ่าฮาตง ชั้น 4 ถนนเซียงฝู เซียงฟาง",
+            "en": "Wanda Plaza Hadong 4F, Xiangfu Road, Xiangfang"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีม้าหมุน ห้องจัดปาร์ตี้ และงานประดิษฐ์",
+            "en": "An indoor play park with a carousel, party rooms and crafts"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Tagged for babies and small children"
+          },
+          "q": "快乐专+ 万达广场哈尔滨哈东店, 香福路52号, 香坊区, 哈尔滨",
+          "ok": "2026-11"
         }
       ]
     }

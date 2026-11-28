@@ -273,6 +273,503 @@
           "q": "PROTO Invention Factory, Noblessner, Tallinn",
           "ok": "2026-11",
           "src": "https://www.expedia.com/things-to-do/tallinn-proto-invention-factory-entry-ticket.a44563398.activity-details"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://thingstodointallinn.com/family/",
+          "name": {
+            "th": "หาดปีริตา",
+            "en": "Pirita Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ปีริตา",
+            "en": "Pirita"
+          },
+          "what": {
+            "th": "หาดทรายยาวในเมืองริมอ่าวทาลลินน์",
+            "en": "A long sandy city beach on Tallinn Bay"
+          },
+          "why": {
+            "th": "ทรายลาดลงน้ำตื้นๆ มีสนามเด็กเล่นใกล้ๆ",
+            "en": "Shallow, gently sloping sand, with a playground nearby"
+          },
+          "tip": {
+            "th": "ดีที่สุด มิ.ย.–ส.ค. น้ำอุ่น 18–20 °C",
+            "en": "Best June to August, when the water reaches 18–20 °C"
+          },
+          "q": "Pirita Beach, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Tallinna Linnamuuseum",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thingstodointallinn.com/family/",
+          "name": {
+            "th": "พิพิธภัณฑ์เมืองทาลลินน์",
+            "en": "Tallinn City Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เมืองเก่า",
+            "en": "Old Town"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เมือง มีห้องสำหรับเด็ก",
+            "en": "The city museum, with rooms made for children"
+          },
+          "why": {
+            "th": "มีปุ่มให้กดและเกมให้เล่นวันฝนตก",
+            "en": "Buttons to press and games to play on a wet day"
+          },
+          "q": "Tallinn City Museum, Vene 17, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Lohesaba seikluslinnak",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €10 บัตรรายวัน",
+            "en": "≈ €10 day pass"
+          },
+          "book": "none",
+          "src": "https://lohesaba.eu/en/",
+          "name": {
+            "th": "สวนผจญภัยโลเฮซาบา",
+            "en": "Lohesaba adventure park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มุสตาแมเอ",
+            "en": "Mustamäe"
+          },
+          "what": {
+            "th": "ศูนย์ผจญภัยในร่ม มีเขาวงกต แทรมโพลีน และห้องเล่นธีม",
+            "en": "An indoor adventure centre with mazes, trampolines and themed play rooms"
+          },
+          "why": {
+            "th": "มีโซนเล่นสำหรับ 0–7 ขวบ และ 4–14 ปี",
+            "en": "Play areas for ages 0–7 and 4–14"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–21:00 ไม่ต้องจอง",
+            "en": "Open daily 10:00–21:00; no booking needed"
+          },
+          "q": "Lohesaba, Mustamäe tee 50, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "≈ €10",
+            "en": "≈ €10"
+          },
+          "book": "none",
+          "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
+          "name": {
+            "th": "หอระฆังโบสถ์เซนต์โอลาฟ",
+            "en": "St Olaf’s Church tower"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เมืองเก่า",
+            "en": "Old Town"
+          },
+          "what": {
+            "th": "หอโบสถ์ มีบันไดวนแคบๆ ขึ้นถึงยอด",
+            "en": "A church tower with a narrow spiral stair to the top"
+          },
+          "why": {
+            "th": "ปีนขึ้นตื่นเต้น สำหรับเด็ก 7 ขวบขึ้นไปที่ปีนเก่ง",
+            "en": "A thrilling climb for confident climbers of seven and up"
+          },
+          "q": "St Olaf's Church, Lai 50, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Katariina käik",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
+          "name": {
+            "th": "ตรอกเซนต์แคทเธอรีน",
+            "en": "St Catherine’s Passage"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เมืองเก่า",
+            "en": "Old Town"
+          },
+          "what": {
+            "th": "ตรอกยุคกลาง มีโรงงานหัตถกรรมและป้ายหลุมศพเก่าฝังในผนัง",
+            "en": "A medieval lane of craft workshops with old tombstones set in the wall"
+          },
+          "why": {
+            "th": "เด็กสนใจป้ายหินเก่าแก่",
+            "en": "Children are fascinated by the old stones"
+          },
+          "q": "St. Catherine's Passage, Vene 14a, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.tallinn-trip.com/guides/tallinn-with-kids-family-guide/",
+          "name": {
+            "th": "จุดชมวิวโคห์ทูออตสา",
+            "en": "Kohtuotsa viewpoint"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ตูมเปอา",
+            "en": "Toompea"
+          },
+          "what": {
+            "th": "จุดชมวิวบนเนินตูมเปอา มองเมืองเก่า",
+            "en": "A viewpoint on Toompea Hill over the Old Town"
+          },
+          "why": {
+            "th": "ทางหินปูชันขึ้นไปคือการผจญภัยของเด็ก",
+            "en": "The steep cobbled lane up is an adventure for children"
+          },
+          "q": "Kohtuotsa viewing platform, Kohtu 12, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thingstodointallinn.com/family/",
+          "name": {
+            "th": "ซากคอนแวนต์ปีริตา",
+            "en": "Pirita Convent ruins"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปีริตา",
+            "en": "Pirita"
+          },
+          "what": {
+            "th": "ซากคอนแวนต์ริมชายฝั่ง",
+            "en": "The ruins of a convent by the coast"
+          },
+          "why": {
+            "th": "มีประวัติศาสตร์ให้เดินสำรวจ",
+            "en": "A bit of history to explore"
+          },
+          "q": "Pirita Convent ruins, Merivälja tee 18, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Telliskivi Kirbukas",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thingstodointallinn.com/family/",
+          "name": {
+            "th": "ตลาดนัดของเก่าเทลลิสคิวี",
+            "en": "Telliskivi flea market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "เทลลิสคิวี คาลามายา",
+            "en": "Telliskivi, Kalamaja"
+          },
+          "what": {
+            "th": "ตลาดนัดของเก่าวันเสาร์ มีร้านอาหารในลานโล่ง",
+            "en": "A Saturday flea market with food stalls in an open yard"
+          },
+          "why": {
+            "th": "มีที่เดินเล่น และของกินสำหรับเด็กกินยาก",
+            "en": "Room to wander, and something for picky eaters"
+          },
+          "tip": {
+            "th": "วันเสาร์",
+            "en": "Saturdays"
+          },
+          "q": "Telliskivi Kirbukas, Telliskivi 57, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitestonia.com/en/super-skypark-trampoline-and-play-center",
+          "name": {
+            "th": "ซูเปอร์สกายพาร์ก",
+            "en": "Super Skypark"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้าง T1 ลัสนาแม ทาลลินน์",
+            "en": "T1 Mall, Lasnamäe, Tallinn"
+          },
+          "what": {
+            "th": "ศูนย์ครอบครัวในร่มขนาดใหญ่ มีแทรมโพลีน ลานผาดโผน และรถบั๊ม",
+            "en": "A big indoor family centre with trampolines, a stunt track and bumper cars"
+          },
+          "why": {
+            "th": "มีแทรมโพลีนและเมืองจราจรจำลองสำหรับเด็ก",
+            "en": "Trampolines and a traffic town for children"
+          },
+          "q": "Super Skypark, Peterburi tee 2, Tallinn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitestonia.com/en/viimsi-open-air-museum",
+          "name": {
+            "th": "พิพิธภัณฑ์กลางแจ้งวิมซี",
+            "en": "Viimsi Open Air Museum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปริงกี วิมซี ใกล้ทาลลินน์",
+            "en": "Pringi, Viimsi, near Tallinn"
+          },
+          "what": {
+            "th": "บ้านริมทะเลเก่าแก่ พร้อมพิพิธภัณฑ์ชีวิตหมู่บ้าน",
+            "en": "Old coastal houses with a museum of village life"
+          },
+          "why": {
+            "th": "มีชิงช้าให้เด็กพร้อมวิวทะเล",
+            "en": "Swings for children with the sea in view"
+          },
+          "tip": {
+            "th": "มีตลาดเกษตรทุกวันเสาร์",
+            "en": "A farm market every Saturday"
+          },
+          "q": "Viimsi Open Air Museum, Rohuneeme tee 53a, Viimsi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+          "name": {
+            "th": "พิพิธภัณฑ์รถยนต์ริกา",
+            "en": "Riga Motor Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเซอร์เกยาไอเซนชไตนา ริกา",
+            "en": "Sergeja Eizenšteina iela, Riga"
+          },
+          "what": {
+            "th": "ยานพาหนะหายากกว่า 100 คันในนิทรรศการทันสมัย",
+            "en": "More than 100 unique vehicles in a modern exhibition"
+          },
+          "why": {
+            "th": "มีเกมแบบลงมือเล่นและกิจกรรมสำหรับเด็ก",
+            "en": "An interactive game and children's activities"
+          },
+          "q": "Riga Motor Museum, Sergeja Eizenšteina iela 8, Riga",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติลัตเวีย",
+            "en": "Latvian Museum of Natural History"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนคริชยานยาบาโรนา ใจกลางริกา",
+            "en": "Krišjāņa Barona iela, Riga centre"
+          },
+          "what": {
+            "th": "นก สัตว์ทั่วโลก และแมลง",
+            "en": "Birds, animals of the world and insects"
+          },
+          "why": {
+            "th": "มีทัวร์สำหรับครอบครัวและงานฝีมือหลังชม",
+            "en": "Family tours and a craft lesson after the exhibits"
+          },
+          "q": "Latvian Museum of Natural History, Krišjāņa Barona iela 4, Riga",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.liveriga.com/en/11838-for-kids-and-families/",
+          "name": {
+            "th": "บ้านจิ๋ว สมอลสตัฟฟ์",
+            "en": "Miniature House (Small Stuff)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนไมยา เตอิกา ริกา",
+            "en": "Maija iela, Teika, Riga"
+          },
+          "what": {
+            "th": "ห้องจิ๋วตามธีม ขนาด 1:12",
+            "en": "Themed miniature rooms at 1:12 scale"
+          },
+          "why": {
+            "th": "ฉากเทพนิยายในห้องจิ๋ว",
+            "en": "Fairy-tale scenes in tiny rooms"
+          },
+          "q": "Small Stuff Miniatūru māja, Maija iela 18, Riga",
+          "ok": "2026-11"
         }
       ]
     }

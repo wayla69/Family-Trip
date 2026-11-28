@@ -231,7 +231,7 @@ const items = [
       + E(120, 176, 84, 34, '#C68642') + ring(10, (k) => C(60 + (k * 31) % 120, 164 + (k * 17) % 24, 2, '#A1673F', 0)) + E(120, 172, 84, 34, 'none')
       + [[94, 160], [146, 160]].map(([x, y]) => E(x, y + 6, 24, 12, '#FFFFFF') + P(`M${x - 28} ${y + 2}c10-18 46-18 56 0-6 8-50 8-56 0z`, '#E57373') + Lc(`M${x - 18} ${y - 4}l10-4M${x + 4} ${y - 6}l10 2`, '#C62828', 2.5) + E(x, y - 10, 6, 3, '#FFAB91', 1.5)).join('')
       + P('M196 196c20 6 36 22 44 40h-40c-8-14-12-26-4-40z', '#FFE0BD') + face(120, 194, 0.36)),
-  L('jp/takayama/landmark-oasis21.v1.svg', 'หลังคาแก้วโอเอซิส 21 ที่ซาคาเอะ นาโกย่า', 'The glass water roof of Oasis 21 in Sakae, Nagoya', ['oasis 21', 'โอเอซิส 21', 'water spaceship', 'ยานอวกาศน้ำ', 'sakae', 'ซาคาเอะ', 'glass roof', 'หลังคาแก้ว', 'nagoya', 'water on the roof'], 'หาน้ำสีฟ้าที่อยู่บนหลังคาแก้วรูปไข่', 'Find the blue water lying on top of the oval glass roof',
+  L('jp/nagoya/landmark-oasis21.v1.svg', 'หลังคาแก้วโอเอซิส 21 ที่ซาคาเอะ นาโกย่า', 'The glass water roof of Oasis 21 in Sakae, Nagoya', ['oasis 21', 'โอเอซิส 21', 'water spaceship', 'ยานอวกาศน้ำ', 'sakae', 'ซาคาเอะ', 'glass roof', 'หลังคาแก้ว', 'nagoya', 'water on the roof'], 'หาน้ำสีฟ้าที่อยู่บนหลังคาแก้วรูปไข่', 'Find the blue water lying on top of the oval glass roof',
     // a huge flat oval glass roof held up high on slim legs, a shallow pool of blue water on top with people walking round its rim, a green sunken park below
     sky('#E3F2FD') + R(-4, 190, 248, 54, '#AED581', 0, 0) + E(120, 210, 90, 16, '#9CCC65', 0)
       + ring(6, (k) => Lc(`M${40 + k * 32} 190l${(k - 2.5) * 4} -80`, '#90A4AE', 5))

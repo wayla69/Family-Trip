@@ -290,7 +290,360 @@
       {"name":{"en":"Smales Farm Market","th":"ตลาดสมาลส์ฟาร์ม"},"kind":"market","area":{"en":"North Shore","th":"นอร์ธชอร์"},"what":{"en":"Market of artisan food, local crafts and live music on the North Shore.","th":"ตลาดอาหารทำมือ งานฝีมือท้องถิ่น และดนตรีสด บนนอร์ธชอร์"},"why":{"en":"Discover Auckland calls it one of the North Shore's most wholesome weekend activities.","th":"หน้าเว็บ Discover Auckland เรียกว่าเป็นหนึ่งในกิจกรรมวันหยุดสุดสัปดาห์ที่ดีต่อใจที่สุดของนอร์ธชอร์"},"tip":{"en":"Every second Sunday of the month","th":"วันอาทิตย์ที่สองของทุกเดือน"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Smales Farm Market, North Shore, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/a-locals-guide-to-aucklands-best-markets"},
       {"name":{"en":"Howick's Saturday Market","th":"ตลาดวันเสาร์ฮาวิก"},"kind":"market","area":{"en":"Howick, East Auckland","th":"ฮาวิก ออกแลนด์ตะวันออก"},"what":{"en":"Village Saturday market with fresh flowers, smoked fish, cheeses, bread and homemade fudge.","th":"ตลาดวันเสาร์ประจำหมู่บ้าน มีดอกไม้สด ปลารมควัน ชีส ขนมปัง และฟัดจ์ทำเอง"},"why":{"en":"Discover Auckland says it is full of small-town charm, with cafés nearby.","th":"หน้าเว็บ Discover Auckland บอกว่ามีเสน่ห์เมืองเล็กและมีคาเฟ่ใกล้ๆ"},"tip":{"en":"Pair it with a wander around the Howick Historical Village","th":"เดินชมหมู่บ้านประวัติศาสตร์ฮาวิกไปด้วยกันได้"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Howick Village, Howick, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/a-locals-guide-to-aucklands-best-markets"},
       {"name":{"en":"My Wonderland","th":"มายวันเดอร์แลนด์"},"kind":"play","area":{"en":"63 Corinthian Drive, Albany, North Shore","th":"63 คอรินเธียนไดรฟ์ อัลบานี นอร์ธชอร์"},"what":{"en":"Indoor family venue with a modern playground, an arcade and an allergy-friendly café.","th":"สถานที่ครอบครัวในร่ม มีสนามเด็กเล่นทันสมัย ตู้เกม และคาเฟ่ที่ปลอดถั่ว"},"why":{"en":"Nut-free, with all-day play for ages 0 to 12 and all-weather play.","th":"หน้าเว็บบอกว่าปลอดถั่ว มีที่เล่นทั้งวันสำหรับอายุ 0–12 ปี และเล่นได้ทุกสภาพอากาศ"},"tip":{"en":"Socks are required for everyone, for hygiene and safety","th":"ทุกคนต้องใส่ถุงเท้า เพื่อความสะอาดและความปลอดภัย"},"ages":[2,2,2,1],"hrs":3,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"My Wonderland, 63 Corinthian Drive, Albany, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/explore/my-wonderland"},
-      {"name":{"en":"Archie Brothers Cirque Electriq","th":"อาร์ชี บราเธอร์ส เซอร์ค อิเล็กทริก"},"kind":"play","area":{"en":"Westfield Newmarket","th":"เวสต์ฟิลด์นิวมาร์เก็ต"},"what":{"en":"Entertainment space with bowling, dodgem cars, virtual reality and classic carnival games under one roof.","th":"พื้นที่บันเทิงที่มีโบว์ลิ่ง รถชนกันและเกมแบบคาร์นิวัลคลาสสิก รวมภายใต้หลังคาเดียว"},"why":{"en":"Discover Auckland says kids will love battling for high scores and prize tickets.","th":"หน้าเว็บ Discover Auckland บอกว่าเด็กจะชอบแข่งทำคะแนนสูงและสะสมตั๋วรางวัล"},"tip":{"en":"Food court or rooftop dining precinct nearby","th":"มีฟู้ดคอร์ตหรือลานอาหารบนดาดฟ้าอยู่ใกล้ๆ"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Archie Brothers Cirque Electriq, Westfield Newmarket, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/explore-aucklands-top-7-family-friendly-attractions"}
+      {"name":{"en":"Archie Brothers Cirque Electriq","th":"อาร์ชี บราเธอร์ส เซอร์ค อิเล็กทริก"},"kind":"play","area":{"en":"Westfield Newmarket","th":"เวสต์ฟิลด์นิวมาร์เก็ต"},"what":{"en":"Entertainment space with bowling, dodgem cars, virtual reality and classic carnival games under one roof.","th":"พื้นที่บันเทิงที่มีโบว์ลิ่ง รถชนกันและเกมแบบคาร์นิวัลคลาสสิก รวมภายใต้หลังคาเดียว"},"why":{"en":"Discover Auckland says kids will love battling for high scores and prize tickets.","th":"หน้าเว็บ Discover Auckland บอกว่าเด็กจะชอบแข่งทำคะแนนสูงและสะสมตั๋วรางวัล"},"tip":{"en":"Food court or rooftop dining precinct nearby","th":"มีฟู้ดคอร์ตหรือลานอาหารบนดาดฟ้าอยู่ใกล้ๆ"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Archie Brothers Cirque Electriq, Westfield Newmarket, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/explore-aucklands-top-7-family-friendly-attractions"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "สวนคอร์นวอลล์",
+            "en": "Cornwall Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เอปซัม",
+            "en": "Epsom"
+          },
+          "what": {
+            "th": "สวนสาธารณะใหญ่กลางเมืองที่มีฟาร์ม",
+            "en": "A big city park with a working farm"
+          },
+          "why": {
+            "th": "ได้ดูลูกสัตว์ แล้วไปดื่มช็อกโกแลตร้อนที่คาเฟ่",
+            "en": "Baby animals to see, then a hot chocolate at the café"
+          },
+          "tip": {
+            "th": "ลูกวัวเกิดตั้งแต่กลางเดือนกรกฎาคม ลูกแกะเกิดเดือนสิงหาคม",
+            "en": "Calves are born from mid-July, lambs arrive in August"
+          },
+          "q": "Cornwall Park, Epsom, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "อุทยานภูมิภาคลองเบย์",
+            "en": "Long Bay Regional Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ลองเบย์ นอร์ทชอร์",
+            "en": "Long Bay, North Shore"
+          },
+          "what": {
+            "th": "อุทยานที่มีเส้นทางเดินริมทะเลและสนามเด็กเล่นผจญภัย",
+            "en": "A regional park with a coastal track and an adventure playground"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นผจญภัยและทางเดินริมทะเล",
+            "en": "An adventure playground and a walk by the sea"
+          },
+          "q": "Long Bay Regional Park, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ NZ$2 ต่อเที่ยว",
+            "en": "≈ NZ$2 a ride"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "รถรางด็อกไลน์ โอ๊กแลนด์",
+            "en": "Auckland Dockline Tram"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ไวน์ยาร์ดควอเตอร์",
+            "en": "Wynyard Quarter"
+          },
+          "what": {
+            "th": "นั่งรถรางเก่ารอบย่านริมน้ำ",
+            "en": "A heritage tram ride around the waterfront"
+          },
+          "why": {
+            "th": "กิจกรรมครอบครัวราคาถูกที่คนชอบ",
+            "en": "A cheap family favourite"
+          },
+          "tip": {
+            "th": "วันอาทิตย์ วันหยุดยาว และวันหยุดราชการ 10:00–16:00",
+            "en": "Sundays, long weekends and public holidays, 10:00–16:00"
+          },
+          "q": "Auckland Dockline Trams, Wynyard Quarter",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "บริจาคเหรียญ",
+            "en": "A gold coin donation"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "รถไฟจิ๋วมานูเกา",
+            "en": "Manukau Live Steamers"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สวนมังเกเรเซ็นเตอร์",
+            "en": "Mangere Centre Park"
+          },
+          "what": {
+            "th": "รถไฟจิ๋ววิ่งรอบสวนบางวันอาทิตย์",
+            "en": "Miniature trains through the park on some Sundays"
+          },
+          "why": {
+            "th": "เด็กได้นั่งรถไฟจิ๋ว",
+            "en": "Children ride the little trains"
+          },
+          "tip": {
+            "th": "ใส่รองเท้าหุ้มส้น และเช็กวันที่เปิดวิ่งก่อน",
+            "en": "Wear closed shoes and check the running dates first"
+          },
+          "q": "Manukau Live Steamers, Mangere",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://adventurealley.co.nz/",
+          "name": {
+            "th": "แอดเวนเจอร์แอลลีย์",
+            "en": "Adventure Alley"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรสเดล นอร์ทชอร์",
+            "en": "Rosedale, North Shore"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มของครอบครัว มีคาเฟ่",
+            "en": "A family-owned indoor playground with a café"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก บ่อบอลใหญ่ และเครื่องเล่นเป่าลมยาว 20 เมตรสำหรับเด็กโต",
+            "en": "A toddler area, a huge ball pit and a 20 m inflatable for older children"
+          },
+          "q": "Adventure Alley, Rosedale",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ NZ$18 (1–3 ขวบ) · NZ$25 (4–12 ปี)",
+            "en": "≈ NZ$18 (1–3) · NZ$25 (4–12)"
+          },
+          "book": "none",
+          "src": "https://www.magicloft.co.nz/",
+          "name": {
+            "th": "เมจิกลอฟต์",
+            "en": "Magic Loft"
+          },
+          "kind": "play",
+          "area": {
+            "th": "บราวน์สเบย์ นอร์ทชอร์",
+            "en": "Browns Bay, North Shore"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นแบ่งโซน มีคาเฟ่",
+            "en": "A play centre with zones for children and a café"
+          },
+          "why": {
+            "th": "เครื่องเล่นที่ทำมาสำหรับเด็ก",
+            "en": "Play equipment made for children"
+          },
+          "q": "Magic Loft Playground & Cafe, Browns Bay",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chipmunksplayland.co.nz/",
+          "name": {
+            "th": "ชิปมังก์สเพลย์แลนด์ นิวลินน์",
+            "en": "Chipmunks Playland & Café (New Lynn)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นิวลินน์ โอ๊คแลนด์",
+            "en": "New Lynn, Auckland"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มสำหรับเด็ก 0–11 ขวบ มีคาเฟ่",
+            "en": "An indoor playground for children aged 0 to 11, with a café"
+          },
+          "why": {
+            "th": "ที่เล่นในร่มสำหรับเด็กเล็ก มีคาเฟ่ให้ผู้ปกครอง",
+            "en": "Indoor play for little ones, and coffee for the parents"
+          },
+          "q": "Chipmunks Playland & Cafe New Lynn, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/day-out/muriwai-beach-family-guide/",
+          "name": {
+            "th": "อาณานิคมนกแกนเน็ตมูริไว",
+            "en": "Muriwai Gannet Colony"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หาดมูริไว ชายฝั่งตะวันตก",
+            "en": "Muriwai Beach, west coast"
+          },
+          "what": {
+            "th": "อาณานิคมนกแกนเน็ตบนหน้าผา เดินจากที่จอดรถไปจุดชมไม่ไกล",
+            "en": "A clifftop gannet colony with a short viewing walk from the car park"
+          },
+          "why": {
+            "th": "ทางเดินสั้น เข็นรถเข็นได้ ไปดูนกทะเลทำรังและร่อน",
+            "en": "A short, pushchair-friendly walk to watch seabirds nesting and gliding"
+          },
+          "tip": {
+            "th": "นกอยู่ในอาณานิคมช่วงสิงหาคมถึงมีนาคม",
+            "en": "The colony is busy from August to March"
+          },
+          "q": "Muriwai Gannet Colony, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/auckland/places/tiritiri-matangi-island/",
+          "name": {
+            "th": "เกาะติริติริมาตังงี",
+            "en": "Tiritiri Matangi Island"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอกคาบสมุทรฟังกาปาราโอ อ่าวเฮาราคี",
+            "en": "Off the Whangaparāoa Peninsula, Hauraki Gulf"
+          },
+          "what": {
+            "th": "เกาะเขตรักษาพันธุ์สัตว์ป่า มีนกพื้นเมืองหายากในป่าที่ฟื้นฟูแล้ว",
+            "en": "An open wildlife sanctuary island of rare native birds in restored forest"
+          },
+          "why": {
+            "th": "เด็กได้เห็นนกใกล้สูญพันธุ์ในธรรมชาติ หลังนั่งเรือข้ามไป",
+            "en": "Children see endangered birds in the wild, after a ferry ride"
+          },
+          "tip": {
+            "th": "เรือออกวันพุธถึงอาทิตย์ ช่วงพฤศจิกายนถึงเมษายนเต็มเร็ว บนเกาะไม่มีอาหารขาย ต้องเตรียมไปเอง",
+            "en": "The ferry runs Wednesday to Sunday and books up from November to April; no food on the island, so bring your own"
+          },
+          "q": "Tiritiri Matangi Island, Hauraki Gulf",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -576,14 +929,284 @@
       {"name":{"en":"Jack Reid Park","th":"แจ็ก รีด พาร์ก"},"kind":"play","area":{"en":"Centennial Avenue, Arrowtown","th":"เซนเทนเนียล อเวนิว แอร์โรว์ทาวน์"},"what":{"en":"A park in Arrowtown listed among the town's playgrounds, with entrances off Centennial Avenue and Inverness Crescent","th":"สวนในแอร์โรว์ทาวน์ อยู่ในรายชื่อสนามเด็กเล่นของเมือง มีทางเข้าจากเซนเทนเนียล อเวนิวและอินเวอร์เนส เครสเซนต์"},"why":{"en":"a playground in the village itself, a short walk from the old town","th":"สนามเด็กเล่นในหมู่บ้านเอง เดินจากเมืองเก่าไม่กี่นาที"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jack Reid Park, Centennial Avenue, Arrowtown","ok":"2026-11","src":"https://www.qldc.govt.nz/recreation/playgrounds"},
       {"name":{"en":"SITE Trampoline","th":"ไซต์ แทรมโพลีน"},"kind":"play","area":{"en":"1/15 Red Oaks Drive, Frankton","th":"1/15 เรดโอ๊กส์ ไดรฟ์ แฟรงก์ตัน"},"what":{"en":"An indoor trampoline park with airbags, foam pits, an air track and a mini ramp","th":"สวนแทรมโพลีนในร่ม มีถุงลม บ่อโฟม รางอากาศ และแรมป์เล็ก"},"why":{"en":"bouncy fun whatever the weather, the page says","th":"หน้าเว็บบอกว่าสนุกไม่ว่าอากาศจะเป็นอย่างไร"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"SITE Trampoline, 1/15 Red Oaks Drive, Frankton, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
       {"name":{"en":"Thrillzone","th":"ธริลโซน"},"kind":"play","area":{"en":"53 Shotover Street","th":"53 ถนนโชโตเวอร์ สตรีต"},"what":{"en":"An indoor theme park with a 12D motion theatre, 360-degree VR missions, indoor mini golf and drifting go-karts","th":"สวนสนุกในร่ม มีโรงภาพยนตร์เคลื่อนไหว 12 มิติ ภารกิจเสมือนจริง 360 องศา มินิกอล์ฟในร่ม และโกคาร์ทไถลตัว"},"why":{"en":"a rainy-day indoor option with virtual reality and games for the family","th":"ตัวเลือกในร่มวันฝนตกที่มีเกมและเสมือนจริงสำหรับครอบครัว"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Thrillzone, 53 Shotover Street, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
-      {"name":{"en":"Odyssey Sensory Maze","th":"โอดิสซีย์ เซนซอรี เมซ"},"kind":"play","area":{"en":"57 Shotover Street","th":"57 ถนนโชโตเวอร์ สตรีต"},"what":{"en":"A labyrinth of rooms with whacky illusions, lights, sound effects and obstacles","th":"เขาวงกตห้องต่อห้อง มีภาพลวงตาแปลกๆ แสง เสียง และสิ่งกีดขวาง"},"why":{"en":"an indoor attraction for rainy days, with strange sensations to walk through","th":"สิ่งดึงดูดในร่มสำหรับวันฝนตก มีความรู้สึกแปลกๆ ให้เดินผ่าน"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Odyssey Sensory Maze, 57 Shotover Street, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
       {"name":{"en":"Hydro Attack","th":"ไฮโดร แอตแทค"},"kind":"ride","area":{"en":"Beach Street, Queenstown","th":"ถนนบีช ควีนส์ทาวน์"},"what":{"en":"A semisubmersible boat that dives 1.5 m into Lake Wakatipu and then shoots into the air","th":"เรือกึ่งจมน้ำที่ดำลง 1.5 เมตรในทะเลสาบวาคาติปู แล้วพุ่งขึ้นฟ้า"},"why":{"en":"a lake ride the page says is fully covered, so the rain is no bother","th":"หน้าเว็บบอกว่าเรือปิดมิดชิด ฝนจึงไม่เป็นปัญหา"},"ages":[0,0,1,2],"hrs":1,"io":"both","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hydro Attack, Beach Street, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/things-to-do-rainy-day-in-queenstown/"},
       {"name":{"en":"Ben Lomond Saddle","th":"เส้นทางเบน ลอมอนด์ เซดเดิล"},"kind":"nature","area":{"en":"Skyline Gondola top complex, Brecon Street","th":"ฐานกระเช้าสกายไลน์ ถนนเบรคอน"},"what":{"en":"A shorter tramp from the top of the Skyline Gondola up to the Ben Lomond Saddle and back","th":"เส้นทางเดินสั้นจากยอดกระเช้าสกายไลน์ขึ้นถึงอานเบน ลอมอนด์ แล้วเดินกลับ"},"why":{"en":"the page calls it a good option for trampers who want the views while building up their fitness","th":"หน้าเว็บเรียกว่าเป็นทางเลือกดีสำหรับนักเดินที่อยากชมวิวไปพลางสร้างความฟิต"},"ages":[0,0,1,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ben Lomond Saddle, Skyline Gondola top complex, Queenstown","ok":"2026-11","src":"https://www.doc.govt.nz/ben-lomond-track"},
       {"name":{"en":"Ben Lomond Track","th":"เส้นทางเบน ลอมอนด์"},"kind":"nature","area":{"en":"Skyline Gondola base, Brecon Street","th":"ฐานกระเช้าสกายไลน์ ถนนเบรคอน"},"what":{"en":"The full summit track of Ben Lomond, starting from the Skyline Gondola base on Brecon Street","th":"เส้นทางเดินเต็มสู่ยอดเบน ลอมอนด์ เริ่มจากฐานกระเช้าสกายไลน์บนถนนเบรคอน"},"why":{"en":"for older children and teenagers who are fit, with spectacular views from the summit on a clear day","th":"สำหรับเด็กโตและวัยรุ่นที่แข็งแรง มีวิวจากยอดที่งดงามในวันท้องฟ้าใส"},"ages":[0,0,0,2],"hrs":8,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ben Lomond Track, Skyline Gondola base, Brecon Street, Queenstown","ok":"2026-11","src":"https://www.doc.govt.nz/ben-lomond-track"},
       {"name":{"en":"The Remarkables","th":"เดอะ รีมาร์คาเบิลส์"},"kind":"nature","area":{"en":"The Remarkables - Remarkables Ski Field Access Road","th":"ถนนเข้าสู่สนามสกีเดอะ รีมาร์คาเบิลส์"},"what":{"en":"A ski field where children aged 4 to 17 can take ski lessons","th":"สนามสกีที่เด็กอายุ 4 ถึง 17 ปีเรียนสกีได้"},"why":{"en":"ski lessons are available from age 4","th":"มีคลาสสกีตั้งแต่อายุ 4 ปี"},"tip":{"en":"ฤดูเล่นสกีมีเฉพาะฤดูหนาว หน้าเว็บไม่ได้ระบุวันเปิด","th":"ฤดูเล่นสกีมีเฉพาะฤดูหนาว หน้าเว็บไม่ได้ระบุวันเปิด"},"ages":[0,0,2,2],"hrs":4,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"The Remarkables ski field, Remarkables Ski Field Access Road, Queenstown","ok":"2026-11","src":"https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/"},
       {"name":{"en":"Wakatipu Playcentre","th":"วากาติปู เพลย์เซ็นเตอร์"},"kind":"play","area":{"en":"49 Red Oaks Drive, Frankton","th":"49 เรดโอ๊กส์ ไดรฟ์ แฟรงก์ตัน"},"what":{"en":"A Playcentre session in Frankton where children and their parents or caregivers attend together","th":"กิจกรรมเพลย์เซสชันที่แฟรงก์ตัน เด็กและพ่อแม่หรือผู้ดูแลมาด้วยกัน"},"why":{"en":"a child-led place to explore, climb, sing and play, with a parent alongside","th":"พื้นที่ให้เด็กสำรวจ ปีน ร้องเพลง และเล่น มีพ่อแม่อยู่ข้างๆ"},"ages":[2,2,2,0],"hrs":3,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Wakatipu Playcentre, 49 Red Oaks Drive, Frankton, Queenstown","ok":"2026-11","src":"https://playcentre.org.nz/?p=17427"},
       {"name":{"en":"Rose Douglas Park","th":"โรส ดักลาส พาร์ก"},"kind":"play","area":{"en":"Wiltshire, Hertford and Anglesea Streets, Arrowtown","th":"ถนนวิลท์เชียร์ ฮาร์ทฟอร์ด และแองเกิลซี แอร์โรว์ทาวน์"},"what":{"en":"A park in Arrowtown listed among the town's council playgrounds, with entrances off Wiltshire, Hertford and Anglesea Streets","th":"สวนในแอร์โรว์ทาวน์ อยู่ในรายชื่อสนามเด็กเล่นของเทศบาล มีทางเข้าหลายทางจากถนนรอบสวน"},"why":{"en":"a council playground in Arrowtown with several street entrances","th":"สนามเด็กเล่นของเทศบาลในแอร์โรว์ทาวน์ มีทางเข้าหลายทางจากถนนหลายสาย"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Rose Douglas Park, Arrowtown","ok":"2026-11","src":"https://www.qldc.govt.nz/recreation/playgrounds"},
-      {"name":{"en":"McBride Park","th":"แม็กไบรด์ พาร์ก"},"kind":"play","area":{"en":"Lake Hayes Estate","th":"เลกเฮย์ส เอสเตต"},"what":{"en":"A playground at Lake Hayes Estate, listed by the council under Lake Hayes Estate Playground","th":"สนามเด็กเล่นที่เลกเฮย์ส เอสเตต ที่เทศบาลขึ้นทะเบียนไว้ภายใต้ชื่อสนามเด็กเล่นเลกเฮย์ส เอสเตต"},"why":{"en":"a council playground at Lake Hayes Estate that can be reached from three roads","th":"สนามเด็กเล่นของเทศบาลที่เลกเฮย์ส เอสเตต เข้าได้จากถนนสามสาย"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"McBride Park, Lake Hayes Estate, Queenstown","ok":"2026-11","src":"https://www.qldc.govt.nz/recreation/playgrounds"}
+      {"name":{"en":"McBride Park","th":"แม็กไบรด์ พาร์ก"},"kind":"play","area":{"en":"Lake Hayes Estate","th":"เลกเฮย์ส เอสเตต"},"what":{"en":"A playground at Lake Hayes Estate, listed by the council under Lake Hayes Estate Playground","th":"สนามเด็กเล่นที่เลกเฮย์ส เอสเตต ที่เทศบาลขึ้นทะเบียนไว้ภายใต้ชื่อสนามเด็กเล่นเลกเฮย์ส เอสเตต"},"why":{"en":"a council playground at Lake Hayes Estate that can be reached from three roads","th":"สนามเด็กเล่นของเทศบาลที่เลกเฮย์ส เอสเตต เข้าได้จากถนนสามสาย"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"McBride Park, Lake Hayes Estate, Queenstown","ok":"2026-11","src":"https://www.qldc.govt.nz/recreation/playgrounds"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
+          "name": {
+            "th": "ฟาร์มลาเวนเดอร์วานากา",
+            "en": "Wānaka Lavender Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "วานากา",
+            "en": "Wānaka"
+          },
+          "what": {
+            "th": "ฟาร์มลาเวนเดอร์ มีแพะ วัวไฮแลนด์ และร้านน้ำชา",
+            "en": "A lavender farm with goats, highland cows and a tearoom"
+          },
+          "why": {
+            "th": "มีเกมบนสนามหญ้า แพะให้ป้อนอาหาร และรถแทรกเตอร์เก่าให้ตามหา",
+            "en": "Lawn games, goats to feed and an old tractor to find"
+          },
+          "q": "Wānaka Lavender Farm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
+          "name": {
+            "th": "พัซซลิงเวิลด์",
+            "en": "Puzzling World"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "วานากา",
+            "en": "Wānaka"
+          },
+          "what": {
+            "th": "ห้องภาพลวงตา เขาวงกตสามมิติยักษ์ และหอเอียง",
+            "en": "Illusion rooms, a giant 3-D maze and a leaning tower"
+          },
+          "why": {
+            "th": "มีเขาวงกตให้หลงสนุกในวันฝนตก",
+            "en": "A maze to get lost in on a drizzly day"
+          },
+          "tip": {
+            "th": "เปิดทั้งปี เหมาะกับวันฝนตก",
+            "en": "Open all year, good for a rainy day"
+          },
+          "q": "Puzzling World, Wanaka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
+          "name": {
+            "th": "พิพิธภัณฑ์ยานพาหนะและของเล่น",
+            "en": "National Transport & Toy Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สนามบินวานากา",
+            "en": "Wānaka airport"
+          },
+          "what": {
+            "th": "ยานพาหนะเก่าหลายร้อยคันและของเล่นจากทุกยุค",
+            "en": "Hundreds of vintage vehicles and shelves of toys from every era"
+          },
+          "why": {
+            "th": "เด็กได้ปีนขึ้นรถดับเพลิงและดูรถถังจริง",
+            "en": "Children climb into fire engines and see real tanks"
+          },
+          "q": "National Transport & Toy Museum, Wanaka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
+          "name": {
+            "th": "ไบก์เกลนดู",
+            "en": "Bike Glendhu"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อ่าวเกลนดู วานากา",
+            "en": "Glendhu Bay, Wānaka"
+          },
+          "what": {
+            "th": "สวนจักรยานภูเขา เส้นทางกว่า 30 กม. เหนือทะเลสาบวานากา",
+            "en": "A mountain bike park with more than 30 km of trails above Lake Wānaka"
+          },
+          "why": {
+            "th": "มีกระบะทราย ลานปั๊มแทร็ก และจักรยานทรงตัวให้เด็กเล็กยืมฟรี",
+            "en": "A sandpit, a pump track and free balance bikes for little ones"
+          },
+          "tip": {
+            "th": "เปิดปลายเดือนตุลาคม",
+            "en": "Opens at the end of October"
+          },
+          "q": "Bike Glendhu, Wanaka",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.wanaka.co.nz/wanaka-stories/things-to-with-kids-in-wanaka/",
+          "name": {
+            "th": "ไคนด์ฟาร์ม",
+            "en": "Kind Farm Animal Sanctuary"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "หุบเขาคาร์โดรนา",
+            "en": "Cardrona Valley"
+          },
+          "what": {
+            "th": "ทัวร์ฟาร์มหนึ่งชั่วโมง ได้ใกล้ชิดสัตว์ที่ได้รับการช่วยเหลือ",
+            "en": "A one-hour farm tour to meet rescued animals up close"
+          },
+          "why": {
+            "th": "ได้เจอสัตว์และฟังเรื่องราวของแต่ละตัว",
+            "en": "Meet the animals and hear their stories"
+          },
+          "q": "Kind Farm South, Cardrona Valley",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/",
+          "name": {
+            "th": "ซิปไลน์คาวาเรา",
+            "en": "Kawarau Zipride"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สะพานคาวาเรา กิบบ์สตัน",
+            "en": "Kawarau Bridge, Gibbston"
+          },
+          "what": {
+            "th": "ซิปไลน์ที่จุดบันจี้จัมป์สะพานคาวาเรา เล่นคนเดียวหรือพร้อมกันได้ถึงเจ็ดคน",
+            "en": "A zipline at the Kawarau Bridge bungy site, alone or with up to six others"
+          },
+          "why": {
+            "th": "มีให้เด็กเล่นระหว่างผู้ใหญ่โดดบันจี้",
+            "en": "Something for the young ones while grown-ups bungy"
+          },
+          "q": "Kawarau Zip Line, Gibbston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://nzpocketguide.com/10-things-to-do-in-queenstown-with-kids/",
+          "name": {
+            "th": "โคโรเน็ตพีก",
+            "en": "Coronet Peak"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ห่างจากควีนส์ทาวน์ 16 กม.",
+            "en": "16 km from Queenstown"
+          },
+          "what": {
+            "th": "ลานสกีที่มีศูนย์เด็กเล็กสำหรับเด็ก 2–5 ขวบ",
+            "en": "A ski field with an early learning centre for children aged 2 to 5"
+          },
+          "why": {
+            "th": "เด็กเล็กได้เรียนสกีหรือเล่นหิมะ",
+            "en": "Little ones have ski lessons or play in the snow"
+          },
+          "tip": {
+            "th": "ช่วงฤดูสกี",
+            "en": "In the ski season"
+          },
+          "q": "Coronet Peak, Queenstown",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

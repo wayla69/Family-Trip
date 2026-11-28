@@ -273,6 +273,450 @@
           "q": "Ellinikon Sports Park, Aeroporias, Alimos",
           "ok": "2026-11",
           "src": "https://www.tovima.com/society/the-ellinikon-sports-park-opens-to-the-public/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์ดิโอเมเดส",
+            "en": "Diomedes Botanical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไฮดารี",
+            "en": "Haidari"
+          },
+          "what": {
+            "th": "พืชกว่า 3,000 ชนิด มีทางเดินร่มรื่น บ่อน้ำ และจุดปิกนิก",
+            "en": "Over 3,000 plant species with shaded paths, ponds and picnic spots"
+          },
+          "why": {
+            "th": "มีโซนพืชในตำนานกรีกให้เดินสำรวจ",
+            "en": "A garden of plants from Greek myths to roam"
+          },
+          "q": "Diomidous Botanical Garden, Iera Odos 405, Haidari",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์เรือรบอาเวรอฟ",
+            "en": "Battleship Averof museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าเรือฟลิสวอส ปาเลโอฟาลีโร",
+            "en": "Flisvos Marina, Palaio Faliro"
+          },
+          "what": {
+            "th": "เรือรบจอดที่ฟลิสวอส เป็นพิพิธภัณฑ์หลายชั้น",
+            "en": "A battleship docked at Flisvos, now a museum on several decks"
+          },
+          "why": {
+            "th": "เด็กได้สำรวจชั้นต่างๆ และจินตนาการชีวิตในทะเล",
+            "en": "Children explore the decks and imagine life at sea"
+          },
+          "q": "Georgios Averof Battleship Museum, Flisvos, Palaio Faliro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์ของเล่นเบนากี",
+            "en": "Benaki Toy Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ปาเลโอฟาลีโร",
+            "en": "Palaio Faliro"
+          },
+          "what": {
+            "th": "ของเล่นราว 3,000 ชิ้นในวิลล่าหน้าตาเหมือนปราสาท",
+            "en": "Some 3,000 toys and games in a castle-like villa"
+          },
+          "why": {
+            "th": "ตุ๊กตา ของเล่นกลไก รถไฟจำลอง และหุ่นเงา",
+            "en": "Dolls, mechanical toys, model trains and shadow puppets"
+          },
+          "q": "Benaki Toy Museum, Palaio Faliro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปะไซคลาดีส",
+            "en": "Museum of Cycladic Art"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โกโลนากี",
+            "en": "Kolonaki"
+          },
+          "what": {
+            "th": "เวิร์กช็อปครอบครัว และชุดอุปกรณ์ครอบครัวพร้อมแผนที่และแท็บเล็ต",
+            "en": "Family workshops and a Family Kit with maps and a tablet"
+          },
+          "why": {
+            "th": "เด็กได้เป็นนักสำรวจศิลปะ",
+            "en": "Children become art explorers"
+          },
+          "q": "Museum of Cycladic Art, Neofytou Douka 4, Athens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ €5–10 เตียงอาบแดด มีส่วนสาธารณะฟรีอยู่ข้างๆ",
+            "en": "≈ €5–10 a sunbed; free public sections next door"
+          },
+          "book": "none",
+          "src": "https://www.athenstourism.org/family-beaches-near-athens-kids/",
+          "name": {
+            "th": "หาดอักติตูอีลีอู",
+            "en": "Akti tou Iliou beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อาลีมอส",
+            "en": "Alimos"
+          },
+          "what": {
+            "th": "หาดของเทศบาล มีสไลเดอร์น้ำ สนามเด็กเล่น และไลฟ์การ์ด",
+            "en": "An organised town beach with water slides, a playground and lifeguards"
+          },
+          "why": {
+            "th": "ทรายลาดน้ำตื้น ไปด้วยขนส่งสาธารณะง่ายที่สุด",
+            "en": "Shallow sand and the easiest beach by public transport"
+          },
+          "q": "Akti Iliou, Alimos",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ €5–8 ค่าเข้า",
+            "en": "≈ €5–8 entry"
+          },
+          "book": "none",
+          "src": "https://www.athenstourism.org/family-beaches-near-athens-kids/",
+          "name": {
+            "th": "หาดวูลา",
+            "en": "Voula Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "วูลา",
+            "en": "Voula"
+          },
+          "what": {
+            "th": "หาดมีการจัดการ มีสนามเด็กเล่น ไลฟ์การ์ด และทรายน้ำตื้น",
+            "en": "An organised beach with a playground, lifeguards and shallow sand"
+          },
+          "why": {
+            "th": "ครอบครัวกรีกในพื้นที่นิยมมา",
+            "en": "Popular with local Greek families"
+          },
+          "q": "Voula Beach, Voula",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+          "name": {
+            "th": "ท่าเรือฟลิสวอส",
+            "en": "Flisvos Marina"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ปาเลโอฟาลีโร",
+            "en": "Palaio Faliro"
+          },
+          "what": {
+            "th": "ทางเดินริมท่าเรือปลอดรถ มีไฟสว่างและร้านอาหาร",
+            "en": "A car-free, lit marina promenade with restaurants"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่ฟรี ที่เดินเล่นยามเย็นของครอบครัวชาวเอเธนส์",
+            "en": "A big free playground, Athens’s family evening stroll"
+          },
+          "q": "Flisvos Marina, Palaio Faliro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "ซัปเปออน",
+            "en": "Zappeion"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ข้างสวนแห่งชาติ",
+            "en": "Next to the National Garden"
+          },
+          "what": {
+            "th": "อาคารซัปเปออนกับน้ำพุและสนามหญ้ากว้าง",
+            "en": "Zappeion Hall with its fountain and open lawns"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นอีกแห่งข้างสวนแห่งชาติ",
+            "en": "Another playground beside the National Garden"
+          },
+          "q": "Zappeion, Athens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "เดอะวอลล์ ปัลลีนี",
+            "en": "The Wall (Pallini)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ปัลลีนี เอเธนส์",
+            "en": "Pallini, Athens"
+          },
+          "what": {
+            "th": "ศูนย์ปีนผาใหญ่ที่สุดในกรีซ มีแทรมโพลีนและเส้นทางเชือก",
+            "en": "Greece's largest climbing centre, with trampolines and a ropes course"
+          },
+          "why": {
+            "th": "มีแทรมโพลีน รถโกคาร์ตแบบปั่น และสวน",
+            "en": "Trampolines, pedal go-karts and a garden"
+          },
+          "q": "THE WALL, Pallini, Athens",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติกูลันดรีส",
+            "en": "Goulandris Natural History Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "คีฟิสเซีย เอเธนส์",
+            "en": "Kifissia, Athens"
+          },
+          "what": {
+            "th": "สัตว์ พืช สัตว์ทะเล และฟอสซิล มีหุ่นไทรเซราทอปส์ตัวใหญ่",
+            "en": "Animals, plants, sea life and fossils, with a big triceratops model"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กเล็กเป็นพิเศษ",
+            "en": "Made for younger children especially"
+          },
+          "q": "Goulandris Natural History Museum, Kifissia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "เพลย์โมบิลฟันพาร์ก เอเธนส์",
+            "en": "Playmobil FunPark Athens"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คีฟิสเซีย เอเธนส์",
+            "en": "Kifissia, Athens"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ธีมของเล่นเพลย์โมบิล",
+            "en": "A big indoor playground built around Playmobil toys"
+          },
+          "why": {
+            "th": "ออกแบบมาสำหรับเด็กเล็กโดยเฉพาะ",
+            "en": "Made especially for younger children"
+          },
+          "q": "PLAYMOBIL FunPark Athens, Kifissia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+          "name": {
+            "th": "พิพิธภัณฑ์ละครหุ่นเงาสปาทาริโอ",
+            "en": "Spathario Shadow Theatre Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มารูซี เอเธนส์",
+            "en": "Marousi, Athens"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ละครหุ่นเงาของกรีซ",
+            "en": "A museum of Greek shadow puppet theatre"
+          },
+          "why": {
+            "th": "ตัวการ์ตูนหุ่นเงาคลาสสิกของกรีซมาเล่นให้ดู",
+            "en": "Greece's classic puppet hero comes alive in silhouette"
+          },
+          "q": "Spathario Shadow Puppet Theater Museum, Marousi",
+          "ok": "2026-11"
         }
       ]
     },
@@ -516,7 +960,7 @@
           "area": { "en": "Vlychada", "th": "วลีชาดา" },
           "what": { "en": "A museum in an old tomato factory, with the machines and the story of the island's tomatoes", "th": "พิพิธภัณฑ์ในโรงงานมะเขือเทศเก่า มีเครื่องจักรและเรื่องราวมะเขือเทศของเกาะ" },
           "why": { "en": "A guide says it is built to win over children who dislike museums", "th": "ไกด์ว่าออกแบบมาให้เด็กที่ไม่ชอบพิพิธภัณฑ์ก็สนุกได้" },
-          "tip": { "en": "Check the hours and price on the museum's own page before driving out", "th": "เช็กเวลาเปิดและราคาบนเว็บพิพิธภัณฑ์ก่อนขับรถไป" },
+          "tip": { "en": "Open about April to October, closed on Mondays; closed in winter. Check the hours and price on the museum's own page before driving out", "th": "เปิดราวเมษายนถึงตุลาคม ปิดวันจันทร์ หน้าหนาวปิด เช็กเวลาเปิดและราคาบนเว็บพิพิธภัณฑ์ก่อนขับรถไป" },
           "ages": [0, 1, 2, 1],
           "hrs": 1.5,
           "io": "in",
@@ -544,6 +988,195 @@
           "q": "Oia, Santorini",
           "ok": "2026-11",
           "src": "https://discovercyclades.gr/blog/santorini-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
+          "name": {
+            "th": "หาดแดง",
+            "en": "Red Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อาโครติรี",
+            "en": "Akrotiri"
+          },
+          "what": {
+            "th": "หาดกรวดใต้หน้าผาสีแดงสูงที่ปลายเกาะ",
+            "en": "Pebbly sand under tall red cliffs at the island’s tip"
+          },
+          "why": {
+            "th": "หน้าผาแดงและกรวดให้สำรวจ",
+            "en": "Red cliffs and pebbles to explore"
+          },
+          "q": "Red Beach, Akrotiri, Santorini",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
+          "name": {
+            "th": "หาดขาว",
+            "en": "White Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อาโครติรี",
+            "en": "Akrotiri"
+          },
+          "what": {
+            "th": "อ่าวเล็กๆ กรวดสีขาวใต้หน้าผาขาว",
+            "en": "A small cove of white pebbles under white cliffs"
+          },
+          "why": {
+            "th": "มีร่มเงาจากหน้าผา",
+            "en": "Some shade from the cliffs"
+          },
+          "q": "White Beach, Akrotiri, Santorini",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.jet2.com/family-guide-to-santorini",
+          "name": {
+            "th": "โรงหนังกลางแจ้งคามารี",
+            "en": "Kamari Open Air Cinema"
+          },
+          "kind": "show",
+          "area": {
+            "th": "คามารี",
+            "en": "Kamari"
+          },
+          "what": {
+            "th": "โรงหนังกลางแจ้ง มีเครื่องดื่มและของว่าง",
+            "en": "An open-air cinema with drinks and snacks"
+          },
+          "why": {
+            "th": "ดูหนังใต้ดวงดาว",
+            "en": "Films under the stars"
+          },
+          "tip": {
+            "th": "ประตูเปิด 20:30 เปิดเฉพาะหน้าร้อน",
+            "en": "Doors open at 20:30; summer only"
+          },
+          "q": "Kamari Open Air Cinema, Kamari",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://blog.jet2.com/family-guide-to-santorini",
+          "name": {
+            "th": "หาดโมโนลิทอส",
+            "en": "Monolithos Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โมโนลิทอส ชายฝั่งตะวันออก",
+            "en": "Monolithos, east coast"
+          },
+          "what": {
+            "th": "หาดทรายดำน้ำตื้น มีที่เล่นและสนามฟุตบอล",
+            "en": "A black-sand beach with shallow water, a play area and a football pitch"
+          },
+          "why": {
+            "th": "น้ำตื้นและมีที่เล่นสำหรับเด็กเล็ก",
+            "en": "Shallow water and a play area for small children"
+          },
+          "q": "Monolithos Beach, Santorini",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://iyc.com/blog/mykonos-child-friendly-vacation/",
+          "name": {
+            "th": "หาดออร์นอส (มิโคนอส)",
+            "en": "Ornos Beach (Mykonos)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ออร์นอส เกาะมิโคนอส",
+            "en": "Ornos, Mykonos"
+          },
+          "what": {
+            "th": "ชายหาดบนเกาะมิโคนอสที่เหมาะกับครอบครัว",
+            "en": "A family-minded beach on Mykonos"
+          },
+          "why": {
+            "th": "มีเก้าอี้อาบแดดให้พ่อแม่ และคลื่นเบาสำหรับเด็กเล็ก",
+            "en": "Sun loungers for parents and gentle waves for little ones"
+          },
+          "q": "Ornos Beach, Mykonos",
+          "ok": "2026-11"
         }
       ]
     }

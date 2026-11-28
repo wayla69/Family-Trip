@@ -303,6 +303,540 @@
           "q": "Al Zohriya Garden, Al Burg Street, Zamalek, Cairo",
           "ok": "2026-11",
           "src": "https://enterpriseam.com/egypt/2025/09/19/your-guide-to-greater-cairos-green-spaces/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 100 ต่อคน",
+            "en": "≈ EGP 100 a person"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "คิดซู",
+            "en": "KidZoo"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "โอบูร์ซิตี",
+            "en": "Obour City"
+          },
+          "what": {
+            "th": "สวนสัตว์ฟาร์มเล็กๆ ที่เด็กได้ใกล้ชิดและให้อาหารแพะ วัว และแกะ",
+            "en": "A small farm zoo where children meet and feed goats, cows and sheep"
+          },
+          "why": {
+            "th": "ค่าเข้ารวมทำขนมปัง ระบายสีกำแพง และเพนต์เครื่องปั้นดินเผา",
+            "en": "Bread baking, wall colouring and pottery painting are in the entry fee"
+          },
+          "tip": {
+            "th": "พกหมวกและครีมกันแดด",
+            "en": "Bring hats and sunscreen"
+          },
+          "q": "KidZoo, Obour City, Cairo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "คิดซาเนีย ไคโร",
+            "en": "KidZania Cairo"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคโรเฟสติวัลซิตี นิวไคโร",
+            "en": "Cairo Festival City, New Cairo"
+          },
+          "what": {
+            "th": "เมืองจำลองให้เด็กลองทำอาชีพผู้ใหญ่",
+            "en": "A miniature city where children try grown-up jobs"
+          },
+          "why": {
+            "th": "มีชุดตามอาชีพ และเปิดบัญชีเก็บค่าจ้างได้",
+            "en": "Uniforms for each job and a bank account for their salary"
+          },
+          "q": "KidZania Cairo, Cairo Festival City, New Cairo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 100 ต่อคน",
+            "en": "≈ EGP 100 a person"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "ฟาร์มบลูโลตัส",
+            "en": "Blue Lotus Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ซักกอรา กีซา",
+            "en": "Saqqara, Giza"
+          },
+          "what": {
+            "th": "เกสต์เฮาส์ฟาร์ม มีบ่อบัวสีน้ำเงิน และอาหารทำเองจากผลผลิตในฟาร์ม",
+            "en": "A farm guesthouse with blue lotus ponds and home-cooked meals from the farm"
+          },
+          "why": {
+            "th": "เด็กเล่นกับสัตว์ได้หลายชั่วโมง",
+            "en": "Children spend hours with the animals"
+          },
+          "tip": {
+            "th": "เด็กต่ำกว่า 5 ขวบเข้าฟรี",
+            "en": "Under-fives free"
+          },
+          "q": "Blue Lotus Guesthouse, Saqqara, Giza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "ฟักนูน อาร์ตสคูล",
+            "en": "Fagnoon Art School"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนซักกอรา กีซา",
+            "en": "Saqqara road, Giza"
+          },
+          "what": {
+            "th": "ฟาร์มกิจกรรมศิลปะ ปั้นดิน เครื่องปั้นดินเผา ระบายสี บ่อโคลน และเปลญวน",
+            "en": "A farm of art activities: clay, pottery, painting, a mud lake and hammocks"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นเลอะโคลนได้ และปิกนิกใต้ต้นไม้",
+            "en": "Children run about and get muddy; a picnic under the trees"
+          },
+          "tip": {
+            "th": "เตรียมเสื้อผ้าสำรอง",
+            "en": "Pack a spare set of clothes"
+          },
+          "q": "Fagnoon Art School, Saqqara Road, Giza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "โรงละครซิตารา",
+            "en": "Sitara Theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ห้างปอร์โตไคโร นิวไคโร",
+            "en": "Porto Cairo mall, New Cairo"
+          },
+          "what": {
+            "th": "โรงละครที่มีการแสดงโต้ตอบและเวิร์กช็อปสำหรับเด็ก",
+            "en": "A theatre with interactive shows and workshops for children"
+          },
+          "why": {
+            "th": "การแสดงสบายๆ สำหรับวันที่เด็กอยากนั่งดู",
+            "en": "A calm show for days when children want to sit and watch"
+          },
+          "q": "Sitara Theatre, Porto Cairo Mall, New Cairo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 160",
+            "en": "≈ EGP 160"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "คลับลิโค",
+            "en": "ClubLiko"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คอมพาวด์อัลการ์มา 6th of October",
+            "en": "Al Karma compound, 6th of October"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มและกลางแจ้งสามชั้น มีหมู่บ้านจำลองและห้องเลโก้",
+            "en": "A three-storey indoor and outdoor play place with a pretend village and a Lego room"
+          },
+          "why": {
+            "th": "เด็ก 1–8 ขวบเล่นได้ทั้งวัน มีหุ่นมือและกิจกรรมทำอาหาร",
+            "en": "Children of 1 to 8 play all day, with puppet shows and cooking time"
+          },
+          "tip": {
+            "th": "มีห้องรับรองให้พ่อแม่นั่งรอ",
+            "en": "A lounge for parents to wait in"
+          },
+          "q": "Clubliko, Al Karma 3 Compound, 6th of October",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "บิลลีบีซ มอลล์ออฟอาราเบีย",
+            "en": "Billy Beez (Mall of Arabia)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มอลล์ออฟอาราเบีย 6th of October",
+            "en": "Mall of Arabia, 6th of October"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีสไลเดอร์และแทรมโพลีน",
+            "en": "An indoor play area with slides and trampolines"
+          },
+          "why": {
+            "th": "ลื่นไถลและกระโดดสำหรับเด็ก 3–12 ปี",
+            "en": "Sliding and jumping for children of 3 to 12"
+          },
+          "q": "Billy Beez, Mall of Arabia, Giza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "เมจิกแกแล็กซี ซิตีสตาร์ส",
+            "en": "Magic Galaxy (City Stars)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างซิตีสตาร์ส นัสร์ซิตี",
+            "en": "City Stars mall, Nasr City"
+          },
+          "what": {
+            "th": "ศูนย์สวนสนุกในร่ม มีรถไฟเหาะ รถบั๊มพ์ และเกม",
+            "en": "An indoor amusement centre with a roller coaster, bumper cars and video games"
+          },
+          "why": {
+            "th": "เปิดทุกวัน หนีร้อนช่วงบ่ายได้",
+            "en": "Open every day, an indoor choice for a hot afternoon"
+          },
+          "q": "Magic Galaxy, City Stars, Nasr City",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 20",
+            "en": "≈ EGP 20"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "สวิสคลับ ไคโร",
+            "en": "Swiss Club Cairo"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อิมบาบา",
+            "en": "Imbaba"
+          },
+          "what": {
+            "th": "คลับที่มีสวนเขียวขจี สนามเด็กเล่นใหญ่ และที่ปั่นจักรยาน",
+            "en": "A club with lush gardens, a big playground and room for cycling"
+          },
+          "why": {
+            "th": "เที่ยวสุดสัปดาห์สบายๆ เด็กปั่นจักรยานรอบสวน",
+            "en": "A relaxed weekend outing; children cycle round the grounds"
+          },
+          "q": "Swiss Club, Villa Pax, Imbaba, Giza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "คิดส์สเตชัน อเมริกานาพลาซา",
+            "en": "Kids Station (Americana Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อเมริกานาพลาซา ชีคซายิด",
+            "en": "Americana Plaza, Sheikh Zayed"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม มีซอฟต์เพลย์ สไลเดอร์ และเครื่องปีน",
+            "en": "An indoor playground with soft play, slides and climbing"
+          },
+          "why": {
+            "th": "ออกแบบสำหรับเด็กเล็ก มีคาเฟ่อยู่ใกล้ๆ",
+            "en": "Made for younger children, with cafés nearby"
+          },
+          "q": "Kids Station, Americana Plaza, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "มังกี้เมซ อาร์คานพลาซา",
+            "en": "Monkey Maze (Arkan Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาร์คานพลาซา ชีคซายิด",
+            "en": "Arkan Plaza, Sheikh Zayed"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มแบบเคลื่อนไหว มีเครื่องปีน อุโมงค์ และด่าน",
+            "en": "Indoor movement play with climbing frames, tunnels and obstacles"
+          },
+          "why": {
+            "th": "มากกว่าสไลเดอร์กับบ่อบอล สำหรับเด็กโตขึ้นมาหน่อย",
+            "en": "More than a slide and a ball pit, for slightly older children"
+          },
+          "q": "Monkey Maze Arkan, Arkan Plaza, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "เพลย์พอยต์ อียิปต์",
+            "en": "PlayPoint Egypt"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนน 26 กรกฎาคม ชีคซายิด",
+            "en": "26th of July Corridor, Sheikh Zayed"
+          },
+          "what": {
+            "th": "โซนกิจกรรม มีซอฟต์เพลย์ แทรมโพลีน และเกมกลุ่ม",
+            "en": "An activity zone with soft play, trampolines and group games"
+          },
+          "why": {
+            "th": "เด็กเปลี่ยนไปเล่นหลายแบบได้",
+            "en": "Children move between different kinds of play"
+          },
+          "q": "PlayPoint Egypt, 26th of July Corridor, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "ฟันโทเปีย มาซาร์มอลล์",
+            "en": "Funtopia (Mazar Mall)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มาซาร์มอลล์ ชีคซายิด",
+            "en": "Mazar Mall, Sheikh Zayed"
+          },
+          "what": {
+            "th": "ผนังปีนและด่านอุปสรรคในร่ม",
+            "en": "Indoor climbing walls and obstacle courses"
+          },
+          "why": {
+            "th": "สำหรับเด็กโตที่อยากได้ความท้าทาย",
+            "en": "For older children who want a challenge"
+          },
+          "q": "Funtopia, Mazar Mall, Sheikh Zayed",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://assets.cairo360.com/article/city-life/where-to-take-the-kids-in-west-cairo-zayed-octobers-top-play-spots/",
+          "name": {
+            "th": "คอสโมซิตี้ อาร์คานพลาซา",
+            "en": "Cosmocity (Arkan Plaza)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาร์คานพลาซา ชีคซายิด",
+            "en": "Arkan Plaza, Sheikh Zayed"
+          },
+          "what": {
+            "th": "เกมอาร์เคด โบว์ลิง และเครื่องเล่น",
+            "en": "Arcade games, bowling and attractions"
+          },
+          "why": {
+            "th": "มีอะไรให้พี่น้องหลายวัยเล่นได้",
+            "en": "Something for brothers and sisters of different ages"
+          },
+          "q": "Cosmocity Arkan, Arkan Plaza, Sheikh Zayed",
+          "ok": "2026-11"
         }
       ]
     },
@@ -572,6 +1106,129 @@
           "book": "none",
           "q": "Mummification Museum, Corniche, Luxor",
           "src": "https://egymonuments.gov.eg/en/museums/mummification-museum"
+        },
+        {
+          "local": "Corniche el-Nile",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://exploreluxor.org/free-things-to-do/",
+          "name": {
+            "th": "ทางเดินริมแม่น้ำไนล์ลักซอร์",
+            "en": "Luxor Corniche"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ฝั่งตะวันออก ลักซอร์",
+            "en": "East Bank, Luxor"
+          },
+          "what": {
+            "th": "ทางเดินริมแม่น้ำ วิวเนินเขาฝั่งตะวันตก",
+            "en": "The riverside walk with the West Bank hills across the water"
+          },
+          "why": {
+            "th": "ครอบครัวท้องถิ่นออกมาเดินตอนเย็น มีข้าวโพดย่างและชา",
+            "en": "Local families out in the evening, with roasted corn and tea"
+          },
+          "tip": {
+            "th": "เริ่มใกล้โรงแรมวินเทอร์พาเลซ ราว 30 นาทีก่อนพระอาทิตย์ตก",
+            "en": "Start near the Winter Palace Hotel about 30 minutes before sunset"
+          },
+          "q": "Luxor Nile Corniche, Luxor",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://exploreluxor.org/temple-of-khnum/",
+          "name": {
+            "th": "วิหารคนุม",
+            "en": "Temple of Khnum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เอสนา ห่างลักซอร์ไปทางใต้ราว 55 กม.",
+            "en": "Esna, about 55 km south of Luxor"
+          },
+          "what": {
+            "th": "วิหารที่เสาหินทาสีได้รับการทำความสะอาดในการบูรณะ 6 ปี",
+            "en": "A temple whose painted columns were cleaned in a six-year restoration"
+          },
+          "why": {
+            "th": "เสาสีน้ำเงิน แดง และเหลืองเต็มไปด้วยอักษรภาพ",
+            "en": "A forest of blue, red and yellow columns with hieroglyphs"
+          },
+          "tip": {
+            "th": "เปิด 8:00 มาเช้าอากาศเย็นและคนน้อย",
+            "en": "Opens at 8:00 AM; come early for cooler air and fewer people"
+          },
+          "q": "Temple of Khnum, Esna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://exploreluxor.org/tombs-of-the-nobles/",
+          "name": {
+            "th": "สุสานขุนนาง",
+            "en": "Tombs of the Nobles"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฝั่งตะวันตก ลักซอร์",
+            "en": "West Bank, Luxor"
+          },
+          "what": {
+            "th": "สุสานข้าราชการกว่า 400 แห่ง ผนังภาพวาดยังสดใส",
+            "en": "Over 400 tombs of officials with bright painted walls"
+          },
+          "why": {
+            "th": "ภาพงานเลี้ยง ดนตรี เด็กเล่น และการทำนา",
+            "en": "Scenes of banquets, music, children playing and farming"
+          },
+          "tip": {
+            "th": "กรุ๊ปทัวร์ส่วนใหญ่ไม่มา จึงมักเงียบ",
+            "en": "Most tour groups skip it, so it is often quiet"
+          },
+          "q": "Tombs of the Nobles, Al Qarna, Luxor",
+          "ok": "2026-11"
         }
       ]
     }

@@ -332,6 +332,355 @@
           "q": "Turtle Lake, Tbilisi",
           "ok": "2026-11",
           "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "โบสถ์เกอร์เกติตรีนิตี",
+            "en": "Gergeti Trinity Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "คาซเบกี (สเตปันต์สมินดา)",
+            "en": "Kazbegi (Stepantsminda)"
+          },
+          "what": {
+            "th": "โบสถ์บนเนินเหนือคาซเบกี เดินขึ้นหรือนั่งรถ 4×4 ร่วม",
+            "en": "A hilltop church above Kazbegi, by a short hike or a shared 4×4"
+          },
+          "why": {
+            "th": "เห็นวิวยอดเขาคาซเบกจากลานโบสถ์",
+            "en": "Views of Mount Kazbek from the churchyard"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ กางเกงหรือกระโปรงยาว คลุมไหล่ ผู้หญิงคลุมผม มีผ้าให้ยืมที่ประตู ไปแต่เช้า",
+            "en": "Dress code: long trousers or skirt, shoulders and women’s hair covered; wraps lent at the gate. Go early"
+          },
+          "q": "Gergeti Trinity Church, Kazbegi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days",
+          "name": {
+            "th": "น้ำตกเลกห์วตาเคฟี",
+            "en": "Leghvtakhevi waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทบิลิซีเก่า",
+            "en": "Old Tbilisi"
+          },
+          "what": {
+            "th": "น้ำตกกลางเมือง เดินไปตามทางไม้",
+            "en": "A waterfall in the city centre, reached on boardwalks"
+          },
+          "why": {
+            "th": "น้ำตกไหลแรง เดินจากเมืองเก่าไม่ไกล",
+            "en": "A roaring waterfall a short walk from the old town"
+          },
+          "tip": {
+            "th": "ช่วงท้ายมีบันได จับมือเด็กไว้ และทิ้งรถเข็นไว้",
+            "en": "Steps at the end: hold hands and leave the pram behind"
+          },
+          "q": "Leghvtakhevi Waterfall, 1 Botanikuri Street, Tbilisi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days",
+          "name": {
+            "th": "สะพานสันติภาพ",
+            "en": "Bridge of Peace"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ระหว่างสวนริเกกับทบิลิซีเก่า",
+            "en": "Between Rike Park and Old Tbilisi"
+          },
+          "what": {
+            "th": "สะพานกระจกข้ามแม่น้ำ",
+            "en": "A glass footbridge over the river"
+          },
+          "why": {
+            "th": "เดินลอดซุ้มกระจก บริเวณนี้ปลอดรถ เล่นสกู๊ตเตอร์ได้",
+            "en": "Glass arches to walk under; the area is car-free for scooters"
+          },
+          "q": "Bridge of Peace, Tbilisi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "มหาวิหารซีโอนี",
+            "en": "Sioni Basilica"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านซีโอนี ทางใต้ของคาซเบกี",
+            "en": "Sioni village, south of Kazbegi"
+          },
+          "what": {
+            "th": "โบสถ์เก่าแก่ที่สุดแห่งหนึ่งของย่าน มีหอสังเกตการณ์อยู่ข้าง",
+            "en": "One of the area’s oldest churches, with a watchtower beside it"
+          },
+          "why": {
+            "th": "เดินขึ้นไปไม่ไกล ได้วิวหุบเขา",
+            "en": "A short walk up for a view of the valley"
+          },
+          "q": "Sioni Basilica, Sioni, Kazbegi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ บริจาค 5 ลารี",
+            "en": "≈ GEL 5 donation"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "หัวหินยักษ์หมู่บ้านสโน",
+            "en": "Giant stone heads of Sno"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านสโน ใกล้คาซเบกี",
+            "en": "Sno village, near Kazbegi"
+          },
+          "what": {
+            "th": "สวนรูปปั้นหัวหินยักษ์กลางแจ้งที่ทางเข้าหมู่บ้าน",
+            "en": "An open-air garden of giant stone heads at the village entrance"
+          },
+          "why": {
+            "th": "หัวหินขนาดใหญ่ให้แหงนมอง",
+            "en": "Huge heads to look up at in the landscape"
+          },
+          "q": "Gigantic Sculptures by Merab Piranishvili, Sno",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "ป้อมซาคาโกรี",
+            "en": "Zakagori Fortress"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หุบเขาทรูโซ ใกล้คาซเบกี",
+            "en": "Truso Valley, near Kazbegi"
+          },
+          "what": {
+            "th": "ซากป้อมในหุบเขาทรูโซ เดินป่าหรือนั่งรถ 4×4",
+            "en": "A fortress ruin in the Truso Valley, by a hike or a 4×4"
+          },
+          "why": {
+            "th": "ทางเดินผ่านบ่อน้ำแร่หินปูน",
+            "en": "A walk with travertine springs on the way"
+          },
+          "tip": {
+            "th": "พกหนังสือเดินทาง มีด่านตรวจบัตรของทหารพราน",
+            "en": "Carry your passport: border guards check photo ID"
+          },
+          "q": "Zakagori Fortress, Truso Valley",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "อารามดาเรียลี",
+            "en": "Dariali Monastery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หุบเขาดาเรียลี ใกล้คาซเบกี",
+            "en": "Dariali Gorge, near Kazbegi"
+          },
+          "what": {
+            "th": "อารามใต้ภูเขาในหุบเขาดาเรียลี",
+            "en": "A monastery complex under the mountains of the Dariali gorge"
+          },
+          "why": {
+            "th": "บรรยากาศยิ่งใหญ่ มีคาเฟ่ให้กินข้าวกลางวัน",
+            "en": "A grand setting, with a café for lunch"
+          },
+          "q": "Dariali Monastery Complex, Dariali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "อารามโยอาเนนาตลิสเมเซลี",
+            "en": "Ioane Natlismcemeli monastery"
+          },
+          "kind": "views",
+          "area": {
+            "th": "คาซเบกี (สเตปันต์สมินดา)",
+            "en": "Kazbegi (Stepantsminda)"
+          },
+          "what": {
+            "th": "อารามเล็กบนเนินเหนือเมือง มองเห็นโบสถ์เกอร์เกติ",
+            "en": "A small monastery on the hill above the town, facing Gergeti church"
+          },
+          "why": {
+            "th": "วิวทั้งเมืองและภูเขา",
+            "en": "A view over the town and the mountains"
+          },
+          "tip": {
+            "th": "เดินราว 45 นาที มีช่วงชันสั้นๆ",
+            "en": "About 45 minutes’ walk with a short steep climb"
+          },
+          "q": "Ioane Natlismcemeli, Stepantsminda",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://georgia.travel/family-attractions/gldani-park",
+          "name": {
+            "th": "สวนกลดานี",
+            "en": "Gldani Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนคีซานิชวิลี กลดานี ทบิลิซี",
+            "en": "Khizanishvili Street, Gldani, Tbilisi"
+          },
+          "what": {
+            "th": "สวนขนาด 13,000 ตร.ม. มีทางเดิน ลานสเก็ต และผนังปีน",
+            "en": "A 13,000 m² park with trails, a skate park and climbing walls"
+          },
+          "why": {
+            "th": "ออกแบบมาเพื่อเด็กและวัยรุ่นโดยเฉพาะ",
+            "en": "Made especially for children and teenagers"
+          },
+          "q": "Gldani Park, Omar Khizanishvili St, Tbilisi",
+          "ok": "2026-11"
         }
       ]
     }

@@ -353,7 +353,432 @@
       {"name":{"en":"Barcelona Wax Museum","th":"พิพิธภัณฑ์ขี้ผึ้งบาร์เซโลนา"},"kind":"museumkid","area":{"en":"La Rambla","th":"ลาสรามบลา"},"what":{"en":"Wax museum in a beautiful old building on La Rambla, with a vault where you can act out a robbers' escape.","th":"พิพิธภัณฑ์ขี้ผึ้งในอาคารเก่าที่สวยบนลาสรามบลา มีห้องนิรภัยให้เล่นเป็นโจรหนีด้วยของที่ขโมยมา"},"why":{"en":"The vault simulates how robbers try to escape with their loot, which the page calls one of the best places for kids in Barcelona.","th":"ห้องนิรภัยจำลองการหนีของโจร หน้าเว็บเรียกว่าเป็นหนึ่งในที่ดีที่สุดสำหรับเด็กในบาร์เซโลนา"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Barcelona Wax Museum, La Rambla, Barcelona","ok":"2026-11","src":"https://www.tiqets.com/blog/?p=17070"},
       {"name":{"en":"Parc Joan Miro","th":"สวนฌ็องมีโร"},"kind":"park","area":{"en":"Las Arenas","th":"ลาสอาเรนัส"},"what":{"en":"Park with Joan Miró's centre-piece statue Dona i Ocell (Woman and Bird), rising 22 metres over two lawns and maze-like paths.","th":"สวนที่มีรูปปั้นศูนย์กลางของฌ็องมีโร โดนาอิโอเซ (หญิงกับนก) สูง 22 เมตร เหนือสนามหญ้าสองแห่งและทางเดินคล้ายเขาวงกต"},"why":{"en":"A quick sit-down after sightseeing, with bike paths, a basketball court and a bocce spot.","th":"นั่งพักเบาๆ หลังเที่ยว มีทางจักรยาน สนามบาสเกตบอล และลานโบชช์"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parc Joan Miro, behind Las Arenas, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-park-guide/"},
       {"name":{"en":"Joan Brossa Gardens","th":"สวนจัวน์บรอสซา"},"kind":"play","area":{"en":"Montjuïc","th":"มงต์จูอิก"},"what":{"en":"Gardens on Montjuïc with a play area of sand, water, slides, swings, sound pillows and a mini wooden suspension bridge.","th":"สวนบนมงต์จูอิกที่มีสนามเด็กเล่นทราย น้ำ สไลด์ ชิงช้า เสาเสียง และสะพานแขวนไม้จิ๋ว"},"why":{"en":"The page recommends it for the play area with sand, water, slides and swings.","th":"หน้าเว็บแนะนำให้มาที่สนามเด็กเล่นที่มีทราย น้ำ สไลด์ และชิงช้า"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Joan Brossa Gardens, Montjuïc, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"},
-      {"name":{"en":"Plaça de Masadas","th":"ปลาซาเดมาซาดาส"},"kind":"play","area":{"en":"La Sagrera","th":"ลาซาเกรรา"},"what":{"en":"A square in the La Sagrera district, close to the Parc de Can Dragò playground with its mega octopus.","th":"จัตุรัสในย่านลาซาเกรรา ใกล้สนามเด็กเล่นปาร์กเดกันดรางกับปลาหมึกยักษ์"},"why":{"en":"The page calls it a big area full of kids; it is not a restaurant.","th":"หน้าเว็บเรียกว่าเป็นพื้นที่กว้างที่มีเด็กเยอะ และไม่ใช่ร้านอาหาร"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaça de Masadas, La Sagrera, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"}
+      {"name":{"en":"Plaça de Masadas","th":"ปลาซาเดมาซาดาส"},"kind":"play","area":{"en":"La Sagrera","th":"ลาซาเกรรา"},"what":{"en":"A square in the La Sagrera district, close to the Parc de Can Dragò playground with its mega octopus.","th":"จัตุรัสในย่านลาซาเกรรา ใกล้สนามเด็กเล่นปาร์กเดกันดรางกับปลาหมึกยักษ์"},"why":{"en":"The page calls it a big area full of kids; it is not a restaurant.","th":"หน้าเว็บเรียกว่าเป็นพื้นที่กว้างที่มีเด็กเยอะ และไม่ใช่ร้านอาหาร"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaça de Masadas, La Sagrera, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "บังเกอร์เดลการ์เมล (ตูโรเดลาโรบีรา)",
+            "en": "Bunkers del Carmel (Turó de la Rovira)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เนินตูโรเดลาโรบีรา บาร์เซโลนา",
+            "en": "Turó de la Rovira, Horta-Guinardó, Barcelona"
+          },
+          "what": {
+            "th": "ฐานต่อสู้อากาศยานปี 1937 บนเนิน มองเห็นเมืองรอบ 360 องศา",
+            "en": "A 1937 anti-aircraft battery on a hill with a 360-degree view of the city"
+          },
+          "why": {
+            "th": "เด็กโตชอบเรื่องราวในอดีตของที่นี่",
+            "en": "Older children like the history of the place"
+          },
+          "q": "MUHBA Turó de la Rovira, Bunkers del Carmel, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปิกัสโซ",
+            "en": "Picasso Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนมอนต์กาดา เอลบอร์น บาร์เซโลนา",
+            "en": "Carrer de Montcada, El Born, Barcelona"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในคฤหาสน์ยุคกลาง 5 หลัง เล่าช่วงแรกของศิลปิน",
+            "en": "A museum in five medieval mansions, on the artist's early years"
+          },
+          "why": {
+            "th": "มีแผ่นพับนำชมสำหรับครอบครัวฟรี ภาษาอังกฤษ",
+            "en": "Free family-tour leaflets in English"
+          },
+          "q": "Picasso Museum, Carrer de Montcada 15, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "พิพิธภัณฑ์เอฟซีบาร์เซโลนาและทัวร์คัมป์นู",
+            "en": "FC Barcelona Museum and Camp Nou tour"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เลสกอร์ตส์ บาร์เซโลนา",
+            "en": "Les Corts, Barcelona"
+          },
+          "what": {
+            "th": "ห้องถ้วยรางวัล ห้องเมสซี ห้องแต่งตัว และห้องแถลงข่าว",
+            "en": "The trophy gallery, the Messi Hall, the dressing rooms and the press room"
+          },
+          "why": {
+            "th": "สำหรับเด็กที่รักฟุตบอล",
+            "en": "For football-mad children"
+          },
+          "q": "FC Barcelona Museum, Carrer d'Arístides Maillol, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ 18 ยูโรก่อนบ่ายสอง 17 ยูโรหลังบ่ายสอง เด็กต่ำกว่า 16 ปีฟรี",
+            "en": "€18 adults before 2 pm, €17 from 2 pm; free under 16"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "อาคารอาร์ตนูโวซันต์เปา",
+            "en": "Sant Pau Art Nouveau Site"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนซันต์อันโตนีมาเรียกลาเรต บาร์เซโลนา",
+            "en": "Carrer de Sant Antoni Maria Claret, Barcelona"
+          },
+          "what": {
+            "th": "อาคารสไตล์โมเดิร์นนิสต์มรดกยูเนสโก ลานกว้าง โมเสก และน้ำพุรูปมังกร",
+            "en": "A UNESCO Modernista complex with wide courtyards, mosaics and dragon fountains"
+          },
+          "why": {
+            "th": "เด็กชอบความใหญ่และสีสดใส",
+            "en": "Children like the scale and the bright colours"
+          },
+          "q": "Recinte Modernista de Sant Pau, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
+          "name": {
+            "th": "โบสถ์พระหฤทัย (ทิบิดาโบ)",
+            "en": "Temple of the Sacred Heart (Tibidabo)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ยอดเขาทิบิดาโบ บาร์เซโลนา",
+            "en": "Tibidabo hilltop, Barcelona"
+          },
+          "what": {
+            "th": "มหาวิหารบนยอดทิบิดาโบ มองลงมาเห็นเมือง",
+            "en": "The basilica on top of Tibidabo, above the city"
+          },
+          "why": {
+            "th": "วิวคุ้มแม้ไม่เล่นเครื่องเล่น",
+            "en": "The views are worth it even without the rides"
+          },
+          "q": "Temple of the Sacred Heart of Jesus, Tibidabo, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museu Marítim de Barcelona",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €7 ผู้ใหญ่",
+            "en": "≈ €7 adults"
+          },
+          "book": "none",
+          "src": "https://www.artvisitguide.com/best-museums-for-kids-barcelona/",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือบาร์เซโลนา",
+            "en": "Maritime Museum of Barcelona"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดราซาเนส ปลายถนนรัมบลา บาร์เซโลนา",
+            "en": "Drassanes, end of the Rambla, Barcelona"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในอู่ต่อเรือยุคกลาง มีเรือแกลลีขนาดจริงจากศตวรรษที่ 16",
+            "en": "A museum in the medieval shipyards, with a full-size 16th-century galley"
+          },
+          "why": {
+            "th": "เรือแกลลียาว 60 เมตร เด็ก ๆ ตื่นตา",
+            "en": "The 60-metre galley holds children's attention"
+          },
+          "tip": {
+            "th": "เข้าฟรีวันอาทิตย์ตั้งแต่ 15:00",
+            "en": "Free on Sundays from 15:00"
+          },
+          "q": "Museu Marítim de Barcelona, Drassanes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://fantastixsuper3.com/en/things-to-do-in-barcelona-with-kids",
+          "name": {
+            "th": "ฟันตัสติกซ์เดลซูเปร์ 3",
+            "en": "Fantàstix del Super3"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโรสเซโย ซากราดาฟามีเลีย บาร์เซโลนา",
+            "en": "Carrer del Rosselló, Sagrada Família, Barcelona"
+          },
+          "what": {
+            "th": "โลกเล่นในร่มสำหรับเด็ก พื้นที่กว่า 2,000 ตร.ม.",
+            "en": "An indoor children's play world of over 2,000 m²"
+          },
+          "why": {
+            "th": "ปลอดภัย อยู่ในร่มทั้งหมด และอยู่กลางเมือง",
+            "en": "Safe, all indoors and central"
+          },
+          "q": "Fantàstix del Super3, Carrer del Rosselló 485, Barcelona",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Parc de Diagonal Mar",
+            "th": "ปาร์กเดดิอากอนัลมาร์"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Diagonal Mar, Poblenou seafront",
+            "th": "ดิอากอนัลมาร์ ริมทะเลโปเบลนู"
+          },
+          "what": {
+            "en": "Barcelona's second largest park, by the sea with a lake fed by water running down sloping steps.",
+            "th": "สวนใหญ่เป็นอันดับสองของบาร์เซโลนา อยู่ริมทะเล มีทะเลสาบที่น้ำไหลลงมาตามขั้นบันได"
+          },
+          "why": {
+            "en": "A big open space that runs down to the sea, with water running down steps into the lake.",
+            "th": "พื้นที่โล่งกว้างทอดยาวถึงทะเล มีน้ำไหลตามขั้นบันไดลงสู่ทะเลสาบ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc de Diagonal Mar, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/parks-and-gardens/parc-de-diagonal-mar_99085102712.html"
+        },
+        {
+          "name": {
+            "en": "Barcelona Music Museum",
+            "th": "พิพิธภัณฑ์ดนตรีบาร์เซโลนา"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "L'Auditori, Barcelona",
+            "th": "ลาวดิโตรี บาร์เซโลนา"
+          },
+          "what": {
+            "en": "The city's music museum, with a permanent collection of 500 instruments from different periods and cultures.",
+            "th": "พิพิธภัณฑ์ดนตรีของเมือง มีเครื่องดนตรี 500 ชิ้นจากหลายยุคหลายวัฒนธรรมจัดแสดงถาวร"
+          },
+          "why": {
+            "en": "Children under 16 go in free, so the collection costs only the grown-ups.",
+            "th": "เด็กอายุต่ำกว่า 16 ปีเข้าฟรี จ่ายเฉพาะผู้ใหญ่"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 general admission",
+            "th": "≈ €6 ตั๋วทั่วไป"
+          },
+          "book": "none",
+          "q": "Museu de la Música de Barcelona, L'Auditori, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/culture/museums/museu-de-la-musica-92086004112",
+          "local": "Museu de la Música de Barcelona"
+        },
+        {
+          "name": {
+            "en": "Castell de l'Oreneta Park",
+            "th": "สวนปราสาทโอเรเนตา"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Castell de l'Oreneta, Barcelona",
+            "th": "กัสเตลเดโอเรเนตา บาร์เซโลนา"
+          },
+          "what": {
+            "en": "A park with wide open spaces and a miniature train, set in nature.",
+            "th": "สวนที่มีลานกว้างและรถไฟจิ๋ว อยู่กลางธรรมชาติ"
+          },
+          "why": {
+            "en": "Wide open spaces for running and playing in the safety of nature, plus a miniature train for little ones.",
+            "th": "ลานกว้างให้วิ่งเล่นอย่างปลอดภัยท่ามกลางธรรมชาติ และมีรถไฟจิ๋วให้เด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc del Castell de l'Oreneta, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/internationalwelcome/en/live-and-settle/what-you-need/family-and-kids/outdoor-fun-whole-family"
+        },
+        {
+          "name": {
+            "en": "Joan Antoni Samaranch Olympic and Sports Museum",
+            "th": "พิพิธภัณฑ์โอลิมปิกและกีฬาโจอันอันโตนีซามารันช์"
+          },
+          "local": "Museu Olímpic i de l'Esport Joan Antoni Samaranch",
+          "kind": "museum",
+          "area": {
+            "en": "Avinguda de l'Estadi, Montjuïc",
+            "th": "อาวีงูดาเดเลสตาดี มงจูอิก"
+          },
+          "what": {
+            "en": "A museum on Montjuïc about the Olympic Games and sport, with its exhibits shown in an interactive way.",
+            "th": "พิพิธภัณฑ์บนมงจูอิกเรื่องโอลิมปิกและกีฬา จัดแสดงแบบโต้ตอบได้"
+          },
+          "why": {
+            "en": "Children under 7 go in free, and the interactive exhibits suit young visitors.",
+            "th": "เด็กอายุต่ำกว่า 7 ปีเข้าฟรี และนิทรรศการแบบโต้ตอบเหมาะกับผู้เข้าชมวัยเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Museu Olímpic i de l'Esport Joan Antoni Samaranch, Av. de l'Estadi 60, Montjuïc, Barcelona, Spain",
+          "ok": "2026-11",
+          "src": "https://irbarcelona.org/barcelona-museums/joan-antoni-samaranch-olympics-sport-museum/"
+        }
     ]
     },
     {
@@ -650,7 +1075,505 @@
       {"name":{"en":"Parque del Oeste","th":"สวนปาร์เกเดลโอเอสเต"},"kind":"park","area":{"en":"western side of Madrid","th":"ฝั่งตะวันตกของมาดริด"},"what":{"en":"A serene park on the western side of Madrid with playgrounds and city views, best at sunset.","th":"สวนเงียบสงบฝั่งตะวันตกของมาดริด มีสนามเด็กเล่นและวิวเมือง ดีที่สุดตอนพระอาทิตย์ตก"},"why":{"en":"Playgrounds and views, with room to run and a calm place to sit.","th":"สนามเด็กเล่นและวิว มีที่ให้วิ่งและที่นั่งสงบ"},"tip":{"en":"Best at sunset for the views, per the page.","th":"ดีที่สุดตอนพระอาทิตย์ตกเพื่อชมวิว ตามหน้าเว็บ"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Parque del Oeste, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
       {"name":{"en":"Parque Juan Carlos I","th":"สวนฮวนการ์ลอสที่ 1"},"kind":"park","area":{"en":"Feria de Madrid metro station, Line 8","th":"สถานีเฟเรียเดมาดริด สายสีแดง 8"},"what":{"en":"A large, modern park with a uniquely designed layout, reached by metro Line 8.","th":"สวนขนาดใหญ่ทันสมัย มีผังที่ออกแบบเฉพาะ เดินทางด้วยรถไฟใต้ดินสาย 8"},"why":{"en":"Modern play areas for all ages, the page says.","th":"หน้าเว็บบอกว่ามีพื้นที่เล่นทันสมัยสำหรับทุกวัย"},"tip":{"en":"Reached by metro Line 8, Feria de Madrid station, per the page.","th":"เดินทางด้วยรถไฟใต้ดินสาย 8 สถานีเฟเรียเดมาดริด ตามหน้าเว็บ"},"ages":[2,2,2,1],"hrs":3,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parque Juan Carlos I, Feria de Madrid, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
       {"name":{"en":"Madrid Río Park","th":"มาดริดริโอพาร์ค"},"kind":"park","area":{"en":"along the Manzanares River","th":"ตามแม่น้ำมันซาเนอาเรส"},"what":{"en":"A linear park along the Manzanares River with many innovative playgrounds, cycling and walking paths.","th":"สวนเชิงเส้นตามแม่น้ำมันซาเนอาเรส มีสนามเด็กเล่นแปลกใหม่หลายแห่ง ทางจักรยานและทางเดิน"},"why":{"en":"The page calls it one of the best choices for toddlers and very young children.","th":"หน้าเว็บเรียกว่าเป็นหนึ่งในตัวเลือกที่ดีที่สุดสำหรับเด็กวัยเตาะแตะและเด็กเล็กมาก"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Madrid Río Park, along the Manzanares River, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
-      {"name":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"kind":"play","area":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"what":{"en":"A children's play area with giant slides in the Plaza de España.","th":"พื้นที่เล่นสำหรับเด็กพร้อมสไลด์ยักษ์ในพลาซาเดเอสปาญา"},"why":{"en":"Giant slides for the children to whizz down, per the page.","th":"สไลด์ยักษ์ให้เด็กไถลลงมา ตามหน้าเว็บ"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaza de España, Madrid","ok":"2026-11","src":"https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids"}
+      {"name":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"kind":"play","area":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"what":{"en":"A children's play area with giant slides in the Plaza de España.","th":"พื้นที่เล่นสำหรับเด็กพร้อมสไลด์ยักษ์ในพลาซาเดเอสปาญา"},"why":{"en":"Giant slides for the children to whizz down, per the page.","th":"สไลด์ยักษ์ให้เด็กไถลลงมา ตามหน้าเว็บ"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaza de España, Madrid","ok":"2026-11","src":"https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา",
+            "en": "Museum of Illusions"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซนโตร ใจกลางเมือง",
+            "en": "Centro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา มีห้องให้เล่น",
+            "en": "A museum of optical illusions with interactive rooms"
+          },
+          "why": {
+            "th": "ภาพลวงตาที่ทึ่งทั้งเด็กและผู้ใหญ่",
+            "en": "Illusions that amaze children and adults alike"
+          },
+          "q": "Museo de las Ilusiones, Calle del Doctor Cortezo 8, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo de la Luz",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์แสง",
+            "en": "Museum of Light"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซนโตร ใจกลางเมือง",
+            "en": "Centro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่ใช้แสงเป็นสื่อเดียว",
+            "en": "A museum that uses light as its only medium"
+          },
+          "why": {
+            "th": "ห้องแสงที่ได้เข้าไปอยู่และลองเล่น",
+            "en": "Immersive, interactive rooms of light"
+          },
+          "q": "Museo de la Luz, Calle de Segovia 2, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ขนมหวานสวีตสเปซ",
+            "en": "Sweet Space Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ซาลามังกา",
+            "en": "Salamanca"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ธีมขนมหวาน",
+            "en": "A museum themed round sweets"
+          },
+          "why": {
+            "th": "สำหรับคนชอบของหวาน",
+            "en": "For anyone with a sweet tooth"
+          },
+          "q": "Sweet Space Museum, Calle de Serrano 61, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "อิโคโน มาดริด",
+            "en": "IKONO Madrid"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซนโตร ใจกลางเมือง",
+            "en": "Centro"
+          },
+          "what": {
+            "th": "ห้องศิลปะให้ลองเล่น 12 ห้อง เต็มไปด้วยความแปลกใจ",
+            "en": "Twelve interactive rooms of art and surprises"
+          },
+          "why": {
+            "th": "ห้องที่ทำมาให้เล่นและถ่ายรูป",
+            "en": "Rooms made for playing and photos"
+          },
+          "q": "IKONO Madrid, Calle de Sánchez Bustillo 7, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Naval",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์กองทัพเรือ",
+            "en": "Naval Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนปาเซโอเดลปราโด",
+            "en": "Paseo del Prado"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ทางทะเล",
+            "en": "A museum of maritime history"
+          },
+          "why": {
+            "th": "มีเรือและแบบจำลองเรือหลายยุค",
+            "en": "Ships and models from centuries at sea"
+          },
+          "q": "Museo Naval, Paseo del Prado 3, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Arqueológico Nacional",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์โบราณคดีแห่งชาติ",
+            "en": "National Archaeological Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ซาลามังกา",
+            "en": "Salamanca"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์หนึ่งหมื่นปี มีรูปปั้นสตรีแห่งเอลเช",
+            "en": "Ten thousand years of history, with the Lady of Elche"
+          },
+          "why": {
+            "th": "มีสมบัติและโบราณวัตถุให้ตามหา",
+            "en": "Treasures and ancient objects to look for"
+          },
+          "q": "Museo Arqueológico Nacional, Calle de Serrano 13, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "เลเจนด์ส บ้านแห่งฟุตบอล",
+            "en": "Legends: The Home of Football"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนการ์เรราเดซานเฆโรนิโม",
+            "en": "Carrera de San Jerónimo"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ฟุตบอล มีนิทรรศการให้ลองเล่น",
+            "en": "A football museum with interactive displays"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กที่รักฟุตบอล",
+            "en": "Made for young football fans"
+          },
+          "q": "Legends The Home of Football, Carrera de San Jerónimo 2, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "หอชมวิวฟาโรเดมองโกลอา",
+            "en": "Faro de Moncloa"
+          },
+          "kind": "views",
+          "area": {
+            "th": "มองโกลอา",
+            "en": "Moncloa"
+          },
+          "what": {
+            "th": "หอสูง 110 ม. มีจุดชมวิวทั่วเมือง",
+            "en": "A 110 m tower with a viewing deck over the city"
+          },
+          "why": {
+            "th": "เห็นวิวมาดริดทั้งเมืองจากข้างบน",
+            "en": "Views over all of Madrid from the top"
+          },
+          "q": "Faro de Moncloa, Avenida de la Memoria 2, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Estación Museo de Chamberí",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "req",
+          "src": "https://lamaletainquieta.com/madrid-con-ninos/",
+          "name": {
+            "th": "สถานีร้างชัมเบรี (อันเดน 0)",
+            "en": "Chamberí Ghost Station (Andén 0)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปลาซาเดชัมเบรี มาดริด",
+            "en": "Plaza de Chamberí, Madrid"
+          },
+          "what": {
+            "th": "สถานีรถไฟใต้ดินที่ปิดตั้งแต่ปี 1966 ปัจจุบันเป็นพิพิธภัณฑ์",
+            "en": "A metro station closed in 1966, now a museum"
+          },
+          "why": {
+            "th": "เที่ยวสั้น ๆ ที่แปลกใหม่สำหรับเด็กที่ชอบรถไฟ",
+            "en": "A short, different outing for children who love trains"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะวันศุกร์ถึงอาทิตย์ ต้องจองล่วงหน้าทางเว็บพิพิธภัณฑ์เมโทร",
+            "en": "Open Friday to Sunday only; book ahead on the Metro museums' website"
+          },
+          "q": "Estación Museo de Chamberí, Plaza de Chamberí, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "The Magic Forest",
+            "th": "เดอะ แมจิก ฟอเรสต์ มาดริด"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Ciudad de la Imagen, Kinépolis Madrid",
+            "th": "ชิวดัด เด ลา อิมาเกน, คิเนโปลิส มาดริด"
+          },
+          "what": {
+            "en": "Children's park at Kinépolis Madrid with slides, labyrinths and climbing structures",
+            "th": "สวนเด็กที่คิเนโปลิส มาดริด มีสไลเดอร์ เขาวงกต และโครงปีนป่าย"
+          },
+          "why": {
+            "en": "Kids slide down many slides and hide in labyrinths; there is a restaurant with children's menus and a waiting area for parents",
+            "th": "เด็กๆ เล่นสไลเดอร์หลายแบบและซ่อนในเขาวงกต มีร้านอาหารเมนูเด็กและที่รอสำหรับพ่อแม่"
+          },
+          "tip": {
+            "en": "The restaurant has children's menus; the site is designed for birthday parties",
+            "th": "ร้านอาหารมีเมนูเด็ก สถานที่ออกแบบมาสำหรับงานวันเกิด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "The Magic Forest, C. Edgar Neville, s/n, 28223 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/the-magic-forest"
+        },
+        {
+          "name": {
+            "en": "Puppet Theatre in El Retiro Park",
+            "th": "โรงละครหุ่นกระบอก สวนเอลเรติโร"
+          },
+          "local": "Teatro de Títeres del Parque del Retiro",
+          "kind": "show",
+          "area": {
+            "en": "Retiro Park, Retiro",
+            "th": "สวนเอลเรติโร, เรติโร"
+          },
+          "what": {
+            "en": "An outdoor puppet theatre in Retiro Park with shows for children",
+            "th": "โรงละครหุ่นกลางแจ้งในสวนเอลเรติโร มีการแสดงสำหรับเด็ก"
+          },
+          "why": {
+            "en": "There are shows for children every weekend, free of charge",
+            "th": "มีการแสดงสำหรับเด็กทุกสุดสัปดาห์ ไม่เสียค่าเข้า"
+          },
+          "tip": {
+            "en": "Mornings in winter and afternoons in summer; special dates at Christmas",
+            "th": "ช่วงเช้าในฤดูหนาวและช่วงบ่ายในฤดูร้อน มีรอบพิเศษช่วงคริสต์มาส"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Teatro de Títeres del Parque del Retiro, Parque de El Retiro, Avda de Méjico, Retiro, 28009 Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/teatro-de-titeres-de-el-retiro"
+        },
+        {
+          "name": {
+            "en": "Indi Park",
+            "th": "อินดี พาร์ก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Metropolitano stadium, Madrid",
+            "th": "สนามเมโทรโพลิตาโน, มาดริด"
+          },
+          "what": {
+            "en": "A children's leisure park over two floors beside Gate 30 of the Metropolitano stadium",
+            "th": "สวนสนุกเด็กสองชั้นข้างประตู 30 ของสนามเมโทรโพลิตาโน"
+          },
+          "why": {
+            "en": "A circuit of activities and interactive experiences for children aged 4 to 12",
+            "th": "มีเส้นทางกิจกรรมและประสบการณ์แบบโต้ตอบสำหรับเด็กอายุ 4 ถึง 12 ปี"
+          },
+          "tip": {
+            "en": "Play hours on Saturdays and holidays: 12:30–15:00 and 17:30–20:30; opens daily",
+            "th": "เวลาเล่นวันเสาร์และวันหยุด 12:30–15:00 และ 17:30–20:30 เปิดทุกวัน"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Indi Park, Riyadh Air Metropolitano Stadium, Av. de Luis Aragonés, 4, Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/indi-park"
+        },
+        {
+          "name": {
+            "en": "The Robot Museum",
+            "th": "พิพิธภัณฑ์หุ่นยนต์ มาดริด"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "The Dreamland Project, Madrid",
+            "th": "เดอะ ดรีมแลนด์ โปรเจกต์, มาดริด"
+          },
+          "what": {
+            "en": "A robot museum with moving entertainment robots on a spaceship-style tour of 1,200 m²",
+            "th": "พิพิธภัณฑ์หุ่นยนต์ที่มีหุ่นยนต์เคลื่อนไหวได้ ในเส้นทางสไตล์ยานอวกาศ 1,200 ตร.ม."
+          },
+          "why": {
+            "en": "More moving robots and fun than before, for visitors of all ages",
+            "th": "มีหุ่นยนต์เคลื่อนไหวและความสนุกมากกว่าเดิม สำหรับผู้เข้าชมทุกวัย"
+          },
+          "tip": {
+            "en": "Children's tickets (up to 12) are cheaper; family tickets 2+1 and 2+2 are offered",
+            "th": "ตั๋วเด็ก (ไม่เกิน 12 ปี) ถูกกว่า และมีตั๋วครอบครัว 2+1 และ 2+2"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €11 single · children up to 12 ≈ €9",
+            "th": "≈ €11 ตั๋วเดี่ยว · เด็กไม่เกิน 12 ปี ≈ €9"
+          },
+          "book": "none",
+          "q": "The Robot Museum, The Dreamland Project, Madrid, Spain",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/en/tourist-information/robot-museum"
+        }
     ]
     },
     {
@@ -925,6 +1848,511 @@
           "q": "Parque del Alamillo, Isla de la Cartuja, Sevilla",
           "ok": "2026-11",
           "src": "https://www.timeout.com/es/sevilla/que-hacer/parque-del-alamillo"
+        },
+        {
+          "local": "Catedral de Sevilla",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.roughguides.com/spain/seville-with-kids/",
+          "name": {
+            "th": "มหาวิหารเซบิยาและหอคอยฆิรัลดา",
+            "en": "Seville Cathedral and the Giralda"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ข้างพระราชวังอัลกาซาร์ เซบิยา",
+            "en": "Next to the Alcázar, Seville"
+          },
+          "what": {
+            "th": "มหาวิหารกอทิกใหญ่ที่สุดในโลก พร้อมหอคอยฆิรัลดา",
+            "en": "The world’s largest Gothic cathedral, with the Giralda tower"
+          },
+          "why": {
+            "th": "ขึ้นหอฆิรัลดาด้วยทางลาด ไม่ใช่บันได",
+            "en": "The Giralda is climbed by ramps, not stairs"
+          },
+          "q": "Catedral de Sevilla, Avenida de la Constitución, Sevilla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ciceronegranada.com/en/blog/family-holiday-granada/",
+          "name": {
+            "th": "พิพิธภัณฑ์คาฮากรานาดา",
+            "en": "CajaGranada museum (Memoria de Andalucía)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กรานาดา",
+            "en": "Granada"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่ได้ลองเล่น เรื่องวัฒนธรรมและธรรมชาติอันดาลูเซีย มีความจริงเสมือน",
+            "en": "An interactive museum on Andalusia’s culture and nature, with virtual reality"
+          },
+          "why": {
+            "th": "นิทรรศการให้จับ ดม และฟัง",
+            "en": "Exhibits to touch, smell and listen to"
+          },
+          "q": "CajaGranada Cultural Center, Avenida de la Ciencia 2, Granada",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ciceronegranada.com/en/blog/family-holiday-granada/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์มหาวิทยาลัยกรานาดา",
+            "en": "Botanical Garden of the University of Granada"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางกรานาดา",
+            "en": "Centre, Granada"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ศตวรรษที่ 19 มีพืชจากเอเชียและอเมริกา",
+            "en": "A 19th-century botanical garden with plants from Asia and the Americas"
+          },
+          "why": {
+            "th": "สวนให้เดินเล่นกลางเมือง",
+            "en": "A garden to stroll in the centre"
+          },
+          "q": "Jardín Botánico de la Universidad de Granada, Calle Escuelas, Granada",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.granadadirect.com/guias/granada-con-ninos/",
+          "name": {
+            "th": "สวนการ์เมนเดลอสมาร์ตีเรส",
+            "en": "Carmen de los Mártires"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนปาเซโอเดลอสมาร์ตีเรส ใจกลางกรานาดา",
+            "en": "Paseo de los Mártires, Centro, Granada"
+          },
+          "what": {
+            "th": "สวนใหญ่และเงียบสงบ มีทางเดินใต้ต้นไม้และน้ำพุ มองเห็นอาลัมบรา",
+            "en": "A large, quiet garden with paths between trees and fountains, with views of the Alhambra"
+          },
+          "why": {
+            "th": "มีนกยูง เป็ดในบ่อ และน้ำพุหลายแห่ง",
+            "en": "Peacocks, ducks on the pond and many fountains"
+          },
+          "q": "Carmen de los Mártires, Paseo de los Mártires, Granada",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://devourtours.com/blog/kid-friendly-spanish-food-in-seville/",
+          "name": {
+            "th": "สวนเดลอสปรินซิเปส",
+            "en": "Parque de los Príncipes"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนบลาสอินฟันเต ลอสเรเมดิโอส เซบิยา",
+            "en": "Av. Blas Infante, Los Remedios, Seville"
+          },
+          "what": {
+            "th": "สวนที่เขียวที่สุดแห่งหนึ่งของเซบิยา มีบาร์คีออสก์ข้างสวน",
+            "en": "One of Seville's greenest parks, with a kiosk bar at its side"
+          },
+          "why": {
+            "th": "มีที่วิ่งเล่น และมีบ้านลมที่คีออสก์",
+            "en": "Room to run and play, and a bouncy castle at the kiosk"
+          },
+          "q": "Parque de los Príncipes, Av. Blas Infante, Sevilla",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Kids Park Sevilla",
+            "th": "คิดส์พาร์ก เซบียา (Kids Park)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "El Pino industrial park, Seville",
+            "th": "นิคมเอลปีโน เซบียา"
+          },
+          "what": {
+            "en": "A play complex of over 4,000 m² with giant slides, mazes, trampolines, climbing walls, XL ball pits and a Lego building zone.",
+            "th": "ศูนย์เล่นกว่า 4,000 ตร.ม. มีสไลเดอร์ยักษ์ เขาวงกต แทรมโพลีน กำแพงปีน บ่อบอลใหญ่ และโซนต่อเลโก้"
+          },
+          "why": {
+            "en": "Children under 3 enter free with an adult, and parents can have a drink in the café area while the children play.",
+            "th": "เด็กอายุต่ำกว่า 3 ขวบเข้าฟรีพร้อมผู้ใหญ่ และพ่อแม่นั่งดื่มในโซนคาเฟ่ระหว่างที่เด็กเล่นได้"
+          },
+          "tip": {
+            "en": "Non-slip socks are required for all the play areas; you can buy them on site for €1.80.",
+            "th": "ต้องใส่ถุงเท้ากันลื่นทุกโซนเล่น ซื้อที่นั่นได้ราคา €1.80"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6–7 for 30 minutes",
+            "th": "≈ €6–7 ต่อ 30 นาที"
+          },
+          "book": "none",
+          "q": "Kids Park Sevilla, Calle Pino Laricio 8, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://sevillasecreta.co/en/the-massive-playground-spanning-over-4000-m%C2%B2-with-tickets-starting-at-5-euros-giant-slides-mazes-trampolines-and-xl-ball-pits-in-seville/"
+        },
+        {
+          "name": {
+            "en": "Casa de la Ciencia",
+            "th": "คาซาเดลาเซียนเซีย (Casa de la Ciencia)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Near Parque de María Luisa",
+            "th": "ใกล้ปาร์เกเดมาริอาลุยซา"
+          },
+          "what": {
+            "en": "A small interactive science museum with exhibits on local wildlife, the human body and the solar system, plus a planetarium.",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เล็กๆ แบบโต้ตอบ มีนิทรรศการสัตว์ป่าท้องถิ่น ร่างกายมนุษย์ ระบบสุริยะ และท้องฟ้าจำลอง"
+          },
+          "why": {
+            "en": "Aimed at children aged 5 to 12 and air-conditioned, it makes a quiet break from the city.",
+            "th": "เหมาะกับเด็กอายุ 5–12 ปี มีแอร์ เป็นที่พักสงบจากเมือง"
+          },
+          "tip": {
+            "en": "Check the planetarium schedule for English-language sessions.",
+            "th": "เช็กตารางท้องฟ้าจำลองสำหรับรอบภาษาอังกฤษ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Casa de la Ciencia, Avenida de María Luisa, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.roughguides.com/spain/seville-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Jumpyard Sevilla",
+            "th": "จัมพ์ยาร์ด เซบียา (Jumpyard)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Parque Comercial Cavaleri, San Juan de Aznalfarache",
+            "th": "Parque Comercial Cavaleri ซานฆวนเดอัซนัลฟาราเช"
+          },
+          "what": {
+            "en": "An indoor trampoline park with trampolines, a Jump Tower, Battle Beams, a ninja course and climbing walls.",
+            "th": "สวนแทรมโพลีนในร่ม มีแทรมโพลีน จัมพ์ทาวเวอร์ แบตเทิลบีม คอร์สนินจา และกำแพงปีน"
+          },
+          "why": {
+            "en": "As good for a family weekend as for a rainy or hot day, with a single ticket covering many activities.",
+            "th": "เหมาะทั้งสุดสัปดาห์ครอบครัว วันฝนตก หรือวันร้อน ตั๋วใบเดียวเล่นได้หลายกิจกรรม"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jump Yard, Parque Comercial Cavaleri, San Juan de Aznalfarache, Spain",
+          "ok": "2026-11",
+          "src": "https://sevillasecreta.co/en/plans-kids-seville/"
+        },
+        {
+          "name": {
+            "en": "Crazy Zone",
+            "th": "เครซีโซน (Crazy Zone)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Calle Antonio de la Peña y López, Seville",
+            "th": "Calle Antonio de la Peña y López เซบียา"
+          },
+          "what": {
+            "en": "An inflatables park with trampolines, XXL slides and other games from childhood.",
+            "th": "สวนเครื่องเล่นเป่าลม มีแทรมโพลีน สไลเดอร์ XXL และเกมวัยเด็กอื่นๆ"
+          },
+          "why": {
+            "en": "Trampolines, inflatables and XXL slides, and families of all ages are welcome.",
+            "th": "มีแทรมโพลีน เครื่องเล่นเป่าลม และสไลเดอร์ XXL ต้อนรับครอบครัวทุกวัย"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Crazy Zone, Calle Antonio de la Peña y López 3, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://sevillasecreta.co/en/plans-kids-seville/"
+        },
+        {
+          "name": {
+            "en": "CaixaForum Sevilla",
+            "th": "ไกซาฟอรุม เซบียา (CaixaForum)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Torre Sevilla",
+            "th": "ตอร์เรเซบียา"
+          },
+          "what": {
+            "en": "A cultural centre with workshops in art, science and creativity for children.",
+            "th": "ศูนย์วัฒนธรรมที่มีเวิร์กช็อปศิลปะ วิทยาศาสตร์ และความคิดสร้างสรรค์สำหรับเด็ก"
+          },
+          "why": {
+            "en": "Children learn through play in its workshops, which are for ages 6 and up.",
+            "th": "เด็กเรียนรู้ผ่านการเล่นในเวิร์กช็อป ซึ่งสำหรับอายุ 6 ปีขึ้นไป"
+          },
+          "tip": {
+            "en": "The building is worth a photo while the children are busy.",
+            "th": "ตัวอาคารน่าถ่ายรูประหว่างที่เด็กๆ ทำกิจกรรม"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 (ages 6 and up)",
+            "th": "≈ €6 (อายุ 6 ปีขึ้นไป)"
+          },
+          "book": "none",
+          "q": "CaixaForum Sevilla, Torre Sevilla, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": {
+            "en": "Sala Cero Teatro",
+            "th": "ซาลาเซโรเตอาโตร (Sala Cero Teatro)"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Calle Sol, Casco Antiguo, Seville",
+            "th": "Calle Sol ย่านเมืองเก่า เซบียา"
+          },
+          "what": {
+            "en": "A theatre known for creative shows for children, including educational comedies and magic shows.",
+            "th": "โรงละครที่ขึ้นชื่อเรื่องการแสดงสร้างสรรค์สำหรับเด็ก รวมถึงตลกเชิงการศึกษาและมายากล"
+          },
+          "why": {
+            "en": "Educational comedies and magic shows make an easy family outing.",
+            "th": "ตลกเชิงการศึกษาและมายากลเป็นทริปครอบครัวที่ง่าย"
+          },
+          "tip": {
+            "en": "Allow about an hour per show.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงต่อรอบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sala Cero Teatro, Calle Sol 5, Casco Antiguo, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": {
+            "en": "Teatro Alameda",
+            "th": "เตอาโตรอาลาเมดา (Teatro Alameda)"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Calle Crédito, Casco Antiguo, Seville",
+            "th": "Calle Crédito ย่านเมืองเก่า เซบียา"
+          },
+          "what": {
+            "en": "A theatre with children's programmes of interactive storytelling, music and actors.",
+            "th": "โรงละครที่มีโปรแกรมสำหรับเด็ก เล่านิทานแบบโต้ตอบ ดนตรี และนักแสดง"
+          },
+          "why": {
+            "en": "Storytelling, music and actors who connect easily with children.",
+            "th": "มีนิทาน ดนตรี และนักแสดงที่เข้ากับเด็กได้ง่าย"
+          },
+          "tip": {
+            "en": "Allow about an hour per show.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงต่อรอบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Teatro Alameda, Calle Crédito 13, Casco Antiguo, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": {
+            "en": "Alameda de Hércules",
+            "th": "อาลาเมดาเดเอร์คูเลส (Alameda de Hércules)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Macarena, Seville",
+            "th": "มาคาเรนา เซบียา"
+          },
+          "what": {
+            "en": "A square in the Macarena district with children's play areas while parents sit at the terraces.",
+            "th": "จัตุรัสในย่านมาคาเรนา มีพื้นที่เล่นสำหรับเด็ก ขณะที่พ่อแม่นั่งที่เทอร์เรซ"
+          },
+          "why": {
+            "en": "Children can play while adults enjoy the terraces and walks nearby.",
+            "th": "เด็กเล่นได้ ผู้ใหญ่นั่งเทอร์เรซหรือเดินเล่นแถวนั้น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Alameda de Hércules, Macarena, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
         }
       ]
     }

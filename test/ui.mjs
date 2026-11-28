@@ -1,13 +1,15 @@
-// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default /tmp/mb-shots).
+// End-to-end UI test (Playwright) for the bookshelf PWA. Run via `npm test`. Screenshots → $SHOTS (default: a fresh folder of our own under the OS temp dir, printed at the start).
 import { chromium } from 'playwright';
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { todayLost } from './today-lost.mjs';
 
 const BASE = process.env.BASE, CODE = process.env.CODE;
-const OUT = process.env.SHOTS || '/tmp/mb-shots';
-fs.mkdirSync(OUT, { recursive: true });
+const OUT = process.env.SHOTS || fs.mkdtempSync(path.join(os.tmpdir(), 'mb-shots-'));   // a folder of our own when none is given (CodeQL: no fixed path in /tmp)
+if (process.env.SHOTS) fs.mkdirSync(OUT, { recursive: true });
+console.log('screenshots →', OUT);
 const exe = process.env.CHROME || (fs.existsSync(chromium.executablePath()) ? undefined : '/opt/pw-browsers/chromium-1194/chrome-linux/chrome');
 let failures = 0;
 const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else console.log('  ok  ', m); };
@@ -51,6 +53,12 @@ const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passp
 const ppEdit = async (page, on) => { const b = page.locator('.ppedit'); if (await b.count() && (await b.getAttribute('aria-pressed')) !== String(on)) { await b.click(); await page.waitForSelector(`.ppedit[aria-pressed="${on}"]`); } };
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
 const apiState = (page) => page.evaluate(async () => (await fetch('/api/b/state')).json());
+// a tap is drawn at once and sent later by the phone's queue: wait (≤ 8 s) until the server holds what the test expects
+const apiStateWhen = async (page, fn, ms = 8000) => {
+  const end = Date.now() + ms; let st;
+  do { st = await apiState(page); if (fn(st)) return st; await page.waitForTimeout(200); } while (Date.now() < end);
+  return st;
+};
 const T = 'hk-macau-2026';
 
 // ---------- editor on a phone ----------
@@ -872,7 +880,7 @@ const T = 'hk-macau-2026';
   const bagKeys = await page.$$eval('.bag input[data-ck]', (els) => els.map((e) => e.dataset.ck));
   ok(['kidpp', 'sun', 'pram', 'spare'].every((k) => bagKeys.includes(`${T}.bag.d1.${k}`)) && !bagKeys.includes(`${T}.bag.d1.passports`) && /\d\d:\d\d · /.test(await page.textContent('.bag')), "today page: today's bag lists what the day's plan needs, with the reason (and not the passports on a city day)");
   ok(await page.locator('details.bag:not([open])').count() === 1 && !/0\//.test(await page.textContent('.bag summary')), 'today page before the trip: the bag is one closed line and names how many things, never “0/n packed”');
-  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag').catch(async (e) => { console.log('DEBUG after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('.bag').length} bag · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-bag.png` }); throw e; });
+  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag').catch(async (e) => { console.log('DEBUG after reload:', await page.evaluate(() => `${location.hash} · ${document.readyState} · scripts ${['L', 'render', 'A', 'kidArt', 'snapMeta'].map((f) => typeof window[f] === 'function' ? 1 : 0).join('')} · S ${typeof S === 'undefined' ? '-' : S ? 'set' : 'null'} · sw ${navigator.serviceWorker && navigator.serviceWorker.controller ? navigator.serviceWorker.controller.state : 'none'} · ${document.querySelectorAll('.bag').length} bag · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`), '· errors:', s.errs.join(' | ') || 'none'); await page.screenshot({ path: `${OUT}/debug-bag.png` }); throw e; });
   ok(await page.isChecked(`.bag input[data-ck="${T}.bag.d1.sun"]`), "today page: a tick in today's bag stays after a reload");
   ok(await page.locator('.remind.line [data-a="remind"]').count() === 1 && await page.locator('.remind:not(.line)').count() === 0 && /30/.test(await page.textContent('.remind')), 'today page: one line with a “turn on” button — not a second reminder card (the ask lives on the shelf)');
   const tlRows = await page.$$eval('.tl.plan.brief li div', (els) => els.map((e) => e.textContent));
@@ -1675,8 +1683,14 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => queue.length === 0 && document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 8000 });   // the blue tap's save is back and the picture redrawn
     // every redraw empties the pad and fills its picture back from the SVG a moment later (kid.js hydrateColours): after the blue tap's save
     // the state refresh redraws, so wait for the shape to be on screen again before tapping (a CI failure of Nov 2026: "Element is not visible")
-    const shape0 = page.locator('.colourpad [data-c]').nth(0);
-    await page.click('.palette button[data-v="#EF5350"]'); await shape0.waitFor({ state: 'visible', timeout: 8000 }); await shape0.click({ force: true });
+    // a second CI failure (28 Nov 2026, the same "Element is not visible" after the wait): the list of more pictures (kid.js colFetch) came back
+    // between the wait and the click and redrew the page, so the click held a shape no longer on it. Wait for that list first, then tap the
+    // shape as it is now in one step inside the page (the click event the app listens for), so no redraw can fall between finding and tapping.
+    await page.waitForFunction(() => Array.isArray(colLib['hk-macau-2026']) && queue.length === 0, null, { timeout: 8000 });
+    await page.click('.palette button[data-v="#EF5350"]');
+    await page.waitForFunction(() => !!document.querySelector('.colourpad [data-c="0"]'), null, { timeout: 8000 });
+    const tap0 = await page.evaluate(() => { const el = document.querySelector('.colourpad [data-c="0"]'), r = el.getBoundingClientRect(); el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true })); return { w: Math.round(r.width), h: Math.round(r.height), fill: el.getAttribute('fill') }; });
+    ok(tap0.w > 0 && tap0.h > 0 && /EF5350/i.test(tap0.fill), `colouring: the first shape is on screen and takes the red (${JSON.stringify(tap0)})`);
     // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
     await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
     const two = await filled(), why = await page.evaluate(() => ({ pend: Object.values(colPend), fill: (document.querySelector('.colourpad') || {}).dataset.fill, saved: (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text, hist: colHist.length, q: queue.length }));
@@ -2020,9 +2034,12 @@ const T = 'hk-macau-2026';
   ok(await s.page.locator('.printset .agek .tpo').count() === 3 && await s.page.locator('.agek .tpo[data-age="little"][data-v="auto"][aria-pressed="true"] .psfit').count() === 1 && await s.page.locator('.printset .psi').count() === 3, 'book page: one card for the printed book — three age styles with the app\'s icons, the one that fits the youngest child chosen by default');
   await s.page.click('.agek .tpo[data-age="big"]'); await s.page.waitForSelector('.agek .tpo[data-age="big"][aria-pressed="true"]');
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
+  const ageRow = (st) => st.entries.find((e) => e.id === 'hk-macau-2026.bookage.all');
+  const ageBig = ageRow(await apiStateWhen(s.page, (st) => (ageRow(st) || {}).text === 'big'));
   ok(await s.page.locator('.kbook.age-big').count() === 1 && await s.page.locator('.pg.mypage .myact.journal .wlines i').count() >= 14
-    && (await apiState(s.page)).entries.some((e) => e.id === 'hk-macau-2026.bookage.all' && e.kind === 'bookage' && e.text === 'big' && e.day === null), 'printed book: "big kids" chosen → the journal pages with writing lines; one trip-wide entry');
+    && !!ageBig && ageBig.kind === 'bookage' && ageBig.text === 'big' && ageBig.day === null, `printed book: "big kids" chosen → the journal pages with writing lines; one trip-wide entry (server: ${JSON.stringify(ageBig && { kind: ageBig.kind, text: ageBig.text, day: ageBig.day })})`);
   await s.page.goto(`${BASE}/#/t/hk-macau-2026/book`); await s.page.waitForSelector('.agepick'); await s.page.click('.agek .tpo[data-v="auto"]'); await s.page.waitForSelector('.agek .tpo[data-age="little"][aria-pressed="true"]');
+  await apiStateWhen(s.page, (st) => (ageRow(st) || {}).text === 'auto');   // later checks read the book as the server holds it
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
   await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
   await s.shot('10-book-wide');
@@ -2453,8 +2470,8 @@ const T = 'hk-macau-2026';
     && await page.locator('.backsum').count() === 0 && /\/prep$/.test(await page.getAttribute('header.top .ibtn', 'href')) && await s.noHScroll(), 'a glance card opens that topic alone: its title the heading, every detail open, no switch and nothing to unfold, ‹ › to the topics beside it; the top bar\'s back goes to the summary');
   { await page.goto(`${BASE}/#/t/${T}/prep/full/2`); await page.waitForSelector('.tp.one .tphead');
     const r = await page.evaluate(() => { const tr = document.querySelector('.tp.one .prices tbody tr'), td = tr.querySelector('td[data-h]'), b = td.getBoundingClientRect(), h = getComputedStyle(td, '::before');
-      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, borderTop: parseFloat(getComputedStyle(tr).borderTopWidth), labelBlock: h.display, w: Math.round(b.width) }; });
-    ok(r.head && r.card === 'grid' && r.borderTop >= 3 && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
+      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, fill: getComputedStyle(tr).backgroundColor !== 'rgba(0, 0, 0, 0)', labelBlock: h.display, w: Math.round(b.width) }; });
+    ok(r.head && r.card === 'grid' && r.fill && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
   { await page.goto(`${BASE}/#/t/${T}/prep`); await page.waitForSelector('.glg');
     ok(await page.locator('.glg').count() === 2 && await page.locator('.glg').nth(1).locator('.glc .gday').count() >= 5 && await page.locator('.glg').first().locator('.gday').count() === 0, 'HK get-ready summary: the whole-trip topics first, the chapters for one day under their own heading with the day as a chip');
     await page.goto(`${BASE}/#/t/${T}/prep/full/0`); await page.waitForSelector('.tp.one .steps');
@@ -2479,17 +2496,21 @@ const T = 'hk-macau-2026';
       ok(lb.r >= 12 && lb.bg && lb.pts >= 2 && lb.sum === 'none', `a topic's opening paragraph and its points are one soft card (${JSON.stringify(lb)})`);
       // key facts in colour stay readable in dark mode inside every card (the learn page's cards once kept the light-mode navy on a dark card)
       await page.emulateMedia({ colorScheme: 'dark' }); await page.goto(`${BASE}/#/t/${T}/learn/full/0`); await page.waitForSelector('.tp.one .gcard b.kf');
-      const lum = await page.$$eval('.tp.one .gcard b.kf', (bs) => bs.map((b) => { const n = (getComputedStyle(b).color.match(/[\d.]+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2); }));
+      // read the colours in one step inside the page, once every one of them is a colour: $$eval finds the elements and reads them in two
+      // steps, and the page's redraw with the fresh state in between left elements no longer on the page, whose colour is '' (CI, 28 Nov 2026: all NaN)
+      const kfLum = () => [...document.querySelectorAll('.tp.one .gcard b.kf')].map((b) => { const c = getComputedStyle(b).color, n = (c.match(/\d*\.?\d+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return { c, l: n.length >= 3 ? +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2) : null }; });
+      await page.waitForFunction(`(${kfLum})().length > 0 && (${kfLum})().every((x) => x.l !== null)`, null, { timeout: 8000 }).catch(() => {});
+      const kf = await page.evaluate(kfLum), lum = kf.map((x) => x.l);
       await page.emulateMedia({ colorScheme: null });
-      ok(lum.length && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')})`);
+      ok(lum.length && lum.every((l) => l !== null) && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')}${lum.every((l) => l !== null) ? '' : ' · ' + kf.slice(0, 3).map((x) => JSON.stringify(x.c)).join(' ')})`);
     await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.glg');
     const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
     let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
     ok(!!ift, `an if-then page among the emergency topics (${sosLinks.join(' ')})`);
     for (const [r, sel] of [[`${T}/learn/full/0`, '.tp.one .gcard'], [`${T}/learn/full/1`, '.tp.one details.sub'], [ift, '.tp.one .ifts details.ifold'], ['big-hop-2027/prep/full/7', '.tp.one .pg1>.call.info']]) {
       await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector(sel, { state: 'attached' });
-      const c = await page.$$eval(sel, (es) => es.map((e) => ({ top: parseFloat(getComputedStyle(e).borderTopWidth), r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
-      ok(c.length && c.every((x) => x.top >= 3 && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a coloured top edge, bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
+      const c = await page.$$eval(sel, (es) => es.map((e) => ({ fill: getComputedStyle(e).backgroundColor !== 'rgba(0, 0, 0, 0)', r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
+      ok(c.length && c.every((x) => x.fill && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a soft fill of its colour (no top stripe, UI review Nov 2026), bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
     await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid .tile.today small');
     await page.evaluate(() => document.querySelectorAll('.hubgrid').forEach((g) => { g.className = g.className.replace(/tl-\w+/, 'tl-pastel'); }));   // the colourful look, whatever an earlier step chose
     const c = await page.evaluate(`(${CONTRAST})(document.querySelectorAll('.hubgrid .tile small'), (e) => { const g = document.createElement('i'); g.style.backgroundColor = getComputedStyle(e.closest('.tile')).borderTopColor; document.body.appendChild(g); return g; })`);
@@ -2612,7 +2633,7 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'eat day page fits the phone');
   await s.shot('04-eat-day', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/eat/all`); await page.waitForSelector('.eatc');
-  ok(await page.locator('.eatc:visible').count() === 224 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 224 places from the manual with Chinese names; filters reset for another book');
+  ok(await page.locator('.eatc:visible').count() === 222 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 222 places from the manual with Chinese names; filters reset for another book');
   ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
@@ -2823,9 +2844,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.hubgrid.tl-pastel').count() >= 2 && await page.locator('.tilepick button[data-v="pastel"][aria-pressed="true"]').count() === 1, 'menu: pastel tiles by default, the switch at the foot');
   await page.click('.tilepick button[data-v="plain"]'); await page.waitForSelector('.hubgrid.tl-plain');
   const plainBg = await page.evaluate(() => getComputedStyle(document.querySelector('.hubgrid.tl-plain .tile.t-plan')).backgroundImage);
-  ok(plainBg === 'none' && (await apiState(page)).family.tiles === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile');
+  // the tiles redraw at once and the save follows: wait for the server to hold it (CI read 'plain' once, 26 Nov 2026)
+  const tilesPlain = (await apiStateWhen(page, (st) => st.family.tiles === 'plain')).family.tiles;
+  ok(plainBg === 'none' && tilesPlain === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile (' + tilesPlain + ')');
   await page.click('.tilepick button[data-v="accent"]'); await page.waitForSelector('.hubgrid.tl-accent');
-  ok((await apiState(page)).family.tiles === 'accent', 'the book\'s colour: saved too');
+  const tilesAccent = (await apiStateWhen(page, (st) => st.family.tiles === 'accent')).family.tiles;
+  ok(tilesAccent === 'accent', 'the book\'s colour: saved too (' + tilesAccent + ')');
   await page.click('.tilepick button[data-v="pastel"]'); await page.waitForSelector('.hubgrid.tl-pastel');
   ok(s.errs.length === 0, 'privacy: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
@@ -2941,17 +2965,37 @@ const T = 'hk-macau-2026';
       out.castle = [spotSrc('🏰', { en: 'A sandcastle' }), spotSrc('🏰', { en: 'Point at the castle' }), spotSrc('⛪', { en: 'A church' })];
       return out; });
     ok(r.n > 40 && !r.miss.length && !r.bad.length && r.castle[0].endsWith('sandcastle.webp') && r.castle[1].endsWith('fairytale.webp') && !r.castle[2], `every thing to find has a picture, read by its name where an emoji means two things (${r.n} · ${r.miss.slice(0, 5).join(', ')} · ${r.bad.join(' ')} · ${r.castle.join(' ')})`); }
-  // the parents close the boxes again for every child from the book's menu (owner: "ช่วยเคลียร์ surprise ให้ก่อนรอบนึงครับของสองคนเลย"), two taps
-  { await page.evaluate(() => { ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; }); await page.waitForSelector('.giftline [data-a="giftreset"]');
-    await page.click('.giftline [data-a="giftreset"]'); await page.click('.giftline [data-a="giftreset"]');
+  // the fresh-start card (owner, Nov 2026: "รวมปุ่มล้างของเด็กไว้ที่เดียว"): one card on the book's menu, a row a kind of play with its count,
+  // only what is ticked goes, for every child, two taps — the boxes first, then the doors (other rows unticked so the rest of the run keeps its play)
+  const freshClear = async (key) => {
+    await page.waitForSelector(`.freshline input[data-fr="${key}"]`);
+    await page.$$eval('.freshline input[data-fr]', (xs, k) => xs.forEach((x) => { x.checked = x.dataset.fr === k; }), key);
+    await page.click('.freshline [data-a="freshgo"]'); await page.click('.freshline [data-a="freshgo"]'); };
+  { await page.evaluate(() => { ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }); await page.evaluate(() => refresh && refresh()); await page.waitForTimeout(600);
+    const rowsSeen = await page.$$eval('.freshline input[data-fr]', (xs) => xs.map((x) => x.dataset.fr + (x.checked ? '+' : '-')));
+    await freshClear('gift');
     await page.waitForFunction(() => !S.entries.some((e) => /^gift\.d/.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
     const left = (await apiState(page)).entries.filter((e) => /^gift\.d/.test(e.first_key || '')).length;
+    const others = (await apiState(page)).entries.filter((e) => /^quest\./.test(e.first_key || '')).length;
     await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles');
-    ok(left === 0 && await page.locator('.giftline').count() === 0 && await page.locator('.kidgift').count() === 1, `surprise box: the parents close every box again, the morning box is back (${left} left)`);
+    ok(left === 0 && await page.locator('.kidgift').count() === 1 && rowsSeen.includes('gift+') && !rowsSeen.some((r) => r.startsWith('pp+')),
+      `fresh start: the parents close every surprise box again, the morning box is back, a trip day leaves the passport unticked (${left} left · ${rowsSeen.join(' ')} · quest kept ${others})`);
     await page.click('.kidgift'); await page.waitForSelector('.giftbox'); await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk img', { timeout: 5000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
     await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); }
+  { await page.evaluate(() => { const t = trip('hk-macau-2026'); for (const [n, k] of [[1, 'mimi'], [1, 'mika'], [2, 'mimi']]) putEntry(t, { day: null, kind: 'tick', child: k, first_key: `cd.${n}`, text: '' }, `${t.id}.tick.cd.${n}.${k}`);
+      ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; render(); });
+    // the opened doors reach the server first: their sync redraws the menu, and a redraw between the two taps is a fresh, unarmed button
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }); await page.evaluate(() => refresh && refresh()); await page.waitForTimeout(600);
+    const said = await page.textContent('.freshline');
+    await freshClear('cd');
+    await page.waitForFunction(() => !S.entries.some((e) => /^cd\./.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    const left = (await apiState(page)).entries.filter((e) => /^cd\./.test(e.first_key || '')).length;
+    ok(left === 0 && /\d/.test(said) && await page.locator('.freshline input[data-fr="cd"]').count() === 0, `fresh start: every countdown door closes again, two taps (${left} left · "${said.replace(/\s+/g, ' ').trim().slice(0, 160)}")`);
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles'); }
   // nowhere to get stuck (owner, Nov 2026: item 5 of the follow-ups): a locked tick in the passport says what to do, the lock says to hold
   { const toastIs = async (re) => page.waitForFunction((src) => [...document.querySelectorAll('.toast')].some((x) => new RegExp(src, 'i').test(x.textContent)), re.source, { timeout: 3000 }).then(() => true, () => false);
     await page.goto(`${BASE}/#/kid/mimi/pass/missions`); await page.waitForSelector('.mission.today .tick[aria-disabled="true"]');
@@ -3019,6 +3063,20 @@ const T = 'hk-macau-2026';
   await page.waitForTimeout(3200);
   ok(await page.locator('.shelf').count() === 1 && await page.locator('#lf').count() === 0, 'a sign-in quicker than the app\'s first ask keeps the shelf: the late “not signed in” answer does not send the phone back to the sign-in page');
   await s.ctx.close();
+}
+// ---------- the last script arrives late: the app waits for it before drawing ----------
+// (CI, 26 Nov 2026: a reload just as the service worker took the page over got snap.js late; boot's IndexedDB answer came back first,
+// the first render met "snapGeo is not defined" and Today stayed blank. The service worker is blocked here so the delay below is what the page sees.)
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce', serviceWorkers: 'block' });
+  const page = await ctx.newPage(), errs = []; page.on('pageerror', (e) => errs.push(e.message));
+  await login(page);
+  await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.bag');
+  await page.route('**/snap.js', async (route) => { await new Promise((r) => setTimeout(r, 1500)); return route.continue(); });
+  const t0 = Date.now(); await page.reload();
+  const drawn = await page.waitForSelector('.bag', { timeout: 10000 }).then(() => true, () => false);
+  ok(drawn && !errs.length, `a reload whose last script comes 1.5 s late still draws Today, with no script error (${drawn ? `drawn in ${Date.now() - t0} ms` : 'blank page'}; errors: ${errs.join(' | ') || 'none'})`);
+  await ctx.close();
 }
 // ---------- on the trip, a parent's phone: the app opens on Today, and Today opens with what is next ----------
 {

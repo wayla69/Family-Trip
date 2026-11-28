@@ -174,6 +174,43 @@
           "q": "Cunca Wulang, Mbeliling, Manggarai Barat, Flores",
           "ok": "2026-11",
           "src": "https://komodotravelguide.blogspot.com/2025/07/cunca-wulang-waterfall-jungle-trekking.html"
+        },
+        {
+          "local": "",
+          "name": {
+            "th": "หาดสีชมพู",
+            "en": "Pink Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อุทยานแห่งชาติโคโมโด ไปทางเรือ",
+            "en": "Komodo National Park, by boat"
+          },
+          "what": {
+            "th": "ชายหาดทรายขาวนุ่มที่มีสีชมพูอ่อนๆ หาดูยาก",
+            "en": "A beach of soft white sand with a rare pink tint"
+          },
+          "why": {
+            "th": "เหมาะกับการว่ายน้ำ เล่นทราย และดำน้ำตื้นกับเด็ก",
+            "en": "Good for swimming, playing and snorkelling with children"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Pink Beach, Komodo National Park",
+          "src": "https://www.komodoluxury.com/blog/things-to-do-in-komodo-with-kids/",
+          "ok": "2026-11"
         }
       ]
     },
@@ -458,7 +495,81 @@
       {"name":{"en":"Bukit Seger","th":"บูกิตเซเกอร์"},"kind":"views","area":{"en":"near Kuta Mandalika","th":"ใกล้กูตามันดาลิกา"},"what":{"en":"A viewpoint at Bukit Seger, near Kuta Mandalika.","th":"จุดชมวิวที่บูกิตเซเกอร์ ใกล้กูตามันดาลิกา"},"why":{"en":"A view over the area, reached for a small entrance fee.","th":"มองเห็นวิวบริเวณนั้น เสียค่าเข้าชมเล็กน้อย"},"ages":[0,2,2,2],"hrs":1,"io":"out","pram":"no","price":{"en":"Rp 5,000 per person","th":"Rp 5,000 ต่อคน"},"book":"none","q":"Bukit Seger, Kuta Mandalika","ok":"2026-11","src":"https://lombokdispatch.id/2025/04/20/activities-in-kuta-mandalika-beach/"},
       {"name":{"en":"Semeti Beach","th":"หาดเซเมติ"},"kind":"beach","area":{"en":"near Selong Belanak","th":"ใกล้เซอลอง เบอลานัก"},"what":{"en":"A beach with rock pools and dramatic rocks, a short drive from Selong Belanak.","th":"ชายหาดที่มีแอ่งน้ำตื้นตามโขดหินและหินรูปร่างแปลกตา ขับรถไม่ไกลจากเซอลอง เบอลานัก"},"why":{"en":"Rock pools at low tide where families can spot small sea creatures.","th":"แอ่งหินตอนน้ำลงให้เด็กๆ เห็นสิ่งมีชีวิตทะเลตัวเล็กๆ"},"tip":{"en":"Go at low tide and wear sandals that can handle rocks.","th":"ไปตอนน้ำลง และใส่รองเท้าที่เดินบนหินได้"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Semeti Beach, near Selong Belanak","ok":"2026-11","src":"https://sundayslombok.com/selong-belanak-for-families/"},
       {"name":{"en":"Sendang Gile","th":"น้ำตกเซนดังกิเลอ"},"kind":"nature","area":{"en":"Senaru village","th":"หมู่บ้านเซนารู"},"what":{"en":"A mountain waterfall on the lower slopes of Gunung Rinjani, where visitors can wade in the water.","th":"น้ำตกบนเชิงเขาริณจานี ย่ำน้ำลงไปเล่นได้"},"why":{"en":"Visitors can wade in what the page calls some of the cleanest, freshest water in Indonesia.","th":"หน้าเว็บบอกว่าน้ำใสสะอาดและสดชื่นที่สุดแห่งหนึ่งในอินโดนีเซีย"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sendang Gile, Senaru, North Lombok","ok":"2026-11","src":"https://www.thelomboklodge.com/lombok-kids-activities/"},
-      {"name":{"en":"Tiu Kelep Waterfall","th":"น้ำตกเตียวเกอเลป"},"kind":"nature","area":{"en":"North Lombok","th":"ลอมบอกเหนือ"},"what":{"en":"A waterfall about 30 to 40 minutes' soft trek from Sendang Gile, with a cool pool to swim in.","th":"น้ำตกที่ต้องเดินป่าเบาๆ ราว 30–40 นาทีจากเซนดังกิเลอ มีสระน้ำเย็นให้ว่ายน้ำ"},"why":{"en":"You rest and swim in the cool water pool formed by the waterfall.","th":"พักผ่อนและว่ายน้ำในสระน้ำเย็นที่น้ำตกสร้างขึ้น"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Tiu Kelep Waterfall, North Lombok","ok":"2026-11","src":"https://www.thelomboklodge.com/lombok-kids-activities/"}
+      {"name":{"en":"Tiu Kelep Waterfall","th":"น้ำตกเตียวเกอเลป"},"kind":"nature","area":{"en":"North Lombok","th":"ลอมบอกเหนือ"},"what":{"en":"A waterfall about 30 to 40 minutes' soft trek from Sendang Gile, with a cool pool to swim in.","th":"น้ำตกที่ต้องเดินป่าเบาๆ ราว 30–40 นาทีจากเซนดังกิเลอ มีสระน้ำเย็นให้ว่ายน้ำ"},"why":{"en":"You rest and swim in the cool water pool formed by the waterfall.","th":"พักผ่อนและว่ายน้ำในสระน้ำเย็นที่น้ำตกสร้างขึ้น"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Tiu Kelep Waterfall, North Lombok","ok":"2026-11","src":"https://www.thelomboklodge.com/lombok-kids-activities/"},
+        {
+          "local": "",
+          "name": {
+            "th": "เกาะกีลีนังกู",
+            "en": "Gili Nanggu"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ตะวันตกเฉียงใต้ของลอมบอก ไปทางเรือ",
+            "en": "Southwest Lombok, by boat"
+          },
+          "what": {
+            "th": "เกาะเล็กสำหรับไปเที่ยวทางเรือหนึ่งวัน ดำน้ำตื้นดูปะการังและให้อาหารปลา",
+            "en": "A small island for a day trip by boat, with snorkelling over coral and fish to feed"
+          },
+          "why": {
+            "th": "ได้เที่ยวเกาะสวยทั้งวัน ขากลับคนขับเรือแวะร้านปลาสดให้ได้",
+            "en": "A desert-island day out; the skipper can stop for fresh fish on the way back"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Pulau Gilinanggu, Lombok",
+          "src": "https://www.reiskoe.nl/en/lombok-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "name": {
+            "th": "คลาสทำเครื่องประดับเงิน YIN",
+            "en": "YIN Jewellery silver class"
+          },
+          "kind": "shop",
+          "area": {
+            "th": "ในหมู่บ้าน กีลีตราวังงัน",
+            "en": "Village, Gili Trawangan"
+          },
+          "what": {
+            "th": "คลาสเล็กมีคนสอน ได้ขึ้นรูปและตกแต่งเครื่องประดับของตัวเองจากเงินดิบ",
+            "en": "A small guided class where you shape and finish your own piece from raw silver"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กราวสิบขวบขึ้นไป ทำแหวน จี้ หรือต่างหูได้",
+            "en": "Suits children from about ten, who can make a ring, a pendant or earrings"
+          },
+          "ages": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Yin Jewelry for the Soul - Silver Making Class, Gili Trawangan",
+          "src": "https://www.thegilis.com/gili-trawangan/families/",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -735,6 +846,429 @@
           "q": "Benteng Vredeburg Museum, Jl. Margo Mulyo, Yogyakarta",
           "ok": "2026-11",
           "src": "https://www.telkomsel.com/en/jelajah/jelajah-nusantara/jelajah-jogja/museums-in-yogyakarta-10-most-aesthetic-recommendations-for-2026"
+        },
+        {
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+          "local": "",
+          "name": {
+            "th": "สนามเด็กเล่นอัซมียา",
+            "en": "Azmya Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนปียูงัน–ปรัมบานัน",
+            "en": "Piyungan–Prambanan road"
+          },
+          "what": {
+            "th": "โซนเล่นในร่ม มีบ่อบอล สไลเดอร์เล็ก และเครื่องปีนป่ายนุ่ม",
+            "en": "An indoor play zone with ball pits, small slides and soft climbing"
+          },
+          "why": {
+            "th": "ออกแบบมาสำหรับเด็กเล็ก เล่นได้หลังเที่ยววัด",
+            "en": "Made for toddlers and young children; a place to play after the temples"
+          },
+          "io": "in",
+          "q": "Azmya Playground Prambanan",
+          "ok": "2026-11"
+        },
+        {
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+          "local": "",
+          "name": {
+            "th": "สนามเด็กเล่นดูบีดู",
+            "en": "Dubidu Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ปูรีการ์เดเนีย บันตุล",
+            "en": "Puri Gardenia, Bantul"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดอบอุ่น มีเครื่องเล่นนุ่ม สไลเดอร์เล็ก บ่อบอล และมุมเล่นบทบาทสมมติ",
+            "en": "A cosy indoor playground with soft play, mini slides, ball pits and role-play corners"
+          },
+          "why": {
+            "th": "ไม่ใหญ่และสะอาด พ่อแม่ดูเด็กเล็กได้ใกล้ๆ",
+            "en": "Small and clean, so parents can watch little ones close by"
+          },
+          "io": "in",
+          "q": "Dubidu Playground Jogja, Bantul",
+          "ok": "2026-11"
+        },
+        {
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+          "local": "",
+          "name": {
+            "th": "แฮปปี้โทเปีย",
+            "en": "Happytopia"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จ็อกจาซิตี้มอลล์ ชั้นใต้ดิน",
+            "en": "Jogja City Mall, lower ground"
+          },
+          "what": {
+            "th": "ลานเล่นติดแอร์ มีเครื่องเล่นแอ็กทีฟ โซนนุ่ม และเกมใช้บัตร",
+            "en": "An air-conditioned arena with active attractions, soft play and card games"
+          },
+          "why": {
+            "th": "เด็ก วัยรุ่น และพ่อแม่เล่นได้ในที่เดียว",
+            "en": "Children, teenagers and parents under one roof"
+          },
+          "io": "in",
+          "q": "Happytopia Jogja City Mall",
+          "ok": "2026-11"
+        },
+        {
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+          "local": "",
+          "name": {
+            "th": "คิดส์ฟันพาร์ก",
+            "en": "Kids Fun Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนโวโนซารี ทางตะวันออกของยอกยาการ์ตา",
+            "en": "Jl. Wonosari, east of Yogyakarta"
+          },
+          "what": {
+            "th": "สวนสนุกกลางแจ้ง มีเครื่องเล่นกว่ายี่สิบอย่าง โกคาร์ตเล็ก และสวนน้ำอควาสแปลช",
+            "en": "An open-air amusement park with over two dozen rides, mini go-karts and the Aqua Splash waterpark"
+          },
+          "why": {
+            "th": "เครื่องเล่นทำมาสำหรับเด็กและครอบครัว มีโซนเล่นนุ่มในร่มไว้วันฝนตกหรืออากาศร้อน",
+            "en": "Rides made for children and families, with indoor soft play for wet or hot days"
+          },
+          "io": "out",
+          "q": "Kids Fun Park (Pusat), Jl. Wonosari, Yogyakarta",
+          "ok": "2026-11"
+        },
+        {
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+          "local": "",
+          "name": {
+            "th": "อีบาร์โบพาร์ก",
+            "en": "Ibarbo Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนมาเกอลัง ทางเหนือของยอกยาการ์ตา",
+            "en": "Jl. Magelang, north of Yogyakarta"
+          },
+          "what": {
+            "th": "สวนสนุกเชิงเรียนรู้ มีกรงนกในร่ม โซนใกล้ชิดนก กระต่าย และแกะ และสนามเด็กเล่นในร่ม",
+            "en": "An edutainment park with an indoor aviary, a petting area for birds, rabbits and sheep, and an indoor playground"
+          },
+          "why": {
+            "th": "เด็กได้ใกล้ชิดสัตว์ แล้วเล่นสไลเดอร์และบ่อบอลในห้องแอร์",
+            "en": "Children get close to friendly animals, then play on slides and ball pits in air conditioning"
+          },
+          "io": "both",
+          "q": "Ibarbo Park, Jl. Magelang, Yogyakarta",
+          "ok": "2026-11"
+        },
+        {
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://whatsnewindonesia.com/yogyakarta/must-visit-kids-playgrounds-yogyakarta-family-fun",
+          "local": "",
+          "name": {
+            "th": "ออดดิชแฟมิลีฮับ",
+            "en": "Oddish Family Hub"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มูดัล ทางเหนือของยอกยาการ์ตา",
+            "en": "Mudal, north Yogyakarta"
+          },
+          "what": {
+            "th": "คลับในร่มและสนามเด็กเล่นในสวน มีโครงปีนไม้ สไลเดอร์ยักษ์ กระบะทราย และโซนเล่นน้ำ",
+            "en": "An indoor club and a garden playground with wooden climbing frames, giant slides, sandboxes and water play"
+          },
+          "why": {
+            "th": "มีคลาสสำหรับเด็กตลอดวันและร้านอาหารที่เหมาะกับเด็ก",
+            "en": "Classes for children through the day and a child-friendly restaurant"
+          },
+          "io": "both",
+          "q": "Oddish Family Hub, Yogyakarta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "สนามเด็กเล่นกลางแจ้งดรีมแลนด์ยอกยา",
+            "en": "Dreamland Jogja outdoor playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เกลโดกัน จาตุรตุงกัล สเลมัน",
+            "en": "Kledokan, Caturtunggal, Sleman"
+          },
+          "what": {
+            "th": "สวนเล่นกลางแจ้งเข้าฟรี มีปราสาท ชิงช้า สไลเดอร์ ผนังปีน และสนามหญ้า",
+            "en": "A free outdoor play park with a castle, swings, slides, a climbing wall and a lawn"
+          },
+          "why": {
+            "th": "มีปราสาทให้เล่นและสนามหญ้าใหญ่ให้ปิกนิก",
+            "en": "A castle to play in and a big lawn for a picnic"
+          },
+          "tip": {
+            "th": "เปิด 08:00–17:00",
+            "en": "Open 08:00–17:00"
+          },
+          "q": "Dreamland Jogja Outdoor Playground, Caturtunggal, Sleman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Taman Bermain Gajah Wong",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "สนามเด็กเล่นกาจาห์วง",
+            "en": "Gajah Wong playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซิโดบาลี มูจามูจู อุมบุลฮาร์โจ",
+            "en": "Jl. Sidobali, Muja Muju, Umbulharjo"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางเมืองเข้าฟรี มีชิงช้า สไลเดอร์ กระดานหก และลานจราจรจำลอง",
+            "en": "A free city playground with swings, slides, see-saws and a small traffic park"
+          },
+          "why": {
+            "th": "ลานจราจรจำลองสอนเรื่องป้ายจราจร",
+            "en": "A mini traffic park that teaches road signs"
+          },
+          "q": "Taman Bermain Gajah Wong, Jl. Sidobali, Umbulharjo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 30,000 รูเปียห์",
+            "en": "≈ IDR 30,000"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "เดอะลอสต์เวิลด์คาสเซิล",
+            "en": "The Lost World Castle"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเปตุงเมราปี จังกริงงัน สเลมัน",
+            "en": "Jl. Petung Merapi, Cangkringan, Sleman"
+          },
+          "what": {
+            "th": "ปราสาทพร้อมแบบจำลองแลนด์มาร์กโลก โรงหนัง 9D และเครื่องเล่น",
+            "en": "A castle with replicas of world landmarks, a 9D cinema and rides"
+          },
+          "why": {
+            "th": "ปราสาทให้สำรวจท่ามกลางแบบจำลองโคลอสเซียมและกำแพงเมืองจีน",
+            "en": "A castle to explore among copies of the Colosseum and the Great Wall"
+          },
+          "tip": {
+            "th": "เปิด 07:00–18:00",
+            "en": "Open 07:00–18:00"
+          },
+          "q": "The Lost World Castle, Jl. Petung Merapi, Cangkringan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Studio Alam Gamplong",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "สตูดิโอถ่ายหนังกัมปลง",
+            "en": "Gamplong film studio"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ซุมเบอร์ราฮายู โมยูดัน สเลมัน",
+            "en": "Sumberrahayu, Moyudan, Sleman"
+          },
+          "what": {
+            "th": "ฉากถ่ายหนังกลางแจ้งเดิมที่เปิดให้เข้าชม มีมุมสำรวจและถ่ายรูป",
+            "en": "A former outdoor film set open to visitors, with spots to explore and photograph"
+          },
+          "why": {
+            "th": "ฉากกลางแจ้งกว้างให้เดินสำรวจ",
+            "en": "A wide outdoor set to explore"
+          },
+          "tip": {
+            "th": "เปิด 09:00–17:00",
+            "en": "Open 09:00–17:00"
+          },
+          "q": "Gamplong Studio Alam, Jl. Gamplong No.1, Moyudan, Sleman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 25,000–45,000 รูเปียห์",
+            "en": "≈ IDR 25,000–45,000"
+          },
+          "book": "none",
+          "src": "https://www.haibunda.com/parenting/20250612132940-61-368817/25-wisata-anak-di-jogja-lengkap-dari-gratis-hingga-wisata-alam-untuk-liburan-keluarga",
+          "name": {
+            "th": "พิพิธภัณฑ์และโรงงานช็อกโกแลตม็องโก",
+            "en": "Cokelat Monggo chocolate museum and factory"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนตูกูเกนตง บางุนจีโว บันตุล",
+            "en": "Jl. Tugu Gentong, Bangunjiwo, Bantul"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์และโรงงานช็อกโกแลต เด็กๆ ได้ดูการทำช็อกโกแลต",
+            "en": "A chocolate museum and factory where children watch chocolate being made"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ทำช็อกโกแลตของตัวเองกลับบ้าน",
+            "en": "Children make their own chocolate to take home"
+          },
+          "tip": {
+            "th": "เปิด 09:00–17:00",
+            "en": "Open 09:00–17:00"
+          },
+          "q": "Chocolate Monggo Museum, Jl. Tugu Gentong, Bangunjiwo, Bantul",
+          "ok": "2026-11"
         }
       ]
     }

@@ -273,6 +273,647 @@
           "q": "Blue Lagoon, Norðurljósavegur 9, Grindavík",
           "ok": "2026-11",
           "src": "https://www.bluelagoon.com/safety-standards"
+        },
+        {
+          "local": "Hljóðhimnar",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "ฮลยอดฮิมนาร์ ในฮาร์ปา",
+            "en": "Hljóðhimnar at Harpa"
+          },
+          "kind": "play",
+          "area": {
+            "th": "หอแสดงดนตรีฮาร์ปา ริมท่าเรือ",
+            "en": "Harpa concert hall, harbour"
+          },
+          "what": {
+            "th": "ห้องเล่นเสียงและดนตรีฟรีในหอแสดงดนตรีฮาร์ปา",
+            "en": "A free sound and music play space inside Harpa concert hall"
+          },
+          "why": {
+            "th": "มีเครื่องดนตรี แผงเสียง และเครื่องเล่นนุ่ม ๆ ให้สำรวจ",
+            "en": "Instruments, sound panels and soft play to explore"
+          },
+          "q": "Harpa, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Grasagarður Reykjavíkur",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สวนพฤกษศาสตร์เรคยาวิก",
+            "en": "Reykjavík Botanic Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เลาการ์ดาลือร์",
+            "en": "Laugardalur"
+          },
+          "what": {
+            "th": "พืชกว่า 5,000 ชนิด บ่อน้ำ และนก",
+            "en": "Over 5,000 plant species, ponds and birdlife"
+          },
+          "why": {
+            "th": "เดินเล่นสบาย ๆ หรือปิกนิกกับครอบครัว",
+            "en": "A gentle stroll or a family picnic"
+          },
+          "q": "Grasagarður Reykjavíkur, Laugardalur",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Viðey",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "เกาะวิเดย์",
+            "en": "Viðey Island"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นั่งเรือเฟอร์รีจากท่าเรือไม่นาน",
+            "en": "A short ferry from the harbour"
+          },
+          "what": {
+            "th": "เกาะที่มีโบราณสถาน งานศิลปะ และเส้นทางเดินเท้า",
+            "en": "An island with historic sites, art and walking trails"
+          },
+          "why": {
+            "th": "เส้นทางเดินและวิวมองกลับไปที่เมือง",
+            "en": "Walking trails and views back to the city"
+          },
+          "q": "Viðey, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "วอลเคโน เอกซ์เพรส",
+            "en": "Volcano Express"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ใจกลางเรคยาวิก",
+            "en": "Downtown Reykjavík"
+          },
+          "what": {
+            "th": "เครื่องเล่นจำลองการเคลื่อนไหว บินเสมือนจริงเหนือภูเขาไฟของไอซ์แลนด์",
+            "en": "A motion ride: a virtual flight over Iceland's volcanoes"
+          },
+          "why": {
+            "th": "นั่งนุ่มนวล เหมาะกับทั้งครอบครัว",
+            "en": "A smooth, family-friendly ride"
+          },
+          "tip": {
+            "th": "จองรอบเวลาไว้ก่อน โดยเฉพาะช่วงคนเยอะและวันหยุด",
+            "en": "Book a time slot ahead, especially at busy times and weekends"
+          },
+          "q": "Volcano Express, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Tjörnin",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "บ่อทยอร์นิน",
+            "en": "Tjörnin pond"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางเรคยาวิก",
+            "en": "Downtown Reykjavík"
+          },
+          "what": {
+            "th": "บ่อน้ำกลางเมือง มีเป็ดให้ให้อาหาร",
+            "en": "A pond in the city centre with ducks to feed"
+          },
+          "why": {
+            "th": "ให้อาหารเป็ดระหว่างเดินเล่นในเมือง",
+            "en": "Feeding the ducks on a walk through town"
+          },
+          "q": "Tjörnin, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Hljómskálagarður",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สวนฮลยอมสเกาลาการ์ดือร์",
+            "en": "Hljómskálagarður park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ข้างบ่อทยอร์นิน",
+            "en": "Next to Tjörnin pond"
+          },
+          "what": {
+            "th": "สวนที่มีรูปปั้นแปลกตา สนามเด็กเล่น และที่ปิกนิก",
+            "en": "A park with whimsical sculptures, a playground and picnic spots"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กเล็ก มีเป็ดให้ให้อาหารเยอะ",
+            "en": "Good for toddlers, with plenty of ducks to feed"
+          },
+          "q": "Hljómskálagarður, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Öskjuhlíð",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "เนินเอิสกยูลีด",
+            "en": "Öskjuhlíð hill"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "มีเพิร์ลลันอยู่บนยอด",
+            "en": "With Perlan on top"
+          },
+          "what": {
+            "th": "เนินป่ามีทางเดินและทางจักรยานผ่านป่าสนและป่าเบิร์ช",
+            "en": "A wooded hill with walking and cycling paths through pine and birch"
+          },
+          "why": {
+            "th": "ทางเดินในป่า และมีเพิร์ลลันอยู่บนยอด",
+            "en": "Paths through the trees, with Perlan at the top"
+          },
+          "q": "Öskjuhlíð, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Árbæjarlaug",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สระว่ายน้ำเอาร์ไบยาร์เลาก์",
+            "en": "Árbæjarlaug pool"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ฟิลกิสเวกูร์ 21 ย่านเอาร์ไบร์",
+            "en": "Fylkisvegur 21, Árbær"
+          },
+          "what": {
+            "th": "สระว่ายน้ำประจำย่าน มีสไลเดอร์และบ่อตื้นสำหรับเด็กเล็ก",
+            "en": "A neighbourhood pool with slides and shallow areas for toddlers"
+          },
+          "why": {
+            "th": "สไลเดอร์ น้ำตื้น และบรรยากาศสบาย ๆ แบบคนท้องถิ่น",
+            "en": "Slides, shallow water and a relaxed local feel"
+          },
+          "q": "Árbæjarlaug, Fylkisvegur 21, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Gamla Laugin",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ kr. 4500 เด็ก (ไม่เกิน 14 ปี) kr. 260",
+            "en": "kr. 4500 adults, kr. 260 children (14 and under)"
+          },
+          "book": "none",
+          "src": "https://www.secretlagoon.is/",
+          "name": {
+            "th": "ซีเคร็ตลากูน",
+            "en": "Secret Lagoon"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ฟลูดีร์ บนเส้นทางโกลเดนเซอร์เคิล",
+            "en": "Flúðir, on the Golden Circle"
+          },
+          "what": {
+            "th": "สระว่ายน้ำที่เก่าแก่ที่สุดของไอซ์แลนด์ บ่อน้ำพุร้อน 38–40 °C ตลอดปี",
+            "en": "Iceland's oldest swimming pool, a hot spring pool at 38–40 °C all year"
+          },
+          "why": {
+            "th": "เด็กอายุไม่เกิน 14 ปีจ่ายราคาถูกกว่า",
+            "en": "A lower price for children aged 14 and under"
+          },
+          "tip": {
+            "th": "หน้าร้อน (1 มิ.ย.–30 ก.ย.) เปิดทุกวัน 10:00–20:00 · หน้าหนาว (1 ต.ค.–31 พ.ค.) 10:00–19:00",
+            "en": "Summer (1 Jun–30 Sep) open daily 10:00–20:00; winter (1 Oct–31 May) 10:00–19:00"
+          },
+          "q": "Secret Lagoon, Flúðir",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Laugarvatn Fontana",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fontana.is/",
+          "name": {
+            "th": "บ่อน้ำร้อนฟอนตานา",
+            "en": "Fontana baths"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "เลาการ์วัตน์ บนเส้นทางโกลเดนเซอร์เคิล",
+            "en": "Laugarvatn, on the Golden Circle"
+          },
+          "what": {
+            "th": "บ่อน้ำร้อนและเบเกอรี่อบด้วยความร้อนใต้พิภพริมทะเลสาบ",
+            "en": "Hot spring baths and a geothermal bakery by the lake"
+          },
+          "why": {
+            "th": "บ่อน้ำร้อนตื้นริมทะเลสาบ",
+            "en": "Shallow hot pools by the lake"
+          },
+          "tip": {
+            "th": "เด็กต้องอายุอย่างน้อย 2 ปี · เปิดทุกวัน 11:00–21:00 ปิด 30 พฤศจิกายน ถึง 2 ธันวาคม",
+            "en": "Children must be at least 2 years old; open daily 11:00–21:00, closed 30 November to 2 December"
+          },
+          "q": "Laugarvatn Fontana, Hverabraut 1, Laugarvatn",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Sundhöll Reykjavíkur",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สระว่ายน้ำซุนด์เฮิลล์",
+            "en": "Sundhöll Reykjavíkur (swimming pool)"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ถนนบาโรนสติกูร์ ใจกลางเมือง เรคยาวิก",
+            "en": "Barónsstígur, city centre, Reykjavík"
+          },
+          "what": {
+            "th": "สระว่ายน้ำสไตล์อาร์ตเดโคใกล้ใจกลางเมือง มีสระในร่มสำหรับครอบครัวและอ่างน้ำร้อนบนดาดฟ้า",
+            "en": "An art deco pool near downtown with an indoor family pool and rooftop hot tubs"
+          },
+          "why": {
+            "th": "สระในร่มที่เหมาะกับครอบครัวสำหรับวันอากาศหนาว",
+            "en": "A family-friendly indoor pool for a cold day"
+          },
+          "q": "Sundhöllin, Barónsstígur 45a, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Vesturbæjarlaug",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สระว่ายน้ำเวสตูร์ไบยาร์เลาก์",
+            "en": "Vesturbæjarlaug (swimming pool)"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ถนนฮอฟสวัลลากาตา เวสตูร์ไบร์ เรคยาวิก",
+            "en": "Hofsvallagata, Vesturbær, Reykjavík"
+          },
+          "what": {
+            "th": "สระว่ายน้ำของชุมชนทางตะวันตกของใจกลางเมือง มีอ่างน้ำร้อนกลางแจ้งและวิวภูเขา",
+            "en": "A neighbourhood pool west of the centre with outdoor hot tubs and mountain views"
+          },
+          "why": {
+            "th": "สระของชุมชนแบบที่ครอบครัวไอซ์แลนด์ใช้กันจริง",
+            "en": "A friendly local pool the way Icelandic families use it"
+          },
+          "q": "Vesturbæjarlaug, Hofsvallagata, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Elliðaárdalur",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "หุบเขาเอลลิดาอาร์ดาลูร์",
+            "en": "Elliðaárdalur valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เอลลิดาอาร์ดาลูร์ ตะวันออกของเรคยาวิก เรคยาวิก",
+            "en": "Elliðaárdalur, east Reykjavík, Reykjavík"
+          },
+          "what": {
+            "th": "หุบเขาเขียวมีทางเดินในป่า แม่น้ำแซลมอน และสนามเด็กเล่น",
+            "en": "A green valley with forest trails, a salmon river and playgrounds"
+          },
+          "why": {
+            "th": "เด็กๆ ได้มองหากระต่ายป่าและเล่นในสนามเด็กเล่น",
+            "en": "Children spot wild rabbits and explore the playgrounds"
+          },
+          "q": "Elliðaárdalur, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Klambratún",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "สวนคลัมบราตูน",
+            "en": "Klambratún park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนโฟลกากาตา ฮลีดาร์ เรคยาวิก",
+            "en": "Flókagata, Hlíðar, Reykjavík"
+          },
+          "what": {
+            "th": "สวนกลางเมือง มีสนามหญ้ากว้างและสนามเด็กเล่นธีมปราสาท",
+            "en": "A central park with wide lawns and a castle-themed playground"
+          },
+          "why": {
+            "th": "มีโครงปีนป่ายและสนามเด็กเล่นรูปปราสาท",
+            "en": "A climbing frame and a castle playground"
+          },
+          "q": "Klambratún, Flókagata, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Grótta",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "ประภาคารกรอตตา",
+            "en": "Grótta lighthouse"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เซลต์ยาร์นาร์เนส ทางตะวันตกของเรคยาวิก",
+            "en": "Seltjarnarnes, west of Reykjavík"
+          },
+          "what": {
+            "th": "ทางเดินริมทะเลไปประภาคารกรอตตา มีนกและชายหาดเล็กๆ",
+            "en": "A coastal walk to the Grótta lighthouse with birds and a small beach"
+          },
+          "why": {
+            "th": "เด็กๆ เดินเล่นริมทะเล ดูนก และเก็บเปลือกหอย",
+            "en": "Children walk the coast paths, spot birds and collect shells"
+          },
+          "q": "Grótta Lighthouse, Seltjarnarnes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Borgarbókasafnið Grófinni",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "ห้องสมุดเมืองโกรฟิน",
+            "en": "Grófin City Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนทริกวากาตา ใกล้ท่าเรือเก่า เรคยาวิก",
+            "en": "Tryggvagata, near the Old Harbour, Reykjavík"
+          },
+          "what": {
+            "th": "สาขาหลักของห้องสมุดเมืองเรคยาวิก มีหลายชั้น",
+            "en": "The main branch of the Reykjavík City Library, over several floors"
+          },
+          "why": {
+            "th": "มีมุมเด็กพร้อมหนังสือ ของเล่น และรอบเล่านิทาน",
+            "en": "A children's area with books, toys and storytelling sessions"
+          },
+          "q": "Borgarbókasafnið Grófinni, Tryggvagata 15, Reykjavík",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Norræna húsið",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guidetoiceland.is/best-of-iceland/reykjavik-with-kids",
+          "name": {
+            "th": "ห้องสมุดนอร์ดิกเฮาส์",
+            "en": "Nordic House library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนไซมุนดาร์กาตา ใกล้มหาวิทยาลัย เรคยาวิก",
+            "en": "Sæmundargata, near the university, Reykjavík"
+          },
+          "what": {
+            "th": "ห้องสมุดในนอร์ดิกเฮาส์ มีหนังสือภาษากลุ่มนอร์ดิก",
+            "en": "A library in the Nordic House with books in the Nordic languages"
+          },
+          "why": {
+            "th": "มุมเด็กมีที่เล่น",
+            "en": "The children's section has a play area"
+          },
+          "q": "Nordic House, Sæmundargata 11, Reykjavík",
+          "ok": "2026-11"
         }
       ]
     }

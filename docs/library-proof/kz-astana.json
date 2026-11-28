@@ -1,0 +1,97 @@
+{
+  "town": "kz-astana",
+  "rounds": [
+    {
+      "town": "kz-astana",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Navat",
+          "src": "https://www.google.com/maps/place/%D0%A7%D0%B0%D0%B9%D1%85%D0%B0%D0%BD%D0%B0+NAVAT+Asia+Park/@51.1282068,71.4126613,17z",
+          "page_name": "Чайхана NAVAT Asia Park",
+          "evidence": "Google Maps: restaurant, 4.5★, Qabanbay Batyr Ave 21, Astana (4CH7+73), in Asia Park mall on the left bank, 'Open · Closes 12 AM'; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Marrone Rosso",
+          "evidence": "Google Maps lists Marrone Rosso coffee shops in Astana marked 'Open now' in the result list (Turan Ave 24, in Saryarka mall; Qabanbay Batyr Ave 119, at the airport; Syganak 17), but their own pages show no hours ('Add hours'), and the Dostyq St 9 branch is 'Permanently closed' — no branch's listing confirms it with hours"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "town": "kz-astana",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 of 16 rows from Yandex Eda Open Kitchen (2025) and We Project (2025) passed library-check.cjs, 5 went in — Google Maps has few reviews in Astana",
+      "added": [
+        {
+          "name": "Cappuccino",
+          "page_name": "Cappuccino",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/kid-friendly-seven-restaurants-with-play-areas",
+          "date": "2025-07",
+          "map": "Google Maps 'Кофейня \"Cappuccino\"', Qabanbay Batyr Ave 5/3, 77 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "TomYumBar",
+          "page_name": "TomYumBar",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/kid-friendly-seven-restaurants-with-play-areas",
+          "date": "2025-07",
+          "map": "Google Maps 'TomYumBar Астана', Turan Ave 20, 7 reviews, newest 'last month'"
+        },
+        {
+          "name": "Kidburg",
+          "page_name": "Kidburg",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "date": "2025-01",
+          "map": "Google Maps 'КидБург', Syganak St 60/5, 26 reviews, newest '3 months ago'"
+        },
+        {
+          "name": "Baby BOOM",
+          "page_name": "Baby BOOM",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "date": "2025-01",
+          "map": "Google Maps 'Baby Boom', Turan Ave 53в, 4 reviews, newest 'last month'"
+        },
+        {
+          "name": "Bee Karting",
+          "page_name": "Bee Karting",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "date": "2025-01",
+          "map": "Google Maps Petrova St 24a/1, Eurasia-3 mall, 47 reviews, newest '2 months ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Cafellini, Ribambelle, Mimioriya, Play Ville, Kango",
+          "why": "newest Google Maps review 7–11 months old"
+        },
+        {
+          "name": "Mamma Mia",
+          "why": "newest Google Maps review two years old"
+        },
+        {
+          "name": "Uno, Avatariya, Lya Theater",
+          "why": "the map shows a differently named place"
+        },
+        {
+          "name": "Kids Point",
+          "why": "no reviews on Google Maps"
+        },
+        {
+          "name": "Kazakhstan railway history museum",
+          "why": "failed library-check.cjs"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "note": "Ailand (already in the library) was checked again on 23 Nov 2026: no report of a closure was found and Google Maps shows recent reviews, so it stays."
+    }
+  ]
+}

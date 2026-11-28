@@ -277,7 +277,456 @@
       {"name":{"en":"Traffic Playground","th":"สนามเด็กเล่นจราจร"},"kind":"play","area":{"en":"Fælledparken","th":"เฟลเลดพาร์เกน"},"what":{"en":"A playground with traffic lights, road signs and bike lanes where children learn to ride safely","th":"สนามเด็กเล่นที่มีไฟจราจร ป้ายถนน และเลนจักรยาน ให้เด็กฝึกขี่จักรยานอย่างปลอดภัย"},"why":{"en":"Kids learn to bike here; bikes (balance and pedal) and helmets for kids under 130 cm are lent for free","th":"เด็กฝึกขี่จักรยานที่นี่ มีจักรยานทรงตัวและแพดัลให้ยืม และหมวกกันน็อกสำหรับเด็กที่สูงไม่ถึง 130 ซม. ให้ยืมฟรี"},"ages":[0,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Traffic Playground, Fælledparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"},
       {"name":{"en":"Fælledparken","th":"เฟลเลดพาร์เกน"},"kind":"park","area":{"en":"City centre","th":"ใจกลางเมือง"},"what":{"en":"The largest park in the city centre, with lakes, several playgrounds, a skate park and bike paths","th":"สวนที่ใหญ่ที่สุดในใจกลางเมือง มีทะเลสาบ สนามเด็กเล่นหลายแห่ง สเก็ตพาร์ค และทางจักรยาน"},"why":{"en":"You can jog around the lake, take the kids to different playgrounds, or rent bikes during the week","th":"วิ่งรอบทะเลสาบ พาเด็กไปสนามเด็กเล่นต่างๆ หรือเช่าจักรยานในวันธรรมดาได้"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Fælledparken, Copenhagen","ok":"2026-11","src":"https://kidsareatrip.com/best-sights-copenhagen-travel-kids/"},
       {"name":{"en":"Ørstedsparken","th":"ออร์สเตดพาร์เกน"},"kind":"play","area":{"en":"near Torvehallerne","th":"ใกล้ตลาดอาหารทอร์เวเฮลเลอรเน"},"what":{"en":"A park with a fun playground, a short walk from the Torvehallerne food hall","th":"สวนที่มีสนามเด็กเล่นสนุก เดินไม่ไกลจากตลาดอาหารทอร์เวเฮลเลอรเน"},"why":{"en":"A nice stroll for parents while the kids nap, with a fun playground","th":"เดินเล่นสบายๆ ให้พ่อแม่ขณะเด็กนอนงีบ พร้อมสนามเด็กเล่นที่สนุก"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ørstedsparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"},
-      {"name":{"en":"Nørrebroparken playground","th":"สนามเด็กเล่นนีอบรอพาร์เกน"},"kind":"play","area":{"en":"Jægersborggade","th":"เยเกอร์สบอร์กกาเดอ"},"what":{"en":"A playground at one end of the Jægersborggade street, beside the Assistens cemetery","th":"สนามเด็กเล่นปลายถนนเยเกอร์สบอร์กกาเดอ ข้างสุสานอาซิสเทนส์"},"why":{"en":"The guide puts it on the walk along a street of boutiques and cafés","th":"คู่มือวางไว้บนเส้นทางเดินเลียบถนนร้านบูติกและคาเฟ่"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nørrebroparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"}
+      {"name":{"en":"Nørrebroparken playground","th":"สนามเด็กเล่นนีอบรอพาร์เกน"},"kind":"play","area":{"en":"Jægersborggade","th":"เยเกอร์สบอร์กกาเดอ"},"what":{"en":"A playground at one end of the Jægersborggade street, beside the Assistens cemetery","th":"สนามเด็กเล่นปลายถนนเยเกอร์สบอร์กกาเดอ ข้างสุสานอาซิสเทนส์"},"why":{"en":"The guide puts it on the walk along a street of boutiques and cafés","th":"คู่มือวางไว้บนเส้นทางเดินเลียบถนนร้านบูติกและคาเฟ่"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nørrebroparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"},
+        {
+          "local": "Rundetårn",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=1370",
+          "name": {
+            "th": "หอกลมรุนเดทอร์น",
+            "en": "Round Tower"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนเคิบมาเกอร์กาเดอ ใจกลางเมือง",
+            "en": "Købmagergade, city centre"
+          },
+          "what": {
+            "th": "หอดูดาวที่ยังใช้งานเก่าแก่ที่สุดในยุโรป ขึ้นทางลาดวนกว้าง",
+            "en": "Europe’s oldest working observatory, reached by a wide spiral ramp"
+          },
+          "why": {
+            "th": "เด็กชอบแอบซ่อนตามโค้งของทางลาด",
+            "en": "Children love hiding round every bend of the ramp"
+          },
+          "tip": {
+            "th": "ไม่มีลิฟต์ แต่เข็นรถเข็นขึ้นทางลาดได้",
+            "en": "No lift, but a pram can go up the ramp"
+          },
+          "q": "Rundetårn, Købmagergade 52A, København",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Islands Brygge Harbour Bath",
+            "th": "สระว่ายน้ำท่าเรืออีลันส์บรึกเก (Islands Brygge)"
+          },
+          "local": "Havnebadet Islands Brygge",
+          "kind": "beach",
+          "area": {
+            "en": "Islands Brygge, across the bridge from the centre",
+            "th": "อีลันส์บรึกเก ข้ามสะพานจากใจกลางเมือง"
+          },
+          "what": {
+            "en": "An open-air harbour bath in the centre of the city, with five pools, a lawn for sunbathing and picnics, and the skyline in view.",
+            "th": "สระว่ายน้ำกลางแจ้งริมท่าเรือกลางเมือง มี 5 สระ สนามหญ้าสำหรับอาบแดดและปิกนิก และเห็นสกายไลน์เมือง"
+          },
+          "why": {
+            "en": "Two of the five pools are for children, and the shallowest is 30 cm deep.",
+            "th": "ใน 5 สระมี 2 สระสำหรับเด็ก และสระที่ตื้นที่สุดลึกแค่ 30 ซม."
+          },
+          "tip": {
+            "en": "Lifeguards 1 June to 31 August, 10:00–18:00; swimming in the harbour is only allowed inside the harbour baths.",
+            "th": "มีไลฟ์การ์ด 1 มิ.ย.–31 ส.ค. 10:00–18:00 ว่ายน้ำในท่าเรือได้เฉพาะในสระท่าเรือเท่านั้น"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Havnebadet Islands Brygge, Islands Brygge 14, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/harbour-bath-islands-brygge-gdk482346"
+        },
+        {
+          "name": {
+            "en": "Fisketorvet Harbour Bath",
+            "th": "สระว่ายน้ำท่าเรือฟิสเกอทอร์เวต (Fisketorvet)"
+          },
+          "local": "Havnebadet Fisketorvet",
+          "kind": "beach",
+          "area": {
+            "en": "Vesterbro, beside Fisketorvet",
+            "th": "เวสเตอร์โบร ข้างฟิสเกอทอร์เวต"
+          },
+          "what": {
+            "en": "A free harbour bath on the waterfront with three pools: a children's pool, a diving pool and a swimming pool.",
+            "th": "สระว่ายน้ำริมท่าเรือที่เข้าฟรี มี 3 สระ คือสระเด็ก สระกระโดดน้ำ และสระว่ายน้ำ"
+          },
+          "why": {
+            "en": "The children's pool has a firm bottom and is only 0.70 m deep, so little ones can paddle safely.",
+            "th": "สระเด็กพื้นแข็งและลึกแค่ 0.70 ม. เด็กเล็กเล่นน้ำได้อย่างปลอดภัย"
+          },
+          "tip": {
+            "en": "Lifeguards 1 June to 31 August, 10:00–18:00.",
+            "th": "มีไลฟ์การ์ด 1 มิ.ย.–31 ส.ค. 10:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Havnebadet Fisketorvet, Kalvebod Brygge 55, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/fisketorvet-harbour-bath-gdk412709"
+        },
+        {
+          "name": {
+            "en": "Sluseholmen Harbour Bath",
+            "th": "สระว่ายน้ำท่าเรือสลูเซอโฮล์เมน (Sluseholmen)"
+          },
+          "local": "Havnebadet Sluseholmen",
+          "kind": "beach",
+          "area": {
+            "en": "Sluseholmen, southern harbour",
+            "th": "สลูเซอโฮล์เมน ท่าเรือฝั่งใต้"
+          },
+          "what": {
+            "en": "A small harbour bath shaped like coral, with a sheltered lagoon-like area for swimmers and children.",
+            "th": "สระท่าเรือเล็กๆ ดีไซน์คล้ายปะการัง มีบริเวณคล้ายลากูนที่กำบังลมสำหรับผู้ว่ายและเด็ก"
+          },
+          "why": {
+            "en": "A sheltered area with a children's pool, a youth pool and two pools for exercise and diving; calm for little ones.",
+            "th": "มีบริเวณกำบังพร้อมสระเด็ก สระเยาวชน และสระออกกำลังกายกับกระโดดน้ำ สงบสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Open all year; lifeguards 1 June to 31 August.",
+            "th": "เปิดทั้งปี มีไลฟ์การ์ด 1 มิ.ย.–31 ส.ค."
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Havnebadet Sluseholmen, Ben Websters Vej 69, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/sluseholmen-harbour-bath-gdk713181"
+        },
+        {
+          "name": {
+            "en": "Tower Playground, Fælledparken",
+            "th": "สนามเด็กเล่นหอคอย เฟลเลดปาร์เกน (Fælledparken)"
+          },
+          "local": "Tårnlegepladsen i Fælledparken",
+          "kind": "play",
+          "area": {
+            "en": "Fælledparken, Østerbro",
+            "th": "เฟลเลดปาร์เกน เอิสเตอร์โบร"
+          },
+          "what": {
+            "en": "A playground built around five of Copenhagen's notable towers, including the Round Tower, City Hall and the Marble Church.",
+            "th": "สนามเด็กเล่นที่สร้างตามหอคอยเด่นของโคเปนเฮเกน 5 แห่ง เช่น Round Tower ศาลาว่าการ และโบสถ์หินอ่อน"
+          },
+          "why": {
+            "en": "Children play electronic tag over the roofs and solve a puzzle in the Round Tower, learning the city's history as they play.",
+            "th": "เด็กเล่นแท็กอิเล็กทรอนิกส์เหนือหลังคา และแก้ปริศนาใน Round Tower ได้เรียนประวัติเมืองไปพร้อมกัน"
+          },
+          "tip": {
+            "en": "The staffed building is open 10:00–15:30 for lunch; from April to October you can borrow balls and sandbox toys there.",
+            "th": "อาคารที่มีเจ้าหน้าที่เปิด 10:00–15:30 สำหรับกินมื้อกลางวัน เม.ย.–ต.ค. ยืมลูกบอลและของเล่นกระบะทรายได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tårnlegepladsen, Frederik V's Vej 4, Fælledparken, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://www.visitdenmark.com/denmark/plan-your-trip/playground-with-towers-in-faelledparken-gdk570166"
+        },
+        {
+          "name": {
+            "en": "The Deer Park (Dyrehaven)",
+            "th": "สวนกวาง ดือเรฮาเวิน (Dyrehaven)"
+          },
+          "local": "Jægersborg Dyrehave",
+          "kind": "nature",
+          "area": {
+            "en": "Klampenborg, north of Copenhagen",
+            "th": "คลัมเพนบอร์ก ทางเหนือของโคเปนเฮเกน"
+          },
+          "what": {
+            "en": "A natural park of lush forests, small lakes and wide open landscapes, reached by train to Klampenborg station.",
+            "th": "อุทยานธรรมชาติที่มีป่าเขียวชอุ่ม ทะเลสาบเล็ก และทุ่งโล่งกว้าง ไปได้โดยรถไฟถึงสถานีคลัมเพนบอร์ก"
+          },
+          "why": {
+            "en": "More than 2,000 free-range deer roam the park, so children can see a herd grazing on the way through.",
+            "th": "มีกวางเดินอิสระกว่า 2,000 ตัว เด็กๆ เห็นฝูงกวางกินหญ้าระหว่างทางได้"
+          },
+          "tip": {
+            "en": "About 20 minutes by train from the centre, to Klampenborg station.",
+            "th": "นั่งรถไฟจากใจกลางเมืองราว 20 นาทีถึงสถานีคลัมเพนบอร์ก"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jægersborg Dyrehave, Klampenborg, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://www.visitdenmark.com/denmark/explore/deer-park-gdk414367"
+        },
+        {
+          "name": {
+            "en": "Amager Beach Park",
+            "th": "อามาเกอร์บีชปาร์ก (Amager Beach Park)"
+          },
+          "local": "Amager Strandpark",
+          "kind": "beach",
+          "area": {
+            "en": "Amager, 5 km from the centre",
+            "th": "อามาเกอร์ ห่างใจกลางเมือง 5 กม."
+          },
+          "what": {
+            "en": "Copenhagen's largest beach, with 4.6 km of sandy shore and a shallow lagoon.",
+            "th": "ชายหาดที่ใหญ่ที่สุดของโคเปนเฮเกน ยาว 4.6 กม. หาดทรายและลากูนน้ำตื้น"
+          },
+          "why": {
+            "en": "The lagoon has toddlers' pools on one side, and the child-friendly beaches let children swim in shallow water.",
+            "th": "ลากูนมีสระเด็กเล็กด้านหนึ่ง และหาดที่เหมาะกับเด็กให้เล่นน้ำตื้นได้"
+          },
+          "tip": {
+            "en": "Easy by metro; lifeguards cover the summer months, so check the dates before you go.",
+            "th": "ไปง่ายด้วยรถไฟใต้ดิน มีไลฟ์การ์ดช่วงฤดูร้อน เช็กวันที่ก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Amager Strandpark, Amager Strandvej 110, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/amager-beach-park-gdk414012"
+        },
+        {
+          "name": {
+            "en": "Bondegården (the Farm)",
+            "th": "บอนเดอโกเดน (Bondegården) ฟาร์มในเมือง"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Urbanplanen, Amager",
+            "th": "อูร์บันพลาเนน อามาเกอร์"
+          },
+          "what": {
+            "en": "A farm in the middle of a large residential area where children can see, touch and learn about Danish farm animals.",
+            "th": "ฟาร์มกลางย่านที่อยู่อาศัยขนาดใหญ่ ที่เด็กๆ ดู สัมผัส และเรียนรู้เรื่องสัตว์ฟาร์มของเดนมาร์ก"
+          },
+          "why": {
+            "en": "Children see and touch the farm animals up close, a simple outing for the youngest.",
+            "th": "เด็กๆ เห็นและจับสัตว์ฟาร์มใกล้ๆ เป็นทริปง่ายๆ สำหรับเด็กเล็กที่สุด"
+          },
+          "tip": {
+            "en": "Check the farm's own opening times before you go.",
+            "th": "เช็กเวลาเปิดของฟาร์มก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Bondegården, Urbanplanen, Amager, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://visitorservice.kk.dk/en/explore-copenhagen/navigation-amager/family-fun-with-little-ones"
+        },
+        {
+          "name": {
+            "en": "Børnekulturhus Ama'r",
+            "th": "บอร์นเนอคูลทูร์ฮุส อามาร์ (Børnekulturhus Ama'r)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Øresundsvej, Amager",
+            "th": "Øresundsvej อามาเกอร์"
+          },
+          "what": {
+            "en": "A public children's culture house designed for and with children, with activities for children.",
+            "th": "บ้านวัฒนธรรมเด็กของเมือง ออกแบบเพื่อและร่วมกับเด็ก มีกิจกรรมสำหรับเด็ก"
+          },
+          "why": {
+            "en": "A free indoor playground for children, handy when the weather turns.",
+            "th": "สนามเด็กเล่นในร่มที่เข้าฟรี สะดวกเมื่ออากาศแปรปรวน"
+          },
+          "tip": {
+            "en": "Closed from 1 May to 17 August, so visit in the cooler months.",
+            "th": "ปิด 1 พ.ค.–17 ส.ค. ไปช่วงอากาศเย็นกว่านั้น"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Børnekulturhus Ama'r, Øresundsvej 8 B, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://visitorservice.kk.dk/en/explore-copenhagen/navigation-amager/family-fun-with-little-ones"
+        },
+        {
+          "name": {
+            "en": "Lergravsparken Playground",
+            "th": "สนามเด็กเล่นเลอร์กราวส์ปาร์เกน (Lergravsparken)"
+          },
+          "local": "Lergravsparkens Legeplads",
+          "kind": "play",
+          "area": {
+            "en": "Lergravsparken, Amager",
+            "th": "เลอร์กราวส์ปาร์เกน อามาเกอร์"
+          },
+          "what": {
+            "en": "A large staffed playground where the staff start fun activities for the children.",
+            "th": "สนามเด็กเล่นขนาดใหญ่ที่มีเจ้าหน้าที่ดูแล และจัดกิจกรรมสนุกให้เด็กๆ"
+          },
+          "why": {
+            "en": "Staffed by childcare specialists, so there is always an adult to help.",
+            "th": "มีผู้เชี่ยวชาญด้านการดูแลเด็กประจำ จึงมีผู้ใหญ่คอยช่วยเสมอ"
+          },
+          "tip": {
+            "en": "Staffed during opening hours; check the times on the city's pages before you go.",
+            "th": "มีเจ้าหน้าที่ในเวลาเปิด เช็กเวลาที่หน้าเว็บของเมืองก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lergravsparkens Legeplads, Amager, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://visitorservice.kk.dk/en/explore-copenhagen/navigation-amager/family-fun-with-little-ones"
+        },
+        {
+          "name": {
+            "en": "SMK, the National Gallery of Denmark",
+            "th": "หอศิลป์แห่งชาติเดนมาร์ก (SMK)"
+          },
+          "local": "Statens Museum for Kunst",
+          "kind": "museumkid",
+          "area": {
+            "en": "Copenhagen city centre",
+            "th": "ใจกลางโคเปนเฮเกน"
+          },
+          "what": {
+            "en": "Denmark's national gallery, with a Children's Workshop where kids can draw, paint and build.",
+            "th": "หอศิลป์แห่งชาติของเดนมาร์ก มีเวิร์กช็อปเด็กให้วาด ระบาย และประดิษฐ์"
+          },
+          "why": {
+            "en": "Kids draw, paint and build from cardboard or plaster, with artists on hand to help.",
+            "th": "เด็กๆ วาด ระบายสี และทำของจากกระดาษแข็งหรือปูนปลาสเตอร์ โดยมีศิลปินคอยช่วย"
+          },
+          "tip": {
+            "en": "The Children's Workshop is free after paying the admission fee; there are family workshops at weekends.",
+            "th": "เวิร์กช็อปเด็กไม่เสียเพิ่มหลังจ่ายค่าเข้าชม และมีเวิร์กช็อปครอบครัวช่วงสุดสัปดาห์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Statens Museum for Kunst, Copenhagen, Denmark",
+          "ok": "2026-11",
+          "src": "https://bornibyen.dk/articles/10-child-friendly-museums"
+        }
     ]
     }
   ]

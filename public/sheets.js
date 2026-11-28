@@ -1896,7 +1896,10 @@ async function refresh() {
 function brandLoad() {
   fetch('/api/brand', { credentials: 'same-origin', cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((b) => { if (!b) return; const changed = JSON.stringify(b) !== JSON.stringify(BRAND); BRAND = b; ls('brand', b); const pin = $('#lcode'); if (!S && changed && !(pin && pin.value)) render(); }).catch(() => {});   // never redraw the login form under someone typing
 }
-(async function boot() {
+// Boot only once every script has run (DOMContentLoaded comes after the last deferred script): boot's first await (IndexedDB) can come back
+// while the browser still waits for kid.js / snap.js — on a reload just as the service worker takes the page over, snap.js arrived late,
+// the first render met "snapGeo is not defined" and the page stayed blank (the CI flake of 26 Nov 2026, test/ui.mjs "a tick in today's bag")
+async function boot() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
   // the app's name and the children's drawings for the login page (kept on the phone for the next cold start)
   brandLoad();
@@ -1919,7 +1922,8 @@ function brandLoad() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => render());
   setInterval(() => { if (queue.length && !(allHeld && holdMedia())) flush(); else refresh(); }, 30000);
   if (S) flush();
-})();
+}
+if (document.readyState === 'complete') boot(); else document.addEventListener('DOMContentLoaded', boot, { once: true });
 
 // a relative's photos for a book: made small on the phone (shrinkPh), sent one by one to wait for the parents (server/inbox.js)
 document.addEventListener('change', async (e) => {

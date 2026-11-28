@@ -1,0 +1,106 @@
+{
+  "town": "fr-montstmichel",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from the Mont-Saint-Michel tourist office and Manche Tourism (2026) passed library-check.cjs, 6 went in",
+  "added": [
+    {
+      "name": "Le Grillon",
+      "page_name": "Le Grillon",
+      "src": "https://www.ot-montsaintmichel.com/en/restaurant/le-grillon",
+      "date": "official",
+      "map": "Google Maps Pontorson, 1,171 reviews, newest within weeks"
+    },
+    {
+      "name": "Restaurant Eugénie",
+      "page_name": "Restaurant Eugénie",
+      "src": "https://www.ot-montsaintmichel.com/en/restaurant/restaurant-eugenie/",
+      "date": "official",
+      "map": "Google Maps 'Hôtel Restaurant Eugénie Pontorson', 59 rue Couesnon, 747 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Saint James Café",
+      "page_name": "Saint James Café",
+      "src": "https://www.manche-tourism.com/travel-to-la-manche/mont-saint-michel/where-eat-stay/",
+      "date": "2026-06",
+      "map": "Google Maps 'SAINT JAMES - Beauvoir', 163 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Le Café de la Baie",
+      "page_name": "Le café de la baie",
+      "src": "https://www.manche-tourism.com/travel-to-la-manche/mont-saint-michel/where-eat-stay/",
+      "date": "2026-06",
+      "map": "Google Maps 'Café de la Baie', Grouin du Sud, 222 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Le Logis Sainte-Catherine",
+      "page_name": "Le logis Sainte-Catherine",
+      "src": "https://www.manche-tourism.com/travel-to-la-manche/mont-saint-michel/where-eat-stay/",
+      "date": "2026-06",
+      "map": "Google Maps 'Le Logis Sainte Catherine', 125 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Archéoscope",
+      "page_name": "Archeoscope",
+      "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/archeoscope/",
+      "date": "official",
+      "map": "Google Maps 'Archéoscope', Grande Rue, 351 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "La Touline",
+      "page_name": "La Touline",
+      "src": "https://fr.gaultmillau.com/fr/restaurants/la-touline",
+      "date": "2026-04",
+      "map": "Google Maps 'La Touline' (6 Pl. de la Poissonnerie), newest review shown 11 hours ago"
+    },
+    {
+      "name": "Les Embruns",
+      "page_name": "Les Embruns",
+      "src": "https://fr.gaultmillau.com/fr/restaurants/les-embruns",
+      "date": "2026-04",
+      "map": "Google Maps 'Les Embruns' (120 Chau. du Sillon), newest review shown a week ago"
+    },
+    {
+      "name": "Crêperie La Brigantine",
+      "page_name": "Crêperie la Brigantine",
+      "src": "https://fr.gaultmillau.com/fr/restaurant/creperie-la-brigantine",
+      "date": "2026-04",
+      "map": "Google Maps 'La Brigantine' (13 Rue de Dinan), newest review shown a week ago"
+    },
+    {
+      "name": "Grand Bé",
+      "page_name": "Grand Bé",
+      "src": "https://ryo.co/fr/articles/france/saint-malo/visiter-saint-malo-famille/",
+      "date": "2026-08",
+      "map": "Google Maps 'Grand Bé' (Saint-Malo), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "L'Étoile du Roy (frigate)",
+      "page_name": "L'Étoile du Roy",
+      "src": "https://ryo.co/fr/articles/france/saint-malo/visiter-saint-malo-famille/",
+      "date": "2026-08",
+      "map": "Google Maps 'L’Étoile du Roy' (Quai Duguay-Trouin), newest review shown 3 weeks ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "La Maison du Parc",
+      "why": "newest Google Maps review three years old"
+    },
+    {
+      "name": "Champrépus Zoo, Au Coeur du Roc (Granville)",
+      "why": "well outside the Mont-Saint-Michel area"
+    },
+    {
+      "name": "Chez P'tit Georges",
+      "why": "the map puts it in Ducey-Les Chéris, not on the Mont's Grande Rue as the page says"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 6 rows from Gault&Millau (Apr 2026), Ryo (Aug 2026) and the Mont-Saint-Michel tourist office (official), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

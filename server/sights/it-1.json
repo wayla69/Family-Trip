@@ -273,6 +273,565 @@
           "q": "Sentiero dei Limoni, Maiori",
           "ok": "2026-11",
           "src": "https://www.viaggiapiccoli.com/costiera-amalfitana-con-bambini/"
+        },
+        {
+          "local": "Museo Archeologico Romano",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์โบราณคดีโรมัน MAR",
+            "en": "MAR Roman Archaeological Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ใต้โบสถ์ โพซิตาโน",
+            "en": "Under the church, Positano"
+          },
+          "what": {
+            "th": "วิลล่าโรมันที่ถูกภูเขาไฟวิสุเวียสฝังในปี ค.ศ. 79 ชมภาพจิตรกรรมฝาผนังจากทางเดินยกสูง",
+            "en": "A Roman villa buried by Vesuvius in AD 79, with frescoes seen from a raised walkway"
+          },
+          "why": {
+            "th": "ชมเร็ว ราว 30 นาที มีภาพจำลองและแสงไฟช่วยให้เข้าใจ",
+            "en": "A quick visit, about 30 minutes, with reconstructions and lighting"
+          },
+          "tip": {
+            "th": "รับคนได้จำกัด จองไว้ก่อนหรือเช็กเวลาเปิดก่อนไป",
+            "en": "Space is limited: book ahead or check the opening hours"
+          },
+          "q": "MAR Positano, Santa Maria Assunta, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spiaggia di Fornillo",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "หาดฟอร์นิลโล",
+            "en": "Fornillo beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โพซิตาโน เดินจากท่าเรือ 10 นาที",
+            "en": "Positano, 10 minutes' walk from the pier"
+          },
+          "what": {
+            "th": "อ่าวกรวดเล็ก ๆ ที่กำบังลม ไปได้ด้วยการเดินเลียบชายฝั่งหรือนั่งเรือเล็ก",
+            "en": "A small sheltered pebble bay, on foot along a coastal path or by small boat"
+          },
+          "why": {
+            "th": "คนน้อยกว่าหาดหลัก และเป็นหาดที่ครอบครัวชอบ",
+            "en": "Quieter than the main beach and a family favourite"
+          },
+          "tip": {
+            "th": "เป็นหาดกรวด ไม่ใช่ทราย ใส่รองเท้าลุยน้ำ",
+            "en": "Pebbles, not sand: bring water shoes"
+          },
+          "q": "Fornillo Beach, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spiaggia di Arienzo",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "หาดอารีเอนโซ",
+            "en": "Arienzo beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ใต้โพซิตาโน",
+            "en": "Below Positano"
+          },
+          "what": {
+            "th": "หาดที่ต้องลงบันไดกว่า 250 ขั้น หรือนั่งเรือเล็กของบีชคลับ",
+            "en": "A beach reached by more than 250 steps or by the beach clubs' small boats"
+          },
+          "why": {
+            "th": "ทะเลสวยมาก เหมาะกับเด็กโตที่เดินไหว",
+            "en": "Spectacular sea, for older children who don't mind walking"
+          },
+          "tip": {
+            "th": "บันไดไม่เหมาะกับรถเข็นเด็กหรือเด็กเล็กมาก",
+            "en": "The steps are not for prams or very young children"
+          },
+          "q": "Arienzo Beach, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Chiesa di Santa Maria Assunta",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "โบสถ์ซานตามาเรียอัสซุนตา",
+            "en": "Santa Maria Assunta church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หลังหาดหลัก โพซิตาโน",
+            "en": "Behind the main beach, Positano"
+          },
+          "what": {
+            "th": "โบสถ์โดมกระเบื้องหลากสี มีรูปเคารพพระแม่มารีดำแบบไบแซนไทน์",
+            "en": "A church with a colourful tiled dome and a Byzantine Black Madonna icon"
+          },
+          "why": {
+            "th": "เด็ก ๆ เห็นโดมกระเบื้องได้ทันที ข้างในเย็นและเงียบ",
+            "en": "Children spot the tiled dome at once; inside is cool and quiet"
+          },
+          "q": "Chiesa di Santa Maria Assunta, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "มารีนากรันเด",
+            "en": "Marina Grande"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "หมู่บ้านชาวประมงเก่าของซอร์เรนโต",
+            "en": "Sorrento's old fishing village"
+          },
+          "what": {
+            "th": "หมู่บ้านชาวประมงบ้านสีสดและเรือ มีหาดเล็ก ๆ",
+            "en": "A fishing village of colourful houses and boats with a small beach"
+          },
+          "why": {
+            "th": "กินมื้อกลางวันริมน้ำแล้วลงเล่นน้ำ",
+            "en": "Lunch on the waterfront and a swim"
+          },
+          "tip": {
+            "th": "ขากลับต้องเดินขึ้นเนิน",
+            "en": "The way back up is a climb"
+          },
+          "q": "Marina Grande, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "สวนวิลลาฟิโอเรนติโน",
+            "en": "Villa Fiorentino park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คอร์โซอิตาเลีย ซอร์เรนโต",
+            "en": "Corso Italia, Sorrento"
+          },
+          "what": {
+            "th": "วิลล่าเก่าแก่ที่มีสวนกว้าง สนามเด็กเล่น และสวนส้ม",
+            "en": "A historic villa with a large garden, a playground and an orange grove"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าสนามเด็กเล่นกว้าง ร่มรื่น และปลอดภัย",
+            "en": "The page says the playground is large, shaded and safe"
+          },
+          "q": "Villa Fiorentino, Corso Italia, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "วิลลาโคมูนาเล",
+            "en": "Villa Comunale"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือมารีนาปิกโกลา ซอร์เรนโต",
+            "en": "Above Marina Piccola, Sorrento"
+          },
+          "what": {
+            "th": "ระเบียงมองมารีนาปิกโกลาและภูเขาไฟวิสุเวียส วันฟ้าใสเห็นเกาะคาปรี",
+            "en": "A terrace over Marina Piccola and Vesuvius, and Capri on a clear day"
+          },
+          "why": {
+            "th": "กินเจลาโตตอนพระอาทิตย์ตก",
+            "en": "Gelato at sunset"
+          },
+          "tip": {
+            "th": "ลิฟต์ลงไปริมทะเลเริ่มที่นี่",
+            "en": "The lift down to the sea starts here"
+          },
+          "q": "Villa Comunale, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "บัญญีเดลลาเรจีนาโจวันนา",
+            "en": "Bagni della Regina Giovanna"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ชายฝั่งซอร์เรนโต",
+            "en": "Sorrento coast"
+          },
+          "what": {
+            "th": "สระน้ำธรรมชาติกลางหน้าผาและซากวิลล่าโรมัน",
+            "en": "A natural pool among cliffs and the remains of a Roman villa"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กโต หรือเดินเล่นตอนพระอาทิตย์ตก",
+            "en": "Better with older children, or as a sunset walk"
+          },
+          "tip": {
+            "th": "ทางเดินและทางลงทะเลไม่เหมาะกับเด็กเล็กหรือรถเข็นเด็ก",
+            "en": "The path and the way into the sea are not for small children or prams"
+          },
+          "q": "Bagni Regina Giovanna, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Duomo di Sant'Andrea",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
+          "name": {
+            "th": "มหาวิหารอมาลฟี",
+            "en": "Amalfi Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อมาลฟี",
+            "en": "Amalfi"
+          },
+          "what": {
+            "th": "มหาวิหารของอมาลฟีบนบันไดที่ถ่ายรูปสวย",
+            "en": "Amalfi's cathedral above a photogenic staircase"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าบันไดถ่ายรูปสวย",
+            "en": "The page calls the staircase photogenic"
+          },
+          "tip": {
+            "th": "คนเยอะมาก โดยเฉพาะหน้าร้อน",
+            "en": "Very crowded, especially in summer"
+          },
+          "q": "Duomo di Sant'Andrea, Amalfi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
+          "name": {
+            "th": "หุบเขาวัลเลเดลเลแฟร์รีเอเร",
+            "en": "Valle delle Ferriere"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อมาลฟี",
+            "en": "Amalfi"
+          },
+          "what": {
+            "th": "หุบเขาเหนืออมาลฟี ไปได้ด้วยการเดินป่าง่าย ๆ",
+            "en": "A valley above Amalfi on an easy hike"
+          },
+          "why": {
+            "th": "เย็นสบาย เขียวขจี และมีลำธารเต็มไปหมด",
+            "en": "Cool, green and full of streams"
+          },
+          "q": "Valle delle Ferriere, Amalfi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.napolike.it/museo-correale-sorrento",
+          "name": {
+            "th": "พิพิธภัณฑ์กอร์เรอาเลดีแตร์ราโนวา",
+            "en": "Museo Correale di Terranova"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนกอร์เรอาเล ซอร์เรนโต",
+            "en": "Via Correale, Sorrento"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในวิลล่าศตวรรษที่ 18 มีสวนส้มและระเบียงเหนือทะเล",
+            "en": "A museum in an 18th-century villa with a citrus garden and a terrace over the sea"
+          },
+          "why": {
+            "th": "เด็กถึง 10 ขวบเข้าฟรี ภาพจำลองเมืองโบราณเด็กเล็กชอบ",
+            "en": "Children up to 10 go in free; virtual rebuilds of the old town appeal to the youngest"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Museo Correale di Terranova, Via Correale 50, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Ancient Arsenal of the Republic of Amalfi",
+            "th": "อาร์เซนอลโบราณของสาธารณรัฐอามาลฟี"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Largo Cesareo Console, Amalfi",
+            "th": "ลาร์โกเชซาเรโอคอนโซเล อามาลฟี"
+          },
+          "what": {
+            "en": "One of the last medieval arsenals in Italy, where ships of the Maritime Republic were built and repaired.",
+            "th": "หนึ่งในอู่ต่อเรือยุคกลางที่เหลืออยู่ไม่กี่แห่งของอิตาลี เคยใช้ต่อและซ่อมเรือของสาธารณรัฐทางทะเล"
+          },
+          "why": {
+            "en": "A reconstructed medieval galleon and an interactive map of the trade routes to look at.",
+            "th": "มีเรือใหญ่ยุคกลางจำลองและแผนที่โต้ตอบของเส้นทางการค้าให้ดู"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ancient Arsenal of the Republic of Amalfi, Largo Cesareo Console 4, Amalfi, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-things-to-do-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Marina Piccola beach",
+            "th": "หาดมารีนาปิกโกลา"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "By the port, Sorrento",
+            "th": "ติดท่าเรือ ซอร์เรนโต"
+          },
+          "what": {
+            "en": "A beach by the port with beach clubs offering sunbeds, umbrellas and sea access by ladders.",
+            "th": "หาดติดท่าเรือ มีบีชคลับให้เช่าเตียงและร่ม ลงทะเลทางบันได"
+          },
+          "why": {
+            "en": "A lift from the town centre brings you down to the beach, easy with a stroller and tired kids.",
+            "th": "มีลิฟต์จากใจกลางเมืองลงมาถึงหาด สะดวกเมื่อมีรถเข็นหรือเด็กเหนื่อย"
+          },
+          "tip": {
+            "en": "Take the lift down from the town centre",
+            "th": "นั่งลิฟต์ลงมาจากใจกลางเมือง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Marina Piccola, Sorrento, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/sorrento-italy-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Atrani beach",
+            "th": "หาดอาตรานี"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Atrani, next to Amalfi",
+            "th": "อาตรานี ติดกับอามาลฟี"
+          },
+          "what": {
+            "en": "A small beach beneath the village of Atrani.",
+            "th": "หาดเล็กๆ ใต้หมู่บ้านอาตรานี"
+          },
+          "why": {
+            "en": "A very scenic little beach.",
+            "th": "เป็นหาดเล็กที่วิวสวยมาก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Atrani beach, Atrani, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-things-to-do-with-kids/"
         }
       ]
     },
@@ -544,6 +1103,84 @@
           "q": "Baia delle Favole, Sestri Levante",
           "ok": "2026-11",
           "src": "https://www.spiagge.it/magazine/baia-delle-favole/"
+        },
+        {
+          "local": "Spiaggia di Vernazza",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/vernazza-with-kids/",
+          "name": {
+            "th": "หาดท่าเรือแวร์นาซซา",
+            "en": "Vernazza harbour beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ท่าเรือแวร์นาซซา",
+            "en": "Vernazza harbour"
+          },
+          "what": {
+            "th": "หาดเล็ก ๆ ริมท่าเรือ ให้โยนหินเล่นและเล่นทราย",
+            "en": "A small harbour beach for skipping stones and playing in the sand"
+          },
+          "why": {
+            "th": "มีทรายให้ก่อและน้ำตื้นให้ลุย",
+            "en": "Sand to build in and water to wade in"
+          },
+          "tip": {
+            "th": "หน้าเว็บบอกว่าไม่ใช่หาดที่ดีที่สุดสำหรับเด็กในย่านนี้",
+            "en": "The page says it is not the best beach for children in the area"
+          },
+          "q": "Vernazza Beach, Vernazza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-cinque-terre/",
+          "name": {
+            "th": "สนามเด็กเล่นจัตุรัสการิบัลดี",
+            "en": "Piazza Garibaldi playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จัตุรัสการิบัลดี มอนเตรอสโซ",
+            "en": "Piazza Garibaldi, Monterosso al Mare"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นใหม่ มีรั้วล้อม ริมทะเล",
+            "en": "A new, fenced playground by the sea"
+          },
+          "why": {
+            "th": "เป็นที่พักให้เด็กเล็กได้เล่น",
+            "en": "A playground break for small children"
+          },
+          "q": "Piazza Giuseppe Garibaldi, Monterosso al Mare",
+          "ok": "2026-11"
         }
       ]
     },
@@ -819,6 +1456,478 @@
           "q": "Toblacher See, Dobbiaco",
           "ok": "2026-11",
           "src": "https://www.suedtirol.com/natur/seen/toblacher-see"
+        },
+        {
+          "local": "Museo all'aperto della Grande Guerra",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์กลางแจ้งสงครามโลกครั้งที่ 1 ชิงเกวตอร์รี",
+            "en": "Cinque Torri WW1 open-air museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ชิงเกวตอร์รี ใกล้คอร์ตินาดัมเปซโซ",
+            "en": "Cinque Torri, near Cortina d'Ampezzo"
+          },
+          "what": {
+            "th": "เส้นทางผ่านสนามเพลาะสงครามโลกครั้งที่ 1 มีหุ่นจำลอง อุปกรณ์ และคำอธิบายภาษาอังกฤษ",
+            "en": "A trail of WW1 trenches with mannequins, props and English explanations"
+          },
+          "why": {
+            "th": "แม้เด็กเล็กก็สนุกกับการเดินในสนามเพลาะ",
+            "en": "Even little ones stay interested walking through the trenches"
+          },
+          "tip": {
+            "th": "ขึ้นกระเช้าจากไบตาไบเดโดเนส กระเช้าลงรอบสุดท้ายมักราว 17:00",
+            "en": "Take the chairlift from Baita Bai de Dones; the last lift down is usually around 5pm"
+          },
+          "q": "Museo Postazioni Italiane Grande Guerra alle Cinque Torri",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Malga Tuff",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "ทุฟอาล์ม",
+            "en": "Tuffalm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ทะเลสาบเล็กฟิเอ ใต้เขาซีลีอาร์",
+            "en": "Laghetto di Fiè, below the Sciliar"
+          },
+          "what": {
+            "th": "กระท่อมบนเขาที่มีสวนสัตว์ให้ลูบและสนามเด็กเล่น",
+            "en": "A mountain hut with a petting zoo and a playground"
+          },
+          "why": {
+            "th": "มีม้า อัลปากา และกระต่ายให้ทักทาย",
+            "en": "Horses, alpacas and rabbits to say hello to"
+          },
+          "tip": { "en": "Closed for part of the winter (sources differ on the dates); with a pram, take the gravel fire road instead of the trail", "th": "ปิดช่วงหนึ่งของหน้าหนาว (แต่ละแหล่งบอกวันไม่ตรงกัน) ถ้ามีรถเข็นเด็ก ใช้ถนนกรวดแทนทางเดินป่า" },
+          "q": "Tuffalm, Fiè allo Sciliar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Movimënt",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "สวนเล่นโมวีเมนต์",
+            "en": "Movimënt play park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยอดกระเช้าปิซโซเรกา อัลตาบาเดีย",
+            "en": "Top of the Piz Sorega gondola, Alta Badia"
+          },
+          "what": {
+            "th": "สวนเล่นบนยอดกระเช้าปิซโซเรกา",
+            "en": "A play park at the top of the Piz Sorega gondola"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นจุดแวะโปรด มีที่เล่นสำหรับเด็ก",
+            "en": "A favourite stop with a play area, the page says"
+          },
+          "q": "Movimënt, Str. Col Alt 40, Corvara in Badia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Castel Presule",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "ปราสาทเพรอเซลส์",
+            "en": "Prösels Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เหนือโบลซาโน",
+            "en": "Above Bolzano"
+          },
+          "what": {
+            "th": "ปราสาทสร้างราวปี ค.ศ. 1200 แล้วต่อเติมภายหลัง",
+            "en": "A castle from around 1200, later enlarged"
+          },
+          "why": {
+            "th": "ทัวร์นำชมคุกใต้ดิน ห้องส้วม และคลังอาวุธเป็นส่วนที่เด็ก ๆ ชอบ",
+            "en": "The guided tour of the dungeon, the toilet and the armoury is a children's favourite"
+          },
+          "tip": { "en": "Guided tours 1 May–31 October, not on Saturdays, and a few winter tours; there is a green area to play and a small snack bar", "th": "ทัวร์นำชม 1 พ.ค.–31 ต.ค. ยกเว้นวันเสาร์ หน้าหนาวมีทัวร์บางวัน มีสนามหญ้าให้เล่นและร้านขนมเล็ก ๆ" },
+          "q": "Castel Prösels, Fiè allo Sciliar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Prati del Talvera",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/bolzano-with-kids/",
+          "name": {
+            "th": "ทุ่งหญ้าริมแม่น้ำทัลเวรา",
+            "en": "Talvera meadows"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ขอบตะวันตกของโบลซาโน",
+            "en": "Western edge of Bolzano"
+          },
+          "what": {
+            "th": "สวนกว้างที่ครอบครัวมาปิกนิกและเล่นสนามเด็กเล่น",
+            "en": "A large green park where families picnic and use the playgrounds"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าสนามเด็กเล่นยอดเยี่ยม",
+            "en": "The page calls the playgrounds amazing"
+          },
+          "q": "Lungotalvera Bolzano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Meran 2000",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/merano-2000-with-kids/",
+          "name": {
+            "th": "เมราโน 2000",
+            "en": "Merano 2000"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือเมราโน ขึ้นกระเช้า",
+            "en": "Above Merano, by cable car"
+          },
+          "what": {
+            "th": "พื้นที่บนภูเขาเหนือเมราโน มีเส้นทางเดินและร้านอาหาร",
+            "en": "Mountain area above Merano with trails and places to eat"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นดีมาก และเครื่องเล่นอัลพินบ็อบ",
+            "en": "A very good playground and the Alpin Bob ride"
+          },
+          "tip": { "en": "The lifts stop between seasons; the winter season opens on 4 December 2026", "th": "กระเช้าหยุดช่วงระหว่างฤดู ฤดูหนาวเปิด 4 ธ.ค. 2026" },
+          "q": "Talstation Seilbahn Meran 2000, Via Val di Nova, Merano",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Naturmuseum Südtirol",
+            "th": "พิพิธภัณฑ์ธรรมชาติเซาท์ทีโรล (Naturmuseum Südtirol)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Bolzano (Bozen)",
+            "th": "โบลซาโน (บอลซาโน)"
+          },
+          "what": {
+            "en": "A natural history museum in Bolzano with exhibitions suited especially to families.",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติในโบลซาโน มีนิทรรศการที่เหมาะกับครอบครัวเป็นพิเศษ"
+          },
+          "why": {
+            "en": "Its exhibitions suit families, and it is an indoor place for a rainy day.",
+            "th": "นิทรรศการเหมาะกับครอบครัว และเป็นที่ในร่มสำหรับวันฝนตก"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 10:00–18:00; closed 1 Jan, 1 May and 25 Dec.",
+            "th": "เปิดอังคารถึงอาทิตย์ 10:00–18:00 ปิด 1 ม.ค. 1 พ.ค. และ 25 ธ.ค."
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Naturmuseum Südtirol, Bolzano, Italy",
+          "ok": "2026-11",
+          "src": "https://www.naturmuseum.it/en/"
+        },
+        {
+          "name": {
+            "en": "Museion",
+            "th": "มูเซออน (Museion)"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Piazza Piero Siena, Bolzano",
+            "th": "Piazza Piero Siena โบลซาโน"
+          },
+          "what": {
+            "en": "A museum of modern and contemporary art in Bolzano with creative workshops for children.",
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่และร่วมสมัยในโบลซาโน มีเวิร์กช็อปสร้างสรรค์สำหรับเด็ก"
+          },
+          "why": {
+            "en": "Two-hour creative workshops for children aged 5 to 10, and a free family tour kit for every exhibition.",
+            "th": "มีเวิร์กช็อปสร้างสรรค์ 2 ชั่วโมงสำหรับเด็กอายุ 5–10 ปี และชุดนำชมสำหรับครอบครัวฟรีทุกนิทรรศการ"
+          },
+          "tip": {
+            "en": "Book the children's workshop in advance.",
+            "th": "จองเวิร์กช็อปเด็กล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Museion, Piazza Piero Siena 1, Bolzano, Italy",
+          "ok": "2026-11",
+          "src": "https://www.museion.it/en/pages/6099-mediation-and-visitor-services"
+        },
+        {
+          "name": {
+            "en": "Calfosch Animal Park",
+            "th": "สวนสัตว์คัลฟอส (Calfosch Animal Park)"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Colfosco, Alta Badia",
+            "th": "คอลฟอสโก อัลตาบาเดีย"
+          },
+          "what": {
+            "en": "An animal park at the entrance to the village of Colfosco, in a peaceful spot under larch and fir trees.",
+            "th": "สวนสัตว์ที่ทางเข้าหมู่บ้านคอลฟอสโก ในบรรยากาศสงบใต้ต้นลาร์ชและต้นสนเฟอร์"
+          },
+          "why": {
+            "en": "Along an easy path you meet geese, rabbits, chickens, sheep and alpacas.",
+            "th": "เดินตามทางสบายๆ พบห่าน กระต่าย ไก่ แกะ และอัลปากา"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Calfosch Animal Park, Colfosco, Corvara, Alta Badia, Italy",
+          "ok": "2026-11",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/animal-park"
+        },
+        {
+          "name": {
+            "en": "Biotope lake Corvara",
+            "th": "ทะเลสาบไบโอโทป คอร์วารา (Lago Biotopo)"
+          },
+          "local": "Lago Biotopo",
+          "kind": "nature",
+          "area": {
+            "en": "Corvara, Alta Badia",
+            "th": "คอร์วารา อัลตาบาเดีย"
+          },
+          "what": {
+            "en": "A relaxing area with three small ponds, a lawn with showers and a bar with restaurant.",
+            "th": "พื้นที่พักผ่อนมีบ่อเล็ก 3 บ่อ สนามหญ้าพร้อมที่อาบน้ำ และบาร์พร้อมร้านอาหาร"
+          },
+          "why": {
+            "en": "There is a children's playground and a children's pool.",
+            "th": "มีสนามเด็กเล่นและสระเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lago Biotopo, Strada Sotscores, Corvara in Badia, Italy",
+          "ok": "2026-11",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/biotope-lake-corvara-1"
+        },
+        {
+          "name": {
+            "en": "Deer Park Sompunt",
+            "th": "สวนกวางซอมปุนต์ (Sompunt)"
+          },
+          "local": "Parco Cervi Sompunt",
+          "kind": "park",
+          "area": {
+            "en": "Between La Villa and Badia, Alta Badia",
+            "th": "ระหว่างลาวิลลากับบาเดีย อัลตาบาเดีย"
+          },
+          "what": {
+            "en": "More than 7 hectares of meadows and forest with deer and fallow deer.",
+            "th": "ทุ่งหญ้าและป่ากว่า 7 เฮกตาร์ มีกวางและกวางฟอลโล"
+          },
+          "why": {
+            "en": "An easy marked path from the Paraciora hut to see the deer living in unspoilt nature.",
+            "th": "ทางเดินมีป้ายง่ายๆ จากกระท่อมปาราชิออรา ไปดูกวางที่อยู่ในธรรมชาติบริสุทธิ์"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco Cervi Sompunt, Strada Sompunt 8, Badia, Alta Badia, Italy",
+          "ok": "2026-11",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/deer-park-sompunt"
+        },
+        {
+          "name": {
+            "en": "Mendola Funicular",
+            "th": "กระเช้าราง เมนโดลา (Funicolare della Mendola)"
+          },
+          "local": "Funicolare della Mendola",
+          "kind": "ride",
+          "area": {
+            "en": "Sant'Antonio, Caldaro",
+            "th": "ซานต์อันโตนิโอ คัลดาโร"
+          },
+          "what": {
+            "en": "A funicular railway from Sant'Antonio in Caldaro up to the Mendola pass, inaugurated in 1903.",
+            "th": "รถรางกระเช้าจากซานต์อันโตนิโอในคัลดาโรขึ้นไปช่องเขาเมนโดลา เปิดใช้ปี 1903"
+          },
+          "why": {
+            "en": "One of the steepest funicular railways in Europe.",
+            "th": "เป็นหนึ่งในรถรางกระเช้าที่ชันที่สุดในยุโรป"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Funicolare della Mendola, Sant'Antonio, Caldaro, Italy",
+          "ok": "2026-11",
+          "src": "https://www.kalterersee.com/en/highlights/mendola-funicular/"
         }
       ]
     },
@@ -1098,7 +2207,432 @@
       {"name":{"en":"HZERO Model Train Museum","th":"พิพิธภัณฑ์รถไฟจำลองเฮซีโร"},"kind":"museumkid","area":{"en":"Santa Maria Novella","th":"ซานตามาเรียโนเวลลา"},"what":{"en":"Model railway museum near Santa Maria Novella, with one of the largest model railway systems in Europe.","th":"พิพิธภัณฑ์รถไฟจำลองใกล้ซานตามาเรียโนเวลลา มีระบบรถไฟจำลองที่ใหญ่ที่สุดแห่งหนึ่งในยุโรป"},"why":{"en":"If your kids love trains, they will be glued to it.","th":"ถ้าเด็กชอบรถไฟ จะติดอยู่กับมันทั้งวัน"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"HZERO Model Train Museum, Santa Maria Novella, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"},
       {"name":{"en":"Museo degli Innocenti","th":"พิพิธภัณฑ์อินโนเชนตี"},"kind":"museumkid","area":{"en":"Piazza della Santissima Annunziata","th":"ปิอัซซาเดลลาซานตีซิมา อันนุนซิอาตา"},"what":{"en":"Historic centre for children's culture and youth programmes, with children's workshops (laboratori per bambini).","th":"ศูนย์กลางประวัติศาสตร์สำหรับวัฒนธรรมเด็กและโปรแกรมเยาวชน มีเวิร์กช็อปเด็ก"},"why":{"en":"Workshops for preschool and primary-school ages blend history with modelling and collage.","th":"เวิร์กช็อปสำหรับเด็กก่อนวัยเรียนและประถม ผสมประวัติศาสตร์กับการปั้นและการตัดแปะ"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo degli Innocenti, Piazza della Santissima Annunziata, Florence","ok":"2026-11","src":"https://florence.ue.is/en/kids-art-workshops-florence-museums-studios/"},
       {"name":{"en":"Leonardo Interactive Museum","th":"พิพิธภัณฑ์เลโอนาร์โดแบบโต้ตอบ"},"kind":"museumkid","area":{"en":"Via dei Servi","th":"ถนนเวีย เดย์ เซอร์วี"},"what":{"en":"Interactive Leonardo da Vinci museum at Via dei Servi 66/R, with machines to touch.","th":"พิพิธภัณฑ์เลโอนาร์โด ดา วินชี แบบโต้ตอบ ที่เวีย เดย์ เซอร์วี 66/R มีเครื่องจักรให้จับ"},"why":{"en":"Plain reason: the page says a visit takes about an hour.","th":"หน้าเว็บบอกว่าการเที่ยวใช้เวลาราวหนึ่งชั่วโมง"},"tip":{"en":"Open every day 9:30–19:30, last entry one hour before closing (per the page).","th":"เปิดทุกวัน 9:30–19:30 เข้าได้ล่าสุดหนึ่งชั่วโมงก่อนปิด ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"€8.30 online","th":"8.30 ยูโร ออนไลน์"},"book":"rec","q":"Leonardo Interactive Museum, Via dei Servi 66/R, Florence","ok":"2026-11","src":"https://ticket.florence.it/en/leonardo-museum/"},
-      {"name":{"en":"Palazzo Strozzi","th":"พาลัซโซสโตรซซี"},"kind":"museum","area":{"en":"Piazza Strozzi","th":"ปิอัซซาสโตรซซี"},"what":{"en":"Palace of exhibitions, with a Family Kit (a bag of games and insights) and tours and workshops for families.","th":"พระราชวังจัดนิทรรศการ มี Family Kit (ถุงเกมและสิ่งที่น่าสนใจ) และทัวร์กับเวิร์กช็อปสำหรับครอบครัว"},"why":{"en":"The page says its exhibitions are often accompanied by activities designed for families, from age 3.","th":"หน้าเว็บบอกว่านิทรรศการมักมีกิจกรรมออกแบบสำหรับครอบครัว ตั้งแต่อายุ 3 ปี"},"ages":[0,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Palazzo Strozzi, Piazza Strozzi, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"}
+      {"name":{"en":"Palazzo Strozzi","th":"พาลัซโซสโตรซซี"},"kind":"museum","area":{"en":"Piazza Strozzi","th":"ปิอัซซาสโตรซซี"},"what":{"en":"Palace of exhibitions, with a Family Kit (a bag of games and insights) and tours and workshops for families.","th":"พระราชวังจัดนิทรรศการ มี Family Kit (ถุงเกมและสิ่งที่น่าสนใจ) และทัวร์กับเวิร์กช็อปสำหรับครอบครัว"},"why":{"en":"The page says its exhibitions are often accompanied by activities designed for families, from age 3.","th":"หน้าเว็บบอกว่านิทรรศการมักมีกิจกรรมออกแบบสำหรับครอบครัว ตั้งแต่อายุ 3 ปี"},"ages":[0,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Palazzo Strozzi, Piazza Strozzi, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"},
+        {
+          "local": "Antica Giostra Toscana",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanderluststorytellers.com/things-to-do-in-florence-with-kids/",
+          "name": {
+            "th": "ม้าหมุนปิอัซซาเดลลาเรปุบบลิกา",
+            "en": "Piazza della Repubblica carousel"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟลอเรนซ์",
+            "en": "Florence"
+          },
+          "what": {
+            "th": "ม้าหมุนโบราณในจัตุรัสชื่อดังที่มีคาเฟ่รอบ ๆ",
+            "en": "An old carousel on a famous square lined with cafés"
+          },
+          "why": {
+            "th": "เด็ก ๆ ขี่ม้าหมุน ผู้ใหญ่นั่งดื่มกาแฟใกล้ ๆ",
+            "en": "Children ride while the grown-ups have a coffee"
+          },
+          "q": "Antica Giostra Toscana, Piazza della Repubblica, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo di San Marco",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanderluststorytellers.com/things-to-do-in-florence-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ซานมาร์โก",
+            "en": "San Marco Museum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปิอัซซาซานมาร์โก ฟลอเรนซ์",
+            "en": "Piazza San Marco, Florence"
+          },
+          "what": {
+            "th": "ระเบียงคดที่ตกแต่งด้วยภาพวาด งานแกะสลัก และจิตรกรรมฝาผนัง",
+            "en": "A cloister decorated with paintings, carvings and frescoes"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ตามหาภาพวาดและงานแกะสลัก",
+            "en": "Children can look for the paintings and carvings"
+          },
+          "q": "Museo di San Marco, Piazza San Marco 3, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo di Storia Naturale del Mediterraneo",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติเมดิเตอร์เรเนียน",
+            "en": "Mediterranean Natural History Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วิลลาเฮนเดอร์สัน ลิวอร์โน",
+            "en": "Villa Henderson, Livorno"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติในวิลล่าเก่าแก่ที่ลิวอร์โน",
+            "en": "A natural history museum in a historic villa in Livorno"
+          },
+          "why": {
+            "th": "พฤกษศาสตร์ สัตววิทยา และโบราณคดีสำหรับครอบครัว",
+            "en": "Botany, zoology and archaeology for families"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Museo di Storia Naturale del Mediterraneo, Livorno",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "ถ้ำกร็อตตาเดลเวนโต",
+            "en": "Grotta del Vento"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทัสคานี",
+            "en": "Tuscany"
+          },
+          "what": {
+            "th": "ถ้ำที่มีหินย้อย หินงอก น้ำตกและทะเลสาบใต้ดิน",
+            "en": "A cave system with stalactites, stalagmites, underground waterfalls and lakes"
+          },
+          "why": {
+            "th": "หลายถ้ำเปิดให้ชมและปลอดภัยสำหรับเด็ก",
+            "en": "Many of the caves are open and safe for children"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–13:00 และ 14:00–18:00",
+            "en": "Open daily 10:00 to 13:00 and 14:00 to 18:00"
+          },
+          "q": "Grotta del Vento, Tuscany",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "สวนสนุกคาวัลลีโนมัตโต",
+            "en": "Cavallino Matto"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "มารีนาดีคัสตาญเญโตการ์ดุชชี",
+            "en": "Marina di Castagneto Carducci"
+          },
+          "what": {
+            "th": "สวนสนุกในป่าสนใกล้ทะเล มีโชว์และโรงหนัง 4 มิติ",
+            "en": "An amusement park in a pine wood near the beach, with shows and a 4D cinema"
+          },
+          "why": {
+            "th": "เครื่องเล่นสำหรับเด็ก 15 อย่าง และสำหรับครอบครัว 10 อย่าง",
+            "en": "Fifteen rides for children and ten for families"
+          },
+          "tip": { "en": "Seasonal: spring to autumn (the 2026 season opened on 4 April), closed in winter; check the calendar for the day’s hours", "th": "เปิดตามฤดูกาล ฤดูใบไม้ผลิถึงฤดูใบไม้ร่วง (ปี 2026 เปิด 4 เม.ย.) ปิดช่วงหน้าหนาว เช็กเวลาเปิดของวันนั้นในปฏิทิน" },
+          "q": "CavallinoMatto, Marina di Castagneto Carducci",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parco Archeominerario di San Silvestro",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "อุทยานเหมืองโบราณซานซิลเวสโตร",
+            "en": "San Silvestro mining park"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โปปูโลเนีย อ่าวบาราตตี",
+            "en": "Populonia, Baratti Bay"
+          },
+          "what": {
+            "th": "เหมืองทองแดง ตะกั่ว และเงินโบราณ มีรถไฟสีเหลืองวิ่งผ่านอุโมงค์",
+            "en": "Old copper, lead and silver mines, with a yellow train through a tunnel"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบเหมืองและรถไฟสีเหลือง",
+            "en": "Children love the mines and the yellow train"
+          },
+          "tip": { "en": "Opening is seasonal, with few or no days in winter; check the days before going", "th": "เปิดตามฤดูกาล หน้าหนาวเปิดน้อยหรือปิด เช็กวันเปิดก่อนไป" },
+          "q": "Parco Archeominerario di San Silvestro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Archeodromo di Poggibonsi",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "หมู่บ้านโบราณโปจจีบอนซี",
+            "en": "Poggibonsi Archaeodrome"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "โปจจีบอนซี",
+            "en": "Poggibonsi"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์กลางแจ้งที่สร้างหมู่บ้านศตวรรษที่ 9 ขึ้นใหม่ขนาดจริง",
+            "en": "An open-air museum that rebuilds a 9th-century village at full size"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเด็ก ๆ จะชอบมาก",
+            "en": "The page says children will love it"
+          },
+          "tip": {
+            "th": "เปิดชมทั้งกลางวันและกลางคืน",
+            "en": "Visits by day and at night"
+          },
+          "q": "Poggibonsi Archaeodrome, Poggibonsi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Cupola del Brunelleschi",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "ปีนโดมของบรูเนลเลสกี",
+            "en": "Climbing Brunelleschi's Dome"
+          },
+          "kind": "views",
+          "area": {
+            "th": "มหาวิหารดูโอโม ฟลอเรนซ์",
+            "en": "Duomo, Florence"
+          },
+          "what": {
+            "th": "ปีนบันได 463 ขั้นขึ้นยอดโดมใหญ่ของมหาวิหาร",
+            "en": "Climb the 463 steps to the top of the cathedral's great dome"
+          },
+          "why": {
+            "th": "เด็กที่เดินไหวจะชอบการปีนและวิวด้านบน",
+            "en": "Children with the legs for it love the climb and the view"
+          },
+          "tip": {
+            "th": "เด็กต่ำกว่า 7 ขวบเข้าฟรี อายุต่ำกว่า 18 ต้องมีผู้ใหญ่ ทางแคบและไม่มีลิฟต์",
+            "en": "Under-7s go free; under-18s climb with an adult; narrow passages and no lift"
+          },
+          "q": "Brunelleschi's Dome, Piazza del Duomo, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Giardino del Bobolino",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "สวนโบโบลิโน",
+            "en": "Giardino del Bobolino"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนมาเคียเวลลี ใต้กำแพงสวนโบโบลี ฟลอเรนซ์",
+            "en": "Viale Machiavelli, south of the Boboli walls, Florence"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นเล็ก ๆ ร่มรื่น มีสไลเดอร์และชิงช้า",
+            "en": "A small, shady playground with slides and swings"
+          },
+          "why": {
+            "th": "มีสไลเดอร์และชิงช้า เข้าฟรี",
+            "en": "Slides and swings, free"
+          },
+          "q": "Giardino del Bobolino, Viale Machiavelli, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Giardino dell'Orticoltura",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "สวนออร์ติโคลตูรา",
+            "en": "Giardino dell'Orticoltura"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เดิน 10 นาทีทางเหนือของดูโอโม ฟลอเรนซ์",
+            "en": "ten minutes' walk north of the Duomo, Florence"
+          },
+          "what": {
+            "th": "สวนที่มีสนามเด็กเล่นเล็ก ๆ และเรือนกระจกปี 1880",
+            "en": "A garden with a small playground and the 1880 glasshouse"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นเล็ก ๆ ให้วิ่งเล่น",
+            "en": "A small playground to run around in"
+          },
+          "q": "Giardino dell'Orticoltura, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Fontana del Porcellino",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.florencetourism.org/things-to-do-florence-with-kids/",
+          "name": {
+            "th": "น้ำพุหมูป่าปอร์เชลลิโน",
+            "en": "The Porcellino Fountain"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตลาดเมร์กาโตนูโอโว ใกล้จัตุรัสซินญอเรีย ฟลอเรนซ์",
+            "en": "Mercato Nuovo, by Piazza della Signoria, Florence"
+          },
+          "what": {
+            "th": "รูปปั้นหมูป่าสำริดที่ตลาดเมร์กาโตนูโอโว",
+            "en": "The bronze wild boar at the Mercato Nuovo"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ลูบจมูกหมูป่าขอโชคและหย่อนเหรียญลงตะแกรง",
+            "en": "Children rub the boar's snout for luck and drop a coin through the grate"
+          },
+          "q": "Fontana del Porcellino, Florence",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -1377,7 +2911,698 @@
       {"name":{"en":"Museo d’Arte e Scienza di Milano","th":"พิพิธภัณฑ์ศิลปะและวิทยาศาสตร์แห่งมิลาน"},"kind":"museum","area":{"en":"Castello Sforzesco","th":"คาสเตลโลสฟอร์เซสโก"},"what":{"en":"A museum of art and science with a learning route on how to recognise authenticity in art and antiques.","th":"พิพิธภัณฑ์ศิลปะและวิทยาศาสตร์ มีเส้นทางเรียนรู้วิธีแยกของแท้ในงานศิลปะและของเก่า"},"why":{"en":"Guided visits can be booked, and free visits come with multilingual panels.","th":"จองทัวร์นำชมได้ และการเข้าชมฟรีมีป้ายหลายภาษา"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo d'Arte e Scienza di Milano, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
       {"name":{"en":"Leonardo3 Museum","th":"พิพิธภัณฑ์เลโอนาร์โด3"},"kind":"museum","area":{"en":"Piazza della Scala","th":"ปิอัซซาเดลลาสกาลา"},"what":{"en":"Rebuilt machines and restored paintings from Leonardo da Vinci, in the heart of the city.","th":"เครื่องจักรสร้างใหม่และภาพวาดที่บูรณะของเลโอนาร์โด ดา วินชี ใจกลางเมือง"},"why":{"en":"Family activities such as a flight-themed visit for children from six up.","th":"มีกิจกรรมครอบครัว เช่น การเยี่ยมชมธีมการบินสำหรับเด็กตั้งแต่หกขวบ"},"ages":[0,0,1,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Leonardo3 Museum, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
       {"name":{"en":"MUSEO BAGATTI VALSECCHI","th":"พิพิธภัณฑ์บากัตติ วัลเซกกี"},"kind":"museum","area":{"en":"Montenapoleone","th":"มอนเตนาโปเลโอเน"},"what":{"en":"A historic house museum, one of the most important and best-kept house museums in Europe.","th":"พิพิธภัณฑ์บ้านประวัติศาสตร์ ที่เป็นหนึ่งในพิพิธภัณฑ์บ้านที่สำคัญและดูแลดีที่สุดในยุโรป"},"why":{"en":"Workshops and treasure hunts for children run at weekends.","th":"มีเวิร์กช็อปและการล่าสมบัติสำหรับเด็กในวันหยุดสุดสัปดาห์"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo Bagatti Valsecchi, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
-      {"name":{"en":"Brera Botanical Garden","th":"สวนพฤกษศาสตร์เบรรา"},"kind":"nature","area":{"en":"Via Brera 28","th":"ถนนเวีย เบรรา 28"},"what":{"en":"The botanical garden of the University of Milan, with guided tours and educational activities.","th":"สวนพฤกษศาสตร์ของมหาวิทยาลัยมิลาน มีทัวร์นำชมและกิจกรรมเพื่อการศึกษา"},"why":{"en":"Guided tours from kindergarten age up, including observation games in the garden for 7 to 13 year olds.","th":"มีทัวร์นำชมตั้งแต่อายุอนุบาลขึ้นไป รวมถึงเกมสังเกตในสวนสำหรับอายุ 7–13 ปี"},"ages":[0,1,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"req","q":"Brera Botanical Garden, Via Brera 28, Milan","ok":"2026-11","src":"https://ortibotanici.unimi.it/?p=2602"}
+      {"name":{"en":"Brera Botanical Garden","th":"สวนพฤกษศาสตร์เบรรา"},"kind":"nature","area":{"en":"Via Brera 28","th":"ถนนเวีย เบรรา 28"},"what":{"en":"The botanical garden of the University of Milan, with guided tours and educational activities.","th":"สวนพฤกษศาสตร์ของมหาวิทยาลัยมิลาน มีทัวร์นำชมและกิจกรรมเพื่อการศึกษา"},"why":{"en":"Guided tours from kindergarten age up, including observation games in the garden for 7 to 13 year olds.","th":"มีทัวร์นำชมตั้งแต่อายุอนุบาลขึ้นไป รวมถึงเกมสังเกตในสวนสำหรับอายุ 7–13 ปี"},"ages":[0,1,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"req","q":"Brera Botanical Garden, Via Brera 28, Milan","ok":"2026-11","src":"https://ortibotanici.unimi.it/?p=2602"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "หอศิลป์ปินาโกเตกาดีเบรรา",
+            "en": "Pinacoteca di Brera"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เบรรา มิลาน",
+            "en": "Brera, Milan"
+          },
+          "what": {
+            "th": "หอศิลป์ใหญ่ ห้องสว่าง มีภาพวาดชื่อดัง",
+            "en": "A large art museum with bright rooms and famous paintings"
+          },
+          "why": {
+            "th": "มีชุดวาดรูปฟรี หรือกระเป๋า \"วาลีจาดีปีเอรา\" ที่เปลี่ยนการชมเป็นเกมล่าสมบัติ",
+            "en": "A free drawing kit, or the \"Valigia di Piera\" bag that turns the visit into a treasure hunt"
+          },
+          "tip": {
+            "th": "รับกระเป๋าฟรีที่จุดขายตั๋ว เผื่อเวลาอย่างน้อย 1 ชั่วโมง แล้วไปสวนพฤกษศาสตร์ฟรีต่อได้",
+            "en": "Pick up the bag free at the ticket desk and allow at least an hour; the free botanical garden is good after"
+          },
+          "q": "Pinacoteca di Brera, Milan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Teatrale alla Scala",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "พิพิธภัณฑ์โรงละครลาสกาลา",
+            "en": "La Scala Theatre Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปิอัซซาเดลลาสกาลา มิลาน",
+            "en": "Piazza della Scala, Milan"
+          },
+          "what": {
+            "th": "เครื่องดนตรี โปสเตอร์ ชุดโอเปรา และฉากละคร",
+            "en": "Instruments, posters, opera costumes and stage sets"
+          },
+          "why": {
+            "th": "เด็ก ๆ มองลงไปยังโรงละครที่เปิดไฟจากช่องที่นั่งชั้นบนได้",
+            "en": "Children can look down from a box at the lit auditorium"
+          },
+          "tip": {
+            "th": "อยู่ข้างพิพิธภัณฑ์เลโอนาร์โด3 ไปต่อกันได้",
+            "en": "Next to the Leonardo3 museum, so the two fit one visit"
+          },
+          "q": "Teatro alla Scala Museum, Largo Antonio Ghiringhelli 1, Milan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Biblioteca degli Alberi",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "สวนห้องสมุดต้นไม้ BAM",
+            "en": "Library of Trees park (BAM)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ปอร์ตานูโอวา มิลาน",
+            "en": "Porta Nuova, Milan"
+          },
+          "what": {
+            "th": "สวนสาธารณะใหญ่กลางเมือง มีทางเดิน สนามหญ้า และงานจัดแสดงพืช",
+            "en": "A large city park with paths, lawns and plant installations"
+          },
+          "why": {
+            "th": "มีที่ให้วิ่งเล่นบนสนามหญ้า",
+            "en": "Room to run and play on the lawns"
+          },
+          "tip": {
+            "th": "เหมาะกับปิกนิกระหว่างเที่ยว",
+            "en": "Good for a picnic between visits"
+          },
+          "q": "BAM - Biblioteca degli Alberi Milano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประสาทสัมผัส",
+            "en": "Museum of Senses"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนมอนเตกรัปปา มิลาน",
+            "en": "Viale Monte Grappa, Milan"
+          },
+          "what": {
+            "th": "เส้นทางภาพลวงตาและห้องสัมผัสหลายรูปแบบ",
+            "en": "A route of optical illusions and multisensory rooms"
+          },
+          "why": {
+            "th": "ภาพลวงตาให้ลองเล่นที่เด็ก ๆ สงสัยและสนุก",
+            "en": "Hands-on illusions children find curious"
+          },
+          "tip": {
+            "th": "เข้าตามรอบเวลา ต้องจองล่วงหน้า",
+            "en": "Entry by time slot; book ahead"
+          },
+          "q": "Museum of Senses Milano, Viale Monte Grappa, Milan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "สระว่ายน้ำบัญญีมิสเตรีโอซี",
+            "en": "Bagni Misteriosi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิลาน",
+            "en": "Milan"
+          },
+          "what": {
+            "th": "สระว่ายน้ำกลางแจ้งในอาคารเก่าแก่ มีกิจกรรมครอบครัว",
+            "en": "Open-air pools in a historic building, with family events"
+          },
+          "why": {
+            "th": "สระกลางแจ้งในเมืองสำหรับบ่ายหน้าร้อน",
+            "en": "An outdoor pool in the city for a summer afternoon"
+          },
+          "tip": { "en": "Summer pool: the 2026 season opened on 1 June; closed the rest of the year", "th": "สระหน้าร้อน ฤดูกาล 2026 เปิด 1 มิ.ย. ช่วงอื่นของปีปิด" },
+          "q": "Bagni Misteriosi, Milan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "name": {
+            "th": "กัสชินาบิบลิโอเตกา สวนลัมโบร",
+            "en": "Cascina Biblioteca (Parco Lambro)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "สวนลัมโบร ชิมีอาโน มิลาน",
+            "en": "Parco Lambro, Cimiano, Milan"
+          },
+          "what": {
+            "th": "ร้านอาหารที่มีฟาร์มเล็ก ๆ ในสวนลัมโบร",
+            "en": "A trattoria with a small farm in Parco Lambro"
+          },
+          "why": {
+            "th": "มีแพะ ลา และไก่ให้ดู และมีเมนูเด็ก",
+            "en": "Goats, donkeys and hens to see, and a children's menu"
+          },
+          "tip": {
+            "th": "วันหยุดเปิดทั้งกลางวันและเย็น วันธรรมดาส่วนใหญ่เปิดแค่กลางวัน",
+            "en": "Lunch and dinner at weekends; mostly lunch on weekdays"
+          },
+          "q": "Cascina Biblioteca, Parco Lambro, Milano",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Wonderwood Green Forest",
+            "th": "วันเดอร์วูด กรีนฟอเรสต์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Merlata Bloom, Via Daimler, Milan",
+            "th": "เมอร์ลาตา บลูม มิลาน"
+          },
+          "what": {
+            "en": "An indoor play park inside the Merlata Bloom centre, with a big central tree and themed areas.",
+            "th": "สวนเล่นในร่มภายในศูนย์ Merlata Bloom มีต้นไม้ใหญ่กลางโซนและพื้นที่ธีมต่างๆ"
+          },
+          "why": {
+            "en": "Built for children aged 3 to 12, with over 600 square metres of play space and educational workshops.",
+            "th": "สร้างสำหรับเด็กอายุ 3–12 ปี พื้นที่เล่นกว่า 600 ตารางเมตร และมีเวิร์กช็อปให้ความรู้"
+          },
+          "tip": {
+            "en": "Check the official site for current opening times before you go.",
+            "th": "เช็กเวลาเปิดล่าสุดจากเว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Green Forest, Via Gottlieb Wilhelm Daimler, 61, 20151 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "Zero Gravity Freestyle Park",
+            "th": "ซีโร่ กราวิตี้ ฟรีสไตล์ พาร์ก"
+          },
+          "local": "Zero-Gravity Milano",
+          "kind": "play",
+          "area": {
+            "en": "Lambrate, Via Carlo Valvassori Peroni, Milan",
+            "th": "แลมบราเต มิลาน"
+          },
+          "what": {
+            "en": "A trampoline gym with foam pits, in the Lambrate area of Milan.",
+            "th": "ยิมแทรมโพลีนมีหลุมโฟม ในย่านแลมบราเตของมิลาน"
+          },
+          "why": {
+            "en": "Children can jump, do somersaults and fall into the foam pits on trampolines.",
+            "th": "เด็กกระโดด ตีลังกา และล้มลงหลุมโฟมบนแทรมโพลีนได้"
+          },
+          "tip": {
+            "en": "Booking is recommended, especially at weekends. Weekdays 14:00–23:00, weekends 10:00–23:00.",
+            "th": "แนะนำให้จอง โดยเฉพาะวันหยุดสุดสัปดาห์ วันธรรมดา 14:00–23:00 เสาร์อาทิตย์ 10:00–23:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Zero-Gravity Milano, Via Carlo Valvassori Peroni, 48, 20133 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "MIC – Interactive Cinema Museum",
+            "th": "พิพิธภัณฑ์ภาพยนตร์เชิงโต้ตอบ MIC"
+          },
+          "local": "Museo Interattivo del Cinema",
+          "kind": "museum",
+          "area": {
+            "en": "Viale Fulvio Testi, near Bicocca metro, Milan",
+            "th": "Viale Fulvio Testi ใกล้รถไฟใต้ดินบิกอกกา มิลาน"
+          },
+          "what": {
+            "en": "An interactive museum about the history of cinema, with exhibits and screenings.",
+            "th": "พิพิธภัณฑ์เชิงโต้ตอบเกี่ยวกับประวัติศาสตร์ภาพยนตร์ มีนิทรรศการและรอบฉาย"
+          },
+          "why": {
+            "en": "Interactive exhibits, screenings for children and young people, and creative workshops for little ones.",
+            "th": "มีนิทรรศการให้ลงมือเล่น รอบฉายสำหรับเด็กและเยาวชน และเวิร์กช็อปสร้างสรรค์สำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Open Tuesday to Sunday 15:00–19:00, closed Mondays.",
+            "th": "เปิดวันอังคารถึงอาทิตย์ 15:00–19:00 ปิดวันจันทร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Museo Interattivo del Cinema, Cineteca Milano MIC, Viale Fulvio Testi, 121, 20162 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "STEP FuturAbility District",
+            "th": "สเต็ป ฟิวเจอร์แอบิลิตี้ ดิสทริกต์"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Piazza Adriano Olivetti, Milan",
+            "th": "Piazza Adriano Olivetti มิลาน"
+          },
+          "what": {
+            "en": "A ten-stop interactive exhibition about technology, artificial intelligence and digital skills, with multimedia installations.",
+            "th": "นิทรรศการเชิงโต้ตอบสิบจุดเรื่องเทคโนโลยี ปัญญาประดิษฐ์ และทักษะดิจิทัล พร้อมสื่อมัลติมีเดีย"
+          },
+          "why": {
+            "en": "Free family workshops, with digital-explorer labs for children aged 8 to 16.",
+            "th": "มีเวิร์กช็อปครอบครัวฟรี และห้องทดลองนักสำรวจดิจิทัลสำหรับเด็กอายุ 8–16 ปี"
+          },
+          "tip": {
+            "en": "Free family activities run by booking; check the site for the Sunday schedule.",
+            "th": "กิจกรรมครอบครัวฟรีต้องจอง เช็กตารางวันอาทิตย์จากเว็บไซต์"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "STEP FuturAbility District, P.za Adriano Olivetti, 1, 20139 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        },
+        {
+          "name": {
+            "en": "Villa Finzi park",
+            "th": "สวนวิลลาฟินซี"
+          },
+          "local": "Parco di Villa Finzi",
+          "kind": "play",
+          "area": {
+            "en": "Gorla, Via Sant'Erlembaldo, Milan",
+            "th": "กอร์ลา มิลาน"
+          },
+          "what": {
+            "en": "An inclusive play area of about 280 square metres with an accessible carousel, music and sensory panels.",
+            "th": "สนามเด็กเล่นสำหรับทุกคนราว 280 ตารางเมตร มีม้าหมุนที่เข้าถึงได้ ดนตรี และแผงสัมผัส"
+          },
+          "why": {
+            "en": "Good for children who enjoy sounds, hands-on panels, spinning and shared games.",
+            "th": "เหมาะกับเด็กที่ชอบเสียง แผงให้จับ การหมุน และเล่นด้วยกัน"
+          },
+          "tip": {
+            "en": "Trees and paths let you alternate play with a quieter break.",
+            "th": "มีต้นไม้และทางเดิน สลับเล่นกับพักเงียบๆ ได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco di Villa Finzi, Via Sant'Erlembaldo, 4, 20126 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Giardini Ezio Lucarelli",
+            "th": "สวนเอซีโอ ลูกาเรลลี"
+          },
+          "local": "Giardino \"Ezio Lucarelli\"",
+          "kind": "play",
+          "area": {
+            "en": "Via Passo Rolle, Milan",
+            "th": "Via Passo Rolle มิลาน"
+          },
+          "what": {
+            "en": "A large inclusive play garden with a variety of structures.",
+            "th": "สวนเด็กเล่นสำหรับทุกคนขนาดใหญ่ มีเครื่องเล่นหลากหลาย"
+          },
+          "why": {
+            "en": "Good for siblings and groups of children of different ages and abilities, with creative activities and paths on the ground.",
+            "th": "เหมาะกับพี่น้องและเด็กหลายวัยหลายความสามารถ มีกิจกรรมสร้างสรรค์และลายทางบนพื้น"
+          },
+          "tip": {
+            "en": "Less competitive play, suited to creative games as well as movement.",
+            "th": "เล่นแบบไม่แข่งขัน เหมาะกับเกมสร้างสรรค์และการเคลื่อนไหว"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Giardino \"Ezio Lucarelli\", Via Passo Rolle, 39-41, 20134 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Parco Chiesa Rossa",
+            "th": "ปาร์โก เคียซา รอสซา"
+          },
+          "local": "Parco delle Cascine di Chiesa Rossa",
+          "kind": "play",
+          "area": {
+            "en": "Via San Domenico Savio, Chiesa Rossa, Milan",
+            "th": "Via San Domenico Savio เคียซา รอสซา มิลาน"
+          },
+          "what": {
+            "en": "A play area of about 530 square metres set in the flower beds around the fountain and the Centauro monument.",
+            "th": "สนามเด็กเล่นราว 530 ตารางเมตร อยู่ท่ามกลางแปลงดอกไม้รอบน้ำพุและอนุสาวรีย์ Centauro"
+          },
+          "why": {
+            "en": "Music, movement and creative play, plus a library beside it for a quieter spell.",
+            "th": "มีดนตรี การเคลื่อนไหว และการเล่นสร้างสรรค์ และมีห้องสมุดข้างๆ ไว้พักสงบ"
+          },
+          "tip": {
+            "en": "Library, park and play area can be used on the same day.",
+            "th": "ใช้ห้องสมุด สวน และสนามเด็กเล่นได้ในวันเดียวกัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco delle Cascine di Chiesa Rossa, Via S. Domenico Savio, 20141 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Giardini Martinetti",
+            "th": "สวนมาร์ติเนตติ"
+          },
+          "local": "Parchetto via Martinetti",
+          "kind": "play",
+          "area": {
+            "en": "Via Privata Piero Martinetti, Milan",
+            "th": "Via Privata Piero Martinetti มิลาน"
+          },
+          "what": {
+            "en": "An inclusive garden where the centre is dedicated to music, with instruments that can be played by children with and without disabilities.",
+            "th": "สวนสำหรับทุกคนที่มีใจกลางเป็นโซนดนตรี มีเครื่องดนตรีให้เด็กทั้งที่มีและไม่มีความพิการเล่นได้"
+          },
+          "why": {
+            "en": "Musical instruments, some played by blowing or striking, that children can touch and hear.",
+            "th": "มีเครื่องดนตรีที่เป่าหรือตี ให้เด็กจับและฟังเสียงได้"
+          },
+          "tip": {
+            "en": "Music-themed play; the instruments work as touch and sight experiences too.",
+            "th": "เล่นตามธีมดนตรี เครื่องดนตรียังให้สัมผัสและดูได้ด้วย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parchetto via Martinetti, Via Privata Piero Martinetti, 25/23, 20147 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/parchi-giochi-inclusivi-a-milano-9-aree-accessibili-per-tutti-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "Il Villaggio dei Bambini, Idroscalo",
+            "th": "หมู่บ้านเด็ก อิโดรสกาโล"
+          },
+          "local": "Villaggio del Bambino",
+          "kind": "play",
+          "area": {
+            "en": "Idroscalo, Novegro-Tregarezzo",
+            "th": "อิโดรสกาโล โนเวโกร-เตรกาเรซโซ"
+          },
+          "what": {
+            "en": "A large free play park built from recycled and recyclable materials, on a surface that cushions falls.",
+            "th": "สวนเด็กเล่นขนาดใหญ่ฟรี สร้างจากวัสดุรีไซเคิล บนพื้นที่ซับแรงกระแทก"
+          },
+          "why": {
+            "en": "Ground games and water play on a soft, anti-trauma surface at the Idroscalo lake.",
+            "th": "มีเกมเล่นบนพื้นและเล่นน้ำ บนพื้นนุ่มกันบาดเจ็บ ริมทะเลสาบอิโดรสกาโล"
+          },
+          "tip": {
+            "en": "Choose the equipped areas for the water; the lake has supervised swimming zones.",
+            "th": "เลือกโซนที่มีอุปกรณ์สำหรับเล่นน้ำ ทะเลสาบมีโซนว่ายน้ำที่มีผู้ดูแล"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Villaggio del Bambino, Via Circonvallazione Idroscalo, 20054 Novegro-Tregarezzo MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.milanofree.it/milano/bambini/idroscalo-di-milano-cosa-fare-con-i-bambini.html"
+        },
+        {
+          "name": {
+            "en": "MUDEC – Museum of Cultures",
+            "th": "พิพิธภัณฑ์วัฒนธรรม MUDEC"
+          },
+          "local": "Mudec – Museo delle Culture",
+          "kind": "museum",
+          "area": {
+            "en": "Via Tortona, Milan",
+            "th": "Via Tortona มิลาน"
+          },
+          "what": {
+            "en": "A museum of world cultures with a space for children with creative workshops and storytelling inspired by world cultures.",
+            "th": "พิพิธภัณฑ์วัฒนธรรมโลก มีพื้นที่สำหรับเด็กพร้อมเวิร์กช็อปสร้างสรรค์และการเล่านิทานจากวัฒนธรรมต่างๆ"
+          },
+          "why": {
+            "en": "A children's space with creative workshops and storytelling.",
+            "th": "มีพื้นที่เด็กพร้อมเวิร์กช็อปสร้างสรรค์และเล่านิทาน"
+          },
+          "tip": {
+            "en": "Booking the workshops in advance on the official site is recommended.",
+            "th": "แนะนำให้จองเวิร์กช็อปล่วงหน้าบนเว็บไซต์ทางการ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Mudec, Via Tortona, 56, 20144 Milano MI, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/"
+        },
+        {
+          "name": {
+            "en": "Acquaworld",
+            "th": "อควาเวิลด์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Concorezzo, 30–40 minutes from Milan",
+            "th": "คอนโกเรซโซ ห่างมิลานราว 30–40 นาที"
+          },
+          "what": {
+            "en": "A large covered water park.",
+            "th": "สวนน้ำในร่มขนาดใหญ่"
+          },
+          "why": {
+            "en": "A covered water park where a rainy day can turn into a swim day.",
+            "th": "สวนน้ำในร่ม วันฝนตกกลายเป็นวันว่ายน้ำได้"
+          },
+          "tip": {
+            "en": "Buy tickets online; check the site for times before you go.",
+            "th": "ซื้อตั๋วออนไลน์ และเช็กเวลาจากเว็บไซต์ก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Acquaworld, Via Giorgio la Pira, 16, 20863 Concorezzo MB, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/cosa-fare-milano-quando-piove-bambini/"
+        }
     ]
     },
     {
@@ -1805,12 +4030,85 @@
       {"name":{"en":"Aqueduct Park","th":"สวนท่อส่งน้ำ"},"kind":"park","area":{"en":"Near Subaugusta metro station","th":"ใกล้สถานีรถไฟใต้ดินซูเบากุสตา"},"what":{"en":"Park of pathways among well-preserved Roman aqueducts, off the usual tourist path.","th":"สวนทางเดินท่ามกลางท่อส่งน้ำโรมันที่สมบูรณ์ ห่างจากเส้นทางนักท่องเที่ยวปกติ"},"why":{"en":"Pathways to run along, and a small playground on the way back.","th":"มีทางให้วิ่งเล่น และสนามเด็กเล่นเล็กๆ ระหว่างทางกลับ"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Aqueduct Park, Rome","ok":"2026-11","src":"https://www.familycantravel.com/rome-playgrounds/"},
       {"name":{"en":"Tiber River Walkway","th":"ทางเดินริมแม่น้ำไทเบอร์"},"kind":"park","area":{"en":"Shores of the Tiber River","th":"ริมแม่น้ำไทเบอร์"},"what":{"en":"Wide walkways along the river where children can burn off energy.","th":"ทางเดินกว้างริมแม่น้ำ ให้เด็กวิ่งเล่นระบายพลังงาน"},"why":{"en":"Chasing pigeons, looking for ducks and waving at rowers on the river.","th":"หน้าเว็บบอกว่าไล่นก หาเป็ด และโบกมือให้คนพายเรือได้"},"tip":{"en":"The page warns to watch for people on bikes and some broken glass.","th":"หน้าเว็บเตือนให้ระวังคนขี่จักรยานและเศษแก้วแตกบางจุด"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Tiber River walkway, Rome","ok":"2026-11","src":"https://www.familycantravel.com/rome-playgrounds/"},
       {"name":{"en":"Laghetto dell’Eur","th":"ลาเกตโต เดลเลอูร์"},"kind":"park","area":{"en":"EUR","th":"เอยูอาร์"},"what":{"en":"Local pond park with a family atmosphere, a short metro ride out of the centre.","th":"สวนบ่อน้ำในท้องถิ่น บรรยากาศครอบครัว อยู่ห่างจากใจกลางด้วยรถไฟใต้ดินไม่นาน"},"why":{"en":"The page calls it one of the most family-friendly parks in Rome.","th":"หน้าเว็บเรียกว่าเป็นสวนที่เป็นมิตรกับครอบครัวที่สุดแห่งหนึ่งในโรม"},"tip":{"en":"In spring it is one of the best places to see cherry blossoms.","th":"ฤดูใบไม้ผลิเป็นหนึ่งในที่ชมดอกซากุระที่ดีที่สุด"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Laghetto dell’Eur, EUR, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
-      {"name":{"en":"Museum of Illusions","th":"พิพิธภัณฑ์ภาพลวงตา"},"kind":"museumkid","area":{"en":"Via Merulana, city centre","th":"เวีย เมรูลานา ใจกลางเมือง"},"what":{"en":"Rooms of optical illusions that play tricks on the eye, about an hour to visit.","th":"ห้องภาพลวงตาที่หลอกสายตา ใช้เวลาราวหนึ่งชั่วโมง"},"why":{"en":"Suited to kids from about six up; the page says all ages can enjoy it.","th":"เหมาะกับเด็กตั้งแต่อายุราวหกขวบ หน้าเว็บบอกว่าทุกวัยสนุกได้"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Museum of Illusions, Via Merulana, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
       {"name":{"en":"Museo Mostra dei Leonardo","th":"พิพิธภัณฑ์เลโอนาร์โด"},"kind":"museumkid","area":{"en":"Palazzo della Cancelleria, city centre","th":"พาลัซโซเดลลาคันเชลเลเรีย ใจกลางเมือง"},"what":{"en":"Permanent exhibition of Leonardo's machines that children can try, with a corner to build his bridge.","th":"นิทรรศการถาวรของเครื่องจักรของเลโอนาร์โดที่เด็กลองได้ มีมุมให้สร้างสะพานของเขา"},"why":{"en":"Hands-on: kids can experiment with several machines and build the self-supporting bridge.","th":"ลงมือทำ: เด็กทดลองเครื่องจักรหลายแบบ และสร้างสะพานที่พยุงตัวเองได้"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Palazzo della Cancelleria, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
       {"name":{"en":"Galleria Borghese","th":"หอศิลป์บอร์เกเซ"},"kind":"museum","area":{"en":"Villa Borghese","th":"วิลลาบอร์เกเซ"},"what":{"en":"Compact museum in Villa Borghese with fun animal sculptures; not interactive, but easy for children to enjoy.","th":"พิพิธภัณฑ์กะทัดรัดในวิลลาบอร์เกเซ มีประติมากรรมสัตว์สนุกๆ ไม่ได้โต้ตอบ แต่เด็กดูได้ง่าย"},"why":{"en":"The page says it is worth a visit at all ages thanks to its compact size.","th":"หน้าเว็บบอกว่าคุ้มค่าทุกวัยเพราะขนาดกะทัดรัด"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Galleria Borghese, Villa Borghese, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
       {"name":{"en":"Christmas World","th":"คริสต์มาสเวิลด์"},"kind":"themepark","area":{"en":"Villa Borghese","th":"วิลลาบอร์เกเซ"},"what":{"en":"Christmas theme park with food stalls, shows, ice skating and seasonal entertainment.","th":"สวนสนุกธีมคริสต์มาสมีร้านอาหาร โชว์ สเกตน้ำแข็ง และความบันเทิงตามฤดูกาล"},"why":{"en":"The page calls it a fun seasonal attraction for kids, with rides for all ages.","th":"หน้าเว็บเรียกว่าเป็นกิจกรรมตามฤดูกาลที่สนุกสำหรับเด็ก มีเครื่องเล่นทุกวัย"},"tip":{"en":"Seasonal: it comes to Villa Borghese in December.","th":"ตามฤดูกาล มาถึงวิลลาบอร์เกเซในเดือนธันวาคม"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Villa Borghese, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
       {"name":{"en":"Trastevere","th":"ทราสเตเวเร"},"kind":"oldtown","area":{"en":"Trastevere","th":"ทราสเตเวเร"},"what":{"en":"Lively old quarter of restaurants, cafés and street performers, liveliest at night.","th":"ย่านเก่าที่คึกคักด้วยร้านอาหาร คาเฟ่ และนักแสดงข้างถนน คึกที่สุดตอนกลางคืน"},"why":{"en":"The page says it stays family-friendly until late thanks to its many restaurants.","th":"หน้าเว็บบอกว่าเป็นมิตรกับครอบครัวจนดึกเพราะมีร้านอาหารมาก"},"tip":{"en":"Most fun after dark, per the page.","th":"สนุกที่สุดตอนพลบค่ำ ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Trastevere, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
-      {"name":{"en":"Pincio Terrace","th":"เทอร์เรซปินชิโอ"},"kind":"views","area":{"en":"Near Piazza del Popolo","th":"ใกล้ปิอัซซาเดลโปโปโล"},"what":{"en":"Terrace with a panoramic view over the city, entered near Piazza del Popolo.","th":"เทอร์เรซที่มีวิวพาโนรามาเหนือเมือง เข้าใกล้ปิอัซซาเดลโปโปโล"},"why":{"en":"A wide view over the city as you arrive at Villa Borghese.","th":"วิวกว้างเหนือเมืองตอนที่มาถึงวิลลาบอร์เกเซ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pincio Terrace, Piazza del Popolo, Rome","ok":"2026-11","src":"https://italywander.com/things-to-do-in-rome-with-kids"}
+      {"name":{"en":"Pincio Terrace","th":"เทอร์เรซปินชิโอ"},"kind":"views","area":{"en":"Near Piazza del Popolo","th":"ใกล้ปิอัซซาเดลโปโปโล"},"what":{"en":"Terrace with a panoramic view over the city, entered near Piazza del Popolo.","th":"เทอร์เรซที่มีวิวพาโนรามาเหนือเมือง เข้าใกล้ปิอัซซาเดลโปโปโล"},"why":{"en":"A wide view over the city as you arrive at Villa Borghese.","th":"วิวกว้างเหนือเมืองตอนที่มาถึงวิลลาบอร์เกเซ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pincio Terrace, Piazza del Popolo, Rome","ok":"2026-11","src":"https://italywander.com/things-to-do-in-rome-with-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://turismoroma.it/it/page/attivit%C3%A0-bambini",
+          "name": {
+            "th": "ท้องฟ้าจำลองโรม",
+            "en": "Planetario di Roma"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปิอัซซาโจวันนีอัญเญลลี โรม",
+            "en": "Piazza Giovanni Agnelli, Rome"
+          },
+          "what": {
+            "th": "ท้องฟ้าจำลอง มีโชว์ดวงดาวและอวกาศ",
+            "en": "A planetarium with star and space shows"
+          },
+          "why": {
+            "th": "มีโชว์สำหรับเด็กและครอบครัว",
+            "en": "Shows made for children and families"
+          },
+          "q": "Planetario di Roma, Piazza Giovanni Agnelli 10, Rome",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome",
+          "name": {
+            "th": "สวนสนุกลูเนอร์",
+            "en": "Luneur Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเดลเลเทรฟอนตาเน โรม",
+            "en": "Via delle Tre Fontane, Rome"
+          },
+          "what": {
+            "th": "สวนสนุกกลางแจ้ง มีเครื่องเล่นและเกมท่ามกลางต้นไม้",
+            "en": "An outdoor amusement park of rides and games among the trees"
+          },
+          "why": {
+            "th": "มีที่เล่นสำหรับเด็กเล็ก รถขุดขนาดเด็ก และรถไฟเหาะจิ๋ว",
+            "en": "Play areas for little ones, a child-sized digger and a mini roller coaster"
+          },
+          "q": "Luneur Park, Via delle Tre Fontane 100, Rome",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -2033,24 +4331,6 @@
           "src": "https://www.spiagge.it/magazine/spiagge-piu-belle-mondello/"
         },
         {
-          "name": { "en": "Ursino Castle and Civic Museum, Catania", "th": "ปราสาทอูร์ซีโนและพิพิธภัณฑ์เมือง คาตาเนีย" },
-          "local": "Castello Ursino, Catania",
-          "kind": "museum",
-          "area": { "en": "Catania", "th": "คาตาเนีย" },
-          "what": { "en": "A lava-stone medieval castle holding the city's civic museum", "th": "ปราสาทยุคกลางจากหินลาวา ภายในเป็นพิพิธภัณฑ์เมือง" },
-          "why": { "en": "A castle that children like to explore, and an indoor stop on a wet day", "th": "ปราสาทที่เด็กชอบสำรวจ และเป็นจุดในร่มวันฝนตก" },
-          "tip": { "en": "Sources give 09:00–18:00 or 09:30–19:00, last entry about 18:00; check the day", "th": "แหล่งต่างๆ บอก 09:00–18:00 หรือ 09:30–19:00 เข้าได้ถึงราว 18:00 เช็กวันที่ไป" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 1.5,
-          "io": "in",
-          "pram": "part",
-          "price": { "en": "≈ €6 adults (a recent guide; check)", "th": "≈ €6 ผู้ใหญ่ (คู่มือล่าสุด เช็กอีกครั้ง)" },
-          "book": "none",
-          "q": "Castello Ursino, Piazza Federico di Svevia, Catania",
-          "ok": "2026-11",
-          "src": "https://travel.thewom.it/italia/sicilia/catania/fortezza-di-pietra-lavica-in-sicilia-che-sembra-uscita-da-un-film.html"
-        },
-        {
           "name": { "en": "La Pescheria fish market, Catania", "th": "ตลาดปลาลาเปสเกเรีย คาตาเนีย" },
           "local": "La Pescheria, Catania",
           "kind": "market",
@@ -2121,6 +4401,892 @@
           "q": "La Rocca di Cefalù, Cefalù",
           "ok": "2026-11",
           "src": "https://www.nomadotravel.app/it/attractions/la-rocca-cefalu"
+        },
+        {
+          "local": "Parco della Salute Livia Morello",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "สนามเด็กเล่นปาร์โกเดลลาซาลูเต",
+            "en": "Parco della Salute playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โฟโรอิตาลีโก ข้างประตูปอร์ตาเฟลีเช ปาแลร์โม",
+            "en": "Foro Italico, by Porta Felice, Palermo"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นใหญ่ริมทะเล มีชิงช้า โครงปีนป่าย และคานทรงตัว",
+            "en": "A big seaside playground with swings, climbing frames and balance beams"
+          },
+          "why": {
+            "th": "กว้างมาก เด็กเยอะ มีสนามฟุตบอลเล็ก ๆ",
+            "en": "Huge and full of children, with a small football pitch"
+          },
+          "tip": {
+            "th": "ร่มเงาน้อย และไม่มีรั้วกั้นระหว่างสนามเด็กเล่นกับน้ำ",
+            "en": "Little shade, and no fence between the playground and the water"
+          },
+          "q": "Parco della Salute, Foro Italico Umberto I, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "เขามอนเตเปลเลกรีโน",
+            "en": "Monte Pellegrino"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ปาแลร์โม",
+            "en": "Palermo"
+          },
+          "what": {
+            "th": "เดินขึ้นยอดเขาชมวิวเมืองและอ่าวทั้งสองฝั่ง",
+            "en": "A hike to the top for views over the city and both bays"
+          },
+          "why": {
+            "th": "มีกิ้งก่า นก และแมลงให้มองหา",
+            "en": "Lizards, birds and insects to spot"
+          },
+          "tip": {
+            "th": "รถเข็นเด็กไปไม่ได้ ไม่มีร่ม เลี่ยงวันที่อากาศร้อน",
+            "en": "Not for prams and no shade; avoid a hot day"
+          },
+          "q": "Monte Pellegrino, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Fontana Pretoria",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "น้ำพุเปรโตเรีย",
+            "en": "Pretoria Fountain"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปิอัซซาเปรโตเรีย ปาแลร์โม",
+            "en": "Piazza Pretoria, Palermo"
+          },
+          "what": {
+            "th": "น้ำพุประดับเต็มจัตุรัส มีรูปปั้นสัตว์เต็มไปหมด",
+            "en": "An ornate fountain filling the square, covered in creatures"
+          },
+          "why": {
+            "th": "เด็ก ๆ สนุกกับการหาสัตว์ตัวโปรด",
+            "en": "Children love finding their favourite animal"
+          },
+          "q": "Fontana Pretoria, Piazza Pretoria, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "โบสถ์น้อยซานลอเรนโซ",
+            "en": "Oratorio di San Lorenzo"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปาแลร์โม",
+            "en": "Palermo"
+          },
+          "what": {
+            "th": "โบสถ์น้อยที่มีรูปปั้นปูนบนผนัง รวมถึงยูนิคอร์น",
+            "en": "An oratory with stucco figures on the walls, including a unicorn"
+          },
+          "why": {
+            "th": "เด็ก ๆ ตามหายูนิคอร์นและเทวดาน้อย",
+            "en": "Children look for the unicorn and the cherubs"
+          },
+          "q": "Oratorio di San Lorenzo, Via Immacolatella 5, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "โฟโรอิตาลีโก",
+            "en": "Foro Italico"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริมทะเลปาแลร์โม",
+            "en": "Palermo seafront"
+          },
+          "what": {
+            "th": "ทางเดินริมทะเล มีม้านั่งเซรามิกสีสดใส",
+            "en": "A seafront promenade with colourful ceramic benches"
+          },
+          "why": {
+            "th": "มีสนามหญ้าให้วิ่งเล่น และเด็ก ๆ เล่นว่าว",
+            "en": "Room to run on the grass and children flying kites"
+          },
+          "q": "Foro Italico, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "โบสถ์ซานตามาเรียเดลโลสปาซีโม",
+            "en": "Santa Maria dello Spasimo"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเดลโลสปาซีโม ปาแลร์โม",
+            "en": "Via dello Spasimo, Palermo"
+          },
+          "what": {
+            "th": "โบสถ์ไร้หลังคา ข้างภาพจิตรกรรมบนถนน",
+            "en": "A church with no roof, beside the street's murals"
+          },
+          "why": {
+            "th": "มีห้องน้ำฟรี และสนามเด็กเล่นที่ปิอัซซามาโจเนใกล้ ๆ",
+            "en": "Free toilets, and a playground in nearby Piazza Magione"
+          },
+          "q": "Santa Maria dello Spasimo, Via dello Spasimo 15, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+          "name": {
+            "th": "ปิอัซซา IX อาปรีเล",
+            "en": "Piazza IX Aprile"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ตาออร์มีนา",
+            "en": "Taormina"
+          },
+          "what": {
+            "th": "จัตุรัสปลอดรถ พื้นลายตารางหมากรุก มีระเบียงคาเฟ่",
+            "en": "A car-free square with a checkerboard floor and café terraces"
+          },
+          "why": {
+            "th": "เด็กเล็กวิ่งเล่นได้",
+            "en": "Toddlers can run about safely"
+          },
+          "q": "Piazza IX Aprile, Taormina",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+          "name": {
+            "th": "สวนวิลลาโคมูนาเล ตาออร์มีนา",
+            "en": "Villa Comunale di Taormina"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ตาออร์มีนา",
+            "en": "Taormina"
+          },
+          "what": {
+            "th": "สวนสงบ วิวภูเขาไฟเอตนาและชายฝั่งทะเลไอโอเนียน",
+            "en": "Peaceful gardens with views of Etna and the Ionian coast"
+          },
+          "why": {
+            "th": "ที่พักผ่อนระหว่างที่ลูกเล็กหลับ",
+            "en": "Somewhere to relax while the baby sleeps"
+          },
+          "q": "Villa Comunale di Taormina, Via Bagnoli Croci, Taormina",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Figli d'Arte Cuticchio",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+          "name": {
+            "th": "โรงละครหุ่นกุติกคีโอ",
+            "en": "Cuticchio puppet theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ปาแลร์โม",
+            "en": "Palermo"
+          },
+          "what": {
+            "th": "การแสดงหุ่นกระบอก พร้อมทัวร์โรงงานทำหุ่นฝั่งตรงข้าม",
+            "en": "A puppet show, with a tour of the puppet workshop across the street"
+          },
+          "why": {
+            "th": "หุ่นยังทำด้วยมือในโรงงาน",
+            "en": "The puppets are still made by hand in the workshop"
+          },
+          "q": "Figli d'Arte Cuticchio, Via Bara all'Olivella 95, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/catania-with-kids/",
+          "name": {
+            "th": "วิลลาเบลลินี",
+            "en": "Villa Bellini (Giardino Bellini)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเอตเนอา กาตาเนีย",
+            "en": "Via Etnea, Catania"
+          },
+          "what": {
+            "th": "สวนที่ใหญ่และเป็นที่นิยมที่สุดของกาตาเนีย มีทางเดินร่มรื่นและม้านั่งใต้ร่มไม้",
+            "en": "Catania's largest and best-loved park, with tree-lined paths and shaded benches"
+          },
+          "why": {
+            "th": "มีที่เล่นสำหรับเด็กและร่มเงาให้นั่งพัก",
+            "en": "Play areas for children and shade for a break"
+          },
+          "q": "Villa Bellini, Via Etnea, Catania",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนอูดิโตเร",
+            "en": "Parco Uditore"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ปิอัซซาอัลเบิร์ตไอน์สไตน์ ปาแลร์โม",
+            "en": "Piazza Albert Einstein, Palermo"
+          },
+          "what": {
+            "th": "สวนที่ดูแลดี มีเครื่องเล่นกลางแจ้ง",
+            "en": "A well-kept park with outdoor play equipment"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นในพื้นที่ปลอดภัยและเรียบร้อย",
+            "en": "Play equipment in a safe, tidy setting"
+          },
+          "q": "Parco Uditore, Piazza Albert Einstein, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนฟัลโกเน",
+            "en": "Parco Falcone"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใกล้ถนนกอร์โซอิตาเลีย กาตาเนีย",
+            "en": "near Corso Italia, Catania"
+          },
+          "what": {
+            "th": "หนึ่งในสวนเด็กคลาสสิกของกาตาเนีย",
+            "en": "One of Catania's classic children's parks"
+          },
+          "why": {
+            "th": "สวนสำหรับให้เด็กเล็กเล่น",
+            "en": "A park made for small children to play"
+          },
+          "q": "Parco Falcone, Viale Raffaello Sanzio, Catania",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนฟอนโดบาเดีย",
+            "en": "Parco Fondo Badia"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนบาเดีย ปาแลร์โม",
+            "en": "Via Badia, Palermo"
+          },
+          "what": {
+            "th": "โอเอซิสสีเขียวที่ซ่อนอยู่ หนึ่งในสวนลับที่สวยที่สุดของปาแลร์โม",
+            "en": "A hidden green oasis, one of Palermo's most striking hidden parks"
+          },
+          "why": {
+            "th": "พื้นที่สีเขียวเงียบสงบสำหรับเดินเล่นใต้ต้นไม้",
+            "en": "A quiet green space for a walk among the trees"
+          },
+          "q": "Parco Fondo Badia, Via Badia 48, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+          "name": {
+            "th": "สวนคานธี",
+            "en": "Parco Gandhi"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใกล้ถนนซานตาโซเฟีย ทางเหนือของกาตาเนีย",
+            "en": "near Via Santa Sofia, north Catania"
+          },
+          "what": {
+            "th": "สวนที่เงียบกว่าทางเหนือของกาตาเนีย",
+            "en": "A quieter park in the north of Catania"
+          },
+          "why": {
+            "th": "สวนสงบ คนไม่พลุกพล่าน เหมาะแก่การพัก",
+            "en": "A calm, less busy park for a break"
+          },
+          "q": "Parco Gandhi, Catania",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Grotta Azzurra",
+            "th": "กรอตตา อัซซูร์รา"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Mazzarò, Taormina coast",
+            "th": "มัซซาโร, ชายฝั่งเตาร์มีนา"
+          },
+          "what": {
+            "en": "Boat trips to the blue sea cave near Taormina",
+            "th": "ล่องเรือไปชมถ้ำทะเลสีน้ำเงินใกล้เตาร์มีนา"
+          },
+          "why": {
+            "en": "Older tots enjoy the boat trip to the blue sea cave; dolphin-watching cruises are also offered",
+            "th": "เด็กเล็กโตหน่อยสนุกกับการล่องเรือไปถ้ำทะเลสีน้ำเงิน และมีล่องเรือดูโลมาด้วย"
+          },
+          "tip": {
+            "en": "Booking ahead is recommended",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Grotta Azzurra, Mazzarò, Taormina, Messina, Italy",
+          "ok": "2026-11",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids"
+        },
+        {
+          "name": {
+            "en": "Parco dei Miti",
+            "th": "ปาร์โก เดย มีตี"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Zafferana Etnea, east side of Etna",
+            "th": "ซัฟเฟรานา เอตเนอา, ฝั่งตะวันออกของเอตนา"
+          },
+          "what": {
+            "en": "A park where Homer's Odyssey comes alive: children board Ulysses' ship, sit by the sea of the Odyssey and meet Polyphemus",
+            "th": "สวนที่เรื่องโอดิสซีย์ของโฮเมอร์มีชีวิต เด็กๆ ขึ้นเรือของยูลิสซีส นั่งริมทะเลโอดิสซีย์ และพบโพลีฟีมัส"
+          },
+          "why": {
+            "en": "Children can put their own questions to the Cyclops, which leaves room for the most unpredictable questions",
+            "th": "เด็กๆ ถามคำถามของตัวเองกับไซคลอปส์ได้ ซึ่งเปิดทางให้คำถามที่คาดไม่ถึงที่สุด"
+          },
+          "tip": {
+            "en": "The Odissea in Sicilia event ran on Sundays from 10:00; phone or WhatsApp ahead and check the dates",
+            "th": "กิจกรรม Odissea in Sicilia จัดวันอาทิตย์ตั้งแต่ 10:00 โทรหรือส่งวอตส์แอปถามล่วงหน้าและเช็กวันก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Parco dei Miti, Via Zerbate, 20, 95019 Zafferana Etnea, Italy",
+          "ok": "2026-11",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/eventi/catania/odissea-in-sicilia-parco-dei-miti/"
+        },
+        {
+          "name": {
+            "en": "Aci Trezza",
+            "th": "อาจิ เทรซซา"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Aci Trezza, near Catania",
+            "th": "อาจิ เทรซซา, ใกล้กาตาเนีย"
+          },
+          "what": {
+            "en": "A small fishing harbour with the Cyclops rocks (Faraglioni dei Ciclopi) standing out of the sea",
+            "th": "ท่าเรือประมงเล็กๆ ที่มีโขดหินไซคลอปส์ (Faraglioni dei Ciclopi) โผล่จากทะเล"
+          },
+          "why": {
+            "en": "The big dark rocks in the sea spark children's imagination, and the harbour has wooden fishing boats to watch",
+            "th": "โขดหินสีเข้มใหญ่กลางทะเลปลุกจินตนาการเด็กๆ และท่าเรือมีเรือประมงไม้ให้ดู"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Aci Trezza, 95021 Aci Trezza, Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/il-borgo-vicino-catania-dove-i-bambini-possono-scoprire-la-leggenda-dei-ciclopi.html"
+        },
+        {
+          "name": {
+            "en": "Ferrovia Circumetnea",
+            "th": "เฟอร์โรเวีย เชียร์คูเมตเนอา"
+          },
+          "kind": "ride",
+          "area": {
+            "en": "Catania Borgo to Riposto",
+            "th": "กาตาเนีย บอร์โก ถึงริโปสโต"
+          },
+          "what": {
+            "en": "A slow local train from Catania (Borgo) that runs almost all the way round the volcano to Riposto",
+            "th": "รถไฟท้องถิ่นขบวนช้าจากกาตาเนีย (บอร์โก) วิ่งอ้อมภูเขาไฟเกือบรอบไปถึงริโปสโต"
+          },
+          "why": {
+            "en": "Villages, old stations, orchards and vineyards pass by, and the line crosses lava fields that children can watch from the window",
+            "th": "ผ่านหมู่บ้าน สถานีเก่า สวนผลไม้และไร่องุ่น และข้ามทุ่งลาวาที่เด็กๆ ดูได้จากหน้าต่าง"
+          },
+          "tip": {
+            "en": "Check the current timetable and any replacement buses on the official site before going",
+            "th": "เช็กตารางเวลาปัจจุบันและรถบัสทดแทนบนเว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Ferrovia Circumetnea, Via Caronda, 352a, 95128 Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/viaggi/catania/visitare-vulcano-etna-con-bambini/"
+        },
+        {
+          "name": {
+            "en": "Monti Rossi Adventure Park",
+            "th": "มอนตี รอสซี แอดเวนเจอร์ พาร์ก"
+          },
+          "kind": "themepark",
+          "area": {
+            "en": "Nicolosi, north side of Etna",
+            "th": "นิโคโลซี, ฝั่งเหนือของเอตนา"
+          },
+          "what": {
+            "en": "An adventure park on the volcano's slopes with forest paths and bridges, a hammock relax area and a picnic space",
+            "th": "สวนผจญภัยบนเนินภูเขาไฟ มีทางป่าและสะพาน โซนพักผ่อนเปลญวน และที่ปิกนิก"
+          },
+          "why": {
+            "en": "Children cross bridges and walk the nature paths, then rest on the hammocks; one family found the paths great fun",
+            "th": "เด็กๆ ข้ามสะพานและเดินทางธรรมชาติ แล้วพักบนเปลญวน ครอบครัวหนึ่งว่าทางเดินสนุกมาก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Monti Rossi Adventure Park, Via Goethe, 95030 Nicolosi, Italy",
+          "ok": "2026-11",
+          "src": "https://www.familygo.eu/vacanze-con-bambini/viaggi/catania/visitare-vulcano-etna-con-bambini/"
+        },
+        {
+          "name": {
+            "en": "Piazza Duomo, Catania",
+            "th": "ปิอัซซา ดูโอโม กาตาเนีย"
+          },
+          "kind": "oldtown",
+          "area": {
+            "en": "Catania old town",
+            "th": "เมืองเก่ากาตาเนีย"
+          },
+          "what": {
+            "en": "The city's main square, with the lava-stone Elephant Fountain as the symbol of Catania",
+            "th": "จัตุรัสหลักของเมือง มีน้ำพุช้างหินลาวาเป็นสัญลักษณ์ของกาตาเนีย"
+          },
+          "why": {
+            "en": "The elephant usually catches the attention of the youngest children first",
+            "th": "ช้างมักดึงความสนใจเด็กเล็กที่สุดก่อน"
+          },
+          "tip": {
+            "en": "The fish market next to the square is closed on Sundays",
+            "th": "ตลาดปลาข้างจัตุรัสปิดวันอาทิตย์"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Piazza Duomo, Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.nostrofiglio.it/famiglia/viaggi/catania-con-i-bambini-alla-scoperta-del-castello-di-lava-che-ha-sfidato-l-etna"
+        },
+        {
+          "name": {
+            "en": "Porticciolo di Ognina",
+            "th": "ปอร์ติชโชโล ดิ โอนยีนา"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Ognina, Catania seafront",
+            "th": "โอนยีนา, ริมทะเลกาตาเนีย"
+          },
+          "what": {
+            "en": "A flat walk by the sea from Piazza Europa to the Ognina harbour",
+            "th": "เดินเลียบทะเลทางเรียบจากปิอัซซา ยูโรปา ไปท่าเรือโอนยีนา"
+          },
+          "why": {
+            "en": "The sea is always alongside, and children like watching the boats",
+            "th": "มีทะเลอยู่ข้างทางตลอด และเด็กๆ ชอบดูเรือ"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Porticciolo di Ognina, Via Marittima, 4, 95126 Catania, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/catania-con-i-bambini-la-meta-dautunno-per-fuggire-dal-freddo-tra-mare-e-vulcani.html"
+        },
+        {
+          "name": {
+            "en": "Mazzarò beach",
+            "th": "หาดมัซซาโร"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Mazzarò, below Taormina",
+            "th": "มัซซาโร, ใต้เตาร์มีนา"
+          },
+          "what": {
+            "en": "A pebble beach with small beach clubs on the sea, reached from Taormina by cable car or bus",
+            "th": "หาดกรวดที่มีบีชคลับเล็กๆ ริมทะเล ไปจากเตาร์มีนาได้ด้วยกระเช้าหรือรถบัส"
+          },
+          "why": {
+            "en": "The clear water lets children look for the coast running towards Catania from the shore",
+            "th": "น้ำใสทำให้เด็กๆ มองเห็นแนวชายฝั่งที่ทอดไปทางกาตาเนียจากริมหาด"
+          },
+          "tip": {
+            "en": "In summer, shuttle buses run to the seaside hamlets",
+            "th": "ช่วงฤดูร้อนมีรถรับส่งไปหมู่บ้านริมทะเล"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Spiaggia libera di Mazzarò, 98039 Mazzarò, Taormina, Messina, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/taormina-con-i-bambini-tra-la-funivia-sul-mare-e-il-borgo-da-storia-illustrata.html"
+        },
+        {
+          "name": {
+            "en": "Isola Bella",
+            "th": "อิโซลา เบลลา"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Taormina, Giardini-Naxos coast",
+            "th": "เตาร์มีนา, ชายฝั่งจาร์ดีนี-นักซอส"
+          },
+          "what": {
+            "en": "A small islet joined to the coast by a strip of sand and pebbles; it is a nature reserve and regional natural-history museum",
+            "th": "เกาะเล็กที่เชื่อมกับฝั่งด้วยแนวทรายและกรวด เป็นเขตอนุรักษ์ธรรมชาติและพิพิธภัณฑ์ธรรมชาติวิทยาของภูมิภาค"
+          },
+          "why": {
+            "en": "A short walk over the strip of sand and pebbles to a green islet, with the sea on both sides",
+            "th": "เดินสั้นๆ บนแนวทรายและกรวดไปยังเกาะสีเขียว มีทะเลสองข้าง"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Isola Bella, Taormina, Messina, Italy",
+          "ok": "2026-11",
+          "src": "https://www.pianetamamma.it/il-bambino/trasporto-e-viaggi/taormina-con-i-bambini-tra-la-funivia-sul-mare-e-il-borgo-da-storia-illustrata.html"
         }
       ]
     },
@@ -2402,7 +5568,402 @@
       {"name":{"en":"Parco Navagero","th":"สวนนาวาเกโร"},"kind":"park","area":{"en":"Murano","th":"มูราโน"},"what":{"en":"A tiny enclosed park on Murano with padded ground, green space and a picnic area with tables","th":"สวนเล็กที่มีรั้วล้อมบนมูราโน มีพื้นนุ่ม พื้นที่สีเขียว และบริเวณปิกนิกพร้อมโต๊ะ"},"why":{"en":"Good for toddlers and small children: enclosed, padded and not right on the water","th":"เหมาะกับเด็กเตาะแตะและเด็กเล็ก ล้อมรั้ว พื้นนุ่ม และไม่อยู่ติดน้ำ"},"ages":[2,2,0,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Navagero, Murano, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
       {"name":{"en":"Giardini Napoleonici Playground","th":"สนามเด็กเล่นสวนนาโปเลโอนิซี"},"kind":"play","area":{"en":"Giardini","th":"สวน"},"what":{"en":"Two playgrounds in the shade, one for older children and one for smaller ones, in a park with paths for bikes and scooters","th":"สนามเด็กเล่นสองแห่งในร่มเงา แห่งหนึ่งสำหรับเด็กโต อีกแห่งสำหรับเด็กเล็ก ในสวนที่มีทางจักรยานและสกู๊ตเตอร์"},"why":{"en":"Swings, climbing structures and a see-saw, with shady benches away from the water","th":"มีชิงช้า โครงปีน และกระดานหก มีม้านั่งร่มเงาห่างจากน้ำ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Giardini Napoleonici playground, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
       {"name":{"en":"Sacca Fisola playground","th":"สนามเด็กเล่นซักกา ฟิโซลา"},"kind":"play","area":{"en":"Giudecca","th":"จูเดกกา"},"what":{"en":"A shaded playground on Giudecca with benches, set away from the water","th":"สนามเด็กเล่นร่มเงาบนจูเดกกาที่มีม้านั่ง ตั้งห่างจากน้ำ"},"why":{"en":"Swings and a play structure, and it is away from the water","th":"มีชิงช้าและโครงเล่น และอยู่ห่างจากน้ำ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sacca Fisola playground, Giudecca, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
-      {"name":{"en":"Parco Ca' Bianca playground","th":"สนามเด็กเล่นปาร์โก ca' บีอังกา"},"kind":"play","area":{"en":"Lido","th":"ลิโด"},"what":{"en":"One of the playgrounds on the Lido, where children can play between swims and rides along the beach","th":"สนามเด็กเล่นแห่งหนึ่งบนลิโด ที่เด็กเล่นได้ระหว่างการว่ายน้ำและการขี่จักรยานตามชายหาด"},"why":{"en":"A break from the beach and the bikes for little ones","th":"ช่วงพักจากชายหาดและจักรยานสำหรับเด็กเล็ก"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Ca' Bianca, Lido di Venezia","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"}
+      {"name":{"en":"Parco Ca' Bianca playground","th":"สนามเด็กเล่นปาร์โก ca' บีอังกา"},"kind":"play","area":{"en":"Lido","th":"ลิโด"},"what":{"en":"One of the playgrounds on the Lido, where children can play between swims and rides along the beach","th":"สนามเด็กเล่นแห่งหนึ่งบนลิโด ที่เด็กเล่นได้ระหว่างการว่ายน้ำและการขี่จักรยานตามชายหาด"},"why":{"en":"A break from the beach and the bikes for little ones","th":"ช่วงพักจากชายหาดและจักรยานสำหรับเด็กเล็ก"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Ca' Bianca, Lido di Venezia","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=91012",
+          "name": {
+            "th": "อู่เรือกอนโดลาซานโตรวาโซ",
+            "en": "Squero di San Trovaso"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดอร์โซดูโร เวนิส",
+            "en": "Dorsoduro, Venice"
+          },
+          "what": {
+            "th": "หนึ่งในอู่เรือแห่งสุดท้ายที่ยังต่อและซ่อมเรือกอนโดลา",
+            "en": "One of the last boatyards where gondolas are still built and repaired"
+          },
+          "why": {
+            "th": "เด็ก ๆ ดูช่างทำงานจากฝั่งตรงข้ามคลองได้",
+            "en": "Children watch the craftsmen from across the canal"
+          },
+          "tip": {
+            "th": "ทัวร์นำชมราว 30 นาที ต้องจองทางอีเมล",
+            "en": "Guided tours last about 30 minutes and need booking by email"
+          },
+          "q": "Squero di San Trovaso, Dorsoduro 1097, Venice",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Giardini della Biennale",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=91012",
+          "name": {
+            "th": "สวนบีเอนนาเล",
+            "en": "Biennale Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กัสเตลโล เวนิส",
+            "en": "Castello, Venice"
+          },
+          "what": {
+            "th": "สวนของงานบีเอนนาเล มีสนามเด็กเล่นอยู่ข้างใน",
+            "en": "The Biennale gardens, with a play area inside"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ ชิงช้า และอื่น ๆ",
+            "en": "Slides, swings and more"
+          },
+          "tip": {
+            "th": "ทัวร์ครอบครัวทุกวันอาทิตย์ 15:00",
+            "en": "Family guided tours on Sundays at 3 PM"
+          },
+          "q": "Giardini della Biennale, Venice",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Storico Navale",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nomadotravel.app/en/guides/venice-with-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์กองทัพเรือ",
+            "en": "Naval History Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "กัสเตลโล เวนิส",
+            "en": "Castello, Venice"
+          },
+          "what": {
+            "th": "โมเดลเรือ อาวุธ และสิ่งของจากประวัติศาสตร์ทางทะเลของเวนิส",
+            "en": "Ship models, weapons and objects from Venice's life at sea"
+          },
+          "why": {
+            "th": "มีอาคารเรือฝั่งตรงข้ามคลองสำหรับเด็กที่ชอบเรือ",
+            "en": "A boat pavilion across the canal for children who love boats"
+          },
+          "q": "Museo Storico Navale di Venezia, Riva San Biasio 2148, Venice",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Fondazione Querini Stampalia",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "name": {
+            "th": "มูลนิธิเกวรีนีสตัมปาเลีย",
+            "en": "Querini Stampalia Foundation"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "กัมปิเอลโลซานตามาเรียฟอร์โมซา เวนิส",
+            "en": "Campiello Santa Maria Formosa, Venice"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในวังที่เหมาะกับการพาเด็กไปมากที่สุดแห่งหนึ่งของเวนิส",
+            "en": "A palace museum that families find one of Venice's easiest with children"
+          },
+          "why": {
+            "th": "หนึ่งในพิพิธภัณฑ์ของเวนิสที่เหมาะกับเด็กที่สุด",
+            "en": "One of the Venice museums best suited to children"
+          },
+          "q": "Fondazione Querini Stampalia, Campiello Santa Maria Formosa, Venezia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo di Leonardo da Vinci",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/i-musei-di-venezia-da-visitare-con-i-bambini/",
+          "name": {
+            "th": "พิพิธภัณฑ์ดาวินชีแบบโต้ตอบ",
+            "en": "Da Vinci Interactive Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สโกเลตตาดีซานรอกโก กัมโปซานรอกโก เวนิส",
+            "en": "Scoletta di San Rocco, Campo San Rocco, Venice"
+          },
+          "what": {
+            "th": "หุ่นจำลองเครื่องจักรของเลโอนาร์โดที่ลองเล่นได้ และจอแสดงแบบโต้ตอบ",
+            "en": "Working models of Leonardo's machines to try, and interactive displays"
+          },
+          "why": {
+            "th": "เป็นจุดแวะที่สนุกสำหรับครอบครัวที่สุดแห่งหนึ่ง",
+            "en": "One of the most engaging stops for families"
+          },
+          "q": "Da Vinci Interactive Museum, Campo San Rocco, Venezia",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Ca' Rezzonico",
+            "th": "กา เรซโซนีโก"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Dorsoduro, Venice",
+            "th": "ดอร์โซดูโร, เวนิส"
+          },
+          "what": {
+            "en": "The museum of 18th-century Venice, with family workshops",
+            "th": "พิพิธภัณฑ์เวนิสสมัยศตวรรษที่ 18 มีเวิร์กชอปสำหรับครอบครัว"
+          },
+          "why": {
+            "en": "Workshops: build and colour your own 3D gondola, or follow a riddle notebook treasure hunt through the rooms",
+            "th": "มีเวิร์กชอปให้ประกอบและระบายสีกอนโดลา 3 มิติเอง หรือตามหาสมบัติด้วยสมุดปริศนาในห้องต่างๆ"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Ca' Rezzonico, Sestiere Dorsoduro, 3136, 30123 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Museo Correr",
+            "th": "พิพิธภัณฑ์คอร์เรร์"
+          },
+          "local": "Museo Correr",
+          "kind": "museumkid",
+          "area": {
+            "en": "Piazza San Marco, Venice",
+            "th": "ปิอัซซา ซานมาร์โก, เวนิส"
+          },
+          "what": {
+            "en": "The museum on Piazza San Marco, with a Venetian picture gallery",
+            "th": "พิพิธภัณฑ์บนจัตุรัสซานมาร์โก มีหอศิลป์ภาพเขียนแบบเวนิส"
+          },
+          "why": {
+            "en": "Workshop: an activity book, story-telling and puzzles lead children to clues in the paintings",
+            "th": "มีเวิร์กชอปที่ใช้สมุดกิจกรรม การเล่าเรื่อง และปริศนา พาเด็กๆ หาเงื่อนงำในภาพเขียน"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Museo Correr, P.za San Marco, 52, 30124 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Ca' Pesaro",
+            "th": "กา เปซาโร"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Calle del Tentor, Venice",
+            "th": "กาลเล เดล เทนตอร์, เวนิส"
+          },
+          "what": {
+            "en": "The International Gallery of Modern Art, with a family workshop",
+            "th": "หอศิลป์นานาชาติศิลปะสมัยใหม่ มีเวิร์กชอปสำหรับครอบครัว"
+          },
+          "why": {
+            "en": "Workshop: children look at Kandinsky's White Zig-Zags, then make a piece of their own with shapes, lines and colours",
+            "th": "มีเวิร์กชอปให้เด็กดูภาพ White Zig-Zags ของคันดินสกี แล้วทำงานของตัวเองด้วยรูปทรง เส้น และสี"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Ca' Pesaro International Gallery of Modern Art, C. del Tentor, 2076, 30135 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Palazzo Mocenigo",
+            "th": "ปาลัซโซ โมเชนีโก"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Calle del Tentor, Venice",
+            "th": "กาลเล เดล เทนตอร์, เวนิส"
+          },
+          "what": {
+            "en": "A palace museum with textile collections, clothes and furnishings",
+            "th": "พิพิธภัณฑ์ในพระราชวังเก่า มีคอลเลกชันสิ่งทอ เสื้อผ้า และเครื่องเรือน"
+          },
+          "why": {
+            "en": "Workshops: a fashion game for ages 7 to 14 with a perfume activity, and weaving on a small wooden loom (kept afterwards)",
+            "th": "มีเวิร์กชอปเกมแฟชั่นสำหรับอายุ 7 ถึง 14 ปีพร้อมกิจกรรมน้ำหอม และทอผ้าบนกี่ไม้เล็ก (เก็บชุดไว้กลับบ้านได้)"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Palazzo Mocenigo, C. del Tentor, 1992, 30135 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        },
+        {
+          "name": {
+            "en": "Casa di Carlo Goldoni",
+            "th": "บ้านคาร์โล โกลโดนี"
+          },
+          "local": "Casa di Carlo Goldoni",
+          "kind": "museumkid",
+          "area": {
+            "en": "San Polo, Venice",
+            "th": "ซานโปโล, เวนิส"
+          },
+          "what": {
+            "en": "The house where Goldoni played as a boy, with a puppet theatre of original eighteenth-century puppets",
+            "th": "บ้านที่โกลโดนีเคยเล่นสมัยเด็ก มีโรงละครหุ่นที่ใช้หุ่นต้นฉบับศตวรรษที่ 18"
+          },
+          "why": {
+            "en": "Workshop: a puppet theatre that children aged 5 to 10 can take part in",
+            "th": "มีเวิร์กชอปโรงละครหุ่นที่เด็กอายุ 5 ถึง 10 ปีร่วมเล่นได้"
+          },
+          "tip": {
+            "en": "Book at least 10 days ahead; museum admission is included",
+            "th": "จองล่วงหน้าอย่างน้อย 10 วัน ค่าเข้าพิพิธภัณฑ์รวมอยู่แล้ว"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1.3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "req",
+          "q": "Carlo Goldoni's House, S. Polo, 2794, 30125 Venice, Italy",
+          "ok": "2026-11",
+          "src": "https://www.visitmuve.it/en/muve-education/families/"
+        }
     ]
     }
   ]

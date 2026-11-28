@@ -146,6 +146,84 @@
           "q": "Drukgyel Dzong, Paro, Bhutan",
           "ok": "2026-11",
           "src": "https://www.dailybhutan.com/article/travel-to-bhutan-experience-the-charm-of-paro"
+        },
+        {
+          "local": "Paro Taktsang",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thingstodoinbhutan.com/family/",
+          "name": {
+            "th": "เดินขึ้นวัดทักซัง (รังเสือ)",
+            "en": "Tiger's Nest hike"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "พาโร",
+            "en": "Paro"
+          },
+          "what": {
+            "th": "เดินขึ้นหน้าผาครึ่งวันไปยังวัดเหนือเมืองพาโร",
+            "en": "A half-day climb up the cliff to the monastery above Paro"
+          },
+          "why": {
+            "th": "นับธงมนต์ระหว่างทาง ครึ่งทางมีคาเฟ่ขายช็อกโกแลตร้อน",
+            "en": "Count prayer flags on the way; a café halfway sells hot chocolate"
+          },
+          "tip": {
+            "th": "หน้าเว็บบอกว่าเด็ก 6–14 ปีเหมาะที่สุดกับการเดินขึ้น",
+            "en": "The page says ages 6 to 14 suit the climb best"
+          },
+          "q": "Paro Taktsang, Paro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bhutan.travel/journal/editorial/bhutan-is-family-friendly",
+          "name": {
+            "th": "พิพิธภัณฑ์ซิมพลีภูฏาน",
+            "en": "Simply Bhutan (living museum)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเกเนียนลัม ทิมพู",
+            "en": "Genyen Lam, Thimphu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์มีชีวิตเรื่องวิถีหมู่บ้านภูฏาน",
+            "en": "A living museum of Bhutanese village life"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลองยิงธนู กีฬาประจำชาติของภูฏาน",
+            "en": "Children can try archery, Bhutan's national sport"
+          },
+          "q": "Simply Bhutan, Genyen Lam, Thimphu",
+          "ok": "2026-11"
         }
       ]
     }

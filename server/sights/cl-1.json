@@ -175,6 +175,117 @@
           "q": "Chuquicamata, Calama, Chile",
           "ok": "2026-11",
           "src": "https://www.nomades.com/en/blog/how-to-visit-chuquicamata-one-of-the-world-largest-open-pit-mines/"
+        },
+        {
+          "local": "Valle de Marte",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://sanpedroatacama.com/en/is-it-a-good-idea-to-travel-to-san-pedro-de-atacama-with-kids/",
+          "name": {
+            "th": "หุบเขาดาวอังคาร",
+            "en": "Mars Valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ซันเปโดรเดอาตากามา",
+            "en": "San Pedro de Atacama"
+          },
+          "what": {
+            "th": "เนินทรายที่เล่นแซนด์บอร์ดไถลลงมาได้",
+            "en": "Dunes where you can slide down on a sandboard"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าแซนด์บอร์ดที่นี่สนุกที่สุดอย่างหนึ่งสำหรับเด็ก 7–8 ขวบขึ้นไป",
+            "en": "The page calls sandboarding here one of the most exciting things for children aged 7–8 and up"
+          },
+          "q": "Mars Valley, San Pedro de Atacama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Valle del Arcoíris",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://sanpedroatacama.com/en/destination/what-to-visit/valleys-and-viewpoints/",
+          "name": {
+            "th": "หุบเขาสายรุ้ง",
+            "en": "Rainbow Valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริโอกรันเด ห่างซันเปโดรราว 90 กม.",
+            "en": "Río Grande, about 90 km from San Pedro"
+          },
+          "what": {
+            "th": "หุบเขาที่พื้นดินมีสีสดจากแร่ธาตุผสมกัน",
+            "en": "A valley of brightly coloured ground from mixed minerals"
+          },
+          "why": {
+            "th": "พื้นดินสีเขียว แดง ขาว เหลือง และเทา",
+            "en": "Greens, reds, whites, yellows and greys in the ground"
+          },
+          "q": "Valle del Arcoiris, San Pedro de Atacama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Lagunas Escondidas de Baltinache",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://sanpedroatacama.com/en/destination/what-to-visit/lagoons-and-thermal-baths/",
+          "name": {
+            "th": "ลากูนซ่อนเร้นบัลตินาเช",
+            "en": "Baltinache hidden lagoons"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บัลตินาเช",
+            "en": "Baltinache"
+          },
+          "what": {
+            "th": "ลากูนสีฟ้าครามจากภูเขาไฟกลางทะเลทราย หล่อเลี้ยงด้วยน้ำใต้ดิน",
+            "en": "Turquoise lagoons of volcanic origin in the desert, fed by groundwater"
+          },
+          "why": {
+            "th": "น้ำสีฟ้าครามกลางทะเลทราย",
+            "en": "Turquoise water in the middle of the desert"
+          },
+          "q": "Lagunas Escondidas de Baltinache",
+          "ok": "2026-11"
         }
       ]
     },
@@ -443,6 +554,532 @@
           "q": "Museo La Sebastiana, Valparaíso",
           "ok": "2026-11",
           "src": "https://www.expat.com/es/guia/america-del-sur/chile/valparaiso/37524-ocio-y-tiempo-libre-en-valparaiso.html"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://chile.travel/blog/5-actividades-familiares-para-tu-visita-a-santiago-museos-y-parques/",
+          "name": {
+            "th": "สวนอาราอูกาโน",
+            "en": "Parque Araucano"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ลัสกอนเดส",
+            "en": "Las Condes"
+          },
+          "what": {
+            "th": "สวนเมืองขนาดใหญ่ มีสนามหญ้าปิกนิก สวนธีม และทางเดิน",
+            "en": "A large city park with lawns for picnics, themed gardens and paths"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นทันสมัยสำหรับหลายวัย",
+            "en": "Modern playgrounds for different ages"
+          },
+          "q": "Parque Araucano, Las Condes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.eldinamo.cl/entretencion/panoramas/2026/08/05/dia-del-nino-2026-en-santiago-diez-entretenidos-panoramas-para-celebrar-en-familia/",
+          "name": {
+            "th": "สวนบิเซนเตนาริโอ บิตากูรา",
+            "en": "Parque Bicentenario, Vitacura"
+          },
+          "kind": "park",
+          "area": {
+            "th": "บิตากูรา",
+            "en": "Vitacura"
+          },
+          "what": {
+            "th": "สวนเขียวขจี มีที่นั่งพักและพื้นที่ครอบครัว",
+            "en": "A green park with resting places and family spaces"
+          },
+          "why": {
+            "th": "ปิกนิกและใช้เวลากลางแจ้งกับเด็กได้ทั้งวัน",
+            "en": "A picnic and a day outdoors with the children"
+          },
+          "q": "Parque Bicentenario, Av. Bicentenario 3236, Vitacura",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.eldinamo.cl/entretencion/panoramas/2026/08/05/dia-del-nino-2026-en-santiago-diez-entretenidos-panoramas-para-celebrar-en-familia/",
+          "name": {
+            "th": "คิดซาเนีย ซานติอาโก",
+            "en": "KidZania Santiago"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนอาราอูกาโน",
+            "en": "Parque Araucano"
+          },
+          "what": {
+            "th": "เมืองจำลองให้เด็กลองทำอาชีพจริง",
+            "en": "A children’s role-play town where kids try real jobs"
+          },
+          "why": {
+            "th": "เด็กได้เรียนรู้ผ่านการเล่นเป็นอาชีพต่างๆ",
+            "en": "Children learn by playing at jobs"
+          },
+          "q": "KidZania Santiago, Parque Araucano, Las Condes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.eldinamo.cl/entretencion/panoramas/2026/08/05/dia-del-nino-2026-en-santiago-diez-entretenidos-panoramas-para-celebrar-en-familia/",
+          "name": {
+            "th": "ห้องสมุดซานติอาโก",
+            "en": "Biblioteca de Santiago"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนมาตูกานา กินตานอร์มัล",
+            "en": "Matucana, Quinta Normal"
+          },
+          "what": {
+            "th": "ห้องสมุดประชาชน มีกิจกรรมอ่านหนังสือและงานสร้างสรรค์สำหรับเด็ก",
+            "en": "A public library with reading and creative programmes for children"
+          },
+          "why": {
+            "th": "กิจกรรมอ่านหนังสือและสร้างสรรค์สำหรับเด็กและครอบครัว",
+            "en": "Reading and creative activities for children and families"
+          },
+          "q": "Biblioteca de Santiago, Av. Matucana 151, Santiago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chile.travel/?p=72489",
+          "name": {
+            "th": "ลิฟต์ไต่เขากอนเซปซิออน",
+            "en": "Ascensor Concepción"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "บัลปาราอีโซ",
+            "en": "Valparaíso"
+          },
+          "what": {
+            "th": "รถรางไต่เขาเก่าแก่ที่สุดของบัลปาราอีโซ ขึ้นไปทางเดินเกร์บาโซนี",
+            "en": "Valparaíso’s oldest funicular, up to Paseo Gervasoni"
+          },
+          "why": {
+            "th": "นั่งขึ้นเนิน ข้างบนเห็นวิวท่าเรือ",
+            "en": "A ride up the hill with a view of the port at the top"
+          },
+          "tip": {
+            "th": "พกเงินสด ลิฟต์หลายตัวไม่รับบัตร",
+            "en": "Bring cash; many of the lifts take no cards"
+          },
+          "q": "Ascensor Concepción, Esmeralda, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chile.travel/?p=72489",
+          "name": {
+            "th": "ลิฟต์ไต่เขาอาร์ตีเยเรีย",
+            "en": "Ascensor Artillería"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ลานอาดัวนา บัลปาราอีโซ",
+            "en": "Plaza Aduana, Valparaíso"
+          },
+          "what": {
+            "th": "รถรางไต่เขาจากลานอาดัวนาขึ้นไปทางเดิน 21 เดมาโย",
+            "en": "A funicular from Plaza Aduana up to Paseo 21 de Mayo"
+          },
+          "why": {
+            "th": "ขึ้นไปจุดชมวิวที่ดังที่สุดจุดหนึ่งของเมือง",
+            "en": "Up to one of the city’s best-known views"
+          },
+          "tip": {
+            "th": "พกเงินสด ลิฟต์หลายตัวไม่รับบัตร",
+            "en": "Bring cash; many of the lifts take no cards"
+          },
+          "q": "Ascensor Artillería, Plaza Aduana, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://chile.travel/?p=72489",
+          "name": {
+            "th": "จุดชมวิว 21 เดมาโย",
+            "en": "Paseo 21 de Mayo"
+          },
+          "kind": "views",
+          "area": {
+            "th": "บัลปาราอีโซ",
+            "en": "Valparaíso"
+          },
+          "what": {
+            "th": "จุดชมวิวบนเนินเขา หนึ่งในวิวที่ดังที่สุดของเมือง",
+            "en": "A lookout on the hills with one of the city’s most famous views"
+          },
+          "why": {
+            "th": "นั่งลิฟต์ขึ้นไปก็สนุกแล้ว",
+            "en": "The lift ride up is half the fun"
+          },
+          "q": "Paseo 21 de Mayo, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Marítimo Nacional",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chile.travel/?p=72489",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือแห่งชาติ",
+            "en": "National Maritime Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ทางเดิน 21 เดมาโย บัลปาราอีโซ",
+            "en": "Paseo 21 de Mayo, Valparaíso"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แห่งชาติว่าด้วยประวัติศาสตร์ทางเรือของชิลี",
+            "en": "The national museum of Chile’s naval history"
+          },
+          "why": {
+            "th": "แวะในร่มได้ ตรงปลายทางลิฟต์",
+            "en": "An indoor stop at the top of the lift"
+          },
+          "q": "Museo Marítimo Nacional, Veintiuno de Mayo 45, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chile.travel/?p=72489",
+          "name": {
+            "th": "ตลาดเมร์กาโดปวยร์โต",
+            "en": "Mercado Puerto"
+          },
+          "kind": "market",
+          "area": {
+            "th": "ย่านท่าเรือ บัลปาราอีโซ",
+            "en": "Barrio Puerto, Valparaíso"
+          },
+          "what": {
+            "th": "ตลาดที่มีร้านอาหารพื้นบ้านสำหรับมื้อกลางวันแบบดั้งเดิม",
+            "en": "A market with cookshops and restaurants for a traditional lunch"
+          },
+          "why": {
+            "th": "มื้อกลางวันแบบดั้งเดิมริมท่าเรือหลังนั่งลิฟต์ลงมา",
+            "en": "A traditional lunch by the port after the lift ride down"
+          },
+          "q": "Mercado Puerto, Cochrane 117, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 5,000 เปโซชิลี ค่าเข้ารวมเวิร์กชอป",
+            "en": "≈ CLP 5,000 general entry with a workshop"
+          },
+          "book": "none",
+          "src": "https://umatu.cl/30-lugares-para-ir-con-ninos-en-santiago-cuando-llueve/",
+          "name": {
+            "th": "พิพิธภัณฑ์มูเซโอตาเยร์",
+            "en": "Museo Taller"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ย่านยุงไก ซานติอาโก",
+            "en": "Barrio Yungay, Santiago"
+          },
+          "what": {
+            "th": "โรงงานช่างไม้เก่าที่กลายเป็นพิพิธภัณฑ์ มีเครื่องมือกว่า 800 ชิ้น",
+            "en": "A former carpentry workshop turned living museum, with over 800 tools"
+          },
+          "why": {
+            "th": "มีเวิร์กชอปงานฝีมือให้ลองทำ",
+            "en": "Hands-on craft workshops to try"
+          },
+          "q": "Museo Taller, Compañía de Jesús 2784, Santiago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo de Ciencia y Tecnología",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ เด็ก 1,000 เปโซชิลี",
+            "en": "≈ CLP 1,000 children"
+          },
+          "book": "none",
+          "src": "https://umatu.cl/30-lugares-para-ir-con-ninos-en-santiago-cuando-llueve/",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยี ควินตานอร์มัล",
+            "en": "Science and Technology Museum (Quinta Normal)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนควินตานอร์มัล ซานติอาโก",
+            "en": "Parque Quinta Normal, Santiago"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แบบลงมือเล่นแห่งแรกของชิลี มีห้องธรณีวิทยา ดาราศาสตร์ และแม่เหล็กไฟฟ้า",
+            "en": "Chile's first interactive museum, with halls on geology, astronomy and electromagnetism"
+          },
+          "why": {
+            "th": "ห้องจัดแสดงให้ลองเล่นเอง",
+            "en": "Interactive halls to explore"
+          },
+          "q": "Museo de Ciencia y Tecnología, Av. Matucana 536, Santiago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Jardín Botánico Nacional",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ (13–59 ปี) 3,000 เปโซชิลี · เด็ก 5–12 ปี 1,500 เปโซชิลี",
+            "en": "Adults (13–59) CLP 3,000 · children 5–12 CLP 1,500"
+          },
+          "book": "none",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์แห่งชาติ บีญาเดลมาร์",
+            "en": "National Botanical Garden (Viña del Mar)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนเอลโอลิบาร์ บีญาเดลมาร์",
+            "en": "Camino El Olivar, Viña del Mar"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์แห่งชาติที่เอลโอลิบาร์",
+            "en": "The national botanical garden in El Olivar"
+          },
+          "why": {
+            "th": "มีเขาวงกตธรรมชาติให้เดินสำรวจ",
+            "en": "Natural mazes to explore"
+          },
+          "q": "Jardín Botánico Nacional, Camino El Olivar 305, Viña del Mar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Baburizza",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "name": {
+            "th": "พิพิธภัณฑ์พระราชวังบาบูริซซา",
+            "en": "Baburizza Palace museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปาเซโอยูโกสลาโบ บัลปาราอีโซ",
+            "en": "Paseo Yugoslavo, Valparaíso"
+          },
+          "what": {
+            "th": "หนึ่งในพื้นที่ศิลปวัฒนธรรมหลักของบัลปาราอีโซ",
+            "en": "One of Valparaíso's main cultural spaces"
+          },
+          "why": {
+            "th": "มีการเล่านิทานให้เด็กในวันพิเศษ",
+            "en": "Holds storytelling for children on special days"
+          },
+          "q": "Museo Baburizza, Paseo Yugoslavo 176, Valparaíso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parque Cultural de Valparaíso",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://chileestuyo.cl/dia-del-nino-en-vina-del-mar-y-valparaiso-panoramas-para-disfrutar-en-familia/",
+          "name": {
+            "th": "สวนวัฒนธรรมบัลปาราอีโซ",
+            "en": "Valparaíso Cultural Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เนินการ์เซล บัลปาราอีโซ",
+            "en": "Cerro Cárcel, Valparaíso"
+          },
+          "what": {
+            "th": "สวนวัฒนธรรมในเรือนจำเก่าที่จัดวันครอบครัว",
+            "en": "A cultural park in a former prison that holds family days"
+          },
+          "why": {
+            "th": "มีเกมตัวตลก เพ้นต์หน้า และการแสดงหุ่นในวันครอบครัว",
+            "en": "Clown games, face painting and puppet shows on family days"
+          },
+          "q": "Parque Cultural de Valparaíso, Cárcel 471, Valparaíso",
+          "ok": "2026-11"
         }
       ]
     }

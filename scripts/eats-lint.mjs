@@ -15,6 +15,8 @@ const DIR = path.join(ROOT, 'server', 'eats');
 const norm = (x) => String(x || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
 const THAI = /[฀-๿]/;
 export const MIN = 8, MAX = 80;   // 80: the growth plan (owner, 20 Nov 2026) — big cities 70, other towns 40, small ones 22
+// a town the owner asked to go deep on: Hong Kong, 300–400 places with hidden gems and local favourites (owner, 27 Nov 2026)
+export const MAX_TOWN = { 'hk-hongkong': 420, 'mo-macau': 200 };   // Macau: owner, 27 Nov 2026 ("Macau can have more than 40 to 100", then "Raise to 200")
 
 export function lintEats(only) {
   const index = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'stock', 'index.json'), 'utf8'));
@@ -32,7 +34,8 @@ export function lintEats(only) {
       if (seenTown.has(t.place)) errs.push(`${at}: also in ${seenTown.get(t.place)}`);
       seenTown.set(t.place, f);
       const list = Array.isArray(t.places) ? t.places : [], names = new Set(), kinds = [0, 0, 0];
-      if (list.length < MIN || list.length > MAX) errs.push(`${at}: ${list.length} places (want ${MIN}–${MAX})`);
+      const max = MAX_TOWN[t.place] || MAX;
+      if (list.length < MIN || list.length > max) errs.push(`${at}: ${list.length} places (want ${MIN}–${max})`);
       for (const x of list) {
         const w = `${at} "${x && x.name}"`; rows++;
         if (!x || typeof x.name !== 'string' || x.name.trim().length < 2 || x.name.length > 80 || !/[A-Za-z]/.test(x.name)) { errs.push(`${w}: a name in Latin letters, 2–80`); continue; }

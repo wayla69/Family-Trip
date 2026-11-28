@@ -1,0 +1,417 @@
+{
+  "town": "cn-xian",
+  "rounds": [
+    {
+      "town": "cn-xian",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 7 rows without ok; nothing else in the town was re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+      "confirmed": [
+        {
+          "name": "Zui Chang'an",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "醉长安",
+          "evidence": "list for '醉长安 南门 西安': 醉长安, 书院门56号 (inside the South Gate), 'Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Lao Mi Jia Paomo",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Laomijia Dayu Cruded Pancake in Soup",
+          "evidence": "list for '老米家大雨泡馍 西羊市 西安': 127 Xiyangshi, 'Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Wei Jia Liangpi",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Weijia Cold Noodle",
+          "evidence": "list for '魏家凉皮 钟楼 西安': 3 Nanda St (by the Bell Tower), 'Open · Closes 10 PM'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "De Mao Gong",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "德懋恭",
+          "evidence": "list for '德懋恭 西安': store, 'Open now'; place page Lianhu District, 钟楼商圈",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "First Noodle Under the Sun",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "evidence": "the Dayanta listing 'Tianxia No.1 Noodles Dayanta S. Plz', 6X88+F84 A9, has no hours; the branches with hours (6XW8+X34 Yanta N Rd; 含光路) are not the one the row names. A web search found only older travel pages"
+        },
+        {
+          "name": "Miqi Bakery",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "'米旗奶糕钟楼专卖', 619 Dongda St — no hours; the Maky branch with 'Open now' is on E Bangzishi St, not the Bell Tower one"
+        }
+      ],
+      "removed": [
+        {
+          "name": "Chang'an Da Pai Dang",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "reason": "no Bell Tower branch: Maps lists 长安大牌档 at 小寨赛格国际购物中心6楼 ('Open now', Yanta District), Chang'an Snack Booth at 4WXW+J42 Zaohe Rd and one at 长乐西路166号 (Xincheng); a web search names Xiaozhai SEG and Dayuecheng (Dayanta) branches and 'found no 钟楼店' — the row's place is in another district than the sources"
+        }
+      ]
+    },
+    {
+      "town": "cn-xian",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "A new row needs a page dated 2025–2026 that names it and carries a copied sentence (scripts/library-check.cjs), then a map check on Baidu Maps (Google Maps knows little of mainland China): ok only when the map shows the place at the page's address, not closed, with a review from the last six months. Prices marked 'Baidu Maps' are the map's average spend per person.",
+      "agents": "four Haiku agents, five web searches each; 37 rows offered, 17 passed library-check.cjs, 11 went in",
+      "added": [
+        {
+          "name": "Haidilao (Wanhecheng)",
+          "src": "https://m.thepaper.cn/newsDetail_forward_31811751",
+          "date": "2025-10",
+          "quote": "海底捞首家“宝宝餐厅”在西安万和城店正式营业，面向3至12岁儿童开放。",
+          "map": "Baidu 海底捞火锅(万和城店), 长缨西路1号 万和城6层, ¥90 a person, newest reviews 2026-11-07"
+        },
+        {
+          "name": "Ruixiangyuan Mipi Roujiamo",
+          "src": "https://m.dianping.com/discovery/2339010042",
+          "date": "2026-04",
+          "quote": "糖坊街附近巨好吃的三秦套餐",
+          "map": "Baidu 瑞香缘米皮肉夹馍(莲湖店), 糖坊街43-4号, ¥17, newest reviews 2026-10-03"
+        },
+        {
+          "name": "Li Weiyi Meatball Hulatang",
+          "src": "https://post.smzdm.com/p/adonzm8x/",
+          "date": "2025-07",
+          "quote": "李唯一肉丸胡辣汤·洒金桥是西安人的“清晨闹钟”",
+          "map": "Baidu 清真李唯一优质肉丸糊辣汤, 洒金桥127号, ¥13, newest reviews 2026-10-09"
+        },
+        {
+          "name": "Shaanxi Science and Technology Museum",
+          "src": "https://m.sohu.com/a/992992811_121106869/",
+          "date": "2026-03",
+          "quote": "为亲子家庭搭建了学习科学知识的互动平台",
+          "map": "Baidu 陕西科技馆, 东新街252号, Wednesday–Sunday, newest reviews 2026-10-17"
+        },
+        {
+          "name": "Xi'an Art Museum",
+          "src": "https://gs.ctrip.com/html5/you/sight/7/121293.html",
+          "date": "2025-12",
+          "quote": "西安美术馆坐落于大唐不夜城贞观文化广场",
+          "map": "Baidu 西安美术馆, Tuesday–Sunday, newest reviews 2026-11-05"
+        },
+        {
+          "name": "Han Yangling Museum",
+          "src": "https://www.163.com/dy/article/K4BCK5JU05568R6X.html",
+          "date": "2025-07",
+          "quote": "这里不仅可以看文物，还能体验模拟考古",
+          "map": "Baidu 汉景帝阳陵博物院, 机场路东段 (Xianyang), newest reviews 2026-11-10"
+        },
+        {
+          "name": "Chang'an Twelve Hours Theme Street",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "date": "2026-05",
+          "quote": "室内仿唐街区，NPC互动、小剧场演出，孩子可以穿汉服沉浸式“穿越”回唐朝",
+          "map": "Baidu 长安十二时辰主题街区, 雁南一路9号, newest reviews 2026-11-07"
+        },
+        {
+          "name": "Wasai Happy Planet",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "date": "2026-05",
+          "quote": "孩子戴上MR眼镜，虚拟海洋生物与现实造景融为一体，可以和大海龟互动、探索珊瑚群",
+          "map": "Baidu 哇塞快乐星球, 未央路145号, newest reviews 2026-10-07"
+        },
+        {
+          "name": "Huaxia Wenlv Xi'an Resort",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "date": "2026-05",
+          "quote": "海洋公园有透明隧道可看海洋生物",
+          "map": "Baidu 华夏文旅西安度假区, 华文路1518号, newest reviews 2026-11-04"
+        },
+        {
+          "name": "Duyi Ruins Park",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "date": "2026-05",
+          "quote": "万亩开阔草坪，被宝妈称为“小草原”，放风筝、搭帐篷、肆意奔跑，停车方便",
+          "map": "Baidu 杜邑遗址公园, newest reviews 2026-11-08"
+        },
+        {
+          "name": "Chanba National Wetland Park",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "date": "2026-05",
+          "quote": "周末常有免费自然研学活动，带孩子走观鸟栈道、喂鱼喂鸭",
+          "map": "Baidu 西安浐灞国家湿地公园, 启源三路1号, newest reviews 2026-11-06"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Element Fresh, Xi'an Biang Biang Noodle House",
+          "why": "only source a generic GitHub-hosted 'Xian Travel' blog that reads machine-made"
+        },
+        {
+          "name": "Xi'an Beilin Museum",
+          "why": "already in the library as 'Stele Forest (Beilin Museum)'"
+        },
+        {
+          "name": "Ma'erli meatball soup",
+          "why": "Baidu Maps finds no such shop"
+        },
+        {
+          "name": "Xi'an Silk Road Happy World, Chang'an Park",
+          "why": "Baidu lists only a gate or a bare point with no reviews"
+        },
+        {
+          "name": "12 shops from a bilibili food guide, Cuihua, Taiping, Nanwutai, Qianling, Tang Dynasty show, Cherry Valley and 6 more",
+          "why": "failed library-check.cjs (name or quote not on the page, or no date)"
+        }
+      ],
+      "estimates": "Ages ([1,1,1,1]) and visit hours are not printed on these pages; the format requires them, so they are neutral placeholders for the owner to review.",
+      "recheck_of_older_rows": {
+        "town": "cn-xian",
+        "kind": "eats",
+        "checked": "2026-11",
+        "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+        "scope": "the 7 rows without ok; nothing else in the town was re-checked",
+        "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+        "confirmed": [
+          {
+            "name": "Zui Chang'an",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "page_name": "醉长安",
+            "evidence": "list for '醉长安 南门 西安': 醉长安, 书院门56号 (inside the South Gate), 'Open now'",
+            "ok": "2026-11"
+          },
+          {
+            "name": "Lao Mi Jia Paomo",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "page_name": "Laomijia Dayu Cruded Pancake in Soup",
+            "evidence": "list for '老米家大雨泡馍 西羊市 西安': 127 Xiyangshi, 'Open now'",
+            "ok": "2026-11"
+          },
+          {
+            "name": "Wei Jia Liangpi",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "page_name": "Weijia Cold Noodle",
+            "evidence": "list for '魏家凉皮 钟楼 西安': 3 Nanda St (by the Bell Tower), 'Open · Closes 10 PM'",
+            "ok": "2026-11"
+          },
+          {
+            "name": "De Mao Gong",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "page_name": "德懋恭",
+            "evidence": "list for '德懋恭 西安': store, 'Open now'; place page Lianhu District, 钟楼商圈",
+            "ok": "2026-11"
+          }
+        ],
+        "kept_without_ok": [
+          {
+            "name": "First Noodle Under the Sun",
+            "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+            "evidence": "the Dayanta listing 'Tianxia No.1 Noodles Dayanta S. Plz', 6X88+F84 A9, has no hours; the branches with hours (6XW8+X34 Yanta N Rd; 含光路) are not the one the row names. A web search found only older travel pages"
+          },
+          {
+            "name": "Miqi Bakery",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "evidence": "'米旗奶糕钟楼专卖', 619 Dongda St — no hours; the Maky branch with 'Open now' is on E Bangzishi St, not the Bell Tower one"
+          }
+        ],
+        "removed": [
+          {
+            "name": "Chang'an Da Pai Dang",
+            "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+            "reason": "no Bell Tower branch: Maps lists 长安大牌档 at 小寨赛格国际购物中心6楼 ('Open now', Yanta District), Chang'an Snack Booth at 4WXW+J42 Zaohe Rd and one at 长乐西路166号 (Xincheng); a web search names Xiaozhai SEG and Dayuecheng (Dayanta) branches and 'found no 钟楼店' — the row's place is in another district than the sources"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Xi'an; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Spacelab Zero-Gravity Restaurant (Livat)",
+          "page_name": "SPACELAB失重餐厅(西安荟聚店)",
+          "src": "https://www.amap.com/search?query=SPACELAB%E5%A4%B1%E9%87%8D%E9%A4%90%E5%8E%85(%E8%A5%BF%E5%AE%89%E8%8D%9F%E8%81%9A%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "家庭聚餐 · 儿童友好 · 孩子好喜欢"
+        },
+        {
+          "name": "Green Tea Restaurant (Joy City, Big Wild Goose Pagoda)",
+          "page_name": "绿茶餐厅(西安大悦城店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E8%A5%BF%E5%AE%89%E5%A4%A7%E6%82%A6%E5%9F%8E%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "有宝宝椅 · 铁板豆腐，得到孩子的喜爱"
+        },
+        {
+          "name": "Jia'er Mengdou Children's Restaurant (Qujiang)",
+          "page_name": "佳儿萌豆儿童辅食餐厅(龙湖曲江天街店)",
+          "src": "https://www.amap.com/search?query=%E4%BD%B3%E5%84%BF%E8%90%8C%E8%B1%86%E5%84%BF%E7%AB%A5%E8%BE%85%E9%A3%9F%E9%A4%90%E5%8E%85(%E9%BE%99%E6%B9%96%E6%9B%B2%E6%B1%9F%E5%A4%A9%E8%A1%97%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "宝宝放心餐 · 儿童友好"
+        },
+        {
+          "name": "Delhi Darbar Indian Restaurant (Qujiang)",
+          "page_name": "DELHIDARBAR新德里印度餐厅",
+          "src": "https://www.amap.com/search?query=DELHIDARBAR%E6%96%B0%E5%BE%B7%E9%87%8C%E5%8D%B0%E5%BA%A6%E9%A4%90%E5%8E%85&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Three Monkeys Cafe (Fengyukou)",
+          "page_name": "三只猴子茶餐厅",
+          "src": "https://www.amap.com/search?query=%E4%B8%89%E5%8F%AA%E7%8C%B4%E5%AD%90%E8%8C%B6%E9%A4%90%E5%8E%85&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-26",
+          "map": "Amap: open, not marked closed, newest review 2026-10-26",
+          "quote": "家庭聚会 · 亲子友好 · 茶餐厅旁边就可以下河道玩水 约会 遛娃 闺蜜小聚都好适合"
+        },
+        {
+          "name": "City Wall West Garden Playground",
+          "page_name": "环城西苑儿童乐园",
+          "src": "https://www.amap.com/search?query=%E7%8E%AF%E5%9F%8E%E8%A5%BF%E8%8B%91%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "环城西苑儿童乐园是城墙下超棒的免费遛娃地，设施丰富齐全"
+        },
+        {
+          "name": "Neobio Play Park (Intime)",
+          "page_name": "奈尔宝·儿童乐园·亲子餐厅(西安银泰店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E8%A5%BF%E5%AE%89%E9%93%B6%E6%B3%B0%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-29",
+          "map": "Amap: open, not marked closed, newest review 2026-10-29",
+          "quote": "儿童乐园 · 亲子DIY · 绘本阅读 · 全软包防护"
+        },
+        {
+          "name": "Luban Fantasy Park (Tang West Market)",
+          "page_name": "鲁班奇幻乐园西市店",
+          "src": "https://www.amap.com/search?query=%E9%B2%81%E7%8F%AD%E5%A5%87%E5%B9%BB%E4%B9%90%E5%9B%AD%E8%A5%BF%E5%B8%82%E5%BA%97&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-03",
+          "map": "Amap: open, not marked closed, newest review 2026-09-03",
+          "quote": "儿童运动探险 · 陪朋友遛娃，不曾想把自己遛Hai了"
+        },
+        {
+          "name": "Octonauts Adventure Park",
+          "page_name": "海底小纵队探险乐园",
+          "src": "https://www.amap.com/search?query=%E6%B5%B7%E5%BA%95%E5%B0%8F%E7%BA%B5%E9%98%9F%E6%8E%A2%E9%99%A9%E4%B9%90%E5%9B%AD&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-27",
+          "map": "Amap: open, not marked closed, newest review 2026-10-27",
+          "quote": "儿童乐园 · 亲子乐园的项目很精彩，孩子玩到最后都不肯走"
+        },
+        {
+          "name": "Tandong Gongchang Cave Play Park (Minle Yuan)",
+          "page_name": "探洞工场(西安旗舰店)",
+          "src": "https://www.amap.com/search?query=%E6%8E%A2%E6%B4%9E%E5%B7%A5%E5%9C%BA(%E8%A5%BF%E5%AE%89%E6%97%97%E8%88%B0%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-24",
+          "map": "Amap: open, not marked closed, newest review 2026-10-24",
+          "quote": "儿童乐园 · 亲子DIY · 儿童探险"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "可爱的你秦岭四宝亲子餐厅",
+          "why": "four reviews, nothing about children"
+        },
+        {
+          "name": "绿茶餐厅 (益田假日里)",
+          "why": "a second Green Tea; kept the one by the Big Wild Goose Pagoda"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Xi'an; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Tangmao Courtyard Shaanxi Kitchen (Datang Everbright City)",
+          "page_name": "唐猫庭院·千年陕菜(大唐不夜城店)",
+          "src": "https://www.amap.com/search?query=%E5%94%90%E7%8C%AB%E5%BA%AD%E9%99%A2%C2%B7%E5%8D%83%E5%B9%B4%E9%99%95%E8%8F%9C(%E5%A4%A7%E5%94%90%E4%B8%8D%E5%A4%9C%E5%9F%8E%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-01",
+          "map": "Amap: open, not marked closed, newest review 2026-10-01",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        },
+        {
+          "name": "Jingxiaoshuan Beijing Hotpot (Hi-tech Zone)",
+          "page_name": "京小涮涮羊肉(高新店)",
+          "src": "https://www.amap.com/search?query=%E4%BA%AC%E5%B0%8F%E6%B6%AE%E6%B6%AE%E7%BE%8A%E8%82%89(%E9%AB%98%E6%96%B0%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "儿童餐 · 家庭聚餐 · 还有宝宝餐"
+        },
+        {
+          "name": "Bigger Pizza Buffet (Nanfeihong)",
+          "page_name": "比格比萨自助(西安南飞鸿店)",
+          "src": "https://www.amap.com/search?query=%E6%AF%94%E6%A0%BC%E6%AF%94%E8%90%A8%E8%87%AA%E5%8A%A9(%E8%A5%BF%E5%AE%89%E5%8D%97%E9%A3%9E%E9%B8%BF%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-26",
+          "map": "Amap: open, not marked closed, newest review 2026-09-26",
+          "quote": "还有小蛋糕和冰激凌 小孩子也特别喜欢 非常值得去"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "澜鲸水上森林餐厅",
+          "why": "its review about children complains the pond and boats are dirty"
+        },
+        {
+          "name": "雅泰来, Toyo·童肴",
+          "why": "nothing about children on the page / one review only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Xi'an; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Sufuji Seafood & Dim Sum (Lifeng City)",
+          "page_name": "苏福记海鲜佬·点心(丈八东路立丰城店)",
+          "src": "https://www.amap.com/search?query=%E8%8B%8F%E7%A6%8F%E8%AE%B0%E6%B5%B7%E9%B2%9C%E4%BD%AC%C2%B7%E7%82%B9%E5%BF%83(%E4%B8%88%E5%85%AB%E4%B8%9C%E8%B7%AF%E7%AB%8B%E4%B8%B0%E5%9F%8E%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "儿童餐"
+        },
+        {
+          "name": "Zhuxiansheng Bamboo Banquet (Greenland Centre)",
+          "page_name": "竹鲜笙全竹宴(绿地中心店)",
+          "src": "https://www.amap.com/search?query=%E7%AB%B9%E9%B2%9C%E7%AC%99%E5%85%A8%E7%AB%B9%E5%AE%B4(%E7%BB%BF%E5%9C%B0%E4%B8%AD%E5%BF%83%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-01",
+          "map": "Amap: open, not marked closed, newest review 2026-10-01",
+          "quote": "儿童餐 · 适合家庭 · 儿童友好"
+        },
+        {
+          "name": "Xibei Northwest Kitchen (Gemdale Plaza)",
+          "page_name": "西贝(金地广场店)",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E8%B4%9D(%E9%87%91%E5%9C%B0%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-08",
+          "map": "Amap: open, not marked closed, newest review 2026-10-08",
+          "quote": "儿童套餐丰富 · 儿童餐质量在线"
+        },
+        {
+          "name": "Huaiyang Fu (MixC Xi'an)",
+          "page_name": "淮扬府(西安万象城·园林景观店)",
+          "src": "https://www.amap.com/search?query=%E6%B7%AE%E6%89%AC%E5%BA%9C(%E8%A5%BF%E5%AE%89%E4%B8%87%E8%B1%A1%E5%9F%8E%C2%B7%E5%9B%AD%E6%9E%97%E6%99%AF%E8%A7%82%E5%BA%97)&city=610100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童餐 · 还带的娃 · 还给赠送了宝宝餐"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "雅泰来中西餐厅",
+          "why": "no children's tag or review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

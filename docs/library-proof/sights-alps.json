@@ -1,0 +1,383 @@
+{
+ "kind": "sights",
+ "checked": "2026-11",
+ "how": "Each row Google Maps flagged on 2026-11-24 was looked at again: the row's own tip for a season it already names, a fresh Maps search on the address (and the local name) to see whether Maps landed on this very place, then one web search or the place's own site. A winter or between-seasons closure is a season (noted in the tip where missing); a closure with no reopening date or a rebuild of more than about six months is a removal; a museum that moved within its town keeps its row with the new address.",
+ "rows": [
+  {
+   "file": "server/sights/at-1.json",
+   "town": "at-hallstatt",
+   "name": "Dachstein Giant Ice Cave",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Open 1 May–1 November 2026\"; Maps \"Temporarily closed\" is the winter closure."
+  },
+  {
+   "file": "server/sights/at-1.json",
+   "town": "at-salzburg",
+   "name": "Hellbrunn Palace and Trick Fountains",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Open daily 28 March – 1 November 2026\"; Maps shows the winter closure."
+  },
+  {
+   "file": "server/sights/at-1.json",
+   "town": "at-salzburg",
+   "name": "Salzburg Open-Air Museum",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Open daily ... from spring to autumn; Advent weekends from 28 November\"."
+  },
+  {
+   "file": "server/sights/at-1.json",
+   "town": "at-salzburg",
+   "name": "Leopoldskron Outdoor Pool",
+   "verdict": "season",
+   "evidence": "Maps: \"Freibad Leopoldskron · Public swimming pool · Temporarily closed\" (outdoor pool, off season). Salzburg24/MeinBezirk: the Lepi opened 8 May 2026 and stayed open daily until 20 September 2026. Season added to tip.",
+   "src": "https://www.salzburg24.at/news/salzburg/stadt/neue-rutsche-und-frueher-start-alles-zur-freibad-saison-2026-in-der-stadt-salzburg-art-322346"
+  },
+  {
+   "file": "server/sights/at-1.json",
+   "town": "at-vienna",
+   "name": "Leos Rumpelkiste",
+   "verdict": "removed",
+   "evidence": "Re-run of Maps on \"Rumpelkiste, Blumauergasse 1a, Wien\" lands on this very place: \"Rumpelkiste · Indoor playground · Temporarily closed\", no hours. An indoor playground has no season; its site (rumpelkiste.wien) was last modified 2025-02-21 and names no reopening; web search found no news of a reopening date. Reopening unknown -> removed (Vienna keeps 28 sights, 16 indoor).",
+   "src": "https://www.rumpelkiste.wien/"
+  },
+  {
+   "file": "server/sights/ch-1.json",
+   "town": "ch-lucerne",
+   "name": "Stanserhorn CabriO",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Season from 11 April 2026\"; the cable car runs summer only."
+  },
+  {
+   "file": "server/sights/ch-1.json",
+   "town": "ch-lucerne",
+   "name": "Musegg Wall",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Open 1 April–1 November ...; closed in winter\"."
+  },
+  {
+   "file": "server/sights/ch-2.json",
+   "town": "ch-interlaken",
+   "name": "BLS winter boat on Lake Thun",
+   "verdict": "keep",
+   "evidence": "Maps landed on the BLS ship station office in Thun (a tour-operator listing); the tip already says one winter boat runs daily on Lake Thun."
+  },
+  {
+   "file": "server/sights/ch-2.json",
+   "town": "ch-interlaken",
+   "name": "Brienz Rothorn Railway",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Seasonal: 6 June–25 October 2026 to the summit\"."
+  },
+  {
+   "file": "server/sights/ch-2.json",
+   "town": "ch-interlaken",
+   "name": "Spiez Castle",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Museum and café open 1 May to 31 October\"."
+  },
+  {
+   "file": "server/sights/ch-2.json",
+   "town": "ch-interlaken",
+   "name": "Oberhofen Castle",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Season May to October\"."
+  },
+  {
+   "file": "server/sights/ch-2.json",
+   "town": "ch-interlaken",
+   "name": "Allmendhubel",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"The funicular is closed 19 October to 11 December 2026\"."
+  },
+  {
+   "file": "server/sights/ch-2.json",
+   "town": "ch-interlaken",
+   "name": "Reichenbach Falls",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"The funicular runs May to October only\"; the falls themselves are a natural site."
+  },
+  {
+   "file": "server/sights/ch-3.json",
+   "town": "ch-geneva",
+   "name": "Swiss Vapeur Parc",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"A seasonal park ... check the 2027 dates\"."
+  },
+  {
+   "file": "server/sights/ch-3.json",
+   "town": "ch-geneva",
+   "name": "Geneva Adventure Park (Evaux)",
+   "verdict": "season",
+   "evidence": "Maps: \"Geneva Adventure Park · Parc Aventure Genève · Temporarily closed\" (off season). loisirs.ch: \"De mars à novembre\"; geneve.com lists it closed on Mondays. Season added to tip.",
+   "src": "https://www.loisirs.ch/loisirs/17018/parc-aventure-de-geneve"
+  },
+  {
+   "file": "server/sights/ch-3.json",
+   "town": "ch-zermatt",
+   "name": "Sunnegga and Wolli's Adventure Park at Leisee",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"The play areas are for the snow-free season\"."
+  },
+  {
+   "file": "server/sights/ch-3.json",
+   "town": "ch-zermatt",
+   "name": "Snowli Kids Village ski school",
+   "verdict": "keep",
+   "evidence": "Maps landed on another place: \"Snow Kids Village Schönried\" (Saanen), not Zermatt; the row is a winter activity and its tip says so."
+  },
+  {
+   "file": "server/sights/ch-3.json",
+   "town": "ch-zurich",
+   "name": "Seebad Utoquai",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Season 2026 ran 11 April–25 October; check the 2027 dates\"."
+  },
+  {
+   "file": "server/sights/de-1.json",
+   "town": "de-berlin",
+   "name": "Waldhochseilgarten Jungfernheide",
+   "verdict": "season",
+   "evidence": "Maps: \"Waldhochseilgarten Jungfernheide · High ropes course · Temporarily closed\" (winter break). The park's own site gives its opening hours \"validFrom 2026-03-07\". Season added to tip.",
+   "src": "https://www.waldhochseilgarten-jungfernheide.de/"
+  },
+  {
+   "file": "server/sights/de-1.json",
+   "town": "de-berlin",
+   "name": "Kinderbad at Monbijoux Park",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Pool season is May to August\"."
+  },
+  {
+   "file": "server/sights/de-1.json",
+   "town": "de-cologne",
+   "name": "Cologne City Museum",
+   "verdict": "keep",
+   "evidence": "Address updated. Maps marks the old Zeughaus address \"Permanently closed\"; a Maps search for \"Kölnisches Stadtmuseum, Minoritenstraße 11, Köln\" lands on \"Kölnisches Stadtmuseum · Museum · Minoritenstraße 13, 50667 Köln · Closed · Opens 10 AM\". Cologne Tourism: after water damage the museum moved from the Zeughaus (1958–2017) to its interim home in the former Franz Sauer fashion house, Minoritenstraße 13. Same museum, same town: area, what and q updated, row kept.",
+   "src": "https://www.cologne-tourism.com/arts-culture/sights/detail/cologne-city-museum"
+  },
+  {
+   "file": "server/sights/de-1.json",
+   "town": "de-hamburg",
+   "name": "Energieberg Georgswerder",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"The season ends on 31 October each year\"."
+  },
+  {
+   "file": "server/sights/de-1.json",
+   "town": "de-heidelberg",
+   "name": "Märchenparadies Königstuhl",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Season 2026 about 14 March–11 November\"."
+  },
+  {
+   "file": "server/sights/de-1.json",
+   "town": "de-munich",
+   "name": "Munich Christkindlmarkt at Marienplatz",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Open 20 Nov–24 Dec 2026\"; Maps' place page still shows the between-markets status."
+  },
+  {
+   "file": "server/sights/de-1.json",
+   "town": "p-neuschwanstein",
+   "name": "Marienbrücke and Pöllat Gorge",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"the gorge and bridge are closed in winter, usually about November to March\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-alps",
+   "name": "Gorges du Fier",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Seasonal: reopened 15 March 2026 ... may be closed in winter\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-alps",
+   "name": "Mont Blanc Museum",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"closed 2 November to 15 December 2026\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-alps",
+   "name": "Lake Annecy Ecomuseum",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Opening is seasonal ... check winter hours\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-alps",
+   "name": "Parc de Merlet",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"2026 season May to September\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-alps",
+   "name": "Le Semnoz",
+   "verdict": "season",
+   "evidence": "Maps: \"Station du Semnoz · Ski resort · Temporarily closed\" (between seasons). Skiinfo and the town of Annecy: the 2026–27 ski season is planned 18 December 2026 to 28 March 2027; Alti-mag lists summer activities. Season added to tip.",
+   "src": "https://www.skiinfo.fr/alpes-du-nord/le-semnoz/station-de-ski.html"
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-alps",
+   "name": "Acro’Aventures Talloires",
+   "verdict": "season",
+   "evidence": "Maps: \"ACRO' AVENTURES TALLOIRES · High ropes course · Temporarily closed\". The operator's Talloires page lists a \"Fermeture annuelle\" and says only its Reignier park \"reste ouvert toute l'année\". Season added to tip.",
+   "src": "https://www.acro-aventures.com/talloires/"
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-montstmichel",
+   "name": "Écomusée de la Baie du Mont-Saint-Michel",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"outside holidays hours are short, so check\"; a small seasonal museum in winter."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-provence",
+   "name": "Parc Spirou Provence",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"The 2026 season ran to 11 November, so check the 2027 opening dates\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-strasbourg",
+   "name": "Montagne des Singes",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"2026 season ended 11 November, usually reopens in March\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-strasbourg",
+   "name": "Volerie des Aigles",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"2026 season ended 11 November, reopens in spring\"."
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-strasbourg",
+   "name": "Colmar little train",
+   "verdict": "season",
+   "evidence": "Maps: \"PETIT TRAIN TOURISTIQUE de COLMAR (VERT) · Temporarily closed\" (off season). Tourisme Colmar: the little train runs daily April to October (2025 run 5 April–19 October). Season added to tip.",
+   "src": "https://tourisme-colmar.com/en/whats-on/events/event-calendar/F235012869_little-tourist-train-"
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-strasbourg",
+   "name": "Base Nautique Colmar-Houssen",
+   "verdict": "season",
+   "evidence": "Maps: \"Base Nautique Colmar Houssen · Swimming lake · Temporarily closed\" (off season). Local agenda (jds.fr): the 2026 summer season ran 20 May–27 September. Season added to tip.",
+   "src": "https://www.jds.fr/colmar/lac-et-plan-d-eau/base-nautique-et-plan-d-eau-de-colmar-houssen-5356_L"
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "fr-strasbourg",
+   "name": "Alsatian Museum",
+   "verdict": "removed",
+   "evidence": "Maps re-run: \"Alsatian Museum · Musée alsacien · Temporarily closed\". Strasbourg museums: closed for major works since 7 July 2025 (roof and the permanent route); the March 2025 press release planned a reopening at the end of the first half of 2027, the city's hours page now says \"Fermé - Travaux\" until 1 June 2028. Long rebuild -> removed (Strasbourg keeps 24 sights).",
+   "src": "https://www.musees.strasbourg.eu/documents/d/musees/2025-03-07_dp_fermeture-du-musee-alsacien"
+  },
+  {
+   "file": "server/sights/fr-2.json",
+   "town": "p-disney-paris",
+   "name": "France Miniature",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Open 4 April to 1 November 2026 ...; closed in winter\"."
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-amalfi",
+   "name": "Ceramics Museum, Villa Guariglia",
+   "verdict": "removed",
+   "evidence": "Maps re-run on \"Museo della Ceramica Villa Guariglia Vietri\" lists \"Museo della Ceramica di Villa Guariglia\" as \"Temporarily closed\". A museum with no season; no page found with a reopening date (listings are undated or from 2023). Reopening unknown -> removed (Amalfi keeps 25 sights). Unsure: the closure's cause is not known.",
+   "src": "https://www.museionline.info/musei/museo-provinciale-della-ceramica"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-dolomites",
+   "name": "Alpe di Siusi cable car",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Summer season 22 May–2 Nov 2026, winter from 5 Dec 2026 ...; the lift is closed in between\"."
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-dolomites",
+   "name": "Messner Mountain Museum Firmian",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Open mid-March to early November ...; closed for the winter now\"."
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-dolomites",
+   "name": "Messner Mountain Museum Corones",
+   "verdict": "keep",
+   "evidence": "the row's tip already names the season: \"Winter season 28 Nov 2026–11 Apr 2027\"."
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-dolomites",
+   "name": "Tuffalm",
+   "verdict": "season",
+   "evidence": "Maps: \"Tuffalm · Malga Tuff · Temporarily closed\" (a mountain hut). Südtirolerland: open in summer and until early January, closed in winter (January to mid-April); Seiser Alm gives other winter dates. Season added to tip (dates noted as differing).",
+   "src": "https://www.suedtirolerland.it/de/highlights/tierisches-suedtirol/tuff-alm-in-voels/"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-dolomites",
+   "name": "Prösels Castle",
+   "verdict": "season",
+   "evidence": "Maps: \"Castel Prösels · Castle · Temporarily closed\". The castle's own page: guided tours \"Every day, except Saturday 01.05. - 31.10.\", plus some winter tours. Season added to tip.",
+   "src": "https://schloss-proesels.seiseralm.it/en/castle/opening-times.html"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-dolomites",
+   "name": "Merano 2000",
+   "verdict": "season",
+   "evidence": "Maps: \"Talstation Seilbahn Meran 2000 · Mountain cable car · Temporarily closed\". Meran 2000's own site: \"Il comprensorio é chiuso. NEW OPENING DATE: 04.12.2026\". Season added to tip.",
+   "src": "https://www.meran2000.com/it"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-florence",
+   "name": "Cavallino Matto",
+   "verdict": "season",
+   "evidence": "Maps: \"CavallinoMatto · Theme park · Temporarily closed\" (winter). A seasonal park: spring to autumn; a 2026 guide gives the opening day as 4 April; the park's site (modified 19 Nov 2026) announces its 2026 new ride. The old tip \"Open every day\" was wrong in winter; season added to tip.",
+   "src": "https://www.cavallinomatto.it/"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-florence",
+   "name": "San Silvestro mining park",
+   "verdict": "season",
+   "evidence": "Maps: \"Parco Archeominerario di San Silvestro · Park · Temporarily closed\". The Ministry of Culture listing says to check the park's site for days and hours; the Val di Cornia parks' 2026 flyers cover the summer season. Seasonal note added to tip.",
+   "src": "https://cultura.gov.it/luogo/parco-archeominerario-di-san-silvestro"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-milan",
+   "name": "Bagni Misteriosi",
+   "verdict": "season",
+   "evidence": "Maps: \"Bagni Misteriosi · Outdoor swimming pool · Temporarily closed\". Mentelocale/Milanofree: the pool opened for summer on 1 June 2026. Season added to tip.",
+   "src": "https://www.milanofree.it/milano/eventi/piscine-estive-a-milano-2026-centri-balneari-comunali-orari-e-consigli.html"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-rome",
+   "name": "Museum of Illusions",
+   "verdict": "removed",
+   "evidence": "Maps re-run lands on this very place: \"Museo delle Illusioni Roma · Museum · Via Merulana, 17 · Temporarily closed\", no hours. The museum's site still lists Rome but says online ticket sales are \"temporarily unavailable\"; no page gives a reopening date. Reopening unknown -> removed (Rome keeps 33 sights). Unsure: the site still invites visitors to buy at the ticket office.",
+   "src": "https://www.museoillusioni.it/"
+  },
+  {
+   "file": "server/sights/it-1.json",
+   "town": "it-sicily",
+   "name": "Ursino Castle and Civic Museum, Catania",
+   "verdict": "removed",
+   "evidence": "Maps re-run: \"Ursino Castle · Castello Ursino · Temporarily closed\". La Sicilia (May 2026) and others: closed since 7 February 2025 for a restoration of about 4 million euros, the Civic Museum's rooms being rebuilt, reopening expected in 2027. Long rebuild -> removed (Sicily keeps 25 sights).",
+   "src": "https://www.lasicilia.it/news/cultura-e-spettacoli/3040586/siti-culturali-di-catania-l-obiettivo-e-1-milione-di-incassi-e-il-castello-ursino-dovrebbe-riaprire-il-2027.html"
+  }
+ ]
+}

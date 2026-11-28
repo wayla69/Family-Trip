@@ -1,0 +1,270 @@
+{
+ "kind": "eats",
+ "checked": "2026-11",
+ "how": "Each flagged row re-opened on Google Maps (English UI) with its own map query and, where it has one, its local name; the place's address was compared with the row. 'Permanently closed' on this very place, or 'Temporarily closed' with no reopening date found → removed; a regular seasonal closure → kept with a note; a closed branch of a place open elsewhere or a namesake → kept. One or two web searches for each temporary closure. No town fell under its minimums, so nothing was added.",
+ "rows": [
+  {
+   "file": "server/eats/jp-1.json",
+   "town": "jp-tokyo",
+   "name": "BørneLund Flagship Store",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'BorneLund ボーネルンド 本店', 1-3-12 Jingumae, Shibuya (Gibraltar Life Harajuku Bldg 1F): 'Permanently closed' (also for the query 'ボーネルンド 本店 神宮前')."
+  },
+  {
+   "file": "server/eats/jp-1.json",
+   "town": "jp-kyoto",
+   "name": "Honke Owariya Honten",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Honke Owariya Main Branch 本家尾張屋 本店', 322 Niomontsukinukecho, Nakagyo: 'Permanently closed' (also for '本家尾張屋 本店 京都'). Tabelog holds the listing because the closure period is unsettled; a review says the main shop closed on 11 January.",
+   "src": "https://tabelog.com/kyoto/A2601/A260202/26000657/"
+  },
+  {
+   "file": "server/eats/jp-1.json",
+   "town": "jp-kyoto",
+   "name": "Tempura Izakaya KYOTO GATTEN",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Wagyu Tempura Izakaya KYOTO GATTEN 酒と肉天ぷら 勝天', 170 Kashiwayacho, Nakagyo (Katsuya Bldg 1F): 'Permanently closed' (also for the Japanese name)."
+  },
+  {
+   "file": "server/eats/jp-1.json",
+   "town": "jp-kyoto",
+   "name": "Tsuroku",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Tsuroku つろく', 51 Matsuyacho, Nakagyo: 'Temporarily closed', no hours. One web search found no reopening date (Tabelog's hours field empty) → temporarily closed with no date = removed."
+  },
+  {
+   "file": "server/eats/jp-1.json",
+   "town": "jp-kyoto",
+   "name": "Omen Kodai-ji",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Omen Kodai-ji Shop 名代おめん 高台寺店', 362-2 Masuyacho, Higashiyama: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/jp-1.json",
+   "town": "jp-hokkaido",
+   "name": "Furano Wine House",
+   "verdict": "season",
+   "evidence": "Google Maps 2026-11-24: 'Furano Wine House ふらのワインハウス', Shimizuyama, Furano: 'Temporarily closed'. Rurubu's listing: open daily, '4月、11月メンテナンス休業あり' (maintenance closures in April and November) — today is in November. Season note added to why in both languages.",
+   "src": "https://rurubu.jp/andmore/spot/80001193"
+  },
+  {
+   "file": "server/eats/jp-2.json",
+   "town": "jp-okinawa",
+   "name": "Cafe Kurukuma",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Cafe Curcuma カフェくるくま', 1190 Chinen, Nanjo: 'Permanently closed' (also for 'カフェくるくま 南城市')."
+  },
+  {
+   "file": "server/eats/jp-2.json",
+   "town": "jp-hiroshima",
+   "name": "Cafe Flowery",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'カフェ フロウリー/学研四季が丘教室', 5-13-6 Shikigaoka, Hatsukaichi: the same café (its owner's July 2026 post says the café also runs a Gakken class), 'Temporarily closed', no hours. One web search found no reopening date → removed."
+  },
+  {
+   "file": "server/eats/my-1.json",
+   "town": "my-kualalumpur",
+   "name": "RGB & The Bean Hive",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'RGB Coffee at the Bean Hive', 35 Jalan Damai, Kampung Datuk Keramat: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/my-1.json",
+   "town": "my-kualalumpur",
+   "name": "Bucket B Cafe",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Bucket B Cafe', Level 2, IPC Shopping Center, Mutiara Damansara: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/my-1.json",
+   "town": "my-kualalumpur",
+   "name": "Haru Cafe Gallery",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Haru Cafe Gallery', B-G-5 Seri Gembira Avenue, Jalan Senang Ria: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/ph-1.json",
+   "town": "ph-bohol",
+   "name": "Shaka Bohol",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'SHAKA - Panglao Bohol': 'Temporarily closed'. HappyCow: a reviewer says the location is closed, confirmed by the owner. No reopening date → removed.",
+   "src": "https://www.happycow.net/reviews/shaka-panglao-88198"
+  },
+  {
+   "file": "server/eats/sg-1.json",
+   "town": "sg-singapore",
+   "name": "Jumbo Seafood East Coast",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'JUMBO Seafood - East Coast', 1206 ECP #01-07/08 East Coast Seafood Centre: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/sg-1.json",
+   "town": "sg-singapore",
+   "name": "Sabio By The Sea",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Sabio by the Sea, Tapas Bar & Grill', Quayside Isle, Sentosa Cove: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/sg-1.json",
+   "town": "sg-singapore",
+   "name": "Zaffron Kitchen",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Zaffron Kitchen East Coast': 'Permanently closed' (the row is the East Coast branch)."
+  },
+  {
+   "file": "server/eats/sg-1.json",
+   "town": "sg-singapore",
+   "name": "Jimmy Monkey Café, PLQ",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Jimmy Monkey Cafe PLQ Parkside (G Floor - Park Place Residences)': 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/sg-1.json",
+   "town": "sg-singapore",
+   "name": "My Kampung Food Court at Changi City Point",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'My Kampung', 5 Changi Business Park Central 1, Changi City Point: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/sg-1.json",
+   "town": "sg-singapore",
+   "name": "Beauty in The Pot at KINEX",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Beauty in The Pot 美滋锅 at Kinex', 11 Tanjong Katong Rd: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-1.json",
+   "town": "th-bangkok",
+   "name": "BABYCCINO & Co.",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'BABYCCINO Siam Discovery', Siam Discovery G Floor: 'Permanently closed' (the row is this branch)."
+  },
+  {
+   "file": "server/eats/th-1.json",
+   "town": "th-ayutthaya",
+   "name": "Blue Rice Restaurant by Apple & Noi",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Blue Rice Restaurant by Apple & Noi', 153/4 Tha Makham, Kanchanaburi: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-1.json",
+   "town": "th-huahin",
+   "name": "You Yen Hua Hin Balcony",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'YouYen Huahin Balcony อยู่เย็น หัวหิน บัลโคนี', Naebkehardt: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-1.json",
+   "town": "th-huahin",
+   "name": "Eureka Beach Cafe",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Eureka Beach Cafe Hua-Hin', next to Bella Costa, 888/324 Pak Nam Pran, Pran Buri: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-1.json",
+   "town": "th-pattaya",
+   "name": "Rimpa Lapin",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Rimpa Lapin ริมผา ลาภิน', 152/2 Na Chom Thian 36 Alley: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-1.json",
+   "town": "th-pattaya",
+   "name": "Suttangrak Pattaya",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'ร้านอาหารสุดทางรักพัทยา (Suttangrak Pattaya)', 99 Moo 1, Jomtien beach road: 'Permanently closed' (also for 'สุดทางรัก พัทยา')."
+  },
+  {
+   "file": "server/eats/th-2.json",
+   "town": "th-phuket",
+   "name": "Cookies Cafe",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Cookies Cafe', Rawai (R87Q+6QF): 'Temporarily closed', no hours. One web search found no reopening date (only older listings) → removed."
+  },
+  {
+   "file": "server/eats/th-2.json",
+   "town": "th-phuket",
+   "name": "333 At The Beach",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: '333 At The Beach', Kamala: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-2.json",
+   "town": "th-phuket",
+   "name": "Lock Tien",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Lock Tien - Phuket local food center ลกเที้ยน ศูนย์รวมอาหารพื้นเมืองภูเก็ต', 173 Yaowarat Rd: 'Permanently closed' (also for 'ลกเที้ยน ภูเก็ต')."
+  },
+  {
+   "file": "server/eats/th-2.json",
+   "town": "th-krabi",
+   "name": "Pum Thai Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: the row's query (Tonsai, Koh Phi Phi) finds nothing; 'Pum Thai Cooking School Phi Phi Island' lands on 'Pum Thai Restaurant & Cooking School', Ao Nang: 'Permanently closed'. No Phi Phi branch on Maps."
+  },
+  {
+   "file": "server/eats/th-2.json",
+   "town": "th-samui",
+   "name": "Samui Seafood Grill",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Samui Seafood', 13/1 Moo 2, Chaweng Beach: 'Permanently closed'; a list search for 'Samui Seafood Grill Chaweng' shows no other place of that name."
+  },
+  {
+   "file": "server/eats/th-2.json",
+   "town": "th-samui",
+   "name": "Bliss Café",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Bliss Cafe & Restaurant บลิส คาเฟ่', 99/5 Ban Tai, Koh Phangan: 'Permanently closed' (also for 'Bliss Cafe Sunset Walk Koh Phangan')."
+  },
+  {
+   "file": "server/eats/th-4.json",
+   "town": "th-trang",
+   "name": "Hilltop Restaurant",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Hilltop restutant', 185/5 Moo 2, Koh Muk, Kantang: 'Permanently closed'."
+  },
+  {
+   "file": "server/eats/th-5.json",
+   "town": "th-kohchang",
+   "name": "White Sand Beach night stalls",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24: the pin 'Night Food Market' (474C+FX5) and 'Koh Chang Night Market' show 'Permanently closed', but the row is the evening food carts along the road, not one listing; iamkohchang.com: 'as of 1 December 2025 nightly foodstalls are back in the old location but on the opposite side of the road'. Kept.",
+   "src": "https://iamkohchang.com/guide/south-white-sand-beach.html"
+  },
+  {
+   "file": "server/eats/tw-1.json",
+   "town": "tw-hualien",
+   "name": "Mr. Goose",
+   "verdict": "keep",
+   "evidence": "Google Maps 2026-11-24: '鵝肉先生 花蓮' lists 'Mr Goose Main Branch', 259 Zhongshan Rd: 'Permanently closed', and 'Mr Goose Linsen Branch', 224 Linsen Rd: open ('Opens 11 AM Thu'). The restaurant goes on at its other branch: kept, its map query now points to the Linsen Road branch."
+  },
+  {
+   "file": "server/eats/tw-1.json",
+   "town": "tw-hualien",
+   "name": "Miaokou Red Tea",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Miao Kou Black Tea 花蓮廟口紅茶有限公司', 218 Chenggong St: 'Temporarily closed', no hours. Two web searches found no reopening date → removed."
+  },
+  {
+   "file": "server/eats/vn-1.json",
+   "town": "vn-danang",
+   "name": "Quán Trần",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Tran Specialities Ẩm Thực Trần - 04 Lê Duẩn', 04 Lê Duẩn, Hải Châu: 'Permanently closed' (the row is this address)."
+  },
+  {
+   "file": "server/eats/vn-1.json",
+   "town": "vn-phuquoc",
+   "name": "Hủ Tiếu Mực Tư Hường",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Hủ Tiếu Mực Tư Hường', 42 Đ. 30 Tháng 4: 'Permanently closed'; the row's 87 Đường 30/4 is now 'Bún Kèn 87 Thúy An' on Maps."
+  },
+  {
+   "file": "server/eats/vn-2.json",
+   "town": "vn-nhatrang",
+   "name": "Costa Seafood",
+   "verdict": "removed",
+   "evidence": "Google Maps 2026-11-24: 'Costa Seafood Nha Trang', 32C Trần Phú: 'Temporarily closed'. Two web searches found no reopening notice → removed."
+  }
+ ]
+}

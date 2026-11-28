@@ -263,6 +263,228 @@
           "q": "Castle Bear Moat, Zámek, Český Krumlov",
           "ok": "2026-11",
           "src": "https://www.ckrumlov.info/en/cesky-krumlov-with-kids/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ckrumlov.info/en/sights-and-culture-437-film-legends-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์ตำนานภาพยนตร์",
+            "en": "Film Legends Experience Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เชสกีครุมลอฟ",
+            "en": "Český Krumlov"
+          },
+          "what": {
+            "th": "ภาพยนตร์ การ์ตูน ของสะสม และฮีโร่แอ็กชัน",
+            "en": "Films, comics, collectibles and action heroes"
+          },
+          "why": {
+            "th": "ได้เห็นดาราจอเงินใกล้ ๆ",
+            "en": "Stars of the big screen to see up close"
+          },
+          "q": "Film Legends Experience Museum, Český Krumlov",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ckrumlov.info/en/sights-and-culture-64-wax-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้ง",
+            "en": "Wax Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนกายอฟสกา เชสกีครุมลอฟ",
+            "en": "Kájovská, Český Krumlov"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งคนดังและโบฮีเมียใต้ มีเมืองใต้ดินยุคกลาง",
+            "en": "Wax figures of famous people and South Bohemia, with a medieval cellar town"
+          },
+          "why": {
+            "th": "แสงและเสียงทำให้ห้องใต้ดินเหมือนตลาดศตวรรษที่ 15",
+            "en": "Light and sound make the cellar feel like a 15th-century market"
+          },
+          "q": "Wax Museum, Kájovská 68, Český Krumlov",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ckrumlov.info/en/sights-and-culture-66-moldavite-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์มอลดาไวต์",
+            "en": "Moldavite Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนปันสกา เชสกีครุมลอฟ",
+            "en": "Panská, Český Krumlov"
+          },
+          "what": {
+            "th": "นิทรรศการแบบลงมือเล่น เรื่องหินมอลดาไวต์ที่เกิดจากอุกกาบาตเมื่อ 15 ล้านปีก่อน",
+            "en": "An interactive exhibition on how moldavite formed from a meteorite 15 million years ago"
+          },
+          "why": {
+            "th": "โยนอุกกาบาตใส่ลูกโลกแล้วดูว่าเกิดอะไรขึ้น",
+            "en": "Throw a meteorite at a globe and see what happens"
+          },
+          "q": "Moldavite Museum, Panská 19, Český Krumlov",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "name": {
+            "th": "บ้านผีเสื้อไดอานา",
+            "en": "Butterfly House Diana"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เนินไดอานา คาร์โลวีวารี",
+            "en": "Diana hill, Karlovy Vary"
+          },
+          "what": {
+            "th": "บ้านผีเสื้อเขตร้อน มีผีเสื้อจากทั่วโลกหลายร้อยตัว",
+            "en": "A tropical butterfly house with hundreds of butterflies from around the world"
+          },
+          "why": {
+            "th": "มีผีเสื้อสีสวยหลายร้อยตัว บางตัวมาจากไทย",
+            "en": "Hundreds of colourful butterflies, some from Thailand"
+          },
+          "q": "Butterfly House Diana, Vrch přátelství, Karlovy Vary",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "name": {
+            "th": "สนามเด็กเล่นไดอานา",
+            "en": "Diana playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เนินไดอานา ข้างบ้านผีเสื้อ คาร์โลวีวารี",
+            "en": "Diana hill, by the Butterfly House, Karlovy Vary"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นบนเนินไดอานา ขึ้นด้วยรถรางไต่เขาหรือเดินทางป่า",
+            "en": "A playground on Diana hill, reached by funicular or forest paths"
+          },
+          "why": {
+            "th": "บ้านผีเสื้ออยู่ติดกัน",
+            "en": "The Butterfly House is right next to it"
+          },
+          "q": "Playground Diana, Vrch přátelství, Karlovy Vary",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.karlovyvary.cz/en/karlovy-vary-kids",
+          "name": {
+            "th": "สวนเด็ก สวาโตชกี",
+            "en": "Children's Paradise (Svatošky)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "หุบเขาโอฮร์เชอ ข้างผาสวาโตชกี ใกล้ลอเก็ต",
+            "en": "Ohře valley by the Svatošské Rocks, near Loket"
+          },
+          "what": {
+            "th": "ลานครอบครัวกลางธรรมชาติในหุบเขาโอฮร์เชอ ข้างผาสวาโตชกี",
+            "en": "A natural family area in the Ohře valley beside the Svatošské Rocks"
+          },
+          "why": {
+            "th": "ออกแบบสำหรับครอบครัว กลมกลืนกับธรรมชาติ",
+            "en": "Made for families, in harmony with nature"
+          },
+          "q": "Přírodní areál Dětský ráj, Údolí 99, Loket",
+          "ok": "2026-11"
         }
       ]
     },
@@ -535,6 +757,306 @@
           "q": "Letenské sady, Prague",
           "ok": "2026-11",
           "src": "https://prague.eu/en/objevujte/letna-parks-letenske-sady/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://prague.eu/en/objevujte/museum-of-fantastic-illusions-muzeum-fantastickych-iluzi/",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพลวงตามหัศจรรย์",
+            "en": "Museum of Fantastic Illusions"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนวอดิชโควา เมืองใหม่",
+            "en": "Vodičkova, New Town"
+          },
+          "what": {
+            "th": "ห้องที่ทุกอย่างไม่เป็นอย่างที่เห็น",
+            "en": "Rooms where nothing is quite what it seems"
+          },
+          "why": {
+            "th": "เดินบนเพดาน และเจอโมนาลิซ่ากับไอน์สไตน์",
+            "en": "Walk on the ceiling and meet Mona Lisa and Einstein"
+          },
+          "q": "Museum of Fantastic Illusions, Vodičkova 31, Praha",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://prague.eu/en/objevujte/karel-zeman-museum-muzeum-karla-zemana/",
+          "name": {
+            "th": "พิพิธภัณฑ์คาเรล เซมัน",
+            "en": "Karel Zeman Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มาลาสตรานา ใกล้สะพานชาร์ลส์",
+            "en": "Malá Strana, by Charles Bridge"
+          },
+          "what": {
+            "th": "นิทรรศการเทคนิคภาพยนตร์ของคาเรล เซมัน มีฉากให้เดินเข้าไป",
+            "en": "An exhibition of Karel Zeman’s film tricks, with sets to walk through"
+          },
+          "why": {
+            "th": "เด็กได้ลองเทคนิคพิเศษด้วยกล้อง",
+            "en": "Children try the special-effect tricks with cameras"
+          },
+          "q": "Karel Zeman Museum, Saská 3, Praha",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://prague.eu/en/objevujte/museum-of-the-senses-muzeum-smyslu/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประสาทสัมผัส",
+            "en": "Museum of Senses"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนยินดริชสกา เมืองใหม่",
+            "en": "Jindřišská, New Town"
+          },
+          "what": {
+            "th": "นิทรรศการให้ลองเล่นกว่า 50 ชิ้นเรื่องประสาทสัมผัส",
+            "en": "Over 50 hands-on exhibits about the senses"
+          },
+          "why": {
+            "th": "ได้ลองเล่นจนประสาทสัมผัสตื่นตัว",
+            "en": "Hands-on exhibits that wake up the senses"
+          },
+          "q": "Museum of Senses, Jindřišská 20, Praha",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Muzeum MHD",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://prague.eu/en/objevujte/public-transport-museum-stresovice-depot-muzeum-mestske-hromadne-dopravy/",
+          "name": {
+            "th": "พิพิธภัณฑ์ขนส่งสาธารณะ",
+            "en": "Public Transport Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "โรงจอดรถรางสเตรโชวิตเซ",
+            "en": "Střešovice depot"
+          },
+          "what": {
+            "th": "รถรางและรถบัสเก่ากว่าสี่สิบคันในโรงจอดรถรางเก่า",
+            "en": "Over forty historic trams and buses in the old tram depot"
+          },
+          "why": {
+            "th": "ได้ดูรถรางเก่าใกล้ๆ",
+            "en": "Old trams to see up close"
+          },
+          "tip": {
+            "th": "รถรางเก่าออกจากที่นี่ช่วงสุดสัปดาห์และวันหยุดหน้าร้อน",
+            "en": "The historic tram leaves from here on summer weekends and holidays"
+          },
+          "q": "Muzeum MHD, Patočkova 4, Praha 6",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Muzeum hraček",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.22places.com/prague-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ของเล่น ปราสาทปราก",
+            "en": "Toy Museum, Prague Castle"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนยีร์สกา ปราสาทปราก",
+            "en": "Jiřská, Prague Castle"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของเล่นท่ามกลางจุดเที่ยวในปราสาท",
+            "en": "A toy museum among the castle sights"
+          },
+          "why": {
+            "th": "แวะพักที่เด็กชอบระหว่างเที่ยวปราสาท",
+            "en": "A stop children enjoy between the castle sights"
+          },
+          "q": "Muzeum hraček, Jiřská 4, Praha 1",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Královská obora Stromovka",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/prague-with-kids",
+          "name": {
+            "th": "สวนสโตรมอฟกา",
+            "en": "Stromovka park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "บูเบเนช",
+            "en": "Bubeneč"
+          },
+          "what": {
+            "th": "สวนใหญ่ มีทางเดินและพื้นที่ให้วิ่งเล่น",
+            "en": "A large park with trails and room to roam"
+          },
+          "why": {
+            "th": "มีที่ให้วิ่งเยอะ และสนามเด็กเล่นข้างร้านอาหารในสวน",
+            "en": "Lots of room to run, and a playground by the park restaurant"
+          },
+          "q": "Královská obora Stromovka, Praha 7",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kulickario.cz/",
+          "name": {
+            "th": "คูลิชคาริโอ",
+            "en": "Kuličkário"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนครอฟโตวา สมีคอฟ ปราก",
+            "en": "Kroftova, Smíchov, Prague"
+          },
+          "what": {
+            "th": "นิทรรศการแบบลงมือเล่น เต็มไปด้วยรางลูกแก้ว",
+            "en": "An interactive exhibition full of marble runs"
+          },
+          "why": {
+            "th": "สนุกทั้งเด็กและผู้ใหญ่",
+            "en": "Fun for children and adults alike"
+          },
+          "q": "Kuličkário, Kroftova 1, Praha 5",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Dětský ostrov",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://prague.eu/cs/objevujte/detsky-ostrov/",
+          "name": {
+            "th": "เกาะเด็ก เดตสกีออสตรอฟ",
+            "en": "Children's Island (Dětský ostrov)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กลางแม่น้ำวัลตาวา ริมเขื่อนยานาเชค สมีคอฟ ปราก",
+            "en": "Vltava, by Janáčkovo nábřeží, Smíchov, Prague"
+          },
+          "what": {
+            "th": "เกาะกลางแม่น้ำวัลตาวา มีลานกีฬาและสนามเด็กเล่น",
+            "en": "An island on the Vltava with sports grounds and playgrounds"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นและร้านอาหารทางใต้ของเกาะ",
+            "en": "Playgrounds for children and a restaurant at the south end"
+          },
+          "q": "Dětský ostrov, Praha 5",
+          "ok": "2026-11"
         }
       ]
     }

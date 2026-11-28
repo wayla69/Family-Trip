@@ -1,0 +1,553 @@
+{
+  "town": "cn-chengdu",
+  "rounds": [
+    {
+      "town": "cn-chengdu",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 3 rows without ok; nothing else in the town was re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Wenshu Monastery Vegetarian Restaurant",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "evidence": "place page '文殊院素斋', 15 Wenshuyuan St, M3FF+H6 Qingyang — no hours shown. A web search found HappyCow (hours 10:30–19:30, undated page, reviews to 2025-11) and 2026 Sina articles about the temple's vegetarian buffet — aggregator pieces, not a current listing"
+        },
+        {
+          "name": "Nuorilang Restaurant",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "evidence": "place page 'Nuorilang Restaurant 诺日朗餐厅', 九寨沟景区 — no hours shown. A web search found only a 2026 aggregator guide (citiesinsider) naming the Nuorilang visitor centre buffet"
+        },
+        {
+          "name": "Gongting Pastry Shop",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "list result 'Gongting Cake', bakery, 酱园公所街56号 (the row's street) — no hours shown"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "town": "cn-chengdu",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "A new row needs a page dated 2025–2026 that names it and carries a copied sentence (scripts/library-check.cjs), then a map check: ok only when the map shows the place at that address, not closed, with a review dated within the last six months. Google Maps barely covers mainland China, so each place was checked on Baidu Maps (map.baidu.com, no sign-in; Amap asks for a Chinese phone number to sign in, so it was not used). A place no map could find at the page's address was left out.",
+      "agents": "four Haiku agents (sit-down restaurants · quick bites and cafés · children and rainy days · landmarks), five web searches each; 44 rows offered, 39 passed library-check.cjs, 16 went in",
+      "added": [
+        {
+          "name": "Chunyang Guan",
+          "kind": "eat",
+          "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+          "date": "2026-06",
+          "quote": "Fish fragrant pork rib noodles is their famous dish and loved by many locals and tourists.",
+          "map": "Baidu Maps 纯阳馆鱼香排骨面(吉祥街店), 吉祥街8号附2号, 250 reviews, newest 2026-10-17; Google Maps also open, a review a month ago"
+        },
+        {
+          "name": "Chongqing Blanket Noodles",
+          "kind": "eat",
+          "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+          "date": "2026-06",
+          "quote": "Blanket noodles are very different from ordinary Chinese noodles.",
+          "map": "Baidu Maps 重庆铺盖面(四道街店), 长顺下街119号, newest reviews 2026-10-11 (not on Google Maps)"
+        },
+        {
+          "name": "Dan Dumplings",
+          "kind": "eat",
+          "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+          "date": "2026-06",
+          "quote": "I particularly recommend the non-spicy dipping sauce.",
+          "map": "Baidu Maps 但水饺, 过街楼街46号之附4-5室, newest reviews 2026-09-20 and 2026-09-03"
+        },
+        {
+          "name": "He Dumplings",
+          "kind": "eat",
+          "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+          "date": "2026-06",
+          "quote": "Even the non-spicy version is excellent.",
+          "map": "Baidu Maps 贺水饺, 焦家巷13号附1号, newest reviews 2026-10-24 and 2026-09-24 (rating 2.3 of 5)"
+        },
+        {
+          "name": "Zha Zha Noodles",
+          "kind": "eat",
+          "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+          "date": "2026-06",
+          "quote": "The restaurant on Changshun Lower Street has been operating for over twenty years.",
+          "map": "Baidu Maps 查渣面(宽窄巷子长顺店), 长顺下街65号附3号, newest reviews 2026-11-11 and 2026-10-12"
+        },
+        {
+          "name": "Zhang Laowu Liangfen",
+          "kind": "eat",
+          "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+          "date": "2026-06",
+          "quote": "Zhang Laowu Liangfen is an excellent choice.",
+          "map": "Baidu Maps 张老五凉粉店(槐树街店), 槐树街33-附1号, newest reviews 2026-09-25"
+        },
+        {
+          "name": "Xiao Ming Tang Dandan Noodles",
+          "kind": "eat",
+          "src": "https://chengdutrip.com/chengdu-family-food-guide-5-kid-friendly-sichuan-restaurants-that-are-not-spicy/",
+          "date": "2026-01",
+          "quote": "The shop is small but efficient; waiting time is usually under 10 minutes.",
+          "map": "Baidu Maps 小名堂担担甜水面(东城根上街店), 东城根上街13号, newest reviews 2026-09-23 and 2026-09-15"
+        },
+        {
+          "name": "He Ji Egg Cakes",
+          "kind": "eat",
+          "src": "https://chengdutrip.com/chengdu-family-food-guide-5-kid-friendly-sichuan-restaurants-that-are-not-spicy/",
+          "date": "2026-01",
+          "quote": "The cakes are crispy outside, soft inside, and easy for kids to hold.",
+          "map": "Baidu Maps 贺记蛋烘糕(文庙西街店), 文庙西街1号附8号, newest reviews 2026-10-27, 2026-10-26 (Google Maps newest a year old)"
+        },
+        {
+          "name": "Nanchong Taste",
+          "kind": "eat",
+          "src": "https://urbanchinatravelogue.com/chengdu-street-food-heritage-snacks/",
+          "date": "2026-03",
+          "quote": "As local as it gets.",
+          "map": "Baidu Maps 南充味道·正宗川北凉粉顺庆米粉, 洗面桥街19号, newest reviews 2026-10-30 and 2026-10-11"
+        },
+        {
+          "name": "Mi Xun Teahouse",
+          "kind": "eat",
+          "src": "https://sg.trip.com/guide/food/what-to-eat-in-chengdu.html",
+          "date": "2026-10",
+          "quote": "Soft guzheng music floated through the bamboo-lined space",
+          "map": "Baidu Maps 谧寻茶室(成都居舍店), 笔帖式街81号, newest reviews 2026-10-18; Google Maps a review two weeks ago"
+        },
+        {
+          "name": "Mount Qingcheng",
+          "kind": "sight",
+          "src": "https://www.chinahighlights.com/chengdu/attraction/qingcheng-mountain.htm",
+          "date": "2025-12",
+          "quote": "Mount Qingcheng is divided into two areas: the Front Mountain for cultural sites, and the Back Mountain for natural scenery.",
+          "map": "Google Maps Qingcheng Shan, reviews two and three months ago"
+        },
+        {
+          "name": "Wuhou Shrine",
+          "kind": "sight",
+          "src": "https://www.womensweekly.com.sg/parenting/things-to-do-chengdu-kids",
+          "date": "2025-02",
+          "quote": "Wuhou Shrine is a peaceful retreat where nature, culture, and storytelling come together in the heart of Chengdu.",
+          "map": "Baidu Maps 成都武侯祠博物馆, 武侯祠大街231号, newest reviews 2026-11-04; Google Maps 1,131 reviews"
+        },
+        {
+          "name": "Jiaozi Park",
+          "kind": "sight",
+          "src": "https://www.babagoeschina.com/chengdu-with-kids/",
+          "date": "2026-04",
+          "quote": "Jiaozi Park with views of the Twin Towers",
+          "map": "Baidu Maps 交子公园, newest reviews 2026-11-03 (a review's '闭馆' is a museum nearby closed on Mondays, not the park)"
+        },
+        {
+          "name": "Super Neobio",
+          "kind": "sight",
+          "src": "https://www.littledayout.com/chengdu-global-center-playgrounds-china-travel/",
+          "date": "2026-02",
+          "quote": "This role-play city allowed children to rotate through different occupations",
+          "map": "Baidu Maps 超级奈尔宝·儿童乐园(全球旗舰·环球中心店), newest reviews 2026-10-08"
+        },
+        {
+          "name": "Chengdu Science Fiction Museum",
+          "kind": "sight",
+          "src": "https://view.inews.qq.com/a/20260807A0FPP300",
+          "date": "2026-08",
+          "quote": "成都科幻馆漂浮在菁蓉湖畔",
+          "map": "Baidu Maps 成都科幻馆, 科幻大道596号, open Tuesday to Sunday, newest reviews 2026-11-10 (rating 2.0 of 5)"
+        },
+        {
+          "name": "Chengdu Xin Zhihui Music Museum",
+          "kind": "sight",
+          "src": "https://view.inews.qq.com/a/20260807A0FPP300",
+          "date": "2026-08",
+          "quote": "成都芯智慧音乐博物馆占地",
+          "map": "Baidu Maps 成都芯智慧音乐博物馆, 国芯大道399号, open Tuesday to Sunday, newest reviews 2026-09-30"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Paradise Island Water Park (天堂岛海洋乐园)",
+          "why": "Baidu Maps marks it 暂停开放 (temporarily closed)"
+        },
+        {
+          "name": "Grandma's Home, Lao Chengdu noodles",
+          "why": "only source restaurantsforkings.com, refused by docs/LIBRARY-AGENTS.md"
+        },
+        {
+          "name": "Box 82 Secret Dumplings, Azules Gelato, The Sense",
+          "why": "no map found the place"
+        },
+        {
+          "name": "Lan's Patisserie",
+          "why": "Baidu's LANLIZI PATISSERIE is at another address (Tianfu 2nd Street), not Taikoo Li"
+        },
+        {
+          "name": "Yun Coffee",
+          "why": "Google Maps lists 云也咖啡 at 35 Renhou Street with no review; Baidu's 云也咖啡 is elsewhere"
+        },
+        {
+          "name": "Miracle Desert, Fairy Forest, Cave Discovery (Global Center)",
+          "why": "neither map lists them"
+        },
+        {
+          "name": "Neobio Family Center",
+          "why": "same hall as Super Neobio; one row"
+        },
+        {
+          "name": "Kids Winshare Plus (文轩儿童主题书店)",
+          "why": "Baidu lists it with no review — not confirmed"
+        },
+        {
+          "name": "meland club, Pupurrazi Reptile Museum",
+          "why": "no map listing at the page's address"
+        },
+        {
+          "name": "Star Legend",
+          "why": "Baidu has other branches, none at Tianfu Joy City as the page says"
+        },
+        {
+          "name": "Sunac Water and Snow World",
+          "why": "the page's name and address did not match one listing (融创雪乐园 / 热雪奇迹)"
+        },
+        {
+          "name": "Fangsuo Commune Bookstore",
+          "why": "open (Baidu, reviews 2026-10-28) but the page only names it beside Taikoo Li — no facts to write a row"
+        },
+        {
+          "name": "Taikoo Li, Chunxi Road, Chengdu Financial Center Twin Towers",
+          "why": "a mall, a shopping street, an office tower (the towers' light show is the Jiaozi Park tip)"
+        },
+        {
+          "name": "Peppa Pig Restaurant",
+          "why": "a restaurant, not a thing to do"
+        },
+        {
+          "name": "Quanzhen Temple, Wudongtian & Tianshi Cave",
+          "why": "parts of Mount Qingcheng, which has its own row"
+        },
+        {
+          "name": "Qingyang Gongyuan Morning Market",
+          "why": "an informal market with one source; not checked on a map"
+        },
+        {
+          "name": "Cuiying Lake, Shufeng Yayun opera, Shuangliu butterfly museum",
+          "why": "failed library-check.cjs (quote not on page / page undated)"
+        }
+      ],
+      "estimates": "The things-to-do format requires ages, hours, indoors and pram for every row. They are read from each page's description where it says so; otherwise they are the reviewer's estimate. No price, opening hour or age band was written that a page did not show, except the Monday closings, which Baidu Maps lists.",
+      "recheck_of_older_rows": {
+        "town": "cn-chengdu",
+        "kind": "eats",
+        "checked": "2026-11",
+        "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+        "scope": "the 3 rows without ok; nothing else in the town was re-checked",
+        "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+        "confirmed": [],
+        "kept_without_ok": [
+          {
+            "name": "Wenshu Monastery Vegetarian Restaurant",
+            "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+            "evidence": "place page '文殊院素斋', 15 Wenshuyuan St, M3FF+H6 Qingyang — no hours shown. A web search found HappyCow (hours 10:30–19:30, undated page, reviews to 2025-11) and 2026 Sina articles about the temple's vegetarian buffet — aggregator pieces, not a current listing"
+          },
+          {
+            "name": "Nuorilang Restaurant",
+            "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+            "evidence": "place page 'Nuorilang Restaurant 诺日朗餐厅', 九寨沟景区 — no hours shown. A web search found only a 2026 aggregator guide (citiesinsider) naming the Nuorilang visitor centre buffet"
+          },
+          {
+            "name": "Gongting Pastry Shop",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "evidence": "list result 'Gongting Cake', bakery, 酱园公所街56号 (the row's street) — no hours shown"
+          }
+        ],
+        "removed": []
+      }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and play parks in Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Matata African Animal Restaurant (Luxelakes)",
+          "page_name": "Matata非洲动物主题餐厅",
+          "src": "https://www.amap.com/search?query=Matata%E9%9D%9E%E6%B4%B2%E5%8A%A8%E7%89%A9%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "亲子互动区丰富 · 亲子友好 · 非常有趣的一家餐厅，小朋友真的太喜欢了"
+        },
+        {
+          "name": "Winshare Yami Family Restaurant (Global Center)",
+          "page_name": "文轩呀咪亲子餐厅(环球中心店)",
+          "src": "https://www.amap.com/search?query=%E6%96%87%E8%BD%A9%E5%91%80%E5%92%AA%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E7%8E%AF%E7%90%83%E4%B8%AD%E5%BF%83%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-26",
+          "map": "Amap: open, not marked closed, newest review 2026-09-26",
+          "quote": "亲子友好 · 儿童餐"
+        },
+        {
+          "name": "Spacelab Zero-Gravity Restaurant (Global Center)",
+          "page_name": "spacelab失重餐厅(新世纪环球购物中心店)",
+          "src": "https://www.amap.com/search?query=spacelab%E5%A4%B1%E9%87%8D%E9%A4%90%E5%8E%85(%E6%96%B0%E4%B8%96%E7%BA%AA%E7%8E%AF%E7%90%83%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-26",
+          "map": "Amap: open, not marked closed, newest review 2026-09-26",
+          "quote": "亲子友好 · 遛娃约会 · 生日还送了一个小甜品，娃娃好喜欢"
+        },
+        {
+          "name": "Green Tea Restaurant (Taikoo Li)",
+          "page_name": "绿茶餐厅(成都太古里店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E6%88%90%E9%83%BD%E5%A4%AA%E5%8F%A4%E9%87%8C%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "绿茶餐厅很适合带小朋友、老人一起来吃"
+        },
+        {
+          "name": "Dian Dou De Dim Sum (Chunxi Road)",
+          "page_name": "点都德(春熙路群光广场店)",
+          "src": "https://www.amap.com/search?query=%E7%82%B9%E9%83%BD%E5%BE%B7(%E6%98%A5%E7%86%99%E8%B7%AF%E7%BE%A4%E5%85%89%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
+          "map": "Amap: open, not marked closed, newest review 2026-11-09",
+          "quote": "有宝宝椅 · 口味清淡美味，很适合带家里的长辈和小朋友来吃"
+        },
+        {
+          "name": "Tanli Xingqiu Trampoline Park (Magic Cube)",
+          "page_name": "弹力猩球家庭运动乐园·生日派对(成都招商大魔方店)",
+          "src": "https://www.amap.com/search?query=%E5%BC%B9%E5%8A%9B%E7%8C%A9%E7%90%83%E5%AE%B6%E5%BA%AD%E8%BF%90%E5%8A%A8%E4%B9%90%E5%9B%AD%C2%B7%E7%94%9F%E6%97%A5%E6%B4%BE%E5%AF%B9(%E6%88%90%E9%83%BD%E6%8B%9B%E5%95%86%E5%A4%A7%E9%AD%94%E6%96%B9%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-12",
+          "map": "Amap: open, not marked closed, newest review 2026-11-12",
+          "quote": "儿童乐园 · 儿童运动场所 · 儿童友好 · 蹦床馆"
+        },
+        {
+          "name": "Xixi Wuli Play Area (Pacific Plaza)",
+          "page_name": "西西屋里(群光广场店)",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E8%A5%BF%E5%B1%8B%E9%87%8C(%E7%BE%A4%E5%85%89%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-07",
+          "map": "Amap: open, not marked closed, newest review 2026-10-07",
+          "quote": "儿童乐园 · 儿童游乐区 · 亲子友好"
+        },
+        {
+          "name": "Daodangui Play Park (Yulin)",
+          "page_name": "捣蛋鬼亲子主题乐园(玉林店)",
+          "src": "https://www.amap.com/search?query=%E6%8D%A3%E8%9B%8B%E9%AC%BC%E4%BA%B2%E5%AD%90%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E7%8E%89%E6%9E%97%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-03",
+          "map": "Amap: open, not marked closed, newest review 2026-11-03",
+          "quote": "儿童乐园 · 儿童赛车 · 淘气堡 · 玩沙"
+        },
+        {
+          "name": "Dinosaur Park (ICD)",
+          "page_name": "恐龙乐园(环贸ICD店)",
+          "src": "https://www.amap.com/search?query=%E6%81%90%E9%BE%99%E4%B9%90%E5%9B%AD(%E7%8E%AF%E8%B4%B8ICD%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "儿童VR娱乐 · 儿童赛车娱乐 · 小宝宝游玩 · 萌宠互动"
+        },
+        {
+          "name": "Jiangtan Heron Play Park",
+          "page_name": "江滩苍鹭乐园",
+          "src": "https://www.amap.com/search?query=%E6%B1%9F%E6%BB%A9%E8%8B%8D%E9%B9%AD%E4%B9%90%E5%9B%AD&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-20",
+          "map": "Amap: open, not marked closed, newest review 2026-10-20",
+          "quote": "儿童主题乐园 · 强烈推荐带娃来江滩苍鹭乐园"
+        },
+        {
+          "name": "Neobio Play Park (Joy City)",
+          "page_name": "奈尔宝·儿童乐园·亲子餐厅(成都大悦城店)",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E6%88%90%E9%83%BD%E5%A4%A7%E6%82%A6%E5%9F%8E%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "儿童乐园 · 儿童沙池 · 儿童恒温游泳 · DIY手工"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "爱萱辅食儿童餐厅, 加咖啡亲子西餐厅",
+          "why": "one review only"
+        },
+        {
+          "name": "饕林餐厅, 世亨饭店",
+          "why": "nothing about children on the page"
+        },
+        {
+          "name": "人民公园-儿童乐园",
+          "why": "inside People's Park, which the list already has"
+        },
+        {
+          "name": "东湖公园儿童沙坑",
+          "why": "two reviews only"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Gangjiu Hong Kong Cafe (IFS)",
+          "page_name": "港久茶餐厅(IFS店)",
+          "src": "https://www.amap.com/search?query=%E6%B8%AF%E4%B9%85%E8%8C%B6%E9%A4%90%E5%8E%85(IFS%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-05",
+          "map": "Amap: open, not marked closed, newest review 2026-11-05",
+          "quote": "儿童餐丰富"
+        },
+        {
+          "name": "Ganglu Roast Goose Cafe (Yifangli)",
+          "page_name": "港炉烧鹅茶餐厅(壹方里店)",
+          "src": "https://www.amap.com/search?query=%E6%B8%AF%E7%82%89%E7%83%A7%E9%B9%85%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%A3%B9%E6%96%B9%E9%87%8C%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "儿童餐"
+        },
+        {
+          "name": "Jia'er Mengdou Children's Kitchen (Wenjiang)",
+          "page_name": "佳儿萌豆儿童辅食餐厅(新光天地店)",
+          "src": "https://www.amap.com/search?query=%E4%BD%B3%E5%84%BF%E8%90%8C%E8%B1%86%E5%84%BF%E7%AB%A5%E8%BE%85%E9%A3%9F%E9%A4%90%E5%8E%85(%E6%96%B0%E5%85%89%E5%A4%A9%E5%9C%B0%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-26",
+          "map": "Amap: open, not marked closed, newest review 2026-10-26",
+          "quote": "宝宝餐"
+        },
+        {
+          "name": "Shiyue Yaya Children's Kitchen (North Paradise Walk)",
+          "page_name": "十月芽芽儿童辅食餐厅(北城天街店)",
+          "src": "https://www.amap.com/search?query=%E5%8D%81%E6%9C%88%E8%8A%BD%E8%8A%BD%E5%84%BF%E7%AB%A5%E8%BE%85%E9%A3%9F%E9%A4%90%E5%8E%85(%E5%8C%97%E5%9F%8E%E5%A4%A9%E8%A1%97%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-29",
+          "map": "Amap: open, not marked closed, newest review 2026-10-29",
+          "quote": "儿童游乐"
+        },
+        {
+          "name": "Wenwufu Sichuan Restaurant (Financial City)",
+          "page_name": "文武赋川菜餐厅(金融城店)",
+          "src": "https://www.amap.com/search?query=%E6%96%87%E6%AD%A6%E8%B5%8B%E5%B7%9D%E8%8F%9C%E9%A4%90%E5%8E%85(%E9%87%91%E8%9E%8D%E5%9F%8E%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "有宝宝椅"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "拉斐特港式茶餐厅",
+          "why": "three reviews, newest March 2026"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights and restaurants with high chairs in Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Tongren Sijin Coconut Chicken (IFS)",
+          "page_name": "同仁四季椰子鸡(成都IFS店)",
+          "src": "https://www.amap.com/search?query=%E5%90%8C%E4%BB%81%E5%9B%9B%E5%AD%A3%E6%A4%B0%E5%AD%90%E9%B8%A1(%E6%88%90%E9%83%BDIFS%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Chaoniu Chaoshan Beef Hotpot (Jinhua Wanda)",
+          "page_name": "潮牛行动潮汕牛肉(锦华万达广场店)",
+          "src": "https://www.amap.com/search?query=%E6%BD%AE%E7%89%9B%E8%A1%8C%E5%8A%A8%E6%BD%AE%E6%B1%95%E7%89%9B%E8%82%89(%E9%94%A6%E5%8D%8E%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "有宝宝椅 · 适合家庭 · 手打熟牛丸Q弹爆汁，小朋友最爱"
+        },
+        {
+          "name": "Dujiangyan Panda Valley",
+          "page_name": "都江堰熊猫谷",
+          "src": "https://www.amap.com/search?query=%E9%83%BD%E6%B1%9F%E5%A0%B0%E7%86%8A%E7%8C%AB%E8%B0%B7&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "带孩子可以讨论它为何停在某处 · 带孩子不妨提前选三种想看的动物，到了以后让他们找一找、说一说"
+        },
+        {
+          "name": "Chengdu Botanical Garden",
+          "page_name": "成都植物园",
+          "src": "https://www.amap.com/search?query=%E6%88%90%E9%83%BD%E6%A4%8D%E7%89%A9%E5%9B%AD&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "亲子户外 · 标牌写得清，带孩子认植物够用 · 长椅多，走累了有地方坐"
+        },
+        {
+          "name": "Xiling Snow Mountain",
+          "page_name": "西岭雪山风景名胜区",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E5%B2%AD%E9%9B%AA%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%90%8D%E8%83%9C%E5%8C%BA&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "亲子户外 · 水流潺潺，踩水超凉快，小朋友特别喜欢"
+        },
+        {
+          "name": "Huawu Renjian Flower Park (Xinjin)",
+          "page_name": "花舞人间都市农业主题公园",
+          "src": "https://www.amap.com/search?query=%E8%8A%B1%E8%88%9E%E4%BA%BA%E9%97%B4%E9%83%BD%E5%B8%82%E5%86%9C%E4%B8%9A%E4%B8%BB%E9%A2%98%E5%85%AC%E5%9B%AD&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "很适合拍照遛娃赏花 · 西大门亲子路线：西大门→儿童游乐区"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Jinjiang, Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Huishuizhen Sichuan Kitchen (Chunxi Road)",
+          "page_name": "回水镇·江湖川菜(春熙路泰华店)",
+          "src": "https://www.amap.com/search?query=%E5%9B%9E%E6%B0%B4%E9%95%87%C2%B7%E6%B1%9F%E6%B9%96%E5%B7%9D%E8%8F%9C(%E6%98%A5%E7%86%99%E8%B7%AF%E6%B3%B0%E5%8D%8E%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅 · 带老人、小娃吃也放心"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "九龙冰室, 十月芽芽 (光环)",
+          "why": "twenty-one reviews or fewer"
+        },
+        {
+          "name": "港久茶餐厅 (IFS)",
+          "why": "already in the list"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals and high chairs in Wuhou and Gaoxin, Chengdu; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Darongho Ronghe Kitchen (Zhonghang Merchants Garden City)",
+          "page_name": "大蓉和·蓉和小厨(高新招商花园城店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%A7%E8%93%89%E5%92%8C%C2%B7%E8%93%89%E5%92%8C%E5%B0%8F%E5%8E%A8(%E9%AB%98%E6%96%B0%E6%8B%9B%E5%95%86%E8%8A%B1%E5%9B%AD%E5%9F%8E%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "适合带娃吃饭"
+        },
+        {
+          "name": "Tanxinyuan Creative Sichuan (Jiaozi Avenue)",
+          "page_name": "檀馨苑创新川菜(交子大道店)",
+          "src": "https://www.amap.com/search?query=%E6%AA%80%E9%A6%A8%E8%8B%91%E5%88%9B%E6%96%B0%E5%B7%9D%E8%8F%9C(%E4%BA%A4%E5%AD%90%E5%A4%A7%E9%81%93%E5%BA%97)&city=510100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "有宝宝椅 · 小朋友友好"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "永乐饭店, 卢记正街饭店",
+          "why": "no children's tag or review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

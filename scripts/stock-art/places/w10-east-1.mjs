@@ -28,7 +28,7 @@ const items = [
       + ring(3, (k) => g([28, 222, 140][k], [40, 90, 30][k], 1, P('M0-9l2 7 7 2-7 2-2 7-2-7-7-2 7-2z', '#FFF59D', 2)))),
 
   // ---------- Takayama and Nagoya
-  L('jp/takayama/landmark-kishimen.v1.svg', 'คิชิเมง อุด้งเส้นแบนของนาโกย่าโรยปลาโอแห้ง', 'Kishimen, Nagoya’s flat noodles under dancing bonito flakes', ['kishimen', 'คิชิเมง', 'flat udon', 'อุด้งเส้นแบน', 'bonito flakes', 'ปลาโอแห้งโรยหน้า', 'atsuta', 'อัตสึตะ', 'station platform noodles', 'ร้านเส้นบนชานชาลา', 'wide white noodles', 'เส้นแบนสีขาว'], 'หาแผ่นปลาโอที่บิดตัวเหมือนกำลังเต้น', 'Find the bonito flakes curling as if they dance',
+  L('jp/nagoya/landmark-kishimen.v1.svg', 'คิชิเมง อุด้งเส้นแบนของนาโกย่าโรยปลาโอแห้ง', 'Kishimen, Nagoya’s flat noodles under dancing bonito flakes', ['kishimen', 'คิชิเมง', 'flat udon', 'อุด้งเส้นแบน', 'bonito flakes', 'ปลาโอแห้งโรยหน้า', 'atsuta', 'อัตสึตะ', 'station platform noodles', 'ร้านเส้นบนชานชาลา', 'wide white noodles', 'เส้นแบนสีขาว'], 'หาแผ่นปลาโอที่บิดตัวเหมือนกำลังเต้น', 'Find the bonito flakes curling as if they dance',
     // a deep black-and-red lacquer bowl of light brown broth, wide flat white ribbon noodles folding over the rim, green komatsuna leaves, a slice of fried tofu, a heap of pale pink bonito flakes curling up in the steam, chopsticks lifting a ribbon
     Lc('M92 40c-8-10 8-18 0-28M120 36c-8-10 8-18 0-28M148 40c-8-10 8-18 0-28', '#B0BEC5', 3)
       + P('M24 112h192c-6 60-46 96-96 96s-90-36-96-96z', '#C62828', 4) + P('M40 150c20 40 140 40 160 0', 'none', 0) + Lc('M44 156c30 34 122 34 152 0', '#212121', 8)

@@ -1,0 +1,34 @@
+{
+  "town": "my-kualalumpur",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from Says (updated Dec 2025), redBus (Feb 2026) and wahdah.my, 3 passed library-check.cjs, 2 went in",
+  "added": [
+    {
+      "name": "Antipodean (Bangsar)",
+      "page_name": "Antipodean",
+      "src": "https://says.com/my/makan/11-best-kid-cafes-pj-kl",
+      "date": "2025-12",
+      "map": "Google Maps 'Antipodean @ Bangsar', 4,355 reviews, newest shown '2 months ago'"
+    },
+    {
+      "name": "KidZania Kuala Lumpur",
+      "page_name": "KidZania Kuala Lumpur",
+      "src": "https://www.redbus.my/travel-guide/?p=468",
+      "date": "2026-02",
+      "map": "Google Maps 8,937 reviews, newest shown '2 days ago'; the map's address is Curve NX, Mutiara Damansara, Petaling Jaya"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Ra-Ft Cafe",
+      "why": "the page names no one branch"
+    },
+    {
+      "name": "Berjaya Times Square Theme Park, SuperPark Malaysia",
+      "why": "no readable page date (library-check.cjs)"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

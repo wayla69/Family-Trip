@@ -1,0 +1,112 @@
+{
+  "town": "it-dolomites",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 16 of 19 rows from Mom in Italy (2025–2026), Mama Loves Italy (2025) and Val Gardena's own site passed library-check.cjs, 12 went in",
+  "added": [
+    {
+      "name": "Caffè Val d'Anna",
+      "page_name": "Caffè Val d’Anna",
+      "src": "https://www.valgardena.it/en/addresses/detail-gastronomy/base/company/st-ulrich-groeden/caffe-val-danna-annatal/862DC2C2DB5443868C124EDBB75EB731/",
+      "date": "official",
+      "map": "Google Maps 'Caffè Val d'Anna', 2,492 reviews, newest 'last month'"
+    },
+    {
+      "name": "Rifugio Averau",
+      "page_name": "Rifugio Averau",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 3,485 reviews, newest 'last month'"
+    },
+    {
+      "name": "Ristorante Bullaccia",
+      "page_name": "Ristorante Bullaccia",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 1,131 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Pitschlmann",
+      "page_name": "Pitschlmann",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Ristorante appartamenti Pitschlmann', 541 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Sarè",
+      "page_name": "Sarè",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Restaurant Bar Konditorei Sarè', 607 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Gelateria Eccetera",
+      "page_name": "Gelateria Eccetera",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 714 reviews, newest 'last month'"
+    },
+    {
+      "name": "Cinque Torri WW1 open-air museum",
+      "page_name": "WW1 Open Air Museum",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Museo Postazioni Italiane Grande Guerra alle Cinque Torri', 77 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Tuffalm",
+      "page_name": "Malga Tuff Alm",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Tuffalm', 3,182 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Movimënt play park",
+      "page_name": "Moviment Park",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Movimënt - Alta Badia', Str. Col Alt 40, 7 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Prösels Castle",
+      "page_name": "Prösels Castle",
+      "src": "https://mominitaly.com/dolomites-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Castel Prösels', 1,899 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Talvera meadows",
+      "page_name": "Talvera Park",
+      "src": "https://mominitaly.com/bolzano-with-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Lungotalvera Bolzano' (Talferwiesen), 32 reviews, newest 'last month'"
+    },
+    {
+      "name": "Merano 2000",
+      "page_name": "Merano 2000",
+      "src": "https://mominitaly.com/merano-2000-with-kids/",
+      "date": "2025-02",
+      "map": "Google Maps 'Talstation Seilbahn Meran 2000', 327 reviews, newest '1 day ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Malga Valparola",
+      "why": "newest Google Maps review two years old"
+    },
+    {
+      "name": "Tana del Orso",
+      "why": "the map finds only a place of that name in Val di Zoldo, not Selva"
+    },
+    {
+      "name": "SummerPark La Crusc",
+      "why": "no reviews on Google Maps"
+    },
+    {
+      "name": "Merano-Bolzano Bike Path",
+      "why": "a route between two towns, not one place"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

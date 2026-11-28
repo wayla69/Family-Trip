@@ -1,0 +1,192 @@
+{
+  "town": "au-goldcoast",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 22 rows offered, 22 passed library-check.cjs, 18 went in",
+  "added": [
+    {
+      "name": "Merlina’s",
+      "page_name": "Merlina’s",
+      "src": "https://holidayswithkids.com.au/gold-coast-restaurants-pubs-with-playgrounds/",
+      "date": "2025-02",
+      "map": "Google Maps the surf club 'Mermaid Beach AEME Surf Life Saving Club', 827 reviews, newest '4 days ago'; the restaurant has no listing of its own"
+    },
+    {
+      "name": "FunnyBone Coffee",
+      "page_name": "Funnybone Coffee",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 264 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Café 63",
+      "page_name": "Café 63",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Cafe 63', 745 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Pasture & Co",
+      "page_name": "Pasture & Co",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 871 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Dune Cafe",
+      "page_name": "Dune Cafe",
+      "src": "https://getoutwithkids.com.au/kid-friendly-restaurants-gold-coast/",
+      "date": "2025-12",
+      "map": "Google Maps 'Dune Cafe, Currumbin', 1,390 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Gathering Co",
+      "page_name": "Gathering Co",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Gathering Co. Cafe', 59 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Stones Throw",
+      "page_name": "Stones Throw",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Stones Throw Cafe', 415 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Chipmunks Everton Park",
+      "page_name": "Chipmunks in Everton Park",
+      "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+      "date": "2026-06",
+      "map": "Google Maps 'Chipmunks Playland & Café Everton Park', 480 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Bella’s Wonderland",
+      "page_name": "Bella’s Wonderland",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 698 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Planet Chill",
+      "page_name": "Planet Chill",
+      "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Planet Chill Ice Skating Rink', 82 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "GC Aqua Park",
+      "page_name": "GC Aqua Park",
+      "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 12,886 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Bounce Inc",
+      "page_name": "Bounce Inc",
+      "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'BOUNCE Inc Gold Coast', 2,137 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "O’Reilly’s Tree Top Walk",
+      "page_name": "O’Reilly’s Treetop Walk",
+      "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Tree Top Walkway', 348 reviews, newest 'a month ago'"
+    },
+    {
+      "name": "Currumbin Rock Pools",
+      "page_name": "Currumbin rock pools",
+      "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 1,416 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Country Paradise Parklands",
+      "page_name": "Country Paradise Parklands",
+      "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 555 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "The Jungle Adventure Play",
+      "page_name": "Jungle Adventure Play",
+      "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+      "date": "2026-06",
+      "map": "Google Maps 'The Jungle Adventure Play Tingalpa', 1,251 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Rainbow City Play Centre",
+      "page_name": "Rainbow City Indoor Play Centre",
+      "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+      "date": "2026-06",
+      "map": "Google Maps 'Rainbow City Play Centre', 403 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Crocs Playcentre North Lakes",
+      "page_name": "Crocs Playcentre, North Lakes",
+      "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+      "date": "2026-06",
+      "map": "Google Maps 847 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Pancake Diner (Burleigh)",
+      "page_name": "Pancake Diner",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Pancake Diner Burleigh', newest review shown 8 days ago"
+    },
+    {
+      "name": "Currumbin RSL",
+      "page_name": "Currumbin RSL",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Currumbin RSL', newest review shown 4 days ago"
+    },
+    {
+      "name": "Cafe Catalina (Southport)",
+      "page_name": "Cafe Catalina",
+      "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+      "date": "2025-04",
+      "map": "Google Maps 'Cafe Catalina' (Southport), newest review shown 2 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Graziers Steakhouse Restaurant",
+      "why": "the map's place of that name is in Brisbane, not the page's Central Gold Coast"
+    },
+    {
+      "name": "Nicolinis",
+      "why": "the map has no place by that name near Neal Shannon Park"
+    },
+    {
+      "name": "Nobbys Shack",
+      "why": "the map's newest review is nine months old"
+    },
+    {
+      "name": "The Wobbygongs Kids Fun Zone",
+      "why": "the map's 'Wobbygongs Kids Club' has no reviews"
+    },
+    {
+      "name": "Cadence Cafe, BSKT, Coomera Lodge Hotel",
+      "why": "only honourable mentions; nothing for families on the page"
+    },
+    {
+      "name": "Pratten Park, Pirate Park, Kirra Beach and 4 more",
+      "why": "no page date library-check.cjs could read"
+    },
+    {
+      "name": "Wobbygongs Kids Club",
+      "why": "no reviews on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders except where the page gives an age range (Planet Chill 3+, Rainbow City 0–8).",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 14 rows from InDaily (Apr 2025) and Experience Gold Coast (Mar 2026), 7 passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "town": "dk-copenhagen",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows, 5 passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "Scarpetta (Islands Brygge)",
+      "page_name": "Scarpetta Islands Brygge",
+      "src": "https://cofoco.dk/en/restaurants/family-friendly",
+      "date": "2026-11",
+      "map": "Google Maps 'Scarpetta', Islands Brygge 81F, 800 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Scarpetta (Rantzausgade)",
+      "page_name": "Scarpetta Rantzausgade",
+      "src": "https://cofoco.dk/en/restaurants/family-friendly",
+      "date": "2026-11",
+      "map": "Google Maps 'Scarpetta', Rantzausgade 7, 1,007 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Donna",
+      "page_name": "Donna",
+      "src": "https://cofoco.dk/en/restaurants/family-friendly",
+      "date": "2026-11",
+      "map": "Google Maps 'Donna Restaurant', 736 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Les Trois Cochons",
+      "page_name": "Les Trois Cochons",
+      "src": "https://cofoco.dk/en/restaurants/family-friendly",
+      "date": "2026-11",
+      "map": "Google Maps 1,341 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Round Tower",
+      "page_name": "Rundetårn",
+      "src": "https://kidsareatrip.com/?p=1370",
+      "date": "2026-01",
+      "map": "Google Maps 'The Round Tower', 29,113 reviews, newest '9 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Delphine, Fælledparken",
+      "why": "already in the library"
+    },
+    {
+      "name": "Olise",
+      "why": "library-check.cjs: quote not on page"
+    },
+    {
+      "name": "Frilandsmuseet",
+      "why": "library-check.cjs: no page date"
+    },
+    {
+      "name": "visitcopenhagen.com family list",
+      "why": "no date found on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

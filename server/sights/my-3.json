@@ -163,7 +163,7 @@
           "area": { "en": "Kota Kinabalu", "th": "โกตาคินาบาลู" },
           "what": { "en": "A longhouse-style museum with a giant whale skeleton, a railway carriage and a heritage village in a botanical garden, open daily 9 AM to 5 PM", "th": "พิพิธภัณฑ์ทรงบ้านยาว มีโครงกระดูกวาฬยักษ์ ตู้รถไฟ และหมู่บ้านมรดกในสวนพฤกษศาสตร์ เปิดทุกวัน 9 โมงถึง 5 โมงเย็น" },
           "why": { "en": "Indoor galleries and shaded garden paths make it a good rainy-day choice for curious school-age children", "th": "ห้องจัดแสดงในอาคารและทางเดินร่มรื่น เป็นทางเลือกวันฝนตกสำหรับเด็กโตช่างสงสัย" },
-          "tip": { "en": "The railway carriage and the whale are the favourites; leave time for the heritage village outside", "th": "ตู้รถไฟและวาฬเป็นที่ชอบ เผื่อเวลาเดินหมู่บ้านมรดกด้านนอก" },
+          "tip": { "en": "The main building is closed for upgrading; the heritage village, the railway carriage and the whale stay open", "th": "อาคารหลักปิดปรับปรุง หมู่บ้านมรดก ตู้รถไฟ และโครงกระดูกวาฬยังเปิดให้ชม" },
           "ages": [0, 1, 2, 2],
           "hrs": 2.5,
           "io": "both",
@@ -226,23 +226,6 @@
           "src": "https://sabahtourism.com/destination/tanjung-aru-beach/"
         },
         {
-          "name": { "en": "Kipandi Butterfly Park", "th": "สวนผีเสื้อกีปันดี" },
-          "kind": "nature",
-          "area": { "en": "Tambunan, Crocker Range", "th": "ตัมบูนัน เทือกเขาครอกเกอร์" },
-          "what": { "en": "A hill park at 700 m with over 100 butterfly species, thousands of beetles, native orchids and pitcher plants", "th": "สวนบนเขาสูง 700 ม. มีผีเสื้อกว่า 100 ชนิด ด้วงหลายพันตัว กล้วยไม้ป่า และต้นหม้อข้าวหม้อแกงลิง" },
-          "why": { "en": "Looking closely at insects and plants suits curious children; the park runs a free guided walk for school groups", "th": "การส่องดูแมลงและพืชเหมาะกับเด็กช่างสังเกต สวนมีทัวร์เดินฟรีสำหรับกลุ่มนักเรียน" },
-          "tip": { "en": "Make an appointment with the park before you visit; it is a long drive from Kota Kinabalu", "th": "นัดล่วงหน้ากับสวนก่อนไป นั่งรถจากโกตาคินาบาลูค่อนข้างไกล" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 2,
-          "io": "out",
-          "pram": "no",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "req",
-          "q": "Kipandi Butterfly Park, Tambunan, Sabah",
-          "ok": "2026-11",
-          "src": "https://sabahtourism.com/destination/kipandi-butterfly-park/"
-        },
-        {
           "name": { "en": "Handicraft Market, Kota Kinabalu", "th": "ตลาดหัตถกรรม โกตาคินาบาลู" },
           "kind": "market",
           "area": { "en": "Kota Kinabalu waterfront", "th": "ริมน้ำโกตาคินาบาลู" },
@@ -275,6 +258,125 @@
           "q": "Sabah Tea Garden, Jalan Ranau-Sandakan, Ranau",
           "ok": "2026-11",
           "src": "https://sabahtourism.com/destination/sabah-tea-garden/"
+        },
+        {
+          "local": "Masjid Bandaraya Kota Kinabalu",
+          "name": {
+            "th": "มัสยิดประจำเมืองโกตากินาบาลู",
+            "en": "Kota Kinabalu City Mosque"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ลิกัส ทางเหนือของตัวเมือง",
+            "en": "Likas, just north of the centre"
+          },
+          "what": {
+            "th": "มัสยิดสวยริมทะเลสาบ อยู่ทางเหนือของเมือง",
+            "en": "A beautiful mosque by a lake, just north of the city"
+          },
+          "why": {
+            "th": "นักท่องเที่ยวเข้าชมได้นอกเวลาละหมาด",
+            "en": "Visitors may go inside outside prayer times"
+          },
+          "tip": {
+            "th": "ปิดให้ชมในเวลาละหมาด หลีกเลี่ยงวันศุกร์ แต่งกายปิดแขนขา",
+            "en": "Closed to visitors at prayer times; avoid Fridays; cover arms and legs"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Masjid Bandaraya Kota Kinabalu, Likas",
+          "src": "https://travelynnfamily.com/kota-kinabalu-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/sandakan-with-kids/",
+          "name": {
+            "th": "บ้านแอกเนส คีธ",
+            "en": "Agnes Keith House"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนอูตารา เหนือตัวเมือง ซันดากัน",
+            "en": "Jalan Utara, above the town, Sandakan"
+          },
+          "what": {
+            "th": "บ้านเก่าของนักเขียนแอกเนส คีธ ล้อมด้วยสนามหญ้า",
+            "en": "The former home of author Agnes Keith, set in lawns"
+          },
+          "why": {
+            "th": "เล่นโครเกต์บนสนามหญ้าและจิบชาที่ระเบียง",
+            "en": "Croquet on the lawn and cream teas on the terrace"
+          },
+          "q": "Agnes Keith House, Jalan Utara, Sandakan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/sandakan-with-kids/",
+          "name": {
+            "th": "วัดผู่จี้ซื่อ",
+            "en": "Puu Jih Syh Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเซซิลี บนเนินเขา ซันดากัน",
+            "en": "Jalan Cecily, on a hill, Sandakan"
+          },
+          "what": {
+            "th": "วัดจีนที่ใหญ่ที่สุดในซันดากัน ตั้งอยู่บนเนินเขา",
+            "en": "Sandakan's largest Chinese temple, high on a hill"
+          },
+          "why": {
+            "th": "ภายในตกแต่งงดงาม",
+            "en": "Richly decorated inside"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ",
+            "en": "Dress modestly"
+          },
+          "q": "Puu Jih Syh Temple, Jalan Cecily, Sandakan",
+          "ok": "2026-11"
         }
       ]
     },
@@ -572,22 +674,78 @@
           "src": "https://www.langkawibook.my/attractions/dream-forest-langkawi"
         },
         {
-          "name": { "en": "Perdana Marine Park", "th": "เปอร์ดานา มารีน พาร์ก" },
           "local": "",
-          "kind": "park",
-          "area": { "en": "Langkawi", "th": "ลังกาวี" },
-          "what": { "en": "An artificial salt pool with lots of sea life.", "th": "สระน้ำเค็มเทียมที่มีสัตว์ทะเลมากมาย" },
-          "why": { "en": "The page mentions a kids' play area.", "th": "หน้าเว็บบอกว่ามีลานเล่นสำหรับเด็ก" },
-          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
-          "ages": [1, 2, 2, 2],
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
           "book": "none",
-          "q": "Perdana Marine Park, Langkawi",
-          "ok": "2026-11",
-          "src": "https://thebackpackingfamily.com/amazing-things-to-do-in-langkawi/"
+          "src": "https://www.airasia.com/blog/malaysia/kedah/best-places-to-travel-with-kids-in-langkawi/",
+          "name": {
+            "th": "หาดตันจุงรู",
+            "en": "Tanjung Rhu Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ตันจุงรู ทางตะวันออกเฉียงเหนือของลังกาวี",
+            "en": "Tanjung Rhu, north-east Langkawi"
+          },
+          "what": {
+            "th": "หาดทรายขาวเงียบสงบทางเหนือ มีเกาะหินปูนกลางทะเล",
+            "en": "A quiet northern beach of white sand with limestone islands offshore"
+          },
+          "why": {
+            "th": "ใช้เวลาช้าๆ เก็บเปลือกหอย ห่างจากความวุ่นวาย",
+            "en": "Slow days and beach combing away from the crowds"
+          },
+          "q": "Tanjung Rhu Beach, Langkawi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.redbus.my/travel-guide/family-travel-guide-to-langkawi-during-school-holidays/",
+          "name": {
+            "th": "มาชินชังเพ็ตแลนด์",
+            "en": "Machinchang PetLand"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "โอเรียนทัลวิลเลจ ถนนเตอลุกบูเรา",
+            "en": "Oriental Village, Jalan Teluk Burau"
+          },
+          "what": {
+            "th": "มุมเล่นกับสัตว์เลี้ยง มีแพะแคระ กระต่าย และสัตว์เลี้ยงตัวเล็ก",
+            "en": "A pet-and-play corner with miniature goats, rabbits and other small pets"
+          },
+          "why": {
+            "th": "เด็กได้กอดและเล่นกับสัตว์ที่เชื่อง",
+            "en": "Children can cuddle and play with the friendly animals"
+          },
+          "q": "Machinchang PetLand Langkawi, Jalan Teluk Burau, Langkawi",
+          "ok": "2026-11"
         }
       ]
     }

@@ -319,6 +319,269 @@
           "q": "Mostnica Gorge, Stara Fužina, Bohinj",
           "ok": "2026-11",
           "src": "https://www.bohinj.si/en/mostnica-gorge-and-voje-valley/"
+        },
+        {
+          "local": "Vodno mesto Atlantis",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ljubljana.info/?p=4246",
+          "name": {
+            "th": "สวนน้ำแอตแลนติส",
+            "en": "Atlantis water park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห่างใจกลางเมืองไปทางตะวันออกเฉียงเหนือ 5 กม. ลูบลิยานา",
+            "en": "5 km north-east of the centre, Ljubljana"
+          },
+          "what": {
+            "th": "สระในร่มและกลางแจ้ง สไลเดอร์ และโซนเด็ก \"แอดเวนเจอร์เวิลด์\"",
+            "en": "Indoor and outdoor pools, slides and a children's area, Adventure World"
+          },
+          "why": {
+            "th": "สระแยกตามวัย แต่ละกลุ่มเล่นได้ไม่รบกวนกัน",
+            "en": "Pools split by age so each group plays undisturbed"
+          },
+          "q": "Vodno mesto Atlantis, Španska ulica 1, Ljubljana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.ljubljana.info/?p=4246",
+          "name": {
+            "th": "สวนทิโวลี",
+            "en": "Tivoli Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ลูบลิยานา",
+            "en": "Ljubljana"
+          },
+          "what": {
+            "th": "สวนกลางเมืองขนาดใหญ่ มีทุ่งหญ้า สนามเด็กเล่น คาเฟ่ริมบ่อ และลานจักรยานเล็ก ๆ",
+            "en": "A big city park with meadows, playgrounds, a pond café and a small bike park"
+          },
+          "why": {
+            "th": "มีทุ่งหญ้าให้วิ่งและสนามเด็กเล่นสองแห่ง",
+            "en": "Meadows to run in and two playgrounds"
+          },
+          "q": "Tivoli Park, Ljubljana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Vivarij",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+          "name": {
+            "th": "วิวาเรียมโพสตอยนา",
+            "en": "Postojna Vivarium"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อุทยานถ้ำโพสตอยนา",
+            "en": "Postojna Cave Park"
+          },
+          "what": {
+            "th": "นิทรรศการข้างทางเข้าถ้ำ ได้พบซาลาแมนเดอร์ถ้ำและสัตว์ถ้ำอื่น ๆ",
+            "en": "An exhibition by the cave entrance where you meet the olm and other cave animals"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้รู้จักสัตว์ในโลกใต้ดินที่มืดมิด",
+            "en": "Children learn about the animals of the dark underground"
+          },
+          "q": "Vivarium, Jamska cesta 29, Postojna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Expo Jama Kras",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+          "name": {
+            "th": "นิทรรศการถ้ำและคาสต์",
+            "en": "Expo Cave Karst"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อุทยานถ้ำโพสตอยนา",
+            "en": "Postojna Cave Park"
+          },
+          "what": {
+            "th": "นิทรรศการใหญ่เรื่องถ้ำและภูมิประเทศคาสต์ แบบลงมือเล่น",
+            "en": "A large hands-on exhibition about caves and karst"
+          },
+          "why": {
+            "th": "มีคำถามสนุก ๆ เช่น ถ้าเป็นหินงอกจะอายุเท่าไร",
+            "en": "Playful questions, like how old you would be as a stalagmite"
+          },
+          "q": "Expo Jama Kras, Jamska cesta 28, Postojna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Črna jama in Pivka jama",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+          "name": {
+            "th": "ถ้ำดำและถ้ำปิฟกา",
+            "en": "Black Cave and Pivka Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เวลีกีโอตอก โพสตอยนา",
+            "en": "Veliki Otok, Postojna"
+          },
+          "what": {
+            "th": "ถ้ำสองแห่งในอุทยานถ้ำโพสตอยนา ใกล้แม่น้ำปิฟกา",
+            "en": "Two caves in the Postojna cave park, by the River Pivka"
+          },
+          "why": {
+            "th": "เดินผ่านถ้ำสองแห่งในภูมิประเทศคาสต์เขียวขจี",
+            "en": "A walk through two caves in green karst country"
+          },
+          "tip": {
+            "th": "เข้าชมได้กับไกด์ผู้ชำนาญเท่านั้น",
+            "en": "Only with an experienced guide"
+          },
+          "q": "Črna jama, Veliki Otok, Postojna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.visitljubljana.com/en/visitors/in-focus/stories/5-kids-favourite-playgrounds-in-ljubljana/",
+          "name": {
+            "th": "สนามเด็กเล่นสวนทิโวลี",
+            "en": "Tivoli Park playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนทิโวลี ลูบลิยานา",
+            "en": "Tivoli Park, Ljubljana"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นที่รู้จักที่สุดในลูบลิยานา ใกล้บ่อน้ำและคาเฟ่",
+            "en": "Ljubljana's best-known playground, by a pond and a café"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นตั้งแต่เด็กเล็กถึงเด็กโต มีม้านั่งให้พ่อแม่",
+            "en": "Something for toddlers to preteens, with benches for parents"
+          },
+          "q": "Park Tivoli Children's playground, Cesta 27. aprila, Ljubljana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.bohinj.si/en/dozivetja/zlatorog-fairy-trail/",
+          "name": {
+            "th": "เส้นทางนิทานซลาโตรอก",
+            "en": "Zlatorog Fairy Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อูคานซ์ โบฮินย์",
+            "en": "Ukanc, Bohinj"
+          },
+          "what": {
+            "th": "เส้นทางนิทานวงรอบ 2 กม. มีสมุดนิทานและแผนที่",
+            "en": "A 2 km circular fairy-tale trail with a booklet and a map"
+          },
+          "why": {
+            "th": "เส้นทางสนุกและได้ความรู้สำหรับเด็กเล็ก",
+            "en": "A fun, educational trail for younger children"
+          },
+          "q": "Zlatorog Fairy Trail, Ukanc, Bohinj",
+          "ok": "2026-11"
         }
       ]
     }

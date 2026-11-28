@@ -291,6 +291,80 @@
           "q": "Butakovka Waterfall trail, Butakovka Gorge, Almaty",
           "ok": "2026-11",
           "src": "https://nta.visitalmaty.kz/ru/guides/almaty-with-kids"
+        },
+        {
+          "local": "Парк имени 28 гвардейцев-панфиловцев",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/almaty-with-kids/",
+          "name": {
+            "th": "สวน 28 ทหารพันฟีลอฟ",
+            "en": "Park of the 28 Panfilov Guardsmen"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางอัลมาตี",
+            "en": "Central Almaty"
+          },
+          "what": {
+            "th": "สวนกลางเมืองรอบมหาวิหารแอสเซนชัน มีจักรยานเด็กให้เช่า",
+            "en": "A central park around the Ascension Cathedral, with bikes for children to hire"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นลานที่เหมาะกับการพาเด็กเล็กมาเล่นสักชั่วโมง",
+            "en": "The page calls it a great square for an hour with young children"
+          },
+          "q": "28 Panfilov Guardsmen Park, Almaty",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Вознесенский кафедральный собор",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/almaty-with-kids/",
+          "name": {
+            "th": "มหาวิหารแอสเซนชัน",
+            "en": "Ascension Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สวนพันฟีลอฟ อัลมาตี",
+            "en": "Panfilov Park, Almaty"
+          },
+          "what": {
+            "th": "สถานที่สำคัญที่รู้จักที่สุดของเมือง ในสวนกลางเมือง",
+            "en": "The city's best-known landmark, in the central park"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าสวยทั้งภายนอกและภายใน",
+            "en": "The page says it looks beautiful inside and out"
+          },
+          "q": "Ascension Cathedral, Gogol St 40, Almaty",
+          "ok": "2026-11"
         }
       ]
     },
@@ -461,23 +535,6 @@
           "src": "https://visitastana.kz/en/about-city/what-to-see/khan-shatyr-sec/"
         },
         {
-          "name": { "en": "Happylon family amusement park", "th": "แฮปปี้ลอน สวนสนุกครอบครัว" },
-          "kind": "play",
-          "area": { "en": "Astana shopping centre", "th": "ศูนย์การค้าในอัสตานา" },
-          "what": { "en": "An indoor family centre with small roller coasters, carousels, arcade games and toddler zones", "th": "ศูนย์ครอบครัวในร่ม มีรถไฟเหาะเล็ก ม้าหมุน เกมอาร์เคด และโซนเด็กเล็ก" },
-          "why": { "en": "Soft toddler zones and gentle rides suit small children, and there are cafés for a rest", "th": "โซนเด็กเล็กนุ่มและเครื่องเล่นเบาๆ เหมาะกับเด็กเล็ก มีร้านกาแฟให้พัก" },
-          "tip": { "en": "Open daily 10:00–22:00; busy at weekends", "th": "เปิดทุกวัน 10:00–22:00 วันหยุดคนเยอะ" },
-          "ages": [2, 2, 2, 1],
-          "hrs": 2.5,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Happylon, Astana",
-          "ok": "2026-11",
-          "src": "https://visitastana.kz/en/about-city/what-to-see/happylon/"
-        },
-        {
           "name": { "en": "Independence Palace", "th": "พระราชวังอินดีเพนเดนซ์ (ทาวเอลซิซดิก)" },
           "local": "Тәуелсіздік сарайы",
           "kind": "museum",
@@ -548,6 +605,117 @@
           "q": "Uly Dala Eli Monument, Yesil District, Astana",
           "ok": "2026-11",
           "src": "https://visitastana.kz/en/about-city/what-to-see/monument-uly-dala-eli/"
+        },
+        {
+          "local": "КидБург",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "name": {
+            "th": "คิดเบิร์ก",
+            "en": "Kidburg"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซือกานัก อัสตานา",
+            "en": "Syganak St, Astana"
+          },
+          "what": {
+            "th": "เมืองจำลองสำหรับเด็ก มีสถานที่จริงย่อส่วนให้ลองทำอาชีพต่าง ๆ",
+            "en": "A children's town of small copies of real places to try out jobs"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ลองทำงานหลายอย่าง",
+            "en": "Children try different jobs"
+          },
+          "q": "KidBurg, Syganak St 60/5, Astana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "name": {
+            "th": "เบบี้บูม",
+            "en": "Baby BOOM"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนตูรัน อัสตานา",
+            "en": "Turan Ave, Astana"
+          },
+          "what": {
+            "th": "ศูนย์เล่นสำหรับเด็ก มีของเล่นนุ่ม ๆ และเครื่องเล่นปลอดภัย",
+            "en": "A children's play centre with soft play and gentle rides"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กเล็ก",
+            "en": "Suited to little ones"
+          },
+          "q": "Baby Boom, Turan Ave 53, Astana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "name": {
+            "th": "บีคาร์ติง",
+            "en": "Bee Karting"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ห้างยูเรเชีย-3 อัสตานา",
+            "en": "Eurasia-3 mall, Astana"
+          },
+          "what": {
+            "th": "ศูนย์โกคาร์ตที่เด็กและผู้ใหญ่ขับแข่งได้",
+            "en": "A karting centre where children and adults can race"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้สัมผัสความเร็วบนสนาม",
+            "en": "Children feel the speed on the track"
+          },
+          "q": "Bee Karting, Petrova St 24a/1, Astana",
+          "ok": "2026-11"
         }
       ]
     }

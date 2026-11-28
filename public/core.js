@@ -245,6 +245,12 @@ async function api(method, url, body, blob) {
   if (!r.ok) { const j = await r.json().catch(() => null); throw Object.assign(new Error('http ' + r.status), { code: r.status, error: j && j.error, body: j }); }   // e.error = the server's word (limit, runs, exists…)
   return r.json();
 }
+// a GET whose answer is kept on the phone (IndexedDB kv 'k:<url>'): with no signal the last answer stands in — the library lists
+// Today and SOS read (the towns, places to eat near tonight's bed, the rainy-day list); packOffline asks them ahead (warmOffline)
+async function apiKeep(url) {
+  try { const r = await api('GET', url); idb.set('k:' + url, r); return r; }
+  catch (e) { if (e && e.code === 401) throw e; const v = await idb.get('k:' + url); if (v !== undefined) return v; throw e; }
+}
 // a write that lands while the state is being fetched would be lost: the older answer would replace it locally and the next
 // tap would send a row without it (a review lost Mimi's 😍 this way) — so a fetch that overlapped a finished write is redone
 let written = 0;
@@ -544,7 +550,8 @@ function themeStyle(t) {
   const css = Object.entries(keys).filter(([k]) => th[k] && !(dark && ['ink', 'muted', 'panel', 'rule', 'pick', 'info', 'calm', 'warn'].includes(k)))
     .map(([k, v]) => `${v}:${k === 'accent' && dark && th.accentDark ? th.accentDark : k === 'accent2' ? acc2 : th[k]}`);
   const acc = dark && th.accentDark ? th.accentDark : th.accent;
-  if (acc) css.push(`--on-accent:${onAccent(acc)}`);   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
+  if (acc) css.push(`--on-accent:${onAccent(acc)}`);
+  if (th.accentDark || acc) css.push(`--acc-soft:${th.accentDark || acc}`);   // the book's lighter colour: what is selected is tinted with it, so a navy or forest book's choice reads coloured, not grey (UI review, Nov 2026)   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
   if (th.accent2) css.push(`--on-accent2:${onAccent(acc2)}`);   // the same for the second colour (AU's sea blue wants dark text)
   return css.join(';');
 }
@@ -576,6 +583,10 @@ const offlineUrls = (t) => {
   kidArtSlugs().forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
   mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
   videoOf(t.id).forEach((m) => { if (!m.local) urls.add(`/media/${encodeURIComponent(m.id)}/t`); });   // a clip's poster; the clip itself only with "everything"
+  // every picture the guide text names (a chapter's park map, a card's picture): HK day 2's Disneyland map was missing with no signal
+  const pics = (v) => { if (typeof v === 'string') { if (/^\/(art|stock)\/[^\s"'<>]+\.(svg|webp|png|jpe?g)(\?[^\s"'<>]*)?$/i.test(v)) urls.add(v); } else if (v && typeof v === 'object') Object.values(v).forEach(pics); };
+  pics(t.info); t.days.forEach((d) => pics(d.plan));
+  urls.add('/geo/land.json');   // the kids' world map draws its land from it
   if (t.kind === 'snap') new Set(['th', ...(((t.theme || {}).snap || {}).places || []).map((p) => String(p).split('-')[0])]).forEach((cc) => { if (/^[a-z]{2}$/.test(cc)) urls.add(`/geo/${cc}.json`); });   // a book from photos names new photos with no signal too
   return [...urls];
 };
@@ -590,6 +601,7 @@ async function packOffline(t, all) {
   renderProgress();
   const worker = async () => { for (;;) { const u = urls.shift(); if (!u) return; try { const r = await fetch(u, { credentials: 'same-origin' }); if (!r.ok) failed++; } catch (_) { failed++; } packing.done++; renderProgress(); } };
   await Promise.all([worker(), worker(), worker()]);
+  try { await warmOffline(t); } catch (_) { failed++; }
   packing = null; renderProgress();
   if (failed) toast(L(`เก็บไม่ครบ ${failed} ไฟล์ ลองอีกครั้งเมื่อสัญญาณดี`, `${failed} files could not be stored — try again with better signal`));
   else { ls('offline_' + t.id, { at: Date.now(), n: mediaOf(t.id).length, all: !!all }); toast(L('เก็บเล่มนี้ไว้ในเครื่องแล้ว เปิดได้แม้ไม่มีเน็ต', 'This book is stored on the phone — it opens without signal')); safeRender(); }

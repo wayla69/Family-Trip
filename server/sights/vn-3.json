@@ -280,7 +280,307 @@
       {"name":{"en":"Valley of Love Pedal Boats","th":"หุบเขาแห่งความรัก เรือถีบรูปหงส์"},"kind":"park","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Swan pedal boats on the heart-shaped lake.","th":"เรือถีบรูปหงส์บนทะเลสาบรูปหัวใจ"},"why":{"en":"The page says the swan boats and heart-shaped lake are romantic scenery perfect for family photos.","th":"หน้าเว็บบอกว่าเรือหงส์และทะเลสาบรูปหัวใจเป็นฉากสวยสำหรับรูปครอบครัว"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"150,000 VND per boat (30 minutes)","th":"150,000 VND ต่อลำ (30 นาที)"},"book":"none","q":"Valley of Love, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
       {"name":{"en":"Strawberry Farm Tours","th":"ทัวร์ฟาร์มสตรอว์เบอร์รี่"},"kind":"farm","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Pick-your-own strawberries and fresh strawberry juice on a highland farm.","th":"เก็บสตรอว์เบอร์รี่เองในฟาร์มบนที่ราบสูง และดื่มน้ำสตรอว์เบอร์รี่สด"},"why":{"en":"The page says it suits all ages, especially toddlers.","th":"หน้าเว็บบอกว่าเหมาะกับทุกวัย โดยเฉพาะเด็กเล็ก"},"ages":[2,2,2,1],"hrs":2.5,"io":"out","pram":"part","price":{"en":"50,000-100,000 VND per person","th":"50,000–100,000 VND ต่อคน"},"book":"none","q":"Strawberry farms, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
       {"name":{"en":"Linh Phuoc Pagoda (Dragon Temple)","th":"วัดลิ้นฟุก (วัดมังกร)"},"kind":"culture","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Temple grounds with a mosaic dragon.","th":"บริเวณวัดมีมังกรโมเสก"},"why":{"en":"The page says it is a peaceful place with a mosaic dragon for cultural learning.","th":"หน้าเว็บบอกว่าเป็นที่สงบ มีมังกรโมเสกให้เด็กเรียนรู้วัฒนธรรม"},"ages":[0,0,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Free (donations welcome)","th":"ฟรี (ยินดีรับบริจาค)"},"book":"none","q":"Linh Phuoc Pagoda, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
-      {"name":{"en":"Coffee Farm Tours","th":"ทัวร์ฟาร์มกาแฟ"},"kind":"farm","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Bean-to-cup tour of highland coffee farms.","th":"ทัวร์จากเมล็ดถึงแก้วในฟาร์มกาแฟบนที่ราบสูง"},"why":{"en":"The page says it is educational, about the highland agriculture process.","th":"หน้าเว็บบอกว่าให้ความรู้เรื่องกระบวนการเกษตรบนที่ราบสูง"},"ages":[0,0,1,2],"hrs":3.5,"io":"both","pram":"no","price":{"en":"150,000-250,000 VND per person","th":"150,000–250,000 VND ต่อคน"},"book":"none","q":"Coffee farms, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"}
+      {"name":{"en":"Coffee Farm Tours","th":"ทัวร์ฟาร์มกาแฟ"},"kind":"farm","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Bean-to-cup tour of highland coffee farms.","th":"ทัวร์จากเมล็ดถึงแก้วในฟาร์มกาแฟบนที่ราบสูง"},"why":{"en":"The page says it is educational, about the highland agriculture process.","th":"หน้าเว็บบอกว่าให้ความรู้เรื่องกระบวนการเกษตรบนที่ราบสูง"},"ages":[0,0,1,2],"hrs":3.5,"io":"both","pram":"no","price":{"en":"150,000-250,000 VND per person","th":"150,000–250,000 VND ต่อคน"},"book":"none","q":"Coffee farms, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
+        {
+          "local": "Khu vui chơi trẻ em La DaLat",
+          "name": {
+            "th": "ลานเล่นเด็กลาดาลัด",
+            "en": "La DaLat Children’s Play Area"
+          },
+          "kind": "play",
+          "area": {
+            "th": "106A ถนนไมอันดาว ชั้นใต้ดินของโรงแรม",
+            "en": "106A Mai Anh Đào, in the hotel’s basement"
+          },
+          "what": {
+            "th": "ลานเล่นในร่มราว 7,000 ตร.ม. แบ่ง 5 โซน มีซอฟต์เพลย์และบ้านลม",
+            "en": "An indoor play zone of about 7,000 m² in five areas, with soft play and bouncy houses"
+          },
+          "why": {
+            "th": "เย็นสบายและไม่โดนฝน เหมาะวันฝนตก",
+            "en": "Cool and sheltered from the weather, so it works on a rainy day"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000 ดอง ต่อคน",
+            "en": "≈ 50,000 VND a person"
+          },
+          "book": "none",
+          "q": "La DaLat khu vui chơi trẻ em, 106A Mai Anh Đào, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Thị trấn Nobi",
+          "name": {
+            "th": "เมืองโนบิ",
+            "en": "Nobi Town"
+          },
+          "kind": "play",
+          "area": {
+            "th": "30/36 ถนนนามโห่ เขต 11",
+            "en": "30/36 Nam Hồ, Ward 11"
+          },
+          "what": {
+            "th": "หมู่บ้านเล็กที่จำลองโลกของโนบิตะและโดราเอมอน",
+            "en": "A little village built like the world of Nobita and Doraemon"
+          },
+          "why": {
+            "th": "เด็กที่ชอบโดราเอมอนได้เดินเข้าไปในฉากจากการ์ตูน",
+            "en": "Children who love Doraemon walk into scenes from the comic"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ เด็ก 25,000 ดอง ผู้ใหญ่ 35,000 ดอง",
+            "en": "≈ 25,000 VND a child, 35,000 VND an adult"
+          },
+          "book": "none",
+          "q": "Thị Trấn Nobi, 30/36 Nam Hồ, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Mongo Land Đà Lạt",
+          "name": {
+            "th": "มองโกแลนด์",
+            "en": "Mongo Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ตานุง ทางตะวันตกของดาลัด",
+            "en": "Tà Nung, west of Đà Lạt"
+          },
+          "what": {
+            "th": "แคมป์สไตล์มองโกเลียบนเนินเขา มีกระโจมหลากสีและรางเลื่อนแห้งยาวกว่า 400 ม.",
+            "en": "A Mongolian-style camp on a hillside with coloured tents and a dry toboggan run of more than 400 m"
+          },
+          "why": {
+            "th": "มีรางเลื่อน ยิงธนู สไลด์หญ้า และชุดมองโกเลียให้ลองแต่ง",
+            "en": "A dry toboggan, archery, grass sliding and Mongolian costumes to dress up in"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 100,000–120,000 ดอง ต่อคน",
+            "en": "≈ 100,000–120,000 VND a person"
+          },
+          "book": "none",
+          "q": "Mongo Land, Tà Nung, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Kids Coffee",
+          "name": {
+            "th": "คิดส์คอฟฟี่",
+            "en": "Kids Coffee"
+          },
+          "kind": "play",
+          "area": {
+            "th": "10 ถนนเหงียนตื๋อหลึก เขต 8",
+            "en": "10 Nguyên Tử Lực, Ward 8"
+          },
+          "what": {
+            "th": "สวนเขียวสำหรับเล่น มีคาเฟ่ในตัว",
+            "en": "A green garden play space with a café"
+          },
+          "why": {
+            "th": "มีเวิร์กช็อปฟรีสำหรับเด็ก ปั้นแป้ง ปลูกผัก และวาดภาพ",
+            "en": "Free workshops for children: dough modelling, planting vegetables and painting"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ 100,000 ดอง ต่อคน",
+            "en": "≈ 100,000 VND a person"
+          },
+          "book": "none",
+          "q": "Kids Coffee, 10 Nguyên Tử Lực, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Dalat Milk",
+          "name": {
+            "th": "ฟาร์มนมดาลัด",
+            "en": "Dalat Milk Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ตูจ่า เขตด๋อนเซือง (ทางใต้ของดาลัด)",
+            "en": "Tu Tra, Đơn Dương (south of Đà Lạt)"
+          },
+          "what": {
+            "th": "ฟาร์มโคนมที่ได้ชิมนมสด",
+            "en": "A dairy farm where you can taste fresh milk"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลูบวัว แพะ และแกะ",
+            "en": "Children can stroke the cows, goats and sheep"
+          },
+          "tip": {
+            "th": "ลูบได้อย่างเดียว ไม่มีขี่",
+            "en": "Petting only; no riding"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Da Lat Milk Joint-stock Company, Tu Tra, Đơn Dương",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 220,000–490,000 ด่ง",
+            "en": "≈ 220,000–490,000 VND"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "ทีรีสอร์ตเปรนน์",
+            "en": "Tea Resort Prenn"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เชิงช่องเขาเปรนน์ ทางหลวง 20 ดาลัด",
+            "en": "Prenn Pass foot, Highway 20, Đà Lạt"
+          },
+          "what": {
+            "th": "สวนเล่นและเกม มีโซนเด็กพร้อมบ้านลมและแทรมโพลีน",
+            "en": "A park with play and games, and a children's area with bouncy houses and a trampoline"
+          },
+          "why": {
+            "th": "มีบ้านลม เต็นท์กระโดด และสวนเลโก้",
+            "en": "Bouncy houses, a jump tent and a Lego garden"
+          },
+          "q": "Tea Resort Prenn, Đà Lạt",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Khu vui chơi Ladalat",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000 ด่งต่อคน",
+            "en": "≈ 50,000 VND a person"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "โซนเล่นในร่มลาดาลัด",
+            "en": "Ladalat indoor play zone"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไมอันห์ด่าว ดาลัด",
+            "en": "Mai Anh Đào street, Đà Lạt"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มราว 7,000 ตร.ม. ชั้นใต้ดินโรงแรมลาดาลัด",
+            "en": "An indoor play centre of about 7,000 m² in the Ladalat hotel's basement"
+          },
+          "why": {
+            "th": "โซนเล่นในร่มขนาดใหญ่ สำหรับวันฝนตก",
+            "en": "A big indoor play zone for a rainy day"
+          },
+          "q": "La DaLat khu vui chơi trẻ em, 106A Mai Anh Đào, Đà Lạt",
+          "ok": "2026-11"
+        },
+        {
+          "local": "C'KidZone Đà Lạt",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000–70,000 ด่งต่อคน",
+            "en": "≈ 50,000–70,000 VND a person"
+          },
+          "book": "none",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "name": {
+            "th": "ซีคิดโซน จัตุรัสลามเวียน",
+            "en": "C'KidZone (Lâm Viên Square)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จัตุรัสลามเวียน ซวนเฮือง ดาลัด",
+            "en": "Lâm Viên Square, Xuân Hương, Đà Lạt"
+          },
+          "what": {
+            "th": "โซนเล่นในร่ม มีระบายสี สไลเดอร์ ตกปลา ม้าหมุน และบ่อบอล",
+            "en": "An indoor play zone with colouring, slides, fishing, a carousel and a ball pit"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก มีมุมเล่นทราย",
+            "en": "Indoor play for a rainy day, with a sand corner"
+          },
+          "q": "Khu vui chơi trẻ em C'Kidzone, Quảng trường Lâm Viên, Đà Lạt",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -559,7 +859,204 @@
       {"name":{"en":"Imperial City","th":"นครจักรพรรดิเว้"},"kind":"culture","area":{"en":"Hue Citadel","th":"ป้อมเว้"},"what":{"en":"The historic imperial district of Hue, with its own ticket.","th":"ย่านพระราชวังของเว้ มีประตู พระราชวัง และลาน ให้เดินชม"},"why":{"en":"Palaces, gates and courtyards to walk through.","th":"พระราชวัง ประตู และลานให้เดินชม ซื้อตั๋วของตัวเอง"},"tip":{"en":"Carry water; the courtyards are open to the sun.","th":"พกน้ำไปด้วย ลานหลายแห่งโดนแดดแรง"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"VND 200,000 adult, VND 40,000 child (ages 7 to 12), younger children free","th":"200,000 VND ผู้ใหญ่ · 40,000 VND เด็ก 7–12 ปี · เด็กเล็กกว่าฟรี"},"book":"none","q":"Imperial City, Hue Citadel, Hue","ok":"2026-11","src":"https://visithue.org/imperial-city/"},
       {"name":{"en":"Thien Mu Pagoda","th":"วัดเทียนมู่"},"kind":"culture","area":{"en":"on the Perfume River","th":"ริมแม่น้ำหอม"},"what":{"en":"A Buddhist site on the Perfume River whose tower has 7 storeys.","th":"วัดพุทธริมแม่น้ำหอม มีหอคอยเจ็ดชั้น"},"why":{"en":"A temple tower and river views; the page says a visit takes about 30 to 45 minutes.","th":"หอคอยวัดและวิวแม่น้ำ หน้าเว็บบอกว่าใช้เวลาราว 30–45 นาที"},"tip":{"en":"Cover your shoulders and knees, and take your shoes off before the main hall.","th":"คลุมไหล่และเข่า และถอดรองเท้าก่อนเข้าโถงหลัก"},"ages":[1,2,2,2],"hrs":0.75,"io":"out","pram":"part","price":{"en":"Free entry, with voluntary donations","th":"ฟรี ยินดีรับบริจาค"},"book":"none","q":"Thien Mu Pagoda, Perfume River, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"},
       {"name":{"en":"Perfume River boat trip to Thien Mu Pagoda","th":"เรือแม่น้ำหอมไปวัดเทียนมู่"},"kind":"views","area":{"en":"Toa Kham pier, 49 Le Loi","th":"ท่าเรือเตี๊ยกคัม 49 ถนนเลอ ลอย"},"what":{"en":"A boat from the Toa Kham pier to Thien Mu and back, with time to see the pagoda on your own.","th":"เรือจากท่าเตี๊ยกคัมไปและกลับจากวัดเทียนมู่ มีเวลาดูวัดตามลำพัง"},"why":{"en":"A way onto the river, with time at the pagoda, the page says.","th":"เป็นทางขึ้นแม่น้ำ และมีเวลาอยู่ที่วัด ตามหน้าเว็บ"},"tip":{"en":"Food and drinks are extra; there is no guide.","th":"อาหารและเครื่องดื่มคิดเพิ่ม ไม่มีไกด์"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"from $14","th":"จาก $14"},"book":"rec","q":"Toa Kham pier, 49 Le Loi, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"},
-      {"name":{"en":"The garden houses of Kim Long","th":"บ้านสวนคิมลอง"},"kind":"oldtown","area":{"en":"Kim Long","th":"คิมลอง"},"what":{"en":"Historic garden houses, some charging admission and some private homes you can visit.","th":"บ้านสวนเก่าที่มีประวัติ บางแห่งเก็บค่าเข้า บางแห่งเป็นบ้านส่วนตัวที่เข้าชมได้"},"why":{"en":"A quiet stop between the big sights, the page says.","th":"จุดพักเงียบๆ ระหว่างสถานที่สำคัญ ตามหน้าเว็บ"},"tip":{"en":"There are no common opening hours; ask at the gate.","th":"ไม่มีเวลาเปิดปิดรวมกัน ให้ถามที่ประตู"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Garden houses of Kim Long, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"}
+      {"name":{"en":"The garden houses of Kim Long","th":"บ้านสวนคิมลอง"},"kind":"oldtown","area":{"en":"Kim Long","th":"คิมลอง"},"what":{"en":"Historic garden houses, some charging admission and some private homes you can visit.","th":"บ้านสวนเก่าที่มีประวัติ บางแห่งเก็บค่าเข้า บางแห่งเป็นบ้านส่วนตัวที่เข้าชมได้"},"why":{"en":"A quiet stop between the big sights, the page says.","th":"จุดพักเงียบๆ ระหว่างสถานที่สำคัญ ตามหน้าเว็บ"},"tip":{"en":"There are no common opening hours; ask at the gate.","th":"ไม่มีเวลาเปิดปิดรวมกัน ให้ถามที่ประตู"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Garden houses of Kim Long, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"},
+        {
+          "local": "Làng hương Thủy Xuân",
+          "name": {
+            "th": "หมู่บ้านธูปถวีซวน",
+            "en": "Thủy Xuân Incense Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ห่างตัวเมืองราว 7 กม. ทางตะวันตกเฉียงใต้ ใกล้สุสานตึดึ๊ก",
+            "en": "About 7 km south-west of the centre, near Tự Đức’s tomb"
+          },
+          "what": {
+            "th": "โรงทำธูปของครอบครัว ตากธูปเป็นรูปพัดหลากสี",
+            "en": "Family workshops where incense sticks dry in colourful fans"
+          },
+          "why": {
+            "th": "มีกิจกรรมทำธูปให้ครอบครัวลองทำ ใช้เวลา 30–45 นาที",
+            "en": "A hands-on incense session for families takes 30 to 45 minutes"
+          },
+          "tip": {
+            "th": "ไปช่วงมีนาคม–สิงหาคมดีที่สุด ให้เด็กอยู่ห่างควันและธูปที่จุดอยู่",
+            "en": "Best from March to August; keep children away from smoke and lit sticks"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000–100,000 ดอง ต่อการลองทำ",
+            "en": "≈ 50,000–100,000 VND for a hands-on session"
+          },
+          "book": "none",
+          "q": "Thuy Xuan Incense-making Village, Huế",
+          "src": "https://www.vietnamtourism.com/en/incense-village-hue-thuy-xuan-how-to-visit-what-to-expect",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi biển Tân Cảnh Dương",
+          "name": {
+            "th": "หาดเติ่นแก๋งเซือง",
+            "en": "Tân Cảnh Dương Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "จันเมย์–หล่างโก ห่างเว้ไปทางใต้ราว 60 กม.",
+            "en": "Chân Mây–Lăng Cô, about 60 km south of Huế"
+          },
+          "what": {
+            "th": "หาดทรายขาวเงียบสงบ น้ำใส มีต้นไม้ให้ร่ม",
+            "en": "A quiet white-sand beach with clear water and trees for shade"
+          },
+          "why": {
+            "th": "หาดกว้าง ลาดเอียงน้อย คลื่นสงบ มีที่ให้เด็กเล่นและเก็บเปลือกหอย",
+            "en": "Wide, gently sloping sand and calm waves, with room to play and collect shells"
+          },
+          "tip": {
+            "th": "แทบไม่มีร้านหรือสิ่งอำนวยความสะดวก พกอาหารและน้ำไปเอง",
+            "en": "Few cafés or facilities, so bring food and water"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Bãi biển Tân Cảnh Dương, Lộc Vĩnh, Huế",
+          "src": "https://vietnamnet.vn/en/uncrowded-hue-beach-surprises-family-with-clear-water-white-sand-2539066.html",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Phá Tam Giang",
+          "name": {
+            "th": "ทะเลสาบน้ำกร่อยตามซาง",
+            "en": "Tam Giang Lagoon"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางตะวันออกเฉียงเหนือของเว้",
+            "en": "North-east of Huế"
+          },
+          "what": {
+            "th": "ทะเลสาบน้ำกร่อยกว้างใหญ่ ล่องเรือชมได้",
+            "en": "A large lagoon to explore by boat"
+          },
+          "why": {
+            "th": "ล่องเรือผ่านกระชังปลาและวิถีชีวิตบนน้ำ",
+            "en": "A boat trip past fish farms and life on the water"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Tam Giang Lagoon, Huế",
+          "src": "https://vietnam.travel/places-to-go/central-vietnam/hue",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Làng hoa giấy Thanh Tiên",
+          "name": {
+            "th": "หมู่บ้านดอกไม้กระดาษแทงเตียน",
+            "en": "Thanh Tiên Paper Flower Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทางเหนือของเว้",
+            "en": "North of Huế"
+          },
+          "what": {
+            "th": "หมู่บ้านหัตถกรรมที่ผู้มาเยือนได้ทำดอกไม้กระดาษเอง",
+            "en": "A craft village where visitors make their own paper flower"
+          },
+          "why": {
+            "th": "งานฝีมือง่ายๆ ที่เด็กทำแล้วเก็บกลับบ้านได้",
+            "en": "A simple craft children can make and take home"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hoa Giấy Thanh Tiên, Phú Vang, Huế",
+          "src": "https://vietnam.travel/places-to-go/central-vietnam/hue",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Thuy Bieu Village",
+            "th": "หมู่บ้านถุ่ยเบี่ยว"
+          },
+          "local": "Làng Thủy Biều",
+          "kind": "culture",
+          "area": {
+            "en": "7 km from the city centre",
+            "th": "ห่างใจกลางเมือง 7 กม."
+          },
+          "what": {
+            "en": "A leafy village known for pomelos, home-style lunches and craft workshops",
+            "th": "หมู่บ้านร่มรื่นที่ขึ้นชื่อเรื่องส้มโอ อาหารกลางวันแบบบ้าน ๆ และเวิร์กช็อปงานฝีมือ"
+          },
+          "why": {
+            "en": "Craft workshops where kids play with clay, colours and traditional techniques; safe village roads for cycling",
+            "th": "มีเวิร์กช็อปให้เด็กเล่นดินเหนียว สี และเทคนิคแบบดั้งเดิม ถนนในหมู่บ้านปลอดภัยสำหรับปั่นจักรยาน"
+          },
+          "tip": {
+            "en": "The page's sample two-day plan puts cycling and crafts here on day 2",
+            "th": "แผนตัวอย่างสองวันในเว็บให้มาปั่นจักรยานและทำงานฝีมือที่นี่ในวันที่สอง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Thủy Biều, Huế",
+          "ok": "2026-11",
+          "src": "https://alike.io/blog/best-places-to-visit-in-hue-for-families"
+        }
     ]
     },
     {
@@ -884,6 +1381,326 @@
           "q": "Tran Phu Beach, Nha Trang",
           "ok": "2026-11",
           "src": "https://www.vietnamtourism.com/en/nha-trang-things-to-do-beyond-the-beach"
+        },
+        {
+          "local": "Thủy cung Trí Nguyên",
+          "name": {
+            "th": "อควาเรียมจีเหงียน",
+            "en": "Trí Nguyên Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "เกาะฮòนเหมียว นั่งเรือจากท่าเกิ่วด๊าราว 10 นาที",
+            "en": "Hòn Miễu island, about 10 minutes by boat from Cầu Đá port"
+          },
+          "what": {
+            "th": "อควาเรียมในอาคารรูปเรือ มีตู้ปลาใหญ่ใต้ดาดฟ้าและบ่อปลาใต้ร่มไม้",
+            "en": "An aquarium in a ship-shaped building, with big fish tanks below deck and a fish pond under the trees"
+          },
+          "why": {
+            "th": "เด็กๆ สนุก ในตู้มีสัตว์ทะเลหลายร้อยชนิด",
+            "en": "A fun stop for children, with hundreds of sea creatures in the tanks"
+          },
+          "tip": {
+            "th": "เรือออกจากท่าเกิ่วด๊า",
+            "en": "Boats leave from Cầu Đá port"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ 130,000 ดอง ต่อผู้ใหญ่",
+            "en": "≈ 130,000 VND an adult"
+          },
+          "book": "none",
+          "q": "Hồ cá Trí Nguyên, Hòn Miễu, Nha Trang",
+          "src": "https://mia.vn/cam-nang-du-lich/lac-vao-thuy-cung-tri-nguyen-nha-trang-thu-nho-giua-thanh-pho-bien-599",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Hòn Mun",
+          "name": {
+            "th": "เกาะฮòนมุน",
+            "en": "Hòn Mun Island"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางใต้ของอ่าวญาจาง นั่งเรือจากท่าเกิ่วด๊า",
+            "en": "South of Nha Trang Bay, by boat from Cầu Đá port"
+          },
+          "what": {
+            "th": "เขตอนุรักษ์ทางทะเลแห่งแรกของเวียดนาม มีหน้าผาสีดำและแนวปะการังให้ดำน้ำตื้น",
+            "en": "Vietnam’s first marine reserve, with black cliffs and reefs to snorkel"
+          },
+          "why": {
+            "th": "มีเรือท้องกระจกสำหรับเด็กเล็กที่ไม่อยากเปียก คนว่ายน้ำไม่เป็นใส่เสื้อชูชีพดำน้ำตื้นได้",
+            "en": "Glass-bottom boats for small children who want to stay dry; non-swimmers can snorkel in a life jacket"
+          },
+          "tip": {
+            "th": "ชายฝั่งเป็นหิน ใส่รองเท้าลุยน้ำ บนเกาะไม่มีร้านอาหาร",
+            "en": "Rocky shore, so bring water shoes; no restaurant on the island"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ค่าเข้า ผู้ใหญ่ 22,000 ดอง เด็ก 11,000 ดอง",
+            "en": "22,000 VND an adult, 11,000 VND a child (entry)"
+          },
+          "book": "rec",
+          "q": "Hon Mun, Nha Trang",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/hon-mun-island/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Chùa Long Sơn",
+          "name": {
+            "th": "วัดลองเซิน",
+            "en": "Long Sơn Pagoda"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เนินตรายถวี ใจกลางเมือง",
+            "en": "Trại Thủy hill, city centre"
+          },
+          "what": {
+            "th": "วัดบนเนินเขา มีพระพุทธรูปสีขาวองค์ใหญ่บนยอด มองเห็นวิวญาจาง",
+            "en": "A hillside pagoda with a big white Buddha at the top and views over Nha Trang"
+          },
+          "why": {
+            "th": "บันไดผ่านพระนอนและหอระฆัง และมีถนนด้านขวาขึ้นไปใกล้ยอด",
+            "en": "Steps past a reclining Buddha and a bell tower, and a road on the right side to near the top"
+          },
+          "tip": {
+            "th": "แต่งกายปิดไหล่และเข่า ถอดรองเท้าก่อนเข้า ไปเช้าหรือบ่ายแก่ๆ จะเย็นกว่า",
+            "en": "Cover shoulders and knees and take shoes off inside; early morning or late afternoon is cooler"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Long Son Pagoda, Nha Trang",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/long-son-pagoda/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Thiền viện Trúc Lâm Phụng Thủy Sơn",
+          "name": {
+            "th": "วัดเซนจุ๊กเลิมฟุ่งถวีเซิน",
+            "en": "Trúc Lâm Phụng Thủy Sơn Zen Monastery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เขาชินคุก ห่างญาจางไปทางตะวันตกเฉียงใต้ราว 10 กม.",
+            "en": "Chín Khúc mountain, about 10 km south-west of Nha Trang"
+          },
+          "what": {
+            "th": "วัดเซนแห่งใหม่บนยอดเขา มีสถูปทองสูงและวิวทั่วอ่าว",
+            "en": "A new Zen temple on a mountain top with a tall golden stupa and views over the bay"
+          },
+          "why": {
+            "th": "เห็นวิวชายฝั่งและเกาะทั้งหมดโดยไม่ต้องนั่งเรือหรือกระเช้า",
+            "en": "Views over the whole coast and the islands without a boat or cable car"
+          },
+          "tip": {
+            "th": "เพิ่งเปิดปลายปี 2025 เวลาเปิดอาจเปลี่ยน แต่งกายปิดไหล่และเข่า พกน้ำและของว่างไปเอง",
+            "en": "Opened in late 2025, so hours may still change; cover shoulders and knees; bring water and snacks"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Trúc Lâm Phụng Thuỳ Sơn, Nha Trang",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/truc-lam-phung-thuy-son/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+          "name": {
+            "th": "หมู่บ้านหัตถกรรมเจื่องเซิน",
+            "en": "Truong Son Craft Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเจื่องเซิน วิญเงวียน ญาจาง",
+            "en": "8 Truong Son Street, Vinh Nguyen, Nha Trang"
+          },
+          "what": {
+            "th": "ศูนย์หัตถกรรมที่เด็กได้ดูงานฝีมือดั้งเดิม",
+            "en": "A craft centre where children see traditional handicrafts"
+          },
+          "why": {
+            "th": "ได้เรียนรู้ประวัติศาสตร์จาม งานหัตถกรรม และสัตว์ทะเล",
+            "en": "A place to learn about Cham history, handicrafts and marine life"
+          },
+          "q": "Truong Son Craft Village, 8 Truong Son, Nha Trang",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เข้าชม 150,000 ดอง (ผู้ใหญ่) / 100,000 ดอง (เด็ก)",
+            "en": "Sightseeing 150,000 VND (adult) / 100,000 VND (child)"
+          },
+          "book": "none",
+          "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+          "name": {
+            "th": "บ่อโคลนร้อยไข่ ญาจาง",
+            "en": "100 Eggs Mud Bath"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ถนนเงวียนเติ๊ตแถ่ง ฟุ้กจุง",
+            "en": "Nguyen Tat Thanh Boulevard, Phuoc Trung"
+          },
+          "what": {
+            "th": "บ่อน้ำแร่ร้อนและอ่างโคลนรูปไข่ในสวนเขียว",
+            "en": "Hot mineral pools and egg-shaped mud baths in a green garden"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเหมาะทั้งผู้สูงอายุและเด็ก",
+            "en": "The page says it suits older people and children alike"
+          },
+          "q": "100 Eggs Mud Bath, Nguyen Tat Thanh, Nha Trang",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Playtime Kids Club",
+            "th": "เพลย์ไทม์ คิดส์ คลับ"
+          },
+          "local": "Khu vui chơi trẻ em Vincom Nha Trang",
+          "kind": "play",
+          "area": {
+            "en": "Level 3, Vincom Plaza, 44–46 Le Thanh Ton",
+            "th": "ชั้น 3 วินคอมพลาซ่า 44–46 เล แถ่ญ ตั๋น"
+          },
+          "what": {
+            "en": "An indoor play area in Vincom Plaza with play houses, bouncy houses and slides",
+            "th": "โซนเล่นในร่มในวินคอมพลาซ่า มีบ้านเล่น บ้านลมและสไลเดอร์"
+          },
+          "why": {
+            "en": "There is space for parents to play with the child too",
+            "th": "มีพื้นที่ให้พ่อแม่เล่นกับลูกด้วย"
+          },
+          "tip": {
+            "en": "Open 09:00–22:00 (per the page)",
+            "th": "เปิด 09:00–22:00 (ตามหน้าเว็บ)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Playtime Kids Club, Vincom Plaza, 44-46 Le Thanh Ton, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/kham-pha-ngay-top-13-khu-vui-choi-tre-em-nha-trang-hot-nhat/"
+        },
+        {
+          "name": {
+            "en": "Phu Dong Water Park",
+            "th": "สวนน้ำฝูด่ง"
+          },
+          "local": "Công viên nước Phù Đổng",
+          "kind": "themepark",
+          "area": {
+            "en": "78 Tran Phu, by the sea",
+            "th": "78 ถนนจันฟู ติดทะเล"
+          },
+          "what": {
+            "en": "A 2-hectare park by the sea with a water world, electric cars, bouncy houses and a Ferris wheel",
+            "th": "สวนริมทะเลขนาด 2 เฮกตาร์ มีโลกน้ำ รถไฟฟ้า บ้านลม และชิงช้าสวรรค์"
+          },
+          "why": {
+            "en": "Suits families on hot days and at weekends, with a water world and rides",
+            "th": "เหมาะกับครอบครัววันอากาศร้อนและวันหยุด มีโลกน้ำและเครื่องเล่น"
+          },
+          "tip": {
+            "en": "Open 07:00–23:59 (per the page)",
+            "th": "เปิด 07:00–23:59 (ตามหน้าเว็บ)"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Phu Dong Park, 100 Tran Phu, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/vi/wonderpedia/news/kham-pha-ngay-top-13-khu-vui-choi-tre-em-nha-trang-hot-nhat/"
         }
       ]
     }

@@ -444,7 +444,7 @@ function snapWallMs(at, off, zone) {
   const first = guess - offAt(guess); return guess - offAt(first);
 }
 let snapGeoP = null;
-function snapGeo() { if (!snapGeoP) snapGeoP = api('GET', '/api/b/geo').catch(() => { snapGeoP = null; return { places: [], countries: [] }; }); return snapGeoP; }
+function snapGeo() { if (!snapGeoP) snapGeoP = apiKeep('/api/b/geo').catch(() => { snapGeoP = null; return { places: [], countries: [] }; }); return snapGeoP; }
 const snapShort = (n) => ({ th: String(n.th || n.en || '').split(/\s+และ/)[0].trim(), en: String(n.en || n.th || '').split(/ and | & /)[0].trim() });
 // a position → the nearest library city within reach (60 km at home in Thailand, 80 km abroad), or null — the position itself is not kept
 function snapPlace(ll, geo) {
@@ -915,7 +915,8 @@ function snapAsideHtml(date) {
 }
 // which day and set-aside folds are open on the days page, so a redraw (a photo brought back) leaves them as they were
 if (typeof document !== 'undefined') document.addEventListener('toggle', (e) => {
-  const d = e.target; if (!snapS || !d.dataset || !d.dataset.fold) return;
+  // a toggle fires after the fact: one from a page already redrawn away (the trip just made) must not seed the next trip's folds
+  const d = e.target; if (!snapS || !d.dataset || !d.dataset.fold || !d.isConnected) return;
   if (!snapS.folds) snapS.folds = new Set([...document.querySelectorAll('details[data-fold][open]')].map((x) => x.dataset.fold));
   if (d.open) snapS.folds.add(d.dataset.fold); else snapS.folds.delete(d.dataset.fold);
 }, true);

@@ -427,6 +427,318 @@
           "q": "Vietopia, Tan Hung Ward, District 7, Ho Chi Minh City",
           "ok": "2026-11",
           "src": "https://offpeaktrip.com/en/guide/hochiminh/vietopia"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ 12 ดอลลาร์สหรัฐต่อคน",
+            "en": "About US$12 a person"
+          },
+          "book": "rec",
+          "src": "https://www.edarabia.com/things-to-do-ho-chi-minh-city-with-kids/",
+          "name": {
+            "th": "โรงละครหุ่นกระบอกน้ำมังกรทอง",
+            "en": "Golden Dragon Water Puppet Theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เขต 1 โฮจิมินห์",
+            "en": "District 1, Ho Chi Minh City"
+          },
+          "what": {
+            "th": "การแสดงหุ่นกระบอกบนเวทีน้ำ 1 ชั่วโมง มีดนตรีพื้นเมืองเล่นสด",
+            "en": "A one-hour show of puppets on a water stage, with live traditional music"
+          },
+          "why": {
+            "th": "หุ่นเหมือนมีชีวิต เล่านิทานให้เด็กดู",
+            "en": "The puppets seem to come alive and tell a story"
+          },
+          "q": "Golden Dragon Water Puppet Theater, District 1, Ho Chi Minh City",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vietnamdoneright.com/best-indoor-playgrounds-ho-chi-minh-city/",
+          "name": {
+            "th": "คิวูซาแพลเน็ต ทีโซมอลล์ซาลา",
+            "en": "Kiwooza Planet (Thiso Mall Sala)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไมชีเทอ ทูดึ๊ก โฮจิมินห์",
+            "en": "Mai Chí Thọ, Thủ Đức (Sala), Ho Chi Minh City"
+          },
+          "what": {
+            "th": "พื้นที่ในร่ม 1,300 ตร.ม. เล่นเคลื่อนไหว STEM และแสงสี",
+            "en": "A 1,300 m² indoor space of physical, STEM and light play"
+          },
+          "why": {
+            "th": "มีเวิร์กชอปทำอาหาร งานฝีมือ และการแสดงแสง",
+            "en": "Cooking and craft workshops and light shows"
+          },
+          "tip": {
+            "th": "ต้องซื้อถุงเท้ากันลื่น",
+            "en": "Non-slip socks must be bought"
+          },
+          "q": "Kiwooza Planet, Thiso Mall Sala, 10 Mai Chí Thọ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://haisanloccantho.com/top-8-khu-vui-choi-tre-em-tai-can-tho/",
+          "name": {
+            "th": "จัมป์อารีนา เกิ่นเทอ",
+            "en": "Jump Arena Cần Thơ (Sense City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซนส์ซิตี้ ชั้น 3 นิงเกี่ยว เกิ่นเทอ",
+            "en": "Sense City 3F, Ninh Kiều, Cần Thơ"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มขนาดใหญ่สำหรับเด็กที่ชอบวิ่งและกระโดด",
+            "en": "A big indoor play space for children who love running and jumping"
+          },
+          "why": {
+            "th": "ออกแบบสำหรับเด็กที่ชอบเคลื่อนไหว",
+            "en": "Made for active children"
+          },
+          "q": "Jump Arena Cần Thơ, Sense City, Ninh Kiều",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://haisanloccantho.com/top-8-khu-vui-choi-tre-em-tai-can-tho/",
+          "name": {
+            "th": "ทินิเวิลด์ ล็อตเต้มาร์ต เกิ่นเทอ",
+            "en": "tiNiWorld (Lotte Mart Cần Thơ)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ล็อตเต้มาร์ต ถนนเหมิวทัน นิงเกี่ยว เกิ่นเทอ",
+            "en": "Lotte Mart, Mậu Thân, Ninh Kiều, Cần Thơ"
+          },
+          "what": {
+            "th": "ศูนย์เล่นขนาดใหญ่ มีบ่อทราย บ่อบอล และเครื่องเล่น",
+            "en": "A big play centre with a sand pit, a ball pool and play structures"
+          },
+          "why": {
+            "th": "มีโซน Baby Box สำหรับเด็กต่ำกว่า 2 ขวบ",
+            "en": "A Baby Box area for under-twos"
+          },
+          "q": "tiNiWorld Lotte Mart Cần Thơ, 84 Mậu Thân",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Kizciti Center Saigon",
+            "th": "คิซซิตี้ เซ็นเตอร์ ไซ่ง่อน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Khanh Hoi Park, Ho Chi Minh City",
+            "th": "สวนคั้งโห่ย โฮจิมินห์"
+          },
+          "what": {
+            "en": "A miniature city for children where they try grown-up jobs (pilot, doctor, firefighter, photographer) in about 30 facilities, with uniforms and play money.",
+            "th": "เมืองจำลองสำหรับเด็ก ให้ลองทำอาชีพผู้ใหญ่ เช่น นักบิน หมอ นักดับเพลิง ช่างภาพ ในราว 30 จุด มีชุดและเงินจำลอง"
+          },
+          "why": {
+            "en": "Children from 3 to 15 can play their dream jobs, and parents can wait in the café while staff look after the children.",
+            "th": "เด็ก 3–15 ปีเล่นบทบาทอาชีพในฝันได้ พ่อแม่รอในร้านกาแฟขณะที่พนักงานดูแลเด็ก"
+          },
+          "tip": {
+            "en": "Open daily, 9:00–17:00",
+            "th": "เปิดทุกวัน 9:00–17:00"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ US$8.25 per child",
+            "th": "≈ US$8.25 ต่อเด็ก"
+          },
+          "book": "none",
+          "q": "Kizciti Center Saigon, Khanh Hoi Park, Ho Chi Minh City",
+          "ok": "2026-11",
+          "src": "https://www.edarabia.com/things-to-do-ho-chi-minh-city-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Pho Museum",
+            "th": "พิพิธภัณฑ์เฝอ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Ben Thanh Ward, District 1",
+            "th": "แขวงเบนแถ่ง เขต 1"
+          },
+          "what": {
+            "en": "A museum over three floors that traces the history of pho, with artefacts and a hands-on mini-game on how to cook pho.",
+            "th": "พิพิธภัณฑ์ 3 ชั้นเล่าประวัติเฝอ มีโบราณวัตถุและเกมเล็กๆ ให้ลองทำเฝอด้วยตัวเอง"
+          },
+          "why": {
+            "en": "Visitors can try a hands-on pho cooking mini-game, and children between 1 and 1.4 metres pay a child price.",
+            "th": "ลองเล่นเกมทำเฝอได้เอง และเด็กสูง 1–1.4 เมตรจ่ายราคาเด็ก"
+          },
+          "tip": {
+            "en": "A full experience takes about 90 minutes",
+            "th": "เผื่อเวลาราว 90 นาทีสำหรับเดินให้ครบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ 750,000 ₫ adults · 500,000 ₫ for 1–1.4 m · under 1 m free",
+            "th": "≈ 750,000 ₫ ผู้ใหญ่ · 500,000 ₫ สูง 1–1.4 ม. · ต่ำกว่า 1 ม. ฟรี"
+          },
+          "book": "none",
+          "q": "Pho Museum, 211 Nguyen Thai Hoc, District 1, Ho Chi Minh City",
+          "ok": "2026-11",
+          "src": "https://news.tuoitre.vn/unexpected-and-engaging-lesser-known-museums-worth-a-visit-in-ho-chi-minh-city-103260415162217683.htm"
+        },
+        {
+          "name": {
+            "en": "Vietnam People's Air Force Museum",
+            "th": "พิพิธภัณฑ์กองทัพอากาศประชาชนเวียดนาม"
+          },
+          "kind": "museum",
+          "area": {
+            "en": "Tan Son Nhat Ward, Ho Chi Minh City",
+            "th": "แขวงเติ่นเซินเญิ้ต โฮจิมินห์"
+          },
+          "what": {
+            "en": "Military aircraft outside the entrance, including a UH-1 helicopter and MiG fighter jets, and two floors of air force history indoors.",
+            "th": "เครื่องบินทหารหน้าทางเข้า มีเฮลิคอปเตอร์ UH-1 และเครื่องบินรบมิก และประวัติกองทัพอากาศ 2 ชั้นในอาคาร"
+          },
+          "why": {
+            "en": "The aircraft stand right by the entrance, so children can see planes and helicopters up close.",
+            "th": "เครื่องบินจอดอยู่ตรงทางเข้า เด็กดูเครื่องบินและเฮลิคอปเตอร์ใกล้ๆ ได้"
+          },
+          "tip": {
+            "en": "On weekends only the outdoor area is open",
+            "th": "วันเสาร์–อาทิตย์เปิดเฉพาะโซนกลางแจ้ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Vietnam People's Air Force Museum, 87 Thang Long, Tan Son Nhat, Ho Chi Minh City",
+          "ok": "2026-11",
+          "src": "https://news.tuoitre.vn/unexpected-and-engaging-lesser-known-museums-worth-a-visit-in-ho-chi-minh-city-103260415162217683.htm"
+        },
+        {
+          "name": {
+            "en": "Lê Văn Tám Park",
+            "th": "สวนเลวันตาม"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Between Võ Thị Sáu, Điện Biên Phủ and Hai Bà Trưng roads",
+            "th": "ระหว่างถนนหวอถิเสา เดียนเบียนฟู และไฮบ่าจึง"
+          },
+          "what": {
+            "en": "A community park with broad walkways, a central pond, shaded benches and a statue of its namesake.",
+            "th": "สวนชุมชนที่มีทางเดินกว้าง บ่อน้ำกลางสวน ม้านั่งใต้ร่มไม้ และรูปปั้นของผู้ที่สวนใช้ชื่อ"
+          },
+          "why": {
+            "en": "A central pirate-ship playground, and the layout is flat and practical for pushing a pram.",
+            "th": "มีสนามเด็กเล่นรูปเรือโจรสลัดกลางสวน และพื้นเรียบเข็นรถเข็นได้สะดวก"
+          },
+          "tip": {
+            "en": "Early morning and late afternoon are the best times",
+            "th": "ช่วงเช้าตรู่และบ่ายแก่ๆ เหมาะที่สุด"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Lê Văn Tám Park, Võ Thị Sáu, Ho Chi Minh City",
+          "ok": "2026-11",
+          "src": "https://vietnamcoracle.com/saigons-parks-open-spaces"
         }
       ]
     },
@@ -730,6 +1042,386 @@
           "q": "Ham Ninh fishing village pier, Ham Ninh, Phu Quoc",
           "ok": "2026-11",
           "src": "https://www.saigonlocaltour.com/?p=18515"
+        },
+        {
+          "local": "Bảo tàng Cội Nguồn",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "พิพิธภัณฑ์ก๋อยเงวิน",
+            "en": "Cội Nguồn Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เซืองด่ง",
+            "en": "Dương Đông"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เอกชน มีของเกือบ 5,000 ชิ้นเกี่ยวกับประวัติและวัฒนธรรมของเกาะ",
+            "en": "A private museum of nearly 5,000 objects on the island’s history and culture"
+          },
+          "why": {
+            "th": "ที่เที่ยวในร่มสำหรับวันฝนตก",
+            "en": "An indoor stop for a rainy day"
+          },
+          "hrs": 1.5,
+          "io": "in",
+          "q": "Coi Nguon Museum, Dương Đông, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-when-it-rains/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Ngọc Hiền Pearl",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "ฟาร์มไข่มุกหง็อกเหียน",
+            "en": "Ngọc Hiền Pearl Farm"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทางใต้ของเซืองด่ง",
+            "en": "South of Dương Đông"
+          },
+          "what": {
+            "th": "ฟาร์มไข่มุกในร่ม แสดงขั้นตอนเลี้ยงหอยจนได้ไข่มุก",
+            "en": "An indoor pearl farm that shows how pearls are grown, from oyster to pearl"
+          },
+          "why": {
+            "th": "เด็กๆ ได้เห็นว่าไข่มุกเกิดในหอยอย่างไร",
+            "en": "Children see how a pearl grows inside an oyster"
+          },
+          "hrs": 1,
+          "io": "in",
+          "q": "Ngoc Hien Pearl Farm, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-when-it-rains/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Vườn quốc gia Phú Quốc",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "อุทยานแห่งชาติฟูก๊วก",
+            "en": "Phú Quốc National Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางเหนือของเกาะ",
+            "en": "North of the island"
+          },
+          "what": {
+            "th": "เขตสงวนชีวมณฑลของยูเนสโก ป่าดั้งเดิมและสัตว์ป่า",
+            "en": "A UNESCO biosphere reserve of old forest and wildlife"
+          },
+          "why": {
+            "th": "เดินป่าดูต้นไม้และสัตว์",
+            "en": "Forest walks with plants and animals to spot"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Phu Quoc National Park, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Khu du lịch Suối Tranh",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "น้ำตกซวยจาญ",
+            "en": "Suối Tranh Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "กลางเกาะ ทางตะวันออกของเซืองด่ง",
+            "en": "Middle of the island, east of Dương Đông"
+          },
+          "what": {
+            "th": "น้ำตกเล็กสูงราว 4 เมตร มีทางเดินในป่าและจุดปิกนิก",
+            "en": "A small waterfall about four metres high, with forest trails and picnic spots"
+          },
+          "why": {
+            "th": "ทางเดินสั้นๆ จุดปิกนิก และถ้ำเล็กให้สำรวจ",
+            "en": "Short trails, picnic spots and little caves to explore"
+          },
+          "hrs": 1.5,
+          "io": "out",
+          "q": "Khu du lịch Suối Tranh, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi Ông Lang",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "หาดอ๋งลาง",
+            "en": "Ông Lang Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ฝั่งตะวันตก ทางเหนือของเซืองด่ง",
+            "en": "West coast, north of Dương Đông"
+          },
+          "what": {
+            "th": "หาดเล็กเงียบสงบ ท่ามกลางต้นไม้และรีสอร์ตเล็กๆ",
+            "en": "A smaller, quieter beach among trees and small resorts"
+          },
+          "why": {
+            "th": "สงบและเงียบกว่าหาดยาว",
+            "en": "Calm and quieter than Long Beach"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Ông Lang beach, Phú Quốc",
+          "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi Dài",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "หาดบ่ายหย่าย",
+            "en": "Bãi Dài Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ทางตะวันตกเฉียงเหนือของเกาะ",
+            "en": "North-west of the island"
+          },
+          "what": {
+            "th": "หาดรีสอร์ตทางเหนือ มีรีสอร์ตใหญ่ สระว่ายน้ำ และร้านอาหาร",
+            "en": "The northern resort beach, with large beachfront resorts, pools and restaurants"
+          },
+          "why": {
+            "th": "รีสอร์ตแถวนี้หลายแห่งมีคิดส์คลับและกิจกรรม",
+            "en": "Many resorts here have kids’ clubs and activities"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Bãi Dài, Phú Quốc",
+          "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi Khem",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "หาดเคม",
+            "en": "Khem Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ทางตะวันออกเฉียงใต้ของเกาะ",
+            "en": "South-east of the island"
+          },
+          "what": {
+            "th": "อ่าวโค้ง ทรายขาว น้ำสงบ",
+            "en": "A curved bay of light sand and calm water"
+          },
+          "why": {
+            "th": "น้ำสงบ เหมาะกับการว่ายน้ำ",
+            "en": "Calm water that is good for swimming"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Khem Beach, Phú Quốc",
+          "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Khai Hoan Fish Sauce Factory",
+            "th": "โรงงานน้ำปลาไคฮวน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Duong Dong, centre of the island",
+            "th": "เซืองดง กลางเกาะ"
+          },
+          "what": {
+            "en": "A fish sauce factory where visitors can see production, with a branded shop",
+            "th": "โรงงานน้ำปลาที่เข้าชมขั้นตอนการผลิตได้ มีร้านขายสินค้าของแบรนด์"
+          },
+          "why": {
+            "en": "Free to visit, and a short stop on a sightseeing tour",
+            "th": "เข้าชมฟรี และแวะสั้นๆ ระหว่างทัวร์ได้"
+          },
+          "tip": {
+            "en": "Daily, from 07:30 to 17:00",
+            "th": "เปิดทุกวัน 07:30–17:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Khai Hoan, 289 ĐT47, Phú Quốc",
+          "ok": "2026-11",
+          "src": "https://nashaplaneta.net/asia/vietnam/phuquoc-fabriki-rybnogo-sousa_en"
+        },
+        {
+          "name": {
+            "en": "Bai Trao Beach",
+            "th": "หาดบ่ายจาว"
+          },
+          "local": "Bãi Trào",
+          "kind": "beach",
+          "area": {
+            "en": "Phu Quoc Island",
+            "th": "เกาะฟูก๊วก"
+          },
+          "what": {
+            "en": "A beach with wide sandy areas, clear blue water and gentle slopes",
+            "th": "ชายหาดทรายกว้าง น้ำทะเลสีฟ้าใส ลาดชันเบา"
+          },
+          "why": {
+            "en": "Gentle slopes and shallow water near the shore let little ones play under a grown-up's watch",
+            "th": "หาดลาดเบาและน้ำตื้นใกล้ฝั่ง เด็กเล็กเล่นน้ำได้โดยมีผู้ใหญ่ดูแล"
+          },
+          "tip": {
+            "en": "Go in the morning or late afternoon, when it is cooler",
+            "th": "ไปช่วงเช้าหรือบ่ายแก่ที่อากาศเย็นกว่า"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Bãi Trào, Phú Quốc",
+          "ok": "2026-11",
+          "src": "https://sunparadiseland.com/SunParadiseLandPhuQuoc/tin-tuc/recommendations-for-play-spots-suitable-for-a-2-year-old-in-phu-quoc-24121"
+        },
+        {
+          "name": {
+            "en": "Quoc An Pearl Farm",
+            "th": "ฟาร์มไข่มุกก๊วกอาน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Duong To, Phu Quoc",
+            "th": "เซืองโต ฟูก๊วก"
+          },
+          "what": {
+            "en": "A pearl farm where visitors learn the pearl farming process, with live demonstrations",
+            "th": "ฟาร์มไข่มุกที่ได้เรียนรู้ขั้นตอนการเลี้ยงไข่มุก มีสาธิตสดและร้านเครื่องประดับ"
+          },
+          "why": {
+            "en": "Watching how pearls are grown suits children who like to see how things work",
+            "th": "การดูวิธีเลี้ยงไข่มุกเหมาะกับเด็กที่ชอบดูว่าสิ่งต่างๆ ทำงานอย่างไร"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Quoc An Pearl, Duong To, Phu Quoc",
+          "ok": "2026-11",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids"
         }
       ]
     }

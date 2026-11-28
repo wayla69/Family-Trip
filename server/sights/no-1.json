@@ -284,15 +284,51 @@
       {"name":{"en":"Byparken","th":"บีพาร์เกน"},"kind":"park","area":{"en":"Christies gate 3A","th":"คริสตีส เกต 3A"},"what":{"en":"A city park with a fountain lake, sculptures and a bronze statue of a boy with his duck.","th":"สวนเมืองมีทะเลสาบน้ำพุ ประติมากรรม และรูปปั้นทองแดงเด็กชายกับเป็ดของเขา"},"why":{"en":"Benches, a pond and a music pavilion close by.","th":"ม้านั่ง บ่อน้ำ และศาลาดนตรีอยู่ใกล้ๆ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Byparken, Christies gate 3A, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/138979/best-things-to-do-with-kids-in-bergen"},
       {"name":{"en":"Nygårdsparken","th":"นีกอร์ดสปาร์เกน"},"kind":"park","area":{"en":"5006 Bergen","th":"5006 แบร์เกน"},"what":{"en":"A large park with lush trees and an iconic duck pond.","th":"สวนขนาดใหญ่ มีต้นไม้เขียวชอุ่มและบ่อเป็ดที่เป็นสัญลักษณ์"},"why":{"en":"The duck pond, where the ducks reign over the island.","th":"บ่อเป็ด ที่เป็ดปกครองเกาะ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nygårdsparken, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/138979/best-things-to-do-with-kids-in-bergen"},
       {"name":{"en":"Lille Lungegårdsvannet","th":"ลิลเล ลุงเงอการ์ดสวานเนต"},"kind":"park","area":{"en":"In the heart of Bergen","th":"ใจกลางแบร์เกน"},"what":{"en":"A small lake with a park around it, paths and views of the nearby hills.","th":"ทะเลสาบเล็กๆ มีสวนล้อมรอบ ทางเดิน และวิวเนินเขาใกล้ๆ"},"why":{"en":"Walks around the lake and views of the hills.","th":"เดินรอบทะเลสาบและชมวิวเนินเขา"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Lille Lungegårdsvannet, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/138979/best-things-to-do-with-kids-in-bergen"},
-      {"name":{"en":"Høyt & Lavt Bergen","th":"ฮอยท์ โอ ลาวต์ แบร์เกน"},"kind":"play","area":{"en":"Osvegen 141, Nesttun","th":"โอสเวเกน 141 เนสตัน"},"what":{"en":"The largest climbing park in Western Norway, with 10 trails, over 120 obstacles and more than 20 zip-lines.","th":"สวนปีนเขาที่ใหญ่ที่สุดในนอร์เวย์ตะวันตก มี 10 เส้นทาง สิ่งกีดขวางกว่า 120 อย่าง และสายซิปกว่า 20 เส้น"},"why":{"en":"Trails and zip-lines for those who like to climb.","th":"เส้นทางและสายซิปสำหรับคนชอบปีน"},"ages":[0,0,1,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Høyt & Lavt Bergen, Osvegen 141, Nesttun","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/158768/best-parks-and-gardens-in-bergen"},
-      {"name":{"en":"Høyt Under Taket Kokstad","th":"ฮอยท์ อันเดอร์ ตาเกต โคกสตัด"},"kind":"play","area":{"en":"Kokstadflaten 33, Kokstad","th":"โคกสตัดเฟลเตน 33 โคกสตัด"},"what":{"en":"A climbing centre with easy and challenging routes and bouldering options.","th":"ศูนย์ปีนเขามีเส้นทางง่ายและยาก และมีการโบลเดอริ่ง"},"why":{"en":"Routes for every experience level.","th":"เส้นทางสำหรับทุกระดับประสบการณ์"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Høyt Under Taket Kokstad, Kokstadflaten 33, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/158768/best-parks-and-gardens-in-bergen"},
+      {"name":{"en":"Høyt & Lavt Bergen","th":"ฮอยท์ โอ ลาวต์ แบร์เกน"},"kind":"play","area":{"en":"Osvegen 141, Nesttun","th":"โอสเวเกน 141 เนสตัน"},"what":{"en":"The largest climbing park in Western Norway, with 10 trails, over 120 obstacles and more than 20 zip-lines.","th":"สวนปีนเขาที่ใหญ่ที่สุดในนอร์เวย์ตะวันตก มี 10 เส้นทาง สิ่งกีดขวางกว่า 120 อย่าง และสายซิปกว่า 20 เส้น"},"why":{"en":"Trails and zip-lines for those who like to climb.","th":"เส้นทางและสายซิปสำหรับคนชอบปีน"},"ages":[0,0,1,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Høyt & Lavt Bergen, Osvegen 141, Nesttun","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/158768/best-parks-and-gardens-in-bergen","tip":{"en":"An outdoor park open in spring and summer; closed in winter","th":"สวนกลางแจ้ง เปิดช่วงใบไม้ผลิและฤดูร้อน ปิดช่วงหน้าหนาว"}},
       {"name":{"en":"Rosenkrantz Tower","th":"หอคอยโรเซนครันทซ์"},"kind":"culture","area":{"en":"Bergenhus 4","th":"แบร์เกนฮุส 4"},"what":{"en":"A 13th-century tower with narrow stairways up to the roof.","th":"หอคอยจากศตวรรษที่ 13 มีบันไดแคบขึ้นไปถึงดาดฟ้า"},"why":{"en":"Views of the city and harbour from the roof.","th":"วิวเมืองและท่าเรือจากดาดฟ้า"},"ages":[0,0,1,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Rosenkrantz Tower, Bergenhus 4, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/848212/"},
       {"name":{"en":"Gamlehaugen","th":"กัมเลเฮากเกน"},"kind":"culture","area":{"en":"Gamlehaugvegen 10, Paradis","th":"กัมเลเฮากวีเกน 10 ปาราดีส"},"what":{"en":"A historic mansion, often called a castle by locals, with grounds to walk around.","th":"คฤหาสน์ประวัติศาสตร์ที่คนท้องถิ่นมักเรียกว่าปราสาท มีสนามให้เดินเล่น"},"why":{"en":"The royal family's retreat in West Norway.","th":"ที่พักผ่อนของราชวงศ์ในนอร์เวย์ตะวันตก"},"ages":[1,2,2,2],"hrs":1.5,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Gamlehaugen, Gamlehaugvegen 10, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/848212/"},
       {"name":{"en":"Bryggen","th":"บรีกเกน"},"kind":"oldtown","area":{"en":"Bryggen, along the waterfront","th":"ริมท่าเรือ"},"what":{"en":"Colourful wooden buildings along the waterfront, a UNESCO World Heritage site.","th":"อาคารไม้สีสันสดใสริมท่าเรือ เป็นมรดกโลกขององค์การยูเนสโก"},"why":{"en":"Narrow alleyways to stroll and explore.","th":"ซอยแคบให้เดินเล่นและสำรวจ"},"ages":[0,1,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Bryggen, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/138979/best-things-to-do-with-kids-in-bergen"},
       {"name":{"en":"Festplassen","th":"เฟสต์แพลสเซิน"},"kind":"park","area":{"en":"Christies gate","th":"คริสตีส เกต"},"what":{"en":"A square by the central lake and fountain, used for fun fairs and festivals.","th":"จัตุรัสริมทะเลสาบกลางเมืองและน้ำพุ ใช้จัดงานรื่นเริงและเทศกาล"},"why":{"en":"Views of the lake and fountain; fun fairs and festivals.","th":"วิวทะเลสาบและน้ำพุ มีงานรื่นเริงและเทศกาล"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Festplassen, Christies gate, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/158768/best-parks-and-gardens-in-bergen"},
       {"name":{"en":"Fjord Tours","th":"ฟยอร์ด ทัวร์ส"},"kind":"nature","area":{"en":"Starvhusgaten 4, the harbour","th":"สทาร์วฮุสเกเทน 4 ท่าเรือ"},"what":{"en":"A boat trip from the harbour with kayaking among cliffs and waterfalls.","th":"ทัวร์เรือจากท่าเรือ มีพายคายัคผ่านหน้าผาและน้ำตก"},"why":{"en":"Perfect for families, especially with kids, the page says.","th":"เหมาะกับครอบครัว โดยเฉพาะกับเด็ก ตามหน้าเว็บ"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Fjord Tours, Starvhusgaten 4, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/138979/best-things-to-do-with-kids-in-bergen"},
       {"name":{"en":"Theta Museum","th":"พิพิธภัณฑ์ธีตา"},"kind":"museum","area":{"en":"Bredsgården 2B, historic Bryggen area","th":"เบรดส์การ์เดน 2B บรีกเกนประวัติศาสตร์"},"what":{"en":"A small museum that was once the secret headquarters of a group of young resistance fighters.","th":"พิพิธภัณฑ์เล็กที่เคยเป็นที่ตั้งกองบัญชาการลับของกลุ่มนักสู้ใต้ดินหนุ่มสาว"},"why":{"en":"A unique glimpse into Norway's World War II resistance.","th":"ภาพของการต่อต้านในสงครามโลกครั้งที่สองของนอร์เวย์"},"ages":[0,0,1,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Theta Museum, Bredsgården 2B, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/848212/"},
-      {"name":{"en":"Fantoft Stave Church","th":"โบสถ์ไม้ฟานต์อฟต์"},"kind":"culture","area":{"en":"Fantoftvegen 38","th":"ฟานต์อฟต์เวเกน 38"},"what":{"en":"A reconstructed medieval wooden stave church with carved dragon heads.","th":"โบสถ์ไม้สมัยกลางที่สร้างใหม่ มีหัวมังกรแกะสลัก"},"why":{"en":"Intricate carvings, including dragon heads, to look at together.","th":"ลวดลายแกะสลักรวมถึงหัวมังกร ให้ดูด้วยกัน"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Fantoft Stave Church, Fantoftvegen 38, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/848212/"}
+      {"name":{"en":"Fantoft Stave Church","th":"โบสถ์ไม้ฟานต์อฟต์"},"kind":"culture","area":{"en":"Fantoftvegen 38","th":"ฟานต์อฟต์เวเกน 38"},"what":{"en":"A reconstructed medieval wooden stave church with carved dragon heads.","th":"โบสถ์ไม้สมัยกลางที่สร้างใหม่ มีหัวมังกรแกะสลัก"},"why":{"en":"Intricate carvings, including dragon heads, to look at together.","th":"ลวดลายแกะสลักรวมถึงหัวมังกร ให้ดูด้วยกัน"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Fantoft Stave Church, Fantoftvegen 38, Bergen","ok":"2026-11","src":"https://wanderlog.com/list/geoCategory/848212/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visitbergen.com/ideas-and-inspiration/top-10-lists/family-friendly-activities",
+          "name": {
+            "th": "สวนแทรมโพลีนรัช",
+            "en": "Rush trampoline park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คอกสตัด ใกล้ป้ายรถไฟรางเบา",
+            "en": "Kokstad, by the light rail stop"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนในร่ม มีแทรมโพลีนทั้งบนผนังและพื้น",
+            "en": "An indoor trampoline park with trampolines on the walls and floors"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กทุกวัย",
+            "en": "Suits children of all ages"
+          },
+          "q": "Rush Trampolinepark, Kokstadvegen 23, Kokstad",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -554,6 +590,80 @@
           "q": "Tromsø Klatresenter, Tromsø",
           "ok": "2026-11",
           "src": "https://tromsoklatresenter.no/priser"
+        },
+        {
+          "local": "Tromsø bibliotek",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.thenextguide.com/itineraries/tromso/tromso-with-kids-2-winter-days-family-friendly-march",
+          "name": {
+            "th": "ห้องสมุดเมืองทรอมเซอ",
+            "en": "Tromsø City Library"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกรึนเนกาตา ทรอมเซอ",
+            "en": "Grønnegata, Tromsø"
+          },
+          "what": {
+            "th": "ห้องสมุดเป็นมิตรกับเด็ก มีมุมเด็กสว่างสดใส",
+            "en": "A child-friendly library with a bright children's section"
+          },
+          "why": {
+            "th": "ที่ในร่มเงียบสงบไว้อุ่นร่างกาย",
+            "en": "A calm indoor place to warm up"
+          },
+          "q": "Tromsø City Library, Grønnegata 94, Tromsø",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Ishavskatedralen",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thenextguide.com/itineraries/tromso/tromso-with-kids-2-winter-days-family-friendly-march",
+          "name": {
+            "th": "มหาวิหารอาร์กติก",
+            "en": "Arctic Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทรอมส์ดาเลิน",
+            "en": "Tromsdalen"
+          },
+          "what": {
+            "th": "โบสถ์สัญลักษณ์ของทรอมเซอ ใช้เวลาชม 30–45 นาที",
+            "en": "Tromsø's landmark church, a 30 to 45 minute visit"
+          },
+          "why": {
+            "th": "ภายในสงบ และเดินไม่มาก",
+            "en": "A calm inside and little walking"
+          },
+          "q": "Arctic Cathedral, Hans Nilsens veg 41, Tromsdalen",
+          "ok": "2026-11"
         }
       ]
     }

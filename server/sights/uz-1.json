@@ -273,6 +273,117 @@
           "q": "Kunya-Ark, Itchan Kala, Khiva",
           "ok": "2026-11",
           "src": "https://www.tripadvisor.com/--d321297.html"
+        },
+        {
+          "local": "Samonids Recreation Park",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/uzbekistan-with-kids",
+          "name": {
+            "th": "สวนซามานิด",
+            "en": "Samanid Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "บูคารา",
+            "en": "Bukhara"
+          },
+          "what": {
+            "th": "สวนที่มีโบราณสถานและพื้นที่โล่ง",
+            "en": "A park of historic monuments and open space"
+          },
+          "why": {
+            "th": "มีที่ให้เด็กเล็กวิ่งเล่นข้างโบราณสถาน",
+            "en": "Room for little ones to run next to the monuments"
+          },
+          "q": "Samonids Recreation Park, Bukhara",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.silkroad-samarkand.com/recreation/muzykalnyy-fontan-feeriya-vody-sveta-i-muzyki/",
+          "name": {
+            "th": "น้ำพุดนตรีซิลก์โรดซามาร์คันด์",
+            "en": "Silk Road Samarkand musical fountain"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ซิลก์โรดซามาร์คันด์",
+            "en": "Silk Road Samarkand complex"
+          },
+          "what": {
+            "th": "โชว์น้ำพุประกอบแสงและดนตรี",
+            "en": "A fountain show of water, light and music"
+          },
+          "why": {
+            "th": "มีทั้งเพลงอุซเบกและเพลงสากล",
+            "en": "Uzbek melodies and international hits"
+          },
+          "q": "Musical fountain, Silk Road Samarkand",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Boqiy Shahar",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.silkroad-samarkand.com/resort/eternal-city/",
+          "name": {
+            "th": "เมืองนิรันดร์",
+            "en": "The Eternal City"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ซิลก์โรดซามาร์คันด์",
+            "en": "Silk Road Samarkand complex"
+          },
+          "what": {
+            "th": "สวนวัฒนธรรม 11 เฮกตาร์ มีตรอก ศาลา และร้านงานฝีมือ",
+            "en": "An 11-hectare park of lanes, pavilions and craft shops"
+          },
+          "why": {
+            "th": "ช่างฝีมือทำงานให้ดู และมีนักแสดงข้างถนนช่วงอากาศอุ่น",
+            "en": "Craftspeople at work, and street performers in the warm months"
+          },
+          "q": "The Eternal City, Silk Road Samarkand",
+          "ok": "2026-11"
         }
       ]
     },
@@ -599,6 +710,154 @@
           "q": "Tashkent Planetarium, Tashkent City Park, Tashkent",
           "ok": "2026-11",
           "src": "https://www.aviasales.uz/yolovchi/article/kuda-pojti-s-detmi-v-tashkente"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์การสื่อสาร",
+            "en": "Museum of Telecommunication History"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ใกล้สถานีรถไฟใต้ดินอาลีเชอร์นาวอย",
+            "en": "Near Alisher Navoi metro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ฟรี มีโทรศัพท์ วิทยุ และคอมพิวเตอร์ยุคแรก",
+            "en": "A free museum of old phones, radios and early computers"
+          },
+          "why": {
+            "th": "มีของให้ลองเล่น และที่ทำการไปรษณีย์ยุค 1970 ชั้นใต้ดิน",
+            "en": "Some hands-on displays and a 1970s post office in the basement"
+          },
+          "q": "Museum of Telecommunication History of Uzbekistan, Tashkent",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Mustaqillik Maydoni",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "name": {
+            "th": "จัตุรัสอิสรภาพ",
+            "en": "Independence Square"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทาชเคนต์",
+            "en": "Tashkent"
+          },
+          "what": {
+            "th": "จัตุรัสกว้างมีอนุสาวรีย์อิสรภาพ ซุ้มประตู น้ำพุ และสวน",
+            "en": "A wide square with the Independence Monument, arches, fountains and gardens"
+          },
+          "why": {
+            "th": "น้ำพุและสวนให้เดินเล่นสบาย ๆ",
+            "en": "Fountains and gardens for an easy walk"
+          },
+          "q": "Mustaqillik Maydoni, Tashkent",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Hazrati Imom",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "name": {
+            "th": "กลุ่มอาคารฮาซรัตอิหม่าม",
+            "en": "Hazrati Imam complex"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทาชเคนต์",
+            "en": "Tashkent"
+          },
+          "what": {
+            "th": "มัสยิดและโรงเรียนสอนศาสนาจากศตวรรษที่ 16 รอบลานกว้าง",
+            "en": "16th-century mosques and madrasas around courtyards"
+          },
+          "why": {
+            "th": "อาคารเก่าแก่และลานกว้าง เข้าชมฟรี",
+            "en": "Old monuments and courtyards, free to enter"
+          },
+          "q": "Hazrati Imam complex, Qorasaroy street, Tashkent",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.afisha.uz/ru/gorod/2025/08/31/aya-project-magic-city",
+          "name": {
+            "th": "อายาโปรเจกต์ เมจิกซิตี้",
+            "en": "AYA Project (Magic City)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เมจิกซิตี้ ถนนบาบูร์ ทาชเคนต์",
+            "en": "Magic City, Babur Street, Tashkent"
+          },
+          "what": {
+            "th": "นิทรรศการศิลปะแสงและภาพฉาย 7 ห้อง",
+            "en": "A light and projection art space of seven halls"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรี",
+            "en": "Under-threes go in free"
+          },
+          "q": "AYA Project, Babur Street, Tashkent",
+          "ok": "2026-11"
         }
       ]
     }

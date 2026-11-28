@@ -1,0 +1,128 @@
+{
+  "town": "jp-osaka",
+  "rounds": [
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 16 rows from Osaka Tourism (Oct 2026) and Inside Osaka (Aug 2026) passed library-check.cjs, 7 went in",
+      "added": [
+        {
+          "name": "Hakodate Kantaro (Grand Front Osaka)",
+          "page_name": "Hakodate Kantaro (Grand Front 6F)",
+          "src": "https://www.osakatourism.org/family-restaurants-osaka/",
+          "date": "2026-10",
+          "map": "Google Maps 1,855 reviews, newest shown '3 days ago'"
+        },
+        {
+          "name": "Hanamomimo buffet (Namba Parks)",
+          "page_name": "Biken Gochisou Buffet Hanamomimo",
+          "src": "https://insideosaka.com/best-osaka-restaurants-for-families-with-young-children-and-babies/",
+          "date": "2026-08",
+          "map": "Google Maps '美健ごちそうビュッフェ花も実も', 535 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Lingua World Cafe",
+          "page_name": "Lingua World Cafe",
+          "src": "https://insideosaka.com/best-osaka-restaurants-for-families-with-young-children-and-babies/",
+          "date": "2026-08",
+          "map": "Google Maps 252 reviews, newest shown '7 days ago'"
+        },
+        {
+          "name": "Ogimachi Park",
+          "page_name": "Ogimachi Park",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "date": "2026-07",
+          "map": "Google Maps 'Ōgimachi Park 扇町公園', 4,161 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Hattori Ryokuchi Park",
+          "page_name": "Hattori Ryokuchi Park",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "date": "2026-07",
+          "map": "Google Maps 4,351 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Tsurumi Ryokuchi Park",
+          "page_name": "Tsurumi Ryokuchi Park",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "date": "2026-07",
+          "map": "Google Maps 8,007 reviews, newest shown '2 days ago'"
+        },
+        {
+          "name": "Oizumi Ryokuchi Adventure Land",
+          "page_name": "Oizumi Ryokuchi Park (Sakai) – Adventure Land",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "date": "2026-07",
+          "map": "Google Maps '冒険ランド', 270 reviews (search card, open 24 hours)"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Saizeriya, Royal Host, Kurazushi, Sushiro",
+          "why": "chains; the page names no branch"
+        },
+        {
+          "name": "Moulin",
+          "why": "the map shows a different okonomiyaki bar"
+        },
+        {
+          "name": "NIFREL Cafe",
+          "why": "no map entry of its own (NIFREL is already in)"
+        },
+        {
+          "name": "Streamer Coffee, Tenma",
+          "why": "the map shows only another branch"
+        },
+        {
+          "name": "Babyleaf, Bornelund Playville",
+          "why": "no recent review shown"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 5 rows from InsideOsaka (Aug 2025), Osaka Tourism (Jul–Aug 2026) and nap-camp (May 2026); 4 passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Babyleaf",
+          "page_name": "Babyleaf",
+          "src": "https://insideosaka.com/babyleaf-nakazakicho/",
+          "date": "2025-08",
+          "map": "Google Maps 'Babyleaf' (1-5-23 Ukita, Kita-ku), newest review shown a month ago"
+        },
+        {
+          "name": "MOULiN",
+          "page_name": "Moulin",
+          "src": "https://www.osakatourism.org/family-restaurants-osaka/",
+          "date": "2026-08",
+          "map": "Google Maps 'MOULiN' (Minamihorie, Nishi-ku), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "BørneLund PlayVille, Takatsuki",
+          "page_name": "Bornelund Playville",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "date": "2026-07",
+          "map": "Google Maps 'BørneLund PlayVille Amaiseki Park' (Takatsuki), newest review shown 4 days ago"
+        },
+        {
+          "name": "Ōeda Park (Moriguchi)",
+          "page_name": "大枝公園",
+          "src": "https://www.nap-camp.com/mag/88271",
+          "date": "2026-05",
+          "map": "Google Maps 'Oeda Park' (Moriguchi), newest review shown a day ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "ビュッフェ＆カフェレストラン ナイト＆デイ",
+          "why": "the price was not on the page; a hotel restaurant"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

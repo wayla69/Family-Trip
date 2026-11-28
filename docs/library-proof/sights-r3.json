@@ -1,0 +1,12 @@
+{
+  "kind": "sights",
+  "checked": "2026-11",
+  "how": "Round 3: the 1,704 things to do that round 2 got no Google Maps result for were searched again with a longer wait (1,457 place pages, 227 result lists). Five showed closed; each was opened again on Maps and checked on the web.",
+  "rows": [
+    { "file": "server/sights/de-1.json", "town": "de-rothenburg", "name": "Old Rothenburg Craftsman’s House", "verdict": "keep", "evidence": "Maps: Temporarily closed. The row's tip already says open Easter to 31 October, closed in winter (rothenburg.de)." },
+    { "file": "server/sights/de-1.json", "town": "p-neuschwanstein", "name": "Alpsee Bathing Spot and Boat House", "verdict": "keep", "evidence": "Maps: Temporarily closed. The row's tip already says summer only, the bath opens about May (hohenschwangau.de)." },
+    { "file": "server/sights/fr-2.json", "town": "fr-provence", "name": "Cézanne’s studio", "verdict": "season", "evidence": "Maps list: Temporarily closed. The official site says the Atelier des Lauves reopened for summer 2026 after restoration; the press kit gives 4 July–31 October 2026, the next reopening in spring 2027. Season note added and the source changed to the official page.", "src": "https://www.cezanne-en-provence.com/L-Atelier-des-Lauves?lang=en" },
+    { "file": "server/sights/th-4.json", "town": "th-khaokho", "name": "Than Thip Waterfall, Khao Kho National Park", "verdict": "keep", "evidence": "The batch landed on a park ranger unit's pin (หน่วยพิทักษ์อุทยานแห่งชาติเขาค้อที่ ขค 1), which is marked Permanently closed. The waterfall's own Maps place (น้ำตกธารทิพย์, 4.5, tourist attraction) shows no closure; no 2026 closure notice found. The map query now names the waterfall's own place." },
+    { "file": "server/sights/th-4.json", "town": "th-khonkaen", "name": "Khon Kaen Philatelic Museum", "verdict": "removed", "evidence": "Maps, by its English and Thai names, lands on this very museum (พิพิธภัณฑ์ตราไปรษณียากรขอนแก่น, 3.7): Permanently closed. Khon Kaen keeps 19 things to do, 7 indoors." }
+  ]
+}

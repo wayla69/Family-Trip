@@ -297,7 +297,7 @@
           "area": { "en": "Jungfernheide", "th": "ยุงแฟร์นไฮเดอ" },
           "what": { "en": "A forest high ropes course with courses between the treetops, suspension bridges and zip lines", "th": "สวนเชือกไต่ในป่า มีเส้นทางระหว่างยอดไม้ สะพานแขวน และซิปไลน์" },
           "why": { "en": "Children can climb with you between treetops, over suspension bridges and down zip lines", "th": "เด็กปีนไปกับคุณระหว่างยอดไม้ ข้ามสะพานแขวน และไหลลงซิปไลน์" },
-          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "tip": { "en": "Closed in winter; the 2026 season opened on 7 March. Allow about two hours", "th": "ปิดช่วงหน้าหนาว ฤดูกาล 2026 เปิด 7 มี.ค. เผื่อเวลาราว 2 ชั่วโมง" },
           "ages": [0, 1, 2, 2],
           "hrs": 2,
           "io": "out",
@@ -354,7 +354,451 @@
       {"name":{"en":"Grips Theatre","th":"โรงละครกริปส์"},"kind":"show","area":{"en":"Mitte","th":"มิทเทอ"},"what":{"en":"A children's theatre with realistic stories for young audiences.","th":"โรงละครเด็กที่มีเรื่องราวสมจริงสำหรับผู้ชมอายุน้อย"},"why":{"en":"Realistic stories told for children.","th":"เรื่องราวสมจริงที่เล่าให้เด็กฟัง"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Grips Theatre, Mitte, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
       {"name":{"en":"Hassenheide Park","th":"สวนฮัสเซนไฮเดอ"},"kind":"park","area":{"en":"Neukölln","th":"นอยเคิลน์"},"what":{"en":"A park in Neukölln with a very different atmosphere from the centre, a green space for everyday use.","th":"สวนในนอยเคิลน์ บรรยากาศต่างจากใจกลางมาก เป็นพื้นที่สีเขียวสำหรับใช้ในชีวิตประจำวัน"},"why":{"en":"A green space for everyday use, the page says, for families staying south of Mitte.","th":"หน้าเว็บบอกว่าเป็นพื้นที่สีเขียวสำหรับใช้ในชีวิตประจำวันของครอบครัวที่พักทางใต้ของมิทเทอ"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hassenheide Park, Neukölln, Berlin","ok":"2026-11","src":"https://germanywander.com/fun-things-to-do-in-berlin-with-kids"},
       {"name":{"en":"Kinderbad at Monbijoux Park","th":"สระว่ายน้ำเด็กที่สวนมอนบิจู"},"kind":"play","area":{"en":"Mitte","th":"มิทเทอ"},"what":{"en":"A children's pool at Monbijoux Park in Mitte, on the walk past Museum Island and the Berlin Cathedral.","th":"สระเด็กที่สวนมอนบิจูในมิทเทอ บนทางเดินผ่านเกาะพิพิธภัณฑ์และอาสนวิหารเบอร์ลิน"},"why":{"en":"A children's pool close to the main sights in Mitte.","th":"สระเด็กใกล้สถานที่สำคัญในมิทเทอ"},"tip":{"en":"Pool season is May to August.","th":"ฤดูสระน้ำคือพฤษภาคมถึงสิงหาคม"},"ages":[2,2,1,0],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kinderbad at Monbijoux Park, Mitte, Berlin","ok":"2026-11","src":"https://germanywander.com/fun-things-to-do-in-berlin-with-kids"},
-      {"name":{"en":"East Side Gallery","th":"อีสต์ไซด์แกลเลอรี"},"kind":"culture","area":{"en":"Friedrichshain","th":"ฟรีดริชชไฮน์"},"what":{"en":"A painted stretch of the Berlin Wall that runs along the Spree.","th":"ส่วนกำแพงเบอร์ลินที่ทาสีตามแนวแม่น้ำชปรี"},"why":{"en":"A walk past painted murals along the river.","th":"เดินชมภาพจิตรกรรมที่ทาไว้ริมแม่น้ำ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"East Side Gallery, Friedrichshain, Berlin","ok":"2026-11","src":"https://www.berlin-escape.com/guides/kreuzberg-food-guide/"}
+      {"name":{"en":"East Side Gallery","th":"อีสต์ไซด์แกลเลอรี"},"kind":"culture","area":{"en":"Friedrichshain","th":"ฟรีดริชชไฮน์"},"what":{"en":"A painted stretch of the Berlin Wall that runs along the Spree.","th":"ส่วนกำแพงเบอร์ลินที่ทาสีตามแนวแม่น้ำชปรี"},"why":{"en":"A walk past painted murals along the river.","th":"เดินชมภาพจิตรกรรมที่ทาไว้ริมแม่น้ำ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"East Side Gallery, Friedrichshain, Berlin","ok":"2026-11","src":"https://www.berlin-escape.com/guides/kreuzberg-food-guide/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "พิพิธภัณฑ์ดอยช์ลันด์",
+            "en": "Deutschlandmuseum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไลพ์ซิเกอร์พลัทซ์ เบอร์ลิน",
+            "en": "Leipziger Platz, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แบบลงมือ เล่าประวัติศาสตร์เยอรมัน 12 ยุค",
+            "en": "An interactive museum of twelve eras of German history"
+          },
+          "why": {
+            "th": "มีให้เด็กค้นหาเยอะ ไม่ต้องรู้ประวัติศาสตร์มาก่อน",
+            "en": "Plenty for children, even with no history to start"
+          },
+          "q": "Deutschlandmuseum, Leipziger Platz 7, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "11 / 7 ยูโร",
+            "en": "€11 / €7"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เกมคอมพิวเตอร์",
+            "en": "Computer Games Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคาร์ลมาร์กซ์ เบอร์ลิน",
+            "en": "Karl-Marx-Allee, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เกมคอมพิวเตอร์ เปิดทุกวัน 10:00–20:00",
+            "en": "A museum of computer games, open daily 10:00–20:00"
+          },
+          "why": {
+            "th": "มีเกมให้เล่น หน้าเว็บแนะนำ 6 ขวบขึ้นไป",
+            "en": "Games to play; the page suggests ages 6 and up"
+          },
+          "q": "Computerspielemuseum, Karl-Marx-Allee 93a, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "13.90 / 8.50 ยูโร",
+            "en": "€13.90 / €8.50"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ DDR",
+            "en": "DDR Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคาร์ลลีบเน็คท์ เบอร์ลิน",
+            "en": "Karl-Liebknecht-Straße, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เปิดทุกวัน 9:00–21:00 แห่งใหญ่แห่งเดียวที่เปิดวันจันทร์",
+            "en": "A museum open daily 9:00–21:00, the only big museum open on Mondays"
+          },
+          "why": {
+            "th": "หน้าเว็บแนะนำ 8 ขวบขึ้นไป",
+            "en": "The page suggests ages 8 and up"
+          },
+          "q": "DDR Museum, Karl-Liebknecht-Straße 1, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "พิพิธภัณฑ์ซามูไรเบอร์ลิน",
+            "en": "Samurai Museum Berlin"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเอากุสต์ เบอร์ลิน",
+            "en": "Auguststraße, Berlin"
+          },
+          "what": {
+            "th": "เกราะ ดาบ และหน้ากากญี่ปุ่นกว่า 1,000 ชิ้น",
+            "en": "Over 1,000 pieces of Japanese armour, swords and masks"
+          },
+          "why": {
+            "th": "มีโมเดล 3 มิติและจอ 360 องศา",
+            "en": "A 3D model and 360-degree displays"
+          },
+          "q": "Samurai Museum Berlin, Auguststraße 68, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "พิพิธภัณฑ์มายากลมาจิคุม",
+            "en": "Magicum Berlin Magic Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนโกรเซอฮัมบวร์เกอร์ เบอร์ลิน",
+            "en": "Große Hamburger Straße, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์มายากลสำหรับทุกวัย",
+            "en": "A magic museum for all ages"
+          },
+          "why": {
+            "th": "ทำให้น้ำเต้นรำ และค้นหาพลังวิเศษของตัวเอง",
+            "en": "Make water dance and find your magic powers"
+          },
+          "q": "Magicum Berlin Magic Museum, Große Hamburger Straße 17, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitberlin.de/en/top-10-attractions-children-berlin",
+          "name": {
+            "th": "อาโนฮา โลกของเด็กในพิพิธภัณฑ์ยิว",
+            "en": "ANOHA, the children's world of the Jewish Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "พิพิธภัณฑ์ยิว จัตุรัสโฟรเมตอุนด์โมเสสเมนเดลส์โซน เบอร์ลิน",
+            "en": "Jewish Museum, Fromet-und-Moses-Mendelssohn-Platz, Berlin"
+          },
+          "what": {
+            "th": "โลกของเด็กรอบเรือโนอาห์ไม้ลำใหญ่ที่เต็มไปด้วยสัตว์",
+            "en": "A children's world built around a big wooden ark full of animals"
+          },
+          "why": {
+            "th": "เด็กได้ต่อเรือลำเล็กแล้วลองลอยบนรางน้ำ",
+            "en": "Children build a little ark and try it on a water slide"
+          },
+          "q": "ANOHA Children's World, Jewish Museum Berlin, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/berlin-with-kids/",
+          "name": {
+            "th": "ประตูบรันเดนบวร์ก",
+            "en": "Brandenburg Gate"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ปารีเซอร์พลัทซ์ เบอร์ลิน",
+            "en": "Pariser Platz, Berlin"
+          },
+          "what": {
+            "th": "สัญลักษณ์ที่โด่งดังที่สุดของเบอร์ลิน อาคารไรชส์ทากอยู่ทางเหนือ",
+            "en": "Berlin's best-known landmark, with the Reichstag just to the north"
+          },
+          "why": {
+            "th": "สวยทั้งกลางวันและกลางคืน",
+            "en": "Striking by day or by night"
+          },
+          "q": "Brandenburg Gate, Pariser Platz, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "7 ยูโร (วันศุกร์ 5 ยูโร)",
+            "en": "€7 (€5 on Fridays)"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กลาบีรินท์",
+            "en": "Labyrinth Kindermuseum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนออสโลเออร์ เวดดิง เบอร์ลิน",
+            "en": "Osloer Straße, Wedding, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กลงมือเล่น ของจัดแสดงเปลี่ยนทุกปี",
+            "en": "A hands-on children's museum with play installations that change each year"
+          },
+          "why": {
+            "th": "ทุกอย่างจับและเล่นได้",
+            "en": "Everything is there to touch and play"
+          },
+          "q": "Labyrinth Kindermuseum, Osloer Straße 12, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์การสื่อสาร",
+            "en": "Museum for Communication"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนไลพ์ซิเกอร์ เบอร์ลิน",
+            "en": "Leipziger Straße, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีหุ่นยนต์เดินไปมา และจุดลองโทรเลขกับรหัสมอร์ส",
+            "en": "A museum with roaming robots and telegraph and Morse code stations"
+          },
+          "why": {
+            "th": "มีจุดให้เด็กลองเล่นเอง",
+            "en": "Hands-on stations children can try"
+          },
+          "q": "Museum für Kommunikation, Leipziger Straße 16, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "ฟิวเจอเรียม",
+            "en": "Futurium"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อเล็กซานเดอร์อูเฟอร์ เบอร์ลิน",
+            "en": "Alexanderufer, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เข้าฟรี ที่อเล็กซานเดอร์อูเฟอร์ 2",
+            "en": "A free museum at Alexanderufer 2"
+          },
+          "why": {
+            "th": "หน้าเว็บแนะนำ 6 ขวบขึ้นไป",
+            "en": "The page suggests ages 6 and up"
+          },
+          "q": "Futurium, Alexanderufer 2, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "บัตรวันละ 16 ยูโร",
+            "en": "Day pass €16"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "ห้องปีนผาเมจิกเมาน์เทน",
+            "en": "Magic Mountain climbing hall"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเบิทท์เกอร์ เกซุนด์บรุนเนิน เบอร์ลิน",
+            "en": "Böttgerstraße, Gesundbrunnen, Berlin"
+          },
+          "what": {
+            "th": "ห้องปีนผาและโบลเดอริง 2,500 ตร.ม. มีผนังเล็กสำหรับเด็ก",
+            "en": "A 2,500 m² climbing and bouldering hall with smaller walls for children"
+          },
+          "why": {
+            "th": "มีโซนปีนผาสำหรับเด็ก",
+            "en": "A kids' bouldering area"
+          },
+          "q": "Magic Mountain, Böttgerstraße 20, Berlin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.berlintourism.org/rainy-day-activities-berlin-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์สายลับเยอรมัน",
+            "en": "German Spy Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไลพ์ซิเกอร์พลัทซ์ เบอร์ลิน",
+            "en": "Leipziger Platz, Berlin"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สายลับ มีเขาวงกตเลเซอร์และเครื่องจับเท็จ",
+            "en": "A spy museum with a laser maze and a lie detector"
+          },
+          "why": {
+            "th": "หน้าเว็บแนะนำ 10 ขวบขึ้นไป",
+            "en": "The page suggests ages 10 and up"
+          },
+          "q": "Deutsches Spionagemuseum, Leipziger Platz 9, Berlin",
+          "ok": "2026-11"
+        }
     ]
     },
     {
@@ -601,8 +1045,8 @@
         {
           "name": { "en": "Cologne City Museum", "th": "พิพิธภัณฑ์เมืองโคโลญ" },
           "kind": "museum",
-          "area": { "en": "Zeughaus", "th": "ซอยก์เฮาส์" },
-          "what": { "en": "The city’s history museum in the old arsenal, from the Romans to modern Cologne", "th": "พิพิธภัณฑ์ประวัติศาสตร์เมืองในคลังอาวุธเก่า ตั้งแต่สมัยโรมันถึงโคโลญปัจจุบัน" },
+          "area": { "en": "Minoritenstraße, near the cathedral", "th": "ถนนมิโนริเทน ใกล้มหาวิหาร" },
+          "what": { "en": "The city’s history museum, from the Romans to modern Cologne, in its interim home in the former Franz Sauer fashion house while the old arsenal stays closed after water damage", "th": "พิพิธภัณฑ์ประวัติศาสตร์เมือง ตั้งแต่สมัยโรมันถึงโคโลญปัจจุบัน ย้ายมาอยู่ชั่วคราวในอดีตห้างเสื้อผ้าฟรานซ์ เซาเออร์ ระหว่างที่คลังอาวุธเก่าปิดเพราะน้ำท่วมเสียหาย" },
           "why": { "en": "A sheltered stop for a rainy afternoon, best for children of six and over; step-free inside", "th": "แวะในร่มได้ในบ่ายฝนตก เหมาะกับเด็กอายุ 6 ปีขึ้นไป ภายในไม่มีขั้นบันได" },
           "tip": { "en": "Closed on Mondays; open late on the first Thursday of the month", "th": "ปิดวันจันทร์ เปิดดึกวันพฤหัสบดีแรกของเดือน" },
           "ages": [0, 1, 2, 2],
@@ -611,7 +1055,7 @@
           "pram": "yes",
           "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "none",
-          "q": "Kölnisches Stadtmuseum, Zeughausstraße 1-3, Köln",
+          "q": "Kölnisches Stadtmuseum, Minoritenstraße 13, Köln",
           "ok": "2026-11",
           "src": "https://www.cologne-tourism.com/arts-culture/sights/detail/cologne-city-museum"
         },
@@ -632,6 +1076,484 @@
           "q": "Kölner Dom, Domkloster 4, Köln",
           "ok": "2026-11",
           "src": "https://www.koelner-dom.de/besuchen/turmbesteigung"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.koeln.de/koeln/freizeit/kinder/tolle-indoor-spielplaetze-in-koeln-und-umgebung_1138507.html",
+          "name": {
+            "th": "ซิลลีบิลลี",
+            "en": "Silly Billy"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลินเดินทาล ฝั่งตะวันตกของโคโลญ",
+            "en": "Lindenthal (west Cologne)"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มราว 2,500 ตร.ม. มีแทรมโพลีน เส้นทางปีน สนามฟุตบอล และร้านอาหาร",
+            "en": "An indoor play park of about 2,500 m² with trampolines, climbing courses, a football arena and a restaurant"
+          },
+          "why": {
+            "th": "เครื่องเล่นเยอะใต้หลังคาเดียว ไปได้วันฝนตก",
+            "en": "Lots of play under one roof on a wet day"
+          },
+          "q": "Silly Billy, Ottostraße 14, Köln",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.koeln.de/koeln/freizeit/kinder/tolle-indoor-spielplaetze-in-koeln-und-umgebung_1138507.html",
+          "name": {
+            "th": "จัมป์เฮาส์ โคโลญ",
+            "en": "JUMP House Cologne"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เอเรินเฟลด์",
+            "en": "Ehrenfeld"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนในร่ม มีแทรมโพลีนกว่า 50 ตัวและโซนแอ็กชันเก้าโซน",
+            "en": "An indoor trampoline park with over 50 trampolines and nine action areas"
+          },
+          "why": {
+            "th": "สำหรับเด็กโตที่อยากใช้พลัง",
+            "en": "For older children who want to burn off energy"
+          },
+          "q": "JUMP House Cologne, Köhlstraße 10, Köln",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Pippolino indoor play park",
+            "th": "ปิปโปลิโน สวนเล่นในร่ม"
+          },
+          "local": "Pippolino Kinderspielpark",
+          "kind": "play",
+          "area": {
+            "en": "Kerpen-Sindorf, near Cologne",
+            "th": "เคอร์เพิน-ซินดอร์ฟ ใกล้โคโลญ"
+          },
+          "what": {
+            "en": "An indoor play park of about 2,500 square metres with bouncy castles and climbing and play courses.",
+            "th": "สวนเล่นในร่มราว 2,500 ตร.ม. มีปราสาทบอลลูน และเส้นทางปีนป่ายและเล่น"
+          },
+          "why": {
+            "en": "Trampolines, a climbing wall and trikes for the little ones.",
+            "th": "มีแทรมโพลีน กำแพงปีน และสามล้อสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Pippolino Kinderspielpark, Hermann-Löns-Straße 30-38, Kerpen-Sindorf, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "Jackelino Safari indoor play hall",
+            "th": "แจ็กเกลิโน ซาฟารี ห้องเล่นในร่ม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Godorf, Cologne",
+            "th": "โกดอร์ฟ โคโลญ"
+          },
+          "what": {
+            "en": "An indoor play hall with climbing hills, slides and trampolines.",
+            "th": "ห้องเล่นในร่ม มีเนินปีน สไลเดอร์ และแทรมโพลีน"
+          },
+          "why": {
+            "en": "A wide choice of things to play on and run about on.",
+            "th": "มีของเล่นและพื้นที่วิ่งเล่นให้เลือกมากมาย"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jackelino Safari, Otto-Hahn-Straße 6-8, Cologne, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "Leo's Abenteuerpark indoor adventure park",
+            "th": "เลโอส์ อาเบนเทออร์พาร์ก สวนผจญภัยในร่ม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Pulheim, near Cologne",
+            "th": "พูลไฮม์ ใกล้โคโลญ"
+          },
+          "what": {
+            "en": "An indoor adventure park with ball pits, trampolines, a pirate ship and a climbing volcano.",
+            "th": "สวนผจญภัยในร่ม มีบ่อบอล แทรมโพลีน เรือโจรสลัด และภูเขาไฟปีนป่าย"
+          },
+          "why": {
+            "en": "Romping, climbing and running about on thousands of square metres.",
+            "th": "วิ่งเล่น ปีนป่าย บนพื้นที่หลายพันตารางเมตร"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Leo's Abenteuerpark, Siemensstraße 2a, Pulheim, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "SPRUNG.RAUM trampoline park",
+            "th": "สปรุงราวม์ สวนแทรมโพลีน"
+          },
+          "local": "SPRUNG RAUM Trampolinpark Köln/Bonn",
+          "kind": "play",
+          "area": {
+            "en": "Troisdorf, Junkersring 28",
+            "th": "ทรอยส์ดอร์ฟ Junkersring 28"
+          },
+          "what": {
+            "en": "A trampoline park with a free-jump area and 17 other attractions.",
+            "th": "สวนแทรมโพลีน มีพื้นที่กระโดดอิสระและกิจกรรมอื่นอีก 17 อย่าง"
+          },
+          "why": {
+            "en": "For children from 6 years; concentration and speed are needed.",
+            "th": "สำหรับเด็กตั้งแต่ 6 ปีขึ้นไป ต้องใช้สมาธิและความไว"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "SPRUNG RAUM Trampolinpark Köln/Bonn, Junkersring 28, Troisdorf, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "Bilderbuchmuseum",
+            "th": "พิพิธภัณฑ์หนังสือภาพ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Troisdorf",
+            "th": "ทรอยส์ดอร์ฟ"
+          },
+          "what": {
+            "en": "A museum with thousands of picture books and the largest Janosch centre.",
+            "th": "พิพิธภัณฑ์มีหนังสือภาพหลายพันเล่มและศูนย์ยาโนชที่ใหญ่ที่สุด"
+          },
+          "why": {
+            "en": "An adventure playground is part of it.",
+            "th": "มีสนามเด็กเล่นผจญภัยรวมอยู่ด้วย"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Bilderbuchmuseum, Troisdorf, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/die-coolsten-museen-fuer-kinder-in-koeln/"
+        },
+        {
+          "name": {
+            "en": "House of History of the Federal Republic",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์สหพันธ์สาธารณรัฐ (บอนน์)"
+          },
+          "local": "Haus der Geschichte der Bundesrepublik Deutschland",
+          "kind": "museum",
+          "area": {
+            "en": "Bonn",
+            "th": "บอนน์"
+          },
+          "what": {
+            "en": "A permanent exhibition on German history from 1945 to today, with a tree house and a 1990s child's room.",
+            "th": "นิทรรศการถาวรประวัติศาสตร์เยอรมันตั้งแต่ปี 1945 ถึงปัจจุบัน มีบ้านต้นไม้และห้องเด็กยุค 1990"
+          },
+          "why": {
+            "en": "Good for rainy days, with free entry.",
+            "th": "เหมาะกับวันฝนตก เข้าฟรี"
+          },
+          "tip": {
+            "en": "Open Tue–Fri 9:00–18:00, Sat, Sun and holidays 10:00–18:00.",
+            "th": "เปิดอังคาร–ศุกร์ 9:00–18:00 เสาร์ อาทิตย์ และวันหยุด 10:00–18:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Haus der Geschichte der Bundesrepublik Deutschland, Bonn, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/ausfluege/museen-ausflugsziel/haus-der-geschichte-der-bundesrepublik/"
+        },
+        {
+          "name": {
+            "en": "Museum Koenig Bonn",
+            "th": "พิพิธภัณฑ์โคเนิก บอนน์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Bonn, Adenauerallee 160",
+            "th": "บอนน์ Adenauerallee 160"
+          },
+          "what": {
+            "en": "A museum of the Leibniz Institute for the Analysis of Biodiversity Change with offers for children and families.",
+            "th": "พิพิธภัณฑ์ของสถาบันไลบ์นิซด้านการเปลี่ยนแปลงความหลากหลายทางชีวภาพ มีกิจกรรมสำหรับเด็กและครอบครัว"
+          },
+          "why": {
+            "en": "Fairy tales and stories read aloud from age 4, and public family tours.",
+            "th": "มีนิทานอ่านให้ฟังตั้งแต่อายุ 4 ปี และทัวร์ครอบครัวแบบสาธารณะ"
+          },
+          "tip": {
+            "en": "Open on Mondays only on public holidays in NRW.",
+            "th": "วันจันทร์เปิดเฉพาะวันหยุดราชการของรัฐนอร์ทไรน์-เวสต์ฟาเลีย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 day ticket · family ticket ≈ €15",
+            "th": "≈ €6 ตั๋วรายวัน · ตั๋วครอบครัว ≈ €15"
+          },
+          "book": "none",
+          "q": "Museum Koenig Bonn, Adenauerallee 160, Bonn, Germany",
+          "ok": "2026-11",
+          "src": "https://www.museumkoenig.de/de/bildungsangebote/fuer-kinder.html"
+        },
+        {
+          "name": {
+            "en": "Deutsches Museum Bonn",
+            "th": "พิพิธภัณฑ์เยอรมัน บอนน์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Bonn",
+            "th": "บอนน์"
+          },
+          "what": {
+            "en": "The Bonn branch of the Deutsches Museum, with activities for children, schools and groups.",
+            "th": "สาขาบอนน์ของพิพิธภัณฑ์เยอรมัน มีกิจกรรมสำหรับเด็ก โรงเรียน และกลุ่ม"
+          },
+          "why": {
+            "en": "The activities can be booked.",
+            "th": "จองกิจกรรมล่วงหน้าได้"
+          },
+          "tip": {
+            "en": "Open Tue–Fri 10:00–17:00, Sat 12:00–17:00, Sun and holidays 10:00–17:00.",
+            "th": "เปิดอังคาร–ศุกร์ 10:00–17:00 เสาร์ 12:00–17:00 อาทิตย์และวันหยุด 10:00–17:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €9 adults · ≈ €5 children and teenagers",
+            "th": "≈ €9 ผู้ใหญ่ · ≈ €5 เด็กและวัยรุ่น"
+          },
+          "book": "rec",
+          "q": "Deutsches Museum Bonn, Germany",
+          "ok": "2026-11",
+          "src": "https://deutsches-museum.de/en/bonn/visit"
+        },
+        {
+          "name": {
+            "en": "Drachenfels",
+            "th": "เดรเคนเฟลส์"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Königswinter",
+            "th": "เคอนิชส์วินเทอร์"
+          },
+          "what": {
+            "en": "A mountain above the Rhine, reached by the Drachenfelsbahn.",
+            "th": "ภูเขาเหนือแม่น้ำไรน์ ขึ้นได้ด้วยรถรางภูเขาเดรเคนเฟลส์บาห์น"
+          },
+          "why": {
+            "en": "Take the train to the summit instead of walking.",
+            "th": "นั่งรถรางขึ้นยอดเขาแทนการเดิน"
+          },
+          "tip": {
+            "en": "The Drachenfelsbahn runs all year.",
+            "th": "รถรางเดรเคนเฟลส์บาห์นวิ่งตลอดทั้งปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €14 adults · ≈ €7 children 4–13",
+            "th": "≈ €14 ผู้ใหญ่ · ≈ €7 เด็ก 4–13 ปี"
+          },
+          "book": "none",
+          "q": "Drachenfels, Königswinter, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/ausfluege/natur-ausflug/ausflug-drachenfels-drachenfelsbahn/"
+        },
+        {
+          "name": {
+            "en": "Drachenburg Castle",
+            "th": "ปราสาทดราเคนบวร์ก"
+          },
+          "local": "Schloss Drachenburg",
+          "kind": "culture",
+          "area": {
+            "en": "Königswinter, Drachenfelsstraße 118",
+            "th": "เคอนิชส์วินเทอร์ Drachenfelsstraße 118"
+          },
+          "what": {
+            "en": "A castle in Königswinter, a good outing together with the Drachenfels.",
+            "th": "ปราสาทในเคอนิชส์วินเทอร์ เที่ยวคู่กับเดรเคนเฟลส์ได้"
+          },
+          "why": {
+            "en": "Children under 6 get free entry.",
+            "th": "เด็กอายุต่ำกว่า 6 ปีเข้าฟรี"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ €10 adults · ≈ €8 reduced",
+            "th": "≈ €10 ผู้ใหญ่ · ≈ €8 ราคาลด"
+          },
+          "book": "none",
+          "q": "Schloss Drachenburg, Drachenfelsstraße 118, Königswinter, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/ausfluege/schloesser-burgen/schloss-drachenburg-drachenfels-ausflug/"
         }
       ]
     },
@@ -892,6 +1814,532 @@
           "q": "Altonaer Museum, Museumstraße, Hamburg",
           "ok": "2026-11",
           "src": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungsorte/altonaer-museum/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "อูร์บาเนโอ ศูนย์สถาปัตยกรรมเยาวชน",
+            "en": "Urbaneo – young architecture centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฮาเฟินซิตี",
+            "en": "HafenCity"
+          },
+          "what": {
+            "th": "ศูนย์ที่เด็กได้ลองสร้างและวางผังเมือง มีเวิร์กช็อปและจุด VR",
+            "en": "A hands-on centre where children build and plan a city, with workshops and a VR station"
+          },
+          "why": {
+            "th": "เด็กได้ลองสร้างและวางผังเมืองเอง",
+            "en": "Children try building and city planning themselves"
+          },
+          "q": "Urbaneo, Am Strandkai 7, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "โรงนาเล่นสนุกแห่งนิทาน",
+            "en": "SpielScheune der Geschichten"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นอยอัลเลอร์เมอเฮอ แบร์เกดอร์ฟ",
+            "en": "Neuallermöhe, Bergedorf"
+          },
+          "what": {
+            "th": "โรงนาเล่นในร่มริมคลอง มีเรือให้ปีน ยานพาหนะของเล่น และบ่อบอล",
+            "en": "An indoor play barn by a canal, with a climbing boat, vehicles and a ball pit"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ มีบ่อบอลและตัวต่อยักษ์",
+            "en": "Play in any weather, with a ball pit and giant bricks"
+          },
+          "tip": {
+            "th": "อากาศดีมีเรือแคนูให้เช่า",
+            "en": "Canoes for hire in good weather"
+          },
+          "q": "SpielScheune der Geschichten, Marie-Henning-Weg 1, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "เนินพลังงานเกออร์กสแวร์เดอร์",
+            "en": "Energieberg Georgswerder"
+          },
+          "kind": "views",
+          "area": {
+            "th": "วิลเฮล์มสบวร์ก",
+            "en": "Wilhelmsburg"
+          },
+          "what": {
+            "th": "อดีตหลุมฝังขยะที่กลายเป็นเนินชมวิว มีทางเดินวงแหวนและนิทรรศการ",
+            "en": "A former landfill turned viewing hill, with a ring walk and an exhibition"
+          },
+          "why": {
+            "th": "เดินขึ้นไปชมวิว และได้เรียนรู้เรื่องขยะและพลังงาน",
+            "en": "A walk up for the view, and things to learn about waste and energy"
+          },
+          "tip": {
+            "th": "ฤดูกาลปิดวันที่ 31 ต.ค. ทุกปี",
+            "en": "The season ends on 31 October each year"
+          },
+          "q": "Energieberg Georgswerder, Fiskalische Straße 2, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+          "name": {
+            "th": "สวนสัตว์ป่าเคลอเฟินชเตน",
+            "en": "Wildgehege Klövensteen"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ป่าเคลอเฟินชเตน ริสเซิน",
+            "en": "Klövensteen forest, Rissen"
+          },
+          "what": {
+            "th": "คอกสัตว์ในป่า มีเฟอร์เรต นก กวาง และแกะภูเขา",
+            "en": "An enclosure in the forest with ferrets, birds, fallow and red deer and mouflon"
+          },
+          "why": {
+            "th": "ได้ดูสัตว์ในป่าใกล้เมือง",
+            "en": "Animals to watch in a forest close to the city"
+          },
+          "q": "Wildgehege Klövensteen, Sandmoorweg 150, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+          "name": {
+            "th": "เกาะประปาเคาเทอโฮเฟอ",
+            "en": "Wasserkunst Elbinsel Kaltehofe"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "โรเทินบวร์กซอร์ท",
+            "en": "Rothenburgsort"
+          },
+          "what": {
+            "th": "เกาะโรงกรองน้ำเก่าบนแม่น้ำเอลเบอ กลายเป็นสวนธรรมชาติพร้อมพิพิธภัณฑ์",
+            "en": "A former waterworks island on the Elbe, now a nature park with a museum"
+          },
+          "why": {
+            "th": "มีทางเดินศึกษาธรรมชาติและพิพิธภัณฑ์เรื่องโรงกรองน้ำ",
+            "en": "A nature trail and a museum about the waterworks"
+          },
+          "q": "Wasserkunst Elbinsel Kaltehofe, Kaltehofe-Hauptdeich 6, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+          "name": {
+            "th": "ฟาร์มกูทคาร์ลส์เฮอเออ",
+            "en": "Gut Karlshöhe"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "บรามเฟลด์ วันด์สเบก",
+            "en": "Bramfeld, Wandsbek"
+          },
+          "what": {
+            "th": "ศูนย์สิ่งแวดล้อม มีแพะ สวนผลไม้ สวนดอกไม้ และทางเดินสำรวจ",
+            "en": "An environmental centre with goats, orchards, flower gardens and a discovery trail"
+          },
+          "why": {
+            "th": "ได้ดูแพะ แกะ และผึ้ง",
+            "en": "Goats, sheep and bees to see"
+          },
+          "q": "Gut Karlshöhe, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "KLICK Kindermuseum",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กคลิก",
+            "en": "KLICK Children’s Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ออสดอร์ฟ",
+            "en": "Osdorf"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กที่ได้จับ สำรวจ และลองทำ มีนิทรรศการหมุนเวียน",
+            "en": "A children’s museum to touch, explore and try things, with changing exhibitions"
+          },
+          "why": {
+            "th": "นิทรรศการที่ลงมือได้สำหรับทั้งครอบครัว",
+            "en": "Hands-on exhibitions for the whole family"
+          },
+          "q": "KLICK Kindermuseum, Brandstücken 43, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "เมืองก็อบลิน",
+            "en": "Goblinstadt"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วันด์สเบก",
+            "en": "Wandsbek"
+          },
+          "what": {
+            "th": "เขาวงกตเล่นบทบาทในร่ม มีทางมืดและห้องลับในโลกแฟนตาซี",
+            "en": "An indoor role-play maze with dark passages and hidden rooms in a fantasy world"
+          },
+          "why": {
+            "th": "มีปริศนาให้ไขในโลกแห่งตำนาน",
+            "en": "Puzzles to solve in a world of legends"
+          },
+          "q": "Goblinstadt, Wendemuthstraße 25, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "เรือแคปซานดิเอโก",
+            "en": "Cap San Diego"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "สะพานอือเบอร์เซ ท่าเรือ",
+            "en": "Überseebrücke, harbour"
+          },
+          "what": {
+            "th": "เรือสินค้าพิพิธภัณฑ์ลำใหญ่ที่สุดที่ยังแล่นได้",
+            "en": "The largest museum cargo ship still able to sail"
+          },
+          "why": {
+            "th": "เด็กเดินสำรวจห้องบังคับเรือ ห้องเครื่อง และห้องวิทยุเอง",
+            "en": "Children explore the bridge, engine room and radio room themselves"
+          },
+          "q": "Cap San Diego, Überseebrücke, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museum der Natur Hamburg – Zoologie",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "พิพิธภัณฑ์ธรรมชาติ ส่วนสัตววิทยา",
+            "en": "Museum of Nature – Zoology"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนบุนเดิส อายม์สบึทเทิล",
+            "en": "Bundesstraße, Eimsbüttel"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตววิทยาที่ได้เดินท่ามกลางโครงกระดูกไดโนเสาร์ตัวใหญ่",
+            "en": "A zoology museum where you walk among big dinosaur skeletons"
+          },
+          "why": {
+            "th": "ได้เดินชมโครงกระดูกไดโนเสาร์",
+            "en": "Dinosaur skeletons to walk among"
+          },
+          "q": "Museum der Natur Hamburg, Bundesstraße 52, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €17 ต่อ 4 ชั่วโมง",
+            "en": "≈ €17 for 4 hours"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/indoorspielplatz-rabatzz-868116",
+          "name": {
+            "th": "แรบาทซ์ สนามเด็กเล่นในร่ม",
+            "en": "rabatzz! indoor playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนคีลเลอร์ ชเตลลิงเงิน ฮัมบูร์ก",
+            "en": "Kieler Straße, Stellingen, Hamburg"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม 3,500 ตร.ม. สองชั้น เปิดทุกวัน",
+            "en": "A 3,500 m² indoor play centre on two floors, open every day"
+          },
+          "why": {
+            "th": "วันพุธสำหรับเด็กต่ำกว่า 5 ขวบเท่านั้น มีบ่อบอลและบ้านลม",
+            "en": "Wednesdays for under-fives only, with a ball pit and bouncy castle"
+          },
+          "q": "rabatzz! Indoorspielplatz, Kieler Str. 575a, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "ป่านีนดอร์เฟอร์เกเฮเกอ",
+            "en": "Niendorfer Gehege (forest and playground)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บอนเดนวัลด์ นีนดอร์ฟ ฮัมบูร์ก",
+            "en": "Bondenwald, Niendorf, Hamburg"
+          },
+          "what": {
+            "th": "ป่ามีทางเดิน 15 กม. และคอกกวาง",
+            "en": "A forest with 15 km of paths and a fallow-deer enclosure"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น 2 แห่งและสนามหญ้า",
+            "en": "Two playgrounds and lawns"
+          },
+          "q": "Spielplatz Niendorfer Gehege, Bondenwald 80, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "ฟาร์มเด็กเคียร์ชดอร์ฟ",
+            "en": "Kinderbauernhof Kirchdorf"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนชตือเบนโฮเฟอร์ วิลเฮล์มสบวร์ก ฮัมบูร์ก",
+            "en": "Stübenhofer Weg, Wilhelmsburg, Hamburg"
+          },
+          "what": {
+            "th": "ฟาร์มเด็กที่มีแพะ หมู ไก่ต๊อก และสัตว์อีกมาก",
+            "en": "A children's farm with goats, pigs, guinea fowl and many more animals"
+          },
+          "why": {
+            "th": "เด็กได้ดู ลูบ และให้อาหารสัตว์ ฟรี",
+            "en": "Children look at, stroke and feed the animals, free"
+          },
+          "q": "Kinderbauernhof Kirchdorf, Stübenhofer Weg 19, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/kostenlos-draussen-333674",
+          "name": {
+            "th": "สนามเด็กเล่นกรอสเซวัลอันลาเกิน",
+            "en": "Große Wallanlagen playground (Planten un Blomen)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกลาซีชอสเซ ข้างแพลนเทินอุนโบลเมิน ฮัมบูร์ก",
+            "en": "Glacischaussee, by Planten un Blomen, Hamburg"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนบนแนวกำแพงเมืองเก่า",
+            "en": "A playground on the old city walls park"
+          },
+          "why": {
+            "th": "มีที่เล่นน้ำ บ้านปีนพร้อมหอสไลเดอร์ และลานทรายใหญ่",
+            "en": "Water play, a climbing house with a slide tower and a big sand area"
+          },
+          "q": "Spielplatz Planten Un Blomen Große Wallanlagen, Glacischaussee 1, Hamburg",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1185,6 +2633,441 @@
           "q": "Caracalla Therme, Römerplatz 1, Baden-Baden",
           "ok": "2026-11",
           "src": "https://tourispo.de/therme/caracalla-therme-baden-baden_preise-und-oeffnungszeiten.html"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.strandfamilie.de/heidelberg-mit-kindern/",
+          "name": {
+            "th": "รถรางไต่เขาไฮเดลแบร์ก",
+            "en": "Heidelberger Bergbahn"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "คอร์นมาร์กท์ ไฮเดลแบร์ก",
+            "en": "Kornmarkt, Heidelberg"
+          },
+          "what": {
+            "th": "รถรางไต่เขาสมัยใหม่ขึ้นมอลเคินคัวร์ แล้วต่อรถรางเก่าปี 1907 ขึ้นยอดเคอนิกส์ชตูล",
+            "en": "A modern funicular to Molkenkur, then a historic 1907 one up the Königstuhl"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นช่วงที่สนุกที่สุดของวันในไฮเดลแบร์กกับเด็ก",
+            "en": "The page calls it the most exciting part of a day in Heidelberg with children"
+          },
+          "tip": {
+            "th": "รวมอยู่ในตั๋วปราสาท",
+            "en": "Included in the castle ticket"
+          },
+          "q": "Heidelberger Bergbahnen, Zwingerstraße 20, Heidelberg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.strandfamilie.de/heidelberg-mit-kindern/",
+          "name": {
+            "th": "ยอดเขาเคอนิกส์ชตูล",
+            "en": "Königstuhl"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือเมืองไฮเดลแบร์ก",
+            "en": "Above Heidelberg"
+          },
+          "what": {
+            "th": "จุดสูงสุดของไฮเดลแบร์ก ชมวิวเมืองและหุบเขาเนคคาร์",
+            "en": "Heidelberg’s highest point, with views over the city and the Neckar valley"
+          },
+          "why": {
+            "th": "ข้างบนมีแผงขายขนม เครื่องดื่ม และเค้ก",
+            "en": "A kiosk at the top with snacks, drinks and cake"
+          },
+          "tip": {
+            "th": "วันฟ้าใสมองเห็นถึงแคว้นอาลซัส",
+            "en": "On a clear day you can see into Alsace"
+          },
+          "q": "Königstuhl, Heidelberg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.strandfamilie.de/heidelberg-mit-kindern/",
+          "name": {
+            "th": "ทางเดินนักปรัชญา",
+            "en": "Philosophenweg"
+          },
+          "kind": "views",
+          "area": {
+            "th": "นอยเอินไฮม์ ฝั่งตรงข้ามแม่น้ำเนคคาร์",
+            "en": "Neuenheim, across the Neckar"
+          },
+          "what": {
+            "th": "ทางเดินที่เห็นวิวปราสาทและเมืองเก่าสวยที่สุด",
+            "en": "A walk with the best view of the castle and the old town"
+          },
+          "why": {
+            "th": "เดินเงียบๆ ผ่านป่าพร้อมชมวิว",
+            "en": "A quiet walk through the woods with the view"
+          },
+          "tip": {
+            "th": "ทางชัน ใช้เป้อุ้มเด็กดีกว่ารถเข็น",
+            "en": "Steep: a baby carrier is better than a pram"
+          },
+          "q": "Philosophenweg, Heidelberg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Mundenhof Tier-Natur-Erlebnispark",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://wyldfamilytravel.com/things-to-do-in-freiburg/",
+          "name": {
+            "th": "สวนสัตว์มุนเดินโฮฟ",
+            "en": "Mundenhof animal park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ไฟรบวร์ก",
+            "en": "Freiburg"
+          },
+          "what": {
+            "th": "สวนสัตว์ 38 เฮกตาร์ มีแพะ แกะ หมู วัว ลิง และอควาเรียม",
+            "en": "A 38-hectare animal park with goats, sheep, pigs, cows and monkeys, and an aquarium"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น ร้านอาหาร และไอศกรีม",
+            "en": "A playground, a restaurant and ice cream"
+          },
+          "tip": {
+            "th": "เข้าฟรี บริจาคได้ ใส่รองเท้าเดินพื้นขรุขระ",
+            "en": "Free entry, donations welcome; wear shoes for uneven ground"
+          },
+          "q": "Mundenhof Tier-Natur-Erlebnispark, Mundenhof 15, Freiburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://wyldfamilytravel.com/things-to-do-in-freiburg/",
+          "name": {
+            "th": "สวนทะเลสาบไฟรบวร์ก",
+            "en": "Seepark Freiburg"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไฟรบวร์ก",
+            "en": "Freiburg"
+          },
+          "what": {
+            "th": "สวน 35 เฮกตาร์รอบทะเลสาบ มีเรือถีบ สวนญี่ปุ่น และที่ว่ายน้ำ",
+            "en": "A 35-hectare park round a lake, with pedal boats, a Japanese garden and a swimming area"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นใหญ่ โครงปีน และสไลเดอร์",
+            "en": "A big playground with climbing frames and slides"
+          },
+          "q": "Seepark Freiburg, Sundgauallee, Freiburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Schlossbergbahn",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wyldfamilytravel.com/things-to-do-in-freiburg/",
+          "name": {
+            "th": "เนินชลอสแบร์กและรถรางไต่เขา",
+            "en": "Schlossberg and its funicular"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ไฟรบวร์ก",
+            "en": "Freiburg"
+          },
+          "what": {
+            "th": "เนินมีซากปราสาทและหอคอยสูง 35 ม. ขึ้นรถรางไต่เขาสามนาที",
+            "en": "A hill with castle ruins and a 35 m tower, three minutes up by funicular"
+          },
+          "why": {
+            "th": "ได้นั่งรถรางไต่เขาและชมวิวรอบทิศ",
+            "en": "The funicular ride and the 360° view"
+          },
+          "q": "Schlossbergbahn, Stadtgarten, Freiburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.stadtlandtour.de/ausfluege-aktivitaeten/ausflugsziele-familien-schwarzwald",
+          "name": {
+            "th": "กระเช้าเชาอินส์ลันด์",
+            "en": "Schauinslandbahn"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สถานีล่าง ฮอร์เบิน ใกล้ไฟรบวร์ก",
+            "en": "Valley station, Horben, near Freiburg"
+          },
+          "what": {
+            "th": "กระเช้าที่ยาวที่สุดในเยอรมนี ขึ้นยอดเชาอินส์ลันด์ราวสิบนาที",
+            "en": "Germany’s longest gondola, about ten minutes up the Schauinsland"
+          },
+          "why": {
+            "th": "มีห้องโดยสารตกแต่งสำหรับเด็กสามห้อง",
+            "en": "Three cabins decorated for children"
+          },
+          "tip": {
+            "th": "จากไฟรบวร์กนั่งรถราง 4 ไปกึนเทอร์สทาล แล้วต่อรถบัส",
+            "en": "From Freiburg, tram 4 to Günterstal, then the bus"
+          },
+          "q": "Schauinslandbahn Talstation, Bohrerstraße 11, Horben",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.stadtlandtour.de/ausfluege-aktivitaeten/ausflugsziele-familien-schwarzwald",
+          "name": {
+            "th": "กระเช้าเฟลด์แบร์ก",
+            "en": "Feldbergbahn"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เฟลด์แบร์ก",
+            "en": "Feldberg"
+          },
+          "what": {
+            "th": "กระเช้าขึ้นเฟลด์แบร์ก ภูเขาสูงที่สุดในป่าดำ",
+            "en": "A gondola up the Feldberg, the Black Forest’s highest mountain"
+          },
+          "why": {
+            "th": "กระเช้าทำมาสำหรับเด็ก ข้างในสีชมพู",
+            "en": "Gondolas made for children, pink inside"
+          },
+          "tip": {
+            "th": "จากสถานีบนเดินไม่กี่นาทีถึงจุดชมวิวหอเฟลด์แบร์ก",
+            "en": "A few minutes’ walk from the top to the Feldbergturm viewpoint"
+          },
+          "q": "Feldbergbahn, Dr.-Pilet-Spur 17, Feldberg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €12",
+            "en": "≈ €12"
+          },
+          "book": "none",
+          "src": "https://kuchenkindundkegel.de/schwarzwald-mit-kindern",
+          "name": {
+            "th": "สวนน้ำบาเดอพาราดีส",
+            "en": "Badeparadies Schwarzwald"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทิทิเซ",
+            "en": "Titisee"
+          },
+          "what": {
+            "th": "สวนน้ำริมทะเลสาบทิทิเซ มีสไลเดอร์ 23 สาย และสระคลื่น",
+            "en": "A water park by the Titisee with 23 slides and a wave pool"
+          },
+          "why": {
+            "th": "มีสไลเดอร์และโซนเด็ก เหมาะวันอากาศไม่ดี",
+            "en": "Slides and children’s areas for a day when the weather turns"
+          },
+          "q": "Badeparadies Schwarzwald, Am Badeparadies 1, Titisee-Neustadt",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kuchenkindundkegel.de/schwarzwald-mit-kindern",
+          "name": {
+            "th": "ทัตซ์มาเนีย เลิฟฟิงเงิน",
+            "en": "Tatzmania Löffingen"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เลิฟฟิงเงิน ป่าดำตอนใต้",
+            "en": "Löffingen, south Black Forest"
+          },
+          "what": {
+            "th": "สวนสัตว์และสวนสนุกในที่เดียว มีลิงเดินอิสระ",
+            "en": "An animal park and amusement park in one, with free-roaming monkeys"
+          },
+          "why": {
+            "th": "มีเครื่องเล่น และได้เจอลิงใกล้ๆ",
+            "en": "Rides, and monkeys to meet close up"
+          },
+          "tip": {
+            "th": "หน้าหนาว (พ.ย.–เม.ย.) เปิดเฉพาะโถงในร่ม เครื่องเล่นปิด",
+            "en": "In winter (November to April) only the indoor hall is open and the rides are closed"
+          },
+          "q": "Tatzmania Löffingen, Wildpark 3, Löffingen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.heidelberg-marketing.de/en/discover/family/familienfreundliches-indoor-programm",
+          "name": {
+            "th": "โรงละครหุ่นพลัปเปอร์เมาล์",
+            "en": "Puppentheater Plappermaul"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนชไตน์ฮอฟ ไฮเดลเบิร์ก",
+            "en": "Steinhofweg, Heidelberg"
+          },
+          "what": {
+            "th": "โรงละครหุ่นที่อยู่ในรายชื่อที่เที่ยววันฝนตกสำหรับครอบครัวของเมือง",
+            "en": "A puppet theatre on the city's family rainy-day list"
+          },
+          "why": {
+            "th": "ดูละครหุ่นในร่มในวันฝนตก",
+            "en": "An indoor puppet show for a rainy day"
+          },
+          "q": "Puppentheater Plappermaul, Steinhofweg 20, Heidelberg",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1469,7 +3352,450 @@
       {"name":{"en":"Children’s Museum Munich","th":"พิพิธภัณฑ์เด็กมิวนิก"},"kind":"museumkid","area":{"en":"Willy-Brandt-Allee 10","th":"วิลลี-บรันท์-อัลเลอ 10"},"what":{"en":"An interactive children's museum at Willy-Brandt-Allee 10 with science and art zones.","th":"พิพิธภัณฑ์เด็กแบบโต้ตอบที่วิลลี-บรันท์-อัลเลอ 10 มีโซนวิทยาศาสตร์และศิลปะ"},"why":{"en":"Interactive exhibits designed specifically for young explorers, with experiments and creative play.","th":"นิทรรศการแบบโต้ตอบออกแบบสำหรับนักสำรวจตัวน้อย มีการทดลองและการเล่นสร้างสรรค์"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Children’s Museum Munich, Willy-Brandt-Allee 10, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"},
       {"name":{"en":"Museum Man and Nature","th":"พิพิธภัณฑ์คนและธรรมชาติ"},"kind":"museum","area":{"en":"Schloss Nymphenburg","th":"พระราชวังนิมเฟนบวร์ค"},"what":{"en":"An interactive natural-science museum inside Nymphenburg Palace.","th":"พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาติแบบโต้ตอบในพระราชวังนิมเฟนบวร์ค"},"why":{"en":"Interactive natural-science exhibits inside Nymphenburg Palace.","th":"นิทรรศการวิทยาศาสตร์ธรรมชาติแบบโต้ตอบในพระราชวังนิมเฟนบวร์ค"},"ages":[0,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"From €3.50","th":"ตั้งแต่ €3.50"},"book":"none","q":"Museum Mensch und Natur, Schloss Nymphenburg, Munich","ok":"2026-11","src":"https://www.musa.guide/en/discover/munich/museum-man-and-nature"},
       {"name":{"en":"Sayaq Adventure Tower","th":"ซายาค แอดเวนเจอร์ ทาวเวอร์"},"kind":"play","area":{"en":"Olympic Park","th":"โอลิมปิกพาร์ค"},"what":{"en":"Aerial climbing courses at heights of up to 25 metres, in three difficulty levels, in Munich's Olympic Park.","th":"คอร์สปีนขึ้นไปบนที่สูงถึง 25 เมตร สามระดับความยาก ในโอลิมปิกพาร์คมิวนิก"},"why":{"en":"Adventurous climbing with views over the Olympic Park; the courses run in three levels, blue, red and black.","th":"ปีนผจญภัยพร้อมวิวโอลิมปิกพาร์ค คอร์สมีสามระดับ คือ น้ำเงิน แดง และดำ"},"ages":[0,0,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Sayaq Adventure Tower, Olympic Park, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"},
-      {"name":{"en":"Railroad Museum","th":"พิพิธภัณฑ์รถราง"},"kind":"ride","area":{"en":"Ostbahnhof","th":"ออสต์บาห์นฮอฟ"},"what":{"en":"A museum train of restored Munich streetcars, pulled by a steam locomotive, departing from Ostbahnhof.","th":"รถไฟพิพิธภัณฑ์จากรถรางมิวนิกที่บูรณะแล้ว ลากด้วยหัวรถจักรไอน้ำ ออกจากออสต์บาห์นฮอฟ"},"why":{"en":"A fun way to explore the city by train, through the streets as they were decades ago.","th":"วิธีสนุกในการสำรวจเมืองด้วยรถไฟ ผ่านถนนแบบที่เคยเป็นเมื่อหลายสิบปีก่อน"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Ostbahnhof, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"}
+      {"name":{"en":"Railroad Museum","th":"พิพิธภัณฑ์รถราง"},"kind":"ride","area":{"en":"Ostbahnhof","th":"ออสต์บาห์นฮอฟ"},"what":{"en":"A museum train of restored Munich streetcars, pulled by a steam locomotive, departing from Ostbahnhof.","th":"รถไฟพิพิธภัณฑ์จากรถรางมิวนิกที่บูรณะแล้ว ลากด้วยหัวรถจักรไอน้ำ ออกจากออสต์บาห์นฮอฟ"},"why":{"en":"A fun way to explore the city by train, through the streets as they were decades ago.","th":"วิธีสนุกในการสำรวจเมืองด้วยรถไฟ ผ่านถนนแบบที่เคยเป็นเมื่อหลายสิบปีก่อน"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Ostbahnhof, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thelocal.de/20250115/six-things-to-do-on-a-rainy-day-in-munich",
+          "name": {
+            "th": "พิพิธภัณฑ์อัลเทอพีนาโคเทค",
+            "en": "Alte Pinakothek"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ย่านศิลปะ มักซ์ฟอร์ชตัดท์",
+            "en": "Kunstareal, Maxvorstadt"
+          },
+          "what": {
+            "th": "ภาพจิตรกรรมเอกยุคเก่า มีผลงานแรมบรันต์และบอตติเชลลี",
+            "en": "Old masters, with Rembrandt and Botticelli"
+          },
+          "why": {
+            "th": "ที่เที่ยวในร่มวันฝนตก มีทัวร์นำชม",
+            "en": "A dry choice on a rainy day, with guided tours"
+          },
+          "q": "Alte Pinakothek, Barer Straße 27, München",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.swm.de/privatkunden/m-baeder/sauna/volksbad.html",
+          "name": {
+            "th": "สระว่ายน้ำมึลเลอร์เชสโฟล์คสบาด",
+            "en": "Müller’sches Volksbad"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ริมแม่น้ำอีซาร์ ไฮด์เฮาเซิน",
+            "en": "By the Isar, Haidhausen"
+          },
+          "what": {
+            "th": "สระว่ายน้ำในร่มแห่งแรกของเมือง ปี 1901 ในโถงอาร์ตนูโว",
+            "en": "The city’s first indoor pool, from 1901, in an Art Nouveau hall"
+          },
+          "why": {
+            "th": "ว่ายน้ำท่ามกลางกระเบื้องและภาพจิตรกรรมฝาผนังสวยงาม",
+            "en": "A swim among ornate tiles and murals"
+          },
+          "tip": {
+            "th": "อังคาร–พฤหัสฯ 7:30–22 น. ศุกร์และเสาร์ 11–21 น. ซื้อตั๋วออนไลน์ได้",
+            "en": "Tuesday to Thursday 7:30–22, Friday and Saturday 11–21; tickets online"
+          },
+          "q": "Müller’sches Volksbad, Rosenheimer Straße 1, München",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Munich Action Park",
+            "th": "มิวนิก แอคชั่น พาร์ก"
+          },
+          "local": "Munich Action Park - Move & Climb",
+          "kind": "play",
+          "area": {
+            "en": "Olympiapark, Spiridon-Louis-Ring, Munich",
+            "th": "โอลิมเปียพาร์ก มิวนิก"
+          },
+          "what": {
+            "en": "Indoor action-sports hall in the Olympiapark with bouldering, Ninja Warrior, parkour, calisthenics, trampolines and a kids area.",
+            "th": "ฮอลล์กีฬาแอคชั่นในร่มที่โอลิมเปียพาร์ก มีโบลเดอริ่ง นินจาวอร์ริเออร์ พาร์กัวร์ คาลิสเธนิกส์ แทรมโพลีน และโซนเด็ก"
+          },
+          "why": {
+            "en": "The kids area is meant for the younger children; the sports areas have their own age rules.",
+            "th": "โซนเด็กสำหรับเด็กเล็ก ส่วนโซนกีฬามีกฎอายุของแต่ละโซน"
+          },
+          "tip": {
+            "en": "Bring clean indoor shoes. Check the age rules for each area and whether a time slot is needed.",
+            "th": "เตรียมรองเท้าในร่มที่สะอาด เช็กกฎอายุของแต่ละโซนและว่าต้องจองรอบหรือไม่"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Munich Action Park - Move & Climb, Spiridon-Louis-Ring 3, 80809 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/sehenswuerdigkeiten/muenchen-bei-regen-tipps-fuer-spannende-indoor-aktivitaeten"
+        },
+        {
+          "name": {
+            "en": "Adventure playground Hasenbergl (ABIX)",
+            "th": "สนามผจญภัยฮาเซนแบร์กล์ (ABIX)"
+          },
+          "local": "Abenteuerspielplatz Hasenbergl - ABIX",
+          "kind": "play",
+          "area": {
+            "en": "Weitlstraße, Hasenbergl, Munich",
+            "th": "Weitlstraße ฮาเซนแบร์กล์ มิวนิก"
+          },
+          "what": {
+            "en": "An open kids' meeting place on 12,000 m² of trees, with wooden huts that children rent with a play pass and decorate themselves.",
+            "th": "พื้นที่พบปะเด็กแบบเปิดบนพื้นที่ต้นไม้ 12,000 ตร.ม. มีกระท่อมไม้ให้เด็กเช่าด้วยบัตรเล่นและตกแต่งเอง"
+          },
+          "why": {
+            "en": "A rainy-day option: the house has table football, billiards and board games, and a padded room to run about in.",
+            "th": "ใช้ได้ในวันฝนตก บ้านเล่นมีโต๊ะฟุตบอล บิลเลียด บอร์ดเกม และห้องบุนวมให้วิ่งเล่น"
+          },
+          "tip": {
+            "en": "Open Tuesday to Saturday, 13:00–19:00 in summer and 13:00–18:00 in winter; closed on public holidays. The page lists it as free.",
+            "th": "เปิดอังคารถึงเสาร์ 13:00–19:00 ช่วงร้อน และ 13:00–18:00 ช่วงหนาว ปิดวันหยุดนักขัตฤกษ์ หน้าเว็บระบุว่าฟรี"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Abenteuerspielplatz Hasenbergl - ABIX, Weitlstraße 125, 80935 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Adventure playground Maulwurfshausen",
+            "th": "สนามผจญภัยเมาล์วูร์ฟสเฮาเซน"
+          },
+          "local": "Abenteuerspielplatz Maulwurfshausen",
+          "kind": "play",
+          "area": {
+            "en": "Albert-Schweitzer-Straße, Neuperlach, Munich",
+            "th": "Albert-Schweitzer-Straße นอยแปร์ลัค มิวนิก"
+          },
+          "what": {
+            "en": "A 2,600 m² adventure playground open all year, with a hut landscape, a football meadow, a bird-nest swing and a covered outdoor kitchen.",
+            "th": "สนามผจญภัย 2,600 ตร.ม. เปิดทั้งปี มีกระท่อมไม้ ทุ่งฟุตบอล ชิงช้ารังนก และครัวกลางแจ้งมีหลังคา"
+          },
+          "why": {
+            "en": "A water slide opens on hot days in summer. It is for children aged 6 to 13, so it fits the older children only.",
+            "th": "มีสไลเดอร์น้ำเปิดในวันร้อนช่วงฤดูร้อน สำหรับเด็ก 6–13 ปี จึงเหมาะกับเด็กโตเท่านั้น"
+          },
+          "tip": {
+            "en": "School term: Wednesday to Friday 14:00–18:00. Holidays: Monday to Friday 14:00–18:00, to 19:00 in summer.",
+            "th": "ช่วงเปิดเทอม พุธถึงศุกร์ 14:00–18:00 ช่วงปิดเทอม จันทร์ถึงศุกร์ 14:00–18:00 ช่วงร้อนถึง 19:00"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Abenteuerspielplatz Maulwurfshausen, Albert-Schweitzer-Straße 24, 81735 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Adventure playground ASP Neuhausen",
+            "th": "สนามผจญภัย ASP นอยเฮาเซน"
+          },
+          "local": "Oase Neuhausen - Abenteuerspielplatz",
+          "kind": "play",
+          "area": {
+            "en": "Hanebergstraße, Neuhausen, Munich",
+            "th": "Hanebergstraße นอยเฮาเซน มิวนิก"
+          },
+          "what": {
+            "en": "A 6,400 m² adventure playground built on four elements: a sand-and-mud landscape, water, fire and air. Children build their own huts.",
+            "th": "สนามผจญภัย 6,400 ตร.ม. ตามสี่ธาตุ คือภูมิทัศน์ทรายและโคลน น้ำ ไฟ และลม เด็กสร้างกระท่อมเอง"
+          },
+          "why": {
+            "en": "Children up to 13 can take a cordless-drill driving licence.",
+            "th": "เด็กอายุถึง 13 ปีสอบ \"ใบขับขี่สว่านไร้สาย\" ได้"
+          },
+          "tip": {
+            "en": "Open Monday to Wednesday and Friday, 15:00–18:00. Thursday is a project afternoon, so the open meeting is off.",
+            "th": "เปิดจันทร์ถึงพุธและศุกร์ 15:00–18:00 วันพฤหัสเป็นบ่ายทำโปรเจกต์ ไม่เปิดให้เข้าอิสระ"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Oase Neuhausen - Abenteuerspielplatz, Hanebergstraße 14, 80637 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Westpark water playground",
+            "th": "สนามเล่นน้ำเวสต์พาร์ก"
+          },
+          "local": "Wasserspielplatz Westpark",
+          "kind": "play",
+          "area": {
+            "en": "Westpark, Heiterwanger Straße, Munich",
+            "th": "เวสต์พาร์ก Heiterwanger Straße มิวนิก"
+          },
+          "what": {
+            "en": "A large water playground in the east of the park, with a stream, stone slides and climbing and play equipment.",
+            "th": "สนามเล่นน้ำขนาดใหญ่ทางตะวันออกของสวน มีลำธาร สไลเดอร์หิน และอุปกรณ์ปีนป่าย"
+          },
+          "why": {
+            "en": "The stream is where children build dams; there is plenty of shade for parents.",
+            "th": "เด็กๆ สร้างเขื่อนกั้นลำธารได้ และมีร่มเงามากสำหรับพ่อแม่"
+          },
+          "tip": {
+            "en": "Water usually runs from May to the end of September. On Tuesdays it is switched on only from late afternoon, for cleaning. The playground is open all year.",
+            "th": "น้ำเปิดตั้งแต่พฤษภาคมถึงสิ้นกันยายน วันอังคารเปิดน้ำตอนเย็นเพราะต้องทำความสะอาด สนามเล่นเปิดทั้งปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wasserspielplatz Westpark, Heiterwanger Str. 34, 81373 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/abenteuerspielplaetze-fuer-kinder-muenchen"
+        },
+        {
+          "name": {
+            "en": "Riemer See",
+            "th": "ทะเลสาบรีเมอร์"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Messestadt Riem, Munich",
+            "th": "เมสเซอชตัดท์ รีม มิวนิก"
+          },
+          "what": {
+            "en": "A 12-hectare lake laid out for the 2005 garden show, with a flat gravel beach and lawns on the east shore.",
+            "th": "ทะเลสาบ 12 เฮกตาร์ที่ทำขึ้นสำหรับงานสวนปี 2005 มีหาดกรวดราบและสนามหญ้าฝั่งตะวันออก"
+          },
+          "why": {
+            "en": "A flat gravel beach with a non-swimmers' area marked by buoys at about 1.35 m.",
+            "th": "หาดกรวดราบ มีโซนสำหรับคนว่ายน้ำไม่เป็นที่ลึกราว 1.35 ม. กั้นด้วยทุ่น"
+          },
+          "tip": {
+            "en": "Bathing only at the marked spots; jumping into the water is forbidden. Keep children within sight.",
+            "th": "ลงเล่นน้ำได้เฉพาะจุดที่กำหนด ห้ามกระโดดลงน้ำ ดูแลเด็กให้อยู่ในสายตา"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Riemer See, Trudering-Riem, 81829 München, Germany",
+          "ok": "2026-11",
+          "src": "https://stadt.muenchen.de/service/info/riemer-see/10313894/"
+        },
+        {
+          "name": {
+            "en": "Lerchenauer See",
+            "th": "ทะเลสาบแลร์เชอเนาเออร์"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Feldmoching-Hasenbergl, north Munich",
+            "th": "เฟลด์โมชิง-ฮาเซนแบร์กล์ ทางเหนือของมิวนิก"
+          },
+          "what": {
+            "en": "One of the smallest and oldest bathing lakes in north Munich, with lawns all round and a restaurant by the water.",
+            "th": "หนึ่งในทะเลสาบเล่นน้ำที่เล็กและเก่าแก่ที่สุดทางเหนือของมิวนิก มีสนามหญ้ารอบและร้านอาหารริมน้ำ"
+          },
+          "why": {
+            "en": "A large playground for the little visitors.",
+            "th": "มีสนามเด็กเล่นขนาดใหญ่สำหรับผู้มาเยือนตัวเล็ก"
+          },
+          "tip": {
+            "en": "Grilling is allowed only in marked grill zones. Lifeguards are on duty only on fine weekends and holidays.",
+            "th": "ย่างบาร์บีคิวได้เฉพาะโซนที่กำหนด ไลฟ์การ์ดประจำเฉพาะเสาร์อาทิตย์และวันหยุดที่อากาศดี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lerchenauer See, Feldmoching-Hasenbergl, 80995 München, Germany",
+          "ok": "2026-11",
+          "src": "https://stadt.muenchen.de/service/info/lerchenauer-see/10313887/"
+        },
+        {
+          "name": {
+            "en": "Feldmochinger See",
+            "th": "ทะเลสาบเฟลด์โมชิงเงอร์"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Feldmoching-Hasenbergl, north Munich",
+            "th": "เฟลด์โมชิง-ฮาเซนแบร์กล์ ทางเหนือของมิวนิก"
+          },
+          "what": {
+            "en": "A large lake with wide lawns and a restaurant and kiosk. A fenced swimming area of about 2,500 m² is reached by a jetty and a ramp.",
+            "th": "ทะเลสาบใหญ่ มีสนามหญ้ากว้าง ร้านอาหารและคีออสก์ โซนว่ายน้ำล้อมรั้วราว 2,500 ตร.ม. เข้าทางสะพานท่าและทางลาด"
+          },
+          "why": {
+            "en": "The page says it suits families, and the swimming area is barrier-free.",
+            "th": "หน้าเว็บระบุว่าเหมาะกับครอบครัว และโซนว่ายน้ำไม่มีสิ่งกีดขวาง"
+          },
+          "tip": {
+            "en": "Paid parking at the lake. Arrive early on hot days; the lake fills fast. Grilling only in marked zones.",
+            "th": "ที่จอดรถเสียเงิน วันร้อนควรไปเช้า เพราะคนเต็มเร็ว ย่างบาร์บีคิวได้เฉพาะโซนที่กำหนด"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Feldmochinger See, Feldmoching-Hasenbergl, 80995 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/badeseen-muenchen-und-umgebung"
+        },
+        {
+          "name": {
+            "en": "Lußsee",
+            "th": "ทะเลสาบลุสเซ"
+          },
+          "kind": "beach",
+          "area": {
+            "en": "Langwieder Seenplatte, Aubing-Lochhausen-Langwied, Munich",
+            "th": "แลงไวเดอร์ เซนเพลตเทอ มิวนิกตะวันตกเฉียงเหนือ"
+          },
+          "what": {
+            "en": "About 17 hectares, almost the size of the Langwieder See but deeper and clearer, with a gravel beach and wide lawns.",
+            "th": "ราว 17 เฮกตาร์ ใหญ่เกือบเท่าทะเลสาบแลงไวเดอร์ แต่ลึกและใสกว่า มีหาดกรวดและสนามหญ้ากว้าง"
+          },
+          "why": {
+            "en": "The page lists it for families, for long bathing days and for a picnic.",
+            "th": "หน้าเว็บแนะนำสำหรับครอบครัว วันเล่นน้ำยาวๆ และปิกนิก"
+          },
+          "tip": {
+            "en": "The page also lists it as a bike-ride setting.",
+            "th": "หน้าเว็บระบุว่าเหมาะกับการปั่นจักรยานด้วย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Lußsee, Aubing-Lochhausen-Langwied, 81249 München, Germany",
+          "ok": "2026-11",
+          "src": "https://www.muenchen.de/freizeit/badeseen-muenchen-und-umgebung"
+        }
     ]
     },
     {
@@ -1739,6 +4065,308 @@
           "q": "Alt-Rothenburger Handwerkerhaus, Alter Stadtgraben 26, Rothenburg ob der Tauber",
           "ok": "2026-11",
           "src": "https://www.rothenburg.de/entdecken/museen/alt-rothenburger-handwerkerhaus"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "คนละ 2 ยูโร",
+            "en": "2 euros per person"
+          },
+          "book": "none",
+          "src": "https://www.mkewithkids.com/?p=127022",
+          "name": {
+            "th": "หอเรอเดอร์",
+            "en": "Röderturm"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนเรอเดอร์กัสเซอ",
+            "en": "Rödergasse"
+          },
+          "what": {
+            "th": "หอคอยกำแพงเมืองจากศตวรรษที่ 13 วิวหลังคาบ้าน",
+            "en": "A 13th-century tower of the town walls with a view over the rooftops"
+          },
+          "why": {
+            "th": "มีตราประทับให้สะสมบนยอด",
+            "en": "Stamps to collect at the top"
+          },
+          "q": "Röderturm, Rödergasse 38, Rothenburg ob der Tauber",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Topplerschlösschen",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.mkewithkids.com/?p=127022",
+          "name": {
+            "th": "ปราสาทท็อปเลอร์",
+            "en": "Toppler Castle"
+          },
+          "kind": "views",
+          "area": {
+            "th": "หุบเขาเทาเบอร์ ใต้ตัวเมือง",
+            "en": "Tauber valley, below the town"
+          },
+          "what": {
+            "th": "ปราสาทน้ำเล็ก ๆ กลางทุ่งเขียว เดินออกนอกกำแพงเมือง",
+            "en": "A small water castle among green fields, a walk outside the walls"
+          },
+          "why": {
+            "th": "หอคอยเหมือนในเทพนิยาย ถ่ายรูปครอบครัวสวย",
+            "en": "A fairy-tale tower for family photos"
+          },
+          "q": "Toppler Castle, Taubertalweg 98, Rothenburg ob der Tauber",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spielplatz Hornburgweg",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familienurlaub-info.com/sommer/deutschland/rothenburg-ob-der-tauber/",
+          "name": {
+            "th": "สนามเด็กเล่นฮอร์นบวร์กเว็ก",
+            "en": "Hornburgweg playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรเทนบวร์ก",
+            "en": "Rothenburg ob der Tauber"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นระหว่างทางเดินรอบเมือง",
+            "en": "A playground on the walk round the town"
+          },
+          "why": {
+            "th": "ที่ให้เด็กเล็กวิ่งเล่น",
+            "en": "Room for small children to run"
+          },
+          "q": "Spielplatz Hornburgweg, Rothenburg ob der Tauber",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Doppelbrücke",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familienurlaub-info.com/sommer/deutschland/rothenburg-ob-der-tauber/",
+          "name": {
+            "th": "สะพานคู่",
+            "en": "Double Bridge"
+          },
+          "kind": "views",
+          "area": {
+            "th": "หุบเขาเทาเบอร์ ใต้ตัวเมือง",
+            "en": "Tauber valley, below the town"
+          },
+          "what": {
+            "th": "สะพานคู่ในหุบเขาใต้ตัวเมือง",
+            "en": "A double bridge in the valley below the town"
+          },
+          "why": {
+            "th": "วิวมองขึ้นไปเห็นกำแพงและหอคอย",
+            "en": "A view up to the walls and towers"
+          },
+          "q": "Doppelbrücke, Taubertalweg, Rothenburg ob der Tauber",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://freizeitmonster.de/blog/indoor-spielplaetze-dinkelsbuehl",
+          "name": {
+            "th": "ฟันทาเซีย คินเดอร์ลันด์",
+            "en": "FUNtasia Kinderland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเอลวังเงอร์ ดิงเคิลส์บึล",
+            "en": "Ellwanger Straße, Dinkelsbühl"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มในอาคารใหญ่",
+            "en": "An indoor play centre in a covered hall"
+          },
+          "why": {
+            "th": "มีเครื่องปีน บ้านลม และแทรมโพลีน",
+            "en": "Climbing, bouncy castles and trampolines"
+          },
+          "q": "Funtasia Kinderland, Ellwanger Str. 21, Dinkelsbühl",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.infranken.de/lk/franken/ausflug/spielplaetze-in-franken-altmuehlsee-bamberg-dinkelsbuehl-familie-ausflug-wasserspielplatz-abenteuer-art-6221976",
+          "name": {
+            "th": "สนามเด็กเล่นผจญภัยไบลเชอ",
+            "en": "Bleiche adventure playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไบลช์เวก ดิงเคิลส์บึล",
+            "en": "Bleichweg, Dinkelsbühl"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นผจญภัย มีหอปีนสูง สะพานเชือก และสลิง",
+            "en": "An adventure playground with tall climbing towers, rope bridges and a zip line"
+          },
+          "why": {
+            "th": "มีอะไรให้เด็กเล่นเยอะ",
+            "en": "Plenty of action for children"
+          },
+          "q": "Spielplatz Bleiche, Bleichweg, Dinkelsbühl",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Taubertal (Tauber valley)",
+            "th": "หุบเขาเทาเบอร์ (Taubertal)"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Tauber valley below Rothenburg",
+            "th": "หุบเขาเทาเบอร์ใต้โรเทนบวร์ก"
+          },
+          "what": {
+            "en": "The Tauber valley near the town, with cycle paths and places to paddle in the river.",
+            "th": "หุบเขาเทาเบอร์ใกล้เมือง มีทางจักรยานและจุดเล่นน้ำในแม่น้ำ"
+          },
+          "why": {
+            "en": "Safe cycle paths and a chance to splash around on the Tauber, both good for little ones.",
+            "th": "ทางจักรยานปลอดภัยและเล่นน้ำในแม่น้ำเทาเบอร์ได้ เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "The page gives no hours or prices for the valley; check before you go.",
+            "th": "ต้นทางไม่ระบุเวลาหรือราคา เช็กก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Taubertal, Rothenburg ob der Tauber, Germany",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
+        },
+        {
+          "name": {
+            "en": "RothenburgBad",
+            "th": "โรเทนบวร์กบาด (RothenburgBad)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Nördlinger Straße, Rothenburg ob der Tauber",
+            "th": "Nördlinger Straße โรเทนบวร์ก"
+          },
+          "what": {
+            "en": "The town's public pool, with both indoor and outdoor pools.",
+            "th": "สระว่ายน้ำสาธารณะของเมือง มีทั้งสระในร่มและกลางแจ้ง"
+          },
+          "why": {
+            "en": "A pool under cover is a rainy-day option for children.",
+            "th": "สระในร่มเป็นทางเลือกวันฝนตกสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Check the opening times and prices on the pool's own page before you go.",
+            "th": "เช็กเวลาเปิดและราคาที่หน้าเว็บของสระก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "RothenburgBad, Nördlinger Str. 20, Rothenburg ob der Tauber, Germany",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
         }
       ]
     },
@@ -2014,6 +4642,306 @@
           "q": "Waldwelt Skywalk Allgäu, Oberschwenden 25, Scheidegg",
           "ok": "2026-11",
           "src": "https://www.waldwelt-allgaeu.de/wp-content/uploads/2026/02/Waldwelt-Skywalk-Allgaeu_Sommerflyer-2026.pdf"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "สนามหญ้าริมทะเลสาบไวเซนเซ",
+            "en": "Weißensee lakeside lawn"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โอเบอร์เคียร์ช ทะเลสาบไวเซนเซ ฟุสเซิน",
+            "en": "Oberkirch, Weißensee, Füssen"
+          },
+          "what": {
+            "th": "ชายหาดริมทะเลสาบไวเซนเซ",
+            "en": "A lake beach at Weißensee"
+          },
+          "why": {
+            "th": "หน้าครอบครัวของเมืองบอกว่าเหมาะกับเด็กเล็ก",
+            "en": "The town's family page calls it ideal for small children"
+          },
+          "q": "Liegewiese Weißensee, Pfrontener Str., Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "สวนไต่เชือกสูงฟุสเซิน",
+            "en": "Füssen high ropes course"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟุสเซินเอาต์เล็ตเซ็นเตอร์ ฟุสเซิน",
+            "en": "Füssen Outlet Center, Füssen"
+          },
+          "what": {
+            "th": "สวนไต่เชือกสูง ทั้งในร่มและกลางแจ้ง",
+            "en": "A high ropes course for climbing, indoors and out"
+          },
+          "why": {
+            "th": "ที่ให้เด็ก ๆ ปีนป่าย",
+            "en": "A place for children to climb"
+          },
+          "q": "Hochseilgarten Füssen, Schäfflerstraße 19b, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "ลานสเก็ตและจักรยานฟุสเซิน",
+            "en": "Füssen skate and bike park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชเวเดนเวก ฟุสเซิน",
+            "en": "Schwedenweg, Füssen"
+          },
+          "what": {
+            "th": "ลานสเก็ตและจักรยาน",
+            "en": "A skate and bike park"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นอยู่ติดกัน",
+            "en": "A playground right next to it"
+          },
+          "q": "Skate- und Bikepark Füssen, Schwedenweg 2, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "ซากปราสาทฮ็อพเฟิน",
+            "en": "Hopfen castle ruins"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ฮ็อพเฟินอัมเซ ฟุสเซิน",
+            "en": "Hopfen am See, Füssen"
+          },
+          "what": {
+            "th": "เดินราว 20 นาทีจากลานจอดรถวิลเซอร์ไปซากปราสาท",
+            "en": "A walk of about 20 minutes from the Vilser car park to the castle ruins"
+          },
+          "why": {
+            "th": "เมืองจัดให้เป็นหนึ่งในเส้นทางเดินกับเด็ก",
+            "en": "The town lists it among its walks with children"
+          },
+          "q": "Burgruine Hopfen am See, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/playing-and-climbing",
+          "name": {
+            "th": "สนามเด็กเล่นท่าเรือ",
+            "en": "Boat harbour playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนไวดัค ริมทะเลสาบฟอร์กเกนเซ ฟึสเซิน",
+            "en": "Weidachstraße, Forggensee shore, Füssen"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นธีมเรือ ริมทะเลสาบฟอร์กเกนเซ",
+            "en": "A ship-themed playground on the shore of the Forggensee"
+          },
+          "why": {
+            "th": "มีเรือให้ปีนเล่นและเรือในทะเลสาบให้ดู",
+            "en": "Ships to play on and boats on the lake"
+          },
+          "q": "Spielplatz Am Bootshafen, Weidachstraße 80, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "ลานว่ายน้ำทะเลสาบโอเบอร์เซ",
+            "en": "Obersee lido (Bad Faulenbach)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนอาลัทเซ บาดเฟาเลินบัค ฟึสเซิน",
+            "en": "Alatseestraße, Bad Faulenbach, Füssen"
+          },
+          "what": {
+            "th": "ลานว่ายน้ำในทะเลสาบ มีหอกระโดด",
+            "en": "A lake lido with a diving tower"
+          },
+          "why": {
+            "th": "ริมทะเลสาบลาดค่อยๆ เหมาะกับเด็กเล่นน้ำและเริ่มว่าย",
+            "en": "Gently sloping shores for splashing and first swims"
+          },
+          "tip": {
+            "th": "เฉพาะหน้าร้อน",
+            "en": "Summer only"
+          },
+          "q": "Oberseebad, Alatseestraße 25, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "เส้นทางฟังเสียงนก ทะเลสาบอาลัทเซ",
+            "en": "Bird trail around the Alatsee"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบอาลัทเซ บาดเฟาเลินบัค ฟึสเซิน",
+            "en": "Alatsee, Bad Faulenbach, Füssen"
+          },
+          "what": {
+            "th": "ทางเดินราว 2 กม. รอบทะเลสาบอาลัทเซ",
+            "en": "A walk of about 2 km around the Alatsee"
+          },
+          "why": {
+            "th": "สแกนคิวอาร์โค้ดฟังเสียงนกระหว่างทาง",
+            "en": "Bird songs to hear by scanning a QR code along the way"
+          },
+          "q": "Alatsee, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "สวนสัตว์เลื้อยคลานอัลกอยด์",
+            "en": "Reptile Zoo Allgäu"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "แม็กนุสพาร์ก ถนนมึลบัค ฟึสเซิน",
+            "en": "Magnuspark, Mühlbachgasse, Füssen"
+          },
+          "what": {
+            "th": "สวนสัตว์ในร่มขนาดเล็ก มีงูและแมงมุม ในฟึสเซิน",
+            "en": "A small indoor zoo of snakes and spiders in Füssen"
+          },
+          "why": {
+            "th": "เป็นหนึ่งในที่แนะนำสำหรับวันฝนตกกับเด็ก",
+            "en": "One of the town's tips for a rainy day with children"
+          },
+          "q": "Reptilienzoo Allgäu, Mühlbachgasse 10, Füssen",
+          "ok": "2026-11"
         }
       ]
     }
