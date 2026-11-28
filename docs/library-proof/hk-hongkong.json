@@ -3249,6 +3249,105 @@
           "why": "on Sharp Island, already in the library"
         }
       ]
+    },
+    {
+      "town": "hk-hongkong",
+      "kind": "sights",
+      "title": "Things to do round 9 — the rest of the Hong Kong Tourism Board pages read in rounds 4–8 (island escapes, temples, easy hikes, waterfront promenades, marine parks), Google Maps only, and a second look at rows left out for having no listing",
+      "checked": "2026-11-28",
+      "rule": "An official page (Discover Hong Kong, the Hong Kong Tourism Board), then Google Maps in the owner's Chrome, reviews sorted by newest: kept only when not marked closed with a review from the last six months.",
+      "added": [
+        {
+          "name": "Po Toi Island",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: Po Toi, a review 2 weeks ago"
+        },
+        {
+          "name": "Kat O and Ap Chau",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html",
+          "map": "Google Maps: Crooked Island, a review 2 weeks ago"
+        },
+        {
+          "name": "Hau Wong Temple",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: a review 2 weeks ago"
+        },
+        {
+          "name": "Tin Hau Temple (Causeway Bay)",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: a review a week ago"
+        },
+        {
+          "name": "Hung Shing Temple (Wan Chai)",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: Hung Shing Temple, Wanchai, a review a week ago"
+        },
+        {
+          "name": "Hung Shing Temple (Ap Lei Chau)",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html",
+          "map": "Google Maps: Hung Shing Temple, Ap Lei Chau, a review a day ago"
+        },
+        {
+          "name": "Lau Shui Heung Reservoir",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html",
+          "map": "Google Maps: a review a day ago"
+        },
+        {
+          "name": "Thousand Island Lake (Tai Lam)",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html",
+          "map": "Google Maps: Reservoir Islands Viewpoint, a review 3 days ago"
+        },
+        {
+          "name": "Pok Fu Lam Reservoir",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html",
+          "map": "Google Maps: a review a month ago"
+        },
+        {
+          "name": "Causeway Bay Typhoon Shelter promenade",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html",
+          "map": "Google Maps: Causeway Bay Typhoon Shelter, a review 2 weeks ago"
+        },
+        {
+          "name": "Yan Chau Tong Marine Park",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/from-marine-parks-to-hong-kong-geopark.html",
+          "map": "Google Maps: a review 5 days ago"
+        },
+        {
+          "name": "East Coast Park Precinct",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html",
+          "map": "Google Maps: a review 7 hours ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Lung Ha Wan Country Trail",
+          "why": "newest Google Maps review two years old"
+        },
+        {
+          "name": "Sha Tin to Tai Mei Tuk cycle route",
+          "why": "Google Maps lists only the village, with no reviews"
+        },
+        {
+          "name": "Lai Chi Wo Hakka village",
+          "why": "looked again: only a business in the village (Hakka Life Experience Village) has reviews, not the village itself"
+        },
+        {
+          "name": "Nam Sang Wai",
+          "why": "looked again: still only a place name, no reviews"
+        },
+        {
+          "name": "Lamma Island Family Trail",
+          "why": "looked again: the listing has a review 2 months ago, but the Lamma Island row already names the trail"
+        },
+        {
+          "name": "Stanley Main Beach",
+          "why": "looked again: both listings still marked closed"
+        },
+        {
+          "name": "1881 Heritage, Central Market, 618 Shanghai Street, The Mills",
+          "why": "shopping and heritage malls, little for children"
+        }
+      ]
     }
   ]
 }
