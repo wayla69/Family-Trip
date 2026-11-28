@@ -1,0 +1,184 @@
+{
+  "town": "it-sicily",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 20 rows from Mom in Italy (2026), Palermo tourism (2025) and Lonely Planet (2025) passed library-check.cjs, 16 went in",
+  "added": [
+    {
+      "name": "Vecchia Trattoria da Totò",
+      "page_name": "Trattoria da Toto",
+      "src": "https://tour.palermo.it/palermo/useful-tips/family-friendly-dining-experiences-in-palermo",
+      "date": "2025-06",
+      "map": "Google Maps 'Vecchia Trattoria da Totò', 799 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Osteria Ballarò",
+      "page_name": "Osteria Ballarò",
+      "src": "https://tour.palermo.it/palermo/useful-tips/family-friendly-dining-experiences-in-palermo",
+      "date": "2025-06",
+      "map": "Google Maps 3,107 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Tondo",
+      "page_name": "Tondo",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Tondo Pizzeria con Forno a Legna', 2,150 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Grano Granis",
+      "page_name": "Grano Granis Trattoria",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Grano Granis', 1,903 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "I Segreti del Chiostro",
+      "page_name": "Santa Caterina Pastry Shop",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'I Segreti del Chiostro' (Santa Caterina), 2,805 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Gelateria Ciccio Adelfio",
+      "page_name": "Gelateria Ciccio Adelfio",
+      "src": "https://tour.palermo.it/palermo/useful-tips/family-friendly-dining-experiences-in-palermo",
+      "date": "2025-06",
+      "map": "Google Maps 1,938 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Cappadonia Gelati",
+      "page_name": "Cappadonia",
+      "src": "https://tour.palermo.it/palermo/useful-tips/family-friendly-dining-experiences-in-palermo",
+      "date": "2025-06",
+      "map": "Google Maps 'Cappadonia Gelati', Via Vittorio Emanuele 401, 1,680 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Parco della Salute playground",
+      "page_name": "Parco della Salute Livia Morello",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Nauto Park - il Parco della Salute', 2,053 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Monte Pellegrino",
+      "page_name": "Monte Pellegrino",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Mount Pellegrino', 679 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Pretoria Fountain",
+      "page_name": "Pretoria Fountain",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Fontana Pretoria', 8,239 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Oratorio di San Lorenzo",
+      "page_name": "Oratorio di San Lorenzo",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 621 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Foro Italico",
+      "page_name": "Foro Italico",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 11,402 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Santa Maria dello Spasimo",
+      "page_name": "Spasimo Church",
+      "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'Santa Maria dello Spasimo', 2,210 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Piazza IX Aprile",
+      "page_name": "Piazza IX Aprile",
+      "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+      "date": "2025-12",
+      "map": "Google Maps 1,217 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Villa Comunale di Taormina",
+      "page_name": "Villa Comunale",
+      "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+      "date": "2025-12",
+      "map": "Google Maps 'Villa Comunale di Taormina', 10,259 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Cuticchio puppet theatre",
+      "page_name": "Teatro dei Pupi di Mimmo Cuticchio",
+      "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+      "date": "2025-12",
+      "map": "Google Maps 'Figli D'Arte Cuticchios', 402 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Villa Bellini (Giardino Bellini)",
+      "page_name": "Villa Bellini",
+      "src": "https://www.viaggiapiccoli.com/en/catania-with-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Giardino Bellini - Villa Bellini' (Via Etnea 215), newest review shown 19 hours ago"
+    },
+    {
+      "name": "Parco Uditore",
+      "page_name": "Parco Uditore (Palermo)",
+      "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+      "date": "2026-10",
+      "map": "Google Maps 'Parco Uditore' (Piazza Albert Einstein), newest review shown 3 days ago"
+    },
+    {
+      "name": "Parco Falcone",
+      "page_name": "Parco Falcone (Catania)",
+      "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+      "date": "2026-10",
+      "map": "Google Maps 'Parco Falcone' (Viale Raffaello Sanzio), newest review shown 2 days ago"
+    },
+    {
+      "name": "Parco Fondo Badia",
+      "page_name": "Parco Fondo Badia (Palermo)",
+      "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+      "date": "2026-10",
+      "map": "Google Maps 'Parco Fondo Badia' (Via Badia 48), newest review shown 4 months ago"
+    },
+    {
+      "name": "Parco Gandhi",
+      "page_name": "Parco Gandhi (Catania)",
+      "src": "https://www.balarm.it/news/la-mappa-dei-parchi-giochi-per-bambini-in-sicilia-aria-pulita-giostre-e-angoli-segreti-170648",
+      "date": "2026-10",
+      "map": "Google Maps 'Parco Gandhi', newest review shown 4 months ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Argento Puppet Theatre",
+      "why": "newest Google Maps review seven months old"
+    },
+    {
+      "name": "Panificio Morello",
+      "why": "the map finds a bakery of that name in Trapani"
+    },
+    {
+      "name": "Caffè del Corso",
+      "why": "the map shows a differently named café"
+    },
+    {
+      "name": "Grotta Azzurra",
+      "why": "reached only on a boat tour"
+    },
+    {
+      "name": "Places to eat from Balarm",
+      "why": "pages dated 2022–2023"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from Viaggiapiccoli (Oct 2026) and Balarm (Oct 2026), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

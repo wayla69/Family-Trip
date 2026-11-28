@@ -1,0 +1,117 @@
+{
+  "town": "mv-atolls",
+  "rounds": [
+    {
+      "town": "mv-atolls",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 4 rows without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Kaani Beach Restaurant",
+          "src": "https://www.google.com/maps/place/Kaani+Beach+Hotel/@3.9446514,73.4863513,17z",
+          "page_name": "Kaani Beach Hotel",
+          "evidence": "Google Maps: 4-star hotel, 4.2★, Maafushi, 'Casual lodging with dining & a terrace', bookable ($126 a night shown for Dec 22–23); nothing says closed. The map query now names the hotel",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Dawn Cafe",
+          "src": "https://www.google.com/maps/place/Bazaaru+Dawn+Cafe/@4.1797944,73.5092043,17z",
+          "page_name": "Bazaaru Dawn Cafe",
+          "evidence": "Google Maps: cafe, 3.8★, Kandi Dhon Manik Goalhi, Malé (5GH5+WM, by the market — 'Bazaaru'), 'Open · Closes 11:30 PM', phone listed; nothing says closed. The map query now names it as Maps does",
+          "ok": "2026-11"
+        },
+        {
+          "name": "The Family Room by Coffee Lab",
+          "src": "https://www.google.com/maps/place/Family+Room+Coffee/@4.2225131,73.546852,17z",
+          "page_name": "Family Room Coffee",
+          "evidence": "Google Maps: cafe, 4.6★, Lot 20018, Beach Front, Nirolhu Magu, Hulhumalé (6GFW+2P), 'Open · Closes 12:30 AM'; nothing says closed. A web search found the Maldives Business Times report that Coffee Lab's Family Room opened this Hulhumalé Phase II beachfront outlet (Lot 20018) in July 2022; the Dhigga Magu outlet the old query named does not show on Maps, so the query now names the listed one — same café, same island",
+          "ok": "2026-11"
+        },
+        {
+          "name": "FineBake by Suzy",
+          "src": "https://www.google.com/maps/place/Fine+Bake+By+Suzy/@3.9421149,73.4901783,17z",
+          "page_name": "Fine Bake By Suzy",
+          "evidence": "Google Maps: bakery, 4.6★, Haveeree Hingun, Maafushi (WFRR+R3V), 'Open · Closes 10 PM', phone listed; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
+    },
+    {
+      "town": "mv-atolls",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 2 of 8 rows from Maldives Tour Guide (2026) passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Malé Fish Market",
+          "page_name": "Male Fish Market",
+          "src": "https://maldivestour.guide/articles/things-to-do-in-maldives-for-family.html",
+          "date": "2026-09",
+          "map": "Google Maps 'Fish Market', 784 reviews, newest '23 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Olive Ridley Project at Coco Palm Dhuni Kolhu",
+          "why": "newest Google Maps review nine months old"
+        },
+        {
+          "name": "Six resort restaurants",
+          "why": "failed library-check.cjs"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "round": 3,
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows from The National (Oct 2026), TTG Asia (Jan 2026) and Maldives Magazine (May 2026), all passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Island Kitchen (The Westin Maldives Miriandhoo)",
+          "page_name": "Island Kitchen",
+          "src": "https://www.thenationalnews.com/travel/2026/10/14/calm-bolthole-in-the-baa-atoll-a-family-review-of-the-westin-maldives-miriandhoo/",
+          "date": "2026-10",
+          "map": "Google Maps 'Island Kitchen' (Westin Maldives Miriandhoo), 24 reviews, newest shown 2 months ago"
+        },
+        {
+          "name": "Kids Club (The Westin Maldives Miriandhoo)",
+          "page_name": "Kids Club",
+          "src": "https://www.thenationalnews.com/travel/2026/10/14/calm-bolthole-in-the-baa-atoll-a-family-review-of-the-westin-maldives-miriandhoo/",
+          "date": "2026-10",
+          "map": "Google Maps 'The Westin Maldives Miriandhoo Resort' (the club is the resort's own; no map entry of its own), 338 reviews, newest shown 2 weeks ago"
+        },
+        {
+          "name": "Junior Marine Savers (Four Seasons Kuda Huraa)",
+          "page_name": "Junior Marine Savers",
+          "src": "https://www.ttgasia.com/2026/01/08/four-seasons-maldives-highlights-family-bonding-and-marine-education-across-two-resorts/",
+          "date": "2026-01",
+          "map": "Google Maps 'Four Seasons Resort Maldives at Kuda Huraa' (the programme is the resort's own; no map entry of its own), 630 reviews, newest shown 5 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "The Pearl, Hawker (Westin Maldives Miriandhoo)",
+          "why": "the page says nothing about children"
+        },
+        {
+          "name": "Grouper Grill, Roma (Sun Siyam Iru Veli)",
+          "why": "one shared review headline, no reason for families"
+        },
+        {
+          "name": "Hanifaru Bay",
+          "why": "newest Google Maps review a year old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

@@ -45,6 +45,84 @@ window.addEventListener('unhandledrejection', (e) => {
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+/* Forgiving search (owner, Nov 2026: "มีอะไรที่ flexible แบบนี้ได้อีกไหม อย่าตึงเกินไป"): every search box looks for the words as typed
+   first; only when nothing at all is found does it look again forgivingly (fzFind) — accents and spaces never count, and a slip of
+   a letter (one from 4 letters typed, two from 7: a change, a missing or extra letter, two letters swapped) still finds the word.
+   The planner's "where to" has its own ranking (views.js plFit); the book search, the search of every book, the photos, the
+   offline guide answers, the place-to-eat, things-to-do, town and place-sheet boxes use these. */
+const fzNorm = (x) => String(x || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const fzCompact = (x) => fzNorm(x).replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+const fzSlack = (n) => (n >= 7 ? 2 : n >= 4 ? 1 : 0);
+function fzEdit(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let p2 = null, p1 = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let low = i;
+    for (let j = 1; j <= b.length; j++) {
+      let v = Math.min(p1[j] + 1, cur[j - 1] + 1, p1[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (p2 && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, p2[j - 2] + 1);
+      cur.push(v); if (v < low) low = v;
+    }
+    if (low > max) return max + 1;
+    p2 = p1; p1 = cur;
+  }
+  return p1[b.length];
+}
+// the piece of `text` that `w` finds forgivingly ('' = none): the same letters with other spacing or accents, else a word (Thai: a run
+// of letters, Thai has no spaces) a slip away. Three letters or fewer must be exact.
+function fzFind(text, w) {
+  const cw = fzCompact(w); if (cw.length < 3 || !text) return '';
+  const nt = fzNorm(text), ct = nt.replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+  if (ct.includes(cw)) return String(w);
+  const sl = fzSlack(cw.length); if (!sl) return '';
+  if (/[฀-๿一-鿿]/.test(cw)) {
+    const tt = ct.slice(0, 4000);
+    for (let len = Math.max(3, cw.length - sl); len <= cw.length + sl; len++) {
+      for (let i = 0; i + len <= tt.length; i++) {
+        if (tt[i] !== cw[0] && tt[i + 1] !== cw[1]) continue;   // a cheap first look before the full count
+        const seg = tt.substr(i, len); if (fzEdit(cw, seg, sl) <= sl) return seg;
+      }
+    }
+    return '';
+  }
+  for (const word of nt.split(/[^a-z0-9]+/)) {
+    if (word.length < 3) continue;
+    if (fzEdit(cw, word, sl) <= sl) return word;
+    if (word.length > cw.length && fzEdit(cw, word.slice(0, cw.length), sl) <= sl) return word.slice(0, cw.length);
+  }
+  // two words typed as one and a slip ("dimsun" for "dim sum"): the run of letters without spaces, in short texts only
+  if (ct.length <= 600) for (let i = 0; i + cw.length - sl <= ct.length; i++) {
+    if (ct[i] !== cw[0] && ct[i + 1] !== cw[1]) continue;
+    for (let len = Math.max(3, cw.length - sl); len <= cw.length + sl && i + len <= ct.length; len++) if (fzEdit(cw, ct.substr(i, len), sl) <= sl) return ct.substr(i, len);
+  }
+  return '';
+}
+// a filter over things shown on the page: the exact matches, or — only when there are none — the forgiving ones. → {ok(i), near}
+function fzFilter(texts, q) {
+  const k = fzNorm(q).trim(); if (!k) return { ok: () => true, near: false };
+  const exact = texts.map((t) => fzNorm(t).includes(k));
+  if (exact.some(Boolean)) return { ok: (i) => exact[i], near: false };
+  const words = k.split(/\s+/).filter(Boolean), near = texts.map((t) => words.every((w) => fzNorm(t).includes(w) || !!fzFind(t, w)));
+  return { ok: (i) => near[i], near: near.some(Boolean) };
+}
+/* Numbers typed the way people type them (the same ask): Thai digits (๑๒๐๐), thousands commas, a currency sign, and a short word
+   for thousands — 1.2k, 1,200, ฿300, ¥12,000, 3 พัน, 2 หมื่น, 1.5 แสน, 2 ล้าน. NaN when there is no number. */
+function fzAmount(x) {
+  let s = String(x == null ? '' : x).replace(/[๐-๙]/g, (d) => String(d.charCodeAt(0) - 0x0E50)).trim().toLowerCase();
+  // the word for thousands counts only right after the number ("HK$ 85" is not 85 thousand)
+  const mult = /\d\s*(?:ล้าน|m(?![a-z]))/.test(s) ? 1e6 : /\d\s*แสน/.test(s) ? 1e5 : /\d\s*หมื่น/.test(s) ? 1e4 : /\d\s*(?:พัน|k(?![a-z]))/.test(s) ? 1e3 : 1;
+  s = s.replace(/(\d),(?=\d{3}\b)/g, '$1');
+  const m = s.match(/\d+(?:\.\d+)?|\.\d+/); if (!m) return NaN;
+  return Math.round(parseFloat(m[0]) * mult * 100) / 100;
+}
+// a child's height in cm, typed any way: 105, 105 ซม., 105cm, 1.05 ม., 1.05m, ๑๐๕
+function fzHeight(x) {
+  const s = String(x == null ? '' : x).replace(/[๐-๙]/g, (d) => String(d.charCodeAt(0) - 0x0E50)).replace(',', '.').toLowerCase();
+  const m = s.match(/\d+(?:\.\d+)?/); if (!m) return NaN;
+  let v = parseFloat(m[0]);
+  if (v > 0 && v < 3) v *= 100;   // metres
+  return Math.round(v * 10) / 10;
+}
 // one line-icon set for the grown-ups' pages (kid mode keeps its emoji): 24-unit grid, 1.75 stroke, drawn in currentColor
 const ICONS = {
   search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
@@ -166,6 +244,12 @@ async function api(method, url, body, blob) {
   if (r.status === 401) { S = null; render(); throw Object.assign(new Error('auth'), { code: 401 }); }
   if (!r.ok) { const j = await r.json().catch(() => null); throw Object.assign(new Error('http ' + r.status), { code: r.status, error: j && j.error, body: j }); }   // e.error = the server's word (limit, runs, exists…)
   return r.json();
+}
+// a GET whose answer is kept on the phone (IndexedDB kv 'k:<url>'): with no signal the last answer stands in — the library lists
+// Today and SOS read (the towns, places to eat near tonight's bed, the rainy-day list); packOffline asks them ahead (warmOffline)
+async function apiKeep(url) {
+  try { const r = await api('GET', url); idb.set('k:' + url, r); return r; }
+  catch (e) { if (e && e.code === 401) throw e; const v = await idb.get('k:' + url); if (v !== undefined) return v; throw e; }
 }
 // a write that lands while the state is being fetched would be lost: the older answer would replace it locally and the next
 // tap would send a row without it (a review lost Mimi's 😍 this way) — so a fetch that overlapped a finished write is redone
@@ -466,7 +550,8 @@ function themeStyle(t) {
   const css = Object.entries(keys).filter(([k]) => th[k] && !(dark && ['ink', 'muted', 'panel', 'rule', 'pick', 'info', 'calm', 'warn'].includes(k)))
     .map(([k, v]) => `${v}:${k === 'accent' && dark && th.accentDark ? th.accentDark : k === 'accent2' ? acc2 : th[k]}`);
   const acc = dark && th.accentDark ? th.accentDark : th.accent;
-  if (acc) css.push(`--on-accent:${onAccent(acc)}`);   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
+  if (acc) css.push(`--on-accent:${onAccent(acc)}`);
+  if (th.accentDark || acc) css.push(`--acc-soft:${th.accentDark || acc}`);   // the book's lighter colour: what is selected is tinted with it, so a navy or forest book's choice reads coloured, not grey (UI review, Nov 2026)   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
   if (th.accent2) css.push(`--on-accent2:${onAccent(acc2)}`);   // the same for the second colour (AU's sea blue wants dark text)
   return css.join(';');
 }
@@ -498,6 +583,10 @@ const offlineUrls = (t) => {
   kidArtSlugs().forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
   mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
   videoOf(t.id).forEach((m) => { if (!m.local) urls.add(`/media/${encodeURIComponent(m.id)}/t`); });   // a clip's poster; the clip itself only with "everything"
+  // every picture the guide text names (a chapter's park map, a card's picture): HK day 2's Disneyland map was missing with no signal
+  const pics = (v) => { if (typeof v === 'string') { if (/^\/(art|stock)\/[^\s"'<>]+\.(svg|webp|png|jpe?g)(\?[^\s"'<>]*)?$/i.test(v)) urls.add(v); } else if (v && typeof v === 'object') Object.values(v).forEach(pics); };
+  pics(t.info); t.days.forEach((d) => pics(d.plan));
+  urls.add('/geo/land.json');   // the kids' world map draws its land from it
   if (t.kind === 'snap') new Set(['th', ...(((t.theme || {}).snap || {}).places || []).map((p) => String(p).split('-')[0])]).forEach((cc) => { if (/^[a-z]{2}$/.test(cc)) urls.add(`/geo/${cc}.json`); });   // a book from photos names new photos with no signal too
   return [...urls];
 };
@@ -512,6 +601,7 @@ async function packOffline(t, all) {
   renderProgress();
   const worker = async () => { for (;;) { const u = urls.shift(); if (!u) return; try { const r = await fetch(u, { credentials: 'same-origin' }); if (!r.ok) failed++; } catch (_) { failed++; } packing.done++; renderProgress(); } };
   await Promise.all([worker(), worker(), worker()]);
+  try { await warmOffline(t); } catch (_) { failed++; }
   packing = null; renderProgress();
   if (failed) toast(L(`เก็บไม่ครบ ${failed} ไฟล์ ลองอีกครั้งเมื่อสัญญาณดี`, `${failed} files could not be stored — try again with better signal`));
   else { ls('offline_' + t.id, { at: Date.now(), n: mediaOf(t.id).length, all: !!all }); toast(L('เก็บเล่มนี้ไว้ในเครื่องแล้ว เปิดได้แม้ไม่มีเน็ต', 'This book is stored on the phone — it opens without signal')); safeRender(); }

@@ -1,0 +1,251 @@
+{
+  "town": "us-california",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 24 rows from Discover Los Angeles (Dec 2025), Devour Tours (Oct 2025), Scripps Health (Aug 2026) and Mom's LA (Jul 2025), all passed library-check.cjs, 19 went in",
+  "added": [
+    {
+      "name": "Alejo's Presto Trattoria",
+      "page_name": "Alejo’s Presto Trattoria",
+      "src": "https://www.discoverlosangeles.com/eat-drink/the-best-family-friendly-restaurants-in-los-angeles",
+      "date": "2025-12",
+      "map": "Google Maps 'Alejo's Presto Trattoria Italian Restaurant', 937 reviews, newest shown 7 days ago"
+    },
+    {
+      "name": "Brent's Deli (Northridge)",
+      "page_name": "Brent’s Delicatessen & Restaurant",
+      "src": "https://www.discoverlosangeles.com/eat-drink/the-best-family-friendly-restaurants-in-los-angeles",
+      "date": "2025-12",
+      "map": "Google Maps 'Brent's Deli Northridge', 3,357 reviews, newest shown 2 months ago"
+    },
+    {
+      "name": "Carousel (Hollywood)",
+      "page_name": "Carousel",
+      "src": "https://www.discoverlosangeles.com/eat-drink/the-best-family-friendly-restaurants-in-los-angeles",
+      "date": "2025-12",
+      "map": "Google Maps 'Carousel Restaurant Hollywood', 942 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "El Tepeyac Cafe",
+      "page_name": "El Tepeyac",
+      "src": "https://www.discoverlosangeles.com/eat-drink/the-best-family-friendly-restaurants-in-los-angeles",
+      "date": "2025-12",
+      "map": "Google Maps 'El Tepeyac Cafe', 4,988 reviews, newest shown 3 weeks ago"
+    },
+    {
+      "name": "Golden Dragon (Chinatown)",
+      "page_name": "Golden Dragon",
+      "src": "https://www.discoverlosangeles.com/eat-drink/the-best-family-friendly-restaurants-in-los-angeles",
+      "date": "2025-12",
+      "map": "Google Maps 'Golden Dragon Restaurant', 1,637 reviews, newest shown 4 days ago"
+    },
+    {
+      "name": "Kouraku",
+      "page_name": "Kouraku",
+      "src": "https://www.discoverlosangeles.com/eat-drink/the-best-family-friendly-restaurants-in-los-angeles",
+      "date": "2025-12",
+      "map": "Google Maps 'Kouraku', 1,207 reviews, newest shown 8 days ago"
+    },
+    {
+      "name": "SPARK Social SF",
+      "page_name": "Spark Social SF",
+      "src": "https://devourtours.com/blog/kid-friendly-restaurants-san-francisco",
+      "date": "2025-10",
+      "map": "Google Maps 'SPARK Social SF', 4,026 reviews, newest shown 5 days ago"
+    },
+    {
+      "name": "Emmy's Spaghetti Shack",
+      "page_name": "Emmy’s Spaghetti Shack",
+      "src": "https://devourtours.com/blog/kid-friendly-restaurants-san-francisco",
+      "date": "2025-10",
+      "map": "Google Maps 'Emmy's Spaghetti Shack', 955 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "The Magic Flute",
+      "page_name": "The Magic Flute",
+      "src": "https://devourtours.com/blog/kid-friendly-restaurants-san-francisco",
+      "date": "2025-10",
+      "map": "Google Maps 'Magic Flute Restaurant', 338 reviews, newest shown 2 months ago"
+    },
+    {
+      "name": "Bricks Family Restaurant",
+      "page_name": "Bricks",
+      "src": "https://scrippsamg.com/family-friendly-restaurants-in-san-diego/",
+      "date": "2026-08",
+      "map": "Google Maps 'Bricks Family Restaurant' (Carlsbad), 401 reviews, newest shown 4 weeks ago"
+    },
+    {
+      "name": "Outpost Playground (Presidio Tunnel Tops)",
+      "page_name": "Presidio Tunnel Tops playground",
+      "src": "https://devourtours.com/blog/kid-friendly-restaurants-san-francisco",
+      "date": "2025-10",
+      "map": "Google Maps 'Outpost Playground' at Presidio Tunnel Tops, 200 reviews, newest shown 2 months ago"
+    },
+    {
+      "name": "Cayton Children's Museum",
+      "page_name": "The Cayton Museum",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'Cayton Children's Museum', 1,057 reviews, newest shown 6 days ago"
+    },
+    {
+      "name": "Kidspace Children's Museum",
+      "page_name": "Kidspace",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'Kidspace Children's Museum', 3,160 reviews, newest shown 12 days ago"
+    },
+    {
+      "name": "Autry Museum of the American West",
+      "page_name": "The Autry",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'Autry Museum of the American West', 2,342 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "Mothers Beach (Marina del Rey)",
+      "page_name": "Mother’s Beach",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'Mothers Beach', 3,323 reviews, newest shown 6 days ago"
+    },
+    {
+      "name": "Descanso Gardens",
+      "page_name": "Descanso Gardens",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'Descanso Gardens', 10,797 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Malibu Creek State Park",
+      "page_name": "Malibu Creek State Park",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'Malibu Creek State Park', 3,663 reviews, newest shown 1 day ago"
+    },
+    {
+      "name": "The Huntington",
+      "page_name": "The Huntington Library",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'The Huntington Library, Art Museum, and Botanical Gardens', 8,648 reviews, newest shown 3 days ago"
+    },
+    {
+      "name": "LACMA (Los Angeles County Museum of Art)",
+      "page_name": "LACMA",
+      "src": "https://momsla.com/?p=264014",
+      "date": "2025-07",
+      "map": "Google Maps 'Los Angeles County Museum of Art', 21,345 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Dennis the Menace Park (Monterey)",
+      "page_name": "Dennis the Menace Park",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'Dennis The Menace Playground', newest review shown 3 days ago"
+    },
+    {
+      "name": "MY Museum (Monterey County Youth Museum)",
+      "page_name": "MY Museum",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'Monterey County Youth Museum', newest review shown a month ago"
+    },
+    {
+      "name": "Bay Area Discovery Museum",
+      "page_name": "Bay Area Discovery Museum",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'Bay Area Discovery Museum', newest review shown 3 days ago"
+    },
+    {
+      "name": "Exploratorium",
+      "page_name": "Exploratorium",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'Exploratorium', newest review shown 3 days ago"
+    },
+    {
+      "name": "Children's Discovery Museum of San Jose",
+      "page_name": "Children’s Discovery Museum of San Jose",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'Children's Discovery Museum of San Jose', newest review shown 5 days ago"
+    },
+    {
+      "name": "San Francisco Zoo",
+      "page_name": "San Francisco Zoo",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'San Francisco Zoo', newest review shown 2 days ago"
+    },
+    {
+      "name": "Santa Cruz Beach Boardwalk",
+      "page_name": "Santa Cruz Beach Boardwalk",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'Santa Cruz Beach Boardwalk', newest review shown 2 days ago"
+    },
+    {
+      "name": "Monterey Bay Aquarium",
+      "page_name": "Monterey Bay Aquarium",
+      "src": "https://www.montereybayparent.com/california-family-kids-experiences/",
+      "date": "2026-06",
+      "map": "Google Maps 'Monterey Bay Aquarium', newest review shown 2 days ago"
+    },
+    {
+      "name": "Oakland Zoo",
+      "page_name": "Oakland Zoo",
+      "src": "https://www.510families.com/little-critters-animals/",
+      "date": "2026-08",
+      "map": "Google Maps 'Oakland Zoo', newest review shown 2 days ago"
+    },
+    {
+      "name": "Tilden Little Farm (Berkeley)",
+      "page_name": "Tilden Park Little Farm",
+      "src": "https://www.510families.com/little-critters-animals/",
+      "date": "2026-08",
+      "map": "Google Maps 'Tilden Little Farm', newest review shown 2 months ago"
+    },
+    {
+      "name": "Hidden Villa",
+      "page_name": "Hidden Villa Farm",
+      "src": "https://www.510families.com/little-critters-animals/",
+      "date": "2026-08",
+      "map": "Google Maps 'Hidden Villa', newest review shown 3 months ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Les Sisters",
+      "why": "two branches; the map's first match is permanently closed"
+    },
+    {
+      "name": "Pizza Port, Family House of Pancakes",
+      "why": "several branches; the page names none"
+    },
+    {
+      "name": "Aidan's Place playground",
+      "why": "no review from the last six months shown on the map"
+    },
+    {
+      "name": "Shane's Inspiration",
+      "why": "the map's match is named differently (Griffith Park Playground)"
+    },
+    {
+      "name": "Happy Hollow Park & Zoo",
+      "why": "quote not found on the page (library-check.cjs)"
+    },
+    {
+      "name": "Children's Fairyland, Chabot, Lawrence Hall of Science",
+      "why": "no dated 2025–2026 page found"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 12 rows from Monterey Bay Parent (Jun 2026), Mony Claire (Nov 2026) and 510 Families (Aug 2026), 11 passed library-check.cjs, 11 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

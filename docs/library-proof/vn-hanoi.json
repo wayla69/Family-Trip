@@ -1,0 +1,27 @@
+{
+  "town": "vn-hanoi",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from mytour.vn, greensm.com, VinWonders and vietnam.vn, 2 passed library-check.cjs, 1 went in",
+  "added": [
+    {
+      "name": "Hanoi Children's Palace",
+      "page_name": "Hanoi Children's Palace",
+      "src": "https://www.vietnam.vn/en/san-choi-hap-dan-cho-thieu-nhi-thu-do",
+      "date": "2026-06",
+      "map": "Google Maps 'Cung Thiếu Nhi Hà Nội', 578 reviews, newest shown 'last month'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "PlayTime Lotte Liễu Giai",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Buffet Poseidon, Mr.Haahoo, Tiniworld, Kinder Park, Worldgame, Ho Tay Water Park, Grand World",
+      "why": "no readable page date (library-check.cjs)"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

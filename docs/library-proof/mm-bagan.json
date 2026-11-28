@@ -1,0 +1,130 @@
+{
+  "town": "mm-bagan",
+  "rounds": [
+    {
+      "town": "mm-bagan",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 7 rows without ok; rows already carrying ok were not re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+      "confirmed": [
+        {
+          "name": "The Moon (Be Kind to Animals)",
+          "src": "https://www.google.com/maps/search/The+Moon+Vegetarian+Restaurant+Bagan",
+          "page_name": "The Moon Vegetarian Restaurant လဝန်း သက်သတ်လွတ်စားသောက်ဆိုင်",
+          "evidence": "5VF9+723, Taungbi (Old Bagan) · 'Open · Closes 10 PM' (its second branch 'The Moon (2) Be Kind To Animals', 4VH6+PR2, is 'Permanently closed'; q updated)",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Pancake Kingdom",
+          "src": "https://www.google.com/maps/search/Pancake+Kingdom+Nyaungshwe",
+          "page_name": "Inle Pancake Kingdom",
+          "evidence": "MW6G+2MX, Nyaungshwe · 'Open · Closes 9 PM' (q updated)",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Golden Myanmar",
+          "evidence": "Maps found only 'Golden Myanmar 2 Restaurant ရွှေမြန်မာ ၂', 5VF9+62M, Taungbi · 'Open · Closes 8 PM' — a numbered branch, not shown to be the row's place near Tharabar Gate"
+        }
+      ],
+      "removed": [
+        {
+          "name": "Weather Spoon's Bagan",
+          "reason": "Maps: 'Weather Spoon's Restaurant and Bar', Yar kin thar street, Nyaung-U · 5VVX+GM · 'Temporarily closed' — removed once four confirmed replacements were added (second pass, 2026-11-23)"
+        },
+        {
+          "name": "7 Sisters",
+          "reason": "Maps: '7 Sisters Restaurant', 79 Nweni St, New Bagan · 4VM6+96 · 'Temporarily closed' — removed once four confirmed replacements were added (second pass, 2026-11-23)"
+        },
+        {
+          "name": "Sin Yaw Restaurant",
+          "reason": "Maps: 'Sin Yaw Restaurant စင်ရော်', Nyaungshwe · MW6J+GQ · 'Permanently closed' — removed once four confirmed replacements were added (second pass, 2026-11-23)"
+        },
+        {
+          "name": "Black Bamboo",
+          "reason": "Maps: 'Black Bamboo', 5WV2+922, Nyaung-U · 'Temporarily closed' — removed once four confirmed replacements were added (second pass, 2026-11-23)"
+        }
+      ],
+      "added": [
+        {
+          "name": "Khaing Shwe Wha Vegetarian Restaurant",
+          "kind": 0,
+          "src": "https://www.google.com/maps/search/Khaing+Shwe+Wha+Vegetarian+Restaurant+Bagan · https://www.happycow.net/reviews/khaing-shwe-wha-vegetarian-restaurant-bagan-70107",
+          "page_name": "Khaing Shwe Wha Vegetarian Restaurant ခိုင်ရွှေဝါ(သားသတ်လွတ်စားသောက်ဆိုင်)",
+          "evidence": "Google Maps (headless Chromium, 2026-11-23, limited view: no reviews tab, no rating count shown): 'Vegetarian restaurant', 5VF8+PXF, Nyaung-U (Old Bagan) · 4.6 · 'Open · Closes 10:30 PM'. HappyCow: Old Bagan, Ananda Pagoda North Gate; mostly Burmese, English menu, outdoor seating, English-speaking owner; dishes as in the row; reviewers' bills about 6,000 MMK (2020) and 8,000 MMK (2017) → price range from those, may be dated",
+          "ok": "2026-11"
+        },
+        {
+          "name": "TS Bagan Restaurant",
+          "kind": 0,
+          "src": "https://www.google.com/maps/search/TS+Bagan+Restaurant+Bagan · https://nz.trip.com/restaurant/myanmar/nyaung-u/detail/ts-bagan-restaurant-81502327 · https://wanderlog.com/place/details/2625896/ts-bagan-restaurant",
+          "page_name": "TS Bagan Restaurant",
+          "evidence": "Google Maps (headless Chromium, 2026-11-23, limited view: no reviews tab, no rating count shown): 'Restaurant', Thiripyitsaya 4 Street, Nyaung-U · 5WR2+C6 · 4.7 · 'Open · Closes 10 PM'. Trip.com: hours 07:00–22:00, price level '$', outdoor seating; Wanderlog reviews: tidy and quiet off the main street, seating under a big tree, English-speaking staff who recommend, dishes as in the row. No price figures: the range is taken from the '$' level, matched to the town's other rows",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Elodie Restaurant",
+          "kind": 0,
+          "src": "https://www.google.com/maps/search/Elodie+Restaurant+New+Bagan · https://wanderlog.com/place/details/2625916",
+          "page_name": "Elodie Restaurant",
+          "evidence": "Google Maps (headless Chromium, 2026-11-23, limited view: no reviews tab, no rating count shown): 'Restaurant', No. 3rd Road, between Khatter St & Khwanyo St, New Bagan · 4VM6+R6 · 4.6 · 'Open · Closes 10 PM'. Wanderlog: 4.6 on Google (187 reviews), 4.7 Tripadvisor (278), daily 8 AM–10 PM, family-run, large portions, staff ask about sugar; dishes as in the row. No price figures or level, only 'reasonable/good prices' → the range is an estimate matched to the town's other sit-down rows (unsure)",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Cake De Bagan",
+          "kind": 2,
+          "src": "https://www.google.com/maps/search/bakery+Nyaung-U+Myanmar · https://wanderlog.com/place/details/2636447/cake-de-bagan",
+          "page_name": "Cake De Bagan",
+          "evidence": "Google Maps (headless Chromium, 2026-11-23, limited view: no reviews tab, no rating count shown): 'Bakery', Kha Yay New Bagan, 05232 · 4VJ5+XQ · 4.4 · 'Open · Closes 7 PM'. Wanderlog reviews: ice cream, cakes by the slice (5,500 kyat a slice), bubble tea, coffee, matcha latte, milkshakes; air-conditioned room inside; ask for less sugar",
+          "ok": "2026-11"
+        }
+      ],
+      "passes": [
+        {
+          "checked": "2026-11-23",
+          "what": "Four closed rows (Sin Yaw — permanently closed; Weather Spoon's, 7 Sisters, Black Bamboo — temporarily closed) removed after four new rows, each open on Google Maps today, were added: 3 restaurants and 1 café. The town keeps 9 rows (5 restaurants, 2 quick bites, 2 cafés)."
+        }
+      ]
+    },
+    {
+      "town": "mm-bagan",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from Home Journey (2025–2026) and Earth Trekkers (2025) passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Nga Phe Kyaung (the jumping cat monastery)",
+          "page_name": "Nga Phe Kyaung (Jumping Cat Monastery)",
+          "src": "https://www.homejourney.sg/blog/inle-lake-boat-tour-complete-guide-homejourney",
+          "date": "2025-12",
+          "map": "Google Maps 'วัดงาเพ่เชง' (Nga Phe Chaung), 616 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Phaung Daw Oo Pagoda",
+          "page_name": "Phaung Daw Oo Pagoda",
+          "src": "https://www.homejourney.sg/blog/inle-lake-boat-tour-complete-guide-homejourney",
+          "date": "2025-12",
+          "map": "Google Maps 'วัดพองดออู', 552 reviews, newest '1 hour ago'"
+        },
+        {
+          "name": "Shwesandaw Pagoda",
+          "page_name": "Shwe-san-daw Pagoda",
+          "src": "https://www.earthtrekkers.com/cycling-bagan-temples/",
+          "date": "2025-12",
+          "map": "Google Maps 'เจดีย์ชเวซานดอ', Old Bagan, 980 reviews, newest 'last week'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Indein Village",
+          "why": "a whole village"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

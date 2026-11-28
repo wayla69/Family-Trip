@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="is-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="is-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#00838F" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#00838F" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E0F7FA" stroke="#00838F" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="100" cy="76" r="9" fill="#FFCC80" stroke-width="2.5"/><path d="M60 128c0-26 6-34 12-34s8 6 6 12 4 8 10 8v14z" fill="#78909C" stroke-width="2.5"/><path d="M120 128c0-20 4-26 10-26s12 6 12 14 6 4 8 10v2z" fill="#78909C" stroke-width="2.5"/><path d="M76 100q24 8 56 4" fill="none" stroke="#FFFFFF" stroke-width="3"/><path d="M70 126q6 -27 30 -27q24 0 30 27q-30 15 -60 0z" fill="#B0BEC5"/><path d="M77.5 124q22.5 -21 45 0q-22.5 10.5 -45 0z" fill="#E1BEE7" stroke-width="2.5"/><circle cx="100" cy="112" r="11" fill="#FFF8F0" stroke-width="2.5"/><circle class="f" cx="96.9" cy="111" r="1" fill="#22213A" stroke="none"/><circle class="f" cx="103.1" cy="111" r="1" fill="#22213A" stroke="none"/><ellipse class="f" cx="94.7" cy="113" rx="1.5" ry="1" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse class="f" cx="105.3" cy="113" rx="1.5" ry="1" fill="#FF8FA3" stroke="none" opacity=".7"/><path d="M52 134q12 -6 24 0t24 0 24 0 24 0v8H52z" fill="#4FC3F7" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#00838F"><textPath href="#is-st-a" startOffset="50%" text-anchor="middle">ISE-SHIMA</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#C2185B"><textPath href="#is-st-b" startOffset="50%" text-anchor="middle">MIE · JAPAN</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#00838F"/>
+</svg>

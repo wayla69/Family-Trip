@@ -1,0 +1,1283 @@
+{
+  "cc": "be",
+  "towns": [
+    {
+      "place": "be-bruges",
+      "sights": [
+        {
+          "name": { "en": "Boudewijn Seapark", "th": "บูเดอไวน์ซีพาร์ก" },
+          "kind": "themepark",
+          "area": { "en": "Sint-Michiels, Bruges", "th": "ซินต์-มิกีลส์ บรูจส์" },
+          "what": { "en": "A family park with dolphin and sea lion shows, rides, a big playground and an indoor play area called Sea Dreams", "th": "สวนสนุกครอบครัว มีโชว์โลมาและสิงโตทะเล เครื่องเล่น สนามเด็กเล่นใหญ่ และโซนเล่นในร่มชื่อซีดรีมส์" },
+          "why": { "en": "Small children have their own rides and playground; the indoor area saves a rainy day", "th": "เด็กเล็กมีเครื่องเล่นและสนามเล่นของตัวเอง โซนในร่มใช้แก้วันฝนตกได้" },
+          "tip": { "en": "Open all year but hours change by season; the ice rink opens 30 October 2026 and the outdoor water park runs about May to September", "th": "เปิดตลอดปีแต่เวลาเปลี่ยนตามฤดู ลานสเก็ตเปิด 30 ตุลาคม 2026 สวนน้ำกลางแจ้งเปิดราวพฤษภาคมถึงกันยายน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price (listings disagree; children under 85 cm free in one listing)", "th": "เช็กราคาก่อนไป (รายการขัดแย้งกัน รายการหนึ่งว่าเด็กสูงไม่ถึง 85 ซม. ฟรี)" },
+          "book": "rec",
+          "q": "Boudewijn Seapark, A. De Baeckestraat 12, Sint-Michiels, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.boudewijnseapark.be/en/plan-your-visit/opening-times/"
+        },
+        {
+          "name": { "en": "Historium Bruges", "th": "ฮิสโตเรียมบรูจส์" },
+          "kind": "museumkid",
+          "area": { "en": "Markt", "th": "มาร์กต์" },
+          "what": { "en": "A medieval-themed experience on the main square with a story told through staged rooms and an exhibition", "th": "ประสบการณ์ธีมยุคกลางบนจัตุรัสหลัก เล่าเรื่องผ่านห้องจัดฉากและนิทรรศการ" },
+          "why": { "en": "Children 0–4 enter free; the VR add-on is for ages 6 and up, so younger ones stick to the story and exhibition", "th": "เด็ก 0–4 ขวบเข้าฟรี ส่วนเสริม VR สำหรับ 6 ขวบขึ้นไป เด็กเล็กดูเรื่องและนิทรรศการ" },
+          "tip": { "en": "Prices are valid until 31 December 2026; a family trail and audio guide are on offer", "th": "ราคาใช้ได้ถึง 31 ธันวาคม 2026 มีเส้นทางสำหรับครอบครัวและออดิโอไกด์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €14 children 5–12 (story and exhibition) · €20 children 6–12 with VR · under 5 free · check the adult price", "th": "≈ €14 เด็ก 5–12 ปี (เรื่องและนิทรรศการ) · €20 เด็ก 6–12 ปีรวม VR · ต่ำกว่า 5 ขวบฟรี · เช็กราคาผู้ใหญ่" },
+          "book": "rec",
+          "q": "Historium Brugge, Markt 1, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.historium.be/en/tickets/prices/"
+        },
+        {
+          "name": { "en": "Choco-Story, the Chocolate Museum", "th": "ช็อกโก-สตอรี่ พิพิธภัณฑ์ช็อกโกแลต" },
+          "kind": "museum",
+          "area": { "en": "Wijnzakstraat", "th": "ไวน์ซัคสตราต" },
+          "what": { "en": "A museum on the history of cocoa and chocolate, with a live praline demonstration and a taste", "th": "พิพิธภัณฑ์ประวัติศาสตร์โกโก้และช็อกโกแลต มีสาธิตทำพราลีนสดและชิม" },
+          "why": { "en": "Children under 3 enter free; the demonstration and tasting keep children interested; children's workshops can be booked", "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรี การสาธิตและชิมทำให้เด็กสนใจ จองเวิร์กช็อปสำหรับเด็กได้" },
+          "tip": { "en": "The combination ticket with the Frietmuseum is cheaper than two separate tickets", "th": "บัตรรวมกับพิพิธภัณฑ์เฟรนช์ฟรายส์ถูกกว่าซื้อแยก" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €14 adults · €8.50 children 3–11 · €12 ages 12–17 · under 3 free (ticket-site listings)", "th": "≈ €14 ผู้ใหญ่ · €8.50 เด็ก 3–11 ปี · €12 อายุ 12–17 ปี · ต่ำกว่า 3 ขวบฟรี (ตามเว็บขายบัตร)" },
+          "book": "none",
+          "q": "Choco-Story Brugge, Wijnzakstraat 2, Bruges",
+          "ok": "2026-11",
+          "src": "https://funbooker.com/en/listing/ticket-for-the-chocolate-museum-in-bruges-belgium/show"
+        },
+        {
+          "name": { "en": "Frietmuseum", "th": "พิพิธภัณฑ์เฟรนช์ฟรายส์" },
+          "kind": "museum",
+          "area": { "en": "Vlamingstraat", "th": "ฟลามิงสตราต" },
+          "what": { "en": "A museum about the Belgian chip, from the potato's journey to a cellar of frying equipment", "th": "พิพิธภัณฑ์เรื่องเฟรนช์ฟรายส์แบบเบลเยียม ตั้งแต่เส้นทางของมันฝรั่งถึงห้องใต้ดินอุปกรณ์ทอด" },
+          "why": { "en": "Short and light, with a tasting of chips at the end; children under 3 enter free", "th": "เที่ยวสั้นๆ สบายๆ มีชิมเฟรนช์ฟรายส์ตอนท้าย เด็กต่ำกว่า 3 ขวบเข้าฟรี" },
+          "tip": { "en": "Daily 10:00–17:00, last tickets 16:15; closed 25 December and 1 January", "th": "เปิดทุกวัน 10:00–17:00 ขายบัตรถึง 16:15 ปิด 25 ธันวาคมและ 1 มกราคม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €12 adults · €7 children 3–11 · under 3 free (one 2026 guide)", "th": "≈ €12 ผู้ใหญ่ · €7 เด็ก 3–11 ปี · ต่ำกว่า 3 ขวบฟรี (จากคู่มือปี 2026 หนึ่งเล่ม)" },
+          "book": "none",
+          "q": "Frietmuseum, Vlamingstraat 33, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.routard.com/fr/guide/europe/belgique/bruges/friet-museum-musee-de-la-frite"
+        },
+        {
+          "name": { "en": "Bruges canal boat tour", "th": "ล่องเรือชมคลองบรูจส์" },
+          "kind": "ride",
+          "area": { "en": "Rozenhoedkaai", "th": "โรเซนฮูดไคย์" },
+          "what": { "en": "A 30-minute guided boat ride through the canals past old houses and bridges, with several landings in the centre", "th": "ล่องเรือพร้อมไกด์ 30 นาทีผ่านคลอง บ้านเก่าและสะพาน มีท่าเรือหลายแห่งในใจกลางเมือง" },
+          "why": { "en": "Short enough for small children and no walking; the city sets one price for all operators", "th": "สั้นพอสำหรับเด็กเล็กและไม่ต้องเดิน เมืองกำหนดราคาเดียวกันทุกผู้ให้บริการ" },
+          "tip": { "en": "Boats run roughly 10:00–18:00 in season; queues grow by midday, so go early", "th": "เรือวิ่งราว 10:00–18:00 ในฤดูท่องเที่ยว ช่วงเที่ยงคิวยาว ไปแต่เช้า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price (guides say about €12–15 adults and €6–9 children; under 4 free)", "th": "เช็กราคาก่อนไป (คู่มือว่าผู้ใหญ่ราว €12–15 เด็ก €6–9 ต่ำกว่า 4 ขวบฟรี)" },
+          "book": "none",
+          "q": "Rozenhoedkaai, Bruges",
+          "ok": "2026-11",
+          "src": "https://bezoekers.brugge.be/en/bruggemetdeboot"
+        },
+        {
+          "name": { "en": "Belfry of Bruges", "th": "หอระฆังบรูจส์" },
+          "local": "Belfort",
+          "kind": "views",
+          "area": { "en": "Markt", "th": "มาร์กต์" },
+          "what": { "en": "A 13th-century bell tower with 366 steps and a carillon, with a view over the red roofs", "th": "หอระฆังศตวรรษที่ 13 มี 366 ขั้นและระฆังเพลง เห็นวิวหลังคาสีแดง" },
+          "why": { "en": "A steep, narrow climb that is too hard for toddlers and a pram cannot go up; it suits older children", "th": "ทางขึ้นชันและแคบเกินไปสำหรับเด็กวัยเตาะแตะ และรถเข็นขึ้นไม่ได้ เหมาะกับเด็กโต" },
+          "tip": { "en": "About 09:30–18:00 with the last entry before closing; it may close in storms", "th": "ราว 09:30–18:00 เข้าได้ก่อนปิด อาจปิดเมื่อมีพายุ" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price (most guides say about €15 adults, children's rate and free age vary)", "th": "เช็กราคาก่อนไป (คู่มือส่วนใหญ่ว่าผู้ใหญ่ราว €15 ราคาเด็กและอายุที่เข้าฟรีต่างกัน)" },
+          "book": "none",
+          "q": "Belfort Brugge, Markt 7, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.museabrugge.be/en/visit/locations/belfort"
+        },
+        {
+          "name": { "en": "Groeninge Museum", "th": "พิพิธภัณฑ์โกรนิงเงอ" },
+          "kind": "museum",
+          "area": { "en": "Dijver", "th": "ไดเวอร์" },
+          "what": { "en": "Flemish primitives and Belgian modern art in a calm museum by the canal", "th": "ภาพวาดเฟลมิชยุคแรกและศิลปะสมัยใหม่ของเบลเยียมในพิพิธภัณฑ์เงียบสงบริมคลอง" },
+          "why": { "en": "Children under 13 enter free; a short, quiet visit that suits children who enjoy looking at paintings", "th": "เด็กต่ำกว่า 13 ปีเข้าฟรี เที่ยวสั้นๆ เงียบๆ เหมาะกับเด็กที่ชอบดูภาพวาด" },
+          "tip": { "en": "Opens 09:30–17:00 and is closed on Wednesdays", "th": "เปิด 09:30–17:00 ปิดวันพุธ" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €15 adults · €7 under 18 · under 13 free (price page not dated, check the price)", "th": "≈ €15 ผู้ใหญ่ · €7 ต่ำกว่า 18 ปี · ต่ำกว่า 13 ปีฟรี (หน้าราคาไม่ระบุปี เช็กราคาก่อนไป)" },
+          "book": "none",
+          "q": "Groeningemuseum, Dijver 12, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.museabrugge.be/en/visit/locations/groeningemuseum"
+        },
+        {
+          "name": { "en": "Winter Glow Christmas market", "th": "ตลาดคริสต์มาสวินเทอร์โกลว์" },
+          "kind": "market",
+          "area": { "en": "Markt and Simon Stevinplein", "th": "มาร์กต์และไซมอนสเตวินปไลน์" },
+          "what": { "en": "Wooden Christmas chalets on the Markt and a craft market on Simon Stevinplein, with lights across the old town", "th": "บ้านไม้คริสต์มาสบนมาร์กต์ ตลาดงานฝีมือที่ไซมอนสเตวินปไลน์ และแสงไฟทั่วเมืองเก่า" },
+          "why": { "en": "Free to wander with hot chocolate and lights; the crowd and cobbles make a pram hard in the evening", "th": "เดินเล่นฟรี มีช็อกโกแลตร้อนและแสงไฟ ช่วงเย็นคนแน่นและพื้นหินเข็นรถยาก" },
+          "tip": { "en": "Dates differ by source: about 20 November 2026 to 3 January 2027, with the lights continuing longer", "th": "วันที่ต่างกันตามแหล่งข้อมูล ราว 20 พฤศจิกายน 2026 ถึง 3 มกราคม 2027 แสงไฟอยู่ต่อนานกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Markt, Bruges",
+          "ok": "2026-11",
+          "src": "https://fullsuitcase.com/bruges-christmas-market/"
+        },
+        {
+          "name": { "en": "Bruges Winter Glow ice rink", "th": "ลานสเก็ตน้ำแข็งวินเทอร์โกลว์บรูจส์" },
+          "kind": "park",
+          "area": { "en": "Koning Albert I Park, near Minnewater", "th": "สวนกษัตริย์อัลแบร์ที่ 1 ใกล้มินเนอวอเตอร์" },
+          "what": { "en": "A winter ice rink in the park by the Minnewater, open daily during Winter Glow", "th": "ลานสเก็ตน้ำแข็งหน้าหนาวในสวนข้างมินเนอวอเตอร์ เปิดทุกวันช่วงวินเทอร์โกลว์" },
+          "why": { "en": "A gentle first skate for children over 3 with a helper; check the cost of skate hire", "th": "เป็นการสเก็ตครั้งแรกแบบเบาๆ สำหรับเด็กเกิน 3 ขวบพร้อมผู้ช่วย เช็กค่าเช่ารองเท้า" },
+          "tip": { "en": "About 20 November 2026 to 3 January 2027, 10:00–22:00", "th": "ราว 20 พฤศจิกายน 2026 ถึง 3 มกราคม 2027 เวลา 10:00–22:00" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €9 per person (one guide, check the price)", "th": "≈ €9 ต่อคน (จากคู่มือหนึ่ง เช็กราคาก่อนไป)" },
+          "book": "none",
+          "q": "Koning Albert I-park, Minnewater, Bruges",
+          "ok": "2026-11",
+          "src": "https://pixidia.com/?p=89028"
+        },
+        {
+          "name": { "en": "Begijnhof and Minnewater", "th": "เบกิจน์ฮอฟและมินเนอวอเตอร์" },
+          "local": "Begijnhof / Minnewater",
+          "kind": "park",
+          "area": { "en": "South of the centre", "th": "ทางใต้ของใจกลางเมือง" },
+          "what": { "en": "A quiet white-walled courtyard garden with trees, beside a lake with swans", "th": "ลานสวนกำแพงสีขาวเงียบสงบมีต้นไม้ อยู่ริมทะเลสาบที่มีหงส์" },
+          "why": { "en": "Free and calm, with space to walk and swans to watch; keep voices down in the courtyard", "th": "ฟรีและสงบ มีที่เดินเล่นและหงส์ให้ดู ในลานควรพูดเบาๆ" },
+          "tip": { "en": "The courtyard is open all year; only the Beguine's House inside charges a fee", "th": "ลานเปิดตลอดปี เฉพาะบ้านเบกินภายในเก็บค่าเข้า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Begijnhof, Minnewater, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.eghn.org/en/beguinage-bruges/"
+        },
+        {
+          "name": { "en": "Kruisvest windmills and ramparts", "th": "กังหันลมและแนวกำแพงครุยส์เวสต์" },
+          "kind": "nature",
+          "area": { "en": "North-east edge of the old town", "th": "ขอบตะวันออกเฉียงเหนือของเมืองเก่า" },
+          "what": { "en": "A grassy rampart path with four old windmills and a canal view along the old town edge", "th": "ทางเดินบนแนวกำแพงหญ้าเขียว มีกังหันลมเก่าสี่หลังและวิวคลองตามขอบเมืองเก่า" },
+          "why": { "en": "Free and uncrowded, with grass to run on and windmills to look at", "th": "ฟรีและคนน้อย มีสนามหญ้าให้วิ่งและกังหันลมให้ดู" },
+          "tip": { "en": "The path is free at any time; only the Sint-Janshuismolen interior charges", "th": "ทางเดินเข้าได้ฟรีทุกเวลา เฉพาะภายในซินต์-ยันส์เฮาส์โมเลนเก็บค่าเข้า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Kruisvest, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/windmills-kruisvest"
+        },
+        {
+          "name": { "en": "Sint-Janshuismolen windmill", "th": "กังหันลมซินต์-ยันส์เฮาส์" },
+          "kind": "culture",
+          "area": { "en": "Kruisvest", "th": "ครุยส์เวสต์" },
+          "what": { "en": "A working 1770 windmill where you can climb up to see the machinery and grind grain", "th": "กังหันลมปี 1770 ที่ยังใช้งานได้ ขึ้นไปดูเครื่องจักรและการบดเมล็ดพืช" },
+          "why": { "en": "Children under 13 enter free; the climb inside is steep, so it suits steady walkers", "th": "เด็กต่ำกว่า 13 ปีเข้าฟรี ทางขึ้นภายในชัน เหมาะกับเด็กที่เดินมั่นคง" },
+          "tip": { "en": "Open only in the summer season (1 April to 2 November) and closed on Mondays", "th": "เปิดเฉพาะฤดูร้อน (1 เมษายนถึง 2 พฤศจิกายน) ปิดวันจันทร์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €2 adults on the museum page · under 13 free (check the price)", "th": "≈ €2 ผู้ใหญ่ตามหน้าพิพิธภัณฑ์ · ต่ำกว่า 13 ปีฟรี (เช็กราคาก่อนไป)" },
+          "book": "none",
+          "q": "Sint-Janshuismolen, Kruisvest, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.museabrugge.be/en/visit/locations/sint-janshuismolen"
+        },
+        {
+          "name": { "en": "Astridpark playground", "th": "สนามเด็กเล่นแอสตริดพาร์ก" },
+          "kind": "play",
+          "area": { "en": "Centre", "th": "ใจกลางเมือง" },
+          "what": { "en": "A central park with a pond, a fountain and a playground with a sandpit", "th": "สวนกลางเมืองมีบ่อน้ำ น้ำพุ และสนามเด็กเล่นมีกระบะทราย" },
+          "why": { "en": "A free place for children to run while parents sit on nearby benches", "th": "ที่ให้เด็กวิ่งเล่นฟรี พ่อแม่นั่งม้านั่งใกล้ๆ" },
+          "tip": { "en": "A good stop between museums", "th": "แวะพักระหว่างพิพิธภัณฑ์ได้ดี" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Koningin Astridpark, Bruges",
+          "ok": "2026-11",
+          "src": "https://airial.travel/attractions/belgium/brugge/queen-astrid-park-bruges-7X9jSFEY"
+        },
+        {
+          "name": { "en": "Sea Life Blankenberge", "th": "ซีไลฟ์บลังเคนแบร์เกอ" },
+          "kind": "aquarium",
+          "area": { "en": "Blankenberge, about 25 km", "th": "บลังเคนแบร์เกอ ห่างราว 25 กม." },
+          "what": { "en": "A seaside aquarium with a walk-through tunnel, rays, seahorses and rockpools to touch", "th": "พิพิธภัณฑ์สัตว์น้ำริมทะเล มีอุโมงค์เดินผ่าน กระเบน ม้าน้ำ และบ่อหินให้สัมผัส" },
+          "why": { "en": "All indoors with short routes, so good for a rainy coast day; children under 2 enter free", "th": "อยู่ในอาคารทั้งหมด เส้นทางสั้น เหมาะวันฝนตกริมชายฝั่ง เด็กต่ำกว่า 2 ขวบเข้าฟรี" },
+          "tip": { "en": "A visit takes about 1.5–2.5 hours; booking online saves about 10%", "th": "ใช้เวลาราว 1.5–2.5 ชั่วโมง จองออนไลน์ลดราว 10%" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €23.50 adults on the day (€21.15 online) · check the child price · under 2 free", "th": "≈ €23.50 ผู้ใหญ่ซื้อหน้างาน (€21.15 ออนไลน์) · เช็กราคาเด็ก · ต่ำกว่า 2 ขวบฟรี" },
+          "book": "rec",
+          "q": "SEA LIFE Blankenberge, Koning Albertstraat 1, Blankenberge",
+          "ok": "2026-11",
+          "src": "https://www.visitsealife.com/blankenberge/en/tickets-passes/single-tickets/star-tickets/"
+        },
+        {
+          "name": { "en": "Diamond Museum Bruges", "th": "พิพิธภัณฑ์เพชรบรูจส์" },
+          "kind": "museum",
+          "area": { "en": "Katelijnestraat", "th": "คาเทลิญสตราต" },
+          "what": { "en": "A museum on the story of diamonds with a daily polishing show at 12:15", "th": "พิพิธภัณฑ์เรื่องราวของเพชร มีการสาธิตเจียระไนทุกวัน 12:15" },
+          "why": { "en": "Short and indoors; the polishing show holds the attention of children of six and over", "th": "สั้นและอยู่ในร่ม การสาธิตเจียระไนดึงความสนใจเด็กอายุ 6 ปีขึ้นไปได้" },
+          "tip": { "en": "Open daily 10:30–17:30; the show is booked at reception on the day", "th": "เปิดทุกวัน 10:30–17:30 จองรอบสาธิตที่แผนกต้อนรับในวันนั้น" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €15 adults · child price on the booking page", "th": "≈ €15 ผู้ใหญ่ · ราคาเด็กดูที่หน้าจอง" },
+          "book": "none",
+          "q": "Diamantmuseum Brugge, Katelijnestraat 43, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.diamondmuseum.be"
+        },
+        {
+          "local": "Volkskundemuseum",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.museabrugge.be/en/visit/kids",
+          "name": {
+            "th": "พิพิธภัณฑ์วิถีชาวบ้าน",
+            "en": "Volkskundemuseum (Folklore Museum)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มิวเซียบรูช",
+            "en": "Musea Brugge"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิถีชีวิตชาวบ้าน มีจุดเล่นและกระเป๋าเกมสำหรับเด็ก",
+            "en": "A folklore museum with play stations and play suitcases for children"
+          },
+          "why": {
+            "th": "มีจุดเล่นให้ตามหารอบพิพิธภัณฑ์",
+            "en": "Play stations to find around the museum"
+          },
+          "q": "Volkskundemuseum, Brugge",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.museabrugge.be/en/visit/kids",
+          "name": {
+            "th": "พิพิธภัณฑ์กรุทฮุส",
+            "en": "Gruuthusemuseum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "มิวเซียบรูช",
+            "en": "Musea Brugge"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในวังกลางเมือง เด็กสำรวจเหมือนผจญภัย",
+            "en": "A city palace museum children explore as an adventure"
+          },
+          "why": {
+            "th": "พิพิธภัณฑ์จัดเป็นการผจญภัยสำหรับเด็ก",
+            "en": "Musea Brugge sets it up as an adventure for children"
+          },
+          "q": "Gruuthusemuseum, Brugge",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.museabrugge.be/en/visit/kids",
+          "name": {
+            "th": "พิพิธภัณฑ์โรงพยาบาลเซนต์จอห์น",
+            "en": "Sint-Janshospitaal"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "มิวเซียบรูช",
+            "en": "Musea Brugge"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์โรงพยาบาลยุคกลาง มีผลงานของฮันส์ เมมลิง",
+            "en": "A medieval hospital museum with works by Hans Memling"
+          },
+          "why": {
+            "th": "มีออดิโอทัวร์สำหรับเด็กและห้องโรงพยาบาลของเด็ก",
+            "en": "A children’s audio tour and a children’s hospital room"
+          },
+          "q": "Sint-Janshospitaal, Brugge",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรีสำหรับอายุไม่เกิน 18 ปี",
+            "en": "Free for everyone 18 and under"
+          },
+          "book": "none",
+          "src": "https://stamgent.be/en/events/kinderspoor-door-het-verhaal-van-gent",
+          "name": {
+            "th": "เส้นทางเด็ก พิพิธภัณฑ์ STAM",
+            "en": "STAM children's trail"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนกอดส์เฮาเซินลาน เกนต์",
+            "en": "Godshuizenlaan, Ghent"
+          },
+          "what": {
+            "th": "เส้นทางสำหรับเด็กในนิทรรศการเรื่องเมืองเกนต์ของพิพิธภัณฑ์เมือง",
+            "en": "A children's trail through the city museum's story of Ghent"
+          },
+          "why": {
+            "th": "เด็กได้เป็นพ่อค้าและช่างฝีมือ ทำตราประจำตระกูล ตามจังหวะของตัวเอง",
+            "en": "Children play merchants and craftspeople, make coats of arms, at their own pace"
+          },
+          "q": "STAM - Ghent City Museum, Godshuizenlaan 2, Gent",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.harrymalter.be/",
+          "name": {
+            "th": "สวนครอบครัวแฮร์รีมัลเทอร์",
+            "en": "Harry Malter family park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนบอสไฮเดอ เดสเทลแบร์เคิน ใกล้เกนต์",
+            "en": "Bosheidestraat, Destelbergen, near Ghent"
+          },
+          "what": {
+            "th": "สวนครอบครัวเล็กๆ มีสัตว์และสนามเด็กเล่น",
+            "en": "A small family park with animals and a playground"
+          },
+          "why": {
+            "th": "ไม่มีเครื่องเล่นหวาดเสียว มีสนามเด็กเล่นข้างระเบียง",
+            "en": "No fast rides, just charm; a playground beside the terrace"
+          },
+          "q": "Harry Malter Family Park, Bosheidestraat 15, Destelbergen",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "De Toverplaneet indoor playground",
+            "th": "สนามเด็กเล่นในร่ม เดอ โทเวอร์พลาเนต"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Legeweg 88, Sint-Michiels",
+            "th": "Legeweg 88 ซินต์-มีเคลส์"
+          },
+          "what": {
+            "en": "An indoor playground with slides, climbing towers up to 10 metres, ball pits, tunnels and a 100 m² bouncy castle.",
+            "th": "สนามเด็กเล่นในร่ม มีสไลเดอร์ หอปีนสูงถึง 10 เมตร บ่อบอล อุโมงค์ และปราสาทบอลลูนกว้าง 100 ตร.ม."
+          },
+          "why": {
+            "en": "A separate area for babies and toddlers up to 4, so the little ones play safely.",
+            "th": "มีโซนแยกสำหรับทารกและเด็กเล็กถึง 4 ปี เด็กเล็กเล่นได้ปลอดภัย"
+          },
+          "tip": {
+            "en": "A good rainy-day option; allow about two hours.",
+            "th": "เหมาะวันฝนตก เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ €11 per child aged 2–15 · under 3 free",
+            "th": "≈ €11 ต่อเด็กอายุ 2–15 ปี · ต่ำกว่า 3 ปีฟรี"
+          },
+          "book": "none",
+          "q": "De Toverplaneet, Legeweg 88, Sint-Michiels, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/de-toverplaneet-indoor-playground"
+        },
+        {
+          "name": {
+            "en": "Tillegem provincial domain",
+            "th": "สวนสาธารณะประจำจังหวัดทิลเลอเกม"
+          },
+          "local": "Provinciedomein Tillegembos",
+          "kind": "park",
+          "area": {
+            "en": "Sint-Michiels",
+            "th": "ซินต์-มีเคลส์"
+          },
+          "what": {
+            "en": "A provincial estate with woods, meadows, a moated historic castle, a farm courtyard and the inn In de Trutselaar.",
+            "th": "พื้นที่ของจังหวัดมีป่า ทุ่งหญ้า ปราสาทเก่ามีคูน้ำ ลานฟาร์ม และโรงเตี๊ยม In de Trutselaar"
+          },
+          "why": {
+            "en": "A playground and a carousel on the estate.",
+            "th": "มีสนามเด็กเล่นและม้าหมุนในพื้นที่"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Provinciedomein Tillegembos, Tillegemstraat, Sint-Michiels, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.brugge.be/activiteiten/het-provinciaal-domein-tillegem"
+        },
+        {
+          "name": {
+            "en": "De Zeven Torentjes children's farm",
+            "th": "ฟาร์มเด็ก เดอ เซเวน โตเรนต์เยส"
+          },
+          "local": "Kinderboerderij De Zeven Torentjes",
+          "kind": "farm",
+          "area": {
+            "en": "Canadaring 41, Assebroek",
+            "th": "Canadaring 41 อัสเซอบรุก"
+          },
+          "what": {
+            "en": "A 14th-century farmstead with a working children's farm, meadows, stables, a dovecot and a Gothic barn.",
+            "th": "ฟาร์มเฮาส์ศตวรรษที่ 14 มีฟาร์มเด็กที่ใช้งานจริง ทุ่งหญ้า คอกม้า หอนกพิราบ และโรงนาแบบกอทิก"
+          },
+          "why": {
+            "en": "Farm animals to see, a play area and a highchair; baby carriages are allowed.",
+            "th": "มีสัตว์ฟาร์มให้ดู พื้นที่เล่น และเก้าอี้เด็ก นำรถเข็นเด็กเข้าได้"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kinderboerderij De Zeven Torentjes, Canadaring 41, Assebroek, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/kinderboerderij-de-zeven-torentjes-childrens-farm"
+        },
+        {
+          "name": {
+            "en": "Cozmix public observatory",
+            "th": "หอดูดาวสาธารณะ คอซมิกซ์"
+          },
+          "local": "Volkssterrenwacht Beisbroek",
+          "kind": "museumkid",
+          "area": {
+            "en": "Beisbroek, Zeeweg 96",
+            "th": "ไบส์บรุก Zeeweg 96"
+          },
+          "what": {
+            "en": "A public observatory with a telescope tower and a planetarium of more than seven thousand stars, plus a planet pathway.",
+            "th": "หอดูดาวสาธารณะ มีหอกล้องโทรทรรศน์ และท้องฟ้าจำลองดาวกว่าเจ็ดพันดวง พร้อมทางเดินดาวเคราะห์"
+          },
+          "why": {
+            "en": "The planetarium is indoors and the telescope gives close views of the sun, moon and planets.",
+            "th": "ท้องฟ้าจำลองอยู่ในอาคาร และกล้องโทรทรรศน์ให้ดูดวงอาทิตย์ ดวงจันทร์ และดาวเคราะห์ใกล้ ๆ"
+          },
+          "tip": {
+            "en": "Booking is recommended.",
+            "th": "ควรจองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €8 adults · €6 children 4–17 · under 4 free",
+            "th": "≈ €8 ผู้ใหญ่ · €6 เด็ก 4–17 ปี · ต่ำกว่า 4 ปีฟรี"
+          },
+          "book": "rec",
+          "q": "Volkssterrenwacht Beisbroek, Zeeweg 96, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/cozmix-volkssterrenwacht-beisbroek-public-observatory"
+        },
+        {
+          "name": {
+            "en": "Katelijnepark",
+            "th": "สวนคาเทลีนเนอ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Baron Ruzettelaan",
+            "th": "Baron Ruzettelaan"
+          },
+          "what": {
+            "en": "A park just outside the centre, along the inland waterway and in the shadow of Katelijne Bridge, for a picnic or a stroll.",
+            "th": "สวนนอกใจกลางเมืองเล็กน้อย ริมคลองและใต้สะพานคาเทลีนเนอ เหมาะกับปิกนิกหรือเดินเล่น"
+          },
+          "why": {
+            "en": "The page tags it child-friendly, with baby carriages and picnics allowed.",
+            "th": "เว็บระบุว่าเหมาะกับเด็ก นำรถเข็นเด็กและปิกนิกได้"
+          },
+          "tip": {
+            "en": "Good for a picnic; allow about an hour.",
+            "th": "เหมาะกับปิกนิก เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Katelijnepark, Baron Ruzettelaan, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/katelijnepark-katelijne-park"
+        },
+        {
+          "name": {
+            "en": "Beisbroek municipal domain",
+            "th": "สวนสาธารณะไบส์บรุก"
+          },
+          "local": "Domein Beisbroek",
+          "kind": "nature",
+          "area": {
+            "en": "Zeeweg 96",
+            "th": "Zeeweg 96"
+          },
+          "what": {
+            "en": "About 160 hectares of woodland, lanes, grassland and heath south-west of Bruges, with picnic areas and a nature centre.",
+            "th": "ป่า ทางเดิน ทุ่งหญ้า และทุ่งลันดอนราว 160 เฮกตาร์ทางตะวันตกเฉียงใต้ของบรูจส์ มีจุดปิกนิกและศูนย์ธรรมชาติ"
+          },
+          "why": {
+            "en": "A kids' lab in the nature centre, and paths for walking and cycling.",
+            "th": "มีห้องทดลองเด็กในศูนย์ธรรมชาติ และเส้นทางเดินและปั่นจักรยาน"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Domein Beisbroek, Zeeweg 96, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/stedelijk-domein-beisbroek-municipal-domain"
+        }
+      ]
+    },
+    {
+      "place": "be-brussels",
+      "sights": [
+        {
+          "name": { "en": "Atomium", "th": "อะตอมเมียม" },
+          "kind": "views",
+          "area": { "en": "Heysel", "th": "เฮย์เซล" },
+          "what": { "en": "A giant steel model of an iron crystal with spheres you can walk through, escalators and a view over the city", "th": "โมเดลผลึกเหล็กขนาดยักษ์ เดินผ่านลูกกลมได้ มีบันไดเลื่อนและวิวเมือง" },
+          "why": { "en": "Children under 115 cm enter free; the glowing tube escalator between spheres is a hit", "th": "เด็กสูงไม่ถึง 115 ซม. เข้าฟรี บันไดเลื่อนในท่อเรืองแสงระหว่างลูกกลมเป็นที่ชื่นชอบ" },
+          "tip": { "en": "Open daily 10:00–18:00, last entry 17:30; it is next to Mini-Europe", "th": "เปิดทุกวัน 10:00–18:00 เข้าได้ถึง 17:30 อยู่ติดมินิยุโรป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price (children under 115 cm free)", "th": "เช็กราคาก่อนไป (เด็กสูงไม่ถึง 115 ซม. ฟรี)" },
+          "book": "rec",
+          "q": "Atomium, Square de l'Atomium, Brussels",
+          "ok": "2026-11",
+          "src": "https://atomium.be/atomium-opening_hours?lang=en"
+        },
+        {
+          "name": { "en": "Mini-Europe", "th": "มินิยุโรป" },
+          "kind": "themepark",
+          "area": { "en": "Bruparck, Heysel", "th": "บรูปาร์ก เฮย์เซล" },
+          "what": { "en": "About 350 scale models of European monuments with moving parts, beside the Atomium", "th": "โมเดลจำลองสถานที่สำคัญของยุโรปราว 350 ชิ้น มีส่วนที่ขยับได้ อยู่ข้างอะตอมเมียม" },
+          "why": { "en": "Children walk among the models like giants; paths are flat and wide", "th": "เด็กเดินท่ามกลางโมเดลเหมือนยักษ์ ทางเรียบและกว้าง" },
+          "tip": { "en": "Open daily 10:00–18:00 from 1 October 2026 to 3 January 2027, with longer hours in summer", "th": "เปิดทุกวัน 10:00–18:00 ตั้งแต่ 1 ตุลาคม 2026 ถึง 3 มกราคม 2027 หน้าร้อนเปิดนานกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €25 adults (€21.70 pre-booked) · €17.90 children (autumn 2026 listing) · check the free height", "th": "≈ €25 ผู้ใหญ่ (€21.70 จองล่วงหน้า) · €17.90 เด็ก (รายการฤดูใบไม้ร่วง 2026) · เช็กเกณฑ์ความสูงที่เข้าฟรี" },
+          "book": "rec",
+          "q": "Mini-Europe, Bruparck, Brussels",
+          "ok": "2026-11",
+          "src": "https://365.be/en/attractions/get-moving-recreation-theme-parks-brussels-mini-europe/"
+        },
+        {
+          "name": { "en": "Train World", "th": "เทรนเวิลด์" },
+          "kind": "museumkid",
+          "area": { "en": "Schaerbeek station", "th": "สถานีสคาร์เบก" },
+          "what": { "en": "Belgium's railway museum in a station building, with historic locomotives and a train simulator", "th": "พิพิธภัณฑ์รถไฟเบลเยียมในอาคารสถานี มีหัวรถจักรเก่าและเครื่องจำลองขับรถไฟ" },
+          "why": { "en": "Real trains to walk through and climb aboard; indoors and step-free", "th": "เดินเข้าไปในขบวนรถไฟจริงได้ อยู่ในอาคารและทางเรียบ" },
+          "tip": { "en": "Check the child and family ticket rates; the Belgian rail Discovery Ticket gives a discount on the train ride", "th": "เช็กราคาเด็กและบัตรครอบครัว บัตรดิสคัฟเวอรีของรถไฟเบลเยียมลดค่าเดินทาง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €15 adults · check the child price", "th": "≈ €15 ผู้ใหญ่ · เช็กราคาเด็กก่อนไป" },
+          "book": "none",
+          "q": "Train World, Place Princesse Elisabeth 5, Schaerbeek",
+          "ok": "2026-11",
+          "src": "https://www.365.be/en/attractions/visit-road-rail-heritage-schaerbeek-train-world/"
+        },
+        {
+          "name": { "en": "Museum of Natural Sciences", "th": "พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาติ" },
+          "local": "Muséum des Sciences naturelles",
+          "kind": "museumkid",
+          "area": { "en": "European Quarter", "th": "ย่านยุโรป" },
+          "what": { "en": "A big hall of dinosaur skeletons, including Iguanodons, plus a gallery of minerals and wildlife", "th": "ห้องโถงใหญ่โครงกระดูกไดโนเสาร์ รวมถึงอิกัวโนดอน พร้อมแกลเลอรีแร่และสัตว์ป่า" },
+          "why": { "en": "The dinosaur hall impresses even toddlers; children under 4 enter free with a paying adult", "th": "ห้องไดโนเสาร์ทำให้เด็กวัยเตาะแตะตื่นเต้น เด็กต่ำกว่า 4 ขวบเข้าฟรีเมื่อมีผู้ใหญ่ซื้อบัตร" },
+          "tip": { "en": "A paid PaleoLab activity is offered for ages 5–12; check the admission page for the current rates", "th": "มีกิจกรรมพาเลโอแล็บแบบเสียเงินสำหรับ 5–12 ปี เช็กราคาปัจจุบันที่หน้าค่าเข้าชม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (under 4 free with a paying adult)", "th": "เช็กราคาก่อนไป (ต่ำกว่า 4 ขวบฟรีเมื่อมีผู้ใหญ่ซื้อบัตร)" },
+          "book": "rec",
+          "q": "Museum of Natural Sciences, Rue Vautier 29, Brussels",
+          "ok": "2026-11",
+          "src": "https://naturalsciences.be/en/museum/practical-information/admission-fees"
+        },
+        {
+          "name": { "en": "Belgian Comic Strip Center", "th": "ศูนย์การ์ตูนเบลเยียม" },
+          "local": "Centre belge de la Bande dessinée",
+          "kind": "museum",
+          "area": { "en": "Centre", "th": "ใจกลางเมือง" },
+          "what": { "en": "A comics museum in an Art Nouveau building, with Tintin, the Smurfs and Lucky Luke", "th": "พิพิธภัณฑ์การ์ตูนในอาคารอาร์ตนูโว มีตินติน สเมิร์ฟ และลัคกี้ลุค" },
+          "why": { "en": "Children recognise the Smurfs and Tintin; under 6 enter free and the rooms are short and colourful", "th": "เด็กๆ คุ้นกับสเมิร์ฟและตินติน ต่ำกว่า 6 ขวบเข้าฟรี ห้องไม่ยาวและสีสันสดใส" },
+          "tip": { "en": "The price page is headed 2025, so confirm the 2026 rates on the official site", "th": "หน้าราคาระบุปี 2025 เช็กราคา 2026 ที่เว็บไซต์ทางการ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €14 adults · €6 children 6–11 · under 6 free", "th": "≈ €14 ผู้ใหญ่ · €6 เด็ก 6–11 ปี · ต่ำกว่า 6 ขวบฟรี" },
+          "book": "none",
+          "q": "Belgian Comic Strip Center, Rue des Sables 20, Brussels",
+          "ok": "2026-11",
+          "src": "https://www.comicscenter.net/en/practical-information/opening-hours-and-admission-fees"
+        },
+        {
+          "name": { "en": "Autoworld", "th": "ออโตเวิลด์" },
+          "kind": "museum",
+          "area": { "en": "Cinquantenaire Park", "th": "สวนซินกองเตแนร์" },
+          "what": { "en": "A hall of more than 250 vintage cars, from early motors to sports cars, in the Cinquantenaire arcade", "th": "ห้องโถงรถโบราณกว่า 250 คัน ตั้งแต่รถยุคแรกถึงรถสปอร์ต ในอาคารซินกองเตแนร์" },
+          "why": { "en": "Children under 4 enter free and an audioguide for children is available; lots of space to walk", "th": "เด็กต่ำกว่า 4 ขวบเข้าฟรี มีออดิโอไกด์สำหรับเด็ก พื้นที่เดินกว้าง" },
+          "tip": { "en": "Mon–Fri 10:00–17:00, weekends until 18:00; online tickets are €1 cheaper", "th": "จ.–ศ. 10:00–17:00 เสาร์–อาทิตย์ถึง 18:00 ตั๋วออนไลน์ถูกกว่า €1" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €18 adults · €14 children 4+ · under 4 free", "th": "≈ €18 ผู้ใหญ่ · €14 เด็ก 4 ขวบขึ้นไป · ต่ำกว่า 4 ขวบฟรี" },
+          "book": "none",
+          "q": "Autoworld, Parc du Cinquantenaire 11, Brussels",
+          "ok": "2026-11",
+          "src": "https://www.autoworld.be/en/plan-your-visit/individual-visit"
+        },
+        {
+          "name": { "en": "Musée des Enfants", "th": "พิพิธภัณฑ์เด็กบรัสเซลส์" },
+          "local": "Le Musée des Enfants",
+          "kind": "museumkid",
+          "area": { "en": "Ixelles", "th": "อิกเซลส์" },
+          "what": { "en": "A hands-on museum in an old house where children play and make things, for ages 4 to 12", "th": "พิพิธภัณฑ์ให้เด็กลงมือเล่นและทำของในบ้านหลังเก่า สำหรับอายุ 4–12 ปี" },
+          "why": { "en": "Built for children, with games and workshops; opening times are unusual, so book ahead", "th": "ออกแบบเพื่อเด็ก มีเกมและเวิร์กช็อป เวลาเปิดไม่เหมือนที่อื่น ควรจองล่วงหน้า" },
+          "tip": { "en": "It marked its 50th year in 2026; call or check the site for opening days", "th": "ครบรอบ 50 ปีในปี 2026 โทรหรือเช็กเว็บไซต์เรื่องวันเปิด" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Le Musée des Enfants, Rue du Bourgmestre 15, Ixelles",
+          "ok": "2026-11",
+          "src": "https://www.museedesenfants.be/wp-content/uploads/2026/03/20260317-Musee-des-Enfants-communique-de-presse-2026-50-ans.pdf"
+        },
+        {
+          "name": { "en": "Musical Instruments Museum", "th": "พิพิธภัณฑ์เครื่องดนตรี" },
+          "local": "MIM",
+          "kind": "museum",
+          "area": { "en": "Mont des Arts", "th": "มงเดอาร์ต" },
+          "what": { "en": "A museum of instruments from around the world with headphones that play each one as you walk by", "th": "พิพิธภัณฑ์เครื่องดนตรีจากทั่วโลก หูฟังเล่นเสียงเครื่องดนตรีแต่ละชิ้นเมื่อเดินผ่าน" },
+          "why": { "en": "A treasure hunt for ages 4–10 is included in the ticket; calm and indoors", "th": "มีเกมตามหาสมบัติสำหรับอายุ 4–10 ปีรวมในบัตร สงบและอยู่ในอาคาร" },
+          "tip": { "en": "Sources disagree on the age under which children enter free, so check the price", "th": "แหล่งข้อมูลไม่ตรงกันเรื่องอายุที่เด็กเข้าฟรี เช็กราคาก่อนไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (adult ≈ €15 in listings; children's age limit unclear)", "th": "เช็กราคาก่อนไป (ผู้ใหญ่ ≈ €15 ตามรายการ เกณฑ์อายุเด็กไม่ชัด)" },
+          "book": "none",
+          "q": "MIM Musical Instruments Museum, Rue Montagne de la Cour 2, Brussels",
+          "ok": "2026-11",
+          "src": "https://www.365.be/en/attractions/visit-art-brussels-musical-instruments-museum-rmah/"
+        },
+        {
+          "name": { "en": "Choco-Story Brussels", "th": "ช็อกโก-สตอรี่ บรัสเซลส์" },
+          "kind": "museum",
+          "area": { "en": "Centre", "th": "ใจกลางเมือง" },
+          "what": { "en": "A chocolate museum that tells the story of cocoa, with a praline demonstration and tasting", "th": "พิพิธภัณฑ์ช็อกโกแลตเล่าเรื่องโกโก้ มีสาธิตทำพราลีนและชิม" },
+          "why": { "en": "Children under 3 enter free and tastings keep small ones happy; a kids' workshop is offered", "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรี การชิมช่วยให้เด็กเล็กอารมณ์ดี มีเวิร์กช็อปสำหรับเด็ก" },
+          "tip": { "en": "Kids' workshop age limit is listed as 6 or 8 depending on the site, so check before booking", "th": "อายุขั้นต่ำเวิร์กช็อปเด็กระบุ 6 หรือ 8 ปีต่างกันตามเว็บ เช็กก่อนจอง" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €16 general admission (reseller listing) · check the child price", "th": "≈ €16 ค่าเข้าทั่วไป (ตามรายการตัวแทนขายบัตร) · เช็กราคาเด็กก่อนไป" },
+          "book": "rec",
+          "q": "Choco-Story Brussels, Rue de l'Étuve 41, Brussels",
+          "ok": "2026-11",
+          "src": "https://feverup.com/m/106703/en"
+        },
+        {
+          "name": { "en": "Brussels Tram Museum", "th": "พิพิธภัณฑ์รถรางบรัสเซลส์" },
+          "local": "Musée du Transport urbain bruxellois",
+          "kind": "museumkid",
+          "area": { "en": "Woluwe-Saint-Pierre", "th": "โวลูเว-แซงต์-ปีแยร์" },
+          "what": { "en": "Old trams, buses and trolleys in a historic depot, with some rides on heritage trams on open days", "th": "รถรางและรถบัสเก่าในโรงเก็บรถเก่าแก่ บางวันที่เปิดมีนั่งรถรางโบราณ" },
+          "why": { "en": "Children can step into real trams; children under 5 seem to enter free, up to two per adult", "th": "เด็กก้าวเข้าไปในรถรางจริงได้ เด็กต่ำกว่า 5 ขวบดูเหมือนเข้าฟรี สูงสุดสองคนต่อผู้ใหญ่หนึ่งคน" },
+          "tip": { "en": "Open only on set days, mostly weekends 13:00–18:30 in summer (2026 season 4 April–27 September, then 10–11 October and 14–15 November); check the calendar", "th": "เปิดเฉพาะบางวัน ส่วนใหญ่เสาร์–อาทิตย์ 13:00–18:30 ในฤดูร้อน (ฤดู 2026 คือ 4 เมษายน–27 กันยายน แล้วเพิ่ม 10–11 ตุลาคม และ 14–15 พฤศจิกายน) เช็กปฏิทิน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price (2025 tariff sheet lists €4 for children 6–11; 2026 not seen)", "th": "เช็กราคาก่อนไป (ตารางราคา 2025 ระบุ €4 สำหรับเด็ก 6–11 ปี ยังไม่เห็นราคา 2026)" },
+          "book": "none",
+          "q": "Musée du Tram, Avenue de Tervueren 364b, Woluwe-Saint-Pierre",
+          "ok": "2026-11",
+          "src": "https://trammuseum.brussels/en/news/"
+        },
+        {
+          "name": { "en": "Grand Place and Manneken Pis", "th": "กร็องปลัสและมันเนอเก็นปิส" },
+          "local": "Grand-Place",
+          "kind": "oldtown",
+          "area": { "en": "Centre", "th": "ใจกลางเมือง" },
+          "what": { "en": "The cobbled medieval square with guild houses, and the small bronze boy statue a short walk away", "th": "จัตุรัสปูหินยุคกลางที่มีบ้านสมาคมช่าง และรูปปั้นเด็กชายสำริดตัวเล็กอยู่ห่างไปไม่ไกล" },
+          "why": { "en": "Free to see; children laugh at the little statue, which is dressed in over 1,000 costumes through the year; cobbles are bumpy for prams", "th": "ดูฟรี เด็กๆ ขำรูปปั้นตัวจิ๋วที่มีชุดแต่งกว่า 1,000 ชุดตลอดปี พื้นหินขรุขระสำหรับรถเข็น" },
+          "tip": { "en": "Kids under 6 ride the Brussels metro, tram and bus free with a paying adult", "th": "เด็กต่ำกว่า 6 ขวบนั่งเมโทร รถราง และรถบัสในบรัสเซลส์ฟรีเมื่อมีผู้ใหญ่ซื้อตั๋ว" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Grand-Place, Brussels",
+          "ok": "2026-11",
+          "src": "https://ryo.co/en/articles/belgium/bruxelles/brussels-with-kids/"
+        },
+        {
+          "name": { "en": "Winter Wonders Christmas market", "th": "ตลาดคริสต์มาสวินเทอร์วันเดอร์ส" },
+          "local": "Plaisirs d'Hiver",
+          "kind": "market",
+          "area": { "en": "Centre", "th": "ใจกลางเมือง" },
+          "what": { "en": "A Christmas market with wooden chalets, lights, a Ferris wheel and an ice rink, in the old town", "th": "ตลาดคริสต์มาสบ้านไม้เล็ก แสงไฟ ชิงช้าสวรรค์ และลานสเก็ตน้ำแข็ง ในเมืองเก่า" },
+          "why": { "en": "Free to walk through, with sweets and lights children enjoy; evenings get crowded", "th": "เดินชมฟรี มีขนมและแสงไฟที่เด็กชอบ ช่วงเย็นคนแน่น" },
+          "tip": { "en": "27 November 2026 to 3 January 2027; the 2026 rink and wheel sites were not yet fixed, so check the official site", "th": "27 พฤศจิกายน 2026 ถึง 3 มกราคม 2027 ตำแหน่งลานสเก็ตและชิงช้าปี 2026 ยังไม่ชัด เช็กเว็บไซต์ทางการ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to enter (rides and skating are extra, check the price)", "th": "เข้าฟรี (เครื่องเล่นและสเก็ตเสียเงินเพิ่ม เช็กราคา)" },
+          "book": "none",
+          "q": "Winter Wonders, Place de Brouckère, Brussels",
+          "ok": "2026-11",
+          "src": "https://www.brusselstimes.com/art-culture/2371293/winter-wonders-christmas-market-returns-to-brussels-everything-you-need-to-know"
+        },
+        {
+          "name": { "en": "Place du Jeu de Balle flea market", "th": "ตลาดนัดปลัสดูฌูเดอบาล" },
+          "local": "Vieux Marché",
+          "kind": "market",
+          "area": { "en": "Marolles", "th": "มาโรลส์" },
+          "what": { "en": "A daily morning flea market with over 300 stalls of antiques, toys and curios on a cobbled square", "th": "ตลาดนัดเช้าทุกวัน กว่า 300 แผง ขายของเก่า ของเล่น ของแปลก บนลานปูหิน" },
+          "why": { "en": "Free to wander, with piles of old toys and trinkets; the cobbles and crowds are tricky with a pram", "th": "เดินเล่นฟรี มีของเล่นเก่าและของจุกจิกกองพะเนิน พื้นหินและคนแน่นลำบากสำหรับรถเข็น" },
+          "tip": { "en": "Mornings only; the city's market list shows Monday to Saturday, other sources say every day, so check Sunday", "th": "ช่วงเช้าเท่านั้น รายการตลาดของเมืองระบุจันทร์–เสาร์ แหล่งอื่นว่าทุกวัน เช็กวันอาทิตย์" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Place du Jeu de Balle, Brussels",
+          "ok": "2026-11",
+          "src": "https://markets.brussels.be/markets/place-du-jeu-de-balle-market"
+        },
+        {
+          "name": { "en": "AfricaMuseum", "th": "แอฟริกามิวเซียม" },
+          "kind": "museum",
+          "area": { "en": "Tervuren, about 10 km east", "th": "แตร์วูเรน ห่างไปทางตะวันออกราว 10 กม." },
+          "what": { "en": "A museum of Central African nature and culture in a renovated palace beside a large park", "th": "พิพิธภัณฑ์ธรรมชาติและวัฒนธรรมแอฟริกากลางในพระราชวังที่ปรับปรุงใหม่ ข้างสวนใหญ่" },
+          "why": { "en": "Stuffed animals and big skeletons hold children's interest; the welcome pavilion and park are free", "th": "สัตว์สตัฟฟ์และโครงกระดูกใหญ่ดึงความสนใจเด็ก ศาลาต้อนรับและสวนเข้าฟรี" },
+          "tip": { "en": "Tue–Fri 10:00–17:00, weekends until 18:00; closed on Mondays", "th": "อังคาร–ศุกร์ 10:00–17:00 เสาร์–อาทิตย์ถึง 18:00 ปิดวันจันทร์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price (galleries are paid; the pavilion is free)", "th": "เช็กราคาก่อนไป (แกลเลอรีเสียเงิน ศาลาต้อนรับฟรี)" },
+          "book": "rec",
+          "q": "AfricaMuseum, Leuvensesteenweg 13, Tervuren",
+          "ok": "2026-11",
+          "src": "https://www.africamuseum.be/en"
+        },
+        {
+          "name": { "en": "Brussels Planetarium", "th": "พิพิธภัณฑ์ดาราศาสตร์บรัสเซลส์" },
+          "kind": "museum",
+          "area": { "en": "Heysel plateau", "th": "ที่ราบสูงเฮย์เซล" },
+          "what": { "en": "A dome theatre with shows about the stars and space, near the Atomium", "th": "โรงฉายโดมแสดงเรื่องดวงดาวและอวกาศ อยู่ใกล้อะตอมเมียม" },
+          "why": { "en": "A seated, dark and quiet hour; shows have an age guide, so choose one for the children", "th": "นั่งดูในที่มืดเงียบหนึ่งชั่วโมง การแสดงมีระบุอายุ เลือกรอบที่เหมาะกับเด็ก" },
+          "tip": { "en": "Open Tuesday to Sunday; check the show times and age guide before you go", "th": "เปิดอังคารถึงอาทิตย์ เช็กรอบฉายและเกณฑ์อายุก่อนไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Planetarium, Avenue de Bouchout 10, Brussels",
+          "ok": "2026-11",
+          "src": "https://planetarium.be/en"
+        },
+      {"name":{"en":"Farm Maximilien","th":"ฟาร์มมัคซิมีเลียง"},"kind":"farm","area":{"en":"the heart of the city","th":"ใจกลางเมือง"},"what":{"en":"A charming urban farm in the heart of the city, where children can meet animals.","th":"ฟาร์มในเมืองที่สวยงามกลางเมือง เด็กได้พบสัตว์"},"why":{"en":"Children can interact with animals, learn about sustainable farming practices and join in workshops.","th":"เด็กได้โต้ตอบกับสัตว์ เรียนรู้การทำฟาร์มยั่งยืน และเข้าร่วมเวิร์กช็อป"},"ages":[1,2,2,1],"hrs":1.5,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Farm Maximilien, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
+      {"name":{"en":"Royal Park","th":"สวนหลวง"},"kind":"park","area":{"en":"directly across from the Royal Palace","th":"ตรงข้ามพระราชวังหลวง"},"what":{"en":"A central park with manicured gardens, fountains and a playground.","th":"สวนกลางเมืองที่มีสวนจัดแต่ง น้ำพุ และสนามเด็กเล่น"},"why":{"en":"The playground has baby swings, slides and other equipment, and a kiosk sells drinks.","th":"สนามเด็กเล่นมีชิงช้าเด็กเล็ก สไลด์ และอุปกรณ์อื่น มีแผงขายเครื่องดื่ม"},"tip":{"en":"A summer pop-up bar appears every year during the warmer months.","th":"มีบาร์ป็อปอัปในฤดูร้อนทุกปีในช่วงอากาศอุ่น"},"ages":[2,2,2,1],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Royal Park, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
+      {"name":{"en":"Cinquantenaire Park","th":"สวนซองก์กองแตแนร์"},"kind":"park","area":{"en":"Cinquantenaire Park","th":"สวนซองก์กองแตแนร์"},"what":{"en":"A park with two playgrounds, one with a big sandpit and a dragon.","th":"สวนที่มีสนามเด็กเล่นสองแห่ง แห่งหนึ่งมีบ่อทรายใหญ่และมังกร"},"why":{"en":"A massive sandpit with a dragon for imaginative play, and a smaller playground with wood chips.","th":"บ่อทรายใหญ่พร้อมมังกรให้เล่นจินตนาการ และสนามเล็กที่ปูด้วยไม้ชิป"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Cinquantenaire Park, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
+      {"name":{"en":"St. Catherine Playground","th":"สนามเด็กเล่นเซนต์แคเธอรีน"},"kind":"play","area":{"en":"next to St. Catherine","th":"ข้างเซนต์แคเธอรีน"},"what":{"en":"A small playground beside St. Catherine, near cafés and restaurants.","th":"สนามเด็กเล่นเล็กข้างเซนต์แคเธอรีน ใกล้คาเฟ่และร้านอาหาร"},"why":{"en":"Easy to combine with lunch, as cafés, restaurants and an ice-cream shop are close by.","th":"รวมกับมื้อกลางวันได้ง่าย เพราะคาเฟ่ ร้านอาหาร และร้านไอศกรีมอยู่ใกล้"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"St. Catherine Playground, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
+      {"name":{"en":"Mont des Arts","th":"มงต์เดส์อาร์"},"kind":"views","area":{"en":"Mont des Arts","th":"มงต์เดส์อาร์"},"what":{"en":"A hill with a café that has views over the city, with indoor and outdoor seating.","th":"เนินที่มีคาเฟ่วิวเมือง มีที่นั่งทั้งในและนอกอาคาร"},"why":{"en":"Families with children have space to move outdoors and play, for a relaxed outing.","th":"ครอบครัวมีที่ให้เด็กเคลื่อนไหวและเล่นกลางแจ้ง ไปเที่ยวสบายๆ"},"tip":{"en":"There are stairs, so this spot might be tricky for a toddler.","th":"มีบันได อาจลำบากสำหรับเด็กวัยเตาะแตะ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Mont des Arts, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
+      {"name":{"en":"Roodebeek small playground","th":"สนามเด็กเล่นเล็กรูเดอเบก"},"kind":"park","area":{"en":"next to Roodebeek Park","th":"ข้างสวนรูเดอเบก"},"what":{"en":"A small playground with a fenced toddler area and a mini zoo with farm animals, next to Roodebeek Park.","th":"สนามเด็กเล่นเล็กมีพื้นที่รั้วสำหรับเด็กวัยเตาะแตะ และสวนสัตว์ขนาดย่อมที่มีสัตว์ฟาร์ม ข้างสวนรูเดอเบก"},"why":{"en":"A fenced area for toddlers, and farm animals such as a donkey, a pony and goats to see.","th":"พื้นที่มีรั้วสำหรับเด็กเล็ก และมีสัตว์ฟาร์ม เช่น ลา ม้าพอนี และแพะให้ดู"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Roodebeek small playground, Roodebeek Park, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/best-kids-friendly-cafes-in-brussels-and-around-map/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.insidebrussels.be/V2/bruxelles/super-a-bruxelles-enfin-une-aire-de-jeux-ou-enfants-et-parents-trouvent-leur-place/?amp=1",
+          "name": {
+            "th": "ซูแปร์",
+            "en": "SUPER"
+          },
+          "kind": "play",
+          "area": {
+            "th": "การ์มาริตีม ตูร์เอแท็กซี",
+            "en": "Gare Maritime, Tour & Taxis"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสำหรับเด็ก 1–6 ขวบ ข้างฟู้ดคอร์ตตูร์เอแท็กซี",
+            "en": "An indoor play area for children aged 1 to 6, next to the Tour & Taxis food court"
+          },
+          "why": {
+            "th": "บรรยากาศสงบ ของเล่นไม้ ทำมาสำหรับเด็กเล็ก พ่อแม่ได้พักด้วย",
+            "en": "Calm, wooden and made for toddlers, while the parents take a breather"
+          },
+          "tip": {
+            "th": "เปิดวันพุธ เสาร์อาทิตย์ และวันหยุด 10:00–18:00 ผู้ใหญ่และเด็กต่ำกว่า 1 ขวบเข้าฟรี",
+            "en": "Open Wednesdays, weekends and holidays, 10:00–18:00; free for grown-ups and babies under 1"
+          },
+          "q": "SUPER, Gare Maritime, Tour & Taxis, Brussels",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "name": {
+            "th": "วอม เวิลด์ออฟมายด์",
+            "en": "WOM (World of Mind)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ตูร์เอแท็กซี",
+            "en": "Tour & Taxis"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตาและฉากที่หลอกประสาทสัมผัส",
+            "en": "A museum of optical illusions and sets that play with your senses"
+          },
+          "why": {
+            "th": "แต่ละชิ้นน่าทึ่งกว่าชิ้นก่อน",
+            "en": "Each installation is more surprising than the last"
+          },
+          "q": "WOM World of Mind, Tour & Taxis, Brussels",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "name": {
+            "th": "เลโก้ดิสคัฟเวอรีเซ็นเตอร์",
+            "en": "LEGO Discovery Centre"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ด็อกส์บรูกเซล ถนนลองแบร์มง",
+            "en": "Docks Bruxsel, Boulevard Lambermont"
+          },
+          "what": {
+            "th": "ศูนย์เลโก้ เด็กต่อรถหรือจรวด เข้าเวิร์กช็อป และดูหนัง 4 มิติ",
+            "en": "A LEGO centre where children build cars or rockets, join workshops and watch a 4D film"
+          },
+          "why": {
+            "th": "มีหลายธีมให้ต่อ เล่นได้ทั้งครอบครัว",
+            "en": "Several themes to build, for the whole family"
+          },
+          "q": "LEGO Discovery Centre, Boulevard Lambermont 1, Brussels",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "name": {
+            "th": "โคเอซีโอ",
+            "en": "Koezio"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ด็อกส์บรูกเซล ถนนลองแบร์มง",
+            "en": "Docks Bruxsel, Boulevard Lambermont"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม มีภารกิจใช้แรงและใช้สมอง คาราโอเกะ และมินิกอล์ฟ",
+            "en": "An indoor park of physical and mind challenges, karaoke and mini-golf"
+          },
+          "why": {
+            "th": "อยู่ในร่มทั้งหมด มีร้านอาหารสำหรับผู้ใหญ่",
+            "en": "All indoors, with a restaurant for the grown-ups"
+          },
+          "q": "Koezio, Boulevard Lambermont 1, Brussels",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Stardust Park",
+            "th": "สตาร์ดัสต์ พาร์ก"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Forest, Brussels",
+            "th": "ฟอเรสต์ บรัสเซลส์"
+          },
+          "what": {
+            "en": "The largest indoor playground in Brussels, 4,000 m², with bumper cars, rock climbing, bungee jumping, go-karting and a Mayan temple of games.",
+            "th": "สนามเด็กเล่นในร่มใหญ่สุดในบรัสเซลส์ 4,000 ตร.ม. มีรถบั๊มเปอร์ ปีนผา บันจี้จัมพ์ โกคาร์ต และวิหารมายาที่รวมเกม"
+          },
+          "why": {
+            "en": "For children aged 18 months to 12 years.",
+            "th": "สำหรับเด็กอายุ 18 เดือนถึง 12 ปี"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Stardust Park, Avenue du Globe 36, 1190 Forest, Brussels, Belgium",
+          "ok": "2026-11",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/"
+        },
+        {
+          "name": {
+            "en": "The Family Station",
+            "th": "เดอะ แฟมิลี สเตชัน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Waterloo",
+            "th": "วอเตอร์ลู"
+          },
+          "what": {
+            "en": "Indoor play in 1,000 m² divided into 8 play areas, with slides, mazes, inflatable castles, trampolines and arcade games.",
+            "th": "สนามเล่นในร่ม 1,000 ตร.ม. แบ่งเป็น 8 โซน มีสไลเดอร์ เขาวงกต ปราสาทเป่าลม แทรมโพลีน และเกมอาร์เคด"
+          },
+          "why": {
+            "en": "For children aged 1 to 10, with so much choice that kids never get bored.",
+            "th": "สำหรับเด็ก 1–10 ขวบ มีให้เลือกมากจนเด็กไม่เบื่อ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "The Family Station, Chaussée de Bruxelles 63, 1410 Waterloo, Belgium",
+          "ok": "2026-11",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/"
+        },
+        {
+          "name": {
+            "en": "Van Buuren Museum & Gardens",
+            "th": "พิพิธภัณฑ์และสวนแวน บูเรน"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Uccle, Brussels",
+            "th": "อุกเคิล บรัสเซลส์"
+          },
+          "what": {
+            "en": "A garden of six distinct spaces, from the Picturesque Garden to the Labyrinth with a yew maze, next to a house museum.",
+            "th": "สวนหกโซน ตั้งแต่สวนพิคเจอเรสก์ถึงเขาวงกตต้นยู ติดกับพิพิธภัณฑ์บ้าน"
+          },
+          "why": {
+            "en": "Children under 7 enter free, and a paid guide for children is available.",
+            "th": "เด็กต่ำกว่า 7 ปีเข้าฟรี และมีไกด์สำหรับเด็กแบบเสียเงิน"
+          },
+          "tip": {
+            "en": "Booking is compulsory to guarantee your access",
+            "th": "ต้องจองล่วงหน้าเพื่อให้แน่ใจว่าได้เข้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "en": "Adults €18 · ages 7–11 €3 · under 7 free",
+            "th": "ผู้ใหญ่ €18 · 7–11 ปี €3 · ต่ำกว่า 7 ปีฟรี"
+          },
+          "book": "req",
+          "q": "Museum David and Alice van Buuren, Avenue Léo Errera 41, 1180 Uccle, Brussels, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.museumvanbuuren.be/en/visit"
+        },
+        {
+          "name": {
+            "en": "Royal Peruchet Theatre",
+            "th": "โรงละครหุ่นเชิดรอยัลเปรูเช"
+          },
+          "local": "Théâtre Royal du Peruchet",
+          "kind": "show",
+          "area": {
+            "en": "Ixelles, Brussels",
+            "th": "อิกเซลส์ บรัสเซลส์"
+          },
+          "what": {
+            "en": "Fairytales told with string puppets in an 18th-century farmhouse; the International Puppet Museum is included with every ticket.",
+            "th": "นิทานเล่าด้วยหุ่นชักในฟาร์มเฮาส์ศตวรรษที่ 18 ตั๋วทุกใบรวมพิพิธภัณฑ์หุ่นนานาชาติ"
+          },
+          "why": {
+            "en": "Ages 4+, performed in French and easy to follow for every child.",
+            "th": "สำหรับ 4 ขวบขึ้นไป แสดงเป็นภาษาฝรั่งเศส เด็กทุกคนตามเรื่องได้ง่าย"
+          },
+          "tip": {
+            "en": "Performed in French",
+            "th": "แสดงเป็นภาษาฝรั่งเศส"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €12 child · €14 adult",
+            "th": "≈ €12 เด็ก · €14 ผู้ใหญ่"
+          },
+          "book": "rec",
+          "q": "Théâtre Royal du Peruchet, Avenue de la Forêt 50, 1050 Ixelles, Brussels, Belgium",
+          "ok": "2026-11",
+          "src": "https://theatreperuchet.be/"
+        }
+    ]
+    }
+  ]
+}

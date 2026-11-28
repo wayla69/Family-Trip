@@ -1,0 +1,458 @@
+{
+  "cc": "jo",
+  "towns": [
+    {
+      "place": "jo-petra",
+      "thin": true,
+      "sights": [
+        {
+          "name": { "en": "Petra Archaeological Park", "th": "อุทยานโบราณคดีเพตรา" },
+          "local": "البتراء",
+          "kind": "culture",
+          "area": { "en": "Wadi Musa", "th": "วาดีมูซา" },
+          "what": { "en": "The rose-red Nabataean city reached on foot through the Siq, a narrow canyon that opens onto the Treasury", "th": "เมืองหินสีชมพูของชาวนาบาเทียน เดินผ่านช่องเขาแคบ ๆ ที่เรียกว่าซีกไปจนถึงอาคารคลังสมบัติ" },
+          "why": { "en": "Children under 12 are free in daylight, and little ones can walk part of the way in and turn back", "th": "เด็กต่ำกว่า 12 ปีเข้าฟรีตอนกลางวัน เด็กเล็กเดินเข้าไปบางช่วงแล้วเดินกลับได้" },
+          "tip": { "en": "Go early and take water and hats; the way in is on foot over uneven ground, so a pram is hard", "th": "ไปแต่เช้าและพกน้ำกับหมวก ทางเข้าต้องเดินบนพื้นไม่เรียบ รถเข็นเด็กเข็นลำบาก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ 50 JD adults for one day (staying overnight in Jordan) · children under 12 free in daylight", "th": "≈ 50 JD ผู้ใหญ่ต่อหนึ่งวัน (พักค้างคืนในจอร์แดน) · เด็กต่ำกว่า 12 ปีฟรีตอนกลางวัน" },
+          "book": "none",
+          "q": "Petra Archaeological Park, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/blog/external/7626/how-much-does-it-cost-to-go-to-petra-jordan/"
+        },
+        {
+          "name": { "en": "Little Petra (Siq al-Barid)", "th": "ลิตเติลเพตรา (ซีกอัลบาริด)" },
+          "local": "سيق البارد",
+          "kind": "culture",
+          "area": { "en": "Beidha, north of Wadi Musa", "th": "ไบดา ทางเหนือของวาดีมูซา" },
+          "what": { "en": "A small Nabataean canyon of carved rooms and steps, a quieter taste of Petra", "th": "หุบเขาเล็ก ๆ ของชาวนาบาเทียนที่มีห้องและบันไดสลักในหิน เงียบสงบกว่าเพตราใหญ่" },
+          "why": { "en": "Short and low-key, and entry is free, so a family can stop for as long as the children like", "th": "ใช้เวลาไม่นาน เข้าฟรี ครอบครัวแวะนานเท่าที่เด็กสนุก" },
+          "tip": { "en": "Allow about an hour and bring water", "th": "ใช้เวลาราวหนึ่งชั่วโมง พกน้ำไปด้วย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Little Petra, Siq al-Barid, Beidha, Jordan",
+          "ok": "2026-11",
+          "src": "https://aqaba.jo/Pages/Details/Attraction/225/Siq_Al-Barid"
+        },
+        {
+          "name": { "en": "Petra Kitchen cooking workshop", "th": "เวิร์กช็อปทำอาหารเพตราคิทเช่น" },
+          "kind": "culture",
+          "area": { "en": "Wadi Musa", "th": "วาดีมูซา" },
+          "what": { "en": "An evening class where visitors cook Jordanian dishes together and then eat them", "th": "คลาสช่วงเย็นที่ผู้เข้าร่วมช่วยกันทำอาหารจอร์แดนแล้วนั่งกินด้วยกัน" },
+          "why": { "en": "A seated, indoor evening plan after a long walking day; children can help wash and mix", "th": "เป็นกิจกรรมในร่มนั่งทำตอนเย็นหลังเดินมาทั้งวัน เด็กช่วยล้างและผสมได้" },
+          "tip": { "en": "Book ahead and ask the organiser about children's places; the price shown on the official page is undated, so check it", "th": "จองล่วงหน้าและถามผู้จัดเรื่องที่นั่งสำหรับเด็ก ราคาในหน้าทางการไม่ระบุวันที่ ควรเช็กอีกครั้ง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "req",
+          "q": "Petra Kitchen, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://visitpetra.jo/en/Thingstodo/15"
+        },
+        {
+          "name": { "en": "Wadi Rum Protected Area", "th": "เขตอนุรักษ์วาดีรัม" },
+          "local": "وادي رم",
+          "kind": "nature",
+          "area": { "en": "Wadi Rum, about 1.5 hours south of Wadi Musa", "th": "วาดีรัม ห่างจากวาดีมูซาไปทางใต้ราว 1.5 ชั่วโมง" },
+          "what": { "en": "A red-sand desert of rock towers, usually seen on a short jeep tour with a stop for Bedouin tea", "th": "ทะเลทรายทรายแดงที่มีเสาหินสูง มักนั่งรถจี๊ปทัวร์สั้น ๆ แวะดื่มชาเบดูอิน" },
+          "why": { "en": "A short jeep loop keeps a small child's day manageable", "th": "ทัวร์รถจี๊ปรอบสั้นช่วยให้วันของเด็กเล็กไม่เหนื่อยเกินไป" },
+          "tip": { "en": "Choose the length of jeep tour to suit the children (2-hour loops exist); wear hats and sun cream", "th": "เลือกความยาวของทัวร์รถจี๊ปให้เหมาะกับเด็ก (มีรอบสองชั่วโมง) ใส่หมวกและทาครีมกันแดด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Entrance and jeep rates differ by source, check the price", "th": "ค่าเข้าและค่ารถจี๊ปต่างกันตามแหล่งข้อมูล เช็กราคาอีกครั้ง" },
+          "book": "rec",
+          "q": "Wadi Rum Visitor Centre, Jordan",
+          "ok": "2026-11",
+          "src": "https://travelcostcalculator.org/unesco/wadi-rum-protected-area"
+        },
+        {
+          "name": { "en": "Amman Beach, Dead Sea", "th": "แอมมานบีช ทะเลเดดซี" },
+          "local": "شاطئ عمان السياحي",
+          "kind": "beach",
+          "area": { "en": "Dead Sea shore, far north of Petra (a long day trip)", "th": "ชายฝั่งทะเลเดดซี ไกลทางเหนือของเพตรา (เป็นทริปวันเดียวที่ยาว)" },
+          "what": { "en": "The public Dead Sea beach with showers, pools and a mud station, reopened after refurbishment in 2025", "th": "หาดสาธารณะริมทะเลเดดซี มีที่อาบน้ำ สระว่ายน้ำ และมุมโคลน เปิดใหม่หลังปรับปรุงในปี 2025" },
+          "why": { "en": "Government material describes the beach as a family venue with pools, showers and family seating", "th": "เอกสารของรัฐระบุว่าเป็นหาดสำหรับครอบครัว มีสระ ที่อาบน้ำ และที่นั่งสำหรับครอบครัว" },
+          "tip": { "en": "It is far from Petra, so fit it in on the way to or from Amman", "th": "อยู่ไกลจากเพตรา ควรแวะระหว่างทางไปหรือกลับอัมมาน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ 10–15 JOD per person (a 2026 roundup, check the price)", "th": "≈ 10–15 JOD ต่อคน (สรุปปี 2026 เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Amman Beach, Dead Sea, Jordan",
+          "ok": "2026-11",
+          "src": "https://wowjordan.com/dead-sea-day-pass-prices"
+        },
+        {
+          "name": { "en": "Petra by Night", "th": "เพตรา บาย ไนต์" },
+          "kind": "show",
+          "area": { "en": "Petra Visitor Centre", "th": "ศูนย์ผู้เยี่ยมชมเพตรา" },
+          "what": { "en": "An evening walk down the candle-lit Siq to the Treasury with projection mapping and narration, about two hours", "th": "เดินยามค่ำคืนตามทางซีคที่จุดเทียนไปยังคลังสมบัติ มีแสงฉายและเสียงบรรยาย ประมาณ 2 ชั่วโมง" },
+          "why": { "en": "Children under 10 go free, but it ends about 22:30, so it suits older pre-schoolers who nap earlier in the day", "th": "เด็กต่ำกว่า 10 ปีเข้าฟรี แต่จบราว 22:30 เหมาะกับเด็กโตที่งีบมาก่อน" },
+          "tip": { "en": "Runs Sunday to Thursday from 20:30; you also need a daytime Petra ticket or Jordan Pass", "th": "จัดวันอาทิตย์–พฤหัสบดี เริ่ม 20:30 ต้องมีตั๋วเข้าเพตราตอนกลางวันหรือ Jordan Pass ด้วย" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ 30 JD per person · under 10 free", "th": "≈ 30 JD ต่อคน · เด็กต่ำกว่า 10 ปีฟรี" },
+          "book": "rec",
+          "q": "Petra Visitor Centre, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/wheretogo/petra/"
+        },
+        {
+          "name": { "en": "Petra Museum", "th": "พิพิธภัณฑ์เพตรา" },
+          "kind": "museum",
+          "area": { "en": "Wadi Musa main street", "th": "ถนนสายหลักวาดีมูซา" },
+          "what": { "en": "A small museum three minutes’ walk from the main gate, with finds that tell how the Nabataeans lived", "th": "พิพิธภัณฑ์เล็กๆ เดินจากประตูหลักสามนาที มีโบราณวัตถุเล่าชีวิตชาวนาบาเทียน" },
+          "why": { "en": "Cool, indoors and quick, so it is a good first stop or a break from the heat and the long walk", "th": "อยู่ในร่ม เย็น ใช้เวลาสั้น เหมาะเป็นจุดแรกหรือพักจากความร้อนและการเดินไกล" },
+          "tip": { "en": "Open seven days a week through the day; ask at the Visitor Centre for current hours", "th": "เปิดทุกวัน ถามเวลาล่าสุดที่ศูนย์ผู้เยี่ยมชม" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Petra Museum, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/wheretogo/petra/"
+        },
+        {
+          "name": { "en": "Beidha Neolithic village", "th": "หมู่บ้านยุคหินใหม่ไบดา" },
+          "kind": "culture",
+          "area": { "en": "Beidha, north of Petra", "th": "ไบดา ทางเหนือของเพตรา" },
+          "what": { "en": "A 9,000-year-old farming settlement on the Beidha trail, near Siq al-Barid, with low stone walls to walk among", "th": "ชุมชนเกษตรอายุ 9,000 ปีบนเส้นทางไบดา ใกล้ซีค อัล-บาริด มีกำแพงหินเตี้ยให้เดินดู" },
+          "why": { "en": "Quiet and uncrowded, but exposed and unshaded; it works for children who like to explore and walk", "th": "เงียบและคนน้อย แต่โล่งไม่มีร่ม เหมาะกับเด็กที่ชอบสำรวจและเดิน" },
+          "tip": { "en": "Visit with a driver or the Little Petra trip; carry water and a hat", "th": "ไปกับคนขับรถหรือทริปลิตเติลเพตรา เตรียมน้ำและหมวก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Beidha Neolithic village, near Little Petra, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/wheretogo/petra/"
+        },
+        {
+          "name": { "en": "Aqaba Aquarium (Marine Science Station)", "th": "พิพิธภัณฑ์สัตว์น้ำอควาบา (สถานีวิทยาศาสตร์ทางทะเล)" },
+          "kind": "aquarium",
+          "area": { "en": "South Beach, Aqaba", "th": "หาดใต้ อควาบา" },
+          "what": { "en": "A research station's public aquarium with Red Sea fish and corals, open to visitors since 1980", "th": "พิพิธภัณฑ์สัตว์น้ำของสถานีวิจัย มีปลาและปะการังทะเลแดง เปิดให้เข้าชมตั้งแต่ปี 1980" },
+          "why": { "en": "A small, cool indoor hour before or after the beach; children 6–12 pay a token fee", "th": "ชั่วโมงสั้นๆ ในร่มก่อนหรือหลังไปทะเล เด็กอายุ 6–12 ปีจ่ายค่าเข้าเล็กน้อย" },
+          "tip": { "en": "Aqaba is about two hours from Petra by road, so make it part of a beach day", "th": "อควาบาอยู่ห่างเพตราราวสองชั่วโมงทางรถ ควรรวมเป็นวันไปทะเล" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Marine Science Station Aquarium, Aqaba",
+          "ok": "2026-11",
+          "src": "https://www.jordannews.jo/Section-128/Where-to-Go/Aqaba-Aquarium-Jordan-s-marine-research-facility-tourist-attraction-18066"
+        },
+        {
+          "name": { "en": "Saraya Aqaba Waterpark", "th": "สวนน้ำซารายา อควาบา" },
+          "kind": "themepark",
+          "area": { "en": "Saraya Aqaba, Aqaba", "th": "ซารายา อควาบา" },
+          "what": { "en": "More than 25 slides and water experiences themed on Jordan's landmarks, near the Red Sea", "th": "สไลเดอร์และเครื่องเล่นน้ำกว่า 25 อย่าง ธีมสถานที่สำคัญของจอร์แดน ใกล้ทะเลแดง" },
+          "why": { "en": "Children under 3 enter free and there is a junior pass for ages 3–12", "th": "เด็กต่ำกว่า 3 ปีเข้าฟรี และมีบัตรเด็กสำหรับอายุ 3–12 ปี" },
+          "tip": { "en": "It can be shut in winter or on holidays, so confirm the season on the official site first", "th": "ฤดูหนาวหรือวันหยุดอาจปิด เช็กช่วงเปิดที่เว็บทางการก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Saraya Aqaba Waterpark, Aqaba",
+          "ok": "2026-11",
+          "src": "https://wowjordan.com/en/listing/saraya-aqaba-waterpark/"
+        },
+        {
+          "name": { "en": "Dead Sea Panorama Museum", "th": "พิพิธภัณฑ์พาโนรามาทะเลเดดซี" },
+          "kind": "museum",
+          "area": { "en": "Dead Sea, near Ma'in", "th": "ทะเลเดดซี ใกล้มาอิน" },
+          "what": { "en": "A hilltop museum over the Dead Sea with four sections: origins, ecosystem, human interaction and the sea in danger", "th": "พิพิธภัณฑ์บนเนินมองเห็นทะเลเดดซี มี 4 ส่วน ได้แก่ กำเนิด ระบบนิเวศ มนุษย์กับทะเล และทะเลที่กำลังเสี่ยง" },
+          "why": { "en": "A short indoor stop with a wide view; it suits the days when the shore is too hot", "th": "แวะสั้นๆ ในร่ม วิวกว้าง เหมาะวันที่ริมทะเลร้อนเกินไป" },
+          "tip": { "en": "Open 9:00–17:00 in summer and winter according to the official museums site", "th": "เปิด 9:00–17:00 ทั้งหน้าร้อนและหน้าหนาวตามเว็บพิพิธภัณฑ์ทางการ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Dead Sea Panorama Museum, Ma'in, Jordan",
+          "ok": "2026-11",
+          "src": "https://museums.visitjordan.com/en/Museum/29"
+        },
+        {
+          "name": { "en": "Shobak Castle", "th": "ปราสาทโชบัก" },
+          "kind": "culture",
+          "area": { "en": "Shobak, near Petra", "th": "โชบัก ใกล้เพตรา" },
+          "what": { "en": "A Crusader hilltop castle on the Kings' Highway, with halls and a deep stairway down inside the hill", "th": "ปราสาทสงครามครูเสดบนยอดเนินริมถนนคิงส์ไฮเวย์ มีห้องโถงและบันไดลึกลงในเนิน" },
+          "why": { "en": "Quieter than Petra and good for children who like to climb and explore; watch the drops", "th": "เงียบกว่าเพตรา เหมาะกับเด็กที่ชอบปีนและสำรวจ ระวังที่ลาดชัน" },
+          "tip": { "en": "Bring a torch for the dark stairway; there is little shade, so take water and a hat", "th": "พกไฟฉายสำหรับบันไดมืด ร่มเงามีน้อย เตรียมน้ำและหมวก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Shobak Castle, Shobak, Jordan",
+          "ok": "2026-11",
+          "src": "https://sp.visitjordan.com/page/17/Entrance-Fees"
+        },
+        {
+          "name": { "en": "Dana Biosphere Reserve", "th": "เขตสงวนชีวมณฑลดานา" },
+          "kind": "nature",
+          "area": { "en": "Dana, Tafilah", "th": "ดานา ตาฟีลา" },
+          "what": { "en": "A mountain reserve with a stone village and trails down the wadi, between the Dead Sea and Petra", "th": "เขตสงวนบนภูเขา มีหมู่บ้านหิน และเส้นทางเดินลงหุบเขา อยู่ระหว่างทะเลเดดซีกับเพตรา" },
+          "why": { "en": "For children who can walk a few hours; the village viewpoint is an easy first stop", "th": "เหมาะกับเด็กที่เดินได้หลายชั่วโมง จุดชมวิวหมู่บ้านเป็นที่แวะง่ายๆ" },
+          "tip": { "en": "Sources give different entry fees plus tax, so ask at the reserve; trails are steep, so start with the village", "th": "แหล่งข้อมูลบอกค่าเข้ากับภาษีไม่ตรงกัน ถามที่เขตสงวน เส้นทางชัน เริ่มที่หมู่บ้านก่อน" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Dana Biosphere Reserve, Dana, Jordan",
+          "ok": "2026-11",
+          "src": "https://sp.visitjordan.com/page/17/Entrance-Fees"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กจอร์แดน",
+            "en": "Children's Museum Jordan"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนอัลฮุสเซน ถนนซาอีดเคร์ อัมมาน",
+            "en": "Al Hussein Public Park, Saeed Kheir Street, Amman"
+          },
+          "what": {
+            "th": "นิทรรศการให้ลงมือกว่า 100 ชิ้น ทั้งในร่มและกลางแจ้ง",
+            "en": "Over 100 hands-on exhibits indoors and out"
+          },
+          "why": {
+            "th": "มีโซนเล่นปิดสำหรับเด็กเล็ก และลานกลางแจ้งกว้าง",
+            "en": "A closed play area for toddlers and a big outdoor area"
+          },
+          "q": "The Children's Museum Jordan, Saeed Kheir St., Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ $15",
+            "en": "About $15"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "สวนแทรมโพลีนกราวิตี้",
+            "en": "Gravity trampoline park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เมกกะมอลล์ ถนนเมกกะ อัมมาน",
+            "en": "Mecca Mall, Mecca Street, Amman"
+          },
+          "what": {
+            "th": "แทรมโพลีนกว่า 100 แผ่นให้กระโดด",
+            "en": "Over 100 trampolines to jump on"
+          },
+          "why": {
+            "th": "เด็กตั้งแต่ 3 ขวบกระโดดได้",
+            "en": "Children from age three can jump"
+          },
+          "q": "Gravity, Mecca Mall, Mecca St., Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "$10 ต่อ 2 ชั่วโมง",
+            "en": "$10 for 2 hours"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "ทาลาคิดส์คลับ",
+            "en": "Tala Kids Club"
+          },
+          "kind": "play",
+          "area": {
+            "th": "บารากามอลล์ ถนนซาอีดอัลมุฟตี อัมมาน",
+            "en": "Baraka Mall, Saeed Al-Mufti Street, Amman"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มในห้าง",
+            "en": "An indoor playground in a mall"
+          },
+          "why": {
+            "th": "พ่อแม่นั่งดูขณะลูกเล่นและได้เพื่อนใหม่",
+            "en": "Parents watch while children play and make friends"
+          },
+          "q": "Tala Kids Club, Al Baraka Mall, Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ปกติ $2–3",
+            "en": "Usually $2–3"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "ศูนย์วัฒนธรรมฮายา",
+            "en": "Haya Cultural Center"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเจ้าชายชาเกอร์ ชไมซานี อัมมาน",
+            "en": "Prince Shaker bin Zaid Street, Shmeisani, Amman"
+          },
+          "what": {
+            "th": "ศูนย์เด็กมีสนามเด็กเล่นและเครื่องเล่นเล็กๆ",
+            "en": "A children's centre with a playground and a small fairground"
+          },
+          "why": {
+            "th": "ทำมาเพื่อเด็กเล็ก เปิดทุกวัน",
+            "en": "Made for little ones, open every day"
+          },
+          "q": "Haya Cultural Center, Shmeisani, Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-amman-with-kids/",
+          "name": {
+            "th": "สวนนกเจ้าชายฮาเชม",
+            "en": "Prince Hashem Bird Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนอาห์หมัดโอราบี ชไมซานี อัมมาน",
+            "en": "Ahmad Orabi Street, Shmeisani, Amman"
+          },
+          "what": {
+            "th": "สวนเงียบๆ มีนกหลายชนิด",
+            "en": "A quiet garden with birds"
+          },
+          "why": {
+            "th": "เด็กได้ดูไก่ นกพิราบ และนกอื่นๆ",
+            "en": "Children see chickens, pigeons and other birds"
+          },
+          "q": "Prince Hashem Bird Garden, Ahmad Orabi St., Amman",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/aqaba-with-kids/",
+          "name": {
+            "th": "ป้อมอะกาบา",
+            "en": "Aqaba Fort"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ข้างเสาธงใหญ่ อะกาบา",
+            "en": "by the great flagpole, Aqaba"
+          },
+          "what": {
+            "th": "ป้อมเก่าริมทะเลในอะกาบา",
+            "en": "An old fort by the sea in Aqaba"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่ามากับเด็กสนุก",
+            "en": "Fun to visit with children, the page says"
+          },
+          "q": "Aqaba Fort, Aqaba",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

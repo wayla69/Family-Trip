@@ -1,0 +1,150 @@
+{
+  "town": "jp-kumamoto",
+  "rounds": [
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-24",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 5 rows from Hoshino Resorts guides (Jun 2025, Nov 2026), all passed library-check.cjs, 4 went in",
+      "added": [
+        {
+          "name": "Gyoza-ya Ni-no-Ni (Chuo)",
+          "page_name": "Gyoza-ya Ni-no-Ni Chuo Branch",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/kumamoto-area/kumamoto/childlunch/",
+          "date": "2025-06",
+          "map": "Google Maps 'Gyozaya Ninoni Chuoten', 203 reviews, newest shown 19 days ago"
+        },
+        {
+          "name": "Kikyo-ya",
+          "page_name": "Kikyo-ya",
+          "src": "https://en.hoshinoresorts.com/guide/area/kyushu/kumamoto-area/kumamoto/childlunch/",
+          "date": "2025-06",
+          "map": "Google Maps 'ききょう家' (Anseimachi), 161 reviews, newest shown 17 hours ago"
+        },
+        {
+          "name": "Minamiaso Fureai Zoo Fairy Tale",
+          "page_name": "Minamiaso Fureai Zoo Fairy Tale",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/kumamoto-area/aso/aso-child",
+          "date": "2026-11",
+          "map": "Google Maps 'Fairy Tale Zoo', 470 reviews, newest shown 2 days ago"
+        },
+        {
+          "name": "Aso Otohime Onsen Yura Yura (Kosugi Resort)",
+          "page_name": "Aso Otohime Onsen Yura Yura",
+          "src": "https://hoshinoresorts.com/en/guide/area/kyushuokinawa/kumamoto-area/aso/aso-child",
+          "date": "2026-11",
+          "map": "Google Maps 'Yurayura Kosugi Resort', 619 reviews, newest shown 8 days ago"
+        },
+        {
+          "name": "Daimonji (okonomiyaki)",
+          "page_name": "大文字",
+          "src": "https://hoshinoresorts.com/guide/area/kyushu/kumamoto-area/kumamoto/childlunch/",
+          "date": "2025-06",
+          "map": "Google Maps 'Daimonji' (手取本町5-6), newest review shown 4 hours ago"
+        },
+        {
+          "name": "Buffet Restaurant Ginnan (Josaien)",
+          "page_name": "ビュッフェレストラン ぎんなん",
+          "src": "https://hoshinoresorts.com/guide/area/kyushu/kumamoto-area/kumamoto/childlunch/",
+          "date": "2025-06",
+          "map": "Google Maps 'Buffet Restaurant Ginnan' (二の丸1-1-2), newest review shown a day ago"
+        },
+        {
+          "name": "Children's Book Forest Kumamoto",
+          "page_name": "こども本の森 熊本",
+          "src": "https://www.asoview.com/note/5491/",
+          "date": "2025-09",
+          "map": "Google Maps 'こども本の森 熊本' (出水2-5-1), newest review shown 4 days ago"
+        },
+        {
+          "name": "Ninja Park Kikuyo",
+          "page_name": "ニンジャ☆パーク菊陽店",
+          "src": "https://www.asoview.com/note/5491/",
+          "date": "2025-09",
+          "map": "Google Maps 'ニンジャ☆パーク菊陽' (菊陽町), newest review shown 3 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "SAKURA MACHI Kumamoto rooftop garden",
+          "why": "no review from the last six months shown on the map"
+        },
+        {
+          "name": "Aso Momo Farm, El Patio",
+          "why": "pony or horse riding"
+        },
+        {
+          "name": "Kids US Land Yatsushiro",
+          "why": "outside Kumamoto and Aso"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 4 rows from Hoshino Resorts (Jun 2025) and asoview (Sep 2025), all passed library-check.cjs, 4 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 10 rows from macaroni (Apr 2026), asoview (Oct 2025), nap-camp (Mar–Apr 2026) and NEWT (May 2026), all passed library-check.cjs, 6 went in",
+      "added": [
+        {
+          "name": "Yakiniku Horumon Ebisu",
+          "page_name": "焼肉ホルモン 恵比寿",
+          "src": "https://macaro-ni.jp/175681",
+          "date": "2026-04",
+          "map": "Google Maps '焼肉ホルモン恵比寿' (Saburō, Chūō-ku), newest review shown 2 weeks ago"
+        },
+        {
+          "name": "Kids Land US, Kumamoto Uto",
+          "page_name": "キッズランドUS 熊本宇土店",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "date": "2026-04",
+          "map": "Google Maps 'キッズランドUS 熊本宇土店' (Zendōji-machi, Uto), newest review shown 3 months ago"
+        },
+        {
+          "name": "Athletic park \"Peace\" (Ueki)",
+          "page_name": "アスレチック施設ぴーす",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "date": "2026-04",
+          "map": "Google Maps 'アスレチック施設ぴーす' (Ueki-machi Natatsuka), newest review shown a month ago"
+        },
+        {
+          "name": "Genki Challenge Hall, Aso Farm Land",
+          "page_name": "元気チャレンジ館",
+          "src": "https://www.nap-camp.com/mag/82158",
+          "date": "2026-04",
+          "map": "Google Maps '元気チャレンジ館／阿蘇ファームランド' (Kawayō, Minamiaso), newest review shown 4 months ago"
+        },
+        {
+          "name": "Yukids, Youme Town Hamasen",
+          "page_name": "Yukids ゆめタウンはません店",
+          "src": "https://www.nap-camp.com/mag/79424",
+          "date": "2026-03",
+          "map": "Google Maps 'ゆめタウンはません店 Yukids（ユーキッズ）' (Tainoshima), newest review shown 5 months ago"
+        },
+        {
+          "name": "Kumamoto Children's Culture Hall",
+          "page_name": "熊本市こども文化会館",
+          "src": "https://www.nap-camp.com/mag/79424",
+          "date": "2026-03",
+          "map": "Google Maps 'Kumamoto Kid\\'s Community Hall' (Shinmachi), newest review shown 3 days ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "キッズユーエスランド 熊本八代店, The Kids 熊本ゆめタウンシティモール店, クレヨンしんちゃん オラの あそべるゆめぱ～く光の森",
+          "why": "the newest review on the map is 7–11 months old"
+        },
+        {
+          "name": "ASONIWA (亀の井ホテル 阿蘇)",
+          "why": "a hotel kids' park; the page names only the guests' price"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

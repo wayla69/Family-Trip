@@ -275,6 +275,2063 @@
           "q": "Bondi Beach, Queen Elizabeth Drive, Bondi Beach, Sydney",
           "ok": "2026-11",
           "src": "https://www.sydneytourism.org/bondi-beach-complete-guide/"
+        },
+        {
+          "name": { "en": "WILD LIFE Sydney Zoo", "th": "ไวลด์ไลฟ์ ซิดนีย์ ซู" },
+          "kind": "zoo",
+          "area": { "en": "Darling Harbour", "th": "ดาร์ลิงฮาร์เบอร์" },
+          "what": { "en": "An indoor zoo at Darling Harbour with kangaroos, koalas, wombats and a Daintree walkthrough.", "th": "สวนสัตว์ในร่มที่ดาร์ลิงฮาร์เบอร์ มีจิงโจ้ โคอาลา วอมแบต และทางเดินป่าเดนทรี" },
+          "why": { "en": "Compact and indoors, an easy wet-day outing with native animals.", "th": "ขนาดกะทัดรัดและอยู่ในร่ม เหมาะวันฝนตก ได้ดูสัตว์พื้นเมือง" },
+          "tip": { "en": "Online tickets are cheaper than on the day; children aged 0–1 are free.", "th": "ซื้อออนไลน์ถูกกว่าซื้อหน้างาน เด็ก 0–1 ขวบเข้าฟรี" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ AUD 39 adults · AUD 26 child online (weekdays) · 0–1 free", "th": "≈ AUD 39 ผู้ใหญ่ · AUD 26 เด็ก ออนไลน์วันธรรมดา · 0–1 ขวบฟรี" },
+          "book": "rec",
+          "q": "WILD LIFE Sydney Zoo, Darling Harbour, Sydney",
+          "ok": "2026-11",
+          "src": "https://www.wildlifesydney.com.au/tickets-passes/"
+        },
+        {
+          "name": { "en": "Madame Tussauds Sydney", "th": "มาดามทุสโซ ซิดนีย์" },
+          "kind": "show",
+          "area": { "en": "Darling Harbour", "th": "ดาร์ลิงฮาร์เบอร์" },
+          "what": { "en": "A wax museum at Darling Harbour with figures of film, sport and music stars.", "th": "พิพิธภัณฑ์หุ่นขี้ผึ้งที่ดาร์ลิงฮาร์เบอร์ มีหุ่นดาราหนัง นักกีฬา และนักดนตรี" },
+          "why": { "en": "Indoors and easy to walk through, with figures children recognise.", "th": "อยู่ในร่ม เดินดูง่าย มีหุ่นที่เด็กๆ จำได้" },
+          "tip": { "en": "Buy online before you go; children under 2 are free.", "th": "ซื้อออนไลน์ก่อนไป เด็กต่ำกว่า 2 ขวบเข้าฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ AUD 39 adults · AUD 26 child online (weekdays) · under 2 free", "th": "≈ AUD 39 ผู้ใหญ่ · AUD 26 เด็ก ออนไลน์วันธรรมดา · ต่ำกว่า 2 ขวบฟรี" },
+          "book": "rec",
+          "q": "Madame Tussauds Sydney, Darling Harbour, Sydney",
+          "ok": "2026-11",
+          "src": "https://www.madametussauds.com/sydney/tickets-passes/"
+        },
+        {
+          "name": { "en": "Chinese Garden of Friendship", "th": "สวนจีนแห่งมิตรภาพ" },
+          "kind": "park",
+          "area": { "en": "Darling Harbour", "th": "ดาร์ลิงฮาร์เบอร์" },
+          "what": { "en": "A walled Chinese garden at Darling Harbour with pavilions, ponds and a waterfall.", "th": "สวนจีนมีกำแพงที่ดาร์ลิงฮาร์เบอร์ มีศาลา สระน้ำ และน้ำตก" },
+          "why": { "en": "A calm green stop beside the busy harbour, short enough for little legs.", "th": "จุดพักสีเขียวสงบข้างย่านท่าเรือที่คึกคัก ใช้เวลาไม่นาน เหมาะกับขาเล็กๆ" },
+          "tip": { "en": "Family ticket covers two adults and three children.", "th": "ตั๋วครอบครัวใช้ได้กับผู้ใหญ่ 2 คนและเด็ก 3 คน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ AUD 12 adults · AUD 8 child under 12 · family AUD 30", "th": "≈ AUD 12 ผู้ใหญ่ · AUD 8 เด็กต่ำกว่า 12 ปี · ตั๋วครอบครัว AUD 30" },
+          "book": "none",
+          "q": "Chinese Garden of Friendship, Darling Harbour, Sydney",
+          "ok": "2026-11",
+          "src": "https://www.darlingharbour.com/precincts/chinese-garden"
+        },
+        {
+          "name": { "en": "Sydney Harbour Bridge Museum", "th": "ซิดนีย์ฮาร์เบอร์ บริดจ์มิวเซียม" },
+          "kind": "views",
+          "area": { "en": "Sydney Harbour Bridge, The Rocks", "th": "สะพานซิดนีย์ฮาร์เบอร์ เดอะร็อกส์" },
+          "what": { "en": "A museum and lookout in the south-east pylon of the Harbour Bridge, with harbour views and displays.", "th": "พิพิธภัณฑ์และจุดชมวิวในเสาตะวันออกเฉียงใต้ของสะพานฮาร์เบอร์ มีวิวท่าเรือและนิทรรศการ" },
+          "why": { "en": "An easier alternative to a bridge climb, suitable for all ages at your own pace.", "th": "ทางเลือกที่ง่ายกว่าการปีนสะพาน เหมาะกับทุกวัย เดินชมตามจังหวะของตัวเอง" },
+          "tip": { "en": "Book online; walk-up tickets cost more.", "th": "จองออนไลน์ ตั๋วหน้างานแพงกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ AUD 39.95 adults · AUD 22.95 child online", "th": "≈ AUD 39.95 ผู้ใหญ่ · AUD 22.95 เด็ก ออนไลน์" },
+          "book": "rec",
+          "q": "Sydney Harbour BridgeMuseum, Cumberland Street, The Rocks, Sydney",
+          "ok": "2026-11",
+          "src": "https://www.bridgemuseum.com.au/choose-your-experience"
+        },
+        {
+          "name": { "en": "Art Gallery of New South Wales", "th": "หอศิลป์นิวเซาท์เวลส์" },
+          "kind": "museum",
+          "area": { "en": "The Domain", "th": "เดอะโดเมน" },
+          "what": { "en": "The state art gallery beside the Royal Botanic Garden; entry is free.", "th": "หอศิลป์ประจำรัฐข้างสวนพฤกษศาสตร์หลวง เข้าชมฟรี" },
+          "why": { "en": "Free, indoors and spacious, a calm wet-day stop that pairs with the Botanic Garden.", "th": "ฟรี อยู่ในร่ม กว้างขวาง เป็นที่หลบฝนสงบๆ และไปคู่กับสวนพฤกษศาสตร์ได้" },
+          "tip": { "en": "Only major exhibitions, special events and some tours need tickets.", "th": "เฉพาะนิทรรศการใหญ่ งานพิเศษ และทัวร์บางรอบที่ต้องมีตั๋ว" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Art Gallery of New South Wales, Art Gallery Road, Sydney",
+          "ok": "2026-11",
+          "src": "https://www.artgallery.nsw.gov.au/tickets/"
+        },
+        {
+          "name": { "en": "Symbio Wildlife Park", "th": "ซิมบิโอ ไวลด์ไลฟ์ พาร์ค" },
+          "kind": "zoo",
+          "area": { "en": "Helensburgh", "th": "เฮเลนส์เบิร์ก" },
+          "what": { "en": "A wildlife park south of Sydney with Australian animals and a kids' splash park.", "th": "สวนสัตว์ป่าทางใต้ของซิดนีย์ มีสัตว์ออสเตรเลียและสวนน้ำเด็ก" },
+          "why": { "en": "Close-up animal encounters suited to younger children, with room to run.", "th": "ได้เห็นสัตว์ใกล้ชิดเหมาะกับเด็กเล็ก และมีที่ให้วิ่งเล่น" },
+          "tip": { "en": "Online tickets are cheaper than at the door.", "th": "ตั๋วออนไลน์ถูกกว่าซื้อหน้างาน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ AUD 49 adults · AUD 32 child 3–15 · family AUD 145 online", "th": "≈ AUD 49 ผู้ใหญ่ · AUD 32 เด็ก 3–15 ปี · ตั๋วครอบครัว AUD 145 ออนไลน์" },
+          "book": "rec",
+          "q": "Symbio Wildlife Park, Lawrence Hargrave Drive, Helensburgh, NSW",
+          "ok": "2026-11",
+          "src": "https://symbiowildlife.com.au/prices/"
+        },
+        {
+          "name": { "en": "Sydney Zoo", "th": "ซิดนีย์ ซู" },
+          "kind": "zoo",
+          "area": { "en": "Bungarribee, western Sydney", "th": "บังการิบี ซิดนีย์ตะวันตก" },
+          "what": { "en": "A large zoo in western Sydney with Australian and world animals.", "th": "สวนสัตว์ใหญ่ในซิดนีย์ตะวันตก มีสัตว์ทั้งของออสเตรเลียและทั่วโลก" },
+          "why": { "en": "Wide paths and a family bundle of two adults and two children keep a day affordable.", "th": "ทางเดินกว้าง และมีแพ็กเกจครอบครัวผู้ใหญ่ 2 เด็ก 2 ช่วยให้คุ้มขึ้น" },
+          "tip": { "en": "Check the family bundle against single tickets for your group.", "th": "เทียบแพ็กเกจครอบครัวกับตั๋วเดี่ยวสำหรับกลุ่มของคุณ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ AUD 110 family bundle (2 adults + 2 children)", "th": "≈ AUD 110 แพ็กเกจครอบครัว (ผู้ใหญ่ 2 + เด็ก 2)" },
+          "book": "rec",
+          "q": "Sydney Zoo, Bungarribee, NSW",
+          "ok": "2026-11",
+          "src": "https://sydneyzoo.com/"
+        },
+        {
+          "name": { "en": "Scenic World Blue Mountains", "th": "ซีนิกเวิลด์ บลูเมาน์เทนส์" },
+          "kind": "views",
+          "area": { "en": "Katoomba, Blue Mountains", "th": "คาทูมบา บลูเมาน์เทนส์" },
+          "what": { "en": "A day pass for the Scenic Railway, Skyway, Cableway and rainforest boardwalks at Katoomba.", "th": "ตั๋วทั้งวันสำหรับรถรางสีนิก สกายเวย์ เคเบิลเวย์ และทางเดินป่าฝนที่คาทูมบา" },
+          "why": { "en": "Rides over the valley and short boardwalks suit children; under 3s go free.", "th": "นั่งข้ามหุบเขาและเดินทางไม้สั้นๆ เหมาะกับเด็ก ต่ำกว่า 3 ขวบเข้าฟรี" },
+          "tip": { "en": "A full pram is not allowed on the Railway; a small folding stroller that fits on your lap is.", "th": "รถเข็นใหญ่ขึ้นรถรางไม่ได้ รถเข็นพับเล็กที่วางบนตักได้ขึ้นได้" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ AUD 64 adults · AUD 38.40 child 3–15 · under 3 free", "th": "≈ AUD 64 ผู้ใหญ่ · AUD 38.40 เด็ก 3–15 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "rec",
+          "q": "Scenic World, Violet Street, Katoomba, NSW",
+          "ok": "2026-11",
+          "src": "https://daytripbluemountains.com/scenic-world-blue-mountains-tickets/"
+        },
+        {
+          "name": { "en": "Calmsley Hill City Farm", "th": "คัลมสลีย์ ฮิลล์ ซิตี้ ฟาร์ม" },
+          "kind": "farm",
+          "area": { "en": "Abbotsbury, western Sydney", "th": "แอบบอตส์เบอรี ซิดนีย์ตะวันตก" },
+          "what": { "en": "A working city farm in Abbotsbury with daily shows and farm animals.", "th": "ฟาร์มในเมืองที่แอบบอตส์เบอรี มีโชว์ประจำวันและสัตว์ฟาร์ม" },
+          "why": { "en": "A farm day out where small children can see farm animals up close.", "th": "เที่ยวฟาร์มทั้งวัน เด็กเล็กได้ดูสัตว์ฟาร์มใกล้ๆ" },
+          "tip": { "en": "Tickets are sold on the farm's own page; check the price and show times before you go.", "th": "ขายตั๋วที่หน้าเว็บของฟาร์ม เช็กราคาและรอบโชว์ก่อนไป" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Calmsley Hill City Farm, Darling Street, Abbotsbury, NSW",
+          "ok": "2026-11",
+          "src": "https://www.calmsleyhill.com.au/visitor-information/buy-tickets/"
+        },
+        {
+          "name": { "en": "Pirrama Park Playground", "th": "สนามเด็กเล่นพิร์รามาพาร์ค" },
+          "kind": "play",
+          "area": { "en": "Pyrmont Point", "th": "ไพร์มอนต์พอยต์" },
+          "what": { "en": "A 1.8-hectare harbourside park with rope climbing, swings, slides, an accessible spinner and a big sandpit", "th": "สวนริมอ่าว 1.8 เฮกตาร์ มีเชือกปีน ชิงช้า สไลเดอร์ ชิงช้าหมุนที่ทุกคนเล่นได้ และบ่อทรายใหญ่" },
+          "why": { "en": "Harbour views and interactive water features on hot days", "th": "วิวอ่าวและน้ำพุให้เล่นในวันที่อากาศร้อน" },
+          "tip": { "en": "Water play runs 8:00–18:00 every day except Tuesday", "th": "โซนเล่นน้ำเปิด 8:00–18:00 ทุกวันยกเว้นวันอังคาร" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Pirrama Park, Pyrmont Point, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Gunyama Park Playground", "th": "สนามเด็กเล่นกุนยามาพาร์ค" },
+          "kind": "play",
+          "area": { "en": "Zetland", "th": "เซตแลนด์" },
+          "what": { "en": "A large playground with swings, a flying fox, climbing ropes, in-ground trampolines, tunnels and a water play area", "th": "สนามเด็กเล่นใหญ่ มีชิงช้า ซิปไลน์ เชือกปีน แทรมโพลีนฝังพื้น อุโมงค์ และโซนเล่นน้ำ" },
+          "why": { "en": "Designed with areas for toddlers and school-aged children, next to a skate plaza", "th": "แบ่งโซนสำหรับเด็กเล็กและเด็กวัยเรียน อยู่ติดลานสเกต" },
+          "tip": { "en": "Water play runs 8:00–18:00 every day except Tuesday", "th": "โซนเล่นน้ำเปิด 8:00–18:00 ทุกวันยกเว้นวันอังคาร" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Gunyama Park, Tilford Street, Zetland, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Waverley Park Playground", "th": "สนามเด็กเล่นเวฟเวอร์ลีย์พาร์ค" },
+          "kind": "play",
+          "area": { "en": "Bondi Junction", "th": "บอนไดจังก์ชัน" },
+          "what": { "en": "A playground fully revamped in late 2023, with a rocket ship centrepiece and play zones for all ages and abilities", "th": "สนามเด็กเล่นที่ปรับโฉมใหม่ปลายปี 2023 มีจรวดเป็นจุดเด่น และโซนเล่นสำหรับทุกวัยและทุกความสามารถ" },
+          "why": { "en": "A rocket ship and launch tower, with play for every age", "th": "มีจรวดและหอปล่อยจรวด เล่นได้ทุกวัย" },
+          "tip": { "en": "Bring sunscreen, as shade is limited", "th": "เตรียมครีมกันแดด เพราะร่มเงามีจำกัด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Waverley Park, Bondi Junction, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Clifton Gardens Playground", "th": "สนามเด็กเล่นคลิฟตันการ์เดนส์" },
+          "kind": "play",
+          "area": { "en": "Mosman", "th": "มอสมัน" },
+          "what": { "en": "A playground beside a gentle harbour beach, with a fenced toddler area and a large sandy zone for bigger kids", "th": "สนามเด็กเล่นข้างหาดริมอ่าวที่คลื่นเบา มีโซนเด็กเล็กที่มีรั้วกั้นและโซนทรายใหญ่สำหรับเด็กโต" },
+          "why": { "en": "Partial netting on the beach, a toddler zone and plenty of grass for picnics", "th": "มีตาข่ายกั้นบางส่วนที่หาด มีโซนเด็กเล็ก และสนามหญ้ากว้างสำหรับปิกนิก" },
+          "tip": { "en": "Allow about two and a half hours", "th": "เผื่อเวลาราว 2 ชั่วโมงครึ่ง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Clifton Gardens, Mosman, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Wadanggari Park", "th": "วาดังการีพาร์ค" },
+          "kind": "play",
+          "area": { "en": "St Leonards", "th": "เซนต์ลีโอนาร์ดส์" },
+          "what": { "en": "A 4,750 square metre adventure-style playground over two levels, with three slides and an amphitheatre", "th": "สนามเด็กเล่นสไตล์ผจญภัย 4,750 ตร.ม. สองระดับ มีสไลเดอร์สามตัวและอัฒจันทร์กลางแจ้ง" },
+          "why": { "en": "Something for every age, with an award for its design", "th": "มีของเล่นสำหรับทุกวัย และได้รางวัลด้านการออกแบบ" },
+          "tip": { "en": "Allow about an hour and a half", "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Wadanggari Park, St Leonards, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Sydney Park Playground", "th": "สนามเด็กเล่นซิดนีย์พาร์ค" },
+          "kind": "play",
+          "area": { "en": "St Peters", "th": "เซนต์ปีเตอร์ส" },
+          "what": { "en": "A huge playground in a 40-hectare park, with long slides cut into hillsides, climbing structures, a rope bridge and a water play zone", "th": "สนามเด็กเล่นใหญ่ในสวน 40 เฮกตาร์ มีสไลเดอร์ยาวบนเนินเขา โครงปีน สะพานเชือก และโซนเล่นน้ำ" },
+          "why": { "en": "Long hill slides and a swinging rope bridge for bigger kids, with a cycle centre and skate park alongside", "th": "สไลเดอร์ยาวบนเนินและสะพานเชือกโยกสำหรับเด็กโต มีศูนย์จักรยานและลานสเกตอยู่ข้างๆ" },
+          "tip": { "en": "Allow about two and a half hours", "th": "เผื่อเวลาราว 2 ชั่วโมงครึ่ง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sydney Park, 416 Sydney Park Road, St Peters",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Livvi's Place, Timbrell Park", "th": "ลิฟวีส์เพลซ ทิมเบรลล์พาร์ค" },
+          "kind": "play",
+          "area": { "en": "Five Dock", "th": "ไฟฟ์ด็อก" },
+          "what": { "en": "An inclusive playground with climbing structures, swings, musical instruments and different textures", "th": "สนามเด็กเล่นสำหรับทุกคน มีโครงปีน ชิงช้า เครื่องดนตรี และพื้นผิวหลากหลาย" },
+          "why": { "en": "Designed for children of all abilities, with musical play and a café on site", "th": "ออกแบบให้เด็กทุกความสามารถเล่นได้ มีเครื่องดนตรีให้เล่น และมีคาเฟ่ในพื้นที่" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Livvi's Place, Timbrell Park, Five Dock, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Burwood Park Inclusive Play Space", "th": "พื้นที่เล่นเพื่อทุกคน เบอร์วูดพาร์ค" },
+          "kind": "play",
+          "area": { "en": "Burwood", "th": "เบอร์วูด" },
+          "what": { "en": "An inclusive playground with a tower slide, swings, a tandem flying fox and an all-abilities carousel, joined by ramps", "th": "สนามเด็กเล่นสำหรับทุกคน มีสไลเดอร์หอคอย ชิงช้า ซิปไลน์คู่ และม้าหมุนที่ทุกคนขึ้นได้ เชื่อมกันด้วยทางลาด" },
+          "why": { "en": "Sensory play panels, a giant outdoor chessboard and a dog area for the family", "th": "มีแผงเล่นสัมผัส หมากรุกยักษ์กลางแจ้ง และโซนสุนัขสำหรับครอบครัว" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Burwood Park, Burwood, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Memory Park", "th": "เมโมรีพาร์ค" },
+          "kind": "play",
+          "area": { "en": "Mosman", "th": "มอสมัน" },
+          "what": { "en": "A playground with a 7-metre multi-level adventure fort, four slides, a ropes course and monkey bars", "th": "สนามเด็กเล่นที่มีป้อมผจญภัยหลายชั้นสูง 7 เมตร สไลเดอร์สี่ตัว เส้นทางเชือก และราวโหน" },
+          "why": { "en": "A climbing fort for climbing-mad kids, with a separate toddler area on rubber softfall", "th": "ป้อมปีนสำหรับเด็กที่ชอบปีน มีโซนเด็กเล็กแยกบนพื้นยางนุ่ม" },
+          "tip": { "en": "There are coffee spots around the corner", "th": "มีร้านกาแฟอยู่ใกล้ๆ ตรงหัวมุม" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Memory Park, Cowles Road, Mosman, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Fagan Park", "th": "ฟาแกนพาร์ค" },
+          "kind": "park",
+          "area": { "en": "Galston", "th": "กัลสตัน" },
+          "what": { "en": "55 hectares of themed gardens with two playgrounds, a fenced Children's Forest, bike paths and a museum", "th": "สวนธีม 55 เฮกตาร์ มีสนามเด็กเล่นสองแห่ง ป่าเด็กที่มีรั้วกั้น ทางจักรยาน และพิพิธภัณฑ์" },
+          "why": { "en": "A nature play space where kids can balance, climb and paddle, and a lagoon for ducks", "th": "พื้นที่เล่นกับธรรมชาติให้เด็กทรงตัว ปีน และเล่นน้ำ มีบึงให้ดูเป็ด" },
+          "tip": { "en": "Allow about four hours", "th": "เผื่อเวลาราว 4 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Fagan Park, Galston, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Flying Fox Park at Winnererremy Bay Park", "th": "ฟลายอิ้งฟอกซ์พาร์ค ที่วินเนอร์เรเรมีเบย์พาร์ค" },
+          "kind": "play",
+          "area": { "en": "Mona Vale", "th": "โมนาเวล" },
+          "what": { "en": "A fenced park on the shores of Pittwater with a giant flying fox, climbing net, climbing wall and a swinging bridge", "th": "สวนมีรั้วริมพิตต์วอเทอร์ มีซิปไลน์ยักษ์ ตาข่ายปีน กำแพงปีน และสะพานโยก" },
+          "why": { "en": "A destination playground with beach access and a café on site, built for children from 5 years", "th": "สนามเด็กเล่นที่ควรมาเป็นทริปเอง มีทางลงหาดและคาเฟ่ในพื้นที่ สร้างมาสำหรับเด็กตั้งแต่ 5 ขวบ" },
+          "tip": { "en": "Allow about two and a half hours", "th": "เผื่อเวลาราว 2 ชั่วโมงครึ่ง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Winnererremy Bay Park, Mona Vale, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Robertson Park Playground", "th": "สนามเด็กเล่นโรเบิร์ตสันพาร์ค" },
+          "kind": "play",
+          "area": { "en": "Watsons Bay", "th": "วัตสันส์เบย์" },
+          "what": { "en": "A fenced playground with shade sails, soft rubber ground and harbour and boat views", "th": "สนามเด็กเล่นมีรั้ว มีผ้าใบบังแดด พื้นยางนุ่ม และวิวอ่าวกับเรือ" },
+          "why": { "en": "A day trip in itself: ferry from Circular Quay, a swim at Watsons Bay Baths, fish and chips after", "th": "ไปเป็นทริปวันเดียวได้เลย นั่งเรือเฟอร์รีจากเซอร์คูลาร์คีย์ ว่ายน้ำที่วัตสันส์เบย์เบธส์ แล้วกินฟิชแอนด์ชิปส์" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Robertson Park, Watsons Bay, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-playgrounds-sydney/"
+        },
+        {
+          "name": { "en": "Shelly Beach", "th": "หาดเชลลี" },
+          "kind": "beach",
+          "area": { "en": "Manly", "th": "แมนลี" },
+          "what": { "en": "A Marine Reserve about a kilometre from Manly Beach, with sheltered clear water and picnic areas", "th": "เขตอนุรักษ์ทางทะเลห่างจากหาดแมนลีราว 1 กม. น้ำใสสงบ มีที่ปิกนิก" },
+          "why": { "en": "Sheltered and clear, with snorkelling for kids who love rock pools", "th": "น้ำสงบและใส เด็กที่ชอบแอ่งน้ำริมหินดำน้ำตื้นดูปลาได้" },
+          "tip": { "en": "Walk from Manly along the coastal path past Fairy Bower", "th": "เดินจากแมนลีตามทางริมชายฝั่งผ่านแฟรีบาวเออร์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Shelly Beach, Manly, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Camp Cove", "th": "แคมป์โคฟ" },
+          "kind": "beach",
+          "area": { "en": "South Head", "th": "เซาท์เฮด" },
+          "what": { "en": "A calm harbour beach at the far end of South Head, with clear still water", "th": "หาดริมอ่าวสงบที่ปลายสุดของเซาท์เฮด น้ำใสนิ่ง" },
+          "why": { "en": "Calm and sheltered, a walk and a ferry in one day from Circular Quay to Watsons Bay", "th": "น้ำสงบและมีที่กำบัง เดินเล่นและนั่งเรือเฟอร์รีจากเซอร์คูลาร์คีย์ไปวัตสันส์เบย์ได้ในวันเดียว" },
+          "tip": { "en": "Allow about two and a half hours", "th": "เผื่อเวลาราว 2 ชั่วโมงครึ่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Camp Cove, South Head, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Shark Beach (Nielsen Park)", "th": "ชาร์กบีช (นีลเส็นพาร์ค)" },
+          "kind": "beach",
+          "area": { "en": "Vaucluse", "th": "วอคลูส" },
+          "what": { "en": "A large netted swimming area inside the heritage-listed Nielsen Park, with grassy picnic areas and BBQs", "th": "พื้นที่ว่ายน้ำมีตาข่ายกั้นกว้างในนีลเส็นพาร์คที่ขึ้นทะเบียนมรดก มีสนามหญ้าปิกนิกและเตาบาร์บีคิว" },
+          "why": { "en": "Netted and calm, with harbour views and a picnic lawn", "th": "มีตาข่ายและน้ำสงบ วิวอ่าว และสนามหญ้าปิกนิก" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Nielsen Park, Vaucluse, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Little Manly Beach", "th": "หาดลิตเติลแมนลี" },
+          "kind": "beach",
+          "area": { "en": "Manly", "th": "แมนลี" },
+          "what": { "en": "A west-facing cove on Sydney Harbour with netted baths, calm waters and a playground at Little Manly Point", "th": "อ่าวเล็กหันไปทางตะวันตกในอ่าวซิดนีย์ มีสระมีตาข่ายกั้น น้ำสงบ และสนามเด็กเล่นที่ลิตเติลแมนลีพอยต์" },
+          "why": { "en": "Calm and ideal for babies and toddlers, and less busy than Manly", "th": "น้ำสงบเหมาะกับเด็กทารกและเด็กเล็ก คนน้อยกว่าหาดแมนลี" },
+          "tip": { "en": "Allow about two and a half hours", "th": "เผื่อเวลาราว 2 ชั่วโมงครึ่ง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Little Manly Beach, Manly, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Gunnamatta Bay Tidal Baths, Cronulla", "th": "สระน้ำขึ้นน้ำลงกันนามัตตาเบย์ โครนูลลา" },
+          "kind": "beach",
+          "area": { "en": "Cronulla", "th": "โครนูลลา" },
+          "what": { "en": "Large netted swimming baths on the bay, with no waves", "th": "สระว่ายน้ำใหญ่ริมอ่าวมีตาข่ายกั้น ไม่มีคลื่น" },
+          "why": { "en": "No waves and calm water, one of the best family swimming spots in Sydney", "th": "ไม่มีคลื่น น้ำสงบ เป็นจุดว่ายน้ำสำหรับครอบครัวที่ดีที่สุดแห่งหนึ่งของซิดนีย์" },
+          "tip": { "en": "Allow about two and a half hours", "th": "เผื่อเวลาราว 2 ชั่วโมงครึ่ง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Gunnamatta Bay Tidal Baths, Cronulla, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Fairy Bower", "th": "แฟรีบาวเออร์" },
+          "kind": "beach",
+          "area": { "en": "Manly", "th": "แมนลี" },
+          "what": { "en": "A 20-metre triangular rock pool along Marine Parade between Manly Beach and Shelly Beach, built in 1929", "th": "สระหินรูปสามเหลี่ยมยาว 20 เมตรริมถนนมารีนพาเหรด ระหว่างหาดแมนลีกับหาดเชลลี สร้างในปี 1929" },
+          "why": { "en": "A small historic rock pool and a flat boardwalk walk to Shelly Beach", "th": "สระหินเล็กๆ เก่าแก่ และทางเดินไม้ราบเรียบไปหาดเชลลี" },
+          "tip": { "en": "Allow about an hour and a half", "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Fairy Bower, Manly, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Northbridge Baths", "th": "นอร์ทบริดจ์เบธส์" },
+          "kind": "beach",
+          "area": { "en": "Middle Harbour", "th": "มิดเดิลฮาร์เบอร์" },
+          "what": { "en": "An enclosed tidal bath set in Middle Harbour bushland, with shallow water and swimming lanes for older kids", "th": "สระน้ำขึ้นน้ำลงแบบมีรั้วกั้นท่ามกลางป่าริมมิดเดิลฮาร์เบอร์ น้ำตื้น และมีเลนว่ายน้ำสำหรับเด็กโต" },
+          "why": { "en": "Shallow water where toddlers can wade and paddle", "th": "น้ำตื้นที่เด็กเล็กลุยเล่นได้" },
+          "tip": { "en": "Allow about two and a half hours", "th": "เผื่อเวลาราว 2 ชั่วโมงครึ่ง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Northbridge Baths, Middle Harbour, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Andrew (Boy) Charlton Pool", "th": "สระว่ายน้ำแอนดรูว์ (บอย) ชาร์ลตัน" },
+          "kind": "beach",
+          "area": { "en": "The Domain", "th": "เดอะโดเมน" },
+          "what": { "en": "A saltwater pool tucked into the cliffs beside The Domain, with views over Woolloomooloo Bay", "th": "สระน้ำเค็มแทรกอยู่ในหน้าผาข้างเดอะโดเมน วิวอ่าววูลลูมูลู" },
+          "why": { "en": "Harbourside swimming in a pool, beside the Domain's open lawns", "th": "ว่ายน้ำริมอ่าวในสระ ติดกับสนามหญ้าโล่งของเดอะโดเมน" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Andrew (Boy) Charlton Pool, The Domain, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Putney Beach", "th": "พัตนีย์บีช" },
+          "kind": "beach",
+          "area": { "en": "Putney", "th": "พัตนีย์" },
+          "what": { "en": "A monitored swim site on the Parramatta River with a netted enclosure, outdoor shower and sandstone steps with handrails", "th": "จุดว่ายน้ำมีเจ้าหน้าที่ดูแลริมแม่น้ำพารามัตตา มีตาข่ายกั้น ฝักบัวกลางแจ้ง และขั้นบันไดหินทรายพร้อมราวจับ" },
+          "why": { "en": "One of the most family-ready swim sites on the Parramatta River, with handrails for easy access", "th": "เป็นจุดว่ายน้ำที่พร้อมสำหรับครอบครัวที่สุดแห่งหนึ่งในแม่น้ำพารามัตตา มีราวจับให้ลงน้ำง่าย" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Putney Beach, Putney, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/best-family-beaches-sydney/"
+        },
+        {
+          "name": { "en": "Balmoral Beach", "th": "หาดบัลโมรัล" },
+          "kind": "beach",
+          "area": { "en": "North Shore", "th": "นอร์ทชอร์" },
+          "what": { "en": "A calm, sheltered harbour beach with a netted swimming enclosure and a playground beside it", "th": "หาดริมอ่าวสงบมีที่กำบัง มีตาข่ายกั้นพื้นที่ว่ายน้ำ และสนามเด็กเล่นอยู่ข้างๆ" },
+          "why": { "en": "Consistently rated one of the best family beaches in Sydney, with a playground right there", "th": "ได้รับการจัดให้เป็นหนึ่งในหาดครอบครัวที่ดีที่สุดของซิดนีย์ มีสนามเด็กเล่นอยู่ติดหาด" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Balmoral Beach, North Shore, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "Cockatoo Island", "th": "เกาะค็อกคาทู" },
+          "kind": "culture",
+          "area": { "en": "Sydney Harbour", "th": "อ่าวซิดนีย์" },
+          "what": { "en": "A UNESCO World Heritage-listed island in the middle of Sydney Harbour, reached by ferry from Circular Quay", "th": "เกาะมรดกโลกของยูเนสโกกลางอ่าวซิดนีย์ นั่งเรือเฟอร์รีจากเซอร์คูลาร์คีย์ไป" },
+          "why": { "en": "The ferry ride alone makes it an adventure", "th": "แค่นั่งเรือไปก็เป็นการผจญภัยแล้ว" },
+          "tip": { "en": "Allow about four hours", "th": "เผื่อเวลาราว 4 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Cockatoo Island, Sydney Harbour",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "Wendy Whiteley's Secret Garden", "th": "สวนลับของเวนดี้ ไวต์ลีย์" },
+          "kind": "park",
+          "area": { "en": "Lavender Bay", "th": "ลาเวนเดอร์เบย์" },
+          "what": { "en": "A hidden garden with winding paths, quirky sculptures and leafy hideaways", "th": "สวนลับที่มีทางเดินคดเคี้ยว ประติมากรรมแปลกตา และมุมร่มรื่นให้ซ่อน" },
+          "why": { "en": "Feels like a storybook, with paths to wander and hideaways to find", "th": "เหมือนอยู่ในนิทาน มีทางให้เดินเล่นและมุมซ่อนตัวให้ค้นหา" },
+          "tip": { "en": "Allow about an hour and a half", "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Wendy Whiteley's Secret Garden, Lavender Bay, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "The Goods Line", "th": "เดอะกู๊ดส์ไลน์" },
+          "kind": "park",
+          "area": { "en": "Central Station to Darling Harbour", "th": "เซ็นทรัลสเตชันถึงดาร์ลิงฮาร์เบอร์" },
+          "what": { "en": "An elevated urban walkway running from Central Station towards Darling Harbour", "th": "ทางเดินลอยฟ้าในเมืองจากเซ็นทรัลสเตชันไปทางดาร์ลิงฮาร์เบอร์" },
+          "why": { "en": "An easy walk with play spaces and seating areas along the way", "th": "เดินง่าย มีพื้นที่เล่นและที่นั่งพักตลอดทาง" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "The Goods Line, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "Glebe Foreshore Walk", "th": "ทางเดินริมอ่าวเกล็บ" },
+          "kind": "nature",
+          "area": { "en": "Glebe", "th": "เกล็บ" },
+          "what": { "en": "A flat, easy path along the harbour between Blackwattle Bay and Bicentennial Park", "th": "ทางเดินราบเรียบริมอ่าวระหว่างแบล็กวัตเทิลเบย์กับไบเซนเทนเนียลพาร์ค" },
+          "why": { "en": "Very pram-friendly and dotted with playgrounds and grassy picnic spots", "th": "เข็นรถเข็นเด็กสะดวกมาก มีสนามเด็กเล่นและสนามหญ้าปิกนิกเป็นระยะ" },
+          "tip": { "en": "Allow about an hour and a half", "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Glebe Foreshore Walk, Glebe, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "Barangaroo Reserve", "th": "บารางารู รีเซิร์ฟ" },
+          "kind": "park",
+          "area": { "en": "Barangaroo", "th": "บารางารู" },
+          "what": { "en": "A newer harbourside park with wide sandstone paths, grassy terraces and picnic areas", "th": "สวนริมอ่าวสร้างใหม่ มีทางเดินหินทรายกว้าง ขั้นบันไดหญ้า และที่ปิกนิก" },
+          "why": { "en": "Kids can swim at Marrinawi Cove, and the harbour views are great", "th": "เด็กว่ายน้ำได้ที่มาร์รินาวีโคฟ และวิวอ่าวสวย" },
+          "tip": { "en": "Allow about an hour and a half", "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Barangaroo Reserve, Barangaroo, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "Museum of Fire", "th": "มิวเซียมออฟไฟร์" },
+          "kind": "museumkid",
+          "area": { "en": "Penrith", "th": "เพนริธ" },
+          "what": { "en": "A museum with fire engines, a junior firefighter zone and fire engine rides", "th": "พิพิธภัณฑ์รถดับเพลิง มีโซนนักดับเพลิงจิ๋ว และมีรถดับเพลิงให้นั่ง" },
+          "why": { "en": "Fire engines to climb on and a junior firefighter zone for little kids", "th": "มีรถดับเพลิงให้ปีนขึ้นและโซนนักดับเพลิงจิ๋วสำหรับเด็กเล็ก" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Museum of Fire, Penrith, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "Powerhouse Parramatta", "th": "พาวเวอร์เฮาส์ พารามัตตา" },
+          "kind": "museumkid",
+          "area": { "en": "Parramatta", "th": "พารามัตตา" },
+          "what": { "en": "A newly opened museum on the banks of the Parramatta River with seven large exhibition spaces", "th": "พิพิธภัณฑ์เปิดใหม่ริมแม่น้ำพารามัตตา มีพื้นที่จัดแสดงขนาดใหญ่เจ็ดแห่ง" },
+          "why": { "en": "A free indoor outing in Western Sydney, with plenty to do on a wet day", "th": "ที่เที่ยวในร่มฟรีในซิดนีย์ฝั่งตะวันตก มีให้ทำเยอะในวันฝนตก" },
+          "tip": { "en": "Opened to the public on 7 November 2026", "th": "เปิดให้เข้าชมเมื่อวันที่ 7 พฤศจิกายน 2026" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Powerhouse Parramatta, Parramatta, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+        {
+          "name": { "en": "IMAX", "th": "ไอแมกซ์" },
+          "kind": "show",
+          "area": { "en": "Darling Harbour", "th": "ดาร์ลิงฮาร์เบอร์" },
+          "what": { "en": "A giant cinema screen in Darling Harbour, one of the world's biggest", "th": "จอหนังยักษ์ในดาร์ลิงฮาร์เบอร์ หนึ่งในจอที่ใหญ่ที่สุดในโลก" },
+          "why": { "en": "A film on a huge screen, indoors and easy to fit in on a rainy day", "th": "ดูหนังบนจอยักษ์ในร่ม แทรกเข้าแผนวันฝนตกได้ง่าย" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "IMAX, Darling Harbour, Sydney",
+          "ok": "2026-11",
+          "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
+        },
+      {"name":{"en":"Hyde Park Barracks","th":"ฮายด์ปาร์กบาร์แร็กส์"},"kind":"museum","area":{"en":"Sydney CBD","th":"ใจกลางซิดนีย์ (ซีบีดี)"},"what":{"en":"A UNESCO World Heritage-listed convict barracks where visitors learn what life was like for convicts and immigrants","th":"เรือนจำนักโทษจากยุคอาณานิคม ขึ้นทะเบียนเป็นมรดกโลกขององค์การยูเนสโก ที่นี่เล่าชีวิตของนักโทษและผู้อพยพ"},"why":{"en":"The building's own history, told as a visit rather than a lecture","th":"เรื่องราวของอาคารเล่าเป็นการเที่ยวชม ไม่ใช่การบรรยาย"},"ages":[0,0,1,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hyde Park Barracks, Sydney CBD","ok":"2026-11","src":"https://newywithkids.com.au/free-things-to-do-sydney-with-kids/"},
+      {"name":{"en":"Sydney Olympic Park","th":"โอลิมปิกพาร์กซิดนีย์"},"kind":"park","area":{"en":"Sydney Olympic Park","th":"โอลิมปิกพาร์กซิดนีย์"},"what":{"en":"A large park complex west of the city with an archery centre and an aquatic centre","th":"สวนขนาดใหญ่ทางตะวันตกของเมือง มีศูนย์ยิงธนูและศูนย์กีฬาทางน้ำ"},"why":{"en":"Learn a new skill at the archery centre and swim at the aquatic centre","th":"เรียนทักษะใหม่ที่ศูนย์ยิงธนู และว่ายน้ำที่ศูนย์กีฬาทางน้ำ"},"ages":[0,1,2,2],"hrs":4,"io":"both","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sydney Olympic Park, Sydney","ok":"2026-11","src":"https://www.sydney.com/articles/family-friendly-attractions-sydney"},
+      {"name":{"en":"Bradleys Head","th":"แบรดลีย์เฮด"},"kind":"views","area":{"en":"Mosman","th":"มอสแมน"},"what":{"en":"A bush walk to Chowder Bay with the Opera House, Harbour Bridge and sparkling Sydney Harbour in view","th":"เดินป่าไปชาวเดอร์เบย์ เห็นโอเปร่าเฮาส์ สะพานฮาร์เบอร์ และอ่าวซิดนีย์ที่สดใส"},"why":{"en":"A secluded little beach, free of tourists and crowds, a few minutes' walk from Taronga Zoo","th":"ชายหาดเล็กส่วนตัว ไม่มีนักท่องเที่ยวและคนแน่น เดินไม่กี่นาทีจากสวนสัตว์ทารองกา"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Bradleys Head, Mosman, Sydney","ok":"2026-11","src":"https://www.ellaslist.com.au/family-holidays/best-day-trips-from-sydney"},
+      {"name":{"en":"Royal National Park","th":"อุทยานแห่งชาติรอยัล"},"kind":"nature","area":{"en":"Between Sydney and Wollongong","th":"ระหว่างซิดนีย์กับวอลลองกอง"},"what":{"en":"Sandy beaches, dramatic cliffs and lush rainforest south of Sydney, with the Coast Track to hike","th":"หาดทรายขาว หน้าผาสูงชัน และป่าฝนเขียวชอุ่มทางใต้ของซิดนีย์ มีเส้นทางโคสต์แทร็กให้เดินป่า"},"why":{"en":"Swimming in the clear waters, a picnic and a relaxing day in nature","th":"ว่ายน้ำในน้ำใส ปิกนิก และวันผ่อนคลายกับธรรมชาติ"},"ages":[1,2,2,2],"hrs":4,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Royal National Park, NSW","ok":"2026-11","src":"https://www.ellaslist.com.au/family-holidays/best-day-trips-from-sydney"},
+      {"name":{"en":"Wattamolla","th":"วัตตามอลลา"},"kind":"beach","area":{"en":"Royal National Park","th":"อุทยานแห่งชาติรอยัล"},"what":{"en":"A beach in the Royal National Park with crystal-clear water for a dip","th":"ชายหาดในอุทยานแห่งชาติรอยัล น้ำใสสะอาดให้ลงเล่น"},"why":{"en":"A dip in crystal-clear water and a relaxing day in nature","th":"ลงแช่น้ำใสสะอาด และวันผ่อนคลายกับธรรมชาติ"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Wattamolla, Royal National Park, NSW","ok":"2026-11","src":"https://www.ellaslist.com.au/family-holidays/best-day-trips-from-sydney"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/sydney/kids/the-best-kid-friendly-restaurants-in-sydney",
+          "name": {
+            "th": "ไทรบัลโซน (นอร์ทไรด์ อาร์เอสแอล)",
+            "en": "Tribal Zone (North Ryde RSL)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นอร์ทไรด์ อาร์เอสแอล ถนนแม็กดาลา ซิดนีย์",
+            "en": "North Ryde RSL, Magdala Road, Sydney"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีเครื่องเล่นยิม บ่อบอล และเกมตู้",
+            "en": "Indoor play with gym equipment, a ball room and arcade games"
+          },
+          "why": {
+            "th": "สำหรับอายุ 3–17 ปี พ่อแม่มองผ่านกระจกบานใหญ่ได้",
+            "en": "For ages 3 to 17; parents watch through floor-to-ceiling windows"
+          },
+          "q": "North Ryde RSL, Magdala Road, North Ryde, Sydney",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/sydneys-best-indoor-play-centres-for-a-rainy-day/",
+          "name": {
+            "th": "ไวตาแลนด์คิดส์คาเฟ่ (วอร์ริวูด)",
+            "en": "Vitaland Kids Cafe (Warriewood)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วอร์ริวูดสแควร์ ซิดนีย์",
+            "en": "Warriewood Square, Sydney"
+          },
+          "what": {
+            "th": "คาเฟ่เล่นในร่ม มีบ่อบอล ซูเปอร์มาร์เก็ตจิ๋ว และมุมแต่งตัว",
+            "en": "An indoor play café with a ball pit, a mini supermarket and a dress-up corner"
+          },
+          "why": {
+            "th": "สำหรับเด็ก 6 เดือนถึง 10 ขวบ ดีในวันฝนตกหรือหลังเล่นหาด",
+            "en": "For six months to 10 years; good on a rainy day or after the beach"
+          },
+          "q": "Vitaland Kids Cafe, Warriewood Square, Warriewood, Sydney",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/sydneys-best-indoor-play-centres-for-a-rainy-day/",
+          "name": {
+            "th": "ทวิงเคิลคิดส์คาเฟ่ (เบอร์วูด)",
+            "en": "Twinkle Kids Cafe (Burwood)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเรลเวย์พาเหรด เบอร์วูด ซิดนีย์",
+            "en": "Railway Parade, Burwood, Sydney"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสีพาสเทล มีลานเล่นนุ่ม สไลเดอร์จิ๋ว และบ่อบอล",
+            "en": "A pastel indoor play space with soft play, mini slides and a ball pit"
+          },
+          "why": {
+            "th": "ทำมาสำหรับเด็กเล็กและเด็กอนุบาล",
+            "en": "Made especially for toddlers and preschoolers"
+          },
+          "q": "Twinkle Kids Cafe, Railway Parade, Burwood, Sydney",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/sydneys-best-indoor-play-centres-for-a-rainy-day/",
+          "name": {
+            "th": "มินิเวอร์ซัลคิดส์คาเฟ่ (แมร์ริกวิลล์)",
+            "en": "Miniversal Kids Cafe (Marrickville)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเมอร์เรย์ แมร์ริกวิลล์ ซิดนีย์",
+            "en": "Murray Street, Marrickville, Sydney"
+          },
+          "what": {
+            "th": "โลกเล่นในร่มธีมอวกาศ มีสไลเดอร์จรวด",
+            "en": "A space-themed indoor play world with rocket slides"
+          },
+          "why": {
+            "th": "ครอบครัวย่านอินเนอร์เวสต์ชอบมาก",
+            "en": "A favourite of Inner West families for curious children"
+          },
+          "q": "Miniversal Kids Cafe, Murray Street, Marrickville, Sydney",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://newywithkids.com.au/best-day-trips-from-sydney-with-kids/",
+          "name": {
+            "th": "จุดชมวิวเอ็กโคพอยต์ (ทรีซิสเตอร์ส)",
+            "en": "Echo Point Lookout (Three Sisters)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "คาทูมบา บลูเมาเทนส์",
+            "en": "Katoomba, Blue Mountains"
+          },
+          "what": {
+            "th": "จุดชมวิวฟรี มองเห็นหินทรีซิสเตอร์สและหุบเขาด้านล่าง",
+            "en": "The free lookout over the Three Sisters and the valley below"
+          },
+          "why": {
+            "th": "ทางเดินริมหน้าผาไปอินสไปเรชันพอยต์ราบ เข็นรถเข็นได้",
+            "en": "The flat clifftop walk to Inspiration Point takes a pushchair"
+          },
+          "q": "Echo Point Lookout, Katoomba, Blue Mountains",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitnsw.com/articles/six-blue-mountains-family-friendly-activities",
+          "name": {
+            "th": "จุดชมวิวโกเวตส์ลีป",
+            "en": "Govetts Leap Lookout"
+          },
+          "kind": "views",
+          "area": {
+            "th": "แบล็กฮีท บลูเมาเทนส์",
+            "en": "Blackheath, Blue Mountains"
+          },
+          "what": {
+            "th": "จุดชมวิวกว้าง และจุดเริ่มเส้นทางคลิฟฟ์ท็อป",
+            "en": "A lookout with wide views, the start of the Cliff Top walk"
+          },
+          "why": {
+            "th": "วิวกว้างและนกเยอะ",
+            "en": "Big views and plenty of birds"
+          },
+          "tip": {
+            "th": "เส้นทางคลิฟฟ์ท็อปไปกลับ 3 ชั่วโมง",
+            "en": "The Cliff Top walk is a three-hour return trek"
+          },
+          "q": "Govetts Leap Lookout, Blackheath, Blue Mountains",
+          "ok": "2026-11"
+        }
+    ]
+    },
+    {
+      "place": "au-melbourne",
+      "sights": [
+        {
+          "name": { "en": "Melbourne Zoo", "th": "สวนสัตว์เมลเบิร์น" },
+          "kind": "zoo",
+          "area": { "en": "Parkville", "th": "พาร์กวิลล์" },
+          "what": { "en": "Australia's oldest zoo, with gorillas, elephants, a butterfly house and a whole trail of Australian animals", "th": "สวนสัตว์ที่เก่าแก่ที่สุดของออสเตรเลีย มีกอริลลา ช้าง บ้านผีเสื้อ และเส้นทางสัตว์ออสเตรเลีย" },
+          "why": { "en": "Flat shady paths, a playground and the butterfly house where butterflies land on little hands", "th": "ทางเดินเรียบ ร่มรื่น มีสนามเด็กเล่น และบ้านผีเสื้อที่ผีเสื้อมาเกาะมือเด็ก" },
+          "tip": { "en": "Book online before you go, as no tickets are sold at the gate; children 4–15 enter free at weekends and in Victorian school holidays", "th": "จองออนไลน์ก่อนไป หน้าประตูไม่ขายตั๋ว เด็ก 4–15 ปีเข้าฟรีวันเสาร์อาทิตย์และช่วงปิดเทอมของรัฐวิกตอเรีย" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ A$57 adults · A$28.50 children 4–15 on weekdays, free at weekends and in school holidays · under 4 free", "th": "≈ A$57 ผู้ใหญ่ · A$28.50 เด็ก 4–15 ปีวันธรรมดา ฟรีวันหยุดและช่วงปิดเทอม · ต่ำกว่า 4 ปีฟรี" },
+          "book": "req",
+          "q": "Melbourne Zoo, Elliott Avenue, Parkville, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.zoo.org.au/melbourne/melbourne-zoo-prices"
+        },
+        {
+          "name": { "en": "Melbourne Museum", "th": "พิพิธภัณฑ์เมลเบิร์น" },
+          "kind": "museum",
+          "area": { "en": "Carlton Gardens", "th": "คาร์ลตันการ์เดนส์" },
+          "what": { "en": "A big natural history museum with dinosaurs, a living forest gallery and Pauline Gandel Children's Gallery for under-fives", "th": "พิพิธภัณฑ์ใหญ่ มีไดโนเสาร์ ป่าจริงในอาคาร และห้องเด็กพอลลีน แกนเดลสำหรับเด็กต่ำกว่า 5 ปี" },
+          "why": { "en": "Children 16 and under go free, and the children's gallery is made for crawling, climbing and pressing buttons", "th": "เด็กอายุไม่เกิน 16 ปีเข้าฟรี ห้องเด็กทำมาให้คลาน ปีน และกดปุ่มเล่น" },
+          "tip": { "en": "Big touring exhibitions cost extra; the permanent galleries are what small children need", "th": "นิทรรศการใหญ่ที่หมุนเวียนมาเสียเงินเพิ่ม ส่วนห้องถาวรก็พอสำหรับเด็กเล็ก" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ A$15 adults · children 16 and under free", "th": "≈ A$15 ผู้ใหญ่ · เด็กไม่เกิน 16 ปีฟรี" },
+          "book": "rec",
+          "q": "Melbourne Museum, 11 Nicholson Street, Carlton, Melbourne",
+          "ok": "2026-11",
+          "src": "https://tothotornot.com/?p=54719"
+        },
+        {
+          "name": { "en": "SEA LIFE Melbourne Aquarium", "th": "ซีไลฟ์ เมลเบิร์น อควาเรียม" },
+          "kind": "aquarium",
+          "area": { "en": "Southbank, Yarra riverside", "th": "ริมแม่น้ำยาร์รา" },
+          "what": { "en": "An aquarium on the Yarra with a shark tunnel, king and gentoo penguins and a big oceanarium window", "th": "อควาเรียมริมแม่น้ำยาร์รา มีอุโมงค์ฉลาม เพนกวินคิงและเจนทู และหน้าต่างตู้ใหญ่" },
+          "why": { "en": "Indoors and step-free, with low windows for small children; good on a cold or wet day", "th": "อยู่ในร่ม ไม่มีขั้นบันได หน้าต่างอยู่ต่ำให้เด็กเล็กดู เหมาะกับวันหนาวหรือฝนตก" },
+          "tip": { "en": "Book a weekday slot online: the price is lower than at weekends and in school holidays", "th": "จองรอบวันธรรมดาออนไลน์ ถูกกว่าวันหยุดและช่วงปิดเทอม" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ from A$39 adults online on weekdays · children 2–15 from A$25 · under 2 free", "th": "≈ ผู้ใหญ่เริ่ม A$39 (ออนไลน์ วันธรรมดา) · เด็ก 2–15 ปีเริ่ม A$25 · ต่ำกว่า 2 ปีฟรี" },
+          "book": "rec",
+          "q": "SEA LIFE Melbourne Aquarium, King Street, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.visitsealife.com/melbourne/tickets-passes/price-table/"
+        },
+        {
+          "name": { "en": "Scienceworks", "th": "ไซแอนซ์เวิร์กส์" },
+          "kind": "museumkid",
+          "area": { "en": "Spotswood", "th": "สปอตส์วูด" },
+          "what": { "en": "A hands-on science museum in an old pumping station, with Ground Up for under-fives and a planetarium", "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือเล่นในโรงสูบน้ำเก่า มีโซนกราวด์อัปสำหรับเด็กต่ำกว่า 5 ปี และท้องฟ้าจำลอง" },
+          "why": { "en": "Built for children to touch and try; the little ones' zone has water, building blocks and a play construction site", "th": "ทำมาให้เด็กจับและลองเอง โซนเด็กเล็กมีเล่นน้ำ ตัวต่อ และไซต์ก่อสร้างจำลอง" },
+          "tip": { "en": "Planetarium and Lightning Room shows cost extra; book a time when you buy your ticket", "th": "โชว์ท้องฟ้าจำลองและห้องสายฟ้าเสียเงินเพิ่ม จองรอบพร้อมซื้อตั๋ว" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ A$15 adults · children 16 and under free", "th": "≈ A$15 ผู้ใหญ่ · เด็กไม่เกิน 16 ปีฟรี" },
+          "book": "rec",
+          "q": "Scienceworks, 2 Booker Street, Spotswood, Melbourne",
+          "ok": "2026-11",
+          "src": "https://tothotornot.com/scienceworks-spring-school-holidays/"
+        },
+        {
+          "name": { "en": "Ian Potter Foundation Children's Garden", "th": "สวนเด็กเอียน พอตเตอร์" },
+          "kind": "park",
+          "area": { "en": "Royal Botanic Gardens, South Yarra", "th": "สวนพฤกษศาสตร์หลวง เซาท์ยาร์รา" },
+          "what": { "en": "A garden made for children inside the Royal Botanic Gardens: a bamboo forest, a creek, water jets and plants to hide among", "th": "สวนสำหรับเด็กในสวนพฤกษศาสตร์หลวง มีป่าไผ่ ลำธาร น้ำพุพุ่ง และต้นไม้ให้ซ่อนแอบ" },
+          "why": { "en": "Free, fenced and gentle; toddlers splash in the water play and older ones explore the tunnels", "th": "ฟรี มีรั้วรอบ เด็กวัยเตาะแตะเล่นน้ำ เด็กโตสำรวจอุโมงค์ต้นไม้" },
+          "tip": { "en": "It opens at 10am and is closed on Mondays and Tuesdays in school term, and for eight weeks from mid-July", "th": "เปิด 10 โมง ปิดวันจันทร์และอังคารช่วงเปิดเทอม และปิด 8 สัปดาห์ตั้งแต่กลางเดือนกรกฎาคม" },
+          "ages": [2, 2, 2, 0],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Ian Potter Foundation Children's Garden, Royal Botanic Gardens, South Yarra, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.rbg.vic.gov.au/media-releases/winter-school-holidays-2026/"
+        },
+        {
+          "name": { "en": "Queen Victoria Market", "th": "ตลาดควีนวิกตอเรีย" },
+          "kind": "market",
+          "area": { "en": "North Melbourne edge of the CBD", "th": "ขอบเหนือของย่านซีบีดี" },
+          "what": { "en": "The city's big open market of fruit, deli halls, hot jam doughnuts and souvenir stalls", "th": "ตลาดใหญ่กลางเมือง มีผลไม้ โถงอาหารสด โดนัทแยมร้อน และแผงของฝาก" },
+          "why": { "en": "Free to wander, with snacks to try and lots to look at; the deli hall is under a roof on a wet day", "th": "เดินเล่นฟรี มีของกินให้ชิมและของให้ดูเยอะ โถงเดลีมีหลังคาเวลาฝนตก" },
+          "tip": { "en": "Closed on Mondays and Wednesdays; go in the morning before the stalls pack up", "th": "ปิดวันจันทร์และวันพุธ ไปช่วงเช้าก่อนแผงเก็บร้าน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Queen Victoria Market, Queen Street, Melbourne",
+          "ok": "2026-11",
+          "src": "https://whatson.melbourne.vic.gov.au/things-to-do/queen-victoria-market"
+        },
+        {
+          "name": { "en": "Luna Park Melbourne", "th": "ลูนาพาร์ก เมลเบิร์น" },
+          "kind": "themepark",
+          "area": { "en": "St Kilda", "th": "เซนต์คิลดา" },
+          "what": { "en": "A 1912 seaside fun park behind a giant smiling face, with the old Scenic Railway, a carousel and small children's rides", "th": "สวนสนุกริมทะเลตั้งแต่ปี 1912 ทางเข้าเป็นหน้ายิ้มยักษ์ มีรถไฟเก่าซีนิกเรลเวย์ ม้าหมุน และเครื่องเล่นเด็ก" },
+          "why": { "en": "Small and easy to see in a few hours, with a row of rides made for little ones", "th": "สวนเล็ก เที่ยวได้ในไม่กี่ชั่วโมง มีเครื่องเล่นสำหรับเด็กเล็กหลายอย่าง" },
+          "tip": { "en": "It opens mostly at weekends and in school holidays; check the day's hours before you go", "th": "เปิดส่วนใหญ่วันเสาร์อาทิตย์และช่วงปิดเทอม เช็กเวลาเปิดของวันนั้นก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ unlimited rides A$57 ages 13+ · A$47 children 4–12 · family A$175", "th": "≈ บัตรเล่นไม่จำกัด A$57 อายุ 13 ปีขึ้นไป · A$47 เด็ก 4–12 ปี · ครอบครัว A$175" },
+          "book": "rec",
+          "q": "Luna Park, 18 Lower Esplanade, St Kilda, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.ellaslist.com.au/melbourne/venues/luna-park-melbourne"
+        },
+        {
+          "name": { "en": "Melbourne Skydeck", "th": "เมลเบิร์น สกายเด็ก" },
+          "kind": "views",
+          "area": { "en": "Southbank", "th": "เซาท์แบงก์" },
+          "what": { "en": "An indoor viewing deck on the 88th floor of Eureka Tower, with the glass Edge cube as an extra", "th": "จุดชมวิวในร่มชั้น 88 ของตึกยูรีกา มีกล่องกระจกดิเอดจ์เป็นตัวเลือกเสริม" },
+          "why": { "en": "Indoors, quick and step-free; children love spotting the zoo, the sea and the trams from the top", "th": "อยู่ในร่ม เที่ยวเร็ว ไม่มีขั้นบันได เด็กชอบหาสวนสัตว์ ทะเล และรถรางจากข้างบน" },
+          "tip": { "en": "Prices change with the day: book online and look for the family bundle", "th": "ราคาเปลี่ยนตามวัน จองออนไลน์และดูแพ็กเกจครอบครัว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ A$33–43 adults · A$20–29 children 4–16 · 3 and under free", "th": "≈ A$33–43 ผู้ใหญ่ · A$20–29 เด็ก 4–16 ปี · 3 ปีลงไปฟรี" },
+          "book": "rec",
+          "q": "Melbourne Skydeck, Eureka Tower, 7 Riverside Quay, Southbank, Melbourne",
+          "ok": "2026-11",
+          "src": "https://thebettervacation.com/melbourne/eureka-skydeck/"
+        },
+        {
+          "name": { "en": "Puffing Billy Railway", "th": "รถไฟไอน้ำพัฟฟิงบิลลี" },
+          "kind": "ride",
+          "area": { "en": "Belgrave, Dandenong Ranges", "th": "เบลเกรฟ เทือกเขาแดนดีนอง" },
+          "what": { "en": "A century-old steam train through the tall forests of the Dandenong Ranges, about an hour by train from the city", "th": "รถไฟไอน้ำอายุร้อยปี วิ่งผ่านป่าสูงของเทือกเขาแดนดีนอง นั่งรถไฟจากเมืองราวหนึ่งชั่วโมง" },
+          "why": { "en": "The whistle, the steam and the wooden trestle bridge thrill small children; Lakeside has a lake and a playground", "th": "เสียงหวูด ไอน้ำ และสะพานไม้ทำให้เด็กเล็กตื่นเต้น ที่เลกไซด์มีทะเลสาบและสนามเด็กเล่น" },
+          "tip": { "en": "Book a seat ahead for weekends and holidays; bring a warm layer, the carriages are open-sided", "th": "จองที่นั่งล่วงหน้าสำหรับวันหยุด เตรียมเสื้อกันหนาว ตู้รถไฟเปิดด้านข้าง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ A$61–64 adults return to Lakeside · ≈ A$33 children 4–15 · ≈ A$24 toddlers 1–3", "th": "≈ A$61–64 ผู้ใหญ่ ไปกลับเลกไซด์ · ≈ A$33 เด็ก 4–15 ปี · ≈ A$24 เด็กเล็ก 1–3 ปี" },
+          "book": "rec",
+          "q": "Puffing Billy Railway, Old Monbulk Road, Belgrave",
+          "ok": "2026-11",
+          "src": "https://travel.raa.com.au/holiday/puffing-billy-belgrave-to-lakeside-return-tickets-bad0d0a2af8648b7b206ba7d9f2c213c"
+        },
+        {
+          "name": { "en": "ACMI", "th": "เอซีเอ็มไอ" },
+          "kind": "museumkid",
+          "area": { "en": "Federation Square", "th": "เฟเดอเรชันสแควร์" },
+          "what": { "en": "The museum of film, TV and video games: the free Story of the Moving Image has old cameras, cartoons and games to play", "th": "พิพิธภัณฑ์ภาพยนตร์ ทีวี และวิดีโอเกม นิทรรศการฟรีมีกล้องเก่า การ์ตูน และเกมให้เล่น" },
+          "why": { "en": "Free, indoors and full of screens to press and games to try; children collect things with a free Lens disc", "th": "ฟรี อยู่ในร่ม มีจอให้กดและเกมให้ลอง เด็กเก็บของที่ชอบด้วยแผ่นเลนส์ที่แจกฟรี" },
+          "tip": { "en": "Open 10am–5pm; the bigger exhibitions are ticketed, the main one is free", "th": "เปิด 10:00–17:00 นิทรรศการใหญ่บางงานเสียเงิน นิทรรศการหลักฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "ACMI, Federation Square, Flinders Street, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.acmi.net.au/whats-on/story-of-the-moving-image-exhibition/"
+        },
+        {
+          "name": { "en": "South Melbourne Market", "th": "ตลาดเซาท์เมลเบิร์น" },
+          "kind": "market",
+          "area": { "en": "South Melbourne", "th": "เซาท์เมลเบิร์น" },
+          "what": { "en": "A covered neighbourhood market of fresh food, dim sims, dumplings and little cafés", "th": "ตลาดในร่มของชุมชน มีของสด ดิมซิม เกี๊ยว และคาเฟ่เล็กๆ" },
+          "why": { "en": "Under one roof and easy with a pram; good for a cheap family lunch", "th": "อยู่ใต้หลังคาเดียวกัน เข็นรถเข็นเด็กง่าย เหมาะกินมื้อกลางวันราคาไม่แพง" },
+          "tip": { "en": "Open Wednesday, Friday, Saturday and Sunday from 8am; the famous dim sims sell out by lunch", "th": "เปิดวันพุธ ศุกร์ เสาร์ และอาทิตย์ ตั้งแต่ 8 โมง ดิมซิมชื่อดังหมดก่อนเที่ยง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "South Melbourne Market, 322 Coventry Street, South Melbourne",
+          "ok": "2026-11",
+          "src": "https://southmelbournemarket.com.au/visit/opening-hours"
+        },
+        {
+          "name": { "en": "NGV International", "th": "หอศิลป์เอ็นจีวี อินเทอร์เนชันแนล" },
+          "kind": "museum",
+          "area": { "en": "Southbank", "th": "เซาท์แบงก์" },
+          "what": { "en": "Victoria's big art gallery, with a free children's gallery on the ground floor and a water wall at the door", "th": "หอศิลป์ใหญ่ของรัฐวิกตอเรีย มีห้องศิลปะเด็กฟรีที่ชั้นล่าง และกำแพงน้ำหน้าประตู" },
+          "why": { "en": "The children's gallery changes each season and is made for little hands; running fingers down the water wall is a must", "th": "ห้องเด็กเปลี่ยนธีมทุกฤดู ทำมาให้มือเล็กๆ ได้เล่น และต้องลองเอานิ้วลากกำแพงน้ำ" },
+          "tip": { "en": "The children's gallery needs no booking; from 13 December 2026 it shows Squish, Twist, Fizz", "th": "ห้องเด็กไม่ต้องจอง ตั้งแต่ 13 ธันวาคม 2026 จัดนิทรรศการสควิช ทวิสต์ ฟิซ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free (some exhibitions are ticketed)", "th": "ฟรี (บางนิทรรศการเสียเงิน)" },
+          "book": "none",
+          "q": "NGV International, 180 St Kilda Road, Southbank, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.ngv.vic.gov.au/exhibition/squish-twist-fizz/"
+        },
+        {
+          "name": { "en": "St Kilda Pier penguins", "th": "เพนกวินท่าเรือเซนต์คิลดา" },
+          "kind": "nature",
+          "area": { "en": "St Kilda", "th": "เซนต์คิลดา" },
+          "what": { "en": "Little penguins come home to the breakwater at dusk, watched from a new raised boardwalk at the end of the pier", "th": "เพนกวินตัวเล็กกลับรังที่แนวหินตอนพลบค่ำ ดูได้จากทางเดินยกระดับใหม่ปลายท่าเรือ" },
+          "why": { "en": "Free and close to the city; the walk out along the pier is flat and the penguins are tiny", "th": "ฟรีและใกล้เมือง ทางเดินบนท่าเรือราบ เพนกวินตัวจิ๋วน่ารัก" },
+          "tip": { "en": "Sessions are after sunset and must be booked in advance; bring warm clothes, it is windy", "th": "รอบชมเป็นหลังพระอาทิตย์ตก ต้องจองล่วงหน้า เตรียมเสื้อกันหนาว ลมแรง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free (booking needed)", "th": "ฟรี (ต้องจอง)" },
+          "book": "req",
+          "q": "St Kilda Pier, Pier Road, St Kilda, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.premier.vic.gov.au/st-kilda-pier-welcomes-more-one-million-visitors"
+        },
+        {
+          "name": { "en": "Nature Play at Royal Park", "th": "สนามเด็กเล่นเนเชอร์เพลย์ รอยัลพาร์ก" },
+          "kind": "play",
+          "area": { "en": "Parkville", "th": "พาร์กวิลล์" },
+          "what": { "en": "An award-winning playground of timber climbing frames, slides of every size and two water play areas", "th": "สนามเด็กเล่นได้รางวัล มีโครงปีนไม้ สไลเดอร์หลายขนาด และลานเล่นน้ำสองจุด" },
+          "why": { "en": "Free, big and shady, with barbecues and picnic tables; a good stop on the way to the zoo next door", "th": "ฟรี กว้าง ร่มรื่น มีเตาปิ้งย่างและโต๊ะปิกนิก แวะได้ระหว่างทางไปสวนสัตว์ที่อยู่ติดกัน" },
+          "tip": { "en": "Bring a change of clothes for the water play; Royal Park station is a short walk", "th": "เตรียมเสื้อผ้าเปลี่ยนสำหรับเล่นน้ำ เดินจากสถานีรอยัลพาร์กไม่ไกล" },
+          "ages": [2, 2, 2, 0],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Royal Park Nature Play, Gatehouse Street, Parkville, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.ellaslist.com.au/articles/best-playgrounds-for-kids-in-melbourne"
+        },
+        {
+          "name": { "en": "Collingwood Children's Farm", "th": "ฟาร์มเด็กคอลลิงวูด" },
+          "kind": "farm",
+          "area": { "en": "Abbotsford, Yarra riverside", "th": "แอบบอตส์ฟอร์ด ริมแม่น้ำยาร์รา" },
+          "what": { "en": "A working farm on the river bend with cows, pigs, goats, guinea pigs and a café in the old farmhouse", "th": "ฟาร์มจริงริมโค้งแม่น้ำ มีวัว หมู แพะ หนูตะเภา และคาเฟ่ในบ้านไร่เก่า" },
+          "why": { "en": "Children walk among the animals and can help at feeding times; a calm country day inside the city", "th": "เด็กเดินใกล้ชิดสัตว์และช่วยให้อาหารตามรอบเวลาได้ เหมือนไปชนบทในเมือง" },
+          "tip": { "en": "Tickets are bought on arrival; wear closed shoes, the paths are muddy after rain", "th": "ซื้อตั๋วหน้างาน ใส่รองเท้าหุ้มส้น ทางเดินเลอะโคลนหลังฝนตก" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ A$20 adults · A$10 children 2–17 · under 2 free", "th": "≈ A$20 ผู้ใหญ่ · A$10 เด็ก 2–17 ปี · ต่ำกว่า 2 ปีฟรี" },
+          "book": "none",
+          "q": "Collingwood Children's Farm, 18 St Heliers Street, Abbotsford, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.farm.org.au/tickets-pricing-guided-tours"
+        },
+        {
+          "name": { "en": "Werribee Open Range Zoo", "th": "เวอร์ริบี โอเพนเรนจ์ ซู" },
+          "kind": "zoo",
+          "area": { "en": "Werribee", "th": "เวอร์ริบี" },
+          "what": { "en": "A zoo of African and Australian animals west of Melbourne, seen on foot and from a free safari bus.", "th": "สวนสัตว์แอฟริกาและออสเตรเลียทางตะวันตกของเมลเบิร์น ดูได้ทั้งเดินเองและนั่งรถซาฟารีฟรี" },
+          "why": { "en": "The free safari bus saves little legs; children aged 0–3 are free.", "th": "รถซาฟารีฟรีช่วยให้เด็กเล็กไม่ต้องเดินมาก เด็ก 0–3 ขวบเข้าฟรี" },
+          "tip": { "en": "Children 4–15 are free on weekends and holidays.", "th": "เด็ก 4–15 ปีเข้าฟรีวันเสาร์อาทิตย์และวันหยุด" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ AUD 58 adults · AUD 29 child 4–15 on weekdays · 0–3 free", "th": "≈ AUD 58 ผู้ใหญ่ · AUD 29 เด็ก 4–15 ปีวันธรรมดา · 0–3 ขวบฟรี" },
+          "book": "rec",
+          "q": "Werribee Open Range Zoo, K Road, Werribee, Victoria",
+          "ok": "2026-11",
+          "src": "https://www.zoo.org.au/werribee/werribee-zoo-prices/"
+        },
+        {
+          "name": { "en": "Phillip Island Penguin Parade", "th": "ฟิลลิปไอส์แลนด์ เพนกวินพาเหรด" },
+          "kind": "nature",
+          "area": { "en": "Phillip Island", "th": "ฟิลลิปไอส์แลนด์" },
+          "what": { "en": "Little penguins come ashore at dusk to their burrows, watched from viewing platforms and boardwalks.", "th": "เพนกวินน้อยขึ้นฝั่งกลับโพรงตอนพลบค่ำ ดูได้จากแท่นชมวิวและทางเดินไม้" },
+          "why": { "en": "A memorable evening for children; children under 16 must be with an adult.", "th": "เป็นค่ำคืนที่เด็กๆ จำได้ เด็กต่ำกว่า 16 ปีต้องไปกับผู้ใหญ่" },
+          "tip": { "en": "Booking ahead is essential; works are under way on burrows and boardwalks, so check the page.", "th": "ต้องจองล่วงหน้า และกำลังปรับปรุงโพรงกับทางเดิน เช็กหน้าเว็บก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ AUD 34 adults · AUD 17 child 4–15 · family AUD 85", "th": "≈ AUD 34 ผู้ใหญ่ · AUD 17 เด็ก 4–15 ปี · ตั๋วครอบครัว AUD 85" },
+          "book": "req",
+          "q": "Penguin Parade, Phillip Island Nature Parks, Summerland Beach, Victoria",
+          "ok": "2026-11",
+          "src": "https://www.penguins.org.au/attractions/penguin-parade/"
+        },
+        {
+          "name": { "en": "Koala Conservation Reserve, Phillip Island", "th": "เขตอนุรักษ์โคอาลา ฟิลลิปไอส์แลนด์" },
+          "kind": "nature",
+          "area": { "en": "Phillip Island", "th": "ฟิลลิปไอส์แลนด์" },
+          "what": { "en": "Two treetop boardwalks of 800 m and 600 m for spotting wild koalas.", "th": "ทางเดินไม้ยกสูง 2 สายยาว 800 และ 600 เมตร สำหรับดูโคอาลาป่า" },
+          "why": { "en": "Short loops of about 20 minutes each suit small children.", "th": "แต่ละรอบใช้เวลาราว 20 นาที เหมาะกับเด็กเล็ก" },
+          "tip": { "en": "A discounted 3 Parks Pass also covers the Penguin Parade and Churchill Island.", "th": "มีตั๋ว 3 Parks Pass ราคาลดที่รวมเพนกวินพาเหรดและเกาะเชอร์ชิลล์ด้วย" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ AUD 17.50 adults", "th": "≈ AUD 17.50 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Koala Conservation Reserve, Phillip Island Road, Phillip Island, Victoria",
+          "ok": "2026-11",
+          "src": "https://gippslandtours.com/guides/penguin-parade-guide/"
+        },
+        {
+          "name": { "en": "Churchill Island Heritage Farm", "th": "เชอร์ชิลล์ไอส์แลนด์ เฮอริเทจฟาร์ม" },
+          "kind": "farm",
+          "area": { "en": "Phillip Island", "th": "ฟิลลิปไอส์แลนด์" },
+          "what": { "en": "A heritage farm on a small island with daily cow milking and sheep shearing.", "th": "ฟาร์มมรดกบนเกาะเล็ก มีรีดนมวัวและตัดขนแกะทุกวัน" },
+          "why": { "en": "Children can watch the farm jobs and walk the open coastal grounds.", "th": "เด็กๆ ดูงานฟาร์มได้ และเดินเล่นในพื้นที่ชายฝั่งโล่งๆ" },
+          "tip": { "en": "Milking is at about 2.10 pm and shearing at 2.30 pm.", "th": "รีดนมช่วงประมาณบ่ายสองโมงสิบ ตัดขนแกะช่วงบ่ายสองโมงครึ่ง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ AUD 17.50 adults", "th": "≈ AUD 17.50 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Churchill Island Heritage Farm, Phillip Island, Victoria",
+          "ok": "2026-11",
+          "src": "https://gippslandtours.com/guides/penguin-parade-guide/"
+        },
+        {
+          "name": { "en": "Prahran Market", "th": "ตลาดพราห์ราน" },
+          "kind": "market",
+          "area": { "en": "South Yarra", "th": "เซาท์ยาร์รา" },
+          "what": { "en": "A covered fresh-food market in Prahran with stalls and traders.", "th": "ตลาดอาหารสดมีหลังคาที่พราห์ราน มีแผงและพ่อค้าแม่ค้าหลายเจ้า" },
+          "why": { "en": "Under cover, so it works on a wet morning; a good place to pick up fruit and pastries.", "th": "อยู่ในร่ม เหมาะวันฝนตก ซื้อผลไม้และขนมอบได้ง่าย" },
+          "tip": { "en": "Closed on some weekdays; check the market's own hours page.", "th": "ปิดบางวันในสัปดาห์ เช็กเวลาเปิดที่หน้าเว็บของตลาด" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Prahran Market, Commercial Road, South Yarra, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.prahranmarket.com.au/"
+        },
+        {
+          "name": { "en": "MoPA: Museum of Play and Art", "th": "โมปา พิพิธภัณฑ์การเล่นและศิลปะ" },
+          "kind": "museumkid",
+          "area": { "en": "Sandringham", "th": "แซนดริงแฮม" },
+          "what": { "en": "A hands-on kids' museum in a 2,500 m² building with a large soft play area, a six-metre miniature city, craft rooms and an immersive cinema", "th": "พิพิธภัณฑ์ให้เด็กลงมือเล่นในอาคาร 2,500 ตร.ม. มีโซฟต์เพลย์ขนาดใหญ่ เมืองจำลองยาว 6 เมตร ห้องงานฝีมือ และโรงหนังแบบเต็มห้อง" },
+          "why": { "en": "Designed for ages one to seven, and the soft play area is one of the largest of its kind", "th": "ออกแบบมาสำหรับเด็ก 1–7 ขวบ และโซฟต์เพลย์เป็นหนึ่งในโซนที่ใหญ่ที่สุดในแนวเดียวกัน" },
+          "tip": { "en": "Food from outside is not allowed; the on-site café is there instead", "th": "ห้ามนำอาหารจากข้างนอกเข้า มีคาเฟ่ในพิพิธภัณฑ์ไว้บริการ" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "MoPA Museum of Play and Art, Sandringham, Melbourne",
+          "ok": "2026-11",
+          "src": "https://concreteplayground.com/melbourne/things-to-do/mopa-museum-of-play-and-art"
+        },
+        {
+          "name": { "en": "LEGOLAND® Discovery Centre Melbourne", "th": "เลโก้แลนด์ ดิสคัฟเวอรี เซ็นเตอร์ เมลเบิร์น" },
+          "kind": "play",
+          "area": { "en": "1341 Dandenong Road", "th": "1341 ถนนแดนเดนอง" },
+          "what": { "en": "An indoor LEGO playground with LEGO-themed attractions, rides and play areas for young builders", "th": "สนามเล่นเลโก้ในร่ม มีอีเวนต์ เครื่องเล่น และโซนเล่นสำหรับนักก่อสร้างตัวน้อย" },
+          "why": { "en": "Built for families with children aged 3 to 10, and indoors, so it works in any weather", "th": "สร้างมาสำหรับครอบครัวที่มีเด็ก 3–10 ขวบ อยู่ในร่ม ไปได้ทุกสภาพอากาศ" },
+          "tip": { "en": "Entry is in timed slots; book ahead, as latecomers may be refused", "th": "เข้าเป็นรอบเวลา ควรจองล่วงหน้า เพราะมาสายอาจไม่ได้เข้า" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "LEGOLAND Discovery Centre Melbourne, 1341 Dandenong Rd, Melbourne",
+          "ok": "2026-11",
+          "src": "https://www.legolanddiscoverycentre.com/melbourne/"
+        },
+      {"name":{"en":"Dreamskape Docklands","th":"ดรีมสเกป ด็อกแลนด์ส"},"kind":"play","area":{"en":"37 Star Crescent, Docklands","th":"37 สตาร์ เครสเซนต์ ด็อกแลนด์ส"},"what":{"en":"An augmented-reality children's entertainment centre with over 100 games and more than 50 immersive experiences, with no VR headsets.","th":"ศูนย์บันเทิงเด็กแบบออกเมนต์เรียลิตี้ มีเกมกว่า 100 เกมและประสบการณ์ดื่มด่ำกว่า 50 อย่าง ไม่ต้องใส่หมวกวีอาร์"},"why":{"en":"Spread across 770 square metres, with over 100 games and more than 50 fully immersive experiences, all visible without headsets.","th":"กว้าง 770 ตารางเมตร มีเกมกว่า 100 เกมและประสบการณ์ดื่มด่ำกว่า 50 อย่าง ทั้งหมดดูได้โดยไม่ต้องใส่หมวก"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Dreamskape Docklands, 37 Star Crescent, Docklands","ok":"2026-11","src":"https://tothotornot.com/dreamskape-docklands/"},
+      {"name":{"en":"Little Builders","th":"ลิตเติ้ล บิลเดอร์ส"},"kind":"play","area":{"en":"The District Docklands, Docklands","th":"เดอะดิสตริกต์ ด็อกแลนด์ส"},"what":{"en":"An indoor sandbox with 50 square metres of clean safe sand, ride-on diggers, buckets, shovels and mould kits.","th":"กระบะทรายในร่มขนาด 50 ตารางเมตร ทรายสะอาดและปลอดภัย มีรถขุดให้ขี่ ถัง พลั่ว และชุดแม่พิมพ์"},"why":{"en":"The page says it is best for ages 2 to 8 and has diggers and sand to play in.","th":"หน้าเว็บบอกว่าเหมาะที่สุดกับเด็กอายุ 2–8 ปี มีรถขุดและทรายให้เล่น"},"ages":[1,2,2,0],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Little Builders, The District Docklands, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
+      {"name":{"en":"ArtVo Melbourne","th":"อาร์ตโว เมลเบิร์น"},"kind":"museum","area":{"en":"The District Docklands, Docklands","th":"เดอะดิสตริกต์ ด็อกแลนด์ส"},"what":{"en":"An immersive 3D trick-art photography gallery with nine themed zones of hand-painted murals.","th":"แกลเลอรีถ่ายภาพศิลปะลวงตาแบบสามมิติ มีเก้าโซนของจิตรกรรมฝาผนังที่วาดด้วยมือ"},"why":{"en":"The page says kids race between the walls making silly poses and taking photos of each other.","th":"หน้าเว็บบอกว่าเด็กวิ่งไปมาระหว่างผนังทำท่าขำๆ และถ่ายรูปให้กันและกัน"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"ArtVo Melbourne, The District Docklands, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
+      {"name":{"en":"Victoria Green Playground","th":"สนามเด็กเล่นวิกตอเรียกรีน"},"kind":"play","area":{"en":"Import Lane, Docklands","th":"อิมพอร์ตเลน ด็อกแลนด์ส"},"what":{"en":"A small local playground with an unusual long sandpit and play equipment including a digger.","th":"สนามเด็กเล่นท้องถิ่นขนาดเล็ก มีกระบะทรายยาวผิดปกติ และอุปกรณ์เล่นรวมถึงรถขุด"},"why":{"en":"The page says it is best for younger children.","th":"หน้าเว็บบอกว่าเหมาะกับเด็กเล็ก"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Victoria Green Playground, Import Lane, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
+      {"name":{"en":"Buluk Park playground","th":"สนามเด็กเล่นบูลุกพาร์ก"},"kind":"play","area":{"en":"Victoria Harbour, Docklands","th":"วิกตอเรียฮาร์เบอร์ ด็อกแลนด์ส"},"what":{"en":"A waterfront playground with two primary-colour climbing structures, hidey holes, sensory play and a small water play area.","th":"สนามเด็กเล่นริมน้ำมีโครงปีนสองสีหลัก ที่ซ่อนตัว การเล่นกระตุ้นประสาทสัมผัส และพื้นที่เล่นน้ำเล็กๆ"},"why":{"en":"The page says the playground is a reason to visit the library even if the children are not readers.","th":"หน้าเว็บบอกว่าสนามนี้เป็นเหตุผลให้มาห้องสมุด แม้เด็กจะยังอ่านหนังสือไม่ได้"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Buluk Park, Victoria Harbour, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
+      {"name":{"en":"Ron Barassi Snr Park","th":"รอน บาราสซี ซีเนียร์ พาร์ก"},"kind":"park","area":{"en":"Docklands waterfront","th":"ริมน้ำด็อกแลนด์ส"},"what":{"en":"A waterfront park with a dramatically high climbing fort, two massive slides, a large sandpit with water channels and a sit-on digger, and a water play area with pumps.","th":"สวนริมน้ำมีป้อมปีนสูงมาก สไลด์ยักษ์สองอัน บ่อทรายใหญ่ที่มีร่องน้ำ รถขุดแบบนั่งขี่ และพื้นที่เล่นน้ำที่มีปั๊ม"},"why":{"en":"The page says the sandpit has views of Docklands skyscrapers, and there is a sports field and a walking circuit nearby.","th":"หน้าเว็บบอกว่าบ่อทรายมองเห็นตึกสูงของด็อกแลนด์ส และมีสนามกีฬากับทางเดินรอบๆ"},"ages":[2,2,2,1],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ron Barassi Snr Park, Docklands waterfront, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
+      {"name":{"en":"Wharfs Landing Playground","th":"สนามเด็กเล่นวอร์ฟส์แลนดิง"},"kind":"play","area":{"en":"End of Docklands Drive, under the Bolte Bridge","th":"ปลายถนนด็อกแลนด์ส ใต้สะพานโบลต์"},"what":{"en":"Docklands' newest playground, with a challenging rocket ship slide.","th":"สนามเด็กเล่นที่ใหม่ที่สุดของด็อกแลนด์ส มีสไลด์รูปจรวดที่ท้าทาย"},"why":{"en":"The page says it is good for older kids and has a distinctive location.","th":"หน้าเว็บบอกว่าเหมาะกับเด็กโต และตั้งอยู่ในที่ที่จำได้ง่าย"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Wharfs Landing Playground, Docklands Drive, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
+      {"name":{"en":"Harmony Garden / Point Park","th":"ฮาร์โมนี การ์เดน / พอยต์พาร์ก"},"kind":"nature","area":{"en":"Yarra's Edge, Docklands","th":"ยาร์ราส์ เอดจ์ ด็อกแลนด์ส"},"what":{"en":"A nature play and art space on the south-facing banks of the Yarra with water play, musical instruments and native plants.","th":"พื้นที่เล่นธรรมชาติและศิลปะบนฝั่งใต้ที่รับแดดของแม่น้ำยาร์รา มีเล่นน้ำ เครื่องดนตรี และพืชพื้นเมือง"},"why":{"en":"The page says it has water play, musical instruments and river views.","th":"หน้าเว็บบอกว่ามีเล่นน้ำ เครื่องดนตรี และวิวแม่น้ำ"},"ages":[2,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Harmony Garden Point Park, Yarra's Edge, Docklands","ok":"2026-11","src":"https://tothotornot.com/docklands-with-kids/"},
+      {"name":{"en":"Jumpside","th":"จัมพ์ไซด์"},"kind":"play","area":{"en":"1 Mephan Street, Footscray","th":"1 มีแฟน สตรีต ฟุตสเครย์"},"what":{"en":"An indoor trampoline park and ninja park in Footscray with a toddler soft play area on weekdays.","th":"สวนแทรมโพลีนและสวนนินจาในร่มที่ฟุตสเครย์ มีโซนนุ่มสำหรับเด็กวัยเตาะแตะในวันธรรมดา"},"why":{"en":"The page says babies and toddlers have their own soft play every weekday, and older kids can try the trampolines and the ninja course.","th":"หน้าเว็บบอกว่าทารกและเด็กวัยเตาะแตะมีโซนนุ่มของตัวเองทุกวันธรรมดา ส่วนเด็กโตลองแทรมโพลีนและคอร์สนินจาได้"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jumpside, 1 Mephan Street, Footscray","ok":"2026-11","src":"https://tothotornot.com/indoor-play-centres-melbourne/"},
+      {"name":{"en":"Bounce (formerly Latitude)","th":"บาวน์ซ์ (เดิมชื่อลาติจูด)"},"kind":"play","area":{"en":"590 Waterdale Road, Heidelberg West","th":"590 วอเตอร์เดล โรด ไฮเดลเบิร์กเวสต์"},"what":{"en":"A large indoor play centre with a trampoline park, climbing park and kids' play centre.","th":"ศูนย์เล่นในร่มขนาดใหญ่ มีสวนแทรมโพลีน สวนปีนเขา และศูนย์เล่นสำหรับเด็ก"},"why":{"en":"The page says it has a toddler play centre with an under-5s play area.","th":"หน้าเว็บบอกว่ามีศูนย์เล่นวัยเตาะแตะที่มีโซนสำหรับเด็กต่ำกว่า 5 ขวบ"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Bounce, 590 Waterdale Road, Heidelberg West","ok":"2026-11","src":"https://tothotornot.com/indoor-play-centres-melbourne/"},
+      {"name":{"en":"Imaginationation at Chadstone","th":"อิมเมจิเนชันเนชัน ที่แชดสโตน"},"kind":"play","area":{"en":"Chadstone Shopping Centre, 1341 Dandenong Road","th":"ห้างแชดสโตน 1341 แดนเดนอง โรด"},"what":{"en":"An indoor play centre inside Chadstone Shopping Centre, with play zones, party rooms and a cafe with baby and toddler food.","th":"ศูนย์เล่นในร่มในห้างแชดสโตน มีโซนเล่น ห้องปาร์ตี้ และคาเฟ่ที่มีอาหารสำหรับทารกและเด็กวัยเตาะแตะ"},"why":{"en":"The page says the cafe serves baby and toddler food and the party rooms are bright and colourful.","th":"หน้าเว็บบอกว่าคาเฟ่มีอาหารสำหรับทารกและเด็กวัยเตาะแตะ และห้องปาร์ตี้สว่างสดใส"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Imaginationation, 1341 Dandenong Road, Chadstone","ok":"2026-11","src":"https://tothotornot.com/imaginationation-chadstone-melbourne/"},
+      {"name":{"en":"Landing Play Centre","th":"แลนดิ้ง เพลย์ เซนเตอร์"},"kind":"play","area":{"en":"1 Gilbert Drive, Altona North","th":"1 กิลเบิร์ต ไดรฟ์ อัลโทนา นอร์ธ"},"what":{"en":"A new indoor play centre in Altona North with climbing structures, slides and a toddler area.","th":"ศูนย์เล่นในร่มใหม่ที่อัลโทนา นอร์ธ มีโครงปีน สไลด์ และโซนเด็กเตาะแตะ"},"why":{"en":"The page says the layout works well if you are visiting with mixed ages.","th":"หน้าเว็บบอกว่าผังดีสำหรับการมาพร้อมเด็กหลายวัย"},"tip":{"en":"Every adult entering the play area must wear socks.","th":"ผู้ใหญ่ทุกคนที่เข้าพื้นที่เล่นต้องใส่ถุงเท้า"},"ages":[2,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Landing Play Centre, 1 Gilbert Drive, Altona North","ok":"2026-11","src":"https://tothotornot.com/landing-altona-north/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/melbourne/kids/school-holidays-in-melbourne",
+          "name": {
+            "th": "ซูเปอร์ปาร์ก ไฮพอยต์",
+            "en": "SuperPark Highpoint"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างไฮพอยต์ มาริเบอร์นอง เมลเบิร์น",
+            "en": "Highpoint Shopping Centre, Maribyrnong, Melbourne"
+          },
+          "what": {
+            "th": "ซูเปอร์ปาร์กแห่งแรกของออสเตรเลีย มีลู่รถถีบ เส้นทางนินจา เกมแทรมโพลีน และโบว์ลิ่ง",
+            "en": "Australia's first SuperPark: a pedal car track, a ninja course, a trampoline game and ten-pin bowling"
+          },
+          "why": {
+            "th": "มีให้วิ่ง ปีน และกระโดดเยอะในร่ม",
+            "en": "Lots to run, climb and jump on indoors"
+          },
+          "q": "SuperPark Highpoint, Rosamond Road, Maribyrnong, Melbourne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/melbourne/kids/school-holidays-in-melbourne",
+          "name": {
+            "th": "เฮาส์ดาวน์อันเดอร์ (บ้านกลับหัว)",
+            "en": "House Down Under"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนวอเตอร์ฟรอนต์ ด็อกแลนด์ส เมลเบิร์น",
+            "en": "Waterfront Way, Docklands, Melbourne"
+          },
+          "what": {
+            "th": "บ้านกลับหัวที่ด็อกแลนด์ส",
+            "en": "An upside-down house in Docklands"
+          },
+          "why": {
+            "th": "ห้องกลับหัวให้ถ่ายรูปตลก ๆ",
+            "en": "Topsy-turvy rooms for funny photos"
+          },
+          "q": "House Down Under, Waterfront Way, Docklands, Melbourne",
+          "ok": "2026-11"
+        }
+    ]
+    },
+    {
+      "place": "au-goldcoast",
+      "sights": [
+        {
+          "name": { "en": "Dreamworld", "th": "ดรีมเวิลด์" },
+          "kind": "themepark",
+          "area": { "en": "Coomera", "th": "คูมีรา" },
+          "what": { "en": "The Gold Coast's biggest theme park, with thrill rides, a children's land of gentle rides and Australian animals in Dreamworld Corroboree", "th": "สวนสนุกใหญ่ที่สุดของโกลด์โคสต์ มีเครื่องเล่นหวาดเสียว โซนเด็กเครื่องเล่นเบาๆ และสัตว์ออสเตรเลีย" },
+          "why": { "en": "A whole land of small rides for little ones plus koalas and kangaroos to meet", "th": "มีโซนเครื่องเล่นสำหรับเด็กเล็กทั้งโซน และได้เจอโคอาลากับจิงโจ้" },
+          "tip": { "en": "Buy a dated ticket online; children under 3 enter free but may be asked for ID", "th": "ซื้อตั๋วระบุวันออนไลน์ เด็กต่ำกว่า 3 ปีเข้าฟรีแต่อาจถูกขอดูบัตร" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ from A$99 adults online · children 3–13 from A$89 · under 3 free", "th": "≈ ผู้ใหญ่เริ่ม A$99 (ออนไลน์) · เด็ก 3–13 ปีเริ่ม A$89 · ต่ำกว่า 3 ปีฟรี" },
+          "book": "rec",
+          "q": "Dreamworld, Dreamworld Parkway, Coomera, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://www.endlesstravelplans.com/destinations/comparisons/gold-coast-theme-parks-cost"
+        },
+        {
+          "name": { "en": "Sea World", "th": "ซีเวิลด์" },
+          "kind": "themepark",
+          "area": { "en": "The Spit, Main Beach", "th": "เดอะสปิต เมนบีช" },
+          "what": { "en": "A marine park with dolphin and seal shows, polar bears, penguins, rides and a splash zone", "th": "สวนสนุกทางทะเล มีโชว์โลมาและแมวน้ำ หมีขั้วโลก เพนกวิน เครื่องเล่น และลานเล่นน้ำ" },
+          "why": { "en": "The animal shows hold small children's attention, and there are gentle rides and indoor penguin halls", "th": "โชว์สัตว์ดึงความสนใจเด็กเล็กได้ดี มีเครื่องเล่นเบาๆ และโถงเพนกวินในร่ม" },
+          "tip": { "en": "Plan the day around the show times on the map; a multi-park pass is cheaper if you visit two parks", "th": "วางแผนตามเวลาโชว์ในแผนที่ ถ้าไปสองสวนขึ้นไป บัตรหลายสวนถูกกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ A$99–119 adults online · children 3–13 ≈ A$89–109 · under 3 free", "th": "≈ A$99–119 ผู้ใหญ่ (ออนไลน์) · เด็ก 3–13 ปี ≈ A$89–109 · ต่ำกว่า 3 ปีฟรี" },
+          "book": "rec",
+          "q": "Sea World, Seaworld Drive, Main Beach, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://www.endlesstravelplans.com/destinations/comparisons/gold-coast-theme-parks-cost"
+        },
+        {
+          "name": { "en": "Warner Bros. Movie World", "th": "วอร์เนอร์บราเธอร์ส มูฟวีเวิลด์" },
+          "kind": "themepark",
+          "area": { "en": "Oxenford", "th": "ออกเซนฟอร์ด" },
+          "what": { "en": "A film theme park with superhero coasters, a street parade and Looney Tunes characters", "th": "สวนสนุกธีมภาพยนตร์ มีรถไฟเหาะซูเปอร์ฮีโร่ ขบวนพาเหรด และตัวการ์ตูนลูนีย์ตูนส์" },
+          "why": { "en": "Little ones get a Looney Tunes land of small rides and the daily parade", "th": "เด็กเล็กมีโซนลูนีย์ตูนส์ที่มีเครื่องเล่นเล็กๆ และพาเหรดทุกวัน" },
+          "tip": { "en": "Buy online, not at the gate; the parade route fills up early, find a kerb spot ahead", "th": "ซื้อออนไลน์ อย่าซื้อหน้าประตู ทางพาเหรดคนเต็มเร็ว หาที่ริมทางไว้ก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ A$99–119 adults online · children 3–13 ≈ A$89–109 · under 3 free", "th": "≈ A$99–119 ผู้ใหญ่ (ออนไลน์) · เด็ก 3–13 ปี ≈ A$89–109 · ต่ำกว่า 3 ปีฟรี" },
+          "book": "rec",
+          "q": "Warner Bros. Movie World, Pacific Motorway, Oxenford, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://www.endlesstravelplans.com/destinations/comparisons/gold-coast-theme-parks-cost"
+        },
+        {
+          "name": { "en": "Wet'n'Wild Gold Coast", "th": "เว็ตแอนด์ไวลด์ โกลด์โคสต์" },
+          "kind": "themepark",
+          "area": { "en": "Oxenford", "th": "ออกเซนฟอร์ด" },
+          "what": { "en": "A big water park with wave pool, lazy-river style rides, giant slides and shallow children's play pools", "th": "สวนน้ำใหญ่ มีสระคลื่น สไลเดอร์ยักษ์ และสระเด็กน้ำตื้น" },
+          "why": { "en": "Shallow splash areas with small slides are made for toddlers; heated pools in the cooler months", "th": "มีลานเล่นน้ำตื้นและสไลเดอร์เล็กสำหรับเด็กวัยเตาะแตะ สระอุ่นในช่วงอากาศเย็น" },
+          "tip": { "en": "Open all year except Anzac Day and Christmas Day; hours are shorter in winter", "th": "เปิดทั้งปี ยกเว้นวันแอนแซกและวันคริสต์มาส ฤดูหนาวปิดเร็วกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ A$74 adults at the gate · A$69 children 3–13 · under 3 free · about A$10 less online", "th": "≈ A$74 ผู้ใหญ่ หน้าประตู · A$69 เด็ก 3–13 ปี · ต่ำกว่า 3 ปีฟรี · ซื้อออนไลน์ถูกลงราว A$10" },
+          "book": "rec",
+          "q": "Wet'n'Wild Gold Coast, Pacific Motorway, Oxenford, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://goldcoastinfo.net/thingstodo/wetnwild-gold-coast"
+        },
+        {
+          "name": { "en": "Currumbin Wildlife Sanctuary", "th": "สถานพักพิงสัตว์ป่าเคอร์รัมบิน" },
+          "kind": "zoo",
+          "area": { "en": "Currumbin", "th": "เคอร์รัมบิน" },
+          "what": { "en": "A wildlife park famous for flocks of lorikeets at feeding time, koalas, kangaroos to feed and a wildlife hospital", "th": "สวนสัตว์ป่าขึ้นชื่อเรื่องนกลอริคีตฝูงใหญ่ตอนให้อาหาร มีโคอาลา จิงโจ้ให้ป้อนอาหาร และโรงพยาบาลสัตว์ป่า" },
+          "why": { "en": "Children feed kangaroos by hand and the little train links the far corners", "th": "เด็กป้อนอาหารจิงโจ้ได้เอง และมีรถไฟเล็กพาไปมุมไกลๆ" },
+          "tip": { "en": "Go for the morning lorikeet feed; parking is about A$10", "th": "ไปทันรอบให้อาหารนกลอริคีตตอนเช้า ค่าจอดรถราว A$10" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ A$70 adults · A$50 children 3–13 · family A$215", "th": "≈ A$70 ผู้ใหญ่ · A$50 เด็ก 3–13 ปี · ครอบครัว A$215" },
+          "book": "rec",
+          "q": "Currumbin Wildlife Sanctuary, 28 Tomewin Street, Currumbin, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://www.sunloverholidays.com.au/attractions/Currumbin/Currumbin-Wildlife-Sanctuary-General-Admission-Day-Pass-2CURATCURCURADMWW.html"
+        },
+        {
+          "name": { "en": "David Fleay Wildlife Park", "th": "สวนสัตว์ป่าเดวิด ฟลีย์" },
+          "kind": "zoo",
+          "area": { "en": "West Burleigh", "th": "เวสต์เบอร์ลีย์" },
+          "what": { "en": "A quiet state-run wildlife park in the bush with platypus, koalas, cassowaries and nocturnal animals", "th": "สวนสัตว์ป่าของรัฐในป่า เงียบสงบ มีตุ่นปากเป็ด โคอาลา นกคาสโซวารี และสัตว์หากินกลางคืน" },
+          "why": { "en": "Small, cheap and calm, with boardwalks through the trees; the nocturnal house is good on a wet day", "th": "เล็ก ถูก และสงบ มีทางเดินไม้ผ่านป่า บ้านสัตว์กลางคืนเหมาะกับวันฝนตก" },
+          "tip": { "en": "Open 9am–4pm every day; keeper talks through the day are free", "th": "เปิด 9:00–16:00 ทุกวัน มีผู้ดูแลเล่าเรื่องสัตว์ฟรีตลอดวัน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ A$27 adults · ≈ A$12 children up to 17", "th": "≈ A$27 ผู้ใหญ่ · ≈ A$12 เด็กไม่เกิน 17 ปี" },
+          "book": "none",
+          "q": "David Fleay Wildlife Park, Loman Road, West Burleigh, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://parks.qld.gov.au/parks/david-fleay/about"
+        },
+        {
+          "name": { "en": "Paradise Country", "th": "พาราไดซ์คันทรี" },
+          "kind": "farm",
+          "area": { "en": "Oxenford", "th": "ออกเซนฟอร์ด" },
+          "what": { "en": "An Aussie farm park with sheep shearing, whip cracking, sheepdogs and a koala and kangaroo yard", "th": "ฟาร์มแบบออสเตรเลีย มีโชว์ตัดขนแกะ ฟาดแส้ สุนัขต้อนแกะ และลานโคอาลากับจิงโจ้" },
+          "why": { "en": "Short farm shows and animals to pat suit small children, and it is far quieter than the big parks", "th": "โชว์ฟาร์มสั้นๆ และสัตว์ให้ลูบเหมาะกับเด็กเล็ก คนน้อยกว่าสวนใหญ่มาก" },
+          "tip": { "en": "It comes free with most multi-park passes; animal encounters cost extra", "th": "บัตรหลายสวนส่วนใหญ่รวมที่นี่ฟรี กิจกรรมใกล้ชิดสัตว์เสียเพิ่ม" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ from A$49 a day ticket · included in most multi-park passes", "th": "≈ ตั๋ววันเดียวเริ่ม A$49 · รวมในบัตรหลายสวนส่วนใหญ่" },
+          "book": "rec",
+          "q": "Paradise Country, Production Drive, Oxenford, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://www.headout.com/paradise-country-tickets-c-5175"
+        },
+        {
+          "name": { "en": "SkyPoint Observation Deck", "th": "สกายพอยต์" },
+          "kind": "views",
+          "area": { "en": "Surfers Paradise", "th": "เซิร์ฟเฟอร์สพาราไดซ์" },
+          "what": { "en": "An indoor viewing deck 230 metres up in the Q1 tower, looking along the beaches to the hinterland", "th": "จุดชมวิวในร่มสูง 230 เมตรบนตึกคิววัน มองเห็นแนวหาดยาวไปถึงภูเขา" },
+          "why": { "en": "Indoors and quick, a good rainy-day or sunset plan", "th": "อยู่ในร่ม เที่ยวเร็ว เหมาะกับวันฝนตกหรือดูพระอาทิตย์ตก" },
+          "tip": { "en": "Buy online, and look for combos with Dreamworld", "th": "ซื้อออนไลน์ และดูตั๋วรวมกับดรีมเวิลด์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ from A$44 adults · from A$30 children 3–13 · under 3 free", "th": "≈ ผู้ใหญ่เริ่ม A$44 · เด็ก 3–13 ปีเริ่ม A$30 · ต่ำกว่า 3 ปีฟรี" },
+          "book": "none",
+          "q": "SkyPoint Observation Deck, Q1, Hamilton Avenue, Surfers Paradise, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://www.dreamworld.com.au/skypoint/"
+        },
+        {
+          "name": { "en": "HOTA Gallery", "th": "หอศิลป์โฮตา" },
+          "kind": "museum",
+          "area": { "en": "Surfers Paradise, HOTA", "th": "เซิร์ฟเฟอร์สพาราไดซ์ (โฮตา)" },
+          "what": { "en": "The Gold Coast's bright art gallery by the lake, with a children's gallery and a big parkland outside", "th": "หอศิลป์สีสดของโกลด์โคสต์ริมทะเลสาบ มีห้องศิลปะเด็กและสวนกว้างด้านนอก" },
+          "why": { "en": "Free and air-conditioned; the children's gallery and the lawns outside make it an easy rainy-day stop", "th": "ฟรีและติดแอร์ ห้องเด็กกับสนามหญ้าข้างนอกทำให้เป็นที่แวะง่ายในวันฝนตก" },
+          "tip": { "en": "Open daily from 10am; the free Art Explorers mornings for little ones need a booking", "th": "เปิดทุกวันตั้งแต่ 10 โมง กิจกรรมอาร์ตเอกซ์พลอเรอร์สสำหรับเด็กเล็กฟรีแต่ต้องลงชื่อ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free (some exhibitions are ticketed)", "th": "ฟรี (บางนิทรรศการเสียเงิน)" },
+          "book": "none",
+          "q": "HOTA Gallery, 135 Bundall Road, Surfers Paradise, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://hota.com.au/visit-and-explore/plan-your-visit/opening-hours"
+        },
+        {
+          "name": { "en": "Surfers Paradise Beach", "th": "หาดเซิร์ฟเฟอร์สพาราไดซ์" },
+          "kind": "beach",
+          "area": { "en": "Surfers Paradise", "th": "เซิร์ฟเฟอร์สพาราไดซ์" },
+          "what": { "en": "The Gold Coast's famous wide golden beach at the end of Cavill Avenue, under the towers", "th": "หาดทรายทองกว้างชื่อดังของโกลด์โคสต์ ปลายถนนคาวิลล์ ใต้ตึกสูง" },
+          "why": { "en": "Lifeguards every day of the year; sand castles and paddling between the flags", "th": "มีไลฟ์การ์ดทุกวันตลอดปี เด็กก่อปราสาททรายและเล่นน้ำระหว่างธง" },
+          "tip": { "en": "Swim only between the red and yellow flags; for calmer water try Budds Beach on the river side", "th": "ว่ายน้ำเฉพาะระหว่างธงแดงเหลือง ถ้าอยากได้น้ำนิ่งลองหาดบัดส์ฝั่งแม่น้ำ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Surfers Paradise Beach, Cavill Avenue, Surfers Paradise, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://www.goldcoast.qld.gov.au/Things-to-do/Gold-Coast-beaches/Beach-locations/Surfers-Paradise"
+        },
+        {
+          "name": { "en": "Tallebudgera Creek and Burleigh Head", "th": "ลำธารทาลลีบัดเจอรา และแหลมเบอร์ลีย์" },
+          "kind": "beach",
+          "area": { "en": "Burleigh Heads and Palm Beach", "th": "เบอร์ลีย์เฮดส์ และปาล์มบีช" },
+          "what": { "en": "A calm, clear creek beach beside the rainforest headland of Burleigh Head National Park", "th": "หาดลำธารน้ำใสและนิ่ง ข้างแหลมป่าฝนของอุทยานแห่งชาติเบอร์ลีย์เฮด" },
+          "why": { "en": "No surf, shallow water, a playground and toilets behind the sand: ideal for toddlers", "th": "ไม่มีคลื่น น้ำตื้น มีสนามเด็กเล่นและห้องน้ำหลังหาด เหมาะกับเด็กวัยเตาะแตะ" },
+          "tip": { "en": "Lifeguards patrol 8am–5pm from November to April; the flat Oceanview Walk leads round to Burleigh", "th": "ไลฟ์การ์ดอยู่ 8:00–17:00 ช่วงพฤศจิกายนถึงเมษายน ทางเดินโอเชียนวิวราบ เดินอ้อมไปเบอร์ลีย์ได้" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Tallebudgera Creek, Gold Coast Highway, Burleigh Heads, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://queensland.com/in/en/places-to-see/destinations/gold-coast/tallebudgera-creek"
+        },
+        {
+          "name": { "en": "Broadwater Parklands", "th": "สวนบรอดวอเทอร์" },
+          "kind": "play",
+          "area": { "en": "Southport", "th": "เซาท์พอร์ต" },
+          "what": { "en": "A long waterfront park with the free Rockpools water play, a big playground and calm beaches", "th": "สวนริมน้ำยาว มีลานเล่นน้ำร็อกพูลส์ฟรี สนามเด็กเล่นใหญ่ และหาดน้ำนิ่ง" },
+          "why": { "en": "The Rockpools are never more than knee deep and have lifeguards, made for children up to about 8", "th": "ร็อกพูลส์น้ำลึกไม่เกินเข่าและมีไลฟ์การ์ด ทำมาสำหรับเด็กราว 8 ขวบลงมา" },
+          "tip": { "en": "The inflatable aqua park on the water is a separate paid ticket; the tram stops at the park", "th": "สวนน้ำเป่าลมบนน้ำเสียเงินแยก รถรางจอดที่สวนเลย" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Broadwater Parklands, Marine Parade, Southport, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://brisbanekids.com.au/broadwater-parklands-in-southport-gold-coast-beachfront-playground/"
+        },
+        {
+          "name": { "en": "Gold Coast Regional Botanic Gardens", "th": "สวนพฤกษศาสตร์โกลด์โคสต์" },
+          "kind": "park",
+          "area": { "en": "Benowa", "th": "เบโนวา" },
+          "what": { "en": "Wide gardens round a lake with a shaded nature playground, a flying fox and a toddler pirate ship", "th": "สวนกว้างรอบทะเลสาบ มีสนามเด็กเล่นธรรมชาติมีร่ม ฟลายอิงฟอกซ์ และเรือโจรสลัดสำหรับเด็กเล็ก" },
+          "why": { "en": "Free, shady and quiet compared with the beaches; paths are flat for prams", "th": "ฟรี ร่มรื่น เงียบกว่าชายหาด ทางเดินเรียบเข็นรถเข็นเด็กสะดวก" },
+          "tip": { "en": "Open 5am–7pm daily; bring a picnic, there is no café at the playground", "th": "เปิด 5:00–19:00 ทุกวัน เตรียมปิกนิกไป ที่สนามเด็กเล่นไม่มีคาเฟ่" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Gold Coast Regional Botanic Gardens, 230 Ashmore Road, Benowa, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://experiencegoldcoast.com/places-to-go/northern-gold-coast/things-to-do/gold-coast-regional-botanic-gardens-au0056495"
+        },
+        {
+          "name": { "en": "Miami Marketta", "th": "ไมแอมี มาร์เก็ตตา" },
+          "kind": "market",
+          "area": { "en": "Miami", "th": "ไมแอมี" },
+          "what": { "en": "A street-food night market in an old warehouse, with food from around the world and live music", "th": "ตลาดอาหารกลางคืนในโกดังเก่า มีอาหารจากทั่วโลกและดนตรีสด" },
+          "why": { "en": "Free to enter, relaxed and full of families early in the evening; under a roof on a wet night", "th": "เข้าฟรี บรรยากาศสบายๆ ช่วงหัวค่ำมีครอบครัวเยอะ มีหลังคากันฝน" },
+          "tip": { "en": "Open Wednesday to Saturday from about 5pm; go early with small children, it gets loud later", "th": "เปิดวันพุธถึงเสาร์ ตั้งแต่ราว 5 โมงเย็น พาเด็กเล็กไปเร็วหน่อย ดึกแล้วเสียงดัง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Miami Marketta, 23 Hillcrest Parade, Miami, Gold Coast",
+          "ok": "2026-11",
+          "src": "https://miamimarketta.com/night-market"
+        },
+        {
+          "name": { "en": "Natural Bridge, Springbrook", "th": "สะพานหินธรรมชาติ สปริงบรูก" },
+          "kind": "nature",
+          "area": { "en": "Springbrook National Park, hinterland", "th": "อุทยานแห่งชาติสปริงบรูก" },
+          "what": { "en": "A rainforest walk to a waterfall that pours through the roof of a cave, home to glow-worms", "th": "เส้นทางเดินป่าฝนไปน้ำตกที่ไหลทะลุหลังคาถ้ำ ซึ่งเป็นบ้านของหนอนเรืองแสง" },
+          "why": { "en": "A short loop with a big reward; the waterfall in the cave amazes children", "th": "ทางเดินวงสั้นแต่คุ้ม เด็กตื่นตากับน้ำตกในถ้ำ" },
+          "tip": { "en": "The circuit has long flights of steps, so carry a baby rather than push; glow-worms show best December to March", "th": "ทางเดินมีบันไดยาว ใช้เป้อุ้มเด็กแทนรถเข็น หนอนเรืองแสงเห็นชัดที่สุดธันวาคมถึงมีนาคม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Natural Bridge, Nerang-Murwillumbah Road, Springbrook National Park",
+          "ok": "2026-11",
+          "src": "https://www.nomadasaurus.com/springbrook-national-park-walks/"
+        },
+        {
+          "name": { "en": "Australia Zoo", "th": "ออสเตรเลีย ซู" },
+          "kind": "zoo",
+          "area": { "en": "Beerwah, Sunshine Coast hinterland", "th": "เบียร์วาห์ ตอนในซันไชน์โคสต์" },
+          "what": { "en": "The Irwin family's zoo with Australian and world animals and daily shows.", "th": "สวนสัตว์ของครอบครัวเออร์วิน มีสัตว์ออสเตรเลียและสัตว์ทั่วโลก พร้อมโชว์ประจำวัน" },
+          "why": { "en": "A full day for children who love animals; children under 3 are free.", "th": "เที่ยวได้ทั้งวันสำหรับเด็กรักสัตว์ ต่ำกว่า 3 ขวบเข้าฟรี" },
+          "tip": { "en": "It is about 1.5 hours' drive north of the Gold Coast; plan a long day.", "th": "อยู่ห่างไปทางเหนือของโกลด์โคสต์ราว 1.5 ชั่วโมงด้วยรถ ควรวางแผนไปทั้งวัน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ AUD 77.45 adults · AUD 51.95 child 3–14 · family of 4 AUD 233.95", "th": "≈ AUD 77.45 ผู้ใหญ่ · AUD 51.95 เด็ก 3–14 ปี · ครอบครัว 4 คน AUD 233.95" },
+          "book": "rec",
+          "q": "Australia Zoo, Steve Irwin Way, Beerwah, Queensland",
+          "ok": "2026-11",
+          "src": "https://australiazoo.com.au/tickets/"
+        },
+        {
+          "name": { "en": "Queensland Museum Kurilpa and SparkLab", "th": "พิพิธภัณฑ์ควีนส์แลนด์ คูริลปา และสปาร์กแล็บ" },
+          "kind": "museumkid",
+          "area": { "en": "South Brisbane", "th": "เซาท์บริสเบน" },
+          "what": { "en": "A museum in Brisbane's South Bank with SparkLab, a hands-on science space for children.", "th": "พิพิธภัณฑ์ที่เซาท์แบงก์ บริสเบน มีสปาร์กแล็บ ห้องวิทยาศาสตร์ให้เด็กลงมือเล่น" },
+          "why": { "en": "SparkLab ticket for ages 3–4 is just AUD 5, and the whole thing is indoors.", "th": "ตั๋วสปาร์กแล็บสำหรับเด็ก 3–4 ขวบเพียง AUD 5 และอยู่ในร่มทั้งหมด" },
+          "tip": { "en": "It is in Brisbane, about an hour from the Gold Coast.", "th": "อยู่ที่บริสเบน ห่างจากโกลด์โคสต์ราวหนึ่งชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "SparkLab ≈ AUD 16.50 adults · AUD 13.50 child 5–15 · AUD 5 child 3–4 · family AUD 50", "th": "สปาร์กแล็บ ≈ AUD 16.50 ผู้ใหญ่ · AUD 13.50 เด็ก 5–15 ปี · AUD 5 เด็ก 3–4 ปี · ตั๋วครอบครัว AUD 50" },
+          "book": "rec",
+          "q": "Queensland Museum Kurilpa, Grey Street, South Brisbane",
+          "ok": "2026-11",
+          "src": "https://www.museum.qld.gov.au/kurilpa/whats-on/sparklab/"
+        },
+        {
+          "name": { "en": "Tamborine Rainforest Skywalk", "th": "แทมโบรีน เรนฟอเรสต์ สกายวอล์ก" },
+          "kind": "nature",
+          "area": { "en": "Tamborine Mountain", "th": "แทมโบรีน เมาน์เทน" },
+          "what": { "en": "A raised walkway through rainforest on Tamborine Mountain.", "th": "ทางเดินยกสูงผ่านป่าฝนบนภูเขาแทมโบรีน" },
+          "why": { "en": "Short and easy to walk; children aged 0–5 are free with an adult.", "th": "เดินสั้นๆ ง่าย เด็ก 0–5 ขวบเข้าฟรีเมื่อไปกับผู้ใหญ่" },
+          "tip": { "en": "Children must stay with an adult.", "th": "เด็กต้องอยู่กับผู้ใหญ่ตลอด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ AUD 21.50 adults · AUD 10.50 child 6–17 · 0–5 free", "th": "≈ AUD 21.50 ผู้ใหญ่ · AUD 10.50 เด็ก 6–17 ปี · 0–5 ขวบฟรี" },
+          "book": "none",
+          "q": "Tamborine Rainforest Skywalk, Tamborine Mountain, Queensland",
+          "ok": "2026-11",
+          "src": "https://skywalktamborine.com/prices"
+        },
+        {
+          "name": { "en": "Tamborine Mountain Glow Worm Caves", "th": "ถ้ำหนอนเรืองแสง แทมโบรีน เมาน์เทน" },
+          "kind": "nature",
+          "area": { "en": "Tamborine Mountain", "th": "แทมโบรีน เมาน์เทน" },
+          "what": { "en": "A guided tour into a cave of glow worms on Tamborine Mountain.", "th": "ทัวร์พร้อมไกด์เข้าถ้ำหนอนเรืองแสงบนภูเขาแทมโบรีน" },
+          "why": { "en": "A short, dim, magical tour; children under 4 pay just AUD 1.", "th": "ทัวร์สั้นๆ แสงสลัว น่าตื่นเต้น เด็กต่ำกว่า 4 ขวบจ่ายเพียง AUD 1" },
+          "tip": { "en": "Prams are not permitted in the cave; places are limited, so arrive early.", "th": "ห้ามนำรถเข็นเข้าถ้ำ และที่นั่งจำกัด ควรไปให้เร็ว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ AUD 34 adults · AUD 18 child 4–12 · AUD 1 under 4 · family AUD 97", "th": "≈ AUD 34 ผู้ใหญ่ · AUD 18 เด็ก 4–12 ปี · AUD 1 ต่ำกว่า 4 ขวบ · ตั๋วครอบครัว AUD 97" },
+          "book": "rec",
+          "q": "Glow Worm Caves, Tamborine Mountain, Queensland",
+          "ok": "2026-11",
+          "src": "https://www.goldcoastpoint.com.au/attractions/glow-worm-caves-tamborine-mountain/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "ชิปมังก์ส เอฟเวอร์ตันพาร์ก",
+            "en": "Chipmunks Everton Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เอฟเวอร์ตันพาร์ก บริสเบน",
+            "en": "Everton Park, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มพร้อมคาเฟ่",
+            "en": "An indoor play centre with a café"
+          },
+          "why": {
+            "th": "แบ่งโซนตามวัยสำหรับเด็ก 0–11 ปี มีเมนูเด็ก",
+            "en": "Zones by age for children from 0 to 11, and a children’s menu"
+          },
+          "q": "Chipmunks Playland & Café Everton Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+          "name": {
+            "th": "เบลล่าส์วันเดอร์แลนด์",
+            "en": "Bella’s Wonderland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซาท์พอร์ต",
+            "en": "Southport"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มที่ใหญ่ที่สุดในโกลด์โคสต์ มีคาเฟ่",
+            "en": "The biggest indoor play centre on the Gold Coast, with a café"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ บ่อบอล กำแพงปีน และชุดแต่งตัว",
+            "en": "Slides, ball pits, climbing walls and dress-ups"
+          },
+          "q": "Bella's Wonderland, Southport",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "จีซีอควาพาร์ก",
+            "en": "GC Aqua Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซาท์พอร์ต ตรงข้ามออสเตรเลียแฟร์",
+            "en": "Southport, opposite Australia Fair"
+          },
+          "what": {
+            "th": "เครื่องเล่นเป่าลมบนน้ำยาวกว่า 300 เมตร ให้กระโดดและไถล",
+            "en": "Over 300 m of inflatables on the water to bounce and slide on"
+          },
+          "why": {
+            "th": "ได้กระโดดและไถลบนน้ำ",
+            "en": "Bouncing and sliding on the water"
+          },
+          "q": "GC Aqua Park, Southport",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "บาวซ์อิงก์",
+            "en": "Bounce Inc"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เบอร์ลีย์วอเตอร์ส",
+            "en": "Burleigh Waters"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนในร่มขนาดใหญ่",
+            "en": "A big indoor trampoline park"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กที่อยากปล่อยพลัง",
+            "en": "For children who need to let off steam"
+          },
+          "q": "BOUNCE Inc Gold Coast, Burleigh Waters",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "ทางเดินยอดไม้โอไรลีส์",
+            "en": "O’Reilly’s Tree Top Walk"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติแลมิงตัน",
+            "en": "Lamington National Park"
+          },
+          "what": {
+            "th": "ทางเดินวนง่ายๆ 800 เมตร มีสะพานแขวนเก้าสะพานบนยอดป่าฝน",
+            "en": "An easy 800 m loop with nine suspension bridges up in the rainforest canopy"
+          },
+          "why": {
+            "th": "ได้เจอนกแก้วโรเซลลาและนกแก้วคิง และมีโชว์นกล่าเหยื่อที่โอไรลีส์",
+            "en": "Rosellas and king parrots to meet, and a bird of prey show at O’Reilly’s"
+          },
+          "q": "Tree Top Walkway, O'Reilly's, Lamington National Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "แอ่งหินเคอร์รัมบิน",
+            "en": "Currumbin Rock Pools"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หุบเขาเคอร์รัมบิน",
+            "en": "Currumbin Valley"
+          },
+          "what": {
+            "th": "แอ่งน้ำในหินบนเนินเขา สำหรับปิกนิกและลงแช่น้ำเย็น",
+            "en": "Rock pools in the hills for a picnic and a cool dip"
+          },
+          "why": {
+            "th": "จุดเล่นน้ำของคนท้องถิ่น ไม่เสียค่าเข้า",
+            "en": "A free local swimming spot"
+          },
+          "q": "Currumbin Rock Pools, Currumbin Valley",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "คันทรีพาราไดซ์พาร์กแลนด์ส",
+            "en": "Country Paradise Parklands"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เนรัง",
+            "en": "Nerang"
+          },
+          "what": {
+            "th": "สวนสาธารณะของชุมชน มีสนามเด็กเล่นผจญภัย",
+            "en": "Community parklands with an adventure playground"
+          },
+          "why": {
+            "th": "กังหันลมสูง 11.5 เมตรพร้อมสไลเดอร์ยักษ์ ลำธารให้เล่นน้ำ และโซนเล่นของเด็กเล็ก",
+            "en": "An 11.5 m windmill with a mega slide, a creek bed with water play, and play spaces for toddlers"
+          },
+          "q": "Country Paradise Parklands, Nerang",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "เดอะจังเกิลแอดเวนเจอร์เพลย์",
+            "en": "The Jungle Adventure Play"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทิงกัลปา บริสเบน",
+            "en": "Tingalpa, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เล่นผจญภัยในร่ม มีคาเฟ่",
+            "en": "An indoor adventure play centre with a café"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก และเชือกผจญภัย ด่านนินจา และสไลเดอร์",
+            "en": "A junior zone for little ones, plus high ropes, a ninja course and slides"
+          },
+          "q": "The Jungle Adventure Play Tingalpa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "เรนโบว์ซิตี้",
+            "en": "Rainbow City Play Centre"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อันเดอร์วูด บริสเบน",
+            "en": "Underwood, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มสำหรับเด็ก 0–8 ปี มีปราสาทเป่าลม แทรมโพลีน และโซนนุ่ม",
+            "en": "An indoor play centre for children from 0 to 8, with bouncy castles, trampolines and soft play"
+          },
+          "why": {
+            "th": "มีบ้านจำลองและโซนนุ่มสำหรับเด็กเล็ก",
+            "en": "Cubby houses and soft play for the little ones"
+          },
+          "q": "Rainbow City Play Centre, 15 Lapis St, Underwood",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "ครอกส์เพลย์เซ็นเตอร์ นอร์ธเลกส์",
+            "en": "Crocs Playcentre North Lakes"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นอร์ธเลกส์ บริสเบน",
+            "en": "North Lakes, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มใหญ่และสว่าง มีคาเฟ่ในตัว",
+            "en": "A big, bright indoor play centre with a café on site"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ โครงปีน ปราสาทเป่าลม และโซนนุ่มสำหรับเด็กอ่อน",
+            "en": "Slides, climbing frames, bouncy castles and baby soft play"
+          },
+          "q": "Crocs Playcentre North Lakes",
+          "ok": "2026-11"
         }
       ]
     }

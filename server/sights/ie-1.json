@@ -1,0 +1,915 @@
+{
+  "cc": "ie",
+  "towns": [
+    {
+      "place": "ie-ireland",
+      "sights": [
+        {
+          "name": { "en": "Dublin Zoo", "th": "สวนสัตว์ดับลิน" },
+          "kind": "zoo",
+          "area": { "en": "Phoenix Park, Dublin", "th": "ฟีนิกซ์พาร์ก ดับลิน" },
+          "what": { "en": "One of Europe's oldest zoos, set in Phoenix Park, with African Plains, big cats and a restored Rainforest House", "th": "สวนสัตว์เก่าแก่แห่งหนึ่งของยุโรปในฟีนิกซ์พาร์ก มีแอฟริกันเพลนส์ แมวใหญ่ และเรือนป่าฝนที่บูรณะแล้ว" },
+          "why": { "en": "Wide, mostly flat paths for a pram and plenty of animals to spot; under 3s go free", "th": "ทางกว้างเกือบราบสำหรับรถเข็น มีสัตว์ให้ดูมาก เด็กต่ำกว่า 3 ปีฟรี" },
+          "tip": { "en": "Open daily 9:30–18:00, last entry 17:00; book online, it is cheaper than the gate. One house, the South American House, was closed", "th": "เปิดทุกวัน 9:30–18:00 เข้าได้ถึง 17:00 จองออนไลน์ถูกกว่าหน้าประตู บ้านสัตว์อเมริกาใต้ปิดอยู่" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €22.50 adults online (€26.50 at the gate) · family of 2+2 ≈ €62.50 online · under 3 free", "th": "≈ €22.50 ผู้ใหญ่ออนไลน์ (หน้าประตู €26.50) · ครอบครัว 2+2 ≈ €62.50 ออนไลน์ · ต่ำกว่า 3 ปีฟรี" },
+          "book": "rec",
+          "q": "Dublin Zoo, Phoenix Park, Dublin",
+          "ok": "2026-11",
+          "src": "https://www.dublinzoo.ie/?p=47108"
+        },
+        {
+          "name": { "en": "Cliffs of Moher Visitor Experience", "th": "หน้าผาโมเฮอร์" },
+          "kind": "nature",
+          "area": { "en": "Liscannor, County Clare", "th": "ลิสแคนเนอร์ เคาน์ตีแคลร์" },
+          "what": { "en": "Sea cliffs rising high above the Atlantic, with viewing platforms, a visitor centre and cliff paths", "th": "หน้าผาทะเลสูงเหนือมหาสมุทรแอตแลนติก มีจุดชมวิว ศูนย์ผู้เยี่ยมชม และทางเดินริมผา" },
+          "why": { "en": "Children under 12 are free; keep small ones by the hand and away from unfenced edges, and wrap up against the wind", "th": "เด็กต่ำกว่า 12 ปีฟรี จูงเด็กเล็กไว้ ห่างขอบผาที่ไม่มีรั้ว และใส่เสื้อกันลม" },
+          "tip": { "en": "About 3 hours from Dublin and best combined with Galway; parking is in the ticket, and online booking is cheaper than the gate", "th": "ห่างดับลินราว 3 ชั่วโมง เหมาะต่อกับกอลเวย์ ค่าที่จอดรวมในบัตร จองออนไลน์ถูกกว่าหน้างาน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Children under 12 free (up to 4 with a parent) · adults ≈ €8–€12 online per 2026 guides; check the price", "th": "เด็กต่ำกว่า 12 ปีฟรี (สูงสุด 4 คนต่อผู้ปกครอง) · ผู้ใหญ่ ≈ €8–€12 ออนไลน์ตามไกด์ปี 2026 เช็กราคา" },
+          "book": "rec",
+          "q": "Cliffs of Moher Visitor Experience, Liscannor, County Clare",
+          "ok": "2026-11",
+          "src": "https://www.cliffsofmoher.ie/faq/"
+        },
+        {
+          "name": { "en": "National Leprechaun Museum", "th": "พิพิธภัณฑ์เลพริคอนแห่งชาติ" },
+          "kind": "museumkid",
+          "area": { "en": "Jervis Street, Dublin", "th": "เจอร์วิสสตรีท ดับลิน" },
+          "what": { "en": "A guided walk through giant-sized rooms telling Irish folk tales and the story of the leprechaun", "th": "ทัวร์พาเดินผ่านห้องขนาดยักษ์ เล่านิทานพื้นบ้านไอริชและเรื่องของเลพริคอน" },
+          "why": { "en": "A guided walk through story rooms; check the age it suits and whether it is dim before taking little ones", "th": "ทัวร์เดินผ่านห้องเล่านิทาน ควรเช็กว่าเหมาะกับอายุเท่าไรและมืดหรือไม่ก่อนพาเด็กเล็กไป" },
+          "tip": { "en": "Listings do not agree on prices; book ahead and check the current price", "th": "แหล่งข้อมูลให้ราคาไม่ตรงกัน ควรจองล่วงหน้าและเช็กราคาปัจจุบัน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "rec",
+          "q": "National Leprechaun Museum, Jervis Street, Dublin",
+          "ok": "2026-11",
+          "src": "https://dublintown.ie/business/the-national-leprechaun-museum"
+        },
+        {
+          "name": { "en": "Dublinia", "th": "ดับลินเนีย" },
+          "kind": "museum",
+          "area": { "en": "Christchurch, Dublin", "th": "คริสต์เชิร์ช ดับลิน" },
+          "what": { "en": "A hands-on museum of Viking and medieval Dublin, with costumes, a mock-up Viking house and a tower to climb", "th": "พิพิธภัณฑ์ลงมือทำเรื่องดับลินสมัยไวกิ้งและยุคกลาง มีชุดให้ลอง บ้านไวกิ้งจำลอง และหอคอยให้ปีน" },
+          "why": { "en": "Dressing up and touching things keeps school-age children busy; steps in the tower are tiring for toddlers", "th": "การแต่งตัวและจับของทำให้เด็กวัยเรียนเพลิน บันไดหอคอยเหนื่อยสำหรับเด็กเล็ก" },
+          "tip": { "en": "Listed open daily 10:00–17:00, last entry 16:00, closed 24–26 December; a ticket with Christ Church exists", "th": "รายการระบุเปิดทุกวัน 10:00–17:00 เข้าได้ถึง 16:00 ปิด 24–26 ธ.ค. มีบัตรรวมกับคริสต์เชิร์ช" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €16 adults · €9.50 children · €44 family of 2+2 (listings; check the price)", "th": "≈ €16 ผู้ใหญ่ · €9.50 เด็ก · €44 ครอบครัว 2+2 (ตามรายการ เช็กราคา)" },
+          "book": "rec",
+          "q": "Dublinia, St Michael's Hill, Dublin",
+          "ok": "2026-11",
+          "src": "https://dodublin.ie/dublinia"
+        },
+        {
+          "name": { "en": "Phoenix Park", "th": "ฟีนิกซ์พาร์ก" },
+          "kind": "park",
+          "area": { "en": "Dublin 8 and 15", "th": "ดับลิน 8 และ 15" },
+          "what": { "en": "One of Europe's largest city parks, open all day and night, with lawns, playgrounds and wild deer", "th": "หนึ่งในสวนในเมืองที่ใหญ่ที่สุดของยุโรป เปิดตลอดวันและคืน มีสนามหญ้า สนามเด็กเล่น และกวางป่า" },
+          "why": { "en": "Room to run and picnic, with playgrounds including a universal-access one", "th": "มีที่วิ่งเล่นและปิกนิก มีสนามเด็กเล่นรวมถึงแบบเข้าถึงได้ทุกคน" },
+          "tip": { "en": "The park is huge; pick one area (the zoo, Ashtown or the playground) and use a bike or car between them", "th": "สวนกว้างมาก เลือกโซนเดียว (สวนสัตว์ แอชทาวน์ หรือสนามเด็กเล่น) แล้วใช้จักรยานหรือรถระหว่างจุด" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Phoenix Park, Dublin",
+          "ok": "2026-11",
+          "src": "https://www.visitdublin.com/guides/free-things-to-do-families-dublin"
+        },
+        {
+          "name": { "en": "Phoenix Park Visitor Centre and Ashtown Castle", "th": "ศูนย์ผู้เยี่ยมชมฟีนิกซ์พาร์กและปราสาทแอชทาวน์" },
+          "kind": "culture",
+          "area": { "en": "Phoenix Park", "th": "ฟีนิกซ์พาร์ก" },
+          "what": { "en": "A visitor centre beside a small tower house, with free guided tours, family activity sheets and a playground nearby", "th": "ศูนย์ผู้เยี่ยมชมข้างหอคอยปราสาทหลังเล็ก มีทัวร์นำเที่ยวฟรี ใบกิจกรรมสำหรับครอบครัว และสนามเด็กเล่นใกล้ๆ" },
+          "why": { "en": "A short free stop, mostly indoors, with a playground beside it", "th": "แวะสั้นๆ ฟรี ส่วนใหญ่อยู่ในร่ม และมีสนามเด็กเล่นอยู่ข้างๆ" },
+          "tip": { "en": "Sources disagree on opening times, so check before you go", "th": "แหล่งข้อมูลให้เวลาเปิดไม่ตรงกัน ควรเช็กก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Phoenix Park Visitor Centre, Ashtown Castle, Dublin",
+          "ok": "2026-11",
+          "src": "https://www.discoverireland.ie/dublin/phoenix-park-visitor-centre-ashtown-castle"
+        },
+        {
+          "name": { "en": "National Botanic Gardens, Glasnevin", "th": "สวนพฤกษศาสตร์แห่งชาติ กลาสเนวิน" },
+          "kind": "nature",
+          "area": { "en": "Glasnevin, Dublin", "th": "กลาสเนวิน ดับลิน" },
+          "what": { "en": "Lawns, ponds and Victorian glasshouses holding palms, orchids and tropical plants", "th": "สนามหญ้า บ่อน้ำ และเรือนกระจกสมัยวิกตอเรียที่มีปาล์ม กล้วยไม้ และพืชเขตร้อน" },
+          "why": { "en": "The warm glasshouses give a dry break on a wet day and the paths suit prams", "th": "เรือนกระจกอุ่นเป็นที่พักแห้งๆ วันฝนตก และทางเดินเหมาะกับรถเข็น" },
+          "tip": { "en": "Winter hours were 9:00–16:30 on weekdays and 10:00–16:30 at weekends in the last listing; open every day except Christmas Day", "th": "เวลาฤดูหนาวในรายการล่าสุดคือวันธรรมดา 9:00–16:30 สุดสัปดาห์ 10:00–16:30 เปิดทุกวันยกเว้นวันคริสต์มาส" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free (guided tours usually need a paid ticket)", "th": "ฟรี (ทัวร์นำเที่ยวมักต้องซื้อบัตร)" },
+          "book": "none",
+          "q": "National Botanic Gardens, Glasnevin, Dublin",
+          "ok": "2026-11",
+          "src": "https://www.botanicgardens.ie/glasnevin/opening-hours"
+        },
+        {
+          "name": { "en": "Malahide Castle and Gardens", "th": "ปราสาทและสวนมาลาไฮด์" },
+          "kind": "culture",
+          "area": { "en": "Malahide, north Dublin", "th": "มาลาไฮด์ ทางเหนือของดับลิน" },
+          "what": { "en": "A castle tour plus a walled garden, a Butterfly House and a 1.8 km wooded Fairy Trail", "th": "ทัวร์ปราสาท สวนมีกำแพง บ้านผีเสื้อ และเส้นทางนางฟ้ายาว 1.8 กม. ในป่า" },
+          "why": { "en": "The Fairy Trail takes about 75 minutes and suits children; the demesne itself is free to walk", "th": "เส้นทางนางฟ้าใช้เวลาราว 75 นาที เหมาะกับเด็ก ส่วนบริเวณรอบปราสาทเดินฟรี" },
+          "tip": { "en": "Fairy Trail ticket holders get 25% off children's meals at the Avoca café; book castle tours ahead", "th": "ผู้ถือบัตรเส้นทางนางฟ้าลด 25% อาหารเด็กที่คาเฟ่อโวก้า ควรจองทัวร์ปราสาทล่วงหน้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €16 adults · €8.50 children · €46 family of 2+2 (castle, gardens, Fairy Trail); trail and gardens only ≈ €10 adults · €7.50 children", "th": "≈ €16 ผู้ใหญ่ · €8.50 เด็ก · €46 ครอบครัว 2+2 (ปราสาท สวน เส้นทางนางฟ้า) เฉพาะเส้นทางและสวน ≈ €10 ผู้ใหญ่ · €7.50 เด็ก" },
+          "book": "rec",
+          "q": "Malahide Castle and Gardens, Malahide, Dublin",
+          "ok": "2026-11",
+          "src": "https://malahidecastleandgardens.ie/?p=142"
+        },
+        {
+          "name": { "en": "Howth village and harbour", "th": "หมู่บ้านและท่าเรือฮาวท์" },
+          "kind": "views",
+          "area": { "en": "Howth, north Dublin", "th": "ฮาวท์ ทางเหนือของดับลิน" },
+          "what": { "en": "A fishing village on a headland, reached by DART, with a harbour where seals often bob up", "th": "หมู่บ้านชาวประมงบนแหลม นั่งรถไฟ DART ไปได้ มีท่าเรือที่แมวน้ำมักโผล่ขึ้นมา" },
+          "why": { "en": "Wide pavements and grass for a short walk; the cliff path has no fence, so keep it for older children", "th": "ทางเท้ากว้างและมีหญ้าให้เดินสั้นๆ ทางริมผาไม่มีรั้ว เหมาะกับเด็กโต" },
+          "tip": { "en": "Avoid the cliff path in rain; it gets muddy and slippery", "th": "หลีกเลี่ยงทางริมผาตอนฝนตก เพราะโคลนและลื่น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Howth Harbour, Howth, Dublin",
+          "ok": "2026-11",
+          "src": "https://dublin.ie/live/stories/dublin-uncovered-howth/"
+        },
+        {
+          "name": { "en": "National Aquarium of Ireland (Galway Atlantaquaria)", "th": "พิพิธภัณฑ์สัตว์น้ำแห่งชาติไอร์แลนด์ (กอลเวย์)" },
+          "kind": "aquarium",
+          "area": { "en": "Salthill, Galway", "th": "ซอลต์ฮิลล์ กอลเวย์" },
+          "what": { "en": "Irish sea life, with touch pools, sharks and rays and a walk-through of local waters", "th": "สัตว์ทะเลไอริช มีบ่อให้สัมผัส ฉลาม กระเบน และทางเดินชมน่านน้ำท้องถิ่น" },
+          "why": { "en": "Compact and indoors, so easy for little legs on a wet day; under 3s go free", "th": "ไม่ใหญ่และอยู่ในร่ม เหมาะกับเด็กเล็กวันฝนตก เด็กต่ำกว่า 3 ปีฟรี" },
+          "tip": { "en": "July and August 9:00–18:00 daily; open seven days from mid-February to November; the winter days differ, so check", "th": "ก.ค.–ส.ค. เปิด 9:00–18:00 ทุกวัน กลางเดือน ก.พ.–พ.ย. เปิดเจ็ดวัน ช่วงหนาววันเปิดต่างออกไป ควรเช็ก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €15 adults online (€16 walk-in) · €10 children online (€11 walk-in) · children 2 and under free", "th": "≈ €15 ผู้ใหญ่ออนไลน์ (หน้างาน €16) · €10 เด็กออนไลน์ (หน้างาน €11) · เด็กอายุ 2 ปีลงมาฟรี" },
+          "book": "rec",
+          "q": "National Aquarium of Ireland, Salthill, Galway",
+          "ok": "2026-11",
+          "src": "https://nationalaquarium.ie/plan-your-visit/"
+        },
+        {
+          "name": { "en": "Galway Christmas Market", "th": "ตลาดคริสต์มาสกอลเวย์" },
+          "kind": "market",
+          "area": { "en": "Eyre Square, Galway", "th": "แอร์สแควร์ กอลเวย์" },
+          "what": { "en": "A winter market in Eyre Square with food stalls, gifts and a big wheel", "th": "ตลาดฤดูหนาวที่แอร์สแควร์ มีแผงอาหาร ของขวัญ และชิงช้าสวรรค์" },
+          "why": { "en": "Lights, rides and snacks for children; busy and cold in the evenings", "th": "มีไฟ เครื่องเล่น และของกินสำหรับเด็ก ช่วงเย็นคนเยอะและหนาว" },
+          "tip": { "en": "Seasonal: most guides say 6 November to 22 December 2026, others differ; the big wheel is said to stay to early January", "th": "ตามฤดูกาล ไกด์ส่วนใหญ่ว่า 6 พ.ย.–22 ธ.ค. 2026 บางแห่งต่างออกไป ชิงช้าสวรรค์ว่าจะอยู่ถึงต้นเดือน ม.ค." },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Eyre Square, Galway",
+          "ok": "2026-11",
+          "src": "https://www.theirishroadtrip.com/galway-christmas-markets/"
+        },
+        {
+          "name": { "en": "Aillwee Cave and Burren Birds of Prey Centre", "th": "ถ้ำอิลวีและศูนย์นกล่าเหยื่อเบอร์เรน" },
+          "kind": "nature",
+          "area": { "en": "Ballyvaughan, County Clare", "th": "บัลลีวอห์น เคาน์ตีแคลร์" },
+          "what": { "en": "A guided walk through a cave with an underground stream, plus a birds of prey centre with flying displays", "th": "ทัวร์เดินถ้ำที่มีลำธารใต้ดิน และศูนย์นกล่าเหยื่อที่มีการแสดงบิน" },
+          "why": { "en": "A dry outing with a guided cave tour and a birds of prey centre; check the cave route for steps before taking a pram", "th": "กิจกรรมที่มีทั้งทัวร์ถ้ำและศูนย์นกล่าเหยื่อ ควรเช็กเส้นทางในถ้ำว่ามีบันไดหรือไม่ก่อนพารถเข็นไป" },
+          "tip": { "en": "The attraction marks 50 years in 2026; check the winter schedule, and hawk walks cost extra", "th": "สถานที่นี้ครบ 50 ปีในปี 2026 ควรเช็กตารางฤดูหนาว และการเดินกับเหยี่ยวต้องจ่ายเพิ่ม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "≈ €26 adults · €16 children 4–15 · €70 family of 2+2 (listing; check the price)", "th": "≈ €26 ผู้ใหญ่ · €16 เด็ก 4–15 ปี · €70 ครอบครัว 2+2 (ตามรายการ เช็กราคา)" },
+          "book": "rec",
+          "q": "Aillwee Cave, Ballyvaughan, County Clare",
+          "ok": "2026-11",
+          "src": "https://www.galwaytourism.ie/places-to-visit/visitor-attractions/burren-birds-of-prey-centre/"
+        },
+        {
+          "name": { "en": "Bunratty Castle and Folk Park", "th": "ปราสาทและหมู่บ้านโบราณบันแรตตี" },
+          "kind": "culture",
+          "area": { "en": "Bunratty, County Clare", "th": "บันแรตตี เคาน์ตีแคลร์" },
+          "what": { "en": "A medieval castle with a folk park of old farmhouses, a village street and farm animals", "th": "ปราสาทยุคกลางกับหมู่บ้านโบราณ มีบ้านฟาร์มเก่า ถนนหมู่บ้าน และสัตว์ในฟาร์ม" },
+          "why": { "en": "Space to wander and animals to see; the castle's spiral stairs are steep for small children", "th": "มีที่เดินเล่นและสัตว์ให้ดู บันไดวนของปราสาทชันสำหรับเด็กเล็ก" },
+          "tip": { "en": "Listings disagree on hours (one says the castle closes at 16:00); the evening banquets are separate", "th": "รายการให้เวลาเปิดไม่ตรงกัน (ที่หนึ่งว่าปราสาทปิด 16:00) งานเลี้ยงมื้อค่ำแยกต่างหาก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Bunratty Castle and Folk Park, Bunratty, County Clare",
+          "ok": "2026-11",
+          "src": "https://www.tiqets.com/en/bunratty-attractions-c262523/tickets-for-bunratty-castle-folk-park-p975055/"
+        },
+        {
+          "name": { "en": "Connemara National Park", "th": "อุทยานแห่งชาติคอนเนมารา" },
+          "kind": "nature",
+          "area": { "en": "Letterfrack, County Galway", "th": "เลตเตอร์แฟรก เคาน์ตีกอลเวย์" },
+          "what": { "en": "Mountain, bog and woodland trails with a visitor centre; Diamond Hill is the best-known climb", "th": "เส้นทางภูเขา พรุ และป่า มีศูนย์ผู้เยี่ยมชม ไดมอนด์ฮิลล์เป็นเส้นทางปีนที่รู้จักที่สุด" },
+          "why": { "en": "Free entry and easy short trails by the centre; Diamond Hill (6.5 km) is only for older children", "th": "เข้าฟรีและมีเส้นทางสั้นๆ ง่ายๆ ใกล้ศูนย์ ไดมอนด์ฮิลล์ (6.5 กม.) เหมาะเด็กโตเท่านั้น" },
+          "tip": { "en": "Visitor centre Wed–Sun 9:00–17:30 and closed Mon–Tue from July 2026; the grounds close in orange or red weather warnings", "th": "ศูนย์ผู้เยี่ยมชมเปิดพุธ–อาทิตย์ 9:00–17:30 ปิดจันทร์–อังคารตั้งแต่ ก.ค. 2026 สวนปิดเมื่อมีประกาศเตือนภัยสีส้มหรือแดง" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free, parking free", "th": "ฟรี ที่จอดรถฟรี" },
+          "book": "none",
+          "q": "Connemara National Park, Letterfrack, County Galway",
+          "ok": "2026-11",
+          "src": "https://www.nationalparks.ie/connemara"
+        },
+        {
+          "name": { "en": "Connemara Pony Heritage Centre", "th": "ศูนย์มรดกม้าพันธุ์คอนเนมารา" },
+          "kind": "farm",
+          "area": { "en": "Letterfrack, County Galway", "th": "เลตเตอร์แฟรก เคาน์ตีกอลเวย์" },
+          "what": { "en": "A centre beside the national park visitor centre about the Connemara pony, with trails, a café and toilets", "th": "ศูนย์เรื่องม้าพันธุ์คอนเนมาราข้างศูนย์ผู้เยี่ยมชมของอุทยาน มีเส้นทางเดิน คาเฟ่ และห้องน้ำ" },
+          "why": { "en": "A free, easy stop; it opened on 31 October 2025 and stays open seven days a week", "th": "แวะง่ายและฟรี เปิดเมื่อ 31 ต.ค. 2025 และเปิดทุกวัน" },
+          "tip": { "en": "Trails, café and toilets stay open on Mondays and Tuesdays when the main visitor centre is shut", "th": "เส้นทาง คาเฟ่ และห้องน้ำเปิดวันจันทร์และอังคารขณะที่ศูนย์หลักปิด" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Connemara Pony Heritage Centre, Letterfrack, County Galway",
+          "ok": "2026-11",
+          "src": "https://www.nationalparks.ie/connemara"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "ฟาร์มเปิดโมเฮอร์ฮิลล์",
+            "en": "Moher Hill Open Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ลิสแคนเนอร์ เคาน์ตีแคลร์",
+            "en": "Liscannor, County Clare"
+          },
+          "what": {
+            "th": "ฟาร์มเปิดที่มีนกอีมู นกกระจอกเทศ และแรคคูน และมีลานโกคาร์ต",
+            "en": "An open farm with emus, ostriches and raccoons, and a go-kart track"
+          },
+          "why": {
+            "th": "มีสัตว์ให้ทักทาย และที่เล่นในร่มสำหรับเด็กเล็ก",
+            "en": "Animals to meet and indoor play areas for little ones"
+          },
+          "q": "Moher Hill Open Farm, Liscannor, County Clare",
+          "ok": "2026-11",
+          "tip": { "en": "Open on Saturdays and Sundays; winter opening is not confirmed, so check first", "th": "เปิดวันเสาร์และอาทิตย์ หน้าหนาวยังไม่ยืนยันว่าเปิด เช็กก่อนไป" }
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "ถ้ำดูลิน",
+            "en": "Doolin Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "ถ้ำที่มีหินย้อยใหญ่ที่สุดในซีกโลกเหนือ และมีเส้นทางเดินในฟาร์ม",
+            "en": "A cave with the largest stalactite in the Northern Hemisphere, and a farm trail"
+          },
+          "why": {
+            "th": "เส้นทางวนในฟาร์ม 1 กม. มีวัวพันธุ์หายาก แพะแคระ และหมู่บ้านนางฟ้าให้ตามหา",
+            "en": "A 1 km farm loop with rare cattle, pygmy goats and a fairy village to find"
+          },
+          "q": "Doolin Cave, Doolin, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "ป้อมคาเฮอร์คอนเนลล์",
+            "en": "Caherconnell Fort"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "ป้อมหินทรงวงแหวนอายุกว่า 1,000 ปี",
+            "en": "A stone ring fort over 1,000 years old"
+          },
+          "why": {
+            "th": "การแสดงสุนัขต้อนแกะกับคนต้อนและสุนัขบอร์เดอร์คอลลี",
+            "en": "Sheepdog shows with a handler and his border collies"
+          },
+          "tip": {
+            "th": "ศูนย์ผู้เยี่ยมชมเปิดมีนาคมถึงตุลาคม ปิดช่วงหน้าหนาว การแสดงสุนัขต้อนแกะมีช่วงมีนาคมถึงตุลาคม",
+            "en": "The visitor centre opens March to October; closed in winter. Sheepdog shows run between March and October"
+          },
+          "q": "Caherconnell Stone Fort, Carran, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "เขตอนุรักษ์ป่าโดรมอร์",
+            "en": "Dromore Wood nature reserve"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "ป่าที่มีแบดเจอร์ สโต๊ต นกหายาก ผีเสื้อ ป้อมวงแหวนสองแห่ง และเตาเผาปูนเก่า",
+            "en": "Woods with badgers, stoats, rare birds and butterflies, two ring forts and an old lime kiln"
+          },
+          "why": {
+            "th": "มีสัตว์และนกให้มองหา",
+            "en": "Animals and birds to spot"
+          },
+          "q": "Dromore Wood, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "พิพิธภัณฑ์การบินแชนนอน",
+            "en": "Shannon Aviation Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "เครื่องบินและของที่ระลึกด้านการบิน",
+            "en": "Aircraft and aviation memorabilia"
+          },
+          "why": {
+            "th": "มีบทเรียนบินเสมือนจริงในทัวร์นำชม",
+            "en": "A virtual flying lesson on a guided tour"
+          },
+          "q": "Shannon Aviation Museum, Shannon, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "หาดลาฮินช์",
+            "en": "Lahinch beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ลาฮินช์ เคาน์ตีแคลร์",
+            "en": "Lahinch, County Clare"
+          },
+          "what": {
+            "th": "หาดทรายยาว 2 กม. ข้างเมืองริมทะเลที่คึกคัก",
+            "en": "A 2 km sandy beach beside a lively seaside town"
+          },
+          "why": {
+            "th": "เรียนโต้คลื่น ว่ายน้ำ แล่นเรือใบ และพายคายัก",
+            "en": "Surf lessons, swimming, sailing and kayaking"
+          },
+          "q": "Lahinch Beach, Lahinch, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์แห่งชาติไอร์แลนด์ – โบราณคดี",
+            "en": "National Museum of Ireland – Archaeology"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคิลแดร์ ดับลิน",
+            "en": "Kildare Street, Dublin"
+          },
+          "what": {
+            "th": "ทองและเงินยุคไวกิ้ง ศพในบึงยุคเหล็ก และห้องจัดแสดงอียิปต์",
+            "en": "Viking gold and silver, Iron Age bog bodies and an Egyptian gallery"
+          },
+          "why": {
+            "th": "สมบัติทองคำสำหรับเด็กโต",
+            "en": "Gold treasures for older children"
+          },
+          "tip": {
+            "th": "เหมาะกับเด็ก 8 ขวบขึ้นไป · เปิดอังคาร–เสาร์ 10:00–17:00 อาทิตย์และจันทร์ 13:00–17:00",
+            "en": "Best for ages 8 and up; open Tuesday–Saturday 10am–5pm, Sunday and Monday 1pm–5pm"
+          },
+          "q": "National Museum of Ireland - Archaeology, Kildare Street, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "หอศิลป์แห่งชาติไอร์แลนด์",
+            "en": "National Gallery of Ireland"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดับลิน",
+            "en": "Dublin"
+          },
+          "what": {
+            "th": "ภาพวาดและประติมากรรม มีห้องของคาราวัจโจ",
+            "en": "Paintings and sculpture, with a Caravaggio room"
+          },
+          "why": {
+            "th": "เวิร์กช็อปครอบครัวฟรีทุกบ่ายวันอาทิตย์",
+            "en": "Free family workshops on Sunday afternoons"
+          },
+          "q": "National Gallery of Ireland, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็กต่ำกว่า 12 ปี €11.50 (บัตรปกติ)",
+            "en": "€11.50 child under 12 (standard tickets)"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้งแห่งชาติ",
+            "en": "National Wax Museum Plus"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดับลิน",
+            "en": "Dublin"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งคนดัง บุคคลในประวัติศาสตร์ และตัวละคร",
+            "en": "Wax figures of celebrities, historical figures and characters"
+          },
+          "why": {
+            "th": "มีโซนเด็กสำหรับเด็กเล็ก",
+            "en": "A Children's Zone for younger visitors"
+          },
+          "tip": {
+            "th": "ห้องสยองขวัญเหมาะกับเด็กโตเท่านั้น",
+            "en": "The Chamber of Horrors is best left to older children"
+          },
+          "q": "The National Wax Museum Plus, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ €18 · ผู้ใหญ่ 2 คนกับเด็กไม่เกิน 3 คน €45",
+            "en": "€18 adult; €45 for two adults and up to three children"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เล็กแห่งดับลิน",
+            "en": "The Little Museum of Dublin"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เซนต์สตีเฟนส์กรีน ดับลิน",
+            "en": "St Stephen's Green, Dublin"
+          },
+          "what": {
+            "th": "ทัวร์นำชม 29 นาที เล่าเรื่องราวของดับลิน",
+            "en": "A 29-minute guided tour that tells the story of Dublin"
+          },
+          "why": {
+            "th": "รูปแบบแปลกใหม่ที่ทำให้เด็กสนใจ",
+            "en": "A quirky format that keeps children engaged"
+          },
+          "tip": {
+            "th": "เหมาะกับเด็ก 8 ขวบขึ้นไป",
+            "en": "Best for ages 8+"
+          },
+          "q": "The Little Museum of Dublin, St Stephen's Green, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็กและนักเรียน €17 (2 ชั่วโมง)",
+            "en": "€17 for children and students (two hours)"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "อะควาโซน",
+            "en": "AquaZone"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์กีฬาทางน้ำแห่งชาติ แบลนชาร์ดสทาวน์",
+            "en": "National Aquatic Centre, Blanchardstown"
+          },
+          "what": {
+            "th": "สวนน้ำที่มีสระคลื่น แม่น้ำจำลอง และเครื่องจำลองโต้คลื่น",
+            "en": "A water park with a wave pool, a lazy river and a surf simulator"
+          },
+          "why": {
+            "th": "สไลเดอร์ คลื่น และแม่น้ำจำลอง",
+            "en": "Slides, waves and the lazy river"
+          },
+          "q": "AquaZone, National Aquatic Centre, Blanchardstown, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์การอพยพไอริช EPIC",
+            "en": "EPIC The Irish Emigration Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดับลิน",
+            "en": "Dublin"
+          },
+          "what": {
+            "th": "ภาพยนตร์ เสียง และจอสัมผัส เล่าเรื่องผู้อพยพ",
+            "en": "Films, audio and touch screens with emigrants' stories"
+          },
+          "why": {
+            "th": "มีเส้นทางล่าของในพิพิธภัณฑ์และทัวร์เด็กในแอป",
+            "en": "Museum trails and a children's tour on the app"
+          },
+          "tip": {
+            "th": "เผื่อเวลาอย่างน้อย 90 นาที",
+            "en": "Allow at least 90 minutes"
+          },
+          "q": "EPIC The Irish Emigration Museum, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์แห่งชาติ ศิลปะตกแต่งและประวัติศาสตร์ คอลลินส์แบร์แร็กส์",
+            "en": "National Museum – Decorative Arts and History (Collins Barracks)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คอลลินส์แบร์แร็กส์ สโตนีย์แบตเตอร์ ดับลิน",
+            "en": "Collins Barracks, Stoneybatter, Dublin 7"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในร่มเข้าฟรี ติดรายชื่อที่เที่ยววันฝนตกของดับลิน",
+            "en": "A free indoor museum on Dublin's rainy-day lists"
+          },
+          "why": {
+            "th": "เข้าฟรีและอยู่ในร่ม เหมาะกับวันฝนตก",
+            "en": "Free and indoors, for a wet day"
+          },
+          "q": "Collins Barracks National Museum of Ireland, Benburb St, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.loughwellfarmpark.ie/",
+          "name": {
+            "th": "ฟาร์มพาร์กลอฟเวลล์",
+            "en": "Loughwell Farm Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "มอยคัลเลน ใกล้กอลเวย์",
+            "en": "Moycullen, near Galway"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มและกลางแจ้ง และกิจกรรมกับสัตว์ตลอดปี",
+            "en": "Indoor and outdoor play and animal experiences all year round"
+          },
+          "why": {
+            "th": "ที่เล่นในร่มกว่า 12,000 ตารางฟุต และโซนเป่าลมสำหรับเด็กต่ำกว่า 3 ขวบ",
+            "en": "Over 12,000 square feet of indoor play and an under-3s inflatable area"
+          },
+          "q": "Loughwell Farm Park, Moycullen, Galway",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.leisureland.ie/",
+          "name": {
+            "th": "เลเชอร์แลนด์ ซอลต์ฮิลล์",
+            "en": "Leisureland (Salthill)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนอัปเปอร์ซอลต์ฮิลล์ กอลเวย์",
+            "en": "Upper Salthill Road, Galway"
+          },
+          "what": {
+            "th": "ศูนย์สระว่ายน้ำริมทางเดินเลียบทะเลซอลต์ฮิลล์",
+            "en": "A pool centre on the Salthill promenade"
+          },
+          "why": {
+            "th": "มีสระหัดว่ายและสไลเดอร์น้ำยาว 65 เมตร",
+            "en": "A learner pool and a 65 m water slide"
+          },
+          "q": "Leisureland, Upper Salthill Rd, Galway",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "name": {
+            "th": "มักครอสครีมเมอรี",
+            "en": "Muckross Creamery"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "มักครอส คิลลาร์นีย์",
+            "en": "Muckross, Killarney"
+          },
+          "what": {
+            "th": "ฟาร์มโคนมของครอบครัว ได้พบวัวที่ให้นมทำไอศกรีม",
+            "en": "A family dairy farm where you meet the cows behind its ice cream"
+          },
+          "why": {
+            "th": "ดูวัวแล้วกินไอศกรีมจากร้านในฟาร์ม",
+            "en": "Meet the cows, then have a scoop from the ice cream parlour"
+          },
+          "q": "Muckross Creamery, Killarney",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://killarney.ie/family-friendly-getaways/",
+          "name": {
+            "th": "ฟาร์มสัตว์เลี้ยงเคนเนดีส์",
+            "en": "Kennedy's Pet Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เกลนเฟลสก์ คิลลาร์นีย์",
+            "en": "Glenflesk, Killarney"
+          },
+          "what": {
+            "th": "ฟาร์มสัตว์เลี้ยงของครอบครัว ให้อาหารและกอดสัตว์ได้",
+            "en": "A family-run pet farm with animals to feed and cuddle"
+          },
+          "why": {
+            "th": "มีที่เล่นทั้งในร่มและกลางแจ้ง ใช้ได้ทุกสภาพอากาศ",
+            "en": "Indoor and outdoor play areas for any weather"
+          },
+          "q": "Kennedys Pet Farm, Glenflesk, Killarney",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

@@ -75,6 +75,34 @@
     (kidSlugs || Object.keys(c.kids)).forEach((s, i) => { const ks = c.kids[s]; if (ks && ks.length) out.push(`Child ${i + 1} especially loves: ${[w(TASTE_OUT, ks.filter((k) => keys(TASTE_OUT).includes(k))), w(TASTE_FOOD, ks.filter((k) => keys(TASTE_FOOD).includes(k)))].filter(Boolean).join(', ')}.`); });
     return out.join(' ');
   }
-  const api = { TASTE_FOOD, TASTE_OUT, TASTE_NEED, foodStylesOf, outStylesOf, cleanTaste, tasteEmpty, tasteFit, tasteWords };
+  // what the family's own reviews say, apart from what the parents chose (E6, docs/PLACES-ECOSYSTEM.md F3: "it learns, without changing
+  // what the parents set"): each review of a place to eat ('food') or a place ('place') with stars or "would go again" scores the styles its
+  // own words carry (name, tags, note) — 4–5 ★ or "again" +1 each, 1–2 ★ or "not again" −1 each; a style at +2 or more is learned as
+  // liked, at −2 or less as skipped, unless the parents already chose it either way. Read the same on the phone and the server.
+  function learnTaste(reviews, taste) {
+    const t = cleanTaste(taste), score = { food: {}, out: {} };
+    for (const r of Array.isArray(reviews) ? reviews : []) {
+      if (!r || (r.kind !== 'food' && r.kind !== 'place')) continue;
+      const v = (r.rating >= 4 ? 1 : r.rating && r.rating <= 2 ? -1 : 0) + (r.again === true ? 1 : r.again === false ? -1 : 0);
+      if (!v) continue;
+      const x = { name: r.name, what: { en: r.note || '', th: r.note || '' }, tag: { en: (Array.isArray(r.tags) ? r.tags : []).join(' '), th: '' } };
+      const side = r.kind === 'food' ? 'food' : 'out';
+      for (const k of side === 'food' ? foodStylesOf(x) : outStylesOf(x)) score[side][k] = (score[side][k] || 0) + v;
+    }
+    const out = {};
+    for (const side of ['food', 'out']) {
+      const chosen = new Set([...t[side].like, ...t[side].avoid]), e = Object.entries(score[side]).filter(([k]) => !chosen.has(k)).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+      out[side] = { like: e.filter(([, n]) => n >= 2).map(([k]) => k), avoid: e.filter(([, n]) => n <= -2).map(([k]) => k), score: score[side] };
+    }
+    return out;
+  }
+  // the fit with what was learned as a softer voice: the parents' choice decides; else a learned like is +0.5, a learned skip −0.5
+  function tasteFitLearned(styles, side, learned) {
+    const f = tasteFit(styles, side); if (f || !learned) return f;
+    if (styles.some((k) => learned.avoid.includes(k))) return -0.5;
+    return styles.some((k) => learned.like.includes(k)) ? 0.5 : 0;
+  }
+  const CC_CUR = { ae: 'AED', ar: 'ARS', at: 'EUR', au: 'AUD', be: 'EUR', br: 'BRL', bt: 'BTN', ca: 'CAD', ch: 'CHF', cl: 'CLP', cn: 'CNY', cz: 'CZK', de: 'EUR', dk: 'DKK', ee: 'EUR', eg: 'EGP', es: 'EUR', fi: 'EUR', fj: 'FJD', fr: 'EUR', gb: 'GBP', ge: 'GEL', gr: 'EUR', hk: 'HKD', hr: 'EUR', hu: 'HUF', id: 'IDR', ie: 'EUR', in: 'INR', is: 'ISK', it: 'EUR', jo: 'JOD', jp: 'JPY', ke: 'KES', kh: 'USD', kr: 'KRW', kz: 'KZT', la: 'LAK', lk: 'LKR', lu: 'EUR', ma: 'MAD', mm: 'MMK', mn: 'MNT', mo: 'MOP', mt: 'EUR', mv: 'MVR', mx: 'MXN', my: 'MYR', nl: 'EUR', no: 'NOK', np: 'NPR', nz: 'NZD', pe: 'PEN', ph: 'PHP', pl: 'PLN', pt: 'EUR', se: 'SEK', sg: 'SGD', si: 'EUR', sk: 'EUR', th: 'THB', tr: 'TRY', tw: 'TWD', us: 'USD', uz: 'UZS', vn: 'VND', za: 'ZAR' };
+  const api = { CC_CUR, TASTE_FOOD, TASTE_OUT, TASTE_NEED, foodStylesOf, outStylesOf, cleanTaste, tasteEmpty, tasteFit, tasteWords, learnTaste, tasteFitLearned };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else Object.assign(root, api);
 })(typeof self !== 'undefined' ? self : this);

@@ -1,0 +1,178 @@
+{
+  "town": "th-krabi",
+  "rounds": [
+    {
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the town holds 16 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [
+        {
+          "name": "Pee Pee Bakery",
+          "src": "https://www.google.com/maps/place/Phi+Phi+Bakery",
+          "page_name": "Phi Phi Bakery",
+          "evidence": "Google Maps (2026-11-23): restaurant, 4.3★, 125 70 Moo 7, Ao Nang (PQRF+29 — the plus code is on Phi Phi Don, which belongs to Ao Nang subdistrict); 'Open · Closes 10 PM', Facebook linked; nothing says closed. 'Pee Pee Bakery' itself is not found on Maps; Fodor's and Wanderlog (web search) give the bakery as 'Phi Phi Bakery (also spelt Pee Pee Bakery)', 97 Moo 7 on Tonsai's main street, opened 1989",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 14 rows from Travel Triangle (Aug 2026), KTC (Jan 2026), Thrillophilia (Dec 2025) and TrueID (Jun 2026) passed library-check.cjs, 12 went in",
+      "added": [
+        {
+          "name": "Ton Ma Yom",
+          "page_name": "Ton Ma Yom",
+          "src": "https://traveltriangle.com/blog/restaurants-in-ao-nang-thailand/",
+          "date": "2026-08",
+          "map": "Google Maps 'ร้านอาหารต้นมะยม อ่าวนาง', 1,603 reviews, newest shown '8 days ago'"
+        },
+        {
+          "name": "Gecko Cabane",
+          "page_name": "Gecko Cabane",
+          "src": "https://traveltriangle.com/blog/restaurants-in-ao-nang-thailand/",
+          "date": "2026-08",
+          "map": "Google Maps 'Gecko Cabane Restaurant', 1,080 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Chalita Cafe",
+          "page_name": "Chalita Cafe",
+          "src": "https://traveltriangle.com/blog/restaurants-in-ao-nang-thailand/",
+          "date": "2026-08",
+          "map": "Google Maps 'ร้านอาหารชลิตาคาเฟ่', ซอยเจ้าฟ้า, 675 reviews (search card, open)"
+        },
+        {
+          "name": "Burger Bung",
+          "page_name": "Burger Bung",
+          "src": "https://traveltriangle.com/blog/restaurants-in-ao-nang-thailand/",
+          "date": "2026-08",
+          "map": "Google Maps 'เบอร์เกอร์บัง', 1,252 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Ruanthip (Khlong Son)",
+          "page_name": "Ruanthip Restaurant",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'ร้านอาหารเรือนทิพย์ (คลองสน)', 1,731 reviews, newest shown '5 days ago'"
+        },
+        {
+          "name": "Baan Ma-Ying",
+          "page_name": "Baan Ma-Ying floating restaurant",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'ร้านอาหารบ้านมะหญิง', 598 reviews, newest shown '7 days ago'"
+        },
+        {
+          "name": "Baan Tha Ley Cafe",
+          "page_name": "บ้านทะเล คาเฟ่ กระบี่",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'Baan Tha Ley Krabi - บ้านทะเลคาเฟ่ กระบี่', 1,002 reviews, newest shown '1 day ago'"
+        },
+        {
+          "name": "Makan Tam Saep and Coffee",
+          "page_name": "มากัน ตำแซ่บ แอนด์ คอฟฟี่",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'ร้านอาหารมากันตำแซบ', 353 reviews, newest shown '16 days ago'"
+        },
+        {
+          "name": "Sprucy Cafe",
+          "page_name": "Sprucy Cafe",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'ร้านสพรูซี่คาเฟ่', 701 reviews, newest shown '10 days ago'"
+        },
+        {
+          "name": "Cha-Lom",
+          "page_name": "Cha-Lom",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'ร้านอาหารชะลอม', 506 reviews (search card, open)"
+        },
+        {
+          "name": "Dragon's Crest (Khao Ngon Nak)",
+          "page_name": "Dragon’s Crest",
+          "src": "https://www.thrillophilia.com/places-to-visit-in-krabi-with-family",
+          "date": "2025-11",
+          "map": "Google Maps 'เขาหงอนนาค', 2,941 reviews (search card, open)"
+        },
+        {
+          "name": "HarborLand Central Krabi",
+          "page_name": "ฮาร์เบอร์แลนด์ เซ็นทรัล กระบี่",
+          "src": "https://travel.trueid.net/detail/14l3mAWlKjvQ",
+          "date": "2026-06",
+          "map": "Google Maps 'HarborLand Central Krabi', 31 reviews, newest shown '7 days ago'"
+        },
+        {
+          "name": "Ban Ko Lek Riverside",
+          "page_name": "Ban Ko Lek Riverside",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'Ban KoLek restaurant', newest review shown 9 days ago"
+        },
+        {
+          "name": "Anchali (Krabi town)",
+          "page_name": "Anchali Krabi Thai Restaurant",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'Ann Cha Lee Restaurant' (Maharat Road), newest review shown a day ago"
+        },
+        {
+          "name": "Nahm, the Taste of Krabi",
+          "page_name": "NAHM The Taste of Krabi",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'Nahm restaurant', newest review shown 2 months ago"
+        },
+        {
+          "name": "Khaothong Terrace",
+          "page_name": "Khaothong Terrace Restaurant",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/krabi-recommend-food",
+          "date": "2026-01",
+          "map": "Google Maps 'Khaothong Terrace Resort&Restaurant', newest review shown 26 days ago"
+        },
+        {
+          "name": "Krabi Urban Forest Walkway",
+          "page_name": "Krabi Urban Forest Walkway",
+          "src": "https://krabinature.com/krabi-urban-forest-walkway-mangrove-walkway/",
+          "date": "2026-09",
+          "map": "Google Maps 'Krabi Urban Forest', newest review shown 6 months ago"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Vieng Ta-Lay",
+          "why": "the reviews shown are years old"
+        },
+        {
+          "name": "Krabi Fun Park",
+          "why": "no map entry of its own"
+        },
+        {
+          "name": "Vieng Ta-Lay Restaurant",
+          "why": "newest Google Maps review a year old"
+        },
+        {
+          "name": "mangrove bird tour",
+          "why": "the page names no operator"
+        },
+        {
+          "name": "Krabi Fun Park",
+          "why": "no district on the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+      "round3": {
+        "checked": "2026-11-24",
+        "agents": "one Haiku agent; 7 rows from KTC (Jan 2026) and Krabi Nature (2025–2026), all passed library-check.cjs, 5 went in",
+        "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+      }
+    }
+  ]
+}

@@ -1,0 +1,588 @@
+{
+  "town": "cn-harbin",
+  "rounds": [
+    {
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 7 rows without ok; nothing else in the town was re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+      "confirmed": [
+        {
+          "name": "Zhang Bao Pu",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Zhangbaopu / 张包铺",
+          "evidence": "list for '张包铺 道外 哈尔滨': 'Zhangbaopu', 南勋街与二道街交口, 'Open now'; '张包铺', 张包铺胡同（北头道街与二道街之间）, 'Open · Closes 9 PM' — both in the Daowai old quarter",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Lao Du Yi Chu",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "老都一处",
+          "evidence": "list for '老都一处 哈尔滨': 413 Jingyu St (Daoli), 'Open · Closes 9 PM'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Qiulin Food Store",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Qiulin Company",
+          "evidence": "list for '秋林公司 哈尔滨': 319 Dongda St (the row's address), 'Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Russia Coffee & Food",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "露西亚",
+          "evidence": "list for '露西亚咖啡西餐厅 哈尔滨': 57 W Toudao St (the row's address), 'Open · Closes 9 PM'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Lao Chu Jia",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "evidence": "no Sandao St branch on Maps: Laochujia 318 Youyi Rd 'Open · Closes 9 PM', Wenzheng St 'Open · Closes 9 PM', W Qidao St 55 (no hours); a web search also names Youyi Rd 318 as the main shop and found no 三道街 branch — the row's branch is not confirmed"
+        },
+        {
+          "name": "Lao Ding Feng",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "'Laodingfeng', 118 Zhongyang Ave — no hours shown"
+        }
+      ],
+      "removed": [
+        {
+          "name": "Portman Western Restaurant",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "reason": "the row names a Guogeli Street branch (Nangang); Maps lists Boteman Western Restaurant at 53 W Qidao St, Daoli ('Open · Closes 9 PM') and 12 Xida St, and a web search (Qunar, Lonely Planet, China Daily) puts it in Daoli off Central Street — no Guogeli Street branch, another district than the row says"
+        }
+      ]
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 17 rows, 11 passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Heilongjiang Science and Technology Museum",
+          "page_name": "Heilongjiang Science and Technology Museum",
+          "src": "https://offpeaktrip.com/en/guide/haerbin/Heilongjiang%20Science%20and%20Technology%20Museum",
+          "date": "2026-11",
+          "map": "Google Maps Baidu Maps '黑龙江省科学技术馆', 太阳大道1458号, 250 reviews, newest 2026-11-18"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "nine places to eat",
+          "why": "their only source was Trip.com's restaurant ranking, a review aggregator"
+        },
+        {
+          "name": "Yabuli ski resort",
+          "why": "about three hours outside the city"
+        },
+        {
+          "name": "Miniso Land",
+          "why": "a shop"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family restaurants and indoor play parks in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Quanxin Bei’ai Children’s Restaurant (Intime City)",
+          "page_name": "全心贝爱儿童餐厅(银泰城购物中心店)",
+          "src": "https://www.amap.com/search?query=%E5%85%A8%E5%BF%83%E8%B4%9D%E7%88%B1%E5%84%BF%E7%AB%A5%E9%A4%90%E5%8E%85(%E9%93%B6%E6%B3%B0%E5%9F%8E%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-27",
+          "map": "Amap: open, not marked closed, newest review 2026-10-27",
+          "quote": "亲子餐厅 · 专为宝宝设计鲜制营养餐，少盐无添加"
+        },
+        {
+          "name": "Jia’er Mengdou Baby Food Restaurant (Wangfujing Mall)",
+          "page_name": "佳儿萌豆儿童辅食餐厅(王府井购物中心店)",
+          "src": "https://www.amap.com/search?query=%E4%BD%B3%E5%84%BF%E8%90%8C%E8%B1%86%E5%84%BF%E7%AB%A5%E8%BE%85%E9%A3%9F%E9%A4%90%E5%8E%85(%E7%8E%8B%E5%BA%9C%E4%BA%95%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-24",
+          "map": "Amap: open, not marked closed, newest review 2026-10-24",
+          "quote": "亲子餐厅 · 宝宝餐 · 儿童友好"
+        },
+        {
+          "name": "Mike Babei Children’s Restaurant",
+          "page_name": "米可巴贝儿童餐厅(哈尔滨店)",
+          "src": "https://www.amap.com/search?query=%E7%B1%B3%E5%8F%AF%E5%B7%B4%E8%B4%9D%E5%84%BF%E7%AB%A5%E9%A4%90%E5%8E%85(%E5%93%88%E5%B0%94%E6%BB%A8%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "亲子餐厅 · 儿童餐盘"
+        },
+        {
+          "name": "Zero Gravity Restaurant (Xicheng Hongchang)",
+          "page_name": "失重餐厅",
+          "src": "https://www.amap.com/search?query=%E5%A4%B1%E9%87%8D%E9%A4%90%E5%8E%85&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "整点还有飞车表演与人偶互动，特别适合带小朋友打卡"
+        },
+        {
+          "name": "Green Tea Restaurant (CapitaLand Xuefu)",
+          "page_name": "绿茶餐厅(哈尔滨凯德店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%BF%E8%8C%B6%E9%A4%90%E5%8E%85(%E5%93%88%E5%B0%94%E6%BB%A8%E5%87%AF%E5%BE%B7%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "有宝宝椅 · 小朋友喜欢面包诱惑和小锅土豆"
+        },
+        {
+          "name": "Galaxy Water World Restaurant (Songbei)",
+          "page_name": "银河水世界餐厅",
+          "src": "https://www.amap.com/search?query=%E9%93%B6%E6%B2%B3%E6%B0%B4%E4%B8%96%E7%95%8C%E9%A4%90%E5%8E%85&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-08",
+          "map": "Amap: open, not marked closed, newest review 2026-11-08",
+          "quote": "孩子很喜欢来，小孩玩的东西也很多"
+        },
+        {
+          "name": "Mooke Italian (Sunac Mall)",
+          "page_name": "摩欧客意式餐厅(哈尔滨融创茂店)",
+          "src": "https://www.amap.com/search?query=%E6%91%A9%E6%AC%A7%E5%AE%A2%E6%84%8F%E5%BC%8F%E9%A4%90%E5%8E%85(%E5%93%88%E5%B0%94%E6%BB%A8%E8%9E%8D%E5%88%9B%E8%8C%82%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-03",
+          "map": "Amap: open, not marked closed, newest review 2026-10-03",
+          "quote": "孩子想吃披萨，选了融创茂店的摩欧客意式餐厅，套餐很合适"
+        },
+        {
+          "name": "Bund 701 Riverside Restaurant (R&F Plaza)",
+          "page_name": "外滩701观江餐厅(富力广场店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%96%E6%BB%A9701%E8%A7%82%E6%B1%9F%E9%A4%90%E5%8E%85(%E5%AF%8C%E5%8A%9B%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Harbin Children’s Park",
+          "page_name": "哈尔滨市儿童公园",
+          "src": "https://www.amap.com/search?query=%E5%93%88%E5%B0%94%E6%BB%A8%E5%B8%82%E5%84%BF%E7%AB%A5%E5%85%AC%E5%9B%AD&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-22",
+          "map": "Amap: open, not marked closed, newest review 2026-11-22",
+          "quote": "亲子户外"
+        },
+        {
+          "name": "Songsong Town (Lesong Plaza)",
+          "page_name": "松松小镇(乐松购物广场店)",
+          "src": "https://www.amap.com/search?query=%E6%9D%BE%E6%9D%BE%E5%B0%8F%E9%95%87(%E4%B9%90%E6%9D%BE%E8%B4%AD%E7%89%A9%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-14",
+          "map": "Amap: open, not marked closed, newest review 2026-11-14",
+          "quote": "室内恒温遛娃童趣乐园 · 化石沙池 · 萌宠互动"
+        },
+        {
+          "name": "Escape Planet Children’s Puzzle Rooms (Lesong)",
+          "page_name": "逃离星球儿童益智探索乐园(乐松店)",
+          "src": "https://www.amap.com/search?query=%E9%80%83%E7%A6%BB%E6%98%9F%E7%90%83%E5%84%BF%E7%AB%A5%E7%9B%8A%E6%99%BA%E6%8E%A2%E7%B4%A2%E4%B9%90%E5%9B%AD(%E4%B9%90%E6%9D%BE%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-21",
+          "map": "Amap: open, not marked closed, newest review 2026-09-21",
+          "quote": "陪亲戚家孩子打卡逃离星球儿童密室乐松店，一口气玩了5个主题，孩子全程超开心"
+        },
+        {
+          "name": "Wanda Kidsplace (Haxi Wanda Plaza)",
+          "page_name": "万达宝贝王儿童乐园(哈尔滨哈西万达广场店)",
+          "src": "https://www.amap.com/search?query=%E4%B8%87%E8%BE%BE%E5%AE%9D%E8%B4%9D%E7%8E%8B%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD(%E5%93%88%E5%B0%94%E6%BB%A8%E5%93%88%E8%A5%BF%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
+          "map": "Amap: open, not marked closed, newest review 2026-10-25",
+          "quote": "0-12岁 · 淘气堡 · 滑梯 · 海洋球池 · 角色扮演"
+        },
+        {
+          "name": "Magic Planet (Jinjue Wanxiang)",
+          "page_name": "魔法星球",
+          "src": "https://www.amap.com/search?query=%E9%AD%94%E6%B3%95%E6%98%9F%E7%90%83&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-09",
+          "map": "Amap: open, not marked closed, newest review 2026-11-09",
+          "quote": "可以和孩子一起进去，也可以坐在外面等待孩子出来"
+        },
+        {
+          "name": "Crazy Maoli (Jinjue Wanxiang)",
+          "page_name": "疯狂的毛哩(金爵万象商业广场店)",
+          "src": "https://www.amap.com/search?query=%E7%96%AF%E7%8B%82%E7%9A%84%E6%AF%9B%E5%93%A9(%E9%87%91%E7%88%B5%E4%B8%87%E8%B1%A1%E5%95%86%E4%B8%9A%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-15",
+          "map": "Amap: open, not marked closed, newest review 2026-11-15",
+          "quote": "带娃来疯狂的毛哩太合适啦"
+        },
+        {
+          "name": "Taoya Children’s Detective House (Hongbo Central Park)",
+          "page_name": "淘鸭逃呀儿童探案馆(红博中央公园店)",
+          "src": "https://www.amap.com/search?query=%E6%B7%98%E9%B8%AD%E9%80%83%E5%91%80%E5%84%BF%E7%AB%A5%E6%8E%A2%E6%A1%88%E9%A6%86(%E7%BA%A2%E5%8D%9A%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9B%AD%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "儿童乐园 · 室内亲子园"
+        },
+        {
+          "name": "Youyou Baby Pirate Park (Hongbo Central Park)",
+          "page_name": "悠悠宝贝海盗主题乐园(红博中央公园店)",
+          "src": "https://www.amap.com/search?query=%E6%82%A0%E6%82%A0%E5%AE%9D%E8%B4%9D%E6%B5%B7%E7%9B%97%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E7%BA%A2%E5%8D%9A%E4%B8%AD%E5%A4%AE%E5%85%AC%E5%9B%AD%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "儿童主题乐园 · 小宝宝游玩 · 亲子活动"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "哈尔滨游乐园",
+          "why": "three reviews, nothing about children"
+        },
+        {
+          "name": "悦荟牛排餐厅, 星际乐园",
+          "why": "their pages did not load fully"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for family sights and restaurants in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Petersburg Russian Restaurant (Central Street)",
+          "page_name": "彼得蒂堡俄式西餐厅(中央大街店)",
+          "src": "https://www.amap.com/search?query=%E5%BD%BC%E5%BE%97%E8%92%82%E5%A0%A1%E4%BF%84%E5%BC%8F%E8%A5%BF%E9%A4%90%E5%8E%85(%E4%B8%AD%E5%A4%AE%E5%A4%A7%E8%A1%97%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-20",
+          "map": "Amap: open, not marked closed, newest review 2026-11-20",
+          "quote": "亲子友好 · 总体来说对家人和小朋友都很友好，可口，划算的一餐"
+        },
+        {
+          "name": "Poseidon Ocean World (Hulan)",
+          "page_name": "波塞冬海底世界",
+          "src": "https://www.amap.com/search?query=%E6%B3%A2%E5%A1%9E%E5%86%AC%E6%B5%B7%E5%BA%95%E4%B8%96%E7%95%8C&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-10",
+          "map": "Amap: open, not marked closed, newest review 2026-11-10",
+          "quote": "亲子游玩首选 · 海豚秀精彩有趣，海象海狮的马戏表演笑点满满，小朋友看得特别投入"
+        },
+        {
+          "name": "World Joy City (Hulan)",
+          "page_name": "世界欢乐城",
+          "src": "https://www.amap.com/search?query=%E4%B8%96%E7%95%8C%E6%AC%A2%E4%B9%90%E5%9F%8E&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-02",
+          "map": "Amap: open, not marked closed, newest review 2026-11-02",
+          "quote": "亲子户外 · 亲子游 · 博瑞斯是孩子最喜欢的，玩的最久的，大概能玩三小时"
+        },
+        {
+          "name": "Harbin Culture Park",
+          "page_name": "哈尔滨文化公园",
+          "src": "https://www.amap.com/search?query=%E5%93%88%E5%B0%94%E6%BB%A8%E6%96%87%E5%8C%96%E5%85%AC%E5%9B%AD&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "亲子户外 · 俄式老建筑搭配摩天轮，本地人日常遛弯、带娃游玩都合适"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "小资太太茶餐厅, 卢小罐俄餐小馆",
+          "why": "nothing about children on the page (a family-style tag only)"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for children's meals in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "General Steak Korean (Wangfujing Mall)",
+          "page_name": "将军牛排韩国餐厅(关东古巷王府井店)",
+          "src": "https://www.amap.com/search?query=%E5%B0%86%E5%86%9B%E7%89%9B%E6%8E%92%E9%9F%A9%E5%9B%BD%E9%A4%90%E5%8E%85(%E5%85%B3%E4%B8%9C%E5%8F%A4%E5%B7%B7%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "儿童餐 · 因为孩子喜欢芝士我们点的芝士牛排"
+        },
+        {
+          "name": "Bigger Pizza Buffet (Wangfujing Mall)",
+          "page_name": "比格比萨自助(哈尔滨王府井店)",
+          "src": "https://www.amap.com/search?query=%E6%AF%94%E6%A0%BC%E6%AF%94%E8%90%A8%E8%87%AA%E5%8A%A9(%E5%93%88%E5%B0%94%E6%BB%A8%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "儿童区 · 家庭聚餐 · 带孩子过来聚餐出行很省心"
+        },
+        {
+          "name": "Wushan Banzha Bistro (MixC, Songbei)",
+          "page_name": "雾山板扎·云贵川Bistro(万象汇店)",
+          "src": "https://www.amap.com/search?query=%E9%9B%BE%E5%B1%B1%E6%9D%BF%E6%89%8E%C2%B7%E4%BA%91%E8%B4%B5%E5%B7%9DBistro(%E4%B8%87%E8%B1%A1%E6%B1%87%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "儿童餐 · 宝宝餐"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for restaurants with high chairs in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Jiuzhuan Xiaomo (West City Red Square)",
+          "page_name": "九转小磨 (西城红场店)",
+          "src": "https://www.amap.com/search?query=%E4%B9%9D%E8%BD%AC%E5%B0%8F%E7%A3%A8%20(%E8%A5%BF%E5%9F%8E%E7%BA%A2%E5%9C%BA%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Zhenzhoudao Congee (Intime City)",
+          "page_name": "珍粥道(银泰城店)",
+          "src": "https://www.amap.com/search?query=%E7%8F%8D%E7%B2%A5%E9%81%93(%E9%93%B6%E6%B3%B0%E5%9F%8E%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-17",
+          "map": "Amap: open, not marked closed, newest review 2026-11-17",
+          "quote": "有宝宝椅 · 两种粥好消化，还有点心味道也不错，孩子吃的特别开心"
+        },
+        {
+          "name": "Tonghe Ju Northeastern Kitchen (Wangfujing Mall)",
+          "page_name": "同合居民间菜馆(王府井店)",
+          "src": "https://www.amap.com/search?query=%E5%90%8C%E5%90%88%E5%B1%85%E6%B0%91%E9%97%B4%E8%8F%9C%E9%A6%86(%E7%8E%8B%E5%BA%9C%E4%BA%95%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-10",
+          "map": "Amap: open, not marked closed, newest review 2026-09-10",
+          "quote": "家庭聚餐 · 有宝宝椅 · 适合带娃"
+        },
+        {
+          "name": "Yuwopeng Iron-Pot Stew (Chengxiang Road)",
+          "page_name": "鱼窝棚·铁锅炖(城乡路店)",
+          "src": "https://www.amap.com/search?query=%E9%B1%BC%E7%AA%9D%E6%A3%9A%C2%B7%E9%93%81%E9%94%85%E7%82%96(%E5%9F%8E%E4%B9%A1%E8%B7%AF%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-21",
+          "map": "Amap: open, not marked closed, newest review 2026-09-21",
+          "quote": "家庭聚餐 · 有宝宝椅 · 给老人孩子吃都放心"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Star Park (Wangfujing Mall, Qunli)",
+          "page_name": "星际乐园(哈尔滨王府井购物中心)",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E9%99%85%E4%B9%90%E5%9B%AD(%E5%93%88%E5%B0%94%E6%BB%A8%E7%8E%8B%E5%BA%9C%E4%BA%95%E8%B4%AD%E7%89%A9%E4%B8%AD%E5%BF%83)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-04",
+          "map": "Amap: open, not marked closed, newest review 2026-10-04",
+          "quote": "儿童运动探险 · 王府井一楼星际太空主题乐园太适合遛娃"
+        },
+        {
+          "name": "Meland (MixC Songbei)",
+          "page_name": "MELAND(哈尔滨万象汇店)",
+          "src": "https://www.amap.com/search?query=MELAND(%E5%93%88%E5%B0%94%E6%BB%A8%E4%B8%87%E8%B1%A1%E6%B1%87%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "儿童乐园 · 亲子DIY · 各种攀岩，锻炼小朋友的协调能力和胆量"
+        },
+        {
+          "name": "Xinghewan Play Park (Maple Leaf Outlet)",
+          "page_name": "星河湾亲子游乐园(枫叶小镇奥莱店)",
+          "src": "https://www.amap.com/search?query=%E6%98%9F%E6%B2%B3%E6%B9%BE%E4%BA%B2%E5%AD%90%E6%B8%B8%E4%B9%90%E5%9B%AD(%E6%9E%AB%E5%8F%B6%E5%B0%8F%E9%95%87%E5%A5%A5%E8%8E%B1%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-09-20",
+          "map": "Amap: open, not marked closed, newest review 2026-09-20",
+          "quote": "儿童赛车娱乐 · 星河湾亲子游乐园枫叶小镇奥莱店遛娃一日游"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "海宁龙龙奇幻世界",
+          "why": "its review about children says rides are broken and dirty"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: Amap searches for children's meals and family sights in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Yueshuan Conveyor Hotpot Buffet (Daoli)",
+          "page_name": "悦涮悦享自助旋转小火锅",
+          "src": "https://www.amap.com/search?query=%E6%82%A6%E6%B6%AE%E6%82%A6%E4%BA%AB%E8%87%AA%E5%8A%A9%E6%97%8B%E8%BD%AC%E5%B0%8F%E7%81%AB%E9%94%85&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-18",
+          "map": "Amap: open, not marked closed, newest review 2026-11-18",
+          "quote": "儿童餐"
+        },
+        {
+          "name": "Hexiang Cao Laosan Grill Buffet (Cehui Road)",
+          "page_name": "鹤乡曹老三自助烤鱼烤骨头(测绘路店)",
+          "src": "https://www.amap.com/search?query=%E9%B9%A4%E4%B9%A1%E6%9B%B9%E8%80%81%E4%B8%89%E8%87%AA%E5%8A%A9%E7%83%A4%E9%B1%BC%E7%83%A4%E9%AA%A8%E5%A4%B4(%E6%B5%8B%E7%BB%98%E8%B7%AF%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-25",
+          "map": "Amap: open, not marked closed, newest review 2026-11-25",
+          "quote": "儿童餐"
+        },
+        {
+          "name": "Hangyu Grilled Fish (Central Street)",
+          "page_name": "夯鱼烤鱼(金安国际购物广场店)",
+          "src": "https://www.amap.com/search?query=%E5%A4%AF%E9%B1%BC%E7%83%A4%E9%B1%BC(%E9%87%91%E5%AE%89%E5%9B%BD%E9%99%85%E8%B4%AD%E7%89%A9%E5%B9%BF%E5%9C%BA%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-25",
+          "map": "Amap: open, not marked closed, newest review 2026-10-25",
+          "quote": "还免费赠送了儿童套餐（针对6岁以下的儿童）"
+        },
+        {
+          "name": "Shengshi Jiayan Buffet (Minjiang Road)",
+          "page_name": "盛世家宴甄选自助餐厅",
+          "src": "https://www.amap.com/search?query=%E7%9B%9B%E4%B8%96%E5%AE%B6%E5%AE%B4%E7%94%84%E9%80%89%E8%87%AA%E5%8A%A9%E9%A4%90%E5%8E%85&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-16",
+          "map": "Amap: open, not marked closed, newest review 2026-10-16",
+          "quote": "适合家庭聚会 · 孩子尤其喜欢甜点和冰淇淋区"
+        },
+        {
+          "name": "Weixin Rogers Restaurant (Jinjue Wanxiang)",
+          "page_name": "维欣罗杰斯餐厅(金爵万象店)",
+          "src": "https://www.amap.com/search?query=%E7%BB%B4%E6%AC%A3%E7%BD%97%E6%9D%B0%E6%96%AF%E9%A4%90%E5%8E%85(%E9%87%91%E7%88%B5%E4%B8%87%E8%B1%A1%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-19",
+          "map": "Amap: open, not marked closed, newest review 2026-11-19",
+          "quote": "儿童餐 · 儿童友好"
+        },
+        {
+          "name": "Russian Town (Sun Island)",
+          "page_name": "太阳岛风景区俄罗斯风情小镇",
+          "src": "https://www.amap.com/search?query=%E5%A4%AA%E9%98%B3%E5%B2%9B%E9%A3%8E%E6%99%AF%E5%8C%BA%E4%BF%84%E7%BD%97%E6%96%AF%E9%A3%8E%E6%83%85%E5%B0%8F%E9%95%87&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-11",
+          "map": "Amap: open, not marked closed, newest review 2026-10-11",
+          "quote": "十一遛娃 · 一秒闯进童话小庄园 · 巨型套娃、小矮人雕塑"
+        },
+        {
+          "name": "Bund Snowman Pier (winter)",
+          "page_name": "外滩雪人码头",
+          "src": "https://www.amap.com/search?query=%E5%A4%96%E6%BB%A9%E9%9B%AA%E4%BA%BA%E7%A0%81%E5%A4%B4&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "家庭出游 · 孩子三岁多，很喜欢可以自己开的小坦克 · 孩子玩的很开心"
+        },
+        {
+          "name": "Yuquan Weihushan Forest Park",
+          "page_name": "玉泉威虎山森林公园",
+          "src": "https://www.amap.com/search?query=%E7%8E%89%E6%B3%89%E5%A8%81%E8%99%8E%E5%B1%B1%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-04",
+          "map": "Amap: open, not marked closed, newest review 2026-11-04",
+          "quote": "1.2米以下儿童免票 · 园区里有cs，索道，很大的游泳池，孩子玩的非常开心"
+        },
+        {
+          "name": "Yabuli Panda House",
+          "page_name": "亚布力熊猫馆",
+          "src": "https://www.amap.com/search?query=%E4%BA%9A%E5%B8%83%E5%8A%9B%E7%86%8A%E7%8C%AB%E9%A6%86&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-16",
+          "map": "Amap: open, not marked closed, newest review 2026-11-16",
+          "quote": "亲子户外 · 免票：6岁以下或1.2米以下儿童"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "二龙山风景区",
+          "why": "Amap marks it as possibly closed"
+        },
+        {
+          "name": "艾菲兹音乐餐厅",
+          "why": "one review, and a smoking area"
+        },
+        {
+          "name": "尹阿婆一碗肉",
+          "why": "no children's tag or review about children"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for high-chair restaurants in Nangang, Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Qiuxiang Hunan Kitchen (Haxi)",
+          "page_name": "秋湘辣椒炒肉哈西店",
+          "src": "https://www.amap.com/search?query=%E7%A7%8B%E6%B9%98%E8%BE%A3%E6%A4%92%E7%82%92%E8%82%89%E5%93%88%E8%A5%BF%E5%BA%97&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-23",
+          "map": "Amap: open, not marked closed, newest review 2026-11-23",
+          "quote": "有宝宝椅"
+        },
+        {
+          "name": "Zitong BBQ Buffet (Jinjue Wanxiang)",
+          "page_name": "紫彤品质自助烤肉",
+          "src": "https://www.amap.com/search?query=%E7%B4%AB%E5%BD%A4%E5%93%81%E8%B4%A8%E8%87%AA%E5%8A%A9%E7%83%A4%E8%82%89&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-21",
+          "map": "Amap: open, not marked closed, newest review 2026-11-21",
+          "quote": "有宝宝椅 · 1米1以下儿童免费"
+        },
+        {
+          "name": "Ping Jie Hotpot (Xining South Road)",
+          "page_name": "萍姐火锅(哈尔滨总店)",
+          "src": "https://www.amap.com/search?query=%E8%90%8D%E5%A7%90%E7%81%AB%E9%94%85(%E5%93%88%E5%B0%94%E6%BB%A8%E6%80%BB%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅 · 适合家庭聚餐"
+        },
+        {
+          "name": "Zhengyanglou Northeast Kitchen (Xuefu)",
+          "page_name": "正阳楼学府店特色东北菜 (地标美食名店)",
+          "src": "https://www.amap.com/search?query=%E6%AD%A3%E9%98%B3%E6%A5%BC%E5%AD%A6%E5%BA%9C%E5%BA%97%E7%89%B9%E8%89%B2%E4%B8%9C%E5%8C%97%E8%8F%9C%20(%E5%9C%B0%E6%A0%87%E7%BE%8E%E9%A3%9F%E5%90%8D%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-24",
+          "map": "Amap: open, not marked closed, newest review 2026-11-24",
+          "quote": "有宝宝椅 · 家庭聚餐"
+        },
+        {
+          "name": "Chaozhenghe Chaoshan Beef Hotpot (CapitaMall Xuefu)",
+          "page_name": "潮正和(凯德广场·学府店)",
+          "src": "https://www.amap.com/search?query=%E6%BD%AE%E6%AD%A3%E5%92%8C(%E5%87%AF%E5%BE%B7%E5%B9%BF%E5%9C%BA%C2%B7%E5%AD%A6%E5%BA%9C%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-01",
+          "map": "Amap: open, not marked closed, newest review 2026-11-01",
+          "quote": "有宝宝椅 · 亲子友好 · 基本上小宝宝都能喝"
+        },
+        {
+          "name": "Mijia Family BBQ (Linxing Road)",
+          "page_name": "米佳家庭烤肉",
+          "src": "https://www.amap.com/search?query=%E7%B1%B3%E4%BD%B3%E5%AE%B6%E5%BA%AD%E7%83%A4%E8%82%89&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-08-11",
+          "map": "Amap: open, not marked closed, newest review 2026-08-11",
+          "quote": "有宝宝椅 · 家庭聚会聚餐"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    },
+    {
+      "kind": "eats + sights",
+      "checked": "2026-11-25",
+      "rule": "Amap place page read in Chrome (owner, 25 Nov 2026: Amap as the source and the status check; the checker cannot fetch Amap); the quote is the page's children's tag or review. Ok only when not marked closed, with a review from the last six months, and the map's name matching the row.",
+      "agents": "A read here in Chrome: an Amap search for indoor play parks in Harbin; each place kept only when its Amap page carries a children's tag or a review about children and a review from the last six months",
+      "added": [
+        {
+          "name": "Ainiya Play Park (Hongqi Street)",
+          "page_name": "爱尼吖梦幻潮玩",
+          "src": "https://www.amap.com/search?query=%E7%88%B1%E5%B0%BC%E5%90%96%E6%A2%A6%E5%B9%BB%E6%BD%AE%E7%8E%A9&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-11-26",
+          "map": "Amap: open, not marked closed, newest review 2026-11-26",
+          "quote": "儿童乐园 · 儿童沙池 · 小宝宝游玩"
+        },
+        {
+          "name": "Kuaile Zhuan+ (Wanda Hadong)",
+          "page_name": "快乐专+(哈尔滨店)",
+          "src": "https://www.amap.com/search?query=%E5%BF%AB%E4%B9%90%E4%B8%93%2B(%E5%93%88%E5%B0%94%E6%BB%A8%E5%BA%97)&city=230100",
+          "date": "Amap place page (owner, 25 Nov 2026: Amap as the source and the status check); newest review 2026-10-31",
+          "map": "Amap: open, not marked closed, newest review 2026-10-31",
+          "quote": "儿童乐园 · 亲子DIY · 小宝宝游玩"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "捞多鱼, 迷你星球, 爱尔沃德",
+          "why": "twenty-four reviews or fewer"
+        },
+        {
+          "name": "乙太东方儿童成长中心",
+          "why": "an English class, not a place to play"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+    }
+  ]
+}

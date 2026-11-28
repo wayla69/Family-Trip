@@ -1,0 +1,715 @@
+{
+  "town": "eu (Europe round 1: Bruges, Cologne and the Rhine valley, Hamburg, Heidelberg, Rothenburg, Neuschwanstein and Füssen, Copenhagen, Seville, Chamonix and Annecy, Lyon, Mont-Saint-Michel, Nice, Paris, Provence, the Cotswolds, London, Cinque Terre, the Dolomites)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Europe notes (official tourism and city sites count as official; otherwise a 2025–2026 page; no chains, no bars or drinking pubs, no hotel restaurants, no tasting menus, no animal shows, no ticket sellers) -> scripts/library-check.cjs (rows whose date sits in the page address /2025/ or /2026/, in print as \"aktualisiert am\" or \"ouvert fin août 2026\", or on a tourism board's own listing were dated by hand; names that failed only on accent encoding were re-read) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town; kept by hand: a single listed result at the exact address (Pasta Presto, De Zeven Torentjes, Domein Beisbroek, Un Mare di Yogurt, Ristorante Miky), the same place under its Maps name (Restaurant Hallenbad, Kiosko de Churros de la Macarena, elbgold Winterhude), a suburb named as the area (Mini World Lyon in Vaulx-en-Velin, Kid City in Saint-Laurent-du-Var), museums whose Maps page opened under their own name (Bonn x3, Troisdorf, Bolzano, CaixaForum Sevilla), and the Tauber valley -> Thai and English by writer agents to docs/STYLE.md.",
+  "towns": {
+    "be-bruges": {
+      "eat": [
+        {
+          "name": "Pasta Presto",
+          "src": "https://travelbuddy.urlaubspartner.net/guide/bruegge/family"
+        },
+        {
+          "name": "Frietmuseum Brugge",
+          "src": "https://www.mummytravels.com/bruges-with-kids-belgium/"
+        }
+      ],
+      "do": [
+        {
+          "name": "De Toverplaneet indoor playground",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/de-toverplaneet-indoor-playground"
+        },
+        {
+          "name": "Tillegem provincial domain",
+          "src": "https://www.brugge.be/activiteiten/het-provinciaal-domein-tillegem"
+        },
+        {
+          "name": "De Zeven Torentjes children's farm",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/kinderboerderij-de-zeven-torentjes-childrens-farm"
+        },
+        {
+          "name": "Cozmix public observatory",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/cozmix-volkssterrenwacht-beisbroek-public-observatory"
+        },
+        {
+          "name": "Katelijnepark",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/katelijnepark-katelijne-park"
+        },
+        {
+          "name": "Beisbroek municipal domain",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/stedelijk-domein-beisbroek-municipal-domain"
+        }
+      ]
+    },
+    "de-cologne": {
+      "eat": [
+        {
+          "name": "Café Halli Galli",
+          "src": "https://koeln.mitvergnuegen.com/2025/cafes-eltern-mit-kind/"
+        },
+        {
+          "name": "Wuselwerk",
+          "src": "https://koeln.mitvergnuegen.com/2025/cafes-eltern-mit-kind/"
+        },
+        {
+          "name": "Café Wo ist Tom?",
+          "src": "https://koeln.mitvergnuegen.com/2025/cafes-eltern-mit-kind/"
+        },
+        {
+          "name": "Potpourri",
+          "src": "https://koeln.mitvergnuegen.com/2025/cafes-eltern-mit-kind/"
+        },
+        {
+          "name": "Brauhaus Sünner im Walfisch",
+          "src": "https://koeln.mitvergnuegen.com/2026/urige-brauhaeuser/"
+        },
+        {
+          "name": "Café Peva",
+          "src": "https://koeln.mitvergnuegen.com/2026/eggs-benedict-essen/"
+        },
+        {
+          "name": "MiCafecito",
+          "src": "https://koeln.mitvergnuegen.com/2026/eggs-benedict-essen/"
+        },
+        {
+          "name": "Café Soleil",
+          "src": "https://koeln.mitvergnuegen.com/2026/gemuetliche-cafes/"
+        },
+        {
+          "name": "Café Franck",
+          "src": "https://koeln.mitvergnuegen.com/2026/gemuetliche-cafes/"
+        },
+        {
+          "name": "Café Fridolin",
+          "src": "https://koeln.mitvergnuegen.com/2025/cafes-eltern-mit-kind/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Pippolino indoor play park",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": "Jackelino Safari indoor play hall",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": "Leo's Abenteuerpark indoor adventure park",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": "SPRUNG.RAUM trampoline park",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": "Bilderbuchmuseum",
+          "src": "https://www.koeln.de/freizeit/ll/die-coolsten-museen-fuer-kinder-in-koeln/"
+        },
+        {
+          "name": "House of History of the Federal Republic",
+          "src": "https://www.koeln.de/freizeit/ausfluege/museen-ausflugsziel/haus-der-geschichte-der-bundesrepublik/"
+        },
+        {
+          "name": "Museum Koenig Bonn",
+          "src": "https://www.museumkoenig.de/de/bildungsangebote/fuer-kinder.html"
+        },
+        {
+          "name": "Deutsches Museum Bonn",
+          "src": "https://deutsches-museum.de/en/bonn/visit"
+        },
+        {
+          "name": "Drachenfels",
+          "src": "https://www.koeln.de/freizeit/ausfluege/natur-ausflug/ausflug-drachenfels-drachenfelsbahn/"
+        },
+        {
+          "name": "Drachenburg Castle",
+          "src": "https://www.koeln.de/freizeit/ausfluege/schloesser-burgen/schloss-drachenburg-drachenfels-ausflug/"
+        }
+      ]
+    },
+    "de-hamburg": {
+      "eat": [
+        {
+          "name": "elbgold Winterhude",
+          "src": "https://www.hamburg-magazin.de/artikel/die-besten-franzbroetchen-in-hamburg"
+        },
+        {
+          "name": "Die kleine Konditorei",
+          "src": "https://www.hamburg-magazin.de/artikel/die-besten-franzbroetchen-in-hamburg"
+        },
+        {
+          "name": "Bäckerei Rettungsbrot",
+          "src": "https://www.hamburg-magazin.de/artikel/die-besten-franzbroetchen-in-hamburg"
+        },
+        {
+          "name": "Captain's Dinner",
+          "src": "https://www.hamburg-magazin.de/artikel/fischrestaurants-in-hamburg"
+        },
+        {
+          "name": "Finkenwerder Landungsbrücke",
+          "src": "https://www.hamburg-magazin.de/artikel/fischrestaurants-in-hamburg"
+        },
+        {
+          "name": "Fischimbiss Schabi",
+          "src": "https://www.hamburg-magazin.de/artikel/fischrestaurants-in-hamburg"
+        },
+        {
+          "name": "Alt Helgoländer Fischerstube",
+          "src": "https://www.hamburg-magazin.de/artikel/fischrestaurants-in-hamburg"
+        },
+        {
+          "name": "Fischbrötchenkönig",
+          "src": "https://www.hamburg-tourism.de/shoppen-geniessen/restaurants-cafes/fischbroetchen-koenig/"
+        },
+        {
+          "name": "Kleine Haie Grosse Fische",
+          "src": "https://www.hamburg-tourism.de/shoppen-geniessen/restaurants-cafes/kleine-haie-grosse-fische"
+        }
+      ]
+    },
+    "de-heidelberg": {
+      "eat": [
+        {
+          "name": "Café Frisch",
+          "src": "https://www.heidelberg.de/7071_35285_35413_35429_5586786_5726206_5727658_5727474.html"
+        }
+      ]
+    },
+    "de-rothenburg": {
+      "eat": [
+        {
+          "name": "Gasthof zum Ochsen",
+          "src": "https://www.gasthof-ochsen-rothenburg.de/"
+        },
+        {
+          "name": "Restaurant Goldenes Lamm",
+          "src": "https://www.goldenes-lamm-rothenburg.de/"
+        },
+        {
+          "name": "Restaurant Hallenbad",
+          "src": "https://www.hallenbad-restaurant-pizzeria.de/"
+        },
+        {
+          "name": "Gasthof zum Grünen Baum",
+          "src": "https://www.gasthof-kellermann.de/"
+        },
+        {
+          "name": "Landsknechtstübchen",
+          "src": "https://www.pension-freund.de/landsknechtstuebchen/index.html"
+        }
+      ],
+      "do": [
+        {
+          "name": "Taubertal (Tauber valley)",
+          "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
+        },
+        {
+          "name": "RothenburgBad",
+          "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
+        }
+      ]
+    },
+    "es-seville": {
+      "eat": [
+        {
+          "name": "Kiosko de Churros de la Macarena",
+          "src": "https://www.salir.com/los-mejores-churros-de-sevilla-art-1787.html"
+        },
+        {
+          "name": "Petra",
+          "src": "https://thetourguy.com/travel-blog/spain/seville/best-restaurants-in-seville-this-year/"
+        },
+        {
+          "name": "Heladería Freskura",
+          "src": "https://www.planomato.com/es/sevilla/n/ruta-helados-artesanales-calor"
+        },
+        {
+          "name": "Heladería Bolas",
+          "src": "https://www.planomato.com/es/sevilla/n/ruta-helados-artesanales-calor"
+        },
+        {
+          "name": "Créeme Helado | Heladería Natural",
+          "src": "https://www.planomato.com/es/sevilla/n/ruta-helados-artesanales-calor"
+        },
+        {
+          "name": "Heladería María Limones Triana",
+          "src": "https://www.planomato.com/es/sevilla/n/ruta-helados-artesanales-calor"
+        },
+        {
+          "name": "Heladería Puro&Bio Sevilla",
+          "src": "https://www.planomato.com/es/sevilla/n/ruta-helados-artesanales-calor"
+        }
+      ],
+      "do": [
+        {
+          "name": "Kids Park Sevilla",
+          "src": "https://sevillasecreta.co/en/the-massive-playground-spanning-over-4000-m%C2%B2-with-tickets-starting-at-5-euros-giant-slides-mazes-trampolines-and-xl-ball-pits-in-seville/"
+        },
+        {
+          "name": "Casa de la Ciencia",
+          "src": "https://www.roughguides.com/spain/seville-with-kids/"
+        },
+        {
+          "name": "Jumpyard Sevilla",
+          "src": "https://sevillasecreta.co/en/plans-kids-seville/"
+        },
+        {
+          "name": "Crazy Zone",
+          "src": "https://sevillasecreta.co/en/plans-kids-seville/"
+        },
+        {
+          "name": "CaixaForum Sevilla",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": "Sala Cero Teatro",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": "Teatro Alameda",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": "Alameda de Hércules",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        }
+      ]
+    },
+    "fr-alps": {
+      "eat": [
+        {
+          "name": "Bar Restaurant Les Planards",
+          "src": "https://hautesavoiemontblanc-tourisme.com/en/offers/les-planards-restaurant-chamonix-mont-blanc-en-5834707/"
+        },
+        {
+          "name": "Le Lilas Rose",
+          "src": "https://www.haute-savoie-tourisme.org/index.php/119928-lilas-rose"
+        },
+        {
+          "name": "Chez Gaston",
+          "src": "https://www.haute-savoie-tourisme.org/5707442-chez-gaston"
+        }
+      ]
+    },
+    "fr-lyon": {
+      "eat": [
+        {
+          "name": "Restaurant Le Kitchen",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/in-lyon-as-a-family-kid-friendly-places"
+        },
+        {
+          "name": "Monplaisir Côté Cour",
+          "src": "https://lyon.familycrunch.fr/ou-manger-a-lyon-avec-les-enfants-10-adresses-kid-friendly-pour-passer-un-bon-moment-en-famille/"
+        },
+        {
+          "name": "Trattino",
+          "src": "https://lyon.familycrunch.fr/ou-manger-a-lyon-avec-les-enfants-10-adresses-kid-friendly-pour-passer-un-bon-moment-en-famille/"
+        },
+        {
+          "name": "Belle Lurette",
+          "src": "https://lyon.familycrunch.fr/ou-manger-a-lyon-avec-les-enfants-10-adresses-kid-friendly-pour-passer-un-bon-moment-en-famille/"
+        },
+        {
+          "name": "Le Taille-Crayon",
+          "src": "https://lyon.familycrunch.fr/ou-manger-a-lyon-avec-les-enfants-10-adresses-kid-friendly-pour-passer-un-bon-moment-en-famille/"
+        },
+        {
+          "name": "Café Pimpon",
+          "src": "https://lyon.familycrunch.fr/ou-manger-a-lyon-avec-les-enfants-10-adresses-kid-friendly-pour-passer-un-bon-moment-en-famille/"
+        },
+        {
+          "name": "Joséphine",
+          "src": "https://lyon.citycrunch.fr/les-8-meilleures-glaces-de-lyon-pour-feter-le-retour-du-soleil/2026/04/16/"
+        },
+        {
+          "name": "Único Maître Artisan Glacier",
+          "src": "https://lyon.citycrunch.fr/les-8-meilleures-glaces-de-lyon-pour-feter-le-retour-du-soleil/2026/04/16/"
+        },
+        {
+          "name": "Les Papas Sucrés Brunch Lyon",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/in-lyon-as-a-family-kid-friendly-places"
+        },
+        {
+          "name": "Le café imaginaire",
+          "src": "https://www.citizenkid.com/sortie/le-cafe-imaginaire-lyon-a1071873"
+        },
+        {
+          "name": "Chalet du Parc",
+          "src": "https://www.citizenkid.com/sortie/le-nouveau-chalet-du-parc-au-coeur-du-parc-de-la-tete-dor-le-rendez-vous-des-familles-lyonnaises-lyon-a1071866"
+        }
+      ],
+      "do": [
+        {
+          "name": "Exalto Park Villeurbanne",
+          "src": "https://en.lyon-france.com/discover-lyon/activities-and-relaxation/indoor-activities/exalto-park-villeurbanne"
+        },
+        {
+          "name": "Mini World Lyon",
+          "src": "https://en.visiterlyon.com/out-and-about/culture-and-leisure/activities-and-relaxation/indoor-family-activities-in-lyon"
+        },
+        {
+          "name": "Parc Blandan",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": "Explor Games Lyon",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": "Science Expériences Lyon",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": "Berges du Rhône",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": "Musée des Sapeurs-Pompiers de Lyon",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        }
+      ]
+    },
+    "fr-paris": {
+      "eat": [
+        {
+          "name": "April Café",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/brunch-cafe-tea-time/articles/346871-april-cafe-the-coffee-shop-and-stroller-friendly-cafe-for-a-cocooning-break-in-the-10th-arrondissement"
+        },
+        {
+          "name": "Mombini",
+          "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/brunch-cafe-tea-time/articles/346155-mombini-a-toy-shop-with-a-cafe-stroller-store-and-parent-child-workshops-in-the-15th-arrondissement"
+        },
+        {
+          "name": "Marché couvert des Enfants Rouges",
+          "src": "https://www.timeout.com/paris/en/shopping/marche-des-enfants-rouges"
+        },
+        {
+          "name": "Bulles & Billes",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/288052-family-concepts-in-paris-places-designed-by-and-for-families-with-children"
+        }
+      ]
+    },
+    "fr-provence": {
+      "eat": [
+        {
+          "name": "Pinocchio",
+          "src": "https://avignon-tourisme.com/en/offres/pinocchio-avignon-en-4143609/"
+        },
+        {
+          "name": "La Brasserie de l'Horloge",
+          "src": "https://avignon-tourisme.com/en/restaurants/brasserie-de-lhorloge/"
+        },
+        {
+          "name": "Les Cocottes Saint Louis",
+          "src": "https://avignon-tourisme.com/en/offres/les-cocottes-saint-louis-cloitre-saint-louis-avignon-en-4143374/"
+        },
+        {
+          "name": "Restaurant Petit Grand",
+          "src": "https://avignon-tourisme.com/en/offres/le-petit-grand-avignon-en-4143865"
+        },
+        {
+          "name": "La Petite Ferme",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/la-petite-ferme-aix-en-provence-en-2881005"
+        },
+        {
+          "name": "Aux Papillons",
+          "src": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/aux-papillons-aix-en-provence-fr-6102099/"
+        },
+        {
+          "name": "Le Darius",
+          "src": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/le-darius-aix-en-provence-fr-2862910/"
+        },
+        {
+          "name": "Les Fils à Maman",
+          "src": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/les-fils-a-maman-aix-en-provence-fr-2890926/"
+        },
+        {
+          "name": "L'Estellan",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/lestellan-gordes-en-2861392/"
+        },
+        {
+          "name": "Café Bistrot du Pitchounet",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/le-pitchounet-arles-en-2869610/"
+        },
+        {
+          "name": "Brasserie des Arènes",
+          "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/la-brasserie-des-arenes-arles-en-5164677"
+        },
+        {
+          "name": "La Récréation",
+          "src": "https://fr.gaultmillau.com/restaurant/la-recreation"
+        }
+      ]
+    },
+    "gb-cotswolds": {
+      "eat": [
+        {
+          "name": "Roots + Seeds Cafe & Kitchen",
+          "src": "https://www.rootsandseedskitchengarden.co.uk/"
+        },
+        {
+          "name": "The Old Bakery Tea Room",
+          "src": "https://www.pocketwanderings.com/best-brunch-in-the-cotswolds/"
+        },
+        {
+          "name": "Coach House Coffee",
+          "src": "https://www.pocketwanderings.com/cafes-in-stow-on-the-wold/"
+        },
+        {
+          "name": "New England Coffee House",
+          "src": "https://www.pocketwanderings.com/cafes-in-stow-on-the-wold/"
+        },
+        {
+          "name": "Cotswold Barn",
+          "src": "https://www.pocketwanderings.com/best-brunch-in-the-cotswolds/"
+        },
+        {
+          "name": "Lynwood & Co Burford",
+          "src": "https://www.pocketwanderings.com/burford-cotswolds/"
+        },
+        {
+          "name": "Spice Lounge Burford",
+          "src": "https://www.pocketwanderings.com/burford-cotswolds/"
+        },
+        {
+          "name": "Broadway Deli",
+          "src": "https://www.pocketwanderings.com/best-brunch-in-the-cotswolds/"
+        },
+        {
+          "name": "Daylesford Organic",
+          "src": "https://www.pocketwanderings.com/best-brunch-in-the-cotswolds/"
+        },
+        {
+          "name": "Bourton Riverside Café",
+          "src": "https://www.pocketwanderings.com/bourton-on-the-water-cotswolds/"
+        },
+        {
+          "name": "The Rose Tree Restaurant",
+          "src": "https://www.pocketwanderings.com/bourton-on-the-water-cotswolds/"
+        },
+        {
+          "name": "The Hive",
+          "src": "https://www.pocketwanderings.com/stow-on-the-wold-cotswolds/"
+        }
+      ]
+    },
+    "gb-london": {
+      "eat": [
+        {
+          "name": "Elephant Hackney",
+          "src": "https://www.timeout.com/london/restaurants/the-best-child-friendly-restaurants-in-london"
+        },
+        {
+          "name": "Purezza Camden",
+          "src": "https://www.timeout.com/london/restaurants/the-best-child-friendly-restaurants-in-london"
+        },
+        {
+          "name": "Caravan King's Cross",
+          "src": "https://www.timeout.com/london/restaurants/the-best-child-friendly-restaurants-in-london"
+        },
+        {
+          "name": "Lina Stores King's Cross",
+          "src": "https://www.timeout.com/london/restaurants/the-best-child-friendly-restaurants-in-london"
+        },
+        {
+          "name": "Phoenix Palace",
+          "src": "https://www.timeout.com/london/restaurants/the-best-child-friendly-restaurants-in-london"
+        },
+        {
+          "name": "Maxwell's Bar & Grill",
+          "src": "https://globetotting.com/child-friendly-restaurants-in-london/"
+        },
+        {
+          "name": "The Jam",
+          "src": "https://www.countryandtownhouse.com/food-and-drink/child-friendly-restaurants-all-the-family-will-enjoy-in-london/"
+        }
+      ]
+    },
+    "it-cinqueterre": {
+      "eat": [
+        {
+          "name": "Il Pescato Cucinato",
+          "src": "https://taketravelinfo.com/best-restaurants-in-cinque-terre/"
+        },
+        {
+          "name": "Gelateria Sorbetteria 5 Terre",
+          "src": "https://taketravelinfo.com/best-restaurants-in-cinque-terre/"
+        },
+        {
+          "name": "Un Mare di Yogurt",
+          "src": "https://taketravelinfo.com/best-restaurants-in-cinque-terre/"
+        },
+        {
+          "name": "Ristorante Miky",
+          "src": "https://taketravelinfo.com/best-restaurants-in-cinque-terre/"
+        },
+        {
+          "name": "San Martino Gastronomia",
+          "src": "https://taketravelinfo.com/best-restaurants-in-cinque-terre/"
+        }
+      ]
+    },
+    "p-neuschwanstein": {
+      "eat": [
+        {
+          "name": "Dorfwirt",
+          "src": "https://www.hohenschwangau.de/en/gastronomy/restaurant-dorfwirt"
+        },
+        {
+          "name": "Beim Olivenbauer - Füssen",
+          "src": "https://www.speisekarte.de/f%C3%BCssen/restaurant/beim_olivenbauer/speisekarte"
+        }
+      ]
+    },
+    "dk-copenhagen": {
+      "do": [
+        {
+          "name": "Islands Brygge Harbour Bath",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/harbour-bath-islands-brygge-gdk482346"
+        },
+        {
+          "name": "Fisketorvet Harbour Bath",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/fisketorvet-harbour-bath-gdk412709"
+        },
+        {
+          "name": "Sluseholmen Harbour Bath",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/sluseholmen-harbour-bath-gdk713181"
+        },
+        {
+          "name": "Tower Playground, Fælledparken",
+          "src": "https://www.visitdenmark.com/denmark/plan-your-trip/playground-with-towers-in-faelledparken-gdk570166"
+        },
+        {
+          "name": "The Deer Park (Dyrehaven)",
+          "src": "https://www.visitdenmark.com/denmark/explore/deer-park-gdk414367"
+        },
+        {
+          "name": "Amager Beach Park",
+          "src": "https://www.visitcopenhagen.com/copenhagen/planning/amager-beach-park-gdk414012"
+        },
+        {
+          "name": "Bondegården (the Farm)",
+          "src": "https://visitorservice.kk.dk/en/explore-copenhagen/navigation-amager/family-fun-with-little-ones"
+        },
+        {
+          "name": "Børnekulturhus Ama'r",
+          "src": "https://visitorservice.kk.dk/en/explore-copenhagen/navigation-amager/family-fun-with-little-ones"
+        },
+        {
+          "name": "Lergravsparken Playground",
+          "src": "https://visitorservice.kk.dk/en/explore-copenhagen/navigation-amager/family-fun-with-little-ones"
+        },
+        {
+          "name": "SMK, the National Gallery of Denmark",
+          "src": "https://bornibyen.dk/articles/10-child-friendly-museums"
+        }
+      ]
+    },
+    "fr-montstmichel": {
+      "do": [
+        {
+          "name": "Cara-Meuh Farm",
+          "src": "https://www.manche-tourism.com/tips-ideas/family-activities/"
+        },
+        {
+          "name": "Au coeur du Roc",
+          "src": "https://www.manche-tourism.com/tips-ideas/family-activities/"
+        },
+        {
+          "name": "Jardin de Bel-Air",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/le-jardin-de-bel-air-saint-malo-en-3645777/"
+        },
+        {
+          "name": "Club des Corsaires beach club",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/club-de-plage-les-corsaires-saint-malo-en-3646229"
+        },
+        {
+          "name": "L'Hippocampe aquatic centre",
+          "src": "https://en.tourisme-granville-terre-mer.com/stay/on-site-activities/what-to-do-when-it-rains"
+        }
+      ]
+    },
+    "fr-nice": {
+      "do": [
+        {
+          "name": "Kid's City Nice",
+          "src": "https://www.explorenicecotedazur.com/en/structure/kids-city-nice/"
+        },
+        {
+          "name": "Exotic Garden of Monaco",
+          "src": "https://www.jardin-exotique.mc/en/"
+        }
+      ]
+    },
+    "it-dolomites": {
+      "do": [
+        {
+          "name": "Naturmuseum Südtirol",
+          "src": "https://www.naturmuseum.it/en/"
+        },
+        {
+          "name": "Museion",
+          "src": "https://www.museion.it/en/pages/6099-mediation-and-visitor-services"
+        },
+        {
+          "name": "Calfosch Animal Park",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/animal-park"
+        },
+        {
+          "name": "Biotope lake Corvara",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/biotope-lake-corvara-1"
+        },
+        {
+          "name": "Deer Park Sompunt",
+          "src": "https://www.altabadia.org/en/poi/what-to-do-in-alta-badia/detail/poi/deer-park-sompunt"
+        },
+        {
+          "name": "Mendola Funicular",
+          "src": "https://www.kalterersee.com/en/highlights/mendola-funicular/"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026, most marked temporarily closed, likely for winter)": [
+      "Boccalatte",
+      "Dau Cila",
+      "Alberto Gelateria",
+      "A Cantina da Mananan",
+      "Belforte",
+      "Batti Batti",
+      "Eiswerk Somerville",
+      "Eis Dolomiti",
+      "Kletterwald Rothenburg",
+      "Helados Rayas",
+      "Heladería Verdú",
+      "Caldaro Adventure Park"
+    ],
+    "another place or none on Google Maps": [
+      "BO-BO's land (Damme)",
+      "Mega Fun (Granville)",
+      "Frío Fino (another ice-cream shop at the address)",
+      "Navigation Pavilion",
+      "Little legs in the bay",
+      "Discovering the quicksand"
+    ],
+    "not pinned to one place on Google Maps": "24 (result lists, branches, or the page never drew)",
+    "ranked from Google review counts (refused)": "12 heidelberg24.de rows",
+    "undated page": [
+      "8 Chamonix and Les Houches restaurants from seechamonix.com",
+      "Café Lieblich (kindaling, 2020)",
+      "Gasthaus Zur Krone (2024)"
+    ],
+    "other": [
+      "Museo de las Ilusiones de Sevilla (only a ticket seller)",
+      "Kitsch Inn, Trokson, Max Stark, The Royal Oak (bars or drinking pubs)",
+      "Gasthof Post, Rothenburger Kartoffelstube (hotel restaurants)",
+      "Breizh Café Chamonix (a chain)",
+      "Le Cocon (Vincennes)",
+      "La Lardarina, oratorio dei Neri (not an outing for children)",
+      "Forum Rothenburg (no facts)",
+      "Lyon City Bus (a tour bus)"
+    ]
+  }
+}

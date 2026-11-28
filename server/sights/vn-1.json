@@ -324,6 +324,872 @@
           "q": "APEC Park, Hai Chau, Da Nang",
           "ok": "2026-11",
           "src": "https://hoiandaytrip.com/apec-park-da-nang-vietnam/"
+        },
+        {
+          "name": { "en": "Mikazuki Water Park 365", "th": "มิคาซึกิ วอเตอร์ พาร์ก 365" },
+          "kind": "play",
+          "area": { "en": "Xuan Thieu, Nguyen Tat Thanh Street, Da Nang", "th": "ซวนเทียว ถนนเหงียนตัตแถ่ง ดานัง" },
+          "what": { "en": "A fully indoor water park open all year, with slides and pools inside the Mikazuki resort.", "th": "สวนน้ำในร่มเต็มรูปแบบเปิดตลอดปี มีสไลเดอร์และสระในรีสอร์ตมิคาซึกิ" },
+          "why": { "en": "Fully indoors, so it works on rainy days or in the midday heat; the page says it has lively slides for children and gentle pools for parents.", "th": "อยู่ในร่มทั้งหมด จึงเล่นได้ในวันฝนตกหรือแดดจัดตอนเที่ยง หน้าเว็บบอกว่ามีสไลเดอร์สนุกสำหรับเด็กและสระเบาๆ สำหรับพ่อแม่" },
+          "tip": { "en": "Allow about three hours.", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mikazuki Water Park 365, Xuan Thieu, Da Nang",
+          "ok": "2026-11",
+          "src": "https://mikazuki.com.vn/en/best-indoor-activities-in-da-nang.html"
+        },
+        {
+          "name": { "en": "Hoa Phu Thanh", "th": "ฮว่าฟู่แถ่ง" },
+          "kind": "nature",
+          "area": { "en": "Green hills outside Da Nang", "th": "เนินเขาเขียวนอกเมืองดานัง" },
+          "what": { "en": "Hills outside the city with natural waterfall slides, rafting and ziplining through the trees.", "th": "เนินเขานอกเมือง มีสไลเดอร์น้ำตกธรรมชาติ ล่องแก่ง และซิปไลน์ผ่านแมกไม้" },
+          "why": { "en": "Natural waterfall slides for children who like water and climbing.", "th": "สไลเดอร์น้ำตกธรรมชาติสำหรับเด็กที่ชอบน้ำและการปีน" },
+          "tip": { "en": "Allow about four hours.", "th": "เผื่อเวลาราว 4 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Hoa Phu Thanh waterfall, Da Nang",
+          "ok": "2026-11",
+          "src": "https://localvietnam.com/da-nang/da-nang-with-kids/"
+        },
+        {
+          "name": { "en": "Son Tra Peninsula", "th": "คาบสมุทรเซินจ่า" },
+          "kind": "nature",
+          "area": { "en": "Son Tra Peninsula, north of Da Nang", "th": "คาบสมุทรเซินจ่า ทางเหนือของดานัง" },
+          "what": { "en": "A forested peninsula with a winding coastal road, viewpoints and wild monkeys in the trees.", "th": "คาบสมุทรป่าเขียว มีถนนชายฝั่งคดเคี้ยว จุดชมวิว และลิงป่าบนต้นไม้" },
+          "why": { "en": "Monkeys can be seen from the road on a drive along the coast.", "th": "เห็นลิงได้จากถนนระหว่างขับรถเลียบชายฝั่ง" },
+          "tip": { "en": "Allow about three hours.", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Son Tra Peninsula, Da Nang",
+          "ok": "2026-11",
+          "src": "https://localvietnam.com/da-nang/da-nang-with-kids/"
+        },
+        {
+          "name": { "en": "Cham Islands", "th": "หมู่เกาะจาม" },
+          "local": "Cù Lao Chàm",
+          "kind": "nature",
+          "area": { "en": "Cham Islands, 40 minutes by boat from Hoi An harbour", "th": "หมู่เกาะจาม นั่งเรือ 40 นาทีจากท่าเรือฮอยอัน" },
+          "what": { "en": "A marine reserve island reached by boat, with snorkelling at calm reefs.", "th": "เกาะเขตสงวนทางทะเลที่ไปได้ด้วยเรือ ดำน้ำตื้นชมแนวปะการังน้ำนิ่ง" },
+          "why": { "en": "Calm clear water for snorkelling; a page on the islands says a calm day is essential with little ones.", "th": "น้ำใสสงบสำหรับดำน้ำตื้น หน้าเว็บเกี่ยวกับเกาะบอกว่าต้องเลือกวันทะเลสงบเมื่อไปกับเด็กเล็ก" },
+          "tip": { "en": "Pick a calm day for the boat ride; the boat is long for very young children.", "th": "เลือกวันทะเลสงบสำหรับนั่งเรือ เพราะเรือนานสำหรับเด็กเล็กมาก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "Cham Islands, Quang Nam",
+          "ok": "2026-11",
+          "src": "https://thinkingnomads.com/guide-to-visit-cham-islands-with-children-snorkeling-diving"
+        },
+        {
+          "name": {
+            "en": "Thanh Ha Pottery Village",
+            "th": "หมู่บ้านเครื่องปั้นดินเผาแทงห่า"
+          },
+          "local": "Làng gốm Thanh Hà",
+          "kind": "culture",
+          "area": {
+            "en": "Thanh Ha, Hoi An Tay ward",
+            "th": "แทงห่า แขวงฮอยอันเต๊ย"
+          },
+          "what": {
+            "en": "A pottery village where potters still throw clay on the wheel and fire it in traditional kilns",
+            "th": "หมู่บ้านเครื่องปั้นดินเผาที่ช่างยังปั้นดินบนแป้นหมุนและเผาในเตาแบบดั้งเดิม"
+          },
+          "why": {
+            "en": "Children can watch the potter's wheel at work and see a craft that has carried on in one village for generations",
+            "th": "เด็กๆ ดูแป้นหมุนทำงานและเห็นงานฝีมือที่สืบต่อกันมาในหมู่บ้านเดียวหลายรุ่น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราวหนึ่งชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Thanh Ha Pottery Village, Hội An",
+          "ok": "2026-11",
+          "src": "https://danangfantasticity.com/see-and-do/the-craft-of-thanh-ha-pottery-in-hoi-an"
+        },
+        {
+          "name": {
+            "en": "Green Bamboo Cooking School",
+            "th": "โรงเรียนสอนทำอาหารกรีนแบมบู"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Hoi An Tay ward",
+            "th": "แขวงฮอยอันเต๊ย"
+          },
+          "what": {
+            "en": "A hands-on Vietnamese cooking class in Hoi An where you cook the dishes you then eat",
+            "th": "คลาสทำอาหารเวียดนามในฮอยอัน ลงมือทำเองแล้วกินอาหารที่ทำ"
+          },
+          "why": {
+            "en": "Free for children aged 1 to 7, the page says",
+            "th": "เด็กอายุ 1 ถึง 7 ขวบเข้าฟรี ตามที่หน้าเว็บระบุ"
+          },
+          "tip": {
+            "en": "Book ahead; allow about three hours",
+            "th": "จองล่วงหน้า เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Green Bamboo Cooking School, 21 Trương Minh Hưng, Hội An",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": {
+            "en": "Hoi An Eco Cooking Class by Kien Nguyen",
+            "th": "คลาสทำอาหารฮอยอันอีโค โดยเกียน เหงียน"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Hamlet 2, Hoi An Dong ward",
+            "th": "หมู่บ้าน 2 แขวงฮอยอันด๋ง"
+          },
+          "what": {
+            "en": "A countryside cooking class that includes a visit to the local market",
+            "th": "คลาสทำอาหารชนบทที่มีแวะตลาดท้องถิ่นด้วย"
+          },
+          "why": {
+            "en": "Children aged 7 to 11 join the morning tour for a child price",
+            "th": "เด็กอายุ 7 ถึง 11 ขวบร่วมทัวร์ช่วงเช้าได้ในราคาเด็ก"
+          },
+          "tip": {
+            "en": "Book ahead; allow about three hours",
+            "th": "จองล่วงหน้า เผื่อเวลาราว 3 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "≈ US$22 for children aged 7–11 (morning tour)",
+            "th": "≈ US$22 สำหรับเด็ก 7–11 ขวบ (ทัวร์ช่วงเช้า)"
+          },
+          "book": "rec",
+          "q": "Hoi An Eco Cooking Class by Kien Nguyen, Hội An Đông, Hội An",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": {
+            "en": "Vinh Vo Cooking Class",
+            "th": "คลาสทำอาหารวิญโหวะ"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Tran Nhan Tong Street, Hoi An Dong ward",
+            "th": "ถนนจั่นเญินตง แขวงฮอยอันด๋ง"
+          },
+          "what": {
+            "en": "A cooking class with a morning or afternoon session, a market visit and a basket boat ride",
+            "th": "คลาสทำอาหารรอบเช้าหรือบ่าย มีแวะตลาดและนั่งเรือกระด้ง"
+          },
+          "why": {
+            "en": "A child price is printed for ages 4 to 10, and a basket boat ride is included",
+            "th": "มีราคาเด็กสำหรับอายุ 4 ถึง 10 ขวบ และรวมการนั่งเรือกระด้ง"
+          },
+          "tip": {
+            "en": "Book ahead; allow about four hours",
+            "th": "จองล่วงหน้า เผื่อเวลาราว 4 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ 350,000 ₫ per child (aged 4–10)",
+            "th": "≈ 350,000 ₫ ต่อเด็ก (อายุ 4–10 ขวบ)"
+          },
+          "book": "rec",
+          "q": "Vinh Vo Cooking Class, Trần Nhân Tông, Hội An Đông, Hội An",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/cooking-class-in-hoi-an/"
+        },
+        {
+          "name": {
+            "en": "Baby Farm",
+            "th": "เบบี้ฟาร์ม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Do Doc Lan, Cam Le, Da Nang",
+            "th": "ถนนโดด๊กเลิน เขตก่ามเล ดานัง"
+          },
+          "what": {
+            "en": "A play centre for little ones in a quiet setting near nature, with lego, colouring, sandcastles and a ball pit",
+            "th": "ศูนย์เล่นสำหรับเด็กเล็กในบรรยากาศเงียบสงบใกล้ธรรมชาติ มีเลโก้ ระบายสี ปราสาททราย และบ่อบอล"
+          },
+          "why": {
+            "en": "Lego, colouring and a ball pit for the little ones, with regular kids' events such as a Baby Olympic game",
+            "th": "มีเลโก้ ระบายสี และบ่อบอลสำหรับเด็กเล็ก และมีกิจกรรมเด็กเป็นประจำ เช่น เบบี้โอลิมปิก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ 100,000 ₫ (Monday to Friday)",
+            "th": "≈ 100,000 ₫ (วันจันทร์ถึงศุกร์)"
+          },
+          "book": "none",
+          "q": "Baby Farm, 80 Đô Đốc Lân, Cẩm Lệ, Đà Nẵng",
+          "ok": "2026-11",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        },
+        {
+          "name": {
+            "en": "TiNiWorld",
+            "th": "ทีนีเวิลด์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Vincom Plaza, Ngo Quyen, Da Nang",
+            "th": "วินคอมพลาซ่า ถนนโงกวเยน ดานัง"
+          },
+          "what": {
+            "en": "An indoor children's play centre on the third floor of Vincom Plaza, split into areas for different ages",
+            "th": "ศูนย์เล่นในร่มสำหรับเด็กบนชั้น 3 ของวินคอมพลาซ่า แบ่งโซนตามช่วงอายุ"
+          },
+          "why": {
+            "en": "Areas split by age, and it mixes play with learning",
+            "th": "แบ่งโซนตามอายุ และผสมการเล่นกับการเรียนรู้"
+          },
+          "tip": {
+            "en": "Weekend and holiday tickets cost more; allow about two hours",
+            "th": "ตั๋ววันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์แพงกว่า เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ 80,000 ₫ weekdays · ≈ 100,000 ₫ weekends and holidays",
+            "th": "≈ 80,000 ₫ วันธรรมดา · ≈ 100,000 ₫ วันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์"
+          },
+          "book": "none",
+          "q": "TiNiWorld, Vincom Plaza, 910 Ngô Quyền, Đà Nẵng",
+          "ok": "2026-11",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        },
+        {
+          "name": {
+            "en": "Helio Center",
+            "th": "เฮลิโอเซ็นเตอร์"
+          },
+          "kind": "play",
+          "area": {
+            "en": "2 Thang 9 street, Hai Chau, Da Nang",
+            "th": "ถนน 2 ทังชิน เขตไห่เจิว ดานัง"
+          },
+          "what": {
+            "en": "A family entertainment centre with hundreds of games, water play, fishing and a Helio Kids zone",
+            "th": "ศูนย์ความบันเทิงครอบครัว มีเกมหลายร้อยเกม เล่นน้ำ ตกปลา และโซนเฮลิโอคิดส์"
+          },
+          "why": {
+            "en": "A Helio Kids zone with its own child ticket, and a kids' kitchen (bếp nhí) for an extra fee",
+            "th": "มีโซนเฮลิโอคิดส์พร้อมตั๋วเด็กโดยเฉพาะ และครัวเด็ก (เบ๊บญี) ที่เสียค่าใช้จ่ายเพิ่ม"
+          },
+          "tip": {
+            "en": "Open in the evening only; allow about two hours",
+            "th": "เปิดเฉพาะช่วงเย็น เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ 95,000 ₫ per child (Helio Kids)",
+            "th": "≈ 95,000 ₫ ต่อเด็ก (เฮลิโอคิดส์)"
+          },
+          "book": "none",
+          "q": "Helio Center, 01 Đường 2 Tháng 9, Hòa Cường Bắc, Hải Châu, Đà Nẵng",
+          "ok": "2026-11",
+          "src": "https://www.greensm.com/vn-vi/news/khu-vui-choi-tre-em-o-da-nang"
+        }
+      ]
+    },
+    {
+      "place": "vn-hanoi",
+      "sights": [
+        {
+          "name": { "en": "Thang Long Water Puppet Theatre", "th": "โรงละครหุ่นกระบอกน้ำทังลอง" },
+          "local": "Nhà hát Múa rối Thăng Long",
+          "kind": "show",
+          "area": { "en": "Hoan Kiem, by the lake", "th": "ฮหว่านเกี๊ยม ริมทะเลสาบ" },
+          "what": { "en": "Wooden puppets dance on water to live folk music in short scenes of village life, dragons and fish", "th": "หุ่นไม้เต้นบนผิวน้ำประกอบดนตรีพื้นบ้านสด เล่าฉากชีวิตในหมู่บ้าน มังกร และปลา" },
+          "why": { "en": "The show lasts under an hour, with splashing, fire and music that small children follow without words", "th": "การแสดงไม่ถึงชั่วโมง มีน้ำกระเซ็น ไฟ และดนตรีที่เด็กเล็กดูเข้าใจได้โดยไม่ต้องฟังภาษา" },
+          "tip": { "en": "Book a show a day ahead in busy months; front rows may get a little wet", "th": "จองล่วงหน้าหนึ่งวันในช่วงคนเยอะ แถวหน้าอาจโดนน้ำนิดหน่อย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ 100,000₫ a seat", "th": "≈ 100,000₫ ต่อที่นั่ง" },
+          "book": "rec",
+          "q": "Thang Long Water Puppet Theatre, Hoan Kiem, Hanoi",
+          "ok": "2026-11",
+          "src": "https://vietnamtour.in/?p=12428"
+        },
+        {
+          "name": { "en": "Vietnam Museum of Ethnology", "th": "พิพิธภัณฑ์ชาติพันธุ์วิทยาเวียดนาม" },
+          "local": "Bảo tàng Dân tộc học Việt Nam",
+          "kind": "museum",
+          "area": { "en": "Cau Giay", "th": "เกาส่าย" },
+          "what": { "en": "Life of Vietnam's 54 peoples, with full-size stilt houses, a tall communal house and tombs to walk into in the garden", "th": "ชีวิตของชนเผ่า 54 กลุ่มในเวียดนาม มีบ้านใต้ถุนสูงขนาดจริง บ้านชุมชนหลังคาสูง ให้เดินเข้าไปดูในสวน" },
+          "why": { "en": "Children can climb into the houses outside, and the garden gives room to run between rooms of the museum", "th": "เด็กปีนเข้าไปดูบ้านในสวนได้ และสวนกว้างให้วิ่งเล่นระหว่างอาคาร" },
+          "tip": { "en": "Closed on Mondays; there are water puppet shows in the garden on some days", "th": "ปิดวันจันทร์ บางวันมีหุ่นกระบอกน้ำแสดงในสวน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ 40,000₫ adults · 20,000₫ children", "th": "≈ 40,000₫ ผู้ใหญ่ · 20,000₫ เด็ก" },
+          "book": "none",
+          "q": "Vietnam Museum of Ethnology, Nguyen Van Huyen, Cau Giay, Hanoi",
+          "ok": "2026-11",
+          "src": "https://vme-en.vass.gov.vn/"
+        },
+        {
+          "name": { "en": "Temple of Literature", "th": "วิหารวรรณกรรม (วันเหมียว)" },
+          "local": "Văn Miếu – Quốc Tử Giám",
+          "kind": "culture",
+          "area": { "en": "Dong Da", "th": "ด่งดา" },
+          "what": { "en": "Vietnam's first university, a row of quiet courtyards with ponds, old trees and stone turtles carrying steles", "th": "มหาวิทยาลัยแห่งแรกของเวียดนาม ลานสงบต่อกันหลายชั้น มีสระน้ำ ต้นไม้ใหญ่ และเต่าหินแบกศิลาจารึก" },
+          "why": { "en": "Walled courtyards are calm after the traffic, and the stone turtles are fun to count", "th": "ลานในกำแพงเงียบสงบหลังจากถนนวุ่นวาย และเด็กๆ สนุกกับการนับเต่าหิน" },
+          "tip": { "en": "Go early in the morning; graduation photo groups fill it later in the day", "th": "ไปตอนเช้า สายๆ มีกลุ่มถ่ายรูปรับปริญญาเยอะ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ 70,000₫ adults · children free", "th": "≈ 70,000₫ ผู้ใหญ่ · เด็กฟรี" },
+          "book": "none",
+          "q": "Temple of Literature, Quoc Tu Giam, Dong Da, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/temple-of-literature"
+        },
+        {
+          "name": { "en": "Thu Le Zoo and Park", "th": "สวนสัตว์ทูเล" },
+          "local": "Công viên Thủ Lệ",
+          "kind": "zoo",
+          "area": { "en": "Ba Dinh", "th": "บาดิ่ญ" },
+          "what": { "en": "Hanoi's city zoo around a lake: elephants, big cats, monkeys and birds, with small rides for children", "th": "สวนสัตว์ของเมืองรอบทะเลสาบ มีช้าง เสือ ลิง และนก กับเครื่องเล่นเล็กๆ สำหรับเด็ก" },
+          "why": { "en": "Cheap, close to the centre and shady, an easy half-day for little animal lovers", "th": "ราคาถูก ใกล้ใจกลางเมือง มีร่มเงา ไปครึ่งวันสบายๆ สำหรับเด็กที่ชอบสัตว์" },
+          "tip": { "en": "Go in the morning before the heat; the rides inside are paid separately", "th": "ไปตอนเช้าก่อนอากาศร้อน เครื่องเล่นข้างในจ่ายแยก" },
+          "ages": [2, 2, 1, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ 30,000–50,000₫", "th": "≈ 30,000–50,000₫" },
+          "book": "none",
+          "q": "Thu Le Park, Ba Dinh, Hanoi",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/parks-in-hanoi/"
+        },
+        {
+          "name": { "en": "VinKE and Vinpearl Aquarium Times City", "th": "วินเค และวินเพิร์ลอควาเรียม ไทม์สซิตี้" },
+          "local": "VinKE & Vinpearl Aquarium Times City",
+          "kind": "aquarium",
+          "area": { "en": "Hai Ba Trung, Times City mall", "th": "ห้างไทม์สซิตี้ ไห่บ่าจึง" },
+          "what": { "en": "An underground aquarium with a walk-through tunnel and penguins, beside VinKE, an indoor role-play town where children try grown-up jobs", "th": "อควาเรียมใต้ดินมีอุโมงค์ใต้น้ำและเพนกวิน ติดกับวินเค เมืองจำลองในร่มให้เด็กลองทำอาชีพต่างๆ" },
+          "why": { "en": "All indoors with air-conditioning, so it works on a hot or rainy day", "th": "อยู่ในร่มติดแอร์ทั้งหมด ใช้ได้ทั้งวันร้อนและวันฝนตก" },
+          "tip": { "en": "Combine both with a combo ticket; weekdays are quieter", "th": "ซื้อตั๋วรวมสองที่ได้ วันธรรมดาคนน้อยกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ 190,000₫ adults · less for children", "th": "≈ 190,000₫ ผู้ใหญ่ · เด็กถูกกว่า" },
+          "book": "none",
+          "q": "Vinpearl Aquarium, Times City, 458 Minh Khai, Hai Ba Trung, Hanoi",
+          "ok": "2026-11",
+          "src": "https://cloud.news.vinpearl.com/HN_DSVN_EN"
+        },
+        {
+          "name": { "en": "Imperial Citadel of Thang Long", "th": "ป้อมปราการหลวงทังลอง" },
+          "local": "Hoàng thành Thăng Long",
+          "kind": "culture",
+          "area": { "en": "Ba Dinh", "th": "บาดิ่ญ" },
+          "what": { "en": "The old royal citadel: a big gate tower, palace foundations, dragon stairs and wide lawns", "th": "ป้อมปราการของราชวงศ์เก่า มีหอประตูใหญ่ ฐานพระราชวัง บันไดมังกร และสนามหญ้ากว้าง" },
+          "why": { "en": "Lots of open lawn and few crowds, and the dragon stairs and tunnels make a small adventure", "th": "สนามหญ้ากว้างและคนไม่แน่น บันไดมังกรกับอุโมงค์ใต้ดินเป็นการผจญภัยเล็กๆ" },
+          "tip": { "en": "Closed on Mondays; bring water and hats, there is little shade", "th": "ปิดวันจันทร์ พกน้ำและหมวก ร่มเงาน้อย" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ 70,000₫ adults · children less", "th": "≈ 70,000₫ ผู้ใหญ่ · เด็กถูกกว่า" },
+          "book": "none",
+          "q": "Imperial Citadel of Thang Long, 19C Hoang Dieu, Ba Dinh, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/imperial-citadel-of-thang-long-a-complete-guide-to-hanoi-s-unesco-fortress"
+        },
+        {
+          "name": { "en": "Lotte World Aquarium Hanoi", "th": "ล็อตเต้เวิลด์อควาเรียม ฮานอย" },
+          "local": "Lotte World Aquarium Hà Nội",
+          "kind": "aquarium",
+          "area": { "en": "Tay Ho, Lotte Mall West Lake", "th": "ห้างล็อตเต้มอลล์เวสต์เลก เตยโห่" },
+          "what": { "en": "A modern aquarium in a mall with otters, penguins, a big ocean tank and a touch pool", "th": "อควาเรียมทันสมัยในห้าง มีนาก เพนกวิน ตู้ปลาใหญ่ และบ่อให้จับสัตว์ทะเล" },
+          "why": { "en": "Bright, step-free and cool, with low windows sized for small children", "th": "สว่าง ไม่มีขั้นบันได อากาศเย็น หน้าต่างกระจกอยู่ต่ำพอดีกับเด็กเล็ก" },
+          "tip": { "en": "Weekday tickets are cheaper; open late, so it fits after a hot afternoon", "th": "ตั๋ววันธรรมดาถูกกว่า เปิดถึงค่ำ ไปหลังบ่ายร้อนๆ ได้" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ 123,000₫ adults weekdays · 148,000₫ weekends · children less", "th": "≈ 123,000₫ ผู้ใหญ่วันธรรมดา · 148,000₫ วันหยุด · เด็กถูกกว่า" },
+          "book": "rec",
+          "q": "Lotte World Aquarium, Lotte Mall West Lake, 272 Vo Chi Cong, Tay Ho, Hanoi",
+          "ok": "2026-11",
+          "src": "https://localtours.uz/tours/lotte-world-aquarium-hanoi-ticket"
+        },
+        {
+          "name": { "en": "Hoan Kiem Lake and the weekend walking street", "th": "ทะเลสาบฮหว่านเกี๊ยม และถนนคนเดินสุดสัปดาห์" },
+          "local": "Hồ Hoàn Kiếm · Phố đi bộ",
+          "kind": "park",
+          "area": { "en": "Hoan Kiem", "th": "ฮหว่านเกี๊ยม" },
+          "what": { "en": "A lake in the heart of the city with a red bridge; on Friday to Sunday evenings the streets around it close to cars", "th": "ทะเลสาบกลางเมืองกับสะพานสีแดง เย็นวันศุกร์ถึงอาทิตย์ถนนรอบทะเลสาบปิดไม่ให้รถเข้า" },
+          "why": { "en": "With no cars at weekends, children play traditional games, ride toy cars and watch street shows", "th": "สุดสัปดาห์ไม่มีรถ เด็กๆ เล่นเกมพื้นบ้าน ขับรถของเล่น และดูการแสดงริมถนน" },
+          "tip": { "en": "Go after 7 pm on a weekend; keep small children close in the crowd", "th": "ไปหลัง 1 ทุ่มช่วงสุดสัปดาห์ ดูเด็กเล็กให้ใกล้ตัวเพราะคนเยอะ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hoan Kiem Lake, Hoan Kiem, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/hoan-kiem-lake-in-hanoi-what-to-see-the-walking-street-and-the-best-time-to-go"
+        },
+        {
+          "name": { "en": "Ngoc Son Temple", "th": "วัดหง็อกเซิน" },
+          "local": "Đền Ngọc Sơn",
+          "kind": "culture",
+          "area": { "en": "Hoan Kiem Lake", "th": "ทะเลสาบฮหว่านเกี๊ยม" },
+          "what": { "en": "A small temple on an island in the lake, reached by the red Huc Bridge, with a giant preserved turtle", "th": "ศาลเจ้าเล็กบนเกาะกลางทะเลสาบ เดินข้ามสะพานแดงเทฮุกไป มีเต่ายักษ์สตัฟฟ์ไว้ให้ดู" },
+          "why": { "en": "Crossing the red bridge over the water and finding the huge turtle is a short, exciting visit", "th": "เดินข้ามสะพานแดงเหนือน้ำแล้วไปดูเต่าตัวใหญ่ เป็นการเที่ยวสั้นๆ ที่ตื่นเต้น" },
+          "tip": { "en": "Cover shoulders and knees; the bridge is busy at sunset", "th": "แต่งกายคลุมไหล่และเข่า สะพานคนเยอะช่วงพระอาทิตย์ตก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ 30,000₫ adults", "th": "≈ 30,000₫ ผู้ใหญ่" },
+          "book": "none",
+          "q": "Ngoc Son Temple, Hoan Kiem Lake, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/places/hanoi/ngoc-son-temple"
+        },
+        {
+          "name": { "en": "Old Quarter weekend night market", "th": "ตลาดกลางคืนย่านเมืองเก่า" },
+          "local": "Chợ đêm Hàng Đào",
+          "kind": "market",
+          "area": { "en": "Old Quarter, Hang Dao to Dong Xuan", "th": "ย่านเมืองเก่า ถนนหั่งด่าวถึงตลาดด่งซวน" },
+          "what": { "en": "A long street market of snacks, toys, clothes and souvenirs from Hang Dao to Dong Xuan Market", "th": "ตลาดยาวขายของกิน ของเล่น เสื้อผ้า และของฝาก ตั้งแต่ถนนหั่งด่าวถึงตลาดด่งซวน" },
+          "why": { "en": "Cheap snacks and toys to pick, and it joins up with the walking street around the lake", "th": "ขนมและของเล่นราคาถูกให้เลือก และเดินต่อจากถนนคนเดินรอบทะเลสาบได้เลย" },
+          "tip": { "en": "Friday to Sunday evenings only; a carrier works better than a pram in the crowd", "th": "เฉพาะเย็นวันศุกร์ถึงอาทิตย์ ใช้เป้อุ้มเด็กสะดวกกว่ารถเข็นเพราะคนแน่น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk · snacks ≈ 25,000–50,000₫", "th": "เดินฟรี · ของกิน ≈ 25,000–50,000₫" },
+          "book": "none",
+          "q": "Hang Dao Street, Old Quarter, Hoan Kiem, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/hanoi-weekend-night-market-what-to-eat-and-buy-on-the-old-quarter-walking-street"
+        },
+        {
+          "name": { "en": "Bat Trang pottery village", "th": "หมู่บ้านเครื่องปั้นบัตจ่าง" },
+          "local": "Làng gốm Bát Tràng",
+          "kind": "culture",
+          "area": { "en": "Gia Lam, southeast of the centre", "th": "ซาลัม ทางตะวันออกเฉียงใต้ของเมือง" },
+          "what": { "en": "A centuries-old village of potters and ceramic shops where families paint and shape their own pots", "th": "หมู่บ้านช่างปั้นเก่าแก่หลายร้อยปี มีร้านเซรามิก และให้ครอบครัวปั้นและระบายสีถ้วยของตัวเอง" },
+          "why": { "en": "Squishing clay on a wheel and painting a cup is hands-on fun even for a three-year-old", "th": "ได้ปั้นดินบนแป้นหมุนและระบายสีถ้วย สนุกแม้เด็กสามขวบ" },
+          "tip": { "en": "About 40 minutes by taxi; fired pieces may need a day, so ask about collection", "th": "นั่งแท็กซี่ราว 40 นาที ชิ้นที่ต้องเผาอาจใช้เวลาหนึ่งวัน ถามเรื่องการรับของก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Village free · a pottery go ≈ 20,000–80,000₫", "th": "เข้าหมู่บ้านฟรี · ปั้นหรือระบายสี ≈ 20,000–80,000₫" },
+          "book": "none",
+          "q": "Bat Trang Pottery Village, Gia Lam, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/bat-trang-hanoi-s-centuries-old-ceramic-village"
+        },
+        {
+          "name": { "en": "Thong Nhat Park", "th": "สวนทองเญิ้ต" },
+          "local": "Công viên Thống Nhất",
+          "kind": "park",
+          "area": { "en": "Hai Ba Trung", "th": "ไห่บ่าจึง" },
+          "what": { "en": "The city's big green park around Bay Mau Lake, now open without fences, with play areas and small rides", "th": "สวนใหญ่ของเมืองรอบทะเลสาบบ๋ายเหมิว ตอนนี้เปิดโล่งไม่มีรั้ว มีลานเด็กเล่นและเครื่องเล่นเล็กๆ" },
+          "why": { "en": "Room to run, a playground and boats on the lake, a break from Hanoi's busy streets", "th": "มีที่ให้วิ่ง สนามเด็กเล่น และเรือในทะเลสาบ ได้พักจากถนนฮานอยที่วุ่นวาย" },
+          "tip": { "en": "Free to enter; rides and boats are paid on the spot", "th": "เข้าฟรี เครื่องเล่นและเรือจ่ายหน้างาน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Thong Nhat Park, Tran Nhan Tong, Hai Ba Trung, Hanoi",
+          "ok": "2026-11",
+          "src": "https://hanoitimes.vn/open-park-push-reshapes-hanoi-public-green-spaces-and-everyday-urban-life.976100.html"
+        },
+        {
+          "name": { "en": "Vietnamese Women's Museum", "th": "พิพิธภัณฑ์สตรีเวียดนาม" },
+          "local": "Bảo tàng Phụ nữ Việt Nam",
+          "kind": "museum",
+          "area": { "en": "Hoan Kiem", "th": "ฮหว่านเกี๊ยม" },
+          "what": { "en": "Four floors on family life, traditional dress and street vendors, with colourful costumes and baby carriers from many peoples", "th": "สี่ชั้นเรื่องชีวิตครอบครัว ชุดประจำชาติ และแม่ค้าหาบเร่ มีชุดสีสวยและเป้อุ้มเด็กของหลายชนเผ่า" },
+          "why": { "en": "Cool, compact and full of colour, with a lift; a good stop near the lake on a hot day", "th": "เย็น ไม่ใหญ่เกินไป สีสันเยอะ มีลิฟต์ แวะได้ดีใกล้ทะเลสาบในวันร้อน" },
+          "tip": { "en": "Check the closing day before you go; an hour is enough with small children", "th": "เช็กวันปิดก่อนไป เด็กเล็กหนึ่งชั่วโมงก็พอ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ 40,000₫ adults · less for children", "th": "≈ 40,000₫ ผู้ใหญ่ · เด็กถูกกว่า" },
+          "book": "none",
+          "q": "Vietnamese Women's Museum, 36 Ly Thuong Kiet, Hoan Kiem, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/places/hanoi/vietnamese-womens-museum"
+        },
+        {
+          "name": { "en": "Ba Dinh Square and One Pillar Pagoda", "th": "จัตุรัสบาดิ่ญ และเจดีย์เสาเดียว" },
+          "local": "Quảng trường Ba Đình · Chùa Một Cột",
+          "kind": "culture",
+          "area": { "en": "Ba Dinh", "th": "บาดิ่ญ" },
+          "what": { "en": "The wide square before the Ho Chi Minh Mausoleum, the changing of the guard and the tiny pagoda on one pillar in a lotus pond", "th": "จัตุรัสกว้างหน้าสุสานโฮจิมินห์ การเปลี่ยนเวรทหารยาม และเจดีย์เล็กบนเสาต้นเดียวกลางสระบัว" },
+          "why": { "en": "Free, open and short; children like the guards in white and the little pagoda standing on one leg", "th": "ฟรี โล่ง และใช้เวลาไม่นาน เด็กๆ ชอบทหารชุดขาวและเจดีย์เล็กที่ยืนขาเดียว" },
+          "tip": { "en": "Quiet behaviour and covered shoulders and knees are expected; the mausoleum opens mornings only", "th": "ต้องสงบและแต่งกายคลุมไหล่และเข่า สุสานเปิดเฉพาะช่วงเช้า" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "One Pillar Pagoda, Ong Ich Khiem, Ba Dinh, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/ho-chi-minh-mausoleum-opening-hours-free-entry-and-the-dress-code"
+        },
+        {
+          "name": { "en": "Tran Quoc Pagoda on West Lake", "th": "เจดีย์เจิ่นก๊วก ริมทะเลสาบตะวันตก" },
+          "local": "Chùa Trấn Quốc",
+          "kind": "culture",
+          "area": { "en": "Tay Ho", "th": "เตยโห่" },
+          "what": { "en": "Hanoi's oldest pagoda on a little island in West Lake, a tall red tower reached by a causeway", "th": "เจดีย์เก่าที่สุดของฮานอยบนเกาะเล็กในทะเลสาบตะวันตก หอสีแดงสูง เดินข้ามทางเชื่อมไป" },
+          "why": { "en": "A short walk over the water with a breeze, and swan pedal boats on the lakes nearby", "th": "เดินสั้นๆ ข้ามน้ำมีลมเย็น และมีเรือถีบรูปหงส์ในทะเลสาบใกล้ๆ" },
+          "tip": { "en": "Cover shoulders and knees; late afternoon light on the lake is lovely", "th": "แต่งกายคลุมไหล่และเข่า แสงช่วงบ่ายแก่ริมทะเลสาบสวยมาก" },
+          "ages": [1, 1, 1, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Tran Quoc Pagoda, Thanh Nien, Tay Ho, Hanoi",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/tran-quoc-pagoda-in-hanoi-opening-hours-dress-code-and-what-to-see"
+        },
+      {"name":{"en":"Vietnam Military History Museum","th":"พิพิธภัณฑ์ประวัติศาสตร์การทหารเวียดนาม"},"local":"Bảo tàng Lịch sử Quân sự Việt Nam","kind":"museum","area":{"en":"Thang Long Boulevard, Nam Tu Liem","th":"ถนนทังลอง เขตนามตือเลียม"},"what":{"en":"A large new museum with a four-storey hall and an outdoor yard of planes, tanks and boats","th":"พิพิธภัณฑ์ใหม่ขนาดใหญ่ อาคาร 4 ชั้น และลานกลางแจ้งที่มีเครื่องบิน รถถัง และเรือ"},"why":{"en":"Children like the real planes and tanks out in the yard","th":"เด็กๆ ชอบเครื่องบินและรถถังของจริงที่ลานด้านนอก"},"tip":{"en":"Out of the centre; go by taxi and allow about two hours","th":"อยู่นอกตัวเมือง นั่งแท็กซี่ไป เผื่อเวลาราว 2 ชั่วโมง"},"ages":[0,1,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Vietnam Military History Museum, Thang Long Boulevard, Hanoi","ok":"2026-11","src":"https://www.vietnamairlines.com/en/useful-information/travel-guide/vietnam-military-history-museum"},
+      {"name":{"en":"Vietnam National Museum of Nature","th":"พิพิธภัณฑ์ธรรมชาติแห่งชาติเวียดนาม"},"local":"Bảo tàng Thiên nhiên Việt Nam","kind":"museum","area":{"en":"Nghia Do, Cau Giay","th":"เหงียโด เขตเกิ่วยาย"},"what":{"en":"A natural-history museum with dinosaur models and thousands of animal specimens","th":"พิพิธภัณฑ์ธรรมชาติ มีหุ่นไดโนเสาร์และตัวอย่างสัตว์หลายพันชิ้น"},"why":{"en":"Dinosaur robots and fossil-replica crafts for children","th":"มีหุ่นไดโนเสาร์ขยับได้ และกิจกรรมทำฟอสซิลจำลองสำหรับเด็ก"},"tip":{"en":"Indoors, good for a rainy day; allow about two hours","th":"อยู่ในร่ม เหมาะกับวันฝนตก เผื่อเวลาราว 2 ชั่วโมง"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Vietnam National Museum of Nature, Nghia Do, Cau Giay, Hanoi","ok":"2026-11","src":"https://vietnamnet.vn/en/natural-history-museums-pulling-in-huge-crowds-2499409.html"},
+        {
+          "local": "Cung Thiếu nhi Hà Nội",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vietnam.vn/en/san-choi-hap-dan-cho-thieu-nhi-thu-do",
+          "name": {
+            "th": "วังเด็กฮานอย",
+            "en": "Hanoi Children's Palace"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮานอย",
+            "en": "Hanoi"
+          },
+          "what": {
+            "th": "วังเด็กของเมือง มีคลาสกีฬา ดนตรี และหุ่นยนต์ และสระว่ายน้ำ",
+            "en": "The city's children's palace: classes in sport, music and robotics, and a swimming pool"
+          },
+          "why": {
+            "th": "ที่ให้เด็กได้เล่น สำรวจ และลองสิ่งใหม่",
+            "en": "A place for children to play, explore and try new things"
+          },
+          "q": "Cung Thiếu nhi Hà Nội",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Vietnam Museum of Fine Arts",
+            "th": "พิพิธภัณฑ์ศิลปะเวียดนาม"
+          },
+          "local": "Bảo tàng Mỹ thuật Việt Nam",
+          "kind": "museum",
+          "area": {
+            "en": "Ba Dinh, 66 Nguyễn Thái Học",
+            "th": "บาดิ่ญ ถนนเหงียนไทฮอก"
+          },
+          "what": {
+            "en": "A museum of artworks with a creative space where visitors paint, sculpt and make other art",
+            "th": "พิพิธภัณฑ์ผลงานศิลปะ มีพื้นที่สร้างสรรค์ให้ผู้เข้าชมวาด ปั้น และทำงานศิลป์"
+          },
+          "why": {
+            "en": "It has an art-creation area for children, where kids paint and sculpt",
+            "th": "มีมุมสร้างงานศิลป์สำหรับเด็ก ให้เด็กวาดและปั้น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราวชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Vietnam National Museum of Fine Arts, 66 Nguyễn Thái Học, Ba Đình, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://www.mykingdom.com.vn/en/blogs/hom-nay-con-choi-gi/5-bao-tang-cho-tre-em-trai-nghiem-da-dang-hoc-hoi-thu-vi"
+        },
+        {
+          "name": {
+            "en": "Truc Bach Lake",
+            "th": "ทะเลสาบจุ๊กบั๊ก"
+          },
+          "local": "Hồ Trúc Bạch",
+          "kind": "park",
+          "area": {
+            "en": "Ba Dinh, northwest of the Old Quarter",
+            "th": "บาดิ่ญ ทางตะวันตกเฉียงเหนือของย่านเมืองเก่า"
+          },
+          "what": {
+            "en": "A calm, smaller lake beside West Lake, with a loop path to stroll or cycle and swan-shaped pedal boats to hire",
+            "th": "ทะเลสาบเล็กเงียบสงบข้างทะเลสาบตะวันตก มีทางเดินรอบสำหรับเดินหรือปั่นจักรยาน และเรือถีบรูปหงส์ให้เช่า"
+          },
+          "why": {
+            "en": "Calm and residential with far less traffic than the Old Quarter; kids enjoy the swan pedal boats",
+            "th": "เงียบแบบย่านที่อยู่อาศัย รถน้อยกว่าย่านเมืองเก่ามาก เด็กชอบเรือถีบรูปหงส์"
+          },
+          "tip": {
+            "en": "A peaceful place for a sunset stroll",
+            "th": "เหมาะกับการเดินเล่นยามพระอาทิตย์ตกอย่างสงบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Truc Bach Lake, Ba Đình, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://localvietnam.com/hanoi/truc-bach-lake/"
+        },
+        {
+          "name": {
+            "en": "Timezone AEON Mall Long Bien",
+            "th": "ไทม์โซน อิออนมอลล์ ลองเบียน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "AEON Mall Long Bien, Long Bien",
+            "th": "อิออนมอลล์ ลองเบียน"
+          },
+          "what": {
+            "en": "A family game centre of 1,004 m² on the 3rd floor of AEON Mall Long Bien, with mini bowling, VR and prize games",
+            "th": "ศูนย์เกมครอบครัว 1,004 ตร.ม. ชั้น 3 ของอิออนมอลล์ ลองเบียน มีมินิโบว์ลิ่ง วีอาร์ และเกมแลกของรางวัล"
+          },
+          "why": {
+            "en": "Mini bowling suits kids and adults together, and the prize corner is a favourite with young guests",
+            "th": "มินิโบว์ลิ่งเล่นด้วยกันได้ทั้งเด็กและผู้ใหญ่ และมุมของรางวัลเป็นที่ชื่นชอบของเด็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Timezone AEON Mall Long Biên, 27 Đường Cổ Linh, Long Biên, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://editor.timezonegames.com/en-vn/venues/hanoi/aeon-mall-long-bien/"
+        },
+        {
+          "name": {
+            "en": "Worldgame Playground for Kids",
+            "th": "เวิลด์เกม สนามเด็กเล่น"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Melinh Plaza, Ha Dong",
+            "th": "เมลินห์พลาซา ห่าดง"
+          },
+          "what": {
+            "en": "A children-only play centre of over 1,300 m² on the 4th floor of Melinh Plaza, with a ball pit, slides, painting, a mini car area and coin-operated games",
+            "th": "ศูนย์เล่นสำหรับเด็กล้วน ๆ กว่า 1,300 ตร.ม. ชั้น 4 ของเมลินห์พลาซา มีบ่อบอล สไลเดอร์ วาดรูป โซนรถมินิ และเกมหยอดเหรียญ"
+          },
+          "why": {
+            "en": "A Fairy Tale Garden, a multi-functional climbing house and a Smart Corner where children role-play as doctors",
+            "th": "มีสวนเทพนิยาย บ้านปีนป่ายอเนกประสงค์ และมุมสมาร์ทที่เด็กเล่นบทบาทสมมุติเป็นหมอ"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "World Game, Melinh Plaza Đông, Đường Tô Hiệu, Hà Đông, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://mytour.vn/en/blog/xep-hang/top-10-indoor-playgrounds-for-kids-in-hanoi-mytour.html"
+        },
+        {
+          "name": {
+            "en": "Play 'N' Learn Vietnam",
+            "th": "เพลย์ แอนด์ เลิร์น เวียดนาม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Vincom Center Metropolis, Ba Dinh",
+            "th": "วินคอมเซ็นเตอร์ เมโทรโพลิส บาดิ่ญ"
+          },
+          "what": {
+            "en": "A newly opened indoor playground on the 3rd floor of Vincom Center Metropolis, with a focus on young children",
+            "th": "สนามเด็กเล่นในร่มเปิดใหม่ ชั้น 3 ของวินคอมเซ็นเตอร์ เมโทรโพลิส เน้นเด็กเล็ก"
+          },
+          "why": {
+            "en": "A dedicated Toddler Zone, and a three-step check (temperature, socks, hand sanitiser) before children play",
+            "th": "มีโซนเด็กวัยเตาะแตะโดยเฉพาะ และตรวจสามขั้นก่อนเข้าเล่น (วัดอุณหภูมิ ถุงเท้า เจลล้างมือ)"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Play n Learn Metropolis, Vincom Metropolis, 29 Liễu Giai, Ba Đình, Hà Nội",
+          "ok": "2026-11",
+          "src": "https://mytour.vn/en/blog/xep-hang/top-10-indoor-playgrounds-for-kids-in-hanoi-mytour.html"
         }
       ]
     }

@@ -176,6 +176,19 @@ fs.writeFileSync(path.join(DATA_DIR, 'media', 'p', 'other-trip', 'ph-other-001.j
 ok((await fetch(BASE + '/media/ph-other-001', { headers: { cookie: ck } })).status === 404, "another family's photo id → 404 (IDOR)");
 ok((await up('ph-other-001')).status === 409, "can't overwrite another family's photo id");
 
+// one height per child (migration 0042): an old "Growing up" height moves into the passport's Explorer ID — the last day's box when it is
+// empty, else the first day's; when both are filled the passport keeps its own (the old row stays, never read)
+{ const fam = (await pool.query('SELECT family_id FROM trips WHERE id = $1', [T])).rows[0].family_id;
+  const row = (kid, key, text) => pool.query("INSERT INTO entries (id, family_id, trip_id, kind, child, first_key, text) VALUES ($1, $2, $3, 'field', $4, $5, $6)", [`${T}.field.${key}.${kid}`, fam, T, kid, key, text]);
+  await row('hz1', 'height', '96');                                                    // nothing in the passport yet → the last day's box
+  await row('hz2', 'height', '80'); await row('hz2', 'height_last', '82');            // the last day is filled → the first day's box
+  await row('hz3', 'height', '101'); await row('hz3', 'height_first', '99'); await row('hz3', 'height_last', '100');   // both filled → kept
+  await pool.query(fs.readFileSync(new URL('../migrations/0042_one_height.sql', import.meta.url), 'utf8'));
+  const got = Object.fromEntries((await pool.query("SELECT id, text FROM entries WHERE child IN ('hz1','hz2','hz3')")).rows.map((r) => [r.id.slice(T.length + 7), r.text]));
+  ok(JSON.stringify(got, Object.keys(got).sort()) === JSON.stringify({ 'height.hz3': '101', 'height_first.hz2': '80', 'height_first.hz3': '99', 'height_last.hz1': '96', 'height_last.hz2': '82', 'height_last.hz3': '100' }),
+    `migration 0042: the old height moves into the passport's empty box (last day first), a filled passport keeps its own (${JSON.stringify(got)})`);
+  await pool.query("DELETE FROM entries WHERE child IN ('hz1','hz2','hz3')"); }
+
 // ---- check-ins, days, firsts, trips
 ok((await put('/api/b/places', { trip: T, key: 'Hong Kong Disneyland', day: 1, kind: 'place', name: { en: 'Hong Kong Disneyland', th: 'ฮ่องกงดิสนีย์แลนด์' } })).ok, 'check in at Disneyland');
 await put('/api/b/places', { trip: T, key: 'Hong Kong Disneyland', day: 1 });
@@ -191,6 +204,15 @@ ok((await put(`/api/b/spend/${T}.sp.bad1`, { ...sp, cat: 'casino' })).status ===
   && (await put(`/api/b/spend/${T}.sp.bad3`, { ...sp, cur: 'dollars' })).status === 400 && (await put(`/api/b/spend/${T}.sp.bad4`, { ...sp, day: 99 })).status === 400, 'spend: unknown category, negative amount, bad currency or day → 400');
 ok((await state(vck)).spend.length === 0 && (await state()).spend.length > 0, 'spending is the parents\' own ledger: a relative\'s state carries none of it');
 ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'tz-test-book', title: { th: 'ทดสอบ', en: 'Test' }, date_from: '2030-01-01', date_to: '2030-01-02', timezone: 'Pacific/Sidney' }) })).status === 400, 'a new book with a timezone the platform does not know is refused (reminders would stop for every book)');
+{ // B3: the plan a book's spending is held against — the parents' own, kept in settings (a bundled book's theme is rewritten on boot)
+  const bp = await put(`/api/b/budget/${T}`, { lines: [{ cat: 'food', cur: 'mop', amt: 2000 }, { cat: 'casino', cur: 'MOP', amt: 5 }, { cat: 'tickets', cur: 'MOP', amt: -1 }, { cat: 'food', cur: 'MOP', amt: 9 }] });
+  const bj = await bp.json(), s1 = await state(), sv = await state(vck);
+  ok(bp.ok && bj.budget.src === 'own' && JSON.stringify(bj.budget.lines) === '[{"cat":"food","cur":"MOP","amt":2000}]' && s1.budgets[T].lines[0].amt === 2000 && !Object.keys(sv.budgets || {}).length,
+    `budget (B3): a plan of our own is kept (bad category, amount and a second line of the same kind and money dropped) and only the parents see it (${JSON.stringify(bj)})`);
+  ok((await put(`/api/b/budget/${T}`, { lines: 'x' })).status === 400 && (await put(`/api/b/budget/no-such-book`, { lines: [] })).status === 400 && (await put(`/api/b/budget/${T}`, { lines: [] }, { ...H, cookie: vck })).status === 403,
+    'budget (B3): a malformed plan, an unknown book or a relative → refused');
+  const bc = await (await put(`/api/b/budget/${T}`, { lines: [] })).json();
+  ok(bc.budget === null && !(await state()).budgets[T], 'budget (B3): an empty plan takes our own away'); }
 ok((await fetch(BASE + `/api/b/spend/${T}.sp.0001`, { method: 'DELETE', headers: H })).ok && !(await state()).spend.length, 'spend deleted');
 const nt = await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'chiang-mai-2027', title: { th: 'เชียงใหม่', en: 'Chiang Mai' }, date_from: '2027-08-10', date_to: '2027-08-13' }) });
 s = await state();
@@ -367,7 +389,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(/AUD 1,375/.test(JSON.stringify(n.car)) && !/฿|THB/.test(JSON.stringify(n.car)), 'AU van: the rental price in AUD (owner\'s call, 18 Oct 2026), never in baht');
   const rs = n.restaurants, rItems = rs.groups.flatMap((g) => g.items);
   ok(rs.groups.length === 26 && rItems.length === 294 && rs.kinds.length === 3 && rItems.every((x) => x.q && x.name && x.what.th && x.what.en) && rItems.filter((x) => x.pick).length === 61, 'AU "Where to eat": 26 areas, 294 places (3 kinds), each with Thai + English and a maps query; 61 picks');
-  ok(hk.info.restaurants.groups.length === 21 && hk.info.restaurants.groups.flatMap((g) => g.items).length === 224 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q && x.what.th && x.what.en && [0, 1, 2].includes(x.kind)), 'HK manual Part 12 "Restaurant guide": 21 sections, 223 places, Thai + English, a maps query each');
+  ok(hk.info.restaurants.groups.length === 21 && hk.info.restaurants.groups.flatMap((g) => g.items).length === 222 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q && x.what.th && x.what.en && [0, 1, 2].includes(x.kind)), 'HK manual Part 12 "Restaurant guide": 21 sections, 222 places, Thai + English, a maps query each');
   ok(hk.days.every((d) => d.wx && (d.plan.learn || []).length >= 2 && (d.plan.quiz || []).length >= 3 && /^https:\/\/www\.google\.com\/maps\/dir\/\?api=1&origin=.+&destination=.+&travelmode=driving$/.test(d.plan.route)) && hk.info.wild.length >= 10 && hk.info.wild.some((w) => /Mickey/.test(w.name.en)) && hk.info.wildLabel.short.th, 'HK: weather, learn cards, quiz and a whole-day route every day; animals + Disney characters under their own label');
   ok(au.days.every((d) => d.plan.money && /A\$/.test(d.plan.money.en) && !/฿|THB|baht/i.test(JSON.stringify(d.plan.money)) && d.plan.pick) && au.passport.declaration.counts.length === 6, 'AU: money today in AUD (never baht) and a local pick on all 16 days; kids\' customs declaration in the passport');
   ok(au.info.emergency.some((e) => e.tel === '000' && e.main) && au.info.stays.length === 8 && au.info.pack.length === 4 && au.info.general.length === 4 && au.info.wild.length === 10 && au.info.prices.rows.length === 9 && au.info.more.some((m) => /Budget/.test(m.title.en) && m.table.rows.length >= 10), 'AU pocket guide: 000, 8 stays, packing, learn-in-the-car, animals, prices, AUD budget');

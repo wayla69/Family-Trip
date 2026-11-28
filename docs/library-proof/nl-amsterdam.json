@@ -1,0 +1,48 @@
+{
+  "town": "nl-amsterdam",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows from I amsterdam (Nov 2026) and Kidsproof (Oct–Nov 2026), all passed library-check.cjs, 4 went in",
+  "added": [
+    {
+      "name": "Kanarie Club",
+      "page_name": "Kanarie Club",
+      "src": "https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/child-friendly-cafes-and-restaurants",
+      "date": "2026-11",
+      "map": "Google Maps 'Kanarie Club', 777 reviews, newest shown 4 days ago"
+    },
+    {
+      "name": "Vrijburcht",
+      "page_name": "Café Restaurant Vrijburcht",
+      "src": "https://www.kidsproof.nl/amsterdam/uitje/Cafe-Restaurant-Vrijburcht-vrijburcht-ijburg-kindvriendelijk-restaurant/",
+      "date": "2026-10",
+      "map": "Google Maps 'Brasserie Vrijburcht', 826 reviews, newest shown 5 months ago"
+    },
+    {
+      "name": "Moco Museum",
+      "page_name": "Moco Museum",
+      "src": "https://www.iamsterdam.com/en/see-and-do/family-and-kids/best-things-to-do-with-kids-in-amsterdam",
+      "date": "2026-11",
+      "map": "Google Maps 'Moco Museum | Amsterdam', 29,150 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "You Jump Amsterdam-Noord",
+      "page_name": "You Jump Amsterdam-Noord",
+      "src": "https://www.kidsproof.nl/amsterdam/uitje/you-jump-trampolinepark-amsterdam-noord",
+      "date": "2026-11",
+      "map": "Google Maps 'You Jump Amsterdam-Noord (voorheen Jumpsquare)', 636 reviews, newest shown 2 months ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Lunchroom Lastig",
+      "why": "the map shows 'Warung Lastig' with no review from the last six months"
+    },
+    {
+      "name": "Club Abbey",
+      "why": "temporarily closed on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

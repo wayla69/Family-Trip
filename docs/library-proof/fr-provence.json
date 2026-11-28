@@ -1,0 +1,185 @@
+{
+  "town": "fr-provence",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 17 rows from the Avignon and Marseille tourist offices, Gault&Millau, Lonely Planet and a hotel family guide passed library-check.cjs, 17 went in",
+  "added": [
+    {
+      "name": "Chez Mamie",
+      "page_name": "Chez Mamie",
+      "src": "https://avignon-tourisme.com/en/offres/chez-mamie-avignon-en-4143858/",
+      "date": "2026-11",
+      "map": "Google Maps 41 Rue Carnot, 576 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Kouk",
+      "page_name": "Kouk – neighbourhood canteen",
+      "src": "https://avignon-tourisme.com/en/offres/kouk-neighbourhood-canteen-avignon-en-5271380/",
+      "date": "2026-11",
+      "map": "Google Maps 'KOUK', 1 Rue Henri Fabre, 158 reviews, newest 'last week'"
+    },
+    {
+      "name": "Le 26",
+      "page_name": "Le 26",
+      "src": "https://fr.gaultmillau.com/en/restaurants/le-26",
+      "date": "2026-02",
+      "map": "Google Maps 'Restaurant Le 26', 818 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "Côté Arènes",
+      "page_name": "Coté Arènes",
+      "src": "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/cote-arenes-arles-en-5715686/",
+      "date": "2026-11",
+      "map": "Google Maps 'Côté Arènes', 301 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Au Jardin des Carmes",
+      "page_name": "Au Jardin des Carmes",
+      "src": "https://fr.my.gaultmillau.com/en/restaurants/au-jardin-des-carmes",
+      "date": "2026-02",
+      "map": "Google Maps 537 reviews, newest 'last month'"
+    },
+    {
+      "name": "Pont d’Avignon",
+      "page_name": "Pont d'Avignon",
+      "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+      "date": "2026-07",
+      "map": "Google Maps Pont Saint-Bénézet, 21,482 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Rocher des Doms garden",
+      "page_name": "Rocher des Doms Garden",
+      "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'Jardin des Doms', 4,026 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Île de la Barthelasse",
+      "page_name": "Barthelasse Island",
+      "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+      "date": "2026-07",
+      "map": "Google Maps 'Ile de la Barthelasse', 132 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Musée départemental Arles antique",
+      "page_name": "Musée Départemental Arles Antique",
+      "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+      "date": "2026-05",
+      "map": "Google Maps 4,010 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Fondation Vincent van Gogh Arles",
+      "page_name": "Fondation Vincent Van Gogh",
+      "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+      "date": "2026-05",
+      "map": "Google Maps 2,901 reviews, newest 'last week'"
+    },
+    {
+      "name": "Roman Theatre of Arles",
+      "page_name": "Théâtre Antique",
+      "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+      "date": "2026-05",
+      "map": "Google Maps 'Roman Theatre of Arles', 2,662 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Cryptoportiques of Arles",
+      "page_name": "Cryptoportiques",
+      "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+      "date": "2026-05",
+      "map": "Google Maps 'Cryptoportiques d'Arles', 639 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Calisson museum (Roy René)",
+      "page_name": "Roy René factory",
+      "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+      "date": "2026-07",
+      "map": "Google Maps 'Museum Calisson', Route d'Avignon, 1,284 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Cézanne’s studio",
+      "page_name": "Cézanne's workshop",
+      "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+      "date": "2026-07",
+      "map": "Google Maps 'Atelier de Cézanne', 26 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Lac de Peyrolles",
+      "page_name": "Pays d'Aix nautical base",
+      "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+      "date": "2026-07",
+      "map": "Google Maps 'Lac de Peyrolles', 4,554 reviews, newest 'last week'"
+    },
+    {
+      "name": "Gulli Parc Aix-en-Provence",
+      "page_name": "Gulli Park",
+      "src": "https://www.marseille-tourisme.com/en/offers/gulli-park-aix-en-provence-en-3789761/",
+      "date": "2026-11",
+      "map": "Google Maps 'Gulli Parc Aix-en-Provence', 2,627 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Palomano Aix-en-Provence",
+      "page_name": "Palomano",
+      "src": "https://www.marseille-tourisme.com/en/offers/palomano-aix-en-provence-en-6251493/",
+      "date": "2026-11",
+      "map": "Google Maps 'Palomano Aix en Provence', 737 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Le Carré du Palais",
+      "page_name": "Le Carré du Palais",
+      "src": "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/le-carre-du-palais-avignon-fr-2851123/",
+      "date": "2026-11",
+      "map": "Google Maps 'Le Carré du Palais' (1 Place du Palais), newest review shown a day ago"
+    },
+    {
+      "name": "Parc de la Colline de Cuques",
+      "page_name": "Parc des Collines de Cuques",
+      "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/parc-des-collines-de-cuques-aix-en-provence-fr-2885673/",
+      "date": "2026-11",
+      "map": "Google Maps 'Parc de la Colline de Cuques' (Chemin Gilles Borel), newest review shown 2 months ago"
+    },
+    {
+      "name": "Les Chevrettes de Malo",
+      "page_name": "Les Chevrettes de Malo",
+      "src": "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/les-chevrettes-de-malo-puyvert-fr-6665465/",
+      "date": "2026-07",
+      "map": "Google Maps 'Les chevrettes de malo' (Av. du Couleton, Puyvert), newest review shown 2 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "La Pataterie Arles",
+      "why": "page dated 2020–21"
+    },
+    {
+      "name": "luberon.fr family page",
+      "why": "dated 2024"
+    },
+    {
+      "name": "itimaker, Wanderlog",
+      "why": "excluded sources"
+    },
+    {
+      "name": "L'Espigaou",
+      "why": "its page offers pony and donkey rides"
+    },
+    {
+      "name": "Le musée à petits pas",
+      "why": "a one-off dated event"
+    },
+    {
+      "name": "Parc Rambot",
+      "why": "no review dates readable on the map"
+    },
+    {
+      "name": "O' Papilles",
+      "why": "library-check.cjs could not confirm the row"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Provence-Alpes-Côte d'Azur tourism (2026), Avignon Tourisme and Onivapp (Aug 2026), 6 passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

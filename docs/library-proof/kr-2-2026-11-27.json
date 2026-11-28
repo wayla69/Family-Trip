@@ -1,0 +1,286 @@
+{
+  "town": "kr (Korea round 2: Incheon, Gyeongju, Seoul, Suwon, Jeju, Gangwon)",
+  "kind": "added",
+  "checked": "2026-11-27",
+  "rule": "Haiku research agents with the Korea notes (VisitKorea and the cities' tourism pages count as official; otherwise a 2025-2026 page, incl. mom-mom.net place pages with their own update date; no national franchises, no bars, no no-kids-zone places) -> scripts/library-check.cjs -> every place opened on Google Maps on 27 Nov 2026 by checker agents, kept only when open, the same name and in the town (four places with an official page that Maps could not pin down kept by hand) -> Thai and English by writer agents to docs/STYLE.md. Care rows: the hospital's and Incheon Airport's own pages, every quote re-checked here.",
+  "towns": {
+    "kr-gyeongju": {
+      "eat": [
+        {
+          "name": "Gureung",
+          "src": "https://mom-mom.net/travel/places/661c92ca6ac1bcd65eecbde9"
+        },
+        {
+          "name": "Hwangnam Jebaengso",
+          "src": "https://www.gyeongju.go.kr/webzine/GJstory/vol147/html/sub2-6.html"
+        },
+        {
+          "name": "Deneb",
+          "src": "https://www.gyeongju.go.kr/webzine/GJstory/vol147/html/sub2-6.html"
+        },
+        {
+          "name": "Cheonnyeon-ae Chalboribbang",
+          "src": "https://www.ktriptips.com/kor/food/2902900"
+        },
+        {
+          "name": "Bomun Galbi",
+          "src": "https://www.ktriptips.com/kor/food/4063506"
+        },
+        {
+          "name": "Bomun Tteul",
+          "src": "https://www.ktriptips.com/kor/food/2736721"
+        },
+        {
+          "name": "Bomun Minsok Sikdang",
+          "src": "https://www.ktriptips.com/kor/food/133962"
+        },
+        {
+          "name": "Bulguksa Milmyeon",
+          "src": "https://www.ktriptips.com/kor/food/2736657"
+        },
+        {
+          "name": "Busan Sikdang Bulguksa Main",
+          "src": "https://www.ktriptips.com/kor/food/133956"
+        },
+        {
+          "name": "Yusujeong",
+          "src": "https://www.ktriptips.com/kor/food/135911"
+        },
+        {
+          "name": "Shilla Je Miyeon",
+          "src": "https://polle.com/place/22QRMv/%EC%8B%A0%EB%9D%BC%EC%A0%9C%EB%A9%B4"
+        }
+      ],
+      "do": [
+        {
+          "name": "Natural History Museum, Gyeongju Expo Park",
+          "src": "https://mom-mom.net/en/travel/places/62cd15d92718fee95297d0b6"
+        },
+        {
+          "name": "Pororo Aqua Village, Hanwha Resort Gyeongju",
+          "src": "https://mom-mom.net/en/travel/places/63aa8f31576d3cf16f49784c"
+        }
+      ],
+      "care": []
+    },
+    "kr-incheon": {
+      "eat": [
+        {
+          "name": "Beacon",
+          "src": "https://mom-mom.net/travel/places/659b4a86b6825d58fd5ef354"
+        },
+        {
+          "name": "Pastreet",
+          "src": "https://mom-mom.net/travel/places/6a3a4ad982efc124ca390b26"
+        },
+        {
+          "name": "Cafe Comma & Yann Couvreur Songdo",
+          "src": "https://mom-mom.net/travel/places/65936a24b48147c080a98263"
+        },
+        {
+          "name": "Bakery Yulgyo P3120",
+          "src": "https://mom-mom.net/travel/places/692eb1210b45319c75882dfd"
+        },
+        {
+          "name": "Stdam Cheongna",
+          "src": "https://mom-mom.net/travel/places/6a0bf83956347a8c6f1ea822"
+        },
+        {
+          "name": "Junghwalu",
+          "src": "https://mom-mom.net/travel/places/65e6784ea842edd830db30c5"
+        },
+        {
+          "name": "Cheonggiwa Ppyeodaegi Haejang-guk Bupyeong",
+          "src": "https://mom-mom.net/travel/places/6a41ce20678c79b9c998100e"
+        },
+        {
+          "name": "Hwangsaeng Kalguksu Inspire Resort",
+          "src": "https://mom-mom.net/travel/places/69eefedbbaacfa924e03ed4c"
+        },
+        {
+          "name": "Me Too Coffee",
+          "src": "https://mom-mom.net/travel/places/6826b3164e114cfae19fb04d"
+        },
+        {
+          "name": "Cinnamon House Wolmi",
+          "src": "https://mom-mom.net/travel/places/68270f2ec5fbe72ca0a6a02f"
+        },
+        {
+          "name": "Storage Incheon",
+          "src": "https://mom-mom.net/travel/places/687786bf29c84adaf8a5aee0"
+        }
+      ],
+      "do": [
+        {
+          "name": "Incheon Grand Park Children's Zoo",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=194456"
+        },
+        {
+          "name": "Jayu Park (Freedom Park)",
+          "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/locIntrdnList.do?vcontsId=105439&menuSn=351"
+        },
+        {
+          "name": "Jjajangmyeon Museum",
+          "src": "https://mom-mom.net/en/travel/places/64f684fbc401c623d8d85ff8"
+        },
+        {
+          "name": "Incheon Bridge Observatory (Songdo Ocean Scope)",
+          "src": "https://www.incheonbridge.com/eng/tour/viewpoint"
+        },
+        {
+          "name": "Sorae Marsh Ecological Park",
+          "src": "https://www.incheon.go.kr/en/EN030115/view?contentid=1751275"
+        },
+        {
+          "name": "Incheon Children's Museum",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places"
+        },
+        {
+          "name": "National Institute of Biological Resources",
+          "src": "https://www.yugacrew.com/crewletter/incheon-indoor-kids-places"
+        },
+        {
+          "name": "National Museum of World Writing Systems",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": "G-Tower Observatory",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": "Songdo Hanok Village",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        },
+        {
+          "name": "Haedoji Park",
+          "src": "https://www.yugacrew.com/crewletter/songdo-places-to-visit"
+        }
+      ],
+      "care": [
+        {
+          "name": "Gwangjang Nolideo, Yeoseong Plaza",
+          "src": "https://www.incheon.go.kr/wp/WP030602"
+        }
+      ]
+    },
+    "kr-jeju": {
+      "eat": [
+        {
+          "name": "Mippeun Confectionery",
+          "src": "https://mom-mom.net/travel/places/6684b1ee83a643a2c6591bad"
+        },
+        {
+          "name": "Dotoree Kitchen Main",
+          "src": "https://mom-mom.net/travel/places/66a6ef5ca5b565b9ce179847"
+        }
+      ],
+      "do": [
+        {
+          "name": "Arte Kids Park",
+          "src": "https://www.littledayout.com/jeju-with-kids-itinerary-korea-travel/"
+        },
+        {
+          "name": "Udo Island",
+          "src": "https://www.littledayout.com/jeju-with-kids-itinerary-korea-travel/"
+        }
+      ],
+      "care": []
+    },
+    "kr-seoul": {
+      "eat": [
+        {
+          "name": "Chaiyen",
+          "src": "https://mom-mom.net/travel/places/67073385b6112c8877e34ba8"
+        },
+        {
+          "name": "Dinermate Yongsan",
+          "src": "https://mom-mom.net/travel/places/6a3e13b6bfddaf31875f8046"
+        }
+      ],
+      "do": [
+        {
+          "name": "Olympic Park",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": "Seoul Botanic Park",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": "Haneul Park",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": "Yeouido Hangang Park",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": "Cheonggyecheon Stream",
+          "src": "https://www.seoultourism.org/seoul-parks-gardens/"
+        },
+        {
+          "name": "Bank of Korea Money Museum",
+          "src": "https://www.koreatriptips.com/en/cultural-facilities/3024927.html"
+        }
+      ],
+      "care": []
+    },
+    "kr-suwon": {
+      "eat": [
+        {
+          "name": "Gayu Cafe Ingye",
+          "src": "https://mom-mom.net/travel/places/6600f2feb0e45c5c007e0896"
+        }
+      ],
+      "do": [
+        {
+          "name": "Banghwasuryujeong Pavilion",
+          "src": "https://www.mcst.go.kr/english/policy/kocis/newsView.jsp?pSeq=245"
+        },
+        {
+          "name": "Haenggung-dong Mural Village",
+          "src": "https://www.mcst.go.kr/english/policy/kocis/newsView.jsp?pSeq=245"
+        },
+        {
+          "name": "Champion 1250, Fantasium Yeongtong",
+          "src": "https://www.asoview.com/note/7664/"
+        }
+      ],
+      "care": []
+    },
+    "kr-gangwon": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Jeongdongjin Time Museum",
+          "src": "https://mom-mom.net/en/travel/places/6a31f7010d5c71e013e8c3a8"
+        },
+        {
+          "name": "Jeongdongjin Railbike",
+          "src": "https://ae.trip.com/moments/poi-jeongdongjin-railbike-137419147"
+        }
+      ],
+      "care": []
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (27 Nov 2026)": [
+      "Lee Nam Jang Seolleongtang Myeongdong",
+      "Alive Museum Insadong",
+      "TESEUM Teddy Bear Museum",
+      "Hanwha 63 Aquarium (now under another name)"
+    ],
+    "name or place did not match on Google Maps": "eleven (another address, a renamed museum, or only a result list)",
+    "other": [
+      "the separate gates and guard posts of Hwaseong Fortress (the fortress already has its row)",
+      "Suwon World Cup Stadium (nothing for children on the page)",
+      "Table A Songdo (an animal cafe)",
+      "Sega & Cook, Manokamana, Casa de Taco (chains)",
+      "Sombrero Itaewon (a bar)",
+      "Seonyudo, Kyodong Jipbap, Umawang, Horangi Gul, Hwarang Come Play (already listed)",
+      "the Hangeul Activity Hall (a 2025 fire, status unconfirmed)",
+      "Seoul City Tour Bus (no usable address)",
+      "a Jeonju late-night pharmacy (news sources only)"
+    ]
+  }
+}

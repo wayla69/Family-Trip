@@ -404,7 +404,7 @@ function mapHtml(t, day, kids, at) {
 <text class="sealbl" x="${MAP_W - 14}" y="${MAP_H - 12}">${esc(T(mm.m.sea))}</text>
 <g class="compass" transform="translate(30,40)"><circle r="15"/><path d="M0,-12 L4,0 L0,12 L-4,0Z"/><text y="-18">N</text></g>
 ${mm.hops.map((h, j) => `<path class="hop${j < pos ? ' done' : ''}" id="hop${j}" d="${h.d}"/>`).join('')}
-${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}${real.has(s.k) ? ' real' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle r="17"/>${s.art ? `<image class="ea" href="${esc(s.art)}" x="-15" y="-15" width="30" height="30"/>` : `<text class="e" y="6">${esc(s.e)}</text>`}${real.has(s.k) ? '<g class="flag" aria-hidden="true"><circle cx="13" cy="-13" r="8"/><text x="13" y="-9.5">✓</text></g>' : ''}</g>`).join('')}
+${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}${real.has(s.k) ? ' real' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle class="hit" r="24"/><circle r="17"/>${s.art ? `<image class="ea" href="${esc(s.art)}" x="-15" y="-15" width="30" height="30"/>` : `<text class="e" y="6">${esc(s.e)}</text>`}${real.has(s.k) ? '<g class="flag" aria-hidden="true"><circle cx="13" cy="-13" r="8"/><text x="13" y="-9.5">✓</text></g>' : ''}</g>`).join('')}
 </svg>
 <svg class="lbls" viewBox="0 0 ${MAP_W} ${MAP_H}" aria-hidden="true">${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<text class="lbl" x="${s.x * MAP_W / 100}" y="${s.y * MAP_H / 100 + 31}">${esc(T(s))}</text>`).join('')}</svg>
 <div class="walkers" style="left:${s0.x}%;top:${s0.y}%" aria-hidden="true">${kids.filter((k) => kidArt(k)).map((k) => `<img class="${esc(k)} ${esc(kidBase(k))}" src="${kidArt(k, true)}" alt="">`).join('')}</div></div>`;
@@ -428,7 +428,7 @@ function mapCard(t, kid, day, at) {
 <button class="mcstep" data-a="mapstep" data-v="1" aria-label="${L('ที่ถัดไป', 'The next stop')}"${pos >= mm.seq.length - 1 ? ' disabled' : ''}>›</button></div>
 ${sec('✅', 'เราไปมาแล้ว', 'We really went', wentDay.length ? `<div class="mcwent">${wentDay.map((x) => { const nm = T(x.name) || x.key; return `<button data-a="mapsay" data-say="${esc(nm)}"><span aria-hidden="true">${x.kind === 'food' ? '🍽️' : '📍'}</span><b>${esc(nm)}</b></button>`; }).join('')}</div>` : '')}
 ${sec('🧭', 'วันนั้นเราทำอะไร', 'What we do that day', heads.length ? `<div class="mcdo">${heads.map((r) => { const h = T(r.h), e = (h.match(/^[\p{Extended_Pictographic}️‍]+/u) || ['✨'])[0]; return `<button data-a="mapsay" data-say="${esc(noEmoji(h))}"><span aria-hidden="true">${esc(e)}</span><b>${esc(noEmoji(h))}</b></button>`; }).join('')}</div>` : '')}
-${sec('🔍', 'หาให้เจอนะ', 'Can you find them?', spots.length ? `<div class="mcfind">${spots.map((x) => `<button class="${ticked(t, x.key, kid) ? 'got' : ''}" data-a="mapsay" data-say="${esc(T(x))}"><span aria-hidden="true">${esc(x.e)}</span><b>${esc(T(x))}</b>${ticked(t, x.key, kid) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>` : '')}
+${sec('🔍', 'หาให้เจอนะ', 'Can you find them?', spots.length ? `<div class="mcfind">${spots.map((x) => `<button class="${ticked(t, x.key, kid) ? 'got' : ''}" data-a="mapsay" data-say="${esc(T(x))}"><span aria-hidden="true">${spotPic(x.e, x)}</span><b>${esc(T(x))}</b>${ticked(t, x.key, kid) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>` : '')}
 ${fact ? `<button class="mcfact" data-a="mapsay" data-say="${esc(fact)}"><span aria-hidden="true">💡</span><p>${esc(fact)}</p></button>` : ''}
 ${sec('📸', 'รูปของเราวันนั้น', 'Our photos that day', photos.length ? `<button class="mcphotos" data-a="mapgo" data-d="${i}" data-v="#/kid/${esc(kid)}/photos" aria-label="${L('ดูรูป', 'Photos')}">${photos.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</button>` : '')}
 ${others.length ? `<p class="mcalso">${L(`วันเดียวกันเราไป${esc(others.join(' และ '))}ด้วย`, `The same day we also go to ${esc(others.join(' and '))}`)}</p>` : ''}
@@ -482,7 +482,7 @@ const PET_ART = { '🐣': ['chick', 'ลูกเจี๊ยบ', 'A chick'], '
   '🐨': ['koala', 'โคอาล่า', 'A koala'], '🦋': ['butterfly', 'ผีเสื้อ', 'A butterfly'], '🐢': ['turtle', 'เต่าน้อย', 'A little turtle'], '🦜': ['parrot', 'นกแก้ว', 'A parrot'], '🐧': ['penguin', 'เพนกวิน', 'A penguin'], '🦁': ['lion', 'สิงโตน้อย', 'A little lion'] };
 // the games' own animals and foods (set 5, public/art/game): where a game shows one of these emoji as its thing, gE() draws the picture instead —
 // sized like the emoji it replaces (1em), so every layout stays; an emoji without a picture (a book's own food) stays an emoji
-const GAME_ART = { '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/elephant', '🐥': 'game/chick', '🐮': 'game/cow', '🐰': 'game/rabbit', '🐱': 'game/cat', '🐳': 'game/whale', '🐴': 'game/horse', '🐵': 'game/monkey',
+const GAME_ART = { '🦄': 'kidui/pet-unicorn', '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/elephant', '🐥': 'game/chick', '🐮': 'game/cow', '🐰': 'game/rabbit', '🐱': 'game/cat', '🐳': 'game/whale', '🐴': 'game/horse', '🐵': 'game/monkey',
   '🐶': 'game/dog', '🐷': 'game/pig', '🐸': 'game/frog', '🐻': 'game/bear', '🐼': 'kidui/pet-panda', '🦆': 'game/duck', '🦛': 'game/hippo',
   '🍌': 'game/banana', '🍎': 'game/apple', '🥕': 'game/carrot', '🍉': 'game/watermelon', '🍓': 'game/strawberry', '🍇': 'game/grapes', '🌽': 'game/corn', '🍪': 'game/cookie', '🍞': 'game/bread', '🥚': 'game/egg', '🥦': 'game/broccoli', '🧀': 'game/cheese',
   // set 6: every other thing the games show (shadows, colours, odd one out, patterns, counting, where, the maze, I spy, the cake)
@@ -508,9 +508,40 @@ const FOOD_GAME = new Set(['banana', 'apple', 'carrot', 'watermelon', 'strawberr
   'greenapple', 'pumpkin', 'pear', 'pineapple', 'kiwi', 'potato', 'onion', 'pepper', 'greens', 'mushroom', 'icecream', 'chocolate', 'sweet', 'lollipop'].map((n) => 'game/' + n));
 // a dish may name its own picture (a list item's `art: "food/lamington"`): an emoji is too coarse for a real dish — 🍰 drew a cream slice for the lamington,
 // 🥧 a custard tart for the meat pie (owner, Nov 2026: "Lamington ไม่ใช่เค้กแบบนั้น"). The emoji's picture is the fallback.
-const foodArt = (e, art) => { if (/^food\/[a-z0-9-]+$/.test(art || '')) return `/art/${art}.webp`; const a = GAME_ART[String(e || '').replace(/\uFE0F/g, '')]; return a && (a.startsWith('food/') || FOOD_GAME.has(a)) ? `/art/${a}.webp` : ''; };
-const gFood = (e, art) => { const a = foodArt(e, art); return a ? `<img class="ge" src="${a}" alt="">` : esc(e || ''); };
+// a dish's own picture by its name (either language), for a book that names no `art`: an emoji is too coarse (🍜 is any noodles)
+const DISH_ART = [[/takoyaki|ทาโกะยากิ/i, 'takoyaki'], [/okonomiyaki|โอโคโนมิยากิ/i, 'okonomiyaki'], [/taiyaki|ไทยากิ/i, 'taiyaki'], [/tempura|เทมปุระ/i, 'tempura'],
+  [/tonkatsu|ทงคัตสึ/i, 'tonkatsu'], [/matcha.*(soft|ice|cone)|(soft.?serve|ice cream).*matcha|ไอศกรีมชาเขียว|ซอฟต์ครีมชาเขียว/i, 'matchacone'],
+  [/bibimbap|บิบิมบับ/i, 'bibimbap'], [/kimbap|gimbap|คิมบับ/i, 'kimbap'], [/tteokbokki|ต็อกบกกี/i, 'tteokbokki'], [/hotteok|โฮต็อก/i, 'hotteok'],
+  [/korean fried chicken|ไก่ทอดเกาหลี/i, 'friedchicken'], [/japchae|จับแช/i, 'japchae'], [/beef noodle|บะหมี่เนื้อ/i, 'beefnoodle'],
+  [/scallion pancake|spring onion pancake|แพนเค้กต้นหอม/i, 'scallionpancake'], [/gua ?bao|กัวเปา/i, 'guabao'], [/xiao ?long ?bao|เสี่ยวหลงเปา/i, 'xiaolongbao'], [/\bpho\b|phở|เฝอ/i, 'pho'],
+  [/ramen|ราเมง/i, 'ramen'], [/egg ?tart|ทาร์ตไข่/i, 'eggtart'], [/egg ?waffle|eggette|gai daan jai|วาฟเฟิลไข่|ขนมไข่ฮ่องกง/i, 'eggwaffle'], [/wonton|บะหมี่เกี๊ยว|เกี๊ยวกุ้ง/i, 'wonton'],
+  [/fish ?balls?|ลูกชิ้นปลา/i, 'fishball'], [/chicken rice|ข้าวมันไก่/i, 'chickenrice'], [/laksa|ลักซา/i, 'laksa'], [/kaya|สังขยาใบเตย|ขนมปังกายา/i, 'kayatoast'],
+  [/roti (canai|prata)|โรตีแกง|โรตีจิ้มแกง|โรตีคาไน/i, 'roticanai'], [/nasi lemak|นาซิเลอมัก/i, 'nasilemak'], [/b[aá]nh m[iì]|บั๋นหมี่|บานหมี่/i, 'banhmi'],
+  [/summer rolls?|fresh spring rolls?|g[oỏ]i cu[oố]n|ปอเปี๊ยะสด|ปอเปี๊ยะญวน/i, 'goicuon'], [/b[aá]nh x[eè]o|บั๋นแส่ว|ขนมเบื้องญวน/i, 'banhxeo'], [/peking duck|เป็ดปักกิ่ง/i, 'pekingduck'],
+  [/tanghulu|ถังหูลู่|ถังหูหลู/i, 'tanghulu'], [/fried rice|ข้าวผัด/i, 'friedrice'], [/churros?|ชูโรส/i, 'churros'], [/cr[eê]pes?|เครป/i, 'crepe'], [/macarons?|มาการ[ งอ]/i, 'macarons'],
+  [/strudel|สตรูเดิล|ชตรูเดิล/i, 'strudel'], [/schnitzel|ชนิทเซล|ชนิตเซล/i, 'schnitzel'], [/poffertjes|พอฟเฟอร์เจส|ป๊อฟเฟอร์เจส/i, 'poffertjes'], [/meatballs?|มีทบอล|มีตบอล/i, 'meatballs'],
+  [/fondue|ฟองดู/i, 'fondue'], [/pineapple cake|พายสับปะรดไต้หวัน|เค้กสับปะรด/i, 'pineapplecake']];
+const dishArt = (name) => { const s = String(name || ''); if (!s) return ''; const m = DISH_ART.find((d) => d[0].test(s)); return m ? `food/${m[1]}` : ''; };
+const foodArt = (e, art, name) => { if (!art && name) art = dishArt(name); if (/^food\/[a-z0-9-]+$/.test(art || '')) return `/art/${art}.webp`; const a = GAME_ART[String(e || '').replace(/\uFE0F/g, '')]; return a && (a.startsWith('food/') || FOOD_GAME.has(a)) ? `/art/${a}.webp` : ''; };
+const gFood = (e, art, name) => { const a = foodArt(e, art, name); return a ? `<img class="ge" src="${a}" alt="">` : esc(e || ''); };
 const gE = (e) => { const a = GAME_ART[String(e).replace(/\uFE0F/g, '')]; return a ? `<img class="ge" src="/art/${a}.webp" alt="">` : esc(e); };   // the lists write some emoji with a variation selector
+// the kids' things to find (owner, Nov 2026: an emoji looks different on every phone): the games' picture, else the family's emoji
+// library (the bundled set and the country packs), else the emoji itself — the data keeps the emoji
+// the 33 things the bundled books ask the children to find that had no picture (owner drew them with GPT from our prompts, Nov 2026,
+// public/art/spot): an emoji that means one thing in every book maps by itself; one that can mean several (🏰 a sandcastle or a castle,
+// ⛪ any church) is read by the thing's own name first (SPOT_RULE), so another book's plain church never gets the ruined one
+const SPOT_E = { '💺': 'seatbelt', '🪟': 'planewindow', '🪂': 'hangglider', '🌉': 'bridge', '🚐': 'van', '🐚': 'seashell', '🏰': 'fairytale', '🦘': 'kangaroo', '🕳': 'burrow', '⛰': 'threepeaks', '🧺': 'picnic', '📯': 'whistle', '🚡': 'cablecar', '🚇': 'tunnel', '🚧': 'farmgate', '🧚': 'fairytale', '🌷': 'flower', '🌊': 'wave', '🕊': 'seagull', '🪣': 'bucket', '🦜': 'parrot', '🦭': 'seal', '🏄': 'surfboard', '🔊': 'sound', '🎄': 'xmastree', '🚢': 'ship', '🫧': 'bubble', '🚋': 'tram', '⛴': 'ferry', '👋': 'hello' };
+const SPOT_RULE = [[/sand ?castle|ปราสาททราย/i, 'sandcastle'], [/no roof|ไม่มีหลังคา|ruin/i, 'ruinchurch'], [/shell roof|หลังคา.*หอย/i, 'shellroof'], [/smiling face|giant face|smile big|หน้ายิ้ม|ยิ้มกว้าง/i, 'bigsmile'],
+  [/christmas lights?|ไฟคริสต์มาส/i, 'xmaslights'], [/ball pit|บ่อบอล/i, 'ballpit'], [/steam|ไอน้ำ/i, 'steam'], [/seagull|นางนวล/i, 'seagull'], [/pelican|นกกระทุง/i, 'pelican']];
+const spotSrc = (e, it) => {
+  const k = String(e || '').replace(/\uFE0F/g, ''); if (!k) return '';
+  const words = it && typeof it === 'object' ? `${it.en || ''} ${it.th || ''}` : String(it || '');
+  const rule = words.trim() && SPOT_RULE.find(([re]) => re.test(words)); if (rule) return `/art/spot/${rule[1]}.webp`;
+  if (SPOT_E[k]) return `/art/spot/${SPOT_E[k]}.webp`;
+  if (GAME_ART[k]) return `/art/${GAME_ART[k]}.webp`;
+  const x = typeof emoOf === 'function' ? emoOf(e) : null; return x ? x.src : '';
+};
+const spotPic = (e, it) => { const src = spotSrc(e, it); return src ? `<img class="ge" src="${esc(src)}" alt="" draggable="false">` : esc(e); };
 const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
 const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));
 const petName = (e) => (PET_ART[e] ? L(PET_ART[e][1], PET_ART[e][2]) : L('เพื่อนใหม่', 'A new friend'));
@@ -571,17 +602,21 @@ function celebrate(chars) {
   }
 }
 let memState = null;   // the memory game's place: {key: trip.day.kid, n: question, got: answered right}
-const GIFT_E = ['🦄', '🐉', '🎈', '🍭', '🌈', '🚀', '🦋', '🍦', '🐳', '🪁', '🎠', '🧸', '🌟', '🦕', '🎪', '🍩'];
+// the morning box's stickers (owner, Nov 2026: "รูปการ์ดทำให้สวยขึ้นโดยใช้ไฟล์ในคลัง"): every one is a painted picture of the library
+// (GAME_ART), never a bare emoji — an emoji looks different on every phone; the emoji stays the data (confetti, the sticker's key)
+const GIFT_E = ['🦄', '🐬', '🎈', '🍭', '🦉', '🚀', '🦋', '🍦', '🐳', '🐼', '🦊', '🐧', '⭐', '🦕', '🐢', '🍩'];
 const giftE = (i) => GIFT_E[i % GIFT_E.length];
+const giftArt = (i) => { const a = GAME_ART[giftE(i).replace(/\uFE0F/g, '')]; return a ? `/art/${a}.webp` : ''; };
+const GIFT_TINT = ['#F7C6D9', '#BFE3F2', '#FFE08A', '#CDEBC2', '#E3D2F7', '#FFD0B0'];
 function stickerSet(t, kid) {
   const pp = t.passport || {}, out = [], seen = new Set();
   const add = (k, e, img, got) => { if (seen.has(k) || (!e && !img)) return; seen.add(k); out.push({ k, e, img, got: !!got }); };
   t.days.forEach((_, i) => add(`stamp.d${i}`, '', dayArt(t, i), dayStamped(t, i)));
-  t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, '', ticked(t, s.key, kid))));
-  t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));
+  t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, spotSrc(s.e, s), ticked(t, s.key, kid))));
+  t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), giftArt(i), ticked(t, `gift.d${i}`, kid)));
   { const mm = mapModel(t); if (mm) { const real = mapReal(t, mm); mm.m.stops.forEach((st) => { if (real.has(st.k)) add(`been.${st.k}`, st.e || '📍', st.art || '', true); }); } }   // a place we really went (the parents checked it in)
   t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], qArt(gemArt(i)), ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
-  kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, l.yum || l.stars ? foodArt(it.e, it.art) : '', x && x.text !== 'yuck'); }));   // a dish tasted is a sticker of its picture
+  kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, l.yum || l.stars ? foodArt(it.e, it.art, `${it.en || ''} ${it.th || ''}`) : '', x && x.text !== 'yuck'); }));   // a dish tasted is a sticker of its picture
   ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
   entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid && e.first_key !== 'custom').forEach((e) => add(`first.${e.first_key}`, firstLabel(t, e.first_key).e, '', true));
   return out;
@@ -744,6 +779,8 @@ const WEAR_NAME = { beach: { th: 'ชุดไปทะเล', en: 'Beach' }, h
   kangaroo: { th: 'ชุดจิงโจ้', en: 'Kangaroo' }, koala: { th: 'ชุดโคอาล่า', en: 'Koala' }, panda: { th: 'ชุดแพนด้า', en: 'Panda' }, penguin: { th: 'ชุดเพนกวิน', en: 'Penguin' }, dino: { th: 'ชุดไดโนเสาร์', en: 'Dinosaur' } };
 const KSCENE = { quest: 'road', bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage', simon: 'stage', dots: 'night', howmany: 'sea', cake: 'picnic', dish: 'picnic', order: 'farm', missing: 'stage', diff: 'picnic', golight: 'garden' };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
+// where the trip goes, in the reader's language ("ฮ่องกงและมาเก๊า"), for a line read aloud to a child — never the book's brand name ("The Harbour Hop"), UI review Nov 2026
+const tripWhere = (t) => ((t.theme && t.theme.places) || []).map((p) => T(p)).filter(Boolean).slice(0, 2).join(L('และ', ' and ')) || T(t.title).split(' · ').pop();
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
   if (!k) {
@@ -786,10 +823,10 @@ ${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a=
 ${kidNowCard(t, kid)}${questBanner(t, kid)}
 <div class="kidhello">${kidArt(kid) ? `<button class="poke" data-a="kidpoke" data-k="${esc(kid)}" aria-label="${esc(name)}"><img src="${kidArt(kid, true)}" alt=""></button>` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
 ${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว · ผู้ใหญ่กดค้างเพื่อล้าง', 'Star jar · grown-ups press and hold to empty')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).map(petImg).join('')}</span>` : ''}</div>` : ''}
-<nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 <div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
 <button class="kparrow next" data-a="kidpage" data-v="1" aria-label="${L('หน้าถัดไป', 'Next page')}"${pages.length > 1 ? '' : ' hidden'}>›</button></div>
+<!-- the day circles sit under the tiles (owner, Nov 2026: "เลื่อนวงกลมมาข้างล่างครับ เพราะพื้นที่เหลือ") --><nav class="kiddays" style="--n:${t.days.length}">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}`;
   } else if (view === 'day') {
     body = kidDayHtml(t, kid, guideImg);
@@ -804,29 +841,29 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
     const ck = `${t.id}.${cur.key}.${kid}`; if (colKey !== ck) { colKey = ck; colHist = []; }   // the undo history belongs to one picture of one child
     body = `<div class="colourpad colsvg" data-src="${esc(cur.url)}" data-fill="${esc(colPend[colPendKey(t.id, cur.key, kid)] || fieldVal(t, cur.key, kid) || '{}')}" data-key="${esc(cur.key)}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
 <div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c}"></button>`).join('')}</div>
-${pics.length > 1 ? `<div class="colpics" role="group" aria-label="${L('เลือกรูประบายสี', 'Pick a picture')}">${pics.map((p) => `<button data-a="kidcolpic" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="${esc(p.key)}" data-say="${esc(p.name)}" aria-pressed="${p === cur}" aria-label="${esc(p.name)}"><img src="${esc(p.url)}" alt="" loading="lazy">${fieldVal(t, p.key, kid) && fieldVal(t, p.key, kid) !== '{}' ? '<i>🎨</i>' : ''}</button>`).join('')}</div>` : ''}
 <div class="drawtools coltools"><button class="dclear" data-a="kidcolundo" aria-label="${L('ย้อนกลับ', 'Undo')}"${colHist.length ? '' : ' disabled'}>↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidcolwipe" aria-label="${L('ล้างสีแล้วระบายใหม่', 'Wipe the colours and start again')}">🧽 <b>${L('ล้างสี', 'Wipe')}</b></button></div>
-<button class="kidbig" data-a="kidcolourdone" data-v="#/kid/${esc(kid)}">${L('เสร็จแล้ว! ✨', 'All done! ✨')}</button>`;
+<button class="kidbig" data-a="kidcolourdone" data-v="#/kid/${esc(kid)}">${L('เสร็จแล้ว! ✨', 'All done! ✨')}</button>
+${pics.length > 1 ? `<div class="colpics" role="group" aria-label="${L('เลือกรูประบายสี', 'Pick a picture')}">${pics.map((p) => `<button data-a="kidcolpic" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="${esc(p.key)}" data-say="${esc(p.name)}" aria-pressed="${p === cur}" aria-label="${esc(p.name)}"><img src="${esc(p.url)}" alt="" loading="lazy">${fieldVal(t, p.key, kid) && fieldVal(t, p.key, kid) !== '{}' ? '<i>🎨</i>' : ''}</button>`).join('')}</div>` : ''}`;
   } else if (view === 'draw') {
     const day = pre ? null : i, mine = drawingsOf(t, kid, day === null ? undefined : day).filter((m) => m.day === day);
-    body = `<div class="kidguide">${guideImg(1)}<p>${pre ? L(`วาดสิ่งที่อยากเจอที่${esc(T(t.title).split(' · ')[0])}`, `Draw what you want to see in ${esc(T(t.title).split(' · ')[0])}`) : L('วาดสิ่งที่ชอบที่สุดวันนี้!', "Draw today's best moment!")}</p></div>
+    body = `<div class="kidguide">${guideImg(1)}<p>${pre ? L(`วาดสิ่งที่อยากเจอที่${esc(tripWhere(t))}`, `Draw what you want to see in ${esc(tripWhere(t))}`) : L('วาดสิ่งที่ชอบที่สุดวันนี้!', "Draw today's best moment!")}</p></div>
 <div class="drawwrap${pad.hide ? ' busy' : ''}${pad.full ? ' full' : ''}" id="drawwrap"><div class="drawpad"><canvas id="kidcanvas" width="${DRAW_W}" height="${DRAW_H}" data-key="${esc(`${t.id}:${day}:${kid}`)}" aria-label="${L('กระดานวาดรูป', 'Drawing board')}"></canvas>
 <button class="dpb dpcol" id="drawcol" data-a="kidtray" style="--c:${kidColour}" aria-label="${L('เลือกสี', 'Colours')}">🎨</button><button class="dpb dpfull" id="drawfull" data-a="kidfull" aria-label="${pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')}">${pad.full ? '✕' : '⛶'}</button><button class="dpb dpundo" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶</button><button class="dpb dpsave" data-a="kiddrawdone" data-t="${esc(t.id)}" data-d="${day === null ? '' : day}" data-k="${esc(kid)}" aria-label="${L('เก็บรูปนี้', 'Keep it')}">✓</button></div>
 <div class="drawtray" id="drawtray"><div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c === '#FFFFFF' ? L('ยางลบ', 'Eraser') : c}"></button>`).join('')}</div>
 <div class="drawtools">${PEN.map((w) => `<button data-a="kidpen" data-v="${w}" aria-pressed="${w === pen}" aria-label="${L('ขนาดพู่กัน', 'Brush')} ${w}"><i style="width:${Math.round(w / 2) + 6}px;height:${Math.round(w / 2) + 6}px"></i></button>`).join('')}
 <button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('วาดใหม่', 'Start again')}</b></button></div></div></div>
-<div class="drawtools coltools drawrow"><button class="dclear" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('ล้างภาพ', 'Wipe')}</b></button></div>
 <button class="kidbig" data-a="kiddrawdone" data-t="${esc(t.id)}" data-d="${day === null ? '' : day}" data-k="${esc(kid)}">${L('เก็บรูปนี้! ✨', 'Keep it! ✨')}</button>
+<div class="drawtools coltools drawrow"><button class="dclear" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('ล้างภาพ', 'Wipe')}</b></button></div>
 ${mine.length ? `<div class="drawn">${mine.map((m) => isEditor() ? `<button type="button" class="drdel" data-v="${esc(m.id)}" aria-label="${L('ภาพที่วาด · ผู้ใหญ่กดค้างเพื่อลบ', 'A drawing · grown-ups press and hold to delete')}"><img src="${esc(imgT(m))}" alt=""></button>` : `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}`;
   } else if (view === 'spot') {
     const spots = daySpots(t, i, kid), lit = littleOf(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${lit ? L(`${name} ชี้ให้ดูหน่อย!`, `${name}, can you point to it?`) : L(`${T((g[1] || {}).name)}: หาให้เจอนะ!`, `${T((g[1] || {}).name)}: can you find them?`)}</p></div>
-<div class="kidspots${lit ? ' little' : ''}">${spots.map((s) => { const on = ticked(t, s.key, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(s.key)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
+<div class="kidspots${lit ? ' little' : ''}">${spots.map((s) => { const on = ticked(t, s.key, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(s.key)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${spotPic(s.e, s)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
   } else if (view === 'gift' && !pre) {
     const got = ticked(t, `gift.d${i}`, kid), sp = daySpots(t, i, kid), fact = (pd.facts || [])[0], lit = littleOf(t, kid);
-    body = got ? `<div class="giftopen"><div class="gstk">${giftE(i)}</div><p class="gnew">${L('ได้สติกเกอร์ใหม่!', 'A new sticker!')} ⭐</p>
+    body = got ? `<div class="giftopen"><div class="gstk" style="--gt:${GIFT_TINT[i % GIFT_TINT.length]}"><span class="gray" aria-hidden="true"></span>${giftArt(i) ? `<img src="${giftArt(i)}" alt="" draggable="false">` : esc(giftE(i))}</div><p class="gnew">${L('ได้สติกเกอร์ใหม่!', 'A new sticker!')} ⭐</p>
 <div class="kidguide">${guideImg(0)}<p>${esc(T(pd.title) || T(d.title))}${fact ? ` — ${esc(T(fact))}` : ''}</p></div>
-${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ให้ดูนะ', 'Point to these today') : L('วันนี้หาให้เจอนะ', 'Find these today')}</b><div>${sp.map((x) => `<span title="${esc(T(x))}">${esc(x.e)}</span>`).join('')}</div></div>` : ''}
+${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ให้ดูนะ', 'Point to these today') : L('วันนี้หาให้เจอนะ', 'Find these today')}</b><div>${sp.map((x) => `<span title="${esc(T(x))}">${spotPic(x.e, x)}</span>`).join('')}</div></div>` : ''}
 <button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/spot">${lit ? '👉 ' + L('ไปชี้กัน!', 'Let’s point!') : '🔍 ' + L('ไปหากัน!', 'Let’s find them!')}</button></div>`
       : `<div class="kidguide">${guideImg(0)}<p>${L(`${esc(name)} แตะกล่องเลย!`, `${esc(name)}, tap the box!`)}</p></div>
 <button class="giftbox" data-a="kidgift" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" aria-label="${L('เปิดกล่อง', 'Open the box')}"><span>${kuImg('surprise')}</span></button>`;
@@ -973,11 +1010,8 @@ ${lvBar(t, kid, 'jigsaw')}${quest ? '' : pixPick(t, i, 'jigsaw', 'kidnewjig')}
 <div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};--ar:${jg.ar};--pa:${jg.ar * jg.rows / jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
 <div class="jigtray${jg.slots.length > 20 ? ' many lots' : jg.slots.length > 6 ? ' many' : ''}" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
 ${jg.done ? lvWin(t, kid, 'jigsaw', ['kidnewjig']) : ''}`;
-  } else if (view === 'stamp') {
-    const mine = ticked(t, `stamp.d${i}`, kid);
-    body = `<div class="kidstamp${mine ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(pd.stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, i, 'inked')}</div></div>
-<div class="kidguide pop" id="kidcheer" ${mine ? '' : 'hidden'}>${guideImg(0)}<p>${L(`เก่งมาก ${name}! ได้ตราวันนี้แล้ว`, `Well done, ${name}! Today's stamp is yours`)}</p></div>
-<button class="kidbig stampbtn" data-a="kidstamp" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}">${mine ? L('ปั๊มอีกที! 🛂', 'Stamp again! 🛂') : L('ปั๊มตรา! 🛂', 'Stamp! 🛂')}</button>`;
+  } else if (view === 'stamp' || view === 'stickers' || view === 'trophies' || view === 'pass') {   // the passport book (views.js viewPassport): one book for the kid door and the grown-ups' — this trip's visa holds the stamp
+    body = viewPassport(kid, t.id, view === 'pass' ? p[3] : view === 'stamp' ? 'visa' : view, true);
   } else if (view === 'words') {
     const l = (pp.lists || []).find((x) => x.said);
     body = `<div class="kidwords">${(l ? listItems(l) : []).map((it) => { const on = ticked(t, `${l.key}.${it.k}`, kid); return `<div class="kw${on ? ' on' : ''}">
@@ -1014,8 +1048,6 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     const qs = kidTalk(t, i).text.split('\n').filter((x) => x.trim());
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะการ์ดแล้วตอบดังๆ นะ!', 'Tap a card and say your answer!')}</p></div>
 <div class="kidquiz kidtalk">${qs.map((q, n) => `<button class="qcard" data-a="kidtalk" data-q="${esc(q)}" aria-pressed="false"><small>💬 ${n + 1}</small><b>${esc(q)}</b></button>`).join('')}</div>`;
-  } else if (view === 'stickers') {
-    body = `<div class="kidguide">${guideImg(1)}<p>${L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!')}</p></div>${stickerBoard(t, kid, true)}`;
   } else if (view === 'photos') {
     const ph = kidPhotos(t, i); if (kidPhoto >= ph.length) kidPhoto = 0; const m = ph[kidPhoto];
     body = m ? `<div class="kidguide">${guideImg(0)}<p>${m.caption ? esc(m.caption) : L(`รูปวันที่ ${m.day + 1}`, `A photo from day ${m.day + 1}`)}</p></div>
@@ -1044,11 +1076,6 @@ ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghos
 <div class="countfield">${Array.from({ length: cnt.n }, (_, k) => `<button class="cnt${cnt.hit.includes(k) ? ' hit' : ''}" data-a="kidcount" data-v="${k}" aria-label="${k + 1}"><span>${esc(cnt.e)}</span><i>${cnt.hit.includes(k) ? cnt.hit.indexOf(k) + 1 : ''}</i></button>`).join('')}</div>
 <div class="bignum" id="bignum">${cnt.hit.length || ''}</div>
 <button class="kidbig ghost" data-a="kidnewcount">🔁 ${L('นับใหม่', 'Count again')}</button>`;
-  } else if (view === 'trophies') {
-    const all = trophies(t, kid), got = all.filter((x) => x[3]), seen = new Set(ls('tseen_' + kid) || []), fresh = got.filter((x) => !seen.has(x[0]));
-    if (fresh.length) ls('tseen_' + kid, got.map((x) => x[0]));
-    body = `<div class="kidguide${fresh.length ? ' pop' : ''}">${guideImg(0)}<p>${fresh.length ? L(`เย้! รางวัลใหม่: ${fresh.map((x) => x[2]).join(', ')} 🎉`, `Yay! New: ${fresh.map((x) => x[2]).join(', ')} 🎉`) : (got.length ? L(`${esc(name)} มี ${got.length} รางวัลแล้ว`, `${esc(name)} has ${got.length} troph${got.length === 1 ? 'y' : 'ies'}`) : L('ถ้วยรางวัลรอหนูอยู่', 'Trophies are waiting for you'))}</p></div>
-<div class="trophies">${all.map((x) => `<button class="tro${x[3] ? ' got' : ''}${fresh.some((f) => f[0] === x[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(x[2])}"><span>${troImg(x)}</span><b>${esc(x[2])}</b></button>`).join('')}</div>`;
   } else if (view === 'hearts') {
     const hs = heartsFor(kid), seen = ls('hseen_' + kid) || 0;
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
@@ -1056,7 +1083,7 @@ ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghos
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
   const kb = [['', '🏠', L('บ้าน', 'Home')], mapModel(t) && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? (canColour(t, i) ? 'colour' : 'draw') : 'stamp', pre ? (canColour(t, i) ? '🎨' : '🖍️') : '🛂', pre ? (canColour(t, i) ? L('ระบายสี', 'Colour') : L('วาดรูป', 'Draw')) : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
-  const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
+  const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === (view === 'pass' ? 'stamp' : view) ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
   return `<div class="kidwrap${view === 'home' ? ' home' : ''}${KSCENE[view] ? ` scene sc-${KSCENE[view]}` : ''}${kidEnter ? ' enter' : ''}" style="${style}">${head}${body}${lock}${bar}</div>`;
 }
 
@@ -1357,7 +1384,7 @@ const qEn = (x) => { const v = String(x || '').replace(/^(a|an|the|our|some)\s+/
 const qUniq = (xs) => { const seen = new Set(); return xs.filter((x) => x && x[0] && x[1] && x[2] && !seen.has(x[0]) && seen.add(x[0])); };
 const questThings = (t, i) => qUniq(((((t.passport || {}).days || [])[i] || {}).spot || []).map((x) => [x.e, x.th, qEn(x.en)]));
 const questAnimals = (t) => qUniq((((t.info || {}).wild) || []).map((w) => [w.emo, (w.name || {}).th, qEn((w.name || {}).en)]));
-const questFoods = (t) => { const pp = t.passport || {}; return qUniq((Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).map((x) => [x.e, x.th, qEn(x.en), x.art || ''])).map((x) => [x[0], x[1], x[2], `some ${x[2]}`, x[3]]); };   // [emoji, th, en, what it asks for, its own picture]
+const questFoods = (t) => { const pp = t.passport || {}; return qUniq((Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).map((x) => [x.e, x.th, qEn(x.en), x.art || dishArt(`${x.en || ''} ${x.th || ''}`)])).map((x) => [x[0], x[1], x[2], `some ${x[2]}`, x[3]]); };   // [emoji, th, en, what it asks for, its own picture]
 const questPhotos = (t, i) => mediaOf(t.id).filter((m) => m.day === i && !isDrawing(m) && !m.pending);
 // a list that leads with the town's own, the game's stock after it (never the same emoji twice)
 const qLead = (own, stock) => qUniq(shuffle(own).concat(shuffle(stock)));
@@ -1477,6 +1504,32 @@ function questLine(t) {
   }).filter(Boolean);
   return rows.length ? `<section class="questline"><div class="part pickh">${L('แผนที่ผจญภัยของเด็กๆ', 'The kids’ adventure map')}</div><ul>${rows.join('')}</ul></section>` : '';
 }
+// start again before the trip, in one place (owner, Nov 2026: the boxes, the doors, the levels and the road were each reset on their own;
+// "รวมปุ่มล้างของเด็กไว้ที่เดียว"): one card on the book's menu, for the parents — a row a kind of play with how much there is, ticked
+// as wanted, then two taps. The book's part goes for every child (synced); the stars, friends and levels live on each phone, so they
+// go on this phone only. The passport's ticks and stamps are ticked to start with only before the trip: after it they are memories.
+const FRESH = [
+  ['gift', 'surprise', 'กล่องเซอร์ไพรส์ที่เปิดแล้ว', 'Opened surprise boxes', (k) => /^gift\.d\d+$/.test(k)],
+  ['cd', 't-door', 'ประตูนับถอยหลังที่เปิดแล้ว', 'Opened countdown doors', (k) => /^cd\.\d+$/.test(k)],
+  ['quest', 'quest/chest', 'เส้นทางผจญภัย', 'The adventure map', (k) => /^quest\./.test(k)],
+  ['pp', 't-medal', 'ตรา ภารกิจ และสติกเกอร์ในพาสปอร์ต', 'Stamps, missions and stickers in the passport', (k) => /^(spot|little|stamp|wild|been)\./.test(k)],
+];
+const freshOf = (t, key) => { const f = FRESH.find((x) => x[0] === key)[4]; return entriesOf(t.id).filter((e) => (e.kind === 'tick' && f(e.first_key || '')) || (key === 'pp' && e.kind === 'field' && e.first_key === 'stickers')); };
+const freshKids = (t) => { const k = ((t.theme && t.theme.children) || []).map((c) => c.slug).filter(Boolean); return k.length ? k : children().map((c) => c.slug); };
+const freshPhone = (t) => freshKids(t).reduce((n, kid) => n + (+ls('stars_' + kid) || 0) + Object.keys(ls('lv_' + kid) || {}).length, 0);
+function freshLine(t) {
+  if (!isEditor()) return '';
+  const pre = dayNow(t) < 0 && !tripOver(t);
+  const rows = FRESH.map(([k, pic, th, en]) => [k, pic, th, en, freshOf(t, k).length]).filter((r) => r[4]);
+  const phone = freshPhone(t);
+  if (!rows.length && !phone) return '';
+  const img = (pic) => (pic.includes('/') ? `<img class="ku" src="/art/${pic}.webp" alt="">` : kuImg(pic));
+  const row = (k, pic, label, n, on) => `<label class="ckrow frrow"><input type="checkbox" data-fr="${k}"${on ? ' checked' : ''}><span class="gface">${img(pic)}</span><span>${esc(label)}${n ? ` <span class="label">${esc(L(`${n} รายการ`, `${n}`))}</span>` : ''}</span></label>`;
+  return `<section class="giftline freshline"><div class="part pickh">${pre ? L('เริ่มใหม่ก่อนเดินทาง', 'A fresh start before the trip') : L('ล้างของเล่นของเด็กๆ', 'Clear the kids’ play')}</div>
+<p class="label">${L('เลือกสิ่งที่จะล้าง ของทุกคนในเล่มนี้ · ความทรงจำ รูป และคำพูดไม่หายไปไหน', 'Pick what to clear, for every child in this book · memories, photos and words stay')}</p>
+<div class="frrows">${rows.map(([k, pic, th, en, n]) => row(k, pic, L(th, en), n, k !== 'pp' || pre)).join('')}${phone ? row('phone', 'quest/star', L('ดาว เพื่อนในโถ และด่านเกม (เฉพาะเครื่องนี้)', 'Stars, jar friends and game levels (this phone only)'), 0, pre) : ''}</div>
+<div class="row end"><button type="button" class="mini" data-a="freshgo" data-t="${esc(t.id)}">${L('ล้างที่เลือก', 'Clear what’s ticked')}</button></div></section>`;
+}
 // the road from the first town again (a test run, a fresh start): this book's missions and chests of that child go, with the easing kept on this device
 function questWipe(t, kid) {
   entriesOf(t.id).filter((e) => e.kind === 'tick' && e.child === kid && /^quest\./.test(e.first_key || '')).forEach((e) => delEntry(e.id));
@@ -1486,14 +1539,33 @@ function questWipe(t, kid) {
 }
 const questStarted = (t, kid) => t.days.some((_, i) => [0, 1, 2, 3, 'x', 'chest'].some((k) => questGot(t, kid, i, k)));
 // grown-ups start the road again from the map itself: press and hold 1.5 s (as with the star jar) — a child's tap does nothing
-let qresT = 0;
+let qresT = 0, qresAt = 0;
 document.addEventListener('pointerdown', (e) => {
   const b = e.target.closest && e.target.closest('#qreset'); if (!b || !isEditor()) return;
-  b.classList.add('holding');
-  qresT = setTimeout(() => { const t = trip(b.dataset.t); if (t) { beep('pop'); questWipe(t, b.dataset.k); } }, 1500);
+  b.classList.add('holding'); qresAt = Date.now();
+  try { b.setPointerCapture(e.pointerId); } catch (_) { /* an older browser */ }
+  qresT = setTimeout(() => { qresT = 0; const t = trip(b.dataset.t); if (t) { beep('pop'); questWipe(t, b.dataset.k); } }, 1500);
 });
-['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(qresT); const b = $('#qreset'); if (b) b.classList.remove('holding'); }, true));
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, (e) => {
+  const b = $('#qreset.holding'); if (!b || (ev === 'pointerleave' && e.target !== b)) return;
+  clearTimeout(qresT); b.classList.remove('holding');
+  if (qresT && ev === 'pointerup' && Date.now() - qresAt < 1500) toast(L('กดค้างไว้ให้นับถึงสอง เส้นทางจะเริ่มใหม่', 'Press and hold — the road starts again'));
+  qresT = 0;
+}, true));
 Object.assign(A, {
+  freshgo(b) {   // the fresh-start card: what is ticked goes, for every child of the book (the phone's part on this phone only)
+    const t = trip(b.dataset.t), box = b.closest('.freshline'); if (!t || !isEditor() || !box) return;
+    const keys = [...box.querySelectorAll('input[data-fr]:checked')].map((x) => x.dataset.fr);
+    if (!keys.length) { toast(L('ติ๊กสิ่งที่จะล้างก่อน', 'Tick what to clear first')); return; }
+    if (!armed(b, L('แตะอีกครั้งเพื่อล้าง', 'Tap again to clear'))) return;
+    for (const k of keys.filter((x) => x !== 'phone')) freshOf(t, k).forEach((e) => delEntry(e.id));
+    for (const kid of freshKids(t)) {
+      if (keys.includes('quest')) { [...questMem].filter((id) => id.startsWith(`${t.id}.tick.quest.`)).forEach((id) => questMem.delete(id)); const ease = ls('qease_' + kid) || {}; Object.keys(ease).filter((x) => x.startsWith(t.id + '.')).forEach((x) => delete ease[x]); ls('qease_' + kid, ease); }
+      if (keys.includes('phone')) ['stars_', 'pets_', 'lv_', 'match_'].forEach((p) => ls(p + kid, null));
+    }
+    if (keys.includes('quest')) { questOpen = null; questNew = null; }
+    toast(L('ล้างแล้ว เด็กๆ เริ่มใหม่ได้เลย', 'Cleared — a fresh start for the kids')); safeRender();
+  },
   questreset(b) {   // a grown-up starts a child's road again: the missions and chests of this book go, the stars and stickers of other things stay
     const t = trip(b.dataset.t), kid = b.dataset.k; if (!t || !isEditor()) return;
     if (!armed(b, L('แตะอีกครั้ง เส้นทางของลูกจะเริ่มใหม่ตั้งแต่เมืองแรก', 'Tap again — the road starts over from the first town'))) return;
@@ -1546,7 +1618,7 @@ function lvState(t, kid, game) {
   const q = questIn(t, kid, game); if (q) return { at: q.lv, best: q.lv - 1, top: q.lv, n: LV[game].length, quest: q };   // a mission plays at the road's level
   const st = (ls('lv_' + kid) || {})[game] || {}, start = littleOf(t, kid) ? 1 : 2, n = LV[game].length;
   const best = Math.min(n, st.best != null ? Math.max(st.best, start - 1) : start - 1), top = Math.min(n, best + 1);
-  return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n };
+  return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n, w: Array.isArray(st.w) ? st.w : Array.from({ length: Math.max(0, Math.min(n, st.best || 0) - start + 1) }, (_, k) => start + k) };   // w = the levels really played and won (an older save without the list: from the starting level up) — the level a child skips by starting at 2 opens, but wears no ⭐ (owner, Nov 2026: after a reset level 1 still showed as passed)
 }
 const lvOf = (t, kid, game) => LV[game][lvState(t, kid, game).at - 1];
 function lvSet(kid, game, patch) { if (quest && quest.kid === kid && quest.game === game) return;   // a mission never moves the child's own levels
@@ -1562,13 +1634,13 @@ function winShow(auto, kid) {
 }
 function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questMark(t, kid, q.town, q.slot); winShow(true, kid); return; }
   winShow(false, kid);
-  const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at) }); }
+  const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at), w: [...new Set(s.w.concat(s.at))].sort((a, b) => a - b) }); }
 // the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
 function lvBar(t, kid, game) {
   const s = lvState(t, kid, game);
   if (s.quest) return `<div class="lvbar qbar"><span>${s.quest.slot === 3 ? qImg('crown') : s.quest.slot === 'x' ? '✨' : qImg('map')} ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
   if (s.top < 2) return '';
-  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}">${isEditor() ? `<button type="button" class="lvreset" data-k="${esc(kid)}" data-g="${game}" aria-label="${L('ด่าน · ผู้ใหญ่กดค้างเพื่อเริ่มด่านใหม่', 'Levels · grown-ups press and hold to start again')}">${L('ด่าน', 'Level')}</button>` : `<span>${L('ด่าน', 'Level')}</span>`}${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}${n <= s.best ? ' won' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
+  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}">${isEditor() ? `<button type="button" class="lvreset" data-k="${esc(kid)}" data-g="${game}" aria-label="${L('ด่าน · ผู้ใหญ่กดค้างเพื่อเริ่มด่านใหม่', 'Levels · grown-ups press and hold to start again')}">${L('ด่าน', 'Level')}</button>` : `<span>${L('ด่าน', 'Level')}</span>`}${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}${s.w.includes(n) ? ' won' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${s.w.includes(n) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
 }
 // after a win: on to the next level (or "every level done"), and the same one again
 function lvWin(t, kid, game, again) {
@@ -1739,7 +1811,7 @@ const kgRight = (g) => String(g.game === 'shadow' || g.game === 'feed' ? g.r.wan
 const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); if (kg) { kg.miss = (kg.miss || 0) + 1; if (kg.miss >= 3) { const v = kgRight(kg), el = $$('[data-a="kgpick"]').find((x) => x.dataset.v === v); if (el) el.classList.add('hint'); if (kg.miss === 3) palPop('heart'); } } };
 // ---- what dish is this? (owner, Nov 2026: "เกมทายอาหาร" + "คำศัพท์อาหารภาษาท้องถิ่น"): the book's tasting-card foods, five rounds,
 // two names to pick from (three from age four), the right one said in Thai or English and then in the local language when the dish has it
-const dishFoods = (t) => { const pp = t.passport || {}, seen = new Set(); return (Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).filter((x) => x && x.k && x.th && x.en && (x.e || x.art) && !seen.has(x.k) && seen.add(x.k)); };
+const dishFoods = (t) => { const pp = t.passport || {}, seen = new Set(); return (Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).filter((x) => x && x.k && x.th && x.en && (x.e || x.art) && !seen.has(x.k) && seen.add(x.k)).map((x) => (x.art ? x : { ...x, art: dishArt(`${x.en} ${x.th}`) })); };
 let dsh = null;
 function dishRound(g) { const want = g.deck[g.n]; g.r = { want, opts: shuffle([want].concat(shuffle(g.pool.filter((x) => x.k !== want.k)).slice(0, g.many - 1))) }; g.got = false; }
 function dishFor(t, kid) {
@@ -2293,10 +2365,18 @@ document.addEventListener('pointerdown', (e) => {
 }, true));
 document.addEventListener('contextmenu', (e) => { if (e.target.closest && e.target.closest('.kidwrap')) e.preventDefault(); });   // no long-press menu in kid mode
 // grown-ups leave kid mode by pressing and holding the lock
-let holdT = 0;
+// (owner, Nov 2026, "ไม่ให้ติดตรงไหน"): like the levels' hold, it keeps the finger (pointer capture — a Samsung's long press otherwise
+// cancels it) and a tap let go too soon says to press and hold, so a parent never thinks the lock is broken
+let holdT = 0, holdAt = 0;
 document.addEventListener('pointerdown', (e) => {
   const lock = e.target.closest && e.target.closest('#kidexit'); if (!lock) return;
-  lock.classList.add('holding');
-  holdT = setTimeout(() => { const k = ls('kidmode'); ls('kidmode', null); beep('pop'); nav(k && k !== 'pick' ? `#/passport/${k}` : '#/'); }, 1200);
+  lock.classList.add('holding'); holdAt = Date.now();
+  try { lock.setPointerCapture(e.pointerId); } catch (_) { /* an older browser */ }
+  holdT = setTimeout(() => { holdT = 0; const k = ls('kidmode'); ls('kidmode', null); beep('pop'); nav(k && k !== 'pick' ? `#/passport/${k}` : '#/'); }, 1200);
 });
-['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(holdT); const l = $('#kidexit'); if (l) l.classList.remove('holding'); }, true));
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, (e) => {
+  const l = $('#kidexit.holding'); if (!l || (ev === 'pointerleave' && e.target !== l)) return;
+  clearTimeout(holdT); l.classList.remove('holding');
+  if (holdT && ev === 'pointerup' && Date.now() - holdAt < 1200) toast(L('ผู้ใหญ่: กดแม่กุญแจค้างไว้สักครู่เพื่อออก', 'Grown-ups: press and hold the lock to leave'));
+  holdT = 0;
+}, true));

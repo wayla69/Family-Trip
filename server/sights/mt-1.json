@@ -1,0 +1,647 @@
+{
+  "cc": "mt",
+  "towns": [
+    {
+      "place": "mt-valletta",
+      "sights": [
+        {
+          "name": { "en": "Malta National Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำแห่งชาติมอลตา" },
+          "kind": "aquarium",
+          "area": { "en": "Qawra, St Paul's Bay", "th": "คาวรา เซนต์พอลส์เบย์" },
+          "what": { "en": "A public aquarium with a walk-through tunnel, a landscaped belvedere and a children's play area at promenade level", "th": "พิพิธภัณฑ์สัตว์น้ำที่มีอุโมงค์เดินชม จุดชมวิวจัดสวน และมุมเด็กเล่นระดับทางเดินริมทะเล" },
+          "why": { "en": "Indoors and easy to walk round; toddlers aged 0–3 go free", "th": "อยู่ในร่มและเดินง่าย เด็กอายุ 0–3 ปีเข้าฟรี" },
+          "tip": { "en": "Online purchases are cheaper than at the desk; the park outside has the play area", "th": "ซื้อออนไลน์ถูกกว่าหน้าเคาน์เตอร์ ด้านนอกมีมุมเด็กเล่น" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €16.90 adults · €10.90 children 4–12 · 0–3 free", "th": "≈ €16.90 ผู้ใหญ่ · €10.90 เด็ก 4–12 ปี · 0–3 ปีฟรี" },
+          "book": "none",
+          "q": "Malta National Aquarium, Qawra, St Paul's Bay",
+          "ok": "2026-11",
+          "src": "https://www.aquarium.com.mt/visit/"
+        },
+        {
+          "name": { "en": "Esplora Interactive Science Centre", "th": "ศูนย์วิทยาศาสตร์เอสโพลรา" },
+          "kind": "museumkid",
+          "area": { "en": "Kalkara, Grand Harbour", "th": "คัลคารา แกรนด์ฮาร์เบอร์" },
+          "what": { "en": "A hands-on science centre with more than 200 activities and a planetarium", "th": "ศูนย์วิทยาศาสตร์ลงมือทำที่มีกิจกรรมกว่า 200 อย่างและท้องฟ้าจำลอง" },
+          "why": { "en": "Plenty to touch and try indoors for most ages; allow about three hours", "th": "มีของให้จับและลองในร่มสำหรับเกือบทุกวัย ควรเผื่อเวลาราวสามชั่วโมง" },
+          "tip": { "en": "A listing gives Tuesday–Friday 9:00–15:00 and Saturday–Sunday 10:00–17:00 and closed Mondays; hours change in holiday periods, so check", "th": "รายการระบุอังคาร–ศุกร์ 9:00–15:00 เสาร์–อาทิตย์ 10:00–17:00 ปิดวันจันทร์ ช่วงวันหยุดเวลาเปลี่ยน ควรเช็ก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Esplora Interactive Science Centre, Kalkara, Malta",
+          "ok": "2026-11",
+          "src": "https://maltadiscountcard.com/portfolio-item/esplora-maltas-interactive-science-centre/"
+        },
+        {
+          "name": { "en": "Popeye Village", "th": "หมู่บ้านป็อปอาย" },
+          "kind": "themepark",
+          "area": { "en": "Anchor Bay, Mellieħa", "th": "แองเคอร์เบย์ เมลลีเอฮา" },
+          "what": { "en": "A seaside village with shows, boat trips, rides and access to a swimming area", "th": "หมู่บ้านริมทะเลที่มีการแสดง เรือนำเที่ยว เครื่องเล่น และพื้นที่ว่ายน้ำ" },
+          "why": { "en": "Small and cheerful for under-10s; the cost covers all shows, boat trips and rides", "th": "ขนาดไม่ใหญ่และสนุก เหมาะเด็กต่ำกว่า 10 ปี ค่าเข้าครอบคลุมการแสดง เรือ และเครื่องเล่น" },
+          "tip": { "en": "Low season runs from 6 November 2026 to 30 April 2027 with hours about 9:30–17:00; check the hours and the price", "th": "ฤดูต่ำเริ่ม 6 พ.ย. 2026 ถึง 30 เม.ย. 2027 เปิดราว 9:30–17:00 ควรเช็กเวลาและราคา" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €15 adults · €12 children 3–12 · under 3 free (a June 2026 guide; check the price)", "th": "≈ €15 ผู้ใหญ่ · €12 เด็ก 3–12 ปี · ต่ำกว่า 3 ปีฟรี (ไกด์เดือน มิ.ย. 2026 เช็กราคา)" },
+          "book": "none",
+          "q": "Popeye Village, Anchor Bay, Mellieħa, Malta",
+          "ok": "2026-11",
+          "src": "https://hubpymalta.com/what-to-do/popeye-village-malta.html"
+        },
+        {
+          "name": { "en": "Playmobil FunPark", "th": "เพลย์โมบิลฟันพาร์ก" },
+          "kind": "play",
+          "area": { "en": "Ħal Far", "th": "ฮัลฟาร์" },
+          "what": { "en": "An air-conditioned indoor play park with Princess, Knights and Police themes, with a baby and toddler area and a 4+ area", "th": "สวนเล่นในร่มติดแอร์ มีธีมเจ้าหญิง อัศวิน และตำรวจ แยกโซนเด็กเล็กกับโซน 4 ปีขึ้นไป" },
+          "why": { "en": "A good wet-weather option; ages 0–3 go free", "th": "ทางเลือกดีวันฝนตก เด็ก 0–3 ปีเข้าฟรี" },
+          "tip": { "en": "An undated schedule shows Sunday 10:00–18:00 and Monday–Tuesday 10:00–16:00; check before you go", "th": "ตารางที่ไม่ระบุวันที่ว่าอาทิตย์ 10:00–18:00 จันทร์–อังคาร 10:00–16:00 ควรเช็กก่อนไป" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (0–3 free)", "th": "เช็กราคา (0–3 ปีฟรี)" },
+          "book": "none",
+          "q": "Playmobil FunPark, Ħal Far, Malta",
+          "ok": "2026-11",
+          "src": "https://www.guidememalta.com/en/attraction/playmobil-funpark-malta"
+        },
+        {
+          "name": { "en": "Upper Barrakka Gardens", "th": "สวนอัปเปอร์บาร์รักกา" },
+          "kind": "views",
+          "area": { "en": "Valletta", "th": "วัลเลตตา" },
+          "what": { "en": "A terraced garden above the Grand Harbour, with a lift from the waterfront and the noon gun fired just below", "th": "สวนขั้นบันไดเหนือแกรนด์ฮาร์เบอร์ มีลิฟต์จากริมน้ำ และปืนใหญ่เที่ยงยิงอยู่ด้านล่าง" },
+          "why": { "en": "Free and open, with shade; the noon gun is a loud bang, so warn little ones", "th": "ฟรีและโล่ง มีร่มเงา ปืนใหญ่เที่ยงเสียงดัง ควรบอกเด็กเล็กก่อน" },
+          "tip": { "en": "Open 7:00–22:00; the gun fires at 12:00 with a short talk from 11:45 at the Saluting Battery below", "th": "เปิด 7:00–22:00 ปืนยิง 12:00 มีบรรยายสั้นตั้งแต่ 11:45 ที่ป้อมด้านล่าง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Upper Barrakka Gardens, Valletta",
+          "ok": "2026-11",
+          "src": "https://www.maltainfoguide.com/upper-barakka-gardens.html"
+        },
+        {
+          "name": { "en": "Fort St Elmo and the National War Museum", "th": "ป้อมเซนต์เอลโมและพิพิธภัณฑ์สงครามแห่งชาติ" },
+          "kind": "museum",
+          "area": { "en": "Valletta", "th": "วัลเลตตา" },
+          "what": { "en": "A star fort at the tip of Valletta with a museum of Malta's wartime history", "th": "ป้อมรูปดาวที่ปลายเมืองวัลเลตตา มีพิพิธภัณฑ์ประวัติศาสตร์สงครามของมอลตา" },
+          "why": { "en": "Ramparts and old guns to look at; best for children over about 6, and the cobbles and steps are hard for prams", "th": "มีกำแพงป้อมและปืนใหญ่เก่าให้ดู เหมาะเด็กอายุมากกว่าราว 6 ปี ถนนหินและบันไดไม่เหมาะกับรถเข็น" },
+          "tip": { "en": "Hours differ between sources; it is shut on 11 September 2026, so check the Heritage Malta page", "th": "แต่ละแหล่งให้เวลาต่างกัน ปิดวันที่ 11 ก.ย. 2026 ควรเช็กหน้า Heritage Malta" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "≈ €10 adults · €5.50 children 6–11 · infants 1–5 free", "th": "≈ €10 ผู้ใหญ่ · €5.50 เด็ก 6–11 ปี · เด็ก 1–5 ปีฟรี" },
+          "book": "none",
+          "q": "Fort St Elmo, Valletta",
+          "ok": "2026-11",
+          "src": "https://heritagemalta.mt/explore/fort-st-elmo-national-war-museum/"
+        },
+        {
+          "name": { "en": "Christmas in the Capital, Valletta", "th": "คริสต์มาสในเมืองหลวง วัลเลตตา" },
+          "kind": "show",
+          "area": { "en": "Valletta", "th": "วัลเลตตา" },
+          "what": { "en": "A season of about 25 events, with a tree lighting at Freedom Square and new Christmas lights across the city", "th": "ช่วงเทศกาลที่มีกิจกรรมราว 25 รายการ มีพิธีเปิดไฟต้นคริสต์มาสที่ฟรีดอมสแควร์และไฟใหม่ทั่วเมือง" },
+          "why": { "en": "Evening lights and carols for families; the streets are steep and busy", "th": "มีไฟและเพลงคริสต์มาสตอนเย็นสำหรับครอบครัว ถนนชันและคนเยอะ" },
+          "tip": { "en": "Seasonal: 25 November to 31 December 2026; carols at St Francis Church on 21 December", "th": "ตามฤดูกาล 25 พ.ย.–31 ธ.ค. 2026 เพลงคริสต์มาสที่โบสถ์เซนต์ฟรานซิสวันที่ 21 ธ.ค." },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Freedom Square, Valletta",
+          "ok": "2026-11",
+          "src": "https://vca.gov.mt/en/events/christmas-in-the-capital-3/"
+        },
+        {
+          "name": { "en": "Mdina Experience", "th": "มดีนา เอ็กซ์พีเรียนซ์" },
+          "kind": "show",
+          "area": { "en": "Mdina", "th": "มดีนา" },
+          "what": { "en": "A 30–35 minute audio-visual show on the history of the walled city of Mdina", "th": "การแสดงภาพและเสียงยาว 30–35 นาที เล่าประวัติเมืองมีกำแพงมดีนา" },
+          "why": { "en": "Short and indoors; under 5s with a supervising adult go free", "th": "สั้นและอยู่ในร่ม เด็กต่ำกว่า 5 ปีที่มีผู้ใหญ่ดูแลเข้าฟรี" },
+          "tip": { "en": "Listed open daily 10:00–17:00 and closed only on Christmas Day; the lanes outside are cobbled", "th": "รายการระบุเปิดทุกวัน 10:00–17:00 ปิดวันคริสต์มาสเท่านั้น ถนนด้านนอกปูหิน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €6 adults · €3 children · under 5 free (checked April 2026)", "th": "≈ €6 ผู้ใหญ่ · €3 เด็ก · ต่ำกว่า 5 ปีฟรี (เช็กเมื่อ เม.ย. 2026)" },
+          "book": "none",
+          "q": "The Mdina Experience, Mdina, Malta",
+          "ok": "2026-11",
+          "src": "https://www.ticketlens.com/en/p500010158"
+        },
+        {
+          "name": { "en": "Marsaxlokk Sunday market", "th": "ตลาดวันอาทิตย์มาร์ซาซล็อกก์" },
+          "kind": "market",
+          "area": { "en": "Marsaxlokk", "th": "มาร์ซาซล็อกก์" },
+          "what": { "en": "A harbourfront market in a fishing village of painted luzzu boats, with fish, honey, jams and souvenirs", "th": "ตลาดริมท่าเรือในหมู่บ้านชาวประมงที่มีเรือลุซซูสีสัน ขายปลา น้ำผึ้ง แยม และของที่ระลึก" },
+          "why": { "en": "Boats to look at and a flat harbour path; busy by mid-morning", "th": "มีเรือให้ดูและทางริมท่าเรือราบ สายๆ คนเยอะ" },
+          "tip": { "en": "Sundays about 7:00–13:00; the fish is best before 9:00; bus 81 or 85 from Valletta takes 45–60 minutes", "th": "วันอาทิตย์ราว 7:00–13:00 ปลาสดที่สุดก่อน 9:00 รถบัสสาย 81 หรือ 85 จากวัลเลตตาใช้เวลา 45–60 นาที" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Marsaxlokk Sunday Market, Marsaxlokk, Malta",
+          "ok": "2026-11",
+          "src": "https://www.guidememalta.com/en/enjoy-the-local-buzz-at-the-marsaxlokk-fish-market"
+        },
+        {
+          "name": { "en": "Ħaġar Qim and Mnajdra Archaeological Park", "th": "อุทยานโบราณคดีฮาจาร์ คิมและมนัจดรา" },
+          "kind": "culture",
+          "area": { "en": "Qrendi", "th": "เครนดี" },
+          "what": { "en": "Prehistoric stone temples on a clifftop by the sea, with a visitor centre", "th": "วิหารหินยุคก่อนประวัติศาสตร์บนหน้าผาริมทะเล มีศูนย์ผู้เยี่ยมชม" },
+          "why": { "en": "Open-air space for school-age children; paths are rough and there is little shade", "th": "พื้นที่โล่งสำหรับเด็กวัยเรียน ทางขรุขระและร่มเงาน้อย" },
+          "tip": { "en": "A Heritage Malta combined ticket covers several prehistoric sites; check the booking rules", "th": "บัตรรวมของ Heritage Malta ใช้ได้กับหลายแหล่งยุคก่อนประวัติศาสตร์ ควรเช็กกติกาการจอง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €10 adults · €7.50 youths 12–17 · €5.50 children 6–11 · infants 1–5 free", "th": "≈ €10 ผู้ใหญ่ · €7.50 เยาวชน 12–17 ปี · €5.50 เด็ก 6–11 ปี · เด็ก 1–5 ปีฟรี" },
+          "book": "rec",
+          "q": "Ħaġar Qim, Qrendi, Malta",
+          "ok": "2026-11",
+          "src": "https://www.ticketlens.com/en/p38322876/malta/agar-qim"
+        },
+        {
+          "name": { "en": "Għar Dalam Cave and Museum", "th": "ถ้ำและพิพิธภัณฑ์การ์ ดาลัม" },
+          "kind": "nature",
+          "area": { "en": "Birżebbuġa", "th": "บีร์เซบบูจา" },
+          "what": { "en": "A cave and small museum showing prehistoric animal bones found in Malta", "th": "ถ้ำและพิพิธภัณฑ์เล็กที่จัดแสดงกระดูกสัตว์ยุคก่อนประวัติศาสตร์ที่พบในมอลตา" },
+          "why": { "en": "A short visit that children who like bones and caves enjoy; some steps", "th": "แวะสั้นๆ เด็กที่ชอบกระดูกและถ้ำจะสนุก มีบันไดบางช่วง" },
+          "tip": { "en": "A listing gives Tuesday–Sunday 9:00–17:00 in summer with Mondays usually closed; check the winter hours", "th": "รายการระบุอังคาร–อาทิตย์ 9:00–17:00 ในฤดูร้อน วันจันทร์มักปิด ควรเช็กเวลาฤดูหนาว" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €6.50 adults · €4 children (combined ticket with Borġ in-Nadur) · infants 1–5 free", "th": "≈ €6.50 ผู้ใหญ่ · €4 เด็ก (บัตรรวมกับบอร์จ อิน-นาดูร์) · เด็ก 1–5 ปีฟรี" },
+          "book": "none",
+          "q": "Għar Dalam Cave and Museum, Birżebbuġa, Malta",
+          "ok": "2026-11",
+          "src": "https://www.ticketlens.com/en/p38325134"
+        },
+        {
+          "name": { "en": "Għadira Bay", "th": "อ่าวกาดีรา" },
+          "kind": "beach",
+          "area": { "en": "Mellieħa", "th": "เมลลีเอฮา" },
+          "what": { "en": "Malta's largest sandy beach, with fine golden sand and shallow water", "th": "หาดทรายที่ใหญ่ที่สุดของมอลตา ทรายสีทองละเอียด น้ำตื้น" },
+          "why": { "en": "Shallow, gentle water suits small children; lifeguards were summer-only", "th": "น้ำตื้นและสงบเหมาะกับเด็กเล็ก ไลฟ์การ์ดมีเฉพาะฤดูร้อน" },
+          "tip": { "en": "Best from late spring to September; in winter it is a quiet walk, not a swim", "th": "ดีที่สุดปลายฤดูใบไม้ผลิถึง ก.ย. ฤดูหนาวเหมาะเดินเล่นเงียบๆ ไม่เหมาะลงเล่นน้ำ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Għadira Bay, Mellieħa, Malta",
+          "ok": "2026-11",
+          "src": "https://hubpymalta.com/what-to-do/family-beaches-malta.html"
+        },
+        {
+          "name": { "en": "Cittadella (the Citadel), Victoria, Gozo", "th": "ซิตตาเดลลา (ป้อมปราการ) วิกตอเรีย โกโซ" },
+          "kind": "oldtown",
+          "area": { "en": "Victoria, Gozo", "th": "วิกตอเรีย โกโซ" },
+          "what": { "en": "A hilltop fortified old town in the middle of Gozo, with walls to walk and a view over the island", "th": "เมืองเก่ามีป้อมบนเนินกลางเกาะโกโซ มีกำแพงให้เดินและวิวทั่วเกาะ" },
+          "why": { "en": "The walls are free to walk; the museums inside are changing, so check what is open", "th": "เดินบนกำแพงฟรี พิพิธภัณฑ์ข้างในกำลังเปลี่ยนแปลง ควรเช็กว่าที่ไหนเปิด" },
+          "tip": { "en": "One guide gives a combined ticket for the small museums at about €5; Gozo's museums are being reorganised", "th": "ไกด์หนึ่งว่าบัตรรวมพิพิธภัณฑ์เล็กราว €5 พิพิธภัณฑ์โกโซกำลังจัดระเบียบใหม่" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk the walls; check the museum prices", "th": "เดินบนกำแพงฟรี เช็กราคาพิพิธภัณฑ์" },
+          "book": "none",
+          "q": "Cittadella, Victoria, Gozo",
+          "ok": "2026-11",
+          "src": "https://www.nomads-travel-guide.com/places/gozos-citadel-cittadella"
+        },
+        {
+          "name": { "en": "Ġgantija Temples", "th": "วิหารจกันติยา" },
+          "kind": "culture",
+          "area": { "en": "Xagħra, Gozo", "th": "ชาร่า โกโซ" },
+          "what": { "en": "Huge prehistoric stone temples on Gozo, with a visitor centre", "th": "วิหารหินยักษ์ยุคก่อนประวัติศาสตร์บนเกาะโกโซ มีศูนย์ผู้เยี่ยมชม" },
+          "why": { "en": "A short, open-air stop for children old enough to enjoy big stones; infants 1–5 go free", "th": "แวะสั้นๆ กลางแจ้งสำหรับเด็กที่ชอบก้อนหินใหญ่ เด็ก 1–5 ปีเข้าฟรี" },
+          "tip": { "en": "A guide says booking on the official website is required; a listing gives 9:00–17:00 from October to May", "th": "ไกด์ว่าต้องจองผ่านเว็บไซต์ทางการ รายการระบุเปิด 9:00–17:00 ตั้งแต่ ต.ค.–พ.ค." },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €6 children 6–11 · €8 concessions and students · infants 1–5 free; check the adult price", "th": "≈ €6 เด็ก 6–11 ปี · €8 ส่วนลดและนักเรียน · เด็ก 1–5 ปีฟรี เช็กราคาผู้ใหญ่" },
+          "book": "req",
+          "q": "Ġgantija Temples, Xagħra, Gozo",
+          "ok": "2026-11",
+          "src": "https://heritagemalta.mt/explore/ggantija-archaeological-park/"
+        },
+        {
+          "name": { "en": "Ramla Bay, Gozo", "th": "อ่าวรามลา โกโซ" },
+          "kind": "beach",
+          "area": { "en": "Xagħra, Gozo", "th": "ชาร่า โกโซ" },
+          "what": { "en": "Gozo's largest sandy beach, a bay of reddish sand with a snack bar and an ice cream shop close by", "th": "หาดทรายที่ใหญ่ที่สุดของโกโซ อ่าวทรายสีแดงอ่อน มีสแน็กบาร์และร้านไอศกรีมอยู่ใกล้" },
+          "why": { "en": "One guide calls it the best Gozo beach for families, but currents can make the middle of the bay unsafe", "th": "ไกด์หนึ่งว่าเป็นหาดที่ดีที่สุดของโกโซสำหรับครอบครัว แต่กระแสน้ำอาจทำให้กลางอ่าวไม่ปลอดภัย" },
+          "tip": { "en": "Lifeguards are seasonal, so check locally; free access, no ticket", "th": "ไลฟ์การ์ดมีตามฤดูกาล ควรเช็กที่หน้างาน เข้าฟรีไม่ต้องซื้อบัตร" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Ramla Bay, Xagħra, Gozo",
+          "ok": "2026-11",
+          "src": "https://www.maltainfoguide.com/ramla-bay-gozo.html"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=95207",
+          "name": {
+            "th": "พิพิธภัณฑ์โบราณคดีแห่งชาติ",
+            "en": "National Museum of Archaeology"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วัลเลตตา",
+            "en": "Valletta"
+          },
+          "what": {
+            "th": "ชิ้นเด่นคือ \"สตรีนิทรา\" รูปปั้นดินเผาสูงเพียง 12 ซม.",
+            "en": "Its star exhibit is the Sleeping Lady, a clay figure just 12 cm tall"
+          },
+          "why": {
+            "th": "ไกด์ครอบครัวบอกว่าเป็นจุดเริ่มต้นเรียนรู้อดีตของมอลตาที่ดีมาก",
+            "en": "The family guide calls it a great first look at Malta's past"
+          },
+          "q": "National Museum of Archaeology, Republic Street, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Misraħ l-Assedju l-Kbir",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=95207",
+          "name": {
+            "th": "จัตุรัสเกรตซีจ",
+            "en": "Great Siege Square"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "วัลเลตตา",
+            "en": "Valletta"
+          },
+          "what": {
+            "th": "จัตุรัสที่มีอนุสาวรีย์การล้อมเมืองครั้งใหญ่",
+            "en": "A square with the monument to the city's great siege"
+          },
+          "why": {
+            "th": "ไกด์ครอบครัวแนะนำสำหรับเด็กในวัลเลตตา",
+            "en": "A family guide suggests it for children in Valletta"
+          },
+          "q": "Great Siege Monument, Republic Street, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=95207",
+          "name": {
+            "th": "ป้อมเซนต์แองเจโล",
+            "en": "Fort St Angelo"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "บีร์กู",
+            "en": "Birgu"
+          },
+          "what": {
+            "th": "ป้อมสำหรับคนอยากรู้ประวัติศาสตร์และว้าวกับวิว",
+            "en": "A fort for more history and wow moments"
+          },
+          "why": {
+            "th": "ไกด์ครอบครัวเลือกให้เด็กที่ชอบผจญภัย",
+            "en": "The family guide picks it for adventurous children"
+          },
+          "q": "Fort St Angelo, Birgu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Ħal Tarxien Prehistoric Complex",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=95207",
+          "name": {
+            "th": "วิหารทาร์ชีเอน",
+            "en": "Tarxien Temples"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทาร์ชีเอน",
+            "en": "Tarxien"
+          },
+          "what": {
+            "th": "วิหารโบราณที่ไกด์ครอบครัวบอกว่าน่าทึ่ง",
+            "en": "Ancient temples the family guide calls a wow moment"
+          },
+          "why": {
+            "th": "หนึ่งในโบราณสถานที่ควรพาเด็กไป",
+            "en": "One of the ancient sites to visit with children"
+          },
+          "q": "Ħal Tarxien Prehistoric Complex, Tarxien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ohmymalta.com.mt/2025/03/14/5-family-friendly-adventures-in-gozo",
+          "name": {
+            "th": "นาเกลือชเวจนี",
+            "en": "Xwejni salt pans"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โกโซ",
+            "en": "Gozo"
+          },
+          "what": {
+            "th": "นาเกลือเก่าแก่หลายร้อยปีริมทะเลที่ยังเก็บเกลืออยู่",
+            "en": "Centuries-old salt pans on the coast where salt is still collected"
+          },
+          "why": {
+            "th": "ได้เรียนรู้การทำเกลือทะเล และสำรวจแอ่งหินริมทะเล",
+            "en": "Learn how sea salt is made, and explore the rock pools"
+          },
+          "q": "Salt Pans, Xwejni, Gozo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ohmymalta.com.mt/2025/03/14/5-family-friendly-adventures-in-gozo",
+          "name": {
+            "th": "ทะเลในดเวจรา",
+            "en": "Dwejra Inland Sea"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "โกโซ",
+            "en": "Gozo"
+          },
+          "what": {
+            "th": "ลากูนที่เชื่อมกับทะเลเปิดด้วยอุโมงค์แคบ",
+            "en": "A lagoon joined to the open sea by a narrow tunnel"
+          },
+          "why": {
+            "th": "มีเรือเล็กพาลอดอุโมงค์ และน้ำตื้นเหมาะกับเด็กเล็ก",
+            "en": "A small boat goes through the tunnel; the shallow water suits little ones"
+          },
+          "q": "Dwejra Inland Sea, San Lawrenz, Gozo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "พิพิธภัณฑ์ไปรษณีย์มอลตา",
+            "en": "Malta Postal Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนอาร์ชบิชอป วัลเลตตา",
+            "en": "Archbishop Street, Valletta"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ไปรษณีย์ขนาดเล็ก",
+            "en": "A small postal museum"
+          },
+          "why": {
+            "th": "มีเส้นทางตอบคำถามและชุดให้ลองใส่",
+            "en": "A quiz trail and costumes to try on"
+          },
+          "tip": {
+            "th": "ใช้เวลาประมาณ 45 นาที",
+            "en": "About 45 minutes is enough"
+          },
+          "q": "Malta Postal Museum, 135 Archbishop St, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "เดอะมอลตาเอ็กซ์พีเรียนซ์",
+            "en": "The Malta Experience"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ป้อมเซนต์เอลโม ถนนเมดิเตอร์เรเนียน วัลเลตตา",
+            "en": "St Elmo Bastions, Mediterranean Street, Valletta"
+          },
+          "what": {
+            "th": "ภาพยนตร์เรื่องมอลตา 40 นาที ในห้องแอร์",
+            "en": "A 40-minute film about Malta in an air-conditioned room"
+          },
+          "why": {
+            "th": "ข้างในเย็น พักได้ในวันที่ร้อน",
+            "en": "Cool inside, a break on a hot day"
+          },
+          "tip": {
+            "th": "ฉายทุกชั่วโมง 11:00–16:00 วันธรรมดา และ 11:00–14:00 วันหยุด",
+            "en": "Hourly 11:00–16:00 on weekdays, 11:00–14:00 at weekends"
+          },
+          "q": "The Malta Experience, St Elmo Bastions, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ €17 (ทัวร์มีไกด์)",
+            "en": "About €17 (guided tour)"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "ห้องบัญชาการสงครามลาสคาริส",
+            "en": "Lascaris War Rooms"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คูเมืองลาสคาริส วัลเลตตา",
+            "en": "Lascaris Ditch, Valletta"
+          },
+          "what": {
+            "th": "บังเกอร์บัญชาการสมัยสงคราม เจาะเข้าไปในหิน",
+            "en": "A wartime command bunker cut into the rock"
+          },
+          "why": {
+            "th": "ข้างในเย็นแม้ข้างนอกร้อน มีออดิโอไกด์เดินเองได้",
+            "en": "Cool inside whatever the heat; a self-paced audio guide"
+          },
+          "tip": {
+            "th": "เตรียมเสื้อคลุม ใต้หินสี่สิบเมตรอากาศเย็น",
+            "en": "Bring a layer: it is cold under forty metres of rock"
+          },
+          "q": "The Lascaris War Rooms, Lascaris Ditch, Valletta",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.explorevalletta.com/city/valletta/articles/valletta-with-kids-when-malta-feels-too-hot",
+          "name": {
+            "th": "ฟอนด์อาดีร์",
+            "en": "Fond Għadir"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ถนนทาวเวอร์ สลีมา",
+            "en": "Tower Road, Sliema"
+          },
+          "what": {
+            "th": "สระที่เจาะในหินริมทะเลสลีมา นั่งเรือจากวัลเลตตาสิบนาที",
+            "en": "Rock-cut pools on the Sliema seafront, ten minutes from Valletta by ferry"
+          },
+          "why": {
+            "th": "สระหินตื้นเหมาะกับเด็กเล็ก",
+            "en": "The shallow rock pools suit small children"
+          },
+          "q": "Fond Għadir Beach, Tower Road, Sliema",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

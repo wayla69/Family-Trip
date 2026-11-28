@@ -1,0 +1,85 @@
+{
+  "town": "th-huahin",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from AirAsia (Nov 2026) passed library-check.cjs, 4 went in",
+  "added": [
+    {
+      "name": "Khao Takiab (Monkey Mountain)",
+      "page_name": "Khao Takiab Monkey Mountain",
+      "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+      "date": "2026-11",
+      "map": "Google Maps 'Khao Takiap', 374 reviews, newest shown '16 days ago'"
+    },
+    {
+      "name": "Pranburi Forest Park",
+      "page_name": "Pranburi Forest Park",
+      "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+      "date": "2026-11",
+      "map": "Google Maps 'วนอุทยาน ปราณบุรี', 4,863 reviews, newest shown '4 days ago'"
+    },
+    {
+      "name": "Wat Huay Mongkol",
+      "page_name": "Wat Huay Mongkol",
+      "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+      "date": "2026-11",
+      "map": "Google Maps 15,560 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "Mrigadayavan Palace",
+      "page_name": "Mrigadayavan Palace",
+      "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+      "date": "2026-11",
+      "map": "Google Maps 4,011 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Krua Jeanong Seafood (Bo Khiao)",
+      "page_name": "ครัวเจ๊นงค์",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/recommended-secret-hua-hin-shop",
+      "date": "2025-01",
+      "map": "Google Maps 'Krua Jeanong Seafood' (Cha-am), newest review shown 6 days ago"
+    },
+    {
+      "name": "S.Ken's Bistro (Khao Tao)",
+      "page_name": "เอสเคนบิสโตร",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/recommended-secret-hua-hin-shop",
+      "date": "2025-01",
+      "map": "Google Maps 'S.Ken's Khaotao' (Nong Kae, Hua Hin), newest review shown 9 days ago"
+    },
+    {
+      "name": "Baan Rim Nam (Phetchaburi)",
+      "page_name": "บ้านริมน้ำ",
+      "src": "https://www.ktc.co.th/article/travel-guide/thailand/recommended-secret-hua-hin-shop",
+      "date": "2025-01",
+      "map": "Google Maps 'Baanrimnam Phetchburi' (Ratcha Damri Rd), newest review shown 15 days ago"
+    },
+    {
+      "name": "Bryde's Kids Club (Holiday Inn Vana Nava)",
+      "page_name": "Bryde's Kids Club",
+      "src": "https://vananavahuahin.holidayinnresorts.com/brydes-kids-club-hua-hin",
+      "date": "official",
+      "map": "Google Maps 'Holiday Inn Resort Vana Nava Hua Hin by IHG' (the club is the hotel's own; no map entry of its own), newest review shown 2 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Hua Hin Safari and Adventure Park",
+      "why": "the page describes animal shows"
+    },
+    {
+      "name": "มาลัยฟาร์ม ชะอำ",
+      "why": "no page date (library-check.cjs)"
+    },
+    {
+      "name": "Camel Republic",
+      "why": "camel riding"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from KTC (2025–2026), Wongnai and the hotel's own page, 4 passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

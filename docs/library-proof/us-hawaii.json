@@ -1,0 +1,144 @@
+{
+  "town": "us-hawaii",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 15 rows from Hawaii Travel with Kids (2025–2026) and Ryo (2026) passed library-check.cjs, all went in",
+  "added": [
+    {
+      "name": "Kahuku Farms",
+      "page_name": "Kahuku Farms",
+      "src": "https://hawaiitravelwithkids.com/best-things-to-do-on-oahu-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 56-800 Kamehameha Hwy, 1,180 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Liliha Bakery (International Market Place)",
+      "page_name": "Liliha Bakery",
+      "src": "https://hawaiitravelwithkids.com/where-to-eat-on-oahu-with-kids/",
+      "date": "2025-11",
+      "map": "Google Maps 'Liliha Bakery International Market Place', 2,269 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Monkeypod Kitchen (Waikiki)",
+      "page_name": "Monkeypod Kitchen by Merriman",
+      "src": "https://hawaiitravelwithkids.com/where-to-eat-on-oahu-with-kids/",
+      "date": "2025-11",
+      "map": "Google Maps 'Monkeypod Kitchen - Waikiki', 2,390 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "Makahiki (Aulani)",
+      "page_name": "Makahiki at Disney Aulani",
+      "src": "https://hawaiitravelwithkids.com/where-to-eat-on-oahu-with-kids/",
+      "date": "2025-11",
+      "map": "Google Maps 'Makahiki', 92 Aliinui Dr, 374 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Waimea Valley",
+      "page_name": "Waimea Valley",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 9,385 reviews, newest '5 hours ago'"
+    },
+    {
+      "name": "Pearl Harbor National Memorial",
+      "page_name": "Pearl Harbor National Memorial",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 27,941 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Byodo-In Temple",
+      "page_name": "Byodo-In Temple",
+      "src": "https://hawaiitravelwithkids.com/best-things-to-do-on-oahu-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 7,956 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "Kailua Beach Park",
+      "page_name": "Kailua Beach Park",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 13,525 reviews, newest '5 hours ago'"
+    },
+    {
+      "name": "Ko Olina lagoons",
+      "page_name": "Ko Olina Lagoons",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Ko Olina Lagoon 1', 222 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Ala Moana Beach Park",
+      "page_name": "Ala Moana Regional Park",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 7,244 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "Kuhio Beach",
+      "page_name": "Kuhio Beach Park",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Kuhio Beach', 1,881 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Aloha Stadium Swap Meet",
+      "page_name": "Aloha Stadium Swap Meet",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 9,416 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Laniakea Beach (turtle beach)",
+      "page_name": "Turtle Beach (Laniakea Beach)",
+      "src": "https://hawaiitravelwithkids.com/best-things-to-do-on-oahu-with-kids",
+      "date": "2026-11",
+      "map": "Google Maps 'Laniakea Beach', 1,181 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Mānoa Falls Trail",
+      "page_name": "Manoa Falls Trail",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Mānoa Falls Trail', 5,497 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "ʻIolani Palace",
+      "page_name": "Iolani Palace",
+      "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 6,127 reviews, newest '9 hours ago'"
+    },
+    {
+      "name": "Da Kitchen (Kihei)",
+      "page_name": "Da Kitchen",
+      "src": "https://hawaiitravelwithkids.com/where-to-eat-on-maui-with-kids/",
+      "date": "2025-12",
+      "map": "Google Maps 'Da Kitchen' (1215 S Kihei Rd), newest review shown 4 hours ago"
+    },
+    {
+      "name": "Surfing Goat Dairy",
+      "page_name": "Surfing Goat Dairy",
+      "src": "https://www.surfinggoatdairy.com/",
+      "date": "official",
+      "map": "Google Maps 'Surfing Goat Dairy Farm Shop & Café' (3651 Omaopio Rd, Kula), newest review shown 13 hours ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Coconut's Fish Cafe",
+      "why": "two Kihei branches, none named"
+    },
+    {
+      "name": "Waikiki Beach",
+      "why": "the map finds the neighbourhood, not a beach entry"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Hawaii Travel with Kids (Dec 2025 and Feb 2026) and the dairy's own site, all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

@@ -444,7 +444,7 @@ function snapWallMs(at, off, zone) {
   const first = guess - offAt(guess); return guess - offAt(first);
 }
 let snapGeoP = null;
-function snapGeo() { if (!snapGeoP) snapGeoP = api('GET', '/api/b/geo').catch(() => { snapGeoP = null; return { places: [], countries: [] }; }); return snapGeoP; }
+function snapGeo() { if (!snapGeoP) snapGeoP = apiKeep('/api/b/geo').catch(() => { snapGeoP = null; return { places: [], countries: [] }; }); return snapGeoP; }
 const snapShort = (n) => ({ th: String(n.th || n.en || '').split(/\s+และ/)[0].trim(), en: String(n.en || n.th || '').split(/ and | & /)[0].trim() });
 // a position → the nearest library city within reach (60 km at home in Thailand, 80 km abroad), or null — the position itself is not kept
 function snapPlace(ll, geo) {
@@ -915,7 +915,8 @@ function snapAsideHtml(date) {
 }
 // which day and set-aside folds are open on the days page, so a redraw (a photo brought back) leaves them as they were
 if (typeof document !== 'undefined') document.addEventListener('toggle', (e) => {
-  const d = e.target; if (!snapS || !d.dataset || !d.dataset.fold) return;
+  // a toggle fires after the fact: one from a page already redrawn away (the trip just made) must not seed the next trip's folds
+  const d = e.target; if (!snapS || !d.dataset || !d.dataset.fold || !d.isConnected) return;
   if (!snapS.folds) snapS.folds = new Set([...document.querySelectorAll('details[data-fold][open]')].map((x) => x.dataset.fold));
   if (d.open) snapS.folds.add(d.dataset.fold); else snapS.folds.delete(d.dataset.fold);
 }, true);
@@ -1342,6 +1343,10 @@ if (typeof document !== 'undefined') document.addEventListener('change', (e) => 
 if (typeof document !== 'undefined') document.addEventListener('input', (e) => {   // typed in place: no redraw under the finger
   if (e.target.id === 'snapname') { snapName = e.target.value; if (snapS) snapS.name = e.target.value; return; }
   if (e.target.id === 'snaptitle' && snapS) { snapS.name = e.target.value; return; }
-  if (e.target.id === 'psq') { const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('.pslist li').forEach((li) => { li.hidden = !!q && !li.classList.contains('psh') && !li.textContent.toLowerCase().includes(q); }); return; }   // the sheet's search filters in place
+  if (e.target.id === 'psq') {   // the sheet's search filters in place — as typed, or forgivingly when nothing matches as typed
+    const q = e.target.value.trim().toLowerCase(), lis = [...document.querySelectorAll('.pslist li')].filter((li) => !li.classList.contains('psh'));
+    const fz = fzFilter(lis.map((li) => li.textContent), q);
+    lis.forEach((li, i) => { li.hidden = !!q && !fz.ok(i); }); return;
+  }   // the sheet's search filters in place
   if (e.target.dataset && e.target.dataset.snapday && snapS) snapS.typed[e.target.dataset.snapday] = e.target.value;
 });

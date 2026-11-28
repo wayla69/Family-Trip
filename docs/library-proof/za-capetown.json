@@ -1,0 +1,120 @@
+{
+  "town": "za-capetown",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from Rhino Africa (2026), Time Out Cape Town (2026) and Cape Town ETC (2026) passed library-check.cjs, 8 went in",
+  "added": [
+    {
+      "name": "Café Roux (Noordhoek)",
+      "page_name": "Café Roux",
+      "src": "https://blog.rhinoafrica.com/2025/10/01/cape-town-family-friendly/",
+      "date": "2026-11",
+      "map": "Google Maps 'café Roux - Noordhoek', 2,274 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Dunes Beach Restaurant",
+      "page_name": "Dunes Beach Restaurant & Bar",
+      "src": "https://blog.rhinoafrica.com/2025/10/01/cape-town-family-friendly/",
+      "date": "2026-11",
+      "map": "Google Maps 4,323 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Massimo's",
+      "page_name": "Massimo's",
+      "src": "https://blog.rhinoafrica.com/2025/10/01/cape-town-family-friendly/",
+      "date": "2026-11",
+      "map": "Google Maps Oakhurst Farm Park, 1,714 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "The Foodbarn",
+      "page_name": "The Foodbarn",
+      "src": "https://blog.rhinoafrica.com/2025/10/01/cape-town-family-friendly/",
+      "date": "2026-11",
+      "map": "Google Maps 'The Foodbarn Deli Shop', Noordhoek Farm Village, 1,063 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Good Thyme Café",
+      "page_name": "Good Thyme Café",
+      "src": "https://www.capetownetc.com/things-to-do-cape-town/family-kids/school-holiday-outings-cape-town-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Good Thyme Cafe', Stodels Nurseries, 151 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Paradise Park",
+      "page_name": "Paradise Park",
+      "src": "https://www.timeout.com/cape-town/things-to-do/the-best-summer-activities-for-kids-in-cape-town",
+      "date": "2026-09",
+      "map": "Google Maps 'Paradise Park, Newlands', 626 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Battery Park",
+      "page_name": "Battery Park",
+      "src": "https://www.timeout.com/cape-town/things-to-do/the-best-summer-activities-for-kids-in-cape-town",
+      "date": "2026-09",
+      "map": "Google Maps 'Battery Park @ V&A Waterfront', 1,151 reviews, newest '20 hours ago'"
+    },
+    {
+      "name": "The Bike Park at Constantia Uitsig",
+      "page_name": "Constantia Uitsig",
+      "src": "https://www.timeout.com/cape-town/things-to-do/the-best-summer-activities-for-kids-in-cape-town",
+      "date": "2026-09",
+      "map": "Google Maps 'The Bike Park at Constantia Uitsig', 265 reviews, newest 'last week'"
+    },
+    {
+      "name": "Folk Cafe St James",
+      "page_name": "Folk Café",
+      "src": "https://www.capetownetc.com/lifestyle/kid-friendly-restaurants/",
+      "date": "2026-10",
+      "map": "Google Maps 'Folk Cafe St. James' (54 Main Rd), newest review shown 19 hours ago"
+    },
+    {
+      "name": "Picnic Cafe and Deli",
+      "page_name": "Picnic Café and Deli",
+      "src": "https://www.capetownetc.com/lifestyle/kid-friendly-restaurants/",
+      "date": "2026-10",
+      "map": "Google Maps 'Picnic Cafe and Deli' (Montebello, Newlands), newest review shown a day ago"
+    },
+    {
+      "name": "Panarottis Kenilworth Centre",
+      "page_name": "Panarottis",
+      "src": "https://www.capetownetc.com/lifestyle/kid-friendly-restaurants/",
+      "date": "2026-10",
+      "map": "Google Maps 'Panarottis Kenilworth Centre Halaal' (Doncaster Rd), newest review shown a day ago"
+    },
+    {
+      "name": "Strolla (Sea Point)",
+      "page_name": "Strolla",
+      "src": "https://www.capetownwithkids.com/rainy-days/",
+      "date": "2025-05",
+      "map": "Google Maps 'Strolla Restaurant & Bar' (313 Beach Rd), newest review shown a week ago"
+    },
+    {
+      "name": "Rush Extreme (Claremont)",
+      "page_name": "Rush Extreme Trampoline Park",
+      "src": "https://www.capetownwithkids.com/rainy-days/",
+      "date": "2025-05",
+      "map": "Google Maps 'Rush Extreme Claremont' (25 Stegman Rd), newest review shown a day ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Little Lion's Head",
+      "why": "newest Google Maps review a year old"
+    },
+    {
+      "name": "Clay Cafe",
+      "why": "several branches; the pages disagree which"
+    },
+    {
+      "name": "artjamming",
+      "why": "the map puts it at Wembley Square, not the V&A Waterfront as the page says"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 7 rows from Cape Town Etc (Oct 2026), Cape Town with Kids (May 2025) and Time Out (Jun 2025), all passed library-check.cjs, 5 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

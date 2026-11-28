@@ -1,0 +1,688 @@
+{
+  "cc": "ge",
+  "towns": [
+    {
+      "place": "ge-tbilisi",
+      "sights": [
+        {
+          "name": { "en": "Tbilisi Zoo", "th": "สวนสัตว์ทบิลิซี" },
+          "kind": "zoo",
+          "area": { "en": "Tbilisi", "th": "ทบิลิซี" },
+          "what": { "en": "The city zoo", "th": "สวนสัตว์ของเมือง" },
+          "why": { "en": "A family-guide page for Tbilisi lists the zoo for children", "th": "คู่มือครอบครัวของทบิลิซีแนะนำสวนสัตว์สำหรับเด็ก" },
+          "tip": { "en": "Prices differ between sources; check at the gate", "th": "ราคาแต่ละแหล่งไม่ตรงกัน เช็กที่หน้าประตู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ₾15 adults · ₾2–5 children · under 3 free", "th": "≈ ₾15 ผู้ใหญ่ · ₾2-5 เด็ก · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "none",
+          "q": "Tbilisi Zoo, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://sakhva-travel.com/en/blog/tbilisi-with-kids-guide/"
+        },
+        {
+          "name": { "en": "Mtatsminda Park", "th": "สวนมตัตสมินดา" },
+          "local": "მთაწმინდის პარკი",
+          "kind": "themepark",
+          "area": { "en": "Mtatsminda", "th": "มตัตสมินดา" },
+          "what": { "en": "A hilltop park above the city, reached by funicular, with separate rides", "th": "สวนบนเนินเหนือเมือง ขึ้นด้วยกระเช้ารางเลื่อน มีเครื่องเล่นแยก" },
+          "why": { "en": "Park entry is free and children can pick the rides they like", "th": "เข้าสวนฟรี เด็กเลือกเล่นเครื่องเล่นที่ชอบได้" },
+          "tip": { "en": "Ride prices vary by source (about ₾3–10 each), so check the ticket booths; the funicular fare is reported differently too", "th": "ราคาเครื่องเล่นแต่ละแหล่งต่างกัน (ราว ₾3-10) เช็กที่ตู้ขายบัตร ค่ากระเช้าก็รายงานไม่ตรงกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Park entry free · rides charged separately · check the ride prices", "th": "เข้าสวนฟรี · เครื่องเล่นแยกราคา · เช็กราคา" },
+          "book": "none",
+          "q": "Mtatsminda Park, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://sakhva-travel.com/en/blog/tbilisi-with-kids-guide/"
+        },
+        {
+          "name": { "en": "Rike Park–Narikala cable car", "th": "กระเช้าริเกพาร์ค-นารีคาลา" },
+          "kind": "ride",
+          "area": { "en": "Old Tbilisi", "th": "ทบิลิซีเก่า" },
+          "what": { "en": "A two-minute cable car ride from Rike Park up to Narikala Fortress", "th": "กระเช้าสองนาทีจากริเกพาร์คขึ้นป้อมนารีคาลา" },
+          "why": { "en": "A short ride over the old town that small children enjoy", "th": "นั่งสั้นๆ เหนือเมืองเก่า เด็กเล็กสนุก" },
+          "tip": { "en": "A winter timetable was announced from 1 November 2025 (open from 10:00, closing 22:00); check the fare and the current times", "th": "ประกาศตารางฤดูหนาวตั้งแต่ 1 พฤศจิกายน 2025 (เปิด 10:00 ปิด 22:00) เช็กค่าโดยสารและเวลาปัจจุบัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Rike Park cable car, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://georgiatoday.ge/tbilisis-rike-narikala-cable-car-to-switch-to-winter-schedule/"
+        },
+        {
+          "name": { "en": "Dry Bridge Market", "th": "ตลาดดรายบริดจ์" },
+          "kind": "market",
+          "area": { "en": "Old Tbilisi", "th": "ทบิลิซีเก่า" },
+          "what": { "en": "An open-air flea market of art, antiques and souvenirs", "th": "ตลาดนัดกลางแจ้งขายงานศิลปะ ของเก่าและของที่ระลึก" },
+          "why": { "en": "Easy to walk through with a pram; children can look at the toys and odd objects", "th": "เดินผ่านพร้อมรถเข็นง่าย เด็กดูของเล่นและของแปลกๆ ได้" },
+          "tip": { "en": "Open about 10:00–17:00 daily; not every seller comes in rain", "th": "เปิดราว 10:00-17:00 ทุกวัน วันฝนตกร้านค้าอาจมาไม่ครบ" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to enter", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Dry Bridge Market, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://telegraphhotel.com/things-to-do/dry-bridge-market/"
+        },
+        {
+          "name": { "en": "Open Air Museum of Ethnography", "th": "พิพิธภัณฑ์ชาติพันธุ์กลางแจ้ง" },
+          "kind": "culture",
+          "area": { "en": "Turtle Lake area", "th": "แถวทะเลสาบเต่า" },
+          "what": { "en": "An open-air museum of traditional houses from the regions of Georgia", "th": "พิพิธภัณฑ์กลางแจ้งที่รวมบ้านแบบดั้งเดิมจากหลายภูมิภาคของจอร์เจีย" },
+          "why": { "en": "A walk between houses on a hillside; the paths are not all step-free", "th": "เดินระหว่างบ้านบนเนิน ทางไม่ได้เรียบทั้งหมด" },
+          "tip": { "en": "Reported open Tuesday–Sunday about 10:00–17:30, closed Mondays; sources give very different prices", "th": "รายงานว่าเปิดอังคาร-อาทิตย์ ราว 10:00-17:30 ปิดวันจันทร์ ราคาแต่ละแหล่งต่างกันมาก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Open Air Museum of Ethnography, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://georgianholidays.com/attraction/tbilisi-landmarks/open-air-museum-of-ethnography"
+        },
+        {
+          "name": { "en": "Tbilisi Sea", "th": "ทะเลสาบทบิลิซี" },
+          "kind": "nature",
+          "area": { "en": "Tbilisi Sea", "th": "ทะเลทบิลิซี" },
+          "what": { "en": "A reservoir on the edge of the city, with the Chronicles of Georgia monument nearby", "th": "อ่างเก็บน้ำชานเมือง มีอนุสาวรีย์พงศาวดารจอร์เจียอยู่ใกล้ๆ" },
+          "why": { "en": "Open space by the water, with parking at the monument", "th": "พื้นที่โล่งริมน้ำ มีที่จอดรถที่อนุสาวรีย์" },
+          "tip": { "en": "Entry to the monument is free; allow time to reach it from the centre", "th": "เข้าชมอนุสาวรีย์ฟรี เผื่อเวลาเดินทางจากใจกลางเมือง" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Chronicles of Georgia, Tbilisi Sea",
+          "ok": "2026-11",
+          "src": "https://sakhva-travel.com/en/blog/tbilisi-with-kids-guide/"
+        },
+        {
+          "name": { "en": "Georgian National Museum", "th": "พิพิธภัณฑ์แห่งชาติจอร์เจีย" },
+          "local": "საქართველოს ეროვნული მუზეუმი",
+          "kind": "museum",
+          "area": { "en": "Rustaveli Avenue", "th": "ถนนรุสตาเวลี" },
+          "what": { "en": "The national museum of Georgia, in the city centre", "th": "พิพิธภัณฑ์แห่งชาติของจอร์เจีย ใจกลางเมือง" },
+          "why": { "en": "A rainy-day option; older children get more from it than toddlers", "th": "ทางเลือกวันฝนตก เด็กโตได้ประโยชน์มากกว่าเด็กเล็ก" },
+          "tip": { "en": "Prices differ widely between 2026 guides (about ₾15 to ₾40 for foreign visitors), so check the price and the opening hours", "th": "ราคาคู่มือปี 2026 ต่างกันมาก (ราว ₾15-₾40 สำหรับชาวต่างชาติ) เช็กราคาและเวลาเปิด" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Georgian National Museum, Rustaveli Avenue, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://wander-lush.org/best-tbilisi-museums-galleries/"
+        },
+        {
+          "name": { "en": "National Botanical Garden of Georgia", "th": "สวนพฤกษศาสตร์แห่งชาติจอร์เจีย" },
+          "local": "საქართველოს ეროვნული ბოტანიკური ბაღი",
+          "kind": "park",
+          "area": { "en": "Botanical Street", "th": "ถนนโบทานิคัล" },
+          "what": { "en": "A green valley behind Narikala with a waterfall, shady paths and plant collections", "th": "หุบเขาสีเขียวหลังป้อมนารีกาลา มีน้ำตก ทางเดินร่มเงา และคอลเลกชันพืช" },
+          "why": { "en": "Shaded paths and a stream make a cool half-day for children who like to walk", "th": "ทางร่มเงาและลำธารเหมาะกับเด็กที่ชอบเดิน เย็นสบายครึ่งวัน" },
+          "tip": { "en": "The cable car from Rike Park is the easiest way up; hours change with the season", "th": "ขึ้นกระเช้าจากสวนริเก้สะดวกที่สุด เวลาเปิดเปลี่ยนตามฤดู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ₾4 adults · schoolchildren ≈ ₾0.5", "th": "≈ ₾4 ผู้ใหญ่ · นักเรียน ≈ ₾0.5" },
+          "book": "none",
+          "q": "National Botanical Garden of Georgia, Botanikuri Street 1, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://eurasia.travel/georgia/tbilisi/botanical-garden/"
+        },
+        {
+          "name": { "en": "Mushtaidi Garden and Children’s Railway", "th": "สวนมุชไทดีและรถไฟเด็ก" },
+          "local": "მუშთაიდის ბაღი",
+          "kind": "park",
+          "area": { "en": "Old Tbilisi", "th": "ทบิลิซีเมืองเก่า" },
+          "what": { "en": "A 16-hectare garden with playgrounds, cafés and a children’s railway from 1935 with three open carriages", "th": "สวน 16 เฮกตาร์ มีสนามเด็กเล่น ร้านกาแฟ และรถไฟเด็กตั้งแต่ปี 1935 มีสามตู้โล่ง" },
+          "why": { "en": "Children ride the little train and run on the playgrounds", "th": "เด็กๆ นั่งรถไฟเล็กและวิ่งเล่นที่สนามเด็กเล่น" },
+          "tip": { "en": "The railway’s price and hours are not shown on the tourism page, so ask at the gate", "th": "เว็บท่องเที่ยวไม่ระบุราคาและเวลารถไฟ ให้ถามที่ประตู" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mushtaidi Garden, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://georgia.travel/family-attractions/mushtaidi-garden"
+        },
+        {
+          "name": { "en": "Mziuri Park", "th": "สวนมซิอูรี" },
+          "local": "მზიური",
+          "kind": "park",
+          "area": { "en": "Vera valley", "th": "หุบเขาเวรา" },
+          "what": { "en": "A park built for children in 1982 with an artificial lake, playgrounds, an amusement park and a charity café", "th": "สวนสร้างเพื่อเด็กในปี 1982 มีทะเลสาบเทียม สนามเด็กเล่น สวนสนุก และคาเฟ่การกุศล" },
+          "why": { "en": "Playgrounds and open space let children run, with a café for the parents", "th": "มีสนามเด็กเล่นและพื้นที่โล่งให้วิ่ง และมีคาเฟ่ให้พ่อแม่นั่ง" },
+          "tip": { "en": "Entry and ride prices are not on the tourism page; check at the gate", "th": "หน้าท่องเที่ยวไม่ระบุค่าเข้าและราคาเครื่องเล่น เช็กที่ประตู" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mziuri Park, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://georgia.travel/family-attractions/mziuri-park"
+        },
+        {
+          "name": { "en": "Gabriadze Theatre clock tower", "th": "หอนาฬิกาโรงละครกาเบรียดเซ" },
+          "local": "გაბრიაძის თეატრის კოშკი",
+          "kind": "show",
+          "area": { "en": "Old Tbilisi", "th": "ทบิลิซีเมืองเก่า" },
+          "what": { "en": "A leaning clock tower where an angel rings a bell every hour and a tiny puppet show, “Circle of Life”, plays twice a day", "th": "หอนาฬิกาเอียงที่นางฟ้าตีระฆังทุกชั่วโมง และมีโชว์หุ่นเล็กๆ “Circle of Life” วันละสองรอบ" },
+          "why": { "en": "A free-to-look street stop that children enjoy for ten minutes", "th": "จุดแวะริมถนนที่เด็กชอบดูสิบนาที" },
+          "tip": { "en": "The theatre’s own evening shows are for older audiences; stay with the tower", "th": "รอบละครในโรงเหมาะกับผู้ชมที่โตกว่า ให้ดูแค่หอนาฬิกา" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Gabriadze Theatre clock tower, Shavteli Street 13, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://gabriadze.com/about"
+        },
+        {
+          "name": { "en": "Tbilisi History Museum", "th": "พิพิธภัณฑ์ประวัติศาสตร์ทบิลิซี" },
+          "kind": "museum",
+          "area": { "en": "Sioni Street, Old Town", "th": "ถนนซีโอนี ย่านเมืองเก่า" },
+          "what": { "en": "Scale models of old Tbilisi houses, taverns and landmarks inside a 17th-century caravanserai", "th": "แบบจำลองบ้าน โรงเตี๊ยม และสถานที่สำคัญของทบิลิซีเก่า ในคาราวานเซอไรศตวรรษที่ 17" },
+          "why": { "en": "Small, easy to finish in an hour; the models are the part children like", "th": "พิพิธภัณฑ์เล็ก เดินจบในชั่วโมงเดียว เด็กชอบดูแบบจำลอง" },
+          "tip": { "en": "Closed on Mondays like most Georgian museums; the signs are few, so read the models first", "th": "ปิดวันจันทร์เหมือนพิพิธภัณฑ์ส่วนใหญ่ในจอร์เจีย ป้ายอธิบายมีน้อย ดูแบบจำลองก่อน" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ₾15 adults", "th": "≈ ₾15 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Tbilisi History Museum, 8 Sioni Street, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://wander-lush.org/best-tbilisi-museums-galleries/"
+        },
+        {
+          "name": { "en": "Tbilisi Auto Museum", "th": "พิพิธภัณฑ์รถยนต์ทบิลิซี" },
+          "kind": "museum",
+          "area": { "en": "Tbilisi", "th": "ทบิลิซี" },
+          "what": { "en": "More than 50 vintage Soviet cars and motorcycles, each in working order, shown by the owner's guide", "th": "รถยนต์และมอเตอร์ไซค์โซเวียตโบราณกว่า 50 คัน ทุกคันยังใช้งานได้ มีไกด์พาชม" },
+          "why": { "en": "Bright old Ladas and Volgas to point at; a short, indoor stop that suits children who like cars", "th": "รถลาดาและโวลก้าสีสดให้ชี้ดู แวะสั้นๆ ในร่ม เหมาะกับเด็กที่ชอบรถ" },
+          "tip": { "en": "Cash only at some small museums in the city, so keep a little lari with you", "th": "พิพิธภัณฑ์เล็กในเมืองบางแห่งรับเงินสดเท่านั้น เตรียมเงินลารีติดตัวไว้" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ₾10 adults", "th": "≈ ₾10 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Tbilisi Auto Museum, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://wander-lush.org/best-tbilisi-museums-galleries/"
+        },
+        {
+          "name": { "en": "Museum of Georgian Weaponry", "th": "พิพิธภัณฑ์อาวุธจอร์เจีย" },
+          "kind": "museum",
+          "area": { "en": "Sioni Street, Old Town", "th": "ถนนซีโอนี ย่านเมืองเก่า" },
+          "what": { "en": "A small private collection of swords, daggers and shields in the old caravanserai, with a dress-up photo corner", "th": "คอลเลกชันส่วนตัวขนาดเล็ก มีดาบ กริช และโล่ ในคาราวานเซอไรเก่า มีมุมแต่งชุดถ่ายรูป" },
+          "why": { "en": "Free, a few minutes' walk from the History Museum; the dress-up corner is fun for older children", "th": "เข้าฟรี อยู่ใกล้พิพิธภัณฑ์ประวัติศาสตร์ มุมแต่งชุดสนุกสำหรับเด็กโตหน่อย" },
+          "tip": { "en": "Ask at the Wine Museum desk to be shown the way; a small donation is welcome", "th": "ถามทางที่เคาน์เตอร์พิพิธภัณฑ์ไวน์ ใส่เงินบริจาคเล็กน้อยได้" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Museum of Georgian Weaponry, 8 Sioni Street, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://wander-lush.org/best-tbilisi-museums-galleries/"
+        },
+        {
+          "name": { "en": "Museum of Illusions Tbilisi", "th": "พิพิธภัณฑ์ภาพลวงตาทบิลิซี" },
+          "kind": "museumkid",
+          "area": { "en": "Betlemi Street, Old Town", "th": "ถนนเบตเลมี ย่านเมืองเก่า" },
+          "what": { "en": "Optical-illusion rooms: a tilted Ames room, an endless room and a table where you sit with your own clone", "th": "ห้องภาพลวงตา มีห้องเอมส์ที่ทำให้ตัวใหญ่ตัวเล็ก ห้องไม่รู้จบ และโต๊ะที่นั่งกับโคลนของตัวเอง" },
+          "why": { "en": "Works without reading a word, so it suits young children; great for photos", "th": "สนุกได้โดยไม่ต้องอ่านอะไร เด็กเล็กก็เล่นได้ ถ่ายรูปสวย" },
+          "tip": { "en": "Allow one to two hours; opening days and times differ between listings, so check on the day", "th": "ใช้เวลาประมาณ 1-2 ชั่วโมง วันเวลาเปิดแต่ละแหล่งไม่ตรงกัน เช็กในวันที่ไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Museum of Illusions, Betlemi Street 10, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://georgia.travel/the-museum-of-illusions"
+        },
+        {
+          "name": { "en": "Experimentorium Science Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์เอกซ์เพอริเมนโตเรียม" },
+          "kind": "museumkid",
+          "area": { "en": "Behind the Parliament", "th": "หลังอาคารรัฐสภา" },
+          "what": { "en": "A hands-on science museum opened in 2016 with physics, maths, biology, anatomy and chemistry exhibits", "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือเล่น เปิดปี 2016 มีนิทรรศการฟิสิกส์ คณิตศาสตร์ ชีววิทยา กายวิภาค และเคมี" },
+          "why": { "en": "Children are encouraged to touch and shout; a good indoor stop for a wet day", "th": "เด็กได้จับและส่งเสียงได้เต็มที่ เหมาะเป็นที่หลบฝน" },
+          "tip": { "en": "Listings give daily opening from late morning; confirm the day's hours and ticket price before you go", "th": "แหล่งข้อมูลบอกว่าเปิดทุกวันตั้งแต่สายๆ เช็กเวลาและราคาตั๋วก่อนไป" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Experimentorium, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://georgia.travel/experimentorium-museum-of-entertaining-science"
+        },
+        {
+          "name": { "en": "Gino Paradise Water Park", "th": "สวนน้ำจีโน่ พาราไดซ์" },
+          "kind": "themepark",
+          "area": { "en": "Tbilisi Sea, Beshenova Street", "th": "ทะเลทบิลิซี ถนนเบเชโนวา" },
+          "what": { "en": "Wave pool, 'wild river', a 31 m slide, a children's zone and some pools indoors, open all year", "th": "สระคลื่น แม่น้ำวน สไลเดอร์สูง 31 เมตร โซนเด็ก และมีสระในร่ม เปิดตลอดปี" },
+          "why": { "en": "Children up to 5 enter free and there is a pool with small slides; a rain-day choice because some pools are indoors", "th": "เด็กอายุไม่เกิน 5 ปีเข้าฟรี มีสระสไลเดอร์เล็ก มีสระในร่มเหมาะวันฝนตก" },
+          "tip": { "en": "Take the birth certificate for a child under 6; bring arm bands for the wave pool; prices change often", "th": "เด็กต่ำกว่า 6 ปีพกสูติบัตรไว้ เตรียมห่วงแขนสำหรับสระคลื่น ราคาเปลี่ยนบ่อย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ ₾59–66 adults on weekdays · ₾69–79 at weekends · children up to 5 free", "th": "≈ ₾59–66 ผู้ใหญ่วันธรรมดา · ₾69–79 วันหยุด · เด็กไม่เกิน 5 ปีฟรี" },
+          "book": "none",
+          "q": "Gino Paradise, Beshenova Street, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://madloba.info/en/blog/sights-of-georgia/gino-paradise-tbilisi/"
+        },
+        {
+          "name": { "en": "Vake Park", "th": "สวนวาเก" },
+          "kind": "park",
+          "area": { "en": "Vake", "th": "วาเก" },
+          "what": { "en": "One of the greenest parks in the city, with shaded paths and playgrounds", "th": "หนึ่งในสวนที่เขียวที่สุดของเมือง มีทางเดินร่มรื่นและสนามเด็กเล่น" },
+          "why": { "en": "Flat paths for a pram and room to run; the cable car to Turtle Lake starts beside it", "th": "ทางเรียบเข็นรถเข็นได้ มีที่ให้วิ่งเล่น กระเช้าไปทะเลสาบเต่าเริ่มตรงนี้" },
+          "tip": { "en": "Start the day here, then go up to Turtle Lake; lunch is easy in Vake", "th": "เริ่มวันที่นี่ แล้วขึ้นไปทะเลสาบเต่า มื้อกลางวันหาง่ายในย่านวาเก" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Vake Park, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days"
+        },
+        {
+          "name": { "en": "Turtle Lake", "th": "ทะเลสาบเต่า" },
+          "kind": "nature",
+          "area": { "en": "Above Vake Park", "th": "เหนือสวนวาเก" },
+          "what": { "en": "A small hill lake with circular paths and lakeside terraces, reached by a six-minute cable car", "th": "ทะเลสาบเล็กบนเนินเขา มีทางเดินรอบทะเลสาบและระเบียงริมน้ำ ขึ้นกระเช้าประมาณ 6 นาที" },
+          "why": { "en": "The cable car is half the fun; easy circular walking and cafés by the water", "th": "นั่งกระเช้าก็สนุกแล้ว เดินรอบทะเลสาบง่าย มีร้านกาแฟริมน้ำ" },
+          "tip": { "en": "The cable car runs on the city transport card, not cash; keep a card or ask at the station", "th": "กระเช้าใช้บัตรเดินทางของเมือง ไม่รับเงินสด เตรียมบัตรหรือถามที่สถานี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Turtle Lake, Tbilisi",
+          "ok": "2026-11",
+          "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "โบสถ์เกอร์เกติตรีนิตี",
+            "en": "Gergeti Trinity Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "คาซเบกี (สเตปันต์สมินดา)",
+            "en": "Kazbegi (Stepantsminda)"
+          },
+          "what": {
+            "th": "โบสถ์บนเนินเหนือคาซเบกี เดินขึ้นหรือนั่งรถ 4×4 ร่วม",
+            "en": "A hilltop church above Kazbegi, by a short hike or a shared 4×4"
+          },
+          "why": {
+            "th": "เห็นวิวยอดเขาคาซเบกจากลานโบสถ์",
+            "en": "Views of Mount Kazbek from the churchyard"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ กางเกงหรือกระโปรงยาว คลุมไหล่ ผู้หญิงคลุมผม มีผ้าให้ยืมที่ประตู ไปแต่เช้า",
+            "en": "Dress code: long trousers or skirt, shoulders and women’s hair covered; wraps lent at the gate. Go early"
+          },
+          "q": "Gergeti Trinity Church, Kazbegi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days",
+          "name": {
+            "th": "น้ำตกเลกห์วตาเคฟี",
+            "en": "Leghvtakhevi waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทบิลิซีเก่า",
+            "en": "Old Tbilisi"
+          },
+          "what": {
+            "th": "น้ำตกกลางเมือง เดินไปตามทางไม้",
+            "en": "A waterfall in the city centre, reached on boardwalks"
+          },
+          "why": {
+            "th": "น้ำตกไหลแรง เดินจากเมืองเก่าไม่ไกล",
+            "en": "A roaring waterfall a short walk from the old town"
+          },
+          "tip": {
+            "th": "ช่วงท้ายมีบันได จับมือเด็กไว้ และทิ้งรถเข็นไว้",
+            "en": "Steps at the end: hold hands and leave the pram behind"
+          },
+          "q": "Leghvtakhevi Waterfall, 1 Botanikuri Street, Tbilisi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days",
+          "name": {
+            "th": "สะพานสันติภาพ",
+            "en": "Bridge of Peace"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ระหว่างสวนริเกกับทบิลิซีเก่า",
+            "en": "Between Rike Park and Old Tbilisi"
+          },
+          "what": {
+            "th": "สะพานกระจกข้ามแม่น้ำ",
+            "en": "A glass footbridge over the river"
+          },
+          "why": {
+            "th": "เดินลอดซุ้มกระจก บริเวณนี้ปลอดรถ เล่นสกู๊ตเตอร์ได้",
+            "en": "Glass arches to walk under; the area is car-free for scooters"
+          },
+          "q": "Bridge of Peace, Tbilisi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "มหาวิหารซีโอนี",
+            "en": "Sioni Basilica"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านซีโอนี ทางใต้ของคาซเบกี",
+            "en": "Sioni village, south of Kazbegi"
+          },
+          "what": {
+            "th": "โบสถ์เก่าแก่ที่สุดแห่งหนึ่งของย่าน มีหอสังเกตการณ์อยู่ข้าง",
+            "en": "One of the area’s oldest churches, with a watchtower beside it"
+          },
+          "why": {
+            "th": "เดินขึ้นไปไม่ไกล ได้วิวหุบเขา",
+            "en": "A short walk up for a view of the valley"
+          },
+          "q": "Sioni Basilica, Sioni, Kazbegi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ บริจาค 5 ลารี",
+            "en": "≈ GEL 5 donation"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "หัวหินยักษ์หมู่บ้านสโน",
+            "en": "Giant stone heads of Sno"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านสโน ใกล้คาซเบกี",
+            "en": "Sno village, near Kazbegi"
+          },
+          "what": {
+            "th": "สวนรูปปั้นหัวหินยักษ์กลางแจ้งที่ทางเข้าหมู่บ้าน",
+            "en": "An open-air garden of giant stone heads at the village entrance"
+          },
+          "why": {
+            "th": "หัวหินขนาดใหญ่ให้แหงนมอง",
+            "en": "Huge heads to look up at in the landscape"
+          },
+          "q": "Gigantic Sculptures by Merab Piranishvili, Sno",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "ป้อมซาคาโกรี",
+            "en": "Zakagori Fortress"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หุบเขาทรูโซ ใกล้คาซเบกี",
+            "en": "Truso Valley, near Kazbegi"
+          },
+          "what": {
+            "th": "ซากป้อมในหุบเขาทรูโซ เดินป่าหรือนั่งรถ 4×4",
+            "en": "A fortress ruin in the Truso Valley, by a hike or a 4×4"
+          },
+          "why": {
+            "th": "ทางเดินผ่านบ่อน้ำแร่หินปูน",
+            "en": "A walk with travertine springs on the way"
+          },
+          "tip": {
+            "th": "พกหนังสือเดินทาง มีด่านตรวจบัตรของทหารพราน",
+            "en": "Carry your passport: border guards check photo ID"
+          },
+          "q": "Zakagori Fortress, Truso Valley",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "อารามดาเรียลี",
+            "en": "Dariali Monastery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หุบเขาดาเรียลี ใกล้คาซเบกี",
+            "en": "Dariali Gorge, near Kazbegi"
+          },
+          "what": {
+            "th": "อารามใต้ภูเขาในหุบเขาดาเรียลี",
+            "en": "A monastery complex under the mountains of the Dariali gorge"
+          },
+          "why": {
+            "th": "บรรยากาศยิ่งใหญ่ มีคาเฟ่ให้กินข้าวกลางวัน",
+            "en": "A grand setting, with a café for lunch"
+          },
+          "q": "Dariali Monastery Complex, Dariali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+          "name": {
+            "th": "อารามโยอาเนนาตลิสเมเซลี",
+            "en": "Ioane Natlismcemeli monastery"
+          },
+          "kind": "views",
+          "area": {
+            "th": "คาซเบกี (สเตปันต์สมินดา)",
+            "en": "Kazbegi (Stepantsminda)"
+          },
+          "what": {
+            "th": "อารามเล็กบนเนินเหนือเมือง มองเห็นโบสถ์เกอร์เกติ",
+            "en": "A small monastery on the hill above the town, facing Gergeti church"
+          },
+          "why": {
+            "th": "วิวทั้งเมืองและภูเขา",
+            "en": "A view over the town and the mountains"
+          },
+          "tip": {
+            "th": "เดินราว 45 นาที มีช่วงชันสั้นๆ",
+            "en": "About 45 minutes’ walk with a short steep climb"
+          },
+          "q": "Ioane Natlismcemeli, Stepantsminda",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://georgia.travel/family-attractions/gldani-park",
+          "name": {
+            "th": "สวนกลดานี",
+            "en": "Gldani Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนคีซานิชวิลี กลดานี ทบิลิซี",
+            "en": "Khizanishvili Street, Gldani, Tbilisi"
+          },
+          "what": {
+            "th": "สวนขนาด 13,000 ตร.ม. มีทางเดิน ลานสเก็ต และผนังปีน",
+            "en": "A 13,000 m² park with trails, a skate park and climbing walls"
+          },
+          "why": {
+            "th": "ออกแบบมาเพื่อเด็กและวัยรุ่นโดยเฉพาะ",
+            "en": "Made especially for children and teenagers"
+          },
+          "q": "Gldani Park, Omar Khizanishvili St, Tbilisi",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

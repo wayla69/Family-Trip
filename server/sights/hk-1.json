@@ -1,0 +1,1458 @@
+{
+  "cc": "hk",
+  "towns": [
+    {
+      "place": "hk-hongkong",
+      "sights": [
+        {
+          "name": { "en": "Hong Kong Disneyland", "th": "ฮ่องกงดิสนีย์แลนด์" },
+          "local": "香港迪士尼樂園",
+          "kind": "themepark",
+          "area": { "en": "Lantau", "th": "ลันเตา" },
+          "what": { "en": "The Disney castle, World of Frozen, Toy Story Land and parades, a short MTR ride from the city", "th": "ปราสาทดิสนีย์ โซนโฟรเซ่น ทอยสตอรี่แลนด์ และขบวนพาเหรด นั่งรถไฟใต้ดินไม่ไกลจากเมือง" },
+          "why": { "en": "Compact and gentle, with many rides even toddlers can go on and characters to meet", "th": "สวนไม่ใหญ่ เครื่องเล่นเบาๆ เยอะ เด็กเตาะแตะเล่นได้หลายอย่าง และมีตัวการ์ตูนให้ถ่ายรูป" },
+          "tip": { "en": "Prices change by date tier; weekdays are cheaper and quieter", "th": "ราคาตั๋วขึ้นกับระดับวัน วันธรรมดาถูกกว่าและคนน้อยกว่า" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 8,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ HK$669+ adults · ≈ HK$499+ children (3–11) · under 3 free", "th": "≈ HK$669 ขึ้นไป ผู้ใหญ่ · ≈ HK$499 ขึ้นไป เด็ก 3–11 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "req",
+          "q": "Hong Kong Disneyland, Lantau Island, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/hong-kong-disneyland-tickets-guide"
+        },
+        {
+          "name": { "en": "Ocean Park", "th": "โอเชียนปาร์ก" },
+          "local": "香港海洋公園",
+          "kind": "themepark",
+          "area": { "en": "Aberdeen, Southern District", "th": "อเบอร์ดีน เขตใต้" },
+          "what": { "en": "A marine theme park on the hills: giant pandas, an aquarium, a polar zone, a cable car and rides", "th": "สวนสนุกทางทะเลบนเนินเขา มีแพนด้ายักษ์ อควาเรียม โซนขั้วโลก กระเช้า และเครื่องเล่น" },
+          "why": { "en": "Animals and rides in one day; Whiskers Harbour has rides made for little ones", "th": "ได้ทั้งสัตว์และเครื่องเล่นในวันเดียว โซนวิสเกอร์สฮาร์เบอร์มีเครื่องเล่นสำหรับเด็กเล็ก" },
+          "tip": { "en": "Take the cable car one way and the train the other; see the pandas early", "th": "ขากระเช้าขากลับรถไฟ ไปดูแพนด้าแต่เช้า" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 7,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ HK$538 adults · HK$269 children (3–11) · under 3 free", "th": "≈ HK$538 ผู้ใหญ่ · HK$269 เด็ก 3–11 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "rec",
+          "q": "Ocean Park, Aberdeen, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.wanderinchina.com/destinations/hongkong/ocean-park/"
+        },
+        {
+          "name": { "en": "Water World Ocean Park", "th": "วอเตอร์เวิลด์ โอเชียนปาร์ก" },
+          "local": "水上樂園",
+          "kind": "play",
+          "area": { "en": "Tai Shue Wan, Southern District", "th": "ไท่ชูวาน เขตใต้" },
+          "what": { "en": "A seaside water park with slides, a lazy river and splash zones built into the hill", "th": "สวนน้ำริมทะเล มีสไลเดอร์ แม่น้ำลอยตัว และโซนน้ำกระจายบนเนินเขา" },
+          "why": { "en": "The splash play areas have shallow water for small children; the big slides are for older ones", "th": "โซนเล่นน้ำมีน้ำตื้นสำหรับเด็กเล็ก สไลเดอร์ใหญ่สำหรับเด็กโต" },
+          "tip": { "en": "Open in the warm months only; check the season's dates before you plan", "th": "เปิดเฉพาะช่วงหน้าร้อน เช็กวันเปิดของปีก่อนวางแผน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ HK$202 adults · HK$101 children (3–11) on the pre-summer offer", "th": "≈ HK$202 ผู้ใหญ่ · HK$101 เด็ก 3–11 ปี ช่วงโปรก่อนหน้าร้อน" },
+          "book": "rec",
+          "q": "Water World Ocean Park, Tai Shue Wan, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.oceanpark.com.hk/en/tickets-and-offers/offers/49th-anniversary-ticket-promotion"
+        },
+        {
+          "name": { "en": "The Peak Tram and Sky Terrace 428", "th": "พีคแทรมและสกายเทอร์เรซ 428" },
+          "local": "山頂纜車 · 凌霄閣摩天台428",
+          "kind": "views",
+          "area": { "en": "Central to Victoria Peak", "th": "เซ็นทรัล ถึงวิกตอเรียพีค" },
+          "what": { "en": "A steep old funicular up to Victoria Peak and the roof terrace with the famous harbour view", "th": "รถรางสายชันขึ้นวิกตอเรียพีค และดาดฟ้าชมวิวอ่าวที่มีชื่อเสียง" },
+          "why": { "en": "The tilted ride is a thrill in itself, and the Peak has paths and space for children", "th": "นั่งรถรางเอียงๆ ก็สนุกแล้ว บนพีคมีทางเดินและที่ให้เด็กเดินเล่น" },
+          "tip": { "en": "Book a timed ticket online and go on a clear morning; the queue is longest at sunset", "th": "จองตั๋วตามรอบออนไลน์ ไปเช้าวันฟ้าใส คิวยาวที่สุดตอนพระอาทิตย์ตก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ HK$182 adults return with Sky Terrace · less for children", "th": "≈ HK$182 ผู้ใหญ่ ไปกลับรวมสกายเทอร์เรซ · เด็กถูกกว่า" },
+          "book": "rec",
+          "q": "Peak Tram Lower Terminus, Garden Road, Central, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.hk-victoria-peak.com/peak-tram-hong-kong-ultimate-guide-tickets-schedule"
+        },
+        {
+          "name": { "en": "Ngong Ping 360", "th": "เงิ่งปิง 360" },
+          "local": "昂坪360",
+          "kind": "ride",
+          "area": { "en": "Tung Chung, Lantau", "th": "ตุงชุง ลันเตา" },
+          "what": { "en": "A 25-minute cable car over the sea and mountains to Ngong Ping village and the Big Buddha", "th": "กระเช้า 25 นาทีข้ามทะเลและภูเขาไปหมู่บ้านเงิ่งปิงและพระใหญ่" },
+          "why": { "en": "A long, calm ride with huge views; the village at the top is flat and easy with children", "th": "นั่งนานและนิ่ง วิวกว้างมาก หมู่บ้านด้านบนทางเรียบ เดินกับเด็กง่าย" },
+          "tip": { "en": "Closed in strong wind and on maintenance days; go early to beat the queue", "th": "ปิดวันลมแรงและวันซ่อมบำรุง ไปเช้าเพื่อเลี่ยงคิว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ HK$295 adults return (standard cabin) · less for children", "th": "≈ HK$295 ผู้ใหญ่ ไปกลับ (ห้องธรรมดา) · เด็กถูกกว่า" },
+          "book": "rec",
+          "q": "Ngong Ping 360 Tung Chung Terminal, Lantau, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.np360.com.hk/media/ehtctytq/immediate-release-ngong-ping-360-s-back-to-the-opening-price-celebrates-20th-anniversary-with-hong-kong-residents.pdf"
+        },
+        {
+          "name": { "en": "Hong Kong Science Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์ฮ่องกง" },
+          "local": "香港科學館",
+          "kind": "museumkid",
+          "area": { "en": "Tsim Sha Tsui East", "th": "จิมซาจุ่ยตะวันออก" },
+          "what": { "en": "Over 500 exhibits, most of them hands-on, with a giant energy machine of rolling balls", "th": "ของจัดแสดงกว่า 500 ชิ้น ส่วนใหญ่ลองเล่นได้ มีเครื่องจักรพลังงานยักษ์ที่ลูกบอลกลิ้งไปมา" },
+          "why": { "en": "A top rain plan; children can push, pull and play with almost everything", "th": "แผนวันฝนชั้นดี เด็กได้กด ดึง และเล่นเกือบทุกอย่าง" },
+          "tip": { "en": "Free on Wednesdays; the 35th-birthday shows run through 2026", "th": "วันพุธเข้าฟรี ปี 2026 มีนิทรรศการฉลองครบ 35 ปี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ HK$20 adults · under 4 free · free on Wednesdays", "th": "≈ HK$20 ผู้ใหญ่ · ต่ำกว่า 4 ขวบฟรี · วันพุธฟรี" },
+          "book": "none",
+          "q": "Hong Kong Science Museum, Tsim Sha Tsui East, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.info.gov.hk/gia/general/202604/16/P2026041600238p.htm"
+        },
+        {
+          "name": { "en": "Hong Kong Space Museum", "th": "พิพิธภัณฑ์อวกาศฮ่องกง" },
+          "local": "香港太空館",
+          "kind": "museumkid",
+          "area": { "en": "Tsim Sha Tsui", "th": "จิมซาจุ่ย" },
+          "what": { "en": "Space halls with hands-on exhibits and a big dome theatre showing films about stars and wild places", "th": "ห้องอวกาศที่มีของให้ลองเล่น และโรงภาพยนตร์โดมฉายหนังเรื่องดวงดาวและธรรมชาติ" },
+          "why": { "en": "Indoors on the waterfront; the halls are quick and fun for small astronauts", "th": "อยู่ในร่มริมอ่าว ห้องจัดแสดงเดินไม่นานและสนุกสำหรับนักบินอวกาศตัวน้อย" },
+          "tip": { "en": "Closed on Tuesdays; dome shows need their own ticket", "th": "ปิดวันอังคาร รอบฉายในโดมต้องซื้อตั๋วแยก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ HK$10 halls · under 4 free · free on Wednesdays", "th": "≈ HK$10 ห้องจัดแสดง · ต่ำกว่า 4 ขวบฟรี · วันพุธฟรี" },
+          "book": "none",
+          "q": "Hong Kong Space Museum, 10 Salisbury Road, Tsim Sha Tsui, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.dimsumdaily.hk/hong-kong-space-museum-unveils-wild-asia-life-at-extremes-dome-show-from-16th-september/"
+        },
+        {
+          "name": { "en": "Hong Kong Palace Museum", "th": "พิพิธภัณฑ์พระราชวังฮ่องกง" },
+          "local": "香港故宮文化博物館",
+          "kind": "museum",
+          "area": { "en": "West Kowloon Cultural District", "th": "เวสต์เกาลูน" },
+          "what": { "en": "Treasures from Beijing's Forbidden City in a modern building by the harbour, with family tours and workshops", "th": "สมบัติจากพระราชวังต้องห้ามปักกิ่งในอาคารทันสมัยริมอ่าว มีทัวร์และกิจกรรมสำหรับครอบครัว" },
+          "why": { "en": "Better for older children; the harbour lawns of the park outside are perfect for little ones", "th": "เหมาะกับเด็กโตกว่า สนามหญ้าริมอ่าวข้างนอกเหมาะกับเด็กเล็กมาก" },
+          "tip": { "en": "Book a time slot online; pair it with a run on the West Kowloon lawns", "th": "จองรอบเวลาออนไลน์ แล้ววิ่งเล่นต่อที่สนามหญ้าเวสต์เกาลูน" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ HK$70 adults · HK$35 concession", "th": "≈ HK$70 ผู้ใหญ่ · HK$35 ราคาลดหย่อน" },
+          "book": "rec",
+          "q": "Hong Kong Palace Museum, West Kowloon, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.chinadailyhk.com/article/634858"
+        },
+        {
+          "name": { "en": "Hong Kong Wetland Park", "th": "ฮ่องกงเว็ตแลนด์พาร์ก" },
+          "local": "香港濕地公園",
+          "kind": "nature",
+          "area": { "en": "Tin Shui Wai", "th": "ทินซุยไหว" },
+          "what": { "en": "Boardwalks over ponds and mangroves, bird hides and indoor galleries, home of Pui Pui the crocodile", "th": "ทางเดินไม้เหนือบ่อน้ำและป่าโกงกาง จุดซุ่มดูนก ห้องจัดแสดงในร่ม และบ้านของจระเข้ปุ้ยปุ้ย" },
+          "why": { "en": "Flat, step-free and cheap; small children spot fiddler crabs, mudskippers and birds", "th": "ทางเรียบ ไม่มีขั้นบันได ค่าเข้าถูก เด็กเล็กได้มองหาปูก้ามดาบ ปลาตีน และนก" },
+          "tip": { "en": "The indoor galleries make it work in light rain; under 3s need no ticket", "th": "มีห้องจัดแสดงในร่ม ฝนตกปรอยๆ ก็ไปได้ เด็กต่ำกว่า 3 ขวบไม่ต้องใช้ตั๋ว" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ HK$30 adults · HK$15 children (3–17) · under 3 free", "th": "≈ HK$30 ผู้ใหญ่ · HK$15 เด็ก 3–17 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "none",
+          "q": "Hong Kong Wetland Park, Tin Shui Wai, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.wetlandpark.gov.hk/en/information/ticketing"
+        },
+        {
+          "name": { "en": "Star Ferry", "th": "เรือสตาร์เฟอร์รี่" },
+          "local": "天星小輪",
+          "kind": "ride",
+          "area": { "en": "Tsim Sha Tsui to Central", "th": "จิมซาจุ่ย ถึงเซ็นทรัล" },
+          "what": { "en": "The old green-and-white ferry across Victoria Harbour, a ten-minute ride with the skyline all round", "th": "เรือเฟอร์รี่สีเขียวขาวเก่าแก่ข้ามอ่าววิกตอเรีย นั่งสิบนาทีเห็นตึกสูงรอบด้าน" },
+          "why": { "en": "Cheap, short and exciting for children; the open sides let them feel the sea breeze", "th": "ค่าโดยสารถูก นั่งไม่นาน เด็กตื่นเต้น ด้านข้างเปิดโล่งได้รับลมทะเล" },
+          "tip": { "en": "Pay by Octopus card; the upper deck has the better view", "th": "จ่ายด้วยบัตรอ็อกโทพัส ชั้นบนวิวดีกว่า" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ HK$5–6.50 adults · ≈ HK$3 children", "th": "≈ HK$5–6.50 ผู้ใหญ่ · ≈ HK$3 เด็ก" },
+          "book": "none",
+          "q": "Star Ferry Pier, Tsim Sha Tsui, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.chinadailyhk.com/article/641486"
+        },
+        {
+          "name": { "en": "Hong Kong Tram (Ding Ding)", "th": "รถรางฮ่องกง (ติ๊งติ๊ง)" },
+          "local": "香港電車",
+          "kind": "ride",
+          "area": { "en": "Hong Kong Island north shore", "th": "ฝั่งเหนือของเกาะฮ่องกง" },
+          "what": { "en": "Narrow double-decker trams rattling along the island's north shore from Kennedy Town to Shau Kei Wan", "th": "รถรางสองชั้นคันแคบวิ่งเลียบฝั่งเหนือของเกาะ ตั้งแต่เคนเนดี้ทาวน์ถึงเซากีวาน" },
+          "why": { "en": "Children love the front seat upstairs and the ding-ding bell; a cheap, slow city tour", "th": "เด็กชอบนั่งแถวหน้าชั้นบนและเสียงกริ่งติ๊งติ๊ง เป็นทัวร์เมืองช้าๆ ราคาถูก" },
+          "tip": { "en": "Board at the back, pay at the front as you get off; fold the pram, the stairs are steep", "th": "ขึ้นประตูหลัง จ่ายเงินตอนลงประตูหน้า พับรถเข็นเพราะบันไดชัน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ HK$3.30 adults · ≈ HK$1.60 children (3–11)", "th": "≈ HK$3.30 ผู้ใหญ่ · ≈ HK$1.60 เด็ก 3–11 ปี" },
+          "book": "none",
+          "q": "Western Market Tram Terminus, Sheung Wan, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/hong-kong-tram-guide"
+        },
+        {
+          "name": { "en": "Hong Kong Park and Edward Youde Aviary", "th": "สวนฮ่องกงพาร์กและสวนนกเอ็ดเวิร์ดยูด" },
+          "local": "香港公園 · 尤德觀鳥園",
+          "kind": "park",
+          "area": { "en": "Admiralty", "th": "แอดมิรัลตี้" },
+          "what": { "en": "A green park in the city with a big walk-through aviary on raised boardwalks, ponds with turtles and a playground", "th": "สวนเขียวกลางเมือง มีกรงนกใหญ่ที่เดินบนทางไม้ยกระดับ บ่อน้ำมีเต่า และสนามเด็กเล่น" },
+          "why": { "en": "Free and close to the Peak Tram; the birds fly right past at children's eye level", "th": "เข้าฟรีและอยู่ใกล้พีคแทรม นกบินผ่านในระดับสายตาเด็ก" },
+          "tip": { "en": "The aviary opens 9:00–17:00; the playground is near the top", "th": "สวนนกเปิด 9:00–17:00 สนามเด็กเล่นอยู่ด้านบนของสวน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Edward Youde Aviary, Hong Kong Park, Admiralty, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://hkp.lcsd.gov.hk/en/activities/guided-visits-primary-school-aviary-hong-kong-park"
+        },
+        {
+          "name": { "en": "Hong Kong Zoological and Botanical Gardens", "th": "สวนสัตว์และสวนพฤกษศาสตร์ฮ่องกง" },
+          "local": "香港動植物公園",
+          "kind": "zoo",
+          "area": { "en": "Central, Mid-Levels", "th": "เซ็นทรัล มิดเลเวลส์" },
+          "what": { "en": "A small old garden zoo above Central with monkeys, birds, a fountain and a playground", "th": "สวนสัตว์เล็กเก่าแก่เหนือเซ็นทรัล มีลิง นก น้ำพุ และสนามเด็กเล่น" },
+          "why": { "en": "Free and compact, a perfect hour for toddlers between city sights", "th": "เข้าฟรีและไม่ใหญ่ เหมาะกับเด็กเล็กหนึ่งชั่วโมงระหว่างเที่ยวในเมือง" },
+          "tip": { "en": "It sits on a hill; take a taxi up and walk down to Central", "th": "อยู่บนเนิน นั่งแท็กซี่ขึ้นแล้วเดินลงมาเซ็นทรัล" },
+          "ages": [2, 2, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hong Kong Zoological and Botanical Gardens, Albany Road, Central, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.localiiz.com/post/whatson-things-to-do-hong-kong-zoological-botanical-gardens-guide"
+        },
+        {
+          "name": { "en": "Temple Street Night Market", "th": "ตลาดกลางคืนเทมเปิลสตรีท" },
+          "local": "廟街夜市",
+          "kind": "market",
+          "area": { "en": "Jordan, Yau Ma Tei", "th": "จอร์แดน เหยาหม่าเต่ย" },
+          "what": { "en": "An evening street of stalls and open-air food places, known for claypot rice and seafood", "th": "ถนนแผงขายของยามเย็นและร้านอาหารกลางแจ้ง ขึ้นชื่อเรื่องข้าวหม้อดินและอาหารทะเล" },
+          "why": { "en": "A lively, colourful dinner out; go early with small children before it gets crowded", "th": "ทานมื้อเย็นบรรยากาศคึกคักสีสันสดใส มากับเด็กเล็กควรมาเร็วก่อนคนแน่น" },
+          "tip": { "en": "Stalls open from late afternoon; the food is busiest from 7 to 11 pm", "th": "แผงเริ่มเปิดช่วงบ่ายแก่ๆ ร้านอาหารคนแน่นช่วง 1 ทุ่มถึง 5 ทุ่ม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk · claypot rice ≈ HK$60–100", "th": "เดินฟรี · ข้าวหม้อดิน ≈ HK$60–100" },
+          "book": "none",
+          "q": "Temple Street Night Market, Jordan, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.yonder.fr/cityguides/hong-kong/shopping/temple-street-night-market"
+        },
+        {
+          "name": { "en": "Ladies' Market", "th": "ตลาดเลดี้ส์มาร์เก็ต" },
+          "local": "女人街",
+          "kind": "shop",
+          "area": { "en": "Tung Choi Street, Mong Kok", "th": "ถนนตุงฉอย มงก๊ก" },
+          "what": { "en": "A long street market of toys, clothes and souvenirs, closed to cars from the afternoon", "th": "ตลาดถนนยาว ขายของเล่น เสื้อผ้า และของฝาก ปิดถนนให้คนเดินตั้งแต่ช่วงบ่าย" },
+          "why": { "en": "Fun for older children choosing a small toy; tight and busy with a pram in the evening", "th": "เด็กโตสนุกกับการเลือกของเล่นชิ้นเล็ก ตอนเย็นแน่นและเข็นรถเข็นลำบาก" },
+          "tip": { "en": "Go in the afternoon; the Goldfish Market is a few streets north", "th": "ไปช่วงบ่าย ตลาดปลาทองอยู่ถัดไปทางเหนือไม่กี่ถนน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk", "th": "เดินฟรี" },
+          "book": "none",
+          "q": "Ladies' Market, Tung Choi Street, Mong Kok, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.temple-street-night-market.hk/ladies-night-market-hong-kong-complete-guide"
+        },
+        {
+          "name": { "en": "LEGOLAND® Discovery Centre Hong Kong", "th": "เลโก้แลนด์ ดิสคัฟเวอรี เซ็นเตอร์ ฮ่องกง" },
+          "kind": "play",
+          "area": { "en": "K11 MUSEA, Tsim Sha Tsui", "th": "K11 MUSEA จิมซาจุ่ย" },
+          "what": { "en": "Indoor LEGO play centre with 10 themed play areas, including a miniature of Hong Kong landmarks", "th": "ศูนย์เล่นเลโก้ในร่ม มี 10 โซนตามธีม รวมถึงโมเดลจิ๋วของแลนด์มาร์กฮ่องกง" },
+          "why": { "en": "Built for little LEGO fans, with building and play areas to explore", "th": "สร้างมาเพื่อแฟนเลโก้ตัวน้อย มีโซนต่อและเล่นให้สำรวจ" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "K11 MUSEA, Tsim Sha Tsui, Kowloon",
+          "ok": "2026-11",
+          "src": "https://legolanddiscoverycentre.com/hong-kong/en/information/latest-news/top-7-unmissable-family-activities-in-hong-kong-where-your-kids-can-play-and-learn"
+        },
+        {
+          "name": { "en": "Kowloon Park", "th": "สวนเกาลูน" },
+          "kind": "park",
+          "area": { "en": "Tsim Sha Tsui", "th": "จิมซาจุ่ย" },
+          "what": { "en": "A 13-hectare park with outdoor playgrounds, a maze garden, outdoor pools and a bird lake", "th": "สวนขนาด 13 เฮกตาร์ มีสนามเด็กเล่นกลางแจ้ง สวนเขาวงกต สระว่ายน้ำกลางแจ้ง และทะเลสาบนก" },
+          "why": { "en": "Outdoor playgrounds, a maze garden and a bird lake with flamingos for children", "th": "สนามเด็กเล่นกลางแจ้ง สวนเขาวงกต และทะเลสาบนกที่มีฟลามิงโกให้เด็กดู" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kowloon Park, Tsim Sha Tsui, Kowloon",
+          "ok": "2026-11",
+          "src": "https://silverkris.singaporeair.com/inspiration/family-friendly/activities/keep-kids-entertained-hong-kong/"
+        },
+        {
+          "name": { "en": "Victoria Park", "th": "สวนวิกตอเรีย" },
+          "kind": "park",
+          "area": { "en": "Causeway Bay", "th": "คอสเวย์เบย์" },
+          "what": { "en": "The island's biggest park, with flower markets and lantern displays at festivals", "th": "สวนที่ใหญ่ที่สุดบนเกาะ มีตลาดดอกไม้และการแสดงโคมไฟในช่วงเทศกาล" },
+          "why": { "en": "Playgrounds scattered through the grounds, plenty of open space to run", "th": "มีสนามเด็กเล่นกระจายอยู่ในสวนและพื้นที่โล่งให้วิ่ง" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Victoria Park, Causeway Bay",
+          "ok": "2026-11",
+          "src": "https://silverkris.singaporeair.com/inspiration/family-friendly/activities/keep-kids-entertained-hong-kong/"
+        },
+        {
+          "name": { "en": "Hong Kong Museum of Art", "th": "พิพิธภัณฑ์ศิลปะฮ่องกง" },
+          "kind": "museum",
+          "area": { "en": "Tsim Sha Tsui", "th": "จิมซาจุ่ย" },
+          "what": { "en": "Art museum in Tsim Sha Tsui with exhibitions", "th": "พิพิธภัณฑ์ศิลปะในจิมซาจุ่ยที่มีนิทรรศการ" },
+          "why": { "en": "Interactive elements for children to explore", "th": "มีส่วนโต้ตอบให้เด็กๆ สำรวจ" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hong Kong Museum of Art, Tsim Sha Tsui",
+          "ok": "2026-11",
+          "src": "https://silverkris.singaporeair.com/inspiration/family-friendly/activities/keep-kids-entertained-hong-kong/"
+        },
+        {
+          "name": { "en": "Repulse Bay Beach Children's Playground", "th": "สนามเด็กเล่นหาดรีพัลส์เบย์" },
+          "kind": "play",
+          "area": { "en": "Repulse Bay, Southern District", "th": "รีพัลส์เบย์ เขตใต้" },
+          "what": { "en": "Children's playground by Repulse Bay beach", "th": "สนามเด็กเล่นข้างหาดรีพัลส์เบย์" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "16 Beach Road, Repulse Bay, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Mount Austin Playground", "th": "สนามเด็กเล่นเมาต์ออสติน" },
+          "kind": "play",
+          "area": { "en": "The Peak", "th": "เดอะพีค" },
+          "what": { "en": "Public playground on Mount Austin Road, up at the Peak", "th": "สนามเด็กเล่นสาธารณะบนถนนเมาต์ออสติน ขึ้นไปบนพีค" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mount Austin Road, the Peak, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Sai On Lane Children's Playground", "th": "สนามเด็กเล่นซอยไซออน" },
+          "kind": "play",
+          "area": { "en": "Sai Wan, Central and Western District", "th": "ไซวาน เขตเซ็นทรัลและเวสเทิร์น" },
+          "what": { "en": "Public children's playground in Sai Wan", "th": "สนามเด็กเล่นสาธารณะในไซวาน" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sai On Lane, Sai Wan, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Quarry Bay Park", "th": "สวนควอรีเบย์" },
+          "kind": "play",
+          "area": { "en": "Taikoo Shing, Quarry Bay", "th": "ไทคูชิง ควอรีเบย์" },
+          "what": { "en": "Park in Taikoo Shing with a children's playground", "th": "สวนในไทคูชิงที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Taikoo Shing, Quarry Bay, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Ap Lei Chau Park", "th": "สวนอาปเลาเจา" },
+          "kind": "play",
+          "area": { "en": "Aberdeen, Southern District", "th": "อเบอร์ดีน เขตใต้" },
+          "what": { "en": "Park on Ap Lei Chau with a children's playground", "th": "สวนบนเกาะอาปเลาเจาที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Ap Lei Chau Main Street, Aberdeen, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Wan Chai Park", "th": "สวนหวันไจ๋" },
+          "kind": "play",
+          "area": { "en": "Wan Chai", "th": "หวันไจ๋" },
+          "what": { "en": "Park in Wan Chai with a children's playground", "th": "สวนในหวันไจ๋ที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Bullock Lane, Wan Chai, Hong Kong",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Lai Chi Kok Park", "th": "สวนไหลจีกก" },
+          "kind": "play",
+          "area": { "en": "Lai Chi Kok, Sham Shui Po", "th": "ไหลจีกก ซัมซุยโป" },
+          "what": { "en": "Park with a children's playground in Lai Chi Kok", "th": "สวนที่มีสนามเด็กเล่นในไหลจีกก" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "1 Lai Wan Road, Lai Chi Kok, Kowloon",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Cherry Street Park", "th": "สวนเชอร์รีสตรีท" },
+          "kind": "play",
+          "area": { "en": "Mong Kok", "th": "มงก๊ก" },
+          "what": { "en": "Park in Mong Kok with a children's playground", "th": "สวนในมงก๊กที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "1 Cherry Street, Mong Kok, Kowloon",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Middle Road Children's Playground", "th": "สนามเด็กเล่นถนนมิดเดิลโร้ด" },
+          "kind": "play",
+          "area": { "en": "Tsim Sha Tsui", "th": "จิมซาจุ่ย" },
+          "what": { "en": "Children's playground on Middle Road, near Tsim Sha Tsui", "th": "สนามเด็กเล่นบนถนนมิดเดิลโร้ด ใกล้จิมซาจุ่ย" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Middle Road, Tsim Sha Tsui, Kowloon",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Tung Chung North Park", "th": "สวนตุงชุงเหนือ" },
+          "kind": "play",
+          "area": { "en": "Tung Chung, Lantau", "th": "ตุงชุง ลันเตา" },
+          "what": { "en": "Park in Tung Chung on Lantau with a children's playground", "th": "สวนในตุงชุงบนเกาะลันเตาที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "29 Man Tung Road, Tung Chung, New Territories",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Ma On Shan Park", "th": "สวนหม่าออนซาน" },
+          "kind": "play",
+          "area": { "en": "Ma On Shan, Sha Tin", "th": "หม่าออนซาน ซาทิน" },
+          "what": { "en": "Large park in Ma On Shan with a children's playground", "th": "สวนใหญ่ในหม่าออนซานที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "12 On Chun Street, Ma On Shan, New Territories",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Tai Po Waterfront Park", "th": "สวนริมน้ำไทโป" },
+          "kind": "play",
+          "area": { "en": "Tai Po", "th": "ไทโป" },
+          "what": { "en": "Waterfront park in Tai Po with a children's playground", "th": "สวนริมน้ำในไทโปที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Dai Fat Street, Tai Po, New Territories",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Sai Kung Waterfront Park", "th": "สวนริมน้ำไซกุง" },
+          "kind": "play",
+          "area": { "en": "Sai Kung", "th": "ไซกุง" },
+          "what": { "en": "Waterfront park in Sai Kung with a children's playground", "th": "สวนริมน้ำในไซกุงที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Wai Man Road, Sai Kung, New Territories",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+        {
+          "name": { "en": "Tsing Yi Northeast Park", "th": "สวนชิงยีตะวันออกเฉียงเหนือ" },
+          "kind": "play",
+          "area": { "en": "Tsing Yi", "th": "ชิงยี" },
+          "what": { "en": "Park in Tsing Yi with a children's playground", "th": "สวนในชิงยีที่มีสนามเด็กเล่น" },
+          "why": { "en": "Inclusive play equipment for all children, including children with disabilities", "th": "อุปกรณ์เล่นแบบครอบคลุมสำหรับเด็กทุกคน รวมถึงเด็กที่มีความพิการ" },
+          "tip": { "en": "Allow about an hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "No. 10, Tam Kon Shan Road, Tsing Yi, New Territories",
+          "ok": "2026-11",
+          "src": "https://www.lcsd.gov.hk/en/facilities/facilitieslist/children/playequipment.html"
+        },
+      {"name":{"en":"M+","th":"เอ็ม+"},"kind":"museum","area":{"en":"West Kowloon Cultural District","th":"เขตวัฒนธรรมเวสต์เคาลูน"},"what":{"en":"Multimedia museum in West Kowloon with installations built around family programmes.","th":"พิพิธภัณฑ์มัลติมีเดียในเวสต์เคาลูน มีงานติดตั้งที่ออกแบบจากโปรแกรมสำหรับครอบครัว"},"why":{"en":"Installations encourage kids to explore and imagine; a picnic on the Art Park lawns afterwards.","th":"งานติดตั้งชวนเด็กสำรวจและจินตนาการ และหลังชมแล้วปิกนิกบนสนามหญ้าอาร์ตพาร์คได้"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"M+, West Kowloon Cultural District, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_CN/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
+      {"name":{"en":"Kadoorie Farm and Botanical Garden","th":"คาดูรี ฟาร์มและสวนพฤกษศาสตร์"},"kind":"nature","area":{"en":"Tai Po District","th":"เขตไท่โป"},"what":{"en":"Wildlife sanctuary on the slopes of Tai Mo Shan with hundreds of bird and mammal species.","th":"เขตอนุรักษ์สัตว์ป่าบนเนินไท่มูชาน มีนกและสัตว์เลี้ยงลูกด้วยนมหลายร้อยชนิด"},"why":{"en":"Leafy trails where butterflies flutter, flamingos preen and parrots chatter, plus tropical greenhouses and animal sanctuaries.","th":"มีเส้นทางร่มรื่นให้ผีเสื้อบิน ฟลามิงโกกระพือขน และนกแก้วร้อง พร้อมเรือนกระจกเขตร้อนและที่พักสัตว์"},"tip":{"en":"The entry ticket includes a shuttle ride up the hillside, then a gentle walk down a fern-lined path.","th":"ตั๋วเข้าชมรวมรถรับส่งขึ้นเขา แล้วเดินลงทางเดินที่มีเฟิร์นขึ้นสองข้างแบบสบายๆ"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kadoorie Farm and Botanical Garden, Tai Po District, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_CN/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
+      {"name":{"en":"Hong Kong Children’s Discovery Museum","th":"พิพิธภัณฑ์การค้นพบของเด็กฮ่องกง"},"kind":"museumkid","area":{"en":"Sai Wan Ho","th":"ไซวันโฮ"},"what":{"en":"Hands-on museum on the east side of Hong Kong Island with STEM activities and painting stations.","th":"พิพิธภัณฑ์ลงมือทำทางฝั่งตะวันออกของเกาะฮ่องกง มีกิจกรรม STEM และมุมวาดภาพ"},"why":{"en":"Water Ways play area, experiments and creative corners where families play and learn together.","th":"มีมุมเล่นน้ำ การทดลอง และมุมสร้างสรรค์ที่ครอบครัวเล่นและเรียนรู้ด้วยกัน"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hong Kong Children’s Discovery Museum, Sai Wan Ho, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_CN/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
+      {"name":{"en":"Sai Ying Pun Waterfront Park","th":"สวนริมน้ำซายอิงปุน"},"kind":"park","area":{"en":"Sai Ying Pun","th":"ซายอิงปุน"},"what":{"en":"Harbourside park between Sun Yat Sen Memorial Park and the Western Wholesale Food Market.","th":"สวนริมท่าเรือระหว่างสวนอนุสรณ์ซุนยัตเซ็นกับตลาดขายส่งอาหารตะวันตก"},"why":{"en":"A playground for little ones: cloud-shaped trampolines, slides, sand pits and water stations, with harbour views for parents.","th":"สนามเด็กเล่นสำหรับเด็กเล็ก มีแทรมโพลีนรูปเมฆ สไลด์ บ่อทราย และจุดน้ำ พร้อมวิวท่าเรือให้พ่อแม่"},"ages":[2,2,2,1],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sai Ying Pun Waterfront Park, Sai Ying Pun, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_CN/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
+      {"name":{"en":"EpicLand","th":"เอพิกแลนด์"},"kind":"play","area":{"en":"Kai Tak Sports Park mall, Kai Tak","th":"ห้างในไคตั๊กสปอร์ตพาร์ก ไคตั๊ก"},"what":{"en":"A big indoor adventure playground with six play zones and a MiniLand for toddlers","th":"สนามเด็กเล่นผจญภัยในร่มขนาดใหญ่ มี 6 โซน และมินิแลนด์สำหรับเด็กเล็ก"},"why":{"en":"Climbing, sliding and running zones on a rainy day, with a corner of its own for the smallest","th":"วันฝนตกได้ปีน ได้ไถล ได้วิ่ง และมีมุมแยกสำหรับเด็กเล็กที่สุด"},"tip":{"en":"Sessions are two hours; book online for the weekend","th":"เล่นได้รอบละ 2 ชั่วโมง วันหยุดควรจองออนไลน์"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"≈ HK$258 a child for two hours","th":"≈ HK$258 ต่อเด็ก 1 คน 2 ชั่วโมง"},"book":"rec","q":"EpicLand, Kai Tak Sports Park, Hong Kong","ok":"2026-11","src":"https://www.epiclandhk.com/post/rainy-day-in-hong-kong-best-indoor-playgrounds-for-families-2026"},
+      {"name":{"en":"Ryze Hong Kong","th":"ไรซ์ ฮ่องกง"},"kind":"play","area":{"en":"Kodak House, Java Road, Quarry Bay","th":"อาคารโกดักเฮาส์ ถนนจาวา ควอรีเบย์"},"what":{"en":"A large trampoline park with foam pits, dodgeball courts and a ninja course","th":"สวนแทรมโพลีนขนาดใหญ่ มีบ่อโฟม สนามดอดจ์บอล และด่านนินจา"},"why":{"en":"Children of three and up bounce off energy indoors, and there is a separate area for toddlers","th":"เด็ก 3 ขวบขึ้นไปกระโดดปล่อยพลังในร่ม และมีโซนแยกสำหรับเด็กเล็ก"},"tip":{"en":"Grip socks are needed on the trampolines","th":"ต้องใส่ถุงเท้ากันลื่นบนแทรมโพลีน"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ryze, Kodak House, Quarry Bay, Hong Kong","ok":"2026-11","src":"https://www.epiclandhk.com/post/rainy-day-in-hong-kong-best-indoor-playgrounds-for-families-2026"},
+      {"name":{"en":"Kiztopia Wan Chai","th":"คิซโทเปีย หว่านไจ๋"},"kind":"play","area":{"en":"Hopewell Centre, Queen's Road East, Wan Chai","th":"โฮปเวลล์เซ็นเตอร์ ถนนควีนส์โรดอีสต์ หว่านไจ๋"},"what":{"en":"The biggest Kiztopia in Hong Kong, 18 themed play zones on one floor","th":"คิซโทเปียสาขาใหญ่ที่สุดในฮ่องกง มีโซนเล่นธีมต่างๆ 18 โซนในชั้นเดียว"},"why":{"en":"Pretend-play, ball pits and climbing for small children, all under one roof","th":"มีของเล่นบทบาทสมมติ บ่อบอล และที่ปีนสำหรับเด็กเล็ก รวมอยู่ใต้หลังคาเดียว"},"tip":{"en":"Inside Hopewell Mall; allow about two hours","th":"อยู่ในห้างโฮปเวลล์มอลล์ เผื่อเวลาราว 2 ชั่วโมง"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kiztopia, Hopewell Centre, 183 Queen's Road East, Wan Chai, Hong Kong","ok":"2026-11","src":"https://www.timeout.com/hong-kong/things-to-do/kiztopia-wan-chai"},
+      {"name":{"en":"High Island Geo Trail","th":"เส้นทางธรณีไฮไอส์แลนด์"},"kind":"nature","area":{"en":"Sai Kung, New Territories","th":"ไซกง นิวเทร์ริทอรีส์"},"what":{"en":"An easy 2.8 km trail in the geopark past sea cliffs of six-sided rock columns","th":"ทางเดินง่าย 2.8 กม. ในอุทยานธรณี ผ่านหน้าผาริมทะเลที่เป็นเสาหินหกเหลี่ยม"},"why":{"en":"The rock columns look like giant pencils; the visitor centre gives out maps and fun fact sheets","th":"เสาหินเหมือนดินสอยักษ์ และศูนย์บริการให้แผนที่กับเอกสารความรู้สนุกๆ ติดไปด้วย"},"tip":{"en":"Pick up the maps at the Sai Kung visitor centre first; not for a pram","th":"แวะรับแผนที่ที่ศูนย์บริการไซกงก่อน รถเข็นเด็กไปไม่ได้"},"ages":[0,1,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"High Island Geo Trail, East Dam, Sai Kung, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_PH/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
+      {"name":{"en":"Playfield 5, Kai Tak Sports Park","th":"เพลย์ฟิลด์ 5 ไคตั๊กสปอร์ตพาร์ก"},"kind":"play","area":{"en":"Kai Tak Sports Park, Kai Tak","th":"ไคตั๊กสปอร์ตพาร์ก ไคตั๊ก"},"what":{"en":"An outdoor playground with sandpits, climbing walls, water play and ziplines","th":"สนามเด็กเล่นกลางแจ้ง มีบ่อทราย กำแพงปีน ที่เล่นน้ำ และสลิง"},"why":{"en":"Room to run off energy and plenty of free play","th":"มีที่ให้วิ่งปล่อยพลัง เล่นได้เต็มที่"},"tip":{"en":"Bring spare clothes for the water play","th":"เตรียมเสื้อผ้าสำรองไว้สำหรับโซนเล่นน้ำ"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Playfield 5, Kai Tak Sports Park, Kowloon, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_PH/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
+      {"name":{"en":"Art Park, West Kowloon","th":"อาร์ตพาร์ก เวสต์เกาลูน"},"kind":"park","area":{"en":"West Kowloon Cultural District","th":"เขตวัฒนธรรมเวสต์เกาลูน"},"what":{"en":"Wide lawns by the harbour for a picnic and free play","th":"สนามหญ้ากว้างริมอ่าว ปิกนิกและเล่นได้เต็มที่"},"why":{"en":"Grass to run on, with food trucks nearby for a snack","th":"มีสนามหญ้าให้วิ่ง และมีรถขายอาหารอยู่ใกล้ๆ"},"tip":{"en":"Buy a snack from the food trucks for the picnic","th":"ซื้อของว่างจากรถขายอาหารไว้ปิกนิก"},"ages":[2,2,2,2],"hrs":2,"io":"out","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Art Park, West Kowloon Cultural District, Hong Kong","ok":"2026-11","src":"https://www.cathaypacific.com/cx/en_PH/inspiration/hong-kong/things-to-do-hong-kong-with-kids.html"},
+      {"name":{"en":"Dragon’s Back Trail","th":"เส้นทางหลังมังกร"},"kind":"nature","area":{"en":"Shek O Country Park, to Big Wave Bay","th":"อุทยานเช็กโอ ถึงหาดบิ๊กเวฟเบย์"},"what":{"en":"A hike of about 8.5 km over the ridge to Big Wave Bay, with views along the coast","th":"เดินป่าราว 8.5 กม. ตามสันเขาไปถึงหาดบิ๊กเวฟเบย์ มองเห็นชายฝั่งตลอดทาง"},"why":{"en":"Big views for older children who can walk a long way; it ends at a beach","th":"วิวกว้างสำหรับเด็กโตที่เดินไกลได้ และจบที่ชายหาด"},"tip":{"en":"Rocky in places and no water on the way: bring water, snacks and good shoes","th":"บางช่วงเป็นหิน ระหว่างทางไม่มีน้ำ พกน้ำ ของว่าง และใส่รองเท้าดีๆ"},"ages":[0,0,1,2],"hrs":4,"io":"out","pram":"no","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Dragon's Back, Shek O Country Park, Hong Kong","ok":"2026-11","src":"https://www.treksplorer.com/dragons-back-trail-hong-kong/"},
+        {
+          "local": "香港杜莎夫人蠟像館",
+          "ok": "2026-11",
+          "name": {
+            "th": "มาดามทุสโซ ฮ่องกง",
+            "en": "Madame Tussauds Hong Kong"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "พีคทาวเวอร์ เดอะพีค",
+            "en": "The Peak Tower, The Peak"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งดาราหนัง นักร้อง และนักกีฬากว่า 100 ตัว ตั้งแต่บรูซ ลี ถึงเหยาหมิง",
+            "en": "More than 100 wax figures of film, music and sports stars, from Bruce Lee to Yao Ming"
+          },
+          "why": {
+            "th": "ถ่ายรูปกับคนดัง ในร่ม อยู่บนสุดของพีคแทรม",
+            "en": "Photos with famous faces, indoors, at the top of the Peak Tram"
+          },
+          "tip": {
+            "th": "ไปพร้อมพีคแทรมและสกายเทอเรซ 428 ในตึกเดียวกัน",
+            "en": "Pair it with the Peak Tram and Sky Terrace 428 in the same tower"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Madame Tussauds Hong Kong, The Peak Tower, The Peak, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "จอยโพลิส สปอร์ต ฮ่องกง",
+            "en": "JOYPOLIS SPORTS Hong Kong"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคตั๊กสปอร์ตพาร์ก เกาลูน",
+            "en": "Kai Tak Sports Park, Kowloon"
+          },
+          "what": {
+            "th": "ศูนย์กีฬาผสมเกมจากญี่ปุ่นแห่งแรกนอกประเทศ ห้าชั้น มีนินจาโดโจ สนามโซนิก และกำแพงปีนผาแบบเออาร์",
+            "en": "Japan's first overseas 'sportainment' hub over five floors: a Ninja Dojo, the SONIC Stadium and an augmented-reality climbing wall"
+          },
+          "why": {
+            "th": "เกมเล่นได้ทุกสภาพอากาศ ให้เด็กได้วิ่งและปีน",
+            "en": "All-weather games that get children running and climbing"
+          },
+          "tip": {
+            "th": "อยู่ในอาคาร Health and Wellness Centre ชั้น G ถึงชั้น 4",
+            "en": "In the Health and Wellness Centre, G/F to 4/F"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Joypolis Sports Hong Kong, Kai Tak Sports Park, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html"
+        },
+        {
+          "local": "挪亞方舟",
+          "ok": "2026-11",
+          "name": {
+            "th": "เรือโนอาห์ ฮ่องกง",
+            "en": "Noah's Ark Hong Kong"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "หม่าวาน",
+            "en": "Ma Wan"
+          },
+          "what": {
+            "th": "เรือโนอาห์ขนาดเท่าจริงบนเกาะหม่าวาน มีรูปปั้นสัตว์เดินเป็นคู่ ห้องจัดแสดง และเกมสำหรับครอบครัว",
+            "en": "A full-size replica of the ark on Ma Wan island, with animal statues walking two by two, galleries and family games"
+          },
+          "why": {
+            "th": "รูปปั้นสัตว์ตัวใหญ่ให้ตามหา และวันเที่ยวเกาะสบาย ๆ",
+            "en": "Big animal statues to spot and a calm island day out"
+          },
+          "tip": {
+            "th": "ไปหม่าวานได้ด้วยเรือข้ามฟากหรือรถบัสจากชิงยี่",
+            "en": "Ma Wan is reached by ferry or bus from Tsing Yi"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Noah's Ark Hong Kong, Ma Wan, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/the-best-family-friendly-attractions-in-hong-kong.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "บาวน์โทเปีย บาย คิซโทเปีย",
+            "en": "Bouncetopia by Kiztopia (AIRSIDE)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แอร์ไซด์ ไคตั๊ก",
+            "en": "AIRSIDE, Kai Tak"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มธีมปราสาท 8,000 ตร.ฟุต มีด่าน 12 ด่าน และบ่อบอล 30,000 ลูก",
+            "en": "An 8,000 sq ft indoor castle playground with 12 obstacle courses and a ball pit of 30,000 balls"
+          },
+          "why": {
+            "th": "กระโดดและปีนป่ายสำหรับบ่ายวันฝนตก",
+            "en": "Bouncing and climbing for a rainy afternoon"
+          },
+          "tip": {
+            "th": "อยู่ชั้น 4 ของแอร์ไซด์ ถนน Concorde Road",
+            "en": "On 4/F of AIRSIDE, 2 Concorde Road"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "Bouncetopia AIRSIDE, 2 Concorde Road, Kai Tak, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "จัสต์ไคลมบ์ ไคตั๊ก",
+            "en": "JUST CLIMB (Kai Tak)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคตั๊กสปอร์ตพาร์ก เกาลูน",
+            "en": "Kai Tak Sports Park, Kowloon"
+          },
+          "what": {
+            "th": "กำแพงปีนผากลางแจ้งมีหลังคาคลุมแห่งเดียวของฮ่องกง มีทั้งแบบเชือกอัตโนมัติ เชือกด้านบน ปีนเร็ว และปีนลีด สำหรับหลายวัยหลายระดับ",
+            "en": "Hong Kong's only outdoor, fully covered climbing walls: auto-belay, top-rope, speed and lead walls for different ages and levels"
+          },
+          "why": {
+            "th": "กำแพงปีนผาจริงสำหรับเด็กโต มีหลังคากันฝนกันแดด",
+            "en": "A real climbing wall for older children, sheltered from rain and sun"
+          },
+          "tip": {
+            "th": "อยู่หน้า Kai Tak Arena ถนน Kai Tak Sports Avenue เช็กเกณฑ์อายุตอนจอง",
+            "en": "Outside Kai Tak Arena on Kai Tak Sports Avenue; check the age rules when booking"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "q": "JUST CLIMB Kai Tak, Kai Tak Sports Park, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ท็อปโบวล์ โบว์ลิ่ง",
+            "en": "Top Bowl Tenpin Bowling"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคตั๊กมอลล์ 1 ไคตั๊กสปอร์ตพาร์ก",
+            "en": "Kai Tak Mall 1, Kai Tak Sports Park"
+          },
+          "what": {
+            "th": "ศูนย์โบว์ลิ่งใหญ่ที่สุดในเกาลูน 40 เลน พื้นที่ 40,000 ตร.ฟุต มีโต๊ะพูลและคาเฟ่",
+            "en": "Kowloon's largest bowling centre, 40 lanes over 40,000 sq ft, with pool tables and a café"
+          },
+          "why": {
+            "th": "เกมในร่มง่าย ๆ เล่นได้ทั้งครอบครัว",
+            "en": "An easy indoor game for the whole family"
+          },
+          "tip": {
+            "th": "อยู่ชั้น 3 ของไคตั๊กมอลล์ 1",
+            "en": "On 3/F of Kai Tak Mall 1"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Top Bowl Tenpin Bowling, Kai Tak Mall 1, Kai Tak, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/must-visit-entertainment-venues-in-kai-tak.html"
+        },
+        {
+          "local": "星光大道",
+          "ok": "2026-11",
+          "name": {
+            "th": "อเวนิวออฟสตาร์",
+            "en": "Avenue of Stars"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ริมน้ำจิมซาจุ่ย",
+            "en": "Tsim Sha Tsui waterfront"
+          },
+          "what": {
+            "th": "ทางเดินริมอ่าว มีรูปปั้นดาราหนังฮ่องกงและรอยมือดาราบนราวกว่า 100 รอย",
+            "en": "A harbourfront walk with statues of Hong Kong film stars and over 100 handprints on the railings"
+          },
+          "why": {
+            "th": "ฟรี ทางราบ เข็นรถเข็นสะดวก วิวตึกฝั่งตรงข้ามอ่าวสวยที่สุด",
+            "en": "Free, flat and pram-friendly, with the best skyline view across the harbour"
+          },
+          "tip": {
+            "th": "เดินต่อไปหอนาฬิกาปี 1915 ข้างท่าเรือสตาร์เฟอร์รี่",
+            "en": "Walk on to the 1915 Clock Tower by the Star Ferry pier"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Avenue of Stars, Tsim Sha Tsui, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/attractions/top-things-to-see-and-do-around-tsim-sha-tsui-promenade.html"
+        },
+        {
+          "local": "天壇大佛",
+          "ok": "2026-11",
+          "name": {
+            "th": "พระใหญ่และวัดโป่หลิน",
+            "en": "Big Buddha and Po Lin Monastery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หง่องปิง เกาะลันเตา",
+            "en": "Ngong Ping, Lantau Island"
+          },
+          "what": {
+            "th": "พระพุทธรูปสำริดองค์ใหญ่และวัดบนเขาสูงของเกาะลันเตา ล้อมด้วยภูเขาเหนือทะเล",
+            "en": "A giant bronze Buddha and a monastery high on Lantau, set among mountains above the sea"
+          },
+          "why": {
+            "th": "จุดเด่นที่ไปคู่กับกระเช้าหง่องปิง 360",
+            "en": "A big sight to pair with the Ngong Ping 360 cable car"
+          },
+          "tip": {
+            "th": "องค์พระอยู่บนบันไดยาวมาก ทิ้งรถเข็นไว้ข้างล่าง",
+            "en": "The statue is up a long flight of steps; leave the pram at the bottom"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Tian Tan Buddha, Ngong Ping, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html"
+        },
+        {
+          "local": "鴨靈號",
+          "ok": "2026-11",
+          "name": {
+            "th": "ล่องเรือสำเภาดุ๊กลิง",
+            "en": "Dukling junk boat cruise"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "อ่าววิกตอเรีย ออกจากจิมซาจุ่ย",
+            "en": "Victoria Harbour, from Tsim Sha Tsui"
+          },
+          "what": {
+            "th": "เรือสำเภาจีนไม้ใบเรือสีแดงแบบดั้งเดิม ล่องอ่าววิกตอเรีย เห็นตึกทั้งสองฝั่ง",
+            "en": "A traditional wooden Chinese junk with red sails cruising Victoria Harbour, both skylines on either side"
+          },
+          "why": {
+            "th": "ชมไฟริมอ่าวแบบช้า ๆ และน่าจำ",
+            "en": "A slow, memorable way to see the harbour lights"
+          },
+          "tip": {
+            "th": "จองรอบเย็น เด็กใส่เสื้อชูชีพบนเรือ",
+            "en": "Book an evening sailing; children wear life jackets on board"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "q": "Dukling Tour Boarding, Tsim Sha Tsui, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html"
+        },
+        {
+          "local": "大浪灣泳灘",
+          "ok": "2026-11",
+          "name": {
+            "th": "หาดบิ๊กเวฟเบย์",
+            "en": "Big Wave Bay Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เช็กโอ เกาะฮ่องกง",
+            "en": "Shek O, Hong Kong Island"
+          },
+          "what": {
+            "th": "หาดทรายตรงปลายเส้นทางดราก้อนแบ็ก มีคลื่นและหมู่บ้านเล็ก ๆ บรรยากาศสบาย ๆ ริมหาด",
+            "en": "A sandy beach at the end of the Dragon's Back trail, with surf and a laid-back village by the sand"
+          },
+          "why": {
+            "th": "มีทรายให้ขุดเล่นหลังเดินป่า",
+            "en": "Sand to dig after the walk"
+          },
+          "tip": {
+            "th": "ลงน้ำเฉพาะระหว่างธงตอนไลฟ์การ์ดประจำ",
+            "en": "Swim only between the flags when lifeguards are on duty"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Big Wave Bay Beach, Shek O, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/iconic-things-to-do-when-you-visit-hong-kong.html"
+        },
+        {
+          "local": "香港歷史博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ฮ่องกง",
+            "en": "Hong Kong Museum of History"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "จิมซาจุ่ยตะวันออก",
+            "en": "Tsim Sha Tsui East"
+          },
+          "what": {
+            "th": "เรื่องราวของฮ่องกงตั้งแต่ 400 ล้านปีก่อนถึงยุค 1960 ตั้งแต่เครื่องปั้นดินเผาสมัยราชวงศ์ฮั่นถึงฉากถนนเก่าและเทศกาลพื้นบ้าน",
+            "en": "Hong Kong's story from 400 million years ago to the 1960s, from Han-dynasty pottery to old street scenes and folk festivals"
+          },
+          "why": {
+            "th": "มีถนนและร้านค้าจำลองแบบเก่าให้เด็กเดินเข้าไปดูได้",
+            "en": "Walk-through old streets and shops that children can step into"
+          },
+          "tip": {
+            "th": "อยู่ข้างพิพิธภัณฑ์วิทยาศาสตร์ ไปที่หนึ่งตอนเช้า อีกที่หลังมื้อกลางวัน",
+            "en": "Next door to the Science Museum; do one in the morning, the other after lunch"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Museum of History, 100 Chatham Road South, Tsim Sha Tsui, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "香港鐵路博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์รถไฟฮ่องกง",
+            "en": "Hong Kong Railway Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไท่โปมาร์เก็ต",
+            "en": "Tai Po Market"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์กลางแจ้งในสถานีไท่โปมาร์เก็ตเก่า มีหัวรถจักร ตู้รถไฟเก่าให้ขึ้นไปดู และรถไฟจำลอง",
+            "en": "An open-air museum in the old Tai Po Market station, with locomotives, historic coaches to climb into and model trains"
+          },
+          "why": {
+            "th": "มีรถไฟเก่าของจริงให้ขึ้นไปนั่งและถ่ายรูปบนราง",
+            "en": "Real old trains to climb aboard and photograph on the tracks"
+          },
+          "tip": {
+            "th": "เป็นโบราณสถาน ส่วนใหญ่อยู่กลางแจ้ง พกหมวกไปด้วย",
+            "en": "A declared monument; much of it is outdoors, so bring a hat"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Railway Museum, Tai Po Market, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "香港文化博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์มรดกฮ่องกง",
+            "en": "Hong Kong Heritage Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ชาทิน",
+            "en": "Sha Tin"
+          },
+          "what": {
+            "th": "วัฒนธรรมป๊อปและกังฟูของฮ่องกง มีนิทรรศการเรื่องกิมย้ง และห้องเด็ก Children’s Discovery Gallery ที่มีโซนให้เล่น",
+            "en": "Hong Kong pop culture and martial arts, with an exhibition on the author Louis Cha and a Children's Discovery Gallery of play zones"
+          },
+          "why": {
+            "th": "ห้อง Children’s Discovery Gallery ทำมาให้เด็กเล็กได้จับเล่น",
+            "en": "The Children's Discovery Gallery is made for little hands"
+          },
+          "tip": {
+            "th": "อยู่ริมแม่น้ำชิงมุนที่ชาทิน แวะง่ายระหว่างทางไปนิวเทร์ริทอรีส์",
+            "en": "By the Shing Mun River in Sha Tin, an easy stop on the way to the New Territories"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Heritage Museum, 1 Man Lam Road, Sha Tin",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "香港海事博物館",
+          "ok": "2026-11",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือฮ่องกง",
+            "en": "Hong Kong Maritime Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าเรือเซ็นทรัล 8",
+            "en": "Central Pier 8"
+          },
+          "what": {
+            "th": "ฮ่องกงเติบโตจากหมู่บ้านชาวประมงเป็นเมืองท่าการค้าใหญ่ได้อย่างไร เล่าผ่านเรือและทะเล",
+            "en": "How Hong Kong grew from a fishing village into a great trading port, told through ships and the sea"
+          },
+          "why": {
+            "th": "เด็กได้ลองบังคับเรือในห้องจำลองสะพานเดินเรือ",
+            "en": "Children can steer a ship on the Ship Bridge Simulator"
+          },
+          "tip": {
+            "th": "อยู่บนท่าเรือข้างสตาร์เฟอร์รี่ ไปคู่กับการนั่งเรือข้ามฟาก",
+            "en": "On the pier next to the Star Ferry; pair it with a ferry ride"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hong Kong Maritime Museum, Central Pier 8, Central, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/a-guide-to-hong-kong-most-family-friendly-museums.html"
+        },
+        {
+          "local": "",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินรอบเดอะพีค",
+            "en": "Peak Circle Walk"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนลูการ์ดและถนนฮาร์เลช เดอะพีค",
+            "en": "Lugard Road and Harlech Road, The Peak"
+          },
+          "what": {
+            "th": "ทางเดินวงรอบเดอะพีค ราบและปูพื้นตลอด เห็นวิวที่มีชื่อเสียงที่สุดของฮ่องกงไปตลอดทาง",
+            "en": "A flat, fully paved loop round the Peak with Hong Kong's most famous views all the way"
+          },
+          "why": {
+            "th": "ทางเดินที่เหมาะกับเด็กเล็กและทารก เข็นรถเข็นได้",
+            "en": "The one walk that suits babies and toddlers, with a pram"
+          },
+          "tip": {
+            "th": "เริ่มจากสถานีบนของพีคแทรม ใช้เวลาราวหนึ่งชั่วโมง",
+            "en": "Start from the Peak Tram upper terminus; allow about an hour"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lugard Road, The Peak, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-hikes-in-hong-kong.html"
+        },
+        {
+          "local": "長洲",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะเชิงเชา",
+            "en": "Cheung Chau"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เกาะเชิงเชา",
+            "en": "Cheung Chau island"
+          },
+          "what": {
+            "th": "เกาะไม่มีรถยนต์ มีชายหาด คาเฟ่ และทางเดินเลียบทะเล ขึ้นชื่อเรื่องลูกชิ้นปลายักษ์ ปลาหมึกย่าง และโมจิมะม่วง",
+            "en": "A car-free island of beaches, cafés and coastal paths, known for giant fishballs, grilled squid and mango mochi"
+          },
+          "why": {
+            "th": "ถนนไม่มีรถให้เดินเล่น และของกินที่เด็กชอบ",
+            "en": "Car-free streets to wander and snacks children love"
+          },
+          "tip": {
+            "th": "เรือจากท่าเรือเซ็นทรัล 5 สุดสัปดาห์คนเยอะ",
+            "en": "Ferries from Central Pier 5; weekends are busy"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Cheung Chau, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "大澳",
+          "ok": "2026-11",
+          "name": {
+            "th": "หมู่บ้านชาวประมงไทโอ",
+            "en": "Tai O fishing village"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "เกาะลันเตา",
+            "en": "Lantau Island"
+          },
+          "what": {
+            "th": "หนึ่งในหมู่บ้านชาวประมงเก่าแก่ที่สุดของฮ่องกง มีบ้านเสาสูงของชาวเรือตั้นกา และแผงขายปลาแห้งกับกะปิ",
+            "en": "One of Hong Kong's oldest fishing villages, with stilt houses of the Tanka boat people and stalls of dried fish and shrimp paste"
+          },
+          "why": {
+            "th": "บ้านเสาสูงเหนือน้ำและเรือเต็มไปหมด",
+            "en": "Houses on stilts over the water and boats everywhere"
+          },
+          "tip": {
+            "th": "ไปคู่กับพระใหญ่ นั่งรถบัสจากหง่องปิง",
+            "en": "Pair it with the Big Buddha by bus from Ngong Ping"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tai O, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "志蓮淨苑",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดชีหลินและสวนหนานเหลียน",
+            "en": "Chi Lin Nunnery and Nan Lian Garden"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ไดมอนด์ฮิลล์",
+            "en": "Diamond Hill"
+          },
+          "what": {
+            "th": "วัดแม่ชีสไตล์ราชวงศ์ถังที่สร้างโดยไม่ใช้ตะปูสักตัว ข้างสวนจีนคลาสสิกมีสระน้ำ ต้นสน และศาลาสีทอง",
+            "en": "A Tang-style nunnery built without a single nail, beside a classical garden of ponds, pines and a golden pavilion"
+          },
+          "why": {
+            "th": "สวนสงบกลางเมือง มีบ่อปลาให้ชะโงกดู",
+            "en": "A calm garden in the city with fish ponds to look into"
+          },
+          "tip": {
+            "th": "ในวัดพูดเบา ๆ ไปเดินเล่นในสวนแทน",
+            "en": "Keep voices low inside the nunnery; the garden is the place to stroll"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Chi Lin Nunnery, Diamond Hill, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "嗇色園黃大仙祠",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดหวังต้าเซียน",
+            "en": "Wong Tai Sin Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หวังต้าเซียน",
+            "en": "Wong Tai Sin"
+          },
+          "what": {
+            "th": "วัดของสามศาสนา พุทธ เต๋า และขงจื๊อ ขึ้นชื่อเรื่องขอพรสมหวัง มีศาลเจ้าวิจิตรและสวน",
+            "en": "A temple of three faiths, Buddhist, Taoist and Confucian, known for granting wishes, with ornate shrines and a garden"
+          },
+          "why": {
+            "th": "สีสดใส ควันธูป และการเสี่ยงเซียมซีให้ดู",
+            "en": "Bright colours, incense and fortune sticks to watch"
+          },
+          "tip": {
+            "th": "ช่วงตรุษจีนคนแน่นมาก วันอื่นไปแต่เช้า",
+            "en": "Very crowded at Lunar New Year; go early on other days"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Sik Sik Yuen Wong Tai Sin Temple, Wong Tai Sin, Kowloon",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "大館",
+          "ok": "2026-11",
+          "name": {
+            "th": "ไท่ขวั่น",
+            "en": "Tai Kwun"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เซ็นทรัล",
+            "en": "Central"
+          },
+          "what": {
+            "th": "สถานีตำรวจกลาง เรือนจำวิกตอเรีย และศาลเก่า กลายเป็นแกลเลอรี ร้านค้า และร้านอาหาร รอบลานสวนสนามกว้าง",
+            "en": "The old Central Police Station, Victoria Prison and magistracy, now galleries, shops and restaurants round a big parade ground"
+          },
+          "why": {
+            "th": "ลานกว้างให้เด็กวิ่งเล่นกลางเซ็นทรัล",
+            "en": "A wide open courtyard for children to run in the middle of Central"
+          },
+          "tip": {
+            "th": "แวะดูห้องขังเก่า ขึ้นไปทางบันไดเลื่อนมิดเลเวล",
+            "en": "Peek into the old prison cells; take the Mid-Levels escalator up"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tai Kwun, 10 Hollywood Road, Central, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/revitalised-historic-buildings-to-visit-in-hong-kong.html"
+        },
+        {
+          "local": "迪欣湖",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทะเลสาบอินสไปเรชัน",
+            "en": "Inspiration Lake"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เกาะลันเตา ข้างฮ่องกงดิสนีย์แลนด์",
+            "en": "Lantau Island, next to Hong Kong Disneyland"
+          },
+          "what": {
+            "th": "ทะเลสาบสงบ มีทางปั่นจักรยานรอบ ที่ปิกนิก และที่พอสำหรับรถพ่วงจักรยานเด็ก",
+            "en": "A calm lake with paths to cycle round, picnic areas and room for bike trailers"
+          },
+          "why": {
+            "th": "ครึ่งวันง่าย ๆ เงียบ ๆ สำหรับครอบครัวเด็กเล็ก ข้างดิสนีย์แลนด์",
+            "en": "An easy, quiet half day for young families beside Disneyland"
+          },
+          "tip": {
+            "th": "เหมาะไปวันก่อนหรือหลังเข้าสวนสนุก",
+            "en": "Ideal the day before or after the park"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Inspiration Lake Recreation Centre, Lantau Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/family-friendly-biking-in-hong-kong-for-all-ages.html"
+        }
+    ]
+    }
+  ]
+}

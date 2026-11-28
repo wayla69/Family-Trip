@@ -164,6 +164,7 @@ details.fold[open]>summary{margin-bottom:8px}.planblk.fold .dayplan{margin-top:4
    the eat page's navigate buttons and inline map links (which keep their place in the text through negative margins) */
 main .chip,main .btn.small,main .mini,main .seg button,main .linkbtn,.stayc .go,.eatday a.go,.eatday button.go,.remind .btn{min-height:44px}
 main .chip{padding:8px 14px}main .mini{padding:8px 10px}
+main .mini{min-width:44px}a.maplink{min-width:44px;text-align:center}
 .eatday a.go.sq{min-width:44px;display:inline-grid;place-items:center}
 a.maplink{display:inline-block;padding:10px 0;margin:-10px 0}
 .bag summary{min-height:44px;display:flex;align-items:center;gap:8px}
@@ -497,6 +498,21 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 .hero .count span{font-size:15px;font-weight:600;opacity:.9}
 .hero .kids{margin:8px 0 14px;font-size:14px;opacity:.92}
 .hero .btn{background:#fff;color:var(--hero,var(--accent))}
+/* the hero's buttons: one column, one width (owner's Samsung, Nov 2026: "Open the book" and the surprise button were two widths, one under the other) */
+.hero .heroacts{display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:420px}
+.hero .hbtn{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;padding:8px 14px 8px 8px;border-radius:18px;border:0;text-align:left;text-decoration:none;font:inherit;cursor:pointer;
+  background:#fff;color:var(--hero,var(--accent));box-shadow:0 8px 20px rgba(0,0,0,.18);transition:transform .15s}
+.hero .hbtn:active{transform:scale(.98)}
+.hero .hbpic{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--hero,var(--accent)) 12%,#fff)}
+.hero .hbpic img{width:40px;height:40px;object-fit:contain}
+.hero .hbt{flex:1;min-width:0;display:grid;line-height:1.2}
+.hero .hbt b{font-size:17px;font-weight:700}
+.hero .hbt small{font-size:13px;font-weight:500;color:color-mix(in srgb,var(--hero,var(--accent)) 60%,#555)}
+.hero .hbgo{flex:none;font-size:24px;font-weight:600;opacity:.6}
+.hero .hbtn.alt{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.hero .hbtn.alt .hbpic{background:rgba(255,255,255,.92)}
+.hero .hbtn.alt .hbt small{color:rgba(255,255,255,.85)}
+.hero .hbtn.alt .hbgo{opacity:.85}
 .hero .float{position:relative;width:280px;height:190px}
 .hero .float .art{position:absolute;width:56px;height:56px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25));animation:bob 4s ease-in-out infinite}
 .hero .float .f0{left:0;top:0;--r:-6deg}.hero .float .f1{left:48px;top:-6px;--r:8deg;animation-delay:-1s;width:48px;height:48px}.hero .float .f2{left:96px;top:2px;--r:-10deg;animation-delay:-2s;width:46px;height:46px}
@@ -732,10 +748,10 @@ img.guide{width:54px;height:54px;flex:none}
 .ticks.food{grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
 .tick{display:flex;align-items:center;gap:7px;border:1px solid var(--rule);background:var(--paper);border-radius:999px;padding:6px 10px 6px 6px;text-align:left;min-height:42px;font-size:13px;line-height:1.2}
 .tick i{width:24px;height:24px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-style:normal;font-weight:700;color:#fff;flex:none;font-size:13px}
-.tick .e{font-size:20px;flex:none}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
+.tick .e{font-size:20px;flex:none}.tick .e .ge{width:28px;height:28px}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
 .tick.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
 .tick.on i{background:var(--accent)}
-.tick:disabled{cursor:default;color:inherit;opacity:1}
+.tick:disabled,.tick[aria-disabled=true]{cursor:default;color:inherit;opacity:1}
 .ticks.food .tick{border-radius:14px}
 .yum{display:flex;gap:4px;flex:none}
 .yum button{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);font-size:18px;opacity:.5}
@@ -928,9 +944,12 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .kidgift b,.kidnight b{font-size:22px;flex:1}button.kidnight b,button.kidnight small{color:#fff}.kidgift small,.kidnight small{font-size:15px;opacity:.8}.kidgift .box,.kidnight .moon{font-size:46px;line-height:1}
 .kidgift .box{animation:wiggle 1.4s ease-in-out infinite}@keyframes wiggle{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-12deg)}80%{transform:rotate(10deg)}90%{transform:rotate(-6deg)}}
 .giftbox{display:block;margin:30px auto;border:0;background:none;font-size:170px;line-height:1;cursor:pointer;animation:wiggle 1.4s ease-in-out infinite}.giftbox.pop{animation:gpop .6s ease forwards}@keyframes gpop{40%{transform:scale(1.25) rotate(8deg)}100%{transform:scale(0);opacity:0}}
-.giftopen{text-align:center}.gstk{font-size:150px;line-height:1.1;animation:gin .7s cubic-bezier(.2,1.6,.4,1)}@keyframes gin{0%{transform:scale(0) rotate(-30deg)}100%{transform:scale(1)}}
+.giftopen{text-align:center}.gstk{position:relative;display:grid;place-items:center;width:min(240px,64vw);aspect-ratio:1;margin:8px auto 4px;border-radius:32px;background:radial-gradient(circle at 50% 42%,#fff 0 34%,var(--gt,#FFE08A) 70%);box-shadow:0 0 0 6px #fff,0 0 0 9px color-mix(in srgb,var(--gt,#FFE08A) 70%,#fff),0 14px 30px rgba(31,58,95,.18);font-size:130px;line-height:1;overflow:hidden;animation:gin .7s cubic-bezier(.2,1.6,.4,1)}
+.gstk img{position:relative;width:78%;height:78%;object-fit:contain;filter:drop-shadow(0 6px 8px rgba(31,58,95,.18))}
+.gstk .gray{position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.55) 0 10deg,transparent 10deg 24deg);animation:gspin 14s linear infinite}@keyframes gspin{to{transform:rotate(1turn)}}
+.giftline .gface .ku{width:40px;height:40px}@keyframes gin{0%{transform:scale(0) rotate(-30deg)}100%{transform:scale(1)}}
 .gnew{font-size:26px;font-weight:800;margin:6px 0 12px}.gmiss{background:#fff;border-radius:24px;padding:12px 16px;margin:12px 0}.gmiss b{display:block;margin-bottom:6px}.gmiss div{font-size:46px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-@media (prefers-reduced-motion:reduce){.kidgift .box,.giftbox,.gstk{animation:none}}
+@media (prefers-reduced-motion:reduce){.kidgift .box,.giftbox,.gstk,.gstk .gray{animation:none}}
 .kidhearts{position:relative;border:0;border-radius:28px;background:linear-gradient(135deg,#FFD1E1,#FFE9F1);display:flex;align-items:center;gap:12px;padding:14px 18px;text-align:left;box-shadow:0 10px 22px -14px #C2185B;overflow:hidden}
 .kidhearts .e{font-size:46px;line-height:1;animation:beat 1.2s ease-in-out infinite}
 .kidhearts b{font-size:22px;color:#AD1457;flex:1}
@@ -1898,7 +1917,7 @@ p,li,.bubble p{text-wrap:pretty}
 /* passport map: day buttons under it; a pin opens a card with the real place */
 .mapdays{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}.mapdays::-webkit-scrollbar{display:none}
 .mapdays .label{flex:none;margin-right:2px}
-.mapdays .chip{flex:none;min-width:36px;justify-content:center;padding:6px 8px;font-weight:700}
+.mapdays .chip{flex:none;min-width:44px;min-height:44px;justify-content:center;padding:6px 8px;font-weight:700}
 .tmap .pin{cursor:pointer}
 .pinacts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
 .pindays{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
@@ -3455,7 +3474,7 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 .lbcin .btn{min-height:44px}
 .kidnotes{display:inline-flex;align-items:center;gap:10px}.kidnotes img{width:40px;height:40px;object-fit:contain}
 .remind.ask.rel .rbell{width:40px;height:40px;object-fit:contain;flex:none}
-/* growing up, trip by trip (#/grow) */
+/* growing up, trip by trip (the passport's Explorer ID page) */
 .grchips{margin:4px 0 10px}.grchips .chip .face{width:26px;height:26px;border-radius:50%;object-fit:cover;margin:-4px 0}
 .grchart{width:100%;height:auto;display:block}.grchart .grv{font-size:12px;font-weight:700;fill:var(--ink)}.grchart .gra{font-size:11px;fill:var(--muted)}
 .growl{list-style:none;padding:0;margin:14px 0;display:grid;gap:12px;position:relative}
@@ -3660,6 +3679,8 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
 .plsg .plflag{width:34px;height:34px;border-radius:50%;background:#fff;display:inline-grid;place-items:center;font-size:21px;line-height:1}.plsg:has(.plflag){padding-left:5px}
 .plidgo{justify-self:start;min-height:44px;text-align:left}
 .plchips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+.plskipok{margin:0 0 6px;padding:12px 14px;border-radius:16px;background:color-mix(in srgb,var(--g1,var(--accent)) 14%,var(--card));color:var(--ink);font-weight:600;line-height:1.5}
+.pltx{margin:2px 0 10px}.pltx .plchip small{color:var(--muted);font-weight:500}
 .plchip{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:14.5px;font-weight:500;line-height:1.2;color:var(--ink)}
 .plchip .emi{width:1.25em;height:1.25em}
 .plchip[aria-pressed=true]{border-color:var(--g1);box-shadow:0 0 0 1px var(--g1);background:color-mix(in srgb,var(--g1) 16%,var(--card));font-weight:700}
@@ -3803,3 +3824,375 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .plskip{display:block;margin:4px auto 10px;min-height:44px}
 .plhint{margin:8px 0 0}.plhint a{font-weight:700}
 .plhist{margin-top:12px}
+
+/* explore a town (#/explore, docs/PLACES-ECOSYSTEM.md E3): a sight as the eat card's sibling — picture, name, the ages it suits, facts */
+.xptabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:14px 0 6px}
+.xptabs a{min-height:44px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--ink);font-weight:600}
+.xptabs{gap:6px;padding:4px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--rule)}
+.xptabs a{border-radius:999px}
+.xptabs a[aria-selected=true]{background:color-mix(in srgb,var(--accent) 16%,var(--card));box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--accent) 60%,transparent);border-radius:999px}
+.xpbar .row.chips{flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.xpbar .chips .label{margin-right:2px}
+.sagegrp{margin:14px 0 4px}.sagegrp>h3{display:flex;align-items:center;gap:8px;margin:0 0 4px;font:700 17px/1.3 var(--ui,inherit);color:color-mix(in srgb,var(--g1) 60%,var(--ink))}.sagegrp>h3::before{content:'';width:6px;height:20px;border-radius:3px;background:var(--g1)}
+:root[data-theme=dark] .sagegrp>h3{color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
+.sightl{list-style:none;margin:8px 0 14px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))}
+.sightc{background:var(--card);border-radius:16px;padding:12px 14px;box-shadow:0 1px 0 var(--rule),0 0 0 1px var(--rule);border-top:4px solid color-mix(in srgb,#1CC9A4 70%,var(--card));min-width:0;overflow-wrap:anywhere;font-size:13px;line-height:1.45}
+.sightc.fit{border-top-color:color-mix(in srgb,#FF6FA8 75%,var(--card))}
+.sightc.wished{box-shadow:0 0 0 2px color-mix(in srgb,#FF6FA8 70%,transparent)}
+.sightc.young{opacity:1;background:color-mix(in srgb,var(--card) 88%,var(--rule))}
+.sct{display:grid;grid-template-columns:56px 1fr 44px;gap:10px;align-items:center}
+.scpic{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;background:color-mix(in srgb,#1CC9A4 18%,var(--card));box-shadow:inset 0 0 0 2px color-mix(in srgb,#1CC9A4 55%,transparent);overflow:hidden}
+.scpic img{width:46px;height:46px;object-fit:contain}
+.scn{min-width:0;display:flex;flex-direction:column}
+.scn b{font-size:15px;line-height:1.3}.scn b a{color:var(--ink);text-decoration:none}
+.scn .zh{color:var(--muted);font-size:12px}
+.sckd{color:color-mix(in srgb,#1CC9A4 55%,var(--ink));font-size:12px;font-weight:600}
+.sheart{width:44px;height:44px;border-radius:50%;border:0;background:color-mix(in srgb,#FF6FA8 12%,var(--card));color:color-mix(in srgb,#FF6FA8 70%,var(--ink));font-size:22px;line-height:1;cursor:pointer}
+.sheart[aria-pressed=true]{background:color-mix(in srgb,#FF6FA8 30%,var(--card))}
+.sages{display:flex;flex-wrap:wrap;gap:4px;margin:10px 0 4px;align-items:center}
+.sa{font-size:11.5px;padding:2px 8px;border-radius:999px;background:color-mix(in srgb,var(--rule) 60%,var(--card));color:var(--muted)}
+.sa.a1{background:color-mix(in srgb,#1CC9A4 14%,var(--card));color:color-mix(in srgb,#1CC9A4 50%,var(--ink))}
+.sa.a2{background:color-mix(in srgb,#1CC9A4 28%,var(--card));color:color-mix(in srgb,#1CC9A4 40%,var(--ink));font-weight:700}
+.sa.a0{text-decoration:line-through}
+.scfacts{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0}
+.sightc .ed{margin:6px 0 2px}.sightc .why{margin:4px 0}
+.sightc .ef{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px}
+.sightc .elsrc{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;color:var(--muted)}
+.sightc .srcl{color:inherit}
+:root[data-theme=dark] .sckd{color:color-mix(in srgb,#1CC9A4 70%,var(--ink))}
+.xpmore{margin-top:8px;border-radius:14px;background:var(--card);box-shadow:0 0 0 1px var(--rule)}
+.xpmore>summary{min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 6px 0 14px;font-weight:600;cursor:pointer;list-style:none}
+.xpmore>summary::-webkit-details-marker{display:none}
+.xpmore[open]>summary .chv{transform:rotate(90deg)}
+.xpmore>.row.chips{padding:0 10px 10px;margin-top:0}
+.pldstops li.lib{background:color-mix(in srgb,#1CC9A4 14%,var(--card));border-color:color-mix(in srgb,#1CC9A4 55%,var(--line))}
+.pldstops li.lib>span{color:color-mix(in srgb,#1CC9A4 60%,var(--ink));font-weight:700}
+/* explore a town: a day built on the phone */
+.bday li{min-height:48px}.bday .tb{display:grid}.bday small{color:var(--muted)}
+.bdayb{gap:10px;margin-top:10px}.bdayb .btn{flex:1;min-height:48px;justify-content:center}
+/* E5: our verdict, the indoor asks in the change box, the places we loved on the route */
+.etag.fambeen{background:color-mix(in srgb,#1CC9A4 14%,var(--card));color:color-mix(in srgb,#1CC9A4 50%,var(--ink))}
+.dchin{margin:8px 0 4px}.dchin .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.pllove{display:flex;flex-direction:column;gap:2px;margin:6px 0 8px;padding:8px 12px;border-radius:12px;background:color-mix(in srgb,#FF6FA8 10%,var(--card));font-size:13.5px}
+.pllove b{color:color-mix(in srgb,#FF6FA8 55%,var(--ink))}.pllove small{color:color-mix(in srgb,#F2B90C 60%,var(--ink))}
+.tastechip[data-st=learned]{border-style:dashed;background:color-mix(in srgb,#F2B90C 10%,var(--card))}
+.tastelo{margin-top:6px}
+/* E6: the styles' painted pictures on chips */
+img.tpic{width:28px;height:28px;vertical-align:middle;margin:-4px 0;object-fit:contain}
+/* "where to", country first: cards of countries, then of the towns of the one opened (several ticked) */
+.plcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,96px),1fr));gap:8px;margin:2px 0 6px}
+.plcard{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:100px;padding:10px 6px 8px;border-radius:16px;font:inherit;cursor:pointer;text-align:center;
+  border:1px solid color-mix(in srgb,var(--tc,var(--g1,var(--accent))) 35%,var(--line));background:color-mix(in srgb,var(--tc,var(--g1,var(--accent))) 8%,var(--card));color:var(--ink);position:relative}
+.plcard .plcp{width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.plcard .plcp img{width:45px;height:45px;object-fit:contain}
+.plcard b{font-size:14px;line-height:1.2}.plcard small{font-size:12.5px;color:var(--muted);line-height:1.2}
+.plcard[aria-pressed=true]{border:2px solid color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink));background:color-mix(in srgb,var(--tc,var(--accent)) 18%,var(--card))}
+.plcard[aria-pressed=true]::after{content:"✓";position:absolute;top:6px;right:8px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;background:color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink))}
+.plcard.whole{border-style:dashed}
+.plcty{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+.plcty .plback{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:inherit;font-weight:600;color:var(--ink);cursor:pointer}
+.plctyn{display:inline-flex;align-items:center;gap:8px;font-size:18px}.plctyn img{width:40px;height:40px;border-radius:50%;background:#fff;object-fit:contain}
+.plallcc{min-height:44px}
+:root[data-theme=dark] .plcard .plcp,:root[data-theme=dark] .plctyn img{background:#F4F1EA}
+/* the record page's sections as cards (views.js lgCards; owner, Nov 2026: "ไม่เอาแบบเส้นๆสีๆ … kid friendly and worldclass"): no coloured
+   rules — each card is a soft pastel of its own colour with big round corners, its painted picture in a white circle, a friendly bold
+   heading; the boxes inside are white and borderless, so the card reads as one calm, playful surface */
+.blk.lgc{margin:12px 0;padding:16px 16px 18px;border:0;border-radius:26px;background:color-mix(in srgb,var(--g1) 11%,var(--card));box-shadow:0 1px 0 color-mix(in srgb,var(--g1) 14%,transparent)}
+.blk.lgc>h3{font-family:var(--ui);font-size:19px;font-weight:800;letter-spacing:-.01em;align-items:center;gap:12px;margin:0 0 12px;line-height:1.2;color:color-mix(in srgb,var(--g1) 30%,var(--ink))}
+.blk.lgc>h3 .label{font-size:13px;font-weight:600;color:color-mix(in srgb,var(--g1) 40%,var(--muted))}
+.blk.lgc>h3 .pcpic{flex:none;display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:#fff;box-shadow:0 4px 12px -4px color-mix(in srgb,var(--g1) 45%,transparent)}
+.blk.lgc>h3 .pcpic img{width:40px;height:40px;object-fit:contain}
+.blk.lgc>h3 .pcpic .ic{width:24px;height:24px;color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
+.blk.lgc .field{background:var(--card);border-color:transparent;border-radius:16px;box-shadow:0 1px 3px rgba(16,24,32,.06)}
+.blk.lgc .field:focus{border-color:color-mix(in srgb,var(--g1) 55%,var(--ink))}
+.blk.lgc .btn{border-radius:999px}
+.blk.lgc .btn.ghost{background:var(--card);border-color:transparent;box-shadow:0 1px 3px rgba(16,24,32,.08)}
+.blk.lgc .first,.blk.lgc .check{background:var(--card);border-color:transparent;border-radius:16px}
+.planblk+.blk.lgc{margin-top:6px}   /* the photos card sits right under the folded plan line */
+.blk.lgc.dayendblk{background:color-mix(in srgb,var(--accent) 7%,var(--card))}
+:root[data-theme=dark] .blk.lgc{background:color-mix(in srgb,var(--g1) 14%,var(--card))}
+:root[data-theme=dark] .blk.lgc>h3{color:color-mix(in srgb,var(--g1) 25%,#fff)}
+:root[data-theme=dark] .blk.lgc>h3 .pcpic{background:#F4F1EA}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .blk.lgc{background:color-mix(in srgb,var(--g1) 14%,var(--card))}:root:not([data-theme=light]) .blk.lgc>h3{color:color-mix(in srgb,var(--g1) 25%,#fff)}:root:not([data-theme=light]) .blk.lgc>h3 .pcpic{background:#F4F1EA}}
+/* the day's three links under "day done": one width each — stacked on a phone, side by side where they fit */
+.blk.lgc.dayendblk .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:8px}
+.blk.lgc.dayendblk .row>.btn{width:100%;justify-content:center;margin:0}
+/* "more" folds like a card heading too */
+details.more>summary{border-radius:16px}
+/* the record page's overview: a tile a step, in the cards' pastel look */
+.lgtiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:12px;margin:6px 0 14px}
+.lgtile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:132px;padding:14px;border-radius:24px;text-decoration:none;color:var(--ink);background:color-mix(in srgb,var(--g1) 11%,var(--card))}
+.lgtile .pcpic{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 4px 12px -4px color-mix(in srgb,var(--g1) 45%,transparent)}
+.lgtile .pcpic img{width:44px;height:44px;object-fit:contain}
+.lgtile b{font-size:16px;font-weight:800;line-height:1.2;color:color-mix(in srgb,var(--g1) 30%,var(--ink))}
+.lgtile small{font-size:13px;color:var(--muted);line-height:1.3}
+.lgtile .lgok{position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:14px;font-weight:800;color:#fff;background:color-mix(in srgb,var(--g1) 75%,var(--ink))}
+.lgtile.end{grid-column:1/-1;flex-direction:row;align-items:center;min-height:84px}
+.lgtile.end .pcpic{flex:none}.lgtile.end b{flex:none}.lgtile.end small{flex:1}
+.lgqs{margin-top:10px}
+.lgstep>.blk.lgc:first-child,.lgstep>details:first-child{margin-top:4px}
+:root[data-theme=dark] .lgtile{background:color-mix(in srgb,var(--g1) 14%,var(--card))}
+:root[data-theme=dark] .lgtile b{color:color-mix(in srgb,var(--g1) 25%,#fff)}
+:root[data-theme=dark] .lgtile .pcpic{background:#F4F1EA}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .lgtile{background:color-mix(in srgb,var(--g1) 14%,var(--card))}:root:not([data-theme=light]) .lgtile b{color:color-mix(in srgb,var(--g1) 25%,#fff)}:root:not([data-theme=light]) .lgtile .pcpic{background:#F4F1EA}}
+.lgallgo{margin:2px 0 10px;text-align:center}.lgallgo .linkbtn{display:inline-flex;align-items:center;min-height:44px}
+.lgallnav{margin:8px 0 0}.lgallnav .btn{min-height:44px}
+
+/* the rough budget of a planned route (docs/BUDGET.md B1) */
+.plbudget .pch{margin:0 0 8px;font-size:17px}
+.plbl{list-style:none;margin:0;padding:0}
+.plbr{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line)}
+.plbe{font-size:24px;text-align:center}
+.plbn{display:flex;flex-direction:column;min-width:0}
+.plbn small{color:var(--muted);font-size:12.5px}
+.plba{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.plba .prthb,.plbt .plbthb{font-size:12.5px;color:var(--muted)}
+.plbt{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;justify-content:space-between;margin-top:10px;font-size:16px}
+.plbt b{font-size:17px}
+.plbt .plbthb{flex-basis:100%;text-align:right;font-weight:600}
+.plbu{margin:8px 0 0;font-size:13.5px;color:color-mix(in srgb,#C2410C 70%,var(--ink))}
+.plbfx{margin-top:10px}
+.plbq{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+@media (max-width:420px){.plbr{grid-template-columns:30px 1fr}.plba{grid-column:2;align-items:flex-start;text-align:left}}
+.plbpast{display:block;margin-top:2px;font-size:12.5px;color:color-mix(in srgb,#7C3AED 65%,var(--ink))}
+.plbwas{margin:0 0 6px;font-size:13.5px;color:var(--muted)}
+/* B3: planned and really spent (the spend page) and Today's one line */
+.budbars li.near .spbar i{background:#F59E0B}
+.budbars li.over .spbar i{background:#E11D48}
+.budbars li.over b{color:color-mix(in srgb,#E11D48 70%,var(--ink))}
+.budtot{margin:4px 0 10px;font-size:15px}
+.budtot.near{color:color-mix(in srgb,#B45309 75%,var(--ink))}
+.budtot.over{color:color-mix(in srgb,#E11D48 70%,var(--ink))}
+.budedit{margin-top:12px}
+.budf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,160px),1fr));gap:8px;margin:6px 0 10px}
+.budf .fxf{display:flex;flex-direction:column;gap:4px;font-size:14px}
+.budblk .mini{margin-top:10px}
+.budline{display:flex;align-items:center;gap:6px;min-height:44px;margin:6px 0;padding:6px 12px;border-radius:12px;background:color-mix(in srgb,var(--accent) 10%,var(--card));color:var(--ink);text-decoration:none;font-size:14.5px}
+.budline.near{background:color-mix(in srgb,#F59E0B 16%,var(--card))}
+.budline.over{background:color-mix(in srgb,#E11D48 14%,var(--card))}
+.budbars li{grid-template-columns:minmax(90px,auto) 1fr auto auto}
+.budbars small{white-space:nowrap}
+@media (max-width:480px){.budbars li{grid-template-columns:minmax(80px,auto) 1fr auto;row-gap:2px}.budbars small{grid-column:2/-1;text-align:right;margin-top:-4px}}
+
+/* one kids' passport per child (views.js viewPassport): a book shown a page at a time — the page tabs, the page, ‹ › at its foot.
+   The same book is kid mode's 🛂 / ⭐ / 🏆 (.ppbook.inkid: bigger taps and type) */
+.ppbook{margin:8px 0 24px}
+.pptabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 10px;margin:0 -2px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.pptabs::-webkit-scrollbar{display:none}
+.ppt{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:66px;max-width:100px;min-height:58px;padding:6px 8px;border-radius:16px;border:0;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink);text-decoration:none;font:inherit;cursor:pointer}
+.ppt span{font-size:22px;line-height:1}.ppt img{width:30px;height:30px;object-fit:contain}
+.ppt small{font-size:11.5px;line-height:1.2;text-align:center;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;max-width:100%}
+.ppt[aria-current]{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 0 0 0 2px var(--accent);color:color-mix(in srgb,var(--accent) 60%,var(--ink))}
+.ppbody{min-height:40vh}
+.ppturn{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;margin-top:18px}
+.ppgo{display:flex;align-items:center;justify-content:center;gap:6px;min-height:56px;padding:8px 16px;border-radius:999px;border:0;background:var(--accent);color:var(--on-accent);font:inherit;font-size:24px;font-weight:700;line-height:1;text-decoration:none;cursor:pointer;min-width:0;max-width:100%}
+.ppgo small{font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ppgo.prev{justify-self:start;background:var(--card);color:color-mix(in srgb,var(--accent) 65%,var(--ink));box-shadow:inset 0 0 0 2px var(--accent)}
+.ppgo.next{justify-self:end}
+.ppn{font-size:13px;color:var(--muted);font-weight:600;white-space:nowrap}
+.pphd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pphd h2{margin:0;flex:1 1 auto;font-family:var(--ui);font-size:22px;line-height:1.25}
+.pphd .mini{min-height:44px;min-width:44px}
+.ppedit[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 0 0 0 2px var(--accent)}
+.ppkids .ppprint{text-decoration:none;color:inherit}
+.ppbook .ppgo.next{color:var(--on-accent)!important}.ppbook .ppgo.prev{color:color-mix(in srgb,var(--accent) 65%,var(--ink))!important}   /* kid mode's buttons take color:inherit */
+.ppbook .tick,.ppbook .talebtn,.ppbook .hearbtn.round{min-height:44px}.ppbook .hearbtn.round{width:44px}
+.ppbook .stars button,.ppbook .yum button{min-width:44px;min-height:44px}
+.ppbook .felt button{min-height:44px}
+/* a rated dish (tasting card): the picture and its whole name on the first line, 🔊 and the stars (or yum / yuck) on the second —
+   three 44 px stars beside the name squeezed it to a word a line on a phone (owner's Samsung, Nov 2026: "เบียด") */
+.ppbook .ticks.food .tick.rate{flex-wrap:wrap;row-gap:6px;padding:8px 12px 8px 8px}
+.ppbook .ticks.food .tick.rate>.t{flex:1 1 calc(100% - 60px);font-size:15px;line-height:1.3}
+.ppbook .ticks.food .tick.rate>.t small{font-size:12.5px}
+.ppbook .ticks.food .tick.rate>.hearbtn{margin-left:52px}
+.ppbook .ticks.food .tick.rate>.stars,.ppbook .ticks.food .tick.rate>.yum{margin:0 0 0 auto}
+.ppstamp{display:grid;gap:12px;margin:0 0 16px}
+.ppbook .pp-page.grow{margin-top:16px}
+.ppbook .growi .grgo{display:flex;gap:14px;align-items:flex-start;flex:1;min-width:0;color:inherit;text-decoration:none}
+.ppbook .growi.cur{box-shadow:0 0 0 3px var(--g1)}
+.ppbook .grtx b{font-size:16px;line-height:1.3}.ppbook .grtx small{font-size:12.5px;color:color-mix(in srgb,#1F2A3A 70%,var(--g1))}
+.ppbook.inkid .ppt{min-width:76px;min-height:72px}.ppbook.inkid .ppt small{font-size:13px}
+.ppbook.inkid .ppgo{min-height:64px;font-size:30px}.ppbook.inkid .ppgo small{font-size:16px}
+.ppbook.inkid .ppbody{min-height:0}
+.ppbook.inkid>.ppbody>.kidguide{margin-bottom:12px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ppbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}}
+:root[data-theme=dark] .ppbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}
+/* how to use the app (#/help, views.js viewHelp): the settings pages' cards, one job a card */
+.helptoc{margin:4px 0 14px}.helptoc .chip{min-height:44px}
+.helpl{margin:0;padding:0 0 0 20px;display:grid;gap:8px;line-height:1.55}
+.helpl li::marker{color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
+.hwho{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;vertical-align:middle;background:color-mix(in srgb,var(--g1) 16%,var(--card));color:color-mix(in srgb,var(--g1) 55%,var(--ink))}
+.helpc{scroll-margin-top:72px}
+/* a child's cover (#/passport/<kid>): the child's own passport cover, then a passport a trip in its book's colours */
+.ppkcover{grid-template-columns:auto minmax(0,1fr);justify-items:start;text-align:left;align-items:center;gap:18px;min-height:0;padding:26px 24px 26px 34px;margin:14px 0 6px;border-radius:10px 22px 22px 10px}
+.ppkcover .kcart{width:clamp(110px,30vw,170px);aspect-ratio:3/4;display:grid;place-items:end center;border-radius:18px;background:color-mix(in srgb,#fff 20%,transparent);box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--gold) 70%,transparent)}
+.ppkcover .kcart img{width:100%;height:100%;object-fit:contain;object-position:bottom}.ppkcover .kcart>span{font-size:64px;align-self:center}
+.ppkcover .kctx{display:grid;gap:6px;min-width:0}
+.ppkcover .nm{font-size:clamp(34px,9vw,52px)!important;margin:0!important;overflow-wrap:anywhere}
+.ppkcover small{font-size:14px}
+.kcstat{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.kcstat span{padding:5px 11px;border-radius:999px;background:color-mix(in srgb,#fff 24%,transparent);color:#fff;font-size:13px;font-weight:700;box-shadow:inset 0 0 0 1px color-mix(in srgb,#fff 40%,transparent)}
+.ppbkh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:22px 0 4px;font-family:var(--ui);font-size:20px}.ppbkh small{font-size:13.5px;font-weight:500;color:var(--muted)}
+.ppshelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:16px;margin:12px 0 8px}
+.ppbk2{position:relative;display:block;padding:10px;border-radius:8px 18px 18px 8px;background:linear-gradient(135deg,var(--bgA) 0 50%,var(--bgB) 50%);box-shadow:inset 6px 0 0 color-mix(in srgb,var(--ink) 18%,transparent),0 16px 30px -22px rgba(0,0,0,.55);text-decoration:none;color:var(--ink);transition:transform .2s}
+.ppbk2 .bkcard{display:grid;justify-items:center;text-align:center;gap:4px;padding:14px 10px 12px;background:#fff;border:4px solid var(--gold);border-radius:14px;min-height:100%}
+.ppbk2 .bkcrest{width:76px;height:76px;display:grid;place-items:center}.ppbk2 .bkcrest img,.ppbk2 .bkcrest svg{width:100%;height:100%;object-fit:contain}
+.ppbk2 .bkk{font-size:12px;font-weight:700;letter-spacing:.12em;color:color-mix(in srgb,var(--ink) 75%,#fff)}
+.ppbk2 .bkt{font-family:var(--ui);font-weight:700;font-size:20px;line-height:1.15;color:var(--ink);overflow-wrap:anywhere}.ppbk2 .bkt em{font-style:normal;color:var(--hi)}
+.ppbk2 .bkd{font-size:12.5px;color:#59616D}
+.ppbk2 .bks{margin-top:4px;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--hi) 14%,#fff);color:color-mix(in srgb,var(--hi) 60%,#1F2A3A);font-size:12.5px;font-weight:700}
+.ppbk2.cur{box-shadow:inset 6px 0 0 color-mix(in srgb,var(--ink) 18%,transparent),0 0 0 3px var(--gold),0 16px 30px -22px rgba(0,0,0,.55)}
+.ppnow{position:absolute;top:-8px;right:10px;z-index:1;padding:4px 10px;border-radius:999px;background:var(--hi,#E05A7A);color:#fff;font-size:11.5px;font-weight:700;box-shadow:0 4px 10px -6px rgba(0,0,0,.5)}
+@media (hover:hover){.ppbk2:hover{transform:translateY(-3px)}}
+@media (max-width:380px){.ppkcover{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}.ppkcover .kctx{justify-items:center}.kcstat{justify-content:center}}
+.ppkids .ppall{text-decoration:none}
+/* passport, easier to use (owner, Nov 2026: "recheck passport UIUX"): the children and kid mode in one row above the book (the top
+   bar's back is "every passport of this child"; print sits at the cover's foot), a row to jump to each list, labels that wrap */
+.ppkids{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.ppkids::-webkit-scrollbar{display:none}
+.ppkids .chip{flex:0 0 auto}
+.ppgo small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-align:center;line-height:1.2}
+.pljump{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 0 12px;padding-bottom:2px}
+.pljump::-webkit-scrollbar{display:none}
+.pljump .chip{flex:0 0 auto;min-height:44px}
+.ppfoot{text-align:center;margin:18px 0 4px}
+.ppfoot .ppprint{min-height:44px;display:inline-flex;align-items:center}
+.pp>.ppfoot{grid-column:1/-1;order:99}
+/* the draft's passport (import page): a small cover in the book's colours beside its pages */
+.imppp{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:start;margin:14px 0;padding:14px;border-radius:20px;background:color-mix(in srgb,var(--accent) 7%,var(--card));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent)}
+.imppc{aspect-ratio:3/4;border-radius:10px 14px 14px 10px;background:linear-gradient(150deg,var(--g1),var(--g2));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px 8px;text-align:center;box-shadow:inset 6px 0 0 rgba(0,0,0,.14),0 6px 14px rgba(0,0,0,.14)}
+.imppc .e{font-size:30px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+.imppc b{font-size:11px;letter-spacing:.08em;text-transform:uppercase;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.imppc small{font-size:11px;opacity:.95;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.25);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.imppl h4{margin:0 0 8px;font-size:15px}
+.imppl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:8px}
+.imppl li{display:flex;align-items:center;gap:10px;min-height:52px;padding:6px 10px 6px 6px;border-radius:14px;background:var(--card);box-shadow:0 1px 0 color-mix(in srgb,var(--ink) 8%,transparent)}
+.imppl li img{width:40px;height:40px;flex:0 0 40px;object-fit:contain}
+.imppl li span{display:flex;flex-direction:column;min-width:0}
+.imppl li b{font-size:14px;line-height:1.25}
+.imppl li small{font-size:12.5px;color:var(--muted);line-height:1.3}
+@media (max-width:420px){.imppp{grid-template-columns:1fr}.imppc{aspect-ratio:auto;flex-direction:row;justify-content:flex-start;min-height:72px;text-align:left}.imppc b{white-space:nowrap;flex:0 0 auto}.imppc b br{display:none}}
+
+/* the new-book sheet in the app's card look (owner, Nov 2026) */
+.ntsheet{display:grid;gap:12px}.ntsheet .ntt{margin:0;font-size:20px}
+.ntsheet .pcard{margin:0}
+.ntplan{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;text-decoration:none;color:var(--ink);min-height:56px}
+.ntplan .pcpic{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px color-mix(in srgb,var(--g1) 45%,#fff)}.ntplan .pcpic img{width:34px;height:34px;object-fit:contain}
+.ntplan b{display:block}.ntplan small{display:block;color:var(--muted);line-height:1.4}.ntplan i{font-style:normal;font-size:22px;color:color-mix(in srgb,var(--g1) 60%,var(--ink))}
+.ntmore{border-radius:16px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}.ntmore>summary{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:0 14px;cursor:pointer;list-style:none;font-weight:600}.ntmore>summary::-webkit-details-marker{display:none}
+.ntmore>.pform,.ntmore>label{padding:0 14px 14px;display:grid}.ntmore[open]>summary .chv{transform:rotate(180deg)}
+.ntcol{height:48px;padding:4px;min-width:64px}
+.ntsheet #nterr{color:color-mix(in srgb,var(--accent2) 60%,var(--ink));min-height:0}.ntsheet #nterr:empty{display:none}
+.ntsheet .ntgo{padding-top:4px}
+.tick.nope,.felt button.nope,.yum button.nope,.ppbook .stars button.nope{animation:lockwob .35s}@keyframes lockwob{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.pin circle.hit{fill:transparent!important;stroke:none!important}
+.mapdays.mdays .chip{min-width:44px;min-height:44px}
+.kidexit,#qreset{touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.ppbook .hearbtn.ppsay{min-width:44px;min-height:44px}
+/* thumb sizes, third pass (layout audit of 22 Nov 2026: 110 pages × 4 widths × light/dark): every tap 44 px, the drawing unchanged */
+.first .kids button{min-width:44px;min-height:44px;display:grid;place-items:center}
+.pk .eh .pinlink{padding:16px;margin:-16px -14px -16px -15px}
+.rkid .opts button{height:auto;min-height:44px;min-width:44px}
+.sightc .ef a.go,.eatc .ef a.go{min-height:44px;display:inline-flex;align-items:center}
+/* the fresh-start card (owner, Nov 2026): one row a kind of play, ticked, then two taps */
+.freshline .frrows{display:grid;gap:8px;margin:8px 0 10px}.freshline .frrow .gface{flex:none;display:grid;place-items:center}.freshline .frrow .gface .ku{width:36px;height:36px}.freshline .frrow .label{margin-left:4px}
+/* a run of Thai between spaces in a heading stays whole (views.js thKeep) */
+.thw{display:inline-block;max-width:100%}
+/* review stars: 44 px taps (UI review, Nov 2026) */
+.stars button:not(.mini){min-width:44px;min-height:44px}
+/* a painted picture on a dark pastel tile floats like in light mode — no plate (UI review, Nov 2026) */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .hubgrid.tl-pastel .tile .e.pic{background:none}}:root[data-theme=dark] .hubgrid.tl-pastel .tile .e.pic{background:none}
+/* kid mode on a phone (UI review, Nov 2026): the paper and the picture leave room for their "keep it" / "all done" button above the kid bar */
+.kidwrap .drawwrap:not(.full) .drawpad canvas{width:min(100%,calc(max(200px,min(60vh,100dvh - 520px)) * var(--ar,1.3333)))}
+.kidwrap .colourpad{max-height:max(220px,min(56vh,100dvh - 470px));margin-inline:auto}.kidwrap .colourpad svg{max-height:max(200px,min(52vh,100dvh - 490px))}
+.hoff ~ .impnote{display:none}   /* the import page with the helper off: no notes about a job that cannot run */
+/* Today before the trip (owner, Nov 2026: "ปรับ UI"): the countdown and the navigate buttons as the menu's pastel cards with their pictures; the short · full switch a tinted track */
+.call.info.pre.cdcard{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid;border-left-width:1px;border-radius:22px;margin:14px 0}
+.cdcard .cdpic{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--g1) 45%,#fff),0 10px 20px -14px var(--g1)}
+.cdcard .cdpic img{width:50px;height:50px;object-fit:contain}
+.cdcard .cdtx{min-width:0}
+.cdcard .cdk{display:block;font-size:13px;font-weight:700;color:color-mix(in srgb,var(--g1) 55%,#1F2A3A)}
+.call.info.pre.cdcard .cdtx>b{display:block;font-size:20px;font-weight:800;line-height:1.15;margin:1px 0 2px}
+.cdcard .cdn{font-size:34px;letter-spacing:-.5px;color:color-mix(in srgb,var(--g1) 60%,#1F2A3A)}
+.call.info.pre.cdcard .cdsub{display:block;font-size:14px;margin:0;color:color-mix(in srgb,#1F2A3A 75%,var(--g1))}
+.row.quick .qlink.pz{justify-content:flex-start;gap:10px;min-height:64px;padding:8px 14px 8px 8px;border:1px solid;border-radius:20px;color:#1F2A3A}
+.row.quick .qlink .qkpic{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px color-mix(in srgb,var(--g1) 45%,#fff)}
+.row.quick .qlink .qkpic img{width:36px;height:36px;object-fit:contain}
+.row.quick .qlink .qtx{display:flex;flex-direction:column;min-width:0;line-height:1.2}
+.row.quick .qlink .qtx b{font-size:15.5px;font-weight:800;color:color-mix(in srgb,var(--g1) 50%,#1F2A3A)}
+.row.quick .qlink .qtx small{font-size:12.5px;font-weight:600;color:color-mix(in srgb,#1F2A3A 70%,var(--g1))}
+.dayhd .seg.dayseg{border:0;padding:4px;gap:2px;background:color-mix(in srgb,var(--accent) 10%,var(--card))}
+.dayhd .seg.dayseg button{border-radius:999px;min-width:66px;font-size:14px;color:color-mix(in srgb,var(--ink) 70%,var(--accent))}
+.dayhd .seg.dayseg button[aria-pressed=true]{background:var(--card);color:color-mix(in srgb,var(--accent) 70%,var(--ink));box-shadow:0 2px 6px -2px rgba(20,30,50,.25),inset 0 0 0 1.5px color-mix(in srgb,var(--accent) 50%,transparent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .cdcard .cdk,:root:not([data-theme=light]) .cdcard .cdn,:root:not([data-theme=light]) .row.quick .qlink .qtx b{color:color-mix(in srgb,var(--g1) 55%,#fff)}:root:not([data-theme=light]) .call.info.pre.cdcard .cdsub,:root:not([data-theme=light]) .row.quick .qlink .qtx small{color:color-mix(in srgb,var(--ink) 80%,var(--g1))}:root:not([data-theme=light]) .row.quick .qlink.pz{color:var(--ink)}:root:not([data-theme=light]) .dayhd .seg.dayseg button[aria-pressed=true]{color:color-mix(in srgb,var(--accent) 45%,#fff)}}
+:root[data-theme=dark] .cdcard .cdk,:root[data-theme=dark] .cdcard .cdn,:root[data-theme=dark] .row.quick .qlink .qtx b{color:color-mix(in srgb,var(--g1) 55%,#fff)}:root[data-theme=dark] .call.info.pre.cdcard .cdsub,:root[data-theme=dark] .row.quick .qlink .qtx small{color:color-mix(in srgb,var(--ink) 80%,var(--g1))}:root[data-theme=dark] .row.quick .qlink.pz{color:var(--ink)}:root[data-theme=dark] .dayhd .seg.dayseg button[aria-pressed=true]{color:color-mix(in srgb,var(--accent) 45%,#fff)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .dayhd .seg.dayseg{background:color-mix(in srgb,var(--accent) 22%,var(--card))}:root:not([data-theme=light]) .dayhd .seg.dayseg button[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 45%,var(--card));box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--accent) 70%,#fff)}}
+:root[data-theme=dark] .dayhd .seg.dayseg{background:color-mix(in srgb,var(--accent) 22%,var(--card))}:root[data-theme=dark] .dayhd .seg.dayseg button[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 45%,var(--card));box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--accent) 70%,#fff)}
+/* one selected look (UI review, Nov 2026: a 12 % tint of a navy or forest accent read as a grey block): every chosen chip, switch, day, tab and option card
+   is tinted with the book's lighter colour (--acc-soft, core.js themeStyle) and ringed in its main colour; a current step is the same, never a solid dark disc */
+:root{--sel-bg:color-mix(in srgb,var(--acc-soft,var(--accent)) 40%,var(--card));--sel-ink:color-mix(in srgb,var(--accent) 82%,var(--ink))}
+.seg button[aria-pressed=true],.chip[aria-pressed=true],.rtags .chip[aria-pressed=true],.daystrip a[aria-current=true],.daytabs a[aria-current=page],.tpo[aria-pressed=true],.ppt[aria-current],.ppedit[aria-pressed=true],.mission .felt button[aria-pressed=true],.rkid .opts button[aria-pressed=true],.moodgrid button[aria-pressed=true]{background:var(--sel-bg)}
+.seg button[aria-pressed=true],.chip[aria-pressed=true],.daystrip a[aria-current=true],.daytabs a[aria-current=page]{color:var(--sel-ink)}
+nav.bar a[aria-current=page]{background:var(--sel-bg);color:var(--sel-ink)}
+.plqd.now i{background:var(--sel-bg);color:var(--sel-ink);box-shadow:inset 0 0 0 2px var(--accent),0 0 0 3px color-mix(in srgb,var(--acc-soft,var(--accent)) 30%,transparent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--sel-bg:color-mix(in srgb,var(--acc-soft,var(--accent)) 24%,var(--card));--sel-ink:color-mix(in srgb,var(--acc-soft,var(--accent)) 70%,#fff)}}
+:root[data-theme=dark]{--sel-bg:color-mix(in srgb,var(--acc-soft,var(--accent)) 24%,var(--card));--sel-ink:color-mix(in srgb,var(--acc-soft,var(--accent)) 70%,#fff)}
+/* no thin coloured rules (owner, Nov 2026: "ไม่เอาแบบเส้นๆสีๆอีกแล้ว", carried from the record page by the UI review): a card wears its colour as a soft fill
+   with rounder corners, never a 4 px stripe across its top or down its side */
+.pcard,.privacy .pvsec{border:0;border-radius:24px;background:color-mix(in srgb,var(--g1,var(--accent)) 9%,var(--card));box-shadow:0 1px 0 color-mix(in srgb,var(--g1,var(--accent)) 14%,transparent)}
+.stayc{border:0;border-radius:20px;background:color-mix(in srgb,var(--c) 9%,var(--card))}
+.tp-learn .gcard{border-top:0;border-radius:20px;padding:12px 14px;background:color-mix(in srgb,var(--tc,var(--accent)) 8%,var(--card));margin-bottom:10px}
+.tp.one .gl{border:0;border-radius:22px;background:color-mix(in srgb,var(--g1,var(--accent)) 8%,var(--card));box-shadow:none}
+.tp.one .cols2>div,.tp.one .pg1>ul.tips,.tp.one .pg1>ol.tips,.tp.one .gcard,.tp.one .ifts details.ifold,.tp.one .pg1>.call.info,.tp.one .pg1>.call.calm,.tp.one .pg1>.call.pick,.tp.one details.sub{border:0;border-radius:22px;background:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 8%,var(--card));box-shadow:none}
+@media (max-width:560px){.tp.one .prices tr{border:0;border-radius:22px;background:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 8%,var(--card));box-shadow:none}}
+@media (min-width:641px){.tp.one .tblwrap{border:0;border-radius:22px;background:color-mix(in srgb,var(--g1,var(--accent)) 6%,var(--card));box-shadow:none}}
+.plday{border:0;border-radius:20px;background:color-mix(in srgb,var(--tc) 10%,var(--card))}
+.sightc{border-top:0;border-radius:20px;box-shadow:none;background:color-mix(in srgb,#1CC9A4 8%,var(--card))}
+.nights li{border-left:0;border-radius:16px;background:color-mix(in srgb,var(--c,var(--accent)) 8%,var(--card))}
+.call{border-left:0;border-radius:18px}
+.tp .pocket details.pg>summary{border-left:0}
+/* folds that got the app's chevron after the render (views.js chvAdd): no browser triangle, no CSS-drawn › or ⌄ beside it */
+summary.chvadd{display:flex;align-items:center;gap:6px;list-style:none}summary.chvadd::-webkit-details-marker{display:none}summary.chvadd::marker{content:""}
+summary.chvadd::after{content:none!important;display:none!important}
+summary.chvadd>svg.ic.chv{margin-left:auto}
+/* the first-run steps as pastel cards with their pictures (UI review, Nov 2026) */
+.onbsteps{border-top:0;display:grid;gap:10px}
+.onbsteps li.pz{padding:12px 14px;border:1px solid;border-radius:20px}
+.onbsteps li.pz .onbno{width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--g1) 40%,#fff);display:grid;place-items:center}
+.onbsteps li.pz .onbno img{width:42px;height:42px;object-fit:contain}
+summary.chvadd>.chvt{flex:1;min-width:0}
+/* the budget form: one row a kind on a white strip, the amount box with its money inside (UI review, Nov 2026) */
+.budblk .budf{grid-template-columns:1fr;gap:8px}
+.budblk .budf .fxf{flex-direction:row;align-items:center;gap:10px;padding:6px 8px 6px 14px;border-radius:16px;background:var(--card);font-size:15px;font-weight:600}
+.budblk .budn{flex:1;min-width:0}
+.budblk .budin{position:relative;flex:0 0 46%}.budblk .budin .field{width:100%;padding-right:52px;text-align:right}
+.budblk .budin small{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;color:var(--muted);pointer-events:none}
+/* dark mode (UI review, Nov 2026) — kid mode and the passport are painted pages for a child, used at bedtime and on dark planes: in dark mode a dusk veil
+   dims them (an overlay, never a filter, which would break the fixed kid bar), taps go through it */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .kidmain::after{content:"";position:fixed;inset:0;background:rgba(8,14,30,.28);pointer-events:none;z-index:9999}:root:not([data-theme=light]) .ppbook:not(.inkid){position:relative}:root:not([data-theme=light]) .ppbook:not(.inkid)::after{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(8,14,30,.22);pointer-events:none;z-index:5}}
+:root[data-theme=dark] .kidmain::after{content:"";position:fixed;inset:0;background:rgba(8,14,30,.28);pointer-events:none;z-index:9999}:root[data-theme=dark] .ppbook:not(.inkid){position:relative}:root[data-theme=dark] .ppbook:not(.inkid)::after{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(8,14,30,.22);pointer-events:none;z-index:5}
+/* the language and text-size choices: a deeper disc with a light letter (the light-mode colours mixed with the dark ink all but vanished) */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .lgk .tpo:nth-child(1) .gl,:root:not([data-theme=light]) .fsk .tpo:nth-child(4) .gl{background:color-mix(in srgb,#FF6FA8 38%,var(--card));color:#FFE3EE}:root:not([data-theme=light]) .lgk .tpo:nth-child(2) .gl,:root:not([data-theme=light]) .fsk .tpo:nth-child(1) .gl{background:color-mix(in srgb,#4F7BFF 40%,var(--card));color:#E3EBFF}:root:not([data-theme=light]) .fsk .tpo:nth-child(2) .gl{background:color-mix(in srgb,#2DB38A 38%,var(--card));color:#DDF7EE}:root:not([data-theme=light]) .fsk .tpo:nth-child(3) .gl{background:color-mix(in srgb,#F2B90C 38%,var(--card));color:#FFF4D2}}
+:root[data-theme=dark] .lgk .tpo:nth-child(1) .gl,:root[data-theme=dark] .fsk .tpo:nth-child(4) .gl{background:color-mix(in srgb,#FF6FA8 38%,var(--card));color:#FFE3EE}:root[data-theme=dark] .lgk .tpo:nth-child(2) .gl,:root[data-theme=dark] .fsk .tpo:nth-child(1) .gl{background:color-mix(in srgb,#4F7BFF 40%,var(--card));color:#E3EBFF}:root[data-theme=dark] .fsk .tpo:nth-child(2) .gl{background:color-mix(in srgb,#2DB38A 38%,var(--card));color:#DDF7EE}:root[data-theme=dark] .fsk .tpo:nth-child(3) .gl{background:color-mix(in srgb,#F2B90C 38%,var(--card));color:#FFF4D2}
+/* the menu-colour previews stay visible on a dark card */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tpo-plain .sw i{background:color-mix(in srgb,#fff 12%,var(--card));border-color:color-mix(in srgb,#fff 30%,transparent)}:root:not([data-theme=light]) .tpo-accent .sw i{background:color-mix(in srgb,var(--accent) 45%,var(--card));border-color:color-mix(in srgb,var(--accent) 60%,transparent)}}
+:root[data-theme=dark] .tpo-plain .sw i{background:color-mix(in srgb,#fff 12%,var(--card));border-color:color-mix(in srgb,#fff 30%,transparent)}:root[data-theme=dark] .tpo-accent .sw i{background:color-mix(in srgb,var(--accent) 45%,var(--card));border-color:color-mix(in srgb,var(--accent) 60%,transparent)}
+/* the tasting card: a star not given yet is pale, so "not tasted" never reads as "three stars" (UI review, Nov 2026) */
+.ppbook .stars button[aria-pressed=false]{color:#D5DAE1;text-shadow:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ppbook .stars button[aria-pressed=false]{color:#4A5468}}:root[data-theme=dark] .ppbook .stars button[aria-pressed=false]{color:#4A5468}
+.tdv.zh{font-size:22px;line-height:1.35;letter-spacing:.02em}
+/* the kid home's day circles (owner, Nov 2026: "ตรงกลมๆเบียดไปไหม" — the chosen day's ring touched the screen edge and its neighbour): room on both sides,
+   a white gap inside the ring, the row centred when it fits (auto margins: never clipped at the start like justify-content:center), smaller circles on a phone */
+.kidwrap .kiddays{gap:14px;padding:14px 18px;scroll-padding-inline:18px}
+.kidwrap .kiddays>button:first-child{margin-left:auto}.kidwrap .kiddays>button:last-child{margin-right:auto}
+.kidwrap .kiddays button[aria-pressed=true]:not(:first-child){margin-left:6px}.kidwrap .kiddays button[aria-pressed=true]:not(:last-child){margin-right:6px}
+.kidwrap .kiddays button[aria-pressed=true] .art{transform:scale(1.1);box-shadow:0 0 0 3px #fff,0 0 0 6px var(--accent)}
+@media (max-width:440px){.kidwrap .kiddays{gap:12px;padding-inline:14px;scroll-padding-inline:14px}.kidwrap .kiddays .art,.kidwrap.home .kiddays .art{width:46px;height:46px}}
+.kidwrap .kiddays{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 16px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 16px),transparent)}   /* the fade only in the row's own padding: a row that fits is never dimmed */
+/* more air between the day circles (owner, Nov 2026, second look: "วงยังเบียดครับ"): on a phone smaller circles, a gap that grows with the screen,
+   and the chosen day is ringed, not enlarged */
+@media (max-width:440px){.kidwrap .kiddays{gap:clamp(12px,4vw,20px);padding-inline:12px;scroll-padding-inline:12px}.kidwrap .kiddays .art,.kidwrap.home .kiddays .art{width:44px;height:44px}}
+.kidwrap .kiddays button[aria-pressed=true] .art{transform:none}
+/* a short trip's days all fit on a phone (owner's Samsung at a bigger display size, ~375 px wide, Nov 2026: the sixth circle was cut at the edge):
+   the circle's size is worked out from the screen width and the number of days (--n from kid.js), between 36 and 44 px; a long trip still scrolls */
+@media (max-width:440px){.kidwrap .kiddays{--g:clamp(12px,4vw,20px);--ks:clamp(36px,calc((100vw - 62px - (var(--n,6) - 1) * var(--g)) / var(--n,6)),44px);gap:var(--g)}.kidwrap .kiddays .art,.kidwrap.home .kiddays .art{width:var(--ks);height:var(--ks)}}

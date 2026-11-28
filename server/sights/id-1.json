@@ -1,0 +1,912 @@
+{
+  "cc": "id",
+  "towns": [
+    {
+      "place": "id-bali",
+      "sights": [
+        {
+          "name": { "en": "Waterbom Bali", "th": "วอเตอร์บอมบาหลี" },
+          "kind": "themepark",
+          "area": { "en": "Kuta", "th": "กูตา" },
+          "what": { "en": "A big water park in tropical gardens with slides, a lazy river and a separate splash area for little ones", "th": "สวนน้ำใหญ่ในสวนเขตร้อน มีสไลเดอร์ แม่น้ำไหลเอื่อย และโซนเล่นน้ำแยกสำหรับเด็กเล็ก" },
+          "why": { "en": "The Funtastic kids' area has shallow pools and small slides, with shade and lifeguards everywhere", "th": "โซนเด็กมีสระตื้นและสไลเดอร์เล็ก ร่มเงาดี และมีไลฟ์การ์ดทุกจุด" },
+          "tip": { "en": "Buy online for a lower price; arrive at opening for a shaded lounger", "th": "ซื้อออนไลน์ได้ราคาถูกกว่า ไปตอนเปิดเพื่อได้เก้าอี้ในร่ม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ Rp 495,000 children 2–11 · adults more · under 2 free", "th": "≈ Rp 495,000 เด็ก 2–11 ปี · ผู้ใหญ่แพงกว่า · ต่ำกว่า 2 ขวบฟรี" },
+          "book": "rec",
+          "q": "Waterbom Bali, Jl. Kartika Plaza, Kuta, Bali",
+          "ok": "2026-11",
+          "src": "https://www.waterbom-bali.com/ticket"
+        },
+        {
+          "name": { "en": "Bali Bird Park", "th": "สวนนกบาหลี" },
+          "kind": "zoo",
+          "area": { "en": "Singapadu, Gianyar", "th": "สิงปาดู เกียนยาร์" },
+          "what": { "en": "Walk-through aviaries of colourful tropical birds, a reptile house with Komodo dragons and a free-flight bird display", "th": "กรงนกขนาดใหญ่ให้เดินเข้าไป นกเขตร้อนสีสด บ้านสัตว์เลื้อยคลานมีมังกรโคโมโด และการบินอิสระของนก" },
+          "why": { "en": "Birds land close by in the walk-in aviaries, and the paths are shady and compact for small legs", "th": "นกบินมาเกาะใกล้ๆ ในกรงที่เดินเข้าไป ทางเดินร่มรื่นและไม่ไกลเกินไปสำหรับเด็กเล็ก" },
+          "tip": { "en": "Book online for the promo price; go in the morning when the birds are busiest", "th": "จองออนไลน์ได้ราคาโปรโมชัน ไปช่วงเช้าที่นกกระตือรือร้นที่สุด" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ Rp 385,000 adults · 265,000 children · less online", "th": "≈ Rp 385,000 ผู้ใหญ่ · 265,000 เด็ก · ออนไลน์ถูกกว่า" },
+          "book": "rec",
+          "q": "Bali Bird Park, Jl. Serma Cok Ngurah Gambir, Singapadu, Gianyar, Bali",
+          "ok": "2026-11",
+          "src": "https://adeevatours.com/bali-bird-park-entrance-fee"
+        },
+        {
+          "name": { "en": "Sacred Monkey Forest Sanctuary", "th": "ป่าลิงศักดิ์สิทธิ์อูบุด" },
+          "local": "Mandala Suci Wenara Wana",
+          "kind": "nature",
+          "area": { "en": "Ubud", "th": "อูบุด" },
+          "what": { "en": "A jungle of giant trees and mossy temples where hundreds of long-tailed macaques roam free", "th": "ป่าต้นไม้ยักษ์และวัดเก่ามีมอสเกาะ มีลิงแสมหางยาวหลายร้อยตัวอยู่อย่างอิสระ" },
+          "why": { "en": "Children love watching baby monkeys, but the monkeys grab bags and food, so hold little hands", "th": "เด็กชอบดูลิงตัวเล็ก แต่ลิงชอบแย่งกระเป๋าและอาหาร ต้องจูงมือเด็กเล็กไว้" },
+          "tip": { "en": "Carry no food or loose items; do not look the monkeys in the eye", "th": "ไม่พกอาหารหรือของห้อยหลวม อย่าจ้องตาลิง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ Rp 130,000 adults · 100,000 children 3–12 · under 3 free", "th": "≈ Rp 130,000 ผู้ใหญ่ · 100,000 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "none",
+          "q": "Sacred Monkey Forest Sanctuary, Jl. Monkey Forest, Ubud, Bali",
+          "ok": "2026-11",
+          "src": "https://thebalisun.com/top-bali-tourism-attraction-increases-entry-fees-for-tourists/"
+        },
+        {
+          "name": { "en": "Tegallalang Rice Terraces", "th": "นาขั้นบันไดเตกัลลาลัง" },
+          "kind": "nature",
+          "area": { "en": "Tegallalang, north of Ubud", "th": "เตกัลลาลัง ทางเหนือของอูบุด" },
+          "what": { "en": "Bali's famous green rice terraces stepping down a valley, with paths, cafés and swings on the edges", "th": "นาขั้นบันไดสีเขียวที่มีชื่อของบาหลีไล่ลงหุบเขา มีทางเดิน คาเฟ่ และชิงช้าริมขอบ" },
+          "why": { "en": "The view from the top café works with little ones; the paths down are steep and muddy after rain", "th": "วิวจากคาเฟ่ด้านบนเหมาะกับเด็กเล็ก ทางเดินลงชันและลื่นหลังฝนตก" },
+          "tip": { "en": "Go early before the tour buses; carry small notes for village donation points", "th": "ไปแต่เช้าก่อนรถทัวร์มา พกแบงก์ย่อยสำหรับจุดบริจาคของหมู่บ้าน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ Rp 15,000–25,000 a person", "th": "≈ Rp 15,000–25,000 ต่อคน" },
+          "book": "none",
+          "q": "Tegallalang Rice Terrace, Tegallalang, Gianyar, Bali",
+          "ok": "2026-11",
+          "src": "https://finnsbeachclub.com/guides/tegallalang-rice-terrace/"
+        },
+        {
+          "name": { "en": "Tanah Lot", "th": "ตานาห์ล็อต" },
+          "local": "Pura Tanah Lot",
+          "kind": "culture",
+          "area": { "en": "Beraban, Tabanan", "th": "เบราบัน ตาบานัน" },
+          "what": { "en": "A sea temple on a rock in the waves, best at sunset, with a clifftop walk and snack stalls", "th": "วัดทะเลบนโขดหินกลางคลื่น สวยที่สุดตอนพระอาทิตย์ตก มีทางเดินบนหน้าผาและร้านขนม" },
+          "why": { "en": "At low tide children can walk out to the rock and see the holy spring; the waves are a show in themselves", "th": "ช่วงน้ำลงเด็กๆ เดินไปถึงโขดหินและดูน้ำพุศักดิ์สิทธิ์ได้ คลื่นเองก็น่าดูแล้ว" },
+          "tip": { "en": "Check the tide; the path is slippery near the water", "th": "เช็กเวลาน้ำขึ้นลง ทางเดินใกล้น้ำลื่น" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ Rp 75,000 adults · 40,000 children · under 5 free", "th": "≈ Rp 75,000 ผู้ใหญ่ · 40,000 เด็ก · ต่ำกว่า 5 ขวบฟรี" },
+          "book": "none",
+          "q": "Tanah Lot Temple, Beraban, Kediri, Tabanan, Bali",
+          "ok": "2026-11",
+          "src": "https://heybali.info/news/balis-iconic-temples-will-cost-more-to-enter-in-2026-as-tanah-lot-and-ulun-danu-beratan-raise-ticket-prices/?amp=1"
+        },
+        {
+          "name": { "en": "Turtle Conservation and Education Center", "th": "ศูนย์อนุรักษ์เต่าเซรางัน" },
+          "local": "TCEC Serangan",
+          "kind": "nature",
+          "area": { "en": "Serangan Island", "th": "เกาะเซรางัน" },
+          "what": { "en": "A small centre that cares for sea turtles, hatchlings and injured turtles in open pools", "th": "ศูนย์เล็กๆ ดูแลเต่าทะเล ลูกเต่า และเต่าบาดเจ็บในบ่อเปิด" },
+          "why": { "en": "Children see turtles of every size up close and learn why they need help, without any show", "th": "เด็กได้เห็นเต่าทุกขนาดใกล้ๆ และเรียนรู้ว่าทำไมต้องช่วยเต่า โดยไม่มีการแสดง" },
+          "tip": { "en": "Ask about hatchling releases in the hatching season; leave a donation", "th": "ถามเรื่องการปล่อยลูกเต่าช่วงฤดูฟักไข่ และช่วยบริจาค" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · donations welcome", "th": "ฟรี · รับบริจาค" },
+          "book": "none",
+          "q": "Turtle Conservation and Education Center, Serangan, Denpasar, Bali",
+          "ok": "2026-11",
+          "src": "https://rri.co.id/voice-of-indonesia/archipelago/2159548/bali-s-serangan-turtle-conservation-center-handles-stranded-turtles"
+        },
+        {
+          "name": { "en": "Uluwatu Temple and Kecak dance", "th": "วัดอูลูวาตูและระบำกีจัก" },
+          "local": "Pura Luhur Uluwatu",
+          "kind": "show",
+          "area": { "en": "Uluwatu, Bukit peninsula", "th": "อูลูวาตู คาบสมุทรบูกิต" },
+          "what": { "en": "A temple on a cliff high above the ocean, with the Kecak fire dance at sunset in an open-air theatre", "th": "วัดบนหน้าผาสูงเหนือมหาสมุทร มีระบำไฟกีจักตอนพระอาทิตย์ตกในโรงละครกลางแจ้ง" },
+          "why": { "en": "The chanting circle and the fire scene thrill older children; little ones may find it long and loud", "th": "วงร้องประสานเสียงและฉากไฟทำให้เด็กโตตื่นเต้น เด็กเล็กอาจรู้สึกนานและเสียงดัง" },
+          "tip": { "en": "Monkeys here snatch glasses and hats; buy Kecak tickets early on busy days", "th": "ลิงที่นี่ชอบแย่งแว่นและหมวก ซื้อตั๋วกีจักแต่เนิ่นๆ ในวันคนเยอะ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Temple ≈ Rp 50,000 · Kecak ≈ Rp 150,000 adults · 75,000 children", "th": "วัด ≈ Rp 50,000 · กีจัก ≈ Rp 150,000 ผู้ใหญ่ · 75,000 เด็ก" },
+          "book": "rec",
+          "q": "Uluwatu Temple, Pecatu, South Kuta, Bali",
+          "ok": "2026-11",
+          "src": "https://heybali.info/news/uluwatu-temple-guide-2026-entry-fickets-kecak/?amp=1"
+        },
+        {
+          "name": { "en": "Sindhu Night Market", "th": "ตลาดกลางคืนสินธุ" },
+          "local": "Pasar Malam Sindhu",
+          "kind": "market",
+          "area": { "en": "Sanur", "th": "ซานูร์" },
+          "what": { "en": "A small evening market of local food stalls: satay, noodle soups, fried snacks and sweets", "th": "ตลาดเย็นเล็กๆ มีร้านอาหารท้องถิ่น สะเต๊ะ ก๋วยเตี๋ยว ของทอด และขนมหวาน" },
+          "why": { "en": "Relaxed and not too crowded, so families can sit and try cheap local dishes together", "th": "บรรยากาศสบาย ไม่แน่นเกินไป ครอบครัวนั่งลองอาหารท้องถิ่นราคาถูกได้" },
+          "tip": { "en": "Bring cash; ask for food without chilli for the children", "th": "พกเงินสด สั่งแบบไม่เผ็ดสำหรับเด็ก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk · dishes ≈ Rp 15,000–20,000", "th": "เดินฟรี · อาหาร ≈ Rp 15,000–20,000" },
+          "book": "none",
+          "q": "Sindhu Night Market, Jl. Pungutan, Sanur, Denpasar, Bali",
+          "ok": "2026-11",
+          "src": "https://forevervacation.com/the-vacationer/best-night-markets-in-bali"
+        },
+        {
+          "name": { "en": "Campuhan Ridge Walk", "th": "ทางเดินสันเขาจัมปูฮัน" },
+          "kind": "nature",
+          "area": { "en": "Ubud", "th": "อูบุด" },
+          "what": { "en": "An easy paved path along a grassy ridge between two river valleys, ending at rice fields and cafés", "th": "ทางเดินลาดง่ายบนสันเขาหญ้าระหว่างหุบเขาแม่น้ำสองสาย ปลายทางเป็นนาข้าวและคาเฟ่" },
+          "why": { "en": "Gentle and short enough for a carrier or a walking four-year-old, with wide views", "th": "ไม่ชันและไม่ไกล อุ้มเด็กหรือให้เด็กสี่ขวบเดินเองได้ วิวกว้าง" },
+          "tip": { "en": "Walk at sunrise or late afternoon; there is no shade at midday", "th": "เดินตอนเช้าตรู่หรือบ่ายแก่ๆ ตอนเที่ยงไม่มีร่ม" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Campuhan Ridge Walk, Jl. Raya Campuhan, Ubud, Bali",
+          "ok": "2026-11",
+          "src": "https://www.baliholidaysecrets.com/campuhan-ridge-walk/"
+        },
+        {
+          "name": { "en": "Tegenungan Waterfall", "th": "น้ำตกเตเกนุงัน" },
+          "local": "Air Terjun Tegenungan",
+          "kind": "nature",
+          "area": { "en": "Kemenuh, Gianyar", "th": "เกอเมอนุห์ เกียนยาร์" },
+          "what": { "en": "A wide waterfall into a jungle pool, close to Ubud, with viewpoints and swings above it", "th": "น้ำตกกว้างไหลลงแอ่งน้ำกลางป่า ใกล้อูบุด มีจุดชมวิวและชิงช้าด้านบน" },
+          "why": { "en": "The roar and spray amaze children; the view from the top suits toddlers, the steps down suit older ones", "th": "เสียงและละอองน้ำทำให้เด็กตื่นตา เด็กเล็กดูจากด้านบน เด็กโตเดินบันไดลงไปได้" },
+          "tip": { "en": "Many steep steps to the bottom; swimming is not safe after heavy rain", "th": "บันไดลงชันและเยอะ หลังฝนตกหนักไม่ควรลงเล่นน้ำ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ Rp 30,000 adults · 15,000 children", "th": "≈ Rp 30,000 ผู้ใหญ่ · 15,000 เด็ก" },
+          "book": "none",
+          "q": "Tegenungan Waterfall, Kemenuh, Sukawati, Gianyar, Bali",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/bali/tegenungan-waterfalls"
+        },
+        {
+          "name": { "en": "Ubud Art Market", "th": "ตลาดศิลปะอูบุด" },
+          "local": "Pasar Seni Ubud",
+          "kind": "market",
+          "area": { "en": "Central Ubud, opposite Ubud Palace", "th": "ใจกลางอูบุด ตรงข้ามวังอูบุด" },
+          "what": { "en": "Lanes of stalls selling sarongs, baskets, wooden toys and painted kites, open daily", "th": "ซอยแผงขายผ้าซารอง ตะกร้า ของเล่นไม้ และว่าวระบายสี เปิดทุกวัน" },
+          "why": { "en": "Wooden animals and kites make good small souvenirs, and the palace is across the road", "th": "สัตว์ไม้และว่าวเป็นของฝากเล็กๆ ที่ดี และวังอูบุดอยู่ฝั่งตรงข้าม" },
+          "tip": { "en": "Bargain with a smile; mornings are cooler and quieter", "th": "ต่อราคาอย่างสุภาพ ช่วงเช้าอากาศเย็นและคนน้อยกว่า" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Ubud Art Market, Jl. Raya Ubud, Ubud, Bali",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/tourism/bali/ubud-art-market-guide"
+        },
+        {
+          "name": { "en": "Legong dance at Ubud Palace", "th": "ระบำเลกองที่วังอูบุด" },
+          "local": "Puri Saren Ubud",
+          "kind": "show",
+          "area": { "en": "Central Ubud", "th": "ใจกลางอูบุด" },
+          "what": { "en": "An evening Balinese dance with a gamelan orchestra in the palace courtyard, golden costumes and quick eye movements", "th": "ระบำบาหลียามค่ำพร้อมวงกาเมลันในลานวัง ชุดสีทองและการกลอกตาอย่างรวดเร็ว" },
+          "why": { "en": "The costumes, masks and music hold children's attention; sit near the front so they can see", "th": "ชุด หน้ากาก และดนตรีดึงความสนใจเด็ก นั่งแถวหน้าให้เด็กมองเห็น" },
+          "tip": { "en": "Starts at 7.30 pm and lasts about 90 minutes; leave at the interval if little ones tire", "th": "เริ่ม 1 ทุ่มครึ่ง ยาวราว 90 นาที ถ้าเด็กเล็กเหนื่อยออกตอนพักได้" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ Rp 100,000 a person", "th": "≈ Rp 100,000 ต่อคน" },
+          "book": "none",
+          "q": "Ubud Palace, Jl. Raya Ubud, Ubud, Bali",
+          "ok": "2026-11",
+          "src": "https://www.baliholidaysecrets.com/ubud-palace-legong-dance/"
+        },
+        {
+          "name": { "en": "Sanur beach path", "th": "ทางเดินริมหาดซานูร์" },
+          "kind": "beach",
+          "area": { "en": "Sanur", "th": "ซานูร์" },
+          "what": { "en": "A long seaside path along calm, reef-sheltered water, with playgrounds, cafés and bikes to hire", "th": "ทางเดินริมทะเลยาวไปตามน้ำทะเลสงบที่มีแนวปะการังกั้นคลื่น มีสนามเด็กเล่น คาเฟ่ และจักรยานให้เช่า" },
+          "why": { "en": "The water is shallow and gentle at high tide, the path is flat for prams, and there is a playground near the beach", "th": "น้ำตื้นและคลื่นเบาตอนน้ำขึ้น ทางเรียบเข็นรถเด็กได้ และมีสนามเด็กเล่นใกล้ชายหาด" },
+          "tip": { "en": "Swim at high tide; at low tide the reef is exposed and sharp underfoot", "th": "เล่นน้ำตอนน้ำขึ้น ตอนน้ำลงแนวปะการังโผล่และคม" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Sanur Beach, Sanur, Denpasar, Bali",
+          "ok": "2026-11",
+          "src": "https://themerusanur.com/?p=17528"
+        },
+        {
+          "name": { "en": "ICON Bali mall", "th": "ห้างไอคอนบาหลี" },
+          "kind": "shop",
+          "area": { "en": "Sanur", "th": "ซานูร์" },
+          "what": { "en": "A seafront mall opened in 2024 with an arcade, cinemas, children's play areas, food halls and a beach view", "th": "ห้างริมทะเลที่เปิดปี 2024 มีเกมอาร์เคด โรงหนัง ลานเด็กเล่น ศูนย์อาหาร และวิวทะเล" },
+          "why": { "en": "Cool air-conditioning, clean toilets and play spaces make it a rain plan near Sanur", "th": "ติดแอร์เย็น ห้องน้ำสะอาด และมีที่เล่นสำหรับเด็ก เป็นแผนสำรองวันฝนตกแถวซานูร์" },
+          "tip": { "en": "Open 10 am to 10 pm; the beach path leads straight to it", "th": "เปิด 10:00–22:00 เดินตามทางริมหาดมาถึงได้เลย" },
+          "ages": [2, 2, 1, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free to enter · play areas paid", "th": "เข้าฟรี · ที่เล่นเสียเงิน" },
+          "book": "none",
+          "q": "ICON Bali, Jl. Danau Tamblingan, Sanur, Denpasar, Bali",
+          "ok": "2026-11",
+          "src": "https://www.baliholidaysecrets.com/icon-bali-mall/"
+        },
+        {
+          "name": { "en": "Trans Studio Bali", "th": "ทรานส์สตูดิโอบาหลี" },
+          "kind": "themepark",
+          "area": { "en": "Denpasar", "th": "เดนปาซาร์" },
+          "what": { "en": "An indoor theme park with rides, a small roller coaster, shows and play zones for younger children", "th": "สวนสนุกในร่ม มีเครื่องเล่น รถไฟเหาะเล็ก การแสดง และโซนเล่นสำหรับเด็กเล็ก" },
+          "why": { "en": "Everything is under one roof with air-conditioning, so it saves a rainy or very hot day", "th": "ทุกอย่างอยู่ใต้หลังคาเดียวติดแอร์ ช่วยได้ในวันฝนตกหรือร้อนจัด" },
+          "tip": { "en": "Watch for online deals; some rides have height limits", "th": "ดูโปรโมชันออนไลน์ บางเครื่องเล่นจำกัดส่วนสูง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ Rp 175,000–225,000 a ticket · often on offer", "th": "≈ Rp 175,000–225,000 ต่อใบ · มักมีโปรโมชัน" },
+          "book": "rec",
+          "q": "Trans Studio Bali, Jl. Imam Bonjol, Denpasar, Bali",
+          "ok": "2026-11",
+          "src": "https://www.transstudiobali.com/en/news/294/bali-amusement-parks-for-families-complete-guide-2026"
+        },
+        {
+          "name": { "en": "Mai Main Playground Canggu", "th": "ไม ไมน์ เพลย์กราวด์ จังกู" },
+          "kind": "play",
+          "area": { "en": "Canggu, Jl Padang Linjong", "th": "จังกู ถนน Padang Linjong" },
+          "what": { "en": "A fully covered indoor and outdoor playground with a waterslide, splash pad, trampoline, sandpit and a toddler room.", "th": "สนามเด็กเล่นในร่มและกลางแจ้งที่มีหลังคาคลุมทั้งหมด มีสไลเดอร์น้ำ ลานน้ำพุ แทรมโปลีน บ่อทราย และห้องสำหรับเด็กเล็ก" },
+          "why": { "en": "The outdoor play area is rain-proof and sun-proof, with a dedicated toddler room for the little ones.", "th": "พื้นที่เล่นกลางแจ้งกันฝนกันแดด และมีห้องสำหรับเด็กเล็กโดยเฉพาะ" },
+          "tip": { "en": "Allow about 4 hours", "th": "เผื่อเวลาราว 4 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mai Main Playground Canggu, Padang Linjong, Canggu, Bali",
+          "ok": "2026-11",
+          "src": "https://www.nowbali.co.id/best-bali-playgrounds-and-parks-for-kids/"
+        },
+        {
+          "name": { "en": "AeroXSpace Adventure", "th": "แอโร เอ็กซ์ สเปซ แอดเวนเจอร์" },
+          "kind": "play",
+          "area": { "en": "Sanur", "th": "สนูร์" },
+          "what": { "en": "An indoor adventure park with more than 25 space-themed attractions, climbing, sliding, jumping and a Bubble Splash.", "th": "สวนผจญภัยในร่มที่มีเครื่องเล่นธีมอวกาศกว่า 25 อย่าง ทั้งปีนป่าย ไถล กระโดด และ Bubble Splash" },
+          "why": { "en": "Parents can watch from the café and lounge next to the play areas.", "th": "พ่อแม่นั่งดูจากคาเฟ่และเลานจ์ที่อยู่ข้างโซนเล่นได้" },
+          "tip": { "en": "Allow about 3 hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "AeroXSpace Adventure, Bypass Ngurah Rai, Sanur, Bali",
+          "ok": "2026-11",
+          "src": "https://www.nowbali.co.id/best-bali-playgrounds-and-parks-for-kids/"
+        },
+        {
+          "name": { "en": "Clip 'n Climb Bali", "th": "คลิป เอ็น ไคลม์ บาหลี" },
+          "kind": "play",
+          "area": { "en": "Sanur, on the bypass", "th": "สนูร์ ติดถนนบายพาส" },
+          "what": { "en": "An indoor climbing park near Sanur.", "th": "สวนปีนผาในร่มใกล้สนูร์" },
+          "why": { "en": "A local favourite indoor activity that the page calls good for active kids.", "th": "เว็บไซต์เรียกว่ากิจกรรมในร่มยอดนิยมของคนท้องถิ่น เหมาะกับเด็กที่ซนและมีพลังเยอะ" },
+          "tip": { "en": "Allow about 2 hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Clip n Climb Bali, Sanur, Denpasar",
+          "ok": "2026-11",
+          "src": "https://thehoneycombers.com/bali/things-to-do-in-bali-when-it-rains/"
+        },
+        {
+          "name": { "en": "KidzCafe Sanur", "th": "คิดส์คาเฟ่ สนูร์" },
+          "kind": "play",
+          "area": { "en": "Sanur Kauh, Kutat Lestari 54", "th": "Sanur Kauh, Kutat Lestari 54" },
+          "what": { "en": "A family café with an indoor playground and a structured kids club.", "th": "คาเฟ่ครอบครัวที่มีสนามเด็กเล่นในร่มและคิดส์คลับที่จัดเป็นระบบ" },
+          "why": { "en": "Café, indoor playground and kids club in one place, so parents can eat while children play.", "th": "คาเฟ่ สนามเด็กเล่นในร่ม และคิดส์คลับอยู่ที่เดียวกัน พ่อแม่จึงกินข้าวได้ขณะที่เด็กเล่น" },
+          "tip": { "en": "Allow about 3 hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "KidzCafe Sanur, Kutat Lestari 54, Sanur Kauh, Denpasar",
+          "ok": "2026-11",
+          "src": "https://www.nowbali.co.id/best-bali-playgrounds-and-parks-for-kids/"
+        },
+        {
+          "name": { "en": "Kids SoHo Playground", "th": "คิดส์ โซโห เพลย์กราวด์" },
+          "kind": "play",
+          "area": { "en": "Sanur", "th": "สนูร์" },
+          "what": { "en": "An indoor children's play and learning centre of about 600 square metres.", "th": "ศูนย์เล่นและเรียนรู้ในร่มสำหรับเด็ก ขนาดราว 600 ตารางเมตร" },
+          "why": { "en": "Hands-on early learning through play and social interaction, for young children.", "th": "เรียนรู้ตั้งแต่เล็กผ่านการเล่นและการเข้าสังคม เหมาะกับเด็กเล็ก" },
+          "tip": { "en": "Allow about 3 hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 0],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kids SoHo Playground, Sanur, Denpasar",
+          "ok": "2026-11",
+          "src": "https://www.nowbali.co.id/best-bali-playgrounds-and-parks-for-kids/"
+        },
+        {
+          "name": { "en": "Biosphere Playhouse", "th": "ไบโอสเฟียร์ เพลย์เฮาส์" },
+          "kind": "play",
+          "area": { "en": "Jimbaran, Biosphere School", "th": "จิมบารัน โรงเรียน Biosphere" },
+          "what": { "en": "An open-ended nature playground at the Biosphere School in Jimbaran.", "th": "สนามเด็กเล่นธรรมชาติแบบปลายเปิดที่โรงเรียน Biosphere ในจิมบารัน" },
+          "why": { "en": "Children can explore and play freely outdoors, the page says it suits children who love nature.", "th": "เด็กๆ สำรวจและเล่นอย่างอิสระกลางแจ้ง เว็บไซต์บอกว่าเหมาะกับเด็กที่รักธรรมชาติ" },
+          "tip": { "en": "Allow about 3 hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Biosphere Playhouse, Biosphere School, Jimbaran, Bali",
+          "ok": "2026-11",
+          "src": "https://www.nowbali.co.id/best-bali-playgrounds-and-parks-for-kids/"
+        },
+        {
+          "name": { "en": "Nusa Dua Beach", "th": "หาดนูซาดัว" },
+          "kind": "beach",
+          "area": { "en": "Nusa Dua", "th": "นูซาดัว" },
+          "what": { "en": "A calm sandy beach in Nusa Dua with lifeguard-lined bays.", "th": "หาดทรายเงียบสงบในนูซาดัว มีอ่าวที่มีไลฟ์การ์ดดูแลเรียงรายอยู่" },
+          "why": { "en": "Calm waters and lifeguard-lined bays, which the page calls one of the safest beaches for families.", "th": "น้ำนิ่งและมีอ่าวที่มีไลฟ์การ์ดดูแล ซึ่งเว็บไซต์เรียกว่าเป็นหนึ่งในหาดที่ปลอดภัยที่สุดสำหรับครอบครัว" },
+          "tip": { "en": "Allow about 3 hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Nusa Dua Beach, Nusa Dua, Bali",
+          "ok": "2026-11",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/"
+        },
+        {
+          "name": { "en": "Sanur Beach", "th": "หาดสนูร์" },
+          "kind": "beach",
+          "area": { "en": "Sanur", "th": "สนูร์" },
+          "what": { "en": "A palm-fringed beach with clean water and few crowds.", "th": "หาดที่มีต้นปาล์มเรียงราย น้ำใสสะอาด และคนไม่หนาแน่น" },
+          "why": { "en": "Few crowds and calm, clean water, which the page says make Sanur one of the best places for children.", "th": "คนไม่แน่นและน้ำนิ่งใสสะอาด เว็บไซต์บอกว่านี่คือเหตุผลที่สนูร์เป็นหนึ่งในที่ที่ดีที่สุดสำหรับเด็ก" },
+          "tip": { "en": "Allow about 3 hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sanur Beach, Sanur, Denpasar, Bali",
+          "ok": "2026-11",
+          "src": "https://www.lonelyplanet.com/articles/bali-indonesia-with-kids"
+        },
+        {
+          "name": { "en": "The Blanco Renaissance Museum", "th": "พิพิธภัณฑ์บลังโก เรอเนซองส์" },
+          "kind": "museum",
+          "area": { "en": "Ubud", "th": "อูบุด" },
+          "what": { "en": "An Ubud art museum with the expressive artwork of Antonio Blanco.", "th": "พิพิธภัณฑ์ศิลปะในอูบุดที่จัดแสดงผลงานอันเปี่ยมพลังของ Antonio Blanco" },
+          "why": { "en": "A day for arts where families can explore the artwork indoors, a good plan for a rainy day.", "th": "วันแห่งศิลปะที่ครอบครัวเดินชมผลงานในร่มได้ เป็นแผนที่ดีเมื่อฝนตก" },
+          "tip": { "en": "Allow about 2 hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "The Blanco Renaissance Museum, Ubud, Bali",
+          "ok": "2026-11",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/"
+        },
+        {
+          "name": { "en": "Bali Ice Skating Arena", "th": "บาหลี ไอซ์ สเกตติ้ง อารีนา" },
+          "kind": "play",
+          "area": { "en": "Kuta, inside Bali Galeria", "th": "กูตา ในห้าง Bali Galeria" },
+          "what": { "en": "An indoor ice skating rink inside Bali Galeria in Kuta.", "th": "ลานสเก็ตน้ำแข็งในร่มภายในห้าง Bali Galeria ในกูตา" },
+          "why": { "en": "The page calls it the go-to place when the afternoon heat becomes too much.", "th": "เว็บไซต์เรียกว่าเป็นที่ไปเมื่อความร้อนตอนบ่ายเริ่มทนไม่ไหว" },
+          "tip": { "en": "Allow about 2 hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Bali Ice Skating Arena, Bali Galeria, Kuta, Bali",
+          "ok": "2026-11",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/"
+        },
+        {
+          "name": { "en": "Kuta Market", "th": "ตลาดกูตา" },
+          "kind": "market",
+          "area": { "en": "Kuta", "th": "กูตา" },
+          "what": { "en": "A market in Kuta with bags, handmade jewellery, children's toys and sarongs.", "th": "ตลาดในกูตาที่มีกระเป๋า เครื่องประดับทำมือ ของเล่นเด็ก และผ้าซารง" },
+          "why": { "en": "Children's toys and souvenirs, and a fun place to browse together.", "th": "มีของเล่นเด็กและของที่ระลึก เป็นที่เดินเล่นด้วยกันได้อย่างสนุก" },
+          "tip": { "en": "A busy market: hold small hands and go early", "th": "ตลาดคนแน่น จูงมือเด็กไว้และไปแต่เช้า" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kuta Market, Kuta, Bali",
+          "ok": "2026-11",
+          "src": "https://www.lonelyplanet.com/articles/bali-indonesia-with-kids"
+        },
+        {
+          "name": { "en": "Sukawati Art Market", "th": "ตลาดศิลปะสุกาวาตี" },
+          "kind": "market",
+          "area": { "en": "Sukawati", "th": "สุกาวาตี" },
+          "what": { "en": "An art market close to Kuta and Denpasar for local art and crafts.", "th": "ตลาดศิลปะใกล้กูตาและเดนปาซาร์ สำหรับงานศิลปะและงานฝีมือท้องถิ่น" },
+          "why": { "en": "A good place to pick up local art, and it sits close to Kuta and Denpasar.", "th": "เป็นที่ที่ดีสำหรับหาซื้องานศิลปะท้องถิ่น และอยู่ใกล้กูตาและเดนปาซาร์" },
+          "tip": { "en": "A busy market: hold small hands and go early", "th": "ตลาดคนแน่น จูงมือเด็กไว้และไปแต่เช้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sukawati Art Market, Jl Raya Singapadu, Sukawati, Bali",
+          "ok": "2026-11",
+          "src": "https://www.lonelyplanet.com/articles/bali-indonesia-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก (2–12 ขวบ) เริ่มที่ 280,000 รูเปียห์ ผู้ใหญ่ 395,000 รูเปียห์",
+            "en": "From IDR 280,000 a child (2–12), IDR 395,000 an adult"
+          },
+          "book": "rec",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "สวนสัตว์บาหลี",
+            "en": "Bali Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สิงคปาดู สุกาวาตี เกียนยาร์",
+            "en": "Singapadu, Sukawati, Gianyar"
+          },
+          "what": {
+            "th": "สวนสัตว์ มีอาหารเช้าข้างอุรังอุตัง และสัตว์อื่นให้ดูใกล้ ๆ",
+            "en": "A zoo with breakfast beside the orangutans and other wildlife to meet"
+          },
+          "why": {
+            "th": "เด็กได้ให้อาหารช้างและอุ้มนก",
+            "en": "Children can feed the elephants and hold birds"
+          },
+          "q": "Bali Zoo, Jalan Raya Singapadu, Sukawati, Gianyar, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก (3–12 ขวบ) เริ่มที่ 620,000 รูเปียห์ ผู้ใหญ่ 750,000 รูเปียห์",
+            "en": "From IDR 620,000 a child (3–12), IDR 750,000 an adult"
+          },
+          "book": "rec",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "บาหลีซาฟารีปาร์ก (ตามันซาฟารีบาหลี)",
+            "en": "Bali Safari Park (Taman Safari Bali)"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ถนนอีดาบากุสมันตรา เกียนยาร์",
+            "en": "Jalan Prof. Dr. Ida Bagus Mantra, Gianyar"
+          },
+          "what": {
+            "th": "สวนซาฟารี สัตว์มากกว่าพันตัว และมีสวนน้ำ",
+            "en": "A safari park with over a thousand animals and a water park"
+          },
+          "why": {
+            "th": "สัตว์เดินอิสระ และมีสวนน้ำให้คลายร้อน",
+            "en": "Animals roam free, and a water park to cool off in"
+          },
+          "tip": {
+            "th": "ซาฟารีกลางคืน 18:00–21:00 มีบาร์บีคิวมื้อเย็นและโชว์ไฟ",
+            "en": "Night safari 6–9 pm with a barbecue dinner and a fire show"
+          },
+          "q": "Bali Safari Park, Jalan Prof. Dr. Ida Bagus Mantra, Gianyar, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ชิงช้าเดี่ยวเริ่มที่ 293,000 รูเปียห์ต่อคน",
+            "en": "From IDR 293,000 a person for a single swing"
+          },
+          "book": "rec",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "อลัสฮารุม",
+            "en": "Alas Harum"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เตกัลลาลัง อูบุด",
+            "en": "Tegallalang, Ubud"
+          },
+          "what": {
+            "th": "ชิงช้ากลางป่าเหนือนาขั้นบันได ใกล้อูบุด",
+            "en": "Jungle swings over the rice terraces near Ubud"
+          },
+          "why": {
+            "th": "มีเจ้าหน้าที่และอุปกรณ์ดูแลความปลอดภัย วิวนาขั้นบันได",
+            "en": "Professionally staffed and equipped for safety, with rice terrace views"
+          },
+          "tip": {
+            "th": "คนเล่นต้องหนักอย่างน้อย 35 กก.",
+            "en": "Riders must weigh at least 35 kg"
+          },
+          "q": "Alas Harum Bali, Jalan Raya Tegallalang, Tegallalang, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เด็ก (5–12 ขวบ) 695,000 รูเปียห์ อายุ 13 ขึ้นไป 995,000 รูเปียห์",
+            "en": "IDR 695,000 a child (5–12), IDR 995,000 from 13"
+          },
+          "book": "rec",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "ล่องแก่งแม่น้ำอายุง กับเมสันแอดเวนเจอร์ส",
+            "en": "Mason Adventures rafting (Ayung River)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เกเดวาตัน อูบุด",
+            "en": "Kedewatan, Ubud"
+          },
+          "what": {
+            "th": "ล่องแก่งแม่น้ำอายุงผ่านป่า มีไกด์พาไป",
+            "en": "Guided white-water rafting on the Ayung River through the jungle"
+          },
+          "why": {
+            "th": "ตื่นเต้นจริงจังบนแม่น้ำ สำหรับเด็กโต",
+            "en": "A real thrill on the river for bigger children"
+          },
+          "tip": {
+            "th": "ถ้าอยากเบากว่านี้ เลือกพายคายักแทน",
+            "en": "For something gentler, choose kayaking instead"
+          },
+          "q": "Mason Adventure Rafting, Jalan Raya Kedewatan, Ubud, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "10 คลาสเด็ก 1,500,000 รูเปียห์",
+            "en": "IDR 1,500,000 for 10 kids' classes"
+          },
+          "book": "rec",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "บาหลีอินเตอร์เนชันแนลอาร์เชอรี",
+            "en": "Bali International Archery"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อูบุด",
+            "en": "Ubud"
+          },
+          "what": {
+            "th": "ยิงธนูแบบอินโดนีเซียดั้งเดิม ในร่มหรือกลางแจ้ง มีผู้เชี่ยวชาญสอน",
+            "en": "Traditional Indonesian archery, indoors or out, with expert guidance"
+          },
+          "why": {
+            "th": "มีคอร์สยิงธนูสำหรับเด็กอายุ 4–15 ปี",
+            "en": "Kids' archery programmes for ages 4 to 15"
+          },
+          "q": "Bali International Archery, Jalan Padang Getas, Ubud, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ต่อเด็ก 210,000 รูเปียห์ (4–5 ขวบ) 280,000 (6–8 ขวบ) 300,000 (9–16 ปี)",
+            "en": "IDR 210,000 (4–5), 280,000 (6–8), 300,000 (9–16) a child"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "เบราวาอาร์ตเฮาส์",
+            "en": "Berawa Art House"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เบราวา ชางกู",
+            "en": "Berawa, Canggu"
+          },
+          "what": {
+            "th": "สตูดิโอศิลปะแสงสว่าง มีคลาสทุกสัปดาห์ทั้งเด็กและผู้ใหญ่",
+            "en": "A light-filled art studio with weekly classes for children and adults"
+          },
+          "why": {
+            "th": "คลาสศิลปะลงมือทำ สำหรับเด็กทุกระดับ",
+            "en": "Hands-on art classes for children of all levels"
+          },
+          "q": "Berawa Art House, Jalan Tegal Sari, Canggu, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "สวนผีเสื้อบาหลี",
+            "en": "Bali Butterfly Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ตาบานัน ใกล้ชางกู",
+            "en": "Tabanan, near Canggu"
+          },
+          "what": {
+            "th": "สวนผีเสื้อที่มีผีเสื้อนับพันตัว รวมถึงพันธุ์ของบาหลีเอง",
+            "en": "A butterfly park with thousands of butterflies, including Bali's own species"
+          },
+          "why": {
+            "th": "เด็กได้ดูผีเสื้อสีสวยและวงจรชีวิตของมัน",
+            "en": "Children see colourful butterflies and how they grow"
+          },
+          "tip": {
+            "th": "ไปช่วงเช้าจะได้เห็นผีเสื้อออกจากดักแด้",
+            "en": "Go in the morning to see butterflies hatching"
+          },
+          "q": "Bali Butterfly Park, Tabanan, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Jenggala Keramik",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "เจงกาลา เครื่องปั้นดินเผา จิมบาราน",
+            "en": "Jenggala pottery (Jimbaran)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนอูลูวาตู 2 จิมบาราน",
+            "en": "Jalan Uluwatu II, Jimbaran"
+          },
+          "what": {
+            "th": "สตูดิโอเครื่องปั้นดินเผาที่เด็กได้วาดลายหม้อของตัวเองกลับบ้าน",
+            "en": "A pottery studio where children paint their own pot to take home"
+          },
+          "why": {
+            "th": "เด็กได้เล่นดินและระบายสี",
+            "en": "Clay and painting for children"
+          },
+          "tip": {
+            "th": "ชิ้นงานเผาในเตาของร้าน รอรับ 5–7 วัน",
+            "en": "Pieces are fired on site and ready in 5 to 7 days"
+          },
+          "q": "Jenggala, Jalan Uluwatu II, Jimbaran, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/best-things-to-do-with-kids-in-bali/",
+          "name": {
+            "th": "มานาไรบีชเฮาส์ นูซาดัว",
+            "en": "Manarai Beach House (Nusa Dua)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "นูซาดัว",
+            "en": "Nusa Dua"
+          },
+          "what": {
+            "th": "บีชเฮาส์ที่มีสระ ที่เล่นทราย กีฬาทางน้ำ และร้านอาหารริมทะเล",
+            "en": "A beach house with a pool, sand play, water sports and seaside dining"
+          },
+          "why": {
+            "th": "มีเมนูเด็กทั้งวันและกิจกรรมมีพี่เลี้ยงดูแล เช่น วาดรูป ก่อปราสาททราย",
+            "en": "An all-day kids' menu and supervised activities: drawing, sandcastles"
+          },
+          "tip": {
+            "th": "วันเสาร์อาทิตย์มีกิจกรรมพิเศษ เช่น ปาร์ตี้ในสระ",
+            "en": "Weekends bring special activities such as pool parties"
+          },
+          "q": "Manarai Beach House, Nusa Dua, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/things-to-do-in-bali-when-it-rains/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปูรีลูกิซัน",
+            "en": "Museum Puri Lukisan"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนรายาอูบุด อูบุด",
+            "en": "Jalan Raya Ubud, Ubud"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะเก่าแก่ที่สุดของอูบุด ใกล้วังอูบุด",
+            "en": "Ubud's oldest art museum, near Ubud Palace"
+          },
+          "why": {
+            "th": "ภาพวาดและงานแกะสลักไม้ของบาหลี หลบฝนได้",
+            "en": "Balinese painting and woodcarving, and shelter on a rainy day"
+          },
+          "tip": {
+            "th": "ห้องจัดแสดงกระจายอยู่ในสวน ควรพกร่ม",
+            "en": "The galleries are spread over a garden; bring an umbrella"
+          },
+          "q": "Museum Puri Lukisan, Ubud, Bali",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thehoneycombers.com/bali/things-to-do-in-bali-when-it-rains/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปาซิฟิกา",
+            "en": "Museum Pasifika"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ย่าน ITDC นูซาดัว",
+            "en": "ITDC complex, Nusa Dua"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะที่มีผลงานกว่า 600 ชิ้นจาก 25 ประเทศ",
+            "en": "An art museum with over 600 works from 25 countries"
+          },
+          "why": {
+            "th": "มีคลาสและเวิร์กชอปศิลปะ",
+            "en": "Art classes and workshops"
+          },
+          "q": "Museum Pasifika, Nusa Dua, Bali",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@
  ]},
  {"place":"ca-banff","places":[
   {"name":"Banff Mineral Springs Hospital","kind":"hospital","area":{"th":"แบนฟ์","en":"Banff"},"what":{"th":"โรงพยาบาลของเมือง มีห้องฉุกเฉิน","en":"The town's hospital, emergency department"},"why":{"th":"ห้องฉุกเฉินเดียวในตัวเมืองแบนฟ์","en":"The emergency department in Banff town itself"},"q":"Banff Mineral Springs Hospital, 305 Lynx Street, Banff AB","ok":"2026-11"},
-  {"name":"Central Park Playground","kind":"play","area":{"th":"กลางเมือง แบนฟ์","en":"Town centre, Banff"},"what":{"th":"สนามเด็กเล่นแบบธรรมชาติในสวนริมแม่น้ำโบว์","en":"Nature-style playground in the park by the Bow River"},"why":{"th":"มีสไลเดอร์ ผนังปีน ขอนไม้ และห้องน้ำสะอาด","en":"Slides, a climbing wall, logs and clean toilets"},"q":"Central Park, Banff AB","ok":"2026-11"}
+  {"name":"Central Park Playground","kind":"play","area":{"th":"กลางเมือง แบนฟ์","en":"Town centre, Banff"},"what":{"th":"สนามเด็กเล่นแบบธรรมชาติในสวนริมแม่น้ำโบว์","en":"Nature-style playground in the park by the Bow River"},"why":{"th":"มีสไลเดอร์ ผนังปีน ขอนไม้ และห้องน้ำสะอาด","en":"Slides, a climbing wall, logs and clean toilets"},"q":"Central Park, Banff AB","ok":"2026-11"},
+  {"name":"Rx Drug Mart, Cascade Plaza","kind":"pharmacy","area":{"th":"แบนฟ์อเวนิว","en":"Banff Avenue"},"what":{"th":"ร้านขายยาในคาสเคดพลาซ่ากลางเมืองแบนฟ์","en":"Pharmacy in Cascade Plaza in the middle of town"},"why":{"th":"อยู่บนถนนสายหลักของเมือง เดินจากโรงแรมได้","en":"On the town's main street, walkable from hotels"},"q":"Rx Drug Mart, Cascade Plaza, 317 Banff Avenue, Banff","ok":"2026-11"}
  ]}
 ]}

@@ -1,0 +1,2365 @@
+{
+  "cc": "tw",
+  "towns": [
+    {
+      "place": "tw-central",
+      "sights": [
+        {
+          "name": { "en": "National Museum of Natural Science", "th": "พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาติแห่งชาติ" },
+          "local": "國立自然科學博物館",
+          "kind": "museumkid",
+          "area": { "en": "North District, Taichung", "th": "เขตเป่ย์ ไถจง" },
+          "what": { "en": "A big science museum with a life-size dinosaur model, skeletons, a science centre and a greenhouse garden", "th": "พิพิธภัณฑ์วิทยาศาสตร์ขนาดใหญ่ มีหุ่นไดโนเสาร์ขนาดจริง โครงกระดูก ศูนย์วิทยาศาสตร์ และเรือนกระจก" },
+          "why": { "en": "Indoor and a classic rainy-day pick; children under 6 are free and 2026 Friday afternoons are free for the exhibition halls", "th": "อยู่ในอาคาร เหมาะวันฝน เด็กต่ำกว่า 6 ขวบเข้าฟรี และบ่ายวันศุกร์ปี 2026 เข้าฟรีส่วนนิทรรศการ" },
+          "tip": { "en": "Open Tue–Sun 09:00–17:00, closed Monday; the botanical garden is due to close for renovation from August to December 2026", "th": "เปิดอังคาร–อาทิตย์ 09:00–17:00 ปิดวันจันทร์ สวนพฤกษศาสตร์จะปิดปรับปรุงสิงหาคม–ธันวาคม 2026" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price · under 6 free", "th": "เช็กราคา · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "National Museum of Natural Science, North District, Taichung",
+          "ok": "2026-11",
+          "src": "https://gofunit.com/%E5%8F%B0%E4%B8%AD%E7%A7%91%E5%8D%9A%E9%A4%A8/"
+        },
+        {
+          "name": { "en": "Formosan Aboriginal Culture Village and Sun Moon Lake ropeway", "th": "หมู่บ้านวัฒนธรรมจิ่วจู๋และกระเช้าสุริยันจันทรา" },
+          "local": "九族文化村",
+          "kind": "themepark",
+          "area": { "en": "Yuchi, Nantou (about 1.5 hours from Taichung)", "th": "ยู่ฉือ หนานโถว (ห่างไถจงราว 1.5 ชั่วโมง)" },
+          "what": { "en": "A hillside park of rides, flower gardens and replica village houses beside Sun Moon Lake, with a cable car", "th": "สวนสนุกบนเนินเขาริมทะเลสาบสุริยันจันทรา มีเครื่องเล่น สวนดอกไม้ บ้านจำลอง และกระเช้า" },
+          "why": { "en": "The ticket includes the park's cable car and one Sun Moon Lake ropeway ride, a big hit with young children", "th": "ตั๋วรวมกระเช้าในสวนและกระเช้าสุริยันจันทราหนึ่งเที่ยว เด็กเล็กชอบมาก" },
+          "tip": { "en": "Ropeway about 10:30–16:00 on weekdays, 10:00–16:30 at weekends, and car parking is ≈ NT$150; check it is running", "th": "กระเช้าราว 10:30–16:00 วันธรรมดา 10:00–16:30 เสาร์อาทิตย์ จอดรถ ≈ NT$150 เช็กว่ากระเช้าเปิดอยู่" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "rec",
+          "q": "Formosan Aboriginal Culture Village, Yuchi, Nantou",
+          "ok": "2026-11",
+          "src": "https://gofunit.com/%e4%b9%9d%e6%97%8f%e6%96%87%e5%8c%96%e6%9d%91%e6%94%bb%e7%95%a5/"
+        },
+        {
+          "name": { "en": "Rainbow Village", "th": "หมู่บ้านสายรุ้ง" },
+          "local": "彩虹眷村",
+          "kind": "culture",
+          "area": { "en": "Nantun, Taichung", "th": "หนานถุน ไถจง" },
+          "what": { "en": "A former soldiers' village whose walls were painted by one veteran in bright characters and patterns", "th": "หมู่บ้านทหารเก่าที่ทหารผ่านศึกคนหนึ่งวาดผนังเป็นตัวการ์ตูนและลวดลายสีสด" },
+          "why": { "en": "Free, small and colourful with room to wander; some walls are boarded after a repainting dispute", "th": "เข้าฟรี เล็กและสีสัน เดินเล่นสบาย บางผนังถูกกั้นไว้หลังข้อพิพาทเรื่องการทาสีทับ" },
+          "tip": { "en": "Outdoor areas open all day; indoor rooms and story house about 08:00–18:00", "th": "พื้นที่กลางแจ้งเปิดตลอดวัน ห้องในอาคารและบ้านเล่าเรื่องราว 08:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Rainbow Village, Nantun District, Taichung",
+          "ok": "2026-11",
+          "src": "https://gofunit.com/彩虹眷村-全台十大ig景點，繽紛夢幻彩虹村，老式/"
+        },
+        {
+          "name": { "en": "Cingjing Farm Green Grassland", "th": "ฟาร์มชิงจิ่ง ทุ่งหญ้าเขียว" },
+          "local": "清境農場青青草原",
+          "kind": "farm",
+          "area": { "en": "Ren'ai, Nantou (about 2 hours from Taichung)", "th": "เหรินอ้าย หนานโถว (ห่างไถจงราว 2 ชั่วโมง)" },
+          "what": { "en": "A mountain pasture where sheep graze and a sheep show runs on weekends and holidays", "th": "ทุ่งหญ้าบนภูเขาที่แกะเล็มหญ้า มีโชว์แกะวันหยุดสุดสัปดาห์และวันหยุดนักขัตฤกษ์" },
+          "why": { "en": "Children enjoy the sheep and the open slopes; it is cool, so bring a jacket", "th": "เด็กชอบแกะและเนินกว้าง อากาศเย็น เตรียมเสื้อกันหนาว" },
+          "tip": { "en": "Sheep shows about 09:30 and 14:30 on weekends, holidays and school holidays; ticket valid for the day, with a hand stamp for re-entry", "th": "โชว์แกะราว 09:30 และ 14:30 วันหยุดสุดสัปดาห์ วันหยุด และปิดเทอม ตั๋วใช้ได้ทั้งวัน ประทับตราที่มือเพื่อกลับเข้า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$270 adults · NT$130 half price · children rate not confirmed", "th": "≈ NT$270 ผู้ใหญ่ · NT$130 ครึ่งราคา · ยังไม่ยืนยันราคาเด็ก" },
+          "book": "none",
+          "q": "Cingjing Farm Green Grassland, Ren'ai, Nantou",
+          "ok": "2026-11",
+          "src": "https://uptogo.com.tw/%e6%97%85%e9%81%8a/%e6%b8%85%e5%a2%83%e8%be%b2%e5%a0%b4%e9%96%80%e7%a5%a8%e5%83%b9%e6%a0%bc%ef%bc%9f/"
+        },
+        {
+          "name": { "en": "Fantasy Land indoor park (Dali)", "th": "แฟนตาซีแลนด์ สวนสนุกในร่ม (ต้าหลี่)" },
+          "local": "異想新樂園",
+          "kind": "play",
+          "area": { "en": "Dali, Taichung", "th": "ต้าหลี่ ไถจง" },
+          "what": { "en": "A 3,000-ping indoor playground in the Dali Art Plaza with themed zones for climbing, rides and play", "th": "สนามเด็กเล่นในร่ม 3,000 พิง ในลานศิลปะต้าหลี่ แบ่งโซนปีนป่าย เครื่องเล่น และเล่นสนุก" },
+          "why": { "en": "A dry, air-conditioned afternoon for children; pricing is by zone, not by age, and a parent pass is ≈ NT$100", "th": "บ่ายแห้ง ๆ ในห้องแอร์สำหรับเด็ก ราคาคิดตามโซนไม่ใช่ตามอายุ ตั๋วผู้ปกครอง ≈ NT$100" },
+          "tip": { "en": "Open about 10:00–20:00 on weekdays, 10:00–21:00 at weekends; evening tickets after 18:00 are cheaper", "th": "เปิดราว 10:00–20:00 วันธรรมดา 10:00–21:00 เสาร์อาทิตย์ ตั๋วหลัง 18:00 ถูกกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ NT$199–399 for one zone, NT$699–1,299 all zones · parent ≈ NT$100 (check)", "th": "≈ NT$199–399 หนึ่งโซน NT$699–1,299 ทุกโซน · ผู้ปกครอง ≈ NT$100 (เช็กอีกครั้ง)" },
+          "book": "none",
+          "q": "Fantasy Land, Keji Road, Dali District, Taichung",
+          "ok": "2026-11",
+          "src": "https://uptogo.com.tw/%e8%a6%aa%e5%ad%90/%e5%8f%b0%e4%b8%ad%e5%85%92%e7%ab%a5%e9%81%8a%e6%a8%82/"
+        },
+        {
+          "name": { "en": "Gaomei Wetlands", "th": "พื้นที่ชุ่มน้ำเกาเหม่ย" },
+          "local": "高美濕地",
+          "kind": "nature",
+          "area": { "en": "Qingshui, Taichung", "th": "ชิงสุ่ย ไถจง" },
+          "what": { "en": "A coastal mudflat with a boardwalk, wind turbines and sunset views, with fiddler crabs and mudskippers", "th": "หาดโคลนชายฝั่ง มีทางไม้ กังหันลม และชมพระอาทิตย์ตก มีปูก้ามดาบและปลาตีน" },
+          "why": { "en": "Free and open all day; children like spotting crabs from the boardwalk, which opens by the tide", "th": "ฟรีและเปิดตลอดวัน เด็กชอบดูปูจากทางไม้ ซึ่งเปิดตามน้ำขึ้นน้ำลง" },
+          "tip": { "en": "Check the tide and boardwalk times on the Gaomei site; the mirror effect happens only a few days a month", "th": "เช็กน้ำขึ้นน้ำลงและเวลาเปิดทางไม้ก่อนไป ภาพสะท้อนเหมือนกระจกเกิดเพียงไม่กี่วันต่อเดือน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Gaomei Wetlands, Qingshui District, Taichung",
+          "ok": "2026-11",
+          "src": "https://uptogo.com.tw/%e6%97%85%e9%81%8a/%e5%8f%b0%e4%b8%ad%e9%ab%98%e7%be%8e%e6%bf%95%e5%9c%b0%e5%a5%bd%e7%8e%a9%e5%97%8e%ef%bc%9f/"
+        },
+        {
+          "name": { "en": "Fengjia Night Market", "th": "ตลาดกลางคืนเฟิงเจี๋ย" },
+          "local": "逢甲夜市",
+          "kind": "market",
+          "area": { "en": "Xitun, Taichung", "th": "ซีถุน ไถจง" },
+          "what": { "en": "Taiwan's best-known night market, with egg crepes, grilled snacks and games near Feng Chia University", "th": "ตลาดกลางคืนชื่อดังของไต้หวัน มีเครปไข่ ของย่าง และเกม ใกล้มหาวิทยาลัยเฟิงเจี๋ย" },
+          "why": { "en": "Crowded after dark, so go at opening time; egg crepes and plain snacks suit children", "th": "คนแน่นหลังมืด ไปตอนเปิด เครปไข่และของกินธรรมดาเหมาะกับเด็ก" },
+          "tip": { "en": "Open about 17:00–23:00; arrive early to avoid the crowds", "th": "เปิดราว 17:00–23:00 ไปแต่หัวค่ำเพื่อเลี่ยงคนเยอะ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free to enter · food and games priced by each stall", "th": "เข้าฟรี · ของกินและเกมคิดราคาตามแต่ละร้าน" },
+          "book": "none",
+          "q": "Fengjia Night Market, Wenhua Road, Xitun District, Taichung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/fengjia/"
+        },
+        {
+          "name": { "en": "Wonder New Land", "th": "วันเดอร์ นิว แลนด์" },
+          "local": "新奇夢想樂園",
+          "kind": "play",
+          "area": { "en": "Taichung", "th": "ไถจง" },
+          "what": { "en": "A large indoor parent-and-child play centre with eight themed zones and dozens of play structures", "th": "ศูนย์เล่นในร่มขนาดใหญ่สำหรับครอบครัว มี 8 โซนธีมและเครื่องเล่นหลายสิบอย่าง" },
+          "why": { "en": "Fully indoors, so it saves a rainy or hot day; little ones have their own areas", "th": "อยู่ในร่มทั้งหมด ช่วยได้ทั้งวันฝนตกและร้อน มีโซนสำหรับเด็กเล็กโดยเฉพาะ" },
+          "tip": { "en": "Weekday, holiday and evening tickets cost differently, so compare before you buy", "th": "ราคาวันธรรมดา วันหยุด และรอบเย็นต่างกัน เปรียบเทียบก่อนซื้อ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Wonder New Land, Taichung",
+          "ok": "2026-11",
+          "src": "https://www.klook.com/activity/56599-wonder-new-land-admission-taichung"
+        },
+        {
+          "name": { "en": "Lihpao Land", "th": "ลี่เป่าแลนด์" },
+          "local": "麗寶樂園",
+          "kind": "themepark",
+          "area": { "en": "Houli", "th": "โฮ่วหลี่" },
+          "what": { "en": "A big resort park in Houli with rides, a water park and a child-friendly Discovery World zone", "th": "สวนสนุกรีสอร์ตขนาดใหญ่ที่โฮ่วหลี่ มีเครื่องเล่น สวนน้ำ และโซนดิสคัฟเวอรีเวิลด์สำหรับเด็ก" },
+          "why": { "en": "Many gentle rides and a ferris wheel suit small children; plan most of a day", "th": "มีเครื่องเล่นเบาๆ และชิงช้าสวรรค์เหมาะกับเด็กเล็ก ควรวางแผนเกือบทั้งวัน" },
+          "tip": { "en": "Combo passes are sold online by season, and the water park runs in summer only", "th": "บัตรรวมขายออนไลน์ตามฤดูกาล สวนน้ำเปิดเฉพาะหน้าร้อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Lihpao Land, Houli District, Taichung",
+          "ok": "2026-11",
+          "src": "https://www.klook.com/activity/12080-lihpao-land-theme-park-combo-ticket-taichung/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "National Taiwan Museum of Fine Arts", "th": "พิพิธภัณฑ์ศิลปะแห่งชาติไต้หวัน" },
+          "local": "國立臺灣美術館",
+          "kind": "museumkid",
+          "area": { "en": "West District, Taichung", "th": "เขตซีฉวี ไถจง" },
+          "what": { "en": "A large free art museum with a children's art base of interactive spaces and a garden around it", "th": "พิพิธภัณฑ์ศิลปะขนาดใหญ่ เข้าฟรี มีพื้นที่ศิลปะเด็กแบบโต้ตอบและสวนรอบอาคาร" },
+          "why": { "en": "Free, indoors and step-free, with a children's zone that makes a good rainy-day base", "th": "เข้าฟรี อยู่ในอาคาร ไม่มีขั้นบันได มีโซนเด็ก เหมาะเป็นที่หลบฝน" },
+          "tip": { "en": "Tue–Fri 09:00–17:00, Sat–Sun 09:00–18:00, closed Mondays; on 28 November 2026 it opens only 13:00–18:00", "th": "อังคาร–ศุกร์ 09:00–17:00 เสาร์–อาทิตย์ 09:00–18:00 ปิดวันจันทร์ วันที่ 28 พ.ย. 2026 เปิดแค่ 13:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "National Taiwan Museum of Fine Arts, 2 Wuquan West Road, Taichung",
+          "src": "https://www.ntmofa.gov.tw/cp.aspx?n=1420"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "921 Earthquake Museum of Taiwan", "th": "พิพิธภัณฑ์แผ่นดินไหว 921" },
+          "local": "921地震教育園區",
+          "kind": "museum",
+          "area": { "en": "Wufeng", "th": "อู่เฟิง" },
+          "what": { "en": "A museum on the site of the 1999 earthquake, with the broken school ground, exhibits and an earthquake experience platform", "th": "พิพิธภัณฑ์ในพื้นที่แผ่นดินไหวปี 1999 มีสนามโรงเรียนที่ถูกทำลาย นิทรรศการ และแท่นจำลองแผ่นดินไหว" },
+          "why": { "en": "Better for school-age children who can understand it; the shaking platform is for older ones and toddlers may be frightened", "th": "เหมาะกับเด็กวัยเรียนที่เข้าใจเรื่องได้ แท่นจำลองแผ่นดินไหวสำหรับเด็กโต เด็กเล็กอาจตกใจ" },
+          "tip": { "en": "Open Tue–Sun 09:00–17:00 (tickets to 16:30), closed Mondays; closed the whole of 28 November 2026; the platform costs extra", "th": "เปิดอังคาร–อาทิตย์ 09:00–17:00 (ขายตั๋วถึง 16:30) ปิดวันจันทร์ ปิดทั้งวัน 28 พ.ย. 2026 แท่นจำลองเสียเงินเพิ่ม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "921 Earthquake Museum of Taiwan, Wufeng District, Taichung",
+          "src": "https://www.nmns.edu.tw/park_921/visit/hours/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Xitou Nature Education Area", "th": "เขตการศึกษาธรรมชาติซีโถว" },
+          "local": "溪頭自然教育園區",
+          "kind": "nature",
+          "area": { "en": "Lugu, Nantou", "th": "ลู่กู่ หนานโถว" },
+          "what": { "en": "A cool forest park of cedar, ginkgo and bamboo with a pond bridge, an old sacred-tree walk and a canopy walkway", "th": "สวนป่าเย็นสบาย มีซีดาร์ แปะก๊วย และไผ่ สะพานโค้งเหนือสระ ทางเดินไปต้นไม้เก่าแก่ และทางเดินเรือนยอดไม้" },
+          "why": { "en": "Shady, cool walks that tire children out gently; some paths climb, so a carrier suits babies better than a pram", "th": "ทางเดินร่มเย็นพอให้เด็กเหนื่อยกำลังดี บางทางชัน เด็กเล็กใช้เป้อุ้มสะดวกกว่ารถเข็น" },
+          "tip": { "en": "Open from 07:00, no entry after 17:00; the full price rose from NT$220 to NT$250 in January 2026", "th": "เปิดตั้งแต่ 07:00 หลัง 17:00 เข้าไม่ได้ ราคาเต็มขึ้นจาก NT$220 เป็น NT$250 ในเดือน ม.ค. 2026" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$250 adults from January 2026 · check the children's rate", "th": "≈ NT$250 ผู้ใหญ่ตั้งแต่ ม.ค. 2026 · เช็กราคาเด็กก่อนไป" },
+          "book": "none",
+          "q": "Xitou Nature Education Area, Lugu Township, Nantou",
+          "src": "https://www.taiwan.net.tw/m1.aspx?sNo=0001016&id=2101"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Taiwan Glass Gallery", "th": "พิพิธภัณฑ์แก้วไต้หวัน" },
+          "local": "台灣玻璃館",
+          "kind": "culture",
+          "area": { "en": "Lukang, Changhua", "th": "ลู่ก่าง จางฮว่า" },
+          "what": { "en": "A free-entry glass museum with about thirty themed areas, giant kaleidoscopes and a paid mirrored \"golden tunnel\"", "th": "พิพิธภัณฑ์แก้วเข้าฟรี มีโซนธีมราวสามสิบโซน กล้องคาไลโดสโคปยักษ์ และอุโมงค์กระจกทองที่เสียเงินเพิ่ม" },
+          "why": { "en": "Bright and shiny indoors, good for a hot or rainy hour; keep hands off the glass with toddlers", "th": "สว่างและแวววาวในร่ม เหมาะช่วงร้อนหรือฝนตก พาเด็กเล็กไปต้องกันมือไม่ให้จับกระจก" },
+          "tip": { "en": "Opening times differ between sources (about 08:00 to 17:00–18:30), so call ahead; the golden tunnel is about NT$199", "th": "เวลาเปิดแต่ละแหล่งไม่ตรงกัน (ราว 08:00 ถึง 17:00–18:30) ควรโทรถามก่อน อุโมงค์กระจกทองราว NT$199" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free entry · golden tunnel ≈ NT$199", "th": "เข้าฟรี · อุโมงค์กระจกทอง ≈ NT$199" },
+          "book": "none",
+          "q": "Taiwan Glass Gallery, 30 Lugong South 4th Road, Lukang, Changhua",
+          "src": "https://kikinote.net/83232"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Guliu Playground, Aofeng Mountain Park", "th": "สนามเด็กเล่นกู่หลิว สวนอ้าวเฟิงซาน" },
+          "local": "鰲峰山谷溜遊戲場",
+          "kind": "play",
+          "area": { "en": "Qingshui", "th": "ชิงสุ่ย" },
+          "what": { "en": "A free hillside playground opened in May 2026 with 34 slides built into the slopes of Aofeng Mountain Park", "th": "สนามเด็กเล่นบนเนินเขา เปิดเมื่อ พ.ค. 2026 เข้าฟรี มีสไลเดอร์ 34 ราง สร้างตามไหล่เขาของสวนอ้าวเฟิงซาน" },
+          "why": { "en": "Slides for every size of child, but very busy at weekends and parking is tight; weekdays are calmer", "th": "มีสไลเดอร์ทุกขนาดให้เด็กเล่น แต่เสาร์อาทิตย์คนแน่นและที่จอดรถน้อย วันธรรมดาเงียบกว่า" },
+          "tip": { "en": "About 17 parking spaces by the playground; the police suggest buses 305 or 688; weekend crowds reach 1,500–2,000 a day", "th": "ที่จอดรถข้างสนามราว 17 คัน ตำรวจแนะนำให้ไปรถเมล์สาย 305 หรือ 688 วันหยุดมีคน 1,500–2,000 คนต่อวัน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Aofeng Mountain Park Guliu Playground, Qingshui District, Taichung",
+          "src": "https://udn.com/news/story/7325/9504780"
+        },
+        {
+          "name": { "en": "Dakeng Hiking Trail No. 9", "th": "เส้นทางเดินป่าต้าเคิงหมายเลข 9" },
+          "kind": "nature",
+          "area": { "en": "Beitun District", "th": "เขตเป่ยถุน" },
+          "what": { "en": "A 1.6 km shaded trail rated for parents with children, with city views, an old Japanese-era ammunition depot and a link to the Dakeng Earthquake Park", "th": "เส้นทางร่มรื่น 1.6 กม. จัดว่าเหมาะกับพ่อแม่และเด็ก มีวิวเมือง คลังกระสุนเก่าสมัยญี่ปุ่น และต่อกับสวนแผ่นดินไหวต้าเคิง" },
+          "why": { "en": "Taichung Tourism lists it for parent and child walks; about an hour, with parking at the Jingbu lot beside the earthquake park", "th": "การท่องเที่ยวไทจงจัดไว้สำหรับพาเด็กเดิน ใช้เวลาราวหนึ่งชั่วโมง จอดรถที่ลานจิงปู้ข้างสวนแผ่นดินไหว" },
+          "tip": { "en": "Bring water and insect repellent; some other Dakeng trails are steep or renovating, so stay on No. 9", "th": "เตรียมน้ำดื่มและยากันยุง เส้นทางอื่นของต้าเคิงบางเส้นชันหรือกำลังปรับปรุง เลือกเส้นหมายเลข 9" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Dakeng Hiking Trail No. 9, Jingbu Road, Beitun District, Taichung",
+          "ok": "2026-11",
+          "src": "https://taichung.travel/en/experience/hikingtrail/10"
+        },
+        {
+          "name": { "en": "Museum of Illusions Taichung", "th": "พิพิธภัณฑ์ภาพลวงตาไถจง" },
+          "local": "幻覺博物館",
+          "kind": "museumkid",
+          "area": { "en": "West District, Taichung", "th": "เขตตะวันตก ไถจง" },
+          "what": { "en": "An indoor illusion museum with floating-in-zero-gravity rooms, forced-perspective photo spots and a galaxy tunnel.", "th": "พิพิธภัณฑ์ภาพลวงตาในร่ม มีห้องลอยตัวไร้แรงโน้มถ่วง จุดถ่ายรูปมุมลวงตา และอุโมงค์กาแล็กซี" },
+          "why": { "en": "Indoor and bright; the photo rooms and the galaxy tunnel are built to be played in.", "th": "อยู่ในร่มและสว่าง ห้องถ่ายรูปและอุโมงค์กาแล็กซีสร้างมาให้เล่น" },
+          "tip": { "en": "Hours 10:30–18:00 Mon–Thu, Sat and Sun; Fri 10:30–17:00.", "th": "เปิด 10:30–18:00 วันจันทร์–พฤหัสบดี เสาร์ และอาทิตย์ วันศุกร์ 10:30–17:00" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ NT$380 adult · NT$270 child (3–15)", "th": "≈ NT$380 ผู้ใหญ่ · NT$270 เด็ก (3–15 ปี)" },
+          "book": "none",
+          "q": "幻覺博物館, 精誠路66號, West District, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Yohocraft Craft Hall", "th": "ศูนย์งานประดิษฐ์โยโฮคราฟต์" },
+          "local": "約客＆厚禮築夢手創館",
+          "kind": "play",
+          "area": { "en": "Houli District, Taichung", "th": "โห่วหลี่ ไถจง" },
+          "what": { "en": "A craft factory turned into two halls of interactive play, a crystal castle and a fairy-tale world to photograph.", "th": "โรงงานงานฝีมือที่เปลี่ยนเป็นสองฮอลล์เล่นแบบโต้ตอบ มีปราสาทคริสตัลและโลกเทพนิยายให้ถ่ายรูป" },
+          "why": { "en": "Two halls on one ticket, with hands-on play and a castle to walk through.", "th": "ตั๋วใบเดียวเข้าได้สองฮอลล์ มีของให้ลงมือเล่นและปราสาทให้เดินผ่าน" },
+          "tip": { "en": "Closed Mon and Tue; Wed–Fri 10:00–17:00, Sat–Sun 09:30–17:30.", "th": "ปิดวันจันทร์และอังคาร วันพุธ–ศุกร์ 10:00–17:00 เสาร์–อาทิตย์ 09:30–17:30" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ NT$200 for both halls", "th": "≈ NT$200 เข้าได้ทั้งสองฮอลล์" },
+          "book": "none",
+          "q": "約客＆厚禮築夢手創館, 民生路520號, Houli, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Barefoot Eco Farm", "th": "ฟาร์มนิเวศเท้าเปล่า" },
+          "local": "赤腳丫生態農莊",
+          "kind": "farm",
+          "area": { "en": "Daya District, Taichung", "th": "ต้าย่า ไถจง" },
+          "what": { "en": "An eco farm with treehouse slides, climbing play and small animals to feed.", "th": "ฟาร์มนิเวศที่มีสไลเดอร์บ้านต้นไม้ เครื่องเล่นปีนป่าย และสัตว์เล็กให้ป้อนอาหาร" },
+          "why": { "en": "Plenty of play equipment and animals; on weekdays it is cheap.", "th": "มีเครื่องเล่นและสัตว์มากมาย วันธรรมดาราคาถูก" },
+          "tip": { "en": "Open daily 09:30–17:30.", "th": "เปิดทุกวัน 09:30–17:30" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$150 adult (includes NT$50 spending voucher)", "th": "≈ NT$150 ผู้ใหญ่ (รวมบัตรกำนัลใช้จ่าย NT$50)" },
+          "book": "none",
+          "q": "赤腳丫生態農莊, 雅潭路三段500號, Daya, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Wilson's Farm", "th": "ฟาร์มของวิลสัน" },
+          "local": "威爾森的農場",
+          "kind": "farm",
+          "area": { "en": "Fengyuan District, Taichung", "th": "เฟิงหยวน ไถจง" },
+          "what": { "en": "A small family farm where children feed animals and ride the playground rides.", "th": "ฟาร์มครอบครัวขนาดเล็กที่เด็กป้อนอาหารสัตว์และเล่นเครื่องเล่นสนามเด็กเล่น" },
+          "why": { "en": "Feeding small animals and playground rides, small enough for little ones.", "th": "ป้อนอาหารสัตว์เล็กและเครื่องเล่น ขนาดไม่ใหญ่เหมาะกับเด็กเล็ก" },
+          "tip": { "en": "Open Sat and Sun 09:30–17:00 only (closed Mon–Fri).", "th": "เปิดเฉพาะเสาร์–อาทิตย์ 09:30–17:00 (ปิดจันทร์–ศุกร์)" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$100 adult · under 100 cm free", "th": "≈ NT$100 ผู้ใหญ่ · เด็กสูงต่ำกว่า 100 ซม.ฟรี" },
+          "book": "none",
+          "q": "威爾森的農場, 豐勢路二段535巷122弄23號, Fengyuan, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Yijian Dairy Goat Farm", "th": "ฟาร์มแพะนมอี้เจี้ยน" },
+          "local": "益健乳羊牧場",
+          "kind": "farm",
+          "area": { "en": "Xitun District, Taichung", "th": "ซีถุน ไถจง" },
+          "what": { "en": "A private goat farm in a lane beside Taichung City Park; goats come up for feed by hand.", "th": "ฟาร์มแพะส่วนตัวในซอยข้างสวนสาธารณะเมืองไถจง แพะเข้ามากินอาหารจากมือ" },
+          "why": { "en": "Goats come close to be fed, and chickens run about; goat-milk ice cream at the shop.", "th": "แพะเข้ามาใกล้ให้ป้อน มีไก่วิ่งไปมา และมีไอศกรีมนมแพะที่ร้าน" },
+          "tip": { "en": "Entry is free but the feed (grass, pellets) is paid; open daily 09:00–18:00.", "th": "เข้าฟรีแต่อาหารสัตว์ (หญ้า เม็ดอาหาร) คิดเงิน เปิดทุกวัน 09:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free entry · feed is paid", "th": "เข้าฟรี · อาหารสัตว์คิดเงิน" },
+          "book": "none",
+          "q": "益健乳羊牧場, 都會園路1215巷63號, Xitun, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Paper Box King Creative Park", "th": "สวนสร้างสรรค์เปเปอร์บ็อกซ์คิง" },
+          "local": "紙箱王創意園區",
+          "kind": "museum",
+          "area": { "en": "Beitun District, Taichung", "th": "เป่ยถุน ไถจง" },
+          "what": { "en": "The only place in Taiwan themed on paper: art and scenery made of cardboard, and a little train made of paper boxes to ride.", "th": "ที่เดียวในไต้หวันที่ใช้กระดาษเป็นธีม มีงานศิลปะและฉากทำจากกล่องกระดาษ และรถไฟเล็กทำจากกล่องให้นั่ง" },
+          "why": { "en": "Most of the installations and the small animal models are made of paper; the paper-box train is a ride.", "th": "งานติดตั้งและโมเดลสัตว์ส่วนใหญ่ทำจากกระดาษ รถไฟกล่องกระดาษนั่งได้" },
+          "tip": { "en": "Mon–Fri 09:00–19:00; Sat and Sun 09:00–21:00.", "th": "จันทร์–ศุกร์ 09:00–19:00 เสาร์–อาทิตย์ 09:00–21:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ NT$200 adult · under 100 cm free", "th": "≈ NT$200 ผู้ใหญ่ · เด็กสูงต่ำกว่า 100 ซม.ฟรี" },
+          "book": "none",
+          "q": "紙箱王創意園區, 東山路2段2巷2號, Beitun, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Macaron Park", "th": "สวนมาการอง" },
+          "local": "馬卡龍公園",
+          "kind": "park",
+          "area": { "en": "Taiping District, Taichung", "th": "ไท่ผิง ไถจง" },
+          "what": { "en": "A former landfill turned macaron-coloured playground with a tower slide, the tallest outdoor slide in the country.", "th": "อดีตหลุมฝังกลบที่กลายเป็นสนามเด็กเล่นสีมาการอง มีสไลเดอร์หอคอยที่สูงที่สุดกลางแจ้งของประเทศ" },
+          "why": { "en": "The tallest outdoor slide in the country, plus two more slides and climbing nets.", "th": "สไลเดอร์กลางแจ้งสูงที่สุดของประเทศ และมีสไลเดอร์อีกสองตัวกับตาข่ายปีน" },
+          "tip": { "en": "Open 24 hours.", "th": "เปิด 24 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "馬卡龍公園, 環中東路4段85號, Taiping, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Dongshi Forest Recreation Area", "th": "เขตพักผ่อนป่าตงชื่อ" },
+          "local": "東勢林場遊樂區",
+          "kind": "nature",
+          "area": { "en": "Dongshi District, Taichung", "th": "ตงชื่อ ไถจง" },
+          "what": { "en": "An old forest recreation area with forest trails, a foot-soak pool, cabins and a large physical training ground.", "th": "เขตพักผ่อนป่าเก่าแก่ มีทางเดินป่า สระแช่เท้า กระท่อมพัก และลานฝึกกายภาพขนาดใหญ่" },
+          "why": { "en": "Forest trails, a foot-soak pool and a climbing course that trains balance, which the page suggests for 10–12 year olds.", "th": "มีทางเดินป่า สระแช่เท้า และคอร์สปีนฝึกการทรงตัว ที่หน้าเว็บแนะนำสำหรับเด็ก 10–12 ปี" },
+          "tip": { "en": "Open daily 06:30–22:00; check-in 15:00.", "th": "เปิดทุกวัน 06:30–22:00 เช็กอิน 15:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "東勢林場遊樂區, 勢林街6-1號, Dongshi, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "National Comics Museum", "th": "พิพิธภัณฑ์การ์ตูนแห่งชาติ" },
+          "local": "國家漫畫博物館",
+          "kind": "museum",
+          "area": { "en": "West District, Taichung", "th": "เขตตะวันตก ไถจง" },
+          "what": { "en": "A free museum in former Japanese-style officials' residences with a lake and a cartoon cat character to find.", "th": "พิพิธภัณฑ์เข้าฟรีในบ้านพักข้าราชการสไตล์ญี่ปุ่นเก่า มีทะเลสาบและตัวการ์ตูนแมวให้ตามหา" },
+          "why": { "en": "Free entry, Japanese-era houses and a lake to walk round; the cat character hides around the grounds.", "th": "เข้าฟรี มีบ้านยุคญี่ปุ่นและทะเลสาบให้เดินเล่น ตัวการ์ตูนแมวซ่อนอยู่ทั่วบริเวณ" },
+          "tip": { "en": "Closed Mondays; open 10:00–18:00 otherwise.", "th": "ปิดวันจันทร์ วันอื่นเปิด 10:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "國家漫畫博物館, 林森路33號, West District, Taichung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200"
+        },
+        {
+          "name": { "en": "Jiujiufeng Zoo Park", "th": "สวนสัตว์จิ่วจิ่วเฟิง" },
+          "local": "九九峰動物樂園",
+          "kind": "zoo",
+          "area": { "en": "Jiujiufeng, Nantou", "th": "จิ่วจิ่วเฟิง หนานโถว" },
+          "what": { "en": "An animal and eco-exploration park in Nantou, part of the Lihpao group's Sun Moon Lake area.", "th": "สวนสัตว์และสวนสำรวจนิเวศในหนานโถว ส่วนหนึ่งของกลุ่มลี่เป่าแถบทะเลสาบสุริยันจันทรา" },
+          "why": { "en": "A zoo and eco-exploration park for families; the release mentions a tethered helium balloon ride as an add-on.", "th": "สวนสัตว์และสวนสำรวจนิเวศสำหรับครอบครัว ข่าวประชาสัมพันธ์กล่าวถึงบอลลูนฮีเลียมผูกเชือกเป็นกิจกรรมเสริม" },
+          "tip": { "en": "Hours and prices change: check before going.", "th": "เวลาและราคาเปลี่ยนได้ เช็กก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "九九峰動物樂園, Nantou",
+          "ok": "2026-11",
+          "src": "https://www.1111.com.tw/news/jobns/165237"
+        },
+        {
+          "name": { "en": "Kuang Hsing Paper Mill", "th": "โรงทำกระดาษกวางซิง" },
+          "local": "廣興紙寮",
+          "kind": "culture",
+          "area": { "en": "Sun Moon Lake area, Nantou", "th": "แถบทะเลสาบสุริยันจันทรา หนานโถว" },
+          "what": { "en": "A paper-making workshop where visitors see, make and touch the fibres of paper.", "th": "เวิร์กชอปทำกระดาษที่ผู้เยี่ยมชมได้ดู ทำ และสัมผัสเส้นใยกระดาษ" },
+          "why": { "en": "Hands-on paper making: the children learn a traditional craft by doing it.", "th": "ลงมือทำกระดาษเอง เด็กเรียนรู้งานหัตถกรรมดั้งเดิมจากการทำจริง" },
+          "tip": { "en": "Allow about an hour and a half.", "th": "เผื่อเวลาราวชั่วโมงครึ่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "廣興紙寮, Sun Moon Lake area, Nantou",
+          "ok": "2026-11",
+          "src": "https://www.1111.com.tw/news/jobns/165237"
+        },
+        {
+          "local": "豐年靈芝菇類生態農場",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/bunnyann702025/",
+          "name": {
+            "th": "ฟาร์มเห็ดเฟิงเหนียน",
+            "en": "Fongnian Mushroom Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "สุ่ยโถว ผู่หลี่ หนานโถว",
+            "en": "Shuitou, Puli, Nantou"
+          },
+          "what": {
+            "th": "ฟาร์มเห็ดที่ได้ดูเห็ดโตและเก็บเอง",
+            "en": "A mushroom farm where you watch mushrooms grow and pick them"
+          },
+          "why": {
+            "th": "เด็กได้เห็นว่าเห็ดหอมบนโต๊ะอาหารโตอย่างไร",
+            "en": "Children see how the shiitake on the table grows"
+          },
+          "q": "Fongnian mushroom farm, Shuitou, Puli, Nantou",
+          "ok": "2026-11"
+        },
+        {
+          "local": "水里蛇窯陶藝文化園區",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "บัตรเต็ม 150 ดอลลาร์ไต้หวัน",
+            "en": "NT$150 full ticket"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/travel/353662",
+          "name": {
+            "th": "เตาเผาซุ่ยหลี่สเนกคิลน์",
+            "en": "Shuili Snake Kiln"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ติ่งข่าน ซุ่ยหลี่ หนานโถว",
+            "en": "Dingkan, Shuili, Nantou"
+          },
+          "what": {
+            "th": "เตาเผาไม้ที่เก่าที่สุดของไต้หวัน (1927) ปัจจุบันเป็นสวนเครื่องปั้นดินเผาและพิพิธภัณฑ์",
+            "en": "Taiwan's oldest wood-fired kiln (1927), now a pottery park with a museum"
+          },
+          "why": {
+            "th": "เด็กได้ลองปั้นแป้นหมุนและทำชิ้นงานเอง",
+            "en": "Children try the potter's wheel and make their own piece"
+          },
+          "q": "Shuili Snake Kiln, Dingkan, Shuili, Nantou",
+          "ok": "2026-11"
+        },
+        {
+          "local": "新社百菇莊",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "คนละ 250 ดอลลาร์ไต้หวัน (กิจกรรม)",
+            "en": "NT$250 a person (DIY)"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200",
+          "name": {
+            "th": "ฟาร์มเห็ดซินเซอ",
+            "en": "Xinshe Mushroom Farm (Baigu Zhuang)"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนเสียจง ซินเซอ ไถจง",
+            "en": "Xiezhong Street, Xinshe, Taichung"
+          },
+          "what": {
+            "th": "ฟาร์มเห็ดเดินชมฟรี มีกิจกรรมครอบครัววันหยุด",
+            "en": "A mushroom farm free to walk round, with weekend family DIY"
+          },
+          "why": {
+            "th": "เด็กเก็บเห็ดและไข่ แล้วนึ่งไข่ตุ๋นเห็ดเอง",
+            "en": "Children pick mushrooms and eggs and steam their own egg custard"
+          },
+          "q": "Xinshe Baigu Zhuang mushroom farm, Xiezhong Street, Taichung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "福田水資源回收中心兒童遊樂場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/343200",
+          "name": {
+            "th": "สนามเด็กเล่นศูนย์บำบัดน้ำฝูเถียน",
+            "en": "Futian Water Reclamation Centre Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เขตใต้ ไถจง",
+            "en": "South District, Taichung"
+          },
+          "what": {
+            "th": "สนามเด็กเล่น มีสไลเดอร์ เนินหญ้า และผนังปีน",
+            "en": "A playground with a slide, a grass slope and a climbing wall"
+          },
+          "why": {
+            "th": "สนามหญ้าใหญ่ให้วิ่ง และฟรี",
+            "en": "A big lawn to run on, and free"
+          },
+          "q": "Futian Water Reclamation Center Playground, South District, Taichung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.twosevenths.com/en/kid/amusement-taichung-children/",
+          "name": {
+            "th": "เลิฟมีแลนด์",
+            "en": "LoveMe Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างโชว์ไทม์ ถนนหนานจิง เขตตะวันออก ไถจง",
+            "en": "Showtime store, Nanjing Road, East District, Taichung"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มขนาดใหญ่ใกล้สถานีไถจง มีบ่อบอลและสไลเดอร์มีไฟ",
+            "en": "A big indoor play park near Taichung Station with a ball pit and light-up slides"
+          },
+          "why": {
+            "th": "มีโซนนุ่มสำหรับเด็กเล็ก ห้องน้ำ และที่เปลี่ยนผ้าอ้อม",
+            "en": "Soft areas for little ones, with toilets and changing tables"
+          },
+          "q": "LoveMe Land, 南京路, 台中",
+          "ok": "2026-11"
+        },
+        {
+          "local": "文心森林公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนป่าเหวินซิน",
+            "en": "Wenxin Forest Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเหวินซิน หนานถุน ไถจง",
+            "en": "Wenxin Road, Nantun, Taichung"
+          },
+          "what": {
+            "th": "สวนป่าที่มีเครื่องเล่นฝึกประสาทสัมผัสใหม่ 12 ชิ้น",
+            "en": "A forest park with twelve new sensory play pieces"
+          },
+          "why": {
+            "th": "เครื่องเล่นฝึกประสาทสัมผัสสำหรับเด็กเล็ก",
+            "en": "Sensory play for small children"
+          },
+          "q": "文心森林公園, 台中",
+          "ok": "2026-11"
+        },
+        {
+          "local": "理心公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนลี่ซิน",
+            "en": "Lixin Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหลงฟู่ ซีถุน ไถจง",
+            "en": "Longfu Road, Xitun, Taichung"
+          },
+          "what": {
+            "th": "สวนที่มีเครื่องปีนป่าย 9 ชิ้นและลานเล่นเกม",
+            "en": "A park with nine climbing frames and a play area for games"
+          },
+          "why": {
+            "th": "มีที่ปีนเยอะสำหรับเด็กพลังเหลือ",
+            "en": "Lots to climb for energetic children"
+          },
+          "q": "Lixin Park, Xitun, Taichung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大雅中科公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนจงเคอ ต้าหย่า",
+            "en": "Daya Zhongke Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเยว่เซียง ต้าหย่า ไถจง",
+            "en": "Yuexiang Road, Daya, Taichung"
+          },
+          "what": {
+            "th": "สวนที่มีสไลเดอร์ยาว 22 เมตรและลานเล่นน้ำหน้าร้อน",
+            "en": "A park with a 22-metre slide and a summer water-play area"
+          },
+          "why": {
+            "th": "สไลเดอร์ยาว และเล่นน้ำวันหยุดหน้าร้อน",
+            "en": "A long slide, and water play at summer weekends"
+          },
+          "tip": {
+            "th": "ลานเล่นน้ำเปิดเฉพาะวันหยุดหน้าร้อน",
+            "en": "The water play runs at summer weekends only"
+          },
+          "q": "Dayazhongke Park, Daya, Taichung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鐵砧山雕塑公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://taichung.travel/en/experience/family-fun",
+          "name": {
+            "th": "สวนประติมากรรมเถี่ยเจินซาน ต้าเจี่ย",
+            "en": "Tiezhenshan Sculpture Park (Dajia)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเฉิงกง ต้าเจี่ย ไถจง",
+            "en": "Chenggong Road, Dajia, Taichung"
+          },
+          "what": {
+            "th": "สวนประติมากรรม มีตาข่ายปีนเหล็กและสนามเด็กเล่นบ่อทรายใหญ่",
+            "en": "A sculpture park with a steel climbing net and a big sand-pit playground"
+          },
+          "why": {
+            "th": "ตาข่ายปีนและสนามเด็กเล่นบ่อทรายที่เด็กชอบ",
+            "en": "A climbing net and a sand-pit playground children love"
+          },
+          "q": "Tiezhenshan Sculpture Park, Dajia, Taichung",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "tw-hualien",
+      "sights": [
+        {
+          "name": { "en": "Farglory Ocean Park", "th": "ฟาร์โกลรีโอเชียนพาร์ก" },
+          "local": "遠雄海洋公園",
+          "kind": "themepark",
+          "area": { "en": "Shoufeng, 25 min south of Hualien city", "th": "โซ่วเฟิง ทางใต้ของเมืองฮัวเหลียน" },
+          "what": { "en": "A seaside marine park with a sea-lion show, a sea-tunnel aquarium, gentle rides and a pirate ship", "th": "สวนสนุกริมทะเล มีโชว์สิงโตทะเล อุโมงค์ใต้น้ำ เครื่องเล่นเบาๆ และเรือโจรสลัด" },
+          "why": { "en": "Many shows and rides suit small children, and the aquarium halls give shelter from rain", "th": "โชว์และเครื่องเล่นหลายอย่างเหมาะกับเด็กเล็ก และมีโซนตู้ปลาในร่มไว้หลบฝน" },
+          "tip": { "en": "Weekday hours about 09:30–17:00, weekends from 09:00; last entry 2 hours before closing; check the park's page for today", "th": "วันธรรมดาเปิดราว 09:30–17:00 วันหยุดเปิด 09:00 เข้าได้ถึง 2 ชั่วโมงก่อนปิด เช็กหน้าเว็บของสวนก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ NT$990 adults · NT$690 ages 7–12 · NT$490 ages 3–6 (2025 prices, check the price)", "th": "≈ NT$990 ผู้ใหญ่ · NT$690 อายุ 7–12 ปี · NT$490 อายุ 3–6 ปี (ราคาปี 2025 เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Farglory Ocean Park, Shoufeng, Hualien",
+          "ok": "2026-11",
+          "src": "https://gofunit.com/%E9%81%A0%E9%9B%84%E6%B5%B7%E6%B4%8B%E5%85%AC%E5%9C%92/"
+        },
+        {
+          "name": { "en": "Taroko National Park Visitor Centre and plateau trail", "th": "ศูนย์บริการนักท่องเที่ยวและทางเดินทาโรโกะ" },
+          "local": "太魯閣國家公園遊客中心",
+          "kind": "nature",
+          "area": { "en": "Taroko, Xiulin", "th": "ทาโรโกะ ซิ่วหลิน" },
+          "what": { "en": "An air-conditioned visitor centre with exhibits, beside a flat plateau trail of about an hour in the gorge's mouth", "th": "ศูนย์บริการนักท่องเที่ยวมีแอร์และนิทรรศการ ติดกับทางเดินราบราวหนึ่งชั่วโมงที่ปากหุบเขา" },
+          "why": { "en": "Free and flat enough for a pram, so it is the easy way to see Taroko with children", "th": "ฟรีและราบพอให้เข็นรถเด็กได้ เป็นวิธีง่ายๆ พาเด็กชมทาโรโกะ" },
+          "tip": { "en": "Yanzikou, Shakadang and the Nine Turns are still closed for repairs; roads in the gorge close to traffic by 18:30, so check the park's notices", "th": "เยี่ยนจื่อโข่ว ซาคาตั้ง และเก้าโค้งยังปิดซ่อมอยู่ ถนนในหุบเขาปิดช่วง 18:30 เช็กประกาศอุทยานก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Taroko National Park Visitor Center, Xiulin, Hualien",
+          "ok": "2026-11",
+          "src": "https://smiletaiwan.cw.com.tw/article/9530"
+        },
+        {
+          "name": { "en": "Dongdamen Night Market", "th": "ตลาดกลางคืนตงต้าเหมิน" },
+          "local": "東大門夜市",
+          "kind": "market",
+          "area": { "en": "Hualien city", "th": "ในเมืองฮัวเหลียน" },
+          "what": { "en": "Hualien's biggest night market, with a Taiwanese street-food lane, an Indigenous food street and games", "th": "ตลาดกลางคืนใหญ่ที่สุดของฮัวเหลียน มีซอยอาหารไต้หวัน ถนนอาหารชาวพื้นเมืองและเกม" },
+          "why": { "en": "Lots of small bites to share; go early before the crowds when the pram is easy to push", "th": "มีของกินชิ้นเล็กให้แบ่งกัน ไปแต่หัวค่ำก่อนคนเยอะจะเข็นรถเด็กง่ายกว่า" },
+          "tip": { "en": "Sources give about 18:00 to midnight (some say 17:30–22:30), and stalls vary, so go in the early evening", "th": "แหล่งข้อมูลบอกราว 18:00 ถึงเที่ยงคืน (บางแห่ง 17:30–22:30) แต่ละร้านไม่เท่ากัน ไปช่วงหัวค่ำ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to enter; food from about NT$50 a dish (check the price)", "th": "เข้าฟรี อาหารเริ่มราว NT$50 ต่อจาน (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Dongdamen Night Market, Hualien City",
+          "ok": "2026-11",
+          "src": "https://gofunit.com/%e8%8a%b1%e8%93%ae%e6%9d%b1%e5%a4%a7%e9%96%80%e5%a4%9c%e5%b8%82/"
+        },
+        {
+          "name": { "en": "Liyu Lake", "th": "ทะเลสาบหลี่หยู" },
+          "local": "鯉魚潭",
+          "kind": "nature",
+          "area": { "en": "Shoufeng", "th": "โซ่วเฟิง" },
+          "what": { "en": "Hualien's largest lake, with a loop path, pedal boats, canoes and short trails up the carp-shaped hill", "th": "ทะเลสาบใหญ่ที่สุดของฮัวเหลียน มีทางเดินรอบทะเลสาบ เรือถีบ เรือแคนู และทางเดินสั้นขึ้นเนิน" },
+          "why": { "en": "Calm water and a flat path suit toddlers; the short hill trails of 900 m or so suit older children", "th": "น้ำนิ่งและทางราบเหมาะกับเด็กเล็ก ทางเดินสั้นราว 900 เมตรเหมาะกับเด็กโต" },
+          "tip": { "en": "Pedal-boat prices differ by operator, so ask first; the lakeside pavilion is the only trail shelter in rain", "th": "ราคาเรือถีบแต่ละเจ้าไม่เท่ากัน ถามก่อนเช่า ศาลาริมทะเลสาบเป็นที่หลบฝนแห่งเดียวบนทางเดิน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk; boats vary by operator, check the price", "th": "เดินเล่นฟรี เรือราคาต่างกันตามเจ้า เช็กราคาอีกครั้ง" },
+          "book": "none",
+          "q": "Liyu Lake, Shoufeng, Hualien",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/carp/"
+        },
+        {
+          "name": { "en": "Qixingtan Beach", "th": "หาดชีซิงทาน" },
+          "local": "七星潭",
+          "kind": "beach",
+          "area": { "en": "Xincheng, near Hualien airport", "th": "ซินเฉิง ใกล้สนามบินฮัวเหลียน" },
+          "what": { "en": "A long crescent bay facing the Pacific with a stony shore, a cycle path and sea views", "th": "อ่าวโค้งยาวหันหน้าสู่มหาสมุทรแปซิฟิก ชายหาดเป็นหิน มีทางจักรยานและวิวทะเล" },
+          "why": { "en": "Free and easy for a walk or a pram, but the shore is pebbles and not for swimming, so watch small children near the water", "th": "ฟรีและเดินเล่นหรือเข็นรถเด็กง่าย แต่เป็นหาดหินไม่เหมาะว่ายน้ำ ดูเด็กเล็กใกล้น้ำให้ดี" },
+          "tip": { "en": "Sunrise is the favourite hour; bring a hat because there is little shade", "th": "ช่วงพระอาทิตย์ขึ้นสวยที่สุด เอาหมวกไปเพราะร่มน้อย" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Qixingtan Beach, Xincheng, Hualien",
+          "ok": "2026-11",
+          "src": "https://www.funtime.com.tw/blog/funtime/travel-guide-for-hualien"
+        },
+        {
+          "name": { "en": "Guangfu Sugar Factory", "th": "โรงงานน้ำตาลกวางฝู" },
+          "local": "花蓮觀光糖廠",
+          "kind": "culture",
+          "area": { "en": "Guangfu, 45 min south of Hualien city", "th": "กวางฝู ทางใต้ของเมืองฮัวเหลียนราว 45 นาที" },
+          "what": { "en": "An old sugar mill with Japanese-era wooden houses, lawns and a shop that sells ice-cream and ice pops", "th": "โรงงานน้ำตาลเก่ามีบ้านไม้สมัยญี่ปุ่น สนามหญ้า และร้านไอศกรีมกับไอศกรีมแท่ง" },
+          "why": { "en": "Free, with lawns to run on and an ice-cream stop that children enjoy", "th": "เข้าฟรี มีสนามหญ้าให้วิ่งและร้านไอศกรีมที่เด็กๆ ชอบ" },
+          "tip": { "en": "The outdoor grounds are open all year; the ice shop sells about 08:00–20:00 (later in summer)", "th": "ลานกลางแจ้งเปิดทั้งปี ร้านไอศกรีมขายราว 08:00–20:00 (หน้าร้อนปิดดึกกว่า)" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free to enter; ice cream from about NT$40 (check the price)", "th": "เข้าฟรี ไอศกรีมเริ่มราว NT$40 (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Hualien Sugar Factory, Guangfu Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://gofunit.com/%e8%8a%b1%e8%93%ae%e5%85%89%e5%be%a9%e7%b3%96%e5%bb%a0/"
+        },
+        {
+          "name": { "en": "Ruisui Ranch", "th": "ฟาร์มรุ่ยซุ่ย" },
+          "local": "瑞穗牧場",
+          "kind": "farm",
+          "area": { "en": "Ruisui", "th": "รุ่ยซุ่ย" },
+          "what": { "en": "A dairy farm you can walk into free, with cows, ostriches and a counter for fresh milk and ice-cream", "th": "ฟาร์มโคนมเดินเข้าฟรี มีวัว นกกระจอกเทศ และร้านนมสดกับไอศกรีม" },
+          "why": { "en": "Children can see the animals up close and taste fresh milk", "th": "เด็กๆ ดูสัตว์ใกล้ๆ และชิมนมสดได้" },
+          "tip": { "en": "No current opening hours found, so ring ahead on +886 3 887 6611 before the drive", "th": "ไม่พบเวลาเปิดล่าสุด โทรสอบถาม +886 3 887 6611 ก่อนขับไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to enter; milk and ice-cream about NT$50–100 (check the price)", "th": "เข้าฟรี นมและไอศกรีมราว NT$50–100 (เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Ruisui Ranch, Ruisui Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/yuliwan/"
+        },
+        {
+          "name": { "en": "Guanglong Museum", "th": "พิพิธภัณฑ์กวงหลง" },
+          "local": "光隆博物館",
+          "kind": "museumkid",
+          "area": { "en": "Fenglin", "th": "เฟิงหลิน" },
+          "what": { "en": "A stone-industry museum with carvings, models, a dinosaur fossil area and a weather zone that mimics typhoons, quakes and snow", "th": "พิพิธภัณฑ์อุตสาหกรรมหิน มีงานแกะสลัก โมเดล โซนฟอสซิลไดโนเสาร์ และโซนจำลองพายุไต้ฝุ่น แผ่นดินไหวและหิมะ" },
+          "why": { "en": "A good indoor stop on a rainy day with hands-on weather and craft activities", "th": "จุดในร่มที่ดีเวลาฝนตก มีกิจกรรมลองสภาพอากาศและงานฝีมือ" },
+          "tip": { "en": "Opening hours and ticket price were not shown in the source, so check the price and hours before you go", "th": "แหล่งข้อมูลไม่ระบุเวลาเปิดและราคาบัตร เช็กราคาและเวลาก่อนไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาอีกครั้ง" },
+          "book": "none",
+          "q": "Guanglong Museum, Fenglin Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/hualien-indoor/"
+        },
+        {
+          "name": { "en": "Hualien County Stone Sculpture Museum", "th": "พิพิธภัณฑ์ประติมากรรมหินเทศมณฑลฮวาเหลียน" },
+          "local": "花蓮縣石雕博物館",
+          "kind": "museum",
+          "area": { "en": "Hualien City", "th": "เมืองฮวาเหลียน" },
+          "what": { "en": "A museum and open-air garden of stone carvings made from Hualien's own marble and rock", "th": "พิพิธภัณฑ์และสวนกลางแจ้งแสดงงานแกะสลักหินจากหินอ่อนและหินของฮวาเหลียน" },
+          "why": { "en": "Big shapes to walk around and touch with the eyes, with indoor halls for a wet day", "th": "รูปทรงใหญ่ให้เดินชม มีห้องในร่มสำหรับวันฝนตก" },
+          "tip": { "en": "Open 09:00–17:00; the official page lists discounts for children under 120 cm, so ask at the desk", "th": "เปิด 09:00–17:00 หน้าทางการระบุส่วนลดเด็กสูงต่ำกว่า 120 ซม. สอบถามที่เคาน์เตอร์" },
+          "ages": [1, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hualien County Stone Sculpture Museum, Hualien City",
+          "ok": "2026-11",
+          "src": "https://stone.hccc.gov.tw/en-us/VisitPark/VisitInfo"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Hualien Cultural and Creative Industries Park", "th": "สวนวัฒนธรรมและอุตสาหกรรมสร้างสรรค์ฮัวเหลียน" },
+          "local": "花蓮文化創意產業園區",
+          "kind": "culture",
+          "area": { "en": "Hualien City", "th": "เมืองฮัวเหลียน" },
+          "what": { "en": "A former winery of old buildings turned into a park of exhibitions, a weekend market and, since December 2025, a picture-book story house", "th": "โรงกลั่นเหล้าเก่าที่กลายเป็นสวนนิทรรศการ ตลาดวันหยุด และตั้งแต่ ธ.ค. 2025 มี \"บ้านนิทานภาพ\" สำหรับเด็ก" },
+          "why": { "en": "Open lawns and old halls to wander, and the picture-book house gives small children somewhere to sit and read indoors", "th": "มีสนามหญ้าและอาคารเก่าให้เดินเล่น และบ้านนิทานภาพให้เด็กเล็กนั่งอ่านในร่ม" },
+          "tip": { "en": "Markets and street performers come at weekends and holidays; the page shows no entry fee, so check the story house's own times", "th": "ตลาดและนักแสดงริมทางมาเสาร์อาทิตย์และวันหยุด หน้าเว็บไม่ระบุค่าเข้า ควรเช็กเวลาของบ้านนิทานภาพก่อน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free to walk in · check events", "th": "เดินเข้าฟรี · เช็กกิจกรรมก่อนไป" },
+          "book": "none",
+          "q": "Hualien Cultural and Creative Industries Park, Zhongzheng Road, Hualien City",
+          "src": "https://clab.org.tw/en/unit/hualienccip/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Danong Dafu Forest Park", "th": "สวนป่าราบต้าหนงต้าฟู่" },
+          "local": "大農大富平地森林園區",
+          "kind": "park",
+          "area": { "en": "Guangfu", "th": "กวางฝู" },
+          "what": { "en": "A huge flat forest park of about 1,250 hectares with seven cycle paths, 13 km in all, and a visitor centre", "th": "สวนป่าราบขนาดใหญ่ราว 1,250 เฮกตาร์ มีทางจักรยาน 7 สาย รวม 13 กม. และศูนย์บริการนักท่องเที่ยว" },
+          "why": { "en": "Free, flat and shady, easy for a pram or a first bike; easy parking", "th": "เข้าฟรี ราบและร่มรื่น เข็นรถเข็นเด็กหรือหัดปั่นจักรยานได้ง่าย จอดรถง่าย" },
+          "tip": { "en": "About 08:00–17:00, closed Mondays outside school holidays; Guangfu was hit by flooding in 2025, so call ahead for what is open", "th": "ราว 08:00–17:00 ปิดวันจันทร์นอกช่วงปิดเทอม กวางฝูโดนน้ำท่วมปี 2025 ควรโทรถามว่าส่วนไหนเปิด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Danong Dafu Forest Park, Nongchang Road, Guangfu, Hualien",
+          "src": "https://bunnyann.tw/hualien-free/"
+        },
+        {
+          "name": { "en": "Fuyuan National Forest Recreation Area", "th": "เขตนันทนาการป่าไม้แห่งชาติฝูหยวน" },
+          "kind": "nature",
+          "area": { "en": "Ruisui", "th": "รุ่ยซุ่ย" },
+          "what": { "en": "A 196-hectare forest park with shaded walking paths, a butterfly valley in spring and summer and fireflies in season", "th": "สวนป่า 196 เฮกตาร์ มีทางเดินร่มรื่น หุบเขาผีเสื้อช่วงฤดูใบไม้ผลิถึงฤดูร้อน และหิ่งห้อยตามฤดู" },
+          "why": { "en": "Easy forest paths and room to run; the youngest ride free and ages 4–12 pay a reduced fare", "th": "ทางเดินป่าง่าย มีที่ให้เด็กวิ่ง เด็กเล็กที่สุดเข้าฟรี อายุ 4–12 ปีจ่ายราคาลด" },
+          "tip": { "en": "Open 08:00–17:00; the Taiwan mountain firefly shows from October to December", "th": "เปิด 08:00–17:00 หิ่งห้อยภูเขาไต้หวันออกช่วงตุลาคมถึงธันวาคม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$150 adults · NT$50 ages 4–12 (or 120–145 cm) · free 3 and under (or 119 cm and shorter)", "th": "≈ NT$150 ผู้ใหญ่ · NT$50 อายุ 4–12 ปี (หรือสูง 120–145 ซม.) · ฟรีอายุ 3 ปีลงมา (หรือสูงไม่เกิน 119 ซม.)" },
+          "book": "none",
+          "q": "Fuyuan National Forest Recreation Area, Ruisui Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://www.forest.gov.tw/EN/0000175"
+        },
+        {
+          "name": { "en": "Lintianshan Forestry Culture Park", "th": "สวนวัฒนธรรมป่าไม้หลินเถียนซาน" },
+          "kind": "culture",
+          "area": { "en": "Fenglin", "th": "เฟิงหลิน" },
+          "what": { "en": "A former logging town of Japanese-era wooden houses, a small museum and shady grounds, run by the East Rift Valley scenic area", "th": "อดีตเมืองตัดไม้ที่มีบ้านไม้สมัยญี่ปุ่น พิพิธภัณฑ์เล็ก และพื้นที่ร่มรื่น ดูแลโดยเขตท่องเที่ยวหุบเขาริฟต์ตะวันออก" },
+          "why": { "en": "Free, quiet and flat enough for children to wander between the old houses and the lawns", "th": "ฟรี เงียบ และราบพอให้เด็กเดินเล่นระหว่างบ้านเก่ากับสนามหญ้า" },
+          "tip": { "en": "Listed 09:00–16:00 and closed on Mondays; the official page also shows another time, so check", "th": "รายการระบุ 09:00–16:00 และปิดวันจันทร์ หน้าทางการมีเวลาอีกชุดหนึ่งด้วย เช็กก่อนไป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lintianshan Forestry Culture Park, Fenglin Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://www.erv-nsa.gov.tw/en/attractions/detail/76"
+        },
+        {
+          "name": { "en": "Mataian Wetland Ecological Park", "th": "สวนนิเวศพื้นที่ชุ่มน้ำหม่าไท่อัน" },
+          "kind": "nature",
+          "area": { "en": "Guangfu", "th": "กวางฟู" },
+          "what": { "en": "A wetland park run by the East Rift Valley scenic area, with paths through ponds and marsh to see birds, fish and plants", "th": "สวนพื้นที่ชุ่มน้ำของเขตท่องเที่ยวหุบเขาริฟต์ตะวันออก มีทางเดินผ่านบ่อน้ำและหนองให้ดูนก ปลา และพืช" },
+          "why": { "en": "Free, flat paths and open water to look at; children enjoy spotting birds and fish", "th": "ฟรี ทางเดินราบและมีน้ำให้ดู เด็กๆ สนุกกับการหานกและปลา" },
+          "tip": { "en": "The official page lists 09:00–17:00 and points to the park's Facebook page for changes, so check", "th": "หน้าทางการระบุ 09:00–17:00 และให้ดูการเปลี่ยนแปลงในเฟซบุ๊กของสวน เช็กก่อนไป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Mataian Wetland Ecological Park, Guangfu Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://www.erv-nsa.gov.tw/en/attractions/detail/66"
+        },
+        {
+          "name": { "en": "Pine Garden", "th": "ไพน์การ์เดน ฮวาเหลียน" },
+          "local": "松園別館",
+          "kind": "culture",
+          "area": { "en": "Hualien City", "th": "ตัวเมืองฮวาเหลียน" },
+          "what": { "en": "A former wartime command house on a hill with pine-shaded gardens, art spaces and a café, run as a heritage site", "th": "บ้านเก่าสมัยสงครามบนเนินในสวนต้นสน เป็นแหล่งมรดกที่มีพื้นที่ศิลปะและคาเฟ่" },
+          "why": { "en": "Shady lawns and a free entry for under-6s let small children roam while parents look at the old rooms", "th": "สนามหญ้าร่มรื่น เด็กต่ำกว่า 6 ปีเข้าฟรี ให้วิ่งเล่นระหว่างพ่อแม่ชมห้องเก่า" },
+          "tip": { "en": "Open 09:00 to 18:00, last entry 17:30, and closed on a few listed Tuesdays each month (see the official page)", "th": "เปิด 09:00 ถึง 18:00 เข้าได้ถึง 17:30 ปิดบางวันอังคารของเดือนตามประกาศ (ดูหน้าทางการ)" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ NT$50 adults · NT$25 half price · under 6 free", "th": "≈ NT$50 ผู้ใหญ่ · NT$25 ครึ่งราคา · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "Pine Garden, No. 65 Songyuan Street, Hualien City",
+          "ok": "2026-11",
+          "src": "https://www.pinegarden.com.tw"
+        },
+        {
+          "name": { "en": "Zhikaxuan Water Park", "th": "สวนน้ำจือข่าเซวียน" },
+          "local": "知卡宣親水公園",
+          "kind": "play",
+          "area": { "en": "Ji'an, Hualien", "th": "จี๋อัน ฮวาเหลียน" },
+          "what": { "en": "A water park with spinning water slides and other water play areas.", "th": "สวนน้ำที่มีสไลเดอร์น้ำหมุนและพื้นที่เล่นน้ำอื่นๆ" },
+          "why": { "en": "Lots of water play for children, and the page says it is easy to park.", "th": "มีเครื่องเล่นน้ำมากมายสำหรับเด็ก และหน้าเว็บบอกว่าจอดรถง่าย" },
+          "tip": { "en": "Open 09:00–17:00; closed Mondays.", "th": "เปิด 09:00–17:00 ปิดวันจันทร์" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "知卡宣親水公園, Ji'an, Hualien",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/hualien-family/"
+        },
+        {
+          "name": { "en": "Giraffe Family Park", "th": "สวนครอบครัวยีราฟ" },
+          "local": "長頸鹿親子公園",
+          "kind": "play",
+          "area": { "en": "Mingli Road, Hualien City", "th": "ถนนหมิงลี่ เมืองฮวาเหลียน" },
+          "what": { "en": "An outdoor kids' park with slides, a climbing net, a sandpit and water play tools.", "th": "สวนเด็กกลางแจ้งที่มีสไลเดอร์ ตาข่ายปีน บ่อทราย และอุปกรณ์เล่นน้ำ" },
+          "why": { "en": "Slides, a climbing net and a sandpit that small children love.", "th": "สไลเดอร์ ตาข่ายปีน และบ่อทรายที่เด็กเล็กชอบ" },
+          "tip": { "en": "The outdoor facilities are open 24 hours.", "th": "เครื่องเล่นกลางแจ้งเปิด 24 ชั่วโมง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "長頸鹿親子公園, Hualien City",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/hualien-family/"
+        },
+        {
+          "name": { "en": "Zhaofeng Farm", "th": "ฟาร์มจ้าวเฟิง" },
+          "local": "兆豐農場",
+          "kind": "farm",
+          "area": { "en": "Fenglin, Hualien", "th": "เฟิงหลิน ฮวาเหลียน" },
+          "what": { "en": "A large farm park with many animals; you can rent electric bikes to tour the grounds.", "th": "ฟาร์มพาร์คขนาดใหญ่ มีสัตว์มากมาย เช่าจักรยานไฟฟ้าขี่ชมได้" },
+          "why": { "en": "A big park with lots of animals to find, and the grounds are good for photos.", "th": "สวนใหญ่มีสัตว์ให้ตามหามากมาย และถ่ายรูปสวย" },
+          "tip": { "en": "Open 08:00–17:00.", "th": "เปิด 08:00–17:00" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "兆豐農場, Yongfu Street, Fenglin, Hualien",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/hualien-family/"
+        },
+        {
+          "name": { "en": "Hualien Archaeology Museum", "th": "พิพิธภัณฑ์โบราณคดีฮวาเหลียน" },
+          "local": "花蓮考古博物館",
+          "kind": "museumkid",
+          "area": { "en": "Shoufeng, Hualien", "th": "โซวเฟิง ฮวาเหลียน" },
+          "what": { "en": "A children's museum converted from an old market, with a board game, fossil digging and interactive games.", "th": "พิพิธภัณฑ์เด็กที่ดัดแปลงจากตลาดเก่า มีบอร์ดเกม ขุดฟอสซิล และเกมโต้ตอบ" },
+          "why": { "en": "Dig for fossils and play the interactive games.", "th": "ขุดฟอสซิลและเล่นเกมโต้ตอบ" },
+          "tip": { "en": "Open Wednesday to Sunday 09:30–17:00.", "th": "เปิดวันพุธ–อาทิตย์ 09:30–17:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ NT$50 entry", "th": "≈ NT$50 ค่าเข้า" },
+          "book": "none",
+          "q": "花蓮考古博物館, Market No. 1, Shoufeng, Hualien",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/hualien-family/"
+        },
+        {
+          "name": { "en": "Zhang Family Tree Garden", "th": "สวนต้นไม้บ้านจาง" },
+          "local": "張家の樹園",
+          "kind": "farm",
+          "area": { "en": "Ji'an, Hualien", "th": "จี๋อัน ฮวาเหลียน" },
+          "what": { "en": "A Japanese-style garden where you can wear a yukata, with sika deer to feed and other small animals.", "th": "สวนสไตล์ญี่ปุ่นที่ใส่ยูกาตะได้ มีกวางซิกาให้ป้อนและสัตว์เล็กอื่นๆ" },
+          "why": { "en": "Children can trade a ticket for feed to feed the deer.", "th": "เด็กใช้ตั๋วแลกอาหารไปป้อนกวางได้" },
+          "tip": { "en": "Open 09:30–18:00.", "th": "เปิด 09:30–18:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$200 entry", "th": "≈ NT$200 ค่าเข้า" },
+          "book": "none",
+          "q": "張家の樹園, Qingfeng 4th Street, Ji'an, Hualien",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/hualien-family/"
+        },
+        {
+          "name": { "en": "Meilun Night Market", "th": "ตลาดกลางคืนเหม่ยหลุน" },
+          "local": "美崙夜市",
+          "kind": "market",
+          "area": { "en": "Meilun, Hualien City", "th": "เหม่ยหลุน เมืองฮวาเหลียน" },
+          "what": { "en": "A small local night market, open only on Saturdays, with games and snacks at coin prices.", "th": "ตลาดกลางคืนท้องถิ่นขนาดเล็ก เปิดเฉพาะวันเสาร์ มีเกมและขนมราคาเหรียญ" },
+          "why": { "en": "Games to play and cheap snacks in a lively local market.", "th": "มีเกมให้เล่นและขนมราคาถูกในตลาดท้องถิ่นที่คึกคัก" },
+          "tip": { "en": "Saturdays only; open 18:00–22:30.", "th": "เปิดเฉพาะวันเสาร์ 18:00–22:30" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "美崙夜市, Hualien City",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/hualien-family/"
+        },
+        {
+          "name": { "en": "Chulu Ranch", "th": "ฟาร์มชูลู่" },
+          "local": "初鹿牧場",
+          "kind": "farm",
+          "area": { "en": "Beinan, Taitung", "th": "เป่ยหนาน ไถตง" },
+          "what": { "en": "A dairy farm where children can feed cows, sheep and rabbits, and try grass sliding.", "th": "ฟาร์มโคนมที่เด็กป้อนอาหารวัว แกะ และกระต่าย และลองเลื่อนหญ้า" },
+          "why": { "en": "Feeding the animals and grass sliding, with fresh milk to buy.", "th": "ป้อนอาหารสัตว์และเลื่อนหญ้า มีนมสดให้ซื้อ" },
+          "tip": { "en": "Allow two to three hours for a family.", "th": "ครอบครัวควรเผื่อเวลา 2–3 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "初鹿牧場, Pastures No. 1, Beinan, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/taitungcityplay/"
+        },
+        {
+          "name": { "en": "Native Applied Botanical Garden", "th": "สวนพฤกษศาสตร์พืชพื้นถิ่น" },
+          "local": "原生應用植物園",
+          "kind": "farm",
+          "area": { "en": "Beinan, Taitung", "th": "เป่ยหนาน ไถตง" },
+          "what": { "en": "A native-plant garden with a flock of sheep you can feed, and ostriches that wander in.", "th": "สวนพืชพื้นถิ่นที่มีฝูงแกะให้ป้อน และนกกระจอกเทศที่เดินเข้ามา" },
+          "why": { "en": "Children can feed the sheep and the ostriches walk around the grounds.", "th": "เด็กป้อนแกะได้ และนกกระจอกเทศเดินเล่นอยู่ในบริเวณ" },
+          "tip": { "en": "Open 08:30–19:30.", "th": "เปิด 08:30–19:30" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "原生應用植物園, Experiment Station No. 8, Beinan, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/taitung-family/"
+        },
+        {
+          "name": { "en": "Taitung Forest Park", "th": "สวนป่าไถตง" },
+          "local": "台東森林公園",
+          "kind": "park",
+          "area": { "en": "Huatai Road, Taitung City", "th": "ถนนฮวาไถ เมืองไถตง" },
+          "what": { "en": "A forest park with three lakes, paths and bike lanes around the lake.", "th": "สวนป่าที่มีสามทะเลสาบ ทางเดิน และเลนจักรยานรอบทะเลสาบ" },
+          "why": { "en": "Easy paths and bike rides around the lake, a calm place to stroll.", "th": "ทางเดินง่ายและขี่จักรยานรอบทะเลสาบได้ เป็นที่เดินเล่นสงบๆ" },
+          "tip": { "en": "Open 07:30–17:30.", "th": "เปิด 07:30–17:30" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "台東森林公園, Taitung City",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/taitung-family/"
+        },
+        {
+          "name": { "en": "Fushan Fish Reserve", "th": "เขตอนุรักษ์ปลาฝู่ซาน" },
+          "local": "富山護魚區",
+          "kind": "beach",
+          "area": { "en": "East coast, Taitung", "th": "ชายฝั่งตะวันออก ไถตง" },
+          "what": { "en": "A coastal reserve with a sea boardwalk and a clean beach.", "th": "เขตอนุรักษ์ชายฝั่งที่มีทางเดินไม้เหนือทะเลและชายหาดสะอาด" },
+          "why": { "en": "A sea boardwalk and a clean beach, a family-friendly outdoor area.", "th": "ทางเดินไม้เหนือทะเลและชายหาดสะอาด เป็นพื้นที่กลางแจ้งเหมาะกับครอบครัว" },
+          "tip": { "en": "Open 08:00–18:00.", "th": "เปิด 08:00–18:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "富山護魚區, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/?p=78513"
+        },
+        {
+          "name": { "en": "Zhiben National Forest Recreation Area", "th": "เขตพักผ่อนป่าแห่งชาติจื้อเปิ่น" },
+          "local": "知本國家森林遊樂區",
+          "kind": "nature",
+          "area": { "en": "Zhiben, Taitung City", "th": "จื้อเปิ่น เมืองไถตง" },
+          "what": { "en": "A forest recreation area with trails and a nature ecology centre.", "th": "เขตพักผ่อนป่าที่มีทางเดินและศูนย์นิเวศธรรมชาติ" },
+          "why": { "en": "Trails and an ecology centre, a short loop for the whole family.", "th": "มีทางเดินและศูนย์นิเวศ เป็นเส้นทางวนสั้นๆ สำหรับทั้งครอบครัว" },
+          "tip": { "en": "A short loop takes under an hour.", "th": "เส้นทางวนสั้นใช้เวลาไม่ถึงชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "知本國家森林遊樂區, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/?p=78513"
+        },
+        {
+          "name": { "en": "Taiyuan Valley", "th": "หุบเขาไท่หยวน" },
+          "local": "泰源幽谷",
+          "kind": "nature",
+          "area": { "en": "Taiyuan valley road, Taitung", "th": "ถนนหุบเขาไท่หยวน ไถตง" },
+          "what": { "en": "A valley road where a troop of monkeys comes up right beside the road.", "th": "ถนนในหุบเขาที่ฝูงลิงออกมาข้างถนน" },
+          "why": { "en": "Monkeys along the road, close up; the page says they are not afraid of people.", "th": "เห็นลิงใกล้ๆ ริมถนน หน้าเว็บบอกว่าลิงไม่กลัวคน" },
+          "tip": { "en": "Visit in daylight; do not feed the monkeys; drive yourself (no bus).", "th": "ไปตอนกลางวัน ห้ามให้อาหารลิง ต้องขับรถไปเอง (ไม่มีรถบัส)" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "泰源幽谷, Dengxian Bridge, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/?p=78513"
+        },
+        {
+          "name": { "en": "Cocona Coffee", "th": "คาเฟ่โคโคนา" },
+          "local": "可可娜咖啡",
+          "kind": "play",
+          "area": { "en": "Beinan, Taitung", "th": "เป่ยหนาน ไถตง" },
+          "what": { "en": "A coconut-tree café on the coast with a sandpit for children and a sandy beach to walk on.", "th": "คาเฟ่ต้นมะพร้าวริมชายฝั่ง มีบ่อทรายสำหรับเด็กและชายหาดทรายให้เดินเล่น" },
+          "why": { "en": "A sandpit to play in, and the beach for splashing in the sea.", "th": "มีบ่อทรายให้เล่น และชายหาดให้ลงเล่นน้ำทะเล" },
+          "tip": { "en": "Open 10:00–17:00; closed Thursdays.", "th": "เปิด 10:00–17:00 ปิดวันพฤหัสบดี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "可可娜咖啡, Shanyuan 22, Beinan, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/taitung-family/"
+        },
+        {
+          "name": { "en": "Luye Sika Deer Park", "th": "สวนกวางซิกาลู่เย่" },
+          "local": "鹿野梅花鹿公園",
+          "kind": "farm",
+          "area": { "en": "Luye, Taitung", "th": "ลู่เย่ ไถตง" },
+          "what": { "en": "A spacious deer park with many animals to interact with and play facilities for children.", "th": "สวนกวางกว้างขวาง มีสัตว์ให้โต้ตอบมากมายและเครื่องเล่นสำหรับเด็ก" },
+          "why": { "en": "Lots of animals to interact with, in a wide space with play facilities.", "th": "มีสัตว์ให้เล่นด้วยมากมายในพื้นที่กว้างและมีเครื่องเล่น" },
+          "tip": { "en": "Open 09:00–17:00; closed Wednesdays and Thursdays.", "th": "เปิด 09:00–17:00 ปิดวันพุธและพฤหัสบดี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$100 entry", "th": "≈ NT$100 ค่าเข้า" },
+          "book": "none",
+          "q": "鹿野梅花鹿公園, Ruijing Road, Luye, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/taitung-family/"
+        },
+        {
+          "name": { "en": "Xinyuanchang Black Tea Culture Museum", "th": "พิพิธภัณฑ์วัฒนธรรมชาดำซินหยวนชาง" },
+          "local": "新元昌紅茶產業文化館",
+          "kind": "museum",
+          "area": { "en": "Luye, Taitung", "th": "ลู่เย่ ไถตง" },
+          "what": { "en": "An indoor tea-culture museum where you can drink free red oolong tea and eat red bean cakes.", "th": "พิพิธภัณฑ์วัฒนธรรมชาในร่ม ดื่มชาอู่หลงแดงฟรีและกินขนมถั่วแดง" },
+          "why": { "en": "Indoors, for a hot or rainy day; free tea to taste.", "th": "อยู่ในร่ม เหมาะวันร้อนหรือฝนตก มีชาให้ชิมฟรี" },
+          "tip": { "en": "Open 09:00–18:00.", "th": "เปิด 09:00–18:00" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "新元昌紅茶產業文化館, Yongan Road, Luye, Taitung",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/taitung-family/"
+        },
+        {
+          "local": "花蓮農好基地",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "name": {
+            "th": "ฐานทัพหนงห่าว ฮัวเหลียน",
+            "en": "Hualien Nonghao Base"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนหัวซี เมืองฮัวเหลียน",
+            "en": "Huaxi Road, Hualien City"
+          },
+          "what": {
+            "th": "ค่ายทหารเก่าที่กลายเป็นสวน ข้างอุโมงค์เก่า",
+            "en": "Former army barracks turned into a garden park beside old tunnels"
+          },
+          "why": {
+            "th": "เด็กได้แต่งชุดทหารในคลังกระสุนเก่า",
+            "en": "Children dress up in uniforms in the old ammunition store"
+          },
+          "q": "Hualien Nonghao Base, Huaxi Road, Hualien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "立川漁場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "name": {
+            "th": "ฟาร์มปลาลี่ชวน",
+            "en": "Li Chuan Aquafarm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ยวี่ฉือ โซ่วเฟิง",
+            "en": "Yuchi, Shoufeng"
+          },
+          "what": {
+            "th": "ฟาร์มปลาที่ลงน้ำไปขุดหอยทองได้",
+            "en": "A fish farm where you wade in to dig for golden clams"
+          },
+          "why": {
+            "th": "ขุดหอยในน้ำ แล้วเอาไปผัดกิน",
+            "en": "Dig clams in the water, then eat them stir-fried"
+          },
+          "q": "Li Chuan Aquafarm, Yuchi, Shoufeng, Hualien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大石鼻山步道",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-family/",
+          "name": {
+            "th": "ทางเดินเขาต้าสือปี๋",
+            "en": "Dashibi Mountain Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "จีฉี เฟิงปิน",
+            "en": "Jiqi, Fengbin"
+          },
+          "what": {
+            "th": "ทางเดินบนแหลมริมทะเล ชมวิวชายฝั่ง",
+            "en": "A coastal trail on a headland with views along the coast"
+          },
+          "why": {
+            "th": "วิวทะเลรอบ 360 องศา",
+            "en": "A 360-degree view of the sea"
+          },
+          "q": "Dashibi Mountain Trail, Jiqi, Fengbin, Hualien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "花蓮防災教育館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://travel.yam.com/article/140317",
+          "name": {
+            "th": "ศูนย์เรียนรู้ป้องกันภัยพิบัติฮวาเหลียน",
+            "en": "Hualien Disaster Prevention Education Centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฮวาซี เมืองฮวาเหลียน",
+            "en": "Huaxi, Hualien City"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้เข้าฟรี มี 5 โซน ไฟไหม้ ปฐมพยาบาล แผ่นดินไหว ความปลอดภัยทางน้ำ และในบ้าน",
+            "en": "A free centre with five zones: fire, first aid, earthquakes, water safety and the home"
+          },
+          "why": {
+            "th": "มีภารกิจกู้ภัยทางน้ำและภูเขาแบบเกม และบ้านเอียง",
+            "en": "Water-rescue and mountain challenges as games, and a tilted house"
+          },
+          "q": "花蓮防災教育館, 華西127號, 花蓮市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "七星潭柴魚博物館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-indoor/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปลาโอแห้งชีซิงถาน",
+            "en": "Chisingtan Katsuo Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนชีซิง ซินเฉิง ฮวาเหลียน",
+            "en": "Qixing Street, Xincheng, Hualien"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ปลาโอแห้งในร่ม มีห้องเล่าเรื่อง เข้าฟรี",
+            "en": "An indoor dried-bonito museum with a story hall, free to enter"
+          },
+          "why": {
+            "th": "อยู่ในร่ม เข้าฟรี มีห้องน้ำและที่จอดรถ",
+            "en": "Indoors and free, with toilets and parking"
+          },
+          "q": "七星潭柴魚博物館, 七星街148號, 新城鄉",
+          "ok": "2026-11"
+        },
+        {
+          "local": "蓮城蓮花園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-farm2026/",
+          "name": {
+            "th": "สวนบัวเหลียนเฉิง",
+            "en": "City Lotus Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนหนานฮวา 5 จี๋อาน ฮวาเหลียน",
+            "en": "Nanhua 5th Street, Ji'an, Hualien"
+          },
+          "what": {
+            "th": "สวนบัว เปิด 8:00–18:00 ไม่เก็บค่าเข้า",
+            "en": "A lotus garden open 8:00 to 18:00, no entry fee"
+          },
+          "why": {
+            "th": "สวนเปิดโล่งให้เดินเล่นฟรี",
+            "en": "An open garden to walk through, free"
+          },
+          "q": "蓮城蓮花園, 南華五街66號, 吉安鄉",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "tw-south",
+      "sights": [
+        {
+          "name": { "en": "Anping Fort", "th": "ป้อมอันผิง" },
+          "local": "安平古堡",
+          "kind": "oldtown",
+          "area": { "en": "Anping, Tainan", "th": "อันผิง ไถหนาน" },
+          "what": { "en": "The site of the 17th-century Dutch fort Zeelandia, with a lookout tower and old walls on a grassy hill", "th": "ที่ตั้งป้อมเซลันเดียของชาวดัตช์ศตวรรษที่ 17 มีหอชมวิวและกำแพงเก่าบนเนินหญ้า" },
+          "why": { "en": "Short, open and easy to wander; there are no children's facilities, so pair it with the old street and a nearby park", "th": "เดินสั้น ๆ โล่ง ๆ ไม่มีสิ่งอำนวยความสะดวกสำหรับเด็ก ควรไปคู่กับถนนเก่าและสวนใกล้เคียง" },
+          "tip": { "en": "Open 08:30–17:30; Tainan residents and children aged 6 and under are free", "th": "เปิด 08:30–17:30 ชาวไถหนานและเด็กอายุ 6 ปีลงไปเข้าฟรี" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$70 adults · NT$35 half price · age 6 and under free", "th": "≈ NT$70 ผู้ใหญ่ · NT$35 ครึ่งราคา · อายุ 6 ปีลงไปฟรี" },
+          "book": "none",
+          "q": "Anping Fort, Anping District, Tainan",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/angubao/"
+        },
+        {
+          "name": { "en": "Chihkan Tower", "th": "หอเชี่ยกั่น" },
+          "local": "赤崁樓",
+          "kind": "oldtown",
+          "area": { "en": "West Central District, Tainan", "th": "เขตซีจงซี ไถหนาน" },
+          "what": { "en": "A historic Dutch-era fort site in the old city centre with courtyards and old stone steles", "th": "ป้อมประวัติศาสตร์สมัยดัตช์กลางเมืองเก่า มีลานและศิลาจารึกเก่า" },
+          "why": { "en": "Compact and shaded, easy for a short visit with children; same ticket system as Anping Fort", "th": "กะทัดรัดมีร่มเงา เที่ยวสั้น ๆ กับเด็กได้ ใช้ระบบตั๋วเดียวกับป้อมอันผิง" },
+          "tip": { "en": "Opening hours for 2026 were not confirmed in the sources, so check before you go", "th": "แหล่งข้อมูลไม่ยืนยันเวลาเปิดปี 2026 เช็กก่อนไป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$70 adults · NT$35 half price · age 6 and under free", "th": "≈ NT$70 ผู้ใหญ่ · NT$35 ครึ่งราคา · อายุ 6 ปีลงไปฟรี" },
+          "book": "none",
+          "q": "Chihkan Tower, West Central District, Tainan",
+          "ok": "2026-11",
+          "src": "https://www.funtime.com.tw/localtour/chihkan-tower"
+        },
+        {
+          "name": { "en": "Chimei Museum", "th": "พิพิธภัณฑ์ชีเหม่ย" },
+          "local": "奇美博物館",
+          "kind": "museum",
+          "area": { "en": "Rende, Tainan", "th": "เหรินเต๋อ ไถหนาน" },
+          "what": { "en": "A palace-style museum of art, instruments, arms and natural history, with a 2026 special exhibition on the pharaohs", "th": "พิพิธภัณฑ์สถาปัตยกรรมแบบวัง จัดแสดงศิลปะ เครื่องดนตรี อาวุธ และธรรมชาติวิทยา ปี 2026 มีนิทรรศการพิเศษเรื่องฟาโรห์" },
+          "why": { "en": "Indoors with gardens outside; children under 7 are free at the special exhibition", "th": "อยู่ในอาคารและมีสวนด้านนอก เด็กต่ำกว่า 7 ขวบเข้านิทรรศการพิเศษฟรี" },
+          "tip": { "en": "Open 09:30–17:30, closed Wednesdays; special exhibition last entry 16:30 and it may be booked online only", "th": "เปิด 09:30–17:30 ปิดวันพุธ นิทรรศการพิเศษเข้าได้ถึง 16:30 และอาจต้องซื้อออนไลน์เท่านั้น" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "rec",
+          "q": "Chimei Museum, Rende District, Tainan",
+          "ok": "2026-11",
+          "src": "https://www.wingontravel.com/discovery/scenic-chimei-museum-23830732"
+        },
+        {
+          "name": { "en": "Tainan Garden Night Market", "th": "ตลาดกลางคืนสวนไถหนาน" },
+          "local": "台南花園夜市",
+          "kind": "market",
+          "area": { "en": "North District, Tainan", "th": "เขตเป่ย์ ไถหนาน" },
+          "what": { "en": "Tainan's biggest night market, with food stalls and games including an inflatable space-themed play area", "th": "ตลาดกลางคืนใหญ่ที่สุดของไถหนาน มีร้านอาหารและเกม รวมถึงเครื่องเล่นเป่าลมธีมอวกาศ" },
+          "why": { "en": "Plenty of simple snacks for children; busy after dark, so arrive when it opens", "th": "มีของกินง่าย ๆ สำหรับเด็กมากมาย หลังมืดคนเยอะ ไปตอนเปิด" },
+          "tip": { "en": "Open from about 17:00 on Thursday, Saturday and Sunday (one source adds Friday); check the week's notice", "th": "เปิดตั้งแต่ราว 17:00 วันพฤหัส เสาร์ และอาทิตย์ (แหล่งหนึ่งว่ารวมวันศุกร์) เช็กประกาศประจำสัปดาห์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free to enter · food and games priced by each stall", "th": "เข้าฟรี · ของกินและเกมคิดราคาตามแต่ละร้าน" },
+          "book": "none",
+          "q": "Tainan Garden Night Market, Hai'an Road, North District, Tainan",
+          "ok": "2026-11",
+          "src": "https://bunnyann.tw/garden-nigh/"
+        },
+        {
+          "name": { "en": "Tainan City Library main branch", "th": "ห้องสมุดเมืองไถหนาน สาขาหลัก" },
+          "local": "台南市立圖書館新總館",
+          "kind": "play",
+          "area": { "en": "Yongkang, Tainan", "th": "หย่งคัง ไถหนาน" },
+          "what": { "en": "The city's largest library, with parent-child spaces, a kitchen classroom and a limited-places five-senses room", "th": "ห้องสมุดใหญ่ที่สุดของเมือง มีพื้นที่พ่อแม่ลูก ห้องเรียนครัว และห้องสัมผัสทั้งห้าที่จำกัดจำนวนคน" },
+          "why": { "en": "Free and indoors for a rainy day; the five-senses room hands out limited numbered tickets", "th": "ฟรีและอยู่ในอาคาร เหมาะวันฝน ห้องสัมผัสทั้งห้าแจกบัตรคิวจำนวนจำกัด" },
+          "tip": { "en": "Open 08:30–17:30, closed Mondays; queue early for the five-senses room", "th": "เปิด 08:30–17:30 ปิดวันจันทร์ มาต่อคิวห้องสัมผัสทั้งห้าแต่เช้า" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Tainan City Library main branch, Yongkang District, Tainan",
+          "ok": "2026-11",
+          "src": "https://gofunit.com/%e5%8f%b0%e5%8d%97%e5%ae%a4%e5%85%a7%e6%99%af%e9%bb%9e/"
+        },
+        {
+          "name": { "en": "National Science and Technology Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีแห่งชาติ" },
+          "local": "國立科學工藝博物館",
+          "kind": "museumkid",
+          "area": { "en": "Sanmin, Kaohsiung", "th": "ซานหมิน เกาสง" },
+          "what": { "en": "A hands-on science museum with themed halls and weekend science programmes for children", "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือทำ มีห้องจัดแสดงตามธีมและกิจกรรมวิทยาศาสตร์สำหรับเด็กวันหยุด" },
+          "why": { "en": "Indoors and cheap; children under 6 are free", "th": "อยู่ในอาคารและราคาถูก เด็กต่ำกว่า 6 ปีเข้าฟรี" },
+          "tip": { "en": "Open Tue–Sun 09:00–17:00, closed Mondays; last tickets about 16:00", "th": "เปิดอังคาร–อาทิตย์ 09:00–17:00 ปิดวันจันทร์ ขายตั๋วถึงราว 16:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ NT$100 adults · NT$50 concession · under 6 free (unofficial source)", "th": "≈ NT$100 ผู้ใหญ่ · NT$50 ราคาพิเศษ · ต่ำกว่า 6 ปีฟรี (แหล่งไม่เป็นทางการ)" },
+          "book": "none",
+          "q": "National Science and Technology Museum, Jiuru 1st Road, Sanmin District, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://www.tripool.app/articles/taiwan-kaohsiung-national-science-and-technology-museum"
+        },
+        {
+          "name": { "en": "Kaohsiung Railway Workshop kids' park", "th": "สวนสนุกเด็กโรงงานรถไฟเกาสง" },
+          "local": "高雄親子遊樂園區(台鐵高雄機廠)",
+          "kind": "play",
+          "area": { "en": "Fengshan, Kaohsiung", "th": "เฟิงซาน เกาสง" },
+          "what": { "en": "A semi-indoor play park in an old railway workshop, 1.5 hectares with over 30 free play items, opened 8 August 2026", "th": "สวนเด็กกึ่งในร่มในโรงงานรถไฟเก่า 1.5 เฮกตาร์ มีเครื่องเล่นฟรีกว่า 30 อย่าง เปิดเมื่อ 8 สิงหาคม 2026" },
+          "why": { "en": "Free and covered, good for hot or wet days; near the light-rail Kaisyuan Wuchang station", "th": "ฟรีและมีหลังคา เหมาะวันร้อนหรือฝนตก ใกล้สถานีรถไฟฟ้ารางเบาไคซวนอู่ชาง" },
+          "tip": { "en": "Planned hours 09:00–19:00 with one or two closed days a week; check the city's notice", "th": "เวลาที่วางไว้ 09:00–19:00 ปิดสัปดาห์ละ 1–2 วัน เช็กประกาศของเมือง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Wuqing 2nd Road No. 221, Fengshan District, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://www.peoplenews.tw/?p=47541"
+        },
+        {
+          "name": { "en": "Baoan Container Children's Park", "th": "สวนเด็กตู้คอนเทนเนอร์เป่าอัน" },
+          "local": "保安兒童貨櫃主題公園",
+          "kind": "play",
+          "area": { "en": "Fengshan, Kaohsiung", "th": "เฟิงซาน เกาสง" },
+          "what": { "en": "A robot-themed playground with a three-storey container slide, a rocket climbing net and a sandpit", "th": "สนามเด็กเล่นธีมหุ่นยนต์ มีสไลเดอร์ตู้คอนเทนเนอร์สามชั้น ตาข่ายปีนจรวด และบ่อทราย" },
+          "why": { "en": "Free to play; go in daylight, as the sources say it is open all day but quiet at night", "th": "เล่นฟรี ไปตอนกลางวัน แหล่งข้อมูลว่าเปิดตลอดวันแต่ตอนกลางคืนเงียบ" },
+          "tip": { "en": "One travel-site list is the main source, so check details on site", "th": "แหล่งหลักเป็นรายการจากเว็บท่องเที่ยวเดียว ตรวจรายละเอียดหน้างาน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Baoan Container Children's Theme Park, Fengshan District, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://uptogo.com.tw/%e8%a6%aa%e5%ad%90/%e9%ab%98%e9%9b%84%e5%b8%b6%e5%b0%8f%e6%9c%8b%e5%8f%8b%e5%8e%bb%e5%93%aa%e8%a3%a1%e7%8e%a9%ef%bc%9f/"
+        },
+        {
+          "name": { "en": "Lotus Pond Children's Park", "th": "สวนเด็กทะเลสาบดอกบัว" },
+          "local": "蓮池潭兒童公園",
+          "kind": "park",
+          "area": { "en": "Zuoying, Kaohsiung", "th": "จั่วอิ๋ง เกาสง" },
+          "what": { "en": "A free playground by Lotus Pond with a three-little-pigs maze, a 6 m climbing net and a zip line", "th": "สนามเด็กเล่นฟรีริมทะเลสาบดอกบัว มีเขาวงกตหมูสามตัว ตาข่ายปีนสูง 6 เมตร และสลิง" },
+          "why": { "en": "Free with easy parking nearby; the climbing net is for older children", "th": "ฟรีและจอดรถใกล้ ๆ ได้ง่าย ตาข่ายปีนเหมาะเด็กโต" },
+          "tip": { "en": "A single listing gave these details, so check what is open on arrival", "th": "รายละเอียดมาจากรายการเดียว ตรวจว่าเปิดอะไรบ้างเมื่อไปถึง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lotus Pond Children's Park, Zuoying District, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://uptogo.com.tw/%e8%a6%aa%e5%ad%90/%e9%ab%98%e9%9b%84%e5%b8%b6%e5%b0%8f%e6%9c%8b%e5%8f%8b%e5%8e%bb%e5%93%aa%e8%a3%a1%e7%8e%a9%ef%bc%9f/"
+        },
+        {
+          "name": { "en": "Pier-2 Art Center and its small train", "th": "พื้นที่ศิลปะท่าเรือ 2 และรถไฟเล็ก" },
+          "local": "駁二藝術特區",
+          "kind": "culture",
+          "area": { "en": "Yancheng, Kaohsiung", "th": "เยี่ยนเฉิง เกาสง" },
+          "what": { "en": "Old harbour warehouses turned into an arts district, with outdoor installations, exhibitions, a big banyan in Dayi Park and a container small train", "th": "โกดังท่าเรือเก่าที่กลายเป็นย่านศิลปะ มีงานติดตั้งกลางแจ้ง นิทรรศการ ต้นไทรใหญ่ในสวนต้ายี่ และรถไฟเล็กตู้คอนเทนเนอร์" },
+          "why": { "en": "Open space to walk and see art; on the small train, children under 12 need an adult and babies under 1 may not ride", "th": "ที่โล่งให้เดินดูงานศิลป์ รถไฟเล็กเด็กต่ำกว่า 12 ปีต้องมีผู้ใหญ่ไปด้วย เด็กต่ำกว่า 1 ขวบห้ามขึ้น" },
+          "tip": { "en": "Each exhibition has its own hours and price; the grounds' general hours and entry were not confirmed, so check", "th": "แต่ละนิทรรศการมีเวลาและราคาของตัวเอง เวลาและค่าเข้าโดยรวมของพื้นที่ไม่ยืนยัน เช็กก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Grounds open to walk · exhibitions priced separately (check)", "th": "เดินในพื้นที่ได้ · นิทรรศการคิดราคาแยก (ควรเช็ก)" },
+          "book": "none",
+          "q": "Pier-2 Art Center, Yancheng District, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/hot/354074"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Kaohsiung Shoushan Zoo", "th": "สวนสัตว์โชวซาน เกาสง" },
+          "local": "壽山動物園",
+          "kind": "zoo",
+          "area": { "en": "Gushan, Kaohsiung", "th": "กู่ซาน เกาสง" },
+          "what": { "en": "A hillside city zoo with a children's farm where keepers feed animals at set times", "th": "สวนสัตว์กลางเมืองบนเนินเขา มีฟาร์มเด็กและรอบให้อาหารสัตว์" },
+          "why": { "en": "Small and calm; the children's farm suits toddlers, but the paths are hilly for prams", "th": "ไม่ใหญ่เกินไป ฟาร์มเด็กเหมาะกับเด็กเล็ก แต่ทางเป็นเนินสำหรับรถเข็น" },
+          "tip": { "en": "Open Tuesday to Sunday 9:00–17:00, closed Mondays; feeding at the farm around 10:00 and 14:00", "th": "เปิดอังคารถึงอาทิตย์ 9:00–17:00 ปิดวันจันทร์ รอบให้อาหารราว 10:00 และ 14:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$40 adults", "th": "≈ NT$40 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Kaohsiung Shoushan Zoo, Gushan District, Kaohsiung",
+          "src": "https://zoo.kcg.gov.tw/en/tour-information/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Wanpi World Safari Zoo", "th": "หวานพีเวิลด์ ซาฟารีซู" },
+          "local": "頑皮世界野生動物園",
+          "kind": "zoo",
+          "area": { "en": "Xuejia, Tainan", "th": "เสวียเจีย ไถหนาน" },
+          "what": { "en": "A drive-through and walking safari park north of Tainan with feeding spots for herbivores", "th": "ซาฟารีพาร์คทางเหนือของไถหนาน เดินและนั่งรถชมได้ มีจุดให้อาหารสัตว์กินพืช" },
+          "why": { "en": "Animals come close to the fence, which small children love; it is a long trip from the city", "th": "สัตว์เข้ามาใกล้รั้ว เด็กๆ ชอบ แต่เดินทางจากตัวเมืองค่อนข้างไกล" },
+          "tip": { "en": "Go by car or taxi; public transport from central Tainan is slow with few buses", "th": "ไปด้วยรถยนต์หรือแท็กซี่ เพราะรถสาธารณะจากตัวเมืองช้าและมีน้อย" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Wanpi World Safari Zoo, Xuejia District, Tainan",
+          "src": "https://twtainan.net/en/attractions/detail/4635"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Cijin Island and Seaside Park", "th": "เกาะฉีจิน และสวนริมทะเล" },
+          "local": "旗津",
+          "kind": "park",
+          "area": { "en": "Cijin, Kaohsiung", "th": "ฉีจิน เกาสง" },
+          "what": { "en": "A short ferry ride from Gushan pier to a seaside park, beach and bike paths with play areas", "th": "นั่งเรือข้ามฟากสั้นๆ จากท่ากู่ซาน ไปสวนริมทะเล ชายหาด และทางจักรยาน มีลานเล่น" },
+          "why": { "en": "The ferry is an adventure in itself; flat paths and family bikes or carts suit small children", "th": "การนั่งเรือสนุกอยู่แล้ว ทางราบและมีจักรยานหรือรถเข็นครอบครัวให้เช่า" },
+          "tip": { "en": "Ferries run about every 10 minutes; hire bikes by the pier on Cijin", "th": "เรือออกราวทุก 10 นาที เช่าจักรยานได้ใกล้ท่าเรือฝั่งฉีจิน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Cijin Seaside Park, Cijin District, Kaohsiung",
+          "src": "https://khh.travel/en/attractions/detail/473/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Kaohsiung Children's Art Museum", "th": "พิพิธภัณฑ์ศิลปะเด็ก เกาสง" },
+          "local": "高雄市立美術館兒童美術館",
+          "kind": "museumkid",
+          "area": { "en": "Gushan, Kaohsiung", "th": "กู่ซาน เกาสง" },
+          "what": { "en": "A free hands-on art space for children beside the Kaohsiung Museum of Fine Arts park", "th": "พื้นที่ศิลปะสำหรับเด็กให้ลงมือทำ ฟรี ติดกับสวนพิพิธภัณฑ์ศิลปะเกาสง" },
+          "why": { "en": "Indoor and outdoor play with a big sandbox; good on a hot or wet day", "th": "เล่นได้ทั้งในและนอกอาคาร มีบ่อทรายใหญ่ เหมาะวันร้อนหรือฝนตก" },
+          "tip": { "en": "Closed on Mondays; hours differ between listings, so check before you go", "th": "ปิดวันจันทร์ เวลาเปิดแต่ละแหล่งไม่ตรงกัน เช็กก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Kaohsiung Museum of Fine Arts Children's Art Museum, Gushan District, Kaohsiung",
+          "src": "https://khh.travel/en/attractions/detail/398"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "National Museum of Taiwan Literature", "th": "พิพิธภัณฑ์วรรณกรรมแห่งชาติไต้หวัน" },
+          "local": "國立臺灣文學館",
+          "kind": "museum",
+          "area": { "en": "West Central, Tainan", "th": "เวสต์เซ็นทรัล ไถหนาน" },
+          "what": { "en": "A grand 1916 building near Tainan station with displays on Taiwanese writing and a children's literature area", "th": "อาคารเก่าปี 1916 ใกล้สถานีไถหนาน จัดแสดงวรรณกรรมไต้หวัน มีมุมวรรณกรรมเด็ก" },
+          "why": { "en": "Air-conditioned and free, so a good rest from the heat; older children get more from it", "th": "มีแอร์และเข้าฟรี เหมาะพักร้อน เด็กโตได้ประโยชน์มากกว่า" },
+          "tip": { "en": "Closed on Mondays; combine with the old town nearby", "th": "ปิดวันจันทร์ เดินต่อไปย่านเมืองเก่าใกล้ๆ ได้" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "National Museum of Taiwan Literature, Zhongzheng Road, Tainan",
+          "src": "https://www.twtainan.net/en/attractions/detail/4415"
+        },
+        {
+          "name": { "en": "Nanying Family Centre", "th": "ศูนย์ครอบครัวหนานอิ๋ง" },
+          "local": "南瀛親子館",
+          "kind": "play",
+          "area": { "en": "Xinying District, Tainan", "th": "ซินอิ๋ง ไถหนาน" },
+          "what": { "en": "A free three-storey indoor play centre with age-split zones: a multi-sense area for under-3s, a role-play area for 3–6s and a tall transparent slide on the top floor.", "th": "ศูนย์เล่นในร่มสามชั้นเข้าฟรี แบ่งโซนตามวัย มีโซนหลายประสาทสัมผัสสำหรับต่ำกว่า 3 ขวบ โซนเล่นบทบาทสำหรับ 3–6 ขวบ และสไลเดอร์ใสสูงชั้นบนสุด" },
+          "why": { "en": "Free, indoors and built by age: the ground floor is for babies learning to crawl and walk, the upper floors for 3–6 year olds.", "th": "เข้าฟรี อยู่ในร่ม แบ่งตามวัย ชั้นล่างสำหรับทารกหัดคลานและเดิน ชั้นบนสำหรับเด็ก 3–6 ขวบ" },
+          "tip": { "en": "Tuesday 13:00–17:00, Wednesday–Sunday 09:00–12:00 and 13:00–17:00, closed Mondays.", "th": "วันอังคาร 13:00–17:00 วันพุธ–อาทิตย์ 09:00–12:00 และ 13:00–17:00 ปิดวันจันทร์" },
+          "ages": [2, 2, 0, 0],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "南瀛親子館, Xinying, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Heqiaopai Sausage Museum", "th": "พิพิธภัณฑ์ไส้กรอกเฮ่อเฉียวไพ่" },
+          "local": "黑橋牌香腸博物館",
+          "kind": "museum",
+          "area": { "en": "Anping Industrial Park, Tainan", "th": "นิคมอุตสาหกรรมอันผิง ไถหนาน" },
+          "what": { "en": "A free three-floor sausage museum; the top floor recreates the street of the brand's first Tainan shop as a painted perspective view, and a sausage can be eaten at the end.", "th": "พิพิธภัณฑ์ไส้กรอกสามชั้นเข้าฟรี ชั้นบนสุดจำลองถนนร้านแรกของแบรนด์ในไถหนานเป็นภาพมุมมองลวงตา และได้กินไส้กรอกตอนท้าย" },
+          "why": { "en": "Free entry and a street scene to pose in, which the parents of the children will remember from their own childhood.", "th": "เข้าฟรี มีฉากถนนให้ถ่ายรูป ที่พ่อแม่น่าจะจำได้จากวัยเด็ก" },
+          "tip": { "en": "Tuesday–Sunday 09:30–17:30, closed Mondays; guided tours need an online booking.", "th": "วันอังคาร–อาทิตย์ 09:30–17:30 ปิดวันจันทร์ ทัวร์นำชมต้องจองออนไลน์" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "rec",
+          "q": "黑橋牌香腸博物館, Anping Industrial Park, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Rende Dinosaur Park", "th": "สวนไดโนเสาร์เหรินเต๋อ" },
+          "local": "仁德恐龍公園",
+          "kind": "park",
+          "area": { "en": "Rende District, Tainan", "th": "เหรินเต๋อ ไถหนาน" },
+          "what": { "en": "A small free dinosaur park with large fossil skeletons, dinosaur legs and skulls, and dinosaur eggs to photograph.", "th": "สวนไดโนเสาร์เล็กๆ เข้าฟรี มีโครงกระดูกฟอสซิลขนาดใหญ่ ขา กะโหลก และไข่ไดโนเสาร์ให้ถ่ายรูป" },
+          "why": { "en": "Free and open to climb among the dinosaurs; a whole afternoon for a child who likes dinosaurs.", "th": "เข้าฟรีและปีนเล่นท่ามกลางไดโนเสาร์ได้ เล่นได้ทั้งบ่ายสำหรับเด็กที่ชอบไดโนเสาร์" },
+          "tip": { "en": "Open 24 hours.", "th": "เปิด 24 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "仁德恐龍公園, Rende, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Niuchouzi Station Park", "th": "สวนสถานีหนิวโจวจื่อ" },
+          "local": "牛稠子車站公園",
+          "kind": "park",
+          "area": { "en": "Rende District, Tainan", "th": "เหรินเต๋อ ไถหนาน" },
+          "what": { "en": "A railway-themed park beside an old station, rebuilt at the end of 2023, with a level crossing that rings a bell when a child pulls its rope, and a small sandpit.", "th": "สวนธีมรถไฟข้างสถานีเก่า สร้างใหม่ปลายปี 2023 มีทางข้ามรถไฟที่ระฆังดังเมื่อเด็กดึงเชือก และบ่อทรายเล็กๆ" },
+          "why": { "en": "Room to run, a crossing bell to pull again and again, and a sandpit next to the old station shop model.", "th": "มีที่วิ่งเล่น ระฆังให้ดึงซ้ำๆ และบ่อทรายข้างโมเดลร้านค้าสถานีเก่า" },
+          "tip": { "en": "Open daily 06:30–22:30.", "th": "เปิดทุกวัน 06:30–22:30" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "牛稠子車站公園, Rende, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Longtian ChaCha Heritage Education Park", "th": "สวนการศึกษามรดกวัฒนธรรมหลงเถียน ChaCha" },
+          "local": "隆田ChaCha文化資產教育園區",
+          "kind": "museumkid",
+          "area": { "en": "Guantian District, Tainan", "th": "กวนเถียน ไถหนาน" },
+          "what": { "en": "A heritage education park whose immersive floor theatre responds to hands and feet, and a giant pachinko-style marble machine modelled on the Chianan irrigation system.", "th": "สวนการศึกษามรดกวัฒนธรรมที่มีโรงละครพื้นตอบสนองมือและเท้า และเครื่องลูกแก้วยักษ์แบบปาจิงโกะจำลองระบบชลประทานเจียหนาน" },
+          "why": { "en": "Touch-sensitive floor projections and a giant marble machine that makes sound and light; under 6s go in free.", "th": "ภาพฉายบนพื้นที่ตอบสนองการสัมผัสและเครื่องลูกแก้วยักษ์ที่มีเสียงและแสง เด็กต่ำกว่า 6 ปีเข้าฟรี" },
+          "tip": { "en": "Open 09:00–17:00, closed Tuesdays.", "th": "เปิด 09:00–17:00 ปิดวันอังคาร" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ NT$100 adult · NT$50 ages 6–11 · under 6 free", "th": "≈ NT$100 ผู้ใหญ่ · NT$50 อายุ 6–11 ปี · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "隆田ChaCha文化資產教育園區, near Longtian station, Guantian, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Shu Gu Life Science Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์ชีวิตซู่กู่" },
+          "local": "樹谷生活科學館",
+          "kind": "museumkid",
+          "area": { "en": "Xinshi District, Tainan", "th": "ซินสื้อ ไถหนาน" },
+          "what": { "en": "A science museum built around fossil skeletons of prehistoric animals such as a woolly mammoth and a sabre-tooth, with an outdoor dinosaur garden.", "th": "พิพิธภัณฑ์วิทยาศาสตร์ที่มีโครงกระดูกฟอสซิลสัตว์ยุคก่อนประวัติศาสตร์ เช่นแมมมอธและเสือเขี้ยวดาบ และมีสวนไดโนเสาร์กลางแจ้ง" },
+          "why": { "en": "Cheap, with a dinosaur garden outside and mammoth and sabre-tooth skeletons inside; children under 6 go in free.", "th": "ราคาถูก มีสวนไดโนเสาร์ด้านนอกและโครงกระดูกแมมมอธกับเสือเขี้ยวดาบด้านใน เด็กต่ำกว่า 6 ปีเข้าฟรี" },
+          "tip": { "en": "Tuesday–Sunday 09:00–17:00, closed Mondays; a guide device can be rented.", "th": "วันอังคาร–อาทิตย์ 09:00–17:00 ปิดวันจันทร์ เช่าเครื่องนำชมได้" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ NT$60 adult · NT$40 concession · under 6 free", "th": "≈ NT$60 ผู้ใหญ่ · NT$40 ราคาพิเศษ · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "樹谷生活科學館, Xinshi, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Zuozhen Fossil Park", "th": "สวนฟอสซิลจั่วเจิ้น" },
+          "local": "臺南左鎮化石園區",
+          "kind": "museumkid",
+          "area": { "en": "Zuozhen District, Tainan", "th": "จั่วเจิ้น ไถหนาน" },
+          "what": { "en": "A fossil museum built with a school, with dinosaur models, a mock dig where children can search for fossils, and a display on how fossils form.", "th": "พิพิธภัณฑ์ฟอสซิลที่สร้างร่วมกับโรงเรียน มีโมเดลไดโนเสาร์ แปลงขุดจำลองให้เด็กหาฟอสซิล และนิทรรศการการเกิดฟอสซิล" },
+          "why": { "en": "Feels like the Jurassic Park film set; children can practise digging for fossils and see the dinosaur models.", "th": "รู้สึกเหมือนฉากหนังจูราสสิคพาร์ค เด็กฝึกขุดฟอสซิลและชมโมเดลไดโนเสาร์ได้" },
+          "tip": { "en": "Open 09:00–17:00, closed Tuesdays; under 6s go in free.", "th": "เปิด 09:00–17:00 ปิดวันอังคาร เด็กต่ำกว่า 6 ปีเข้าฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ NT$100 adult · under 6 free", "th": "≈ NT$100 ผู้ใหญ่ · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "左鎮化石園區, Zuozhen, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Shugu Farm", "th": "ฟาร์มซู่กู่" },
+          "local": "樹谷農場",
+          "kind": "farm",
+          "area": { "en": "Xinshi District, Tainan", "th": "ซินสื้อ ไถหนาน" },
+          "what": { "en": "A tidy farm where the entry ticket includes feed, so children can feed goats, guinea pigs, ostriches, calves, ponies and porcupines, with coin-operated electric cars and a play treehouse.", "th": "ฟาร์มสะอาดเรียบร้อย ตั๋วรวมอาหารสัตว์ เด็กป้อนแพะ หนูตะเภา นกกระจอกเทศ ลูกวัว ม้าแคระ และเม่น มีรถไฟฟ้าหยอดเหรียญและบ้านต้นไม้ให้เล่น" },
+          "why": { "en": "Feed included in the ticket, a play treehouse and coin-operated electric cars; the farm is clean with little smell.", "th": "ตั๋วรวมอาหารสัตว์ มีบ้านต้นไม้และรถไฟฟ้าหยอดเหรียญ ฟาร์มสะอาดไม่ค่อยมีกลิ่น" },
+          "tip": { "en": "Tuesday–Friday 10:00–16:00, Saturday–Sunday 10:00–17:00, closed Mondays.", "th": "วันอังคาร–ศุกร์ 10:00–16:00 เสาร์–อาทิตย์ 10:00–17:00 ปิดวันจันทร์" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$60 for everyone", "th": "≈ NT$60 ทุกคน" },
+          "book": "none",
+          "q": "樹谷農場, Xinshi, Tainan",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/pack/345619"
+        },
+        {
+          "name": { "en": "Yesen Animal School", "th": "โรงเรียนสัตว์เยซือน" },
+          "local": "野森動物學校",
+          "kind": "zoo",
+          "area": { "en": "Neimen District, Kaohsiung", "th": "เน่ยเหมิน เกาสง" },
+          "what": { "en": "A new forest-themed animal school opened on trial in January 2026: meerkats in a sand village, foxes, sloths, capybaras and owls, with feeding and guided visits.", "th": "โรงเรียนสัตว์ธีมป่าแห่งใหม่ เปิดทดลองเดือนมกราคม 2026 มีเมียร์แคตในหมู่บ้านทราย จิ้งจอก สลอธ คาปิบารา และนกฮูก พร้อมป้อนอาหารและนำชม" },
+          "why": { "en": "Hands-on animal feeding and close contact with meerkats, sloths and capybaras; under-2s go in free.", "th": "ป้อนอาหารสัตว์ด้วยตัวเองและใกล้ชิดเมียร์แคต สลอธ และคาปิบารา เด็กต่ำกว่า 2 ปีเข้าฟรี" },
+          "tip": { "en": "Booking required in advance; open 10:00–17:00, closed Tuesdays and Wednesdays.", "th": "ต้องจองล่วงหน้า เปิด 10:00–17:00 ปิดวันอังคารและพุธ" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$499 per person (age 12 and over)", "th": "≈ NT$499 ต่อคน (อายุ 12 ปีขึ้นไป)" },
+          "book": "req",
+          "q": "野森動物學校, Neimen, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://www.mirrormedia.mg/story/amp/20260302tour001"
+        },
+        {
+          "name": { "en": "Tom Bebe Kaohsiung Yixiang", "th": "ทอมเบเบ้ เกาสง อี้เสียง" },
+          "local": "湯姆貝貝高雄義享店",
+          "kind": "play",
+          "area": { "en": "Gushan District, Kaohsiung", "th": "กู่ซาน เกาสง" },
+          "what": { "en": "An expanded indoor play centre on five floors of a mall with a pirate shell sandpit, a ship-shaped ball pit, a play kitchen, a dress-up room and a trampoline area.", "th": "ศูนย์เล่นในร่มขยายใหม่ 5 ชั้นในห้าง มีบ่อทรายเปลือกหอยโจรสลัด บ่อบอลรูปเรือ ครัวของเล่น ห้องแต่งตัว และโซนแทรมโปลีน" },
+          "why": { "en": "A ball pit for under-2s separate from the older children's area, a dress-up room and a trampoline.", "th": "มีบ่อบอลสำหรับต่ำกว่า 2 ขวบแยกจากโซนเด็กโต พร้อมห้องแต่งตัวและแทรมโปลีน" },
+          "tip": { "en": "Open 11:00–22:00.", "th": "เปิด 11:00–22:00" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "湯姆貝貝高雄義享店, Gushan, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://n.yam.com/Article/20250715344616"
+        },
+        {
+          "name": { "en": "FLOMO Eraser Factory", "th": "โรงงานยางลบ FLOMO" },
+          "local": "FLOMO富樂夢觀光工廠",
+          "kind": "culture",
+          "area": { "en": "Hunei District, Kaohsiung", "th": "หู่เน่ย เกาสง" },
+          "what": { "en": "Taiwan's first eraser factory open to visitors: an exhibition of retired stationery machines and a hands-on space to make your own stationery and play an eraser board game.", "th": "โรงงานยางลบแห่งแรกของไต้หวันที่เปิดให้เข้าชม มีนิทรรศการเครื่องจักรเครื่องเขียนเก่า และพื้นที่ลงมือทำเครื่องเขียนเองกับบอร์ดเกมยางลบ" },
+          "why": { "en": "Children can make their own stationery and play the eraser board game; a fun trip for the family.", "th": "เด็กทำเครื่องเขียนของตัวเองและเล่นบอร์ดเกมยางลบ เป็นทริปสนุกของครอบครัว" },
+          "tip": { "en": "Open weekends and public holidays 09:30–16:30 only.", "th": "เปิดเฉพาะวันเสาร์–อาทิตย์และวันหยุดนักขัตฤกษ์ 09:30–16:30" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "FLOMO富樂夢觀光工廠, Hunei, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://n.yam.com/Article/20250715344616"
+        },
+        {
+          "name": { "en": "Jingyuan Farm", "th": "ฟาร์มจิ้งหยวน" },
+          "local": "淨園休閒農場",
+          "kind": "farm",
+          "area": { "en": "Xiaogang District, Kaohsiung", "th": "เสี่ยวกัง เกาสง" },
+          "what": { "en": "A farm near the airport with capybaras, alpacas, sika deer and meerkats to feed and watch, a giraffe slide, a big sandpit and a little train ride.", "th": "ฟาร์มใกล้สนามบิน มีคาปิบารา อัลปากา กวางซิกา และเมียร์แคตให้ป้อนและชม สไลเดอร์ยีราฟ บ่อทรายใหญ่ และรถไฟเล็กให้นั่ง" },
+          "why": { "en": "Feeding animals up close, a giraffe slide and a big sandpit; you can see planes take off and land nearby.", "th": "ป้อนอาหารสัตว์ใกล้ชิด มีสไลเดอร์ยีราฟและบ่อทรายใหญ่ และเห็นเครื่องบินขึ้นลงใกล้ๆ" },
+          "tip": { "en": "Open daily 09:30–21:00.", "th": "เปิดทุกวัน 09:30–21:00" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$300 adult · NT$200 child", "th": "≈ NT$300 ผู้ใหญ่ · NT$200 เด็ก" },
+          "book": "none",
+          "q": "淨園農場, Xiaogang, Kaohsiung",
+          "ok": "2026-11",
+          "src": "https://supertaste.tvbs.com.tw/amp/kids/350098"
+        },
+        {
+          "local": "十鼓文創園區",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/food/348936",
+          "name": {
+            "th": "หมู่บ้านวัฒนธรรมสิบกลอง",
+            "en": "Ten Drum Cultural Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เหรินเต๋อ ไถหนาน",
+            "en": "Rende, Tainan"
+          },
+          "what": {
+            "th": "โรงงานน้ำตาลเก่าที่กลายเป็นสวนกิจกรรม",
+            "en": "An old sugar works turned into a park with many activities"
+          },
+          "why": {
+            "th": "สไลเดอร์ปล่องไฟใสในร่มที่สูงที่สุดในเอเชีย",
+            "en": "Asia's tallest indoor see-through chimney slide"
+          },
+          "q": "Ten Drum Cultural Village, Rende, Tainan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南瀛天文館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/food/348936",
+          "name": {
+            "th": "หอดูดาวหนานอิ๋ง ไถหนาน",
+            "en": "Tainan Astronomical Education Area"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ต้าเน่ย ไถหนาน",
+            "en": "Danei, Tainan"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีท้องฟ้าจำลองดิจิทัล",
+            "en": "A science museum with a digital planetarium"
+          },
+          "why": {
+            "th": "สไลเดอร์จรวดกลางแจ้งและของจัดแสดงดาราศาสตร์ให้ลองเล่น",
+            "en": "An outdoor rocket slide and hands-on astronomy displays"
+          },
+          "q": "Tainan Astronomical Education Area, Danei, Tainan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "台灣木材故事館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/food/348936",
+          "name": {
+            "th": "พิพิธภัณฑ์เรื่องไม้ไต้หวัน",
+            "en": "Taiwan Wood Story Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไป๋เหอ ไถหนาน",
+            "en": "Baihe, Tainan"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ไม้ มีนำชมและงานไม้",
+            "en": "A wood museum with guided tours and woodworking"
+          },
+          "why": {
+            "th": "กิจกรรมฟรี เด็กทำของไม้เอง",
+            "en": "Free DIY: children make a wooden piece themselves"
+          },
+          "q": "Taiwan Wood Story Museum, Baihe, Tainan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "水流莊牧場",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "ฟาร์มสุ่ยหลิวจวง",
+            "en": "Shuiliuzhuang Ranch"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เฉียวโถว เกาสง",
+            "en": "Qiaotou, Kaohsiung"
+          },
+          "what": {
+            "th": "ฟาร์มสะอาดสว่าง มีแกะ วัว และกระต่าย",
+            "en": "A clean, bright farm with sheep, cows and rabbits"
+          },
+          "why": {
+            "th": "กิจกรรม \"คนเลี้ยงแกะน้อย\" ใส่หมวกคาวบอยและให้อาหารสัตว์",
+            "en": "A \"little shepherd\" activity with a cowboy hat and feeding"
+          },
+          "q": "Shuiliuzhuang Ranch, Qiaotou, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "時代公園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "สวนสือไต้",
+            "en": "Shidai Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เฉียนเจิ้น เกาสง",
+            "en": "Cianjhen, Kaohsiung"
+          },
+          "what": {
+            "th": "สวนฟรีสำหรับทุกวัย มีเครื่องเล่น",
+            "en": "A free all-ages park with play equipment"
+          },
+          "why": {
+            "th": "บ่อทราย หอสไลเดอร์ ตาข่ายปีน และลู่จักรยานขาไถ",
+            "en": "A sand pit, a slide tower, a climbing net and a balance-bike track"
+          },
+          "q": "Shidai Park, Cianjhen, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "義大遊樂世界",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "สวนสนุกอีดา",
+            "en": "E-DA Theme Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ต้าซู่ เกาสง",
+            "en": "Dashu, Kaohsiung"
+          },
+          "what": {
+            "th": "สวนสนุกธีมกรีก แบ่งสามโซน",
+            "en": "A Greek-themed theme park in three zones"
+          },
+          "why": {
+            "th": "เครื่องเล่นครอบครัว มีม้าหมุนและชิงช้าสวรรค์",
+            "en": "Family rides including a carousel and a Ferris wheel"
+          },
+          "q": "E-DA Theme Park, Dashu, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "高雄時空之城",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "เมืองกาลเวลาเกาสง",
+            "en": "Kaohsiung Time and Space City"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สวนโลจิสติกส์ไท่ซูการ์ เฉียนเจิ้น",
+            "en": "Taisugar logistics park, Cianjhen, Kaohsiung"
+          },
+          "what": {
+            "th": "โรงงานท่องเที่ยว มีทำผ้าห่มและมุมถ่ายรูปภาพสามมิติ",
+            "en": "A tourism factory with quilt-making and 3D painted photo spots"
+          },
+          "why": {
+            "th": "ถ่ายรูปกับภาพสามมิติ เช่น ฉลามและนางเงือก",
+            "en": "Photos in 3D scenes like a shark and a mermaid"
+          },
+          "q": "Kaohsiung Time and Space City, Chenggong 2nd Road, Kaohsiung",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大魯閣草衙道鈴鹿賽道樂園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เริ่มเครื่องละ 60 ดอลลาร์ไต้หวัน",
+            "en": "From NT$60 a ride"
+          },
+          "book": "none",
+          "src": "https://supertaste.tvbs.com.tw/kids/350098",
+          "name": {
+            "th": "สวนสนุกซูซูกะ เซอร์กิต (ไท่หลู่เก๋อ)",
+            "en": "Suzuka Circuit Park (Taroko Park)"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "เฉียนเจิ้น เกาสง",
+            "en": "Cianjhen, Kaohsiung"
+          },
+          "what": {
+            "th": "สวนสนุกครอบครัวในห้าง มีชิงช้าสวรรค์ ม้าหมุน และโกคาร์ต",
+            "en": "A family theme park at a shopping centre with a Ferris wheel, carousel and go-karts"
+          },
+          "why": {
+            "th": "เครื่องเล่น ถนนอาหาร และห้างให้หลบร้อน",
+            "en": "Rides plus a food street and a mall to cool off"
+          },
+          "q": "Suzuka Circuit Park, Zhongan Road, Cianjhen, Kaohsiung",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

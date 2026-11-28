@@ -1,0 +1,589 @@
+{
+  "cc": "si",
+  "towns": [
+    {
+      "place": "si-bled",
+      "sights": [
+        {
+          "name": { "en": "Postojna Cave", "th": "ถ้ำโพสตอยนา" },
+          "local": "Postojnska jama",
+          "kind": "nature",
+          "area": { "en": "Postojna", "th": "โพสตอยนา" },
+          "what": { "en": "A huge cave visited by train and on foot, with an exhibition for children", "th": "ถ้ำขนาดใหญ่ ชมด้วยรถไฟและเดินเท้า มีนิทรรศการสำหรับเด็ก" },
+          "why": { "en": "Children are guided through the exhibition by the olm and the beetle characters", "th": "เด็กๆ ชมนิทรรศการพร้อมตัวละครโอล์มและด้วง" },
+          "tip": { "en": "Open all year; tour times change by season, so book a time; family tickets run only on set dates", "th": "เปิดทั้งปี รอบทัวร์เปลี่ยนตามฤดู ควรจองเวลา ตั๋วครอบครัวมีเฉพาะบางช่วง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €55 adults · €33 children 6–15 · €3 under 5 (cave, Predjama Castle and exhibition ticket)", "th": "≈ €55 ผู้ใหญ่ · €33 เด็ก 6-15 ปี · €3 ต่ำกว่า 5 ขวบ (ตั๋วถ้ำ ปราสาทเปรดยามาและนิทรรศการ)" },
+          "book": "rec",
+          "q": "Postojna Cave, Postojna",
+          "ok": "2026-11",
+          "src": "https://tickets.postojnska-jama.eu/en/postojna-cave-predjama-castle-expo/pack-440.html"
+        },
+        {
+          "name": { "en": "Predjama Castle", "th": "ปราสาทเปรดยามา" },
+          "local": "Predjamski grad",
+          "kind": "culture",
+          "area": { "en": "Predjama, near Postojna", "th": "เปรดยามา ใกล้โพสตอยนา" },
+          "what": { "en": "A castle built into a cliff mouth, with a guided app tour included in the ticket", "th": "ปราสาทที่สร้างติดปากถ้ำบนหน้าผา มีแอปนำชมรวมในบัตร" },
+          "why": { "en": "Steps and uneven floors; best for children who can walk themselves", "th": "มีบันไดและพื้นไม่เรียบ เหมาะกับเด็กที่เดินเองได้" },
+          "tip": { "en": "Sold in the same combined ticket as the cave; check castle-only prices and hours when booking", "th": "ขายในตั๋วรวมกับถ้ำ เช็กราคาและเวลาแบบปราสาทอย่างเดียวตอนจอง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "≈ €55 adults · €33 children 6–15 · €3 under 5 (cave, castle and exhibition ticket)", "th": "≈ €55 ผู้ใหญ่ · €33 เด็ก 6-15 ปี · €3 ต่ำกว่า 5 ขวบ (ตั๋วถ้ำ ปราสาทและนิทรรศการ)" },
+          "book": "rec",
+          "q": "Predjama Castle, Predjama",
+          "ok": "2026-11",
+          "src": "https://tickets.postojnska-jama.eu/en/postojna-cave-predjama-castle-expo/pack-440.html"
+        },
+        {
+          "name": { "en": "Ljubljana Castle and funicular", "th": "ปราสาทลูบลิยานาและกระเช้ารางเลื่อน" },
+          "local": "Ljubljanski grad",
+          "kind": "culture",
+          "area": { "en": "Castle Hill", "th": "เนินปราสาท" },
+          "what": { "en": "The castle above the old town, reached by a short funicular ride", "th": "ปราสาทเหนือเมืองเก่า ขึ้นด้วยกระเช้ารางเลื่อนสั้นๆ" },
+          "why": { "en": "The funicular saves a steep walk with small legs; there is a family ticket", "th": "กระเช้าช่วยให้ไม่ต้องเดินขึ้นเนินชันกับเด็กเล็ก มีตั๋วครอบครัว" },
+          "tip": { "en": "Family tickets are for up to 2 adults with at least one child aged 7–18; funicular return is about €6 for adults and €4.50 for children 7–18", "th": "ตั๋วครอบครัวสำหรับผู้ใหญ่ไม่เกิน 2 คนกับเด็ก 7-18 ปีอย่างน้อย 1 คน กระเช้าไปกลับราว €6 ผู้ใหญ่ €4.50 เด็ก 7-18 ปี" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €19 adults with funicular · family ticket €46 · check the price for children under 7", "th": "≈ €19 ผู้ใหญ่รวมกระเช้า · ตั๋วครอบครัว €46 · เช็กราคาเด็กต่ำกว่า 7 ปี" },
+          "book": "none",
+          "q": "Ljubljana Castle, Ljubljana",
+          "ok": "2026-11",
+          "src": "https://www.visitljubljana.com/en/poi/funicular-railway-to-ljubljana-castle/"
+        },
+        {
+          "name": { "en": "Ljubljana Zoo", "th": "สวนสัตว์ลูบลิยานา" },
+          "local": "Živalski vrt Ljubljana",
+          "kind": "zoo",
+          "area": { "en": "Rožnik hill", "th": "เนินรอซนิก" },
+          "what": { "en": "The city zoo, open every day of the year", "th": "สวนสัตว์ของเมือง เปิดทุกวันตลอดปี" },
+          "why": { "en": "Children under 2 are free; allow time to leave within an hour of closing", "th": "เด็กต่ำกว่า 2 ขวบเข้าฟรี ควรออกภายในหนึ่งชั่วโมงหลังเวลาปิด" },
+          "tip": { "en": "Hours shorten in winter (the zoo closes at 16:00 in December); check the adult and child prices on the zoo site", "th": "ช่วงหนาวปิดเร็วขึ้น (ธันวาคมปิด 16:00) เช็กราคาผู้ใหญ่และเด็กที่เว็บไซต์สวนสัตว์" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Children under 2 free · check the other prices", "th": "เด็กต่ำกว่า 2 ขวบฟรี · เช็กราคาอื่น" },
+          "book": "none",
+          "q": "Ljubljana Zoo, Večna pot, Ljubljana",
+          "ok": "2026-11",
+          "src": "https://www.zoo.si/en/info"
+        },
+        {
+          "name": { "en": "Bled Castle", "th": "ปราสาทเบลด" },
+          "local": "Blejski grad",
+          "kind": "culture",
+          "area": { "en": "Lake Bled", "th": "ทะเลสาบเบลด" },
+          "what": { "en": "The castle above the lake, with a museum and views of the island", "th": "ปราสาทเหนือทะเลสาบ มีพิพิธภัณฑ์และวิวเกาะ" },
+          "why": { "en": "Children under 6 enter free and the views are worth the climb; the paths are steep for prams", "th": "เด็กต่ำกว่า 6 ปีเข้าฟรี วิวคุ้มกับการขึ้น ทางชันสำหรับรถเข็น" },
+          "tip": { "en": "Open 8:00–20:00 April–October and 8:00–18:00 November–March; discounted tickets only at the castle ticket office", "th": "เปิด 8:00-20:00 เมษายน-ตุลาคม และ 8:00-18:00 พฤศจิกายน-มีนาคม บัตรลดราคามีเฉพาะที่ห้องขายบัตรปราสาท" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "≈ €19 adults · €7 children 6–14 · under 6 free (list valid from 1 January 2025)", "th": "≈ €19 ผู้ใหญ่ · €7 เด็ก 6-14 ปี · ต่ำกว่า 6 ขวบฟรี (ราคาตั้งแต่ 1 มกราคม 2025)" },
+          "book": "none",
+          "q": "Bled Castle, Bled",
+          "ok": "2026-11",
+          "src": "https://www.blejski-grad.si/en/plan-your-visit/price-list/"
+        },
+        {
+          "name": { "en": "Vintgar Gorge", "th": "หุบเขาวินท์การ์" },
+          "local": "Soteska Vintgar",
+          "kind": "nature",
+          "area": { "en": "Gorje, near Bled", "th": "กอร์เย ใกล้เบลด" },
+          "what": { "en": "A gorge walk on wooden paths beside the river", "th": "เดินเลียบแม่น้ำในหุบเขาบนทางไม้" },
+          "why": { "en": "Children from about 3 can walk it; tickets are for children aged 3–15", "th": "เด็กอายุ 3 ปีขึ้นไปเดินได้ ตั๋วเด็กสำหรับอายุ 3-15 ปี" },
+          "tip": { "en": "Open about April to October only; tickets are bought online with a time slot; a report said the entrance fee was being disputed, so check before you go", "th": "เปิดราวเมษายนถึงตุลาคมเท่านั้น ซื้อบัตรออนไลน์พร้อมเลือกรอบเวลา มีรายงานว่าค่าเข้าถูกโต้แย้ง เช็กก่อนไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €15 adults · €5 children up to 15 (All-in-One Pass)", "th": "≈ €15 ผู้ใหญ่ · €5 เด็กไม่เกิน 15 ปี (All-in-One Pass)" },
+          "book": "req",
+          "q": "Vintgar Gorge, Gorje",
+          "ok": "2026-11",
+          "src": "https://www.vintgar.si/en/?p=3232"
+        },
+        {
+          "name": { "en": "Pletna boat to Bled Island", "th": "เรือเปลตนาไปเกาะเบลด" },
+          "kind": "ride",
+          "area": { "en": "Lake Bled", "th": "ทะเลสาบเบลด" },
+          "what": { "en": "A traditional flat-bottomed boat across Lake Bled to the island", "th": "เรือท้องแบนแบบดั้งเดิมข้ามทะเลสาบเบลดไปเกาะ" },
+          "why": { "en": "A calm boat ride that small children enjoy; the boats leave from four docks", "th": "นั่งเรือเงียบๆ เด็กเล็กชอบ ออกจากท่าเรือสี่แห่ง" },
+          "tip": { "en": "Docks: Kazina, Mlino, Vila Bled and Velika Zaka (no longer the Spa Park); some blogs say cash only", "th": "ท่าเรือ: Kazina, Mlino, Vila Bled และ Velika Zaka (ไม่ออกจากสปาพาร์คแล้ว) บางบล็อกว่ารับเงินสดเท่านั้น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €20 adults · €10 children 4–12 (round trip)", "th": "≈ €20 ผู้ใหญ่ · €10 เด็ก 4-12 ปี (ไปกลับ)" },
+          "book": "none",
+          "q": "Pletna boat, Lake Bled",
+          "ok": "2026-11",
+          "src": "https://www.bled.si/en/what-to-see-do/attractions/38/1/"
+        },
+        {
+          "name": { "en": "University Botanic Gardens Ljubljana", "th": "สวนพฤกษศาสตร์มหาวิทยาลัยลูบลิยานา" },
+          "local": "Botanični vrt Univerze v Ljubljani",
+          "kind": "park",
+          "area": { "en": "Ižanska cesta", "th": "อิซันสกา เชสตา" },
+          "what": { "en": "A botanic garden open every day, with a tropical glasshouse", "th": "สวนพฤกษศาสตร์เปิดทุกวัน มีเรือนกระจกเขตร้อน" },
+          "why": { "en": "Free for individual visitors, with room for children to walk", "th": "บุคคลทั่วไปเข้าฟรี มีที่ให้เด็กเดินเล่น" },
+          "tip": { "en": "Open 7:00–19:00 April–October (to 20:00 July–August) and 7:30–17:00 November–March", "th": "เปิด 7:00-19:00 เมษายน-ตุลาคม (ถึง 20:00 กรกฎาคม-สิงหาคม) และ 7:30-17:00 พฤศจิกายน-มีนาคม" },
+          "ages": [1, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free for individuals", "th": "บุคคลทั่วไปเข้าฟรี" },
+          "book": "none",
+          "q": "Botanic Gardens, Ižanska cesta 15, Ljubljana",
+          "ok": "2026-11",
+          "src": "https://www.botanicni-vrt.si/en/info"
+        },
+        {
+          "name": { "en": "House of Experiments", "th": "บ้านการทดลอง" },
+          "local": "Hiša eksperimentov",
+          "kind": "museumkid",
+          "area": { "en": "Trubarjeva cesta", "th": "ทรูบาร์เยวา เชสตา" },
+          "what": { "en": "A hands-on science centre for adults and children, the first of its kind in Slovenia", "th": "ศูนย์วิทยาศาสตร์ลงมือทำสำหรับผู้ใหญ่และเด็ก แห่งแรกของสโลวีเนีย" },
+          "why": { "en": "Good rainy-day choice in the city centre", "th": "ทางเลือกวันฝนตกใจกลางเมือง" },
+          "tip": { "en": "At Trubarjeva cesta 39; check the price and opening days before you go", "th": "ที่ถนนทรูบาร์เยวา 39 เช็กราคาและวันเปิดก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hiša eksperimentov, Trubarjeva cesta 39, Ljubljana",
+          "ok": "2026-11",
+          "src": "https://visitljubljana.com/en/poi/hisa-eksperimentov-hands-on-science-centre"
+        },
+        {
+          "name": { "en": "Ljubljana Central Market", "th": "ตลาดกลางลูบลิยานา" },
+          "local": "Centralna tržnica",
+          "kind": "market",
+          "area": { "en": "Old Town", "th": "เมืองเก่า" },
+          "what": { "en": "The open-air market of the old town", "th": "ตลาดกลางแจ้งของเมืองเก่า" },
+          "why": { "en": "Easy to browse with a pram; mornings are the fullest", "th": "เดินดูง่ายพร้อมรถเข็น ช่วงเช้าคึกคักที่สุด" },
+          "tip": { "en": "A guide says the market is usually closed on Sundays and public holidays; check the hours on the day", "th": "มีคู่มือว่าตลาดมักปิดวันอาทิตย์และวันหยุดนักขัตฤกษ์ เช็กเวลาในวันนั้น" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Prices vary by stall", "th": "ราคาตามแต่ละร้าน" },
+          "book": "none",
+          "q": "Central Market, Ljubljana",
+          "ok": "2026-11",
+          "src": "https://www.visitljubljana.com/en/poi/central-market/"
+        },
+        {
+          "name": { "en": "Vogel cable car", "th": "กระเช้าโวเกล" },
+          "local": "Vogel",
+          "kind": "views",
+          "area": { "en": "Bohinj", "th": "โบฮินจ์" },
+          "what": { "en": "A cable car above Lake Bohinj, with chairlift and circular cable car options listed", "th": "กระเช้าเหนือทะเลสาบโบฮินจ์ มีทางเลือกลิฟต์เก้าอี้และกระเช้าวงกลม" },
+          "why": { "en": "Mountain views and cooler air; check it is running before you drive out", "th": "วิวภูเขาและอากาศเย็น เช็กว่าเปิดก่อนขับไป" },
+          "tip": { "en": "The cable car is closed for maintenance, reopening no earlier than 1 December 2026; summer 2026 packages are listed on the site", "th": "กระเช้าปิดซ่อมบำรุง เปิดอีกครั้งไม่เร็วกว่า 1 ธันวาคม 2026 มีแพ็กเกจหน้าร้อนปี 2026 บนเว็บไซต์" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €39 adults · €20 children 6–14 (summer 2026 boat and cable car package)", "th": "≈ €39 ผู้ใหญ่ · €20 เด็ก 6-14 ปี (แพ็กเกจเรือและกระเช้าหน้าร้อน 2026)" },
+          "book": "none",
+          "q": "Vogel cable car, Bohinj",
+          "ok": "2026-11",
+          "src": "https://vogel.si/en/?p=6609"
+        },
+        {
+          "name": { "en": "Lake Bled walk", "th": "เดินรอบทะเลสาบเบลด" },
+          "kind": "park",
+          "area": { "en": "Bled", "th": "เบลด" },
+          "what": { "en": "A 6 km path around the lake with benches, views of the island and the castle", "th": "ทางเดินรอบทะเลสาบยาว 6 กม. มีม้านั่งและวิวเกาะกับปราสาท" },
+          "why": { "en": "Mostly flat and easy to cut short, with places to stop and watch the swans", "th": "ทางส่วนใหญ่ราบ แวะพักดูหงส์ได้ตลอดทาง" },
+          "tip": { "en": "Walk it in pieces; in summer you can swim and in a very cold winter the lake may freeze", "th": "เดินเป็นช่วงๆ ได้ หน้าร้อนลงเล่นน้ำได้" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lake Bled, Bled",
+          "ok": "2026-11",
+          "src": "https://www.bled.si/en/what-to-see-do/attractions/1/lake-bled"
+        },
+        {
+          "name": { "en": "Museum of Apiculture, Radovljica", "th": "พิพิธภัณฑ์เลี้ยงผึ้งราดอฟลีตซา" },
+          "kind": "museumkid",
+          "area": { "en": "Radovljica", "th": "ราดอฟลีตซา" },
+          "what": { "en": "Slovenia's beekeeping museum in Radovljica Manor, with interactive points where children learn about bees", "th": "พิพิธภัณฑ์การเลี้ยงผึ้งในคฤหาสน์ราดอฟลีตซา มีจุดให้เด็กๆ เล่นเรียนรู้เรื่องผึ้ง" },
+          "why": { "en": "A short indoor visit with hands-on corners, handy when Bled is wet", "th": "เข้าชมสั้นๆ ในร่ม มีมุมให้เด็กลงมือทำ เหมาะวันฝนตก" },
+          "tip": { "en": "Open Tuesday to Sunday 10:00–18:00; closed Mondays", "th": "เปิดวันอังคารถึงอาทิตย์ 10:00–18:00 ปิดวันจันทร์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €8 adults · €5 children · family ticket €20", "th": "≈ €8 ผู้ใหญ่ · €5 เด็ก · ตั๋วครอบครัว €20" },
+          "book": "none",
+          "q": "Museum of Apiculture, Linhartov trg 1, Radovljica",
+          "ok": "2026-11",
+          "src": "https://www.radolca.si/en/attractions/museums-and-galleries/museum-of-apiculture-radovljica"
+        },
+        {
+          "name": { "en": "Straža summer toboggan", "th": "รางสไลเดอร์ฤดูร้อนสตราชา" },
+          "kind": "ride",
+          "area": { "en": "Bled", "th": "เบลด" },
+          "what": { "en": "A 520 m toboggan track down Straža hill above the lake, with a drop of 131 m", "th": "รางสไลเดอร์ยาว 520 ม. ลงจากเนินสตราชาเหนือทะเลสาบ ต่างระดับ 131 ม." },
+          "why": { "en": "A fun thrill for children who can sit and hold on, with views on the way up", "th": "สนุกสำหรับเด็กที่นั่งและจับเองได้ มีวิวระหว่างขึ้นเนิน" },
+          "tip": { "en": "It runs in the warmer months only; check the opening and the price list first", "th": "เปิดเฉพาะช่วงอากาศอบอุ่น เช็กวันเปิดและราคาก่อนไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Straža toboggan, Bled",
+          "ok": "2026-11",
+          "src": "https://www.bled.si/en/what-to-see-do/activities/17/summer-tobogganing/"
+        },
+        {
+          "name": { "en": "Starkl Open-Air Museum", "th": "พิพิธภัณฑ์กลางแจ้งสตาร์คล" },
+          "kind": "culture",
+          "area": { "en": "Mlino, Bled", "th": "มลีโน เบลด" },
+          "what": { "en": "An open-air museum just off the lake showing early Bled, with traditional boats and the old mills along the brook", "th": "พิพิธภัณฑ์กลางแจ้งริมทะเลสาบ เล่าเรื่องเบลดสมัยก่อน มีเรือพื้นบ้านและโรงสีเก่า" },
+          "why": { "en": "Short, calm and outdoors, easy to add to a lakeside walk", "th": "สั้นๆ สบายๆ กลางแจ้ง แวะเพิ่มตอนเดินริมทะเลสาบได้" },
+          "tip": { "en": "New in 2026; check the opening days before you go", "th": "เพิ่งเปิดในปี 2026 เช็กวันเปิดก่อนไป" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Starkl Open-Air Museum, Mlino, Bled",
+          "ok": "2026-11",
+          "src": "https://www.bled.si/en/what-to-see-do/attractions/2026110508584451/starkl-open-air-museum"
+        },
+        {
+          "name": { "en": "Triglavska roza info centre exhibition", "th": "นิทรรศการศูนย์ข้อมูลทริกลัฟสกาโรซา" },
+          "kind": "museum",
+          "area": { "en": "Bled", "th": "เบลด" },
+          "what": { "en": "A permanent exhibition, \"Paradise below Triglav\", and a multimedia hall at the park's information centre", "th": "นิทรรศการถาวรเกี่ยวกับธรรมชาติใต้ภูเขาทริกลัฟ และห้องมัลติมีเดียที่ศูนย์ข้อมูล" },
+          "why": { "en": "A dry, quiet stop to learn about the mountains before going out", "th": "จุดแวะในร่มเงียบๆ ก่อนออกไปเที่ยวภูเขา" },
+          "tip": { "en": "Open every day; ask the staff for walking ideas", "th": "เปิดทุกวัน ถามเจ้าหน้าที่เรื่องเส้นทางเดินได้" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Triglavska roza Bled, Ljubljanska cesta 27, Bled",
+          "ok": "2026-11",
+          "src": "https://www.bled.si/en/what-to-see-do/attractions/2020010612015017/exhibition-at-the-triglavska-roza-bled-info-centre"
+        },
+        {
+          "name": { "en": "Savica Waterfall", "th": "น้ำตกซาวิตซา" },
+          "kind": "nature",
+          "area": { "en": "Bohinj", "th": "โบฮินจ์" },
+          "what": { "en": "A waterfall at the end of Lake Bohinj, reached by a trail with quite a few steps from the car park", "th": "น้ำตกปลายทะเลสาบโบฮินจ์ เดินจากที่จอดรถตามทางที่มีขั้นบันไดค่อนข้างมาก" },
+          "why": { "en": "The steps rule out prams, so small ones ride in a carrier; the trail is easy for walkers", "th": "มีขั้นบันไดจึงไม่เหมาะกับรถเข็น เด็กเล็กต้องอุ้มหรือใช้เป้อุ้ม" },
+          "tip": { "en": "Closed in heavy rain, snow or ice; November hours are 09:00–16:00", "th": "ปิดเมื่อฝนหนัก หิมะ หรือน้ำแข็ง เดือนพฤศจิกายนเปิด 09:00–16:00" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €4 adults · under 16 free · everyone free on the first Sunday of the month", "th": "≈ €4 ผู้ใหญ่ · ต่ำกว่า 16 ปีฟรี · ฟรีทุกคนวันอาทิตย์แรกของเดือน" },
+          "book": "none",
+          "q": "Savica Waterfall, Bohinj",
+          "ok": "2026-11",
+          "src": "https://www.bohinj.si/en/savica-waterfall/"
+        },
+        {
+          "name": { "en": "Mostnica Gorge", "th": "ช่องเขามอสตนิตซา" },
+          "kind": "nature",
+          "area": { "en": "Bohinj", "th": "โบฮินจ์" },
+          "what": { "en": "An alpine river gorge with rapids and waterfalls in the Voje Valley", "th": "ช่องเขาแม่น้ำบนภูเขา มีแก่งและน้ำตกในหุบเขาโวเย" },
+          "why": { "en": "Gentle at the start and full of water to watch, but best for children who can walk", "th": "ช่วงแรกเดินสบาย มีน้ำให้ดูเพลิน เหมาะกับเด็กที่เดินเองได้" },
+          "tip": { "en": "The fee applies from 1 April to 30 November; pay in cash", "th": "เก็บค่าเข้า 1 เม.ย.–30 พ.ย. จ่ายเงินสด" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €4 adults · €2 ages 7–14 · under 7 free", "th": "≈ €4 ผู้ใหญ่ · €2 อายุ 7–14 ปี · ต่ำกว่า 7 ปีฟรี" },
+          "book": "none",
+          "q": "Mostnica Gorge, Stara Fužina, Bohinj",
+          "ok": "2026-11",
+          "src": "https://www.bohinj.si/en/mostnica-gorge-and-voje-valley/"
+        },
+        {
+          "local": "Vodno mesto Atlantis",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ljubljana.info/?p=4246",
+          "name": {
+            "th": "สวนน้ำแอตแลนติส",
+            "en": "Atlantis water park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห่างใจกลางเมืองไปทางตะวันออกเฉียงเหนือ 5 กม. ลูบลิยานา",
+            "en": "5 km north-east of the centre, Ljubljana"
+          },
+          "what": {
+            "th": "สระในร่มและกลางแจ้ง สไลเดอร์ และโซนเด็ก \"แอดเวนเจอร์เวิลด์\"",
+            "en": "Indoor and outdoor pools, slides and a children's area, Adventure World"
+          },
+          "why": {
+            "th": "สระแยกตามวัย แต่ละกลุ่มเล่นได้ไม่รบกวนกัน",
+            "en": "Pools split by age so each group plays undisturbed"
+          },
+          "q": "Vodno mesto Atlantis, Španska ulica 1, Ljubljana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.ljubljana.info/?p=4246",
+          "name": {
+            "th": "สวนทิโวลี",
+            "en": "Tivoli Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ลูบลิยานา",
+            "en": "Ljubljana"
+          },
+          "what": {
+            "th": "สวนกลางเมืองขนาดใหญ่ มีทุ่งหญ้า สนามเด็กเล่น คาเฟ่ริมบ่อ และลานจักรยานเล็ก ๆ",
+            "en": "A big city park with meadows, playgrounds, a pond café and a small bike park"
+          },
+          "why": {
+            "th": "มีทุ่งหญ้าให้วิ่งและสนามเด็กเล่นสองแห่ง",
+            "en": "Meadows to run in and two playgrounds"
+          },
+          "q": "Tivoli Park, Ljubljana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Vivarij",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+          "name": {
+            "th": "วิวาเรียมโพสตอยนา",
+            "en": "Postojna Vivarium"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "อุทยานถ้ำโพสตอยนา",
+            "en": "Postojna Cave Park"
+          },
+          "what": {
+            "th": "นิทรรศการข้างทางเข้าถ้ำ ได้พบซาลาแมนเดอร์ถ้ำและสัตว์ถ้ำอื่น ๆ",
+            "en": "An exhibition by the cave entrance where you meet the olm and other cave animals"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้รู้จักสัตว์ในโลกใต้ดินที่มืดมิด",
+            "en": "Children learn about the animals of the dark underground"
+          },
+          "q": "Vivarium, Jamska cesta 29, Postojna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Expo Jama Kras",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+          "name": {
+            "th": "นิทรรศการถ้ำและคาสต์",
+            "en": "Expo Cave Karst"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อุทยานถ้ำโพสตอยนา",
+            "en": "Postojna Cave Park"
+          },
+          "what": {
+            "th": "นิทรรศการใหญ่เรื่องถ้ำและภูมิประเทศคาสต์ แบบลงมือเล่น",
+            "en": "A large hands-on exhibition about caves and karst"
+          },
+          "why": {
+            "th": "มีคำถามสนุก ๆ เช่น ถ้าเป็นหินงอกจะอายุเท่าไร",
+            "en": "Playful questions, like how old you would be as a stalagmite"
+          },
+          "q": "Expo Jama Kras, Jamska cesta 28, Postojna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Črna jama in Pivka jama",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+          "name": {
+            "th": "ถ้ำดำและถ้ำปิฟกา",
+            "en": "Black Cave and Pivka Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เวลีกีโอตอก โพสตอยนา",
+            "en": "Veliki Otok, Postojna"
+          },
+          "what": {
+            "th": "ถ้ำสองแห่งในอุทยานถ้ำโพสตอยนา ใกล้แม่น้ำปิฟกา",
+            "en": "Two caves in the Postojna cave park, by the River Pivka"
+          },
+          "why": {
+            "th": "เดินผ่านถ้ำสองแห่งในภูมิประเทศคาสต์เขียวขจี",
+            "en": "A walk through two caves in green karst country"
+          },
+          "tip": {
+            "th": "เข้าชมได้กับไกด์ผู้ชำนาญเท่านั้น",
+            "en": "Only with an experienced guide"
+          },
+          "q": "Črna jama, Veliki Otok, Postojna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.visitljubljana.com/en/visitors/in-focus/stories/5-kids-favourite-playgrounds-in-ljubljana/",
+          "name": {
+            "th": "สนามเด็กเล่นสวนทิโวลี",
+            "en": "Tivoli Park playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนทิโวลี ลูบลิยานา",
+            "en": "Tivoli Park, Ljubljana"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นที่รู้จักที่สุดในลูบลิยานา ใกล้บ่อน้ำและคาเฟ่",
+            "en": "Ljubljana's best-known playground, by a pond and a café"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นตั้งแต่เด็กเล็กถึงเด็กโต มีม้านั่งให้พ่อแม่",
+            "en": "Something for toddlers to preteens, with benches for parents"
+          },
+          "q": "Park Tivoli Children's playground, Cesta 27. aprila, Ljubljana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.bohinj.si/en/dozivetja/zlatorog-fairy-trail/",
+          "name": {
+            "th": "เส้นทางนิทานซลาโตรอก",
+            "en": "Zlatorog Fairy Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อูคานซ์ โบฮินย์",
+            "en": "Ukanc, Bohinj"
+          },
+          "what": {
+            "th": "เส้นทางนิทานวงรอบ 2 กม. มีสมุดนิทานและแผนที่",
+            "en": "A 2 km circular fairy-tale trail with a booklet and a map"
+          },
+          "why": {
+            "th": "เส้นทางสนุกและได้ความรู้สำหรับเด็กเล็ก",
+            "en": "A fun, educational trail for younger children"
+          },
+          "q": "Zlatorog Fairy Trail, Ukanc, Bohinj",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "cc": "lk",
+  "towns": [
+    {
+      "place": "lk-hills",
+      "thin": true,
+      "sights": [
+        {
+          "name": { "en": "Sigiriya Rock Fortress", "th": "ป้อมปราการหินสิกิริยา" },
+          "local": "සීගිරිය",
+          "kind": "culture",
+          "area": { "en": "Sigiriya", "th": "สิกิริยา" },
+          "what": { "en": "A ruined palace garden and a rock fortress rising 200 m above the plain, with water gardens at its foot and a small museum", "th": "สวนพระราชวังเก่าและป้อมบนหินสูงราว 200 เมตรเหนือที่ราบ มีสวนน้ำที่เชิงเขาและพิพิธภัณฑ์เล็กๆ" },
+          "why": { "en": "The water gardens and boulder paths are fine for small children; the climb to the top is steep, with many steps, so not for babies or under-fives", "th": "สวนน้ำและทางเดินก้อนหินเหมาะกับเด็กเล็ก ส่วนทางขึ้นยอดชัน มีบันไดมาก ไม่เหมาะกับทารกและเด็กต่ำกว่าห้าขวบ" },
+          "tip": { "en": "Go at opening for cooler air and fewer people; the museum is included in the ticket; a 2025 news item says children under 18 may enter free, so ask at the counter", "th": "ไปตอนเปิดเพื่ออากาศเย็นและคนน้อย ตั๋วรวมพิพิธภัณฑ์ ข่าวปี 2025 ว่าเด็กต่ำกว่า 18 ปีเข้าฟรี ถามที่เคาน์เตอร์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ US$35 full ticket · US$20 half ticket (official table, March 2025) · check the price for children", "th": "≈ 35 ดอลลาร์สหรัฐ ตั๋วเต็ม · 20 ดอลลาร์สหรัฐ ตั๋วครึ่ง (ตารางทางการ มี.ค. 2025) · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Sigiriya Rock Fortress, Sigiriya",
+          "ok": "2026-11",
+          "src": "https://ccf.gov.lk/vsl/tickets"
+        },
+        {
+          "name": { "en": "Pinnawala Elephant Orphanage", "th": "ศูนย์ดูแลช้างกำพร้าปินนาวาลา" },
+          "local": "පින්නවල අලි අනාථ නිවාසය",
+          "kind": "zoo",
+          "area": { "en": "Pinnawala, Kegalle", "th": "ปินนาวาลา เกกัลเล" },
+          "what": { "en": "A government-run elephant home where a herd walks to the river to bathe and young ones are fed with bottles", "th": "ศูนย์ช้างของรัฐ ฝูงช้างเดินไปอาบน้ำที่แม่น้ำ และมีป้อนนมลูกช้าง" },
+          "why": { "en": "Children can watch the herd close up from the road and the riverbank; it is hot and crowded at midday, so go early", "th": "เด็กดูฝูงช้างใกล้ๆ จากถนนและริมแม่น้ำ กลางวันร้อนและคนมาก ควรไปแต่เช้า" },
+          "tip": { "en": "Bathing is usually midday and late afternoon; ticket prices are set by the national zoological department and carry VAT", "th": "ช้างลงอาบน้ำมักช่วงเที่ยงและบ่ายแก่ ราคาตั๋วกำหนดโดยกรมสวนสัตว์ และมีภาษีมูลค่าเพิ่ม" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ US$15 foreign adults plus 18% VAT (a 2025 guide) · check the price for children", "th": "≈ 15 ดอลลาร์สหรัฐ ผู้ใหญ่ต่างชาติ บวกภาษี 18% (คู่มือปี 2025) · เช็กราคาเด็ก" },
+          "book": "none",
+          "q": "Pinnawala Elephant Orphanage, Rambukkana",
+          "ok": "2026-11",
+          "src": "https://amazinglanka.com/wp/pinnawala-elephant-orphanage/"
+        },
+        {
+          "name": { "en": "Royal Botanic Gardens, Peradeniya", "th": "สวนพฤกษศาสตร์หลวงเปราเดนิยา" },
+          "local": "පේරාදෙණිය රාජකීය උද්භිද උද්‍යානය",
+          "kind": "park",
+          "area": { "en": "Peradeniya, Kandy", "th": "เปราเดนิยา แคนดี้" },
+          "what": { "en": "Sixty hectares of lawns, a giant bamboo grove, an orchid house and a long avenue of palms beside the river", "th": "สวนกว้างราว 60 เฮกตาร์ มีสนามหญ้า ป่าไผ่ยักษ์ เรือนกล้วยไม้ และถนนปาล์มยาวริมแม่น้ำ" },
+          "why": { "en": "Wide lawns for running and flying-fox bats in the trees; paths are mostly flat and a stroller works", "th": "สนามหญ้ากว้างให้วิ่งเล่น มีค้างคาวแม่ไก่บนต้นไม้ ทางส่วนใหญ่ราบ ใช้รถเข็นได้" },
+          "tip": { "en": "Tickets are sold at the entrance; take a hat and water, as shade is patchy", "th": "ซื้อตั๋วที่ทางเข้า เตรียมหมวกและน้ำ ร่มเงามีไม่ทั่ว" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price: guides show about LKR 3,000–3,540 foreign adults, half for children", "th": "เช็กราคา: คู่มือให้ราว 3,000–3,540 รูปีศรีลังกา ผู้ใหญ่ต่างชาติ เด็กครึ่งราคา" },
+          "book": "none",
+          "q": "Royal Botanic Gardens, Peradeniya",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/sri-lanka/royal-botanical-gardens-peradeniya"
+        },
+        {
+          "name": { "en": "Ceylon Tea Museum", "th": "พิพิธภัณฑ์ชาซีลอน" },
+          "local": "",
+          "kind": "museum",
+          "area": { "en": "Hantane, Kandy", "th": "ฮันตาเน แคนดี้" },
+          "what": { "en": "A four-floor former tea factory with old machines, a tea room and a view over the hills", "th": "โรงงานชาเก่าสี่ชั้น มีเครื่องจักรโบราณ ห้องชา และวิวภูเขา" },
+          "why": { "en": "Cool, dry and short, so a good rainy-day stop; children enjoy the big old machines", "th": "เย็น แห้ง และใช้เวลาไม่นาน เป็นที่หลบฝนที่ดี เด็กชอบเครื่องจักรเก่าตัวใหญ่" },
+          "tip": { "en": "A July 2025 guide gives hours ending 15:00 on Sundays and holidays; the road up is steep and narrow", "th": "คู่มือเดือนก.ค. 2025 ระบุปิด 15:00 วันอาทิตย์และวันหยุด ถนนขึ้นชันและแคบ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ LKR 800 foreign adults · LKR 400 children (July 2025 guide) · the museum's own page shows other figures, so check", "th": "≈ 800 รูปีศรีลังกา ผู้ใหญ่ต่างชาติ · 400 เด็ก (คู่มือก.ค. 2025) · เว็บพิพิธภัณฑ์ให้ตัวเลขต่างออกไป เช็กอีกครั้ง" },
+          "book": "none",
+          "q": "Ceylon Tea Museum, Hantane Road, Kandy",
+          "ok": "2026-11",
+          "src": "https://audiala.com/en/sri-lanka/kandy/ceylon-tea-museum/"
+        },
+        {
+          "name": { "en": "Nine Arch Bridge viewpoint", "th": "จุดชมสะพานเก้าโค้ง" },
+          "local": "නවඅට පාලම",
+          "kind": "views",
+          "area": { "en": "Ella", "th": "เอลลา" },
+          "what": { "en": "A 1921 stone railway viaduct curving across a green valley, a walk from Ella town", "th": "สะพานรถไฟหินปี 1921 โค้งข้ามหุบเขาเขียว เดินจากตัวเมืองเอลลาได้" },
+          "why": { "en": "A short, shaded walk with a train to watch; keep children well away from the track, and carry toddlers on the uneven path", "th": "เดินสั้นๆ ร่มรื่น และดูรถไฟได้ ให้เด็กอยู่ห่างรางรถไฟ และอุ้มเด็กเล็กบนทางไม่เรียบ" },
+          "tip": { "en": "Ask at Ella station which trains run on your day; trains arriving from Kandy do not cross it", "th": "ถามที่สถานีเอลลาว่าวันนี้มีรถไฟเที่ยวไหน รถที่มาจากแคนดี้ไม่ข้ามสะพานนี้" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free (no entry fee shown on the guide page) · check the price", "th": "ฟรี (หน้าแนะนำไม่ระบุค่าเข้า) · เช็กราคา" },
+          "book": "none",
+          "q": "Nine Arch Bridge, Ella",
+          "ok": "2026-11",
+          "src": "https://goasia.cc/en/article/nine-arch-bridge-ella"
+        },
+        {
+          "name": { "en": "Hurulu Eco Park jeep safari", "th": "ซาฟารีจิ๊ปอุทยานฮูรูลู" },
+          "local": "",
+          "kind": "nature",
+          "area": { "en": "Habarana, near Sigiriya", "th": "ฮาบารานา ใกล้สิกิริยา" },
+          "what": { "en": "A half-day jeep ride through a reserve known for wild elephants, buffalo and birds", "th": "นั่งจิ๊ปครึ่งวันผ่านเขตสงวนที่มีช้างป่า ควาย และนก" },
+          "why": { "en": "Seated in a jeep, small children can watch elephants safely; bumpy, hot and about 2.5 to 3 hours", "th": "นั่งในจิ๊ปดูช้างได้ปลอดภัย แต่สะเทือน ร้อน และใช้เวลาราว 2.5–3 ชั่วโมง" },
+          "tip": { "en": "Take a hat and water; a shared jeep costs less than a private one, and the park fee is often not in the price", "th": "เตรียมหมวกและน้ำ จิ๊ปรวมถูกกว่าจิ๊ปส่วนตัว และค่าเข้าอุทยานมักไม่รวมในราคา" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ US$35 per adult in a shared jeep (a booking listing) · park fee extra · check the price for children", "th": "≈ 35 ดอลลาร์สหรัฐ ต่อผู้ใหญ่ในจิ๊ปรวม (รายการจอง) · ค่าเข้าอุทยานแยก · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Hurulu Eco Park, Habarana",
+          "ok": "2026-11",
+          "src": "https://expedia.ie/things-to-do/all-inclusive-hurulu-eco-national-park-half-day-jeep-safari.a48354004.activity-details"
+        },
+        {
+          "name": { "en": "Udawalawe Elephant Transit Home", "th": "ศูนย์พักฟื้นลูกช้างอูดาวาลาเว" },
+          "local": "උඩවලව අලි පැටවුන් සම්බන්ධ කිරීමේ මධ්‍යස්ථානය",
+          "kind": "nature",
+          "area": { "en": "Udawalawe", "th": "อูดาวาลาเว" },
+          "what": { "en": "A wildlife-department centre that raises orphaned calves for release, with a viewing platform at feeding time", "th": "ศูนย์ของกรมสัตว์ป่าที่เลี้ยงลูกช้างกำพร้าเพื่อปล่อยคืนป่า มีชานชาลาชมตอนให้นม" },
+          "why": { "en": "A short half-hour visit from a platform; children see calves up close but cannot touch them", "th": "แวะครึ่งชั่วโมงดูจากชานชาลา เด็กเห็นลูกช้างใกล้ๆ แต่จับไม่ได้" },
+          "tip": { "en": "Feeding is at set times several times a day; far from Kandy, so it suits a south coast route", "th": "ให้นมตามเวลาหลายรอบต่อวัน อยู่ไกลจากแคนดี้ เหมาะกับเส้นทางชายฝั่งใต้" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price: one 2026 price list shows a low fee of about US$3–5", "th": "เช็กราคา: ตารางราคาปี 2026 หนึ่งแห่งให้ราว 3–5 ดอลลาร์สหรัฐ" },
+          "book": "none",
+          "q": "Elephant Transit Home, Udawalawe",
+          "ok": "2026-11",
+          "src": "https://udawalawesafarihelp.com/storage/2025/12/Sri-Lanka-Safari-Ticket-Price-List-and-Safari-Cost-_-Updated-2026.pdf"
+        },
+        {
+          "name": { "en": "Kandyan dance show", "th": "การแสดงระบำแคนเดียน" },
+          "local": "",
+          "kind": "show",
+          "area": { "en": "Kandy", "th": "แคนดี้" },
+          "what": { "en": "An evening show of drumming, Kandyan dance and fire-walking in town", "th": "การแสดงช่วงเย็นในเมือง มีกลองรัว ระบำแคนเดียน และเดินบนไฟ" },
+          "why": { "en": "An hour inside with loud drums and costumes; sleepy toddlers may find the noise tiring", "th": "นั่งชมในอาคารราวหนึ่งชั่วโมง กลองดังและเครื่องแต่งกายสีสด เด็กเล็กที่ง่วงอาจเหนื่อยกับเสียง" },
+          "tip": { "en": "A 2025 to 2026 fee guide lists a nightly show at the Kandyan Art Association; book a seat near the exit for children", "th": "ตารางค่าธรรมเนียมปี 2025–2026 ระบุรอบค่ำที่ Kandyan Art Association จองที่นั่งใกล้ทางออกเมื่อมีเด็ก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ LKR 2,000 per person (a 2025 to 2026 fee guide) · check the price", "th": "≈ 2,000 รูปีศรีลังกา ต่อคน (ตารางปี 2025–2026) · เช็กราคา" },
+          "book": "rec",
+          "q": "Kandyan Art Association Cultural Centre, Kandy",
+          "ok": "2026-11",
+          "src": "https://mysltravel.com/?p=14740"
+        },
+        {
+          "name": { "en": "Hakgala Botanic Gardens", "th": "สวนพฤกษศาสตร์ฮักกาลา" },
+          "kind": "park",
+          "area": { "en": "Nuwara Eliya", "th": "นูวาระเอลิยะ" },
+          "what": { "en": "Terraced hill gardens at about 1,745 m under Hakgala Rock, open every day from 7.30 am to 6 pm", "th": "สวนบนเนินสูงราว 1,745 เมตร ใต้หินฮักกาลา เปิดทุกวัน 07.30–18.00 น." },
+          "why": { "en": "Cool air, wide lawns and gentle terraces for small legs to wander", "th": "อากาศเย็น สนามหญ้ากว้าง ขั้นบันไดเตี้ยๆ เหมาะกับเด็กเดินเล่น" },
+          "tip": { "en": "Fees for foreign visitors are revised often, so check at the gate", "th": "ราคาสำหรับชาวต่างชาติปรับบ่อย เช็กที่ประตูก่อนเข้า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hakgala Botanic Gardens, Badulla Road, Nuwara Eliya",
+          "ok": "2026-11",
+          "src": "https://en.botanicgardens.gov.lk/?p=1546"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "name": {
+            "th": "เขาลิตเติลแอดัมส์พีก",
+            "en": "Little Adam's Peak"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เอลลา",
+            "en": "Ella"
+          },
+          "what": {
+            "th": "เดินขึ้นเขาสั้น ๆ วิวไร่ชาจากยอด",
+            "en": "A short climb with tea-garden views from the top"
+          },
+          "why": {
+            "th": "ลูก ๆ ของผู้เขียนชอบวิวและภูมิใจที่ขึ้นถึง",
+            "en": "The writer's children loved the view and felt proud"
+          },
+          "tip": {
+            "th": "พกน้ำ ทางลาดยางเกือบตลอด ช่วงท้ายต้องปีนนิดหน่อย",
+            "en": "Take water; paved most of the way, with a short scramble at the end"
+          },
+          "q": "Little Adam's Peak Trailhead, Ella",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "name": {
+            "th": "น้ำตกราวณะ",
+            "en": "Ravana Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ห่างเอลลาไปทางใต้ 5 กม.",
+            "en": "5 km south of Ella"
+          },
+          "what": {
+            "th": "น้ำตกกว้างสามชั้น มีแอ่งหิน",
+            "en": "Wide three-tiered falls with rock pools"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ มีแผงขายขนมริมถนน",
+            "en": "A quick stop with snack stalls by the road"
+          },
+          "tip": {
+            "th": "ระวังลิงใกล้จุดชมวิว",
+            "en": "Watch for monkeys near the viewing platform"
+          },
+          "q": "Ravana waterfall, Ella–Wellawaya Road",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "ผู้ใหญ่ 1,500 LKR ($8.50)",
+            "en": "1500 LKR per adult ($8.50 USD)"
+          },
+          "book": "none",
+          "src": "https://awaywiththesteiners.com/sigiriya-with-kids/amp/",
+          "name": {
+            "th": "วัดถ้ำดัมบุลลา",
+            "en": "Dambulla Cave Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดัมบุลลา",
+            "en": "Dambulla"
+          },
+          "what": {
+            "th": "วัดในถ้ำสูงจากที่ราบ 160 ม. มีพระพุทธรูปทองคำอยู่ด้านล่าง",
+            "en": "Cave temples 160 m above the plains, with a golden Buddha below"
+          },
+          "why": {
+            "th": "การเดินขึ้นบันไดเหมาะกับเด็กทุกวัย",
+            "en": "The walk up the steps suits children of all ages"
+          },
+          "tip": {
+            "th": "แต่งกายปิดเข่าและไหล่ ถอดรองเท้า เปิด 7:00–19:00",
+            "en": "Cover knees and shoulders and take off shoes; open 7 am to 7 pm"
+          },
+          "q": "Dambulla Cave Temple, Dambulla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ผู้ใหญ่ $3",
+            "en": "$3 USD per adult"
+          },
+          "book": "none",
+          "src": "https://awaywiththesteiners.com/sigiriya-with-kids/amp/",
+          "name": {
+            "th": "หินปิดุรังคลา",
+            "en": "Pidurangala Rock"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ใกล้สีคิริยา",
+            "en": "Near Sigiriya"
+          },
+          "what": {
+            "th": "เดินขึ้นหินที่ขึ้นชื่อเรื่องวิวพระอาทิตย์ขึ้นเหนือสีคิริยา",
+            "en": "A climb known for sunrise views over Sigiriya Rock"
+          },
+          "why": {
+            "th": "ครึ่งแรกเป็นบันไดและทางเดินง่าย ๆ",
+            "en": "The first half is easy steps and path"
+          },
+          "tip": {
+            "th": "พกไฟฉายสำหรับเดินขึ้นตอนมืดก่อนพระอาทิตย์ขึ้น เปิด 5:00–18:00",
+            "en": "Bring a torch for the dark walk up before sunrise; open 5 am to 6 pm"
+          },
+          "q": "Pidurangala Royal Cave Temple, Sigiriya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "name": {
+            "th": "อุทยานแห่งชาติฮอร์ตันเพลนส์",
+            "en": "Horton Plains National Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไปกลับในวันเดียวจากเอลลา",
+            "en": "A day trip from Ella"
+          },
+          "what": {
+            "th": "อุทยานแห่งชาติที่หน้าเว็บแนะนำให้ไปกลับจากเอลลา",
+            "en": "A national park the page suggests as a day trip from Ella"
+          },
+          "why": {
+            "th": "อุทยานสวยสำหรับเที่ยวหนึ่งวัน",
+            "en": "A beautiful park for a day out"
+          },
+          "tip": {
+            "th": "หน้าเว็บไม่ระบุเวลา เช็กก่อนไป",
+            "en": "The page gives no hours: check before you go"
+          },
+          "q": "Horton Plains National Park",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

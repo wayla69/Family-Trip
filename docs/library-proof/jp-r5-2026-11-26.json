@@ -1,0 +1,754 @@
+{
+  "town": "jp (round 5: places to eat to 40, more things to do, the missing pharmacies)",
+  "kind": "added",
+  "checked": "2026-11-26",
+  "rule": "Haiku/Sonnet research agents (five web searches each, a sentence copied from each page) → scripts/library-check.cjs (name, quote, 2025–2026 date; an undated Mapple family food list allowed for places to eat; for things to do an official page or a Mapple 2026 family list) → every row opened on Google Maps on 26 Nov 2026 by checker agents, kept only when open, the same name and in the town → Thai and English by writer agents to docs/STYLE.md. Pharmacies: the pharmacy's or its chain's own store page only (no directories), every quote re-checked here.",
+  "towns": {
+    "jp-beppu": {
+      "eat": [
+        {
+          "name": "Chinetsu Kanko Labo Enma",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Taiho Ramen",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Ariran Bettei Beppu",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Cram Bakery",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Kikusaiko",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Suzuyoshi",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Harubiyori",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Ikkyu no Namida",
+          "src": "https://aumo.jp/articles/33231"
+        },
+        {
+          "name": "Tabimusubi",
+          "src": "https://tabelog.com/matome/27761/"
+        },
+        {
+          "name": "Izumi Soba",
+          "src": "https://tabelog.com/matome/27761/"
+        },
+        {
+          "name": "Cafe Tenjosajiki",
+          "src": "https://tabelog.com/matome/27761/"
+        },
+        {
+          "name": "Yufuin Sanshoro",
+          "src": "https://tabelog.com/matome/27761/"
+        },
+        {
+          "name": "Yufu Mabushi Shin Yufuin Ekimae",
+          "src": "https://tabelog.com/matome/27761/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-fuji": {
+      "eat": [
+        {
+          "name": "La Luce",
+          "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/"
+        },
+        {
+          "name": "HAOSTAY Katsuyoshi Tonkatsu",
+          "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/"
+        },
+        {
+          "name": "Bruschetta",
+          "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/"
+        },
+        {
+          "name": "Ramen Hachiyo",
+          "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/"
+        },
+        {
+          "name": "IL BACCO bis",
+          "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/"
+        },
+        {
+          "name": "Miura Ryori-ten",
+          "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/"
+        },
+        {
+          "name": "Sumiyaki Tokoro",
+          "src": "https://tabiiro.jp/gourmet/article/kawaguchiko_lunch/"
+        },
+        {
+          "name": "Fujiyama Beer Harvest Terrace",
+          "src": "https://www.mapple.net/region/a0305030500_s-situation=family/spot/"
+        },
+        {
+          "name": "Kotobuki",
+          "src": "https://www.mapple.net/region/a0305030000_g03000000_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-hiroshima": {
+      "eat": [
+        {
+          "name": "Inachu",
+          "src": "https://www.mapple.net/region/a0602070200_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Hiroshima Style Okonomiyaki Kurawanka",
+          "src": "https://www.mapple.net/region/a0602070200_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Hanabishi",
+          "src": "https://www.mapple.net/region/a0602070200_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Shibaisaryo Mizuha",
+          "src": "https://www.mapple.net/region/a0602070200_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Gallery Miyazato",
+          "src": "https://www.mapple.net/region/a0602070200_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Miyajima Coffee",
+          "src": "https://www.mapple.net/region/a0602070200_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Hayashiya Cafe",
+          "src": "https://www.mapple.net/region/a0602070200_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kakifune Kanawa",
+          "src": "https://www.mapple.net/region/a0602070000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Taninkichi",
+          "src": "https://www.mapple.net/region/a0602070000_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Caffe Ponte",
+          "src": "https://www.mapple.net/region/a0602070107_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Sozo",
+          "src": "https://www.mapple.net/region/a0602070100_g03050a00_s-situation=family/spot/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Hannover Garden",
+          "src": "https://japanactivity.com/hiroshima-with-kids-family-things-to-do"
+        },
+        {
+          "name": "Mariho Aquarium",
+          "src": "https://japanactivity.com/hiroshima-with-kids-family-things-to-do"
+        },
+        {
+          "name": "Itsukushima Shrine",
+          "src": "https://tinytotintokyo.com/miyajima-with-kids"
+        },
+        {
+          "name": "Mount Misen Observation Deck",
+          "src": "https://tinytotintokyo.com/miyajima-with-kids"
+        },
+        {
+          "name": "Daisho-in Temple",
+          "src": "https://jw-webmagazine.com/tips/daishoin-temple-miyajima"
+        },
+        {
+          "name": "Hiroshima Museum of Art",
+          "src": "https://hiroshima-museum.jp/en/guide/index.html"
+        },
+        {
+          "name": "Miyajima Traditional Crafts Center",
+          "src": "https://www.gltjp.com/en/directory/item/14993/"
+        }
+      ],
+      "care": []
+    },
+    "jp-kobe": {
+      "eat": [
+        {
+          "name": "color of time",
+          "src": "https://macaro-ni.jp/174708"
+        },
+        {
+          "name": "Kobe Gyu Kissyokichi Honten",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Grill Ippei Shinkaichi Honten",
+          "src": "https://www.mapple.net/region/a0504010100_g03060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Tachibana Honten",
+          "src": "https://www.mapple.net/region/a0504010101_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "Kikucho Kitanozaka Honten",
+          "src": "https://www.mapple.net/region/a0504010101_g03000000_s-situation=family/spot/"
+        },
+        {
+          "name": "39days KOBE",
+          "src": "https://tabelog.com/en/hyogo/A2801/A280102/rstLst/lunch/cond10-00-00/pan/"
+        },
+        {
+          "name": "Tea House MUSICA Kobe Motomachi",
+          "src": "https://tabelog.com/en/hyogo/A2801/A280102/rstLst/lunch/cond10-00-00/pan/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Rokko Alpine Pasture",
+          "src": "https://www.gltjp.com/en/article/item/21078/"
+        },
+        {
+          "name": "Mt. Rokko",
+          "src": "https://www.gltjp.com/en/article/item/21078/"
+        },
+        {
+          "name": "Kobe Concerto Lunch Cruise",
+          "src": "https://www.gltjp.com/en/article/item/21078/"
+        },
+        {
+          "name": "Kobe Maritime Museum",
+          "src": "https://enjoy-osaka-kyoto-kobe.com/article/a/kobe-parents-children/"
+        },
+        {
+          "name": "AQUARIUM × ART átoa",
+          "src": "https://enjoy-osaka-kyoto-kobe.com/article/a/kobe-parents-children/"
+        },
+        {
+          "name": "Kobe Mysterious Consulate of Trick Art",
+          "src": "https://enjoy-osaka-kyoto-kobe.com/article/a/kobe-parents-children/"
+        }
+      ],
+      "care": []
+    },
+    "jp-matsuyama": {
+      "eat": [
+        {
+          "name": "Kurume Tonkotsu Ramen Matsuyama Bunko",
+          "src": "https://retty.me/theme/100387023/"
+        },
+        {
+          "name": "Nagahama Ramen Nagahama Ichiban",
+          "src": "https://retty.me/theme/100387023/"
+        },
+        {
+          "name": "Menkobo Akaneya",
+          "src": "https://retty.me/theme/100387023/"
+        },
+        {
+          "name": "Daikokuya Honmachiten",
+          "src": "https://retty.me/theme/100387022/"
+        },
+        {
+          "name": "Asahi",
+          "src": "https://retty.me/theme/100794423/"
+        },
+        {
+          "name": "Taimeshi Maki",
+          "src": "https://retty.me/theme/100387023/"
+        },
+        {
+          "name": "Gan Hanten Kumanodai",
+          "src": "https://retty.me/theme/100387022/"
+        },
+        {
+          "name": "Taiyoken",
+          "src": "https://retty.me/theme/100387022/"
+        },
+        {
+          "name": "Shiki Seto no Aji Tanita",
+          "src": "https://retty.me/theme/100387022/"
+        },
+        {
+          "name": "Nishiki Iwamoto",
+          "src": "https://retty.me/theme/100794423/"
+        }
+      ],
+      "do": [
+        {
+          "name": "Sakanoue no Kumo Museum",
+          "src": "https://www.walkerplus.com/spot/ar0938s64214/"
+        },
+        {
+          "name": "Dogo Park",
+          "src": "https://www.walkerplus.com/spot/ar0938s44880/"
+        },
+        {
+          "name": "Yuzuki Castle Museum",
+          "src": "https://www.walkerplus.com/spot/ar0938s44880/"
+        },
+        {
+          "name": "Shiki Memorial Museum",
+          "src": "https://www.walkerplus.com/spot/ar0938s44880/"
+        }
+      ],
+      "care": [
+        {
+          "name": "Nihon Chozai Matsuyama Minami Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/matuyamaminami/"
+        },
+        {
+          "name": "Sukusuku Hiroba",
+          "src": "https://www.city.matsuyama.ehime.jp/kurashi/kosodate/boshi/20230116hothothiroba.html"
+        }
+      ]
+    },
+    "jp-nagano": {
+      "eat": [
+        {
+          "name": "Suyakame Zenkoji",
+          "src": "https://www.fun-japan.jp/en/articles/14488"
+        },
+        {
+          "name": "Fujita Kuemon Shoten",
+          "src": "https://www.fun-japan.jp/en/articles/14488"
+        },
+        {
+          "name": "Shinshu Oimo Kobo Zenkoji Nakamise",
+          "src": "https://www.fun-japan.jp/en/articles/14488"
+        },
+        {
+          "name": "Seishindo",
+          "src": "https://www.go-nagano.net/en/theme/id=16349"
+        },
+        {
+          "name": "Sake Manju Honpo Tsuruya",
+          "src": "https://www.go-nagano.net/en/theme/id=16349"
+        },
+        {
+          "name": "Suyakame Main Store",
+          "src": "https://www.go-nagano.net/en/theme/id=16349"
+        },
+        {
+          "name": "Shinshu Ringo Kashi Kobo BENI-BENI",
+          "src": "https://www.fun-japan.jp/en/articles/14488"
+        },
+        {
+          "name": "Usuyaki Cafe Mamemame",
+          "src": "https://www.gltjp.com/en/directory/item/17564/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-nara": {
+      "eat": [
+        {
+          "name": "Kanakana",
+          "src": "https://rurubu.jp/andmore/article/18335"
+        },
+        {
+          "name": "Yotsuba Cafe",
+          "src": "https://rurubu.jp/andmore/article/18335"
+        },
+        {
+          "name": "Saezuri (Shika no Fune)",
+          "src": "https://rurubu.jp/andmore/article/18335"
+        },
+        {
+          "name": "SARASA Yamato Tea Cafe",
+          "src": "https://rurubu.jp/andmore/article/18335"
+        },
+        {
+          "name": "Yoshinokuzu Sakura",
+          "src": "https://rurubu.jp/andmore/article/18335"
+        },
+        {
+          "name": "Mentouan",
+          "src": "https://aumo.jp/articles/127834"
+        },
+        {
+          "name": "Kasuya JR Nara Ekimae",
+          "src": "https://aumo.jp/articles/127834"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-nikko": {
+      "eat": [
+        {
+          "name": "Takumi-an",
+          "src": "https://tabelog.com/en/tochigi/A0903/rstLst/cond34-02-00/RC0199/"
+        },
+        {
+          "name": "Honke Yamabiko",
+          "src": "https://tabelog.com/en/tochigi/A0903/rstLst/cond34-02-00/RC0199/"
+        },
+        {
+          "name": "Asaya Rest House",
+          "src": "https://tabelog.com/en/tochigi/A0903/rstLst/cond34-02-00/RC0199/"
+        },
+        {
+          "name": "Kappo Yotaro",
+          "src": "https://tabelog.com/en/tochigi/A0903/rstLst/cond34-02-00/RC0199/"
+        },
+        {
+          "name": "Tsuruya",
+          "src": "https://tabelog.com/en/tochigi/A0903/rstLst/cond34-02-00/RC0199/"
+        },
+        {
+          "name": "Manpukutei",
+          "src": "https://tabelog.com/en/tochigi/A0903/rstLst/cond34-02-00/RC0199/"
+        },
+        {
+          "name": "Daimaru",
+          "src": "https://tabelog.com/en/tochigi/A0903/rstLst/cond34-02-00/RC0199/"
+        },
+        {
+          "name": "Nikko Yumoto Rest House",
+          "src": "https://www.mapple.net/region/a0301060100_g03050000_s-situation=family/spot/"
+        },
+        {
+          "name": "Yuba Cafe Hazuki",
+          "src": "https://cdn.gltjp.com/en/directory/item/17727/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-takayama": {
+      "eat": [
+        {
+          "name": "Sakaguchiya",
+          "src": "https://r.gnavi.co.jp/n143700/"
+        },
+        {
+          "name": "Daiki",
+          "src": "https://www.mapple.net/region/a0404040000_g03050b00_s-situation=family/spot/"
+        },
+        {
+          "name": "Jugemu",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Jinya Dango",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Hida Gyuman Honpo",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Tohouen",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Takayama Pudding Tei",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Train Bleu",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Nanakusa",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        },
+        {
+          "name": "Toraya Shinise",
+          "src": "https://www.mapple.net/region/a0404040100_g02060000_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-tohoku": {
+      "eat": [
+        {
+          "name": "Three Bridge",
+          "src": "https://www.mapple.net/article/33362/"
+        },
+        {
+          "name": "Grand Merci",
+          "src": "https://www.mapple.net/article/33362/"
+        },
+        {
+          "name": "Bonjour",
+          "src": "https://www.mapple.net/article/33362/"
+        },
+        {
+          "name": "Salon de Cafe Ange",
+          "src": "https://www.mapple.net/article/33330/"
+        },
+        {
+          "name": "Cafe Jeeba",
+          "src": "https://www.mapple.net/article/33330/"
+        },
+        {
+          "name": "Akita Kiritanpo Restaurant",
+          "src": "https://www.mapple.net/article/95803/"
+        },
+        {
+          "name": "Honke Abeya",
+          "src": "https://www.mapple.net/article/95803/"
+        },
+        {
+          "name": "Shokudoen",
+          "src": "https://www.mapple.net/original/459110/"
+        },
+        {
+          "name": "Seiroukaku",
+          "src": "https://www.mapple.net/original/459110/"
+        },
+        {
+          "name": "Agetsuma",
+          "src": "https://www.mapple.net/region/a0202040100_s-situation=family/spot/"
+        },
+        {
+          "name": "Inokoya Yamagatada",
+          "src": "https://www.mapple.net/region/a0202040100_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-yokohama": {
+      "eat": [
+        {
+          "name": "Yokohama Zhaji Pai",
+          "src": "https://rurubu.jp/andmore/article/21419"
+        },
+        {
+          "name": "Rouishin",
+          "src": "https://aumo.jp/articles/19478"
+        },
+        {
+          "name": "Yokohama Tachibanatei",
+          "src": "https://www.mapple.net/region/a0303080100_g03060600_s-situation=family/spot/"
+        },
+        {
+          "name": "Ocean (Navios Yokohama)",
+          "src": "https://www.mapple.net/region/a0303080100_g03060600_s-situation=family/spot/"
+        },
+        {
+          "name": "Kitchen Jo's",
+          "src": "https://www.mapple.net/region/a0303080100_g03060600_s-situation=family/spot/"
+        },
+        {
+          "name": "Cafe Kaeru",
+          "src": "https://www.mapple.net/region/a0303090000_g03040100_s-situation=family/spot/"
+        },
+        {
+          "name": "Kissa Minka",
+          "src": "https://www.mapple.net/region/a0303090000_g03040100_s-situation=family/spot/"
+        }
+      ],
+      "do": [],
+      "care": []
+    },
+    "jp-ise": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Sengukan Museum",
+          "src": "https://www.kankomie.or.jp/spot/21814"
+        },
+        {
+          "name": "Toba Sea-Folk Museum",
+          "src": "https://www.kankomie.or.jp/spot/3179"
+        },
+        {
+          "name": "Stone Hunter Ise-Shima",
+          "src": "https://www.kankomie.or.jp/spot/24483"
+        },
+        {
+          "name": "Shima Nature School",
+          "src": "https://www.kankomie.or.jp/spot/14774"
+        },
+        {
+          "name": "Shima Green Adventure",
+          "src": "https://www.kankomie.or.jp/report/1846"
+        },
+        {
+          "name": "Tomoyama Park",
+          "src": "https://www.iseshima-kanko.jp/en/theme/theme_2"
+        },
+        {
+          "name": "Sato-umi-an Ama Hut",
+          "src": "https://www.mapple.net/article/32061/"
+        }
+      ],
+      "care": []
+    },
+    "jp-kagoshima": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Shoko Shuseikan Museum",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10065"
+        },
+        {
+          "name": "Kagoshima City Museum of Art",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10032"
+        },
+        {
+          "name": "Amu Plaza Kagoshima Ferris Wheel",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10362"
+        },
+        {
+          "name": "Yunohira Observatory",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10025"
+        },
+        {
+          "name": "Arimura Lava Observatory",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10046"
+        },
+        {
+          "name": "Kurokami Buried Torii",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10024"
+        },
+        {
+          "name": "Saigo Takamori Statue",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10005"
+        },
+        {
+          "name": "Terukuni Shrine",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10026"
+        },
+        {
+          "name": "Tsukiyomi Shrine",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/20049"
+        },
+        {
+          "name": "Iso Beach",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10007"
+        },
+        {
+          "name": "Kotsuki River Bank",
+          "src": "https://www.kagoshima-yokanavi.jp/en/spot/10017"
+        }
+      ],
+      "care": []
+    },
+    "jp-nagasaki": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Nagasaki Atomic Bomb Museum",
+          "src": "https://japanactivity.com/things-to-do-in-nagasaki-with-kids"
+        },
+        {
+          "name": "Twenty-Six Martyrs Museum",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail17"
+        },
+        {
+          "name": "Oura Cathedral",
+          "src": "https://www.discover-nagasaki.com/en/itinerary/detail17"
+        }
+      ],
+      "care": []
+    },
+    "jp-osaka": {
+      "eat": [],
+      "do": [
+        {
+          "name": "Okashi Museum Tempozan",
+          "src": "https://www.gltjp.com/en/directory/item/18646/"
+        }
+      ],
+      "care": []
+    },
+    "jp-izu": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Nagatsuki Pharmacy Atami",
+          "src": "https://www.nagatuk.com/atami"
+        },
+        {
+          "name": "Kamome Pharmacy",
+          "src": "https://www.kamome-ph.com/"
+        }
+      ]
+    },
+    "jp-miyazaki": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Kirishima Children's Hall",
+          "src": "https://www.city.miyazaki.miyazaki.jp/education/support/facility/1339.html"
+        },
+        {
+          "name": "Tsunehisa Children's Hall",
+          "src": "https://www.city.miyazaki.miyazaki.jp/education/support/facility/1339.html"
+        }
+      ]
+    },
+    "jp-nagoya": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Sugi Pharmacy Meieki Sakura-dori",
+          "src": "https://www.sugi-net.jp/stores/001146"
+        },
+        {
+          "name": "Sugi Pharmacy Meieki Kita",
+          "src": "https://www.sugi-net.jp/stores/001326"
+        }
+      ]
+    },
+    "jp-shirahama": {
+      "eat": [],
+      "do": [],
+      "care": [
+        {
+          "name": "Ain Pharmacy Nanki Shirahama",
+          "src": "https://store.ainj.co.jp/detail/1100110/"
+        },
+        {
+          "name": "Nihon Chozai Kubancho Pharmacy",
+          "src": "https://www.nicho.co.jp/tenpo/kyuubanchou/"
+        }
+      ]
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (26 Nov 2026)": [
+      "Kotori Cafe Hirosaki",
+      "Goemon Hiroshima"
+    ],
+    "name or place did not match on Google Maps": [
+      "Suzuki Chaten Nagano",
+      "Bikkuri Udon Miyoshino Nara",
+      "Ko Zushi Nikko",
+      "Nodate An Nikko",
+      "Nikko Castella Honpo Bandai shop",
+      "Momiji Manju baking (listed only under the crafts centre)"
+    ],
+    "other": [
+      "Hiroshima Children's Museum (the 5-Days museum already listed)",
+      "HOF BRAU Yokohama (beer hall)",
+      "Dynamic Kitchen & Bar San Kobe (chain)",
+      "CenTerrace Tenmonkan (shopping centre)",
+      "Heike Beppu (already listed as Kappo Heike)",
+      "Yawataya Isogoro (a spice shop, packaged goods)",
+      "RiaRia Cafe and KOKOSICA Kobe (quote not on the page)"
+    ],
+    "still missing (no official page found)": "baby rooms in Beppu, Fuji, Niigata, Takamatsu, Toyama, Shirahama and Tohoku; a children's hospital near Fuji"
+  }
+}

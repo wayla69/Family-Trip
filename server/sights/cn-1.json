@@ -1,0 +1,1139 @@
+{
+  "cc": "cn",
+  "towns": [
+    {
+      "place": "cn-shanghai",
+      "sights": [
+        {
+          "name": { "en": "Shanghai Disneyland", "th": "เซี่ยงไฮ้ดิสนีย์แลนด์" },
+          "local": "上海迪士尼乐园",
+          "kind": "themepark",
+          "area": { "en": "Chuansha, Pudong", "th": "ชวนชา ผู่ตง" },
+          "what": { "en": "Disney's park in China: the tallest Disney castle, Fantasyland rides, Toy Story Land, Zootopia and fireworks at night", "th": "สวนสนุกดิสนีย์ในจีน มีปราสาทดิสนีย์สูงที่สุด เครื่องเล่นแฟนตาซีแลนด์ ทอยสตอรี่แลนด์ ซูโทเปีย และพลุตอนกลางคืน" },
+          "why": { "en": "Many gentle rides and character meetings for small children, baby care centres and buggy hire", "th": "มีเครื่องเล่นเบาๆ และจุดพบตัวการ์ตูนเยอะสำหรับเด็กเล็ก มีห้องดูแลเด็กอ่อนและรถเข็นให้เช่า" },
+          "tip": { "en": "Prices change by date, so pick a weekday; use the official app for show times and wait times", "th": "ราคาเปลี่ยนตามวัน เลือกวันธรรมดา ใช้แอปทางการดูรอบโชว์และเวลารอคิว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 9,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ¥475–799 a day by date · children 3–11 less · under 3 free", "th": "≈ ¥475–799 ต่อวันตามวันที่ไป · เด็ก 3–11 ปีถูกกว่า · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "req",
+          "q": "Shanghai Disneyland, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/shanghai-disneyland-tickets-guide-2026"
+        },
+        {
+          "name": { "en": "LEGOLAND Shanghai", "th": "เลโกแลนด์เซี่ยงไฮ้" },
+          "local": "上海乐高乐园",
+          "kind": "themepark",
+          "area": { "en": "Fengjing, Jinshan", "th": "เฟิงจิง จินซาน" },
+          "what": { "en": "The newest LEGO park, opened in 2025: gentle rides, building zones and a Miniland of Chinese cities in bricks", "th": "สวนสนุกเลโก้แห่งใหม่ เปิดปี 2025 มีเครื่องเล่นเบาๆ โซนต่อตัวต่อ และมินิแลนด์เมืองจีนทำจากตัวต่อ" },
+          "why": { "en": "Made for 2–12s, with rides small children can go on and space to build and play between them", "th": "ทำมาเพื่อเด็ก 2–12 ปี เครื่องเล่นเด็กเล็กเล่นได้ และมีพื้นที่ต่อเลโก้เล่นระหว่างทาง" },
+          "tip": { "en": "Six price levels by date; under 2s go free, and afternoon tickets are sometimes on offer", "th": "ราคามีหกระดับตามวัน เด็กต่ำกว่า 2 ขวบฟรี บางช่วงมีตั๋วช่วงบ่ายราคาพิเศษ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 6,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ¥319–599 adults · ¥255–479 children · under 2 free", "th": "≈ ¥319–599 ผู้ใหญ่ · ¥255–479 เด็ก · ต่ำกว่า 2 ขวบฟรี" },
+          "book": "req",
+          "q": "LEGOLAND Shanghai Resort, Jinshan, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.mrjjxw.com/articles/2025-04-02/3816866.html"
+        },
+        {
+          "name": { "en": "Shanghai Ocean Aquarium", "th": "เซี่ยงไฮ้โอเชียนอควาเรียม" },
+          "local": "上海海洋水族馆",
+          "kind": "aquarium",
+          "area": { "en": "Lujiazui, Pudong", "th": "ลู่เจียจุ่ย ผู่ตง" },
+          "what": { "en": "Fish of every ocean and a long underwater tunnel with sharks and rays, beside the Oriental Pearl Tower", "th": "ปลาจากทุกมหาสมุทรและอุโมงค์ใต้น้ำยาวมีฉลามกับกระเบน อยู่ข้างหอไข่มุก" },
+          "why": { "en": "Indoors for a rainy day; the moving walkway in the tunnel lets toddlers watch sharks pass overhead", "th": "อยู่ในร่มสำหรับวันฝนตก ทางเลื่อนในอุโมงค์ให้เด็กเล็กดูฉลามว่ายผ่านเหนือหัว" },
+          "tip": { "en": "Children are priced by height, so they stand by the ruler at the gate; book a day ahead online", "th": "เด็กคิดราคาตามส่วนสูง ต้องยืนวัดที่หน้าประตู จองออนไลน์ล่วงหน้า 1 วัน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ¥160 adults · ¥110 children 1.0–1.4 m · under 1 m free", "th": "≈ ¥160 ผู้ใหญ่ · ¥110 เด็กสูง 1.0–1.4 ม. · ต่ำกว่า 1 ม. ฟรี" },
+          "book": "rec",
+          "q": "Shanghai Ocean Aquarium, Lujiazui, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/shanghai-aquarium-tickets-2026"
+        },
+        {
+          "name": { "en": "Shanghai Zoo", "th": "สวนสัตว์เซี่ยงไฮ้" },
+          "local": "上海动物园",
+          "kind": "zoo",
+          "area": { "en": "Changning, near Hongqiao", "th": "ฉางหนิง ใกล้หงเฉียว" },
+          "what": { "en": "A big leafy city zoo with giant pandas and hundreds of other animals, close to Hongqiao airport", "th": "สวนสัตว์ใหญ่ในเมืองร่มรื่น มีแพนด้ายักษ์และสัตว์อีกหลายร้อยชนิด อยู่ใกล้สนามบินหงเฉียว" },
+          "why": { "en": "Cheap, flat and shady with big lawns; children under 1.3 m go in free", "th": "ราคาถูก ทางเรียบ ร่มรื่น มีสนามหญ้ากว้าง เด็กสูงไม่ถึง 1.3 ม. เข้าฟรี" },
+          "tip": { "en": "See the pandas first in the morning; it closes at 4:30pm in winter", "th": "ไปดูแพนด้าก่อนตอนเช้า หน้าหนาวปิด 4 โมงครึ่ง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ¥40 adults · children under 1.3 m free", "th": "≈ ¥40 ผู้ใหญ่ · เด็กสูงไม่ถึง 1.3 ม. ฟรี" },
+          "book": "none",
+          "q": "Shanghai Zoo, Changning District, Shanghai",
+          "ok": "2026-11",
+          "src": "https://citynewsservice.cn/service/Discover-Shanghai-Zoo:-A-70th-anniversary-biodiversity-walk-5yvo3gno04npd79a"
+        },
+        {
+          "name": { "en": "Shanghai Wild Animal Park", "th": "ซาฟารีเซี่ยงไฮ้ไวลด์แอนิมอลพาร์ก" },
+          "local": "上海野生动物园",
+          "kind": "zoo",
+          "area": { "en": "Nanhui, Pudong", "th": "หนานฮุ่ย ผู่ตง" },
+          "what": { "en": "A safari park where a bus drives through lions, tigers and bears, then a walking area with giraffes, pandas and shows", "th": "สวนซาฟารีนั่งรถบัสผ่านสิงโต เสือ และหมี แล้วเดินชมยีราฟ แพนด้า และการแสดง" },
+          "why": { "en": "Children see big animals from the safety of the bus, and giraffe feeding is a favourite", "th": "เด็กได้ดูสัตว์ใหญ่จากบนรถบัสอย่างปลอดภัย และชอบให้อาหารยีราฟมาก" },
+          "tip": { "en": "A long day out by metro line 16; go early, as the bus queue grows after 10am", "th": "ไกลจากเมือง นั่งรถไฟใต้ดินสาย 16 ไปแต่เช้า คิวรถบัสยาวขึ้นหลัง 10 โมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ¥165 adults · ¥82 ages 6–18 · under 6 or 1.3 m free", "th": "≈ ¥165 ผู้ใหญ่ · ¥82 อายุ 6–18 ปี · ต่ำกว่า 6 ขวบหรือ 1.3 ม. ฟรี" },
+          "book": "rec",
+          "q": "Shanghai Wild Animal Park, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/shanghai-wild-animal-park"
+        },
+        {
+          "name": { "en": "Shanghai Science and Technology Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีเซี่ยงไฮ้" },
+          "local": "上海科技馆",
+          "kind": "museumkid",
+          "area": { "en": "Century Avenue, Pudong", "th": "ถนนเซ็นจูรี ผู่ตง" },
+          "what": { "en": "A big hands-on science museum, reopened in 2026 after a three-year renewal: robots, space, a rainforest and a children's area", "th": "พิพิธภัณฑ์วิทยาศาสตร์ลงมือเล่นได้ เปิดใหม่ปี 2026 หลังปรับปรุงสามปี มีหุ่นยนต์ อวกาศ ป่าฝน และโซนเด็ก" },
+          "why": { "en": "Buttons, lights and things to touch everywhere, all indoors; children 6 and under go free", "th": "มีปุ่ม ไฟ และของให้จับทุกมุม อยู่ในร่มทั้งหมด เด็ก 6 ขวบลงมาเข้าฟรี" },
+          "tip": { "en": "Every ticket, free ones too, is booked online with a name; closed on Mondays", "th": "ทุกตั๋วรวมตั๋วฟรีต้องจองออนไลน์ระบุชื่อ ปิดวันจันทร์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "6 and under free (book online) · adult price on the official booking page", "th": "เด็ก 6 ขวบลงมาฟรี (จองออนไลน์) · ราคาผู้ใหญ่ดูที่หน้าจองทางการ" },
+          "book": "req",
+          "q": "Shanghai Science and Technology Museum, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.thepaper.cn/newsDetail_forward_32574698"
+        },
+        {
+          "name": { "en": "Shanghai Natural History Museum", "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติเซี่ยงไฮ้" },
+          "local": "上海自然博物馆",
+          "kind": "museum",
+          "area": { "en": "Jing'an Sculpture Park", "th": "สวนประติมากรรมจิ้งอัน" },
+          "what": { "en": "A spiral green building with dinosaur skeletons, a moving T. rex, whales and a wall of animals from every continent", "th": "อาคารเกลียวสีเขียวมีโครงกระดูกไดโนเสาร์ ทีเร็กซ์ขยับได้ วาฬ และกำแพงสัตว์จากทุกทวีป" },
+          "why": { "en": "Dinosaurs and big animals children name at once, indoors and lift-served; children 6 and under go free", "th": "ไดโนเสาร์และสัตว์ใหญ่ที่เด็กเรียกชื่อได้ทันที อยู่ในร่ม มีลิฟต์ เด็ก 6 ขวบลงมาฟรี" },
+          "tip": { "en": "Book online, free tickets too; closed on Mondays, open until 8pm on Saturdays", "th": "จองออนไลน์รวมตั๋วฟรี ปิดวันจันทร์ วันเสาร์เปิดถึง 2 ทุ่ม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "6 and under free (book online) · adult price on the official booking page", "th": "เด็ก 6 ขวบลงมาฟรี (จองออนไลน์) · ราคาผู้ใหญ่ดูที่หน้าจองทางการ" },
+          "book": "req",
+          "q": "Shanghai Natural History Museum, Jing'an Sculpture Park, Shanghai",
+          "ok": "2026-11",
+          "src": "https://m.thepaper.cn/newsDetail_forward_33456696"
+        },
+        {
+          "name": { "en": "Shanghai Astronomy Museum", "th": "พิพิธภัณฑ์ดาราศาสตร์เซี่ยงไฮ้" },
+          "local": "上海天文馆",
+          "kind": "museum",
+          "area": { "en": "Lingang, Pudong", "th": "หลินกั่ง ผู่ตง" },
+          "what": { "en": "A huge planetarium museum, a branch of the science museum: planets, meteorites and a dome show", "th": "พิพิธภัณฑ์ท้องฟ้าจำลองขนาดใหญ่ สาขาของพิพิธภัณฑ์วิทยาศาสตร์ มีดาวเคราะห์ อุกกาบาต และโชว์ในโดม" },
+          "why": { "en": "Dark rooms full of glowing planets hold small children's attention, and under 6s go free", "th": "ห้องมืดเต็มไปด้วยดาวเคราะห์เรืองแสงดึงความสนใจเด็กเล็ก เด็กต่ำกว่า 6 ขวบฟรี" },
+          "tip": { "en": "Far out in Lingang (metro line 16); book online, no tickets at the door, closed on Mondays", "th": "อยู่ไกลที่หลินกั่ง (รถไฟใต้ดินสาย 16) จองออนไลน์ ไม่ขายหน้างาน ปิดวันจันทร์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ¥30 adults · ¥15 ages 6+ · under 6 free (book online)", "th": "≈ ¥30 ผู้ใหญ่ · ¥15 เด็ก 6 ขวบขึ้นไป · ต่ำกว่า 6 ขวบฟรี (จองออนไลน์)" },
+          "book": "req",
+          "q": "Shanghai Astronomy Museum, Lingang, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/shanghai-planetarium"
+        },
+        {
+          "name": { "en": "Shanghai Children's Museum", "th": "พิพิธภัณฑ์เด็กเซี่ยงไฮ้" },
+          "local": "上海儿童博物馆",
+          "kind": "museumkid",
+          "area": { "en": "Songyuan Road, Changning", "th": "ถนนซงหยวน ฉางหนิง" },
+          "what": { "en": "A small museum made for children about the depths and heights of the Earth, with a dig zone and play corners", "th": "พิพิธภัณฑ์เล็กๆ สำหรับเด็ก เรื่องใต้ดินถึงท้องฟ้าของโลก มีโซนขุดค้นและมุมเล่น" },
+          "why": { "en": "Everything is at a child's height and meant to be touched, indoors and free to enter", "th": "ทุกอย่างอยู่ระดับสายตาเด็กและจับได้ อยู่ในร่ม เข้าฟรี" },
+          "tip": { "en": "Book through the museum's WeChat shop; a few areas inside charge a small fee", "th": "จองผ่านร้านค้าวีแชตของพิพิธภัณฑ์ บางโซนข้างในเก็บเงินเล็กน้อย" },
+          "ages": [2, 2, 2, 0],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free · some areas ≈ ¥20–50", "th": "ฟรี · บางโซน ≈ ¥20–50" },
+          "book": "rec",
+          "q": "Shanghai Children's Museum, 61 Songyuan Road, Changning, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.smartshanghai.com/venue/12279/shanghai_childrens_museum"
+        },
+        {
+          "name": { "en": "Oriental Pearl Tower", "th": "หอไข่มุกตะวันออก" },
+          "local": "东方明珠广播电视塔",
+          "kind": "views",
+          "area": { "en": "Lujiazui, Pudong", "th": "ลู่เจียจุ่ย ผู่ตง" },
+          "what": { "en": "The pink-balled TV tower of the skyline, with a glass-floored walk high up and a city history museum at its foot", "th": "หอส่งสัญญาณลูกบอลสีชมพูของเส้นขอบฟ้า มีทางเดินพื้นกระจกด้านบน และพิพิธภัณฑ์ประวัติเมืองที่ฐาน" },
+          "why": { "en": "A shape every child knows from pictures, all indoors, and the glass floor is a thrill", "th": "รูปทรงที่เด็กจำได้จากรูปภาพ อยู่ในร่มทั้งหมด พื้นกระจกตื่นเต้นมาก" },
+          "tip": { "en": "Children pay by height; avoid weekends and holidays, when the lift queue is long", "th": "เด็กคิดราคาตามส่วนสูง เลี่ยงวันหยุด คิวลิฟต์ยาว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ¥299 adults · ¥158 children 1–1.4 m · under 1 m free", "th": "≈ ¥299 ผู้ใหญ่ · ¥158 เด็กสูง 1–1.4 ม. · ต่ำกว่า 1 ม. ฟรี" },
+          "book": "rec",
+          "q": "Oriental Pearl Tower, Lujiazui, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.wanderinchina.com/zh/destinations/shanghai/oriental-pearl-tower/"
+        },
+        {
+          "name": { "en": "The Bund", "th": "เดอะบันด์" },
+          "local": "外滩",
+          "kind": "views",
+          "area": { "en": "Huangpu", "th": "หวงผู่" },
+          "what": { "en": "The riverside promenade of old stone buildings facing the towers of Pudong, lit up every evening", "th": "ทางเดินริมแม่น้ำหน้าตึกหินเก่า มองข้ามไปเห็นตึกสูงฝั่งผู่ตง เปิดไฟทุกเย็น" },
+          "why": { "en": "Free, wide and flat for a buggy; the lights coming on and the boats on the river delight children", "th": "ฟรี กว้าง และเรียบ เข็นรถเข็นสะดวก เด็กชอบดูไฟเปิดและเรือในแม่น้ำ" },
+          "tip": { "en": "Lights are on about 6pm to 10pm in winter; come just before dusk and watch from the upper walkway", "th": "หน้าหนาวไฟเปิดราว 6 โมงเย็นถึง 4 ทุ่ม มาก่อนพลบค่ำแล้วดูจากทางเดินชั้นบน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "The Bund, Zhongshan East 1st Road, Huangpu, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.travelchinaguide.com/attraction/shanghai/bund.htm"
+        },
+        {
+          "name": { "en": "Huangpu River cruise", "th": "ล่องเรือแม่น้ำหวงผู่" },
+          "local": "黄浦江游览",
+          "kind": "ride",
+          "area": { "en": "Shiliupu pier, the Bund", "th": "ท่าเรือสือลิ่วผู่ เดอะบันด์" },
+          "what": { "en": "A 45-minute boat trip past the Bund and the Pudong towers, best when the lights come on", "th": "นั่งเรือ 45 นาทีผ่านเดอะบันด์และตึกฝั่งผู่ตง สวยที่สุดตอนเปิดไฟ" },
+          "why": { "en": "Children sit and see the whole skyline without walking; the evening boat is a calm end to the day", "th": "เด็กนั่งดูเส้นขอบฟ้าทั้งหมดโดยไม่ต้องเดิน เรือรอบเย็นเป็นการปิดวันแบบสบายๆ" },
+          "tip": { "en": "Board between 7pm and 8pm for the lights; children under 1.3 m are free when the ticket is bought at the pier", "th": "ขึ้นเรือ 1–2 ทุ่มเพื่อดูไฟ เด็กสูงไม่ถึง 1.3 ม. ฟรีเมื่อซื้อตั๋วที่ท่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ¥100–150 adults · children under 1.3 m free at the pier", "th": "≈ ¥100–150 ผู้ใหญ่ · เด็กสูงไม่ถึง 1.3 ม. ฟรีเมื่อซื้อที่ท่า" },
+          "book": "rec",
+          "q": "Shiliupu Wharf, Huangpu, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.travelofchina.com/shanghai-ferry-fares/"
+        },
+        {
+          "name": { "en": "Yu Garden", "th": "สวนอวี้หยวน" },
+          "local": "豫园",
+          "kind": "culture",
+          "area": { "en": "Old City, Huangpu", "th": "เมืองเก่า หวงผู่" },
+          "what": { "en": "A Ming-era garden of rockeries, ponds of goldfish and zigzag bridges, inside the old town's lanes and snack streets", "th": "สวนจีนสมัยหมิง มีภูเขาหิน สระปลาทอง และสะพานซิกแซก อยู่กลางตรอกเมืองเก่าและถนนขนม" },
+          "why": { "en": "Children like the dragon walls, the fish and the little caves; the bazaar outside has dumplings to try", "th": "เด็กชอบกำแพงมังกร ปลา และถ้ำเล็กๆ ตลาดด้านนอกมีเกี๊ยวซาลาเปาให้ชิม" },
+          "tip": { "en": "Closed on Mondays; go at 9am before the crowds, and leave the buggy outside, as there are many steps", "th": "ปิดวันจันทร์ ไปตอน 9 โมงก่อนคนเยอะ ทิ้งรถเข็นไว้ข้างนอกเพราะมีขั้นบันไดเยอะ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ¥40 · ¥30 in Dec–Mar and Jul–Aug", "th": "≈ ¥40 · ธ.ค.–มี.ค. และ ก.ค.–ส.ค. ¥30" },
+          "book": "rec",
+          "q": "Yu Garden, Anren Street, Huangpu, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/shanghai-yu-garden-guide"
+        },
+        {
+          "name": { "en": "Century Park", "th": "สวนเซ็นจูรี" },
+          "local": "世纪公园",
+          "kind": "park",
+          "area": { "en": "Pudong", "th": "ผู่ตง" },
+          "what": { "en": "Pudong's biggest park: lakes with pedal and electric boats, lawns, a playground, a mini train and bike paths", "th": "สวนใหญ่ที่สุดในผู่ตง มีทะเลสาบพายเรือและเรือไฟฟ้า สนามหญ้า สนามเด็กเล่น รถไฟเล็ก และทางจักรยาน" },
+          "why": { "en": "Free and open all day, with grass to run on, a sand pit and boats that small children love", "th": "เข้าฟรีเปิดทั้งวัน มีหญ้าให้วิ่ง บ่อทราย และเรือที่เด็กเล็กชอบ" },
+          "tip": { "en": "Some old pages still list a fee; boats and the mini train are paid extras", "th": "บางเว็บเก่ายังบอกว่าเก็บค่าเข้า เรือและรถไฟเล็กเสียเงินเพิ่ม" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · boats ≈ ¥100 an hour", "th": "ฟรี · เรือ ≈ ¥100 ต่อชั่วโมง" },
+          "book": "none",
+          "q": "Century Park, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://citiesinsider.com/country/china/shanghai/parks-and-green-spaces/en"
+        },
+        {
+          "name": { "en": "Shanghai Chenshan Botanical Garden", "th": "สวนพฤกษศาสตร์เฉินซาน" },
+          "local": "上海辰山植物园",
+          "kind": "nature",
+          "area": { "en": "Songjiang", "th": "ซงเจียง" },
+          "what": { "en": "A vast garden with big glasshouses of desert and tropical plants and an old quarry with a waterfall", "th": "สวนกว้างใหญ่มีเรือนกระจกพืชทะเลทรายและพืชเขตร้อน และเหมืองหินเก่ามีน้ำตก" },
+          "why": { "en": "Lawns and space to run, and the glasshouses make a warm, dry stop on a cold or wet day", "th": "มีสนามหญ้าให้วิ่งเล่น และเรือนกระจกเป็นที่พักอุ่นๆ ไม่เปียกในวันหนาวหรือฝนตก" },
+          "tip": { "en": "Best in spring for tulips; the glasshouses are an extra ticket", "th": "สวยที่สุดหน้าใบไม้ผลิช่วงทิวลิป เรือนกระจกต้องซื้อตั๋วเพิ่ม" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ ¥60 adults · glasshouses ≈ ¥30 more · children under 1.2–1.3 m free", "th": "≈ ¥60 ผู้ใหญ่ · เรือนกระจกเพิ่ม ≈ ¥30 · เด็กสูงไม่ถึง 1.2–1.3 ม. ฟรี" },
+          "book": "rec",
+          "q": "Shanghai Chenshan Botanical Garden, Songjiang, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.travelchinaguide.com/attraction/shanghai/chenshan-botanical-garden.htm"
+        },
+        {
+          "name": { "en": "Zhujiajiao Water Town", "th": "เมืองน้ำจูเจียเจี่ยว" },
+          "local": "朱家角",
+          "kind": "oldtown",
+          "area": { "en": "Qingpu", "th": "ชิงผู่" },
+          "what": { "en": "A canal town of stone bridges, white houses and rowing boats, about an hour from the city by metro line 17", "th": "เมืองริมคลองมีสะพานหิน บ้านขาว และเรือพาย ห่างจากเมืองราวหนึ่งชั่วโมงด้วยรถไฟใต้ดินสาย 17" },
+          "why": { "en": "A short boat ride along the canals is a highlight for children, and the snack stalls keep them going", "th": "นั่งเรือสั้นๆ ตามคลองเป็นไฮไลต์ของเด็ก และแผงขนมช่วยให้เด็กเดินต่อได้" },
+          "tip": { "en": "Go on a weekday morning; the hump bridges have steps, so a carrier works better than a buggy", "th": "ไปเช้าวันธรรมดา สะพานโค้งมีขั้นบันได ใช้เป้อุ้มดีกว่ารถเข็น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to walk · boat ≈ ¥120–150 a boat for up to 6", "th": "เดินเที่ยวฟรี · เรือ ≈ ¥120–150 ต่อลำ นั่งได้ 6 คน" },
+          "book": "none",
+          "q": "Zhujiajiao Ancient Town, Qingpu, Shanghai",
+          "ok": "2026-11",
+          "src": "https://goasia.cc/en/article/zhujiajiao-water-town"
+        },
+        {
+          "name": { "en": "Shanghai Haichang Ocean Park", "th": "ไห่ชาง โอเชียนปาร์ค เซี่ยงไฮ้" },
+          "local": "上海海昌海洋公园",
+          "kind": "themepark",
+          "area": { "en": "Lingang, Pudong", "th": "หลิงกั่ง ผู่ตง" },
+          "what": { "en": "A big marine park with a polar zone, whales and dolphins, sea-lion and bird shows, plus rides and a water area", "th": "สวนสัตว์ทะเลขนาดใหญ่ มีโซนขั้วโลก วาฬและโลมา โชว์สิงโตทะเลและนก พร้อมเครื่องเล่นและโซนน้ำ" },
+          "why": { "en": "Many indoor halls give shade and a rainy-day plan, and the shows are short enough for small children", "th": "มีโถงในร่มหลายแห่งให้ร่มเงาและใช้วันฝนตกได้ โชว์สั้นพอสำหรับเด็กเล็ก" },
+          "tip": { "en": "Hours change by season (off-season closes about 17:30 or 18:00); it is far out in Lingang, so allow a full day", "th": "เวลาเปลี่ยนตามฤดูกาล (นอกฤดูปิดราว 17:30–18:00) อยู่ไกลที่หลิงกั่ง ควรเผื่อทั้งวัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ ¥339 adults weekdays (from ¥399 peak days) · reduced for 1.0–1.4 m", "th": "≈ ¥339 ผู้ใหญ่วันธรรมดา (วันแน่นเริ่ม ¥399) · ลดราคาสำหรับสูง 1.0–1.4 ม." },
+          "book": "rec",
+          "q": "Shanghai Haichang Ocean Park, Yinfei Road, Nanhui New Town, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://intotravelchina.com/en/articles/1776674497638730963.html"
+        },
+        {
+          "name": { "en": "Shanghai Tower", "th": "เซี่ยงไฮ้ทาวเวอร์" },
+          "kind": "views",
+          "area": { "en": "Lujiazui, Pudong", "th": "ลู่เจียจุ่ย ผู่ตง" },
+          "what": { "en": "The city's tallest tower, with an observation deck on the 118th floor and supersonic elevators from a launch platform on B2.", "th": "ตึกที่สูงที่สุดในเมือง มีดาดฟ้าชมวิวชั้น 118 และลิฟต์ความเร็วสูงจากชั้น B2" },
+          "why": { "en": "Children under 1.2 m enter free, and the fast lift and the high deck are the draw.", "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี และลิฟต์เร็วกับดาดฟ้าสูงคือไฮไลต์" },
+          "tip": { "en": "Passport check at entry; the elevator hall queue can take up to 2 hours on weekends.", "th": "ตรวจหนังสือเดินทางตอนเข้า; คิวห้องลิฟต์อาจนานถึง 2 ชั่วโมงในวันหยุดสุดสัปดาห์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ¥180 adult ticket · children under 1.2 m free", "th": "≈ ¥180 ตั๋วผู้ใหญ่ · เด็กสูงไม่ถึง 1.2 ม. ฟรี" },
+          "book": "rec",
+          "q": "Shanghai Tower, Lujiazui, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.wanderinchina.com/destinations/shanghai/shanghai-tower/"
+        },
+        {
+          "name": { "en": "Qibao Old Town", "th": "เมืองโบราณชีเป่า" },
+          "kind": "oldtown",
+          "area": { "en": "Qibao Station, Metro Line 9", "th": "สถานีชีเป่า รถไฟใต้ดินสาย 9" },
+          "what": { "en": "A compact old water town with canals, restored storefronts and street snacks, about 40 minutes from People's Square by metro.", "th": "เมืองน้ำโบราณขนาดกะทัดรัด มีคลอง ร้านที่บูรณะแล้ว และของว่างริมทาง ห่างจากจัตุรัสประชาชนราว 40 นาทีโดยรถไฟใต้ดิน" },
+          "why": { "en": "The boat ride and the small museums are the easy winners with children.", "th": "นั่งเรือและพิพิธภัณฑ์เล็กๆ คือสิ่งที่เด็กๆ ชอบง่ายที่สุด" },
+          "tip": { "en": "Best after dark, when the lanterns glow; two to three unhurried hours is enough.", "th": "สวยที่สุดหลังมืดเมื่อโคมไฟสว่าง ใช้เวลาแบบไม่รีบราว 2–3 ชั่วโมงก็พอ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Qibao Old Town, Minhang, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.chinatravelplaces.com/qibao-old-town-guide/"
+        },
+        {
+          "name": { "en": "Temple of the Seven Treasures", "th": "วัดชีเป่า" },
+          "kind": "culture",
+          "area": { "en": "Qibao, north end", "th": "ชีเป่า ปลายทางด้านเหนือ" },
+          "what": { "en": "A working Buddhist temple at the north end of Qibao Old Town.", "th": "วัดพุทธที่ยังใช้งานอยู่ ทางปลายด้านเหนือของเมืองโบราณชีเป่า" },
+          "why": { "en": "A calm break from the busy streets of the water town.", "th": "จุดพักสงบๆ จากถนนที่วุ่นวายของเมืองน้ำ" },
+          "tip": { "en": "Allow about an hour.", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Temple of the Seven Treasures, Qibao, Minhang, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.chinatravelplaces.com/qibao-old-town-guide/"
+        },
+        {
+          "name": { "en": "Shanghai Changfeng Aquarium & Stingray Bay", "th": "อควาเรียมฉางเฟิงเซี่ยงไฮ้และสติงเรย์เบย์" },
+          "kind": "aquarium",
+          "area": { "en": "Changfeng Park", "th": "สวนฉางเฟิง" },
+          "what": { "en": "A national 4A scenic area aquarium 13 m beneath Silver Hoe Lake, with over 300 species and ray and starfish zones.", "th": "อควาเรียมระดับทัศนียภาพ 4A ระดับชาติ อยู่ใต้ทะเลสาบ Silver Hoe 13 ม. มีสัตว์กว่า 300 ชนิด และโซนกระเบนกับดาวทะเล" },
+          "why": { "en": "A Dancing with Rays zone and a Starfish Touch Zone, so children can touch and watch.", "th": "มีโซน Dancing with Rays และ Starfish Touch Zone เด็กๆ ได้ทั้งแตะและดู" },
+          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Shanghai Changfeng Aquarium, Changfeng Park, Shanghai",
+          "ok": "2026-11",
+          "src": "https://www.smartshanghai.com/articles/kids-and-family/where-to-spend-time-with-your-little-one"
+        },
+        {
+          "name": { "en": "LEGOLAND Discovery Centre, Changfeng", "th": "เลโก้แลนด์ ดิสคัฟเวอรี เซ็นเตอร์ ฉางเฟิง" },
+          "kind": "play",
+          "area": { "en": "Changfeng", "th": "ฉางเฟิง" },
+          "what": { "en": "An indoor LEGO building and play centre, separate from the Shanghai LEGOLAND resort.", "th": "ศูนย์ต่อเลโก้และเล่นในร่ม แยกจากรีสอร์ตเลโก้แลนด์เซี่ยงไฮ้" },
+          "why": { "en": "Indoor building and play, so the children stay busy whatever the weather.", "th": "ต่อเลโก้และเล่นในร่ม เด็กๆ เพลินได้ไม่ว่าอากาศจะเป็นอย่างไร" },
+          "tip": { "en": "Check the operator and location before buying; this is not the resort.", "th": "เช็กผู้ให้บริการและที่ตั้งก่อนซื้อบัตร ที่นี่ไม่ใช่รีสอร์ต" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "LEGOLAND Discovery Centre, Changfeng, Shanghai",
+          "ok": "2026-11",
+          "src": "https://localshanghai.com/shanghai-with-kids-guide/"
+        },
+        {
+          "name": { "en": "Gongqing Forest Park", "th": "สวนป่ากงชิง" },
+          "kind": "park",
+          "area": { "en": "Yangpu", "th": "หยางผู่" },
+          "what": { "en": "A forest park in Yangpu, a separate outing from the Pudong parks.", "th": "สวนป่าในเขตหยางผู่ เป็นอีกทริปแยกจากสวนในผู่ตง" },
+          "why": { "en": "A manageable walk among trees, leaves and seasonal planting.", "th": "เดินเล่นไม่เหนื่อยท่ามกลางต้นไม้ ใบไม้ และไม้ดอกตามฤดู" },
+          "tip": { "en": "Choose a smaller section and a way to finish early.", "th": "เลือกเดินเพียงส่วนเล็กๆ และเตรียมทางจบให้เร็ว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Gongqing Forest Park, Yangpu, Shanghai",
+          "ok": "2026-11",
+          "src": "https://localshanghai.com/shanghai-with-kids-guide/"
+        },
+        {
+          "name": { "en": "Fuxing Park", "th": "สวนฟู่ซิง" },
+          "kind": "park",
+          "area": { "en": "Central Shanghai", "th": "ใจกลางเซี่ยงไฮ้" },
+          "what": { "en": "A central-city park, used as a short outdoor pause between other stops.", "th": "สวนกลางเมือง ใช้เป็นที่พักกลางแจ้งสั้นๆ ระหว่างจุดอื่น" },
+          "why": { "en": "A shorter park break in the middle of the city, not another full attraction.", "th": "พักสวนสั้นๆ กลางเมือง ไม่ใช่แหล่งท่องเที่ยวเต็มวันอีกแห่ง" },
+          "tip": { "en": "Allow about an hour.", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Fuxing Park, Shanghai",
+          "ok": "2026-11",
+          "src": "https://localshanghai.com/shanghai-with-kids-guide/"
+        },
+        {
+          "name": { "en": "Expo Culture Park Greenhouse", "th": "เรือนกระจกสวนวัฒนธรรมเอ็กซ์โป" },
+          "kind": "nature",
+          "area": { "en": "Expo Culture Park, Pudong", "th": "สวนวัฒนธรรมเอ็กซ์โป ผู่ตง" },
+          "what": { "en": "Three greenhouse halls: agave and cactus forms, a Maya-inspired rainforest and an Inca highland setting.", "th": "เรือนกระจกสามห้องโถง: ทรงต้นอากาเว่และกระบองเพชร ป่าฝนสไตล์มายา และที่ราบสูงสไตล์อินคา" },
+          "why": { "en": "Compare a dry-environment plant with a rainforest plant, and constructed scenery with living plants.", "th": "เทียบพืชในที่แห้งกับพืชป่าฝน และฉากสร้างกับพืชมีชีวิต" },
+          "tip": { "en": "Allow about an hour.", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Expo Culture Park Greenhouse, 199 Jiming Road, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://localshanghai.com/shanghai-with-kids-guide/"
+        },
+      {"name":{"en":"Shanghai Natural Wildlife Insect Kingdom","th":"อินเซ็กต์คิงดอมของเซี่ยงไฮ้"},"kind":"museumkid","area":{"en":"Lujiazui","th":"หลู่เจียจุ่ย"},"what":{"en":"A small hands-on hall devoted to insects, amphibians and reptiles, next to the Oriental Pearl Tower.","th":"ห้องเล็กที่ลงมือทำกับแมลง สัตว์สะเทินน้ำสะเทินบก และสัตว์เลื้อยคลาน ติดหอไข่มุกตะวันออก"},"why":{"en":"The page says kids can hold stick insects and that the hall is small, cheap and hands-on in a way the bigger museums are not.","th":"หน้าเว็บบอกว่าเด็กจับแมลงกิ่งไม้ได้ ห้องเล็ก ราคาไม่แพง และลงมือทำได้มากกว่าพิพิธภัณฑ์ใหญ่"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shanghai Natural Wildlife Insect Kingdom, 1 Fenghe Road, Lujiazui, Shanghai","ok":"2026-11","src":"https://ryo.co/en/articles/china/shanghai/things-do-shanghai-kids/"},
+      {"name":{"en":"Bund Sightseeing Tunnel","th":"อุโมงค์ชมเมืองบันด์"},"kind":"ride","area":{"en":"The Bund","th":"บันด์"},"what":{"en":"A few-minute ride under the Huangpu River in small automated pods with strobing lights and synthesised sound.","th":"นั่งราวไม่กี่นาทีใต้แม่น้ำหวงผู่ในคาปซูลอัตโนมัติเล็กๆ มีไฟกระพริบและเสียงสังเคราะห์"},"why":{"en":"The page says kids find it mesmerizing or slightly too intense, so it suits a child who likes lights and sound.","th":"หน้าเว็บบอกว่าเด็กบางคนชอบมาก บางคนก็รู้สึกเข้มเกินไป เหมาะกับเด็กที่ชอบแสงและเสียง"},"ages":[1,2,2,2],"hrs":0.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Bund Sightseeing Tunnel, The Bund, Shanghai","ok":"2026-11","src":"https://ryo.co/en/articles/china/shanghai/things-do-shanghai-kids/"},
+      {"name":{"en":"Shanghai World Financial Center","th":"ศูนย์การเงินโลกเซี่ยงไฮ้"},"kind":"views","area":{"en":"Lujiazui","th":"หลู่เจียจุ่ย"},"what":{"en":"An observation deck with a glass-floored skywalk cut into the trapezoid gap near its summit.","th":"ดาดฟ้าชมวิว มีทางเดินกระจกบนพื้นที่ตัดเป็นช่องสี่เหลี่ยมคางหมูใกล้ยอด"},"why":{"en":"The page says its lines often move faster than at the newer towers nearby, which helps when a group is short on patience.","th":"หน้าเว็บบอกว่าคิวมักเคลื่อนเร็วกว่าตึกใหม่ใกล้เคียง เหมาะกับกลุ่มที่ใจร้อน"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Shanghai World Financial Center, 100 Century Avenue, Pudong, Shanghai","ok":"2026-11","src":"https://ryo.co/en/articles/china/shanghai/things-do-shanghai-kids/"},
+      {"name":{"en":"Shanghai Circus World","th":"โชว์ละครสัตว์เซี่ยงไฮ้"},"kind":"show","area":{"en":"Jing'an","th":"จิ้งอาน"},"what":{"en":"A nightly acrobatics show that has run for years.","th":"โชว์กายกรรมทุกคืนที่แสดงมาหลายปี"},"why":{"en":"The page says it impresses kids who have never seen a human pyramid built on stage.","th":"หน้าเว็บบอกว่าเด็กที่ไม่เคยเห็นการสร้างเสาคนบนเวทีจะประทับใจ"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shanghai Circus World, 2266 Gonghexin Road, Jing'an, Shanghai","ok":"2026-11","src":"https://ryo.co/en/articles/china/shanghai/things-do-shanghai-kids/"},
+      {"name":{"en":"People's Park","th":"สวนประชาชน"},"kind":"park","area":{"en":"People's Square","th":"จัตุรัสประชาชน"},"what":{"en":"A park beside People's Square with open paved space, shady paths and a fountain.","th":"สวนติดจัตุรัสประชาชน มีพื้นที่ปูกว้าง ทางเดินร่มรื่น และน้ำพุ"},"why":{"en":"The page says it has open space for scooters and a fountain that draws local kids on warm evenings.","th":"หน้าเว็บบอกว่ามีพื้นที่กว้างให้เล่นสกู๊ตเตอร์ และน้ำพุที่เด็กท้องถิ่นมาเล่นตอนเย็นอุ่นๆ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"People's Park, People's Square, Shanghai","ok":"2026-11","src":"https://ryo.co/en/articles/china/shanghai/things-do-shanghai-kids/"},
+      {"name":{"en":"Zhongshan Park","th":"สวนจงซาน"},"kind":"park","area":{"en":"Changning","th":"ฉางหนิง"},"what":{"en":"A smaller park closer to downtown with a children's play area.","th":"สวนขนาดเล็กใกล้ใจกลาง มีสนามเด็กเล่น"},"why":{"en":"The page says locals use its children's play area far more than tourists, which usually means fewer crowds.","th":"หน้าเว็บบอกว่าคนท้องถิ่นใช้สนามเด็กเล่นมากกว่านักท่องเที่ยว ซึ่งมักหมายถึงคนน้อยกว่า"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Zhongshan Park, 780 Changning Road, Changning, Shanghai","ok":"2026-11","src":"https://ryo.co/en/articles/china/shanghai/things-do-shanghai-kids/"},
+      {"name":{"en":"Lujiazui Central Green","th":"สวนเขียวลู่เจียจุ่ย"},"kind":"views","area":{"en":"Lujiazui Ring Road, Pudong","th":"ถนนวงแหวนลู่เจียจุ่ย ผู่ตง"},"what":{"en":"A green space across the river with a view of the Lujiazui towers.","th":"พื้นที่สีเขียวข้ามแม่น้ำ มีวิวตึกลู่เจียจุ่ย"},"why":{"en":"The page says it gives a proper vantage point on the towers without an admission ticket.","th":"หน้าเว็บบอกว่าให้มองตึกได้จากจุดชมวิวจริงโดยไม่ต้องซื้อตั๋ว"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Lujiazui Central Green, Lujiazui Ring Road, Pudong, Shanghai","ok":"2026-11","src":"https://ryo.co/en/articles/china/shanghai/things-do-shanghai-kids/"},
+      {"name":{"en":"Shanghai Urban Planning Center","th":"พิพิธภัณฑ์การวางผังเมืองเซี่ยงไฮ้"},"kind":"museum","area":{"en":"Huangpu District, near Xizang Zhong Road","th":"เขตหวงผู่ ใกล้ถนนซีจั้งจงลู่"},"what":{"en":"A hall with a large scale model of Shanghai and many interactive displays about how the city is planned.","th":"ห้องที่มีโมเดลเมืองเซี่ยงไฮ้ขนาดใหญ่และจอแสดงผลแบบโต้ตอบมากมาย ว่าด้วยการวางผังเมือง"},"why":{"en":"The page says it suits older kids who like maps, cities or pressing buttons.","th":"หน้าเว็บบอกว่าเหมาะกับเด็กโตที่ชอบแผนที่ เมือง หรือการกดปุ่ม"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shanghai Urban Planning Center, 100 Renmin Dadao, Huangpu, Shanghai","ok":"2026-11","src":"https://www.smartshanghai.com/articles/kids-and-family/2026-guide-kids-indoor-activities-for-rainy-days"},
+      {"name":{"en":"Pottery People","th":"ปอตเตอรีพีเพิล"},"kind":"play","area":{"en":"Julu Lu, near Fumin Lu","th":"ถนนจูลู่ ใกล้ถนนฝูหมิน"},"what":{"en":"Short, kid-friendly clay sessions where children squish, shape and paint their own pieces.","th":"คลาสดินเหนียวสั้นที่เด็กบีบ ขึ้นรูป และระบายสีชิ้นงานของตัวเอง"},"why":{"en":"The page says it is calm and hands-on, even for toddlers.","th":"หน้าเว็บบอกว่าสงบและลงมือทำ เหมาะแม้กับเด็กวัยเตาะแตะ"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Pottery People, 741 Julu Road, Shanghai","ok":"2026-11","src":"https://www.smartshanghai.com/articles/kids-and-family/2026-guide-kids-indoor-activities-for-rainy-days"},
+      {"name":{"en":"Peppa Pig World of Play","th":"เพปปาพิก เวิลด์ ออฟ เพลย์"},"kind":"play","area":{"en":"LCM Plaza, Zhangyang Road, Pudong","th":"ห้างแอลซีเอ็ม ถนนจางหยาง ผู่ตง"},"what":{"en":"Fully themed rooms based on the show's sets, with soft climbing zones and character meet-and-greets.","th":"ห้องตกแต่งตามฉากในรายการ มีมุมปีนนุ่มและการพบตัวการ์ตูน"},"why":{"en":"The page says it is a no-brainer for a child in their Peppa phase.","th":"หน้าเว็บบอกว่าเป็นตัวเลือกที่ดีสำหรับเด็กช่วงชอบเพปปา"},"ages":[2,2,1,0],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Peppa Pig World of Play, 3F LCM Plaza, 2389 Zhangyang Road, Pudong, Shanghai","ok":"2026-11","src":"https://www.smartshanghai.com/articles/kids-and-family/2026-guide-kids-indoor-activities-for-rainy-days"},
+      {"name":{"en":"Jump 360 (Xingyi Lu)","th":"จัมพ์ 360 (ถนนซิงอี้)"},"kind":"play","area":{"en":"Shanghai Expo, Xingyi Road, Changning","th":"เซี่ยงไฮ้เอ็กซ์โป ถนนซิงอี้ ฉางหนิง"},"what":{"en":"A huge indoor trampoline park where kids can bounce for as long as they like.","th":"สวนแทรมโพลีนในร่มขนาดใหญ่ เด็กกระโดดได้นานตามใจ"},"why":{"en":"The page says it is the place for a high-energy kid who bounces off the walls at home.","th":"หน้าเว็บบอกว่าเหมาะกับเด็กที่พลังงานสูง กระโดดรอบบ้าน"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jump 360, 4/F Shanghai Expo, 99 Xingyi Road, Changning, Shanghai","ok":"2026-11","src":"https://www.smartshanghai.com/articles/kids-and-family/2026-guide-kids-indoor-activities-for-rainy-days"},
+      {"name":{"en":"Adventure Zone","th":"แอดเวนเจอร์โซน"},"kind":"play","area":{"en":"Kerry Hotel Pudong","th":"โรงแรมเคอร์รี่ ผู่ตง"},"what":{"en":"An indoor jungle gym with slides, obstacle courses and a viewing area for parents.","th":"สนามปีนป่ายในร่มมีสไลด์ สนามกั้นอุปสรรค และพื้นที่ชมสำหรับพ่อแม่"},"why":{"en":"The page says it is more polished than an average mall play area and has a place for parents to sit down.","th":"หน้าเว็บบอกว่าเรียบร้อยกว่าสนามเด็กเล่นในห้างทั่วไป และมีที่ให้พ่อแม่นั่ง"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Adventure Zone, Kerry Hotel Pudong, Shanghai","ok":"2026-11","src":"https://www.smartshanghai.com/articles/kids-and-family/2026-guide-kids-indoor-activities-for-rainy-days"},
+      {"name":{"en":"Nanyuan Riverside Green Belt Children's Sports Park","th":"สนามเด็กเล่นกีฬาริมแม่น้ำหนานหยวน"},"kind":"play","area":{"en":"Huangpu District","th":"เขตหวงผู่"},"what":{"en":"A 960 sq m playground with over 30 pieces of equipment, including a sandpit, trampolines, family swings and climbing frames.","th":"สนามเด็กเล่นขนาด 960 ตารางเมตร มีอุปกรณ์กว่า 30 ชิ้น รวมบ่อทราย แทรมโพลีน ชิงช้าครอบครัว และโครงปีน"},"why":{"en":"The page lists a sandpit, trampolines, family swings, climbing frames and a graffiti wall for children.","th":"หน้าเว็บบอกว่ามีบ่อทราย แทรมโพลีน ชิงช้าครอบครัว โครงปีน และกำแพงกราฟฟิตี้สำหรับเด็ก"},"ages":[1,2,2,1],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nanyuan Riverside Green Belt, Huangpu, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
+      {"name":{"en":"Shanghai Submarine Exhibition Hall","th":"พิพิธภัณฑ์เรือดำน้ำเซี่ยงไฮ้"},"kind":"museum","area":{"en":"Huangpu Riverside, East Longhua Road","th":"ริมแม่น้ำหวงผู่ ถนนหลงหัวตะวันออก"},"what":{"en":"A retired first-generation submarine on the Huangpu riverside, on the site of the former Jiangnan Shipyard.","th":"เรือดำน้ำรุ่นแรกที่ปลดประจำการแล้วริมแม่น้ำหวงผู่ ตรงที่ตั้งอู่ต่อเรือเจียงหนานเดิม"},"why":{"en":"The page says kids can learn about submarines and the area's industrial heritage.","th":"หน้าเว็บบอกว่าเด็กเรียนรู้เรื่องเรือดำน้ำและมรดกอุตสาหกรรมของพื้นที่ได้"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shanghai Submarine Exhibition Hall, Dock No 3, 98 East Longhua Road, Huangpu, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
+      {"name":{"en":"Shanghai Tunnel Science and Technology Museum","th":"พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีอุโมงค์เซี่ยงไฮ้"},"kind":"museum","area":{"en":"Huangpu District","th":"เขตหวงผู่"},"what":{"en":"A museum of tunnel technology with a realistic tunnel, a large 3D shield machine model and an emergency escape slide game.","th":"พิพิธภัณฑ์เทคโนโลยีอุโมงค์ มีอุโมงค์จำลองสมจริง โมเดลเครื่องขุดอุโมงค์ 3 มิติขนาดใหญ่ และเกมสไลด์หนีไฟ"},"why":{"en":"The page names an interactive emergency escape slide game, which keeps older children busy.","th":"หน้าเว็บบอกว่าเกมสไลด์หนีไฟแบบโต้ตอบทำให้เด็กโตสนุกนาน"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shanghai Tunnel Science and Technology Museum, Huangpu, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
+      {"name":{"en":"One East","th":"วันอีสต์"},"kind":"play","area":{"en":"South Zhongshan Road","th":"ถนนจงซานใต้"},"what":{"en":"A free outdoor children's playground on the third-floor rooftop garden, with colourful tracks and play structures.","th":"สนามเด็กเล่นกลางแจ้งฟรีบนสวนดาดฟ้าชั้นสาม มีทางวิ่งสีสดใสและโครงเล่น"},"why":{"en":"The page says children have plenty of space to explore and play freely there.","th":"หน้าเว็บบอกว่าเด็กมีที่ว่างเพียงพอสำหรับสำรวจและเล่นอย่างอิสระ"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"One East, 788 South Zhongshan Road, Huangpu, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
+      {"name":{"en":"Shanghai Children's Art Theatre","th":"โรงละครเด็กเซี่ยงไฮ้"},"kind":"show","area":{"en":"Shanghai World Expo","th":"งานเอ็กซ์โปเซี่ยงไฮ้"},"what":{"en":"A professional theatre for children, with plays, concerts and exhibitions, and artist-led tours and paper-cutting workshops in its creative seasons.","th":"โรงละครมืออาชีพสำหรับเด็ก มีละคร คอนเสิร์ต และนิทรรศการ พร้อมทัวร์นำชมโดยศิลปินและเวิร์กช็อปตัดกระดาษในฤดูกิจกรรมศิลปะ"},"why":{"en":"The page describes children's plays and hands-on paper-cutting workshops as part of its creative arts season.","th":"หน้าเว็บบอกว่ามีละครเด็กและเวิร์กช็อปตัดกระดาษลงมือทำเป็นส่วนหนึ่งของฤดูศิลปะ"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Shanghai Children's Art Theatre, Shanghai World Expo, Pudong, Shanghai","ok":"2026-11","src":"https://english.shanghai.gov.cn/en-FestivalsCelebrations/20260527/8c77336e48d94c699211c1a0f5b18c81.html"},
+        {
+          "local": "奈尔宝 儿童乐园 豫园店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E8%B1%AB%E5%9B%AD%E5%BA%97)&city=310000",
+          "name": {
+            "th": "นีโอไบโอ อวี้หยวน",
+            "en": "Neobio Play Park (Yuyuan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนจิ่วเซี่ยวฉาง ใกล้สวนอวี้หยวน หวงผู่",
+            "en": "Jiuxiaochang Road, near Yu Garden, Huangpu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มพร้อมร้านอาหารครอบครัว ใกล้สวนอวี้หยวน",
+            "en": "An indoor play park with a family restaurant near Yu Garden"
+          },
+          "why": {
+            "th": "โซนเล่นในร่มบุนุ่มทั้งหมด แวะหลังเที่ยวเมืองเก่า",
+            "en": "Fully padded indoor play after the old town"
+          },
+          "q": "奈尔宝 豫园店, 旧校场路69号, 黄浦区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈尔宝 儿童乐园 上海前滩店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%A5%88%E5%B0%94%E5%AE%9D%C2%B7%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD%C2%B7%E4%BA%B2%E5%AD%90%E9%A4%90%E5%8E%85(%E4%B8%8A%E6%B5%B7%E5%89%8D%E6%BB%A9%E5%BA%97)&city=310000",
+          "name": {
+            "th": "นีโอไบโอ เฉียนทาน",
+            "en": "Neobio Play Park (Qiantan)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จิงเย่าเฉียนทาน ชั้น 2 ผู่ตง",
+            "en": "Jingyao Qiantan 2F, Pudong"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีงานประดิษฐ์ หนังสือภาพ และร้านอาหารครอบครัว",
+            "en": "An indoor play park with crafts, picture books and a family restaurant"
+          },
+          "why": {
+            "th": "มีโซนเล่นบุนุ่มและมุมเงียบสำหรับเด็กเล็ก",
+            "en": "Padded play and quiet corners for small children"
+          },
+          "q": "奈尔宝 上海前滩店, 钱家滩路388号, 浦东新区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "汤姆猫超能战队乐园 上海徐汇店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E6%B1%A4%E5%A7%86%E7%8C%AB%E8%B6%85%E8%83%BD%E6%88%98%E9%98%9F%E4%B9%90%E5%9B%AD%C2%B7%E4%B8%8A%E6%B5%B7%E5%BE%90%E6%B1%87%E5%BA%97&city=310000",
+          "name": {
+            "th": "สวนเล่นทอล์กกิ้งทอม สวีฮุ่ย",
+            "en": "Talking Tom Play Park (Xuhui)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างซินลิ่วไป่ ชั้น 3 ถนนเหิงซาน สวีฮุ่ย",
+            "en": "New 600 mall 3F, Hengshan Road, Xuhui"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มธีมตัวการ์ตูนทอล์กกิ้งทอม",
+            "en": "An indoor themed play park with the Talking Tom characters"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "汤姆猫超能战队乐园 徐汇店, 衡山路932号, 徐汇区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "徐家汇公园 儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%BE%90%E5%AE%B6%E6%B1%87%E5%85%AC%E5%9B%AD-%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สนามเด็กเล่นสวนสวีเจียฮุ่ย",
+            "en": "Xujiahui Park Children's Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนสวีเจียฮุ่ย มุมตะวันออกเฉียงเหนือ สวีฮุ่ย",
+            "en": "Xujiahui Park, north-east corner, Xuhui"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนสวีเจียฮุ่ย มีเขาวงกต บ่อทราย สไลเดอร์ และแทรมโพลีน",
+            "en": "A playground in Xujiahui Park with a maze, sand pit, slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก อยู่กลางเมือง",
+            "en": "Marked for small children, in the middle of the city"
+          },
+          "q": "徐家汇公园儿童乐园, 肇嘉浜路986号, 徐汇区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西岸自然艺术公园儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E5%B2%B8%E8%87%AA%E7%84%B6%E8%89%BA%E6%9C%AF%E5%85%AC%E5%9B%AD%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สนามเด็กเล่นสวนศิลปะธรรมชาติเวสต์บันด์",
+            "en": "West Bund Nature Art Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนศิลปะธรรมชาติเวสต์บันด์ ถนนฮวาจิง สวีฮุ่ย",
+            "en": "West Bund Nature Art Park, Huajing Road, Xuhui"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในสวนริมแม่น้ำ มีสไลเดอร์และแทรมโพลีน",
+            "en": "A riverside park playground with slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก มีที่จอดรถใกล้ๆ",
+            "en": "Marked for small children; parking nearby"
+          },
+          "q": "西岸自然艺术公园儿童乐园, 华泾路190号, 徐汇区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "半马苏河公园二期儿童乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%8D%8A%E9%A9%AC%E8%8B%8F%E6%B2%B3%E5%85%AC%E5%9B%AD%E4%BA%8C%E6%9C%9F%E5%84%BF%E7%AB%A5%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สนามเด็กเล่นสวนป้านหม่าซูเหอ",
+            "en": "Banma Suhe Park Playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกวางฟู่ตะวันตก ผู่ถัว",
+            "en": "Guangfu West Road, Putuo"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นริมคลองซูโจว มีบ่อทราย สไลเดอร์ และแทรมโพลีน",
+            "en": "A playground by Suzhou Creek with a sand pit, slides and trampolines"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก อยู่ข้างทางเดินริมคลอง",
+            "en": "Marked for small children, beside a walk along the creek"
+          },
+          "q": "半马苏河公园二期儿童乐园, 光复西路, 普陀区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "MINI MARS KIDS CLUB 静安江宁路店",
+          "ages": [
+            2,
+            1,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=MINI%20MARS%20KIDS%20CLUB%E4%BA%B2%E5%AD%90%E5%AE%B6%E5%BA%AD%E4%B8%AD%E5%BF%83(%E9%9D%99%E5%AE%89%E6%B1%9F%E5%AE%81%E8%B7%AF%E5%BA%97)&city=310000",
+          "name": {
+            "th": "มินิมาร์สคิดส์คลับ ถนนเจียงหนิง",
+            "en": "Mini Mars Kids Club (Jiangning Road)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเจียงหนิง จิ้งอัน",
+            "en": "Jiangning Road, Jing'an"
+          },
+          "what": {
+            "th": "คลับครอบครัว มีบทบาทสมมติและคาเฟ่ สำหรับเด็กทารกและเด็กวัยเตาะแตะ",
+            "en": "A family club with role play and a café, for babies and toddlers"
+          },
+          "why": {
+            "th": "ทำมาสำหรับเด็ก 0–3 ขวบ มีล็อกเกอร์เก็บของ",
+            "en": "Made for ages 0 to 3, with lockers for bags"
+          },
+          "q": "MINI MARS KIDS CLUB 江宁路店, 江宁路428号, 静安区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "UN BONBON儿童成长乐园",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=UN%20BONBON%E5%84%BF%E7%AB%A5%E6%88%90%E9%95%BF%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนเล่นอันบงบง หยางผู่",
+            "en": "Un Bonbon Play Park (Yangpu)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนหวงซิง หยางผู่",
+            "en": "Huangxing Road, Yangpu"
+          },
+          "what": {
+            "th": "สวนเล่นในร่ม มีโซนรถตัก บ่อทราย และบทบาทสมมติ",
+            "en": "An indoor play park with a digger zone, sand pit and role play"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "UN BONBON儿童成长乐园, 黄兴路1831号, 杨浦区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "小黄鸭主题乐园 浦江店",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E5%B0%8F%E9%BB%84%E9%B8%AD%E4%B8%BB%E9%A2%98%E4%B9%90%E5%9B%AD(%E6%B5%A6%E6%B1%9F%E5%BA%97)&city=310000",
+          "name": {
+            "th": "สวนสนุกเป็ดเหลือง ผู่เจียง",
+            "en": "B.Duck Theme Park (Pujiang)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทางหลวงเสิ่นตู้ ผู่เจียง หมิ่นหาง",
+            "en": "Shendu Highway, Pujiang, Minhang"
+          },
+          "what": {
+            "th": "สวนเล่นธีมเป็ดเหลือง มีเส้นทางป่า สไลเดอร์สีรุ้ง และบ่อทราย",
+            "en": "A rubber-duck themed play park with a jungle course, rainbow slide and sand pit"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับเด็กเล็ก",
+            "en": "Marked for small children"
+          },
+          "q": "小黄鸭主题乐园 浦江店, 沈杜公路4314号, 闵行区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海欢乐谷",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%AC%A2%E4%B9%90%E8%B0%B7&city=310000",
+          "name": {
+            "th": "แฮปปี้วัลเลย์ เซี่ยงไฮ้",
+            "en": "Happy Valley Shanghai"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนหลินหู เซอซาน ซงเจียง",
+            "en": "Linhu Road, Sheshan, Songjiang"
+          },
+          "what": {
+            "th": "สวนสนุกขนาดใหญ่ มีเครื่องเล่นหวาดเสียวและโซนเด็ก แฮปปี้โอเชียน",
+            "en": "A big theme park with thrill rides and a children's area, Happy Ocean"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กเล็กควรไปโซนแฮปปี้โอเชียน",
+            "en": "Reviewers say small children should head for the Happy Ocean rides"
+          },
+          "q": "上海欢乐谷, 林湖路888号, 松江区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "东方绿舟",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%9C%E6%96%B9%E7%BB%BF%E8%88%9F&city=310000",
+          "name": {
+            "th": "โอเรียนทัลแลนด์ ตงฟางลวี่โจว",
+            "en": "Oriental Land (Dongfang Lüzhou)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบเตี้ยนซาน ชิงผู่",
+            "en": "Dianshan Lake, Qingpu"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบขนาดใหญ่ มีด่านผจญภัยกลางแจ้ง พื้นที่ชุ่มน้ำ และนิทรรศการวิทยาศาสตร์",
+            "en": "A huge lakeside park with outdoor challenge courses, wetlands and science exhibits"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.3 ม. เข้าฟรี ผู้รีวิวบอกว่าด่านต่างๆ ช่วยฝึกความกล้า",
+            "en": "Children under 1.3 m go free; reviewers say the courses build courage"
+          },
+          "q": "东方绿舟, 沪青平公路, 青浦区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海影视乐园",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%BD%B1%E8%A7%86%E4%B9%90%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนภาพยนตร์เซี่ยงไฮ้",
+            "en": "Shanghai Film Park"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ถนนเชอถิง ซงเจียง",
+            "en": "Cheting Road, Songjiang"
+          },
+          "what": {
+            "th": "ฉากถ่ายภาพยนตร์ถนนเซี่ยงไฮ้เก่า รถราง และอาคาร ให้เดินชม",
+            "en": "Film sets of old Shanghai streets, trams and buildings to walk through"
+          },
+          "why": {
+            "th": "เด็กสูงไม่ถึง 1.2 ม. เข้าฟรี ระบุว่าเหมาะกับครอบครัวกลางแจ้ง",
+            "en": "Children under 1.2 m go free; tagged for families outdoors"
+          },
+          "q": "上海影视乐园, 车亭公路211号, 松江区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海花开海上生态园",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E8%8A%B1%E5%BC%80%E6%B5%B7%E4%B8%8A%E7%94%9F%E6%80%81%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนดอกไม้ฮวาไคไห่ซ่าง",
+            "en": "Huakai Haishang Flower Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "จูจิง จินซาน",
+            "en": "Zhujing, Jinshan"
+          },
+          "what": {
+            "th": "สวนดอกไม้ มีทางเดินดอกบ๊วยและซากุระ และสนามหญ้ากว้าง",
+            "en": "A flower park with plum and cherry blossom walks and open lawns"
+          },
+          "why": {
+            "th": "ระบุว่าเหมาะกับครอบครัวกลางแจ้ง เด็กเข้าราคาลดหรือฟรี",
+            "en": "Tagged for families outdoors; children go in at reduced or no charge"
+          },
+          "q": "上海花开海上生态园, 朱泾镇待泾村, 金山区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西沙明珠湖景区",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E8%A5%BF%E6%B2%99%E6%98%8E%E7%8F%A0%E6%B9%96%E6%99%AF%E5%8C%BA&city=310000",
+          "name": {
+            "th": "ทะเลสาบหมิงจู ซีซา ฉงหมิง",
+            "en": "Xisha Mingzhu Lake (Chongming)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนซานหัว เกาะฉงหมิง",
+            "en": "Sanhua Road, Chongming Island"
+          },
+          "what": {
+            "th": "สวนทะเลสาบและพื้นที่ชุ่มน้ำบนเกาะฉงหมิง มีเรือและทางเดินไม้",
+            "en": "A lake and wetland park on Chongming Island with boats and boardwalks"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบหาปูตัวเล็กริมน้ำ",
+            "en": "Reviewers say children love spotting the little crabs by the water"
+          },
+          "q": "西沙明珠湖景区, 三华公路333号, 崇明区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海汽车博物馆",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%B1%BD%E8%BD%A6%E5%8D%9A%E7%89%A9%E9%A6%86&city=310000",
+          "name": {
+            "th": "พิพิธภัณฑ์รถยนต์เซี่ยงไฮ้",
+            "en": "Shanghai Auto Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนปั๋วหยวน อันถิง เจียติ้ง",
+            "en": "Boyuan Road, Anting, Jiading"
+          },
+          "what": {
+            "th": "รถยนต์ตามยุคสมัย โมเดล และชั้นเด็กเล่นที่มีเกมแข่งรถ",
+            "en": "Cars through history, models and a children's play floor with racing games"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเป็นที่โปรดของเด็กที่ชอบรถ ชั้นเด็กเล่นเสียเงินเพิ่ม",
+            "en": "Reviewers call it a favourite for small car fans; the play floor costs extra"
+          },
+          "q": "上海汽车博物馆, 博园路7565号, 嘉定区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海博物馆 东馆",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%8D%9A%E7%89%A9%E9%A6%86(%E4%B8%9C%E9%A6%86)&city=310000",
+          "name": {
+            "th": "พิพิธภัณฑ์เซี่ยงไฮ้ อาคารตะวันออก",
+            "en": "Shanghai Museum East"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนซื่อจี้ ผู่ตง",
+            "en": "Century Avenue, Pudong"
+          },
+          "what": {
+            "th": "อาคารใหม่ฝั่งตะวันออกของพิพิธภัณฑ์เซี่ยงไฮ้ เรื่องศิลปะและประวัติศาสตร์จีน",
+            "en": "The Shanghai Museum's big new east building of Chinese art and history"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำให้ใช้เครื่องบรรยายเสียงสำหรับเด็กและมาแต่เช้า",
+            "en": "Reviewers suggest an audio guide for children and coming early"
+          },
+          "q": "上海博物馆东馆, 世纪大道, 浦东新区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海动漫博物馆",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E5%8A%A8%E6%BC%AB%E5%8D%9A%E7%89%A9%E9%A6%86&city=310000",
+          "name": {
+            "th": "พิพิธภัณฑ์แอนิเมชันเซี่ยงไฮ้",
+            "en": "Shanghai Animation Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนจางเจียง ผู่ตง",
+            "en": "Zhangjiang Road, Pudong"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แอนิเมชันจีน มีรูปปั้นตัวการ์ตูนและห้องลองทำ",
+            "en": "A museum of Chinese animation with character statues and hands-on rooms"
+          },
+          "why": {
+            "th": "ผู้รีวิวบอกว่าเด็กชอบตัวการ์ตูน",
+            "en": "Reviewers say children love the cartoon characters"
+          },
+          "q": "上海动漫博物馆, 张江路69号, 浦东新区, 上海",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上海植物园",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.amap.com/search?query=%E4%B8%8A%E6%B5%B7%E6%A4%8D%E7%89%A9%E5%9B%AD&city=310000",
+          "name": {
+            "th": "สวนพฤกษศาสตร์เซี่ยงไฮ้",
+            "en": "Shanghai Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนหลงอู๋ สวีฮุ่ย",
+            "en": "Longwu Road, Xuhui"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ใหญ่ มีเรือนกระจกป่าฝน บอนไซ ทางเดินริมน้ำ และสนามหญ้า",
+            "en": "A big botanical garden with a glasshouse rainforest, bonsai, water walkways and lawns"
+          },
+          "why": {
+            "th": "ผู้รีวิวแนะนำสำหรับครอบครัวที่อยากพาเด็กเรียนรู้เรื่องต้นไม้ เดือนตุลาคมมีเทศกาลฟักทอง",
+            "en": "Reviewers recommend it for families learning about plants; a pumpkin festival in October"
+          },
+          "tip": {
+            "th": "ผู้รีวิวแนะนำให้เข้าทางประตู 4 แล้วเริ่มเที่ยวฝั่งเหนือ",
+            "en": "Reviewers suggest entering by gate 4 and starting in the north part"
+          },
+          "q": "上海植物园, 龙吴路1111号, 徐汇区, 上海",
+          "ok": "2026-11"
+        }
+    ]
+    }
+  ]
+}

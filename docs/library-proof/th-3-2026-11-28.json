@@ -1,0 +1,423 @@
+{
+  "town": "th (Thailand round 3: Bangkok, Ayutthaya, Nakhon Si Thammarat, Trat and Koh Chang, Hat Yai and Songkhla, Korat, Samui, Satun and Koh Lipe, Udon, Loei, Khon Kaen, Surat Thani, Pattaya)",
+  "kind": "added",
+  "checked": "2026-11-28",
+  "rule": "Haiku research agents with the Thailand notes (TAT counts as official; otherwise a 2025–2026 page — a Thai date 2568/2569 counts; no national chains, no bars) -> scripts/library-check.cjs (single Wongnai place pages carry no page date and were left out) -> every place opened on Google Maps on 28 Nov 2026 by checker agents, kept only when open, the same name and in the town (two Chiang Khan places, part of the Loei town, kept by hand) -> Thai and English by writer agents to docs/STYLE.md, opening hours taken out of the text.",
+  "towns": {
+    "th-ayutthaya": {
+      "eat": [
+        {
+          "name": "Khrua Rung Chaeng",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        },
+        {
+          "name": "Samphao Nawa",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        },
+        {
+          "name": "De Riva Ayothaya",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        },
+        {
+          "name": "Ban Ayutthaya Rom",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        },
+        {
+          "name": "Mong Du Ruea",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        },
+        {
+          "name": "Ban U Thong",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/ayutthaya-yummy"
+        },
+        {
+          "name": "Ruean Sai Nam",
+          "src": "https://www.ktc.co.th/en/article/travel-guide/thailand/recommend-ayutthaya-restaurants"
+        },
+        {
+          "name": "Good View Phranakhon",
+          "src": "https://www.ktc.co.th/en/article/travel-guide/thailand/recommend-ayutthaya-restaurants"
+        }
+      ],
+      "do": [
+        {
+          "name": "The Million Toy Museum",
+          "src": "https://wanderingwagars.com/?p=25689"
+        }
+      ]
+    },
+    "th-bangkok": {
+      "eat": [
+        {
+          "name": "Song Pet Palo Wang Hin",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%a5%e0%b8%b2%e0%b8%94%e0%b8%9e%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%a7/"
+        },
+        {
+          "name": "Baan Sen Sai",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%a5%e0%b8%b2%e0%b8%94%e0%b8%9e%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%a7/"
+        },
+        {
+          "name": "Suki Tee Noi Lat Phrao Wang Hin",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%a5%e0%b8%b2%e0%b8%94%e0%b8%9e%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%a7/"
+        },
+        {
+          "name": "Tong Peng Restaurant",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%a5%e0%b8%b2%e0%b8%94%e0%b8%9e%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%a7/"
+        },
+        {
+          "name": "Tom Lueat Mu Nai Chai",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%a5%e0%b8%b2%e0%b8%94%e0%b8%9e%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%a7/"
+        },
+        {
+          "name": "Ramen A Lat Phrao 71",
+          "src": "https://www.grab.com/th/food-blog/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%ad%e0%b8%b2%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%a5%e0%b8%b2%e0%b8%94%e0%b8%9e%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%a7/"
+        },
+        {
+          "name": "Rongros",
+          "src": "https://th.trip.com/guide/food/chao-phraya-river-restaurants.html"
+        },
+        {
+          "name": "Chom Arun",
+          "src": "https://th.trip.com/guide/food/chao-phraya-river-restaurants.html"
+        },
+        {
+          "name": "Eat Sight Story",
+          "src": "https://th.trip.com/guide/food/chao-phraya-river-restaurants.html"
+        },
+        {
+          "name": "Sala Rattanakosin Eatery",
+          "src": "https://th.trip.com/guide/food/chao-phraya-river-restaurants.html"
+        },
+        {
+          "name": "Supatra River House",
+          "src": "https://th.trip.com/guide/food/chao-phraya-river-restaurants.html"
+        },
+        {
+          "name": "Rakhang Phochana Seafoods",
+          "src": "https://th.trip.com/guide/food/chao-phraya-river-restaurants.html"
+        },
+        {
+          "name": "Khrua Sa Rot Chat",
+          "src": "https://www.wongnai.com/listings/restaurant-for-all-family-bangkok"
+        },
+        {
+          "name": "Khrua Bang Na Bang Na-Trat Soi 42",
+          "src": "https://www.wongnai.com/listings/restaurant-for-all-family-bangkok"
+        },
+        {
+          "name": "The Rabbit's Grove Cafe & Restaurant",
+          "src": "https://www.wongnai.com/listings/kids-cafes"
+        },
+        {
+          "name": "Khao Jao",
+          "src": "https://www.wongnai.com/listings/restaurant-for-all-family-bangkok"
+        },
+        {
+          "name": "Hanaya",
+          "src": "https://www.wongnai.com/listings/restaurant-for-all-family-bangkok"
+        }
+      ],
+      "do": []
+    },
+    "th-hatyai": {
+      "eat": [
+        {
+          "name": "Khao Tom Nai Yao",
+          "src": "https://www.wongnai.com/listings/old-restaurants-songkhla"
+        },
+        {
+          "name": "Bonkhao Restaurant",
+          "src": "https://www.wongnai.com/listings/old-restaurants-songkhla"
+        },
+        {
+          "name": "Kuai Tiao Nai Ru",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/songkhla-gastronomy"
+        },
+        {
+          "name": "Tao Khua Pa Iat",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/songkhla-gastronomy"
+        },
+        {
+          "name": "Suki Nakhon Nai",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/songkhla-gastronomy"
+        },
+        {
+          "name": "Monthathip Seafood",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/songkhla-gastronomy"
+        },
+        {
+          "name": "Roti Bang Sharif",
+          "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/songkhla-gastronomy"
+        }
+      ],
+      "do": []
+    },
+    "th-khonkaen": {
+      "eat": [
+        {
+          "name": "Chokdee Cafe",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed"
+        },
+        {
+          "name": "Jam Cafe & Eatery",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed"
+        }
+      ],
+      "do": []
+    },
+    "th-kohchang": {
+      "eat": [
+        {
+          "name": "Koh Chang Seafood",
+          "src": "https://saitiew.com/XJg9W4AoXTB"
+        },
+        {
+          "name": "Je Iw Seafood Koh Chang",
+          "src": "https://saitiew.com/XJg9W4AoXTB"
+        },
+        {
+          "name": "Baan Ta Klua",
+          "src": "https://www.ktc.co.th/en/news/product-and-service/trat-food-ecosystem"
+        },
+        {
+          "name": "Phuean Seafood",
+          "src": "https://www.gangbeauty.com/KCNXDvQpjFO"
+        },
+        {
+          "name": "Je Maem Seafood",
+          "src": "https://www.gangbeauty.com/KCNXDvQpjFO"
+        },
+        {
+          "name": "Cherry Ann Seafood",
+          "src": "https://www.saitiew.com/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%94/"
+        },
+        {
+          "name": "Thanyarat Seafood",
+          "src": "https://www.saitiew.com/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%94/"
+        },
+        {
+          "name": "Krua Lung Ti Seafood",
+          "src": "https://www.saitiew.com/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%94/"
+        },
+        {
+          "name": "Kung Luang Trat",
+          "src": "https://www.saitiew.com/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%94/"
+        },
+        {
+          "name": "Baan Tiw Thara",
+          "src": "https://www.saitiew.com/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%94/"
+        }
+      ],
+      "do": []
+    },
+    "th-korat": {
+      "eat": [
+        {
+          "name": "Shabu Indy Hua Thale",
+          "src": "https://www.wongnai.com/listings/shabu-restaurants-korat"
+        },
+        {
+          "name": "Shabu Ya Shabu",
+          "src": "https://www.wongnai.com/listings/shabu-restaurants-korat"
+        },
+        {
+          "name": "Ban Rai Thirawong",
+          "src": "https://www.wongnai.com/listings/cafe-and-restaurants-hipster-korat"
+        },
+        {
+          "name": "So Rueang",
+          "src": "https://www.wongnai.com/listings/cafe-and-restaurants-hipster-korat"
+        },
+        {
+          "name": "Lao Chue Korat",
+          "src": "https://www.wongnai.com/listings/cafe-and-restaurants-hipster-korat"
+        },
+        {
+          "name": "Prung Suk",
+          "src": "https://www.wongnai.com/listings/cafe-and-restaurants-hipster-korat"
+        }
+      ],
+      "do": []
+    },
+    "th-lipe": {
+      "eat": [
+        {
+          "name": "Bara Roti",
+          "src": "https://tripsiam.com/satun-restaurant"
+        },
+        {
+          "name": "Rimle Kitchen & Restaurant",
+          "src": "https://tripsiam.com/satun-restaurant"
+        },
+        {
+          "name": "Fahsai Restaurant Pak Bara",
+          "src": "https://tripsiam.com/satun-restaurant"
+        },
+        {
+          "name": "Ko Uan Dim Sum Satun",
+          "src": "https://tripsiam.com/satun-restaurant"
+        }
+      ],
+      "do": []
+    },
+    "th-loei": {
+      "eat": [
+        {
+          "name": "Pa Bua Wan Khao Poon Nam Chaeo",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        },
+        {
+          "name": "Huean Fai Kham",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        },
+        {
+          "name": "Khao Piak Pak Ma",
+          "src": "https://www.wongnai.com/listings/loei-restaurants"
+        }
+      ],
+      "do": []
+    },
+    "th-nakhonsi": {
+      "eat": [
+        {
+          "name": "Captain Seafood",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "A&A Cafe and Restaurant",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "Pak Nakhon Seafood",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "Rice Restaurant",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "Bang Bao Roti and Tea",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "Yummy To My Tummy Bakery",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "Blue Day Cafe",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "i Coffee x ENER BOOST",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "Kinkanom Nakhon Si Thammarat",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        },
+        {
+          "name": "Tao Jin Specialty Coffee Roasters",
+          "src": "https://wanderlog.com/list/geoCategory/206955"
+        }
+      ],
+      "do": []
+    },
+    "th-pattaya": {
+      "eat": [
+        {
+          "name": "Pastry Addiction",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restaurant-near-pattaya-beach"
+        },
+        {
+          "name": "La Familiare",
+          "src": "https://www.timeout.com/bangkok/th/restaurants/best-pattaya-restaurants"
+        }
+      ],
+      "do": []
+    },
+    "th-samui": {
+      "eat": [
+        {
+          "name": "Krua Sawoei Samui",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        },
+        {
+          "name": "Khanom Chin Pa Maitri",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        },
+        {
+          "name": "Lolamui Cafe",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        },
+        {
+          "name": "The Jungle Club",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        },
+        {
+          "name": "Little Green Cafe",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/restuarant-cafe-samui"
+        }
+      ],
+      "do": []
+    },
+    "th-suratthani": {
+      "eat": [
+        {
+          "name": "Krua Nititham",
+          "src": "https://www.ktc.co.th/article/dining/restaurant/recommended-restaurants-in-surat-thani"
+        },
+        {
+          "name": "Pa Ya Hoi Sot",
+          "src": "https://www.wongnai.com/listings/restaurants-suratthani"
+        }
+      ],
+      "do": []
+    },
+    "th-udon": {
+      "eat": [
+        {
+          "name": "Good Everything",
+          "src": "https://www.gangbeauty.com/6nzP0qus2Nn"
+        },
+        {
+          "name": "Baan Mai Khao",
+          "src": "https://www.gangbeauty.com/6nzP0qus2Nn"
+        },
+        {
+          "name": "Brunch & Munch",
+          "src": "https://www.gangbeauty.com/6nzP0qus2Nn"
+        },
+        {
+          "name": "Primani's Indian Restaurant",
+          "src": "https://www.gangbeauty.com/6nzP0qus2Nn"
+        }
+      ],
+      "do": []
+    }
+  },
+  "left_out": {
+    "closed on Google Maps (28 Nov 2026)": [
+      "Monrak Baanna Trat (temporarily)",
+      "Day & Night Of Nakhon Si Thammarat",
+      "Marigold Samui Local Food Restaurant",
+      "Khiao Kai Ka Nak Niwat",
+      "Krua Ta-Le",
+      "Wolf’s Den Udon (temporarily)"
+    ],
+    "name or place did not match on Google Maps": "about twenty (only a result list, a list of branches, or another business under the name)",
+    "source refused": "trip.com user posts and its auto-ranked restaurant pages (13 rows in Koh Lipe, Udon and Khon Kaen); an expired card-promotion page naming three Chanthaburi restaurants with no facts; a Trang Wongnai list dated 2023–2024",
+    "other": [
+      "Pororo Aquapark Bangkok (closed for renovation, January 2026)",
+      "Above Riva Bangkok (rooftop fine dining)",
+      "Baan Bon Khao and Synth, Surat Thani (a hotel restaurant, fine dining)",
+      "I-TALAY beach bar Samui",
+      "Nitan coffee-and-cocktail bar Pattaya",
+      "Cafe De Meena (Phu Ruea, far from Loei)",
+      "Mister Bean Shabu and Hotpotman Korat (chains)",
+      "Wonder Woods (already a thing to do)",
+      "two Ayutthaya temples already in the Historical Park row",
+      "The Sea Garden (Ang Sila, outside Pattaya)"
+    ],
+    "nothing new on a dated page": "Nan places to eat and Korat things to do, for the second round; Chanthaburi places to eat"
+  }
+}

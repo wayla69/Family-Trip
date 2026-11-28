@@ -1,0 +1,169 @@
+{
+  "town": "pt-lisbon",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 13 of 15 rows from Time Out Lisboa (2025–2026) and Family Can Travel (2026) passed library-check.cjs, 12 went in",
+  "added": [
+    {
+      "name": "Bonkers",
+      "page_name": "Bonkers",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'Bonkers Pizza', Santos, 273 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Epic Sana (Sunday brunch)",
+      "page_name": "Epic Sana",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'Epic Sana Lisboa Hotel', 3,984 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Luzzo",
+      "page_name": "Luzzo",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'Pizzaria Luzzo', Rua de Santa Marta 37A, 3,251 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Ground Burger (Santa Apolónia)",
+      "page_name": "Ground Burger",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'GROUND BURGER - Santa Apolónia', 193 reviews, newest 'last week'"
+    },
+    {
+      "name": "Green House",
+      "page_name": "Green House",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'Greenhouse Hello Park', Estrada da Serafina, 500 reviews, newest '4 weeks ago'"
+    },
+    {
+      "name": "Mr. Zombie",
+      "page_name": "Mr. Zombie",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'MrZombie – Loja de Videojogos e Hamburgueria Lisboa', 209 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Sheraton Lisboa (Sunday brunch)",
+      "page_name": "Sheraton Lisboa",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'Sheraton Lisboa Hotel & Spa', 3,970 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Plataforma",
+      "page_name": "Plataforma",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-restaurantes-para-criancas-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps Largo Joaquim José Correia 38, Rio de Mouro, 2,077 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Alto da Serafina park",
+      "page_name": "Parque Recreativo do Alto da Serafina",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-parques-infantis-em-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 8,215 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Bowling City",
+      "page_name": "Bowling City",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/coisas-fazer-criancas-inverno-chuva-lisboa",
+      "date": "2026-11",
+      "map": "Google Maps 'Bowling City Colombo', 2,035 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Praia das Maçãs",
+      "page_name": "Praia das Maçãs",
+      "src": "https://www.familycantravel.com/sintra-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 7,567 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Moorish Castle",
+      "page_name": "Moorish Castle",
+      "src": "https://www.familycantravel.com/sintra-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 'The Moorish Castle', 25,688 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Este Oeste (Belém)",
+      "page_name": "Este Oeste",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Este Oeste', newest review shown 3 days ago"
+    },
+    {
+      "name": "Giro'Giro (Campo Grande)",
+      "page_name": "Giro’Giro",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Giro'Giro', newest review shown 2 months ago"
+    },
+    {
+      "name": "Hamburgueria da Parada (Campo de Ourique)",
+      "page_name": "Hamburgueria da Parada",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Hamburgueria da Parada (Campo de Ourique)', newest review shown 13 days ago"
+    },
+    {
+      "name": "Jamie's Italian (Príncipe Real)",
+      "page_name": "Jamie's Italian",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/melhores-restaurantes-criancas",
+      "date": "2026-11",
+      "map": "Google Maps 'Jamie's Italian Lisboa', newest review shown 5 days ago"
+    },
+    {
+      "name": "Alvito Recreational Park",
+      "page_name": "Parque Recreativo do Alvito",
+      "src": "https://www.nomadotravel.app/pt/guides/lisbon-with-kids",
+      "date": "2026-04",
+      "map": "Google Maps 'Alvito Recreational Park', newest review shown a month ago"
+    },
+    {
+      "name": "Carris Museum (trams and buses)",
+      "page_name": "Museu da Carris",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+      "date": "2026-10",
+      "map": "Google Maps 'Museu da Carris', newest review shown 9 days ago"
+    },
+    {
+      "name": "MAAT (Museum of Art, Architecture and Technology)",
+      "page_name": "MAAT",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+      "date": "2026-10",
+      "map": "Google Maps 'MAAT - Museum of Art, Architecture and Technology', newest review shown 2 days ago"
+    },
+    {
+      "name": "Communications Museum",
+      "page_name": "Museu das Comunicações",
+      "src": "https://www.timeout.pt/lisboa/pt/miudos/museus-criancas-lisboa",
+      "date": "2026-10",
+      "map": "Google Maps 'Museu das Comunicações', newest review shown a week ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Madrasta",
+      "why": "in Paço de Arcos, outside Lisbon"
+    },
+    {
+      "name": "Doca de Santo, KidZania Lisboa",
+      "why": "failed library-check.cjs"
+    },
+    {
+      "name": "Albuquerque Foundation",
+      "why": "in Linhó (Sintra), outside Lisbon"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 9 rows from Time Out Lisboa (Oct–Nov 2026) and Nomado (Apr 2026), all passed library-check.cjs, 8 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "cc": "bt",
+  "towns": [
+    {
+      "place": "bt-paro",
+      "thin": true,
+      "sights": [
+        {
+          "name": { "en": "National Museum of Bhutan", "th": "พิพิธภัณฑ์แห่งชาติภูฏาน" },
+          "local": "རྒྱལ་ཡོངས་ཡིག་ཚགས་",
+          "kind": "museum",
+          "area": { "en": "Ta Dzong, Paro", "th": "ตาซอง พาโร" },
+          "what": { "en": "A round watchtower above Paro with galleries of masks, costume, stamps, natural history and everyday objects", "th": "หอสังเกตการณ์ทรงกลมเหนือเมืองพาโร มีห้องแสดงหน้ากาก เครื่องแต่งกาย ตราไปรษณียากร ธรรมชาติ และของใช้ในชีวิตประจำวัน" },
+          "why": { "en": "Stuffed animals, masks and costumes hold children's attention; stairs between floors mean a carrier suits babies better than a pram", "th": "สัตว์สตัฟฟ์ หน้ากาก และเครื่องแต่งกายดึงดูดเด็ก มีบันไดระหว่างชั้น ใช้เป้อุ้มเด็กเล็กดีกว่ารถเข็น" },
+          "tip": { "en": "The museum's own page lists daily 09:00 to 17:00; ask at the desk about children's entry", "th": "เว็บพิพิธภัณฑ์แจ้งเปิดทุกวัน 09:00–17:00 ถามที่เคาน์เตอร์เรื่องค่าเข้าของเด็ก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ Nu. 500 for tourists (museum's own page) · check the price for children", "th": "≈ 500 งุลตรัม นักท่องเที่ยว (เว็บพิพิธภัณฑ์) · เช็กราคาสำหรับเด็ก" },
+          "book": "none",
+          "q": "National Museum of Bhutan, Ta Dzong, Paro",
+          "ok": "2026-11",
+          "src": "https://nationalmuseum.gov.bt/visiting-hours-and-admission-fees"
+        },
+        {
+          "name": { "en": "Rinpung Dzong and the covered bridge", "th": "ริงปุงซองและสะพานไม้มีหลังคา" },
+          "local": "རིན་སྤུངས་རྫོང་",
+          "kind": "oldtown",
+          "area": { "en": "Paro", "th": "พาโร" },
+          "what": { "en": "A huge whitewashed fortress above the Paro river, reached over a roofed wooden footbridge", "th": "ป้อมปราการสีขาวขนาดใหญ่เหนือแม่น้ำพาโร เข้าทางสะพานไม้มีหลังคาสำหรับคนเดิน" },
+          "why": { "en": "A short walk across the bridge and through courtyards; the guide page says no entry fee is charged", "th": "เดินข้ามสะพานและลานภายในไม่ไกล หน้าแนะนำระบุว่าไม่เก็บค่าเข้า" },
+          "tip": { "en": "A working dzong, so keep to the courtyards open to visitors and dress modestly; steps are steep", "th": "เป็นซองที่ใช้งานอยู่ เดินเฉพาะลานที่เปิดให้เข้า แต่งกายสุภาพ บันไดชัน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free (check the price: some pages note a fee for SAARC visitors only)", "th": "ฟรี (เช็กราคา: บางหน้าระบุว่าเก็บเฉพาะผู้มาจากกลุ่มสมาคมเอเชียใต้)" },
+          "book": "none",
+          "q": "Rinpung Dzong, Paro",
+          "ok": "2026-11",
+          "src": "https://littlebhutan.com/attractions/paro/paro-rinpung-dzong/"
+        },
+        {
+          "name": { "en": "Motithang Takin Preserve", "th": "เขตอนุรักษ์ทาคินโมติทัง" },
+          "local": "",
+          "kind": "zoo",
+          "area": { "en": "Thimphu", "th": "ทิมพู" },
+          "what": { "en": "A hillside enclosure where takin, Bhutan's national animal, graze among pine trees", "th": "คอกอนุรักษ์บนเนินเขา ที่ทาคินสัตว์ประจำชาติภูฏานกินหญ้าท่ามกลางต้นสน" },
+          "why": { "en": "A short, easy visit; the animals come close to the fence and children can see them at once", "th": "เที่ยวสั้นๆ ง่ายๆ สัตว์เข้ามาใกล้รั้ว เด็กๆ เห็นได้ทันที" },
+          "tip": { "en": "Wear shoes for muddy paths; about an hour from Paro, so combine with other Thimphu stops", "th": "ใส่รองเท้าที่ลุยทางโคลนได้ ห่างจากพาโรราวชั่วโมง ควรไปรวมกับที่อื่นในทิมพู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price: the two pages found disagree (Nu. 300 on one list; Nu. 50 on another)", "th": "เช็กราคา: สองหน้าที่พบไม่ตรงกัน (300 งุลตรัมในตารางหนึ่ง 50 งุลตรัมอีกหน้า)" },
+          "book": "none",
+          "q": "Motithang Takin Preserve, Thimphu",
+          "ok": "2026-11",
+          "src": "https://traveltriangle.com/bhutan-tourism/thimphu/places-to-visit/motithang-takin-preserve"
+        },
+        {
+          "name": { "en": "Folk Heritage Museum", "th": "พิพิธภัณฑ์มรดกพื้นบ้าน" },
+          "local": "",
+          "kind": "museum",
+          "area": { "en": "Kawajangsa, Thimphu", "th": "กาวาจังซา ทิมพู" },
+          "what": { "en": "A three-storey rammed-earth farmhouse showing how a Bhutanese family lived, with tools, a hot-stone bath and a yard", "th": "บ้านชาวนาดินอัดสามชั้นที่แสดงชีวิตครอบครัวชาวภูฏาน มีเครื่องมือ อ่างอาบน้ำหินร้อน และลานบ้าน" },
+          "why": { "en": "Small and hands-on; children can see the kitchen, grinding stones and animals' quarters", "th": "เล็กและดูใกล้ชิด เด็กเห็นครัว ครกหิน และที่อยู่ของสัตว์" },
+          "tip": { "en": "Steep wooden stairs between floors; carry small children", "th": "บันไดไม้ชัน อุ้มเด็กเล็กขึ้นลง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Folk Heritage Museum, Kawajangsa, Thimphu",
+          "ok": "2026-11",
+          "src": "https://www.windhorsetours.com/bhutan/bhutan-travel-info/entrance-fees-monuments-bhutan"
+        },
+        {
+          "name": { "en": "Centenary Farmers Market", "th": "ตลาดเกษตรกรเซนเทนารี" },
+          "local": "",
+          "kind": "market",
+          "area": { "en": "Thimphu", "th": "ทิมพู" },
+          "what": { "en": "The weekend produce market by the river: vegetables, chillies, cheese, fruit and crafts", "th": "ตลาดผลผลิตสุดสัปดาห์ริมแม่น้ำ มีผัก พริก ชีส ผลไม้ และงานฝีมือ" },
+          "why": { "en": "Colourful stalls and free tasting of fruit; flat and covered in parts", "th": "แผงสีสันสดใสและมีผลไม้ให้ชิม ทางราบและมีหลังคาบางส่วน" },
+          "tip": { "en": "Usually Friday to Sunday; a 2025 news item says it was moved opposite the main building during renovation, so ask locally", "th": "มักเปิดวันศุกร์–อาทิตย์ ข่าวปี 2025 ว่าย้ายไปตรงข้ามอาคารหลักช่วงปรับปรุง ถามคนท้องถิ่นก่อน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Centenary Farmers Market, Thimphu",
+          "ok": "2026-11",
+          "src": "https://www.bbs.bt/thimphu-centenary-farmers-market-undergoing-major-renovation"
+        },
+        {
+          "name": { "en": "Punakha Suspension Bridge", "th": "สะพานแขวนปูนาคา" },
+          "local": "",
+          "kind": "nature",
+          "area": { "en": "Punakha", "th": "ปูนาคา" },
+          "what": { "en": "A long footbridge swaying over the Pho Chhu river, a short walk from Punakha Dzong", "th": "สะพานเดินยาวแกว่งเหนือแม่น้ำโพชู ห่างจากปูนาคาซองไม่ไกล" },
+          "why": { "en": "Children love the sway; hold hands, as there are gaps to look through, and a parent can wait at the start", "th": "เด็กชอบความโยกเยก จับมือไว้เพราะมีช่องมองลงไป ผู้ปกครองรอที่ปลายสะพานได้" },
+          "tip": { "en": "About three hours by road from Paro; the bridge is not the covered bridge at the dzong", "th": "จากพาโรขับรถราวสามชั่วโมง สะพานนี้ไม่ใช่สะพานไม้มีหลังคาที่ซอง" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "Punakha Suspension Bridge, Punakha",
+          "ok": "2026-11",
+          "src": "https://punakha.gov.bt/tourism/suspension-bridge/"
+        },
+        {
+          "name": { "en": "Kyichu Lhakhang", "th": "กยิจู ลาคัง" },
+          "kind": "culture",
+          "area": { "en": "Paro valley", "th": "หุบเขาพาโร" },
+          "what": { "en": "One of Bhutan's oldest temples, a calm courtyard of prayer wheels and orange trees", "th": "หนึ่งในวัดเก่าแก่ที่สุดของภูฏาน ลานสงบมีกงล้อมนตร์และต้นส้ม" },
+          "why": { "en": "Short and flat, a gentle first temple visit; quiet voices inside", "th": "สั้นและราบ เหมาะเป็นวัดแรก ภายในต้องพูดเบาๆ" },
+          "tip": { "en": "Dress modestly and take no photos inside the shrine rooms", "th": "แต่งกายสุภาพ ห้ามถ่ายรูปในห้องบูชา" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ Nu 500 for foreign adults", "th": "≈ Nu 500 ผู้ใหญ่ต่างชาติ" },
+          "book": "none",
+          "q": "Kyichu Lhakhang, Paro, Bhutan",
+          "ok": "2026-11",
+          "src": "https://www.windhorsetours.com/bhutan/bhutan-travel-info/entrance-fees-monuments-bhutan"
+        },
+        {
+          "name": { "en": "Drukgyel Dzong ruins", "th": "ซากป้อมดรุกเกียล" },
+          "kind": "culture",
+          "area": { "en": "Upper Paro valley", "th": "ต้นหุบเขาพาโร" },
+          "what": { "en": "The ruined 1649 fortress built to mark a victory, with mountain views at the end of the valley road", "th": "ซากป้อมปี 1649 สร้างเฉลิมชัยชนะ มีวิวภูเขาปลายถนนหุบเขา" },
+          "why": { "en": "Open ground to run about, but uneven stones and no shade", "th": "พื้นที่โล่งให้วิ่งเล่น แต่พื้นขรุขระและไม่มีร่ม" },
+          "tip": { "en": "Go in the morning light; hold hands on the loose steps", "th": "ไปตอนเช้าที่แสงสวย จูงมือเด็กตอนขึ้นบันไดหิน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Drukgyel Dzong, Paro, Bhutan",
+          "ok": "2026-11",
+          "src": "https://www.dailybhutan.com/article/travel-to-bhutan-experience-the-charm-of-paro"
+        },
+        {
+          "local": "Paro Taktsang",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://thingstodoinbhutan.com/family/",
+          "name": {
+            "th": "เดินขึ้นวัดทักซัง (รังเสือ)",
+            "en": "Tiger's Nest hike"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "พาโร",
+            "en": "Paro"
+          },
+          "what": {
+            "th": "เดินขึ้นหน้าผาครึ่งวันไปยังวัดเหนือเมืองพาโร",
+            "en": "A half-day climb up the cliff to the monastery above Paro"
+          },
+          "why": {
+            "th": "นับธงมนต์ระหว่างทาง ครึ่งทางมีคาเฟ่ขายช็อกโกแลตร้อน",
+            "en": "Count prayer flags on the way; a café halfway sells hot chocolate"
+          },
+          "tip": {
+            "th": "หน้าเว็บบอกว่าเด็ก 6–14 ปีเหมาะที่สุดกับการเดินขึ้น",
+            "en": "The page says ages 6 to 14 suit the climb best"
+          },
+          "q": "Paro Taktsang, Paro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bhutan.travel/journal/editorial/bhutan-is-family-friendly",
+          "name": {
+            "th": "พิพิธภัณฑ์ซิมพลีภูฏาน",
+            "en": "Simply Bhutan (living museum)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนเกเนียนลัม ทิมพู",
+            "en": "Genyen Lam, Thimphu"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์มีชีวิตเรื่องวิถีหมู่บ้านภูฏาน",
+            "en": "A living museum of Bhutanese village life"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลองยิงธนู กีฬาประจำชาติของภูฏาน",
+            "en": "Children can try archery, Bhutan's national sport"
+          },
+          "q": "Simply Bhutan, Genyen Lam, Thimphu",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}

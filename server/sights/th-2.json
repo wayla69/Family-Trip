@@ -310,6 +310,2480 @@
           "q": "Saphan Hin Park, Phuket Town",
           "ok": "2026-11",
           "src": "https://yopki.com/explore/th/phuket/saphan-hin/parks-playgrounds"
+        },
+        {
+          "name": { "en": "Phuket Bird Park", "th": "สวนนกภูเก็ต" },
+          "kind": "nature",
+          "area": { "en": "Chalong", "th": "ฉลอง" },
+          "what": { "en": "A jungle park on a hillside with ostriches, peacocks and hornbills, a crocodile pen and bird shows three times a day.", "th": "สวนป่าบนเนินเขา มีนกกระจอกเทศ นกยูง นกเงือก คอกจระเข้ และการแสดงนกวันละสามรอบ" },
+          "why": { "en": "A corner where kids can feed rabbits, sheep and other farm animals, and hand-feed the parrots.", "th": "มีมุมให้เด็กป้อนกระต่าย แกะ และสัตว์ฟาร์มอื่นๆ และป้อนนกแก้วด้วยมือ" },
+          "tip": { "en": "Shows run three times a day and are included in the entrance fee.", "th": "การแสดงวันละสามรอบ รวมในค่าเข้าชมแล้ว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Phuket Bird Park, Chalong, Phuket",
+          "ok": "2026-11",
+          "src": "https://www.phuket101.net/phuket-bird-park/"
+        },
+        {
+          "name": { "en": "Blue Tree Waterpark Phuket", "th": "บลูทรี วอเตอร์พาร์ค ภูเก็ต" },
+          "kind": "themepark",
+          "area": { "en": "Cherng Talay", "th": "เชิงทะเล" },
+          "what": { "en": "A water park with shallow and deep zones, a lagoon for bigger children and a supervised Kids Planet.", "th": "สวนน้ำมีโซนน้ำตื้นและน้ำลึก ลากูนสำหรับเด็กโต และคิดส์แพลนเน็ตที่มีคนดูแล" },
+          "why": { "en": "Baby and toddler pools with low water, sprinklers and mini slides.", "th": "มีสระเด็กเล็กและเด็กหัดเดิน น้ำตื้น มีสปริงเกลอร์และสไลเดอร์เล็ก" },
+          "tip": { "en": "Kids Planet fills up quickly, so book early; open daily 10:00–20:00.", "th": "คิดส์แพลนเน็ตเต็มเร็ว ควรจองก่อน เปิดทุกวัน 10:00–20:00" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿650 adult · ฿350 child 101–140 cm · free under 100 cm", "th": "≈ ฿650 ผู้ใหญ่ · ฿350 เด็ก 101–140 ซม. · ต่ำกว่า 100 ซม. ฟรี" },
+          "book": "rec",
+          "q": "Blue Tree Waterpark Phuket, Cherng Talay, Phuket",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/phuket/blue-tree-waterpark-phuket"
+        },
+        {
+          "name": { "en": "Coral Island", "th": "เกาะเฮ" },
+          "kind": "beach",
+          "area": { "en": "Off Rawai Beach", "th": "หน้าหาดราไวย์" },
+          "what": { "en": "A small island about 15 minutes by speedboat from Rawai, with shallow calm water on Long Beach and snorkelling.", "th": "เกาะเล็กๆ นั่งสปีดโบ๊ตจากราไวย์ราว 15 นาที มีน้ำตื้นสงบที่หาดยาวและจุดดูปะการัง" },
+          "why": { "en": "The water on Long Beach is shallow and calm, and there is food, shade and snorkel gear on the spot.", "th": "น้ำที่หาดยาวตื้นและสงบ มีอาหาร ร่มเงา และอุปกรณ์ดูปะการังในที่" },
+          "tip": { "en": "Long Beach is the quieter, shallower side; day trips from about ฿1,700.", "th": "หาดยาวเป็นฝั่งที่เงียบและตื้นกว่า ทริปวันเดียวเริ่มราว ฿1,700" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "From ≈ ฿1,700 per person (Long Beach day trip)", "th": "เริ่ม ≈ ฿1,700 ต่อคน (ทริปวันเดียวหาดยาว)" },
+          "book": "rec",
+          "q": "Coral Island, off Rawai Beach, Phuket",
+          "ok": "2026-11",
+          "src": "https://www.phuket101.net/coral-island/"
+        },
+        {
+          "name": { "en": "Phuket Wake Park", "th": "ภูเก็ต เวคพาร์ค" },
+          "kind": "ride",
+          "area": { "en": "Kathu", "th": "กะทู้" },
+          "what": { "en": "Cable wakeboarding and kneeboarding on a cable that circles an island lake.", "th": "เวคบอร์ดและนีบอร์ดแบบลากด้วยสายเคเบิลที่วนรอบเกาะกลางทะเลสาบ" },
+          "why": { "en": "Even the youngest kids can give it a go on a kneeboard, one of the more adventurous things to do in Phuket with kids.", "th": "เด็กเล็กก็ลองเล่นนีบอร์ดได้ เป็นกิจกรรมผจญภัยอย่างหนึ่งของภูเก็ตสำหรับเด็ก" },
+          "tip": { "en": "Cheaper options are available for beginners; the one-hour kids' session is ฿450.", "th": "มีตัวเลือกถูกกว่าสำหรับมือใหม่ รอบเด็ก 1 ชั่วโมงราคา ฿450" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ฿750 adult · ฿450 child (1 hour)", "th": "≈ ฿750 ผู้ใหญ่ · ฿450 เด็ก (1 ชั่วโมง)" },
+          "book": "rec",
+          "q": "Phuket Wake Park, Kathu, Phuket",
+          "ok": "2026-11",
+          "src": "https://www.phuket101.net/phuket-wake-park/"
+        },
+        {
+          "name": { "en": "Carnival Magic", "th": "คาร์นิวัล เมจิก" },
+          "kind": "themepark",
+          "area": { "en": "Kamala", "th": "กมลา" },
+          "what": { "en": "A nighttime Thai carnival with a parade, a fun fair zone and the Kingdom of Lights.", "th": "คาร์นิวัลไทยยามค่ำคืน มีขบวนพาเหรด โซนสวนสนุก และอาณาจักรแห่งแสงไฟ" },
+          "why": { "en": "Kids remember the Kingdom of Lights long after the beach days blur together.", "th": "เด็กๆ จะจำอาณาจักรแห่งแสงไฟได้นาน แม้วันเที่ยวทะเลจะเลือนไป" },
+          "tip": { "en": "An evening outing, only some evenings a week (Monday, Wednesday, Saturday per 2026 listings): come after dark for the lights and the river parade.", "th": "เที่ยวตอนเย็น เปิดเฉพาะบางคืนต่อสัปดาห์ (จันทร์ พุธ เสาร์ ตามรายการปี 2026) ไปหลังมืดเพื่อชมแสงไฟและขบวนพาเหรดริมน้ำ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Carnival Magic, Kamala, Phuket",
+          "ok": "2026-11",
+          "src": "https://www.phuket101.net/kamala-beach/"
+        },
+        {
+          "name": { "en": "Kamala Beach", "th": "หาดกมลา" },
+          "kind": "beach",
+          "area": { "en": "Kamala", "th": "กมลา" },
+          "what": { "en": "A quieter family beach on the west coast, next to the evening parks of Kamala.", "th": "หาดครอบครัวที่เงียบกว่าบนชายฝั่งตะวันตก อยู่ติดสวนสนุกยามเย็นของกมลา" },
+          "why": { "en": "Kamala is one of the quieter family beaches in Phuket, and the pace alone makes it a good choice with young children.", "th": "กมลาเป็นหนึ่งในหาดครอบครัวที่เงียบของภูเก็ต จังหวะที่ผ่อนคลายเหมาะกับเด็กเล็ก" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kamala Beach, Kamala, Phuket",
+          "ok": "2026-11",
+          "src": "https://www.phuket101.net/kamala-beach/"
+        },
+        {
+          "name": { "en": "Mai Khao Beach", "th": "หาดไม้ขาว" },
+          "kind": "beach",
+          "area": { "en": "Sirinat National Park, north Phuket", "th": "อุทยานแห่งชาติสิรินาถ ภูเก็ตเหนือ" },
+          "what": { "en": "The longest beach in Phuket at 11 km, part of Sirinat National Park and still mostly undeveloped.", "th": "หาดที่ยาวที่สุดของภูเก็ต 11 กม. อยู่ในอุทยานแห่งชาติสิรินาถ และยังไม่ค่อยมีสิ่งก่อสร้าง" },
+          "why": { "en": "Wide and quiet, a welcome contrast with the crowded beaches in the south.", "th": "กว้างและเงียบ ต่างจากหาดทางใต้ที่คนแน่น" },
+          "tip": { "en": "Turtle release events occur during Songkran in April, organised by various resorts.", "th": "มีกิจกรรมปล่อยเต่าช่วงสงกรานต์เดือนเมษายน จัดโดยรีสอร์ตต่างๆ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mai Khao Beach, Sirinat National Park, Phuket",
+          "ok": "2026-11",
+          "src": "https://www.phuket101.net/mai-khao-beach/"
+        },
+        {
+          "name": { "en": "Jungle Xtrem", "th": "จังเกิล เอ็กซ์ตรีม" },
+          "kind": "park",
+          "area": { "en": "Chalong", "th": "ฉลอง" },
+          "what": { "en": "A treetop adventure park in the forest with rope bridges, cargo nets and ziplines.", "th": "สวนผจญภัยบนยอดไม้ในป่า มีสะพานเชือก ตาข่ายปีน และซิปไลน์" },
+          "why": { "en": "Kids cross rope bridges, cargo nets and wobbly beams high in the trees, then fly between them on ziplines.", "th": "เด็กๆ ข้ามสะพานเชือก ตาข่าย และคานโยกเยกบนต้นไม้สูง แล้วไถลซิปไลน์ไปมา" },
+          "tip": { "en": "Open 9:00–18:00, last start 16:00; from 120 cm, and kids aged 6 to 9 need an adult on the course.", "th": "เปิด 9:00–18:00 รอบสุดท้าย 16:00 ต้องสูง 120 ซม. ขึ้นไป เด็กอายุ 6–9 ปีต้องมีผู้ใหญ่ไปด้วย" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Jungle Xtrem, Chalong, Phuket",
+          "ok": "2026-11",
+          "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
+        },
+        {
+          "name": { "en": "Formula Fun Indoor Go-Karts", "th": "ฟอร์มูลา ฟัน อินดอร์ โกคาร์ท" },
+          "kind": "ride",
+          "area": { "en": "Near Phuket Town", "th": "ใกล้ตัวเมืองภูเก็ต" },
+          "what": { "en": "An indoor electric go-kart track with driving simulators and a driving academy for kids.", "th": "สนามโกคาร์ทไฟฟ้าในร่ม มีเครื่องจำลองการขับและสถาบันสอนขับสำหรับเด็ก" },
+          "why": { "en": "Because the karts are electric, it is quieter and less fumey than outdoor tracks.", "th": "รถเป็นไฟฟ้า เงียบและควันน้อยกว่าสนามกลางแจ้ง" },
+          "tip": { "en": "Junior karts from about age 7; open 9:00–19:00.", "th": "รถจูเนียร์เริ่มราวอายุ 7 ปี เปิด 9:00–19:00" },
+          "ages": [0, 0, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Formula Fun, near Phuket Town",
+          "ok": "2026-11",
+          "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
+        },
+        {
+          "name": { "en": "Rebel Rock Climbing", "th": "รีเบล ร็อก ไคลมบิง" },
+          "kind": "play",
+          "area": { "en": "Cherngtalay", "th": "เชิงทะเล" },
+          "what": { "en": "A three-storey indoor climbing gym on the way to Bang Tao, with walls graded from easy to hard.", "th": "ยิมปีนผาในร่มสามชั้นระหว่างทางไปบางเทา มีผนังแบ่งระดับจากง่ายไปยาก" },
+          "why": { "en": "Nervous first-timers and confident kids both find routes that suit them.", "th": "ทั้งมือใหม่ที่ประหม่าและเด็กที่มั่นใจ ต่างก็เจอเส้นทางที่เหมาะ" },
+          "tip": { "en": "Harnesses and shoes are provided, so there is nothing to bring.", "th": "มีสายรัดและรองเท้าให้ ไม่ต้องเตรียมอะไรไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Rebel Rock Climbing, Cherngtalay, Thalang",
+          "ok": "2026-11",
+          "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
+        },
+        {
+          "name": { "en": "Oto Play Park", "th": "โอโต เพลย์ พาร์ค" },
+          "kind": "play",
+          "area": { "en": "Central Phuket", "th": "ภูเก็ตตอนกลาง" },
+          "what": { "en": "An air-conditioned indoor play centre for children.", "th": "ศูนย์เด็กเล่นในร่ม มีแอร์" },
+          "why": { "en": "Air-conditioned and big enough to keep children busy for hours, a good rainy-afternoon pick.", "th": "มีแอร์ และกว้างพอให้เด็กเล่นได้หลายชั่วโมง เหมาะบ่ายวันฝนตก" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Oto Play Park, Central Phuket, Phuket",
+          "ok": "2026-11",
+          "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "หนุมานเวิลด์",
+            "en": "Hanuman World"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "วิชิต ภูเก็ต",
+            "en": "Wichit, Phuket"
+          },
+          "what": {
+            "th": "สวนซิปไลน์บนยอดไม้ มีสะพานลอยฟ้าและทางเดิน",
+            "en": "A treetop zipline park with sky bridges and walkways"
+          },
+          "why": {
+            "th": "เด็กที่สูงถึงเกณฑ์ได้โหนตัวผ่านยอดไม้",
+            "en": "Children who meet the height rule fly through the trees"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 08:00–18:00",
+            "en": "Open daily 08:00–18:00"
+          },
+          "q": "Hanuman World, Phuket",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "แบทเทิลฟิลด์ ภูเก็ต เลเซอร์แท็ก",
+            "en": "Battlefield Phuket Laser Tag"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศรีสุนทร ถลาง ภูเก็ต",
+            "en": "Si Sunthon, Thalang, Phuket"
+          },
+          "what": {
+            "th": "สนามเลเซอร์แท็กในร่มสำหรับครอบครัว",
+            "en": "Indoor laser-tag arenas for families"
+          },
+          "why": {
+            "th": "เด็กโต วัยรุ่น และพ่อแม่เล่นด้วยกันได้",
+            "en": "Older children, teenagers and parents can all play"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 08:00–22:00 มักมีงานวันเกิด เช็กก่อนไป",
+            "en": "Open daily 08:00–22:00; a birthday-party spot, so check first"
+          },
+          "q": "Battlefield Phuket Laser Tag",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "แอดเวนเจอร์ วิลเลจ ฉลอง",
+            "en": "Adventure Village Chalong"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฉลอง ภูเก็ต",
+            "en": "Chalong, Phuket"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มขนาดใหญ่ มีเครื่องปีนป่ายและแทรมโพลีน",
+            "en": "A big indoor play centre with climbing frames and trampolines"
+          },
+          "why": {
+            "th": "แวะแป๊บเดียวกลายเป็นทั้งบ่ายสำหรับเด็กเล็ก",
+            "en": "A quick visit turns into an afternoon for little ones"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–20:00 ย้ายมาอยู่ที่ฉลองแล้ว",
+            "en": "Open daily 10:00–20:00; it moved to Chalong"
+          },
+          "q": "Adventure Village Chalong, Phuket",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ฿490 ต่อชั่วโมง · ฿900 ต่อวัน",
+            "en": "≈ ฿490 an hour · ฿900 a day"
+          },
+          "book": "none",
+          "src": "https://thethaiger.com/guides/best-of/things-to-do/are-there-family-friendly-activities-at-jungceylon-phuket",
+          "name": {
+            "th": "ฟร็อกกี้ส์ฟันพาร์ก จังซีลอน",
+            "en": "Froggy's Fun Park (Jungceylon)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จังซีลอน ป่าตอง",
+            "en": "Jungceylon, Patong"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม มีแทรมโพลีน ซิปไลน์ เกมอาร์เคด และเกมวีอาร์",
+            "en": "An indoor fun park with trampolines, a zipline, arcade games and VR"
+          },
+          "why": {
+            "th": "แทรมโพลีนและเครื่องปีนป่ายสำหรับเด็กตั้งแต่ 4 ขวบ",
+            "en": "Trampolines and climbing for children from four"
+          },
+          "q": "Froggy's Fun Park, Jungceylon, Patong, Phuket",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Kidzooona",
+            "th": "คิดซูน่า"
+          },
+          "kind": "play",
+          "area": {
+            "en": "3F The Botanica Zone, Jungceylon, Patong",
+            "th": "ชั้น 3 โซนเดอะโบทานิกา จังซีลอน ป่าตอง"
+          },
+          "what": {
+            "en": "Indoor playground on the third floor of Jungceylon, with a Toy Master Corner for hands-on play",
+            "th": "สนามเด็กเล่นในร่มชั้น 3 ของจังซีลอน มีมุม Toy Master Corner ให้เด็กลงมือเล่น"
+          },
+          "why": {
+            "en": "Hands-on activities that help fine motor skills and confidence, set out for children aged 1 to 8",
+            "th": "กิจกรรมลงมือทำที่ช่วยกล้ามเนื้อมัดเล็กและความมั่นใจ จัดไว้สำหรับเด็กอายุ 1–8 ปี"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kidzoona, 3F Jungceylon, Patong, Phuket, Thailand",
+          "ok": "2026-11",
+          "src": "https://www.jungceylon.com/explore/top-activities-for-kids-to-do-at-jungceylon-phuket"
+        },
+        {
+          "name": {
+            "en": "Surin Beach",
+            "th": "หาดสุรินทร์"
+          },
+          "local": "หาดสุรินทร์",
+          "kind": "beach",
+          "area": {
+            "en": "Surin, Choeng Thale",
+            "th": "สุรินทร์ เชิงทะเล"
+          },
+          "what": {
+            "en": "Beach with clear water and rocky outcrops, several lifeguard stations, bathrooms and restaurants nearby",
+            "th": "ชายหาดน้ำใสมีโขดหิน มีจุดไลฟ์การ์ดหลายแห่ง ห้องน้ำ และร้านอาหารใกล้ๆ"
+          },
+          "why": {
+            "en": "Clear water; snorkelling once the children are old enough",
+            "th": "น้ำใส เด็กโตพอแล้วดำน้ำตื้นได้"
+          },
+          "tip": {
+            "en": "Weekends in high season are crowded",
+            "th": "ช่วงสุดสัปดาห์ในหน้าไฮซีซันคนเยอะ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Surin Beach, Choeng Thale, Phuket, Thailand",
+          "ok": "2026-11",
+          "src": "https://phuketexpatguide.com/blog/best-phuket-beaches-families-kids/"
+        },
+        {
+          "name": {
+            "en": "Ko Fun Kids Rope Park",
+            "th": "โก ฟัน คิดส์ โรป พาร์ค"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Rawai Beach",
+            "th": "หาดราไวย์"
+          },
+          "what": {
+            "en": "Outdoor rope and net park, two levels high, with swinging platforms, hanging hoops, balance beams and net tunnels",
+            "th": "สวนเชือกและตาข่ายกลางแจ้งสูงสองชั้น มีแท่นแกว่ง ห่วงแขวน คานทรงตัว และอุโมงค์ตาข่าย"
+          },
+          "why": {
+            "en": "Every level is wrapped in heavy netting, so there are no harnesses to fit and no queue to start a lap",
+            "th": "ทุกชั้นหุ้มด้วยตาข่ายหนา ไม่ต้องใส่สายรัดและไม่ต้องรอคิวเริ่มเล่น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "KO FUN Kids Rope Park, Rawai, Mueang Phuket, Phuket, Thailand",
+          "ok": "2026-11",
+          "src": "https://phuket101.net/best-kids-clubs-in-phuket"
+        }
+      ]
+    },
+    {
+      "place": "th-pattaya",
+      "sights": [
+        {
+          "name": { "en": "Sanctuary of Truth", "th": "ปราสาทสัจธรรม" },
+          "kind": "culture",
+          "area": { "en": "Naklua", "th": "นาเกลือ" },
+          "what": { "en": "A huge temple-like hall carved entirely from wood on the shore, still being carved by craftsmen as you walk round", "th": "อาคารไม้แกะสลักทั้งหลังขนาดมหึมาริมทะเล ยังมีช่างแกะสลักทำงานให้ดูระหว่างเดินชม" },
+          "why": { "en": "Children love spotting the carved animals and gods up close; the sea breeze keeps it cooler than the town", "th": "เด็กๆ ชอบหาสัตว์และรูปแกะสลักใกล้ๆ ลมทะเลทำให้เย็นกว่าในเมือง" },
+          "tip": { "en": "Go when it opens at 08:00, before the heat and the tour coaches; under-12s pay the child price", "th": "ไปตอนเปิด 08:00 ก่อนอากาศร้อนและก่อนรถทัวร์มา เด็กต่ำกว่า 12 ปีจ่ายราคาเด็ก" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ฿500 adults · ≈ ฿250 children under 12", "th": "≈ ฿500 ผู้ใหญ่ · ≈ ฿250 เด็กต่ำกว่า 12 ปี" },
+          "book": "none",
+          "q": "Sanctuary of Truth, Naklua, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/pattaya-sanctuary-truth-guide"
+        },
+        {
+          "name": { "en": "Art in Paradise Pattaya", "th": "อาร์ตอินพาราไดซ์ พัทยา" },
+          "kind": "museumkid",
+          "area": { "en": "Central Pattaya", "th": "พัทยากลาง" },
+          "what": { "en": "A 3D trick-art museum: painted rooms where children step into the picture with whales, dinosaurs and waterfalls", "th": "พิพิธภัณฑ์ภาพสามมิติ ห้องภาพวาดที่เด็กๆ เข้าไปเป็นส่วนหนึ่งของภาพกับวาฬ ไดโนเสาร์ และน้ำตก" },
+          "why": { "en": "Indoors, cool and made for silly photos; small children can run from room to room", "th": "อยู่ในร่ม แอร์เย็น ถ่ายรูปตลกๆ ได้ทั้งวัน เด็กเล็กวิ่งเล่นจากห้องหนึ่งไปอีกห้องได้" },
+          "tip": { "en": "A good rainy-day hour; children under 100 cm go in free", "th": "เหมาะกับวันฝนตก เด็กสูงไม่ถึง 100 ซม. เข้าฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ฿400–500 adults · ≈ ฿200 children 100–130 cm · under 100 cm free (foreigner price)", "th": "≈ ฿400–500 ผู้ใหญ่ · ≈ ฿200 เด็กสูง 100–130 ซม. · ต่ำกว่า 100 ซม. ฟรี (ราคาชาวต่างชาติ)" },
+          "book": "none",
+          "q": "Art in Paradise, Pattaya Second Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.trazy.com/experience/detail/art-in-paradise-pattaya-discount-ticket"
+        },
+        {
+          "name": { "en": "Underwater World Pattaya", "th": "อันเดอร์วอเตอร์เวิลด์ พัทยา" },
+          "kind": "aquarium",
+          "area": { "en": "Sukhumvit Road", "th": "ถนนสุขุมวิท" },
+          "what": { "en": "An aquarium with a long walk-through tunnel where sharks and rays glide overhead, plus touch pools and reef tanks", "th": "อควาเรียมที่มีอุโมงค์ใต้น้ำยาว ฉลามและกระเบนว่ายผ่านเหนือหัว มีบ่อสัมผัสและตู้ปะการัง" },
+          "why": { "en": "Cool, dark and calm, with a moving walkway small legs like; easy to see in an hour or two", "th": "เย็น มืดสบาย มีทางเลื่อนที่เด็กชอบ ดูจบได้ในชั่วโมงสองชั่วโมง" },
+          "tip": { "en": "Open about 09:00–18:00; ticket sales stop earlier, so arrive before 17:00", "th": "เปิดประมาณ 09:00–18:00 ขายตั๋วถึงก่อนนั้น ควรไปถึงก่อน 17:00" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ฿550 adults · ≈ ฿320 children 91–130 cm · smaller children free", "th": "≈ ฿550 ผู้ใหญ่ · ≈ ฿320 เด็กสูง 91–130 ซม. · เด็กเล็กกว่านั้นฟรี" },
+          "book": "none",
+          "q": "Underwater World Pattaya, Sukhumvit Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/underwater-world-pattaya/"
+        },
+        {
+          "name": { "en": "Khao Kheow Open Zoo", "th": "สวนสัตว์เปิดเขาเขียว" },
+          "kind": "zoo",
+          "area": { "en": "Si Racha, 40 min north", "th": "ศรีราชา ห่างราว 40 นาที" },
+          "what": { "en": "A large open zoo in the hills with giraffes, zebras, hippos and a big walk-in aviary", "th": "สวนสัตว์เปิดขนาดใหญ่บนเขา มียีราฟ ม้าลาย ฮิปโป และกรงนกใหญ่ที่เดินเข้าไปได้" },
+          "why": { "en": "Wide paths and room to run; drive or take the tram between zones so small children do not tire", "th": "ทางกว้าง มีที่ให้วิ่งเล่น ขับรถหรือนั่งรถรางระหว่างโซน เด็กเล็กไม่เหนื่อยเกินไป" },
+          "tip": { "en": "Open daily 08:00–17:00; go early, the animals are livelier before the midday heat", "th": "เปิดทุกวัน 08:00–17:00 ไปเช้าสัตว์จะคึกกว่าช่วงเที่ยงที่ร้อน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿350 foreign adults · ≈ ฿120 children 90–140 cm · under 90 cm free (Thai price lower)", "th": "≈ ฿350 ผู้ใหญ่ต่างชาติ · ≈ ฿120 เด็กสูง 90–140 ซม. · ต่ำกว่า 90 ซม. ฟรี (คนไทยราคาถูกกว่า)" },
+          "book": "none",
+          "q": "Khao Kheow Open Zoo, Si Racha, Chonburi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/khao-kheow-open-zoo/"
+        },
+        {
+          "name": { "en": "Ramayana Water Park", "th": "สวนน้ำรามายณะ" },
+          "kind": "themepark",
+          "area": { "en": "Na Jomtien", "th": "นาจอมเทียน" },
+          "what": { "en": "A big water park by a lake: wave pool, lazy river, giant slides and a shallow splash zone for little ones", "th": "สวนน้ำใหญ่ริมทะเลสาบ มีสระคลื่น แม่น้ำจำลอง สไลเดอร์ยักษ์ และโซนน้ำตื้นสำหรับเด็กเล็ก" },
+          "why": { "en": "Children under 106 cm go free and have their own shallow pools; plenty of shade and loungers", "th": "เด็กสูงไม่ถึง 106 ซม. เข้าฟรีและมีสระตื้นของตัวเอง มีร่มและเก้าอี้ให้พักเยอะ" },
+          "tip": { "en": "Booking online is cheaper than the gate; some ride limits go by height, so measure first", "th": "ซื้อตั๋วออนไลน์ถูกกว่าหน้างาน เครื่องเล่นบางอย่างจำกัดความสูง วัดส่วนสูงเด็กก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿1,099 foreign visitors online (≈ ฿1,199 at the gate) · under 106 cm free", "th": "≈ ฿1,099 ชาวต่างชาติซื้อออนไลน์ (≈ ฿1,199 หน้างาน) · เด็กต่ำกว่า 106 ซม. ฟรี" },
+          "book": "rec",
+          "q": "Ramayana Water Park, Na Jomtien, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/ramayana-water-park-pattaya/"
+        },
+        {
+          "name": { "en": "Mini Siam", "th": "มินิสยาม" },
+          "kind": "park",
+          "area": { "en": "North Pattaya, Sukhumvit Road", "th": "พัทยาเหนือ ถนนสุขุมวิท" },
+          "what": { "en": "A garden of small models of famous buildings: Thai temples, the Eiffel Tower, Tower Bridge and the Statue of Liberty", "th": "สวนจำลองสิ่งก่อสร้างดัง ทั้งวัดไทย หอไอเฟล ทาวเวอร์บริดจ์ และเทพีเสรีภาพ" },
+          "why": { "en": "Children feel like giants beside the buildings; flat paths a pram can follow", "th": "เด็กๆ รู้สึกเหมือนเป็นยักษ์ยืนข้างตึก ทางเรียบ เข็นรถเข็นได้" },
+          "tip": { "en": "Go late afternoon, little shade at midday; the models are lit after dark", "th": "ไปช่วงบ่ายแก่ๆ ตอนเที่ยงร่มน้อย ตกค่ำมีไฟประดับ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ฿300 foreign adults · ≈ ฿150 children 100–140 cm · under 100 cm free", "th": "≈ ฿300 ผู้ใหญ่ต่างชาติ · ≈ ฿150 เด็กสูง 100–140 ซม. · ต่ำกว่า 100 ซม. ฟรี" },
+          "book": "none",
+          "q": "Mini Siam, Sukhumvit Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://thailandmagazine.com/pattaya/see-do/mini-siam/"
+        },
+        {
+          "name": { "en": "Phra Tamnak Viewpoint", "th": "จุดชมวิวเขาพระตำหนัก" },
+          "kind": "views",
+          "area": { "en": "Pratumnak Hill", "th": "เขาพระตำหนัก" },
+          "what": { "en": "The lookout above the big PATTAYA CITY letters, with the whole bay below", "th": "จุดชมวิวเหนือป้ายตัวอักษร PATTAYA CITY มองเห็นอ่าวพัทยาทั้งอ่าว" },
+          "why": { "en": "A quick free stop that children enjoy for the letters and the boats below", "th": "แวะได้เร็ว ไม่เสียเงิน เด็กชอบดูตัวอักษรใหญ่และเรือในอ่าว" },
+          "tip": { "en": "Come for sunset; the letters light up from about 18:30", "th": "มาช่วงพระอาทิตย์ตก ตัวอักษรเปิดไฟราว 18:30" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Pattaya Viewpoint, Khao Phra Tamnak, Pattaya",
+          "ok": "2026-11",
+          "src": "https://pattaya.guide/place/phra-tamnak-viewpoint"
+        },
+        {
+          "name": { "en": "Lan Pho Naklua Park", "th": "สวนสาธารณะลานโพธิ์นาเกลือ" },
+          "kind": "park",
+          "area": { "en": "Naklua", "th": "นาเกลือ" },
+          "what": { "en": "A seaside park with a playground of slides, swings and climbing frames, beside the Lan Pho seafood market", "th": "สวนสาธารณะริมทะเล มีสนามเด็กเล่น สไลเดอร์ ชิงช้า เครื่องปีนป่าย ติดตลาดอาหารทะเลลานโพธิ์" },
+          "why": { "en": "Local families play here in the evening; buy grilled seafood next door and eat in the shade", "th": "ตอนเย็นครอบครัวคนท้องถิ่นมาเล่นกัน ซื้ออาหารทะเลย่างจากตลาดข้างๆ มานั่งกินใต้ร่มไม้ได้" },
+          "tip": { "en": "The city is repairing the playground and adding a second one at the back of the park", "th": "เมืองพัทยากำลังซ่อมเครื่องเล่นและเพิ่มสนามเด็กเล่นอีกชุดด้านหลังสวน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lan Pho Naklua Public Park, Naklua, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.pattayamail.com/news/pattaya-repairs-worn-playground-equipment-and-plans-new-play-area-at-lan-pho-park-568632"
+        },
+        {
+          "name": { "en": "Thepprasit Night Market", "th": "ตลาดนัดเทพประสิทธิ์" },
+          "kind": "market",
+          "area": { "en": "Thepprasit Road", "th": "ถนนเทพประสิทธิ์" },
+          "what": { "en": "Pattaya's big evening market: rows of street food, fruit, toys and cheap clothes", "th": "ตลาดนัดตอนเย็นที่ใหญ่ที่สุดของพัทยา มีอาหารริมทาง ผลไม้ ของเล่น และเสื้อผ้าราคาถูก" },
+          "why": { "en": "Dinner for everyone in one place, with mango sticky rice and grilled skewers small children like", "th": "อาหารเย็นได้ครบในที่เดียว มีข้าวเหนียวมะม่วงและไม้ปิ้งที่เด็กเล็กชอบ" },
+          "tip": { "en": "Busiest Friday to Sunday from about 17:30; arrive before 19:00 for space to walk", "th": "คึกคักที่สุดศุกร์ถึงอาทิตย์ราว 17:30 เป็นต้นไป มาก่อน 19:00 ทางเดินยังโล่ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Thepprasit Night Market, Thepprasit Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/thepprasit-night-market/"
+        },
+        {
+          "name": { "en": "Koh Larn", "th": "เกาะล้าน" },
+          "kind": "beach",
+          "area": { "en": "Ferry from Bali Hai Pier", "th": "เรือจากท่าเรือแหลมบาลีฮาย" },
+          "what": { "en": "An island 45 minutes off Pattaya by public ferry, with clearer water and calmer beaches than the mainland", "th": "เกาะห่างพัทยาราว 45 นาทีด้วยเรือโดยสาร น้ำใสและหาดสงบกว่าฝั่ง" },
+          "why": { "en": "A cheap boat ride is an adventure in itself; Tawaen and Samae beaches have shallow water for paddling", "th": "นั่งเรือราคาถูกก็สนุกแล้ว หาดตาแหวนและหาดแสมน้ำตื้น เด็กเล่นน้ำได้" },
+          "tip": { "en": "Take an early ferry and come back mid-afternoon; check the fare at the pier", "th": "ไปเรือเที่ยวเช้าแล้วกลับบ่ายๆ เช็กค่าเรือที่ท่าก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿30–40 a person each way on the public ferry", "th": "≈ ฿30–40 ต่อคนต่อเที่ยว เรือโดยสาร" },
+          "book": "none",
+          "q": "Bali Hai Pier, South Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.pattayamail.com/latestnews/news/how-to-get-from-pattaya-to-koh-larn-ferry-times-prices-and-beach-guide-for-2026-561423"
+        },
+        {
+          "name": { "en": "Pattaya Floating Market", "th": "ตลาดน้ำสี่ภาค พัทยา" },
+          "kind": "market",
+          "area": { "en": "Sukhumvit Road, south", "th": "ถนนสุขุมวิท ฝั่งใต้" },
+          "what": { "en": "A wooden market village over the water with snacks and crafts from all four regions of Thailand, and boat rides", "th": "ตลาดไม้บนน้ำ มีขนมและของฝากจากสี่ภาคของไทย และนั่งเรือชมได้" },
+          "why": { "en": "Boardwalks, boats and snacks keep children busy; a gentle taste of Thai food culture", "th": "มีทางเดินไม้ เรือ และขนมให้เด็กๆ เพลิน ได้รู้จักอาหารไทยแบบง่ายๆ" },
+          "tip": { "en": "Hold small hands on the boardwalks, some have low rails", "th": "จูงมือเด็กเล็กบนทางเดินไม้ บางช่วงราวกั้นเตี้ย" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿200–250 foreign adults (boat rides extra)", "th": "≈ ฿200–250 ผู้ใหญ่ต่างชาติ (ค่าเรือแยก)" },
+          "book": "none",
+          "q": "Pattaya Floating Market, Sukhumvit Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/blog/pattaya-floating-market-guide"
+        },
+        {
+          "name": { "en": "Frost Magical Ice of Siam", "th": "ฟรอสต์ เมจิคัล ไอซ์ ออฟ สยาม" },
+          "kind": "play",
+          "area": { "en": "Sukhumvit Road", "th": "ถนนสุขุมวิท" },
+          "what": { "en": "A hall of ice sculptures and ice slides kept well below freezing", "th": "ห้องประติมากรรมน้ำแข็งและสไลเดอร์น้ำแข็ง อุณหภูมิต่ำกว่าศูนย์องศา" },
+          "why": { "en": "Children who have never seen snow love the slides; a cool escape from the heat or the rain", "th": "เด็กที่ไม่เคยเห็นหิมะชอบเล่นสไลเดอร์ หนีร้อนหรือหลบฝนได้ดี" },
+          "tip": { "en": "Bring long trousers and socks for small children; stay as long as they are happy, then warm up outside", "th": "เตรียมกางเกงขายาวและถุงเท้าให้เด็กเล็ก อยู่เท่าที่เด็กสนุกแล้วออกมาอุ่นตัว" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ฿600 adults · ≈ ฿500 children", "th": "≈ ฿600 ผู้ใหญ่ · ≈ ฿500 เด็ก" },
+          "book": "none",
+          "q": "Frost Magical Ice of Siam, Sukhumvit Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/frost-magical-ice-of-siam-pattaya/"
+        },
+        {
+          "name": { "en": "Columbia Pictures Aquaverse", "th": "โคลัมเบีย พิคเจอร์ส อควาเวิร์ส" },
+          "kind": "themepark",
+          "area": { "en": "Na Jomtien, Sukhumvit Road", "th": "นาจอมเทียน ถนนสุขุมวิท" },
+          "what": { "en": "A film-themed water park with slides, a wave pool, a lazy river and play zones for little ones", "th": "สวนน้ำธีมภาพยนตร์ มีสไลเดอร์ สระคลื่น แม่น้ำจำลอง และโซนเล่นน้ำของเด็กเล็ก" },
+          "why": { "en": "Shallow splash areas for toddlers and big slides for older children, all in one ticket", "th": "มีโซนน้ำตื้นสำหรับเด็กเล็กและสไลเดอร์ใหญ่สำหรับเด็กโต ใช้ตั๋วใบเดียว" },
+          "tip": { "en": "Usually 10:00–18:00 and closed on Wednesdays; the non-Thai ticket is cheaper online", "th": "ปกติเปิด 10:00–18:00 ปิดวันพุธ ตั๋วชาวต่างชาติซื้อออนไลน์ถูกกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿1,300 non-Thai visitors online · under 3 free (Thai price differs)", "th": "≈ ฿1,300 ชาวต่างชาติซื้อออนไลน์ · ต่ำกว่า 3 ขวบฟรี (คนไทยราคาต่างกัน)" },
+          "book": "rec",
+          "q": "Columbia Pictures Aquaverse, Sukhumvit Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.klook.com/activity/85772-columbia-pictures-aquaverse-admission-ticket/"
+        },
+        {
+          "name": { "en": "Jomtien Beach", "th": "หาดจอมเทียน" },
+          "kind": "beach",
+          "area": { "en": "Jomtien", "th": "จอมเทียน" },
+          "what": { "en": "A long beach south of the city with calm, shallow water and lifeguard zones", "th": "หาดยาวทางใต้ของเมือง น้ำตื้นและสงบ มีโซนเจ้าหน้าที่ไลฟ์การ์ด" },
+          "why": { "en": "Calmer and quieter than Pattaya Beach, with fewer sellers and a gentle slope into the sea", "th": "สงบกว่าหาดพัทยา คนขายของน้อยกว่า ลงน้ำแบบลาดค่อยเป็นค่อยไป" },
+          "tip": { "en": "The southern Dongtan end is the quietest, away from the jet skis", "th": "ฝั่งใต้ช่วงดงตาลเงียบที่สุด ห่างจากเจ็ตสกี" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jomtien Beach, Pattaya",
+          "ok": "2026-11",
+          "src": "https://pattayapointer.pages.dev/guides/pattaya-with-toddlers-guide"
+        },
+        {
+          "name": { "en": "Terminal 21 Pattaya", "th": "เทอร์มินอล 21 พัทยา" },
+          "kind": "shop",
+          "area": { "en": "North Pattaya", "th": "พัทยาเหนือ" },
+          "what": { "en": "An airport-themed shopping centre, each floor a different city, with the cheap Pier 21 food court", "th": "ห้างธีมสนามบิน แต่ละชั้นเป็นเมืองต่างๆ มีศูนย์อาหาร Pier 21 ราคาประหยัด" },
+          "why": { "en": "Air-conditioned, step-free and free to wander; the themed floors keep children curious", "th": "แอร์เย็น ไม่มีขั้นบันได เดินเล่นฟรี เด็กๆ ตื่นเต้นกับแต่ละชั้น" },
+          "tip": { "en": "Opens about 11:00; the food court is the easy family lunch", "th": "เปิดราว 11:00 ศูนย์อาหารเป็นมื้อกลางวันง่ายๆ ของครอบครัว" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Terminal 21 Pattaya, North Pattaya Road",
+          "ok": "2026-11",
+          "src": "https://pattaya.guide/place/terminal-21-pattaya"
+        },
+        {
+          "name": { "en": "Pattaya Water Park", "th": "พัทยา วอเตอร์ปาร์ค" },
+          "kind": "themepark",
+          "area": { "en": "Jomtien", "th": "จอมเทียน" },
+          "what": { "en": "Water park with several slides, a lazy river, a kids' pool with slides, a monorail, a carousel and a roller coaster.", "th": "สวนน้ำมีสไลเดอร์หลายแบบ แม่น้ำเวียน สระเด็กพร้อมสไลเดอร์ โมโนเรล ม้าหมุน และรถไฟเหาะ" },
+          "why": { "en": "A kids' pool with slides, and a carousel and monorail for the little ones.", "th": "มีสระเด็กพร้อมสไลเดอร์ รวมทั้งม้าหมุนและโมโนเรลสำหรับเด็กเล็ก" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Pattaya Water Park, Jomtien, Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.pattayaunlimited.com/things-to-do-with-kids-in-pattaya/"
+        },
+        {
+          "name": { "en": "Harborland", "th": "ฮาร์เบอร์แลนด์" },
+          "kind": "play",
+          "area": { "en": "Terminal 21, Pattaya", "th": "เทอร์มินอล 21 พัทยา" },
+          "what": { "en": "The indoor children's playground on the 4th floor of Terminal 21 Pattaya; the one at Harbor Mall is closed for now.", "th": "สนามเด็กเล่นในร่มชั้น 4 เทอร์มินอล 21 พัทยา ส่วนที่ฮาร์เบอร์ มอลล์ปิดอยู่ตอนนี้" },
+          "why": { "en": "Indoor, air-conditioned and built for children, a rainy-day place.", "th": "ในร่ม มีแอร์ สร้างมาเพื่อเด็ก เหมาะวันฝนตก" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "HarborLand, Terminal 21 Pattaya",
+          "ok": "2026-11",
+          "src": "https://www.pattayaunlimited.com/things-to-do-with-kids-in-pattaya/"
+        },
+        {
+          "name": { "en": "Monster Aquarium", "th": "มอนสเตอร์ อควาเรียม" },
+          "kind": "aquarium",
+          "area": { "en": "Just outside central Pattaya", "th": "นอกใจกลางพัทยาเล็กน้อย" },
+          "what": { "en": "An aquarium with an underwater tunnel, a giant freshwater tank, a mini zoo with reptiles and birds, and feeding sessions.", "th": "พิพิธภัณฑ์สัตว์น้ำมีอุโมงค์ใต้น้ำ ตู้น้ำจืดยักษ์ มินิซูสัตว์เลื้อยคลานและนก และช่วงให้อาหารสัตว์" },
+          "why": { "en": "Children enjoy feeding the animals and walking through the tunnel.", "th": "เด็กๆ สนุกกับการให้อาหารสัตว์และเดินผ่านอุโมงค์" },
+          "tip": { "en": "Come in the morning with small children; open daily 9:00–18:00 per the guide.", "th": "มากับเด็กเล็กควรมาตอนเช้า เปิดทุกวัน 9:00–18:00 ตามไกด์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Monster Aquarium, Pattaya",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/monster-aquarium-pattaya"
+        },
+        {
+          "name": { "en": "Ripley's Believe It or Not", "th": "ริปลีย์ส บีลีฟ อิท ออร์ นอท" },
+          "kind": "museum",
+          "area": { "en": "Royal Garden Plaza, Beach Road", "th": "รอยัล การ์เดน พลาซ่า ถนนเลียบชายหาด" },
+          "what": { "en": "Seven attractions under one roof: the Odditorium, a Haunted Adventure, a Laser Maze Challenge and Louis Tussaud's Waxworks.", "th": "เจ็ดสถานที่ในที่เดียว เช่น ออดดิทอเรียม บ้านผีสิง เขาวงกตเลเซอร์ และพิพิธภัณฑ์หุ่นขี้ผึ้งหลุยส์ ทุสโซ" },
+          "why": { "en": "The Laser Maze and Infinity Maze are family favourites; a climate-controlled indoor place for a rainy day.", "th": "เขาวงกตเลเซอร์และเขาวงกตอินฟินิตี้เป็นที่ชื่นชอบของครอบครัว ในร่มมีแอร์ เหมาะวันฝนตก" },
+          "tip": { "en": "The Haunted Adventure is for children 8 and over; open 11:00–22:00 per the guide.", "th": "บ้านผีสิงสำหรับเด็กอายุ 8 ปีขึ้นไป เปิด 11:00–22:00 ตามไกด์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Ripley's Believe It or Not, Royal Garden Plaza, Beach Road, Pattaya",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/pattaya/ripleys-believe-it-or-not-museum-pattaya"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.pattayaunlimited.com/things-to-do-with-kids-in-pattaya/",
+          "name": {
+            "th": "สวนนงนุชพัทยา",
+            "en": "Nong Nooch Tropical Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "พัทยา",
+            "en": "Pattaya"
+          },
+          "what": {
+            "th": "สวนใหญ่ มีหุบเขาไดโนเสาร์ที่มีหุ่นไดโนเสาร์ขนาดเท่าจริง",
+            "en": "Big gardens with a Dinosaur Valley of life-size dinosaur models"
+          },
+          "why": {
+            "th": "เด็กได้เดินดูไดโนเสาร์ตัวเท่าจริง",
+            "en": "Children walk among the life-size dinosaurs"
+          },
+          "q": "Nong Nooch Tropical Garden, Pattaya, Chonburi",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Wat Phra Yai (Big Buddha)",
+            "th": "วัดพระใหญ่"
+          },
+          "local": "วัดพระใหญ่",
+          "kind": "culture",
+          "area": {
+            "en": "Pratumnak Hill, between Pattaya and Jomtien",
+            "th": "เขาพระตำหนัก ระหว่างพัทยากับจอมเทียน"
+          },
+          "what": {
+            "en": "A temple on Pratumnak Hill with an 18-metre golden Big Buddha and views over the bay",
+            "th": "วัดบนเขาพระตำหนัก มีพระพุทธรูปทองสูง 18 เมตร และวิวอ่าวพัทยา"
+          },
+          "why": {
+            "en": "Climb the dragon stairway, see the Buddha statues and enjoy the coastline views",
+            "th": "ขึ้นบันไดนาค ชมพระพุทธรูป และมองวิวชายฝั่ง"
+          },
+          "tip": {
+            "en": "Dress modestly with covered shoulders and knees; go early morning or at sunset for cooler weather",
+            "th": "แต่งกายสุภาพ ปิดไหล่และเข่า ไปแต่เช้าหรือตอนพระอาทิตย์ตกจะเย็นกว่า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free (donation ≈ ฿50 suggested)",
+            "th": "ฟรี (แนะนำบริจาค ≈ ฿50)"
+          },
+          "book": "none",
+          "q": "Wat Phra Yai Big Buddha, Pratumnak Hill, Pattaya",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/pattaya/wat-phra-yai-thailand"
+        },
+        {
+          "name": {
+            "en": "Pattaya Sheep Farm",
+            "th": "พัทยา ชีพ ฟาร์ม"
+          },
+          "kind": "farm",
+          "area": {
+            "en": "Na Chom Thian, Sattahip",
+            "th": "นาจอมเทียน สัตหีบ"
+          },
+          "what": {
+            "en": "A farm with colourful photo zones, friendly animals and a relaxed countryside feel, open 09:00–18:00 daily.",
+            "th": "ฟาร์มที่มีมุมถ่ายรูปสีสัน สัตว์ใจดี และบรรยากาศชนบทสบายๆ เปิดทุกวัน 09:00–18:00"
+          },
+          "why": {
+            "en": "Children can feed and pet sheep, goats and rabbits, which the page calls gentle animals that come up to you.",
+            "th": "เด็กๆ ให้อาหารและลูบแกะ แพะ และกระต่าย ซึ่งเว็บไซต์บอกว่าเป็นสัตว์เชื่องที่เข้ามาหา"
+          },
+          "tip": {
+            "en": "The page suggests the morning and the cooler months; little ones enter free",
+            "th": "เว็บไซต์แนะนำช่วงเช้าและหน้าหนาว เด็กเล็กเข้าฟรี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿500 per person · little ones free",
+            "th": "≈ ฿500 ต่อคน · เด็กเล็กเข้าฟรี"
+          },
+          "book": "none",
+          "q": "Pattaya Sheep Farm, Na Chom Thian, Sattahip, Chonburi",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/attractions/pattaya/pattaya-sheep-farm"
+        },
+        {
+          "name": {
+            "en": "Pattaya Beach",
+            "th": "หาดพัทยา"
+          },
+          "local": "หาดพัทยา",
+          "kind": "beach",
+          "area": {
+            "en": "Beach Road, Pattaya",
+            "th": "ถนนเลียบชายหาด เมืองพัทยา"
+          },
+          "what": {
+            "en": "The most popular beach in Pattaya, the city's landmark",
+            "th": "ชายหาดยอดนิยมที่สุดของพัทยา เป็นแลนด์มาร์กของเมือง"
+          },
+          "why": {
+            "en": "A famous beach to play by the sea and take a photo at the landmark spot",
+            "th": "หาดดังให้เล่นน้ำทะเลและถ่ายรูปตรงจุดแลนด์มาร์ก"
+          },
+          "tip": {
+            "en": "Open all day",
+            "th": "เปิดตลอดวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Pattaya Beach, Pattaya, Chonburi",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Wong Amat Beach",
+            "th": "หาดวงศ์อมาตย์"
+          },
+          "local": "หาดวงศ์อมาตย์",
+          "kind": "beach",
+          "area": {
+            "en": "Na Kluea, Bang Lamung",
+            "th": "นาเกลือ บางละมุง"
+          },
+          "what": {
+            "en": "A beach next to North Pattaya's beach, quieter than the city beaches",
+            "th": "ชายหาดติดกับหาดพัทยาเหนือ เงียบกว่าหาดในเมือง"
+          },
+          "why": {
+            "en": "Quieter and more private, with no road running along the sand",
+            "th": "เงียบและเป็นส่วนตัวกว่า ไม่มีถนนวิ่งขนานไปกับผืนทราย"
+          },
+          "tip": {
+            "en": "Open all day",
+            "th": "เปิดตลอดวัน"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Wong Amat Beach, Na Kluea, Pattaya",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Koh Phai",
+            "th": "เกาะไผ่"
+          },
+          "local": "เกาะไผ่ พัทยา",
+          "kind": "beach",
+          "area": {
+            "en": "Pattaya Bay, Na Kluea",
+            "th": "อ่าวพัทยา นาเกลือ"
+          },
+          "what": {
+            "en": "A pretty island with clear water and white sand, the largest of the Koh Phai group, reached by tour boat",
+            "th": "เกาะสวยน้ำใสทรายขาว ใหญ่ที่สุดในหมู่เกาะไผ่ ไปโดยเรือทัวร์"
+          },
+          "why": {
+            "en": "Clear water and white sand, a natural spot near Pattaya for a day out by boat",
+            "th": "น้ำใสทรายขาว เที่ยวธรรมชาติใกล้พัทยาด้วยเรือ"
+          },
+          "tip": {
+            "en": "Go by the tour boat's trip times",
+            "th": "ไปตามเวลาเรือทัวร์"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Koh Phai, Ao Pattaya, Na Kluea, Bang Lamung",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Sak Ngaew Old Market",
+            "th": "ตลาดโบราณซากแง้ว"
+          },
+          "local": "ตลาดโบราณซากแง้ว",
+          "kind": "market",
+          "area": {
+            "en": "Huai Yai, Bang Lamung",
+            "th": "ห้วยใหญ่ บางละมุง"
+          },
+          "what": {
+            "en": "An old Chinese community market with lots of buying and selling",
+            "th": "ตลาดชุมชนชาวจีนโบราณที่ค้าขายคึกคัก"
+          },
+          "why": {
+            "en": "An old-style market to walk through and look at things, a change from the beach",
+            "th": "ตลาดแบบโบราณให้เดินดูของ เปลี่ยนบรรยากาศจากชายหาด"
+          },
+          "tip": {
+            "en": "Open Saturdays 15:00–21:00 only",
+            "th": "เปิดเฉพาะวันเสาร์ 15:00–21:00"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sak Ngaew old market, Huai Yai, Bang Lamung",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Baan Sukhawadee",
+            "th": "บ้านสุขาวดี"
+          },
+          "local": "บ้านสุขาวดี",
+          "kind": "park",
+          "area": {
+            "en": "Sukhumvit Road, Na Kluea",
+            "th": "ถนนสุขุมวิท นาเกลือ"
+          },
+          "what": {
+            "en": "A big mansion by the sea with a European garden, pink and blue buildings and rows of Greek statues",
+            "th": "คฤหาสน์ริมทะเลหลังใหญ่ มีสวนแบบยุโรป อาคารสีชมพูและสีฟ้า และรูปปั้นกรีกเรียงราย"
+          },
+          "why": {
+            "en": "A grand garden to walk round, open until 21:00",
+            "th": "สวนใหญ่ให้เดินเล่น เปิดถึง 21:00"
+          },
+          "tip": {
+            "en": "Open 08:00–21:00",
+            "th": "เปิด 08:00–21:00"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Baan Sukhawadee, Na Kluea, Pattaya",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        },
+        {
+          "name": {
+            "en": "Legend Siam Pattaya",
+            "th": "เลเจนด์สยาม พัทยา"
+          },
+          "local": "เลเจนด์สยาม พัทยา",
+          "kind": "themepark",
+          "area": {
+            "en": "Sukhumvit Road, Na Chom Thian, Sattahip",
+            "th": "ถนนสุขุมวิท นาจอมเทียน สัตหีบ"
+          },
+          "what": {
+            "en": "A miniature Thailand theme park that gathers many Thai scenes in one place, including a Mae Nak house and a temple fair",
+            "th": "สวนสนุกจำลองประเทศไทยที่รวมฉากไทยหลายแบบไว้ในที่เดียว มีบ้านแม่นาคและงานวัด"
+          },
+          "why": {
+            "en": "Covers many Thai lifestyles in one place, suiting a whole family",
+            "th": "รวมวิถีชีวิตไทยหลายแบบไว้ที่เดียว เหมาะกับทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "Open 10:00–18:00",
+            "th": "เปิด 10:00–18:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Legend Siam Pattaya, Na Chom Thian, Sattahip",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/1VEeYYWkQE4V"
+        }
+      ]
+    },
+    {
+      "place": "th-huahin",
+      "sights": [
+        {
+          "name": { "en": "Vana Nava Water Jungle", "th": "วานา นาวา วอเตอร์ จังเกิ้ล" },
+          "kind": "themepark",
+          "area": { "en": "Phetkasem Road, south Hua Hin", "th": "ถนนเพชรเกษม หัวหินใต้" },
+          "what": { "en": "A jungle-themed water park with big slides, a wave pool, a lazy river and a children's play pool", "th": "สวนน้ำธีมป่า มีสไลเดอร์ใหญ่ สระคลื่น แม่น้ำจำลอง และสระเล่นน้ำของเด็ก" },
+          "why": { "en": "The splash zone suits toddlers and the slides older children; shaded corners to rest", "th": "โซนเล่นน้ำเหมาะกับเด็กเล็ก สไลเดอร์สำหรับเด็กโต มีมุมร่มให้พัก" },
+          "tip": { "en": "Tickets bought ahead are cheaper than at the gate", "th": "ซื้อตั๋วล่วงหน้าถูกกว่าซื้อหน้างาน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿1,200 adults at the gate · less online", "th": "≈ ฿1,200 ผู้ใหญ่ซื้อหน้างาน · ออนไลน์ถูกกว่า" },
+          "book": "rec",
+          "q": "Vana Nava Water Jungle, Phetkasem Road, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/vana-nava-water-jungle/"
+        },
+        {
+          "name": { "en": "Black Mountain Water Park", "th": "สวนน้ำแบล็คเมาน์เท่น" },
+          "kind": "themepark",
+          "area": { "en": "Hin Lek Fai", "th": "หินเหล็กไฟ" },
+          "what": { "en": "A water park below the hills with nine slides, a wave pool, a lazy river and a children's pool", "th": "สวนน้ำเชิงเขา มีสไลเดอร์ 9 สาย สระคลื่น แม่น้ำจำลอง และสระเด็ก" },
+          "why": { "en": "Smaller and calmer than the big parks; very small children go in free", "th": "เล็กและสงบกว่าสวนน้ำใหญ่ เด็กเล็กมากเข้าฟรี" },
+          "tip": { "en": "Open 11:00–17:00 and closed on Wednesdays", "th": "เปิด 11:00–17:00 ปิดวันพุธ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿600 adults · ≈ ฿300 children · very small children free", "th": "≈ ฿600 ผู้ใหญ่ · ≈ ฿300 เด็ก · เด็กเล็กมากฟรี" },
+          "book": "none",
+          "q": "Black Mountain Water Park, Hin Lek Fai, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/black-mountain-water-park/"
+        },
+        {
+          "name": { "en": "Swiss Sheep Farm", "th": "สวิส ชีพ ฟาร์ม" },
+          "kind": "farm",
+          "area": { "en": "Cha-am", "th": "ชะอำ" },
+          "what": { "en": "A Swiss-style farm (now also called Zucata Sheep Farm) where children feed sheep and goats among chalet houses", "th": "ฟาร์มสไตล์สวิส (ตอนนี้ใช้ชื่อซูคาต้าชีพฟาร์มด้วย) เด็กๆ ป้อนอาหารแกะและแพะท่ามกลางบ้านแบบชาเลต์" },
+          "why": { "en": "Feeding tame animals is the highlight for little ones; the grass to feed them comes with the ticket", "th": "ได้ป้อนอาหารสัตว์เชื่องๆ คือไฮไลต์ของเด็กเล็ก ตั๋วมีหญ้าให้ป้อนด้วย" },
+          "tip": { "en": "Open daily 09:00–18:00; go after 15:00 when the sun is softer", "th": "เปิดทุกวัน 09:00–18:00 ไปหลัง 15:00 แดดอ่อนกว่า" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿150 foreign adults · ≈ ฿110 children (Thai price lower)", "th": "≈ ฿150 ผู้ใหญ่ต่างชาติ · ≈ ฿110 เด็ก (คนไทยราคาถูกกว่า)" },
+          "book": "none",
+          "q": "Swiss Sheep Farm, Cha-am, Phetchaburi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/swiss-sheep-farm/"
+        },
+        {
+          "name": { "en": "Cicada Market", "th": "ตลาดจั๊กจั่น" },
+          "kind": "market",
+          "area": { "en": "Khao Takiab", "th": "เขาตะเกียบ" },
+          "what": { "en": "A weekend evening art market in a garden: crafts, a food hall and live music on a small stage", "th": "ตลาดศิลปะตอนเย็นวันหยุดในสวน มีงานคราฟต์ ลานอาหาร และดนตรีสดบนเวทีเล็ก" },
+          "why": { "en": "Lawns to roam, easy food for everyone and street performers children stop to watch", "th": "มีสนามหญ้าให้เดินเล่น อาหารง่ายๆ สำหรับทุกคน และนักแสดงข้างทางที่เด็กชอบหยุดดู" },
+          "tip": { "en": "Friday to Sunday from about 16:00; days can change in the low season", "th": "ศุกร์ถึงอาทิตย์ ตั้งแต่ราว 16:00 ช่วงโลว์ซีซันวันเปิดอาจเปลี่ยน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Cicada Market, Khao Takiab, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/cicada-market/"
+        },
+        {
+          "name": { "en": "Hua Hin Night Market", "th": "ตลาดโต้รุ่งหัวหิน" },
+          "kind": "market",
+          "area": { "en": "Town centre", "th": "ตัวเมืองหัวหิน" },
+          "what": { "en": "The town's evening market street: seafood, fruit, souvenirs and toy stalls", "th": "ถนนตลาดตอนเย็นกลางเมือง มีอาหารทะเล ผลไม้ ของฝาก และร้านของเล่น" },
+          "why": { "en": "An easy walk from the beach hotels for dinner; plenty of mild dishes for small children", "th": "เดินจากโรงแรมริมหาดมากินมื้อเย็นได้ง่าย มีอาหารรสอ่อนให้เด็กเล็กเยอะ" },
+          "tip": { "en": "Stalls open from about 18:00; come early before it gets crowded", "th": "ร้านเริ่มเปิดราว 18:00 มาเร็วก่อนคนแน่น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Hua Hin Night Market, Dechanuchit Road, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://goasia.cc/en/article/hua-hin-night-markets"
+        },
+        {
+          "name": { "en": "Khao Sam Roi Yot National Park", "th": "อุทยานแห่งชาติเขาสามร้อยยอด" },
+          "kind": "nature",
+          "area": { "en": "Sam Roi Yot, an hour south", "th": "สามร้อยยอด ห่างราวหนึ่งชั่วโมง" },
+          "what": { "en": "Limestone peaks, quiet beaches and Phraya Nakhon Cave with its royal pavilion lit by a hole in the roof", "th": "ภูเขาหินปูน หาดเงียบ และถ้ำพระยานครที่มีพระที่นั่งกลางถ้ำ แสงส่องลงจากช่องเพดาน" },
+          "why": { "en": "The beach at Laem Sala suits little ones; the cave trail is steep and rough, so it is for children 6 and up", "th": "หาดแหลมศาลาเหมาะกับเด็กเล็ก ทางขึ้นถ้ำชันและขรุขระ เหมาะกับเด็ก 6 ขวบขึ้นไป" },
+          "tip": { "en": "One ticket covers the whole park for the day; start the cave climb before 09:00", "th": "ตั๋วใบเดียวใช้ได้ทั้งอุทยานทั้งวัน เริ่มเดินขึ้นถ้ำก่อน 09:00" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ฿200 foreign adults · ≈ ฿100 children (Thai ฿40 · ฿20)", "th": "≈ ฿200 ผู้ใหญ่ต่างชาติ · ≈ ฿100 เด็ก (คนไทย ฿40 · ฿20)" },
+          "book": "none",
+          "q": "Khao Sam Roi Yot National Park, Prachuap Khiri Khan",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/khao-sam-roi-yot-national-park/"
+        },
+        {
+          "name": { "en": "Khao Hin Lek Fai Viewpoint", "th": "จุดชมวิวเขาหินเหล็กไฟ" },
+          "kind": "views",
+          "area": { "en": "Hin Lek Fai, 3 km west", "th": "หินเหล็กไฟ ห่างราว 3 กม." },
+          "what": { "en": "A hilltop park with lookouts over the town, the beach, the railway station and Khao Takiab", "th": "สวนบนเขาที่มีจุดชมวิวเมือง ชายหาด สถานีรถไฟ และเขาตะเกียบ" },
+          "why": { "en": "A paved road goes to the top, so no climb; children like spotting the station from above", "th": "มีถนนลาดยางขึ้นถึงยอด ไม่ต้องเดินขึ้นเขา เด็กๆ ชอบหาสถานีรถไฟจากข้างบน" },
+          "tip": { "en": "Open dawn to dusk; best in the late afternoon light", "th": "เปิดตั้งแต่เช้าถึงค่ำ แสงสวยช่วงบ่ายแก่ๆ" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Khao Hin Lek Fai Viewpoint, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/khao-hin-lek-fai/"
+        },
+        {
+          "name": { "en": "Raruek Hua Hin", "th": "ระลึก หัวหิน" },
+          "kind": "market",
+          "area": { "en": "Naep Khehat Road", "th": "ถนนแนบเคหาสน์" },
+          "what": { "en": "A market on the north side of town with food stalls and small shops, open all day into the evening", "th": "ตลาดฝั่งเหนือของเมือง มีร้านอาหารและร้านเล็กๆ เปิดตั้งแต่กลางวันถึงค่ำ" },
+          "why": { "en": "An easy lunch or dinner stop with something for every age", "th": "แวะกินมื้อกลางวันหรือมื้อเย็นได้ง่าย มีของถูกใจทุกวัย" },
+          "tip": { "en": "Open daily 11:00–22:00; you pay only for what you eat or buy", "th": "เปิดทุกวัน 11:00–22:00 จ่ายเฉพาะที่กินหรือซื้อ" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Raruek Hua Hin, Naep Khehat Road, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/raruek-hua-hin/"
+        },
+        {
+          "name": { "en": "Hua Hin Railway Station", "th": "สถานีรถไฟหัวหิน" },
+          "kind": "oldtown",
+          "area": { "en": "Town centre", "th": "ตัวเมืองหัวหิน" },
+          "what": { "en": "One of Thailand's prettiest stations, with the red-and-white royal waiting room beside the platform", "th": "หนึ่งในสถานีรถไฟที่สวยที่สุดของไทย มีพลับพลาที่ประทับสีแดงขาวริมชานชาลา" },
+          "why": { "en": "Children love waiting for a real train to pull in; flat and an easy walk from the beach", "th": "เด็กๆ ชอบรอดูรถไฟจริงเข้าสถานี ทางเรียบ เดินจากชายหาดมาได้" },
+          "tip": { "en": "Keep small children well back from the platform edge when a train comes", "th": "ให้เด็กเล็กยืนห่างขอบชานชาลาเมื่อรถไฟเข้า" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hua Hin Railway Station, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/visit/hua-hin/"
+        },
+        {
+          "name": { "en": "Pak Nam Pran", "th": "ปากน้ำปราณ" },
+          "kind": "beach",
+          "area": { "en": "Pran Buri, 30 km south", "th": "ปราณบุรี ห่างราว 30 กม." },
+          "what": { "en": "A quiet seafront village with a long beach, the Three Palm Trees photo spot and boat trips into the mangroves", "th": "หมู่บ้านริมทะเลเงียบสงบ มีหาดยาว จุดถ่ายรูปต้นมะพร้าวสามต้น และนั่งเรือชมป่าโกงกาง" },
+          "why": { "en": "Calmer than Hua Hin beach, with space for sandcastles and few crowds", "th": "สงบกว่าหาดหัวหิน มีที่กว้างให้ก่อกองทราย คนไม่พลุกพล่าน" },
+          "tip": { "en": "The mangrove boat trip takes about 1.5 hours and is paid separately", "th": "นั่งเรือชมป่าโกงกางใช้เวลาราว 1 ชั่วโมงครึ่ง จ่ายแยก" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free (boat trips extra)", "th": "ฟรี (ค่าเรือแยก)" },
+          "book": "none",
+          "q": "Pak Nam Pran Beach, Pran Buri, Prachuap Khiri Khan",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/pak-nam-pran/"
+        },
+        {
+          "name": { "en": "Hua Hin Artist Village", "th": "บ้านศิลปินหัวหิน" },
+          "kind": "museum",
+          "area": { "en": "Hin Lek Fai", "th": "หินเหล็กไฟ" },
+          "what": { "en": "A shady garden of about 20 studios where local artists work, with changing exhibitions", "th": "สวนร่มรื่นที่มีสตูดิโอราว 20 หลัง ศิลปินท้องถิ่นทำงานให้ดู มีนิทรรศการหมุนเวียน" },
+          "why": { "en": "Children can watch painters and sculptors at work; galleries indoors for a rainy hour", "th": "เด็กๆ ได้ดูศิลปินวาดรูปและปั้นงานจริง มีห้องจัดแสดงในร่มสำหรับวันฝนตก" },
+          "tip": { "en": "Open Tuesday to Sunday 10:00–17:00, closed on Mondays", "th": "เปิดอังคารถึงอาทิตย์ 10:00–17:00 ปิดวันจันทร์" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ฿80", "th": "≈ ฿80" },
+          "book": "none",
+          "q": "Hua Hin Artist Village (Baan Silapin), Hin Lek Fai, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/ban-silapin/"
+        },
+        {
+          "name": { "en": "Market Village Hua Hin", "th": "มาร์เก็ตวิลเลจ หัวหิน" },
+          "kind": "shop",
+          "area": { "en": "Phetkasem Road", "th": "ถนนเพชรเกษม" },
+          "what": { "en": "A shopping centre in the middle of town with a supermarket, a cinema and a basement food court", "th": "ห้างกลางเมือง มีซูเปอร์มาร์เก็ต โรงภาพยนตร์ และศูนย์อาหารชั้นใต้ดิน" },
+          "why": { "en": "Air-conditioned and step-free: the place to go when it rains or the afternoon is too hot", "th": "แอร์เย็น ไม่มีขั้นบันได เป็นที่หลบเวลาฝนตกหรือบ่ายร้อนจัด" },
+          "tip": { "en": "The food court runs on a prepaid card, topped up from ฿100", "th": "ศูนย์อาหารใช้บัตรเติมเงิน เติมได้ตั้งแต่ ฿100" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Market Village, Phetkasem Road, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://traveltriangle.com/blog/shopping-malls-in-hua-hin/"
+        },
+        {
+          "name": { "en": "Blúport Hua Hin", "th": "บลูพอร์ต หัวหิน" },
+          "kind": "shop",
+          "area": { "en": "Phetkasem Road, south Hua Hin", "th": "ถนนเพชรเกษม หัวหินใต้" },
+          "what": { "en": "A large resort-style shopping centre with a supermarket and food court on the ground floor", "th": "ห้างสรรพสินค้าใหญ่สไตล์รีสอร์ต มีซูเปอร์มาร์เก็ตและศูนย์อาหารชั้นล่าง" },
+          "why": { "en": "A cool, step-free rainy-day stop with easy food for small children", "th": "แอร์เย็น ไม่มีขั้นบันได แวะช่วงฝนตกได้ มีอาหารง่ายๆ สำหรับเด็กเล็ก" },
+          "tip": { "en": "Open about 10:00–21:00; near Vana Nava, so the two fit one day", "th": "เปิดราว 10:00–21:00 อยู่ใกล้วานา นาวา เที่ยวต่อกันในวันเดียวได้" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Bluport Hua Hin Resort Mall, Phetkasem Road, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://traveltriangle.com/blog/shopping-malls-in-hua-hin/"
+        },
+        {
+          "name": { "en": "Sirindhorn International Environmental Park", "th": "อุทยานสิ่งแวดล้อมนานาชาติสิรินธร" },
+          "kind": "park",
+          "area": { "en": "Cha-am", "th": "ชะอำ" },
+          "what": { "en": "A government nature park on the coast: mangrove boardwalks, shady gardens and a quiet beach", "th": "อุทยานธรรมชาติของรัฐริมทะเล มีทางเดินไม้ในป่าชายเลน สวนร่มรื่น และหาดเงียบ" },
+          "why": { "en": "Free, peaceful and green; boardwalks over the mud where children spot crabs and mudskippers", "th": "ฟรี สงบ ร่มรื่น เดินบนสะพานไม้ เด็กๆ ได้หาปูและปลาตีน" },
+          "tip": { "en": "Open about 08:30–16:30; hours can change on public holidays", "th": "เปิดราว 08:30–16:30 วันหยุดนักขัตฤกษ์เวลาอาจเปลี่ยน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Sirindhorn International Environmental Park, Cha-am",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/sirindhorn-international-environment-park/"
+        },
+        {
+          "name": { "en": "Rajabhakti Park", "th": "อุทยานราชภักดิ์" },
+          "kind": "culture",
+          "area": { "en": "Nong Kae", "th": "หนองแก" },
+          "what": { "en": "A wide park with the giant bronze statues of seven great kings of Thailand above a long lawn", "th": "อุทยานกว้างที่มีพระบรมราชานุสาวรีย์ 7 กษัตริย์ไทยองค์ใหญ่เหนือสนามหญ้ายาว" },
+          "why": { "en": "Big, flat and free, with room for children to walk; a short stop on the way to Khao Takiab", "th": "กว้าง เรียบ ไม่เสียเงิน เด็กๆ เดินเล่นได้ แวะสั้นๆ ระหว่างทางไปเขาตะเกียบ" },
+          "tip": { "en": "Open about 08:00–18:00; dress politely, shoulders and knees covered", "th": "เปิดราว 08:00–18:00 แต่งกายสุภาพ ปิดไหล่และเข่า" },
+          "ages": [1, 1, 1, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Rajabhakti Park, Nong Kae, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/rajabhakti-park/"
+        },
+        {
+          "name": { "en": "Wildlife Friends Foundation Thailand", "th": "มูลนิธิเพื่อนสัตว์ป่าแห่งประเทศไทย" },
+          "kind": "nature",
+          "area": { "en": "Tha Yang", "th": "ท่ายาง" },
+          "what": { "en": "A wildlife rescue sanctuary with rescued tigers and other animals, open to visitors on guided sanctuary tours", "th": "ศูนย์ช่วยเหลือสัตว์ป่าที่มีเสือและสัตว์อื่นที่ได้รับการช่วยเหลือ เปิดให้เข้าชมโดยทัวร์ที่มีไกด์นำ" },
+          "why": { "en": "Children aged 2 to 4 from a development centre went on a sanctuary tour and saw rescued animals close up", "th": "เด็กอายุ 2–4 ขวบจากศูนย์พัฒนาเด็กเคยไปทัวร์ศูนย์นี้และได้ดูสัตว์ที่ได้รับการช่วยเหลือใกล้ๆ" },
+          "tip": { "en": "Book a guided sanctuary tour ahead", "th": "จองทัวร์ที่มีไกด์ล่วงหน้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Wildlife Friends Foundation Thailand, Tha Yang, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.wfft.org/?p=38052"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "เขาตะเกียบ",
+            "en": "Khao Takiab (Monkey Mountain)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เขาตะเกียบ หัวหิน",
+            "en": "Khao Takiab, Hua Hin"
+          },
+          "what": {
+            "th": "เขาที่มีวัด ทางใต้ของตัวเมือง มีลิงอยู่มาก",
+            "en": "A temple hill south of town where macaques roam"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ดูลิง",
+            "en": "Children watch the monkeys"
+          },
+          "tip": {
+            "th": "เก็บขนมและกระเป๋าให้ดี ลิงชอบแย่ง",
+            "en": "Keep snacks and bags secured: the monkeys snatch"
+          },
+          "q": "Khao Takiap, หัวหิน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "วนอุทยานปราณบุรี",
+            "en": "Pranburi Forest Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ปราณบุรี ใกล้หัวหิน",
+            "en": "Pranburi, near Hua Hin"
+          },
+          "what": {
+            "th": "ทางเดินไม้ผ่านป่าชายเลน",
+            "en": "A boardwalk through the mangroves"
+          },
+          "why": {
+            "th": "เด็กเล็กได้ดูปูตัวเล็กและแอ่งน้ำ",
+            "en": "Little ones spot tiny crabs and poke at tide pools"
+          },
+          "q": "วนอุทยาน ปราณบุรี",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "วัดห้วยมงคล",
+            "en": "Wat Huay Mongkol"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทับใต้ หัวหิน",
+            "en": "Thap Tai, Hua Hin"
+          },
+          "what": {
+            "th": "วัดที่มีรูปปั้นงดงามและลานกว้าง",
+            "en": "A temple with dramatic statues and open grounds"
+          },
+          "why": {
+            "th": "ลานกว้างให้เด็กเดินเล่น",
+            "en": "Open grounds for little legs to stretch"
+          },
+          "q": "วัดห้วยมงคล, หัวหิน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "พระราชนิเวศน์มฤคทายวัน",
+            "en": "Mrigadayavan Palace"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ริมทะเลชะอำ ใกล้หัวหิน",
+            "en": "Cha-am seafront, near Hua Hin"
+          },
+          "what": {
+            "th": "พระราชวังไม้สักริมทะเล",
+            "en": "A teak palace on the seafront"
+          },
+          "why": {
+            "th": "แวะชมสั้น ๆ ลมเย็น ระหว่างทะเลกับตลาด",
+            "en": "A short, breezy visit between beach and markets"
+          },
+          "q": "พระราชนิเวศน์มฤคทายวัน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://vananavahuahin.holidayinnresorts.com/brydes-kids-club-hua-hin",
+          "name": {
+            "th": "คิดส์คลับไบรด์ส ฮอลิเดย์อินน์วานานาวา",
+            "en": "Bryde's Kids Club (Holiday Inn Vana Nava)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮอลิเดย์อินน์วานานาวา ถนนเพชรเกษม หัวหิน",
+            "en": "Holiday Inn Vana Nava, Phetkasem Road, Hua Hin"
+          },
+          "what": {
+            "th": "คิดส์คลับในร่มขนาดใหญ่ธีมเรือ ในโรงแรม",
+            "en": "A big indoor kids' club with a ship theme, at the hotel"
+          },
+          "why": {
+            "th": "คลับกว้างทันสมัย ยินดีต้อนรับเด็กทุกคน",
+            "en": "A roomy, modern club where all children are welcome"
+          },
+          "tip": {
+            "th": "สำหรับแขกของโรงแรม เด็กต่ำกว่า 4 ขวบต้องมีผู้ปกครองหรือพี่เลี้ยง ควรจองล่วงหน้า",
+            "en": "For hotel guests; under-4s with a parent or sitter; book ahead"
+          },
+          "q": "Holiday Inn Resort Vana Nava Hua Hin",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Tree Top Adventure Park Hua Hin",
+            "th": "ทรีท็อป แอดเวนเจอร์ พาร์ค หัวหิน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Thap Tai, Hua Hin",
+            "th": "ทับใต้ หัวหิน"
+          },
+          "what": {
+            "en": "A treetop course with ziplines, balance walks and a zigzag swing, with staff guiding the way",
+            "th": "คอร์สผจญภัยบนต้นไม้ มีซิปไลน์ ทางเดินทรงตัว และชิงช้าซิกแซก มีเจ้าหน้าที่คอยดูแล"
+          },
+          "why": {
+            "en": "The page says it suits children aged eight or over who are at least 120 cm tall",
+            "th": "เว็บระบุว่าเหมาะกับเด็กอายุ 8 ปีขึ้นไปที่สูงอย่างน้อย 120 ซม."
+          },
+          "tip": {
+            "en": "Open daily 09:00–15:00; the course takes about 1–1.5 hours",
+            "th": "เปิดทุกวัน 09:00–15:00 คอร์สใช้เวลาราว 1–1.5 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Tree Top Adventure Park Hua Hin, Thap Tai, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.ticket2attraction.com/blogs/hua-hin-kids-attractions/"
+        },
+        {
+          "name": {
+            "en": "Hua Hin Beach",
+            "th": "หาดหัวหิน"
+          },
+          "local": "หาดหัวหิน",
+          "kind": "beach",
+          "area": {
+            "en": "Hua Hin town",
+            "th": "ตัวเมืองหัวหิน"
+          },
+          "what": {
+            "en": "A long beach of fine white sand running on from the town",
+            "th": "หาดทรายขาวละเอียดยาวต่อเนื่องจากตัวเมือง"
+          },
+          "why": {
+            "en": "The page says the water is shallow with fine sand, which suits children playing in the sea",
+            "th": "เว็บระบุว่าน้ำตื้นและทรายละเอียด เหมาะให้เด็กเล่นน้ำทะเล"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Hua Hin Beach, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": {
+            "en": "Pradipat Pine Beach (Suan Son)",
+            "th": "หาดสวนสนประดิพัทธ์"
+          },
+          "local": "หาดสวนสนประดิพัทธ์",
+          "kind": "beach",
+          "area": {
+            "en": "Nong Kae, Hua Hin",
+            "th": "หนองแก หัวหิน"
+          },
+          "what": {
+            "en": "A quiet, classic beach shaded by a line of pine trees",
+            "th": "หาดเงียบสงบ มีแนวสนให้ร่มเงา"
+          },
+          "why": {
+            "en": "Calm and quiet, with pine trees for shade",
+            "th": "บรรยากาศสงบ มีต้นสนให้ร่มเงา"
+          },
+          "tip": {
+            "en": "The page gives visiting hours of 06:00–18:30",
+            "th": "เว็บระบุเวลาเข้าชม 06:00–18:30"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Pradipat Pine Beach, Nong Kae, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": {
+            "en": "Samphan Nam Hua Hin Floating Market",
+            "th": "ตลาดน้ำหัวหินสามพันนาม"
+          },
+          "local": "ตลาดน้ำหัวหินสามพันนาม",
+          "kind": "market",
+          "area": {
+            "en": "Thap Tai, Hua Hin",
+            "th": "ทับใต้ หัวหิน"
+          },
+          "what": {
+            "en": "An old-style Thai floating market of about 100 rai, with Rattanakosin-era architecture and waterside life",
+            "th": "ตลาดน้ำสไตล์ไทยโบราณราว 100 ไร่ มีสถาปัตยกรรมแบบรัตนโกสินทร์และวิถีริมน้ำ"
+          },
+          "why": {
+            "en": "A photogenic old-style market with shops and food for a slow outing",
+            "th": "ตลาดบรรยากาศโบราณ มีร้านค้าและอาหาร เหมาะกับการเดินเที่ยวสบายๆ"
+          },
+          "tip": {
+            "en": "Open 09:00–16:00",
+            "th": "เปิด 09:00–16:00"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Samphan Nam Floating Market, Thap Tai, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://travel.trueid.net/detail/Ly0Ywl5aZQ8"
+        },
+        {
+          "name": {
+            "en": "Khao Tao Reservoir",
+            "th": "อ่างเก็บน้ำเขาเต่า"
+          },
+          "local": "อ่างเก็บน้ำเขาเต่า",
+          "kind": "views",
+          "area": {
+            "en": "Nong Kae, Hua Hin",
+            "th": "หนองแก หัวหิน"
+          },
+          "what": {
+            "en": "A reservoir in a small seaside village near the hills, with a pavilion built out in the middle of the water.",
+            "th": "อ่างเก็บน้ำในหมู่บ้านเล็กๆ ริมทะเลใกล้ภูเขา มีศาลากลางน้ำ"
+          },
+          "why": {
+            "en": "Open-air space with a pavilion in the water and hill views, a short drive from town.",
+            "th": "พื้นที่โล่ง มีศาลากลางน้ำและวิวภูเขา ขับรถจากตัวเมืองไม่นาน"
+          },
+          "tip": {
+            "en": "Open 09:00–17:00",
+            "th": "เปิด 09:00–17:00"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Tao Reservoir, Nong Kae, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/introducing-the-most-popular-places-to-visit-in-hua-hin"
+        },
+        {
+          "name": {
+            "en": "Khao Takiab Beach",
+            "th": "หาดเขาตะเกียบ"
+          },
+          "local": "หาดเขาตะเกียบ",
+          "kind": "beach",
+          "area": {
+            "en": "Khao Takiab, Hua Hin",
+            "th": "เขาตะเกียบ หัวหิน"
+          },
+          "what": {
+            "en": "A long, quiet sand beach south of the town centre.",
+            "th": "หาดทรายยาวเงียบสงบ อยู่ทางใต้ของตัวเมือง"
+          },
+          "why": {
+            "en": "Calm and away from the busy town, a plain place to paddle and play on the sand.",
+            "th": "สงบ ห่างจากความวุ่นวายของเมือง เหมาะเล่นน้ำตื้นและเล่นทราย"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Khao Takiab Beach, Nong Kae, Hua Hin",
+          "ok": "2026-11",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/introducing-the-most-popular-places-to-visit-in-hua-hin"
+        }
+      ]
+    },
+    {
+      "place": "th-krabi",
+      "sights": [
+        {
+          "name": { "en": "Ao Nang Beach", "th": "หาดอ่าวนาง" },
+          "kind": "beach",
+          "area": { "en": "Ao Nang", "th": "อ่าวนาง" },
+          "what": { "en": "Krabi's main resort beach, framed by limestone cliffs, where the longtail boats leave for the islands", "th": "หาดหลักของกระบี่ มีหน้าผาหินปูนล้อม เป็นจุดขึ้นเรือหางยาวไปเที่ยวเกาะ" },
+          "why": { "en": "Food, shops and toilets a step from the sand; the easiest base with small children", "th": "ร้านอาหาร ร้านค้า และห้องน้ำอยู่ติดหาด เป็นฐานที่ง่ายที่สุดสำหรับครอบครัวเด็กเล็ก" },
+          "tip": { "en": "For gentler swimming drive to Nopparat Thara or Klong Muang nearby", "th": "ถ้าอยากเล่นน้ำสงบกว่า ขับไปหาดนพรัตน์ธาราหรือคลองม่วงใกล้ๆ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Ao Nang Beach, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/ao-nang/"
+        },
+        {
+          "name": { "en": "Nopparat Thara Beach", "th": "หาดนพรัตน์ธารา" },
+          "kind": "beach",
+          "area": { "en": "North of Ao Nang", "th": "เหนืออ่าวนาง" },
+          "what": { "en": "A long, quiet beach in the national park, shaded by casuarina trees, next to the park headquarters", "th": "หาดยาวเงียบสงบในเขตอุทยานแห่งชาติ มีต้นสนทะเลให้ร่ม ติดที่ทำการอุทยาน" },
+          "why": { "en": "Much calmer than Ao Nang, with shade to picnic and wide sand for digging", "th": "สงบกว่าอ่าวนางมาก มีร่มให้ปิกนิกและหาดกว้างให้ขุดทราย" },
+          "tip": { "en": "Walking onto the beach is free; the park fee is only for landing on the islands", "th": "เดินลงหาดฟรี ค่าอุทยานเก็บเฉพาะตอนขึ้นเกาะ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Nopparat Thara Beach, Ao Nang, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/hat-noppharat-thara-mu-ko-phi-phi-national-park/"
+        },
+        {
+          "name": { "en": "Railay Beach", "th": "หาดไร่เลย์" },
+          "kind": "beach",
+          "area": { "en": "Railay, by boat from Ao Nang", "th": "ไร่เลย์ นั่งเรือจากอ่าวนาง" },
+          "what": { "en": "A beach cut off by cliffs, reached only by a 15-minute longtail boat ride", "th": "หาดที่มีหน้าผาล้อม ไปได้ทางเรือหางยาวเท่านั้น ราว 15 นาที" },
+          "why": { "en": "The boat ride is the adventure; soft sand and no cars once you land", "th": "นั่งเรือคือความสนุก หาดทรายนุ่ม ไม่มีรถยนต์" },
+          "tip": { "en": "Boats leave when full; you wade out to board, so carry small children", "th": "เรือออกเมื่อคนเต็มลำ ต้องเดินลุยน้ำขึ้นเรือ อุ้มเด็กเล็กไว้" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ฿100 a person each way by longtail boat", "th": "≈ ฿100 ต่อคนต่อเที่ยว เรือหางยาว" },
+          "book": "none",
+          "q": "Railay Beach, Krabi",
+          "ok": "2026-11",
+          "src": "https://goasia.cc/en/thailand/krabi-to-krabi"
+        },
+        {
+          "name": { "en": "Krabi 4 Islands tour", "th": "ทัวร์ 4 เกาะ กระบี่" },
+          "kind": "ride",
+          "area": { "en": "From Ao Nang or Nopparat Thara pier", "th": "ออกจากอ่าวนางหรือท่าเรือนพรัตน์ธารา" },
+          "what": { "en": "A boat trip to Phra Nang Cave beach, Chicken Island, Tup Island and Poda Island, with snorkelling", "th": "นั่งเรือเที่ยวหาดถ้ำพระนาง เกาะไก่ เกาะทับ และเกาะปอดะ พร้อมดำน้ำตื้น" },
+          "why": { "en": "Short hops between islands with shallow water and fish to see; easier than a long day at sea", "th": "นั่งเรือช่วงสั้นๆ ระหว่างเกาะ น้ำตื้นมีปลาให้ดู ง่ายกว่าออกทะเลทั้งวัน" },
+          "tip": { "en": "The national park fee is not in most tour prices: bring cash", "th": "ทัวร์ส่วนใหญ่ไม่รวมค่าอุทยาน เตรียมเงินสดไว้" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Park fee ≈ ฿200–400 adults · ≈ ฿100–200 children 4–11, plus the boat tour", "th": "ค่าอุทยาน ≈ ฿200–400 ผู้ใหญ่ · ≈ ฿100–200 เด็ก 4–11 ปี บวกค่าทัวร์เรือ" },
+          "book": "rec",
+          "q": "Nopparat Thara Pier, Ao Nang, Krabi",
+          "ok": "2026-11",
+          "src": "https://krabinature.com/krabi-4-islands-tour/"
+        },
+        {
+          "name": { "en": "Emerald Pool", "th": "สระมรกต" },
+          "kind": "nature",
+          "area": { "en": "Khlong Thom", "th": "คลองท่อม" },
+          "what": { "en": "A warm, clear green pool in the forest, reached by a nature walk, for a gentle swim", "th": "สระน้ำสีเขียวใสในป่า อุ่นสบาย เดินตามเส้นทางธรรมชาติไปลงเล่นน้ำ" },
+          "why": { "en": "Shallow edges where small children can paddle; the forest walk is shady", "th": "ขอบสระตื้น เด็กเล็กลงเล่นน้ำได้ ทางเดินในป่าร่มรื่น" },
+          "tip": { "en": "Open 08:30–17:00, cash only at the gate; arrive early before the tour groups", "th": "เปิด 08:30–17:00 จ่ายเงินสดหน้าประตู มาเช้าก่อนกรุ๊ปทัวร์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿400 foreign adults · ≈ ฿200 children (Thai price lower)", "th": "≈ ฿400 ผู้ใหญ่ต่างชาติ · ≈ ฿200 เด็ก (คนไทยราคาถูกกว่า)" },
+          "book": "none",
+          "q": "Emerald Pool, Khlong Thom, Krabi",
+          "ok": "2026-11",
+          "src": "https://krabinature.com/emerald-pool-krabi/"
+        },
+        {
+          "name": { "en": "Khlong Thom Hot Springs", "th": "น้ำตกร้อนคลองท่อม" },
+          "kind": "nature",
+          "area": { "en": "Khlong Thom", "th": "คลองท่อม" },
+          "what": { "en": "Natural hot water tumbling over rock steps into warm pools in the forest", "th": "น้ำพุร้อนธรรมชาติไหลลงขั้นหิน เป็นแอ่งน้ำอุ่นกลางป่า" },
+          "why": { "en": "Children enjoy sitting in a warm stream; easy to pair with the Emerald Pool the same day", "th": "เด็กๆ สนุกกับการนั่งในลำธารน้ำอุ่น ไปต่อกับสระมรกตในวันเดียวได้" },
+          "tip": { "en": "Feel the water first and keep babies out of the hottest pools", "th": "ลองแตะน้ำก่อน ไม่ให้เด็กเล็กลงแอ่งที่ร้อนที่สุด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿200 foreign adults · ≈ ฿100 children 3–12", "th": "≈ ฿200 ผู้ใหญ่ต่างชาติ · ≈ ฿100 เด็ก 3–12 ปี" },
+          "book": "none",
+          "q": "Khlong Thom Hot Spring Waterfall, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/tour/tiger-cave-temple-emerald-pool-hot-springs-tour-from-krabi/"
+        },
+        {
+          "name": { "en": "Than Bok Khorani National Park", "th": "อุทยานแห่งชาติธารโบกขรณี" },
+          "kind": "nature",
+          "area": { "en": "Ao Luek", "th": "อ่าวลึก" },
+          "what": { "en": "Clear streams and turquoise pools under the trees, with sea caves to reach by boat", "th": "ลำธารใสและแอ่งน้ำสีฟ้าใต้ร่มไม้ มีถ้ำทะเลให้นั่งเรือไปชม" },
+          "why": { "en": "Shallow, shaded water to paddle in and flat paths near the entrance", "th": "น้ำตื้นในร่มให้เด็กเล่น ทางเรียบใกล้ทางเข้า" },
+          "tip": { "en": "The ticket does not cover the boats to the caves or Koh Hong", "th": "ตั๋วไม่รวมค่าเรือไปถ้ำหรือเกาะห้อง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿300 adults · ≈ ฿150 children (boats extra)", "th": "≈ ฿300 ผู้ใหญ่ · ≈ ฿150 เด็ก (ค่าเรือแยก)" },
+          "book": "none",
+          "q": "Than Bok Khorani National Park, Ao Luek, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/than-bok-khorani-national-park/"
+        },
+        {
+          "name": { "en": "Tha Pom Khlong Song Nam", "th": "ท่าปอมคลองสองน้ำ" },
+          "kind": "nature",
+          "area": { "en": "Nuea Khlong", "th": "เหนือคลอง" },
+          "what": { "en": "A boardwalk through mangroves to a crystal-clear stream where fresh and salt water meet", "th": "ทางเดินไม้ผ่านป่าโกงกางไปยังลำธารใสที่น้ำจืดกับน้ำเค็มมาบรรจบกัน" },
+          "why": { "en": "A short, shady walk with fish to spot in the clear water", "th": "เดินสั้นๆ ในร่ม มองเห็นปลาในน้ำใส" },
+          "tip": { "en": "Go in the morning when the water is clearest and the light reaches the stream", "th": "ไปช่วงเช้า น้ำใสที่สุดและแสงส่องถึงลำธาร" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿50 foreign adults · ≈ ฿30 children", "th": "≈ ฿50 ผู้ใหญ่ต่างชาติ · ≈ ฿30 เด็ก" },
+          "book": "none",
+          "q": "Tha Pom Khlong Song Nam, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/tha-pom-klong-song-nam/"
+        },
+        {
+          "name": { "en": "Tiger Cave Temple", "th": "วัดถ้ำเสือ" },
+          "kind": "culture",
+          "area": { "en": "Outside Krabi Town", "th": "นอกตัวเมืองกระบี่" },
+          "what": { "en": "A forest temple with caves at the foot of the hill and about 1,200 steps to a summit shrine", "th": "วัดในป่าที่มีถ้ำบริเวณเชิงเขา และบันไดราว 1,200 ขั้นขึ้นสู่ยอดเขา" },
+          "why": { "en": "The caves and forest at the bottom suit little ones; the summit climb is for older children", "th": "ถ้ำและป่าด้านล่างเหมาะกับเด็กเล็ก การเดินขึ้นยอดเหมาะกับเด็กโต" },
+          "tip": { "en": "Dress politely; monkeys live here, so keep food out of sight", "th": "แต่งกายสุภาพ มีลิงอยู่ เก็บอาหารให้มิดชิด" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Free or ≈ ฿50, check at the entrance", "th": "ฟรีหรือ ≈ ฿50 เช็กที่ทางเข้า" },
+          "book": "none",
+          "q": "Wat Tham Suea, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-tham-suea-tiger-cave-temple/"
+        },
+        {
+          "name": { "en": "Wat Khlong Thom Museum", "th": "พิพิธภัณฑ์วัดคลองท่อม" },
+          "kind": "museum",
+          "area": { "en": "Khlong Thom", "th": "คลองท่อม" },
+          "what": { "en": "A small temple museum of ancient beads, tools and finds from the region's earliest settlements", "th": "พิพิธภัณฑ์เล็กในวัด จัดแสดงลูกปัดโบราณ เครื่องมือ และของที่พบจากชุมชนยุคแรกของภูมิภาค" },
+          "why": { "en": "A short, cool indoor stop for a rainy hour; older children like the colourful beads", "th": "แวะในร่มสั้นๆ ช่วงฝนตก เด็กโตชอบลูกปัดหลากสี" },
+          "tip": { "en": "Open daily 08:30–16:30; easy to add to a hot springs and Emerald Pool day", "th": "เปิดทุกวัน 08:30–16:30 แวะได้ระหว่างไปน้ำตกร้อนและสระมรกต" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ฿100 foreign visitors (Thai ฿20)", "th": "≈ ฿100 ชาวต่างชาติ (คนไทย ฿20)" },
+          "book": "none",
+          "q": "Wat Khlong Thom Museum, Khlong Thom, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-khlong-thom-museum/"
+        },
+        {
+          "name": { "en": "Klang Cave", "th": "ถ้ำคลัง" },
+          "kind": "nature",
+          "area": { "en": "Ao Luek", "th": "อ่าวลึก" },
+          "what": { "en": "A limestone cave visited with a local guide, helmet and torch, full of stalactites and glittering rock", "th": "ถ้ำหินปูนที่เข้าชมพร้อมไกด์ท้องถิ่น หมวกกันน็อก และไฟฉาย มีหินงอกหินย้อยระยิบระยับ" },
+          "why": { "en": "A real cave adventure for children who can walk on uneven ground; too rough for a pram", "th": "ผจญภัยในถ้ำจริงสำหรับเด็กที่เดินทางขรุขระได้ รถเข็นเข้าไม่ได้" },
+          "tip": { "en": "A guide is required; no public transport, so come by car or with a driver", "th": "ต้องมีไกด์นำ ไม่มีรถสาธารณะ ขับรถหรือจ้างรถไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ ฿250 foreign visitors with guide, helmet and torch (Thai ≈ ฿150)", "th": "≈ ฿250 ชาวต่างชาติ รวมไกด์ หมวก และไฟฉาย (คนไทย ≈ ฿150)" },
+          "book": "none",
+          "q": "Klang Cave, Ao Luek, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/klang-cave/"
+        },
+        {
+          "name": { "en": "Shell Fossil Cemetery", "th": "สุสานหอย 75 ล้านปี" },
+          "kind": "nature",
+          "area": { "en": "Laem Pho, near Ao Nang", "th": "แหลมโพธิ์ ใกล้อ่าวนาง" },
+          "what": { "en": "Slabs of rock on the shore made of millions of ancient fossil shells", "th": "แผ่นหินริมทะเลที่เกิดจากเปลือกหอยโบราณนับล้านกลายเป็นหิน" },
+          "why": { "en": "Children can touch shells millions of years old; a short stop near the beach", "th": "เด็กๆ ได้จับเปลือกหอยอายุหลายล้านปี แวะสั้นๆ ใกล้ชายหาด" },
+          "tip": { "en": "Go at low tide when more of the rock is out of the water", "th": "ไปช่วงน้ำลง จะเห็นแผ่นหินมากขึ้น" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿200 foreign adults · ≈ ฿100 children (Thai ฿20 · ฿10)", "th": "≈ ฿200 ผู้ใหญ่ต่างชาติ · ≈ ฿100 เด็ก (คนไทย ฿20 · ฿10)" },
+          "book": "none",
+          "q": "Susan Hoi Shell Fossil Cemetery, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/75-million-year-old-shell-cemetery/"
+        },
+        {
+          "name": { "en": "Krabi Town Walking Street", "th": "ถนนคนเดินกระบี่" },
+          "kind": "market",
+          "area": { "en": "Krabi Town", "th": "ตัวเมืองกระบี่" },
+          "what": { "en": "An evening street market in town with local food, snacks, crafts and music on a small stage", "th": "ตลาดถนนคนเดินตอนเย็นในเมือง มีอาหารท้องถิ่น ขนม งานฝีมือ และดนตรีบนเวทีเล็ก" },
+          "why": { "en": "Cheap food for the whole family and a friendly local crowd", "th": "อาหารราคาถูกสำหรับทั้งครอบครัว บรรยากาศคนท้องถิ่นเป็นกันเอง" },
+          "tip": { "en": "It runs on set evenings only, so check which nights before you go", "th": "เปิดเฉพาะบางเย็น เช็กวันก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Krabi Walking Street, Krabi Town",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/krabi-walking-street/"
+        },
+        {
+          "name": { "en": "Thara Park", "th": "สวนสาธารณะธารา" },
+          "kind": "park",
+          "area": { "en": "Krabi Town riverfront", "th": "ริมแม่น้ำ ตัวเมืองกระบี่" },
+          "what": { "en": "The town's riverside park with a big playground by the car park, lawns and a running track", "th": "สวนริมแม่น้ำของเมือง มีสนามเด็กเล่นใหญ่ใกล้ลานจอดรถ สนามหญ้า และลู่วิ่ง" },
+          "why": { "en": "Space to run and climb between sights; local families come in the evening", "th": "มีที่ให้วิ่งเล่นปีนป่ายระหว่างเที่ยว ตอนเย็นครอบครัวคนท้องถิ่นมากัน" },
+          "tip": { "en": "Check the play equipment before small children use it", "th": "ตรวจเครื่องเล่นก่อนให้เด็กเล็กเล่น" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Thara Park, Utarakit Road, Krabi Town",
+          "ok": "2026-11",
+          "src": "https://krabinature.com/thara-park-in-krabi-town/"
+        },
+        {
+          "name": { "en": "Ao Nang Landmark Night Market", "th": "ตลาดกลางคืนอ่าวนาง แลนด์มาร์ก" },
+          "kind": "market",
+          "area": { "en": "Ao Nang", "th": "อ่าวนาง" },
+          "what": { "en": "An open-air night market with food from many countries, shared seating and small fairground rides", "th": "ตลาดกลางคืนกลางแจ้ง มีอาหารหลายชาติ ที่นั่งรวม และเครื่องเล่นเล็กๆ" },
+          "why": { "en": "Everyone picks their own dinner and children have rides to look forward to", "th": "ทุกคนเลือกมื้อเย็นเองได้ เด็กๆ มีเครื่องเล่นรอให้สนุก" },
+          "tip": { "en": "Open daily about 16:00–23:00, busiest from 18:00; rides cost more than elsewhere in Thailand", "th": "เปิดทุกวันราว 16:00–23:00 คนเยอะหลัง 18:00 เครื่องเล่นราคาสูงกว่าที่อื่นในไทย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Ao Nang Landmark Night Market, Ao Nang, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/ao-nang-night-market/"
+        },
+        {
+          "name": { "en": "Krabi Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำกระบี่" },
+          "kind": "aquarium",
+          "area": { "en": "Sai Thai, south of Krabi Town", "th": "ไสไทย ทางใต้ของเมืองกระบี่" },
+          "what": { "en": "Public side of a government fisheries research facility, with tanks of live marine animals and open-air grounds with sea turtles.", "th": "ส่วนที่เปิดให้เข้าชมของสถานีวิจัยประมงของรัฐ มีตู้สัตว์ทะเลมีชีวิตและพื้นที่กลางแจ้งที่มีเต่าทะเล" },
+          "why": { "en": "Tanks of live marine animals that children who know fish films tend to enjoy; open-air grounds.", "th": "ตู้สัตว์ทะเลมีชีวิตที่เด็กๆ ที่ชอบหนังเรื่องปลามักสนุก และมีพื้นที่กลางแจ้ง" },
+          "tip": { "en": "Verify on arrival as pricing can change; pairs with Shell Fossil Beach nearby.", "th": "เช็กราคาที่หน้างาน เพราะอาจเปลี่ยน แวะคู่กับหาดสุสานหอยที่อยู่ใกล้ๆ ได้" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 0.75,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Krabi Aquarium, Sai Thai, Mueang Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/krabi-aquarium"
+        },
+        {
+          "name": { "en": "Hong Island (Koh Hong)", "th": "เกาะห้อง" },
+          "local": "เกาะห้อง",
+          "kind": "beach",
+          "area": { "en": "Than Bok Khorani National Park, off Ao Nang", "th": "อุทยานแห่งชาติธารโบกขรณี หน้าอ่าวนาง" },
+          "what": { "en": "Protected island with a sheltered turquoise lagoon, a sandy beach framed by limestone karsts and a short viewpoint climb.", "th": "เกาะอนุรักษ์ มีลากูนสีเทอร์ควอยซ์กำบังลม หาดทรายรายล้อมด้วยภูเขาหินปูน และทางเดินสั้นๆ ขึ้นจุดชมวิว" },
+          "why": { "en": "Calm lagoon and shallow water, a half-day trip the page calls a family favourite for older children.", "th": "ลากูนสงบ น้ำตื้น ทริปครึ่งวันที่เว็บบอกว่าครอบครัวที่มีเด็กโตชอบ" },
+          "tip": { "en": "Park fee about ฿300 adults / ฿150 children (foreign visitors), boat extra; confirm access times with the tour operator.", "th": "ค่าอุทยานราว ฿300 ผู้ใหญ่ / ฿150 เด็ก (ชาวต่างชาติ) ค่าเรือแยก ถามเวลาเข้าชมกับบริษัททัวร์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ฿300 adult · ฿150 child (park fee; boat extra)", "th": "≈ ฿300 ผู้ใหญ่ · ฿150 เด็ก (ค่าอุทยาน ค่าเรือแยก)" },
+          "book": "rec",
+          "q": "Hong Island (Koh Hong), Than Bok Khorani National Park, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/hong-island-krabi"
+        },
+        {
+          "name": { "en": "Maya Bay", "th": "อ่าวมาหยา" },
+          "kind": "beach",
+          "area": { "en": "Koh Phi Phi Leh, Phi Phi Islands", "th": "เกาะพีพีเล หมู่เกาะพีพี" },
+          "what": { "en": "The bay of the famous beach scene, framed by sheer limestone cliffs, reopened in 2022 with timed entry and visitor limits.", "th": "อ่าวจากฉากหาดชื่อดัง ล้อมด้วยหน้าผาหินปูนสูงชัน เปิดใหม่ปี 2022 จำกัดเวลาเข้าและจำนวนคน" },
+          "why": { "en": "A short walk from the boat to the sand; the page says it is very busy, so go early.", "th": "เดินจากเรือถึงหาดไม่ไกล เว็บบอกว่าคนแน่นมาก ควรไปเช้า" },
+          "tip": { "en": "No swimming inside the bay itself; closed for recovery typically 1 August to 30 September.", "th": "ห้ามว่ายน้ำในอ่าว ปิดฟื้นฟูธรรมชาติโดยทั่วไป 1 ส.ค.–30 ก.ย." },
+          "ages": [0, 0, 1, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Maya Bay, Koh Phi Phi Leh, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/maya-bay-krabi"
+        },
+        {
+          "name": { "en": "Koh Phi Phi Don", "th": "เกาะพีพีดอน" },
+          "kind": "beach",
+          "area": { "en": "Phi Phi Islands, ferry from Krabi", "th": "หมู่เกาะพีพี นั่งเรือจากกระบี่" },
+          "what": { "en": "The largest Phi Phi island, with a busy village and beaches and snorkelling.", "th": "เกาะที่ใหญ่ที่สุดของหมู่เกาะพีพี มีหมู่บ้านที่คึกคัก หาดทราย และจุดดูปะการัง" },
+          "why": { "en": "Beaches and snorkelling that the page says children enjoy; the day trip suits children aged 7 and up.", "th": "หาดและการดูปะการังที่เว็บบอกว่าเด็กชอบ ทริปวันเดียวเหมาะกับเด็กอายุ 7 ปีขึ้นไป" },
+          "tip": { "en": "Ferry about 45 minutes to 1.5 hours from Krabi; the village is busy and nightlife-oriented.", "th": "นั่งเรือจากกระบี่ราว 45 นาทีถึง 1.5 ชั่วโมง หมู่บ้านคึกคักและเน้นชีวิตกลางคืน" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Koh Phi Phi Don, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/guides/krabi-with-kids"
+        },
+        {
+          "name": { "en": "Blue Pool (Sa Nam Phut)", "th": "บลูพูล (สระน้ำพุ)" },
+          "kind": "nature",
+          "area": { "en": "Khlong Thom", "th": "คลองท่อม" },
+          "what": { "en": "A small, strikingly coloured natural pool in the forest, reached by a short trail from the Emerald Pool area.", "th": "สระน้ำธรรมชาติเล็กๆ สีสวยสะดุดตากลางป่า เดินเท้าสั้นๆ จากบริเวณสระมรกต" },
+          "why": { "en": "A quieter, more otherworldly pool than the Emerald Pool next door; to look at, not to swim.", "th": "เงียบกว่าและดูแปลกตากว่าสระมรกตที่อยู่ติดกัน ไว้ชมไม่ใช่ลงเล่นน้ำ" },
+          "tip": { "en": "Open only in the dry season, generally November through April; swimming not permitted.", "th": "เปิดเฉพาะหน้าแล้ง โดยทั่วไปพฤศจิกายน–เมษายน ห้ามลงว่ายน้ำ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Blue Pool (Sa Nam Phut), Khlong Thom, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/blue-pool-krabi"
+        },
+        {
+          "name": { "en": "Khlong Muang Beach", "th": "หาดคลองม่วง" },
+          "local": "หาดคลองม่วง",
+          "kind": "beach",
+          "area": { "en": "Khlong Muang, about 20 km north of Ao Nang", "th": "คลองม่วง ห่างอ่าวนางไปทางเหนือราว 20 กม." },
+          "what": { "en": "Long beach of soft sand with limestone karst views across the water.", "th": "หาดทรายนุ่มยาว เห็นภูเขาหินปูนอยู่ไกลๆ ข้ามน้ำ" },
+          "why": { "en": "The beach is noticeably less crowded during most of the day, with few vendors.", "th": "หาดคนน้อยกว่าชัดเจนเกือบทั้งวัน มีแม่ค้าไม่มาก" },
+          "tip": { "en": "Free entry; resort restaurants and sunloungers vary in price.", "th": "เข้าฟรี ร้านอาหารและเตียงอาบแดดของรีสอร์ตราคาต่างกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Khlong Muang Beach, Mueang Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/khlong-muang-beach"
+        },
+        {
+          "name": { "en": "Tubkaek Beach", "th": "หาดทับแขก" },
+          "kind": "beach",
+          "area": { "en": "Ban Ko Kwang, Nong Thale, Mueang Krabi", "th": "บ้านเกาะกวาง หนองทะเล เมืองกระบี่" },
+          "what": { "en": "A 1.6 km crescent bay with unobstructed views of limestone karst formations.", "th": "อ่าวรูปเสี้ยวพระจันทร์ยาว 1.6 กม. เห็นภูเขาหินปูนโล่งไม่มีอะไรบัง" },
+          "why": { "en": "No entrance fee and few visitors, with the scenery to itself.", "th": "ไม่เสียค่าเข้า คนน้อย ได้วิวแบบเป็นส่วนตัว" },
+          "tip": { "en": "Reached by rental motorbike, car or chartered songthaew; there are no direct public buses.", "th": "ไปได้ด้วยมอเตอร์ไซค์เช่า รถยนต์ หรือสองแถวเหมา ไม่มีรถประจำทางตรง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Tubkaek Beach, Mueang Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/attractions/tubkaek-beach"
+        },
+        {
+          "name": { "en": "Kayaking on Ao Thalane", "th": "พายเรือคายัคอ่าวท่าเลน" },
+          "kind": "nature",
+          "area": { "en": "About 20 minutes north of Ao Nang", "th": "ห่างอ่าวนางไปทางเหนือราว 20 นาที" },
+          "what": { "en": "Guided half-day mangrove kayaking through calm inland waterways.", "th": "พายเรือคายัคชมป่าชายเลนครึ่งวัน พร้อมไกด์ ในลำน้ำสงบ" },
+          "why": { "en": "Younger children can ride in the front of a double kayak; the page says best from age 8.", "th": "เด็กเล็กนั่งหน้าเรือคู่ได้ เว็บบอกว่าเหมาะที่สุดตั้งแต่อายุ 8 ปี" },
+          "tip": { "en": "Tide and weather dependent; book with an operator who confirms the age minimum.", "th": "ขึ้นกับน้ำขึ้นน้ำลงและอากาศ จองกับผู้ให้บริการที่ยืนยันอายุขั้นต่ำได้" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Ao Thalane, north of Ao Nang, Krabi",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/guides/krabi-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 3.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thrillophilia.com/places-to-visit-in-krabi-with-family",
+          "name": {
+            "th": "เขาหงอนนาค",
+            "en": "Dragon's Crest (Khao Ngon Nak)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หนองทะเล กระบี่",
+            "en": "Nong Thale, Krabi"
+          },
+          "what": {
+            "th": "เส้นทางเดินป่ามีป้ายบอก ผ่านน้ำตกเล็ก ๆ ถึงยอดเขาเห็นวิวทะเลและป่า",
+            "en": "A marked hike past mini waterfalls to a summit view over sea and forest"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กโตและวัยรุ่น",
+            "en": "For older children and teenagers"
+          },
+          "tip": {
+            "th": "ไปกลับ 3–4 ชั่วโมง",
+            "en": "A 3–4 hour round trip"
+          },
+          "q": "เขาหงอนนาค, กระบี่",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/14l3mAWlKjvQ",
+          "name": {
+            "th": "ฮาร์เบอร์แลนด์ เซ็นทรัล กระบี่",
+            "en": "HarborLand Central Krabi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซ็นทรัล กระบี่ กระบี่",
+            "en": "Central Krabi, Krabi"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม แบ่งโซนตามวัย ตั้งแต่ 5 เดือนถึง 15 ปี",
+            "en": "Indoor play zones by age, from 5 months to 15 years"
+          },
+          "why": {
+            "th": "เล่นในร่มวันฝนตก มีเมืองจำลองและสไลเดอร์",
+            "en": "Indoors for a rainy day, with a role-play town and a tower slide"
+          },
+          "q": "HarborLand Central Krabi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ป่าในเมืองกระบี่",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://krabinature.com/krabi-urban-forest-walkway-mangrove-walkway/",
+          "name": {
+            "th": "ทางเดินป่าในเมืองกระบี่",
+            "en": "Krabi Urban Forest Walkway"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ตัวเมืองกระบี่ ทางใต้ของโรงพยาบาล กระบี่",
+            "en": "Krabi town, south of the public hospital, Krabi"
+          },
+          "what": {
+            "th": "ทางเดินคอนกรีต 500 เมตรเหนือป่าชายเลน มีหอชมวิวสูง 5 ชั้น",
+            "en": "A 500 m concrete walk over the mangroves with a five-storey lookout tower"
+          },
+          "why": {
+            "th": "ดูนก ปลาตีน และปู บนทางเดินง่าย ๆ",
+            "en": "Birds, mudskippers and crabs to spot on an easy walk"
+          },
+          "tip": {
+            "th": "ระวังลิง ไม่ควรไปตอนค่ำ",
+            "en": "Watch out for monkeys; not for after dark"
+          },
+          "q": "Krabi Urban Forest, Krabi",
+          "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Huay Toh Waterfall",
+            "th": "น้ำตกห้วยโต้"
+          },
+          "local": "น้ำตกห้วยโต้",
+          "kind": "nature",
+          "area": {
+            "en": "Khao Phanom Bencha National Park",
+            "th": "อุทยานแห่งชาติเขาพนมเบญจา"
+          },
+          "what": {
+            "en": "A forest waterfall with pools, reached by an easy walk from the national park headquarters.",
+            "th": "น้ำตกในป่ามีแอ่งน้ำ เดินสบายๆ จากที่ทำการอุทยาน"
+          },
+          "why": {
+            "en": "The page says young children can enjoy the lower waterfall, swimming, butterflies and easy walking.",
+            "th": "เว็บไซต์บอกว่าเด็กเล็กสนุกกับน้ำตกชั้นล่าง เล่นน้ำ ดูผีเสื้อ และเดินง่าย"
+          },
+          "tip": {
+            "en": "The park's Thai restaurant normally closes at about 14:00",
+            "th": "ร้านอาหารไทยในอุทยานมักปิดราว 14:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ฿200 adults · ฿100 children (park entrance)",
+            "th": "≈ ฿200 ผู้ใหญ่ · ฿100 เด็ก (ค่าเข้าอุทยาน)"
+          },
+          "book": "none",
+          "q": "Huay Toh Waterfall, Khao Phanom Bencha National Park, Krabi",
+          "ok": "2026-11",
+          "src": "https://krabinature.com/attractions/huay-to-waterfall/"
+        },
+        {
+          "name": {
+            "en": "Andaman Cultural Study Center",
+            "th": "ศูนย์การเรียนรู้วัฒนธรรมอันดามัน"
+          },
+          "local": "ศูนย์การเรียนรู้วัฒนธรรมอันดามัน",
+          "kind": "museumkid",
+          "area": {
+            "en": "Maharat Road, Pak Nam, Mueang Krabi",
+            "th": "ถนนมหาราช ปากน้ำ เมืองกระบี่"
+          },
+          "what": {
+            "en": "A museum and learning centre on the history and culture of the Andaman region, with a glass-bead exhibit",
+            "th": "พิพิธภัณฑ์และศูนย์เรียนรู้ประวัติศาสตร์และวัฒนธรรมอันดามัน มีนิทรรศการลูกปัดแก้ว"
+          },
+          "why": {
+            "en": "The exhibits are designed to engage both children and adults",
+            "th": "นิทรรศการออกแบบให้ทั้งเด็กและผู้ใหญ่สนุกไปด้วยกัน"
+          },
+          "tip": {
+            "en": "Usually open 09:00–16:00; check hours before you go",
+            "th": "ปกติเปิด 09:00–16:00 เช็กเวลาก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Andaman Cultural Study Center, Mueang Krabi, Krabi, Thailand",
+          "ok": "2026-11",
+          "src": "https://hopsa.io/en/blog/post/interaktywne-muzea-i-parki-w-krabi-edukacja-i-zabawa-w-jednym"
         }
       ]
     }

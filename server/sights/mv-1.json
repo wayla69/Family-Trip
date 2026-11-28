@@ -1,0 +1,220 @@
+{
+  "cc": "mv",
+  "towns": [
+    {
+      "place": "mv-atolls",
+      "thin": true,
+      "sights": [
+        {
+          "name": { "en": "Artificial Beach, Malé", "th": "หาดเทียมมาเล" },
+          "local": "",
+          "kind": "beach",
+          "area": { "en": "Malé", "th": "มาเล" },
+          "what": { "en": "A small public beach on the capital's seafront with shallow water, a playground and a view of planes landing", "th": "หาดสาธารณะเล็กๆ ริมทะเลเมืองหลวง น้ำตื้น มีสนามเด็กเล่น และเห็นเครื่องบินลงจอด" },
+          "why": { "en": "Shallow, easy water for children; a guide says it is small and may need repair, and swimwear should be modest here", "th": "น้ำตื้นเล่นง่าย คู่มือว่าหาดเล็กและบางส่วนต้องซ่อม และควรแต่งกายสุภาพเมื่อลงเล่นน้ำ" },
+          "tip": { "en": "Entry is free; a 5-minute airport ferry costs about MVR 15 and children under 5 ride free (August 2025 guide)", "th": "เข้าฟรี เรือข้ามฟากสนามบินห้านาทีราว 15 รูฟียา เด็กต่ำกว่า 5 ปีฟรี (คู่มือส.ค. 2025)" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Artificial Beach, Malé, Maldives",
+          "ok": "2026-11",
+          "src": "https://maldives-magazine.com/activities/male-with-kids-family-friendly-guide.htm"
+        },
+        {
+          "name": { "en": "Sultan Park", "th": "สวนสุลต่าน" },
+          "local": "",
+          "kind": "park",
+          "area": { "en": "Malé", "th": "มาเล" },
+          "what": { "en": "A shaded green park in the middle of Malé around the old sultan's palace grounds", "th": "สวนร่มรื่นกลางเมืองมาเล รอบบริเวณพระราชวังสุลต่านเก่า" },
+          "why": { "en": "A shady place to run and rest in a crowded island city", "th": "ที่วิ่งเล่นและพักในร่มเงา กลางเมืองเกาะที่แออัด" },
+          "tip": { "en": "A listing gives 06:00 to 09:30 on Fridays and 06:00 to 21:30 Saturday to Sunday; check the other days", "th": "ข้อมูลแจ้งเปิดวันศุกร์ 06:00–09:30 และเสาร์–อาทิตย์ 06:00–21:30 เช็กวันอื่นอีกครั้ง" },
+          "ages": [1, 2, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Sultan Park, Malé, Maldives",
+          "ok": "2026-11",
+          "src": "https://maldivesholidayescape.pages.dev/local-tourism/sultan-park-national-museum"
+        },
+        {
+          "name": { "en": "National Museum of the Maldives", "th": "พิพิธภัณฑ์แห่งชาติมัลดีฟส์" },
+          "local": "",
+          "kind": "museum",
+          "area": { "en": "Sultan Park, Malé", "th": "สวนสุลต่าน มาเล" },
+          "what": { "en": "A three-storey museum in the last building of the former sultan's palace, with old objects and royal items", "th": "พิพิธภัณฑ์สามชั้นในอาคารสุดท้ายของพระราชวังสุลต่านเก่า มีของโบราณและข้าวของราชสำนัก" },
+          "why": { "en": "A cool, short stop inside, handy on a hot or wet day; the exhibits suit children of school age more than toddlers", "th": "แวะสั้นๆ ในที่เย็น เหมาะวันร้อนหรือฝนตก นิทรรศการเหมาะกับเด็กวัยเรียนมากกว่าเด็กเล็ก" },
+          "tip": { "en": "The park is free but the museum has its own hours and ticket, so check them at the door", "th": "สวนเข้าฟรี แต่พิพิธภัณฑ์มีเวลาและตั๋วของตัวเอง เช็กที่ประตู" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
+          "book": "none",
+          "q": "National Museum, Sultan Park, Malé",
+          "ok": "2026-11",
+          "src": "https://pickyourtrail.com/blog/the-national-museum-of-maldives"
+        },
+        {
+          "name": { "en": "Bikini Beach, Maafushi", "th": "หาดบิกินี มาฟูชิ" },
+          "local": "",
+          "kind": "beach",
+          "area": { "en": "Maafushi, South Malé Atoll", "th": "มาฟูชิ อะทอลล์มาเลใต้" },
+          "what": { "en": "The tourist beach of a local island, where swimwear is allowed, with calm shallow water and inflatable water play offshore", "th": "หาดนักท่องเที่ยวของเกาะคนท้องถิ่น ใส่ชุดว่ายน้ำได้ น้ำนิ่งตื้น และมีเครื่องเล่นเป่าลมกลางทะเล" },
+          "why": { "en": "Calm, shallow water suits small children; it gets crowded in high season, so go early; elsewhere on the island cover shoulders and knees", "th": "น้ำนิ่งตื้นเหมาะกับเด็กเล็ก หน้าไฮซีซันคนแน่น ควรไปเช้า นอกหาดนี้ควรปิดไหล่และเข่า" },
+          "tip": { "en": "Public ferries from Malé do not run on Fridays; a 2026 timetable lists a 07:30 earliest speedboat and about 1 h 15", "th": "เรือสาธารณะจากมาเลไม่ออกวันศุกร์ ตารางปี 2026 ระบุสปีดโบ๊ตเที่ยวแรก 07:30 ใช้เวลาราว 1 ชม. 15 นาที" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free (check the price: inflatable play and boat trips are paid extras)", "th": "ฟรี (เช็กราคา: เครื่องเล่นเป่าลมและทริปเรือคิดแยก)" },
+          "book": "none",
+          "q": "Bikini Beach, Maafushi, Maldives",
+          "ok": "2026-11",
+          "src": "https://maldives-magazine.com/budget/maldives-budget-guide-south-male-local-islands-maafushi-gulhi-guraidhoo.html"
+        },
+        {
+          "name": { "en": "Hulhumalé Central Park leisure zone", "th": "โซนพักผ่อนสวนกลางฮูลฮูมาเล" },
+          "local": "",
+          "kind": "park",
+          "area": { "en": "Hulhumalé", "th": "ฮูลฮูมาเล" },
+          "what": { "en": "The finished part of the big green park of Hulhumalé, next to the airport island", "th": "ส่วนที่สร้างเสร็จของสวนสีเขียวใหญ่ในฮูลฮูมาเล ติดเกาะสนามบิน" },
+          "why": { "en": "Open lawns for children to run; other zones of the park were still being built on an undated page", "th": "สนามหญ้าโล่งให้เด็กวิ่งเล่น ส่วนอื่นของสวนยังก่อสร้างอยู่ตามหน้าเว็บที่ไม่ระบุวันที่" },
+          "tip": { "en": "Check which zones are open before you go; a Hulhumalé stay keeps the airport close", "th": "เช็กว่าโซนไหนเปิดก่อนไป พักที่ฮูลฮูมาเลใกล้สนามบิน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hulhumalé Central Park, Hulhumalé",
+          "ok": "2026-11",
+          "src": "https://www.hdc.mv/?p=23426"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://maldivestour.guide/articles/things-to-do-in-maldives-for-family.html",
+          "name": {
+            "th": "ตลาดปลามาเล",
+            "en": "Malé Fish Market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "มาเล",
+            "en": "Malé"
+          },
+          "what": {
+            "th": "ตลาดปลา ใกล้ตลาดผักผลไม้และร้านของที่ระลึก",
+            "en": "The fish market, with fruit and vegetable markets and shops nearby"
+          },
+          "why": {
+            "th": "คึกคักน่าตื่นเต้นสำหรับเด็ก ได้เห็นปลาสด ๆ ขึ้นจากเรือ",
+            "en": "Busy and fascinating for children, with fresh catches coming in"
+          },
+          "q": "Fish Market, Ibrahim Hassan Didi Magu, Malé",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thenationalnews.com/travel/2026/10/14/calm-bolthole-in-the-baa-atoll-a-family-review-of-the-westin-maldives-miriandhoo/",
+          "name": {
+            "th": "คิดส์คลับ รีสอร์ตเดอะเวสทินมัลดีฟส์ มิเรียนดู",
+            "en": "Kids Club (The Westin Maldives Miriandhoo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รีสอร์ตเดอะเวสทินมัลดีฟส์ มิเรียนดู อะทอลล์บา",
+            "en": "The Westin Maldives Miriandhoo, Baa Atoll"
+          },
+          "what": {
+            "th": "คิดส์คลับของรีสอร์ต มีสระกลางแจ้ง สนามเด็กเล่นเรือโจรสลัดไม้ และห้องเล่นในร่ม",
+            "en": "A resort kids' club with an outdoor pool, a wooden pirate-ship playground and an indoor play room"
+          },
+          "why": {
+            "th": "มีเรือโจรสลัดให้ปีน สระน้ำ และกิจกรรมงานฝีมือในร่ม",
+            "en": "A pirate ship to climb, a pool, and workshops and crafts indoors"
+          },
+          "tip": {
+            "th": "รับเด็กตั้งแต่ 4 ขวบ เด็กเล็กกว่านั้นต้องมีผู้ปกครองและขึ้นกับจำนวนที่ว่างแต่ละวัน",
+            "en": "From four years old; younger children with a parent, when there is room that day"
+          },
+          "q": "The Westin Maldives Miriandhoo Resort, Baa Atoll",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ttgasia.com/2026/01/08/four-seasons-maldives-highlights-family-bonding-and-marine-education-across-two-resorts/",
+          "name": {
+            "th": "จูเนียร์มารีนเซฟเวอร์ส โฟร์ซีซันส์ คูดาฮูรา",
+            "en": "Junior Marine Savers (Four Seasons Kuda Huraa)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "รีสอร์ตโฟร์ซีซันส์มัลดีฟส์ คูดาฮูรา",
+            "en": "Four Seasons Resort Maldives at Kuda Huraa"
+          },
+          "what": {
+            "th": "โปรแกรมวิทยาศาสตร์ทะเลสำหรับเด็ก 8–12 ขวบ ทำโครงปะการัง สำรวจแนวปะการัง ดูโลมา",
+            "en": "A marine science programme for children aged 8–12: coral frames, reef checks, dolphin spotting"
+          },
+          "why": {
+            "th": "เด็กได้ช่วยทำโครงปะการัง ดูโลมาและเต่าทะเล",
+            "en": "Children help build coral frames and look out for dolphins and turtles"
+          },
+          "tip": {
+            "th": "สำหรับเด็กอายุ 8–12 ขวบ",
+            "en": "For ages 8 to 12"
+          },
+          "q": "Four Seasons Resort Maldives at Kuda Huraa",
+          "ok": "2026-11"
+        }
+      ]
+    }
+  ]
+}
