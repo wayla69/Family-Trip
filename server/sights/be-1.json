@@ -445,6 +445,250 @@
           },
           "q": "Harry Malter Family Park, Bosheidestraat 15, Destelbergen",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "De Toverplaneet indoor playground",
+            "th": "สนามเด็กเล่นในร่ม เดอ โทเวอร์พลาเนต"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Legeweg 88, Sint-Michiels",
+            "th": "Legeweg 88 ซินต์-มีเคลส์"
+          },
+          "what": {
+            "en": "An indoor playground with slides, climbing towers up to 10 metres, ball pits, tunnels and a 100 m² bouncy castle.",
+            "th": "สนามเด็กเล่นในร่ม มีสไลเดอร์ หอปีนสูงถึง 10 เมตร บ่อบอล อุโมงค์ และปราสาทบอลลูนกว้าง 100 ตร.ม."
+          },
+          "why": {
+            "en": "A separate area for babies and toddlers up to 4, so the little ones play safely.",
+            "th": "มีโซนแยกสำหรับทารกและเด็กเล็กถึง 4 ปี เด็กเล็กเล่นได้ปลอดภัย"
+          },
+          "tip": {
+            "en": "A good rainy-day option; allow about two hours.",
+            "th": "เหมาะวันฝนตก เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "en": "≈ €11 per child aged 2–15 · under 3 free",
+            "th": "≈ €11 ต่อเด็กอายุ 2–15 ปี · ต่ำกว่า 3 ปีฟรี"
+          },
+          "book": "none",
+          "q": "De Toverplaneet, Legeweg 88, Sint-Michiels, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/de-toverplaneet-indoor-playground"
+        },
+        {
+          "name": {
+            "en": "Tillegem provincial domain",
+            "th": "สวนสาธารณะประจำจังหวัดทิลเลอเกม"
+          },
+          "local": "Provinciedomein Tillegembos",
+          "kind": "park",
+          "area": {
+            "en": "Sint-Michiels",
+            "th": "ซินต์-มีเคลส์"
+          },
+          "what": {
+            "en": "A provincial estate with woods, meadows, a moated historic castle, a farm courtyard and the inn In de Trutselaar.",
+            "th": "พื้นที่ของจังหวัดมีป่า ทุ่งหญ้า ปราสาทเก่ามีคูน้ำ ลานฟาร์ม และโรงเตี๊ยม In de Trutselaar"
+          },
+          "why": {
+            "en": "A playground and a carousel on the estate.",
+            "th": "มีสนามเด็กเล่นและม้าหมุนในพื้นที่"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Provinciedomein Tillegembos, Tillegemstraat, Sint-Michiels, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.brugge.be/activiteiten/het-provinciaal-domein-tillegem"
+        },
+        {
+          "name": {
+            "en": "De Zeven Torentjes children's farm",
+            "th": "ฟาร์มเด็ก เดอ เซเวน โตเรนต์เยส"
+          },
+          "local": "Kinderboerderij De Zeven Torentjes",
+          "kind": "farm",
+          "area": {
+            "en": "Canadaring 41, Assebroek",
+            "th": "Canadaring 41 อัสเซอบรุก"
+          },
+          "what": {
+            "en": "A 14th-century farmstead with a working children's farm, meadows, stables, a dovecot and a Gothic barn.",
+            "th": "ฟาร์มเฮาส์ศตวรรษที่ 14 มีฟาร์มเด็กที่ใช้งานจริง ทุ่งหญ้า คอกม้า หอนกพิราบ และโรงนาแบบกอทิก"
+          },
+          "why": {
+            "en": "Farm animals to see, a play area and a highchair; baby carriages are allowed.",
+            "th": "มีสัตว์ฟาร์มให้ดู พื้นที่เล่น และเก้าอี้เด็ก นำรถเข็นเด็กเข้าได้"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Kinderboerderij De Zeven Torentjes, Canadaring 41, Assebroek, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/kinderboerderij-de-zeven-torentjes-childrens-farm"
+        },
+        {
+          "name": {
+            "en": "Cozmix public observatory",
+            "th": "หอดูดาวสาธารณะ คอซมิกซ์"
+          },
+          "local": "Volkssterrenwacht Beisbroek",
+          "kind": "museumkid",
+          "area": {
+            "en": "Beisbroek, Zeeweg 96",
+            "th": "ไบส์บรุก Zeeweg 96"
+          },
+          "what": {
+            "en": "A public observatory with a telescope tower and a planetarium of more than seven thousand stars, plus a planet pathway.",
+            "th": "หอดูดาวสาธารณะ มีหอกล้องโทรทรรศน์ และท้องฟ้าจำลองดาวกว่าเจ็ดพันดวง พร้อมทางเดินดาวเคราะห์"
+          },
+          "why": {
+            "en": "The planetarium is indoors and the telescope gives close views of the sun, moon and planets.",
+            "th": "ท้องฟ้าจำลองอยู่ในอาคาร และกล้องโทรทรรศน์ให้ดูดวงอาทิตย์ ดวงจันทร์ และดาวเคราะห์ใกล้ ๆ"
+          },
+          "tip": {
+            "en": "Booking is recommended.",
+            "th": "ควรจองล่วงหน้า"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €8 adults · €6 children 4–17 · under 4 free",
+            "th": "≈ €8 ผู้ใหญ่ · €6 เด็ก 4–17 ปี · ต่ำกว่า 4 ปีฟรี"
+          },
+          "book": "rec",
+          "q": "Volkssterrenwacht Beisbroek, Zeeweg 96, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/cozmix-volkssterrenwacht-beisbroek-public-observatory"
+        },
+        {
+          "name": {
+            "en": "Katelijnepark",
+            "th": "สวนคาเทลีนเนอ"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Baron Ruzettelaan",
+            "th": "Baron Ruzettelaan"
+          },
+          "what": {
+            "en": "A park just outside the centre, along the inland waterway and in the shadow of Katelijne Bridge, for a picnic or a stroll.",
+            "th": "สวนนอกใจกลางเมืองเล็กน้อย ริมคลองและใต้สะพานคาเทลีนเนอ เหมาะกับปิกนิกหรือเดินเล่น"
+          },
+          "why": {
+            "en": "The page tags it child-friendly, with baby carriages and picnics allowed.",
+            "th": "เว็บระบุว่าเหมาะกับเด็ก นำรถเข็นเด็กและปิกนิกได้"
+          },
+          "tip": {
+            "en": "Good for a picnic; allow about an hour.",
+            "th": "เหมาะกับปิกนิก เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Katelijnepark, Baron Ruzettelaan, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/katelijnepark-katelijne-park"
+        },
+        {
+          "name": {
+            "en": "Beisbroek municipal domain",
+            "th": "สวนสาธารณะไบส์บรุก"
+          },
+          "local": "Domein Beisbroek",
+          "kind": "nature",
+          "area": {
+            "en": "Zeeweg 96",
+            "th": "Zeeweg 96"
+          },
+          "what": {
+            "en": "About 160 hectares of woodland, lanes, grassland and heath south-west of Bruges, with picnic areas and a nature centre.",
+            "th": "ป่า ทางเดิน ทุ่งหญ้า และทุ่งลันดอนราว 160 เฮกตาร์ทางตะวันตกเฉียงใต้ของบรูจส์ มีจุดปิกนิกและศูนย์ธรรมชาติ"
+          },
+          "why": {
+            "en": "A kids' lab in the nature centre, and paths for walking and cycling.",
+            "th": "มีห้องทดลองเด็กในศูนย์ธรรมชาติ และเส้นทางเดินและปั่นจักรยาน"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Domein Beisbroek, Zeeweg 96, Bruges, Belgium",
+          "ok": "2026-11",
+          "src": "https://www.visitbruges.be/en/things-to-do/culture-and-heritage/stedelijk-domein-beisbroek-municipal-domain"
         }
       ]
     },

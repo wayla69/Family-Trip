@@ -1150,6 +1150,410 @@
           },
           "q": "JUMP House Cologne, Köhlstraße 10, Köln",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Pippolino indoor play park",
+            "th": "ปิปโปลิโน สวนเล่นในร่ม"
+          },
+          "local": "Pippolino Kinderspielpark",
+          "kind": "play",
+          "area": {
+            "en": "Kerpen-Sindorf, near Cologne",
+            "th": "เคอร์เพิน-ซินดอร์ฟ ใกล้โคโลญ"
+          },
+          "what": {
+            "en": "An indoor play park of about 2,500 square metres with bouncy castles and climbing and play courses.",
+            "th": "สวนเล่นในร่มราว 2,500 ตร.ม. มีปราสาทบอลลูน และเส้นทางปีนป่ายและเล่น"
+          },
+          "why": {
+            "en": "Trampolines, a climbing wall and trikes for the little ones.",
+            "th": "มีแทรมโพลีน กำแพงปีน และสามล้อสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Pippolino Kinderspielpark, Hermann-Löns-Straße 30-38, Kerpen-Sindorf, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "Jackelino Safari indoor play hall",
+            "th": "แจ็กเกลิโน ซาฟารี ห้องเล่นในร่ม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Godorf, Cologne",
+            "th": "โกดอร์ฟ โคโลญ"
+          },
+          "what": {
+            "en": "An indoor play hall with climbing hills, slides and trampolines.",
+            "th": "ห้องเล่นในร่ม มีเนินปีน สไลเดอร์ และแทรมโพลีน"
+          },
+          "why": {
+            "en": "A wide choice of things to play on and run about on.",
+            "th": "มีของเล่นและพื้นที่วิ่งเล่นให้เลือกมากมาย"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jackelino Safari, Otto-Hahn-Straße 6-8, Cologne, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "Leo's Abenteuerpark indoor adventure park",
+            "th": "เลโอส์ อาเบนเทออร์พาร์ก สวนผจญภัยในร่ม"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Pulheim, near Cologne",
+            "th": "พูลไฮม์ ใกล้โคโลญ"
+          },
+          "what": {
+            "en": "An indoor adventure park with ball pits, trampolines, a pirate ship and a climbing volcano.",
+            "th": "สวนผจญภัยในร่ม มีบ่อบอล แทรมโพลีน เรือโจรสลัด และภูเขาไฟปีนป่าย"
+          },
+          "why": {
+            "en": "Romping, climbing and running about on thousands of square metres.",
+            "th": "วิ่งเล่น ปีนป่าย บนพื้นที่หลายพันตารางเมตร"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Leo's Abenteuerpark, Siemensstraße 2a, Pulheim, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "SPRUNG.RAUM trampoline park",
+            "th": "สปรุงราวม์ สวนแทรมโพลีน"
+          },
+          "local": "SPRUNG RAUM Trampolinpark Köln/Bonn",
+          "kind": "play",
+          "area": {
+            "en": "Troisdorf, Junkersring 28",
+            "th": "ทรอยส์ดอร์ฟ Junkersring 28"
+          },
+          "what": {
+            "en": "A trampoline park with a free-jump area and 17 other attractions.",
+            "th": "สวนแทรมโพลีน มีพื้นที่กระโดดอิสระและกิจกรรมอื่นอีก 17 อย่าง"
+          },
+          "why": {
+            "en": "For children from 6 years; concentration and speed are needed.",
+            "th": "สำหรับเด็กตั้งแต่ 6 ปีขึ้นไป ต้องใช้สมาธิและความไว"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "SPRUNG RAUM Trampolinpark Köln/Bonn, Junkersring 28, Troisdorf, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/indoorspielplaetze-koeln/"
+        },
+        {
+          "name": {
+            "en": "Bilderbuchmuseum",
+            "th": "พิพิธภัณฑ์หนังสือภาพ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Troisdorf",
+            "th": "ทรอยส์ดอร์ฟ"
+          },
+          "what": {
+            "en": "A museum with thousands of picture books and the largest Janosch centre.",
+            "th": "พิพิธภัณฑ์มีหนังสือภาพหลายพันเล่มและศูนย์ยาโนชที่ใหญ่ที่สุด"
+          },
+          "why": {
+            "en": "An adventure playground is part of it.",
+            "th": "มีสนามเด็กเล่นผจญภัยรวมอยู่ด้วย"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Bilderbuchmuseum, Troisdorf, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/die-coolsten-museen-fuer-kinder-in-koeln/"
+        },
+        {
+          "name": {
+            "en": "House of History of the Federal Republic",
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์สหพันธ์สาธารณรัฐ (บอนน์)"
+          },
+          "local": "Haus der Geschichte der Bundesrepublik Deutschland",
+          "kind": "museum",
+          "area": {
+            "en": "Bonn",
+            "th": "บอนน์"
+          },
+          "what": {
+            "en": "A permanent exhibition on German history from 1945 to today, with a tree house and a 1990s child's room.",
+            "th": "นิทรรศการถาวรประวัติศาสตร์เยอรมันตั้งแต่ปี 1945 ถึงปัจจุบัน มีบ้านต้นไม้และห้องเด็กยุค 1990"
+          },
+          "why": {
+            "en": "Good for rainy days, with free entry.",
+            "th": "เหมาะกับวันฝนตก เข้าฟรี"
+          },
+          "tip": {
+            "en": "Open Tue–Fri 9:00–18:00, Sat, Sun and holidays 10:00–18:00.",
+            "th": "เปิดอังคาร–ศุกร์ 9:00–18:00 เสาร์ อาทิตย์ และวันหยุด 10:00–18:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Haus der Geschichte der Bundesrepublik Deutschland, Bonn, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/ausfluege/museen-ausflugsziel/haus-der-geschichte-der-bundesrepublik/"
+        },
+        {
+          "name": {
+            "en": "Museum Koenig Bonn",
+            "th": "พิพิธภัณฑ์โคเนิก บอนน์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Bonn, Adenauerallee 160",
+            "th": "บอนน์ Adenauerallee 160"
+          },
+          "what": {
+            "en": "A museum of the Leibniz Institute for the Analysis of Biodiversity Change with offers for children and families.",
+            "th": "พิพิธภัณฑ์ของสถาบันไลบ์นิซด้านการเปลี่ยนแปลงความหลากหลายทางชีวภาพ มีกิจกรรมสำหรับเด็กและครอบครัว"
+          },
+          "why": {
+            "en": "Fairy tales and stories read aloud from age 4, and public family tours.",
+            "th": "มีนิทานอ่านให้ฟังตั้งแต่อายุ 4 ปี และทัวร์ครอบครัวแบบสาธารณะ"
+          },
+          "tip": {
+            "en": "Open on Mondays only on public holidays in NRW.",
+            "th": "วันจันทร์เปิดเฉพาะวันหยุดราชการของรัฐนอร์ทไรน์-เวสต์ฟาเลีย"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 day ticket · family ticket ≈ €15",
+            "th": "≈ €6 ตั๋วรายวัน · ตั๋วครอบครัว ≈ €15"
+          },
+          "book": "none",
+          "q": "Museum Koenig Bonn, Adenauerallee 160, Bonn, Germany",
+          "ok": "2026-11",
+          "src": "https://www.museumkoenig.de/de/bildungsangebote/fuer-kinder.html"
+        },
+        {
+          "name": {
+            "en": "Deutsches Museum Bonn",
+            "th": "พิพิธภัณฑ์เยอรมัน บอนน์"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Bonn",
+            "th": "บอนน์"
+          },
+          "what": {
+            "en": "The Bonn branch of the Deutsches Museum, with activities for children, schools and groups.",
+            "th": "สาขาบอนน์ของพิพิธภัณฑ์เยอรมัน มีกิจกรรมสำหรับเด็ก โรงเรียน และกลุ่ม"
+          },
+          "why": {
+            "en": "The activities can be booked.",
+            "th": "จองกิจกรรมล่วงหน้าได้"
+          },
+          "tip": {
+            "en": "Open Tue–Fri 10:00–17:00, Sat 12:00–17:00, Sun and holidays 10:00–17:00.",
+            "th": "เปิดอังคาร–ศุกร์ 10:00–17:00 เสาร์ 12:00–17:00 อาทิตย์และวันหยุด 10:00–17:00"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €9 adults · ≈ €5 children and teenagers",
+            "th": "≈ €9 ผู้ใหญ่ · ≈ €5 เด็กและวัยรุ่น"
+          },
+          "book": "rec",
+          "q": "Deutsches Museum Bonn, Germany",
+          "ok": "2026-11",
+          "src": "https://deutsches-museum.de/en/bonn/visit"
+        },
+        {
+          "name": {
+            "en": "Drachenfels",
+            "th": "เดรเคนเฟลส์"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Königswinter",
+            "th": "เคอนิชส์วินเทอร์"
+          },
+          "what": {
+            "en": "A mountain above the Rhine, reached by the Drachenfelsbahn.",
+            "th": "ภูเขาเหนือแม่น้ำไรน์ ขึ้นได้ด้วยรถรางภูเขาเดรเคนเฟลส์บาห์น"
+          },
+          "why": {
+            "en": "Take the train to the summit instead of walking.",
+            "th": "นั่งรถรางขึ้นยอดเขาแทนการเดิน"
+          },
+          "tip": {
+            "en": "The Drachenfelsbahn runs all year.",
+            "th": "รถรางเดรเคนเฟลส์บาห์นวิ่งตลอดทั้งปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €14 adults · ≈ €7 children 4–13",
+            "th": "≈ €14 ผู้ใหญ่ · ≈ €7 เด็ก 4–13 ปี"
+          },
+          "book": "none",
+          "q": "Drachenfels, Königswinter, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/ausfluege/natur-ausflug/ausflug-drachenfels-drachenfelsbahn/"
+        },
+        {
+          "name": {
+            "en": "Drachenburg Castle",
+            "th": "ปราสาทดราเคนบวร์ก"
+          },
+          "local": "Schloss Drachenburg",
+          "kind": "culture",
+          "area": {
+            "en": "Königswinter, Drachenfelsstraße 118",
+            "th": "เคอนิชส์วินเทอร์ Drachenfelsstraße 118"
+          },
+          "what": {
+            "en": "A castle in Königswinter, a good outing together with the Drachenfels.",
+            "th": "ปราสาทในเคอนิชส์วินเทอร์ เที่ยวคู่กับเดรเคนเฟลส์ได้"
+          },
+          "why": {
+            "en": "Children under 6 get free entry.",
+            "th": "เด็กอายุต่ำกว่า 6 ปีเข้าฟรี"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ €10 adults · ≈ €8 reduced",
+            "th": "≈ €10 ผู้ใหญ่ · ≈ €8 ราคาลด"
+          },
+          "book": "none",
+          "q": "Schloss Drachenburg, Drachenfelsstraße 118, Königswinter, Germany",
+          "ok": "2026-11",
+          "src": "https://www.koeln.de/freizeit/ll/ausfluege/schloesser-burgen/schloss-drachenburg-drachenfels-ausflug/"
         }
       ]
     },
@@ -3518,6 +3922,86 @@
           },
           "q": "Spielplatz Bleiche, Bleichweg, Dinkelsbühl",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Taubertal (Tauber valley)",
+            "th": "หุบเขาเทาเบอร์ (Taubertal)"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Tauber valley below Rothenburg",
+            "th": "หุบเขาเทาเบอร์ใต้โรเทนบวร์ก"
+          },
+          "what": {
+            "en": "The Tauber valley near the town, with cycle paths and places to paddle in the river.",
+            "th": "หุบเขาเทาเบอร์ใกล้เมือง มีทางจักรยานและจุดเล่นน้ำในแม่น้ำ"
+          },
+          "why": {
+            "en": "Safe cycle paths and a chance to splash around on the Tauber, both good for little ones.",
+            "th": "ทางจักรยานปลอดภัยและเล่นน้ำในแม่น้ำเทาเบอร์ได้ เหมาะกับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "The page gives no hours or prices for the valley; check before you go.",
+            "th": "ต้นทางไม่ระบุเวลาหรือราคา เช็กก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Taubertal, Rothenburg ob der Tauber, Germany",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
+        },
+        {
+          "name": {
+            "en": "RothenburgBad",
+            "th": "โรเทนบวร์กบาด (RothenburgBad)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Nördlinger Straße, Rothenburg ob der Tauber",
+            "th": "Nördlinger Straße โรเทนบวร์ก"
+          },
+          "what": {
+            "en": "The town's public pool, with both indoor and outdoor pools.",
+            "th": "สระว่ายน้ำสาธารณะของเมือง มีทั้งสระในร่มและกลางแจ้ง"
+          },
+          "why": {
+            "en": "A pool under cover is a rainy-day option for children.",
+            "th": "สระในร่มเป็นทางเลือกวันฝนตกสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Check the opening times and prices on the pool's own page before you go.",
+            "th": "เช็กเวลาเปิดและราคาที่หน้าเว็บของสระก่อนไป"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "RothenburgBad, Nördlinger Str. 20, Rothenburg ob der Tauber, Germany",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/en/besuchen/auf-einen-blick/was-kann-ich-mit-kindern-in-rothenburg-machen"
         }
       ]
     },

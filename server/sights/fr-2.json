@@ -1286,6 +1286,289 @@
           },
           "q": "Natespa, Avenue Rockefeller, Lyon",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Exalto Park Villeurbanne",
+            "th": "เอกซ์อัลโต พาร์ก วีเลอบาน"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Puces du Canal, Villeurbanne",
+            "th": "ปูซดูคานาล วีเลอบาน"
+          },
+          "what": {
+            "en": "Indoor leisure centre with ten activities: trampolines, Ninja Warrior, Funclimb, laser game, VR, bowling and more",
+            "th": "ศูนย์สันทนาการในร่ม 10 กิจกรรม ทั้งแทรมโพลีน นินจาวอริเออร์ ปีนผา เลเซอร์เกม วีอาร์ และโบว์ลิง"
+          },
+          "why": {
+            "en": "Rain-proof fun for active children: more than 70 interconnected trampolines, a freestyle area, a jump pit and a warrior trail",
+            "th": "เล่นได้แม้ฝนตกสำหรับเด็กช่างเคลื่อนไหว มีแทรมโพลีนต่อกันกว่า 70 ผืน โซนฟรีสไตล์ หลุมกระโดด และเส้นทางนักสู้"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Exalto Villeurbanne, 5 Rue Eugène Pottier, Villeurbanne, France",
+          "ok": "2026-11",
+          "src": "https://en.lyon-france.com/discover-lyon/activities-and-relaxation/indoor-activities/exalto-park-villeurbanne"
+        },
+        {
+          "name": {
+            "en": "Mini World Lyon",
+            "th": "มินิเวิลด์ ลียง"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Carré de Soie, Vaulx-en-Velin",
+            "th": "การ์เรเดอซัว โวลซ็องเวอแลง"
+          },
+          "what": {
+            "en": "France's largest animated miniature park, showing the city in miniature with hidden pop-culture characters to spot",
+            "th": "สวนจำลองขนาดย่อมเคลื่อนไหวที่ใหญ่ที่สุดของฝรั่งเศส จำลองเมืองไว้พร้อมตัวละครป๊อปคัลเจอร์ซ่อนให้หา"
+          },
+          "why": {
+            "en": "Your children can discover the city as they have never seen it before",
+            "th": "เด็ก ๆ ได้ชมเมืองในมุมที่ไม่เคยเห็นมาก่อน"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mini World Lyon, 3 Avenue de Bohlen, Vaulx-en-Velin, France",
+          "ok": "2026-11",
+          "src": "https://en.visiterlyon.com/out-and-about/culture-and-leisure/activities-and-relaxation/indoor-family-activities-in-lyon"
+        },
+        {
+          "name": {
+            "en": "Parc Blandan",
+            "th": "ปาร์กบล็องดอง"
+          },
+          "local": "Parc Sergent Blandan",
+          "kind": "park",
+          "area": {
+            "en": "Rue du Repos, Lyon 7",
+            "th": "รือดูเรอโป ลียง 7"
+          },
+          "what": {
+            "en": "Green space on a former military fort, organised into the esplanade, the fort and the former moat",
+            "th": "พื้นที่สีเขียวบนอดีตป้อมทหาร แบ่งเป็นลานกว้าง ตัวป้อม และคูน้ำเดิม"
+          },
+          "why": {
+            "en": "A beautiful green setting designed for everyone, ideal for family outings",
+            "th": "พื้นที่สีเขียวสวยงามที่ออกแบบให้ทุกคนใช้ได้ เหมาะกับการพาครอบครัวมาเที่ยว"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc Blandan, 37 Rue du Repos, Lyon 7, France",
+          "ok": "2026-11",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": {
+            "en": "Explor Games Lyon",
+            "th": "เอกซ์พลอร์เกมส์ ลียง"
+          },
+          "local": "Explor Games Lyon - Péril sur la source",
+          "kind": "play",
+          "area": {
+            "en": "Fort de Bron, Sainte-Foy-lès-Lyon",
+            "th": "ฟอร์เดอบรง แซงต์ฟัวเลลียง"
+          },
+          "what": {
+            "en": "Interactive, story-driven outdoor adventure combining orienteering with an escape game",
+            "th": "การผจญภัยกลางแจ้งแบบมีเรื่องราว ผสมการเดินป่าตามแผนที่กับเกมหนีห้อง"
+          },
+          "why": {
+            "en": "A story to follow across the park, for families who want to explore together",
+            "th": "เรื่องราวให้ตามไปทั่วสวน สำหรับครอบครัวที่อยากสำรวจไปด้วยกัน"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Explor Games Lyon, Chemin de la Croix Berthet, Sainte-Foy-lès-Lyon, France",
+          "ok": "2026-11",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": {
+            "en": "Science Expériences Lyon",
+            "th": "ไซแอนซ์ เอกซ์เปรีย็องซ์ ลียง"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Rue Thomassin, Lyon 2",
+            "th": "รือโทมาแซ็ง ลียง 2"
+          },
+          "what": {
+            "en": "An immersive science experience for all ages, from 3 upwards, that explores the mysteries of the universe",
+            "th": "ประสบการณ์วิทยาศาสตร์แบบสมจริงสำหรับทุกวัย ตั้งแต่ 3 ปีขึ้นไป สำรวจความลึกลับของจักรวาล"
+          },
+          "why": {
+            "en": "A fun and engaging way for young children to discover the world of science",
+            "th": "วิธีสนุกที่ทำให้เด็กเล็กได้ค้นพบโลกวิทยาศาสตร์"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Science Expériences Lyon, 32 Rue Thomassin, Lyon 2, France",
+          "ok": "2026-11",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": {
+            "en": "Berges du Rhône",
+            "th": "แบร์ฌดูโรน"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Between Pont Morand and Pont Lafayette, Rhône riverbank",
+            "th": "ระหว่างสะพานปงโมรองและปงลาฟาแยต ริมแม่น้ำโรน"
+          },
+          "what": {
+            "en": "Riverside stretch with skateboarding and roller-skating facilities, playgrounds and slides",
+            "th": "ทางเดินริมแม่น้ำที่มีลานสเก็ตบอร์ดและโรลเลอร์สเกต สนามเด็กเล่น และสไลเดอร์"
+          },
+          "why": {
+            "en": "Playgrounds and slides along the river for little ones; space to ride and skate for older children",
+            "th": "มีสนามเด็กเล่นและสไลเดอร์ริมแม่น้ำสำหรับเด็กเล็ก และที่ปั่นกับสเก็ตสำหรับเด็กโต"
+          },
+          "tip": {
+            "en": "Allow about two hours",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Berges du Rhône, Lyon 7, France",
+          "ok": "2026-11",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
+        },
+        {
+          "name": {
+            "en": "Musée des Sapeurs-Pompiers de Lyon",
+            "th": "พิพิธภัณฑ์นักดับเพลิงลียง"
+          },
+          "local": "Musée des Sapeurs-Pompiers de Lyon",
+          "kind": "museumkid",
+          "area": {
+            "en": "Avenue de Champagne, Lyon 9",
+            "th": "อาวนูเดอช็องปาญ ลียง 9"
+          },
+          "what": {
+            "en": "Museum of firefighters",
+            "th": "พิพิธภัณฑ์นักดับเพลิง"
+          },
+          "why": {
+            "en": "Young heroes will particularly enjoy it, per the page",
+            "th": "เด็ก ๆ ที่ชอบฮีโร่จะสนุกเป็นพิเศษ ตามที่หน้าเว็บระบุ"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Musée des Sapeurs-Pompiers de Lyon, 358 Avenue de Champagne, Lyon 9, France",
+          "ok": "2026-11",
+          "src": "https://en.lyon-france.com/discover-lyon/as-a-family/10-must-do-activities-with-kids-in-lyon"
         }
       ]
     },
@@ -1673,6 +1956,211 @@
           },
           "q": "L'Étoile du Roy, Quai Duguay-Trouin, Saint-Malo",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Cara-Meuh Farm",
+            "th": "ฟาร์มการา-เมอ"
+          },
+          "local": "La ferme des Cara-Meuh !",
+          "kind": "farm",
+          "area": {
+            "en": "Vains, Bay of Mont Saint-Michel",
+            "th": "แวง อ่าวมงต์แซ็งต์-มีแชล"
+          },
+          "what": {
+            "en": "A family dairy farm that makes its famous caramels, with a free visit to meet the animals",
+            "th": "ฟาร์มโคนมของครอบครัวที่ทำคาราเมลชื่อดัง มีทัวร์ฟรีให้พบสัตว์"
+          },
+          "why": {
+            "en": "The free visit lets children meet the hens, calves, deer and pigs",
+            "th": "ทัวร์ฟรีให้เด็กได้พบไก่ ลูกวัว กวาง และหมู"
+          },
+          "tip": {
+            "en": "Allow about an hour",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "La ferme des Cara-Meuh, 11 route de Saint-Léonard, Vains, France",
+          "ok": "2026-11",
+          "src": "https://www.manche-tourism.com/tips-ideas/family-activities/"
+        },
+        {
+          "name": {
+            "en": "Au coeur du Roc",
+            "th": "โอเกอร์ดูร็อก"
+          },
+          "local": "Au coeur du Roc",
+          "kind": "aquarium",
+          "area": {
+            "en": "Pointe du Roc, Granville",
+            "th": "ปวงต์ดูร็อก กร็องวิลล์"
+          },
+          "what": {
+            "en": "A vivarium and aquarium of insects, fish and shells in a stone setting, with a café looking over Granville",
+            "th": "วิวาเรียมและอควาเรียมของแมลง ปลา และเปลือกหอย ในอาคารหิน มีคาเฟ่มองเห็นกร็องวิลล์"
+          },
+          "why": {
+            "en": "Children and adults alike can explore it, and it is a good indoor stop",
+            "th": "เด็กและผู้ใหญ่เดินชมได้ และเป็นจุดแวะในร่มที่ดี"
+          },
+          "tip": {
+            "en": "Reopened in June 2026 under this new name",
+            "th": "เปิดใหม่เดือนมิถุนายน 2026 ภายใต้ชื่อนี้"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "Au coeur du Roc, 1 Boulevard Vaufleury, Granville, France",
+          "ok": "2026-11",
+          "src": "https://www.manche-tourism.com/tips-ideas/family-activities/"
+        },
+        {
+          "name": {
+            "en": "Jardin de Bel-Air",
+            "th": "ชาร์แดงเดอเบลแอร์"
+          },
+          "local": "Parc de Bel-Air",
+          "kind": "park",
+          "area": {
+            "en": "Saint-Servan, Saint-Malo",
+            "th": "แซ็งต์-แซร์วอง แซ็งต์-มาโล"
+          },
+          "what": {
+            "en": "A 15,000 m² park in the heart of the agglomeration, with a cave and a marble carillon",
+            "th": "สวน 15,000 ตร.ม. ใจกลางเมือง มีถ้ำและคาริลลอนหินอ่อน"
+          },
+          "why": {
+            "en": "There are play areas for children",
+            "th": "มีพื้นที่เล่นสำหรับเด็ก"
+          },
+          "tip": {
+            "en": "Open all year",
+            "th": "เปิดตลอดทั้งปี"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parc de Bel-Air, Boulevard Gouazon, Saint-Servan, Saint-Malo, France",
+          "ok": "2026-11",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/le-jardin-de-bel-air-saint-malo-en-3645777/"
+        },
+        {
+          "name": {
+            "en": "Club des Corsaires beach club",
+            "th": "ชมรมชายหาดเลอ กอร์แซร์"
+          },
+          "local": "Club de plage Les Corsaires",
+          "kind": "beach",
+          "area": {
+            "en": "Bonsecours beach, Saint-Malo",
+            "th": "หาดบงเซอกูร์ แซ็งต์-มาโล"
+          },
+          "what": {
+            "en": "A beach club on the supervised Bon Secours beach with sports, games, swimming and daily prize-giving",
+            "th": "ชมรมชายหาดบนหาดบงเซอกูร์ที่มีเจ้าหน้าที่ดูแล มีกีฬา เกม ว่ายน้ำ และแจกรางวัลทุกวัน"
+          },
+          "why": {
+            "en": "A children's club with a play area and a beach kids' club, open from age 3",
+            "th": "มีคลับเด็กพร้อมพื้นที่เล่นและคิดส์คลับริมหาด รับเด็กตั้งแต่อายุ 3 ปี"
+          },
+          "tip": {
+            "en": "Booking is recommended",
+            "th": "แนะนำให้จองล่วงหน้า"
+          },
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €17 child rate, half day",
+            "th": "≈ €17 อัตราเด็ก ครึ่งวัน"
+          },
+          "book": "rec",
+          "q": "Club des Corsaires, Plage de Bonsecours, Saint-Malo, France",
+          "ok": "2026-11",
+          "src": "https://www.saint-malo-tourisme.co.uk/offers/club-de-plage-les-corsaires-saint-malo-en-3646229"
+        },
+        {
+          "name": {
+            "en": "L'Hippocampe aquatic centre",
+            "th": "ศูนย์กีฬาทางน้ำลิปโปกอมป์"
+          },
+          "local": "Centre aquatique L'Hippocampe",
+          "kind": "play",
+          "area": {
+            "en": "Rue des Lycées, Granville",
+            "th": "รือเดอลีเซ กร็องวิลล์"
+          },
+          "what": {
+            "en": "An aquatic centre with an 8-lane sports pool and a learning pool with slides",
+            "th": "ศูนย์กีฬาทางน้ำที่มีสระกีฬา 8 ช่องและสระเรียนว่ายน้ำที่มีสไลเดอร์"
+          },
+          "why": {
+            "en": "A learning pool where families can go down the slides with the children",
+            "th": "สระเรียนว่ายน้ำที่ครอบครัวเล่นสไลเดอร์ไปกับเด็กได้"
+          },
+          "tip": {
+            "en": "A good choice on a rainy day",
+            "th": "ทางเลือกที่ดีในวันฝนตก"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Centre aquatique L'Hippocampe, Rue des Lycées, Granville, France",
+          "ok": "2026-11",
+          "src": "https://en.tourisme-granville-terre-mer.com/stay/on-site-activities/what-to-do-when-it-rains"
         }
       ]
     },
@@ -1944,6 +2432,88 @@
           "q": "Musée d’archéologie de Nice-Cimiez, 160 Avenue des Arènes de Cimiez, Nice",
           "ok": "2026-11",
           "src": "https://www.bestofniceblog.com/what-to-see-in-nice/museums-in-nice-france/"
+        },
+        {
+          "name": {
+            "en": "Kid's City Nice",
+            "th": "คิดส์ซิตี้ นีซ"
+          },
+          "local": "Kid City",
+          "kind": "play",
+          "area": {
+            "en": "Forum Lingostière, Saint-Laurent-du-Var",
+            "th": "ฟอรัมแล็งโกสติแยร์ แซ็งต์-โลร็องดูวาร์"
+          },
+          "what": {
+            "en": "An indoor play park of about 700 m² with a ball pool, an obstacle course and slides",
+            "th": "สวนเล่นในร่มราว 700 ตร.ม. มีสระบอล ด่านอุปสรรค และสไลเดอร์"
+          },
+          "why": {
+            "en": "Indoor play for a rainy day, open every day of the year",
+            "th": "พื้นที่เล่นในร่มสำหรับวันฝนตก เปิดทุกวันตลอดปี"
+          },
+          "tip": {
+            "en": "Open daily 10:00–18:30, all year",
+            "th": "เปิดทุกวัน 10:00–18:30 ตลอดปี"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Kid City, Forum Lingostière, Saint-Laurent-du-Var, France",
+          "ok": "2026-11",
+          "src": "https://www.explorenicecotedazur.com/en/structure/kids-city-nice/"
+        },
+        {
+          "name": {
+            "en": "Exotic Garden of Monaco",
+            "th": "สวนแปลกตาแห่งโมนาโก"
+          },
+          "local": "Jardin Exotique de Monaco",
+          "kind": "nature",
+          "area": {
+            "en": "Moyenne Corniche, Monaco",
+            "th": "มอยเอนน์กอร์นิช โมนาโก"
+          },
+          "what": {
+            "en": "The exotic garden of Monaco with a guided tour of the Observatory Cave, departing every hour from 10am",
+            "th": "สวนแปลกตาแห่งโมนาโก มีทัวร์นำชมถ้ำหอดูดาวออกทุกชั่วโมงตั้งแต่ 10:00"
+          },
+          "why": {
+            "en": "Children under 4 go in free; the cave tour is a short guided walk for the whole family",
+            "th": "เด็กอายุต่ำกว่า 4 ปีเข้าฟรี ทัวร์ถ้ำเป็นการเดินชมสั้น ๆ ที่เหมาะกับทั้งครอบครัว"
+          },
+          "tip": {
+            "en": "The schedule page names a closure from 19 November to 25 December, so check before going",
+            "th": "หน้าตารางเวลาระบุว่าปิด 19 พฤศจิกายนถึง 25 ธันวาคม จึงควรเช็กก่อนไป"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ €12 adults · €6 ages 4–17 · under 4 free",
+            "th": "≈ €12 ผู้ใหญ่ · €6 อายุ 4–17 ปี · ต่ำกว่า 4 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Jardin Exotique de Monaco, 62 Boulevard du Jardin Exotique, Monaco",
+          "ok": "2026-11",
+          "src": "https://www.jardin-exotique.mc/en/"
         }
       ]
     },

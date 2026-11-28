@@ -1710,6 +1710,326 @@
           },
           "q": "Parque de los Príncipes, Av. Blas Infante, Sevilla",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Kids Park Sevilla",
+            "th": "คิดส์พาร์ก เซบียา (Kids Park)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "El Pino industrial park, Seville",
+            "th": "นิคมเอลปีโน เซบียา"
+          },
+          "what": {
+            "en": "A play complex of over 4,000 m² with giant slides, mazes, trampolines, climbing walls, XL ball pits and a Lego building zone.",
+            "th": "ศูนย์เล่นกว่า 4,000 ตร.ม. มีสไลเดอร์ยักษ์ เขาวงกต แทรมโพลีน กำแพงปีน บ่อบอลใหญ่ และโซนต่อเลโก้"
+          },
+          "why": {
+            "en": "Children under 3 enter free with an adult, and parents can have a drink in the café area while the children play.",
+            "th": "เด็กอายุต่ำกว่า 3 ขวบเข้าฟรีพร้อมผู้ใหญ่ และพ่อแม่นั่งดื่มในโซนคาเฟ่ระหว่างที่เด็กเล่นได้"
+          },
+          "tip": {
+            "en": "Non-slip socks are required for all the play areas; you can buy them on site for €1.80.",
+            "th": "ต้องใส่ถุงเท้ากันลื่นทุกโซนเล่น ซื้อที่นั่นได้ราคา €1.80"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6–7 for 30 minutes",
+            "th": "≈ €6–7 ต่อ 30 นาที"
+          },
+          "book": "none",
+          "q": "Kids Park Sevilla, Calle Pino Laricio 8, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://sevillasecreta.co/en/the-massive-playground-spanning-over-4000-m%C2%B2-with-tickets-starting-at-5-euros-giant-slides-mazes-trampolines-and-xl-ball-pits-in-seville/"
+        },
+        {
+          "name": {
+            "en": "Casa de la Ciencia",
+            "th": "คาซาเดลาเซียนเซีย (Casa de la Ciencia)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Near Parque de María Luisa",
+            "th": "ใกล้ปาร์เกเดมาริอาลุยซา"
+          },
+          "what": {
+            "en": "A small interactive science museum with exhibits on local wildlife, the human body and the solar system, plus a planetarium.",
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เล็กๆ แบบโต้ตอบ มีนิทรรศการสัตว์ป่าท้องถิ่น ร่างกายมนุษย์ ระบบสุริยะ และท้องฟ้าจำลอง"
+          },
+          "why": {
+            "en": "Aimed at children aged 5 to 12 and air-conditioned, it makes a quiet break from the city.",
+            "th": "เหมาะกับเด็กอายุ 5–12 ปี มีแอร์ เป็นที่พักสงบจากเมือง"
+          },
+          "tip": {
+            "en": "Check the planetarium schedule for English-language sessions.",
+            "th": "เช็กตารางท้องฟ้าจำลองสำหรับรอบภาษาอังกฤษ"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Casa de la Ciencia, Avenida de María Luisa, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.roughguides.com/spain/seville-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Jumpyard Sevilla",
+            "th": "จัมพ์ยาร์ด เซบียา (Jumpyard)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Parque Comercial Cavaleri, San Juan de Aznalfarache",
+            "th": "Parque Comercial Cavaleri ซานฆวนเดอัซนัลฟาราเช"
+          },
+          "what": {
+            "en": "An indoor trampoline park with trampolines, a Jump Tower, Battle Beams, a ninja course and climbing walls.",
+            "th": "สวนแทรมโพลีนในร่ม มีแทรมโพลีน จัมพ์ทาวเวอร์ แบตเทิลบีม คอร์สนินจา และกำแพงปีน"
+          },
+          "why": {
+            "en": "As good for a family weekend as for a rainy or hot day, with a single ticket covering many activities.",
+            "th": "เหมาะทั้งสุดสัปดาห์ครอบครัว วันฝนตก หรือวันร้อน ตั๋วใบเดียวเล่นได้หลายกิจกรรม"
+          },
+          "tip": {
+            "en": "Allow about two hours.",
+            "th": "เผื่อเวลาราว 2 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Jump Yard, Parque Comercial Cavaleri, San Juan de Aznalfarache, Spain",
+          "ok": "2026-11",
+          "src": "https://sevillasecreta.co/en/plans-kids-seville/"
+        },
+        {
+          "name": {
+            "en": "Crazy Zone",
+            "th": "เครซีโซน (Crazy Zone)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Calle Antonio de la Peña y López, Seville",
+            "th": "Calle Antonio de la Peña y López เซบียา"
+          },
+          "what": {
+            "en": "An inflatables park with trampolines, XXL slides and other games from childhood.",
+            "th": "สวนเครื่องเล่นเป่าลม มีแทรมโพลีน สไลเดอร์ XXL และเกมวัยเด็กอื่นๆ"
+          },
+          "why": {
+            "en": "Trampolines, inflatables and XXL slides, and families of all ages are welcome.",
+            "th": "มีแทรมโพลีน เครื่องเล่นเป่าลม และสไลเดอร์ XXL ต้อนรับครอบครัวทุกวัย"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Crazy Zone, Calle Antonio de la Peña y López 3, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://sevillasecreta.co/en/plans-kids-seville/"
+        },
+        {
+          "name": {
+            "en": "CaixaForum Sevilla",
+            "th": "ไกซาฟอรุม เซบียา (CaixaForum)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Torre Sevilla",
+            "th": "ตอร์เรเซบียา"
+          },
+          "what": {
+            "en": "A cultural centre with workshops in art, science and creativity for children.",
+            "th": "ศูนย์วัฒนธรรมที่มีเวิร์กช็อปศิลปะ วิทยาศาสตร์ และความคิดสร้างสรรค์สำหรับเด็ก"
+          },
+          "why": {
+            "en": "Children learn through play in its workshops, which are for ages 6 and up.",
+            "th": "เด็กเรียนรู้ผ่านการเล่นในเวิร์กช็อป ซึ่งสำหรับอายุ 6 ปีขึ้นไป"
+          },
+          "tip": {
+            "en": "The building is worth a photo while the children are busy.",
+            "th": "ตัวอาคารน่าถ่ายรูประหว่างที่เด็กๆ ทำกิจกรรม"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €6 (ages 6 and up)",
+            "th": "≈ €6 (อายุ 6 ปีขึ้นไป)"
+          },
+          "book": "none",
+          "q": "CaixaForum Sevilla, Torre Sevilla, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": {
+            "en": "Sala Cero Teatro",
+            "th": "ซาลาเซโรเตอาโตร (Sala Cero Teatro)"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Calle Sol, Casco Antiguo, Seville",
+            "th": "Calle Sol ย่านเมืองเก่า เซบียา"
+          },
+          "what": {
+            "en": "A theatre known for creative shows for children, including educational comedies and magic shows.",
+            "th": "โรงละครที่ขึ้นชื่อเรื่องการแสดงสร้างสรรค์สำหรับเด็ก รวมถึงตลกเชิงการศึกษาและมายากล"
+          },
+          "why": {
+            "en": "Educational comedies and magic shows make an easy family outing.",
+            "th": "ตลกเชิงการศึกษาและมายากลเป็นทริปครอบครัวที่ง่าย"
+          },
+          "tip": {
+            "en": "Allow about an hour per show.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงต่อรอบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Sala Cero Teatro, Calle Sol 5, Casco Antiguo, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": {
+            "en": "Teatro Alameda",
+            "th": "เตอาโตรอาลาเมดา (Teatro Alameda)"
+          },
+          "kind": "show",
+          "area": {
+            "en": "Calle Crédito, Casco Antiguo, Seville",
+            "th": "Calle Crédito ย่านเมืองเก่า เซบียา"
+          },
+          "what": {
+            "en": "A theatre with children's programmes of interactive storytelling, music and actors.",
+            "th": "โรงละครที่มีโปรแกรมสำหรับเด็ก เล่านิทานแบบโต้ตอบ ดนตรี และนักแสดง"
+          },
+          "why": {
+            "en": "Storytelling, music and actors who connect easily with children.",
+            "th": "มีนิทาน ดนตรี และนักแสดงที่เข้ากับเด็กได้ง่าย"
+          },
+          "tip": {
+            "en": "Allow about an hour per show.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงต่อรอบ"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Teatro Alameda, Calle Crédito 13, Casco Antiguo, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
+        },
+        {
+          "name": {
+            "en": "Alameda de Hércules",
+            "th": "อาลาเมดาเดเอร์คูเลส (Alameda de Hércules)"
+          },
+          "kind": "play",
+          "area": {
+            "en": "Macarena, Seville",
+            "th": "มาคาเรนา เซบียา"
+          },
+          "what": {
+            "en": "A square in the Macarena district with children's play areas while parents sit at the terraces.",
+            "th": "จัตุรัสในย่านมาคาเรนา มีพื้นที่เล่นสำหรับเด็ก ขณะที่พ่อแม่นั่งที่เทอร์เรซ"
+          },
+          "why": {
+            "en": "Children can play while adults enjoy the terraces and walks nearby.",
+            "th": "เด็กเล่นได้ ผู้ใหญ่นั่งเทอร์เรซหรือเดินเล่นแถวนั้น"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Free",
+            "th": "ฟรี"
+          },
+          "book": "none",
+          "q": "Alameda de Hércules, Macarena, Seville, Spain",
+          "ok": "2026-11",
+          "src": "https://www.ouigo.com/es/planes-con-ninos-sevilla-actividades-familia"
         }
       ]
     }
