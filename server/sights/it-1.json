@@ -1181,6 +1181,246 @@
           },
           "q": "Piazza Giuseppe Garibaldi, Monterosso al Mare",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Il Gigante",
+            "th": "อิลจิกันเต"
+          },
+          "kind": "views",
+          "area": {
+            "en": "Fegina, Monterosso al Mare",
+            "th": "เฟจินา มอนเตรอสโซอัลมาเร"
+          },
+          "what": {
+            "en": "A 14-metre statue of the god Neptune stands by the Fegina seafront, just outside Monterosso station.",
+            "th": "รูปปั้นเทพเนปจูนสูง 14 เมตรตั้งอยู่ริมทะเลที่เฟจินา ใกล้สถานีมอนเตรอสโซ"
+          },
+          "why": {
+            "en": "Small children like the giant on the seafront next to the long beach.",
+            "th": "เด็กเล็กชอบยักษ์ริมทะเลที่อยู่ติดชายหาดยาว"
+          },
+          "tip": {
+            "en": "A short stop; allow about half an hour.",
+            "th": "แวะสั้น ๆ เผื่อเวลาราวครึ่งชั่วโมง"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Il Gigante, Via Fegina, Monterosso al Mare, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/cinque-terre-with-kids/"
+        },
+        {
+          "name": {
+            "en": "Palmaria",
+            "th": "ปัลมาเรีย"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Palmaria island, Portovenere",
+            "th": "เกาะปัลมาเรีย โปร์โตเวเนเร"
+          },
+          "what": {
+            "en": "The largest of the three islands off Portovenere, a mix of cliffs, Mediterranean scrub and paths, reached by a short ferry from the harbour.",
+            "th": "เกาะที่ใหญ่ที่สุดในสามเกาะหน้าโปร์โตเวเนเร มีหน้าผา พุ่มไม้เมดิเตอร์เรเนียนและทางเดิน ไปโดยเรือข้ามฟากสั้น ๆ จากท่าเรือ"
+          },
+          "why": {
+            "en": "Pebble beaches and paths to walk, and the boat trip there is itself an attraction for children.",
+            "th": "มีหาดกรวดและทางเดิน และการนั่งเรือไปก็สนุกสำหรับเด็กอยู่แล้ว"
+          },
+          "tip": {
+            "en": "Check the ferry times on the official sites before you go.",
+            "th": "เช็กเวลาเรือจากเว็บไซต์ทางการก่อนไป"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Palmaria, Porto Venere, La Spezia, Italy",
+          "ok": "2026-11",
+          "src": "https://www.nostrofiglio.it/famiglia/viaggi/portovenere-con-i-bambini-tra-castelli-di-cavalieri-e-grotte-da-piccoli-esploratori"
+        },
+        {
+          "name": {
+            "en": "Grotta di Lord Byron",
+            "th": "กร็อตตาดีลอร์ดไบรอน"
+          },
+          "kind": "nature",
+          "area": {
+            "en": "Under San Pietro church, Portovenere",
+            "th": "ใต้โบสถ์ซานเปียโตร โปร์โตเวเนเร"
+          },
+          "what": {
+            "en": "A small rocky inlet under the church of San Pietro, named after the English poet Lord Byron, where people swim off the rocks.",
+            "th": "อ่าวหินเล็ก ๆ ใต้โบสถ์ซานเปียโตร ตั้งชื่อตามกวีชาวอังกฤษลอร์ดไบรอน ผู้คนลงว่ายน้ำจากโขดหิน"
+          },
+          "why": {
+            "en": "The legend of the poet swimming to Lerici makes a good story for children.",
+            "th": "ตำนานกวีว่ายน้ำไปเลริชีเป็นเรื่องเล่าที่เด็ก ๆ ชอบ"
+          },
+          "tip": {
+            "en": "Swimming is off the rocks, so it suits older children who like jumping from stones.",
+            "th": "ลงว่ายน้ำจากโขดหิน เหมาะกับเด็กโตที่ชอบกระโดดจากก้อนหิน"
+          },
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Grotta di Lord Byron, SP530, Porto Venere, Italy",
+          "ok": "2026-11",
+          "src": "https://www.nostrofiglio.it/famiglia/viaggi/portovenere-con-i-bambini-tra-castelli-di-cavalieri-e-grotte-da-piccoli-esploratori"
+        },
+        {
+          "name": {
+            "en": "CAMeC",
+            "th": "คาเม็ก"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Piazza Cesare Battisti, La Spezia",
+            "th": "ปิอัซซาเชซาเรบัตติสตี ลาสเปเซีย"
+          },
+          "what": {
+            "en": "The modern and contemporary art museum of La Spezia, with family workshops where children make their own marks and signs.",
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่และร่วมสมัยของลาสเปเซีย มีเวิร์กชอปสำหรับครอบครัวให้เด็กสร้างลายเส้นและสัญลักษณ์ของตัวเอง"
+          },
+          "why": {
+            "en": "Hands-on workshops for children aged 6 to 11, booked in advance, on a rainy day.",
+            "th": "เวิร์กชอปลงมือทำสำหรับเด็กอายุ 6–11 ปี จองล่วงหน้า เหมาะกับวันฝนตก"
+          },
+          "tip": {
+            "en": "Workshops need a booking and the programme is seasonal; check the current programme.",
+            "th": "เวิร์กชอปต้องจองล่วงหน้าและโปรแกรมเปลี่ยนตามฤดูกาล เช็กโปรแกรมล่าสุดก่อนไป"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €5 per workshop place",
+            "th": "≈ €5 ต่อคนที่เข้าร่วมเวิร์กชอป"
+          },
+          "book": "req",
+          "q": "CAMeC, Piazza Cesare Battisti 1, La Spezia, Italy",
+          "ok": "2026-11",
+          "src": "https://camec.museilaspezia.it/wp-content/uploads/2025/10/Programma-Divertiamoci-Imparando-2026.pdf"
+        },
+        {
+          "name": {
+            "en": "Museo Civico Amedeo Lia",
+            "th": "พิพิธภัณฑ์อาเมเดโอลีอา"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Via del Prione, La Spezia",
+            "th": "ถนนเดลปริโอเน ลาสเปเซีย"
+          },
+          "what": {
+            "en": "A museum of illuminated manuscripts in La Spezia, where a family workshop has children paint their own letter as an illuminated initial.",
+            "th": "พิพิธภัณฑ์ต้นฉบับตัวเขียนประดับในลาสเปเซีย มีเวิร์กชอปให้เด็กระบายตัวอักษรของตัวเองเป็นอักษรตัวแรกแบบประดับ"
+          },
+          "why": {
+            "en": "Bright, colourful books and a workshop where children paint a letter to take home.",
+            "th": "หนังสือสีสดใสและเวิร์กชอปที่เด็กระบายตัวอักษรเอากลับบ้านได้"
+          },
+          "tip": {
+            "en": "Workshops need a booking; check the current programme.",
+            "th": "เวิร์กชอปต้องจองล่วงหน้า เช็กโปรแกรมล่าสุดก่อนไป"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €5 per workshop place",
+            "th": "≈ €5 ต่อคนที่เข้าร่วมเวิร์กชอป"
+          },
+          "book": "req",
+          "q": "Museo Civico Amedeo Lia, Via del Prione 234, La Spezia, Italy",
+          "ok": "2026-11",
+          "src": "https://camec.museilaspezia.it/wp-content/uploads/2025/10/Programma-Divertiamoci-Imparando-2026.pdf"
+        },
+        {
+          "name": {
+            "en": "Museo Etnografico Giovanni Podenzana",
+            "th": "พิพิธภัณฑ์ชาติพันธุ์วิทยาโจวันนีโปเดนซานา"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Via del Prione, La Spezia",
+            "th": "ถนนเดลปริโอเน ลาสเปเซีย"
+          },
+          "what": {
+            "en": "An ethnographic museum in La Spezia with objects from around the world, where children can make a mask of their own.",
+            "th": "พิพิธภัณฑ์ชาติพันธุ์วิทยาในลาสเปเซีย มีวัตถุจากทั่วโลก และเด็ก ๆ ทำหน้ากากของตัวเองได้"
+          },
+          "why": {
+            "en": "A hands-on workshop after looking at the masks and objects on show.",
+            "th": "เวิร์กชอปลงมือทำหลังชมหน้ากากและวัตถุที่จัดแสดง"
+          },
+          "tip": {
+            "en": "Workshops need a booking; check the current programme.",
+            "th": "เวิร์กชอปต้องจองล่วงหน้า เช็กโปรแกรมล่าสุดก่อนไป"
+          },
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "≈ €5 per workshop place",
+            "th": "≈ €5 ต่อคนที่เข้าร่วมเวิร์กชอป"
+          },
+          "book": "req",
+          "q": "Museo Etnografico Giovanni Podenzana, Via del Prione 156, La Spezia, Italy",
+          "ok": "2026-11",
+          "src": "https://camec.museilaspezia.it/wp-content/uploads/2025/10/Programma-Divertiamoci-Imparando-2026.pdf"
         }
       ]
     },
@@ -2632,6 +2872,206 @@
           },
           "q": "Fontana del Porcellino, Florence",
           "ok": "2026-11"
+        },
+        {
+          "name": {
+            "en": "Museo del Giocattolo e di Pinocchio",
+            "th": "พิพิธภัณฑ์ของเล่นและพิน็อกคิโอ"
+          },
+          "kind": "museumkid",
+          "area": {
+            "en": "Via dell'Oriuolo, near Piazza Duomo",
+            "th": "ถนนเดลโอริอูโอโล ใกล้ปิอัซซาดัวโม"
+          },
+          "what": {
+            "en": "A museum of more than a thousand toys and puppets, from the 18th century to the second half of the 20th century.",
+            "th": "พิพิธภัณฑ์ของเล่นและหุ่นกว่าหนึ่งพันชิ้น ตั้งแต่ศตวรรษที่ 18 ถึงครึ่งหลังของศตวรรษที่ 20"
+          },
+          "why": {
+            "en": "Toys and puppets to look at, a rainy-day indoor stop for little ones.",
+            "th": "มีของเล่นและหุ่นให้ดู เป็นที่หลบฝนในร่มสำหรับเด็กเล็ก"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Museo del Giocattolo e di Pinocchio, Via dell'Oriuolo 47R, Florence, Italy",
+          "ok": "2026-11",
+          "src": "https://www.feelflorence.it/en/node/48099"
+        },
+        {
+          "name": {
+            "en": "Biblioteca delle Oblate",
+            "th": "ห้องสมุดเดลเลโอบลาเต"
+          },
+          "kind": "culture",
+          "area": {
+            "en": "Via dell'Oriuolo, near the Duomo",
+            "th": "ถนนเดลโอริอูโอโล ใกล้ดัวโม"
+          },
+          "what": {
+            "en": "A library in the historic centre, a few steps from the Duomo, with a café.",
+            "th": "ห้องสมุดในใจกลางเมืองเก่า ห่างจากดัวโมไม่กี่ก้าว มีคาเฟ่"
+          },
+          "why": {
+            "en": "A good rainy-day place with children, especially school-aged ones.",
+            "th": "เป็นที่หลบฝนที่ดีเมื่อมีเด็ก โดยเฉพาะเด็กวัยเรียน"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Biblioteca delle Oblate, Via dell'Oriuolo 24, Florence, Italy",
+          "ok": "2026-11",
+          "src": "https://www.viaggiapiccoli.com/en/florence-with-kids-when-it-rains/"
+        },
+        {
+          "name": {
+            "en": "Parco dell'Anconella",
+            "th": "ปาร์โกเดลล์อันโคเนลลา"
+          },
+          "kind": "park",
+          "area": {
+            "en": "East Florence, left bank of the Arno",
+            "th": "ฟลอเรนซ์ตะวันออก ฝั่งซ้ายของแม่น้ำอาร์โน"
+          },
+          "what": {
+            "en": "A park along the left bank of the Arno River with wide green areas.",
+            "th": "สวนสาธารณะริมฝั่งซ้ายของแม่น้ำอาร์โน มีพื้นที่สีเขียวกว้างขวาง"
+          },
+          "why": {
+            "en": "Wide green areas for adults and kids, and playgrounds along the river.",
+            "th": "มีพื้นที่สีเขียวกว้างสำหรับผู้ใหญ่และเด็ก และมีสนามเด็กเล่นริมแม่น้ำ"
+          },
+          "tip": {
+            "en": "Allow about an hour and a half.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมงครึ่ง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco dell'Anconella, Florence, Italy",
+          "ok": "2026-11",
+          "src": "https://www.feelflorence.it/en/node/46874"
+        },
+        {
+          "name": {
+            "en": "Parco della Carraia",
+            "th": "ปาร์โกเดลลากัรไรอา"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Via dell'Erta Canina, Oltrarno",
+            "th": "ถนนเดลเลร์ตากานินา โอลตราร์โน"
+          },
+          "what": {
+            "en": "A garden in Oltrarno, near the San Niccolò tower, on the page's list of green places for children.",
+            "th": "สวนในย่านโอลตราร์โน ใกล้หอคอยซานนิกโกโล อยู่ในรายชื่อพื้นที่สีเขียวสำหรับเด็กของหน้าเว็บ"
+          },
+          "why": {
+            "en": "On the tourist office's list of where children can play outdoors in the city.",
+            "th": "อยู่ในรายชื่อที่ให้เด็กเล่นกลางแจ้งในเมืองของหน้าเว็บท่องเที่ยว"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Parco della Carraia, Via dell'Erta Canina 26a, Florence, Italy",
+          "ok": "2026-11",
+          "src": "https://www.feelflorence.it/en/node/46874"
+        },
+        {
+          "name": {
+            "en": "Giardino di Borgo Allegri",
+            "th": "จาร์ดีโนดีบอร์โกอัลเลกรี"
+          },
+          "kind": "park",
+          "area": {
+            "en": "Borgo Allegri, near Santa Croce",
+            "th": "บอร์โกอัลเลกรี ใกล้ซานตาโครเช"
+          },
+          "what": {
+            "en": "A garden near Santa Croce, listed among the city's green places for children.",
+            "th": "สวนใกล้ซานตาโครเช อยู่ในรายชื่อพื้นที่สีเขียวสำหรับเด็กของเมือง"
+          },
+          "why": {
+            "en": "On the tourist office's list of where children can play outdoors in the city.",
+            "th": "อยู่ในรายชื่อที่ให้เด็กเล่นกลางแจ้งในเมืองของหน้าเว็บท่องเที่ยว"
+          },
+          "tip": {
+            "en": "Allow about an hour.",
+            "th": "เผื่อเวลาราว 1 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Giardino di Borgo Allegri, Borgo Allegri 18, Florence, Italy",
+          "ok": "2026-11",
+          "src": "https://www.feelflorence.it/en/node/46874"
         }
     ]
     },
