@@ -2845,6 +2845,498 @@
           "book": "none",
           "q": "Sun Yat Sen Memorial Park, Sai Ying Pun, Hong Kong",
           "src": "https://www.discoverhongkong.com/eng/culture/best-places-for-moon-gazing-with-kids-in-hong-kong.html"
+        },
+        {
+          "local": "蒲台島",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะโพทอย",
+            "en": "Po Toi Island"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ใต้เกาะฮ่องกง",
+            "en": "South of Hong Kong Island"
+          },
+          "what": {
+            "th": "เกาะใต้สุดของฮ่องกง มีหินรูปร่างแปลกตาและวิวทะเลจีนใต้กว้างไกล",
+            "en": "Hong Kong's southernmost island, with strange rock formations and wide views of the South China Sea"
+          },
+          "why": {
+            "th": "มีหินรูปร่างแปลกตาและวิวทะเลกว้างระหว่างเดิน",
+            "en": "Unusual rock shapes and big sea views on a walk"
+          },
+          "tip": {
+            "th": "เรือไคโตจากอเบอร์ดีนวิ่งแค่บางวัน เช็กก่อนไป",
+            "en": "Kaito ferries from Aberdeen run only on some days; check before going"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Po Toi Island, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "吉澳 · 鴨洲",
+          "ok": "2026-11",
+          "name": {
+            "th": "เกาะกัตโอและอับเชา",
+            "en": "Kat O and Ap Chau"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "นิวเทร์ริทอรีส์ตะวันออกเฉียงเหนือ",
+            "en": "Northeast New Territories"
+          },
+          "what": {
+            "th": "สองเกาะเงียบสงบห่างกัน 15 นาทีทางเรือ มีหมู่บ้านชาวประมงและชาวฮากกา น้ำใส และหินกรวดเหลี่ยมสีเหลืองส้ม",
+            "en": "Two quiet islands 15 minutes apart by ferry, with fishermen’s and Hakka villages, clear water and ochre breccia rock"
+          },
+          "why": {
+            "th": "วันเที่ยวหมู่บ้านที่มีห้องเล่าเรื่อง และขนมฮากกาให้ลองชิม",
+            "en": "A day of village story rooms and a Hakka sweet to try"
+          },
+          "tip": {
+            "th": "แวะวัดเทียนโหว และลองชิมขนมชาก๊วย",
+            "en": "Visit the Tin Hau temples and try fever-vine cha kwo"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Kat O, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/10-island-escapes.html"
+        },
+        {
+          "local": "侯王古廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดโห่วหว่อง",
+            "en": "Hau Wong Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนจังก์ชัน เกาลูนซิตี้",
+            "en": "Junction Road, Kowloon City"
+          },
+          "what": {
+            "th": "โบราณสถานที่สร้างครั้งแรกในทศวรรษ 1700 เคยเป็นที่ทหารของเมืองกำแพงเกาลูนมาไหว้",
+            "en": "A declared monument first built in the 1700s, once visited by the soldiers of the Kowloon Walled City"
+          },
+          "why": {
+            "th": "วัดเก่าที่ไปคู่กับสวนกำแพงเมืองเกาลูนได้",
+            "en": "An old temple to pair with Kowloon Walled City Park"
+          },
+          "tip": {
+            "th": "แวะสั้น ๆ พอสำหรับเด็กเล็ก ในวัดพูดเบา ๆ",
+            "en": "A short visit is enough with little ones; keep voices low inside"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Hau Wong Temple, Junction Road, Kowloon City",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "銅鑼灣天后廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดเทียนโหว คอสเวย์เบย์",
+            "en": "Tin Hau Temple (Causeway Bay)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "คอสเวย์เบย์",
+            "en": "Causeway Bay"
+          },
+          "what": {
+            "th": "ศาลเจ้าแม่แห่งทะเลจากศตวรรษที่ 18 สร้างโดยตระกูลไต้ ซึ่งยังดูแลอยู่จนทุกวันนี้",
+            "en": "An 18th-century shrine to the goddess of the sea, built by the Tai clan, who still look after it"
+          },
+          "why": {
+            "th": "วัดเก่าเล็ก ๆ ซ่อนอยู่ท่ามกลางตึกสูง",
+            "en": "A small old temple tucked among the city towers"
+          },
+          "tip": {
+            "th": "แวะสั้น ๆ พอสำหรับเด็กเล็ก ในวัดพูดเบา ๆ",
+            "en": "A short visit is enough with little ones; keep voices low inside"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Tin Hau Temple, Causeway Bay, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "灣仔洪聖古廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดหุ่งเซ่ง หว่านไจ๋",
+            "en": "Hung Shing Temple (Wan Chai)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนควีนส์โรดอีสต์ หว่านไจ๋",
+            "en": "Queen's Road East, Wan Chai"
+          },
+          "what": {
+            "th": "วัดระดับ 1 ของหุ่งเซ่ง ผู้คุ้มครองชาวประมง เคยตั้งอยู่ริมฝั่งก่อนที่จะถมทะเล",
+            "en": "A Grade I temple to Hung Shing, protector of fishermen, that once stood on the shore before the land was reclaimed"
+          },
+          "why": {
+            "th": "เรื่องเล่าว่าทะเลเคยมาถึงริมถนนตรงนี้",
+            "en": "A story about how the sea used to come right up to the street"
+          },
+          "tip": {
+            "th": "เดินจากบ้านสีฟ้าไม่ไกล",
+            "en": "A short walk from the Blue House"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Hung Shing Temple, Queen's Road East, Wan Chai",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "鴨脷洲洪聖古廟",
+          "ok": "2026-11",
+          "name": {
+            "th": "วัดหุ่งเซ่ง อับเล่ยเชา",
+            "en": "Hung Shing Temple (Ap Lei Chau)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อับเล่ยเชา",
+            "en": "Ap Lei Chau"
+          },
+          "what": {
+            "th": "วัดเก่าของหุ่งเซ่งที่ยังตั้งอยู่ตรงที่เดิม",
+            "en": "An old temple to Hung Shing that still stands in its original spot"
+          },
+          "why": {
+            "th": "วัดเก่าที่ยังอยู่ตรงที่สร้างครั้งแรก",
+            "en": "An old temple still where it was first built"
+          },
+          "tip": {
+            "th": "แวะสั้น ๆ พอสำหรับเด็กเล็ก ในวัดพูดเบา ๆ",
+            "en": "A short visit is enough with little ones; keep voices low inside"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Hung Shing Temple, Ap Lei Chau, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/culture/find-your-zen-at-the-best-temples-in-hong-kong.html"
+        },
+        {
+          "local": "流水響水塘",
+          "ok": "2026-11",
+          "name": {
+            "th": "อ่างเก็บน้ำเหลาซุยเฮือง",
+            "en": "Lau Shui Heung Reservoir"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานชนบทพัตซินเลง ฟานหลิง",
+            "en": "Pat Sin Leng Country Park, Fanling"
+          },
+          "what": {
+            "th": "\"กระจกแห่งฟ้า\" อ่างเก็บน้ำนิ่งที่สะท้อนป่าและท้องฟ้า บนเส้นทางที่ผ่านเขตอนุรักษ์ผีเสื้อและแมลงปอหายาก",
+            "en": "\"The mirror of the sky\": a still reservoir that reflects the woods and sky, on a trail past a butterfly reserve and rare dragonflies"
+          },
+          "why": {
+            "th": "ผีเสื้อ แมลงปอ และเงาสะท้อนสวยให้ถ่ายรูป",
+            "en": "Butterflies, dragonflies and a perfect reflection to photograph"
+          },
+          "tip": {
+            "th": "ไปเช้าวันฟ้าใสลมสงบ เงาสะท้อนสวยที่สุด",
+            "en": "Go on a clear, still morning for the best reflection"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Lau Shui Heung Reservoir, Fanling, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html"
+        },
+        {
+          "local": "千島湖",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทะเลสาบพันเกาะ ไท่ลัม",
+            "en": "Thousand Island Lake (Tai Lam)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "อุทยานชนบทไท่ลัม",
+            "en": "Tai Lam Country Park"
+          },
+          "what": {
+            "th": "อ่างเก็บน้ำที่มีเกาะเล็ก ๆ กระจายเต็ม มองจากจุดชมวิวในอุทยานชนบทไท่ลัม ป่าต้นสวีตกัมเปลี่ยนเป็นสีแดงช่วงใบไม้ร่วงและหน้าหนาว",
+            "en": "A reservoir dotted with little islands, seen from a viewpoint in Tai Lam Country Park, with sweet gum woods that turn red in autumn and winter"
+          },
+          "why": {
+            "th": "ใบไม้สีแดงและวิวสวยเหมือนภาพวาด",
+            "en": "Red leaves and a view like a painting"
+          },
+          "tip": {
+            "th": "จุดชมวิวต้องเดินป่าไป อุ้มเด็กเล็กและพกน้ำ",
+            "en": "The viewpoint is a hike away; carry little ones and bring water"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Reservoir Islands Viewpoint, Tai Lam Country Park, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html"
+        },
+        {
+          "local": "薄扶林水塘",
+          "ok": "2026-11",
+          "name": {
+            "th": "อ่างเก็บน้ำพกฟูลัม",
+            "en": "Pok Fu Lam Reservoir"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานชนบทพกฟูลัม",
+            "en": "Pok Fu Lam Country Park"
+          },
+          "what": {
+            "th": "ทางเดินง่าย ๆ จากอุทยานชนบทพกฟูลัม ผ่านอ่างเก็บน้ำ ขึ้นไปถึงเดอะพีค",
+            "en": "A gentle walk from Pok Fu Lam Country Park past the reservoir and up to The Peak"
+          },
+          "why": {
+            "th": "ทางขึ้นเดอะพีคผ่านป่าเขียว แทนการนั่งรถราง",
+            "en": "A green way up to the Peak instead of the tram"
+          },
+          "tip": {
+            "th": "ขาลงนั่งพีคแทรมกลับ",
+            "en": "Take the Peak Tram down at the end"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Pok Fu Lam Reservoir, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/top-10-easy-hikes.html"
+        },
+        {
+          "local": "銅鑼灣避風塘",
+          "ok": "2026-11",
+          "name": {
+            "th": "ทางเดินริมที่หลบพายุคอสเวย์เบย์",
+            "en": "Causeway Bay Typhoon Shelter promenade"
+          },
+          "kind": "views",
+          "area": {
+            "th": "คอสเวย์เบย์",
+            "en": "Causeway Bay"
+          },
+          "what": {
+            "th": "ทางเดินริมน้ำ มีช่วงไม่มีรั้วยาว 90 เมตร มองเห็นที่หลบพายุเก่าแก่และเรือที่จอดอยู่",
+            "en": "A waterfront walk with a 90 m fence-free edge overlooking the historic typhoon shelter and its boats"
+          },
+          "why": {
+            "th": "มีเรือเรียงกันให้ดูตอนพระอาทิตย์ตก",
+            "en": "Rows of boats to watch at sunset"
+          },
+          "tip": {
+            "th": "บางช่วงริมน้ำไม่มีรั้ว จับมือเด็กเล็กไว้",
+            "en": "No fence along part of the edge; hold little hands"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Causeway Bay Typhoon Shelter, Causeway Bay, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html"
+        },
+        {
+          "local": "印洲塘海岸公園",
+          "ok": "2026-11",
+          "name": {
+            "th": "อุทยานทางทะเลยานเจาตง",
+            "en": "Yan Chau Tong Marine Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ดับเบิลเฮเวน นิวเทร์ริทอรีส์ตะวันออกเฉียงเหนือ",
+            "en": "Double Haven, northeast New Territories"
+          },
+          "what": {
+            "th": "อ่าวกำบังคลื่น ทะเลสงบ มีป่าโกงกางและหญ้าทะเลที่ดึงดูดสัตว์ทะเลมากมาย",
+            "en": "A sheltered bay of calm seas, mangroves and seagrass that draw plenty of marine life"
+          },
+          "why": {
+            "th": "น้ำสงบและป่าโกงกางให้ดูจากเรือ",
+            "en": "Calm water and mangroves to see from a boat"
+          },
+          "tip": {
+            "th": "อยู่ไกล ไปดีที่สุดด้วยทัวร์เรือหรือไปคู่กับหลายจีวอ",
+            "en": "Far out; best on a boat trip or with Lai Chi Wo"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Yan Chau Tong Marine Park, New Territories",
+          "src": "https://www.discoverhongkong.com/eng/outdoors/from-marine-parks-to-hong-kong-geopark.html"
+        },
+        {
+          "local": "東岸公園主題區",
+          "ok": "2026-11",
+          "name": {
+            "th": "พื้นที่สวนอีสต์โคสต์",
+            "en": "East Coast Park Precinct"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฟอร์เทรสฮิลล์",
+            "en": "Fortress Hill"
+          },
+          "what": {
+            "th": "เขื่อนกันคลื่นแห่งแรกในอ่าววิกตอเรียที่เปิดให้คนทั่วไป มีวิวพระอาทิตย์ตกรอบทิศ 360 องศาและเครื่องเล่น",
+            "en": "The first breakwater in Victoria Harbour opened to the public, with 360-degree sunset views and play facilities"
+          },
+          "why": {
+            "th": "ยื่นออกไปกลางอ่าว มีที่ให้เล่น",
+            "en": "Out in the harbour with room to play"
+          },
+          "tip": {
+            "th": "ต่อกับทางเดินไม้ริมฝั่งตะวันออกได้",
+            "en": "Joins the East Coast Boardwalk"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "East Coast Park Precinct, Fortress Hill, Hong Kong",
+          "src": "https://www.discoverhongkong.com/eng/attractions/waterfront-promenades-worth-visiting.html"
         }
     ]
     }
